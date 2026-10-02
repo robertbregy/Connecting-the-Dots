@@ -1,69 +1,69 @@
-﻿string,round,status,type,entity,group,geography,themes,contention_count,strange,city,placeholder,sources
-.amsterdam,2012,delegated,geographic,Amsterdam,,Amsterdam,city,,no,yes,no,https://www.iana.org/domains/root/db
-.app,2012,application,generic,,,,,13,no,no,no,https://newgtlds.icann.org/en/program-status/statistics
-.arpa,legacy,delegated,infrastructure,IANA / PTI,,United States,infrastructure | trust,,no,no,no,https://www.iana.org/domains/root/db
-.art,2012,application,generic,,,,,10,no,no,no,https://newgtlds.icann.org/en/program-status/statistics
-.asia,2004,delegated,sponsored,DotAsia Organisation Limited,,"Hong Kong, China",,,no,no,no,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
-.bank,2012,delegated,generic,,,,trust,,no,no,no,https://ftld.com/security/
-.barcelona,2012,delegated,geographic,Barcelona,,Barcelona,city,,no,yes,no,https://www.iana.org/domains/root/db
-.beer,2012,delegated,application,,,,lifestyle,,yes,no,no,https://www.iana.org/domains/root/db/beer.html
-.berlin,2012,delegated,geographic,Berlin,,Berlin,city,,no,yes,no,https://www.iana.org/domains/root/db
-.bible,2012,delegated,application,,,,faith,,yes,no,no,https://www.iana.org/domains/root/db/bible.html
-.blog,2012,application,generic,,,,,9,no,no,no,https://newgtlds.icann.org/en/program-status/statistics
-.book,2012,application,generic,,,,,9,no,no,no,https://newgtlds.icann.org/en/program-status/statistics
-.cat,2012,delegated,generic,Fundació puntCAT,,Spain / Catalan-speaking community,culture | trust,,yes,no,no,https://46-8.dc.icann.org/reports/2005/cat-report-18nov2005.html | https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en | https://domini.cat/en/about-us
-.com,legacy,delegated,generic,Verisign,,United States,business,,no,no,no,https://www.iana.org/domains/root/db
-.dating,2012,delegated,application,,,,intimacy,,yes,no,no,https://www.iana.org/domains/root/db/dating.html
-.design,2012,application,generic,,,,,8,no,no,no,https://newgtlds.icann.org/en/program-status/statistics
-.eco,2012,delegated,generic,,,,trust,,no,no,no,https://go.eco/policies/eligibility/
-.edu,legacy,delegated,sponsored,,,United States,education,,no,no,no,https://www.iana.org/domains/root/db
-.fail,2012,delegated,application,,,,oddity,,yes,no,no,https://www.iana.org/domains/root/db/fail.html
-.geo,2000,evaluated,application,,,,geography,,no,no,no,https://archive.icann.org/en/tlds/
-.gop,2012,delegated,application,,,,politics,,yes,no,no,https://www.iana.org/domains/root/db/gop.html
-.gov,legacy,delegated,sponsored,CISA,,United States,government | trust,,no,no,no,https://www.iana.org/domains/root/db | https://get.gov/domains/eligibility/
-.guru,2012,delegated,application,,,,personalBrand,,yes,no,no,https://www.iana.org/domains/root/db/guru.html
-.hamburg,2012,delegated,geographic,Hamburg,,Hamburg,city,,no,yes,no,https://www.iana.org/domains/root/db
-.health,2000,evaluated,application,,,,health | publicInterest,,yes,no,no,https://archive.icann.org/en/tlds/health1/icann-index.htm | https://archive.icann.org/en/tlds/
-.home,2012,application,generic,,,,,11,no,no,no,https://newgtlds.icann.org/en/program-status/statistics
-.inc,2012,application,generic,,,,,11,no,no,no,https://newgtlds.icann.org/en/program-status/statistics
-.insurance,2012,delegated,generic,,,,trust,,no,no,no,https://ftld.com/security/
-.int,legacy,delegated,sponsored,IANA / PTI,,,publicInfrastructure,,no,no,no,https://www.iana.org/domains/root/db
-.jobs,2004,delegated,sponsored,Society for Human Resource Management,,United States,,,no,no,no,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
-.kids,2000,evaluated,application,,,,children,,yes,no,no,https://archive.icann.org/en/tlds/kids1/ | https://archive.icann.org/en/tlds/kids2/ | https://archive.icann.org/en/tlds/kids3/ | https://archive.icann.org/en/tlds/kids4/ | https://archive.icann.org/en/tlds/
-.koeln,2012,delegated,geographic,Cologne,,Cologne,city,,no,yes,no,https://www.iana.org/domains/root/db
-.lgbt,2012,delegated,application,,,,identity,,yes,no,no,https://www.iana.org/domains/root/db/lgbt.html
-.llc,2012,application,generic,,,,,9,no,no,no,https://newgtlds.icann.org/en/program-status/statistics
-.london,2012,delegated,geographic,London,,London,city,,no,yes,no,https://www.iana.org/domains/root/db
-.lugano,2026,application,geographic,City of Lugano,City of Lugano,Switzerland,city | trust,,no,yes,yes,
-.magic,2000,proposed,application,,,,optimism,,yes,no,no,https://archive.icann.org/en/tlds/ads1/
-.mail,2004,notDelegated,sponsored,Anti-Spam Community Registry,,United Kingdom,trust,,yes,no,no,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
-.mil,legacy,delegated,sponsored,,,United States,government,,no,no,no,https://www.iana.org/domains/root/db
-.mobi,2004,delegated,sponsored,Mobi JV,,Finland,techFossil,,yes,no,no,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
-.movie,2012,application,generic,,,,,8,no,no,no,https://newgtlds.icann.org/en/program-status/statistics
-.museum,2000,selected,application,,,,culture,,no,no,no,https://archive.icann.org/en/tlds/
-.music,2012,application,generic,,,,,8,no,no,no,https://newgtlds.icann.org/en/program-status/statistics
-.name,2000,selected,application,,,,identity,,no,no,no,https://archive.icann.org/en/tlds/
-.net,legacy,delegated,generic,Verisign,,United States,technology,,no,no,no,https://www.iana.org/domains/root/db
-.ninja,2012,delegated,application,,,,personalBrand,,yes,no,no,https://www.iana.org/domains/root/db/ninja.html
-.nyc,2012,delegated,geographic,New York,,New York,city,,yes,yes,no,https://archive.icann.org/en/tlds/tld-review-update-23oct00.htm | https://archive.icann.org/en/tlds/ | https://www.iana.org/domains/root/db
-.org,legacy,delegated,generic,,,,community,,no,no,no,https://www.iana.org/domains/root/db
-.paris,2012,delegated,geographic,Paris,,Paris,city,,no,yes,no,https://www.iana.org/domains/root/db
-.pharmacy,2012,delegated,generic,,,,trust,,no,no,no,https://nabp.pharmacy/help/is-domain-name-registration-in-the-pharmacy-tld-restricted/
-.pizza,2012,delegated,application,,,,lifestyle,,yes,no,no,https://www.iana.org/domains/root/db/pizza.html
-.post,2012,delegated,generic,Universal Postal Union,,Switzerland,publicInfrastructure | trust,,yes,no,no,https://46-8.dc.icann.org/reports/2012/post-report-20120802.html | https://archive.icann.org/en/tlds/ | https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en | https://www.upu.int/en/universal-postal-union/activities/digital-services/post-domain
-.quebec,2012,delegated,geographic,Quebec,,Quebec,city,,no,yes,no,https://www.iana.org/domains/root/db
-.rich,2012,delegated,application,,,,statusCulture,,yes,no,no,https://www.iana.org/domains/root/db/rich.html
-.shop,2012,application,generic,,,,,9,no,no,no,https://newgtlds.icann.org/en/program-status/statistics
-.soup,2000,proposed,application,,,,oddity,,yes,no,no,https://archive.icann.org/en/tlds/ads1/
-.sucks,cross,longitudinal,application,,,,protest,,yes,no,no,https://archive.icann.org/en/tlds/ads1/ | https://www.iana.org/domains/root/db/sucks.html
-.swiss,2012,delegated,generic,,,,trust,,no,no,no,https://www.nic.swiss/en/conditions-for-the-registration-and-the-registration-process
-.tel,2004,delegated,sponsored,Telnic Limited,,United Kingdom,,,no,no,no,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
-.tokyo,2012,delegated,geographic,Tokyo,,Tokyo,city,,no,yes,no,https://www.iana.org/domains/root/db
-.travel,2004,delegated,sponsored,The Travel Partnership Corporation,,United States,,,no,no,no,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
-.union,2000,evaluated,application,,,,labour,,yes,no,no,https://archive.icann.org/en/tlds/union1/ | https://archive.icann.org/en/tlds/
-.wap,2000,returned,application,,,,techFossil,,no,no,no,https://archive.icann.org/en/tlds/
-.war,2000,proposed,application,,,,socialMirror,,yes,no,no,https://archive.icann.org/en/tlds/ads1/
-.wien,2012,delegated,geographic,Vienna,,Vienna,city,,no,yes,no,https://www.iana.org/domains/root/db
-.wtf,2012,delegated,application,,,,oddity,,yes,no,no,https://www.iana.org/domains/root/db/wtf.html
-.xxx,2004,delegated,sponsored,ICM Registry,,Canada / United States,adult,,yes,no,no,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
-.zuerich,2012,delegated,geographic,Canton of Zurich,,Canton of Zurich,city,,no,yes,no,https://www.iana.org/domains/root/db
+string,round,status,type,entity,group,geography,themes,contention_count,strange,city,placeholder,provenance,sources
+.amsterdam,2012,delegated,geographic,Amsterdam,,Amsterdam,city,,no,yes,no,,https://www.iana.org/domains/root/db
+.app,2012,application,generic,,,,,13,no,no,no,,https://newgtlds.icann.org/en/program-status/statistics
+.arpa,legacy,delegated,infrastructure,IANA / PTI,,United States,infrastructure | trust,,no,no,no,,https://www.iana.org/domains/root/db
+.art,2012,application,generic,,,,,10,no,no,no,,https://newgtlds.icann.org/en/program-status/statistics
+.asia,2004,delegated,sponsored,DotAsia Organisation Limited,,"Hong Kong, China",,,no,no,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
+.bank,2012,delegated,generic,,,,trust,,no,no,no,,https://ftld.com/security/
+.barcelona,2012,delegated,geographic,Barcelona,,Barcelona,city,,no,yes,no,,https://www.iana.org/domains/root/db
+.beer,2012,delegated,application,,,,lifestyle,,yes,no,no,,https://www.iana.org/domains/root/db/beer.html
+.berlin,2012,delegated,geographic,Berlin,,Berlin,city,,no,yes,no,,https://www.iana.org/domains/root/db
+.bible,2012,delegated,application,,,,faith,,yes,no,no,,https://www.iana.org/domains/root/db/bible.html
+.blog,2012,application,generic,,,,,9,no,no,no,,https://newgtlds.icann.org/en/program-status/statistics
+.book,2012,application,generic,,,,,9,no,no,no,,https://newgtlds.icann.org/en/program-status/statistics
+.cat,2004,delegated,sponsored,Fundació puntCAT,,Spain / Catalan-speaking community,culture | trust,,yes,no,no,,https://46-8.dc.icann.org/reports/2005/cat-report-18nov2005.html | https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en | https://domini.cat/en/about-us
+.com,legacy,delegated,generic,Verisign,,United States,business,,no,no,no,,https://www.iana.org/domains/root/db
+.dating,2012,delegated,application,,,,intimacy,,yes,no,no,,https://www.iana.org/domains/root/db/dating.html
+.design,2012,application,generic,,,,,8,no,no,no,,https://newgtlds.icann.org/en/program-status/statistics
+.eco,2012,delegated,generic,,,,trust,,no,no,no,,https://go.eco/policies/eligibility/
+.edu,legacy,delegated,sponsored,,,United States,education,,no,no,no,,https://www.iana.org/domains/root/db
+.fail,2012,delegated,application,,,,oddity,,yes,no,no,,https://www.iana.org/domains/root/db/fail.html
+.geo,2000,evaluated,application,,,,geography,,no,no,no,,https://archive.icann.org/en/tlds/
+.gop,2012,delegated,application,,,,politics,,yes,no,no,,https://www.iana.org/domains/root/db/gop.html
+.gov,legacy,delegated,sponsored,CISA,,United States,government | trust,,no,no,no,,https://www.iana.org/domains/root/db | https://get.gov/domains/eligibility/
+.guru,2012,delegated,application,,,,personalBrand,,yes,no,no,,https://www.iana.org/domains/root/db/guru.html
+.hamburg,2012,delegated,geographic,Hamburg,,Hamburg,city,,no,yes,no,,https://www.iana.org/domains/root/db
+.health,2000,evaluated,application,,,,health | publicInterest,,yes,no,no,,https://archive.icann.org/en/tlds/health1/icann-index.htm | https://archive.icann.org/en/tlds/
+.home,2012,application,generic,,,,,11,no,no,no,,https://newgtlds.icann.org/en/program-status/statistics
+.inc,2012,application,generic,,,,,11,no,no,no,,https://newgtlds.icann.org/en/program-status/statistics
+.insurance,2012,delegated,generic,,,,trust,,no,no,no,,https://ftld.com/security/
+.int,legacy,delegated,sponsored,IANA / PTI,,,publicInfrastructure,,no,no,no,,https://www.iana.org/domains/root/db
+.jobs,2004,delegated,sponsored,Society for Human Resource Management,,United States,,,no,no,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
+.kids,2000,evaluated,application,,,,children,,yes,no,no,,https://archive.icann.org/en/tlds/kids1/ | https://archive.icann.org/en/tlds/kids2/ | https://archive.icann.org/en/tlds/kids3/ | https://archive.icann.org/en/tlds/kids4/ | https://archive.icann.org/en/tlds/
+.koeln,2012,delegated,geographic,Cologne,,Cologne,city,,no,yes,no,,https://www.iana.org/domains/root/db
+.lgbt,2012,delegated,application,,,,identity,,yes,no,no,,https://www.iana.org/domains/root/db/lgbt.html
+.llc,2012,application,generic,,,,,9,no,no,no,,https://newgtlds.icann.org/en/program-status/statistics
+.london,2012,delegated,geographic,London,,London,city,,no,yes,no,,https://www.iana.org/domains/root/db
+.lugano,2026,application,geographic,City of Lugano,City of Lugano,Switzerland,city | trust,,no,yes,yes,applicantDisclosure · 2026-10-02,
+.magic,2000,proposed,application,,,,optimism,,yes,no,no,,https://archive.icann.org/en/tlds/ads1/
+.mail,2004,notDelegated,sponsored,Anti-Spam Community Registry,,United Kingdom,trust,,yes,no,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
+.mil,legacy,delegated,sponsored,,,United States,government,,no,no,no,,https://www.iana.org/domains/root/db
+.mobi,2004,delegated,sponsored,Mobi JV,,Finland,techFossil,,yes,no,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
+.movie,2012,application,generic,,,,,8,no,no,no,,https://newgtlds.icann.org/en/program-status/statistics
+.museum,2000,selected,application,,,,culture,,no,no,no,,https://archive.icann.org/en/tlds/
+.music,2012,application,generic,,,,,8,no,no,no,,https://newgtlds.icann.org/en/program-status/statistics
+.name,2000,selected,application,,,,identity,,no,no,no,,https://archive.icann.org/en/tlds/
+.net,legacy,delegated,generic,Verisign,,United States,technology,,no,no,no,,https://www.iana.org/domains/root/db
+.ninja,2012,delegated,application,,,,personalBrand,,yes,no,no,,https://www.iana.org/domains/root/db/ninja.html
+.nyc,2012,delegated,geographic,New York,,New York,city,,yes,yes,no,,https://archive.icann.org/en/tlds/tld-review-update-23oct00.htm | https://archive.icann.org/en/tlds/ | https://www.iana.org/domains/root/db
+.org,legacy,delegated,generic,,,,community,,no,no,no,,https://www.iana.org/domains/root/db
+.paris,2012,delegated,geographic,Paris,,Paris,city,,no,yes,no,,https://www.iana.org/domains/root/db
+.pharmacy,2012,delegated,generic,,,,trust,,no,no,no,,https://nabp.pharmacy/help/is-domain-name-registration-in-the-pharmacy-tld-restricted/
+.pizza,2012,delegated,application,,,,lifestyle,,yes,no,no,,https://www.iana.org/domains/root/db/pizza.html
+.post,2004,delegated,sponsored,Universal Postal Union,,Switzerland,publicInfrastructure | trust,,yes,no,no,,https://46-8.dc.icann.org/reports/2012/post-report-20120802.html | https://archive.icann.org/en/tlds/ | https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en | https://www.upu.int/en/universal-postal-union/activities/digital-services/post-domain
+.quebec,2012,delegated,geographic,Quebec,,Quebec,city,,no,yes,no,,https://www.iana.org/domains/root/db
+.rich,2012,delegated,application,,,,statusCulture,,yes,no,no,,https://www.iana.org/domains/root/db/rich.html
+.shop,2012,application,generic,,,,,9,no,no,no,,https://newgtlds.icann.org/en/program-status/statistics
+.soup,2000,proposed,application,,,,oddity,,yes,no,no,,https://archive.icann.org/en/tlds/ads1/
+.sucks,cross,longitudinal,application,,,,protest,,yes,no,no,,https://archive.icann.org/en/tlds/ads1/ | https://www.iana.org/domains/root/db/sucks.html
+.swiss,2012,delegated,generic,,,,trust,,no,no,no,,https://www.nic.swiss/en/conditions-for-the-registration-and-the-registration-process
+.tel,2004,delegated,sponsored,Telnic Limited,,United Kingdom,,,no,no,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
+.tokyo,2012,delegated,geographic,Tokyo,,Tokyo,city,,no,yes,no,,https://www.iana.org/domains/root/db
+.travel,2004,delegated,sponsored,The Travel Partnership Corporation,,United States,,,no,no,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
+.union,2000,evaluated,application,,,,labour,,yes,no,no,,https://archive.icann.org/en/tlds/union1/ | https://archive.icann.org/en/tlds/
+.wap,2000,returned,application,,,,techFossil,,no,no,no,,https://archive.icann.org/en/tlds/
+.war,2000,proposed,application,,,,socialMirror,,yes,no,no,,https://archive.icann.org/en/tlds/ads1/
+.wien,2012,delegated,geographic,Vienna,,Vienna,city,,no,yes,no,,https://www.iana.org/domains/root/db
+.wtf,2012,delegated,application,,,,oddity,,yes,no,no,,https://www.iana.org/domains/root/db/wtf.html
+.xxx,2004,delegated,sponsored,ICM Registry,,Canada / United States,adult,,yes,no,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
+.zuerich,2012,delegated,geographic,Canton of Zurich,,Canton of Zurich,city,,no,yes,no,,https://www.iana.org/domains/root/db

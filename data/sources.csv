@@ -1,43 +1,44 @@
-﻿label,url,role
-ICANN 2000 application archive,https://archive.icann.org/en/tlds/app-index.htm,Primary historical source
-ICANN 2000 applications lodged,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm,Primary historical source
-ICANN 2004 sponsored round announcement,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en,Primary historical source
-ICANN 2012 program statistics,https://newgtlds.icann.org/en/program-status/statistics,Primary statistical source
-IANA Root Zone Database,https://www.iana.org/domains/root/db,Primary delegation source
-ICANN .BERLIN case study,https://newgtlds.icann.org/en/announcements-and-media/case-studies/berlin-a4-13feb19-en.pdf,Primary case-study source
-ICANN 2026 applications count,https://www.icann.org/en/announcements/details/icann-confirms-number-of-applications-proceeding-in-the-2026-round-22-09-2026-en,Primary 2026 source
-ICANN 2026 Reveal Day announcement,https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en,Primary 2026 source
-UPU .POST and Shared Services,https://www.upu.int/en/universal-postal-union/activities/digital-services/post-domain,primary
-Accent Obert / .cat civic infrastructure,https://domini.cat/en/about-us,primary
-fTLD security requirements,https://ftld.com/security/,primary
-CISA .gov eligibility,https://get.gov/domains/eligibility/,primary
-NABP .pharmacy eligibility,https://nabp.pharmacy/help/is-domain-name-registration-in-the-pharmacy-tld-restricted/,primary
-.eco eligibility,https://go.eco/policies/eligibility/,primary
-.swiss eligibility,https://www.nic.swiss/en/conditions-for-the-registration-and-the-registration-process,primary
-ICANN locations,https://www.icann.org/locations?v=1,primary
-ICANN RSP statistics August 2026,https://newgtldprogram.icann.org/de/node/1915,primary
-IANA root servers,https://www.iana.org/domains/root/servers,primary
-Root Server Technical Operations Association,https://root-servers.org/,primary
+label,url,role
 RFC 920 — Domain Requirements (1984),https://www.rfc-editor.org/info/rfc920/,primary
 IANA .ARPA infrastructure domain,https://www.iana.org/domains/arpa,primary
 IANA history of the first TLD set,https://www.iana.org/reports/2001/name-report-16aug01.html,primary
 ICANN — first .com domain (symbolics.com),https://www.icann.org/en/blogs/details/celebrating-the-rise-of-the-modern-internet-the-first-dot-com-domain-name-turns-30-16-3-2015-en,primary
+ICANN 2000 application archive,https://archive.icann.org/en/tlds/app-index.htm,primary
+ICANN 2000 .kids applications,https://archive.icann.org/en/tlds/kids1/,primary
+ICANN 2000 .union application,https://archive.icann.org/en/tlds/union1/,primary
+ICANN 2004 sponsored round,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en,primary
+ICANN 2012 program statistics,https://newgtlds.icann.org/en/program-status/statistics,primary
+IANA Root Zone Database,https://www.iana.org/domains/root/db,primary
+IANA Root Zone Management,https://www.iana.org/domains/root,primary
+ICANN registrant explainer,https://www.icann.org/registrants,primary
+ICANN 2026 Applicant Journey,https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey,primary
+ICANN 2026 Applicant Guidebook,https://newgtldprogram.icann.org/en/application-rounds/round2/agb,primary
+ICANN .BERLIN case study,https://newgtlds.icann.org/en/announcements-and-media/case-studies/berlin-a4-13feb19-en.pdf,primary
+ICANN 2026 applications count,https://www.icann.org/en/announcements/details/icann-confirms-number-of-applications-proceeding-in-the-2026-round-22-09-2026-en,primary
+ICANN 2026 Reveal Day,https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en,primary
+UPU .POST domain and Shared Services,https://www.upu.int/en/universal-postal-union/activities/digital-services/post-domain,primary
+Accent Obert / .cat civic infrastructure,https://domini.cat/en/about-us,primary
+fTLD .BANK / .INSURANCE security requirements,https://ftld.com/security/,primary
+CISA .gov eligibility,https://get.gov/domains/eligibility/,primary
+NABP .pharmacy eligibility,https://nabp.pharmacy/help/is-domain-name-registration-in-the-pharmacy-tld-restricted/,primary
+.eco eligibility policy,https://go.eco/policies/eligibility/,primary
+.swiss eligibility,https://www.nic.swiss/en/conditions-for-the-registration-and-the-registration-process,primary
+ICANN global locations,https://www.icann.org/locations?v=1,primary
+ICANN 2026 RSP statistics · August,https://newgtldprogram.icann.org/de/node/1915,primary
+IANA root name servers,https://www.iana.org/domains/root/servers,primary
+Root Server Technical Operations Association,https://root-servers.org/,primary
+ICANN 2026 Applicant Questions · public fields,https://newgtldprogram-2026-agb.icann.org/en/12-appendix-1-application-questions.html,primary
+IANA · root zone roles,https://www.iana.org/dnssec/procedures/ksk-operator/ksk-dps-20201104.html,primary
+ICANN · Identity Digital described as largest TLD registry operator,https://www.icann.org/ru/ssac/members/archive/25-01-2026,primary
 ICANN 2012 applications overview,https://newgtlds.icann.org/en/program-status/statistics/applications-overview-13jun12-en.pdf,primary
-ICANN RSP statistics August 2026,https://newgtldprogram.icann.org/en/application-rounds/round2/rsp/program-statistics/2026/08,primary
-ICANN Donuts scale / economies determination,https://newgtlds.icann.org/sites/default/files/drsp/25sep13/determination-1-1-1462-36448-en.pdf,primary
-FTC Donuts / Rightside transaction,https://www.ftc.gov/legal-library/browse/early-termination-notices/20171464,primary
-Afilias Donuts acquisition,https://afilias.mediaroom.com/2020-12-29-Donuts-Acquires-Afilias,operator
-Identity Digital TLD portfolio,https://identity.digital/tld-portfolio,operator
-Identity Digital registry services scale,https://identity.digital/newsroom/what-makes-a-great-registry-services-provider,operator
-Identity Digital company history,https://identity.digital/company,operator
-Identity Digital headquarters,https://identity.digital/contact,operator
-ICANN · 2026 Applicant Questions / public fields,https://newgtldprogram-2026-agb.icann.org/en/12-appendix-1-application-questions.html,primary
-IANA · DNS root-zone roles (PTI / Root Zone Maintainer),https://www.iana.org/dnssec/procedures/ksk-operator/ksk-dps-20201104.html,primary
-ICANN · Identity Digital described as world’s largest TLD registry operator,https://www.icann.org/ru/ssac/members/archive/25-01-2026,primary
-ICANN · Donuts witness statement / economies of scale,https://33-7.lax.icann.org/en/system/files/files/donuts-witness-statements-13oct14-en.pdf,primary
-Identity Digital · 460+ TLDs managed as RSP,https://www.identity.digital/newsroom/what-makes-a-great-registry-services-provider,operator
-Verisign · Q2 2026 .com/.net registration base,https://investor.verisign.com/news-releases/news-release-details/dnibcom-reports-internet-has-4016-million-domain-name,operator
-IANA · root servers / Verisign A-root and J-root,https://www.iana.org/domains/root/servers,primary
-IANA · Root Zone Maintainer role,https://www.iana.org/dnssec/procedures/ksk-operator/ksk-dps-20201104.html,primary
-Identity Digital · nearly 300 TLD portfolio,https://www.identity.digital/registrar,operator
+ICANN 2026 RSP statistics · August,https://newgtldprogram.icann.org/en/application-rounds/round2/rsp/program-statistics/2026/08,primary
+ICANN · Donuts applicant video,https://newgtlds.icann.org/en/announcements-and-media/video/applicants,primary
+ICANN dispute determination · Donuts scale/economies,https://newgtlds.icann.org/sites/default/files/drsp/25sep13/determination-1-1-1462-36448-en.pdf,primary
+FTC · Donuts / Rightside transaction,https://www.ftc.gov/legal-library/browse/early-termination-notices/20171464,primary
+Afilias · Donuts acquisition,https://afilias.mediaroom.com/2020-12-29-Donuts-Acquires-Afilias,operator
+Identity Digital · portfolio,https://identity.digital/tld-portfolio,operator
+Identity Digital · registry services scale,https://identity.digital/newsroom/what-makes-a-great-registry-services-provider,operator
+Identity Digital · company history,https://identity.digital/company,operator
+Identity Digital · headquarters,https://identity.digital/contact,operator
+Verisign · Q2 2026 .com/.net registrations,https://investor.verisign.com/news-releases/news-release-details/dnibcom-reports-internet-has-4016-million-domain-name,operator
 IANA active TLD list snapshot,https://data.iana.org/TLD/tlds-alpha-by-domain.txt,primary

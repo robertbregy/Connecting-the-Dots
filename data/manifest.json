@@ -1,6 +1,6 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.6.5",
+  "version": "0.6.8",
   "publication_state": "pre-reveal",
   "as_of": "2026-10-02",
   "temporal_coverage": "1984/2026",
@@ -9,6 +9,8 @@
   "notes": [
     "Record counts exclude CSV headers.",
     "applications_2026.csv is intentionally empty before Reveal Day.",
+    "explorer_catalog.csv is the latest indexed record view; explorer_events.csv keeps separate historical events for multi-era strings.",
+    ".lugano is marked as an applicant disclosure until ICANN publishes the individual application record at Reveal Day.",
     "Blank 2026 aggregate values are scaffolding, not observations."
   ],
   "files": [
@@ -38,9 +40,9 @@
     },
     {
       "path": "city_timeline.csv",
-      "bytes": 1687,
+      "bytes": 1609,
       "records": 8,
-      "sha256": "3b9398a8fd18db6e1682c4de0891d51c95a382c60bd1a8fd24a424d4949b205d"
+      "sha256": "af51b34c76afc0b55733c8f330fec13beb56e95835655e94a2ba06a201722a82"
     },
     {
       "path": "contention_2012.csv",
@@ -62,9 +64,15 @@
     },
     {
       "path": "explorer_catalog.csv",
-      "bytes": 9035,
+      "bytes": 9079,
       "records": 68,
-      "sha256": "603cc7c3df137145a54c9b1d3d1963c959b0deb3dfe74de473c7c565cd69f2b6"
+      "sha256": "ee52a63729b2bb01bbf28b912845f3d646731b1548b7cb2c6dbc56d7674dd81c"
+    },
+    {
+      "path": "explorer_events.csv",
+      "bytes": 8877,
+      "records": 78,
+      "sha256": "379916d7f767bc39df7848fec1f8cb80bbf75d4a88f1448c7d3b1ca3fd6d49d3"
     },
     {
       "path": "governance_locations.csv",
@@ -110,9 +118,9 @@
     },
     {
       "path": "rounds_summary.csv",
-      "bytes": 792,
+      "bytes": 824,
       "records": 4,
-      "sha256": "11c9089a20a593a6195d1c8de54cb3aea3cdc32195ffbc3547865d258185e09b"
+      "sha256": "d9352f5f2d632ac52806e093407370f83aab068e29ee6b3efc1ef85dc90ed462"
     },
     {
       "path": "rsp_geography_aug_2026.csv",
@@ -122,9 +130,9 @@
     },
     {
       "path": "sources.csv",
-      "bytes": 4856,
-      "records": 42,
-      "sha256": "d7f2e11f11d5417039ecd66c340e67e6dc065cb9ef4910a05192e3fa6e79a39f"
+      "bytes": 4597,
+      "records": 43,
+      "sha256": "d6d50ef5064c6092171d35bdbb2a64fe43adb6d29cb5f986e60451bdb8fda8c9"
     },
     {
       "path": "strange_internet.csv",
