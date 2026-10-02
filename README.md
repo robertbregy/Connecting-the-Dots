@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.6.3
+# Connecting the Dots — v0.6.4
 
 **Connecting the Dots** is a multilingual, static research publication about the history, governance, geography and social meaning of top-level domains, with the 2026 ICANN round and the `.lugano` application as the contemporary layer.
 
@@ -6,9 +6,9 @@
 
 Independent research project by **Robert Bregy**. It does not represent an official position of the City of Lugano.
 
-## v0.6.3 responsive navigation
+## v0.6.4 overview-specific KPIs
 
-On screens up to 980 px, the four overview KPI cards are now shown only on **Panoramica / Overview**. Switching to another section therefore reveals that section immediately instead of leaving the same KPI block in the viewport. User-initiated navigation also scrolls the selected section into view with a short, reduced-motion-aware transition. Desktop behaviour above 980 px is unchanged.
+The four headline KPI cards are now structurally part of **Panoramica / Overview** rather than a persistent block above every section. They therefore disappear whenever another section is selected on desktop, tablet and mobile. The responsive navigation feedback introduced in v0.6.3 remains in place: user-initiated navigation scrolls the selected section into view with a short, reduced-motion-aware transition.
 
 ## Publication model
 
