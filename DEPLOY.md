@@ -10,7 +10,7 @@ URL pubblico: https://robertbregy.github.io/Connecting-the-Dots/
 2. Apri il repository `robertbregy/Connecting-the-Dots` su GitHub.
 3. Entra nella root del repository e scegli **Add file → Upload files**.
 4. Trascina **il contenuto** della cartella estratta, non la cartella esterna che la contiene. Devono quindi arrivare in root `index.html`, `README.md`, `assets/`, `data/`, `downloads/`, ecc.
-5. Verifica l'elenco dei file modificati e crea un commit con un messaggio come `Update Connecting the Dots to v0.6.4`.
+5. Verifica l'elenco dei file modificati e crea un commit con un messaggio come `Update Connecting the Dots to v0.6.5`.
 6. GitHub Pages ridistribuirà automaticamente il sito dal branch configurato.
 
 Nota: l'upload web sostituisce i file con lo stesso percorso, ma non elimina automaticamente eventuali file obsoleti che non sono presenti nel nuovo pacchetto. Questa release non richiede la rimozione di file esistenti.
@@ -21,7 +21,7 @@ Se il repository è già clonato localmente, copia il contenuto della nuova rele
 
 ```bash
 git add -A
-git commit -m "Update Connecting the Dots to v0.6.4"
+git commit -m "Update Connecting the Dots to v0.6.5"
 git push origin main
 ```
 
@@ -39,7 +39,7 @@ Dalla pagina principale del repository, usa l'icona a forma di ingranaggio accan
 
 ## Apertura locale
 
-`index.html` è self-contained per la presentazione e può essere aperto direttamente nel browser. Per testare anche i percorsi HTTP, dalla cartella del progetto:
+`index.html` usa asset esterni e va testato via HTTP locale. Dalla cartella del progetto:
 
 ```bash
 python3 -m http.server 8000

@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.6.4
+# Connecting the Dots — v0.6.5
 
 **Connecting the Dots** is a multilingual, static research publication about the history, governance, geography and social meaning of top-level domains, with the 2026 ICANN round and the `.lugano` application as the contemporary layer.
 
@@ -36,7 +36,7 @@ Applicant geography maps the public primary business location of applying organi
 
 ## Data pack
 
-The public download is a single ZIP containing the workbook, application-level and aggregate 2026 data scaffolds, supporting CSV datasets, sources and methodology material. The pack also contains a licensing notice clarifying the distinction between original project material and third-party source data.
+The public download is a single ZIP containing the workbook, application-level and aggregate 2026 data scaffolds, supporting CSV datasets, sources and methodology material. Before Reveal Day, `applications_2026.csv` is deliberately header-only: there is no synthetic placeholder record that could be mistaken for an observation. `data/manifest.json` records the snapshot state, record counts and SHA-256 hashes. The pack also contains a licensing notice clarifying the distinction between original project material and third-party source data.
 
 ## Metadata and discovery
 
@@ -50,7 +50,7 @@ python3 -m http.server 8000
 
 Open `http://127.0.0.1:8000/`.
 
-`index.html` is also self-contained for presentation and can be opened directly in a browser.
+`index.html` is the lightweight web build: CSS, JavaScript, data and downloads are external assets so browsers can cache them independently. Run it through a local HTTP server when testing.
 
 ## GitHub Pages
 
@@ -67,3 +67,14 @@ Recommended repository metadata:
 ## Licensing
 
 Code authored for this repository is released under the **MIT License**. Original editorial content, original project visuals and original compilation/schema work are made available under **CC BY 4.0** to the extent applicable. Third-party data, quoted material, trademarks and source material remain subject to their respective rights and source terms. See `LICENSE` and `CONTENT_LICENSE.md`.
+
+## v0.6.5 architecture pass
+
+- Seven top-level navigation choices instead of thirteen flat tabs.
+- Single `DOT_PUBLICATION` state (`pre-reveal`) controls time-sensitive 2026 presentation.
+- Explorer is explicitly labelled as a curated preview and renders results progressively.
+- Browser Back/Forward follows section navigation.
+- Drawer focus management, map labels, localized control labels and native mobile sharing improve accessibility.
+- Web assets and downloads are externalized from `index.html`; `src/index.web.html` is the web-page source of truth and `build.py` recreates the root `index.html`. The historical data/i18n source layers are compiled into `data/data_bundle.js` and `data/i18n_bundle.js`, so the browser loads one effective dataset and one effective translation object rather than a chain of runtime overrides.
+- Long sections expose a local contents bar; the historical timeline labels idea/application/delegation stages explicitly.
+- `build.py` validates local references, key JavaScript syntax and the pre-Reveal application dataset before producing the web entry point.

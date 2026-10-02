@@ -1,0 +1,25 @@
+# Changelog
+
+## v0.6.5 — architecture and UX pass
+
+- Grouped information architecture: 7 top-level navigation choices.
+- Pre-Reveal publication state centralized and future-tense copy corrected.
+- Explorer reframed as preview, capped rendering + “Load more”.
+- Browser history for section changes.
+- Drawer focus trap/return, map accessible names, localized control labels.
+- Native share sheet where supported.
+- Brand returns to Overview.
+- 320 px KPI overflow fixed.
+- Round 2026 placeholders consolidated before Reveal.
+- `.lugano` vision explicitly marked “if delegated”.
+- Light-mode text links use a higher-contrast accent.
+- Dataset structured metadata coverage corrected to 1984–2026.
+- Web build externalizes CSS/JS/data/download assets to reduce monolithic HTML.
+- Long chapters now expose a local section index (How it works, Geography, Methodology).
+- Timeline events carry explicit semantic stage labels (idea, application round, delegation/launch, etc.).
+- Ambiguous evaluative wording and the Geography framing were tightened.
+- Pre-Reveal `applications_2026.csv` is now a header-only schema: no fake placeholder observation.
+- `data/manifest.json` adds SHA-256 hashes, record counts and snapshot metadata.
+- The downloadable data pack includes the corrected 2026 schema and manifest.
+- `build.py` now validates local assets, key JavaScript syntax and the pre-Reveal dataset state.
+- Runtime data and translations are consolidated into generated bundles, eliminating browser-time override chains.
