@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://robertbregy.github.io/Connecting-the-Dots/sitemap.xml
