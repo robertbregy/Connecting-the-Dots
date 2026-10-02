@@ -1,5 +1,13 @@
 # Changelog
-## v0.6.6 — deployment hotfix
+
+## v0.6.7 · 2 October 2026
+
+- Replaced native `<details>` navigation groups with controlled desktop dropdown menus.
+- Restored a single-line primary navigation bar on desktop.
+- Added click, hover, keyboard focus and Escape/outside-click behavior for grouped menus.
+- Preserved the compact mobile section selector and all v0.6.6 hotfix behavior.
+
+# v0.6.6 — deployment hotfix
 
 - Restored a self-contained `index.html` runtime after the v0.6.5 external-bundle deployment proved fragile on GitHub Pages.
 - Inlined CSS, data, translations, map data, publication state and application JavaScript.

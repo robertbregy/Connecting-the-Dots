@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.6.6
+# Connecting the Dots — v0.6.7
 
 **Connecting the Dots** is a multilingual, static research publication about the history, governance, geography and social meaning of top-level domains, with the 2026 ICANN round and the `.lugano` application as the contemporary layer.
 
