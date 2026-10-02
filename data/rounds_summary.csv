@@ -1,0 +1,5 @@
+﻿Round,Applications,Approx unique strings,Geographic,Community,IDN,Delegated / delegation records,Note,Source
+2000,47,,,,,7,Proof-of-concept round,https://archive.icann.org/en/tlds/app-index.htm
+2004,10,9,,,,8,Sponsored TLD round,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
+2012,1930,1400,66,84,116,1241,Delegation total reported by ICANN; not adjusted for later terminations/removals,https://newgtlds.icann.org/en/program-status/statistics
+2026,1616,,,,,,Paid applications proceeding; detailed 2026 fields are populated from the official ICANN public application dataset,https://www.icann.org/en/announcements/details/icann-confirms-number-of-applications-proceeding-in-the-2026-round-22-09-2026-en

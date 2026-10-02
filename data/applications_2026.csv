@@ -1,0 +1,2 @@
+﻿application_id,primary_string,replacement_string,applicant_legal_name,direct_parent,ultimate_parent,country_or_territory,icann_region,application_type,is_geographic,is_community,is_brand,is_idn_or_variant,contention_set,public_application_url,source_snapshot,notes
+[official data to load],,,,,,,,,,,,,,,ICANN APS · Reveal Day dataset,Normalized publication schema; placeholder row to be replaced by official public application data.
