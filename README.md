@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.6.5
+# Connecting the Dots — v0.6.6
 
 **Connecting the Dots** is a multilingual, static research publication about the history, governance, geography and social meaning of top-level domains, with the 2026 ICANN round and the `.lugano` application as the contemporary layer.
 
@@ -41,6 +41,11 @@ The public download is a single ZIP containing the workbook, application-level a
 ## Metadata and discovery
 
 The publication includes canonical and `hreflang` metadata, Open Graph/Twitter cards, Schema.org structured data for the article and dataset, `robots.txt` and `sitemap.xml`. Language-specific canonical URLs are updated in the browser without preserving UI-state parameters such as the active tab.
+
+
+## Deployment resilience
+
+`index.html` is again a self-contained runtime artifact. CSS, application data, translations, the map path and JavaScript runtime are embedded in the page, so GitHub Pages does not depend on newly generated bundle files being uploaded in lockstep. External CSV/ZIP files remain available for downloads and reproducibility.
 
 ## Run locally
 

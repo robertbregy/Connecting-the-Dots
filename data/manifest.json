@@ -1,0 +1,136 @@
+{
+  "project": "Connecting the Dots",
+  "version": "0.6.5",
+  "publication_state": "pre-reveal",
+  "as_of": "2026-10-02",
+  "temporal_coverage": "1984/2026",
+  "reveal_day": "2026-10-07T18:00:00Z",
+  "string_confirmation_day": "2026-11-17",
+  "notes": [
+    "Record counts exclude CSV headers.",
+    "applications_2026.csv is intentionally empty before Reveal Day.",
+    "Blank 2026 aggregate values are scaffolding, not observations."
+  ],
+  "files": [
+    {
+      "path": "application_regions_2012.csv",
+      "bytes": 763,
+      "records": 5,
+      "sha256": "e93e51af3a26f2dd3aa08c808102aff13d71d241778c068bb078de1a11bd7f9e"
+    },
+    {
+      "path": "application_regions_2026.csv",
+      "bytes": 1328,
+      "records": 5,
+      "sha256": "a38b9bf555457bca1ebec50fa56d63fe9c60af12793f5109f66439c9e7dc8b23"
+    },
+    {
+      "path": "applications_2026.csv",
+      "bytes": 265,
+      "records": 0,
+      "sha256": "b9628b112c7ca33c43e0c5e80659701d021b894650a80d5a0565b5d5014b6b06"
+    },
+    {
+      "path": "beyond_the_dot.csv",
+      "bytes": 3719,
+      "records": 7,
+      "sha256": "18cc77939982c946aa92f09570d284832139ae0f04cf65991c7dae1647947381"
+    },
+    {
+      "path": "city_timeline.csv",
+      "bytes": 1687,
+      "records": 8,
+      "sha256": "3b9398a8fd18db6e1682c4de0891d51c95a382c60bd1a8fd24a424d4949b205d"
+    },
+    {
+      "path": "contention_2012.csv",
+      "bytes": 127,
+      "records": 11,
+      "sha256": "13ff055d55149bb590a0ac8db2a20782ada6b90efc9068c48c256b3a291f2abf"
+    },
+    {
+      "path": "domain_governance_glossary.csv",
+      "bytes": 2278,
+      "records": 9,
+      "sha256": "3cd0a3e2420c88640dbde19eee1c763671dd76abcfbacf4e923f27c25e527a72"
+    },
+    {
+      "path": "early_dns.csv",
+      "bytes": 667,
+      "records": 2,
+      "sha256": "46a098bf36a207dc718b39fcd92ebbb2a4f89de0f7f3c41644615ddaaa739ea8"
+    },
+    {
+      "path": "explorer_catalog.csv",
+      "bytes": 9035,
+      "records": 68,
+      "sha256": "603cc7c3df137145a54c9b1d3d1963c959b0deb3dfe74de473c7c565cd69f2b6"
+    },
+    {
+      "path": "governance_locations.csv",
+      "bytes": 864,
+      "records": 10,
+      "sha256": "99bbf39a6d9e81632638c8f631a8571cec3767018a9d62afd5193871b0165758"
+    },
+    {
+      "path": "key_facts.csv",
+      "bytes": 1229,
+      "records": 5,
+      "sha256": "8d83525c17efd354bbba42ad65c0552ac7a90c4dea9fde43d327accbd1b2748d"
+    },
+    {
+      "path": "lugano_vision.csv",
+      "bytes": 660,
+      "records": 4,
+      "sha256": "5b41d51a560665aad5b89caecf75fc6b8ce07904e70f7b87c36ef359da104b82"
+    },
+    {
+      "path": "registry_concentration.csv",
+      "bytes": 4243,
+      "records": 13,
+      "sha256": "e9dc29b86cb306936158bab6e5524feb6d6365223966cbce59ec4e4179a79fde"
+    },
+    {
+      "path": "round_2000_curated.csv",
+      "bytes": 2274,
+      "records": 15,
+      "sha256": "658e9351d447288c22b76f549487b79639755a72027af1a78f5c4a2dff8b0126"
+    },
+    {
+      "path": "round_2004.csv",
+      "bytes": 1905,
+      "records": 10,
+      "sha256": "b945b04295974b0eeb56be3abc95a36887741a52f0cc85af61eee7c8dfd97cb1"
+    },
+    {
+      "path": "round_2026.csv",
+      "bytes": 2013,
+      "records": 10,
+      "sha256": "407eb834218d5a278c152bbce4c6b5e82769602bf481f58b97fba779eacbd39d"
+    },
+    {
+      "path": "rounds_summary.csv",
+      "bytes": 792,
+      "records": 4,
+      "sha256": "11c9089a20a593a6195d1c8de54cb3aea3cdc32195ffbc3547865d258185e09b"
+    },
+    {
+      "path": "rsp_geography_aug_2026.csv",
+      "bytes": 199,
+      "records": 5,
+      "sha256": "046e8d347f7b33f1b79d0ca066f80decce9f1fef71d448037165eabc81a4245d"
+    },
+    {
+      "path": "sources.csv",
+      "bytes": 4856,
+      "records": 42,
+      "sha256": "d7f2e11f11d5417039ecd66c340e67e6dc065cb9ef4910a05192e3fa6e79a39f"
+    },
+    {
+      "path": "strange_internet.csv",
+      "bytes": 10414,
+      "records": 24,
+      "sha256": "061edfac51d058425a81844c28085b46314527c2acf8ff391367fd9948bd938f"
+    }
+  ]
+}

@@ -1,4 +1,12 @@
 # Changelog
+## v0.6.6 — deployment hotfix
+
+- Restored a self-contained `index.html` runtime after the v0.6.5 external-bundle deployment proved fragile on GitHub Pages.
+- Inlined CSS, data, translations, map data, publication state and application JavaScript.
+- Embedded the visual logo used by the page.
+- Preserved the v0.6.5 information architecture, navigation, accessibility and Explorer improvements.
+- Kept CSV/ZIP research assets external for download and reproducibility.
+
 
 ## v0.6.5 — architecture and UX pass
 
