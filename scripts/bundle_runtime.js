@@ -22,7 +22,7 @@ function writeCsv(rel, headers, rows){
 }
 
 global.window = {};
-for(const f of ['data/data.js','data/extra.js','data/v05.js','data/v060.js','data/v061.js','data/v068.js']) load(f);
+for(const f of ['data/data.js','data/extra.js','data/v05.js','data/v060.js','data/v061.js','data/v068.js','data/v0610.js','data/v0611.js','data/v070.js','data/v071.js']) load(f);
 write('data/data_bundle.js','DOT_DATA',window.DOT_DATA);
 
 const catalogHeaders=['string','round','status','type','entity','group','geography','themes','contention_count','strange','city','placeholder','provenance','sources'];
@@ -35,9 +35,28 @@ for(const r of (window.DOT_DATA.explorer||[])){for(const e of (r.events||[])){ev
 writeCsv('data/explorer_events.csv',eventHeaders,eventRows);
 const sourceHeaders=['label','url','role'];
 writeCsv('data/sources.csv',sourceHeaders,(window.DOT_DATA.sources||[]).map(s=>({label:s[0]||'',url:s[1]||'',role:s[2]||''})));
+const driftHeaders=['string','formal_type','formal_origin','adopted_association','category','sources'];
+writeCsv('data/semantic_drift.csv',driftHeaders,(window.DOT_DATA.semanticDrift||[]).map(r=>({string:r.string||'',formal_type:r.formalType||'',formal_origin:r.formalOrigin||'',adopted_association:r.adoptedAssociation||'',category:r.category||'',sources:r.sources||[]})));
+const oddHeaders=['family','string','status','themes','fact_key','reading_key','sources'];
+const oddRows=[];for(const g of (window.DOT_DATA.dnsOddities||[])){for(const r of (g.cases||[])){oddRows.push({family:g.id||'',string:r.string||'',status:r.status||'',themes:r.themes||[],fact_key:r.factKey||'',reading_key:r.readingKey||'',sources:r.sources||[]})}}
+writeCsv('data/dns_oddities.csv',oddHeaders,oddRows);
+
+const dimensionHeaders=['id','label','description'];
+writeCsv('data/namespace_dimensions.csv',dimensionHeaders,(window.DOT_DATA.namespaceDimensions||[]).map(r=>({id:r.id||'',label:r.label||'',description:r.description||''})));
+const capHeaders=['id','code','label','description','sources'];
+writeCsv('data/dns_capabilities.csv',capHeaders,(window.DOT_DATA.dnsCapabilities||[]).map(r=>({id:r.id||'',code:r.code||'',label:r.label||'',description:r.description||'',sources:r.sources||[]})));
+const lifeHeaders=['id','label','description'];
+writeCsv('data/domain_lifecycle.csv',lifeHeaders,(window.DOT_DATA.domainLifecycle||[]).map(r=>({id:r.id||'',label:r.label||'',description:r.description||''})));
+const modelHeaders=['axis','id','label','example','description'];
+writeCsv('data/tld_models.csv',modelHeaders,(window.DOT_DATA.tldModels||[]).map(r=>({axis:r.axis||'',id:r.id||'',label:r.label||'',example:r.example||'',description:r.description||''})));
+const successHeaders=['id','label','description'];
+writeCsv('data/success_framework.csv',successHeaders,(window.DOT_DATA.successFramework||[]).map(r=>({id:r.id||'',label:r.label||'',description:r.description||''})));
+const leverHeaders=['id','label','description'];
+writeCsv('data/control_levers.csv',leverHeaders,(window.DOT_DATA.controlLevers||[]).map(r=>({id:r.id||'',label:r.label||'',description:r.description||''})));
+
 
 global.window = {};
-for(const f of ['data/i18n.js','data/i18n_extra.js','data/i18n_v05.js','data/i18n_v058.js','data/i18n_v060.js','data/i18n_v061.js','data/i18n_v062.js','data/i18n_v065.js','data/i18n_v068.js']) load(f);
+for(const f of ['data/i18n.js','data/i18n_extra.js','data/i18n_v05.js','data/i18n_v058.js','data/i18n_v060.js','data/i18n_v061.js','data/i18n_v062.js','data/i18n_v065.js','data/i18n_v068.js','data/i18n_v069.js','data/i18n_v0610.js','data/i18n_v0611.js','data/i18n_v070.js','data/i18n_v071.js']) load(f);
 write('data/i18n_bundle.js','DOT_I18N',window.DOT_I18N);
 
 console.log('Generated data/data_bundle.js and data/i18n_bundle.js');

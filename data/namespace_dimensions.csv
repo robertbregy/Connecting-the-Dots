@@ -1,0 +1,9 @@
+id,label,description
+address,Address,A human-readable identifier that points users and software toward Internet resources.
+contract,Contract,"A registration exists through contractual relationships among registrant, registrar and registry."
+market,Market,"Names can have retail prices, premium pricing, renewals and secondary-market value."
+jurisdiction,Jurisdiction,"Policies, eligibility rules and legal obligations differ across namespaces and operators."
+identity,Identity,"A domain can accumulate reputation and become a persistent identifier for an institution, place or person."
+trust,Trust boundary,"Some namespaces add verification, security requirements or cryptographic validation around names."
+culture,Cultural sign,Communities and language can give a TLD meanings far beyond its formal designation.
+politics,Political object,"Country codes, geographic names and allocation disputes can reflect institutions, borders and public authority."

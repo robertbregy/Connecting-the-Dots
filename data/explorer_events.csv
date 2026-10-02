@@ -1,6 +1,10 @@
 string,period,status,type,entity,geography,current,provenance,sources
+.ai,current,delegated,country-code,,Anguilla,yes,,https://www.iana.org/domains/root/db/ai.html | https://registry.ai/
 .amsterdam,2012,delegated,geographic,Amsterdam,Amsterdam,yes,,https://www.iana.org/domains/root/db
+.an,1993,delegated,country-code,,Netherlands Antilles,no,,https://www.iana.org/reports/2011/cw-report-20111003.html
+.an,2010 → retirement,retired,country-code,,Netherlands Antilles,no,,https://www.iana.org/reports/2011/cw-report-20111003.html
 .app,2012,application,generic,,,yes,,https://newgtlds.icann.org/en/program-status/statistics
+.aq,1992 → current,delegated,country-code,Antarctica Network Information Centre Limited,Antarctica,yes,,https://www.iana.org/domains/root/db/aq.html
 .arpa,legacy,delegated,infrastructure,IANA / PTI,United States,yes,,https://www.iana.org/domains/root/db
 .art,2012,application,generic,,,yes,,https://newgtlds.icann.org/en/program-status/statistics
 .asia,2004,delegated,sponsored,DotAsia Organisation Limited,"Hong Kong, China",yes,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
@@ -13,14 +17,20 @@ string,period,status,type,entity,geography,current,provenance,sources
 .bible,2012,delegated,application,,,yes,,https://www.iana.org/domains/root/db/bible.html
 .blog,2012,application,generic,,,yes,,https://newgtlds.icann.org/en/program-status/statistics
 .book,2012,application,generic,,,yes,,https://newgtlds.icann.org/en/program-status/statistics
+.bv,1997 → current,delegated,country-code,Norid A/S,Bouvet Island,yes,,https://www.iana.org/domains/root/db/bv.html | https://www.norid.no/en/omnorid/toppdomenet-bv/
 .cat,2004,application,sponsored,Fundació puntCAT,Spain / Catalan-speaking community,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
 .cat,2005,delegated,sponsored,Fundació puntCAT,Spain / Catalan-speaking community,yes,,https://46-8.dc.icann.org/reports/2005/cat-report-18nov2005.html
+.co,current,delegated,country-code,,Colombia,yes,,https://www.iana.org/domains/root/db/co.html | https://www.iana.org/reports/2009/co-report-24nov2009.html
 .com,legacy,delegated,generic,Verisign,United States,yes,,https://www.iana.org/domains/root/db
+.cs,2003–2006,notDelegated,country-code,,Serbia and Montenegro,no,,https://www.iana.org/reports/2007/me-report-11sep2007.html
 .dating,2012,delegated,application,,,yes,,https://www.iana.org/domains/root/db/dating.html
 .design,2012,application,generic,,,yes,,https://newgtlds.icann.org/en/program-status/statistics
 .eco,2012,delegated,generic,,,yes,,https://go.eco/policies/eligibility/
 .edu,legacy,delegated,sponsored,,United States,yes,,https://www.iana.org/domains/root/db
+.eu,2005 → current,delegated,country-code,EURid vzw,European Union,yes,,https://www.iana.org/domains/root/db/eu.html | https://www.iana.org/help/eligible-tlds
 .fail,2012,delegated,application,,,yes,,https://www.iana.org/domains/root/db/fail.html
+.fm,current,delegated,country-code,,Micronesia (Federated States of),yes,,https://www.iana.org/domains/root/db/fm.html | https://dot.fm/registrar/
+.gb,1985 → current,reserved,country-code,Reserved Domain - IANA,United Kingdom,yes,,https://www.iana.org/domains/root/db/gb.html | https://www.iana.org/help/eligible-tlds
 .geo,2000,evaluated,application,,,yes,,https://archive.icann.org/en/tlds/
 .gop,2012,delegated,application,,,yes,,https://www.iana.org/domains/root/db/gop.html
 .gov,legacy,delegated,sponsored,CISA,United States,yes,,https://www.iana.org/domains/root/db | https://get.gov/domains/eligibility/
@@ -31,6 +41,7 @@ string,period,status,type,entity,geography,current,provenance,sources
 .inc,2012,application,generic,,,yes,,https://newgtlds.icann.org/en/program-status/statistics
 .insurance,2012,delegated,generic,,,yes,,https://ftld.com/security/
 .int,legacy,delegated,sponsored,IANA / PTI,,yes,,https://www.iana.org/domains/root/db
+.io,current,delegated,country-code,,British Indian Ocean Territory,yes,,https://www.iana.org/domains/root/db/io.html | https://www.nic.io/
 .jobs,2004,delegated,sponsored,Society for Human Resource Management,United States,yes,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
 .kids,2000,evaluated,application,,,yes,,https://archive.icann.org/en/tlds/kids1/ | https://archive.icann.org/en/tlds/kids2/ | https://archive.icann.org/en/tlds/kids3/ | https://archive.icann.org/en/tlds/kids4/ | https://archive.icann.org/en/tlds/
 .koeln,2012,delegated,geographic,Cologne,Cologne,yes,,https://www.iana.org/domains/root/db
@@ -40,6 +51,7 @@ string,period,status,type,entity,geography,current,provenance,sources
 .lugano,2026,application,geographic,City of Lugano,Switzerland,yes,applicantDisclosure · 2026-10-02,
 .magic,2000,proposed,application,,,yes,,https://archive.icann.org/en/tlds/ads1/
 .mail,2004,notDelegated,sponsored,Anti-Spam Community Registry,United Kingdom,yes,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
+.me,current,delegated,country-code,,Montenegro,yes,,https://www.iana.org/domains/root/db/me.html | https://domain.me/about-me/
 .mil,legacy,delegated,sponsored,,United States,yes,,https://www.iana.org/domains/root/db
 .mobi,2004,delegated,sponsored,Mobi JV,Finland,yes,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
 .movie,2012,application,generic,,,yes,,https://newgtlds.icann.org/en/program-status/statistics
@@ -60,7 +72,9 @@ string,period,status,type,entity,geography,current,provenance,sources
 .quebec,2012,delegated,geographic,Quebec,Quebec,yes,,https://www.iana.org/domains/root/db
 .rich,2012,delegated,application,,,yes,,https://www.iana.org/domains/root/db/rich.html
 .shop,2012,application,generic,,,yes,,https://newgtlds.icann.org/en/program-status/statistics
+.sj,1997 → current,delegated,country-code,Norid A/S,Svalbard and Jan Mayen,yes,,https://www.iana.org/domains/root/db/sj.html | https://www.norid.no/en/omnorid/toppdomenet-sj/
 .soup,2000,proposed,application,,,yes,,https://archive.icann.org/en/tlds/ads1/
+.su,1990 → current,delegated,country-code,Russian Institute for Development of Public Networks (ROSNIIROS),Former Soviet Union (legacy code),yes,,https://www.iana.org/domains/root/db/su.html
 .sucks,2000,proposed,application,,,no,,https://archive.icann.org/en/tlds/ads1/
 .sucks,2012,application,generic,,,no,,https://newgtlds.icann.org/en/program-status/statistics
 .sucks,current,delegated,generic,,,yes,,https://www.iana.org/domains/root/db/sucks.html
@@ -68,7 +82,11 @@ string,period,status,type,entity,geography,current,provenance,sources
 .tel,2004,application,sponsored,Telname Limited,United Kingdom,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
 .tel,2004,delegated,sponsored,Telnic Limited,United Kingdom,yes,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
 .tokyo,2012,delegated,geographic,Tokyo,Tokyo,yes,,https://www.iana.org/domains/root/db
+.tp,1997,delegated,country-code,,Portuguese Timor,no,,https://www.iana.org/reports/2015/tp-report-20150126.html
+.tp,2015,retired,country-code,,Portuguese Timor,no,,https://www.iana.org/reports/2015/tp-report-20150126.html
 .travel,2004,delegated,sponsored,The Travel Partnership Corporation,United States,yes,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
+.tv,current,delegated,country-code,,Tuvalu,yes,,https://www.iana.org/domains/root/db/tv.html | https://www.turnon.tv/
+.uk,1985 → current,delegated,country-code,Nominet UK,United Kingdom,yes,,https://www.iana.org/domains/root/db/uk.html | https://www.iana.org/help/eligible-tlds
 .union,2000,evaluated,application,,,yes,,https://archive.icann.org/en/tlds/union1/ | https://archive.icann.org/en/tlds/
 .wap,2000,returned,application,,,yes,,https://archive.icann.org/en/tlds/
 .war,2000,proposed,application,,,yes,,https://archive.icann.org/en/tlds/ads1/
@@ -76,4 +94,8 @@ string,period,status,type,entity,geography,current,provenance,sources
 .wtf,2012,delegated,application,,,yes,,https://www.iana.org/domains/root/db/wtf.html
 .xxx,2004,application,sponsored,ICM Registry,Canada / United States,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
 .xxx,2011,delegated,sponsored,ICM Registry,Canada / United States,yes,,https://www.iana.org/domains/root/db/xxx.html
+.yu,1989,delegated,country-code,,Yugoslavia,no,,https://www.iana.org/reports/2010/yu-report-01apr2010.html
+.yu,2010,retired,country-code,,Yugoslavia,no,,https://www.iana.org/reports/2010/yu-report-01apr2010.html
 .zuerich,2012,delegated,geographic,Canton of Zurich,Canton of Zurich,yes,,https://www.iana.org/domains/root/db
+.ευ,2019 → current,delegated,country-code,EURid vzw,European Union,yes,,https://www.iana.org/reports/2019/xn--qxa6a-report-20190822.html
+.ею,2016 → current,delegated,country-code,EURid vzw,European Union,yes,,https://www.iana.org/reports/2016/eu-report-20160118.html

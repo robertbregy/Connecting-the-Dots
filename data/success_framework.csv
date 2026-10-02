@@ -1,0 +1,8 @@
+id,label,description
+scale,Scale,"How many names are registered, and how quickly the namespace grows or contracts."
+use,Active use,"Whether registered names resolve to real services, websites, email or machine-readable endpoints."
+renewal,Renewal,Whether registrants keep names over time rather than treating the namespace as disposable inventory.
+trust,Trust and abuse,"Security controls, abuse rates, verification requirements and the credibility attached to the namespace."
+diversity,Diversity,"How registrations are distributed across registrants, registrars, sectors and geographies."
+purpose,Purpose fulfilment,"Whether the namespace achieves the mission for which it exists, even if raw registration volume is modest."
+civic,Public value,"For civic namespaces: local adoption, verified actors, useful services, interoperability and measurable public value."

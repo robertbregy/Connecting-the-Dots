@@ -1,0 +1,8 @@
+id,label,description
+available,Available,The name is not currently registered and may be eligible under the registry policy.
+registered,Registered,A registrant enters a registration agreement through a registrar; the registry records the name.
+renewed,Renewal loop,The registration can be renewed for another term under the applicable agreement and policies.
+expired,Expired,"If the registration term ends, post-expiration rules apply; renewal or restoration may still be possible depending on policy and timing."
+redemption,Redemption period,"If an applicable gTLD registration is deleted by the registrar, it enters a 30-day redemptionPeriod during which restoration may be possible."
+pendingDelete,PendingDelete,"If it is not restored during redemptionPeriod, the name enters pendingDelete for five days and cannot be restored."
+availableAgain,Available again,"After purge from the registry database, the name may become available for registration again under the registry policy."

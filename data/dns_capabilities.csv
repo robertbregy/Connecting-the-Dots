@@ -1,0 +1,7 @@
+id,code,label,description,sources
+routing,MX,Mail routing,MX records direct email toward mail servers for a domain.,https://www.rfc-editor.org/rfc/rfc5321
+auth,SPF · DKIM · DMARC,Email authentication,DNS-published policies and keys help receivers evaluate whether mail is authorized and authenticated.,https://www.rfc-editor.org/rfc/rfc7208 | https://www.rfc-editor.org/rfc/rfc6376 | https://www.rfc-editor.org/rfc/rfc7489
+cert,CAA,Certificate authorization,CAA records let a domain indicate which certificate authorities may issue certificates for it.,https://www.rfc-editor.org/rfc/rfc8659
+integrity,DNSSEC,Integrity and origin authentication,DNSSEC adds cryptographic signatures that allow resolvers to validate DNS data and a chain of trust.,https://www.icann.org/resources/pages/dnssec-2012-02-25-en
+services,SRV,Service discovery,SRV records can advertise the hostname and port of services associated with a domain.,https://www.rfc-editor.org/rfc/rfc2782
+https,SVCB · HTTPS,Connection hints,SVCB and HTTPS records can publish service endpoints and connection parameters before an application connects.,https://www.rfc-editor.org/rfc/rfc9460

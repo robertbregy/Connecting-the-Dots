@@ -1,0 +1,12 @@
+axis,id,label,example,description
+application,general,General application,,A 2026 application that does not fall into a specialized application type.
+application,geographic,Geographic Name application,,A specialized application for a string that meets the 2026 geographic-name criteria and applicable support or non-objection requirements.
+application,reserved,Reserved Name application,,A specialized application involving a name reserved under the 2026 Applicant Guidebook rules.
+application,community,Community Application,,A specialized application linked to a clearly delineated community and the additional commitments required for that designation.
+application,brand,.Brand TLD application,,A specialized application for an eligible string tied to a registered trademark and its qualifying operator.
+application,idn,IDN application,,An application for a TLD string represented in a script supported through the Internationalized Domain Name framework.
+application,variant,Variant string application,,An application involving one or more variant strings evaluated with the primary applied-for string under the 2026 rules.
+application,government,Government / IGO application,,An application submitted by a government or intergovernmental organization and treated as a specialized application.
+application,support,Applicant Support,,An application from an applicant qualifying for assistance through the Applicant Support Program is treated as specialized.
+access,open,Open registration,.com,A namespace broadly open to eligible registrants under its registry and registrar rules.
+access,verified,Restricted / verified,.bank,A namespace where eligibility is verified and registration is limited under additional registry policies.

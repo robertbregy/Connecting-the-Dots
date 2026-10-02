@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.6.8"
+VERSION = "0.7.1"
 
 
 def csv_records(path: Path) -> int:
@@ -60,6 +60,7 @@ def build_manifest() -> None:
             "applications_2026.csv is intentionally empty before Reveal Day.",
             "explorer_catalog.csv is the latest indexed record view; explorer_events.csv keeps separate historical events for multi-era strings.",
             ".lugano is marked as an applicant disclosure until ICANN publishes the individual application record at Reveal Day.",
+            "dns_oddities.csv distinguishes active legacy, retired, reserved and never-delegated country-code cases.",
             "Blank 2026 aggregate values are scaffolding, not observations.",
         ],
         "files": files,
@@ -68,6 +69,25 @@ def build_manifest() -> None:
 
 
 def build_data_pack() -> None:
+    # Semantic-drift data should stay grounded in formal ccTLD status plus documented global reinterpretation.
+    with (DATA / "semantic_drift.csv").open(encoding="utf-8-sig", newline="") as fh:
+        drift_rows = list(csv.DictReader(fh))
+    if len(drift_rows) < 6 or {r["string"] for r in drift_rows} != {".io", ".ai", ".tv", ".me", ".co", ".fm"}:
+        raise SystemExit("Semantic-drift dataset is incomplete")
+    if any(r["formal_type"] != "country-code" for r in drift_rows):
+        raise SystemExit("Semantic-drift cases must remain formally identified as ccTLDs")
+
+    with (DATA / "dns_oddities.csv").open(encoding="utf-8-sig", newline="") as fh:
+        odd_rows = list(csv.DictReader(fh))
+    odd_strings = {r["string"] for r in odd_rows}
+    required_oddities = {".su", ".yu", ".an", ".tp", ".cs", ".gb / .uk", ".aq", ".bv", ".sj", ".eu", ".ею / .ευ"}
+    if not required_oddities.issubset(odd_strings):
+        raise SystemExit("Institutional DNS oddities dataset is incomplete")
+
+    pub = (DATA / "publication.js").read_text(encoding="utf-8")
+    if f"version:'{VERSION}'" not in pub:
+        raise SystemExit("Publication version does not match build VERSION")
+
     pack = ROOT / "downloads" / "connecting-the-dots-data-pack.zip"
     pack.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(pack, "w", zipfile.ZIP_DEFLATED) as zf:
@@ -133,7 +153,7 @@ def validate_index() -> None:
     if csv_records(DATA / "applications_2026.csv") != 0:
         raise SystemExit("Pre-Reveal build must not contain synthetic 2026 application records")
 
-    for js in [ROOT / "assets" / "app.js", DATA / "data_bundle.js", DATA / "i18n_bundle.js", DATA / "publication.js", DATA / "v068.js", DATA / "i18n_v068.js"]:
+    for js in [ROOT / "assets" / "app.js", DATA / "data_bundle.js", DATA / "i18n_bundle.js", DATA / "publication.js", DATA / "v068.js", DATA / "i18n_v068.js", DATA / "i18n_v069.js", DATA / "i18n_v0610.js", DATA / "v0610.js", DATA / "i18n_v0611.js", DATA / "v0611.js", DATA / "i18n_v070.js", DATA / "v070.js", DATA / "i18n_v071.js", DATA / "v071.js"]:
         try:
             subprocess.run(["node", "--check", str(js)], check=True, capture_output=True, text=True)
         except FileNotFoundError:
@@ -154,6 +174,40 @@ def validate_index() -> None:
     nyc_periods = {r["period"] for r in events if r["string"] == ".nyc"}
     if not {"2000", "2012", "2014"}.issubset(nyc_periods):
         raise SystemExit(".nyc event history is incomplete")
+
+    # Semantic-drift data should stay grounded in formal ccTLD status plus documented global reinterpretation.
+    with (DATA / "semantic_drift.csv").open(encoding="utf-8-sig", newline="") as fh:
+        drift_rows = list(csv.DictReader(fh))
+    if len(drift_rows) < 6 or {r["string"] for r in drift_rows} != {".io", ".ai", ".tv", ".me", ".co", ".fm"}:
+        raise SystemExit("Semantic-drift dataset is incomplete")
+    if any(r["formal_type"] != "country-code" for r in drift_rows):
+        raise SystemExit("Semantic-drift cases must remain formally identified as ccTLDs")
+
+    expected_v071 = {
+        "namespace_dimensions.csv": 8,
+        "dns_capabilities.csv": 6,
+        "domain_lifecycle.csv": 7,
+        "tld_models.csv": 11,
+        "success_framework.csv": 7,
+        "control_levers.csv": 6,
+    }
+    for name, minimum in expected_v071.items():
+        path = DATA / name
+        if not path.exists() or csv_records(path) < minimum:
+            raise SystemExit(f"v0.7.1 dataset missing or incomplete: {name}")
+    with (DATA / "tld_models.csv").open(encoding="utf-8-sig", newline="") as fh:
+        models = list(csv.DictReader(fh))
+    app_ids = {r["id"] for r in models if r["axis"] == "application"}
+    required_apps = {"general","geographic","reserved","community","brand","idn","variant","government","support"}
+    if not required_apps.issubset(app_ids):
+        raise SystemExit("2026 application-type model is incomplete")
+    forbidden_examples = {".cat", ".中国 / .السعودية", ".berlin / .lugano", ".google"}
+    if any(r["example"] in forbidden_examples for r in models if r["axis"] == "application"):
+        raise SystemExit("Historical/delegated TLDs must not be presented as 2026 application examples")
+    with (DATA / "domain_lifecycle.csv").open(encoding="utf-8-sig", newline="") as fh:
+        lifecycle = {r["id"] for r in csv.DictReader(fh)}
+    if not {"redemption","pendingDelete","availableAgain"}.issubset(lifecycle):
+        raise SystemExit("Lifecycle must distinguish redemptionPeriod, pendingDelete and availability")
 
     pack = ROOT / "downloads" / "connecting-the-dots-data-pack.zip"
     with zipfile.ZipFile(pack) as zf:

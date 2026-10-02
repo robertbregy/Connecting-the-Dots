@@ -1,6 +1,6 @@
-/* v0.6.8: single publication state */
+/* v0.7.1: single publication state */
 window.DOT_PUBLICATION={
-  version:'0.6.8',
+  version:'0.7.1',
   state:'pre-reveal',
   asOf:'2026-10-02',
   revealAt:'2026-10-07T18:00:00Z',

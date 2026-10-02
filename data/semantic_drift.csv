@@ -1,0 +1,7 @@
+string,formal_type,formal_origin,adopted_association,category,sources
+.io,country-code,British Indian Ocean Territory,input/output; technology & startups,technology,https://www.iana.org/domains/root/db/io.html | https://www.nic.io/
+.ai,country-code,Anguilla,artificial intelligence,technology,https://www.iana.org/domains/root/db/ai.html | https://registry.ai/
+.tv,country-code,Tuvalu,"television, video & creators",media,https://www.iana.org/domains/root/db/tv.html | https://www.turnon.tv/
+.me,country-code,Montenegro,personal identity & personal branding,identity,https://www.iana.org/domains/root/db/me.html | https://domain.me/about-me/
+.co,country-code,Colombia,company / business,business,https://www.iana.org/domains/root/db/co.html | https://www.iana.org/reports/2009/co-report-24nov2009.html
+.fm,country-code,Micronesia (Federated States of),"radio, streaming & audio",media,https://www.iana.org/domains/root/db/fm.html | https://dot.fm/registrar/

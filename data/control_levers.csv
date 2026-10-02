@@ -1,0 +1,7 @@
+id,label,description
+hosting,Hosting provider,Can remove or disable hosted content or infrastructure it controls.
+dns,DNS provider,Can stop serving authoritative DNS or change resolution for zones it operates.
+registrar,Registrar,Maintains the registrant relationship and submits registration changes to the registry.
+registry,Registry operator,"Maintains the TLD registry and can add, modify or delete registrations through the registry system under applicable rules."
+browser,Browser / security layer,"Can warn, block or distrust destinations independently of the domain registration itself."
+icann,ICANN,Coordinates policies and contracts for gTLDs but is not a general-purpose content regulator or Internet police force.

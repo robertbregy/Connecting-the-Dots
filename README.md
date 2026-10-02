@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.6.8
+# Connecting the Dots — v0.7.1
 
 **Connecting the Dots** is a multilingual, static research publication about the history, governance, geography and social meaning of top-level domains, with the 2026 ICANN round and the `.lugano` application as the contemporary layer.
 
@@ -18,7 +18,7 @@ The 2026 layer is designed to hold applications, unique strings, applicant organ
 
 The search experience lives in a dedicated **Explore** section. The publication target is a navigable corpus spanning the active IANA root plus the 2000, 2004, 2012 and 2026 application rounds.
 
-v0.6.8 separates two concepts that must not be conflated:
+The Explorer separates two concepts that must not be conflated:
 
 - `explorer_catalog.csv` is the **latest indexed view** for each string.
 - `explorer_events.csv` is the **event history** for strings that appeared in multiple rounds or moved through materially different states.
@@ -97,7 +97,34 @@ Recommended repository metadata:
 
 Code authored for this repository is released under the **MIT License**. Original editorial content, original project visuals and original compilation/schema work are made available under **CC BY 4.0** to the extent applicable. Third-party data, quoted material, trademarks and source material remain subject to their respective rights and source terms. See `LICENSE` and `CONTENT_LICENSE.md`.
 
-## v0.6.8 precision pass
+
+## v0.7.1 · pre-publication factual hardening
+
+v0.7.1 is a corrective pre-publication pass over the v0.7.0 framework. It keeps the information architecture unchanged and tightens factual classification, lifecycle modelling, root-zone roles, registrar scope, provenance and current economic data.
+
+- **Overview — What is a dot?** Eight dimensions connect the same label to address, contract, market, jurisdiction, identity, trust boundary, cultural sign and political object.
+- **How it works — lifecycle, economics and control.** The registration lifecycle now distinguishes expiration from deletion, shows the renewal loop, the 30-day redemptionPeriod triggered by deletion for applicable gTLDs, the subsequent five-day pendingDelete state, and eventual re-availability. The roles of PTI/IANA and Verisign are separated as Root Zone Manager and Root Zone Maintainer, and ICANN registrar accreditation is explicitly scoped to gTLDs.
+- **Beyond the domain — the invisible DNS.** MX, SPF/DKIM/DMARC, CAA, DNSSEC, SRV and SVCB/HTTPS show that DNS already carries routing, discovery, authentication and trust-related functions beyond simple web naming. The chapter also adds IDNs / Universal Acceptance and distinguishes the public DNS root from special-use names and alternative naming systems.
+- **Geography — a digital natural resource.** `.ai` is used as a documented case of a country-code namespace whose global semantic value can become economically significant for a small territory. The displayed EC$253.6 million figure is the Government of Anguilla **2026 budget estimate for Domain Name Registration**, not realized revenue.
+- **Application models — no historical TLDs masquerading as 2026 examples.** The 2026 model now follows ICANN’s application designations directly: General, Geographic Name, Reserved Name, Community, .Brand, IDN, Variant string, Government/IGO and Applicant Support. Historical TLD examples remain in their historical chapters.
+- **Contention — who gets to control a word?** Closed generic strings are introduced as a separate public-interest governance question rather than being folded into ordinary contention.
+- **Methodology — what makes a TLD successful?** A seven-dimension framework avoids reducing success to registration volume alone: scale, active use, renewal, trust/abuse, diversity, purpose fulfilment and public value.
+
+New reusable datasets are exported in `data/namespace_dimensions.csv`, `data/dns_capabilities.csv`, `data/domain_lifecycle.csv`, `data/tld_models.csv`, `data/control_levers.csv` and `data/success_framework.csv`.
+
+## v0.6.11 institutional-DNS archaeology
+
+**Strange Internet** now adds a second layer beyond semantic drift: institutional and geopolitical anomalies preserved by the DNS. The new `data/dns_oddities.csv` covers active legacy codes, retired ccTLDs, a country code that was never delegated, the `.gb` / `.uk` historical exception, unusual territories such as Antarctica / Bouvet / Svalbard & Jan Mayen, and the European Union across Latin, Cyrillic and Greek top-level forms.
+
+These cases are also surfaced in the Namespace Explorer with explicit historical status and event context.
+
+## v0.6.10 semantic-drift pass
+
+The **Strange Internet** section now includes a documented semantic-drift layer for country-code TLDs whose formal geographic designation remained unchanged while global usage attached a second cultural meaning. The initial set covers `.io`, `.ai`, `.tv`, `.me`, `.co` and `.fm`.
+
+The section keeps the distinction explicit: **formal status is a FACT; the broader cultural meaning is documented through registry positioning and interpreted as READING**. The same cases are exported in `data/semantic_drift.csv` and surfaced in the Namespace Explorer without changing their formal `country-code` type.
+
+## v0.6.9 precision pass
 
 - Explorer now distinguishes the latest indexed state from historical events for the same string.
 - `.cat` and `.post` are restored to the 2004 sponsored round in the latest indexed view; `.nyc` retains its distinct 2000, 2012 and 2014 events.

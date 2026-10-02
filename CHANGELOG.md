@@ -1,5 +1,51 @@
 # Changelog
 
+## 0.7.1 · 2 October 2026
+
+- Corrected the 2026 application-type model to follow ICANN terminology directly: General, Geographic Name, Reserved Name, Community, .Brand, IDN, Variant string, Government/IGO and Applicant Support. Historical TLDs are no longer displayed as if they were 2026 examples.
+- Rebuilt the domain lifecycle so expiration is not shown as automatic deletion: renewal remains a loop; registrar deletion of applicable gTLD registrations leads to a 30-day redemptionPeriod, followed by five days of pendingDelete before purge and possible re-registration.
+- Separated PTI/IANA as **Root Zone Manager** from Verisign as **Root Zone Maintainer**, using IANA's published role definitions.
+- Scoped ICANN registrar accreditation explicitly to gTLDs and noted that ccTLDs use their own registry/registrar models.
+- Updated the Anguilla `.ai` case from the 2025 projection to the Government's 2026 **EC$253.6 million Domain Name Registration budget estimate**, still labelled as an estimate rather than realized revenue.
+- Changed the pre-Reveal `.lugano` city-timeline label from application to **applicant disclosure**.
+- Added a direct ICANN source beside the control-levers panel for the statement that ICANN does not control Internet content or act as a general website-takedown authority.
+- Tightened CAA wording to describe publication of authorized certificate authorities.
+- Localized the city-TLD timeline accessibility label.
+- Added build validation for release-version consistency, complete 2026 application-type coverage and lifecycle state separation.
+
+## 0.7.0 · 2 October 2026
+
+- Added **What is a dot?**, an eight-dimension conceptual map spanning address, contract, market, jurisdiction, identity, trust, culture and politics.
+- Expanded **How it works** with domain-registration lifecycle, economics/value flow, application/access models and a layer-by-layer control-lever map.
+- Expanded **Beyond the domain** with invisible DNS functions, IDNs / Universal Acceptance, special-use names and alternative naming systems.
+- Added `.ai` as a **digital natural resource** case, with Anguilla's EC$132 million 2025 `.ai` revenue figure clearly labelled as an official budget projection.
+- Added a **closed generics** public-interest case to the contention chapter.
+- Added a seven-dimension **TLD success framework** to Methodology so success is not reduced to registration volume.
+- Added six reusable CSV datasets: `namespace_dimensions.csv`, `dns_capabilities.csv`, `domain_lifecycle.csv`, `tld_models.csv`, `control_levers.csv`, and `success_framework.csv`.
+- Extended source documentation with ICANN/IANA, RFC, Anguilla Government, .BANK, ENS and Handshake primary sources.
+- Preserved the existing top-level navigation; new material is integrated into current chapters rather than adding menu clutter.
+
+## 0.6.11 · 2 October 2026
+
+- Expanded **Strange Internet** from semantic drift into institutional DNS archaeology.
+- Added five anomaly families: geopolitical ghosts, never-delegated codes, historical exceptions, unusual territories, and supranational / multi-script ccTLDs.
+- Added `.su`, `.yu`, `.an`, `.tp`, `.cs`, `.gb`, `.uk`, `.aq`, `.bv`, `.sj`, `.eu`, `.ею` and `.ευ` to the curated Explorer corpus with historical status/event context.
+- Added `data/dns_oddities.csv`, primary-source citations and a downloadable dataset card.
+- Added compact section navigation labels for the expanded Strange Internet chapter.
+
+## 0.6.10 — 2026-10-02
+- Added a **semantic drift** chapter inside Strange Internet: ccTLDs that kept their formal geographic meaning while acquiring a second global cultural meaning.
+- Added documented cases for `.io`, `.ai`, `.tv`, `.me`, `.co` and `.fm`, with primary IANA and registry sources.
+- Added `semantic_drift.csv` to the public data pack.
+- Added the same cases to the Namespace Explorer while preserving their formal `country-code` classification.
+- Added a closing READING connecting formal namespace governance with meaning that emerges through real-world use.
+- Added EN/IT/DE/FR copy and responsive card layout for the new section.
+
+## 0.6.9 — 2026-10-02
+- Shortened the in-section navigation labels in **How it works** across EN/IT/DE/FR.
+- Full explanatory section titles remain unchanged in the content.
+- Kept the mobile section navigation horizontally scrollable while preventing labels from wrapping or being clipped internally.
+
 ## v0.6.8 · 2 October 2026
 
 - Introduced an event-history layer for the Namespace Explorer so repeated strings are no longer flattened into one misleading record.

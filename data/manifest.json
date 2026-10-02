@@ -1,6 +1,6 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.6.8",
+  "version": "0.7.1",
   "publication_state": "pre-reveal",
   "as_of": "2026-10-02",
   "temporal_coverage": "1984/2026",
@@ -11,6 +11,7 @@
     "applications_2026.csv is intentionally empty before Reveal Day.",
     "explorer_catalog.csv is the latest indexed record view; explorer_events.csv keeps separate historical events for multi-era strings.",
     ".lugano is marked as an applicant disclosure until ICANN publishes the individual application record at Reveal Day.",
+    "dns_oddities.csv distinguishes active legacy, retired, reserved and never-delegated country-code cases.",
     "Blank 2026 aggregate values are scaffolding, not observations."
   ],
   "files": [
@@ -40,9 +41,9 @@
     },
     {
       "path": "city_timeline.csv",
-      "bytes": 1609,
+      "bytes": 1611,
       "records": 8,
-      "sha256": "af51b34c76afc0b55733c8f330fec13beb56e95835655e94a2ba06a201722a82"
+      "sha256": "d4638780e7398d8c79b2bf093c2feffcf0b1196f108a83dea8ffa9270b37f085"
     },
     {
       "path": "contention_2012.csv",
@@ -51,10 +52,34 @@
       "sha256": "13ff055d55149bb590a0ac8db2a20782ada6b90efc9068c48c256b3a291f2abf"
     },
     {
+      "path": "control_levers.csv",
+      "bytes": 725,
+      "records": 6,
+      "sha256": "a6f05f17e83f2862e55e9704e15a98485c3dd187527c093e39953bb1fef3a932"
+    },
+    {
+      "path": "dns_capabilities.csv",
+      "bytes": 1150,
+      "records": 6,
+      "sha256": "31f86153792bba368edc88487b50bd8849e0932378f5d005a30c73a54f8f4c17"
+    },
+    {
+      "path": "dns_oddities.csv",
+      "bytes": 1818,
+      "records": 11,
+      "sha256": "9c58de30a54cd55c4ff739fcee7e68c553efeeb95c156ad124bab05e2898fa8a"
+    },
+    {
       "path": "domain_governance_glossary.csv",
-      "bytes": 2278,
-      "records": 9,
-      "sha256": "3cd0a3e2420c88640dbde19eee1c763671dd76abcfbacf4e923f27c25e527a72"
+      "bytes": 3151,
+      "records": 10,
+      "sha256": "60ef7cd8e7f048f682d375acbe9610fa3a69de614cf2d1b605e5d0c27969ae94"
+    },
+    {
+      "path": "domain_lifecycle.csv",
+      "bytes": 985,
+      "records": 7,
+      "sha256": "55c3ee5c0516c0b43a99218a79a3cc78d874ef002ee0d1ebcbbcc47f5bbfcc3d"
     },
     {
       "path": "early_dns.csv",
@@ -64,15 +89,15 @@
     },
     {
       "path": "explorer_catalog.csv",
-      "bytes": 9079,
-      "records": 68,
-      "sha256": "ee52a63729b2bb01bbf28b912845f3d646731b1548b7cb2c6dbc56d7674dd81c"
+      "bytes": 12228,
+      "records": 87,
+      "sha256": "ca45687212b0d9850e70ca41ae710bf6c1bb344fd1ad012f7e22129399f7f6b8"
     },
     {
       "path": "explorer_events.csv",
-      "bytes": 8877,
-      "records": 78,
-      "sha256": "379916d7f767bc39df7848fec1f8cb80bbf75d4a88f1448c7d3b1ca3fd6d49d3"
+      "bytes": 11949,
+      "records": 100,
+      "sha256": "46391f4aab8eab5d4c165a566f96f9ff45822645fa6ca441be833e8e5a303544"
     },
     {
       "path": "governance_locations.csv",
@@ -91,6 +116,12 @@
       "bytes": 660,
       "records": 4,
       "sha256": "5b41d51a560665aad5b89caecf75fc6b8ce07904e70f7b87c36ef359da104b82"
+    },
+    {
+      "path": "namespace_dimensions.csv",
+      "bytes": 953,
+      "records": 8,
+      "sha256": "7d32ead09868e049f753d7aa437b1af1c38bf2a81abb10b21dc7b96b4c1d35c9"
     },
     {
       "path": "registry_concentration.csv",
@@ -129,16 +160,34 @@
       "sha256": "046e8d347f7b33f1b79d0ca066f80decce9f1fef71d448037165eabc81a4245d"
     },
     {
+      "path": "semantic_drift.csv",
+      "bytes": 958,
+      "records": 6,
+      "sha256": "7b8a583b6c70b464639e71fddad4428140a2cff247228aaf2978874cdf85e600"
+    },
+    {
       "path": "sources.csv",
-      "bytes": 4597,
-      "records": 43,
-      "sha256": "d6d50ef5064c6092171d35bdbb2a64fe43adb6d29cb5f986e60451bdb8fda8c9"
+      "bytes": 9633,
+      "records": 96,
+      "sha256": "434f3f539f8f143927ffdd0f4bb606a0a5bfe6f0b4b57b3b12471f41c8996e8f"
     },
     {
       "path": "strange_internet.csv",
       "bytes": 10414,
       "records": 24,
       "sha256": "061edfac51d058425a81844c28085b46314527c2acf8ff391367fd9948bd938f"
+    },
+    {
+      "path": "success_framework.csv",
+      "bytes": 865,
+      "records": 7,
+      "sha256": "2085515d5f6bcb4a0ef511f03a574fe8de03b52d211b68cc6ef162a35c1489fb"
+    },
+    {
+      "path": "tld_models.csv",
+      "bytes": 1735,
+      "records": 11,
+      "sha256": "1a7fdbb67b9b503d4d54d23289b21be379362fa22219077bc55e4499b696e8d6"
     }
   ]
 }
