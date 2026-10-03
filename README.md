@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.1
+# Connecting the Dots — v0.7.3
 
 **Connecting the Dots** is a multilingual, static research publication about the history, governance, geography and social meaning of top-level domains, with the 2026 ICANN round and the `.lugano` application as the contemporary layer.
 
@@ -53,15 +53,30 @@ The public download is a ZIP containing the application-level and aggregate 2026
 
 ## Metadata and discovery
 
-The publication includes canonical and `hreflang` metadata, Open Graph/Twitter cards, Schema.org structured data for the article and dataset, `robots.txt` and `sitemap.xml`. Language-specific canonical URLs are updated in the browser without preserving UI-state parameters such as the active tab.
+The publication has four static language entry points:
+
+| Language | Canonical URL |
+| --- | --- |
+| English | https://robertbregy.github.io/Connecting-the-Dots/en/ |
+| Italiano | https://robertbregy.github.io/Connecting-the-Dots/it/ |
+| Deutsch | https://robertbregy.github.io/Connecting-the-Dots/de/ |
+| Français | https://robertbregy.github.io/Connecting-the-Dots/fr/ |
+
+Each page contains its translated editorial text, generated tables, cards and maps before JavaScript runs, plus a self-referencing canonical, reciprocal static `hreflang` annotations, localized Open Graph/Twitter metadata and article structured data. The sitemap lists the four canonical pages and includes the same language alternates; `x-default` points to English.
+
+The root remains an English fallback with canonical `/en/`. Its compatibility script forwards existing root and `?lang=…` links to the corresponding language path while preserving section, search, filters, map and fragment. Language selection navigates to another static page and carries the current view. Explicit language URLs remain stable regardless of browser locale or previously stored preferences.
+
+The site is readable with JavaScript disabled: sections are visible, navigation uses anchor links and language links are ordinary hyperlinks. JavaScript enhances the page with tabs, search, maps, drawers, themes and sharing. The source template is marked `noindex`; generated publication pages are explicitly indexable.
+
+Build-time rendering uses the same application and translation sources as the browser. Each generated page embeds only its own complete translation dictionary. Shared images and downloads resolve to the project root from every language directory.
 
 ## Deployment resilience
 
-The deployed root `index.html` is intentionally a **self-contained runtime artifact**: CSS, application data, translations, the map path, publication state and JavaScript are embedded in the page. This avoids a repeat of the v0.6.5 deployment failure in which GitHub Pages served the shell while generated runtime bundles were not uploaded in lockstep.
+The root alias and each localized `index.html` are **self-contained runtime artifacts**: CSS, application data, translations, the map path, publication state and JavaScript are embedded in the page. This avoids a repeat of the v0.6.5 deployment failure in which GitHub Pages served the shell while generated runtime bundles were not uploaded in lockstep.
 
 The visual logo remains an ordinary external asset (`assets/logo-mark.png`) rather than being embedded repeatedly as base64. CSV and ZIP research assets also remain external for download and reproducibility. A missing image therefore cannot break the publication runtime.
 
-`src/index.web.html` is the HTML source template. `build.py` compiles the runtime sources into the deployable root `index.html` and validates the data state.
+`src/index.web.html` is the HTML source template. `build.py` compiles the runtime sources, prerenders all four languages and the compatible root alias, regenerates the sitemap and validates the data state, static content, language metadata, local links and legacy routing.
 
 ## Build and run locally
 
@@ -97,6 +112,34 @@ Recommended repository metadata:
 
 Code authored for this repository is released under the **MIT License**. Original editorial content, original project visuals and original compilation/schema work are made available under **CC BY 4.0** to the extent applicable. Third-party data, quoted material, trademarks and source material remain subject to their respective rights and source terms. See `LICENSE` and `CONTENT_LICENSE.md`.
 
+
+## Build the static language pages
+
+The release ZIP includes all generated pages; publication does not require a build.
+To rebuild from source, use Node.js 18 or newer and Python 3:
+
+```sh
+npm ci
+python3 build.py
+```
+
+`npm run check` rechecks the generated multilingual pages and legacy routes.
+`linkedom` is a pinned development dependency used only while building and checking the project. The deployed site has no Node.js or DOM-library dependency.
+
+## v0.7.3 · static multilingual publication
+
+This release implements the language architecture independently of the post-Reveal dataset update. It preserves the v0.7.2 source corrections, research content and 2 October pre-Reveal data snapshot.
+
+## v0.7.2 · final source and metadata hardening
+
+This patch preserves the narrative, the four-language interface and the 2 October pre-Reveal data snapshot. The release date is 3 October 2026 and is recorded separately from the data snapshot date.
+
+- Remove the duplicate bare-root URL from the sitemap and align `x-default` and the static Open Graph URL with the English canonical.
+- Cite ICANN 2012 Program Statistics directly for the 66 geographic applications and 53 historical geographic delegations.
+- Add direct Root Server Technical Operations Association and ICANN August 2026 RSP statistics links beside the root/RSP figures.
+- Use the Government of Anguilla `gov.ai` copy of the 2026 budget estimates. The EC$253.6 million value remains a budget estimate.
+- Specify preliminary contention sets for identical strings in EN/IT/DE/FR and in the downloadable 2026 scaffold.
+- Normalize the verified ICANN source URLs and remove duplicate entries from the source list.
 
 ## v0.7.1 · pre-publication factual hardening
 

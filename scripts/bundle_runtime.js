@@ -22,7 +22,7 @@ function writeCsv(rel, headers, rows){
 }
 
 global.window = {};
-for(const f of ['data/data.js','data/extra.js','data/v05.js','data/v060.js','data/v061.js','data/v068.js','data/v0610.js','data/v0611.js','data/v070.js','data/v071.js']) load(f);
+for(const f of ['data/data.js','data/extra.js','data/v05.js','data/v060.js','data/v061.js','data/v068.js','data/v0610.js','data/v0611.js','data/v070.js','data/v071.js','data/v072.js']) load(f);
 write('data/data_bundle.js','DOT_DATA',window.DOT_DATA);
 
 const catalogHeaders=['string','round','status','type','entity','group','geography','themes','contention_count','strange','city','placeholder','provenance','sources'];
@@ -56,7 +56,7 @@ writeCsv('data/control_levers.csv',leverHeaders,(window.DOT_DATA.controlLevers||
 
 
 global.window = {};
-for(const f of ['data/i18n.js','data/i18n_extra.js','data/i18n_v05.js','data/i18n_v058.js','data/i18n_v060.js','data/i18n_v061.js','data/i18n_v062.js','data/i18n_v065.js','data/i18n_v068.js','data/i18n_v069.js','data/i18n_v0610.js','data/i18n_v0611.js','data/i18n_v070.js','data/i18n_v071.js']) load(f);
+for(const f of ['data/i18n.js','data/i18n_extra.js','data/i18n_v05.js','data/i18n_v058.js','data/i18n_v060.js','data/i18n_v061.js','data/i18n_v062.js','data/i18n_v065.js','data/i18n_v068.js','data/i18n_v069.js','data/i18n_v0610.js','data/i18n_v0611.js','data/i18n_v070.js','data/i18n_v071.js','data/i18n_v072.js','data/i18n_v073.js']) load(f);
 write('data/i18n_bundle.js','DOT_I18N',window.DOT_I18N);
 
 console.log('Generated data/data_bundle.js and data/i18n_bundle.js');

@@ -30,3 +30,11 @@ Before Reveal Day, `.lugano` is marked as **applicant disclosure**. The individu
 - `success_framework.csv` — seven analytical dimensions for comparing TLD outcomes without treating raw registration count as a universal definition of success.
 
 The `.ai` economic case shown in the Geography chapter is sourced to the Government of Anguilla 2026 budget estimates and is labelled as a **2026 budget estimate (EC$253.6 million)** rather than realized revenue. Special-use names and alternative naming systems are kept conceptually separate from delegated TLDs in the ICANN root.
+
+## v0.7.2 evidence hardening
+
+The release date is 3 October 2026; the publication and manifest keep the existing 2 October pre-Reveal data snapshot. Source URLs are normalized to the verified official English ICANN pages and the Government of Anguilla `gov.ai` budget PDF. `round_2026.csv` names the Reveal metric as **preliminary identical-string contention sets**; the value remains blank until official publication.
+
+## v0.7.3 static language pages
+
+The publication is prerendered in EN, IT, DE and FR. Language metadata in `manifest.json` describes the publication routes; the research snapshot remains 2 October 2026. All CSV observations, source corrections and pre-Reveal empty fields are preserved from v0.7.2.

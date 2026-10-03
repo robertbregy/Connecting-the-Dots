@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.7.3 · 3 October 2026
+
+- Generate complete static English, Italian, German and French pages at `/en/`, `/it/`, `/de/` and `/fr/` from the actual application runtime.
+- Emit self-referencing canonicals, reciprocal static hreflang and sitemap alternates, localized social metadata and article/dataset structured data.
+- Preserve legacy root and `?lang=…` links through early routing; carry tabs, search, filters, map mode and fragments between language pages.
+- Make page language follow its URL; stop mutating canonical or social metadata during browser interaction.
+- Add crawlable language links, anchor navigation and readable content with JavaScript disabled.
+- Rebase shared assets and downloads for language directories and embed only the page's own complete translation dictionary.
+- Add a pinned build-time DOM dependency, reproducible lockfile and multilingual content/metadata/link/routing checks. Mark the source template noindex and generated pages indexable.
+- Preserve the v0.7.2 factual corrections and the 2 October pre-Reveal research snapshot.
+
+## 0.7.2 · 3 October 2026
+
+- Remove the bare-root sitemap duplicate; align static `x-default` and Open Graph URL with `?lang=en` and refresh sitemap modification dates.
+- Use ICANN 2012 Program Statistics as the direct source for 66 geographic applications and 53 historical geographic delegations.
+- Add direct root-servers.org and ICANN August 2026 RSP Program Statistics source chips to the root/RSP panel.
+- Replace the Anguilla budget URL with the official `gov.ai` copy, preserving the EC$253.6M budget-estimate qualification.
+- Clarify preliminary identical-string contention sets consistently in EN, IT, DE, FR and `round_2026.csv`; link to the ICANN Reveal Day FAQ.
+- Normalize verified ICANN English/public source URLs and deduplicate the source list.
+- Record the release date separately from the unchanged 2 October pre-Reveal data snapshot; rebuild the embedded runtime, manifest and data pack.
+
 ## 0.7.1 · 2 October 2026
 
 - Corrected the 2026 application-type model to follow ICANN terminology directly: General, Geographic Name, Reserved Name, Community, .Brand, IDN, Variant string, Government/IGO and Applicant Support. Historical TLDs are no longer displayed as if they were 2026 examples.

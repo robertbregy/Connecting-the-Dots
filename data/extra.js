@@ -9,7 +9,7 @@ D.sources.push(
  [".eco eligibility policy","https://go.eco/policies/eligibility/","primary"],
  [".swiss eligibility","https://www.nic.swiss/en/conditions-for-the-registration-and-the-registration-process","primary"],
  ["ICANN global locations","https://www.icann.org/locations?v=1","primary"],
- ["ICANN 2026 RSP statistics · August","https://newgtldprogram.icann.org/de/node/1915","primary"],
+ ["ICANN 2026 RSP statistics · August","https://newgtldprogram.icann.org/en/application-rounds/round2/rsp/program-statistics/2026/08","primary"],
  ["IANA root name servers","https://www.iana.org/domains/root/servers","primary"],
  ["Root Server Technical Operations Association","https://root-servers.org/","primary"],
  ["IANA Root Zone Database","https://www.iana.org/domains/root/db","primary"]

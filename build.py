@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.1"
+VERSION = "0.7.3"
 
 
 def csv_records(path: Path) -> int:
@@ -50,7 +50,10 @@ def build_manifest() -> None:
     manifest = {
         "project": "Connecting the Dots",
         "version": VERSION,
+        "release_date": "2026-10-03",
         "publication_state": "pre-reveal",
+        "rendering": "static-prerendered",
+        "language_routes": {lang: f"{lang}/" for lang in ("en", "it", "de", "fr")},
         "as_of": "2026-10-02",
         "temporal_coverage": "1984/2026",
         "reveal_day": "2026-10-07T18:00:00Z",
@@ -109,6 +112,8 @@ def build_index() -> None:
         html = html.replace(f'<script src="{ref}"></script>', '')
     html = html.replace('<script src="data/publication.js"></script><script src="assets/app.js"></script>', '')
 
+    routing_js = (ROOT / "assets" / "legacy-routing.js").read_text(encoding="utf-8")
+    html = html.replace('<meta charset="utf-8"/>', '<meta charset="utf-8"/>\n<script id="ctd-legacy-routing">\n' + routing_js + '\n</script>', 1)
     head_runtime = '\n'.join([
         '<script id="ctd-data-bundle">\n' + data_js + '\n</script>',
         '<script id="ctd-i18n-bundle">\n' + i18n_js + '\n</script>',
@@ -123,6 +128,12 @@ def build_index() -> None:
     html = html.replace('<title>Connecting the Dots</title>', f'<title>Connecting the Dots</title>\n<meta content="{VERSION}" name="ctd-version"/>', 1)
     html = html.replace('<body>', f'<body data-build="{VERSION}">', 1)
     INDEX.write_text(html, encoding="utf-8")
+    try:
+        subprocess.run(["node", str(ROOT / "scripts" / "render_static.js")], check=True)
+    except FileNotFoundError:
+        raise SystemExit("Static language pages require Node.js 18 or newer; run npm ci first")
+    except subprocess.CalledProcessError:
+        raise SystemExit("Static language rendering failed; run npm ci and inspect the error above")
 
 
 def validate_index() -> None:
@@ -153,7 +164,7 @@ def validate_index() -> None:
     if csv_records(DATA / "applications_2026.csv") != 0:
         raise SystemExit("Pre-Reveal build must not contain synthetic 2026 application records")
 
-    for js in [ROOT / "assets" / "app.js", DATA / "data_bundle.js", DATA / "i18n_bundle.js", DATA / "publication.js", DATA / "v068.js", DATA / "i18n_v068.js", DATA / "i18n_v069.js", DATA / "i18n_v0610.js", DATA / "v0610.js", DATA / "i18n_v0611.js", DATA / "v0611.js", DATA / "i18n_v070.js", DATA / "v070.js", DATA / "i18n_v071.js", DATA / "v071.js"]:
+    for js in [ROOT / "assets" / "app.js", DATA / "data_bundle.js", DATA / "i18n_bundle.js", DATA / "publication.js", DATA / "v068.js", DATA / "i18n_v068.js", DATA / "i18n_v069.js", DATA / "i18n_v0610.js", DATA / "v0610.js", DATA / "i18n_v0611.js", DATA / "v0611.js", DATA / "i18n_v070.js", DATA / "v070.js", DATA / "i18n_v071.js", DATA / "v071.js", DATA / "i18n_v072.js", DATA / "v072.js", DATA / "i18n_v073.js", ROOT / "assets" / "legacy-routing.js", ROOT / "scripts" / "render_static.js", ROOT / "scripts" / "validate_multilingual.js"]:
         try:
             subprocess.run(["node", "--check", str(js)], check=True, capture_output=True, text=True)
         except FileNotFoundError:
@@ -226,6 +237,7 @@ def main() -> None:
     build_data_pack()
     build_index()
     validate_index()
+    subprocess.run(["node", str(ROOT / "scripts" / "validate_multilingual.js")], check=True)
     print(f"Built self-contained {INDEX.name} from {SRC.relative_to(ROOT)}")
     print("Validated runtime, event history, provenance, local assets, pre-Reveal state and data-pack sync")
     print(f"Refreshed manifest and data pack for v{VERSION}")

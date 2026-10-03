@@ -157,3 +157,20 @@ html[data-theme="dark"]{--bg:#0f0f10;--surface:#171719;--surface2:#202023;--text
 @media(max-width:760px){.lifecyclePrimary,.lifecycleDeletion{display:grid;grid-template-columns:1fr}.lifecyclePrimary .expiredItem,.lifecyclePrimary .lifecycleLoop,.lifecyclePrimary>.lifecycleArrow{grid-column:auto}.lifecycleLoop{justify-self:stretch}.lifecycleDeletionLabel{text-align:center;padding-left:0;margin-top:18px}.lifecycleArrow{transform:rotate(90deg);height:18px}.modelAxes>section:first-child .modelGrid{grid-template-columns:1fr}}
 .lifecyclePrimary{grid-template-rows:auto auto}.lifecyclePrimary .availableItem{grid-column:1;grid-row:1}.lifecyclePrimary .toRegistered{grid-column:2;grid-row:1}.lifecyclePrimary .registeredItem{grid-column:3;grid-row:1}.lifecyclePrimary .lifecycleLoop{grid-column:3;grid-row:2;margin-top:4px}.lifecyclePrimary .toExpired{grid-column:4;grid-row:1}.lifecyclePrimary .expiredItem{grid-column:5;grid-row:1}
 @media(max-width:760px){.lifecyclePrimary{grid-template-rows:auto}.lifecyclePrimary .availableItem,.lifecyclePrimary .toRegistered,.lifecyclePrimary .registeredItem,.lifecyclePrimary .lifecycleLoop,.lifecyclePrimary .toExpired,.lifecyclePrimary .expiredItem{grid-column:auto;grid-row:auto}.lifecyclePrimary .lifecycleLoop{margin-top:0}}
+
+/* v0.7.3: static-language navigation and readable fallback without JavaScript */
+.tab,.tocLink{text-decoration:none}
+.languageVersions{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+.languageVersions a{color:var(--accent-text);text-decoration:none;font-size:12px}
+.languageVersions a:hover,.languageVersions a:focus-visible{text-decoration:underline}
+.languageVersions a[aria-current="page"]{font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.footer .languageVersions{flex-basis:100%;justify-content:center;padding-top:8px}
+.staticReading{padding:16px 20px;border:1px solid var(--border);border-radius:16px;background:var(--surface);margin:12px 0}
+.staticReading p{font-size:13px;color:var(--muted);margin:0 0 10px}
+.no-js .section{display:block}
+.no-js .nav{display:flex;position:static;flex-wrap:wrap;gap:8px 16px}
+.no-js .navMenu{display:contents}
+.no-js .navMenuTrigger,.no-js .mobileNavWrap,.no-js .controls,.no-js .explorerSearch,.no-js .explorerPresets,.no-js #explorerLoadMore,.no-js #resetExplorer{display:none}
+.no-js .navDropdown{display:contents;position:static}
+.no-js .navDropdown .tab{display:inline-block;padding:10px 0}
+.no-js .sectionToc{position:static}

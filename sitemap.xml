@@ -1,23 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://robertbregy.github.io/Connecting-the-Dots/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/en/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/en/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/it/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/en/"/>
   </url>
   <url>
-    <loc>https://robertbregy.github.io/Connecting-the-Dots/?lang=en</loc>
-    <lastmod>2026-10-02</lastmod>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/it/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/en/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/it/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/en/"/>
   </url>
   <url>
-    <loc>https://robertbregy.github.io/Connecting-the-Dots/?lang=it</loc>
-    <lastmod>2026-10-02</lastmod>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/de/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/en/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/it/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/en/"/>
   </url>
   <url>
-    <loc>https://robertbregy.github.io/Connecting-the-Dots/?lang=de</loc>
-    <lastmod>2026-10-02</lastmod>
-  </url>
-  <url>
-    <loc>https://robertbregy.github.io/Connecting-the-Dots/?lang=fr</loc>
-    <lastmod>2026-10-02</lastmod>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/fr/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/en/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/it/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/en/"/>
   </url>
 </urlset>

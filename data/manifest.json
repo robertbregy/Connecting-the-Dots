@@ -1,7 +1,15 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.1",
+  "version": "0.7.3",
+  "release_date": "2026-10-03",
   "publication_state": "pre-reveal",
+  "rendering": "static-prerendered",
+  "language_routes": {
+    "en": "en/",
+    "it": "it/",
+    "de": "de/",
+    "fr": "fr/"
+  },
   "as_of": "2026-10-02",
   "temporal_coverage": "1984/2026",
   "reveal_day": "2026-10-07T18:00:00Z",
@@ -125,9 +133,9 @@
     },
     {
       "path": "registry_concentration.csv",
-      "bytes": 4243,
+      "bytes": 4238,
       "records": 13,
-      "sha256": "e9dc29b86cb306936158bab6e5524feb6d6365223966cbce59ec4e4179a79fde"
+      "sha256": "5a7928fb909a538bc32b8fd3c66a7abdb92ce25bbfc70b9052649ef0021b9bfe"
     },
     {
       "path": "round_2000_curated.csv",
@@ -143,9 +151,9 @@
     },
     {
       "path": "round_2026.csv",
-      "bytes": 2013,
+      "bytes": 2055,
       "records": 10,
-      "sha256": "407eb834218d5a278c152bbce4c6b5e82769602bf481f58b97fba779eacbd39d"
+      "sha256": "fd4022c241e0b13ea05422f13b72f70b8692c9fcb4246eeca2da0f99de394a5a"
     },
     {
       "path": "rounds_summary.csv",
@@ -167,9 +175,9 @@
     },
     {
       "path": "sources.csv",
-      "bytes": 9633,
+      "bytes": 9748,
       "records": 96,
-      "sha256": "434f3f539f8f143927ffdd0f4bb606a0a5bfe6f0b4b57b3b12471f41c8996e8f"
+      "sha256": "79972dc14dc71278697ea66311330b297c9eef8533442813cb2bc2c6fe3292af"
     },
     {
       "path": "strange_internet.csv",

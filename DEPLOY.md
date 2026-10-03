@@ -1,6 +1,6 @@
 # Deploy
 
-Il progetto è statico. La release include già il `index.html` generato e autosufficiente: GitHub Pages deve soltanto pubblicare il contenuto della cartella nella root del repository `Connecting-the-Dots`, branch `main`.
+Il progetto è statico. La release include già le pagine statiche generate e autosufficienti: GitHub Pages deve soltanto pubblicare il contenuto della cartella nella root del repository `Connecting-the-Dots`, branch `main`.
 
 URL pubblico: https://robertbregy.github.io/Connecting-the-Dots/
 
@@ -9,11 +9,11 @@ URL pubblico: https://robertbregy.github.io/Connecting-the-Dots/
 1. Scompatta lo ZIP sul computer.
 2. Apri il repository `robertbregy/Connecting-the-Dots` su GitHub.
 3. Entra nella root del repository e scegli **Add file → Upload files**.
-4. Trascina **il contenuto** della cartella estratta, non la cartella esterna che la contiene. Devono quindi arrivare in root `index.html`, `README.md`, `assets/`, `data/`, `downloads/`, `src/`, ecc.
-5. Verifica l'elenco dei file modificati e crea un commit con un messaggio come `Update Connecting the Dots to v0.7.1`.
+4. Trascina **il contenuto** della cartella estratta, non la cartella esterna che la contiene. Devono quindi arrivare in root `index.html`, `en/`, `it/`, `de/`, `fr/`, `README.md`, `assets/`, `data/`, `downloads/`, `src/`, `scripts/`, ecc.
+5. Verifica l'elenco dei file modificati e crea un commit con un messaggio come `Update Connecting the Dots to v0.7.3`.
 6. GitHub Pages ridistribuirà automaticamente il sito dal branch configurato.
 
-Nota: l'upload web sostituisce i file con lo stesso percorso, ma non elimina automaticamente eventuali file obsoleti che non sono presenti nel nuovo pacchetto. La v0.7.1 non richiede la rimozione dei vecchi file per funzionare.
+Nota: l'upload web sostituisce i file con lo stesso percorso, ma non elimina automaticamente eventuali file obsoleti che non sono presenti nel nuovo pacchetto. La v0.7.3 non richiede la rimozione dei vecchi file per funzionare.
 
 ## Aggiornamento da Git / terminale
 
@@ -21,7 +21,7 @@ Se il repository è già clonato localmente, copia il contenuto della nuova rele
 
 ```bash
 git add -A
-git commit -m "Update Connecting the Dots to v0.7.1"
+git commit -m "Update Connecting the Dots to v0.7.3"
 git push origin main
 ```
 
@@ -56,3 +56,9 @@ python3 -m http.server 8000
 ```
 
 Poi apri `http://127.0.0.1:8000/`.
+
+## Pagine linguistiche
+
+Carica anche le quattro cartelle `en/`, `it/`, `de/` e `fr/`: contengono le pagine effettive della pubblicazione. La root e i vecchi link con `?lang=…` portano alla versione corretta.
+
+Il pacchetto è già compilato. Per ricompilarlo occorrono Node.js 18+ e Python 3: esegui prima `npm ci`, quindi `python3 build.py`. Non caricare `node_modules/` nel repository o su GitHub Pages.

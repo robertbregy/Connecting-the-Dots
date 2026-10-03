@@ -1,0 +1,12 @@
+{
+  "name": "connecting-the-dots",
+  "version": "0.7.3",
+  "private": true,
+  "description": "Static multilingual research publication",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "python3 build.py",
+    "check": "node scripts/validate_multilingual.js"
+  },
+  "devDependencies": { "linkedom": "0.18.12" }
+}

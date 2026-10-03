@@ -54,7 +54,7 @@ D.successFramework=[
  {id:'purpose',labelKey:'successPurpose',bodyKey:'successPurposeBody',label:'Purpose fulfilment',description:'Whether the namespace achieves the mission for which it exists, even if raw registration volume is modest.'},
  {id:'civic',labelKey:'successCivic',bodyKey:'successCivicBody',label:'Public value',description:'For civic namespaces: local adoption, verified actors, useful services, interoperability and measurable public value.'}
 ];
-D.digitalResourceAi={year:2025,projectedRevenueECM:132,source:'https://haa-ai.gov.ai/document/2026-03-18-011900_862974747.pdf'};
+D.digitalResourceAi={year:2025,projectedRevenueECM:132,source:'https://gov.ai/document/2026-03-18-011900_862974747.pdf'};
 function addSource(label,url){if(!(D.sources||[]).some(s=>s&&s[1]===url))D.sources.push([label,url,'primary'])}
 [
  ['ICANN — DNSSEC overview','https://www.icann.org/resources/pages/dnssec-2012-02-25-en'],
@@ -68,7 +68,7 @@ function addSource(label,url){if(!(D.sources||[]).some(s=>s&&s[1]===url))D.sourc
  ['ICANN — Registry operator definition','https://www.icann.org/en/icann-acronyms-and-terms/registry-operator-en'],
  ['ICANN — Registrar definition','https://www.icann.org/en/icann-acronyms-and-terms/registrar-en'],
  ['fTLD — .BANK eligibility','https://register.bank/eligibility/'],
- ['Government of Anguilla — 2025 budget and .AI revenue projection','https://haa-ai.gov.ai/document/2026-03-18-011900_862974747.pdf'],
+ ['Government of Anguilla — 2025 budget and .AI revenue projection','https://gov.ai/document/2026-03-18-011900_862974747.pdf'],
  ['ENS — protocol overview','https://docs.ens.domains/learn/protocol/'],
  ['Handshake — alternative root naming system','https://handshake.org/'],
  ['RFC 5321 — SMTP / MX','https://www.rfc-editor.org/rfc/rfc5321'],

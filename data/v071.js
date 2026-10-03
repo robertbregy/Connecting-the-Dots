@@ -31,9 +31,9 @@ D.domainLifecycle=[
  {id:'availableAgain',labelKey:'lifeAvailableAgain',bodyKey:'lifeAvailableAgainBody',label:'Available again',description:'After purge from the registry database, the name may become available for registration again under the registry policy.'}
 ];
 
-D.digitalResourceAi={year:2026,projectedRevenueEC:253557731,projectedRevenueECM:253.6,source:'https://haa-ai.gov.ai/document/2026-03-18-011937_1898942126.pdf'};
+D.digitalResourceAi={year:2026,projectedRevenueEC:253557731,projectedRevenueECM:253.6,source:'https://gov.ai/document/2026-03-18-011937_1898942126.pdf'};
 
-D.sources=(D.sources||[]).filter(s=>s&&s[1]!=='https://haa-ai.gov.ai/document/2026-03-18-011900_862974747.pdf');
+D.sources=(D.sources||[]).filter(s=>s&&s[1]!=='https://gov.ai/document/2026-03-18-011900_862974747.pdf');
 
 function addSource(label,url){if(!(D.sources||[]).some(s=>s&&s[1]===url))D.sources.push([label,url,'primary'])}
 [
@@ -43,7 +43,7 @@ function addSource(label,url){if(!(D.sources||[]).some(s=>s&&s[1]===url))D.sourc
  ['IANA — root zone manager and maintainer roles','https://www.iana.org/dnssec/procedures/ksk-operator/ksk-dps-20201104.html'],
  ['ICANN — accredited registrars','https://www.icann.org/en/contracted-parties/accredited-registrars'],
  ['ICANN — spam, phishing and website content','https://www.icann.org/resources/pages/spam-phishing-2017-06-20-en'],
- ['Government of Anguilla — 2026 budget estimates','https://haa-ai.gov.ai/document/2026-03-18-011937_1898942126.pdf']
+ ['Government of Anguilla — 2026 budget estimates','https://gov.ai/document/2026-03-18-011937_1898942126.pdf']
 ].forEach(x=>addSource(x[0],x[1]));
 D.v071Version='0.7.1';
 })();
