@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.9
+# Connecting the Dots — v0.7.10
 
 **Connecting the Dots** is a multilingual, static research publication about the history, governance, geography and social meaning of top-level domains, with the 2026 ICANN round and the `.lugano` application as the contemporary layer.
 
@@ -290,3 +290,13 @@ The simulation runs entirely in the page and makes no DNS probes or requests to 
 Readers control every step using native buttons; there is no autoplay. The selected step can be shared with `?tab=how&walk=0` through `walk=6` and the `#internet-basics` anchor. Language changes retain it. Screen-reader announcements report the current explanation, controls support keyboard operation, and reduced-motion preferences are respected. Without JavaScript all seven explanations remain readable. Existing `how-part-1` through `how-part-12` anchors are preserved and their table-of-contents labels are corrected.
 
 Research records, CSV files and the IANA evidence snapshot remain unchanged. Automated checks exercise all steps in all four languages, restart, back navigation, direct links, language links and existing chapter anchors. The local browser environment still prevents a real visual pass; verify desktop and phone layouts after deployment.
+
+## v0.7.10 · profile links and corrections
+
+Explorer profiles now have stable links such as `/it/?tab=explore&tld=ch`. The `tld` value uses the ASCII label without its leading dot; Unicode labels and a leading dot are also accepted on input. An exact record opens independently of the current search filters. Language changes preserve it, browser Back/Forward restore it, and closing the drawer removes it from the current URL. Sharing from the profile produces a clean public link without unrelated filters. Unknown labels show a localized message instead of opening an unrelated record.
+
+Regional map names and chart labels are localized in all four languages. Map modes and Explorer presets expose their selected state with `aria-pressed`; map points expose their translated name and value.
+
+“Report an error” is available in Sources, the footer and every profile. It opens a GitHub issue draft with editable context: page/profile link, release and language. A GitHub account is required and submitted issues are public. No issue is sent by the website; the reader reviews and submits it on GitHub. There is no promised response time or automated correction service.
+
+All research records, CSVs and preserved IANA evidence remain unchanged. Automated DOM and asynchronous checks cover localized maps, direct links, Unicode identities, browser history, language changes, sharing and feedback drafts. A real browser visual check remains outstanding because the local browser environment cannot open pages with its required sandbox.

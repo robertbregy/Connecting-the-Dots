@@ -83,6 +83,23 @@ for(const lang of ['en','it','de','fr']){
  b=browser(lang,'?tab=explore&q=app');b.run("activateTab('how',true);activateTab('explore',true);document.getElementById('explorerSearch').value='bank';renderExplorer(true)");assert.equal(b.url().searchParams.get('q'),'bank');b.back();assert.equal(b.document.body.dataset.activeTab,'how');assert.equal(b.document.getElementById('explorerSearch').value,'app');b.back();assert.equal(b.document.body.dataset.activeTab,'explore');assert.equal(b.document.getElementById('explorerSearch').value,'app');
  assert.equal(b.document.querySelector('.tab.active').getAttribute('aria-current'),'location');assert.equal(b.document.getElementById('explorerResultCount').getAttribute('aria-live'),'polite');
  b=browser(lang,'?tab=geography&map=rsp&preset=cities&type=generic&round=2012');assert.equal(b.run('geoMode'),'rsp');assert.equal(b.run('explorerPreset'),'cities');assert.equal(b.document.getElementById('exploreTypeFilter').value,'generic');assert.equal(b.document.getElementById('exploreRoundFilter').value,'2012');
+ const regionKeys={EUR:'regionEurope',AP:'regionAsiaPacific',NA:'regionNorthAmerica',LAC:'regionLatinAmerica',AF:'regionAfrica'};
+ for(const mode of ['governance','rsp','applicant2012','applicant2026']){
+  b.document.querySelector('[data-mapmode="'+mode+'"]').click();
+  assert.equal(b.document.querySelectorAll('.mapToggle[aria-pressed="true"]').length,1);assert.equal(b.document.querySelector('.mapToggle[aria-pressed="true"]').dataset.mapmode,mode);
+  assert.equal(b.document.querySelectorAll('.mapToggle[aria-pressed="false"]').length,3);assert.equal(b.document.querySelector('#geoMap svg').getAttribute('role'),'group');
+  if(mode==='rsp'||mode==='applicant2012'){
+   const rows=D[mode==='rsp'?'rspRegions':'geoApplicantRegions2012'];
+   [...b.document.querySelectorAll('#geoMap .mapDatum')].forEach((point,i)=>{
+    const name=b.run('t('+JSON.stringify(regionKeys[rows[i].code])+')');
+    assert.ok(point.getAttribute('data-tip').startsWith(name+': '),lang+' localized region tooltip');
+    assert.ok(point.getAttribute('aria-label').startsWith(name+': '),lang+' accessible region and value');
+   });
+  }
+ }
+ for(const key of Object.values(regionKeys))assert.ok(b.document.getElementById('rsp2026Bars').textContent.includes(b.run('t('+JSON.stringify(key)+')')));
+ b.run('setExplorerPreset("root")');assert.equal(b.document.querySelectorAll('.presetChip[aria-pressed="true"]').length,1);assert.equal(b.document.querySelector('.presetChip[aria-pressed="true"]').dataset.preset,'root');
+ assert.equal(new URL(b.document.querySelector('[data-report-error]').getAttribute('href')).searchParams.get('body').includes('?tab=geography&map=applicant2026'),true);
  b=browser(lang,'?tab=how');b.run("document.querySelector('#how .tocLink[href$=\"#how-part-1\"]').dispatchEvent(new document.defaultView.Event('click',{cancelable:true}))");assert.equal(b.url().hash,'#how-part-1');
  const dictionary=b.run('I18N[lang]');assert.ok(dictionary.oddCsFact.includes(lang==='de'?'Tschechoslowakei':lang==='fr'?'Tchécoslovaquie':lang==='it'?'Cecoslovacchia':'Czechoslovakia'));assert.ok(!/Excel|workbook/.test(dictionary.dataPackSub));
  assert.equal(b.document.body.dataset.build,version,lang+' page version');

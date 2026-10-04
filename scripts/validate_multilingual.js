@@ -103,7 +103,7 @@ vm.runInNewContext(queryFunction+';setQuery();',{
   document:queryDocument,URLSearchParams,
   location:{protocol:'https:',pathname:'/Connecting-the-Dots/fr/',search:'?lang=fr&tab=geography',hash:'#geography-part-2'},
   history:{replaceState:(_state,_title,url)=>historyUrl=url},
-  restoringState:false,compatibleHash:()=> '#geography-part-2',syncSectionLinks:()=>{},activeTab:'geography',explorerPreset:'all',geoMode:'rsp',syncLanguageLinks:()=>{}
+  restoringState:false,compatibleHash:()=> '#geography-part-2',syncSectionLinks:()=>{},activeTab:'geography',explorerPreset:'all',explorerProfileId:'',geoMode:'rsp',syncLanguageLinks:()=>{},syncFeedbackLinks:()=>{}
 });
 assert.equal(historyUrl,'/Connecting-the-Dots/fr/?tab=geography&map=rsp#geography-part-2','UI URL must preserve deep-link fragments');
 console.log('Validated legacy redirects, stable page language and reciprocal four-language sitemap.');

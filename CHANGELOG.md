@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7.10 · 4 October 2026
+
+- Localize regional map and chart labels; expose selected map modes and Explorer presets to assistive technology.
+- Add stable, language-preserving profile links and sharing, including ASCII/Unicode names, browser history and unknown-link handling.
+- Add public correction drafts on GitHub from Sources, the footer and individual profiles.
+- Preserve all research data, CSVs and IANA evidence; extend navigation and deferred-loading regression checks.
+
 ## 0.7.3 · 3 October 2026
 
 - Generate complete static English, Italian, German and French pages at `/en/`, `/it/`, `/de/` and `/fr/` from the actual application runtime.
