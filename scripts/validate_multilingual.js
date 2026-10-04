@@ -53,6 +53,17 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   for(const a of languageLinks){const l=a.getAttribute('hreflang');assert.equal(new URL(a.getAttribute('href'),new URL(page,base)).href,base+l+'/');}
   assert.ok(document.documentElement.classList.contains('no-js'));
   assert.ok(document.getElementById('staticReading').innerHTML.includes(translations.staticReading));
+  assert.equal(document.querySelectorAll('#journeySteps .journeyStep').length,7,page+' complete static guide');
+  assert.ok(document.getElementById('internet-basics').textContent.includes(translations.journeyTitle));
+  for(let step=0;step<7;step++){
+    const scene=document.querySelector('[data-journey-scene="'+step+'"]');
+    assert.ok(scene.textContent.includes(translations['journey'+step+'Body']),page+' static step '+step);
+    assert.ok(scene.textContent.includes(translations['journey'+step+'Detail']),page+' static detail '+step);
+    assert.ok(!scene.hasAttribute('hidden'),page+' no-JS guide');
+  }
+  assert.equal(document.querySelectorAll('#internet-guide [href^="https://www.example.com"],#internet-guide [src^="https://www.example.com"]').length,0,page+' illustrative address only');
+  assert.equal(document.querySelector('#internet-guide .journeyDiagram').getAttribute('aria-hidden'),'true',page+' diagram has equivalent narrative');
+  assert.equal(document.getElementById('journeyAnnounce').getAttribute('aria-live'),'polite');
   console.log('Validated static content, links and metadata: '+page);
 }
 

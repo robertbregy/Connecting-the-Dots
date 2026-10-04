@@ -83,7 +83,7 @@ for(const lang of ['en','it','de','fr']){
  b=browser(lang,'?tab=explore&q=app');b.run("activateTab('how',true);activateTab('explore',true);document.getElementById('explorerSearch').value='bank';renderExplorer(true)");assert.equal(b.url().searchParams.get('q'),'bank');b.back();assert.equal(b.document.body.dataset.activeTab,'how');assert.equal(b.document.getElementById('explorerSearch').value,'app');b.back();assert.equal(b.document.body.dataset.activeTab,'explore');assert.equal(b.document.getElementById('explorerSearch').value,'app');
  assert.equal(b.document.querySelector('.tab.active').getAttribute('aria-current'),'location');assert.equal(b.document.getElementById('explorerResultCount').getAttribute('aria-live'),'polite');
  b=browser(lang,'?tab=geography&map=rsp&preset=cities&type=generic&round=2012');assert.equal(b.run('geoMode'),'rsp');assert.equal(b.run('explorerPreset'),'cities');assert.equal(b.document.getElementById('exploreTypeFilter').value,'generic');assert.equal(b.document.getElementById('exploreRoundFilter').value,'2012');
- b=browser(lang,'?tab=how');b.run("document.querySelector('#how .tocLink').dispatchEvent(new document.defaultView.Event('click',{cancelable:true}))");assert.equal(b.url().hash,'#how-part-1');
+ b=browser(lang,'?tab=how');b.run("document.querySelector('#how .tocLink[href$=\"#how-part-1\"]').dispatchEvent(new document.defaultView.Event('click',{cancelable:true}))");assert.equal(b.url().hash,'#how-part-1');
  const dictionary=b.run('I18N[lang]');assert.ok(dictionary.oddCsFact.includes(lang==='de'?'Tschechoslowakei':lang==='fr'?'Tchécoslovaquie':lang==='it'?'Cecoslovacchia':'Czechoslovakia'));assert.ok(!/Excel|workbook/.test(dictionary.dataPackSub));
  assert.equal(b.document.body.dataset.build,version,lang+' page version');
  const dateLabel=b.document.querySelector('[data-i18n="exploreIanaDate"]').textContent;assert.ok(dateLabel.includes(b.run('fmtDate(D.explorerMeta.ianaSnapshot)')),lang+' snapshot date');assert.ok(!dateLabel.includes('{date}'));
@@ -100,9 +100,41 @@ for(const lang of ['en','it','de','fr']){
  b.run("resetExplorer();document.getElementById('explorerSearch').value='a.nic.ch';renderExplorer(true)");assert.ok(b.run("explorerFilteredRows().some(r=>r.string==='.ch')"),lang+' nameserver search');
  b=browser(lang,'?tab=explore&preset=outsideRoot');assert.ok(b.run('explorerFilteredRows().every(r=>!r.rootListed)'));assert.equal(b.run('explorerFilteredRows().length'),D.explorer.length-rootLabels.length);
  b=browser(lang,'?tab=explore&preset=curated');assert.equal(b.run('explorerFilteredRows().length'),D.explorerMeta.curatedCount,lang+' curated filter');
- b=browser(lang,'?tab=overview');assert.equal(b.document.querySelectorAll('#overview [data-open-section]').length,5);assert.equal(b.document.getElementById('cards').closest('.section').id,'reveal');assert.equal(b.document.getElementById('namespaceDimensions').closest('.section').id,'how');assert.ok(b.document.querySelector('#lugano .authorDisclosure').textContent.includes('Robert Bregy'));
+ b=browser(lang,'?tab=overview');assert.equal(b.document.querySelectorAll('#overview [data-open-section]').length,6);assert.equal(b.document.getElementById('cards').closest('.section').id,'reveal');assert.equal(b.document.getElementById('namespaceDimensions').closest('.section').id,'how');assert.ok(b.document.querySelector('#lugano .authorDisclosure').textContent.includes('Robert Bregy'));
  const click=new b.document.defaultView.Event('click',{cancelable:true});Object.defineProperty(click,'button',{value:0});b.document.querySelector('#overview [data-open-section="explore"]').dispatchEvent(click);assert.equal(b.document.body.dataset.activeTab,'explore',lang+' guided entry link');
  for(const key of ['publicQuestionsIntro','publicNeedBody','publicAdoptionBody','publicRulesBody','publicOpenBody'])assert.ok(!/budget|costi|costs|coûts|Kosten|CHF/.test(dictionary[key]),lang+' public-only editorial criteria');
- console.log('Validated provenance, chronology, translations, filters and URL restoration: '+lang);
+ // The guided explanation must work in every language without touching research data.
+ b=browser(lang,'?tab=overview');
+ const enter=new b.document.defaultView.Event('click',{cancelable:true});Object.defineProperty(enter,'button',{value:0});
+ b.document.querySelector('.homeJourney [data-open-anchor]').dispatchEvent(enter);
+ assert.equal(b.document.body.dataset.activeTab,'how');assert.equal(b.url().hash,'#internet-basics');
+ assert.equal(b.document.querySelectorAll('.journeyStep').length,7);assert.equal(b.document.querySelectorAll('[data-journey-go]').length,7);
+ for(let step=0;step<7;step++){
+  const scene=b.document.querySelector('[data-journey-scene="'+step+'"]');assert.ok(scene.textContent.includes(dictionary['journey'+step+'Title']));assert.ok(scene.textContent.includes(dictionary['journey'+step+'Body']));assert.ok(scene.textContent.includes(dictionary['journey'+step+'Detail']));
+  assert.equal(scene.hasAttribute('hidden'),false,'static no-JS reading must remain complete');
+ }
+ assert.equal(b.document.getElementById('journeyBack').disabled,true);assert.equal(b.document.getElementById('journeyNext').textContent,dictionary.journeyStart);
+ for(let step=1;step<7;step++){
+  b.document.getElementById('journeyNext').click();
+  assert.equal(b.document.querySelectorAll('.journeyStep.is-active').length,1);assert.equal(b.document.querySelector('.journeyStep.is-active').getAttribute('data-journey-scene'),String(step));
+  assert.equal(b.document.querySelector('[data-journey-go][aria-current="step"]').getAttribute('data-journey-go'),String(step));
+  assert.equal(b.url().searchParams.get('walk'),String(step));assert.ok(b.document.getElementById('journeyAnnounce').textContent.includes(dictionary['journey'+step+'Body']));
+  assert.equal(b.document.getElementById('internet-guide').classList.contains('has-address'),step>=3);
+  assert.equal(b.document.getElementById('internet-guide').classList.contains('has-connection'),step>=4);
+  assert.equal(b.document.getElementById('internet-guide').classList.contains('has-security'),step>=5);
+  assert.equal(b.document.getElementById('internet-guide').classList.contains('has-page'),step===6);
+  assert.equal(b.document.querySelectorAll('script[src*="explorer_profiles_"]').length,0,'guide does not request Explorer profiles');
+ }
+ assert.equal(b.document.getElementById('journeyNext').disabled,true);
+ b.document.getElementById('journeyBack').click();assert.equal(b.run('journeyStep'),5);
+ const guideLanguage=new URL(b.document.querySelector('[data-language="fr"]').getAttribute('href'));assert.equal(guideLanguage.searchParams.get('walk'),'5');assert.equal(guideLanguage.hash,'#internet-basics');
+ b.document.querySelector('.journeyStep.is-active details').open=true;b.document.getElementById('journeyRestart').click();assert.equal(b.run('journeyStep'),0);assert.equal(b.document.querySelectorAll('#journeySteps details[open]').length,0);
+ b.document.querySelector('[data-journey-go="2"]').click();assert.equal(b.run('journeyStep'),2);assert.equal(b.document.querySelector('[data-journey-node="tld"]').classList.contains('is-active'),true);
+ b.run("activateTab('overview',true)");b.back();assert.equal(b.document.body.dataset.activeTab,'how');assert.equal(b.run('journeyStep'),2);
+ const labels=['tocHowDimensions','tocHowAnatomy','tocHowRoles','tocHowLifecycle','tocHowEconomics','tocHowBirth','tocHowModels','tocHowTerms','tocHowLevers','tocHowLuganoCase','tocHowLuganoGovernance','tocHowLuganoLanguage'];
+ for(let n=1;n<=12;n++){assert.ok(b.document.getElementById('how-part-'+n));assert.equal(b.document.querySelector('#how .tocLink[href$="#how-part-'+n+'"]').textContent,dictionary[labels[n-1]],lang+' stable chapter label '+n);}
+ b=browser(lang,'?walk=4#internet-basics');assert.equal(b.document.body.dataset.activeTab,'how');assert.equal(b.run('journeyStep'),4);
+ b=browser(lang,'?tab=how&walk=99');assert.equal(b.run('journeyStep'),0,'out-of-range deep link');
+ console.log('Validated provenance, chronology, translations, filters, guided journey and URL restoration: '+lang);
 }
 console.log('Validated '+D.explorer.length+' runtime/CSV records and '+snapshot.files.length+' preserved IANA evidence files.');

@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.8
+# Connecting the Dots — v0.7.9
 
 **Connecting the Dots** is a multilingual, static research publication about the history, governance, geography and social meaning of top-level domains, with the 2026 ICANN round and the `.lugano` application as the contemporary layer.
 
@@ -280,3 +280,13 @@ This release preserves the v0.7.7 research inputs, all 1,606 Explorer records an
 `data/release_history.json` records release dates and the exact IANA evidence used. The footer and Sources panel distinguish the release date, general research snapshot and IANA snapshot. The data pack includes this history and its manifest hash. Updates are manual: retrieve sources, review changes, update metadata and translations, rebuild, validate and publish the complete package. No background refresh or scheduled update service is configured. Reaching Reveal Day does not populate the 2026 application dataset automatically.
 
 The checks exercise successful loads, cache reuse, failed requests and retry, timeouts, incompatible or missing profiles, and late responses after switching or closing a drawer. Browser layout testing remains a separate gate: the local Firefox test environment could not open pages because its content processes were denied sandbox permissions. No visual or physical-device pass is claimed for this release.
+
+## v0.7.9 · behind a click
+
+The beginning of “How it works” now explains Internet architecture through a seven-step guided journey: readable name, root DNS referral, TLD referral, authoritative answer, packets and transport, HTTPS, and browser rendering. A home-page entry leads directly to it. Root/TLD lookups and website traffic are shown separately; the resolver, not the root, contacts successive DNS authorities.
+
+The simulation runs entirely in the page and makes no DNS probes or requests to the example website. `example.com` and the documentation-only address `192.0.2.10` are explicitly illustrative. Explanations cover caches, IP versus transport, TCP versus QUIC, the limits of HTTPS, DNSSEC and domain versus hosting. Links to MDN, IANA and IETF sources are available in an expandable reference block.
+
+Readers control every step using native buttons; there is no autoplay. The selected step can be shared with `?tab=how&walk=0` through `walk=6` and the `#internet-basics` anchor. Language changes retain it. Screen-reader announcements report the current explanation, controls support keyboard operation, and reduced-motion preferences are respected. Without JavaScript all seven explanations remain readable. Existing `how-part-1` through `how-part-12` anchors are preserved and their table-of-contents labels are corrected.
+
+Research records, CSV files and the IANA evidence snapshot remain unchanged. Automated checks exercise all steps in all four languages, restart, back navigation, direct links, language links and existing chapter anchors. The local browser environment still prevents a real visual pass; verify desktop and phone layouts after deployment.
