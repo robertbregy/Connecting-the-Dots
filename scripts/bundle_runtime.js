@@ -23,7 +23,7 @@ write('data/data_bundle.js','DOT_DATA',window.DOT_DATA);
 // the searchable index; record details are requested in eight bounded batches.
 const full=window.DOT_DATA,version=JSON.parse(fs.readFileSync(path.join(root,'package.json'))).version;
 const shardFor=label=>[...label].reduce((h,c)=>(h*31+c.charCodeAt(0))>>>0,0)%8;
-const fields=['string','asciiString','recordLevel','ianaProfile','rootListed','currentRootStatus','status','type','entity','registryCountry','registryCountryCode','round','historicalRounds','originRound','editorialDesignation','themes','applicationEntity','geography','representedPlace','group','noteKey','readingKey','strange','city','contentionCount','placeholder','programRound','introductionPath','introductionBasis','applicationCount','applicationRounds','applicationApplicants','governanceCaseIds','economicCaseIds'];
+const fields=['string','asciiString','recordLevel','ianaProfile','rootListed','currentRootStatus','status','type','entity','registryCountry','registryCountryCode','round','historicalRounds','originRound','editorialDesignation','themes','applicationEntity','geography','representedPlace','group','noteKey','readingKey','strange','city','contentionCount','placeholder','programRound','introductionPath','introductionBasis','applicationCount','applicationRounds','applicationApplicants','governanceCaseIds','economicCaseIds','socialCaseIds'];
 const searchFields=r=>[r.technicalContactOrganization,r.administrativeContactOrganization,r.whoisServer,r.registryUrl,...(r.rdapServers||[]),...(r.nameServers||[]).flatMap(n=>[n.hostname,...n.ipAddresses])].filter(Boolean).join(' ');
 const index=full.explorer.map(r=>({...Object.fromEntries(fields.filter(k=>r[k]!==undefined).map(k=>[k,r[k]])),technicalSearch:searchFields(r),profileShard:shardFor(r.asciiString),sourceUrl:r.source?.[0]||''}));
 const site={...full,explorer:index,profileDelivery:{version,shards:8}};
@@ -60,6 +60,8 @@ const economicHeaders=['case_id','strings','period','model_key','question_key','
 writeCsv('data/economic_cases.csv',economicHeaders,(window.DOT_DATA.economicCases?.cases||[]).map(c=>({case_id:c.id,strings:c.strings||[],period:c.period||'',model_key:c.modelKey||'',question_key:c.questionKey||'',fact_key:c.factKey||'',reading_key:c.readingKey||'',sources:(c.sources||[]).map(s=>s.url)})));
 const economicMetricHeaders=['case_id','strings','period','label_key','value','currency','display','basis','source'];
 writeCsv('data/economic_metrics.csv',economicMetricHeaders,(window.DOT_DATA.economicCases?.cases||[]).flatMap(c=>(c.metrics||[]).map(m=>({case_id:c.id,strings:c.strings||[],period:m.period||'',label_key:m.labelKey||'',value:m.value??'',currency:m.currency||'',display:m.display||'',basis:m.basis||'',source:m.source||''}))));
+const socialHeaders=['case_id','strings','period','model_keys','question_key','fact_key','reading_key','signals','sources'];
+writeCsv('data/social_cases.csv',socialHeaders,(window.DOT_DATA.socialCases?.cases||[]).map(c=>({case_id:c.id,strings:c.strings||[],period:c.period||'',model_keys:c.modelKeys||[],question_key:c.questionKey||'',fact_key:c.factKey||'',reading_key:c.readingKey||'',signals:(c.signals||[]).map(x=>x.labelKey+':'+x.valueKey),sources:(c.sources||[]).map(s=>s.url)})));
 const sourceHeaders=['label','url','role'];
 writeCsv('data/sources.csv',sourceHeaders,(window.DOT_DATA.sources||[]).map(s=>({label:s[0]||'',url:s[1]||'',role:s[2]||''})));
 const driftHeaders=['string','formal_type','formal_origin','adopted_association','category','sources'];

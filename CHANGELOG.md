@@ -1,3 +1,12 @@
+# v0.7.16 — The Social Life of the Dot
+
+- adds a structured social layer with nine source-backed cases and six analytical models;
+- links language, cultural, civic, identity, community, safety and script-inclusion cases directly to Explorer records;
+- adds `SOCIAL CASE` badges, a Social preset and social meaning panels inside relevant TLD profiles;
+- adds `social_cases.json` and `social_cases.csv` to the reusable data layer;
+- expands the publication narrative with a fifth question: who belongs after the dot?;
+- explicitly separates documented community rules (FACT) from broader social interpretation (READING), and never treats registration volume as a proxy for social significance.
+
 # v0.7.15 — Economics of the Dot
 
 - adds a structured economics layer with eight distinct mechanisms and source-backed metrics;

@@ -1,5 +1,9 @@
 # Connecting the Dots — v0.7.13
 
+## v0.7.16 — The Social Life of the Dot
+
+Release: 4 October 2026. Adds nine source-backed social cases and six analytical models spanning language, cultural identity, civic belonging, community institutions, safety norms and non-Latin script inclusion. Relevant Explorer records carry `SOCIAL CASE` links; documented rules remain FACT while broader social meaning is labelled READING. Registration volume is not treated as a proxy for social significance.
+
 **Connecting the Dots** is a multilingual, static research publication about the history, governance, geography and social meaning of top-level domains, with the 2026 ICANN round and the `.lugano` application as the contemporary layer.
 
 **Live publication:** https://robertbregy.github.io/Connecting-the-Dots/

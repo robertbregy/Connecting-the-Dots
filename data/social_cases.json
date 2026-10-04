@@ -1,0 +1,433 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-04",
+  "selectionKey": "socialSelectionNote",
+  "models": [
+    {
+      "id": "language",
+      "labelKey": "socialModelLanguage",
+      "bodyKey": "socialModelLanguageBody"
+    },
+    {
+      "id": "civic",
+      "labelKey": "socialModelCivic",
+      "bodyKey": "socialModelCivicBody"
+    },
+    {
+      "id": "identity",
+      "labelKey": "socialModelIdentity",
+      "bodyKey": "socialModelIdentityBody"
+    },
+    {
+      "id": "institution",
+      "labelKey": "socialModelInstitution",
+      "bodyKey": "socialModelInstitutionBody"
+    },
+    {
+      "id": "safety",
+      "labelKey": "socialModelSafety",
+      "bodyKey": "socialModelSafetyBody"
+    },
+    {
+      "id": "script",
+      "labelKey": "socialModelScript",
+      "bodyKey": "socialModelScriptBody"
+    }
+  ],
+  "cases": [
+    {
+      "id": "cat",
+      "strings": [
+        ".cat"
+      ],
+      "period": "2005–present",
+      "modelKeys": [
+        "socialModelLanguage",
+        "socialModelInstitution"
+      ],
+      "questionKey": "socialCatQuestion",
+      "factKey": "socialCatFact",
+      "readingKey": "socialCatReading",
+      "signals": [
+        {
+          "labelKey": "socialSignalCommunity",
+          "valueKey": "socialCatCommunity"
+        },
+        {
+          "labelKey": "socialSignalEligibility",
+          "valueKey": "socialCatEligibility"
+        },
+        {
+          "labelKey": "socialSignalGovernance",
+          "valueKey": "socialCatGovernance"
+        }
+      ],
+      "sources": [
+        {
+          "label": ".CAT Registry Agreement — Appendix S",
+          "url": "https://www.icann.org/en/registry-agreements/cat/cat-registry-agreement-appendix-s-17-7-2012-en",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN — .CAT Registry Agreement",
+          "url": "https://www.icann.org/en/registry-agreements/details/cat",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "gal",
+      "strings": [
+        ".gal"
+      ],
+      "period": "2013–present",
+      "modelKeys": [
+        "socialModelLanguage",
+        "socialModelInstitution"
+      ],
+      "questionKey": "socialGalQuestion",
+      "factKey": "socialGalFact",
+      "readingKey": "socialGalReading",
+      "signals": [
+        {
+          "labelKey": "socialSignalOrganization",
+          "valueKey": "socialGalOrganization"
+        },
+        {
+          "labelKey": "socialSignalReinvestment",
+          "valueKey": "socialGalReinvestment"
+        },
+        {
+          "labelKey": "socialSignalMemory",
+          "valueKey": "socialGalMemory"
+        }
+      ],
+      "sources": [
+        {
+          "label": "PuntoGal — About us",
+          "url": "https://dominio.gal/en/about-us/",
+          "role": "primary"
+        },
+        {
+          "label": "PuntoGal — .GAL eligibility",
+          "url": "https://dominio.gal/en/help/",
+          "role": "primary"
+        },
+        {
+          "label": "PuntoGal — 2024 web archive collection",
+          "url": "https://dominio.gal/en/the-national-library-of-spain-and-the-library-of-galicia-collect-more-than-7000-gal-domains-in-2024/",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN — .GAL Registry Agreement",
+          "url": "https://www.icann.org/en/registry-agreements/details/gal",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "gay",
+      "strings": [
+        ".gay"
+      ],
+      "period": "2020 policy framework",
+      "modelKeys": [
+        "socialModelIdentity",
+        "socialModelSafety"
+      ],
+      "questionKey": "socialGayQuestion",
+      "factKey": "socialGayFact",
+      "readingKey": "socialGayReading",
+      "signals": [
+        {
+          "labelKey": "socialSignalPurpose",
+          "valueKey": "socialGayPurpose"
+        },
+        {
+          "labelKey": "socialSignalReinvestment",
+          "valueKey": "socialGayDonation"
+        },
+        {
+          "labelKey": "socialSignalProtection",
+          "valueKey": "socialGayProtection"
+        }
+      ],
+      "sources": [
+        {
+          "label": "ICANN filing — .GAY Policies (3 January 2020)",
+          "url": "https://portal.icann.org/servlet/servlet.FileDownload?file=00P4M00000r2w7hUAA",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN — .GAY Registry Agreement",
+          "url": "https://www.icann.org/en/registry-agreements/details/gay",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "coop",
+      "strings": [
+        ".coop"
+      ],
+      "period": "2001–present",
+      "modelKeys": [
+        "socialModelInstitution",
+        "socialModelIdentity"
+      ],
+      "questionKey": "socialCoopQuestion",
+      "factKey": "socialCoopFact",
+      "readingKey": "socialCoopReading",
+      "signals": [
+        {
+          "labelKey": "socialSignalCommunity",
+          "valueKey": "socialCoopCommunity"
+        },
+        {
+          "labelKey": "socialSignalEligibility",
+          "valueKey": "socialCoopEligibility"
+        },
+        {
+          "labelKey": "socialSignalVerification",
+          "valueKey": "socialCoopVerification"
+        }
+      ],
+      "sources": [
+        {
+          "label": "ICANN — .COOP Charter",
+          "url": "https://www.icann.org/en/registry-agreements/coop/tld-sponsorship-agreement-attachment-1-coop-05-11-2001-en",
+          "role": "primary"
+        },
+        {
+          "label": "Identity.coop — Eligibility Policy",
+          "url": "https://identity.coop/policies/eligibility-policy/",
+          "role": "primary"
+        },
+        {
+          "label": "Identity.coop — Verification Policy",
+          "url": "https://identity.coop/policies/verification-policy/",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "nyc",
+      "strings": [
+        ".nyc"
+      ],
+      "period": "2014–present",
+      "modelKeys": [
+        "socialModelCivic",
+        "socialModelIdentity"
+      ],
+      "questionKey": "socialNycQuestion",
+      "factKey": "socialNycFact",
+      "readingKey": "socialNycReading",
+      "signals": [
+        {
+          "labelKey": "socialSignalNexus",
+          "valueKey": "socialNycNexus"
+        },
+        {
+          "labelKey": "socialSignalConnection",
+          "valueKey": "socialNycConnection"
+        },
+        {
+          "labelKey": "socialSignalOperator",
+          "valueKey": "socialNycOperator"
+        }
+      ],
+      "sources": [
+        {
+          "label": ".NYC — Nexus Policy",
+          "url": "https://www.ownit.nyc/policies/nyc-nexus-policy",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN — .NYC Registry Agreement",
+          "url": "https://www.icann.org/en/registry-agreements/details/nyc",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "kids",
+      "strings": [
+        ".kids"
+      ],
+      "period": "2012–present",
+      "modelKeys": [
+        "socialModelSafety",
+        "socialModelInstitution"
+      ],
+      "questionKey": "socialKidsQuestion",
+      "factKey": "socialKidsFact",
+      "readingKey": "socialKidsReading",
+      "signals": [
+        {
+          "labelKey": "socialSignalCommunity",
+          "valueKey": "socialKidsCommunity"
+        },
+        {
+          "labelKey": "socialSignalProtection",
+          "valueKey": "socialKidsProtection"
+        },
+        {
+          "labelKey": "socialSignalDelegation",
+          "valueKey": "socialKidsDelegation"
+        }
+      ],
+      "sources": [
+        {
+          "label": "ICANN — .KIDS Registry Agreement",
+          "url": "https://www.icann.org/en/registry-agreements/details/kids",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN — .KIDS 2012 application",
+          "url": "https://gtldresult.icann.org/applicationstatus/applicationdetails/161",
+          "role": "primary"
+        },
+        {
+          "label": "DotKids Foundation — CPE/community application analysis",
+          "url": "https://dotkids.asia/wp-content/uploads/2014/06/DotKids-X-CPE-Guideline-Comparsion_01.pdf",
+          "role": "primary"
+        },
+        {
+          "label": "IANA — .KIDS delegation record",
+          "url": "https://www.iana.org/domains/root/db/kids.html",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "xxx",
+      "strings": [
+        ".xxx"
+      ],
+      "period": "2004–2024",
+      "modelKeys": [
+        "socialModelSafety",
+        "socialModelIdentity"
+      ],
+      "questionKey": "socialXxxQuestion",
+      "factKey": "socialXxxFact",
+      "readingKey": "socialXxxReading",
+      "signals": [
+        {
+          "labelKey": "socialSignalSelfIdentification",
+          "valueKey": "socialXxxSelfIdentification"
+        },
+        {
+          "labelKey": "socialSignalPurpose",
+          "valueKey": "socialXxxPurpose"
+        },
+        {
+          "labelKey": "socialSignalEvolution",
+          "valueKey": "socialXxxEvolution"
+        }
+      ],
+      "sources": [
+        {
+          "label": "ICANN — .XXX Agreement Appendix S",
+          "url": "https://www.icann.org/en/about/agreements/registries/xxx/appendix-s-31mar11-en.htm",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN Board — .XXX renewal and evolution from sponsorship",
+          "url": "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-regular-meeting-of-the-icann-board-10-11-2024-en",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "islamhalal",
+      "strings": [
+        ".islam",
+        ".halal"
+      ],
+      "period": "2012–2014",
+      "modelKeys": [
+        "socialModelIdentity",
+        "socialModelInstitution"
+      ],
+      "questionKey": "socialIslamQuestion",
+      "factKey": "socialIslamFact",
+      "readingKey": "socialIslamReading",
+      "signals": [
+        {
+          "labelKey": "socialSignalRepresentation",
+          "valueKey": "socialIslamRepresentation"
+        },
+        {
+          "labelKey": "socialSignalGovernmentConcern",
+          "valueKey": "socialIslamGovernment"
+        },
+        {
+          "labelKey": "socialSignalOutcome",
+          "valueKey": "socialIslamOutcome"
+        }
+      ],
+      "sources": [
+        {
+          "label": "ICANN — GAC advice on religious terms",
+          "url": "https://www.icann.org/en/announcements/details/ngpc-progress-on-addressing-gac-beijing-advice-on-new-gtlds-3-7-2013-en",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN — March 2014 NGPC record on .ISLAM/.HALAL",
+          "url": "https://www.icann.org/en/board-activities-and-meetings/materials/minutes-meeting-of-the-new-gtld-program-committee-22-03-2014-en",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "idn",
+      "strings": [
+        ".рф",
+        ".السعودية",
+        ".中国",
+        ".भारत"
+      ],
+      "period": "2009–present",
+      "modelKeys": [
+        "socialModelScript",
+        "socialModelLanguage"
+      ],
+      "questionKey": "socialIdnQuestion",
+      "factKey": "socialIdnFact",
+      "readingKey": "socialIdnReading",
+      "signals": [
+        {
+          "labelKey": "socialSignalScripts",
+          "valueKey": "socialIdnScripts"
+        },
+        {
+          "labelKey": "socialSignalAccess",
+          "valueKey": "socialIdnAccess"
+        },
+        {
+          "labelKey": "socialSignalProcess",
+          "valueKey": "socialIdnProcess"
+        }
+      ],
+      "sources": [
+        {
+          "label": "ICANN — Internationalized Domain Names",
+          "url": "https://www.icann.org/en/resources/idn",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN — IDN ccTLD Fast Track Process",
+          "url": "https://www.icann.org/resources/pages/fast-track-2012-02-25-en",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN — IDN ccTLD Fast Track launch",
+          "url": "https://www.icann.org/en/announcements/details/idn-cctld-fast-track-process-launch-16-11-2009-en",
+          "role": "primary"
+        }
+      ]
+    }
+  ]
+}

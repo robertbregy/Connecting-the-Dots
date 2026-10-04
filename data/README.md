@@ -124,3 +124,12 @@ The TLD-coverage claim excludes never-delegated ISO codes and other labels that 
 - `economic_cases.csv` exposes cases, strings, economic mechanism and sources.
 - `economic_metrics.csv` keeps every value with its original currency, period, accounting basis and source.
 - Revenue, operating income, public receipts, transaction value, auction price and evaluation fees are deliberately not normalized into one ranking.
+
+## The Social Life of the Dot (v0.7.16)
+
+- `social_cases.json` is the structured editorial/evidentiary source for the social layer.
+- `social_cases.csv` exposes the nine selected cases, linked strings, analytical models and primary sources.
+- Social cases cover language and cultural identity, civic belonging, identity and representation, community institutions, safety/norms and script inclusion.
+- Documented registry charters, eligibility rules and community policies are FACT; broader interpretation is kept as READING.
+- Registration volume is never used as a proxy for social value or cultural significance.
+

@@ -1,6 +1,6 @@
 {
   "name": "connecting-the-dots",
-  "version": "0.7.15",
+  "version": "0.7.16",
   "private": true,
   "description": "Static multilingual research publication",
   "engines": {
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "python3 build.py",
-    "check": "node scripts/validate_multilingual.js && node scripts/validate_corrective.js && node scripts/validate_application_archaeology.js && node scripts/validate_tld_life_histories.js && node scripts/validate_governance_cases.js && node scripts/validate_economic_cases.js && node scripts/validate_delivery.js"
+    "check": "node scripts/validate_multilingual.js && node scripts/validate_corrective.js && node scripts/validate_application_archaeology.js && node scripts/validate_tld_life_histories.js && node scripts/validate_governance_cases.js && node scripts/validate_economic_cases.js && node scripts/validate_social_cases.js && node scripts/validate_delivery.js"
   },
   "devDependencies": {
     "linkedom": "0.18.12"

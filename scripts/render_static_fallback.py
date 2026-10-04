@@ -33,6 +33,7 @@ def set_content(tag,html):
 def render(page,lang,alias=False):
     page.set_content(source_for(lang),wait_until='domcontentloaded',timeout=30000)
     page.wait_for_function("document.querySelectorAll('#disputeGrid .disputeCase').length===9",timeout=10000)
+    page.wait_for_function("document.querySelectorAll('#socialGrid .socialCase').length===9",timeout=10000)
     page.wait_for_timeout(100)
     html=page.content();soup=BeautifulSoup(html,'lxml');root=soup.html
     prefix='' if alias else '../';canonical=BASE+lang+'/'
