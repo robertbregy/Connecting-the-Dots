@@ -1,0 +1,3417 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "string": ".ai",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "Anguilla",
+      "applicationEntity": "",
+      "geography": "Anguilla",
+      "themes": [
+        "technology",
+        "semanticDrift"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": null,
+      "readingKey": "driftAiReading",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/ai.html",
+        "https://registry.ai/"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".amsterdam",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "geographic",
+      "representedPlace": "Amsterdam",
+      "applicationEntity": "",
+      "geography": "Amsterdam",
+      "themes": [
+        "city"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": true,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/amsterdam.html",
+        "https://www.iana.org/domains/root/db"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".an",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "Netherlands Antilles",
+      "applicationEntity": "",
+      "geography": "Netherlands Antilles",
+      "themes": [
+        "geopolitics",
+        "history"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/an.html",
+        "https://www.iana.org/reports/2011/cw-report-20111003.html"
+      ],
+      "historicalRootStatus": "retired",
+      "historicalStatus": "retired",
+      "events": [
+        {
+          "period": "1993",
+          "status": "delegated",
+          "type": "country-code",
+          "entity": "",
+          "geography": "Netherlands Antilles",
+          "source": [
+            "https://www.iana.org/reports/2011/cw-report-20111003.html"
+          ],
+          "current": false
+        },
+        {
+          "period": "2010 → retirement",
+          "status": "retired",
+          "type": "country-code",
+          "entity": "",
+          "geography": "Netherlands Antilles",
+          "source": [
+            "https://www.iana.org/reports/2011/cw-report-20111003.html"
+          ],
+          "current": false
+        }
+      ]
+    },
+    {
+      "string": ".app",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [],
+      "contentionCount": 13,
+      "contentionYear": 2012,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/app.html",
+        "https://newgtlds.icann.org/en/program-status/statistics"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2012",
+          "status": "application",
+          "type": "generic",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://newgtlds.icann.org/en/program-status/statistics"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".aq",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "Antarctica",
+      "applicationEntity": "",
+      "geography": "Antarctica",
+      "themes": [
+        "territory"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/aq.html"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".arpa",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "United States",
+      "applicationEntity": "",
+      "geography": "United States",
+      "themes": [
+        "infrastructure",
+        "trust"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/arpa.html",
+        "https://www.iana.org/domains/root/db"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".art",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [],
+      "contentionCount": 10,
+      "contentionYear": 2012,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/art.html",
+        "https://newgtlds.icann.org/en/program-status/statistics"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2012",
+          "status": "application",
+          "type": "generic",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://newgtlds.icann.org/en/program-status/statistics"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".asia",
+      "round": "2004",
+      "historicalRounds": [
+        "2004"
+      ],
+      "originRound": "2004",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "Hong Kong, China",
+      "applicationEntity": "",
+      "geography": "Hong Kong, China",
+      "themes": [],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/asia.html",
+        "https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2004",
+          "status": "application",
+          "type": "sponsored",
+          "entity": "DotAsia Organisation Limited",
+          "geography": "Hong Kong, China",
+          "source": [
+            "https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".bank",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "trust"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/bank.html",
+        "https://ftld.com/security/"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".barcelona",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "geographic",
+      "representedPlace": "Barcelona",
+      "applicationEntity": "",
+      "geography": "Barcelona",
+      "themes": [
+        "city"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": true,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/barcelona.html",
+        "https://www.iana.org/domains/root/db"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".beer",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "lifestyle"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sBeer",
+      "readingKey": "iBeer",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/beer.html"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".berlin",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "geographic",
+      "representedPlace": "Berlin",
+      "applicationEntity": "",
+      "geography": "Berlin",
+      "themes": [
+        "city"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": true,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/berlin.html",
+        "https://www.iana.org/domains/root/db",
+        "https://newgtlds.icann.org/en/announcements-and-media/case-studies/berlin-a4-13feb19-en.pdf",
+        "https://newgtlds.icann.org/en/program-status/statistics"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "1999",
+          "status": "idea",
+          "type": "geographic",
+          "entity": "",
+          "geography": "Berlin",
+          "source": [
+            "https://newgtlds.icann.org/en/announcements-and-media/case-studies/berlin-a4-13feb19-en.pdf"
+          ],
+          "current": false
+        },
+        {
+          "period": "2012",
+          "status": "application",
+          "type": "geographic",
+          "entity": "",
+          "geography": "Berlin",
+          "source": [
+            "https://newgtlds.icann.org/en/program-status/statistics"
+          ],
+          "current": false
+        },
+        {
+          "period": "2014",
+          "status": "delegated",
+          "type": "geographic",
+          "entity": "",
+          "geography": "Berlin",
+          "source": [
+            "https://newgtlds.icann.org/en/announcements-and-media/case-studies/berlin-a4-13feb19-en.pdf"
+          ],
+          "current": false
+        }
+      ]
+    },
+    {
+      "string": ".bible",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "faith"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sBible",
+      "readingKey": "iBible",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/bible.html"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".blog",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [],
+      "contentionCount": 9,
+      "contentionYear": 2012,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/blog.html",
+        "https://newgtlds.icann.org/en/program-status/statistics"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2012",
+          "status": "application",
+          "type": "generic",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://newgtlds.icann.org/en/program-status/statistics"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".book",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [],
+      "contentionCount": 9,
+      "contentionYear": 2012,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/book.html",
+        "https://newgtlds.icann.org/en/program-status/statistics"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2012",
+          "status": "application",
+          "type": "generic",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://newgtlds.icann.org/en/program-status/statistics"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".bv",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "Bouvet Island",
+      "applicationEntity": "",
+      "geography": "Bouvet Island",
+      "themes": [
+        "territory"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/bv.html",
+        "https://www.norid.no/en/omnorid/toppdomenet-bv/"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".cat",
+      "round": "2004",
+      "historicalRounds": [
+        "2004"
+      ],
+      "originRound": "2004",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "Spain / Catalan-speaking community",
+      "applicationEntity": "",
+      "geography": "Spain / Catalan-speaking community",
+      "themes": [
+        "culture",
+        "trust"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sCat",
+      "readingKey": "iCat",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/cat.html",
+        "https://www.iana.org/reports/2005/cat-report-18nov2005.html",
+        "https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en",
+        "https://domini.cat/en/about-us"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2004",
+          "status": "application",
+          "type": "sponsored",
+          "entity": "Fundació puntCAT",
+          "geography": "Spain / Catalan-speaking community",
+          "source": [
+            "https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en"
+          ],
+          "current": false
+        },
+        {
+          "period": "2005",
+          "status": "delegated",
+          "type": "sponsored",
+          "entity": "Fundació puntCAT",
+          "geography": "Spain / Catalan-speaking community",
+          "source": [
+            "https://www.iana.org/reports/2005/cat-report-18nov2005.html"
+          ],
+          "current": false
+        }
+      ]
+    },
+    {
+      "string": ".co",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "Colombia",
+      "applicationEntity": "",
+      "geography": "Colombia",
+      "themes": [
+        "business",
+        "semanticDrift"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": null,
+      "readingKey": "driftCoReading",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/co.html",
+        "https://www.iana.org/reports/2009/co-report-24nov2009.html"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".com",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "United States",
+      "applicationEntity": "",
+      "geography": "United States",
+      "themes": [
+        "business"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/com.html",
+        "https://www.iana.org/domains/root/db"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".cs",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "Czechoslovakia; Serbia and Montenegro (code reassignment)",
+      "applicationEntity": "",
+      "geography": "Czechoslovakia; Serbia and Montenegro (code reassignment)",
+      "themes": [
+        "geopolitics",
+        "history"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "oddCsFact",
+      "readingKey": "oddCsReading",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.icann.org/en/board-activities-and-meetings/materials/preliminary-report-special-meeting-of-the-board-13-10-2003-en",
+        "https://www.iana.org/reports/2007/me-report-11sep2007.html"
+      ],
+      "historicalRootStatus": "retired",
+      "historicalStatus": "retired",
+      "events": [
+        {
+          "period": "Czechoslovakia",
+          "status": "retired",
+          "type": "country-code",
+          "entity": "",
+          "geography": "Czechoslovakia",
+          "source": [
+            "https://www.icann.org/en/board-activities-and-meetings/materials/preliminary-report-special-meeting-of-the-board-13-10-2003-en"
+          ],
+          "current": false
+        },
+        {
+          "period": "2003–2006",
+          "status": "notDelegated",
+          "type": "country-code",
+          "entity": "",
+          "geography": "Serbia and Montenegro",
+          "source": [
+            "https://www.iana.org/reports/2007/me-report-11sep2007.html"
+          ],
+          "current": false
+        }
+      ],
+      "historicalFormalType": "country-code"
+    },
+    {
+      "string": ".dating",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "intimacy"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sDating",
+      "readingKey": "iDating",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/dating.html"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".design",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [],
+      "contentionCount": 8,
+      "contentionYear": 2012,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/design.html",
+        "https://newgtlds.icann.org/en/program-status/statistics"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2012",
+          "status": "application",
+          "type": "generic",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://newgtlds.icann.org/en/program-status/statistics"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".eco",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "trust"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/eco.html",
+        "https://go.eco/policies/eligibility/"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".edu",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "United States",
+      "applicationEntity": "",
+      "geography": "United States",
+      "themes": [
+        "education"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/edu.html",
+        "https://www.iana.org/domains/root/db"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".eu",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "European Union",
+      "applicationEntity": "",
+      "geography": "European Union",
+      "themes": [
+        "supranational"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/eu.html",
+        "https://www.iana.org/help/eligible-tlds"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".fail",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "oddity"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sFail",
+      "readingKey": "iFail",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/fail.html"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".fm",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "Micronesia (Federated States of)",
+      "applicationEntity": "",
+      "geography": "Micronesia (Federated States of)",
+      "themes": [
+        "media",
+        "semanticDrift"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": null,
+      "readingKey": "driftFmReading",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/fm.html",
+        "https://dot.fm/registrar/"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".gb",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "United Kingdom",
+      "applicationEntity": "",
+      "geography": "United Kingdom",
+      "themes": [
+        "history"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/gb.html",
+        "https://www.iana.org/help/eligible-tlds"
+      ],
+      "historicalRootStatus": "reserved",
+      "historicalStatus": "reserved",
+      "events": [
+        {
+          "period": "1985",
+          "status": "reserved",
+          "type": "country-code",
+          "entity": "Reserved Domain - IANA",
+          "geography": "United Kingdom",
+          "source": [
+            "https://www.iana.org/domains/root/db/gb.html",
+            "https://www.iana.org/help/eligible-tlds"
+          ],
+          "current": false
+        }
+      ]
+    },
+    {
+      "string": ".geo",
+      "round": "2000",
+      "historicalRounds": [
+        "2000"
+      ],
+      "originRound": "",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "geography"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://archive.icann.org/en/tlds/"
+      ],
+      "historicalRootStatus": "notDelegated",
+      "historicalStatus": "evaluated",
+      "events": [
+        {
+          "period": "2000",
+          "status": "evaluated",
+          "type": "application",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://archive.icann.org/en/tlds/"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".gop",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "politics"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sGop",
+      "readingKey": "iGop",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/gop.html"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".gov",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "United States",
+      "applicationEntity": "",
+      "geography": "United States",
+      "themes": [
+        "government",
+        "trust"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/gov.html",
+        "https://www.iana.org/domains/root/db",
+        "https://get.gov/domains/eligibility/"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".guru",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "personalBrand"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sGuru",
+      "readingKey": "iGuru",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/guru.html"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".hamburg",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "geographic",
+      "representedPlace": "Hamburg",
+      "applicationEntity": "",
+      "geography": "Hamburg",
+      "themes": [
+        "city"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": true,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/hamburg.html",
+        "https://www.iana.org/domains/root/db"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".health",
+      "round": "2000",
+      "historicalRounds": [
+        "2000",
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [
+        "https://gtldresult.icann.org/applicationstatus/applicationdetails/495"
+      ],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "health",
+        "publicInterest"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sHealth",
+      "readingKey": "iHealth",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/health.html",
+        "https://archive.icann.org/en/tlds/health1/icann-index.htm",
+        "https://archive.icann.org/en/tlds/",
+        "https://gtldresult.icann.org/applicationstatus/applicationdetails/495",
+        "https://www.iana.org/reports/tld-transfer/20230626-health"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2000",
+          "status": "evaluated",
+          "type": "application",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://archive.icann.org/en/tlds/health1/icann-index.htm",
+            "https://archive.icann.org/en/tlds/"
+          ],
+          "current": false,
+          "provenanceKey": null
+        },
+        {
+          "period": "2012",
+          "status": "application",
+          "type": "application",
+          "entity": "DotHealth, LLC",
+          "geography": "United States",
+          "source": [
+            "https://gtldresult.icann.org/applicationstatus/applicationdetails/495"
+          ],
+          "current": false
+        },
+        {
+          "period": "2023-06-26",
+          "status": "registryTransferReport",
+          "type": "",
+          "entity": "Registry Services, LLC",
+          "geography": "United States",
+          "source": [
+            "https://www.iana.org/reports/tld-transfer/20230626-health"
+          ],
+          "current": false
+        }
+      ]
+    },
+    {
+      "string": ".home",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [],
+      "contentionCount": 11,
+      "contentionYear": 2012,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://newgtlds.icann.org/en/program-status/statistics"
+      ],
+      "historicalRootStatus": "notDelegated",
+      "historicalStatus": "application",
+      "events": [
+        {
+          "period": "2012",
+          "status": "application",
+          "type": "generic",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://newgtlds.icann.org/en/program-status/statistics"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".inc",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [],
+      "contentionCount": 11,
+      "contentionYear": 2012,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/inc.html",
+        "https://newgtlds.icann.org/en/program-status/statistics"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2012",
+          "status": "application",
+          "type": "generic",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://newgtlds.icann.org/en/program-status/statistics"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".insurance",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "trust"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/insurance.html",
+        "https://ftld.com/security/"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".int",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "publicInfrastructure"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/int.html",
+        "https://www.iana.org/domains/root/db"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".io",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "British Indian Ocean Territory",
+      "applicationEntity": "",
+      "geography": "British Indian Ocean Territory",
+      "themes": [
+        "technology",
+        "semanticDrift"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": null,
+      "readingKey": "driftIoReading",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/io.html",
+        "https://www.nic.io/"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".jobs",
+      "round": "2004",
+      "historicalRounds": [
+        "2004"
+      ],
+      "originRound": "2004",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "United States",
+      "applicationEntity": "",
+      "geography": "United States",
+      "themes": [],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/jobs.html",
+        "https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2004",
+          "status": "application",
+          "type": "sponsored",
+          "entity": "Society for Human Resource Management",
+          "geography": "United States",
+          "source": [
+            "https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".kids",
+      "round": "2000",
+      "historicalRounds": [
+        "2000",
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [
+        "https://gtldresult.icann.org/applicationstatus/applicationdetails/161"
+      ],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "children"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sKids",
+      "readingKey": "iKids",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/kids.html",
+        "https://archive.icann.org/en/tlds/kids1/",
+        "https://archive.icann.org/en/tlds/kids2/",
+        "https://archive.icann.org/en/tlds/kids3/",
+        "https://archive.icann.org/en/tlds/kids4/",
+        "https://archive.icann.org/en/tlds/",
+        "https://gtldresult.icann.org/applicationstatus/applicationdetails/161"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2000",
+          "status": "evaluated",
+          "type": "application",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://archive.icann.org/en/tlds/kids1/",
+            "https://archive.icann.org/en/tlds/kids2/",
+            "https://archive.icann.org/en/tlds/kids3/",
+            "https://archive.icann.org/en/tlds/kids4/",
+            "https://archive.icann.org/en/tlds/"
+          ],
+          "current": false,
+          "provenanceKey": null
+        },
+        {
+          "period": "2012",
+          "status": "application",
+          "type": "application",
+          "entity": "DotKids Foundation Limited",
+          "geography": "Hong Kong",
+          "source": [
+            "https://gtldresult.icann.org/applicationstatus/applicationdetails/161"
+          ],
+          "current": false
+        }
+      ]
+    },
+    {
+      "string": ".koeln",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "geographic",
+      "representedPlace": "Cologne",
+      "applicationEntity": "",
+      "geography": "Cologne",
+      "themes": [
+        "city"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": true,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/koeln.html",
+        "https://www.iana.org/domains/root/db"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".lgbt",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "identity"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sLgbt",
+      "readingKey": "iLgbt",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/lgbt.html"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".llc",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [],
+      "contentionCount": 9,
+      "contentionYear": 2012,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/llc.html",
+        "https://newgtlds.icann.org/en/program-status/statistics"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2012",
+          "status": "application",
+          "type": "generic",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://newgtlds.icann.org/en/program-status/statistics"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".london",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "geographic",
+      "representedPlace": "London",
+      "applicationEntity": "",
+      "geography": "London",
+      "themes": [
+        "city"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": true,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/london.html",
+        "https://www.iana.org/domains/root/db"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".lugano",
+      "round": "2026",
+      "historicalRounds": [
+        "2026"
+      ],
+      "originRound": "",
+      "originRoundSources": [],
+      "editorialDesignation": "geographic",
+      "representedPlace": "Lugano, Switzerland",
+      "applicationEntity": "",
+      "geography": "Switzerland",
+      "themes": [
+        "city",
+        "trust"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": true,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": true,
+      "provenanceKey": "applicantDisclosure",
+      "provenanceDate": "2026-10-02",
+      "group": "",
+      "source": [],
+      "historicalRootStatus": "notDelegated",
+      "historicalStatus": "application",
+      "events": [
+        {
+          "period": "2026",
+          "status": "application",
+          "type": "geographic",
+          "entity": "",
+          "geography": "Switzerland",
+          "source": [],
+          "current": false,
+          "provenanceKey": "applicantDisclosure",
+          "provenanceDate": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "string": ".magic",
+      "round": "2000",
+      "historicalRounds": [
+        "2000"
+      ],
+      "originRound": "",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "optimism"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sMagic",
+      "readingKey": "iMagic",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://archive.icann.org/en/tlds/ads1/"
+      ],
+      "historicalRootStatus": "notDelegated",
+      "historicalStatus": "proposed",
+      "events": [
+        {
+          "period": "2000",
+          "status": "proposed",
+          "type": "application",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://archive.icann.org/en/tlds/ads1/"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".mail",
+      "round": "2004",
+      "historicalRounds": [
+        "2004"
+      ],
+      "originRound": "",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "United Kingdom",
+      "applicationEntity": "Anti-Spam Community Registry",
+      "geography": "United Kingdom",
+      "themes": [
+        "trust"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sMail",
+      "readingKey": "iMail",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en"
+      ],
+      "historicalRootStatus": "notDelegated",
+      "historicalStatus": "notDelegated",
+      "events": [
+        {
+          "period": "2004",
+          "status": "notDelegated",
+          "type": "sponsored",
+          "entity": "Anti-Spam Community Registry",
+          "geography": "United Kingdom",
+          "source": [
+            "https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".me",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "Montenegro",
+      "applicationEntity": "",
+      "geography": "Montenegro",
+      "themes": [
+        "identity",
+        "semanticDrift"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": null,
+      "readingKey": "driftMeReading",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/me.html",
+        "https://domain.me/about-me/"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".mil",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "United States",
+      "applicationEntity": "",
+      "geography": "United States",
+      "themes": [
+        "government"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/mil.html",
+        "https://www.iana.org/domains/root/db"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".mobi",
+      "round": "2004",
+      "historicalRounds": [
+        "2004"
+      ],
+      "originRound": "2004",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "Finland",
+      "applicationEntity": "",
+      "geography": "Finland",
+      "themes": [
+        "techFossil"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sMobi",
+      "readingKey": "iMobi",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/mobi.html",
+        "https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2004",
+          "status": "application",
+          "type": "sponsored",
+          "entity": "Mobi JV",
+          "geography": "Finland",
+          "source": [
+            "https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".movie",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [],
+      "contentionCount": 8,
+      "contentionYear": 2012,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/movie.html",
+        "https://newgtlds.icann.org/en/program-status/statistics"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2012",
+          "status": "application",
+          "type": "generic",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://newgtlds.icann.org/en/program-status/statistics"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".museum",
+      "round": "2000",
+      "historicalRounds": [
+        "2000"
+      ],
+      "originRound": "2000",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "culture"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/museum.html",
+        "https://archive.icann.org/en/tlds/"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2000",
+          "status": "selected",
+          "type": "application",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://archive.icann.org/en/tlds/"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".music",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [],
+      "contentionCount": 8,
+      "contentionYear": 2012,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/music.html",
+        "https://newgtlds.icann.org/en/program-status/statistics"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2012",
+          "status": "application",
+          "type": "generic",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://newgtlds.icann.org/en/program-status/statistics"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".name",
+      "round": "2000",
+      "historicalRounds": [
+        "2000"
+      ],
+      "originRound": "2000",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "identity"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/name.html",
+        "https://archive.icann.org/en/tlds/"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2000",
+          "status": "selected",
+          "type": "application",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://archive.icann.org/en/tlds/"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".net",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "United States",
+      "applicationEntity": "",
+      "geography": "United States",
+      "themes": [
+        "technology"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/net.html",
+        "https://www.iana.org/domains/root/db"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".ninja",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "personalBrand"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sNinja",
+      "readingKey": "iNinja",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/ninja.html"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".nyc",
+      "round": "2012",
+      "historicalRounds": [
+        "2000",
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "geographic",
+      "representedPlace": "New York",
+      "applicationEntity": "",
+      "geography": "New York",
+      "themes": [
+        "city"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": true,
+      "noteKey": "sNyc",
+      "readingKey": "iNyc",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/nyc.html",
+        "https://archive.icann.org/en/tlds/tld-review-update-23oct00.htm",
+        "https://archive.icann.org/en/tlds/",
+        "https://www.iana.org/domains/root/db",
+        "https://www.icann.org/en/announcements/details/tld-application-review-update-23-10-2000-en",
+        "https://newgtlds.icann.org/en/program-status/statistics"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2000",
+          "status": "withdrawn",
+          "type": "geographic",
+          "entity": "",
+          "geography": "New York",
+          "source": [
+            "https://www.icann.org/en/announcements/details/tld-application-review-update-23-10-2000-en"
+          ],
+          "current": false
+        },
+        {
+          "period": "2012",
+          "status": "application",
+          "type": "geographic",
+          "entity": "City of New York",
+          "geography": "New York",
+          "source": [
+            "https://newgtlds.icann.org/en/program-status/statistics"
+          ],
+          "current": false
+        },
+        {
+          "period": "2014",
+          "status": "delegated",
+          "type": "geographic",
+          "entity": "",
+          "geography": "New York",
+          "source": [
+            "https://www.iana.org/domains/root/db/nyc.html"
+          ],
+          "current": false
+        }
+      ]
+    },
+    {
+      "string": ".org",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "community"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/org.html",
+        "https://www.iana.org/domains/root/db",
+        "https://www.icann.org/en/announcements/details/advisory-concerning-org-transition-7-1-2003-en"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2003-01-01",
+          "status": "registryTransition",
+          "type": "",
+          "entity": "Public Interest Registry (PIR)",
+          "geography": "",
+          "source": [
+            "https://www.icann.org/en/announcements/details/advisory-concerning-org-transition-7-1-2003-en"
+          ],
+          "current": false
+        }
+      ]
+    },
+    {
+      "string": ".paris",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "geographic",
+      "representedPlace": "Paris",
+      "applicationEntity": "",
+      "geography": "Paris",
+      "themes": [
+        "city"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": true,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/paris.html",
+        "https://www.iana.org/domains/root/db"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".pharmacy",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "trust"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/pharmacy.html",
+        "https://nabp.pharmacy/help/is-domain-name-registration-in-the-pharmacy-tld-restricted/"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".pizza",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "lifestyle"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sPizza",
+      "readingKey": "iPizza",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/pizza.html"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".post",
+      "round": "2004",
+      "historicalRounds": [
+        "2004"
+      ],
+      "originRound": "2004",
+      "originRoundSources": [
+        "https://www.iana.org/reports/2012/post-report-20120802.html"
+      ],
+      "editorialDesignation": "",
+      "representedPlace": "Switzerland",
+      "applicationEntity": "",
+      "geography": "Switzerland",
+      "themes": [
+        "publicInfrastructure",
+        "trust"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sPost",
+      "readingKey": "iPost",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/post.html",
+        "https://www.iana.org/reports/2012/post-report-20120802.html",
+        "https://archive.icann.org/en/tlds/",
+        "https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en",
+        "https://www.upu.int/en/universal-postal-union/activities/digital-services/post-domain"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2004",
+          "status": "application",
+          "type": "sponsored",
+          "entity": "Universal Postal Union",
+          "geography": "Switzerland",
+          "source": [
+            "https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en"
+          ],
+          "current": false
+        },
+        {
+          "period": "2012",
+          "status": "delegated",
+          "type": "sponsored",
+          "entity": "",
+          "geography": "Switzerland",
+          "source": [
+            "https://www.iana.org/domains/root/db/post.html"
+          ],
+          "current": false
+        }
+      ]
+    },
+    {
+      "string": ".quebec",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "geographic",
+      "representedPlace": "Quebec",
+      "applicationEntity": "",
+      "geography": "Quebec",
+      "themes": [
+        "city"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": true,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/quebec.html",
+        "https://www.iana.org/domains/root/db"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".rich",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "statusCulture"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sRich",
+      "readingKey": "iRich",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/rich.html"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".shop",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [],
+      "contentionCount": 9,
+      "contentionYear": 2012,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/shop.html",
+        "https://newgtlds.icann.org/en/program-status/statistics"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2012",
+          "status": "application",
+          "type": "generic",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://newgtlds.icann.org/en/program-status/statistics"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".sj",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "Svalbard and Jan Mayen",
+      "applicationEntity": "",
+      "geography": "Svalbard and Jan Mayen",
+      "themes": [
+        "territory"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/sj.html",
+        "https://www.norid.no/en/omnorid/toppdomenet-sj/"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".soup",
+      "round": "2000",
+      "historicalRounds": [
+        "2000"
+      ],
+      "originRound": "",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "oddity"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sSoup",
+      "readingKey": "iSoup",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://archive.icann.org/en/tlds/ads1/"
+      ],
+      "historicalRootStatus": "notDelegated",
+      "historicalStatus": "proposed",
+      "events": [
+        {
+          "period": "2000",
+          "status": "proposed",
+          "type": "application",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://archive.icann.org/en/tlds/ads1/"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".su",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "Former Soviet Union (legacy code)",
+      "applicationEntity": "",
+      "geography": "Former Soviet Union (legacy code)",
+      "themes": [
+        "geopolitics",
+        "history"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/su.html"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".sucks",
+      "round": "cross",
+      "historicalRounds": [
+        "2000",
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "protest"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sSucks",
+      "readingKey": "iSucks",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/sucks.html",
+        "https://archive.icann.org/en/tlds/ads1/",
+        "https://newgtlds.icann.org/en/program-status/statistics"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2000",
+          "status": "proposed",
+          "type": "application",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://archive.icann.org/en/tlds/ads1/"
+          ],
+          "current": false
+        },
+        {
+          "period": "2012",
+          "status": "application",
+          "type": "generic",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://newgtlds.icann.org/en/program-status/statistics"
+          ],
+          "current": false
+        }
+      ]
+    },
+    {
+      "string": ".swiss",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "trust"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/swiss.html",
+        "https://www.nic.swiss/en/conditions-for-the-registration-and-the-registration-process"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".tel",
+      "round": "2004",
+      "historicalRounds": [
+        "2004"
+      ],
+      "originRound": "2004",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "United Kingdom",
+      "applicationEntity": "",
+      "geography": "United Kingdom",
+      "themes": [],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/tel.html",
+        "https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2004",
+          "status": "application",
+          "type": "sponsored",
+          "entity": "Telname Limited",
+          "geography": "United Kingdom",
+          "source": [
+            "https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en"
+          ],
+          "current": false,
+          "outcomeKey": "notSelected"
+        },
+        {
+          "period": "2004",
+          "status": "application",
+          "type": "sponsored",
+          "entity": "Telnic Limited",
+          "geography": "United Kingdom",
+          "source": [
+            "https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en"
+          ],
+          "current": false
+        }
+      ]
+    },
+    {
+      "string": ".tokyo",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "geographic",
+      "representedPlace": "Tokyo",
+      "applicationEntity": "",
+      "geography": "Tokyo",
+      "themes": [
+        "city"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": true,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/tokyo.html",
+        "https://www.iana.org/domains/root/db"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".tp",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "Portuguese Timor",
+      "applicationEntity": "",
+      "geography": "Portuguese Timor",
+      "themes": [
+        "geopolitics",
+        "history"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/tp.html",
+        "https://www.iana.org/reports/2015/tp-report-20150126.html"
+      ],
+      "historicalRootStatus": "retired",
+      "historicalStatus": "retired",
+      "events": [
+        {
+          "period": "1997",
+          "status": "delegated",
+          "type": "country-code",
+          "entity": "",
+          "geography": "Portuguese Timor",
+          "source": [
+            "https://www.iana.org/reports/2015/tp-report-20150126.html"
+          ],
+          "current": false
+        },
+        {
+          "period": "2015",
+          "status": "retired",
+          "type": "country-code",
+          "entity": "",
+          "geography": "Portuguese Timor",
+          "source": [
+            "https://www.iana.org/reports/2015/tp-report-20150126.html"
+          ],
+          "current": false
+        }
+      ]
+    },
+    {
+      "string": ".travel",
+      "round": "2004",
+      "historicalRounds": [
+        "2004"
+      ],
+      "originRound": "2004",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "United States",
+      "applicationEntity": "",
+      "geography": "United States",
+      "themes": [],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/travel.html",
+        "https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2004",
+          "status": "application",
+          "type": "sponsored",
+          "entity": "The Travel Partnership Corporation",
+          "geography": "United States",
+          "source": [
+            "https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".tv",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "Tuvalu",
+      "applicationEntity": "",
+      "geography": "Tuvalu",
+      "themes": [
+        "media",
+        "semanticDrift"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": null,
+      "readingKey": "driftTvReading",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/tv.html",
+        "https://www.turnon.tv/"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".uk",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "United Kingdom",
+      "applicationEntity": "",
+      "geography": "United Kingdom",
+      "themes": [
+        "history"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/uk.html",
+        "https://www.iana.org/help/eligible-tlds"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".union",
+      "round": "2000",
+      "historicalRounds": [
+        "2000"
+      ],
+      "originRound": "",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "labour"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sUnion",
+      "readingKey": "iUnion",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://archive.icann.org/en/tlds/union1/",
+        "https://archive.icann.org/en/tlds/"
+      ],
+      "historicalRootStatus": "notDelegated",
+      "historicalStatus": "evaluated",
+      "events": [
+        {
+          "period": "2000",
+          "status": "evaluated",
+          "type": "application",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://archive.icann.org/en/tlds/union1/",
+            "https://archive.icann.org/en/tlds/"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".wap",
+      "round": "2000",
+      "historicalRounds": [
+        "2000"
+      ],
+      "originRound": "",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "techFossil"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://archive.icann.org/en/tlds/"
+      ],
+      "historicalRootStatus": "notDelegated",
+      "historicalStatus": "returned",
+      "events": [
+        {
+          "period": "2000",
+          "status": "returned",
+          "type": "application",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://archive.icann.org/en/tlds/"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".war",
+      "round": "2000",
+      "historicalRounds": [
+        "2000"
+      ],
+      "originRound": "",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "socialMirror"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sWar",
+      "readingKey": "iWar",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://archive.icann.org/en/tlds/ads1/"
+      ],
+      "historicalRootStatus": "notDelegated",
+      "historicalStatus": "proposed",
+      "events": [
+        {
+          "period": "2000",
+          "status": "proposed",
+          "type": "application",
+          "entity": "",
+          "geography": "",
+          "source": [
+            "https://archive.icann.org/en/tlds/ads1/"
+          ],
+          "current": false,
+          "provenanceKey": null
+        }
+      ]
+    },
+    {
+      "string": ".wien",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "geographic",
+      "representedPlace": "Vienna",
+      "applicationEntity": "",
+      "geography": "Vienna",
+      "themes": [
+        "city"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": true,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/wien.html",
+        "https://www.iana.org/domains/root/db"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".wtf",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "",
+      "applicationEntity": "",
+      "geography": "",
+      "themes": [
+        "oddity"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sWtf",
+      "readingKey": "iWtf",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/wtf.html"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".xxx",
+      "round": "2004",
+      "historicalRounds": [
+        "2004"
+      ],
+      "originRound": "2004",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "Canada / United States",
+      "applicationEntity": "",
+      "geography": "Canada / United States",
+      "themes": [
+        "adult"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": "sXxx",
+      "readingKey": "iXxx",
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/xxx.html",
+        "https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2004",
+          "status": "application",
+          "type": "sponsored",
+          "entity": "ICM Registry",
+          "geography": "Canada / United States",
+          "source": [
+            "https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en"
+          ],
+          "current": false
+        },
+        {
+          "period": "2011",
+          "status": "delegated",
+          "type": "sponsored",
+          "entity": "",
+          "geography": "Canada / United States",
+          "source": [
+            "https://www.iana.org/domains/root/db/xxx.html"
+          ],
+          "current": false
+        }
+      ]
+    },
+    {
+      "string": ".yu",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "Yugoslavia",
+      "applicationEntity": "",
+      "geography": "Yugoslavia",
+      "themes": [
+        "geopolitics",
+        "history"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/reports/2010/yu-report-01apr2010.html"
+      ],
+      "historicalRootStatus": "retired",
+      "historicalStatus": "retired",
+      "events": [
+        {
+          "period": "1989",
+          "status": "delegated",
+          "type": "country-code",
+          "entity": "",
+          "geography": "Yugoslavia",
+          "source": [
+            "https://www.iana.org/reports/2010/yu-report-01apr2010.html"
+          ],
+          "current": false
+        },
+        {
+          "period": "2010",
+          "status": "retired",
+          "type": "country-code",
+          "entity": "",
+          "geography": "Yugoslavia",
+          "source": [
+            "https://www.iana.org/reports/2010/yu-report-01apr2010.html"
+          ],
+          "current": false
+        }
+      ],
+      "historicalFormalType": "country-code"
+    },
+    {
+      "string": ".zuerich",
+      "round": "2012",
+      "historicalRounds": [
+        "2012"
+      ],
+      "originRound": "2012",
+      "originRoundSources": [],
+      "editorialDesignation": "geographic",
+      "representedPlace": "Canton of Zurich",
+      "applicationEntity": "",
+      "geography": "Canton of Zurich",
+      "themes": [
+        "city"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": false,
+      "city": true,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/zuerich.html",
+        "https://www.iana.org/domains/root/db"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": []
+    },
+    {
+      "string": ".ευ",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "European Union",
+      "applicationEntity": "",
+      "geography": "European Union",
+      "themes": [
+        "supranational",
+        "scripts"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/xn--qxa6a.html",
+        "https://www.iana.org/reports/2019/xn--qxa6a-report-20190822.html"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2019",
+          "status": "delegated",
+          "type": "country-code",
+          "entity": "EURid vzw",
+          "geography": "European Union",
+          "source": [
+            "https://www.iana.org/reports/2019/xn--qxa6a-report-20190822.html"
+          ],
+          "current": false
+        }
+      ]
+    },
+    {
+      "string": ".ею",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "legacy",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "European Union",
+      "applicationEntity": "",
+      "geography": "European Union",
+      "themes": [
+        "supranational",
+        "scripts"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/domains/root/db/xn--e1a4c.html",
+        "https://www.iana.org/reports/2016/eu-report-20160118.html"
+      ],
+      "historicalRootStatus": "",
+      "historicalStatus": "delegated",
+      "events": [
+        {
+          "period": "2016",
+          "status": "delegated",
+          "type": "country-code",
+          "entity": "EURid vzw",
+          "geography": "European Union",
+          "source": [
+            "https://www.iana.org/reports/2016/eu-report-20160118.html"
+          ],
+          "current": false
+        }
+      ]
+    }
+  ]
+}

@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.5"
+VERSION = "0.7.6"
 
 
 def csv_records(path: Path) -> int:
@@ -48,6 +48,7 @@ def build_manifest() -> None:
             "records": csv_records(path),
             "sha256": sha256(path),
         })
+    runtime = json.loads((DATA / "data_bundle.js").read_text().split("window.DOT_DATA=", 1)[1].rsplit(";", 1)[0])
     manifest = {
         "project": "Connecting the Dots",
         "version": VERSION,
@@ -69,6 +70,7 @@ def build_manifest() -> None:
         ],
         "current_root_snapshot": json.loads((DATA / "iana_snapshot.json").read_text())["asOf"],
         "iana_evidence": "iana_snapshot.json",
+        "explorer_coverage": runtime["explorerMeta"],
         "iana_evidence_archive": json.loads((DATA / "iana_snapshot.json").read_text())["archive_path"].removeprefix("data/"),
         "files": files,
     }
@@ -173,7 +175,7 @@ def validate_index() -> None:
     if csv_records(DATA / "applications_2026.csv") != 0:
         raise SystemExit("Pre-Reveal build must not contain synthetic 2026 application records")
 
-    for js in [ROOT / "assets" / "app.js", DATA / "data_bundle.js", DATA / "i18n_bundle.js", DATA / "publication.js", DATA / "v068.js", DATA / "i18n_v068.js", DATA / "i18n_v069.js", DATA / "i18n_v0610.js", DATA / "v0610.js", DATA / "i18n_v0611.js", DATA / "v0611.js", DATA / "i18n_v070.js", DATA / "v070.js", DATA / "i18n_v071.js", DATA / "v071.js", DATA / "i18n_v072.js", DATA / "v072.js", DATA / "i18n_v073.js", ROOT / "assets" / "legacy-routing.js", ROOT / "scripts" / "render_static.js", ROOT / "scripts" / "validate_multilingual.js", DATA / "v074.js", DATA / "i18n_v074.js"]:
+    for js in [ROOT / "assets" / "app.js", DATA / "data_bundle.js", DATA / "i18n_bundle.js", DATA / "publication.js", ROOT / "assets" / "legacy-routing.js", *sorted((ROOT / "scripts").glob("*.js"))]:
         try:
             subprocess.run(["node", "--check", str(js)], check=True, capture_output=True, text=True)
         except FileNotFoundError:

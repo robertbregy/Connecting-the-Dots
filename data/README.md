@@ -57,3 +57,12 @@ Events are ordered by their recorded year/date; a year-only event has no implied
 `iana_snapshot.json` identifies `archive_path` (relative to the repository root), the archive SHA-256, and each original file's SHA-256. The gzip file contains UTF-8 JSON with `format: "ctd-evidence-v1"`, `encoding: "base64"` and a `files` object mapping original repository-relative paths to base64-encoded bytes. This preserves all 78 original files without requiring 78 separate GitHub uploads. The data ZIP places this archive under `evidence/`, alongside the normalized snapshot at its root. `node scripts/validate_corrective.js` verifies the archive and all original-file hashes without extracting the evidence.
 
 Legal organization names remain in their source language. The interface localizes descriptive places and periods; CSV values remain stable source labels.
+
+
+## v0.7.6 complete root index
+
+`explorer_catalog.csv` contains 1,450 records: the 1,437 labels in the preserved IANA root list plus 13 selected historical/application records outside it. `record_level` distinguishes `basic` and `curated`; 87 records are curated. `ascii_string` is the normalized DNS identity; `string` is the Unicode display label. `root_listed` reports membership in that dated list, independently of lifecycle labels such as reserved or retired.
+
+Basic records derive only name, root-list presence, formal type and registry organization from the preserved list and Root Zone Database. Their other fields are blank and they have no constructed history. The list includes `.gb`; its separate reserved state is preserved. Round, theme and city classifications are limited to the curated subset. Do not interpret those filters as comprehensive root-wide classifications.
+
+The source model is now `research.json`, `explorer_curated.json`, `iana_snapshot.json`, the evidence archive, and `translations.json`, assembled by `scripts/assemble_data.js`. It replaces the previous version-patch chain. Changing the current registry does not change a sourced historical event. The complete CSV, visible runtime and downloadable pack are generated from this same model.

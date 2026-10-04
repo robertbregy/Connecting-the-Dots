@@ -189,6 +189,12 @@ string,period,status,type,entity,geography,current,provenance,sources
 .wien,2026-10-04,delegated,generic,punkt.wien GmbH,Austria,yes,,https://www.iana.org/domains/root/db/wien.html
 .wtf,2014-04-17,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/wtf.html
 .wtf,2026-10-04,delegated,generic,"Binky Moon, LLC",United States of America (the),yes,,https://www.iana.org/domains/root/db/wtf.html
+.ею,2015-12-08,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/xn--e1a4c.html
+.ею,2016,delegated,country-code,EURid vzw,European Union,no,,https://www.iana.org/reports/2016/eu-report-20160118.html
+.ею,2026-10-04,delegated,country-code,EURid vzw,Belgium,yes,,https://www.iana.org/domains/root/db/xn--e1a4c.html
+.ευ,2019,delegated,country-code,EURid vzw,European Union,no,,https://www.iana.org/reports/2019/xn--qxa6a-report-20190822.html
+.ευ,2019-07-18,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/xn--qxa6a.html
+.ευ,2026-10-04,delegated,country-code,EURid vzw,Belgium,yes,,https://www.iana.org/domains/root/db/xn--qxa6a.html
 .xxx,2004,application,sponsored,ICM Registry,Canada / United States,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
 .xxx,2011,delegated,sponsored,,Canada / United States,no,,https://www.iana.org/domains/root/db/xxx.html
 .xxx,2011-04-15,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/xxx.html
@@ -197,9 +203,3 @@ string,period,status,type,entity,geography,current,provenance,sources
 .yu,2010,retired,country-code,,Yugoslavia,no,,https://www.iana.org/reports/2010/yu-report-01apr2010.html
 .zuerich,2014-12-18,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/zuerich.html
 .zuerich,2026-10-04,delegated,generic,Kanton Zürich (Canton of Zurich),Switzerland,yes,,https://www.iana.org/domains/root/db/zuerich.html
-.ευ,2019,delegated,country-code,EURid vzw,European Union,no,,https://www.iana.org/reports/2019/xn--qxa6a-report-20190822.html
-.ευ,2019-07-18,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/xn--qxa6a.html
-.ευ,2026-10-04,delegated,country-code,EURid vzw,Belgium,yes,,https://www.iana.org/domains/root/db/xn--qxa6a.html
-.ею,2015-12-08,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/xn--e1a4c.html
-.ею,2016,delegated,country-code,EURid vzw,European Union,no,,https://www.iana.org/reports/2016/eu-report-20160118.html
-.ею,2026-10-04,delegated,country-code,EURid vzw,Belgium,yes,,https://www.iana.org/domains/root/db/xn--e1a4c.html

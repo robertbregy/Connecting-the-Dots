@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.5
+# Connecting the Dots — v0.7.6
 
 **Connecting the Dots** is a multilingual, static research publication about the history, governance, geography and social meaning of top-level domains, with the 2026 ICANN round and the `.lugano` application as the contemporary layer.
 
@@ -25,7 +25,7 @@ The Explorer separates two concepts that must not be conflated:
 
 This matters for strings such as `.nyc`, `.cat` and `.post`: an old application, a later application and eventual delegation are distinct events, not one record whose fields should overwrite one another. The Explorer drawer exposes that history where it is informative.
 
-Before the complete post-Reveal import, the Explorer remains explicitly labelled as a curated preview and renders results progressively.
+The Explorer indexes every label in the dated IANA root list. Basic records contain only the name, root-list membership, formal type and registry organization. The curated subset adds documented context and historical events. All root labels are searchable in Unicode and ASCII; historical rounds, themes and city filters apply only where documented. Individual 2026 application data remains pending official publication.
 
 ## `.lugano` provenance before Reveal Day
 
@@ -208,3 +208,34 @@ python3 scripts/package_release.py
 ```
 
 The last command writes the complete ZIP next to the project directory and rejects packages exceeding GitHub's 100-file browser-upload limit.
+
+
+## v0.7.6 · guided reading, complete root index and canonical sources
+
+The homepage introduces three questions: who decides, who operates, and what changes. Round metrics are in the 2026 chapter; the namespace framework is in the explanatory chapter. Existing navigation and language routes remain available.
+
+The Explorer contains **1,450 records**: all **1,437 labels** in the dated IANA root list plus **13 historical or application records** outside that list. **87 records** have curated context and history; the rest have clearly labelled basic records. Root-list membership is separate from the indexed lifecycle state: `.gb` appears in the list but is labelled reserved. No application round, country, technical provider or operator history is inferred for basic records.
+
+The author’s involvement in .lugano is disclosed in the case study and methodology. Public evidence questions concern utility, adoption, accountable rules and interoperability. They introduce no municipal targets, internal financial assessments or commitments on behalf of the City.
+
+### Canonical build inputs
+
+- `data/research.json`: research datasets, source references and editorial data.
+- `data/explorer_curated.json`: explicit historical rounds, classifications and sourced events. Current registry details are not copied into historical events.
+- `data/iana_snapshot.json` and its compressed evidence archive: dated IANA root list, Root Zone Database and selected individual records.
+- `data/translations.json`: the complete EN, IT, DE and FR dictionaries.
+- `scripts/assemble_data.js`: one assembly step merges current root membership with curated history by ASCII DNS label. The build no longer executes the 29 former version-patch files.
+
+No network request occurs during a build. The evidence archive is checked before import. Regression checks validate every root-list identity, formal type and manager in basic records; separate curated histories; Unicode/ASCII searches; filters; navigation; CSV parity; and all language pages. Packages remain below the 100-file browser-upload limit.
+
+### Focus for independent editorial review
+
+This release has automated checks; these are not an independent subject-matter review. A reviewer should examine these specific claims and their linked sources:
+
+1. Root membership, reserved status and the distinction between IANA registration and historical operation, especially `.gb`, `.org`, `.health`, `.post` and `.cs`.
+2. Round totals and 2012/2026 comparisons: applications, unique strings and contention sets are different units; 2026 application-level observations remain unpublished in this snapshot.
+3. Concentration claims: TLD portfolio breadth, domain-registration volume and contractual/technical roles are separate measures.
+4. Trust examples such as `.bank`, `.gov` and `.pharmacy`: published eligibility or security rules do not by themselves demonstrate every user outcome.
+5. The .lugano case: applicant disclosure, prospective editorial scenarios and official City decisions must remain distinct.
+
+For a later 2026 import, preserve the official source and publication date first, reconcile identities and status fields, then update the canonical datasets and publication state together. Do not remove the pre-Reveal gate merely to display unsourced records. The final mapping must be checked against the actual official release schema.

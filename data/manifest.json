@@ -1,6 +1,6 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "release_date": "2026-10-04",
   "publication_state": "pre-reveal",
   "rendering": "static-prerendered",
@@ -24,6 +24,18 @@
   ],
   "current_root_snapshot": "2026-10-04",
   "iana_evidence": "iana_snapshot.json",
+  "explorer_coverage": {
+    "seedCount": 87,
+    "curatedCount": 87,
+    "recordCount": 1450,
+    "ianaRootCount": 1437,
+    "rootIndexedCount": 1437,
+    "ianaSnapshot": "2026-10-04",
+    "ianaSource": "https://data.iana.org/TLD/tlds-alpha-by-domain.txt",
+    "rootCoverageComplete": true,
+    "historicalCoverageComplete": false,
+    "application2026CoverageComplete": false
+  },
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "files": [
     {
@@ -100,15 +112,15 @@
     },
     {
       "path": "explorer_catalog.csv",
-      "bytes": 30644,
-      "records": 87,
-      "sha256": "446039dcf66aafa63a28504bb09bcbf7eb59d76dbd9b4093fa94a2f98218318a"
+      "bytes": 389067,
+      "records": 1450,
+      "sha256": "419ac3a430a7f7d8f36f7958b55da680c65578bab69f2a458a86bb65904dfb7c"
     },
     {
       "path": "explorer_events.csv",
       "bytes": 24138,
       "records": 204,
-      "sha256": "32674b328ac86d36ab114813c4281f959d1531346e0d8707982060f05ea56089"
+      "sha256": "284326bdb2ae20b125129a3829f7191fc41049ffe18e21d2b00e9f2266fe8c43"
     },
     {
       "path": "governance_locations.csv",

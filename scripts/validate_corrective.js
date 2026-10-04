@@ -8,6 +8,16 @@ const archive=fs.readFileSync(path.join(root,snapshot.archive_path));
 assert.equal(crypto.createHash('sha256').update(archive).digest('hex'),snapshot.archive_sha256,'evidence archive changed');
 const evidence=JSON.parse(zlib.gunzipSync(archive));assert.equal(evidence.format,'ctd-evidence-v1');assert.equal(evidence.encoding,'base64');assert.equal(Object.keys(evidence.files).length,snapshot.files.length);
 for(const file of snapshot.files){assert.ok(evidence.files[file.path],file.path+' missing');assert.equal(crypto.createHash('sha256').update(Buffer.from(evidence.files[file.path],'base64')).digest('hex'),file.sha256,file.path+' evidence changed');}
+const rootLabels=Buffer.from(evidence.files['data/evidence/iana/tlds-alpha-by-domain.txt'],'base64').toString('utf8').split(/\r?\n/).filter(s=>s&&!s.startsWith('#')).map(s=>'.'+s.toLowerCase());
+const rootRecords=D.explorer.filter(r=>r.rootListed);
+assert.deepEqual(Array.from(rootRecords,r=>r.asciiString).sort(),rootLabels.sort(),'complete root membership');
+assert.equal(new Set(D.explorer.map(r=>r.asciiString)).size,D.explorer.length,'unique ASCII identities');
+assert.equal(D.explorerMeta.rootIndexedCount,snapshot.rootListCount);
+assert.equal(D.explorerMeta.curatedCount,JSON.parse(read('data/explorer_curated.json')).records.length);
+assert.equal(D.explorer.filter(r=>r.recordLevel==='curated').length,D.explorerMeta.curatedCount);
+const rootDocument=parseHTML(Buffer.from(evidence.files['data/evidence/iana/root-db.html'],'base64').toString('utf8')).document;
+const rootFacts=new Map([...rootDocument.querySelectorAll('#tld-table tbody tr')].map(row=>{const cells=row.querySelectorAll('td'),link=cells[0].querySelector('a');return['.'+link.getAttribute('href').split('/').pop().replace(/\.html$/,''),{type:cells[1].textContent.trim(),entity:cells[2].textContent.trim()}]}));
+for(const r of D.explorer.filter(r=>r.recordLevel==='basic')){const fact=rootFacts.get(r.asciiString);assert.ok(fact,r.string+' root source');assert.equal(r.formalType,fact.type);assert.equal(r.registryEntity,fact.entity);for(const key of ['originRound','round','registryCountry','registrationDate','applicationEntity','technicalContactOrganization','representedPlace'])assert.ok(!r[key],r.string+' inferred '+key);assert.equal((r.events||[]).length,0,r.string+' invented history');}
 for(const r of D.explorer){const current=snapshot.records[r.string];if(!current)continue;assert.equal(r.formalType,current.formalType,r.string+' formal type');assert.equal(r.registryEntity,current.currentRootStatus==='reserved'||current.registryEntity==='Not assigned'?'':current.registryEntity,r.string+' registry');if(current.currentRootStatus==='delegated'){assert.equal(r.status,'delegated',r.string+' current status');assert.ok(r.events.some(e=>e.current&&e.period===snapshot.asOf),r.string+' dated current event');}}
 for(const string of ['.app','.health','.kids','.museum','.name','.sucks'])assert.equal(D.explorer.find(r=>r.string===string).currentRootStatus,'delegated');
 assert.equal(D.explorer.find(r=>r.string==='.gb').currentRootStatus,'reserved');
@@ -16,7 +26,7 @@ const lugano=D.explorer.find(r=>r.string==='.lugano');assert.equal(lugano.regist
 // A current root record proves the registration date, not the historical operator.
 for(const r of D.explorer){
  let previous=0;let currentCount=0;
- for(const e of r.events){
+ for(const e of r.events||[]){
   if(e.status==='ianaRegistration')for(const field of ['entity','geography','type'])assert.equal(e[field]||'','',r.string+' backdated '+field);
   if(e.current){currentCount++;assert.equal(e,r.events.at(-1),r.string+' current snapshot must be last');}
   const match=String(e.period).match(/^\d{4}(?:-\d{2}){0,2}/);if(match){const order=Number(match[0].replace(/-/g,'').padEnd(8,'0'));assert.ok(order>=previous,r.string+' history out of order');previous=order;}
@@ -32,8 +42,8 @@ const version=JSON.parse(read('package.json')).version;assert.equal(JSON.parse(r
 // The generated CSV and visible runtime must be exports of the same records.
 function csv(text){const rows=[];let row=[],cell='',quoted=false;for(let i=0;i<text.length;i++){const c=text[i];if(c==='"'){if(quoted&&text[i+1]==='"'){cell+='"';i++;}else quoted=!quoted;}else if(!quoted&&(c===','||c==='\n')){row.push(cell);cell='';if(c==='\n'){rows.push(row);row=[];}}else cell+=c;}return rows;}
 const [headers,...rows]=csv(read('data/explorer_catalog.csv'));assert.equal(rows.length,D.explorer.length);
-for(let i=0;i<rows.length;i++){const c=Object.fromEntries(headers.map((h,j)=>[h,rows[i][j]])),r=D.explorer[i];for(const [field,key] of [['string','string'],['status','status'],['formal_type','formalType'],['current_root_status','currentRootStatus'],['registry_entity','registryEntity'],['registry_country','registryCountry'],['represented_place','representedPlace'],['origin_round','originRound']])assert.equal(c[field],String(r[key]||''),r.string+' CSV '+field);assert.equal(c.origin_round_sources,r.originRoundSources.join(' | '));}
-const [eventHeaders,...csvEvents]=csv(read('data/explorer_events.csv'));const runtimeEvents=D.explorer.flatMap(r=>r.events.map(e=>({string:r.string,...e})));assert.equal(csvEvents.length,runtimeEvents.length);
+for(let i=0;i<rows.length;i++){const c=Object.fromEntries(headers.map((h,j)=>[h,rows[i][j]])),r=D.explorer[i];for(const [field,key] of [['string','string'],['status','status'],['formal_type','formalType'],['current_root_status','currentRootStatus'],['registry_entity','registryEntity'],['registry_country','registryCountry'],['represented_place','representedPlace'],['origin_round','originRound'],['ascii_string','asciiString'],['record_level','recordLevel']])assert.equal(c[field],String(r[key]||''),r.string+' CSV '+field);assert.equal(c.origin_round_sources,(r.originRoundSources||[]).join(' | '));assert.equal(c.root_listed,r.rootListed?'yes':'no');}
+const [eventHeaders,...csvEvents]=csv(read('data/explorer_events.csv'));const runtimeEvents=D.explorer.flatMap(r=>(r.events||[]).map(e=>({string:r.string,...e})));assert.equal(csvEvents.length,runtimeEvents.length);
 for(let i=0;i<csvEvents.length;i++){const row=Object.fromEntries(eventHeaders.map((h,j)=>[h,csvEvents[i][j]]));for(const field of ['string','period','status','type','entity','geography'])assert.equal(row[field],String(runtimeEvents[i][field]||''),'event CSV '+field);}
 function browser(language,query=''){
  const {document,HTMLElement}=parseHTML(read(language+'/index.html'));
@@ -66,6 +76,12 @@ for(const lang of ['en','it','de','fr']){
  b=browser(lang,'?tab=explore&q=cs');b.run("openExplorerRecord(D.explorer.findIndex(r=>r.string==='.cs'))");const drawer=b.document.getElementById('drawerContent').textContent;assert.ok(drawer.includes(dictionary.placeCsHistory));if(lang!=='en')assert.ok(!drawer.includes('code reassignment'));
  b.run("openExplorerRecord(D.explorer.findIndex(r=>r.string==='.org'))");assert.ok(b.document.querySelector('.drawerEventPeriod').textContent.includes('1985'));assert.ok(b.document.getElementById('drawerContent').textContent.includes(b.run("fmtCountry('United States')")));
  const localizedBerlin=b.run("fmtPlace('Berlin')");b.run('document.getElementById("explorerSearch").value='+JSON.stringify(localizedBerlin)+';renderExplorer(true)');assert.ok(b.run("explorerFilteredRows().some(r=>r.string==='.berlin')"),lang+' localized place search');
+ b=browser(lang,'?tab=explore&q=xn--fiqs8s');assert.ok(b.run("explorerFilteredRows().some(r=>r.string==='.中国')"),lang+' ASCII IDN lookup');b.run("document.getElementById('explorerSearch').value='中国';renderExplorer(true)");assert.ok(b.run("explorerFilteredRows().some(r=>r.asciiString==='.xn--fiqs8s')"),lang+' Unicode lookup');
+ b=browser(lang,'?tab=explore&q=ch');b.run("openExplorerRecord(D.explorer.findIndex(r=>r.string==='.ch'))");assert.ok(b.document.getElementById('drawerContent').textContent.includes(dictionary.recordBasic));assert.equal(b.document.querySelectorAll('#drawerContent .drawerEvent').length,0,lang+' basic record must not invent history');assert.ok(!b.document.getElementById('drawerContent').textContent.includes('undefined'));
+ b=browser(lang,'?tab=explore&preset=curated');assert.equal(b.run('explorerFilteredRows().length'),D.explorerMeta.curatedCount,lang+' curated filter');
+ b=browser(lang,'?tab=overview');assert.equal(b.document.querySelectorAll('#overview [data-open-section]').length,5);assert.equal(b.document.getElementById('cards').closest('.section').id,'reveal');assert.equal(b.document.getElementById('namespaceDimensions').closest('.section').id,'how');assert.ok(b.document.querySelector('#lugano .authorDisclosure').textContent.includes('Robert Bregy'));
+ const click=new b.document.defaultView.Event('click',{cancelable:true});Object.defineProperty(click,'button',{value:0});b.document.querySelector('#overview [data-open-section="explore"]').dispatchEvent(click);assert.equal(b.document.body.dataset.activeTab,'explore',lang+' guided entry link');
+ for(const key of ['publicQuestionsIntro','publicNeedBody','publicAdoptionBody','publicRulesBody','publicOpenBody'])assert.ok(!/budget|costi|costs|coûts|Kosten|CHF/.test(dictionary[key]),lang+' public-only editorial criteria');
  console.log('Validated provenance, chronology, translations, filters and URL restoration: '+lang);
 }
 console.log('Validated '+D.explorer.length+' runtime/CSV records and '+snapshot.files.length+' preserved IANA evidence files.');
