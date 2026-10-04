@@ -6,6 +6,24 @@ const json=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const digest=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 const ascii=string=>'.'+domainToASCII(string.replace(/^\./,'')).toLowerCase();
 const eventOrder=e=>{const m=String(e.period).match(/^\d{4}(?:-\d{2}){0,2}/);return e.current?'99999999':m?m[0].replace(/-/g,'').padEnd(8,'0'):'00000000'};
+const GTLD_LIFECYCLE_SOURCE='https://www.icann.org/resources/registries/gtlds/v2/gtlds.json';
+function classifyIanaReport(title='',asciiString=''){
+ const x=String(title).toLowerCase(),label=String(asciiString).toLowerCase().replace(/^\./,'').replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+ if(/revocation|revoked/.test(x))return 'ianaRevocationReport';
+ if(/redelegation|re-delegation|transfer/.test(x))return 'ianaTransferReport';
+ if(/retirement|retired|removal|deletion/.test(x))return 'ianaRetirementReport';
+ if(label&&new RegExp('delegation of (?:the )?\\.'+label+'(?:\\s|$)','i').test(x))return 'ianaDelegationReport';
+ if(/delegation/.test(x))return 'ianaReportEvent';
+ return 'ianaReportEvent';
+}
+function pushEvent(record,event){
+ if(!event||!event.period||!event.status)return;
+ record.events=record.events||[];
+ const urls=[...(event.source||[])].filter(Boolean);
+ const key=[event.period,event.status,event.entity||'',event.detail||'',urls.join('|')].join('::');
+ if(record.events.some(e=>[e.period,e.status,e.entity||'',e.detail||'',(e.source||[]).join('|')].join('::')===key))return;
+ record.events.push({...event,source:urls,current:!!event.current});
+}
 
 // Universal Explorer: "program round" and "introduction path" are deliberately
 // separate. A ccTLD does not become a "legacy round" merely because it predates
@@ -133,13 +151,25 @@ module.exports=function assembleData(){
    if(!r.ianaProfile&&!r.entity&&r.applicationApplicants.length===1)r.entity=r.applicationApplicants[0];
    if(!r.ianaProfile&&!r.applicationEntity&&r.applicationApplicants.length===1)r.applicationEntity=r.applicationApplicants[0];
   }else{r.applicationCount=0;r.applicationRounds=[];r.applicationApplicants=[]}
+  // Life history is a chronology, not a replacement for the application or
+  // IANA detail panels. It combines only events supported by the preserved
+  // central sources and keeps application identity distinct from delegation.
+  r.events=r.events||[];
+  for(const app of (r.applications||[]))pushEvent(r,{period:String(app.round),status:'applicationSubmitted',type:r.formalType||'',entity:app.applicant||'',geography:app.location||'',detail:app.applicationId||app.submissionId||'',outcomeKey:String(app.round)==='2000'?'':(app.outcome?('outcome_'+String(app.outcome).replace(/[ -]/g,'_')):''),eventClass:'application',source:[app.source]});
+  if(r.ianaProfile&&r.registrationDate&&!r.events.some(e=>e.period===r.registrationDate&&e.status==='ianaRegistration'))pushEvent(r,{period:r.registrationDate,status:'ianaRegistration',type:r.formalType||'',entity:r.registryEntity||'',geography:r.registryCountry||'',eventClass:'iana-registration',source:[r.source?.[0]]});
+  for(const report of (r.ianaReports||[]))pushEvent(r,{period:report.date,status:classifyIanaReport(report.title,r.asciiString),type:r.formalType||'',entity:'',geography:'',detail:report.title,eventClass:'iana-report',source:[report.url]});
+  if(!r.events.some(e=>e.current))pushEvent(r,{period:S.asOf,status:r.currentRootStatus||r.status,type:r.formalType||'',entity:r.registryEntity||r.entity||'',geography:r.registryCountry||r.geography||'',detail:'',eventClass:'current-snapshot',source:[r.source?.[0]],current:true});
+  r.events.sort((a,b)=>eventOrder(a).localeCompare(eventOrder(b))||String(a.status).localeCompare(String(b.status)));
   Object.assign(r,introductionFor(r));
  }
  D.explorer=[...byAscii.values()].sort((a,b)=>a.asciiString.localeCompare(b.asciiString,'en'));
  const applicationOnly=D.explorer.filter(r=>!r.ianaProfile&&['intro2000','intro2004','intro2012','intro2026Application','introApplicationOnly'].includes(r.introductionPath)).length;
  const historicalExtras=D.explorer.filter(r=>!r.ianaProfile&&r.currentRootStatus==='retired').length;
  D.explorerMeta={seedCount:curated.records.length,curatedCount:curated.records.length,recordCount:D.explorer.length,ianaRootCount:labels.length,rootIndexedCount:D.explorer.filter(r=>r.rootListed).length,ianaDatabaseCount:S.databaseCount,ianaProfileCount:D.explorer.filter(r=>r.ianaProfile).length,tldRecordCount:D.explorer.length-applicationOnly,applicationOnlyCount:applicationOnly,historicalExtraCount:historicalExtras,ianaSnapshot:S.asOf,ianaSource:S.listSource,ianaDatabaseSource:S.databaseSource,rootCoverageComplete:true,ianaProfileCoverageComplete:true,tldCoverageComplete:true,introductionPathCoverageComplete:true,historicalCoverageComplete:true,historicalCoverageExtended:true,tldCoverageDefinition:'Dated IANA database plus historically delegated TLDs absent from the current IANA database; excludes never-delegated ISO codes and application-only strings',applicationCorpusComplete:false,applicationLocalRoundsComplete:true,application2000CoverageComplete:true,application2004CoverageComplete:true,application2012RuntimeValidated:true,application2012CoverageComplete:false,application2026CoverageComplete:false,applicationArchaeologyManifest:archaeologyManifest};
+ D.explorerMeta.lifeHistoryRecordCount=D.explorer.filter(r=>(r.events||[]).length>0).length;D.explorerMeta.lifeHistoryStaticEventCount=D.explorer.reduce((n,r)=>n+(r.events||[]).length,0);
  D.applicationArchaeology=archaeologyManifest;
+ D.tldLifeHistory={schemaVersion:1,asOf:S.asOf,staticCoverage:'IANA registration dates, IANA delegation/transfer/revocation reports, current root state, curated historical events and vendored 2000/2004 applications',gtldContractSource:GTLD_LIFECYCLE_SOURCE,gtldContractFields:['applicationId','dateOfContractSignature','delegationDate','contractTerminated','removalDate','registryOperator'],ccTldMethod:'IANA registration data and delegation/redelegation reports; ICANN gTLD Registry Agreement data is not applied to ccTLDs',sourcePolicy:'Only dated, attributable events from preserved or live ICANN/IANA sources are rendered as facts'};
+ D.explorerMeta.lifeHistoryStaticCoverageComplete=true;D.explorerMeta.lifeHistoryGtldContractsRuntime=true;D.explorerMeta.lifeHistoryGtldContractSource=GTLD_LIFECYCLE_SOURCE;
  D.ianaCountryCodes=Object.fromEntries(Object.values(S.records).flatMap(r=>[['registryCountry','registryCountryCode'],['administrativeContactCountry','administrativeContactCountryCode'],['technicalContactCountry','technicalContactCountryCode']].filter(([name,code])=>r[name]&&r[code]).map(([name,code])=>[r[name],r[code]])));
  D.normalizationVersion=json('package.json').version;
  return D;

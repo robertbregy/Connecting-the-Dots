@@ -96,12 +96,29 @@ function ianaProfileSections(r){
  <div class="drawerSection"><details class="ianaDetails"><summary>${esc(t('ianaNameServers'))} <span class="small">(${fmtNum(servers.length)})</span></summary>${servers.length?`<ul class="ianaServers">${servers.map(n=>`<li><bdi class="ianaHostname">${esc(n.hostname)}</bdi><span>${n.ipAddresses.map(ip=>`<bdi class="ianaAddress">${esc(ip)}</bdi>`).join('')}</span></li>`).join('')}</ul>`:`<p class="small">${esc(missing)}</p>`}</details></div>
  <div class="drawerSection"><details class="ianaDetails"><summary>${esc(t('ianaReports'))} <span class="small">(${fmtNum(reports.length)})</span></summary><p class="small">${esc(t('ianaReportsNote'))}</p>${reports.length?`<ul class="ianaReportList">${reports.map(report=>`<li>${report.date?`<time datetime="${esc(report.date)}">${esc(fmtDate(report.date))}</time>`:''}<a href="${esc(report.url)}" target="_blank" rel="noopener" lang="en">${esc(report.title)} ↗</a></li>`).join('')}</ul>`:`<p class="small">${esc(missing)}</p>`}</details></div>`;
 }
+function lifeHistoryEvents(r){
+ const events=[...(r.events||[])];
+ for(const a of dedupeApplications(r.applications||[]))events.push({period:String(a.round),status:'applicationSubmitted',type:r.formalType||'',entity:a.applicant||'',geography:a.location||'',detail:a.applicationId||a.submissionId||'',outcomeKey:String(a.round)==='2000'?'':(a.outcome?('outcome_'+String(a.outcome).replace(/[ -]/g,'_')):''),eventClass:'application',source:[a.source].filter(Boolean),current:false});
+ const g=r.gtldAgreement;
+ if(g){
+  if(g.dateOfContractSignature)events.push({period:g.dateOfContractSignature,status:'registryAgreementSigned',type:'generic',entity:g.registryOperator||'',detail:g.applicationId||'',eventClass:'icann-contract',source:[D.tldLifeHistory?.gtldContractSource].filter(Boolean),current:false});
+  if(g.delegationDate)events.push({period:g.delegationDate,status:'rootDelegation',type:'generic',entity:g.registryOperator||'',detail:g.applicationId||'',eventClass:'icann-contract',source:[D.tldLifeHistory?.gtldContractSource].filter(Boolean),current:false});
+  if(g.contractTerminated&&g.removalDate)events.push({period:g.removalDate,status:'registryAgreementTerminated',type:'generic',entity:g.registryOperator||'',detail:g.applicationId||'',eventClass:'icann-contract',source:[D.tldLifeHistory?.gtldContractSource].filter(Boolean),current:false});
+  if(g.removalDate)events.push({period:g.removalDate,status:'removedFromRoot',type:'generic',entity:g.registryOperator||'',detail:'',eventClass:'icann-contract',source:[D.tldLifeHistory?.gtldContractSource].filter(Boolean),current:false});
+ }
+ const seen=new Set();return events.filter(e=>{const k=[e.period,e.status,e.entity||'',e.detail||'',...(e.source||[])].join('|');if(seen.has(k))return false;seen.add(k);return true}).sort((a,b)=>{const da=String(a.period).match(/^\d{4}(?:-\d{2}){0,2}/)?.[0]||'',db=String(b.period).match(/^\d{4}(?:-\d{2}){0,2}/)?.[0]||'';if(a.current&&!b.current)return 1;if(b.current&&!a.current)return-1;return da.localeCompare(db)||String(a.status).localeCompare(String(b.status))});
+}
 function explorerHistory(r){
- const events=r.events||[];if(!events.length&&!r.provenanceKey)return'';
- return `<div class="drawerSection"><h3>${t('exploreHistory')}</h3><div class="small">${t('exploreHistorySub')}</div><div class="drawerTimeline">${events.map(e=>{
+ const events=lifeHistoryEvents(r);if(!events.length&&!r.provenanceKey)return'';
+ return `<div class="drawerSection lifeHistorySection"><h3>${epBadge('fact')} ${t('exploreHistory')}</h3><div class="small">${t('lifeHistorySub')}</div><div class="drawerTimeline">${events.map(e=>{
  const sources=(e.source||[]).map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener">${t('source')}${e.source.length>1?' '+(i+1):''} ↗</a>`).join('');
- return `<div class="drawerEvent"><div class="drawerEventPeriod">${esc(fmtPeriod(e.period))}</div><div class="drawerEventMain"><div class="drawerEventTop"><span class="explorerState">${esc(t(e.status))}</span>${e.type?`<span class="pill">${esc(t(explorerTypeKey(e.type)))}</span>`:''}${e.outcomeKey?`<span class="pill">${esc(t(e.outcomeKey))}</span>`:''}${e.current?`<span class="drawerEventCurrent">${esc(t('current'))}</span>`:''}</div>${(e.entity||e.geography)?`<div class="drawerEventEntity">${esc(e.entity||'')}${e.entity&&e.geography?' · ':''}${esc(fmtPlace(e.geography)||'')}</div>`:''}${e.provenanceKey?`<div class="drawerProvenance">${esc(t(e.provenanceKey))}${e.provenanceDate?' · '+esc(fmtDate(e.provenanceDate)):''}</div>`:''}${sources?`<div class="drawerEventSources">${sources}</div>`:''}</div></div>`;
- }).join('')}</div></div>`;
+ return `<div class="drawerEvent"><div class="drawerEventPeriod">${esc(fmtPeriod(e.period))}</div><div class="drawerEventMain"><div class="drawerEventTop"><span class="explorerState">${esc(t(e.status))}</span>${e.type?`<span class="pill">${esc(t(explorerTypeKey(e.type)))}</span>`:''}${e.outcomeKey?`<span class="pill">${esc(t(e.outcomeKey))}</span>`:''}${e.current?`<span class="drawerEventCurrent">${esc(t('current'))}</span>`:''}</div>${(e.entity||e.geography)?`<div class="drawerEventEntity">${esc(e.entity||'')}${e.entity&&e.geography?' · ':''}${esc(fmtPlace(e.geography)||'')}</div>`:''}${e.detail?`<div class="small lifeEventDetail"><bdi>${esc(e.detail)}</bdi></div>`:''}${e.provenanceKey?`<div class="drawerProvenance">${esc(t(e.provenanceKey))}${e.provenanceDate?' · '+esc(fmtDate(e.provenanceDate)):''}</div>`:''}${sources?`<div class="drawerEventSources">${sources}</div>`:''}</div></div>`;
+ }).join('')}</div><p class="small lifeHistoryMethod">${esc(t('lifeHistoryMethod'))}</p></div>`;
+}
+function gtldAgreementSection(r){
+ const g=r.gtldAgreement;if(!g)return'';const missing=esc(t('ianaNotReported')),src=D.tldLifeHistory?.gtldContractSource;
+ const yesno=g.contractTerminated?t('yes'):t('no');
+ return `<div class="drawerSection"><h3>${epBadge('fact')} ${esc(t('gtldAgreementHistoryTitle'))}</h3><dl class="drawerFacts"><dt>${esc(t('applicationIdLabel'))}</dt><dd><bdi>${esc(g.applicationId||missing)}</bdi></dd><dt>${esc(t('registryOperatorLabel'))}</dt><dd>${esc(g.registryOperator||missing)}</dd><dt>${esc(t('agreementDateLabel'))}</dt><dd>${esc(fmtDate(g.dateOfContractSignature)||missing)}</dd><dt>${esc(t('delegationDateLabel'))}</dt><dd>${esc(fmtDate(g.delegationDate)||missing)}</dd><dt>${esc(t('contractTerminatedLabel'))}</dt><dd>${esc(yesno)}</dd><dt>${esc(t('removalDateLabel'))}</dt><dd>${esc(fmtDate(g.removalDate)||missing)}</dd></dl>${src?`<div class="drawerSources"><a href="${esc(src)}" target="_blank" rel="noopener">ICANN · ${esc(t('source'))} ↗</a></div>`:''}</div>`;
 }
 
 // Profile URLs use exact ASCII identities; Unicode input is accepted without
@@ -152,12 +169,12 @@ function renderProfileActions(row){
 }
 
 let drawerLoadId=0;
-const profileRequests=new Map(),runtimeApplicationOverlay=new Map();
+const profileRequests=new Map(),runtimeApplicationOverlay=new Map(),runtimeGtldLifecycle=new Map();
 function dedupeApplications(items){const seen=new Set();return (items||[]).filter(a=>{const key=[a.round,a.applicationId||a.submissionId,a.string,a.relationType].join('|');if(seen.has(key))return false;seen.add(key);return true})}
 function mergeApplicationOverlay(record,row){
- const remote=runtimeApplicationOverlay.get(row.asciiString)||[];if(!remote.length)return record;
- const applications=dedupeApplications([...(record.applications||[]),...remote]);
- return {...record,applications,applicationCount:applications.length,applicationRounds:[...new Set(applications.map(a=>String(a.round)))],applicationApplicants:[...new Set(applications.map(a=>a.applicant).filter(Boolean))]};
+ const remote=runtimeApplicationOverlay.get(row.asciiString)||[];let merged=record;
+ if(remote.length){const applications=dedupeApplications([...(record.applications||[]),...remote]);merged={...record,applications,applicationCount:applications.length,applicationRounds:[...new Set(applications.map(a=>String(a.round)))],applicationApplicants:[...new Set(applications.map(a=>a.applicant).filter(Boolean))]};}
+ const gtldAgreement=runtimeGtldLifecycle.get(row.asciiString);if(gtldAgreement)merged={...merged,gtldAgreement};return merged;
 }
 function cachedExplorerProfile(row){
  if(row.runtimeApplicationRecord)return row;
@@ -222,7 +239,7 @@ function renderExplorerRecord(r){
  const provenance=r.provenanceKey?`<div class="drawerProvenance"><b>${esc(t('exploreProvenance'))}:</b> ${esc(t(r.provenanceKey))}${r.provenanceDate?' · '+esc(fmtDate(r.provenanceDate)):''}${PUB.state==='pre-reveal'&&r.string==='.lugano'?`<br>${esc(t('officialRecordAfterReveal'))}`:''}</div>`:'';
  const curated=r.recordLevel==='curated',applicationOnly=r.recordLevel==='application';
  const context=curated?`<div class="drawerSection"><h3>${esc(t('ianaCuratedContext'))}</h3><dl class="drawerFacts"><dt>${t('exploreOriginRound')}</dt><dd>${r.originRound?esc(t(r.originRound)):'—'}${(r.originRoundSources||[]).map(u=>` <a href="${esc(u)}" target="_blank" rel="noopener">${t('source')} ↗</a>`).join('')}</dd><dt>${t('exploreApplicantEntity')}</dt><dd>${esc(r.applicationEntity||'—')}</dd><dt>${t('exploreDesignation')}</dt><dd>${r.editorialDesignation?esc(t(explorerTypeKey(r.editorialDesignation))):'—'}</dd><dt>${t('exploreGroup')}</dt><dd>${esc(r.group||'—')}</dd><dt>${t('exploreGeography')}</dt><dd>${esc(fmtPlace(r.representedPlace||r.geography)||'—')}</dd><dt>${t('exploreContention')}</dt><dd>${r.contentionCount?fmtNum(r.contentionCount):'—'}</dd><dt>${t('exploreContext')}</dt><dd>${r.noteKey?esc(t(r.noteKey)):'—'}</dd></dl></div>`:'';
- document.getElementById('drawerContent').innerHTML=`<div class="recordLevel">${esc(t(recordLevelKey(r)))}</div><div class="drawerMeta"><span class="explorerState">${esc(t(r.currentRootStatus||r.status))}</span>${(curated||applicationOnly||r.applicationCount)?`<span class="pill">${esc(fmtRounds(r))}</span>`:''}<span class="pill">${esc(t(explorerTypeKey(r.type)))}</span>${curated?explorerThemePills(r):''}</div>${provenance}${explorerIntroductionSection(r)}${applicationArchaeologySection(r)}${ianaFactFields(r)}${r.ianaProfile?`<p class="drawerProvenance">${esc(t('ianaRecordNote'))}</p>`:''}${context}${explorerHistory(r)}${r.readingKey?`<div class="drawerSection"><h3>${epBadge('reading')} ${t('exploreReadingFields')}</h3><div class="drawerReading">${esc(t(r.readingKey))}</div></div>`:''}${ianaProfileSections(r)}<div class="drawerSection"><h3>${t('exploreSources')}</h3><div class="drawerSources">${sources||(r.provenanceKey?`<span class="small">${esc(t('officialRecordAfterReveal'))}</span>`:'—')}</div></div>`;
+ document.getElementById('drawerContent').innerHTML=`<div class="recordLevel">${esc(t(recordLevelKey(r)))}</div><div class="drawerMeta"><span class="explorerState">${esc(t(r.currentRootStatus||r.status))}</span>${(curated||applicationOnly||r.applicationCount)?`<span class="pill">${esc(fmtRounds(r))}</span>`:''}<span class="pill">${esc(t(explorerTypeKey(r.type)))}</span>${curated?explorerThemePills(r):''}</div>${provenance}${explorerIntroductionSection(r)}${applicationArchaeologySection(r)}${ianaFactFields(r)}${r.ianaProfile?`<p class="drawerProvenance">${esc(t('ianaRecordNote'))}</p>`:''}${context}${explorerHistory(r)}${gtldAgreementSection(r)}${r.readingKey?`<div class="drawerSection"><h3>${epBadge('reading')} ${t('exploreReadingFields')}</h3><div class="drawerReading">${esc(t(r.readingKey))}</div></div>`:''}${ianaProfileSections(r)}<div class="drawerSection"><h3>${t('exploreSources')}</h3><div class="drawerSources">${sources||(r.provenanceKey?`<span class="small">${esc(t('officialRecordAfterReveal'))}</span>`:'—')}</div></div>`;
  const panel=drawer.querySelector('.explorerDrawerPanel');if(panel)panel.scrollTop=0;
 }
 function closeExplorerDrawer({historyMode='replace',restoreFocus=true}={}){
@@ -361,6 +378,22 @@ async function initApplicationArchaeology(){
  for(const url of D.applicationArchaeology.runtimeSources2012||[]){try{const res=await fetch(url,{mode:'cors',cache:'force-cache'});if(!res.ok)throw new Error('HTTP '+res.status);const apps=sanitize2012Csv(await res.text());try{storageSet(APPLICATION_2012_CACHE,JSON.stringify(apps))}catch(e){}merge2012Applications(apps);return}catch(e){}}
  renderApplicationCorpusStatus('error');
 }
+const GTLD_LIFECYCLE_CACHE='ctd-gtld-lifecycle-2026-10-04-v1';
+function validateGtldLifecycle(payload){
+ const rows=payload?.gTLDs;if(!Array.isArray(rows)||rows.length<1200)throw new Error('Incomplete ICANN gTLD lifecycle dataset');
+ const seen=new Set();for(const r of rows){if(typeof r.gTLD!=='string'||!r.gTLD.trim())throw new Error('Invalid gTLD lifecycle row');const key='.'+r.gTLD.trim().toLowerCase();if(seen.has(key))throw new Error('Duplicate gTLD lifecycle row: '+key);seen.add(key)}
+ if(!seen.has('.aaa')||!seen.has('.com')||!seen.has('.web'))throw new Error('ICANN gTLD lifecycle sanity check failed');return rows;
+}
+function mergeGtldLifecycle(rows){
+ runtimeGtldLifecycle.clear();for(const g of rows)runtimeGtldLifecycle.set('.'+g.gTLD.trim().toLowerCase(),g);
+ D.explorerMeta.lifeHistoryGtldContractsLoaded=true;D.explorerMeta.lifeHistoryGtldContractCount=rows.length;
+ if(explorerProfileId){const idx=explorerProfileIndex(explorerProfileId);if(idx>=0){const rec=cachedExplorerProfile(D.explorer[idx]);if(rec)renderExplorerRecord(rec)}}
+}
+async function initGtldLifecycle(){
+ const source=D.tldLifeHistory?.gtldContractSource;if(!source||location.protocol==='file:')return;
+ try{const cached=storageGet(GTLD_LIFECYCLE_CACHE);if(cached){const payload=JSON.parse(cached);mergeGtldLifecycle(validateGtldLifecycle(payload));return}}catch(e){try{localStorage.removeItem(GTLD_LIFECYCLE_CACHE)}catch(_){} }
+ try{const res=await fetch(source,{mode:'cors',cache:'force-cache'});if(!res.ok)throw new Error('HTTP '+res.status);const payload=await res.json();const rows=validateGtldLifecycle(payload);try{storageSet(GTLD_LIFECYCLE_CACHE,JSON.stringify(payload))}catch(e){}mergeGtldLifecycle(rows)}catch(e){D.explorerMeta.lifeHistoryGtldContractsLoaded=false}
+}
 function renderPublicationUpdates(){
  const dates=document.getElementById('updateDates');if(dates)dates.innerHTML=[['updatesRelease','v'+PUB.version+' · '+fmtDate(PUB.releasedOn)],['updatesResearch',fmtDate(PUB.asOf)],['updatesIana',fmtDate(D.explorerMeta.ianaSnapshot)]].map(([key,value])=>`<dt>${esc(t(key))}</dt><dd>${esc(value)}</dd>`).join('');
  const list=document.getElementById('releaseHistory');if(list)list.innerHTML=(D.releaseHistory?.releases||[]).map(r=>`<li><b>v${esc(r.version)}</b><time datetime="${esc(r.date)}">${esc(fmtDate(r.date))}</time><p>${esc(t(r.summaryKey))}</p></li>`).join('');
@@ -404,6 +437,6 @@ document.querySelector('.brand')?.addEventListener('click',()=>{activateTab('ove
 window.addEventListener('popstate',restoreUrlState);
 window.addEventListener('hashchange',restoreUrlState);
 window.addEventListener('resize',syncTopbarHeight);
-document.documentElement.dataset.theme=theme;applyLanguage();restoreUrlState();applyTheme();restoringState=false;setQuery();initApplicationArchaeology();
+document.documentElement.dataset.theme=theme;applyLanguage();restoreUrlState();applyTheme();restoringState=false;setQuery();initApplicationArchaeology();initGtldLifecycle();
 
 document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');

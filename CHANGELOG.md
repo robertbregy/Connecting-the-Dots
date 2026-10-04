@@ -1,3 +1,12 @@
+# v0.7.13 — TLD Life Histories
+
+- Adds a chronological life-history layer across the complete Explorer corpus.
+- Generates dated events from formal applications, IANA registration data and IANA delegation/transfer/revocation reports.
+- Adds live ICANN gTLD Registry Agreement lifecycle enrichment: Application ID, contract signature, delegation, termination and root removal.
+- Keeps ccTLD history on the IANA delegation/redelegation model rather than applying gTLD contracts.
+- Exports `tld_life_histories.csv` and records lifecycle coverage in the manifest.
+- Missing historical phases remain missing rather than inferred.
+
 # Changelog
 
 ## 0.7.12 · 4 October 2026

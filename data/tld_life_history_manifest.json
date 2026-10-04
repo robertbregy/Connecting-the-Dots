@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-04",
+  "scope": "Chronological evidence for every Explorer record, assembled from preserved IANA data, formal ICANN application archaeology and the official ICANN gTLD lifecycle feed.",
+  "staticSources": [
+    "data/iana_snapshot.json",
+    "data/application_archaeology_local.json",
+    "data/explorer_curated.json"
+  ],
+  "liveGtldSource": "https://www.icann.org/resources/registries/gtlds/v2/gtlds.json",
+  "liveGtldFields": [
+    "applicationId",
+    "dateOfContractSignature",
+    "delegationDate",
+    "contractTerminated",
+    "removalDate",
+    "registryOperator"
+  ],
+  "ccTldMethod": "IANA registration plus delegation/redelegation reports; gTLD Registry Agreement fields are not applied to ccTLDs.",
+  "evidenceRule": "No missing date or historical phase is inferred. Only attributable, dated source evidence is rendered as a factual life-history event.",
+  "knownLimitation": "Some early TLD operator changes predate central structured records and may remain undocumented in this dataset."
+}

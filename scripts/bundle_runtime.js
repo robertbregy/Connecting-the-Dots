@@ -47,10 +47,11 @@ const universeHeaders=['string','ascii_string','current_root_status','root_liste
 writeCsv('data/tld_universe.csv',universeHeaders,window.DOT_DATA.explorer.filter(r=>!isApplicationOnly(r)).map(r=>({string:r.string,ascii_string:r.asciiString,current_root_status:r.currentRootStatus,root_listed:r.rootListed?'yes':'no',formal_type:r.formalType,program_round:r.programRound,introduction_path:r.introductionPath,introduction_basis:r.introductionBasis,iana_profile:r.ianaProfile?'yes':'no',registry_entity:r.registryEntity,registry_country:r.registryCountry,registration_date:r.registrationDate,sources:r.introductionPathSources||r.source||[]})));
 const applicationOnlyHeaders=['string','ascii_string','program_round','status','application_entity','geography','introduction_path','corpus_status','sources'];
 writeCsv('data/application_only_strings.csv',applicationOnlyHeaders,window.DOT_DATA.explorer.filter(isApplicationOnly).map(r=>({string:r.string,ascii_string:r.asciiString,program_round:r.programRound,status:r.currentRootStatus||r.status,application_entity:r.applicationEntity,geography:r.representedPlace||r.geography,introduction_path:r.introductionPath,corpus_status:(r.applicationRounds||[]).some(x=>x==='2000'||x==='2004')?'vendored-historical':'curated-other',sources:r.source||[]})));
-const eventHeaders=['string','period','status','type','entity','geography','current','provenance','sources'];
+const eventHeaders=['string','ascii_string','period','status','event_class','type','entity','geography','detail','outcome','current','provenance','sources'];
 const eventRows=[];
-for(const r of (window.DOT_DATA.explorer||[])){for(const e of (r.events||[])){eventRows.push({string:r.string,period:e.period,status:e.status,type:e.type,entity:e.entity,geography:e.geography,current:e.current?'yes':'no',provenance:e.provenanceKey?(e.provenanceKey+(e.provenanceDate?' · '+e.provenanceDate:'')):'',sources:e.source||[]})}}
+for(const r of (window.DOT_DATA.explorer||[])){for(const e of (r.events||[])){eventRows.push({string:r.string,ascii_string:r.asciiString,period:e.period,status:e.status,event_class:e.eventClass||'',type:e.type,entity:e.entity,geography:e.geography,detail:e.detail||'',outcome:e.outcomeKey||'',current:e.current?'yes':'no',provenance:e.provenanceKey?(e.provenanceKey+(e.provenanceDate?' · '+e.provenanceDate:'')):'',sources:e.source||[]})}}
 writeCsv('data/explorer_events.csv',eventHeaders,eventRows);
+writeCsv('data/tld_life_histories.csv',eventHeaders,eventRows);
 const sourceHeaders=['label','url','role'];
 writeCsv('data/sources.csv',sourceHeaders,(window.DOT_DATA.sources||[]).map(s=>({label:s[0]||'',url:s[1]||'',role:s[2]||''})));
 const driftHeaders=['string','formal_type','formal_origin','adopted_association','category','sources'];

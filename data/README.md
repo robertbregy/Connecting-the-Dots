@@ -113,3 +113,7 @@ The Explorer contains **1,608 records**. Of these, **1,599** belong to the dated
 
 The TLD-coverage claim excludes never-delegated ISO codes and other labels that were never TLDs in the public DNS root. The cross-round application corpus remains a separate workstream and is not represented as complete.
 
+
+## TLD life histories (v0.7.13)
+
+`tld_life_histories.csv` is the locally preserved chronological evidence layer assembled from formal application records, IANA registration dates, IANA TLD-change reports, curated historical events and current root state. The web Explorer additionally loads the official ICANN gTLD lifecycle feed at `https://www.icann.org/resources/registries/gtlds/v2/gtlds.json` to add Registry Agreement signature, delegation, termination and removal dates where ICANN publishes them. ccTLDs remain governed by IANA delegation/redelegation evidence rather than the gTLD contract model. Missing historical phases are not inferred.

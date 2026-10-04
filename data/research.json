@@ -1012,6 +1012,21 @@
       "ICANN — DotKids application (2012)",
       "https://gtldresult.icann.org/applicationstatus/applicationdetails/161",
       "primary"
+    ],
+    [
+      "ICANN — gTLD lifecycle JSON report",
+      "https://www.icann.org/resources/registries/gtlds/v2/gtlds.json",
+      "primary"
+    ],
+    [
+      "ICANN — Registry resources",
+      "https://www.icann.org/en/contracted-parties/registry-operators/resources",
+      "primary"
+    ],
+    [
+      "IANA — TLD change reports",
+      "https://www.iana.org/reports",
+      "primary"
     ]
   ],
   "pressFacts": [

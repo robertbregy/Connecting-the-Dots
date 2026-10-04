@@ -1,6 +1,6 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.12",
+  "version": "0.7.13",
   "release_date": "2026-10-04",
   "publication_state": "pre-reveal",
   "rendering": "static-prerendered",
@@ -24,6 +24,7 @@
     "Every preserved IANA database entry has a normalized profile; root-list membership is separate from database presence.",
     "Application Archaeology separates submissions, applied-for strings and delegated TLD identity; never-delegated applications do not increase the TLD universe.",
     "The 2012 archival corpus excludes Primary Contact and Email fields and is accepted only after locked ICANN totals validate.",
+    "TLD Life Histories combine preserved IANA evidence, formal application archaeology and the live ICANN gTLD contract-lifecycle JSON; undocumented phases are never inferred.",
     "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity.",
     "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database.",
     "application_only_strings.csv is the build-time application-only view for vendored/local data; the validated 2012 Reveal Day corpus expands the Explorer at runtime."
@@ -133,12 +134,17 @@
         "https://cdn.jsdelivr.net/gh/nimblemachines/analyzing-iana-root-db@master/strings-1200utc-13jun12-en.csv"
       ],
       "method": "2012 rows are parsed in-browser from a preserved copy of the 13 June 2012 Reveal Day CSV, privacy-sanitized, validated against official ICANN totals and the 1,409 distinct-string snapshot count, and only then merged into the Explorer."
-    }
+    },
+    "lifeHistoryRecordCount": 1688,
+    "lifeHistoryStaticEventCount": 5583,
+    "lifeHistoryStaticCoverageComplete": true,
+    "lifeHistoryGtldContractsRuntime": true,
+    "lifeHistoryGtldContractSource": "https://www.icann.org/resources/registries/gtlds/v2/gtlds.json"
   },
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "release_history": {
     "path": "release_history.json",
-    "sha256": "1c12377ecf36b19d33737d3daeada72572d5594c7a1fc6605febc33d5b76c2a4"
+    "sha256": "432b9aff604244804de7919da80854238fe088e7e35358e510b1dcbb1bcad59f"
   },
   "web_delivery": {
     "profile_loading": "on-demand",
@@ -146,18 +152,18 @@
     "assets": [
       {
         "repository_path": "data/site_bundle.js",
-        "bytes": 1557884,
-        "sha256": "05246587da0d1384bf17628ca2579ade8705f605c962a1c7c32e046ca951e676"
+        "bytes": 1559316,
+        "sha256": "435050681d1d72b50848c7404ee7fc180500a95f5bc1ab629f0265fbc5fd610c"
       },
       {
         "repository_path": "assets/app.js",
-        "bytes": 80716,
-        "sha256": "dd26df6a3c8a7ff6fd9b829a5029254ea02484d33a6f94d97c3761ab9b13359f"
+        "bytes": 85967,
+        "sha256": "c9357365abe4eae5a815e1c5dd1439aacf8eddb063a0d367bfe3d0818043c749"
       },
       {
         "repository_path": "assets/style.css",
-        "bytes": 74926,
-        "sha256": "ed4c72cc7a1a570a5d3eec65d3a2865fed809caf2d9f908860138dd7c6092b82"
+        "bytes": 75067,
+        "sha256": "7f4c2224979d0937bd2db9029e36b53fc38aa7e112ecb10a1b3ad41f1eaee7a3"
       },
       {
         "repository_path": "data/worldmap.js",
@@ -166,43 +172,43 @@
       },
       {
         "repository_path": "data/explorer_profiles_0.js",
-        "bytes": 475156,
-        "sha256": "e5374a83ec144e5e39daaad0e53acc290355cf28a87e69921116752a3ce9b17f"
+        "bytes": 669793,
+        "sha256": "a1013f0e50eea48b9b071c86ef914898cfbf19b062d7898f26dd2972f621ba5c"
       },
       {
         "repository_path": "data/explorer_profiles_1.js",
-        "bytes": 399922,
-        "sha256": "beea20eaf441956ca36cabaec4c1bd99e760cfcc1cc00addac21d20e52df0a87"
+        "bytes": 570578,
+        "sha256": "9a4feb28ede05fcd11786f827506007ca19c63f7f2d257af18de93a2ae45c191"
       },
       {
         "repository_path": "data/explorer_profiles_2.js",
-        "bytes": 446009,
-        "sha256": "1b42824820e632e5992cf03ce11d0fa410354b32119e0d108f6527b5396982fb"
+        "bytes": 631909,
+        "sha256": "e64e4500b7542b5015e26154e6c6121a5841573dd24cfc5c2a338606e037985a"
       },
       {
         "repository_path": "data/explorer_profiles_3.js",
-        "bytes": 408836,
-        "sha256": "4b18d5589c8a9e694aa95caf151065c2f497de5c689228f329703defd91c984f"
+        "bytes": 585301,
+        "sha256": "3a729ae3bd18716dec7a8795fd587b2235e8f773c4de31b37f5e10a031779fc4"
       },
       {
         "repository_path": "data/explorer_profiles_4.js",
-        "bytes": 435843,
-        "sha256": "bf7b8edc6d7efa260c87a595cf073bf073a3344ed149f5e4e4645ac7757fdacf"
+        "bytes": 624651,
+        "sha256": "c4e82f121fbae174b72744dcdd23b73c41355779e70db8067aca682d2ad001bf"
       },
       {
         "repository_path": "data/explorer_profiles_5.js",
-        "bytes": 408421,
-        "sha256": "96b05b07784c217f91b4ab8cfac9e19d8a76cf14fbe06ea299dbd6125239e2d6"
+        "bytes": 583967,
+        "sha256": "172d5b08e7fa0519c9aa000748cab5b7ce0d224a16206f74e3aa65b596eaaa2f"
       },
       {
         "repository_path": "data/explorer_profiles_6.js",
-        "bytes": 415500,
-        "sha256": "9262d5d0c1078903ff68ae7e6f2fe6205a588e3e7993781e438b05b32de17ff5"
+        "bytes": 590618,
+        "sha256": "9b88a8fc45be62bf1bbd7d6274314f2d2f1de279afbf8adc0a5d761ffa8f915b"
       },
       {
         "repository_path": "data/explorer_profiles_7.js",
-        "bytes": 406857,
-        "sha256": "4f220c70d7a69ad34848e45c91320e5c7bb6262c144cbf3b1edb87bcd42d1ef6"
+        "bytes": 585962,
+        "sha256": "a94d95eba323a425f034ebff413d0fd850300e9f6e31b116a692028588060aa8"
       }
     ]
   },
@@ -311,9 +317,9 @@
     },
     {
       "path": "explorer_events.csv",
-      "bytes": 24858,
-      "records": 208,
-      "sha256": "d1a1fe6ada64da021218f0eb296b738ff5869222e9a2a0ced83cfa8fde5b517e"
+      "bytes": 980885,
+      "records": 5583,
+      "sha256": "57412af7c5744d738f748cd31b9afe286dcd082e51bf9c3c6f37af7dfdfc6b2d"
     },
     {
       "path": "explorer_iana_reports.csv",
@@ -395,9 +401,9 @@
     },
     {
       "path": "sources.csv",
-      "bytes": 10412,
-      "records": 101,
-      "sha256": "611fded946c9ef6d2f5353774c892c1f6a196a70ae88a41c0f992974360646a5"
+      "bytes": 10695,
+      "records": 104,
+      "sha256": "c714310ef0084d29b6d4c07b03c263397a6b6dd8deb19d13c9e90e5c8bd20891"
     },
     {
       "path": "strange_internet.csv",
@@ -410,6 +416,12 @@
       "bytes": 865,
       "records": 7,
       "sha256": "2085515d5f6bcb4a0ef511f03a574fe8de03b52d211b68cc6ef162a35c1489fb"
+    },
+    {
+      "path": "tld_life_histories.csv",
+      "bytes": 980885,
+      "records": 5583,
+      "sha256": "57412af7c5744d738f748cd31b9afe286dcd082e51bf9c3c6f37af7dfdfc6b2d"
     },
     {
       "path": "tld_models.csv",

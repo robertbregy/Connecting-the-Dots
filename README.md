@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.12
+# Connecting the Dots — v0.7.13
 
 **Connecting the Dots** is a multilingual, static research publication about the history, governance, geography and social meaning of top-level domains, with the 2026 ICANN round and the `.lugano` application as the contemporary layer.
 
@@ -26,6 +26,15 @@ The Explorer separates two concepts that must not be conflated:
 This matters for strings such as `.nyc`, `.cat` and `.post`: an old application, a later application and eventual delegation are distinct events, not one record whose fields should overwrite one another. The Explorer drawer exposes that history where it is informative.
 
 The Explorer imports every individual profile in the dated IANA Root Zone Database and indexes every label in the corresponding root list. Profiles expose available registry details, contact organizations, dates, name servers and report links. The curated subset adds documented context and historical events. All labels are searchable in Unicode and ASCII; registry countries and technical names are searchable as well. Historical rounds, themes and city filters apply only where documented. Individual 2026 application data remains pending official publication.
+
+
+## TLD Life Histories
+
+v0.7.13 adds a chronological evidence layer to every Explorer profile. The timeline combines formal application records, IANA registration dates, IANA delegation/transfer/revocation reports, the current root-zone state and the ICANN gTLD contract-lifecycle feed (`https://www.icann.org/resources/registries/gtlds/v2/gtlds.json`). For gTLDs, the live ICANN layer adds Application ID, Registry Agreement signature date, delegation date, termination state and removal date where published. For ccTLDs, the project uses IANA delegation/redelegation evidence instead of applying the gTLD contract model.
+
+The word “complete” has a defined evidentiary meaning: every dated event exposed by the preserved central structured sources is represented; missing historical phases remain explicitly missing. Some early operator changes predate modern structured records and are therefore not reconstructed without a source.
+
+`data/tld_life_histories.csv` exports the locally preserved chronology. The browser enriches gTLD profiles with the current ICANN contract feed and caches the validated result.
 
 ## `.lugano` provenance before Reveal Day
 
