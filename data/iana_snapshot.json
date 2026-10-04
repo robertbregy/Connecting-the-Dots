@@ -1,0 +1,1082 @@
+{
+  "asOf": "2026-10-04",
+  "retrievedAt": "2026-10-04T06:22:18.500Z",
+  "listSource": "https://data.iana.org/TLD/tlds-alpha-by-domain.txt",
+  "rootListCount": 1437,
+  "records": {
+    ".ai": {
+      "formalType": "country-code",
+      "registryEntity": "Government of Anguilla",
+      "registryCountry": "Anguilla",
+      "technicalContactOrganization": "Government of Anguilla",
+      "technicalContactCountry": "Anguilla",
+      "registrationDate": "1995-02-16",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/ai.html"
+    },
+    ".amsterdam": {
+      "formalType": "generic",
+      "registryEntity": "Gemeente Amsterdam",
+      "registryCountry": "Netherlands (the)",
+      "technicalContactOrganization": "SIDN (Stichting Internet Domeinregistratie Nederland)",
+      "technicalContactCountry": "Netherlands (the)",
+      "registrationDate": "2014-11-20",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/amsterdam.html"
+    },
+    ".an": {
+      "formalType": "country-code",
+      "registryEntity": "Not assigned",
+      "registryCountry": "",
+      "technicalContactOrganization": "",
+      "technicalContactCountry": "",
+      "registrationDate": "1993-09-09",
+      "currentRootStatus": "notDelegated",
+      "source": "https://www.iana.org/domains/root/db/an.html"
+    },
+    ".app": {
+      "formalType": "generic",
+      "registryEntity": "Charleston Road Registry Inc.",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "Google Inc",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2015-06-25",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/app.html"
+    },
+    ".aq": {
+      "formalType": "country-code",
+      "registryEntity": "Antarctica Network Information Centre Limited",
+      "registryCountry": "New Zealand",
+      "technicalContactOrganization": "InternetNZ",
+      "technicalContactCountry": "New Zealand",
+      "registrationDate": "1992-02-26",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/aq.html"
+    },
+    ".arpa": {
+      "formalType": "infrastructure",
+      "registryEntity": "Internet Architecture Board (IAB)",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "Internet Corporation for Assigned Names and Numbers (ICANN)",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "1985-01-01",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/arpa.html"
+    },
+    ".art": {
+      "formalType": "generic",
+      "registryEntity": "UK Creative Ideas Limited",
+      "registryCountry": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "technicalContactOrganization": "CentralNic",
+      "technicalContactCountry": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "registrationDate": "2016-06-09",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/art.html"
+    },
+    ".asia": {
+      "formalType": "sponsored",
+      "registryEntity": "DotAsia Organisation Ltd.",
+      "registryCountry": "Hong Kong",
+      "technicalContactOrganization": "Identity Digital Limited c/o Identity Digital Inc.",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2007-05-02",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/asia.html"
+    },
+    ".bank": {
+      "formalType": "generic",
+      "registryEntity": "fTLD Registry Services, LLC",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "GoDaddy Registry",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2014-11-26",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/bank.html"
+    },
+    ".barcelona": {
+      "formalType": "generic",
+      "registryEntity": "Municipi de Barcelona",
+      "registryCountry": "Spain",
+      "technicalContactOrganization": "CORE Association",
+      "technicalContactCountry": "Switzerland",
+      "registrationDate": "2015-06-04",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/barcelona.html"
+    },
+    ".beer": {
+      "formalType": "generic",
+      "registryEntity": "Registry Services, LLC",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "GoDaddy Registry",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2014-03-13",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/beer.html"
+    },
+    ".berlin": {
+      "formalType": "generic",
+      "registryEntity": "dotBERLIN GmbH & Co. KG",
+      "registryCountry": "Germany",
+      "technicalContactOrganization": "TLD-BOX Registrydienstleistungen GmbH",
+      "technicalContactCountry": "Austria",
+      "registrationDate": "2013-12-19",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/berlin.html"
+    },
+    ".bible": {
+      "formalType": "generic",
+      "registryEntity": "American Bible Society",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "GoDaddy Registry",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2015-05-14",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/bible.html"
+    },
+    ".blog": {
+      "formalType": "generic",
+      "registryEntity": "Knock Knock WHOIS There, LLC",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "Canadian Internet Registration Authority (CIRA)",
+      "technicalContactCountry": "Canada",
+      "registrationDate": "2016-05-12",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/blog.html"
+    },
+    ".book": {
+      "formalType": "generic",
+      "registryEntity": "Amazon Registry Services, Inc.",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "Nominet",
+      "technicalContactCountry": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "registrationDate": "2015-11-12",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/book.html"
+    },
+    ".bv": {
+      "formalType": "country-code",
+      "registryEntity": "Norid A/S",
+      "registryCountry": "Norway",
+      "technicalContactOrganization": "Norid A/S",
+      "technicalContactCountry": "Norway",
+      "registrationDate": "1997-08-21",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/bv.html"
+    },
+    ".cat": {
+      "formalType": "sponsored",
+      "registryEntity": "Fundacio puntCAT",
+      "registryCountry": "Spain",
+      "technicalContactOrganization": "CORE Association",
+      "technicalContactCountry": "Switzerland",
+      "registrationDate": "2005-12-19",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/cat.html"
+    },
+    ".co": {
+      "formalType": "country-code",
+      "registryEntity": "Ministry of Information and Communications Technologies (MinTIC)",
+      "registryCountry": "Colombia",
+      "technicalContactOrganization": "CentralNic",
+      "technicalContactCountry": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "registrationDate": "1991-12-24",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/co.html"
+    },
+    ".com": {
+      "formalType": "generic",
+      "registryEntity": "VeriSign Global Registry Services",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "VeriSign Global Registry Services",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "1985-01-01",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/com.html"
+    },
+    ".dating": {
+      "formalType": "generic",
+      "registryEntity": "Binky Moon, LLC",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "Identity Digital Limited",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2014-01-23",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/dating.html"
+    },
+    ".design": {
+      "formalType": "generic",
+      "registryEntity": "Registry Services, LLC",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "GoDaddy Registry",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2014-12-18",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/design.html"
+    },
+    ".eco": {
+      "formalType": "generic",
+      "registryEntity": "Big Room Inc.",
+      "registryCountry": "Canada",
+      "technicalContactOrganization": "Canadian Internet Registration Authority (CIRA)",
+      "technicalContactCountry": "Canada",
+      "registrationDate": "2016-08-18",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/eco.html"
+    },
+    ".edu": {
+      "formalType": "sponsored",
+      "registryEntity": "EDUCAUSE",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "VeriSign Global Registry",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "1985-01-01",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/edu.html"
+    },
+    ".eu": {
+      "formalType": "country-code",
+      "registryEntity": "EURid vzw",
+      "registryCountry": "Belgium",
+      "technicalContactOrganization": "EURid vzw",
+      "technicalContactCountry": "Belgium",
+      "registrationDate": "2005-04-28",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/eu.html"
+    },
+    ".fail": {
+      "formalType": "generic",
+      "registryEntity": "Binky Moon, LLC",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "Identity Digital Limited",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2014-04-17",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/fail.html"
+    },
+    ".fm": {
+      "formalType": "country-code",
+      "registryEntity": "FSM Telecommunications Corporation",
+      "registryCountry": "Micronesia (Federated States of)",
+      "technicalContactOrganization": "FSM Telecommunications Corporation",
+      "technicalContactCountry": "Micronesia (Federated States of)",
+      "registrationDate": "1995-04-19",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/fm.html"
+    },
+    ".gb": {
+      "formalType": "country-code",
+      "registryEntity": "Reserved Domain - IANA",
+      "registryCountry": "Reserved Domain - IANA",
+      "technicalContactOrganization": "Jisc",
+      "technicalContactCountry": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "registrationDate": "1985-07-24",
+      "currentRootStatus": "reserved",
+      "source": "https://www.iana.org/domains/root/db/gb.html"
+    },
+    ".gop": {
+      "formalType": "generic",
+      "registryEntity": "Republican State Leadership Committee, Inc.",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "Nominet",
+      "technicalContactCountry": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "registrationDate": "2014-03-06",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/gop.html"
+    },
+    ".gov": {
+      "formalType": "sponsored",
+      "registryEntity": "Cybersecurity and Infrastructure Security Agency",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "Cloudflare, Inc.",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "1985-01-01",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/gov.html"
+    },
+    ".guru": {
+      "formalType": "generic",
+      "registryEntity": "Binky Moon, LLC",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "Identity Digital Limited",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2013-10-31",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/guru.html"
+    },
+    ".hamburg": {
+      "formalType": "generic",
+      "registryEntity": "Hamburg Top-Level-Domain GmbH",
+      "registryCountry": "Germany",
+      "technicalContactOrganization": "TLD-BOX Registrydienstleistungen GmbH",
+      "technicalContactCountry": "Austria",
+      "registrationDate": "2014-05-22",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/hamburg.html"
+    },
+    ".health": {
+      "formalType": "generic",
+      "registryEntity": "Registry Services, LLC",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "GoDaddy Registry",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2015-09-17",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/health.html"
+    },
+    ".inc": {
+      "formalType": "generic",
+      "registryEntity": "Intercap Registry Inc.",
+      "registryCountry": "Cayman Islands (the)",
+      "technicalContactOrganization": "CentralNic",
+      "technicalContactCountry": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "registrationDate": "2018-07-03",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/inc.html"
+    },
+    ".insurance": {
+      "formalType": "generic",
+      "registryEntity": "fTLD Registry Services LLC",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "GoDaddy Registry",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2015-11-06",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/insurance.html"
+    },
+    ".int": {
+      "formalType": "sponsored",
+      "registryEntity": "Internet Assigned Numbers Authority",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "ICANN",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "1988-11-03",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/int.html"
+    },
+    ".io": {
+      "formalType": "country-code",
+      "registryEntity": "Internet Computer Bureau Limited",
+      "registryCountry": "British Indian Ocean Territory (the)",
+      "technicalContactOrganization": "Internet Computer Bureau Ltd",
+      "technicalContactCountry": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "registrationDate": "1997-09-16",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/io.html"
+    },
+    ".jobs": {
+      "formalType": "sponsored",
+      "registryEntity": "Employ Media LLC",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "Nominet",
+      "technicalContactCountry": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "registrationDate": "2005-09-08",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/jobs.html"
+    },
+    ".kids": {
+      "formalType": "generic",
+      "registryEntity": "DotKids Foundation Limited",
+      "registryCountry": "Hong Kong",
+      "technicalContactOrganization": "Identity Digital Limited",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2022-03-05",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/kids.html"
+    },
+    ".koeln": {
+      "formalType": "generic",
+      "registryEntity": "dotKoeln GmbH",
+      "registryCountry": "Austria",
+      "technicalContactOrganization": "RyCE GmbH",
+      "technicalContactCountry": "Austria",
+      "registrationDate": "2014-02-20",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/koeln.html"
+    },
+    ".lgbt": {
+      "formalType": "generic",
+      "registryEntity": "Identity Digital Limited",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "Identity Digital Limited",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2014-06-26",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/lgbt.html"
+    },
+    ".llc": {
+      "formalType": "generic",
+      "registryEntity": "Identity Digital Limited",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "Identity Digital Limited",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2018-02-16",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/llc.html"
+    },
+    ".london": {
+      "formalType": "generic",
+      "registryEntity": "Dot London Domains Limited",
+      "registryCountry": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "technicalContactOrganization": "CentralNic",
+      "technicalContactCountry": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "registrationDate": "2014-02-13",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/london.html"
+    },
+    ".me": {
+      "formalType": "country-code",
+      "registryEntity": "Government of Montenegro",
+      "registryCountry": "Montenegro",
+      "technicalContactOrganization": "Center of Information System (CIS)",
+      "technicalContactCountry": "Montenegro",
+      "registrationDate": "2007-09-24",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/me.html"
+    },
+    ".mil": {
+      "formalType": "sponsored",
+      "registryEntity": "DoD Network Information Center",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "DoD Network Information Center",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "1985-01-01",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/mil.html"
+    },
+    ".mobi": {
+      "formalType": "generic",
+      "registryEntity": "Identity Digital Limited",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "Identity Digital Limited",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2005-10-17",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/mobi.html"
+    },
+    ".movie": {
+      "formalType": "generic",
+      "registryEntity": "Binky Moon, LLC",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "Identity Digital Limited",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2015-03-12",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/movie.html"
+    },
+    ".museum": {
+      "formalType": "sponsored",
+      "registryEntity": "Museum Domain Management Association",
+      "registryCountry": "France",
+      "technicalContactOrganization": "Association Française pour le Nommage Internet en Coopération (A.F.N.I.C.)",
+      "technicalContactCountry": "France",
+      "registrationDate": "2001-10-20",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/museum.html"
+    },
+    ".music": {
+      "formalType": "generic",
+      "registryEntity": "DotMusic Limited",
+      "registryCountry": "Cyprus",
+      "technicalContactOrganization": "Tucows.com, Co.",
+      "technicalContactCountry": "Canada",
+      "registrationDate": "2021-10-14",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/music.html"
+    },
+    ".name": {
+      "formalType": "generic-restricted",
+      "registryEntity": "VeriSign Information Services, Inc.",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "VeriSign Information Services, Inc.",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2001-08-17",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/name.html"
+    },
+    ".net": {
+      "formalType": "generic",
+      "registryEntity": "VeriSign Global Registry Services",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "VeriSign Global Registry Services",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "1985-01-01",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/net.html"
+    },
+    ".ninja": {
+      "formalType": "generic",
+      "registryEntity": "Dog Beach, LLC",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "Identity Digital Limited",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2013-12-19",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/ninja.html"
+    },
+    ".nyc": {
+      "formalType": "generic",
+      "registryEntity": "The City of New York by and through the New York City Department of Information Technology & Telecommunications",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "GoDaddy Registry",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2014-03-13",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/nyc.html"
+    },
+    ".org": {
+      "formalType": "generic",
+      "registryEntity": "Public Interest Registry (PIR)",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "Identity Digital Limited",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "1985-01-01",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/org.html"
+    },
+    ".paris": {
+      "formalType": "generic",
+      "registryEntity": "City of Paris",
+      "registryCountry": "France",
+      "technicalContactOrganization": "Association Française pour le Nommage Internet en Coopération (A.F.N.I.C.)",
+      "technicalContactCountry": "France",
+      "registrationDate": "2014-03-27",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/paris.html"
+    },
+    ".pharmacy": {
+      "formalType": "generic",
+      "registryEntity": "National Association of Boards of Pharmacy",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "Nominet",
+      "technicalContactCountry": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "registrationDate": "2014-08-28",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/pharmacy.html"
+    },
+    ".pizza": {
+      "formalType": "generic",
+      "registryEntity": "Binky Moon, LLC",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "Identity Digital Limited",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2014-08-22",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/pizza.html"
+    },
+    ".post": {
+      "formalType": "sponsored",
+      "registryEntity": "Universal Postal Union",
+      "registryCountry": "Switzerland",
+      "technicalContactOrganization": "Identity Digital Inc.",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2012-08-07",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/post.html"
+    },
+    ".quebec": {
+      "formalType": "generic",
+      "registryEntity": "PointQuébec Inc",
+      "registryCountry": "Canada",
+      "technicalContactOrganization": "CORE Association",
+      "technicalContactCountry": "Switzerland",
+      "registrationDate": "2014-03-13",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/quebec.html"
+    },
+    ".rich": {
+      "formalType": "generic",
+      "registryEntity": "iRegistry GmbH",
+      "registryCountry": "Germany",
+      "technicalContactOrganization": "Identity Digital Inc.",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2014-01-16",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/rich.html"
+    },
+    ".shop": {
+      "formalType": "generic",
+      "registryEntity": "GMO Registry, Inc.",
+      "registryCountry": "Japan",
+      "technicalContactOrganization": "GMO Registry, Inc.",
+      "technicalContactCountry": "Japan",
+      "registrationDate": "2016-05-05",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/shop.html"
+    },
+    ".sj": {
+      "formalType": "country-code",
+      "registryEntity": "Norid A/S",
+      "registryCountry": "Norway",
+      "technicalContactOrganization": "Norid A/S",
+      "technicalContactCountry": "Norway",
+      "registrationDate": "1997-08-21",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/sj.html"
+    },
+    ".su": {
+      "formalType": "country-code",
+      "registryEntity": "Russian Institute for Development of Public Networks (ROSNIIROS)",
+      "registryCountry": "Russian Federation (the)",
+      "technicalContactOrganization": "Technical Center of Internet",
+      "technicalContactCountry": "Russian Federation (the)",
+      "registrationDate": "1990-09-19",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/su.html"
+    },
+    ".sucks": {
+      "formalType": "generic",
+      "registryEntity": "Vox Populi Registry Ltd.",
+      "registryCountry": "Cayman Islands (the)",
+      "technicalContactOrganization": "Momentous Inc",
+      "technicalContactCountry": "Barbados",
+      "registrationDate": "2015-02-19",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/sucks.html"
+    },
+    ".swiss": {
+      "formalType": "generic",
+      "registryEntity": "Swiss Confederation",
+      "registryCountry": "Switzerland",
+      "technicalContactOrganization": "CORE Association",
+      "technicalContactCountry": "Switzerland",
+      "registrationDate": "2015-04-16",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/swiss.html"
+    },
+    ".tel": {
+      "formalType": "sponsored",
+      "registryEntity": "Telnames Ltd.",
+      "registryCountry": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "technicalContactOrganization": "Knipp Medien und Kommunikation GmbH",
+      "technicalContactCountry": "Germany",
+      "registrationDate": "2007-03-01",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/tel.html"
+    },
+    ".tokyo": {
+      "formalType": "generic",
+      "registryEntity": "GMO Registry, Inc.",
+      "registryCountry": "Japan",
+      "technicalContactOrganization": "GMO Registry, Inc.",
+      "technicalContactCountry": "Japan",
+      "registrationDate": "2014-01-16",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/tokyo.html"
+    },
+    ".tp": {
+      "formalType": "country-code",
+      "registryEntity": "Not assigned",
+      "registryCountry": "",
+      "technicalContactOrganization": "",
+      "technicalContactCountry": "",
+      "registrationDate": "1997-05-09",
+      "currentRootStatus": "notDelegated",
+      "source": "https://www.iana.org/domains/root/db/tp.html"
+    },
+    ".travel": {
+      "formalType": "sponsored",
+      "registryEntity": "Dog Beach, LLC",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "Identity Digital Limited",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2005-07-27",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/travel.html"
+    },
+    ".tv": {
+      "formalType": "country-code",
+      "registryEntity": "Ministry of Transport, Energy, Communications and Innovations",
+      "registryCountry": "Tuvalu",
+      "technicalContactOrganization": "GoDaddy Registry",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "1996-03-18",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/tv.html"
+    },
+    ".uk": {
+      "formalType": "country-code",
+      "registryEntity": "Nominet UK",
+      "registryCountry": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "technicalContactOrganization": "Nominet UK",
+      "technicalContactCountry": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "registrationDate": "1985-07-24",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/uk.html"
+    },
+    ".wien": {
+      "formalType": "generic",
+      "registryEntity": "punkt.wien GmbH",
+      "registryCountry": "Austria",
+      "technicalContactOrganization": "RyCE GmbH",
+      "technicalContactCountry": "Austria",
+      "registrationDate": "2013-12-19",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/wien.html"
+    },
+    ".wtf": {
+      "formalType": "generic",
+      "registryEntity": "Binky Moon, LLC",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "Identity Digital Limited",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2014-04-17",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/wtf.html"
+    },
+    ".xxx": {
+      "formalType": "sponsored",
+      "registryEntity": "ICM Registry LLC",
+      "registryCountry": "United States of America (the)",
+      "technicalContactOrganization": "GoDaddy Registry",
+      "technicalContactCountry": "United States of America (the)",
+      "registrationDate": "2011-04-15",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/xxx.html"
+    },
+    ".zuerich": {
+      "formalType": "generic",
+      "registryEntity": "Kanton Zürich (Canton of Zurich)",
+      "registryCountry": "Switzerland",
+      "technicalContactOrganization": "CentralNic",
+      "technicalContactCountry": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "registrationDate": "2014-12-18",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/zuerich.html"
+    },
+    ".ευ": {
+      "formalType": "country-code",
+      "registryEntity": "EURid vzw",
+      "registryCountry": "Belgium",
+      "technicalContactOrganization": "EURid vzw",
+      "technicalContactCountry": "Belgium",
+      "registrationDate": "2019-07-18",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/xn--qxa6a.html"
+    },
+    ".ею": {
+      "formalType": "country-code",
+      "registryEntity": "EURid vzw",
+      "registryCountry": "Belgium",
+      "technicalContactOrganization": "EURid vzw",
+      "technicalContactCountry": "Belgium",
+      "registrationDate": "2015-12-08",
+      "currentRootStatus": "delegated",
+      "source": "https://www.iana.org/domains/root/db/xn--e1a4c.html"
+    }
+  },
+  "files": [
+    {
+      "path": "data/evidence/iana/ai.html",
+      "sha256": "392e347b1c90d6cb9beafa6b0492cfdee5b716e63a936f60a91a73539a6e4a22"
+    },
+    {
+      "path": "data/evidence/iana/amsterdam.html",
+      "sha256": "4a9ba26c4a54deeae5801ebcffecfb6a4e5931d258232fc14e78c403e93de728"
+    },
+    {
+      "path": "data/evidence/iana/an.html",
+      "sha256": "362db716f9522a95cf0e66aaa8dbfa84030393f9127ecd5e53fbfa88a97a4d42"
+    },
+    {
+      "path": "data/evidence/iana/app.html",
+      "sha256": "f0e28953945f4617eb83f1c0a04adcf12ddbf676b353748de390be3dc238b9b7"
+    },
+    {
+      "path": "data/evidence/iana/aq.html",
+      "sha256": "9f1f67e7e4a0cdf344973a76ca70fa08e15ddcfd0f45591c2d601a51c7c8783f"
+    },
+    {
+      "path": "data/evidence/iana/arpa.html",
+      "sha256": "a3c2605599e218d1adbec339776d513ebdec7f04b6af12ecdfb0e066e989debc"
+    },
+    {
+      "path": "data/evidence/iana/art.html",
+      "sha256": "60bc61d8b43e744e730b9331af435a87b7b46de5e45a66029be63d9aadeafb4c"
+    },
+    {
+      "path": "data/evidence/iana/asia.html",
+      "sha256": "b0fd09ea81d487d89fd8bc26a5fdae52e6669a07608efea67a67652b4ff4548c"
+    },
+    {
+      "path": "data/evidence/iana/bank.html",
+      "sha256": "ebc7ac03529fa23f78ac23fa1f643a38a27bda6747d25823aa8a745f3096c2ad"
+    },
+    {
+      "path": "data/evidence/iana/barcelona.html",
+      "sha256": "4b2ef8be5bc2b754651ac7f43e308f8d11eb71d5298353348eeb291918c6beff"
+    },
+    {
+      "path": "data/evidence/iana/beer.html",
+      "sha256": "96f7ed2e3548665707e6d562018972214d26de431fcbb75fa3624cb4ff19011e"
+    },
+    {
+      "path": "data/evidence/iana/berlin.html",
+      "sha256": "ab659fdd3c7a6ccb68bfbe2d50fee954e99288414a8ad9b7fc8efa527093c586"
+    },
+    {
+      "path": "data/evidence/iana/bible.html",
+      "sha256": "7a94496c636f9295f5731ff52d5434370fd18faf2a853f7b2ab552aa73630f2b"
+    },
+    {
+      "path": "data/evidence/iana/blog.html",
+      "sha256": "d617f352b96634f23e34538f187c18032090660c693b679dd2187f0d980081ab"
+    },
+    {
+      "path": "data/evidence/iana/book.html",
+      "sha256": "df3b0652aa84c79f98c238f317c03f5ea65a75e943d2204f96b970f59a40ab0c"
+    },
+    {
+      "path": "data/evidence/iana/bv.html",
+      "sha256": "0c495f199c50ed03ffae5840a4671e37e559bc32b63fe81b76e1835f2b5589f6"
+    },
+    {
+      "path": "data/evidence/iana/cat.html",
+      "sha256": "4131856756737f4b03889875f0642a253d5f9927fea882065a7c012e927bea47"
+    },
+    {
+      "path": "data/evidence/iana/co.html",
+      "sha256": "ec6417078c6ec8d6d71b807382ca5170ad90ba851baef1d8a75271e225eb129e"
+    },
+    {
+      "path": "data/evidence/iana/com.html",
+      "sha256": "215c0303dcc4f74c1765c27eaacf359c334e1285532a2ba4abd8e49b4e38e6a5"
+    },
+    {
+      "path": "data/evidence/iana/dating.html",
+      "sha256": "11415d7feb51168b27f17df0fcf485e27f7c4fb972243b3acd3f8ff90ed6ac77"
+    },
+    {
+      "path": "data/evidence/iana/design.html",
+      "sha256": "f8da43fc692d8c403b78693570dbef70948e95906b5ab3d73e5e78f0b389c6a7"
+    },
+    {
+      "path": "data/evidence/iana/eco.html",
+      "sha256": "4e1a55a1c8fc829a5850ad25e9bd18159900da6184e72d6650874f793c5320c2"
+    },
+    {
+      "path": "data/evidence/iana/edu.html",
+      "sha256": "ea61545ff2c0427f0e7ed625b3f803af85cd687501b570fd2a839dafee1881a7"
+    },
+    {
+      "path": "data/evidence/iana/eu.html",
+      "sha256": "87ef8b66dd461ed31979987afcaac07b5eac4eec825e4b15fee3f8f198bc40ff"
+    },
+    {
+      "path": "data/evidence/iana/fail.html",
+      "sha256": "aa715a63fa16cfa1ba7e0fb4ea69630b92dde5f7c23951e3ef9b477453d8ed63"
+    },
+    {
+      "path": "data/evidence/iana/fm.html",
+      "sha256": "9853a65be3c79e3ce91d57e26d9bba10c036fce1dd541306ae3b9dbd3c18417f"
+    },
+    {
+      "path": "data/evidence/iana/gb.html",
+      "sha256": "c2fc86f62c5ec4923271cf4021db8328d4fa479d1361721c11c5a38dc9deb248"
+    },
+    {
+      "path": "data/evidence/iana/gop.html",
+      "sha256": "ef4e789714af82b5552fbd59a73ae396ad4eafb721d277ffba0ddae5e3c66782"
+    },
+    {
+      "path": "data/evidence/iana/gov.html",
+      "sha256": "c3c19ed072f9e1824dbdb1de8e76485ed1eec563a520ac2600c9c6a70834bd8d"
+    },
+    {
+      "path": "data/evidence/iana/guru.html",
+      "sha256": "4440657901291884bb8906a28b0ad2d1188d62d53978a0dc4e9d086934a7e455"
+    },
+    {
+      "path": "data/evidence/iana/hamburg.html",
+      "sha256": "a5b56d534dd47cb10e681b24c94ecfcaac071ada6b0cb892a291d00ff5df05e2"
+    },
+    {
+      "path": "data/evidence/iana/health.html",
+      "sha256": "61ff3030aae54525d08f444f6d561fe69d71610a65b2e8763a2feb39c54cae82"
+    },
+    {
+      "path": "data/evidence/iana/inc.html",
+      "sha256": "0537ae2dfabcdb23806e1f2565451e4069d5f7549739730b647bb09db340ca50"
+    },
+    {
+      "path": "data/evidence/iana/insurance.html",
+      "sha256": "3a0f345579f5ea368019f5052db48b09155a6150a9aacbd1558352c4dd1eb877"
+    },
+    {
+      "path": "data/evidence/iana/int.html",
+      "sha256": "29d71010eaac044803af8355b75ecb343756f0a5103c6167b00bc3b84b1d90cc"
+    },
+    {
+      "path": "data/evidence/iana/io.html",
+      "sha256": "720da59cd0c226c2f22e53a349f0b2c578b92133f48fc69ce549234d13b0f415"
+    },
+    {
+      "path": "data/evidence/iana/jobs.html",
+      "sha256": "fa6c15b511edc6089df8722510111b98f79fc91a3f7fbcd0a32bf120f4699672"
+    },
+    {
+      "path": "data/evidence/iana/kids.html",
+      "sha256": "ea235b8e0b8abcbbfcb334d9d92b881d2991b4195e4a88767769692a13f94bd8"
+    },
+    {
+      "path": "data/evidence/iana/koeln.html",
+      "sha256": "6d3106f3791a3f4501a64941f3ddbd77a7af7cb784178b07bd05ea433770fe4c"
+    },
+    {
+      "path": "data/evidence/iana/lgbt.html",
+      "sha256": "725f6adb03e36fae10381b4c1eeba3289184c57ce9dff473fb29f5b7a729f981"
+    },
+    {
+      "path": "data/evidence/iana/llc.html",
+      "sha256": "9496a80e2020745be92b6210a9bfee9855713a050a8a746258d38309b3336a99"
+    },
+    {
+      "path": "data/evidence/iana/london.html",
+      "sha256": "5376ecd60e13ae76d4c5cdbb6341bfdc6cf669211c8f4e94c7ed36a8b949d524"
+    },
+    {
+      "path": "data/evidence/iana/me.html",
+      "sha256": "89379e989447b1cf872acaf3419549c9851150f343b35fbc65743fcbe9f254e2"
+    },
+    {
+      "path": "data/evidence/iana/mil.html",
+      "sha256": "2d5fb1494e6c3e2dce86b2d729246a2ce9b448d38aab0ae5dd7696cd130f43a0"
+    },
+    {
+      "path": "data/evidence/iana/mobi.html",
+      "sha256": "8a2d86c5b033162279b70965d66aafe2c1d9455a1083bf7008bce32f976c484f"
+    },
+    {
+      "path": "data/evidence/iana/movie.html",
+      "sha256": "9e5feb275957f64fc2d447129d8a5b136930cecb9a2b88d9cd756c4912afc56b"
+    },
+    {
+      "path": "data/evidence/iana/museum.html",
+      "sha256": "dfbd8c00335aaf79a81be6cd9cde44fa1dc3e20f7efbfac14989c4466a5691f4"
+    },
+    {
+      "path": "data/evidence/iana/music.html",
+      "sha256": "1f8225ae6be03dde262adf0f53c74ba9edc4246e430d7a1be753a1b58a6f9695"
+    },
+    {
+      "path": "data/evidence/iana/name.html",
+      "sha256": "81b2fb2df09177bd484dce8d5d7b4baa6c10f86690db74606df4407a5b22c011"
+    },
+    {
+      "path": "data/evidence/iana/net.html",
+      "sha256": "5e9399a3e691afededb1b354272a3c4e837dfb30cf129b268b3c5f1bdfc4cf8f"
+    },
+    {
+      "path": "data/evidence/iana/ninja.html",
+      "sha256": "701bd38290ec261b8a3024d52be0230e2121eca93be286438c09b54de0962bb1"
+    },
+    {
+      "path": "data/evidence/iana/nyc.html",
+      "sha256": "f448f90f825109e35167b412d496f8650c7eb0fa1ec339e171f9201edbe42b64"
+    },
+    {
+      "path": "data/evidence/iana/org.html",
+      "sha256": "e91d6e1d8ef2b067b95573c04f2351944a3b19cb27a09a14d428fe41168019a2"
+    },
+    {
+      "path": "data/evidence/iana/paris.html",
+      "sha256": "b66163eaec8fdef49aee923729dff64895027897d80bfaa37e1e009386cd8bc0"
+    },
+    {
+      "path": "data/evidence/iana/pharmacy.html",
+      "sha256": "3c3fe80dccb9360c410cd812125edd1f0ac07231f99d4dca5c8ee5f28e970980"
+    },
+    {
+      "path": "data/evidence/iana/pizza.html",
+      "sha256": "ad11902bbd12a761450abe49d0ad09c56b3b69d7247f4a27d92fbed838322c0c"
+    },
+    {
+      "path": "data/evidence/iana/post.html",
+      "sha256": "a8d4cb903488ad58ff22cfea1d513341b165d9f1b175b1b18c25bca3851b357f"
+    },
+    {
+      "path": "data/evidence/iana/quebec.html",
+      "sha256": "bccc74113e5bbd6803dad477f1b20ef078ad7d2f5c052de296a03065a2abeb35"
+    },
+    {
+      "path": "data/evidence/iana/rich.html",
+      "sha256": "2ce3b536d88cff52b6003ebea2571f709e9b290bc01b4ac1d139503c46f44b6e"
+    },
+    {
+      "path": "data/evidence/iana/root-db.html",
+      "sha256": "0ce8a0ff0b5d090516da5b152845a0d9dbd49a90e69962676032c23b935ffad6"
+    },
+    {
+      "path": "data/evidence/iana/shop.html",
+      "sha256": "11f188f7fec4f78ffb349baea0ac79038e1d0354a9b1a9231785b1652299e46a"
+    },
+    {
+      "path": "data/evidence/iana/sj.html",
+      "sha256": "f4b75075438a12b961020006360430db8f442378452e38fa847a1c37c7a3dc4b"
+    },
+    {
+      "path": "data/evidence/iana/su.html",
+      "sha256": "efb27eeb4197cf1487fa8efe1c1ea68b249b057e4116b7b21e79cd65608a4756"
+    },
+    {
+      "path": "data/evidence/iana/sucks.html",
+      "sha256": "cb5a467187d43cf8180664f7fe64fc46e1e760d090d24a0a874655c4e9004f87"
+    },
+    {
+      "path": "data/evidence/iana/swiss.html",
+      "sha256": "23d0006a7c59ddf5e1bdbd27a607638e4ff15c832c07a058bd1395fc557a59cb"
+    },
+    {
+      "path": "data/evidence/iana/tel.html",
+      "sha256": "72e1dd2aaa19d1bae638df36d3ac41135828b4ba77c631f1e8aa436366232cb9"
+    },
+    {
+      "path": "data/evidence/iana/tlds-alpha-by-domain.txt",
+      "sha256": "f9816a9e5f92191d4a3d73045a579f57eda381dd1ad7b4c535505c7ec610218c"
+    },
+    {
+      "path": "data/evidence/iana/tokyo.html",
+      "sha256": "025b0d41c8cab1ff190930a5883643137308cf1715a256b4011fa144e64aa776"
+    },
+    {
+      "path": "data/evidence/iana/tp.html",
+      "sha256": "d2f661afcf2706666c10bc71cf241fe709cfe8551a8fd2929970c0e7f1f4f019"
+    },
+    {
+      "path": "data/evidence/iana/travel.html",
+      "sha256": "87f218b0979c3a595558207a89414e2c6ad36eb9114395fafed7ef69ae5e9d97"
+    },
+    {
+      "path": "data/evidence/iana/tv.html",
+      "sha256": "885f3eb37ef2123e531d75eb4fad02a0d66badb1042e9d5438a5411a14d71d4e"
+    },
+    {
+      "path": "data/evidence/iana/uk.html",
+      "sha256": "2de0705327aadc642cdd1eeb7463fa37738356f90a9821ab2a541a0360279779"
+    },
+    {
+      "path": "data/evidence/iana/wien.html",
+      "sha256": "692cd702f849afdd6edcd69fdbf62190fc75650a3efb6459791deed126f4c041"
+    },
+    {
+      "path": "data/evidence/iana/wtf.html",
+      "sha256": "43c0ff03359d816e12ecc86245fbaf05528f928add5c180b4c3aa2ffbc609137"
+    },
+    {
+      "path": "data/evidence/iana/xn--e1a4c.html",
+      "sha256": "ee01e6296beb90889b0613af9fad6fbb08d8c10de8aff8d7b40346564a167ea1"
+    },
+    {
+      "path": "data/evidence/iana/xn--qxa6a.html",
+      "sha256": "3339b3853129594d356f30752f80fd5cd3b98739f91212dc4a7fca082df5af1b"
+    },
+    {
+      "path": "data/evidence/iana/xxx.html",
+      "sha256": "c3cd6043f0c59dfca6dc6a6b4b3bb33b5ce61fc4168a2154217647b5aabc7211"
+    },
+    {
+      "path": "data/evidence/iana/zuerich.html",
+      "sha256": "22299ff3f12d78e7d88fc78a9aa26fda7bfedc6b16e29de92e14a76de69a825b"
+    }
+  ]
+}

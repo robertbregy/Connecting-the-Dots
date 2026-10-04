@@ -14,7 +14,7 @@ Before Reveal Day, `.lugano` is marked as **applicant disclosure**. The individu
 
 `rounds_summary.csv` includes an **As of** field for live totals that can change over time.
 
-`manifest.json` records file sizes, SHA-256 hashes and record counts for the current public data snapshot. Third-party source data remains subject to its original terms; see `../CONTENT_LICENSE.md`.
+`manifest.json` records file sizes, SHA-256 hashes and record counts for the current public data snapshot. Third-party source data remains subject to its original terms; see `CONTENT_LICENSE.md`.
 
 `semantic_drift.csv` documents selected ccTLDs whose formal geographic designation is unchanged but whose global use has acquired a second cultural association. Formal status and secondary meaning are kept separate, and each case links to primary IANA and/or registry sources.
 
@@ -38,3 +38,11 @@ The release date is 3 October 2026; the publication and manifest keep the existi
 ## v0.7.3 static language pages
 
 The publication is prerendered in EN, IT, DE and FR. Language metadata in `manifest.json` describes the publication routes; the research snapshot remains 2 October 2026. All CSV observations, source corrections and pre-Reveal empty fields are preserved from v0.7.2.
+
+## v0.7.4 current-state correction
+
+Current IANA root status, formal type, registry legal organization, registry country, technical-contact organization, represented place and historical applications are distinct fields. The root evidence was retrieved on 4 October 2026; the other pre-Reveal research snapshot remains 2 October 2026. `iana_snapshot.json` records retrieval time, source URLs and SHA-256 hashes of the source files under `data/evidence/iana/` in the full release. The data ZIP includes the normalized snapshot; the full redeploy ZIP also includes the raw evidence. The IANA technical contact is not automatically the contractual RSP.
+
+Current `.CS` is retired: its former Czechoslovak delegation and the non-delegation for Serbia and Montenegro are separate historical events. `.GB` remains explicitly reserved. No public legal-applicant identity is inferred for `.lugano` before Reveal Day. `contention_count` refers to 2012 where `contention_year` is 2012. Empty cells represent information not documented in this catalogue.
+
+`current_root_status` is the authoritative current-root field. The compatibility `status` column retains the indexed lifecycle label for historical-only records; consult `explorer_events.csv` for its dated context. `formal_type` and `editorial_designation` must not be merged.

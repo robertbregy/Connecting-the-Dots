@@ -1,7 +1,7 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.3",
-  "release_date": "2026-10-03",
+  "version": "0.7.4",
+  "release_date": "2026-10-04",
   "publication_state": "pre-reveal",
   "rendering": "static-prerendered",
   "language_routes": {
@@ -22,6 +22,8 @@
     "dns_oddities.csv distinguishes active legacy, retired, reserved and never-delegated country-code cases.",
     "Blank 2026 aggregate values are scaffolding, not observations."
   ],
+  "current_root_snapshot": "2026-10-04",
+  "iana_evidence": "iana_snapshot.json",
   "files": [
     {
       "path": "application_regions_2012.csv",
@@ -73,9 +75,9 @@
     },
     {
       "path": "dns_oddities.csv",
-      "bytes": 1818,
+      "bytes": 1942,
       "records": 11,
-      "sha256": "9c58de30a54cd55c4ff739fcee7e68c553efeeb95c156ad124bab05e2898fa8a"
+      "sha256": "909cb4602b35e07de825004bc9f2b9dfe002ea98f7bd64c6a39856586bdc29b2"
     },
     {
       "path": "domain_governance_glossary.csv",
@@ -97,15 +99,15 @@
     },
     {
       "path": "explorer_catalog.csv",
-      "bytes": 12228,
+      "bytes": 29724,
       "records": 87,
-      "sha256": "ca45687212b0d9850e70ca41ae710bf6c1bb344fd1ad012f7e22129399f7f6b8"
+      "sha256": "ce1b6bb96b0fc3366f18e81a568610f03831ce07b8e8de2db0711f2e244b9293"
     },
     {
       "path": "explorer_events.csv",
-      "bytes": 11949,
-      "records": 100,
-      "sha256": "46391f4aab8eab5d4c165a566f96f9ff45822645fa6ca441be833e8e5a303544"
+      "bytes": 32749,
+      "records": 247,
+      "sha256": "e77a68dd174ad188d98f5da633a740e816dc577496440872ae57ef5e76f455a7"
     },
     {
       "path": "governance_locations.csv",
@@ -175,15 +177,15 @@
     },
     {
       "path": "sources.csv",
-      "bytes": 9748,
-      "records": 96,
-      "sha256": "79972dc14dc71278697ea66311330b297c9eef8533442813cb2bc2c6fe3292af"
+      "bytes": 9930,
+      "records": 97,
+      "sha256": "f10b5121e47933bc75114c07597eab7ad324f818c480a91c83abbb09d9e41638"
     },
     {
       "path": "strange_internet.csv",
-      "bytes": 10414,
+      "bytes": 10379,
       "records": 24,
-      "sha256": "061edfac51d058425a81844c28085b46314527c2acf8ff391367fd9948bd938f"
+      "sha256": "d9c815a228a883a06be4c897de421f59bd598bcfc4313381b076ace9b16772f7"
     },
     {
       "path": "success_framework.csv",

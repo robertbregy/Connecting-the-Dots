@@ -3,7 +3,7 @@ ghosts,.su,activeLegacy,geopolitics | history,oddSuFact,oddSuReading,https://www
 ghosts,.yu,retired,geopolitics | history,oddYuFact,oddYuReading,https://www.iana.org/reports/2010/yu-report-01apr2010.html
 ghosts,.an,retired,geopolitics | history,oddAnFact,oddAnReading,https://www.iana.org/domains/root/db/an.html | https://www.iana.org/reports/2011/cw-report-20111003.html
 ghosts,.tp,retired,geopolitics | history,oddTpFact,oddTpReading,https://www.iana.org/domains/root/db/tp.html | https://www.iana.org/reports/2015/tp-report-20150126.html
-never,.cs,notDelegated,geopolitics | history,oddCsFact,oddCsReading,https://www.iana.org/reports/2007/me-report-11sep2007.html
+never,.cs,retired,geopolitics | history,oddCsFact,oddCsReading,https://www.icann.org/en/board-activities-and-meetings/materials/preliminary-report-special-meeting-of-the-board-13-10-2003-en | https://www.iana.org/reports/2007/me-report-11sep2007.html
 history,.gb / .uk,history,history,oddGbUkFact,oddGbUkReading,https://www.iana.org/domains/root/db/gb.html | https://www.iana.org/domains/root/db/uk.html | https://www.iana.org/help/eligible-tlds
 territories,.aq,delegated,territory | history,oddAqFact,oddAqReading,https://www.iana.org/domains/root/db/aq.html
 territories,.bv,delegated,territory,oddBvFact,oddBvReading,https://www.iana.org/domains/root/db/bv.html | https://www.norid.no/en/omnorid/toppdomenet-bv/
