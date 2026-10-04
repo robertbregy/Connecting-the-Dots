@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.11"
+VERSION = "0.7.12"
 
 
 def csv_records(path: Path) -> int:
@@ -68,9 +68,11 @@ def build_manifest() -> None:
             "dns_oddities.csv distinguishes active legacy, retired, reserved and never-delegated country-code cases.",
             "Blank 2026 aggregate values are scaffolding, not observations.",
             "Every preserved IANA database entry has a normalized profile; root-list membership is separate from database presence.",
+            "Application Archaeology separates submissions, applied-for strings and delegated TLD identity; never-delegated applications do not increase the TLD universe.",
+            "The 2012 archival corpus excludes Primary Contact and Email fields and is accepted only after locked ICANN totals validate.",
             "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity.",
             "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database.",
-            "application_only_strings.csv is deliberately separate and curated, not an exhaustive cross-round application corpus.",
+            "application_only_strings.csv is the build-time application-only view for vendored/local data; the validated 2012 Reveal Day corpus expands the Explorer at runtime.",
         ],
         "current_root_snapshot": json.loads((DATA / "iana_snapshot.json").read_text())["asOf"],
         "iana_evidence": "iana_snapshot.json",
@@ -90,7 +92,7 @@ def build_manifest() -> None:
 
 def data_pack_files() -> list[Path]:
     snapshot = json.loads((DATA / "iana_snapshot.json").read_text())
-    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", ROOT / snapshot["archive_path"]]
+    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", ROOT / snapshot["archive_path"]]
 
 
 def build_data_pack() -> None:
@@ -254,6 +256,7 @@ def validate_index() -> None:
 
 
 def main() -> None:
+    subprocess.run(["python3", str(ROOT / "scripts" / "build_application_archaeology.py")], check=True)
     bundle_runtime()
     build_manifest()
     build_data_pack()
@@ -262,6 +265,7 @@ def main() -> None:
     subprocess.run(["node", str(ROOT / "scripts" / "validate_multilingual.js")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "validate_corrective.js")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "validate_delivery.js")], check=True)
+    subprocess.run(["node", str(ROOT / "scripts" / "validate_application_archaeology.js")], check=True)
     print(f"Built static {INDEX.name} with shared assets and deferred Explorer profiles from {SRC.relative_to(ROOT)}")
     print("Validated runtime, event history, provenance, local assets, pre-Reveal state and data-pack sync")
     print(f"Refreshed manifest and data pack for v{VERSION}")

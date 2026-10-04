@@ -1,10 +1,90 @@
 string,ascii_string,program_round,status,application_entity,geography,introduction_path,corpus_status,sources
-.geo,.geo,2000,notDelegated,,,intro2000,curated-not-exhaustive,https://archive.icann.org/en/tlds/
-.home,.home,2012,notDelegated,,,intro2012,curated-not-exhaustive,https://newgtlds.icann.org/en/program-status/statistics
-.lugano,.lugano,2026,notDelegated,,"Lugano, Switzerland",intro2026Application,curated-not-exhaustive,
-.magic,.magic,2000,notDelegated,,,intro2000,curated-not-exhaustive,https://archive.icann.org/en/tlds/ads1/
-.mail,.mail,2004,notDelegated,Anti-Spam Community Registry,United Kingdom,intro2004,curated-not-exhaustive,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
-.soup,.soup,2000,notDelegated,,,intro2000,curated-not-exhaustive,https://archive.icann.org/en/tlds/ads1/
-.union,.union,2000,notDelegated,,,intro2000,curated-not-exhaustive,https://archive.icann.org/en/tlds/union1/ | https://archive.icann.org/en/tlds/
-.wap,.wap,2000,notDelegated,,,intro2000,curated-not-exhaustive,https://archive.icann.org/en/tlds/
-.war,.war,2000,notDelegated,,,intro2000,curated-not-exhaustive,https://archive.icann.org/en/tlds/ads1/
+.aer,.aer,2000,notDelegated,Société Internationale de Télécommunications Aéronautiques (SITA),,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.aids,.aids,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.air,.air,2000,notDelegated,,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.antiques,.antiques,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.artists,.artists,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.bbs,.bbs,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.books,.books,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.card,.card,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.co-op,.co-op,2000,notDelegated,Cooperative League of the USA dba National Cooperative Business Association,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.commerce,.commerce,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.computers,.computers,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.culture,.culture,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.dir,.dir,2000,notDelegated,"Novell, Inc.",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.dvd,.dvd,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.ebiz,.ebiz,2000,notDelegated,,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.ecom,.ecom,2000,notDelegated,"iDomains, Inc.",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.event,.event,2000,notDelegated,"Internet Events International, Inc.",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.factory,.factory,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.fam,.fam,2000,notDelegated,"Abacus America, Inc.",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.festival,.festival,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.fiction,.fiction,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.films,.films,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.fin,.fin,2000,notDelegated,Association Monegasque des Banques,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.find,.find,2000,notDelegated,"Monsoon Assets Limited (BVI) dba dotYP, Inc.",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.firm,.firm,2000,notDelegated,,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.funds,.funds,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.geo,.geo,2000,notDelegated,SRI International,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/ | https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.go,.go,2000,notDelegated,"Dubai Technology, Electronic Commerce and Media Free Zone Authority",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.history,.history,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.home,.home,2012,notDelegated,"KDD Internet Solutions Co., Ltd.",,intro2012,vendored-historical,https://newgtlds.icann.org/en/program-status/statistics | https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.hotel,.hotel,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.i,.i,2000,notDelegated,"Sarnoff Corporation / Atomic Tangerine, Inc. / NextDNS, Inc.",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.index,.index,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.jazz,.jazz,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.jina,.jina,2000,notDelegated,"The Global Name Registry, Limited",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.lab,.lab,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.lugano,.lugano,2026,notDelegated,,"Lugano, Switzerland",intro2026Application,curated-other,
+.mad,.mad,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.mag,.mag,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.magic,.magic,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/ads1/ | https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.mail,.mail,2004,notDelegated,Anti-Spam Community Registry,United Kingdom,intro2004,vendored-historical,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en | https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.mall,.mall,2000,notDelegated,"Commercial Connect, LLC",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.mas,.mas,2000,notDelegated,Nokia Corporation,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.max,.max,2000,notDelegated,Nokia Corporation,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.mid,.mid,2000,notDelegated,Nokia Corporation,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.mis,.mis,2000,notDelegated,Nokia Corporation,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.monitor,.monitor,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.mus,.mus,2000,notDelegated,Museum Domain Management Association,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.muse,.muse,2000,notDelegated,Museum Domain Management Association,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.musea,.musea,2000,notDelegated,Museum Domain Management Association,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.museums,.museums,2000,notDelegated,Museum Domain Management Association,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.nom,.nom,2000,notDelegated,,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.number,.number,2000,notDelegated,De Breed Holding B.V.,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.opera,.opera,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.own,.own,2000,notDelegated,Nokia Corporation,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.people,.people,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.per,.per,2000,notDelegated,"JVTeam, LLC",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.planet,.planet,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.politics,.politics,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.power,.power,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.projects,.projects,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.real,.real,2000,notDelegated,"Affinity Internet, Inc. / biz Regulatory and Advisory Council (bizTRAC)",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.records,.records,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.san,.san,2000,notDelegated,"The Global Name Registry, Limited",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.sansansan,.sansansan,2000,notDelegated,Rathbawn Computers Limited,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.service,.service,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.shareware,.shareware,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.society,.society,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.sound,.sound,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.soup,.soup,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/ads1/ | https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.sports,.sports,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.studios,.studios,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.svc,.svc,2000,notDelegated,"Commercial Connect, LLC",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.temple,.temple,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.three33,.three33,2000,notDelegated,Rathbawn Computers Limited,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.time,.time,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.times,.times,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.tour,.tour,2000,notDelegated,Eastern Communications Company Limited,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.union,.union,2000,notDelegated,International Confederation of Free Trade Unions (ICFTU),,intro2000,vendored-historical,https://archive.icann.org/en/tlds/union1/ | https://archive.icann.org/en/tlds/ | https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.voice,.voice,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.wap,.wap,2000,notDelegated,,,intro2000,vendored-historical,https://archive.icann.org/en/tlds/ | https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.war,.war,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/ads1/ | https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.women,.women,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.writer,.writer,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.xing,.xing,2000,notDelegated,"The Global Name Registry, Limited",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.yp,.yp,2000,notDelegated,"Monsoon Assets Limited (BVI) dba dotYP, Inc.",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.ypa,.ypa,2000,notDelegated,"Monsoon Assets Limited (BVI) dba dotYP, Inc.",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.ypi,.ypi,2000,notDelegated,"Monsoon Assets Limited (BVI) dba dotYP, Inc.",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
+.zine,.zine,2000,notDelegated,"Name.Space, Incorporated",,intro2000,vendored-historical,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm

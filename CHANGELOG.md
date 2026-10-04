@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.7.12 · 4 October 2026
+
+- Add complete, submission-level Application Archaeology for the 2000 proof-of-concept round: 47 submissions, 223 formal Item E2 string links and 188 distinct Item E2 strings, plus separately labelled SITA alternatives `.aer` and `.aero`.
+- Add the complete 2004 sponsored-TLD round: 10 submissions for 9 strings, preserving the two independent `.tel` proposals.
+- Add the complete 2012 Reveal Day corpus architecture: 1,930 applications for 1,409 distinct strings, validated before merge against ICANN's locked IDN, geographic, community and regional totals.
+- Keep applications, applied-for strings and delegated TLD identity separate; never-delegated strings become explicit `application-only` Explorer records rather than pretend TLDs.
+- Exclude 2012 Primary Contact and Email fields from the research dataset; retain only application metadata needed for historical analysis.
+- Extend Explorer search, round filtering, record drawers and CSV exports to expose cross-round application history while preserving each TLD's introduction path.
+- The 2000 and 2004 corpora are vendored with the publication. The 2012 Reveal Day snapshot is fetched from a preserved archival copy, sanitized, checked against ICANN totals and cached locally before it is merged; a failed validation is rejected rather than partially displayed.
+
 ## 0.7.11 · 4 October 2026
 
 - Universal Explorer origin model for every record.

@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.11
+# Connecting the Dots — v0.7.12
 
 **Connecting the Dots** is a multilingual, static research publication about the history, governance, geography and social meaning of top-level domains, with the 2026 ICANN round and the `.lugano` application as the contemporary layer.
 
@@ -291,6 +291,16 @@ Readers control every step using native buttons; there is no autoplay. The selec
 
 Research records, CSV files and the IANA evidence snapshot remain unchanged. Automated checks exercise all steps in all four languages, restart, back navigation, direct links, language links and existing chapter anchors. The local browser environment still prevents a real visual pass; verify desktop and phone layouts after deployment.
 
+
+## v0.7.12 · Application Archaeology
+
+The Explorer now separates the history of **applications** from the history of **delegated TLDs**. The 2000 and 2004 rounds are fully vendored in the repository. The 2012 Reveal Day corpus is reconstructed from the preserved 13 June 2012 CSV snapshot and is accepted by the runtime only after it reproduces ICANN's official totals: **1,930 applications, 1,409 distinct strings, 116 IDN applications, 66 geographic applications, 84 community applications**, and the five official regional totals.
+
+The data model distinguishes a submission from each string linked to that submission. That matters especially in 2000, where **47 submissions produced 223 formal Item E2 submission-to-string links across 188 distinct strings**. SITA's `.aer` and `.aero` alternatives are retained separately from its formal `.air` Item E2 request, so later selection of `.aero` does not rewrite the original filing. The 2004 layer contains all **10 submissions for 9 strings**, including both `.tel` applications.
+
+Never-delegated applied-for strings receive `application-only` Explorer records. They do not increase the TLD/profile universe, which remains **1,599 records** under the v0.7.11 dated coverage definition. Existing TLD records can carry application histories from multiple rounds without changing their introduction path.
+
+For the 2012 corpus, the historical CSV's `Primary Contact` and `Email` fields are deliberately discarded. The publication retains the string, applicant, public website, location/region, IDN/A-label/script data, community/geographic flags and Application ID. The browser validates the complete sanitized corpus before merging it; invalid or partial data are rejected.
 
 ## v0.7.11 · Universal Explorer
 

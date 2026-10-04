@@ -55,7 +55,7 @@ function introductionFor(r){
 }
 
 module.exports=function assembleData(){
- const D=json('data/research.json'),S=json('data/iana_snapshot.json'),curated=json('data/explorer_curated.json');
+ const D=json('data/research.json'),S=json('data/iana_snapshot.json'),curated=json('data/explorer_curated.json'),archaeology=json('data/application_archaeology_local.json'),archaeologyManifest=json('data/application_archaeology_manifest.json');
  if(curated.schemaVersion!==1)throw new Error('Unsupported curated record schema');
  const bytes=fs.readFileSync(path.join(root,S.archive_path));
  if(digest(bytes)!==S.archive_sha256)throw new Error('IANA evidence archive checksum mismatch');
@@ -109,11 +109,37 @@ module.exports=function assembleData(){
   delete r.historicalRootStatus;delete r.historicalStatus;
   byAscii.set(key,r);
  }
- for(const r of byAscii.values())Object.assign(r,introductionFor(r));
+ // Attach the locally vendored 2000/2004 archaeology. Never-delegated
+ // strings become application-only Explorer records; existing TLD records
+ // retain their independent IANA/delegation identity.
+ if(archaeology.schemaVersion!==1||archaeologyManifest.schemaVersion!==1)throw new Error('Unsupported application archaeology schema');
+ for(const app of archaeology.applications){
+  const key=ascii(app.string);
+  let r=byAscii.get(key);
+  if(!r){
+   r={string:app.string,asciiString:key,recordLevel:'application',ianaProfile:false,rootListed:false,currentRootStatus:'notDelegated',status:'notDelegated',formalType:'notApplicable',type:'notApplicable',currentAsOf:S.asOf,registryEntity:'',entity:'',registryCountry:'',registryCountryCode:'',source:[],events:[],themes:[],strange:false,city:false,placeholder:false,originRound:String(app.round)};
+   byAscii.set(key,r);
+  }
+  r.applications=r.applications||[];
+  r.applications.push(app);
+  r.source=[...new Set([...(r.source||[]),app.source].filter(Boolean))];
+ }
+ for(const r of byAscii.values()){
+  if(r.applications?.length){
+   r.applications.sort((a,b)=>String(a.round).localeCompare(String(b.round))||String(a.submissionId||a.applicationId).localeCompare(String(b.submissionId||b.applicationId)));
+   r.applicationCount=r.applications.length;
+   r.applicationRounds=[...new Set(r.applications.map(a=>String(a.round)))];
+   r.applicationApplicants=[...new Set(r.applications.map(a=>a.applicant).filter(Boolean))];
+   if(!r.ianaProfile&&!r.entity&&r.applicationApplicants.length===1)r.entity=r.applicationApplicants[0];
+   if(!r.ianaProfile&&!r.applicationEntity&&r.applicationApplicants.length===1)r.applicationEntity=r.applicationApplicants[0];
+  }else{r.applicationCount=0;r.applicationRounds=[];r.applicationApplicants=[]}
+  Object.assign(r,introductionFor(r));
+ }
  D.explorer=[...byAscii.values()].sort((a,b)=>a.asciiString.localeCompare(b.asciiString,'en'));
  const applicationOnly=D.explorer.filter(r=>!r.ianaProfile&&['intro2000','intro2004','intro2012','intro2026Application','introApplicationOnly'].includes(r.introductionPath)).length;
  const historicalExtras=D.explorer.filter(r=>!r.ianaProfile&&r.currentRootStatus==='retired').length;
- D.explorerMeta={seedCount:curated.records.length,curatedCount:curated.records.length,recordCount:D.explorer.length,ianaRootCount:labels.length,rootIndexedCount:D.explorer.filter(r=>r.rootListed).length,ianaDatabaseCount:S.databaseCount,ianaProfileCount:D.explorer.filter(r=>r.ianaProfile).length,tldRecordCount:D.explorer.length-applicationOnly,applicationOnlyCount:applicationOnly,historicalExtraCount:historicalExtras,ianaSnapshot:S.asOf,ianaSource:S.listSource,ianaDatabaseSource:S.databaseSource,rootCoverageComplete:true,ianaProfileCoverageComplete:true,tldCoverageComplete:true,introductionPathCoverageComplete:true,historicalCoverageComplete:true,historicalCoverageExtended:true,tldCoverageDefinition:'Dated IANA database plus historically delegated TLDs absent from the current IANA database; excludes never-delegated ISO codes and application-only strings',applicationCorpusComplete:false,application2026CoverageComplete:false};
+ D.explorerMeta={seedCount:curated.records.length,curatedCount:curated.records.length,recordCount:D.explorer.length,ianaRootCount:labels.length,rootIndexedCount:D.explorer.filter(r=>r.rootListed).length,ianaDatabaseCount:S.databaseCount,ianaProfileCount:D.explorer.filter(r=>r.ianaProfile).length,tldRecordCount:D.explorer.length-applicationOnly,applicationOnlyCount:applicationOnly,historicalExtraCount:historicalExtras,ianaSnapshot:S.asOf,ianaSource:S.listSource,ianaDatabaseSource:S.databaseSource,rootCoverageComplete:true,ianaProfileCoverageComplete:true,tldCoverageComplete:true,introductionPathCoverageComplete:true,historicalCoverageComplete:true,historicalCoverageExtended:true,tldCoverageDefinition:'Dated IANA database plus historically delegated TLDs absent from the current IANA database; excludes never-delegated ISO codes and application-only strings',applicationCorpusComplete:false,applicationLocalRoundsComplete:true,application2000CoverageComplete:true,application2004CoverageComplete:true,application2012RuntimeValidated:true,application2012CoverageComplete:false,application2026CoverageComplete:false,applicationArchaeologyManifest:archaeologyManifest};
+ D.applicationArchaeology=archaeologyManifest;
  D.ianaCountryCodes=Object.fromEntries(Object.values(S.records).flatMap(r=>[['registryCountry','registryCountryCode'],['administrativeContactCountry','administrativeContactCountryCode'],['technicalContactCountry','technicalContactCountryCode']].filter(([name,code])=>r[name]&&r[code]).map(([name,code])=>[r[name],r[code]])));
  D.normalizationVersion=json('package.json').version;
  return D;

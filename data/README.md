@@ -89,6 +89,18 @@ The canonical research, normalized IANA snapshot and all CSV files are unchanged
 
 Unreported values remain blank in CSV. Contact organization extraction respects the source's optional organization slot; a missing slot is not filled from an address or personal contact name. Dedicated personal contact-name, address, email and telephone fields are omitted from the normalized publication, while the complete original public source bytes are preserved for verification.
 
+## v0.7.12 Application Archaeology
+
+Application history is represented separately from TLD identity. The vendored historical layer contains the complete 2000 and 2004 submission corpora and their normalized submission-to-string links. The 2012 layer uses the preserved ICANN Reveal Day CSV snapshot, discards personal contact fields, validates the full 1,930-row corpus against official ICANN totals, and only then merges it into the browser Explorer.
+
+- `applications_2000.csv` — 47 proof-of-concept submissions.
+- `application_strings_2000.csv` — 223 formal Item E2 links plus two separately labelled SITA alternatives (`.aer`, `.aero`).
+- `applications_2004.csv` — 10 sponsored-TLD submissions for 9 strings.
+- `application_archaeology_local.json` — normalized vendored application links used by the build.
+- `application_archaeology_manifest.json` — source provenance, privacy exclusions and locked QA totals, including the 2012 Reveal Day corpus.
+
+Application-only strings are valid Explorer records but are **not TLD records**. This prevents an unsuccessful proposal from being counted as a delegated top-level domain.
+
 ## v0.7.11 Universal Explorer
 
 The Explorer contains **1,608 records**. Of these, **1,599** belong to the dated TLD/profile universe: all **1,595 individual IANA profiles** in the preserved 4 October 2026 snapshot plus four historically delegated TLDs that are absent from the current IANA database (`.cs`, `.yu`, `.zr`, `.nato`). The remaining **9** records are curated application-only strings and are deliberately kept outside the TLD universe.

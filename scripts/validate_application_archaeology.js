@@ -1,0 +1,27 @@
+const fs=require('fs'),path=require('path');
+const root=path.resolve(__dirname,'..');
+function csv(text){const rows=[];let row=[],cell='',q=false;for(let i=0;i<text.length;i++){const c=text[i];if(q){if(c==='"'&&text[i+1]==='"'){cell+='"';i++}else if(c==='"')q=false;else cell+=c}else if(c==='"')q=true;else if(c===','){row.push(cell);cell=''}else if(c==='\n'){row.push(cell.replace(/\r$/,''));rows.push(row);row=[];cell=''}else cell+=c}if(cell||row.length){row.push(cell.replace(/\r$/,''));rows.push(row)}const h=rows.shift();return rows.filter(r=>r.some(Boolean)).map(r=>Object.fromEntries(h.map((x,i)=>[x.replace(/^\ufeff/,''),r[i]??''])))}
+const read=n=>csv(fs.readFileSync(path.join(root,'data',n),'utf8'));
+const a2000=read('applications_2000.csv'),l2000=read('application_strings_2000.csv'),a2004=read('applications_2004.csv');
+const manifest=JSON.parse(fs.readFileSync(path.join(root,'data/application_archaeology_manifest.json'),'utf8'));
+if(a2000.length!==47)throw new Error('2000 submission count');
+const item=l2000.filter(r=>r.relation_type==='item-e2-requested');
+if(item.length!==223||new Set(item.map(r=>r.string)).size!==188)throw new Error('2000 Item E2 counts');
+if(l2000.length!==225)throw new Error('2000 alternative relation count');
+if(a2000.filter(r=>r.status==='returned-unpaid').length!==2||a2000.filter(r=>r.status==='withdrawn').length!==1)throw new Error('2000 inactive counts');
+if(a2004.length!==10||new Set(a2004.map(r=>r.string)).size!==9)throw new Error('2004 counts');
+if(manifest.rounds['2012'].applications!==1930||manifest.rounds['2012'].uniqueStrings!==1409||manifest.rounds['2012'].idn!==116||manifest.rounds['2012'].geographic!==66||manifest.rounds['2012'].community!==84)throw new Error('2012 locked totals');
+if(Object.values(manifest.rounds['2012'].regions).reduce((a,b)=>a+b,0)!==1930)throw new Error('2012 regions');
+if(JSON.stringify(manifest.privacy.excluded2012Fields)!==JSON.stringify(['Primary Contact','Email']))throw new Error('2012 privacy exclusions');
+const local=JSON.parse(fs.readFileSync(path.join(root,'data/application_archaeology_local.json'),'utf8'));
+if(local.applications.length!==235)throw new Error('Local archaeology links');
+if(local.applications.some(r=>'email' in r||'primaryContact' in r))throw new Error('Personal contact field leaked into local archaeology');
+const D=require('./assemble_data')();
+if(D.explorer.length!==1688||D.explorerMeta.tldRecordCount!==1599||D.explorerMeta.applicationOnlyCount!==89)throw new Error('Static Explorer archaeology counts');
+const tel=D.explorer.find(r=>r.asciiString==='.tel');if(!tel||tel.applicationCount!==6||tel.applicationRounds.join(',')!=='2000,2004')throw new Error('.tel cross-round links');
+const aero=D.explorer.find(r=>r.asciiString==='.aero');if(!aero?.applications?.some(a=>a.relationType==='mentioned-alternative-selected'))throw new Error('.aero SITA link');
+const air=D.explorer.find(r=>r.asciiString==='.air');if(!air||air.recordLevel!=='application')throw new Error('.air application-only record');
+const app=fs.readFileSync(path.join(root,'assets/app.js'),'utf8');
+if(!app.includes("excluded2012Fields") && !fs.readFileSync(path.join(root,'data/application_archaeology_manifest.json'),'utf8').includes('Primary Contact'))throw new Error('Privacy manifest missing');
+if(/r\[5\].*Primary|r\[6\].*Email/.test(app))throw new Error('Runtime appears to retain excluded contact fields');
+console.log('Application archaeology validated: 47/223/188 (2000), 10/9 (2004), locked 1930/1409/116/66/84 (2012), 1,688 static Explorer records.');

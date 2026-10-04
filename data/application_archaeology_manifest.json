@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "title": "Application Archaeology corpus",
+  "privacy": {
+    "excluded2012Fields": [
+      "Primary Contact",
+      "Email"
+    ],
+    "reason": "Not needed for historical TLD/application analysis."
+  },
+  "rounds": {
+    "2000": {
+      "delivery": "vendored",
+      "applications": 47,
+      "itemE2Links": 223,
+      "itemE2UniqueStrings": 188,
+      "additionalMentionedAlternatives": 2,
+      "sources": [
+        "https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm",
+        "https://archive.icann.org/en/tlds/tld-review-update-13oct00.htm"
+      ]
+    },
+    "2004": {
+      "delivery": "vendored",
+      "applications": 10,
+      "uniqueStrings": 9,
+      "sources": [
+        "https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en"
+      ]
+    },
+    "2012": {
+      "delivery": "runtime-archival-snapshot",
+      "applications": 1930,
+      "uniqueStrings": 1409,
+      "idn": 116,
+      "geographic": 66,
+      "community": 84,
+      "regions": {
+        "NA": 911,
+        "EUR": 675,
+        "AP": 303,
+        "LAC": 24,
+        "AF": 17
+      },
+      "sources": [
+        "https://web.archive.org/web/20120613142047if_/http://newgtlds-cloudfront.icann.org/sites/default/files/reveal/strings-1200utc-13jun12-en.html",
+        "https://newgtlds.icann.org/en/program-status/statistics/applications-overview-13jun12-en.pdf",
+        "https://www.icann.org/en/about/annual-report/annual-report-2012-en.pdf",
+        "https://newgtlds.icann.org/en/program-status/statistics",
+        "https://raw.githubusercontent.com/nimblemachines/analyzing-iana-root-db/master/strings-1200utc-13jun12-en.csv",
+        "https://cdn.jsdelivr.net/gh/nimblemachines/analyzing-iana-root-db@master/strings-1200utc-13jun12-en.csv"
+      ],
+      "expectedHeader": [
+        "String",
+        "Applicant",
+        "Website",
+        "Location",
+        "Region",
+        "Primary Contact",
+        "Email",
+        "IDN?",
+        "A-Label",
+        "English Meaning",
+        "Script Code",
+        "Community?",
+        "Geographic?",
+        "Application ID"
+      ]
+    }
+  },
+  "runtimeSources2012": [
+    "https://raw.githubusercontent.com/nimblemachines/analyzing-iana-root-db/master/strings-1200utc-13jun12-en.csv",
+    "https://cdn.jsdelivr.net/gh/nimblemachines/analyzing-iana-root-db@master/strings-1200utc-13jun12-en.csv"
+  ],
+  "method": "2012 rows are parsed in-browser from a preserved copy of the 13 June 2012 Reveal Day CSV, privacy-sanitized, validated against official ICANN totals and the 1,409 distinct-string snapshot count, and only then merged into the Explorer."
+}
