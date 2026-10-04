@@ -71,7 +71,8 @@ function browser(language,query=''){
  const handlers={};const window={document,innerWidth:1440,matchMedia:()=>({matches:false}),addEventListener:(type,fn)=>(handlers[type]??=[]).push(fn)};
  const history={replaceState:(_s,_t,value)=>{url=new URL(value,url);stack[at]=url.href},pushState:(_s,_t,value)=>{url=new URL(value,url);stack=stack.slice(0,at+1);stack.push(url.href);at++;}};
  const context=vm.createContext({window,document,location,history,navigator:{},localStorage:{getItem:()=>null,setItem:()=>{}},requestAnimationFrame:fn=>fn(),setTimeout:()=>0,clearTimeout:()=>{},URL,URLSearchParams,Intl,console});
- for(const id of ['ctd-data-bundle','ctd-i18n-bundle','ctd-worldmap','ctd-publication','ctd-app'])vm.runInContext(document.getElementById(id).textContent,context,{filename:id,timeout:10000});
+ for(let shard=0;shard<8;shard++)vm.runInContext(read('data/explorer_profiles_'+shard+'.js'),context);
+ for(const id of ['ctd-data-bundle','ctd-i18n-bundle','ctd-worldmap','ctd-publication','ctd-app']){const node=document.getElementById(id),src=node.getAttribute('src'),runtime=src?fs.readFileSync(path.resolve(root,language,src.split('?')[0]),'utf8'):node.textContent;vm.runInContext(runtime,context,{filename:id,timeout:10000});}
  return{document,run:code=>vm.runInContext(code,context),url:()=>url,back:()=>{assert.ok(at>0);url=new URL(stack[--at]);for(const fn of handlers.popstate||[])fn()},assigned:()=>assigned};
 }
 for(const lang of ['en','it','de','fr']){

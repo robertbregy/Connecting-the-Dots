@@ -1,6 +1,6 @@
 # Deploy
 
-Il progetto è statico. La release include già le pagine statiche generate e autosufficienti: GitHub Pages deve soltanto pubblicare il contenuto della cartella nella root del repository `Connecting-the-Dots`, branch `main`.
+Il progetto è statico. La release include già le pagine generate e tutte le risorse condivise: GitHub Pages deve soltanto pubblicare il contenuto della cartella nella root del repository `Connecting-the-Dots`, branch `main`.
 
 URL pubblico: https://robertbregy.github.io/Connecting-the-Dots/
 
@@ -10,10 +10,12 @@ URL pubblico: https://robertbregy.github.io/Connecting-the-Dots/
 2. Apri il repository `robertbregy/Connecting-the-Dots` su GitHub.
 3. Entra nella root del repository e scegli **Add file → Upload files**.
 4. Trascina **il contenuto** della cartella estratta, non la cartella esterna che la contiene. Devono quindi arrivare in root `index.html`, `en/`, `it/`, `de/`, `fr/`, `README.md`, `assets/`, `data/`, `downloads/`, `src/`, `scripts/`, ecc.
-5. Verifica l'elenco dei file modificati e crea un commit con un messaggio come `Update Connecting the Dots to v0.7.7`.
+5. Verifica l'elenco dei file modificati e crea un commit con un messaggio come `Update Connecting the Dots to v0.7.8`.
 6. GitHub Pages ridistribuirà automaticamente il sito dal branch configurato.
 
-Nota: l'upload web sostituisce i file con lo stesso percorso, ma non elimina automaticamente eventuali file obsoleti che non sono presenti nel nuovo pacchetto. La v0.7.7 non richiede la rimozione dei vecchi file per funzionare.
+Nota: l'upload web sostituisce i file con lo stesso percorso, ma non elimina automaticamente eventuali file obsoleti che non sono presenti nel nuovo pacchetto. La v0.7.8 non richiede la rimozione dei vecchi file per funzionare.
+
+Carica il pacchetto **completo**: dalla 0.7.8 le pagine condividono CSS, codice e indice, mentre le schede sono caricate a richiesta. Devono esserci anche `data/site_bundle.js` e tutti gli otto file `data/explorer_profiles_0.js`–`data/explorer_profiles_7.js`. Dopo il deployment verifica il footer `v0.7.8`, apri una scheda nell'Explorer, cambia lingua e controlla l'impaginazione anche sul telefono.
 
 ## Aggiornamento da Git / terminale
 
@@ -21,7 +23,7 @@ Se il repository è già clonato localmente, copia il contenuto della nuova rele
 
 ```bash
 git add -A
-git commit -m "Update Connecting the Dots to v0.7.7"
+git commit -m "Update Connecting the Dots to v0.7.8"
 git push origin main
 ```
 
@@ -33,7 +35,7 @@ La release distribuita non richiede build lato GitHub. Se però modifichi i sorg
 python3 build.py
 ```
 
-Il build aggiorna `index.html`, i bundle runtime, `explorer_catalog.csv`, `explorer_events.csv`, i CSV di server DNS e rapporti IANA, `data/manifest.json` e il data pack scaricabile.
+La build aggiorna tutte le pagine linguistiche, i bundle runtime e le otto raccolte di schede, `explorer_catalog.csv`, `explorer_events.csv`, i CSV di server DNS e rapporti IANA, `data/manifest.json` e il data pack scaricabile. Per aggiornare le fonti e registrare una nuova release, segui il flusso documentato in `README.md`; non sono previsti aggiornamenti automatici dei dati.
 
 ## Repository “About”
 

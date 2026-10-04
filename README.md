@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.7
+# Connecting the Dots — v0.7.8
 
 **Connecting the Dots** is a multilingual, static research publication about the history, governance, geography and social meaning of top-level domains, with the 2026 ICANN round and the `.lugano` application as the contemporary layer.
 
@@ -72,7 +72,9 @@ Build-time rendering uses the same application and translation sources as the br
 
 ## Deployment resilience
 
-The root alias and each localized `index.html` are **self-contained runtime artifacts**: CSS, application data, translations, the map path, publication state and JavaScript are embedded in the page. This avoids a repeat of the v0.6.5 deployment failure in which GitHub Pages served the shell while generated runtime bundles were not uploaded in lockstep.
+The root alias and each localized `index.html` contain prerendered editorial content and their own translation dictionary. From v0.7.8, CSS, application code, the map and a compact search index are shared, versioned assets. Full Explorer profiles load only when opened, in eight reusable batches. All four languages use the same records and cached resources.
+
+Publish the **complete release** together, including `assets/`, `data/site_bundle.js` and all eight `data/explorer_profiles_*.js` files. The build checks their paths, versions and record parity; `data/manifest.json` records their sizes and hashes. If a profile request fails, the drawer offers retry, the original source where available and the complete data download. Prerendered text remains readable when JavaScript is unavailable.
 
 The visual logo remains an ordinary external asset (`assets/logo-mark.png`) rather than being embedded repeatedly as base64. CSV and ZIP research assets also remain external for download and reproducibility. A missing image therefore cannot break the publication runtime.
 
@@ -94,7 +96,7 @@ When changing source code or data, rebuild the deployable artifact with:
 python3 build.py
 ```
 
-The build regenerates runtime bundles, Explorer CSV views, `data/manifest.json`, the downloadable data pack and the self-contained root `index.html`.
+The build regenerates runtime bundles, deferred profile batches, Explorer CSV views, `data/manifest.json`, the downloadable data pack and all static language pages.
 
 ## GitHub Pages
 
@@ -123,7 +125,7 @@ npm ci
 python3 build.py
 ```
 
-`npm run check` rechecks the generated multilingual pages and legacy routes.
+`npm run check` rechecks the generated multilingual pages, legacy routes, preserved evidence, CSV parity and deferred-profile delivery.
 `linkedom` is a pinned development dependency used only while building and checking the project. The deployed site has no Node.js or DOM-library dependency.
 
 ## v0.7.3 · static multilingual publication
@@ -258,6 +260,11 @@ Python 3 (standard library only) and the project's existing Node dependencies ar
 npm ci
 python3 scripts/fetch_iana.py --refresh
 node scripts/normalize_iana.js
+```
+
+Review the normalization results, update the release version and date in `package.json`, `package-lock.json`, `build.py` and `data/publication.js`, then add a dated entry in `data/release_history.json` with the snapshot's `asOf` and `archive_sha256`. Add its summary key to all four dictionaries in `data/translations.json`. The latest history entry must match the release and preserved evidence; the build rejects a mismatch. Then run:
+
+```bash
 python3 build.py
 python3 scripts/package_release.py
 ```
@@ -265,3 +272,11 @@ python3 scripts/package_release.py
 The first command to fetch with `--refresh` obtains a new root list, database index and all linked profiles. After an interruption, rerun **without** `--refresh` to resume verified cached downloads. The fetcher uses a bounded worker pool and records failures; normalization refuses incomplete profiles or unrecognized country fields. Inspect `data/evidence/iana/normalization-review.json` for source variations before rebuilding. Its contact-organization entries are extraction review material, not failures. A blank organization slot must never become a street address.
 
 The expanded `data/evidence/iana/` cache is for local maintenance only. The release packager excludes it and ships the compressed, hash-verified evidence archive. Keep that archive compressed for GitHub's browser uploader.
+
+## v0.7.8 · lighter delivery and visible maintenance
+
+This release preserves the v0.7.7 research inputs, all 1,606 Explorer records and every CSV byte-for-byte. It changes delivery and presentation: shared assets, on-demand profile details, fewer initial filters, collapsible coverage notes and technical lists, and a dated update panel in Sources. The Italian HTML is about 434 KB instead of 3.39 MB; the initial HTML plus shared JavaScript and CSS is about 1.88 MB before compression, excluding images. These are payload sizes, not measured loading times.
+
+`data/release_history.json` records release dates and the exact IANA evidence used. The footer and Sources panel distinguish the release date, general research snapshot and IANA snapshot. The data pack includes this history and its manifest hash. Updates are manual: retrieve sources, review changes, update metadata and translations, rebuild, validate and publish the complete package. No background refresh or scheduled update service is configured. Reaching Reveal Day does not populate the 2026 application dataset automatically.
+
+The checks exercise successful loads, cache reuse, failed requests and retry, timeouts, incompatible or missing profiles, and late responses after switching or closing a drawer. Browser layout testing remains a separate gate: the local Firefox test environment could not open pages because its content processes were denied sandbox permissions. No visual or physical-device pass is claimed for this release.

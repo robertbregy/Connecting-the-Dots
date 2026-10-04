@@ -90,6 +90,14 @@ function render(language,alias=false){
   const noscript=document.getElementById('staticReading');
   noscript.innerHTML=`<div class="staticReading"><p>${translations.staticReading}</p><nav class="languageVersions" aria-label="${translations.languageVersions}">${links()}</nav></div>`;
 
+  // Prerender with the real application, then share its immutable release assets
+  // across language routes. Details are absent from the initial payload.
+  const version=window.DOT_PUBLICATION.version;
+  const sheet=document.createElement('link');sheet.id='ctd-runtime-style';sheet.setAttribute('rel','stylesheet');sheet.setAttribute('href',`assets/style.css?v=${version}`);
+  document.getElementById('ctd-runtime-style').replaceWith(sheet);
+  for(const [id,file] of [['ctd-data-bundle','data/site_bundle.js'],['ctd-worldmap','data/worldmap.js'],['ctd-app','assets/app.js']]){
+    const node=document.getElementById(id);node.textContent='';node.setAttribute('src',`${file}?v=${version}`);node.setAttribute('defer','');
+  }
   for(const node of document.querySelectorAll('[src],[href]')){
     for(const attr of ['src','href']){
       const ref=node.getAttribute(attr);

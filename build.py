@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.7"
+VERSION = "0.7.8"
 
 
 def csv_records(path: Path) -> int:
@@ -74,6 +74,13 @@ def build_manifest() -> None:
         "iana_evidence": "iana_snapshot.json",
         "explorer_coverage": runtime["explorerMeta"],
         "iana_evidence_archive": json.loads((DATA / "iana_snapshot.json").read_text())["archive_path"].removeprefix("data/"),
+        "release_history": {"path": "release_history.json", "sha256": sha256(DATA / "release_history.json")},
+        "web_delivery": {
+            "profile_loading": "on-demand",
+            "detail_batches": 8,
+            "assets": [{"repository_path": str(path.relative_to(ROOT)), "bytes": path.stat().st_size, "sha256": sha256(path)}
+                       for path in [DATA / "site_bundle.js", ROOT / "assets/app.js", ROOT / "assets/style.css", DATA / "worldmap.js", *sorted(DATA.glob("explorer_profiles_*.js"))]],
+        },
         "files": files,
     }
     (DATA / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -81,7 +88,7 @@ def build_manifest() -> None:
 
 def data_pack_files() -> list[Path]:
     snapshot = json.loads((DATA / "iana_snapshot.json").read_text())
-    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "CONTENT_LICENSE.md", ROOT / snapshot["archive_path"]]
+    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", ROOT / snapshot["archive_path"]]
 
 
 def build_data_pack() -> None:
@@ -114,7 +121,7 @@ def build_data_pack() -> None:
 def build_index() -> None:
     html = SRC.read_text(encoding="utf-8")
     css = (ROOT / "assets" / "style.css").read_text(encoding="utf-8")
-    data_js = (DATA / "data_bundle.js").read_text(encoding="utf-8")
+    data_js = (DATA / "site_bundle.js").read_text(encoding="utf-8")
     i18n_js = (DATA / "i18n_bundle.js").read_text(encoding="utf-8")
     world_js = (DATA / "worldmap.js").read_text(encoding="utf-8")
     publication_js = (DATA / "publication.js").read_text(encoding="utf-8")
@@ -158,8 +165,8 @@ def validate_index() -> None:
     missing_embeds = [x for x in required if x not in html]
     if missing_embeds:
         raise SystemExit("Missing embedded runtime blocks: " + ", ".join(missing_embeds))
-    if any(x in html for x in ['href="assets/style.css"', 'src="data/data_bundle.js"', 'src="data/i18n_bundle.js"', 'src="assets/app.js"']):
-        raise SystemExit("index.html still depends on external runtime CSS/JS")
+    if 'src="data/data_bundle.js' in html or 'window.DOT_DATA=' in html:
+        raise SystemExit("Full data must not be embedded in generated language pages")
     if 'role="menu"' in html or 'role="menuitem"' in html:
         raise SystemExit("Disclosure navigation must not claim the ARIA menu pattern")
 
@@ -177,7 +184,7 @@ def validate_index() -> None:
     if csv_records(DATA / "applications_2026.csv") != 0:
         raise SystemExit("Pre-Reveal build must not contain synthetic 2026 application records")
 
-    for js in [ROOT / "assets" / "app.js", DATA / "data_bundle.js", DATA / "i18n_bundle.js", DATA / "publication.js", ROOT / "assets" / "legacy-routing.js", *sorted((ROOT / "scripts").glob("*.js"))]:
+    for js in [ROOT / "assets" / "app.js", DATA / "data_bundle.js", DATA / "site_bundle.js", *sorted(DATA.glob("explorer_profiles_*.js")), DATA / "i18n_bundle.js", DATA / "publication.js", ROOT / "assets" / "legacy-routing.js", *sorted((ROOT / "scripts").glob("*.js"))]:
         try:
             subprocess.run(["node", "--check", str(js)], check=True, capture_output=True, text=True)
         except FileNotFoundError:
@@ -252,7 +259,8 @@ def main() -> None:
     validate_index()
     subprocess.run(["node", str(ROOT / "scripts" / "validate_multilingual.js")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "validate_corrective.js")], check=True)
-    print(f"Built self-contained {INDEX.name} from {SRC.relative_to(ROOT)}")
+    subprocess.run(["node", str(ROOT / "scripts" / "validate_delivery.js")], check=True)
+    print(f"Built static {INDEX.name} with shared assets and deferred Explorer profiles from {SRC.relative_to(ROOT)}")
     print("Validated runtime, event history, provenance, local assets, pre-Reveal state and data-pack sync")
     print(f"Refreshed manifest and data pack for v{VERSION}")
 
