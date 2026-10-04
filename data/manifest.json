@@ -1,6 +1,6 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "release_date": "2026-10-04",
   "publication_state": "pre-reveal",
   "rendering": "static-prerendered",
@@ -20,19 +20,25 @@
     "explorer_catalog.csv is the latest indexed record view; explorer_events.csv keeps separate historical events for multi-era strings.",
     ".lugano is marked as an applicant disclosure until ICANN publishes the individual application record at Reveal Day.",
     "dns_oddities.csv distinguishes active legacy, retired, reserved and never-delegated country-code cases.",
-    "Blank 2026 aggregate values are scaffolding, not observations."
+    "Blank 2026 aggregate values are scaffolding, not observations.",
+    "Every preserved IANA database entry has a normalized profile; root-list membership is separate from database presence.",
+    "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity."
   ],
   "current_root_snapshot": "2026-10-04",
   "iana_evidence": "iana_snapshot.json",
   "explorer_coverage": {
     "seedCount": 87,
     "curatedCount": 87,
-    "recordCount": 1450,
+    "recordCount": 1606,
     "ianaRootCount": 1437,
     "rootIndexedCount": 1437,
+    "ianaDatabaseCount": 1595,
+    "ianaProfileCount": 1595,
     "ianaSnapshot": "2026-10-04",
     "ianaSource": "https://data.iana.org/TLD/tlds-alpha-by-domain.txt",
+    "ianaDatabaseSource": "https://www.iana.org/domains/root/db",
     "rootCoverageComplete": true,
+    "ianaProfileCoverageComplete": true,
     "historicalCoverageComplete": false,
     "application2026CoverageComplete": false
   },
@@ -112,15 +118,27 @@
     },
     {
       "path": "explorer_catalog.csv",
-      "bytes": 389067,
-      "records": 1450,
-      "sha256": "419ac3a430a7f7d8f36f7958b55da680c65578bab69f2a458a86bb65904dfb7c"
+      "bytes": 786467,
+      "records": 1606,
+      "sha256": "2724c8be2600b41c2eb9195358b93fb22f70a792243021a921564239834a8688"
     },
     {
       "path": "explorer_events.csv",
       "bytes": 24138,
       "records": 204,
       "sha256": "284326bdb2ae20b125129a3829f7191fc41049ffe18e21d2b00e9f2266fe8c43"
+    },
+    {
+      "path": "explorer_iana_reports.csv",
+      "bytes": 455406,
+      "records": 2008,
+      "sha256": "4b893138d142b417213c3ef78d576641c5646f1283fb7868247e2e5021d37288"
+    },
+    {
+      "path": "explorer_nameservers.csv",
+      "bytes": 1128411,
+      "records": 7563,
+      "sha256": "dc6633beaec0b4e908dc7ebe83a12f27a5869258b1d43326cc1607a5c64db05c"
     },
     {
       "path": "governance_locations.csv",

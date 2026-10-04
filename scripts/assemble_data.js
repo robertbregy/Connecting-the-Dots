@@ -24,24 +24,29 @@ module.exports=function assembleData(){
   if(rootRows.has(label))throw new Error('Duplicate IANA label: '+label);
   rootRows.set(label,{formalType:cells[1].textContent.trim(),registryEntity:cells[2].textContent.trim(),source:new URL(href,'https://www.iana.org').href});
  }
+ if(S.schemaVersion!==2||rootRows.size!==S.databaseCount||Object.keys(S.records).length!==rootRows.size)throw new Error('Incomplete individual IANA profiles; run fetch_iana.py and normalize_iana.js');
  const byAscii=new Map(),rootSet=new Set(labels.map(s=>'.'+s));
- for(const label of labels){
-  const facts=rootRows.get(label);if(!facts)throw new Error('Root list label missing from database: '+label);
-  const reserved=facts.registryEntity==='Reserved Domain - IANA';
-  if(facts.registryEntity==='Not assigned')throw new Error('Listed root label has no assigned manager: '+label);
-  const r={string:'.'+domainToUnicode(label),asciiString:'.'+label,recordLevel:'basic',rootListed:true,currentRootStatus:reserved?'reserved':'delegated',currentAsOf:S.asOf,status:reserved?'reserved':'delegated',type:facts.formalType,formalType:facts.formalType,registryEntity:reserved?'':facts.registryEntity,entity:reserved?'':facts.registryEntity,source:[facts.source,S.listSource]};
+ for(const [label,facts] of rootRows){
+  const string='.'+domainToUnicode(label),current=S.records[string];
+  if(!current||current.asciiString!=='.'+label)throw new Error('Missing IANA profile: '+label);
+  const reserved=current.registryEntity==='Reserved Domain - IANA';
+  const registryEntity=reserved||current.registryEntity==='Not assigned'?'':current.registryEntity;
+  const r={...current,string,recordLevel:'iana',ianaProfile:true,currentAsOf:S.asOf,status:current.currentRootStatus,type:facts.formalType,registryEntity,entity:registryEntity,source:[current.source,S.listSource]};
+  if(r.rootListed!==rootSet.has(r.asciiString))throw new Error('Profile membership mismatch: '+label);
   byAscii.set(r.asciiString,r);
  }
+ for(const key of rootSet)if(!byAscii.has(key))throw new Error('Root list label missing from database: '+key);
  const seen=new Set();
  for(const item of curated.records){
   const key=ascii(item.string);if(seen.has(key))throw new Error('Duplicate curated record: '+key);seen.add(key);
-  const base=byAscii.get(key),current=S.records[item.string],r={...item,...(base||{})};
+  const base=byAscii.get(key),current=S.records['.'+domainToUnicode(key.slice(1))],r={...item,...(base||{})};
   r.string=item.string;r.asciiString=key;r.recordLevel='curated';r.rootListed=rootSet.has(key);
   r.currentAsOf=S.asOf;r.currentRootStatus=base?.currentRootStatus||item.historicalRootStatus||'notDelegated';
   if(item.historicalRootStatus==='retired'&&!r.rootListed)r.currentRootStatus='retired';
   r.formalType=current?.formalType||base?.formalType||item.historicalFormalType||'notApplicable';r.type=r.formalType;
   r.status=r.currentRootStatus==='delegated'?'delegated':item.historicalStatus;
   r.registryEntity=current?(current.currentRootStatus==='reserved'||current.registryEntity==='Not assigned'?'':current.registryEntity):(base?.registryEntity||'');
+  r.ianaProfile=!!base;
   r.registryCountry=current?.registryCountry||'';r.technicalContactOrganization=current?.technicalContactOrganization||'';r.technicalContactCountry=current?.technicalContactCountry||'';r.registrationDate=current?.registrationDate||'';
   r.entity=r.registryEntity||item.applicationEntity||'';
   r.events=item.events.map(e=>({...e,current:false}));
@@ -56,7 +61,8 @@ module.exports=function assembleData(){
   byAscii.set(key,r);
  }
  D.explorer=[...byAscii.values()].sort((a,b)=>a.asciiString.localeCompare(b.asciiString,'en'));
- D.explorerMeta={seedCount:curated.records.length,curatedCount:curated.records.length,recordCount:D.explorer.length,ianaRootCount:labels.length,rootIndexedCount:D.explorer.filter(r=>r.rootListed).length,ianaSnapshot:S.asOf,ianaSource:S.listSource,rootCoverageComplete:true,historicalCoverageComplete:false,application2026CoverageComplete:false};
+ D.explorerMeta={seedCount:curated.records.length,curatedCount:curated.records.length,recordCount:D.explorer.length,ianaRootCount:labels.length,rootIndexedCount:D.explorer.filter(r=>r.rootListed).length,ianaDatabaseCount:S.databaseCount,ianaProfileCount:D.explorer.filter(r=>r.ianaProfile).length,ianaSnapshot:S.asOf,ianaSource:S.listSource,ianaDatabaseSource:S.databaseSource,rootCoverageComplete:true,ianaProfileCoverageComplete:true,historicalCoverageComplete:false,application2026CoverageComplete:false};
+ D.ianaCountryCodes=Object.fromEntries(Object.values(S.records).flatMap(r=>[['registryCountry','registryCountryCode'],['administrativeContactCountry','administrativeContactCountryCode'],['technicalContactCountry','technicalContactCountryCode']].filter(([name,code])=>r[name]&&r[code]).map(([name,code])=>[r[name],r[code]])));
  D.normalizationVersion=json('package.json').version;
  return D;
 };

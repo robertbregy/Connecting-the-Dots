@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.6
+# Connecting the Dots — v0.7.7
 
 **Connecting the Dots** is a multilingual, static research publication about the history, governance, geography and social meaning of top-level domains, with the 2026 ICANN round and the `.lugano` application as the contemporary layer.
 
@@ -25,7 +25,7 @@ The Explorer separates two concepts that must not be conflated:
 
 This matters for strings such as `.nyc`, `.cat` and `.post`: an old application, a later application and eventual delegation are distinct events, not one record whose fields should overwrite one another. The Explorer drawer exposes that history where it is informative.
 
-The Explorer indexes every label in the dated IANA root list. Basic records contain only the name, root-list membership, formal type and registry organization. The curated subset adds documented context and historical events. All root labels are searchable in Unicode and ASCII; historical rounds, themes and city filters apply only where documented. Individual 2026 application data remains pending official publication.
+The Explorer imports every individual profile in the dated IANA Root Zone Database and indexes every label in the corresponding root list. Profiles expose available registry details, contact organizations, dates, name servers and report links. The curated subset adds documented context and historical events. All labels are searchable in Unicode and ASCII; registry countries and technical names are searchable as well. Historical rounds, themes and city filters apply only where documented. Individual 2026 application data remains pending official publication.
 
 ## `.lugano` provenance before Reveal Day
 
@@ -222,7 +222,7 @@ The author’s involvement in .lugano is disclosed in the case study and methodo
 
 - `data/research.json`: research datasets, source references and editorial data.
 - `data/explorer_curated.json`: explicit historical rounds, classifications and sourced events. Current registry details are not copied into historical events.
-- `data/iana_snapshot.json` and its compressed evidence archive: dated IANA root list, Root Zone Database and selected individual records.
+- `data/iana_snapshot.json` and its compressed evidence archive: dated IANA root list, Root Zone Database and all individual profiles.
 - `data/translations.json`: the complete EN, IT, DE and FR dictionaries.
 - `scripts/assemble_data.js`: one assembly step merges current root membership with curated history by ASCII DNS label. The build no longer executes the 29 former version-patch files.
 
@@ -239,3 +239,29 @@ This release has automated checks; these are not an independent subject-matter r
 5. The .lugano case: applicant disclosure, prospective editorial scenarios and official City decisions must remain distinct.
 
 For a later 2026 import, preserve the official source and publication date first, reconcile identities and status fields, then update the canonical datasets and publication state together. Do not remove the pre-Reveal gate merely to display unsourced records. The final mapping must be checked against the actual official release schema.
+
+## v0.7.7 · complete IANA profiles
+
+The Explorer contains **1,606 entries**: all **1,595 profiles** in the preserved IANA Root Zone Database, plus **11 selected historical/application entries** absent from that database. All **1,437 names** in the dated root list are included. The 87 curated records retain their distinct editorial context and sourced history.
+
+Each IANA profile exposes available registry and contact organizations, localized countries, registration and update dates, retrieval date, registry website, WHOIS/RDAP, name servers with IP addresses, and linked IANA reports. Personal contact names, email addresses, telephone numbers and street addresses are not replicated in the interface; the official source remains available. Missing source fields remain unreported. A country is the country of the named organization, not an inferred geographic designation of the TLD.
+
+Search supports Unicode/ASCII names, organizations, countries and name-server names. A registry-country filter and in-root/outside-root presets complement the existing status and formal-type filters. Round, theme and city classifications remain limited to the researched subset. An absent root entry is not automatically classified as never delegated; IANA report dates are not automatically transfer-effective dates.
+
+The data pack adds `explorer_nameservers.csv` and `explorer_iana_reports.csv`. The normalized snapshot and compressed archive preserve all **1,597 source files**, including the root list and database index, with individual retrieval timestamps and SHA-256 hashes. Ordinary builds remain entirely offline. No live refresh occurs in a visitor's browser.
+
+### Updating the IANA snapshot
+
+Python 3 (standard library only) and the project's existing Node dependencies are sufficient:
+
+```bash
+npm ci
+python3 scripts/fetch_iana.py --refresh
+node scripts/normalize_iana.js
+python3 build.py
+python3 scripts/package_release.py
+```
+
+The first command to fetch with `--refresh` obtains a new root list, database index and all linked profiles. After an interruption, rerun **without** `--refresh` to resume verified cached downloads. The fetcher uses a bounded worker pool and records failures; normalization refuses incomplete profiles or unrecognized country fields. Inspect `data/evidence/iana/normalization-review.json` for source variations before rebuilding. Its contact-organization entries are extraction review material, not failures. A blank organization slot must never become a street address.
+
+The expanded `data/evidence/iana/` cache is for local maintenance only. The release packager excludes it and ships the compressed, hash-verified evidence archive. Keep that archive compressed for GitHub's browser uploader.

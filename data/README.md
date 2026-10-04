@@ -5,7 +5,7 @@ As of: **2 October 2026**
 
 The CSV files are research inputs and reusable publication data. `applications_2026.csv` intentionally contains the schema header and **zero application records** before ICANN Reveal Day; no synthetic placeholder observation is inserted. Aggregate 2026 scaffold files can contain named rows with empty values only when the row itself is a documented metric or classification bucket and its status explicitly says that official 2026 data is still to be loaded.
 
-The Explorer now separates two layers:
+The Explorer separates the current indexed view from researched history:
 
 - `explorer_catalog.csv` is the **latest indexed record view** used for search/filtering.
 - `explorer_events.csv` preserves **separate historical events** for strings that appear across multiple rounds or stages. An earlier application is therefore not overwritten by a later delegation.
@@ -66,3 +66,19 @@ Legal organization names remain in their source language. The interface localize
 Basic records derive only name, root-list presence, formal type and registry organization from the preserved list and Root Zone Database. Their other fields are blank and they have no constructed history. The list includes `.gb`; its separate reserved state is preserved. Round, theme and city classifications are limited to the curated subset. Do not interpret those filters as comprehensive root-wide classifications.
 
 The source model is now `research.json`, `explorer_curated.json`, `iana_snapshot.json`, the evidence archive, and `translations.json`, assembled by `scripts/assemble_data.js`. It replaces the previous version-patch chain. Changing the current registry does not change a sourced historical event. The complete CSV, visible runtime and downloadable pack are generated from this same model.
+
+## v0.7.7 complete IANA profiles
+
+Current coverage: **1,606 catalogue records**, including **1,595 individual IANA database profiles**, all **1,437 root-list labels**, and **11 additional curated historical/application entries**. The curated subset still has 87 records. Presence in the IANA database does not itself imply current root-list membership or active delegation.
+
+`record_level` is now `iana` or `curated`; `iana_profile` explicitly indicates whether an individual IANA source was imported. Both levels can have the same complete official profile fields. Curated records additionally retain independently sourced history and editorial context. The old `basic` level is no longer generated.
+
+The catalogue adds organization country codes, administrative-contact organization and country, record update and retrieval timestamps, registry URL, WHOIS, RDAP and counts of technical/report records. Country codes normalize IANA's country names for filtering and localized display; original country names remain available. Neither organizational country nor technical contact establishes the TLD's represented territory or contractual RSP.
+
+- `explorer_nameservers.csv`: one row per TLD/name-server association, with `ip_addresses` separated by ` | `. These are the addresses reported on the preserved IANA profile, not a new DNS measurement.
+- `explorer_iana_reports.csv`: one row per IANA-linked report, with original title, publication date and URL. The report itself is not downloaded, nor is its publication date converted into an effective transfer/delegation event.
+- `iana_snapshot.json`, schema version 2: all normalized profiles, dates, source URLs, country codes, arrays of name servers and reports, and retrieval metadata for each raw source.
+
+The compressed evidence archive now contains **1,597 source files**, replacing the earlier 78-file snapshot. `rootListRetrievedAt`, `retrievalStartedAt` and `retrievedAt` distinguish root-list capture, first source retrieval and last source retrieval; each `files` entry and each profile records its own time. `asOf` is the root-list retrieval day. An ordinary rebuild is offline and uses these exact bytes. To refresh, use `scripts/fetch_iana.py` followed by `scripts/normalize_iana.js`, inspect the extraction review, then build and package.
+
+Unreported values remain blank in CSV. Contact organization extraction respects the source's optional organization slot; a missing slot is not filled from an address or personal contact name. Dedicated personal contact-name, address, email and telephone fields are omitted from the normalized publication, while the complete original public source bytes are preserved for verification.

@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.6"
+VERSION = "0.7.7"
 
 
 def csv_records(path: Path) -> int:
@@ -67,6 +67,8 @@ def build_manifest() -> None:
             ".lugano is marked as an applicant disclosure until ICANN publishes the individual application record at Reveal Day.",
             "dns_oddities.csv distinguishes active legacy, retired, reserved and never-delegated country-code cases.",
             "Blank 2026 aggregate values are scaffolding, not observations.",
+            "Every preserved IANA database entry has a normalized profile; root-list membership is separate from database presence.",
+            "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity.",
         ],
         "current_root_snapshot": json.loads((DATA / "iana_snapshot.json").read_text())["asOf"],
         "iana_evidence": "iana_snapshot.json",
