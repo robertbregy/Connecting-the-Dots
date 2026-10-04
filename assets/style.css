@@ -247,3 +247,49 @@ html[data-theme="dark"] .visionBadgeMini,html[data-theme="dark"] .pillar .ep.vis
 .socialHero{position:relative;overflow:hidden}.socialKicker{font-size:clamp(1.35rem,2.6vw,2.15rem);font-weight:800;line-height:1.1;max-width:900px;margin:10px 0 16px}.socialModels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}.socialModel{padding:18px;border:1px solid var(--border);border-radius:18px;background:var(--surface)}.socialModelNo{display:block;font-size:.72rem;letter-spacing:.12em;opacity:.55;margin-bottom:10px}.socialModel h3{margin:0 0 8px}.socialModel p{margin:0;color:var(--muted);line-height:1.5}.socialGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}.socialCase{border:1px solid var(--border);border-radius:20px;padding:20px;background:var(--surface);scroll-margin-top:calc(var(--topbar-height,62px) + 22px);min-width:0}.socialCaseTop,.drawerSocialTop{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.socialSignals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:14px 0}.socialSignal{display:flex;flex-direction:column;gap:5px;padding:11px;border:1px solid var(--border);border-radius:13px;background:var(--surface2);min-width:0}.socialSignal strong{font-size:.88rem;line-height:1.35;overflow-wrap:anywhere}.socialSignal span{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}.socialCaseBadge{display:inline-flex;align-items:center;border:1px solid color-mix(in srgb,var(--good) 42%,var(--border));background:color-mix(in srgb,var(--good) 9%,var(--surface));color:var(--text);border-radius:999px;padding:4px 7px;font-size:8px;line-height:1;text-transform:uppercase;letter-spacing:.07em;font-weight:800;white-space:nowrap}.explorerOpenBtn .socialCaseBadge{margin-left:2px}.drawerSocialCase{border-left:3px solid var(--good)}.drawerSocialEntry{border:1px solid var(--border);border-radius:14px;padding:14px;margin-top:10px}.drawerSocialTop{align-items:center;justify-content:flex-start;flex-wrap:wrap}.drawerSocialTop strong{font-size:17px}.drawerSocialModels{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.drawerSocialSignals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:10px 0}.drawerSocialSignals>div{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:10px;padding:9px;min-width:0}.drawerSocialSignals b{font-size:.82rem;line-height:1.35;overflow-wrap:anywhere}.drawerSocialSignals span{font-size:.68rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:.04em}.socialExplore{margin-top:12px}
 @media(max-width:1100px){.socialModels{grid-template-columns:repeat(2,minmax(0,1fr))}.socialSignals{grid-template-columns:1fr}}
 @media(max-width:760px){.socialModels,.socialGrid,.drawerSocialSignals{grid-template-columns:1fr}.socialCase{padding:16px}.socialCaseTop{display:block}.socialCaseTop>.pill{display:inline-flex;margin-top:10px}}
+
+
+/* v0.7.18 — user experience and accessibility hardening */
+.skipLink{position:fixed;left:18px;top:10px;z-index:1000;transform:translateY(-180%);background:var(--text);color:var(--surface);padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none;box-shadow:var(--shadow)}
+.skipLink:focus{transform:translateY(0);outline:3px solid var(--accent-soft);outline-offset:2px}
+#main-content:focus{outline:none}
+.heroPlain{font-size:15px!important;line-height:1.6!important;color:var(--text)!important;max-width:780px!important;margin-top:16px!important}
+.heroActions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.heroActions .control{min-height:44px;display:inline-flex;align-items:center;text-decoration:none;padding-left:16px;padding-right:16px}
+.heroPrimary{background:var(--text);border-color:var(--text);color:var(--surface);font-weight:700}
+.heroPrimary:hover{background:var(--text);filter:brightness(.94)}
+.projectByline{margin-top:22px}
+.readingBadge{color:var(--accent-text)}
+:root{--vision-text:#7047c8}
+html[data-theme="dark"]{--vision-text:#b28cff}
+.visionBadgeMini,.pillar .ep.visionBadgeMini{color:var(--vision-text)}
+.placeholderState{font-size:10px}
+.presetChip,.tocLink,.sourceChip{min-height:36px;display:inline-flex;align-items:center}
+.explorerSearchPrimary{grid-template-columns:minmax(0,1fr) auto;margin-top:22px}
+.explorerPresetsPrimary{margin-bottom:8px}
+.explorerFilters,.explorerAbout{margin-top:12px}
+.explorerFilters>summary,.explorerAbout>summary{min-height:44px;cursor:pointer;font-weight:700;color:var(--accent-text);padding:10px 2px}
+.explorerFilterFields{grid-template-columns:repeat(3,minmax(0,1fr))}
+.explorerAbout .explorerCoverage{margin-top:10px}
+.mobileNavWrap label.srOnly{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+@media(max-width:760px){
+ .hero{padding-top:42px}
+ .heroPlain{font-size:14px!important}
+ .heroActions{display:grid;grid-template-columns:1fr;margin-top:18px}
+ .heroActions .control{justify-content:center;text-align:center}
+ .projectByline{margin-top:20px}
+ .epistemicLegend{margin-top:16px}
+ .explorerSearchPrimary{grid-template-columns:1fr}
+ .explorerSearchPrimary .control{width:100%}
+ .explorerFilterFields{grid-template-columns:1fr}
+ .mobileNavWrap{padding:8px 0}
+ .mobileNav{min-height:44px}
+}
+
+.copyIcon{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.drawerClose{width:44px;height:44px}
+@media(max-width:760px){.presetChip{min-height:44px}.topbar .control{min-height:44px}}
+
+/* WCAG AA: use the text-safe accent for small blue labels. */
+.event .year,.role .icon,.step .n,.pressMark,.trustStep .k,.pillar span,.visionStep .n,.scopeHeader.luganoScope .scopeLabel,.powerLayer .layerNo,.cityMiniYear,.drawerEventPeriod,.dimensionNo,.leverNo,.successNo,.lifeIndex,.modelExample,.dnsCode,.universeMark,.disputeMechanismNo,.caseMilestone time,.visionBadge{color:var(--accent-text)}
+.explorerPlaceholderBadge,.governanceCaseBadge,.socialCaseBadge{font-size:10px}

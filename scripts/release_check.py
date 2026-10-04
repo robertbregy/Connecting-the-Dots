@@ -60,6 +60,38 @@ for marker in ['v0.7.18','v0.7.14','v0.7.13']:
 readme=(ROOT/'README.md').read_text(encoding='utf-8')
 if "No live refresh occurs in a visitor's browser." in readme: fail('README contains obsolete no-live-refresh claim')
 
+# Reader-experience and accessibility invariants. These are intentionally
+# structural rather than pixel-perfect so the project can evolve without
+# silently losing the novice path, keyboard entry point or search-first UX.
+template=(ROOT/'src/index.web.html').read_text(encoding='utf-8')
+style=(ROOT/'assets/style.css').read_text(encoding='utf-8')
+ux_markers=[
+    'class="skipLink" href="#main-content"',
+    'id="main-content" tabindex="-1"',
+    'class="heroPlain" data-i18n="heroPlain"',
+    'data-i18n="heroLearnCta"',
+    'data-i18n="heroExploreCta"',
+    'class="explorerSearch explorerSearchPrimary"',
+    'class="explorerAdvanced explorerFilters"',
+    'class="coverageNotes explorerAbout"',
+]
+for marker in ux_markers:
+    if marker not in template: fail('reader-experience marker missing: '+marker)
+if template.index('explorerSearchPrimary')>template.index('explorerFilters'):
+    fail('Explorer is no longer search-first')
+if '>ENG<' in template or '>GER<' in template or '>FRA<' in template or '>ITA<' in template:
+    fail('non-standard long language codes returned to the compact selector')
+share_match=re.search(r'<button[^>]*id="shareBtn"[^>]*>(.*?)</button>',template,re.S)
+if not share_match or 'copyIcon' not in share_match.group(1) or '↗' in share_match.group(1):
+    fail('copy-link control has ambiguous external-link iconography')
+for css_marker in ['.skipLink{','--vision-text:','#main-content:focus{outline:none}',
+                   '.drawerClose{width:44px;height:44px}',
+                   '.mobileNav{min-height:44px}',
+                   'color:var(--accent-text)']:
+    if css_marker not in style: fail('accessibility CSS invariant missing: '+css_marker)
+if '.heroActions' not in style or '.explorerSearchPrimary' not in style:
+    fail('progressive-disclosure UX styling missing')
+
 expected_counts={
  'explorer_catalog.csv':1688,'tld_universe.csv':1599,'application_only_strings.csv':89,
  'explorer_events.csv':5583,'tld_life_histories.csv':5583,'applications_2000.csv':47,
@@ -122,8 +154,11 @@ if not summary.get('2012',{}).get('Delegations source'): fail('2012 delegation m
 # Translation parity.
 tr=json_file('translations.json')
 base=set(tr['en'])
+required_ux_keys={'skipToContent','heroPlain','heroLearnCta','heroExploreCta','exploreAboutTitle','exploreFiltersTitle'}
 for lang in LANGS:
     if set(tr[lang])!=base: fail(f'translation key mismatch: {lang}')
+    missing_ux=required_ux_keys-set(tr[lang])
+    if missing_ux: fail(f'missing reader-experience translations {lang}: {sorted(missing_ux)}')
     blank=[k for k,v in tr[lang].items() if v is None or (isinstance(v,str) and not v.strip())]
     if blank: fail(f'blank translations {lang}: {blank[:5]}')
     for dead in ['disclosed','footerLeft','downloadExcel']:
@@ -142,6 +177,14 @@ for rel in ['index.html',*[f'{x}/index.html' for x in LANGS]]:
     if not m or '2026' not in re.sub('<[^>]+>','',m.group(1)): fail(f'visible publication snapshot is not derived/rendered in {rel}')
     if any(stale in text for stale in ['SNAPSHOT · 2 OCT 2026','SNAPSHOT PRE-REVEAL · 2 OTT 2026','PRE-REVEAL-SNAPSHOT · 2. OKT 2026','SNAPSHOT PRÉ-REVEAL · 2 OCT 2026']): fail(f'stale 2 October publication state in {rel}')
     if '"dateModified":"2026-10-04"' not in text: fail(f'structured-data dateModified mismatch in {rel}')
+    if text.count('<h1')!=1: fail(f'expected exactly one h1 in {rel}')
+    skip=re.search(r'<a\b(?=[^>]*\bclass=["\'][^"\']*\bskipLink\b[^"\']*["\'])(?=[^>]*\bhref=["\']#main-content["\'])[^>]*>',text,re.I)
+    main=re.search(r'<main\b(?=[^>]*\bid=["\']main-content["\'])[^>]*>',text,re.I)
+    if not skip or not main: fail(f'skip-to-content path missing in {rel}')
+    if 'class="heroPlain"' not in text or 'class="heroActions"' not in text: fail(f'novice entry path missing in {rel}')
+    if text.index('explorerSearchPrimary')>text.index('explorerFilters'): fail(f'Explorer not search-first in {rel}')
+    for img_tag in re.findall(r'<img\b[^>]*>',text,re.I):
+        if not re.search(r'\balt=["\'][^"\']*["\']',img_tag,re.I): fail(f'image without alt attribute in {rel}')
     check_internal_refs(p)
 
 # Shard parity and version.

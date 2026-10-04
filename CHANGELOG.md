@@ -1,4 +1,4 @@
-# v0.7.18 — Release integrity hardening
+# v0.7.18 — Release integrity & reader-experience hardening
 
 - Derive the visible publication snapshot and Reveal timestamp from `data/publication.js` instead of duplicating dates in four translation dictionaries.
 - Keep 2012 runtime archaeology separate from full-corpus completeness; application counts are now derived from per-round metadata rather than hard-coded 57 / 1,987 constants.
@@ -7,6 +7,10 @@
 - Correct the root-server instance observation date to the source state of 12 September 2026.
 - Harden static rendering, structured metadata, package/version parity, deployment documentation and release checks.
 - Separate the browser-upload publication archive from the reproducible source archive.
+- Add a plain-language entry path for readers who do not already know what a TLD is, with immediate routes to the guided Internet explainer and the TLD Explorer.
+- Make the Explorer search-first: common search and quick presets stay visible, while advanced filters and corpus/provenance detail move behind progressive disclosure.
+- Simplify navigation labels and specialist copy without removing expert-level content or source detail.
+- Add a keyboard skip link, larger mobile/touch targets, text-safe accent colours, clearer focus/accessibility semantics and unambiguous copy/external-link iconography.
 
 # v0.7.17 — Final audit hardening
 

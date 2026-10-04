@@ -1,8 +1,8 @@
 # Connecting the Dots — v0.7.18
 
-## v0.7.18 — Release integrity hardening
+## v0.7.18 — Release integrity & reader-experience hardening
 
-Release: 4 October 2026. This release changes no editorial scope. It hardens the boundary between the **frozen publication core** and explicitly labelled **browser-time runtime enrichment**, derives visible dates and historical-application counts from canonical state/data, restores comparable round denominators, clarifies the 2026 prohibition on private contention resolution, corrects source-date provenance, and strengthens build/package QA.
+Release: 4 October 2026. This release changes no editorial scope. It hardens the boundary between the **frozen publication core** and explicitly labelled **browser-time runtime enrichment**, derives visible dates and historical-application counts from canonical state/data, restores comparable round denominators, clarifies the 2026 prohibition on private contention resolution, corrects source-date provenance, and strengthens build/package QA. It also adds a deliberately progressive reader path: plain-language orientation first, then search/exploration, with specialist filters, provenance and research detail still available without crowding the first interaction.
 
 Two release artifacts are intentionally distinct: the **PUBBLICAZIONE** archive is the ≤100-file GitHub browser-upload payload; the **SOURCE** archive is the reproducible source release and includes the lockfile and build/deployment documentation.
 
