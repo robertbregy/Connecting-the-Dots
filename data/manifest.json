@@ -1,6 +1,6 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "release_date": "2026-10-04",
   "publication_state": "pre-reveal",
   "rendering": "static-prerendered",
@@ -24,6 +24,7 @@
   ],
   "current_root_snapshot": "2026-10-04",
   "iana_evidence": "iana_snapshot.json",
+  "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "files": [
     {
       "path": "application_regions_2012.csv",
@@ -99,15 +100,15 @@
     },
     {
       "path": "explorer_catalog.csv",
-      "bytes": 29724,
+      "bytes": 30644,
       "records": 87,
-      "sha256": "ce1b6bb96b0fc3366f18e81a568610f03831ce07b8e8de2db0711f2e244b9293"
+      "sha256": "446039dcf66aafa63a28504bb09bcbf7eb59d76dbd9b4093fa94a2f98218318a"
     },
     {
       "path": "explorer_events.csv",
-      "bytes": 32749,
-      "records": 247,
-      "sha256": "e77a68dd174ad188d98f5da633a740e816dc577496440872ae57ef5e76f455a7"
+      "bytes": 24138,
+      "records": 204,
+      "sha256": "32674b328ac86d36ab114813c4281f959d1531346e0d8707982060f05ea56089"
     },
     {
       "path": "governance_locations.csv",
@@ -177,9 +178,9 @@
     },
     {
       "path": "sources.csv",
-      "bytes": 9930,
-      "records": 97,
-      "sha256": "f10b5121e47933bc75114c07597eab7ad324f818c480a91c83abbb09d9e41638"
+      "bytes": 10412,
+      "records": 101,
+      "sha256": "611fded946c9ef6d2f5353774c892c1f6a196a70ae88a41c0f992974360646a5"
     },
     {
       "path": "strange_internet.csv",

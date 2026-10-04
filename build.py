@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.3"
+VERSION = "0.7.5"
 
 
 def csv_records(path: Path) -> int:
@@ -39,6 +39,7 @@ def bundle_runtime() -> None:
 
 
 def build_manifest() -> None:
+    shutil.copyfile(ROOT / "CONTENT_LICENSE.md", DATA / "CONTENT_LICENSE.md")
     files = []
     for path in sorted(DATA.glob("*.csv")):
         files.append({
@@ -50,7 +51,7 @@ def build_manifest() -> None:
     manifest = {
         "project": "Connecting the Dots",
         "version": VERSION,
-        "release_date": "2026-10-03",
+        "release_date": "2026-10-04",
         "publication_state": "pre-reveal",
         "rendering": "static-prerendered",
         "language_routes": {lang: f"{lang}/" for lang in ("en", "it", "de", "fr")},
@@ -66,9 +67,17 @@ def build_manifest() -> None:
             "dns_oddities.csv distinguishes active legacy, retired, reserved and never-delegated country-code cases.",
             "Blank 2026 aggregate values are scaffolding, not observations.",
         ],
+        "current_root_snapshot": json.loads((DATA / "iana_snapshot.json").read_text())["asOf"],
+        "iana_evidence": "iana_snapshot.json",
+        "iana_evidence_archive": json.loads((DATA / "iana_snapshot.json").read_text())["archive_path"].removeprefix("data/"),
         "files": files,
     }
     (DATA / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def data_pack_files() -> list[Path]:
+    snapshot = json.loads((DATA / "iana_snapshot.json").read_text())
+    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "CONTENT_LICENSE.md", ROOT / snapshot["archive_path"]]
 
 
 def build_data_pack() -> None:
@@ -94,8 +103,8 @@ def build_data_pack() -> None:
     pack = ROOT / "downloads" / "connecting-the-dots-data-pack.zip"
     pack.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(pack, "w", zipfile.ZIP_DEFLATED) as zf:
-        for path in [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md"]:
-            zf.write(path, path.name)
+        for path in data_pack_files():
+            zf.write(path, str(path.relative_to(DATA)))
 
 
 def build_index() -> None:
@@ -164,7 +173,7 @@ def validate_index() -> None:
     if csv_records(DATA / "applications_2026.csv") != 0:
         raise SystemExit("Pre-Reveal build must not contain synthetic 2026 application records")
 
-    for js in [ROOT / "assets" / "app.js", DATA / "data_bundle.js", DATA / "i18n_bundle.js", DATA / "publication.js", DATA / "v068.js", DATA / "i18n_v068.js", DATA / "i18n_v069.js", DATA / "i18n_v0610.js", DATA / "v0610.js", DATA / "i18n_v0611.js", DATA / "v0611.js", DATA / "i18n_v070.js", DATA / "v070.js", DATA / "i18n_v071.js", DATA / "v071.js", DATA / "i18n_v072.js", DATA / "v072.js", DATA / "i18n_v073.js", ROOT / "assets" / "legacy-routing.js", ROOT / "scripts" / "render_static.js", ROOT / "scripts" / "validate_multilingual.js"]:
+    for js in [ROOT / "assets" / "app.js", DATA / "data_bundle.js", DATA / "i18n_bundle.js", DATA / "publication.js", DATA / "v068.js", DATA / "i18n_v068.js", DATA / "i18n_v069.js", DATA / "i18n_v0610.js", DATA / "v0610.js", DATA / "i18n_v0611.js", DATA / "v0611.js", DATA / "i18n_v070.js", DATA / "v070.js", DATA / "i18n_v071.js", DATA / "v071.js", DATA / "i18n_v072.js", DATA / "v072.js", DATA / "i18n_v073.js", ROOT / "assets" / "legacy-routing.js", ROOT / "scripts" / "render_static.js", ROOT / "scripts" / "validate_multilingual.js", DATA / "v074.js", DATA / "i18n_v074.js"]:
         try:
             subprocess.run(["node", "--check", str(js)], check=True, capture_output=True, text=True)
         except FileNotFoundError:
@@ -176,7 +185,7 @@ def validate_index() -> None:
     with (DATA / "explorer_catalog.csv").open(encoding="utf-8-sig", newline="") as fh:
         cat = {r["string"]: r for r in csv.DictReader(fh)}
     for s in [".cat", ".post"]:
-        if cat[s]["round"] != "2004" or cat[s]["type"] != "sponsored":
+        if cat[s]["round"] != "2004" or cat[s]["origin_round"] != "2004" or cat[s]["type"] != "sponsored":
             raise SystemExit(f"Explorer origin regression for {s}")
     if "applicantDisclosure" not in cat[".lugano"].get("provenance", ""):
         raise SystemExit(".lugano must remain marked as applicant disclosure before Reveal Day")
@@ -222,9 +231,9 @@ def validate_index() -> None:
 
     pack = ROOT / "downloads" / "connecting-the-dots-data-pack.zip"
     with zipfile.ZipFile(pack) as zf:
-        for path in [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md"]:
+        for path in data_pack_files():
             try:
-                packed = zf.read(path.name)
+                packed = zf.read(str(path.relative_to(DATA)))
             except KeyError:
                 raise SystemExit(f"Data pack is missing {path.name}")
             if packed != path.read_bytes():
@@ -238,6 +247,7 @@ def main() -> None:
     build_index()
     validate_index()
     subprocess.run(["node", str(ROOT / "scripts" / "validate_multilingual.js")], check=True)
+    subprocess.run(["node", str(ROOT / "scripts" / "validate_corrective.js")], check=True)
     print(f"Built self-contained {INDEX.name} from {SRC.relative_to(ROOT)}")
     print("Validated runtime, event history, provenance, local assets, pre-Reveal state and data-pack sync")
     print(f"Refreshed manifest and data pack for v{VERSION}")

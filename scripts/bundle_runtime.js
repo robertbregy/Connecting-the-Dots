@@ -23,11 +23,13 @@ function writeCsv(rel, headers, rows){
 
 global.window = {};
 for(const f of ['data/data.js','data/extra.js','data/v05.js','data/v060.js','data/v061.js','data/v068.js','data/v0610.js','data/v0611.js','data/v070.js','data/v071.js','data/v072.js']) load(f);
+window.DOT_IANA_SNAPSHOT=JSON.parse(fs.readFileSync(path.join(root,'data/iana_snapshot.json'),'utf8'));
+load('data/v074.js');
 write('data/data_bundle.js','DOT_DATA',window.DOT_DATA);
 
-const catalogHeaders=['string','round','status','type','entity','group','geography','themes','contention_count','strange','city','placeholder','provenance','sources'];
+const catalogHeaders=['string','round','status','type','entity','group','geography','themes','contention_count','strange','city','placeholder','provenance','sources','current_root_status','current_as_of','formal_type','editorial_designation','origin_round','historical_rounds','registry_entity','registry_country','technical_contact_organization','technical_contact_country','represented_place','application_entity','registration_date','contention_year','origin_round_sources'];
 writeCsv('data/explorer_catalog.csv', catalogHeaders, (window.DOT_DATA.explorer||[]).map(r=>({
-  string:r.string,round:r.round,status:r.status,type:r.type,entity:r.entity,group:r.group,geography:r.geography,themes:r.themes||[],contention_count:r.contentionCount??'',strange:r.strange?'yes':'no',city:r.city?'yes':'no',placeholder:r.placeholder?'yes':'no',provenance:r.provenanceKey?(r.provenanceKey+(r.provenanceDate?' · '+r.provenanceDate:'')):'',sources:r.source||[]
+  string:r.string,round:r.round,status:r.status,type:r.type,entity:r.entity,group:r.group,geography:r.geography,themes:r.themes||[],contention_count:r.contentionCount??'',strange:r.strange?'yes':'no',city:r.city?'yes':'no',placeholder:r.placeholder?'yes':'no',provenance:r.provenanceKey?(r.provenanceKey+(r.provenanceDate?' · '+r.provenanceDate:'')):'',sources:r.source||[],current_root_status:r.currentRootStatus,current_as_of:r.currentAsOf,formal_type:r.formalType,editorial_designation:r.editorialDesignation,origin_round:r.originRound,historical_rounds:r.historicalRounds,registry_entity:r.registryEntity,registry_country:r.registryCountry,technical_contact_organization:r.technicalContactOrganization,technical_contact_country:r.technicalContactCountry,represented_place:r.representedPlace,application_entity:r.applicationEntity,registration_date:r.registrationDate,contention_year:r.contentionYear,origin_round_sources:r.originRoundSources||[]
 })));
 const eventHeaders=['string','period','status','type','entity','geography','current','provenance','sources'];
 const eventRows=[];
@@ -56,7 +58,7 @@ writeCsv('data/control_levers.csv',leverHeaders,(window.DOT_DATA.controlLevers||
 
 
 global.window = {};
-for(const f of ['data/i18n.js','data/i18n_extra.js','data/i18n_v05.js','data/i18n_v058.js','data/i18n_v060.js','data/i18n_v061.js','data/i18n_v062.js','data/i18n_v065.js','data/i18n_v068.js','data/i18n_v069.js','data/i18n_v0610.js','data/i18n_v0611.js','data/i18n_v070.js','data/i18n_v071.js','data/i18n_v072.js','data/i18n_v073.js']) load(f);
+for(const f of ['data/i18n.js','data/i18n_extra.js','data/i18n_v05.js','data/i18n_v058.js','data/i18n_v060.js','data/i18n_v061.js','data/i18n_v062.js','data/i18n_v065.js','data/i18n_v068.js','data/i18n_v069.js','data/i18n_v0610.js','data/i18n_v0611.js','data/i18n_v070.js','data/i18n_v071.js','data/i18n_v072.js','data/i18n_v073.js','data/i18n_v074.js']) load(f);
 write('data/i18n_bundle.js','DOT_I18N',window.DOT_I18N);
 
 console.log('Generated data/data_bundle.js and data/i18n_bundle.js');

@@ -1,248 +1,205 @@
 string,period,status,type,entity,geography,current,provenance,sources
-.ai,current,delegated,country-code,,Anguilla,no,,https://www.iana.org/domains/root/db/ai.html | https://registry.ai/
-.ai,1995-02-16,ianaRegistration,country-code,Government of Anguilla,Anguilla,no,,https://www.iana.org/domains/root/db/ai.html
+.ai,1995-02-16,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/ai.html
 .ai,2026-10-04,delegated,country-code,Government of Anguilla,Anguilla,yes,,https://www.iana.org/domains/root/db/ai.html
-.amsterdam,2012,delegated,geographic,Amsterdam,Amsterdam,no,,https://www.iana.org/domains/root/db
-.amsterdam,2014-11-20,ianaRegistration,generic,Gemeente Amsterdam,Netherlands (the),no,,https://www.iana.org/domains/root/db/amsterdam.html
+.amsterdam,2014-11-20,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/amsterdam.html
 .amsterdam,2026-10-04,delegated,generic,Gemeente Amsterdam,Netherlands (the),yes,,https://www.iana.org/domains/root/db/amsterdam.html
 .an,1993,delegated,country-code,,Netherlands Antilles,no,,https://www.iana.org/reports/2011/cw-report-20111003.html
 .an,2010 → retirement,retired,country-code,,Netherlands Antilles,no,,https://www.iana.org/reports/2011/cw-report-20111003.html
 .app,2012,application,generic,,,no,,https://newgtlds.icann.org/en/program-status/statistics
-.app,2015-06-25,ianaRegistration,generic,Charleston Road Registry Inc.,United States of America (the),no,,https://www.iana.org/domains/root/db/app.html
+.app,2015-06-25,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/app.html
 .app,2026-10-04,delegated,generic,Charleston Road Registry Inc.,United States of America (the),yes,,https://www.iana.org/domains/root/db/app.html
-.aq,1992 → current,delegated,country-code,Antarctica Network Information Centre Limited,Antarctica,no,,https://www.iana.org/domains/root/db/aq.html
-.aq,1992-02-26,ianaRegistration,country-code,Antarctica Network Information Centre Limited,New Zealand,no,,https://www.iana.org/domains/root/db/aq.html
+.aq,1992-02-26,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/aq.html
 .aq,2026-10-04,delegated,country-code,Antarctica Network Information Centre Limited,New Zealand,yes,,https://www.iana.org/domains/root/db/aq.html
-.arpa,legacy,delegated,infrastructure,IANA / PTI,United States,no,,https://www.iana.org/domains/root/db
-.arpa,1985-01-01,ianaRegistration,infrastructure,Internet Architecture Board (IAB),United States of America (the),no,,https://www.iana.org/domains/root/db/arpa.html
+.arpa,1985-01-01,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/arpa.html
 .arpa,2026-10-04,delegated,infrastructure,Internet Architecture Board (IAB),United States of America (the),yes,,https://www.iana.org/domains/root/db/arpa.html
 .art,2012,application,generic,,,no,,https://newgtlds.icann.org/en/program-status/statistics
-.art,2016-06-09,ianaRegistration,generic,UK Creative Ideas Limited,United Kingdom of Great Britain and Northern Ireland (the),no,,https://www.iana.org/domains/root/db/art.html
+.art,2016-06-09,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/art.html
 .art,2026-10-04,delegated,generic,UK Creative Ideas Limited,United Kingdom of Great Britain and Northern Ireland (the),yes,,https://www.iana.org/domains/root/db/art.html
-.asia,2004,delegated,sponsored,DotAsia Organisation Limited,"Hong Kong, China",no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
-.asia,2007-05-02,ianaRegistration,sponsored,DotAsia Organisation Ltd.,Hong Kong,no,,https://www.iana.org/domains/root/db/asia.html
+.asia,2004,application,sponsored,DotAsia Organisation Limited,"Hong Kong, China",no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
+.asia,2007-05-02,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/asia.html
 .asia,2026-10-04,delegated,sponsored,DotAsia Organisation Ltd.,Hong Kong,yes,,https://www.iana.org/domains/root/db/asia.html
-.bank,2012,delegated,generic,,,no,,https://ftld.com/security/
-.bank,2014-11-26,ianaRegistration,generic,"fTLD Registry Services, LLC",United States of America (the),no,,https://www.iana.org/domains/root/db/bank.html
+.bank,2014-11-26,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/bank.html
 .bank,2026-10-04,delegated,generic,"fTLD Registry Services, LLC",United States of America (the),yes,,https://www.iana.org/domains/root/db/bank.html
-.barcelona,2012,delegated,geographic,Barcelona,Barcelona,no,,https://www.iana.org/domains/root/db
-.barcelona,2015-06-04,ianaRegistration,generic,Municipi de Barcelona,Spain,no,,https://www.iana.org/domains/root/db/barcelona.html
+.barcelona,2015-06-04,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/barcelona.html
 .barcelona,2026-10-04,delegated,generic,Municipi de Barcelona,Spain,yes,,https://www.iana.org/domains/root/db/barcelona.html
-.beer,2012,delegated,application,,,no,,https://www.iana.org/domains/root/db/beer.html
-.beer,2014-03-13,ianaRegistration,generic,"Registry Services, LLC",United States of America (the),no,,https://www.iana.org/domains/root/db/beer.html
+.beer,2014-03-13,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/beer.html
 .beer,2026-10-04,delegated,generic,"Registry Services, LLC",United States of America (the),yes,,https://www.iana.org/domains/root/db/beer.html
-.berlin,1999,idea,geographic,dotBERLIN / Berlin,Berlin,no,,https://newgtlds.icann.org/en/announcements-and-media/case-studies/berlin-a4-13feb19-en.pdf
-.berlin,2012,application,geographic,Berlin,Berlin,no,,https://newgtlds.icann.org/en/program-status/statistics
-.berlin,2014,delegated,geographic,Berlin,Berlin,no,,https://newgtlds.icann.org/en/announcements-and-media/case-studies/berlin-a4-13feb19-en.pdf
-.berlin,2013-12-19,ianaRegistration,generic,dotBERLIN GmbH & Co. KG,Germany,no,,https://www.iana.org/domains/root/db/berlin.html
+.berlin,1999,idea,geographic,,Berlin,no,,https://newgtlds.icann.org/en/announcements-and-media/case-studies/berlin-a4-13feb19-en.pdf
+.berlin,2012,application,geographic,,Berlin,no,,https://newgtlds.icann.org/en/program-status/statistics
+.berlin,2013-12-19,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/berlin.html
+.berlin,2014,delegated,geographic,,Berlin,no,,https://newgtlds.icann.org/en/announcements-and-media/case-studies/berlin-a4-13feb19-en.pdf
 .berlin,2026-10-04,delegated,generic,dotBERLIN GmbH & Co. KG,Germany,yes,,https://www.iana.org/domains/root/db/berlin.html
-.bible,2012,delegated,application,,,no,,https://www.iana.org/domains/root/db/bible.html
-.bible,2015-05-14,ianaRegistration,generic,American Bible Society,United States of America (the),no,,https://www.iana.org/domains/root/db/bible.html
+.bible,2015-05-14,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/bible.html
 .bible,2026-10-04,delegated,generic,American Bible Society,United States of America (the),yes,,https://www.iana.org/domains/root/db/bible.html
 .blog,2012,application,generic,,,no,,https://newgtlds.icann.org/en/program-status/statistics
-.blog,2016-05-12,ianaRegistration,generic,"Knock Knock WHOIS There, LLC",United States of America (the),no,,https://www.iana.org/domains/root/db/blog.html
+.blog,2016-05-12,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/blog.html
 .blog,2026-10-04,delegated,generic,"Knock Knock WHOIS There, LLC",United States of America (the),yes,,https://www.iana.org/domains/root/db/blog.html
 .book,2012,application,generic,,,no,,https://newgtlds.icann.org/en/program-status/statistics
-.book,2015-11-12,ianaRegistration,generic,"Amazon Registry Services, Inc.",United States of America (the),no,,https://www.iana.org/domains/root/db/book.html
+.book,2015-11-12,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/book.html
 .book,2026-10-04,delegated,generic,"Amazon Registry Services, Inc.",United States of America (the),yes,,https://www.iana.org/domains/root/db/book.html
-.bv,1997 → current,delegated,country-code,Norid A/S,Bouvet Island,no,,https://www.iana.org/domains/root/db/bv.html | https://www.norid.no/en/omnorid/toppdomenet-bv/
-.bv,1997-08-21,ianaRegistration,country-code,Norid A/S,Norway,no,,https://www.iana.org/domains/root/db/bv.html
+.bv,1997-08-21,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/bv.html
 .bv,2026-10-04,delegated,country-code,Norid A/S,Norway,yes,,https://www.iana.org/domains/root/db/bv.html
 .cat,2004,application,sponsored,Fundació puntCAT,Spain / Catalan-speaking community,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
 .cat,2005,delegated,sponsored,Fundació puntCAT,Spain / Catalan-speaking community,no,,https://www.iana.org/reports/2005/cat-report-18nov2005.html
-.cat,2005-12-19,ianaRegistration,sponsored,Fundacio puntCAT,Spain,no,,https://www.iana.org/domains/root/db/cat.html
+.cat,2005-12-19,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/cat.html
 .cat,2026-10-04,delegated,sponsored,Fundacio puntCAT,Spain,yes,,https://www.iana.org/domains/root/db/cat.html
-.co,current,delegated,country-code,,Colombia,no,,https://www.iana.org/domains/root/db/co.html | https://www.iana.org/reports/2009/co-report-24nov2009.html
-.co,1991-12-24,ianaRegistration,country-code,Ministry of Information and Communications Technologies (MinTIC),Colombia,no,,https://www.iana.org/domains/root/db/co.html
+.co,1991-12-24,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/co.html
 .co,2026-10-04,delegated,country-code,Ministry of Information and Communications Technologies (MinTIC),Colombia,yes,,https://www.iana.org/domains/root/db/co.html
-.com,legacy,delegated,generic,Verisign,United States,no,,https://www.iana.org/domains/root/db
-.com,1985-01-01,ianaRegistration,generic,VeriSign Global Registry Services,United States of America (the),no,,https://www.iana.org/domains/root/db/com.html
+.com,1985-01-01,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/com.html
 .com,2026-10-04,delegated,generic,VeriSign Global Registry Services,United States of America (the),yes,,https://www.iana.org/domains/root/db/com.html
 .cs,Czechoslovakia,retired,country-code,,Czechoslovakia,no,,https://www.icann.org/en/board-activities-and-meetings/materials/preliminary-report-special-meeting-of-the-board-13-10-2003-en
 .cs,2003–2006,notDelegated,country-code,,Serbia and Montenegro,no,,https://www.iana.org/reports/2007/me-report-11sep2007.html
-.dating,2012,delegated,application,,,no,,https://www.iana.org/domains/root/db/dating.html
-.dating,2014-01-23,ianaRegistration,generic,"Binky Moon, LLC",United States of America (the),no,,https://www.iana.org/domains/root/db/dating.html
+.dating,2014-01-23,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/dating.html
 .dating,2026-10-04,delegated,generic,"Binky Moon, LLC",United States of America (the),yes,,https://www.iana.org/domains/root/db/dating.html
 .design,2012,application,generic,,,no,,https://newgtlds.icann.org/en/program-status/statistics
-.design,2014-12-18,ianaRegistration,generic,"Registry Services, LLC",United States of America (the),no,,https://www.iana.org/domains/root/db/design.html
+.design,2014-12-18,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/design.html
 .design,2026-10-04,delegated,generic,"Registry Services, LLC",United States of America (the),yes,,https://www.iana.org/domains/root/db/design.html
-.eco,2012,delegated,generic,,,no,,https://go.eco/policies/eligibility/
-.eco,2016-08-18,ianaRegistration,generic,Big Room Inc.,Canada,no,,https://www.iana.org/domains/root/db/eco.html
+.eco,2016-08-18,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/eco.html
 .eco,2026-10-04,delegated,generic,Big Room Inc.,Canada,yes,,https://www.iana.org/domains/root/db/eco.html
-.edu,legacy,delegated,sponsored,,United States,no,,https://www.iana.org/domains/root/db
-.edu,1985-01-01,ianaRegistration,sponsored,EDUCAUSE,United States of America (the),no,,https://www.iana.org/domains/root/db/edu.html
+.edu,1985-01-01,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/edu.html
 .edu,2026-10-04,delegated,sponsored,EDUCAUSE,United States of America (the),yes,,https://www.iana.org/domains/root/db/edu.html
-.eu,2005 → current,delegated,country-code,EURid vzw,European Union,no,,https://www.iana.org/domains/root/db/eu.html | https://www.iana.org/help/eligible-tlds
-.eu,2005-04-28,ianaRegistration,country-code,EURid vzw,Belgium,no,,https://www.iana.org/domains/root/db/eu.html
+.eu,2005-04-28,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/eu.html
 .eu,2026-10-04,delegated,country-code,EURid vzw,Belgium,yes,,https://www.iana.org/domains/root/db/eu.html
-.fail,2012,delegated,application,,,no,,https://www.iana.org/domains/root/db/fail.html
-.fail,2014-04-17,ianaRegistration,generic,"Binky Moon, LLC",United States of America (the),no,,https://www.iana.org/domains/root/db/fail.html
+.fail,2014-04-17,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/fail.html
 .fail,2026-10-04,delegated,generic,"Binky Moon, LLC",United States of America (the),yes,,https://www.iana.org/domains/root/db/fail.html
-.fm,current,delegated,country-code,,Micronesia (Federated States of),no,,https://www.iana.org/domains/root/db/fm.html | https://dot.fm/registrar/
-.fm,1995-04-19,ianaRegistration,country-code,FSM Telecommunications Corporation,Micronesia (Federated States of),no,,https://www.iana.org/domains/root/db/fm.html
+.fm,1995-04-19,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/fm.html
 .fm,2026-10-04,delegated,country-code,FSM Telecommunications Corporation,Micronesia (Federated States of),yes,,https://www.iana.org/domains/root/db/fm.html
-.gb,1985 → current,reserved,country-code,Reserved Domain - IANA,United Kingdom,yes,,https://www.iana.org/domains/root/db/gb.html | https://www.iana.org/help/eligible-tlds
-.geo,2000,evaluated,application,,,yes,,https://archive.icann.org/en/tlds/
-.gop,2012,delegated,application,,,no,,https://www.iana.org/domains/root/db/gop.html
-.gop,2014-03-06,ianaRegistration,generic,"Republican State Leadership Committee, Inc.",United States of America (the),no,,https://www.iana.org/domains/root/db/gop.html
+.gb,1985,reserved,country-code,Reserved Domain - IANA,United Kingdom,no,,https://www.iana.org/domains/root/db/gb.html | https://www.iana.org/help/eligible-tlds
+.geo,2000,evaluated,application,,,no,,https://archive.icann.org/en/tlds/
+.gop,2014-03-06,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/gop.html
 .gop,2026-10-04,delegated,generic,"Republican State Leadership Committee, Inc.",United States of America (the),yes,,https://www.iana.org/domains/root/db/gop.html
-.gov,legacy,delegated,sponsored,CISA,United States,no,,https://www.iana.org/domains/root/db | https://get.gov/domains/eligibility/
-.gov,1985-01-01,ianaRegistration,sponsored,Cybersecurity and Infrastructure Security Agency,United States of America (the),no,,https://www.iana.org/domains/root/db/gov.html
+.gov,1985-01-01,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/gov.html
 .gov,2026-10-04,delegated,sponsored,Cybersecurity and Infrastructure Security Agency,United States of America (the),yes,,https://www.iana.org/domains/root/db/gov.html
-.guru,2012,delegated,application,,,no,,https://www.iana.org/domains/root/db/guru.html
-.guru,2013-10-31,ianaRegistration,generic,"Binky Moon, LLC",United States of America (the),no,,https://www.iana.org/domains/root/db/guru.html
+.guru,2013-10-31,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/guru.html
 .guru,2026-10-04,delegated,generic,"Binky Moon, LLC",United States of America (the),yes,,https://www.iana.org/domains/root/db/guru.html
-.hamburg,2012,delegated,geographic,Hamburg,Hamburg,no,,https://www.iana.org/domains/root/db
-.hamburg,2014-05-22,ianaRegistration,generic,Hamburg Top-Level-Domain GmbH,Germany,no,,https://www.iana.org/domains/root/db/hamburg.html
+.hamburg,2014-05-22,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/hamburg.html
 .hamburg,2026-10-04,delegated,generic,Hamburg Top-Level-Domain GmbH,Germany,yes,,https://www.iana.org/domains/root/db/hamburg.html
 .health,2000,evaluated,application,,,no,,https://archive.icann.org/en/tlds/health1/icann-index.htm | https://archive.icann.org/en/tlds/
-.health,2015-09-17,ianaRegistration,generic,"Registry Services, LLC",United States of America (the),no,,https://www.iana.org/domains/root/db/health.html
+.health,2012,application,application,"DotHealth, LLC",United States,no,,https://gtldresult.icann.org/applicationstatus/applicationdetails/495
+.health,2015-09-17,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/health.html
+.health,2023-06-26,registryTransferReport,,"Registry Services, LLC",United States,no,,https://www.iana.org/reports/tld-transfer/20230626-health
 .health,2026-10-04,delegated,generic,"Registry Services, LLC",United States of America (the),yes,,https://www.iana.org/domains/root/db/health.html
-.home,2012,application,generic,,,yes,,https://newgtlds.icann.org/en/program-status/statistics
+.home,2012,application,generic,,,no,,https://newgtlds.icann.org/en/program-status/statistics
 .inc,2012,application,generic,,,no,,https://newgtlds.icann.org/en/program-status/statistics
-.inc,2018-07-03,ianaRegistration,generic,Intercap Registry Inc.,Cayman Islands (the),no,,https://www.iana.org/domains/root/db/inc.html
+.inc,2018-07-03,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/inc.html
 .inc,2026-10-04,delegated,generic,Intercap Registry Inc.,Cayman Islands (the),yes,,https://www.iana.org/domains/root/db/inc.html
-.insurance,2012,delegated,generic,,,no,,https://ftld.com/security/
-.insurance,2015-11-06,ianaRegistration,generic,fTLD Registry Services LLC,United States of America (the),no,,https://www.iana.org/domains/root/db/insurance.html
+.insurance,2015-11-06,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/insurance.html
 .insurance,2026-10-04,delegated,generic,fTLD Registry Services LLC,United States of America (the),yes,,https://www.iana.org/domains/root/db/insurance.html
-.int,legacy,delegated,sponsored,IANA / PTI,,no,,https://www.iana.org/domains/root/db
-.int,1988-11-03,ianaRegistration,sponsored,Internet Assigned Numbers Authority,United States of America (the),no,,https://www.iana.org/domains/root/db/int.html
+.int,1988-11-03,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/int.html
 .int,2026-10-04,delegated,sponsored,Internet Assigned Numbers Authority,United States of America (the),yes,,https://www.iana.org/domains/root/db/int.html
-.io,current,delegated,country-code,,British Indian Ocean Territory,no,,https://www.iana.org/domains/root/db/io.html | https://www.nic.io/
-.io,1997-09-16,ianaRegistration,country-code,Internet Computer Bureau Limited,British Indian Ocean Territory (the),no,,https://www.iana.org/domains/root/db/io.html
+.io,1997-09-16,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/io.html
 .io,2026-10-04,delegated,country-code,Internet Computer Bureau Limited,British Indian Ocean Territory (the),yes,,https://www.iana.org/domains/root/db/io.html
-.jobs,2004,delegated,sponsored,Society for Human Resource Management,United States,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
-.jobs,2005-09-08,ianaRegistration,sponsored,Employ Media LLC,United States of America (the),no,,https://www.iana.org/domains/root/db/jobs.html
+.jobs,2004,application,sponsored,Society for Human Resource Management,United States,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
+.jobs,2005-09-08,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/jobs.html
 .jobs,2026-10-04,delegated,sponsored,Employ Media LLC,United States of America (the),yes,,https://www.iana.org/domains/root/db/jobs.html
 .kids,2000,evaluated,application,,,no,,https://archive.icann.org/en/tlds/kids1/ | https://archive.icann.org/en/tlds/kids2/ | https://archive.icann.org/en/tlds/kids3/ | https://archive.icann.org/en/tlds/kids4/ | https://archive.icann.org/en/tlds/
-.kids,2022-03-05,ianaRegistration,generic,DotKids Foundation Limited,Hong Kong,no,,https://www.iana.org/domains/root/db/kids.html
+.kids,2012,application,application,DotKids Foundation Limited,Hong Kong,no,,https://gtldresult.icann.org/applicationstatus/applicationdetails/161
+.kids,2022-03-05,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/kids.html
 .kids,2026-10-04,delegated,generic,DotKids Foundation Limited,Hong Kong,yes,,https://www.iana.org/domains/root/db/kids.html
-.koeln,2012,delegated,geographic,Cologne,Cologne,no,,https://www.iana.org/domains/root/db
-.koeln,2014-02-20,ianaRegistration,generic,dotKoeln GmbH,Austria,no,,https://www.iana.org/domains/root/db/koeln.html
+.koeln,2014-02-20,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/koeln.html
 .koeln,2026-10-04,delegated,generic,dotKoeln GmbH,Austria,yes,,https://www.iana.org/domains/root/db/koeln.html
-.lgbt,2012,delegated,application,,,no,,https://www.iana.org/domains/root/db/lgbt.html
-.lgbt,2014-06-26,ianaRegistration,generic,Identity Digital Limited,United States of America (the),no,,https://www.iana.org/domains/root/db/lgbt.html
+.lgbt,2014-06-26,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/lgbt.html
 .lgbt,2026-10-04,delegated,generic,Identity Digital Limited,United States of America (the),yes,,https://www.iana.org/domains/root/db/lgbt.html
 .llc,2012,application,generic,,,no,,https://newgtlds.icann.org/en/program-status/statistics
-.llc,2018-02-16,ianaRegistration,generic,Identity Digital Limited,United States of America (the),no,,https://www.iana.org/domains/root/db/llc.html
+.llc,2018-02-16,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/llc.html
 .llc,2026-10-04,delegated,generic,Identity Digital Limited,United States of America (the),yes,,https://www.iana.org/domains/root/db/llc.html
-.london,2012,delegated,geographic,London,London,no,,https://www.iana.org/domains/root/db
-.london,2014-02-13,ianaRegistration,generic,Dot London Domains Limited,United Kingdom of Great Britain and Northern Ireland (the),no,,https://www.iana.org/domains/root/db/london.html
+.london,2014-02-13,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/london.html
 .london,2026-10-04,delegated,generic,Dot London Domains Limited,United Kingdom of Great Britain and Northern Ireland (the),yes,,https://www.iana.org/domains/root/db/london.html
 .lugano,2026,application,geographic,,Switzerland,no,applicantDisclosure · 2026-10-02,
-.magic,2000,proposed,application,,,yes,,https://archive.icann.org/en/tlds/ads1/
-.mail,2004,notDelegated,sponsored,Anti-Spam Community Registry,United Kingdom,yes,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
-.me,current,delegated,country-code,,Montenegro,no,,https://www.iana.org/domains/root/db/me.html | https://domain.me/about-me/
-.me,2007-09-24,ianaRegistration,country-code,Government of Montenegro,Montenegro,no,,https://www.iana.org/domains/root/db/me.html
+.magic,2000,proposed,application,,,no,,https://archive.icann.org/en/tlds/ads1/
+.mail,2004,notDelegated,sponsored,Anti-Spam Community Registry,United Kingdom,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
+.me,2007-09-24,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/me.html
 .me,2026-10-04,delegated,country-code,Government of Montenegro,Montenegro,yes,,https://www.iana.org/domains/root/db/me.html
-.mil,legacy,delegated,sponsored,,United States,no,,https://www.iana.org/domains/root/db
-.mil,1985-01-01,ianaRegistration,sponsored,DoD Network Information Center,United States of America (the),no,,https://www.iana.org/domains/root/db/mil.html
+.mil,1985-01-01,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/mil.html
 .mil,2026-10-04,delegated,sponsored,DoD Network Information Center,United States of America (the),yes,,https://www.iana.org/domains/root/db/mil.html
-.mobi,2004,delegated,sponsored,Mobi JV,Finland,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
-.mobi,2005-10-17,ianaRegistration,generic,Identity Digital Limited,United States of America (the),no,,https://www.iana.org/domains/root/db/mobi.html
+.mobi,2004,application,sponsored,Mobi JV,Finland,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
+.mobi,2005-10-17,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/mobi.html
 .mobi,2026-10-04,delegated,generic,Identity Digital Limited,United States of America (the),yes,,https://www.iana.org/domains/root/db/mobi.html
 .movie,2012,application,generic,,,no,,https://newgtlds.icann.org/en/program-status/statistics
-.movie,2015-03-12,ianaRegistration,generic,"Binky Moon, LLC",United States of America (the),no,,https://www.iana.org/domains/root/db/movie.html
+.movie,2015-03-12,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/movie.html
 .movie,2026-10-04,delegated,generic,"Binky Moon, LLC",United States of America (the),yes,,https://www.iana.org/domains/root/db/movie.html
 .museum,2000,selected,application,,,no,,https://archive.icann.org/en/tlds/
-.museum,2001-10-20,ianaRegistration,sponsored,Museum Domain Management Association,France,no,,https://www.iana.org/domains/root/db/museum.html
+.museum,2001-10-20,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/museum.html
 .museum,2026-10-04,delegated,sponsored,Museum Domain Management Association,France,yes,,https://www.iana.org/domains/root/db/museum.html
 .music,2012,application,generic,,,no,,https://newgtlds.icann.org/en/program-status/statistics
-.music,2021-10-14,ianaRegistration,generic,DotMusic Limited,Cyprus,no,,https://www.iana.org/domains/root/db/music.html
+.music,2021-10-14,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/music.html
 .music,2026-10-04,delegated,generic,DotMusic Limited,Cyprus,yes,,https://www.iana.org/domains/root/db/music.html
 .name,2000,selected,application,,,no,,https://archive.icann.org/en/tlds/
-.name,2001-08-17,ianaRegistration,generic-restricted,"VeriSign Information Services, Inc.",United States of America (the),no,,https://www.iana.org/domains/root/db/name.html
+.name,2001-08-17,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/name.html
 .name,2026-10-04,delegated,generic-restricted,"VeriSign Information Services, Inc.",United States of America (the),yes,,https://www.iana.org/domains/root/db/name.html
-.net,legacy,delegated,generic,Verisign,United States,no,,https://www.iana.org/domains/root/db
-.net,1985-01-01,ianaRegistration,generic,VeriSign Global Registry Services,United States of America (the),no,,https://www.iana.org/domains/root/db/net.html
+.net,1985-01-01,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/net.html
 .net,2026-10-04,delegated,generic,VeriSign Global Registry Services,United States of America (the),yes,,https://www.iana.org/domains/root/db/net.html
-.ninja,2012,delegated,application,,,no,,https://www.iana.org/domains/root/db/ninja.html
-.ninja,2013-12-19,ianaRegistration,generic,"Dog Beach, LLC",United States of America (the),no,,https://www.iana.org/domains/root/db/ninja.html
+.ninja,2013-12-19,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/ninja.html
 .ninja,2026-10-04,delegated,generic,"Dog Beach, LLC",United States of America (the),yes,,https://www.iana.org/domains/root/db/ninja.html
 .nyc,2000,withdrawn,geographic,,New York,no,,https://www.icann.org/en/announcements/details/tld-application-review-update-23-10-2000-en
 .nyc,2012,application,geographic,City of New York,New York,no,,https://newgtlds.icann.org/en/program-status/statistics
-.nyc,2014,delegated,geographic,City of New York,New York,no,,https://www.iana.org/domains/root/db/nyc.html
-.nyc,2014-03-13,ianaRegistration,generic,The City of New York by and through the New York City Department of Information Technology & Telecommunications,United States of America (the),no,,https://www.iana.org/domains/root/db/nyc.html
+.nyc,2014,delegated,geographic,,New York,no,,https://www.iana.org/domains/root/db/nyc.html
+.nyc,2014-03-13,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/nyc.html
 .nyc,2026-10-04,delegated,generic,The City of New York by and through the New York City Department of Information Technology & Telecommunications,United States of America (the),yes,,https://www.iana.org/domains/root/db/nyc.html
-.org,legacy,delegated,generic,,,no,,https://www.iana.org/domains/root/db
-.org,1985-01-01,ianaRegistration,generic,Public Interest Registry (PIR),United States of America (the),no,,https://www.iana.org/domains/root/db/org.html
+.org,1985-01-01,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/org.html
+.org,2003-01-01,registryTransition,,Public Interest Registry (PIR),,no,,https://www.icann.org/en/announcements/details/advisory-concerning-org-transition-7-1-2003-en
 .org,2026-10-04,delegated,generic,Public Interest Registry (PIR),United States of America (the),yes,,https://www.iana.org/domains/root/db/org.html
-.paris,2012,delegated,geographic,Paris,Paris,no,,https://www.iana.org/domains/root/db
-.paris,2014-03-27,ianaRegistration,generic,City of Paris,France,no,,https://www.iana.org/domains/root/db/paris.html
+.paris,2014-03-27,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/paris.html
 .paris,2026-10-04,delegated,generic,City of Paris,France,yes,,https://www.iana.org/domains/root/db/paris.html
-.pharmacy,2012,delegated,generic,,,no,,https://nabp.pharmacy/help/is-domain-name-registration-in-the-pharmacy-tld-restricted/
-.pharmacy,2014-08-28,ianaRegistration,generic,National Association of Boards of Pharmacy,United States of America (the),no,,https://www.iana.org/domains/root/db/pharmacy.html
+.pharmacy,2014-08-28,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/pharmacy.html
 .pharmacy,2026-10-04,delegated,generic,National Association of Boards of Pharmacy,United States of America (the),yes,,https://www.iana.org/domains/root/db/pharmacy.html
-.pizza,2012,delegated,application,,,no,,https://www.iana.org/domains/root/db/pizza.html
-.pizza,2014-08-22,ianaRegistration,generic,"Binky Moon, LLC",United States of America (the),no,,https://www.iana.org/domains/root/db/pizza.html
+.pizza,2014-08-22,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/pizza.html
 .pizza,2026-10-04,delegated,generic,"Binky Moon, LLC",United States of America (the),yes,,https://www.iana.org/domains/root/db/pizza.html
 .post,2004,application,sponsored,Universal Postal Union,Switzerland,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
-.post,2012,delegated,sponsored,Universal Postal Union,Switzerland,no,,https://www.iana.org/domains/root/db/post.html
-.post,2012-08-07,ianaRegistration,sponsored,Universal Postal Union,Switzerland,no,,https://www.iana.org/domains/root/db/post.html
+.post,2012,delegated,sponsored,,Switzerland,no,,https://www.iana.org/domains/root/db/post.html
+.post,2012-08-07,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/post.html
 .post,2026-10-04,delegated,sponsored,Universal Postal Union,Switzerland,yes,,https://www.iana.org/domains/root/db/post.html
-.quebec,2012,delegated,geographic,Quebec,Quebec,no,,https://www.iana.org/domains/root/db
-.quebec,2014-03-13,ianaRegistration,generic,PointQuébec Inc,Canada,no,,https://www.iana.org/domains/root/db/quebec.html
+.quebec,2014-03-13,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/quebec.html
 .quebec,2026-10-04,delegated,generic,PointQuébec Inc,Canada,yes,,https://www.iana.org/domains/root/db/quebec.html
-.rich,2012,delegated,application,,,no,,https://www.iana.org/domains/root/db/rich.html
-.rich,2014-01-16,ianaRegistration,generic,iRegistry GmbH,Germany,no,,https://www.iana.org/domains/root/db/rich.html
+.rich,2014-01-16,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/rich.html
 .rich,2026-10-04,delegated,generic,iRegistry GmbH,Germany,yes,,https://www.iana.org/domains/root/db/rich.html
 .shop,2012,application,generic,,,no,,https://newgtlds.icann.org/en/program-status/statistics
-.shop,2016-05-05,ianaRegistration,generic,"GMO Registry, Inc.",Japan,no,,https://www.iana.org/domains/root/db/shop.html
+.shop,2016-05-05,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/shop.html
 .shop,2026-10-04,delegated,generic,"GMO Registry, Inc.",Japan,yes,,https://www.iana.org/domains/root/db/shop.html
-.sj,1997 → current,delegated,country-code,Norid A/S,Svalbard and Jan Mayen,no,,https://www.iana.org/domains/root/db/sj.html | https://www.norid.no/en/omnorid/toppdomenet-sj/
-.sj,1997-08-21,ianaRegistration,country-code,Norid A/S,Norway,no,,https://www.iana.org/domains/root/db/sj.html
+.sj,1997-08-21,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/sj.html
 .sj,2026-10-04,delegated,country-code,Norid A/S,Norway,yes,,https://www.iana.org/domains/root/db/sj.html
-.soup,2000,proposed,application,,,yes,,https://archive.icann.org/en/tlds/ads1/
-.su,1990 → current,delegated,country-code,Russian Institute for Development of Public Networks (ROSNIIROS),Former Soviet Union (legacy code),no,,https://www.iana.org/domains/root/db/su.html
-.su,1990-09-19,ianaRegistration,country-code,Russian Institute for Development of Public Networks (ROSNIIROS),Russian Federation (the),no,,https://www.iana.org/domains/root/db/su.html
+.soup,2000,proposed,application,,,no,,https://archive.icann.org/en/tlds/ads1/
+.su,1990-09-19,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/su.html
 .su,2026-10-04,delegated,country-code,Russian Institute for Development of Public Networks (ROSNIIROS),Russian Federation (the),yes,,https://www.iana.org/domains/root/db/su.html
 .sucks,2000,proposed,application,,,no,,https://archive.icann.org/en/tlds/ads1/
 .sucks,2012,application,generic,,,no,,https://newgtlds.icann.org/en/program-status/statistics
-.sucks,current,delegated,generic,,,no,,https://www.iana.org/domains/root/db/sucks.html
-.sucks,2015-02-19,ianaRegistration,generic,Vox Populi Registry Ltd.,Cayman Islands (the),no,,https://www.iana.org/domains/root/db/sucks.html
+.sucks,2015-02-19,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/sucks.html
 .sucks,2026-10-04,delegated,generic,Vox Populi Registry Ltd.,Cayman Islands (the),yes,,https://www.iana.org/domains/root/db/sucks.html
-.swiss,2012,delegated,generic,,,no,,https://www.nic.swiss/en/conditions-for-the-registration-and-the-registration-process
-.swiss,2015-04-16,ianaRegistration,generic,Swiss Confederation,Switzerland,no,,https://www.iana.org/domains/root/db/swiss.html
+.swiss,2015-04-16,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/swiss.html
 .swiss,2026-10-04,delegated,generic,Swiss Confederation,Switzerland,yes,,https://www.iana.org/domains/root/db/swiss.html
 .tel,2004,application,sponsored,Telname Limited,United Kingdom,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
-.tel,2004,delegated,sponsored,Telnic Limited,United Kingdom,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
-.tel,2007-03-01,ianaRegistration,sponsored,Telnames Ltd.,United Kingdom of Great Britain and Northern Ireland (the),no,,https://www.iana.org/domains/root/db/tel.html
+.tel,2004,application,sponsored,Telnic Limited,United Kingdom,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
+.tel,2007-03-01,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/tel.html
 .tel,2026-10-04,delegated,sponsored,Telnames Ltd.,United Kingdom of Great Britain and Northern Ireland (the),yes,,https://www.iana.org/domains/root/db/tel.html
-.tokyo,2012,delegated,geographic,Tokyo,Tokyo,no,,https://www.iana.org/domains/root/db
-.tokyo,2014-01-16,ianaRegistration,generic,"GMO Registry, Inc.",Japan,no,,https://www.iana.org/domains/root/db/tokyo.html
+.tokyo,2014-01-16,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/tokyo.html
 .tokyo,2026-10-04,delegated,generic,"GMO Registry, Inc.",Japan,yes,,https://www.iana.org/domains/root/db/tokyo.html
 .tp,1997,delegated,country-code,,Portuguese Timor,no,,https://www.iana.org/reports/2015/tp-report-20150126.html
 .tp,2015,retired,country-code,,Portuguese Timor,no,,https://www.iana.org/reports/2015/tp-report-20150126.html
-.travel,2004,delegated,sponsored,The Travel Partnership Corporation,United States,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
-.travel,2005-07-27,ianaRegistration,sponsored,"Dog Beach, LLC",United States of America (the),no,,https://www.iana.org/domains/root/db/travel.html
+.travel,2004,application,sponsored,The Travel Partnership Corporation,United States,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
+.travel,2005-07-27,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/travel.html
 .travel,2026-10-04,delegated,sponsored,"Dog Beach, LLC",United States of America (the),yes,,https://www.iana.org/domains/root/db/travel.html
-.tv,current,delegated,country-code,,Tuvalu,no,,https://www.iana.org/domains/root/db/tv.html | https://www.turnon.tv/
-.tv,1996-03-18,ianaRegistration,country-code,"Ministry of Transport, Energy, Communications and Innovations",Tuvalu,no,,https://www.iana.org/domains/root/db/tv.html
+.tv,1996-03-18,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/tv.html
 .tv,2026-10-04,delegated,country-code,"Ministry of Transport, Energy, Communications and Innovations",Tuvalu,yes,,https://www.iana.org/domains/root/db/tv.html
-.uk,1985 → current,delegated,country-code,Nominet UK,United Kingdom,no,,https://www.iana.org/domains/root/db/uk.html | https://www.iana.org/help/eligible-tlds
-.uk,1985-07-24,ianaRegistration,country-code,Nominet UK,United Kingdom of Great Britain and Northern Ireland (the),no,,https://www.iana.org/domains/root/db/uk.html
+.uk,1985-07-24,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/uk.html
 .uk,2026-10-04,delegated,country-code,Nominet UK,United Kingdom of Great Britain and Northern Ireland (the),yes,,https://www.iana.org/domains/root/db/uk.html
-.union,2000,evaluated,application,,,yes,,https://archive.icann.org/en/tlds/union1/ | https://archive.icann.org/en/tlds/
-.wap,2000,returned,application,,,yes,,https://archive.icann.org/en/tlds/
-.war,2000,proposed,application,,,yes,,https://archive.icann.org/en/tlds/ads1/
-.wien,2012,delegated,geographic,Vienna,Vienna,no,,https://www.iana.org/domains/root/db
-.wien,2013-12-19,ianaRegistration,generic,punkt.wien GmbH,Austria,no,,https://www.iana.org/domains/root/db/wien.html
+.union,2000,evaluated,application,,,no,,https://archive.icann.org/en/tlds/union1/ | https://archive.icann.org/en/tlds/
+.wap,2000,returned,application,,,no,,https://archive.icann.org/en/tlds/
+.war,2000,proposed,application,,,no,,https://archive.icann.org/en/tlds/ads1/
+.wien,2013-12-19,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/wien.html
 .wien,2026-10-04,delegated,generic,punkt.wien GmbH,Austria,yes,,https://www.iana.org/domains/root/db/wien.html
-.wtf,2012,delegated,application,,,no,,https://www.iana.org/domains/root/db/wtf.html
-.wtf,2014-04-17,ianaRegistration,generic,"Binky Moon, LLC",United States of America (the),no,,https://www.iana.org/domains/root/db/wtf.html
+.wtf,2014-04-17,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/wtf.html
 .wtf,2026-10-04,delegated,generic,"Binky Moon, LLC",United States of America (the),yes,,https://www.iana.org/domains/root/db/wtf.html
 .xxx,2004,application,sponsored,ICM Registry,Canada / United States,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
-.xxx,2011,delegated,sponsored,ICM Registry,Canada / United States,no,,https://www.iana.org/domains/root/db/xxx.html
-.xxx,2011-04-15,ianaRegistration,sponsored,ICM Registry LLC,United States of America (the),no,,https://www.iana.org/domains/root/db/xxx.html
+.xxx,2011,delegated,sponsored,,Canada / United States,no,,https://www.iana.org/domains/root/db/xxx.html
+.xxx,2011-04-15,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/xxx.html
 .xxx,2026-10-04,delegated,sponsored,ICM Registry LLC,United States of America (the),yes,,https://www.iana.org/domains/root/db/xxx.html
 .yu,1989,delegated,country-code,,Yugoslavia,no,,https://www.iana.org/reports/2010/yu-report-01apr2010.html
 .yu,2010,retired,country-code,,Yugoslavia,no,,https://www.iana.org/reports/2010/yu-report-01apr2010.html
-.zuerich,2012,delegated,geographic,Canton of Zurich,Canton of Zurich,no,,https://www.iana.org/domains/root/db
-.zuerich,2014-12-18,ianaRegistration,generic,Kanton Zürich (Canton of Zurich),Switzerland,no,,https://www.iana.org/domains/root/db/zuerich.html
+.zuerich,2014-12-18,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/zuerich.html
 .zuerich,2026-10-04,delegated,generic,Kanton Zürich (Canton of Zurich),Switzerland,yes,,https://www.iana.org/domains/root/db/zuerich.html
-.ευ,2019 → current,delegated,country-code,EURid vzw,European Union,no,,https://www.iana.org/reports/2019/xn--qxa6a-report-20190822.html
-.ευ,2019-07-18,ianaRegistration,country-code,EURid vzw,Belgium,no,,https://www.iana.org/domains/root/db/xn--qxa6a.html
+.ευ,2019,delegated,country-code,EURid vzw,European Union,no,,https://www.iana.org/reports/2019/xn--qxa6a-report-20190822.html
+.ευ,2019-07-18,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/xn--qxa6a.html
 .ευ,2026-10-04,delegated,country-code,EURid vzw,Belgium,yes,,https://www.iana.org/domains/root/db/xn--qxa6a.html
-.ею,2016 → current,delegated,country-code,EURid vzw,European Union,no,,https://www.iana.org/reports/2016/eu-report-20160118.html
-.ею,2015-12-08,ianaRegistration,country-code,EURid vzw,Belgium,no,,https://www.iana.org/domains/root/db/xn--e1a4c.html
+.ею,2015-12-08,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/xn--e1a4c.html
+.ею,2016,delegated,country-code,EURid vzw,European Union,no,,https://www.iana.org/reports/2016/eu-report-20160118.html
 .ею,2026-10-04,delegated,country-code,EURid vzw,Belgium,yes,,https://www.iana.org/domains/root/db/xn--e1a4c.html

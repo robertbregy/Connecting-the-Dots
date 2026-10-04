@@ -41,8 +41,19 @@ The publication is prerendered in EN, IT, DE and FR. Language metadata in `manif
 
 ## v0.7.4 current-state correction
 
-Current IANA root status, formal type, registry legal organization, registry country, technical-contact organization, represented place and historical applications are distinct fields. The root evidence was retrieved on 4 October 2026; the other pre-Reveal research snapshot remains 2 October 2026. `iana_snapshot.json` records retrieval time, source URLs and SHA-256 hashes of the source files under `data/evidence/iana/` in the full release. The data ZIP includes the normalized snapshot; the full redeploy ZIP also includes the raw evidence. The IANA technical contact is not automatically the contractual RSP.
+Current IANA root status, formal type, registry legal organization, registry country, technical-contact organization, represented place and historical applications are distinct fields. The root evidence was retrieved on 4 October 2026; the other pre-Reveal research snapshot remains 2 October 2026. `iana_snapshot.json` records retrieval time, source URLs and SHA-256 hashes of the original source files. In v0.7.5, both release ZIPs include those files inside one compressed evidence archive, as described below. The IANA technical contact is not automatically the contractual RSP.
 
 Current `.CS` is retired: its former Czechoslovak delegation and the non-delegation for Serbia and Montenegro are separate historical events. `.GB` remains explicitly reserved. No public legal-applicant identity is inferred for `.lugano` before Reveal Day. `contention_count` refers to 2012 where `contention_year` is 2012. Empty cells represent information not documented in this catalogue.
 
 `current_root_status` is the authoritative current-root field. The compatibility `status` column retains the indexed lifecycle label for historical-only records; consult `explorer_events.csv` for its dated context. `formal_type` and `editorial_designation` must not be merged.
+
+
+## v0.7.5 history and evidence format
+
+`origin_round` is an explicit curated application-round classification, never a calculation from the IANA registration date. `historical_rounds` includes the documented applications of a string across multiple rounds. `origin_round_sources`, when populated, links directly to the application or delegation report used to resolve an ambiguous case. A date-only IANA registration event has empty entity, geography and type fields. A dated current-state event retains the current registry details. Registry transitions and transfer reports have distinct event statuses; a report date is not asserted to be the effective transfer date.
+
+Events are ordered by their recorded year/date; a year-only event has no implied day or month. Undated historical context precedes dated milestones, and the dated current snapshot is last. Synthetic delegation events created from an application round, or operator histories based only on a current root record, are removed. The IANA state remains as of 4 October 2026; this is distinct from the other research snapshot dated 2 October.
+
+`iana_snapshot.json` identifies `archive_path` (relative to the repository root), the archive SHA-256, and each original file's SHA-256. The gzip file contains UTF-8 JSON with `format: "ctd-evidence-v1"`, `encoding: "base64"` and a `files` object mapping original repository-relative paths to base64-encoded bytes. This preserves all 78 original files without requiring 78 separate GitHub uploads. The data ZIP places this archive under `evidence/`, alongside the normalized snapshot at its root. `node scripts/validate_corrective.js` verifies the archive and all original-file hashes without extracting the evidence.
+
+Legal organization names remain in their source language. The interface localizes descriptive places and periods; CSV values remain stable source labels.

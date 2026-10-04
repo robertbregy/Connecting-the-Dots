@@ -267,7 +267,7 @@
     ".gb": {
       "formalType": "country-code",
       "registryEntity": "Reserved Domain - IANA",
-      "registryCountry": "Reserved Domain - IANA",
+      "registryCountry": "",
       "technicalContactOrganization": "Jisc",
       "technicalContactCountry": "United Kingdom of Great Britain and Northern Ireland (the)",
       "registrationDate": "1985-07-24",
@@ -1078,5 +1078,7 @@
       "path": "data/evidence/iana/zuerich.html",
       "sha256": "22299ff3f12d78e7d88fc78a9aa26fda7bfedc6b16e29de92e14a76de69a825b"
     }
-  ]
+  ],
+  "archive_path": "data/evidence/iana-snapshot-2026-10-04.json.gz",
+  "archive_sha256": "7044a2a207bfa6e252bdf4d0af88bd66aebed0a4a18de5d4e496354d1b663e92"
 }

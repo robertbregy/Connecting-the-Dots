@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.3
+# Connecting the Dots — v0.7.5
 
 **Connecting the Dots** is a multilingual, static research publication about the history, governance, geography and social meaning of top-level domains, with the 2026 ICANN round and the `.lugano` application as the contemporary layer.
 
@@ -179,3 +179,32 @@ The section keeps the distinction explicit: **formal status is a FACT; the broad
 - Disclosure navigation uses ordinary accessible navigation semantics rather than an incomplete ARIA menu pattern.
 - Explorer record activation uses real buttons.
 - The logo is no longer embedded three times in the generated HTML.
+
+## v0.7.4 · factual and navigation corrections
+
+Release: 4 October 2026. Correct current Explorer state against preserved IANA evidence while retaining historical applications. Separate formal TLD type from editorial designation, legal registry from represented place, and technical contact from contractual RSP. Correct the two historical uses of CS.
+
+URL state is restored as a whole on initial load, language change, browser Back/Forward and hash navigation. Navigation links are shareable ordinary links and internal headings update the fragment. Dynamic result counts and active navigation expose accessible state; light/dark semantic badge contrast is strengthened.
+
+The data ZIP contains CSV, manifest, normalized IANA evidence, README and content licence. No Excel workbook is promised. Before Reveal Day, individual 2026 application observations remain unavailable.
+
+SEO: submit `sitemap.xml` in Search Console for the project URL. A project-directory `robots.txt` is not the origin-root robots file; any origin-level configuration must be made in the user Pages repository. This release keeps self-contained language pages to retain deployment resilience. Shared-asset performance optimization remains a separate future change.
+
+
+## v0.7.5 · historical provenance and complete release
+
+Release: 4 October 2026. IANA registration events assert only the recorded date, without projecting the current registry organization, country or type into the past. Dated primary sources document the .ORG transition to PIR, the .HEALTH transfer report and the 2012 .HEALTH / .KIDS applications. Unsupported synthetic delegation milestones are removed; application rounds are never inferred from registration dates. .POST remains a 2004-round TLD, despite its later registration.
+
+Chronologies are sorted, historical rounds are displayed together, places and periods are localized, and the IANA date label is generated from the same snapshot as the data. Regression checks cover all four languages, filters, URL restoration, provenance and CSV/runtime consistency.
+
+The complete release includes synchronized build sources and generated pages in fewer than 100 files. The 78 raw IANA evidence files are preserved byte-for-byte in `data/evidence/iana-snapshot-2026-10-04.json.gz`; validation reads that archive directly. They must not be expanded before a GitHub browser upload. Both the full release and downloadable data pack include the archive. See `DEPLOY.md`.
+
+To rebuild and package a release:
+
+```bash
+npm ci
+python3 build.py
+python3 scripts/package_release.py
+```
+
+The last command writes the complete ZIP next to the project directory and rejects packages exceeding GitHub's 100-file browser-upload limit.

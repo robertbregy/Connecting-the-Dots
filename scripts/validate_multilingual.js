@@ -7,6 +7,7 @@ const root=path.resolve(__dirname,'..');
 const base='https://robertbregy.github.io/Connecting-the-Dots/';
 const languages=['en','it','de','fr'];
 const rootHtml=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const snapshot=JSON.parse(fs.readFileSync(path.join(root,'data/iana_snapshot.json'),'utf8'));
 
 for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   const page=alias?'index.html':language+'/index.html';
@@ -39,7 +40,8 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   }
   for(const n of document.querySelectorAll('[data-i18n]')){
     const key=n.getAttribute('data-i18n');assert.ok(key in translations,page+' missing '+key);
-    const expected=parseHTML('<html><body><div id="value">'+translations[key]+'</div></body></html>').document.getElementById('value').textContent;
+    const value=key==='exploreIanaDate'?translations[key].replace('{date}',new Intl.DateTimeFormat({en:'en-US',it:'it-IT',de:'de-DE',fr:'fr-FR'}[language],{year:'numeric',month:'short',day:'numeric',timeZone:'UTC'}).format(new Date(snapshot.asOf+'T00:00:00Z'))):translations[key];
+    const expected=parseHTML('<html><body><div id="value">'+value+'</div></body></html>').document.getElementById('value').textContent;
     assert.equal(n.textContent,expected,page+' unlocalized '+key);
   }
   for(const n of document.querySelectorAll('[src],[href]'))for(const attr of ['src','href']){
@@ -90,7 +92,7 @@ vm.runInNewContext(queryFunction+';setQuery();',{
   document:queryDocument,URLSearchParams,
   location:{protocol:'https:',pathname:'/Connecting-the-Dots/fr/',search:'?lang=fr&tab=geography',hash:'#geography-part-2'},
   history:{replaceState:(_state,_title,url)=>historyUrl=url},
-  activeTab:'geography',explorerPreset:'all',geoMode:'rsp',syncLanguageLinks:()=>{}
+  restoringState:false,compatibleHash:()=> '#geography-part-2',syncSectionLinks:()=>{},activeTab:'geography',explorerPreset:'all',geoMode:'rsp',syncLanguageLinks:()=>{}
 });
 assert.equal(historyUrl,'/Connecting-the-Dots/fr/?tab=geography&map=rsp#geography-part-2','UI URL must preserve deep-link fragments');
 console.log('Validated legacy redirects, stable page language and reciprocal four-language sitemap.');
