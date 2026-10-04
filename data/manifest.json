@@ -1,6 +1,6 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.10",
+  "version": "0.7.11",
   "release_date": "2026-10-04",
   "publication_state": "pre-reveal",
   "rendering": "static-prerendered",
@@ -22,30 +22,40 @@
     "dns_oddities.csv distinguishes active legacy, retired, reserved and never-delegated country-code cases.",
     "Blank 2026 aggregate values are scaffolding, not observations.",
     "Every preserved IANA database entry has a normalized profile; root-list membership is separate from database presence.",
-    "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity."
+    "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity.",
+    "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database.",
+    "application_only_strings.csv is deliberately separate and curated, not an exhaustive cross-round application corpus."
   ],
   "current_root_snapshot": "2026-10-04",
   "iana_evidence": "iana_snapshot.json",
   "explorer_coverage": {
-    "seedCount": 87,
-    "curatedCount": 87,
-    "recordCount": 1606,
+    "seedCount": 89,
+    "curatedCount": 89,
+    "recordCount": 1608,
     "ianaRootCount": 1437,
     "rootIndexedCount": 1437,
     "ianaDatabaseCount": 1595,
     "ianaProfileCount": 1595,
+    "tldRecordCount": 1599,
+    "applicationOnlyCount": 9,
+    "historicalExtraCount": 4,
     "ianaSnapshot": "2026-10-04",
     "ianaSource": "https://data.iana.org/TLD/tlds-alpha-by-domain.txt",
     "ianaDatabaseSource": "https://www.iana.org/domains/root/db",
     "rootCoverageComplete": true,
     "ianaProfileCoverageComplete": true,
-    "historicalCoverageComplete": false,
+    "tldCoverageComplete": true,
+    "introductionPathCoverageComplete": true,
+    "historicalCoverageComplete": true,
+    "historicalCoverageExtended": true,
+    "tldCoverageDefinition": "Dated IANA database plus historically delegated TLDs absent from the current IANA database; excludes never-delegated ISO codes and application-only strings",
+    "applicationCorpusComplete": false,
     "application2026CoverageComplete": false
   },
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "release_history": {
     "path": "release_history.json",
-    "sha256": "0ec2fd6d9977ec543a031b03377759742aa9ad460a3153e0127b931d331b8afe"
+    "sha256": "0f6aa7923be0d02cd22d892978e15c3829993b13438820add9d57fccf4cb8c60"
   },
   "web_delivery": {
     "profile_loading": "on-demand",
@@ -53,13 +63,13 @@
     "assets": [
       {
         "repository_path": "data/site_bundle.js",
-        "bytes": 1228128,
-        "sha256": "885340825c5b18df7bd68c35a0d4e81e69b55518b40e18952c73bcab400a6c80"
+        "bytes": 1375620,
+        "sha256": "d1126c800e065d70848997f9abb11cf6e9613642ea9f0c246c90d8285e8d5831"
       },
       {
         "repository_path": "assets/app.js",
-        "bytes": 69828,
-        "sha256": "935ede85d548fd164def40ae67b06da46867fc8daecd9f6b11088b9466a3095c"
+        "bytes": 70734,
+        "sha256": "cc932e3509dbc70b3abed33f8222fd31539faaa86de3dbf4766c7c467dd6df82"
       },
       {
         "repository_path": "assets/style.css",
@@ -73,47 +83,53 @@
       },
       {
         "repository_path": "data/explorer_profiles_0.js",
-        "bytes": 378399,
-        "sha256": "fd28cd0c9c0b34a147b5cb7cda605ae268cbcdf8f08bd561f1933892a2c65b8e"
+        "bytes": 430070,
+        "sha256": "318f00a9387b2fee11eb0723c770abd2a708b1c541e6bb47b84458d650b22a46"
       },
       {
         "repository_path": "data/explorer_profiles_1.js",
-        "bytes": 322491,
-        "sha256": "e5d609fb6691851db6f41005528e5d91f6f424ae523d31b0efe0ae4acba7d7f7"
+        "bytes": 367267,
+        "sha256": "e22a8e8d4027c2c951d70c1c4366329263cb0462170627a1abeecdfae706e9b6"
       },
       {
         "repository_path": "data/explorer_profiles_2.js",
-        "bytes": 359604,
-        "sha256": "7ffbbe6b9b20d809a05b3d9609ef9d2e2ac7ea2652f394644c07c0fe53ee05cf"
+        "bytes": 407920,
+        "sha256": "1ca70268e0a43f01098f47e932a66ccd62b11368b9f165d1a7a5792a72356920"
       },
       {
         "repository_path": "data/explorer_profiles_3.js",
-        "bytes": 334100,
-        "sha256": "3bcbed362db2b4779898dd43f7191d5cb08f6399f096e96067eb0868cff452cc"
+        "bytes": 379663,
+        "sha256": "78937820fbb1c0c4cc9e4c8995400f1feec972ba64dc6809a0caef5c16b40b41"
       },
       {
         "repository_path": "data/explorer_profiles_4.js",
-        "bytes": 338177,
-        "sha256": "17d0b86d75fedf28fbff3d7c42f1f557c43b16c78963340daf868c4539ae31f6"
+        "bytes": 386148,
+        "sha256": "4e1358137682c8313d28f9585ce0426a9cf9aee2e5e18d020e25a6f4e122b57f"
       },
       {
         "repository_path": "data/explorer_profiles_5.js",
-        "bytes": 322717,
-        "sha256": "f261ab23602d2198f8bf640a68f93a4024ec5936ab360c85106aa712de2fe54c"
+        "bytes": 366340,
+        "sha256": "de7fd91904b03a61924abfdc657672da466785294b63a6e6a9f09fdf22e9c34d"
       },
       {
         "repository_path": "data/explorer_profiles_6.js",
-        "bytes": 330888,
-        "sha256": "923f1d5c15ef2589aab475e3cdc4827d0e713887b187f7f6c0664017b43439ff"
+        "bytes": 377753,
+        "sha256": "cfb44c1dc0e504f668d85155f8a80aa122a1439de4ff12edf1ad5492612bc89f"
       },
       {
         "repository_path": "data/explorer_profiles_7.js",
-        "bytes": 329230,
-        "sha256": "f311d8ad280c4c25855af62e6bb7714020cf8cbcea0c0f9d3d6175ec3705d8ff"
+        "bytes": 374908,
+        "sha256": "9a6f9e5532ca2139388912350d27fe6b5a8ff630e2711ecfbe2e8cd880819776"
       }
     ]
   },
   "files": [
+    {
+      "path": "application_only_strings.csv",
+      "bytes": 1231,
+      "records": 9,
+      "sha256": "77b5dfa1509e0a8ce5575ad5918d205f0a248ed2711c884753508e8d94dc5b95"
+    },
     {
       "path": "application_regions_2012.csv",
       "bytes": 763,
@@ -188,15 +204,15 @@
     },
     {
       "path": "explorer_catalog.csv",
-      "bytes": 786467,
-      "records": 1606,
-      "sha256": "2724c8be2600b41c2eb9195358b93fb22f70a792243021a921564239834a8688"
+      "bytes": 1014000,
+      "records": 1608,
+      "sha256": "1552abc2fed557bed5a59c7b23f670d51033fbc9708ce4f0dc0370f8667523ab"
     },
     {
       "path": "explorer_events.csv",
-      "bytes": 24138,
-      "records": 204,
-      "sha256": "284326bdb2ae20b125129a3829f7191fc41049ffe18e21d2b00e9f2266fe8c43"
+      "bytes": 24858,
+      "records": 208,
+      "sha256": "d1a1fe6ada64da021218f0eb296b738ff5869222e9a2a0ced83cfa8fde5b517e"
     },
     {
       "path": "explorer_iana_reports.csv",
@@ -299,6 +315,12 @@
       "bytes": 1735,
       "records": 11,
       "sha256": "1a7fdbb67b9b503d4d54d23289b21be379362fa22219077bc55e4499b696e8d6"
+    },
+    {
+      "path": "tld_universe.csv",
+      "bytes": 382601,
+      "records": 1599,
+      "sha256": "92f9c955ffe207baf6de5ed3c34d195138355e301249e130a1bb1e1530cb9937"
     }
   ]
 }

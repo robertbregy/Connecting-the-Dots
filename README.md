@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.10
+# Connecting the Dots — v0.7.11
 
 **Connecting the Dots** is a multilingual, static research publication about the history, governance, geography and social meaning of top-level domains, with the 2026 ICANN round and the `.lugano` application as the contemporary layer.
 
@@ -290,6 +290,17 @@ The simulation runs entirely in the page and makes no DNS probes or requests to 
 Readers control every step using native buttons; there is no autoplay. The selected step can be shared with `?tab=how&walk=0` through `walk=6` and the `#internet-basics` anchor. Language changes retain it. Screen-reader announcements report the current explanation, controls support keyboard operation, and reduced-motion preferences are respected. Without JavaScript all seven explanations remain readable. Existing `how-part-1` through `how-part-12` anchors are preserved and their table-of-contents labels are corrected.
 
 Research records, CSV files and the IANA evidence snapshot remain unchanged. Automated checks exercise all steps in all four languages, restart, back navigation, direct links, language links and existing chapter anchors. The local browser environment still prevents a real visual pass; verify desktop and phone layouts after deployment.
+
+
+## v0.7.11 · Universal Explorer
+
+- adds an introduction-path classification to every Explorer record without conflating ccTLD history with ICANN application rounds;
+- distinguishes `programRound` from `introductionPath` and records the evidence basis for direct, formal-type, documented-set and derived-era classifications;
+- adds the historical `.zr` ccTLD retirement record and the retired `.nato` TLD from documented IANA/ICANN historical evidence;
+- exposes origin/program fields in the searchable index and CSV export for all records;
+- keeps application-only strings explicitly distinct from delegated or formerly delegated TLDs;
+- marks the complete IANA-profile/TLD corpus separately from the still-incomplete cross-round application corpus.
+- publishes `tld_universe.csv` with 1,599 TLD/profile records and `application_only_strings.csv` with 9 curated application-only strings, explicitly non-exhaustive.
 
 ## v0.7.10 · profile links and corrections
 

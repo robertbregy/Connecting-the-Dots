@@ -1,0 +1,10 @@
+string,ascii_string,program_round,status,application_entity,geography,introduction_path,corpus_status,sources
+.geo,.geo,2000,notDelegated,,,intro2000,curated-not-exhaustive,https://archive.icann.org/en/tlds/
+.home,.home,2012,notDelegated,,,intro2012,curated-not-exhaustive,https://newgtlds.icann.org/en/program-status/statistics
+.lugano,.lugano,2026,notDelegated,,"Lugano, Switzerland",intro2026Application,curated-not-exhaustive,
+.magic,.magic,2000,notDelegated,,,intro2000,curated-not-exhaustive,https://archive.icann.org/en/tlds/ads1/
+.mail,.mail,2004,notDelegated,Anti-Spam Community Registry,United Kingdom,intro2004,curated-not-exhaustive,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
+.soup,.soup,2000,notDelegated,,,intro2000,curated-not-exhaustive,https://archive.icann.org/en/tlds/ads1/
+.union,.union,2000,notDelegated,,,intro2000,curated-not-exhaustive,https://archive.icann.org/en/tlds/union1/ | https://archive.icann.org/en/tlds/
+.wap,.wap,2000,notDelegated,,,intro2000,curated-not-exhaustive,https://archive.icann.org/en/tlds/
+.war,.war,2000,notDelegated,,,intro2000,curated-not-exhaustive,https://archive.icann.org/en/tlds/ads1/

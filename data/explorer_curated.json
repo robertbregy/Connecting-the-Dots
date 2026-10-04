@@ -2128,6 +2128,61 @@
       ]
     },
     {
+      "string": ".nato",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "NATO / international organization",
+      "applicationEntity": "North Atlantic Treaty Organization",
+      "geography": "International",
+      "themes": [
+        "history",
+        "publicInfrastructure"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.icann.org/en/board-activities-and-meetings/materials/transcript-part-iii-ec-pop-meeting-with-icann-board-members-25-11-1998-en"
+      ],
+      "historicalRootStatus": "retired",
+      "historicalStatus": "retired",
+      "historicalFormalType": "generic",
+      "events": [
+        {
+          "period": "pre-1996",
+          "status": "delegated",
+          "type": "generic",
+          "entity": "North Atlantic Treaty Organization",
+          "geography": "International",
+          "source": [
+            "https://www.icann.org/en/board-activities-and-meetings/materials/transcript-part-iii-ec-pop-meeting-with-icann-board-members-25-11-1998-en"
+          ],
+          "current": false
+        },
+        {
+          "period": "1996",
+          "status": "retired",
+          "type": "generic",
+          "entity": "North Atlantic Treaty Organization",
+          "geography": "International",
+          "source": [
+            "https://www.icann.org/en/board-activities-and-meetings/materials/transcript-part-iii-ec-pop-meeting-with-icann-board-members-25-11-1998-en"
+          ],
+          "current": false
+        }
+      ]
+    },
+    {
       "string": ".net",
       "round": "legacy",
       "historicalRounds": [
@@ -3288,6 +3343,61 @@
           "geography": "Yugoslavia",
           "source": [
             "https://www.iana.org/reports/2010/yu-report-01apr2010.html"
+          ],
+          "current": false
+        }
+      ],
+      "historicalFormalType": "country-code"
+    },
+    {
+      "string": ".zr",
+      "round": "legacy",
+      "historicalRounds": [
+        "legacy"
+      ],
+      "originRound": "",
+      "originRoundSources": [],
+      "editorialDesignation": "",
+      "representedPlace": "Zaire / Democratic Republic of the Congo",
+      "applicationEntity": "",
+      "geography": "Zaire / Democratic Republic of the Congo",
+      "themes": [
+        "geopolitics",
+        "history"
+      ],
+      "contentionCount": null,
+      "contentionYear": null,
+      "strange": true,
+      "city": false,
+      "noteKey": null,
+      "readingKey": null,
+      "placeholder": false,
+      "group": "",
+      "source": [
+        "https://www.iana.org/reports/2001/zr-report-20jun01.html"
+      ],
+      "historicalRootStatus": "retired",
+      "historicalStatus": "retired",
+      "events": [
+        {
+          "period": "1997",
+          "status": "transition",
+          "type": "country-code",
+          "entity": "",
+          "geography": "Zaire -> Democratic Republic of the Congo",
+          "source": [
+            "https://www.iana.org/reports/2001/zr-report-20jun01.html"
+          ],
+          "current": false
+        },
+        {
+          "period": "2001-06-20",
+          "status": "retired",
+          "type": "country-code",
+          "entity": "",
+          "geography": "Zaire / Democratic Republic of the Congo",
+          "source": [
+            "https://www.iana.org/reports/2001/zr-report-20jun01.html"
           ],
           "current": false
         }

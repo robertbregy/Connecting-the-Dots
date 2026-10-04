@@ -1,6 +1,6 @@
-/* v0.7.10: release date is distinct from the data snapshot date */
+/* v0.7.11: release date is distinct from the data snapshot date */
 window.DOT_PUBLICATION={
-  version:'0.7.10',
+  version:'0.7.11',
   releasedOn:'2026-10-04',
   state:'pre-reveal',
   asOf:'2026-10-02',

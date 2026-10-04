@@ -88,3 +88,16 @@ The canonical research, normalized IANA snapshot and all CSV files are unchanged
 `release_history.json` records each recent release date, a localized summary key, the IANA snapshot date and evidence SHA-256. It is included in the data pack. The manifest records its hash and the web-delivery assets' sizes and hashes. Updates require manual source review and a new dated entry; no automatic polling or scheduled source refresh is configured.
 
 Unreported values remain blank in CSV. Contact organization extraction respects the source's optional organization slot; a missing slot is not filled from an address or personal contact name. Dedicated personal contact-name, address, email and telephone fields are omitted from the normalized publication, while the complete original public source bytes are preserved for verification.
+
+## v0.7.11 Universal Explorer
+
+The Explorer contains **1,608 records**. Of these, **1,599** belong to the dated TLD/profile universe: all **1,595 individual IANA profiles** in the preserved 4 October 2026 snapshot plus four historically delegated TLDs that are absent from the current IANA database (`.cs`, `.yu`, `.zr`, `.nato`). The remaining **9** records are curated application-only strings and are deliberately kept outside the TLD universe.
+
+`introduction_path` classifies how a record entered, or attempted to enter, the top-level namespace. `program_round` is separate and is left empty where an ICANN application round is not applicable, notably for ordinary ccTLD delegations. `introduction_basis` and `introduction_path_sources` state how the classification was established. This avoids treating a ccTLD registration date as an invented ICANN round.
+
+- `tld_universe.csv` — exhaustive for the publication's dated TLD/profile definition above; 1,599 records.
+- `application_only_strings.csv` — 9 curated strings that were proposed/applied for but have no IANA profile in the snapshot. This file is **explicitly non-exhaustive** and is not a substitute for a future complete 2000/2004/2012/2026 application corpus.
+- `explorer_catalog.csv` — the combined 1,608-record search/filter catalogue, including both universes with their status and provenance fields.
+
+The TLD-coverage claim excludes never-delegated ISO codes and other labels that were never TLDs in the public DNS root. The cross-round application corpus remains a separate workstream and is not represented as complete.
+

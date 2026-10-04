@@ -127,6 +127,8 @@ string,period,status,type,entity,geography,current,provenance,sources
 .name,2000,selected,application,,,no,,https://archive.icann.org/en/tlds/
 .name,2001-08-17,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/name.html
 .name,2026-10-04,delegated,generic-restricted,"VeriSign Information Services, Inc.",United States of America (the),yes,,https://www.iana.org/domains/root/db/name.html
+.nato,pre-1996,delegated,generic,North Atlantic Treaty Organization,International,no,,https://www.icann.org/en/board-activities-and-meetings/materials/transcript-part-iii-ec-pop-meeting-with-icann-board-members-25-11-1998-en
+.nato,1996,retired,generic,North Atlantic Treaty Organization,International,no,,https://www.icann.org/en/board-activities-and-meetings/materials/transcript-part-iii-ec-pop-meeting-with-icann-board-members-25-11-1998-en
 .net,1985-01-01,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/net.html
 .net,2026-10-04,delegated,generic,VeriSign Global Registry Services,United States of America (the),yes,,https://www.iana.org/domains/root/db/net.html
 .ninja,2013-12-19,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/ninja.html
@@ -201,5 +203,7 @@ string,period,status,type,entity,geography,current,provenance,sources
 .xxx,2026-10-04,delegated,sponsored,ICM Registry LLC,United States of America (the),yes,,https://www.iana.org/domains/root/db/xxx.html
 .yu,1989,delegated,country-code,,Yugoslavia,no,,https://www.iana.org/reports/2010/yu-report-01apr2010.html
 .yu,2010,retired,country-code,,Yugoslavia,no,,https://www.iana.org/reports/2010/yu-report-01apr2010.html
+.zr,1997,transition,country-code,,Zaire -> Democratic Republic of the Congo,no,,https://www.iana.org/reports/2001/zr-report-20jun01.html
+.zr,2001-06-20,retired,country-code,,Zaire / Democratic Republic of the Congo,no,,https://www.iana.org/reports/2001/zr-report-20jun01.html
 .zuerich,2014-12-18,ianaRegistration,,,,no,,https://www.iana.org/domains/root/db/zuerich.html
 .zuerich,2026-10-04,delegated,generic,Kanton Zürich (Canton of Zurich),Switzerland,yes,,https://www.iana.org/domains/root/db/zuerich.html

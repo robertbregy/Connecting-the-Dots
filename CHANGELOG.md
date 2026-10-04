@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.7.11 · 4 October 2026
+
+- Universal Explorer origin model for every record.
+- Separate `programRound`, `introductionPath`, `introductionBasis`, and field-level introduction sources.
+- Added historical `.zr` retirement evidence and the retired `.nato` root TLD.
+- Search, filters and Explorer CSV now expose origin/program metadata.
+- Complete TLD/profile coverage is declared separately from the cross-round application corpus.
+- Export a 1,599-record `tld_universe.csv` plus a separate 9-record curated, non-exhaustive `application_only_strings.csv`.
+
 ## 0.7.10 · 4 October 2026
 
 - Localize regional map and chart labels; expose selected map modes and Explorer presets to assistive technology.

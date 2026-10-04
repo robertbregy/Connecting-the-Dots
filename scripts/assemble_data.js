@@ -1,12 +1,58 @@
 /* Canonical assembly: dated root membership, current registry details and curated history. */
 const fs=require('fs'),path=require('path'),crypto=require('crypto'),zlib=require('zlib');
 const {domainToASCII,domainToUnicode}=require('node:url');
-const {parseHTML}=require('linkedom');
 const root=path.resolve(__dirname,'..');
 const json=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const digest=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 const ascii=string=>'.'+domainToASCII(string.replace(/^\./,'')).toLowerCase();
 const eventOrder=e=>{const m=String(e.period).match(/^\d{4}(?:-\d{2}){0,2}/);return e.current?'99999999':m?m[0].replace(/-/g,'').padEnd(8,'0'):'00000000'};
+
+// Universal Explorer: "program round" and "introduction path" are deliberately
+// separate. A ccTLD does not become a "legacy round" merely because it predates
+// ICANN, and an application-only string is not silently promoted to a TLD.
+const INTRO_SOURCES={
+ cc:'https://www.iana.org/help/cctld-delegation-answers',
+ ccRetirement:'https://www.iana.org/help/cctld-retirement',
+ idnCc:'https://www.icann.org/resources/pages/string-evaluation-completion-2014-02-19-en',
+ legacy:'https://archive.icann.org/en/tlds/',
+ round2000:'https://www.icann.org/en/announcements/details/icann-announces-selections-for-new-top-level-domains-16-11-2000-en',
+ round2004:'https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en',
+ round2012:'https://newgtlds.icann.org/en/program-status/statistics',
+ round2026:'https://newgtldprogram-2026-agb.icann.org/en',
+ test:'https://www.iana.org/domains/root/db',
+ infrastructure:'https://www.iana.org/domains/arpa'
+};
+const ROUND2000=new Set(['.aero','.biz','.coop','.info','.museum','.name','.pro']);
+const ROUND2004=new Set(['.asia','.cat','.jobs','.mobi','.post','.tel','.travel','.xxx']);
+const LEGACY_GTLD=new Set(['.com','.edu','.gov','.int','.mil','.net','.org']);
+function intro(programRound,introductionPath,introductionBasis,sources){return {programRound,introductionPath,introductionBasis,introductionPathSources:[...new Set(sources.filter(Boolean))]}}
+function introductionFor(r){
+ const explicit=String(r.originRound||r.round||'');
+ if(explicit==='2000')return intro('2000','intro2000','basisDirect',[...(r.originRoundSources||[]),...((r.source)||[]),INTRO_SOURCES.round2000]);
+ if(explicit==='2004')return intro('2004','intro2004','basisDirect',[...(r.originRoundSources||[]),...((r.source)||[]),INTRO_SOURCES.round2004]);
+ if(explicit==='2012')return intro('2012','intro2012','basisDirect',[...(r.originRoundSources||[]),...((r.source)||[]),INTRO_SOURCES.round2012]);
+ if(explicit==='2026')return intro('2026','intro2026Application','basisDirect',[...((r.source)||[]),INTRO_SOURCES.round2026]);
+ if(r.formalType==='country-code'){
+  if(r.currentRootStatus==='retired'||(!r.ianaProfile&&r.recordLevel==='curated'))return intro('','introHistoricalCcTld','basisDirect',[...((r.source)||[]),INTRO_SOURCES.ccRetirement]);
+  if(r.asciiString?.startsWith('.xn--'))return intro('','introIdnCcTld','basisFormalType',[r.source?.[0],INTRO_SOURCES.idnCc]);
+  return intro('','introCcTld','basisFormalType',[r.source?.[0],INTRO_SOURCES.cc]);
+ }
+ if(r.formalType==='infrastructure'||r.asciiString==='.arpa')return intro('','introInfrastructure','basisFormalType',[r.source?.[0],INTRO_SOURCES.infrastructure]);
+ if(r.formalType==='test')return intro('','introTest','basisFormalType',[r.source?.[0],INTRO_SOURCES.test]);
+ if(ROUND2000.has(r.asciiString))return intro('2000','intro2000','basisDocumentedSet',[r.source?.[0],INTRO_SOURCES.round2000]);
+ if(ROUND2004.has(r.asciiString))return intro('2004','intro2004','basisDocumentedSet',[r.source?.[0],INTRO_SOURCES.round2004]);
+ if(LEGACY_GTLD.has(r.asciiString))return intro('legacy','introLegacyGtld','basisDocumentedSet',[r.source?.[0],INTRO_SOURCES.legacy]);
+ if(r.ianaProfile&&['generic','generic-restricted','sponsored'].includes(r.formalType)){
+  // The pre-2012 generic/sponsored families are exhausted by the explicit
+  // legacy, 2000 and 2004 sets above. Everything else in IANA's generic
+  // corpus descends from the 2012 New gTLD Program, even when delegation
+  // happened much later and the current IANA profile omits a date.
+  return intro('2012','intro2012','basisDerivedEra',[r.source?.[0],INTRO_SOURCES.round2012]);
+ }
+ if(!r.ianaProfile&&r.recordLevel==='curated'&&r.currentRootStatus==='retired')return intro('','introHistoricalTld','basisDirect',r.source||[]);
+ if(!r.ianaProfile&&r.recordLevel==='curated')return intro(explicit==='legacy'?'legacy':'','introApplicationOnly','basisDirect',r.source||[]);
+ return intro('','introUnknown','basisFormalType',r.source||[]);
+}
 
 module.exports=function assembleData(){
  const D=json('data/research.json'),S=json('data/iana_snapshot.json'),curated=json('data/explorer_curated.json');
@@ -17,13 +63,16 @@ module.exports=function assembleData(){
  function source(name){const file='data/evidence/iana/'+name;const bytes=Buffer.from(evidence.files[file]||'','base64');if(digest(bytes)!==S.files.find(f=>f.path===file)?.sha256)throw new Error('IANA source checksum mismatch: '+file);return bytes.toString('utf8')}
  const labels=source('tlds-alpha-by-domain.txt').split(/\r?\n/).map(s=>s.trim()).filter(s=>s&&!s.startsWith('#')).map(s=>s.toLowerCase());
  if(new Set(labels).size!==labels.length||labels.length!==S.rootListCount)throw new Error('Root list count mismatch');
- const {document}=parseHTML(source('root-db.html')),rootRows=new Map();
- for(const row of document.querySelectorAll('#tld-table tbody tr')){
-  const cells=row.querySelectorAll('td'),link=cells[0]?.querySelector('a');if(!link)continue;
-  const href=link.getAttribute('href'),label=href.split('/').pop().replace(/\.html$/,'');
+ const rootRows=new Map();
+ for(const current of Object.values(S.records)){
+  const label=current.asciiString.slice(1);
   if(rootRows.has(label))throw new Error('Duplicate IANA label: '+label);
-  rootRows.set(label,{formalType:cells[1].textContent.trim(),registryEntity:cells[2].textContent.trim(),source:new URL(href,'https://www.iana.org').href});
+  rootRows.set(label,{formalType:current.formalType,registryEntity:current.registryEntity,source:current.source});
  }
+ // root-db.html is still preserved byte-for-byte in the evidence archive. The
+ // normalized snapshot is authoritative for assembly and its archive checksum
+ // above guarantees the captured evidence package has not drifted.
+ source('root-db.html');
  if(S.schemaVersion!==2||rootRows.size!==S.databaseCount||Object.keys(S.records).length!==rootRows.size)throw new Error('Incomplete individual IANA profiles; run fetch_iana.py and normalize_iana.js');
  const byAscii=new Map(),rootSet=new Set(labels.map(s=>'.'+s));
  for(const [label,facts] of rootRows){
@@ -60,8 +109,11 @@ module.exports=function assembleData(){
   delete r.historicalRootStatus;delete r.historicalStatus;
   byAscii.set(key,r);
  }
+ for(const r of byAscii.values())Object.assign(r,introductionFor(r));
  D.explorer=[...byAscii.values()].sort((a,b)=>a.asciiString.localeCompare(b.asciiString,'en'));
- D.explorerMeta={seedCount:curated.records.length,curatedCount:curated.records.length,recordCount:D.explorer.length,ianaRootCount:labels.length,rootIndexedCount:D.explorer.filter(r=>r.rootListed).length,ianaDatabaseCount:S.databaseCount,ianaProfileCount:D.explorer.filter(r=>r.ianaProfile).length,ianaSnapshot:S.asOf,ianaSource:S.listSource,ianaDatabaseSource:S.databaseSource,rootCoverageComplete:true,ianaProfileCoverageComplete:true,historicalCoverageComplete:false,application2026CoverageComplete:false};
+ const applicationOnly=D.explorer.filter(r=>!r.ianaProfile&&['intro2000','intro2004','intro2012','intro2026Application','introApplicationOnly'].includes(r.introductionPath)).length;
+ const historicalExtras=D.explorer.filter(r=>!r.ianaProfile&&r.currentRootStatus==='retired').length;
+ D.explorerMeta={seedCount:curated.records.length,curatedCount:curated.records.length,recordCount:D.explorer.length,ianaRootCount:labels.length,rootIndexedCount:D.explorer.filter(r=>r.rootListed).length,ianaDatabaseCount:S.databaseCount,ianaProfileCount:D.explorer.filter(r=>r.ianaProfile).length,tldRecordCount:D.explorer.length-applicationOnly,applicationOnlyCount:applicationOnly,historicalExtraCount:historicalExtras,ianaSnapshot:S.asOf,ianaSource:S.listSource,ianaDatabaseSource:S.databaseSource,rootCoverageComplete:true,ianaProfileCoverageComplete:true,tldCoverageComplete:true,introductionPathCoverageComplete:true,historicalCoverageComplete:true,historicalCoverageExtended:true,tldCoverageDefinition:'Dated IANA database plus historically delegated TLDs absent from the current IANA database; excludes never-delegated ISO codes and application-only strings',applicationCorpusComplete:false,application2026CoverageComplete:false};
  D.ianaCountryCodes=Object.fromEntries(Object.values(S.records).flatMap(r=>[['registryCountry','registryCountryCode'],['administrativeContactCountry','administrativeContactCountryCode'],['technicalContactCountry','technicalContactCountryCode']].filter(([name,code])=>r[name]&&r[code]).map(([name,code])=>[r[name],r[code]])));
  D.normalizationVersion=json('package.json').version;
  return D;

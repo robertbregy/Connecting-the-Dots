@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.10"
+VERSION = "0.7.11"
 
 
 def csv_records(path: Path) -> int:
@@ -69,6 +69,8 @@ def build_manifest() -> None:
             "Blank 2026 aggregate values are scaffolding, not observations.",
             "Every preserved IANA database entry has a normalized profile; root-list membership is separate from database presence.",
             "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity.",
+            "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database.",
+            "application_only_strings.csv is deliberately separate and curated, not an exhaustive cross-round application corpus.",
         ],
         "current_root_snapshot": json.loads((DATA / "iana_snapshot.json").read_text())["asOf"],
         "iana_evidence": "iana_snapshot.json",
