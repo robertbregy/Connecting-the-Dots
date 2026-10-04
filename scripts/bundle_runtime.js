@@ -23,7 +23,7 @@ write('data/data_bundle.js','DOT_DATA',window.DOT_DATA);
 // the searchable index; record details are requested in eight bounded batches.
 const full=window.DOT_DATA,version=JSON.parse(fs.readFileSync(path.join(root,'package.json'))).version;
 const shardFor=label=>[...label].reduce((h,c)=>(h*31+c.charCodeAt(0))>>>0,0)%8;
-const fields=['string','asciiString','recordLevel','ianaProfile','rootListed','currentRootStatus','status','type','entity','registryCountry','registryCountryCode','round','historicalRounds','originRound','editorialDesignation','themes','applicationEntity','geography','representedPlace','group','noteKey','readingKey','strange','city','contentionCount','placeholder','programRound','introductionPath','introductionBasis','applicationCount','applicationRounds','applicationApplicants'];
+const fields=['string','asciiString','recordLevel','ianaProfile','rootListed','currentRootStatus','status','type','entity','registryCountry','registryCountryCode','round','historicalRounds','originRound','editorialDesignation','themes','applicationEntity','geography','representedPlace','group','noteKey','readingKey','strange','city','contentionCount','placeholder','programRound','introductionPath','introductionBasis','applicationCount','applicationRounds','applicationApplicants','governanceCaseIds'];
 const searchFields=r=>[r.technicalContactOrganization,r.administrativeContactOrganization,r.whoisServer,r.registryUrl,...(r.rdapServers||[]),...(r.nameServers||[]).flatMap(n=>[n.hostname,...n.ipAddresses])].filter(Boolean).join(' ');
 const index=full.explorer.map(r=>({...Object.fromEntries(fields.filter(k=>r[k]!==undefined).map(k=>[k,r[k]])),technicalSearch:searchFields(r),profileShard:shardFor(r.asciiString),sourceUrl:r.source?.[0]||''}));
 const site={...full,explorer:index,profileDelivery:{version,shards:8}};
@@ -52,6 +52,10 @@ const eventRows=[];
 for(const r of (window.DOT_DATA.explorer||[])){for(const e of (r.events||[])){eventRows.push({string:r.string,ascii_string:r.asciiString,period:e.period,status:e.status,event_class:e.eventClass||'',type:e.type,entity:e.entity,geography:e.geography,detail:e.detail||'',outcome:e.outcomeKey||'',current:e.current?'yes':'no',provenance:e.provenanceKey?(e.provenanceKey+(e.provenanceDate?' · '+e.provenanceDate:'')):'',sources:e.source||[]})}}
 writeCsv('data/explorer_events.csv',eventHeaders,eventRows);
 writeCsv('data/tld_life_histories.csv',eventHeaders,eventRows);
+const governanceHeaders=['case_id','strings','period','categories','mechanisms','question_key','fact_key','reading_key','outcome_key','sources'];
+writeCsv('data/governance_cases.csv',governanceHeaders,(window.DOT_DATA.governanceCases?.cases||[]).map(c=>({case_id:c.id,strings:c.strings||[],period:c.period||'',categories:c.categoryKeys||[],mechanisms:c.mechanisms||[],question_key:c.questionKey||'',fact_key:c.factKey||'',reading_key:c.readingKey||'',outcome_key:c.outcomeKey||'',sources:(c.sources||[]).map(s=>s.url)})));
+const governanceEventHeaders=['case_id','strings','period','event_key','sources'];
+writeCsv('data/governance_case_events.csv',governanceEventHeaders,(window.DOT_DATA.governanceCases?.cases||[]).flatMap(c=>(c.events||[]).map(e=>({case_id:c.id,strings:c.strings||[],period:e.period||'',event_key:e.textKey||'',sources:e.sources||[]}))));
 const sourceHeaders=['label','url','role'];
 writeCsv('data/sources.csv',sourceHeaders,(window.DOT_DATA.sources||[]).map(s=>({label:s[0]||'',url:s[1]||'',role:s[2]||''})));
 const driftHeaders=['string','formal_type','formal_origin','adopted_association','category','sources'];

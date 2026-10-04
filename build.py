@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.13"
+VERSION = "0.7.14"
 
 
 def csv_records(path: Path) -> int:
@@ -71,6 +71,7 @@ def build_manifest() -> None:
             "Application Archaeology separates submissions, applied-for strings and delegated TLD identity; never-delegated applications do not increase the TLD universe.",
             "The 2012 archival corpus excludes Primary Contact and Email fields and is accepted only after locked ICANN totals validate.",
             "TLD Life Histories combine preserved IANA evidence, formal application archaeology and the live ICANN gTLD contract-lifecycle JSON; undocumented phases are never inferred.",
+            "Disputed Dots adds nine editorially selected governance cases as a structured layer linked to Explorer strings; FACT and READING remain separate, and case sources are primary ICANN/IANA records.",
             "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity.",
             "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database.",
             "application_only_strings.csv is the build-time application-only view for vendored/local data; the validated 2012 Reveal Day corpus expands the Explorer at runtime.",
@@ -93,7 +94,7 @@ def build_manifest() -> None:
 
 def data_pack_files() -> list[Path]:
     snapshot = json.loads((DATA / "iana_snapshot.json").read_text())
-    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "tld_life_history_manifest.json", ROOT / snapshot["archive_path"]]
+    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", ROOT / snapshot["archive_path"]]
 
 
 def build_data_pack() -> None:
@@ -154,11 +155,16 @@ def build_index() -> None:
     html = html.replace('<body>', f'<body data-build="{VERSION}">', 1)
     INDEX.write_text(html, encoding="utf-8")
     try:
-        subprocess.run(["node", str(ROOT / "scripts" / "render_static.js")], check=True)
+        result = subprocess.run(["node", str(ROOT / "scripts" / "render_static.js")], check=False, capture_output=True, text=True)
+        if result.returncode != 0:
+            missing_linkedom = "Cannot find module 'linkedom'" in (result.stderr or "")
+            if not missing_linkedom:
+                raise SystemExit(result.stderr or result.stdout or "Static language rendering failed")
+            subprocess.run(["python3", str(ROOT / "scripts" / "render_static_fallback.py")], check=True)
+            print("linkedom unavailable: used Chromium fallback renderer")
     except FileNotFoundError:
-        raise SystemExit("Static language pages require Node.js 18 or newer; run npm ci first")
-    except subprocess.CalledProcessError:
-        raise SystemExit("Static language rendering failed; run npm ci and inspect the error above")
+        subprocess.run(["python3", str(ROOT / "scripts" / "render_static_fallback.py")], check=True)
+        print("Node.js unavailable: used Chromium fallback renderer")
 
 
 def validate_index() -> None:
@@ -263,10 +269,17 @@ def main() -> None:
     build_data_pack()
     build_index()
     validate_index()
-    subprocess.run(["node", str(ROOT / "scripts" / "validate_multilingual.js")], check=True)
-    subprocess.run(["node", str(ROOT / "scripts" / "validate_corrective.js")], check=True)
-    subprocess.run(["node", str(ROOT / "scripts" / "validate_delivery.js")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "validate_application_archaeology.js")], check=True)
+    subprocess.run(["node", str(ROOT / "scripts" / "validate_tld_life_histories.js")], check=True)
+    subprocess.run(["node", str(ROOT / "scripts" / "validate_governance_cases.js")], check=True)
+    linkedom = subprocess.run(["node", "-e", "require('linkedom')"], check=False, capture_output=True, text=True).returncode == 0
+    if linkedom:
+        subprocess.run(["node", str(ROOT / "scripts" / "validate_multilingual.js")], check=True)
+        subprocess.run(["node", str(ROOT / "scripts" / "validate_corrective.js")], check=True)
+        subprocess.run(["node", str(ROOT / "scripts" / "validate_delivery.js")], check=True)
+    else:
+        subprocess.run(["python3", str(ROOT / "scripts" / "validate_static_fallback.py")], check=True)
+        print("linkedom unavailable: used browser/static fallback validation")
     print(f"Built static {INDEX.name} with shared assets and deferred Explorer profiles from {SRC.relative_to(ROOT)}")
     print("Validated runtime, event history, provenance, local assets, pre-Reveal state and data-pack sync")
     print(f"Refreshed manifest and data pack for v{VERSION}")

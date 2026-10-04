@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-04",
+  "selectionKey": "disputesSelectionNote",
+  "mechanisms": [
+    {
+      "id": "gac",
+      "labelKey": "mechanismGac",
+      "bodyKey": "mechanismGacBody"
+    },
+    {
+      "id": "objection",
+      "labelKey": "mechanismObjection",
+      "bodyKey": "mechanismObjectionBody"
+    },
+    {
+      "id": "cpe",
+      "labelKey": "mechanismCpe",
+      "bodyKey": "mechanismCpeBody"
+    },
+    {
+      "id": "auction",
+      "labelKey": "mechanismAuction",
+      "bodyKey": "mechanismAuctionBody"
+    },
+    {
+      "id": "accountability",
+      "labelKey": "mechanismAccountability",
+      "bodyKey": "mechanismAccountabilityBody"
+    },
+    {
+      "id": "board",
+      "labelKey": "mechanismBoard",
+      "bodyKey": "mechanismBoardBody"
+    }
+  ],
+  "cases": [
+    {
+      "id": "xxx",
+      "strings": [
+        ".xxx"
+      ],
+      "period": "2000–2011",
+      "categoryKeys": [
+        "caseCategoryPublicPolicy",
+        "caseCategoryAccountability"
+      ],
+      "mechanisms": [
+        "board",
+        "accountability"
+      ],
+      "questionKey": "caseXxxQuestion",
+      "factKey": "caseXxxFact",
+      "readingKey": "caseXxxReading",
+      "outcomeKey": "caseXxxOutcome",
+      "events": [
+        {
+          "period": "2000",
+          "textKey": "caseXxxEvent1",
+          "sources": [
+            "https://www.icann.org/en/reviews/affirmation/atrt-final-recommendations-31dec10-en.pdf"
+          ]
+        },
+        {
+          "period": "2005",
+          "textKey": "caseXxxEvent2",
+          "sources": [
+            "https://www.icann.org/en/reviews/affirmation/atrt-final-recommendations-31dec10-en.pdf"
+          ]
+        },
+        {
+          "period": "2007",
+          "textKey": "caseXxxEvent3",
+          "sources": [
+            "https://www.icann.org/en/reviews/affirmation/atrt-final-recommendations-31dec10-en.pdf"
+          ]
+        },
+        {
+          "period": "2008–2010",
+          "textKey": "caseXxxEvent4",
+          "sources": [
+            "https://www.icann.org/en/reviews/affirmation/atrt-final-recommendations-31dec10-en.pdf"
+          ]
+        },
+        {
+          "period": "2011",
+          "textKey": "caseXxxEvent5",
+          "sources": [
+            "https://www.iana.org/domains/root/db/xxx.html"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "ICANN ATRT — .XXX case study",
+          "url": "https://www.icann.org/en/reviews/affirmation/atrt-final-recommendations-31dec10-en.pdf",
+          "role": "primary"
+        },
+        {
+          "label": "IANA — .XXX delegation record",
+          "url": "https://www.iana.org/domains/root/db/xxx.html",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "amazon",
+      "strings": [
+        ".amazon",
+        ".亚马逊",
+        ".アマゾン"
+      ],
+      "period": "2012–2020",
+      "categoryKeys": [
+        "caseCategoryGeography",
+        "caseCategoryGovernment",
+        "caseCategoryAccountability"
+      ],
+      "mechanisms": [
+        "gac",
+        "accountability",
+        "board"
+      ],
+      "questionKey": "caseAmazonQuestion",
+      "factKey": "caseAmazonFact",
+      "readingKey": "caseAmazonReading",
+      "outcomeKey": "caseAmazonOutcome",
+      "events": [
+        {
+          "period": "2012",
+          "textKey": "caseAmazonEvent1",
+          "sources": [
+            "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-regular-meeting-of-the-icann-board-10-03-2019-en"
+          ]
+        },
+        {
+          "period": "2013–2014",
+          "textKey": "caseAmazonEvent2",
+          "sources": [
+            "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-regular-meeting-of-the-icann-board-10-03-2019-en"
+          ]
+        },
+        {
+          "period": "2016–2017",
+          "textKey": "caseAmazonEvent3",
+          "sources": [
+            "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-regular-meeting-of-the-icann-board-29-10-2017-en"
+          ]
+        },
+        {
+          "period": "2019",
+          "textKey": "caseAmazonEvent4",
+          "sources": [
+            "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-special-meeting-of-the-icann-board-15-05-2019-en"
+          ]
+        },
+        {
+          "period": "2020",
+          "textKey": "caseAmazonEvent5",
+          "sources": [
+            "https://www.iana.org/domains/root/db/amazon.html"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "ICANN Board — .AMAZON history and GAC advice",
+          "url": "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-regular-meeting-of-the-icann-board-10-03-2019-en",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN Board — processing of .AMAZON applications",
+          "url": "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-special-meeting-of-the-icann-board-15-05-2019-en",
+          "role": "primary"
+        },
+        {
+          "label": "IANA — .AMAZON delegation record",
+          "url": "https://www.iana.org/domains/root/db/amazon.html",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "africa",
+      "strings": [
+        ".africa"
+      ],
+      "period": "2012–2017",
+      "categoryKeys": [
+        "caseCategoryGeography",
+        "caseCategoryGovernment",
+        "caseCategoryAccountability"
+      ],
+      "mechanisms": [
+        "gac",
+        "accountability",
+        "board"
+      ],
+      "questionKey": "caseAfricaQuestion",
+      "factKey": "caseAfricaFact",
+      "readingKey": "caseAfricaReading",
+      "outcomeKey": "caseAfricaOutcome",
+      "events": [
+        {
+          "period": "2012",
+          "textKey": "caseAfricaEvent1",
+          "sources": [
+            "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-regular-meeting-of-the-icann-board-03-03-2016-en"
+          ]
+        },
+        {
+          "period": "2013",
+          "textKey": "caseAfricaEvent2",
+          "sources": [
+            "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-regular-meeting-of-the-icann-board-03-03-2016-en"
+          ]
+        },
+        {
+          "period": "2015",
+          "textKey": "caseAfricaEvent3",
+          "sources": [
+            "https://www.icann.org/en/announcements/details/independent-review-panel-finds-in-favor-of-dca-trust-makes-recommendation-to-icanns-board-to-resume-evaluation-of-dcas-application-10-7-2015-en"
+          ]
+        },
+        {
+          "period": "2016",
+          "textKey": "caseAfricaEvent4",
+          "sources": [
+            "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-regular-meeting-of-the-icann-board-03-03-2016-en"
+          ]
+        },
+        {
+          "period": "2017",
+          "textKey": "caseAfricaEvent5",
+          "sources": [
+            "https://www.iana.org/domains/root/db/africa.html"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "ICANN — DCA .AFRICA IRP outcome",
+          "url": "https://www.icann.org/en/announcements/details/independent-review-panel-finds-in-favor-of-dca-trust-makes-recommendation-to-icanns-board-to-resume-evaluation-of-dcas-application-10-7-2015-en",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN Board — .AFRICA processing",
+          "url": "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-regular-meeting-of-the-icann-board-03-03-2016-en",
+          "role": "primary"
+        },
+        {
+          "label": "IANA — .AFRICA delegation record",
+          "url": "https://www.iana.org/domains/root/db/africa.html",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "web",
+      "strings": [
+        ".web"
+      ],
+      "period": "2012–2026",
+      "categoryKeys": [
+        "caseCategoryCompetition",
+        "caseCategoryEconomicControl",
+        "caseCategoryAccountability"
+      ],
+      "mechanisms": [
+        "auction",
+        "accountability",
+        "board"
+      ],
+      "questionKey": "caseWebQuestion",
+      "factKey": "caseWebFact",
+      "readingKey": "caseWebReading",
+      "outcomeKey": "caseWebOutcome",
+      "events": [
+        {
+          "period": "2012",
+          "textKey": "caseWebEvent1",
+          "sources": [
+            "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-regular-meeting-of-the-icann-board-10-03-2022-en"
+          ]
+        },
+        {
+          "period": "2016",
+          "textKey": "caseWebEvent2",
+          "sources": [
+            "https://www.icann.org/en/announcements/details/results-available-for-27-july-2016-new-gtld-program-auction-28-7-2016-en"
+          ]
+        },
+        {
+          "period": "2016",
+          "textKey": "caseWebEvent3",
+          "sources": [
+            "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-regular-meeting-of-the-icann-board-10-03-2022-en"
+          ]
+        },
+        {
+          "period": "2018–2021",
+          "textKey": "caseWebEvent4",
+          "sources": [
+            "https://www.icann.org/resources/pages/irp-afilias-v-icann-2018-11-30-en"
+          ]
+        },
+        {
+          "period": "2026",
+          "textKey": "caseWebEvent5",
+          "sources": [
+            "https://www.iana.org/domains/root/db/web.html"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "ICANN — 2016 .WEB auction result",
+          "url": "https://www.icann.org/en/announcements/details/results-available-for-27-july-2016-new-gtld-program-auction-28-7-2016-en",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN Board — .WEB IRP and Verisign arrangement",
+          "url": "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-regular-meeting-of-the-icann-board-10-03-2022-en",
+          "role": "primary"
+        },
+        {
+          "label": "IANA — .WEB delegation record",
+          "url": "https://www.iana.org/domains/root/db/web.html",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "winevin",
+      "strings": [
+        ".wine",
+        ".vin"
+      ],
+      "period": "2012–2015",
+      "categoryKeys": [
+        "caseCategoryGeography",
+        "caseCategoryLegalRights",
+        "caseCategoryGovernment"
+      ],
+      "mechanisms": [
+        "gac",
+        "board"
+      ],
+      "questionKey": "caseWineQuestion",
+      "factKey": "caseWineFact",
+      "readingKey": "caseWineReading",
+      "outcomeKey": "caseWineOutcome",
+      "events": [
+        {
+          "period": "2012",
+          "textKey": "caseWineEvent1",
+          "sources": [
+            "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-meeting-of-the-new-gtld-program-06-06-2014-en"
+          ]
+        },
+        {
+          "period": "2013",
+          "textKey": "caseWineEvent2",
+          "sources": [
+            "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-meeting-of-the-new-gtld-program-06-06-2014-en"
+          ]
+        },
+        {
+          "period": "2014",
+          "textKey": "caseWineEvent3",
+          "sources": [
+            "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-meeting-of-the-new-gtld-program-22-03-2014-en"
+          ]
+        },
+        {
+          "period": "2015",
+          "textKey": "caseWineEvent4",
+          "sources": [
+            "https://www.iana.org/domains/root/db/wine.html",
+            "https://www.iana.org/domains/root/db/vin.html"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "ICANN Board — .WINE/.VIN and geographic indications",
+          "url": "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-meeting-of-the-new-gtld-program-22-03-2014-en",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN Board — .WINE/.VIN processing",
+          "url": "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-meeting-of-the-new-gtld-program-06-06-2014-en",
+          "role": "primary"
+        },
+        {
+          "label": "IANA — .WINE delegation record",
+          "url": "https://www.iana.org/domains/root/db/wine.html",
+          "role": "primary"
+        },
+        {
+          "label": "IANA — .VIN delegation record",
+          "url": "https://www.iana.org/domains/root/db/vin.html",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "patagonia",
+      "strings": [
+        ".patagonia"
+      ],
+      "period": "2012–2013",
+      "categoryKeys": [
+        "caseCategoryGeography",
+        "caseCategoryLegalRights"
+      ],
+      "mechanisms": [
+        "gac",
+        "objection"
+      ],
+      "questionKey": "casePatagoniaQuestion",
+      "factKey": "casePatagoniaFact",
+      "readingKey": "casePatagoniaReading",
+      "outcomeKey": "casePatagoniaOutcome",
+      "events": [
+        {
+          "period": "2012",
+          "textKey": "casePatagoniaEvent1",
+          "sources": [
+            "https://gtldresult.icann.org/applicationstatus/applicationdetails/1466"
+          ]
+        },
+        {
+          "period": "2012–2013",
+          "textKey": "casePatagoniaEvent2",
+          "sources": [
+            "https://gtldresult.icann.org/applicationstatus/applicationdetails/1466",
+            "https://newgtlds.icann.org/en/program-status/odr/determination"
+          ]
+        },
+        {
+          "period": "2013",
+          "textKey": "casePatagoniaEvent3",
+          "sources": [
+            "https://gtldresult.icann.org/applicationstatus/applicationdetails/1466"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "ICANN — .PATAGONIA application record",
+          "url": "https://gtldresult.icann.org/applicationstatus/applicationdetails/1466",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN — objection determinations",
+          "url": "https://newgtlds.icann.org/en/program-status/odr/determination",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "islamhalal",
+      "strings": [
+        ".islam",
+        ".halal"
+      ],
+      "period": "2012–2018",
+      "categoryKeys": [
+        "caseCategoryCommunity",
+        "caseCategoryReligion",
+        "caseCategoryGovernment",
+        "caseCategoryAccountability"
+      ],
+      "mechanisms": [
+        "gac",
+        "objection",
+        "accountability",
+        "board"
+      ],
+      "questionKey": "caseIslamQuestion",
+      "factKey": "caseIslamFact",
+      "readingKey": "caseIslamReading",
+      "outcomeKey": "caseIslamOutcome",
+      "events": [
+        {
+          "period": "2012",
+          "textKey": "caseIslamEvent1",
+          "sources": [
+            "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-special-meeting-of-the-icann-board-03-10-2018-en"
+          ]
+        },
+        {
+          "period": "2013–2014",
+          "textKey": "caseIslamEvent2",
+          "sources": [
+            "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-special-meeting-of-the-icann-board-03-10-2018-en"
+          ]
+        },
+        {
+          "period": "2017",
+          "textKey": "caseIslamEvent3",
+          "sources": [
+            "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-regular-meeting-of-the-icann-board-15-03-2018-en"
+          ]
+        },
+        {
+          "period": "2018",
+          "textKey": "caseIslamEvent4",
+          "sources": [
+            "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-special-meeting-of-the-icann-board-03-10-2018-en"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "ICANN Board — .HALAL/.ISLAM final decision",
+          "url": "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-special-meeting-of-the-icann-board-03-10-2018-en",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN Board — .HALAL/.ISLAM IRP consideration",
+          "url": "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-regular-meeting-of-the-icann-board-15-03-2018-en",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "merck",
+      "strings": [
+        ".merck",
+        ".emerck",
+        ".merckmsd"
+      ],
+      "period": "2012–2026",
+      "categoryKeys": [
+        "caseCategoryLegalRights",
+        "caseCategoryCompetition",
+        "caseCategoryAccountability"
+      ],
+      "mechanisms": [
+        "objection",
+        "cpe",
+        "accountability"
+      ],
+      "questionKey": "caseMerckQuestion",
+      "factKey": "caseMerckFact",
+      "readingKey": "caseMerckReading",
+      "outcomeKey": "caseMerckOutcome",
+      "events": [
+        {
+          "period": "2012",
+          "textKey": "caseMerckEvent1",
+          "sources": [
+            "https://newgtlds.icann.org/en/program-status/odr/filings"
+          ]
+        },
+        {
+          "period": "2013",
+          "textKey": "caseMerckEvent2",
+          "sources": [
+            "https://newgtlds.icann.org/en/program-status/odr/determination"
+          ]
+        },
+        {
+          "period": "2016",
+          "textKey": "caseMerckEvent3",
+          "sources": [
+            "https://newgtlds.icann.org/en/applicants/cpe",
+            "https://www.icann.org/resources/pages/accountability/irp-en"
+          ]
+        },
+        {
+          "period": "2026",
+          "textKey": "caseMerckEvent4",
+          "sources": [
+            "https://www.iana.org/domains/root/db/merck.html"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "ICANN — objection filings involving MERCK strings",
+          "url": "https://newgtlds.icann.org/en/program-status/odr/filings",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN — objection determinations involving MERCK",
+          "url": "https://newgtlds.icann.org/en/program-status/odr/determination",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN — Independent Review Process archive",
+          "url": "https://www.icann.org/resources/pages/accountability/irp-en",
+          "role": "primary"
+        },
+        {
+          "label": "IANA — .MERCK delegation record",
+          "url": "https://www.iana.org/domains/root/db/merck.html",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "music",
+      "strings": [
+        ".music"
+      ],
+      "period": "2012–2021",
+      "categoryKeys": [
+        "caseCategoryCommunity",
+        "caseCategoryCompetition"
+      ],
+      "mechanisms": [
+        "cpe",
+        "objection",
+        "board"
+      ],
+      "questionKey": "caseMusicQuestion",
+      "factKey": "caseMusicFact",
+      "readingKey": "caseMusicReading",
+      "outcomeKey": "caseMusicOutcome",
+      "events": [
+        {
+          "period": "2012",
+          "textKey": "caseMusicEvent1",
+          "sources": [
+            "https://newgtlds.icann.org/en/program-status/odr/filings"
+          ]
+        },
+        {
+          "period": "2014–2016",
+          "textKey": "caseMusicEvent2",
+          "sources": [
+            "https://newgtlds.icann.org/en/applicants/cpe"
+          ]
+        },
+        {
+          "period": "2016–2019",
+          "textKey": "caseMusicEvent3",
+          "sources": [
+            "https://www.icann.org/resources/pages/reconsideration-16-5-dotmusic-request-2016-02-25-en"
+          ]
+        },
+        {
+          "period": "2021",
+          "textKey": "caseMusicEvent4",
+          "sources": [
+            "https://www.icann.org/en/registry-agreements/details/music",
+            "https://www.iana.org/domains/root/db/music.html"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "ICANN — .MUSIC objection filings",
+          "url": "https://newgtlds.icann.org/en/program-status/odr/filings",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN — Community Priority Evaluation",
+          "url": "https://newgtlds.icann.org/en/applicants/cpe",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN — DotMusic reconsideration record",
+          "url": "https://www.icann.org/resources/pages/reconsideration-16-5-dotmusic-request-2016-02-25-en",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN — .MUSIC Registry Agreement",
+          "url": "https://www.icann.org/en/registry-agreements/details/music",
+          "role": "primary"
+        },
+        {
+          "label": "IANA — .MUSIC delegation record",
+          "url": "https://www.iana.org/domains/root/db/music.html",
+          "role": "primary"
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.13",
+  "version": "0.7.14",
   "release_date": "2026-10-04",
   "publication_state": "pre-reveal",
   "rendering": "static-prerendered",
@@ -25,6 +25,7 @@
     "Application Archaeology separates submissions, applied-for strings and delegated TLD identity; never-delegated applications do not increase the TLD universe.",
     "The 2012 archival corpus excludes Primary Contact and Email fields and is accepted only after locked ICANN totals validate.",
     "TLD Life Histories combine preserved IANA evidence, formal application archaeology and the live ICANN gTLD contract-lifecycle JSON; undocumented phases are never inferred.",
+    "Disputed Dots adds nine editorially selected governance cases as a structured layer linked to Explorer strings; FACT and READING remain separate, and case sources are primary ICANN/IANA records.",
     "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity.",
     "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database.",
     "application_only_strings.csv is the build-time application-only view for vendored/local data; the validated 2012 Reveal Day corpus expands the Explorer at runtime."
@@ -137,6 +138,8 @@
     },
     "lifeHistoryRecordCount": 1688,
     "lifeHistoryStaticEventCount": 5583,
+    "governanceCaseCount": 9,
+    "governanceCaseStringCount": 15,
     "lifeHistoryStaticCoverageComplete": true,
     "lifeHistoryGtldContractsRuntime": true,
     "lifeHistoryGtldContractSource": "https://www.icann.org/resources/registries/gtlds/v2/gtlds.json"
@@ -144,7 +147,7 @@
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "release_history": {
     "path": "release_history.json",
-    "sha256": "432b9aff604244804de7919da80854238fe088e7e35358e510b1dcbb1bcad59f"
+    "sha256": "79e3512175dc2f0925dafa009ea646fe5ca0e5a4c3e7fd37509ec7ea0536c376"
   },
   "web_delivery": {
     "profile_loading": "on-demand",
@@ -152,18 +155,18 @@
     "assets": [
       {
         "repository_path": "data/site_bundle.js",
-        "bytes": 1559316,
-        "sha256": "435050681d1d72b50848c7404ee7fc180500a95f5bc1ab629f0265fbc5fd610c"
+        "bytes": 1616916,
+        "sha256": "d4c99306d1c3b02924871db6da5be90f454ca9addb506a2b7be825f89148de33"
       },
       {
         "repository_path": "assets/app.js",
-        "bytes": 85967,
-        "sha256": "c9357365abe4eae5a815e1c5dd1439aacf8eddb063a0d367bfe3d0818043c749"
+        "bytes": 90641,
+        "sha256": "fb756f7af3c2c7b65f3432f78d7adef97bce276d2cf53c5bb2aeb1deabac3b39"
       },
       {
         "repository_path": "assets/style.css",
-        "bytes": 75067,
-        "sha256": "7f4c2224979d0937bd2db9029e36b53fc38aa7e112ecb10a1b3ad41f1eaee7a3"
+        "bytes": 79261,
+        "sha256": "ac0b1ddb5f8e8697232e219ba619a533c3df0e0be7d3a1aa8584c8ceda9a5b81"
       },
       {
         "repository_path": "data/worldmap.js",
@@ -172,43 +175,43 @@
       },
       {
         "repository_path": "data/explorer_profiles_0.js",
-        "bytes": 669793,
-        "sha256": "a1013f0e50eea48b9b071c86ef914898cfbf19b062d7898f26dd2972f621ba5c"
+        "bytes": 675145,
+        "sha256": "3a14cdab0696f4a25688173c7dead5e9397b39f29745b400aa2b2c2697882a35"
       },
       {
         "repository_path": "data/explorer_profiles_1.js",
-        "bytes": 570578,
-        "sha256": "9a4feb28ede05fcd11786f827506007ca19c63f7f2d257af18de93a2ae45c191"
+        "bytes": 575224,
+        "sha256": "e86d2ebe14ef96f6034b5aec23b919f251340539328ff762d16db59e11d7af87"
       },
       {
         "repository_path": "data/explorer_profiles_2.js",
-        "bytes": 631909,
-        "sha256": "e64e4500b7542b5015e26154e6c6121a5841573dd24cfc5c2a338606e037985a"
+        "bytes": 636951,
+        "sha256": "38c503023ea9344905e5f070cfe6f3ae4bce906e0b347ddbc34cf0951635a16d"
       },
       {
         "repository_path": "data/explorer_profiles_3.js",
-        "bytes": 585301,
-        "sha256": "3a729ae3bd18716dec7a8795fd587b2235e8f773c4de31b37f5e10a031779fc4"
+        "bytes": 589931,
+        "sha256": "1822496a2fa20ebfb9565800b8932d0d8b3bfa6c7feba4445d27951353a55498"
       },
       {
         "repository_path": "data/explorer_profiles_4.js",
-        "bytes": 624651,
-        "sha256": "c4e82f121fbae174b72744dcdd23b73c41355779e70db8067aca682d2ad001bf"
+        "bytes": 629695,
+        "sha256": "0c70a489b11670f49cb99fda26e508afdc5ae1a5e1326658b15da473c2d6cb4b"
       },
       {
         "repository_path": "data/explorer_profiles_5.js",
-        "bytes": 583967,
-        "sha256": "172d5b08e7fa0519c9aa000748cab5b7ce0d224a16206f74e3aa65b596eaaa2f"
+        "bytes": 588576,
+        "sha256": "643f0fb7cde4413c39880779d0ef84be390415023991cb3114aa527d65a10780"
       },
       {
         "repository_path": "data/explorer_profiles_6.js",
-        "bytes": 590618,
-        "sha256": "9b88a8fc45be62bf1bbd7d6274314f2d2f1de279afbf8adc0a5d761ffa8f915b"
+        "bytes": 595430,
+        "sha256": "2056713ab62b8927d3890d5092b0cf5bdf3ebf294396dd9bd73c4b538fbc6dfe"
       },
       {
         "repository_path": "data/explorer_profiles_7.js",
-        "bytes": 585962,
-        "sha256": "a94d95eba323a425f034ebff413d0fd850300e9f6e31b116a692028588060aa8"
+        "bytes": 590739,
+        "sha256": "9bff0c09cd67d77b93cb341e696d8366fe693dffafc497a19db604fff3e617d6"
       }
     ]
   },
@@ -334,6 +337,18 @@
       "sha256": "dc6633beaec0b4e908dc7ebe83a12f27a5869258b1d43326cc1607a5c64db05c"
     },
     {
+      "path": "governance_case_events.csv",
+      "bytes": 5767,
+      "records": 39,
+      "sha256": "6979c1d3e6fa61dd2743b3b3519411c246fb4575ea21517ceed6646b4407f4f8"
+    },
+    {
+      "path": "governance_cases.csv",
+      "bytes": 4329,
+      "records": 9,
+      "sha256": "f11c7505d8f602aeaaa20a64fdc938f2fb5016dc15af3ceef24f7fd14f814c22"
+    },
+    {
       "path": "governance_locations.csv",
       "bytes": 864,
       "records": 10,
@@ -401,9 +416,9 @@
     },
     {
       "path": "sources.csv",
-      "bytes": 10695,
-      "records": 104,
-      "sha256": "c714310ef0084d29b6d4c07b03c263397a6b6dd8deb19d13c9e90e5c8bd20891"
+      "bytes": 14224,
+      "records": 130,
+      "sha256": "2a37148a35f3ba70741da9a1ffd3bb606f7c2b8d78df9e01aa8930bb00428341"
     },
     {
       "path": "strange_internet.csv",

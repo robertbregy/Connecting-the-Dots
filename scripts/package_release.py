@@ -21,6 +21,12 @@ def main() -> None:
             continue
         if rel.parts[:3] == ("data", "evidence", "iana") or path.suffix == ".pyc":
             continue
+        # Validation scripts are build-time QA and are intentionally omitted from the browser-upload release bundle.
+        if len(rel.parts) == 2 and rel.parts[0] == "scripts" and rel.name.startswith("validate_"):
+            continue
+        # Historical release notes from v0.7.4 are not part of the current browser-upload release.
+        if rel.as_posix() == "RELEASE_NOTES_0.7.4.md":
+            continue
         files.append(path)
     if len(files) > 100:
         raise SystemExit(f"Release has {len(files)} files; GitHub browser upload allows at most 100")
