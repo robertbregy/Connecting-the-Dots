@@ -1,4 +1,12 @@
-# v0.7.13 — TLD Life Histories
+# v0.7.15 — Economics of the Dot
+
+- adds a structured economics layer with eight distinct mechanisms and source-backed metrics;
+- links `.ai`, `.tv`, `.io`, `.ac`, `.sh`, `.com`, `.net`, `.org`, `.web`, `.shop` and `.app` to economic cases in the Explorer;
+- keeps public revenue, company results, transaction values, auction prices and application fees explicitly non-comparable;
+- adds `economic_cases.csv` and `economic_metrics.csv` to the reusable data layer;
+- expands the page narrative from history and governance to the financial incentives and rents created around the DNS root.
+
+## v0.7.14 — Governance Cases + Disputed Dots
 
 - Adds a chronological life-history layer across the complete Explorer corpus.
 - Generates dated events from formal applications, IANA registration data and IANA delegation/transfer/revocation reports.

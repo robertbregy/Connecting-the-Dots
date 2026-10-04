@@ -1,0 +1,458 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-04",
+  "selectionKey": "economicsSelectionNote",
+  "cases": [
+    {
+      "id": "ai",
+      "strings": [
+        ".ai"
+      ],
+      "period": "2024–2028",
+      "modelKey": "econModelSovereignRent",
+      "questionKey": "econAiQuestion",
+      "factKey": "econAiFact",
+      "readingKey": "econAiReading",
+      "metrics": [
+        {
+          "period": "2024",
+          "labelKey": "econMetricActualPublicRevenue",
+          "value": 104253510,
+          "currency": "XCD",
+          "display": "EC$104.3M",
+          "basis": "actual",
+          "source": "https://www.gov.ai/document/2026-03-18-011937_1898942126.pdf"
+        },
+        {
+          "period": "2025",
+          "labelKey": "econMetricEndYearProjection",
+          "value": 219220239,
+          "currency": "XCD",
+          "display": "EC$219.2M",
+          "basis": "projection",
+          "source": "https://www.gov.ai/document/2026-03-18-011937_1898942126.pdf"
+        },
+        {
+          "period": "2026",
+          "labelKey": "econMetricBudgetEstimate",
+          "value": 253557731,
+          "currency": "XCD",
+          "display": "EC$253.6M",
+          "basis": "budget-estimate",
+          "source": "https://www.gov.ai/document/2026-03-18-011937_1898942126.pdf"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Government of Anguilla — 2026–2028 recurrent revenue estimates",
+          "url": "https://www.gov.ai/document/2026-03-18-011937_1898942126.pdf",
+          "role": "primary"
+        },
+        {
+          "label": "IANA — .AI delegation record",
+          "url": "https://www.iana.org/domains/root/db/ai.html",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "tv",
+      "strings": [
+        ".tv"
+      ],
+      "period": "2021–2026",
+      "modelKey": "econModelNationalContract",
+      "questionKey": "econTvQuestion",
+      "factKey": "econTvFact",
+      "readingKey": "econTvReading",
+      "metrics": [
+        {
+          "period": "2023",
+          "labelKey": "econMetricActualContractRevenue",
+          "value": 3510020,
+          "currency": "AUD",
+          "display": "A$3.51M",
+          "basis": "actual",
+          "source": "https://finance.gov.tv/wp-content/uploads/2024/03/2024-National-Budget-Half-Year-2.pdf"
+        },
+        {
+          "period": "2024",
+          "labelKey": "econMetricBudgetContractRevenue",
+          "value": 5604910,
+          "currency": "AUD",
+          "display": "A$5.60M",
+          "basis": "budget",
+          "source": "https://finance.gov.tv/wp-content/uploads/2024/03/2024-National-Budget-Half-Year-2.pdf"
+        },
+        {
+          "period": "2026",
+          "labelKey": "econMetricProjectedContractRevenue",
+          "value": 5865700,
+          "currency": "AUD",
+          "display": "A$5.87M",
+          "basis": "projection",
+          "source": "https://finance.gov.tv/wp-content/uploads/2024/03/2024-National-Budget-Half-Year-2.pdf"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Government of Tuvalu — 2024 National Budget",
+          "url": "https://finance.gov.tv/wp-content/uploads/2024/03/2024-National-Budget-Half-Year-2.pdf",
+          "role": "primary"
+        },
+        {
+          "label": "IANA — .TV delegation record",
+          "url": "https://www.iana.org/domains/root/db/tv.html",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "io",
+      "strings": [
+        ".io",
+        ".ac",
+        ".sh"
+      ],
+      "period": "2017",
+      "modelKey": "econModelOperatorAcquisition",
+      "questionKey": "econIoQuestion",
+      "factKey": "econIoFact",
+      "readingKey": "econIoReading",
+      "metrics": [
+        {
+          "period": "2017",
+          "labelKey": "econMetricOperatorAcquisition",
+          "value": 70170000,
+          "currency": "USD",
+          "display": "US$70.17M",
+          "basis": "reported-transaction",
+          "source": "https://domainincite.com/23650-afilias-bought-io-for-70-million"
+        },
+        {
+          "period": "2017",
+          "labelKey": "econMetricReportedRevenueMultiple",
+          "value": 10,
+          "currency": "x",
+          "display": "~10×",
+          "basis": "reported-multiple",
+          "source": "https://domainincite.com/23650-afilias-bought-io-for-70-million"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Domain Incite — reported Afilias acquisition of Internet Computer Bureau",
+          "url": "https://domainincite.com/23650-afilias-bought-io-for-70-million",
+          "role": "secondary"
+        },
+        {
+          "label": "IANA — .IO delegation record",
+          "url": "https://www.iana.org/domains/root/db/io.html",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "comnet",
+      "strings": [
+        ".com",
+        ".net"
+      ],
+      "period": "2025–2026",
+      "modelKey": "econModelRecurringRegistry",
+      "questionKey": "econComQuestion",
+      "factKey": "econComFact",
+      "readingKey": "econComReading",
+      "metrics": [
+        {
+          "period": "2025",
+          "labelKey": "econMetricCompanyRevenue",
+          "value": 1660000000,
+          "currency": "USD",
+          "display": "US$1.66B",
+          "basis": "company-revenue",
+          "source": "https://investor.verisign.com/news-releases/news-release-details/verisign-reports-fourth-quarter-and-full-year-2025-results"
+        },
+        {
+          "period": "2025",
+          "labelKey": "econMetricOperatingIncome",
+          "value": 1120000000,
+          "currency": "USD",
+          "display": "US$1.12B",
+          "basis": "company-operating-income",
+          "source": "https://investor.verisign.com/static-files/a4f6a149-3c20-4d40-bfac-e7cd8d3f3059"
+        },
+        {
+          "period": "2025-12-31",
+          "labelKey": "econMetricDomainBase",
+          "value": 173500000,
+          "currency": "domains",
+          "display": "173.5M",
+          "basis": "com-net-domain-base",
+          "source": "https://investor.verisign.com/news-releases/news-release-details/verisign-reports-fourth-quarter-and-full-year-2025-results"
+        },
+        {
+          "period": "2026-11-01",
+          "labelKey": "econMetricComWholesalePrice",
+          "value": 10.97,
+          "currency": "USD/year",
+          "display": "US$10.97/yr",
+          "basis": "announced-wholesale-fee",
+          "source": "https://investor.verisign.com/news-releases/news-release-details/verisign-reports-first-quarter-2026-results"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Verisign — FY2025 results",
+          "url": "https://investor.verisign.com/news-releases/news-release-details/verisign-reports-fourth-quarter-and-full-year-2025-results",
+          "role": "primary"
+        },
+        {
+          "label": "Verisign — Q1 2026 results and announced .COM price",
+          "url": "https://investor.verisign.com/news-releases/news-release-details/verisign-reports-first-quarter-2026-results",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "org",
+      "strings": [
+        ".org"
+      ],
+      "period": "2019–2024",
+      "modelKey": "econModelValuationRegulation",
+      "questionKey": "econOrgQuestion",
+      "factKey": "econOrgFact",
+      "readingKey": "econOrgReading",
+      "metrics": [
+        {
+          "period": "2019",
+          "labelKey": "econMetricProposedAcquisition",
+          "value": 1135000000,
+          "currency": "USD",
+          "display": "US$1.135B",
+          "basis": "proposed-purchase-price",
+          "source": "https://www.icann.org/en/system/files/files/pir-isoc-ethos-capital-10jan20-en.pdf"
+        },
+        {
+          "period": "2019",
+          "labelKey": "econMetricDebtFacility",
+          "value": 360000000,
+          "currency": "USD",
+          "display": "US$360M",
+          "basis": "term-loan-facility",
+          "source": "https://www.icann.org/en/system/files/files/pir-isoc-ethos-capital-10jan20-en.pdf"
+        }
+      ],
+      "sources": [
+        {
+          "label": "PIR / ISOC / Ethos response filed with ICANN — transaction structure",
+          "url": "https://www.icann.org/en/system/files/files/pir-isoc-ethos-capital-10jan20-en.pdf",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN Board — consent withheld for PIR change of control",
+          "url": "https://www.icann.org/en/blogs/details/icann-board-withholds-consent-for-a-change-of-control-of-the-public-interest-registry-pir-30-04-2020-en",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN — 2024 decision to maintain .ORG/.INFO agreements without price controls",
+          "url": "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-regular-meeting-of-the-icann-board-10-11-2024-en",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "auctions",
+      "strings": [
+        ".web",
+        ".shop",
+        ".app"
+      ],
+      "period": "2015–2016",
+      "modelKey": "econModelScarcityAuction",
+      "questionKey": "econAuctionQuestion",
+      "factKey": "econAuctionFact",
+      "readingKey": "econAuctionReading",
+      "metrics": [
+        {
+          "period": "2016-07-27",
+          "labelKey": "econMetricAuctionWeb",
+          "value": 135000000,
+          "currency": "USD",
+          "display": "US$135.0M",
+          "basis": "icann-auction-winning-price",
+          "source": "https://gtldresult.icann.org/applicationstatus/auctionresults"
+        },
+        {
+          "period": "2016-01-27",
+          "labelKey": "econMetricAuctionShop",
+          "value": 41501000,
+          "currency": "USD",
+          "display": "US$41.501M",
+          "basis": "icann-auction-winning-price",
+          "source": "https://newgtlds.icann.org/en/applicants/auctions/proceeds"
+        },
+        {
+          "period": "2015-02-25",
+          "labelKey": "econMetricAuctionApp",
+          "value": 25001000,
+          "currency": "USD",
+          "display": "US$25.001M",
+          "basis": "icann-auction-winning-price",
+          "source": "https://gtldresult.icann.org/applicationstatus/auctionresults"
+        },
+        {
+          "period": "2016",
+          "labelKey": "econMetricAuctionGrossTotal",
+          "value": 240590128,
+          "currency": "USD",
+          "display": "US$240.59M",
+          "basis": "cumulative-gross-auction-proceeds",
+          "source": "https://newgtlds.icann.org/en/applicants/auctions/proceeds"
+        }
+      ],
+      "sources": [
+        {
+          "label": "ICANN — New gTLD auction results",
+          "url": "https://gtldresult.icann.org/applicationstatus/auctionresults",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN — auction proceeds ledger",
+          "url": "https://newgtlds.icann.org/en/applicants/auctions/proceeds",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "withdrawals",
+      "strings": [],
+      "period": "2014–2015",
+      "modelKey": "econModelPrivateSettlement",
+      "questionKey": "econWithdrawalQuestion",
+      "factKey": "econWithdrawalFact",
+      "readingKey": "econWithdrawalReading",
+      "metrics": [
+        {
+          "period": "2014",
+          "labelKey": "econMetricWithdrawalGain2014",
+          "value": 22103000,
+          "currency": "USD",
+          "display": "US$22.103M",
+          "basis": "net-gain-on-gtld-application-withdrawals",
+          "source": "https://www.sec.gov/Archives/edgar/data/1589094/000155837015000382/name-20141231x10k.htm"
+        },
+        {
+          "period": "2015",
+          "labelKey": "econMetricWithdrawalGain2015",
+          "value": 9403000,
+          "currency": "USD",
+          "display": "US$9.403M",
+          "basis": "net-gain-on-gtld-application-withdrawals",
+          "source": "https://www.sec.gov/Archives/edgar/data/1589094/000156459016014528/name-10k_20151231.htm"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Rightside Group — 2014 Form 10-K",
+          "url": "https://www.sec.gov/Archives/edgar/data/1589094/000155837015000382/name-20141231x10k.htm",
+          "role": "primary"
+        },
+        {
+          "label": "Rightside Group — 2015 Form 10-K",
+          "url": "https://www.sec.gov/Archives/edgar/data/1589094/000156459016014528/name-10k_20151231.htm",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "entry-fee",
+      "strings": [],
+      "period": "2012–2026",
+      "modelKey": "econModelEntryBarrier",
+      "questionKey": "econFeeQuestion",
+      "factKey": "econFeeFact",
+      "readingKey": "econFeeReading",
+      "metrics": [
+        {
+          "period": "2012",
+          "labelKey": "econMetricApplicationFee2012",
+          "value": 185000,
+          "currency": "USD",
+          "display": "US$185,000",
+          "basis": "evaluation-fee",
+          "source": "https://newgtlds.icann.org/en/applicants/global-support/faqs/faqs-en"
+        },
+        {
+          "period": "2026",
+          "labelKey": "econMetricApplicationFee2026",
+          "value": 227000,
+          "currency": "USD",
+          "display": "US$227,000",
+          "basis": "evaluation-fee",
+          "source": "https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/gtld-evaluation-fee/faqs"
+        }
+      ],
+      "sources": [
+        {
+          "label": "ICANN — 2012 New gTLD evaluation fee",
+          "url": "https://newgtlds.icann.org/en/applicants/global-support/faqs/faqs-en",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN — 2026 gTLD evaluation fee",
+          "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/gtld-evaluation-fee/faqs",
+          "role": "primary"
+        },
+        {
+          "label": "ICANN — 2026 financial projection templates",
+          "url": "https://newgtldprogram-2026-agb.icann.org/en/16-appendix-5-templates-for-standard-financial-profile.html",
+          "role": "primary"
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "id": "sovereign-rent",
+      "labelKey": "econModelSovereignRent",
+      "bodyKey": "econModelSovereignRentBody"
+    },
+    {
+      "id": "national-contract",
+      "labelKey": "econModelNationalContract",
+      "bodyKey": "econModelNationalContractBody"
+    },
+    {
+      "id": "operator-acquisition",
+      "labelKey": "econModelOperatorAcquisition",
+      "bodyKey": "econModelOperatorAcquisitionBody"
+    },
+    {
+      "id": "recurring-registry",
+      "labelKey": "econModelRecurringRegistry",
+      "bodyKey": "econModelRecurringRegistryBody"
+    },
+    {
+      "id": "valuation-regulation",
+      "labelKey": "econModelValuationRegulation",
+      "bodyKey": "econModelValuationRegulationBody"
+    },
+    {
+      "id": "scarcity-auction",
+      "labelKey": "econModelScarcityAuction",
+      "bodyKey": "econModelScarcityAuctionBody"
+    },
+    {
+      "id": "private-settlement",
+      "labelKey": "econModelPrivateSettlement",
+      "bodyKey": "econModelPrivateSettlementBody"
+    },
+    {
+      "id": "entry-barrier",
+      "labelKey": "econModelEntryBarrier",
+      "bodyKey": "econModelEntryBarrierBody"
+    }
+  ]
+}

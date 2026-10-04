@@ -1,0 +1,23 @@
+case_id,strings,period,label_key,value,currency,display,basis,source
+ai,.ai,2024,econMetricActualPublicRevenue,104253510,XCD,EC$104.3M,actual,https://www.gov.ai/document/2026-03-18-011937_1898942126.pdf
+ai,.ai,2025,econMetricEndYearProjection,219220239,XCD,EC$219.2M,projection,https://www.gov.ai/document/2026-03-18-011937_1898942126.pdf
+ai,.ai,2026,econMetricBudgetEstimate,253557731,XCD,EC$253.6M,budget-estimate,https://www.gov.ai/document/2026-03-18-011937_1898942126.pdf
+tv,.tv,2023,econMetricActualContractRevenue,3510020,AUD,A$3.51M,actual,https://finance.gov.tv/wp-content/uploads/2024/03/2024-National-Budget-Half-Year-2.pdf
+tv,.tv,2024,econMetricBudgetContractRevenue,5604910,AUD,A$5.60M,budget,https://finance.gov.tv/wp-content/uploads/2024/03/2024-National-Budget-Half-Year-2.pdf
+tv,.tv,2026,econMetricProjectedContractRevenue,5865700,AUD,A$5.87M,projection,https://finance.gov.tv/wp-content/uploads/2024/03/2024-National-Budget-Half-Year-2.pdf
+io,.io | .ac | .sh,2017,econMetricOperatorAcquisition,70170000,USD,US$70.17M,reported-transaction,https://domainincite.com/23650-afilias-bought-io-for-70-million
+io,.io | .ac | .sh,2017,econMetricReportedRevenueMultiple,10,x,~10×,reported-multiple,https://domainincite.com/23650-afilias-bought-io-for-70-million
+comnet,.com | .net,2025,econMetricCompanyRevenue,1660000000,USD,US$1.66B,company-revenue,https://investor.verisign.com/news-releases/news-release-details/verisign-reports-fourth-quarter-and-full-year-2025-results
+comnet,.com | .net,2025,econMetricOperatingIncome,1120000000,USD,US$1.12B,company-operating-income,https://investor.verisign.com/static-files/a4f6a149-3c20-4d40-bfac-e7cd8d3f3059
+comnet,.com | .net,2025-12-31,econMetricDomainBase,173500000,domains,173.5M,com-net-domain-base,https://investor.verisign.com/news-releases/news-release-details/verisign-reports-fourth-quarter-and-full-year-2025-results
+comnet,.com | .net,2026-11-01,econMetricComWholesalePrice,10.97,USD/year,US$10.97/yr,announced-wholesale-fee,https://investor.verisign.com/news-releases/news-release-details/verisign-reports-first-quarter-2026-results
+org,.org,2019,econMetricProposedAcquisition,1135000000,USD,US$1.135B,proposed-purchase-price,https://www.icann.org/en/system/files/files/pir-isoc-ethos-capital-10jan20-en.pdf
+org,.org,2019,econMetricDebtFacility,360000000,USD,US$360M,term-loan-facility,https://www.icann.org/en/system/files/files/pir-isoc-ethos-capital-10jan20-en.pdf
+auctions,.web | .shop | .app,2016-07-27,econMetricAuctionWeb,135000000,USD,US$135.0M,icann-auction-winning-price,https://gtldresult.icann.org/applicationstatus/auctionresults
+auctions,.web | .shop | .app,2016-01-27,econMetricAuctionShop,41501000,USD,US$41.501M,icann-auction-winning-price,https://newgtlds.icann.org/en/applicants/auctions/proceeds
+auctions,.web | .shop | .app,2015-02-25,econMetricAuctionApp,25001000,USD,US$25.001M,icann-auction-winning-price,https://gtldresult.icann.org/applicationstatus/auctionresults
+auctions,.web | .shop | .app,2016,econMetricAuctionGrossTotal,240590128,USD,US$240.59M,cumulative-gross-auction-proceeds,https://newgtlds.icann.org/en/applicants/auctions/proceeds
+withdrawals,,2014,econMetricWithdrawalGain2014,22103000,USD,US$22.103M,net-gain-on-gtld-application-withdrawals,https://www.sec.gov/Archives/edgar/data/1589094/000155837015000382/name-20141231x10k.htm
+withdrawals,,2015,econMetricWithdrawalGain2015,9403000,USD,US$9.403M,net-gain-on-gtld-application-withdrawals,https://www.sec.gov/Archives/edgar/data/1589094/000156459016014528/name-10k_20151231.htm
+entry-fee,,2012,econMetricApplicationFee2012,185000,USD,"US$185,000",evaluation-fee,https://newgtlds.icann.org/en/applicants/global-support/faqs/faqs-en
+entry-fee,,2026,econMetricApplicationFee2026,227000,USD,"US$227,000",evaluation-fee,https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/gtld-evaluation-fee/faqs

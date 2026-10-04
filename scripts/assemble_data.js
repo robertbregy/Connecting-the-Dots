@@ -73,7 +73,7 @@ function introductionFor(r){
 }
 
 module.exports=function assembleData(){
- const D=json('data/research.json'),S=json('data/iana_snapshot.json'),curated=json('data/explorer_curated.json'),archaeology=json('data/application_archaeology_local.json'),archaeologyManifest=json('data/application_archaeology_manifest.json'),governance=json('data/governance_cases.json');
+ const D=json('data/research.json'),S=json('data/iana_snapshot.json'),curated=json('data/explorer_curated.json'),archaeology=json('data/application_archaeology_local.json'),archaeologyManifest=json('data/application_archaeology_manifest.json'),governance=json('data/governance_cases.json'),economics=json('data/economic_cases.json');
  if(curated.schemaVersion!==1)throw new Error('Unsupported curated record schema');
  const bytes=fs.readFileSync(path.join(root,S.archive_path));
  if(digest(bytes)!==S.archive_sha256)throw new Error('IANA evidence archive checksum mismatch');
@@ -172,11 +172,22 @@ module.exports=function assembleData(){
   for(const src of (c.sources||[]))if(src?.url&&!D.sources.some(x=>x[1]===src.url))D.sources.push([src.label||('Governance case '+c.id),src.url,src.role||'primary']);
  }
  for(const r of byAscii.values())r.governanceCaseIds=[...new Set(governanceByAscii.get(r.asciiString)||[])];
+ D.economicCases=economics;
+ if(economics.schemaVersion!==1||!Array.isArray(economics.cases)||economics.cases.length<1||!Array.isArray(economics.models))throw new Error('Unsupported economic cases schema');
+ const economicByAscii=new Map();
+ for(const c of economics.cases){
+  if(!Array.isArray(c.metrics)||!c.metrics.length)throw new Error('Economic case without metrics: '+c.id);
+  for(const string of (c.strings||[])){
+   const key=ascii(string),ids=economicByAscii.get(key)||[];ids.push(c.id);economicByAscii.set(key,ids);
+  }
+  for(const src of (c.sources||[]))if(src?.url&&!D.sources.some(x=>x[1]===src.url))D.sources.push([src.label||('Economic case '+c.id),src.url,src.role||'primary']);
+ }
+ for(const r of byAscii.values())r.economicCaseIds=[...new Set(economicByAscii.get(r.asciiString)||[])];
  D.explorer=[...byAscii.values()].sort((a,b)=>a.asciiString.localeCompare(b.asciiString,'en'));
  const applicationOnly=D.explorer.filter(r=>!r.ianaProfile&&['intro2000','intro2004','intro2012','intro2026Application','introApplicationOnly'].includes(r.introductionPath)).length;
  const historicalExtras=D.explorer.filter(r=>!r.ianaProfile&&r.currentRootStatus==='retired').length;
  D.explorerMeta={seedCount:curated.records.length,curatedCount:curated.records.length,recordCount:D.explorer.length,ianaRootCount:labels.length,rootIndexedCount:D.explorer.filter(r=>r.rootListed).length,ianaDatabaseCount:S.databaseCount,ianaProfileCount:D.explorer.filter(r=>r.ianaProfile).length,tldRecordCount:D.explorer.length-applicationOnly,applicationOnlyCount:applicationOnly,historicalExtraCount:historicalExtras,ianaSnapshot:S.asOf,ianaSource:S.listSource,ianaDatabaseSource:S.databaseSource,rootCoverageComplete:true,ianaProfileCoverageComplete:true,tldCoverageComplete:true,introductionPathCoverageComplete:true,historicalCoverageComplete:true,historicalCoverageExtended:true,tldCoverageDefinition:'Dated IANA database plus historically delegated TLDs absent from the current IANA database; excludes never-delegated ISO codes and application-only strings',applicationCorpusComplete:false,applicationLocalRoundsComplete:true,application2000CoverageComplete:true,application2004CoverageComplete:true,application2012RuntimeValidated:true,application2012CoverageComplete:false,application2026CoverageComplete:false,applicationArchaeologyManifest:archaeologyManifest};
- D.explorerMeta.lifeHistoryRecordCount=D.explorer.filter(r=>(r.events||[]).length>0).length;D.explorerMeta.lifeHistoryStaticEventCount=D.explorer.reduce((n,r)=>n+(r.events||[]).length,0);D.explorerMeta.governanceCaseCount=governance.cases.length;D.explorerMeta.governanceCaseStringCount=new Set(governance.cases.flatMap(c=>c.strings||[]).map(ascii)).size;
+ D.explorerMeta.lifeHistoryRecordCount=D.explorer.filter(r=>(r.events||[]).length>0).length;D.explorerMeta.lifeHistoryStaticEventCount=D.explorer.reduce((n,r)=>n+(r.events||[]).length,0);D.explorerMeta.governanceCaseCount=governance.cases.length;D.explorerMeta.governanceCaseStringCount=new Set(governance.cases.flatMap(c=>c.strings||[]).map(ascii)).size;D.explorerMeta.economicCaseCount=economics.cases.length;D.explorerMeta.economicCaseStringCount=new Set(economics.cases.flatMap(c=>c.strings||[]).map(ascii)).size;D.explorerMeta.economicMetricCount=economics.cases.reduce((n,c)=>n+(c.metrics||[]).length,0);
  D.applicationArchaeology=archaeologyManifest;
  D.tldLifeHistory={schemaVersion:1,asOf:S.asOf,staticCoverage:'IANA registration dates, IANA delegation/transfer/revocation reports, current root state, curated historical events and vendored 2000/2004 applications',gtldContractSource:GTLD_LIFECYCLE_SOURCE,gtldContractFields:['applicationId','dateOfContractSignature','delegationDate','contractTerminated','removalDate','registryOperator'],ccTldMethod:'IANA registration data and delegation/redelegation reports; ICANN gTLD Registry Agreement data is not applied to ccTLDs',sourcePolicy:'Only dated, attributable events from preserved or live ICANN/IANA sources are rendered as facts'};
  D.explorerMeta.lifeHistoryStaticCoverageComplete=true;D.explorerMeta.lifeHistoryGtldContractsRuntime=true;D.explorerMeta.lifeHistoryGtldContractSource=GTLD_LIFECYCLE_SOURCE;

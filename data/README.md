@@ -117,3 +117,10 @@ The TLD-coverage claim excludes never-delegated ISO codes and other labels that 
 ## TLD life histories (v0.7.13)
 
 `tld_life_histories.csv` is the locally preserved chronological evidence layer assembled from formal application records, IANA registration dates, IANA TLD-change reports, curated historical events and current root state. The web Explorer additionally loads the official ICANN gTLD lifecycle feed at `https://www.icann.org/resources/registries/gtlds/v2/gtlds.json` to add Registry Agreement signature, delegation, termination and removal dates where ICANN publishes them. ccTLDs remain governed by IANA delegation/redelegation evidence rather than the gTLD contract model. Missing historical phases are not inferred.
+
+## Economics of the Dot (v0.7.15)
+
+- `economic_cases.json` is the structured editorial/evidentiary source for the economics layer.
+- `economic_cases.csv` exposes cases, strings, economic mechanism and sources.
+- `economic_metrics.csv` keeps every value with its original currency, period, accounting basis and source.
+- Revenue, operating income, public receipts, transaction value, auction price and evaluation fees are deliberately not normalized into one ranking.

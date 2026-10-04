@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.14"
+VERSION = "0.7.15"
 
 
 def csv_records(path: Path) -> int:
@@ -72,6 +72,7 @@ def build_manifest() -> None:
             "The 2012 archival corpus excludes Primary Contact and Email fields and is accepted only after locked ICANN totals validate.",
             "TLD Life Histories combine preserved IANA evidence, formal application archaeology and the live ICANN gTLD contract-lifecycle JSON; undocumented phases are never inferred.",
             "Disputed Dots adds nine editorially selected governance cases as a structured layer linked to Explorer strings; FACT and READING remain separate, and case sources are primary ICANN/IANA records.",
+            "Economics of the Dot adds eight source-backed economic mechanisms; public revenue, company results, transaction values, auction prices and application fees retain their original accounting basis and are not normalized into one ranking.",
             "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity.",
             "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database.",
             "application_only_strings.csv is the build-time application-only view for vendored/local data; the validated 2012 Reveal Day corpus expands the Explorer at runtime.",
@@ -94,7 +95,7 @@ def build_manifest() -> None:
 
 def data_pack_files() -> list[Path]:
     snapshot = json.loads((DATA / "iana_snapshot.json").read_text())
-    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", ROOT / snapshot["archive_path"]]
+    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "economic_cases.json", ROOT / snapshot["archive_path"]]
 
 
 def build_data_pack() -> None:
@@ -272,6 +273,9 @@ def main() -> None:
     subprocess.run(["node", str(ROOT / "scripts" / "validate_application_archaeology.js")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "validate_tld_life_histories.js")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "validate_governance_cases.js")], check=True)
+    subprocess.run(["node", str(ROOT / "scripts" / "validate_economic_cases.js")], check=True)
+    econ=json.loads((DATA / "economic_cases.json").read_text(encoding="utf-8"))
+    assert econ.get("schemaVersion")==1 and len(econ.get("cases",[]))==8 and sum(len(c.get("metrics",[])) for c in econ["cases"])==22, "Economic cases validation failed"
     linkedom = subprocess.run(["node", "-e", "require('linkedom')"], check=False, capture_output=True, text=True).returncode == 0
     if linkedom:
         subprocess.run(["node", str(ROOT / "scripts" / "validate_multilingual.js")], check=True)
