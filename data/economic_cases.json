@@ -447,7 +447,8 @@
     {
       "id": "private-settlement",
       "labelKey": "econModelPrivateSettlement",
-      "bodyKey": "econModelPrivateSettlementBody"
+      "bodyKey": "econModelPrivateSettlementBody",
+      "contextKey": "econHistorical2012Prohibited2026"
     },
     {
       "id": "entry-barrier",

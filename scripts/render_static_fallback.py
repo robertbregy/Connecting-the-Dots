@@ -1,7 +1,7 @@
 from pathlib import Path
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
-import json,re
+import json,re,os,shutil
 
 ROOT=Path(__file__).resolve().parent.parent
 INPUT=ROOT/'index.html'
@@ -11,6 +11,8 @@ LOCALE={'en':'en_US','it':'it_IT','de':'de_DE','fr':'fr_FR'}
 NAMES={'en':'English','it':'Italiano','de':'Deutsch','fr':'Français'}
 VERSION=json.loads((ROOT/'package.json').read_text())['version']
 I18N=json.loads((ROOT/'data/translations.json').read_text())
+ARCH=json.loads((ROOT/'data/application_archaeology_manifest.json').read_text())
+LOCAL_APPLICATION_COUNT=sum(int(ARCH['rounds'][r].get('applications',0)) for r in ('2000','2004') if r in ARCH.get('rounds',{}))
 PUB_JS=(ROOT/'data/publication.js').read_text()
 m=re.search(r"version:'([^']+)'.*?releasedOn:'([^']+)'",PUB_JS,re.S)
 RELEASED=m.group(2) if m else '2026-10-04'
@@ -65,7 +67,7 @@ def render(page,lang,alias=False):
     st=soup.select_one('#applicationCorpusStatus')
     if st:st['class']=['applicationCorpusStatus','loading'];st.string=tr['applicationCorpusLoading']
     cnt=soup.select_one('#exploreApplicationCount')
-    if cnt:cnt.string='57'
+    if cnt:cnt.string=str(LOCAL_APPLICATION_COUNT)
     style=soup.select_one('#ctd-runtime-style');link=soup.new_tag('link',id='ctd-runtime-style');link['rel']='stylesheet';link['href']=f'assets/style.css?v={VERSION}';style.replace_with(link)
     for sid,file in [('ctd-data-bundle','data/site_bundle.js'),('ctd-worldmap','data/worldmap.js'),('ctd-app','assets/app.js')]:
         n=soup.select_one('#'+sid);n.clear();n['src']=f'{file}?v={VERSION}';n['defer']=''
@@ -81,11 +83,16 @@ def render(page,lang,alias=False):
     tt=soup.select_one('#mapTooltip')
     if tt:tt.decompose()
     out=ROOT/('index.html' if alias else f'{lang}/index.html');out.parent.mkdir(parents=True,exist_ok=True)
-    out.write_text('<!DOCTYPE html>\n'+str(soup)+'\n')
+    serialized=str(soup)
+    if not serialized.lstrip().lower().startswith('<!doctype'): serialized='<!DOCTYPE html>\n'+serialized
+    out.write_text(serialized+'\n')
     return out
 
+CHROMIUM=os.environ.get('CHROMIUM_PATH') or shutil.which('chromium') or shutil.which('chromium-browser') or shutil.which('google-chrome')
+if not CHROMIUM: raise SystemExit('Chromium not found. Install it or set CHROMIUM_PATH for the optional Python fallback renderer.')
+
 with sync_playwright() as pw:
-    browser=pw.chromium.launch(headless=True,executable_path='/usr/bin/chromium',args=['--no-sandbox','--disable-gpu'])
+    browser=pw.chromium.launch(headless=True,executable_path=CHROMIUM,args=['--no-sandbox','--disable-gpu'])
     for lang in LANGS:
         page=browser.new_page();page.route('https://raw.githubusercontent.com/**',lambda route:route.abort());page.route('https://cdn.jsdelivr.net/**',lambda route:route.abort());page.route('https://www.icann.org/resources/registries/gtlds/v2/gtlds.json',lambda route:route.abort())
         out=render(page,lang,False);print('rendered',out.relative_to(ROOT),out.stat().st_size);page.close()

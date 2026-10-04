@@ -1,3 +1,13 @@
+# v0.7.18 — Release integrity hardening
+
+- Derive the visible publication snapshot and Reveal timestamp from `data/publication.js` instead of duplicating dates in four translation dictionaries.
+- Keep 2012 runtime archaeology separate from full-corpus completeness; application counts are now derived from per-round metadata rather than hard-coded 57 / 1,987 constants.
+- Compare like with like across rounds: 2026 now shows 1,663 submitted applications in the historical round chart, while the separate 2026 status panel retains 1,616 paid applications proceeding.
+- Mark private contention settlement as a historical 2012 mechanism and explicitly state that private resolution is prohibited in the 2026 round.
+- Correct the root-server instance observation date to the source state of 12 September 2026.
+- Harden static rendering, structured metadata, package/version parity, deployment documentation and release checks.
+- Separate the browser-upload publication archive from the reproducible source archive.
+
 # v0.7.17 — Final audit hardening
 
 - Correct current ISO country-code normalization for France (FR), Burkina Faso (BF), Benin (BJ), Serbia (RS) and Timor-Leste (TL) across registry, administrative and technical geography fields.
@@ -25,12 +35,20 @@
 
 ## v0.7.14 — Governance Cases + Disputed Dots
 
-- Adds a chronological life-history layer across the complete Explorer corpus.
-- Generates dated events from formal applications, IANA registration data and IANA delegation/transfer/revocation reports.
-- Adds live ICANN gTLD Registry Agreement lifecycle enrichment: Application ID, contract signature, delegation, termination and root removal.
-- Keeps ccTLD history on the IANA delegation/redelegation model rather than applying gTLD contracts.
-- Exports `tld_life_histories.csv` and records lifecycle coverage in the manifest.
-- Missing historical phases remain missing rather than inferred.
+- Add nine source-backed governance cases connecting application history to disputes that shaped ICANN decision-making.
+- Link relevant dispute cases directly into Explorer records while preserving FACT / READING separation.
+- Add structured case timelines, mechanisms, outcomes and primary-source references.
+- Export `governance_cases.csv` and `governance_case_events.csv` as reusable research datasets.
+- Reframe the site narrative around who decides, who operates and what happens when claims to a string collide.
+
+## v0.7.13 — TLD Life Histories
+
+- Add a chronological life-history layer across the complete Explorer corpus.
+- Generate dated events from formal applications, IANA registration data and IANA delegation/transfer/revocation reports.
+- Add ICANN gTLD Registry Agreement lifecycle runtime enrichment: Application ID, contract signature, delegation, termination and root removal.
+- Keep ccTLD history on the IANA delegation/redelegation model rather than applying gTLD contracts.
+- Export `tld_life_histories.csv` and record lifecycle coverage in the manifest.
+- Leave missing historical phases missing rather than inferred.
 
 # Changelog
 

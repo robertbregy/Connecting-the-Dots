@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.17"
+VERSION = "0.7.18"
 
 
 def csv_records(path: Path) -> int:
@@ -70,13 +70,13 @@ def build_manifest() -> None:
             "Every preserved IANA database entry has a normalized profile; root-list membership is separate from database presence.",
             "Application Archaeology separates submissions, applied-for strings and delegated TLD identity; never-delegated applications do not increase the TLD universe.",
             "The 2012 archival source contains Primary Contact and Email fields; the browser parser discards both before the research dataset is created, and the resulting dataset is accepted only after locked ICANN totals validate.",
-            "TLD Life Histories combine preserved IANA evidence, formal application archaeology and the live ICANN gTLD contract-lifecycle JSON; undocumented phases are never inferred.",
+            "TLD Life Histories combine a frozen local chronology with optional browser-time ICANN gTLD contract-lifecycle enrichment; runtime values are labelled separately and are not part of the frozen release snapshot. Undocumented phases are never inferred.",
             "Disputed Dots adds nine editorially selected governance cases as a structured layer linked to Explorer strings; FACT and READING remain separate, and case sources are primary ICANN/IANA records.",
             "Economics of the Dot adds eight source-backed economic mechanisms; public revenue, company results, transaction values, auction prices and application fees retain their original accounting basis and are not normalized into one ranking.",
             "The Social Life of the Dot adds nine source-backed social cases and six analytical models covering language, community, identity, protection, locality and script inclusion; registration volume is never used as a proxy for social significance.",
             "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity.",
-            "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database.",
-            "application_only_strings.csv is the build-time application-only view for vendored/local data; the validated 2012 Reveal Day corpus expands the Explorer at runtime.",
+            "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database. It is not an exhaustive cross-round application-string corpus.",
+            "application_only_strings.csv is the frozen build-time application-only view for vendored/local data; the validated 2012 Reveal Day corpus is optional runtime enrichment and is not silently treated as part of the frozen release files.",
         ],
         "current_root_snapshot": json.loads((DATA / "iana_snapshot.json").read_text())["asOf"],
         "iana_evidence": "iana_snapshot.json",

@@ -36,11 +36,29 @@ def check_internal_refs(html_path):
 
 pkg=json.loads((ROOT/'package.json').read_text())
 version=pkg['version']
+lock=json.loads((ROOT/'package-lock.json').read_text()) if (ROOT/'package-lock.json').exists() else fail('package-lock.json missing')
+if lock.get('version')!=version or lock.get('packages',{}).get('',{}).get('version')!=version: fail('package-lock/package version mismatch')
+if lock.get('packages',{}).get('',{}).get('devDependencies')!=pkg.get('devDependencies'): fail('package-lock dependency root mismatch')
 manifest=json_file('manifest.json')
 if manifest.get('version')!=version: fail('manifest/package version mismatch')
 if manifest.get('as_of')!='2026-10-04': fail('publication snapshot is not 2026-10-04')
 pub=(DATA/'publication.js').read_text()
 if f"version:'{version}'" not in pub or "asOf:'2026-10-04'" not in pub: fail('publication.js version/asOf mismatch')
+
+# Release-integrity invariants added in v0.7.18.
+appjs=(ROOT/'assets/app.js').read_text(encoding='utf-8')
+if 'fmtNum(1987)' in appjs or 'fmtNum(57)' in appjs: fail('application archaeology count is hard-coded')
+if 'applicationCorpusComplete=true' in appjs: fail('runtime merge may not mark the full application corpus complete directly')
+if 'syncApplicationCorpusComplete()' not in appjs: fail('application corpus completeness is not derived')
+if "required=['2000','2004','2012','2026']" not in appjs: fail('application corpus completeness does not require all declared historical/current rounds')
+if 'GTLD_LIFECYCLE_CACHE_TTL=24*60*60*1000' not in appjs or "cache:'no-cache'" not in appjs: fail('gTLD runtime lifecycle cache is not freshness-bounded')
+arch_manifest=json_file('application_archaeology_manifest.json')
+if arch_manifest.get('runtimeTransport2012',{}).get('status')!='external-mirror-not-cryptographically-pinned': fail('2012 runtime transport integrity limitation is not declared')
+changelog=(ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
+for marker in ['v0.7.18','v0.7.14','v0.7.13']:
+    if marker not in changelog: fail('changelog missing '+marker)
+readme=(ROOT/'README.md').read_text(encoding='utf-8')
+if "No live refresh occurs in a visitor's browser." in readme: fail('README contains obsolete no-live-refresh claim')
 
 expected_counts={
  'explorer_catalog.csv':1688,'tld_universe.csv':1599,'application_only_strings.csv':89,
@@ -89,6 +107,17 @@ for name,n,events in [('governance_cases.json',9,39),('economic_cases.json',8,No
     if len(obj.get('cases',[]))!=n: fail(f'{name} case count')
     if events is not None and sum(len(c.get('events',[])) for c in obj['cases'])!=events: fail(f'{name} event count')
 if sum(len(c.get('metrics',[])) for c in json_file('economic_cases.json')['cases'])!=22: fail('economic metric count')
+econ=json_file('economic_cases.json')
+private=next((m for m in econ.get('models',[]) if m.get('id')=='private-settlement'),None)
+if not private or private.get('contextKey')!='econHistorical2012Prohibited2026': fail('private-settlement 2026 prohibition context missing')
+research=json_file('research.json')
+r2026=next((r for r in research.get('rounds',[]) if r.get('round')==2026),{})
+if r2026.get('applications')!=1663: fail('round comparison must use 1,663 submitted applications for 2026')
+proceeding=next((r for r in rows('round_2026.csv') if r.get('metric')=='Applications proceeding'),{})
+if proceeding.get('value')!='1616': fail('2026 proceeding applications must remain 1,616')
+summary={r['Round']:r for r in rows('rounds_summary.csv')}
+if summary.get('2026',{}).get('Applications')!='1663': fail('rounds_summary 2026 submitted applications mismatch')
+if not summary.get('2012',{}).get('Delegations source'): fail('2012 delegation metric lacks dedicated provenance')
 
 # Translation parity.
 tr=json_file('translations.json')
@@ -97,11 +126,22 @@ for lang in LANGS:
     if set(tr[lang])!=base: fail(f'translation key mismatch: {lang}')
     blank=[k for k,v in tr[lang].items() if v is None or (isinstance(v,str) and not v.strip())]
     if blank: fail(f'blank translations {lang}: {blank[:5]}')
+    for dead in ['disclosed','footerLeft','downloadExcel']:
+        if dead in tr[lang]: fail(f'dead translation key survived: {lang}/{dead}')
+    if '30 Sep 2026' in tr[lang].get('rootStat3','') or '30 settembre 2026' in tr[lang].get('rootStat3','') or '30. September 2026' in tr[lang].get('rootStat3','') or '30 septembre 2026' in tr[lang].get('rootStat3',''): fail(f'stale root-server observation date: {lang}')
+    if any(x in tr[lang].get('publicationState','') for x in ['2026','OCT','OTT','OKT']): fail(f'publicationState duplicates snapshot date instead of deriving it: {lang}')
 
 # Static pages and local references.
 for rel in ['index.html',*[f'{x}/index.html' for x in LANGS]]:
     p=ROOT/rel; text=p.read_text(encoding='utf-8')
     if f'data-build="{version}"' not in text or f'<meta content="{version}" name="ctd-version"' not in text: fail(f'stale static page {rel}')
+    if text.lower().count('<!doctype html')!=1: fail(f'expected exactly one doctype in {rel}')
+    if 'Robert Bregy.This project' in text: fail(f'missing byline spacing in {rel}')
+    if '→ ↗' in text: fail(f'duplicate internal/external arrow semantics in {rel}')
+    m=re.search(r'<span[^>]*data-i18n="publicationState"[^>]*>(.*?)</span>',text,re.S)
+    if not m or '2026' not in re.sub('<[^>]+>','',m.group(1)): fail(f'visible publication snapshot is not derived/rendered in {rel}')
+    if any(stale in text for stale in ['SNAPSHOT · 2 OCT 2026','SNAPSHOT PRE-REVEAL · 2 OTT 2026','PRE-REVEAL-SNAPSHOT · 2. OKT 2026','SNAPSHOT PRÉ-REVEAL · 2 OCT 2026']): fail(f'stale 2 October publication state in {rel}')
+    if '"dateModified":"2026-10-04"' not in text: fail(f'structured-data dateModified mismatch in {rel}')
     check_internal_refs(p)
 
 # Shard parity and version.

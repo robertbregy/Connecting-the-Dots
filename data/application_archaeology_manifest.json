@@ -74,5 +74,20 @@
     "https://raw.githubusercontent.com/nimblemachines/analyzing-iana-root-db/master/strings-1200utc-13jun12-en.csv",
     "https://cdn.jsdelivr.net/gh/nimblemachines/analyzing-iana-root-db@master/strings-1200utc-13jun12-en.csv"
   ],
-  "method": "The browser retrieves a preserved copy of the 13 June 2012 Reveal Day CSV. The archival transport includes Primary Contact and Email, which are discarded during parsing before the research dataset is created. Only the reduced application metadata is validated against official ICANN totals and the 1,409 distinct-string snapshot count, then merged into the Explorer."
+  "runtimeTransport2012": {
+    "status": "external-mirror-not-cryptographically-pinned",
+    "canonicalHistoricalEvidence": "https://web.archive.org/web/20120613142047if_/http://newgtlds-cloudfront.icann.org/sites/default/files/reveal/strings-1200utc-13jun12-en.html",
+    "scope": "The external mirror is transport only. It is not part of the frozen release hash set and is accepted only after deterministic structural and aggregate validation.",
+    "validation": [
+      "exact expected header",
+      "1,930 applications",
+      "1,409 distinct strings",
+      "1,930 unique application IDs",
+      "116 IDN applications",
+      "66 geographic applications",
+      "84 community applications",
+      "regional totals: NA 911, EUR 675, AP 303, LAC 24, AF 17"
+    ]
+  },
+  "method": "The browser may retrieve an external mirror of the 13 June 2012 Reveal Day CSV. The transport URLs are not cryptographically pinned and therefore are not part of the frozen release snapshot. Before any merge, the payload must match the expected schema and locked ICANN aggregate totals. Primary Contact and Email are discarded during parsing before the research dataset is constructed and are never exposed or exported."
 }

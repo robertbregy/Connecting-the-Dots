@@ -1,4 +1,10 @@
-# Connecting the Dots — v0.7.17
+# Connecting the Dots — v0.7.18
+
+## v0.7.18 — Release integrity hardening
+
+Release: 4 October 2026. This release changes no editorial scope. It hardens the boundary between the **frozen publication core** and explicitly labelled **browser-time runtime enrichment**, derives visible dates and historical-application counts from canonical state/data, restores comparable round denominators, clarifies the 2026 prohibition on private contention resolution, corrects source-date provenance, and strengthens build/package QA.
+
+Two release artifacts are intentionally distinct: the **PUBBLICAZIONE** archive is the ≤100-file GitHub browser-upload payload; the **SOURCE** archive is the reproducible source release and includes the lockfile and build/deployment documentation.
 
 ## v0.7.17 — Final audit hardening
 
@@ -33,14 +39,14 @@ The Explorer separates two concepts that must not be conflated:
 
 This matters for strings such as `.nyc`, `.cat` and `.post`: an old application, a later application and eventual delegation are distinct events, not one record whose fields should overwrite one another. The Explorer drawer exposes that history where it is informative.
 
-The Explorer imports every individual profile in the dated IANA Root Zone Database and indexes every label in the corresponding root list. Profiles expose available registry details, contact organizations, dates, name servers and report links. The curated subset adds documented context and historical events. All labels are searchable in Unicode and ASCII; registry countries and technical names are searchable as well. Historical rounds, themes and city filters apply only where documented. Individual 2026 application data remains pending official publication.
+The frozen Explorer core imports every individual profile in the dated IANA Root Zone Database and indexes every label in the corresponding root list. Profiles expose available registry details, contact organizations, dates, name servers and report links. The curated subset adds documented context and historical events. All labels are searchable in Unicode and ASCII; registry countries and technical names are searchable as well. Historical rounds, themes and city filters apply only where documented. Individual 2026 application data remains pending official publication.
 
 
 ## TLD Life Histories
 
 v0.7.13 adds a chronological evidence layer to every Explorer profile. The timeline combines formal application records, IANA registration dates, IANA delegation/transfer/revocation reports, the current root-zone state and the ICANN gTLD contract-lifecycle feed (`https://www.icann.org/resources/registries/gtlds/v2/gtlds.json`). For gTLDs, the live ICANN layer adds Application ID, Registry Agreement signature date, delegation date, termination state and removal date where published. For ccTLDs, the project uses IANA delegation/redelegation evidence instead of applying the gTLD contract model.
 
-The word “complete” has a defined evidentiary meaning: every dated event exposed by the preserved central structured sources is represented; missing historical phases remain explicitly missing. Some early operator changes predate modern structured records and are therefore not reconstructed without a source.
+The word “complete” is scoped to each declared corpus. The frozen local chronology represents the dated events exposed by the preserved release sources; missing historical phases remain explicitly missing. Browser-time ICANN lifecycle enrichment is a separate live layer and does not mutate the frozen release snapshot. Some early operator changes predate modern structured records and are therefore not reconstructed without a source.
 
 `data/tld_life_histories.csv` exports the locally preserved chronology. The browser enriches gTLD profiles with the current ICANN contract feed and caches the validated result.
 
@@ -91,7 +97,7 @@ Build-time rendering uses the same application and translation sources as the br
 
 The root alias and each localized `index.html` contain prerendered editorial content and their own translation dictionary. From v0.7.8, CSS, application code, the map and a compact search index are shared, versioned assets. Full Explorer profiles load only when opened, in eight reusable batches. All four languages use the same records and cached resources.
 
-Publish the **complete release** together, including `assets/`, `data/site_bundle.js` and all eight `data/explorer_profiles_*.js` files. The build checks their paths, versions and record parity; `data/manifest.json` records their sizes and hashes. If a profile request fails, the drawer offers retry, the original source where available and the complete data download. Prerendered text remains readable when JavaScript is unavailable.
+Publish the **PUBBLICAZIONE archive** together, including `assets/`, `data/site_bundle.js` and all eight `data/explorer_profiles_*.js` files. The build checks their paths, versions and record parity; `data/manifest.json` records their sizes and hashes. If a profile request fails, the drawer offers retry, the original source where available and the complete data download. Prerendered text remains readable when JavaScript is unavailable.
 
 The visual logo remains an ordinary external asset (`assets/logo-mark.png`) rather than being embedded repeatedly as base64. CSV and ZIP research assets also remain external for download and reproducibility. A missing image therefore cannot break the publication runtime.
 
@@ -216,17 +222,18 @@ Release: 4 October 2026. IANA registration events assert only the recorded date,
 
 Chronologies are sorted, historical rounds are displayed together, places and periods are localized, and the IANA date label is generated from the same snapshot as the data. Regression checks cover all four languages, filters, URL restoration, provenance and CSV/runtime consistency.
 
-The complete release includes synchronized build sources and generated pages in at most 100 files. The 78 raw IANA evidence files are preserved byte-for-byte in `data/evidence/iana-snapshot-2026-10-04.json.gz`; validation reads that archive directly. They must not be expanded before a GitHub browser upload. Both the full release and downloadable data pack include the archive. For publication, upload the release contents to the repository root without expanding the evidence archive.
+The PUBBLICAZIONE archive contains the generated site payload in at most 100 files. The SOURCE archive is separate and contains the synchronized build sources, lockfile and deployment documentation. The 78 raw IANA evidence files are preserved byte-for-byte in `data/evidence/iana-snapshot-2026-10-04.json.gz`; validation reads that archive directly. They must not be expanded before a GitHub browser upload. Both the full release and downloadable data pack include the archive. For publication, upload the release contents to the repository root without expanding the evidence archive.
 
 To rebuild and package a release:
 
 ```bash
 npm ci
 python3 build.py
-python3 scripts/package_release.py
+python3 scripts/package_release.py --kind deploy
+python3 scripts/package_release.py --kind source
 ```
 
-The last command writes the complete ZIP next to the project directory and rejects packages exceeding GitHub's 100-file browser-upload limit.
+The deploy command writes the ≤100-file PUBBLICAZIONE ZIP for a GitHub browser upload. The source command writes a complete reproducible SOURCE ZIP and is not constrained by the browser-upload file limit.
 
 
 ## v0.7.6 · guided reading, complete root index and canonical sources
@@ -267,7 +274,7 @@ Each IANA profile exposes available registry and contact organizations, localize
 
 Search supports Unicode/ASCII names, organizations, countries and name-server names. A registry-country filter and in-root/outside-root presets complement the existing status and formal-type filters. Round, theme and city classifications remain limited to the researched subset. An absent root entry is not automatically classified as never delegated; IANA report dates are not automatically transfer-effective dates.
 
-The data pack adds `explorer_nameservers.csv` and `explorer_iana_reports.csv`. The normalized snapshot and compressed archive preserve all **1,597 source files**, including the root list and database index, with individual retrieval timestamps and SHA-256 hashes. Ordinary builds remain entirely offline. No live refresh occurs in a visitor's browser.
+The data pack adds `explorer_nameservers.csv` and `explorer_iana_reports.csv`. The normalized snapshot and compressed archive preserve all **1,597 source files**, including the root list and database index, with individual retrieval timestamps and SHA-256 hashes. Ordinary builds remain entirely offline. The frozen release files do not refresh themselves. Clearly labelled runtime enrichment may query current external sources in a visitor’s browser; those values are not part of the frozen snapshot.
 
 ### Updating the IANA snapshot
 

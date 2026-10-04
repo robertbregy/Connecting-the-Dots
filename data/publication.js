@@ -1,6 +1,6 @@
-/* v0.7.17: release date is distinct from the data snapshot date */
+/* v0.7.18: publication state is the single source for release/snapshot timing */
 window.DOT_PUBLICATION={
-  version:'0.7.17',
+  version:'0.7.18',
   releasedOn:'2026-10-04',
   state:'pre-reveal',
   asOf:'2026-10-04',

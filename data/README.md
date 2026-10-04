@@ -133,3 +133,7 @@ The TLD-coverage claim excludes never-delegated ISO codes and other labels that 
 - Documented registry charters, eligibility rules and community policies are FACT; broader interpretation is kept as READING.
 - Registration volume is never used as a proxy for social value or cultural significance.
 
+
+## Runtime enrichment
+
+The data pack is the frozen release corpus. Browser-time 2012 application archaeology and current ICANN gTLD lifecycle lookups are optional runtime enrichment. They are validated and labelled separately and do not redefine the frozen snapshot or its hashes.

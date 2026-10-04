@@ -77,7 +77,7 @@ function render(language,alias=false){
   }
   const article=document.getElementById('articleStructuredData');
   const articleData=JSON.parse(article.textContent);
-  Object.assign(articleData,{inLanguage:language,description:translations.metaDescription,mainEntityOfPage:canonical});
+  Object.assign(articleData,{inLanguage:language,description:translations.metaDescription,mainEntityOfPage:canonical,dateModified:window.DOT_PUBLICATION.releasedOn});
   article.textContent=JSON.stringify(articleData);
   const dataset=document.getElementById('datasetStructuredData');
   const datasetData=JSON.parse(dataset.textContent);

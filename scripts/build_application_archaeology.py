@@ -138,7 +138,13 @@ manifest={
            'expectedHeader':['String','Applicant','Website','Location','Region','Primary Contact','Email','IDN?','A-Label','English Meaning','Script Code','Community?','Geographic?','Application ID']}
  },
  'runtimeSources2012':[RAW_2012,CDN_2012],
- 'method':'The browser retrieves a preserved copy of the 13 June 2012 Reveal Day CSV. The archival transport includes Primary Contact and Email, which are discarded during parsing before the research dataset is created. Only the reduced application metadata is validated against official ICANN totals and the 1,409 distinct-string snapshot count, then merged into the Explorer.'
+ 'runtimeTransport2012':{
+   'status':'external-mirror-not-cryptographically-pinned',
+   'canonicalHistoricalEvidence':WAYBACK_2012,
+   'scope':'The external mirror is transport only. It is not part of the frozen release hash set and is accepted only after deterministic structural and aggregate validation.',
+   'validation':['exact expected header','1,930 applications','1,409 distinct strings','1,930 unique application IDs','116 IDN applications','66 geographic applications','84 community applications','regional totals: NA 911, EUR 675, AP 303, LAC 24, AF 17']
+ },
+ 'method':'The browser may retrieve an external mirror of the 13 June 2012 Reveal Day CSV. The transport URLs are not cryptographically pinned and therefore are not part of the frozen release snapshot. Before any merge, the payload must match the expected schema and locked ICANN aggregate totals. Primary Contact and Email are discarded during parsing before the research dataset is constructed and are never exposed or exported.'
 }
 (DATA/'application_archaeology_local.json').write_text(json.dumps({'schemaVersion':1,'applications':local_apps},ensure_ascii=False,separators=(',',':')),encoding='utf-8')
 (DATA/'application_archaeology_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
