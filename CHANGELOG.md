@@ -1,3 +1,11 @@
+# v0.7.17 — Final audit hardening
+
+- Correct current ISO country-code normalization for France (FR), Burkina Faso (BF), Benin (BJ), Serbia (RS) and Timor-Leste (TL) across registry, administrative and technical geography fields.
+- Align the publication-level editorial snapshot to 4 October 2026 while preserving observation-specific dates such as the 2 October .lugano applicant disclosure.
+- Clarify that the archived 2012 Reveal Day transport includes Primary Contact and Email; both are discarded during parsing before the research dataset is constructed and are never exposed or exported.
+- Add a release-level self-check so the browser-upload bundle no longer advertises validator commands that are absent from the package.
+- Correct stale release documentation discovered by the final audit.
+
 # v0.7.16 — The Social Life of the Dot
 
 - adds a structured social layer with nine source-backed cases and six analytical models;

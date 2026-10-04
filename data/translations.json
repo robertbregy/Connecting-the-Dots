@@ -404,7 +404,7 @@
     "downloadExcel": "Complete Excel workbook",
     "excelSub": "XLSX · publication-ready tables + sources",
     "dataPackSub": "ZIP · CSV datasets, manifest, methodology and licence",
-    "footerLeftV05": "Pre-Reveal snapshot · updated 2 October 2026 · 1984–2026",
+    "footerLeftV05": "Pre-Reveal snapshot · updated 4 October 2026 · 1984–2026",
     "footerRightV05": "Primary sources: ICANN, IANA and cited registry / governance sources",
     "roleTagPolicy": "POLICY",
     "roleTagRoot": "ROOT",
@@ -1195,7 +1195,7 @@
     "downloadApplications2004Sub": "CSV · all 10 submissions / 9 strings",
     "downloadApplications2012": "2012 Reveal Day applications",
     "downloadApplications2012Sub": "CSV · 1,930 sanitized rows · generated after validation",
-    "release0712": "Application Archaeology: complete 2000 and 2004 submission corpora are vendored locally; the full 2012 Reveal Day corpus is privacy-sanitized, locked to official ICANN totals and merged into the Explorer at runtime.",
+    "release0712": "Application Archaeology: complete 2000 and 2004 submission corpora are vendored locally; the full 2012 Reveal Day corpus is retrieved from an archival copy, reduced in-browser to non-contact application metadata, locked to official ICANN totals and merged into the Explorer at runtime.",
     "applicationSubmitted": "Application / proposal",
     "registryAgreementSigned": "Registry Agreement signed",
     "registryAgreementTerminated": "Registry Agreement terminated",
@@ -1540,7 +1540,8 @@
     "socialIdnReading": "Internationalized TLDs turn script choice into an inclusion question: the global naming system becomes less dependent on Latin characters as the default doorway to the Internet.",
     "guard6": "Social significance is not inferred from registration volume. Registry charters, eligibility rules and documented community policies are FACT; the broader meaning assigned to them in this publication is a READING.",
     "angle7": "When does a TLD become a marker of language, locality, identity or belonging rather than simply an address?",
-    "release0716": "The Social Life of the Dot: nine social cases, six social models, Explorer links and source-backed evidence on language, community, identity, safety and script inclusion."
+    "release0716": "The Social Life of the Dot: nine social cases, six social models, Explorer links and source-backed evidence on language, community, identity, safety and script inclusion.",
+    "release0717": "Final audit hardening: corrected current ISO country codes in Explorer geography, aligned the publication snapshot to 4 October, clarified 2012 privacy handling and restored a self-checking release package."
   },
   "it": {
     "brand": "Brand",
@@ -1947,7 +1948,7 @@
     "downloadExcel": "Workbook Excel completo",
     "excelSub": "XLSX · tabelle pronte all’uso + fonti",
     "dataPackSub": "ZIP · dataset CSV, manifest, metodologia e licenza",
-    "footerLeftV05": "Snapshot pre-Reveal · aggiornato 2 ottobre 2026 · 1984–2026",
+    "footerLeftV05": "Snapshot pre-Reveal · aggiornato 4 ottobre 2026 · 1984–2026",
     "footerRightV05": "Fonti primarie: ICANN, IANA e fonti registry / governance citate",
     "roleTagPolicy": "POLICY",
     "roleTagRoot": "ROOT",
@@ -2738,7 +2739,7 @@
     "downloadApplications2004Sub": "CSV · tutte le 10 submission / 9 stringhe",
     "downloadApplications2012": "Candidature Reveal Day 2012",
     "downloadApplications2012Sub": "CSV · 1.930 righe sanitizzate · generato dopo la validazione",
-    "release0712": "Application Archaeology: i corpus completi delle submission 2000 e 2004 sono inclusi localmente; il corpus integrale del Reveal Day 2012 è sanitizzato, vincolato ai totali ufficiali ICANN e integrato nell’Explorer a runtime.",
+    "release0712": "Application Archaeology: i corpus completi delle candidature 2000 e 2004 sono incorporati localmente; il corpus completo del Reveal Day 2012 è recuperato da una copia archivistica, ridotto nel browser ai metadati di candidatura non di contatto, vincolato ai totali ufficiali ICANN e integrato nell’Explorer a runtime.",
     "applicationSubmitted": "Candidatura / proposta",
     "registryAgreementSigned": "Registry Agreement firmato",
     "registryAgreementTerminated": "Registry Agreement terminato",
@@ -3083,7 +3084,8 @@
     "socialIdnReading": "I TLD internazionalizzati trasformano la scelta della scrittura in una questione di inclusione: il sistema globale dei nomi dipende meno dai caratteri latini come porta d’ingresso predefinita a Internet.",
     "guard6": "La rilevanza sociale non viene dedotta dal volume delle registrazioni. Charter, regole di idoneità e policy comunitarie documentate sono FACT; il significato più ampio attribuito loro in questa pubblicazione è una READING.",
     "angle7": "Quando un TLD diventa un segno di lingua, località, identità o appartenenza invece di essere soltanto un indirizzo?",
-    "release0716": "The Social Life of the Dot: aggiunti nove casi sociali, sei modelli, collegamenti all’Explorer ed evidenze documentate su lingua, comunità, identità, tutela e inclusione delle scritture."
+    "release0716": "The Social Life of the Dot: aggiunti nove casi sociali, sei modelli, collegamenti all’Explorer ed evidenze documentate su lingua, comunità, identità, tutela e inclusione delle scritture.",
+    "release0717": "Hardening dell’audit finale: corretti i codici paese ISO correnti nella geografia dell’Explorer, allineato lo snapshot della pubblicazione al 4 ottobre, chiarita la gestione privacy del corpus 2012 e ripristinato un pacchetto di release autoverificabile."
   },
   "de": {
     "brand": "Marke",
@@ -3490,7 +3492,7 @@
     "downloadExcel": "Komplette Excel-Arbeitsmappe",
     "excelSub": "XLSX · publizierbare Tabellen + Quellen",
     "dataPackSub": "ZIP · CSV-Datensätze, Manifest, Methodik und Lizenz",
-    "footerLeftV05": "Snapshot vor Reveal Day · aktualisiert 2. Oktober 2026 · 1984–2026",
+    "footerLeftV05": "Snapshot vor Reveal Day · aktualisiert 4. Oktober 2026 · 1984–2026",
     "footerRightV05": "Primärquellen: ICANN, IANA und zitierte Registry-/Governance-Quellen",
     "roleTagPolicy": "POLICY",
     "roleTagRoot": "ROOT",
@@ -4281,7 +4283,7 @@
     "downloadApplications2004Sub": "CSV · alle 10 Einreichungen / 9 Strings",
     "downloadApplications2012": "Reveal-Day-Bewerbungen 2012",
     "downloadApplications2012Sub": "CSV · 1.930 bereinigte Zeilen · nach Validierung erzeugt",
-    "release0712": "Application Archaeology: Die vollständigen Bewerbungskorpora 2000 und 2004 sind lokal enthalten; der vollständige Reveal-Day-Korpus 2012 wird datensparsam bereinigt, gegen offizielle ICANN-Gesamtwerte geprüft und zur Laufzeit in den Explorer integriert.",
+    "release0712": "Application Archaeology: Die vollständigen Bewerbungsbestände 2000 und 2004 sind lokal eingebunden; der vollständige Reveal-Day-Bestand 2012 wird aus einer Archivkopie geladen, im Browser auf nicht personenbezogene Bewerbungsmetadaten reduziert, gegen offizielle ICANN-Gesamtwerte geprüft und zur Laufzeit in den Explorer integriert.",
     "applicationSubmitted": "Bewerbung / Vorschlag",
     "registryAgreementSigned": "Registry Agreement unterzeichnet",
     "registryAgreementTerminated": "Registry Agreement beendet",
@@ -4626,7 +4628,8 @@
     "socialIdnReading": "Internationalisierte TLDs machen Schriftwahl zu einer Inklusionsfrage: Das globale Namenssystem ist weniger von lateinischen Zeichen als Standardzugang zum Internet abhängig.",
     "guard6": "Soziale Bedeutung wird nicht aus Registrierungsvolumen abgeleitet. Registry-Charten, Berechtigungsregeln und dokumentierte Gemeinschaftsrichtlinien sind FACT; die weitergehende Bedeutung, die diese Publikation ihnen zuschreibt, ist eine READING.",
     "angle7": "Wann wird eine TLD zum Zeichen für Sprache, Lokalität, Identität oder Zugehörigkeit statt nur zu einer Adresse?",
-    "release0716": "The Social Life of the Dot: neun soziale Fälle, sechs Modelle, Explorer-Verknüpfungen und quellenbasierte Evidenz zu Sprache, Gemeinschaft, Identität, Schutz und Schriftinklusion ergänzt."
+    "release0716": "The Social Life of the Dot: neun soziale Fälle, sechs Modelle, Explorer-Verknüpfungen und quellenbasierte Evidenz zu Sprache, Gemeinschaft, Identität, Schutz und Schriftinklusion ergänzt.",
+    "release0717": "Finales Audit-Hardening: aktuelle ISO-Ländercodes in der Explorer-Geografie korrigiert, Publikations-Snapshot auf den 4. Oktober abgestimmt, Datenschutzbehandlung des 2012-Korpus präzisiert und ein selbstprüfendes Release-Paket wiederhergestellt."
   },
   "fr": {
     "brand": "Marque",
@@ -5033,7 +5036,7 @@
     "downloadExcel": "Classeur Excel complet",
     "excelSub": "XLSX · tableaux prêts à publier + sources",
     "dataPackSub": "ZIP · jeux de données CSV, manifeste, méthodologie et licence",
-    "footerLeftV05": "Snapshot pré-Reveal · mise à jour 2 octobre 2026 · 1984–2026",
+    "footerLeftV05": "Snapshot pré-Reveal · mise à jour 4 octobre 2026 · 1984–2026",
     "footerRightV05": "Sources primaires : ICANN, IANA et sources registry / gouvernance citées",
     "roleTagPolicy": "POLICY",
     "roleTagRoot": "ROOT",
@@ -5824,7 +5827,7 @@
     "downloadApplications2004Sub": "CSV · les 10 soumissions / 9 chaînes",
     "downloadApplications2012": "Candidatures Reveal Day 2012",
     "downloadApplications2012Sub": "CSV · 1 930 lignes nettoyées · généré après validation",
-    "release0712": "Application Archaeology : les corpus complets 2000 et 2004 sont inclus localement ; le corpus intégral du Reveal Day 2012 est nettoyé des données personnelles inutiles, verrouillé sur les totaux officiels ICANN et intégré à l’Explorer à l’exécution.",
+    "release0712": "Application Archaeology : les corpus complets de candidatures 2000 et 2004 sont intégrés localement ; le corpus complet du Reveal Day 2012 est récupéré depuis une copie d’archive, réduit dans le navigateur aux métadonnées de candidature hors contacts, verrouillé sur les totaux officiels de l’ICANN et fusionné dans l’Explorer à l’exécution.",
     "applicationSubmitted": "Candidature / proposition",
     "registryAgreementSigned": "Registry Agreement signé",
     "registryAgreementTerminated": "Registry Agreement résilié",
@@ -6169,6 +6172,7 @@
     "socialIdnReading": "Les TLD internationalisés transforment le choix de l’écriture en question d’inclusion : le système mondial de nommage dépend moins des caractères latins comme porte d’entrée par défaut vers Internet.",
     "guard6": "La signification sociale n’est pas déduite du volume d’enregistrements. Chartes de registry, règles d’éligibilité et politiques communautaires documentées sont des FACT ; le sens plus large que leur attribue cette publication est une READING.",
     "angle7": "Quand un TLD devient-il un marqueur de langue, de localité, d’identité ou d’appartenance plutôt qu’une simple adresse ?",
-    "release0716": "The Social Life of the Dot : ajout de neuf cas sociaux, six modèles, liens Explorer et éléments sourcés sur langue, communauté, identité, protection et inclusion des écritures."
+    "release0716": "The Social Life of the Dot : ajout de neuf cas sociaux, six modèles, liens Explorer et éléments sourcés sur langue, communauté, identité, protection et inclusion des écritures.",
+    "release0717": "Durcissement après audit final : correction des codes pays ISO actuels dans la géographie de l’Explorer, alignement du snapshot de publication au 4 octobre, clarification du traitement des données personnelles du corpus 2012 et restauration d’un paquet de release auto-vérifiable."
   }
 }

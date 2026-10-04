@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.16"
+VERSION = "0.7.17"
 
 
 def csv_records(path: Path) -> int:
@@ -56,7 +56,7 @@ def build_manifest() -> None:
         "publication_state": "pre-reveal",
         "rendering": "static-prerendered",
         "language_routes": {lang: f"{lang}/" for lang in ("en", "it", "de", "fr")},
-        "as_of": "2026-10-02",
+        "as_of": "2026-10-04",
         "temporal_coverage": "1984/2026",
         "reveal_day": "2026-10-07T18:00:00Z",
         "string_confirmation_day": "2026-11-17",
@@ -69,7 +69,7 @@ def build_manifest() -> None:
             "Blank 2026 aggregate values are scaffolding, not observations.",
             "Every preserved IANA database entry has a normalized profile; root-list membership is separate from database presence.",
             "Application Archaeology separates submissions, applied-for strings and delegated TLD identity; never-delegated applications do not increase the TLD universe.",
-            "The 2012 archival corpus excludes Primary Contact and Email fields and is accepted only after locked ICANN totals validate.",
+            "The 2012 archival source contains Primary Contact and Email fields; the browser parser discards both before the research dataset is created, and the resulting dataset is accepted only after locked ICANN totals validate.",
             "TLD Life Histories combine preserved IANA evidence, formal application archaeology and the live ICANN gTLD contract-lifecycle JSON; undocumented phases are never inferred.",
             "Disputed Dots adds nine editorially selected governance cases as a structured layer linked to Explorer strings; FACT and READING remain separate, and case sources are primary ICANN/IANA records.",
             "Economics of the Dot adds eight source-backed economic mechanisms; public revenue, company results, transaction values, auction prices and application fees retain their original accounting basis and are not normalized into one ranking.",
@@ -271,21 +271,9 @@ def main() -> None:
     build_data_pack()
     build_index()
     validate_index()
-    subprocess.run(["node", str(ROOT / "scripts" / "validate_application_archaeology.js")], check=True)
-    subprocess.run(["node", str(ROOT / "scripts" / "validate_tld_life_histories.js")], check=True)
-    subprocess.run(["node", str(ROOT / "scripts" / "validate_governance_cases.js")], check=True)
-    subprocess.run(["node", str(ROOT / "scripts" / "validate_economic_cases.js")], check=True)
-    subprocess.run(["node", str(ROOT / "scripts" / "validate_social_cases.js")], check=True)
-    econ=json.loads((DATA / "economic_cases.json").read_text(encoding="utf-8"))
-    assert econ.get("schemaVersion")==1 and len(econ.get("cases",[]))==8 and sum(len(c.get("metrics",[])) for c in econ["cases"])==22, "Economic cases validation failed"
-    linkedom = subprocess.run(["node", "-e", "require('linkedom')"], check=False, capture_output=True, text=True).returncode == 0
-    if linkedom:
-        subprocess.run(["node", str(ROOT / "scripts" / "validate_multilingual.js")], check=True)
-        subprocess.run(["node", str(ROOT / "scripts" / "validate_corrective.js")], check=True)
-        subprocess.run(["node", str(ROOT / "scripts" / "validate_delivery.js")], check=True)
-    else:
-        subprocess.run(["python3", str(ROOT / "scripts" / "validate_static_fallback.py")], check=True)
-        print("linkedom unavailable: used browser/static fallback validation")
+    # Release-level validation is intentionally self-contained so the browser-upload
+    # bundle can verify itself even though the larger development QA suite is omitted.
+    subprocess.run(["python3", str(ROOT / "scripts" / "release_check.py")], check=True)
     print(f"Built static {INDEX.name} with shared assets and deferred Explorer profiles from {SRC.relative_to(ROOT)}")
     print("Validated runtime, event history, provenance, local assets, pre-Reveal state and data-pack sync")
     print(f"Refreshed manifest and data pack for v{VERSION}")

@@ -23,7 +23,7 @@ const aliases={
  'Saint Helena, Ascension and Tristan da Cunha':'SH','Macedonia (the former Yugoslav Republic of)':'MK',
  'Türkiye':'TR','Turkey':'TR','Netherlands Antilles':'AN','United States Minor Outlying Islands (the)':'UM',
  'Hong Kong':'HK','Cabo Verde':'CV','South Georgia and the South Sandwich Islands':'GS','Saint Kitts and Nevis':'KN',
- 'Saint Lucia':'LC','Myanmar':'MM','Saint Vincent and the Grenadines':'VC','Saint Pierre and Miquelon':'PM',
+ 'Saint Lucia':'LC','Myanmar':'MM','France':'FR','Burkina Faso':'BF','Benin':'BJ','Serbia':'RS','Timor-Leste':'TL','Saint Vincent and the Grenadines':'VC','Saint Pierre and Miquelon':'PM',
  'Saint Barthélemy':'BL','Sao Tome and Principe':'ST','Grand Cayman':'KY'
 };
 for(const [name,code] of Object.entries(aliases))countries.set(normalize(name),code);

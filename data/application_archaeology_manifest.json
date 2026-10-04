@@ -6,6 +6,8 @@
       "Primary Contact",
       "Email"
     ],
+    "sourceTransportContainsExcludedFields": true,
+    "handling": "Discarded during parsing before the research dataset is constructed; never exposed or exported by the publication.",
     "reason": "Not needed for historical TLD/application analysis."
   },
   "rounds": {
@@ -72,5 +74,5 @@
     "https://raw.githubusercontent.com/nimblemachines/analyzing-iana-root-db/master/strings-1200utc-13jun12-en.csv",
     "https://cdn.jsdelivr.net/gh/nimblemachines/analyzing-iana-root-db@master/strings-1200utc-13jun12-en.csv"
   ],
-  "method": "2012 rows are parsed in-browser from a preserved copy of the 13 June 2012 Reveal Day CSV, privacy-sanitized, validated against official ICANN totals and the 1,409 distinct-string snapshot count, and only then merged into the Explorer."
+  "method": "The browser retrieves a preserved copy of the 13 June 2012 Reveal Day CSV. The archival transport includes Primary Contact and Email, which are discarded during parsing before the research dataset is created. Only the reduced application metadata is validated against official ICANN totals and the 1,409 distinct-string snapshot count, then merged into the Explorer."
 }

@@ -1,7 +1,7 @@
 # Connecting the Dots — data directory
 
 Publication state: **pre-Reveal**  
-As of: **2 October 2026**
+As of: **4 October 2026**
 
 The CSV files are research inputs and reusable publication data. `applications_2026.csv` intentionally contains the schema header and **zero application records** before ICANN Reveal Day; no synthetic placeholder observation is inserted. Aggregate 2026 scaffold files can contain named rows with empty values only when the row itself is a documented metric or classification bucket and its status explicitly says that official 2026 data is still to be loaded.
 
@@ -37,11 +37,11 @@ The release date is 3 October 2026; the publication and manifest keep the existi
 
 ## v0.7.3 static language pages
 
-The publication is prerendered in EN, IT, DE and FR. Language metadata in `manifest.json` describes the publication routes; the research snapshot remains 2 October 2026. All CSV observations, source corrections and pre-Reveal empty fields are preserved from v0.7.2.
+The publication is prerendered in EN, IT, DE and FR. Language metadata in `manifest.json` describes the publication routes; the publication research snapshot is 4 October 2026. All CSV observations, source corrections and pre-Reveal empty fields are preserved from v0.7.2.
 
 ## v0.7.4 current-state correction
 
-Current IANA root status, formal type, registry legal organization, registry country, technical-contact organization, represented place and historical applications are distinct fields. The root evidence was retrieved on 4 October 2026; the other pre-Reveal research snapshot remains 2 October 2026. `iana_snapshot.json` records retrieval time, source URLs and SHA-256 hashes of the original source files. In v0.7.5, both release ZIPs include those files inside one compressed evidence archive, as described below. The IANA technical contact is not automatically the contractual RSP.
+Current IANA root status, formal type, registry legal organization, registry country, technical-contact organization, represented place and historical applications are distinct fields. The root evidence was retrieved on 4 October 2026; the publication-level pre-Reveal research snapshot is 4 October 2026; individual observations retain their own source dates. `iana_snapshot.json` records retrieval time, source URLs and SHA-256 hashes of the original source files. In v0.7.5, both release ZIPs include those files inside one compressed evidence archive, as described below. The IANA technical contact is not automatically the contractual RSP.
 
 Current `.CS` is retired: its former Czechoslovak delegation and the non-delegation for Serbia and Montenegro are separate historical events. `.GB` remains explicitly reserved. No public legal-applicant identity is inferred for `.lugano` before Reveal Day. `contention_count` refers to 2012 where `contention_year` is 2012. Empty cells represent information not documented in this catalogue.
 

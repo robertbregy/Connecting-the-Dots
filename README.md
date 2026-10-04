@@ -1,4 +1,8 @@
-# Connecting the Dots — v0.7.13
+# Connecting the Dots — v0.7.17
+
+## v0.7.17 — Final audit hardening
+
+Release: 4 October 2026. Publication-hardening release after a full cross-check of data, runtime and multilingual output. Corrects five obsolete ISO country-code mappings that affected Explorer geography, aligns the editorial snapshot to 4 October, clarifies the exact privacy handling of the historical 2012 Reveal Day source, and makes the browser-upload release self-checking without pretending that build-time evidence acquisition is bundled.
 
 ## v0.7.16 — The Social Life of the Dot
 
@@ -12,7 +16,7 @@ Independent research project by **Robert Bregy**. It does not represent an offic
 
 ## Publication model
 
-The project is deliberately structured for the **post-Reveal publication**. Values that cannot yet be known on 2 October 2026 remain explicitly marked as pre-Reveal or unavailable. The page architecture does not need to change after Reveal Day: official ICANN public application data can populate the prepared fields, tables, maps and comparisons.
+The project is deliberately structured for the **post-Reveal publication**. Values that cannot yet be known before Reveal Day remain explicitly marked as pre-Reveal or unavailable. The page architecture does not need to change after Reveal Day: official ICANN public application data can populate the prepared fields, tables, maps and comparisons.
 
 The 2026 layer is designed to hold applications, unique strings, applicant organizations, countries and territories, application types, geographic/community/.Brand applications, IDN/variant information, contention sets, applicant concentration and an application-level normalized dataset.
 
@@ -212,7 +216,7 @@ Release: 4 October 2026. IANA registration events assert only the recorded date,
 
 Chronologies are sorted, historical rounds are displayed together, places and periods are localized, and the IANA date label is generated from the same snapshot as the data. Regression checks cover all four languages, filters, URL restoration, provenance and CSV/runtime consistency.
 
-The complete release includes synchronized build sources and generated pages in fewer than 100 files. The 78 raw IANA evidence files are preserved byte-for-byte in `data/evidence/iana-snapshot-2026-10-04.json.gz`; validation reads that archive directly. They must not be expanded before a GitHub browser upload. Both the full release and downloadable data pack include the archive. See `DEPLOY.md`.
+The complete release includes synchronized build sources and generated pages in at most 100 files. The 78 raw IANA evidence files are preserved byte-for-byte in `data/evidence/iana-snapshot-2026-10-04.json.gz`; validation reads that archive directly. They must not be expanded before a GitHub browser upload. Both the full release and downloadable data pack include the archive. For publication, upload the release contents to the repository root without expanding the evidence archive.
 
 To rebuild and package a release:
 
@@ -313,7 +317,7 @@ The data model distinguishes a submission from each string linked to that submis
 
 Never-delegated applied-for strings receive `application-only` Explorer records. They do not increase the TLD/profile universe, which remains **1,599 records** under the v0.7.11 dated coverage definition. Existing TLD records can carry application histories from multiple rounds without changing their introduction path.
 
-For the 2012 corpus, the historical CSV's `Primary Contact` and `Email` fields are deliberately discarded. The publication retains the string, applicant, public website, location/region, IDN/A-label/script data, community/geographic flags and Application ID. The browser validates the complete sanitized corpus before merging it; invalid or partial data are rejected.
+For the 2012 corpus, the archival CSV transport contains `Primary Contact` and `Email`. The browser parser deliberately discards both fields before constructing the research dataset; they are never exposed or exported by the publication. The retained dataset contains the string, applicant, public website, location/region, IDN/A-label/script data, community/geographic flags and Application ID. The reduced corpus is then validated in full before merging; invalid or partial data are rejected. The source transport is therefore not itself sanitized, a limitation stated explicitly in the methodology.
 
 ## v0.7.11 · Universal Explorer
 

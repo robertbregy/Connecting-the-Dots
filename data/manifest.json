@@ -1,6 +1,6 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.16",
+  "version": "0.7.17",
   "release_date": "2026-10-04",
   "publication_state": "pre-reveal",
   "rendering": "static-prerendered",
@@ -10,7 +10,7 @@
     "de": "de/",
     "fr": "fr/"
   },
-  "as_of": "2026-10-02",
+  "as_of": "2026-10-04",
   "temporal_coverage": "1984/2026",
   "reveal_day": "2026-10-07T18:00:00Z",
   "string_confirmation_day": "2026-11-17",
@@ -23,7 +23,7 @@
     "Blank 2026 aggregate values are scaffolding, not observations.",
     "Every preserved IANA database entry has a normalized profile; root-list membership is separate from database presence.",
     "Application Archaeology separates submissions, applied-for strings and delegated TLD identity; never-delegated applications do not increase the TLD universe.",
-    "The 2012 archival corpus excludes Primary Contact and Email fields and is accepted only after locked ICANN totals validate.",
+    "The 2012 archival source contains Primary Contact and Email fields; the browser parser discards both before the research dataset is created, and the resulting dataset is accepted only after locked ICANN totals validate.",
     "TLD Life Histories combine preserved IANA evidence, formal application archaeology and the live ICANN gTLD contract-lifecycle JSON; undocumented phases are never inferred.",
     "Disputed Dots adds nine editorially selected governance cases as a structured layer linked to Explorer strings; FACT and READING remain separate, and case sources are primary ICANN/IANA records.",
     "Economics of the Dot adds eight source-backed economic mechanisms; public revenue, company results, transaction values, auction prices and application fees retain their original accounting basis and are not normalized into one ranking.",
@@ -70,6 +70,8 @@
           "Primary Contact",
           "Email"
         ],
+        "sourceTransportContainsExcludedFields": true,
+        "handling": "Discarded during parsing before the research dataset is constructed; never exposed or exported by the publication.",
         "reason": "Not needed for historical TLD/application analysis."
       },
       "rounds": {
@@ -136,7 +138,7 @@
         "https://raw.githubusercontent.com/nimblemachines/analyzing-iana-root-db/master/strings-1200utc-13jun12-en.csv",
         "https://cdn.jsdelivr.net/gh/nimblemachines/analyzing-iana-root-db@master/strings-1200utc-13jun12-en.csv"
       ],
-      "method": "2012 rows are parsed in-browser from a preserved copy of the 13 June 2012 Reveal Day CSV, privacy-sanitized, validated against official ICANN totals and the 1,409 distinct-string snapshot count, and only then merged into the Explorer."
+      "method": "The browser retrieves a preserved copy of the 13 June 2012 Reveal Day CSV. The archival transport includes Primary Contact and Email, which are discarded during parsing before the research dataset is created. Only the reduced application metadata is validated against official ICANN totals and the 1,409 distinct-string snapshot count, then merged into the Explorer."
     },
     "lifeHistoryRecordCount": 1688,
     "lifeHistoryStaticEventCount": 5583,
@@ -155,7 +157,7 @@
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "release_history": {
     "path": "release_history.json",
-    "sha256": "e5ff4d7a4f65c8e5fa5ebdfdc11d715a78717df87239c27cd7815d1645b5b5bc"
+    "sha256": "f8259ff17cadbb61ab475631d566a40049c719115cd37f35d75aa9c7f4904662"
   },
   "web_delivery": {
     "profile_loading": "on-demand",
@@ -163,8 +165,8 @@
     "assets": [
       {
         "repository_path": "data/site_bundle.js",
-        "bytes": 1709363,
-        "sha256": "70167e508e4e92bc0827db226b3bf3b214727ad4c0f61fc2f672a49770ed40ff"
+        "bytes": 1710157,
+        "sha256": "f81c48ad07d734ed8f0eabb6badfc71511672fcc9cf23cde9b3acd6db0d2956e"
       },
       {
         "repository_path": "assets/app.js",
@@ -173,8 +175,8 @@
       },
       {
         "repository_path": "assets/style.css",
-        "bytes": 84587,
-        "sha256": "9b6812d72fb8299168588ef72c0382f32519e5f7ea51975c386df86e992624a1"
+        "bytes": 84582,
+        "sha256": "801fb8d0592fcf21955738c846445bd94e008e7714068d4c1952f44235008b02"
       },
       {
         "repository_path": "data/worldmap.js",
@@ -184,42 +186,42 @@
       {
         "repository_path": "data/explorer_profiles_0.js",
         "bytes": 684438,
-        "sha256": "4c7f8266223b3da45e59332486dd7dea085099b82f3bd134324644c0ef168879"
+        "sha256": "39be17b39ce9be1d937914abc96bba58f8efd833de2c13375f109e1dc3c3215e"
       },
       {
         "repository_path": "data/explorer_profiles_1.js",
         "bytes": 583309,
-        "sha256": "c4950a2a55e75f126139c916d68e59ead91f944ec7eca119f9cedb2a36ca4c02"
+        "sha256": "d712acb0a0933f785c756578b0f25c22ed3258fa45a073b42888495c4e18f6ed"
       },
       {
         "repository_path": "data/explorer_profiles_2.js",
         "bytes": 645686,
-        "sha256": "2d02cee04bb8157b019e7f165758473719860cfd20f741596ce55b031c62c5c8"
+        "sha256": "91f9f7bd667776ebc421f065b6eba689469b892aa0be2c764fafa00c6f7a3cfb"
       },
       {
         "repository_path": "data/explorer_profiles_3.js",
         "bytes": 598005,
-        "sha256": "86f5522a20e81346c1f1262519897dfaa3bbc3f58b32a01d6fdf5ed4aa10a791"
+        "sha256": "8400a747f13a858bdedb246d72c40c62f1effa7423da0bdb86edfa8b72010468"
       },
       {
         "repository_path": "data/explorer_profiles_4.js",
         "bytes": 638479,
-        "sha256": "80d36de203e77a753f3c12cb58adf5ed851e407a338b23109734ac8bee312ff5"
+        "sha256": "be9e6d255f7dda4736fefbf2dfa8da72693a34ddb6a33fa9e77a2a1d65b68066"
       },
       {
         "repository_path": "data/explorer_profiles_5.js",
         "bytes": 596581,
-        "sha256": "371fa1d0667304d84ca2132e17a862171983baa95dc5bd2e641e8fd49b26758c"
+        "sha256": "43b4fe2c2c65acbb796719b6d841c1a5d3b7632931da676c28ecc5be77ecef2c"
       },
       {
         "repository_path": "data/explorer_profiles_6.js",
         "bytes": 603814,
-        "sha256": "7fd27808e6b561a4dcfb03dba0f0a5a815aefe801406e967d5acb6cbf5f064ea"
+        "sha256": "5244a62851e0de447c10ac8bf37df5aeb9fd5f8a9d88069c527052ae48e30a03"
       },
       {
         "repository_path": "data/explorer_profiles_7.js",
         "bytes": 599027,
-        "sha256": "3738ab5bb11d0b0b7ea411fb137f89151dcc26f02c9512a6faf7ac4e38cfc4a5"
+        "sha256": "5efe168d7eb1df4a78855f1d11a5a26052a309a9f0ddf60e717137b7261591b0"
       }
     ]
   },
@@ -336,7 +338,7 @@
       "path": "explorer_catalog.csv",
       "bytes": 1077108,
       "records": 1688,
-      "sha256": "5e4e4a538eb8e600915437f1a82dfcaf31feb684f6f6a68b8929330ef3002799"
+      "sha256": "05ea7cba1b8121cc7215ec4b5e039a9347ac7e8d3dc28d6cab5bc75f923541ad"
     },
     {
       "path": "explorer_events.csv",

@@ -130,7 +130,7 @@ for a in apps2004:
 manifest={
  'schemaVersion':1,
  'title':'Application Archaeology corpus',
- 'privacy':{'excluded2012Fields':['Primary Contact','Email'],'reason':'Not needed for historical TLD/application analysis.'},
+ 'privacy':{'excluded2012Fields':['Primary Contact','Email'],'sourceTransportContainsExcludedFields':True,'handling':'Discarded during parsing before the research dataset is constructed; never exposed or exported by the publication.','reason':'Not needed for historical TLD/application analysis.'},
  'rounds':{
    '2000':{'delivery':'vendored','applications':47,'itemE2Links':223,'itemE2UniqueStrings':188,'additionalMentionedAlternatives':2,'sources':[SRC_2000,SRC_2000_STATUS]},
    '2004':{'delivery':'vendored','applications':10,'uniqueStrings':9,'sources':[SRC_2004]},
@@ -138,7 +138,7 @@ manifest={
            'expectedHeader':['String','Applicant','Website','Location','Region','Primary Contact','Email','IDN?','A-Label','English Meaning','Script Code','Community?','Geographic?','Application ID']}
  },
  'runtimeSources2012':[RAW_2012,CDN_2012],
- 'method':'2012 rows are parsed in-browser from a preserved copy of the 13 June 2012 Reveal Day CSV, privacy-sanitized, validated against official ICANN totals and the 1,409 distinct-string snapshot count, and only then merged into the Explorer.'
+ 'method':'The browser retrieves a preserved copy of the 13 June 2012 Reveal Day CSV. The archival transport includes Primary Contact and Email, which are discarded during parsing before the research dataset is created. Only the reduced application metadata is validated against official ICANN totals and the 1,409 distinct-string snapshot count, then merged into the Explorer.'
 }
 (DATA/'application_archaeology_local.json').write_text(json.dumps({'schemaVersion':1,'applications':local_apps},ensure_ascii=False,separators=(',',':')),encoding='utf-8')
 (DATA/'application_archaeology_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
