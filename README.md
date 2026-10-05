@@ -1,4 +1,9 @@
-# Connecting the Dots — v0.7.20
+# Connecting the Dots — v0.7.21
+
+
+## v0.7.21 — Automatic language entry
+
+The root entry point now selects the initial language from an explicit saved user choice or, on a first visit, from the browser’s ordered language preferences. Supported regional variants resolve to EN, IT, DE or FR; if none match, English is used. Direct language URLs stay authoritative, and no IP geolocation or location permission is used.
 
 ## v0.7.20 — Navigation terminology clarity
 

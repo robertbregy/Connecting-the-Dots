@@ -1,6 +1,6 @@
-/* v0.7.20: publication state is the single source for release/snapshot timing */
+/* v0.7.21: publication state is the single source for release/snapshot timing */
 window.DOT_PUBLICATION={
-  version:'0.7.20',
+  version:'0.7.21',
   releasedOn:'2026-10-05',
   state:'pre-reveal',
   asOf:'2026-10-04',

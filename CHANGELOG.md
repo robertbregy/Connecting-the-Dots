@@ -1,3 +1,14 @@
+# v0.7.21 — Automatic language entry
+
+- Detect the visitor’s ordered browser language preferences only when entering through the root alias.
+- Respect a language explicitly chosen by the visitor before browser detection.
+- Preserve direct `/en/`, `/it/`, `/de/` and `/fr/` URLs without automatic language overrides.
+- Normalize regional browser variants such as `it-CH`, `de-CH`, `fr-CH` and `en-GB` to the supported language routes.
+- Fall back deterministically to English when no supported browser preference is available or a legacy `?lang=` value is invalid.
+- Persist language only after an explicit selector or language-link choice; merely opening a localized URL does not rewrite the visitor’s saved preference.
+- Use no IP geolocation or location permission for language selection.
+- Keep the frozen research data and 4 October IANA snapshot unchanged.
+
 # v0.7.20 — Navigation terminology clarity
 
 - Rename the Italian navigation label `Contese` to `Stringhe contese` so it explicitly refers to competition between applications for the same TLD string.
