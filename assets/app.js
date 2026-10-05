@@ -36,9 +36,12 @@ function syncLanguageLinks(){document.querySelectorAll('[data-language]').forEac
 function syncTopbarHeight(){const h=Math.ceil(document.querySelector('.topbar')?.getBoundingClientRect().height||62);document.documentElement.style.setProperty('--topbar-height',h+'px')}
 function reducedMotion(){return !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches}
 function navigationOffset(){
- let offset=document.querySelector('.topbar')?.getBoundingClientRect().height||0;
- const mobile=document.querySelector('.mobileNavWrap');
- if(mobile){const cs=getComputedStyle(mobile);if(cs.display!=='none'&&(cs.position==='sticky'||cs.position==='fixed'))offset+=mobile.getBoundingClientRect().height||0}
+ let offset=0;
+ for(const selector of ['.topbar','.nav','.mobileNavWrap']){
+  const el=document.querySelector(selector);if(!el)continue;
+  const cs=getComputedStyle(el);if(cs.display==='none'||(cs.position!=='sticky'&&cs.position!=='fixed'))continue;
+  offset+=el.getBoundingClientRect().height||0;
+ }
  return Math.ceil(offset+12);
 }
 function scrollToNavigationTarget(target,smooth=true){

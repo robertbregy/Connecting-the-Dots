@@ -1,3 +1,11 @@
+# v0.7.28 — Sticky navigation offset fix
+
+- Include the sticky desktop section navigation in the shared navigation offset calculation, in addition to the sticky top bar.
+- Prevent the first panel/title of every primary section from being hidden beneath the desktop menu after a menu click.
+- Preserve the existing mobile sticky-select offset and in-section anchor behavior.
+- Add a release invariant so future navigation changes cannot silently drop the desktop nav from the offset calculation.
+- Keep all frozen research datasets and the 4 October IANA snapshot unchanged.
+
 # v0.7.27 — Explorer filter repair
 
 - Give every advanced Explorer filter a visible, compact field label and replace verbose per-field “All …” placeholders with one localized `All` option.

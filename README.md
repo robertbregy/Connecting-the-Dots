@@ -1,4 +1,9 @@
-# Connecting the Dots — v0.7.27
+# Connecting the Dots — v0.7.28
+
+
+## v0.7.28 — Sticky navigation offset fix
+
+Primary-menu navigation now measures every visible sticky navigation layer before positioning the selected section. On desktop this means the top bar and the sticky section menu are both included, so the first panel is fully visible instead of being tucked under the menu. Mobile and anchored navigation retain the same offset-aware logic. Research data are unchanged.
 
 
 ## v0.7.27 — Explorer filter repair
