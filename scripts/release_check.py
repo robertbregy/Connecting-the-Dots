@@ -55,7 +55,7 @@ if 'GTLD_LIFECYCLE_CACHE_TTL=24*60*60*1000' not in appjs or "cache:'no-cache'" n
 arch_manifest=json_file('application_archaeology_manifest.json')
 if arch_manifest.get('runtimeTransport2012',{}).get('status')!='external-mirror-not-cryptographically-pinned': fail('2012 runtime transport integrity limitation is not declared')
 changelog=(ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
-for marker in ['v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
+for marker in ['v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
     if marker not in changelog: fail('changelog missing '+marker)
 readme=(ROOT/'README.md').read_text(encoding='utf-8')
 if "No live refresh occurs in a visitor's browser." in readme: fail('README contains obsolete no-live-refresh claim')
@@ -169,6 +169,17 @@ if not summary.get('2012',{}).get('Delegations source'): fail('2012 delegation m
 
 # Translation parity.
 tr=json_file('translations.json')
+
+# v0.7.22 guided-address contract: emphasis follows the lesson and the DNS root is visualized only on its step.
+src=(ROOT/'src/index.web.html').read_text(encoding='utf-8')
+for marker in ['data-journey-address-part="scheme"','data-journey-address-part="host"','data-journey-address-part="name"','data-journey-address-part="tld"','data-journey-address-part="root"','data-journey-address-part="path"']:
+    if marker not in src: fail('guided-address segment missing: '+marker)
+for marker in ['JOURNEY_ADDRESS_FOCUS','syncJourneyAddressFocus(guide)',"['root']","['tld']","['scheme']","['path']"]:
+    if marker not in appjs: fail('guided-address focus invariant missing: '+marker)
+css=(ROOT/'assets/style.css').read_text(encoding='utf-8')
+if '.journeyRootDot{display:none}' not in css or '.journeyRootDot.is-active{display:inline}' not in css: fail('guided DNS root-dot visibility contract missing')
+if '.journeyAddressResult.is-active code' not in css: fail('resolved-IP focus state missing')
+
 # v0.7.21 automatic-language contract: detection is root-only, explicit choice persists,
 # direct language routes stay stable, and unsupported/missing preferences fall back to English.
 routing=(ROOT/'assets/legacy-routing.js').read_text(encoding='utf-8')

@@ -1,4 +1,9 @@
-# Connecting the Dots — v0.7.21
+# Connecting the Dots — v0.7.22
+
+
+## v0.7.22 — Dynamic guided-address focus
+
+Release: 5 October 2026. The “Behind a click” walkthrough now moves the highlighted part of the sample address with the lesson instead of leaving `.com` blue at every step. The host name, hidden DNS root dot, TLD, resolved IP, HTTPS scheme and requested path are emphasized only when conceptually relevant; network/page states remain tied to their diagrams. Research data and the 4 October IANA snapshot are unchanged.
 
 
 ## v0.7.21 — Automatic language entry

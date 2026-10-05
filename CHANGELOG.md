@@ -1,3 +1,12 @@
+# v0.7.22 — Dynamic guided-address focus
+
+- Make the sample URL participate in the seven-step Internet walkthrough instead of leaving `.com` permanently highlighted.
+- Step 1 highlights the readable host name; Step 2 reveals and highlights the normally invisible DNS root dot; Step 3 highlights `.com`.
+- Step 4 moves emphasis to the resolved illustrative IP address; later steps move focus to the network path, `https://` and `/news` as the explanation progresses.
+- Keep the visual emphasis semantically aligned with the lesson rather than forcing an unrelated URL segment to remain blue.
+- Add non-colour emphasis and reduced-motion handling for the dynamic focus states.
+- Keep the frozen research data and 4 October IANA snapshot unchanged.
+
 # v0.7.21 — Automatic language entry
 
 - Detect the visitor’s ordered browser language preferences only when entering through the root alias.

@@ -356,6 +356,20 @@ function renderRound2026(){
 // A local teaching model: no DNS queries, network probes or example-site requests.
 let journeyStep=0;
 const JOURNEY_STEPS=7;
+const JOURNEY_ADDRESS_FOCUS=[
+ ['host','name','tld'], // the readable DNS name
+ ['root'],            // the normally invisible DNS root dot
+ ['tld'],             // top-level domain
+ [],                  // resolved IP is emphasized in the diagram instead
+ [],                  // network path is emphasized in the diagram instead
+ ['scheme'],          // HTTPS
+ ['path']             // requested resource / page
+];
+function syncJourneyAddressFocus(guide){
+ const active=new Set(JOURNEY_ADDRESS_FOCUS[journeyStep]||[]);
+ guide.querySelectorAll('[data-journey-address-part]').forEach(part=>part.classList.toggle('is-active',active.has(part.dataset.journeyAddressPart)));
+ guide.querySelector('.journeyAddressResult')?.classList.toggle('is-active',journeyStep===3);
+}
 function renderInternetJourney(){
  const guide=document.getElementById('internet-guide');if(!guide)return;
  const stepper=document.getElementById('journeyStepper');stepper.setAttribute('aria-label',t('journeyStepsLabel'));
@@ -371,7 +385,7 @@ function keepJourneyStepInView(){
 function setJourneyStep(step,userAction=false){
  const guide=document.getElementById('internet-guide');if(!guide)return;
  journeyStep=Number.isInteger(step)?Math.max(0,Math.min(JOURNEY_STEPS-1,step)):0;
- guide.dataset.journeyStep=String(journeyStep);guide.classList.toggle('has-address',journeyStep>=3);guide.classList.toggle('has-connection',journeyStep>=4);guide.classList.toggle('has-security',journeyStep>=5);guide.classList.toggle('has-page',journeyStep===6);
+ guide.dataset.journeyStep=String(journeyStep);guide.classList.toggle('has-address',journeyStep>=3);guide.classList.toggle('has-connection',journeyStep>=4);guide.classList.toggle('has-security',journeyStep>=5);guide.classList.toggle('has-page',journeyStep===6);syncJourneyAddressFocus(guide);
  guide.querySelectorAll('[data-journey-scene]').forEach(scene=>scene.classList.toggle('is-active',Number(scene.dataset.journeyScene)===journeyStep));
  guide.querySelectorAll('[data-journey-go]').forEach(button=>{const n=Number(button.dataset.journeyGo);button.classList.toggle('is-complete',n<journeyStep);if(n===journeyStep)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current')});
  const phase=journeyStep===0?'journeyPhaseName':journeyStep<4?'journeyPhaseDns':'journeyPhaseWeb';
