@@ -1,4 +1,9 @@
-# Connecting the Dots — v0.7.26
+# Connecting the Dots — v0.7.27
+
+
+## v0.7.27 — Explorer filter repair
+
+The Explorer advanced filters now use visible concise field labels and a short shared “All” default. IANA `test` records are labelled as test TLDs in every language instead of exposing the raw value. A deterministic editorial macro-topic index is generated for every Explorer record, so topic filtering covers the full corpus while remaining explicitly separate from official ICANN/IANA type, status, programme/round and registry-country fields. The original detailed research themes are preserved.
 
 
 ## v0.7.26 — Home-only Internet walkthrough
@@ -73,7 +78,7 @@ The Explorer separates two concepts that must not be conflated:
 
 This matters for strings such as `.nyc`, `.cat` and `.post`: an old application, a later application and eventual delegation are distinct events, not one record whose fields should overwrite one another. The Explorer drawer exposes that history where it is informative.
 
-The frozen Explorer core imports every individual profile in the dated IANA Root Zone Database and indexes every label in the corresponding root list. Profiles expose available registry details, contact organizations, dates, name servers and report links. The curated subset adds documented context and historical events. All labels are searchable in Unicode and ASCII; registry countries and technical names are searchable as well. Historical rounds, themes and city filters apply only where documented. Individual 2026 application data remains pending official publication.
+The frozen Explorer core imports every individual profile in the dated IANA Root Zone Database and indexes every label in the corresponding root list. Profiles expose available registry details, contact organizations, dates, name servers and report links. The curated subset adds documented context and historical events. All labels are searchable in Unicode and ASCII; registry countries and technical names are searchable as well. Historical round fields apply where documented; the Explorer macro-topic facet is an editorial navigation index generated for every record and is explicitly separate from official ICANN/IANA fields. City and other research-specific classifications remain limited to documented records. Individual 2026 application data remains pending official publication.
 
 
 ## TLD Life Histories

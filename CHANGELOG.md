@@ -1,3 +1,12 @@
+# v0.7.27 — Explorer filter repair
+
+- Give every advanced Explorer filter a visible, compact field label and replace verbose per-field “All …” placeholders with one localized `All` option.
+- Localize the formal IANA `test` TLD type instead of exposing the raw machine value.
+- Add a deterministic editorial macro-topic facet to every Explorer record while preserving the original detailed research themes.
+- Make the Explorer topic filter and visible topic pills use the universal macro-topic facet, so thematic filtering covers the complete indexed corpus.
+- Keep the macro-topic taxonomy explicitly separate from official ICANN/IANA type, status, programme/round and registry-country fields.
+- Keep the frozen IANA snapshot and pre-Reveal publication state unchanged.
+
 # v0.7.26 — Home-only Internet walkthrough
 
 - Move the seven-step “Behind a click” walkthrough structurally from the How section into Overview/Home.

@@ -43,6 +43,45 @@ const INTRO_SOURCES={
 const ROUND2000=new Set(['.aero','.biz','.coop','.info','.museum','.name','.pro']);
 const ROUND2004=new Set(['.asia','.cat','.jobs','.mobi','.post','.tel','.travel','.xxx']);
 const LEGACY_GTLD=new Set(['.com','.edu','.gov','.int','.mil','.net','.org']);
+const EXPLORER_TOPIC_ORDER=['topicGeography','topicTechnology','topicBusiness','topicFinance','topicCultureMedia','topicSociety','topicPublic','topicLifestyle','topicServices','topicSpecial','topicOther'];
+const EDITORIAL_THEME_TO_TOPIC={
+ city:'topicGeography',territory:'topicGeography',geography:'topicGeography',geopolitics:'topicGeography',supranational:'topicGeography',
+ technology:'topicTechnology',techFossil:'topicTechnology',infrastructure:'topicTechnology',scripts:'topicTechnology',
+ business:'topicBusiness',personalBrand:'topicBusiness',statusCulture:'topicBusiness',
+ culture:'topicCultureMedia',media:'topicCultureMedia',education:'topicCultureMedia',faith:'topicCultureMedia',
+ identity:'topicSociety',community:'topicSociety',politics:'topicSociety',labour:'topicSociety',socialMirror:'topicSociety',protest:'topicSociety',children:'topicSociety',intimacy:'topicSociety',adult:'topicSociety',
+ government:'topicPublic',publicInfrastructure:'topicPublic',publicInterest:'topicPublic',trust:'topicPublic',
+ lifestyle:'topicLifestyle',health:'topicLifestyle',optimism:'topicLifestyle',
+ oddity:'topicSpecial',history:'topicSpecial',semanticDrift:'topicSpecial'
+};
+const EXPLORER_TOPIC_LABELS={
+ topicGeography:new Set('africa asia barcelona bayern berlin boston brussels bzh capetown cat corsica cymru doha dubai durban eus frl gent hamburg helsinki ist istanbul joburg koeln kyoto lat london madrid melbourne miami moscow nagoya nrw nyc okinawa osaka paris quebec rio ruhr saarland scot stockholm swiss sydney taipei tatar tirol tokyo vegas wales wien yokohama'.split(' ')),
+ topicTechnology:new Set('ai analytics android app aws azure bot cloud computer data dev digital domains email host hosting mobile mobi net network online site software systems tech technology tel web website wifi'.split(' ')),
+ topicFinance:new Set('accounting accountant accountants bank bond broker capital cash credit creditcard finance financial forex fund insurance insure investment investments loan loans markets money mortgage tax trade trading'.split(' ')),
+ topicCultureMedia:new Set('academy actor art arte artists arts audio author band bbc bible blog book books broadway camera dance education film gallery graphics media movie museum music news photo photography photos pics press radio read school science theatre theater university video wiki'.split(' ')),
+ topicSociety:new Set('adult baby church community democrat family gay gop kids lgbt name people religion republican social sucks union vote voting xxx'.split(' ')),
+ topicPublic:new Set('airforce army gov int mil navy police politie post'.split(' ')),
+ topicLifestyle:new Set('auto autos baseball basketball beauty beer bet bike bingo boats cafe camp casino coffee cooking cricket dating dog fashion fitness food football fun game games golf hair holiday holidays horse kitchen love luxury menu pet pets pizza poker pub recipes restaurant restaurants rugby run salon sex ski soccer spa sport sports style surf tennis toys travel vacations vegas wine yoga'.split(' ')),
+ topicServices:new Set('abogado agency apartment apartments archi attorney attorneys build builders career careers clinic consulting contractors dentist doctor engineer engineering hospital jobs law lawyer lawyers legal plumbing realestate realtor realty repair services work'.split(' ')),
+ topicSpecial:new Set('arpa example invalid localhost onion test home'.split(' '))
+};
+const EXPLORER_GENERIC_LABELS=new Set('app art bank bar beer blog book business cafe capital career careers cash city cloud club community company credit data design digital domains email finance financial food fund game games group health home host hosting insurance insure int jobs law legal life live loan loans market markets media mobile money movie music name network news online org page photo photography photos pics post press pro property pub radio realty restaurant restaurants school services shop site social solutions space sport sports store studio systems tech technology tel travel university video web website wiki work world zone'.split(' '));
+function explorerTopicFacetsFor(r){
+ const out=new Set();
+ for(const theme of (r.themes||[])){const topic=EDITORIAL_THEME_TO_TOPIC[theme];if(topic)out.add(topic)}
+ const type=r.formalType||r.type||'',label=String(r.asciiString||ascii(r.string)).toLowerCase().replace(/^\./,'');
+ if(type==='country-code'||r.city)out.add('topicGeography');
+ if(type==='infrastructure'||type==='test'||r.asciiString==='.arpa')out.add('topicTechnology');
+ if(type==='test'||['retired','reserved','returned','proposed','evaluated'].includes(r.currentRootStatus||r.status))out.add('topicSpecial');
+ for(const [topic,labels] of Object.entries(EXPLORER_TOPIC_LABELS))if(labels.has(label))out.add(topic);
+ if((r.economicCaseIds||[]).length)out.add('topicBusiness');
+ if((r.socialCaseIds||[]).length)out.add('topicSociety');
+ const normalizedLabel=label.replace(/[^a-z0-9]/g,''),entity=String(r.registryEntity||r.entity||r.applicationEntity||'').toLowerCase().replace(/[^a-z0-9]/g,'');
+ const substantive=[...out].filter(x=>x!=='topicSpecial');
+ if(!substantive.length&&['generic','generic-restricted','sponsored'].includes(type)&&normalizedLabel.length>=3&&!EXPLORER_GENERIC_LABELS.has(normalizedLabel)&&entity.includes(normalizedLabel))out.add('topicBusiness');
+ if(!out.size)out.add('topicOther');
+ return EXPLORER_TOPIC_ORDER.filter(x=>out.has(x));
+}
 function intro(programRound,introductionPath,introductionBasis,sources){return {programRound,introductionPath,introductionBasis,introductionPathSources:[...new Set(sources.filter(Boolean))]}}
 function introductionFor(r){
  const explicit=String(r.originRound||r.round||'');
@@ -194,10 +233,12 @@ module.exports=function assembleData(){
   for(const src of (c.sources||[]))if(src?.url&&!D.sources.some(x=>x[1]===src.url))D.sources.push([src.label||('Social case '+c.id),src.url,src.role||'primary']);
  }
  for(const r of byAscii.values())r.socialCaseIds=[...new Set(socialByAscii.get(r.asciiString)||[])];
+ for(const r of byAscii.values())r.topicFacets=explorerTopicFacetsFor(r);
  D.explorer=[...byAscii.values()].sort((a,b)=>a.asciiString.localeCompare(b.asciiString,'en'));
  const applicationOnly=D.explorer.filter(r=>!r.ianaProfile&&['intro2000','intro2004','intro2012','intro2026Application','introApplicationOnly'].includes(r.introductionPath)).length;
  const historicalExtras=D.explorer.filter(r=>!r.ianaProfile&&r.currentRootStatus==='retired').length;
  D.explorerMeta={seedCount:curated.records.length,curatedCount:curated.records.length,recordCount:D.explorer.length,ianaRootCount:labels.length,rootIndexedCount:D.explorer.filter(r=>r.rootListed).length,ianaDatabaseCount:S.databaseCount,ianaProfileCount:D.explorer.filter(r=>r.ianaProfile).length,tldRecordCount:D.explorer.length-applicationOnly,applicationOnlyCount:applicationOnly,historicalExtraCount:historicalExtras,ianaSnapshot:S.asOf,ianaSource:S.listSource,ianaDatabaseSource:S.databaseSource,rootCoverageComplete:true,ianaProfileCoverageComplete:true,tldCoverageComplete:true,introductionPathCoverageComplete:true,historicalCoverageComplete:true,historicalCoverageExtended:true,tldCoverageDefinition:'Dated IANA database plus historically delegated TLDs absent from the current IANA database; excludes never-delegated ISO codes and application-only strings',applicationCorpusComplete:false,applicationLocalRoundsComplete:true,application2000CoverageComplete:true,application2004CoverageComplete:true,application2012RuntimeValidated:false,application2012CoverageComplete:false,application2026CoverageComplete:false,runtimeExternalEnrichment:false,preRevealFreeze:true,applicationArchaeologyManifest:archaeologyManifest};
+ D.explorerMeta.topicFacetCoverageComplete=D.explorer.every(r=>Array.isArray(r.topicFacets)&&r.topicFacets.length>0);D.explorerMeta.topicFacetTaxonomy='editorial-macro-v1';D.explorerMeta.topicFacetCount=EXPLORER_TOPIC_ORDER.length;
  D.explorerMeta.lifeHistoryRecordCount=D.explorer.filter(r=>(r.events||[]).length>0).length;D.explorerMeta.lifeHistoryStaticEventCount=D.explorer.reduce((n,r)=>n+(r.events||[]).length,0);D.explorerMeta.governanceCaseCount=governance.cases.length;D.explorerMeta.governanceCaseStringCount=new Set(governance.cases.flatMap(c=>c.strings||[]).map(ascii)).size;D.explorerMeta.economicCaseCount=economics.cases.length;D.explorerMeta.economicCaseStringCount=new Set(economics.cases.flatMap(c=>c.strings||[]).map(ascii)).size;D.explorerMeta.economicMetricCount=economics.cases.reduce((n,c)=>n+(c.metrics||[]).length,0);D.explorerMeta.socialCaseCount=social.cases.length;D.explorerMeta.socialCaseStringCount=new Set(social.cases.flatMap(c=>c.strings||[]).map(ascii)).size;D.explorerMeta.socialSignalCount=social.cases.reduce((n,c)=>n+(c.signals||[]).length,0);
  D.applicationArchaeology=archaeologyManifest;
  D.tldLifeHistory={schemaVersion:1,asOf:S.asOf,staticCoverage:'Frozen IANA registration dates, delegation/transfer/revocation reports, current root state, curated historical events and vendored 2000/2004 applications',gtldContractSource:GTLD_LIFECYCLE_SOURCE,gtldContractFields:['applicationId','dateOfContractSignature','delegationDate','contractTerminated','removalDate','registryOperator'],ccTldMethod:'IANA registration data and delegation/redelegation reports; ICANN gTLD Registry Agreement data is not applied to ccTLDs',sourcePolicy:'Only dated, attributable events preserved in the frozen local release are rendered as facts before Reveal Day'};

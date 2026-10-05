@@ -187,6 +187,26 @@ if tr['it'].get('release0724') is None: fail('release0724 translation missing')
 if tr['it'].get('release0725') is None: fail('release0725 translation missing')
 if any(not tr[lang].get('applicationCorpusFrozen') for lang in LANGS): fail('freeze-status translation missing')
 
+# v0.7.27 Explorer filtering contract: advanced filters are visibly labelled, raw
+# IANA machine values are localized, and editorial macro-topics cover the full corpus.
+if tr['it'].get('release0727') is None: fail('release0727 translation missing')
+for lang in LANGS:
+    for key in ['filterAll','filterRoundShort','filterStatusShort','filterTypeShort','filterCountryShort','filterThemeShort','typeTest',
+                'topicGeography','topicTechnology','topicBusiness','topicFinance','topicCultureMedia','topicSociety','topicPublic','topicLifestyle','topicServices','topicSpecial','topicOther']:
+        if not tr[lang].get(key): fail(f'missing Explorer filter translation {lang}/{key}')
+src=(ROOT/'src/index.web.html').read_text(encoding='utf-8')
+if src.count('class="explorerFilterField"')!=5: fail('Explorer advanced filters must expose exactly five visible fields')
+for fid in ['exploreRoundFilter','exploreStatusFilter','exploreTypeFilter','exploreCountryFilter','exploreThemeFilter']:
+    if f'for="{fid}"' not in src: fail('Explorer visible filter label missing for '+fid)
+if "test:'typeTest'" not in appjs: fail('IANA test type is not localized in Explorer')
+if "(r.topicFacets||[]).includes(topic)" not in appjs: fail('Explorer topic filter is not using universal topic facets')
+if '...(r.topicFacets||[]).map(t)' not in appjs: fail('Explorer search index omits topic facets')
+cat_rows=rows('explorer_catalog.csv')
+if 'topic_facets' not in (cat_rows[0] if cat_rows else {}): fail('Explorer catalog export lacks topic_facets')
+if any(not (r.get('topic_facets') or '').strip() for r in cat_rows): fail('Explorer topic facet coverage is incomplete')
+if not any('topicOther' in (r.get('topic_facets') or '') for r in cat_rows): fail('Explorer fallback macro-topic missing')
+if all('topicOther' in (r.get('topic_facets') or '') for r in cat_rows): fail('Explorer macro-topic classification collapsed to fallback')
+
 
 # v0.7.26 information architecture contract: the guided Internet walkthrough belongs
 # only to Overview/Home, while the deeper How section starts after it.
