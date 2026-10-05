@@ -7,7 +7,7 @@
       "Email"
     ],
     "sourceTransportContainsExcludedFields": true,
-    "handling": "Discarded during parsing before the research dataset is constructed; never exposed or exported by the publication.",
+    "handling": "The locally vendored 2012 layer contains String and Applicant only; personal contact and email fields from the historic 14-column transport are not stored, exposed or exported.",
     "reason": "Not needed for historical TLD/application analysis."
   },
   "rounds": {
@@ -31,12 +31,14 @@
       ]
     },
     "2012": {
-      "delivery": "frozen-external-reference",
+      "delivery": "vendored-complete-string-applicant-graph",
       "applications": 1930,
       "uniqueStrings": 1409,
       "idn": 116,
       "geographic": 66,
       "community": 84,
+      "contestedStrings": 230,
+      "contestedApplications": 751,
       "regions": {
         "NA": 911,
         "EUR": 675,
@@ -49,10 +51,13 @@
         "https://newgtlds.icann.org/en/program-status/statistics/applications-overview-13jun12-en.pdf",
         "https://www.icann.org/en/about/annual-report/annual-report-2012-en.pdf",
         "https://newgtlds.icann.org/en/program-status/statistics",
+        "https://itp.cdn.icann.org/en/files/board-committee-meetings/briefing-materials/briefing-materials-4-18may13-en.pdf",
+        "https://gtldresult.icann.org/applicationstatus/stringcontentionstatus.downinitialstringsimilaritysetspdf",
         "https://raw.githubusercontent.com/nimblemachines/analyzing-iana-root-db/master/strings-1200utc-13jun12-en.csv",
-        "https://cdn.jsdelivr.net/gh/nimblemachines/analyzing-iana-root-db@master/strings-1200utc-13jun12-en.csv"
+        "https://cdn.jsdelivr.net/gh/nimblemachines/analyzing-iana-root-db@master/strings-1200utc-13jun12-en.csv",
+        "https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/"
       ],
-      "expectedHeader": [
+      "expectedOriginalHeader": [
         "String",
         "Applicant",
         "Website",
@@ -67,28 +72,74 @@
         "Community?",
         "Geographic?",
         "Application ID"
-      ]
+      ],
+      "fieldsVendored": [
+        "String",
+        "Applicant",
+        "approved post-Reveal string-change target for four applications"
+      ],
+      "derivedFields": [
+        "A-Label for IDNs",
+        "IDN flag",
+        "project record ID",
+        "contention counts"
+      ],
+      "approvedStringChanges": 4,
+      "additionalUniqueReplacementStrings": 3,
+      "applicationStringLifecycleLabels": 1412,
+      "initialStringSimilarityContention": {
+        "source": "https://gtldresult.icann.org/applicationstatus/stringcontentionstatus.downinitialstringsimilaritysetspdf",
+        "exactMatchSets": 230,
+        "nonExactMatchSets": 2,
+        "nonExactMatchPairs": [
+          [
+            ".hoteis",
+            ".hotels"
+          ],
+          [
+            ".unicom",
+            ".unicorn"
+          ]
+        ],
+        "note": "The 230 exact-match sets are counted from duplicate Reveal-Day strings. ICANN also identified two initial non-exact string-similarity sets; they are documented separately and are not folded into the exact-match application count."
+      },
+      "fieldsNotVendored": [
+        "Website",
+        "Location",
+        "Region",
+        "Primary Contact",
+        "Email",
+        "English Meaning",
+        "Script Code",
+        "Community?",
+        "Geographic?",
+        "official Application ID"
+      ],
+      "metadataScope": "Complete 1,930-row application→string→applicant graph covering all 1,409 distinct Reveal-Day strings, plus all four ICANN-approved post-Reveal string corrections (three additional unique replacement labels; 1,412 application-string lifecycle labels in total). Richer original application metadata is not claimed as locally complete."
     }
   },
   "runtimeSources2012": [],
   "documentedExternalSources2012": [
     "https://raw.githubusercontent.com/nimblemachines/analyzing-iana-root-db/master/strings-1200utc-13jun12-en.csv",
-    "https://cdn.jsdelivr.net/gh/nimblemachines/analyzing-iana-root-db@master/strings-1200utc-13jun12-en.csv"
+    "https://cdn.jsdelivr.net/gh/nimblemachines/analyzing-iana-root-db@master/strings-1200utc-13jun12-en.csv",
+    "https://web.archive.org/web/20120613142047if_/http://newgtlds-cloudfront.icann.org/sites/default/files/reveal/strings-1200utc-13jun12-en.html"
   ],
   "runtimeTransport2012": {
-    "status": "disabled-during-pre-reveal-freeze",
+    "status": "disabled-local-corpus-vendored",
     "canonicalHistoricalEvidence": "https://web.archive.org/web/20120613142047if_/http://newgtlds-cloudfront.icann.org/sites/default/files/reveal/strings-1200utc-13jun12-en.html",
-    "scope": "External mirrors remain documented for post-freeze maintenance but are not requested by the frozen publication. No browser-time transport contributes records during the pre-Reveal freeze.",
+    "scope": "The complete 2012 string/applicant graph is bundled locally. External mirrors remain provenance references only; no browser-time transport contributes records.",
     "validation": [
-      "exact expected header",
-      "1,930 applications",
-      "1,409 distinct strings",
-      "1,930 unique application IDs",
+      "1,930 application rows",
+      "1,409 distinct Reveal-Day strings",
+      "4 approved post-Reveal string corrections",
+      "3 additional unique replacement labels",
+      "1,412 application-string lifecycle labels",
       "116 IDN applications",
-      "66 geographic applications",
-      "84 community applications",
-      "regional totals: NA 911, EUR 675, AP 303, LAC 24, AF 17"
+      "230 contested Reveal-Day strings",
+      "751 applications in exact-match Reveal-Day contention strings",
+      "2 initial non-exact string-similarity sets (.hoteis/.hotels and .unicom/.unicorn)",
+      "top contention sanity checks: .app 13, .home 11, .inc 11, .web 7"
     ]
   },
-  "method": "During the pre-Reveal freeze the browser does not retrieve the 13 June 2012 CSV from external mirrors. Locked ICANN aggregate totals and source references remain documented, while the complete individual 2012 application corpus is intentionally not merged into the frozen Explorer. Primary Contact and Email are never exposed or exported by the publication."
+  "method": "The publication locally vendors the complete 13 June 2012 applied-for-string/applicant graph: 1,930 applications across 1,409 distinct Reveal-Day strings, plus all four ICANN-approved post-Reveal string corrections that add three unique replacement labels (1,412 application-string lifecycle labels total). It does not claim that every field of the historic 14-column Reveal CSV is locally reproduced. Primary Contact and Email are excluded by design, and no browser-time external research fetch is used."
 }

@@ -61,7 +61,7 @@ Legal organization names remain in their source language. The interface localize
 
 ## v0.7.6 complete root index
 
-`explorer_catalog.csv` contains 1,450 records: the 1,437 labels in the preserved IANA root list plus 13 selected historical/application records outside it. `record_level` distinguishes `basic` and `curated`; 87 records are curated. `ascii_string` is the normalized DNS identity; `string` is the Unicode display label. `root_listed` reports membership in that dated list, independently of lifecycle labels such as reserved or retired.
+`explorer_catalog.csv` contains the complete frozen Explorer view for this release. It combines the dated IANA/historical TLD universe with all locally vendored formal application strings from 2000, 2004 and 2012. `record_level` distinguishes IANA/historical TLD records from application-only records; `ascii_string` is the normalized DNS identity and `string` is the Unicode display label.
 
 Basic records derive only name, root-list presence, formal type and registry organization from the preserved list and Root Zone Database. Their other fields are blank and they have no constructed history. The list includes `.gb`; its separate reserved state is preserved. Round, theme and city classifications are limited to the curated subset. Do not interpret those filters as comprehensive root-wide classifications.
 
@@ -69,7 +69,7 @@ The source model is now `research.json`, `explorer_curated.json`, `iana_snapshot
 
 ## v0.7.7 complete IANA profiles
 
-Current coverage: **1,606 catalogue records**, including **1,595 individual IANA database profiles**, all **1,437 root-list labels**, and **11 additional curated historical/application entries**. The curated subset still has 87 records. Presence in the IANA database does not itself imply current root-list membership or active delegation.
+Current coverage is generated and asserted by `manifest.json` and `scripts/release_check.py`; do not treat older prose counts as release invariants. The IANA root-list snapshot remains dated 4 October 2026.
 
 `record_level` is now `iana` or `curated`; `iana_profile` explicitly indicates whether an individual IANA source was imported. Both levels can have the same complete official profile fields. Curated records additionally retain independently sourced history and editorial context. The old `basic` level is no longer generated.
 
@@ -89,34 +89,37 @@ The canonical research, normalized IANA snapshot and all CSV files are unchanged
 
 Unreported values remain blank in CSV. Contact organization extraction respects the source's optional organization slot; a missing slot is not filled from an address or personal contact name. Dedicated personal contact-name, address, email and telephone fields are omitted from the normalized publication, while the complete original public source bytes are preserved for verification.
 
-## v0.7.12 Application Archaeology
+## v0.7.30 Universal Application Archaeology
 
-Application history is represented separately from TLD identity. The vendored historical layer contains the complete 2000 and 2004 submission corpora and their normalized submission-to-string links. The 2012 layer uses the preserved ICANN Reveal Day CSV snapshot, discards personal contact fields, validates the full 1,930-row corpus against official ICANN totals, and only then merges it into the browser Explorer.
+Application history is represented separately from TLD identity. The local historical layer now contains the complete formal ICANN application-string/applicant graph for the 2000, 2004 and 2012 rounds. The 2012 layer contains **1,930 applications across 1,409 distinct Reveal Day strings**, including never-delegated strings, and is merged at build time rather than fetched in the visitor browser.
 
 - `applications_2000.csv` — 47 proof-of-concept submissions.
 - `application_strings_2000.csv` — 223 formal Item E2 links plus two separately labelled SITA alternatives (`.aer`, `.aero`).
 - `applications_2004.csv` — 10 sponsored-TLD submissions for 9 strings.
-- `application_archaeology_local.json` — normalized vendored application links used by the build.
-- `application_archaeology_manifest.json` — source provenance, privacy exclusions and locked QA totals, including the 2012 Reveal Day corpus.
+- `applications_2012.csv` — all 1,930 2012 applications at string/applicant level, normalized to ASCII identity where needed.
+- `application_archaeology_local.json` — normalized local application links used by the build.
+- `application_archaeology_manifest.json` — provenance, locked official totals, validation rules, privacy exclusions and scope limits.
 
-Application-only strings are valid Explorer records but are **not TLD records**. This prevents an unsuccessful proposal from being counted as a delegated top-level domain.
+The original 2012 transport exposed richer fields. The public research export deliberately does **not** republish personal `Primary Contact` or `Email` fields, and it does not claim complete preservation of every original 14-column metadata field. The completeness claim is specifically the formal applied-for-string/applicant graph.
+
+Application-only strings are valid Explorer records but are **not TLD records**. This prevents an unsuccessful proposal from being counted as a delegated top-level domain. The 2026 individual application corpus remains intentionally incomplete until ICANN Reveal Day.
 
 ## v0.7.11 Universal Explorer
 
-The Explorer contains **1,608 records**. Of these, **1,599** belong to the dated TLD/profile universe: all **1,595 individual IANA profiles** in the preserved 4 October 2026 snapshot plus four historically delegated TLDs that are absent from the current IANA database (`.cs`, `.yu`, `.zr`, `.nato`). The remaining **9** records are curated application-only strings and are deliberately kept outside the TLD universe.
+The Explorer extends the exhaustive TLD/profile universe with never-delegated formal application strings from the complete local 2000, 2004 and 2012 application corpora.
 
 `introduction_path` classifies how a record entered, or attempted to enter, the top-level namespace. `program_round` is separate and is left empty where an ICANN application round is not applicable, notably for ordinary ccTLD delegations. `introduction_basis` and `introduction_path_sources` state how the classification was established. This avoids treating a ccTLD registration date as an invented ICANN round.
 
 - `tld_universe.csv` — exhaustive for the publication's dated TLD/profile definition above; 1,599 records.
-- `application_only_strings.csv` — 9 curated strings that were proposed/applied for but have no IANA profile in the snapshot. This file is **explicitly non-exhaustive** and is not a substitute for a future complete 2000/2004/2012/2026 application corpus.
-- `explorer_catalog.csv` — the combined 1,608-record search/filter catalogue, including both universes with their status and provenance fields.
+- `application_only_strings.csv` — all application-only Explorer identities: the complete locally vendored 2000/2004/2012 formal historical set that lacks a TLD/profile record, plus any explicitly curated pre-Reveal 2026 record kept outside the completeness claim.
+- `explorer_catalog.csv` — the combined **1,849-record** search/filter catalogue, including the 1,599-record TLD/profile universe and 250 application-only records with their status and provenance fields.
 
-The TLD-coverage claim excludes never-delegated ISO codes and other labels that were never TLDs in the public DNS root. The cross-round application corpus remains a separate workstream and is not represented as complete.
+The TLD-coverage claim excludes never-delegated ISO codes and other labels that were never TLDs in the public DNS root. Separately, the formal pre-2026 ICANN application-string archive is complete locally for 2000, 2004 and 2012; 2026 remains pending Reveal Day.
 
 
 ## TLD life histories (v0.7.13)
 
-`tld_life_histories.csv` is the locally preserved chronological evidence layer assembled from formal application records, IANA registration dates, IANA TLD-change reports, curated historical events and current root state. The web Explorer additionally loads the official ICANN gTLD lifecycle feed at `https://www.icann.org/resources/registries/gtlds/v2/gtlds.json` to add Registry Agreement signature, delegation, termination and removal dates where ICANN publishes them. ccTLDs remain governed by IANA delegation/redelegation evidence rather than the gTLD contract model. Missing historical phases are not inferred.
+`tld_life_histories.csv` is the locally preserved chronological evidence layer assembled from formal application records, IANA registration dates, IANA TLD-change reports, curated historical events and current root state. Browser-time external lifecycle enrichment is disabled in the frozen publication. ccTLDs remain governed by IANA delegation/redelegation evidence rather than the gTLD contract model. Missing historical phases are not inferred.
 
 ## Economics of the Dot (v0.7.15)
 
@@ -136,4 +139,4 @@ The TLD-coverage claim excludes never-delegated ISO codes and other labels that 
 
 ## Frozen pre-Reveal runtime policy
 
-The data pack is the frozen release corpus. Since v0.7.25 the publication performs no browser-time external research fetches: the 2012 archival mirrors and the current ICANN gTLD lifecycle feed remain documented maintenance sources but are not requested or merged before the controlled Reveal Day update. This makes the user-visible research state deterministic across visits.
+The data pack is the frozen release corpus. Since v0.7.25 the publication performs no browser-time external research fetches. In v0.7.30 the complete 2012 string/applicant graph is vendored locally and merged at build time; documented archival mirrors remain provenance/maintenance references only. The current ICANN gTLD lifecycle feed also remains disabled at visitor runtime. This makes the user-visible research state deterministic across visits.

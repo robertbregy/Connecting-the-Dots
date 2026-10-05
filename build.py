@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.29"
+VERSION = "0.7.30"
 
 
 def csv_records(path: Path) -> int:
@@ -70,14 +70,14 @@ def build_manifest() -> None:
             "Blank 2026 aggregate values are scaffolding, not observations.",
             "Every preserved IANA database entry has a normalized profile; root-list membership is separate from database presence.",
             "Application Archaeology separates submissions, applied-for strings and delegated TLD identity; never-delegated applications do not increase the TLD universe.",
-            "The documented 2012 archival transport contains Primary Contact and Email fields. During the pre-Reveal freeze that external transport is not retrieved or merged in the visitor browser; those fields are never exposed or exported, while locked ICANN aggregate totals and source references remain documented.",
+            "The complete 2012 Reveal-Day string/applicant graph is vendored locally: 1,930 applications across 1,409 distinct strings. Primary Contact and Email from the historic richer transport are not stored, exposed or exported; the browser performs no external research fetch.",
             "TLD Life Histories use only the frozen local chronology in this pre-Reveal freeze. Browser-time ICANN gTLD contract-lifecycle enrichment is deliberately disabled until the controlled Reveal Day update. Undocumented phases are never inferred.",
             "Disputed Dots adds nine editorially selected governance cases as a structured layer linked to Explorer strings; FACT and READING remain separate, and case sources are primary ICANN/IANA records.",
             "Economics of the Dot adds eight source-backed economic mechanisms; public revenue, company results, transaction values, auction prices and application fees retain their original accounting basis and are not normalized into one ranking.",
             "The Social Life of the Dot adds nine source-backed social cases and six analytical models covering language, community, identity, protection, locality and script inclusion; registration volume is never used as a proxy for social significance.",
             "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity.",
-            "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database. It is not an exhaustive cross-round application-string corpus.",
-            "application_only_strings.csv is the frozen build-time application-only view for vendored/local data. The complete 2012 Reveal Day corpus is documented by locked ICANN totals but is deliberately not retrieved from external mirrors during the pre-Reveal freeze.",
+            "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database. The Explorer extends that universe with all locally vendored formal application strings from 2000, 2004 and 2012.",
+            "application_only_strings.csv is the frozen build-time application-only view. The complete 2012 Reveal-Day string/applicant graph is locally integrated; 2026 remains intentionally incomplete until official Reveal Day data are published.",
         ],
         "current_root_snapshot": json.loads((DATA / "iana_snapshot.json").read_text())["asOf"],
         "iana_evidence": "iana_snapshot.json",

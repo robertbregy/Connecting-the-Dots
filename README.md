@@ -1,74 +1,11 @@
-# Connecting the Dots — v0.7.29
+# Connecting the Dots — v0.7.30
 
 
-## v0.7.29 — Pre-Reveal editorial consistency freeze
+## v0.7.30 — Universal historical application archive
 
-Final editorial hardening after the mega-audit. All current-state copy now describes the 2012 application corpus consistently with the frozen runtime: the complete 2012 Reveal Day corpus is documented by locked ICANN totals and source references but is not fetched or merged before Reveal Day. The unavailable 2012 download card now says so explicitly, and a minor Italian accent was corrected. No research dataset, Explorer logic, navigation, walkthrough or layout behavior changed.
+The Explorer now vendors the complete formal ICANN application-string/applicant graph for the 2000, 2004 and 2012 rounds. The 2012 layer contains all 1,930 Reveal Day applications across 1,409 distinct applied-for strings, including strings that were never delegated, plus all four later ICANN-approved string corrections. ICANN's two initial non-exact string-similarity contention sets (`.hoteis`/`.hotels` and `.unicom`/`.unicorn`) are documented separately from the 230 exact-match contested strings. The public `applications_2012.csv` deliberately excludes personal contact and email fields from the richer historical transport. Synthetic project record IDs remain internal and are never presented as official ICANN application IDs. No visitor-browser research fetch is used; the 2026 individual application layer remains intentionally incomplete until official Reveal Day publication.
 
-
-## v0.7.28 — Sticky navigation offset fix
-
-Primary-menu navigation now measures every visible sticky navigation layer before positioning the selected section. On desktop this means the top bar and the sticky section menu are both included, so the first panel is fully visible instead of being tucked under the menu. Mobile and anchored navigation retain the same offset-aware logic. Research data are unchanged.
-
-
-## v0.7.27 — Explorer filter repair
-
-The Explorer advanced filters now use visible concise field labels and a short shared “All” default. IANA `test` records are labelled as test TLDs in every language instead of exposing the raw value. A deterministic editorial macro-topic index is generated for every Explorer record, so topic filtering covers the full corpus while remaining explicitly separate from official ICANN/IANA type, status, programme/round and registry-country fields. The original detailed research themes are preserved.
-
-
-## v0.7.26 — Home-only Internet walkthrough
-
-The seven-step “Behind a click” teaching journey now lives only in Overview/Home. It is no longer repeated as the first block of the deeper How section, resets when a reader leaves and returns home, and remains directly linkable through `#internet-basics`. Frozen research data are unchanged.
-
-## v0.7.25 — Pre-Reveal freeze hardening
-
-Release: 5 October 2026. Freeze-candidate release after the full pre-Reveal audit. Browser-time external research enrichment is disabled so the rendered research state is deterministic for every visitor; the documented external 2012 archive mirrors and ICANN gTLD lifecycle feed remain source references for later controlled maintenance, not live inputs to the frozen publication. ZIP creation now normalizes entry order, timestamps, permissions and compression settings so repeated builds in the release environment produce the same SHA-256. Research datasets and the 4 October IANA snapshot are unchanged.
-
-## v0.7.24 — Navigation hardening
-
-This release fixes section-entry positioning and restores robust Home behavior. Primary navigation now always lands at the start of the selected section, the brand is a real home link with a no-JavaScript fallback, sticky bars are accounted for consistently, and dynamic internal cross-links use the same in-app navigation path.
-
-## v0.7.23 — Teaching-first Internet walkthrough
-
-Release: 5 October 2026. The “Behind a click” explainer is now structured as one continuous mental model rather than three partially overlapping ones. Readers first decode the URL, then follow the name through the DNS hierarchy to an IP address, then follow packets to the server, establish HTTPS and request the page. The DNS root is taught inside the hierarchy; every step has an explicit live transformation and one key idea to retain; the DNS diagram is sequential rather than branch-like; and the final step reconstructs the whole journey at a glance. Research data and the 4 October IANA snapshot are unchanged.
-
-## v0.7.22 — Dynamic guided-address focus
-
-Release: 5 October 2026. The “Behind a click” walkthrough now moves the highlighted part of the sample address with the lesson instead of leaving `.com` blue at every step. The host name, hidden DNS root dot, TLD, resolved IP, HTTPS scheme and requested path are emphasized only when conceptually relevant; network/page states remain tied to their diagrams. Research data and the 4 October IANA snapshot are unchanged.
-
-
-## v0.7.21 — Automatic language entry
-
-The root entry point now selects the initial language from an explicit saved user choice or, on a first visit, from the browser’s ordered language preferences. Supported regional variants resolve to EN, IT, DE or FR; if none match, English is used. Direct language URLs stay authoritative, and no IP geolocation or location permission is used.
-
-## v0.7.20 — Navigation terminology clarity
-
-Release: 5 October 2026. Targeted language/UX release. The Italian Themes menu now uses **Stringhe contese** for contention sets and **Controversie** for governance, legal and community disputes. The change removes a semantic collision between two distinct concepts without changing section IDs, links, research data or the 4 October IANA snapshot.
-
-## v0.7.19 — Mobile guided-journey hardening
-
-Release: 5 October 2026. Targeted reader-experience release. The step-by-step “Behind a click” Internet explainer is now explicitly bounded for narrow viewports: the active explanation comes before the diagram on phones, the address and control rows cannot force horizontal overflow, DNS/network diagrams reflow at small widths, and Next/Back navigation restores the current lesson into view instead of leaving the reader stranded below changing content. The 2026 research data, IANA snapshot and pre-Reveal publication state are unchanged from v0.7.18.
-
-## v0.7.18 — Release integrity & reader-experience hardening
-
-Release: 4 October 2026. This release changes no editorial scope. It hardens the boundary between the **frozen publication core** and explicitly labelled **browser-time runtime enrichment**, derives visible dates and historical-application counts from canonical state/data, restores comparable round denominators, clarifies the 2026 prohibition on private contention resolution, corrects source-date provenance, and strengthens build/package QA. It also adds a deliberately progressive reader path: plain-language orientation first, then search/exploration, with specialist filters, provenance and research detail still available without crowding the first interaction.
-
-Two release artifacts are intentionally distinct: the **PUBBLICAZIONE** archive is the ≤100-file GitHub browser-upload payload; the **SOURCE** archive is the reproducible source release and includes the lockfile and build/deployment documentation.
-
-## v0.7.17 — Final audit hardening
-
-Release: 4 October 2026. Publication-hardening release after a full cross-check of data, runtime and multilingual output. Corrects five obsolete ISO country-code mappings that affected Explorer geography, aligns the editorial snapshot to 4 October, clarifies the exact privacy handling of the historical 2012 Reveal Day source, and makes the browser-upload release self-checking without pretending that build-time evidence acquisition is bundled.
-
-## v0.7.16 — The Social Life of the Dot
-
-Release: 4 October 2026. Adds nine source-backed social cases and six analytical models spanning language, cultural identity, civic belonging, community institutions, safety norms and non-Latin script inclusion. Relevant Explorer records carry `SOCIAL CASE` links; documented rules remain FACT while broader social meaning is labelled READING. Registration volume is not treated as a proxy for social significance.
-
-**Connecting the Dots** is a multilingual, static research publication about the history, governance, geography and social meaning of top-level domains, with the 2026 ICANN round and the `.lugano` application as the contemporary layer.
-
-**Live publication:** https://robertbregy.github.io/Connecting-the-Dots/
-
-Independent research project by **Robert Bregy**. It does not represent an official position of the City of Lugano.
-
+This release therefore separates three concepts explicitly: the current IANA root, the broader historical TLD universe, and the complete pre-2026 formal application-string archive.
 ## Publication model
 
 The project is deliberately structured for the **post-Reveal publication**. Values that cannot yet be known before Reveal Day remain explicitly marked as pre-Reveal or unavailable. The page architecture does not need to change after Reveal Day: official ICANN public application data can populate the prepared fields, tables, maps and comparisons.
@@ -367,13 +304,13 @@ Research records, CSV files and the IANA evidence snapshot remain unchanged. Aut
 
 ## v0.7.12 · Application Archaeology
 
-The Explorer now separates the history of **applications** from the history of **delegated TLDs**. The 2000 and 2004 rounds are fully vendored in the repository. The 2012 Reveal Day corpus is documented against the preserved 13 June 2012 CSV snapshot and locked to ICANN's official totals: **1,930 applications, 1,409 distinct strings, 116 IDN applications, 66 geographic applications, 84 community applications**, and the five official regional totals. During the v0.7.25 pre-Reveal freeze, the browser deliberately does not retrieve or merge the external archival transport.
+The Explorer separates the history of **applications** from the history of **delegated TLDs**. The 2000, 2004 and 2012 formal application layers are now vendored locally. For 2012, v0.7.30 contains the complete **1,930-row string/applicant graph across 1,409 distinct Reveal-Day strings**, including strings that never reached delegation, plus all four later ICANN-approved applied-for-string corrections. Official ICANN aggregate totals remain locked separately for **116 IDN applications, 66 geographic applications, 84 community applications** and the five regional totals.
 
-The data model distinguishes a submission from each string linked to that submission. That matters especially in 2000, where **47 submissions produced 223 formal Item E2 submission-to-string links across 188 distinct strings**. SITA's `.aer` and `.aero` alternatives are retained separately from its formal `.air` Item E2 request, so later selection of `.aero` does not rewrite the original filing. The 2004 layer contains all **10 submissions for 9 strings**, including both `.tel` applications.
+The data model distinguishes a submission/application from each string linked to it. That matters especially in 2000, where **47 submissions produced 223 formal Item E2 submission-to-string links across 188 distinct strings**. SITA's `.aer` and `.aero` alternatives are retained separately from its formal `.air` Item E2 request, so later selection of `.aero` does not rewrite the original filing. The 2004 layer contains all **10 submissions for 9 strings**, including both `.tel` applications. The 2012 layer preserves **230 exact-match contested strings covering 751 applications**, while ICANN's two initial non-exact similarity sets (`.hoteis` / `.hotels` and `.unicom` / `.unicorn`) remain explicitly separate.
 
-Never-delegated applied-for strings receive `application-only` Explorer records. They do not increase the TLD/profile universe, which remains **1,599 records** under the v0.7.11 dated coverage definition. Existing TLD records can carry application histories from multiple rounds without changing their introduction path.
+Never-delegated applied-for strings receive `application-only` Explorer records. They do not increase the **1,599-record TLD/profile universe**; instead they expand the combined Explorer to **1,849 string identities**, of which **250 are application-only**. Every formal 2000, 2004 and 2012 string represented in the local corpora resolves to an Explorer record. The only intentionally incomplete formal application layer is 2026, which remains pending official Reveal Day publication.
 
-For the 2012 corpus, the archival CSV transport contains `Primary Contact` and `Email`, which are not needed for this research. The frozen release does not download that transport in the visitor browser and never exposes or exports those fields. The expected schema, privacy exclusions and locked ICANN aggregate totals remain documented for the controlled post-freeze maintenance workflow.
+For 2012, the publication deliberately republishes the complete **string/applicant graph**, not every field of the historical 14-column Reveal transport. `Primary Contact` and `Email` are excluded by design, and richer fields such as location, region, community/geographic flags and official application ID are not claimed as locally complete. No visitor-browser research fetch is used: the frozen application corpus is built entirely from vendored local data and pinned provenance.
 
 ## v0.7.11 · Universal Explorer
 
@@ -383,7 +320,7 @@ For the 2012 corpus, the archival CSV transport contains `Primary Contact` and `
 - exposes origin/program fields in the searchable index and CSV export for all records;
 - keeps application-only strings explicitly distinct from delegated or formerly delegated TLDs;
 - marks the complete IANA-profile/TLD corpus separately from the still-incomplete cross-round application corpus.
-- publishes `tld_universe.csv` with 1,599 TLD/profile records and `application_only_strings.csv` with 9 curated application-only strings, explicitly non-exhaustive.
+- the original v0.7.11 release published a small curated application-only set; in the current v0.7.30 corpus, `tld_universe.csv` remains at 1,599 TLD/profile records while `application_only_strings.csv` contains all 250 application-only Explorer records, with complete 2000/2004/2012 historical coverage and the explicit pre-Reveal 2026 placeholder kept separate.
 
 ## v0.7.10 · profile links and corrections
 

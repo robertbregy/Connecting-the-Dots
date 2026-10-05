@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
-"""Build the locally vendored 2000/2004 application archaeology datasets.
+"""Build the locally vendored 2000/2004/2012 application archaeology datasets.
 
-The 2012 Reveal Day corpus is documented by locked ICANN totals, but the
-pre-Reveal freeze deliberately performs no browser-time retrieval from external
-mirrors. This keeps personal contact fields out of the repository and ensures
-every visitor sees the same frozen research corpus until the controlled Reveal
-Day update.
+The 2012 layer vendors the complete 1,930 Reveal-Day string/applicant graph
+(1,409 distinct strings) from a preserved transcription of ICANN's published
+Reveal table, plus the four subsequently approved string corrections that
+created three additional unique replacement labels. Personal contact fields
+are intentionally not vendored. The browser performs no external research
+fetches, so every visitor sees the same deterministic pre-Reveal corpus.
 """
 from __future__ import annotations
 from pathlib import Path
-import csv, json
+import csv, json, re, unicodedata
+from collections import Counter
 
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/'data'
@@ -22,6 +24,9 @@ WAYBACK_2012='https://web.archive.org/web/20120613142047if_/http://newgtlds-clou
 ICANN_2012='https://newgtlds.icann.org/en/program-status/statistics'
 ICANN_2012_OVERVIEW='https://newgtlds.icann.org/en/program-status/statistics/applications-overview-13jun12-en.pdf'
 ICANN_2012_ANNUAL='https://www.icann.org/en/about/annual-report/annual-report-2012-en.pdf'
+TRANSCRIPTION_2012='https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/'
+ICANN_2012_STRING_CHANGES='https://itp.cdn.icann.org/en/files/board-committee-meetings/briefing-materials/briefing-materials-4-18may13-en.pdf'
+ICANN_2012_INITIAL_CONTENTION='https://gtldresult.icann.org/applicationstatus/stringcontentionstatus.downinitialstringsimilaritysetspdf'
 
 # Stable project submission IDs follow the order on ICANN's corrected 10 Oct 2000
 # lodged-applications table. They are not ICANN-issued application IDs.
@@ -112,6 +117,87 @@ for i,r in enumerate(source2004,1):
     apps2004.append({'round':'2004','submission_id':f'2004-{i:03d}','official_application_id':'','string':r['string'].lower(),'applicant':r['applicant'],'location':r['location'],'status':'completed','outcome':r['outcome'],'source_url':r['source_url'] or SRC_2004})
 write_csv(DATA/'applications_2004.csv',list(apps2004[0]),apps2004)
 
+# Vendor the complete 2012 Reveal-Day string/applicant graph. The preserved
+# project source contains only two factual fields from the historic table:
+# applied-for string and applicant. Contact/email and other richer fields from
+# the original 14-column transport are deliberately not republished.
+pairs_source=DATA/'applications_2012_pairs_source.txt'
+pairs=[]
+for raw in pairs_source.read_text(encoding='utf-8').splitlines():
+    m=re.match(r'^L(\d+): (.*?)\s+\|\s+(.*)$',raw)
+    if not m: raise SystemExit(f'Invalid 2012 source row: {raw!r}')
+    source_row=int(m.group(1))
+    string=unicodedata.normalize('NFC',m.group(2).strip())
+    applicant=unicodedata.normalize('NFC',m.group(3).strip())
+    if not string or not applicant: raise SystemExit(f'Incomplete 2012 source row {source_row}')
+    pairs.append((source_row,string,applicant))
+if [n for n,_,_ in pairs] != list(range(22,1952)):
+    raise SystemExit('2012 source rows must be exactly L22..L1951 in order')
+if len(pairs)!=1930: raise SystemExit(f'2012 applications {len(pairs)} != 1930')
+
+def alabel_2012(label:str)->str:
+    return label.encode('idna').decode('ascii').lower()
+
+counts2012=Counter(unicodedata.normalize('NFC',s).casefold() for _,s,_ in pairs)
+if len(counts2012)!=1409: raise SystemExit(f'2012 distinct strings {len(counts2012)} != 1409')
+if sum(v>1 for v in counts2012.values())!=230: raise SystemExit('2012 contested string count != 230')
+if sum(v for v in counts2012.values() if v>1)!=751: raise SystemExit('2012 contested application count != 751')
+for label,expected in {'app':13,'home':11,'inc':11,'web':7,'art':10,'music':8}.items():
+    if counts2012[label]!=expected: raise SystemExit(f'2012 contention sanity check {label}: {counts2012[label]} != {expected}')
+
+# Four post-Reveal string corrections were explicitly approved by ICANN. They
+# are application updates, not additional applications. Three of the targets
+# were new unique labels; .africa already existed in the Reveal-Day set via a
+# different application. Mapping by original A-label avoids Unicode ambiguity.
+string_changes_2012={
+    'dotafrica':{
+        'official_application_id':'1-1165-42560','target_string':'africa',
+        'reason':'approved spelling correction: .DotAfrica → .Africa'
+    },
+    'kerrylogisitics':{
+        'official_application_id':'1-928-31367','target_string':'kerrylogistics',
+        'reason':'approved spelling correction: .kerrylogisitics → .kerrylogistics'
+    },
+    'xn--hdb9cza1b':{
+        'official_application_id':'1-1254-29622','target_string':'קום',
+        'reason':'approved Hebrew spelling correction'
+    },
+    'xn--tqq33ed31aqia':{
+        'official_application_id':'1-910-25137','target_string':'组织机构',
+        'reason':'approved IDN transliteration/form correction for ORG'
+    },
+}
+
+apps2012=[]
+for i,(source_row,string,applicant) in enumerate(pairs,1):
+    is_idn=any(ord(ch)>127 for ch in string)
+    a_label=alabel_2012(string) if is_idn else string.lower()
+    change=string_changes_2012.get(a_label)
+    target=unicodedata.normalize('NFC',change['target_string']) if change else ''
+    target_alabel=alabel_2012(target) if target and any(ord(ch)>127 for ch in target) else target.lower()
+    apps2012.append({
+        'round':'2012','submission_id':f'2012-{i:04d}',
+        'official_application_id':change['official_application_id'] if change else '',
+        'string':'.'+string.lower(),'ascii_string':'.'+a_label,'applicant':applicant,
+        'idn':'Yes' if is_idn else 'No','a_label':a_label if is_idn else '',
+        'relation_type':'requested','status':'published-application','outcome':'',
+        'string_change_target':('.'+target.lower()) if target else '',
+        'string_change_target_ascii':('.'+target_alabel) if target else '',
+        'string_change_reason':change['reason'] if change else '',
+        'string_change_source_url':ICANN_2012_STRING_CHANGES if change else '',
+        'source_url':TRANSCRIPTION_2012,'source_role':'secondary-transcription-of-icann-reveal-table',
+        'metadata_scope':'complete-string-applicant-graph-plus-approved-string-changes','source_row':source_row
+    })
+if sum(a['idn']=='Yes' for a in apps2012)!=116: raise SystemExit('2012 IDN application count != 116')
+changed=[a for a in apps2012 if a['string_change_target']]
+if len(changed)!=4 or len({a['string_change_target_ascii'] for a in changed})!=4:
+    raise SystemExit('2012 approved string-change mapping incomplete')
+reveal_labels={a['ascii_string'] for a in apps2012}
+replacement_labels={a['string_change_target_ascii'] for a in changed}
+if len(reveal_labels|replacement_labels)!=1412:
+    raise SystemExit('2012 Reveal + approved replacement label universe != 1412')
+write_csv(DATA/'applications_2012.csv',list(apps2012[0]),apps2012)
+
 local_apps=[]
 by_id={a['submission_id']:a for a in apps}
 for link in links:
@@ -127,29 +213,67 @@ for a in apps2004:
         'region':'','idn':False,'aLabel':'','scriptCode':'','community':None,'geographic':None,'status':a['status'],'outcome':a['outcome'],
         'relationType':'requested','source':a['source_url']
     })
+for a in apps2012:
+    base={
+        'round':'2012','submissionId':a['submission_id'],'applicationId':a['official_application_id'],'string':a['string'],'asciiString':a['ascii_string'],'applicant':a['applicant'],
+        'location':'','region':'','idn':a['idn']=='Yes','aLabel':a['a_label'],'scriptCode':'','community':None,'geographic':None,
+        'status':a['status'],'outcome':'','relationType':'requested','source':a['source_url'],
+        'sourceRole':a['source_role'],'metadataScope':a['metadata_scope'],'sourceRow':a['source_row']
+    }
+    local_apps.append(base)
+    if a['string_change_target']:
+        local_apps.append({
+            **base,
+            'string':a['string_change_target'],'asciiString':a['string_change_target_ascii'],
+            'relationType':'approved-string-change-target','source':a['string_change_source_url'],
+            'sourceRole':'official-icann-approved-string-change','originalString':a['string'],
+            'stringChangeReason':a['string_change_reason']
+        })
 
 manifest={
  'schemaVersion':1,
  'title':'Application Archaeology corpus',
- 'privacy':{'excluded2012Fields':['Primary Contact','Email'],'sourceTransportContainsExcludedFields':True,'handling':'Discarded during parsing before the research dataset is constructed; never exposed or exported by the publication.','reason':'Not needed for historical TLD/application analysis.'},
+ 'privacy':{
+   'excluded2012Fields':['Primary Contact','Email'],
+   'sourceTransportContainsExcludedFields':True,
+   'handling':'The locally vendored 2012 layer contains String and Applicant only; personal contact and email fields from the historic 14-column transport are not stored, exposed or exported.',
+   'reason':'Not needed for historical TLD/application analysis.'
+ },
  'rounds':{
    '2000':{'delivery':'vendored','applications':47,'itemE2Links':223,'itemE2UniqueStrings':188,'additionalMentionedAlternatives':2,'sources':[SRC_2000,SRC_2000_STATUS]},
    '2004':{'delivery':'vendored','applications':10,'uniqueStrings':9,'sources':[SRC_2004]},
-   '2012':{'delivery':'frozen-external-reference','applications':1930,'uniqueStrings':1409,'idn':116,'geographic':66,'community':84,'regions':{'NA':911,'EUR':675,'AP':303,'LAC':24,'AF':17},'sources':[WAYBACK_2012,ICANN_2012_OVERVIEW,ICANN_2012_ANNUAL,ICANN_2012,RAW_2012,CDN_2012],
-           'expectedHeader':['String','Applicant','Website','Location','Region','Primary Contact','Email','IDN?','A-Label','English Meaning','Script Code','Community?','Geographic?','Application ID']}
+   '2012':{
+      'delivery':'vendored-complete-string-applicant-graph','applications':1930,'uniqueStrings':1409,'idn':116,'geographic':66,'community':84,
+      'contestedStrings':230,'contestedApplications':751,'regions':{'NA':911,'EUR':675,'AP':303,'LAC':24,'AF':17},
+      'sources':[WAYBACK_2012,ICANN_2012_OVERVIEW,ICANN_2012_ANNUAL,ICANN_2012,ICANN_2012_STRING_CHANGES,ICANN_2012_INITIAL_CONTENTION,RAW_2012,CDN_2012,TRANSCRIPTION_2012],
+      'expectedOriginalHeader':['String','Applicant','Website','Location','Region','Primary Contact','Email','IDN?','A-Label','English Meaning','Script Code','Community?','Geographic?','Application ID'],
+      'fieldsVendored':['String','Applicant','approved post-Reveal string-change target for four applications'],
+      'derivedFields':['A-Label for IDNs','IDN flag','project record ID','contention counts'],
+      'approvedStringChanges':4,'additionalUniqueReplacementStrings':3,'applicationStringLifecycleLabels':1412,
+      'initialStringSimilarityContention':{
+          'source':ICANN_2012_INITIAL_CONTENTION,
+          'exactMatchSets':230,
+          'nonExactMatchSets':2,
+          'nonExactMatchPairs':[['.hoteis','.hotels'],['.unicom','.unicorn']],
+          'note':'The 230 exact-match sets are counted from duplicate Reveal-Day strings. ICANN also identified two initial non-exact string-similarity sets; they are documented separately and are not folded into the exact-match application count.'
+      },
+      'fieldsNotVendored':['Website','Location','Region','Primary Contact','Email','English Meaning','Script Code','Community?','Geographic?','official Application ID'],
+      'metadataScope':'Complete 1,930-row application→string→applicant graph covering all 1,409 distinct Reveal-Day strings, plus all four ICANN-approved post-Reveal string corrections (three additional unique replacement labels; 1,412 application-string lifecycle labels in total). Richer original application metadata is not claimed as locally complete.'
+   }
  },
  'runtimeSources2012':[],
- 'documentedExternalSources2012':[RAW_2012,CDN_2012],
+ 'documentedExternalSources2012':[RAW_2012,CDN_2012,WAYBACK_2012],
  'runtimeTransport2012':{
-   'status':'disabled-during-pre-reveal-freeze',
+   'status':'disabled-local-corpus-vendored',
    'canonicalHistoricalEvidence':WAYBACK_2012,
-   'scope':'External mirrors remain documented for post-freeze maintenance but are not requested by the frozen publication. No browser-time transport contributes records during the pre-Reveal freeze.',
-   'validation':['exact expected header','1,930 applications','1,409 distinct strings','1,930 unique application IDs','116 IDN applications','66 geographic applications','84 community applications','regional totals: NA 911, EUR 675, AP 303, LAC 24, AF 17']
+   'scope':'The complete 2012 string/applicant graph is bundled locally. External mirrors remain provenance references only; no browser-time transport contributes records.',
+   'validation':['1,930 application rows','1,409 distinct Reveal-Day strings','4 approved post-Reveal string corrections','3 additional unique replacement labels','1,412 application-string lifecycle labels','116 IDN applications','230 contested Reveal-Day strings','751 applications in exact-match Reveal-Day contention strings','2 initial non-exact string-similarity sets (.hoteis/.hotels and .unicom/.unicorn)','top contention sanity checks: .app 13, .home 11, .inc 11, .web 7'],
  },
- 'method':'During the pre-Reveal freeze the browser does not retrieve the 13 June 2012 CSV from external mirrors. Locked ICANN aggregate totals and source references remain documented, while the complete individual 2012 application corpus is intentionally not merged into the frozen Explorer. Primary Contact and Email are never exposed or exported by the publication.'
+ 'method':'The publication locally vendors the complete 13 June 2012 applied-for-string/applicant graph: 1,930 applications across 1,409 distinct Reveal-Day strings, plus all four ICANN-approved post-Reveal string corrections that add three unique replacement labels (1,412 application-string lifecycle labels total). It does not claim that every field of the historic 14-column Reveal CSV is locally reproduced. Primary Contact and Email are excluded by design, and no browser-time external research fetch is used.'
 }
 (DATA/'application_archaeology_local.json').write_text(json.dumps({'schemaVersion':1,'applications':local_apps},ensure_ascii=False,separators=(',',':')),encoding='utf-8')
 (DATA/'application_archaeology_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
 print(f'2000: {len(apps)} submissions · {len(item2)} Item E2 links · {len(set(r["string"] for r in item2))} unique strings · {len(links)} links incl. SITA alternatives')
 print(f'2004: {len(apps2004)} submissions · {len(set(r["string"] for r in apps2004))} unique strings')
+print(f'2012: {len(apps2012)} applications · {len(counts2012)} Reveal-Day strings · 4 approved changes · 1412 lifecycle labels · {sum(v>1 for v in counts2012.values())} exact-match contested strings')
 print(f'local application links: {len(local_apps)}')

@@ -52,10 +52,10 @@ if 'applicationCorpusComplete=true' in appjs: fail('runtime merge may not mark t
 if 'syncApplicationCorpusComplete()' not in appjs: fail('application corpus completeness is not derived')
 if "required=['2000','2004','2012','2026']" not in appjs: fail('application corpus completeness does not require all declared historical/current rounds')
 if 'fetch(' in appjs: fail('pre-Reveal freeze still performs browser-time external data fetches')
-if "renderApplicationCorpusStatus('frozen')" not in appjs: fail('2012 application archaeology is not explicitly frozen')
+if "renderApplicationCorpusStatus('ready')" not in appjs: fail('local historical application archaeology is not rendered ready')
 if '"lifeHistoryGtldContractsRuntime":false' not in (DATA/'data_bundle.js').read_text(encoding='utf-8'): fail('gTLD runtime lifecycle enrichment is not disabled')
 arch_manifest=json_file('application_archaeology_manifest.json')
-if arch_manifest.get('runtimeTransport2012',{}).get('status')!='disabled-during-pre-reveal-freeze': fail('2012 runtime freeze state is not declared')
+if arch_manifest.get('runtimeTransport2012',{}).get('status')!='disabled-local-corpus-vendored': fail('2012 local-corpus transport state is not declared')
 changelog=(ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
 for marker in ['v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
     if marker not in changelog: fail('changelog missing '+marker)
@@ -111,9 +111,9 @@ if 'function keepJourneyStepInView()' not in appjs or 'keepJourneyStepInView();'
     fail('mobile journey step visibility recovery is missing')
 
 expected_counts={
- 'explorer_catalog.csv':1688,'tld_universe.csv':1599,'application_only_strings.csv':89,
- 'explorer_events.csv':5583,'tld_life_histories.csv':5583,'applications_2000.csv':47,
- 'application_strings_2000.csv':225,'applications_2004.csv':10,'governance_cases.csv':9,
+ 'explorer_catalog.csv':1849,'tld_universe.csv':1599,'application_only_strings.csv':250,
+ 'explorer_events.csv':7678,'tld_life_histories.csv':7678,'applications_2000.csv':47,
+ 'application_strings_2000.csv':225,'applications_2004.csv':10,'applications_2012.csv':1930,'governance_cases.csv':9,
  'governance_case_events.csv':39,'economic_cases.csv':8,'economic_metrics.csv':22,'social_cases.csv':9,
  'explorer_iana_reports.csv':2008,'explorer_nameservers.csv':7563,
 }
@@ -126,8 +126,14 @@ keys=[r['ascii_string'] for r in catalog]
 if len(keys)!=len(set(keys)): fail('duplicate Explorer ASCII string')
 tlds={r['ascii_string'] for r in rows('tld_universe.csv')}
 apps={r['ascii_string'] for r in rows('application_only_strings.csv')}
+application_only_rows=rows('application_only_strings.csv')
+corpus_status_counts={}
+for r in application_only_rows:
+    corpus_status_counts[r.get('corpus_status','')]=corpus_status_counts.get(r.get('corpus_status',''),0)+1
+if corpus_status_counts.get('vendored-historical')!=249 or corpus_status_counts.get('pre-reveal-curated')!=1:
+    fail(f'application-only corpus status split unexpected: {corpus_status_counts}')
 if tlds & apps: fail('TLD/application-only overlap')
-if len(tlds|apps)!=1688: fail('TLD + application-only universe does not equal Explorer')
+if len(tlds|apps)!=1849: fail('TLD + application-only universe does not equal Explorer')
 
 # The final audit caught deprecated ISO aliases emitted by Intl.DisplayNames.
 current={'France':'FR','Burkina Faso':'BF','Benin':'BJ','Serbia':'RS','Timor-Leste':'TL'}
@@ -141,11 +147,60 @@ if arch['rounds']['2000']['applications']!=47 or arch['rounds']['2000']['itemE2L
 if arch['rounds']['2004']['applications']!=10 or arch['rounds']['2004']['uniqueStrings']!=9: fail('2004 archaeology totals')
 r=arch['rounds']['2012']
 if (r['applications'],r['uniqueStrings'],r['idn'],r['geographic'],r['community'])!=(1930,1409,116,66,84): fail('2012 locked totals')
+if (r.get('approvedStringChanges'),r.get('additionalUniqueReplacementStrings'),r.get('applicationStringLifecycleLabels'))!=(4,3,1412): fail('2012 approved string-change totals')
 if r['regions']!={'NA':911,'EUR':675,'AP':303,'LAC':24,'AF':17}: fail('2012 regional totals')
 privacy=arch.get('privacy',{})
 if privacy.get('excluded2012Fields')!=['Primary Contact','Email'] or not privacy.get('sourceTransportContainsExcludedFields'): fail('2012 privacy handling metadata')
-if arch['rounds']['2012'].get('delivery')!='frozen-external-reference' or arch.get('runtimeSources2012')!=[]: fail('2012 external runtime transport is not frozen')
-if arch.get('runtimeTransport2012',{}).get('status')!='disabled-during-pre-reveal-freeze': fail('2012 runtime freeze metadata missing')
+if arch['rounds']['2012'].get('delivery')!='vendored-complete-string-applicant-graph' or arch.get('runtimeSources2012')!=[]: fail('2012 corpus is not locally vendored with runtime transport disabled')
+if arch.get('runtimeTransport2012',{}).get('status')!='disabled-local-corpus-vendored': fail('2012 local-corpus transport metadata missing')
+sim=r.get('initialStringSimilarityContention',{})
+if (sim.get('exactMatchSets'),sim.get('nonExactMatchSets'))!=(230,2): fail('2012 initial string-similarity contention totals')
+if sim.get('nonExactMatchPairs')!=[['.hoteis','.hotels'],['.unicom','.unicorn']]: fail('2012 initial non-exact contention pairs')
+if sim.get('source')!='https://gtldresult.icann.org/applicationstatus/stringcontentionstatus.downinitialstringsimilaritysetspdf': fail('2012 initial contention provenance')
+
+
+# v0.7.30 complete local 2012 string/applicant graph contract.
+apps2012=rows('applications_2012.csv')
+if len(apps2012)!=1930: fail('2012 local application row count')
+required_2012_cols={'round','submission_id','official_application_id','string','ascii_string','applicant','idn','a_label','relation_type','status','outcome','string_change_target','string_change_target_ascii','string_change_reason','string_change_source_url','source_url','source_role','metadata_scope','source_row'}
+if set(apps2012[0])!=required_2012_cols: fail('2012 public export schema drift')
+expected_changed_ids={'.dotafrica':'1-1165-42560','.kerrylogisitics':'1-928-31367','.xn--hdb9cza1b':'1-1254-29622','.xn--tqq33ed31aqia':'1-910-25137'}
+for r in apps2012:
+    expected=expected_changed_ids.get(r['ascii_string'],'')
+    if r.get('official_application_id','')!=expected: fail('2012 official application ID scope drift: '+r['ascii_string'])
+if len({r['submission_id'] for r in apps2012})!=1930: fail('2012 project record IDs are not unique')
+if {r['submission_id'] for r in apps2012}!={f'2012-{i:04d}' for i in range(1,1931)}: fail('2012 project record ID sequence is incomplete')
+strings2012={r['ascii_string'] for r in apps2012}
+if len(strings2012)!=1409: fail('2012 distinct normalized string count')
+if sum(r.get('idn')=='Yes' for r in apps2012)!=116: fail('2012 IDN application count')
+from collections import Counter
+c2012=Counter(r['ascii_string'] for r in apps2012)
+if sum(v>1 for v in c2012.values())!=230 or sum(v for v in c2012.values() if v>1)!=751: fail('2012 contention graph totals')
+for key,n in {'.app':13,'.home':11,'.inc':11,'.web':7,'.art':10,'.music':8}.items():
+    if c2012[key]!=n: fail(f'2012 known contention count {key}')
+if any(r.get('source_role')!='secondary-transcription-of-icann-reveal-table' or r.get('metadata_scope')!='complete-string-applicant-graph-plus-approved-string-changes' for r in apps2012): fail('2012 source/scope labels drifted')
+changes=[r for r in apps2012 if r.get('string_change_target')]
+if len(changes)!=4: fail('2012 approved string-change count')
+if len({r['string_change_target_ascii'] for r in changes})!=4: fail('2012 approved string-change target uniqueness')
+if len(strings2012|{r['string_change_target_ascii'] for r in changes})!=1412: fail('2012 application-string lifecycle label count')
+expected_targets={'.dotafrica':'.africa','.kerrylogisitics':'.kerrylogistics','.xn--hdb9cza1b':'.xn--9dbq2a','.xn--tqq33ed31aqia':'.xn--nqv7fs00ema'}
+for r in changes:
+    if r['string_change_target_ascii']!=expected_targets[r['ascii_string']] or not r['string_change_source_url']: fail('2012 approved string-change mapping drift')
+if not strings2012.issubset(set(keys)): fail('one or more 2012 applied-for strings are missing from Explorer')
+round2012=[r for r in catalog if '2012' in {x.strip() for x in (r.get('application_rounds') or '').split('|')}]
+if len(round2012)!=1412: fail('Explorer does not expose every 2012 Reveal/replacement string label')
+for target in ['.africa','.kerrylogistics','.xn--9dbq2a','.xn--nqv7fs00ema']:
+    row=next((r for r in catalog if r['ascii_string']==target),None)
+    if not row or '2012' not in {x.strip() for x in (row.get('application_rounds') or '').split('|')}: fail('approved 2012 replacement target missing from Explorer: '+target)
+if 'runtimeApplications2012' in appjs or 'csvDownload2012' in appjs or 'enable2012Download' in appjs: fail('obsolete browser-time 2012 machinery remains in app.js')
+if "<span class=\"pill\">${esc(a.applicationId||a.submissionId" in appjs: fail('synthetic project application IDs are exposed as if official')
+if "detail:a.applicationId||a.submissionId" in appjs: fail('synthetic project IDs leaked into visible history')
+if 'download="applications_2012.csv" href="data/applications_2012.csv"' not in template: fail('2012 local CSV is not exposed as a static download')
+tr=json_file('translations.json')
+for lang in ['en','it','de','fr']:
+    app_only_sub=tr[lang].get('downloadApplicationOnlySub','').lower()
+    if not app_only_sub or ('complete' not in app_only_sub and 'completa' not in app_only_sub and 'vollständ' not in app_only_sub and 'complète' not in app_only_sub):
+        fail(f'{lang} application-only download copy does not state complete historical coverage')
 
 # No contact/email column is ever part of the public research exports.
 for p in DATA.glob('*.csv'):
@@ -187,18 +242,19 @@ for marker in ['data-open-section="disputes" data-open-anchor="case-', 'data-ope
     if marker not in appjs: fail('dynamic internal navigation marker missing: '+marker)
 if tr['it'].get('release0724') is None: fail('release0724 translation missing')
 if tr['it'].get('release0725') is None: fail('release0725 translation missing')
-if any(not tr[lang].get('applicationCorpusFrozen') for lang in LANGS): fail('freeze-status translation missing')
+if any(not tr[lang].get('applicationCorpusReady') for lang in LANGS): fail('ready-status translation missing')
 if tr['it'].get('release0729') is None: fail('release0729 translation missing')
+if tr['it'].get('release0730') is None: fail('release0730 translation missing')
 if 'non più presenti' not in tr['it'].get('exploreCoverageBody',''): fail('Italian Explorer copy lost the non più correction')
-freeze_copy_expect={
- 'en':('not fetched or merged','Not included in the pre-Reveal freeze'),
- 'it':('non viene recuperato né integrato','Non incluso nel freeze pre-Reveal'),
- 'de':('weder abgerufen noch in den Explorer integriert','Nicht im Pre-Reveal-Freeze enthalten'),
- 'fr':('n’est ni récupéré ni intégré','Non inclus dans le gel pré-Reveal'),
+local_2012_copy_expect={
+ 'en':('all 1,930 applications','all 1,930 applications'),
+ 'it':('tutte le 1.930 candidature','tutte le 1.930 candidature'),
+ 'de':('alle 1.930 Bewerbungen','alle 1.930 Bewerbungen'),
+ 'fr':('les 1 930 candidatures','1 930 candidatures'),
 }
-for lang,(body_marker,download_marker) in freeze_copy_expect.items():
-    if body_marker not in tr[lang].get('exploreCorpusNoteBody',''): fail(f'2012 frozen corpus wording is inconsistent in {lang}')
-    if download_marker not in tr[lang].get('downloadApplications2012Sub',''): fail(f'2012 frozen download wording is inconsistent in {lang}')
+for lang,(body_marker,download_marker) in local_2012_copy_expect.items():
+    if body_marker not in tr[lang].get('exploreCorpusNoteBody',''): fail(f'2012 local corpus wording is inconsistent in {lang}')
+    if download_marker not in tr[lang].get('downloadApplications2012Sub',''): fail(f'2012 local download wording is inconsistent in {lang}')
 
 # v0.7.27 Explorer filtering contract: advanced filters are visibly labelled, raw
 # IANA machine values are localized, and editorial macro-topics cover the full corpus.
@@ -294,7 +350,7 @@ for rel in ['index.html',*[f'{x}/index.html' for x in LANGS]]:
     main=re.search(r'<main\b(?=[^>]*\bid=["\']main-content["\'])[^>]*>',text,re.I)
     if not skip or not main: fail(f'skip-to-content path missing in {rel}')
     if 'class="heroPlain"' not in text or 'class="heroActions"' not in text: fail(f'novice entry path missing in {rel}')
-    if 'applicationCorpusStatus frozen' not in text: fail(f'static freeze status missing in {rel}')
+    if 'applicationCorpusStatus ready' not in text: fail(f'static local-corpus ready status missing in {rel}')
     if text.index('explorerSearchPrimary')>text.index('explorerFilters'): fail(f'Explorer not search-first in {rel}')
     for img_tag in re.findall(r'<img\b[^>]*>',text,re.I):
         if not re.search(r'\balt=["\'][^"\']*["\']',img_tag,re.I): fail(f'image without alt attribute in {rel}')
@@ -309,7 +365,7 @@ for i in range(8):
     obj=json.loads(m.group(1))
     if obj.get('version')!=version: fail(f'shard {i} version mismatch')
     shard_total+=len(obj['records']); shard_keys+=list(obj['records'])
-if shard_total!=1688 or len(shard_keys)!=len(set(shard_keys)) or set(shard_keys)!=set(keys): fail('Explorer shard parity')
+if shard_total!=1849 or len(shard_keys)!=len(set(shard_keys)) or set(shard_keys)!=set(keys): fail('Explorer shard parity')
 
 # Preserved IANA evidence archive integrity.
 snapshot=json_file('iana_snapshot.json')
@@ -338,4 +394,4 @@ if node:
         rc=subprocess.run([node,'--check',str(p)],stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
         if rc.returncode: fail(f'JS syntax {p.relative_to(ROOT)}: {rc.stderr.strip()}')
 
-print(f'RELEASE CHECK PASS · v{version} · 1,688 Explorer records · 5,583 life-history events · 4 languages')
+print(f'RELEASE CHECK PASS · v{version} · 1,849 Explorer records · 7,678 life-history events · 4 languages')

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "asOf": "2026-10-04",
-  "scope": "Chronological evidence for every Explorer record, assembled from preserved IANA data, formal ICANN application archaeology and curated local evidence. External browser-time lifecycle enrichment is disabled in the pre-Reveal freeze.",
+  "scope": "Chronological evidence for every Explorer record, assembled from preserved IANA data, formal ICANN application archaeology including the complete local 2000/2004/2012 application-string graph, and curated local evidence. External browser-time lifecycle enrichment is disabled in the pre-Reveal freeze.",
   "staticSources": [
     "data/iana_snapshot.json",
     "data/application_archaeology_local.json",
@@ -20,5 +20,5 @@
   "evidenceRule": "No missing date or historical phase is inferred. Only attributable, dated source evidence is rendered as a factual life-history event.",
   "knownLimitation": "Some early TLD operator changes predate central structured records and may remain undocumented in this dataset.",
   "runtimeEnrichment": "disabled-pre-reveal-freeze",
-  "freezePolicy": "The source remains documented for the controlled post-freeze update, but the publication does not request or merge it in the visitor browser before Reveal Day."
+  "freezePolicy": "The documented external lifecycle source is not requested or merged in the visitor browser. The complete 2012 application-string/applicant graph is already vendored locally; the 2026 individual application layer remains pending Reveal Day."
 }

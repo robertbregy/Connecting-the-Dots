@@ -12,7 +12,7 @@ NAMES={'en':'English','it':'Italiano','de':'Deutsch','fr':'Français'}
 VERSION=json.loads((ROOT/'package.json').read_text())['version']
 I18N=json.loads((ROOT/'data/translations.json').read_text())
 ARCH=json.loads((ROOT/'data/application_archaeology_manifest.json').read_text())
-LOCAL_APPLICATION_COUNT=sum(int(ARCH['rounds'][r].get('applications',0)) for r in ('2000','2004') if r in ARCH.get('rounds',{}))
+LOCAL_APPLICATION_COUNT=sum(int(ARCH['rounds'][r].get('applications',0)) for r in ('2000','2004','2012') if r in ARCH.get('rounds',{}))
 PUB_JS=(ROOT/'data/publication.js').read_text()
 m=re.search(r"version:'([^']+)'.*?releasedOn:'([^']+)'",PUB_JS,re.S)
 RELEASED=m.group(2) if m else '2026-10-04'
@@ -66,8 +66,8 @@ def render(page,lang,alias=False):
     if nos:set_content(nos,f'<div class="staticReading"><p>{tr["staticReading"]}</p><nav class="languageVersions" aria-label="{tr["languageVersions"]}">{links()}</nav></div>')
     st=soup.select_one('#applicationCorpusStatus')
     if st:
-        st['class']=['applicationCorpusStatus','frozen']
-        st.string=tr['applicationCorpusFrozen'].replace('{count}',str(LOCAL_APPLICATION_COUNT)).replace('{rounds}','2000, 2004')
+        st['class']=['applicationCorpusStatus','ready']
+        st.string=tr['applicationCorpusReady'].replace('{count}',str(LOCAL_APPLICATION_COUNT)).replace('{rounds}','2000, 2004, 2012')
     cnt=soup.select_one('#exploreApplicationCount')
     if cnt:cnt.string=str(LOCAL_APPLICATION_COUNT)
     style=soup.select_one('#ctd-runtime-style');link=soup.new_tag('link',id='ctd-runtime-style');link['rel']='stylesheet';link['href']=f'assets/style.css?v={VERSION}';style.replace_with(link)
