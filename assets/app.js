@@ -357,24 +357,40 @@ function renderRound2026(){
 let journeyStep=0;
 const JOURNEY_STEPS=7;
 const JOURNEY_ADDRESS_FOCUS=[
- ['host','name','tld'], // the readable DNS name
- ['root'],            // the normally invisible DNS root dot
- ['tld'],             // top-level domain
- [],                  // resolved IP is emphasized in the diagram instead
- [],                  // network path is emphasized in the diagram instead
- ['scheme'],          // HTTPS
- ['path']             // requested resource / page
+ ['scheme','host','name','tld','path'], // the URL as a whole
+ ['host','name','tld'],               // the readable DNS name
+ ['root','tld'],                      // hierarchy: hidden root + TLD
+ ['host','name','tld'],               // the name being resolved to an IP address
+ [],                                  // packets now use the resolved destination
+ ['scheme'],                          // HTTPS
+ ['path']                             // requested resource / page
 ];
 function syncJourneyAddressFocus(guide){
  const active=new Set(JOURNEY_ADDRESS_FOCUS[journeyStep]||[]);
  guide.querySelectorAll('[data-journey-address-part]').forEach(part=>part.classList.toggle('is-active',active.has(part.dataset.journeyAddressPart)));
  guide.querySelector('.journeyAddressResult')?.classList.toggle('is-active',journeyStep===3);
 }
+function syncJourneyTeachingState(guide){
+ const from=document.getElementById('journeyNowFrom'),to=document.getElementById('journeyNowTo'),hint=document.getElementById('journeyNowHint');
+ if(from)from.textContent=t('journeyNow'+journeyStep+'From');
+ if(to)to.textContent=t('journeyNow'+journeyStep+'To');
+ if(hint)hint.textContent=t('journeyNow'+journeyStep+'Hint');
+ const addressLane=document.getElementById('journeyAddressLane'),dnsLane=document.getElementById('journeyDnsLane'),webLane=document.getElementById('journeyWebLane');
+ addressLane?.classList.toggle('is-visible',journeyStep===0);
+ dnsLane?.classList.toggle('is-visible',journeyStep>=1&&journeyStep<=3);
+ webLane?.classList.toggle('is-visible',journeyStep>=4);
+ [addressLane,dnsLane,webLane].forEach(lane=>lane?.classList.toggle('is-active',lane?.classList.contains('is-visible')));
+ const resolver=document.getElementById('journeyResolverNode');resolver?.classList.toggle('is-active',journeyStep===1);
+ const root=guide.querySelector('[data-journey-node="root"]'),tld=guide.querySelector('[data-journey-node="tld"]'),authority=guide.querySelector('[data-journey-node="authority"]');
+ root?.classList.toggle('is-complete',journeyStep>=2);root?.classList.toggle('is-active',false);
+ tld?.classList.toggle('is-active',journeyStep===2);tld?.classList.toggle('is-complete',journeyStep>=3);
+ authority?.classList.toggle('is-active',journeyStep===3);authority?.classList.toggle('is-complete',false);
+}
 function renderInternetJourney(){
  const guide=document.getElementById('internet-guide');if(!guide)return;
  const stepper=document.getElementById('journeyStepper');stepper.setAttribute('aria-label',t('journeyStepsLabel'));
  stepper.innerHTML=Array.from({length:JOURNEY_STEPS},(_,i)=>`<li><button type="button" class="journeyStepButton" data-journey-go="${i}" aria-controls="journeyLesson" aria-label="${esc(fmtNum(i+1)+'. '+t('journey'+i+'Label'))}"><span class="journeyStepNumber" aria-hidden="true">${fmtNum(i+1)}</span><span class="journeyStepLabel">${esc(t('journey'+i+'Label'))}</span></button></li>`).join('');
- document.getElementById('journeySteps').innerHTML=Array.from({length:JOURNEY_STEPS},(_,i)=>`<article class="journeyStep" data-journey-scene="${i}" aria-labelledby="journey-title-${i}"><h3 id="journey-title-${i}">${esc(t('journey'+i+'Title'))}</h3><p>${esc(t('journey'+i+'Body'))}</p><details><summary>${esc(t('journeyDetails'))}</summary><p>${esc(t('journey'+i+'Detail'))}</p></details></article>`).join('');
+ document.getElementById('journeySteps').innerHTML=Array.from({length:JOURNEY_STEPS},(_,i)=>`<article class="journeyStep" data-journey-scene="${i}" aria-labelledby="journey-title-${i}"><h3 id="journey-title-${i}">${esc(t('journey'+i+'Title'))}</h3><p>${esc(t('journey'+i+'Body'))}</p><div class="journeyKey"><span>${esc(t('journeyKeyLabel'))}</span><strong>${esc(t('journey'+i+'Key'))}</strong></div><details><summary>${esc(t('journeyDetails'))}</summary><p>${esc(t('journey'+i+'Detail'))}</p></details></article>`).join('');
  stepper.querySelectorAll('[data-journey-go]').forEach(button=>button.addEventListener('click',()=>setJourneyStep(Number(button.dataset.journeyGo),true)));
  setJourneyStep(journeyStep);
 }
@@ -385,18 +401,16 @@ function keepJourneyStepInView(){
 function setJourneyStep(step,userAction=false){
  const guide=document.getElementById('internet-guide');if(!guide)return;
  journeyStep=Number.isInteger(step)?Math.max(0,Math.min(JOURNEY_STEPS-1,step)):0;
- guide.dataset.journeyStep=String(journeyStep);guide.classList.toggle('has-address',journeyStep>=3);guide.classList.toggle('has-connection',journeyStep>=4);guide.classList.toggle('has-security',journeyStep>=5);guide.classList.toggle('has-page',journeyStep===6);syncJourneyAddressFocus(guide);
+ guide.dataset.journeyStep=String(journeyStep);guide.classList.toggle('has-address',journeyStep>=3);guide.classList.toggle('has-connection',journeyStep>=4);guide.classList.toggle('has-security',journeyStep>=5);guide.classList.toggle('has-page',journeyStep===6);syncJourneyAddressFocus(guide);syncJourneyTeachingState(guide);
  guide.querySelectorAll('[data-journey-scene]').forEach(scene=>scene.classList.toggle('is-active',Number(scene.dataset.journeyScene)===journeyStep));
  guide.querySelectorAll('[data-journey-go]').forEach(button=>{const n=Number(button.dataset.journeyGo);button.classList.toggle('is-complete',n<journeyStep);if(n===journeyStep)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current')});
  const phase=journeyStep===0?'journeyPhaseName':journeyStep<4?'journeyPhaseDns':'journeyPhaseWeb';
  const progress=t('journeyStepCount').replace('{step}',fmtNum(journeyStep+1)).replace('{total}',fmtNum(JOURNEY_STEPS));
  document.getElementById('journeyPhase').textContent=t(phase);document.getElementById('journeyProgress').textContent=progress;
- for(const [node,n] of [['root',1],['tld',2],['authority',3]]){const el=guide.querySelector('[data-journey-node="'+node+'"]');el.classList.toggle('is-active',journeyStep===n);el.classList.toggle('is-complete',journeyStep>n);}
- document.getElementById('journeyDnsLane').classList.toggle('is-active',journeyStep<4);document.getElementById('journeyWebLane').classList.toggle('is-active',journeyStep>=4);
  document.getElementById('journeyBack').disabled=journeyStep===0;
  const next=document.getElementById('journeyNext'),key=journeyStep===0?'journeyStart':'journeyNext';next.disabled=journeyStep===JOURNEY_STEPS-1;next.dataset.i18n=key;next.textContent=t(key);
  if(userAction){
-  document.getElementById('journeyAnnounce').textContent=progress+'. '+t('journey'+journeyStep+'Title')+'. '+t('journey'+journeyStep+'Body');
+  document.getElementById('journeyAnnounce').textContent=progress+'. '+t('journey'+journeyStep+'Title')+'. '+t('journey'+journeyStep+'Body')+'. '+t('journeyKeyLabel')+': '+t('journey'+journeyStep+'Key');
   if(location.protocol==='http:'||location.protocol==='https:'){const url=new URL(location.href);url.searchParams.set('tab','how');url.searchParams.set('walk',String(journeyStep));url.hash='internet-basics';history.replaceState({tab:'how'},'',url);syncLanguageLinks();syncSectionLinks();syncFeedbackLinks();}
   keepJourneyStepInView();
  }

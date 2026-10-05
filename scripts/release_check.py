@@ -55,7 +55,7 @@ if 'GTLD_LIFECYCLE_CACHE_TTL=24*60*60*1000' not in appjs or "cache:'no-cache'" n
 arch_manifest=json_file('application_archaeology_manifest.json')
 if arch_manifest.get('runtimeTransport2012',{}).get('status')!='external-mirror-not-cryptographically-pinned': fail('2012 runtime transport integrity limitation is not declared')
 changelog=(ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
-for marker in ['v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
+for marker in ['v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
     if marker not in changelog: fail('changelog missing '+marker)
 readme=(ROOT/'README.md').read_text(encoding='utf-8')
 if "No live refresh occurs in a visitor's browser." in readme: fail('README contains obsolete no-live-refresh claim')
@@ -99,7 +99,7 @@ for css_marker in [
     '.journeyWorkarea{display:flex;flex-direction:column;width:100%;gap:14px}',
     '.journeyLesson{order:1;width:100%;padding:0}',
     '.journeyDiagram{order:2;width:100%;grid-template-columns:1fr;gap:10px}',
-    '.journeyDnsBranches{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;padding-top:18px}',
+    '.journeyDnsTrace{display:flex;flex-direction:column;gap:6px}',
     '.journeyWebPath{grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr) minmax(0,.8fr);gap:4px}',
 ]:
     if css_marker not in style: fail('mobile journey CSS invariant missing: '+css_marker)
@@ -170,15 +170,24 @@ if not summary.get('2012',{}).get('Delegations source'): fail('2012 delegation m
 # Translation parity.
 tr=json_file('translations.json')
 
-# v0.7.22 guided-address contract: emphasis follows the lesson and the DNS root is visualized only on its step.
+# v0.7.23 teaching contract: URL anatomy, DNS hierarchy and web delivery remain distinct
+# but explicitly connected by one seven-step narrative.
 src=(ROOT/'src/index.web.html').read_text(encoding='utf-8')
 for marker in ['data-journey-address-part="scheme"','data-journey-address-part="host"','data-journey-address-part="name"','data-journey-address-part="tld"','data-journey-address-part="root"','data-journey-address-part="path"']:
     if marker not in src: fail('guided-address segment missing: '+marker)
-for marker in ['JOURNEY_ADDRESS_FOCUS','syncJourneyAddressFocus(guide)',"['root']","['tld']","['scheme']","['path']"]:
-    if marker not in appjs: fail('guided-address focus invariant missing: '+marker)
+for marker in ['id="journeyNow"','id="journeyAddressLane"','class="journeyDnsTrace"','id="journeyRecap"','data-i18n="journeyRecapTitle"']:
+    if marker not in src: fail('teaching walkthrough structure missing: '+marker)
+for marker in ['JOURNEY_ADDRESS_FOCUS','syncJourneyAddressFocus(guide)','syncJourneyTeachingState(guide)',"t('journeyNow'+journeyStep+'From')",'class="journeyKey"']:
+    if marker not in appjs: fail('teaching walkthrough runtime invariant missing: '+marker)
 css=(ROOT/'assets/style.css').read_text(encoding='utf-8')
-if '.journeyRootDot{display:none}' not in css or '.journeyRootDot.is-active{display:inline}' not in css: fail('guided DNS root-dot visibility contract missing')
-if '.journeyAddressResult.is-active code' not in css: fail('resolved-IP focus state missing')
+for marker in ['.journeyRootDot{display:none}','.journeyRootDot.is-active{display:inline}','.journeyAddressResult.is-active code','.journeyLane.is-visible{display:block}','.journeyRecapFlow{']:
+    if marker not in css: fail('teaching walkthrough CSS invariant missing: '+marker)
+if tr['it'].get('journey0Label')!='L’indirizzo' or tr['it'].get('journey1Label')!='Il nome' or tr['it'].get('journey2Label')!='Il TLD' or tr['it'].get('journey3Label')!='Nome → IP':
+    fail('Italian teaching sequence regressed')
+if tr['it'].get('journey1Label')=='La radice': fail('DNS root returned as a standalone lesson step')
+for lang in LANGS:
+    for key in ['journeyNowLabel','journeyKeyLabel','journeyRecapTitle',*[f'journey{i}Key' for i in range(7)]]:
+        if not tr[lang].get(key): fail(f'missing teaching translation {lang}/{key}')
 
 # v0.7.21 automatic-language contract: detection is root-only, explicit choice persists,
 # direct language routes stay stable, and unsupported/missing preferences fall back to English.

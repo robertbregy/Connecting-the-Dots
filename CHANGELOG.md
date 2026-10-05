@@ -1,3 +1,14 @@
+# v0.7.23 — Teaching-first Internet walkthrough
+
+- Reframe the seven-step walkthrough as one coherent story: URL → name → DNS hierarchy → IP → networks → HTTPS → page.
+- Move the DNS root inside the hierarchy lesson instead of treating it as a standalone step.
+- Add a dynamic “what the Internet is doing now” strip that makes each transformation explicit.
+- Add one persistent “remember this” concept to every step, while keeping technical detail behind progressive disclosure.
+- Replace the DNS branch picture with a sequential delegation trace: root → .com → authoritative DNS → illustrative IP.
+- Add a dedicated URL-anatomy visual for the opening step and a final recap that reconnects all seven concepts.
+- Keep the mobile lesson-first layout, explicit address focus and reduced-motion behavior introduced in the previous releases.
+- Keep all frozen research datasets and the 4 October IANA snapshot unchanged.
+
 # v0.7.22 — Dynamic guided-address focus
 
 - Make the sample URL participate in the seven-step Internet walkthrough instead of leaving `.com` permanently highlighted.

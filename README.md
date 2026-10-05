@@ -1,5 +1,9 @@
-# Connecting the Dots — v0.7.22
+# Connecting the Dots — v0.7.23
 
+
+## v0.7.23 — Teaching-first Internet walkthrough
+
+Release: 5 October 2026. The “Behind a click” explainer is now structured as one continuous mental model rather than three partially overlapping ones. Readers first decode the URL, then follow the name through the DNS hierarchy to an IP address, then follow packets to the server, establish HTTPS and request the page. The DNS root is taught inside the hierarchy; every step has an explicit live transformation and one key idea to retain; the DNS diagram is sequential rather than branch-like; and the final step reconstructs the whole journey at a glance. Research data and the 4 October IANA snapshot are unchanged.
 
 ## v0.7.22 — Dynamic guided-address focus
 

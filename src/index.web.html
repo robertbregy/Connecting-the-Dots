@@ -65,6 +65,7 @@
  <p class="sectionLead" data-i18n="journeyIntro"></p>
  <p class="journeyFoundation" data-i18n="journeyFoundation"></p>
  <div class="journeyAddress"><span data-i18n="journeyAddressLabel"></span><code aria-label="https://www.example.com/news"><span class="journeyAddressPart" data-journey-address-part="scheme">https://</span><wbr/><span class="journeyAddressPart" data-journey-address-part="host">www.</span><wbr/><span class="journeyAddressPart journeyAddressName" data-journey-address-part="name">example</span><span class="journeyAddressPart journeyAddressTld" data-journey-address-part="tld">.com</span><span class="journeyAddressPart journeyRootDot" data-journey-address-part="root" aria-hidden="true">.</span><wbr/><span class="journeyAddressPart" data-journey-address-part="path">/news</span></code></div>
+ <div class="journeyNow" id="journeyNow"><span class="journeyNowLabel" data-i18n="journeyNowLabel"></span><div class="journeyNowFlow"><code id="journeyNowFrom"></code><span class="journeyNowArrow" aria-hidden="true">→</span><strong id="journeyNowTo"></strong></div><p id="journeyNowHint"></p></div>
  <div class="journeyControls"><ol id="journeyStepper" class="journeyStepper"></ol></div>
  <div class="journeyWorkarea">
   <div class="journeyLesson" id="journeyLesson">
@@ -75,13 +76,23 @@
    <p id="journeyAnnounce" class="srOnly" aria-live="polite" aria-atomic="true"></p>
   </div>
   <div class="journeyDiagram" aria-hidden="true">
+   <div class="journeyLane journeyAddressLane" id="journeyAddressLane">
+    <h3 data-i18n="journeyAddressLane"></h3>
+    <div class="journeyUrlParts">
+     <div class="journeyUrlCard"><span data-i18n="journeyUrlHow"></span><code>https://</code><small data-i18n="journeyUrlHowBody"></small></div>
+     <div class="journeyUrlCard"><span data-i18n="journeyUrlWhere"></span><code>www.example.com</code><small data-i18n="journeyUrlWhereBody"></small></div>
+     <div class="journeyUrlCard"><span data-i18n="journeyUrlWhat"></span><code>/news</code><small data-i18n="journeyUrlWhatBody"></small></div>
+    </div>
+   </div>
    <div class="journeyLane journeyDnsLane" id="journeyDnsLane">
     <h3 data-i18n="journeyDnsLane"></h3>
-    <div class="journeyResolverNode" data-i18n="journeyResolver"></div>
-    <div class="journeyDnsBranches">
-     <div class="journeyNode" data-journey-node="root"><b>.</b><span data-i18n="journeyRoot"></span></div>
-     <div class="journeyNode" data-journey-node="tld"><b>.com</b><span data-i18n="journeyTld"></span></div>
-     <div class="journeyNode" data-journey-node="authority"><b>example.com</b><span data-i18n="journeyAuthority"></span></div>
+    <div class="journeyResolverNode" id="journeyResolverNode" data-i18n="journeyResolver"></div>
+    <div class="journeyDnsTrace">
+     <div class="journeyDnsHop" data-journey-node="root"><b>.</b><span data-i18n="journeyRoot"></span><em data-i18n="journeyRootAnswer"></em></div>
+     <span class="journeyTraceArrow" aria-hidden="true">→</span>
+     <div class="journeyDnsHop" data-journey-node="tld"><b>.com</b><span data-i18n="journeyTld"></span><em data-i18n="journeyTldAnswer"></em></div>
+     <span class="journeyTraceArrow" aria-hidden="true">→</span>
+     <div class="journeyDnsHop" data-journey-node="authority"><b>example.com</b><span data-i18n="journeyAuthority"></span><em data-i18n="journeyAuthorityAnswer"></em></div>
     </div>
     <p class="journeyLaneNote" data-i18n="journeyDnsNote"></p>
     <div class="journeyAddressResult"><span data-i18n="journeyResolved"></span><code>192.0.2.10</code></div>
@@ -98,6 +109,7 @@
    </div>
   </div>
  </div>
+ <section class="journeyRecap" id="journeyRecap" aria-labelledby="journeyRecapTitle"><div class="journeyRecapHead"><span data-i18n="journeyRecapKicker"></span><h3 id="journeyRecapTitle" data-i18n="journeyRecapTitle"></h3><p data-i18n="journeyRecapBody"></p></div><ol class="journeyRecapFlow"><li><span>1</span><b data-i18n="journeyRecap0"></b><code>https://www.example.com/news</code></li><li><span>2</span><b data-i18n="journeyRecap1"></b><code>www.example.com</code></li><li><span>3</span><b data-i18n="journeyRecap2"></b><code>. → .com → example.com</code></li><li><span>4</span><b data-i18n="journeyRecap3"></b><code>192.0.2.10</code></li><li><span>5</span><b data-i18n="journeyRecap4"></b><code>router → server</code></li><li><span>6</span><b data-i18n="journeyRecap5"></b><code>TLS</code></li><li><span>7</span><b data-i18n="journeyRecap6"></b><code>GET /news → HTML</code></li></ol></section>
  <p class="journeyTakeaway" data-i18n="journeyTakeaway"></p>
  <p class="journeyCaveat" data-i18n="journeyExample"></p>
  <p class="journeyCaveat" data-i18n="journeySimplified"></p>
