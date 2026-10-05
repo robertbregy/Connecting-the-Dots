@@ -1,3 +1,10 @@
+# v0.7.20 — Navigation terminology clarity
+
+- Rename the Italian navigation label `Contese` to `Stringhe contese` so it explicitly refers to competition between applications for the same TLD string.
+- Rename the Italian navigation label `Dispute` to `Controversie` so governance, legal and community conflicts are clearly separated from contention sets.
+- Keep section structure, URLs, data, filters and research datasets unchanged.
+- Keep the frozen 4 October IANA snapshot and pre-Reveal publication state unchanged.
+
 # v0.7.19 — Mobile guided-journey hardening
 
 - Rework the guided Internet walkthrough for phone-sized viewports so the lesson, controls and diagrams remain width-bounded.

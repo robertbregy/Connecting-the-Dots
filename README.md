@@ -1,4 +1,8 @@
-# Connecting the Dots — v0.7.19
+# Connecting the Dots — v0.7.20
+
+## v0.7.20 — Navigation terminology clarity
+
+Release: 5 October 2026. Targeted language/UX release. The Italian Themes menu now uses **Stringhe contese** for contention sets and **Controversie** for governance, legal and community disputes. The change removes a semantic collision between two distinct concepts without changing section IDs, links, research data or the 4 October IANA snapshot.
 
 ## v0.7.19 — Mobile guided-journey hardening
 

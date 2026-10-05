@@ -55,7 +55,7 @@ if 'GTLD_LIFECYCLE_CACHE_TTL=24*60*60*1000' not in appjs or "cache:'no-cache'" n
 arch_manifest=json_file('application_archaeology_manifest.json')
 if arch_manifest.get('runtimeTransport2012',{}).get('status')!='external-mirror-not-cryptographically-pinned': fail('2012 runtime transport integrity limitation is not declared')
 changelog=(ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
-for marker in ['v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
+for marker in ['v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
     if marker not in changelog: fail('changelog missing '+marker)
 readme=(ROOT/'README.md').read_text(encoding='utf-8')
 if "No live refresh occurs in a visitor's browser." in readme: fail('README contains obsolete no-live-refresh claim')
@@ -169,6 +169,11 @@ if not summary.get('2012',{}).get('Delegations source'): fail('2012 delegation m
 
 # Translation parity.
 tr=json_file('translations.json')
+# v0.7.20 Italian navigation terminology contract: contention and disputes must be immediately distinguishable.
+if tr['it'].get('tabContention')!='Stringhe contese': fail('Italian contention navigation label regressed')
+if tr['it'].get('tabDisputes')!='Controversie': fail('Italian disputes navigation label regressed')
+if tr['it'].get('tabContention')==tr['it'].get('tabDisputes'): fail('Italian contention/disputes labels collide')
+
 base=set(tr['en'])
 required_ux_keys={'skipToContent','heroPlain','heroLearnCta','heroExploreCta','exploreAboutTitle','exploreFiltersTitle'}
 for lang in LANGS:

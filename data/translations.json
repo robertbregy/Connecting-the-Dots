@@ -1547,7 +1547,8 @@
     "heroExploreCta": "Search a TLD",
     "exploreAboutTitle": "What is in the Explorer?",
     "exploreFiltersTitle": "Filters",
-    "release0719": "Mobile journey hardening: the guided Internet walkthrough is now strictly viewport-bounded, puts the active explanation before its diagram on phones, reflows DNS and network diagrams on narrow screens, and keeps the current step in view when readers move forward or back."
+    "release0719": "Mobile journey hardening: the guided Internet walkthrough is now strictly viewport-bounded, puts the active explanation before its diagram on phones, reflows DNS and network diagrams on narrow screens, and keeps the current step in view when readers move forward or back.",
+    "release0720": "Navigation clarity: the Italian menu now distinguishes “Stringhe contese” (competing applications for the same string) from “Controversie” (governance, legal or community disputes), removing an avoidable semantic ambiguity without changing the underlying sections or research data."
   },
   "it": {
     "brand": "Brand",
@@ -1559,7 +1560,7 @@
     "tabArchaeology": "Storia",
     "tabHow": "Come funziona",
     "tabCities": "Città e territori",
-    "tabContention": "Contese",
+    "tabContention": "Stringhe contese",
     "tabStrange": "Internet strano",
     "tabReveal": "Round 2026",
     "tabPress": "Dati & fonti",
@@ -2768,7 +2769,7 @@
     "ianaRevocationReport": "Rapporto IANA sulla revoca",
     "ianaRetirementReport": "Rapporto IANA su ritiro / rimozione",
     "guard5": "Le metriche economiche mantengono base contabile e valuta originali. Entrate pubbliche, ricavi societari, risultato operativo, valore di transazione, prezzo d’asta e fee di candidatura non sono mai trattati come una misura unica comparabile.",
-    "tabDisputes": "Dispute",
+    "tabDisputes": "Controversie",
     "disputesTitle": "Dispute che hanno cambiato il punto",
     "disputesSubtitle": "Quando una stringa diventa politica.",
     "disputesIntro": "Un contention set significa che più candidati vogliono la stessa stringa o una stringa confondibile. Una disputa di governance è più ampia: governi, comunità, titolari di diritti o candidati possono contestare chi debba gestire un nome, a quali condizioni o se debba esistere del tutto.",
@@ -3097,7 +3098,8 @@
     "heroExploreCta": "Cerca un TLD",
     "exploreAboutTitle": "Che cosa contiene l’Explorer?",
     "exploreFiltersTitle": "Filtri",
-    "release0719": "Correzione mobile del percorso guidato: la spiegazione di Internet resta ora entro il viewport, su telefono mostra prima il passaggio attivo e poi lo schema, ridispone i diagrammi DNS e di rete sugli schermi stretti e mantiene il passaggio corrente in vista quando si avanza o si torna indietro."
+    "release0719": "Correzione mobile del percorso guidato: la spiegazione di Internet resta ora entro il viewport, su telefono mostra prima il passaggio attivo e poi lo schema, ridispone i diagrammi DNS e di rete sugli schermi stretti e mantiene il passaggio corrente in vista quando si avanza o si torna indietro.",
+    "release0720": "Chiarezza della navigazione: nel menu italiano “Contese” diventa “Stringhe contese” e “Dispute” diventa “Controversie”, distinguendo subito la competizione tra candidature per la stessa stringa dalle controversie di governance, legali o comunitarie."
   },
   "de": {
     "brand": "Marke",
@@ -4647,7 +4649,8 @@
     "heroExploreCta": "Eine TLD suchen",
     "exploreAboutTitle": "Was enthält der Explorer?",
     "exploreFiltersTitle": "Filter",
-    "release0719": "Mobile-Härtung des geführten Internet-Rundgangs: Der Inhalt bleibt nun strikt im Viewport, zeigt auf Smartphones zuerst die aktive Erklärung und danach das Diagramm, ordnet DNS- und Netzwerkdiagramme auf schmalen Displays neu an und hält den aktuellen Schritt beim Vor- und Zurückgehen im Blick."
+    "release0719": "Mobile-Härtung des geführten Internet-Rundgangs: Der Inhalt bleibt nun strikt im Viewport, zeigt auf Smartphones zuerst die aktive Erklärung und danach das Diagramm, ordnet DNS- und Netzwerkdiagramme auf schmalen Displays neu an und hält den aktuellen Schritt beim Vor- und Zurückgehen im Blick.",
+    "release0720": "Klarere Navigation: Im italienischen Menü unterscheiden „Stringhe contese“ (konkurrierende Bewerbungen um dieselbe Zeichenfolge) und „Controversie“ (Governance-, Rechts- oder Community-Streitfälle) nun zwei zuvor zu ähnliche Begriffe. Inhalte und Forschungsdaten bleiben unverändert."
   },
   "fr": {
     "brand": "Marque",
@@ -6197,6 +6200,7 @@
     "heroExploreCta": "Rechercher un TLD",
     "exploreAboutTitle": "Que contient l’Explorateur ?",
     "exploreFiltersTitle": "Filtres",
-    "release0719": "Correction mobile du parcours guidé : l’explication d’Internet reste désormais strictement dans le viewport, affiche sur téléphone l’étape active avant le schéma, réorganise les diagrammes DNS et réseau sur les écrans étroits et maintient l’étape courante visible lors de la navigation."
+    "release0719": "Correction mobile du parcours guidé : l’explication d’Internet reste désormais strictement dans le viewport, affiche sur téléphone l’étape active avant le schéma, réorganise les diagrammes DNS et réseau sur les écrans étroits et maintient l’étape courante visible lors de la navigation.",
+    "release0720": "Navigation clarifiée : le menu italien distingue désormais « Stringhe contese » (candidatures concurrentes pour la même chaîne) de « Controversie » (litiges de gouvernance, juridiques ou communautaires), sans modifier les sections ni les données de recherche."
   }
 }
