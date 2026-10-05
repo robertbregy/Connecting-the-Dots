@@ -55,7 +55,7 @@ if 'GTLD_LIFECYCLE_CACHE_TTL=24*60*60*1000' not in appjs or "cache:'no-cache'" n
 arch_manifest=json_file('application_archaeology_manifest.json')
 if arch_manifest.get('runtimeTransport2012',{}).get('status')!='external-mirror-not-cryptographically-pinned': fail('2012 runtime transport integrity limitation is not declared')
 changelog=(ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
-for marker in ['v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
+for marker in ['v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
     if marker not in changelog: fail('changelog missing '+marker)
 readme=(ROOT/'README.md').read_text(encoding='utf-8')
 if "No live refresh occurs in a visitor's browser." in readme: fail('README contains obsolete no-live-refresh claim')
@@ -169,6 +169,17 @@ if not summary.get('2012',{}).get('Delegations source'): fail('2012 delegation m
 
 # Translation parity.
 tr=json_file('translations.json')
+
+# v0.7.24 navigation contract: section changes land at their start on every viewport,
+# Home returns to the true document top, and dynamic cross-links stay inside the SPA.
+src=(ROOT/'src/index.web.html').read_text(encoding='utf-8')
+if '<a aria-label="Home" class="brand brandButton" href="./">' not in src: fail('brand is not a real home link')
+for marker in ['function navigationOffset()','function scrollToNavigationTarget(target,smooth=true)','function scrollToDocumentTop(smooth=true)',"activateTab(id,userInitiated=false,historyMode='replace',scrollSection=true)","e.target.closest?.('[data-open-section]')","activateTab('overview',true,'replace',false)"]:
+    if marker not in appjs: fail('navigation hardening invariant missing: '+marker)
+if 'userInitiated&&window.innerWidth<=960' in appjs: fail('section scrolling is still incorrectly viewport-gated')
+for marker in ['data-open-section="disputes" data-open-anchor="case-', 'data-open-section="economics" data-open-anchor="econ-case-', 'data-open-section="social" data-open-anchor="social-case-', 'data-open-section="sources" data-open-anchor="publication-updates"']:
+    if marker not in appjs: fail('dynamic internal navigation marker missing: '+marker)
+if tr['it'].get('release0724') is None: fail('release0724 translation missing')
 
 # v0.7.23 teaching contract: URL anatomy, DNS hierarchy and web delivery remain distinct
 # but explicitly connected by one seven-step narrative.

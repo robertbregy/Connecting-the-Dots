@@ -1,3 +1,13 @@
+# v0.7.24 — Navigation hardening
+
+- Make every user-initiated primary-menu section change scroll to the start of the selected section on both desktop and mobile.
+- Replace the JS-only brand button with a real home link and make its enhanced behavior return to the true top of the overview without being overridden by mobile section scrolling.
+- Centralize offset-aware scrolling so sticky desktop/mobile navigation never hides the destination.
+- Use delegated internal-section navigation so dynamically rendered links inherit the same behavior.
+- Convert Explorer governance/economic/social cross-links and the publication stamp to in-app anchored navigation rather than unnecessary page reloads.
+- Keep section-index anchors, direct hash restoration, browser history and explicit in-page anchors aligned with the same navigation model.
+- Add navigation regression checks across desktop and mobile; frozen research datasets and the 4 October IANA snapshot remain unchanged.
+
 # v0.7.23 — Teaching-first Internet walkthrough
 
 - Reframe the seven-step walkthrough as one coherent story: URL → name → DNS hierarchy → IP → networks → HTTPS → page.

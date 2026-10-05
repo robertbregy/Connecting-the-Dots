@@ -1,5 +1,9 @@
-# Connecting the Dots — v0.7.23
+# Connecting the Dots — v0.7.24
 
+
+## v0.7.24 — Navigation hardening
+
+This release fixes section-entry positioning and restores robust Home behavior. Primary navigation now always lands at the start of the selected section, the brand is a real home link with a no-JavaScript fallback, sticky bars are accounted for consistently, and dynamic internal cross-links use the same in-app navigation path.
 
 ## v0.7.23 — Teaching-first Internet walkthrough
 

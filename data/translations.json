@@ -1601,7 +1601,8 @@
     "journeyRecap4": "Network",
     "journeyRecap5": "HTTPS",
     "journeyRecap6": "Page",
-    "release0723": "Teaching-first Internet walkthrough: the seven steps now follow one coherent story from URL to name, DNS hierarchy, IP, networks, HTTPS and page. The DNS root is explained inside the hierarchy instead of as an isolated step; a live “what is happening now” strip, one key takeaway per step, sequential DNS delegation diagram and final recap make the relationship between URL anatomy, name resolution and web delivery explicit."
+    "release0723": "Teaching-first Internet walkthrough: the seven steps now follow one coherent story from URL to name, DNS hierarchy, IP, networks, HTTPS and page. The DNS root is explained inside the hierarchy instead of as an isolated step; a live “what is happening now” strip, one key takeaway per step, sequential DNS delegation diagram and final recap make the relationship between URL anatomy, name resolution and web delivery explicit.",
+    "release0724": "Navigation hardening: every user-initiated section change now lands at the start of the selected section on desktop and mobile; the brand is a real home link and reliably returns to the top of the overview. Internal anchored links, dynamically rendered Explorer cross-links, section indexes and the publication stamp share the same offset-aware navigation behavior."
   },
   "it": {
     "brand": "Brand",
@@ -3205,7 +3206,8 @@
     "journeyRecap4": "Rete",
     "journeyRecap5": "HTTPS",
     "journeyRecap6": "Pagina",
-    "release0723": "Walkthrough Internet riprogettato in chiave didattica: i sette passaggi seguono ora un’unica storia coerente da URL a nome, gerarchia DNS, IP, reti, HTTPS e pagina. La radice DNS viene spiegata dentro la gerarchia invece che come passaggio isolato; una fascia dinamica “cosa sta succedendo ora”, un concetto da ricordare per ogni step, una delega DNS sequenziale e un riepilogo finale rendono esplicito il rapporto fra anatomia dell’URL, risoluzione del nome e consegna della pagina."
+    "release0723": "Walkthrough Internet riprogettato in chiave didattica: i sette passaggi seguono ora un’unica storia coerente da URL a nome, gerarchia DNS, IP, reti, HTTPS e pagina. La radice DNS viene spiegata dentro la gerarchia invece che come passaggio isolato; una fascia dinamica “cosa sta succedendo ora”, un concetto da ricordare per ogni step, una delega DNS sequenziale e un riepilogo finale rendono esplicito il rapporto fra anatomia dell’URL, risoluzione del nome e consegna della pagina.",
+    "release0724": "Correzione e irrobustimento della navigazione: ogni cambio di sezione avviato dall’utente porta ora all’inizio della sezione scelta su desktop e mobile; il logo è un vero link Home e riporta in modo affidabile all’inizio della panoramica. Link interni con ancora, rimandi dinamici dall’Explorer, indici di sezione e timbro di pubblicazione condividono lo stesso comportamento di navigazione con compensazione delle barre fisse."
   },
   "de": {
     "brand": "Marke",
@@ -4809,7 +4811,8 @@
     "journeyRecap4": "Netz",
     "journeyRecap5": "HTTPS",
     "journeyRecap6": "Seite",
-    "release0723": "Didaktisch neu gestalteter Internet-Rundgang: Die sieben Schritte erzählen nun eine zusammenhängende Geschichte von URL, Name und DNS-Hierarchie über IP und Netzwerke bis zu HTTPS und Seite. Die DNS-Wurzel wird innerhalb der Hierarchie erklärt statt als isolierter Schritt; eine dynamische „Was passiert gerade?“-Leiste, ein Merksatz pro Schritt, eine sequenzielle DNS-Delegation und ein abschließender Überblick machen das Verhältnis zwischen URL-Aufbau, Namensauflösung und Web-Auslieferung ausdrücklich sichtbar."
+    "release0723": "Didaktisch neu gestalteter Internet-Rundgang: Die sieben Schritte erzählen nun eine zusammenhängende Geschichte von URL, Name und DNS-Hierarchie über IP und Netzwerke bis zu HTTPS und Seite. Die DNS-Wurzel wird innerhalb der Hierarchie erklärt statt als isolierter Schritt; eine dynamische „Was passiert gerade?“-Leiste, ein Merksatz pro Schritt, eine sequenzielle DNS-Delegation und ein abschließender Überblick machen das Verhältnis zwischen URL-Aufbau, Namensauflösung und Web-Auslieferung ausdrücklich sichtbar.",
+    "release0724": "Navigation gehärtet: Jeder vom Nutzer ausgelöste Abschnittswechsel landet nun auf Desktop und Mobilgeräten am Anfang des gewählten Abschnitts; die Marke ist ein echter Home-Link und führt zuverlässig an den Anfang der Übersicht zurück. Interne Ankerlinks, dynamische Explorer-Querverweise, Abschnittsindizes und der Veröffentlichungsstempel verwenden dasselbe offset-bewusste Navigationsverhalten."
   },
   "fr": {
     "brand": "Marque",
@@ -6413,6 +6416,7 @@
     "journeyRecap4": "Réseau",
     "journeyRecap5": "HTTPS",
     "journeyRecap6": "Page",
-    "release0723": "Parcours Internet repensé pour l’apprentissage : les sept étapes suivent désormais une seule histoire cohérente, de l’URL au nom, à la hiérarchie DNS, à l’IP, aux réseaux, à HTTPS puis à la page. La racine DNS est expliquée dans la hiérarchie plutôt que comme une étape isolée ; une bande dynamique « ce qui se passe maintenant », une idée à retenir par étape, une délégation DNS séquentielle et un récapitulatif final rendent explicite le lien entre anatomie de l’URL, résolution du nom et livraison web."
+    "release0723": "Parcours Internet repensé pour l’apprentissage : les sept étapes suivent désormais une seule histoire cohérente, de l’URL au nom, à la hiérarchie DNS, à l’IP, aux réseaux, à HTTPS puis à la page. La racine DNS est expliquée dans la hiérarchie plutôt que comme une étape isolée ; une bande dynamique « ce qui se passe maintenant », une idée à retenir par étape, une délégation DNS séquentielle et un récapitulatif final rendent explicite le lien entre anatomie de l’URL, résolution du nom et livraison web.",
+    "release0724": "Navigation renforcée : chaque changement de section déclenché par l’utilisateur arrive désormais au début de la section choisie sur ordinateur comme sur mobile ; la marque est un véritable lien d’accueil et ramène fiablement en haut de la vue d’ensemble. Les liens internes avec ancre, renvois dynamiques de l’Explorer, index de section et estampille de publication utilisent le même comportement de navigation tenant compte des barres fixes."
   }
 }
