@@ -1,3 +1,12 @@
+# v0.7.25 — Pre-Reveal freeze hardening
+
+- Disable browser-time retrieval and cached merging of external 2012 application archaeology during the pre-Reveal freeze.
+- Disable browser-time ICANN gTLD contract-lifecycle enrichment until the controlled Reveal Day update.
+- Keep external source URLs and locked ICANN totals documented without allowing them to change the frozen visitor experience.
+- Generate the data-pack and release ZIPs deterministically with canonical ordering, timestamps, file modes and compression settings.
+- Add release checks that reject any browser-time `fetch()` in the frozen app and verify the freeze metadata.
+- Keep all frozen research CSVs and the 4 October IANA evidence snapshot unchanged.
+
 # v0.7.24 — Navigation hardening
 
 - Make every user-initiated primary-menu section change scroll to the start of the selected section on both desktop and mobile.

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "asOf": "2026-10-04",
-  "scope": "Chronological evidence for every Explorer record, assembled from preserved IANA data, formal ICANN application archaeology and the official ICANN gTLD lifecycle feed.",
+  "scope": "Chronological evidence for every Explorer record, assembled from preserved IANA data, formal ICANN application archaeology and curated local evidence. External browser-time lifecycle enrichment is disabled in the pre-Reveal freeze.",
   "staticSources": [
     "data/iana_snapshot.json",
     "data/application_archaeology_local.json",
@@ -18,5 +18,7 @@
   ],
   "ccTldMethod": "IANA registration plus delegation/redelegation reports; gTLD Registry Agreement fields are not applied to ccTLDs.",
   "evidenceRule": "No missing date or historical phase is inferred. Only attributable, dated source evidence is rendered as a factual life-history event.",
-  "knownLimitation": "Some early TLD operator changes predate central structured records and may remain undocumented in this dataset."
+  "knownLimitation": "Some early TLD operator changes predate central structured records and may remain undocumented in this dataset.",
+  "runtimeEnrichment": "disabled-pre-reveal-freeze",
+  "freezePolicy": "The source remains documented for the controlled post-freeze update, but the publication does not request or merge it in the visitor browser before Reveal Day."
 }

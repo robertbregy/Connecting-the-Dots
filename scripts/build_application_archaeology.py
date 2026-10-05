@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Build the locally vendored 2000/2004 application archaeology datasets.
 
-The 2012 Reveal Day corpus is intentionally handled by the browser runtime from
-an archival copy of the original ICANN CSV and validated before it is merged.
-This keeps personal contact fields out of the repository while preserving the
-full public application history for the online Explorer.
+The 2012 Reveal Day corpus is documented by locked ICANN totals, but the
+pre-Reveal freeze deliberately performs no browser-time retrieval from external
+mirrors. This keeps personal contact fields out of the repository and ensures
+every visitor sees the same frozen research corpus until the controlled Reveal
+Day update.
 """
 from __future__ import annotations
 from pathlib import Path
@@ -134,17 +135,18 @@ manifest={
  'rounds':{
    '2000':{'delivery':'vendored','applications':47,'itemE2Links':223,'itemE2UniqueStrings':188,'additionalMentionedAlternatives':2,'sources':[SRC_2000,SRC_2000_STATUS]},
    '2004':{'delivery':'vendored','applications':10,'uniqueStrings':9,'sources':[SRC_2004]},
-   '2012':{'delivery':'runtime-archival-snapshot','applications':1930,'uniqueStrings':1409,'idn':116,'geographic':66,'community':84,'regions':{'NA':911,'EUR':675,'AP':303,'LAC':24,'AF':17},'sources':[WAYBACK_2012,ICANN_2012_OVERVIEW,ICANN_2012_ANNUAL,ICANN_2012,RAW_2012,CDN_2012],
+   '2012':{'delivery':'frozen-external-reference','applications':1930,'uniqueStrings':1409,'idn':116,'geographic':66,'community':84,'regions':{'NA':911,'EUR':675,'AP':303,'LAC':24,'AF':17},'sources':[WAYBACK_2012,ICANN_2012_OVERVIEW,ICANN_2012_ANNUAL,ICANN_2012,RAW_2012,CDN_2012],
            'expectedHeader':['String','Applicant','Website','Location','Region','Primary Contact','Email','IDN?','A-Label','English Meaning','Script Code','Community?','Geographic?','Application ID']}
  },
- 'runtimeSources2012':[RAW_2012,CDN_2012],
+ 'runtimeSources2012':[],
+ 'documentedExternalSources2012':[RAW_2012,CDN_2012],
  'runtimeTransport2012':{
-   'status':'external-mirror-not-cryptographically-pinned',
+   'status':'disabled-during-pre-reveal-freeze',
    'canonicalHistoricalEvidence':WAYBACK_2012,
-   'scope':'The external mirror is transport only. It is not part of the frozen release hash set and is accepted only after deterministic structural and aggregate validation.',
+   'scope':'External mirrors remain documented for post-freeze maintenance but are not requested by the frozen publication. No browser-time transport contributes records during the pre-Reveal freeze.',
    'validation':['exact expected header','1,930 applications','1,409 distinct strings','1,930 unique application IDs','116 IDN applications','66 geographic applications','84 community applications','regional totals: NA 911, EUR 675, AP 303, LAC 24, AF 17']
  },
- 'method':'The browser may retrieve an external mirror of the 13 June 2012 Reveal Day CSV. The transport URLs are not cryptographically pinned and therefore are not part of the frozen release snapshot. Before any merge, the payload must match the expected schema and locked ICANN aggregate totals. Primary Contact and Email are discarded during parsing before the research dataset is constructed and are never exposed or exported.'
+ 'method':'During the pre-Reveal freeze the browser does not retrieve the 13 June 2012 CSV from external mirrors. Locked ICANN aggregate totals and source references remain documented, while the complete individual 2012 application corpus is intentionally not merged into the frozen Explorer. Primary Contact and Email are never exposed or exported by the publication.'
 }
 (DATA/'application_archaeology_local.json').write_text(json.dumps({'schemaVersion':1,'applications':local_apps},ensure_ascii=False,separators=(',',':')),encoding='utf-8')
 (DATA/'application_archaeology_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')

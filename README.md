@@ -1,5 +1,9 @@
-# Connecting the Dots — v0.7.24
+# Connecting the Dots — v0.7.25
 
+
+## v0.7.25 — Pre-Reveal freeze hardening
+
+Release: 5 October 2026. Freeze-candidate release after the full pre-Reveal audit. Browser-time external research enrichment is disabled so the rendered research state is deterministic for every visitor; the documented external 2012 archive mirrors and ICANN gTLD lifecycle feed remain source references for later controlled maintenance, not live inputs to the frozen publication. ZIP creation now normalizes entry order, timestamps, permissions and compression settings so repeated builds in the release environment produce the same SHA-256. Research datasets and the 4 October IANA snapshot are unchanged.
 
 ## v0.7.24 — Navigation hardening
 
@@ -70,11 +74,11 @@ The frozen Explorer core imports every individual profile in the dated IANA Root
 
 ## TLD Life Histories
 
-v0.7.13 adds a chronological evidence layer to every Explorer profile. The timeline combines formal application records, IANA registration dates, IANA delegation/transfer/revocation reports, the current root-zone state and the ICANN gTLD contract-lifecycle feed (`https://www.icann.org/resources/registries/gtlds/v2/gtlds.json`). For gTLDs, the live ICANN layer adds Application ID, Registry Agreement signature date, delegation date, termination state and removal date where published. For ccTLDs, the project uses IANA delegation/redelegation evidence instead of applying the gTLD contract model.
+v0.7.13 adds a chronological evidence layer to every Explorer profile. The timeline combines formal application records, IANA registration dates, IANA delegation/transfer/revocation reports, the current root-zone state and curated preserved evidence. The ICANN gTLD contract-lifecycle feed (`https://www.icann.org/resources/registries/gtlds/v2/gtlds.json`) remains documented as a maintenance source, but browser-time retrieval is disabled in the pre-Reveal freeze. For ccTLDs, the project uses IANA delegation/redelegation evidence instead of applying the gTLD contract model.
 
-The word “complete” is scoped to each declared corpus. The frozen local chronology represents the dated events exposed by the preserved release sources; missing historical phases remain explicitly missing. Browser-time ICANN lifecycle enrichment is a separate live layer and does not mutate the frozen release snapshot. Some early operator changes predate modern structured records and are therefore not reconstructed without a source.
+The word “complete” is scoped to each declared corpus. The frozen local chronology represents the dated events exposed by the preserved release sources; missing historical phases remain explicitly missing. During the pre-Reveal freeze no browser-time lifecycle data is fetched or merged, so all visitors see the same chronology. Some early operator changes predate modern structured records and are therefore not reconstructed without a source.
 
-`data/tld_life_histories.csv` exports the locally preserved chronology. The browser enriches gTLD profiles with the current ICANN contract feed and caches the validated result.
+`data/tld_life_histories.csv` exports the locally preserved chronology. The current ICANN contract feed is intentionally not queried by the frozen publication; it is reserved for a controlled post-freeze update.
 
 ## `.lugano` provenance before Reveal Day
 
@@ -300,7 +304,7 @@ Each IANA profile exposes available registry and contact organizations, localize
 
 Search supports Unicode/ASCII names, organizations, countries and name-server names. A registry-country filter and in-root/outside-root presets complement the existing status and formal-type filters. Round, theme and city classifications remain limited to the researched subset. An absent root entry is not automatically classified as never delegated; IANA report dates are not automatically transfer-effective dates.
 
-The data pack adds `explorer_nameservers.csv` and `explorer_iana_reports.csv`. The normalized snapshot and compressed archive preserve all **1,597 source files**, including the root list and database index, with individual retrieval timestamps and SHA-256 hashes. Ordinary builds remain entirely offline. The frozen release files do not refresh themselves. Clearly labelled runtime enrichment may query current external sources in a visitor’s browser; those values are not part of the frozen snapshot.
+The data pack adds `explorer_nameservers.csv` and `explorer_iana_reports.csv`. The normalized snapshot and compressed archive preserve all **1,597 source files**, including the root list and database index, with individual retrieval timestamps and SHA-256 hashes. Ordinary builds remain entirely offline. In v0.7.25 the frozen publication also performs no browser-time external research fetches, so the displayed corpus cannot drift between visitors before Reveal Day.
 
 ### Updating the IANA snapshot
 
@@ -344,13 +348,13 @@ Research records, CSV files and the IANA evidence snapshot remain unchanged. Aut
 
 ## v0.7.12 · Application Archaeology
 
-The Explorer now separates the history of **applications** from the history of **delegated TLDs**. The 2000 and 2004 rounds are fully vendored in the repository. The 2012 Reveal Day corpus is reconstructed from the preserved 13 June 2012 CSV snapshot and is accepted by the runtime only after it reproduces ICANN's official totals: **1,930 applications, 1,409 distinct strings, 116 IDN applications, 66 geographic applications, 84 community applications**, and the five official regional totals.
+The Explorer now separates the history of **applications** from the history of **delegated TLDs**. The 2000 and 2004 rounds are fully vendored in the repository. The 2012 Reveal Day corpus is documented against the preserved 13 June 2012 CSV snapshot and locked to ICANN's official totals: **1,930 applications, 1,409 distinct strings, 116 IDN applications, 66 geographic applications, 84 community applications**, and the five official regional totals. During the v0.7.25 pre-Reveal freeze, the browser deliberately does not retrieve or merge the external archival transport.
 
 The data model distinguishes a submission from each string linked to that submission. That matters especially in 2000, where **47 submissions produced 223 formal Item E2 submission-to-string links across 188 distinct strings**. SITA's `.aer` and `.aero` alternatives are retained separately from its formal `.air` Item E2 request, so later selection of `.aero` does not rewrite the original filing. The 2004 layer contains all **10 submissions for 9 strings**, including both `.tel` applications.
 
 Never-delegated applied-for strings receive `application-only` Explorer records. They do not increase the TLD/profile universe, which remains **1,599 records** under the v0.7.11 dated coverage definition. Existing TLD records can carry application histories from multiple rounds without changing their introduction path.
 
-For the 2012 corpus, the archival CSV transport contains `Primary Contact` and `Email`. The browser parser deliberately discards both fields before constructing the research dataset; they are never exposed or exported by the publication. The retained dataset contains the string, applicant, public website, location/region, IDN/A-label/script data, community/geographic flags and Application ID. The reduced corpus is then validated in full before merging; invalid or partial data are rejected. The source transport is therefore not itself sanitized, a limitation stated explicitly in the methodology.
+For the 2012 corpus, the archival CSV transport contains `Primary Contact` and `Email`, which are not needed for this research. The frozen release does not download that transport in the visitor browser and never exposes or exports those fields. The expected schema, privacy exclusions and locked ICANN aggregate totals remain documented for the controlled post-freeze maintenance workflow.
 
 ## v0.7.11 · Universal Explorer
 

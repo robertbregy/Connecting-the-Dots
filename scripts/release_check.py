@@ -51,9 +51,11 @@ if 'fmtNum(1987)' in appjs or 'fmtNum(57)' in appjs: fail('application archaeolo
 if 'applicationCorpusComplete=true' in appjs: fail('runtime merge may not mark the full application corpus complete directly')
 if 'syncApplicationCorpusComplete()' not in appjs: fail('application corpus completeness is not derived')
 if "required=['2000','2004','2012','2026']" not in appjs: fail('application corpus completeness does not require all declared historical/current rounds')
-if 'GTLD_LIFECYCLE_CACHE_TTL=24*60*60*1000' not in appjs or "cache:'no-cache'" not in appjs: fail('gTLD runtime lifecycle cache is not freshness-bounded')
+if 'fetch(' in appjs: fail('pre-Reveal freeze still performs browser-time external data fetches')
+if "renderApplicationCorpusStatus('frozen')" not in appjs: fail('2012 application archaeology is not explicitly frozen')
+if '"lifeHistoryGtldContractsRuntime":false' not in (DATA/'data_bundle.js').read_text(encoding='utf-8'): fail('gTLD runtime lifecycle enrichment is not disabled')
 arch_manifest=json_file('application_archaeology_manifest.json')
-if arch_manifest.get('runtimeTransport2012',{}).get('status')!='external-mirror-not-cryptographically-pinned': fail('2012 runtime transport integrity limitation is not declared')
+if arch_manifest.get('runtimeTransport2012',{}).get('status')!='disabled-during-pre-reveal-freeze': fail('2012 runtime freeze state is not declared')
 changelog=(ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
 for marker in ['v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
     if marker not in changelog: fail('changelog missing '+marker)
@@ -142,6 +144,8 @@ if (r['applications'],r['uniqueStrings'],r['idn'],r['geographic'],r['community']
 if r['regions']!={'NA':911,'EUR':675,'AP':303,'LAC':24,'AF':17}: fail('2012 regional totals')
 privacy=arch.get('privacy',{})
 if privacy.get('excluded2012Fields')!=['Primary Contact','Email'] or not privacy.get('sourceTransportContainsExcludedFields'): fail('2012 privacy handling metadata')
+if arch['rounds']['2012'].get('delivery')!='frozen-external-reference' or arch.get('runtimeSources2012')!=[]: fail('2012 external runtime transport is not frozen')
+if arch.get('runtimeTransport2012',{}).get('status')!='disabled-during-pre-reveal-freeze': fail('2012 runtime freeze metadata missing')
 
 # No contact/email column is ever part of the public research exports.
 for p in DATA.glob('*.csv'):
@@ -180,6 +184,8 @@ if 'userInitiated&&window.innerWidth<=960' in appjs: fail('section scrolling is 
 for marker in ['data-open-section="disputes" data-open-anchor="case-', 'data-open-section="economics" data-open-anchor="econ-case-', 'data-open-section="social" data-open-anchor="social-case-', 'data-open-section="sources" data-open-anchor="publication-updates"']:
     if marker not in appjs: fail('dynamic internal navigation marker missing: '+marker)
 if tr['it'].get('release0724') is None: fail('release0724 translation missing')
+if tr['it'].get('release0725') is None: fail('release0725 translation missing')
+if any(not tr[lang].get('applicationCorpusFrozen') for lang in LANGS): fail('freeze-status translation missing')
 
 # v0.7.23 teaching contract: URL anatomy, DNS hierarchy and web delivery remain distinct
 # but explicitly connected by one seven-step narrative.
@@ -243,6 +249,7 @@ for rel in ['index.html',*[f'{x}/index.html' for x in LANGS]]:
     main=re.search(r'<main\b(?=[^>]*\bid=["\']main-content["\'])[^>]*>',text,re.I)
     if not skip or not main: fail(f'skip-to-content path missing in {rel}')
     if 'class="heroPlain"' not in text or 'class="heroActions"' not in text: fail(f'novice entry path missing in {rel}')
+    if 'applicationCorpusStatus frozen' not in text: fail(f'static freeze status missing in {rel}')
     if text.index('explorerSearchPrimary')>text.index('explorerFilters'): fail(f'Explorer not search-first in {rel}')
     for img_tag in re.findall(r'<img\b[^>]*>',text,re.I):
         if not re.search(r'\balt=["\'][^"\']*["\']',img_tag,re.I): fail(f'image without alt attribute in {rel}')

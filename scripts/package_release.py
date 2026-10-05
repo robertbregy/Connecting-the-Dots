@@ -10,6 +10,20 @@ EXCLUDED_DIRS = {'.git', 'node_modules', '__pycache__', '.venv'}
 EXCLUDED_NAMES = {'.DS_Store'}
 DEPLOY_OMIT = {'DEPLOY.md', 'package-lock.json', 'requirements-fallback.txt'}
 
+ZIP_TIMESTAMP = (2026, 10, 5, 0, 0, 0)
+ZIP_FILE_MODE = 0o100644 << 16
+
+def write_deterministic_zip(output: Path, entries):
+    """Write a byte-reproducible ZIP from (path, archive-name) entries."""
+    output.parent.mkdir(parents=True,exist_ok=True)
+    with zipfile.ZipFile(output,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as zf:
+        for path, arcname in sorted(entries,key=lambda item:item[1]):
+            info=zipfile.ZipInfo(arcname,ZIP_TIMESTAMP)
+            info.create_system=3
+            info.external_attr=ZIP_FILE_MODE
+            info.compress_type=zipfile.ZIP_DEFLATED
+            zf.writestr(info,path.read_bytes(),compress_type=zipfile.ZIP_DEFLATED,compresslevel=9)
+
 
 def files_for(kind: str, output: Path):
     files=[]
@@ -56,9 +70,7 @@ def main():
         required={'package-lock.json','DEPLOY.md','requirements-fallback.txt'}
         missing=required-{p.relative_to(ROOT).as_posix() for p in files}
         if missing: raise SystemExit('Source release missing: '+', '.join(sorted(missing)))
-    output.parent.mkdir(parents=True,exist_ok=True)
-    with zipfile.ZipFile(output,'w',zipfile.ZIP_DEFLATED) as zf:
-        for path in files: zf.write(path,path.relative_to(ROOT).as_posix())
+    write_deterministic_zip(output,[(path,path.relative_to(ROOT).as_posix()) for path in files])
     digest=hashlib.sha256(output.read_bytes()).hexdigest()
     print(f'{output}\n{len(files)} files · {output.stat().st_size:,} bytes\nSHA-256: {digest}')
 

@@ -31,7 +31,7 @@
       ]
     },
     "2012": {
-      "delivery": "runtime-archival-snapshot",
+      "delivery": "frozen-external-reference",
       "applications": 1930,
       "uniqueStrings": 1409,
       "idn": 116,
@@ -70,14 +70,15 @@
       ]
     }
   },
-  "runtimeSources2012": [
+  "runtimeSources2012": [],
+  "documentedExternalSources2012": [
     "https://raw.githubusercontent.com/nimblemachines/analyzing-iana-root-db/master/strings-1200utc-13jun12-en.csv",
     "https://cdn.jsdelivr.net/gh/nimblemachines/analyzing-iana-root-db@master/strings-1200utc-13jun12-en.csv"
   ],
   "runtimeTransport2012": {
-    "status": "external-mirror-not-cryptographically-pinned",
+    "status": "disabled-during-pre-reveal-freeze",
     "canonicalHistoricalEvidence": "https://web.archive.org/web/20120613142047if_/http://newgtlds-cloudfront.icann.org/sites/default/files/reveal/strings-1200utc-13jun12-en.html",
-    "scope": "The external mirror is transport only. It is not part of the frozen release hash set and is accepted only after deterministic structural and aggregate validation.",
+    "scope": "External mirrors remain documented for post-freeze maintenance but are not requested by the frozen publication. No browser-time transport contributes records during the pre-Reveal freeze.",
     "validation": [
       "exact expected header",
       "1,930 applications",
@@ -89,5 +90,5 @@
       "regional totals: NA 911, EUR 675, AP 303, LAC 24, AF 17"
     ]
   },
-  "method": "The browser may retrieve an external mirror of the 13 June 2012 Reveal Day CSV. The transport URLs are not cryptographically pinned and therefore are not part of the frozen release snapshot. Before any merge, the payload must match the expected schema and locked ICANN aggregate totals. Primary Contact and Email are discarded during parsing before the research dataset is constructed and are never exposed or exported."
+  "method": "During the pre-Reveal freeze the browser does not retrieve the 13 June 2012 CSV from external mirrors. Locked ICANN aggregate totals and source references remain documented, while the complete individual 2012 application corpus is intentionally not merged into the frozen Explorer. Primary Contact and Email are never exposed or exported by the publication."
 }

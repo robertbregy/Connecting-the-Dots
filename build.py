@@ -8,12 +8,13 @@ import re
 import shutil
 import subprocess
 import zipfile
+from scripts.package_release import write_deterministic_zip
 
 ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.24"
+VERSION = "0.7.25"
 
 
 def csv_records(path: Path) -> int:
@@ -70,19 +71,26 @@ def build_manifest() -> None:
             "Every preserved IANA database entry has a normalized profile; root-list membership is separate from database presence.",
             "Application Archaeology separates submissions, applied-for strings and delegated TLD identity; never-delegated applications do not increase the TLD universe.",
             "The 2012 archival source contains Primary Contact and Email fields; the browser parser discards both before the research dataset is created, and the resulting dataset is accepted only after locked ICANN totals validate.",
-            "TLD Life Histories combine a frozen local chronology with optional browser-time ICANN gTLD contract-lifecycle enrichment; runtime values are labelled separately and are not part of the frozen release snapshot. Undocumented phases are never inferred.",
+            "TLD Life Histories use only the frozen local chronology in this pre-Reveal freeze. Browser-time ICANN gTLD contract-lifecycle enrichment is deliberately disabled until the controlled Reveal Day update. Undocumented phases are never inferred.",
             "Disputed Dots adds nine editorially selected governance cases as a structured layer linked to Explorer strings; FACT and READING remain separate, and case sources are primary ICANN/IANA records.",
             "Economics of the Dot adds eight source-backed economic mechanisms; public revenue, company results, transaction values, auction prices and application fees retain their original accounting basis and are not normalized into one ranking.",
             "The Social Life of the Dot adds nine source-backed social cases and six analytical models covering language, community, identity, protection, locality and script inclusion; registration volume is never used as a proxy for social significance.",
             "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity.",
             "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database. It is not an exhaustive cross-round application-string corpus.",
-            "application_only_strings.csv is the frozen build-time application-only view for vendored/local data; the validated 2012 Reveal Day corpus is optional runtime enrichment and is not silently treated as part of the frozen release files.",
+            "application_only_strings.csv is the frozen build-time application-only view for vendored/local data. The complete 2012 Reveal Day corpus is documented by locked ICANN totals but is deliberately not retrieved from external mirrors during the pre-Reveal freeze.",
         ],
         "current_root_snapshot": json.loads((DATA / "iana_snapshot.json").read_text())["asOf"],
         "iana_evidence": "iana_snapshot.json",
         "explorer_coverage": runtime["explorerMeta"],
         "iana_evidence_archive": json.loads((DATA / "iana_snapshot.json").read_text())["archive_path"].removeprefix("data/"),
         "release_history": {"path": "release_history.json", "sha256": sha256(DATA / "release_history.json")},
+        "freeze": {
+            "status": "pre-reveal-frozen",
+            "frozen_on": "2026-10-05",
+            "runtime_external_enrichment": False,
+            "browser_time_external_data_fetches": 0,
+            "policy": "No research dataset or profile is refreshed in the visitor browser before the controlled Reveal Day update."
+        },
         "web_delivery": {
             "profile_loading": "on-demand",
             "detail_batches": 8,
@@ -121,9 +129,7 @@ def build_data_pack() -> None:
 
     pack = ROOT / "downloads" / "connecting-the-dots-data-pack.zip"
     pack.parent.mkdir(parents=True, exist_ok=True)
-    with zipfile.ZipFile(pack, "w", zipfile.ZIP_DEFLATED) as zf:
-        for path in data_pack_files():
-            zf.write(path, str(path.relative_to(DATA)))
+    write_deterministic_zip(pack, [(path, str(path.relative_to(DATA))) for path in data_pack_files()])
 
 
 def build_index() -> None:

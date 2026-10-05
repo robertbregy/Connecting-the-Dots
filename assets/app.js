@@ -429,7 +429,6 @@ function setJourneyStep(step,userAction=false){
 }
 const SECTION_TOC_KEYS={strange:['tocStrangeFossils','tocStrangeDrift','tocStrangeOddities']};
 function renderSectionTocs(){for(const id of ['how','beyond','geography','social','economics','contention','disputes','strange','sources']){const sec=document.getElementById(id);if(!sec)continue;sec.querySelector(':scope > .sectionToc')?.remove();const headings=[...sec.querySelectorAll('h2')].filter(h=>h.textContent.trim());if(headings.length<2)continue;const nav=document.createElement('nav');nav.className='sectionToc';nav.setAttribute('aria-label',t('tocLabel'));headings.forEach((h,i)=>{h.id=h.id||`${id}-part-${i+1}`;h.classList.add('sectionTocTarget');const b=document.createElement('a');b.href='?tab='+id+'#'+h.id;b.className='tocLink';const key=h.dataset.tocKey||SECTION_TOC_KEYS[id]?.[i];b.textContent=key?t(key):h.textContent.trim();b.title=h.textContent.trim();b.addEventListener('click',e=>{if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||(typeof e.button==='number'&&e.button!==0))return;e.preventDefault();const url=new URL(location.href);url.searchParams.set('tab',id);url.hash=h.id;history.pushState({tab:id},'',url);syncLanguageLinks();syncFeedbackLinks();focusNavigationTarget(h);scrollToNavigationTarget(h,true)});nav.appendChild(b)});sec.prepend(nav)}}
-const APPLICATION_2012_CACHE='ctd-application-2012-v1';
 let runtimeApplications2012=[];
 function parseCsv4180(text){
  const rows=[];let row=[],cell='',quoted=false;
@@ -463,19 +462,13 @@ function applicationCorpusStats(){const rounds=D.applicationArchaeology?.rounds|
 function syncApplicationCorpusComplete(){const rounds=D.applicationArchaeology?.rounds||{},required=['2000','2004','2012','2026'];D.explorerMeta.applicationCorpusComplete=required.every(round=>!!rounds[round]&&applicationRoundComplete(round));return D.explorerMeta.applicationCorpusComplete}
 function renderApplicationCorpusStatus(state='loading'){
  const el=document.getElementById('applicationCorpusStatus'),count=document.getElementById('exploreApplicationCount'),stats=applicationCorpusStats();if(count)count.textContent=fmtNum(stats.count);if(!el)return;
- el.className='applicationCorpusStatus '+state;let msg=t(state==='ready'?'applicationCorpusReady':state==='error'?'applicationCorpusError':'applicationCorpusLoading');if(state==='ready')msg=msg.replace('{count}',fmtNum(stats.count)).replace('{rounds}',stats.completed.join(', '));el.textContent=msg;
+ el.className='applicationCorpusStatus '+state;let key=state==='ready'?'applicationCorpusReady':state==='error'?'applicationCorpusError':state==='frozen'?'applicationCorpusFrozen':'applicationCorpusLoading';let msg=t(key);if(state==='ready'||state==='frozen')msg=msg.replace('{count}',fmtNum(stats.count)).replace('{rounds}',stats.completed.join(', '));el.textContent=msg;
 }
 function csvDownload2012(){if(!runtimeApplications2012.length)return;const headers=['string','applicant','website','location','region','idn','a_label','english_meaning','script_code','community','geographic','application_id','source'];const q=v=>{const x=String(v??'');return /[",\n]/.test(x)?'"'+x.replace(/"/g,'""')+'"':x};const text=[headers.join(','),...runtimeApplications2012.map(a=>[a.string,a.applicant,a.website,a.location,a.region,a.idn?'Yes':'',a.aLabel,a.englishMeaning,a.scriptCode,a.community?'Yes':'',a.geographic?'Yes':'',a.applicationId,a.source].map(q).join(','))].join('\n')+'\n';const blob=new Blob([text],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='applications_2012_sanitized.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
 function enable2012Download(){const b=document.getElementById('downloadApplications2012');if(b){b.disabled=false;b.classList.remove('disabled')}}
-async function initApplicationArchaeology(){
- renderApplicationCorpusStatus('loading');document.getElementById('downloadApplications2012')?.addEventListener('click',csvDownload2012);
- try{const cached=storageGet(APPLICATION_2012_CACHE);if(cached){const apps=JSON.parse(cached);validate2012Applications(apps);merge2012Applications(apps);return}}
- catch(e){try{localStorage.removeItem(APPLICATION_2012_CACHE)}catch(_){} }
- if(location.protocol==='file:'){renderApplicationCorpusStatus('error');return}
- for(const url of D.applicationArchaeology.runtimeSources2012||[]){try{const res=await fetch(url,{mode:'cors',cache:'force-cache'});if(!res.ok)throw new Error('HTTP '+res.status);const apps=sanitize2012Csv(await res.text());try{storageSet(APPLICATION_2012_CACHE,JSON.stringify(apps))}catch(e){}merge2012Applications(apps);return}catch(e){}}
- renderApplicationCorpusStatus('error');
+function initApplicationArchaeology(){
+ renderApplicationCorpusStatus('frozen');const b=document.getElementById('downloadApplications2012');if(b){b.disabled=true;b.classList.add('disabled')}
 }
-const GTLD_LIFECYCLE_CACHE='ctd-gtld-lifecycle-2026-10-04-v2',GTLD_LIFECYCLE_CACHE_TTL=24*60*60*1000;
 function validateGtldLifecycle(payload){
  const rows=payload?.gTLDs;if(!Array.isArray(rows)||rows.length<1200)throw new Error('Incomplete ICANN gTLD lifecycle dataset');
  const seen=new Set();for(const r of rows){if(typeof r.gTLD!=='string'||!r.gTLD.trim())throw new Error('Invalid gTLD lifecycle row');const key='.'+r.gTLD.trim().toLowerCase();if(seen.has(key))throw new Error('Duplicate gTLD lifecycle row: '+key);seen.add(key)}
@@ -486,11 +479,7 @@ function mergeGtldLifecycle(rows){
  D.explorerMeta.lifeHistoryGtldContractsLoaded=true;D.explorerMeta.lifeHistoryGtldContractCount=rows.length;
  if(explorerProfileId){const idx=explorerProfileIndex(explorerProfileId);if(idx>=0){const rec=cachedExplorerProfile(D.explorer[idx]);if(rec)renderExplorerRecord(rec)}}
 }
-async function initGtldLifecycle(){
- const source=D.tldLifeHistory?.gtldContractSource;if(!source||location.protocol==='file:')return;
- try{const cached=storageGet(GTLD_LIFECYCLE_CACHE);if(cached){const entry=JSON.parse(cached);if(entry?.fetchedAt&&Date.now()-entry.fetchedAt<GTLD_LIFECYCLE_CACHE_TTL){mergeGtldLifecycle(validateGtldLifecycle(entry.payload));return}try{localStorage.removeItem(GTLD_LIFECYCLE_CACHE)}catch(_){}}}catch(e){try{localStorage.removeItem(GTLD_LIFECYCLE_CACHE)}catch(_){} }
- try{const res=await fetch(source,{mode:'cors',cache:'no-cache'});if(!res.ok)throw new Error('HTTP '+res.status);const payload=await res.json();const rows=validateGtldLifecycle(payload);try{storageSet(GTLD_LIFECYCLE_CACHE,JSON.stringify({fetchedAt:Date.now(),payload}))}catch(e){}mergeGtldLifecycle(rows)}catch(e){D.explorerMeta.lifeHistoryGtldContractsLoaded=false}
-}
+function initGtldLifecycle(){D.explorerMeta.lifeHistoryGtldContractsLoaded=false;D.explorerMeta.lifeHistoryGtldContractsRuntime=false}
 function renderPublicationUpdates(){
  const dates=document.getElementById('updateDates');if(dates)dates.innerHTML=[['updatesRelease','v'+PUB.version+' · '+fmtDate(PUB.releasedOn)],['updatesResearch',fmtDate(PUB.asOf)],['updatesIana',fmtDate(D.explorerMeta.ianaSnapshot)]].map(([key,value])=>`<dt>${esc(t(key))}</dt><dd>${esc(value)}</dd>`).join('');
  const list=document.getElementById('releaseHistory');if(list)list.innerHTML=(D.releaseHistory?.releases||[]).map(r=>`<li><b>v${esc(r.version)}</b><time datetime="${esc(r.date)}">${esc(fmtDate(r.date))}</time><p>${esc(t(r.summaryKey))}</p></li>`).join('');

@@ -1,6 +1,6 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.24",
+  "version": "0.7.25",
   "release_date": "2026-10-05",
   "publication_state": "pre-reveal",
   "rendering": "static-prerendered",
@@ -24,13 +24,13 @@
     "Every preserved IANA database entry has a normalized profile; root-list membership is separate from database presence.",
     "Application Archaeology separates submissions, applied-for strings and delegated TLD identity; never-delegated applications do not increase the TLD universe.",
     "The 2012 archival source contains Primary Contact and Email fields; the browser parser discards both before the research dataset is created, and the resulting dataset is accepted only after locked ICANN totals validate.",
-    "TLD Life Histories combine a frozen local chronology with optional browser-time ICANN gTLD contract-lifecycle enrichment; runtime values are labelled separately and are not part of the frozen release snapshot. Undocumented phases are never inferred.",
+    "TLD Life Histories use only the frozen local chronology in this pre-Reveal freeze. Browser-time ICANN gTLD contract-lifecycle enrichment is deliberately disabled until the controlled Reveal Day update. Undocumented phases are never inferred.",
     "Disputed Dots adds nine editorially selected governance cases as a structured layer linked to Explorer strings; FACT and READING remain separate, and case sources are primary ICANN/IANA records.",
     "Economics of the Dot adds eight source-backed economic mechanisms; public revenue, company results, transaction values, auction prices and application fees retain their original accounting basis and are not normalized into one ranking.",
     "The Social Life of the Dot adds nine source-backed social cases and six analytical models covering language, community, identity, protection, locality and script inclusion; registration volume is never used as a proxy for social significance.",
     "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity.",
     "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database. It is not an exhaustive cross-round application-string corpus.",
-    "application_only_strings.csv is the frozen build-time application-only view for vendored/local data; the validated 2012 Reveal Day corpus is optional runtime enrichment and is not silently treated as part of the frozen release files."
+    "application_only_strings.csv is the frozen build-time application-only view for vendored/local data. The complete 2012 Reveal Day corpus is documented by locked ICANN totals but is deliberately not retrieved from external mirrors during the pre-Reveal freeze."
   ],
   "current_root_snapshot": "2026-10-04",
   "iana_evidence": "iana_snapshot.json",
@@ -59,9 +59,11 @@
     "applicationLocalRoundsComplete": true,
     "application2000CoverageComplete": true,
     "application2004CoverageComplete": true,
-    "application2012RuntimeValidated": true,
+    "application2012RuntimeValidated": false,
     "application2012CoverageComplete": false,
     "application2026CoverageComplete": false,
+    "runtimeExternalEnrichment": false,
+    "preRevealFreeze": true,
     "applicationArchaeologyManifest": {
       "schemaVersion": 1,
       "title": "Application Archaeology corpus",
@@ -95,7 +97,7 @@
           ]
         },
         "2012": {
-          "delivery": "runtime-archival-snapshot",
+          "delivery": "frozen-external-reference",
           "applications": 1930,
           "uniqueStrings": 1409,
           "idn": 116,
@@ -134,14 +136,15 @@
           ]
         }
       },
-      "runtimeSources2012": [
+      "runtimeSources2012": [],
+      "documentedExternalSources2012": [
         "https://raw.githubusercontent.com/nimblemachines/analyzing-iana-root-db/master/strings-1200utc-13jun12-en.csv",
         "https://cdn.jsdelivr.net/gh/nimblemachines/analyzing-iana-root-db@master/strings-1200utc-13jun12-en.csv"
       ],
       "runtimeTransport2012": {
-        "status": "external-mirror-not-cryptographically-pinned",
+        "status": "disabled-during-pre-reveal-freeze",
         "canonicalHistoricalEvidence": "https://web.archive.org/web/20120613142047if_/http://newgtlds-cloudfront.icann.org/sites/default/files/reveal/strings-1200utc-13jun12-en.html",
-        "scope": "The external mirror is transport only. It is not part of the frozen release hash set and is accepted only after deterministic structural and aggregate validation.",
+        "scope": "External mirrors remain documented for post-freeze maintenance but are not requested by the frozen publication. No browser-time transport contributes records during the pre-Reveal freeze.",
         "validation": [
           "exact expected header",
           "1,930 applications",
@@ -153,7 +156,7 @@
           "regional totals: NA 911, EUR 675, AP 303, LAC 24, AF 17"
         ]
       },
-      "method": "The browser may retrieve an external mirror of the 13 June 2012 Reveal Day CSV. The transport URLs are not cryptographically pinned and therefore are not part of the frozen release snapshot. Before any merge, the payload must match the expected schema and locked ICANN aggregate totals. Primary Contact and Email are discarded during parsing before the research dataset is constructed and are never exposed or exported."
+      "method": "During the pre-Reveal freeze the browser does not retrieve the 13 June 2012 CSV from external mirrors. Locked ICANN aggregate totals and source references remain documented, while the complete individual 2012 application corpus is intentionally not merged into the frozen Explorer. Primary Contact and Email are never exposed or exported by the publication."
     },
     "lifeHistoryRecordCount": 1688,
     "lifeHistoryStaticEventCount": 5583,
@@ -166,13 +169,20 @@
     "socialCaseStringCount": 13,
     "socialSignalCount": 27,
     "lifeHistoryStaticCoverageComplete": true,
-    "lifeHistoryGtldContractsRuntime": true,
+    "lifeHistoryGtldContractsRuntime": false,
     "lifeHistoryGtldContractSource": "https://www.icann.org/resources/registries/gtlds/v2/gtlds.json"
   },
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "release_history": {
     "path": "release_history.json",
-    "sha256": "ce6fd456db5964a304ef97700ab2d956250ff7c1dd3493a6380cbc8c1e7911d6"
+    "sha256": "bdfd8f06725521b11638a0d0bf6b6358789a340556a93b18a40fb9f88282df23"
+  },
+  "freeze": {
+    "status": "pre-reveal-frozen",
+    "frozen_on": "2026-10-05",
+    "runtime_external_enrichment": false,
+    "browser_time_external_data_fetches": 0,
+    "policy": "No research dataset or profile is refreshed in the visitor browser before the controlled Reveal Day update."
   },
   "web_delivery": {
     "profile_loading": "on-demand",
@@ -180,18 +190,18 @@
     "assets": [
       {
         "repository_path": "data/site_bundle.js",
-        "bytes": 1712963,
-        "sha256": "aa3e65b11d8611ebd00cbc3a0138a0d4a4e53b99a14abef900842ac327280186"
+        "bytes": 1713196,
+        "sha256": "3d452568e781fdb954d71c456e1d90c8b91f6d9e0f2fb0c24c7ed1ab3f24b2a4"
       },
       {
         "repository_path": "assets/app.js",
-        "bytes": 104353,
-        "sha256": "e390a4f9203cac01e2308a5c56d0d225df8ead08a64433743a7453065c4f6356"
+        "bytes": 102843,
+        "sha256": "98c44fbabd409c43e3e4dc08b4e475d7c3e3dbb06504e0aa5e0f907fd26ea48f"
       },
       {
         "repository_path": "assets/style.css",
-        "bytes": 96878,
-        "sha256": "a587fb6e51ac698f054b4f36cd0858c5136fe6f9e079065911983c9a89d37400"
+        "bytes": 96974,
+        "sha256": "6f1ae563aee73283d31bf28da69ff164b64fdc9ef8a266f20adbc13c48cf618f"
       },
       {
         "repository_path": "data/worldmap.js",
@@ -201,42 +211,42 @@
       {
         "repository_path": "data/explorer_profiles_0.js",
         "bytes": 684438,
-        "sha256": "13630a7197d0adf1269888cc046702e7ee186299a7d00fddbb45816acd01b110"
+        "sha256": "d95149c4e264f378582557d75ce7996faa2c9d10471a462b71e901359185469a"
       },
       {
         "repository_path": "data/explorer_profiles_1.js",
         "bytes": 583309,
-        "sha256": "e6ed0a1275818ad95fdf0716bb336449b31cdc9b48c08d555b5ba26a89964a04"
+        "sha256": "d57457f099dacc2e1a13f99273ceb5d28b6b082e0f94123bd03747639c4798e4"
       },
       {
         "repository_path": "data/explorer_profiles_2.js",
         "bytes": 645686,
-        "sha256": "cf357b39e1bdb2e1b61ca2917d6880d3a9293a9e79f4307029f7f8e4f9856001"
+        "sha256": "d718f29ed03e800f521ab304d9ab35ddf55e607d6e1e0efc735acf593067c14e"
       },
       {
         "repository_path": "data/explorer_profiles_3.js",
         "bytes": 598005,
-        "sha256": "49b74bb2aebc582d8ac525da338269d303aa39bbd63d7a34c34106781f39045c"
+        "sha256": "6ff528d33f5c78de828473dcba4cb45882f422add8dc4aa36f1b380856eef377"
       },
       {
         "repository_path": "data/explorer_profiles_4.js",
         "bytes": 638479,
-        "sha256": "9fffb7ab9118dd0c499645c573e618df08c2621d23b0603ebc7c7789aa49744a"
+        "sha256": "4436e39c633f5a03068c040981f4dcceb48fc635a40db3a8097b35386d522998"
       },
       {
         "repository_path": "data/explorer_profiles_5.js",
         "bytes": 596581,
-        "sha256": "1bcfa0ff110a440f6009123249a4f9737e3d160b63339b2b6c0ad050144fe50d"
+        "sha256": "dda16383c6be01e926e73b94b7f94c05fdc0d60b95f8612cb7fbd95e6ad5ec1f"
       },
       {
         "repository_path": "data/explorer_profiles_6.js",
         "bytes": 603814,
-        "sha256": "44db37198cc2d2014ab189c96df1185b3e93b4c3d993f3ece168d4b61bcef929"
+        "sha256": "e09207ab1b73a49d7afb2e1e1ffc16c632ed96658aef946a88046adde501d647"
       },
       {
         "repository_path": "data/explorer_profiles_7.js",
         "bytes": 599027,
-        "sha256": "79f1539c0c8eb139eb2e60024df3893b2869724b9d255130e61c590a8de3f802"
+        "sha256": "a943a66f85492eff3880505623815884a371ed5c6af665a6e7761282b83e0a15"
       }
     ]
   },

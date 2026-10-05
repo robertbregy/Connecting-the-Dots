@@ -65,7 +65,9 @@ def render(page,lang,alias=False):
     nos=soup.select_one('#staticReading')
     if nos:set_content(nos,f'<div class="staticReading"><p>{tr["staticReading"]}</p><nav class="languageVersions" aria-label="{tr["languageVersions"]}">{links()}</nav></div>')
     st=soup.select_one('#applicationCorpusStatus')
-    if st:st['class']=['applicationCorpusStatus','loading'];st.string=tr['applicationCorpusLoading']
+    if st:
+        st['class']=['applicationCorpusStatus','frozen']
+        st.string=tr['applicationCorpusFrozen'].replace('{count}',str(LOCAL_APPLICATION_COUNT)).replace('{rounds}','2000, 2004')
     cnt=soup.select_one('#exploreApplicationCount')
     if cnt:cnt.string=str(LOCAL_APPLICATION_COUNT)
     style=soup.select_one('#ctd-runtime-style');link=soup.new_tag('link',id='ctd-runtime-style');link['rel']='stylesheet';link['href']=f'assets/style.css?v={VERSION}';style.replace_with(link)
