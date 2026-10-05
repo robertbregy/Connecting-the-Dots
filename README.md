@@ -1,5 +1,9 @@
-# Connecting the Dots — v0.7.25
+# Connecting the Dots — v0.7.26
 
+
+## v0.7.26 — Home-only Internet walkthrough
+
+The seven-step “Behind a click” teaching journey now lives only in Overview/Home. It is no longer repeated as the first block of the deeper How section, resets when a reader leaves and returns home, and remains directly linkable through `#internet-basics`. Frozen research data are unchanged.
 
 ## v0.7.25 — Pre-Reveal freeze hardening
 

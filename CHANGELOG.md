@@ -1,3 +1,12 @@
+# v0.7.26 — Home-only Internet walkthrough
+
+- Move the seven-step “Behind a click” walkthrough structurally from the How section into Overview/Home.
+- Hide the walkthrough completely whenever another primary section is active.
+- Reset the walkthrough to step 1 when the reader leaves Home and later returns.
+- Preserve direct links to `#internet-basics`, now resolving to the Overview section.
+- Keep the deeper “How it works” material intact and make it the direct start of that section.
+- Keep all frozen research datasets and the 4 October IANA snapshot unchanged.
+
 # v0.7.25 — Pre-Reveal freeze hardening
 
 - Disable browser-time retrieval and cached merging of external 2012 application archaeology during the pre-Reveal freeze.

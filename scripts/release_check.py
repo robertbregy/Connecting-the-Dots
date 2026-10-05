@@ -187,6 +187,18 @@ if tr['it'].get('release0724') is None: fail('release0724 translation missing')
 if tr['it'].get('release0725') is None: fail('release0725 translation missing')
 if any(not tr[lang].get('applicationCorpusFrozen') for lang in LANGS): fail('freeze-status translation missing')
 
+
+# v0.7.26 information architecture contract: the guided Internet walkthrough belongs
+# only to Overview/Home, while the deeper How section starts after it.
+if src.count('id="internet-guide"')!=1: fail('Internet walkthrough must exist exactly once')
+walk_pos=src.index('id="internet-guide"'); overview_pos=src.index('id="overview"'); explore_pos=src.index('id="explore"'); how_pos=src.index('id="how"')
+if not (overview_pos < walk_pos < explore_pos < how_pos): fail('Internet walkthrough is not structurally confined to Overview/Home')
+if 'data-open-section="how" data-open-anchor="internet-basics"' in src: fail('direct walkthrough links still open the How section')
+if src.count('data-open-section="overview" data-open-anchor="internet-basics"')<2: fail('Home/hero walkthrough links do not target Overview')
+for marker in ["activeTab==='overview'&&location.hash==='#internet-basics'", "hasWalk?'overview'", "url.searchParams.set('tab','overview');url.searchParams.set('walk'", "if(activeTab!=='overview'||location.hash!=='#internet-basics')p.delete('walk')", "previousTab!==id&&(previousTab==='overview'||id==='overview')"]:
+    if marker not in appjs: fail('home-only walkthrough runtime invariant missing: '+marker)
+if tr['it'].get('release0726') is None: fail('release0726 translation missing')
+
 # v0.7.23 teaching contract: URL anatomy, DNS hierarchy and web delivery remain distinct
 # but explicitly connected by one seven-step narrative.
 src=(ROOT/'src/index.web.html').read_text(encoding='utf-8')

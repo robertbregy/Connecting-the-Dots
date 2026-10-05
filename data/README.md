@@ -136,4 +136,4 @@ The TLD-coverage claim excludes never-delegated ISO codes and other labels that 
 
 ## Frozen pre-Reveal runtime policy
 
-The data pack is the frozen release corpus. In v0.7.25 the publication performs no browser-time external research fetches: the 2012 archival mirrors and the current ICANN gTLD lifecycle feed remain documented maintenance sources but are not requested or merged before the controlled Reveal Day update. This makes the user-visible research state deterministic across visits.
+The data pack is the frozen release corpus. Since v0.7.25 the publication performs no browser-time external research fetches: the 2012 archival mirrors and the current ICANN gTLD lifecycle feed remain documented maintenance sources but are not requested or merged before the controlled Reveal Day update. This makes the user-visible research state deterministic across visits.
