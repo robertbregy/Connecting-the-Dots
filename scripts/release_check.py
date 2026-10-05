@@ -55,7 +55,7 @@ if 'GTLD_LIFECYCLE_CACHE_TTL=24*60*60*1000' not in appjs or "cache:'no-cache'" n
 arch_manifest=json_file('application_archaeology_manifest.json')
 if arch_manifest.get('runtimeTransport2012',{}).get('status')!='external-mirror-not-cryptographically-pinned': fail('2012 runtime transport integrity limitation is not declared')
 changelog=(ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
-for marker in ['v0.7.18','v0.7.14','v0.7.13']:
+for marker in ['v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
     if marker not in changelog: fail('changelog missing '+marker)
 readme=(ROOT/'README.md').read_text(encoding='utf-8')
 if "No live refresh occurs in a visitor's browser." in readme: fail('README contains obsolete no-live-refresh claim')
@@ -91,6 +91,22 @@ for css_marker in ['.skipLink{','--vision-text:','#main-content:focus{outline:no
     if css_marker not in style: fail('accessibility CSS invariant missing: '+css_marker)
 if '.heroActions' not in style or '.explorerSearchPrimary' not in style:
     fail('progressive-disclosure UX styling missing')
+
+# v0.7.19 mobile journey contract: no fixed-width escape hatch, lesson first,
+# narrow diagrams reflow and step changes can recover the current reading position.
+for css_marker in [
+    '.internetGuide{padding:20px 16px;overflow-x:clip}',
+    '.journeyWorkarea{display:flex;flex-direction:column;width:100%;gap:14px}',
+    '.journeyLesson{order:1;width:100%;padding:0}',
+    '.journeyDiagram{order:2;width:100%;grid-template-columns:1fr;gap:10px}',
+    '.journeyDnsBranches{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;padding-top:18px}',
+    '.journeyWebPath{grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr) minmax(0,.8fr);gap:4px}',
+]:
+    if css_marker not in style: fail('mobile journey CSS invariant missing: '+css_marker)
+if '.journeyDiagram{grid-template-columns:1fr;order:-1}' in style:
+    fail('mobile journey regressed to diagram-first ordering')
+if 'function keepJourneyStepInView()' not in appjs or 'keepJourneyStepInView();' not in appjs:
+    fail('mobile journey step visibility recovery is missing')
 
 expected_counts={
  'explorer_catalog.csv':1688,'tld_universe.csv':1599,'application_only_strings.csv':89,
@@ -176,7 +192,7 @@ for rel in ['index.html',*[f'{x}/index.html' for x in LANGS]]:
     m=re.search(r'<span[^>]*data-i18n="publicationState"[^>]*>(.*?)</span>',text,re.S)
     if not m or '2026' not in re.sub('<[^>]+>','',m.group(1)): fail(f'visible publication snapshot is not derived/rendered in {rel}')
     if any(stale in text for stale in ['SNAPSHOT · 2 OCT 2026','SNAPSHOT PRE-REVEAL · 2 OTT 2026','PRE-REVEAL-SNAPSHOT · 2. OKT 2026','SNAPSHOT PRÉ-REVEAL · 2 OCT 2026']): fail(f'stale 2 October publication state in {rel}')
-    if '"dateModified":"2026-10-04"' not in text: fail(f'structured-data dateModified mismatch in {rel}')
+    if '"dateModified":"2026-10-05"' not in text: fail(f'structured-data dateModified mismatch in {rel}')
     if text.count('<h1')!=1: fail(f'expected exactly one h1 in {rel}')
     skip=re.search(r'<a\b(?=[^>]*\bclass=["\'][^"\']*\bskipLink\b[^"\']*["\'])(?=[^>]*\bhref=["\']#main-content["\'])[^>]*>',text,re.I)
     main=re.search(r'<main\b(?=[^>]*\bid=["\']main-content["\'])[^>]*>',text,re.I)

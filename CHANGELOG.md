@@ -1,3 +1,13 @@
+# v0.7.19 — Mobile guided-journey hardening
+
+- Rework the guided Internet walkthrough for phone-sized viewports so the lesson, controls and diagrams remain width-bounded.
+- Put the active textual explanation before the visualization on mobile, avoiding the previous diagram-first experience that pushed the lesson below the fold.
+- Reflow the DNS chain and browser/network/server path on very narrow screens instead of compressing them into fragile horizontal layouts.
+- Make the sample URL, stepper and navigation controls explicitly shrink-safe and wrap-safe.
+- Keep the active lesson in view after Next, Back, restart or direct-step navigation, while respecting reduced-motion preferences.
+- Add release-level regression checks for the mobile journey contract.
+- Keep the frozen research data and 4 October IANA snapshot unchanged.
+
 # v0.7.18 — Release integrity & reader-experience hardening
 
 - Derive the visible publication snapshot and Reveal timestamp from `data/publication.js` instead of duplicating dates in four translation dictionaries.

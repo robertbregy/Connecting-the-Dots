@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.18"
+VERSION = "0.7.19"
 
 
 def csv_records(path: Path) -> int:
@@ -52,7 +52,7 @@ def build_manifest() -> None:
     manifest = {
         "project": "Connecting the Dots",
         "version": VERSION,
-        "release_date": "2026-10-04",
+        "release_date": "2026-10-05",
         "publication_state": "pre-reveal",
         "rendering": "static-prerendered",
         "language_routes": {lang: f"{lang}/" for lang in ("en", "it", "de", "fr")},

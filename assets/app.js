@@ -364,6 +364,10 @@ function renderInternetJourney(){
  stepper.querySelectorAll('[data-journey-go]').forEach(button=>button.addEventListener('click',()=>setJourneyStep(Number(button.dataset.journeyGo),true)));
  setJourneyStep(journeyStep);
 }
+function keepJourneyStepInView(){
+ const lesson=document.getElementById('journeyLesson');if(!lesson||!window.matchMedia('(max-width:680px)').matches)return;
+ requestAnimationFrame(()=>{const r=lesson.getBoundingClientRect(),topGuard=72,bottomGuard=window.innerHeight*.58;if(r.top>=topGuard&&r.top<=bottomGuard)return;const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;lesson.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});});
+}
 function setJourneyStep(step,userAction=false){
  const guide=document.getElementById('internet-guide');if(!guide)return;
  journeyStep=Number.isInteger(step)?Math.max(0,Math.min(JOURNEY_STEPS-1,step)):0;
@@ -380,6 +384,7 @@ function setJourneyStep(step,userAction=false){
  if(userAction){
   document.getElementById('journeyAnnounce').textContent=progress+'. '+t('journey'+journeyStep+'Title')+'. '+t('journey'+journeyStep+'Body');
   if(location.protocol==='http:'||location.protocol==='https:'){const url=new URL(location.href);url.searchParams.set('tab','how');url.searchParams.set('walk',String(journeyStep));url.hash='internet-basics';history.replaceState({tab:'how'},'',url);syncLanguageLinks();syncSectionLinks();syncFeedbackLinks();}
+  keepJourneyStepInView();
  }
 }
 const SECTION_TOC_KEYS={strange:['tocStrangeFossils','tocStrangeDrift','tocStrangeOddities']};

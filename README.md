@@ -1,4 +1,8 @@
-# Connecting the Dots — v0.7.18
+# Connecting the Dots — v0.7.19
+
+## v0.7.19 — Mobile guided-journey hardening
+
+Release: 5 October 2026. Targeted reader-experience release. The step-by-step “Behind a click” Internet explainer is now explicitly bounded for narrow viewports: the active explanation comes before the diagram on phones, the address and control rows cannot force horizontal overflow, DNS/network diagrams reflow at small widths, and Next/Back navigation restores the current lesson into view instead of leaving the reader stranded below changing content. The 2026 research data, IANA snapshot and pre-Reveal publication state are unchanged from v0.7.18.
 
 ## v0.7.18 — Release integrity & reader-experience hardening
 

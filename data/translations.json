@@ -1546,7 +1546,8 @@
     "heroLearnCta": "Understand the system in 5 minutes",
     "heroExploreCta": "Search a TLD",
     "exploreAboutTitle": "What is in the Explorer?",
-    "exploreFiltersTitle": "Filters"
+    "exploreFiltersTitle": "Filters",
+    "release0719": "Mobile journey hardening: the guided Internet walkthrough is now strictly viewport-bounded, puts the active explanation before its diagram on phones, reflows DNS and network diagrams on narrow screens, and keeps the current step in view when readers move forward or back."
   },
   "it": {
     "brand": "Brand",
@@ -3095,7 +3096,8 @@
     "heroLearnCta": "Capisci il sistema in 5 minuti",
     "heroExploreCta": "Cerca un TLD",
     "exploreAboutTitle": "Che cosa contiene l’Explorer?",
-    "exploreFiltersTitle": "Filtri"
+    "exploreFiltersTitle": "Filtri",
+    "release0719": "Correzione mobile del percorso guidato: la spiegazione di Internet resta ora entro il viewport, su telefono mostra prima il passaggio attivo e poi lo schema, ridispone i diagrammi DNS e di rete sugli schermi stretti e mantiene il passaggio corrente in vista quando si avanza o si torna indietro."
   },
   "de": {
     "brand": "Marke",
@@ -4644,7 +4646,8 @@
     "heroLearnCta": "Das System in 5 Minuten verstehen",
     "heroExploreCta": "Eine TLD suchen",
     "exploreAboutTitle": "Was enthält der Explorer?",
-    "exploreFiltersTitle": "Filter"
+    "exploreFiltersTitle": "Filter",
+    "release0719": "Mobile-Härtung des geführten Internet-Rundgangs: Der Inhalt bleibt nun strikt im Viewport, zeigt auf Smartphones zuerst die aktive Erklärung und danach das Diagramm, ordnet DNS- und Netzwerkdiagramme auf schmalen Displays neu an und hält den aktuellen Schritt beim Vor- und Zurückgehen im Blick."
   },
   "fr": {
     "brand": "Marque",
@@ -6193,6 +6196,7 @@
     "heroLearnCta": "Comprendre le système en 5 minutes",
     "heroExploreCta": "Rechercher un TLD",
     "exploreAboutTitle": "Que contient l’Explorateur ?",
-    "exploreFiltersTitle": "Filtres"
+    "exploreFiltersTitle": "Filtres",
+    "release0719": "Correction mobile du parcours guidé : l’explication d’Internet reste désormais strictement dans le viewport, affiche sur téléphone l’étape active avant le schéma, réorganise les diagrammes DNS et réseau sur les écrans étroits et maintient l’étape courante visible lors de la navigation."
   }
 }
