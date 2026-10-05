@@ -1,4 +1,9 @@
-# Connecting the Dots — v0.7.28
+# Connecting the Dots — v0.7.29
+
+
+## v0.7.29 — Pre-Reveal editorial consistency freeze
+
+Final editorial hardening after the mega-audit. All current-state copy now describes the 2012 application corpus consistently with the frozen runtime: the complete 2012 Reveal Day corpus is documented by locked ICANN totals and source references but is not fetched or merged before Reveal Day. The unavailable 2012 download card now says so explicitly, and a minor Italian accent was corrected. No research dataset, Explorer logic, navigation, walkthrough or layout behavior changed.
 
 
 ## v0.7.28 — Sticky navigation offset fix

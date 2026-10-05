@@ -1,3 +1,12 @@
+# v0.7.29 — Pre-Reveal editorial consistency freeze
+
+- Align the visible 2012 corpus description in all four languages with the frozen pre-Reveal runtime state: the full 2012 corpus is not fetched or merged before Reveal Day.
+- Clarify that the sanitized 2012 CSV download is not included in the pre-Reveal freeze while official ICANN aggregate totals remain documented.
+- Correct the Italian `non piu` typo to `non più`.
+- Align current-state fallback/status copy and release metadata with the same freeze semantics.
+- Add a regression invariant preventing the frozen build from reintroducing contradictory 2012 runtime wording.
+- Keep research datasets, Explorer logic, navigation, walkthrough, layout and the 4 October IANA snapshot unchanged.
+
 # v0.7.28 — Sticky navigation offset fix
 
 - Include the sticky desktop section navigation in the shared navigation offset calculation, in addition to the sticky top bar.

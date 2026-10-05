@@ -1,6 +1,6 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.28",
+  "version": "0.7.29",
   "release_date": "2026-10-05",
   "publication_state": "pre-reveal",
   "rendering": "static-prerendered",
@@ -23,7 +23,7 @@
     "Blank 2026 aggregate values are scaffolding, not observations.",
     "Every preserved IANA database entry has a normalized profile; root-list membership is separate from database presence.",
     "Application Archaeology separates submissions, applied-for strings and delegated TLD identity; never-delegated applications do not increase the TLD universe.",
-    "The 2012 archival source contains Primary Contact and Email fields; the browser parser discards both before the research dataset is created, and the resulting dataset is accepted only after locked ICANN totals validate.",
+    "The documented 2012 archival transport contains Primary Contact and Email fields. During the pre-Reveal freeze that external transport is not retrieved or merged in the visitor browser; those fields are never exposed or exported, while locked ICANN aggregate totals and source references remain documented.",
     "TLD Life Histories use only the frozen local chronology in this pre-Reveal freeze. Browser-time ICANN gTLD contract-lifecycle enrichment is deliberately disabled until the controlled Reveal Day update. Undocumented phases are never inferred.",
     "Disputed Dots adds nine editorially selected governance cases as a structured layer linked to Explorer strings; FACT and READING remain separate, and case sources are primary ICANN/IANA records.",
     "Economics of the Dot adds eight source-backed economic mechanisms; public revenue, company results, transaction values, auction prices and application fees retain their original accounting basis and are not normalized into one ranking.",
@@ -178,7 +178,7 @@
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "release_history": {
     "path": "release_history.json",
-    "sha256": "b9b2f36b25cb0af70193941135938853ce6cb0bfc58dd5376d2697768091174d"
+    "sha256": "7a7b09d9f242e81948f3084ff400c0abaa9084120b6283e44225183d9f4958e5"
   },
   "freeze": {
     "status": "pre-reveal-frozen",
@@ -193,8 +193,8 @@
     "assets": [
       {
         "repository_path": "data/site_bundle.js",
-        "bytes": 1766967,
-        "sha256": "fdec2747f559cd3ec2688ae00563d13cf6a62bfd96abf304b6a6bad3623e57e9"
+        "bytes": 1767151,
+        "sha256": "23586cc5451f48859cba29f29d7f7f770e54e360e891533596d8194ddfc91393"
       },
       {
         "repository_path": "assets/app.js",
@@ -214,42 +214,42 @@
       {
         "repository_path": "data/explorer_profiles_0.js",
         "bytes": 691815,
-        "sha256": "a491513d9119b81d3749247a2423fcd3f4d492250f24e120c9b322cf2d5cb1ed"
+        "sha256": "4267bc4be545b2e3a4866e215e91d38581302055a4bc645f6a53b7414ac48050"
       },
       {
         "repository_path": "data/explorer_profiles_1.js",
         "bytes": 589622,
-        "sha256": "f1483e33d648b977dc9a2c16b94a373fe313bbcef772184f88c3781bd1dbe593"
+        "sha256": "cdd61dfe5e7a4c3ea137321e9411094c9d7f5a41540200cc844738ea9d5fb3bb"
       },
       {
         "repository_path": "data/explorer_profiles_2.js",
         "bytes": 652578,
-        "sha256": "66ddad6235712306d9983e52e2216fe3607d693ce3ce7c063479c6dcc43810c9"
+        "sha256": "c6f7e6cadd98b6354e0fb5b7972a7b98c60d6c13fd4c53418f8d68f7503fc0bf"
       },
       {
         "repository_path": "data/explorer_profiles_3.js",
         "bytes": 604318,
-        "sha256": "2d52b436ffa29ed0135d3634dc7b086f6b47fa488b2f812bc1990626df10f78d"
+        "sha256": "36760fb7197509c7caffeb8b1a9474a623aea93190bc47a9f9911421d60305cd"
       },
       {
         "repository_path": "data/explorer_profiles_4.js",
         "bytes": 645370,
-        "sha256": "c552d8b14cd0c88e05d584c589c726c8face6b7a3b4014f73cccc555e4f8406f"
+        "sha256": "ebf3adc145a6ec33ae77121f14cfd1a7c2d9a0874831f5142e00785f0448477e"
       },
       {
         "repository_path": "data/explorer_profiles_5.js",
         "bytes": 602879,
-        "sha256": "bc68a5e6b11ce289cdad2daa12e6040884fcb823a9b7d1182a2bc40103e0858e"
+        "sha256": "b17031849e1e4a42a86d32ef7bc1f51ab2bd61d1d701f960ffbe0dc5f4cd197b"
       },
       {
         "repository_path": "data/explorer_profiles_6.js",
         "bytes": 610406,
-        "sha256": "80328f80a4eda127711363ab8e4f759886af26e263b944ef1a88d38a1f2668ca"
+        "sha256": "47b1d044e429e7603019d3e3d460581df080ef18ed9a09ea31721329cd232320"
       },
       {
         "repository_path": "data/explorer_profiles_7.js",
         "bytes": 605473,
-        "sha256": "a561f9d11da099aa67c5f192c9ba7cbd10ac3dd0f56855b24f830c4868e5c68b"
+        "sha256": "cbcb88cbcd23664bd52113d1f682904141937d111ace5bc47c0e97085937d172"
       }
     ]
   },

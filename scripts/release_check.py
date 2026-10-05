@@ -188,6 +188,17 @@ for marker in ['data-open-section="disputes" data-open-anchor="case-', 'data-ope
 if tr['it'].get('release0724') is None: fail('release0724 translation missing')
 if tr['it'].get('release0725') is None: fail('release0725 translation missing')
 if any(not tr[lang].get('applicationCorpusFrozen') for lang in LANGS): fail('freeze-status translation missing')
+if tr['it'].get('release0729') is None: fail('release0729 translation missing')
+if 'non più presenti' not in tr['it'].get('exploreCoverageBody',''): fail('Italian Explorer copy lost the non più correction')
+freeze_copy_expect={
+ 'en':('not fetched or merged','Not included in the pre-Reveal freeze'),
+ 'it':('non viene recuperato né integrato','Non incluso nel freeze pre-Reveal'),
+ 'de':('weder abgerufen noch in den Explorer integriert','Nicht im Pre-Reveal-Freeze enthalten'),
+ 'fr':('n’est ni récupéré ni intégré','Non inclus dans le gel pré-Reveal'),
+}
+for lang,(body_marker,download_marker) in freeze_copy_expect.items():
+    if body_marker not in tr[lang].get('exploreCorpusNoteBody',''): fail(f'2012 frozen corpus wording is inconsistent in {lang}')
+    if download_marker not in tr[lang].get('downloadApplications2012Sub',''): fail(f'2012 frozen download wording is inconsistent in {lang}')
 
 # v0.7.27 Explorer filtering contract: advanced filters are visibly labelled, raw
 # IANA machine values are localized, and editorial macro-topics cover the full corpus.

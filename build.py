@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.28"
+VERSION = "0.7.29"
 
 
 def csv_records(path: Path) -> int:
@@ -70,7 +70,7 @@ def build_manifest() -> None:
             "Blank 2026 aggregate values are scaffolding, not observations.",
             "Every preserved IANA database entry has a normalized profile; root-list membership is separate from database presence.",
             "Application Archaeology separates submissions, applied-for strings and delegated TLD identity; never-delegated applications do not increase the TLD universe.",
-            "The 2012 archival source contains Primary Contact and Email fields; the browser parser discards both before the research dataset is created, and the resulting dataset is accepted only after locked ICANN totals validate.",
+            "The documented 2012 archival transport contains Primary Contact and Email fields. During the pre-Reveal freeze that external transport is not retrieved or merged in the visitor browser; those fields are never exposed or exported, while locked ICANN aggregate totals and source references remain documented.",
             "TLD Life Histories use only the frozen local chronology in this pre-Reveal freeze. Browser-time ICANN gTLD contract-lifecycle enrichment is deliberately disabled until the controlled Reveal Day update. Undocumented phases are never inferred.",
             "Disputed Dots adds nine editorially selected governance cases as a structured layer linked to Explorer strings; FACT and READING remain separate, and case sources are primary ICANN/IANA records.",
             "Economics of the Dot adds eight source-backed economic mechanisms; public revenue, company results, transaction values, auction prices and application fees retain their original accounting basis and are not normalized into one ranking.",
