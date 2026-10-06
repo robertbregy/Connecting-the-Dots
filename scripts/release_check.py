@@ -57,7 +57,7 @@ if '"lifeHistoryGtldContractsRuntime":false' not in (DATA/'data_bundle.js').read
 arch_manifest=json_file('application_archaeology_manifest.json')
 if arch_manifest.get('runtimeTransport2012',{}).get('status')!='disabled-local-corpus-vendored': fail('2012 local-corpus transport state is not declared')
 changelog=(ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
-for marker in ['v0.7.33','v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
+for marker in ['v0.7.34','v0.7.33','v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
     if marker not in changelog: fail('changelog missing '+marker)
 readme=(ROOT/'README.md').read_text(encoding='utf-8')
 if "No live refresh occurs in a visitor's browser." in readme: fail('README contains obsolete no-live-refresh claim')
@@ -93,6 +93,24 @@ for css_marker in ['.skipLink{','--vision-text:','#main-content:focus{outline:no
     if css_marker not in style: fail('accessibility CSS invariant missing: '+css_marker)
 if '.heroActions' not in style or '.explorerSearchPrimary' not in style:
     fail('progressive-disclosure UX styling missing')
+
+# v0.7.34 profile-clarity contract: profiles start with a fact-only summary and
+# expose a visible glossary without changing the historical research corpus.
+for marker in ['id="how-glossary"','id="domainGlossary"','data-i18n="glossaryTitle"','download="domain_governance_glossary.csv"']:
+    if marker not in template: fail('v0.7.34 glossary marker missing: '+marker)
+for marker in ['function explorerBriefSection(r)','function curatedContextSection(r)','function renderGlossary()','profileBriefTitle','profileCurrentStateTitle','profileGlossaryLink']:
+    if marker not in appjs: fail('v0.7.34 profile-clarity runtime marker missing: '+marker)
+glossary_rows=rows('domain_governance_glossary.csv')
+if len(glossary_rows)!=28: fail(f'domain glossary count changed: {len(glossary_rows)} != 28')
+if sum(1 for r in glossary_rows if r.get('scope')=='project')!=3: fail('project-methodology glossary split changed')
+if sum(1 for r in glossary_rows if r.get('scope')=='official')!=25: fail('official glossary split changed')
+for r in glossary_rows:
+    for key in ['term','it','en','de','fr','scope']:
+        if not (r.get(key) or '').strip(): fail(f'blank glossary field {key}: {r.get("term", "?")}')
+tr_clarity=json_file('translations.json')
+for lang in LANGS:
+    for key in ['profileBriefTitle','profileCurrentStateTitle','profileGlossaryLink','glossaryTitle','glossarySub','glossaryOfficial','glossaryProject','release0734']:
+        if not tr_clarity[lang].get(key): fail(f'v0.7.34 translation missing {lang}/{key}')
 
 # v0.7.33 accessibility contract: semantic/keyboard hardening without a visual redesign.
 if 'aria-haspopup="true"' in template: fail('disclosure navigation still claims popup-menu semantics')
@@ -307,6 +325,7 @@ if tr['it'].get('release0730') is None: fail('release0730 translation missing')
 if tr['it'].get('release0731') is None: fail('release0731 translation missing')
 if tr['it'].get('release0732') is None: fail('release0732 translation missing')
 if tr['it'].get('release0733') is None: fail('release0733 translation missing')
+if tr['it'].get('release0734') is None: fail('release0734 translation missing')
 for lang in LANGS:
     for key in ['tabRefusals','refusalsTitle','refusalsSubtitle','refusalsBoundaryBody','refusalTaxonomyTitle','refusalCasesTitle','refusalCaseBadge','explorePresetRefusals','applicationContention','applicationControversy','outcomeReasonLabel','outcomeEvidence','outcome_excluded_from_further_participation','outcome_not_approved','outcome_did_not_proceed']:
         if not tr[lang].get(key): fail(f'missing application-outcome translation {lang}/{key}')

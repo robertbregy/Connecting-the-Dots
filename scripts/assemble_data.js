@@ -3,6 +3,26 @@ const fs=require('fs'),path=require('path'),crypto=require('crypto'),zlib=requir
 const {domainToASCII,domainToUnicode}=require('node:url');
 const root=path.resolve(__dirname,'..');
 const json=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
+
+function csvRecords(rel){
+ const text=fs.readFileSync(path.join(root,rel),'utf8').replace(/^\uFEFF/,'');
+ const rows=[];let row=[],field='',quoted=false;
+ for(let i=0;i<text.length;i++){
+  const c=text[i];
+  if(quoted){
+   if(c==='"'){
+    if(text[i+1]==='"'){field+='"';i++;}
+    else quoted=false;
+   }else field+=c;
+  }else if(c==='"')quoted=true;
+  else if(c===','){row.push(field);field='';}
+  else if(c==='\n'){row.push(field.replace(/\r$/,''));rows.push(row);row=[];field='';}
+  else field+=c;
+ }
+ if(field||row.length){row.push(field.replace(/\r$/,''));rows.push(row);}
+ const header=rows.shift()||[];
+ return rows.filter(r=>r.some(v=>v!=='')).map(r=>Object.fromEntries(header.map((h,i)=>[h,r[i]??''])));
+}
 const digest=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 const ascii=string=>'.'+domainToASCII(string.replace(/^\./,'')).toLowerCase();
 const eventOrder=e=>{const m=String(e.period).match(/^\d{4}(?:-\d{2}){0,2}/);return e.current?'99999999':m?m[0].replace(/-/g,'').padEnd(8,'0'):'00000000'};
@@ -112,7 +132,7 @@ function introductionFor(r){
 }
 
 module.exports=function assembleData(){
- const D=json('data/research.json'),S=json('data/iana_snapshot.json'),curated=json('data/explorer_curated.json'),archaeology=json('data/application_archaeology_local.json'),archaeologyManifest=json('data/application_archaeology_manifest.json'),governance=json('data/governance_cases.json'),economics=json('data/economic_cases.json'),social=json('data/social_cases.json');
+ const D=json('data/research.json'),S=json('data/iana_snapshot.json'),curated=json('data/explorer_curated.json'),archaeology=json('data/application_archaeology_local.json'),archaeologyManifest=json('data/application_archaeology_manifest.json'),governance=json('data/governance_cases.json'),economics=json('data/economic_cases.json'),social=json('data/social_cases.json'),glossary=csvRecords('data/domain_governance_glossary.csv');
  if(curated.schemaVersion!==1)throw new Error('Unsupported curated record schema');
  const bytes=fs.readFileSync(path.join(root,S.archive_path));
  if(digest(bytes)!==S.archive_sha256)throw new Error('IANA evidence archive checksum mismatch');
@@ -201,6 +221,7 @@ module.exports=function assembleData(){
   r.events.sort((a,b)=>eventOrder(a).localeCompare(eventOrder(b))||String(a.status).localeCompare(String(b.status)));
   Object.assign(r,introductionFor(r));
  }
+ D.domainGovernanceGlossary=glossary;
  D.governanceCases=governance;
  if(governance.schemaVersion!==1||!Array.isArray(governance.cases)||governance.cases.length<1)throw new Error('Unsupported governance cases schema');
  const governanceByAscii=new Map();

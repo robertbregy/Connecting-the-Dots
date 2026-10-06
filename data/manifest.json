@@ -1,6 +1,6 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.33",
+  "version": "0.7.34",
   "release_date": "2026-10-06",
   "publication_state": "pre-reveal",
   "rendering": "static-prerendered",
@@ -257,7 +257,7 @@
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "release_history": {
     "path": "release_history.json",
-    "sha256": "43e26db2c065d5bd98bdea2647538b076431f5db36b512dc35123780ddcf3a79"
+    "sha256": "e0833c611638eca85b3b1f245520a85c878071277216d2ad9dcd37d3d8714ce4"
   },
   "freeze": {
     "status": "pre-reveal-frozen",
@@ -272,18 +272,18 @@
     "assets": [
       {
         "repository_path": "data/site_bundle.js",
-        "bytes": 1965840,
-        "sha256": "7c4f03e3cf96fe901c88a3342430e78d55487187c88d028612d8bdbc316d7760"
+        "bytes": 1987178,
+        "sha256": "eea6ea5b316ff42dab07d3b9666b77a9ef5d9081e00ba22bd991c195584dc4f2"
       },
       {
         "repository_path": "assets/app.js",
-        "bytes": 104705,
-        "sha256": "90fdff83a81d6743ebb18103b1368574a372ee349f45b5f967ee11f058628a54"
+        "bytes": 107993,
+        "sha256": "bc52f24baf2d20980dc9f68da2c223c130617214bc78c0dc162d18a3276c5631"
       },
       {
         "repository_path": "assets/style.css",
-        "bytes": 101748,
-        "sha256": "b3d272988110bb07ea47f63bb3c04ff4aef37d20fffed3902b8d2acc6b841369"
+        "bytes": 103479,
+        "sha256": "5eb977673a18e01d7a9ed78576199c46bc66d1cba07eccbc461e1c7e801c11b1"
       },
       {
         "repository_path": "data/worldmap.js",
@@ -293,42 +293,42 @@
       {
         "repository_path": "data/explorer_profiles_0.js",
         "bytes": 1046264,
-        "sha256": "65adba83cfc833f85b0f86d92a4fbf26ccd871e40cbaf4a21b88140dcba467ee"
+        "sha256": "9a9b995e3436c436b314aeded840bb4a3023a486a0d575bdbbbe8c058b3e61ad"
       },
       {
         "repository_path": "data/explorer_profiles_1.js",
         "bytes": 869821,
-        "sha256": "dbe91785105d14565e75659adc5badebf572edd56b479cb909d59dfff996dafa"
+        "sha256": "5e143a683c3e31f6c6b1682601beef90cfe364b10bb1cb8ad97457761529cfda"
       },
       {
         "repository_path": "data/explorer_profiles_2.js",
         "bytes": 967385,
-        "sha256": "d6d7c5d94dfe7e411730d7ece3c99982525ecc7edf555cbd928f8cd112f1eae3"
+        "sha256": "a33117e2d3f8174425a031db21169c2c3363817307fee37403aaddbc56829d9c"
       },
       {
         "repository_path": "data/explorer_profiles_3.js",
         "bytes": 895720,
-        "sha256": "ac78b052152b5c4c2a87f2909c44287dbfa1709b83a366baa7394139202637ce"
+        "sha256": "0522f5df314cf74f81c5f7b2424cd5b941f6c9db21bb9b01caee58b63bbb4264"
       },
       {
         "repository_path": "data/explorer_profiles_4.js",
         "bytes": 933775,
-        "sha256": "c35dadaed60112e13e4cc2a83e8c796c6f62569c1c613dedee5d2a84b677813f"
+        "sha256": "aaa194a9d665d06741faac76485910ac70afd08f515afa29b3619eecda55725a"
       },
       {
         "repository_path": "data/explorer_profiles_5.js",
         "bytes": 904561,
-        "sha256": "d70e0a04d92574118d652a214b4f6a2bc63d323dc3a93c07eb5ede960f36551c"
+        "sha256": "cfaffec3b9cd15fcc6959ab52565d5301256e1afea06e590f110efbf34d42408"
       },
       {
         "repository_path": "data/explorer_profiles_6.js",
         "bytes": 914442,
-        "sha256": "e82c074ce201152acdd2289be0c0144382e5f42f39ad4709e693fd551b830f82"
+        "sha256": "9fe8e30e5e25cf266b1711114554bcbb217db4dbe964c160443402f3ca013018"
       },
       {
         "repository_path": "data/explorer_profiles_7.js",
         "bytes": 898731,
-        "sha256": "310ee878b88a4450043b329f7e3c6c3b6f60cc221dc1c6ad6020b57cb96e4cac"
+        "sha256": "4c7f1c979aea1707d0dcd9dd640efd7467798ea686d5432112bff00a56021cca"
       }
     ]
   },
@@ -419,9 +419,9 @@
     },
     {
       "path": "domain_governance_glossary.csv",
-      "bytes": 3151,
-      "records": 10,
-      "sha256": "60ef7cd8e7f048f682d375acbe9610fa3a69de614cf2d1b605e5d0c27969ae94"
+      "bytes": 19633,
+      "records": 28,
+      "sha256": "fb0cd5d0e6973b8bf0ea932317ccdb5da0a356ae8f99e7853d007692fbc654a2"
     },
     {
       "path": "domain_lifecycle.csv",

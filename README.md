@@ -1,4 +1,10 @@
-# Connecting the Dots — v0.7.33
+# Connecting the Dots — v0.7.34
+
+## v0.7.34 — Profile clarity and essential glossary
+
+This release improves how Explorer profiles explain themselves without expanding the historical application or TLD corpus. Every profile now opens with a deterministic, fact-only summary assembled from preserved status, IANA manager data, formal application records, contention markers, documented outcome reasons and governance-case links. The detailed evidence remains available below in a more deliberate reading order.
+
+The release also turns the previously download-only domain-governance glossary into a visible section under **How it works**. The glossary contains 28 entries in English, Italian, German and French and explicitly distinguishes official ICANN/IANA vocabulary from three Connecting the Dots methodology terms: application outcome, outcome reason and governance controversy.
 
 ## v0.7.33 — Accessibility hardening without visual redesign
 

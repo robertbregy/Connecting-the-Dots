@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.7.34 — 2026-10-06
+- Adds a fact-only **In brief** layer to every Explorer profile so readers can understand current root status, manager, application history, contention and documented outcome causes before opening the deeper evidence sections.
+- Reorders profile detail into a clearer sequence: summary, current status, origin, applications, researched context, cases, chronology, editorial reading, technical IANA data and sources.
+- Cleans curated geography so generic TLDs no longer present an operational-country context as a place they “represent”; the represented-place field is shown only where that concept is meaningful.
+- Expands `domain_governance_glossary.csv` to 28 terms in EN/IT/DE/FR and renders it visibly inside “How it works”, separating official ICANN/IANA terminology from three project-methodology concepts.
+- Keeps all non-glossary research corpora and the 4 October IANA evidence snapshot unchanged.
+
 ## v0.7.33 — 2026-10-06
 - Accessibility hardening only: preserves the v0.7.32 research corpus, content hierarchy, layout and resting visual design.
 - Makes the Explorer drawer a stricter modal experience: background landmarks become `inert`, initial focus lands on the profile heading, focus remains trapped and returns to the invoking control.
@@ -186,8 +193,6 @@
 - Keep ccTLD history on the IANA delegation/redelegation model rather than applying gTLD contracts.
 - Export `tld_life_histories.csv` and record lifecycle coverage in the manifest.
 - Leave missing historical phases missing rather than inferred.
-
-# Changelog
 
 ## 0.7.12 · 4 October 2026
 
