@@ -1740,7 +1740,9 @@
     "glossaryProject": "Project methodology",
     "glossaryCsv": "Download the glossary as CSV",
     "tocHowGlossary": "Essential glossary",
-    "release0734": "Improves Explorer profile clarity with a fact-only “In brief” layer, a clearer current-status block, cleaner contextual fields and a visible essential glossary that separates official ICANN/IANA terminology from project methodology. Research corpora remain unchanged except for the expanded glossary dataset."
+    "release0734": "Improves Explorer profile clarity with a fact-only “In brief” layer, a clearer current-status block, cleaner contextual fields and a visible essential glossary that separates official ICANN/IANA terminology from project methodology. Research corpora remain unchanged except for the expanded glossary dataset.",
+    "metaSocialImageAlt": "Connecting the Dots project cover: from .arpa to .lugano, tracing Internet domains through ICANN, DNS, cities and society.",
+    "release0735": "Repository hygiene and metadata hardening: aligns deployment documentation to the 99-file ceiling, adds localized social-image alternative text, and tightens release checks without changing research data or Explorer behavior."
   },
   "it": {
     "brand": "Brand",
@@ -3483,7 +3485,9 @@
     "glossaryProject": "Metodo del progetto",
     "glossaryCsv": "Scarica il glossario in CSV",
     "tocHowGlossary": "Glossario essenziale",
-    "release0734": "Rende più chiare le schede Explorer con un livello fattuale «In breve», uno stato corrente più leggibile, campi contestuali ripuliti e un glossario essenziale visibile che separa la terminologia ufficiale ICANN/IANA dalla metodologia del progetto. I corpus di ricerca restano invariati salvo l’ampliamento del dataset del glossario."
+    "release0734": "Rende più chiare le schede Explorer con un livello fattuale «In breve», uno stato corrente più leggibile, campi contestuali ripuliti e un glossario essenziale visibile che separa la terminologia ufficiale ICANN/IANA dalla metodologia del progetto. I corpus di ricerca restano invariati salvo l’ampliamento del dataset del glossario.",
+    "metaSocialImageAlt": "Copertina del progetto Connecting the Dots: da .arpa a .lugano, il percorso dei domini Internet tra ICANN, DNS, città e società.",
+    "release0735": "Pulizia del repository e hardening dei metadati: allinea la documentazione di deploy al limite di 99 file, aggiunge testo alternativo localizzato all’immagine social e rafforza i controlli di release senza modificare dati di ricerca o comportamento dell’Explorer."
   },
   "de": {
     "brand": "Marke",
@@ -5226,7 +5230,9 @@
     "glossaryProject": "Projektmethodik",
     "glossaryCsv": "Glossar als CSV herunterladen",
     "tocHowGlossary": "Grundlegendes Glossar",
-    "release0734": "Verbessert die Verständlichkeit der Explorer-Profile durch eine rein faktische Kurzfassung, einen klareren aktuellen Status, bereinigte Kontextfelder und ein sichtbares Glossar, das offizielle ICANN/IANA-Terminologie von der Projektmethodik trennt. Die Forschungsbestände bleiben mit Ausnahme des erweiterten Glossardatensatzes unverändert."
+    "release0734": "Verbessert die Verständlichkeit der Explorer-Profile durch eine rein faktische Kurzfassung, einen klareren aktuellen Status, bereinigte Kontextfelder und ein sichtbares Glossar, das offizielle ICANN/IANA-Terminologie von der Projektmethodik trennt. Die Forschungsbestände bleiben mit Ausnahme des erweiterten Glossardatensatzes unverändert.",
+    "metaSocialImageAlt": "Titelgrafik von Connecting the Dots: von .arpa bis .lugano, Internet-Domains zwischen ICANN, DNS, Städten und Gesellschaft.",
+    "release0735": "Repository-Bereinigung und Metadaten-Härtung: richtet die Deployment-Dokumentation am 99-Dateien-Limit aus, ergänzt lokalisierten Alternativtext für das Social-Media-Bild und verschärft Release-Prüfungen, ohne Forschungsdaten oder Explorer-Verhalten zu ändern."
   },
   "fr": {
     "brand": "Marque",
@@ -6969,6 +6975,8 @@
     "glossaryProject": "Méthodologie du projet",
     "glossaryCsv": "Télécharger le glossaire en CSV",
     "tocHowGlossary": "Glossaire essentiel",
-    "release0734": "Améliore la clarté des fiches Explorer avec un résumé factuel « En bref », un état actuel plus lisible, des champs contextuels épurés et un glossaire essentiel visible séparant la terminologie officielle ICANN/IANA de la méthodologie du projet. Les corpus de recherche restent inchangés, sauf l’enrichissement du jeu de données du glossaire."
+    "release0734": "Améliore la clarté des fiches Explorer avec un résumé factuel « En bref », un état actuel plus lisible, des champs contextuels épurés et un glossaire essentiel visible séparant la terminologie officielle ICANN/IANA de la méthodologie du projet. Les corpus de recherche restent inchangés, sauf l’enrichissement du jeu de données du glossaire.",
+    "metaSocialImageAlt": "Visuel de Connecting the Dots : de .arpa à .lugano, le parcours des domaines Internet entre l’ICANN, le DNS, les villes et la société.",
+    "release0735": "Nettoyage du dépôt et renforcement des métadonnées : aligne la documentation de déploiement sur la limite de 99 fichiers, ajoute un texte alternatif localisé à l’image sociale et renforce les contrôles de version sans modifier les données de recherche ni le comportement de l’Explorer."
   }
 }

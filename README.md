@@ -1,4 +1,8 @@
-# Connecting the Dots — v0.7.34
+# Connecting the Dots — v0.7.35
+
+## v0.7.35 — Repository hygiene and metadata hardening
+
+This maintenance release changes no research corpus and no Explorer behavior. It aligns deployment documentation with the 99-file browser-upload ceiling, adds localized `og:image:alt` and `twitter:image:alt` metadata, and extends release checks so these guarantees cannot silently regress. The source lockfile remains version-aligned; stale repository copies must be overwritten or removed during repository cleanup.
 
 ## v0.7.34 — Profile clarity and essential glossary
 

@@ -49,8 +49,8 @@ def render(page,lang,alias=False):
         if not n:raise RuntimeError('missing '+selector)
         n['content']=val
     meta('meta[name="description"]',tr['metaDescription']);meta('meta[name="robots"]','index,follow,max-image-preview:large')
-    meta('meta[property="og:title"]',tr['metaTitle']);meta('meta[property="og:description"]',tr['metaOgDescription']);meta('meta[property="og:url"]',canonical);meta('meta[property="og:locale"]',LOCALE[lang])
-    meta('meta[name="twitter:title"]',tr['metaTitle']);meta('meta[name="twitter:description"]',tr['metaOgDescription'])
+    meta('meta[property="og:title"]',tr['metaTitle']);meta('meta[property="og:description"]',tr['metaOgDescription']);meta('meta[property="og:url"]',canonical);meta('meta[property="og:locale"]',LOCALE[lang]);meta('meta[property="og:image:alt"]',tr['metaSocialImageAlt'])
+    meta('meta[name="twitter:title"]',tr['metaTitle']);meta('meta[name="twitter:description"]',tr['metaOgDescription']);meta('meta[name="twitter:image:alt"]',tr['metaSocialImageAlt'])
     soup.select_one('#canonicalLink')['href']=canonical
     for link in soup.select('link[hreflang]'):
         target=link.get('hreflang');link['href']=BASE+('en' if target=='x-default' else target)+'/'

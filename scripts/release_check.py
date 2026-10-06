@@ -39,6 +39,15 @@ version=pkg['version']
 lock=json.loads((ROOT/'package-lock.json').read_text()) if (ROOT/'package-lock.json').exists() else fail('package-lock.json missing')
 if lock.get('version')!=version or lock.get('packages',{}).get('',{}).get('version')!=version: fail('package-lock/package version mismatch')
 if lock.get('packages',{}).get('',{}).get('devDependencies')!=pkg.get('devDependencies'): fail('package-lock dependency root mismatch')
+
+# Maintenance release invariants: deployment ceiling and social-preview accessibility.
+deploy_text=(ROOT/'DEPLOY.md').read_text(encoding='utf-8')
+if 'limited to 99 files' not in deploy_text:
+    fail('DEPLOY.md must state the 99-file browser-upload ceiling')
+source_html=(ROOT/'src'/'index.web.html').read_text(encoding='utf-8')
+for token in ['property="og:image:alt"','name="twitter:image:alt"']:
+    if token not in source_html:
+        fail(f'missing social image alt metadata: {token}')
 manifest=json_file('manifest.json')
 if manifest.get('version')!=version: fail('manifest/package version mismatch')
 if manifest.get('as_of')!='2026-10-04': fail('publication snapshot is not 2026-10-04')

@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.7.35 — 2026-10-06
+- Adds localized alternative text for the Open Graph and Twitter/X social preview image in all four languages.
+- Aligns deployment documentation with the actual 99-file browser-upload ceiling and documents stale-file cleanup explicitly.
+- Keeps `package-lock.json` aligned with `package.json` and strengthens release checks for social-image metadata and deployment ceiling wording.
+- Changes no research CSV, Explorer record, application history, contention, controversy, outcome or IANA snapshot.
+
 ## v0.7.34 — 2026-10-06
 - Adds a fact-only **In brief** layer to every Explorer profile so readers can understand current root status, manager, application history, contention and documented outcome causes before opening the deeper evidence sections.
 - Reorders profile detail into a clearer sequence: summary, current status, origin, applications, researched context, cases, chronology, editorial reading, technical IANA data and sources.

@@ -64,9 +64,11 @@ function render(language,alias=false){
   meta('meta[property="og:title"]',translations.metaTitle);
   meta('meta[property="og:description"]',translations.metaOgDescription);
   meta('meta[property="og:url"]',canonical);
+  meta('meta[property="og:image:alt"]',translations.metaSocialImageAlt);
   meta('meta[property="og:locale"]',locale[language]);
   meta('meta[name="twitter:title"]',translations.metaTitle);
   meta('meta[name="twitter:description"]',translations.metaOgDescription);
+  meta('meta[name="twitter:image:alt"]',translations.metaSocialImageAlt);
   document.getElementById('canonicalLink').setAttribute('href',canonical);
   for(const link of document.querySelectorAll('link[hreflang]')){
     const target=link.getAttribute('hreflang');
