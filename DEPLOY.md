@@ -37,7 +37,7 @@ Create a Git tag and GitHub Release for each published version, attach both arch
 
 ## Known stale browser-upload residues
 
-Browser uploads overwrite matching paths but do not delete files omitted by later releases. Before or immediately after publishing v0.7.35, remove these obsolete repository-root files if they are still present:
+Browser uploads overwrite matching paths but do not delete files omitted by later releases. Before or immediately after publishing v0.7.36, remove these obsolete repository-root files if they are still present:
 
 - `REDEPLOY_FULL.md`
 - `start.command`
