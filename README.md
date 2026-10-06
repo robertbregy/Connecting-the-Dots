@@ -1,4 +1,8 @@
-# Connecting the Dots — v0.7.36
+# Connecting the Dots — v0.7.37
+
+## v0.7.37 — Natural-height Strange Internet cards
+
+This final visual micro-release changes only the desktop layout of the institutional-oddities families inside Strange Internet. Short one-case families such as `.cs` and `.gb / .uk` keep their natural height instead of being stretched to match a taller neighbour. Mobile remains single-column and the underlying content/data are unchanged.
 
 ## v0.7.36 — Explorer card location deduplication
 

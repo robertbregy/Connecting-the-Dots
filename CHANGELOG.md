@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.7.37 — 2026-10-06
+- Reflows the institutional-oddities families in Strange Internet into a natural-height two-column masonry-style layout on desktop, eliminating artificial vertical stretching of short `.cs` and `.gb / .uk` cards.
+- Preserves DOM reading order, single-column mobile rendering, all research data and all card content.
+- Adds a release guard so the oddities layout cannot silently return to equal-height grid stretching.
+
 ## v0.7.36 — 2026-10-06
 - Deduplicates Explorer card location metadata when the registry country and represented place resolve to the same localized label (the `.ai` / Anguilla case).
 - Changes no research CSV, Explorer record, profile detail, application history, contention, controversy, outcome or IANA snapshot.
