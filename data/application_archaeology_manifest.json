@@ -84,6 +84,28 @@
         "project record ID",
         "contention counts"
       ],
+      "outcomeFields": {
+        "fields": [
+          "outcome",
+          "outcome_reason",
+          "outcome_case_id",
+          "outcome_source_url"
+        ],
+        "coverage": "source-backed subset only",
+        "rule": "Blank means not documented in this frozen corpus; no result is inferred from present-day root status.",
+        "sourceBackedApplicationRows": 27
+      },
+      "independentDimensions": {
+        "contention": [
+          "contention",
+          "contention_case_id"
+        ],
+        "controversy": [
+          "controversy",
+          "controversy_case_id"
+        ],
+        "rule": "Outcome, contention and controversy are independent. A row may carry more than one dimension; editorial case selection does not collapse them."
+      },
       "approvedStringChanges": 4,
       "additionalUniqueReplacementStrings": 3,
       "applicationStringLifecycleLabels": 1412,

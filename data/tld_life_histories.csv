@@ -1461,12 +1461,12 @@ string,ascii_string,period,status,event_class,type,entity,geography,detail,outco
 .coop,.coop,2001-12-13,ianaReportEvent,iana-report,sponsored,,,IANA Report on Establishment of the .COOP Top-Level Domain,,no,,https://www.iana.org/reports/2001/coop-report-13dec01.html
 .coop,.coop,2001-12-15,ianaRegistration,iana-registration,sponsored,DotCooperation LLC,United States of America (the),,,no,,https://www.iana.org/domains/root/db/coop.html
 .coop,.coop,2026-10-04,delegated,current-snapshot,sponsored,DotCooperation LLC,United States of America (the),,,yes,,https://www.iana.org/domains/root/db/coop.html
-.corp,.corp,2012,applicationSubmitted,application,notApplicable,"Cotton Fields, LLC",,2012-0380,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.corp,.corp,2012,applicationSubmitted,application,notApplicable,DOTCORP LIMITED,,2012-0381,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.corp,.corp,2012,applicationSubmitted,application,notApplicable,Charleston Road Registry Inc.,,2012-0382,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.corp,.corp,2012,applicationSubmitted,application,notApplicable,Dot Registry LLC,,2012-0383,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.corp,.corp,2012,applicationSubmitted,application,notApplicable,NU DOT CO LLC,,2012-0384,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.corp,.corp,2012,applicationSubmitted,application,notApplicable,"PROC Registry, LLC",,2012-0385,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.corp,.corp,2012,applicationSubmitted,application,notApplicable,"Cotton Fields, LLC",,2012-0380,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.corp,.corp,2012,applicationSubmitted,application,notApplicable,DOTCORP LIMITED,,2012-0381,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.corp,.corp,2012,applicationSubmitted,application,notApplicable,Charleston Road Registry Inc.,,2012-0382,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.corp,.corp,2012,applicationSubmitted,application,notApplicable,Dot Registry LLC,,2012-0383,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.corp,.corp,2012,applicationSubmitted,application,notApplicable,NU DOT CO LLC,,2012-0384,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.corp,.corp,2012,applicationSubmitted,application,notApplicable,"PROC Registry, LLC",,2012-0385,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
 .corp,.corp,2026-10-04,notDelegated,current-snapshot,notApplicable,,,,,yes,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
 .corsica,.corsica,2012,applicationSubmitted,application,generic,Collectivité Territoriale de Corse,,2012-0386,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
 .corsica,.corsica,2015-04-23,ianaRegistration,iana-registration,generic,Collectivité de Corse,France,,,no,,https://www.iana.org/domains/root/db/corsica.html
@@ -2483,7 +2483,7 @@ string,ascii_string,period,status,event_class,type,entity,geography,detail,outco
 .gbiz,.gbiz,2014-08-23,ianaRegistration,iana-registration,generic,Charleston Road Registry Inc.,United States of America (the),,,no,,https://www.iana.org/domains/root/db/gbiz.html
 .gbiz,.gbiz,2014-08-25,ianaDelegationReport,iana-report,generic,,,Delegation of the .gbiz domain to Charleston Road Registry Inc.,,no,,https://www.iana.org/reports/c.2.9.2.d/20140825-gbiz
 .gbiz,.gbiz,2026-10-04,delegated,current-snapshot,generic,Charleston Road Registry Inc.,United States of America (the),,,yes,,https://www.iana.org/domains/root/db/gbiz.html
-.gcc,.gcc,2012,applicationSubmitted,application,notApplicable,GCCIX WLL,,2012-0654,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.gcc,.gcc,2012,applicationSubmitted,application,notApplicable,GCCIX WLL,,2012-0654,outcome_not_approved,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
 .gcc,.gcc,2026-10-04,notDelegated,current-snapshot,notApplicable,GCCIX WLL,,,,yes,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
 .gd,.gd,1992-06-03,ianaRegistration,iana-registration,country-code,The National Telecommunications Regulatory Commission (NTRC),Grenada,,,no,,https://www.iana.org/domains/root/db/gd.html
 .gd,.gd,2006-07-24,ianaTransferReport,iana-report,country-code,,,IANA Report on the Redelegation of the .GD Top-Level Domain,,no,,https://www.iana.org/reports/2006/gd-report-24jul2006.html
@@ -2900,17 +2900,17 @@ string,ascii_string,period,status,event_class,type,entity,geography,detail,outco
 .holiday,.holiday,2026-10-04,delegated,current-snapshot,generic,"Binky Moon, LLC",United States of America (the),,,yes,,https://www.iana.org/domains/root/db/holiday.html
 .home,.home,2000,applicationSubmitted,application,notApplicable,"KDD Internet Solutions Co., Ltd.",Japan,2000-008,,no,,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
 .home,.home,2012,application,,generic,,,,,no,,https://newgtlds.icann.org/en/program-status/statistics
-.home,.home,2012,applicationSubmitted,application,notApplicable,DotHome Inc.,,2012-0765,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.home,.home,2012,applicationSubmitted,application,notApplicable,Charleston Road Registry Inc.,,2012-0766,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.home,.home,2012,applicationSubmitted,application,notApplicable,"Baxter Pike, LLC",,2012-0767,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.home,.home,2012,applicationSubmitted,application,notApplicable,"Uniregistry, Corp.",,2012-0768,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.home,.home,2012,applicationSubmitted,application,notApplicable,"Lifestyle Domain Holdings, Inc.",,2012-0769,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.home,.home,2012,applicationSubmitted,application,notApplicable,Top Level Domain Holdings Limited,,2012-0770,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.home,.home,2012,applicationSubmitted,application,notApplicable,Dot Home LLC,,2012-0771,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.home,.home,2012,applicationSubmitted,application,notApplicable,"Go Daddy East, LLC",,2012-0772,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.home,.home,2012,applicationSubmitted,application,notApplicable,Merchant Law Group LLP,,2012-0773,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.home,.home,2012,applicationSubmitted,application,notApplicable,.HOME REGISTRY INC.,,2012-0774,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.home,.home,2012,applicationSubmitted,application,notApplicable,DotHome / CGR E-Commerce Ltd,,2012-0775,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.home,.home,2012,applicationSubmitted,application,notApplicable,DotHome Inc.,,2012-0765,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.home,.home,2012,applicationSubmitted,application,notApplicable,Charleston Road Registry Inc.,,2012-0766,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.home,.home,2012,applicationSubmitted,application,notApplicable,"Baxter Pike, LLC",,2012-0767,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.home,.home,2012,applicationSubmitted,application,notApplicable,"Uniregistry, Corp.",,2012-0768,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.home,.home,2012,applicationSubmitted,application,notApplicable,"Lifestyle Domain Holdings, Inc.",,2012-0769,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.home,.home,2012,applicationSubmitted,application,notApplicable,Top Level Domain Holdings Limited,,2012-0770,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.home,.home,2012,applicationSubmitted,application,notApplicable,Dot Home LLC,,2012-0771,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.home,.home,2012,applicationSubmitted,application,notApplicable,"Go Daddy East, LLC",,2012-0772,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.home,.home,2012,applicationSubmitted,application,notApplicable,Merchant Law Group LLP,,2012-0773,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.home,.home,2012,applicationSubmitted,application,notApplicable,.HOME REGISTRY INC.,,2012-0774,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.home,.home,2012,applicationSubmitted,application,notApplicable,DotHome / CGR E-Commerce Ltd,,2012-0775,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
 .home,.home,2026-10-04,notDelegated,current-snapshot,notApplicable,,,,,yes,,https://newgtlds.icann.org/en/program-status/statistics
 .homedepot,.homedepot,2012,applicationSubmitted,application,generic,"Homer TLC, Inc.",,2012-0776,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
 .homedepot,.homedepot,2015-05-29,ianaRegistration,iana-registration,generic,"Home Depot Product Authority, LLC",United States of America (the),,,no,,https://www.iana.org/domains/root/db/homedepot.html
@@ -3052,7 +3052,7 @@ string,ascii_string,period,status,event_class,type,entity,geography,detail,outco
 .id,.id,1993-02-27,ianaRegistration,iana-registration,country-code,Perkumpulan Pengelola Nama Domain Internet Indonesia (PANDI),Indonesia,,,no,,https://www.iana.org/domains/root/db/id.html
 .id,.id,2013-05-24,ianaTransferReport,iana-report,country-code,,,Report on the Redelegation of the .ID domain representing Indonesia to Perkumpulan Pengelola Nama Domain Internet Indonesia,,no,,https://www.iana.org/reports/2013/id-report-20130524.html
 .id,.id,2026-10-04,delegated,current-snapshot,country-code,Perkumpulan Pengelola Nama Domain Internet Indonesia (PANDI),Indonesia,,,yes,,https://www.iana.org/domains/root/db/id.html
-.idn,.idn,2012,applicationSubmitted,application,notApplicable,Nameshop,,2012-0813,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.idn,.idn,2012,applicationSubmitted,application,notApplicable,Nameshop,,2012-0813,outcome_excluded_from_further_participation,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
 .idn,.idn,2026-10-04,notDelegated,current-snapshot,notApplicable,Nameshop,,,,yes,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
 .ie,.ie,1988-01-27,ianaRegistration,iana-registration,country-code,IE Domain Registry CLG,Ireland,,,no,,https://www.iana.org/domains/root/db/ie.html
 .ie,.ie,2026-06-11,ianaTransferReport,iana-report,country-code,,,Transfer of the .IE (Ireland) top-level domain to IE Domain Registry CLG,,no,,https://www.iana.org/reports/2026/ie-report-20260611.html
@@ -3888,13 +3888,13 @@ string,ascii_string,period,status,event_class,type,entity,geography,detail,outco
 .mail,.mail,2000,applicationSubmitted,application,notApplicable,"Name.Space, Incorporated",United States,2000-001,,no,,https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm
 .mail,.mail,2004,applicationSubmitted,application,notApplicable,Anti-Spam Community Registry,United Kingdom,2004-004,outcome_not_delegated,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
 .mail,.mail,2004,notDelegated,,sponsored,Anti-Spam Community Registry,United Kingdom,,,no,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
-.mail,.mail,2012,applicationSubmitted,application,notApplicable,Charleston Road Registry Inc.,,2012-1024,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.mail,.mail,2012,applicationSubmitted,application,notApplicable,"Victor Dale, LLC",,2012-1025,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.mail,.mail,2012,applicationSubmitted,application,notApplicable,1&1 Mail & Media GmbH,,2012-1026,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.mail,.mail,2012,applicationSubmitted,application,notApplicable,"GMO Registry, Inc.",,2012-1027,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.mail,.mail,2012,applicationSubmitted,application,notApplicable,WhitePages TLD LLC,,2012-1028,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.mail,.mail,2012,applicationSubmitted,application,notApplicable,"Afilias Domains No. 2 Limited,",,2012-1029,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
-.mail,.mail,2012,applicationSubmitted,application,notApplicable,Amazon EU S.à r.l.,,2012-1030,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.mail,.mail,2012,applicationSubmitted,application,notApplicable,Charleston Road Registry Inc.,,2012-1024,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.mail,.mail,2012,applicationSubmitted,application,notApplicable,"Victor Dale, LLC",,2012-1025,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.mail,.mail,2012,applicationSubmitted,application,notApplicable,1&1 Mail & Media GmbH,,2012-1026,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.mail,.mail,2012,applicationSubmitted,application,notApplicable,"GMO Registry, Inc.",,2012-1027,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.mail,.mail,2012,applicationSubmitted,application,notApplicable,WhitePages TLD LLC,,2012-1028,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.mail,.mail,2012,applicationSubmitted,application,notApplicable,"Afilias Domains No. 2 Limited,",,2012-1029,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.mail,.mail,2012,applicationSubmitted,application,notApplicable,Amazon EU S.à r.l.,,2012-1030,outcome_did_not_proceed,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
 .mail,.mail,2026-10-04,notDelegated,current-snapshot,notApplicable,Anti-Spam Community Registry,United Kingdom,,,yes,,https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en
 .maison,.maison,2012,applicationSubmitted,application,generic,"Victor Frostbite, LLC",,2012-1031,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
 .maison,.maison,2014-02-06,ianaRegistration,iana-registration,generic,"Binky Moon, LLC",United States of America (the),,,no,,https://www.iana.org/domains/root/db/maison.html
@@ -6453,7 +6453,7 @@ string,ascii_string,period,status,event_class,type,entity,geography,detail,outco
 .um,.um,2007-01-10,ianaRevocationReport,iana-report,country-code,,,Report on Revocation of the .UM Top-Level Domain,,no,,https://www.iana.org/reports/2007/um-report-10jan2007.html
 .um,.um,2008-04-21,ianaRegistration,iana-registration,country-code,,,,,no,,https://www.iana.org/domains/root/db/um.html
 .um,.um,2026-10-04,notDelegated,current-snapshot,country-code,,,,,yes,,https://www.iana.org/domains/root/db/um.html
-.ummah,.ummah,2012,applicationSubmitted,application,notApplicable,Ummah Digital Limited,,2012-1681,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
+.ummah,.ummah,2012,applicationSubmitted,application,notApplicable,Ummah Digital Limited,,2012-1681,outcome_excluded_from_further_participation,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
 .ummah,.ummah,2026-10-04,notDelegated,current-snapshot,notApplicable,Ummah Digital Limited,,,,yes,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
 .unicom,.unicom,2012,applicationSubmitted,application,generic,China United Network Communications Corporation Limited,,2012-1682,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
 .unicom,.unicom,2016-01-22,ianaRegistration,iana-registration,generic,China United Network Communications Corporation Limited,China,,,no,,https://www.iana.org/domains/root/db/unicom.html

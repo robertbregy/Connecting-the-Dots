@@ -1,4 +1,19 @@
-# Connecting the Dots — v0.7.30
+# Connecting the Dots — v0.7.31
+
+
+## v0.7.32 — Application outcomes as a separate factual dimension
+
+The former “Rejections & stops” layer is now presented as **Application outcomes**. The editorial rule is strict: **contention** describes competition for the same string; **controversy** describes conflict over rights, legitimacy, public interest or control; **outcome** describes why an application did not reach the DNS root. A story has one primary editorial home even when more than one dimension applies.
+
+The historical application datasets now carry `outcome` and `outcome_reason` as separate fields, plus `outcome_source_url` where available. Blank outcome fields mean **not documented in this frozen local corpus**, not success and not failure. No final 2012 application result is inferred from present-day root status.
+
+## v0.7.31 — Rejections & stops as a separate layer
+
+The publication now distinguishes **governance controversies** from **formal application stops**. A dispute asks who has rights, legitimacy or public-interest authority over a string; a stop asks why an application could not or chose not to continue. The new layer uses six sourced cases to distinguish administrative return, withdrawal, proof-of-concept non-selection, Applicant Support eligibility, public-policy refusal and technical-safety blocking. Cases already told as governance disputes are deliberately not duplicated.
+
+The Explorer exposes these cases through a dedicated preset and drawer cross-links. The underlying universal corpus is unchanged at 1,849 Explorer identities: the new material is an interpretive/evidentiary layer, not a new claim of additional TLD or application coverage.
+
+For browser upload, `PUBBLICAZIONE.zip` is capped at **99 files**. The build-time-only `data/research.json` remains in SOURCE/COMPLETO but is omitted from the deployment archive because the browser consumes the compiled bundles instead.
 
 
 ## v0.7.30 — Universal historical application archive

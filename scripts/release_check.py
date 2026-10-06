@@ -57,7 +57,7 @@ if '"lifeHistoryGtldContractsRuntime":false' not in (DATA/'data_bundle.js').read
 arch_manifest=json_file('application_archaeology_manifest.json')
 if arch_manifest.get('runtimeTransport2012',{}).get('status')!='disabled-local-corpus-vendored': fail('2012 local-corpus transport state is not declared')
 changelog=(ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
-for marker in ['v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
+for marker in ['v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
     if marker not in changelog: fail('changelog missing '+marker)
 readme=(ROOT/'README.md').read_text(encoding='utf-8')
 if "No live refresh occurs in a visitor's browser." in readme: fail('README contains obsolete no-live-refresh claim')
@@ -143,6 +143,37 @@ for r in catalog:
             fail(f"obsolete country code on {r['string']}: {cfield}={r[cfield]} {r.get(codefield)}")
 
 arch=json_file('application_archaeology_manifest.json')
+# v0.7.32 application-outcome model: fields exist on every historical application
+# export, but 2012 reasons are populated only where this frozen corpus has primary
+# source-backed evidence. Blank is unknown here, never a derived success/failure.
+for name in ['applications_2000.csv','applications_2004.csv','applications_2012.csv']:
+    rr=rows(name)
+    if not rr or not {'outcome','outcome_reason','outcome_source_url'}.issubset(rr[0]): fail(name+' missing outcome model fields')
+apps2000=rows('applications_2000.csv')
+if sum(bool(r.get('outcome_reason')) for r in apps2000)!=47: fail('2000 outcome reasons are incomplete')
+apps2012=rows('applications_2012.csv')
+if sum(bool(r.get('outcome_reason')) for r in apps2012)!=27: fail('2012 source-backed outcome-reason count must be 27')
+if any(r.get('outcome_reason') and not r.get('outcome_source_url') for r in apps2012): fail('2012 outcome reason lacks source URL')
+for field in ['outcome_case_id','contention','contention_case_id','controversy','controversy_case_id']:
+    if field not in apps2012[0]: fail('2012 application dimension missing: '+field)
+if sum(r.get('contention')=='yes' for r in apps2012)!=755: fail('2012 contention dimension must cover 751 exact-match applications plus 4 non-exact similarity applications')
+if not any(r.get('contention')=='yes' and r.get('controversy')=='yes' for r in apps2012): fail('contention and controversy are no longer independent/overlapping dimensions')
+if not any(r.get('outcome') and r.get('contention')=='yes' for r in apps2012): fail('outcome and contention are no longer independent/overlapping dimensions')
+expected2012={
+ '.idn':('excluded-from-further-participation','applicant-support-ineligibility'),
+ '.ummah':('excluded-from-further-participation','applicant-support-ineligibility'),
+ '.gcc':('not-approved','gac-consensus-advice'),
+ '.corp':('did-not-proceed','high-risk-name-collision'),
+ '.home':('did-not-proceed','high-risk-name-collision'),
+ '.mail':('did-not-proceed','high-risk-name-collision'),
+}
+for label,(outcome,reason) in expected2012.items():
+    subset=[r for r in apps2012 if r.get('ascii_string')==label]
+    if not subset or any(r.get('outcome')!=outcome or r.get('outcome_reason')!=reason for r in subset): fail('2012 outcome mapping mismatch: '+label)
+known_labels=set(expected2012)
+if any(r.get('outcome_reason') for r in apps2012 if r.get('ascii_string') not in known_labels): fail('undocumented 2012 outcome reason was inferred')
+local_arch=json_file('application_archaeology_local.json')
+if not all(all(k in a for k in ['outcomeReason','outcomeCaseId','outcomeSource','contention','contentionCaseId','controversy','controversyCaseId']) for a in local_arch.get('applications',[])): fail('local archaeology lacks independent outcome/contention/controversy dimensions')
 if arch['rounds']['2000']['applications']!=47 or arch['rounds']['2000']['itemE2Links']!=223 or arch['rounds']['2000']['itemE2UniqueStrings']!=188: fail('2000 archaeology totals')
 if arch['rounds']['2004']['applications']!=10 or arch['rounds']['2004']['uniqueStrings']!=9: fail('2004 archaeology totals')
 r=arch['rounds']['2012']
@@ -162,7 +193,7 @@ if sim.get('source')!='https://gtldresult.icann.org/applicationstatus/stringcont
 # v0.7.30 complete local 2012 string/applicant graph contract.
 apps2012=rows('applications_2012.csv')
 if len(apps2012)!=1930: fail('2012 local application row count')
-required_2012_cols={'round','submission_id','official_application_id','string','ascii_string','applicant','idn','a_label','relation_type','status','outcome','string_change_target','string_change_target_ascii','string_change_reason','string_change_source_url','source_url','source_role','metadata_scope','source_row'}
+required_2012_cols={'round','submission_id','official_application_id','string','ascii_string','applicant','idn','a_label','relation_type','status','outcome','outcome_reason','outcome_case_id','outcome_source_url','contention','contention_case_id','controversy','controversy_case_id','string_change_target','string_change_target_ascii','string_change_reason','string_change_source_url','source_url','source_role','metadata_scope','source_row'}
 if set(apps2012[0])!=required_2012_cols: fail('2012 public export schema drift')
 expected_changed_ids={'.dotafrica':'1-1165-42560','.kerrylogisitics':'1-928-31367','.xn--hdb9cza1b':'1-1254-29622','.xn--tqq33ed31aqia':'1-910-25137'}
 for r in apps2012:
@@ -218,6 +249,21 @@ econ=json_file('economic_cases.json')
 private=next((m for m in econ.get('models',[]) if m.get('id')=='private-settlement'),None)
 if not private or private.get('contextKey')!='econHistorical2012Prohibited2026': fail('private-settlement 2026 prohibition context missing')
 research=json_file('research.json')
+# v0.7.32 editorial contract: application outcome is a distinct factual dimension
+# from contention and governance controversy. Curated outcome stories must not
+# silently duplicate the dispute corpus, and every referenced string must resolve.
+refusals=research.get('refusalCases') or {}
+if refusals.get('schemaVersion')!=1 or len(refusals.get('taxonomy',[]))!=6 or len(refusals.get('cases',[]))!=6: fail('refusal case schema/count mismatch')
+ref_snapshot=refusals.get('snapshot') or {}
+if [ref_snapshot.get(k) for k in ['passedInitialEvaluation','eligibleExtendedEvaluation','notApproved','withdrawn','onHold']]!=[1745,32,3,121,29]: fail('2013 Initial Evaluation stop snapshot mismatch')
+gov_strings={s.lower() for c in json_file('governance_cases.json').get('cases',[]) for s in c.get('strings',[])}
+ref_strings={s.lower() for c in refusals.get('cases',[]) for s in c.get('strings',[])}
+if gov_strings & ref_strings: fail('refusal cases overlap governance dispute strings: '+', '.join(sorted(gov_strings & ref_strings)))
+catalog_strings={r.get('ascii_string','').lower() for r in catalog}
+missing_ref=sorted(s for s in ref_strings if s not in catalog_strings)
+if missing_ref: fail('refusal case strings missing from Explorer: '+', '.join(missing_ref))
+for c in refusals.get('cases',[]):
+    if not c.get('sources') or not all(str(x.get('url','')).startswith('https://') for x in c.get('sources',[])): fail('refusal case lacks primary HTTPS sources: '+str(c.get('id')))
 r2026=next((r for r in research.get('rounds',[]) if r.get('round')==2026),{})
 if r2026.get('applications')!=1663: fail('round comparison must use 1,663 submitted applications for 2026')
 proceeding=next((r for r in rows('round_2026.csv') if r.get('metric')=='Applications proceeding'),{})
@@ -238,13 +284,26 @@ for marker in ['function navigationOffset()','function scrollToNavigationTarget(
 if 'userInitiated&&window.innerWidth<=960' in appjs: fail('section scrolling is still incorrectly viewport-gated')
 if "for(const selector of ['.topbar','.nav','.mobileNavWrap'])" not in appjs: fail('navigation offset does not include every sticky navigation layer')
 if tr['it'].get('release0728') is None: fail('release0728 translation missing')
-for marker in ['data-open-section="disputes" data-open-anchor="case-', 'data-open-section="economics" data-open-anchor="econ-case-', 'data-open-section="social" data-open-anchor="social-case-', 'data-open-section="sources" data-open-anchor="publication-updates"']:
+for marker in ['data-open-section="refusals" data-open-anchor="refusal-case-', 'data-open-section="disputes" data-open-anchor="case-', 'data-open-section="economics" data-open-anchor="econ-case-', 'data-open-section="social" data-open-anchor="social-case-', 'data-open-section="sources" data-open-anchor="publication-updates"']:
     if marker not in appjs: fail('dynamic internal navigation marker missing: '+marker)
 if tr['it'].get('release0724') is None: fail('release0724 translation missing')
 if tr['it'].get('release0725') is None: fail('release0725 translation missing')
 if any(not tr[lang].get('applicationCorpusReady') for lang in LANGS): fail('ready-status translation missing')
 if tr['it'].get('release0729') is None: fail('release0729 translation missing')
 if tr['it'].get('release0730') is None: fail('release0730 translation missing')
+if tr['it'].get('release0731') is None: fail('release0731 translation missing')
+if tr['it'].get('release0732') is None: fail('release0732 translation missing')
+for lang in LANGS:
+    for key in ['tabRefusals','refusalsTitle','refusalsSubtitle','refusalsBoundaryBody','refusalTaxonomyTitle','refusalCasesTitle','refusalCaseBadge','explorePresetRefusals','applicationContention','applicationControversy','outcomeReasonLabel','outcomeEvidence','outcome_excluded_from_further_participation','outcome_not_approved','outcome_did_not_proceed']:
+        if not tr[lang].get(key): fail(f'missing application-outcome translation {lang}/{key}')
+if tr['it'].get('refusalsTitle')!='Candidature che non ce l’hanno fatta': fail('Italian application-outcome title regression')
+if tr['it'].get('refusalsSubtitle')!='Perché alcune stringhe candidate non sono mai entrate nella root DNS': fail('Italian application-outcome subtitle regression')
+for forbidden in ['Rifiuti & stop','Rejections & stops']:
+    if any(forbidden in str(v) for lang in LANGS for v in tr[lang].values()): fail('obsolete rejection/stop label remains visible: '+forbidden)
+if 'id="refusals"' not in src or 'id="refusalTaxonomy"' not in src or 'id="refusalGrid"' not in src: fail('refusal section missing from source template')
+if 'data-preset="refusals"' not in src: fail('Explorer refusal preset missing')
+for marker in ["function refusalCasesFor(r)","function refusalCaseSection(r)","function renderRefusals()","explorerPreset==='refusals'"]:
+    if marker not in appjs: fail('refusal runtime integration missing: '+marker)
 if 'non più presenti' not in tr['it'].get('exploreCoverageBody',''): fail('Italian Explorer copy lost the non più correction')
 local_2012_copy_expect={
  'en':('all 1,930 applications','all 1,930 applications'),
@@ -344,7 +403,7 @@ for rel in ['index.html',*[f'{x}/index.html' for x in LANGS]]:
     m=re.search(r'<span[^>]*data-i18n="publicationState"[^>]*>(.*?)</span>',text,re.S)
     if not m or '2026' not in re.sub('<[^>]+>','',m.group(1)): fail(f'visible publication snapshot is not derived/rendered in {rel}')
     if any(stale in text for stale in ['SNAPSHOT · 2 OCT 2026','SNAPSHOT PRE-REVEAL · 2 OTT 2026','PRE-REVEAL-SNAPSHOT · 2. OKT 2026','SNAPSHOT PRÉ-REVEAL · 2 OCT 2026']): fail(f'stale 2 October publication state in {rel}')
-    if '"dateModified":"2026-10-05"' not in text: fail(f'structured-data dateModified mismatch in {rel}')
+    if '"dateModified":"2026-10-06"' not in text: fail(f'structured-data dateModified mismatch in {rel}')
     if text.count('<h1')!=1: fail(f'expected exactly one h1 in {rel}')
     skip=re.search(r'<a\b(?=[^>]*\bclass=["\'][^"\']*\bskipLink\b[^"\']*["\'])(?=[^>]*\bhref=["\']#main-content["\'])[^>]*>',text,re.I)
     main=re.search(r'<main\b(?=[^>]*\bid=["\']main-content["\'])[^>]*>',text,re.I)

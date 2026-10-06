@@ -15,8 +15,10 @@ from collections import Counter
 
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/'data'
+GOVERNANCE_CASES=json.loads((DATA/'governance_cases.json').read_text(encoding='utf-8'))
 SRC_2000='https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm'
 SRC_2000_STATUS='https://archive.icann.org/en/tlds/tld-review-update-13oct00.htm'
+SRC_2000_SELECTION='https://www.icann.org/en/announcements/details/icann-announces-selections-for-new-top-level-domains-16-11-2000-en'
 SRC_2004='https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en'
 RAW_2012='https://raw.githubusercontent.com/nimblemachines/analyzing-iana-root-db/master/strings-1200utc-13jun12-en.csv'
 CDN_2012='https://cdn.jsdelivr.net/gh/nimblemachines/analyzing-iana-root-db@master/strings-1200utc-13jun12-en.csv'
@@ -27,6 +29,9 @@ ICANN_2012_ANNUAL='https://www.icann.org/en/about/annual-report/annual-report-20
 TRANSCRIPTION_2012='https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/'
 ICANN_2012_STRING_CHANGES='https://itp.cdn.icann.org/en/files/board-committee-meetings/briefing-materials/briefing-materials-4-18may13-en.pdf'
 ICANN_2012_INITIAL_CONTENTION='https://gtldresult.icann.org/applicationstatus/stringcontentionstatus.downinitialstringsimilaritysetspdf'
+ICANN_2012_SUPPORT='https://newgtlds.icann.org/sites/default/files/sarp-results-12mar13-en.pdf'
+ICANN_2012_GCC='https://www.icann.org/en/board-activities-and-meetings/materials/minutes-meeting-of-the-new-gtld-program-committee-30-01-2014-en'
+ICANN_2012_COLLISION='https://www.icann.org/en/board-activities-and-meetings/materials/approved-board-resolutions-regular-meeting-of-the-icann-board-04-02-2018-en'
 
 # Stable project submission IDs follow the order on ICANN's corrected 10 Oct 2000
 # lodged-applications table. They are not ICANN-issued application IDs.
@@ -88,14 +93,58 @@ def write_csv(path, headers, rows):
     with path.open('w',encoding='utf-8-sig',newline='') as fh:
         w=csv.DictWriter(fh,fieldnames=headers); w.writeheader(); w.writerows(rows)
 
+def ascii_dot(label:str)->str:
+    raw=unicodedata.normalize('NFC',str(label or '').strip()).lstrip('.')
+    if not raw: return ''
+    return '.'+raw.encode('idna').decode('ascii').lower()
+
+governance_case_by_string={}
+for case in GOVERNANCE_CASES.get('cases',[]):
+    years=[int(y) for y in re.findall(r'\d{4}',case.get('period',''))]
+    start=years[0] if years else None; end=years[-1] if years else start
+    for raw in case.get('strings',[]):
+        governance_case_by_string[ascii_dot(raw)]={'id':case['id'],'start':start,'end':end}
+
+def governance_case_id_for(label:str, round_year:int)->str:
+    case=governance_case_by_string.get(ascii_dot(label))
+    if not case: return ''
+    if case['start'] is not None and round_year < case['start']: return ''
+    if case['end'] is not None and round_year > case['end']: return ''
+    return case['id']
+
 apps=[]; links=[]
 for sid,applicant,location,strings,status,outcome in rows_2000:
     item2=strings.split()
-    apps.append({'round':'2000','submission_id':sid,'official_application_id':'','applicant':applicant,'location':location,'status':status,'outcome':outcome,'item_e2_string_count':len(item2),'source_url':SRC_2000})
+    if status=='returned-unpaid':
+        outcome_reason='application-fee-not-paid'; outcome_source=SRC_2000_STATUS
+    elif status=='withdrawn':
+        outcome_reason='confidentiality-claims-unresolved'; outcome_source=SRC_2000_STATUS
+    elif outcome=='selected':
+        outcome_reason='selected-in-proof-of-concept-round'; outcome_source=SRC_2000_SELECTION
+    elif outcome=='not-selected':
+        outcome_reason='not-selected-in-proof-of-concept-round'; outcome_source=SRC_2000_SELECTION
+    else:
+        outcome_reason=''; outcome_source=''
+    apps.append({'round':'2000','submission_id':sid,'official_application_id':'','applicant':applicant,'location':location,'status':status,'outcome':outcome,'outcome_reason':outcome_reason,'outcome_source_url':outcome_source,'item_e2_string_count':len(item2),'source_url':SRC_2000})
     for s in item2:
         links.append({'round':'2000','submission_id':sid,'string':s.lower(),'relation_type':'item-e2-requested','source_url':SRC_2000})
 for sid,s,rel in alternatives_2000:
     links.append({'round':'2000','submission_id':sid,'string':s,'relation_type':rel,'source_url':SRC_2000})
+
+by_submission_2000={a['submission_id']:a for a in apps}
+outcome_case_by_submission_2000={'2000-033':'fees-2000','2000-046':'fees-2000','2000-034':'nyc-2000','2000-018':'geo-2000'}
+for link in links:
+    parent=by_submission_2000[link['submission_id']]
+    key=ascii_dot(link['string'])
+    controversy_case_id=governance_case_id_for(key,2000)
+    link.update({
+        'outcome':parent['outcome'],'outcome_reason':parent['outcome_reason'],
+        'outcome_case_id':outcome_case_by_submission_2000.get(parent['submission_id'],''),
+        'outcome_source_url':parent['outcome_source_url'],
+        'contention':'','contention_case_id':'',
+        'controversy':'yes' if controversy_case_id else 'no',
+        'controversy_case_id':controversy_case_id,
+    })
 
 if len(apps)!=47: raise SystemExit(f'2000 submissions {len(apps)} != 47')
 item2=[r for r in links if r['relation_type']=='item-e2-requested']
@@ -114,7 +163,12 @@ if len(source2004)!=10 or len({r['string'].lower() for r in source2004})!=9:
     raise SystemExit('2004 source table must contain 10 applications for 9 strings')
 apps2004=[]
 for i,r in enumerate(source2004,1):
-    apps2004.append({'round':'2004','submission_id':f'2004-{i:03d}','official_application_id':'','string':r['string'].lower(),'applicant':r['applicant'],'location':r['location'],'status':'completed','outcome':r['outcome'],'source_url':r['source_url'] or SRC_2004})
+    # The legacy 2004 table already carries a curated outcome, but this frozen
+    # corpus does not carry a uniformly strong application-level reason source.
+    # Keep reason blank rather than reverse-engineering it from later root state.
+    key=ascii_dot(r['string'])
+    controversy_case_id=governance_case_id_for(key,2004)
+    apps2004.append({'round':'2004','submission_id':f'2004-{i:03d}','official_application_id':'','string':r['string'].lower(),'applicant':r['applicant'],'location':r['location'],'status':'completed','outcome':r['outcome'],'outcome_reason':'','outcome_case_id':'','outcome_source_url':'','contention':'','contention_case_id':'','controversy':'yes' if controversy_case_id else 'no','controversy_case_id':controversy_case_id,'source_url':r['source_url'] or SRC_2004})
 write_csv(DATA/'applications_2004.csv',list(apps2004[0]),apps2004)
 
 # Vendor the complete 2012 Reveal-Day string/applicant graph. The preserved
@@ -168,6 +222,21 @@ string_changes_2012={
     },
 }
 
+# Only source-backed 2012 outcomes carried by this frozen corpus are populated.
+# Blank means unknown here, not delegated/successful and not rejected/failed.
+source_backed_outcomes_2012={
+    '.idn':('excluded-from-further-participation','applicant-support-ineligibility','support-2012',ICANN_2012_SUPPORT),
+    '.ummah':('excluded-from-further-participation','applicant-support-ineligibility','support-2012',ICANN_2012_SUPPORT),
+    '.gcc':('not-approved','gac-consensus-advice','gcc-2012',ICANN_2012_GCC),
+    '.corp':('did-not-proceed','high-risk-name-collision','collision-2012',ICANN_2012_COLLISION),
+    '.home':('did-not-proceed','high-risk-name-collision','collision-2012',ICANN_2012_COLLISION),
+    '.mail':('did-not-proceed','high-risk-name-collision','collision-2012',ICANN_2012_COLLISION),
+}
+nonexact_contention_2012={
+    '.hoteis':'2012-similarity-hoteis-hotels', '.hotels':'2012-similarity-hoteis-hotels',
+    '.unicom':'2012-similarity-unicom-unicorn', '.unicorn':'2012-similarity-unicom-unicorn',
+}
+
 apps2012=[]
 for i,(source_row,string,applicant) in enumerate(pairs,1):
     is_idn=any(ord(ch)>127 for ch in string)
@@ -175,12 +244,24 @@ for i,(source_row,string,applicant) in enumerate(pairs,1):
     change=string_changes_2012.get(a_label)
     target=unicodedata.normalize('NFC',change['target_string']) if change else ''
     target_alabel=alabel_2012(target) if target and any(ord(ch)>127 for ch in target) else target.lower()
+    normalized_key='.'+a_label
+    outcome,outcome_reason,outcome_case_id,outcome_source_url=source_backed_outcomes_2012.get(normalized_key,('','','',''))
+    if counts2012[unicodedata.normalize('NFC',string).casefold()]>1:
+        contention='yes'; contention_case_id='2012-exact-'+a_label
+    elif normalized_key in nonexact_contention_2012:
+        contention='yes'; contention_case_id=nonexact_contention_2012[normalized_key]
+    else:
+        contention='no'; contention_case_id=''
+    controversy_case_id=governance_case_id_for(normalized_key,2012)
     apps2012.append({
         'round':'2012','submission_id':f'2012-{i:04d}',
         'official_application_id':change['official_application_id'] if change else '',
         'string':'.'+string.lower(),'ascii_string':'.'+a_label,'applicant':applicant,
         'idn':'Yes' if is_idn else 'No','a_label':a_label if is_idn else '',
-        'relation_type':'requested','status':'published-application','outcome':'',
+        'relation_type':'requested','status':'published-application','outcome':outcome,
+        'outcome_reason':outcome_reason,'outcome_case_id':outcome_case_id,'outcome_source_url':outcome_source_url,
+        'contention':contention,'contention_case_id':contention_case_id,
+        'controversy':'yes' if controversy_case_id else 'no','controversy_case_id':controversy_case_id,
         'string_change_target':('.'+target.lower()) if target else '',
         'string_change_target_ascii':('.'+target_alabel) if target else '',
         'string_change_reason':change['reason'] if change else '',
@@ -196,6 +277,16 @@ reveal_labels={a['ascii_string'] for a in apps2012}
 replacement_labels={a['string_change_target_ascii'] for a in changed}
 if len(reveal_labels|replacement_labels)!=1412:
     raise SystemExit('2012 Reveal + approved replacement label universe != 1412')
+if sum(bool(a['outcome_reason']) for a in apps2012)!=27:
+    raise SystemExit('2012 source-backed outcome row count != 27')
+if any(a['outcome_reason'] and not a['outcome_source_url'] for a in apps2012):
+    raise SystemExit('2012 outcome reason without source URL')
+if sum(a['contention']=='yes' for a in apps2012)!=755:
+    raise SystemExit('2012 contention dimension count != 755 (751 exact-match + 4 non-exact)')
+if not any(a['contention']=='yes' and a['controversy']=='yes' for a in apps2012):
+    raise SystemExit('independent contention/controversy dimensions have no overlap')
+if not any(a['outcome'] and a['contention']=='yes' for a in apps2012):
+    raise SystemExit('independent outcome/contention dimensions have no overlap')
 write_csv(DATA/'applications_2012.csv',list(apps2012[0]),apps2012)
 
 local_apps=[]
@@ -204,20 +295,20 @@ for link in links:
     a=by_id[link['submission_id']]
     local_apps.append({
         'round':'2000','submissionId':a['submission_id'],'applicationId':'','string':link['string'],'applicant':a['applicant'],'location':a['location'],
-        'region':'','idn':False,'aLabel':'','scriptCode':'','community':None,'geographic':None,'status':a['status'],'outcome':a['outcome'],
+        'region':'','idn':False,'aLabel':'','scriptCode':'','community':None,'geographic':None,'status':a['status'],'outcome':a['outcome'],'outcomeReason':link['outcome_reason'],'outcomeCaseId':link['outcome_case_id'],'outcomeSource':link['outcome_source_url'],'contention':link['contention'],'contentionCaseId':link['contention_case_id'],'controversy':link['controversy'],'controversyCaseId':link['controversy_case_id'],
         'relationType':link['relation_type'],'source':SRC_2000
     })
 for a in apps2004:
     local_apps.append({
         'round':'2004','submissionId':a['submission_id'],'applicationId':'','string':a['string'],'applicant':a['applicant'],'location':a['location'],
-        'region':'','idn':False,'aLabel':'','scriptCode':'','community':None,'geographic':None,'status':a['status'],'outcome':a['outcome'],
+        'region':'','idn':False,'aLabel':'','scriptCode':'','community':None,'geographic':None,'status':a['status'],'outcome':a['outcome'],'outcomeReason':a['outcome_reason'],'outcomeCaseId':a['outcome_case_id'],'outcomeSource':a['outcome_source_url'],'contention':a['contention'],'contentionCaseId':a['contention_case_id'],'controversy':a['controversy'],'controversyCaseId':a['controversy_case_id'],
         'relationType':'requested','source':a['source_url']
     })
 for a in apps2012:
     base={
         'round':'2012','submissionId':a['submission_id'],'applicationId':a['official_application_id'],'string':a['string'],'asciiString':a['ascii_string'],'applicant':a['applicant'],
         'location':'','region':'','idn':a['idn']=='Yes','aLabel':a['a_label'],'scriptCode':'','community':None,'geographic':None,
-        'status':a['status'],'outcome':'','relationType':'requested','source':a['source_url'],
+        'status':a['status'],'outcome':a['outcome'],'outcomeReason':a['outcome_reason'],'outcomeCaseId':a['outcome_case_id'],'outcomeSource':a['outcome_source_url'],'contention':a['contention'],'contentionCaseId':a['contention_case_id'],'controversy':a['controversy'],'controversyCaseId':a['controversy_case_id'],'relationType':'requested','source':a['source_url'],
         'sourceRole':a['source_role'],'metadataScope':a['metadata_scope'],'sourceRow':a['source_row']
     }
     local_apps.append(base)
@@ -249,6 +340,8 @@ manifest={
       'expectedOriginalHeader':['String','Applicant','Website','Location','Region','Primary Contact','Email','IDN?','A-Label','English Meaning','Script Code','Community?','Geographic?','Application ID'],
       'fieldsVendored':['String','Applicant','approved post-Reveal string-change target for four applications'],
       'derivedFields':['A-Label for IDNs','IDN flag','project record ID','contention counts'],
+      'outcomeFields':{'fields':['outcome','outcome_reason','outcome_case_id','outcome_source_url'],'coverage':'source-backed subset only','rule':'Blank means not documented in this frozen corpus; no result is inferred from present-day root status.','sourceBackedApplicationRows':27},
+      'independentDimensions':{'contention':['contention','contention_case_id'],'controversy':['controversy','controversy_case_id'],'rule':'Outcome, contention and controversy are independent. A row may carry more than one dimension; editorial case selection does not collapse them.'},
       'approvedStringChanges':4,'additionalUniqueReplacementStrings':3,'applicationStringLifecycleLabels':1412,
       'initialStringSimilarityContention':{
           'source':ICANN_2012_INITIAL_CONTENTION,

@@ -5,6 +5,11 @@ As of: **4 October 2026**
 
 The CSV files are research inputs and reusable publication data. `applications_2026.csv` intentionally contains the schema header and **zero application records** before ICANN Reveal Day; no synthetic placeholder observation is inserted. Aggregate 2026 scaffold files can contain named rows with empty values only when the row itself is a documented metric or classification bucket and its status explicitly says that official 2026 data is still to be loaded.
 
+
+## v0.7.32 application outcome model
+
+`applications_2000.csv`, `applications_2004.csv` and `applications_2012.csv` keep **outcome** separate from **outcome_reason**. `outcome_source_url` identifies the evidence used for a populated reason. The 2012 corpus is complete for the frozen string/applicant graph, but not for final application-status metadata: only outcome reasons supported by the locally curated primary-source cases are populated. A blank field is therefore unknown in this corpus and must not be interpreted as delegated, rejected, withdrawn or otherwise resolved. Contention and governance controversy remain independent analytical dimensions.
+
 The Explorer separates the current indexed view from researched history:
 
 - `explorer_catalog.csv` is the **latest indexed record view** used for search/filtering.

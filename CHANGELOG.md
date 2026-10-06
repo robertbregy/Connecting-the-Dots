@@ -1,3 +1,27 @@
+# Changelog
+
+## v0.7.32 — 2026-10-06
+- Reframes the editorial layer from “Rejections & stops” to **Application outcomes**; Italian title: **Candidature che non ce l’hanno fatta** with the precise subtitle **Perché alcune stringhe candidate non sono mai entrate nella root DNS**.
+- Makes the taxonomy explicit: outcome, contention and governance controversy are independent dimensions; one story has one primary editorial home and cross-links elsewhere.
+- Adds `outcome_reason` and `outcome_source_url` to the historical application datasets. 2000 and 2004 retain their existing sourced outcomes; 2012 outcome fields are populated only for the source-backed cases in this frozen corpus and remain blank elsewhere rather than being inferred.
+- Preserves the v0.7.30 universal pre-2026 application coverage and the v0.7.31 six-case editorial layer.
+- Keeps the pre-Reveal 2026 corpus intentionally empty until official Reveal Day.
+
+## v0.7.31 — 2026-10-05
+- Separates formal application rejections/stops from governance controversies as a distinct editorial layer.
+- Adds six sourced stop stories covering administrative return, voluntary withdrawal, proof-of-concept non-selection, Applicant Support eligibility, GAC/Board public-policy refusal, and high-risk DNS name collisions.
+- Adds a 30 August 2013 Initial Evaluation snapshot to show why “not delegated”, “withdrawn” and “not approved” are not interchangeable statuses.
+- Connects stop cases to the Explorer through a dedicated preset, badges and drawer cross-links while deliberately preventing overlap with the existing governance-dispute corpus.
+- Keeps all 1,849 Explorer records and the complete pre-2026 formal application-string graph unchanged.
+- Reduces the browser-upload publication archive from 100 to 99 files by excluding the build-time-only `data/research.json`; the source release retains it.
+
+## v0.7.30 — 2026-10-05
+- Completes the pre-2026 historical application-string universe in Explorer by vendoring all 1,930 2012 Reveal-Day string/applicant rows (1,409 distinct strings), including never-delegated strings.
+- Adds a public sanitized `applications_2012.csv`; personal contact/e-mail fields and richer nonessential fields from the original 14-column transport are not republished.
+- Keeps browser-time external research enrichment disabled and validates 2012 contention/IDN totals at build and release-check time.
+- Documents ICANN's two initial non-exact 2012 string-similarity contention sets separately from the 230 exact-match sets.
+- Keeps synthetic local 2012 record IDs internal so the UI never presents them as official ICANN application IDs.
+
 # v0.7.29 — Pre-Reveal editorial consistency freeze
 
 - Align the visible 2012 corpus description in all four languages with the frozen pre-Reveal runtime state: the full 2012 corpus is not fetched or merged before Reveal Day.

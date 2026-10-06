@@ -1,7 +1,7 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.30",
-  "release_date": "2026-10-05",
+  "version": "0.7.32",
+  "release_date": "2026-10-06",
   "publication_state": "pre-reveal",
   "rendering": "static-prerendered",
   "language_routes": {
@@ -23,6 +23,7 @@
     "Blank 2026 aggregate values are scaffolding, not observations.",
     "Every preserved IANA database entry has a normalized profile; root-list membership is separate from database presence.",
     "Application Archaeology separates submissions, applied-for strings and delegated TLD identity; never-delegated applications do not increase the TLD universe.",
+    "Application outcome is modeled independently from contention and governance controversy. outcome_reason is populated only where this frozen corpus carries source-backed evidence; blank outcome fields are unknown here, not inferred successes or failures.",
     "The complete 2012 Reveal-Day string/applicant graph is vendored locally: 1,930 applications across 1,409 distinct strings. Primary Contact and Email from the historic richer transport are not stored, exposed or exported; the browser performs no external research fetch.",
     "TLD Life Histories use only the frozen local chronology in this pre-Reveal freeze. Browser-time ICANN gTLD contract-lifecycle enrichment is deliberately disabled until the controlled Reveal Day update. Undocumented phases are never inferred.",
     "Disputed Dots adds nine editorially selected governance cases as a structured layer linked to Explorer strings; FACT and READING remain separate, and case sources are primary ICANN/IANA records.",
@@ -153,6 +154,28 @@
             "project record ID",
             "contention counts"
           ],
+          "outcomeFields": {
+            "fields": [
+              "outcome",
+              "outcome_reason",
+              "outcome_case_id",
+              "outcome_source_url"
+            ],
+            "coverage": "source-backed subset only",
+            "rule": "Blank means not documented in this frozen corpus; no result is inferred from present-day root status.",
+            "sourceBackedApplicationRows": 27
+          },
+          "independentDimensions": {
+            "contention": [
+              "contention",
+              "contention_case_id"
+            ],
+            "controversy": [
+              "controversy",
+              "controversy_case_id"
+            ],
+            "rule": "Outcome, contention and controversy are independent. A row may carry more than one dimension; editorial case selection does not collapse them."
+          },
           "approvedStringChanges": 4,
           "additionalUniqueReplacementStrings": 3,
           "applicationStringLifecycleLabels": 1412,
@@ -219,6 +242,8 @@
     "lifeHistoryStaticEventCount": 7678,
     "governanceCaseCount": 9,
     "governanceCaseStringCount": 15,
+    "refusalCaseCount": 6,
+    "refusalCaseStringCount": 12,
     "economicCaseCount": 8,
     "economicCaseStringCount": 11,
     "economicMetricCount": 22,
@@ -232,7 +257,7 @@
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "release_history": {
     "path": "release_history.json",
-    "sha256": "f30942d73b12281f9eae5ec354f654418318a913ae9c1e0959ffcff6938ad99e"
+    "sha256": "6397d1aa4b2291de5e3e3fcaf309bdcb8dfddf6c6ea07b4276752e5921b351e3"
   },
   "freeze": {
     "status": "pre-reveal-frozen",
@@ -247,18 +272,18 @@
     "assets": [
       {
         "repository_path": "data/site_bundle.js",
-        "bytes": 1957353,
-        "sha256": "11cb25d998192b7e5274ab4d698460de2853190d4d7a12fa64cf893572fa3ebd"
+        "bytes": 1965656,
+        "sha256": "be4a095c59900aa19ef707339ae788ce3fd2183b5441c3c2d18e93c15716a21a"
       },
       {
         "repository_path": "assets/app.js",
-        "bytes": 98973,
-        "sha256": "a3ca0bfa471262c7d338ae4ebf55514a12f8db920a54b9c2449eed2a6d187626"
+        "bytes": 103706,
+        "sha256": "150aca1ba98b96664513239c6413a1eec56704cf20b191d8b9c350c85bf2292a"
       },
       {
         "repository_path": "assets/style.css",
-        "bytes": 97761,
-        "sha256": "ee5774523e783c21e27dd05f6c0f1f1948e52ddc220fd875338a74ec7bd3676e"
+        "bytes": 101536,
+        "sha256": "ab9218f92ced69b2bd6e455329d5b7b0f97c9bd6223598a81eade21bba66c259"
       },
       {
         "repository_path": "data/worldmap.js",
@@ -267,43 +292,43 @@
       },
       {
         "repository_path": "data/explorer_profiles_0.js",
-        "bytes": 995122,
-        "sha256": "da2e879fa72a174cf2969ab111e130bf99fc32327a606ba4760faca1a0bc0131"
+        "bytes": 1046264,
+        "sha256": "dc91752b20599e37a118d1d6a6920330abb4909a1a4f9bcb20a238dfd49c1a5d"
       },
       {
         "repository_path": "data/explorer_profiles_1.js",
-        "bytes": 831521,
-        "sha256": "cb6f590be2bf3fb2aa62fc6fb376cc9593e50d0a2511914e5dc44d8c019f3676"
+        "bytes": 869821,
+        "sha256": "9649463fac1181cbb89cfb1ac37d1e6bf7e50951351b7a194d102c917207be20"
       },
       {
         "repository_path": "data/explorer_profiles_2.js",
-        "bytes": 922837,
-        "sha256": "5d21b7dbdb8e9d5b627ac235f0703262ecc21c780d8aa0abf3411d62d73564af"
+        "bytes": 967385,
+        "sha256": "a6e939bb4cd49ce72e104de05fae56e3ff540c2464910e5a8d401b790351367e"
       },
       {
         "repository_path": "data/explorer_profiles_3.js",
-        "bytes": 853674,
-        "sha256": "e490145245f3441951fec3ef4728d6d17769ef6c35c57b4c25510191052b03df"
+        "bytes": 895720,
+        "sha256": "a2d4c1cbb598bf5c9030ac7f550fa67a0fefd3114208959048095f06eb1218b3"
       },
       {
         "repository_path": "data/explorer_profiles_4.js",
-        "bytes": 889161,
-        "sha256": "21221ed51712a92d5f86b8dbdb4f2d8c72dac27919c7c237849644da054bf0be"
+        "bytes": 933775,
+        "sha256": "b03d2435c5a569a7e100ca12c4c848f59bea2f29054bf09be006a734a6116802"
       },
       {
         "repository_path": "data/explorer_profiles_5.js",
-        "bytes": 854084,
-        "sha256": "276e70d5712d47020c3e12cfaff3a62be80350076589b8cd31118ce488b426c7"
+        "bytes": 904561,
+        "sha256": "b97827ceba92a2333c333fd43b38180785b1bf3197c883466bc7779b5558b38c"
       },
       {
         "repository_path": "data/explorer_profiles_6.js",
-        "bytes": 871261,
-        "sha256": "ae2c846adfb16f96a0e92105747b30c47d8fadf204430b441de7df2888c808b3"
+        "bytes": 914442,
+        "sha256": "c0eadfd790efac22e3ab83ac75e44caedf70ab68e5b7babbd5e47b6ed0c7f1eb"
       },
       {
         "repository_path": "data/explorer_profiles_7.js",
-        "bytes": 859619,
-        "sha256": "1810b6e0b1379ecbbadaac9f91dded7e2c38acb93f1afd0bc40e69add11d753d"
+        "bytes": 898731,
+        "sha256": "97632f7615e2bef1efc0c6dd27d475fede5db8cf7dfcded03a2ae25d010ca0b5"
       }
     ]
   },
@@ -328,27 +353,27 @@
     },
     {
       "path": "application_strings_2000.csv",
-      "bytes": 24745,
+      "bytes": 63364,
       "records": 225,
-      "sha256": "cdddff4444229a3f51f314e2d0e58935e188bc8dffb59c03fe79f593cec1f435"
+      "sha256": "abc6b07b17d4a8e3882f0ab885e4fd4d66ed795224758a22ac6726c1e81486a3"
     },
     {
       "path": "applications_2000.csv",
-      "bytes": 7425,
+      "bytes": 14439,
       "records": 47,
-      "sha256": "bdf22dfc1b10ef01b789b955c1807f01b2f39707a525e1d82025d9fb9abd02a4"
+      "sha256": "e6b7143b5b73b3c9a00dfccb95f2409747d234f37b8903275cb77fcf8885d656"
     },
     {
       "path": "applications_2004.csv",
-      "bytes": 2182,
+      "bytes": 2388,
       "records": 10,
-      "sha256": "61725a671285b33a86c0673e1660d75fc513843a0e894abc434bc6078fd189b7"
+      "sha256": "ae50f520605518655bb8ec08ecbb756cc0d31140427037c19bff3a88c73fce1b"
     },
     {
       "path": "applications_2012.csv",
-      "bytes": 569837,
+      "bytes": 609268,
       "records": 1930,
-      "sha256": "99c9e4037863fb2716f1a0d995cc2424a3fb1d8fbc5f735b26b10dbf7a542c7d"
+      "sha256": "dd1e4b81c886a84f6de36f40b1a41f90331d794d6df2c84602f3fcd4d57d4a70"
     },
     {
       "path": "applications_2026.csv",
@@ -430,9 +455,9 @@
     },
     {
       "path": "explorer_events.csv",
-      "bytes": 1373624,
+      "bytes": 1374282,
       "records": 7678,
-      "sha256": "1181321cf088f6b872648e592a385adcf73c0ba2533890082af4402892f0a295"
+      "sha256": "26048131abafc6761752c5c954aa1cc096c246fb7e9b775cf1ffd0a2cbdadad0"
     },
     {
       "path": "explorer_iana_reports.csv",
@@ -532,9 +557,9 @@
     },
     {
       "path": "sources.csv",
-      "bytes": 19025,
-      "records": 167,
-      "sha256": "b8d23ae59b62c4888b2e64067f1b5fc4a88bc75b02399a66aa69dec45e166519"
+      "bytes": 20991,
+      "records": 181,
+      "sha256": "c9f0f571d114a345b60316780404c3b53db714cd4c9d5a04789e4cf5a7f128c3"
     },
     {
       "path": "strange_internet.csv",
@@ -550,9 +575,9 @@
     },
     {
       "path": "tld_life_histories.csv",
-      "bytes": 1373624,
+      "bytes": 1374282,
       "records": 7678,
-      "sha256": "1181321cf088f6b872648e592a385adcf73c0ba2533890082af4402892f0a295"
+      "sha256": "26048131abafc6761752c5c954aa1cc096c246fb7e9b775cf1ffd0a2cbdadad0"
     },
     {
       "path": "tld_models.csv",
