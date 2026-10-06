@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.7.33 — 2026-10-06
+- Accessibility hardening only: preserves the v0.7.32 research corpus, content hierarchy, layout and resting visual design.
+- Makes the Explorer drawer a stricter modal experience: background landmarks become `inert`, initial focus lands on the profile heading, focus remains trapped and returns to the invoking control.
+- Corrects disclosure navigation semantics and makes `Escape` close an open disclosure while returning focus to its trigger.
+- Replaces false keyboard “buttons” inside the SVG geography map with an equivalent screen-reader-only data list while retaining pointer tooltips visually.
+- Adds table captions/column scopes, universal keyboard `:focus-visible` treatment and explicit nonvisual announcements for external links that open in a new tab.
+
 ## v0.7.32 — 2026-10-06
 - Reframes the editorial layer from “Rejections & stops” to **Application outcomes**; Italian title: **Candidature che non ce l’hanno fatta** with the precise subtitle **Perché alcune stringhe candidate non sono mai entrate nella root DNS**.
 - Makes the taxonomy explicit: outcome, contention and governance controversy are independent dimensions; one story has one primary editorial home and cross-links elsewhere.

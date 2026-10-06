@@ -57,7 +57,7 @@ if '"lifeHistoryGtldContractsRuntime":false' not in (DATA/'data_bundle.js').read
 arch_manifest=json_file('application_archaeology_manifest.json')
 if arch_manifest.get('runtimeTransport2012',{}).get('status')!='disabled-local-corpus-vendored': fail('2012 local-corpus transport state is not declared')
 changelog=(ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
-for marker in ['v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
+for marker in ['v0.7.33','v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
     if marker not in changelog: fail('changelog missing '+marker)
 readme=(ROOT/'README.md').read_text(encoding='utf-8')
 if "No live refresh occurs in a visitor's browser." in readme: fail('README contains obsolete no-live-refresh claim')
@@ -93,6 +93,19 @@ for css_marker in ['.skipLink{','--vision-text:','#main-content:focus{outline:no
     if css_marker not in style: fail('accessibility CSS invariant missing: '+css_marker)
 if '.heroActions' not in style or '.explorerSearchPrimary' not in style:
     fail('progressive-disclosure UX styling missing')
+
+# v0.7.33 accessibility contract: semantic/keyboard hardening without a visual redesign.
+if 'aria-haspopup="true"' in template: fail('disclosure navigation still claims popup-menu semantics')
+for marker in ['aria-controls="navThemesDropdown"','aria-controls="navRoundDropdown"','aria-controls="navResearchDropdown"','<caption class="srOnly" data-i18n="exploreTitle"','<caption class="srOnly" data-i18n="timeCapsule"','id="profileTitle" tabindex="-1"']:
+    if marker not in template: fail('v0.7.33 accessibility marker missing: '+marker)
+if template.index('</main>') > template.index('id="explorerDrawer"'): fail('Explorer modal must sit outside inertable main landmark')
+for marker in ['function setModalBackgroundInert(on)','setModalBackgroundInert(true)','setModalBackgroundInert(false)',"const focusDialogTitle=()=>","focus({preventScroll:true})",'<h2 class="drawerTld" id="profileTitle" tabindex="-1">','function hardenExternalLinks(root=document)',"t('opensNewTab')","trigger?.focus()",'aria-hidden="true" focusable="false"','class="srOnly geoMapData"']:
+    if marker not in appjs: fail('v0.7.33 runtime accessibility invariant missing: '+marker)
+if 'role="button" aria-label=' in appjs and 'mapDatum' in appjs: fail('map points still masquerade as keyboard buttons')
+if ':where(a,button,input,select,summary,[tabindex]):focus-visible{' not in style: fail('global keyboard focus-visible rule missing')
+tr_a11y=json_file('translations.json')
+for lang in LANGS:
+    if not tr_a11y[lang].get('opensNewTab') or not tr_a11y[lang].get('release0733'): fail(f'v0.7.33 accessibility translation missing for {lang}')
 
 # v0.7.19 mobile journey contract: no fixed-width escape hatch, lesson first,
 # narrow diagrams reflow and step changes can recover the current reading position.
@@ -293,6 +306,7 @@ if tr['it'].get('release0729') is None: fail('release0729 translation missing')
 if tr['it'].get('release0730') is None: fail('release0730 translation missing')
 if tr['it'].get('release0731') is None: fail('release0731 translation missing')
 if tr['it'].get('release0732') is None: fail('release0732 translation missing')
+if tr['it'].get('release0733') is None: fail('release0733 translation missing')
 for lang in LANGS:
     for key in ['tabRefusals','refusalsTitle','refusalsSubtitle','refusalsBoundaryBody','refusalTaxonomyTitle','refusalCasesTitle','refusalCaseBadge','explorePresetRefusals','applicationContention','applicationControversy','outcomeReasonLabel','outcomeEvidence','outcome_excluded_from_further_participation','outcome_not_approved','outcome_did_not_proceed']:
         if not tr[lang].get(key): fail(f'missing application-outcome translation {lang}/{key}')

@@ -1717,7 +1717,9 @@
     "outcomeReason_not_selected_in_proof_of_concept_round": "Not selected in the proof-of-concept round",
     "outcomeReason_applicant_support_ineligibility": "Applicant Support eligibility failure",
     "outcomeReason_gac_consensus_advice": "GAC consensus advice",
-    "outcomeReason_high_risk_name_collision": "High-risk name collision"
+    "outcomeReason_high_risk_name_collision": "High-risk name collision",
+    "opensNewTab": "opens in a new tab",
+    "release0733": "Accessibility hardening for screen readers and keyboard navigation: modal focus/inert background, disclosure-menu Escape behavior, nonvisual map data, stronger table semantics and explicit external-link announcements. No research data, layout or resting visual design changed."
   },
   "it": {
     "brand": "Brand",
@@ -3437,7 +3439,9 @@
     "outcomeReason_not_selected_in_proof_of_concept_round": "Non selezionata nel round proof-of-concept",
     "outcomeReason_applicant_support_ineligibility": "Mancata ammissibilità all’Applicant Support",
     "outcomeReason_gac_consensus_advice": "Parere consensuale del GAC",
-    "outcomeReason_high_risk_name_collision": "Collisione di nomi ad alto rischio"
+    "outcomeReason_high_risk_name_collision": "Collisione di nomi ad alto rischio",
+    "opensNewTab": "si apre in una nuova scheda",
+    "release0733": "Rafforzamento dell’accessibilità per screen reader e tastiera: focus e sfondo inerte del dialogo, chiusura Escape dei menu disclosure, dati cartografici non visivi, semantica delle tabelle e annuncio esplicito dei link esterni. Nessun dato di ricerca, layout o aspetto visivo a riposo è stato modificato."
   },
   "de": {
     "brand": "Marke",
@@ -5157,7 +5161,9 @@
     "outcomeReason_not_selected_in_proof_of_concept_round": "Im Proof-of-Concept-Round nicht ausgewählt",
     "outcomeReason_applicant_support_ineligibility": "Kriterien des Applicant Support nicht erfüllt",
     "outcomeReason_gac_consensus_advice": "Konsensberatung des GAC",
-    "outcomeReason_high_risk_name_collision": "Hochriskante Namenskollision"
+    "outcomeReason_high_risk_name_collision": "Hochriskante Namenskollision",
+    "opensNewTab": "öffnet in einem neuen Tab",
+    "release0733": "Barrierefreiheits-Härtung für Screenreader und Tastaturnavigation: Dialogfokus und inaktiver Hintergrund, Escape-Verhalten der Disclosure-Navigation, nichtvisuelle Kartendaten, stärkere Tabellensemantik und explizite Hinweise für externe Links. Forschungsdaten, Layout und ruhendes Erscheinungsbild bleiben unverändert."
   },
   "fr": {
     "brand": "Marque",
@@ -6877,6 +6883,8 @@
     "outcomeReason_not_selected_in_proof_of_concept_round": "Non sélectionnée dans le round proof-of-concept",
     "outcomeReason_applicant_support_ineligibility": "Critères de l’Applicant Support non satisfaits",
     "outcomeReason_gac_consensus_advice": "Avis consensuel du GAC",
-    "outcomeReason_high_risk_name_collision": "Collision de noms à haut risque"
+    "outcomeReason_high_risk_name_collision": "Collision de noms à haut risque",
+    "opensNewTab": "s’ouvre dans un nouvel onglet",
+    "release0733": "Renforcement de l’accessibilité pour les lecteurs d’écran et la navigation au clavier : focus et arrière-plan inerte du dialogue, fermeture Échap des menus de divulgation, données cartographiques non visuelles, sémantique renforcée des tableaux et annonce explicite des liens externes. Aucune donnée de recherche, mise en page ou apparence visuelle au repos n’a été modifiée."
   }
 }

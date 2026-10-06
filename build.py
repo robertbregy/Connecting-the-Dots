@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.32"
+VERSION = "0.7.33"
 
 
 def csv_records(path: Path) -> int:

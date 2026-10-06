@@ -1,5 +1,8 @@
-# Connecting the Dots — v0.7.31
+# Connecting the Dots — v0.7.33
 
+## v0.7.33 — Accessibility hardening without visual redesign
+
+This release changes no research dataset, information architecture, layout or resting visual design. It hardens the existing interface for screen readers and keyboard users: stricter modal focus/inert behavior, disclosure-navigation Escape handling, equivalent nonvisual map data, stronger table semantics, universal keyboard focus visibility and explicit accessible names for external links opening in a new tab.
 
 ## v0.7.32 — Application outcomes as a separate factual dimension
 
