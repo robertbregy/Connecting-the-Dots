@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.7.36 — 2026-10-06
+- Deduplicates Explorer card location metadata when the registry country and represented place resolve to the same localized label (the `.ai` / Anguilla case).
+- Changes no research CSV, Explorer record, profile detail, application history, contention, controversy, outcome or IANA snapshot.
+- Adds a regression guard so duplicate adjacent location labels cannot silently return.
+
 ## v0.7.35 — 2026-10-06
 - Adds localized alternative text for the Open Graph and Twitter/X social preview image in all four languages.
 - Aligns deployment documentation with the actual 99-file browser-upload ceiling and documents stale-file cleanup explicitly.

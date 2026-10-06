@@ -1,4 +1,8 @@
-# Connecting the Dots — v0.7.35
+# Connecting the Dots — v0.7.36
+
+## v0.7.36 — Explorer card location deduplication
+
+This final pre-Reveal micro-release removes a single presentation redundancy in Explorer cards: when the registry country and represented place localize to the same label, that location is shown once. No research corpus or profile detail changes.
 
 ## v0.7.35 — Repository hygiene and metadata hardening
 

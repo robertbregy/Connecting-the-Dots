@@ -56,6 +56,7 @@ if f"version:'{version}'" not in pub or "asOf:'2026-10-04'" not in pub: fail('pu
 
 # Release-integrity invariants added in v0.7.18.
 appjs=(ROOT/'assets/app.js').read_text(encoding='utf-8')
+if 'showRepresentedPlace=representedPlace&&norm(representedPlace)!==norm(registryCountry)' not in appjs: fail('Explorer card location deduplication guard missing')
 if 'fmtNum(1987)' in appjs or 'fmtNum(57)' in appjs: fail('application archaeology count is hard-coded')
 if 'applicationCorpusComplete=true' in appjs: fail('runtime merge may not mark the full application corpus complete directly')
 if 'syncApplicationCorpusComplete()' not in appjs: fail('application corpus completeness is not derived')
@@ -66,7 +67,7 @@ if '"lifeHistoryGtldContractsRuntime":false' not in (DATA/'data_bundle.js').read
 arch_manifest=json_file('application_archaeology_manifest.json')
 if arch_manifest.get('runtimeTransport2012',{}).get('status')!='disabled-local-corpus-vendored': fail('2012 local-corpus transport state is not declared')
 changelog=(ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
-for marker in ['v0.7.34','v0.7.33','v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
+for marker in ['v0.7.36','v0.7.35','v0.7.34','v0.7.33','v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
     if marker not in changelog: fail('changelog missing '+marker)
 readme=(ROOT/'README.md').read_text(encoding='utf-8')
 if "No live refresh occurs in a visitor's browser." in readme: fail('README contains obsolete no-live-refresh claim')
