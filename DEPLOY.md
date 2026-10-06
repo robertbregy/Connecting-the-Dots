@@ -1,66 +1,45 @@
-# Deploy
+# Deployment
 
-Il progetto è statico. La release include già le pagine generate e tutte le risorse condivise: GitHub Pages deve soltanto pubblicare il contenuto della cartella nella root del repository `Connecting-the-Dots`, branch `main`.
+## Browser upload
 
-URL pubblico: https://robertbregy.github.io/Connecting-the-Dots/
+Use `Connecting-the-Dots-vX.Y.Z-PUBBLICAZIONE.zip`. Extract it locally, remove obsolete repository files that are not present in the archive, then upload the archive contents to the repository root. The deploy archive is intentionally limited to 99 files.
 
-## Aggiornamento da browser GitHub
-
-1. Scompatta lo ZIP sul computer una sola volta. Lascia compressi gli archivi che trovi al suo interno, compreso quello delle fonti IANA: il pacchetto completo resta sotto i 100 file.
-2. Apri il repository `robertbregy/Connecting-the-Dots` su GitHub.
-3. Entra nella root del repository e scegli **Add file → Upload files**.
-4. Trascina **il contenuto** della cartella estratta, non la cartella esterna che la contiene. Devono quindi arrivare in root `index.html`, `en/`, `it/`, `de/`, `fr/`, `README.md`, `assets/`, `data/`, `downloads/`, `src/`, `scripts/`, ecc.
-5. Verifica l'elenco dei file modificati e crea un commit con un messaggio come `Update Connecting the Dots to v0.7.10`.
-6. GitHub Pages ridistribuirà automaticamente il sito dal branch configurato.
-
-Nota: l'upload web sostituisce i file con lo stesso percorso, ma non elimina automaticamente eventuali file obsoleti che non sono presenti nel nuovo pacchetto. La v0.7.10 non richiede la rimozione dei vecchi file per funzionare.
-
-Carica il pacchetto **completo**: dalla 0.7.8 le pagine condividono CSS, codice e indice, mentre le schede sono caricate a richiesta. Devono esserci anche `data/site_bundle.js` e tutti gli otto file `data/explorer_profiles_0.js`–`data/explorer_profiles_7.js`. Dopo il deployment verifica il footer `v0.7.10`, apri una scheda nell'Explorer, condividi il suo link, prova Indietro, cambia lingua e controlla l'impaginazione anche sul telefono.
-
-## Aggiornamento da Git / terminale
-
-Se il repository è già clonato localmente, copia il contenuto della nuova release nella cartella del repository e poi esegui:
+A Git commit is the recommended deployment path because it records deletions correctly:
 
 ```bash
+git checkout main
+git pull --ff-only
+# replace the working tree with the PUBBLICAZIONE archive contents
 git add -A
-git commit -m "Update Connecting the Dots to v0.7.10"
+git commit -m "Publish Connecting the Dots vX.Y.Z"
 git push origin main
 ```
 
-## Build per modifiche future
+Do not stack browser-upload ZIPs over older repository contents without removing obsolete files. That practice leaves stale data and documentation behind.
 
-La release distribuita non richiede build lato GitHub. Se però modifichi i sorgenti o i dati, rigenera prima l'artefatto finale:
+## Rebuild from source
+
+Use the SOURCE archive:
 
 ```bash
+npm ci
 python3 build.py
+python3 scripts/release_check.py
+python3 scripts/package_release.py --kind deploy
+python3 scripts/package_release.py --kind source
 ```
 
-La build aggiorna tutte le pagine linguistiche, i bundle runtime e le otto raccolte di schede, `explorer_catalog.csv`, `explorer_events.csv`, i CSV di server DNS e rapporti IANA, `data/manifest.json` e il data pack scaricabile. Per aggiornare le fonti e registrare una nuova release, segui il flusso documentato in `README.md`; non sono previsti aggiornamenti automatici dei dati.
+`npm ci` uses the committed lockfile. The primary prerenderer is Node + linkedom. The optional Python fallback requires the packages listed in `requirements-fallback.txt` plus Chromium; set `CHROMIUM_PATH` if Chromium is not discoverable on `PATH`.
 
-## Repository “About”
+## Release discipline
 
-Dalla pagina principale del repository, usa l'icona a forma di ingranaggio accanto a **About** e imposta:
+Create a Git tag and GitHub Release for each published version, attach both archives and record their SHA-256 hashes. The live `main` branch is mutable; a release tag is the immutable citation/rollback point.
 
-- Description: `An interactive research publication on TLDs, Internet governance and the 2026 ICANN round`
-- Website: `https://robertbregy.github.io/Connecting-the-Dots/`
-- Topics: `icann`, `dns`, `tld`, `internet-governance`, `data-visualization`, `digital-identity`, `cities`
+## Known stale browser-upload residues
 
-## Social preview
+Browser uploads overwrite matching paths but do not delete files omitted by later releases. Before or immediately after publishing v0.7.35, remove these obsolete repository-root files if they are still present:
 
-`og:url`, `og:image` e `twitter:image` puntano al percorso pubblico. La social preview è in `assets/og-preview.png`.
+- `REDEPLOY_FULL.md`
+- `start.command`
 
-## Apertura locale
-
-Servi la cartella via HTTP:
-
-```bash
-python3 -m http.server 8000
-```
-
-Poi apri `http://127.0.0.1:8000/`.
-
-## Pagine linguistiche
-
-Carica anche le quattro cartelle `en/`, `it/`, `de/` e `fr/`: contengono le pagine effettive della pubblicazione. La root e i vecchi link con `?lang=…` portano alla versione corretta.
-
-Il pacchetto è già compilato. Per ricompilarlo occorrono Node.js 18+ e Python 3: esegui prima `npm ci`, quindi `python3 build.py`. Non caricare `node_modules/` nel repository o su GitHub Pages.
+`RELEASE_NOTES_0.7.4.md` may remain only as an explicitly historical release note. `DEPLOY.md` and `package-lock.json` must match the current source release rather than an older browser-upload residue.
