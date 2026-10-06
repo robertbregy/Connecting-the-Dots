@@ -1,4 +1,8 @@
-# Connecting the Dots — v0.7.37
+# Connecting the Dots — v0.7.38
+
+## v0.7.38 — Full-site layout sweep
+
+This pre-Reveal layout-hardening release follows a complete 17-section × 4-language structural sweep. It keeps research data and content unchanged while removing the remaining artificial equal-height stretches that create visible dead space: Sources, Geography and Contention keep asymmetric panels at natural height, while the Economics model tiles no longer stretch shorter cards to match the long historical private-contention card. It also hardens narrow-screen wrapping for long translated compounds. The v0.7.37 Strange Internet natural-height fix is preserved.
 
 ## v0.7.37 — Natural-height Strange Internet cards
 

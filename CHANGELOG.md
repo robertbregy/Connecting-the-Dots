@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.7.38 — 2026-10-06
+- Completes a 17-section × 4-language pre-Reveal layout sweep after the Strange Internet natural-height fix.
+- Prevents the short Sources methodological-guardrails panel from stretching to the height of the full source inventory.
+- Keeps the asymmetric two-panel comparisons in Geography and Contention at natural height instead of stretching the shorter panel.
+- Keeps Economics model cards at natural height so the long historical private-contention model no longer inflates neighboring cards.
+- Changes no research dataset, card content, navigation order, Explorer logic or mobile single-column behavior.
+
+
 ## v0.7.37 — 2026-10-06
 - Reflows the institutional-oddities families in Strange Internet into a natural-height two-column masonry-style layout on desktop, eliminating artificial vertical stretching of short `.cs` and `.gb / .uk` cards.
 - Preserves DOM reading order, single-column mobile rendering, all research data and all card content.
