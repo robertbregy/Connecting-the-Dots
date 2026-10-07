@@ -1,18 +1,18 @@
-# Connecting the Dots — v0.7.40
+# Connecting the Dots — v0.7.41
 
-## v0.7.40 — Final pre-Reveal polish
+## v0.7.40 — Final Reveal Day polish
 
 This release centralizes displayed counts on the locale-aware number formatter, including the remaining static 2026 source-chip count, shortens multilingual meta descriptions, enriches Dataset JSON-LD with release version/date and primary-source provenance, and documents that the repository-level `robots.txt` lives below the GitHub Pages host root and is therefore informational rather than authoritative. Research corpora, Explorer identities/events, layout and runtime behavior are unchanged.
 
 ## v0.7.39 — Provenance and release-history hardening
 
-This pre-Reveal maintenance release strengthens the evidentiary chain for the complete 2012 application-string/applicant graph. The vendored row materialization remains explicitly identified as a preserved secondary transcription of ICANN's 13 June 2012 Reveal table, while ICANN's official Reveal-Day publication and current 2012 application-status database are now declared as primary corpus authorities. Official Application IDs are not bulk-inferred: they remain blank unless independently documented by a primary ICANN source.
+This Reveal Day maintenance release strengthens the evidentiary chain for the complete 2012 application-string/applicant graph. The vendored row materialization remains explicitly identified as a preserved secondary transcription of ICANN's 13 June 2012 Reveal table, while ICANN's official Reveal-Day publication and current 2012 application-status database are now declared as primary corpus authorities. Official Application IDs are not bulk-inferred: they remain blank unless independently documented by a primary ICANN source.
 
 The public methodology now explains that **1,409** is the distinct-string count in the original 13 June 2012 Reveal-Day list. Later ICANN materials sometimes use **1,388** for later active/program-state populations; those values describe a different snapshot or population and do not replace the original Reveal-Day count. v0.7.39 also completes the public release history for v0.7.37-v0.7.39, adds a release-history integrity gate, and standardizes the German guided journey on formal address.
 
 ## v0.7.38 — Full-site layout sweep
 
-This pre-Reveal layout-hardening release follows a complete 17-section × 4-language structural sweep. It keeps research data and content unchanged while removing the remaining artificial equal-height stretches that create visible dead space: Sources, Geography and Contention keep asymmetric panels at natural height, while the Economics model tiles no longer stretch shorter cards to match the long historical private-contention card. It also hardens narrow-screen wrapping for long translated compounds. The v0.7.37 Strange Internet natural-height fix is preserved.
+This Reveal Day layout-hardening release follows a complete 17-section × 4-language structural sweep. It keeps research data and content unchanged while removing the remaining artificial equal-height stretches that create visible dead space: Sources, Geography and Contention keep asymmetric panels at natural height, while the Economics model tiles no longer stretch shorter cards to match the long historical private-contention card. It also hardens narrow-screen wrapping for long translated compounds. The v0.7.37 Strange Internet natural-height fix is preserved.
 
 ## v0.7.37 — Natural-height Strange Internet cards
 
@@ -58,11 +58,11 @@ The Explorer now vendors the complete formal ICANN application-string/applicant 
 This release therefore separates three concepts explicitly: the current IANA root, the broader historical TLD universe, and the complete pre-2026 formal application-string archive.
 ## Publication model
 
-The project is deliberately structured for the **post-Reveal publication**. Values that cannot yet be known before Reveal Day remain explicitly marked as pre-Reveal or unavailable. The page architecture does not need to change after Reveal Day: official ICANN public application data can populate the prepared fields, tables, maps and comparisons.
+The project is now in its **Reveal Day publication state**. Official ICANN metrics published on 7 October 2026 populate the prepared 2026 fields; values that ICANN has not yet confirmed remain explicitly unavailable rather than inferred. The complete 2000/2004/2012 application archive remains locally vendored; the 2026 application layer is integrated progressively from official APS records without claiming full local APS coverage yet.
 
 The 2026 layer is designed to hold applications, unique strings, applicant organizations, countries and territories, application types, geographic/community/.Brand applications, IDN/variant information, contention sets, applicant concentration and an application-level normalized dataset.
 
-`data/publication.js` is the single state declaration for the publication (`pre-reveal`, as-of date and Reveal timestamp). Time-sensitive presentation should derive from that state rather than from scattered hard-coded copy.
+`data/publication.js` is the single state declaration for the publication (`reveal-day`, as-of date, Reveal timestamp and String Confirmation Day). Time-sensitive presentation derives from that state rather than from scattered hard-coded copy.
 
 ## Namespace Explorer
 
@@ -75,20 +75,20 @@ The Explorer separates two concepts that must not be conflated:
 
 This matters for strings such as `.nyc`, `.cat` and `.post`: an old application, a later application and eventual delegation are distinct events, not one record whose fields should overwrite one another. The Explorer drawer exposes that history where it is informative.
 
-The frozen Explorer core imports every individual profile in the dated IANA Root Zone Database and indexes every label in the corresponding root list. Profiles expose available registry details, contact organizations, dates, name servers and report links. The curated subset adds documented context and historical events. All labels are searchable in Unicode and ASCII; registry countries and technical names are searchable as well. Historical round fields apply where documented; the Explorer macro-topic facet is an editorial navigation index generated for every record and is explicitly separate from official ICANN/IANA fields. City and other research-specific classifications remain limited to documented records. Individual 2026 application data remains pending official publication.
+The frozen Explorer core imports every individual profile in the dated IANA Root Zone Database and indexes every label in the corresponding root list. Profiles expose available registry details, contact organizations, dates, name servers and report links. The curated subset adds documented context and historical events. All labels are searchable in Unicode and ASCII; registry countries and technical names are searchable as well. Historical round fields apply where documented; the Explorer macro-topic facet is an editorial navigation index generated for every record and is explicitly separate from official ICANN/IANA fields. City and other research-specific classifications remain limited to documented records. Official 2026 application data is now public. This release locally vendors the verified `.lugano` record and official aggregate/region/contention metrics; the complete APS application corpus is not yet claimed as locally vendored.
 
 
 ## TLD Life Histories
 
-v0.7.13 adds a chronological evidence layer to every Explorer profile. The timeline combines formal application records, IANA registration dates, IANA delegation/transfer/revocation reports, the current root-zone state and curated preserved evidence. The ICANN gTLD contract-lifecycle feed (`https://www.icann.org/resources/registries/gtlds/v2/gtlds.json`) remains documented as a maintenance source, but browser-time retrieval is disabled in the pre-Reveal freeze. For ccTLDs, the project uses IANA delegation/redelegation evidence instead of applying the gTLD contract model.
+v0.7.13 adds a chronological evidence layer to every Explorer profile. The timeline combines formal application records, IANA registration dates, IANA delegation/transfer/revocation reports, the current root-zone state and curated preserved evidence. The ICANN gTLD contract-lifecycle feed (`https://www.icann.org/resources/registries/gtlds/v2/gtlds.json`) remains documented as a maintenance source, but browser-time retrieval remains disabled in the reproducible Reveal Day snapshot. For ccTLDs, the project uses IANA delegation/redelegation evidence instead of applying the gTLD contract model.
 
-The word “complete” is scoped to each declared corpus. The frozen local chronology represents the dated events exposed by the preserved release sources; missing historical phases remain explicitly missing. During the pre-Reveal freeze no browser-time lifecycle data is fetched or merged, so all visitors see the same chronology. Some early operator changes predate modern structured records and are therefore not reconstructed without a source.
+The word “complete” is scoped to each declared corpus. The frozen local chronology represents the dated events exposed by the preserved release sources; missing historical phases remain explicitly missing. No browser-time lifecycle data is fetched or merged in the Reveal Day snapshot, so all visitors see the same reproducible chronology. Some early operator changes predate modern structured records and are therefore not reconstructed without a source.
 
 `data/tld_life_histories.csv` exports the locally preserved chronology. The current ICANN contract feed is intentionally not queried by the frozen publication; it is reserved for a controlled post-freeze update.
 
-## `.lugano` provenance before Reveal Day
+## `.lugano` provenance at Reveal Day
 
-Before 7 October 2026, ICANN has published the aggregate number of applications proceeding in the round but not the individual strings and applicants. The existence of the `.lugano` application is therefore labelled in the publication as an **applicant disclosure**, dated 2 October 2026. Once the official individual record is available after Reveal Day, the provenance can be replaced by the ICANN application record.
+On 7 October 2026 ICANN published the individual `.lugano` application in APS. The publication now cites the official record: application ID `CDL2651T-T31516`, applicant `Città di Lugano`, active status and self-designated geographic application. The earlier applicant-disclosure provenance remains only in historical release notes.
 
 ## Geography of power
 
@@ -106,7 +106,7 @@ The compact city timeline also preserves event type explicitly: **idea**, **appl
 
 ## Data pack
 
-The public download is a ZIP containing the application-level and aggregate 2026 data scaffolds, supporting CSV datasets, sources and methodology material. Before Reveal Day, `applications_2026.csv` is deliberately header-only: there is no synthetic placeholder record that could be mistaken for an observation.
+The public download is a ZIP containing the application-level and aggregate 2026 data, supporting CSV datasets, sources and methodology material. In v0.7.41, `applications_2026.csv` begins with verified official Reveal Day records, while the manifest explicitly states that the complete APS application corpus is not yet locally vendored. No synthetic record is inserted to simulate completeness.
 
 `data/manifest.json` records the snapshot state, record counts and SHA-256 hashes. `rounds_summary.csv` carries explicit **As of** dates for figures that continue to change. The pack also contains a licensing notice clarifying the distinction between original project material and third-party source data.
 
@@ -295,12 +295,12 @@ No network request occurs during a build. The evidence archive is checked before
 This release has automated checks; these are not an independent subject-matter review. A reviewer should examine these specific claims and their linked sources:
 
 1. Root membership, reserved status and the distinction between IANA registration and historical operation, especially `.gb`, `.org`, `.health`, `.post` and `.cs`.
-2. Round totals and 2012/2026 comparisons: applications, unique strings and contention sets are different units; 2026 application-level observations remain unpublished in this snapshot.
+2. Round totals and 2012/2026 comparisons: submitted applications, active applications, unique strings, variants and contention sets are different units; ICANN fields still shown as unavailable must not be reverse-engineered from the APS table.
 3. Concentration claims: TLD portfolio breadth, domain-registration volume and contractual/technical roles are separate measures.
 4. Trust examples such as `.bank`, `.gov` and `.pharmacy`: published eligibility or security rules do not by themselves demonstrate every user outcome.
-5. The .lugano case: applicant disclosure, prospective editorial scenarios and official City decisions must remain distinct.
+5. The .lugano case: the official ICANN application record, prospective editorial scenarios and official City decisions must remain distinct.
 
-For a later 2026 import, preserve the official source and publication date first, reconcile identities and status fields, then update the canonical datasets and publication state together. Do not remove the pre-Reveal gate merely to display unsourced records. The final mapping must be checked against the actual official release schema.
+For subsequent 2026 imports, preserve the official source and publication date first, reconcile primary, replacement and variant strings without double-counting applications, then update the canonical datasets and publication state together. The final mapping must be checked against the live APS schema and String Confirmation Day changes.
 
 ## v0.7.7 · complete IANA profiles
 

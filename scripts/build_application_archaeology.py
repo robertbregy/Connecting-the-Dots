@@ -6,7 +6,7 @@ The 2012 layer vendors the complete 1,930 Reveal-Day string/applicant graph
 Reveal table, plus the four subsequently approved string corrections that
 created three additional unique replacement labels. Personal contact fields
 are intentionally not vendored. The browser performs no external research
-fetches, so every visitor sees the same deterministic pre-Reveal corpus.
+fetches, so every visitor sees the same deterministic locally vendored historical corpus.
 """
 from __future__ import annotations
 from pathlib import Path

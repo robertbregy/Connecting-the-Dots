@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.40"
+VERSION = "0.7.41"
 
 
 def csv_records(path: Path) -> int:
@@ -54,31 +54,31 @@ def build_manifest() -> None:
         "project": "Connecting the Dots",
         "version": VERSION,
         "release_date": "2026-10-07",
-        "publication_state": "pre-reveal",
+        "publication_state": "reveal-day",
         "rendering": "static-prerendered",
         "language_routes": {lang: f"{lang}/" for lang in ("en", "it", "de", "fr")},
-        "as_of": "2026-10-04",
+        "as_of": "2026-10-07",
         "temporal_coverage": "1984/2026",
         "reveal_day": "2026-10-07T18:00:00Z",
         "string_confirmation_day": "2026-11-17",
         "notes": [
             "Record counts exclude CSV headers.",
-            "applications_2026.csv is intentionally empty before Reveal Day.",
+            "applications_2026.csv contains locally vendored official 2026 APS records; v0.7.41 includes the verified .lugano record and does not yet claim the full APS application corpus.",
             "explorer_catalog.csv is the latest indexed record view; explorer_events.csv keeps separate historical events for multi-era strings.",
-            ".lugano is marked as an applicant disclosure until ICANN publishes the individual application record at Reveal Day.",
+            ".lugano is linked to the official ICANN APS Reveal Day record CDL2651T-T31516 published on 7 October 2026.",
             "dns_oddities.csv distinguishes active legacy, retired, reserved and never-delegated country-code cases.",
             "Blank 2026 aggregate values are scaffolding, not observations.",
             "Every preserved IANA database entry has a normalized profile; root-list membership is separate from database presence.",
             "Application Archaeology separates submissions, applied-for strings and delegated TLD identity; never-delegated applications do not increase the TLD universe.",
             "Application outcome is modeled independently from contention and governance controversy. outcome_reason is populated only where this frozen corpus carries source-backed evidence; blank outcome fields are unknown here, not inferred successes or failures.",
             "The complete 2012 Reveal-Day string/applicant graph is vendored locally: 1,930 applications across 1,409 distinct strings. Primary Contact and Email from the historic richer transport are not stored, exposed or exported; the browser performs no external research fetch.",
-            "TLD Life Histories use only the frozen local chronology in this pre-Reveal freeze. Browser-time ICANN gTLD contract-lifecycle enrichment is deliberately disabled until the controlled Reveal Day update. Undocumented phases are never inferred.",
+            "TLD Life Histories remain deterministic and local. Browser-time external enrichment is disabled; documented 2026 APS events are included only where explicitly vendored. Undocumented phases are never inferred.",
             "Disputed Dots adds nine editorially selected governance cases as a structured layer linked to Explorer strings; FACT and READING remain separate, and case sources are primary ICANN/IANA records.",
             "Economics of the Dot adds eight source-backed economic mechanisms; public revenue, company results, transaction values, auction prices and application fees retain their original accounting basis and are not normalized into one ranking.",
             "The Social Life of the Dot adds nine source-backed social cases and six analytical models covering language, community, identity, protection, locality and script inclusion; registration volume is never used as a proxy for social significance.",
             "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity.",
             "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database. The Explorer extends that universe with all locally vendored formal application strings from 2000, 2004 and 2012.",
-            "application_only_strings.csv is the frozen build-time application-only view. The complete 2012 Reveal-Day string/applicant graph is locally integrated; 2026 remains intentionally incomplete until official Reveal Day data are published.",
+            "application_only_strings.csv is the build-time application-only view. The complete 2012 Reveal-Day string/applicant graph is locally integrated; the 2026 layer is now post-Reveal but intentionally partial until the full APS export is vendored and validated.",
         ],
         "current_root_snapshot": json.loads((DATA / "iana_snapshot.json").read_text())["asOf"],
         "iana_evidence": "iana_snapshot.json",
@@ -86,11 +86,11 @@ def build_manifest() -> None:
         "iana_evidence_archive": json.loads((DATA / "iana_snapshot.json").read_text())["archive_path"].removeprefix("data/"),
         "release_history": {"path": "release_history.json", "sha256": sha256(DATA / "release_history.json")},
         "freeze": {
-            "status": "pre-reveal-frozen",
-            "frozen_on": "2026-10-05",
+            "status": "reveal-day-snapshot",
+            "frozen_on": "2026-10-07",
             "runtime_external_enrichment": False,
             "browser_time_external_data_fetches": 0,
-            "policy": "No research dataset or profile is refreshed in the visitor browser before the controlled Reveal Day update."
+            "policy": "No research dataset or profile is refreshed in the visitor browser; the Reveal Day snapshot is packaged locally and versioned."
         },
         "web_delivery": {
             "profile_loading": "on-demand",
@@ -201,8 +201,8 @@ def validate_index() -> None:
     if missing:
         raise SystemExit("Missing local assets: " + ", ".join(sorted(missing)))
 
-    if csv_records(DATA / "applications_2026.csv") != 0:
-        raise SystemExit("Pre-Reveal build must not contain synthetic 2026 application records")
+    if csv_records(DATA / "applications_2026.csv") < 1:
+        raise SystemExit("Reveal Day build must contain at least one verified 2026 application record")
 
     for js in [ROOT / "assets" / "app.js", DATA / "data_bundle.js", DATA / "site_bundle.js", *sorted(DATA.glob("explorer_profiles_*.js")), DATA / "i18n_bundle.js", DATA / "publication.js", ROOT / "assets" / "legacy-routing.js", *sorted((ROOT / "scripts").glob("*.js"))]:
         try:
@@ -218,8 +218,8 @@ def validate_index() -> None:
     for s in [".cat", ".post"]:
         if cat[s]["round"] != "2004" or cat[s]["origin_round"] != "2004" or cat[s]["type"] != "sponsored":
             raise SystemExit(f"Explorer origin regression for {s}")
-    if "applicantDisclosure" not in cat[".lugano"].get("provenance", ""):
-        raise SystemExit(".lugano must remain marked as applicant disclosure before Reveal Day")
+    if "icannRevealRecord" not in cat[".lugano"].get("provenance", ""):
+        raise SystemExit(".lugano must be linked to the official ICANN Reveal Day record")
     with (DATA / "explorer_events.csv").open(encoding="utf-8-sig", newline="") as fh:
         events = list(csv.DictReader(fh))
     nyc_periods = {r["period"] for r in events if r["string"] == ".nyc"}
@@ -282,7 +282,7 @@ def main() -> None:
     # bundle can verify itself even though the larger development QA suite is omitted.
     subprocess.run(["python3", str(ROOT / "scripts" / "release_check.py")], check=True)
     print(f"Built static {INDEX.name} with shared assets and deferred Explorer profiles from {SRC.relative_to(ROOT)}")
-    print("Validated runtime, event history, provenance, local assets, pre-Reveal state and data-pack sync")
+    print("Validated runtime, event history, provenance, local assets, Reveal Day state and data-pack sync")
     print(f"Refreshed manifest and data pack for v{VERSION}")
 
 

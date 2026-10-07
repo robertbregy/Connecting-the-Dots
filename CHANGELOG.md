@@ -1,3 +1,12 @@
+# v0.7.41 — Reveal Day data release
+
+- Replaces the pre-Reveal publication state with the official ICANN Reveal Day snapshot of 7 October 2026.
+- Updates the 2026 round to 1,615 active applications and 481 applicants; adds official Brand (333), Community (16), geographic (15), IDN (21), variant (9), Applicant Support (51) and regional application counts.
+- Adds 263 preliminary identical-string contention sets covering 891 application records, derived from ICANN’s official Reveal Day contention-set CSV.
+- Upgrades `.lugano` from applicant disclosure to the official ICANN APS record `CDL2651T-T31516` for `Città di Lugano`; it is self-designated geographic and is not in a preliminary identical-string contention set.
+- Keeps APS fields that ICANN still shows as unavailable blank instead of inferring them.
+- Adds a locally vendored official 2026 `.lugano` application record while explicitly retaining `application2026CoverageComplete=false` until the complete APS export is vendored and validated.
+
 # Changelog
 
 ## v0.7.40 — 2026-10-07

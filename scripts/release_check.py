@@ -50,9 +50,9 @@ for token in ['property="og:image:alt"','name="twitter:image:alt"']:
         fail(f'missing social image alt metadata: {token}')
 manifest=json_file('manifest.json')
 if manifest.get('version')!=version: fail('manifest/package version mismatch')
-if manifest.get('as_of')!='2026-10-04': fail('publication snapshot is not 2026-10-04')
+if manifest.get('as_of')!='2026-10-07': fail('publication snapshot is not 2026-10-07')
 pub=(DATA/'publication.js').read_text()
-if f"version:'{version}'" not in pub or "asOf:'2026-10-04'" not in pub: fail('publication.js version/asOf mismatch')
+if f"version:'{version}'" not in pub or "asOf:'2026-10-07'" not in pub or "state:'reveal-day'" not in pub: fail('publication.js version/asOf/state mismatch')
 
 # Release-integrity invariants added in v0.7.18.
 appjs=(ROOT/'assets/app.js').read_text(encoding='utf-8')
@@ -61,7 +61,7 @@ if 'fmtNum(1987)' in appjs or 'fmtNum(57)' in appjs: fail('application archaeolo
 if 'applicationCorpusComplete=true' in appjs: fail('runtime merge may not mark the full application corpus complete directly')
 if 'syncApplicationCorpusComplete()' not in appjs: fail('application corpus completeness is not derived')
 if "required=['2000','2004','2012','2026']" not in appjs: fail('application corpus completeness does not require all declared historical/current rounds')
-if 'fetch(' in appjs: fail('pre-Reveal freeze still performs browser-time external data fetches')
+if 'fetch(' in appjs: fail('release still performs browser-time external data fetches')
 if "renderApplicationCorpusStatus('ready')" not in appjs: fail('local historical application archaeology is not rendered ready')
 if '"lifeHistoryGtldContractsRuntime":false' not in (DATA/'data_bundle.js').read_text(encoding='utf-8'): fail('gTLD runtime lifecycle enrichment is not disabled')
 arch_manifest=json_file('application_archaeology_manifest.json')
@@ -74,7 +74,7 @@ for u in ['https://www.icann.org/en/announcements/details/new-gtld-reveal-day---
     if u not in source_urls: fail('2012 provenance source missing from sources inventory: '+u)
 
 changelog=(ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
-for marker in ['v0.7.40','v0.7.39','v0.7.38','v0.7.37','v0.7.36','v0.7.35','v0.7.34','v0.7.33','v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
+for marker in ['v0.7.41','v0.7.40','v0.7.39','v0.7.38','v0.7.37','v0.7.36','v0.7.35','v0.7.34','v0.7.33','v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
     if marker not in changelog: fail('changelog missing '+marker)
 readme=(ROOT/'README.md').read_text(encoding='utf-8')
 if "No live refresh occurs in a visitor's browser." in readme: fail('README contains obsolete no-live-refresh claim')
@@ -91,8 +91,8 @@ if not latest_summary or any(not translations.get(lang,{}).get(latest_summary) f
 for lang in LANGS:
     desc=translations.get(lang,{}).get('metaDescription','')
     if not (100 <= len(desc) <= 160): fail(f'{lang} meta description length outside 100-160 chars: {len(desc)}')
-if 'ICANN · <span data-number="1616">1,616</span> ↗' not in source_html:
-    fail('2026 source-chip count is not locale-aware')
+if 'ICANN · <span data-number="1615">1,615</span> ↗' not in source_html:
+    fail('2026 Reveal Day source-chip count is not locale-aware')
 if "new Intl.NumberFormat(localeCode(),{useGrouping:true}).format(Number(v))" not in appjs or '${fmtNum(r.applications)}' not in appjs:
     fail('display counts are not centralized on the locale-aware grouped formatter')
 robots=(ROOT/'robots.txt').read_text(encoding='utf-8')
@@ -200,7 +200,7 @@ if 'function keepJourneyStepInView()' not in appjs or 'keepJourneyStepInView();'
 
 expected_counts={
  'explorer_catalog.csv':1849,'tld_universe.csv':1599,'application_only_strings.csv':250,
- 'explorer_events.csv':7678,'tld_life_histories.csv':7678,'applications_2000.csv':47,
+ 'explorer_events.csv':7679,'tld_life_histories.csv':7679,'applications_2000.csv':47,'applications_2026.csv':1,
  'application_strings_2000.csv':225,'applications_2004.csv':10,'applications_2012.csv':1930,'governance_cases.csv':9,
  'governance_case_events.csv':39,'economic_cases.csv':8,'economic_metrics.csv':22,'social_cases.csv':9,
  'explorer_iana_reports.csv':2008,'explorer_nameservers.csv':7563,
@@ -218,7 +218,7 @@ application_only_rows=rows('application_only_strings.csv')
 corpus_status_counts={}
 for r in application_only_rows:
     corpus_status_counts[r.get('corpus_status','')]=corpus_status_counts.get(r.get('corpus_status',''),0)+1
-if corpus_status_counts.get('vendored-historical')!=249 or corpus_status_counts.get('pre-reveal-curated')!=1:
+if corpus_status_counts.get('vendored-historical')!=249 or corpus_status_counts.get('reveal-day-official-partial')!=1:
     fail(f'application-only corpus status split unexpected: {corpus_status_counts}')
 if tlds & apps: fail('TLD/application-only overlap')
 if len(tlds|apps)!=1849: fail('TLD + application-only universe does not equal Explorer')
@@ -354,8 +354,8 @@ for c in refusals.get('cases',[]):
     if not c.get('sources') or not all(str(x.get('url','')).startswith('https://') for x in c.get('sources',[])): fail('refusal case lacks primary HTTPS sources: '+str(c.get('id')))
 r2026=next((r for r in research.get('rounds',[]) if r.get('round')==2026),{})
 if r2026.get('applications')!=1663: fail('round comparison must use 1,663 submitted applications for 2026')
-proceeding=next((r for r in rows('round_2026.csv') if r.get('metric')=='Applications proceeding'),{})
-if proceeding.get('value')!='1616': fail('2026 proceeding applications must remain 1,616')
+reveal_active=next((r for r in rows('round_2026.csv') if r.get('metric')=='Applications active at Reveal Day'),{})
+if reveal_active.get('value')!='1615': fail('2026 Reveal Day active applications must be 1,615')
 summary={r['Round']:r for r in rows('rounds_summary.csv')}
 if summary.get('2026',{}).get('Applications')!='1663': fail('rounds_summary 2026 submitted applications mismatch')
 if not summary.get('2012',{}).get('Delegations source'): fail('2012 delegation metric lacks dedicated provenance')

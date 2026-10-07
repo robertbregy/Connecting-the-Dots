@@ -1,9 +1,9 @@
 # Connecting the Dots — data directory
 
-Publication state: **pre-Reveal**  
-As of: **4 October 2026**
+Publication state: **Reveal Day snapshot**  
+As of: **7 October 2026**
 
-The CSV files are research inputs and reusable publication data. `applications_2026.csv` intentionally contains the schema header and **zero application records** before ICANN Reveal Day; no synthetic placeholder observation is inserted. Aggregate 2026 scaffold files can contain named rows with empty values only when the row itself is a documented metric or classification bucket and its status explicitly says that official 2026 data is still to be loaded.
+The CSV files are research inputs and reusable publication data. `applications_2026.csv` now contains verified official 2026 records that are explicitly vendored locally, beginning with `.lugano`; this does **not** yet constitute a claim that the complete APS application corpus is locally archived. `round_2026.csv` contains official Reveal Day aggregate metrics and leaves APS fields blank where ICANN has not yet published a confirmed value.
 
 
 ## v0.7.32 application outcome model
@@ -15,7 +15,7 @@ The Explorer separates the current indexed view from researched history:
 - `explorer_catalog.csv` is the **latest indexed record view** used for search/filtering.
 - `explorer_events.csv` preserves **separate historical events** for strings that appear across multiple rounds or stages. An earlier application is therefore not overwritten by a later delegation.
 
-Before Reveal Day, `.lugano` is marked as **applicant disclosure**. The individual official ICANN application record is not treated as publicly confirmed until ICANN publishes the Reveal dataset.
+At Reveal Day, `.lugano` is linked to the official ICANN APS record `CDL2651T-T31516` for `Città di Lugano`. Its previous applicant-disclosure provenance is historical and is no longer used as the current source.
 
 `rounds_summary.csv` includes an **As of** field for live totals that can change over time.
 
@@ -48,7 +48,7 @@ The publication is prerendered in EN, IT, DE and FR. Language metadata in `manif
 
 Current IANA root status, formal type, registry legal organization, registry country, technical-contact organization, represented place and historical applications are distinct fields. The root evidence was retrieved on 4 October 2026; the publication-level pre-Reveal research snapshot is 4 October 2026; individual observations retain their own source dates. `iana_snapshot.json` records retrieval time, source URLs and SHA-256 hashes of the original source files. In v0.7.5, both release ZIPs include those files inside one compressed evidence archive, as described below. The IANA technical contact is not automatically the contractual RSP.
 
-Current `.CS` is retired: its former Czechoslovak delegation and the non-delegation for Serbia and Montenegro are separate historical events. `.GB` remains explicitly reserved. No public legal-applicant identity is inferred for `.lugano` before Reveal Day. `contention_count` refers to 2012 where `contention_year` is 2012. Empty cells represent information not documented in this catalogue.
+Current `.CS` is retired: its former Czechoslovak delegation and the non-delegation for Serbia and Montenegro are separate historical events. `.GB` remains explicitly reserved. `.lugano` now uses the official Reveal Day APS applicant identity and application ID. `contention_count` refers to 2012 where `contention_year` is 2012. Empty cells represent information not documented in this catalogue.
 
 `current_root_status` is the authoritative current-root field. The compatibility `status` column retains the indexed lifecycle label for historical-only records; consult `explorer_events.csv` for its dated context. `formal_type` and `editorial_designation` must not be merged.
 
@@ -116,10 +116,10 @@ The Explorer extends the exhaustive TLD/profile universe with never-delegated fo
 `introduction_path` classifies how a record entered, or attempted to enter, the top-level namespace. `program_round` is separate and is left empty where an ICANN application round is not applicable, notably for ordinary ccTLD delegations. `introduction_basis` and `introduction_path_sources` state how the classification was established. This avoids treating a ccTLD registration date as an invented ICANN round.
 
 - `tld_universe.csv` — exhaustive for the publication's dated TLD/profile definition above; 1,599 records.
-- `application_only_strings.csv` — all application-only Explorer identities: the complete locally vendored 2000/2004/2012 formal historical set that lacks a TLD/profile record, plus any explicitly curated pre-Reveal 2026 record kept outside the completeness claim.
+- `application_only_strings.csv` — all application-only Explorer identities: the complete locally vendored 2000/2004/2012 formal historical set that lacks a TLD/profile record, plus verified 2026 records currently vendored locally and kept outside any claim of complete APS coverage.
 - `explorer_catalog.csv` — the combined **1,849-record** search/filter catalogue, including the 1,599-record TLD/profile universe and 250 application-only records with their status and provenance fields.
 
-The TLD-coverage claim excludes never-delegated ISO codes and other labels that were never TLDs in the public DNS root. Separately, the formal pre-2026 ICANN application-string archive is complete locally for 2000, 2004 and 2012; 2026 remains pending Reveal Day.
+The TLD-coverage claim excludes never-delegated ISO codes and other labels that were never TLDs in the public DNS root. Separately, the formal pre-2026 ICANN application-string archive is complete locally for 2000, 2004 and 2012; the 2026 layer is post-Reveal but not yet claimed as a complete local APS mirror.
 
 
 ## TLD life histories (v0.7.13)
@@ -142,6 +142,6 @@ The TLD-coverage claim excludes never-delegated ISO codes and other labels that 
 - Registration volume is never used as a proxy for social value or cultural significance.
 
 
-## Frozen pre-Reveal runtime policy
+## Reproducible Reveal Day runtime policy
 
 The data pack is the frozen release corpus. Since v0.7.25 the publication performs no browser-time external research fetches. In v0.7.30 the complete 2012 string/applicant graph is vendored locally and merged at build time; documented archival mirrors remain provenance/maintenance references only. The current ICANN gTLD lifecycle feed also remains disabled at visitor runtime. This makes the user-visible research state deterministic across visits.
