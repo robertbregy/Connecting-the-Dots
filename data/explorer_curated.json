@@ -1729,7 +1729,7 @@
       "originRoundSources": [],
       "editorialDesignation": "geographic",
       "representedPlace": "Lugano, Switzerland",
-      "applicationEntity": "",
+      "applicationEntity": "Città di Lugano",
       "geography": "Switzerland",
       "themes": [
         "city",
@@ -1741,24 +1741,30 @@
       "city": true,
       "noteKey": null,
       "readingKey": null,
-      "placeholder": true,
-      "provenanceKey": "applicantDisclosure",
-      "provenanceDate": "2026-10-02",
+      "placeholder": false,
+      "provenanceKey": "icannRevealRecord",
+      "provenanceDate": "2026-10-07",
       "group": "",
-      "source": [],
+      "source": [
+        "https://newgtldprogram-aps.icann.org/applications/CDL2651T-T31516/summary",
+        "https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en"
+      ],
       "historicalRootStatus": "notDelegated",
       "historicalStatus": "application",
       "events": [
         {
-          "period": "2026",
-          "status": "application",
+          "period": "2026-10-07",
+          "status": "applicationPublished",
           "type": "geographic",
-          "entity": "",
+          "entity": "Città di Lugano",
           "geography": "Switzerland",
-          "source": [],
+          "source": [
+            "https://newgtldprogram-aps.icann.org/applications/CDL2651T-T31516/summary",
+            "https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en"
+          ],
           "current": false,
-          "provenanceKey": "applicantDisclosure",
-          "provenanceDate": "2026-10-02"
+          "provenanceKey": "icannRevealRecord",
+          "provenanceDate": "2026-10-07"
         }
       ]
     },

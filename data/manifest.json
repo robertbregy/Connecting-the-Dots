@@ -1,8 +1,8 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.40",
+  "version": "0.7.41",
   "release_date": "2026-10-07",
-  "publication_state": "pre-reveal",
+  "publication_state": "reveal-day",
   "rendering": "static-prerendered",
   "language_routes": {
     "en": "en/",
@@ -10,28 +10,28 @@
     "de": "de/",
     "fr": "fr/"
   },
-  "as_of": "2026-10-04",
+  "as_of": "2026-10-07",
   "temporal_coverage": "1984/2026",
   "reveal_day": "2026-10-07T18:00:00Z",
   "string_confirmation_day": "2026-11-17",
   "notes": [
     "Record counts exclude CSV headers.",
-    "applications_2026.csv is intentionally empty before Reveal Day.",
+    "applications_2026.csv contains locally vendored official 2026 APS records; v0.7.41 includes the verified .lugano record and does not yet claim the full APS application corpus.",
     "explorer_catalog.csv is the latest indexed record view; explorer_events.csv keeps separate historical events for multi-era strings.",
-    ".lugano is marked as an applicant disclosure until ICANN publishes the individual application record at Reveal Day.",
+    ".lugano is linked to the official ICANN APS Reveal Day record CDL2651T-T31516 published on 7 October 2026.",
     "dns_oddities.csv distinguishes active legacy, retired, reserved and never-delegated country-code cases.",
     "Blank 2026 aggregate values are scaffolding, not observations.",
     "Every preserved IANA database entry has a normalized profile; root-list membership is separate from database presence.",
     "Application Archaeology separates submissions, applied-for strings and delegated TLD identity; never-delegated applications do not increase the TLD universe.",
     "Application outcome is modeled independently from contention and governance controversy. outcome_reason is populated only where this frozen corpus carries source-backed evidence; blank outcome fields are unknown here, not inferred successes or failures.",
     "The complete 2012 Reveal-Day string/applicant graph is vendored locally: 1,930 applications across 1,409 distinct strings. Primary Contact and Email from the historic richer transport are not stored, exposed or exported; the browser performs no external research fetch.",
-    "TLD Life Histories use only the frozen local chronology in this pre-Reveal freeze. Browser-time ICANN gTLD contract-lifecycle enrichment is deliberately disabled until the controlled Reveal Day update. Undocumented phases are never inferred.",
+    "TLD Life Histories remain deterministic and local. Browser-time external enrichment is disabled; documented 2026 APS events are included only where explicitly vendored. Undocumented phases are never inferred.",
     "Disputed Dots adds nine editorially selected governance cases as a structured layer linked to Explorer strings; FACT and READING remain separate, and case sources are primary ICANN/IANA records.",
     "Economics of the Dot adds eight source-backed economic mechanisms; public revenue, company results, transaction values, auction prices and application fees retain their original accounting basis and are not normalized into one ranking.",
     "The Social Life of the Dot adds nine source-backed social cases and six analytical models covering language, community, identity, protection, locality and script inclusion; registration volume is never used as a proxy for social significance.",
     "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity.",
     "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database. The Explorer extends that universe with all locally vendored formal application strings from 2000, 2004 and 2012.",
-    "application_only_strings.csv is the frozen build-time application-only view. The complete 2012 Reveal-Day string/applicant graph is locally integrated; 2026 remains intentionally incomplete until official Reveal Day data are published."
+    "application_only_strings.csv is the build-time application-only view. The complete 2012 Reveal-Day string/applicant graph is locally integrated; the 2026 layer is now post-Reveal but intentionally partial until the full APS export is vendored and validated."
   ],
   "current_root_snapshot": "2026-10-04",
   "iana_evidence": "iana_snapshot.json",
@@ -66,8 +66,10 @@
     "application2012StringApplicantGraphComplete": true,
     "application2012CoverageComplete": true,
     "application2026CoverageComplete": false,
+    "application2026OfficialRecordCount": 1,
     "runtimeExternalEnrichment": false,
-    "preRevealFreeze": true,
+    "preRevealFreeze": false,
+    "revealDaySnapshot": true,
     "applicationArchaeologyManifest": {
       "schemaVersion": 1,
       "title": "Application Archaeology corpus",
@@ -263,7 +265,7 @@
     "topicFacetTaxonomy": "editorial-macro-v1",
     "topicFacetCount": 11,
     "lifeHistoryRecordCount": 1849,
-    "lifeHistoryStaticEventCount": 7678,
+    "lifeHistoryStaticEventCount": 7679,
     "governanceCaseCount": 9,
     "governanceCaseStringCount": 15,
     "refusalCaseCount": 6,
@@ -281,14 +283,14 @@
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "release_history": {
     "path": "release_history.json",
-    "sha256": "702b20a152b0125f4975b797da4bb86ad868d2973d053d9a2aa8722e3780507e"
+    "sha256": "8aac63b70d437cef72d10e3649cde757b8ac0e524936ac381c3d7b4f6b5c3cef"
   },
   "freeze": {
-    "status": "pre-reveal-frozen",
-    "frozen_on": "2026-10-05",
+    "status": "reveal-day-snapshot",
+    "frozen_on": "2026-10-07",
     "runtime_external_enrichment": false,
     "browser_time_external_data_fetches": 0,
-    "policy": "No research dataset or profile is refreshed in the visitor browser before the controlled Reveal Day update."
+    "policy": "No research dataset or profile is refreshed in the visitor browser; the Reveal Day snapshot is packaged locally and versioned."
   },
   "web_delivery": {
     "profile_loading": "on-demand",
@@ -296,13 +298,13 @@
     "assets": [
       {
         "repository_path": "data/site_bundle.js",
-        "bytes": 1992843,
-        "sha256": "562d1d173cfd738c6f27b3ace547f03d78aec46e72d117a71e0e114d1f58843e"
+        "bytes": 1994296,
+        "sha256": "c24957a17203a230522bd6c75cd390435b04966ca866ab15a8993992b2dc9bb9"
       },
       {
         "repository_path": "assets/app.js",
-        "bytes": 108143,
-        "sha256": "2944a2c3c9dc093c53e968ee3247a4fb3fb846273841b960c931d2452a1e060d"
+        "bytes": 108367,
+        "sha256": "6114fc34fff623d857b66ea03946bf0fb6e04457994065e8fbb90cb03fffde74"
       },
       {
         "repository_path": "assets/style.css",
@@ -317,51 +319,51 @@
       {
         "repository_path": "data/explorer_profiles_0.js",
         "bytes": 1089784,
-        "sha256": "14909a7476f609fcc0be0e8d0efd4ca189aa1e90d3ec8377c270c3819ad2ac99"
+        "sha256": "6f67665db8601da548154e85ce56b1b37dd00506f4b10e7581b4e30782943f71"
       },
       {
         "repository_path": "data/explorer_profiles_1.js",
         "bytes": 904381,
-        "sha256": "c34aaa869e8c0f579093f1a18c56b443bb31846fa1937e93caa632a322ac4b6c"
+        "sha256": "e801d90e33dd670210579670a81eff34ed37ff343ad5e4890a69d8e419c9d087"
       },
       {
         "repository_path": "data/explorer_profiles_2.js",
-        "bytes": 1007545,
-        "sha256": "e7c0b3031bf29ecae12b57f2dc607dffb03945809c9aa0eb1229a0b41157b824"
+        "bytes": 1009406,
+        "sha256": "556fc81dd6e3b757908a18cf931528fed8e66976c6339f413014447a2613bec0"
       },
       {
         "repository_path": "data/explorer_profiles_3.js",
         "bytes": 934600,
-        "sha256": "d70f95ad3206340c4830e086970af23e0946ad122d4f3628e6e8a76a66086347"
+        "sha256": "4d7a96bf02c43589a2c346518a734ed687103668dda0947ed30172a88bae0d78"
       },
       {
         "repository_path": "data/explorer_profiles_4.js",
         "bytes": 970735,
-        "sha256": "b69fe8cdd35173285ea8302e619684def8c3bd011df8860759558183cec75082"
+        "sha256": "d817d2134c2c88b0a7bb611fe8580903fea7f49cdf054d8d86d5317bbf4a0b33"
       },
       {
         "repository_path": "data/explorer_profiles_5.js",
         "bytes": 943441,
-        "sha256": "163cb1b6d592a7d709f38f412dcbe9b8f84c622139da124001906bb6b204ddb7"
+        "sha256": "9526168930f6f72932a067d406ef9073e3d4b659e5bb0f5fcbe747a839a2a314"
       },
       {
         "repository_path": "data/explorer_profiles_6.js",
         "bytes": 953642,
-        "sha256": "07a6e9db749825ebfed271dea079c450427afa00a131d5ec36b076c110ed3546"
+        "sha256": "c756a29095b507c0b95adca313d16a89e5e7b06ae57b0f0bce2c6ceaa36bab2b"
       },
       {
         "repository_path": "data/explorer_profiles_7.js",
         "bytes": 936011,
-        "sha256": "57a86fff965b8b14efa8e5815e16e04df0a5f76fb6be68924a6a74e42b65b30a"
+        "sha256": "1c6cdd3710feda96e28cb3a4a245fcfc979dd2a9f743daa54fc30d5fd4a4b788"
       }
     ]
   },
   "files": [
     {
       "path": "application_only_strings.csv",
-      "bytes": 43977,
+      "bytes": 44210,
       "records": 250,
-      "sha256": "aac0c3f80659028771716014d8d3868de9c73b23ecb9e62def684238e10a9cde"
+      "sha256": "ed741cec7e5f0e11a0f84646b162058d870cf72b1e270497b50727ec509b13c7"
     },
     {
       "path": "application_regions_2012.csv",
@@ -371,9 +373,9 @@
     },
     {
       "path": "application_regions_2026.csv",
-      "bytes": 1328,
+      "bytes": 1566,
       "records": 5,
-      "sha256": "a38b9bf555457bca1ebec50fa56d63fe9c60af12793f5109f66439c9e7dc8b23"
+      "sha256": "b2e3dc0752a14442f085ba14ed9d2cd202741a20654048a1952cba972e2f7be6"
     },
     {
       "path": "application_strings_2000.csv",
@@ -401,9 +403,9 @@
     },
     {
       "path": "applications_2026.csv",
-      "bytes": 265,
-      "records": 0,
-      "sha256": "b9628b112c7ca33c43e0c5e80659701d021b894650a80d5a0565b5d5014b6b06"
+      "bytes": 536,
+      "records": 1,
+      "sha256": "a188d93bfdcbcdabedf9a0802ff0e6724547fef91bfc6665c0c218129477cfd1"
     },
     {
       "path": "beyond_the_dot.csv",
@@ -473,15 +475,15 @@
     },
     {
       "path": "explorer_catalog.csv",
-      "bytes": 1339463,
+      "bytes": 1339931,
       "records": 1849,
-      "sha256": "fa90939970762834d905f2e2e6704a105d91eef6c00c879aea55db6654a95714"
+      "sha256": "5ce16d53cd9bb1860c35c2dbab661d02817caff86974514433dd453ac4860b53"
     },
     {
       "path": "explorer_events.csv",
-      "bytes": 1374282,
-      "records": 7678,
-      "sha256": "26048131abafc6761752c5c954aa1cc096c246fb7e9b775cf1ffd0a2cbdadad0"
+      "bytes": 1374791,
+      "records": 7679,
+      "sha256": "3f20e39311c37efe3ed53faa1b10a45de4e922d3f075682847727cfd36a6efe0"
     },
     {
       "path": "explorer_iana_reports.csv",
@@ -551,9 +553,9 @@
     },
     {
       "path": "round_2026.csv",
-      "bytes": 2055,
-      "records": 10,
-      "sha256": "fd4022c241e0b13ea05422f13b72f70b8692c9fcb4246eeca2da0f99de394a5a"
+      "bytes": 2771,
+      "records": 12,
+      "sha256": "a4fe2c1ae71c78f19c751664164e2983488661d782951ebd3420d54798ab8c7e"
     },
     {
       "path": "rounds_summary.csv",
@@ -581,9 +583,9 @@
     },
     {
       "path": "sources.csv",
-      "bytes": 21632,
-      "records": 185,
-      "sha256": "c425c86cb57aff468048f04ea8210b0f5346c3d23c800b2ee3166700b86b9597"
+      "bytes": 22198,
+      "records": 189,
+      "sha256": "15dc04504411e1cc929599fd7415dd638789743855329fc05d055df737cec483"
     },
     {
       "path": "strange_internet.csv",
@@ -599,9 +601,9 @@
     },
     {
       "path": "tld_life_histories.csv",
-      "bytes": 1374282,
-      "records": 7678,
-      "sha256": "26048131abafc6761752c5c954aa1cc096c246fb7e9b775cf1ffd0a2cbdadad0"
+      "bytes": 1374791,
+      "records": 7679,
+      "sha256": "3f20e39311c37efe3ed53faa1b10a45de4e922d3f075682847727cfd36a6efe0"
     },
     {
       "path": "tld_models.csv",

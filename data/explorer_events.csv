@@ -3835,8 +3835,9 @@ string,ascii_string,period,status,event_class,type,entity,geography,detail,outco
 .ltda,.ltda,2026-10-04,delegated,current-snapshot,generic,InterNetX Corp.,United States of America (the),,,yes,,https://www.iana.org/domains/root/db/ltda.html
 .lu,.lu,1995-01-27,ianaRegistration,iana-registration,country-code,RESTENA,Luxembourg,,,no,,https://www.iana.org/domains/root/db/lu.html
 .lu,.lu,2026-10-04,delegated,current-snapshot,country-code,RESTENA,Luxembourg,,,yes,,https://www.iana.org/domains/root/db/lu.html
-.lugano,.lugano,2026,application,,geographic,,Switzerland,,,no,applicantDisclosure · 2026-10-02,
-.lugano,.lugano,2026-10-04,notDelegated,current-snapshot,notApplicable,,Switzerland,,,yes,,
+.lugano,.lugano,2026,applicationSubmitted,application,notApplicable,Città di Lugano,CH,CDL2651T-T31516,,no,,https://newgtldprogram-aps.icann.org/applications/CDL2651T-T31516/summary
+.lugano,.lugano,2026-10-07,applicationPublished,,geographic,Città di Lugano,Switzerland,,,no,icannRevealRecord · 2026-10-07,https://newgtldprogram-aps.icann.org/applications/CDL2651T-T31516/summary | https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en
+.lugano,.lugano,2026-10-04,notDelegated,current-snapshot,notApplicable,Città di Lugano,Switzerland,,,yes,,https://newgtldprogram-aps.icann.org/applications/CDL2651T-T31516/summary
 .lundbeck,.lundbeck,2012,applicationSubmitted,application,generic,H. Lundbeck A/S,,2012-1016,,no,,https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/
 .lundbeck,.lundbeck,2016-06-16,ianaRegistration,iana-registration,generic,H. Lundbeck A/S,Denmark,,,no,,https://www.iana.org/domains/root/db/lundbeck.html
 .lundbeck,.lundbeck,2016-07-13,ianaDelegationReport,iana-report,generic,,,Delegation of the .lundbeck domain to H. Lundbeck A/S,,no,,https://www.iana.org/reports/c.2.9.2.d/20160713-lundbeck
