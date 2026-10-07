@@ -1,4 +1,8 @@
-# Connecting the Dots — v0.7.39
+# Connecting the Dots — v0.7.40
+
+## v0.7.40 — Final pre-Reveal polish
+
+This release centralizes displayed counts on the locale-aware number formatter, including the remaining static 2026 source-chip count, shortens multilingual meta descriptions, enriches Dataset JSON-LD with release version/date and primary-source provenance, and documents that the repository-level `robots.txt` lives below the GitHub Pages host root and is therefore informational rather than authoritative. Research corpora, Explorer identities/events, layout and runtime behavior are unchanged.
 
 ## v0.7.39 — Provenance and release-history hardening
 

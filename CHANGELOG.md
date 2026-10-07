@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.7.40 — 2026-10-07
+
+- Centralizes display counts on the locale-aware number formatter and forces locale-appropriate grouping for four-digit counts; the remaining static 2026 source chip is now localized as well.
+- Shortens multilingual meta descriptions while preserving the project scope and independent-research attribution.
+- Enriches Dataset JSON-LD with `version`, `dateModified` and primary-source `isBasedOn` references; renderers now keep version/date synchronized automatically.
+- Documents the GitHub Pages project-path limitation of `robots.txt`; page-level robots metadata and sitemap remain the effective controls.
+- No research corpus, Explorer record/event, layout or application behavior changed.
+
 ## v0.7.39 — 2026-10-07
 
 - Strengthens 2012 provenance by distinguishing the secondary row materialization source from ICANN primary corpus authority.

@@ -58,7 +58,7 @@ def render(page,lang,alias=False):
     for other in [x for x in LANGS if x!=lang]:
         x=soup.new_tag('meta');x['property']='og:locale:alternate';x['content']=LOCALE[other];soup.head.append(x)
     article=soup.select_one('#articleStructuredData');ad=json.loads(article.string or article.get_text());ad.update({'inLanguage':lang,'description':tr['metaDescription'],'mainEntityOfPage':canonical,'dateModified':RELEASED});article.string=json.dumps(ad,ensure_ascii=False,separators=(',',':'))
-    dataset=soup.select_one('#datasetStructuredData');dd=json.loads(dataset.string or dataset.get_text());dd.update({'name':tr['metaDatasetName'],'description':tr['metaDatasetDescription']});dataset.string=json.dumps(dd,ensure_ascii=False,separators=(',',':'))
+    dataset=soup.select_one('#datasetStructuredData');dd=json.loads(dataset.string or dataset.get_text());dd.update({'name':tr['metaDatasetName'],'description':tr['metaDatasetDescription'],'version':VERSION,'dateModified':RELEASED});dataset.string=json.dumps(dd,ensure_ascii=False,separators=(',',':'))
     def links():
         return ''.join(f'<a href="{prefix}{l}/" hreflang="{l}" lang="{l}" data-language="{l}"'+(' aria-current="page"' if l==lang else '')+f'>{NAMES[l]}</a>' for l in LANGS)
     footer=soup.select_one('#languageVersions');footer['aria-label']=tr['languageVersions'];set_content(footer,links())

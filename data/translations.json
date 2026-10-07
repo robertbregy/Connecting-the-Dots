@@ -631,7 +631,7 @@
     "mapItemLabel": "Map item: {name}",
     "resourcesNav": "Resources",
     "methodNav": "Methodology & sources",
-    "metaDescription": "From .arpa to .lugano: an interactive history of top-level domains, applications, application outcomes, disputes, economics, social meaning, delegations and Internet governance. An independent research publication by Robert Bregy.",
+    "metaDescription": "Explore TLD history, ICANN applications, disputes, economics and social meaning from .arpa to the 2026 round. Independent research by Robert Bregy.",
     "metaOgDescription": "Who gets a place in the DNS root, who decides, what is a dot worth, and who belongs after it?",
     "tocLabel": "On this page",
     "homeLabel": "Go to Overview",
@@ -1746,7 +1746,8 @@
     "release0736": "Removes duplicate location text from Explorer cards when the registry country and represented place are the same, without changing any research data or profile detail.",
     "release0737": "Uses natural-height two-column layout for institutional oddity cards so short cases no longer stretch to match longer neighbours.",
     "release0738": "Completes a full-site responsive layout sweep, removing artificial panel stretching and hardening long translated text down to 320 px.",
-    "release0739": "Strengthens 2012 provenance with explicit ICANN primary-corpus authority, documents the 1,409 Reveal-Day definition, completes public release history and standardizes the German guided journey to formal address."
+    "release0739": "Strengthens 2012 provenance with explicit ICANN primary-corpus authority, documents the 1,409 Reveal-Day definition, completes public release history and standardizes the German guided journey to formal address.",
+    "release0740": "Final pre-Reveal polish: centralizes displayed counts on the locale-aware formatter, shortens search descriptions, enriches Dataset structured data with version/provenance metadata, and documents the project-path robots.txt limitation without changing research data or layout."
   },
   "it": {
     "brand": "Brand",
@@ -2380,7 +2381,7 @@
     "mapItemLabel": "Elemento mappa: {name}",
     "resourcesNav": "Risorse",
     "methodNav": "Metodo e fonti",
-    "metaDescription": "Da .arpa a .lugano: una storia interattiva dei domini di primo livello, delle candidature e dei loro esiti, delle dispute, dell’economia, del significato sociale, delle delegazioni e della governance di Internet. Una pubblicazione di ricerca indipendente di Robert Bregy.",
+    "metaDescription": "Esplora storia dei TLD, candidature ICANN, dispute, economia e significato sociale da .arpa al round 2026. Ricerca indipendente di Robert Bregy.",
     "metaOgDescription": "Chi ottiene un posto nella root DNS, chi decide, quanto vale un punto e chi si riconosce dopo il punto?",
     "tocLabel": "In questa sezione",
     "homeLabel": "Vai a Panoramica",
@@ -3495,7 +3496,8 @@
     "release0736": "Elimina la duplicazione del luogo nelle card dell’Explorer quando il paese del registry e il luogo rappresentato coincidono, senza modificare dati di ricerca o dettagli delle schede.",
     "release0737": "Usa un layout a due colonne ad altezza naturale per le stranezze istituzionali, evitando che le schede brevi si allunghino per pareggiare quelle vicine.",
     "release0738": "Completa un controllo responsive dell’intero sito, eliminando gli allungamenti artificiali dei pannelli e rendendo robusti i testi tradotti lunghi fino a 320 px.",
-    "release0739": "Rafforza la provenienza del corpus 2012 con l’autorità primaria ICANN esplicitata, documenta la definizione delle 1.409 stringhe del Reveal Day, completa la cronologia pubblica e uniforma al registro formale il percorso guidato tedesco."
+    "release0739": "Rafforza la provenienza del corpus 2012 con l’autorità primaria ICANN esplicitata, documenta la definizione delle 1.409 stringhe del Reveal Day, completa la cronologia pubblica e uniforma al registro formale il percorso guidato tedesco.",
+    "release0740": "Rifinitura finale pre-Reveal: centralizza i conteggi visualizzati nel formatter locale, accorcia le descrizioni per i motori di ricerca, arricchisce i dati strutturati Dataset con versione e provenienza e documenta il limite del robots.txt nel percorso di progetto, senza modificare dati di ricerca o layout."
   },
   "de": {
     "brand": "Marke",
@@ -4129,7 +4131,7 @@
     "mapItemLabel": "Kartenelement: {name}",
     "resourcesNav": "Ressourcen",
     "methodNav": "Methodik & Quellen",
-    "metaDescription": "Von .arpa bis .lugano: eine interaktive Geschichte der Top-Level-Domains, Bewerbungen und ihrer Ergebnisse, Streitfälle, Ökonomie, gesellschaftlichen Bedeutung, Delegationen und Internet-Governance. Eine unabhängige Forschungspublikation von Robert Bregy.",
+    "metaDescription": "TLD-Geschichte, ICANN-Bewerbungen, Streitfälle, Ökonomie und soziale Bedeutung von .arpa bis zur Runde 2026. Unabhängige Forschung von Robert Bregy.",
     "metaOgDescription": "Wer erhält einen Platz in der DNS-Root, wer entscheidet, was ist ein Punkt wert und wer gehört hinter den Punkt?",
     "tocLabel": "In diesem Abschnitt",
     "homeLabel": "Zur Übersicht",
@@ -5244,7 +5246,8 @@
     "release0736": "Entfernt doppelte Ortsangaben in Explorer-Karten, wenn Registry-Land und dargestellter Ort identisch sind, ohne Forschungsdaten oder Profildetails zu ändern.",
     "release0737": "Verwendet für institutionelle Kuriositäten ein zweispaltiges Layout mit natürlicher Höhe, damit kurze Karten nicht mehr an längere Nachbarn angepasst werden.",
     "release0738": "Schließt eine responsive Prüfung der gesamten Website ab, entfernt künstlich gestreckte Panels und macht lange Übersetzungen bis 320 px robust.",
-    "release0739": "Stärkt die Herkunft des 2012-Korpus durch eine ausdrücklich ausgewiesene primäre ICANN-Korpusquelle, dokumentiert die Definition der 1.409 Reveal-Day-Strings, vervollständigt die öffentliche Versionshistorie und vereinheitlicht die deutsche Führung auf die formelle Anrede."
+    "release0739": "Stärkt die Herkunft des 2012-Korpus durch eine ausdrücklich ausgewiesene primäre ICANN-Korpusquelle, dokumentiert die Definition der 1.409 Reveal-Day-Strings, vervollständigt die öffentliche Versionshistorie und vereinheitlicht die deutsche Führung auf die formelle Anrede.",
+    "release0740": "Letzte Vor-Reveal-Feinarbeit: zentralisiert angezeigte Zählwerte im sprachabhängigen Zahlenformat, kürzt Suchbeschreibungen, ergänzt Dataset-Strukturdaten um Versions- und Herkunftsangaben und dokumentiert die robots.txt-Grenze des Projektpfads, ohne Forschungsdaten oder Layout zu ändern."
   },
   "fr": {
     "brand": "Marque",
@@ -5878,7 +5881,7 @@
     "mapItemLabel": "Élément de carte : {name}",
     "resourcesNav": "Ressources",
     "methodNav": "Méthode & sources",
-    "metaDescription": "De .arpa à .lugano : une histoire interactive des domaines de premier niveau, des candidatures et de leurs issues, des litiges, de l’économie, du sens social, des délégations et de la gouvernance de l’Internet. Une publication de recherche indépendante de Robert Bregy.",
+    "metaDescription": "Explorez l’histoire des TLD, les candidatures ICANN, les litiges, l’économie et leur dimension sociale, de .arpa à 2026. Recherche indépendante de Robert Bregy.",
     "metaOgDescription": "Qui obtient une place dans la racine DNS, qui décide, que vaut un point et qui se reconnaît après le point ?",
     "tocLabel": "Dans cette section",
     "homeLabel": "Aller à la vue d’ensemble",
@@ -6993,6 +6996,7 @@
     "release0736": "Supprime la répétition du lieu dans les cartes de l’Explorer lorsque le pays du registre et le lieu représenté coïncident, sans modifier les données de recherche ni le détail des fiches.",
     "release0737": "Utilise une mise en page à deux colonnes de hauteur naturelle pour les curiosités institutionnelles afin que les cartes courtes ne soient plus étirées comme leurs voisines plus longues.",
     "release0738": "Achève une vérification responsive de l’ensemble du site, supprime les étirements artificiels des panneaux et renforce l’affichage des traductions longues jusqu’à 320 px.",
-    "release0739": "Renforce la provenance du corpus 2012 en explicitant l’autorité primaire ICANN, documente la définition des 1 409 chaînes du Reveal Day, complète l’historique public des versions et uniformise le parcours guidé allemand au registre formel."
+    "release0739": "Renforce la provenance du corpus 2012 en explicitant l’autorité primaire ICANN, documente la définition des 1 409 chaînes du Reveal Day, complète l’historique public des versions et uniformise le parcours guidé allemand au registre formel.",
+    "release0740": "Dernière finition pré-Reveal : centralise les nombres affichés dans le formateur localisé, raccourcit les descriptions pour les moteurs de recherche, enrichit les données structurées Dataset avec version et provenance et documente la limite du robots.txt du chemin de projet, sans modifier les données de recherche ni la mise en page."
   }
 }

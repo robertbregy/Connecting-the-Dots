@@ -83,7 +83,7 @@ function render(language,alias=false){
   article.textContent=JSON.stringify(articleData);
   const dataset=document.getElementById('datasetStructuredData');
   const datasetData=JSON.parse(dataset.textContent);
-  Object.assign(datasetData,{name:translations.metaDatasetName,description:translations.metaDatasetDescription});
+  Object.assign(datasetData,{name:translations.metaDatasetName,description:translations.metaDatasetDescription,version:window.DOT_PUBLICATION.version,dateModified:window.DOT_PUBLICATION.releasedOn});
   dataset.textContent=JSON.stringify(datasetData);
 
   const links=()=>languages.map(l=>`<a href="${prefix+l}/" hreflang="${l}" lang="${l}" data-language="${l}"${l===language?' aria-current="page"':''}>${names[l]}</a>`).join('');

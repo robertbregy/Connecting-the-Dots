@@ -1,3 +1,4 @@
+# Project-scoped copy: GitHub Pages honors crawler directives only from the host-root /robots.txt. Page-level meta robots and the sitemap remain authoritative for this project path.
 User-agent: *
 Allow: /
 

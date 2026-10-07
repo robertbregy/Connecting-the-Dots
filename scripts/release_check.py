@@ -74,18 +74,44 @@ for u in ['https://www.icann.org/en/announcements/details/new-gtld-reveal-day---
     if u not in source_urls: fail('2012 provenance source missing from sources inventory: '+u)
 
 changelog=(ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
-for marker in ['v0.7.39','v0.7.38','v0.7.37','v0.7.36','v0.7.35','v0.7.34','v0.7.33','v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
+for marker in ['v0.7.40','v0.7.39','v0.7.38','v0.7.37','v0.7.36','v0.7.35','v0.7.34','v0.7.33','v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
     if marker not in changelog: fail('changelog missing '+marker)
 readme=(ROOT/'README.md').read_text(encoding='utf-8')
 if "No live refresh occurs in a visitor's browser." in readme: fail('README contains obsolete no-live-refresh claim')
 
-# v0.7.39 release-history integrity: the public history must begin with the package version
+# v0.7.40 release-history integrity: the public history must begin with the package version
 # and every published summary key must exist in all four languages.
 history=json_file('release_history.json').get('releases',[])
 if not history or history[0].get('version')!=version: fail('release history latest version does not match package')
 translations=json_file('translations.json')
 latest_summary=history[0].get('summaryKey')
 if not latest_summary or any(not translations.get(lang,{}).get(latest_summary) for lang in LANGS): fail('latest release-history summary translation missing')
+
+# v0.7.40 final pre-Reveal polish invariants.
+for lang in LANGS:
+    desc=translations.get(lang,{}).get('metaDescription','')
+    if not (100 <= len(desc) <= 160): fail(f'{lang} meta description length outside 100-160 chars: {len(desc)}')
+if 'ICANN · <span data-number="1616">1,616</span> ↗' not in source_html:
+    fail('2026 source-chip count is not locale-aware')
+if "new Intl.NumberFormat(localeCode(),{useGrouping:true}).format(Number(v))" not in appjs or '${fmtNum(r.applications)}' not in appjs:
+    fail('display counts are not centralized on the locale-aware grouped formatter')
+robots=(ROOT/'robots.txt').read_text(encoding='utf-8')
+if 'Project-scoped copy:' not in robots or 'host-root /robots.txt' not in robots:
+    fail('robots.txt project-path limitation is not documented')
+try:
+    ds_match=re.search(r'<script id="datasetStructuredData" type="application/ld\+json">(.*?)</script>',source_html,re.S)
+    ds=json.loads(ds_match.group(1)) if ds_match else {}
+except Exception as exc:
+    fail('Dataset JSON-LD cannot be parsed: '+str(exc))
+if ds.get('version')!=version or ds.get('dateModified')!='2026-10-07':
+    fail('Dataset JSON-LD version/date is stale')
+expected_based_on={
+    'https://www.iana.org/domains/root/db',
+    'https://gtldresult.icann.org/applicationstatus/viewstatus',
+    'https://www.icann.org/en/announcements/details/new-gtld-reveal-day---applied-for-strings-13-6-2012-en',
+}
+if not expected_based_on.issubset(set(ds.get('isBasedOn') or [])):
+    fail('Dataset JSON-LD primary provenance is incomplete')
 
 
 # Reader-experience and accessibility invariants. These are intentionally
