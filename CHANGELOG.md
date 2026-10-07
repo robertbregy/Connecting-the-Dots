@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.7.39 — 2026-10-07
+
+- Strengthens 2012 provenance by distinguishing the secondary row materialization source from ICANN primary corpus authority.
+- Adds explicit official ICANN 2012 application-status and Reveal-Day references to the public methodology.
+- Documents why 1,409 is the original 13 June 2012 Reveal-Day distinct-string count while later ICANN materials may cite 1,388 for later active/program-state populations.
+- Completes public release history for v0.7.37 and v0.7.38 and adds a release-history/version integrity guard.
+- Standardizes the German guided journey on formal Sie/Ihr address.
+- Leaves the 2026 application-level corpus intentionally empty until official Reveal Day publication.
+
 ## v0.7.38 — 2026-10-06
 - Completes a 17-section × 4-language pre-Reveal layout sweep after the Strange Internet natural-height fix.
 - Prevents the short Sources methodological-guardrails panel from stretching to the height of the full source inventory.

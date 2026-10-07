@@ -24,6 +24,10 @@ RAW_2012='https://raw.githubusercontent.com/nimblemachines/analyzing-iana-root-d
 CDN_2012='https://cdn.jsdelivr.net/gh/nimblemachines/analyzing-iana-root-db@master/strings-1200utc-13jun12-en.csv'
 WAYBACK_2012='https://web.archive.org/web/20120613142047if_/http://newgtlds-cloudfront.icann.org/sites/default/files/reveal/strings-1200utc-13jun12-en.html'
 ICANN_2012='https://newgtlds.icann.org/en/program-status/statistics'
+ICANN_2012_STATUS='https://gtldresult.icann.org/applicationstatus/viewstatus'
+ICANN_2012_REVEAL='https://www.icann.org/en/announcements/details/new-gtld-reveal-day---applied-for-strings-13-6-2012-en'
+ICANN_2013_QUALITY='https://newgtlds.icann.org/sites/default/files/ie-quality-program-26aug14-en.pdf'
+ICANN_2025_TERMINATION='https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-regular-meeting-of-the-icann-board-14-09-2025-en'
 ICANN_2012_OVERVIEW='https://newgtlds.icann.org/en/program-status/statistics/applications-overview-13jun12-en.pdf'
 ICANN_2012_ANNUAL='https://www.icann.org/en/about/annual-report/annual-report-2012-en.pdf'
 TRANSCRIPTION_2012='https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/'
@@ -267,6 +271,7 @@ for i,(source_row,string,applicant) in enumerate(pairs,1):
         'string_change_reason':change['reason'] if change else '',
         'string_change_source_url':ICANN_2012_STRING_CHANGES if change else '',
         'source_url':TRANSCRIPTION_2012,'source_role':'secondary-transcription-of-icann-reveal-table',
+        'official_corpus_source_url':ICANN_2012_STATUS,'official_corpus_source_role':'official-icann-2012-application-status-database',
         'metadata_scope':'complete-string-applicant-graph-plus-approved-string-changes','source_row':source_row
     })
 if sum(a['idn']=='Yes' for a in apps2012)!=116: raise SystemExit('2012 IDN application count != 116')
@@ -309,7 +314,7 @@ for a in apps2012:
         'round':'2012','submissionId':a['submission_id'],'applicationId':a['official_application_id'],'string':a['string'],'asciiString':a['ascii_string'],'applicant':a['applicant'],
         'location':'','region':'','idn':a['idn']=='Yes','aLabel':a['a_label'],'scriptCode':'','community':None,'geographic':None,
         'status':a['status'],'outcome':a['outcome'],'outcomeReason':a['outcome_reason'],'outcomeCaseId':a['outcome_case_id'],'outcomeSource':a['outcome_source_url'],'contention':a['contention'],'contentionCaseId':a['contention_case_id'],'controversy':a['controversy'],'controversyCaseId':a['controversy_case_id'],'relationType':'requested','source':a['source_url'],
-        'sourceRole':a['source_role'],'metadataScope':a['metadata_scope'],'sourceRow':a['source_row']
+        'sourceRole':a['source_role'],'officialCorpusSource':a['official_corpus_source_url'],'officialCorpusSourceRole':a['official_corpus_source_role'],'metadataScope':a['metadata_scope'],'sourceRow':a['source_row']
     }
     local_apps.append(base)
     if a['string_change_target']:
@@ -336,9 +341,11 @@ manifest={
    '2012':{
       'delivery':'vendored-complete-string-applicant-graph','applications':1930,'uniqueStrings':1409,'idn':116,'geographic':66,'community':84,
       'contestedStrings':230,'contestedApplications':751,'regions':{'NA':911,'EUR':675,'AP':303,'LAC':24,'AF':17},
-      'sources':[WAYBACK_2012,ICANN_2012_OVERVIEW,ICANN_2012_ANNUAL,ICANN_2012,ICANN_2012_STRING_CHANGES,ICANN_2012_INITIAL_CONTENTION,RAW_2012,CDN_2012,TRANSCRIPTION_2012],
+      'sources':[ICANN_2012_REVEAL,ICANN_2012_STATUS,WAYBACK_2012,ICANN_2012_OVERVIEW,ICANN_2012_ANNUAL,ICANN_2012,ICANN_2012_STRING_CHANGES,ICANN_2012_INITIAL_CONTENTION,RAW_2012,CDN_2012,TRANSCRIPTION_2012],
       'expectedOriginalHeader':['String','Applicant','Website','Location','Region','Primary Contact','Email','IDN?','A-Label','English Meaning','Script Code','Community?','Geographic?','Application ID'],
       'fieldsVendored':['String','Applicant','approved post-Reveal string-change target for four applications'],
+      'provenance':{'rowMaterialization':'secondary transcription of the 13 June 2012 ICANN Reveal table','officialCorpusAuthority':ICANN_2012_STATUS,'officialRevealAuthority':ICANN_2012_REVEAL,'applicationIdPolicy':'Only IDs independently documented by a primary ICANN source are populated; blank does not mean that ICANN did not assign an ID.'},
+      'revealDayDistinctStringDefinition':{'value':1409,'asOf':'2012-06-13','definition':'distinct strings in the original Reveal-Day list','laterActivePopulationExample':1388,'laterActivePopulationAsOf':'2013-08-28','note':'Later ICANN materials use 1,388 for a later active/program-state population; this does not replace the original 1,409 Reveal-Day count.','sources':[ICANN_2012_ANNUAL,ICANN_2013_QUALITY,ICANN_2025_TERMINATION]},
       'derivedFields':['A-Label for IDNs','IDN flag','project record ID','contention counts'],
       'outcomeFields':{'fields':['outcome','outcome_reason','outcome_case_id','outcome_source_url'],'coverage':'source-backed subset only','rule':'Blank means not documented in this frozen corpus; no result is inferred from present-day root status.','sourceBackedApplicationRows':27},
       'independentDimensions':{'contention':['contention','contention_case_id'],'controversy':['controversy','controversy_case_id'],'rule':'Outcome, contention and controversy are independent. A row may carry more than one dimension; editorial case selection does not collapse them.'},
@@ -350,19 +357,20 @@ manifest={
           'nonExactMatchPairs':[['.hoteis','.hotels'],['.unicom','.unicorn']],
           'note':'The 230 exact-match sets are counted from duplicate Reveal-Day strings. ICANN also identified two initial non-exact string-similarity sets; they are documented separately and are not folded into the exact-match application count.'
       },
-      'fieldsNotVendored':['Website','Location','Region','Primary Contact','Email','English Meaning','Script Code','Community?','Geographic?','official Application ID'],
+      'fieldsNotVendored':['Website','Location','Region','Primary Contact','Email','English Meaning','Script Code','Community?','Geographic?','official Application ID except four independently documented string-change applications'],
       'metadataScope':'Complete 1,930-row application→string→applicant graph covering all 1,409 distinct Reveal-Day strings, plus all four ICANN-approved post-Reveal string corrections (three additional unique replacement labels; 1,412 application-string lifecycle labels in total). Richer original application metadata is not claimed as locally complete.'
    }
  },
  'runtimeSources2012':[],
- 'documentedExternalSources2012':[RAW_2012,CDN_2012,WAYBACK_2012],
+ 'documentedExternalSources2012':[ICANN_2012_REVEAL,ICANN_2012_STATUS,RAW_2012,CDN_2012,WAYBACK_2012],
  'runtimeTransport2012':{
    'status':'disabled-local-corpus-vendored',
    'canonicalHistoricalEvidence':WAYBACK_2012,
+   'officialCurrentApplicationDatabase':ICANN_2012_STATUS,
    'scope':'The complete 2012 string/applicant graph is bundled locally. External mirrors remain provenance references only; no browser-time transport contributes records.',
    'validation':['1,930 application rows','1,409 distinct Reveal-Day strings','4 approved post-Reveal string corrections','3 additional unique replacement labels','1,412 application-string lifecycle labels','116 IDN applications','230 contested Reveal-Day strings','751 applications in exact-match Reveal-Day contention strings','2 initial non-exact string-similarity sets (.hoteis/.hotels and .unicom/.unicorn)','top contention sanity checks: .app 13, .home 11, .inc 11, .web 7'],
  },
- 'method':'The publication locally vendors the complete 13 June 2012 applied-for-string/applicant graph: 1,930 applications across 1,409 distinct Reveal-Day strings, plus all four ICANN-approved post-Reveal string corrections that add three unique replacement labels (1,412 application-string lifecycle labels total). It does not claim that every field of the historic 14-column Reveal CSV is locally reproduced. Primary Contact and Email are excluded by design, and no browser-time external research fetch is used.'
+ "method":"The publication locally vendors the complete 13 June 2012 applied-for-string/applicant graph: 1,930 applications across 1,409 distinct Reveal-Day strings, plus all four ICANN-approved post-Reveal string corrections that add three unique replacement labels (1,412 application-string lifecycle labels total). Row materialization is preserved from a secondary transcription of the original ICANN Reveal table and is explicitly corroborated at corpus level by ICANN\'s official 2012 application-status database and Reveal-Day publication. It does not claim that every field of the historic 14-column Reveal CSV is locally reproduced. Primary Contact and Email are excluded by design, and official Application IDs remain blank unless independently documented by a primary ICANN source. No browser-time external research fetch is used."
 }
 (DATA/'application_archaeology_local.json').write_text(json.dumps({'schemaVersion':1,'applications':local_apps},ensure_ascii=False,separators=(',',':')),encoding='utf-8')
 (DATA/'application_archaeology_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')

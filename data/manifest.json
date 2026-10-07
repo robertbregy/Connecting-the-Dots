@@ -1,7 +1,7 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.38",
-  "release_date": "2026-10-06",
+  "version": "0.7.39",
+  "release_date": "2026-10-07",
   "publication_state": "pre-reveal",
   "rendering": "static-prerendered",
   "language_routes": {
@@ -117,6 +117,8 @@
             "AF": 17
           },
           "sources": [
+            "https://www.icann.org/en/announcements/details/new-gtld-reveal-day---applied-for-strings-13-6-2012-en",
+            "https://gtldresult.icann.org/applicationstatus/viewstatus",
             "https://web.archive.org/web/20120613142047if_/http://newgtlds-cloudfront.icann.org/sites/default/files/reveal/strings-1200utc-13jun12-en.html",
             "https://newgtlds.icann.org/en/program-status/statistics/applications-overview-13jun12-en.pdf",
             "https://www.icann.org/en/about/annual-report/annual-report-2012-en.pdf",
@@ -148,6 +150,25 @@
             "Applicant",
             "approved post-Reveal string-change target for four applications"
           ],
+          "provenance": {
+            "rowMaterialization": "secondary transcription of the 13 June 2012 ICANN Reveal table",
+            "officialCorpusAuthority": "https://gtldresult.icann.org/applicationstatus/viewstatus",
+            "officialRevealAuthority": "https://www.icann.org/en/announcements/details/new-gtld-reveal-day---applied-for-strings-13-6-2012-en",
+            "applicationIdPolicy": "Only IDs independently documented by a primary ICANN source are populated; blank does not mean that ICANN did not assign an ID."
+          },
+          "revealDayDistinctStringDefinition": {
+            "value": 1409,
+            "asOf": "2012-06-13",
+            "definition": "distinct strings in the original Reveal-Day list",
+            "laterActivePopulationExample": 1388,
+            "laterActivePopulationAsOf": "2013-08-28",
+            "note": "Later ICANN materials use 1,388 for a later active/program-state population; this does not replace the original 1,409 Reveal-Day count.",
+            "sources": [
+              "https://www.icann.org/en/about/annual-report/annual-report-2012-en.pdf",
+              "https://newgtlds.icann.org/sites/default/files/ie-quality-program-26aug14-en.pdf",
+              "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-regular-meeting-of-the-icann-board-14-09-2025-en"
+            ]
+          },
           "derivedFields": [
             "A-Label for IDNs",
             "IDN flag",
@@ -205,13 +226,15 @@
             "Script Code",
             "Community?",
             "Geographic?",
-            "official Application ID"
+            "official Application ID except four independently documented string-change applications"
           ],
           "metadataScope": "Complete 1,930-row application→string→applicant graph covering all 1,409 distinct Reveal-Day strings, plus all four ICANN-approved post-Reveal string corrections (three additional unique replacement labels; 1,412 application-string lifecycle labels in total). Richer original application metadata is not claimed as locally complete."
         }
       },
       "runtimeSources2012": [],
       "documentedExternalSources2012": [
+        "https://www.icann.org/en/announcements/details/new-gtld-reveal-day---applied-for-strings-13-6-2012-en",
+        "https://gtldresult.icann.org/applicationstatus/viewstatus",
         "https://raw.githubusercontent.com/nimblemachines/analyzing-iana-root-db/master/strings-1200utc-13jun12-en.csv",
         "https://cdn.jsdelivr.net/gh/nimblemachines/analyzing-iana-root-db@master/strings-1200utc-13jun12-en.csv",
         "https://web.archive.org/web/20120613142047if_/http://newgtlds-cloudfront.icann.org/sites/default/files/reveal/strings-1200utc-13jun12-en.html"
@@ -219,6 +242,7 @@
       "runtimeTransport2012": {
         "status": "disabled-local-corpus-vendored",
         "canonicalHistoricalEvidence": "https://web.archive.org/web/20120613142047if_/http://newgtlds-cloudfront.icann.org/sites/default/files/reveal/strings-1200utc-13jun12-en.html",
+        "officialCurrentApplicationDatabase": "https://gtldresult.icann.org/applicationstatus/viewstatus",
         "scope": "The complete 2012 string/applicant graph is bundled locally. External mirrors remain provenance references only; no browser-time transport contributes records.",
         "validation": [
           "1,930 application rows",
@@ -233,7 +257,7 @@
           "top contention sanity checks: .app 13, .home 11, .inc 11, .web 7"
         ]
       },
-      "method": "The publication locally vendors the complete 13 June 2012 applied-for-string/applicant graph: 1,930 applications across 1,409 distinct Reveal-Day strings, plus all four ICANN-approved post-Reveal string corrections that add three unique replacement labels (1,412 application-string lifecycle labels total). It does not claim that every field of the historic 14-column Reveal CSV is locally reproduced. Primary Contact and Email are excluded by design, and no browser-time external research fetch is used."
+      "method": "The publication locally vendors the complete 13 June 2012 applied-for-string/applicant graph: 1,930 applications across 1,409 distinct Reveal-Day strings, plus all four ICANN-approved post-Reveal string corrections that add three unique replacement labels (1,412 application-string lifecycle labels total). Row materialization is preserved from a secondary transcription of the original ICANN Reveal table and is explicitly corroborated at corpus level by ICANN's official 2012 application-status database and Reveal-Day publication. It does not claim that every field of the historic 14-column Reveal CSV is locally reproduced. Primary Contact and Email are excluded by design, and official Application IDs remain blank unless independently documented by a primary ICANN source. No browser-time external research fetch is used."
     },
     "topicFacetCoverageComplete": true,
     "topicFacetTaxonomy": "editorial-macro-v1",
@@ -257,7 +281,7 @@
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "release_history": {
     "path": "release_history.json",
-    "sha256": "7a53877ba86b7c608779dfcfb93c2f89edc74b0cb231523e67338f65ddc41aa6"
+    "sha256": "f994296826c08025b787793af1fb9bef8143e153c7299e2aa92d0c6c5d80b425"
   },
   "freeze": {
     "status": "pre-reveal-frozen",
@@ -272,8 +296,8 @@
     "assets": [
       {
         "repository_path": "data/site_bundle.js",
-        "bytes": 1987546,
-        "sha256": "fbbb52628750a99530ba3460324a1410bd2cd90a9dc54e71488a41d81b746258"
+        "bytes": 1992659,
+        "sha256": "364b54cbbefb2b8727ac20ab7ba7511f942657829e3189bfec793266faaf9e11"
       },
       {
         "repository_path": "assets/app.js",
@@ -292,43 +316,43 @@
       },
       {
         "repository_path": "data/explorer_profiles_0.js",
-        "bytes": 1046264,
-        "sha256": "06277fec09e1ddae13560cca77634f7ddc8388870fd284f2706c6adb7025c90c"
+        "bytes": 1089784,
+        "sha256": "7e40007bbb0cfe6b6e507190f86b243a976e5a9821562184e306e5340b62531f"
       },
       {
         "repository_path": "data/explorer_profiles_1.js",
-        "bytes": 869821,
-        "sha256": "e23659931783daf24e13fbc941eca5007baa9701374bce43fcb6bd3776469ec4"
+        "bytes": 904381,
+        "sha256": "4088a1b542f12866581c2aca23ee1af97d6bde69e4376ee43893688cbc97a3bd"
       },
       {
         "repository_path": "data/explorer_profiles_2.js",
-        "bytes": 967385,
-        "sha256": "8fcfbd116b096c1a9cc4affcc8a4c6c25e69f345709b2eb979439d72058c0523"
+        "bytes": 1007545,
+        "sha256": "aeb430fc424912c935ceba9c896ebaf81b4b8b8986f366e42e30f616358ca38a"
       },
       {
         "repository_path": "data/explorer_profiles_3.js",
-        "bytes": 895720,
-        "sha256": "263a9ab2d527696e9bad38b10f2544913b3cfc8f89669619494863edb6d3750c"
+        "bytes": 934600,
+        "sha256": "2e6a747f6437ef54893581312bacea61f9bc778e95440b166485e49d5d858dda"
       },
       {
         "repository_path": "data/explorer_profiles_4.js",
-        "bytes": 933775,
-        "sha256": "5078477a0aaa7586b3e0593f5fbb79e72ece47583ec92aaa3a04e550af95006c"
+        "bytes": 970735,
+        "sha256": "44b2cbcc8d7e7b1b6c1abf6f24c0dc112b30c1bc61743de9c4155ad10d226d39"
       },
       {
         "repository_path": "data/explorer_profiles_5.js",
-        "bytes": 904561,
-        "sha256": "7d135f548e6c67d948d18033c0af8ff85c03ac923cd15b423a1d92d19babe371"
+        "bytes": 943441,
+        "sha256": "d9321592d2256879951a954b2b418d2f48910cb45bb4f64ee3bc76e264a457fb"
       },
       {
         "repository_path": "data/explorer_profiles_6.js",
-        "bytes": 914442,
-        "sha256": "a595bb23aa28dd5d4a78763e7af6b5ae6b6a99a28cac927976d05fe4b33f1ad2"
+        "bytes": 953642,
+        "sha256": "9d8dedf9fa09ff2eb05aac03646fe34a13c8d6892eb41bb0339b0d82b1a85c60"
       },
       {
         "repository_path": "data/explorer_profiles_7.js",
-        "bytes": 898731,
-        "sha256": "745b14818b488e45af87dda1e6680fb208e7de48d2519063729d85b8757255ad"
+        "bytes": 936011,
+        "sha256": "71d8102ab24ae4c5476b3dcd3c49e54321ffa80aa0592cc8e21d5896ce5c9202"
       }
     ]
   },
@@ -371,9 +395,9 @@
     },
     {
       "path": "applications_2012.csv",
-      "bytes": 609268,
+      "bytes": 813903,
       "records": 1930,
-      "sha256": "dd1e4b81c886a84f6de36f40b1a41f90331d794d6df2c84602f3fcd4d57d4a70"
+      "sha256": "96b93fafc298cfc632481f43fdf439b9d65eb4a022356ea4124a6e494fd50822"
     },
     {
       "path": "applications_2026.csv",
@@ -557,9 +581,9 @@
     },
     {
       "path": "sources.csv",
-      "bytes": 20991,
-      "records": 181,
-      "sha256": "c9f0f571d114a345b60316780404c3b53db714cd4c9d5a04789e4cf5a7f128c3"
+      "bytes": 21632,
+      "records": 185,
+      "sha256": "c425c86cb57aff468048f04ea8210b0f5346c3d23c800b2ee3166700b86b9597"
     },
     {
       "path": "strange_internet.csv",

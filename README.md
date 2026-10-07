@@ -1,4 +1,10 @@
-# Connecting the Dots — v0.7.38
+# Connecting the Dots — v0.7.39
+
+## v0.7.39 — Provenance and release-history hardening
+
+This pre-Reveal maintenance release strengthens the evidentiary chain for the complete 2012 application-string/applicant graph. The vendored row materialization remains explicitly identified as a preserved secondary transcription of ICANN's 13 June 2012 Reveal table, while ICANN's official Reveal-Day publication and current 2012 application-status database are now declared as primary corpus authorities. Official Application IDs are not bulk-inferred: they remain blank unless independently documented by a primary ICANN source.
+
+The public methodology now explains that **1,409** is the distinct-string count in the original 13 June 2012 Reveal-Day list. Later ICANN materials sometimes use **1,388** for later active/program-state populations; those values describe a different snapshot or population and do not replace the original Reveal-Day count. v0.7.39 also completes the public release history for v0.7.37-v0.7.39, adds a release-history integrity gate, and standardizes the German guided journey on formal address.
 
 ## v0.7.38 — Full-site layout sweep
 

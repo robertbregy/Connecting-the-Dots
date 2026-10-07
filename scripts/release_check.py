@@ -66,11 +66,27 @@ if "renderApplicationCorpusStatus('ready')" not in appjs: fail('local historical
 if '"lifeHistoryGtldContractsRuntime":false' not in (DATA/'data_bundle.js').read_text(encoding='utf-8'): fail('gTLD runtime lifecycle enrichment is not disabled')
 arch_manifest=json_file('application_archaeology_manifest.json')
 if arch_manifest.get('runtimeTransport2012',{}).get('status')!='disabled-local-corpus-vendored': fail('2012 local-corpus transport state is not declared')
+
+defn=arch_manifest.get('rounds',{}).get('2012',{}).get('revealDayDistinctStringDefinition',{})
+if defn.get('value')!=1409 or defn.get('laterActivePopulationExample')!=1388 or defn.get('asOf')!='2012-06-13': fail('2012 Reveal-Day distinct-string definition metadata drift')
+source_urls={r.get('url') for r in rows('sources.csv')}
+for u in ['https://www.icann.org/en/announcements/details/new-gtld-reveal-day---applied-for-strings-13-6-2012-en','https://gtldresult.icann.org/applicationstatus/viewstatus','https://newgtlds.icann.org/sites/default/files/ie-quality-program-26aug14-en.pdf','https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-regular-meeting-of-the-icann-board-14-09-2025-en']:
+    if u not in source_urls: fail('2012 provenance source missing from sources inventory: '+u)
+
 changelog=(ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
-for marker in ['v0.7.38','v0.7.37','v0.7.36','v0.7.35','v0.7.34','v0.7.33','v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
+for marker in ['v0.7.39','v0.7.38','v0.7.37','v0.7.36','v0.7.35','v0.7.34','v0.7.33','v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
     if marker not in changelog: fail('changelog missing '+marker)
 readme=(ROOT/'README.md').read_text(encoding='utf-8')
 if "No live refresh occurs in a visitor's browser." in readme: fail('README contains obsolete no-live-refresh claim')
+
+# v0.7.39 release-history integrity: the public history must begin with the package version
+# and every published summary key must exist in all four languages.
+history=json_file('release_history.json').get('releases',[])
+if not history or history[0].get('version')!=version: fail('release history latest version does not match package')
+translations=json_file('translations.json')
+latest_summary=history[0].get('summaryKey')
+if not latest_summary or any(not translations.get(lang,{}).get(latest_summary) for lang in LANGS): fail('latest release-history summary translation missing')
+
 
 # Reader-experience and accessibility invariants. These are intentionally
 # structural rather than pixel-perfect so the project can evolve without
@@ -239,7 +255,7 @@ if sim.get('source')!='https://gtldresult.icann.org/applicationstatus/stringcont
 # v0.7.30 complete local 2012 string/applicant graph contract.
 apps2012=rows('applications_2012.csv')
 if len(apps2012)!=1930: fail('2012 local application row count')
-required_2012_cols={'round','submission_id','official_application_id','string','ascii_string','applicant','idn','a_label','relation_type','status','outcome','outcome_reason','outcome_case_id','outcome_source_url','contention','contention_case_id','controversy','controversy_case_id','string_change_target','string_change_target_ascii','string_change_reason','string_change_source_url','source_url','source_role','metadata_scope','source_row'}
+required_2012_cols={'round','submission_id','official_application_id','string','ascii_string','applicant','idn','a_label','relation_type','status','outcome','outcome_reason','outcome_case_id','outcome_source_url','contention','contention_case_id','controversy','controversy_case_id','string_change_target','string_change_target_ascii','string_change_reason','string_change_source_url','source_url','source_role','official_corpus_source_url','official_corpus_source_role','metadata_scope','source_row'}
 if set(apps2012[0])!=required_2012_cols: fail('2012 public export schema drift')
 expected_changed_ids={'.dotafrica':'1-1165-42560','.kerrylogisitics':'1-928-31367','.xn--hdb9cza1b':'1-1254-29622','.xn--tqq33ed31aqia':'1-910-25137'}
 for r in apps2012:
@@ -255,7 +271,7 @@ c2012=Counter(r['ascii_string'] for r in apps2012)
 if sum(v>1 for v in c2012.values())!=230 or sum(v for v in c2012.values() if v>1)!=751: fail('2012 contention graph totals')
 for key,n in {'.app':13,'.home':11,'.inc':11,'.web':7,'.art':10,'.music':8}.items():
     if c2012[key]!=n: fail(f'2012 known contention count {key}')
-if any(r.get('source_role')!='secondary-transcription-of-icann-reveal-table' or r.get('metadata_scope')!='complete-string-applicant-graph-plus-approved-string-changes' for r in apps2012): fail('2012 source/scope labels drifted')
+if any(r.get('source_role')!='secondary-transcription-of-icann-reveal-table' or r.get('official_corpus_source_url')!='https://gtldresult.icann.org/applicationstatus/viewstatus' or r.get('official_corpus_source_role')!='official-icann-2012-application-status-database' or r.get('metadata_scope')!='complete-string-applicant-graph-plus-approved-string-changes' for r in apps2012): fail('2012 source/scope labels drifted')
 changes=[r for r in apps2012 if r.get('string_change_target')]
 if len(changes)!=4: fail('2012 approved string-change count')
 if len({r['string_change_target_ascii'] for r in changes})!=4: fail('2012 approved string-change target uniqueness')
@@ -451,7 +467,7 @@ for rel in ['index.html',*[f'{x}/index.html' for x in LANGS]]:
     m=re.search(r'<span[^>]*data-i18n="publicationState"[^>]*>(.*?)</span>',text,re.S)
     if not m or '2026' not in re.sub('<[^>]+>','',m.group(1)): fail(f'visible publication snapshot is not derived/rendered in {rel}')
     if any(stale in text for stale in ['SNAPSHOT · 2 OCT 2026','SNAPSHOT PRE-REVEAL · 2 OTT 2026','PRE-REVEAL-SNAPSHOT · 2. OKT 2026','SNAPSHOT PRÉ-REVEAL · 2 OCT 2026']): fail(f'stale 2 October publication state in {rel}')
-    if '"dateModified":"2026-10-06"' not in text: fail(f'structured-data dateModified mismatch in {rel}')
+    if '"dateModified":"2026-10-07"' not in text: fail(f'structured-data dateModified mismatch in {rel}')
     if text.count('<h1')!=1: fail(f'expected exactly one h1 in {rel}')
     skip=re.search(r'<a\b(?=[^>]*\bclass=["\'][^"\']*\bskipLink\b[^"\']*["\'])(?=[^>]*\bhref=["\']#main-content["\'])[^>]*>',text,re.I)
     main=re.search(r'<main\b(?=[^>]*\bid=["\']main-content["\'])[^>]*>',text,re.I)

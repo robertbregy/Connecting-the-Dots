@@ -47,6 +47,8 @@
         "AF": 17
       },
       "sources": [
+        "https://www.icann.org/en/announcements/details/new-gtld-reveal-day---applied-for-strings-13-6-2012-en",
+        "https://gtldresult.icann.org/applicationstatus/viewstatus",
         "https://web.archive.org/web/20120613142047if_/http://newgtlds-cloudfront.icann.org/sites/default/files/reveal/strings-1200utc-13jun12-en.html",
         "https://newgtlds.icann.org/en/program-status/statistics/applications-overview-13jun12-en.pdf",
         "https://www.icann.org/en/about/annual-report/annual-report-2012-en.pdf",
@@ -78,6 +80,25 @@
         "Applicant",
         "approved post-Reveal string-change target for four applications"
       ],
+      "provenance": {
+        "rowMaterialization": "secondary transcription of the 13 June 2012 ICANN Reveal table",
+        "officialCorpusAuthority": "https://gtldresult.icann.org/applicationstatus/viewstatus",
+        "officialRevealAuthority": "https://www.icann.org/en/announcements/details/new-gtld-reveal-day---applied-for-strings-13-6-2012-en",
+        "applicationIdPolicy": "Only IDs independently documented by a primary ICANN source are populated; blank does not mean that ICANN did not assign an ID."
+      },
+      "revealDayDistinctStringDefinition": {
+        "value": 1409,
+        "asOf": "2012-06-13",
+        "definition": "distinct strings in the original Reveal-Day list",
+        "laterActivePopulationExample": 1388,
+        "laterActivePopulationAsOf": "2013-08-28",
+        "note": "Later ICANN materials use 1,388 for a later active/program-state population; this does not replace the original 1,409 Reveal-Day count.",
+        "sources": [
+          "https://www.icann.org/en/about/annual-report/annual-report-2012-en.pdf",
+          "https://newgtlds.icann.org/sites/default/files/ie-quality-program-26aug14-en.pdf",
+          "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolutions-regular-meeting-of-the-icann-board-14-09-2025-en"
+        ]
+      },
       "derivedFields": [
         "A-Label for IDNs",
         "IDN flag",
@@ -135,13 +156,15 @@
         "Script Code",
         "Community?",
         "Geographic?",
-        "official Application ID"
+        "official Application ID except four independently documented string-change applications"
       ],
       "metadataScope": "Complete 1,930-row application→string→applicant graph covering all 1,409 distinct Reveal-Day strings, plus all four ICANN-approved post-Reveal string corrections (three additional unique replacement labels; 1,412 application-string lifecycle labels in total). Richer original application metadata is not claimed as locally complete."
     }
   },
   "runtimeSources2012": [],
   "documentedExternalSources2012": [
+    "https://www.icann.org/en/announcements/details/new-gtld-reveal-day---applied-for-strings-13-6-2012-en",
+    "https://gtldresult.icann.org/applicationstatus/viewstatus",
     "https://raw.githubusercontent.com/nimblemachines/analyzing-iana-root-db/master/strings-1200utc-13jun12-en.csv",
     "https://cdn.jsdelivr.net/gh/nimblemachines/analyzing-iana-root-db@master/strings-1200utc-13jun12-en.csv",
     "https://web.archive.org/web/20120613142047if_/http://newgtlds-cloudfront.icann.org/sites/default/files/reveal/strings-1200utc-13jun12-en.html"
@@ -149,6 +172,7 @@
   "runtimeTransport2012": {
     "status": "disabled-local-corpus-vendored",
     "canonicalHistoricalEvidence": "https://web.archive.org/web/20120613142047if_/http://newgtlds-cloudfront.icann.org/sites/default/files/reveal/strings-1200utc-13jun12-en.html",
+    "officialCurrentApplicationDatabase": "https://gtldresult.icann.org/applicationstatus/viewstatus",
     "scope": "The complete 2012 string/applicant graph is bundled locally. External mirrors remain provenance references only; no browser-time transport contributes records.",
     "validation": [
       "1,930 application rows",
@@ -163,5 +187,5 @@
       "top contention sanity checks: .app 13, .home 11, .inc 11, .web 7"
     ]
   },
-  "method": "The publication locally vendors the complete 13 June 2012 applied-for-string/applicant graph: 1,930 applications across 1,409 distinct Reveal-Day strings, plus all four ICANN-approved post-Reveal string corrections that add three unique replacement labels (1,412 application-string lifecycle labels total). It does not claim that every field of the historic 14-column Reveal CSV is locally reproduced. Primary Contact and Email are excluded by design, and no browser-time external research fetch is used."
+  "method": "The publication locally vendors the complete 13 June 2012 applied-for-string/applicant graph: 1,930 applications across 1,409 distinct Reveal-Day strings, plus all four ICANN-approved post-Reveal string corrections that add three unique replacement labels (1,412 application-string lifecycle labels total). Row materialization is preserved from a secondary transcription of the original ICANN Reveal table and is explicitly corroborated at corpus level by ICANN's official 2012 application-status database and Reveal-Day publication. It does not claim that every field of the historic 14-column Reveal CSV is locally reproduced. Primary Contact and Email are excluded by design, and official Application IDs remain blank unless independently documented by a primary ICANN source. No browser-time external research fetch is used."
 }
