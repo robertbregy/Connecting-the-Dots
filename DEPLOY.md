@@ -37,9 +37,13 @@ Create a Git tag and GitHub Release for each published version, attach both arch
 
 ## Known stale browser-upload residues
 
-Browser uploads overwrite matching paths but do not delete files omitted by later releases. Before or immediately after publishing v0.7.39, remove these obsolete repository-root files if they are still present:
+Browser uploads overwrite matching paths but do not delete files omitted by later releases. Before or immediately after publishing v0.7.40, remove these obsolete repository-root files if they are still present:
 
 - `REDEPLOY_FULL.md`
 - `start.command`
 
 `RELEASE_NOTES_0.7.4.md` may remain only as an explicitly historical release note. `DEPLOY.md` and `package-lock.json` must match the current source release rather than an older browser-upload residue.
+
+## robots.txt note
+
+This project is published below `/Connecting-the-Dots/`. Search engines only treat `/robots.txt` at the GitHub Pages host root as authoritative. The project copy is retained for documentation and sitemap discoverability; page-level `meta robots` and the sitemap/canonical metadata are the effective project-level controls.
