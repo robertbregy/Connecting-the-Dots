@@ -1,7 +1,9 @@
 # Connecting the Dots — data directory
 
-Publication state: **Reveal Day snapshot**  
-As of: **7 October 2026**
+Publication state: **post-Reveal / Replacement Period snapshot**  
+Publication as of: **8 October 2026**  
+ICANN Reveal Day application snapshot: **7 October 2026**  
+IANA/root snapshot: **4 October 2026**
 
 The CSV files are research inputs and reusable publication data. `applications_2026.csv` now contains verified official 2026 records that are explicitly vendored locally, beginning with `.lugano`; this does **not** yet constitute a claim that the complete APS application corpus is locally archived. `round_2026.csv` contains official Reveal Day aggregate metrics and leaves APS fields blank where ICANN has not yet published a confirmed value.
 
@@ -107,7 +109,7 @@ Application history is represented separately from TLD identity. The local histo
 
 The original 2012 transport exposed richer fields. The public research export deliberately does **not** republish personal `Primary Contact` or `Email` fields, and it does not claim complete preservation of every original 14-column metadata field. The completeness claim is specifically the formal applied-for-string/applicant graph.
 
-Application-only strings are valid Explorer records but are **not TLD records**. This prevents an unsuccessful proposal from being counted as a delegated top-level domain. The 2026 individual application corpus remains intentionally incomplete until ICANN Reveal Day.
+Application-only strings are valid Explorer records but are **not TLD records**. This prevents an unsuccessful proposal from being counted as a delegated top-level domain. The 2026 individual application corpus remains intentionally incomplete locally after Reveal Day. Official aggregate statistics are local; the broader published string inventory is a separate runtime layer and must not be mistaken for a complete local APS application corpus.
 
 ## v0.7.11 Universal Explorer
 

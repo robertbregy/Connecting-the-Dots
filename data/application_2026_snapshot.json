@@ -12,8 +12,9 @@
     "source": "https://www.ntlddata.com/applications/strings",
     "role": "secondary-index-over-public-ICANN-APS-records",
     "observedStrings": 980,
-    "runtimeLoaded": true,
-    "license": "CC BY 4.0"
+    "license": "CC BY 4.0",
+    "delivery": "runtime-paginated-with-browser-cache",
+    "snapshot": "2026-10-08"
   },
   "period": {
     "revealDay": "2026-10-07",

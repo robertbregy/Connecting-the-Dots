@@ -1,6 +1,6 @@
-/* v0.7.47: post-Reveal integrity hardening */
+/* v0.7.48: publication consolidation */
 window.DOT_PUBLICATION={
-  version:'0.7.47',
+  version:'0.7.48',
   releasedOn:'2026-10-08',
   state:'reveal-day',
   freeze:false,

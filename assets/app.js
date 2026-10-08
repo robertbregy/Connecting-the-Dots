@@ -533,7 +533,7 @@ function initApplicationArchaeology(){renderApplicationCorpusStatus('ready')}
 
 const ROUND2026_STRING_API='https://www.ntlddata.com/api/v1/applications/strings';
 const ROUND2026_STRING_SOURCE='https://www.ntlddata.com/applications/strings';
-const ROUND2026_STRING_CACHE='ctd-2026-string-inventory-v0.7.47';
+const ROUND2026_STRING_CACHE='ctd-2026-string-inventory-v0.7.48';
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 function validate2026StringInventory(payload){
  const rows=payload?.data?.rows,total=Number(payload?.data?.total||0);if(!Array.isArray(rows)||total<900||rows.length!==total)throw new Error(`Incomplete 2026 string inventory: ${rows?.length||0}/${total||0}`);

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "asOf": "2026-10-04",
-  "scope": "Chronological evidence for every Explorer record, assembled from preserved IANA data, formal ICANN application archaeology including the complete local 2000/2004/2012 application-string graph, and curated local evidence. Browser-time gTLD contract/lifecycle enrichment is disabled; the 2026 Reveal Day string inventory is handled separately by the Explorer enrichment layer.",
+  "scope": "Chronological evidence for every local Explorer record, assembled from preserved IANA data, formal ICANN application archaeology including the complete local 2000/2004/2012 application-string graph, and curated local evidence. Browser-time gTLD contract/lifecycle enrichment is disabled. The 2026 Reveal-Day string inventory is a separate runtime Explorer layer and is not treated as local application-level life-history evidence.",
   "staticSources": [
     "data/iana_snapshot.json",
     "data/application_archaeology_local.json",
@@ -19,6 +19,6 @@
   "ccTldMethod": "IANA registration plus delegation/redelegation reports; gTLD Registry Agreement fields are not applied to ccTLDs.",
   "evidenceRule": "No missing date or historical phase is inferred. Only attributable, dated source evidence is rendered as a factual life-history event.",
   "knownLimitation": "Some early TLD operator changes predate central structured records and may remain undocumented in this dataset.",
-  "runtimeEnrichment": "disabled-pre-reveal-freeze",
-  "freezePolicy": "The documented external lifecycle source is not requested or merged in the visitor browser. The complete 2012 application-string/applicant graph is already vendored locally; the 2026 individual application layer remains pending Reveal Day."
+  "runtimeEnrichment": "gTLD-lifecycle-disabled; 2026-string-inventory-separate-runtime-layer",
+  "freezePolicy": "Core life-history evidence is local and deterministic. The post-Reveal 2026 string inventory may be loaded separately at runtime from the documented secondary index; full local APS application-level coverage is not claimed."
 }
