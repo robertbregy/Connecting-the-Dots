@@ -64,6 +64,12 @@ const socialHeaders=['case_id','strings','period','model_keys','question_key','f
 writeCsv('data/social_cases.csv',socialHeaders,(window.DOT_DATA.socialCases?.cases||[]).map(c=>({case_id:c.id,strings:c.strings||[],period:c.period||'',model_keys:c.modelKeys||[],question_key:c.questionKey||'',fact_key:c.factKey||'',reading_key:c.readingKey||'',signals:(c.signals||[]).map(x=>x.labelKey+':'+x.valueKey),sources:(c.sources||[]).map(s=>s.url)})));
 const sourceHeaders=['label','url','role'];
 writeCsv('data/sources.csv',sourceHeaders,(window.DOT_DATA.sources||[]).map(s=>({label:s[0]||'',url:s[1]||'',role:s[2]||''})));
+const contentionHeaders=['round','string','applications','source','note'];
+const contentionRows=[...(window.DOT_DATA.contention2012||[]).map(([string,applications])=>({round:'2012',string,applications,source:'https://newgtlds.icann.org/en/applicants/auctions',note:'Historical exact-string application count used as the 2012 benchmark.'})),...(window.DOT_DATA.contention2026||[]).map(([string,applications])=>({round:'2026',string,applications,source:'https://www.ntlddata.com/applications',note:'Derived from public 2026 application records; preliminary during the Replacement Period and until String Confirmation Day.'}))];
+writeCsv('data/contention_rounds.csv',contentionHeaders,contentionRows);
+const strangeHeaders=['round','string','category','status','note_key','insight_key','sources'];
+writeCsv('data/strange_internet.csv',strangeHeaders,(window.DOT_DATA.strange||[]).map(r=>({round:r.round||'',string:r.string||'',category:r.category||'',status:r.status||'',note_key:r.noteKey||'',insight_key:r.insightKey||'',sources:r.sources||[]})));
+
 const driftHeaders=['string','formal_type','formal_origin','adopted_association','category','sources'];
 writeCsv('data/semantic_drift.csv',driftHeaders,(window.DOT_DATA.semanticDrift||[]).map(r=>({string:r.string||'',formal_type:r.formalType||'',formal_origin:r.formalOrigin||'',adopted_association:r.adoptedAssociation||'',category:r.category||'',sources:r.sources||[]})));
 const oddHeaders=['family','string','status','themes','fact_key','reading_key','sources'];

@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.7.44 — 2026-10-08
+
+- First post-Reveal editorial patch: moves current-round evidence into thematic sections instead of leaving 2026 isolated in the Reveal tab.
+- Adds a 2012 ↔ 2026 contention comparison, with derived 2026 rankings explicitly separated from official ICANN facts.
+- Rebuilds Strange Internet around eight 2026 applications, while preserving 2000–2012 as a collapsible historical archive.
+- Adds explicit current-round status panels to Application Outcomes and Disputed Dots so historical cases are not mistaken for 2026 results.
+- Adds compact 2026 context panels to Economics and Social Life, including the USD 227,000 standard evaluation fee and ICANN Reveal Day application-type counts.
+- Introduces a visible DERIVED epistemic label alongside FACT, READING and VISION.
+- Keeps the v0.7.43 Explorer pagination repair unchanged.
+
 ## v0.7.43 — 2026-10-08
 
 - Fixes the broken 2026 Explorer loader: the public nTLDData endpoint is paginated and cannot return the full 980-string inventory in the single response assumed by v0.7.42.

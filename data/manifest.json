@@ -1,6 +1,6 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.43",
+  "version": "0.7.44",
   "release_date": "2026-10-08",
   "publication_state": "reveal-day",
   "rendering": "static-prerendered",
@@ -16,7 +16,7 @@
   "string_confirmation_day": "2026-11-17",
   "notes": [
     "Record counts exclude CSV headers.",
-    "applications_2026.csv contains locally vendored official 2026 APS records; v0.7.43 keeps the verified .lugano record locally and loads the published Reveal Day string inventory through the documented paginated API without claiming full local APS application coverage.",
+    "applications_2026.csv contains locally vendored official 2026 APS records; v0.7.44 keeps the verified .lugano record locally, loads the published Reveal Day string inventory through the documented paginated API, and updates the thematic publication around the post-Reveal state without claiming full local APS application coverage.",
     "explorer_catalog.csv is the latest indexed record view; explorer_events.csv keeps separate historical events for multi-era strings.",
     ".lugano is linked to the official ICANN APS Reveal Day record CDL2651T-T31516 published on 7 October 2026.",
     "dns_oddities.csv distinguishes active legacy, retired, reserved and never-delegated country-code cases.",
@@ -283,7 +283,7 @@
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "release_history": {
     "path": "release_history.json",
-    "sha256": "73b0fa01cb8f85381ce80e3c059d5bf56aed303e6591f849c2229040ef4f7ff4"
+    "sha256": "53202e6d00f8a40935cd3858d320c25745f408bd9e46e67bf0f69afab9395019"
   },
   "freeze": {
     "status": "reveal-day-snapshot",
@@ -298,18 +298,18 @@
     "assets": [
       {
         "repository_path": "data/site_bundle.js",
-        "bytes": 1994781,
-        "sha256": "faf084dea034fe2480bac478ddc521d7d6b2cc1390fcf9865c751615a006991e"
+        "bytes": 1998603,
+        "sha256": "2d0cdfa6719718e0bfd09744c6a65c7db7fbf0ba91dc4ed509d2f3bdcd47166a"
       },
       {
         "repository_path": "assets/app.js",
-        "bytes": 114724,
-        "sha256": "8c064f511f614b586f0c937ac51d11db207d7fce0d1cb8fc69d549eb988047b0"
+        "bytes": 115172,
+        "sha256": "bc627be912d1f16a496ce8e6f804703bb4e5d6e92ad442e31b70f5ac8b263d9d"
       },
       {
         "repository_path": "assets/style.css",
-        "bytes": 104146,
-        "sha256": "c903f2d7b60b95bcf8e8ead3f800980eab5c7485d4fcc22e734c13be1f86cc59"
+        "bytes": 105431,
+        "sha256": "a74f6b1b93803606cf33da70f142410ab3fd85351bc28b184be91d19db740ac4"
       },
       {
         "repository_path": "data/worldmap.js",
@@ -319,42 +319,42 @@
       {
         "repository_path": "data/explorer_profiles_0.js",
         "bytes": 1089784,
-        "sha256": "cad714e2b366f64522f9fe3d19fee28984d1a5ccc072b901ef9466ff43811c78"
+        "sha256": "1c6359bbe6c7949f4cfcb33a7ab21d50da88428ae73510eb1c86cc69edb3d91a"
       },
       {
         "repository_path": "data/explorer_profiles_1.js",
         "bytes": 904381,
-        "sha256": "5c17b6721a36a200cddd0fee9bffff6f47e144d4e4f72a876d87084a9d251dea"
+        "sha256": "22c8966c2b39af925d86b2f4dfd507e33c27e8a400bbe866c830d294dbcbda2c"
       },
       {
         "repository_path": "data/explorer_profiles_2.js",
         "bytes": 1009406,
-        "sha256": "228104d2783f494dd98f2be9339d474ba53b6540e8fc7b1a98def7bdc39df41a"
+        "sha256": "db28840555b8736e02cd86eee6c2fa5eab05312f73c8725d1a5ed53e4c92d349"
       },
       {
         "repository_path": "data/explorer_profiles_3.js",
         "bytes": 934600,
-        "sha256": "7610a2797ac2d93ee6a722da6aa0d65d0739cfe2f771a3e5c3fc936985d9b293"
+        "sha256": "a254f3d53c6159d4908298ed528320c8b101ff81f366d4890b3b2dde29f89232"
       },
       {
         "repository_path": "data/explorer_profiles_4.js",
         "bytes": 970735,
-        "sha256": "1e09fe928086c7845dd82ce06248e6bba17e8f4ba46a46fca241329c4054b3a3"
+        "sha256": "7d20bb4066961b9b08e211effd3b7b52ec7cb95e39469fd3fa3c1fb6f46fdd46"
       },
       {
         "repository_path": "data/explorer_profiles_5.js",
         "bytes": 943441,
-        "sha256": "5221855e33cb8ac43179d482ddecb2e1e5c9ae752cbc91abeddd3d59f490c2c4"
+        "sha256": "a136aab6ff314833abd149c8feb37e834ded8fd433e9b14324b8dfdaa27dadc9"
       },
       {
         "repository_path": "data/explorer_profiles_6.js",
         "bytes": 953642,
-        "sha256": "b53d5a421bcb4fbef6ecf0369c3b78a13ff4a10daee5ee78ca6b124666f439ab"
+        "sha256": "dd798d3dce30531c4233ac643c851d3cc1ce31191b8703f33a4685d690ef9360"
       },
       {
         "repository_path": "data/explorer_profiles_7.js",
         "bytes": 936011,
-        "sha256": "2feb5adc0dd599f4c2dfd12c068bb87171962801bf244148e1a74acf72001c9f"
+        "sha256": "581b6bb8106229ba2c62ba6553043d8ffd7e44de03372d9d35577cb4b3f7b96f"
       }
     ]
   },
@@ -420,10 +420,10 @@
       "sha256": "d4638780e7398d8c79b2bf093c2feffcf0b1196f108a83dea8ffa9270b37f085"
     },
     {
-      "path": "contention_2012.csv",
-      "bytes": 127,
-      "records": 11,
-      "sha256": "13ff055d55149bb590a0ac8db2a20782ada6b90efc9068c48c256b3a291f2abf"
+      "path": "contention_rounds.csv",
+      "bytes": 4121,
+      "records": 26,
+      "sha256": "a8cd3e17a8344b49537d1a8e2ca07742ce07835e31547724142e83424af573b2"
     },
     {
       "path": "control_levers.csv",
@@ -517,9 +517,9 @@
     },
     {
       "path": "key_facts.csv",
-      "bytes": 1229,
+      "bytes": 1218,
       "records": 5,
-      "sha256": "8d83525c17efd354bbba42ad65c0552ac7a90c4dea9fde43d327accbd1b2748d"
+      "sha256": "692c0a22e48bacbaf14935b6af49f0cf797d0991bdc166606139a673890d5378"
     },
     {
       "path": "lugano_vision.csv",
@@ -559,9 +559,9 @@
     },
     {
       "path": "rounds_summary.csv",
-      "bytes": 1149,
+      "bytes": 1200,
       "records": 4,
-      "sha256": "ca33a3577d352d7db683e65d5f110c430ed575e8a1a5df9defd7eaf6ece96ec0"
+      "sha256": "3e9db2506080f8cbe1c4df12dcd4e4e3f550c9eaa8bb8e4a04f16f2f4bcd98e0"
     },
     {
       "path": "rsp_geography_aug_2026.csv",
@@ -583,15 +583,15 @@
     },
     {
       "path": "sources.csv",
-      "bytes": 22307,
-      "records": 190,
-      "sha256": "b0840c1f6054dbdd097fee720537996c1a08b5ac3db8cb837668c135fcf861f0"
+      "bytes": 23173,
+      "records": 196,
+      "sha256": "27531844ef4a452e96c79a295c30a2e51e28d2fd4a8a98cde206cf10f2dcd37b"
     },
     {
       "path": "strange_internet.csv",
-      "bytes": 10379,
-      "records": 24,
-      "sha256": "d9c815a228a883a06be4c897de421f59bd598bcfc4313381b076ace9b16772f7"
+      "bytes": 4324,
+      "records": 32,
+      "sha256": "fd8d00473ecf59c10afc229480f6ccf825e154c370c5e031de34af0df36de3a0"
     },
     {
       "path": "success_framework.csv",

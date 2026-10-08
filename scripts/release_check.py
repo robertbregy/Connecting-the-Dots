@@ -74,7 +74,7 @@ for u in ['https://www.icann.org/en/announcements/details/new-gtld-reveal-day---
     if u not in source_urls: fail('2012 provenance source missing from sources inventory: '+u)
 
 changelog=(ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
-for marker in ['v0.7.43','v0.7.42','v0.7.41','v0.7.40','v0.7.39','v0.7.38','v0.7.37','v0.7.36','v0.7.35','v0.7.34','v0.7.33','v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
+for marker in ['v0.7.44','v0.7.43','v0.7.42','v0.7.41','v0.7.40','v0.7.39','v0.7.38','v0.7.37','v0.7.36','v0.7.35','v0.7.34','v0.7.33','v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
     if marker not in changelog: fail('changelog missing '+marker)
 readme=(ROOT/'README.md').read_text(encoding='utf-8')
 if "No live refresh occurs in a visitor's browser." in readme: fail('README contains obsolete no-live-refresh claim')
@@ -125,7 +125,8 @@ if '#geography > .grid2,#contention > .grid2{align-items:start}' not in style: f
 if '.economicModels{align-items:start}' not in style: fail('Economics model tiles must keep natural height')
 if '.caseQuestion h3,.caseFact p,.caseReading p,.caseOutcome p,.oddityReadingLine span{min-width:0;overflow-wrap:anywhere;hyphens:auto}' not in style: fail('long translated case text must wrap on narrow screens')
 ux_markers=[
-    'class="skipLink" href="#main-content"',
+    'class="skipLink"',
+    'href="#main-content"',
     'id="main-content" tabindex="-1"',
     'class="heroPlain" data-i18n="heroPlain"',
     'data-i18n="heroLearnCta"',
@@ -353,11 +354,12 @@ if missing_ref: fail('refusal case strings missing from Explorer: '+', '.join(mi
 for c in refusals.get('cases',[]):
     if not c.get('sources') or not all(str(x.get('url','')).startswith('https://') for x in c.get('sources',[])): fail('refusal case lacks primary HTTPS sources: '+str(c.get('id')))
 r2026=next((r for r in research.get('rounds',[]) if r.get('round')==2026),{})
-if r2026.get('applications')!=1663: fail('round comparison must use 1,663 submitted applications for 2026')
+if r2026.get('applications')!=1615: fail('round comparison must use the 1,615 Reveal Day applications for 2026')
 reveal_active=next((r for r in rows('round_2026.csv') if r.get('metric')=='Applications active at Reveal Day'),{})
 if reveal_active.get('value')!='1615': fail('2026 Reveal Day active applications must be 1,615')
 summary={r['Round']:r for r in rows('rounds_summary.csv')}
-if summary.get('2026',{}).get('Applications')!='1663': fail('rounds_summary 2026 submitted applications mismatch')
+if summary.get('2026',{}).get('Applications')!='1615': fail('rounds_summary 2026 Reveal Day applications mismatch')
+if '1,663' not in summary.get('2026',{}).get('Note',''): fail('rounds_summary must preserve the 1,663 pre-Reveal submission count in the note')
 if not summary.get('2012',{}).get('Delegations source'): fail('2012 delegation metric lacks dedicated provenance')
 
 # Translation parity.
@@ -431,8 +433,9 @@ if all('topicOther' in (r.get('topic_facets') or '') for r in cat_rows): fail('E
 if src.count('id="internet-guide"')!=1: fail('Internet walkthrough must exist exactly once')
 walk_pos=src.index('id="internet-guide"'); overview_pos=src.index('id="overview"'); explore_pos=src.index('id="explore"'); how_pos=src.index('id="how"')
 if not (overview_pos < walk_pos < explore_pos < how_pos): fail('Internet walkthrough is not structurally confined to Overview/Home')
-if 'data-open-section="how" data-open-anchor="internet-basics"' in src: fail('direct walkthrough links still open the How section')
-if src.count('data-open-section="overview" data-open-anchor="internet-basics"')<2: fail('Home/hero walkthrough links do not target Overview')
+if re.search(r'<a\b(?=[^>]*data-open-section="how")(?=[^>]*data-open-anchor="internet-basics")[^>]*>',src): fail('direct walkthrough links still open the How section')
+overview_walk_links=re.findall(r'<a\b(?=[^>]*data-open-section="overview")(?=[^>]*data-open-anchor="internet-basics")[^>]*>',src)
+if len(overview_walk_links)<2: fail('Home/hero walkthrough links do not target Overview')
 for marker in ["activeTab==='overview'&&location.hash==='#internet-basics'", "hasWalk?'overview'", "url.searchParams.set('tab','overview');url.searchParams.set('walk'", "if(activeTab!=='overview'||location.hash!=='#internet-basics')p.delete('walk')", "previousTab!==id&&(previousTab==='overview'||id==='overview')"]:
     if marker not in appjs: fail('home-only walkthrough runtime invariant missing: '+marker)
 if tr['it'].get('release0726') is None: fail('release0726 translation missing')
@@ -482,6 +485,26 @@ for lang in LANGS:
         if dead in tr[lang]: fail(f'dead translation key survived: {lang}/{dead}')
     if '30 Sep 2026' in tr[lang].get('rootStat3','') or '30 settembre 2026' in tr[lang].get('rootStat3','') or '30. September 2026' in tr[lang].get('rootStat3','') or '30 septembre 2026' in tr[lang].get('rootStat3',''): fail(f'stale root-server observation date: {lang}')
     if any(x in tr[lang].get('publicationState','') for x in ['2026','OCT','OTT','OKT']): fail(f'publicationState duplicates snapshot date instead of deriving it: {lang}')
+
+# v0.7.44 post-Reveal editorial integrity: the current round must be visible across
+# thematic sections without confusing official ICANN facts, derived measures and editorial readings.
+contention_rows=rows('contention_rounds.csv')
+if (DATA/'contention_2012.csv').exists(): fail('legacy 2012-only contention export survived v0.7.44')
+if len([r for r in contention_rows if r.get('round')=='2026'])<15: fail('2026 contention ranking is incomplete')
+agent_rows=[r for r in contention_rows if r.get('round')=='2026' and r.get('string')=='.agent']
+if not agent_rows or agent_rows[0].get('applications')!='13': fail('2026 .agent contention benchmark regressed')
+strange_rows=rows('strange_internet.csv')
+if len([r for r in strange_rows if r.get('round')=='2026'])<8: fail('Strange Internet lacks the post-Reveal 2026 layer')
+meow=[r for r in strange_rows if r.get('round')=='2026' and r.get('string')=='.meow']
+if not meow or meow[0].get('category')=='community': fail('.meow must not be visually classified as a formal ICANN Community application')
+keyfacts=rows('key_facts.csv')
+if not any(r.get('value')=='1,615' and '7 October 2026' in r.get('fact_en','') for r in keyfacts): fail('Reveal Day key fact must use the official 1,615 snapshot')
+for lang in LANGS:
+    if not translations.get(lang,{}).get('derived'): fail(f'missing derived epistemic label: {lang}')
+for marker in ['data-i18n="derived"','id="contentionBars2026"','id="strangeGrid2026"','data-i18n="outcomes2026StatusTitle"','data-i18n="disputes2026StatusTitle"','data-i18n="economics2026Title"','data-i18n="social2026Title"']:
+    if marker not in template: fail('post-Reveal thematic structure missing: '+marker)
+for stale in ['The 2026 corpus remains incomplete until official Reveal Day data are published.','Il corpus 2026 resta incompleto fino alla pubblicazione dei dati ufficiali del Reveal Day.']:
+    if stale in translations.get('en',{}).values() or stale in translations.get('it',{}).values(): fail('stale pre-Reveal copy survived: '+stale)
 
 # Static pages and local references.
 for rel in ['index.html',*[f'{x}/index.html' for x in LANGS]]:

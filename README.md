@@ -1,8 +1,8 @@
-# Connecting the Dots — v0.7.43
+# Connecting the Dots — v0.7.44
 
-## v0.7.43 — 2026 Explorer pagination hotfix
+## v0.7.44 — Post-Reveal editorial patch 1
 
-The v0.7.42 runtime loader incorrectly assumed the public string endpoint could return all 980 rows in one response. The API is paginated. v0.7.43 loads every page, validates exactly 980 unique strings before merging, caches the validated payload locally, and fixes the 2026/contention presets.
+This first post-Reveal editorial patch moves the 2026 round from an appended update into the site narrative: contention is compared across 2012 and 2026, Strange Internet opens with 2026 applications, and outcomes/disputes are explicitly framed as not yet mature while the round is in the Replacement Period. The 2026 Explorer pagination repair from v0.7.43 remains unchanged.
 
 ## v0.7.42 — Post-Reveal Explorer repair
 
@@ -114,7 +114,7 @@ The compact city timeline also preserves event type explicitly: **idea**, **appl
 
 ## Data pack
 
-The public download is a ZIP containing the application-level and aggregate 2026 data, supporting CSV datasets, sources and methodology material. In v0.7.43, `applications_2026.csv` retains verified locally vendored APS records, while the Explorer separately loads the published Reveal Day string inventory. The manifest explicitly states that the complete APS application corpus is not yet locally vendored. No synthetic application record is inserted to simulate completeness.
+The public download is a ZIP containing the application-level and aggregate 2026 data, supporting CSV datasets, sources and methodology material. In v0.7.44, `applications_2026.csv` retains verified locally vendored APS records, while the Explorer separately loads the published Reveal Day string inventory. The manifest explicitly states that the complete APS application corpus is not yet locally vendored. No synthetic application record is inserted to simulate completeness.
 
 `data/manifest.json` records the snapshot state, record counts and SHA-256 hashes. `rounds_summary.csv` carries explicit **As of** dates for figures that continue to change. The pack also contains a licensing notice clarifying the distinction between original project material and third-party source data.
 

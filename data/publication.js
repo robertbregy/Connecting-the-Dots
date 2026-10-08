@@ -1,6 +1,6 @@
-/* v0.7.43: 2026 Explorer pagination repair */
+/* v0.7.44: post-Reveal editorial rebuild */
 window.DOT_PUBLICATION={
-  version:'0.7.43',
+  version:'0.7.44',
   releasedOn:'2026-10-08',
   state:'reveal-day',
   freeze:false,

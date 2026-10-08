@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.43"
+VERSION = "0.7.44"
 
 
 def csv_records(path: Path) -> int:
@@ -63,7 +63,7 @@ def build_manifest() -> None:
         "string_confirmation_day": "2026-11-17",
         "notes": [
             "Record counts exclude CSV headers.",
-            "applications_2026.csv contains locally vendored official 2026 APS records; v0.7.43 keeps the verified .lugano record locally and loads the published Reveal Day string inventory through the documented paginated API without claiming full local APS application coverage.",
+            "applications_2026.csv contains locally vendored official 2026 APS records; v0.7.44 keeps the verified .lugano record locally, loads the published Reveal Day string inventory through the documented paginated API, and updates the thematic publication around the post-Reveal state without claiming full local APS application coverage.",
             "explorer_catalog.csv is the latest indexed record view; explorer_events.csv keeps separate historical events for multi-era strings.",
             ".lugano is linked to the official ICANN APS Reveal Day record CDL2651T-T31516 published on 7 October 2026.",
             "dns_oddities.csv distinguishes active legacy, retired, reserved and never-delegated country-code cases.",
