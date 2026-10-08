@@ -221,7 +221,7 @@ function mergeApplicationOverlay(record,row){
  const gtldAgreement=runtimeGtldLifecycle.get(row.asciiString);if(gtldAgreement)merged={...merged,gtldAgreement};return merged;
 }
 function cachedExplorerProfile(row){
- if(row.runtimeApplicationRecord)return row;
+ if(row.runtimeApplicationRecord||row.runtime2026Inventory)return row;
  if(!D.profileDelivery)return mergeApplicationOverlay(row,row);
  const batch=window.DOT_PROFILE_CHUNKS?.[row.profileShard],record=batch?.version===D.profileDelivery.version?batch.records?.[row.asciiString]:null;
  return record?mergeApplicationOverlay(record,row):null;
@@ -327,12 +327,29 @@ function curatedContextSection(r){
  if(!fields.length)return'';
  return `<div class="drawerSection"><h3>${esc(t('ianaCuratedContext'))}</h3><dl class="drawerFacts">${fields.map(([key,value])=>`<dt>${esc(t(key))}</dt><dd>${esc(value)}</dd>`).join('')}</dl></div>`;
 }
+function round2026ProfileSection(r){
+ if(!r.runtime2026Inventory&&!Number(r.application2026Count||0))return'';
+ const count=Number(r.application2026Count||0),fields=[
+  ['profile2026Snapshot',fmtDate('2026-10-07')],
+  ['profile2026Applications',count?fmtNum(count):t('ianaNotReported')],
+  ['profile2026Applicant',r.applicationApplicants?.length===1?r.applicationApplicants[0]:(r.entity||t('ianaNotReported'))],
+  ['profile2026Contention',count>1?t('yes')+' · '+fmtNum(count):t('no')]
+ ];
+ if(r.contention2026Set)fields.push(['profile2026ContentionSet',r.contention2026Set]);
+ const flags=[];
+ if(r.application2026IsGeo||r.editorialDesignation==='geographic')flags.push(t('applicationGeographic'));
+ if(r.application2026IsBrand)flags.push(t('applicationBrand'));
+ if(r.application2026IsCommunity)flags.push(t('applicationCommunity'));
+ if(r.application2026IsIdn)flags.push(t('applicationIdn'));
+ fields.push(['profile2026ApplicationType',flags.length?flags.join(' · '):t('profile2026NoSpecialType')]);
+ return `<div class="drawerSection profile2026Snapshot"><h3>${epBadge('fact')} ${esc(t('profile2026Title'))}</h3><p class="small">${esc(t('profile2026Sub'))}</p><dl class="drawerFacts">${fields.map(([key,value])=>`<dt>${esc(t(key))}</dt><dd>${esc(value)}</dd>`).join('')}</dl>${r.runtime2026Inventory?`<p class="small">${esc(t('profile2026StringLevelNote'))}</p>`:''}</div>`;
+}
 function renderExplorerRecord(r){
  const drawer=document.getElementById('explorerDrawer');document.getElementById('drawerContent').removeAttribute('aria-busy');
  const sources=(r.source||[]).map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener">${r.ianaProfile&&i===0?t('ianaOfficialRecord'):t('source')+' '+(i+1)} ↗</a>`).join('');
  const provenance=r.provenanceKey?`<div class="drawerProvenance"><b>${esc(t('exploreProvenance'))}:</b> ${esc(t(r.provenanceKey))}${r.provenanceDate?' · '+esc(fmtDate(r.provenanceDate)):''}${PUB.state==='pre-reveal'&&r.string==='.lugano'?`<br>${esc(t('officialRecordAfterReveal'))}`:''}</div>`:'';
  const curated=r.recordLevel==='curated',applicationOnly=r.recordLevel==='application';
- document.getElementById('drawerContent').innerHTML=`<div class="recordLevel">${esc(t(recordLevelKey(r)))}</div><div class="drawerMeta"><span class="explorerState">${esc(t(r.currentRootStatus||r.status))}</span>${(curated||applicationOnly||r.applicationCount)?`<span class="pill">${esc(fmtRounds(r))}</span>`:''}<span class="pill">${esc(profileIanaTypeLabel(r))}</span>${curated?explorerThemePills(r):''}</div>${provenance}${explorerBriefSection(r)}${ianaFactFields(r)}${explorerIntroductionSection(r)}${applicationArchaeologySection(r)}${curatedContextSection(r)}${governanceCaseSection(r)}${refusalCaseSection(r)}${economicCaseSection(r)}${socialCaseSection(r)}${explorerHistory(r)}${gtldAgreementSection(r)}${r.readingKey?`<div class="drawerSection"><h3>${epBadge('reading')} ${t('exploreReadingFields')}</h3><div class="drawerReading">${esc(t(r.readingKey))}</div></div>`:''}${r.ianaProfile?`<p class="drawerProvenance">${esc(t('ianaRecordNote'))}</p>`:''}${ianaProfileSections(r)}<div class="drawerSection"><h3>${t('exploreSources')}</h3><div class="drawerSources">${sources||(r.provenanceKey?`<span class="small">${esc(t('officialRecordAfterReveal'))}</span>`:'—')}</div></div>`;
+ document.getElementById('drawerContent').innerHTML=`<div class="recordLevel">${esc(t(recordLevelKey(r)))}</div><div class="drawerMeta"><span class="explorerState">${esc(t(r.currentRootStatus||r.status))}</span>${(curated||applicationOnly||r.applicationCount)?`<span class="pill">${esc(fmtRounds(r))}</span>`:''}<span class="pill">${esc(profileIanaTypeLabel(r))}</span>${curated?explorerThemePills(r):''}</div>${provenance}${explorerBriefSection(r)}${ianaFactFields(r)}${explorerIntroductionSection(r)}${round2026ProfileSection(r)}${applicationArchaeologySection(r)}${curatedContextSection(r)}${governanceCaseSection(r)}${refusalCaseSection(r)}${economicCaseSection(r)}${socialCaseSection(r)}${explorerHistory(r)}${gtldAgreementSection(r)}${r.readingKey?`<div class="drawerSection"><h3>${epBadge('reading')} ${t('exploreReadingFields')}</h3><div class="drawerReading">${esc(t(r.readingKey))}</div></div>`:''}${r.ianaProfile?`<p class="drawerProvenance">${esc(t('ianaRecordNote'))}</p>`:''}${ianaProfileSections(r)}<div class="drawerSection"><h3>${t('exploreSources')}</h3><div class="drawerSources">${sources||(r.provenanceKey?`<span class="small">${esc(t('officialRecordAfterReveal'))}</span>`:'—')}</div></div>`;
  const panel=drawer.querySelector('.explorerDrawerPanel');if(panel)panel.scrollTop=0;hardenExternalLinks(drawer);
 }
 function closeExplorerDrawer({historyMode='replace',restoreFocus=true}={}){
@@ -511,7 +528,7 @@ function initApplicationArchaeology(){renderApplicationCorpusStatus('ready')}
 
 const ROUND2026_STRING_API='https://www.ntlddata.com/api/v1/applications/strings';
 const ROUND2026_STRING_SOURCE='https://www.ntlddata.com/applications/strings';
-const ROUND2026_STRING_CACHE='ctd-2026-string-inventory-v0.7.45';
+const ROUND2026_STRING_CACHE='ctd-2026-string-inventory-v0.7.46';
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 function validate2026StringInventory(payload){
  const rows=payload?.data?.rows,total=Number(payload?.data?.total||0);if(!Array.isArray(rows)||total<900||rows.length!==total)throw new Error(`Incomplete 2026 string inventory: ${rows?.length||0}/${total||0}`);
@@ -532,9 +549,9 @@ function merge2026StringInventory(payload){
   const raw=String(x.string||'').trim().replace(/^\./,''),asciiString='.'+raw.toLowerCase(),display=x.unicode_string?'.'+String(x.unicode_string).trim():'.'+raw;
   if(!raw)continue;
   let r=byAscii.get(asciiString);
-  if(!r){r={string:display,asciiString,recordLevel:'application',ianaProfile:false,rootListed:false,currentRootStatus:'notDelegated',status:'application',type:'notApplicable',entity:x.applicant||'',registryCountry:'',registryCountryCode:'',programRound:'2026',round:'2026',historicalRounds:['2026'],applicationRounds:['2026'],applicationApplicants:x.applicant?[x.applicant]:[],applications:[],applicationCount:Number(x.applications||0),application2026Count:Number(x.applications||0),contention2026Set:x.contention_set||null,contention2026Count:Number(x.applications||0)>1?Number(x.applications):0,contentionCount:Number(x.applications||0)>1?Number(x.applications):0,editorialDesignation:x.is_geo?'geographic':'',city:false,strange:false,placeholder:false,themes:[],topicFacets:x.is_geo?['topicGeography']:x.is_brand?['topicBusiness']:x.is_community?['topicSociety']:x.is_idn?['topicSociety']:['topicOther'],introductionPath:'intro2026Application',introductionBasis:'basisDirect',sourceUrl:ROUND2026_STRING_SOURCE,technicalSearch:[x.applicant||'',x.applicant_slug||'',x.contention_set||''].join(' '),runtime2026Inventory:true};D.explorer.push(r);byAscii.set(asciiString,r);added++;}
+  if(!r){r={string:display,asciiString,recordLevel:'application',ianaProfile:false,rootListed:false,currentRootStatus:'notDelegated',currentAsOf:'2026-10-07',status:'application',type:'notApplicable',entity:x.applicant||'',registryCountry:'',registryCountryCode:'',programRound:'2026',round:'2026',historicalRounds:['2026'],applicationRounds:['2026'],applicationApplicants:x.applicant?[x.applicant]:[],applications:[],applicationCount:Number(x.applications||0),application2026Count:Number(x.applications||0),contention2026Set:x.contention_set||null,contention2026Count:Number(x.applications||0)>1?Number(x.applications):0,contentionCount:Number(x.applications||0)>1?Number(x.applications):0,application2026IsGeo:!!x.is_geo,application2026IsBrand:!!x.is_brand,application2026IsCommunity:!!x.is_community,application2026IsIdn:!!x.is_idn,editorialDesignation:x.is_geo?'geographic':'',city:false,strange:false,placeholder:false,themes:[],topicFacets:x.is_geo?['topicGeography']:x.is_brand?['topicBusiness']:x.is_community?['topicSociety']:x.is_idn?['topicSociety']:['topicOther'],introductionPath:'intro2026Application',introductionBasis:'basisDirect',source:[ROUND2026_STRING_SOURCE],sourceUrl:ROUND2026_STRING_SOURCE,provenanceKey:'profile2026InventoryProvenance',provenanceDate:'2026-10-07',technicalSearch:[x.applicant||'',x.applicant_slug||'',x.contention_set||''].join(' '),runtime2026Inventory:true};D.explorer.push(r);byAscii.set(asciiString,r);added++;}
   else{
-   const prior2026=(r.applications||[]).filter(a=>String(a.round)==='2026').length,pre2026=Math.max(0,Number(r.applicationCount||0)-prior2026);r.application2026Count=Number(x.applications||0);r.applicationCount=pre2026+r.application2026Count;r.applicationRounds=[...new Set([...(r.applicationRounds||[]).map(String),'2026'])];r.historicalRounds=[...new Set([...(r.historicalRounds||[]).map(String),'2026'])];if(x.applicant)r.applicationApplicants=[...new Set([...(r.applicationApplicants||[]),x.applicant])];if(!r.entity&&!r.ianaProfile&&x.applicant)r.entity=x.applicant;if(!r.applicationEntity&&x.applicant)r.applicationEntity=x.applicant;r.contention2026Set=x.contention_set||null;r.contention2026Count=Number(x.applications||0)>1?Number(x.applications):0;r.contentionCount=Math.max(Number(r.contentionCount||0),r.contention2026Count);r.runtime2026Inventory=true;r.sourceUrl=r.sourceUrl||ROUND2026_STRING_SOURCE;updated++;
+   const prior2026=(r.applications||[]).filter(a=>String(a.round)==='2026').length,pre2026=Math.max(0,Number(r.applicationCount||0)-prior2026);r.application2026Count=Number(x.applications||0);r.applicationCount=pre2026+r.application2026Count;r.applicationRounds=[...new Set([...(r.applicationRounds||[]).map(String),'2026'])];r.historicalRounds=[...new Set([...(r.historicalRounds||[]).map(String),'2026'])];if(x.applicant)r.applicationApplicants=[...new Set([...(r.applicationApplicants||[]),x.applicant])];if(!r.entity&&!r.ianaProfile&&x.applicant)r.entity=x.applicant;if(!r.applicationEntity&&x.applicant)r.applicationEntity=x.applicant;r.contention2026Set=x.contention_set||null;r.contention2026Count=Number(x.applications||0)>1?Number(x.applications):0;r.contentionCount=Math.max(Number(r.contentionCount||0),r.contention2026Count);r.application2026IsGeo=!!x.is_geo;r.application2026IsBrand=!!x.is_brand;r.application2026IsCommunity=!!x.is_community;r.application2026IsIdn=!!x.is_idn;r.runtime2026Inventory=true;r.sourceUrl=r.sourceUrl||ROUND2026_STRING_SOURCE;r.source=[...new Set([...(r.source||[]),ROUND2026_STRING_SOURCE])];updated++;
   }
  }
  D.explorer.sort((a,b)=>String(a.asciiString||a.string).localeCompare(String(b.asciiString||b.string),'en'));

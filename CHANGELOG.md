@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.7.46 - 2026-10-08
+
+- Fixes the 2026 Explorer profile-loader bug: runtime Reveal-Day strings no longer try to load a historical profile shard that does not exist.
+- Gives every runtime 2026 string a self-contained profile with Reveal-Day snapshot date, application count, applicant when available, identical-string contention, contention-set identifier and formal application flags.
+- Keeps the distinction between string-level inventory and application-level APS records explicit; no missing application detail is fabricated.
+- Versions the browser cache to v0.7.46 so stale 2026 runtime rows are discarded automatically.
+
 ## v0.7.45 - 2026-10-08
 
 - Hardens the post-Reveal data model around three distinct clocks: 4 October IANA/root snapshot, 7 October 2026 Reveal-Day application snapshot and 8 October publication date.
@@ -41,8 +48,6 @@
 - Upgrades `.lugano` from applicant disclosure to the official ICANN APS record `CDL2651T-T31516` for `Città di Lugano`; it is self-designated geographic and is not in a preliminary identical-string contention set.
 - Keeps APS fields that ICANN still shows as unavailable blank instead of inferring them.
 - Adds a locally vendored official 2026 `.lugano` application record while explicitly retaining `application2026CoverageComplete=false` until the complete APS export is vendored and validated.
-
-# Changelog
 
 ## v0.7.40 — 2026-10-07
 

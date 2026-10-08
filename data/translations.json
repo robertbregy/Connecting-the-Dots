@@ -1795,7 +1795,19 @@
     "iOpenai2026": "A company can now seek to make its own name part of the DNS hierarchy. That shifts the dot from a destination category toward controlled identity infrastructure.",
     "strangeHistoricalToggle": "Open the historical archive · 2000–2012",
     "exploreSnapshotClocks": "Three clocks: IANA/root snapshot · 4 Oct 2026 · 2026 Reveal-Day application snapshot · 7 Oct 2026 · publication · 8 Oct 2026. The 2026 string inventory is a secondary index over public ICANN APS records and may change during the Replacement Period.",
-    "release0745": "Post-Reveal integrity hardening: makes the partial 2026 application CSV explicit, exposes the three publication clocks, removes the last pre-Reveal placeholder wording, strengthens 2026 provenance/discrepancy metadata and optimizes the paginated external string-inventory loader while preserving conservative completeness claims."
+    "release0745": "Post-Reveal integrity hardening: makes the partial 2026 application CSV explicit, exposes the three publication clocks, removes the last pre-Reveal placeholder wording, strengthens 2026 provenance/discrepancy metadata and optimizes the paginated external string-inventory loader while preserving conservative completeness claims.",
+    "profile2026InventoryProvenance": "2026 string inventory derived from public ICANN APS records through the secondary nTLDData index",
+    "profile2026Title": "2026 application snapshot",
+    "profile2026Sub": "String-level data available in the Reveal Day snapshot. A 2026 application is not yet a delegated TLD.",
+    "profile2026Snapshot": "Snapshot",
+    "profile2026Applications": "Applications for this string",
+    "profile2026Applicant": "Applicant",
+    "profile2026Contention": "Identical-string contention",
+    "profile2026ContentionSet": "Contention set",
+    "profile2026ApplicationType": "Application characteristics",
+    "profile2026NoSpecialType": "No special designation identified in the index",
+    "profile2026StringLevelNote": "This profile is built at string level. Full details for each individual application remain separate until the 2026 APS corpus is locally vendored.",
+    "release0746": "Fixes 2026 Explorer profiles that could fail to load and turns runtime records into self-contained profiles: snapshot, application count, applicant when available, contention and formal characteristics now render without depending on historical profile shards."
   },
   "it": {
     "brand": "Brand",
@@ -3593,7 +3605,19 @@
     "iOpenai2026": "Un’azienda può cercare di rendere il proprio nome parte della gerarchia DNS. Il punto passa così da categoria di destinazione a infrastruttura di identità controllata.",
     "strangeHistoricalToggle": "Apri l’archivio storico · 2000–2012",
     "exploreSnapshotClocks": "Tre orologi: snapshot IANA/root · 4 ott 2026 · snapshot candidature Reveal Day 2026 · 7 ott 2026 · pubblicazione · 8 ott 2026. L’inventario delle stringhe 2026 è un indice secondario costruito sui record pubblici APS di ICANN e può cambiare durante il Replacement Period.",
-    "release0745": "Hardening di integrità post-Reveal: rende esplicitamente parziale il CSV locale 2026, mostra i tre orologi temporali della pubblicazione, elimina l’ultimo testo segnaposto pre-Reveal, rafforza metadati e provenienza sulle discrepanze 2026 e ottimizza il caricamento paginato dell’inventario esterno delle stringhe senza gonfiare le dichiarazioni di completezza."
+    "release0745": "Hardening di integrità post-Reveal: rende esplicitamente parziale il CSV locale 2026, mostra i tre orologi temporali della pubblicazione, elimina l’ultimo testo segnaposto pre-Reveal, rafforza metadati e provenienza sulle discrepanze 2026 e ottimizza il caricamento paginato dell’inventario esterno delle stringhe senza gonfiare le dichiarazioni di completezza.",
+    "profile2026InventoryProvenance": "Inventario delle stringhe 2026 derivato dai record pubblici APS di ICANN tramite indice secondario nTLDData",
+    "profile2026Title": "Snapshot candidatura 2026",
+    "profile2026Sub": "Dati disponibili a livello di stringa nel Reveal Day snapshot. Una candidatura 2026 non è ancora un TLD delegato.",
+    "profile2026Snapshot": "Snapshot",
+    "profile2026Applications": "Candidature per questa stringa",
+    "profile2026Applicant": "Applicant",
+    "profile2026Contention": "Contesa per stringa identica",
+    "profile2026ContentionSet": "Contention set",
+    "profile2026ApplicationType": "Caratteristiche della candidatura",
+    "profile2026NoSpecialType": "Nessuna designazione speciale rilevata nell’indice",
+    "profile2026StringLevelNote": "Questa scheda è costruita a livello di stringa. I dettagli completi di ciascuna candidatura individuale restano separati finché il corpus APS 2026 non è vendorizzato localmente.",
+    "release0746": "Corregge le schede Explorer 2026 che potevano fallire al caricamento e trasforma i record runtime in profili autonomi: snapshot, numero di candidature, applicant quando disponibile, contention e caratteristiche formali vengono mostrati senza dipendere dai profili storici a shard."
   },
   "de": {
     "brand": "Marke",
@@ -5391,7 +5415,19 @@
     "iOpenai2026": "Ein Unternehmen kann versuchen, den eigenen Namen Teil der DNS-Hierarchie werden zu lassen. Der Punkt wird damit von einer Zielkategorie zu kontrollierter Identitätsinfrastruktur.",
     "strangeHistoricalToggle": "Historisches Archiv öffnen · 2000–2012",
     "exploreSnapshotClocks": "Drei Zeitstempel: IANA/Root-Snapshot · 4. Okt. 2026 · Reveal-Day-Bewerbungssnapshot 2026 · 7. Okt. 2026 · Publikation · 8. Okt. 2026. Das 2026-String-Inventar ist ein Sekundarindex uber offentliche ICANN-APS-Datensatze und kann sich wahrend der Replacement Period andern.",
-    "release0745": "Post-Reveal-Integritätshärtung: kennzeichnet die lokale 2026-Bewerbungs-CSV klar als partiell, zeigt die drei Zeitstempel, entfernt den letzten Pre-Reveal-Platzhalter, stärkt Provenienz- und Diskrepanzmetadaten für 2026 und optimiert den paginierten externen String-Loader, ohne Vollständigkeit vorzutäuschen."
+    "release0745": "Post-Reveal-Integritätshärtung: kennzeichnet die lokale 2026-Bewerbungs-CSV klar als partiell, zeigt die drei Zeitstempel, entfernt den letzten Pre-Reveal-Platzhalter, stärkt Provenienz- und Diskrepanzmetadaten für 2026 und optimiert den paginierten externen String-Loader, ohne Vollständigkeit vorzutäuschen.",
+    "profile2026InventoryProvenance": "2026-String-Inventar aus öffentlichen ICANN-APS-Datensätzen über den sekundären nTLDData-Index abgeleitet",
+    "profile2026Title": "Snapshot der Bewerbung 2026",
+    "profile2026Sub": "Auf String-Ebene verfügbare Daten des Reveal-Day-Snapshots. Eine Bewerbung 2026 ist noch keine delegierte TLD.",
+    "profile2026Snapshot": "Snapshot",
+    "profile2026Applications": "Bewerbungen für diesen String",
+    "profile2026Applicant": "Bewerber",
+    "profile2026Contention": "Identische-String-Contention",
+    "profile2026ContentionSet": "Contention Set",
+    "profile2026ApplicationType": "Merkmale der Bewerbung",
+    "profile2026NoSpecialType": "Keine besondere Kennzeichnung im Index erkannt",
+    "profile2026StringLevelNote": "Dieses Profil wird auf String-Ebene erstellt. Vollständige Details jeder einzelnen Bewerbung bleiben getrennt, bis der APS-Korpus 2026 lokal eingebunden ist.",
+    "release0746": "Behebt 2026-Explorer-Profile, die beim Laden scheitern konnten, und macht Runtime-Datensätze zu eigenständigen Profilen: Snapshot, Bewerbungszahl, Bewerber soweit verfügbar, Contention und formale Merkmale werden nun ohne historische Profil-Shards angezeigt."
   },
   "fr": {
     "brand": "Marque",
@@ -7189,6 +7225,18 @@
     "iOpenai2026": "Une entreprise peut chercher à faire de son propre nom une partie de la hiérarchie DNS. Le point passe ainsi d’une catégorie de destination à une infrastructure d’identité contrôlée.",
     "strangeHistoricalToggle": "Ouvrir les archives historiques · 2000–2012",
     "exploreSnapshotClocks": "Trois horloges : instantane IANA/root · 4 oct. 2026 · instantane des candidatures Reveal Day 2026 · 7 oct. 2026 · publication · 8 oct. 2026. L’inventaire des chaines 2026 est un index secondaire fonde sur les enregistrements publics APS de l’ICANN et peut evoluer pendant la Replacement Period.",
-    "release0745": "Renforcement d’intégrité post-Reveal : qualifie explicitement le CSV local 2026 de partiel, affiche les trois horloges temporelles, supprime le dernier texte d’attente pré-Reveal, renforce les métadonnées de provenance et de divergence 2026 et optimise le chargeur externe paginé de chaînes sans exagérer la couverture."
+    "release0745": "Renforcement d’intégrité post-Reveal : qualifie explicitement le CSV local 2026 de partiel, affiche les trois horloges temporelles, supprime le dernier texte d’attente pré-Reveal, renforce les métadonnées de provenance et de divergence 2026 et optimise le chargeur externe paginé de chaînes sans exagérer la couverture.",
+    "profile2026InventoryProvenance": "Inventaire des chaînes 2026 dérivé des dossiers publics APS de l’ICANN via l’index secondaire nTLDData",
+    "profile2026Title": "Instantané de candidature 2026",
+    "profile2026Sub": "Données disponibles au niveau de la chaîne dans l’instantané du Reveal Day. Une candidature 2026 n’est pas encore un TLD délégué.",
+    "profile2026Snapshot": "Instantané",
+    "profile2026Applications": "Candidatures pour cette chaîne",
+    "profile2026Applicant": "Candidat",
+    "profile2026Contention": "Contention sur chaîne identique",
+    "profile2026ContentionSet": "Contention set",
+    "profile2026ApplicationType": "Caractéristiques de la candidature",
+    "profile2026NoSpecialType": "Aucune désignation particulière identifiée dans l’index",
+    "profile2026StringLevelNote": "Cette fiche est construite au niveau de la chaîne. Les détails complets de chaque candidature restent séparés jusqu’à l’intégration locale du corpus APS 2026.",
+    "release0746": "Corrige les fiches Explorer 2026 qui pouvaient échouer au chargement et transforme les enregistrements runtime en profils autonomes : instantané, nombre de candidatures, candidat lorsque disponible, contention et caractéristiques formelles s’affichent désormais sans dépendre des shards historiques."
   }
 }

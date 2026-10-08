@@ -392,4 +392,4 @@ All research records, CSVs and preserved IANA evidence remain unchanged. Automat
 
 ## 2026 Reveal-Day data integrity
 
-The 2026 layer deliberately separates three things: ICANN official aggregate statistics (1,615 active applications / 481 applicants in the 7 October snapshot), locally vendored independently verified APS application records, and the 980-string browsing index derived from public APS records through nTLDData. During the Replacement Period these populations can change and they are not presented as interchangeable. The complete 2026 application-level APS corpus is not claimed as locally vendored in v0.7.45.
+The 2026 layer deliberately separates three things: ICANN official aggregate statistics (1,615 active applications / 481 applicants in the 7 October snapshot), locally vendored independently verified APS application records, and the 980-string browsing index derived from public APS records through nTLDData. During the Replacement Period these populations can change and they are not presented as interchangeable. The complete 2026 application-level APS corpus is not claimed as locally vendored in v0.7.46.
