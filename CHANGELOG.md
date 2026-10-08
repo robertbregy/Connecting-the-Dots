@@ -1,3 +1,12 @@
+# Changelog
+
+## v0.7.42 — 2026-10-08
+
+- Repairs the post-Reveal 2026 Explorer: the published Reveal Day string inventory is merged into the existing string-centric catalogue at runtime rather than represented by `.lugano` alone.
+- Keeps application-level completeness conservative: official aggregate counts, locally vendored APS records, replacement records and string-level inventory are treated as distinct layers.
+- Removes stale pre-Reveal wording and updates the publication snapshot to 8 October 2026, during the Replacement Period.
+- Adds explicit provenance and graceful fallback if the external string-inventory enrichment is unavailable.
+
 # v0.7.41 — Reveal Day data release
 
 - Replaces the pre-Reveal publication state with the official ICANN Reveal Day snapshot of 7 October 2026.

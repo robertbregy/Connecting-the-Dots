@@ -1,7 +1,7 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.41",
-  "release_date": "2026-10-07",
+  "version": "0.7.42",
+  "release_date": "2026-10-08",
   "publication_state": "reveal-day",
   "rendering": "static-prerendered",
   "language_routes": {
@@ -10,13 +10,13 @@
     "de": "de/",
     "fr": "fr/"
   },
-  "as_of": "2026-10-07",
+  "as_of": "2026-10-08",
   "temporal_coverage": "1984/2026",
   "reveal_day": "2026-10-07T18:00:00Z",
   "string_confirmation_day": "2026-11-17",
   "notes": [
     "Record counts exclude CSV headers.",
-    "applications_2026.csv contains locally vendored official 2026 APS records; v0.7.41 includes the verified .lugano record and does not yet claim the full APS application corpus.",
+    "applications_2026.csv contains locally vendored official 2026 APS records; v0.7.42 keeps the verified .lugano record locally and enriches the Explorer at runtime with the published Reveal Day string inventory without claiming full local APS application coverage.",
     "explorer_catalog.csv is the latest indexed record view; explorer_events.csv keeps separate historical events for multi-era strings.",
     ".lugano is linked to the official ICANN APS Reveal Day record CDL2651T-T31516 published on 7 October 2026.",
     "dns_oddities.csv distinguishes active legacy, retired, reserved and never-delegated country-code cases.",
@@ -25,13 +25,13 @@
     "Application Archaeology separates submissions, applied-for strings and delegated TLD identity; never-delegated applications do not increase the TLD universe.",
     "Application outcome is modeled independently from contention and governance controversy. outcome_reason is populated only where this frozen corpus carries source-backed evidence; blank outcome fields are unknown here, not inferred successes or failures.",
     "The complete 2012 Reveal-Day string/applicant graph is vendored locally: 1,930 applications across 1,409 distinct strings. Primary Contact and Email from the historic richer transport are not stored, exposed or exported; the browser performs no external research fetch.",
-    "TLD Life Histories remain deterministic and local. Browser-time external enrichment is disabled; documented 2026 APS events are included only where explicitly vendored. Undocumented phases are never inferred.",
+    "TLD Life Histories remain deterministic and local. Browser-time external enrichment is limited to the published 2026 string inventory; application-level APS facts are included locally only where explicitly vendored. Undocumented phases are never inferred.",
     "Disputed Dots adds nine editorially selected governance cases as a structured layer linked to Explorer strings; FACT and READING remain separate, and case sources are primary ICANN/IANA records.",
     "Economics of the Dot adds eight source-backed economic mechanisms; public revenue, company results, transaction values, auction prices and application fees retain their original accounting basis and are not normalized into one ranking.",
     "The Social Life of the Dot adds nine source-backed social cases and six analytical models covering language, community, identity, protection, locality and script inclusion; registration volume is never used as a proxy for social significance.",
     "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity.",
     "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database. The Explorer extends that universe with all locally vendored formal application strings from 2000, 2004 and 2012.",
-    "application_only_strings.csv is the build-time application-only view. The complete 2012 Reveal-Day string/applicant graph is locally integrated; the 2026 layer is now post-Reveal but intentionally partial until the full APS export is vendored and validated."
+    "application_only_strings.csv is the build-time application-only view. The complete 2012 Reveal-Day string/applicant graph is locally integrated; the 2026 layer is post-Reveal: the published string inventory is browsable through a clearly marked runtime enrichment, while application-level local coverage remains intentionally partial until a full APS export is vendored and validated."
   ],
   "current_root_snapshot": "2026-10-04",
   "iana_evidence": "iana_snapshot.json",
@@ -283,7 +283,7 @@
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "release_history": {
     "path": "release_history.json",
-    "sha256": "8aac63b70d437cef72d10e3649cde757b8ac0e524936ac381c3d7b4f6b5c3cef"
+    "sha256": "6a5dba4c52fe9436b124a6c837a300d5a1cffcb8b7aaf86ff1e64c56419431b0"
   },
   "freeze": {
     "status": "reveal-day-snapshot",
@@ -298,13 +298,13 @@
     "assets": [
       {
         "repository_path": "data/site_bundle.js",
-        "bytes": 1994296,
-        "sha256": "c24957a17203a230522bd6c75cd390435b04966ca866ab15a8993992b2dc9bb9"
+        "bytes": 1994597,
+        "sha256": "8e9b0b978d71bc58e6eb6efc1894b33541deec0c064f910c4ee6c64869c1ea21"
       },
       {
         "repository_path": "assets/app.js",
-        "bytes": 108367,
-        "sha256": "6114fc34fff623d857b66ea03946bf0fb6e04457994065e8fbb90cb03fffde74"
+        "bytes": 112375,
+        "sha256": "b908a6108d2f97ff2ee503478f0b52302dafcd906fa44032b3229557daea9dd5"
       },
       {
         "repository_path": "assets/style.css",
@@ -319,42 +319,42 @@
       {
         "repository_path": "data/explorer_profiles_0.js",
         "bytes": 1089784,
-        "sha256": "6f67665db8601da548154e85ce56b1b37dd00506f4b10e7581b4e30782943f71"
+        "sha256": "48adb016f3d469fb42718af847767b1b0505bad2db3b85ca82508939723adcf0"
       },
       {
         "repository_path": "data/explorer_profiles_1.js",
         "bytes": 904381,
-        "sha256": "e801d90e33dd670210579670a81eff34ed37ff343ad5e4890a69d8e419c9d087"
+        "sha256": "25135241284ef4493e19cfd0d01f278dfcc1efdadaaddd1c5ddfbe2ad6a1761b"
       },
       {
         "repository_path": "data/explorer_profiles_2.js",
         "bytes": 1009406,
-        "sha256": "556fc81dd6e3b757908a18cf931528fed8e66976c6339f413014447a2613bec0"
+        "sha256": "d7618ee9f92b4e61a4fdb196dce6b9a5d0a978ad134c772b93e2fb09d9cf0a02"
       },
       {
         "repository_path": "data/explorer_profiles_3.js",
         "bytes": 934600,
-        "sha256": "4d7a96bf02c43589a2c346518a734ed687103668dda0947ed30172a88bae0d78"
+        "sha256": "55e1a4b4037d21a997f5f10a25031d3798949a673d97959e22b53395133c17eb"
       },
       {
         "repository_path": "data/explorer_profiles_4.js",
         "bytes": 970735,
-        "sha256": "d817d2134c2c88b0a7bb611fe8580903fea7f49cdf054d8d86d5317bbf4a0b33"
+        "sha256": "66be19728bd38bcaba444599016b96b4d867f562036e407c5d4a530363e0eb63"
       },
       {
         "repository_path": "data/explorer_profiles_5.js",
         "bytes": 943441,
-        "sha256": "9526168930f6f72932a067d406ef9073e3d4b659e5bb0f5fcbe747a839a2a314"
+        "sha256": "2d4bd36000fa9f4aaf8d6db473ca304698ce0543cea540288249d0a3852516ce"
       },
       {
         "repository_path": "data/explorer_profiles_6.js",
         "bytes": 953642,
-        "sha256": "c756a29095b507c0b95adca313d16a89e5e7b06ae57b0f0bce2c6ceaa36bab2b"
+        "sha256": "bf4b5719194c79d5283111541a923cd2eb39be3b0730fa6dd9bd1908949b4793"
       },
       {
         "repository_path": "data/explorer_profiles_7.js",
         "bytes": 936011,
-        "sha256": "1c6cdd3710feda96e28cb3a4a245fcfc979dd2a9f743daa54fc30d5fd4a4b788"
+        "sha256": "e2e10d6f5431d8b2eccf6824d154371fbdd667549f452142ff523b3e05966827"
       }
     ]
   },
@@ -559,9 +559,9 @@
     },
     {
       "path": "rounds_summary.csv",
-      "bytes": 1081,
+      "bytes": 1149,
       "records": 4,
-      "sha256": "7ef3851030196474fdc46b0609568bf7b3036d18d4eb7ec6fdff187e5ff2bcf2"
+      "sha256": "ca33a3577d352d7db683e65d5f110c430ed575e8a1a5df9defd7eaf6ece96ec0"
     },
     {
       "path": "rsp_geography_aug_2026.csv",
@@ -583,9 +583,9 @@
     },
     {
       "path": "sources.csv",
-      "bytes": 22198,
-      "records": 189,
-      "sha256": "15dc04504411e1cc929599fd7415dd638789743855329fc05d055df737cec483"
+      "bytes": 22307,
+      "records": 190,
+      "sha256": "b0840c1f6054dbdd097fee720537996c1a08b5ac3db8cb837668c135fcf861f0"
     },
     {
       "path": "strange_internet.csv",

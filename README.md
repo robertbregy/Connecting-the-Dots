@@ -1,4 +1,8 @@
-# Connecting the Dots — v0.7.41
+# Connecting the Dots — v0.7.42
+
+## v0.7.42 — Post-Reveal Explorer repair
+
+This release repairs the 2026 Explorer layer. Official ICANN aggregate counts remain local; the browser enriches the string-centric Explorer with the published Reveal Day string inventory from nTLDData, which mirrors ICANN APS data and is credited under CC BY 4.0. Application-level local coverage remains deliberately conservative rather than pretending that the full APS corpus has been vendored.
 
 ## v0.7.40 — Final Reveal Day polish
 
@@ -20,7 +24,7 @@ This final visual micro-release changes only the desktop layout of the instituti
 
 ## v0.7.36 — Explorer card location deduplication
 
-This final pre-Reveal micro-release removes a single presentation redundancy in Explorer cards: when the registry country and represented place localize to the same label, that location is shown once. No research corpus or profile detail changes.
+This maintenance release removes a presentation redundancy in Explorer cards: when the registry country and represented place localize to the same label, that location is shown once. Research data and profile detail remain unchanged.
 
 ## v0.7.35 — Repository hygiene and metadata hardening
 
@@ -106,7 +110,7 @@ The compact city timeline also preserves event type explicitly: **idea**, **appl
 
 ## Data pack
 
-The public download is a ZIP containing the application-level and aggregate 2026 data, supporting CSV datasets, sources and methodology material. In v0.7.41, `applications_2026.csv` begins with verified official Reveal Day records, while the manifest explicitly states that the complete APS application corpus is not yet locally vendored. No synthetic record is inserted to simulate completeness.
+The public download is a ZIP containing the application-level and aggregate 2026 data, supporting CSV datasets, sources and methodology material. In v0.7.42, `applications_2026.csv` retains verified locally vendored APS records, while the Explorer separately loads the published Reveal Day string inventory. The manifest explicitly states that the complete APS application corpus is not yet locally vendored. No synthetic application record is inserted to simulate completeness.
 
 `data/manifest.json` records the snapshot state, record counts and SHA-256 hashes. `rounds_summary.csv` carries explicit **As of** dates for figures that continue to change. The pack also contains a licensing notice clarifying the distinction between original project material and third-party source data.
 

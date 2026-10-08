@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.41"
+VERSION = "0.7.42"
 
 
 def csv_records(path: Path) -> int:
@@ -53,17 +53,17 @@ def build_manifest() -> None:
     manifest = {
         "project": "Connecting the Dots",
         "version": VERSION,
-        "release_date": "2026-10-07",
+        "release_date": "2026-10-08",
         "publication_state": "reveal-day",
         "rendering": "static-prerendered",
         "language_routes": {lang: f"{lang}/" for lang in ("en", "it", "de", "fr")},
-        "as_of": "2026-10-07",
+        "as_of": "2026-10-08",
         "temporal_coverage": "1984/2026",
         "reveal_day": "2026-10-07T18:00:00Z",
         "string_confirmation_day": "2026-11-17",
         "notes": [
             "Record counts exclude CSV headers.",
-            "applications_2026.csv contains locally vendored official 2026 APS records; v0.7.41 includes the verified .lugano record and does not yet claim the full APS application corpus.",
+            "applications_2026.csv contains locally vendored official 2026 APS records; v0.7.42 keeps the verified .lugano record locally and enriches the Explorer at runtime with the published Reveal Day string inventory without claiming full local APS application coverage.",
             "explorer_catalog.csv is the latest indexed record view; explorer_events.csv keeps separate historical events for multi-era strings.",
             ".lugano is linked to the official ICANN APS Reveal Day record CDL2651T-T31516 published on 7 October 2026.",
             "dns_oddities.csv distinguishes active legacy, retired, reserved and never-delegated country-code cases.",
@@ -72,13 +72,13 @@ def build_manifest() -> None:
             "Application Archaeology separates submissions, applied-for strings and delegated TLD identity; never-delegated applications do not increase the TLD universe.",
             "Application outcome is modeled independently from contention and governance controversy. outcome_reason is populated only where this frozen corpus carries source-backed evidence; blank outcome fields are unknown here, not inferred successes or failures.",
             "The complete 2012 Reveal-Day string/applicant graph is vendored locally: 1,930 applications across 1,409 distinct strings. Primary Contact and Email from the historic richer transport are not stored, exposed or exported; the browser performs no external research fetch.",
-            "TLD Life Histories remain deterministic and local. Browser-time external enrichment is disabled; documented 2026 APS events are included only where explicitly vendored. Undocumented phases are never inferred.",
+            "TLD Life Histories remain deterministic and local. Browser-time external enrichment is limited to the published 2026 string inventory; application-level APS facts are included locally only where explicitly vendored. Undocumented phases are never inferred.",
             "Disputed Dots adds nine editorially selected governance cases as a structured layer linked to Explorer strings; FACT and READING remain separate, and case sources are primary ICANN/IANA records.",
             "Economics of the Dot adds eight source-backed economic mechanisms; public revenue, company results, transaction values, auction prices and application fees retain their original accounting basis and are not normalized into one ranking.",
             "The Social Life of the Dot adds nine source-backed social cases and six analytical models covering language, community, identity, protection, locality and script inclusion; registration volume is never used as a proxy for social significance.",
             "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity.",
             "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database. The Explorer extends that universe with all locally vendored formal application strings from 2000, 2004 and 2012.",
-            "application_only_strings.csv is the build-time application-only view. The complete 2012 Reveal-Day string/applicant graph is locally integrated; the 2026 layer is now post-Reveal but intentionally partial until the full APS export is vendored and validated.",
+            "application_only_strings.csv is the build-time application-only view. The complete 2012 Reveal-Day string/applicant graph is locally integrated; the 2026 layer is post-Reveal: the published string inventory is browsable through a clearly marked runtime enrichment, while application-level local coverage remains intentionally partial until a full APS export is vendored and validated.",
         ],
         "current_root_snapshot": json.loads((DATA / "iana_snapshot.json").read_text())["asOf"],
         "iana_evidence": "iana_snapshot.json",

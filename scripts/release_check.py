@@ -50,9 +50,9 @@ for token in ['property="og:image:alt"','name="twitter:image:alt"']:
         fail(f'missing social image alt metadata: {token}')
 manifest=json_file('manifest.json')
 if manifest.get('version')!=version: fail('manifest/package version mismatch')
-if manifest.get('as_of')!='2026-10-07': fail('publication snapshot is not 2026-10-07')
+if manifest.get('as_of')!='2026-10-08': fail('publication snapshot is not 2026-10-08')
 pub=(DATA/'publication.js').read_text()
-if f"version:'{version}'" not in pub or "asOf:'2026-10-07'" not in pub or "state:'reveal-day'" not in pub: fail('publication.js version/asOf/state mismatch')
+if f"version:'{version}'" not in pub or "asOf:'2026-10-08'" not in pub or "state:'reveal-day'" not in pub: fail('publication.js version/asOf/state mismatch')
 
 # Release-integrity invariants added in v0.7.18.
 appjs=(ROOT/'assets/app.js').read_text(encoding='utf-8')
@@ -61,7 +61,7 @@ if 'fmtNum(1987)' in appjs or 'fmtNum(57)' in appjs: fail('application archaeolo
 if 'applicationCorpusComplete=true' in appjs: fail('runtime merge may not mark the full application corpus complete directly')
 if 'syncApplicationCorpusComplete()' not in appjs: fail('application corpus completeness is not derived')
 if "required=['2000','2004','2012','2026']" not in appjs: fail('application corpus completeness does not require all declared historical/current rounds')
-if 'fetch(' in appjs: fail('release still performs browser-time external data fetches')
+if appjs.count('fetch(')!=1 or 'https://www.ntlddata.com/api/v1/applications/strings?per=1000' not in appjs: fail('browser-time fetch policy drift: only the 2026 string inventory enrichment is allowed')
 if "renderApplicationCorpusStatus('ready')" not in appjs: fail('local historical application archaeology is not rendered ready')
 if '"lifeHistoryGtldContractsRuntime":false' not in (DATA/'data_bundle.js').read_text(encoding='utf-8'): fail('gTLD runtime lifecycle enrichment is not disabled')
 arch_manifest=json_file('application_archaeology_manifest.json')
@@ -74,7 +74,7 @@ for u in ['https://www.icann.org/en/announcements/details/new-gtld-reveal-day---
     if u not in source_urls: fail('2012 provenance source missing from sources inventory: '+u)
 
 changelog=(ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
-for marker in ['v0.7.41','v0.7.40','v0.7.39','v0.7.38','v0.7.37','v0.7.36','v0.7.35','v0.7.34','v0.7.33','v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
+for marker in ['v0.7.42','v0.7.41','v0.7.40','v0.7.39','v0.7.38','v0.7.37','v0.7.36','v0.7.35','v0.7.34','v0.7.33','v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
     if marker not in changelog: fail('changelog missing '+marker)
 readme=(ROOT/'README.md').read_text(encoding='utf-8')
 if "No live refresh occurs in a visitor's browser." in readme: fail('README contains obsolete no-live-refresh claim')
@@ -103,7 +103,7 @@ try:
     ds=json.loads(ds_match.group(1)) if ds_match else {}
 except Exception as exc:
     fail('Dataset JSON-LD cannot be parsed: '+str(exc))
-if ds.get('version')!=version or ds.get('dateModified')!='2026-10-07':
+if ds.get('version')!=version or ds.get('dateModified')!='2026-10-08':
     fail('Dataset JSON-LD version/date is stale')
 expected_based_on={
     'https://www.iana.org/domains/root/db',
@@ -493,7 +493,7 @@ for rel in ['index.html',*[f'{x}/index.html' for x in LANGS]]:
     m=re.search(r'<span[^>]*data-i18n="publicationState"[^>]*>(.*?)</span>',text,re.S)
     if not m or '2026' not in re.sub('<[^>]+>','',m.group(1)): fail(f'visible publication snapshot is not derived/rendered in {rel}')
     if any(stale in text for stale in ['SNAPSHOT · 2 OCT 2026','SNAPSHOT PRE-REVEAL · 2 OTT 2026','PRE-REVEAL-SNAPSHOT · 2. OKT 2026','SNAPSHOT PRÉ-REVEAL · 2 OCT 2026']): fail(f'stale 2 October publication state in {rel}')
-    if '"dateModified":"2026-10-07"' not in text: fail(f'structured-data dateModified mismatch in {rel}')
+    if '"dateModified":"2026-10-08"' not in text: fail(f'structured-data dateModified mismatch in {rel}')
     if text.count('<h1')!=1: fail(f'expected exactly one h1 in {rel}')
     skip=re.search(r'<a\b(?=[^>]*\bclass=["\'][^"\']*\bskipLink\b[^"\']*["\'])(?=[^>]*\bhref=["\']#main-content["\'])[^>]*>',text,re.I)
     main=re.search(r'<main\b(?=[^>]*\bid=["\']main-content["\'])[^>]*>',text,re.I)

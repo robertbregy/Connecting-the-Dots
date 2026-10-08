@@ -283,7 +283,7 @@
     "plan6": "Generate LinkedIn-ready facts and downloadable data exports.",
     "guard1": "“Geographic” is an ICANN application classification; “city TLD” is a narrower analytical classification used in this publication.",
     "guard2": "Application counts, unique-string counts, registry portfolios, RSP-managed TLDs and delegated-TLD counts are different metrics and are never blended.",
-    "guard3": "The 2026 application layer is now post-Reveal. Official aggregate metrics, preliminary contention data and the verified .lugano record are integrated; the complete APS application corpus is not yet claimed as locally vendored. Strings and contention sets may still change through the replacement period before String Confirmation Day.",
+    "guard3": "The 2026 application layer is post-Reveal. Official aggregate metrics and preliminary contention data are preserved locally. The Explorer additionally loads the published Reveal Day string inventory as a clearly identified external enrichment; complete application-level APS fields are not claimed as locally vendored. Strings and contention sets may still change during the replacement period before String Confirmation Day.",
     "guard4": "“Zeitgeist” themes and the five-layer power model are analytical classifications and remain separate from official ICANN fields.",
     "tabBeyond": "TLDs as infrastructure",
     "tabGeo": "DNS geography",
@@ -441,7 +441,7 @@
     "round2026Contention": "preliminary identical-string contention sets",
     "round2026Geo": "geographic applications",
     "round2026Idn": "IDN applications",
-    "dataStatusTitle": "Reveal Day will be a snapshot, not the final string list",
+    "dataStatusTitle": "Reveal Day is the first public snapshot, not the final string list",
     "dataStatusSub": "ICANN will publish the initial dataset on 7 October. Eligible applicants can switch to a replacement string from 8 to 21 October; ICANN is scheduled to publish the confirmed string list and updated contention sets on 17 November.",
     "milestoneReveal": "7 OCT · REVEAL DAY",
     "milestoneRevealBody": "Applicants, primary strings, applicable variants/replacements, preliminary identical-string contention sets and public application data.",
@@ -566,7 +566,7 @@
     "exploreResults": "records",
     "exploreNoResults": "No results. Try a shorter term or reset the filters.",
     "exploreCorpusNote": "Coverage and limits",
-    "exploreCorpusNoteBody": "This is a dated root/IANA snapshot, not a live feed. The 2000, 2004 and 2012 application corpora are complete locally at applied-for-string/applicant level. The 2012 layer covers all 1,930 applications, all 1,409 distinct Reveal-Day strings and all four ICANN-approved post-Reveal string corrections, producing 1,412 application-string lifecycle labels in total. Richer fields from the original 14-column 2012 transport are not all republished, and personal contact/email fields are excluded by design. The 2026 corpus remains incomplete until official Reveal Day data are published. Alternative roots and special-use names are outside this catalogue. The 1,409 figure is the distinct-string count in the original 13 June 2012 Reveal-Day list. Later ICANN materials sometimes use 1,388 for later active/program-state populations; those figures are not the same snapshot.",
+    "exploreCorpusNoteBody": "This is a dated root/IANA snapshot, not a live feed. The 2000, 2004 and 2012 application corpora are complete locally at applied-for-string/applicant level. The 2012 layer covers all 1,930 applications, all 1,409 distinct Reveal-Day strings and all four ICANN-approved post-Reveal string corrections, producing 1,412 application-string lifecycle labels in total. Richer fields from the original 14-column 2012 transport are not all republished, and personal contact/email fields are excluded by design. For 2026, official Reveal Day aggregate data are local and the Explorer loads the published string inventory separately; the complete application-level APS corpus is not claimed as locally vendored. Replacement strings and contention sets remain provisional until String Confirmation Day. Alternative roots and special-use names are outside this catalogue. The 1,409 figure is the distinct-string count in the original 13 June 2012 Reveal-Day list. Later ICANN materials sometimes use 1,388 for later active/program-state populations; those figures are not the same snapshot.",
     "exploreColTld": "TLD / string",
     "exploreColStatus": "Status",
     "exploreColRound": "Origin / program",
@@ -1750,7 +1750,8 @@
     "release0740": "Final pre-Reveal polish: centralizes displayed counts on the locale-aware formatter, shortens search descriptions, enriches Dataset structured data with version/provenance metadata, and documents the project-path robots.txt limitation without changing research data or layout.",
     "release0741": "Reveal Day release: replaces the pre-Reveal state with ICANN’s 7 October 2026 snapshot, adds official 2026 aggregate statistics and regional application counts, records 263 preliminary identical-string contention sets, and upgrades .lugano from applicant disclosure to the official ICANN application record CDL2651T-T31516. The complete 2026 APS application corpus is not yet claimed as locally vendored.",
     "round2026Variant": "applications with variants",
-    "icannRevealRecord": "Official ICANN Reveal Day application record"
+    "icannRevealRecord": "Official ICANN Reveal Day application record",
+    "release0742": "Post-Reveal Explorer repair: the 2026 filter now enriches the string-centric catalogue with the published Reveal Day string inventory, while keeping application-level completeness claims conservative. Pre-Reveal wording is removed and submitted, active, replacement and locally vendored records are explicitly separated."
   },
   "it": {
     "brand": "Brand",
@@ -2036,7 +2037,7 @@
     "plan6": "Generare dati pronti per LinkedIn ed esportazioni scaricabili.",
     "guard1": "“Geographic” è una classificazione ICANN delle candidature; “city TLD” è una classificazione analitica più stretta usata in questa pubblicazione.",
     "guard2": "Numero di candidature, stringhe uniche, portafogli di registry, TLD gestiti come RSP e TLD delegati sono metriche diverse e non vengono mai confuse.",
-    "guard3": "Il livello candidature 2026 è ora post-Reveal. Sono integrati i dati aggregati ufficiali, le contese preliminari e il record verificato di .lugano; non viene ancora dichiarato come vendorizzato localmente l’intero corpus APS. Stringhe e contention set possono ancora cambiare durante il periodo di sostituzione prima dello String Confirmation Day.",
+    "guard3": "Il livello candidature 2026 è post-Reveal. I dati aggregati ufficiali e le contese preliminari sono conservati localmente. L’Explorer carica inoltre l’inventario pubblicato delle stringhe del Reveal Day come arricchimento esterno chiaramente identificato; non viene dichiarato come vendorizzato localmente l’intero corpus APS a livello di singola candidatura. Stringhe e contention set possono ancora cambiare durante il replacement period prima dello String Confirmation Day.",
     "guard4": "I temi “zeitgeist” e il modello dei cinque livelli di potere sono classificazioni analitiche e restano separati dai campi ufficiali ICANN.",
     "tabBeyond": "TLD come infrastruttura",
     "tabGeo": "Geografia del DNS",
@@ -2194,7 +2195,7 @@
     "round2026Contention": "contention set preliminari per stringhe identiche",
     "round2026Geo": "candidature geografiche",
     "round2026Idn": "candidature IDN",
-    "dataStatusTitle": "Il Reveal Day sarà uno snapshot, non l’elenco definitivo delle stringhe",
+    "dataStatusTitle": "Il Reveal Day è il primo snapshot pubblico, non l’elenco definitivo delle stringhe",
     "dataStatusSub": "ICANN pubblicherà il dataset iniziale il 7 ottobre. Gli applicant ammessi potranno passare a una replacement string dall’8 al 21 ottobre; ICANN prevede di pubblicare l’elenco confermato delle stringhe e i contention set aggiornati il 17 novembre.",
     "milestoneReveal": "7 OTT · REVEAL DAY",
     "milestoneRevealBody": "Candidati, stringhe primarie, eventuali variant/replacement, contention set preliminari per stringhe identiche e parti pubbliche delle candidature.",
@@ -2319,7 +2320,7 @@
     "exploreResults": "record",
     "exploreNoResults": "Nessun risultato. Prova un termine più breve oppure azzera i filtri.",
     "exploreCorpusNote": "Copertura e limiti",
-    "exploreCorpusNoteBody": "È uno snapshot datato della root/IANA, non un feed in tempo reale. I corpus delle candidature 2000, 2004 e 2012 sono completi localmente al livello stringa candidata/candidato. Il layer 2012 copre tutte le 1.930 candidature, tutte le 1.409 stringhe distinte del Reveal Day e tutte le quattro correzioni di stringa post-Reveal approvate da ICANN, per un totale di 1.412 etichette nel ciclo di vita delle candidature. I campi più ricchi del trasporto originale 2012 a 14 colonne non sono tutti ripubblicati e i dati personali di contatto/e-mail sono esclusi per scelta. Il corpus 2026 resta incompleto fino alla pubblicazione dei dati ufficiali del Reveal Day. Root alternative e nomi a uso speciale restano fuori dal catalogo. Il valore 1.409 indica le stringhe distinte nella lista originale del Reveal Day del 13 giugno 2012. Materiali ICANN successivi usano talvolta 1.388 per popolazioni attive o stati del programma successivi: non si tratta dello stesso snapshot.",
+    "exploreCorpusNoteBody": "È uno snapshot datato della root/IANA, non un feed in tempo reale. I corpus delle candidature 2000, 2004 e 2012 sono completi localmente al livello stringa candidata/candidato. Il layer 2012 copre tutte le 1.930 candidature, tutte le 1.409 stringhe distinte del Reveal Day e tutte le quattro correzioni di stringa post-Reveal approvate da ICANN, per un totale di 1.412 etichette nel ciclo di vita delle candidature. I campi più ricchi del trasporto originale 2012 a 14 colonne non sono tutti ripubblicati e i dati personali di contatto/e-mail sono esclusi per scelta. Per il 2026, i dati aggregati ufficiali del Reveal Day sono locali e l’Explorer carica separatamente l’inventario pubblicato delle stringhe; non viene dichiarato come vendorizzato localmente l’intero corpus APS a livello di singola candidatura. Replacement string e contention set restano provvisori fino allo String Confirmation Day. Root alternative e nomi a uso speciale restano fuori dal catalogo. Il valore 1.409 indica le stringhe distinte nella lista originale del Reveal Day del 13 giugno 2012. Materiali ICANN successivi usano talvolta 1.388 per popolazioni attive o stati del programma successivi: non si tratta dello stesso snapshot.",
     "exploreColTld": "TLD / stringa",
     "exploreColStatus": "Stato",
     "exploreColRound": "Origine / programma",
@@ -3503,7 +3504,8 @@
     "release0740": "Rifinitura finale pre-Reveal: centralizza i conteggi visualizzati nel formatter locale, accorcia le descrizioni per i motori di ricerca, arricchisce i dati strutturati Dataset con versione e provenienza e documenta il limite del robots.txt nel percorso di progetto, senza modificare dati di ricerca o layout.",
     "release0741": "Release Reveal Day: sostituisce lo stato pre-Reveal con lo snapshot ICANN del 7 ottobre 2026, integra le statistiche aggregate ufficiali 2026 e la distribuzione regionale delle candidature, registra 263 contention set preliminari per stringhe identiche e porta .lugano da dichiarazione del candidato a record ufficiale ICANN CDL2651T-T31516. Non viene ancora dichiarato come vendorizzato localmente l’intero corpus APS 2026.",
     "round2026Variant": "candidature con variant",
-    "icannRevealRecord": "Record ufficiale ICANN del Reveal Day"
+    "icannRevealRecord": "Record ufficiale ICANN del Reveal Day",
+    "release0742": "Riparazione post-Reveal dell’Explorer: il filtro 2026 arricchisce ora il catalogo centrato sulle stringhe con l’inventario pubblicato al Reveal Day, mantenendo prudenti le dichiarazioni di completezza a livello di singola candidatura. Rimossi i residui pre-Reveal e separati esplicitamente dati presentati, attivi, replacement e record vendorizzati localmente."
   },
   "de": {
     "brand": "Marke",
@@ -3789,7 +3791,7 @@
     "plan6": "LinkedIn-taugliche Fakten und herunterladbare Datenexporte erzeugen.",
     "guard1": "„Geographic“ ist eine ICANN-Klassifikation für Bewerbungen; „City-TLD“ ist eine engere analytische Kategorie dieser Publikation.",
     "guard2": "Bewerbungszahlen, eindeutige Strings, Registry-Portfolios, als RSP verwaltete TLDs und delegierte TLDs sind unterschiedliche Kennzahlen und werden nicht vermischt.",
-    "guard3": "Die Bewerbungsebene 2026 ist nun post-Reveal. Offizielle Aggregatwerte, vorläufige Contention-Daten und der verifizierte .lugano-Datensatz sind integriert; der vollständige APS-Bewerbungskorpus wird noch nicht als lokal vendort ausgewiesen. Strings und Contention Sets können sich während der Ersetzungsperiode bis zum String Confirmation Day noch ändern.",
+    "guard3": "Die Bewerbungsebene 2026 ist post-Reveal. Offizielle Aggregatwerte und vorläufige Contention-Daten werden lokal bewahrt. Der Explorer lädt zusätzlich das veröffentlichte Reveal-Day-Stringinventar als klar gekennzeichnete externe Anreicherung; der vollständige APS-Korpus auf Bewerbungsebene wird nicht als lokal vendort ausgewiesen. Strings und Contention Sets können sich während der Replacement-Periode bis zum String Confirmation Day noch ändern.",
     "guard4": "„Zeitgeist“-Themen und das Fünf-Ebenen-Modell der Macht sind analytische Kategorien und bleiben von offiziellen ICANN-Feldern getrennt.",
     "tabBeyond": "TLDs als Infrastruktur",
     "tabGeo": "Geografie des DNS",
@@ -3947,7 +3949,7 @@
     "round2026Contention": "vorläufige Contention Sets für identische Strings",
     "round2026Geo": "geografische Bewerbungen",
     "round2026Idn": "IDN-Bewerbungen",
-    "dataStatusTitle": "Reveal Day wird ein Snapshot sein, nicht die endgültige String-Liste",
+    "dataStatusTitle": "Reveal Day ist der erste öffentliche Snapshot, nicht die endgültige String-Liste",
     "dataStatusSub": "ICANN wird den ersten Datensatz am 7. Oktober veröffentlichen. Berechtigte Bewerber können vom 8. bis 21. Oktober auf einen Replacement String wechseln; die bestätigte String-Liste und aktualisierte Contention Sets sind für den 17. November vorgesehen.",
     "milestoneReveal": "7. OKT · REVEAL DAY",
     "milestoneRevealBody": "Antragsteller, primäre Strings, gegebenenfalls Varianten/Replacement Strings, vorläufige Contention Sets für identische Strings und öffentliche Bewerbungsdaten.",
@@ -4072,7 +4074,7 @@
     "exploreResults": "Einträge",
     "exploreNoResults": "Keine Treffer. Versuchen Sie einen kürzeren Begriff oder setzen Sie die Filter zurück.",
     "exploreCorpusNote": "Abdeckung und Grenzen",
-    "exploreCorpusNoteBody": "Dies ist ein datierter Root-/IANA-Stand, kein Live-Feed. Die Bewerbungskorpora 2000, 2004 und 2012 sind lokal auf Ebene der beantragten Zeichenfolge und des Bewerbers vollständig. Die 2012-Schicht umfasst alle 1.930 Bewerbungen, alle 1.409 unterschiedlichen Reveal-Day-Zeichenfolgen und alle vier von ICANN genehmigten Zeichenfolgenkorrekturen nach dem Reveal, insgesamt 1.412 Zeichenfolgenzustände im Bewerbungslebenszyklus. Die reicheren Felder des ursprünglichen 14-spaltigen 2012-Transports werden nicht vollständig erneut veröffentlicht; persönliche Kontakt- und E-Mail-Daten sind bewusst ausgeschlossen. Der Korpus 2026 bleibt bis zur Veröffentlichung der offiziellen Reveal-Day-Daten unvollständig. Alternative Roots und Namen für besondere Zwecke liegen außerhalb des Katalogs. Die Zahl 1.409 bezeichnet die unterschiedlichen Strings der ursprünglichen Reveal-Day-Liste vom 13. Juni 2012. Spätere ICANN-Unterlagen verwenden teils 1.388 für spätere aktive bzw. programmbezogene Populationen; dies ist nicht derselbe Datenstand.",
+    "exploreCorpusNoteBody": "Dies ist ein datierter Root/IANA-Snapshot, kein Live-Feed. Die Bewerbungskorpora 2000, 2004 und 2012 sind lokal auf Ebene von beantragtem String und Bewerber vollständig. Die 2012-Ebene umfasst alle 1.930 Bewerbungen, alle 1.409 unterschiedlichen Reveal-Day-Strings und alle vier von ICANN genehmigten String-Korrekturen nach Reveal Day, insgesamt 1.412 String-Zustände im Bewerbungslebenszyklus. Die reicheren Felder des ursprünglichen 14-spaltigen 2012-Transports werden nicht vollständig erneut veröffentlicht; persönliche Kontakt- und E-Mail-Daten sind bewusst ausgeschlossen. Für 2026 liegen die offiziellen Reveal-Day-Aggregate lokal vor, während der Explorer das veröffentlichte Stringinventar separat lädt; der vollständige APS-Korpus auf Ebene einzelner Bewerbungen wird nicht als lokal vendort ausgewiesen. Replacement Strings und Contention Sets bleiben bis zum String Confirmation Day vorläufig. Alternative Roots und Special-Use-Namen liegen außerhalb dieses Katalogs.",
     "exploreColTld": "TLD / String",
     "exploreColStatus": "Status",
     "exploreColRound": "Ursprung / Programm",
@@ -5256,7 +5258,8 @@
     "release0740": "Letzte Vor-Reveal-Feinarbeit: zentralisiert angezeigte Zählwerte im sprachabhängigen Zahlenformat, kürzt Suchbeschreibungen, ergänzt Dataset-Strukturdaten um Versions- und Herkunftsangaben und dokumentiert die robots.txt-Grenze des Projektpfads, ohne Forschungsdaten oder Layout zu ändern.",
     "release0741": "Reveal-Day-Release: ersetzt den Pre-Reveal-Stand durch den ICANN-Snapshot vom 7. Oktober 2026, ergänzt offizielle 2026-Aggregatdaten und regionale Bewerbungszahlen, erfasst 263 vorläufige Contention Sets identischer Strings und hebt .lugano von einer Bewerberoffenlegung zum offiziellen ICANN-Bewerbungsdatensatz CDL2651T-T31516. Der vollständige 2026-APS-Bewerbungskorpus wird noch nicht als lokal vendort ausgewiesen.",
     "round2026Variant": "Bewerbungen mit Varianten",
-    "icannRevealRecord": "Offizieller ICANN-Reveal-Day-Bewerbungsdatensatz"
+    "icannRevealRecord": "Offizieller ICANN-Reveal-Day-Bewerbungsdatensatz",
+    "release0742": "Post-Reveal-Reparatur des Explorers: Der 2026-Filter ergänzt den stringzentrierten Katalog nun um das veröffentlichte Reveal-Day-Stringinventar, ohne die Vollständigkeit auf Bewerbungsebene zu übertreiben. Pre-Reveal-Reste wurden entfernt; eingereichte, aktive, Replacement- und lokal vendorte Datensätze werden ausdrücklich getrennt."
   },
   "fr": {
     "brand": "Marque",
@@ -5542,7 +5545,7 @@
     "plan6": "Produire des faits prêts pour LinkedIn et des exports de données téléchargeables.",
     "guard1": "« Geographic » est une classification ICANN des candidatures ; « city TLD » est une catégorie analytique plus étroite utilisée dans cette publication.",
     "guard2": "Nombre de candidatures, chaînes uniques, portefeuilles de registry, TLD gérés comme RSP et TLD délégués sont des métriques distinctes et ne sont jamais confondus.",
-    "guard3": "La couche des candidatures 2026 est désormais post-Reveal. Les agrégats officiels, les données préliminaires de contention et le dossier vérifié de .lugano sont intégrés ; le corpus APS 2026 complet n’est pas encore présenté comme intégralement archivé localement. Les chaînes et contention sets peuvent encore évoluer pendant la période de remplacement avant le String Confirmation Day.",
+    "guard3": "La couche des candidatures 2026 est post-Reveal. Les agrégats officiels et les données préliminaires de contention sont conservés localement. L’Explorer charge en outre l’inventaire publié des chaînes du Reveal Day comme enrichissement externe clairement identifié ; le corpus APS complet au niveau de chaque candidature n’est pas présenté comme intégralement archivé localement. Les chaînes et contention sets peuvent encore évoluer pendant la période de remplacement avant le String Confirmation Day.",
     "guard4": "Les thèmes « zeitgeist » et le modèle des cinq niveaux de pouvoir sont des classifications analytiques, distinctes des champs officiels ICANN.",
     "tabBeyond": "Les TLD comme infrastructure",
     "tabGeo": "Géographie du DNS",
@@ -5700,7 +5703,7 @@
     "round2026Contention": "contention sets préliminaires pour des chaînes identiques",
     "round2026Geo": "candidatures géographiques",
     "round2026Idn": "candidatures IDN",
-    "dataStatusTitle": "Le Reveal Day sera un instantané, pas la liste définitive des chaînes",
+    "dataStatusTitle": "Le Reveal Day est le premier instantané public, pas la liste définitive des chaînes",
     "dataStatusSub": "L’ICANN publiera le jeu initial le 7 octobre. Les candidats éligibles pourront passer à une replacement string du 8 au 21 octobre ; l’ICANN prévoit de publier la liste confirmée et les contention sets mis à jour le 17 novembre.",
     "milestoneReveal": "7 OCT. · REVEAL DAY",
     "milestoneRevealBody": "Candidats, chaînes primaires, variantes/replacement strings éventuelles, contention sets préliminaires pour des chaînes identiques et parties publiques des candidatures.",
@@ -5825,7 +5828,7 @@
     "exploreResults": "enregistrements",
     "exploreNoResults": "Aucun résultat. Essayez un terme plus court ou réinitialisez les filtres.",
     "exploreCorpusNote": "Couverture et limites",
-    "exploreCorpusNoteBody": "Il s’agit d’un instantané daté de la racine/IANA, pas d’un flux en temps réel. Les corpus de candidatures 2000, 2004 et 2012 sont complets localement au niveau chaîne demandée/candidat. La couche 2012 couvre les 1 930 candidatures, les 1 409 chaînes distinctes du Reveal Day et les quatre corrections de chaîne post-Reveal approuvées par l’ICANN, soit 1 412 états de chaîne dans le cycle de vie des candidatures. Les champs plus riches du transport original 2012 à 14 colonnes ne sont pas tous republiés et les données personnelles de contact/e-mail sont exclues par choix. Le corpus 2026 reste incomplet jusqu’à la publication des données officielles du Reveal Day. Les racines alternatives et les noms à usage spécial sont hors de ce catalogue. Le chiffre de 1 409 correspond aux chaînes distinctes de la liste originale du Reveal Day du 13 juin 2012. Des documents ICANN ultérieurs utilisent parfois 1 388 pour des populations actives ou des états ultérieurs du programme : il ne s’agit pas du même instantané.",
+    "exploreCorpusNoteBody": "Il s’agit d’un instantané daté de la racine/IANA, pas d’un flux en temps réel. Les corpus de candidatures 2000, 2004 et 2012 sont complets localement au niveau chaîne demandée/candidat. La couche 2012 couvre les 1 930 candidatures, les 1 409 chaînes distinctes du Reveal Day et les quatre corrections de chaîne post-Reveal approuvées par l’ICANN, soit 1 412 états de chaîne dans le cycle de vie des candidatures. Les champs plus riches du transport original 2012 à 14 colonnes ne sont pas tous republiés et les données personnelles de contact/e-mail sont exclues par choix. Pour 2026, les agrégats officiels du Reveal Day sont locaux et l’Explorer charge séparément l’inventaire publié des chaînes ; le corpus APS complet au niveau de chaque candidature n’est pas présenté comme intégralement archivé localement. Les replacement strings et contention sets restent provisoires jusqu’au String Confirmation Day. Les racines alternatives et les noms à usage spécial sont hors de ce catalogue.",
     "exploreColTld": "TLD / chaîne",
     "exploreColStatus": "Statut",
     "exploreColRound": "Origine / programme",
@@ -7009,6 +7012,7 @@
     "release0740": "Dernière finition pré-Reveal : centralise les nombres affichés dans le formateur localisé, raccourcit les descriptions pour les moteurs de recherche, enrichit les données structurées Dataset avec version et provenance et documente la limite du robots.txt du chemin de projet, sans modifier les données de recherche ni la mise en page.",
     "release0741": "Release Reveal Day : remplace l’état pré-Reveal par le snapshot ICANN du 7 octobre 2026, ajoute les statistiques agrégées officielles 2026 et les volumes régionaux de candidatures, enregistre 263 contention sets préliminaires pour chaînes identiques et fait passer .lugano d’une déclaration du candidat au dossier officiel ICANN CDL2651T-T31516. Le corpus complet des candidatures APS 2026 n’est pas encore présenté comme intégralement vendorizé localement.",
     "round2026Variant": "candidatures avec variantes",
-    "icannRevealRecord": "Dossier officiel ICANN du Reveal Day"
+    "icannRevealRecord": "Dossier officiel ICANN du Reveal Day",
+    "release0742": "Réparation post-Reveal de l’Explorer : le filtre 2026 enrichit désormais le catalogue centré sur les chaînes avec l’inventaire publié au Reveal Day, tout en restant prudent sur la complétude au niveau de chaque candidature. Les formulations pré-Reveal ont été supprimées et les données soumises, actives, de remplacement et archivées localement sont explicitement distinguées."
   }
 }
