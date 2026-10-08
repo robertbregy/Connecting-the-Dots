@@ -61,7 +61,7 @@ if 'fmtNum(1987)' in appjs or 'fmtNum(57)' in appjs: fail('application archaeolo
 if 'applicationCorpusComplete=true' in appjs: fail('runtime merge may not mark the full application corpus complete directly')
 if 'syncApplicationCorpusComplete()' not in appjs: fail('application corpus completeness is not derived')
 if "required=['2000','2004','2012','2026']" not in appjs: fail('application corpus completeness does not require all declared historical/current rounds')
-if appjs.count('fetch(')!=1 or 'https://www.ntlddata.com/api/v1/applications/strings?per=1000' not in appjs: fail('browser-time fetch policy drift: only the 2026 string inventory enrichment is allowed')
+if appjs.count('fetch(')!=2 or "const ROUND2026_STRING_API='https://www.ntlddata.com/api/v1/applications/strings'" not in appjs or 'load2026StringInventory' not in appjs or '?page=1&per=100' not in appjs: fail('browser-time fetch policy drift: only paginated 2026 string inventory enrichment is allowed')
 if "renderApplicationCorpusStatus('ready')" not in appjs: fail('local historical application archaeology is not rendered ready')
 if '"lifeHistoryGtldContractsRuntime":false' not in (DATA/'data_bundle.js').read_text(encoding='utf-8'): fail('gTLD runtime lifecycle enrichment is not disabled')
 arch_manifest=json_file('application_archaeology_manifest.json')
@@ -74,7 +74,7 @@ for u in ['https://www.icann.org/en/announcements/details/new-gtld-reveal-day---
     if u not in source_urls: fail('2012 provenance source missing from sources inventory: '+u)
 
 changelog=(ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
-for marker in ['v0.7.42','v0.7.41','v0.7.40','v0.7.39','v0.7.38','v0.7.37','v0.7.36','v0.7.35','v0.7.34','v0.7.33','v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
+for marker in ['v0.7.43','v0.7.42','v0.7.41','v0.7.40','v0.7.39','v0.7.38','v0.7.37','v0.7.36','v0.7.35','v0.7.34','v0.7.33','v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
     if marker not in changelog: fail('changelog missing '+marker)
 readme=(ROOT/'README.md').read_text(encoding='utf-8')
 if "No live refresh occurs in a visitor's browser." in readme: fail('README contains obsolete no-live-refresh claim')

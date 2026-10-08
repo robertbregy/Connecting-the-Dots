@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.7.43 — 2026-10-08
+
+- Fixes the broken 2026 Explorer loader: the public nTLDData endpoint is paginated and cannot return the full 980-string inventory in the single response assumed by v0.7.42.
+- Loads the complete inventory page-by-page, validates the final row and uniqueness counts, and caches the validated payload locally.
+- Fixes the quick 2026 preset so strings with earlier-round history remain visible, and fixes the contention preset to include 2026 contention counts.
+- Keeps the conservative distinction between string-level Reveal Day coverage and locally vendored application-level APS records.
+
 ## v0.7.42 — 2026-10-08
 
 - Repairs the post-Reveal 2026 Explorer: the published Reveal Day string inventory is merged into the existing string-centric catalogue at runtime rather than represented by `.lugano` alone.
