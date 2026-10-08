@@ -1,6 +1,6 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.44",
+  "version": "0.7.45",
   "release_date": "2026-10-08",
   "publication_state": "reveal-day",
   "rendering": "static-prerendered",
@@ -16,7 +16,7 @@
   "string_confirmation_day": "2026-11-17",
   "notes": [
     "Record counts exclude CSV headers.",
-    "applications_2026.csv contains locally vendored official 2026 APS records; v0.7.44 keeps the verified .lugano record locally, loads the published Reveal Day string inventory through the documented paginated API, and updates the thematic publication around the post-Reveal state without claiming full local APS application coverage.",
+    "applications_2026.csv contains locally vendored official 2026 APS records; v0.7.45 keeps the independently verified .lugano APS record local, labels the application CSV explicitly as partial, documents the official 7 October statistics snapshot and the 980-string secondary inventory separately, and does not claim full local APS application coverage during the Replacement Period.",
     "explorer_catalog.csv is the latest indexed record view; explorer_events.csv keeps separate historical events for multi-era strings.",
     ".lugano is linked to the official ICANN APS Reveal Day record CDL2651T-T31516 published on 7 October 2026.",
     "dns_oddities.csv distinguishes active legacy, retired, reserved and never-delegated country-code cases.",
@@ -67,6 +67,11 @@
     "application2012CoverageComplete": true,
     "application2026CoverageComplete": false,
     "application2026OfficialRecordCount": 1,
+    "application2026OfficialStatsApplications": 1615,
+    "application2026OfficialStatsApplicants": 481,
+    "application2026StringInventoryObserved": 980,
+    "application2026StringInventoryRuntime": true,
+    "application2026StringConfirmationDay": "2026-11-17",
     "runtimeExternalEnrichment": false,
     "preRevealFreeze": false,
     "revealDaySnapshot": true,
@@ -283,13 +288,13 @@
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "release_history": {
     "path": "release_history.json",
-    "sha256": "53202e6d00f8a40935cd3858d320c25745f408bd9e46e67bf0f69afab9395019"
+    "sha256": "a773990a57330762d150cc96eb6ac0ea35fca07a2fa6d5cd3ef89ab3f884862c"
   },
   "freeze": {
     "status": "reveal-day-snapshot",
     "frozen_on": "2026-10-07",
     "runtime_external_enrichment": true,
-    "browser_time_external_data_fetches": "10 paginated requests on first load; cached locally afterwards",
+    "browser_time_external_data_fetches": "paginated requests on first load; the client requests up to 500 rows per page and honors the server-reported page size; cached locally afterwards",
     "policy": "Core research datasets remain packaged locally. The published 2026 string inventory is loaded from the documented nTLDData JSON API with page-by-page completeness validation and local browser caching."
   },
   "web_delivery": {
@@ -298,13 +303,13 @@
     "assets": [
       {
         "repository_path": "data/site_bundle.js",
-        "bytes": 1998603,
-        "sha256": "2d0cdfa6719718e0bfd09744c6a65c7db7fbf0ba91dc4ed509d2f3bdcd47166a"
+        "bytes": 1999022,
+        "sha256": "38a3063456262504ac1cb50fe7f2c5b21fbed6ab09143966d032dac40e733ad4"
       },
       {
         "repository_path": "assets/app.js",
-        "bytes": 115172,
-        "sha256": "bc627be912d1f16a496ce8e6f804703bb4e5d6e92ad442e31b70f5ac8b263d9d"
+        "bytes": 115309,
+        "sha256": "0237a9a402c3bdae3589f5032a8ded0e1512b4c520512fdaf0c8127fec07718f"
       },
       {
         "repository_path": "assets/style.css",
@@ -319,42 +324,42 @@
       {
         "repository_path": "data/explorer_profiles_0.js",
         "bytes": 1089784,
-        "sha256": "1c6359bbe6c7949f4cfcb33a7ab21d50da88428ae73510eb1c86cc69edb3d91a"
+        "sha256": "6a678c10f5684f49e8749e2e937e09c01bdb4d2b041519c30715e186e7ea8f82"
       },
       {
         "repository_path": "data/explorer_profiles_1.js",
         "bytes": 904381,
-        "sha256": "22c8966c2b39af925d86b2f4dfd507e33c27e8a400bbe866c830d294dbcbda2c"
+        "sha256": "e080e3c6be43ad8317ee7885e537fe9887a9bc176a07c073367eb0e4e535d6c4"
       },
       {
         "repository_path": "data/explorer_profiles_2.js",
         "bytes": 1009406,
-        "sha256": "db28840555b8736e02cd86eee6c2fa5eab05312f73c8725d1a5ed53e4c92d349"
+        "sha256": "de883c51cb1bac38e192ba8366434ba07e93eb67f970f0c61f7fbe5f92a58578"
       },
       {
         "repository_path": "data/explorer_profiles_3.js",
         "bytes": 934600,
-        "sha256": "a254f3d53c6159d4908298ed528320c8b101ff81f366d4890b3b2dde29f89232"
+        "sha256": "408075bec7f7687423604f9684815ac756c56f0d21a0de1a125a6357ffc39edc"
       },
       {
         "repository_path": "data/explorer_profiles_4.js",
         "bytes": 970735,
-        "sha256": "7d20bb4066961b9b08e211effd3b7b52ec7cb95e39469fd3fa3c1fb6f46fdd46"
+        "sha256": "b56936340002e91166306487cb9d110761fd95c8ba24fbd11d8bb61139d9c27c"
       },
       {
         "repository_path": "data/explorer_profiles_5.js",
         "bytes": 943441,
-        "sha256": "a136aab6ff314833abd149c8feb37e834ded8fd433e9b14324b8dfdaa27dadc9"
+        "sha256": "2ff46b6e12a4f43fdc7ead14b0c3c623fc4e556b8e3d5a3006aedc60040862ec"
       },
       {
         "repository_path": "data/explorer_profiles_6.js",
         "bytes": 953642,
-        "sha256": "dd798d3dce30531c4233ac643c851d3cc1ce31191b8703f33a4685d690ef9360"
+        "sha256": "d76c417411ea8e3c7c75eee8843c591a3341ee675929664170d033f9de2c223f"
       },
       {
         "repository_path": "data/explorer_profiles_7.js",
         "bytes": 936011,
-        "sha256": "581b6bb8106229ba2c62ba6553043d8ffd7e44de03372d9d35577cb4b3f7b96f"
+        "sha256": "8b7dfa8a9ef9e189fcecc0ce6a4fbd9a8e8c236ad7413587a0ee2b78f0ddd696"
       }
     ]
   },

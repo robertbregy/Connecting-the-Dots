@@ -1,6 +1,6 @@
-/* v0.7.44: post-Reveal editorial rebuild */
+/* v0.7.45: post-Reveal integrity hardening */
 window.DOT_PUBLICATION={
-  version:'0.7.44',
+  version:'0.7.45',
   releasedOn:'2026-10-08',
   state:'reveal-day',
   freeze:false,

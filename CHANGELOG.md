@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.7.45 - 2026-10-08
+
+- Hardens the post-Reveal data model around three distinct clocks: 4 October IANA/root snapshot, 7 October 2026 Reveal-Day application snapshot and 8 October publication date.
+- Relabels `applications_2026.csv` as the partial local APS layer it actually is: one independently verified `.lugano` record, not the complete 2026 application corpus.
+- Adds `application_2026_snapshot.json` with official ICANN totals (1,615 active applications; 481 applicants), the separately observed 980-string secondary inventory and the unresolved 1,615/1,614 enumeration discrepancy.
+- Replaces the last stale pre-Reveal placeholder wording with current Replacement Period / String Confirmation Day language.
+- Requests larger 500-row pages for the browser-time 2026 string-index enrichment, while still honoring the server-reported page size and pagination, and versions the cache for this release.
+- Strengthens release checks so aggregate totals, local APS rows and string-level inventory cannot silently collapse into one false completeness claim.
+
 ## v0.7.44 — 2026-10-08
 
 - First post-Reveal editorial patch: moves current-round evidence into thematic sections instead of leaving 2026 isolated in the Reveal tab.

@@ -511,7 +511,7 @@ function initApplicationArchaeology(){renderApplicationCorpusStatus('ready')}
 
 const ROUND2026_STRING_API='https://www.ntlddata.com/api/v1/applications/strings';
 const ROUND2026_STRING_SOURCE='https://www.ntlddata.com/applications/strings';
-const ROUND2026_STRING_CACHE='ctd-2026-string-inventory-v0.7.43';
+const ROUND2026_STRING_CACHE='ctd-2026-string-inventory-v0.7.45';
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 function validate2026StringInventory(payload){
  const rows=payload?.data?.rows,total=Number(payload?.data?.total||0);if(!Array.isArray(rows)||total<900||rows.length!==total)throw new Error(`Incomplete 2026 string inventory: ${rows?.length||0}/${total||0}`);
@@ -519,9 +519,9 @@ function validate2026StringInventory(payload){
 }
 async function load2026StringInventory(){
  try{const cached=JSON.parse(localStorage.getItem(ROUND2026_STRING_CACHE)||'null');if(cached)return validate2026StringInventory(cached)}catch(_e){try{localStorage.removeItem(ROUND2026_STRING_CACHE)}catch(_e2){}}
- const headers={'Accept':'application/json'},firstRes=await fetch(`${ROUND2026_STRING_API}?page=1&per=100`,{headers});if(!firstRes.ok)throw new Error('HTTP '+firstRes.status+' on 2026 inventory page 1');const first=await firstRes.json();
+ const headers={'Accept':'application/json'},firstRes=await fetch(`${ROUND2026_STRING_API}?page=1&per=500`,{headers});if(!firstRes.ok)throw new Error('HTTP '+firstRes.status+' on 2026 inventory page 1');const first=await firstRes.json();
  const total=Number(first?.data?.total||0),firstRows=Array.isArray(first?.data?.rows)?first.data.rows:[];if(total<900||!firstRows.length)throw new Error('Invalid 2026 inventory first page');const per=firstRows.length,pages=Math.ceil(total/per),all=[...firstRows];
- for(let page=2;page<=pages;page++){await sleep(550);const res=await fetch(`${ROUND2026_STRING_API}?page=${page}&per=${per}`,{headers});if(!res.ok)throw new Error('HTTP '+res.status+' on 2026 inventory page '+page);const payload=await res.json(),rows=payload?.data?.rows;if(!Array.isArray(rows)||!rows.length)throw new Error('Empty 2026 inventory page '+page);all.push(...rows)}
+ for(let page=2;page<=pages;page++){await sleep(250);const res=await fetch(`${ROUND2026_STRING_API}?page=${page}&per=${per}`,{headers});if(!res.ok)throw new Error('HTTP '+res.status+' on 2026 inventory page '+page);const payload=await res.json(),rows=payload?.data?.rows;if(!Array.isArray(rows)||!rows.length)throw new Error('Empty 2026 inventory page '+page);all.push(...rows)}
  const byString=new Map();for(const row of all){const key=String(row?.string||'').trim().toLowerCase();if(key&&!byString.has(key))byString.set(key,row)}const payload={data:{total,rows:[...byString.values()]},meta:first?.meta||{}};validate2026StringInventory(payload);try{localStorage.setItem(ROUND2026_STRING_CACHE,JSON.stringify(payload))}catch(_e){}return payload;
 }
 function merge2026StringInventory(payload){
@@ -538,7 +538,7 @@ function merge2026StringInventory(payload){
   }
  }
  D.explorer.sort((a,b)=>String(a.asciiString||a.string).localeCompare(String(b.asciiString||b.string),'en'));
- D.explorerMeta.application2026StringCoverageComplete=rows.length===total;D.explorerMeta.application2026StringCount=total;D.explorerMeta.application2026BrowsableRecordCount=rows.length;D.explorerMeta.application2026StringSource=ROUND2026_STRING_SOURCE;D.explorerMeta.application2026StringSourceAttribution=payload?.meta?.attribution||'Data: nTLDData (ntlddata.com), CC-BY-4.0';D.explorerMeta.runtimeExternalEnrichment=true;D.explorerMeta.runtimeExternalEnrichmentLoaded=true;D.explorerMeta.recordCount=D.explorer.length;return {added,updated,total};
+ D.explorerMeta.application2026StringCoverageComplete=rows.length===total;D.explorerMeta.application2026StringCount=total;D.explorerMeta.application2026BrowsableRecordCount=rows.length;D.explorerMeta.application2026StringSource=ROUND2026_STRING_SOURCE;D.explorerMeta.application2026StringSnapshot='2026-10-08';D.explorerMeta.application2026StringAuthority='secondary-index-over-ICANN-APS';D.explorerMeta.application2026StringSourceAttribution=payload?.meta?.attribution||'Data: nTLDData (ntlddata.com), CC-BY-4.0';D.explorerMeta.runtimeExternalEnrichment=true;D.explorerMeta.runtimeExternalEnrichmentLoaded=true;D.explorerMeta.recordCount=D.explorer.length;return {added,updated,total};
 }
 async function init2026StringInventory(){
  D.explorerMeta.runtimeExternalEnrichment=true;D.explorerMeta.runtimeExternalEnrichmentLoaded=false;delete D.explorerMeta.runtimeExternalEnrichmentError;

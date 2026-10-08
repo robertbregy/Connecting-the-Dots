@@ -61,7 +61,7 @@ if 'fmtNum(1987)' in appjs or 'fmtNum(57)' in appjs: fail('application archaeolo
 if 'applicationCorpusComplete=true' in appjs: fail('runtime merge may not mark the full application corpus complete directly')
 if 'syncApplicationCorpusComplete()' not in appjs: fail('application corpus completeness is not derived')
 if "required=['2000','2004','2012','2026']" not in appjs: fail('application corpus completeness does not require all declared historical/current rounds')
-if appjs.count('fetch(')!=2 or "const ROUND2026_STRING_API='https://www.ntlddata.com/api/v1/applications/strings'" not in appjs or 'load2026StringInventory' not in appjs or '?page=1&per=100' not in appjs: fail('browser-time fetch policy drift: only paginated 2026 string inventory enrichment is allowed')
+if appjs.count('fetch(')!=2 or "const ROUND2026_STRING_API='https://www.ntlddata.com/api/v1/applications/strings'" not in appjs or 'load2026StringInventory' not in appjs or '?page=1&per=500' not in appjs: fail('browser-time fetch policy drift: only paginated 2026 string inventory enrichment is allowed')
 if "renderApplicationCorpusStatus('ready')" not in appjs: fail('local historical application archaeology is not rendered ready')
 if '"lifeHistoryGtldContractsRuntime":false' not in (DATA/'data_bundle.js').read_text(encoding='utf-8'): fail('gTLD runtime lifecycle enrichment is not disabled')
 arch_manifest=json_file('application_archaeology_manifest.json')
@@ -74,7 +74,7 @@ for u in ['https://www.icann.org/en/announcements/details/new-gtld-reveal-day---
     if u not in source_urls: fail('2012 provenance source missing from sources inventory: '+u)
 
 changelog=(ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
-for marker in ['v0.7.44','v0.7.43','v0.7.42','v0.7.41','v0.7.40','v0.7.39','v0.7.38','v0.7.37','v0.7.36','v0.7.35','v0.7.34','v0.7.33','v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
+for marker in ['v0.7.45','v0.7.44','v0.7.43','v0.7.42','v0.7.41','v0.7.40','v0.7.39','v0.7.38','v0.7.37','v0.7.36','v0.7.35','v0.7.34','v0.7.33','v0.7.32','v0.7.24','v0.7.23','v0.7.22','v0.7.21','v0.7.20','v0.7.19','v0.7.18','v0.7.14','v0.7.13']:
     if marker not in changelog: fail('changelog missing '+marker)
 readme=(ROOT/'README.md').read_text(encoding='utf-8')
 if "No live refresh occurs in a visitor's browser." in readme: fail('README contains obsolete no-live-refresh claim')
@@ -86,6 +86,19 @@ if not history or history[0].get('version')!=version: fail('release history late
 translations=json_file('translations.json')
 latest_summary=history[0].get('summaryKey')
 if not latest_summary or any(not translations.get(lang,{}).get(latest_summary) for lang in LANGS): fail('latest release-history summary translation missing')
+
+
+# v0.7.45 current-round integrity: do not confuse official aggregate totals, local APS rows and the secondary string index.
+snap=json_file('application_2026_snapshot.json')
+if snap.get('official',{}).get('activeApplications')!=1615 or snap.get('official',{}).get('applicants')!=481: fail('2026 official statistics snapshot drift')
+if snap.get('stringInventory',{}).get('observedStrings')!=980: fail('2026 observed string inventory count drift')
+if snap.get('integrity',{}).get('fullLocalApplicationCorpusClaimed') is not False: fail('2026 local application completeness must remain conservative')
+if count('applications_2026.csv')!=1: fail('2026 local official application layer changed without explicit reconciliation')
+for lang in LANGS:
+    sub=translations.get(lang,{}).get('applications2026DownloadSub','')
+    if not sub or ('1' not in sub and 'parti' not in sub.lower()): fail(f'{lang} 2026 application download is not visibly labelled partial')
+    if not translations.get(lang,{}).get('exploreSnapshotClocks'): fail(f'{lang} snapshot clocks copy missing')
+if 'exploreSnapshotClocks' not in source_html: fail('Explorer three-clock disclosure missing')
 
 # v0.7.40 final pre-Reveal polish invariants.
 for lang in LANGS:

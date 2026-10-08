@@ -538,9 +538,9 @@
     "verisignDepthLabel": ".com + .net registrations · Q2 2026",
     "verisignInfraLabel": "Root Zone Maintainer · operator of A-root and J-root",
     "scaleContrastReading": "There is no single league table of “Internet power”. Identity Digital concentrates portfolio breadth across many TLDs; Verisign combines exceptional registration depth under .com/.net with important root operational roles. Neither measure is equivalent to control over ICANN policy.",
-    "applications2026Download": "2026 application-level data (CSV)",
-    "applications2026DownloadSub": "CSV · normalized schema for the official public 2026 application dataset",
-    "strange2026Pending": "2026 application data are part of the publication structure. This working build is waiting for the official ICANN dataset; the published post-Reveal version will populate this layer with real strings and sources.",
+    "applications2026Download": "2026 verified local application records (CSV)",
+    "applications2026DownloadSub": "CSV · partial local APS layer · currently 1 independently verified official record (.lugano); not the full 2026 application corpus",
+    "strange2026Pending": "Reveal Day data are public. The Replacement Period runs from 8 to 21 October 2026; the final confirmed string list is scheduled for 17 November. This publication therefore labels current-round material as a dated snapshot rather than a final list.",
     "tabExplore": "TLD Explorer",
     "exploreTitle": "TLD Explorer",
     "exploreSub": "Search a TLD or a historical application and open its profile. You will find root status, origin, operator, key milestones and, where documented, governance, economic and social cases.",
@@ -1793,7 +1793,9 @@
     "iFart2026": "The absurd is not a side effect of namespace expansion. It is evidence that applicants see cultural memorability itself as an asset worth an application fee.",
     "sOpenai2026": ".openai is among OpenAI’s revealed 2026 branded applications.",
     "iOpenai2026": "A company can now seek to make its own name part of the DNS hierarchy. That shifts the dot from a destination category toward controlled identity infrastructure.",
-    "strangeHistoricalToggle": "Open the historical archive · 2000–2012"
+    "strangeHistoricalToggle": "Open the historical archive · 2000–2012",
+    "exploreSnapshotClocks": "Three clocks: IANA/root snapshot · 4 Oct 2026 · 2026 Reveal-Day application snapshot · 7 Oct 2026 · publication · 8 Oct 2026. The 2026 string inventory is a secondary index over public ICANN APS records and may change during the Replacement Period.",
+    "release0745": "Post-Reveal integrity hardening: makes the partial 2026 application CSV explicit, exposes the three publication clocks, removes the last pre-Reveal placeholder wording, strengthens 2026 provenance/discrepancy metadata and optimizes the paginated external string-inventory loader while preserving conservative completeness claims."
   },
   "it": {
     "brand": "Brand",
@@ -2334,9 +2336,9 @@
     "verisignDepthLabel": "registrazioni .com + .net · Q2 2026",
     "verisignInfraLabel": "Root Zone Maintainer · operatore di A-root e J-root",
     "scaleContrastReading": "Non esiste una classifica unica del «potere di Internet». Identity Digital concentra l’ampiezza del portafoglio su molti TLD; Verisign combina una scala eccezionale di registrazioni sotto .com/.net con importanti ruoli operativi sulla root. Nessuno dei due indicatori equivale al controllo delle politiche ICANN.",
-    "applications2026Download": "Dati candidatura per candidatura · 2026 (CSV)",
-    "applications2026DownloadSub": "CSV · schema normalizzato per il dataset pubblico ufficiale delle candidature 2026",
-    "strange2026Pending": "I dati delle candidature 2026 sono già previsti nella struttura della pubblicazione. Questa versione di lavoro attende il dataset ufficiale ICANN; la versione post-Reveal popolerà questo livello con stringhe e fonti reali.",
+    "applications2026Download": "Record locali verificati delle candidature 2026 (CSV)",
+    "applications2026DownloadSub": "CSV · layer APS locale parziale · attualmente 1 record ufficiale verificato in modo indipendente (.lugano); non è il corpus completo delle candidature 2026",
+    "strange2026Pending": "I dati del Reveal Day sono pubblici. Il Replacement Period è aperto dall’8 al 21 ottobre 2026; l’elenco definitivo delle stringhe è previsto per il 17 novembre. I contenuti 2026 sono quindi indicati come snapshot datato, non come elenco finale.",
     "tabExplore": "Cerca TLD",
     "exploreTitle": "TLD Explorer",
     "exploreSub": "Cerca un TLD o una candidatura storica e apri la sua scheda. Troverai stato nella root, origine, gestore, tappe principali e, dove documentati, casi di governance, economia e società.",
@@ -3589,7 +3591,9 @@
     "iFart2026": "L’assurdo non è un effetto collaterale dell’espansione del namespace. È la prova che alcuni applicant considerano la memorabilità culturale un asset che vale il costo di una candidatura.",
     "sOpenai2026": ".openai figura tra le candidature brand 2026 rivelate di OpenAI.",
     "iOpenai2026": "Un’azienda può cercare di rendere il proprio nome parte della gerarchia DNS. Il punto passa così da categoria di destinazione a infrastruttura di identità controllata.",
-    "strangeHistoricalToggle": "Apri l’archivio storico · 2000–2012"
+    "strangeHistoricalToggle": "Apri l’archivio storico · 2000–2012",
+    "exploreSnapshotClocks": "Tre orologi: snapshot IANA/root · 4 ott 2026 · snapshot candidature Reveal Day 2026 · 7 ott 2026 · pubblicazione · 8 ott 2026. L’inventario delle stringhe 2026 è un indice secondario costruito sui record pubblici APS di ICANN e può cambiare durante il Replacement Period.",
+    "release0745": "Hardening di integrità post-Reveal: rende esplicitamente parziale il CSV locale 2026, mostra i tre orologi temporali della pubblicazione, elimina l’ultimo testo segnaposto pre-Reveal, rafforza metadati e provenienza sulle discrepanze 2026 e ottimizza il caricamento paginato dell’inventario esterno delle stringhe senza gonfiare le dichiarazioni di completezza."
   },
   "de": {
     "brand": "Marke",
@@ -4130,9 +4134,9 @@
     "verisignDepthLabel": ".com- + .net-Registrierungen · Q2 2026",
     "verisignInfraLabel": "Root Zone Maintainer · Betreiber von A-Root und J-Root",
     "scaleContrastReading": "Es gibt keine einzige Rangliste der „Internet-Macht“. Identity Digital bündelt Portfolio-Breite über viele TLDs; Verisign verbindet außergewöhnliche Registrierungstiefe unter .com/.net mit wichtigen operativen Root-Rollen. Keine dieser Größen bedeutet Kontrolle über die ICANN-Politik.",
-    "applications2026Download": "Bewerbungsdaten 2026 auf Einzelebene (CSV)",
-    "applications2026DownloadSub": "CSV · normalisiertes Schema für den offiziellen öffentlichen Bewerbungsdatensatz 2026",
-    "strange2026Pending": "Die Bewerbungsdaten 2026 sind bereits Teil der Publikationsstruktur. Dieser Arbeitsstand wartet auf den offiziellen ICANN-Datensatz; die veröffentlichte Post-Reveal-Version füllt diese Ebene mit realen Strings und Quellen.",
+    "applications2026Download": "Verifizierte lokale Bewerbungsdatensatze 2026 (CSV)",
+    "applications2026DownloadSub": "CSV · partieller lokaler APS-Layer · derzeit 1 unabhangig verifizierter offizieller Datensatz (.lugano); nicht der vollstandige Bewerbungsbestand 2026",
+    "strange2026Pending": "Die Reveal-Day-Daten sind veroffentlicht. Die Replacement Period lauft vom 8. bis 21. Oktober 2026; die bestatigte String-Liste ist fur den 17. November vorgesehen. Inhalte zum Round 2026 werden daher als datierter Snapshot und nicht als endgultige Liste gekennzeichnet.",
     "tabExplore": "TLD-Explorer",
     "exploreTitle": "TLD-Explorer",
     "exploreSub": "Suchen Sie eine TLD oder eine historische Bewerbung und öffnen Sie das Profil. Sie finden Root-Status, Ursprung, Betreiber, wichtige Etappen und, soweit dokumentiert, Governance-, Wirtschafts- und Gesellschaftsfälle.",
@@ -5385,7 +5389,9 @@
     "iFart2026": "Das Absurde ist kein Nebeneffekt der Namespace-Erweiterung. Es zeigt, dass Bewerber kulturelle Einprägsamkeit selbst als vermögenswertes Gut betrachten.",
     "sOpenai2026": ".openai gehört zu OpenAIs veröffentlichten Marken-Bewerbungen 2026.",
     "iOpenai2026": "Ein Unternehmen kann versuchen, den eigenen Namen Teil der DNS-Hierarchie werden zu lassen. Der Punkt wird damit von einer Zielkategorie zu kontrollierter Identitätsinfrastruktur.",
-    "strangeHistoricalToggle": "Historisches Archiv öffnen · 2000–2012"
+    "strangeHistoricalToggle": "Historisches Archiv öffnen · 2000–2012",
+    "exploreSnapshotClocks": "Drei Zeitstempel: IANA/Root-Snapshot · 4. Okt. 2026 · Reveal-Day-Bewerbungssnapshot 2026 · 7. Okt. 2026 · Publikation · 8. Okt. 2026. Das 2026-String-Inventar ist ein Sekundarindex uber offentliche ICANN-APS-Datensatze und kann sich wahrend der Replacement Period andern.",
+    "release0745": "Post-Reveal-Integritätshärtung: kennzeichnet die lokale 2026-Bewerbungs-CSV klar als partiell, zeigt die drei Zeitstempel, entfernt den letzten Pre-Reveal-Platzhalter, stärkt Provenienz- und Diskrepanzmetadaten für 2026 und optimiert den paginierten externen String-Loader, ohne Vollständigkeit vorzutäuschen."
   },
   "fr": {
     "brand": "Marque",
@@ -5926,9 +5932,9 @@
     "verisignDepthLabel": "enregistrements .com + .net · T2 2026",
     "verisignInfraLabel": "Root Zone Maintainer · opérateur de A-root et J-root",
     "scaleContrastReading": "Il n’existe pas de classement unique du « pouvoir d’Internet ». Identity Digital concentre la largeur du portefeuille sur de nombreux TLD ; Verisign combine une profondeur exceptionnelle d’enregistrements sous .com/.net avec d’importants rôles opérationnels sur la racine. Aucun de ces indicateurs n’équivaut au contrôle des politiques de l’ICANN.",
-    "applications2026Download": "Données candidature par candidature · 2026 (CSV)",
-    "applications2026DownloadSub": "CSV · schéma normalisé pour le jeu public officiel des candidatures 2026",
-    "strange2026Pending": "Les données des candidatures 2026 font déjà partie de la structure de publication. Cette version de travail attend le jeu officiel de l’ICANN ; la version post-Reveal alimentera cette couche avec les chaînes et les sources réelles.",
+    "applications2026Download": "Enregistrements locaux verifies des candidatures 2026 (CSV)",
+    "applications2026DownloadSub": "CSV · couche APS locale partielle · actuellement 1 enregistrement officiel verifie independamment (.lugano) ; il ne s’agit pas du corpus complet 2026",
+    "strange2026Pending": "Les donnees du Reveal Day sont publiques. La Replacement Period court du 8 au 21 octobre 2026 ; la liste confirmee des chaines est prevue le 17 novembre. Le contenu 2026 est donc presente comme un instantane date et non comme une liste definitive.",
     "tabExplore": "Explorer les TLD",
     "exploreTitle": "Explorateur de TLD",
     "exploreSub": "Recherchez un TLD ou une candidature historique et ouvrez sa fiche. Vous y trouverez son état dans la racine, son origine, son opérateur, ses principales étapes et, lorsqu’ils sont documentés, des cas de gouvernance, d’économie et de société.",
@@ -7181,6 +7187,8 @@
     "iFart2026": "L’absurde n’est pas un effet secondaire de l’expansion du namespace. Il montre que certains candidats considèrent la mémorabilité culturelle comme un actif digne du coût d’une candidature.",
     "sOpenai2026": ".openai figure parmi les candidatures de marque 2026 révélées d’OpenAI.",
     "iOpenai2026": "Une entreprise peut chercher à faire de son propre nom une partie de la hiérarchie DNS. Le point passe ainsi d’une catégorie de destination à une infrastructure d’identité contrôlée.",
-    "strangeHistoricalToggle": "Ouvrir les archives historiques · 2000–2012"
+    "strangeHistoricalToggle": "Ouvrir les archives historiques · 2000–2012",
+    "exploreSnapshotClocks": "Trois horloges : instantane IANA/root · 4 oct. 2026 · instantane des candidatures Reveal Day 2026 · 7 oct. 2026 · publication · 8 oct. 2026. L’inventaire des chaines 2026 est un index secondaire fonde sur les enregistrements publics APS de l’ICANN et peut evoluer pendant la Replacement Period.",
+    "release0745": "Renforcement d’intégrité post-Reveal : qualifie explicitement le CSV local 2026 de partiel, affiche les trois horloges temporelles, supprime le dernier texte d’attente pré-Reveal, renforce les métadonnées de provenance et de divergence 2026 et optimise le chargeur externe paginé de chaînes sans exagérer la couverture."
   }
 }

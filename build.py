@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.44"
+VERSION = "0.7.45"
 
 
 def csv_records(path: Path) -> int:
@@ -63,7 +63,7 @@ def build_manifest() -> None:
         "string_confirmation_day": "2026-11-17",
         "notes": [
             "Record counts exclude CSV headers.",
-            "applications_2026.csv contains locally vendored official 2026 APS records; v0.7.44 keeps the verified .lugano record locally, loads the published Reveal Day string inventory through the documented paginated API, and updates the thematic publication around the post-Reveal state without claiming full local APS application coverage.",
+            "applications_2026.csv contains locally vendored official 2026 APS records; v0.7.45 keeps the independently verified .lugano APS record local, labels the application CSV explicitly as partial, documents the official 7 October statistics snapshot and the 980-string secondary inventory separately, and does not claim full local APS application coverage during the Replacement Period.",
             "explorer_catalog.csv is the latest indexed record view; explorer_events.csv keeps separate historical events for multi-era strings.",
             ".lugano is linked to the official ICANN APS Reveal Day record CDL2651T-T31516 published on 7 October 2026.",
             "dns_oddities.csv distinguishes active legacy, retired, reserved and never-delegated country-code cases.",
@@ -89,7 +89,7 @@ def build_manifest() -> None:
             "status": "reveal-day-snapshot",
             "frozen_on": "2026-10-07",
             "runtime_external_enrichment": True,
-            "browser_time_external_data_fetches": "10 paginated requests on first load; cached locally afterwards",
+            "browser_time_external_data_fetches": "paginated requests on first load; the client requests up to 500 rows per page and honors the server-reported page size; cached locally afterwards",
             "policy": "Core research datasets remain packaged locally. The published 2026 string inventory is loaded from the documented nTLDData JSON API with page-by-page completeness validation and local browser caching."
         },
         "web_delivery": {
@@ -105,7 +105,7 @@ def build_manifest() -> None:
 
 def data_pack_files() -> list[Path]:
     snapshot = json.loads((DATA / "iana_snapshot.json").read_text())
-    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "economic_cases.json", DATA / "social_cases.json", ROOT / snapshot["archive_path"]]
+    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "application_2026_snapshot.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "economic_cases.json", DATA / "social_cases.json", ROOT / snapshot["archive_path"]]
 
 
 def build_data_pack() -> None:

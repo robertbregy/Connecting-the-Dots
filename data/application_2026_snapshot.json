@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "snapshot": "2026-10-08",
+  "official": {
+    "source": "https://newgtldprogram-aps.icann.org/statistics",
+    "lastPublished": "2026-10-07T15:41:00Z",
+    "activeApplications": 1615,
+    "applicants": 481,
+    "uniqueStrings": null
+  },
+  "stringInventory": {
+    "source": "https://www.ntlddata.com/applications/strings",
+    "role": "secondary-index-over-public-ICANN-APS-records",
+    "observedStrings": 980,
+    "runtimeLoaded": true,
+    "license": "CC BY 4.0"
+  },
+  "period": {
+    "revealDay": "2026-10-07",
+    "replacementPeriodStart": "2026-10-08",
+    "replacementPeriodEnd": "2026-10-21",
+    "stringConfirmationDay": "2026-11-17"
+  },
+  "integrity": {
+    "fullLocalApplicationCorpusClaimed": false,
+    "reason": "The official APS application-level corpus is not yet locally vendored and the official statistics total does not currently reconcile with the individually enumerable records reported by the secondary index."
+  }
+}

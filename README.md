@@ -389,3 +389,7 @@ Regional map names and chart labels are localized in all four languages. Map mod
 “Report an error” is available in Sources, the footer and every profile. It opens a GitHub issue draft with editable context: page/profile link, release and language. A GitHub account is required and submitted issues are public. No issue is sent by the website; the reader reviews and submits it on GitHub. There is no promised response time or automated correction service.
 
 All research records, CSVs and preserved IANA evidence remain unchanged. Automated DOM and asynchronous checks cover localized maps, direct links, Unicode identities, browser history, language changes, sharing and feedback drafts. A real browser visual check remains outstanding because the local browser environment cannot open pages with its required sandbox.
+
+## 2026 Reveal-Day data integrity
+
+The 2026 layer deliberately separates three things: ICANN official aggregate statistics (1,615 active applications / 481 applicants in the 7 October snapshot), locally vendored independently verified APS application records, and the 980-string browsing index derived from public APS records through nTLDData. During the Replacement Period these populations can change and they are not presented as interchangeable. The complete 2026 application-level APS corpus is not claimed as locally vendored in v0.7.45.
