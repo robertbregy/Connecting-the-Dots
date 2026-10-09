@@ -56,7 +56,12 @@ lines[-1] = lines[-1].rstrip(',')
 lines.append('};')
 (DATA / 'publication.js').write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
-# Citation metadata identifies the immutable research release, not each technical site release.
+# Citation metadata is tied to the archived RR1 research release, not website updates.
+research_manifest = json.loads((ROOT / "research" / "research_release_manifest.json").read_text(encoding="utf-8"))
+rr = research_manifest["currentResearchRelease"]
+if rr["id"] != meta["researchRelease"] or rr["doi"] != meta.get("doi"):
+    raise SystemExit("Research release identity/DOI mismatch: refusing to rewrite CITATION.cff")
+research_published_on = rr["publishedOn"]
 cff = f'''cff-version: 1.2.0
 message: "If you use Connecting the Dots in research, please cite the living research publication and the specific research release used."
 title: "Connecting the Dots: A Living Research Atlas of Top-Level Domain Expansion"
@@ -65,7 +70,7 @@ authors:
   - family-names: "Bregy"
     given-names: "Robert"
 version: "{meta['researchRelease']}"
-date-released: "{released}"
+date-released: "{research_published_on}"
 url: "{meta['deployment']}"
 repository-code: "{meta['repository']}"
 license: "CC-BY-4.0"
