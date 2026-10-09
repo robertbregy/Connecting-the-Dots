@@ -1,0 +1,11 @@
+# Local / CI dependencies
+node_modules/
+
+# Python build artefacts
+__pycache__/
+*.py[cod]
+
+# OS / editor noise
+.DS_Store
+*.swp
+*.tmp
