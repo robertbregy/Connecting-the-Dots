@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.66
+# Connecting the Dots — v0.7.67
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -6,15 +6,13 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.66 · 10 October 2026**
+**v0.7.67 · 10 October 2026**
 
-A targeted SEO correction adds the proper Article image to the structured data for the four standalone **Behind the Round** pages and shortens their snippets. Source evidence, editorial text, case review dates, RR1 and its DOI remain unchanged.
+The ICANN 2026 menu distinguishes **Timeline** (documented public milestones, dates and procedural stages) from **Field Notes** (independent observations, anomalies, discoveries and open questions). The same distinction is used in the four languages: Italian **Cronologia / Note dal campo**, German **Chronologie / Beobachtungen**, and French **Chronologie / Carnet de terrain**.
 
-**Previous v0.7.65** launched Behind the Round.
+Page headings, standalone-page SEO titles, the research index and the living working paper use the new terms. All previous `inside-the-round/` and `behind-the-round/` paths remain in place, including canonical URLs, hreflang links and section deep links. Historical release notes preserve the names used at the time. No research evidence, source, original RR1 deposit or DOI was modified.
 
-Introducing **Behind the Round**, a separate and indexable four-language field-note series under ICANN 2026. Its first story investigates a deceptively simple Reveal Day discrepancy: 1,616 paid applications on 22 September, 1,615 in the official 7 October aggregate, and 1,614 in the locally frozen secondary index. ICANN explicitly documents the administrative-check exclusion of `.wdo` from its public list; it does **not** yet provide a verified explanation for the earlier official-count change. Both gaps remain separately labelled and all source URLs are preserved.
-
-An editorial evidence register, reproducible multilingual renderer, sitemap entries and validation rules support future dated updates without modifying the **RR1** data snapshot, DOI or working paper citation. The preceding **v0.7.64** harmonized the How it works navigation and mobile deep links.
+**Earlier v0.7.66** improved field-note SEO metadata; **v0.7.65** introduced the first article on the two separate Reveal Day counting questions.
 
 ## What the project covers
 
@@ -35,8 +33,8 @@ The 2026 round is still in progress. Reveal Day data are treated as a dated snap
 
 ## Search and research entry points
 
-- [Inside the Round](inside-the-round/en/index.html) — four-language chronological observation of the ICANN 2026 round, with clear source and status labels.
-- [Behind the Round](behind-the-round/en/index.html) — independently indexable research notes on overlooked evidence, data anomalies and what remains unknown.
+- [Timeline](inside-the-round/en/index.html) — four-language chronological observation of the ICANN 2026 round, with clear source and status labels.
+- [Field Notes](behind-the-round/en/index.html) — independently indexable research notes on overlooked evidence, data anomalies and what remains unknown.
 - [TLD Explorer guide](explorer/index.html) — a separately indexable introduction to the interactive explorer and evidence limits.
 - [Research & citation](research/index.html) — RR1 DOI, method, reproducibility and citation resources.
 - [Working paper](research/connecting-the-dots-working-paper-v1.html) — independently readable HTML draft.
@@ -53,11 +51,11 @@ Current research release: **RR1 · Reveal Day 2026**. The next planned research 
 
 Citation metadata are stored in [`CITATION.cff`](CITATION.cff). Zenodo-ready metadata are stored in [`.zenodo.json`](.zenodo.json). The research-release manifest and working paper are in [`research/`](research/). RR1 is archived on Zenodo: `10.5281/zenodo.23262623`.
 
-## Inside the Round
+## Timeline
 
 The program-wide chronology is maintained in [`data/inside_the_round_events.json`](data/inside_the_round_events.json), an **editorial event register** rather than a replacement of or addition to the RR1 research snapshot. The shared event register builds the four-language interactive section and separately indexable HTML pages. Status labels distinguish observed events, events in progress, future ICANN dates, uncertain phases and conditional outcomes. The author's involvement in the City's `.lugano` application is disclosed: only publishable observations and primary public sources may appear in the independent chronicle.
 
-## Behind the Round
+## Field Notes
 
 The public evidence register [`data/behind_round_stories.json`](data/behind_round_stories.json) tracks individual, corrigible field notes and their source provenance separately from the milestone chronology and the immutable RR1 data. The first case distinguishes a source-backed explanation for the mismatch between the APS aggregate and publicly listed applications from the still unexplained September-to-October official count change. Four standalone language routes are generated deterministically from the editorial register. New explanations are adopted only after public source verification; automated monitoring is advisory, not an unsupervised change to the publication.
 
