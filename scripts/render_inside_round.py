@@ -199,7 +199,7 @@ def render_page(data, tr, lang, pub):
 <main id="inside-round">
 <div class="eyebrow">{h(t["insideEyebrow"])}</div><h1>{h(t["insideTitle"])}</h1>
 <p class="lead">{h(t["insideIntro"])}</p>
-<div class="actions">{action("insideCaseCta", BASE + lang + "/?tab=lugano#lugano")}{action("insideResearchCta", BASE + lang + "/?tab=research#research", True)}</div>
+<div class="actions">{action("insideCaseCta", BASE + lang + "/?tab=lugano#lugano")}{action("behindNav", BASE + "behind-the-round/" + lang + "/")}{action("insideResearchCta", BASE + lang + "/?tab=research#research", True)}</div>
 <section class="panel" aria-label="{h(t["insideProgramTitle"], quote=True)}">
 <div class="insideRoundLenses">{lenses}</div></section>
 <section class="panel" aria-labelledby="timelineTitle">
