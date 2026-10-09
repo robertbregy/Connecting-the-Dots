@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "editorialLayer": "2026-round-field-notes-not-part-of-frozen-RR1",
+  "lastReviewed": "2026-10-10",
+  "policy": "Only sourced public observations, explicitly dated reconstructions and open questions; never infer causes from mismatched aggregate snapshots or include privileged application details.",
+  "episodes": [
+    {
+      "id": "reveal-day-counts",
+      "slug": "reveal-day-counts",
+      "number": 1,
+      "publishedOn": "2026-10-10",
+      "revisedOn": "2026-10-10",
+      "periodStart": "2026-09-22",
+      "periodEnd": "2026-10-08",
+      "state": "partly-explained",
+      "quantities": [
+        {
+          "id": "paid",
+          "value": 1616,
+          "reportedOn": "2026-09-22",
+          "sourceId": "icann-22sep"
+        },
+        {
+          "id": "official",
+          "value": 1615,
+          "reportedOn": "2026-10-07",
+          "sourceId": "icann-aps-stats"
+        },
+        {
+          "id": "secondary",
+          "value": 1614,
+          "snapshot": "2026-10-07",
+          "observedOn": "2026-10-08",
+          "sourceId": "frozen-secondary"
+        }
+      ],
+      "discrepancies": [
+        {
+          "id": "paid-to-reveal",
+          "from": 1616,
+          "to": 1615,
+          "status": "unresolved",
+          "explanation": "No specific verified public cause identified as of 2026-10-10"
+        },
+        {
+          "id": "aggregate-to-visible",
+          "from": 1615,
+          "to": 1614,
+          "status": "documented-exclusion",
+          "explanation": "APS expressly excludes WDO2627T-T45217 (.wdo) from its public application list while administrative checks continue; the secondary index is a separate, not necessarily exhaustive, dataset."
+        }
+      ],
+      "trackedApplication": {
+        "id": "WDO2627T-T45217",
+        "string": ".wdo",
+        "applicant": "World Data Organization",
+        "countryCode": "CN"
+      },
+      "sources": [
+        {
+          "id": "icann-22sep",
+          "kind": "primary",
+          "labelKey": "behindSourceSep",
+          "url": "https://www.icann.org/en/announcements/details/icann-confirms-number-of-applications-proceeding-in-the-2026-round-22-09-2026-en"
+        },
+        {
+          "id": "icann-7oct",
+          "kind": "primary",
+          "labelKey": "behindSourceReveal",
+          "url": "https://www.icann.org/resources/press-material/release-2026-10-07-en"
+        },
+        {
+          "id": "icann-aps-stats",
+          "kind": "primary",
+          "labelKey": "behindSourceStats",
+          "url": "https://newgtldprogram-aps.icann.org/statistics"
+        },
+        {
+          "id": "icann-aps-list",
+          "kind": "primary",
+          "labelKey": "behindSourceList",
+          "url": "https://newgtldprogram-aps.icann.org/applications"
+        },
+        {
+          "id": "icann-aps-wdo",
+          "kind": "primary",
+          "labelKey": "behindSourceWdo",
+          "url": "https://newgtldprogram-aps.icann.org/applications/WDO2627T-T45217/summary"
+        },
+        {
+          "id": "frozen-secondary",
+          "kind": "secondary",
+          "labelKey": "behindSourceSecondary",
+          "url": "https://www.ntlddata.com/applications/strings"
+        },
+        {
+          "id": "project-snapshot",
+          "kind": "derived",
+          "labelKey": "behindSourceManifest",
+          "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/main/data/application_2026_snapshot.json"
+        }
+      ],
+      "updateTriggers": [
+        "ICANN publishes a specific explanation for the 22 September 1,616 to 7 October 1,615 change",
+        "ICANN changes the WDO application administrative-check status or APS visibility",
+        "ICANN revises APS counts or releases a newly reconciled application-level public list",
+        "A new independent analysis identifies an evidence-backed alternative reconciliation"
+      ]
+    }
+  ]
+}
