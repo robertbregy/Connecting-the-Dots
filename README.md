@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.61
+# Connecting the Dots — v0.7.62
 
 **Connecting the Dots** is an independent, multilingual research and public-information project on the evolution of Internet top-level domains: applications, delegations, governance, economics, social meaning and the ICANN New gTLD Program.
 
@@ -6,15 +6,13 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.61 · 9 October 2026**
+**v0.7.62 · 10 October 2026**
 
-This corrective release restores **all known missing editorial labels and explanatory copy across EN, IT, DE and FR**, including the economic-sector analysis, portfolio comparison, the .lugano public-interest narrative, Research & citation, downloads and cross-round comparisons. It removes obsolete pre-Reveal placeholders, reconciles the visible round-2026 dashboard to the official 7 October snapshot and adds strict multilingual build checks. The regional ICANN figures represent **481 applicants**, not 1,615 applications. RR1 and its Zenodo DOI remain unchanged.
+This audit strengthens the research's live-observation layer. **Inside the Round** now contains nine sourced program and case milestones in EN, IT, DE and FR. Reveal Day cites both ICANN's public announcement and the official APS record for `.lugano`; the City's separately dated public project communication has its own event, and the 17 November 2026–16 March 2027 community-input window is distinguished from later evaluation and conditional outcomes.
 
-**Previous release v0.7.60** added the Inside the Round chronicle.
+The independent working paper is now **v1.1-draft**, explicitly revised on 10 October 2026. It is a living draft, not a reissue of the archived RR1 evidence. The build now preserves RR1's original 9 October 2026 citation date instead of updating it with technical site releases.
 
-This release adds **Inside the Round**, a multilingual editorial chronicle of the 2026 ICANN New gTLD Program. It follows significant public milestones from the start of the application window to its eventual outcomes, using `.lugano` as a disclosed participant-observer case while keeping the publication independent. The 7-event editorial register is separate from the frozen RR1 evidence, and each entry distinguishes past, current, scheduled, evolving and conditional stages.
-
-The preceding release hardened the research-publication infrastructure after a full repository/live-site audit. It separates the immutable RR1 citation from mutable technical site versions, restores Zenodo metadata to the repository, makes the working paper indexable and citable, reconciles Explorer counting semantics, removes stale 2026 methodology copy, and updates deployment documentation for direct Git-based publication.
+The previous **v0.7.61** restored missing multilingual editorial copy and reconciled the 7 October official ICANN Reveal Day totals. The **v0.7.60** release first introduced the independent event chronicle.
 
 The 2026 browsing layer remains frozen locally: **980 unique primary strings** observed in the secondary Reveal Day index, representing **1,608 applications associated with a primary string**, plus six variant-only application records in that secondary source. ICANN's official Reveal Day aggregate remains **1,615 applications / 481 applicants**. The project does **not** claim a complete locally vendored APS application-level corpus for 2026.
 
