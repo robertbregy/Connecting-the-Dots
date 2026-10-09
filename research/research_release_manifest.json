@@ -31,7 +31,7 @@
     "A new research release is created when the underlying evidence set or a major derived analysis changes materially.",
     "Historical research releases remain archived and citable once a DOI/archive workflow is activated."
   ],
-  "currentSiteVersion": "0.7.66",
+  "currentSiteVersion": "0.7.67",
   "workingPaperRevision": {
     "version": "1.1-draft",
     "revisedOn": "2026-10-10",
