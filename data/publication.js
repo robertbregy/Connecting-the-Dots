@@ -1,6 +1,6 @@
-/* v0.7.49: portfolio economics */
+/* v0.7.50: portfolio economics balance */
 window.DOT_PUBLICATION={
-  version:'0.7.49',
+  version:'0.7.50',
   releasedOn:'2026-10-09',
   state:'reveal-day',
   freeze:false,
