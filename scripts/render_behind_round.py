@@ -131,7 +131,7 @@ def episode_markup(data, translations, lang, dynamic=False):
             txt("behindCaseTitle",tag="h2"),
             txt("behindCaseLead",tag="p",css="behindCaseLead"),
             txt("behindStatusPartial",css="behindStatus"),
-            '<div class="behindFigures" role="group" aria-label="' + h(t["behindCountSecondaryCaveat"],quote=True) + '">'
+            '<div class="behindFigures">'
         ])
         for fact in case["quantities"]:
             parts.append('<div class="behindFigure" data-count-type="' + h(fact["id"],quote=True) + '"><strong>' + f'{fact["value"]:,}' + '</strong>' + txt(labels[fact["id"]],css="factLabel") + '</div>')
