@@ -664,4 +664,13 @@ for lang in LANGS:
         fail('Unpublished personal detail must not appear in chronicle')
     check_internal_refs(chronicle_page)
 
+# Working-paper revisions may evolve, but the dated RR1 evidence and citation do not.
+working_md=(ROOT/'research'/'connecting-the-dots-working-paper-v1.md').read_text(encoding='utf-8')
+working_html=(ROOT/'research'/'connecting-the-dots-working-paper-v1.html').read_text(encoding='utf-8')
+for fragment in ['Working Paper v1.1-draft', 'Editorial revision note (10 October 2026)', 'participant-observer']:
+    if fragment not in working_md or fragment not in working_html:
+        fail('Working paper HTML/Markdown methodological revision mismatch: '+fragment)
+if 'date-released: "2026-10-09"' not in citation or publication_meta.get('releasedOn')!='2026-10-10':
+    fail('Research publication date conflated with current technical release date')
+
 print(f'RELEASE CHECK PASS · v{version} · 1,849 Explorer records · 7,679 life-history events · 4 languages')
