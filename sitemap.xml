@@ -36,4 +36,16 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/en/"/>
   </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/explorer/</loc>
+    <lastmod>2026-10-09</lastmod>
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/research/</loc>
+    <lastmod>2026-10-09</lastmod>
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/research/connecting-the-dots-working-paper-v1.html</loc>
+    <lastmod>2026-10-09</lastmod>
+  </url>
 </urlset>

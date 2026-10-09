@@ -29,6 +29,13 @@ The publication distinguishes **FACT**, **READING** and **VISION**. Official ICA
 
 The 2026 round is still in progress. Reveal Day data are treated as a dated snapshot, not as a prediction of final delegation. Replacement and confirmation milestones are documented separately.
 
+## Search and research entry points
+
+- [TLD Explorer guide](explorer/index.html) — a separately indexable introduction to the interactive explorer and evidence limits.
+- [Research & citation](research/index.html) — RR1 DOI, method, reproducibility and citation resources.
+- [Working paper](research/connecting-the-dots-working-paper-v1.html) — independently readable HTML draft.
+- [Sitemap](sitemap.xml) — multilingual canonical and scholarly-entry URLs.
+
 ## Living research publication
 
 The project now has two version layers:
