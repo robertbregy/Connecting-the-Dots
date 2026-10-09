@@ -2031,7 +2031,9 @@
     "insideAPSRecordSource": "ICANN APS · .lugano application",
     "insideCityProjectSource": "City of Lugano · Official project page",
     "release0762": "Research and chronology audit: direct ICANN APS evidence for .lugano, institutional publication milestone, public-input dates, reproducibility checks and RR1 citation dates independent of site updates.",
-    "release0763": "SEO refinement: concise, distinctive page titles across four languages and a clearer TLD Explorer description. Decorative logo images retain empty alt text to prevent screen-reader duplication."
+    "release0763": "SEO refinement: concise, distinctive page titles across four languages and a clearer TLD Explorer description. Decorative logo images retain empty alt text to prevent screen-reader duplication.",
+    "navHowOverview": "Overview",
+    "release0764": "Unified the How it works navigation with the other disclosure menus, preserving all five topic groups and direct chapter links in four languages. Removed the duplicate in-section chip navigation, hardened mobile chapter selection, anchor URLs, Back/Forward and accessibility."
   },
   "it": {
     "brand": "Brand",
@@ -4065,7 +4067,9 @@
     "insideAPSRecordSource": "ICANN APS · Candidatura .lugano",
     "insideCityProjectSource": "Città di Lugano · Pagina istituzionale",
     "release0762": "Audit della ricerca e della cronologia: fonte APS diretta per .lugano, informazione istituzionale, calendario dei contributi pubblici, controlli di riproducibilità e data della citazione RR1 indipendente dalle release del sito.",
-    "release0763": "Ottimizzazione SEO: titoli chiari e sintetici nelle quattro lingue e descrizione più mirata dell’Explorer. I loghi puramente decorativi mantengono alt vuoto per evitare duplicazioni ai lettori di schermo."
+    "release0763": "Ottimizzazione SEO: titoli chiari e sintetici nelle quattro lingue e descrizione più mirata dell’Explorer. I loghi puramente decorativi mantengono alt vuoto per evitare duplicazioni ai lettori di schermo.",
+    "navHowOverview": "Panoramica",
+    "release0764": "Uniformata la navigazione di Come funziona agli altri menu a tendina, mantenendo tutti i cinque gruppi tematici e i collegamenti diretti ai capitoli nelle quattro lingue. Eliminata la navigazione interna duplicata; verificati menu mobile, URL con ancore, cronologia e accessibilità."
   },
   "de": {
     "brand": "Marke",
@@ -6099,7 +6103,9 @@
     "insideAPSRecordSource": "ICANN APS · Bewerbung .lugano",
     "insideCityProjectSource": "Stadt Lugano · Offizielle Projektseite",
     "release0762": "Prüfung von Forschung und Chronik: direkte APS-Quelle für .lugano, städtische Veröffentlichung, belegter Zeitplan für öffentliche Beiträge, Reproduzierbarkeitskontrollen und unveränderliches RR1-Zitationsdatum.",
-    "release0763": "SEO-Präzisierung: kürzere, aussagekräftige Seitentitel in vier Sprachen und eine präzisere Explorer-Beschreibung. Dekorative Logos behalten ein leeres alt-Attribut, um Wiederholungen in Screenreadern zu vermeiden."
+    "release0763": "SEO-Präzisierung: kürzere, aussagekräftige Seitentitel in vier Sprachen und eine präzisere Explorer-Beschreibung. Dekorative Logos behalten ein leeres alt-Attribut, um Wiederholungen in Screenreadern zu vermeiden.",
+    "navHowOverview": "Überblick",
+    "release0764": "Die Navigation von So funktioniert es wurde an die übrigen Aufklappmenüs angeglichen. Alle fünf Themen und direkten Kapitel-Links bleiben in vier Sprachen verfügbar. Die doppelte interne Linkleiste wurde entfernt; Mobilnavigation, Anker, Verlauf und Barrierefreiheit wurden abgesichert."
   },
   "fr": {
     "brand": "Marque",
@@ -8133,6 +8139,8 @@
     "insideAPSRecordSource": "ICANN APS · Candidature .lugano",
     "insideCityProjectSource": "Ville de Lugano · Page officielle du projet",
     "release0762": "Audit de la recherche et de la chronique : source APS directe pour .lugano, publication institutionnelle, calendrier des contributions publiques, vérifications de reproductibilité et date de citation RR1 indépendante des mises à jour du site.",
-    "release0763": "Amélioration SEO : titres plus concis dans les quatre langues et description plus précise de l’Explorer. Les logos décoratifs conservent un attribut alt vide pour éviter les répétitions dans les lecteurs d’écran."
+    "release0763": "Amélioration SEO : titres plus concis dans les quatre langues et description plus précise de l’Explorer. Les logos décoratifs conservent un attribut alt vide pour éviter les répétitions dans les lecteurs d’écran.",
+    "navHowOverview": "Vue d’ensemble",
+    "release0764": "La navigation Comment ça marche utilise désormais le même menu déroulant que les autres rubriques. Les cinq groupes thématiques et les liens directs vers les chapitres sont conservés dans quatre langues. La barre interne redondante a été supprimée, avec vérification du mobile, des ancres, de l’historique et de l’accessibilité."
   }
 }
