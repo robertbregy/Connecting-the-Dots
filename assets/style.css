@@ -484,5 +484,6 @@ html[data-theme="dark"] .derivedBadge{color:#f2c46d}html[data-theme="light"] .de
 .behindSources [data-source-kind="secondary"] a,.behindSources [data-source-kind="derived"] a{border-style:dashed}
 .behindCaseFooter{display:flex;flex-wrap:wrap;gap:10px;align-items:center;border-top:1px solid var(--border);margin-top:21px;padding-top:18px;color:var(--muted);font-size:.83rem}
 .behindCaseFooter time{font-variant-numeric:tabular-nums}
+.behindRevisionHistory{margin:0;padding:0 0 0 20px;color:var(--muted);font-size:.87rem;line-height:1.55}.behindRevisionHistory time{font-weight:740;color:var(--text);font-variant-numeric:tabular-nums;margin-right:7px}
 @media(max-width:720px){.behindFigures{grid-template-columns:1fr}.behindFigure{padding:16px}.behindFigure strong{font-size:2.25rem}.behindFindings{grid-template-columns:1fr}.behindSources{grid-template-columns:1fr}.behindStory{padding:16px}}
 
