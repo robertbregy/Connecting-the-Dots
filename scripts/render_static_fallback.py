@@ -87,6 +87,8 @@ def render(page,lang,alias=False):
     i18n=soup.select_one('#ctd-i18n-bundle');i18n.string='\nwindow.DOT_I18N='+json.dumps({lang:tr},ensure_ascii=False,separators=(',',':'))+';\n'
     guide=soup.select_one('a[data-inside-round-guide]')
     if guide:guide['href']=BASE+'inside-the-round/'+lang+'/'
+    behind_guide=soup.select_one('a[data-behind-round-guide]')
+    if behind_guide:behind_guide['href']=BASE+'behind-the-round/'+lang+'/'
     for n in soup.select('[src], [href]'):
         for attr in ('src','href'):
             ref=n.get(attr)
