@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.65
+# Connecting the Dots — v0.7.66
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -6,7 +6,11 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.65 · 10 October 2026**
+**v0.7.66 · 10 October 2026**
+
+A targeted SEO correction adds the proper Article image to the structured data for the four standalone **Behind the Round** pages and shortens their snippets. Source evidence, editorial text, case review dates, RR1 and its DOI remain unchanged.
+
+**Previous v0.7.65** launched Behind the Round.
 
 Introducing **Behind the Round**, a separate and indexable four-language field-note series under ICANN 2026. Its first story investigates a deceptively simple Reveal Day discrepancy: 1,616 paid applications on 22 September, 1,615 in the official 7 October aggregate, and 1,614 in the locally frozen secondary index. ICANN explicitly documents the administrative-check exclusion of `.wdo` from its public list; it does **not** yet provide a verified explanation for the earlier official-count change. Both gaps remain separately labelled and all source URLs are preserved.
 
