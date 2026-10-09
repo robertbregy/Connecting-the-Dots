@@ -295,7 +295,23 @@ def validate_index() -> None:
 
 def main() -> None:
     subprocess.run(["python3", str(ROOT / "scripts" / "sync_publication.py")], check=True)
-    subprocess.run(["python3", str(ROOT / "scripts" / "build_application_archaeology.py")], check=True)
+
+    archaeology_source = DATA / "applications_2012_pairs_source.txt"
+    archaeology_outputs = [
+        DATA / "applications_2000.csv",
+        DATA / "applications_2004.csv",
+        DATA / "applications_2012.csv",
+        DATA / "application_archaeology_local.json",
+        DATA / "application_archaeology_manifest.json",
+    ]
+    if archaeology_source.exists():
+        subprocess.run(["python3", str(ROOT / "scripts" / "build_application_archaeology.py")], check=True)
+    elif all(path.exists() for path in archaeology_outputs):
+        print("2012 ingest source is not in the public repository; using the committed frozen application-archaeology outputs")
+    else:
+        missing = [str(path.relative_to(ROOT)) for path in archaeology_outputs if not path.exists()]
+        raise SystemExit("Application archaeology cannot be rebuilt and required frozen outputs are missing: " + ", ".join(missing))
+
     bundle_runtime()
     build_manifest()
     build_data_pack()
