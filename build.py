@@ -11,6 +11,7 @@ import subprocess
 import zipfile
 from scripts.package_release import write_deterministic_zip
 from scripts.render_inside_round import render_timeline, build_inside_round_pages
+from scripts.render_behind_round import render_stories, build_behind_round_pages
 
 ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
@@ -148,6 +149,10 @@ def build_index() -> None:
     if html.count(marker) != 1:
         raise SystemExit("Inside the Round event placeholder missing or duplicated")
     html = html.replace(marker, render_timeline(ROOT))
+    story_marker = "<!-- CTD_BEHIND_ROUND_STORIES -->"
+    if html.count(story_marker) != 1:
+        raise SystemExit("Behind the Round field-note placeholder missing or duplicated")
+    html = html.replace(story_marker, render_stories(ROOT))
     reveal_2026_js = (DATA / "applications_2026_strings_reveal.js").read_text(encoding="utf-8")
     # The prerenderer loads runtime from disk; never inject huge inline bundles.
     html = html.replace('<link href="assets/style.css" rel="stylesheet"/>', '<link id="ctd-runtime-style" href="assets/style.css" rel="stylesheet"/>')
@@ -318,6 +323,7 @@ def main() -> None:
     build_data_pack()
     build_index()
     build_inside_round_pages(ROOT, PUBLICATION)
+    build_behind_round_pages(ROOT, PUBLICATION)
     validate_index()
     # Release-level validation is intentionally self-contained so the browser-upload
     # bundle can verify itself even though the larger development QA suite is omitted.
