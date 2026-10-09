@@ -2076,7 +2076,9 @@
     "behindSourceWdo": "ICANN APS · .wdo application",
     "behindSourceSecondary": "nTLDData · Secondary index",
     "behindSourceManifest": "Connecting the Dots · Frozen metadata",
-    "release0765": "Adds Behind the Round: a four-language, source-backed and independently indexable field-note series beginning with the two distinct Reveal Day count discrepancies, plus reviewable source provenance and open-question update triggers. RR1 remains immutable."
+    "release0765": "Adds Behind the Round: a four-language, source-backed and independently indexable field-note series beginning with the two distinct Reveal Day count discrepancies, plus reviewable source provenance and open-question update triggers. RR1 remains immutable.",
+    "behindRevisionsTitle": "Dated editorial revisions",
+    "behindRevisionInitial": "First publication: separated the two numerical discrepancies; verified the APS administrative-check footnote and explicitly left the earlier official-count change unresolved."
   },
   "it": {
     "brand": "Brand",
@@ -4155,7 +4157,9 @@
     "behindSourceWdo": "ICANN APS · Candidatura .wdo",
     "behindSourceSecondary": "nTLDData · Indice secondario",
     "behindSourceManifest": "Connecting the Dots · Snapshot congelato",
-    "release0765": "Nasce Dietro il Round: note di ricerca in quattro lingue con fonti e pagine autonome indicizzabili. Il primo caso distingue due discrepanze numeriche del Reveal Day, la spiegazione documentata e la domanda ancora aperta. RR1 resta immutata."
+    "release0765": "Nasce Dietro il Round: note di ricerca in quattro lingue con fonti e pagine autonome indicizzabili. Il primo caso distingue due discrepanze numeriche del Reveal Day, la spiegazione documentata e la domanda ancora aperta. RR1 resta immutata.",
+    "behindRevisionsTitle": "Revisioni editoriali datate",
+    "behindRevisionInitial": "Prima pubblicazione: distinti i due scarti numerici, verificata la nota APS sulla verifica amministrativa e lasciato esplicitamente aperto il precedente cambiamento del totale ufficiale."
   },
   "de": {
     "brand": "Marke",
@@ -6234,7 +6238,9 @@
     "behindSourceWdo": "ICANN APS · Bewerbung .wdo",
     "behindSourceSecondary": "nTLDData · Sekundärindex",
     "behindSourceManifest": "Connecting the Dots · Eingefrorene Metadaten",
-    "release0765": "Hinter der Runde ergänzt die Forschung um vier sprachlich getrennte, quellenbasierte Fallnotizen. Der erste Fall behandelt beide Abweichungen bei den Reveal-Day-Zahlen, eine belegte Erklärung und eine offene Frage. RR1 bleibt unverändert."
+    "release0765": "Hinter der Runde ergänzt die Forschung um vier sprachlich getrennte, quellenbasierte Fallnotizen. Der erste Fall behandelt beide Abweichungen bei den Reveal-Day-Zahlen, eine belegte Erklärung und eine offene Frage. RR1 bleibt unverändert.",
+    "behindRevisionsTitle": "Datierte redaktionelle Änderungen",
+    "behindRevisionInitial": "Erstveröffentlichung: beide Zahlenabweichungen getrennt, die APS-Fussnote zur administrativen Prüfung verifiziert und die frühere Änderung der offiziellen Gesamtzahl ausdrücklich als ungeklärt belassen."
   },
   "fr": {
     "brand": "Marque",
@@ -8313,6 +8319,8 @@
     "behindSourceWdo": "ICANN APS · Candidature .wdo",
     "behindSourceSecondary": "nTLDData · Index secondaire",
     "behindSourceManifest": "Connecting the Dots · Instantané archivé",
-    "release0765": "Dans les coulisses du round inaugure une série de notes sourcées et indexables dans quatre langues. Le premier dossier distingue deux écarts numériques du Reveal Day, une explication documentée et une question ouverte. RR1 demeure inchangée."
+    "release0765": "Dans les coulisses du round inaugure une série de notes sourcées et indexables dans quatre langues. Le premier dossier distingue deux écarts numériques du Reveal Day, une explication documentée et une question ouverte. RR1 demeure inchangée.",
+    "behindRevisionsTitle": "Révisions éditoriales datées",
+    "behindRevisionInitial": "Première publication : distinction des deux écarts, vérification de la note APS sur le contrôle administratif et maintien explicite de la variation antérieure du total officiel comme question ouverte."
   }
 }
