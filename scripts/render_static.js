@@ -103,7 +103,7 @@ function render(language,alias=false){
   for(const node of document.querySelectorAll('[src],[href]')){
     for(const attr of ['src','href']){
       const ref=node.getAttribute(attr);
-      if(ref&&/^(assets|data|downloads)\//.test(ref))node.setAttribute(attr,prefix+ref);
+      if(ref&&(/^(assets|data|downloads|research)\//.test(ref)||ref==='CITATION.cff'))node.setAttribute(attr,prefix+ref);
     }
   }
   // A localized page only needs its own complete dictionary at runtime.
