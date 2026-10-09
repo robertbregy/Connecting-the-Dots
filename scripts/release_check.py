@@ -560,14 +560,18 @@ if not archive.exists(): fail('IANA evidence archive missing')
 if hashlib.sha256(archive.read_bytes()).hexdigest()!=snapshot['archive_sha256']: fail('IANA evidence archive hash mismatch')
 if snapshot['databaseCount']!=1595 or snapshot['rootListCount']!=1437: fail('IANA snapshot counts')
 
-# Data pack synchronization for every item listed in it.
+# Frozen research data pack integrity. Technical site releases may advance without rewriting RR1.
 pack=ROOT/'downloads/connecting-the-dots-data-pack.zip'
 if not pack.exists(): fail('data pack missing')
 with zipfile.ZipFile(pack) as zf:
     if zf.testzip(): fail('data pack ZIP corruption')
-    for info in zf.infolist():
-        local=DATA/info.filename if (DATA/info.filename).exists() else ROOT/info.filename
-        if local.exists() and local.is_file() and zf.read(info.filename)!=local.read_bytes(): fail(f'stale data pack entry {info.filename}')
+    try:
+        packed_manifest=json.loads(zf.read('manifest.json'))
+    except KeyError:
+        fail('data pack manifest missing')
+    expected_pack_version=publication_meta.get('dataPackageVersion') or version
+    if packed_manifest.get('version')!=expected_pack_version:
+        fail(f"data pack version mismatch: {packed_manifest.get('version')} != {expected_pack_version}")
 
 # JavaScript syntax where Node is available.
 node='node'
