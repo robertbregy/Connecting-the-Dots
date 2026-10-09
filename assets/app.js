@@ -12,7 +12,7 @@ function setQuery(mode='replace'){if(restoringState)return;try{const p=new URLSe
 function hashSection(hash=location.hash){const id=decodeURIComponentSafe(hash.replace(/^#/,''));const target=document.getElementById(id);return target?.closest('.section')?.id||[...document.querySelectorAll('.section')].find(s=>id===s.id||id.startsWith(s.id+'-part-'))?.id||''}
 function decodeURIComponentSafe(v){try{return decodeURIComponent(v)}catch(e){return v}}
 function compatibleHash(section){return hashSection()&&hashSection()!==section?'':location.hash}
-function syncSectionLinks(){document.querySelectorAll('.tab[data-target]').forEach(a=>{const p=new URLSearchParams(location.search);p.set('tab',a.dataset.target);if(a.dataset.target!=='explore')p.delete('tld');a.href='?'+p.toString()+'#'+a.dataset.target})}
+function syncSectionLinks(){document.querySelectorAll('.tab[data-target]').forEach(a=>{const p=new URLSearchParams(location.search);p.set('tab',a.dataset.target);if(a.dataset.target!=='explore')p.delete('tld');a.href='?'+p.toString()+'#'+(a.dataset.anchor||a.dataset.target)})}
 function restoreUrlState(){
  const wasRestoring=restoringState;restoringState=true;const p=new URLSearchParams(location.search);
  explorerPreset=['all','root','outsideRoot','curated','2026','strange','cities','contention','refusals','disputes','economics','social','trust'].includes(p.get('preset'))?p.get('preset'):'all';
@@ -522,16 +522,7 @@ function setJourneyStep(step,userAction=false){
  }
 }
 const SECTION_TOC_KEYS={strange:['tocStrangeFossils','tocStrangeDrift','tocStrangeOddities']};
-const SECTION_TOC_GROUPS={
- how:[
-  {target:'how-part-1',key:'tocHowDimensions',members:['how-part-1','how-part-2']},
-  {target:'how-part-3',key:'tocHowRoles',members:['how-part-3','how-part-4']},
-  {target:'how-part-5',key:'tocHowEconomics',members:['how-part-5','how-part-6','how-part-7']},
-  {target:'how-part-8',key:'tocHowTerms',members:['how-part-8','how-glossary','how-part-9']},
-  {target:'how-part-10',key:'tocHowLuganoCase',members:['how-part-10','how-part-11','how-part-12']}
- ]
-};
-function renderSectionTocs(){for(const id of ['how','beyond','geography','social','economics','contention','disputes','strange','sources']){const sec=document.getElementById(id);if(!sec)continue;sec.querySelector(':scope > .sectionToc')?.remove();const headings=[...sec.querySelectorAll('h2')].filter(h=>h.textContent.trim());if(headings.length<2)continue;const nav=document.createElement('nav');nav.className='sectionToc';nav.setAttribute('aria-label',t('tocLabel'));const groups=SECTION_TOC_GROUPS[id];const items=groups?groups.map(g=>({h:document.getElementById(g.target),key:g.key,members:g.members})).filter(x=>x.h):headings.map((h,i)=>({h,key:h.dataset.tocKey||SECTION_TOC_KEYS[id]?.[i],members:[h.id]}));items.forEach(({h,key,members},i)=>{h.id=h.id||`${id}-part-${i+1}`;h.classList.add('sectionTocTarget');const b=document.createElement('a');b.href='?tab='+id+'#'+h.id;b.className='tocLink';const headingLabel=(node)=>String(node?.dataset?.i18n?t(node.dataset.i18n):(node?.textContent||'')).trim().slice(0,120);b.textContent=(key?t(key):headingLabel(h)).slice(0,120);const memberTitles=(members||[]).map(mid=>headingLabel(document.getElementById(mid))).filter(Boolean);b.title=(memberTitles.join(' · ')||headingLabel(h)).slice(0,180);b.addEventListener('click',e=>{if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||(typeof e.button==='number'&&e.button!==0))return;e.preventDefault();const url=new URL(location.href);url.searchParams.set('tab',id);url.hash=h.id;history.pushState({tab:id},'',url);syncLanguageLinks();syncFeedbackLinks();focusNavigationTarget(h);scrollToNavigationTarget(h,true)});nav.appendChild(b)});sec.prepend(nav)}}
+function renderSectionTocs(){for(const id of ['beyond','geography','social','economics','contention','disputes','strange','sources']){const sec=document.getElementById(id);if(!sec)continue;sec.querySelector(':scope > .sectionToc')?.remove();const headings=[...sec.querySelectorAll('h2')].filter(h=>h.textContent.trim());if(headings.length<2)continue;const nav=document.createElement('nav');nav.className='sectionToc';nav.setAttribute('aria-label',t('tocLabel'));const items=headings.map((h,i)=>({h,key:h.dataset.tocKey||SECTION_TOC_KEYS[id]?.[i],members:[h.id]}));items.forEach(({h,key,members},i)=>{h.id=h.id||`${id}-part-${i+1}`;h.classList.add('sectionTocTarget');const b=document.createElement('a');b.href='?tab='+id+'#'+h.id;b.className='tocLink';const headingLabel=(node)=>String(node?.dataset?.i18n?t(node.dataset.i18n):(node?.textContent||'')).trim().slice(0,120);b.textContent=(key?t(key):headingLabel(h)).slice(0,120);const memberTitles=(members||[]).map(mid=>headingLabel(document.getElementById(mid))).filter(Boolean);b.title=(memberTitles.join(' · ')||headingLabel(h)).slice(0,180);b.addEventListener('click',e=>{if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||(typeof e.button==='number'&&e.button!==0))return;e.preventDefault();const url=new URL(location.href);url.searchParams.set('tab',id);url.hash=h.id;history.pushState({tab:id},'',url);syncLanguageLinks();syncFeedbackLinks();focusNavigationTarget(h);scrollToNavigationTarget(h,true)});nav.appendChild(b)});sec.prepend(nav)}}
 function applicationRoundComplete(round){return !!D.explorerMeta?.['application'+round+'CoverageComplete']}
 function applicationCorpusStats(){const rounds=D.applicationArchaeology?.rounds||{},completed=[];let count=0;for(const [round,meta] of Object.entries(rounds)){if(applicationRoundComplete(round)){completed.push(round);count+=Number(meta.applications||0)}}return {count,completed}}
 function syncApplicationCorpusComplete(){const rounds=D.applicationArchaeology?.rounds||{},required=['2000','2004','2012','2026'];D.explorerMeta.applicationCorpusComplete=required.every(round=>!!rounds[round]&&applicationRoundComplete(round));return D.explorerMeta.applicationCorpusComplete}
@@ -589,8 +580,27 @@ function renderPublicationUpdates(){
 function renderAll(){renderInternetJourney();renderPublicationUpdates();renderCards();renderTypeStats();renderTimeline();render2000();renderProcess();renderNamespaceDimensions();renderDomainLifecycle();renderControlLevers();renderDnsCapabilities();renderTldModels();renderSuccessFramework();renderGlossary();renderExplorerOptions();renderExplorer();renderStrange();renderSemanticDrift();renderDnsOddities();renderPress();renderLists();renderBeyond();renderGeoMap();renderGeoBars();renderLugano();renderRound2026();renderRoundBars();renderContentionBars();renderThemeRoundLenses();renderRefusals();renderDisputes();renderEconomics();renderSocial();populateMobileNav();renderSectionTocs();syncFeedbackLinks();hardenExternalLinks()}
 function closeNavMenus(except=null){document.querySelectorAll('.navMenu.open').forEach(m=>{if(m===except)return;m.classList.remove('open');const tr=m.querySelector('.navMenuTrigger');if(tr)tr.setAttribute('aria-expanded','false')})}
 function toggleNavMenu(menu){const willOpen=!menu.classList.contains('open');closeNavMenus(menu);menu.classList.toggle('open',willOpen);const tr=menu.querySelector('.navMenuTrigger');if(tr)tr.setAttribute('aria-expanded',willOpen?'true':'false')}
-function activateTab(id,userInitiated=false,historyMode='replace',scrollSection=true){if(!document.getElementById(id))id='overview';const previousTab=activeTab;if(previousTab!==id&&(previousTab==='overview'||id==='overview'))setJourneyStep(0,false);if(id!=='explore')closeExplorerDrawer({historyMode:'none',restoreFocus:false});activeTab=id;document.body.dataset.activeTab=id;document.querySelectorAll('.tab').forEach(x=>{x.classList.toggle('active',x.dataset.target===id);if(x.dataset.target===id)x.setAttribute('aria-current','location');else x.removeAttribute('aria-current')});document.querySelectorAll('.navMenu').forEach(g=>g.classList.toggle('active',!!g.querySelector('.tab.active')));document.querySelectorAll('.section').forEach(x=>x.classList.toggle('active',x.id===id));closeNavMenus();const mn=document.getElementById('mobileNav');if(mn)mn.value=id;if(historyMode!=='none')setQuery(userInitiated?'push':historyMode);if(userInitiated){const heading=document.querySelector('#'+id+' h1, #'+id+' h2');focusNavigationTarget(heading);if(scrollSection)scrollToNavigationTarget(document.getElementById(id),true)}}
-function populateMobileNav(){const mn=document.getElementById('mobileNav');if(!mn)return;let html='';document.querySelectorAll('.nav > .tab').forEach(b=>html+=`<option value="${b.dataset.target}">${b.textContent.trim()}</option>`);document.querySelectorAll('.navMenu').forEach(g=>{html+=`<optgroup label="${esc(t(g.dataset.labelKey))}">`;g.querySelectorAll('.tab').forEach(b=>html+=`<option value="${b.dataset.target}">${b.textContent.trim()}</option>`);html+='</optgroup>'});mn.innerHTML=html;mn.value=activeTab}
+function activateTab(id,userInitiated=false,historyMode='replace',scrollSection=true){if(!document.getElementById(id))id='overview';const previousTab=activeTab;if(previousTab!==id&&(previousTab==='overview'||id==='overview'))setJourneyStep(0,false);if(id!=='explore')closeExplorerDrawer({historyMode:'none',restoreFocus:false});activeTab=id;document.body.dataset.activeTab=id;document.querySelectorAll('.tab').forEach(x=>{x.classList.toggle('active',x.dataset.target===id);if(x.dataset.target===id)x.setAttribute('aria-current','location');else x.removeAttribute('aria-current')});document.querySelectorAll('.navMenu').forEach(g=>g.classList.toggle('active',!!g.querySelector('.tab.active')));document.querySelectorAll('.section').forEach(x=>x.classList.toggle('active',x.id===id));closeNavMenus();const mn=document.getElementById('mobileNav');if(mn)mn.value=id;if(historyMode!=='none')setQuery(userInitiated?'push':historyMode);if(userInitiated&&scrollSection){const heading=document.querySelector('#'+id+' h1, #'+id+' h2');focusNavigationTarget(heading);scrollToNavigationTarget(document.getElementById(id),true)}syncHowNavSelection()}
+function syncHowNavSelection(){
+ const menu=document.querySelector('.navMenu[data-label-key="tabHow"]');if(!menu)return;
+ const links=[...menu.querySelectorAll('.navDropdown .tab')];
+ const hash=decodeURIComponentSafe(location.hash.replace(/^#/,''));
+ const selected=links.find(link=>link.dataset.anchor===hash)||links[0];
+ for(const link of links){const current=activeTab==='how'&&link===selected;link.classList.toggle('active',current);if(current)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current')}
+ menu.classList.toggle('active',activeTab==='how');
+ const mobile=document.getElementById('mobileNav');
+ if(mobile&&activeTab==='how')mobile.value='how#'+(selected?.dataset.anchor||'how');
+}
+function navigateToTabAnchor(id,anchor){
+ const target=document.getElementById(anchor);
+ if(!target||target.closest('.section')?.id!==id){activateTab(id,true);return}
+ activateTab(id,true,'push',false);
+ const url=new URL(location.href);url.searchParams.set('tab',id);url.hash=anchor;
+ history.replaceState({tab:id},'',url);
+ syncLanguageLinks();syncSectionLinks();syncFeedbackLinks();syncHowNavSelection();
+ focusNavigationTarget(target);scrollToNavigationTarget(target,true);
+}
+function populateMobileNav(){const mn=document.getElementById('mobileNav');if(!mn)return;let html='';document.querySelectorAll('.nav > .tab').forEach(b=>html+=`<option value="${b.dataset.target}">${b.textContent.trim()}</option>`);document.querySelectorAll('.navMenu').forEach(g=>{html+=`<optgroup label="${esc(t(g.dataset.labelKey))}">`;g.querySelectorAll('.tab').forEach(b=>html+=`<option value="${b.dataset.target+(b.dataset.anchor?'#'+b.dataset.anchor:'')}">${b.textContent.trim()}</option>`);html+='</optgroup>'});mn.innerHTML=html;mn.value=activeTab;syncHowNavSelection()}
 document.addEventListener('click',e=>{
  const a=e.target.closest?.('[data-open-section]');if(!a)return;
  if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||(typeof e.button==='number'&&e.button!==0))return;e.preventDefault();
@@ -601,13 +611,13 @@ document.addEventListener('click',e=>{
  document.getElementById('journeyNext')?.addEventListener('click',()=>setJourneyStep(journeyStep+1,true));
  document.getElementById('journeyBack')?.addEventListener('click',()=>setJourneyStep(journeyStep-1,true));
  document.getElementById('journeyRestart')?.addEventListener('click',()=>{document.querySelectorAll('#journeySteps details').forEach(d=>d.open=false);setJourneyStep(0,true)});
-document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',e=>{if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0)return;e.preventDefault();activateTab(b.dataset.target,true)}));
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',e=>{if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0)return;e.preventDefault();if(b.dataset.anchor)navigateToTabAnchor(b.dataset.target,b.dataset.anchor);else activateTab(b.dataset.target,true)}));
 document.querySelectorAll('.navMenuTrigger').forEach(btn=>btn.addEventListener('click',e=>{e.stopPropagation();toggleNavMenu(btn.closest('.navMenu'))}));
 document.querySelectorAll('.navMenu').forEach(menu=>menu.addEventListener('keydown',e=>{if(e.key!=='Escape'||!menu.classList.contains('open'))return;e.preventDefault();e.stopPropagation();const trigger=menu.querySelector('.navMenuTrigger');closeNavMenus();trigger?.focus()}));
 document.querySelectorAll('.navDropdown').forEach(d=>d.addEventListener('click',e=>e.stopPropagation()));
 document.addEventListener('click',()=>closeNavMenus());
 document.querySelectorAll('.mapToggle').forEach(b=>b.addEventListener('click',()=>{geoMode=b.dataset.mapmode;renderGeoMap()}));
-document.getElementById('mobileNav')?.addEventListener('change',e=>activateTab(e.target.value,true));
+document.getElementById('mobileNav')?.addEventListener('change',e=>{const [id,anchor]=e.target.value.split('#');if(anchor)navigateToTabAnchor(id,anchor);else activateTab(id,true)});
 document.getElementById('langSelect')?.addEventListener('change',e=>{const next=e.target.value;if(validLang.includes(next)&&next!==lang){setQuery();storageSet('dotLangChoice',next);location.assign(languageUrl(next))}});
 document.addEventListener('click',e=>{const link=e.target.closest?.('[data-language]');const next=link?.dataset?.language;if(validLang.includes(next))storageSet('dotLangChoice',next)});
 document.getElementById('themeBtn')?.addEventListener('click',()=>{theme=theme==='dark'?'light':'dark';applyTheme()});
