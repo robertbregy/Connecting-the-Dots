@@ -28,6 +28,8 @@ for(const language of ['en','it','de','fr']){
   console.log('Script payloads',JSON.stringify([...document.querySelectorAll('script')].map(x=>({id:x.id||'',src:x.getAttribute('src')||'',bytes:x.textContent.length})).sort((a,b)=>b.bytes-a.bytes).slice(0,12)));
   console.log('Largest nodes',JSON.stringify([...document.querySelectorAll('main > *,#explorerTableBody,#explorerDrawer,#journeyStepper')].map(x=>({name:x.id||x.tagName,bytes:x.outerHTML.length})).sort((a,b)=>b.bytes-a.bytes).slice(0,12)));
   console.log('Heavy content containers',JSON.stringify(['economicGrid','economicModels','sourceList','contentionBars2026','contentionBars2012','themeRoundLens','geoMap','demand2012Bars','rsp2026Bars','demand2026Bars','disputeGrid','socialGrid','strangeGridAll','beyondCases','dnsCapabilities'].map(id=>{const el=document.getElementById(id);return {id,bytes:el?.outerHTML?.length||0,children:el?.children?.length||0,first:el?.innerHTML?.slice(0,150)||''}}).sort((a,b)=>b.bytes-a.bytes)));
+
+  console.log('Section direct children',JSON.stringify(['economics','sources','contention','geography','disputes','social','strange','beyond'].map(id=>{let el=document.getElementById(id);return {id,children:[...el.children].map(x=>({tag:x.tagName,id:x.id,cls:(x.className||'').slice(0,85),bytes:x.outerHTML.length,first:x.innerHTML.slice(0,90)})).sort((a,b)=>b.bytes-a.bytes).slice(0,8)}})));
  }
  assert.ok(Buffer.byteLength(text)<1200000,language+' initial HTML budget');
  assert.ok(!text.includes('window.DOT_DATA='),language+' data must be shared');
