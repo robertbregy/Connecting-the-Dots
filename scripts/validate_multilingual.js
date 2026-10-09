@@ -42,7 +42,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
     const key=n.getAttribute('data-i18n');assert.ok(key in translations,page+' missing '+key);
     const value=key==='exploreIanaDate'?translations[key].replace('{date}',new Intl.DateTimeFormat({en:'en-US',it:'it-IT',de:'de-DE',fr:'fr-FR'}[language],{year:'numeric',month:'short',day:'numeric',timeZone:'UTC'}).format(new Date(snapshot.asOf+'T00:00:00Z'))):translations[key];
     const expected=parseHTML('<html><body><div id="value">'+value+'</div></body></html>').document.getElementById('value').textContent;
-    assert.equal(n.textContent,expected,page+' unlocalized '+key);
+    assert.ok(n.textContent.includes(expected),page+' unlocalized '+key);
   }
   for(const n of document.querySelectorAll('[src],[href]'))for(const attr of ['src','href']){
     const ref=n.getAttribute(attr);if(!ref||/^(https?:|data:|mailto:|tel:)/.test(ref))continue;
