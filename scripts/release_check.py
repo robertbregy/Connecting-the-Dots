@@ -673,4 +673,16 @@ for fragment in ['Working Paper v1.1-draft', 'Editorial revision note (10 Octobe
 if 'date-released: "2026-10-09"' not in citation or publication_meta.get('releasedOn')!='2026-10-10':
     fail('Research publication date conflated with current technical release date')
 
+# Search metadata should remain concise without compromising decorative-image accessibility.
+for lang in LANGS:
+    title=translations[lang].get('metaTitle','')
+    if not (28 <= len(title) <= 60):
+        fail('Home-page SEO title out of range: '+lang)
+explorer_html=(ROOT/'explorer'/'index.html').read_text(encoding='utf-8')
+explorer_meta=re.search(r'<meta name="description" content="([^"]+)"', explorer_html)
+if not explorer_meta or not (90 <= len(explorer_meta.group(1)) <= 160):
+    fail('Explorer SEO description length out of range')
+if source_html.count('<img alt="" src="assets/logo-mark.png"/>') != 2:
+    fail('Decorative logo images must keep empty alt text and adjacent readable site name')
+
 print(f'RELEASE CHECK PASS · v{version} · 1,849 Explorer records · 7,679 life-history events · 4 languages')
