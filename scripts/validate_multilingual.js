@@ -5,6 +5,7 @@ const assert=require('assert/strict');
 const {parseHTML}=require('linkedom');
 const root=path.resolve(__dirname,'..');
 const base='https://robertbregy.github.io/Connecting-the-Dots/';
+assert.ok(fs.existsSync(path.join(root,'assets/og-preview.png')),'Article preview image file missing');
 const languages=['en','it','de','fr'];
 const rootHtml=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const snapshot=JSON.parse(fs.readFileSync(path.join(root,'data/iana_snapshot.json'),'utf8'));
