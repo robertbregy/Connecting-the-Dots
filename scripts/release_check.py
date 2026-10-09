@@ -758,4 +758,26 @@ for lang in LANGS:
     if 'class="sectionToc"' in page.split('id="how"')[1].split('id="beyond"')[0]:
         fail('Redundant How in-section navigation restored: '+lang)
 
+# Public names are not the same as immutable route identifiers.
+public_names={'en':('Timeline','Field Notes'),'it':('Cronologia','Note dal campo'),'de':('Chronologie','Beobachtungen'),'fr':('Chronologie','Carnet de terrain')}
+from html import escape as escape_public_name
+for locale,(timeline_label,notes_label) in public_names.items():
+    dic=translations[locale]
+    if (dic.get('insideNav'),dic.get('insideTitle'),dic.get('behindNav'),dic.get('behindTitle'))!=(timeline_label,timeline_label,notes_label,notes_label):
+        fail('2026 Timeline/Field Notes naming differs across layers: '+locale)
+    homepage=(ROOT/locale/'index.html').read_text(encoding='utf-8')
+    timeline=(ROOT/'inside-the-round'/locale/'index.html').read_text(encoding='utf-8')
+    notes=(ROOT/'behind-the-round'/locale/'index.html').read_text(encoding='utf-8')
+    if f'data-i18n="insideNav">{escape_public_name(timeline_label)}<' not in homepage or f'data-i18n="behindNav">{escape_public_name(notes_label)}<' not in homepage:
+        fail('2026 navigation contains obsolete public labels: '+locale)
+    if f'<h1>{escape_public_name(timeline_label)}</h1>' not in timeline or f'<h1>{escape_public_name(notes_label)}</h1>' not in notes:
+        fail('Standalone page title mismatches navigation: '+locale)
+    if f'<title>{escape_public_name(dic["insideMetaTitle"])}</title>' not in timeline or f'<title>{escape_public_name(dic["behindMetaTitle"])}</title>' not in notes:
+        fail('SEO title differs from four-language naming: '+locale)
+    for old_slug in ['inside-the-round','behind-the-round']:
+        if site_base+old_slug+'/'+locale+'/' not in sitemap_locs:
+            fail('Canonical URL removed after label-only rename: '+locale+'/'+old_slug)
+if 'Field Notes' not in working_md or 'Timeline' not in working_md or 'Field Notes' not in working_html or 'Timeline' not in working_html:
+    fail('Working paper was not aligned with current section names')
+
 print(f'RELEASE CHECK PASS · v{version} · 1,849 Explorer records · 7,679 life-history events · 4 languages')
