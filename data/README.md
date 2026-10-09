@@ -156,3 +156,9 @@ The data pack is the frozen release corpus. The complete 2012 string/applicant g
 - `sector_strategy_mix_2012_2026.csv`: naming-strategy mix by sector and round. For contested 2026 strings, application-level strategy remains unresolved rather than inheriting a string-level flag.
 
 These are **editorial research classifications, not ICANN industry categories**. They distinguish the sector represented by a string/application from the applicant's legal-entity name and from the string strategy (brand, generic, geographic, community, etc.).
+
+## v0.7.65 · Behind the Round field notes
+
+`behind_round_stories.json` is a **living editorial evidence register**, separate from the immutable RR1 data pack. Its first case follows two distinct discrepancies around the 2026 Reveal Day. ICANN's 22 September count is 1,616 paid applications, the 7 October official aggregate is 1,615, and the frozen secondary index reports 1,614 applications / 480 applicants (observed 8 October). ICANN's APS explicitly excludes application WDO2627T-T45217 (.wdo) from its public list while an administrative check continues, but the available official sources do **not** establish the specific cause of the earlier 1,616 → 1,615 change. Dates, epistemic status, review conditions and primary/secondary sources are preserved in the field-note record.
+
+The case is published independently at `behind-the-round/{en,it,de,fr}/` and embedded in the matching in-site section, rendered from the same source and translation dictionary. Each substantive update must be evidence-backed, reviewed and committed; monitoring alerts do not automatically rewrite research claims.
