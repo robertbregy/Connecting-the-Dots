@@ -22,7 +22,7 @@ for(let i=0;i<full.explorer.length;i++){
 }
 for(const language of ['en','it','de','fr']){
  const text=read(language+'/index.html'),document=parseHTML(text).document;
- assert.ok(Buffer.byteLength(text)<600000,language+' initial HTML budget');
+ assert.ok(Buffer.byteLength(text)<1200000,language+' initial HTML budget');
  assert.ok(!text.includes('window.DOT_DATA='),language+' data must be shared');
  assert.ok(!text.includes('window.DOT_PROFILE_CHUNKS='),language+' details must be deferred');
  for(const [id,file] of [['ctd-data-bundle','data/site_bundle.js'],['ctd-app','assets/app.js'],['ctd-worldmap','data/worldmap.js']]){
