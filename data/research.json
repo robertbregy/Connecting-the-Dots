@@ -2090,5 +2090,211 @@
     "projectedRevenueEC": 253557731,
     "projectedRevenueECM": 253.6,
     "source": "https://gov.ai/document/2026-03-18-011937_1898942126.pdf"
+  },
+  "refusalCases": {
+    "schemaVersion": 1,
+    "snapshot": {
+      "date": "2013-08-30",
+      "passedInitialEvaluation": 1745,
+      "eligibleExtendedEvaluation": 32,
+      "notApproved": 3,
+      "withdrawn": 121,
+      "onHold": 29,
+      "source": "https://newgtlds.icann.org/en/announcements-and-media/announcement-30aug13-en"
+    },
+    "taxonomy": [
+      {
+        "id": "administrative",
+        "labelKey": "refusalTaxAdmin",
+        "bodyKey": "refusalTaxAdminBody"
+      },
+      {
+        "id": "support",
+        "labelKey": "refusalTaxSupport",
+        "bodyKey": "refusalTaxSupportBody"
+      },
+      {
+        "id": "evaluation",
+        "labelKey": "refusalTaxEvaluation",
+        "bodyKey": "refusalTaxEvaluationBody"
+      },
+      {
+        "id": "public-policy",
+        "labelKey": "refusalTaxPolicy",
+        "bodyKey": "refusalTaxPolicyBody"
+      },
+      {
+        "id": "technical-safety",
+        "labelKey": "refusalTaxTechnical",
+        "bodyKey": "refusalTaxTechnicalBody"
+      },
+      {
+        "id": "withdrawal",
+        "labelKey": "refusalTaxWithdrawal",
+        "bodyKey": "refusalTaxWithdrawalBody"
+      }
+    ],
+    "cases": [
+      {
+        "id": "fees-2000",
+        "strings": [
+          ".number",
+          ".tel",
+          ".phone",
+          ".wap"
+        ],
+        "period": "2000",
+        "typeKey": "refusalTypeAdministrative",
+        "questionKey": "refusalFeesQuestion",
+        "factKey": "refusalFeesFact",
+        "readingKey": "refusalFeesReading",
+        "outcomeKey": "refusalFeesOutcome",
+        "sources": [
+          {
+            "label": "ICANN · TLD Application Review Update · 13 Oct 2000",
+            "url": "https://www.icann.org/en/announcements/details/tld-application-review-update-13-10-2000-en",
+            "role": "primary"
+          },
+          {
+            "label": "ICANN archive · 2000 application process background",
+            "url": "https://archive.icann.org/en/tlds/report/report-i-09nov00.htm",
+            "role": "primary"
+          },
+          {
+            "label": "IANA · .TEL",
+            "url": "https://www.iana.org/domains/root/db/tel.html",
+            "role": "primary"
+          },
+          {
+            "label": "IANA · .PHONE",
+            "url": "https://www.iana.org/domains/root/db/phone.html",
+            "role": "primary"
+          }
+        ]
+      },
+      {
+        "id": "nyc-2000",
+        "strings": [
+          ".nyc"
+        ],
+        "period": "2000 → 2014",
+        "typeKey": "refusalTypeWithdrawal",
+        "questionKey": "refusalNycQuestion",
+        "factKey": "refusalNycFact",
+        "readingKey": "refusalNycReading",
+        "outcomeKey": "refusalNycOutcome",
+        "sources": [
+          {
+            "label": "ICANN · TLD Application Review Update · 13 Oct 2000",
+            "url": "https://www.icann.org/en/announcements/details/tld-application-review-update-13-10-2000-en",
+            "role": "primary"
+          },
+          {
+            "label": "IANA · .NYC",
+            "url": "https://www.iana.org/domains/root/db/nyc.html",
+            "role": "primary"
+          }
+        ]
+      },
+      {
+        "id": "geo-2000",
+        "strings": [
+          ".geo"
+        ],
+        "period": "2000",
+        "typeKey": "refusalTypeSelection",
+        "questionKey": "refusalGeoQuestion",
+        "factKey": "refusalGeoFact",
+        "readingKey": "refusalGeoReading",
+        "outcomeKey": "refusalGeoOutcome",
+        "sources": [
+          {
+            "label": "ICANN · Roberts testimony · 14 Feb 2001",
+            "url": "https://www.icann.org/en/correspondence/documents/testimony-of-michael-m-roberts-before-u-s-senate-committee-on-commerce-science-and-transportation-14-02-2001-en",
+            "role": "primary"
+          },
+          {
+            "label": "ICANN archive · 2000 evaluation report",
+            "url": "https://archive.icann.org/en/tlds/report/report-iiib1a-09nov00.htm",
+            "role": "primary"
+          }
+        ]
+      },
+      {
+        "id": "support-2012",
+        "strings": [
+          ".idn",
+          ".ummah"
+        ],
+        "period": "2013",
+        "typeKey": "refusalTypeSupport",
+        "questionKey": "refusalSupportQuestion",
+        "factKey": "refusalSupportFact",
+        "readingKey": "refusalSupportReading",
+        "outcomeKey": "refusalSupportOutcome",
+        "sources": [
+          {
+            "label": "ICANN · Applicant Support Program update · 12 Mar 2013",
+            "url": "https://newgtlds.icann.org/sites/default/files/sarp-results-12mar13-en.pdf",
+            "role": "primary"
+          },
+          {
+            "label": "ICANN Board · Ummah reconsideration · 18 May 2013",
+            "url": "https://www.icann.org/en/board-activities-and-meetings/materials/approved-resolution-meeting-of-the-new-gtld-program-committee-18-05-2013-en",
+            "role": "primary"
+          }
+        ]
+      },
+      {
+        "id": "gcc-2012",
+        "strings": [
+          ".gcc"
+        ],
+        "period": "2013–2014",
+        "typeKey": "refusalTypePolicy",
+        "questionKey": "refusalGccQuestion",
+        "factKey": "refusalGccFact",
+        "readingKey": "refusalGccReading",
+        "outcomeKey": "refusalGccOutcome",
+        "sources": [
+          {
+            "label": "ICANN · GAC Beijing advice and responses",
+            "url": "https://newgtlds.icann.org/en/applicants/gac-advice/beijing46",
+            "role": "primary"
+          },
+          {
+            "label": "ICANN NGPC · GCC reconsideration · 30 Jan 2014",
+            "url": "https://www.icann.org/en/board-activities-and-meetings/materials/minutes-meeting-of-the-new-gtld-program-committee-30-01-2014-en",
+            "role": "primary"
+          }
+        ]
+      },
+      {
+        "id": "collision-2012",
+        "strings": [
+          ".corp",
+          ".home",
+          ".mail"
+        ],
+        "period": "2012–2024",
+        "typeKey": "refusalTypeTechnical",
+        "questionKey": "refusalCollisionQuestion",
+        "factKey": "refusalCollisionFact",
+        "readingKey": "refusalCollisionReading",
+        "outcomeKey": "refusalCollisionOutcome",
+        "sources": [
+          {
+            "label": "ICANN Board · .CORP / .HOME / .MAIL · 4 Feb 2018",
+            "url": "https://www.icann.org/en/board-activities-and-meetings/materials/approved-board-resolutions-regular-meeting-of-the-icann-board-04-02-2018-en",
+            "role": "primary"
+          },
+          {
+            "label": "ICANN Board · NCAP decision · 7 Sep 2024",
+            "url": "https://www.icann.org/en/board-activities-and-meetings/materials/preliminary-report-regular-meeting-of-the-icann-board-07-09-2024-en",
+            "role": "primary"
+          }
+        ]
+      }
+    ]
   }
 }
