@@ -1,0 +1,981 @@
+﻿string,unicode_string,applications,applicant,category,contention_set,is_brand,is_community,is_geo,is_idn
+agent,,13,,Community,3,false,true,false,false
+bit,,11,,,26,false,false,false,false
+api,,10,,,13,false,false,false,false
+brand,,10,,,31,false,false,false,false
+hub,,10,,,110,false,false,false,false
+pop,,9,,,186,false,false,false,false
+robot,,9,,,203,false,false,false,false
+max,,8,,,150,false,false,false,false
+official,,8,,,168,false,false,false,false
+pod,,8,,,183,false,false,false,false
+zen,,8,,,262,false,false,false,false
+agi,,7,,,5,false,false,false,false
+ask,,7,,,17,false,false,false,false
+connect,,7,,,48,false,false,false,false
+firm,,7,,,84,false,false,false,false
+key,,7,,,127,false,false,false,false
+lab,,7,,,130,false,false,false,false
+mind,,7,,,154,false,false,false,false
+therapy,,7,,,231,false,false,false,false
+vibe,,7,,,242,false,false,false,false
+fix,,6,,,85,false,false,false,false
+gaming,,6,,,90,false,false,false,false
+gen,,6,,Brand,95,true,false,false,false
+good,,6,,,99,false,false,false,false
+human,,6,,,111,false,false,false,false
+labs,,6,,,131,false,false,false,false
+mart,,6,,,149,false,false,false,false
+omg,,6,,,170,false,false,false,false
+portal,,6,,,188,false,false,false,false
+share,,6,,,210,false,false,false,false
+wealth,,6,,,250,false,false,false,false
+aid,,5,,,8,false,false,false,false
+air,,5,,,10,false,false,false,false
+asi,,5,,,16,false,false,false,false
+craft,,5,,,53,false,false,false,false
+crypto,,5,,,60,false,false,false,false
+etc,,5,,,75,false,false,false,false
+fab,,5,,,78,false,false,false,false
+get,,5,,,96,false,false,false,false
+gym,,5,,,104,false,false,false,false
+hello,,5,,,107,false,false,false,false
+list,,5,,,137,false,false,false,false
+mcp,,5,,Community,151,false,true,false,false
+merch,,5,,,152,false,false,false,false
+ops,,5,,,172,false,false,false,false
+project,,5,,,196,false,false,false,false
+robotics,,5,,,204,false,false,false,false
+sign,,5,,,212,false,false,false,false
+sys,,5,,,227,false,false,false,false
+tap,,5,,Brand,229,true,false,false,false
+tea,,5,,,230,false,false,false,false
+way,,5,,,249,false,false,false,false
+yes,,5,,,261,false,false,false,false
+ace,,4,,,1,false,false,false,false
+all,,4,,,11,false,false,false,false
+big,,4,,,24,false,false,false,false
+brain,,4,,,30,false,false,false,false
+cart,,4,,,35,false,false,false,false
+cast,,4,,,36,false,false,false,false
+con,,4,,,46,false,false,false,false
+dao,,4,,,61,false,false,false,false
+donate,,4,,,69,false,false,false,false
+factory,,4,,,79,false,false,false,false
+flow,,4,,,86,false,false,false,false
+gear,,4,,,92,false,false,false,false
+iam,,4,,,113,false,false,false,false
+invest,,4,,,122,false,false,false,false
+ion,,4,,,123,false,false,false,false
+learn,,4,,,132,false,false,false,false
+maker,,4,,,144,false,false,false,false
+mvp,,4,,,161,false,false,false,false
+node,,4,,,166,false,false,false,false
+pal,,4,,,177,false,false,false,false
+park,,4,,,178,false,false,false,false
+power,,4,,,191,false,false,false,false
+quantum,,4,,,197,false,false,false,false
+real,,4,,,198,false,false,false,false
+research,,4,,,200,false,false,false,false
+stack,,4,,,221,false,false,false,false
+super,,4,,,226,false,false,false,false
+tag,,4,,,228,false,false,false,false
+view,,4,,,243,false,false,false,false
+wallet,,4,,,248,false,false,false,false
+well,,4,,,252,false,false,false,false
+wellness,,4,,,253,false,false,false,false
+auth,,3,,,18,false,false,false,false
+base,,3,,,20,false,false,false,false
+bro,,3,,,32,false,false,false,false
+chain,,3,,,38,false,false,false,false
+chef,,3,,,39,false,false,false,false
+coin,,3,,,42,false,false,false,false
+collective,,3,,,44,false,false,false,false
+core,,3,,,51,false,false,false,false
+corporation,,3,,,52,false,false,false,false
+creator,,3,,,57,false,false,false,false
+ddd,,3,,,62,false,false,false,false
+demo,,3,,,63,false,false,false,false
+drone,,3,,,71,false,false,false,false
+easy,,3,,Brand,72,true,false,false,false
+epic,,3,,Brand,74,true,false,false,false
+expo,,3,,,77,false,false,false,false
+fest,,3,,,82,false,false,false,false
+find,,3,,,83,false,false,false,false
+follow,,3,,,87,false,false,false,false
+form,,3,,,89,false,false,false,false
+gig,,3,,,97,false,false,false,false
+goods,,3,,,100,false,false,false,false
+gpt,,3,,Brand,101,true,false,false,false
+hack,,3,,,105,false,false,false,false
+hire,,3,,,108,false,false,false,false
+inn,,3,,,120,false,false,false,false
+intelligence,,3,,,121,false,false,false,false
+king,,3,,,128,false,false,false,false
+kit,,3,,,129,false,false,false,false
+machine,,3,,,142,false,false,false,false
+make,,3,,,143,false,false,false,false
+mall,,3,,,145,false,false,false,false
+mark,,3,,,147,false,false,false,false
+mix,,3,,,155,false,false,false,false
+model,,3,,,157,false,false,false,false
+moon,,3,,,158,false,false,false,false
+motors,,3,,,160,false,false,false,false
+neo,,3,,,162,false,false,false,false
+outlet,,3,,,175,false,false,false,false
+path,,3,,,180,false,false,false,false
+platform,,3,,,182,false,false,false,false
+podcast,,3,,,184,false,false,false,false
+print,,3,,,192,false,false,false,false
+profile,,3,,,195,false,false,false,false
+sell,,3,,,207,false,false,false,false
+send,,3,,,208,false,false,false,false
+ship,,3,,,211,false,false,false,false
+skill,,3,,,214,false,false,false,false
+slot,,3,,,216,false,false,false,false
+stay,,3,,,223,false,false,false,false
+story,,3,,,225,false,false,false,false
+time,,3,,,232,false,false,false,false
+token,,3,,,233,false,false,false,false
+trip,,3,,,235,false,false,false,false
+ultra,,3,,,237,false,false,false,false
+uni,,3,,,238,false,false,false,false
+url,,3,,,240,false,false,false,false
+verified,,3,,,241,false,false,false,false
+visit,,3,,,245,false,false,false,false
+voice,,3,,,246,false,false,false,false
+wear,,3,,,251,false,false,false,false
+wiz,,3,,Brand,256,true,false,false,false
+xn--kbt444f,官网,3,,IDN,258,false,false,false,true
+zzz,,3,,,263,false,false,false,false
+advisors,,2,,,2,false,false,false,false
+agentic,,2,,,4,false,false,false,false
+agnt,,2,,,6,false,false,false,false
+agt,,2,,,7,false,false,false,false
+aio,,2,,Community,9,false,true,false,false
+anime,,2,,Community,12,false,true,false,false
+apparel,,2,,,14,false,false,false,false
+asap,,2,,,15,false,false,false,false
+bakery,,2,,,19,false,false,false,false
+bbq,,2,,,21,false,false,false,false
+beach,,2,,,22,false,false,false,false
+beta,,2,,,23,false,false,false,false
+biotech,,2,,,25,false,false,false,false
+bitcoin,,2,,Community,27,false,true,false,false
+bnb,,2,,,28,false,false,false,false
+boost,,2,,Brand,29,true,false,false,false
+btc,,2,,,33,false,false,false,false
+cap,,2,,,34,false,false,false,false
+central,,2,,,37,false,false,false,false
+class,,2,,,40,false,false,false,false
+coaching,,2,,,41,false,false,false,false
+collection,,2,,,43,false,false,false,false
+commerce,,2,,,45,false,false,false,false
+config,,2,,,47,false,false,false,false
+consult,,2,,,49,false,false,false,false
+consultants,,2,,,50,false,false,false,false
+create,,2,,,54,false,false,false,false
+creations,,2,,,55,false,false,false,false
+creative,,2,,,56,false,false,false,false
+crew,,2,,,58,false,false,false,false
+crm,,2,,,59,false,false,false,false
+den,,2,,,64,false,false,false,false
+deploy,,2,,,65,false,false,false,false
+did,,2,,,66,false,false,false,false
+dna,,2,,,67,false,false,false,false
+dns,,2,,,68,false,false,false,false
+dream,,2,,,70,false,false,false,false
+echo,,2,,Brand,73,true,false,false,false
+ether,,2,,,76,false,false,false,false
+fam,,2,,,80,false,false,false,false
+feed,,2,,,81,false,false,false,false
+force,,2,,Brand,88,true,false,false,false
+gate,,2,,,91,false,false,false,false
+geek,,2,,,93,false,false,false,false
+gem,,2,,,94,false,false,false,false
+goat,,2,,,98,false,false,false,false
+gram,,2,,,102,false,false,false,false
+grow,,2,,,103,false,false,false,false
+happy,,2,,,106,false,false,false,false
+hola,,2,,,109,false,false,false,false
+hype,,2,,Brand,112,true,false,false,false
+idea,,2,,,114,false,false,false,false
+identity,,2,,,115,false,false,false,false
+ify,,2,,,116,false,false,false,false
+iii,,2,,,117,false,false,false,false
+impact,,2,,,118,false,false,false,false
+index,,2,,,119,false,false,false,false
+island,,2,,,124,false,false,false,false
+jet,,2,,,125,false,false,false,false
+journey,,2,,,126,false,false,false,false
+lens,,2,,Brand,133,true,false,false,false
+leo,,2,,Brand,134,true,false,false,false
+lfg,,2,,,135,false,false,false,false
+line,,2,,,136,false,false,false,false
+llm,,2,,,138,false,false,false,false
+log,,2,,,139,false,false,false,false
+logistics,,2,,,140,false,false,false,false
+loop,,2,,,141,false,false,false,false
+manga,,2,,Community,146,false,true,false,false
+mars,,2,,,148,false,false,false,false
+mesh,,2,,Brand,153,true,false,false,false
+mod,,2,,,156,false,false,false,false
+more,,2,,,159,false,false,false,false
+nerd,,2,,,163,false,false,false,false
+nft,,2,,,164,false,false,false,false
+nice,,2,,,165,false,false,false,false
+note,,2,,,167,false,false,false,false
+oil,,2,,,169,false,false,false,false
+opc,,2,,,171,false,false,false,false
+order,,2,,,173,false,false,false,false
+organization,,2,,,174,false,false,false,false
+owl,,2,,Brand,176,true,false,false,false
+pass,,2,,,179,false,false,false,false
+plan,,2,,,181,false,false,false,false
+point,,2,,,185,false,false,false,false
+port,,2,,,187,false,false,false,false
+portfolio,,2,,,189,false,false,false,false
+pot,,2,,,190,false,false,false,false
+private,,2,,,193,false,false,false,false
+products,,2,,,194,false,false,false,false
+rem,,2,,,199,false,false,false,false
+resort,,2,,,201,false,false,false,false
+road,,2,,,202,false,false,false,false
+roofing,,2,,,205,false,false,false,false
+self,,2,,,206,false,false,false,false
+server,,2,,,209,false,false,false,false
+sim,,2,,,213,false,false,false,false
+slides,,2,,Brand,215,true,false,false,false
+society,,2,,,217,false,false,false,false
+soft,,2,,,218,false,false,false,false
+soul,,2,,,219,false,false,false,false
+src,,2,,Community,220,false,true,false,false
+start,,2,,,222,false,false,false,false
+stock,,2,,,224,false,false,false,false
+transport,,2,,,234,false,false,false,false
+true,,2,,,236,false,false,false,false
+universe,,2,,,239,false,false,false,false
+virtual,,2,,,244,false,false,false,false
+vpn,,2,,,247,false,false,false,false
+wifi,,2,,,254,false,false,false,false
+wise,,2,,Brand,255,true,false,false,false
+xn--jvr800e,品牌,2,,IDN,257,false,false,false,true
+xxl,,2,,,259,false,false,false,false
+yeah,,2,,Brand,260,true,false,false,false
+abion,,1,Abion AB,Brand,,true,false,false,false
+acc,,1,Link Freedom Group Ltd,,,false,false,false,false
+account,,1,Intercap Registry Inc.,,,false,false,false,false
+accounting,,1,"Glass Emotion, LLC",,,false,false,false,false
+act,,1,"Registry Services, LLC",,,false,false,false,false
+action,,1,"Hair Apparent, LLC",,,false,false,false,false
+active,,1,NextGEN TLDs GmbH,,,false,false,false,false
+ada,,1,Cardano Stiftung,Community,,false,true,false,false
+add,,1,Link Freedom Group Ltd,,,false,false,false,false
+adeka,,1,ADEKA Corporation,Brand,,true,false,false,false
+adidas,,1,adidas AG,Brand,,true,false,false,false
+adk,,1,dotADK Inc.,,,false,false,false,false
+admin,,1,"Tidal Case, LLC",,,false,false,false,false
+admiral,,1,NOVOMATIC AG,Brand,,true,false,false,false
+adobe,,1,Adobe Systems Software Ireland Limited,Brand,,true,false,false,false
+adventhealth,,1,Adventist Health System Sunbelt Healthcare Corporation,Brand,,true,false,false,false
+advice,,1,"Aabaco Small Business, LLC",,,false,false,false,false
+advisor,,1,"Aabaco Small Business, LLC",,,false,false,false,false
+advisory,,1,Radix Technologies Inc SEZC,,,false,false,false,false
+aeon,,1,"House of Aeons, LLC",,,false,false,false,false
+agc,,1,AGC Inc.,Brand,,true,false,false,false
+age,,1,ShortDot (Ireland) Limited,,,false,false,false,false
+agentid,,1,"Registry Services, LLC",,,false,false,false,false
+aiglasses,,1,Meta Registry Holdings LLC,,,false,false,false,false
+airbnb,,1,"Airbnb, Inc.",Brand,,true,false,false,false
+airliquide,,1,"L'Air Liquide, société anonyme pour l'Étude et l'Exploitation des procédés Georges Claude",Brand,,true,false,false,false
+airo,,1,"Registry Services, LLC",Brand,,true,false,false,false
+akamai,,1,"Akamai Technologies, Inc.",Brand,,true,false,false,false
+alexa,,1,"Amazon Registry Services, Inc.",Brand,,true,false,false,false
+alicloud,,1,CLOUD INTELLIGENCE ASSETS HOLDING (SINGAPORE) PRIVATE LIMITED,Brand,,true,false,false,false
+alliance,,1,"Rein Check, LLC",,,false,false,false,false
+allianz,,1,Allianz SE,Brand,,true,false,false,false
+aloha,,1,Internet Society Hawaii Chapter,,,false,false,false,false
+alpha,,1,TechEdge Limited,,,false,false,false,false
+alphabet,,1,Charleston Road Registry Inc.,Brand,,true,false,false,false
+alsac,,1,"American Lebanese Syrian Associated Charities, Inc.",Brand,,true,false,false,false
+alsok,,1,"ALSOK CO., LTD.",Brand,,true,false,false,false
+alum,,1,Sockeye LLC,,,false,false,false,false
+alumni,,1,Kingfish LLC,,,false,false,false,false
+amor,,1,101130013 Saskatchewan Ltd.,,,false,false,false,false
+anon,,1,Link Freedom Group Ltd,,,false,false,false,false
+ans,,1,"Registry Services, LLC",,,false,false,false,false
+antel,,1,Administración Nacional de Telecomunicaciones,Brand,,true,false,false,false
+anthropic,,1,"Anthropic, PBC",Brand,,true,false,false,false
+any,,1,Link Freedom Group Ltd,,,false,false,false,false
+ape,,1,Ape Naming Limited,Community,,false,true,false,false
+applebees,,1,"Dine Brands Global, Inc.",Brand,,true,false,false,false
+arabbank,,1,Arab Bank plc,Brand,,true,false,false,false
+arc,,1,"Aldebaran Exploration, Inc.",,,false,false,false,false
+archive,,1,"Agador Slip, LLC",,,false,false,false,false
+argenx,,1,argenx BV,Brand,,true,false,false,false
+artist,,1,"Mystic Hammer, LLC",,,false,false,false,false
+ass,,1,XYZ.COM LLC,,,false,false,false,false
+asset,,1,"Rein Check, LLC",,,false,false,false,false
+astro,,1,La maison Digitale Ltd,,,false,false,false,false
+asus,,1,ASUSTeK COMPUTER INCORPORATION,Brand,,true,false,false,false
+atelier,,1,Radix Technologies Inc SEZC,,,false,false,false,false
+atkinsrealis,,1,AtkinsRéalis UK Limited,Brand,,true,false,false,false
+atos,,1,ATOS GROUP SE,Brand,,true,false,false,false
+att,,1,"AT&T Services, Inc.",Brand,,true,false,false,false
+attbusiness,,1,"AT&T Services, Inc.",Brand,,true,false,false,false
+atto,,1,"AttoGrid Registry, Inc.",,,false,false,false,false
+audit,,1,Hyperion Ltd,,,false,false,false,false
+aura,,1,NAME SPACE LLC,,,false,false,false,false
+automation,,1,XYZ.COM LLC,,,false,false,false,false
+avax,,1,Avax Naming Limited,Community,,false,true,false,false
+avocat,,1,ORDRE DES AVOCATS COUR APPEL,Community,,false,true,false,false
+axis,,1,AXIS COMMUNICATIONS AKTIEBOLAG,Brand,,true,false,false,false
+axon,,1,"Axon Enterprise, Inc.",Brand,,true,false,false,false
+backup,,1,Intercap Registry Inc.,,,false,false,false,false
+bad,,1,Link Freedom Group Ltd,,,false,false,false,false
+bag,,1,Link Freedom Group Ltd,,,false,false,false,false
+bali,,1,PT Konek Bali Semesta,Geo,,false,false,true,false
+ball,,1,"Velvet Taupe, LLC",,,false,false,false,false
+bankofamerica,,1,ML 35 LLC,Brand,,true,false,false,false
+bao,,1,XYZ.COM LLC,,,false,false,false,false
+bay,,1,XYZ.COM LLC,,,false,false,false,false
+bca,,1,PT Bank Central Asia Tbk,Brand,,true,false,false,false
+bdo,,1,Stichting BDO,Brand,,true,false,false,false
+beam,,1,Charleston Road Registry Inc.,Brand,,true,false,false,false
+beijing,,1,"Beijing Data Group Co., Ltd.",Geo,,false,false,true,false
+ber,,1,dotBerlin GmbH & Co. KG,,,false,false,false,false
+bershka,,1,Industria de Diseño Textil S.A.,Brand,,true,false,false,false
+betr,,1,BETR LLC,Brand,,true,false,false,false
+bewell,,1,TLD1 LLC,,,false,false,false,false
+bilibili,,1,"Shanghai Hode Information Technology Co., Ltd.",Brand,,true,false,false,false
+biontech,,1,BioNTech SE,Brand,,true,false,false,false
+bland,,1,Intelliga Corporation,,,false,false,false,false
+bldg,,1,XServer Cloud Incorporated,,,false,false,false,false
+block,,1,"Oyster Dream, LLC",,,false,false,false,false
+blvd,,1,"BOULEVARD LABS, INC.",,,false,false,false,false
+bmo,,1,Bank of Montreal Holding Inc.,Brand,,true,false,false,false
+board,,1,"Pirin Tablet, LLC",,,false,false,false,false
+body,,1,XYZ.COM LLC,,,false,false,false,false
+bolt,,1,Bolt Technology OÜ,Brand,,true,false,false,false
+boom,,1,Link Freedom Group Ltd,,,false,false,false,false
+bpce,,1,BPCE,Brand,,true,false,false,false
+bremen,,1,LABonline UG (haftungsbeschränkt),Geo,,false,false,true,false
+brew,,1,"Registry Services, LLC",,,false,false,false,false
+browser,,1,Charleston Road Registry Inc.,,,false,false,false,false
+bsky,,1,"Bluesky Social, PBC",Brand,,true,false,false,false
+btgpactual,,1,"BTG Pactual Asset Management US, LLC",Brand,,true,false,false,false
+btw,,1,Suffix Inc.,,,false,false,false,false
+budapest,,1,Magyarországi Internet Szolgáltatók Tanácsa Tudományos Egyesület,Geo,,false,false,true,false
+bug,,1,Oinkadot Inc,,,false,false,false,false
+butterfly,,1,"Tamasu Co., Ltd.",Brand,,true,false,false,false
+campania,,1,Regione Campania,Geo,,false,false,true,false
+cams,,1,Cam Connecting SARL,,,false,false,false,false
+cancel,,1,Oinkadot Inc,,,false,false,false,false
+canva,,1,Canva Pty Ltd,Brand,,true,false,false,false
+capcut,,1,Bytedance Pte. Ltd.,Brand,,true,false,false,false
+capitalgroup,,1,Capital Research Company,Brand,,true,false,false,false
+carecredit,,1,CareCredit LLC,Brand,,true,false,false,false
+cas,,1,SUVAN NET LLC,,,false,false,false,false
+cashpro,,1,ML 35 LLC,Brand,,true,false,false,false
+cause,,1,Public Interest Registry,,,false,false,false,false
+ccc,,1,Link Freedom Group Ltd,,,false,false,false,false
+cdn,,1,ETHOS DIGITAL PUBLIC BENEFIT CORPORATION,,,false,false,false,false
+cencora,,1,"Cencora, Inc.",Brand,,true,false,false,false
+century,,1,Toyota Motor Corporation,Brand,,true,false,false,false
+cert,,1,NextGEN TLDs GmbH,,,false,false,false,false
+change,,1,"Tidal Case, LLC",,,false,false,false,false
+charge,,1,NextGEN TLDs GmbH,,,false,false,false,false
+chatgpt,,1,"OPENAI OPCO, LLC",Brand,,true,false,false,false
+check,,1,"Tidal Case, LLC",,,false,false,false,false
+chess,,1,Chess Domains Limited,Community,,false,true,false,false
+chevron,,1,Chevron Domain Name LLC,Brand,,true,false,false,false
+chi,,1,XYZ.COM LLC,,,false,false,false,false
+chic,,1,101130013 Saskatchewan Ltd.,,,false,false,false,false
+chromebook,,1,Charleston Road Registry Inc.,Brand,,true,false,false,false
+chromium,,1,Charleston Road Registry Inc.,Brand,,true,false,false,false
+ciao,,1,Aruba PEC S.P.A.,,,false,false,false,false
+cibc,,1,Canadian Imperial Bank of Commerce,Brand,,true,false,false,false
+classroom,,1,Charleston Road Registry Inc.,,,false,false,false,false
+claude,,1,"Anthropic, PBC",Brand,,true,false,false,false
+claw,,1,OpenClaw Foundation,,,false,false,false,false
+clean,,1,"Mystic Hammer, LLC",,,false,false,false,false
+clear,,1,"Velvet Taupe, LLC",,,false,false,false,false
+cli,,1,Mux Registry L.L.C-FZ,,,false,false,false,false
+clone,,1,"Aldebaran Exploration, Inc.",,,false,false,false,false
+cloudflare,,1,"Cloudflare, Inc.",Brand,,true,false,false,false
+cmo,,1,XYZ.COM LLC,,,false,false,false,false
+cna,,1,MEDIACORP PTE. LTD.,Brand,,true,false,false,false
+cnp,,1,CNP ASSURANCES,Brand,,true,false,false,false
+codex,,1,"OPENAI OPCO, LLC",Brand,,true,false,false,false
+come,,1,Hong Kong Zhongze International Limited,,,false,false,false,false
+comedy,,1,Intercap Registry Inc.,,,false,false,false,false
+comics,,1,101130013 Saskatchewan Ltd.,,,false,false,false,false
+commercial,,1,Link Freedom Group Ltd,,,false,false,false,false
+compute,,1,"Vanity Check, LLC",,,false,false,false,false
+conex,,1,CONEX SAS,Brand,,true,false,false,false
+control,,1,"Hair Apparent, LLC",,,false,false,false,false
+converse,,1,Converse Inc.,Brand,,true,false,false,false
+copilot,,1,Microsoft Corporation,Brand,,true,false,false,false
+corp,,1,"Toddler Logic, LLC",,,false,false,false,false
+cosmetics,,1,XYZ.COM LLC,,,false,false,false,false
+counseling,,1,"Vinyl Strings, LLC",,,false,false,false,false
+csc,,1,Corporation Service Company,Brand,,true,false,false,false
+cscglobal,,1,Corporation Service Company,Brand,,true,false,false,false
+culture,,1,"Hair Apparent, LLC",,,false,false,false,false
+cupshe,,1,WING HANG FASHION INTERNATIONAL LIMITED,Brand,,true,false,false,false
+cyber,,1,NextGEN TLDs GmbH,,,false,false,false,false
+cygames,,1,"Cygames, Inc.",Brand,,true,false,false,false
+daihatsu,,1,"Daihatsu Motor Co., Ltd.",Brand,,true,false,false,false
+daily,,1,"Arctic Tan, LLC",,,false,false,false,false
+daiwa,,1,Daiwa Securities Group Inc.,Brand,,true,false,false,false
+datadog,,1,"Datadog, Inc.",Brand,,true,false,false,false
+daybreak,,1,"OPENAI OPCO, LLC",,,false,false,false,false
+decor,,1,"Registry Services, LLC",,,false,false,false,false
+deep,,1,Ipollo Tech Ltd,,,false,false,false,false
+deepmind,,1,Charleston Road Registry Inc.,Brand,,true,false,false,false
+defense,,1,XYZ.COM LLC,,,false,false,false,false
+depot,,1,CORE Association,,,false,false,false,false
+development,,1,"Vinyl Strings, LLC",,,false,false,false,false
+device,,1,Suffix Inc.,,,false,false,false,false
+dine,,1,Oinkadot Inc,,,false,false,false,false
+dinebrands,,1,"Dine Brands Global, Inc.",Brand,,true,false,false,false
+dmgmori,,1,"DMG MORI CO., LTD.",Brand,,true,false,false,false
+docomo,,1,"NTT DOCOMO, INC.",Brand,,true,false,false,false
+dola,,1,SPRING (SG) PTE. LTD.,Brand,,true,false,false,false
+doubao,,1,"Beijing Zitiao Network Technology Co., Ltd.",Brand,,true,false,false,false
+douyin,,1,"Beijing Zitiao Network Technology Co., Ltd.",Brand,,true,false,false,false
+dpp,,1,CORE Association,,,false,false,false,false
+dragon,,1,Oinkadot Inc,,,false,false,false,false
+droid,,1,"Castor Exploration, Inc.",,,false,false,false,false
+drop,,1,"Bird Pepper, LLC",,,false,false,false,false
+dunlop,,1,"Sumitomo Rubber Industries, Ltd.",Brand,,true,false,false,false
+dyna,,1,DynaReg LLC,,,false,false,false,false
+earn,,1,Link Freedom Group Ltd,,,false,false,false,false
+ebay,,1,eBay Inc.,Brand,,true,false,false,false
+edge,,1,"Neigh Sayer, LLC",,,false,false,false,false
+edible,,1,Edible Brands LLC,Brand,,true,false,false,false
+eero,,1,"Amazon Registry Services, Inc.",Brand,,true,false,false,false
+electric,,1,XYZ.COM LLC,,,false,false,false,false
+elite,,1,"Vinyl Strings, LLC",,,false,false,false,false
+engine,,1,"Agador Slip, LLC",,,false,false,false,false
+ens,,1,ENS REGISTRY LLC,Brand,,true,false,false,false
+ent,,1,XYZ.COM LLC,,,false,false,false,false
+eqt,,1,EQT AB,Brand,,true,false,false,false
+equs,,1,"Equs, Inc.",,,false,false,false,false
+era,,1,"Berth Order, LLC",,,false,false,false,false
+erica,,1,ML 35 LLC,Brand,,true,false,false,false
+ethereum,,1,Stiftung Ethereum,Brand,,true,false,false,false
+etsy,,1,"Etsy, Inc.",Brand,,true,false,false,false
+euro,,1,European Central Bank,,,false,false,false,false
+evals,,1,"OPENAI OPCO, LLC",,,false,false,false,false
+exfy,,1,"Expensify, Inc.",Brand,,true,false,false,false
+exness,,1,Exness Global Limited,Brand,,true,false,false,false
+expedia,,1,"Expedia, Inc.",Brand,,true,false,false,false
+explore,,1,LiveOn Co.,,,false,false,false,false
+ext,,1,"Toddler Logic, LLC",,,false,false,false,false
+eye,,1,ShortDot (Ireland) Limited,,,false,false,false,false
+facebook,,1,Meta Registry Holdings LLC,Brand,,true,false,false,false
+fafo,,1,NextGEN TLDs GmbH,,,false,false,false,false
+fanatics,,1,"Fanatics Holdings, Inc.",Brand,,true,false,false,false
+fantasy,,1,"Toddler Logic, LLC",,,false,false,false,false
+fanuc,,1,FANUC CORPORATION,Brand,,true,false,false,false
+faq,,1,Innovation Service Limited,,,false,false,false,false
+fart,,1,"Endpoint Domains, Inc.",,,false,false,false,false
+fastly,,1,"Fastly, Inc.",Brand,,true,false,false,false
+festival,,1,"Pirin Tablet, LLC",,,false,false,false,false
+file,,1,"Paws Button, LLC",,,false,false,false,false
+files,,1,Intercap Registry Inc.,,,false,false,false,false
+fintech,,1,Radix Technologies Inc SEZC,,,false,false,false,false
+fitbit,,1,Charleston Road Registry Inc.,Brand,,true,false,false,false
+flagscape,,1,ML 35 LLC,Brand,,true,false,false,false
+flipkart,,1,Flipkart Internet Private Limited,Brand,,true,false,false,false
+flux,,1,"Capella Exploration, Inc.",,,false,false,false,false
+folio,,1,"Capella Exploration, Inc.",,,false,false,false,false
+forge,,1,"Deneb Exploration, Inc.",,,false,false,false,false
+forms,,1,Intercap Registry Inc.,,,false,false,false,false
+founder,,1,Radix Technologies Inc SEZC,,,false,false,false,false
+foundry,,1,"Deneb Exploration, Inc.",,,false,false,false,false
+frankfurt,,1,Krischenowski GmbH,,,false,false,false,false
+frax,,1,"Financial Reserves and Asset Exploration, Inc.",Brand,,true,false,false,false
+freedom,,1,Freedom Holding Corp.,Brand,,true,false,false,false
+fresh,,1,"Registry Services, LLC",,,false,false,false,false
+frhc,,1,Freedom Holding Corp.,Brand,,true,false,false,false
+frommeta,,1,Meta Registry Holdings LLC,,,false,false,false,false
+ftw,,1,"Endpoint Domains, Inc.",,,false,false,false,false
+fujitv,,1,"Fuji Television Network, Inc.",Brand,,true,false,false,false
+furry,,1,Totally Legit Agency,,,false,false,false,false
+future,,1,Suffix Inc.,,,false,false,false,false
+gamer,,1,NextGEN TLDs GmbH,,,false,false,false,false
+gas,,1,XYZ.COM LLC,,,false,false,false,false
+gehealthcare,,1,HGS 124 LLC,Brand,,true,false,false,false
+gemini,,1,Charleston Road Registry Inc.,Brand,,true,false,false,false
+gemma,,1,Charleston Road Registry Inc.,Brand,,true,false,false,false
+general,,1,GENERAL Inc.,Brand,,true,false,false,false
+genesys,,1,"Genesys Cloud Services, Inc.",Brand,,true,false,false,false
+genie,,1,Charleston Road Registry Inc.,,,false,false,false,false
+ghost,,1,Oinkadot Inc,,,false,false,false,false
+gilead,,1,"Gilead Sciences Holding, LLC",Brand,,true,false,false,false
+gke,,1,Charleston Road Registry Inc.,Brand,,true,false,false,false
+glasses,,1,"Vocal Strange, LLC",,,false,false,false,false
+glitch,,1,Oinkadot Inc,,,false,false,false,false
+globe,,1,Intercap Registry Inc.,,,false,false,false,false
+glow,,1,ShortDot (Ireland) Limited,,,false,false,false,false
+god,,1,Link Freedom Group Ltd,,,false,false,false,false
+goldmansachs,,1,Goldman Sachs & Co. LLC,Brand,,true,false,false,false
+great,,1,Intercap Registry Inc.,,,false,false,false,false
+grid,,1,"Elnath Exploration, Inc.",,,false,false,false,false
+grit,,1,"Strategizes.com, Inc.",,,false,false,false,false
+growth,,1,"Arctic Tan, LLC",,,false,false,false,false
+haier,,1,"Qingdao Haishang Zhicai Management Consulting Co., Ltd.",Brand,,true,false,false,false
+hakuhodo,,1,Hakuhodo Incorporated,Brand,,true,false,false,false
+halara,,1,FULL SCALE FULL SPEED PTE. LTD.,Brand,,true,false,false,false
+hall,,1,Momentous Corporation,,,false,false,false,false
+han,,1,"Gabia, Inc.",,,false,false,false,false
+hao,,1,"Jiangsu Bangning Technology Co., Ltd.",,,false,false,false,false
+heart,,1,Oinkadot Inc,,,false,false,false,false
+her,,1,CREATEHER FEST,,,false,false,false,false
+hero,,1,"Endpoint Domains, Inc.",,,false,false,false,false
+hers,,1,"Hims, Inc.",Brand,,true,false,false,false
+hey,,1,Link Freedom Group Ltd,,,false,false,false,false
+hid,,1,ASSA ABLOY AB,Brand,,true,false,false,false
+hilton,,1,Hilton International Holding LLC,Brand,,true,false,false,false
+hims,,1,"Hims, Inc.",Brand,,true,false,false,false
+hisense,,1,"Qingdao Hisense Technology Service Co., Ltd.",Brand,,true,false,false,false
+hit,,1,Link Freedom Group Ltd,,,false,false,false,false
+hive,,1,"Registry Services, LLC",,,false,false,false,false
+honey,,1,DynaReg LLC,,,false,false,false,false
+hongguo,,1,"Douyin Vision Co., Ltd.",Brand,,true,false,false,false
+hop,,1,Link Freedom Group Ltd,,,false,false,false,false
+hope,,1,Public Interest Registry,,,false,false,false,false
+huawei,,1,"Huawei Technologies Co., Ltd.",Brand,,true,false,false,false
+hvac,,1,XYZ.COM LLC,,,false,false,false,false
+icon,,1,ShortDot (Ireland) Limited,,,false,false,false,false
+icp,,1,DFINITY Stiftung,,,false,false,false,false
+ihop,,1,"Dine Brands Global, Inc.",Brand,,true,false,false,false
+indeed,,1,"Indeed, Inc.",Brand,,true,false,false,false
+indie,,1,Suffix Inc.,,,false,false,false,false
+indigenous,,1,17161573 Canada Inc.,Community,,false,true,false,false
+inditex,,1,Industria de Diseño Textil S.A.,Brand,,true,false,false,false
+industrial,,1,XYZ.COM LLC,,,false,false,false,false
+infinite,,1,"INFINITE COMPUTER SOLUTIONS, INC",,,false,false,false,false
+insta,,1,Meta Registry Holdings LLC,Brand,,true,false,false,false
+instagram,,1,Meta Registry Holdings LLC,Brand,,true,false,false,false
+intel,,1,"Fomalhaut Exploration, Inc.",,,false,false,false,false
+interiors,,1,XYZ.COM LLC,,,false,false,false,false
+internet,,1,Link Freedom Group Ltd,,,false,false,false,false
+invite,,1,Intercap Registry Inc.,,,false,false,false,false
+jackpot,,1,101130013 Saskatchewan Ltd.,,,false,false,false,false
+jackson,,1,Jackson Finance LLC,Brand,,true,false,false,false
+jazz,,1,"Knock Knock WHOIS There, LLC",,,false,false,false,false
+jbs,,1,"Japan Business Systems, Inc.",Brand,,true,false,false,false
+jera,,1,"JERA Co., Inc.",Brand,,true,false,false,false
+jia,,1,XYZ.COM LLC,,,false,false,false,false
+join,,1,Link Freedom Group Ltd,,,false,false,false,false
+journal,,1,"Fore Course, LLC",,,false,false,false,false
+jtg,,1,Japan Tobacco Inc.,Brand,,true,false,false,false
+jti,,1,JT International SA,Brand,,true,false,false,false
+juliusmeinl,,1,JULIUS MEINL AG,Brand,,true,false,false,false
+kai,,1,XYZ.COM LLC,,,false,false,false,false
+kaneka,,1,Kaneka Corporation,Brand,,true,false,false,false
+kao,,1,Kao Corporation,Brand,,true,false,false,false
+kawasaki,,1,"Kawasaki Heavy Industries, Ltd.",Brand,,true,false,false,false
+keep,,1,Charleston Road Registry Inc.,Brand,,true,false,false,false
+kek,,1,Link Freedom Group Ltd,,,false,false,false,false
+kgs,,1,"Amazon Registry Services, Inc.",Brand,,true,false,false,false
+kick,,1,Kick Streaming Pty Ltd,Brand,,true,false,false,false
+koala,,1,Koala AU Operations Pty Ltd,Brand,,true,false,false,false
+konicaminolta,,1,"KONICA MINOLTA, INC.",Brand,,true,false,false,false
+kord,,1,Checkboard Limited,Brand,,true,false,false,false
+krafton,,1,"KRAFTON, Inc.",Brand,,true,false,false,false
+kuiper,,1,"Amazon Registry Services, Inc.",Brand,,true,false,false,false
+lake,,1,XYZ.COM LLC,,,false,false,false,false
+lan,,1,"Coffee Danger, LLC",,,false,false,false,false
+landcros,,1,"Hitachi Construction Machinery Co., Ltd.",Brand,,true,false,false,false
+larus,,1,Innovation Service Limited,,,false,false,false,false
+league,,1,"Pirin Tablet, LLC",,,false,false,false,false
+learning,,1,XYZ.COM LLC,,,false,false,false,false
+ledger,,1,LEDGER,Brand,,true,false,false,false
+lefties,,1,Industria de Diseño Textil S.A.,Brand,,true,false,false,false
+legacy,,1,Intercap Registry Inc.,,,false,false,false,false
+legami,,1,Legami S.p.A. Società Benefit,Brand,,true,false,false,false
+lei,,1,Global Legal Entity Identifier Foundation,,,false,false,false,false
+lend,,1,Intercap Registry Inc.,,,false,false,false,false
+lesson,,1,Charleston Road Registry Inc.,,,false,false,false,false
+liebherr,,1,Liebherr-International Deutschland GmbH,Brand,,true,false,false,false
+lift,,1,"Hadar Exploration, Inc",,,false,false,false,false
+light,,1,"Duel Meaning, LLC",,,false,false,false,false
+links,,1,Link Freedom Group Ltd,,,false,false,false,false
+linz,,1,domainworx Service & Management GmbH,Geo,,false,false,true,false
+lipovitan,,1,"Taisho Pharmaceutical Co., Ltd.",Brand,,true,false,false,false
+lit,,1,ShortDot (Ireland) Limited,,,false,false,false,false
+livescore,,1,Livescore Limited,Brand,,true,false,false,false
+lkab,,1,Luossavaara-Kiirunavaara Aktiebolag,Brand,,true,false,false,false
+llama,,1,Meta Registry Holdings LLC,Brand,,true,false,false,false
+lmax,,1,LMAX Limited,Brand,,true,false,false,false
+lock,,1,"Acid Medal, LLC",,,false,false,false,false
+lodge,,1,HOST AFRICA (PTY) LTD,,,false,false,false,false
+logic,,1,"Hadar Exploration, Inc",,,false,false,false,false
+login,,1,ECHO Domain Co L.L.C.,,,false,false,false,false
+look,,1,Intercap Registry Inc.,,,false,false,false,false
+lot,,1,LeapSense Limited,,,false,false,false,false
+lounge,,1,"Velvet Taupe, LLC",,,false,false,false,false
+lovable,,1,Lovable Labs Incorporated,Brand,,true,false,false,false
+lowes,,1,"LF, LLC",Brand,,true,false,false,false
+luck,,1,Link Freedom Group Ltd,,,false,false,false,false
+luckin,,1,"Luckin Coffee Group Co., Ltd.",Brand,,true,false,false,false
+lugano,,1,Città di Lugano,Geo,,false,false,true,false
+lyria,,1,Charleston Road Registry Inc.,Brand,,true,false,false,false
+mad,,1,XYZ.COM LLC,,,false,false,false,false
+mag,,1,XYZ.COM LLC,,,false,false,false,false
+maga,,1,Fish Creek Ventures L.L.C.,,,false,false,false,false
+mai,,1,Deqing County Jinghong Entrepreneur Service Center,,,false,false,false,false
+mail,,1,"Mystic Hammer, LLC",,,false,false,false,false
+maps,,1,Charleston Road Registry Inc.,,,false,false,false,false
+mask,,1,Mask Naming Limited,Community,,false,true,false,false
+massimodutti,,1,"Grupo Massimo Dutti, S.A.",Brand,,true,false,false,false
+matrix,,1,"Miaplacidus Exploration, Inc.",,,false,false,false,false
+matt,,1,"Knock Knock WHOIS There, LLC",,,false,false,false,false
+mazda,,1,Mazda Motor Corporation,Brand,,true,false,false,false
+mbda,,1,MBDA,Brand,,true,false,false,false
+meditative,,1,Meditative Mind Pty Ltd,,,false,false,false,false
+meditativemind,,1,Meditative Mind Pty Ltd,Brand,,true,false,false,false
+medley,,1,"MEDLEY, INC.",Brand,,true,false,false,false
+meinl,,1,JULIUS MEINL Central GmbH,Brand,,true,false,false,false
+meli,,1,"MercadoLibre, Inc.",Brand,,true,false,false,false
+mem,,1,"LRC Digital IP, Inc.",,,false,false,false,false
+member,,1,Squarespace Registry LLC,,,false,false,false,false
+mempool,,1,"Mempool Holdings, S.A. de C.V.",Brand,,true,false,false,false
+meow,,1,DotMeow Foundation,,,false,false,false,false
+merlin,,1,Merlin Attractions Operations Limited,Brand,,true,false,false,false
+merrill,,1,ML 35 LLC,Brand,,true,false,false,false
+messenger,,1,Meta Registry Holdings LLC,Brand,,true,false,false,false
+met,,1,Link Freedom Group Ltd,,,false,false,false,false
+meta,,1,Meta Registry Holdings LLC,Brand Geo,,true,false,true,false
+metaai,,1,Meta Registry Holdings LLC,Brand,,true,false,false,false
+metaglasses,,1,Meta Registry Holdings LLC,Brand,,true,false,false,false
+metaverse,,1,Meta Registry Holdings LLC,,,false,false,false,false
+michelin,,1,Compagnie générale des Etablissements Michelin,Brand,,true,false,false,false
+mine,,1,Link Freedom Group Ltd,,,false,false,false,false
+mission,,1,Public Interest Registry,,,false,false,false,false
+mitsui,,1,"Mitsui & Co., Ltd.",Brand,,true,false,false,false
+mizuho,,1,"Mizuho Financial Group, Inc.",Brand,,true,false,false,false
+mmm,,1,Link Freedom Group Ltd,,,false,false,false,false
+mode,,1,Link Freedom Group Ltd,,,false,false,false,false
+mono,,1,LIMITED LIABILITY COMPANY «KBYTE1024»,Brand,,true,false,false,false
+montecarlo,,1,SOCIETE ANONYME DES BAINS DE MER ET DU CERCLE DES ETRANGERS A MONACO,Brand Geo,,true,false,true,false
+move,,1,Hong Kong Zhongze International Limited,,,false,false,false,false
+msft,,1,Microsoft Corporation,Brand,,true,false,false,false
+msig,,1,"MS&AD Insurance Group Holdings, Inc.",Brand,,true,false,false,false
+muenchen,,1,Krischenowski GmbH,,,false,false,false,false
+mufg,,1,"MUFG Bank, Ltd.",Brand,,true,false,false,false
+muse,,1,Meta Registry Holdings LLC,Brand,,true,false,false,false
+mychart,,1,Epic systems corporation,Brand,,true,false,false,false
+myntra,,1,Myntra Designs Private Limited,Brand,,true,false,false,false
+nation,,1,"Fore Course, LLC",,,false,false,false,false
+national,,1,"Tidal Case, LLC",,,false,false,false,false
+nav,,1,"Toddler Logic, LLC",,,false,false,false,false
+neko,,1,Interlink Systems Innovation Institute K.K.,,,false,false,false,false
+nest,,1,Charleston Road Registry Inc.,Brand,,true,false,false,false
+neumann,,1,Georg Neumann GmbH,Brand,,true,false,false,false
+newbalance,,1,"New Balance Athletics, Inc.",Brand,,true,false,false,false
+nhl,,1,"NHL TLD, LLC",Brand,,true,false,false,false
+nil,,1,Link Freedom Group Ltd,,,false,false,false,false
+nissin,,1,"NISSIN FOODS HOLDINGS CO.,LTD.",Brand,,true,false,false,false
+nomura,,1,"Nomura Holdings, Inc.",Brand,,true,false,false,false
+nonprofit,,1,Public Interest Registry,,,false,false,false,false
+not,,1,Link Freedom Group Ltd,,,false,false,false,false
+notion,,1,Notion International Inc.,Brand,,true,false,false,false
+nova,,1,XYZ.COM LLC,,,false,false,false,false
+novartis,,1,Novartis AG,Brand,,true,false,false,false
+novo,,1,Novo Nordisk A/S,Brand,,true,false,false,false
+novocare,,1,Novo Nordisk A/S,Brand,,true,false,false,false
+npc,,1,Link Freedom Group Ltd,,,false,false,false,false
+nsfw,,1,"Endpoint Domains, Inc.",,,false,false,false,false
+ntv,,1,Nippon Television Network Corporation,Brand,,true,false,false,false
+nut,,1,XYZ.COM LLC,,,false,false,false,false
+nutrition,,1,"Glass Emotion, LLC",,,false,false,false,false
+oai,,1,"OPENAI OPCO, LLC",Brand,,true,false,false,false
+okta,,1,"Okta, Inc.",Brand,,true,false,false,false
+okx,,1,OKC Holdings Corporation,Brand,,true,false,false,false
+olympic,,1,International Olympic Committee,Brand,,true,false,false,false
+only,,1,Cam Connecting SARL,,,false,false,false,false
+onn,,1,CX24 DIGITAL TECHNOLOGIES PRIVATE LIMITED,,,false,false,false,false
+openai,,1,"OPENAI OPCO, LLC",Brand,,true,false,false,false
+oppo,,1,"Guangdong OPPO Mobile Telecommunications Corp., Ltd.",Brand,,true,false,false,false
+orb,,1,Link Freedom Group Ltd,,,false,false,false,false
+oss,,1,DotMonk Pvt. Ltd.,,,false,false,false,false
+out,,1,Suffix Inc.,,,false,false,false,false
+own,,1,"Jiangsu Bangning Technology Co., Ltd.",,,false,false,false,false
+oysho,,1,Industria de Diseño Textil S.A.,Brand,,true,false,false,false
+pai,,1,Pi Community Company,,,false,false,false,false
+painting,,1,"Hair Apparent, LLC",,,false,false,false,false
+palantir,,1,Palantir Technologies Inc.,Brand,,true,false,false,false
+panda,,1,Oinkadot Inc,,,false,false,false,false
+pch,,1,"PACKET CLEARING HOUSE, INC.",,,false,false,false,false
+pec,,1,Aruba PEC S.P.A.,,,false,false,false,false
+person,,1,ULTRAVIEW AG,,,false,false,false,false
+pharma,,1,Radix Technologies Inc SEZC,,,false,false,false,false
+pia,,1,PIA CORPORATION,Brand,,true,false,false,false
+pinet,,1,Pi Community Company,,,false,false,false,false
+pixel,,1,Charleston Road Registry Inc.,Brand,,true,false,false,false
+pki,,1,VeriSign Sàrl,,,false,false,false,false
+planet,,1,Suffix Inc.,,,false,false,false,false
+planner,,1,Squarespace Registry LLC,,,false,false,false,false
+plc,,1,"Toddler Logic, LLC",,,false,false,false,false
+plex,,1,Intercap Registry Inc.,Brand,,true,false,false,false
+pltr,,1,Palantir Technologies Inc.,Brand,,true,false,false,false
+pool,,1,101130013 Saskatchewan Ltd.,,,false,false,false,false
+pos,,1,Sainz Rio Ventures.com,,,false,false,false,false
+pov,,1,"Registry Services, LLC",,,false,false,false,false
+pow,,1,Link Freedom Group Ltd,,,false,false,false,false
+ppp,,1,Link Freedom Group Ltd,,,false,false,false,false
+praxis,,1,index Internet und Mediaforschung GmbH,,,false,false,false,false
+predict,,1,Domain Expert Partners LLC,,,false,false,false,false
+presto,,1,Presto AB,Brand,,true,false,false,false
+pride,,1,"Toddler Logic, LLC",,,false,false,false,false
+product,,1,Intercap Registry Inc.,,,false,false,false,false
+program,,1,"Tidal Case, LLC",,,false,false,false,false
+prompt,,1,.Prompt Inc.,,,false,false,false,false
+protocol,,1,Link Freedom Group Ltd,,,false,false,false,false
+proton,,1,PROTON TECHNOLOGIES LTD,Brand,,true,false,false,false
+proxy,,1,"Arctic Tan, LLC",,,false,false,false,false
+pubg,,1,"KRAFTON, Inc.",Brand,,true,false,false,false
+public,,1,Sense about Science,,,false,false,false,false
+puff,,1,Oinkadot Inc,,,false,false,false,false
+pullandbear,,1,Industria de Diseño Textil S.A.,Brand,,true,false,false,false
+punk,,1,"Endpoint Domains, Inc.",,,false,false,false,false
+queen,,1,Oinkadot Inc,,,false,false,false,false
+quince,,1,101130013 Saskatchewan Ltd.,,,false,false,false,false
+quote,,1,101130013 Saskatchewan Ltd.,,,false,false,false,false
+qwe,,1,Link Freedom Group Ltd,,,false,false,false,false
+qwen,,1,ALIBABA INNOVATION PRIVATE LIMITED,Brand,,true,false,false,false
+race,,1,"Tidal Case, LLC",,,false,false,false,false
+railway,,1,Railway Corporation,Brand,,true,false,false,false
+ralphlauren,,1,"PRL USA Holdings, Inc.",Brand,,true,false,false,false
+ramp,,1,Ramp Business Corporation,Brand,,true,false,false,false
+ranch,,1,XYZ.COM LLC,,,false,false,false,false
+rating,,1,NextGEN TLDs GmbH,,,false,false,false,false
+rblx,,1,Roblox Corporation,Brand,,true,false,false,false
+realm,,1,Suffix Inc.,,,false,false,false,false
+records,,1,"Rein Check, LLC",,,false,false,false,false
+rednote,,1,"Xingyin Information Technology (Shanghai) Co., Ltd.",Brand,,true,false,false,false
+reels,,1,Meta Registry Holdings LLC,Brand,,true,false,false,false
+registeredagent,,1,Registered Agents Inc,,,false,false,false,false
+remax,,1,"RE/MAX, LLC",Brand,,true,false,false,false
+rep,,1,Suffix Inc.,,,false,false,false,false
+reply,,1,Reply S.p.A.,Brand,,true,false,false,false
+resona,,1,"Resona Holdings, Inc.",Brand,,true,false,false,false
+retail,,1,"Mystic Hammer, LLC",,,false,false,false,false
+rewards,,1,"Rein Check, LLC",,,false,false,false,false
+ring,,1,"Amazon Registry Services, Inc.",Brand,,true,false,false,false
+ripple,,1,Ripple Labs Inc.,Brand,,true,false,false,false
+ritres,,1,"RICOH LEASING COMPANY, LTD.",Brand,,true,false,false,false
+roblox,,1,Roblox Corporation,Brand,,true,false,false,false
+robotaxi,,1,"RENNPFERD, LLC",,,false,false,false,false
+roku,,1,"Purple Tag Enterprises, LLC",Brand,,true,false,false,false
+roland,,1,Roland Corporation,Brand,,true,false,false,false
+roma,,1,Aruba PEC S.P.A.,Geo,,false,false,true,false
+saas,,1,TLD King Inc.,,,false,false,false,false
+sabre,,1,Sabre GLBL Inc.,Brand,,true,false,false,false
+safari,,1,Kenya Network Information Centre,,,false,false,false,false
+saison,,1,"Credit Saison Co.,Ltd.",Brand,,true,false,false,false
+salesforce,,1,"Salesforce, Inc.",Brand,,true,false,false,false
+salzburg,,1,tldbox GmbH,Geo,,false,false,true,false
+sands,,1,Las Vegas Sands Corp.,Brand,,true,false,false,false
+sat,,1,Link Freedom Group Ltd,,,false,false,false,false
+say,,1,Intercap Registry Inc.,,,false,false,false,false
+scam,,1,XYZ.COM LLC,,,false,false,false,false
+scan,,1,"Pollux Exploration, Inc.",,,false,false,false,false
+scania,,1,Scania CV Aktiebolag,Brand,,true,false,false,false
+screen,,1,"SCREEN Holdings Co., Ltd.",Brand,,true,false,false,false
+sdk,,1,"Velvet Taupe, LLC",,,false,false,false,false
+sea,,1,XYZ.COM LLC,,,false,false,false,false
+sec,,1,SecM Tech Solutions,,,false,false,false,false
+secom,,1,"SECOM CO., LTD.",Brand,,true,false,false,false
+securitas,,1,Securitas AB,Brand,,true,false,false,false
+see,,1,Link Freedom Group Ltd,,,false,false,false,false
+seiko,,1,Seiko Group Kabushiki Kaisha,Brand,,true,false,false,false
+sennheiser,,1,Sennheiser electronic SE & Co. KG,Brand,,true,false,false,false
+sense,,1,"Polaris Exploration, Inc.",,,false,false,false,false
+set,,1,"Heir Superiority, LLC",,,false,false,false,false
+sheets,,1,Charleston Road Registry Inc.,Brand,,true,false,false,false
+shield,,1,"Mythic Link, LLC",,,false,false,false,false
+shift,,1,"Polaris Exploration, Inc.",,,false,false,false,false
+shimano,,1,SHIMANO INC.,Brand,,true,false,false,false
+shinoken,,1,"Shinoken Group Co., Ltd.",Brand,,true,false,false,false
+shionogi,,1,"Shionogi & Co., Ltd.",Brand,,true,false,false,false
+shiro,,1,"SHIRO Co., Ltd.",Brand,,true,false,false,false
+shopify,,1,Shopify Technology (USA) Inc.,Brand,,true,false,false,false
+shorts,,1,Charleston Road Registry Inc.,,,false,false,false,false
+sicredi,,1,CONFEDERACAO DAS COOPERATIVAS DO SICREDI - CONFEDERACAO SICREDI,Brand,,true,false,false,false
+simplii,,1,Canadian Imperial Bank of Commerce,Brand,,true,false,false,false
+slack,,1,"Salesforce, Inc.",Brand,,true,false,false,false
+sloan,,1,Sloan Valve Company,Brand,,true,false,false,false
+smbc,,1,Sumitomo Mitsui Banking Corporation,Brand,,true,false,false,false
+smith,,1,Dotstrategy Co.,,,false,false,false,false
+smtb,,1,"Sumitomo Mitsui Trust Bank, Limited",Brand,,true,false,false,false
+snowflake,,1,Snowflake Inc.,Brand,,true,false,false,false
+sns,,1,XRegistry Incorporated,,,false,false,false,false
+soc,,1,Internet Society Hong Kong Limited,,,false,false,false,false
+socialmedia,,1,THE BEST,,,false,false,false,false
+sodexo,,1,SODEXO,Brand,,true,false,false,false
+sokagakkai,,1,"Shinano Tatemono Sogo-Kanri Co., LTD.",Brand,,true,false,false,false
+sol,,1,Sol Naming Limited,Community,,false,true,false,false
+solana,,1,Ana Naming Limited,,,false,false,false,false
+solo,,1,Suffix Inc.,,,false,false,false,false
+sompo,,1,"Sompo Holdings, Inc.",Brand,,true,false,false,false
+sou,,1,"Jiangsu Bangning Technology Co., Ltd.",,,false,false,false,false
+sound,,1,NAME SPACE LLC,,,false,false,false,false
+source,,1,"Heir Superiority, LLC",,,false,false,false,false
+sov,,1,Namehash Public Benefit Corporation,,,false,false,false,false
+spice,,1,Oinkadot Inc,,,false,false,false,false
+spring,,1,DynaReg LLC,,,false,false,false,false
+sss,,1,Link Freedom Group Ltd,,,false,false,false,false
+stake,,1,Easygo Group Holdings Pty Ltd,Brand,,true,false,false,false
+stats,,1,Intercap Registry Inc.,,,false,false,false,false
+status,,1,Bytex Digital UG (haftungsbeschränkt),,,false,false,false,false
+stiftung,,1,index Internet und Mediaforschung GmbH,,,false,false,false,false
+stjude,,1,"American Lebanese Syrian Associated Charities, Inc.",Brand,,true,false,false,false
+stone,,1,XYZ.COM LLC,,,false,false,false,false
+stradivarius,,1,Stradivarius España,Brand,,true,false,false,false
+strategy,,1,"Rein Check, LLC",,,false,false,false,false
+street,,1,XYZ.COM LLC,,,false,false,false,false
+stripe,,1,"Stripe, LLC",Brand,,true,false,false,false
+stubhub,,1,"StubHub, Inc.",Brand,,true,false,false,false
+stupid,,1,Intercap Registry Inc.,,,false,false,false,false
+substrate,,1,Substrate Registry LLC,,,false,false,false,false
+sui,,1,Sui Naming Limited,Community,,false,true,false,false
+summit,,1,XYZ.COM LLC,,,false,false,false,false
+superintelligence,,1,Meta Registry Holdings LLC,,,false,false,false,false
+sus,,1,XYZ.COM LLC,,,false,false,false,false
+sushiro,,1,FOOD & LIFE COMPANIES LTD.,Brand,,true,false,false,false
+swap,,1,"Registry Services, LLC",,,false,false,false,false
+swedbank,,1,Swedbank AB,Brand,,true,false,false,false
+swi,,1,SWI DOMAINS INC.,,,false,false,false,false
+swift,,1,Society for Worldwide Interbank Financial Telecommunication,Brand,,true,false,false,false
+sync,,1,"Procyon Exploration, Inc.",,,false,false,false,false
+synchrony,,1,CareCredit LLC,Brand,,true,false,false,false
+synth,,1,"Rigel Exploration, Inc.",,,false,false,false,false
+tableau,,1,"Salesforce, Inc.",Brand,,true,false,false,false
+taisho,,1,"Taisho Pharmaceutical Co., Ltd.",Brand,,true,false,false,false
+takamiya,,1,"Takamiya Co., Ltd.",Brand,,true,false,false,false
+tanaka,,1,"TANAKA PRECIOUS METAL GROUP Co., Ltd.",Brand,,true,false,false,false
+taser,,1,"Axon Enterprise, Inc.",Brand,,true,false,false,false
+taylorswift,,1,"TAS Rights Management, LLC",Brand,,true,false,false,false
+tbs,,1,"TBS HOLDINGS, INC.",Brand,,true,false,false,false
+teach,,1,Charleston Road Registry Inc.,,,false,false,false,false
+telus,,1,TELUS Corporation,Brand,,true,false,false,false
+temple,,1,Temple Private Limited,Brand,,true,false,false,false
+ten,,1,XYZ.COM LLC,,,false,false,false,false
+tether,,1,"Tether Operations, Sociedad Anonima de Capital Variable",Brand,,true,false,false,false
+tex,,1,XYZ.COM LLC,,,false,false,false,false
+text,,1,NextGEN TLDs GmbH,,,false,false,false,false
+thing,,1,Link Freedom Group Ltd,,,false,false,false,false
+this,,1,Suffix Inc.,,,false,false,false,false
+threads,,1,Meta Registry Holdings LLC,Brand,,true,false,false,false
+tiktok,,1,TikTok Pte. Ltd.,Brand,,true,false,false,false
+tiny,,1,Exchange Point Institute,,,false,false,false,false
+tisi,,1,TISI Inc.,Brand,,true,false,false,false
+tkns,,1,NextGEN TLDs GmbH,,,false,false,false,false
+tldr,,1,Link Freedom Group Ltd,,,false,false,false,false
+tnl,,1,"Travel + Leisure Holdco, LLC",Brand,,true,false,false,false
+tokiomarine,,1,"Tokio Marine Holdings, Inc.",Brand,,true,false,false,false
+toppan,,1,TOPPAN Holdings Inc.,Brand,,true,false,false,false
+track,,1,NextGEN TLDs GmbH,,,false,false,false,false
+trademark,,1,Internet DotTrademark Organisation Limited,,,false,false,false,false
+trainer,,1,Squarespace Registry LLC,,,false,false,false,false
+transcend,,1,TRANSCEND INFORMATION INC.,Brand,,true,false,false,false
+trek,,1,"Regulus Exploration, Inc.",,,false,false,false,false
+trimble,,1,Trimble Inc.,Brand,,true,false,false,false
+triumph,,1,"Triumph Financial, Inc.",Brand,,true,false,false,false
+tron,,1,Golden Siv Technology Limited,,,false,false,false,false
+truck,,1,VANT NEXUS TECHNOLOGIES LLC,,,false,false,false,false
+trump,,1,"DTTM TLD, LLC",Brand,,true,false,false,false
+truth,,1,Link Freedom Group Ltd,,,false,false,false,false
+trx,,1,Golden Siv Technology Limited,,,false,false,false,false
+try,,1,ShortDot (Ireland) Limited,,,false,false,false,false
+tumblr,,1,"Knock Knock WHOIS There, LLC",Brand,,true,false,false,false
+tvasahi,,1,TV Asahi Holdings Corporation,Brand,,true,false,false,false
+twente,,1,Dotlocal B.V.,,,false,false,false,false
+twitch,,1,"Amazon Registry Services, Inc.",Brand,,true,false,false,false
+twosigma,,1,"Two Sigma Investments, LP",Brand,,true,false,false,false
+uber,,1,"RENNPFERD, LLC",Brand,,true,false,false,false
+uid,,1,Innovation Service Limited,,,false,false,false,false
+ulm,,1,SWU TeleNet GmbH,Geo,,false,false,true,false
+ultraview,,1,ULTRAVIEW AG,,,false,false,false,false
+unlimited,,1,XYZ.COM LLC,,,false,false,false,false
+update,,1,NextGEN TLDs GmbH,,,false,false,false,false
+upsa,,1,"Taisho Pharmaceutical Co., Ltd.",Brand,,true,false,false,false
+usc,,1,University of South Carolina,Brand,,true,false,false,false
+usdt,,1,"Tether Operations, Sociedad Anonima de Capital Variable",Brand,,true,false,false,false
+user,,1,ECHO Domain Co L.L.C.,,,false,false,false,false
+uwu,,1,Cam Connecting SARL,,,false,false,false,false
+van,,1,XYZ.COM LLC,,,false,false,false,false
+vault,,1,"Paws Button, LLC",,,false,false,false,false
+venue,,1,Squarespace Registry LLC,,,false,false,false,false
+veo,,1,Charleston Road Registry Inc.,Brand,,true,false,false,false
+ver,,1,Stichting Verifieerbaar Internet,,,false,false,false,false
+vercel,,1,Vercel Inc.,Brand,,true,false,false,false
+verein,,1,tldbox GmbH,,,false,false,false,false
+versant,,1,versant media LLC,Brand,,true,false,false,false
+via,,1,XYZ.COM LLC,,,false,false,false,false
+vid,,1,Intercap Registry Inc.,,,false,false,false,false
+vids,,1,Charleston Road Registry Inc.,,,false,false,false,false
+vienna,,1,domainworx Service & Management GmbH,Geo,,false,false,true,false
+vintage,,1,"Agador Slip, LLC",,,false,false,false,false
+viral,,1,Link Freedom Group Ltd,,,false,false,false,false
+viv,,1,Fuxi Institution,,,false,false,false,false
+vps,,1,Aruba PEC S.P.A.,,,false,false,false,false
+vrbo,,1,"HomeAway.com, Inc.",Brand,,true,false,false,false
+vrs,,1,Metaversal Corporation,Brand,,true,false,false,false
+wan,,1,ALIBABA INNOVATION PRIVATE LIMITED,Brand,,true,false,false,false
+want,,1,Link Freedom Group Ltd,,,false,false,false,false
+war,,1,XYZ.COM LLC,,,false,false,false,false
+warhammer,,1,Games Workshop Limited,Brand,,true,false,false,false
+water,,1,XYZ.COM LLC,,,false,false,false,false
+wave,,1,"Regulus Exploration, Inc.",,,false,false,false,false
+waymo,,1,Charleston Road Registry Inc.,Brand,,true,false,false,false
+waze,,1,Charleston Road Registry Inc.,Brand,,true,false,false,false
+wearables,,1,Meta Registry Holdings LLC,,,false,false,false,false
+weed,,1,Oinkadot Inc,,,false,false,false,false
+west,,1,XYZ.COM LLC,,,false,false,false,false
+whatsapp,,1,Meta Registry Holdings LLC,Brand,,true,false,false,false
+why,,1,ShortDot (Ireland) Limited,,,false,false,false,false
+wild,,1,"Registry Services, LLC",,,false,false,false,false
+wire,,1,Oinkadot Inc,,,false,false,false,false
+wit,,1,TechEdge Limited,,,false,false,false,false
+wix,,1,Wix.com LTD.,Brand,,true,false,false,false
+wizard,,1,Suffix Inc.,,,false,false,false,false
+wonder,,1,Wonder Group Inc.,Brand,,true,false,false,false
+woo,,1,"Knock Knock WHOIS There, LLC",Brand,,true,false,false,false
+wood,,1,XYZ.COM LLC,,,false,false,false,false
+wordpress,,1,"Knock Knock WHOIS There, LLC",,,false,false,false,false
+workspace,,1,Charleston Road Registry Inc.,Brand,,true,false,false,false
+wynn,,1,"Wynn Resorts Holdings, LLC",Brand,,true,false,false,false
+xiaomi,,1,Xiaomi Inc.,Brand,,true,false,false,false
+xmr,,1,Cake Labs LLC,,,false,false,false,false
+xn--3et971b,海尔,1,"Qingdao Haishang Zhicai Management Consulting Co., Ltd.",Brand IDN,,true,false,false,true
+xn--6oqv20b1zgzxr,株式会社,1,XRegistry Incorporated,IDN,,false,false,false,true
+xn--ces6a,地址,1,"Beijing Guoxu Network Technology Co., Ltd.",IDN,,false,false,false,true
+xn--fpy230a,番茄,1,"Douyin Vision Co., Ltd.",Brand IDN,,true,false,false,true
+xn--gmqr38alogxt2a,人工智能,1,"Beijing Zhuoyue Yutong Technology Co., Ltd.",IDN,,false,false,false,true
+xn--gtv852c,红果,1,"Douyin Vision Co., Ltd.",Brand IDN,,true,false,false,true
+xn--lwt700c,瑞幸,1,"Luckin Coffee Group Co., Ltd.",Brand IDN,,true,false,false,true
+xn--pruv10j,抖音,1,"Beijing Zitiao Network Technology Co., Ltd.",Brand IDN,,true,false,false,true
+xn--qubec-csa,québec,1,PointQuébec Inc,Geo IDN,,false,false,true,true
+xn--vuq143e,海信,1,"Qingdao Hisense Technology Service Co., Ltd.",Brand IDN,,true,false,false,true
+xoxo,,1,DynaReg LLC,,,false,false,false,false
+xserver,,1,XServer Incorporated,Brand,,true,false,false,false
+yam,,1,NAME SPACE LLC,,,false,false,false,false
+yay,,1,ShortDot (Ireland) Limited,,,false,false,false,false
+ygeia,,1,BAILA CON AGUA,Brand,,true,false,false,false
+yuasa,,1,"YUASA CO., LTD.",Brand,,true,false,false,false
+yueyang,,1,"Yueyang Free Trade Zone Investment Co., LTD",Geo,,false,false,true,false
+yyy,,1,NAME SPACE LLC,,,false,false,false,false
+zan,,1,"Jiangsu Bangning Technology Co., Ltd.",,,false,false,false,false
+zarahome,,1,Industria de Diseño Textil S.A.,Brand,,true,false,false,false
+zec,,1,Link Freedom Group Ltd,,,false,false,false,false
+zia,,1,ZOHO CORPORATION PRIVATE LIMITED,Brand,,true,false,false,false
+zillow,,1,"MFTB Holdco, Inc.",Brand,,true,false,false,false
+zoho,,1,ZOHO CORPORATION PRIVATE LIMITED,Brand,,true,false,false,false
+zoom,,1,"Zoom Communications, Inc.",Brand,,true,false,false,false

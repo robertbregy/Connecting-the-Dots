@@ -1,7 +1,7 @@
 ﻿round,entity,measure,value,unit,status,source,note
 2012,Donuts,applications,307,applications,official historical,https://newgtlds.icann.org/en/announcements-and-media/video/applicants,ICANN applicant video states Donuts applied for 307 new gTLDs.
 2012,Google,applications,101,applications,official historical,https://newgtlds.icann.org/sites/default/files/drsp/25sep13/determination-1-1-1462-36448-en.pdf,ICANN dispute material cited in the project concentration dataset.
-2012,Amazon,applications,78,applications,official historical,https://newgtlds.icann.org/sites/default/files/drsp/25sep13/determination-1-1-1462-36448-en.pdf,ICANN dispute material cited in the project concentration dataset.
+2012,Amazon,applications,76,applications,official historical,data/applications_2012.csv,Count derived directly from the locally vendored complete 2012 Reveal Day application corpus for Amazon EU S.à r.l.
 2026,Link Freedom Group Ltd,live primary applications,158,applications,Reveal-Day secondary inventory,https://www.ntlddata.com/applications,Secondary aggregation of ICANN public application data; preliminary during the Replacement Period.
 2026,XYZ.COM LLC,live primary applications,139,applications,Reveal-Day secondary inventory,https://www.ntlddata.com/applications,Secondary aggregation of ICANN public application data; preliminary during the Replacement Period.
 2026,"Registry Services, LLC",live primary applications,77,applications,Reveal-Day secondary inventory,https://www.ntlddata.com/applications,Secondary aggregation of ICANN public application data; preliminary during the Replacement Period.

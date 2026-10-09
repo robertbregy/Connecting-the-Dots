@@ -109,7 +109,7 @@ Application history is represented separately from TLD identity. The local histo
 
 The original 2012 transport exposed richer fields. The public research export deliberately does **not** republish personal `Primary Contact` or `Email` fields, and it does not claim complete preservation of every original 14-column metadata field. The completeness claim is specifically the formal applied-for-string/applicant graph.
 
-Application-only strings are valid Explorer records but are **not TLD records**. This prevents an unsuccessful proposal from being counted as a delegated top-level domain. The 2026 individual application corpus remains intentionally incomplete locally after Reveal Day. Official aggregate statistics are local; the broader published string inventory is a separate runtime layer and must not be mistaken for a complete local APS application corpus.
+Application-only strings are valid Explorer records but are **not TLD records**. This prevents an unsuccessful proposal from being counted as a delegated top-level domain. The 2026 individual application corpus remains intentionally incomplete locally after Reveal Day. Official aggregate statistics are local; the broader published 980-string inventory is a separate locally frozen string-level layer and must not be mistaken for a complete local APS application corpus.
 
 ## v0.7.11 Universal Explorer
 
@@ -144,6 +144,6 @@ The TLD-coverage claim excludes never-delegated ISO codes and other labels that 
 - Registration volume is never used as a proxy for social value or cultural significance.
 
 
-## Reproducible Reveal Day runtime policy
+## Reproducible Reveal Day snapshot policy
 
-The data pack is the frozen release corpus. Since v0.7.25 the publication performs no browser-time external research fetches. In v0.7.30 the complete 2012 string/applicant graph is vendored locally and merged at build time; documented archival mirrors remain provenance/maintenance references only. The current ICANN gTLD lifecycle feed also remains disabled at visitor runtime. This makes the user-visible research state deterministic across visits.
+The data pack is the frozen release corpus. The complete 2012 string/applicant graph is vendored locally and merged at build time; in v0.7.51 the 980-string 2026 Reveal Day browsing snapshot is also vendored locally. nTLDData remains an attributed provenance source, not a visitor-time dependency. The current ICANN gTLD lifecycle feed remains disabled at visitor runtime. This makes the user-visible research state deterministic across visits.
