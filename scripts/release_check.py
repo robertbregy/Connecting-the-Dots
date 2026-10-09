@@ -587,7 +587,7 @@ if node:
 # v0.7.60: the live editorial chronicle must remain independent from frozen RR1.
 chronicle=json_file('inside_the_round_events.json')
 events=chronicle.get('events', [])
-if len(events)!=7 or len({event['id'] for event in events})!=7:
+if len(events)!=9 or len({event['id'] for event in events})!=9:
     fail('Inside the Round event count or unique ids')
 if chronicle.get('lastReviewed')!=publication_meta.get('releasedOn'):
     fail('Inside the Round editorial review date does not match this publication')
@@ -597,11 +597,29 @@ chronicle_states={event['state'] for event in events}
 if chronicle_states!={'observed','current','scheduled','evolving','conditional'}:
     fail('Inside the Round status distinctions missing')
 for event in events:
-    if not event['source'].startswith(('https://www.icann.org/','https://newgtldprogram.icann.org/')):
+    if not event['source'].startswith(('https://www.icann.org/','https://newgtldprogram.icann.org/','https://newgtldprogram-aps.icann.org/','https://www.lugano.ch/')):
         fail('Inside the Round non-primary source for '+event['id'])
     for lang in LANGS:
         if any(not translations.get(lang,{}).get(event[k]) for k in ('dateKey','titleKey','bodyKey')):
             fail('Inside the Round missing event translation: '+lang+'/'+event['id'])
+        for extra in event.get('extraSources',[]):
+            if not extra.get('source','').startswith(('https://www.icann.org/','https://newgtldprogram.icann.org/','https://newgtldprogram-aps.icann.org/','https://www.lugano.ch/')) or not translations[lang].get(extra.get('labelKey')):
+                fail('Inside the Round supplementary source invalid: '+event['id'])
+        if event.get('sourceLabelKey') and not translations[lang].get(event['sourceLabelKey']):
+            fail('Inside the Round source attribution untranslated: '+event['id'])
+if not {'reveal-day','lugano-public-information','community-input'}.issubset({e['id'] for e in events}):
+    fail('Required program and .lugano public milestones missing')
+reveal=next(e for e in events if e['id']=='reveal-day')
+if not any('CDL2651T-T31516/summary' in item.get('source','') for item in reveal.get('extraSources',[])):
+    fail('Official .lugano ICANN APS application source missing')
+rrmeta=json.loads((ROOT/'research'/'research_release_manifest.json').read_text(encoding='utf-8'))['currentResearchRelease']
+citation=(ROOT/'CITATION.cff').read_text(encoding='utf-8')
+if f'date-released: "{rrmeta["publishedOn"]}"' not in citation or f'version: "{rrmeta["id"]}"' not in citation:
+    fail('CITATION.cff must preserve RR1 original release date independently of site updates')
+if rrmeta['doi']!=publication_meta.get('doi') or f'value: "{rrmeta["doi"]}"' not in citation:
+    fail('RR1 DOI citation drift')
+if publication_meta.get('paperVersion')!='1.1-draft':
+    fail('Working paper revision metadata mismatch')
 if 'id="inside-round"' not in source_html or 'data-target="inside-round"' not in source_html:
     fail('Inside the Round missing from primary navigation and site source')
 if '<!-- CTD_INSIDE_ROUND_EVENTS -->' not in source_html:
@@ -629,6 +647,10 @@ for lang in LANGS:
     standalone=chronicle_page.read_text(encoding='utf-8')
     if standalone.count('data-event-id=')!=len(events):
         fail('Incomplete stand-alone milestone timeline in '+lang)
+    for event in events:
+        for link in [event['source'],*[ex['source'] for ex in event.get('extraSources',[])]]:
+            if link not in standalone or link not in page:
+                fail('Unlinked Inside the Round primary source: '+lang+'/'+event['id'])
     if f'<html lang="{lang}">' not in standalone:
         fail('Wrong standalone chronicle language: '+lang)
     if f'<link rel="canonical" href="{site_base}inside-the-round/{lang}/">' not in standalone:
