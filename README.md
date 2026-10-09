@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.63
+# Connecting the Dots — v0.7.64
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -6,11 +6,11 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.63 · 10 October 2026**
+**v0.7.64 · 10 October 2026**
 
-This SEO refinement shortens the four language-specific home-page titles and tightens the separately indexable Explorer description following a live Google Search Console crawl: 11/11 primary pages were reachable and indexable by on-page rules, with zero critical, high or medium severity findings. Decorative logos correctly retain empty alt text alongside adjacent accessible brand wording. The search-engine indexing process remains outside the site's control and must not be confused with crawl readiness.
+The **How it works** entry now uses the same disclosure navigation as Themes, ICANN 2026 and Data & method. The dropdown includes an overview plus five existing chapter groups. Selecting a chapter changes the URL to its precise permanent anchor and scrolls to that topic. The duplicated in-section chip navigation has been removed, without deleting any explanations or chapters. The four-language and mobile interfaces now expose the same six destinations, and browser history preserves deep links.
 
-**Previous v0.7.62** integrated primary-source-linked 2026 events, scientific reproducibility corrections and the v1.1 living working paper. RR1 and its Zenodo DOI remain unchanged.
+**Previous v0.7.63** refined metadata and multilingual page titles following a live SEO check. **v0.7.62** strengthened the Inside the Round chronicle and the v1.1 working paper. Frozen RR1 data, DOI and citation date remain unchanged.
 
 ## What the project covers
 
