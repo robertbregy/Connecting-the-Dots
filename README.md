@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.59
+# Connecting the Dots — v0.7.60
 
 **Connecting the Dots** is an independent, multilingual research and public-information project on the evolution of Internet top-level domains: applications, delegations, governance, economics, social meaning and the ICANN New gTLD Program.
 
@@ -6,9 +6,11 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.59 · 9 October 2026**
+**v0.7.60 · 9 October 2026**
 
-This release hardens the research-publication infrastructure after a full repository/live-site audit. It separates the immutable RR1 citation from mutable technical site versions, restores Zenodo metadata to the repository, makes the working paper indexable and citable, reconciles Explorer counting semantics, removes stale 2026 methodology copy, and updates deployment documentation for direct Git-based publication.
+This release adds **Inside the Round**, a multilingual editorial chronicle of the 2026 ICANN New gTLD Program. It follows significant public milestones from the start of the application window to its eventual outcomes, using `.lugano` as a disclosed participant-observer case while keeping the publication independent. The 7-event editorial register is separate from the frozen RR1 evidence, and each entry distinguishes past, current, scheduled, evolving and conditional stages.
+
+The preceding release hardened the research-publication infrastructure after a full repository/live-site audit. It separates the immutable RR1 citation from mutable technical site versions, restores Zenodo metadata to the repository, makes the working paper indexable and citable, reconciles Explorer counting semantics, removes stale 2026 methodology copy, and updates deployment documentation for direct Git-based publication.
 
 The 2026 browsing layer remains frozen locally: **980 unique primary strings** observed in the secondary Reveal Day index, representing **1,608 applications associated with a primary string**, plus six variant-only application records in that secondary source. ICANN's official Reveal Day aggregate remains **1,615 applications / 481 applicants**. The project does **not** claim a complete locally vendored APS application-level corpus for 2026.
 
@@ -31,6 +33,7 @@ The 2026 round is still in progress. Reveal Day data are treated as a dated snap
 
 ## Search and research entry points
 
+- [Inside the Round](inside-the-round/en/index.html) — four-language chronological observation of the ICANN 2026 round, with clear source and status labels.
 - [TLD Explorer guide](explorer/index.html) — a separately indexable introduction to the interactive explorer and evidence limits.
 - [Research & citation](research/index.html) — RR1 DOI, method, reproducibility and citation resources.
 - [Working paper](research/connecting-the-dots-working-paper-v1.html) — independently readable HTML draft.
@@ -46,6 +49,10 @@ The project now has two version layers:
 Current research release: **RR1 · Reveal Day 2026**. The next planned research release is **RR2 · String Confirmation 2026**, triggered by ICANN's 17 November 2026 String Confirmation Day.
 
 Citation metadata are stored in [`CITATION.cff`](CITATION.cff). Zenodo-ready metadata are stored in [`.zenodo.json`](.zenodo.json). The research-release manifest and working paper are in [`research/`](research/). RR1 is archived on Zenodo: `10.5281/zenodo.23262623`.
+
+## Inside the Round
+
+The program-wide chronology is maintained in [`data/inside_the_round_events.json`](data/inside_the_round_events.json), an **editorial event register** rather than a replacement of or addition to the RR1 research snapshot. The shared event register builds the four-language interactive section and separately indexable HTML pages. Status labels distinguish observed events, events in progress, future ICANN dates, uncertain phases and conditional outcomes. The author's involvement in the City's `.lugano` application is disclosed: only publishable observations and primary public sources may appear in the independent chronicle.
 
 ## `.lugano`
 

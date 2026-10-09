@@ -430,3 +430,27 @@ html[data-theme="dark"] .derivedBadge{color:#f2c46d}html[data-theme="light"] .de
 .doiHero strong{font-size:1.18rem;letter-spacing:.01em}
 .doiHero a span{font-size:.86rem;color:var(--muted)}
 .footerDoi{white-space:nowrap}
+
+
+/* v0.7.60: inside-the-round editorial timeline. No layout effect outside #inside-round. */
+#inside-round .insideRoundLenses{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0 8px}
+#inside-round .insideRoundLens{background:var(--surface2);border:1px solid var(--border);border-radius:17px;padding:18px;min-width:0}
+#inside-round .insideRoundLens h3{font-size:16px;line-height:1.35;margin:0 0 9px}
+#inside-round .insideRoundLens p{color:var(--muted);font-size:14px;line-height:1.6;margin:0}
+#inside-round .insideRoundLinks{margin-top:20px}
+#inside-round .insideRoundEvents{margin-top:25px}
+#inside-round .insideRoundTimeline{list-style:none;margin:0;padding:0 0 0 23px;border-left:1px solid var(--border)}
+#inside-round .insideRoundEntry{position:relative;border:1px solid var(--border);border-radius:17px;padding:18px;margin:0 0 17px;background:var(--surface);min-width:0;overflow-wrap:anywhere}
+#inside-round .insideRoundEntry:before{content:"";position:absolute;left:-30px;top:22px;width:11px;height:11px;border-radius:50%;background:var(--accent);border:3px solid var(--surface);box-shadow:0 0 0 1px var(--border)}
+#inside-round .insideRoundMeta{display:flex;align-items:center;flex-wrap:wrap;gap:8px 13px;margin-bottom:13px}
+#inside-round .insideRoundDate{font-size:13px;color:var(--text);font-weight:720;font-variant-numeric:tabular-nums}
+#inside-round .insideRoundState,#inside-round .insideRoundScope{display:inline-block;font-size:11px;font-weight:700;line-height:1.4;padding:4px 9px;border-radius:999px;border:1px solid var(--border);background:var(--surface2);color:var(--text)}
+#inside-round .insideRoundEntry[data-round-state="current"]{border-color:var(--accent)}
+#inside-round .insideRoundEntry[data-round-state="current"] .insideRoundState{background:var(--accent-soft);color:var(--accent-text);border-color:var(--accent)}
+#inside-round .insideRoundEntry[data-round-state="scheduled"],#inside-round .insideRoundEntry[data-round-state="evolving"],#inside-round .insideRoundEntry[data-round-state="conditional"]{border-style:dashed}
+#inside-round .insideRoundEntry h3{font-size:18px;line-height:1.36;margin:0 0 9px}
+#inside-round .insideRoundEntry p{font-size:15px;line-height:1.68;color:var(--muted);margin:0 0 12px}
+#inside-round .insideRoundEntry .sourceChip{display:inline-block;font-size:12px;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+#inside-round .insideRoundReviewed{margin:19px 0 0}
+#inside-round .insideRoundDisclosure .sub{line-height:1.7}
+@media(max-width:760px){#inside-round .insideRoundLenses{grid-template-columns:1fr}#inside-round .insideRoundEntry{padding:16px}#inside-round .insideRoundTimeline{padding-left:17px}#inside-round .insideRoundEntry:before{left:-24px}}

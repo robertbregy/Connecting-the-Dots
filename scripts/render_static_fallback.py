@@ -74,6 +74,8 @@ def render(page,lang,alias=False):
     for sid,file in [('ctd-data-bundle','data/site_bundle.js'),('ctd-worldmap','data/worldmap.js'),('ctd-app','assets/app.js')]:
         n=soup.select_one('#'+sid);n.clear();n['src']=f'{file}?v={VERSION}';n['defer']=''
     i18n=soup.select_one('#ctd-i18n-bundle');i18n.string='\nwindow.DOT_I18N='+json.dumps({lang:tr},ensure_ascii=False,separators=(',',':'))+';\n'
+    guide=soup.select_one('a[data-inside-round-guide]')
+    if guide:guide['href']=BASE+'inside-the-round/'+lang+'/'
     for n in soup.select('[src], [href]'):
         for attr in ('src','href'):
             ref=n.get(attr)

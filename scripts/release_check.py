@@ -584,4 +584,62 @@ if node:
         rc=subprocess.run([node,'--check',str(p)],stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
         if rc.returncode: fail(f'JS syntax {p.relative_to(ROOT)}: {rc.stderr.strip()}')
 
+# v0.7.60: the live editorial chronicle must remain independent from frozen RR1.
+chronicle=json_file('inside_the_round_events.json')
+events=chronicle.get('events', [])
+if len(events)!=7 or len({event['id'] for event in events})!=7:
+    fail('Inside the Round event count or unique ids')
+if chronicle.get('lastReviewed')!=publication_meta.get('releasedOn'):
+    fail('Inside the Round editorial review date does not match this publication')
+if publication_meta.get('researchRelease')!='RR1' or publication_meta.get('doi')!='10.5281/zenodo.23262623':
+    fail('Frozen RR1 publication identity drift')
+chronicle_states={event['state'] for event in events}
+if chronicle_states!={'observed','current','scheduled','evolving','conditional'}:
+    fail('Inside the Round status distinctions missing')
+for event in events:
+    if not event['source'].startswith(('https://www.icann.org/','https://newgtldprogram.icann.org/')):
+        fail('Inside the Round non-primary source for '+event['id'])
+    for lang in LANGS:
+        if any(not translations.get(lang,{}).get(event[k]) for k in ('dateKey','titleKey','bodyKey')):
+            fail('Inside the Round missing event translation: '+lang+'/'+event['id'])
+if 'id="inside-round"' not in source_html or 'data-target="inside-round"' not in source_html:
+    fail('Inside the Round missing from primary navigation and site source')
+if '<!-- CTD_INSIDE_ROUND_EVENTS -->' not in source_html:
+    fail('Inside the Round generated timeline placeholder removed from source')
+from xml.etree import ElementTree as ET
+sitemap_root=ET.parse(ROOT/'sitemap.xml').getroot()
+sitemap_ns={'sm':'http://www.sitemaps.org/schemas/sitemap/0.9'}
+sitemap_locs=[n.text for n in sitemap_root.findall('sm:url/sm:loc',sitemap_ns)]
+site_base='https://robertbregy.github.io/Connecting-the-Dots/'
+must_index={site_base+x for x in ['en/','it/','de/','fr/','explorer/','research/','research/connecting-the-dots-working-paper-v1.html']}
+must_index.update(site_base+'inside-the-round/'+lang+'/' for lang in LANGS)
+if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index):
+    fail('Sitemap does not preserve all 11 language/research/chronicle URLs')
+for lang in LANGS:
+    page=(ROOT/lang/'index.html').read_text(encoding='utf-8')
+    chronicle_page=ROOT/'inside-the-round'/lang/'index.html'
+    if page.count('data-event-id=')!=len(events):
+        fail('Incomplete main-site 2026 milestone timeline in '+lang)
+    if 'data-target="inside-round"' not in page:
+        fail('Inside the Round not available in '+lang+' primary navigation')
+    if site_base+'inside-the-round/'+lang+'/' not in page:
+        fail('Inside the Round localized guide link incorrect for '+lang)
+    if not chronicle_page.exists():
+        fail('Missing stand-alone Inside the Round page '+lang)
+    standalone=chronicle_page.read_text(encoding='utf-8')
+    if standalone.count('data-event-id=')!=len(events):
+        fail('Incomplete stand-alone milestone timeline in '+lang)
+    if f'<html lang="{lang}">' not in standalone:
+        fail('Wrong standalone chronicle language: '+lang)
+    if f'<link rel="canonical" href="{site_base}inside-the-round/{lang}/">' not in standalone:
+        fail('Wrong standalone chronicle canonical: '+lang)
+    from html import escape as html_escape
+    if any(html_escape(v) not in standalone for v in [translations[lang]['insideIntro'],translations[lang]['insideDisclosureBody']]):
+        fail('Standalone chronicle translation missing: '+lang)
+    if standalone.count('<link rel="alternate" hreflang=')!=5:
+        fail('Standalone chronicle reciprocal hreflang parity: '+lang)
+    if '24 hours before' in standalone or '24 ore prima' in standalone:
+        fail('Unpublished personal detail must not appear in chronicle')
+    check_internal_refs(chronicle_page)
+
 print(f'RELEASE CHECK PASS · v{version} · 1,849 Explorer records · 7,679 life-history events · 4 languages')

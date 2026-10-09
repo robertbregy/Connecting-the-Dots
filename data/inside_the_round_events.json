@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "editorialLayer": "2026-round-observation-not-research-release",
+  "lastReviewed": "2026-10-09",
+  "policy": "Only dated public milestones, attributed evidence and explicitly conditional future stages. Do not present a milestone as an application-specific approval.",
+  "events": [
+    {
+      "id": "window-open",
+      "date": "2026-04-30",
+      "state": "observed",
+      "scope": "program",
+      "dateKey": "insideOpenDate",
+      "titleKey": "insideOpenTitle",
+      "bodyKey": "insideOpenBody",
+      "source": "https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/prepare-to-apply"
+    },
+    {
+      "id": "window-close",
+      "date": "2026-08-12",
+      "state": "observed",
+      "scope": "program",
+      "dateKey": "insideCloseDate",
+      "titleKey": "insideCloseTitle",
+      "bodyKey": "insideCloseBody",
+      "source": "https://www.icann.org/en/announcements/details/icann-2026-round-closes-with-more-than-1600-new-gtld-applications-13-08-2026-en"
+    },
+    {
+      "id": "reveal-day",
+      "date": "2026-10-07",
+      "state": "observed",
+      "scope": "program-and-case",
+      "dateKey": "insideRevealDate",
+      "titleKey": "insideRevealTitle",
+      "bodyKey": "insideRevealBody",
+      "source": "https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en"
+    },
+    {
+      "id": "replacement",
+      "date": "2026-10-08",
+      "endDate": "2026-10-21",
+      "state": "current",
+      "scope": "program",
+      "dateKey": "insideReplaceDate",
+      "titleKey": "insideReplaceTitle",
+      "bodyKey": "insideReplaceBody",
+      "source": "https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en"
+    },
+    {
+      "id": "confirmation",
+      "date": "2026-11-17",
+      "state": "scheduled",
+      "scope": "program",
+      "dateKey": "insideConfirmDate",
+      "titleKey": "insideConfirmTitle",
+      "bodyKey": "insideConfirmBody",
+      "source": "https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en"
+    },
+    {
+      "id": "review",
+      "date": null,
+      "state": "evolving",
+      "scope": "program",
+      "dateKey": "insideReviewDate",
+      "titleKey": "insideReviewTitle",
+      "bodyKey": "insideReviewBody",
+      "source": "https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey"
+    },
+    {
+      "id": "outcomes",
+      "date": null,
+      "state": "conditional",
+      "scope": "possibility",
+      "dateKey": "insideOutcomeDate",
+      "titleKey": "insideOutcomeTitle",
+      "bodyKey": "insideOutcomeBody",
+      "source": "https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey"
+    }
+  ]
+}

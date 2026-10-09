@@ -106,6 +106,8 @@ function render(language,alias=false){
       if(ref&&(/^(assets|data|downloads|research)\//.test(ref)||ref==='CITATION.cff'))node.setAttribute(attr,prefix+ref);
     }
   }
+  const editorialGuide=document.querySelector('a[data-inside-round-guide]');
+  if(editorialGuide)editorialGuide.setAttribute('href',base+'inside-the-round/'+language+'/');
   // A localized page only needs its own complete dictionary at runtime.
   document.getElementById('ctd-i18n-bundle').textContent='\nwindow.DOT_I18N='+JSON.stringify({[language]:translations})+';\n';
   html.classList.remove('js');html.classList.add('no-js');

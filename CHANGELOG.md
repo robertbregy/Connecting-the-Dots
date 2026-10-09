@@ -1,3 +1,11 @@
+# v0.7.60 — 2026-10-09
+
+- Adds **Inside the Round** as a substantive ICANN 2026 section in EN, IT, DE and FR, positioned beside Round overview and the distinct .lugano case.
+- Introduces a small public editorial event register for dated milestones, current phases, announced dates and conditional outcomes, each with official sources. This is **not** an application filing tutorial.
+- Presents .lugano as a disclosed participant-observer perspective while keeping the independent research and the City's official communications strictly separate.
+- Provides four standalone indexable chronicle pages and source-backed linking from the program and .lugano views. Restores all research and Explorer entry points to the generated sitemap on every build.
+- Keeps the RR1 DOI, Research Release RR1 snapshot and frozen data pack unchanged. This is a site/editorial release only.
+
 # v0.7.59 — 2026-10-09
 
 - Hardens the living-research publication after a full GitHub/live-site audit.

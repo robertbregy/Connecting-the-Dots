@@ -10,6 +10,7 @@ import shutil
 import subprocess
 import zipfile
 from scripts.package_release import write_deterministic_zip
+from scripts.render_inside_round import render_timeline, build_inside_round_pages
 
 ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
@@ -143,6 +144,10 @@ def build_data_pack() -> None:
 
 def build_index() -> None:
     html = SRC.read_text(encoding="utf-8")
+    marker = "<!-- CTD_INSIDE_ROUND_EVENTS -->"
+    if html.count(marker) != 1:
+        raise SystemExit("Inside the Round event placeholder missing or duplicated")
+    html = html.replace(marker, render_timeline(ROOT))
     css = (ROOT / "assets" / "style.css").read_text(encoding="utf-8")
     data_js = (DATA / "site_bundle.js").read_text(encoding="utf-8")
     i18n_js = (DATA / "i18n_bundle.js").read_text(encoding="utf-8")
@@ -318,6 +323,7 @@ def main() -> None:
     build_manifest()
     build_data_pack()
     build_index()
+    build_inside_round_pages(ROOT, PUBLICATION)
     validate_index()
     # Release-level validation is intentionally self-contained so the browser-upload
     # bundle can verify itself even though the larger development QA suite is omitted.

@@ -49,6 +49,11 @@ jobs:
       - name: Rebuild and validate publication
         run: python3 build.py
 
+      - name: Validate multilingual publication and delivery
+        run: |
+          node scripts/validate_multilingual.js
+          node scripts/validate_delivery.js
+
       - name: Commit generated publication
         run: |
           if git diff --quiet; then
