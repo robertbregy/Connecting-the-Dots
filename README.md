@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.64
+# Connecting the Dots — v0.7.65
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -6,11 +6,11 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.64 · 10 October 2026**
+**v0.7.65 · 10 October 2026**
 
-The **How it works** entry now uses the same disclosure navigation as Themes, ICANN 2026 and Data & method. The dropdown includes an overview plus five existing chapter groups. Selecting a chapter changes the URL to its precise permanent anchor and scrolls to that topic. The duplicated in-section chip navigation has been removed, without deleting any explanations or chapters. The four-language and mobile interfaces now expose the same six destinations, and browser history preserves deep links.
+Introducing **Behind the Round**, a separate and indexable four-language field-note series under ICANN 2026. Its first story investigates a deceptively simple Reveal Day discrepancy: 1,616 paid applications on 22 September, 1,615 in the official 7 October aggregate, and 1,614 in the locally frozen secondary index. ICANN explicitly documents the administrative-check exclusion of `.wdo` from its public list; it does **not** yet provide a verified explanation for the earlier official-count change. Both gaps remain separately labelled and all source URLs are preserved.
 
-**Previous v0.7.63** refined metadata and multilingual page titles following a live SEO check. **v0.7.62** strengthened the Inside the Round chronicle and the v1.1 working paper. Frozen RR1 data, DOI and citation date remain unchanged.
+An editorial evidence register, reproducible multilingual renderer, sitemap entries and validation rules support future dated updates without modifying the **RR1** data snapshot, DOI or working paper citation. The preceding **v0.7.64** harmonized the How it works navigation and mobile deep links.
 
 ## What the project covers
 
@@ -32,6 +32,7 @@ The 2026 round is still in progress. Reveal Day data are treated as a dated snap
 ## Search and research entry points
 
 - [Inside the Round](inside-the-round/en/index.html) — four-language chronological observation of the ICANN 2026 round, with clear source and status labels.
+- [Behind the Round](behind-the-round/en/index.html) — independently indexable research notes on overlooked evidence, data anomalies and what remains unknown.
 - [TLD Explorer guide](explorer/index.html) — a separately indexable introduction to the interactive explorer and evidence limits.
 - [Research & citation](research/index.html) — RR1 DOI, method, reproducibility and citation resources.
 - [Working paper](research/connecting-the-dots-working-paper-v1.html) — independently readable HTML draft.
@@ -51,6 +52,10 @@ Citation metadata are stored in [`CITATION.cff`](CITATION.cff). Zenodo-ready met
 ## Inside the Round
 
 The program-wide chronology is maintained in [`data/inside_the_round_events.json`](data/inside_the_round_events.json), an **editorial event register** rather than a replacement of or addition to the RR1 research snapshot. The shared event register builds the four-language interactive section and separately indexable HTML pages. Status labels distinguish observed events, events in progress, future ICANN dates, uncertain phases and conditional outcomes. The author's involvement in the City's `.lugano` application is disclosed: only publishable observations and primary public sources may appear in the independent chronicle.
+
+## Behind the Round
+
+The public evidence register [`data/behind_round_stories.json`](data/behind_round_stories.json) tracks individual, corrigible field notes and their source provenance separately from the milestone chronology and the immutable RR1 data. The first case distinguishes a source-backed explanation for the mismatch between the APS aggregate and publicly listed applications from the still unexplained September-to-October official count change. Four standalone language routes are generated deterministically from the editorial register. New explanations are adopted only after public source verification; automated monitoring is advisory, not an unsupervised change to the publication.
 
 ## `.lugano`
 
