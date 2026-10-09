@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.53
+# Connecting the Dots — v0.7.54
 
 **Connecting the Dots** is an independent, multilingual research and public-information project on the evolution of Internet top-level domains: applications, delegations, governance, economics, social meaning and the ICANN New gTLD Program.
 
@@ -6,7 +6,7 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.53 · 9 October 2026**
+**v0.7.54 · 9 October 2026**
 
 This release adds a cross-round economic-sector analysis to the Economics theme. It separates the economic sector represented by an application from the naming strategy of the string, so brand namespaces such as `.ubs`, `.goldmansachs`, `.tether` or `.openai` are analysed alongside generic terms such as `.bank`, `.bitcoin` or `.agent`. The release adds application-level, sector-evolution and strategy-mix datasets, with explicit coverage and unresolved-status fields rather than fabricated corporate mappings.
 
@@ -45,13 +45,13 @@ Public CSV datasets and the downloadable data pack are exposed through the site.
 
 For browser-based GitHub publication use the release package named:
 
-`Connecting-the-Dots-v0.7.53-WEB-UPLOAD.zip`
+`Connecting-the-Dots-v0.7.54-WEB-UPLOAD.zip`
 
 Extract the archive and upload its contents to the repository root. The package deliberately stays below the project's browser-upload file ceiling and now includes this root `README.md`, so the repository landing page stays aligned with the deployed release.
 
 For the full source/build archive use:
 
-`Connecting-the-Dots-v0.7.53-COMPLETO.zip`
+`Connecting-the-Dots-v0.7.54-COMPLETO.zip`
 
 ## Release history
 

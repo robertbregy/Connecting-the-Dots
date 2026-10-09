@@ -6,7 +6,16 @@
     "lastPublished": "2026-10-07T15:41:00Z",
     "activeApplications": 1615,
     "applicants": 481,
-    "uniqueStrings": null
+    "uniqueStrings": null,
+    "countriesTerritories": null,
+    "icannRegionsRepresented": 5,
+    "regionApplicantCounts": {
+      "North America": 198,
+      "Europe": 111,
+      "Asia/Australia/Pacific": 156,
+      "Africa": 7,
+      "Latin America/Caribbean": 9
+    }
   },
   "stringInventory": {
     "source": "https://www.ntlddata.com/applications/strings",
@@ -21,7 +30,8 @@
     "variantOnlyApplicationsOutsideStringInventory": 6,
     "localRuntimeFile": "applications_2026_strings_reveal.js",
     "localDownloadFile": "applications_2026_strings_reveal.csv",
-    "observedAt": "2026-10-08"
+    "observedAt": "2026-10-08",
+    "observedUniquePrimaryStrings": 980
   },
   "period": {
     "revealDay": "2026-10-07",

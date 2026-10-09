@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.7.54 — 2026-10-09
+- Clarifies Round 2026 headline metrics without conflating official ICANN aggregates with the frozen secondary Reveal Day snapshot.
+- Shows 980 unique primary strings as a derived frozen snapshot while keeping the official ICANN unique-string aggregate explicitly unpublished.
+- Replaces the empty countries/territories metric with the official 481 applicants across all five ICANN regions, while stating that ICANN has not published a distinct-country aggregate.
+
+
 ## v0.7.53 — 2026-10-09
 
 - Adds **The economy behind the dot**, a cross-round 2012→2026 sector analysis inside the existing Economics theme without adding another top-level page.

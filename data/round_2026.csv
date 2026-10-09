@@ -1,7 +1,8 @@
 metric,value,status,source,note
 Applications active at Reveal Day,1615,official Reveal Day snapshot,https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en,Primary applications published on 7 October 2026; final number/types confirmed on String Confirmation Day
 Total applicants,481,official APS statistic,https://newgtldprogram-aps.icann.org/statistics,Distinct applicants in APS Overview
-Unique primary strings,,not yet published by APS,https://newgtldprogram-aps.icann.org/statistics,APS displays -- on Reveal Day; do not infer from replacement records
+Unique primary strings — official ICANN aggregate,,not yet published by APS,https://newgtldprogram-aps.icann.org/statistics,APS still displays --; final applied-for string list is scheduled for String Confirmation Day on 2026-11-17
+Unique primary strings — frozen Reveal Day secondary snapshot,980,derived secondary snapshot,https://www.ntlddata.com/applications/strings,Frozen local snapshot observed for Reveal Day; not an official ICANN aggregate
 Preliminary identical-string contention sets,263,official Reveal Day contention-set file,https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv,263 preliminary sets; subject to replacement period and later procedures
 Applications in preliminary identical-string contention sets,891,derived from official contention-set file,https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv,Count of application rows in the 263 published contention sets
 Geographic applications,15,official Reveal Day snapshot,https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en,Self-identified geographic name applications
@@ -11,3 +12,6 @@ IDN applications,21,official Reveal Day snapshot,https://www.icann.org/en/announ
 Applications with variants,9,official Reveal Day snapshot,https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en,Applications that include variant strings
 Applicant Support Program applications,51,official Reveal Day snapshot,https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en,Applications submitted by ASP applicants
 Final confirmed strings,,milestone — String Confirmation Day 17 Nov 2026,https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en,Replacement period runs 8–21 October 2026
+
+ICANN regions represented,5,official regional distribution,https://newgtldprogram-aps.icann.org/statistics,All five ICANN regions have applicants
+Countries and territories represented — distinct official total,,not published as aggregate,https://newgtldprogram-aps.icann.org/statistics,Do not infer a distinct-country total from regional applicant counts
