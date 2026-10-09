@@ -128,6 +128,14 @@ The observation layer asks how formal ICANN rules translate into public mileston
 
 Participant observation may provide contextual understanding but also creates risks of selection bias, hindsight bias and perceived institutional endorsement. The project mitigates these by publicly disclosing the dual role, privileging traceable primary sources, recording uncertainty, avoiding privileged information, and distinguishing clearly between the City's published position and the author's independent analysis.
 
+### 6A.3 A first field note: the Reveal Day counting discrepancy
+
+The initial **Behind the Round** observation illustrates how the proposed method works in practice. ICANN publicly reported **1,616** paid applications proceeding on 22 September 2026, compared with **1,615** in the official Reveal Day aggregate of 7 October. A separately sourced, frozen 2026 secondary index observed on 8 October records **1,614** applications and 480 applicants. These are **not interchangeable observations**, because they refer to different source types, dates and publication scopes.
+
+ICANN's APS Applications page explicitly explains that application **WDO2627T-T45217** for **.wdo** is undergoing an administrative check and is therefore absent from the public application list. This accounts for a documented visibility distinction between the APS aggregate and the publicly available list, consistent with the secondary snapshot. It **does not** provide a verified explanation for why ICANN's own total changed from 1,616 to 1,615 before Reveal Day. The latter question remains open and is not attributed to a withdrawal or administrative outcome without evidence.
+
+The dated, corrigible case record and primary links appear in [Behind the Round](https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/). Such field notes are editorial observations, not amendments to the frozen RR1 data or its DOI. Future corrections require documented source provenance and may be reflected in subsequent working-paper revisions.
+
 ## 7. Reproducibility and publication model
 
 Connecting the Dots is published as a **living research publication** with two version layers:
