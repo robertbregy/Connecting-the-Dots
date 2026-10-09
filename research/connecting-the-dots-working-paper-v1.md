@@ -1,15 +1,15 @@
 # Connecting the Dots: Reconstructing Twenty-Five Years of Top-Level Domain Expansion as a Living Research Atlas
 
 **Robert Bregy**  
-**Working Paper v1.0-draft · Research Release RR1 · 9 October 2026**  
-**Status:** working paper; not peer reviewed.  
+**Working Paper v1.1-draft · RR1 evidence snapshot: 7 October 2026 · revised 10 October 2026**  
+**Status:** working paper; not peer reviewed. This living draft is updated independently of the immutable RR1 Zenodo deposit (published 9 October 2026).  
 **Living publication:** https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Abstract
 
 Top-level domains are usually studied through separate snapshots: the current DNS root, individual ICANN application rounds, registry agreements, contention records, or retrospective policy documents. This fragmentation makes it difficult to follow the full trajectory of a string from application to delegation, non-delegation, transfer, retirement, dispute, economic use, or later reappearance. Connecting the Dots addresses this problem by building a living research atlas that integrates formal application corpora, IANA root data, historical events, governance cases, economic classifications and social interpretations across more than twenty-five years of namespace expansion.
 
-The current research release covers the formal 2000, 2004 and 2012 application corpora and a frozen Reveal Day view of the 2026 New gTLD Round. It distinguishes applications, applied-for strings, delegated TLDs and current-root identities rather than collapsing them into a single count. The project also introduces cross-round analytical layers for contention, application outcomes, portfolio strategies, sectoral change, geographic and city namespaces, governance disputes and the social meaning of the DNS. The result is intended not as a static catalogue but as a reproducible, versioned research resource whose major evidence changes are published as milestone research releases.
+The current research release covers the formal 2000, 2004 and 2012 application corpora and a frozen Reveal Day view of the 2026 New gTLD Round. It distinguishes applications, applied-for strings, delegated TLDs and current-root identities rather than collapsing them into a single count. The project also introduces cross-round analytical layers for contention, application outcomes, portfolio strategies, sectoral change, geographic and city namespaces, governance disputes and the social meaning of the DNS. The result is intended not as a static catalogue but as a reproducible, versioned research resource whose major evidence changes are published as milestone research releases. For 2026, a separate event chronicle records consequential public steps during the live application round, while disclosing the author's participant-observer position in the City of Lugano's application and preserving a strict boundary between public evidence, editorial interpretation and archived research snapshots.
 
 ## 1. Introduction
 
@@ -107,6 +107,8 @@ Instead, the project separates:
 This structure makes historical comparison reproducible while preserving the ability to follow the round as it changes.
 
 ## 6A. Participant observation and the public event chronicle
+
+**Editorial revision note (10 October 2026).** The observational protocol extends the paper without modifying RR1 research evidence or its DOI. Dated event records have their own Git history. Public events must link to sources supporting the specific claims made, rather than generic programme announcements.
 
 The 2026 round creates a methodological opportunity unavailable to a purely retrospective atlas: it can be observed longitudinally as public milestones unfold. The project therefore maintains **Inside the Round** as a separately versioned *editorial event register*, not as an extension of the immutable RR1 application dataset. Its purpose is to record consequential public events, their dates, source links, process significance and uncertainties, without recreating an administrative application diary.
 
