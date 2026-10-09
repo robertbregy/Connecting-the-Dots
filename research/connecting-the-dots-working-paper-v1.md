@@ -39,7 +39,7 @@ Research Release RR1 integrates four formal application periods:
 - **2012:** 1,930 applications across 1,409 distinct strings.
 - **2026:** 1,615 active applications in the official ICANN Reveal Day aggregate. The locally frozen secondary string layer identifies 980 unique primary strings representing 1,608 applications associated with a primary string; six further secondary records are variant-only applications. The project does not claim a complete locally vendored 2026 APS application-level corpus at RR1.
 
-The Explorer contains 1,849 research records spanning current-root, historical and application-only identities, while the life-history layer contains 7,678 dated events.
+The Explorer core catalog contains 1,849 research records spanning current-root, historical and application-only identities. The frozen 2026 Reveal Day overlay contributes 939 additional net identities after deduplication (980 observed primary strings, 41 already present in the core), producing 2,788 currently explorable identities. The life-history layer contains 7,679 dated events.
 
 The data model also includes governance cases, economic cases, social cases, contention records, geographic analysis, registry concentration, sector classification and technical IANA profile data.
 
