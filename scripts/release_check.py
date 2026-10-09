@@ -681,6 +681,8 @@ if {q['id']:q['value'] for q in case['quantities']}!={'paid':1616,'official':161
     fail('Reveal Day discrepancy values altered without reviewed evidence')
 if case['trackedApplication']['id']!='WDO2627T-T45217' or case['trackedApplication']['string']!='.wdo':
     fail('Officially documented administrative-check record changed')
+if not case.get('revisionHistory') or case['revisionHistory'][-1]['date']!=case['revisedOn'] or case['revisionHistory'][-1]['changeKey']!='behindRevisionInitial':
+    fail('Unversioned field-note revision history')
 if len(case['sources'])<6 or not any(s['kind']=='secondary' for s in case['sources']):
     fail('Editorial case lacks provenance distinction')
 if not all(s['url'].startswith('https://') and s['labelKey'] for s in case['sources']):
@@ -713,6 +715,8 @@ for lang in LANGS:
         if val not in standalone: fail('Missing dated count or WDO application identifier '+lang)
     if '24 hours before' in standalone or '24 ore prima' in standalone:
         fail('Private application-planning details must not be published')
+    if standalone.count('data-editorial-revision=') != len(case['revisionHistory']):
+        fail('No visible dated editorial change history '+lang)
     check_internal_refs(route)
 
 # Working-paper revisions may evolve, but the dated RR1 evidence and citation do not.
