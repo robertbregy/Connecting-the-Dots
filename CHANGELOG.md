@@ -1,3 +1,10 @@
+# v0.7.66 — 2026-10-10
+
+- Completes JSON-LD Article metadata of the four Behind the Round pages by providing the project’s existing social preview image as the article image.
+- Shortens EN, IT, DE and FR article meta descriptions, without changing case content, source links or evidence-state labels.
+- Adds SEO regressions for the structured image and maximum description length.
+- Preserves immutable RR1, its DOI, the archived data pack and the dated public correction history.
+
 # v0.7.65 — 2026-10-10
 
 - Launches **Behind the Round**, a new four-language source-grounded observation collection linked from the ICANN 2026 menu, distinct from the process timeline and from the institutional .lugano story.
