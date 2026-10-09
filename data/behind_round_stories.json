@@ -105,6 +105,20 @@
         "ICANN changes the WDO application administrative-check status or APS visibility",
         "ICANN revises APS counts or releases a newly reconciled application-level public list",
         "A new independent analysis identifies an evidence-backed alternative reconciliation"
+      ],
+      "revisionHistory": [
+        {
+          "date": "2026-10-10",
+          "changeKey": "behindRevisionInitial",
+          "sourceIds": [
+            "icann-22sep",
+            "icann-7oct",
+            "icann-aps-stats",
+            "icann-aps-list",
+            "icann-aps-wdo",
+            "frozen-secondary"
+          ]
+        }
       ]
     }
   ]
