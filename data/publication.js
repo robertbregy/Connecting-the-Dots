@@ -1,19 +1,19 @@
 /* generated from publication.json; do not edit by hand */
 window.DOT_PUBLICATION={
-  version:'0.7.61',
-  releasedOn:'2026-10-09',
+  version:'0.7.62',
+  releasedOn:'2026-10-10',
   state:'reveal-day',
   freeze:true,
-  asOf:'2026-10-09',
+  asOf:'2026-10-10',
   revealAt:'2026-10-07T18:00:00Z',
   stringConfirmation:'2026-11-17',
   researchRelease:'RR1',
   researchSnapshot:'2026-10-07',
-  paperVersion:'1.0-draft',
+  paperVersion:'1.1-draft',
   paperPath:'research/connecting-the-dots-working-paper-v1.html',
   doi:'10.5281/zenodo.23262623',
   doiUrl:'https://doi.org/10.5281/zenodo.23262623',
   conceptDoi:null,
   archive:'Zenodo',
-  commit:'f995c982245f37fa34c30c57eee5c66b23a89737'
+  commit:'3a2c1c78d1527e7e184de63b28d4adbc2198f143'
 };
