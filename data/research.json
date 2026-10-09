@@ -33,14 +33,14 @@
     },
     {
       "round": 2026,
-      "applications": 1663,
+      "applications": 1615,
       "unique": null,
-      "geographic": null,
-      "community": null,
-      "idn": null,
+      "geographic": 15,
+      "community": 16,
+      "idn": 21,
       "delegated": null,
       "labelKey": "round2026",
-      "asOf": "2026-09-22"
+      "asOf": "2026-10-07"
     }
   ],
   "contention2012": [
