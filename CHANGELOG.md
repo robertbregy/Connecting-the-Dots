@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.7.57 — 2026-10-09
+
+**RR1 archived on Zenodo.** Research Release RR1 · Reveal Day 2026 now has the persistent DOI `10.5281/zenodo.23262623`. The DOI is propagated from `publication.json` into runtime publication metadata, `CITATION.cff`, structured Dataset metadata, the Research & citation interface, the research-release manifest, README and working-paper citation. The concept DOI is intentionally left unset until it is explicitly retrieved from Zenodo; the release DOI is not misrepresented as a concept DOI. Research datasets and RR1 evidence are unchanged.
+
 ## v0.7.56 — 2026-10-09
 
 **Publication metadata single source of truth + Working paper discoverability.** Added root `publication.json` as the canonical source for current site version, release date, research release and milestone dates. The build now generates `data/publication.js`, synchronizes package metadata, citation metadata and structured dataset metadata from that source, preventing footer / Methodology / citation drift. The Working paper now has its own entry in the Research navigation and a dedicated in-site landing section. Build metadata supports `GITHUB_SHA` when executed in GitHub Actions; manual browser-upload builds remain deterministic without pretending to know a future commit SHA. Research data and RR1 evidence are unchanged.

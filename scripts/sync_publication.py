@@ -43,6 +43,10 @@ browser_meta = {
     'researchSnapshot': meta.get('researchSnapshot'),
     'paperVersion': meta.get('paperVersion'),
     'paperPath': meta.get('paperPath'),
+    'doi': meta.get('doi'),
+    'doiUrl': meta.get('doiUrl'),
+    'conceptDoi': meta.get('conceptDoi'),
+    'archive': meta.get('archive'),
     'commit': commit,
 }
 lines = ['/* generated from publication.json; do not edit by hand */', 'window.DOT_PUBLICATION={']
@@ -65,6 +69,9 @@ date-released: "{released}"
 url: "{meta['deployment']}"
 repository-code: "{meta['repository']}"
 license: "CC-BY-4.0"
+identifiers:
+  - type: doi
+    value: "{meta.get('doi') or ''}"
 keywords:
   - DNS
   - ICANN
@@ -80,4 +87,11 @@ keywords:
 src = SRC.read_text(encoding='utf-8')
 src = re.sub(r'("version":")([^"]+)(")', rf'\g<1>{version}\g<3>', src, count=1)
 src = re.sub(r'("dateModified":")([^"]+)(")', rf'\g<1>{released}\g<3>', src, count=1)
+# Keep DOI in structured Dataset metadata in sync once an archival deposit exists.
+doi = meta.get('doi')
+if doi:
+    if '"identifier":"https://doi.org/' in src:
+        src = re.sub(r'"identifier":"https://doi.org/[^"]+"', f'"identifier":"https://doi.org/{doi}"', src, count=1)
+    else:
+        src = src.replace('"dateModified":"'+released+'"', '"dateModified":"'+released+'","identifier":"https://doi.org/'+doi+'"', 1)
 SRC.write_text(src, encoding='utf-8')

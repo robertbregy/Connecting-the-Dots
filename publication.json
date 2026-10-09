@@ -1,6 +1,6 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.56",
+  "version": "0.7.57",
   "releasedOn": "2026-10-09",
   "state": "reveal-day",
   "freeze": true,
@@ -12,5 +12,9 @@
   "paperVersion": "1.0-draft",
   "paperPath": "research/connecting-the-dots-working-paper-v1.html",
   "repository": "https://github.com/robertbregy/Connecting-the-Dots",
-  "deployment": "https://robertbregy.github.io/Connecting-the-Dots/"
+  "deployment": "https://robertbregy.github.io/Connecting-the-Dots/",
+  "doi": "10.5281/zenodo.23262623",
+  "doiUrl": "https://doi.org/10.5281/zenodo.23262623",
+  "conceptDoi": null,
+  "archive": "Zenodo"
 }

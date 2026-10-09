@@ -115,7 +115,7 @@ Connecting the Dots is published as a **living research publication** with two v
 
 RR1 is the **Reveal Day 2026** research release. RR2 is planned around **String Confirmation Day, 17 November 2026**.
 
-The repository includes machine-readable manifests, downloadable CSV datasets, data hashes, release history and a `CITATION.cff` record. A DOI is intentionally not stated until an archival deposit has actually been created.
+The repository includes machine-readable manifests, downloadable CSV datasets, data hashes, release history and a `CITATION.cff` record. RR1 is archived on Zenodo with DOI **10.5281/zenodo.23262623**, providing an immutable citation target for the Reveal Day 2026 research snapshot.
 
 ## 8. Limitations
 
@@ -147,4 +147,4 @@ Data pack: https://robertbregy.github.io/Connecting-the-Dots/downloads/connectin
 
 ## Suggested citation for RR1
 
-Bregy, Robert. 2026. *Connecting the Dots: A Living Research Atlas of Top-Level Domain Expansion*. Research Release 1: Reveal Day 2026. https://robertbregy.github.io/Connecting-the-Dots/
+Bregy, Robert (2026). *Connecting the Dots: A Living Research Atlas of Top-Level Domain Expansion*. Research Release 1: Reveal Day 2026. Zenodo. https://doi.org/10.5281/zenodo.23262623

@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.56
+# Connecting the Dots — v0.7.57
 
 **Connecting the Dots** is an independent, multilingual research and public-information project on the evolution of Internet top-level domains: applications, delegations, governance, economics, social meaning and the ICANN New gTLD Program.
 
@@ -6,9 +6,9 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.56 · 9 October 2026**
+**v0.7.57 · 9 October 2026**
 
-This release consolidates the living publication infrastructure. Root `publication.json` is now the **single source of truth** for current site version, release date, research release and milestone dates; build outputs, footer stamps, structured metadata and `CITATION.cff` are generated from it. The Working paper also has its own Research navigation entry. **Research Release RR1 · Reveal Day 2026** remains unchanged; no DOI is claimed until an archival deposit actually exists.
+This release completes the first archival publication loop. **Research Release RR1 · Reveal Day 2026** is now archived on Zenodo with DOI **10.5281/zenodo.23262623**. Root `publication.json` remains the single source of truth and now propagates the archival DOI into runtime metadata, citation metadata and structured Dataset metadata.
 
 The 2026 browsing layer remains frozen locally: **980 unique primary strings** observed in the secondary Reveal Day index, representing **1,608 applications associated with a primary string**, plus six variant-only application records in that secondary source. ICANN's official Reveal Day aggregate remains **1,615 applications / 481 applicants**. The project does **not** claim a complete locally vendored APS application-level corpus for 2026.
 
@@ -38,7 +38,7 @@ The project now has two version layers:
 
 Current research release: **RR1 · Reveal Day 2026**. The next planned research release is **RR2 · String Confirmation 2026**, triggered by ICANN's 17 November 2026 String Confirmation Day.
 
-Citation metadata are stored in [`CITATION.cff`](CITATION.cff). Zenodo-ready metadata are stored in [`.zenodo.json`](.zenodo.json). The research-release manifest and working paper are in [`research/`](research/). A DOI will be added only after an actual archival deposit has been created.
+Citation metadata are stored in [`CITATION.cff`](CITATION.cff). Zenodo-ready metadata are stored in [`.zenodo.json`](.zenodo.json). The research-release manifest and working paper are in [`research/`](research/). RR1 is archived on Zenodo: `10.5281/zenodo.23262623`.
 
 ## `.lugano`
 
@@ -58,13 +58,13 @@ Public CSV datasets and the downloadable data pack are exposed through the site.
 
 For browser-based GitHub publication use the release package named:
 
-`Connecting-the-Dots-v0.7.56-WEB-UPLOAD.zip`
+`Connecting-the-Dots-v0.7.57-WEB-UPLOAD.zip`
 
 Extract the archive and upload its contents to the repository root. The package deliberately stays below the project's browser-upload file ceiling and now includes this root `README.md`, so the repository landing page stays aligned with the deployed release.
 
 For the full source/build archive use:
 
-`Connecting-the-Dots-v0.7.56-COMPLETO.zip`
+`Connecting-the-Dots-v0.7.57-COMPLETO.zip`
 
 ## Release history
 

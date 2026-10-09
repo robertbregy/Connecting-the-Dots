@@ -11,11 +11,12 @@
       "icann2026RevealDay": "2026-10-07",
       "publicationAsOf": "2026-10-09"
     },
-    "status": "published online; DOI not yet assigned",
-    "doi": null,
+    "status": "published and archived on Zenodo",
+    "doi": "10.5281/zenodo.23262623",
     "canonicalUrl": "https://robertbregy.github.io/Connecting-the-Dots/",
     "paper": "research/connecting-the-dots-working-paper-v1.md",
-    "introducedInSiteVersion": "0.7.55"
+    "introducedInSiteVersion": "0.7.55",
+    "doiUrl": "https://doi.org/10.5281/zenodo.23262623"
   },
   "nextPlannedResearchRelease": {
     "id": "RR2",
@@ -30,5 +31,5 @@
     "A new research release is created when the underlying evidence set or a major derived analysis changes materially.",
     "Historical research releases remain archived and citable once a DOI/archive workflow is activated."
   ],
-  "currentSiteVersion": "0.7.56"
+  "currentSiteVersion": "0.7.57"
 }

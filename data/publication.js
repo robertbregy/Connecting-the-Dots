@@ -1,6 +1,6 @@
 /* generated from publication.json; do not edit by hand */
 window.DOT_PUBLICATION={
-  version:'0.7.56',
+  version:'0.7.57',
   releasedOn:'2026-10-09',
   state:'reveal-day',
   freeze:true,
@@ -11,5 +11,9 @@ window.DOT_PUBLICATION={
   researchSnapshot:'2026-10-07',
   paperVersion:'1.0-draft',
   paperPath:'research/connecting-the-dots-working-paper-v1.html',
+  doi:'10.5281/zenodo.23262623',
+  doiUrl:'https://doi.org/10.5281/zenodo.23262623',
+  conceptDoi:null,
+  archive:'Zenodo',
   commit:null
 };
