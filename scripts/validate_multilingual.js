@@ -8,7 +8,24 @@ const base='https://robertbregy.github.io/Connecting-the-Dots/';
 const languages=['en','it','de','fr'];
 const rootHtml=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const snapshot=JSON.parse(fs.readFileSync(path.join(root,'data/iana_snapshot.json'),'utf8'));
-const knownTranslationGaps=new Set(JSON.parse(fs.readFileSync(path.join(root,'scripts/known_i18n_gaps.json'),'utf8')).missingKeys);
+// A green build requires complete translations in every language, not a historical exception list.
+const canonicalTranslations=JSON.parse(fs.readFileSync(path.join(root,'data/translations.json'),'utf8'));
+const sourceTemplate=fs.readFileSync(path.join(root,'src/index.web.html'),'utf8');
+const applicationSource=fs.readFileSync(path.join(root,'assets/app.js'),'utf8');
+const requiredKeys=new Set([
+  ...Array.from(sourceTemplate.matchAll(/data-i18n="([^"]+)"/g),m=>m[1]),
+  ...Array.from(applicationSource.matchAll(/\b(?:t|tx)\(\s*['"]([A-Za-z0-9_]+)['"]\s*[,)]/g),m=>m[1])
+]);
+for(const theme of ['economics','social','contention','outcomes','disputes','strange'])
+  for(const year of ['2000','2004','2012','2026']) requiredKeys.add(theme+'Round'+year);
+for(const language of languages){
+  const translations=canonicalTranslations[language];
+  assert.ok(translations,language+' translation dictionary is missing');
+  for(const key of requiredKeys)
+    assert.ok(typeof translations[key]==='string'&&translations[key].trim(),language+' missing translation: '+key);
+}
+const translationKeys=new Set(languages.flatMap(lang=>Object.keys(canonicalTranslations[lang])));
+
 
 
 for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
@@ -44,15 +61,28 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   }
   for(const n of document.querySelectorAll('[data-i18n]')){
     const key=n.getAttribute('data-i18n');
-    if(!(key in translations)){
-      // Recorded v0.7.59 localization debt: never allow a *new* missing key.
-      assert.ok(knownTranslationGaps.has(key),page+' NEW untranslated key '+key);
-      continue;
-    }
+    assert.ok(Object.hasOwn(translations,key),page+' unlocalized key '+key);
     const value=key==='exploreIanaDate'?translations[key].replace('{date}',new Intl.DateTimeFormat({en:'en-US',it:'it-IT',de:'de-DE',fr:'fr-FR'}[language],{year:'numeric',month:'short',day:'numeric',timeZone:'UTC'}).format(new Date(snapshot.asOf+'T00:00:00Z'))):translations[key];
     const expected=parseHTML('<html><body><div id="value">'+value+'</div></body></html>').document.getElementById('value').textContent;
     assert.ok(n.textContent.includes(expected),page+' unlocalized '+key);
   }
+  // Detect unresolved dynamic captions and inaccessible link labels.
+  for(const n of document.querySelectorAll('.themeRoundCard p')){
+    const value=n.textContent.trim();
+    assert.ok(!translationKeys.has(value),page+' raw round-description key '+value);
+    assert.ok(value.length>24,page+' empty or truncated round-description text');
+  }
+  for(const n of document.querySelectorAll('[aria-label]')){
+    const value=n.getAttribute('aria-label')||'';
+    const tokens=value.match(/\b[a-z][A-Za-z0-9]*[A-Z][A-Za-z0-9]*\b/g)||[];
+    assert.ok(!tokens.some(token=>translationKeys.has(token)),page+' unresolved aria-label '+value);
+  }
+  const reveal=document.getElementById('round2026Grid');
+  assert.ok(reveal&&reveal.textContent.includes('263')&&reveal.textContent.includes('333'),page+' stale Reveal Day metrics');
+  const home=document.getElementById('cards');
+  assert.ok(home&&home.querySelector('.num').textContent.replace(/\D/g,'')==='1615',page+' obsolete 1,616 application total');
+  assert.ok(document.getElementById('demand2026Bars')?.textContent.includes('198'),page+' missing official regional applicant counts');
+  assert.ok(document.getElementById('research')?.textContent.includes('10.5281/zenodo.23262623'),page+' RR1 DOI is missing');
   for(const n of document.querySelectorAll('[src],[href]'))for(const attr of ['src','href']){
     const ref=n.getAttribute(attr);if(!ref||/^(https?:|data:|mailto:|tel:)/.test(ref))continue;
     if(ref.startsWith('#')){assert.ok(document.getElementById(decodeURIComponent(ref.slice(1))),page+' missing fragment '+ref);continue;}

@@ -1154,9 +1154,9 @@
   ],
   "pressFacts": [
     {
-      "num": 1616,
+      "num": 1615,
       "key": "pf2026",
-      "source": "https://www.icann.org/en/announcements/details/icann-confirms-number-of-applications-proceeding-in-the-2026-round-22-09-2026-en"
+      "source": "https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en"
     },
     {
       "num": 1930,
@@ -1475,62 +1475,67 @@
   ],
   "metricSources": {
     "2012": "https://newgtlds.icann.org/en/program-status/statistics",
-    "2026": "https://www.icann.org/en/announcements/details/icann-confirms-number-of-applications-proceeding-in-the-2026-round-22-09-2026-en",
+    "2026": "https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en",
     "geo2012": "https://newgtlds.icann.org/en/program-status/statistics"
   },
   "round2026": {
-    "applications": 1616,
+    "applications": 1615,
     "uniqueStrings": null,
-    "applicantOrganizations": null,
+    "applicantOrganizations": 481,
     "countriesTerritories": null,
-    "contentionSets": null,
-    "geographicApplications": null,
-    "communityApplications": null,
-    "brandApplications": null,
-    "idnVariantApplications": null,
+    "contentionSets": 263,
+    "geographicApplications": 15,
+    "communityApplications": 16,
+    "brandApplications": 333,
+    "idnVariantApplications": 21,
     "cityTerritorialStrings": null,
-    "topApplicantName": null,
-    "topApplicantApplications": null,
+    "topApplicantName": "Link Freedom Group Ltd",
+    "topApplicantApplications": 158,
     "topApplicantGroupName": null,
     "topApplicantGroupApplications": null,
     "topApplicantCountries": [],
     "revealDate": "2026-10-07T18:00:00Z",
     "stringConfirmationDate": "2026-11-17",
-    "asOf": "2026-09-22"
+    "asOf": "2026-10-07",
+    "icannRegionsRepresented": 5,
+    "observedUniquePrimaryStrings": 980,
+    "idnApplications": 21,
+    "variantApplications": 9,
+    "statisticsSource": "https://newgtldprogram-aps.icann.org/statistics"
   },
   "geoApplicantRegions2026": [
     {
       "name": "North America",
       "code": "NA",
-      "count": null,
+      "count": 198,
       "lat": 43,
       "lon": -100
     },
     {
       "name": "Europe",
       "code": "EUR",
-      "count": null,
+      "count": 111,
       "lat": 50,
       "lon": 15
     },
     {
       "name": "Asia-Pacific",
       "code": "AP",
-      "count": null,
+      "count": 156,
       "lat": 22,
       "lon": 110
     },
     {
       "name": "Latin America & Caribbean",
       "code": "LAC",
-      "count": null,
+      "count": 9,
       "lat": -15,
       "lon": -60
     },
     {
       "name": "Africa",
       "code": "AF",
-      "count": null,
+      "count": 7,
       "lat": 5,
       "lon": 20
     }

@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.60
+# Connecting the Dots — v0.7.61
 
 **Connecting the Dots** is an independent, multilingual research and public-information project on the evolution of Internet top-level domains: applications, delegations, governance, economics, social meaning and the ICANN New gTLD Program.
 
@@ -6,7 +6,11 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.60 · 9 October 2026**
+**v0.7.61 · 9 October 2026**
+
+This corrective release restores **all known missing editorial labels and explanatory copy across EN, IT, DE and FR**, including the economic-sector analysis, portfolio comparison, the .lugano public-interest narrative, Research & citation, downloads and cross-round comparisons. It removes obsolete pre-Reveal placeholders, reconciles the visible round-2026 dashboard to the official 7 October snapshot and adds strict multilingual build checks. The regional ICANN figures represent **481 applicants**, not 1,615 applications. RR1 and its Zenodo DOI remain unchanged.
+
+**Previous release v0.7.60** added the Inside the Round chronicle.
 
 This release adds **Inside the Round**, a multilingual editorial chronicle of the 2026 ICANN New gTLD Program. It follows significant public milestones from the start of the application window to its eventual outcomes, using `.lugano` as a disclosed participant-observer case while keeping the publication independent. The 7-event editorial register is separate from the frozen RR1 evidence, and each entry distinguishes past, current, scheduled, evolving and conditional stages.
 

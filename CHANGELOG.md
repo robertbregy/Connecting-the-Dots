@@ -1,3 +1,11 @@
+# v0.7.61 — 2026-10-09
+
+- Restores 121 previously allowlisted but untranslated keys across four languages and 35 additional runtime/editorial keys, including economic sector charts, portfolio comparisons, .lugano, Research & citation, accessible link labels and dynamic round narratives.
+- Reconciles the public-facing 2026 dashboard with ICANN's 7 October Reveal Day snapshot: 1,615 applications, 481 applicants, 263 preliminary contention sets, 15 geographic applications, 16 community applications, 333 .Brand applications, 21 IDN applications and 9 variant applications. The frozen 980-string secondary index remains explicitly derived, not an official unique-string total.
+- Corrects the regional visualization denominator: ICANN's counts sum to 481 *applicants*, not 1,615 applications, and are labelled accordingly. Unpublished distinct-country aggregates remain transparently unavailable rather than invented.
+- Replaces the known-i18n-gap exception with strict tests for missing source, dynamic and accessibility labels; detects stale Reveal Day data and checks RR1 DOI retention in the localized HTML.
+- Preserves Research Release RR1, the Zenodo DOI 10.5281/zenodo.23262623 and the independent Inside the Round editorial chronology. Does not alter the archived RR1 evidence or the frozen data pack.
+
 # v0.7.60 — 2026-10-09
 
 - Adds **Inside the Round** as a substantive ICANN 2026 section in EN, IT, DE and FR, positioned beside Round overview and the distinct .lugano case.
