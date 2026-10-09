@@ -148,11 +148,13 @@ def build_index() -> None:
     i18n_js = (DATA / "i18n_bundle.js").read_text(encoding="utf-8")
     world_js = (DATA / "worldmap.js").read_text(encoding="utf-8")
     publication_js = (DATA / "publication.js").read_text(encoding="utf-8")
+    reveal_2026_js = (DATA / "applications_2026_strings_reveal.js").read_text(encoding="utf-8")
     app_js = (ROOT / "assets" / "app.js").read_text(encoding="utf-8")
 
     html = html.replace('<link href="assets/style.css" rel="stylesheet"/>', '<style id="ctd-runtime-style">\n' + css + '\n</style>')
     for ref in ['data/data_bundle.js', 'data/i18n_bundle.js', 'data/worldmap.js']:
         html = html.replace(f'<script src="{ref}"></script>', '')
+    html = html.replace('<script src="data/applications_2026_strings_reveal.js"></script>', '<script id="ctd-2026-string-snapshot">\n' + reveal_2026_js + '\n</script>')
     html = html.replace('<script src="data/publication.js"></script><script src="assets/app.js"></script>', '')
 
     routing_js = (ROOT / "assets" / "legacy-routing.js").read_text(encoding="utf-8")
