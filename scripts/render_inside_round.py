@@ -15,6 +15,7 @@ import json
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://robertbregy.github.io/Connecting-the-Dots/"
 LANGS = ("en", "it", "de", "fr")
+PRIMARY_PREFIXES = ("https://www.icann.org/", "https://newgtldprogram.icann.org/", "https://newgtldprogram-aps.icann.org/", "https://www.lugano.ch/")
 STATUS = {
     "observed": "insideStateObserved",
     "current": "insideStateCurrent",
@@ -25,6 +26,7 @@ STATUS = {
 SCOPE = {
     "program": "insideScopeProgram",
     "program-and-case": "insideScopeProgramCase",
+    "case": "insideScopeCase",
     "possibility": "insideScopePossibility",
 }
 
@@ -58,6 +60,7 @@ h2{font-size:1.45rem;line-height:1.25}p{margin:0 0 14px}.eyebrow{font-weight:800
 .insideRoundEntry h3{font-size:1.2rem;margin:0 0 8px}
 .insideRoundEntry p{font-size:.98rem;color:var(--muted)}
 .insideRoundEntry a{font-size:.83rem;overflow-wrap:anywhere}
+.insideRoundSources{display:flex;flex-wrap:wrap;column-gap:14px;row-gap:6px;margin-top:9px}
 .muted{color:var(--muted);font-size:.94rem}
 footer{border-top:1px solid var(--border);color:var(--muted);font-size:.9rem;padding-bottom:36px}
 @media(max-width:760px){.insideRoundLenses{grid-template-columns:1fr}.panel{padding:18px}.insideRoundEntry{padding:15px}}
@@ -78,8 +81,15 @@ def load():
         ids.add(event["id"])
         if event["state"] not in STATUS or event["scope"] not in SCOPE:
             raise ValueError("Invalid timeline state / scope: " + event["id"])
-        if not event["source"].startswith(("https://www.icann.org/", "https://newgtldprogram.icann.org/")):
-            raise ValueError("Public ICANN source missing: " + event["id"])
+        if not event["source"].startswith(PRIMARY_PREFIXES):
+            raise ValueError("Public primary source missing: " + event["id"])
+        for extra in event.get("extraSources", []):
+            if not extra.get("source", "").startswith(PRIMARY_PREFIXES) or not extra.get("labelKey"):
+                raise ValueError("Unattributed supplementary source: " + event["id"])
+        for language in LANGS:
+            for label in [event.get("sourceLabelKey"), *[extra["labelKey"] for extra in event.get("extraSources", [])]]:
+                if label and not tr.get(language, {}).get(label):
+                    raise ValueError("Missing event source label " + language + "/" + label)
         when = date.fromisoformat(event["date"]) if event.get("date") else None
         until = date.fromisoformat(event["endDate"]) if event.get("endDate") else None
         today = date.fromisoformat(data["lastReviewed"])
@@ -116,7 +126,13 @@ def timeline_markup(data, tr, lang, dynamic=False):
         out.append('<div class="insideRoundMeta">' + date_text + copy(STATUS[event["state"]], cls="insideRoundState") + copy(SCOPE[event["scope"]], cls="insideRoundScope") + '</div>')
         out.append(copy(event["titleKey"], tag="h3"))
         out.append(copy(event["bodyKey"], tag="p"))
-        out.append('<a href="' + h(event["source"], quote=True) + '" rel="noopener noreferrer" target="_blank">ICANN · ' + h(texts["insideSourcesLabel"]) + ' ↗</a>')
+        source_links = [(event["source"], event.get("sourceLabelKey"))]
+        source_links.extend((extra["source"], extra["labelKey"]) for extra in event.get("extraSources", []))
+        anchors = []
+        for source, key in source_links:
+            label = texts[key] if key else "ICANN · " + texts["insideSourcesLabel"]
+            anchors.append('<a href="' + h(source, quote=True) + '" rel="noopener noreferrer" target="_blank">' + h(label) + ' ↗</a>')
+        out.append('<div class="insideRoundSources">' + " · ".join(anchors) + "</div>")
         out.append('</li>')
     out.append('</ol>')
     return "\n".join(out)
