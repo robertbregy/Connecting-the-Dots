@@ -89,6 +89,8 @@ for(const language of ['en','it','de','fr']){
  assert.equal(b.url().searchParams.get('tab'),'how',language+' chapter tab');
  assert.equal(b.url().hash,'#how-part-5',language+' chapter hash');
  assert.equal(mobile.value,'how#how-part-5',language+' chapter reflected on mobile');
+ assert.equal(menu.querySelector('.tab.active').dataset.anchor,'how-part-5',language+' one active chapter after navigation');
+ for(const link of b.document.querySelectorAll('[data-language]'))assert.equal(new URL(link.getAttribute('href')).hash,'#how-part-5',language+' localized link keeps chapter');
  assert.equal(trigger.getAttribute('aria-expanded'),'false',language+' dropdown closes on navigation');
  b.back();
  assert.equal(b.url().hash,'#how-part-3',language+' back restores chapter');
