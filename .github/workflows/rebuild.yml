@@ -1,8 +1,6 @@
 name: Rebuild published site
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
