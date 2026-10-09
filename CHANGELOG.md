@@ -1,3 +1,13 @@
+# v0.7.64 — 2026-10-10
+
+- Makes **How it works** a proper disclosure menu beside **Themes**, **ICANN 2026** and **Data & method** in EN, IT, DE and FR.
+- Adds six direct navigation destinations: overview plus five existing thematic groups, without removing or rewriting any substantive content.
+- Eliminates the redundant five-chip How section table of contents. Other long-section navigation stays unchanged.
+- Preserves per-chapter deep links (`?tab=how#how-part-N`) when the app updates URLs, changes language and uses browser history.
+- Fixes the mobile section chooser so every How chapter has a unique option value and scrolls to its intended anchor.
+- Keeps disclosure accessibility semantics, keyboard Escape and close-on-selection behavior; adds static, multilingual and navigation-state regressions.
+- No changes to the historical dataset, archived RR1 release, research DOI or working paper.
+
 # v0.7.63 — 2026-10-10
 
 - Refines the four localized home-page SEO titles to reduce search-result truncation while preserving the site's primary research focus.
