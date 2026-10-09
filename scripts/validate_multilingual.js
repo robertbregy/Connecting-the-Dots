@@ -52,6 +52,26 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.equal(document.querySelector('meta[name="description"]').getAttribute('content'),translations.metaDescription);
   assert.ok(document.querySelector('[data-i18n="heroBody"]').textContent.length>50);
   assert.equal(document.getElementById('langSelect').value,language);
+  // All four languages must expose the same disclosure and six real how-to anchors.
+  const howMenu=document.querySelector('.navMenu[data-label-key="tabHow"]');
+  assert.ok(howMenu,page+' missing How disclosure');
+  const howTrigger=howMenu.querySelector('.navMenuTrigger');
+  assert.equal(howTrigger.getAttribute('aria-controls'),'navHowDropdown',page+' How dropdown target');
+  assert.equal(howTrigger.getAttribute('aria-expanded'),'false',page+' closed How disclosure on entry');
+  const howLinks=[...howMenu.querySelectorAll('#navHowDropdown .tab')];
+  const howIds=['how','how-part-1','how-part-3','how-part-5','how-part-8','how-part-10'];
+  assert.deepEqual(howLinks.map(a=>a.dataset.anchor),howIds,page+' complete How table of contents');
+  for(const link of howLinks){
+    const key=link.dataset.i18n,anchor=link.dataset.anchor;
+    assert.equal(link.dataset.target,'how',page+' incorrect How parent');
+    assert.equal(link.textContent.trim(),translations[key],page+' untranslated How chapter '+key);
+    assert.ok(document.getElementById(anchor),page+' How chapter anchor missing '+anchor);
+    assert.ok(link.getAttribute('href').includes('#'+anchor),page+' chapter permalink lost: '+anchor);
+  }
+  assert.equal(document.querySelector('#how > .sectionToc'),null,page+' redundant How subnavigation boxes');
+  const mobileChoices=[...document.querySelectorAll('#mobileNav option')].map(opt=>opt.getAttribute('value'));
+  for(const anchor of howIds)assert.ok(mobileChoices.includes('how#'+anchor),page+' missing mobile How chapter '+anchor);
+  assert.ok(!mobileChoices.includes('how'),page+' mobile How sections must have unique values');
   const tocLinks=[...document.querySelectorAll('.sectionToc .tocLink')];
   assert.ok(tocLinks.every(n=>(n.getAttribute('title')||'').length<=180),page+' overlong navigation tooltip');
   const seen=new Set();
