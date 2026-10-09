@@ -106,6 +106,26 @@ Instead, the project separates:
 
 This structure makes historical comparison reproducible while preserving the ability to follow the round as it changes.
 
+## 6A. Participant observation and the public event chronicle
+
+The 2026 round creates a methodological opportunity unavailable to a purely retrospective atlas: it can be observed longitudinally as public milestones unfold. The project therefore maintains **Inside the Round** as a separately versioned *editorial event register*, not as an extension of the immutable RR1 application dataset. Its purpose is to record consequential public events, their dates, source links, process significance and uncertainties, without recreating an administrative application diary.
+
+The author is professionally involved in the City of Lugano's application for `.lugano`. This is disclosed as a **participant-observer position**, not presented as independent verification. The public record is the primary evidence for program status and application outcomes. Non-public information, privileged administrative material, personal data and unsupported recollections are excluded. Observations derived from direct involvement are clearly identified, dated and separated from verified public facts, editorial interpretations and future scenarios.
+
+For each event, the chronicle should preserve a stable event identifier, its public source and publication/review date, the effective event date (or date range), scope (program-wide or `.lugano`), epistemic label and status (observed, current, scheduled, evolving or conditional). Corrections must be traceable. A scheduled milestone is not evidence that an individual application has passed that stage. Likewise a string's presence in Reveal Day data does not make it a delegated TLD.
+
+The objective is to document a rarely observable institutional process from application through subsequent milestones and eventual outcomes, including delay, withdrawal, objection, contention or non-delegation if these occur. The experience of deciding to pursue `.lugano` shortly before the submission deadline may ultimately provide useful retrospective context, but should not be narrated as an independently established historical fact until it can be published with appropriate evidence and without exposing restricted deliberations.
+
+Three publication layers remain distinct: (1) immutable research snapshots (RR1, RR2, etc.); (2) a corrigible, dated public-event chronicle; and (3) technical/editorial site releases. A correction to an event narrative does not by itself warrant a new research DOI; a material change in the underlying research dataset does.
+
+### 6A.1 Research questions
+
+The observation layer asks how formal ICANN rules translate into public milestones and practical governance choices; how string contention, stakeholder participation and uncertainty shape outcomes; and how city-name applications raise questions of public stewardship, trust, institutional representation and the division between DNS infrastructure and local digital-service policy. These are questions to investigate, not findings already established by the 2026 application.
+
+### 6A.2 Limits of the observational method
+
+Participant observation may provide contextual understanding but also creates risks of selection bias, hindsight bias and perceived institutional endorsement. The project mitigates these by publicly disclosing the dual role, privileging traceable primary sources, recording uncertainty, avoiding privileged information, and distinguishing clearly between the City's published position and the author's independent analysis.
+
 ## 7. Reproducibility and publication model
 
 Connecting the Dots is published as a **living research publication** with two version layers:
