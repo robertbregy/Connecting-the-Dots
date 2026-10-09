@@ -56,7 +56,7 @@ lines[-1] = lines[-1].rstrip(',')
 lines.append('};')
 (DATA / 'publication.js').write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
-# Citation metadata follows the current site release.
+# Citation metadata identifies the immutable research release, not each technical site release.
 cff = f'''cff-version: 1.2.0
 message: "If you use Connecting the Dots in research, please cite the living research publication and the specific research release used."
 title: "Connecting the Dots: A Living Research Atlas of Top-Level Domain Expansion"
@@ -64,7 +64,7 @@ type: dataset
 authors:
   - family-names: "Bregy"
     given-names: "Robert"
-version: "{version}"
+version: "{meta['researchRelease']}"
 date-released: "{released}"
 url: "{meta['deployment']}"
 repository-code: "{meta['repository']}"
