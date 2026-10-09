@@ -209,6 +209,7 @@ def render_page(data,tr,lang,pub):
     structured={
       "@context":"https://schema.org","@type":"Article",
       "headline":t["behindCaseTitle"],"description":t["behindMetaDescription"],
+      "image":BASE+"assets/og-preview.png",
       "inLanguage":lang,"datePublished":case["publishedOn"],"dateModified":case["revisedOn"],
       "mainEntityOfPage":url,"isAccessibleForFree":True,
       "author":{"@type":"Person","name":"Robert Bregy"},
