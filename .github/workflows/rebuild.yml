@@ -2,12 +2,24 @@ name: Rebuild published site
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'feat/**'
+    paths:
+      - 'src/**'
+      - 'assets/**'
+      - 'scripts/**'
+      - 'data/translations.json'
+      - 'data/release_history.json'
+      - 'publication.json'
+      - 'build.py'
 
 permissions:
   contents: write
 
 concurrency:
-  group: connecting-the-dots-rebuild
+  group: connecting-the-dots-rebuild-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
