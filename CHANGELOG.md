@@ -1,3 +1,11 @@
+# v0.7.67 — 2026-10-10
+
+- Clarifies the ICANN 2026 taxonomy: **Timeline** is the sourced chronological register; **Field Notes** is the separately revisable participant-observer research collection.
+- Renames the public navigation, page headings and SEO titles in all four languages: IT **Cronologia / Note dal campo**, EN **Timeline / Field Notes**, DE **Chronologie / Beobachtungen**, FR **Chronologie / Carnet de terrain**.
+- Aligns research-directory links and the living working paper. Earlier release histories retain their historical wording.
+- Preserves old `?tab=inside-round`, `?tab=behind-round`, `/inside-the-round/{lang}/` and `/behind-the-round/{lang}/` URLs, canonicals and hreflang tags to avoid broken links or SEO resets.
+- Adds naming consistency checks; no changes to the content of events, observation evidence, RR1 data, date of RR1 publication or Zenodo DOI.
+
 # v0.7.66 — 2026-10-10
 
 - Completes JSON-LD Article metadata of the four Behind the Round pages by providing the project’s existing social preview image as the article image.
