@@ -103,6 +103,20 @@ for(const language of ['en','it','de','fr']){
  assert.equal(mobile.value,'reveal',language+' mobile returns to regular section');
 }
 console.log('Validated How disclosure, six chapter links, mobile selection and Back/Forward in four languages.');
+for(const language of ['en','it','de','fr']){
+ const b=deliveryFixture(language,false,'?tab=behind-round#behind-round');
+ const section=b.document.getElementById('behind-round');
+ assert.equal(b.document.body.dataset.activeTab,'behind-round',language+' field-note direct tab');
+ assert.equal(b.document.getElementById('mobileNav').value,'behind-round',language+' field-note mobile navigation');
+ assert.equal(section.querySelectorAll('.behindFinding').length,2,language+' two separate explanatory states');
+ assert.ok(section.textContent.includes('WDO2627T-T45217'),language+' official record in story');
+ assert.ok(b.document.querySelector('.navMenu[data-label-key="navRound"]').classList.contains('active'),language+' ICANN 2026 dropdown selected');
+ b.run('activateTab("inside-round",true)');
+ assert.equal(b.document.body.dataset.activeTab,'inside-round',language+' return to chronology');
+ b.back();
+ assert.equal(b.document.body.dataset.activeTab,'behind-round',language+' back restores field-note section');
+}
+console.log('Validated Behind the Round navigation and story evidence states across four languages.');
 const flush=()=>new Promise(resolve=>setImmediate(resolve));
 async function validateAsyncDelivery(){
  for(const [language,alias] of [['en',true],['en',false],['it',false],['de',false],['fr',false]]){
