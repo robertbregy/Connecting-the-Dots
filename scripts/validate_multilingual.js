@@ -35,6 +35,8 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.equal(document.querySelector('meta[name="description"]').getAttribute('content'),translations.metaDescription);
   assert.ok(document.querySelector('[data-i18n="heroBody"]').textContent.length>50);
   assert.equal(document.getElementById('langSelect').value,language);
+  const tocLinks=[...document.querySelectorAll('.sectionToc .tocLink')];
+  assert.ok(tocLinks.every(n=>(n.getAttribute('title')||'').length<=180),page+' overlong navigation tooltip');
   const seen=new Set();
   for(const n of document.querySelectorAll('[id]')){assert.ok(!seen.has(n.id),page+' duplicate id '+n.id);seen.add(n.id);}
   for(const id of ['cards','curated2000','processGrid','namespaceDimensions','domainLifecycle','dnsCapabilities','applicationModels','accessModels','successFramework','strangeGridAll','semanticDriftGrid','dnsOddities','pressFacts','sourceList','trustLadder','beyondCases','geoMap','demand2012Bars','rsp2026Bars','luganoRoadmap','explorerTableBody']){
