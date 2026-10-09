@@ -1,3 +1,12 @@
+# v0.7.62 — 2026-10-10
+
+- Audits the observation layer against ICANN's published 2026 timetable and the City of Lugano's official project page, without treating an application as a delegated TLD.
+- Adds direct ICANN APS source attribution for the .lugano application, a separately dated institutional publication milestone, and the announced 17 November 2026–16 March 2027 community-input window.
+- Improves all four languages and the shared event renderer so each milestone preserves independently attributable primary sources.
+- Fixes a citation bug: GitHub builds now preserve the original 9 October 2026 RR1 release date in CITATION.cff instead of changing it whenever the website is updated.
+- Revises the independent working paper to v1.1-draft, with explicit revision provenance, without changing RR1 data or its Zenodo DOI.
+- Strengthens release regression tests for chronology sources, visible links, citation integrity and multilingual consistency. Keeps the frozen downloadable evidence pack unchanged.
+
 # v0.7.61 — 2026-10-09
 
 - Restores 121 previously allowlisted but untranslated keys across four languages and 35 additional runtime/editorial keys, including economic sector charts, portfolio comparisons, .lugano, Research & citation, accessible link labels and dynamic round narratives.
