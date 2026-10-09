@@ -83,7 +83,7 @@ for(const language of ['en','it','de','fr']){
  assert.equal(menu.querySelector('.tab.active').dataset.anchor,'how-part-3',language+' selected chapter');
  assert.equal(b.document.querySelector('#how > .sectionToc'),null,language+' no duplicate How pills');
  assert.equal(b.document.querySelector('#navHowDropdown .tab[data-anchor="how-part-5"]').getAttribute('href').endsWith('#how-part-5'),true,language+' proper chapter href');
- b.run('toggleNavMenu(document.querySelector(".navMenu[data-label-key=\\\"tabHow\\\"]"))');
+ b.run('toggleNavMenu(document.getElementById("navHowDropdown").closest(".navMenu"))');
  assert.equal(trigger.getAttribute('aria-expanded'),'true',language+' disclosure opens');
  b.run('navigateToTabAnchor("how","how-part-5")');
  assert.equal(b.url().searchParams.get('tab'),'how',language+' chapter tab');
