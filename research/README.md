@@ -11,7 +11,7 @@ This directory contains the scholarly-publication layer of **Connecting the Dots
 **RR1 · Reveal Day 2026**  
 Published online: 9 October 2026  
 Evidence milestone: ICANN Reveal Day, 7 October 2026  
-Current site version: v0.7.63  
+Current site version: v0.7.64  
 RR1 introduced in site version: v0.7.55
 
 RR1 is archived on Zenodo with DOI **10.5281/zenodo.23262623**. This DOI identifies the immutable Reveal Day 2026 research release; a concept DOI is not stated until explicitly verified from Zenodo.
