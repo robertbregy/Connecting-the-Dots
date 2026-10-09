@@ -62,7 +62,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   const howIds=['how','how-part-1','how-part-3','how-part-5','how-part-8','how-part-10'];
   assert.deepEqual(howLinks.map(a=>a.dataset.anchor),howIds,page+' complete How table of contents');
   for(const link of howLinks){
-    const key=link.dataset.i18n,anchor=link.dataset.anchor;
+    const key=link.getAttribute('data-i18n'),anchor=link.getAttribute('data-anchor');
     assert.equal(link.dataset.target,'how',page+' incorrect How parent');
     assert.equal(link.textContent.trim(),translations[key],page+' untranslated How chapter '+key);
     assert.ok(document.getElementById(anchor),page+' How chapter anchor missing '+anchor);
