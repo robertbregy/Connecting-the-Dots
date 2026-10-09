@@ -6,7 +6,6 @@
     "id": "RR1",
     "label": "Reveal Day 2026",
     "publishedOn": "2026-10-09",
-    "siteVersion": "0.7.55",
     "dataSnapshot": {
       "iana": "2026-10-04",
       "icann2026RevealDay": "2026-10-07",
@@ -15,7 +14,8 @@
     "status": "published online; DOI not yet assigned",
     "doi": null,
     "canonicalUrl": "https://robertbregy.github.io/Connecting-the-Dots/",
-    "paper": "research/connecting-the-dots-working-paper-v1.md"
+    "paper": "research/connecting-the-dots-working-paper-v1.md",
+    "introducedInSiteVersion": "0.7.55"
   },
   "nextPlannedResearchRelease": {
     "id": "RR2",
@@ -29,5 +29,6 @@
     "Technical releases may fix code, accessibility, editorial wording or presentation without creating a new research release.",
     "A new research release is created when the underlying evidence set or a major derived analysis changes materially.",
     "Historical research releases remain archived and citable once a DOI/archive workflow is activated."
-  ]
+  ],
+  "currentSiteVersion": "0.7.56"
 }

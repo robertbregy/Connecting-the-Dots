@@ -147,4 +147,4 @@ Data pack: https://robertbregy.github.io/Connecting-the-Dots/downloads/connectin
 
 ## Suggested citation for RR1
 
-Bregy, Robert. 2026. *Connecting the Dots: A Living Research Atlas of Top-Level Domain Expansion*. Research Release 1: Reveal Day 2026. Version 0.7.55. https://robertbregy.github.io/Connecting-the-Dots/
+Bregy, Robert. 2026. *Connecting the Dots: A Living Research Atlas of Top-Level Domain Expansion*. Research Release 1: Reveal Day 2026. https://robertbregy.github.io/Connecting-the-Dots/

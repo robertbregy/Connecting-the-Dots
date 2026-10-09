@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.55
+# Connecting the Dots — v0.7.56
 
 **Connecting the Dots** is an independent, multilingual research and public-information project on the evolution of Internet top-level domains: applications, delegations, governance, economics, social meaning and the ICANN New gTLD Program.
 
@@ -6,9 +6,9 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.55 · 9 October 2026**
+**v0.7.56 · 9 October 2026**
 
-This release formalizes **Connecting the Dots as a living research publication**. It adds **Research Release RR1 · Reveal Day 2026**, a dedicated Research & citation section, `CITATION.cff`, Zenodo-ready archival metadata and a methodological working paper draft. Technical site versions (`v0.x.y`) are now explicitly separated from milestone research releases (`RR1`, `RR2`, …). No DOI is claimed until an archival deposit actually exists.
+This release consolidates the living publication infrastructure. Root `publication.json` is now the **single source of truth** for current site version, release date, research release and milestone dates; build outputs, footer stamps, structured metadata and `CITATION.cff` are generated from it. The Working paper also has its own Research navigation entry. **Research Release RR1 · Reveal Day 2026** remains unchanged; no DOI is claimed until an archival deposit actually exists.
 
 The 2026 browsing layer remains frozen locally: **980 unique primary strings** observed in the secondary Reveal Day index, representing **1,608 applications associated with a primary string**, plus six variant-only application records in that secondary source. ICANN's official Reveal Day aggregate remains **1,615 applications / 481 applicants**. The project does **not** claim a complete locally vendored APS application-level corpus for 2026.
 
@@ -50,19 +50,21 @@ Connecting the Dots remains a personal, independent research project. Its interp
 
 ## Data and reproducibility
 
+Current publication metadata are maintained once in root `publication.json`. The build propagates them to runtime labels, footer/version stamps, structured metadata and citation metadata. When built in GitHub Actions, `GITHUB_SHA` can also be embedded as the build commit; manual browser-upload builds intentionally leave that field empty rather than guessing a commit that does not yet exist.
+
 Public CSV datasets and the downloadable data pack are exposed through the site. The full source release also retains build scripts, validation checks and frozen evidence used to reproduce the publication. The visitor-facing site performs no live 2026 inventory fetch: the Reveal Day browsing layer is vendored locally for deterministic results.
 
 ## Deployment
 
 For browser-based GitHub publication use the release package named:
 
-`Connecting-the-Dots-v0.7.55-WEB-UPLOAD.zip`
+`Connecting-the-Dots-v0.7.56-WEB-UPLOAD.zip`
 
 Extract the archive and upload its contents to the repository root. The package deliberately stays below the project's browser-upload file ceiling and now includes this root `README.md`, so the repository landing page stays aligned with the deployed release.
 
 For the full source/build archive use:
 
-`Connecting-the-Dots-v0.7.55-COMPLETO.zip`
+`Connecting-the-Dots-v0.7.56-COMPLETO.zip`
 
 ## Release history
 

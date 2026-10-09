@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.7.56 — 2026-10-09
+
+**Publication metadata single source of truth + Working paper discoverability.** Added root `publication.json` as the canonical source for current site version, release date, research release and milestone dates. The build now generates `data/publication.js`, synchronizes package metadata, citation metadata and structured dataset metadata from that source, preventing footer / Methodology / citation drift. The Working paper now has its own entry in the Research navigation and a dedicated in-site landing section. Build metadata supports `GITHUB_SHA` when executed in GitHub Actions; manual browser-upload builds remain deterministic without pretending to know a future commit SHA. Research data and RR1 evidence are unchanged.
+
+
 ## v0.7.55 · 9 October 2026
 
 - Formalized **Connecting the Dots** as a **living research publication** rather than only a website.
