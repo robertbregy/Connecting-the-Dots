@@ -203,7 +203,8 @@ def validate_index() -> None:
     if 'src="data/data_bundle.js' in html or 'window.DOT_DATA=' in html:
         marker='window.DOT_DATA=' if 'window.DOT_DATA=' in html else 'src="data/data_bundle.js'
         i=html.index(marker)
-        print(f"DIAGNOSTIC: rendered root bytes={len(html)} marker={marker!r} offset={i}; nearby={html[max(i-120,0):i+130]!r}",flush=True)
+        print(f"DIAGNOSTIC: rendered root bytes={len(html)} marker={marker!r} offset={i}; nearby={html[max(i-350,0):i+130]!r}",flush=True)
+        print(f"DIAGNOSTIC: tag counts style={html.count('<style')} /style={html.count('</style>')} script={html.count('<script')} /script={html.count('</script>')} ctdData={html.count('id=\"ctd-data-bundle\"')} start={html.find('<script id=\"ctd-data-bundle\"')} end={html.find('</style>')} first400={html[:400]!r}",flush=True)
         raise SystemExit("Full data must not be embedded in generated language pages")
     if 'role="menu"' in html or 'role="menuitem"' in html:
         raise SystemExit("Disclosure navigation must not claim the ARIA menu pattern")
