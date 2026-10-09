@@ -1,3 +1,12 @@
+# v0.7.65 — 2026-10-10
+
+- Launches **Behind the Round**, a new four-language source-grounded observation collection linked from the ICANN 2026 menu, distinct from the process timeline and from the institutional .lugano story.
+- Publishes Case 01, the Reveal Day counts discrepancy, explicitly distinguishing the documented exclusion of .wdo from the public APS list from the **unexplained** 1,616→1,615 change between 22 September and 7 October.
+- Uses an attributed, versioned JSON editorial register, preserving primary ICANN evidence, the secondary frozen index, review dates and conditions for future amendments.
+- Generates independent, crawlable EN/IT/DE/FR article pages with canonical URLs, reciprocal hreflang, structured data, and cross-links from Inside the Round.
+- Adds regression checks to prevent disappearance of the story, missing translations/sources, corrupted sitemap entries and false claims that editorial changes replace research release RR1.
+- No changes to frozen application corpora, RR1 DOI, evidence ZIP, or the 9 October 2026 research-release citation date.
+
 # v0.7.64 — 2026-10-10
 
 - Makes **How it works** a proper disclosure menu beside **Themes**, **ICANN 2026** and **Data & method** in EN, IT, DE and FR.
