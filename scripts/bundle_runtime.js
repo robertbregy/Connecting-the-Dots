@@ -90,6 +90,37 @@ const leverHeaders=['id','label','description'];
 writeCsv('data/control_levers.csv',leverHeaders,(window.DOT_DATA.controlLevers||[]).map(r=>({id:r.id||'',label:r.label||'',description:r.description||''})));
 
 
+// Generate the frozen Reveal Day 2026 string snapshot from its canonical CSV.
+const snapshot2026=JSON.parse(fs.readFileSync(path.join(root,'data/application_2026_snapshot.json'),'utf8'));
+const inventoryMeta=snapshot2026.stringInventory||{};
+const rows2026=csvRecords('data/applications_2026_strings_reveal.csv').map(r=>({
+  string:r.string||'',
+  unicode_string:r.unicode_string||'',
+  applications:Number(r.applications||0),
+  applicant:r.applicant||'',
+  category:r.category||'',
+  contention_set:r.contention_set===''?null:Number(r.contention_set),
+  is_brand:String(r.is_brand).toLowerCase()==='true',
+  is_community:String(r.is_community).toLowerCase()==='true',
+  is_geo:String(r.is_geo).toLowerCase()==='true',
+  is_idn:String(r.is_idn).toLowerCase()==='true'
+}));
+if(rows2026.length!==Number(inventoryMeta.observedStrings||0))throw new Error('Frozen 2026 string snapshot row count mismatch');
+if(rows2026.reduce((n,r)=>n+r.applications,0)!==Number(inventoryMeta.representedPrimaryApplications||0))throw new Error('Frozen 2026 represented-application count mismatch');
+const payload2026={
+  schemaVersion:snapshot2026.schemaVersion||1,
+  snapshot:inventoryMeta.snapshot||snapshot2026.snapshot,
+  observedAt:inventoryMeta.observedAt||'',
+  source:inventoryMeta.source||'',
+  role:inventoryMeta.role||'',
+  license:inventoryMeta.license||'',
+  totalStrings:Number(inventoryMeta.observedStrings||rows2026.length),
+  representedPrimaryApplications:Number(inventoryMeta.representedPrimaryApplications||0),
+  note:'Frozen string-level reproduction of the Reveal Day secondary index. It does not constitute the complete application-level APS corpus; six secondary-index live applications are variant-only applications for existing TLDs and therefore are not represented as new primary strings.',
+  data:{total:rows2026.length,rows:rows2026}
+};
+fs.writeFileSync(path.join(root,'data/applications_2026_strings_reveal.js'),`/* generated from applications_2026_strings_reveal.csv + application_2026_snapshot.json */\nwindow.CTD2026_STRING_SNAPSHOT=${JSON.stringify(payload2026)};\n`);
+
 write('data/i18n_bundle.js','DOT_I18N',JSON.parse(fs.readFileSync(path.join(root,'data/translations.json'),'utf8')));
 
-console.log('Generated data/data_bundle.js and data/i18n_bundle.js');
+console.log('Generated data/data_bundle.js, data/i18n_bundle.js and frozen 2026 string snapshot');
