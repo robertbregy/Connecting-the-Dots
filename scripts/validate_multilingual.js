@@ -74,6 +74,8 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.ok(standalone.includes(translations.behindTitle)&&standalone.includes('WDO2627T-T45217'),page+' translated field note missing');
   const articleSchema=JSON.parse(standaloneDocument.querySelector('script[type="application/ld+json"]').textContent);
   assert.equal(articleSchema.dateModified,'2026-10-10',page+' dated field-note revision missing');
+  assert.equal(articleSchema.image,base+'assets/og-preview.png',page+' field-note Article image');
+  assert.ok(translations.behindMetaDescription.length<=160,page+' overlong field-note description');
   assert.equal(articleSchema.citation.length,7,page+' schema citation list incomplete');
   const howMenu=document.querySelector('.navMenu[data-label-key="tabHow"]');
   assert.ok(howMenu,page+' missing How disclosure');
