@@ -1,3 +1,14 @@
+# v0.7.59 — 2026-10-09
+
+- Hardens the living-research publication after a full GitHub/live-site audit.
+- Separates immutable Research Release RR1 citation metadata from mutable technical site versions: `CITATION.cff` now identifies RR1, while `publication.json` remains the site-version source of truth.
+- Restores `.zenodo.json` to the canonical repository and adds release checks so archival metadata cannot silently disappear again.
+- Makes the working paper indexable, adds canonical/citation/ScholarlyArticle metadata, adds it to the sitemap and fixes literal Markdown emphasis leaking into the rendered HTML.
+- Clarifies Explorer counting: 1,849 core records + 939 net identities from the deduplicated frozen 2026 overlay = 2,788 currently explorable identities.
+- Replaces stale “external enrichment” wording with the actual local-frozen 2026 model and aligns the three-clock publication date with canonical metadata.
+- Moves deployment documentation to the direct Git/GitHub Pages workflow, adds an automatic rebuild/validation workflow for source changes, and removes obsolete browser-upload residue from the repository root.
+- Keeps RR1 research evidence frozen; this is infrastructure/editorial hardening, not a new research release.
+
 # v0.7.58 — 2026-10-09
 
 - Promotes the RR1 Zenodo DOI (`10.5281/zenodo.23262623`) to first-level research metadata in Research & citation and the Working paper entry.
