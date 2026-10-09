@@ -3728,7 +3728,7 @@
     "insideSourcesLabel": "Fonti primarie",
     "insideMethodNote": "Questa è una sezione editoriale in evoluzione. Research Release RR1 e il relativo DOI Zenodo rimangono la fotografia immutabile del Reveal Day.",
     "insideMetaTitle": "Inside the Round | Il percorso ICANN 2026 dall'interno",
-    "insideMetaDescription": "Le milestone e gli eventi pubblici del New gTLD Program ICANN 2026, raccontati mentre accadono, con .lugano come caso seguito in prima persona e tappe future distinte.",
+    "insideMetaDescription": "Cronologia delle milestone ICANN 2026, con .lugano come caso osservato dall'interno e tappe future chiaramente distinte.",
     "release0760": "Introduce Inside the Round: cronologia pubblica in quattro lingue delle tappe ICANN 2026, con .lugano come caso osservato dall'interno; mantiene intatta la release scientifica RR1."
   },
   "de": {
@@ -7459,8 +7459,8 @@
     "insideReviewedLabel": "État éditorial vérifié le",
     "insideSourcesLabel": "Sources primaires",
     "insideMethodNote": "Cette couche éditoriale évolue au fil des événements. Research Release RR1 et son DOI Zenodo restent un instantané immuable de Reveal Day.",
-    "insideMetaTitle": "Inside the Round | Suivre le programme ICANN 2026 de l'intérieur",
-    "insideMetaDescription": "Les jalons et événements publics du programme des nouveaux gTLD ICANN 2026, avec .lugano comme cas suivi de l'intérieur et des étapes futures clairement distinguées.",
+    "insideMetaTitle": "Inside the Round | ICANN 2026 de l'intérieur",
+    "insideMetaDescription": "Chronologie des jalons ICANN 2026, avec .lugano comme cas suivi de l'intérieur et les étapes futures clairement distinguées.",
     "release0760": "Ajoute Inside the Round: une chronique publique en quatre langues des jalons ICANN 2026, avec .lugano comme cas observé de l'intérieur, sans modifier la publication scientifique figée RR1."
   }
 }
