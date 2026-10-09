@@ -148,15 +148,9 @@ def build_index() -> None:
     if html.count(marker) != 1:
         raise SystemExit("Inside the Round event placeholder missing or duplicated")
     html = html.replace(marker, render_timeline(ROOT))
-    css = (ROOT / "assets" / "style.css").read_text(encoding="utf-8")
-    data_js = (DATA / "site_bundle.js").read_text(encoding="utf-8")
-    i18n_js = (DATA / "i18n_bundle.js").read_text(encoding="utf-8")
-    world_js = (DATA / "worldmap.js").read_text(encoding="utf-8")
-    publication_js = (DATA / "publication.js").read_text(encoding="utf-8")
     reveal_2026_js = (DATA / "applications_2026_strings_reveal.js").read_text(encoding="utf-8")
-    app_js = (ROOT / "assets" / "app.js").read_text(encoding="utf-8")
-
-    html = html.replace('<link href="assets/style.css" rel="stylesheet"/>', '<style id="ctd-runtime-style">\n' + css + '\n</style>')
+    # The prerenderer loads runtime from disk; never inject huge inline bundles.
+    html = html.replace('<link href="assets/style.css" rel="stylesheet"/>', '<link id="ctd-runtime-style" href="assets/style.css" rel="stylesheet"/>')
     for ref in ['data/data_bundle.js', 'data/i18n_bundle.js', 'data/worldmap.js']:
         html = html.replace(f'<script src="{ref}"></script>', '')
     html = html.replace('<script src="data/applications_2026_strings_reveal.js"></script>', '<script id="ctd-2026-string-snapshot">\n' + reveal_2026_js + '\n</script>')
@@ -165,14 +159,14 @@ def build_index() -> None:
     routing_js = (ROOT / "assets" / "legacy-routing.js").read_text(encoding="utf-8")
     html = html.replace('<meta charset="utf-8"/>', '<meta charset="utf-8"/>\n<script id="ctd-legacy-routing">\n' + routing_js + '\n</script>', 1)
     head_runtime = '\n'.join([
-        '<script id="ctd-data-bundle">\n' + data_js + '\n</script>',
-        '<script id="ctd-i18n-bundle">\n' + i18n_js + '\n</script>',
-        '<script id="ctd-worldmap">\n' + world_js + '\n</script>',
+        '<script id="ctd-data-bundle"></script>',
+        '<script id="ctd-i18n-bundle"></script>',
+        '<script id="ctd-worldmap"></script>',
     ])
     html = html.replace('<script id="articleStructuredData"', head_runtime + '\n<script id="articleStructuredData"', 1)
     footer_runtime = '\n'.join([
-        '<script id="ctd-publication">\n' + publication_js + '\n</script>',
-        '<script id="ctd-app">\n' + app_js + '\n</script>',
+        '<script id="ctd-publication"></script>',
+        '<script id="ctd-app"></script>',
     ])
     html = html.replace('</body></html>', footer_runtime + '\n</body></html>')
     html = html.replace('<title>Connecting the Dots</title>', f'<title>Connecting the Dots</title>\n<meta content="{VERSION}" name="ctd-version"/>', 1)
@@ -201,10 +195,6 @@ def validate_index() -> None:
     if missing_embeds:
         raise SystemExit("Missing embedded runtime blocks: " + ", ".join(missing_embeds))
     if 'src="data/data_bundle.js' in html or 'window.DOT_DATA=' in html:
-        marker='window.DOT_DATA=' if 'window.DOT_DATA=' in html else 'src="data/data_bundle.js'
-        i=html.index(marker)
-        print(f"DIAGNOSTIC: rendered root bytes={len(html)} marker={marker!r} offset={i}; nearby={html[max(i-350,0):i+130]!r}",flush=True)
-        print(f"DIAGNOSTIC: tag counts style={html.count('<style')} /style={html.count('</style>')} script={html.count('<script')} /script={html.count('</script>')} ctdData={html.count('id=\"ctd-data-bundle\"')} start={html.find('<script id=\"ctd-data-bundle\"')} end={html.find('</style>')} first400={html[:400]!r}",flush=True)
         raise SystemExit("Full data must not be embedded in generated language pages")
     if 'role="menu"' in html or 'role="menuitem"' in html:
         raise SystemExit("Disclosure navigation must not claim the ARIA menu pattern")

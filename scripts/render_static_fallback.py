@@ -26,7 +26,18 @@ def source_for(lang):
         attrs=re.sub(r'\s+data-ctd-alias(?:="[^"]*")?','',attrs)
         attrs=re.sub(r'\s+lang="[^"]*"','',attrs)
         return '<html'+attrs+f' lang="{lang}" data-ctd-language="{lang}" data-ctd-root="../">'
-    return re.sub(r'<html([^>]*)>',repl,raw,count=1)
+    staged=re.sub(r'<html([^>]*)>',repl,raw,count=1)
+    for identifier,filename in [
+        ('ctd-data-bundle','data/site_bundle.js'),
+        ('ctd-i18n-bundle','data/i18n_bundle.js'),
+        ('ctd-worldmap','data/worldmap.js'),
+        ('ctd-publication','data/publication.js'),
+        ('ctd-app','assets/app.js')
+    ]:
+        placeholder=f'<script id="{identifier}"></script>'
+        if placeholder not in staged:raise RuntimeError('missing '+identifier)
+        staged=staged.replace(placeholder,f'<script id="{identifier}">\n'+(ROOT/filename).read_text(encoding='utf-8')+'\n</script>',1)
+    return staged
 
 def set_content(tag,html):
     tag.clear();frag=BeautifulSoup(html,'html.parser')

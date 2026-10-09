@@ -48,7 +48,8 @@ function render(language,alias=false){
   for(const id of ['ctd-data-bundle','ctd-i18n-bundle','ctd-worldmap','ctd-publication','ctd-app']){
     const node=document.getElementById(id);
     if(!node)throw new Error('Missing runtime block '+id);
-    let runtime=node.textContent;
+    const runtimeFiles={'ctd-data-bundle':'data/site_bundle.js','ctd-i18n-bundle':'data/i18n_bundle.js','ctd-worldmap':'data/worldmap.js','ctd-publication':'data/publication.js','ctd-app':'assets/app.js'};
+    let runtime=fs.readFileSync(path.join(root,runtimeFiles[id]),'utf8');
     if(id==='ctd-app')runtime=runtime.replace('if(v!==undefined)el.innerHTML=v', 'if(v!==undefined){try{el.innerHTML=v}catch(e){throw new Error("Static translation "+el.dataset.i18n+" failed: "+JSON.stringify(v)+"; "+e.message)}}');
     vm.runInContext(runtime,context,{filename:id,timeout:10000});
   }
@@ -95,8 +96,9 @@ function render(language,alias=false){
   // Prerender with the real application, then share its immutable release assets
   // across language routes. Details are absent from the initial payload.
   const version=window.DOT_PUBLICATION.version;
-  const sheet=document.createElement('link');sheet.id='ctd-runtime-style';sheet.setAttribute('rel','stylesheet');sheet.setAttribute('href',`assets/style.css?v=${version}`);
-  document.getElementById('ctd-runtime-style').replaceWith(sheet);
+  const sheet=document.getElementById('ctd-runtime-style');
+  if(!sheet || sheet.tagName!=='LINK')throw new Error('Missing stylesheet link');
+  sheet.setAttribute('href',`assets/style.css?v=${version}`);
   for(const [id,file] of [['ctd-data-bundle','data/site_bundle.js'],['ctd-worldmap','data/worldmap.js'],['ctd-app','assets/app.js']]){
     const node=document.getElementById(id);node.textContent='';node.setAttribute('src',`${file}?v=${version}`);node.setAttribute('defer','');
   }
@@ -108,6 +110,7 @@ function render(language,alias=false){
   }
   const editorialGuide=document.querySelector('a[data-inside-round-guide]');
   if(editorialGuide)editorialGuide.setAttribute('href',base+'inside-the-round/'+language+'/');
+  document.getElementById('ctd-publication').textContent=fs.readFileSync(path.join(root,'data/publication.js'),'utf8');
   // A localized page only needs its own complete dictionary at runtime.
   document.getElementById('ctd-i18n-bundle').textContent='\nwindow.DOT_I18N='+JSON.stringify({[language]:translations})+';\n';
   html.classList.remove('js');html.classList.add('no-js');
