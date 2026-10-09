@@ -53,6 +53,27 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.ok(document.querySelector('[data-i18n="heroBody"]').textContent.length>50);
   assert.equal(document.getElementById('langSelect').value,language);
   // All four languages must expose the same disclosure and six real how-to anchors.
+  const behind=document.getElementById('behind-round');
+  const behindMenu=document.querySelector('[data-target="behind-round"]');
+  assert.ok(behind&&behindMenu,page+' Behind the Round missing from program navigation');
+  assert.equal(behindMenu.textContent.trim(),translations.behindNav,page+' untranslated Behind the Round menu');
+  assert.ok(behind.querySelector('[data-behind-story="reveal-day-counts"]'),page+' missing main field note');
+  assert.equal(behind.querySelectorAll('[data-source-id]').length,7,page+' incomplete original field note sources');
+  const behindGuide=document.querySelector('a[data-behind-round-guide]');
+  assert.equal(behindGuide?.getAttribute('href'),base+'behind-the-round/'+language+'/',page+' wrong field-note guide locale');
+  assert.ok(behind.textContent.includes('1,616')&&behind.textContent.includes('1,615')&&behind.textContent.includes('1,614'),page+' published numerical facts missing');
+  const standalone=fs.readFileSync(path.join(root,'behind-the-round',language,'index.html'),'utf8');
+  const standaloneDocument=parseHTML(standalone).document;
+  assert.equal(standaloneDocument.documentElement.getAttribute('lang'),language,page+' field-note page lang');
+  assert.equal(standaloneDocument.querySelector('link[rel="canonical"]').getAttribute('href'),base+'behind-the-round/'+language+'/',page+' field-note canonical');
+  assert.equal(standaloneDocument.querySelectorAll('link[rel="alternate"][hreflang]').length,5,page+' field-note hreflang');
+  assert.equal(standaloneDocument.querySelector('meta[name="robots"]').getAttribute('content'),'index,follow,max-image-preview:large',page+' field-note indexing');
+  assert.equal(standaloneDocument.querySelectorAll('[data-source-id]').length,7,page+' standalone evidence incomplete');
+  assert.equal(standaloneDocument.querySelectorAll('.behindFinding').length,2,page+' explanatory statuses missing');
+  assert.ok(standalone.includes(translations.behindTitle)&&standalone.includes('WDO2627T-T45217'),page+' translated field note missing');
+  const articleSchema=JSON.parse(standaloneDocument.querySelector('script[type="application/ld+json"]').textContent);
+  assert.equal(articleSchema.dateModified,'2026-10-10',page+' dated field-note revision missing');
+  assert.equal(articleSchema.citation.length,7,page+' schema citation list incomplete');
   const howMenu=document.querySelector('.navMenu[data-label-key="tabHow"]');
   assert.ok(howMenu,page+' missing How disclosure');
   const howTrigger=howMenu.querySelector('.navMenuTrigger');
@@ -148,9 +169,9 @@ for(const [input,target] of cases){
 }
 const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
 const locations=Array.from(sitemap.matchAll(/<loc>([^<]+)<\/loc>/g),m=>m[1]);
-const expectedLocations=[...languages.map(l=>base+l+'/'),base+'explorer/',base+'research/',base+'research/connecting-the-dots-working-paper-v1.html',...languages.map(l=>base+'inside-the-round/'+l+'/')];
+const expectedLocations=[...languages.map(l=>base+l+'/'),base+'explorer/',base+'research/',base+'research/connecting-the-dots-working-paper-v1.html',...languages.map(l=>base+'inside-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/')];
 assert.deepEqual(locations,expectedLocations,'complete multilingual and research sitemap');
-assert.equal((sitemap.match(/xhtml:link/g)||[]).length,40,'main languages and round chronology both use hreflang');
+assert.equal((sitemap.match(/xhtml:link/g)||[]).length,60,'main languages, timeline and field notes all use hreflang');
 assert.ok(!/\?lang=/.test(sitemap));
 const app=fs.readFileSync(path.join(root,'assets/app.js'),'utf8');
 assert.ok(!app.includes('updateSeoLanguage'));
