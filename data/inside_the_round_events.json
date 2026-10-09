@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "editorialLayer": "2026-round-observation-not-research-release",
-  "lastReviewed": "2026-10-09",
+  "lastReviewed": "2026-10-10",
   "policy": "Only dated public milestones, attributed evidence and explicitly conditional future stages. Do not present a milestone as an application-specific approval.",
   "events": [
     {
@@ -32,7 +32,24 @@
       "dateKey": "insideRevealDate",
       "titleKey": "insideRevealTitle",
       "bodyKey": "insideRevealBody",
-      "source": "https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en"
+      "source": "https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en",
+      "extraSources": [
+        {
+          "source": "https://newgtldprogram-aps.icann.org/applications/CDL2651T-T31516/summary",
+          "labelKey": "insideAPSRecordSource"
+        }
+      ]
+    },
+    {
+      "id": "lugano-public-information",
+      "date": "2026-10-08",
+      "state": "observed",
+      "scope": "case",
+      "dateKey": "insideCityDate",
+      "titleKey": "insideCityTitle",
+      "bodyKey": "insideCityBody",
+      "source": "https://www.lugano.ch/la-mia-citta/la-citta-si-racconta/progetti/dominio-primo-livello-lugano.html",
+      "sourceLabelKey": "insideCityProjectSource"
     },
     {
       "id": "replacement",
@@ -53,6 +70,17 @@
       "dateKey": "insideConfirmDate",
       "titleKey": "insideConfirmTitle",
       "bodyKey": "insideConfirmBody",
+      "source": "https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en"
+    },
+    {
+      "id": "community-input",
+      "date": "2026-11-17",
+      "endDate": "2027-03-16",
+      "state": "scheduled",
+      "scope": "program",
+      "dateKey": "insideInputDate",
+      "titleKey": "insideInputTitle",
+      "bodyKey": "insideInputBody",
       "source": "https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en"
     },
     {
