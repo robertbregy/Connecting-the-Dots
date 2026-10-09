@@ -113,6 +113,9 @@ def load():
             raise ValueError("Incomplete field-note change history")
         if any(date.fromisoformat(x["date"]) > editorial_date or not x.get("sourceIds") or not x.get("changeKey") for x in revisions):
             raise ValueError("Editorial changes require dated evidence")
+        if any(revisions[i]['date'] > revisions[i+1]['date'] for i in range(len(revisions)-1)):
+            raise ValueError('Editorial revision history must remain chronological')
+        # Sources are revisable, historical observation dates are not.
         if any(any(sid not in sources for sid in x["sourceIds"]) for x in revisions):
             raise ValueError("Editorial change has unknown source")
         for fact in facts.values():
