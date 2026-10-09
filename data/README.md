@@ -1,9 +1,10 @@
 # Connecting the Dots — data directory
 
 Publication state: **post-Reveal / Replacement Period snapshot**  
-Publication as of: **8 October 2026**  
+Publication as of: **10 October 2026** (website/editorial date; RR1 evidence remains anchored to 7 October)  
 ICANN Reveal Day application snapshot: **7 October 2026**  
-IANA/root snapshot: **4 October 2026**
+IANA/root snapshot: **4 October 2026**  
+Working paper revision: **10 October 2026, v1.1-draft** (not a new research release)
 
 The CSV files are research inputs and reusable publication data. `applications_2026.csv` now contains verified official 2026 records that are explicitly vendored locally, beginning with `.lugano`; this does **not** yet constitute a claim that the complete APS application corpus is locally archived. `round_2026.csv` contains official Reveal Day aggregate metrics and leaves APS fields blank where ICANN has not yet published a confirmed value.
 
