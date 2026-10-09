@@ -23,6 +23,11 @@ for(let i=0;i<full.explorer.length;i++){
 for(const language of ['en','it','de','fr']){
  const text=read(language+'/index.html'),document=parseHTML(text).document;
  console.log('Initial HTML bytes',language,Buffer.byteLength(text));
+ if(language==='en' && Buffer.byteLength(text)>1200000){
+  console.log('Largest sections',JSON.stringify([...document.querySelectorAll('.section')].map(x=>({id:x.id,bytes:x.outerHTML.length})).sort((a,b)=>b.bytes-a.bytes).slice(0,12)));
+  console.log('Script payloads',JSON.stringify([...document.querySelectorAll('script')].map(x=>({id:x.id||'',src:x.getAttribute('src')||'',bytes:x.textContent.length})).sort((a,b)=>b.bytes-a.bytes).slice(0,12)));
+  console.log('Largest nodes',JSON.stringify([...document.querySelectorAll('main > *,#explorerTableBody,#explorerDrawer,#journeyStepper')].map(x=>({name:x.id||x.tagName,bytes:x.outerHTML.length})).sort((a,b)=>b.bytes-a.bytes).slice(0,12)));
+ }
  assert.ok(Buffer.byteLength(text)<1200000,language+' initial HTML budget');
  assert.ok(!text.includes('window.DOT_DATA='),language+' data must be shared');
  assert.ok(!text.includes('window.DOT_PROFILE_CHUNKS='),language+' details must be deferred');
