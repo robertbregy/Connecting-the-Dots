@@ -2036,7 +2036,7 @@
     "release0764": "Unified the How it works navigation with the other disclosure menus, preserving all five topic groups and direct chapter links in four languages. Removed the duplicate in-section chip navigation, hardened mobile chapter selection, anchor URLs, Back/Forward and accessibility.",
     "behindNav": "Behind the Round",
     "behindMetaTitle": "Behind the Round | A Reveal Day numbers puzzle",
-    "behindMetaDescription": "Why did ICANN report 1,616 applications, then 1,615, while a secondary Reveal Day snapshot showed 1,614? A sourced field note with one explanation and one open question.",
+    "behindMetaDescription": "ICANN reported 1,616 applications, then 1,615; a secondary index showed 1,614. The .wdo footnote explains one gap. The other remains open.",
     "behindEyebrow": "FIELD NOTES · ICANN 2026",
     "behindTitle": "Behind the Round",
     "behindIntro": "Not every meaningful discovery appears in a press release. These field notes examine discrepancies, overlooked footnotes and decisions that become visible when a rare institutional process is followed while it unfolds.",
@@ -2078,7 +2078,8 @@
     "behindSourceManifest": "Connecting the Dots · Frozen metadata",
     "release0765": "Adds Behind the Round: a four-language, source-backed and independently indexable field-note series beginning with the two distinct Reveal Day count discrepancies, plus reviewable source provenance and open-question update triggers. RR1 remains immutable.",
     "behindRevisionsTitle": "Dated editorial revisions",
-    "behindRevisionInitial": "First publication: separated the two numerical discrepancies; verified the APS administrative-check footnote and explicitly left the earlier official-count change unresolved."
+    "behindRevisionInitial": "First publication: separated the two numerical discrepancies; verified the APS administrative-check footnote and explicitly left the earlier official-count change unresolved.",
+    "release0766": "Search-metadata polish for the four Behind the Round articles: shorter descriptions and a proper Article image reference for Google rich-result eligibility. Editorial evidence remains unchanged."
   },
   "it": {
     "brand": "Brand",
@@ -4117,7 +4118,7 @@
     "release0764": "Uniformata la navigazione di Come funziona agli altri menu a tendina, mantenendo tutti i cinque gruppi tematici e i collegamenti diretti ai capitoli nelle quattro lingue. Eliminata la navigazione interna duplicata; verificati menu mobile, URL con ancore, cronologia e accessibilità.",
     "behindNav": "Dietro il Round",
     "behindMetaTitle": "Dietro il Round | Il caso dei numeri del Reveal Day",
-    "behindMetaDescription": "Perché ICANN ha indicato 1.616 candidature, poi 1.615, mentre un indice secondario ne mostrava 1.614? Una ricostruzione documentata, con una risposta e una domanda aperta.",
+    "behindMetaDescription": "ICANN ha indicato 1.616 candidature, poi 1.615. Un indice secondario ne conta 1.614. La nota su .wdo spiega uno scarto; l'altro resta aperto.",
     "behindEyebrow": "APPUNTI DI RICERCA · ICANN 2026",
     "behindTitle": "Dietro il Round",
     "behindIntro": "Non tutte le scoperte interessanti finiscono in un comunicato. Qui raccontiamo discrepanze, note quasi invisibili e scelte che emergono seguendo un processo istituzionale raro mentre si svolge.",
@@ -4159,7 +4160,8 @@
     "behindSourceManifest": "Connecting the Dots · Snapshot congelato",
     "release0765": "Nasce Dietro il Round: note di ricerca in quattro lingue con fonti e pagine autonome indicizzabili. Il primo caso distingue due discrepanze numeriche del Reveal Day, la spiegazione documentata e la domanda ancora aperta. RR1 resta immutata.",
     "behindRevisionsTitle": "Revisioni editoriali datate",
-    "behindRevisionInitial": "Prima pubblicazione: distinti i due scarti numerici, verificata la nota APS sulla verifica amministrativa e lasciato esplicitamente aperto il precedente cambiamento del totale ufficiale."
+    "behindRevisionInitial": "Prima pubblicazione: distinti i due scarti numerici, verificata la nota APS sulla verifica amministrativa e lasciato esplicitamente aperto il precedente cambiamento del totale ufficiale.",
+    "release0766": "Rifinitura dei metadati delle quattro pagine Dietro il Round: descrizioni più sintetiche e immagine dichiarata nei dati strutturati Article per una migliore interpretazione da parte dei motori di ricerca. Contenuti e fonti invariati."
   },
   "de": {
     "brand": "Marke",
@@ -6198,7 +6200,7 @@
     "release0764": "Die Navigation von So funktioniert es wurde an die übrigen Aufklappmenüs angeglichen. Alle fünf Themen und direkten Kapitel-Links bleiben in vier Sprachen verfügbar. Die doppelte interne Linkleiste wurde entfernt; Mobilnavigation, Anker, Verlauf und Barrierefreiheit wurden abgesichert.",
     "behindNav": "Hinter der Runde",
     "behindMetaTitle": "Hinter der Runde | Das Zahlenrätsel am Reveal Day",
-    "behindMetaDescription": "Warum nannte ICANN erst 1.616, dann 1.615 Bewerbungen, während ein Sekundärindex 1.614 zeigte? Eine belegte Fallnotiz mit einer Erklärung und einer offenen Frage.",
+    "behindMetaDescription": "ICANN meldete erst 1.616, dann 1.615 Bewerbungen; ein Sekundärindex zeigte 1.614. Die .wdo-Fussnote erklärt ein Gefälle, das andere bleibt offen.",
     "behindEyebrow": "FORSCHUNGSNOTIZEN · ICANN 2026",
     "behindTitle": "Hinter der Runde",
     "behindIntro": "Nicht jede interessante Entdeckung steht in einer Pressemitteilung. Diese Feldnotizen beleuchten Widersprüche, leicht übersehene Fussnoten und Verfahrensdetails, die erst bei der laufenden Beobachtung sichtbar werden.",
@@ -6240,7 +6242,8 @@
     "behindSourceManifest": "Connecting the Dots · Eingefrorene Metadaten",
     "release0765": "Hinter der Runde ergänzt die Forschung um vier sprachlich getrennte, quellenbasierte Fallnotizen. Der erste Fall behandelt beide Abweichungen bei den Reveal-Day-Zahlen, eine belegte Erklärung und eine offene Frage. RR1 bleibt unverändert.",
     "behindRevisionsTitle": "Datierte redaktionelle Änderungen",
-    "behindRevisionInitial": "Erstveröffentlichung: beide Zahlenabweichungen getrennt, die APS-Fussnote zur administrativen Prüfung verifiziert und die frühere Änderung der offiziellen Gesamtzahl ausdrücklich als ungeklärt belassen."
+    "behindRevisionInitial": "Erstveröffentlichung: beide Zahlenabweichungen getrennt, die APS-Fussnote zur administrativen Prüfung verifiziert und die frühere Änderung der offiziellen Gesamtzahl ausdrücklich als ungeklärt belassen.",
+    "release0766": "SEO-Nachbesserung der vier Hinter-der-Runde-Seiten: kürzere Beschreibungen und ein strukturiertes Artikelbild für Suchmaschinen. Forschungsbelege unverändert."
   },
   "fr": {
     "brand": "Marque",
@@ -8279,7 +8282,7 @@
     "release0764": "La navigation Comment ça marche utilise désormais le même menu déroulant que les autres rubriques. Les cinq groupes thématiques et les liens directs vers les chapitres sont conservés dans quatre langues. La barre interne redondante a été supprimée, avec vérification du mobile, des ancres, de l’historique et de l’accessibilité.",
     "behindNav": "Dans les coulisses du round",
     "behindMetaTitle": "Dans les coulisses | Le mystère des chiffres du Reveal Day",
-    "behindMetaDescription": "Pourquoi l’ICANN annonçait-elle 1 616, puis 1 615 candidatures, tandis qu’un index secondaire en montrait 1 614 ? Une enquête sourcée et une question ouverte.",
+    "behindMetaDescription": "L’ICANN annonçait 1 616, puis 1 615 candidatures; un index secondaire en montrait 1 614. La note .wdo éclaire un écart, l’autre reste inexpliqué.",
     "behindEyebrow": "NOTES DE RECHERCHE · ICANN 2026",
     "behindTitle": "Dans les coulisses du round",
     "behindIntro": "Toutes les découvertes intéressantes ne figurent pas dans un communiqué. Ces notes analysent les écarts, les notes discrètes et les choix de procédure que révèle l'observation d'un processus institutionnel en cours.",
@@ -8321,6 +8324,7 @@
     "behindSourceManifest": "Connecting the Dots · Instantané archivé",
     "release0765": "Dans les coulisses du round inaugure une série de notes sourcées et indexables dans quatre langues. Le premier dossier distingue deux écarts numériques du Reveal Day, une explication documentée et une question ouverte. RR1 demeure inchangée.",
     "behindRevisionsTitle": "Révisions éditoriales datées",
-    "behindRevisionInitial": "Première publication : distinction des deux écarts, vérification de la note APS sur le contrôle administratif et maintien explicite de la variation antérieure du total officiel comme question ouverte."
+    "behindRevisionInitial": "Première publication : distinction des deux écarts, vérification de la note APS sur le contrôle administratif et maintien explicite de la variation antérieure du total officiel comme question ouverte.",
+    "release0766": "Ajustement des métadonnées des quatre pages de recherche : descriptions plus courtes et image déclarée dans les données structurées Article. Sources et contenu inchangés."
   }
 }
