@@ -40,19 +40,20 @@ lock=json.loads((ROOT/'package-lock.json').read_text()) if (ROOT/'package-lock.j
 if lock.get('version')!=version or lock.get('packages',{}).get('',{}).get('version')!=version: fail('package-lock/package version mismatch')
 if lock.get('packages',{}).get('',{}).get('devDependencies')!=pkg.get('devDependencies'): fail('package-lock dependency root mismatch')
 
-# Maintenance release invariants: deployment ceiling and social-preview accessibility.
+# Maintenance release invariants: canonical Git deployment and social-preview accessibility.
 deploy_text=(ROOT/'DEPLOY.md').read_text(encoding='utf-8')
-if 'limited to 99 files' not in deploy_text:
-    fail('DEPLOY.md must state the 99-file browser-upload ceiling')
+if 'GitHub repository is the canonical working master' not in deploy_text or 'Rebuild published site' not in deploy_text:
+    fail('DEPLOY.md must describe the canonical Git/GitHub Actions workflow')
 source_html=(ROOT/'src'/'index.web.html').read_text(encoding='utf-8')
 for token in ['property="og:image:alt"','name="twitter:image:alt"']:
     if token not in source_html:
         fail(f'missing social image alt metadata: {token}')
 manifest=json_file('manifest.json')
 if manifest.get('version')!=version: fail('manifest/package version mismatch')
-if manifest.get('as_of')!='2026-10-08': fail('publication snapshot is not 2026-10-08')
+publication_meta=json.loads((ROOT/'publication.json').read_text(encoding='utf-8'))
+if manifest.get('as_of')!=publication_meta.get('asOf'): fail('manifest/publication snapshot mismatch')
 pub=(DATA/'publication.js').read_text()
-if f"version:'{version}'" not in pub or "asOf:'2026-10-08'" not in pub or "state:'reveal-day'" not in pub: fail('publication.js version/asOf/state mismatch')
+if f"version:'{version}'" not in pub or f"asOf:'{publication_meta.get('asOf')}'" not in pub or f"state:'{publication_meta.get('state')}'" not in pub: fail('publication.js version/asOf/state mismatch')
 
 # Release-integrity invariants added in v0.7.18.
 appjs=(ROOT/'assets/app.js').read_text(encoding='utf-8')
@@ -61,7 +62,7 @@ if 'fmtNum(1987)' in appjs or 'fmtNum(57)' in appjs: fail('application archaeolo
 if 'applicationCorpusComplete=true' in appjs: fail('runtime merge may not mark the full application corpus complete directly')
 if 'syncApplicationCorpusComplete()' not in appjs: fail('application corpus completeness is not derived')
 if "required=['2000','2004','2012','2026']" not in appjs: fail('application corpus completeness does not require all declared historical/current rounds')
-if appjs.count('fetch(')!=2 or "const ROUND2026_STRING_API='https://www.ntlddata.com/api/v1/applications/strings'" not in appjs or 'load2026StringInventory' not in appjs or '?page=1&per=500' not in appjs: fail('browser-time fetch policy drift: only paginated 2026 string inventory enrichment is allowed')
+if appjs.count('fetch(')!=0: fail('browser-time external fetches reintroduced')
 if "renderApplicationCorpusStatus('ready')" not in appjs: fail('local historical application archaeology is not rendered ready')
 if '"lifeHistoryGtldContractsRuntime":false' not in (DATA/'data_bundle.js').read_text(encoding='utf-8'): fail('gTLD runtime lifecycle enrichment is not disabled')
 arch_manifest=json_file('application_archaeology_manifest.json')
@@ -116,7 +117,7 @@ try:
     ds=json.loads(ds_match.group(1)) if ds_match else {}
 except Exception as exc:
     fail('Dataset JSON-LD cannot be parsed: '+str(exc))
-if ds.get('version')!=version or ds.get('dateModified')!='2026-10-08':
+if ds.get('version')!=version or ds.get('dateModified')!=publication_meta.get('releasedOn'):
     fail('Dataset JSON-LD version/date is stale')
 expected_based_on={
     'https://www.iana.org/domains/root/db',
@@ -529,7 +530,7 @@ for rel in ['index.html',*[f'{x}/index.html' for x in LANGS]]:
     m=re.search(r'<span[^>]*data-i18n="publicationState"[^>]*>(.*?)</span>',text,re.S)
     if not m or '2026' not in re.sub('<[^>]+>','',m.group(1)): fail(f'visible publication snapshot is not derived/rendered in {rel}')
     if any(stale in text for stale in ['SNAPSHOT · 2 OCT 2026','SNAPSHOT PRE-REVEAL · 2 OTT 2026','PRE-REVEAL-SNAPSHOT · 2. OKT 2026','SNAPSHOT PRÉ-REVEAL · 2 OCT 2026']): fail(f'stale 2 October publication state in {rel}')
-    if '"dateModified":"2026-10-08"' not in text: fail(f'structured-data dateModified mismatch in {rel}')
+    if f'"dateModified":"{publication_meta.get("releasedOn")}"' not in text: fail(f'structured-data dateModified mismatch in {rel}')
     if text.count('<h1')!=1: fail(f'expected exactly one h1 in {rel}')
     skip=re.search(r'<a\b(?=[^>]*\bclass=["\'][^"\']*\bskipLink\b[^"\']*["\'])(?=[^>]*\bhref=["\']#main-content["\'])[^>]*>',text,re.I)
     main=re.search(r'<main\b(?=[^>]*\bid=["\']main-content["\'])[^>]*>',text,re.I)
@@ -579,4 +580,4 @@ if node:
         rc=subprocess.run([node,'--check',str(p)],stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
         if rc.returncode: fail(f'JS syntax {p.relative_to(ROOT)}: {rc.stderr.strip()}')
 
-print(f'RELEASE CHECK PASS · v{version} · 1,849 Explorer records · 7,678 life-history events · 4 languages')
+print(f'RELEASE CHECK PASS · v{version} · 1,849 Explorer records · 7,679 life-history events · 4 languages')
