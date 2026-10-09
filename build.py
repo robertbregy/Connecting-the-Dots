@@ -201,6 +201,9 @@ def validate_index() -> None:
     if missing_embeds:
         raise SystemExit("Missing embedded runtime blocks: " + ", ".join(missing_embeds))
     if 'src="data/data_bundle.js' in html or 'window.DOT_DATA=' in html:
+        marker='window.DOT_DATA=' if 'window.DOT_DATA=' in html else 'src="data/data_bundle.js'
+        i=html.index(marker)
+        print(f"DIAGNOSTIC: rendered root bytes={len(html)} marker={marker!r} offset={i}; nearby={html[max(i-120,0):i+130]!r}",flush=True)
         raise SystemExit("Full data must not be embedded in generated language pages")
     if 'role="menu"' in html or 'role="menuitem"' in html:
         raise SystemExit("Disclosure navigation must not claim the ARIA menu pattern")
