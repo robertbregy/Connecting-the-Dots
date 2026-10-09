@@ -1,6 +1,6 @@
 /* generated from publication.json; do not edit by hand */
 window.DOT_PUBLICATION={
-  version:'0.7.58',
+  version:'0.7.59',
   releasedOn:'2026-10-09',
   state:'reveal-day',
   freeze:true,
