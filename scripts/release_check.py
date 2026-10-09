@@ -685,4 +685,20 @@ if not explorer_meta or not (90 <= len(explorer_meta.group(1)) <= 160):
 if source_html.count('<img alt="" src="assets/logo-mark.png"/>') != 2:
     fail('Decorative logo images must keep empty alt text and adjacent readable site name')
 
+# Navigation regression: How it works is a disclosure like the other grouped menus.
+if '<div class="navMenu" data-label-key="tabHow">' not in source_html or 'id="navHowDropdown"' not in source_html:
+    fail('How it works is not a disclosure menu')
+how_anchors=['how','how-part-1','how-part-3','how-part-5','how-part-8','how-part-10']
+for anchor in how_anchors:
+    if f'data-target="how" data-anchor="{anchor}"' not in source_html:
+        fail('Missing How chapter target '+anchor)
+for lang in LANGS:
+    page=(ROOT/lang/'index.html').read_text(encoding='utf-8')
+    if page.count('data-target="how" data-anchor=')!=len(how_anchors):
+        fail('How dropdown does not preserve six chapter choices: '+lang)
+    if 'id="navHowDropdown"' not in page:
+        fail('Missing How disclosure in rendered locale: '+lang)
+    if 'class="sectionToc"' in page.split('id="how"')[1].split('id="beyond"')[0]:
+        fail('Redundant How in-section navigation restored: '+lang)
+
 print(f'RELEASE CHECK PASS · v{version} · 1,849 Explorer records · 7,679 life-history events · 4 languages')
