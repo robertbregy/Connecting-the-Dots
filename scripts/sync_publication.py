@@ -91,7 +91,7 @@ keywords:
 # Source template structured metadata stays aligned too.
 src = SRC.read_text(encoding='utf-8')
 src = re.sub(r'("version":")([^"]+)(")', rf'\g<1>{version}\g<3>', src, count=1)
-src = re.sub(r'("dateModified":")([^"]+)(")', rf'\g<1>{released}\g<3>', src, count=1)
+src = re.sub(r'("dateModified":")([^"]+)(")', rf'\g<1>{released}\g<3>', src)
 # Keep DOI in structured Dataset metadata in sync once an archival deposit exists.
 doi = meta.get('doi')
 if doi:
