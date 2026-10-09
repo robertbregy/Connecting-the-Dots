@@ -515,7 +515,7 @@ keyfacts=rows('key_facts.csv')
 if not any(r.get('value')=='1,615' and '7 October 2026' in r.get('fact_en','') for r in keyfacts): fail('Reveal Day key fact must use the official 1,615 snapshot')
 for lang in LANGS:
     if not translations.get(lang,{}).get('derived'): fail(f'missing derived epistemic label: {lang}')
-for marker in ['data-i18n="derived"','id="contentionBars2026"','id="strangeGrid2026"','data-i18n="outcomes2026StatusTitle"','data-i18n="disputes2026StatusTitle"','data-i18n="economics2026Title"','data-i18n="social2026Title"']:
+for marker in ['data-i18n="derived"','id="contentionBars2026"','id="strangeGridAll"','data-i18n="outcomes2026StatusTitle"','data-i18n="disputes2026StatusTitle"','data-i18n="economics2026Title"','data-i18n="social2026Title"']:
     if marker not in template: fail('post-Reveal thematic structure missing: '+marker)
 for stale in ['The 2026 corpus remains incomplete until official Reveal Day data are published.','Il corpus 2026 resta incompleto fino alla pubblicazione dei dati ufficiali del Reveal Day.']:
     if stale in translations.get('en',{}).values() or stale in translations.get('it',{}).values(): fail('stale pre-Reveal copy survived: '+stale)
