@@ -89,8 +89,9 @@ for(const [input,target] of cases){
 }
 const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
 const locations=Array.from(sitemap.matchAll(/<loc>([^<]+)<\/loc>/g),m=>m[1]);
-assert.deepEqual(locations,languages.map(l=>base+l+'/'));
-assert.equal((sitemap.match(/xhtml:link/g)||[]).length,20);
+const expectedLocations=[...languages.map(l=>base+l+'/'),base+'explorer/',base+'research/',base+'research/connecting-the-dots-working-paper-v1.html',...languages.map(l=>base+'inside-the-round/'+l+'/')];
+assert.deepEqual(locations,expectedLocations,'complete multilingual and research sitemap');
+assert.equal((sitemap.match(/xhtml:link/g)||[]).length,40,'main languages and round chronology both use hreflang');
 assert.ok(!/\?lang=/.test(sitemap));
 const app=fs.readFileSync(path.join(root,'assets/app.js'),'utf8');
 assert.ok(!app.includes('updateSeoLanguage'));
