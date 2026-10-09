@@ -1,0 +1,33 @@
+{
+  "title": "Connecting the Dots: A Living Research Atlas of Top-Level Domain Expansion",
+  "description": "A multilingual living research publication and structured dataset tracing top-level-domain applications, delegations, life histories, governance, economics, social meaning and the ICANN New gTLD Program across 2000, 2004, 2012 and 2026.",
+  "creators": [
+    {
+      "name": "Bregy, Robert"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "keywords": [
+    "DNS",
+    "ICANN",
+    "top-level domains",
+    "gTLD",
+    "Internet governance",
+    "domain names",
+    "digital infrastructure"
+  ],
+  "upload_type": "dataset",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "https://robertbregy.github.io/Connecting-the-Dots/",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/robertbregy/Connecting-the-Dots",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
