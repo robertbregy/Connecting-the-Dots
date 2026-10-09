@@ -110,7 +110,7 @@ This structure makes historical comparison reproducible while preserving the abi
 
 **Editorial revision note (10 October 2026).** The observational protocol extends the paper without modifying RR1 research evidence or its DOI. Dated event records have their own Git history. Public events must link to sources supporting the specific claims made, rather than generic programme announcements.
 
-The 2026 round creates a methodological opportunity unavailable to a purely retrospective atlas: it can be observed longitudinally as public milestones unfold. The project therefore maintains **Inside the Round** as a separately versioned *editorial event register*, not as an extension of the immutable RR1 application dataset. Its purpose is to record consequential public events, their dates, source links, process significance and uncertainties, without recreating an administrative application diary.
+The 2026 round creates a methodological opportunity unavailable to a purely retrospective atlas: it can be observed longitudinally as public milestones unfold. The project therefore maintains **Timeline** as a separately versioned *editorial event register*, not as an extension of the immutable RR1 application dataset. Its purpose is to record consequential public events, their dates, source links, process significance and uncertainties, without recreating an administrative application diary.
 
 The author is professionally involved in the City of Lugano's application for `.lugano`. This is disclosed as a **participant-observer position**, not presented as independent verification. The public record is the primary evidence for program status and application outcomes. Non-public information, privileged administrative material, personal data and unsupported recollections are excluded. Observations derived from direct involvement are clearly identified, dated and separated from verified public facts, editorial interpretations and future scenarios.
 
@@ -130,11 +130,11 @@ Participant observation may provide contextual understanding but also creates ri
 
 ### 6A.3 A first field note: the Reveal Day counting discrepancy
 
-The initial **Behind the Round** observation illustrates how the proposed method works in practice. ICANN publicly reported **1,616** paid applications proceeding on 22 September 2026, compared with **1,615** in the official Reveal Day aggregate of 7 October. A separately sourced, frozen 2026 secondary index observed on 8 October records **1,614** applications and 480 applicants. These are **not interchangeable observations**, because they refer to different source types, dates and publication scopes.
+The initial **Field Notes** observation illustrates how the proposed method works in practice. ICANN publicly reported **1,616** paid applications proceeding on 22 September 2026, compared with **1,615** in the official Reveal Day aggregate of 7 October. A separately sourced, frozen 2026 secondary index observed on 8 October records **1,614** applications and 480 applicants. These are **not interchangeable observations**, because they refer to different source types, dates and publication scopes.
 
 ICANN's APS Applications page explicitly explains that application **WDO2627T-T45217** for **.wdo** is undergoing an administrative check and is therefore absent from the public application list. This accounts for a documented visibility distinction between the APS aggregate and the publicly available list, consistent with the secondary snapshot. It **does not** provide a verified explanation for why ICANN's own total changed from 1,616 to 1,615 before Reveal Day. The latter question remains open and is not attributed to a withdrawal or administrative outcome without evidence.
 
-The dated, corrigible case record and primary links appear in [Behind the Round](https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/). Such field notes are editorial observations, not amendments to the frozen RR1 data or its DOI. Future corrections require documented source provenance and may be reflected in subsequent working-paper revisions.
+The dated, corrigible case record and primary links appear in [Field Notes](https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/). Such field notes are editorial observations, not amendments to the frozen RR1 data or its DOI. Future corrections require documented source provenance and may be reflected in subsequent working-paper revisions.
 
 ## 7. Reproducibility and publication model
 
