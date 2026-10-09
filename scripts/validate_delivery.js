@@ -71,6 +71,36 @@ function deliveryFixture(language='it',alias=false,query='?tab=explore'){
   timeout:()=>{for(const {fn,ms} of [...timers.values()])if(ms===15000)fn();}
  };
 }
+// Exercise real navigation state instead of just checking menu markup.
+for(const language of ['en','it','de','fr']){
+ const b=deliveryFixture(language,false,'?tab=how#how-part-3');
+ const menu=b.document.querySelector('.navMenu[data-label-key="tabHow"]');
+ const trigger=menu.querySelector('.navMenuTrigger');
+ const mobile=b.document.getElementById('mobileNav');
+ assert.equal(b.document.body.dataset.activeTab,'how',language+' How deep link tab');
+ assert.equal(mobile.value,'how#how-part-3',language+' mobile deep-link selection');
+ assert.equal(menu.querySelectorAll('.navDropdown .tab.active').length,1,language+' only one active chapter');
+ assert.equal(menu.querySelector('.tab.active').dataset.anchor,'how-part-3',language+' selected chapter');
+ assert.equal(b.document.querySelector('#how > .sectionToc'),null,language+' no duplicate How pills');
+ assert.equal(b.document.querySelector('#navHowDropdown .tab[data-anchor="how-part-5"]').getAttribute('href').endsWith('#how-part-5'),true,language+' proper chapter href');
+ b.run('toggleNavMenu(document.querySelector(".navMenu[data-label-key=\\\"tabHow\\\"]"))');
+ assert.equal(trigger.getAttribute('aria-expanded'),'true',language+' disclosure opens');
+ b.run('navigateToTabAnchor("how","how-part-5")');
+ assert.equal(b.url().searchParams.get('tab'),'how',language+' chapter tab');
+ assert.equal(b.url().hash,'#how-part-5',language+' chapter hash');
+ assert.equal(mobile.value,'how#how-part-5',language+' chapter reflected on mobile');
+ assert.equal(trigger.getAttribute('aria-expanded'),'false',language+' dropdown closes on navigation');
+ b.back();
+ assert.equal(b.url().hash,'#how-part-3',language+' back restores chapter');
+ assert.equal(mobile.value,'how#how-part-3',language+' back restores mobile selection');
+ b.run('navigateToTabAnchor("how","how")');
+ assert.equal(b.url().hash,'#how',language+' overview remains a real link');
+ assert.equal(mobile.value,'how#how',language+' mobile overview selectable');
+ b.run('activateTab("reveal",true)');
+ assert.equal(menu.classList.contains('active'),false,language+' menu no longer selected on other tab');
+ assert.equal(mobile.value,'reveal',language+' mobile returns to regular section');
+}
+console.log('Validated How disclosure, six chapter links, mobile selection and Back/Forward in four languages.');
 const flush=()=>new Promise(resolve=>setImmediate(resolve));
 async function validateAsyncDelivery(){
  for(const [language,alias] of [['en',true],['en',false],['it',false],['de',false],['fr',false]]){
