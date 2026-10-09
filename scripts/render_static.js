@@ -110,6 +110,8 @@ function render(language,alias=false){
   }
   const editorialGuide=document.querySelector('a[data-inside-round-guide]');
   if(editorialGuide)editorialGuide.setAttribute('href',base+'inside-the-round/'+language+'/');
+  const behindGuide=document.querySelector('a[data-behind-round-guide]');
+  if(behindGuide)behindGuide.setAttribute('href',base+'behind-the-round/'+language+'/');
   document.getElementById('ctd-publication').textContent=fs.readFileSync(path.join(root,'data/publication.js'),'utf8');
   // A localized page only needs its own complete dictionary at runtime.
   document.getElementById('ctd-i18n-bundle').textContent='\nwindow.DOT_I18N='+JSON.stringify({[language]:translations})+';\n';
