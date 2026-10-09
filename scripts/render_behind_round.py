@@ -48,6 +48,7 @@ BEHIND_CSS = """
 .behindSources [data-source-kind="secondary"] a,.behindSources [data-source-kind="derived"] a{border-style:dashed}
 .behindCaseFooter{display:flex;flex-wrap:wrap;gap:10px;align-items:center;border-top:1px solid var(--border);margin-top:21px;padding-top:18px;color:var(--muted);font-size:.83rem}
 .behindCaseFooter time{font-variant-numeric:tabular-nums}
+.behindRevisionHistory{margin:0;padding:0 0 0 20px;color:var(--muted);font-size:.87rem;line-height:1.55}.behindRevisionHistory time{font-weight:740;color:var(--text);font-variant-numeric:tabular-nums;margin-right:7px}
 @media(max-width:720px){.behindFigures{grid-template-columns:1fr}.behindFigure{padding:16px}.behindFigure strong{font-size:2.25rem}.behindFindings{grid-template-columns:1fr}.behindSources{grid-template-columns:1fr}.behindStory{padding:16px}}
 """
 
@@ -107,11 +108,18 @@ def load():
             raise ValueError("The two distinct counting questions must not be conflated")
         if len(case["updateTriggers"]) < 3:
             raise ValueError("Missing review conditions")
+        revisions = case.get("revisionHistory", [])
+        if not revisions or date.fromisoformat(revisions[-1]["date"]) != revised:
+            raise ValueError("Incomplete field-note change history")
+        if any(date.fromisoformat(x["date"]) > editorial_date or not x.get("sourceIds") or not x.get("changeKey") for x in revisions):
+            raise ValueError("Editorial changes require dated evidence")
+        if any(any(sid not in sources for sid in x["sourceIds"]) for x in revisions):
+            raise ValueError("Editorial change has unknown source")
         for fact in facts.values():
             if fact["sourceId"] not in sources:
                 raise ValueError("Untraceable count: " + fact["id"])
         for language in LANGS:
-            for key in (*CONTENT_KEYS,"behindNav","behindTitle","behindIntro","behindStandaloneCta","behindChronicleCta","behindMetaTitle","behindMetaDescription"):
+            for key in (*CONTENT_KEYS,"behindNav","behindTitle","behindIntro","behindStandaloneCta","behindChronicleCta","behindMetaTitle","behindMetaDescription","behindRevisionsTitle",*[x["changeKey"] for x in revisions]):
                 if not translations[language].get(key):
                     raise ValueError("Untranslated narrative " + language + "/" + key)
     return stories, translations
@@ -165,6 +173,14 @@ def episode_markup(data, translations, lang, dynamic=False):
             parts.append('<li data-source-id="' + h(source["id"],quote=True) + '" data-source-kind="' + h(source["kind"],quote=True) + '"><a href="' + h(source["url"],quote=True) + '" target="_blank" rel="noopener noreferrer">' + txt(label) + ' ↗</a></li>')
         parts.extend([
             '</ul></section>',
+            '<section class="behindReading behindRevisions">',
+            txt("behindRevisionsTitle",tag="h3"),
+            '<ol class="behindRevisionHistory">'
+        ])
+        for revision in case["revisionHistory"]:
+            parts.append('<li data-editorial-revision="' + h(revision["date"],quote=True) + '"><time datetime="' + h(revision["date"],quote=True) + '">' + h(revision["date"]) + '</time> ' + txt(revision["changeKey"]) + '</li>')
+        parts.extend([
+            '</ol></section>',
             '<section class="behindReading">',
             txt("behindIndependenceTitle",tag="h3"),
             txt("behindIndependenceBody",tag="p"),
