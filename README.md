@@ -1,20 +1,16 @@
-# Connecting the Dots — v0.7.62
+# Connecting the Dots — v0.7.63
 
-**Connecting the Dots** is an independent, multilingual research and public-information project on the evolution of Internet top-level domains: applications, delegations, governance, economics, social meaning and the ICANN New gTLD Program.
+**Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
 Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.62 · 10 October 2026**
+**v0.7.63 · 10 October 2026**
 
-This audit strengthens the research's live-observation layer. **Inside the Round** now contains nine sourced program and case milestones in EN, IT, DE and FR. Reveal Day cites both ICANN's public announcement and the official APS record for `.lugano`; the City's separately dated public project communication has its own event, and the 17 November 2026–16 March 2027 community-input window is distinguished from later evaluation and conditional outcomes.
+This SEO refinement shortens the four language-specific home-page titles and tightens the separately indexable Explorer description following a live Google Search Console crawl: 11/11 primary pages were reachable and indexable by on-page rules, with zero critical, high or medium severity findings. Decorative logos correctly retain empty alt text alongside adjacent accessible brand wording. The search-engine indexing process remains outside the site's control and must not be confused with crawl readiness.
 
-The independent working paper is now **v1.1-draft**, explicitly revised on 10 October 2026. It is a living draft, not a reissue of the archived RR1 evidence. The build now preserves RR1's original 9 October 2026 citation date instead of updating it with technical site releases.
-
-The previous **v0.7.61** restored missing multilingual editorial copy and reconciled the 7 October official ICANN Reveal Day totals. The **v0.7.60** release first introduced the independent event chronicle.
-
-The 2026 browsing layer remains frozen locally: **980 unique primary strings** observed in the secondary Reveal Day index, representing **1,608 applications associated with a primary string**, plus six variant-only application records in that secondary source. ICANN's official Reveal Day aggregate remains **1,615 applications / 481 applicants**. The project does **not** claim a complete locally vendored APS application-level corpus for 2026.
+**Previous v0.7.62** integrated primary-source-linked 2026 events, scientific reproducibility corrections and the v1.1 living working paper. RR1 and its Zenodo DOI remain unchanged.
 
 ## What the project covers
 
