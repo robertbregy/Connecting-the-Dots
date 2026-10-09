@@ -70,6 +70,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.equal(standaloneDocument.querySelector('meta[name="robots"]').getAttribute('content'),'index,follow,max-image-preview:large',page+' field-note indexing');
   assert.equal(standaloneDocument.querySelectorAll('[data-source-id]').length,7,page+' standalone evidence incomplete');
   assert.equal(standaloneDocument.querySelectorAll('.behindFinding').length,2,page+' explanatory statuses missing');
+  assert.equal(standaloneDocument.querySelectorAll('[data-editorial-revision]').length,1,page+' dated correction history missing');
   assert.ok(standalone.includes(translations.behindTitle)&&standalone.includes('WDO2627T-T45217'),page+' translated field note missing');
   const articleSchema=JSON.parse(standaloneDocument.querySelector('script[type="application/ld+json"]').textContent);
   assert.equal(articleSchema.dateModified,'2026-10-10',page+' dated field-note revision missing');
