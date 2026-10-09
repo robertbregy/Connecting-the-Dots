@@ -2,6 +2,13 @@
   "schemaVersion": 1,
   "releases": [
     {
+      "version": "0.7.55",
+      "date": "2026-10-09",
+      "summaryKey": "release0755",
+      "ianaSnapshot": "2026-10-04",
+      "researchRelease": "RR1"
+    },
+    {
       "version": "0.7.54",
       "date": "2026-10-09",
       "summaryKey": "release0754",

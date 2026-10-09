@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.54
+# Connecting the Dots — v0.7.55
 
 **Connecting the Dots** is an independent, multilingual research and public-information project on the evolution of Internet top-level domains: applications, delegations, governance, economics, social meaning and the ICANN New gTLD Program.
 
@@ -6,9 +6,9 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.54 · 9 October 2026**
+**v0.7.55 · 9 October 2026**
 
-This release adds a cross-round economic-sector analysis to the Economics theme. It separates the economic sector represented by an application from the naming strategy of the string, so brand namespaces such as `.ubs`, `.goldmansachs`, `.tether` or `.openai` are analysed alongside generic terms such as `.bank`, `.bitcoin` or `.agent`. The release adds application-level, sector-evolution and strategy-mix datasets, with explicit coverage and unresolved-status fields rather than fabricated corporate mappings.
+This release formalizes **Connecting the Dots as a living research publication**. It adds **Research Release RR1 · Reveal Day 2026**, a dedicated Research & citation section, `CITATION.cff`, Zenodo-ready archival metadata and a methodological working paper draft. Technical site versions (`v0.x.y`) are now explicitly separated from milestone research releases (`RR1`, `RR2`, …). No DOI is claimed until an archival deposit actually exists.
 
 The 2026 browsing layer remains frozen locally: **980 unique primary strings** observed in the secondary Reveal Day index, representing **1,608 applications associated with a primary string**, plus six variant-only application records in that secondary source. ICANN's official Reveal Day aggregate remains **1,615 applications / 481 applicants**. The project does **not** claim a complete locally vendored APS application-level corpus for 2026.
 
@@ -29,6 +29,17 @@ The publication distinguishes **FACT**, **READING** and **VISION**. Official ICA
 
 The 2026 round is still in progress. Reveal Day data are treated as a dated snapshot, not as a prediction of final delegation. Replacement and confirmation milestones are documented separately.
 
+## Living research publication
+
+The project now has two version layers:
+
+- **Site releases** (`v0.x.y`) for software, editorial, accessibility and interface changes.
+- **Research releases** (`RR1`, `RR2`, …) for material changes to the evidence base or major derived datasets.
+
+Current research release: **RR1 · Reveal Day 2026**. The next planned research release is **RR2 · String Confirmation 2026**, triggered by ICANN's 17 November 2026 String Confirmation Day.
+
+Citation metadata are stored in [`CITATION.cff`](CITATION.cff). Zenodo-ready metadata are stored in [`.zenodo.json`](.zenodo.json). The research-release manifest and working paper are in [`research/`](research/). A DOI will be added only after an actual archival deposit has been created.
+
 ## `.lugano`
 
 The City of Lugano's institutional project page is the authoritative source for the City's objectives, public information and future decisions concerning `.lugano`:
@@ -45,13 +56,13 @@ Public CSV datasets and the downloadable data pack are exposed through the site.
 
 For browser-based GitHub publication use the release package named:
 
-`Connecting-the-Dots-v0.7.54-WEB-UPLOAD.zip`
+`Connecting-the-Dots-v0.7.55-WEB-UPLOAD.zip`
 
 Extract the archive and upload its contents to the repository root. The package deliberately stays below the project's browser-upload file ceiling and now includes this root `README.md`, so the repository landing page stays aligned with the deployed release.
 
 For the full source/build archive use:
 
-`Connecting-the-Dots-v0.7.54-COMPLETO.zip`
+`Connecting-the-Dots-v0.7.55-COMPLETO.zip`
 
 ## Release history
 

@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.7.55 · 9 October 2026
+
+- Formalized **Connecting the Dots** as a **living research publication** rather than only a website.
+- Added **Research Release RR1 · Reveal Day 2026**, distinct from technical/site versioning.
+- Added a dedicated **Research & citation** section in EN / IT / DE / FR.
+- Added `CITATION.cff` so GitHub can expose a machine-readable citation for the repository.
+- Added `.zenodo.json` metadata in preparation for a future archival DOI; no DOI is claimed before deposit.
+- Added a methodological working paper draft and a machine-readable research-release manifest.
+- Defined **RR2 · String Confirmation 2026** as the next planned milestone research release.
+
+
 ## v0.7.54 — 2026-10-09
 - Clarifies Round 2026 headline metrics without conflating official ICANN aggregates with the frozen secondary Reveal Day snapshot.
 - Shows 980 unique primary strings as a derived frozen snapshot while keeping the official ICANN unique-string aggregate explicitly unpublished.

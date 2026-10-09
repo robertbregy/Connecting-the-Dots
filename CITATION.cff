@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use Connecting the Dots in research, please cite the living research publication and the specific research release used."
+title: "Connecting the Dots: A Living Research Atlas of Top-Level Domain Expansion"
+type: dataset
+authors:
+  - family-names: "Bregy"
+    given-names: "Robert"
+version: "0.7.55"
+date-released: "2026-10-09"
+url: "https://robertbregy.github.io/Connecting-the-Dots/"
+repository-code: "https://github.com/robertbregy/Connecting-the-Dots"
+license: "CC-BY-4.0"
+keywords:
+  - DNS
+  - ICANN
+  - top-level domains
+  - gTLD
+  - Internet governance
+  - domain names
+  - digital infrastructure
