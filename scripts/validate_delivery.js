@@ -56,7 +56,8 @@ function deliveryFixture(language='it',alias=false,query='?tab=explore'){
  const handlers={},copied=[],prompts=[];
  const navigator={clipboard:{writeText:async value=>copied.push(value)}};
  const timers=new Map();let timerId=0;
- const context=vm.createContext({window:{document,innerWidth:1440,matchMedia:()=>({matches:false}),addEventListener:(type,fn)=>(handlers[type]??=[]).push(fn)},document,location,history,navigator,prompt:(label,value)=>prompts.push({label,value}),localStorage:{getItem:()=>null,setItem:()=>{}},requestAnimationFrame:fn=>fn(),setTimeout:(fn,ms)=>{timers.set(++timerId,{fn,ms});return timerId},clearTimeout:id=>timers.delete(id),URL,URLSearchParams,Intl,console});
+ const getComputedStyle=()=>({display:'block',position:'static'});
+ const context=vm.createContext({window:{document,innerWidth:1440,scrollY:0,scrollTo:()=>{},matchMedia:()=>({matches:false}),addEventListener:(type,fn)=>(handlers[type]??=[]).push(fn)},document,location,history,navigator,getComputedStyle,prompt:(label,value)=>prompts.push({label,value}),localStorage:{getItem:()=>null,setItem:()=>{}},requestAnimationFrame:fn=>fn(),setTimeout:(fn,ms)=>{timers.set(++timerId,{fn,ms});return timerId},clearTimeout:id=>timers.delete(id),URL,URLSearchParams,Intl,console});
  const run=code=>vm.runInContext(code,context,{timeout:10000});
  for(const id of ['ctd-data-bundle','ctd-i18n-bundle','ctd-worldmap','ctd-publication','ctd-app']){const node=document.getElementById(id),src=node.getAttribute('src');run(src?fs.readFileSync(path.resolve(root,alias?'':language,src.split('?')[0]),'utf8'):node.textContent);}
  const scripts=()=>[...document.querySelectorAll('script[src]')].filter(s=>s.getAttribute('src').includes('/data/explorer_profiles_'));
