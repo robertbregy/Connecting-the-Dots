@@ -700,6 +700,8 @@ for lang in LANGS:
         fail('Missing direct case evidence links in '+lang)
     if site_base+'behind-the-round/'+lang+'/' not in page:
         fail('Localized Behind the Round guide link missing in '+lang)
+    if '"image":"'+site_base+'assets/og-preview.png"' not in standalone:
+        fail('Missing Article structured image in '+lang)
     if f'<html lang="{lang}">' not in standalone or f'<link rel="canonical" href="{site_base}behind-the-round/{lang}/">' not in standalone:
         fail('Wrong canonical/locale for Behind the Round '+lang)
     if standalone.count('<link rel="alternate" hreflang=')!=5:
