@@ -77,7 +77,7 @@ def render(page,lang,alias=False):
     for n in soup.select('[src], [href]'):
         for attr in ('src','href'):
             ref=n.get(attr)
-            if ref and re.match(r'^(assets|data|downloads)/',ref):n[attr]=prefix+ref
+            if ref and (re.match(r'^(assets|data|downloads|research)/',ref) or ref=='CITATION.cff'):n[attr]=prefix+ref
     classes=[c for c in root.get('class',[]) if c!='js']
     if 'no-js' not in classes:classes.append('no-js')
     root['class']=classes
