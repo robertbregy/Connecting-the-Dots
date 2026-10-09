@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.58
+# Connecting the Dots — v0.7.59
 
 **Connecting the Dots** is an independent, multilingual research and public-information project on the evolution of Internet top-level domains: applications, delegations, governance, economics, social meaning and the ICANN New gTLD Program.
 
@@ -6,16 +6,16 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.58 · 9 October 2026**
+**v0.7.59 · 9 October 2026**
 
-This release completes the first archival publication loop. **Research Release RR1 · Reveal Day 2026** is now archived on Zenodo with DOI **10.5281/zenodo.23262623**. Root `publication.json` remains the single source of truth and now propagates the archival DOI into runtime metadata, citation metadata and structured Dataset metadata.
+This release hardens the research-publication infrastructure after a full repository/live-site audit. It separates the immutable RR1 citation from mutable technical site versions, restores Zenodo metadata to the repository, makes the working paper indexable and citable, reconciles Explorer counting semantics, removes stale 2026 methodology copy, and updates deployment documentation for direct Git-based publication.
 
 The 2026 browsing layer remains frozen locally: **980 unique primary strings** observed in the secondary Reveal Day index, representing **1,608 applications associated with a primary string**, plus six variant-only application records in that secondary source. ICANN's official Reveal Day aggregate remains **1,615 applications / 481 applicants**. The project does **not** claim a complete locally vendored APS application-level corpus for 2026.
 
 ## What the project covers
 
-- TLD Explorer with **1,849 research records** across current-root, historical and application-only identities.
-- **7,678 life-history events** connecting applications, delegation, retirement and other documented states.
+- TLD Explorer with **1,849 core research records** across current-root, historical and application-only identities. The frozen 2026 Reveal Day overlay contributes **939 additional net identities** after deduplication (980 observed primary strings, 41 already present in the core), for **2,788 currently explorable identities**.
+- **7,679 life-history events** connecting applications, delegation, retirement and other documented states.
 - Complete locally vendored formal application corpora for **2000 (47)**, **2004 (10)** and **2012 (1,930)**.
 - Frozen 2026 Reveal Day aggregate and string-level layers, with explicit provenance and limitations.
 - Cross-round analysis of contention, application outcomes, disputes, economics, social meaning and unusual strings.
@@ -56,15 +56,9 @@ Public CSV datasets and the downloadable data pack are exposed through the site.
 
 ## Deployment
 
-For browser-based GitHub publication use the release package named:
+The GitHub repository is now the canonical working master. Ordinary publication updates are committed directly to `main`. The **Rebuild published site** GitHub Action regenerates and validates the static publication, commits generated outputs with `[skip build]`, and GitHub Pages deploys the committed state. Browser-upload ZIPs are retained only as secondary archival/fallback packages.
 
-`Connecting-the-Dots-v0.7.58-WEB-UPLOAD.zip`
-
-Extract the archive and upload its contents to the repository root. The package deliberately stays below the project's browser-upload file ceiling and now includes this root `README.md`, so the repository landing page stays aligned with the deployed release.
-
-For the full source/build archive use:
-
-`Connecting-the-Dots-v0.7.58-COMPLETO.zip`
+See [`DEPLOY.md`](DEPLOY.md) for the current commit / verification procedure.
 
 ## Release history
 
