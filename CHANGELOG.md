@@ -1,5 +1,54 @@
 # Changelog
 
+## v0.7.52 — 2026-10-09
+
+- Expands the `.lugano` page from a short vision panel into a documented case study: application facts, official City project link, public-interest rationale, Swiss/international comparison, and internal cross-links.
+- Distinguishes `.zuerich` correctly as a cantonal/territorial gTLD operated by the Canton of Zurich, not a municipal city TLD.
+- States the Swiss-first claim conditionally: if approved and delegated, `.lugano` would be the first Swiss gTLD directly associated with a city and promoted by its municipal authority.
+- Keeps institutional information on lugano.ch separate from the independent research role of Connecting the Dots.
+- Rebuilds the root README around the current release and ensures the WEB-UPLOAD package includes it, preventing stale GitHub repository copy.
+
+## v0.7.51 — 2026-10-09
+
+- Freeze the 980 unique 2026 Reveal Day primary-string records locally (`applications_2026_strings_reveal.csv` + runtime JS); remove visitor-time nTLDData API requests and browser caching.
+- Document the counting bridge: the frozen string table represents 1,608 primary-string applications; the secondary index reports 1,614 live applications overall because six are variant-only applications for existing TLDs; ICANN officially reports 1,615 applications / 481 applicants.
+- Align Amazon's 2012 portfolio count with the complete local Reveal Day corpus: 76 applications.
+- Replace the stale “five questions” label with a number-free orientation label in all four languages.
+- Align the visible publication-update footer with 9 October 2026.
+- Add release guards against reintroducing the external 2026 fetch/cache, Amazon corpus drift and snapshot-count inconsistencies.
+
+## v0.7.50 — 2026-10-09
+- rebalances the portfolio-economics section so the 2012→2026 industry pattern remains the main narrative;
+- reduces Aruba from a prominent visual case to a compact methodological note on counting units;
+- keeps the underlying 39-strings / 20-live-primary-applications evidence in the dataset and sources;
+- generalizes the portfolio CSV description so it reflects the dataset rather than one company.
+
+# v0.7.49 — Portfolio economics
+
+- adds **From one application to a portfolio** to the Economics section;
+- compares high-volume filing strategies in 2012 and 2026;
+- documents Aruba’s 39 announced strings separately from 20 currently counted live primary applications;
+- adds `data/portfolio_applications.csv`;
+- adds explicit guardrails separating applications, replacement strings, legal applicants, groups, delegated TLDs and registry portfolios;
+- updates sources, translations, release metadata and downloadable data.
+
+# v0.7.48 — Publication consolidation
+
+- Align current README/data documentation and provenance manifests with the post-Reveal state.
+- Correct the Lugano city-timeline 2026 milestone from a pre-Reveal applicant disclosure to the official APS Reveal Day record.
+- Label 1,615 as active applications at Reveal Day rather than as a generic paid/proceeding count.
+- Declare the 2026 string inventory consistently as a paginated runtime layer with browser cache; keep full local APS application coverage explicitly unclaimed.
+- Add QA guards against stale pre-Reveal life-history metadata and runtime-enrichment contradictions.
+- Research corpora and IANA snapshot remain unchanged.
+
+# Changelog
+
+## v0.7.47 — Cross-round analytical rebalance
+- Reframed thematic analysis so 2026 is the newest layer rather than the default lens.
+- Added explicit 2000 / 2004 / 2012 / 2026 corpus context to Strange Internet, Economics, Social Life, Contention, Application Outcomes and Disputed Dots.
+- Rebuilt Strange Internet as a chronological cross-round view; historical cases are no longer collapsed beneath 2026.
+- Kept corpus-level application counts separate from curated examples and interpretive readings.
+
 ## v0.7.46 - 2026-10-08
 
 - Fixes the 2026 Explorer profile-loader bug: runtime Reveal-Day strings no longer try to load a historical profile shard that does not exist.

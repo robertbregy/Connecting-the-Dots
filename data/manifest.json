@@ -1,6 +1,6 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.51",
+  "version": "0.7.52",
   "release_date": "2026-10-09",
   "publication_state": "reveal-day",
   "rendering": "static-prerendered",
@@ -16,7 +16,7 @@
   "string_confirmation_day": "2026-11-17",
   "notes": [
     "Record counts exclude CSV headers.",
-    "applications_2026.csv contains locally vendored official 2026 APS records; v0.7.51 keeps the independently verified .lugano APS record local, labels the application CSV explicitly as partial, freezes the 980-string secondary Reveal Day browsing inventory locally, and does not claim full local APS application coverage during the Replacement Period.",
+    "applications_2026.csv contains locally vendored official 2026 APS records; v0.7.52 keeps the independently verified .lugano APS record local, labels the application CSV explicitly as partial, freezes the 980-string secondary Reveal Day browsing inventory locally, and does not claim full local APS application coverage during the Replacement Period.",
     "explorer_catalog.csv is the latest indexed record view; explorer_events.csv keeps separate historical events for multi-era strings.",
     ".lugano is linked to the official ICANN APS Reveal Day record CDL2651T-T31516 published on 7 October 2026.",
     "dns_oddities.csv distinguishes active legacy, retired, reserved and never-delegated country-code cases.",
@@ -289,7 +289,7 @@
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "release_history": {
     "path": "release_history.json",
-    "sha256": "b84b86315919654ede65fe9617d4a37abfc9b0a99143b28ec02cf350b85ed305"
+    "sha256": "d05dbd3d908910a8c0a3f934fc0bcc6db32597ad923707127dfc47eb3681a21d"
   },
   "freeze": {
     "status": "reveal-day-snapshot",
@@ -304,8 +304,8 @@
     "assets": [
       {
         "repository_path": "data/site_bundle.js",
-        "bytes": 1999726,
-        "sha256": "6fb0cd036a74ea44d6545e62a987a15f377f43c987e396281ca1d2689d687ed6"
+        "bytes": 1999822,
+        "sha256": "741720216622af04ca293ea7799c8b4b2c477e119ca252d54c6866b3f1ece602"
       },
       {
         "repository_path": "assets/app.js",
@@ -314,8 +314,8 @@
       },
       {
         "repository_path": "assets/style.css",
-        "bytes": 107886,
-        "sha256": "7515bddee036f649c0ace7e42d15178430d8db6a2ff787e1b80861cee13d52c9"
+        "bytes": 108206,
+        "sha256": "7d7e8dfebf1847f0ab09c9579ac2ee85855bf13cea0d587ccfd631cc51fd93aa"
       },
       {
         "repository_path": "data/worldmap.js",
@@ -325,42 +325,42 @@
       {
         "repository_path": "data/explorer_profiles_0.js",
         "bytes": 1089784,
-        "sha256": "7c18aa500cbd806c72f507cf1d2f0a174cc15745faae50b878506fec05f71a71"
+        "sha256": "ecb7d4f9bfacdb41e47c3a3a70ee88a6a6d1c29835ec5767ae20b900d3c7bd54"
       },
       {
         "repository_path": "data/explorer_profiles_1.js",
         "bytes": 904381,
-        "sha256": "78490bc7f1b138813a1df26ca769a635355327426d7837979e90cf337bd5c9ea"
+        "sha256": "155686980885e930bc68e88110fae8645b36e88cccb90b8383c77fd7751affe8"
       },
       {
         "repository_path": "data/explorer_profiles_2.js",
         "bytes": 1009406,
-        "sha256": "cd58d359a445b518ec378c9814b44c95bab1e45285709c9f47beee22fafe8403"
+        "sha256": "e18df8655b418e4e2c292c0ecd7f32003b9c011ab9729674d3d5e483f2d0681e"
       },
       {
         "repository_path": "data/explorer_profiles_3.js",
         "bytes": 934600,
-        "sha256": "c227b20416a5ee3aec01d6f326006af2418d0bff6deb955a3ba91c22e0a90fa5"
+        "sha256": "0c2443e8854b2ae440e20e3b2e708e8ff30c2392b38fe08e90698eea42e648fa"
       },
       {
         "repository_path": "data/explorer_profiles_4.js",
         "bytes": 970735,
-        "sha256": "c74d7878360129de93a00b09f18362b128eaa844e46c5fc552805ac701aa6692"
+        "sha256": "48bbbf21797134e3cfcc4e1ecb54de8f36351d30176d5029864f6c3209fe0b2e"
       },
       {
         "repository_path": "data/explorer_profiles_5.js",
         "bytes": 943441,
-        "sha256": "dc1ee692baf58eb8766c3ee740e3da2f4f42056d4e21bc96ecdcc44c7c4e87dc"
+        "sha256": "eac72e5b0256c392ab103713dfb4a80db804b4bbc247f8d3e3be6026adf626e8"
       },
       {
         "repository_path": "data/explorer_profiles_6.js",
         "bytes": 953642,
-        "sha256": "d391acc3cd258df8e0fa9874e081d9207e9e97649efe1618dca40d4bcc141b01"
+        "sha256": "8613a41783e321fb2508ae315f9de82ba1cbdb56cb28e5c4c064b1a1ea3fcc70"
       },
       {
         "repository_path": "data/explorer_profiles_7.js",
         "bytes": 936011,
-        "sha256": "a17dc04746314082f0c801fdc812e86515dd10c62387986c4f1187b1c60e76e0"
+        "sha256": "57b79050feaf675735244fdbb0cefc2aadeb12e91c54822783eb83dd11d6c8cf"
       }
     ]
   },

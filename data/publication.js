@@ -1,6 +1,6 @@
-/* v0.7.51: Reveal Day snapshot freeze hardening */
+/* v0.7.52: .lugano case-study enrichment and README/deploy alignment */
 window.DOT_PUBLICATION={
-  version:'0.7.51',
+  version:'0.7.52',
   releasedOn:'2026-10-09',
   state:'reveal-day',
   freeze:true,
