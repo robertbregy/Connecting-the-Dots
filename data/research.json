@@ -215,6 +215,109 @@
   ],
   "strange": [
     {
+      "round": "2026",
+      "displayRound": "2026",
+      "string": ".fart",
+      "category": "oddity",
+      "status": "application",
+      "noteKey": "sFart2026",
+      "insightKey": "iFart2026",
+      "sources": [
+        "https://www.wired.com/story/icann-top-level-domains-meow/"
+      ]
+    },
+    {
+      "round": "2026",
+      "displayRound": "2026",
+      "string": ".itiswhatitis",
+      "category": "oddity",
+      "status": "application",
+      "noteKey": "sItiswhatitis2026",
+      "insightKey": "iItiswhatitis2026",
+      "sources": [
+        "https://www.ntlddata.com/applications",
+        "https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en"
+      ]
+    },
+    {
+      "round": "2026",
+      "displayRound": "2026",
+      "string": ".meow",
+      "category": "identity",
+      "status": "application",
+      "noteKey": "sMeow2026",
+      "insightKey": "iMeow2026",
+      "sources": [
+        "https://www.dotmeow.org/en/what/",
+        "https://www.wired.com/story/icann-top-level-domains-meow/"
+      ]
+    },
+    {
+      "round": "2026",
+      "displayRound": "2026",
+      "string": ".openai",
+      "category": "brand",
+      "status": "application",
+      "noteKey": "sOpenai2026",
+      "insightKey": "iOpenai2026",
+      "sources": [
+        "https://www.ntlddata.com/applications",
+        "https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en"
+      ]
+    },
+    {
+      "round": "2026",
+      "displayRound": "2026",
+      "string": ".chatgpt",
+      "category": "brand",
+      "status": "application",
+      "noteKey": "sChatgpt2026",
+      "insightKey": "iChatgpt2026",
+      "sources": [
+        "https://www.ntlddata.com/applications",
+        "https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en"
+      ]
+    },
+    {
+      "round": "2026",
+      "displayRound": "2026",
+      "string": ".official",
+      "category": "trust",
+      "status": "application",
+      "noteKey": "sOfficial2026",
+      "insightKey": "iOfficial2026",
+      "sources": [
+        "https://www.ntlddata.com/applications",
+        "https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en"
+      ]
+    },
+    {
+      "round": "2026",
+      "displayRound": "2026",
+      "string": ".agi",
+      "category": "technology",
+      "status": "application",
+      "noteKey": "sAgi2026",
+      "insightKey": "iAgi2026",
+      "sources": [
+        "https://www.ntlddata.com/applications",
+        "https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en"
+      ]
+    },
+    {
+      "round": "2026",
+      "displayRound": "2026",
+      "string": ".agent",
+      "category": "technology",
+      "status": "application",
+      "noteKey": "sAgent2026",
+      "insightKey": "iAgent2026",
+      "sources": [
+        "https://www.ntlddata.com/applications",
+        "https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en"
+      ]
+    },
+    {
       "round": "2000",
       "displayRound": "2000",
       "string": ".kids",
