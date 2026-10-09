@@ -31,5 +31,11 @@
     "A new research release is created when the underlying evidence set or a major derived analysis changes materially.",
     "Historical research releases remain archived and citable once a DOI/archive workflow is activated."
   ],
-  "currentSiteVersion": "0.7.61"
+  "currentSiteVersion": "0.7.62",
+  "workingPaperRevision": {
+    "version": "1.1-draft",
+    "revisedOn": "2026-10-10",
+    "path": "research/connecting-the-dots-working-paper-v1.md",
+    "relationToRR1": "Living draft; not the immutable RR1 Zenodo deposit"
+  }
 }
