@@ -1,3 +1,11 @@
+# v0.7.63 — 2026-10-10
+
+- Refines the four localized home-page SEO titles to reduce search-result truncation while preserving the site's primary research focus.
+- Shortens the Explorer guide's English metadata description to a clearer, search-friendly form.
+- Keeps genuinely decorative logos at `alt=""`, avoiding duplicate labels in assistive technology; an SEO crawler warning about empty decorative alt is not an accessibility failure.
+- The live 11-page crawl returned HTTP 200 and on-page indexability for each audited route, with no critical, high or medium SEO findings. Google's actual indexing status remains independently verifiable through Search Console.
+- Preserves RR1, the original 9 October 2026 DOI citation, the revised working paper v1.1-draft, the chronology and frozen research datasets.
+
 # v0.7.62 — 2026-10-10
 
 - Audits the observation layer against ICANN's published 2026 timetable and the City of Lugano's official project page, without treating an application as a delegated TLD.
