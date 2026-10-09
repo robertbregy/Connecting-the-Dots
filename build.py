@@ -4,6 +4,7 @@ from pathlib import Path
 import csv
 import hashlib
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -112,6 +113,11 @@ def data_pack_files() -> list[Path]:
 
 
 def build_data_pack() -> None:
+    pack = ROOT / "downloads" / "connecting-the-dots-data-pack.zip"
+    if pack.exists() and os.environ.get("CTD_REBUILD_DATA_PACK") != "1":
+        print(f"Keeping frozen data pack at v{PUBLICATION.get('dataPackageVersion') or VERSION}")
+        return
+
     # Semantic-drift data should stay grounded in formal ccTLD status plus documented global reinterpretation.
     with (DATA / "semantic_drift.csv").open(encoding="utf-8-sig", newline="") as fh:
         drift_rows = list(csv.DictReader(fh))
@@ -131,7 +137,6 @@ def build_data_pack() -> None:
     if f"version:'{VERSION}'" not in pub:
         raise SystemExit("Publication version does not match build VERSION")
 
-    pack = ROOT / "downloads" / "connecting-the-dots-data-pack.zip"
     pack.parent.mkdir(parents=True, exist_ok=True)
     write_deterministic_zip(pack, [(path, str(path.relative_to(DATA))) for path in data_pack_files()])
 
@@ -264,14 +269,28 @@ def validate_index() -> None:
         raise SystemExit("Lifecycle must distinguish redemptionPeriod, pendingDelete and availability")
 
     pack = ROOT / "downloads" / "connecting-the-dots-data-pack.zip"
+    if not pack.exists():
+        raise SystemExit("Data pack is missing")
     with zipfile.ZipFile(pack) as zf:
-        for path in data_pack_files():
-            try:
-                packed = zf.read(str(path.relative_to(DATA)))
-            except KeyError:
-                raise SystemExit(f"Data pack is missing {path.name}")
-            if packed != path.read_bytes():
-                raise SystemExit(f"Data pack is stale: {path.name} differs from data/{path.name}")
+        if zf.testzip():
+            raise SystemExit("Data pack ZIP is corrupt")
+        try:
+            packed_manifest = json.loads(zf.read("manifest.json"))
+        except KeyError:
+            raise SystemExit("Data pack is missing manifest.json")
+        expected_pack_version = PUBLICATION.get("dataPackageVersion") or VERSION
+        if packed_manifest.get("version") != expected_pack_version:
+            raise SystemExit(
+                f"Frozen data pack version {packed_manifest.get('version')} does not match publication dataPackageVersion {expected_pack_version}"
+            )
+        if os.environ.get("CTD_REBUILD_DATA_PACK") == "1":
+            for path in data_pack_files():
+                try:
+                    packed = zf.read(str(path.relative_to(DATA)))
+                except KeyError:
+                    raise SystemExit(f"Data pack is missing {path.name}")
+                if packed != path.read_bytes():
+                    raise SystemExit(f"Rebuilt data pack is stale: {path.name} differs from data/{path.name}")
 
 
 def main() -> None:
