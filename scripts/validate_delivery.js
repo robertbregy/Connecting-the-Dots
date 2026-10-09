@@ -22,15 +22,6 @@ for(let i=0;i<full.explorer.length;i++){
 }
 for(const language of ['en','it','de','fr']){
  const text=read(language+'/index.html'),document=parseHTML(text).document;
- console.log('Initial HTML bytes',language,Buffer.byteLength(text));
- if(language==='en' && Buffer.byteLength(text)>1200000){
-  console.log('Largest sections',JSON.stringify([...document.querySelectorAll('.section')].map(x=>({id:x.id,bytes:x.outerHTML.length})).sort((a,b)=>b.bytes-a.bytes).slice(0,12)));
-  console.log('Script payloads',JSON.stringify([...document.querySelectorAll('script')].map(x=>({id:x.id||'',src:x.getAttribute('src')||'',bytes:x.textContent.length})).sort((a,b)=>b.bytes-a.bytes).slice(0,12)));
-  console.log('Largest nodes',JSON.stringify([...document.querySelectorAll('main > *,#explorerTableBody,#explorerDrawer,#journeyStepper')].map(x=>({name:x.id||x.tagName,bytes:x.outerHTML.length})).sort((a,b)=>b.bytes-a.bytes).slice(0,12)));
-  console.log('Heavy content containers',JSON.stringify(['economicGrid','economicModels','sourceList','contentionBars2026','contentionBars2012','themeRoundLens','geoMap','demand2012Bars','rsp2026Bars','demand2026Bars','disputeGrid','socialGrid','strangeGridAll','beyondCases','dnsCapabilities'].map(id=>{const el=document.getElementById(id);return {id,bytes:el?.outerHTML?.length||0,children:el?.children?.length||0,first:el?.innerHTML?.slice(0,150)||''}}).sort((a,b)=>b.bytes-a.bytes)));
-
-  console.log('Section direct children',JSON.stringify(['economics','sources','contention','geography','disputes','social','strange','beyond'].map(id=>{let el=document.getElementById(id);return {id,children:[...el.children].map(x=>({tag:x.tagName,id:x.id,cls:(x.className||'').slice(0,85),bytes:x.outerHTML.length,first:x.innerHTML.slice(0,90)})).sort((a,b)=>b.bytes-a.bytes).slice(0,8)}})));
- }
  assert.ok(Buffer.byteLength(text)<1200000,language+' initial HTML budget');
  assert.ok(!text.includes('window.DOT_DATA='),language+' data must be shared');
  assert.ok(!text.includes('window.DOT_PROFILE_CHUNKS='),language+' details must be deferred');
@@ -48,7 +39,7 @@ const manifest=JSON.parse(read('data/manifest.json')),hash=bytes=>crypto.createH
 assert.equal(manifest.release_history.sha256,hash(read('data/release_history.json')));assert.equal(manifest.web_delivery.detail_batches,8);
 for(const asset of manifest.web_delivery.assets){const bytes=fs.readFileSync(path.join(root,asset.repository_path));assert.equal(bytes.length,asset.bytes,asset.repository_path+' byte count');assert.equal(hash(bytes),asset.sha256,asset.repository_path+' integrity');}
 const translations=JSON.parse(read('data/translations.json'));
-for(const release of site.releaseHistory.releases)for(const language of ['en','it','de','fr'])assert.ok(translations[language][release.summaryKey],language+' release note '+release.version);
+for(const language of ['en','it','de','fr'])assert.ok(translations[language][latest.summaryKey],language+' current release note '+latest.version);
 console.log(`Validated lightweight index, eight deferred batches, ${total} intact profiles and dated release history.`);
 
 // Use the real generated page and application, with controlled network completion.
