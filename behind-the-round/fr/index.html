@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<title>Dans les coulisses | Le mystère des chiffres du Reveal Day</title>
+<meta name="description" content="Pourquoi l’ICANN annonçait-elle 1 616, puis 1 615 candidatures, tandis qu’un index secondaire en montrait 1 614 ? Une enquête sourcée et une question ouverte.">
+<link rel="canonical" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/">
+<link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/">
+<link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/">
+<link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/">
+<link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/">
+<link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/">
+<link rel="icon" href="https://robertbregy.github.io/Connecting-the-Dots/assets/logo-mark.png" type="image/png">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Connecting the Dots">
+<meta property="og:title" content="Dans les coulisses | Le mystère des chiffres du Reveal Day">
+<meta property="og:description" content="Pourquoi l’ICANN annonçait-elle 1 616, puis 1 615 candidatures, tandis qu’un index secondaire en montrait 1 614 ? Une enquête sourcée et une question ouverte.">
+<meta property="og:url" content="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/"><meta property="og:image" content="https://robertbregy.github.io/Connecting-the-Dots/assets/og-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Une candidature manque. Mais deux questions se posent.","description":"Pourquoi l’ICANN annonçait-elle 1 616, puis 1 615 candidatures, tandis qu’un index secondaire en montrait 1 614 ? Une enquête sourcée et une question ouverte.","inLanguage":"fr","datePublished":"2026-10-10","dateModified":"2026-10-10","mainEntityOfPage":"https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/","isAccessibleForFree":true,"author":{"@type":"Person","name":"Robert Bregy"},"isPartOf":{"@type":"WebSite","name":"Connecting the Dots","url":"https://robertbregy.github.io/Connecting-the-Dots/"},"citation":["https://www.icann.org/en/announcements/details/icann-confirms-number-of-applications-proceeding-in-the-2026-round-22-09-2026-en","https://www.icann.org/resources/press-material/release-2026-10-07-en","https://newgtldprogram-aps.icann.org/statistics","https://newgtldprogram-aps.icann.org/applications","https://newgtldprogram-aps.icann.org/applications/WDO2627T-T45217/summary","https://www.ntlddata.com/applications/strings","https://github.com/robertbregy/Connecting-the-Dots/blob/main/data/application_2026_snapshot.json"],"about":[{"@type":"Thing","name":"ICANN New gTLD Program 2026 Reveal Day"}]}</script>
+<style>
+:root{--background:#f6f7fa;--surface:#fff;--surface2:#f1f3f7;--text:#16243c;--muted:#43536c;--border:#ced9e5;--accent:#1568ab;--accent-soft:#e9f3fc;--accent-text:#165d91;color-scheme:light;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--background);color:var(--text);line-height:1.67}
+a{color:#195f99;text-underline-offset:3px}a:focus-visible{outline:3px solid #2e78ac;outline-offset:3px}
+header{background:#122c4a;color:#fff}header a{color:#fff}
+nav,main,footer{max-width:970px;margin:auto;padding:20px 24px}
+nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+nav .brand{text-decoration:none;font-weight:800}nav .lang-links{display:flex;flex-wrap:wrap;gap:13px;font-size:.88rem}
+main{padding-top:42px;padding-bottom:60px}h1{font-size:clamp(2.1rem,5vw,3.65rem);line-height:1.12;letter-spacing:-.04em;margin:8px 0 18px}
+h2{font-size:1.45rem;line-height:1.25}p{margin:0 0 14px}.eyebrow{font-weight:800;color:#276b99;letter-spacing:.12em;text-transform:uppercase;font-size:.79rem}
+.lead{color:var(--muted);font-size:1.15rem;max-width:780px}
+.actions{display:flex;flex-wrap:wrap;gap:13px;margin:22px 0 32px}
+.action{display:inline-block;text-decoration:none;border-radius:9px;padding:10px 15px;font-weight:750;background:#195e93;color:#fff}
+.action.secondary{color:#195e93;background:#fff;border:1px solid #9cb6ce}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:15px;padding:25px;margin:18px 0}
+.insideRoundLenses{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0}
+.insideRoundLens{border-radius:12px;padding:16px;border:1px solid var(--border);background:var(--surface2)}
+.insideRoundLens h3{font-size:1.03rem;margin:0 0 7px}.insideRoundLens p{color:var(--muted);font-size:.9rem}
+.insideRoundTimeline{padding:0 0 0 22px;border-left:1px solid var(--border);list-style:none;margin:25px 0 0}
+.insideRoundEntry{position:relative;border:1px solid var(--border);border-radius:13px;background:var(--surface);padding:20px;margin:0 0 18px}
+.insideRoundEntry:before{content:"";position:absolute;width:10px;height:10px;left:-29px;top:26px;background:var(--accent);border:3px solid var(--surface);border-radius:50%;box-shadow:0 0 0 1px var(--border)}
+.insideRoundMeta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-bottom:11px}
+.insideRoundDate{font-weight:750;font-variant-numeric:tabular-nums;font-size:.85rem}
+.insideRoundState,.insideRoundScope{display:inline-block;background:var(--surface2);color:var(--text);border-radius:99px;border:1px solid var(--border);font-size:.72rem;padding:4px 9px;font-weight:750}
+.insideRoundEntry[data-round-state="current"]{border-color:var(--accent)}
+.insideRoundEntry[data-round-state="current"] .insideRoundState{color:var(--accent-text);background:var(--accent-soft);border-color:var(--accent)}
+.insideRoundEntry[data-round-state="scheduled"],.insideRoundEntry[data-round-state="evolving"],.insideRoundEntry[data-round-state="conditional"]{border-style:dashed}
+.insideRoundEntry h3{font-size:1.2rem;margin:0 0 8px}
+.insideRoundEntry p{font-size:.98rem;color:var(--muted)}
+.insideRoundEntry a{font-size:.83rem;overflow-wrap:anywhere}
+.insideRoundSources{display:flex;flex-wrap:wrap;column-gap:14px;row-gap:6px;margin-top:9px}
+.muted{color:var(--muted);font-size:.94rem}
+footer{border-top:1px solid var(--border);color:var(--muted);font-size:.9rem;padding-bottom:36px}
+@media(max-width:760px){.insideRoundLenses{grid-template-columns:1fr}.panel{padding:18px}.insideRoundEntry{padding:15px}}
+
+
+.behindStory{padding:26px;margin:20px 0}
+.behindStory .eyebrow{margin:0 0 8px}
+.behindStory h2{font-size:clamp(1.4rem,3vw,2.05rem);line-height:1.2;margin:8px 0 14px;letter-spacing:-.022em}
+.behindCaseLead{font-size:1.04rem;line-height:1.68;max-width:78ch;color:var(--muted)}
+.behindStatus{display:inline-block;margin:5px 0 16px;border:1px solid #a5bdd5;background:#eaf3fb;color:#164f7b;padding:6px 12px;border-radius:99px;font-size:.79rem;font-weight:760}
+.behindFigures{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:25px 0 10px}
+.behindFigure{background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:20px 16px;display:flex;flex-direction:column;gap:8px}
+.behindFigure strong{font-variant-numeric:tabular-nums;font-size:clamp(2rem,4vw,3.1rem);font-weight:820;line-height:1.1;letter-spacing:-.05em}
+.behindFigure .factLabel{font-size:.88rem;color:var(--muted);line-height:1.42}
+.behindCaveat{font-size:.84rem;color:var(--muted);max-width:83ch}
+.behindFindings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:23px 0}
+.behindFinding{border:1px solid var(--border);border-radius:14px;padding:22px;background:var(--surface)}
+.behindFinding[data-status="documented"]{border-color:#7fb4a5;background:color-mix(in srgb,#e0f5ee 48%,var(--surface))}
+.behindFinding[data-status="unresolved"]{border-color:#c3b1d9;background:color-mix(in srgb,#f4eefc 44%,var(--surface))}
+.behindFinding .findingPill{font-weight:790;font-size:.73rem;letter-spacing:.01em}
+.behindFinding .findingNumbers{font-variant-numeric:tabular-nums;font-weight:780;font-size:1.1rem;margin:7px 0 3px}
+.behindFinding h3{font-size:1.16rem;line-height:1.3;margin:10px 0}
+.behindFinding p{color:var(--muted);line-height:1.65;font-size:.94rem;margin:0}
+.behindReading{border-top:1px solid var(--border);margin-top:18px;padding-top:20px}
+.behindReading h3,.behindSourcesBlock h3{font-size:1.18rem;line-height:1.3;margin:0 0 11px}
+.behindReading p,.behindSourcesBlock p{line-height:1.65;color:var(--muted);max-width:88ch}
+.behindSources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 13px;list-style:none;margin:12px 0 0;padding:0}
+.behindSources a{display:block;padding:11px 13px;border:1px solid var(--border);border-radius:10px;text-decoration:none;color:var(--accent-text);overflow-wrap:anywhere;line-height:1.42;font-size:.87rem}
+.behindSources a:hover,.behindSources a:focus-visible{text-decoration:underline;background:var(--surface2)}
+.behindSources [data-source-kind="secondary"] a,.behindSources [data-source-kind="derived"] a{border-style:dashed}
+.behindCaseFooter{display:flex;flex-wrap:wrap;gap:10px;align-items:center;border-top:1px solid var(--border);margin-top:21px;padding-top:18px;color:var(--muted);font-size:.83rem}
+.behindCaseFooter time{font-variant-numeric:tabular-nums}
+.behindRevisionHistory{margin:0;padding:0 0 0 20px;color:var(--muted);font-size:.87rem;line-height:1.55}.behindRevisionHistory time{font-weight:740;color:var(--text);font-variant-numeric:tabular-nums;margin-right:7px}
+@media(max-width:720px){.behindFigures{grid-template-columns:1fr}.behindFigure{padding:16px}.behindFigure strong{font-size:2.25rem}.behindFindings{grid-template-columns:1fr}.behindSources{grid-template-columns:1fr}.behindStory{padding:16px}}
+</style></head><body>
+<header><nav aria-label="Languages"><a class="brand" href="https://robertbregy.github.io/Connecting-the-Dots/fr/">Connecting the Dots</a><div class="lang-links"><a lang="en" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/">English</a> <a lang="it" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/">Italiano</a> <a lang="de" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/">Deutsch</a> <a lang="fr" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/" aria-current="page">Français</a></div></nav></header>
+<main id="behind-round">
+<div class="eyebrow">NOTES DE RECHERCHE · ICANN 2026</div>
+<h1>Dans les coulisses du round</h1>
+<p class="lead">Toutes les découvertes intéressantes ne figurent pas dans un communiqué. Ces notes analysent les écarts, les notes discrètes et les choix de procédure que révèle l&#x27;observation d&#x27;un processus institutionnel en cours.</p>
+<div class="actions"><a class="action" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/fr/">Retour à la chronologie du round</a><a class="action secondary" href="https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=behind-round#behind-round">Dans les coulisses du round</a></div>
+<article class="panel behindStory" data-behind-story="reveal-day-counts" id="behind-case-reveal-day-counts">
+<p class="eyebrow">DOSSIER 01 · REVEAL DAY 2026</p>
+<h2>Une candidature manque. Mais deux questions se posent.</h2>
+<p class="behindCaseLead">Chaque écart n&#x27;est que d&#x27;une unité. Pourtant, le nombre de candidatures payées, le total officiel du Reveal Day et un index secondaire figé ne décrivent pas exactement le même état de publication.</p>
+<span class="behindStatus">Partiellement expliqué · une question reste ouverte</span>
+<div class="behindFigures">
+<div class="behindFigure" data-count-type="paid"><strong>1,616</strong><span class="factLabel">ICANN, 22 septembre · candidatures payées maintenues</span></div>
+<div class="behindFigure" data-count-type="official"><strong>1,615</strong><span class="factLabel">ICANN, 7 octobre · candidatures officielles au Reveal Day</span></div>
+<div class="behindFigure" data-count-type="secondary"><strong>1,614</strong><span class="factLabel">Index secondaire du 7 octobre · relevé le 8 octobre</span></div>
+</div>
+<p class="behindCaveat">Les 1 614 proviennent de l&#x27;index secondaire nTLDData archivé (480 candidats), et non d&#x27;un export complet officiel de l&#x27;APS.</p>
+<div class="behindFindings">
+<section class="behindFinding" data-status="documented">
+<span class="findingPill">Omission documentée</span>
+<span class="findingNumbers">1 615 → 1 614</span>
+<h3>La note discrète qui explique le dossier absent</h3>
+<p>La liste des candidatures APS de l&#x27;ICANN précise que la demande WDO2627T-T45217 pour .wdo (World Data Organization, Chine) fait encore l&#x27;objet d&#x27;un contrôle administratif et ne figure donc pas dans la liste publique. La fiche individuelle confirme cet état. Cela documente pourquoi la liste visible peut compter une candidature de moins que le total officiel. L&#x27;index secondaire archivé concorde avec ce constat, sans être reconnu comme un export APS intégral.</p>
+</section>
+<section class="behindFinding" data-status="unresolved">
+<span class="findingPill">Cause non établie</span>
+<span class="findingNumbers">1 616 → 1 615</span>
+<h3>Pourquoi le total officiel a-t-il baissé avant le Reveal Day ?</h3>
+<p>Le 22 septembre, l&#x27;ICANN annonçait 1 616 candidatures payées destinées à poursuivre le processus. Le 7 octobre, le total officiel était de 1 615. Les sources publiques vérifiées n&#x27;identifient ni le dossier concerné ni la cause. Retrait, refus administratif, paiement ou correction de calendrier seraient de simples hypothèses. La question reste ouverte.</p>
+</section></div>
+<section class="behindReading"><h3>Pourquoi s&#x27;intéresser à une différence d&#x27;une unité ?</h3><p>Parce qu&#x27;une statistique, un dossier de candidature et une liste publiable sont trois objets distincts. Il faut dater, délimiter et sourcer chaque chiffre avant de le comparer. La visibilité publique n&#x27;est ni une admission, ni une approbation, ni une délégation.</p></section>
+<section class="behindReading"><h3>Des preuves, pas des suppositions</h3><p>Les nombres 1 616 et 1 615 sont des déclarations directes de l&#x27;ICANN ; 1 614 provient de l&#x27;index secondaire daté conservé par ce projet. La note APS documente l&#x27;absence de .wdo, mais pas la variation antérieure du total officiel. Les deux écarts sont donc traités séparément. Cette note éditoriale révisable ne modifie pas le jeu de données RR1 archivé.</p></section>
+<section class="behindReading"><h3>Qu&#x27;est-ce qui permettrait de clore la question ?</h3><p>Une explication datée de l&#x27;ICANN reliant les chiffres de septembre et d&#x27;octobre, un changement d&#x27;état administratif de .wdo ou une liste publique réconciliable candidature par candidature. Toute correction significative sera datée, sourcée et conservée dans l&#x27;historique du projet.</p></section>
+<section class="behindReading behindSourcesBlock">
+<h3>Vérifier les sources</h3>
+<p>Les sources primaires sont distinguées de l&#x27;index secondaire et de l&#x27;instantané conservé par le projet.</p>
+<ul class="behindSources">
+<li data-source-id="icann-22sep" data-source-kind="primary"><a href="https://www.icann.org/en/announcements/details/icann-confirms-number-of-applications-proceeding-in-the-2026-round-22-09-2026-en" target="_blank" rel="noopener noreferrer"><span>ICANN · Annonce du 22 septembre</span> ↗</a></li>
+<li data-source-id="icann-7oct" data-source-kind="primary"><a href="https://www.icann.org/resources/press-material/release-2026-10-07-en" target="_blank" rel="noopener noreferrer"><span>ICANN · Communiqué du Reveal Day</span> ↗</a></li>
+<li data-source-id="icann-aps-stats" data-source-kind="primary"><a href="https://newgtldprogram-aps.icann.org/statistics" target="_blank" rel="noopener noreferrer"><span>ICANN APS · Statistiques</span> ↗</a></li>
+<li data-source-id="icann-aps-list" data-source-kind="primary"><a href="https://newgtldprogram-aps.icann.org/applications" target="_blank" rel="noopener noreferrer"><span>ICANN APS · Liste et note explicative</span> ↗</a></li>
+<li data-source-id="icann-aps-wdo" data-source-kind="primary"><a href="https://newgtldprogram-aps.icann.org/applications/WDO2627T-T45217/summary" target="_blank" rel="noopener noreferrer"><span>ICANN APS · Candidature .wdo</span> ↗</a></li>
+<li data-source-id="frozen-secondary" data-source-kind="secondary"><a href="https://www.ntlddata.com/applications/strings" target="_blank" rel="noopener noreferrer"><span>nTLDData · Index secondaire</span> ↗</a></li>
+<li data-source-id="project-snapshot" data-source-kind="derived"><a href="https://github.com/robertbregy/Connecting-the-Dots/blob/main/data/application_2026_snapshot.json" target="_blank" rel="noopener noreferrer"><span>Connecting the Dots · Instantané archivé</span> ↗</a></li>
+</ul></section>
+<section class="behindReading behindRevisions">
+<h3>Révisions éditoriales datées</h3>
+<ol class="behindRevisionHistory">
+<li data-editorial-revision="2026-10-10"><time datetime="2026-10-10">2026-10-10</time> <span>Première publication : distinction des deux écarts, vérification de la note APS sur le contrôle administratif et maintien explicite de la variation antérieure du total officiel comme question ouverte.</span></li>
+</ol></section>
+<section class="behindReading">
+<h3>Une observation indépendante</h3>
+<p>L&#x27;auteur participe professionnellement à la candidature .lugano de la Ville de Lugano. Cette recherche reste toutefois indépendante de la communication institutionnelle de la Ville. Elle n&#x27;utilise que des sources publiques et des interprétations attribuables, sans informations confidentielles.</p>
+</section>
+<div class="behindCaseFooter">
+<span>Dernière vérification éditoriale</span>
+<time datetime="2026-10-10">2026-10-10</time>
+</div></article>
+</main>
+<footer>Connecting the Dots · <a href="https://robertbregy.github.io/Connecting-the-Dots/fr/">ICANN 2026</a> ·
+<a href="https://doi.org/10.5281/zenodo.23262623">Research Release RR1 (archived evidence)</a></footer></body></html>
