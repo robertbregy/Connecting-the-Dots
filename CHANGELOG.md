@@ -1,3 +1,10 @@
+# v0.7.58 — 2026-10-09
+
+- Promotes the RR1 Zenodo DOI (`10.5281/zenodo.23262623`) to first-level research metadata in Research & citation and the Working paper entry.
+- Adds the RR1 DOI to the global footer for persistent visibility.
+- Rewrites the archival copy to reflect that RR1 is already published on Zenodo, removing the obsolete “future DOI” wording.
+- Hardens release QA so every rendered language footer must expose the canonical current version and RR1 DOI.
+
 # Changelog
 
 ## v0.7.57 — 2026-10-09

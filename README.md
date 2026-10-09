@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.57
+# Connecting the Dots — v0.7.58
 
 **Connecting the Dots** is an independent, multilingual research and public-information project on the evolution of Internet top-level domains: applications, delegations, governance, economics, social meaning and the ICANN New gTLD Program.
 
@@ -6,7 +6,7 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.57 · 9 October 2026**
+**v0.7.58 · 9 October 2026**
 
 This release completes the first archival publication loop. **Research Release RR1 · Reveal Day 2026** is now archived on Zenodo with DOI **10.5281/zenodo.23262623**. Root `publication.json` remains the single source of truth and now propagates the archival DOI into runtime metadata, citation metadata and structured Dataset metadata.
 
@@ -58,13 +58,13 @@ Public CSV datasets and the downloadable data pack are exposed through the site.
 
 For browser-based GitHub publication use the release package named:
 
-`Connecting-the-Dots-v0.7.57-WEB-UPLOAD.zip`
+`Connecting-the-Dots-v0.7.58-WEB-UPLOAD.zip`
 
 Extract the archive and upload its contents to the repository root. The package deliberately stays below the project's browser-upload file ceiling and now includes this root `README.md`, so the repository landing page stays aligned with the deployed release.
 
 For the full source/build archive use:
 
-`Connecting-the-Dots-v0.7.57-COMPLETO.zip`
+`Connecting-the-Dots-v0.7.58-COMPLETO.zip`
 
 ## Release history
 
