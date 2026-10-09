@@ -147,3 +147,11 @@ The TLD-coverage claim excludes never-delegated ISO codes and other labels that 
 ## Reproducible Reveal Day snapshot policy
 
 The data pack is the frozen release corpus. The complete 2012 string/applicant graph is vendored locally and merged at build time; in v0.7.51 the 980-string 2026 Reveal Day browsing snapshot is also vendored locally. nTLDData remains an attributed provenance source, not a visitor-time dependency. The current ICANN gTLD lifecycle feed remains disabled at visitor runtime. This makes the user-visible research state deterministic across visits.
+
+## Economic sector analysis (v0.7.53)
+
+- `application_economic_map_2012_2026.csv`: application-level analytical map. The 2012 side contains the full 1,930-application corpus. The 2026 side contains 1,608 synthetic application rows expanded from the frozen primary-string snapshot; singleton applicants are retained, while applicant/economic-group fields for contested strings are explicitly unresolved because the frozen string-level source does not identify each underlying applicant.
+- `sector_evolution_2012_2026.csv`: sector counts, shares of all represented rows, shares within the economically classified subset, and taxonomy coverage.
+- `sector_strategy_mix_2012_2026.csv`: naming-strategy mix by sector and round. For contested 2026 strings, application-level strategy remains unresolved rather than inheriting a string-level flag.
+
+These are **editorial research classifications, not ICANN industry categories**. They distinguish the sector represented by a string/application from the applicant's legal-entity name and from the string strategy (brand, generic, geographic, community, etc.).

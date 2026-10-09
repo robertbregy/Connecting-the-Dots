@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.52
+# Connecting the Dots — v0.7.53
 
 **Connecting the Dots** is an independent, multilingual research and public-information project on the evolution of Internet top-level domains: applications, delegations, governance, economics, social meaning and the ICANN New gTLD Program.
 
@@ -6,9 +6,9 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.52 · 9 October 2026**
+**v0.7.53 · 9 October 2026**
 
-This release enriches the `.lugano` case study while preserving the frozen 2026 Reveal Day research state. The page now separates the official City project from the independent research layer, links directly to lugano.ch, explains the application status and public-interest rationale, compares city and territorial gTLD precedents, and distinguishes `.zuerich` correctly as a TLD operated by the Canton of Zurich. The Swiss-first statement is deliberately conditional: if approved and delegated, `.lugano` would be the first Swiss gTLD directly associated with a city and promoted by its municipal authority.
+This release adds a cross-round economic-sector analysis to the Economics theme. It separates the economic sector represented by an application from the naming strategy of the string, so brand namespaces such as `.ubs`, `.goldmansachs`, `.tether` or `.openai` are analysed alongside generic terms such as `.bank`, `.bitcoin` or `.agent`. The release adds application-level, sector-evolution and strategy-mix datasets, with explicit coverage and unresolved-status fields rather than fabricated corporate mappings.
 
 The 2026 browsing layer remains frozen locally: **980 unique primary strings** observed in the secondary Reveal Day index, representing **1,608 applications associated with a primary string**, plus six variant-only application records in that secondary source. ICANN's official Reveal Day aggregate remains **1,615 applications / 481 applicants**. The project does **not** claim a complete locally vendored APS application-level corpus for 2026.
 
@@ -19,6 +19,7 @@ The 2026 browsing layer remains frozen locally: **980 unique primary strings** o
 - Complete locally vendored formal application corpora for **2000 (47)**, **2004 (10)** and **2012 (1,930)**.
 - Frozen 2026 Reveal Day aggregate and string-level layers, with explicit provenance and limitations.
 - Cross-round analysis of contention, application outcomes, disputes, economics, social meaning and unusual strings.
+- Economic-sector mapping for the complete 2012 application corpus and the 1,608 primary-string applications represented in the frozen 2026 secondary snapshot, with unresolved mappings explicitly retained.
 - City and territorial TLD analysis, including the `.lugano` 2026 application as a documented case study.
 - Four languages: **EN · IT · DE · FR**.
 
@@ -44,13 +45,13 @@ Public CSV datasets and the downloadable data pack are exposed through the site.
 
 For browser-based GitHub publication use the release package named:
 
-`Connecting-the-Dots-v0.7.52-WEB-UPLOAD.zip`
+`Connecting-the-Dots-v0.7.53-WEB-UPLOAD.zip`
 
 Extract the archive and upload its contents to the repository root. The package deliberately stays below the project's browser-upload file ceiling and now includes this root `README.md`, so the repository landing page stays aligned with the deployed release.
 
 For the full source/build archive use:
 
-`Connecting-the-Dots-v0.7.52-COMPLETO.zip`
+`Connecting-the-Dots-v0.7.53-COMPLETO.zip`
 
 ## Release history
 

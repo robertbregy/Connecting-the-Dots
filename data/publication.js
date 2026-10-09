@@ -1,6 +1,6 @@
-/* v0.7.52: .lugano case-study enrichment and README/deploy alignment */
+/* v0.7.53: cross-round economic-sector analysis and application-level research datasets */
 window.DOT_PUBLICATION={
-  version:'0.7.52',
+  version:'0.7.53',
   releasedOn:'2026-10-09',
   state:'reveal-day',
   freeze:true,

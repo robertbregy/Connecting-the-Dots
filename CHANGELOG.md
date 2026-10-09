@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.7.53 — 2026-10-09
+
+- Adds **The economy behind the dot**, a cross-round 2012→2026 sector analysis inside the existing Economics theme without adding another top-level page.
+- Separates represented economic sector from string strategy, so brand namespaces and generic sector terms are analysed consistently.
+- Adds `application_economic_map_2012_2026.csv` with all 1,930 2012 applications and 1,608 represented 2026 primary-string application rows; unresolved 2026 contested-applicant mappings remain explicit rather than guessed.
+- Adds `sector_evolution_2012_2026.csv` and `sector_strategy_mix_2012_2026.csv`, plus an accessible comparison chart and downloadable data.
+- Documents taxonomy coverage and denominators: 801/1,930 economically classified in 2012 and 690/1,608 in the represented 2026 primary-string layer.
+- Adds release checks for dataset row counts, taxonomy coverage, AI/crypto discontinuity and methodological disclosure.
+
 ## v0.7.52 — 2026-10-09
 
 - Expands the `.lugano` page from a short vision panel into a documented case study: application facts, official City project link, public-interest rationale, Swiss/international comparison, and internal cross-links.
