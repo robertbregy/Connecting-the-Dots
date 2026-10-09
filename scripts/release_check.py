@@ -631,8 +631,9 @@ sitemap_locs=[n.text for n in sitemap_root.findall('sm:url/sm:loc',sitemap_ns)]
 site_base='https://robertbregy.github.io/Connecting-the-Dots/'
 must_index={site_base+x for x in ['en/','it/','de/','fr/','explorer/','research/','research/connecting-the-dots-working-paper-v1.html']}
 must_index.update(site_base+'inside-the-round/'+lang+'/' for lang in LANGS)
+must_index.update(site_base+'behind-the-round/'+lang+'/' for lang in LANGS)
 if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index):
-    fail('Sitemap does not preserve all 11 language/research/chronicle URLs')
+    fail('Sitemap must preserve all 15 language/research/chronicle/field-note URLs')
 for lang in LANGS:
     page=(ROOT/lang/'index.html').read_text(encoding='utf-8')
     chronicle_page=ROOT/'inside-the-round'/lang/'index.html'
@@ -664,10 +665,60 @@ for lang in LANGS:
         fail('Unpublished personal detail must not appear in chronicle')
     check_internal_refs(chronicle_page)
 
+# Behind the Round observations are separate, source-dated and revisable without altering RR1.
+fieldnotes=json_file('behind_round_stories.json')
+if fieldnotes.get('schemaVersion')!=1 or fieldnotes.get('editorialLayer')!='2026-round-field-notes-not-part-of-frozen-RR1':
+    fail('Unversioned/incorrect field-note evidence register')
+if fieldnotes.get('lastReviewed')!=publication_meta.get('releasedOn'):
+    fail('Field-note review date differs from publication date')
+stories=fieldnotes.get('episodes',[])
+if len(stories)!=1 or stories[0]['id']!='reveal-day-counts':
+    fail('Reveal Day field-note case missing or duplicated')
+case=stories[0]
+if case['state']!='partly-explained' or {q['id']:q['status'] for q in case['discrepancies']}!={'paid-to-reveal':'unresolved','aggregate-to-visible':'documented-exclusion'}:
+    fail('Counts discrepancy must preserve solved and still-unexplained questions separately')
+if {q['id']:q['value'] for q in case['quantities']}!={'paid':1616,'official':1615,'secondary':1614}:
+    fail('Reveal Day discrepancy values altered without reviewed evidence')
+if case['trackedApplication']['id']!='WDO2627T-T45217' or case['trackedApplication']['string']!='.wdo':
+    fail('Officially documented administrative-check record changed')
+if len(case['sources'])<6 or not any(s['kind']=='secondary' for s in case['sources']):
+    fail('Editorial case lacks provenance distinction')
+if not all(s['url'].startswith('https://') and s['labelKey'] for s in case['sources']):
+    fail('Incomplete case evidence')
+if 'id="behind-round"' not in source_html or 'data-target="behind-round"' not in source_html or '<!-- CTD_BEHIND_ROUND_STORIES -->' not in source_html:
+    fail('Independent observation missing from main navigation or build source')
+for lang in LANGS:
+    page=(ROOT/lang/'index.html').read_text(encoding='utf-8')
+    route=ROOT/'behind-the-round'/lang/'index.html'
+    if not route.exists(): fail('Missing Behind the Round standalone '+lang)
+    standalone=route.read_text(encoding='utf-8')
+    if page.count('data-behind-story="reveal-day-counts"')!=1 or standalone.count('data-behind-story="reveal-day-counts"')!=1:
+        fail('The field-note story is not fully visible in '+lang)
+    if page.count('data-source-id=')!=len(case['sources']) or standalone.count('data-source-id=')!=len(case['sources']):
+        fail('Missing direct case evidence links in '+lang)
+    if site_base+'behind-the-round/'+lang+'/' not in page:
+        fail('Localized Behind the Round guide link missing in '+lang)
+    if f'<html lang="{lang}">' not in standalone or f'<link rel="canonical" href="{site_base}behind-the-round/{lang}/">' not in standalone:
+        fail('Wrong canonical/locale for Behind the Round '+lang)
+    if standalone.count('<link rel="alternate" hreflang=')!=5:
+        fail('Missing hreflang reciprocity for Behind the Round '+lang)
+    for key in ['behindExplainedBody','behindOpenBody','behindIndependenceBody','behindMethodBody']:
+        from html import escape as html_escape
+        if not translations.get(lang,{}).get(key) or html_escape(translations[lang][key]) not in standalone:
+            fail('Missing/untranslated core field-note '+lang+'/'+key)
+    for source in case['sources']:
+        if source['url'] not in standalone or source['url'] not in page or not translations[lang].get(source['labelKey']):
+            fail('Missing case citation in '+lang+'/'+source['id'])
+    for val in ['1,616','1,615','1,614','WDO2627T-T45217']:
+        if val not in standalone: fail('Missing dated count or WDO application identifier '+lang)
+    if '24 hours before' in standalone or '24 ore prima' in standalone:
+        fail('Private application-planning details must not be published')
+    check_internal_refs(route)
+
 # Working-paper revisions may evolve, but the dated RR1 evidence and citation do not.
 working_md=(ROOT/'research'/'connecting-the-dots-working-paper-v1.md').read_text(encoding='utf-8')
 working_html=(ROOT/'research'/'connecting-the-dots-working-paper-v1.html').read_text(encoding='utf-8')
-for fragment in ['Working Paper v1.1-draft', 'Editorial revision note (10 October 2026)', 'participant-observer']:
+for fragment in ['Working Paper v1.1-draft', 'Editorial revision note (10 October 2026)', 'participant-observer', '6A.3 A first field note', '1,616']:
     if fragment not in working_md or fragment not in working_html:
         fail('Working paper HTML/Markdown methodological revision mismatch: '+fragment)
 if 'date-released: "2026-10-09"' not in citation or publication_meta.get('releasedOn')!='2026-10-10':
