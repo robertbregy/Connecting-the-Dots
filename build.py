@@ -14,7 +14,10 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data"
-VERSION = "0.7.46"
+PUBLICATION = json.loads((ROOT / "publication.json").read_text(encoding="utf-8"))
+VERSION = PUBLICATION["version"]
+RELEASED_ON = PUBLICATION["releasedOn"]
+AS_OF = PUBLICATION["asOf"]
 
 
 def csv_records(path: Path) -> int:
@@ -53,14 +56,14 @@ def build_manifest() -> None:
     manifest = {
         "project": "Connecting the Dots",
         "version": VERSION,
-        "release_date": "2026-10-08",
+        "release_date": RELEASED_ON,
         "publication_state": "reveal-day",
         "rendering": "static-prerendered",
         "language_routes": {lang: f"{lang}/" for lang in ("en", "it", "de", "fr")},
-        "as_of": "2026-10-08",
+        "as_of": AS_OF,
         "temporal_coverage": "1984/2026",
-        "reveal_day": "2026-10-07T18:00:00Z",
-        "string_confirmation_day": "2026-11-17",
+        "reveal_day": PUBLICATION["revealAt"],
+        "string_confirmation_day": PUBLICATION["stringConfirmation"],
         "notes": [
             "Record counts exclude CSV headers.",
             "applications_2026.csv contains locally vendored official 2026 APS records; v0.7.46 keeps the independently verified .lugano APS record local, labels the application CSV explicitly as partial, documents the official 7 October statistics snapshot and the 980-string secondary inventory separately, and does not claim full local APS application coverage during the Replacement Period.",
@@ -72,13 +75,13 @@ def build_manifest() -> None:
             "Application Archaeology separates submissions, applied-for strings and delegated TLD identity; never-delegated applications do not increase the TLD universe.",
             "Application outcome is modeled independently from contention and governance controversy. outcome_reason is populated only where this frozen corpus carries source-backed evidence; blank outcome fields are unknown here, not inferred successes or failures.",
             "The complete 2012 Reveal-Day string/applicant graph is vendored locally: 1,930 applications across 1,409 distinct strings. Primary Contact and Email from the historic richer transport are not stored, exposed or exported; the browser performs no external research fetch.",
-            "TLD Life Histories remain deterministic and local. Browser-time external enrichment is limited to the published 2026 string inventory and is loaded page-by-page with completeness validation; application-level APS facts are included locally only where explicitly vendored. Undocumented phases are never inferred.",
+            "TLD Life Histories remain deterministic and local. The frozen 2026 Reveal Day string inventory is vendored with the publication; application-level APS facts are included locally only where explicitly vendored. Undocumented phases are never inferred.",
             "Disputed Dots adds nine editorially selected governance cases as a structured layer linked to Explorer strings; FACT and READING remain separate, and case sources are primary ICANN/IANA records.",
             "Economics of the Dot adds eight source-backed economic mechanisms; public revenue, company results, transaction values, auction prices and application fees retain their original accounting basis and are not normalized into one ranking.",
             "The Social Life of the Dot adds nine source-backed social cases and six analytical models covering language, community, identity, protection, locality and script inclusion; registration volume is never used as a proxy for social significance.",
             "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity.",
             "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database. The Explorer extends that universe with all locally vendored formal application strings from 2000, 2004 and 2012.",
-            "application_only_strings.csv is the build-time application-only view. The complete 2012 Reveal-Day string/applicant graph is locally integrated; the 2026 layer is post-Reveal: the published string inventory is browsable through a validated paginated runtime enrichment, while application-level local coverage remains intentionally partial until a full APS export is vendored and validated.",
+            "application_only_strings.csv is the build-time application-only view. The complete 2012 Reveal-Day string/applicant graph is locally integrated; the 2026 Reveal Day string inventory is frozen locally, while application-level local APS coverage remains intentionally partial until a full official export is vendored and validated.",
         ],
         "current_root_snapshot": json.loads((DATA / "iana_snapshot.json").read_text())["asOf"],
         "iana_evidence": "iana_snapshot.json",
@@ -88,9 +91,9 @@ def build_manifest() -> None:
         "freeze": {
             "status": "reveal-day-snapshot",
             "frozen_on": "2026-10-07",
-            "runtime_external_enrichment": True,
-            "browser_time_external_data_fetches": "paginated requests on first load; the client requests up to 500 rows per page and honors the server-reported page size; cached locally afterwards",
-            "policy": "Core research datasets remain packaged locally. The published 2026 string inventory is loaded from the documented nTLDData JSON API with page-by-page completeness validation and local browser caching."
+            "runtime_external_enrichment": False,
+            "browser_time_external_data_fetches": "none",
+            "policy": "Core research datasets and the frozen 2026 Reveal Day string inventory are packaged locally for deterministic browsing; no visitor-time 2026 inventory fetch is performed."
         },
         "web_delivery": {
             "profile_loading": "on-demand",
@@ -272,6 +275,7 @@ def validate_index() -> None:
 
 
 def main() -> None:
+    subprocess.run(["python3", str(ROOT / "scripts" / "sync_publication.py")], check=True)
     subprocess.run(["python3", str(ROOT / "scripts" / "build_application_archaeology.py")], check=True)
     bundle_runtime()
     build_manifest()
