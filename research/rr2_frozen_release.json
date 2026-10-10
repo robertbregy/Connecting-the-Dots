@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "RR2",
+  "releaseStatus": "science-frozen-ready-for-deposit",
+  "releaseType": "research-dataset",
+  "title": "Connecting the Dots · Research Release RR2 · Post-Reveal Evidence Consolidation",
+  "author": "Robert Bregy",
+  "frozenOn": "2026-10-10",
+  "scientificDataSnapshot": "2026-10-07",
+  "originalWebsiteVersion": "0.7.74",
+  "baselineRR1": {
+    "tag": "RR1",
+    "gitSha": "5d52274935cda7712172873f46d456e4c0a09c7e",
+    "specificDoi": "10.5281/zenodo.23262623",
+    "conceptDoi": "10.5281/zenodo.23262622",
+    "conceptRecid": "23262622"
+  },
+  "targetZenodoConceptDoi": "10.5281/zenodo.23262622",
+  "zenodoVersionSpecificDoi": null,
+  "zenodoIntegrationStatus": "unverified-after-RR1",
+  "scientificDelta": {
+    "from": "RR1 tag",
+    "counts": {
+      "officialActiveApplications": 1615,
+      "officialApplicantOrganizations": 481,
+      "preliminaryIdenticalStringContentionSets": 263,
+      "secondaryStringRecords": 980,
+      "primaryStringApplicationRecords": 1608,
+      "variantOnlyApplicationRecords": 6,
+      "secondaryTotalApplicationRecords": 1614
+    },
+    "provenance": "data/research.json and data/application_2026_snapshot.json, plus README and source-index manifest",
+    "warning": "Earlier 1,663 submitted and 1,616 paid versus 1,615 official Reveal Day versus 1,614 secondary-index rows are differently scoped populations. The official 2026 APS application-level corpus is NOT locally complete."
+  },
+  "peerReviewStatus": "not-peer-reviewed; dataset release, working paper stays an independently updated draft",
+  "archivalNotice": "This freeze commit is research-release source. The public site's research metadata remains RR1 until a new version-specific Zenodo DOI has been published and verified as part of the original RR1 concept series.",
+  "relatedTags": [
+    "RR1"
+  ],
+  "nextMilestoneIfPublished": "RR3 · String Confirmation · 2026-11-17"
+}
