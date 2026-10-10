@@ -1,3 +1,11 @@
+# v0.7.69 — 2026-10-10
+
+- Publishes a standalone ICANN/OFAC governance explainer in Italian, English, German and French, with 12 verifiable institutional references, source anchors, dated editorial caveats, four precedents and a clear separation between the constraints on new gTLD applicants and the technical coordination of the DNS.
+- Links the explainer from both existing 2026 Field Notes and their canonical WDO article without expanding the primary navigation or rewriting their independent evidence record.
+- Adds four indexable article routes with canonical URLs, reciprocal hreflang, structured Article metadata, linked primary references, and corresponding sitemap additions (23 URLs total).
+- Adds deterministic rendering and validation for translated topics, legal-source provenance, cross-links, related 2026 cases and the 2026 disclosure limits.
+- Keeps the archived RR1 data, DOI and working-paper snapshot unchanged; sanctions are not claimed to explain the 1,616-to-1,615 Reveal Day discrepancy or the .wdo administrative check.
+
 # v0.7.68 — 2026-10-10
 
 - Extends **Field Note 01** with a five-region numeric crosscheck against the 1,615/481 official ICANN aggregates and the 1,614/480 secondary public record. Only Asia-Pacific differs by one application and one applicant.
