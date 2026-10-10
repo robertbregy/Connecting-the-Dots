@@ -2096,7 +2096,7 @@
     "behindIndependentTitle": "An independent researcher's CSV check",
     "behindIndependentBody": "On 8 October, Stéphane Bortzmeyer examined the public CSV: 2,783 total rows, 1,614 applications when replacement-string rows are removed, and 480 applicants. Exported rows, applications and requested strings are not interchangeable because one application can yield several rows. The independent check corroborates the visible shortfall but does not explain the earlier change in the official total.",
     "behindCoverageTitle": "A widely reported explanation is not a complete reconciliation",
-    "behindCoverageBody": "CircleID discussed the .wdo administrative check alongside the change from 1,616 to 1,615. But APS already reports 1,615 in its statistics while .wdo is omitted from the public application list. The two gaps must be checked separately. No evidence currently proves that .wdo also accounts for the change between September and October.",
+    "behindCoverageBody": "CircleID placed the .wdo administrative check alongside the change from 1,616 to 1,615. In its 8 October notice JPNIC similarly described 1,616 paid applications, 1,615 published and one under administrative check. Yet APS already reports 1,615 active in its statistics while the independent public index identifies 1,614. These accounts are relevant interpretations, not an ID-by-ID reconciliation proving which application caused the earlier official decrease.",
     "behindRevisionReconciled": "Second revision: added a region-by-region check, independent CSV analysis and a distinction between CircleID's interpretation and what can actually be reconciled. The 1,616 → 1,615 change remains unresolved.",
     "behindSourceRegionalSecondary": "nTLDData · Applications by region",
     "behindSourceBortzmeyer": "S. Bortzmeyer · CSV analysis",
@@ -2136,7 +2136,8 @@
     "release0768": "Expands the Reveal Day count case with regional reconciliation, independent CSV analysis and sourced interpretation; adds a second Field Note on the two WDO organizations, with primary evidence, explicit uncertainties and a standalone article in four languages. RR1 and DOI unchanged.",
     "behindRegionTotal": "Total",
     "wdoIdentityDataLabel": "Beijing · established 2026 · .wdo applicant",
-    "wdoIdentityDesignLabel": "Montréal · founded 1957 · wdo.org"
+    "wdoIdentityDesignLabel": "Montréal · founded 1957 · wdo.org",
+    "behindSourceJPNIC": "JPNIC · 8 October official note"
   },
   "it": {
     "brand": "Brand",
@@ -4235,7 +4236,7 @@
     "behindIndependentTitle": "La verifica di un ricercatore indipendente",
     "behindIndependentBody": "L'8 ottobre Stéphane Bortzmeyer ha analizzato il CSV pubblico: 2.783 righe complessive, 1.614 candidature eliminando i record delle stringhe sostitutive e 480 richiedenti. Non si devono confondere righe esportate, candidature e stringhe: la stessa candidatura può produrre più record. La sua analisi corrobora lo scarto osservabile ma non spiega il calo ufficiale avvenuto prima del Reveal Day.",
     "behindCoverageTitle": "Una spiegazione diffusa non è necessariamente una riconciliazione",
-    "behindCoverageBody": "Un articolo di CircleID ha collegato la candidatura .wdo in verifica al cambiamento da 1.616 a 1.615. Le fonti APS indicano però già 1.615 nel totale statistico, mentre la scheda .wdo non compare nella lista generale. Le due differenze vanno verificate separatamente: allo stato delle fonti non possiamo attribuire a .wdo anche il calo registrato fra settembre e ottobre.",
+    "behindCoverageBody": "CircleID ha accostato il controllo su .wdo al calo da 1.616 a 1.615. Nel comunicato dell'8 ottobre anche JPNIC descrive 1.616 candidature pagate, 1.615 pubblicate e una ancora in verifica amministrativa. Ma APS conta già 1.615 candidature attive nella statistica, mentre l'indice pubblico indipendente ne identifica 1.614. Le letture giornalistiche sono utili, ma non riconciliano i singoli ID e non dimostrano quale candidatura abbia determinato il calo ufficiale fra settembre e ottobre.",
     "behindRevisionReconciled": "Seconda revisione: aggiunto confronto regionale, riscontro indipendente del CSV e distinzione fra l'interpretazione di CircleID e la riconciliazione effettivamente dimostrata. La variazione 1.616 → 1.615 resta aperta.",
     "behindSourceRegionalSecondary": "nTLDData · Candidature e regioni",
     "behindSourceBortzmeyer": "S. Bortzmeyer · Analisi del CSV",
@@ -4275,7 +4276,8 @@
     "release0768": "Approfondisce il caso dei conteggi del Reveal Day con confronti regionali, riscontro del CSV e fonti indipendenti; aggiunge una seconda Nota dal campo sulle due organizzazioni WDO, con fonti primarie, limiti espliciti e pagina autonoma in quattro lingue. Dati RR1 e DOI invariati.",
     "behindRegionTotal": "Totale",
     "wdoIdentityDataLabel": "Pechino · costituita nel 2026 · richiedente .wdo",
-    "wdoIdentityDesignLabel": "Montréal · fondata nel 1957 · wdo.org"
+    "wdoIdentityDesignLabel": "Montréal · fondata nel 1957 · wdo.org",
+    "behindSourceJPNIC": "JPNIC · Comunicato dell'8 ottobre"
   },
   "de": {
     "brand": "Marke",
@@ -6374,7 +6376,7 @@
     "behindIndependentTitle": "Unabhängige Auswertung der CSV-Datei",
     "behindIndependentBody": "Am 8. Oktober analysierte Stéphane Bortzmeyer die öffentliche CSV-Datei: 2.783 Zeilen insgesamt, 1.614 Bewerbungen nach Ausschluss der Ersatz-String-Zeilen und 480 Antragsteller. Exportzeilen, Bewerbungen und Zeichenfolgen sind unterschiedliche Zähleinheiten. Die Analyse bestätigt die sichtbare Differenz, erklärt aber nicht den früheren Rückgang der offiziellen Zahl.",
     "behindCoverageTitle": "Eine verbreitete Deutung ist noch kein vollständiger Abgleich",
-    "behindCoverageBody": "CircleID stellte die administrative Prüfung von .wdo neben die Veränderung von 1.616 auf 1.615. APS zählt jedoch bereits 1.615 in seiner Statistik, während .wdo in der öffentlichen Bewerbungsliste fehlt. Beide Differenzen müssen getrennt überprüft werden. Dass .wdo auch den Rückgang zwischen September und Oktober erklärt, ist nicht belegt.",
+    "behindCoverageBody": "CircleID brachte die administrative Prüfung von .wdo mit dem Rückgang von 1.616 auf 1.615 in Verbindung. Auch JPNIC bezeichnete am 8. Oktober 1.616 Bewerbungen als bezahlt, 1.615 als veröffentlicht und eine als weiter administrativ geprüft. APS führt jedoch bereits 1.615 aktive Bewerbungen in der Statistik, während der unabhängige öffentliche Index 1.614 identifiziert. Diese Darstellungen ersetzen keinen Abgleich der einzelnen IDs und erklären den früheren offiziellen Rückgang nicht.",
     "behindRevisionReconciled": "Zweite Revision: regionaler Abgleich, unabhängige CSV-Analyse und Trennung der CircleID-Deutung von der tatsächlich belegten Erklärung. Der Wechsel von 1.616 auf 1.615 bleibt offen.",
     "behindSourceRegionalSecondary": "nTLDData · Bewerbungen nach Regionen",
     "behindSourceBortzmeyer": "S. Bortzmeyer · CSV-Analyse",
@@ -6414,7 +6416,8 @@
     "release0768": "Vertieft die Abweichungen der Reveal-Day-Zahlen mit Regional- und CSV-Abgleich und veröffentlicht eine zweite Beobachtung zu den beiden WDO-Organisationen, mit Primärquellen und begrenzten Aussagen in vier Sprachen. RR1 und DOI unverändert.",
     "behindRegionTotal": "Gesamt",
     "wdoIdentityDataLabel": "Peking · 2026 gegründet · .wdo-Antragstellerin",
-    "wdoIdentityDesignLabel": "Montréal · 1957 gegründet · wdo.org"
+    "wdoIdentityDesignLabel": "Montréal · 1957 gegründet · wdo.org",
+    "behindSourceJPNIC": "JPNIC · Mitteilung vom 8. Oktober"
   },
   "fr": {
     "brand": "Marque",
@@ -8513,7 +8516,7 @@
     "behindIndependentTitle": "Une vérification indépendante du fichier CSV",
     "behindIndependentBody": "Le 8 octobre, Stéphane Bortzmeyer a analysé le CSV public : 2 783 lignes, 1 614 candidatures après exclusion des lignes de chaînes de remplacement, et 480 candidats. Lignes exportées, candidatures et chaînes demandées sont des unités distinctes. Ce contrôle corrobore l'écart visible mais n'explique pas la baisse préalable du chiffre officiel.",
     "behindCoverageTitle": "Une interprétation reprise n'est pas une réconciliation complète",
-    "behindCoverageBody": "CircleID a rapproché le contrôle administratif de .wdo du passage de 1 616 à 1 615. Pourtant, APS affiche déjà 1 615 dans ses statistiques tandis que .wdo manque dans la liste publique. Ces deux écarts doivent rester distincts. Rien ne prouve aujourd'hui que .wdo explique aussi la variation entre septembre et octobre.",
+    "behindCoverageBody": "CircleID a rapproché le contrôle de .wdo du passage de 1 616 à 1 615. Le 8 octobre, JPNIC évoquait aussi 1 616 candidatures payées, 1 615 publiées et une encore en vérification administrative. Or APS compte déjà 1 615 candidatures actives dans ses statistiques, tandis que l'index public indépendant en identifie 1 614. Ces lectures sont intéressantes, mais ne constituent pas un rapprochement dossier par dossier prouvant l'origine de la baisse officielle antérieure.",
     "behindRevisionReconciled": "Deuxième révision : comparaison régionale, analyse CSV indépendante et distinction entre l'interprétation de CircleID et la réconciliation démontrée. Le passage de 1 616 à 1 615 demeure inexpliqué.",
     "behindSourceRegionalSecondary": "nTLDData · Candidatures par région",
     "behindSourceBortzmeyer": "S. Bortzmeyer · Analyse CSV",
@@ -8553,6 +8556,7 @@
     "release0768": "Complète le dossier Reveal Day par une vérification régionale et une analyse CSV indépendante ; publie une deuxième note sur les deux organisations WDO, avec sources primaires, limites explicites et article autonome en quatre langues. RR1 et DOI inchangés.",
     "behindRegionTotal": "Total",
     "wdoIdentityDataLabel": "Pékin · créée en 2026 · candidate .wdo",
-    "wdoIdentityDesignLabel": "Montréal · fondée en 1957 · wdo.org"
+    "wdoIdentityDesignLabel": "Montréal · fondée en 1957 · wdo.org",
+    "behindSourceJPNIC": "JPNIC · Communiqué du 8 octobre"
   }
 }

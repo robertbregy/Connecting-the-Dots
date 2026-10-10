@@ -73,7 +73,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.equal(timelineStandalone.querySelector('link[rel="canonical"]')?.getAttribute('href'),base+'inside-the-round/'+language+'/',page+' chronology URL changed');
   assert.ok(behind.querySelector('[data-behind-story="reveal-day-counts"]'),page+' missing main field note');
   assert.equal(behind.querySelectorAll('[data-behind-story]').length,2,page+' two research cases not published');
-  assert.equal(behind.querySelectorAll('[data-source-id]').length,18,page+' incomplete source audit across two cases');
+  assert.equal(behind.querySelectorAll('[data-source-id]').length,19,page+' incomplete source audit across two cases');
   assert.equal(behind.querySelectorAll('.behindComparisonTable [data-region]').length,5,page+' regional reconciliation missing');
   assert.ok(behind.querySelector('[data-behind-story="wdo-identity"]'),page+' WDO case omitted');
   const behindGuide=document.querySelector('a[data-behind-round-guide]');
@@ -87,7 +87,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.equal(standaloneDocument.querySelector('link[rel="canonical"]').getAttribute('href'),base+'behind-the-round/'+language+'/',page+' field-note canonical');
   assert.equal(standaloneDocument.querySelectorAll('link[rel="alternate"][hreflang]').length,5,page+' field-note hreflang');
   assert.equal(standaloneDocument.querySelector('meta[name="robots"]').getAttribute('content'),'index,follow,max-image-preview:large',page+' field-note indexing');
-  assert.equal(standaloneDocument.querySelectorAll('[data-source-id]').length,18,page+' all source links must be preserved');
+  assert.equal(standaloneDocument.querySelectorAll('[data-source-id]').length,19,page+' all source links must be preserved');
   assert.equal(standaloneDocument.querySelectorAll('.behindFinding').length,2,page+' explanatory statuses missing');
   assert.equal(standaloneDocument.querySelectorAll('[data-editorial-revision]').length,3,page+' dated case histories must remain visible');
   assert.ok(standalone.includes(translations.behindTitle)&&standalone.includes('WDO2627T-T45217'),page+' translated field note missing');
@@ -95,7 +95,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.equal(articleSchema.dateModified,'2026-10-10',page+' dated field-note revision missing');
   assert.equal(articleSchema.image,base+'assets/og-preview.png',page+' field-note Article image');
   assert.ok(translations.behindMetaDescription.length<=160,page+' overlong field-note description');
-  assert.equal(articleSchema.citation.length,18,page+' schema citation list incomplete');
+  assert.equal(articleSchema.citation.length,19,page+' schema citation list incomplete');
   assert.equal(articleSchema['@type'],'CollectionPage',page+' Field Notes index schema is a collection');
   assert.equal(standaloneDocument.querySelectorAll('.behindComparisonTable [data-region]').length,5,page+' regional comparison rows missing');
   assert.ok(standalone.includes('WDO2627T-T45217')&&standalone.includes('World Design Organization'),page+' case distinctions lost');

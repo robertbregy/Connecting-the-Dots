@@ -22,7 +22,7 @@ PRIMARY = (
     "https://ised-isde.canada.ca/",
     "https://ofac.treasury.gov/",
 )
-SECONDARY = ("https://www.ntlddata.com/", "https://www.bortzmeyer.org/", "https://circleid.com/")
+SECONDARY = ("https://www.ntlddata.com/", "https://www.bortzmeyer.org/", "https://circleid.com/", "https://www.nic.ad.jp/")
 RESEARCH = ("https://github.com/robertbregy/Connecting-the-Dots/",)
 
 BEHIND_CSS = """

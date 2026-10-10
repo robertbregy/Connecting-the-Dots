@@ -684,7 +684,7 @@ if case['trackedApplication']['id']!='WDO2627T-T45217' or case['trackedApplicati
     fail('Officially documented administrative-check record changed')
 if not case.get('revisionHistory') or case['revisionHistory'][-1]['date']!=case['revisedOn'] or case['revisionHistory'][-1]['changeKey']!='behindRevisionReconciled':
     fail('Unversioned field-note revision history')
-if len(case['sources'])!=11 or not any(s['kind']=='secondary' for s in case['sources']):
+if len(case['sources'])!=12 or not any(s['kind']=='secondary' for s in case['sources']):
     fail('Editorial case lacks provenance distinction')
 if not all(s['url'].startswith('https://') and s['labelKey'] for s in case['sources']):
     fail('Incomplete case evidence')

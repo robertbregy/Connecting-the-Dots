@@ -122,6 +122,12 @@
           "kind": "primary",
           "labelKey": "behindSourceAPSHelp",
           "url": "https://newgtldprogram-aps.icann.org/applications"
+        },
+        {
+          "id": "independent-jpnic",
+          "kind": "secondary",
+          "labelKey": "behindSourceJPNIC",
+          "url": "https://www.nic.ad.jp/ja/topics/2026/20261008-01.html"
         }
       ],
       "updateTriggers": [
@@ -152,7 +158,8 @@
             "icann-aps-list",
             "ntld-regional",
             "independent-bortzmeyer",
-            "independent-circleid"
+            "independent-circleid",
+            "independent-jpnic"
           ]
         }
       ],

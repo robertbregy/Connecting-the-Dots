@@ -1,7 +1,7 @@
 # v0.7.68 — 2026-10-10
 
 - Extends **Field Note 01** with a five-region numeric crosscheck against the 1,615/481 official ICANN aggregates and the 1,614/480 secondary public record. Only Asia-Pacific differs by one application and one applicant.
-- Links Stéphane Bortzmeyer's independently derived CSV results and distinguishes CircleID's treatment of .wdo from the still-unknown reason for the official 1,616-to-1,615 change.
+- Links Stéphane Bortzmeyer's independently derived CSV results and distinguishes CircleID and JPNIC interpretations of .wdo from the still-unknown reason for the official 1,616-to-1,615 change.
 - Publishes **Field Note 02**, a separate WDO identity and potential prior-rights case. It identifies the unrelated World Data Organization and World Design Organization, cites the Canadian word mark, Applicant Guidebook, official ICANN calendar and the named individual's OFAC listing while explicitly rejecting unproven causal claims.
 - Adds a second four-language, independently canonicalized article under `behind-the-round/{lang}/wdo-identity/`; preserves the existing Field Notes index, source IDs, dated revisions, legacy links and independent editorial status.
 - Expands source validation and regression checks for regional arithmetic, the two cases, SEO, hrefLang, metadata and 19 sitemap URLs. Research Release RR1, its archival DOI and frozen data remain untouched.
