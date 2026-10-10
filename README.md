@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.70
+# Connecting the Dots — v0.7.71
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -6,7 +6,11 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.70 · 10 October 2026**
+**v0.7.71 · 10 October 2026**
+
+Source-precision follow-up to the Internet access explainer: the Iran WhatsApp case now reflects OONI's qualified inference from multiple network anomalies, rather than claiming conclusive proof of a nationwide application block. The 2017 Catalonia case now distinguishes DNS-level redirection of particular .cat registrations following a court order from separate ISP filtering, showing why registry action on an individual name must not be conflated with deleting a TLD. All four languages and the immutable RR1 remain intact.
+
+**Previous v0.7.70 · 10 October 2026**
 
 A four-language, independently indexable **Who controls access to the Internet?** explainer clarifies which operators can block network access and at which technical layer. Seven interactive, privacy-preserving scenarios demonstrate how DNS filtering, IP and TLS controls, registrar/registry suspensions, hosting restrictions and national network shutdowns differ. The reader can compare five dated, primary-sourced situations: China, Russia, Iran, Switzerland and Catalonia, with explicit warnings against treating isolated measurement anomalies as confirmed censorship. Eleven institutional and measurement-source records document methods and cases.
 

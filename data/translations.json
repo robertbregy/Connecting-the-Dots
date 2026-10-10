@@ -2143,7 +2143,8 @@
     "accessCrosslinkText": "Explore who controls Internet access",
     "accessCrosslinkTitle": "Can a working domain still be blocked?",
     "accessCrosslinkIntro": "DNS filtering, suspended domains, network shutdowns and ICANN's role explained through an interactive example.",
-    "release0770": "Adds a four-language Internet access explainer with seven interactive blocking scenarios, five historically sourced country/regional cases, and careful distinctions between DNS, TLDs, ISPs and ICANN."
+    "release0770": "Adds a four-language Internet access explainer with seven interactive blocking scenarios, five historically sourced country/regional cases, and careful distinctions between DNS, TLDs, ISPs and ICANN.",
+    "release0771": "Refines the Iran case to reflect OONI's qualified measurements and documents the distinction between registry-level .cat redirection and local ISP filtering in Catalonia (2017)."
   },
   "it": {
     "brand": "Brand",
@@ -4289,7 +4290,8 @@
     "accessCrosslinkText": "Scopri chi può bloccare l'accesso a Internet",
     "accessCrosslinkTitle": "Un dominio valido può essere comunque bloccato?",
     "accessCrosslinkIntro": "Filtri DNS, sospensioni dei domini, interruzioni di rete e ruolo ICANN spiegati con una simulazione interattiva.",
-    "release0770": "Nuova scheda multilingue sull'accesso a Internet: sette scenari interattivi, cinque casi storici documentati e distinzione rigorosa tra DNS, TLD, provider e ICANN."
+    "release0770": "Nuova scheda multilingue sull'accesso a Internet: sette scenari interattivi, cinque casi storici documentati e distinzione rigorosa tra DNS, TLD, provider e ICANN.",
+    "release0771": "Precisa le evidenze OONI sul possibile blocco di WhatsApp in Iran e distingue il reindirizzamento di alcuni domini .cat dai filtri dei provider nel caso catalano del 2017."
   },
   "de": {
     "brand": "Marke",
@@ -6435,7 +6437,8 @@
     "accessCrosslinkText": "Wer kann den Internetzugang blockieren?",
     "accessCrosslinkTitle": "Kann eine gültige Domain trotzdem gesperrt sein?",
     "accessCrosslinkIntro": "DNS-Filter, Domainsperren, Netzabschaltungen und die Rolle der ICANN mit einer interaktiven Simulation erklärt.",
-    "release0770": "Vier­sprachiger Hintergrundartikel zum Internetzugang mit sieben interaktiven Szenarien, fünf dokumentierten Fallbeispielen und klarer Trennung zwischen DNS, TLDs, Providern und ICANN."
+    "release0770": "Vier­sprachiger Hintergrundartikel zum Internetzugang mit sieben interaktiven Szenarien, fünf dokumentierten Fallbeispielen und klarer Trennung zwischen DNS, TLDs, Providern und ICANN.",
+    "release0771": "Präzisiert die begrenzte Aussagekraft der OONI-Messungen zu WhatsApp im Iran und unterscheidet die .cat-DNS-Umleitung von ISP-Sperren in Katalonien 2017."
   },
   "fr": {
     "brand": "Marque",
@@ -8581,6 +8584,7 @@
     "accessCrosslinkText": "Comprendre qui peut bloquer l'accès à Internet",
     "accessCrosslinkTitle": "Un domaine valide peut-il rester inaccessible ?",
     "accessCrosslinkIntro": "Filtrage DNS, suspension de domaines, coupure réseau et rôle de l'ICANN expliqués dans une simulation interactive.",
-    "release0770": "Nouvelle fiche sur l'accès à Internet en quatre langues : sept scénarios interactifs, cinq cas historiques sourcés et distinction claire entre DNS, TLD, fournisseurs d'accès et ICANN."
+    "release0770": "Nouvelle fiche sur l'accès à Internet en quatre langues : sept scénarios interactifs, cinq cas historiques sourcés et distinction claire entre DNS, TLD, fournisseurs d'accès et ICANN.",
+    "release0771": "Précise les résultats OONI sur les possibles blocages de WhatsApp en Iran et distingue les redirections de certains domaines .cat des filtres réseau en Catalogne (2017)."
   }
 }

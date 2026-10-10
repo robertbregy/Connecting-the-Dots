@@ -1,3 +1,9 @@
+# v0.7.71 — 2026-10-10
+
+- Source precision: qualifies the June–July 2025 Iran WhatsApp anomalies as evidence consistent with possible blocking on some networks, as OONI does, rather than presenting a confirmed nationwide application ban.
+- Explains the two distinct 2017 Catalonia mechanisms documented by OONI: .cat registry-level DNS redirection affecting particular domain names following a court order, and separate resolver/HTTP filtering by access providers. The gTLD .cat was not removed from the global root.
+- Applies changes consistently in EN, IT, DE and FR; maintains the seven-scenario access-control tutorial, 11 source records, 27 indexed URLs and frozen Research Release RR1.
+
 # v0.7.70 — 2026-10-10
 
 - Adds a separately indexable, four-language Internet-access explainer, **Who controls access to the Internet?**, with a seven-scenario local-only interactive walkthrough distinguishing registration state, DNS resolution, IP connectivity, TLS interference, hosting moderation, domain suspension and connectivity shutdowns.

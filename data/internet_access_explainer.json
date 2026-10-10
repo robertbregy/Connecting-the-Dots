@@ -370,8 +370,8 @@
           "note": "OONI / RKS Global, December 2024"
         },
         "iran-2025": {
-          "title": "Iran · service blocking and connectivity disruption",
-          "body": "OONI documented temporary WhatsApp blocking in June 2025 and a sharp drop in measurement coverage during the conflict. Evidence from other network monitors was consistent with a high-severity connectivity disruption; a failed app and a network shutdown remain distinct observations.",
+          "title": "Iran · suspected app blocking and connectivity disruption",
+          "body": "Between 15 June and 12 July 2025, OONI observed repeated anomalies consistent with possible WhatsApp blocking on some Iranian networks, without establishing that it affected every network. During the June conflict, OONI and other monitoring systems recorded evidence of severe connectivity disruption. App-level interference and a network shutdown remain distinct findings.",
           "note": "OONI findings, June–July 2025"
         },
         "swiss-2026": {
@@ -380,8 +380,8 @@
           "note": "Gespa official blocklist, August 2026"
         },
         "catalonia-2017": {
-          "title": "Catalonia (Spain) · referendum website blocking",
-          "body": "OONI measured DNS tampering and HTTP blocking against websites related to the October 2017 referendum, including domains under .cat. The .cat suffix is a sponsored gTLD, not a country-code TLD; changing domain suffixes does not guarantee reachability.",
+          "title": "Catalonia (Spain) · domain actions and network blocking",
+          "body": "During the 2017 referendum, OONI measured DNS tampering and HTTP blocking of referendum sites. Some .cat domains were also redirected at the DNS level after Fundació .cat implemented a court order, while ISPs applied other blocks. Actions affecting particular registrations are not removal of the .cat TLD: it is a sponsored gTLD, not a ccTLD.",
           "note": "OONI measurements, September–October 2017"
         }
       },
@@ -541,8 +541,8 @@
           "note": "OONI / RKS Global, dicembre 2024"
         },
         "iran-2025": {
-          "title": "Iran · blocco di servizi e interruzione della connettività",
-          "body": "OONI ha documentato il blocco temporaneo di WhatsApp nel giugno 2025 e il forte calo delle misurazioni durante il conflitto. Altre misure di rete erano compatibili con una grave interruzione della connettività. Il blocco di un'applicazione e uno shutdown rimangono osservazioni distinte.",
+          "title": "Iran · possibili blocchi di WhatsApp e interruzioni della connettività",
+          "body": "Tra il 15 giugno e il 12 luglio 2025, OONI ha osservato numerose anomalie compatibili con un possibile blocco di WhatsApp su alcune reti iraniane, senza dimostrare che riguardasse tutte le reti. Durante il conflitto, OONI e altri sistemi di monitoraggio hanno rilevato indizi di gravi interruzioni della connettività. Un'interferenza su un'applicazione e uno shutdown di rete sono fenomeni distinti.",
           "note": "Rilevazioni OONI, giugno–luglio 2025"
         },
         "swiss-2026": {
@@ -551,8 +551,8 @@
           "note": "Elenchi ufficiali Gespa, agosto 2026"
         },
         "catalonia-2017": {
-          "title": "Catalogna (Spagna) · blocco dei siti del referendum",
-          "body": "OONI ha rilevato manipolazioni DNS e blocchi HTTP su siti legati al referendum dell'ottobre 2017, anche sotto .cat. L'estensione .cat è un gTLD sponsorizzato e non un ccTLD; cambiare estensione non garantisce di superare un blocco.",
+          "title": "Catalogna (Spagna) · interventi sui domini e blocchi di rete",
+          "body": "Durante il referendum del 2017, OONI ha misurato manipolazioni DNS e blocchi HTTP dei siti interessati. Alcuni domini .cat furono inoltre reindirizzati nel DNS dopo che la Fundació .cat aveva applicato un ordine giudiziario, mentre i provider attuarono altri blocchi. Le misure su singole registrazioni non equivalgono alla rimozione del TLD .cat, che è un gTLD sponsorizzato e non un ccTLD.",
           "note": "Misurazioni OONI, settembre–ottobre 2017"
         }
       },
@@ -712,8 +712,8 @@
           "note": "OONI / RKS Global, Dezember 2024"
         },
         "iran-2025": {
-          "title": "Iran · Dienstesperren und Verbindungsunterbrechungen",
-          "body": "OONI dokumentierte im Juni 2025 vorübergehende WhatsApp-Sperren und stark sinkende Messzahlen. Andere Netzbeobachtungen stützten den Befund schwerer Verbindungsunterbrechungen. Eine Dienstesperre und ein Shutdown bleiben unterschiedliche Phänomene.",
+          "title": "Iran · Hinweise auf WhatsApp-Sperren und Netzunterbrechungen",
+          "body": "Zwischen dem 15. Juni und dem 12. Juli 2025 beobachtete OONI wiederholte Anomalien, die auf eine mögliche WhatsApp-Sperre in einigen iranischen Netzen hindeuteten, ohne eine landesweite Sperre in allen Netzen nachzuweisen. Während des Konflikts erfassten OONI und andere Messsysteme schwere Verbindungsunterbrechungen. Eingriffe gegen eine App und ein Netz-Shutdown sind voneinander zu unterscheiden.",
           "note": "OONI-Messungen, Juni–Juli 2025"
         },
         "swiss-2026": {
@@ -722,8 +722,8 @@
           "note": "Gespa-Sperrlisten, August 2026"
         },
         "catalonia-2017": {
-          "title": "Katalonien (Spanien) · Referendumswebsites",
-          "body": "OONI beobachtete DNS-Manipulationen und HTTP-Sperren bei Websites zum Referendum vom Oktober 2017, auch unter .cat. .cat ist eine gesponserte gTLD und keine Länderkennung; der Wechsel zu einer anderen Endung garantiert keinen Zugang.",
+          "title": "Katalonien (Spanien) · Eingriffe in Domains und Netzsperren",
+          "body": "Zum Referendum 2017 dokumentierte OONI DNS-Manipulationen und HTTP-Sperren. Einige .cat-Domains wurden zudem auf DNS-Ebene umgeleitet, nachdem die Fundació .cat eine gerichtliche Anordnung umgesetzt hatte; Provider setzten weitere Sperren durch. Maßnahmen gegen einzelne Domainregistrierungen sind keine Entfernung der gesamten TLD .cat, die eine gesponserte gTLD und keine ccTLD ist.",
           "note": "OONI-Messungen, September–Oktober 2017"
         }
       },
@@ -883,8 +883,8 @@
           "note": "OONI / RKS Global, décembre 2024"
         },
         "iran-2025": {
-          "title": "Iran · blocage d'application et perturbation de connectivité",
-          "body": "OONI a documenté le blocage temporaire de WhatsApp en juin 2025 et une forte baisse du nombre de mesures pendant le conflit. D'autres observations concordaient avec une coupure sévère de connectivité. Le blocage d'une application et un shutdown demeurent deux phénomènes différents.",
+          "title": "Iran · indices de blocage de WhatsApp et perturbations réseau",
+          "body": "Entre le 15 juin et le 12 juillet 2025, OONI a observé des anomalies répétées compatibles avec un possible blocage de WhatsApp sur certains réseaux iraniens, sans établir que tous les réseaux étaient concernés. Pendant le conflit, OONI et d'autres systèmes de surveillance ont relevé des signes de fortes perturbations de connectivité. L'interférence visant une application reste distincte d'une coupure de réseau.",
           "note": "Mesures OONI, juin–juillet 2025"
         },
         "swiss-2026": {
@@ -893,8 +893,8 @@
           "note": "Listes officielles Gespa, août 2026"
         },
         "catalonia-2017": {
-          "title": "Catalogne (Espagne) · sites du référendum",
-          "body": "OONI a observé des manipulations DNS et des blocages HTTP visant des sites liés au référendum d'octobre 2017, notamment sous .cat. L'extension .cat est un gTLD sponsorisé et non un ccTLD ; changer d'extension ne garantit pas l'accès.",
+          "title": "Catalogne (Espagne) · mesures sur des domaines et filtrage réseau",
+          "body": "Pendant le référendum de 2017, OONI a documenté des manipulations DNS et des blocages HTTP. Certains domaines .cat ont aussi été redirigés dans le DNS après l'exécution d'une ordonnance judiciaire par la Fundació .cat, tandis que des fournisseurs d'accès appliquaient d'autres blocages. Des mesures visant des enregistrements individuels ne suppriment pas le TLD .cat, un gTLD sponsorisé et non un ccTLD.",
           "note": "Mesures OONI, septembre–octobre 2017"
         }
       },
