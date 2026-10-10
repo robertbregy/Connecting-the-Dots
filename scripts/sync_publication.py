@@ -56,7 +56,7 @@ lines[-1] = lines[-1].rstrip(',')
 lines.append('};')
 (DATA / 'publication.js').write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
-# Citation metadata is tied to the archived RR1 research release, not website updates.
+# Citation metadata follows the verified CURRENT scholarly release (RR2), independently of technical website versions; previous RR1 remains immutable in the archival manifest.
 research_manifest = json.loads((ROOT / "research" / "research_release_manifest.json").read_text(encoding="utf-8"))
 rr = research_manifest["currentResearchRelease"]
 if rr["id"] != meta["researchRelease"] or rr["doi"] != meta.get("doi"):

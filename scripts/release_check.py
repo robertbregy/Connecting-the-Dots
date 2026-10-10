@@ -534,8 +534,28 @@ if 'accessReadingLink' not in source_html or 'data-governance-explainer-link' no
 rr_current=json.loads((ROOT/'research'/'research_release_manifest.json').read_text(encoding='utf-8'))
 if rr_current.get('currentSiteVersion')!=version:
     fail('Research manifest currentSiteVersion is inconsistent with technical release')
-if rr_current['currentResearchRelease']['id']!='RR1' or rr_current['currentResearchRelease']['doi']!='10.5281/zenodo.23262623':
-    fail('Frozen scientific release identity was modified')
+current_rr=rr_current['currentResearchRelease']
+if current_rr.get('id')!='RR2' or current_rr.get('doi')!='10.5281/zenodo.23288603':
+    fail('The verified latest scientific release RR2 is not reflected in the current manifest')
+if current_rr.get('conceptDoi')!='10.5281/zenodo.23262622' or current_rr.get('conceptRecordId')!='23262622':
+    fail('RR2 must belong to the existing RR1 Zenodo concept series')
+if current_rr.get('githubTag')!='RR2' or current_rr.get('githubFrozenCommit')!='33803aa3fa69f1abb4cce7fbd49a0788ee9a33c9':
+    fail('RR2 source tag is not the verified frozen scientific commit')
+if rr_current.get('nextPlannedResearchRelease',{}).get('id')!='RR3':
+    fail('17 November String Confirmation must become RR3 after RR2 publication')
+history_rr=rr_current.get('previousResearchReleases',[])
+if len(history_rr)!=1 or history_rr[0].get('id')!='RR1' or history_rr[0].get('doi')!='10.5281/zenodo.23262623':
+    fail('Previously published RR1 version and DOI must remain separately citable')
+if history_rr[0].get('githubFrozenCommit')!='5d52274935cda7712172873f46d456e4c0a09c7e':
+    fail('Frozen Git tag of archived RR1 differs from original')
+verified=(ROOT/'research'/'rr2_publication_verification.json')
+if not verified.exists():
+    fail('Missing independent GitHub–Zenodo verification evidence for RR2')
+verified=json.loads(verified.read_text(encoding='utf-8'))
+if verified.get('verificationStatus')!='GITHUB_ZENODO_VERSION_CHAIN_VERIFIED' or verified.get('doi')!=current_rr['doi'] or verified.get('conceptDoi')!=current_rr['conceptDoi']:
+    fail('RR2 DOI and Zenodo concept-series evidence mismatch')
+if verified.get('githubRelease')!='https://github.com/robertbregy/Connecting-the-Dots/releases/tag/RR2' or verified.get('frozenCommit')!=current_rr['githubFrozenCommit']:
+    fail('RR2 GitHub Release evidence is missing or inconsistent')
 for lang in LANGS:
     if '{updated}' not in translations[lang].get('exploreSnapshotClocks',''):
         fail('Research-versus-website version disclosure lost its renderable update date: '+lang)
@@ -611,8 +631,10 @@ if len(events)!=9 or len({event['id'] for event in events})!=9:
     fail('Inside the Round event count or unique ids')
 if chronicle.get('lastReviewed')!=publication_meta.get('releasedOn'):
     fail('Inside the Round editorial review date does not match this publication')
-if publication_meta.get('researchRelease')!='RR1' or publication_meta.get('doi')!='10.5281/zenodo.23262623':
-    fail('Frozen RR1 publication identity drift')
+if publication_meta.get('researchRelease')!='RR2' or publication_meta.get('doi')!='10.5281/zenodo.23288603':
+    fail('Current publication does not cite the verified RR2 DOI')
+if publication_meta.get('conceptDoi')!='10.5281/zenodo.23262622':
+    fail('Current website does not link the original RR1/RR2 version concept')
 chronicle_states={event['state'] for event in events}
 if chronicle_states!={'observed','current','scheduled','evolving','conditional'}:
     fail('Inside the Round status distinctions missing')
@@ -635,9 +657,9 @@ if not any('CDL2651T-T31516/summary' in item.get('source','') for item in reveal
 rrmeta=json.loads((ROOT/'research'/'research_release_manifest.json').read_text(encoding='utf-8'))['currentResearchRelease']
 citation=(ROOT/'CITATION.cff').read_text(encoding='utf-8')
 if f'date-released: "{rrmeta["publishedOn"]}"' not in citation or f'version: "{rrmeta["id"]}"' not in citation:
-    fail('CITATION.cff must preserve RR1 original release date independently of site updates')
+    fail('CITATION.cff must match the actual version-specific scientific release date, not the technical site update')
 if rrmeta['doi']!=publication_meta.get('doi') or f'value: "{rrmeta["doi"]}"' not in citation:
-    fail('RR1 DOI citation drift')
+    fail('Current RR2 DOI citation differs from the verified Zenodo deposit')
 if publication_meta.get('paperVersion')!='1.1-draft':
     fail('Working paper revision metadata mismatch')
 if 'id="inside-round"' not in source_html or 'data-target="inside-round"' not in source_html:
@@ -952,8 +974,15 @@ working_html=(ROOT/'research'/'connecting-the-dots-working-paper-v1.html').read_
 for fragment in ['Working Paper v1.1-draft', 'Editorial revision note (10 October 2026)', 'participant-observer', '6A.3 A first field note', '1,616']:
     if fragment not in working_md or fragment not in working_html:
         fail('Working paper HTML/Markdown methodological revision mismatch: '+fragment)
-if 'date-released: "2026-10-09"' not in citation or publication_meta.get('releasedOn')!='2026-10-10':
-    fail('Research publication date conflated with current technical release date')
+if 'date-released: "2026-10-10"' not in citation or publication_meta.get('releasedOn')!='2026-10-10':
+    fail('Current RR2 publication date must match the verified release, independently of technical versions')
+research_page=(ROOT/'research'/'index.html').read_text(encoding='utf-8')
+if '10.5281/zenodo.23288603' not in research_page or '10.5281/zenodo.23262623' not in research_page or '10.5281/zenodo.23262622' not in research_page:
+    fail('Research landing must distinguish RR2, archived RR1 and the shared concept DOI')
+if 'RR3' not in research_page or 'RR2 is a dated, immutable' in research_page:
+    fail('Research landing next milestone or scientific scope not revised')
+if 'github.com/robertbregy/Connecting-the-Dots/archive/refs/tags/RR2.zip' not in research_page:
+    fail('Structured RR2 science distribution must reference frozen RR2 source, not legacy website data pack')
 
 # Search metadata should remain concise without compromising decorative-image accessibility.
 for lang in LANGS:

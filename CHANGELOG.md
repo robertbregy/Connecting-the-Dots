@@ -1,3 +1,12 @@
+# v0.7.75 — 2026-10-10 (UTC)
+
+- Promoted the independently confirmed Research Release RR2 DOI **10.5281/zenodo.23288603**. Its GitHub Release is pinned to the source freeze commit `33803aa3fa69f1abb4cce7fbd49a0788ee9a33c9`; the direct Zenodo API audit verified RR2's membership in the exact RR1 concept DOI series **10.5281/zenodo.23262622**.
+- Preserved the original RR1-specific DOI **10.5281/zenodo.23262623**, accessible from the new previous-versions section, and recorded the version chain in a machine-readable scientific evidence record.
+- Synchronized `publication.json`, scientific manifest, generated citation/CFF, structured Dataset metadata, scientific landing and four localized research/citation sections to identify RR2 as the latest citable release and RR1 as a separately archived predecessor.
+- Clarified that RR2 is a dated dataset snapshot, distinct from the independently revised non-peer-reviewed working paper, and that full official 2026 APS application-level coverage is not claimed.
+- Reidentified the planned 17 November 2026 String Confirmation research milestone as potential **RR3**, rather than leaving the now-published RR2 incorrectly scheduled in the future.
+- Removed the completed RR2-candidate preflight from automatic data-change checks on `main`; retained its source and audit trail as historical evidence. This technical promotion changes no frozen RR1/RR2 tag content and no underlying ICANN, IANA or historical research corpus.
+
 # v0.7.74 — 2026-10-10
 
 - Published two new separately indexable, source-dated 2026 Field Notes: Independent Objector EOI email/portal incidents and secondary-index replacement-string/deactivation counts. Each article has primary/secondary source disclosure, evidentiary status, limitations and revision history in EN/IT/DE/FR.

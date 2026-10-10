@@ -1,5 +1,37 @@
 # Scientific-release automation · controlled RR2 rehearsal
 
+## Verified outcome · RR2 published and indexed in the original version series
+
+**This section supersedes the historical prepublication status below.** On
+10 October 2026 (UTC), [GitHub Research Release RR2](https://github.com/robertbregy/Connecting-the-Dots/releases/tag/RR2)
+was published from frozen commit `33803aa3fa69f1abb4cce7fbd49a0788ee9a33c9`.
+Zenodo **automatically archived the GitHub RR2 source ZIP** in the existing
+RR1 concept series, and an independent GitHub Actions audit of the public
+Zenodo API verified both version DOIs in the same `conceptrecid`:
+
+| Version | DOI | Archive |
+|---|---|---|
+| RR1 · 9 October 2026 | [10.5281/zenodo.23262623](https://doi.org/10.5281/zenodo.23262623) | Immutable original |
+| RR2 · 10 October 2026 (UTC) | [10.5281/zenodo.23288603](https://doi.org/10.5281/zenodo.23288603) | Immutable post-Reveal snapshot |
+| Concept · all versions | [10.5281/zenodo.23262622](https://doi.org/10.5281/zenodo.23262622) | Resolves to latest version |
+
+The full end-to-end GitHub → Zenodo → DOI **worked**, establishing that the
+repository is connected for new GitHub release ingestion. The public citation
+promotion was a separate, reviewed technical release (v0.7.75), after DOI
+verification and without rewriting either scientific tag.
+
+Auditable workflows: [RR2 publication](https://github.com/robertbregy/Connecting-the-Dots/actions/runs/38090023801)
+and [Zenodo version verification](https://github.com/robertbregy/Connecting-the-Dots/actions/runs/38090138777).
+Machine-readable confirmation: `research/rr2_publication_verification.json`.
+
+**Historical preflight documentation follows**, preserving the original
+uncertainties from before RR2 was actually published. The RR2-specific
+preflight is now retired from automatic checks on `main`; a separately
+prepared and validated RR3 process is required for the future 17 November
+milestone.
+
+---
+
 **Prepared:** 10 October 2026  
 **Published research release:** RR1, archived DOI `10.5281/zenodo.23262623`  
 **Next research candidate:** RR2, post-Reveal evidence consolidation; **not published yet**  

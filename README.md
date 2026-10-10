@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.74
+# Connecting the Dots — v0.7.75
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -6,7 +6,13 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.74 · 10 October 2026**
+**v0.7.75 · 10 October 2026 (UTC)**
+
+**Scientific Research Release RR2 is now published and independently archived on Zenodo.** The new version-specific DOI is [10.5281/zenodo.23288603](https://doi.org/10.5281/zenodo.23288603); its **concept DOI is unchanged**, [10.5281/zenodo.23262622](https://doi.org/10.5281/zenodo.23262622). The original RR1 remains cited and archived under [10.5281/zenodo.23262623](https://doi.org/10.5281/zenodo.23262623).
+
+RR2 is frozen at Git commit `33803aa3fa69f1abb4cce7fbd49a0788ee9a33c9` and available as the verified [GitHub Research Release RR2](https://github.com/robertbregy/Connecting-the-Dots/releases/tag/RR2). This technical update promotes the **verified DOI** to the research landing, source metadata, `CITATION.cff`, structured Dataset markup, four-language citations and footer, and adds explicit earlier-version and concept links. The November 17 String Confirmation milestone becomes a possible **RR3**. The mutable working paper is still an independently edited draft and the 2026 official APS application-level corpus is not yet locally complete.
+
+**Previous v0.7.74 · 10 October 2026**
 
 Two source-backed 2026 Field Notes now cover ICANN's documented Independent Objector EOI submission failures and replacement-string records, with individual unanswered questions rather than invented causal explanations. Both investigations have independently indexable pages in EN/IT/DE/FR, dated evidence, reciprocal hreflang and entries from the existing Field Notes collection; existing two stories, URLs and sources remain intact.
 

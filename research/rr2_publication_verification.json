@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "release": "RR2",
+  "verificationStatus": "GITHUB_ZENODO_VERSION_CHAIN_VERIFIED",
+  "githubRelease": "https://github.com/robertbregy/Connecting-the-Dots/releases/tag/RR2",
+  "frozenCommit": "33803aa3fa69f1abb4cce7fbd49a0788ee9a33c9",
+  "githubPublishedAtUTC": "2026-10-10T22:04:30Z",
+  "githubAuditRun": "https://github.com/robertbregy/Connecting-the-Dots/actions/runs/38090023801",
+  "zenodoAuditRun": "https://github.com/robertbregy/Connecting-the-Dots/actions/runs/38090138777",
+  "zenodoRecordId": 23288603,
+  "doi": "10.5281/zenodo.23288603",
+  "conceptDoi": "10.5281/zenodo.23262622",
+  "conceptRecordId": "23262622",
+  "previousVersion": {
+    "id": "RR1",
+    "doi": "10.5281/zenodo.23262623",
+    "gitTag": "RR1",
+    "frozenCommit": "5d52274935cda7712172873f46d456e4c0a09c7e"
+  },
+  "verifiedFacts": [
+    "RR2 GitHub Release points to the stated frozen commit.",
+    "Zenodo public RR2 record lists RR2 and retains RR1 concept DOI.",
+    "Zenodo RR2 source archive is associated with GitHub RR2 tag.",
+    "Zenodo returned two versions of the same concept series: RR1 and RR2.",
+    "RR2 has its own version-specific DOI; RR1 remains preserved."
+  ],
+  "limitations": [
+    "Evidence refers to the 7 October 2026 ICANN Reveal Day snapshot, not final String Confirmation.",
+    "The 2026 official ICANN application-level population has not been fully mirrored locally.",
+    "The working paper remains a living, non-peer-reviewed draft."
+  ]
+}

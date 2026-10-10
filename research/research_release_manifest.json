@@ -3,27 +3,32 @@
   "project": "Connecting the Dots",
   "publicationModel": "living research publication",
   "currentResearchRelease": {
-    "id": "RR1",
-    "label": "Reveal Day 2026",
-    "publishedOn": "2026-10-09",
+    "id": "RR2",
+    "label": "Post-Reveal Day 2026 · evidence consolidation",
+    "publishedOn": "2026-10-10",
     "dataSnapshot": {
       "iana": "2026-10-04",
       "icann2026RevealDay": "2026-10-07",
-      "publicationAsOf": "2026-10-09"
+      "publicationAsOf": "2026-10-10"
     },
-    "status": "published and archived on Zenodo",
-    "doi": "10.5281/zenodo.23262623",
+    "status": "published on GitHub and archived as a new version on Zenodo",
+    "doi": "10.5281/zenodo.23288603",
+    "doiUrl": "https://doi.org/10.5281/zenodo.23288603",
+    "conceptDoi": "10.5281/zenodo.23262622",
+    "conceptRecordId": "23262622",
+    "githubTag": "RR2",
+    "githubFrozenCommit": "33803aa3fa69f1abb4cce7fbd49a0788ee9a33c9",
+    "releaseUrl": "https://github.com/robertbregy/Connecting-the-Dots/releases/tag/RR2",
     "canonicalUrl": "https://robertbregy.github.io/Connecting-the-Dots/",
     "paper": "research/connecting-the-dots-working-paper-v1.md",
-    "introducedInSiteVersion": "0.7.55",
-    "doiUrl": "https://doi.org/10.5281/zenodo.23262623"
+    "introducedInSiteVersion": "0.7.75"
   },
   "nextPlannedResearchRelease": {
-    "id": "RR2",
+    "id": "RR3",
     "label": "String Confirmation 2026",
     "trigger": "ICANN String Confirmation Day",
     "targetDate": "2026-11-17",
-    "scope": "Refresh the applied-for string set, contention structure and derived analyses after replacement-string confirmation."
+    "scope": "After ICANN confirmation, refresh the applied-for primary string set, changes from replacement choices, contention structure, application status and derived analyses. All changes must remain source-backed and versioned."
   },
   "updatePolicy": [
     "Research releases are milestone snapshots, distinct from technical site versions.",
@@ -31,11 +36,34 @@
     "A new research release is created when the underlying evidence set or a major derived analysis changes materially.",
     "Historical research releases remain archived and citable once a DOI/archive workflow is activated."
   ],
-  "currentSiteVersion": "0.7.74",
+  "currentSiteVersion": "0.7.75",
   "workingPaperRevision": {
     "version": "1.1-draft",
     "revisedOn": "2026-10-10",
     "path": "research/connecting-the-dots-working-paper-v1.md",
-    "relationToRR1": "Living draft; not the immutable RR1 Zenodo deposit"
-  }
+    "relationToRR1": "RR1 is preserved as a separate previous Zenodo version.",
+    "relationToRR2": "Living draft revised 10 October 2026; distinguish from the immutable RR2 Zenodo dataset and cite RR2 for its source snapshot."
+  },
+  "previousResearchReleases": [
+    {
+      "id": "RR1",
+      "label": "Reveal Day 2026",
+      "publishedOn": "2026-10-09",
+      "dataSnapshot": {
+        "iana": "2026-10-04",
+        "icann2026RevealDay": "2026-10-07",
+        "publicationAsOf": "2026-10-09"
+      },
+      "status": "published and archived on Zenodo",
+      "doi": "10.5281/zenodo.23262623",
+      "canonicalUrl": "https://robertbregy.github.io/Connecting-the-Dots/",
+      "paper": "research/connecting-the-dots-working-paper-v1.md",
+      "introducedInSiteVersion": "0.7.55",
+      "doiUrl": "https://doi.org/10.5281/zenodo.23262623",
+      "conceptDoi": "10.5281/zenodo.23262622",
+      "conceptRecordId": "23262622",
+      "githubTag": "RR1",
+      "githubFrozenCommit": "5d52274935cda7712172873f46d456e4c0a09c7e"
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
-  "title": "Connecting the Dots: A Living Research Atlas of Top-Level Domain Expansion",
-  "description": "A multilingual living research publication and structured dataset tracing top-level-domain applications, delegations, life histories, governance, economics, social meaning and the ICANN New gTLD Program across 2000, 2004, 2012 and 2026.",
+  "title": "Connecting the Dots · Research Release RR2 · Post-Reveal Evidence Consolidation",
+  "description": "Second citable scientific dataset release of Connecting the Dots. Incorporates ICANN's official 7 October 2026 Reveal Day statistics (1,615 active applications; 481 applicant organizations; 263 preliminary identical-string contention sets), with separately labelled secondary 2026 index coverage (980 primary strings; 1,608 primary-string application records plus six variant-only records). Includes reproducible historical 2000/2004/2012 application evidence and dated IANA records. Counts across submission, payment, official and secondary datasets represent distinct stages or sources. The public 2026 APS application-level corpus is not claimed complete. Release RR1 and its DOI remain immutable.",
   "creators": [
     {
       "name": "Bregy, Robert"
@@ -29,5 +29,6 @@
       "relation": "isSupplementTo",
       "scheme": "url"
     }
-  ]
+  ],
+  "version": "RR2"
 }

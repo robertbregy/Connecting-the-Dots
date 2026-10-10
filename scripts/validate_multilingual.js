@@ -253,7 +253,13 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   const home=document.getElementById('cards');
   assert.ok(home&&home.querySelector('.num').textContent.replace(/\D/g,'')==='1615',page+' obsolete 1,616 application total');
   assert.ok(document.getElementById('demand2026Bars')?.textContent.includes('198'),page+' missing official regional applicant counts');
-  assert.ok(document.getElementById('research')?.textContent.includes('10.5281/zenodo.23262623'),page+' RR1 DOI is missing');
+  const research=document.getElementById('research');
+  assert.ok(research?.textContent.includes('10.5281/zenodo.23288603'),page+' verified current RR2 DOI is missing');
+  assert.ok(research?.textContent.includes('10.5281/zenodo.23262623'),page+' archived RR1 DOI is missing');
+  assert.ok(research?.textContent.includes('10.5281/zenodo.23262622'),page+' shared Zenodo concept DOI is missing');
+  assert.equal(research?.querySelector('a[href="https://doi.org/10.5281/zenodo.23288603"]')?.getAttribute('target'),'_blank',page+' RR2 Zenodo link broken');
+  assert.ok(research?.querySelector('.researchPriorPanel'),page+' prior RR1 research version not disclosed');
+  assert.ok(research?.textContent.includes(translations.researchPriorBody),page+' RR1 history not localized');
   for(const n of document.querySelectorAll('[src],[href]'))for(const attr of ['src','href']){
     const ref=n.getAttribute(attr);if(!ref||/^(https?:|data:|mailto:|tel:)/.test(ref))continue;
     if(ref.startsWith('#')){assert.ok(document.getElementById(decodeURIComponent(ref.slice(1))),page+' missing fragment '+ref);continue;}

@@ -3,7 +3,6 @@ name: RR2 scientific release preflight (unpublished)
 on:
   push:
     branches:
-      - main
       - 'feat/rr2-scientific-release-preflight'
       - 'research/**'
     paths:
