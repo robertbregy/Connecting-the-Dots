@@ -62,14 +62,19 @@ footer{border-top:1px solid var(--border);color:var(--muted);font-size:.9rem;pad
 .accessChoices button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:750}
 .accessChoices button:hover{box-shadow:0 0 0 1px var(--accent)}
 .accessChoices button:focus-visible{outline:3px solid #327bb1;outline-offset:2px}
-.accessStages{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
-.accessStages li{border:1px solid var(--border);border-radius:11px;padding:13px;min-width:0;background:var(--surface2);transition:background .15s}
-.accessStages li h3{font-size:.93rem;line-height:1.25;margin:7px 0}
-.accessStages li p{color:var(--muted);font-size:.79rem;line-height:1.48;margin:0}
-.accessStages li .state{font-size:.75rem;font-weight:780}
-.accessStages li[data-state="passed"]{border-color:#82b8a0;background:#e9f8f1;color:#185e45}
-.accessStages li[data-state="blocked"]{border-color:#b99a5d;background:#fff2d8;color:#76520d}
-.accessStages li[data-state="pending"]{border-color:var(--border);background:var(--surface2);opacity:.67}
+.accessStages{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.accessPrerequisite{list-style:none;margin:0 0 20px;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+.accessPreconditionsHeading{font-size:1rem;margin:0 0 6px}
+.accessPreconditionsBody{color:var(--muted);font-size:.87rem;line-height:1.55;max-width:85ch;margin:0 0 10px}
+.accessPrerequisite li{max-width:100%;border-left:4px solid var(--accent)}
+.accessFlowLead{font-size:.84rem;color:var(--muted);margin:0 0 12px}
+.accessStages li,.accessPrerequisite li{border:1px solid var(--border);border-radius:11px;padding:13px;min-width:0;background:var(--surface2);transition:background .15s}
+.accessStages li h3,.accessPrerequisite li h3{font-size:.93rem;line-height:1.25;margin:7px 0}
+.accessStages li p,.accessPrerequisite li p{color:var(--muted);font-size:.79rem;line-height:1.48;margin:0}
+.accessStages li .state,.accessPrerequisite li .state{font-size:.75rem;font-weight:780}
+.accessStages li[data-state="passed"],.accessPrerequisite li[data-state="passed"]{border-color:#82b8a0;background:#e9f8f1;color:#185e45}
+.accessStages li[data-state="blocked"],.accessPrerequisite li[data-state="blocked"]{border-color:#b99a5d;background:#fff2d8;color:#76520d}
+.accessStages li[data-state="pending"],.accessPrerequisite li[data-state="pending"]{border-color:var(--border);background:var(--surface2);opacity:.67}
 .accessScenarios{margin-top:20px}
 .accessScenario{border:1px solid var(--border);border-radius:14px;padding:18px 20px}
 .accessScenario[data-outcome="blocked"]{border-left:4px solid #af8240}
@@ -130,9 +135,11 @@ footer{border-top:1px solid var(--border);color:var(--muted);font-size:.9rem;pad
 <button type="button" data-access-select="service" data-block-stage="4" aria-controls="accessPanels" aria-pressed="false">Hosting or platform decision</button>
 <button type="button" data-access-select="registration" data-block-stage="0" aria-controls="accessPanels" aria-pressed="false">Domain suspension</button>
 <button type="button" data-access-select="shutdown" data-block-stage="2" aria-controls="accessPanels" aria-pressed="false">Network shutdown</button></div>
-<h3 style="font-size:1rem;margin:0 0 10px">Schematic: from a domain to a web response</h3>
-<ol class="accessStages"><li data-access-stage="registry" data-state="passed"><span class="state" data-access-state-label>passed</span><h3>TLD, registry &amp; registration</h3><p>Is the domain registered and delegated? This is an upstream lifecycle condition, not a packet filter.</p></li>
-<li data-access-stage="dns" data-state="passed"><span class="state" data-access-state-label>passed</span><h3>DNS resolver</h3><p>Can the user&#x27;s resolver translate the hostname into a usable IP address?</p></li>
+<h3 class="accessPreconditionsHeading">Before the visit: the name must exist</h3>
+<p class="accessPreconditionsBody">The registry and registrar manage the domain&#x27;s registration and authoritative DNS status. They are not contacted as an extra network hop every time someone opens a website.</p>
+<ul class="accessPrerequisite" aria-label="Before the visit: the name must exist"><li data-access-stage="registry" data-state="passed"><span class="state" data-access-state-label>passed</span><h3>TLD, registry &amp; registration</h3><p>Is the domain registered and delegated? This is an upstream lifecycle condition, not a packet filter.</p></li></ul>
+<h3 style="font-size:1rem;margin:0 0 10px">During the visit: the user&#x27;s actual request path</h3>
+<ol class="accessStages"><li data-access-stage="dns" data-state="passed"><span class="state" data-access-state-label>passed</span><h3>DNS resolver</h3><p>Can the user&#x27;s resolver translate the hostname into a usable IP address?</p></li>
 <li data-access-stage="network" data-state="passed"><span class="state" data-access-state-label>passed</span><h3>ISP, routing &amp; IP access</h3><p>Can packets travel from this network to the destination?</p></li>
 <li data-access-stage="tls" data-state="passed"><span class="state" data-access-state-label>passed</span><h3>TLS handshake &amp; traffic filters</h3><p>Can the encrypted connection be established? Some metadata may be visible.</p></li>
 <li data-access-stage="service" data-state="passed"><span class="state" data-access-state-label>passed</span><h3>Hosting, application &amp; content</h3><p>Does the remote service answer and provide the requested resource?</p></li></ol>
