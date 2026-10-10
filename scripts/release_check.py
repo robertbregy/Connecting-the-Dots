@@ -745,7 +745,11 @@ for lang in LANGS:
         fail('Localized field-note number grouping incorrect '+lang)
     if html_escape(translations[lang]['behindExplorerBridge']) not in standalone:
         fail('Explorer versus APS reconciliation missing '+lang)
-    if '24 hours before' in standalone or '24 ore prima' in standalone:
+    # Check the original two field-note narratives only. The additional EOI
+    # investigation legitimately quotes ICANN's PUBLIC 24-hour portal incident.
+    # The author's unpublished application-planning detail must remain absent.
+    original_cases=standalone.split('<section class="panel fieldInvestigationIndex"',1)[0]
+    if '24 hours before' in original_cases or '24 ore prima' in original_cases:
         fail('Private application-planning details must not be published')
     if standalone.count('data-editorial-revision=') != sum(len(entry['revisionHistory']) for entry in stories):
         fail('No visible dated editorial change history '+lang)
