@@ -15,5 +15,5 @@ window.DOT_PUBLICATION={
   doiUrl:'https://doi.org/10.5281/zenodo.23262623',
   conceptDoi:null,
   archive:'Zenodo',
-  commit:'52651692fb5323d547a0c7fddd57b482c5fcfefa'
+  commit:'66bf82a068f8794942af7dcd89217b3c72312ed3'
 };
