@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.68
+# Connecting the Dots — v0.7.69
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -6,7 +6,13 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.68 · 10 October 2026**
+**v0.7.69 · 10 October 2026**
+
+A new independently indexable, four-language governance explainer, **When a global Internet meets national sanctions**, documents ICANN's OFAC obligations, the distinction between SDN-listed applicants and licensable transactions, the separate roles of registries, registrars and registrants, and the 2012, 2014 and 2022 precedents. The article links directly to twelve official primary sources and explicitly avoids attributing the 2026 count discrepancy or the .wdo administrative check to unproven sanctions causes.
+
+Localized links connect the explainer to both existing Field Notes without adding another item to the site's primary menu. The new path is `behind-the-round/{lang}/sanctions-and-dns/`. This is an evolving editorial explanation outside immutable RR1. The four-language sitemap and release checks now cover 23 indexable pages.
+
+**Previous v0.7.68 · 10 October 2026**
 
 The first **Field Note** now reconciles the 7 October official and secondary counts by geographic region: the one-application and one-applicant difference occurs entirely in Asia-Pacific. It adds Stéphane Bortzmeyer's independent CSV analysis (2,783 rows, 1,614 application-level records without replacement-string rows, 480 applicants) and distinguishes the explanation implied by CircleID's reporting from what ICANN's APS footnote actually establishes. The change from 1,616 on 22 September to 1,615 at Reveal Day **remains unexplained**.
 
@@ -14,7 +20,7 @@ A second, independently indexable Field Note examines two distinct organizations
 
 Both editorial cases are now backed by dated sources, multilingual revisions, an updated sitemap and deterministic build tests. RR1 and its 9 October 2026 Zenodo DOI remain immutable. Four-language entry pages keep their existing URLs; the second note adds `behind-the-round/{lang}/wdo-identity/`.
 
-**Previous v0.7.67** harmonized the menu terminology into Timeline and Field Notes.
+**Earlier v0.7.67** harmonized the menu terminology into Timeline and Field Notes.
 
 ## What the project covers
 
