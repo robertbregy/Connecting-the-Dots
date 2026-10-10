@@ -1,0 +1,104 @@
+name: Publish RR2 frozen research release to GitHub for Zenodo archival
+
+on:
+  push:
+    branches:
+      - research/rr2-frozen-release
+    paths:
+      - .github/workflows/publish-rr2.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: connecting-the-dots-rr2-publication
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Verify frozen RR2 sources and publish one GitHub Release
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      FREEZE_SHA: "33803aa3fa69f1abb4cce7fbd49a0788ee9a33c9"
+    steps:
+      - name: Checkout full scientific release history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Verify original RR1 tag and RR2 frozen commit
+        run: |
+          python3 - <<'PY'
+          import json, os, subprocess
+          freeze=os.environ["FREEZE_SHA"]
+          repo=os.environ["GITHUB_REPOSITORY"]
+          assert repo=="robertbregy/Connecting-the-Dots", "Wrong repository"
+          assert subprocess.check_output(["git","rev-parse","RR1^{commit}"],text=True).strip()=="5d52274935cda7712172873f46d456e4c0a09c7e", "RR1 tag mutated"
+          def frozen(path):
+              return subprocess.check_output(["git","show",freeze+":"+path],text=True)
+          z=json.loads(frozen(".zenodo.json"))
+          f=json.loads(frozen("research/rr2_frozen_release.json"))
+          assert z["upload_type"]=="dataset" and z["version"]=="RR2", "RR2 Zenodo metadata not frozen"
+          assert f["releaseId"]=="RR2" and f["releaseStatus"]=="science-frozen-ready-for-deposit", "RR2 release not frozen"
+          assert f["targetZenodoConceptDoi"]=="10.5281/zenodo.23262622", "Zenodo continuity metadata wrong"
+          assert f["zenodoVersionSpecificDoi"] is None, "Do not fabricate the RR2-specific DOI"
+          assert 'version: "RR2"' in frozen("CITATION.cff"), "RR2 candidate citation differs from freeze"
+          assert "1,615" in frozen("research/RR2-RELEASE-NOTES.md"), "Scientific delta missing"
+          assert subprocess.call(["git","merge-base","--is-ancestor",freeze,"HEAD"])==0, "Frozen commit not in publishing branch history"
+          print("RR2 RELEASE FREEZE VERIFIED",freeze, "RR1 preserved")
+          PY
+
+      - name: Verify GitHub release and tag do not already exist
+        run: |
+          if gh release view RR2 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release RR2 already exists. Refusing to replace an existing public research archive."
+            exit 1
+          fi
+          if git ls-remote --tags origin 'refs/tags/RR2' | grep -q .; then
+            echo "Tag RR2 already exists. Do not retag a permanent scholarly release."
+            exit 1
+          fi
+
+      - name: Rebuild and verify the RR2 scientific data package from its frozen commit
+        run: |
+          git checkout --detach "$FREEZE_SHA"
+          python3 scripts/scientific_release.py preflight --out-dir dist/research/RR2
+          python3 scripts/scientific_release.py verify --out-dir dist/research/RR2
+          python3 scripts/scientific_release.py preflight --out-dir dist/research/RR2-repeat
+          cmp dist/research/RR2/RR2-candidate-scientific-data.zip dist/research/RR2-repeat/RR2-candidate-scientific-data.zip
+          cmp dist/research/RR2/RR2-candidate-manifest.json dist/research/RR2-repeat/RR2-candidate-manifest.json
+          echo "RR2 SOURCE ARCHIVE REPRODUCIBILITY VERIFIED"
+
+      - name: Publish immutable research snapshot RR2 and attach validated source package
+        run: |
+          gh release create RR2 \
+            dist/research/RR2/RR2-candidate-scientific-data.zip \
+            dist/research/RR2/RR2-candidate-manifest.json \
+            dist/research/RR2/SHA256SUMS.txt \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$FREEZE_SHA" \
+            --title "Connecting the Dots · Research Release RR2 · Post-Reveal Evidence Consolidation" \
+            --notes-file research/RR2-RELEASE-NOTES.md
+          gh release view RR2 --repo "$GITHUB_REPOSITORY" --json isDraft,isPrerelease,tagName,targetCommitish,url,publishedAt > rr2-github-release.json
+          python3 - <<'PY'
+          import json, os
+          d=json.load(open("rr2-github-release.json"))
+          assert d["tagName"]=="RR2" and not d["isDraft"] and not d["isPrerelease"], "RR2 not publicly released"
+          assert d["targetCommitish"]==os.environ["FREEZE_SHA"], "RR2 tagged the wrong research snapshot"
+          print("RR2 GITHUB RELEASE PUBLISHED", d["url"])
+          PY
+
+      - name: Archive machine-readable publication evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rr2-github-release-evidence-${{ github.sha }}
+          path: |
+            rr2-github-release.json
+            dist/research/RR2/RR2-candidate-manifest.json
+            dist/research/RR2/SHA256SUMS.txt
+          if-no-files-found: warn
+          retention-days: 90
