@@ -196,6 +196,10 @@ def episode_markup(data, translations, lang, dynamic=False, standalone=False):
         return "<" + tag + attrs + ">" + h(t[key]) + "</" + tag + ">"
     parts = []
     labels = {"paid":"behindCountPaid","official":"behindCountOfficial","secondary":"behindCountSecondary"}
+    value_keys = {"paid":"behindCountPaidValue","official":"behindCountOfficialValue","secondary":"behindCountSecondaryValue"}
+    def number_markup(value, key, tag="strong"):
+        attr = ' data-i18n="' + key + '"' if dynamic else ""
+        return "<" + tag + attr + ">" + h(localized_count(value,lang)) + "</" + tag + ">"
     for case in data["episodes"]:
         if case["kind"] == "identity":
             parts.extend([
@@ -240,7 +244,7 @@ def episode_markup(data, translations, lang, dynamic=False, standalone=False):
             '<div class="behindFigures">'
         ])
         for fact in case["quantities"]:
-            parts.append('<div class="behindFigure" data-count-type="' + h(fact["id"],quote=True) + '"><strong>' + localized_count(fact["value"], lang) + '</strong>' + txt(labels[fact["id"]],css="factLabel") + '</div>')
+            parts.append('<div class="behindFigure" data-count-type="' + h(fact["id"],quote=True) + '">' + number_markup(fact["value"], value_keys[fact["id"]]) + txt(labels[fact["id"]],css="factLabel") + '</div>')
         parts.extend([
             '</div>',
             txt("behindCountSecondaryCaveat",tag="p",css="behindCaveat"),
@@ -273,7 +277,7 @@ def episode_markup(data, translations, lang, dynamic=False, standalone=False):
             parts.append('<tr data-region="' + h(region["code"],quote=True) + '" data-gap="' + str(diff) + '"><td>' +
                          txt(labels_region[region["code"]]) + '</td><td>' + localized_count(region["officialApplications"], lang) +
                          '</td><td>' + localized_count(region["visibleApplications"], lang) + '</td><td>' + ("+"+str(diff) if diff else "—") + '</td></tr>')
-        parts.extend(['<tr><th scope="row">' + txt("behindRegionTotal") + '</th><td>' + localized_count(1615,lang) + '</td><td>' + localized_count(1614,lang) + '</td><td>+1</td></tr></tbody></table></div>',
+        parts.extend(['<tr><th scope="row">' + txt("behindRegionTotal") + '</th><td>' + number_markup(1615, value_keys["official"], tag="span") + '</td><td>' + number_markup(1614, value_keys["secondary"], tag="span") + '</td><td>+1</td></tr></tbody></table></div>',
                       txt("behindRegionalConclusion",tag="p"),'</section>',
                       '<section class="behindReading">' + txt("behindIndependentTitle",tag="h3") + txt("behindIndependentBody",tag="p") + '</section>',
                       '<section class="behindReading">' + txt("behindCoverageTitle",tag="h3") + txt("behindCoverageBody",tag="p") + '</section>'])

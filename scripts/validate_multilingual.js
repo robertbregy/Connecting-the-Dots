@@ -90,11 +90,13 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   const expectedFieldCounts=['1616','1615','1614'].map(n=>n.slice(0,-3)+groupSeparator+n.slice(-3));
   assert.deepEqual([...behind.querySelectorAll('.behindFigure strong')].map(el=>el.textContent.trim()),expectedFieldCounts,page+' unlocalized Reveal Day figures');
   assert.equal(behind.querySelector('[data-status="documented"] h3')?.textContent.trim(),translations.behindExplainedTitle,page+' inaccurate .wdo heading');
+  assert.deepEqual([...behind.querySelectorAll('.behindComparisonTable tbody tr:last-child td')].slice(0,2).map(x=>x.textContent.trim()),expectedFieldCounts.slice(1),page+' regional totals not localized');
   assert.ok(behind.textContent.includes(translations.behindExplorerBridge),page+' missing Explorer reconciliation');
   const standalone=fs.readFileSync(path.join(root,'behind-the-round',language,'index.html'),'utf8');
   const standaloneDocument=parseHTML(standalone).document;
   assert.deepEqual([...standaloneDocument.querySelectorAll('.behindFigure strong')].map(el=>el.textContent.trim()),expectedFieldCounts,page+' standalone field count formatting');
   assert.ok(standaloneDocument.body.textContent.includes(translations.behindExplorerBridge),page+' standalone Explorer reconciliation missing');
+  assert.deepEqual([...standaloneDocument.querySelectorAll('.behindComparisonTable tbody tr:last-child td')].slice(0,2).map(x=>x.textContent.trim()),expectedFieldCounts.slice(1),page+' standalone regional totals not localized');
   assert.equal(standaloneDocument.documentElement.getAttribute('lang'),language,page+' field-note page lang');
   assert.equal(standaloneDocument.title,translations.behindMetaTitle,page+' standalone Field Notes SEO title');
   assert.equal(standaloneDocument.querySelector('h1')?.textContent.trim(),notesLabel,page+' standalone Field Notes heading');
