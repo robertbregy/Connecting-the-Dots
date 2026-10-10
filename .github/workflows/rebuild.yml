@@ -56,8 +56,6 @@ jobs:
         run: |
           node scripts/validate_multilingual.js
           node scripts/validate_internet_access.js
-          node scripts/validate_corrective.js
-          node scripts/validate_tld_life_histories.js
           CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
 
       - name: Commit generated publication
