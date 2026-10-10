@@ -72,6 +72,48 @@ jobs:
           if-no-files-found: error
           retention-days: 90
 
+  rr1-zenodo-record:
+    name: Probe public Zenodo RR1 concept DOI (not repository integration)
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Read public RR1 metadata, without assuming GitHub integration
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          expected = "10.5281/zenodo.23262623"
+          output = Path("rr1-zenodo-public-check.json")
+          result = {"status": "UNVERIFIED", "recordId": 23262623,
+                    "claimedRr1SpecificDoi": expected,
+                    "githubIntegrationEnabled": "UNKNOWN"}
+          try:
+              req = Request("https://zenodo.org/api/records/23262623",
+                            headers={"User-Agent": "Connecting-the-Dots-Audit/1",
+                                     "Accept": "application/json"})
+              with urlopen(req, timeout=35) as response:
+                  record = json.load(response)
+              if record.get("doi") != expected:
+                  raise ValueError("Published DOI differs from RR1 reference")
+              if not record.get("conceptrecid"):
+                  raise ValueError("Public record has no concept record identifier")
+              result.update({"status": "RR1_PUBLIC_RECORD_VERIFIED",
+                             "conceptRecordId": str(record["conceptrecid"]),
+                             "conceptDoi": record.get("conceptdoi")})
+          except Exception as error:
+              result["error"] = str(error)
+          output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
+          print("RR1 ZENODO EXTERNAL AUDIT: " + json.dumps(result, sort_keys=True))
+          PY
+      - name: Preserve the independently fetched public DOI evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: rr1-zenodo-public-check-${{ github.sha }}
+          path: rr1-zenodo-public-check.json
+          if-no-files-found: error
+          retention-days: 90
+
   zenodo-version-chain:
     name: Verify published RR2 belongs to the original RR1 Zenodo series
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.zenodo_rr2_record_id != '' }}
