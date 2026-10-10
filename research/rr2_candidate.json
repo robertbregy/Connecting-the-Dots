@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "RR2",
+  "candidateStatus": "prepublication-review",
+  "candidateTitle": "Connecting the Dots · Research Release RR2 · Post-Reveal Evidence Consolidation",
+  "candidateLabel": "Post-Reveal 2026: confirmed counts and preliminary contention",
+  "researchDataSnapshot": "2026-10-07",
+  "preparedOn": "2026-10-10",
+  "baseline": {
+    "releaseId": "RR1",
+    "tag": "RR1",
+    "tagCommit": "5d52274935cda7712172873f46d456e4c0a09c7e",
+    "specificDoi": "10.5281/zenodo.23262623",
+    "publishedOn": "2026-10-09",
+    "researchSnapshot": "2026-10-07"
+  },
+  "rationale": "Since the RR1 Git tag, the structured research dataset has been materially expanded and reconciled to the official Reveal Day totals. A candidate research release can now be tested without confusing a technical site update with a citable scientific archive.",
+  "scientificChange": {
+    "rr1Summary2026Applications": 1663,
+    "rr1Specific2026Applications": 1616,
+    "currentOfficialRevealDayApplications": 1615,
+    "currentOfficialApplicants": 481,
+    "currentPreliminaryContentionSets": 263,
+    "currentGeographicApplications": 15,
+    "currentCommunityApplications": 16,
+    "currentBrandApplications": 333,
+    "currentIdnApplications": 21,
+    "secondaryIndexApplications": 1614,
+    "primaryStringApplications": 1608,
+    "primaryStrings": 980,
+    "variantOnlyApplications": 6,
+    "applicantCorpusComplete": false
+  },
+  "evidenceLimitations": [
+    "The project does not have a locally complete official ICANN APS 2026 application-level corpus.",
+    "The 2026 string inventory is a frozen secondary index; it must not be represented as a final ICANN-confirmed list.",
+    "RR1's original tag and Zenodo DOI remain immutable.",
+    "The mutable working paper is a draft, not a peer-reviewed scientific article.",
+    "Editorial Field Notes remain outside the frozen scientific corpus, even when separately linked."
+  ],
+  "archivePolicy": {
+    "rr2Publication": "blocked-until-verified",
+    "doiForRR2": null,
+    "rr1ZenodoConceptDoi": null,
+    "zenodoGitHubIntegration": "not-verified",
+    "preserveExistingCurrentResearchRelease": "RR1",
+    "publicationGate": [
+      "Source-backed RR2 candidate package passes reproducibility and integrity validation.",
+      "RR2 proposed title, scientific baseline and scope are explicitly approved.",
+      "The live Zenodo GitHub integration and RR1 concept DOI/version chain are independently verified.",
+      "An RR2 GitHub Release is minted from the reviewed frozen commit, not mutable main.",
+      "Zenodo record supplies a real RR2-specific DOI and a verified version relationship to RR1.",
+      "Only after DOI verification are public CITATION.cff, scholarly index and currentResearchRelease promoted atomically."
+    ]
+  },
+  "followingMilestone": {
+    "plannedIdIfRR2PublishedNow": "RR3",
+    "label": "String Confirmation 2026",
+    "expectedDate": "2026-11-17",
+    "requiredUpdate": "Re-evaluate final primary strings, replacement choices, contention sets and category counts after ICANN confirmation."
+  }
+}

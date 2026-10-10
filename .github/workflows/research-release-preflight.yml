@@ -1,0 +1,90 @@
+name: RR2 scientific release preflight (unpublished)
+
+on:
+  push:
+    branches:
+      - 'feat/rr2-scientific-release-preflight'
+      - 'research/**'
+    paths:
+      - '.github/workflows/research-release-preflight.yml'
+      - 'scripts/scientific_release.py'
+      - 'research/rr2_candidate.json'
+      - 'data/research.json'
+      - 'data/application_2026_snapshot.json'
+  workflow_dispatch:
+    inputs:
+      zenodo_rr2_record_id:
+        description: 'Optional published RR2 Zenodo numeric record ID, to VERIFY the version chain after publication'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ctd-research-preview-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  candidate:
+    name: Create and verify reproducible RR2 candidate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out the source and the immutable RR1 tag
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build first RR2 candidate snapshot
+        run: python3 scripts/scientific_release.py preflight --out-dir dist/research/RR2
+
+      - name: Independently validate candidate archive
+        run: python3 scripts/scientific_release.py verify --out-dir dist/research/RR2
+
+      - name: Rebuild independently and test byte-level reproducibility
+        run: |
+          python3 scripts/scientific_release.py preflight --out-dir dist/research/RR2-repeat
+          cmp dist/research/RR2/RR2-candidate-scientific-data.zip dist/research/RR2-repeat/RR2-candidate-scientific-data.zip
+          cmp dist/research/RR2/RR2-candidate-manifest.json dist/research/RR2-repeat/RR2-candidate-manifest.json
+          echo "REPRODUCIBLE ARCHIVE PASS: two independently produced ZIP files and manifests are byte-identical"
+
+      - name: Upload scientific prepublication evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: rr2-candidate-${{ github.sha }}
+          path: dist/research/RR2/
+          if-no-files-found: error
+          retention-days: 90
+
+  zenodo-version-chain:
+    name: Verify published RR2 belongs to the original RR1 Zenodo series
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.zenodo_rr2_record_id != '' }}
+    needs: candidate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compare public Zenodo concept-record IDs
+        env:
+          ZENODO_RR2_RECORD_ID: ${{ inputs.zenodo_rr2_record_id }}
+        run: |
+          python3 scripts/scientific_release.py verify-zenodo --new-record-id "$ZENODO_RR2_RECORD_ID" --out-dir dist/research/RR2
+      - name: Keep the verified version-chain evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: rr2-zenodo-version-chain-${{ github.sha }}
+          path: dist/research/RR2/RR2-zenodo-version-verification.json
+          if-no-files-found: error
+          retention-days: 90
