@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.67
+# Connecting the Dots — v0.7.68
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -6,13 +6,15 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.67 · 10 October 2026**
+**v0.7.68 · 10 October 2026**
 
-The ICANN 2026 menu distinguishes **Timeline** (documented public milestones, dates and procedural stages) from **Field Notes** (independent observations, anomalies, discoveries and open questions). The same distinction is used in the four languages: Italian **Cronologia / Note dal campo**, German **Chronologie / Beobachtungen**, and French **Chronologie / Carnet de terrain**.
+The first **Field Note** now reconciles the 7 October official and secondary counts by geographic region: the one-application and one-applicant difference occurs entirely in Asia-Pacific. It adds Stéphane Bortzmeyer's independent CSV analysis (2,783 rows, 1,614 application-level records without replacement-string rows, 480 applicants) and distinguishes the explanation implied by CircleID's reporting from what ICANN's APS footnote actually establishes. The change from 1,616 on 22 September to 1,615 at Reveal Day **remains unexplained**.
 
-Page headings, standalone-page SEO titles, the research index and the living working paper use the new terms. All previous `inside-the-round/` and `behind-the-round/` paths remain in place, including canonical URLs, hreflang links and section deep links. Historical release notes preserve the names used at the time. No research evidence, source, original RR1 deposit or DOI was modified.
+A second, independently indexable Field Note examines two distinct organizations sharing the acronym WDO: the new World Data Organization (.wdo applicant) and the established World Design Organization (Canadian trademark holder). It separates prior rights, possible ICANN objections, administrative checks and public OFAC records without alleging an actual legal dispute or explaining ICANN's administrative check by speculation.
 
-**Earlier v0.7.66** improved field-note SEO metadata; **v0.7.65** introduced the first article on the two separate Reveal Day counting questions.
+Both editorial cases are now backed by dated sources, multilingual revisions, an updated sitemap and deterministic build tests. RR1 and its 9 October 2026 Zenodo DOI remain immutable. Four-language entry pages keep their existing URLs; the second note adds `behind-the-round/{lang}/wdo-identity/`.
+
+**Previous v0.7.67** harmonized the menu terminology into Timeline and Field Notes.
 
 ## What the project covers
 
@@ -34,7 +36,7 @@ The 2026 round is still in progress. Reveal Day data are treated as a dated snap
 ## Search and research entry points
 
 - [Timeline](inside-the-round/en/index.html) — four-language chronological observation of the ICANN 2026 round, with clear source and status labels.
-- [Field Notes](behind-the-round/en/index.html) — independently indexable research notes on overlooked evidence, data anomalies and what remains unknown.
+- [Field Notes](behind-the-round/en/index.html) — independent, source-audited observations and open questions. The [second case](behind-the-round/en/wdo-identity/index.html) compares the two unrelated WDO organizations and possible legal-rights issues without asserting a dispute.
 - [TLD Explorer guide](explorer/index.html) — a separately indexable introduction to the interactive explorer and evidence limits.
 - [Research & citation](research/index.html) — RR1 DOI, method, reproducibility and citation resources.
 - [Working paper](research/connecting-the-dots-working-paper-v1.html) — independently readable HTML draft.
@@ -57,7 +59,7 @@ The program-wide chronology is maintained in [`data/inside_the_round_events.json
 
 ## Field Notes
 
-The public evidence register [`data/behind_round_stories.json`](data/behind_round_stories.json) tracks individual, corrigible field notes and their source provenance separately from the milestone chronology and the immutable RR1 data. The first case distinguishes a source-backed explanation for the mismatch between the APS aggregate and publicly listed applications from the still unexplained September-to-October official count change. Four standalone language routes are generated deterministically from the editorial register. New explanations are adopted only after public source verification; automated monitoring is advisory, not an unsupervised change to the publication.
+The public evidence register [`data/behind_round_stories.json`](data/behind_round_stories.json) now contains two source-audited, corrigible field notes and tracks each observation and their source provenance separately from the milestone chronology and the immutable RR1 data. The first case distinguishes a source-backed explanation for the mismatch between the APS aggregate and publicly listed applications from the still unexplained September-to-October official count change. Four standalone language routes are generated deterministically from the editorial register. New explanations are adopted only after public source verification; automated monitoring is advisory, not an unsupervised change to the publication.
 
 ## `.lugano`
 
