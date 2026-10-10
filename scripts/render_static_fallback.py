@@ -89,6 +89,8 @@ def render(page,lang,alias=False):
     if guide:guide['href']=BASE+'inside-the-round/'+lang+'/'
     behind_guide=soup.select_one('a[data-behind-round-guide]')
     if behind_guide:behind_guide['href']=BASE+'behind-the-round/'+lang+'/'
+    for crosslink in soup.select('a[data-governance-explainer-link]'):
+        crosslink['href']=BASE+'behind-the-round/'+lang+'/sanctions-and-dns/'
     for n in soup.select('[src], [href]'):
         for attr in ('src','href'):
             ref=n.get(attr)
