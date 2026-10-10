@@ -305,37 +305,46 @@ def render_stories(root=None):
     stories, translations=load()
     return episode_markup(stories,translations,"en",dynamic=True)
 
-def render_page(data,tr,lang,pub):
+def render_page(data,tr,lang,pub,detail=False):
     t=tr[lang]
-    url=BASE+"behind-the-round/"+lang+"/"
-    lang_nav=" ".join('<a lang="'+l+'" hreflang="'+l+'" href="'+BASE+'behind-the-round/'+l+'/"'+(' aria-current="page"' if l==lang else "")+'>'+{"en":"English","it":"Italiano","de":"Deutsch","fr":"Français"}[l]+"</a>" for l in LANGS)
-    hreflang="\n".join('<link rel="alternate" hreflang="'+l+'" href="'+BASE+'behind-the-round/'+l+'/">' for l in LANGS)
-    hreflang+='\n<link rel="alternate" hreflang="x-default" href="'+BASE+'behind-the-round/en/">'
-    case=data["episodes"][0]
+    suffix="wdo-identity/" if detail else ""
+    url=BASE+"behind-the-round/"+lang+"/"+suffix
+    lang_nav=" ".join('<a lang="'+l+'" hreflang="'+l+'" href="'+BASE+'behind-the-round/'+l+'/'+suffix+'"'+(' aria-current="page"' if l==lang else "")+'>'+{"en":"English","it":"Italiano","de":"Deutsch","fr":"Français"}[l]+"</a>" for l in LANGS)
+    hreflang="\n".join('<link rel="alternate" hreflang="'+l+'" href="'+BASE+'behind-the-round/'+l+'/'+suffix+'">' for l in LANGS)
+    hreflang+='\n<link rel="alternate" hreflang="x-default" href="'+BASE+'behind-the-round/en/'+suffix+'">'
+    case=data["episodes"][1] if detail else data["episodes"][0]
+    meta_title=t["wdoMetaTitle"] if detail else t["behindMetaTitle"]
+    meta_description=t["wdoMetaDescription"] if detail else t["behindMetaDescription"]
+    all_sources=case["sources"] if detail else [source for episode in data["episodes"] for source in episode["sources"]]
     structured={
-      "@context":"https://schema.org","@type":"Article",
-      "headline":t["behindCaseTitle"],"description":t["behindMetaDescription"],
+      "@context":"https://schema.org","@type":"Article" if detail else "CollectionPage",
+      "headline":t["wdoCaseTitle"] if detail else t["behindTitle"],
+      "description":meta_description,
       "image":BASE+"assets/og-preview.png",
       "inLanguage":lang,"datePublished":case["publishedOn"],"dateModified":case["revisedOn"],
       "mainEntityOfPage":url,"isAccessibleForFree":True,
       "author":{"@type":"Person","name":"Robert Bregy"},
       "isPartOf":{"@type":"WebSite","name":"Connecting the Dots","url":BASE},
-      "citation":[s["url"] for s in case["sources"]],
-      "about":[{"@type":"Thing","name":"ICANN New gTLD Program 2026 Reveal Day"}]
+      "citation":[source["url"] for source in all_sources],
+      "about":[{"@type":"Thing","name":"ICANN New gTLD Program 2026, .wdo and Reveal Day"}]
     }
-    content=episode_markup(data,tr,lang)
+    cases={"episodes":[case]} if detail else data
+    content=episode_markup(cases,tr,lang)
     chronology=BASE+"inside-the-round/"+lang+"/"
+    back=BASE+"behind-the-round/"+lang+"/"
+    second_action=(back if detail else BASE+lang+"/?tab=behind-round#behind-round")
+    second_label=t["wdoArticleReturn"] if detail else t["behindNav"]
     return f'''<!doctype html>
 <html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<title>{h(t["behindMetaTitle"])}</title>
-<meta name="description" content="{h(t["behindMetaDescription"],quote=True)}">
+<title>{h(meta_title)}</title>
+<meta name="description" content="{h(meta_description,quote=True)}">
 <link rel="canonical" href="{url}">
 {hreflang}
 <link rel="icon" href="{BASE}assets/logo-mark.png" type="image/png">
 <meta property="og:type" content="article"><meta property="og:site_name" content="Connecting the Dots">
-<meta property="og:title" content="{h(t["behindMetaTitle"],quote=True)}">
-<meta property="og:description" content="{h(t["behindMetaDescription"],quote=True)}">
+<meta property="og:title" content="{h(meta_title,quote=True)}">
+<meta property="og:description" content="{h(meta_description,quote=True)}">
 <meta property="og:url" content="{url}"><meta property="og:image" content="{BASE}assets/og-preview.png">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{json.dumps(structured,ensure_ascii=False,separators=(",",":"))}</script>
@@ -345,7 +354,7 @@ def render_page(data,tr,lang,pub):
 <div class="eyebrow">{h(t["behindEyebrow"])}</div>
 <h1>{h(t["behindTitle"])}</h1>
 <p class="lead">{h(t["behindIntro"])}</p>
-<div class="actions"><a class="action" href="{chronology}">{h(t["behindChronicleCta"])}</a><a class="action secondary" href="{BASE}{lang}/?tab=behind-round#behind-round">{h(t["behindNav"])}</a></div>
+<div class="actions"><a class="action" href="{chronology}">{h(t["behindChronicleCta"])}</a><a class="action secondary" href="{second_action}">{h(second_label)}</a></div>
 {content}
 </main>
 <footer>Connecting the Dots · <a href="{BASE}{lang}/">ICANN 2026</a> ·
@@ -357,24 +366,26 @@ def build_behind_round_pages(root=None,publication=None):
     data,tr=load()
     pub=publication or json.loads((root/"publication.json").read_text(encoding="utf-8"))
     for lang in LANGS:
-        out=root/"behind-the-round"/lang/"index.html"
-        out.parent.mkdir(parents=True,exist_ok=True)
-        out.write_text(render_page(data,tr,lang,pub),encoding="utf-8")
+        for suffix,detail in (("",False),("wdo-identity/",True)):
+            out=root/"behind-the-round"/lang/suffix/"index.html"
+            out.parent.mkdir(parents=True,exist_ok=True)
+            out.write_text(render_page(data,tr,lang,pub,detail=detail),encoding="utf-8")
     sitemap=root/"sitemap.xml"
     xml=sitemap.read_text(encoding="utf-8")
     if xml.count("<url>")!=11 or "</urlset>" not in xml:
-        raise ValueError("Expected 11 existing URLs before Behind the Round extensions")
+        raise ValueError("Expected 11 existing URLs before Field Notes extensions")
     items=[]
-    for lang in LANGS:
-        relative="behind-the-round/"+lang+"/"
-        item=f'  <url>\n    <loc>{BASE}{relative}</loc>\n    <lastmod>{pub["releasedOn"]}</lastmod>\n'
-        for l in (*LANGS,"x-default"):
-            target="en" if l=="x-default" else l
-            item+=f'    <xhtml:link rel="alternate" hreflang="{l}" href="{BASE}behind-the-round/{target}/"/>\n'
-        items.append(item+"  </url>")
+    for suffix in ("","wdo-identity/"):
+        for lang in LANGS:
+            relative="behind-the-round/"+lang+"/"+suffix
+            item=f'  <url>\n    <loc>{BASE}{relative}</loc>\n    <lastmod>{pub["releasedOn"]}</lastmod>\n'
+            for l in (*LANGS,"x-default"):
+                target="en" if l=="x-default" else l
+                item+=f'    <xhtml:link rel="alternate" hreflang="{l}" href="{BASE}behind-the-round/{target}/{suffix}"/>\n'
+            items.append(item+"  </url>")
     xml=xml.replace("</urlset>","\n".join(items)+"\n</urlset>")
     sitemap.write_text(xml,encoding="utf-8")
-    print(f"Generated Behind the Round: {len(LANGS)} languages, {len(data['episodes'])} evidence-backed cases, {xml.count('<url>')} sitemap URLs")
+    print(f"Generated Field Notes: {len(LANGS)} languages, {len(data['episodes'])} cases, {xml.count('<url>')} sitemap URLs")
 
 if __name__=="__main__":
     build_behind_round_pages()
