@@ -1,0 +1,451 @@
+{
+  "schemaVersion": 1,
+  "editorialLayer": "governance-explainer-not-part-of-frozen-RR1",
+  "slug": "sanctions-and-dns",
+  "publishedOn": "2026-10-10",
+  "reviewedOn": "2026-10-10",
+  "classification": "explainer",
+  "status": "documented-framework-not-case-finding",
+  "editorialRule": "Separate binding legal restrictions, technical coordination, historical judicial disputes and unresolved application observations; do not suggest that a sanctions record explains a 2026 application status without application-specific primary evidence.",
+  "sources": [
+    {
+      "id": "icann-eligibility",
+      "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/application-submission/faqs/general/are-there-any-restrictions-on-what-types-of-entities-may-apply-for-a-gtld-string",
+      "label": "ICANN · 2026 applicant eligibility"
+    },
+    {
+      "id": "icann-compliance",
+      "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/applicant-evaluation/faqs/background-screening/what-legal-compliance-requirements-should-an-applicant-be-aware-of",
+      "label": "ICANN · 2026 legal compliance FAQ"
+    },
+    {
+      "id": "icann-support",
+      "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/asp/faqs/what-measures-does-icann-plan-to-take-in-order-to-support-applicants-that-may-be-subject-to-sanctions",
+      "label": "ICANN · Applicants affected by sanctions / 2012 precedent"
+    },
+    {
+      "id": "ofac-licenses",
+      "url": "https://ofac.treasury.gov/faqs/74",
+      "label": "US Treasury / OFAC · General and specific licenses"
+    },
+    {
+      "id": "ofac-persons",
+      "url": "https://ofac.treasury.gov/faqs/11",
+      "label": "US Treasury / OFAC · Who must comply?"
+    },
+    {
+      "id": "ofac-cuba",
+      "url": "https://ofac.treasury.gov/faqs/785",
+      "label": "US Treasury / OFAC · Internet services and Cuba"
+    },
+    {
+      "id": "icann-2014",
+      "url": "https://www.icann.org/en/announcements/details/us-court-quashes-attempts-to-attach-cctlds-federal-judge-agrees-with-icann-12-11-2014-en",
+      "label": "ICANN · 2014 ccTLD attachment ruling"
+    },
+    {
+      "id": "icann-2022",
+      "url": "https://itp.cdn.icann.org/en/files/correspondence/marby-to-fedorov-02mar22-en.pdf",
+      "label": "ICANN · Letter to Ukraine, 2 March 2022 (PDF)"
+    },
+    {
+      "id": "icann-ws2",
+      "url": "https://www.icann.org/resources/work-stream-2-implementation/jurisdiction-en",
+      "label": "ICANN · Jurisdiction / OFAC recommendations"
+    },
+    {
+      "id": "icann-sept",
+      "url": "https://www.icann.org/en/announcements/details/icann-confirms-number-of-applications-proceeding-in-the-2026-round-22-09-2026-en",
+      "label": "ICANN · 22 September 2026 application count"
+    },
+    {
+      "id": "icann-reveal",
+      "url": "https://www.icann.org/resources/press-material/release-2026-10-07-en",
+      "label": "ICANN · Reveal Day, 7 October 2026"
+    },
+    {
+      "id": "icann-wdo",
+      "url": "https://newgtldprogram-aps.icann.org/applications/WDO2627T-T45217/summary",
+      "label": "ICANN APS · Application .wdo"
+    }
+  ],
+  "sections": [
+    {
+      "id": "why",
+      "sourceIds": [
+        "icann-compliance",
+        "ofac-persons"
+      ]
+    },
+    {
+      "id": "sdn",
+      "sourceIds": [
+        "icann-eligibility",
+        "icann-compliance"
+      ]
+    },
+    {
+      "id": "licenses",
+      "sourceIds": [
+        "icann-compliance",
+        "icann-support",
+        "ofac-licenses",
+        "icann-ws2"
+      ]
+    },
+    {
+      "id": "layers",
+      "sourceIds": [
+        "icann-compliance",
+        "icann-2022"
+      ]
+    },
+    {
+      "id": "exceptions",
+      "sourceIds": [
+        "ofac-cuba",
+        "ofac-licenses"
+      ]
+    },
+    {
+      "id": "other",
+      "sourceIds": [
+        "icann-compliance",
+        "ofac-persons"
+      ]
+    },
+    {
+      "id": "count",
+      "sourceIds": [
+        "icann-sept",
+        "icann-reveal",
+        "icann-wdo"
+      ]
+    }
+  ],
+  "precedents": [
+    {
+      "id": "r2012",
+      "year": "2012",
+      "sourceIds": [
+        "icann-support"
+      ]
+    },
+    {
+      "id": "r2014",
+      "year": "2014",
+      "sourceIds": [
+        "icann-2014"
+      ]
+    },
+    {
+      "id": "r2022",
+      "year": "2022",
+      "sourceIds": [
+        "icann-2022"
+      ]
+    },
+    {
+      "id": "r2026",
+      "year": "2026",
+      "sourceIds": [
+        "icann-eligibility",
+        "icann-compliance"
+      ]
+    }
+  ],
+  "languages": {
+    "en": {
+      "eyebrow": "Governance explainer · OFAC & DNS",
+      "metaTitle": "ICANN, OFAC and sanctions | Connecting the Dots",
+      "metaDescription": "How sanctions affect new gTLD applicants without giving ICANN power to punish countries by switching off their top-level domains.",
+      "title": "When a global Internet meets national sanctions",
+      "lead": "ICANN coordinates a global naming system, yet must obey the laws that apply to it. That creates constraints on who can obtain a new gTLD, but does not give ICANN a general power to disconnect countries from the DNS.",
+      "legalTitle": "Legal compliance",
+      "legalBody": "ICANN may be barred from providing services to certain applicants unless an authorization or exemption applies.",
+      "neutralTitle": "Technical neutrality",
+      "neutralBody": "ICANN says its mandate is not to impose geopolitical sanctions or unilaterally disconnect country-code domains.",
+      "readingTitle": "What the rules actually mean",
+      "precedentsTitle": "Four documented moments",
+      "precedentsLead": "These events belong to different legal and procedural categories. They are not four examples of OFAC removing TLDs.",
+      "relatedTitle": "Why this matters for the 2026 round",
+      "relatedBody": "The difference between 1,616 paid applications announced on 22 September and the 1,615 reported at Reveal Day is a documented discrepancy, not proof of sanctions enforcement. The public administrative check involving .wdo also has no confirmed OFAC cause. Follow the two investigations separately.",
+      "relatedCounts": "Field Note · The Reveal Day numbers",
+      "relatedWdo": "Field Note · Two WDOs and .wdo",
+      "sourcesTitle": "Primary evidence",
+      "sourcesLead": "Direct institutional sources underpin each claim. Reference numbers beside the text lead to the corresponding original document.",
+      "methodTitle": "Editorial boundary",
+      "methodBody": "This explainer describes publicly documented rules and historical actions as reviewed on 10 October 2026. It does not decide the legal status of any applicant, replace sanctions due diligence, or attribute an unverified cause to an ICANN administrative decision. Revisions require dated, attributable evidence.",
+      "dateTitle": "Reviewed",
+      "backTitle": "Back to Field Notes",
+      "siteTitle": "Back to the atlas",
+      "sections": {
+        "why": {
+          "title": "Why US sanctions reach a global organization",
+          "body": "ICANN is a California-based nonprofit. Its global mission does not exempt it from applicable US laws, including OFAC economic and trade sanctions. These laws govern certain dealings with people, entities and jurisdictions. They do not make every domain associated with a sanctioned country illegal."
+        },
+        "sdn": {
+          "title": "New gTLD applications: designated persons are not the same as residents",
+          "body": "For the 2026 round, ICANN explicitly says it cannot accept applications from individuals or entities on OFAC's Specially Designated Nationals (SDN) List. A separate question arises when an applicant is not listed but is located in a sanctioned jurisdiction: whether an exemption or US authorization permits ICANN to provide services. Neither nationality alone nor an individual's listing proves that a different organization is sanctioned."
+        },
+        "licenses": {
+          "title": "Licenses matter. Approval is not automatic.",
+          "body": "OFAC distinguishes general licenses, which authorize classes of transactions under stated conditions, from specific licenses granted case by case. ICANN says it has previously obtained licenses for applicants in sanctioned countries who were not individually designated. ICANN has no duty to apply in every case and OFAC is not obliged to grant a request. ICANN's community has also recommended examining general licenses to reduce recurring barriers."
+        },
+        "layers": {
+          "title": "Four different layers, four different consequences",
+          "body": "An applicant for a new gTLD, a TLD registry operator, an accredited registrar and a customer registering a second-level domain are not interchangeable roles. Contracting, accreditation, sales and DNS delegation trigger different obligations and involve different actors. A blocked transaction with one actor does not automatically erase a ccTLD from the root zone or revoke every name registered under it."
+        },
+        "exceptions": {
+          "title": "Even 'sanctioned country' does not mean 'no domain names'",
+          "body": "A concrete counterexample: OFAC's Cuba guidance says domain-name registration is among the Internet-communications services authorized in most circumstances under a relevant general license. This is not a universal exemption. It shows why the exact sanctions program, transaction, parties and authorization matter more than a country label."
+        },
+        "other": {
+          "title": "OFAC is not the only sanctions framework",
+          "body": "UN, EU, UK and national rules may also matter to actors within their respective jurisdiction or where legally applicable. Their scopes differ. ICANN's US obligations should not be conflated with a universal rule binding every non-US registrar or domain holder in precisely the same way."
+        },
+        "count": {
+          "title": "What the 2026 evidence does not establish",
+          "body": "ICANN reported 1,616 paid applications on 22 September and 1,615 at Reveal Day on 7 October. It has not publicly identified an OFAC exclusion as the reason for the change. The .wdo application has been subject to a separately documented administrative check, but its precise reason is not publicly established. Treat sanctions as relevant background, not a proposed explanation for either observation."
+        }
+      },
+      "precedents": {
+        "r2012": {
+          "title": "No sanctions-based rejections reported",
+          "body": "ICANN states that no application in the 2012 new gTLD round was rejected because of its sanctions-compliance obligations. This does not mean that sanctions screening or licensing was absent."
+        },
+        "r2014": {
+          "title": "A court refused attachment of .ir, .sy and .kp",
+          "body": "Judgment creditors sought to seize country-code TLDs associated with Iran, Syria and North Korea. A US federal court quashed the attempt. This was a civil enforcement dispute about attachable property, not ICANN rejecting a new gTLD application under OFAC rules."
+        },
+        "r2022": {
+          "title": "ICANN declined to disconnect Russian ccTLDs",
+          "body": "Following Ukraine's request concerning .ru, .рф and .su, ICANN said its technical mandate did not extend to imposing sanctions or unilaterally cutting off national domains. It also noted that ICANN does not issue SSL certificates or control all root-server nodes."
+        },
+        "r2026": {
+          "title": "Eligibility and legal screening are explicit",
+          "body": "The new Applicant Guidebook and associated FAQs make sanctions compliance part of the 2026 process and differentiate SDN-listed applicants from potentially licensable transactions involving other applicants."
+        }
+      }
+    },
+    "it": {
+      "eyebrow": "Scheda di contesto · OFAC e DNS",
+      "metaTitle": "ICANN, OFAC e sanzioni | Connecting the Dots",
+      "metaDescription": "Come le sanzioni incidono sulle candidature gTLD senza attribuire a ICANN il potere di disconnettere interi Paesi dal DNS.",
+      "title": "Quando Internet globale incontra le sanzioni nazionali",
+      "lead": "ICANN coordina un sistema di nomi globale, ma deve rispettare le leggi che le sono applicabili. Ciò può limitare l'accesso a un nuovo gTLD. Non le attribuisce però il potere generale di disconnettere un Paese dal DNS.",
+      "legalTitle": "Conformità giuridica",
+      "legalBody": "ICANN può essere tenuta a non fornire servizi a determinati richiedenti, salvo autorizzazioni o esenzioni applicabili.",
+      "neutralTitle": "Neutralità tecnica",
+      "neutralBody": "Per ICANN, il proprio mandato non comprende sanzioni geopolitiche né la disconnessione unilaterale dei domini nazionali.",
+      "readingTitle": "Cosa prevedono davvero le regole",
+      "precedentsTitle": "Quattro momenti documentati",
+      "precedentsLead": "Sono vicende giuridiche e procedurali differenti. Non sono quattro esempi di TLD cancellati da OFAC.",
+      "relatedTitle": "Il collegamento con il round 2026",
+      "relatedBody": "La differenza tra le 1.616 candidature pagate annunciate il 22 settembre e le 1.615 del Reveal Day è documentata, ma non prova l'applicazione di sanzioni. Nemmeno per la verifica amministrativa pubblica relativa a .wdo è stata dimostrata una causa OFAC. Le due indagini vanno seguite separatamente.",
+      "relatedCounts": "Nota dal campo · I numeri del Reveal Day",
+      "relatedWdo": "Nota dal campo · Le due WDO e .wdo",
+      "sourcesTitle": "Fonti primarie",
+      "sourcesLead": "Ogni affermazione è collegata a fonti istituzionali. I numeri accanto ai paragrafi rimandano ai documenti originali.",
+      "methodTitle": "Limite editoriale",
+      "methodBody": "Questa scheda ricostruisce norme e precedenti pubblicamente documentati, verificati al 10 ottobre 2026. Non decide la posizione giuridica di alcun richiedente, non sostituisce una verifica sanzionatoria e non attribuisce cause non dimostrate a decisioni amministrative ICANN. Gli aggiornamenti richiedono fonti datate e verificabili.",
+      "dateTitle": "Ultima verifica",
+      "backTitle": "Torna alle Note dal campo",
+      "siteTitle": "Torna all'atlante",
+      "sections": {
+        "why": {
+          "title": "Perché le sanzioni USA incidono su un organismo globale",
+          "body": "ICANN è un'organizzazione senza scopo di lucro con sede in California. Il mandato globale non la esenta dalle leggi statunitensi applicabili, comprese le sanzioni economiche e commerciali OFAC. Tali norme possono limitare determinati rapporti con persone, entità e giurisdizioni. Non rendono automaticamente illegale ogni dominio collegato a un Paese sanzionato."
+        },
+        "sdn": {
+          "title": "Candidature gTLD: soggetti designati e residenti non sono la stessa cosa",
+          "body": "Per il round 2026 ICANN precisa che non può accettare candidature di individui o entità inseriti nella lista OFAC degli Specially Designated Nationals (SDN). Diverso è il caso di un richiedente non designato che si trovi in una giurisdizione soggetta a sanzioni: occorre verificare se una deroga o un'autorizzazione statunitense consenta di prestare il servizio. La nazionalità, da sola, o la designazione di una persona non dimostrano automaticamente che un'organizzazione distinta sia sanzionata."
+        },
+        "licenses": {
+          "title": "Le licenze contano. Ma non sono garantite.",
+          "body": "OFAC distingue licenze generali, valide per categorie di operazioni alle condizioni previste, e licenze specifiche, rilasciate caso per caso. ICANN riferisce di aver già ottenuto autorizzazioni per richiedenti residenti in Paesi sanzionati ma non personalmente designati. Non è obbligata a richiederle in ogni caso e OFAC può negarle. La comunità ICANN ha inoltre raccomandato di valutare licenze generali per ridurre questi ostacoli ricorrenti."
+        },
+        "layers": {
+          "title": "Quattro ruoli, quattro conseguenze diverse",
+          "body": "Chi chiede un nuovo gTLD, il gestore del registro, un registrar accreditato e chi registra un dominio di secondo livello svolgono funzioni differenti. Contratti, accreditamento, vendita e delega DNS coinvolgono soggetti e obblighi diversi. L'impossibilità giuridica di compiere una determinata transazione non comporta automaticamente la cancellazione di un ccTLD dalla root né la revoca di tutti i domini registrati sotto di esso."
+        },
+        "exceptions": {
+          "title": "«Paese sanzionato» non significa «domini proibiti»",
+          "body": "Un controesempio concreto: nelle proprie FAQ su Cuba, OFAC include la registrazione di nomi a dominio fra i servizi di comunicazione via Internet autorizzati, nella maggior parte delle circostanze, da una specifica licenza generale. Non è un'esenzione universale. Dimostra perché contino il regime sanzionatorio preciso, il tipo di operazione, le parti coinvolte e l'autorizzazione applicabile."
+        },
+        "other": {
+          "title": "OFAC non è l'unico regime sanzionatorio",
+          "body": "Possono assumere rilievo anche misure ONU, UE, britanniche e nazionali, per i soggetti ai quali si applicano. Ambito e conseguenze variano. Gli obblighi statunitensi di ICANN non diventano automaticamente un divieto identico per ogni registrar o titolare di dominio nel mondo."
+        },
+        "count": {
+          "title": "Cosa non dimostrano i dati del 2026",
+          "body": "ICANN ha comunicato 1.616 candidature pagate il 22 settembre e 1.615 al Reveal Day del 7 ottobre. Non ha identificato pubblicamente una misura OFAC come causa della differenza. La candidatura .wdo è oggetto di una verifica amministrativa documentata separatamente, ma il motivo specifico non è pubblico. Le sanzioni sono un contesto pertinente, non una spiegazione accertata di questi fatti."
+        }
+      },
+      "precedents": {
+        "r2012": {
+          "title": "Nessun rifiuto attribuito alle sanzioni",
+          "body": "ICANN dichiara che nel round gTLD 2012 nessuna candidatura fu respinta per i propri obblighi di conformità sanzionatoria. Non significa che non esistessero controlli o richieste di autorizzazione."
+        },
+        "r2014": {
+          "title": "Un tribunale impedisce il sequestro di .ir, .sy e .kp",
+          "body": "Alcuni creditori tentarono di sequestrare i ccTLD associati a Iran, Siria e Corea del Nord. Un tribunale federale statunitense respinse il tentativo. Era un contenzioso civile sulla pignorabilità di questi nomi, non il rifiuto di una candidatura gTLD per sanzioni OFAC."
+        },
+        "r2022": {
+          "title": "ICANN rifiuta di disconnettere i ccTLD russi",
+          "body": "Dopo la richiesta ucraina relativa a .ru, .рф e .su, ICANN spiegò che il proprio mandato tecnico non comprende l'imposizione di sanzioni né la disconnessione unilaterale di domini nazionali. Precisò inoltre di non emettere certificati SSL e di non controllare tutti i nodi dei root server."
+        },
+        "r2026": {
+          "title": "Idoneità e conformità diventano esplicite",
+          "body": "Il Guidebook e le FAQ del nuovo round rendono esplicita la verifica delle sanzioni e distinguono i richiedenti nella lista SDN dalle operazioni potenzialmente autorizzabili che riguardano altri soggetti."
+        }
+      }
+    },
+    "de": {
+      "eyebrow": "Hintergrund · OFAC und DNS",
+      "metaTitle": "ICANN, OFAC und Sanktionen | Connecting the Dots",
+      "metaDescription": "Wie Sanktionen die Bewerbung um neue gTLDs betreffen, ohne ICANN ein Recht zur Abschaltung nationaler Domains zu geben.",
+      "title": "Wenn ein globales Internet auf nationale Sanktionen trifft",
+      "lead": "ICANN koordiniert ein weltweites Namenssystem und muss zugleich die geltenden Gesetze beachten. Das kann Bewerbungen um neue gTLDs einschränken, gibt ICANN aber keine allgemeine Befugnis, ganze Länder vom DNS abzuschalten.",
+      "legalTitle": "Rechtliche Pflichten",
+      "legalBody": "ICANN darf bestimmten Antragstellern ohne einschlägige Genehmigung oder Ausnahme möglicherweise keine Leistungen erbringen.",
+      "neutralTitle": "Technische Neutralität",
+      "neutralBody": "Nach eigener Darstellung darf ICANN keine geopolitischen Sanktionen verhängen und nationale Domains nicht einseitig abschalten.",
+      "readingTitle": "Was die Regeln tatsächlich bedeuten",
+      "precedentsTitle": "Vier dokumentierte Stationen",
+      "precedentsLead": "Diese Vorgänge gehören unterschiedlichen rechtlichen und verfahrensbezogenen Kategorien an. Es sind keine vier OFAC-Löschungen von TLDs.",
+      "relatedTitle": "Die Verbindung zur Runde 2026",
+      "relatedBody": "Die Differenz zwischen den 1.616 am 22. September gemeldeten bezahlten Bewerbungen und den 1.615 am Reveal Day ist dokumentiert, beweist aber keine Sanktionen. Auch für die öffentlich sichtbare administrative Prüfung von .wdo ist kein OFAC-Zusammenhang belegt. Beide Untersuchungen bleiben getrennt.",
+      "relatedCounts": "Beobachtung · Die Reveal-Day-Zahlen",
+      "relatedWdo": "Beobachtung · Zwei WDOs und .wdo",
+      "sourcesTitle": "Primärquellen",
+      "sourcesLead": "Die Aussagen stützen sich auf institutionelle Originalquellen. Die Verweisnummern führen zum jeweiligen Dokument.",
+      "methodTitle": "Redaktionelle Grenze",
+      "methodBody": "Dieser Beitrag erläutert öffentlich belegte Regeln und Vorgänge nach dem Erkenntnisstand vom 10. Oktober 2026. Er beurteilt weder die Rechtslage einzelner Antragsteller noch ersetzt er Sanktionsprüfungen. Unbelegte Ursachen administrativer ICANN-Vorgänge werden nicht unterstellt. Änderungen erfordern datierte, überprüfbare Belege.",
+      "dateTitle": "Geprüft am",
+      "backTitle": "Zurück zu den Beobachtungen",
+      "siteTitle": "Zurück zum Atlas",
+      "sections": {
+        "why": {
+          "title": "Weshalb US-Sanktionen eine globale Organisation betreffen",
+          "body": "ICANN ist eine gemeinnützige Organisation mit Sitz in Kalifornien. Ihr globaler Auftrag befreit sie nicht von anwendbarem US-Recht, einschließlich wirtschaftlicher und handelspolitischer OFAC-Sanktionen. Diese betreffen bestimmte Geschäfte mit Personen, Organisationen und Gebieten. Sie machen nicht automatisch jede mit einem sanktionierten Land verbundene Domain unzulässig."
+        },
+        "sdn": {
+          "title": "gTLD-Bewerbungen: Gelistete und ansässige Personen unterscheiden sich",
+          "body": "Für 2026 erklärt ICANN ausdrücklich, Bewerbungen von Personen oder Organisationen auf der OFAC-Liste der Specially Designated Nationals (SDN) nicht annehmen zu können. Davon zu unterscheiden sind nicht gelistete Antragsteller in sanktionierten Gebieten, für die eine Ausnahme oder US-Genehmigung relevant sein kann. Nationalität allein oder die Listung einer Einzelperson beweisen nicht, dass eine andere Organisation selbst sanktioniert ist."
+        },
+        "licenses": {
+          "title": "Lizenzen sind entscheidend, aber nicht garantiert",
+          "body": "OFAC unterscheidet allgemeine Lizenzen für bestimmte Geschäftskategorien unter festgelegten Bedingungen und Einzellizenzen für konkrete Fälle. ICANN gibt an, für nicht individuell gelistete Antragsteller aus sanktionierten Gebieten schon Genehmigungen erhalten zu haben. ICANN muss solche Anträge nicht in jedem Fall stellen; OFAC kann sie ablehnen. Die ICANN-Community hat außerdem die Prüfung allgemeiner Lizenzen empfohlen, um wiederkehrende Hindernisse abzubauen."
+        },
+        "layers": {
+          "title": "Vier Rollen, unterschiedliche Folgen",
+          "body": "Ein Bewerber um eine neue gTLD, ein Registry-Betreiber, ein akkreditierter Registrar und ein Inhaber einer Domain zweiter Ebene sind verschiedene Akteure. Verträge, Akkreditierung, Verkauf und DNS-Delegierung lösen unterschiedliche Pflichten aus. Ein unzulässiges Geschäft mit einem Beteiligten löscht nicht automatisch einen ccTLD aus der Root-Zone oder sämtliche darunter registrierten Domains."
+        },
+        "exceptions": {
+          "title": "Sanktioniertes Land bedeutet nicht: keine Domains",
+          "body": "Ein konkretes Gegenbeispiel: OFAC nennt in seinen Kuba-FAQ die Registrierung von Domainnamen als Internet-Kommunikationsdienst, der unter einer einschlägigen allgemeinen Lizenz in den meisten Fällen zulässig ist. Dies ist keine universelle Ausnahme. Maßgeblich sind Sanktionsprogramm, Transaktion, Beteiligte und Genehmigung."
+        },
+        "other": {
+          "title": "Neben OFAC existieren weitere Sanktionsregime",
+          "body": "Je nach betroffenen Personen und anwendbarem Recht können auch Sanktionen der UNO, EU, des Vereinigten Königreichs oder einzelner Staaten maßgeblich sein. Ihre Reichweite ist unterschiedlich. US-Pflichten von ICANN gelten nicht automatisch und identisch für jeden ausländischen Registrar oder Domaininhaber."
+        },
+        "count": {
+          "title": "Was die Daten von 2026 nicht belegen",
+          "body": "ICANN meldete am 22. September 1.616 bezahlte Bewerbungen und am Reveal Day vom 7. Oktober 1.615. Eine OFAC-Maßnahme wurde nicht öffentlich als Ursache benannt. Die Bewerbung .wdo unterliegt einer gesondert dokumentierten administrativen Prüfung; deren konkreter Anlass ist unbekannt. Sanktionen sind ein relevanter Hintergrund, aber keine belegte Erklärung."
+        }
+      },
+      "precedents": {
+        "r2012": {
+          "title": "Keine Ablehnung wegen Sanktionen gemeldet",
+          "body": "Laut ICANN wurde 2012 keine Bewerbung um eine neue gTLD wegen der Sanktionspflichten der Organisation abgelehnt. Das bedeutet nicht, dass Prüfungen oder Genehmigungsverfahren entfielen."
+        },
+        "r2014": {
+          "title": "Gericht weist Pfändung von .ir, .sy und .kp zurück",
+          "body": "Gläubiger wollten Länder-TLDs für Iran, Syrien und Nordkorea pfänden. Ein US-Bundesgericht wies dies zurück. Es ging um ein zivilrechtliches Vollstreckungsverfahren und die Eigentumsfrage, nicht um eine OFAC-Ablehnung neuer gTLDs."
+        },
+        "r2022": {
+          "title": "ICANN lehnt die Abschaltung russischer ccTLDs ab",
+          "body": "Auf die ukrainische Forderung zu .ru, .рф und .su antwortete ICANN, ihr technischer Auftrag umfasse weder eigene Sanktionen noch das einseitige Abschalten nationaler Domains. ICANN stelle zudem keine SSL-Zertifikate aus und kontrolliere nicht alle Root-Server-Knoten."
+        },
+        "r2026": {
+          "title": "Zulässigkeit und Compliance sind ausdrücklich geregelt",
+          "body": "Das Applicant Guidebook und die FAQ zur neuen Runde behandeln Sanktionen ausdrücklich und unterscheiden SDN-gelistete Bewerber von möglicherweise genehmigungsfähigen Geschäften mit anderen Akteuren."
+        }
+      }
+    },
+    "fr": {
+      "eyebrow": "Éclairage · OFAC et DNS",
+      "metaTitle": "ICANN, OFAC et sanctions | Connecting the Dots",
+      "metaDescription": "Comment les sanctions affectent les candidatures aux nouveaux gTLD sans autoriser ICANN à déconnecter les domaines nationaux.",
+      "title": "Quand un Internet mondial rencontre les sanctions nationales",
+      "lead": "L'ICANN coordonne un système mondial de noms tout en respectant les lois qui lui sont applicables. Cela peut limiter certaines candidatures à un nouveau gTLD, mais ne lui confère pas le pouvoir général de déconnecter un pays du DNS.",
+      "legalTitle": "Conformité juridique",
+      "legalBody": "L'ICANN peut être empêchée de fournir des services à certains candidats, sauf autorisation ou exemption applicable.",
+      "neutralTitle": "Neutralité technique",
+      "neutralBody": "L'ICANN indique que sa mission ne consiste ni à imposer des sanctions géopolitiques ni à déconnecter unilatéralement les domaines nationaux.",
+      "readingTitle": "Ce que disent réellement les règles",
+      "precedentsTitle": "Quatre jalons documentés",
+      "precedentsLead": "Ces événements relèvent de catégories juridiques et procédurales distinctes. Il ne s'agit pas de quatre TLD retirés par l'OFAC.",
+      "relatedTitle": "Le lien avec le round 2026",
+      "relatedBody": "L'écart entre les 1 616 candidatures payées annoncées le 22 septembre et les 1 615 du Reveal Day est documenté, mais ne prouve aucune mesure de sanction. Le contrôle administratif public concernant .wdo ne présente pas non plus de cause OFAC confirmée. Les deux enquêtes restent distinctes.",
+      "relatedCounts": "Note de terrain · Les chiffres du Reveal Day",
+      "relatedWdo": "Note de terrain · Deux WDO et .wdo",
+      "sourcesTitle": "Sources primaires",
+      "sourcesLead": "Chaque constat renvoie à des documents institutionnels. Les numéros de référence mènent aux documents d'origine.",
+      "methodTitle": "Limite éditoriale",
+      "methodBody": "Cette fiche présente les règles et précédents publiquement établis au 10 octobre 2026. Elle ne tranche pas la situation juridique d'un candidat, ne remplace pas un examen de conformité et n'attribue pas de cause non prouvée à une décision administrative de l'ICANN. Toute révision exigera des sources datées et vérifiables.",
+      "dateTitle": "Dernière vérification",
+      "backTitle": "Retour aux Notes de terrain",
+      "siteTitle": "Retour à l'atlas",
+      "sections": {
+        "why": {
+          "title": "Pourquoi les sanctions américaines concernent une organisation mondiale",
+          "body": "L'ICANN est un organisme sans but lucratif établi en Californie. Sa mission mondiale ne la soustrait pas aux lois américaines applicables, notamment aux sanctions économiques et commerciales de l'OFAC. Celles-ci encadrent certaines relations avec des personnes, des entités et des territoires. Elles ne rendent pas automatiquement illégal chaque domaine associé à un pays sanctionné."
+        },
+        "sdn": {
+          "title": "Candidatures gTLD : personnes désignées et résidents ne se confondent pas",
+          "body": "Pour 2026, l'ICANN précise qu'elle ne peut accepter de candidatures de personnes ou d'entités inscrites sur la liste OFAC des Specially Designated Nationals (SDN). La situation diffère pour un candidat non inscrit, mais établi dans un territoire sanctionné : une exemption ou une autorisation américaine peut être nécessaire. La nationalité seule ou l'inscription d'une personne physique ne prouvent pas qu'une organisation distincte soit sanctionnée."
+        },
+        "licenses": {
+          "title": "Les licences comptent, sans garantie d'obtention",
+          "body": "L'OFAC distingue les licences générales, couvrant certaines catégories d'opérations sous conditions, et les licences spécifiques accordées au cas par cas. L'ICANN indique avoir déjà obtenu des autorisations pour des candidats établis dans des pays sanctionnés, mais non individuellement désignés. Elle n'est pas tenue d'en solliciter dans tous les cas et l'OFAC peut refuser. La communauté ICANN a aussi recommandé d'étudier des licences générales pour réduire les obstacles récurrents."
+        },
+        "layers": {
+          "title": "Quatre rôles, quatre types de conséquences",
+          "body": "Candidat à un nouveau gTLD, opérateur de registre, bureau d'enregistrement accrédité et titulaire d'un domaine de deuxième niveau sont des acteurs distincts. Contrats, accréditation, vente et délégation DNS n'imposent pas les mêmes obligations. Une transaction interdite avec un acteur ne supprime pas automatiquement un ccTLD de la zone racine ni tous les domaines enregistrés sous celui-ci."
+        },
+        "exceptions": {
+          "title": "« Pays sanctionné » ne signifie pas « domaines interdits »",
+          "body": "Un contre-exemple précis : dans ses FAQ sur Cuba, l'OFAC inclut l'enregistrement de noms de domaine parmi les services de communication Internet autorisés, dans la plupart des circonstances, par une licence générale pertinente. Il ne s'agit pas d'une exemption universelle. Le régime, l'opération, les parties et l'autorisation applicables doivent être examinés."
+        },
+        "other": {
+          "title": "L'OFAC n'est pas le seul régime de sanctions",
+          "body": "Selon les acteurs concernés et le droit applicable, les règles de l'ONU, de l'UE, du Royaume-Uni et des États peuvent aussi entrer en jeu. Leur portée diffère. Les obligations américaines de l'ICANN ne deviennent pas automatiquement une interdiction identique pour chaque registrar ou titulaire étranger."
+        },
+        "count": {
+          "title": "Ce que les données de 2026 ne prouvent pas",
+          "body": "L'ICANN a annoncé 1 616 candidatures payées le 22 septembre et 1 615 lors du Reveal Day du 7 octobre. Elle n'a pas publiquement attribué cet écart à l'OFAC. La candidature .wdo fait l'objet d'un contrôle administratif documenté à part, dont la raison précise n'est pas publique. Les sanctions constituent un contexte utile, non une explication établie."
+        }
+      },
+      "precedents": {
+        "r2012": {
+          "title": "Aucun rejet attribué aux sanctions",
+          "body": "L'ICANN indique qu'aucune candidature du round gTLD 2012 n'a été rejetée en raison de ses obligations de conformité aux sanctions. Cela ne signifie pas que les contrôles ou autorisations étaient absents."
+        },
+        "r2014": {
+          "title": "La justice refuse la saisie de .ir, .sy et .kp",
+          "body": "Des créanciers ont tenté de saisir les ccTLD associés à l'Iran, à la Syrie et à la Corée du Nord. Un tribunal fédéral américain a rejeté la demande. Il s'agissait d'un litige civil sur la saisissabilité, non du rejet OFAC d'une candidature à un nouveau gTLD."
+        },
+        "r2022": {
+          "title": "L'ICANN refuse de déconnecter les ccTLD russes",
+          "body": "À la suite d'une demande ukrainienne visant .ru, .рф et .su, l'ICANN a expliqué que sa mission technique n'incluait ni sanctions propres ni déconnexion unilatérale de domaines nationaux. Elle a également rappelé ne pas émettre les certificats SSL ni contrôler tous les nœuds des serveurs racine."
+        },
+        "r2026": {
+          "title": "Éligibilité et conformité explicitement prévues",
+          "body": "L'Applicant Guidebook et les FAQ du nouveau round abordent les sanctions et distinguent les candidats inscrits sur la liste SDN des opérations potentiellement autorisables concernant d'autres demandeurs."
+        }
+      }
+    }
+  }
+}
