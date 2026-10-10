@@ -8,8 +8,7 @@ on:
       - main
     paths:
       - '.github/workflows/audit-browser.yml'
-      - 'scripts/audit_browser_20261010.js'
-      - 'scripts/audit_axe_20261010.js'
+      - 'scripts/**'
       - 'assets/**'
       - 'src/**'
       - 'data/translations.json'
