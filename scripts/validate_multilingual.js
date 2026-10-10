@@ -131,6 +131,26 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   const sanctionsSchema=JSON.parse(sanctionsDocument.querySelector('script[type="application/ld+json"]').textContent);
   assert.equal(sanctionsSchema['@type'],'Article',page+' explainer structured data should be Article');
   assert.equal(sanctionsSchema.citation.length,12,page+' structured evidence list must contain all twelve sources');
+  const accessHref=base+'behind-the-round/'+language+'/who-controls-internet-access/';
+  const accessText=fs.readFileSync(path.join(root,'behind-the-round',language,'who-controls-internet-access','index.html'),'utf8');
+  const accessDocument=parseHTML(accessText).document;
+  assert.equal(accessDocument.documentElement.getAttribute('lang'),language,page+' access explainer wrong locale');
+  assert.equal(accessDocument.querySelector('link[rel="canonical"]')?.getAttribute('href'),accessHref,page+' access explainer canonical');
+  assert.equal(accessDocument.querySelectorAll('link[rel="alternate"][hreflang]').length,5,page+' access explainer hreflang');
+  assert.equal(accessDocument.querySelectorAll('[data-access-select]').length,7,page+' access simulation missing controls');
+  assert.equal(accessDocument.querySelectorAll('[data-access-stage]').length,5,page+' access simulation missing stages');
+  assert.equal(accessDocument.querySelectorAll('[data-access-case]').length,5,page+' five historical examples missing');
+  assert.equal(accessDocument.querySelectorAll('[id^="access-source-"]').length,11,page+' complete access evidence list missing');
+  assert.equal(accessDocument.querySelector('meta[name="robots"]')?.getAttribute('content'),'index,follow,max-image-preview:large',page+' access SEO');
+  assert.equal(document.querySelectorAll('[data-access-explainer-link]').length,3,page+' How, Social and Disputes links');
+  for(const link of document.querySelectorAll('a[data-access-explainer-link]')){
+    assert.equal(link.getAttribute('href'),accessHref,page+' incorrect access explainer locale link');
+  }
+  assert.ok(sanctionsText.includes(accessHref),page+' sanctions guide must link to access explainer');
+  const accessSchema=JSON.parse(accessDocument.querySelector('script[type="application/ld+json"]').textContent);
+  assert.equal(accessSchema['@type'],'Article',page+' access structured metadata');
+  assert.equal(accessSchema.citation.length,11,page+' access source references incomplete');
+
 
 
   const howMenu=document.querySelector('.navMenu[data-label-key="tabHow"]');
@@ -228,9 +248,9 @@ for(const [input,target] of cases){
 }
 const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
 const locations=Array.from(sitemap.matchAll(/<loc>([^<]+)<\/loc>/g),m=>m[1]);
-const expectedLocations=[...languages.map(l=>base+l+'/'),base+'explorer/',base+'research/',base+'research/connecting-the-dots-working-paper-v1.html',...languages.map(l=>base+'inside-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/wdo-identity/'),...languages.map(l=>base+'behind-the-round/'+l+'/sanctions-and-dns/')];
+const expectedLocations=[...languages.map(l=>base+l+'/'),base+'explorer/',base+'research/',base+'research/connecting-the-dots-working-paper-v1.html',...languages.map(l=>base+'inside-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/wdo-identity/'),...languages.map(l=>base+'behind-the-round/'+l+'/sanctions-and-dns/'),...languages.map(l=>base+'behind-the-round/'+l+'/who-controls-internet-access/')];
 assert.deepEqual(locations,expectedLocations,'complete multilingual and research sitemap');
-assert.equal((sitemap.match(/xhtml:link/g)||[]).length,100,'all four-language pages including sanctions explainer have reciprocal hreflang');
+assert.equal((sitemap.match(/xhtml:link/g)||[]).length,120,'all four-language articles and explainers have reciprocal hreflang');
 assert.ok(!/\?lang=/.test(sitemap));
 const app=fs.readFileSync(path.join(root,'assets/app.js'),'utf8');
 assert.ok(!app.includes('updateSeoLanguage'));

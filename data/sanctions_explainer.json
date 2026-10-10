@@ -226,7 +226,10 @@
           "title": "Eligibility and legal screening are explicit",
           "body": "The new Applicant Guidebook and associated FAQs make sanctions compliance part of the 2026 process and differentiate SDN-listed applicants from potentially licensable transactions involving other applicants."
         }
-      }
+      },
+      "accessCrossTitle": "How domestic Internet blocking differs",
+      "accessCrossBody": "OFAC sanctions constrain certain legal transactions involving ICANN. A country or network can also restrict users' access at DNS, IP or TLS level, even when the top-level domain remains globally valid.",
+      "accessCrossCta": "Explore Internet filtering and censorship"
     },
     "it": {
       "eyebrow": "Scheda di contesto · OFAC e DNS",
@@ -299,7 +302,10 @@
           "title": "Idoneità e conformità diventano esplicite",
           "body": "Il Guidebook e le FAQ del nuovo round rendono esplicita la verifica delle sanzioni e distinguono i richiedenti nella lista SDN dalle operazioni potenzialmente autorizzabili che riguardano altri soggetti."
         }
-      }
+      },
+      "accessCrossTitle": "I blocchi nazionali sono un fenomeno diverso",
+      "accessCrossBody": "Le sanzioni OFAC limitano determinate transazioni giuridiche di ICANN. Un Paese o una rete può anche impedire l'accesso degli utenti tramite DNS, IP o TLS, senza modificare la validità globale del TLD.",
+      "accessCrossCta": "Scopri come funzionano i filtri su Internet"
     },
     "de": {
       "eyebrow": "Hintergrund · OFAC und DNS",
@@ -372,7 +378,10 @@
           "title": "Zulässigkeit und Compliance sind ausdrücklich geregelt",
           "body": "Das Applicant Guidebook und die FAQ zur neuen Runde behandeln Sanktionen ausdrücklich und unterscheiden SDN-gelistete Bewerber von möglicherweise genehmigungsfähigen Geschäften mit anderen Akteuren."
         }
-      }
+      },
+      "accessCrossTitle": "Nationale Netzsperren sind ein anderer Vorgang",
+      "accessCrossBody": "OFAC-Sanktionen schränken bestimmte Geschäfte der ICANN ein. Staaten oder Netze können Nutzerzugriffe zudem über DNS, IP oder TLS unterbinden, ohne die globale Gültigkeit der TLD zu ändern.",
+      "accessCrossCta": "Wie Internetfilter technisch funktionieren"
     },
     "fr": {
       "eyebrow": "Éclairage · OFAC et DNS",
@@ -445,7 +454,10 @@
           "title": "Éligibilité et conformité explicitement prévues",
           "body": "L'Applicant Guidebook et les FAQ du nouveau round abordent les sanctions et distinguent les candidats inscrits sur la liste SDN des opérations potentiellement autorisables concernant d'autres demandeurs."
         }
-      }
+      },
+      "accessCrossTitle": "Le filtrage national est un phénomène distinct",
+      "accessCrossBody": "Les sanctions OFAC limitent certaines opérations juridiques de l'ICANN. Un pays ou un réseau peut aussi restreindre l'accès des internautes via DNS, IP ou TLS sans modifier la validité mondiale du TLD.",
+      "accessCrossCta": "Comprendre le filtrage d'Internet"
     }
   }
 }

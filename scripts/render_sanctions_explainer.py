@@ -73,7 +73,7 @@ def load(root: Path = ROOT) -> dict:
         tx = item["languages"][lang]
         for key in ("eyebrow", "title", "lead", "metaTitle", "metaDescription",
                     "legalTitle", "legalBody", "neutralTitle", "neutralBody",
-                    "readingTitle", "precedentsTitle", "precedentsLead",
+                    "readingTitle", "precedentsTitle", "precedentsLead", "accessCrossTitle", "accessCrossBody", "accessCrossCta",
                     "relatedTitle", "relatedBody", "relatedCounts", "relatedWdo",
                     "sourcesTitle", "sourcesLead", "methodTitle", "methodBody",
                     "dateTitle", "backTitle", "siteTitle"):
@@ -179,6 +179,8 @@ def page(item: dict, lang: str) -> str:
 <section class="panel"><h2>{h(t["relatedTitle"])}</h2><p>{h(t["relatedBody"])}</p>
 <div class="governanceRelated"><a href="{related_base}#behind-case-reveal-day-counts">{h(t["relatedCounts"])} ↗</a>
 <a href="{related_base}wdo-identity/">{h(t["relatedWdo"])} ↗</a></div></section>
+<section class="panel"><h2>{h(t["accessCrossTitle"])}</h2><p>{h(t["accessCrossBody"])}</p>
+<div class="governanceRelated"><a href="{related_base}who-controls-internet-access/">{h(t["accessCrossCta"])} ↗</a></div></section>
 <section class="panel"><h2>{h(t["sourcesTitle"])}</h2><p>{h(t["sourcesLead"])}</p>
 <ol class="governanceSources">{bibliography}</ol></section>
 <section class="panel"><h2>{h(t["methodTitle"])}</h2><p>{h(t["methodBody"])}</p></section>

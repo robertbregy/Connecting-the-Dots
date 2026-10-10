@@ -1,0 +1,916 @@
+{
+  "schemaVersion": 1,
+  "classification": "governance-and-network-access-explainer",
+  "editorialLayer": "living-public-explainer-not-frozen-RR1",
+  "slug": "who-controls-internet-access",
+  "publishedOn": "2026-10-10",
+  "reviewedOn": "2026-10-10",
+  "policy": "A historically sourced selection, not an exhaustive country classification. Separate DNS resolver interference, registry/registrar status, IP/TLS access blocking, platform actions and connectivity shutdowns. Avoid inferring state intent from an individual anomalous probe, or ICANN action from domestic ISP filtering.",
+  "sources": [
+    {
+      "id": "ooni-method",
+      "label": "OONI · Interpreting measurements and false positives",
+      "url": "https://ooni.org/support/interpreting-ooni-data/"
+    },
+    {
+      "id": "isoc-shutdown",
+      "label": "Internet Society · Internet shutdown policy definition",
+      "url": "https://www.internetsociety.org/resources/policybriefs/2025/internet-shutdowns/"
+    },
+    {
+      "id": "pulse-method",
+      "label": "Internet Society Pulse · Shutdown tracker methodology",
+      "url": "https://pulse.internetsociety.org/en/pulse-shutdown-tracker-methodology/"
+    },
+    {
+      "id": "icann-letter",
+      "label": "ICANN · Response to the Ukrainian government, 2 March 2022",
+      "url": "https://itp.cdn.icann.org/en/files/correspondence/marby-to-fedorov-02mar22-en.pdf"
+    },
+    {
+      "id": "china",
+      "label": "OONI · China is blocking OONI (2023)",
+      "url": "https://ooni.org/post/2023-china-blocks-ooni/"
+    },
+    {
+      "id": "russia",
+      "label": "OONI · Suppression of independent media in Russia (2024)",
+      "url": "https://ooni.org/post/2024-russia-report/"
+    },
+    {
+      "id": "iran",
+      "label": "OONI Explorer · Iran blocked WhatsApp (2025)",
+      "url": "https://explorer.ooni.org/findings/2025-iran-blocked-whatsapp-amid-war-with-israel"
+    },
+    {
+      "id": "swiss",
+      "label": "Gespa · Swiss legal DNS blocking / public blocklists (2026)",
+      "url": "https://www.gespa.ch/it/lotta-alle-attivita-illegali/blocco-dellaccesso"
+    },
+    {
+      "id": "catalonia",
+      "label": "OONI · Catalan referendum website blocking (2017)",
+      "url": "https://ooni.org/post/internet-censorship-catalonia-independence-referendum"
+    },
+    {
+      "id": "ooni-explorer",
+      "label": "OONI Explorer · Network measurements",
+      "url": "https://explorer.ooni.org/"
+    },
+    {
+      "id": "pulse-explorer",
+      "label": "Internet Society Pulse · Shutdown tracker",
+      "url": "https://pulse.internetsociety.org/en/shutdowns/"
+    }
+  ],
+  "stageIds": [
+    "registry",
+    "dns",
+    "network",
+    "tls",
+    "service"
+  ],
+  "mechanisms": [
+    {
+      "id": "normal",
+      "blockStage": -1,
+      "scope": "none",
+      "sourceIds": [
+        "ooni-method"
+      ]
+    },
+    {
+      "id": "resolver",
+      "blockStage": 1,
+      "scope": "local",
+      "sourceIds": [
+        "ooni-method",
+        "swiss"
+      ]
+    },
+    {
+      "id": "ip",
+      "blockStage": 2,
+      "scope": "local",
+      "sourceIds": [
+        "ooni-method"
+      ]
+    },
+    {
+      "id": "tls",
+      "blockStage": 3,
+      "scope": "local",
+      "sourceIds": [
+        "ooni-method",
+        "russia"
+      ]
+    },
+    {
+      "id": "service",
+      "blockStage": 4,
+      "scope": "service",
+      "sourceIds": [
+        "ooni-method"
+      ]
+    },
+    {
+      "id": "registration",
+      "blockStage": 0,
+      "scope": "registration",
+      "sourceIds": [
+        "icann-letter"
+      ]
+    },
+    {
+      "id": "shutdown",
+      "blockStage": 2,
+      "scope": "network",
+      "sourceIds": [
+        "isoc-shutdown",
+        "pulse-method"
+      ]
+    }
+  ],
+  "actors": [
+    {
+      "id": "icann",
+      "sourceIds": [
+        "icann-letter"
+      ]
+    },
+    {
+      "id": "registry",
+      "sourceIds": [
+        "icann-letter"
+      ]
+    },
+    {
+      "id": "state",
+      "sourceIds": [
+        "swiss",
+        "catalonia"
+      ]
+    },
+    {
+      "id": "isp",
+      "sourceIds": [
+        "ooni-method",
+        "swiss"
+      ]
+    },
+    {
+      "id": "platform",
+      "sourceIds": [
+        "ooni-method"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "china-2023",
+      "period": "2023",
+      "jurisdiction": "CN",
+      "sourceIds": [
+        "china"
+      ],
+      "method": [
+        "dns",
+        "tls"
+      ]
+    },
+    {
+      "id": "russia-2024",
+      "period": "2023–2024",
+      "jurisdiction": "RU",
+      "sourceIds": [
+        "russia"
+      ],
+      "method": [
+        "dns",
+        "tls"
+      ]
+    },
+    {
+      "id": "iran-2025",
+      "period": "June 2025",
+      "jurisdiction": "IR",
+      "sourceIds": [
+        "iran",
+        "pulse-method"
+      ],
+      "method": [
+        "shutdown",
+        "app"
+      ]
+    },
+    {
+      "id": "swiss-2026",
+      "period": "2026",
+      "jurisdiction": "CH",
+      "sourceIds": [
+        "swiss"
+      ],
+      "method": [
+        "dns"
+      ]
+    },
+    {
+      "id": "catalonia-2017",
+      "period": "2017",
+      "jurisdiction": "ES",
+      "sourceIds": [
+        "catalonia"
+      ],
+      "method": [
+        "dns",
+        "http"
+      ]
+    }
+  ],
+  "languages": {
+    "en": {
+      "metaTitle": "Who controls access to the Internet? | Connecting the Dots",
+      "metaDescription": "A guided DNS-to-network simulation: how filtering, domain suspension and Internet shutdowns differ, with documented examples and sources.",
+      "eyebrow": "Internet architecture · Governance explainer",
+      "title": "Who controls access to the Internet?",
+      "lead": "A website can exist in the global DNS and still be unreachable from one network or country. Follow a request to see where control may be exercised, and why ICANN is not the Internet's universal censorship authority.",
+      "introLabel": "The distinction",
+      "introBody": "DNS names, TLDs, registry contracts, national network filters and platform content decisions are separate layers. They can affect the same website, but they operate differently.",
+      "simTitle": "Try the access-control simulator",
+      "simLead": "Choose one hypothetical intervention. The diagram shows which stage fails and whether the name may still exist outside the affected network. This is an explanatory model, not a real connectivity test.",
+      "simUrlLabel": "Example address",
+      "simSelectorLabel": "Choose a scenario",
+      "simFlowLabel": "Schematic: from a domain to a web response",
+      "simStatusOpen": "Available in this scenario",
+      "simStatusBlocked": "Access interrupted in this scenario",
+      "simStatusName": "What happens to the global name?",
+      "simStatusUsers": "What can users reach?",
+      "simStatusActors": "Who might enforce this?",
+      "simStagePassed": "passed",
+      "simStageBlocked": "interrupted",
+      "simStagePending": "not reached",
+      "simNote": "The registry step describes control over registration and authoritative delegation, not an additional network hop on each visit. The exact outcome depends on how the measure is implemented.",
+      "stages": {
+        "registry": {
+          "title": "TLD, registry & registration",
+          "body": "Is the domain registered and delegated? This is an upstream lifecycle condition, not a packet filter."
+        },
+        "dns": {
+          "title": "DNS resolver",
+          "body": "Can the user's resolver translate the hostname into a usable IP address?"
+        },
+        "network": {
+          "title": "ISP, routing & IP access",
+          "body": "Can packets travel from this network to the destination?"
+        },
+        "tls": {
+          "title": "TLS handshake & traffic filters",
+          "body": "Can the encrypted connection be established? Some metadata may be visible."
+        },
+        "service": {
+          "title": "Hosting, application & content",
+          "body": "Does the remote service answer and provide the requested resource?"
+        }
+      },
+      "modes": {
+        "normal": {
+          "label": "No interference",
+          "title": "The request completes",
+          "body": "The name resolves, packets are routed, TLS succeeds and the service responds. This is a simplified reference case.",
+          "name": "The domain remains present in the DNS.",
+          "users": "The example service is reachable.",
+          "actors": "No intervention is simulated."
+        },
+        "resolver": {
+          "label": "DNS filtering",
+          "title": "The resolver changes the answer",
+          "body": "A local resolver may refuse the lookup or return a blocking address. Authoritative DNS and the TLD can still work normally elsewhere. An alternate resolver only helps if this is the sole relevant restriction.",
+          "name": "The name may still be globally delegated.",
+          "users": "Users of the affected resolver may not reach the target by its name.",
+          "actors": "A network operator, sometimes under a legal order."
+        },
+        "ip": {
+          "label": "IP blocking",
+          "title": "The DNS name works. The route does not.",
+          "body": "Even a valid DNS answer is insufficient when a network blocks access to the destination IP address or relevant route. A shared IP can host unrelated sites, creating collateral effects.",
+          "name": "The name and DNS answer may be intact.",
+          "users": "Connections to the blocked destination fail on that network.",
+          "actors": "An ISP or another network operator."
+        },
+        "tls": {
+          "label": "TLS / DPI filtering",
+          "title": "The secure connection fails",
+          "body": "A filter can interrupt a connection during the TLS handshake, for example using visible server-name metadata when present. DNS can be correct and the server operational. Encryption details and countermeasures evolve.",
+          "name": "The domain can remain normally resolved.",
+          "users": "The HTTPS connection may reset or time out.",
+          "actors": "Network filtering equipment operated by providers or intermediaries."
+        },
+        "service": {
+          "label": "Hosting or platform decision",
+          "title": "The server or platform refuses the content",
+          "body": "An application can remove a page, restrict an account, or geo-block content. The DNS and network can still function perfectly; this is not an ICANN action.",
+          "name": "The domain can remain registered and resolved.",
+          "users": "The requested service or content is unavailable under the platform's rules.",
+          "actors": "Hosting providers, applications or platform operators."
+        },
+        "registration": {
+          "label": "Domain suspension",
+          "title": "The domain's registration or delegation changes",
+          "body": "Registry or registrar procedures may suspend a domain. Depending on the action, authoritative DNS may no longer publish the same delegation. This is not equivalent to deleting the entire TLD.",
+          "name": "This individual registration/delegation may cease working globally.",
+          "users": "Reachability may be affected across many networks.",
+          "actors": "Registries and registrars within applicable procedures and contracts."
+        },
+        "shutdown": {
+          "label": "Network shutdown",
+          "title": "Connectivity is cut for a population",
+          "body": "A shutdown interrupts Internet communications for a region or group. It is not a DNS or TLD deletion. Its scope can differ between mobile and fixed networks and need not be technically total.",
+          "name": "Global DNS names are not necessarily changed.",
+          "users": "Broad groups of services become unavailable from the affected network.",
+          "actors": "Network operators, potentially acting under government orders."
+        }
+      },
+      "actorsTitle": "Who controls what?",
+      "actorsLead": "The same incident can involve a legal decision, a network-level enforcement action and an unrelated global DNS state. Do not confuse the actor with the technical layer.",
+      "actors": {
+        "icann": {
+          "title": "ICANN / IANA",
+          "body": "Coordinate names and the root-zone framework; they do not generally order national ISPs to block websites. The 2022 Ukraine letter illustrates the limits of this mandate."
+        },
+        "registry": {
+          "title": "Registry / registrar",
+          "body": "Govern registrations and contractual suspensions under the rules that apply to a TLD. Actions affecting a registration are not the same as country-level filtering."
+        },
+        "state": {
+          "title": "Government / authority",
+          "body": "May create legal obligations within its jurisdiction. The scope, safeguards and justification depend on the law and on the measure."
+        },
+        "isp": {
+          "title": "Access provider",
+          "body": "May implement DNS, IP, traffic or routing restrictions; different networks in the same country can behave differently."
+        },
+        "platform": {
+          "title": "Platform / hosting",
+          "body": "May moderate content, refuse service or apply territorial restrictions without changing DNS delegation."
+        }
+      },
+      "examplesTitle": "Five documented examples, five different contexts",
+      "examplesLead": "A curated historical selection with dated evidence, not a complete or current inventory of countries that restrict online access.",
+      "caseLabel": "How it was observed",
+      "caseTime": "Evidence period",
+      "cases": {
+        "china-2023": {
+          "title": "China · DNS injection plus TLS interference",
+          "body": "OONI documented that access to its own website was disrupted in China by injected DNS answers and interference during TLS connections. This observation concerns the tested services and networks, not an assertion about every website in China.",
+          "note": "OONI study published 2023"
+        },
+        "russia-2024": {
+          "title": "Russia · DNS and traffic-level filtering",
+          "body": "In measurements from September 2023 to September 2024, OONI and RKS Global documented blocking of independent media. TLS handshake interference predominated in the studied sample, alongside some DNS-based blocks.",
+          "note": "OONI / RKS Global, December 2024"
+        },
+        "iran-2025": {
+          "title": "Iran · service blocking and connectivity disruption",
+          "body": "OONI documented temporary WhatsApp blocking in June 2025 and a sharp drop in measurement coverage during the conflict. Evidence from other network monitors was consistent with a high-severity connectivity disruption; a failed app and a network shutdown remain distinct observations.",
+          "note": "OONI findings, June–July 2025"
+        },
+        "swiss-2026": {
+          "title": "Switzerland · legally mandated DNS blocking",
+          "body": "Gespa and the Federal Gaming Board maintain lists of unlicensed foreign gambling offers. Swiss access providers must apply DNS blocks for the listed domains. The measure is domestic; it does not remove those TLDs from the global root.",
+          "note": "Gespa official blocklist, August 2026"
+        },
+        "catalonia-2017": {
+          "title": "Catalonia (Spain) · referendum website blocking",
+          "body": "OONI measured DNS tampering and HTTP blocking against websites related to the October 2017 referendum, including domains under .cat. The .cat suffix is a sponsored gTLD, not a country-code TLD; changing domain suffixes does not guarantee reachability.",
+          "note": "OONI measurements, September–October 2017"
+        }
+      },
+      "limitsTitle": "Measurements are evidence, not an automatic verdict",
+      "limitsBody": "OONI distinguishes automatically confirmed blocks (for example known block pages or known DNS censorship addresses) from anomalies that can have benign causes. Repeated results on identified networks and dates strengthen an interpretation; one failure cannot prove censorship. Internet Society Pulse separately records documented connectivity disruptions under its own inclusion methodology. Neither dataset is a universal real-time score for all countries.",
+      "sourcesTitle": "Original sources and measurement tools",
+      "sourcesLead": "Source identifiers accompany the case studies and mechanisms. These are original institutional or measurement-project records, not generalized country rankings.",
+      "relatedTitle": "Continue through Connecting the Dots",
+      "relatedBody": "The sanctions explainer addresses legal restrictions on ICANN's transactions, a different subject from filtering users' Internet access. The Field Notes document unresolved 2026 applications; none is explained by filtering alone.",
+      "sanctionsLink": "ICANN, OFAC and sanctions",
+      "fieldLink": "2026 Field Notes",
+      "atlasLink": "Back to the main atlas",
+      "methodTitle": "Editorial note",
+      "methodBody": "Reviewed 10 October 2026. The examples are historical, tied to stated periods, and may not reflect present reachability. This page is an educational model and makes no technical probes from the visitor's browser. It does not attribute individual intentions without documentary evidence and remains outside frozen Research Release RR1.",
+      "reviewedLabel": "Last reviewed",
+      "sourceLabel": "Source"
+    },
+    "it": {
+      "metaTitle": "Chi controlla l'accesso a Internet? | Connecting the Dots",
+      "metaDescription": "Una simulazione dal DNS alla rete: differenze fra filtri, sospensione dei domini e interruzioni di Internet, con esempi documentati.",
+      "eyebrow": "Architettura di Internet · Scheda di contesto",
+      "title": "Chi controlla l'accesso a Internet?",
+      "lead": "Un sito può esistere nel DNS globale e risultare comunque irraggiungibile da una rete o da un Paese. Seguiamo una richiesta per capire dove si può intervenire e perché ICANN non è l'autorità universale della censura online.",
+      "introLabel": "La distinzione fondamentale",
+      "introBody": "Nomi DNS, TLD, contratti di registro, filtri nazionali e decisioni sui contenuti delle piattaforme sono livelli distinti. Possono incidere sullo stesso sito, ma lo fanno in modi diversi.",
+      "simTitle": "Prova la simulazione dei blocchi",
+      "simLead": "Scegli un intervento ipotetico. Lo schema mostra in quale passaggio la richiesta si interrompe e se il nome può ancora esistere fuori dalla rete interessata. È una simulazione esplicativa, non un test reale.",
+      "simUrlLabel": "Indirizzo di esempio",
+      "simSelectorLabel": "Scegli uno scenario",
+      "simFlowLabel": "Schema: dal dominio alla risposta del sito",
+      "simStatusOpen": "Accessibile in questo scenario",
+      "simStatusBlocked": "Accesso interrotto in questo scenario",
+      "simStatusName": "Che cosa succede al nome globale?",
+      "simStatusUsers": "Che cosa riescono a raggiungere gli utenti?",
+      "simStatusActors": "Chi può applicare il blocco?",
+      "simStagePassed": "superato",
+      "simStageBlocked": "interrotto",
+      "simStagePending": "non raggiunto",
+      "simNote": "Il passaggio relativo al registro rappresenta la gestione della registrazione e della delega autorevole, non un ulteriore nodo di rete attraversato a ogni visita. Gli effetti esatti dipendono dall'attuazione concreta.",
+      "stages": {
+        "registry": {
+          "title": "TLD, registro e registrazione",
+          "body": "Il dominio è registrato e delegato? È una condizione preliminare, non un filtro dei pacchetti."
+        },
+        "dns": {
+          "title": "Resolver DNS",
+          "body": "Il resolver dell'utente traduce il nome in un indirizzo IP utilizzabile?"
+        },
+        "network": {
+          "title": "Provider, instradamento e IP",
+          "body": "I pacchetti possono raggiungere il server da questa rete?"
+        },
+        "tls": {
+          "title": "Connessione TLS e filtri sul traffico",
+          "body": "La connessione cifrata si stabilisce? Alcuni metadati possono essere visibili."
+        },
+        "service": {
+          "title": "Hosting, applicazione e contenuti",
+          "body": "Il servizio risponde e rende disponibile la risorsa richiesta?"
+        }
+      },
+      "modes": {
+        "normal": {
+          "label": "Nessun blocco",
+          "title": "La richiesta arriva a destinazione",
+          "body": "Il nome si risolve, i pacchetti raggiungono il server, TLS funziona e il servizio risponde. È lo scenario di riferimento semplificato.",
+          "name": "Il dominio rimane presente nel DNS.",
+          "users": "Il servizio di esempio è raggiungibile.",
+          "actors": "Nessun intervento simulato."
+        },
+        "resolver": {
+          "label": "Filtro DNS",
+          "title": "Il resolver altera la risposta",
+          "body": "Un resolver locale può rifiutare la risoluzione oppure restituire un indirizzo di blocco. Il DNS autorevole e il TLD possono continuare a funzionare altrove. Cambiare resolver può funzionare soltanto se questa è l'unica restrizione rilevante.",
+          "name": "Il nome può continuare a essere delegato globalmente.",
+          "users": "Chi usa il resolver interessato può non raggiungere il sito tramite il suo nome.",
+          "actors": "Il gestore della rete, talvolta in esecuzione di un obbligo legale."
+        },
+        "ip": {
+          "label": "Blocco IP",
+          "title": "Il DNS funziona, la rete no",
+          "body": "Una risposta DNS corretta non basta se la rete impedisce di raggiungere l'IP di destinazione o la relativa rotta. Un medesimo IP può ospitare siti differenti, con possibili effetti collaterali.",
+          "name": "Il nome e la risposta DNS possono essere intatti.",
+          "users": "Il collegamento alla destinazione bloccata fallisce sulla rete interessata.",
+          "actors": "Provider Internet o altri operatori di rete."
+        },
+        "tls": {
+          "label": "Filtro TLS / DPI",
+          "title": "La connessione cifrata non si stabilisce",
+          "body": "Un apparato può interrompere la sessione durante l'handshake TLS, per esempio analizzando il nome del server quando il dato è visibile. Il DNS può essere corretto e il server funzionante. Cifratura e contromisure tecniche evolvono.",
+          "name": "Il dominio può continuare a risolversi normalmente.",
+          "users": "La connessione HTTPS può essere resettata o scadere per timeout.",
+          "actors": "Apparati di filtraggio dei provider o di altri intermediari."
+        },
+        "service": {
+          "label": "Hosting o piattaforma",
+          "title": "Il servizio non rende disponibile il contenuto",
+          "body": "Un'applicazione può rimuovere una pagina, sospendere un account o limitare l'accesso geografico. DNS e connessione possono funzionare perfettamente: non è un intervento di ICANN.",
+          "name": "Il dominio può restare registrato e risolvibile.",
+          "users": "Il contenuto richiesto non è disponibile secondo le regole del servizio.",
+          "actors": "Gestori di hosting, applicazioni o piattaforme."
+        },
+        "registration": {
+          "label": "Sospensione del dominio",
+          "title": "Cambia lo stato della registrazione o della delega",
+          "body": "Le procedure di registrar e registry possono sospendere un dominio. A seconda della misura, il DNS autorevole può smettere di pubblicare la delega. Non equivale alla cancellazione dell'intero TLD.",
+          "name": "Questa singola registrazione o delega può smettere di funzionare globalmente.",
+          "users": "L'effetto può coinvolgere utenti di numerose reti.",
+          "actors": "Registry e registrar nell'ambito delle regole e dei contratti applicabili."
+        },
+        "shutdown": {
+          "label": "Interruzione della rete",
+          "title": "La connettività viene interrotta per una popolazione",
+          "body": "Uno shutdown impedisce le comunicazioni Internet in un'area o per un gruppo. Non cancella nomi DNS o TLD. La misura può interessare solo reti mobili, reti fisse o parte della connettività.",
+          "name": "I nomi nel DNS globale non vengono necessariamente modificati.",
+          "users": "Numerosi servizi diventano irraggiungibili dalla rete interessata.",
+          "actors": "Operatori di rete, anche in esecuzione di ordini delle autorità."
+        }
+      },
+      "actorsTitle": "Chi può intervenire e su che cosa?",
+      "actorsLead": "Una stessa vicenda può comprendere una decisione giuridica, un blocco applicato dalla rete e un nome DNS che rimane globale. Il soggetto responsabile e il livello tecnico non vanno confusi.",
+      "actors": {
+        "icann": {
+          "title": "ICANN / IANA",
+          "body": "Coordinano i nomi e il sistema della root zone; non ordinano normalmente ai provider nazionali di bloccare siti. La lettera all'Ucraina del 2022 chiarisce i limiti di questo mandato."
+        },
+        "registry": {
+          "title": "Registry / registrar",
+          "body": "Gestiscono registrazioni e sospensioni secondo le norme applicabili al TLD. Un provvedimento su un dominio è cosa diversa da un filtro nazionale."
+        },
+        "state": {
+          "title": "Stato / autorità",
+          "body": "Possono stabilire obblighi di blocco nell'ambito della propria giurisdizione. Base giuridica, garanzie e motivazioni dipendono dalle singole misure."
+        },
+        "isp": {
+          "title": "Fornitore d'accesso",
+          "body": "Può applicare filtri DNS, IP, TLS o d'instradamento. Reti diverse dello stesso Paese possono comportarsi diversamente."
+        },
+        "platform": {
+          "title": "Piattaforma / hosting",
+          "body": "Può moderare contenuti, negare servizi o limitarli per territorio senza modificare la delega DNS."
+        }
+      },
+      "examplesTitle": "Cinque casi documentati, cinque contesti diversi",
+      "examplesLead": "Una selezione storica con fonti datate. Non è un elenco completo né una classifica aggiornata dei Paesi che limitano l'accesso.",
+      "caseLabel": "Come è stato osservato",
+      "caseTime": "Periodo delle evidenze",
+      "cases": {
+        "china-2023": {
+          "title": "Cina · DNS injection e interferenze TLS",
+          "body": "OONI ha documentato che il proprio sito risultava bloccato in Cina tramite risposte DNS iniettate e interferenze durante la connessione TLS. La constatazione riguarda i servizi e le reti misurate, non ogni sito accessibile dalla Cina.",
+          "note": "Studio OONI pubblicato nel 2023"
+        },
+        "russia-2024": {
+          "title": "Russia · filtri DNS e sul traffico",
+          "body": "Analizzando misure raccolte dal settembre 2023 al settembre 2024, OONI e RKS Global hanno documentato blocchi di media indipendenti. Nel campione esaminato prevalevano interferenze durante l'handshake TLS, accanto ad alcuni filtraggi DNS.",
+          "note": "OONI / RKS Global, dicembre 2024"
+        },
+        "iran-2025": {
+          "title": "Iran · blocco di servizi e interruzione della connettività",
+          "body": "OONI ha documentato il blocco temporaneo di WhatsApp nel giugno 2025 e il forte calo delle misurazioni durante il conflitto. Altre misure di rete erano compatibili con una grave interruzione della connettività. Il blocco di un'applicazione e uno shutdown rimangono osservazioni distinte.",
+          "note": "Rilevazioni OONI, giugno–luglio 2025"
+        },
+        "swiss-2026": {
+          "title": "Svizzera · blocco DNS previsto dalla legge",
+          "body": "Gespa e Commissione federale delle case da gioco pubblicano elenchi di offerte di gioco estere non autorizzate. I provider svizzeri devono applicare blocchi DNS per i domini inseriti. È una misura applicata in Svizzera, non una rimozione dei TLD dalla root globale.",
+          "note": "Elenchi ufficiali Gespa, agosto 2026"
+        },
+        "catalonia-2017": {
+          "title": "Catalogna (Spagna) · blocco dei siti del referendum",
+          "body": "OONI ha rilevato manipolazioni DNS e blocchi HTTP su siti legati al referendum dell'ottobre 2017, anche sotto .cat. L'estensione .cat è un gTLD sponsorizzato e non un ccTLD; cambiare estensione non garantisce di superare un blocco.",
+          "note": "Misurazioni OONI, settembre–ottobre 2017"
+        }
+      },
+      "limitsTitle": "Una misura di rete è una prova, non una sentenza automatica",
+      "limitsBody": "OONI distingue blocchi confermati automaticamente (per esempio pagine di blocco riconoscibili o indirizzi DNS noti per la censura) e anomalie che possono avere anche cause innocue. Misure ripetute, collocate nel tempo e riferite a reti precise rafforzano l'interpretazione; un singolo errore non dimostra la censura. Internet Society Pulse documenta separatamente interruzioni della connettività secondo criteri propri. Nessuna delle due fonti costituisce una classifica universale in tempo reale.",
+      "sourcesTitle": "Fonti originali e strumenti di misurazione",
+      "sourcesLead": "I riferimenti accompagnano casi e meccanismi. Si tratta di fonti istituzionali e progetti di misurazione, non di graduatorie generalizzate dei Paesi.",
+      "relatedTitle": "Prosegui su Connecting the Dots",
+      "relatedBody": "La scheda OFAC tratta i vincoli giuridici sulle operazioni di ICANN, un tema distinto dai filtri sull'accesso degli utenti. Le Note dal campo documentano questioni irrisolte del round 2026: non si possono spiegare con il filtraggio senza prove.",
+      "sanctionsLink": "ICANN, OFAC e sanzioni",
+      "fieldLink": "Note dal campo 2026",
+      "atlasLink": "Torna all'atlante",
+      "methodTitle": "Nota editoriale",
+      "methodBody": "Verificato il 10 ottobre 2026. Gli esempi sono storici e circoscritti a periodi definiti: potrebbero non descrivere la raggiungibilità attuale. La pagina è un modello didattico e non esegue alcuna misura dalla connessione del visitatore. Non attribuisce intenzioni individuali in mancanza di prove e rimane fuori dalla release scientifica RR1 congelata.",
+      "reviewedLabel": "Ultima verifica",
+      "sourceLabel": "Fonte"
+    },
+    "de": {
+      "metaTitle": "Wer kontrolliert den Internetzugang? | Connecting the Dots",
+      "metaDescription": "Interaktive Erklärung von DNS-Sperren, Domainsperrungen und Internetausfällen anhand belegter Beispiele aus verschiedenen Ländern.",
+      "eyebrow": "Internetarchitektur · Hintergrundartikel",
+      "title": "Wer kontrolliert den Zugang zum Internet?",
+      "lead": "Eine Website kann im globalen DNS existieren und aus einem Land oder Netzwerk trotzdem unerreichbar sein. Folgen wir einer Anfrage und unterscheiden wir technische Eingriffe von der Rolle der ICANN.",
+      "introLabel": "Der entscheidende Unterschied",
+      "introBody": "DNS-Namen, TLDs, Registry-Verträge, nationale Netzfilter und Plattformentscheidungen sind verschiedene Ebenen. Sie können dieselbe Website betreffen, funktionieren aber unterschiedlich.",
+      "simTitle": "Zugriffssperren interaktiv verstehen",
+      "simLead": "Wählen Sie einen hypothetischen Eingriff. Die Grafik zeigt die unterbrochene Stufe und ob der Domainname außerhalb des betroffenen Netzes weiter bestehen kann. Dies ist keine Live-Messung.",
+      "simUrlLabel": "Beispieladresse",
+      "simSelectorLabel": "Szenario auswählen",
+      "simFlowLabel": "Schema: vom Domainnamen zur Webantwort",
+      "simStatusOpen": "In diesem Szenario erreichbar",
+      "simStatusBlocked": "Zugriff in diesem Szenario unterbrochen",
+      "simStatusName": "Was geschieht mit dem globalen Namen?",
+      "simStatusUsers": "Was erreichen Nutzer?",
+      "simStatusActors": "Wer könnte den Eingriff umsetzen?",
+      "simStagePassed": "erreicht",
+      "simStageBlocked": "unterbrochen",
+      "simStagePending": "nicht erreicht",
+      "simNote": "Die Registry-Stufe beschreibt Registrierung und autoritative Delegation, keinen zusätzlichen Netzwerkknoten bei jedem Abruf. Die konkreten Wirkungen hängen von der Umsetzung ab.",
+      "stages": {
+        "registry": {
+          "title": "TLD, Registry & Registrierung",
+          "body": "Ist die Domain registriert und delegiert? Dies ist eine Vorbedingung, kein Paketfilter."
+        },
+        "dns": {
+          "title": "DNS-Resolver",
+          "body": "Kann der Resolver des Nutzers den Namen in eine verwendbare IP-Adresse auflösen?"
+        },
+        "network": {
+          "title": "Provider, Routing & IP",
+          "body": "Können Pakete den Zielserver von diesem Netzwerk aus erreichen?"
+        },
+        "tls": {
+          "title": "TLS-Verbindung & Verkehrsanalyse",
+          "body": "Kommt die verschlüsselte Verbindung zustande? Bestimmte Metadaten können sichtbar sein."
+        },
+        "service": {
+          "title": "Hosting, Anwendung & Inhalte",
+          "body": "Antwortet der Dienst und liefert er die angeforderte Ressource?"
+        }
+      },
+      "modes": {
+        "normal": {
+          "label": "Kein Eingriff",
+          "title": "Die Anfrage erreicht das Ziel",
+          "body": "Der Name wird aufgelöst, Pakete erreichen das Ziel, TLS funktioniert und der Dienst antwortet. Ein vereinfachter Normalfall.",
+          "name": "Die Domain bleibt im DNS vorhanden.",
+          "users": "Der Beispieldienst ist erreichbar.",
+          "actors": "Kein Eingriff simuliert."
+        },
+        "resolver": {
+          "label": "DNS-Filter",
+          "title": "Der Resolver verändert die Antwort",
+          "body": "Ein lokaler Resolver kann die Auflösung verweigern oder eine Sperradresse zurückgeben. Die autoritative Zone und die TLD können anderswo normal funktionieren. Ein alternativer Resolver hilft nur, wenn keine andere Sperre wirkt.",
+          "name": "Der Name kann global weiterhin delegiert sein.",
+          "users": "Nutzer dieses Resolvers erreichen die Zieladresse möglicherweise nicht über ihren Namen.",
+          "actors": "Netzbetreiber, teils aufgrund gesetzlicher Anordnung."
+        },
+        "ip": {
+          "label": "IP-Sperre",
+          "title": "DNS funktioniert, die Verbindung nicht",
+          "body": "Eine korrekte DNS-Antwort nützt wenig, wenn das Netzwerk den Zugriff auf eine IP-Adresse oder Route verhindert. Mehrere Websites können dieselbe IP nutzen; Nebenwirkungen sind möglich.",
+          "name": "Domain und DNS-Antwort können unverändert sein.",
+          "users": "Verbindungen zum gesperrten Ziel scheitern im betroffenen Netzwerk.",
+          "actors": "Internetanbieter oder andere Netzbetreiber."
+        },
+        "tls": {
+          "label": "TLS / DPI",
+          "title": "Die verschlüsselte Verbindung scheitert",
+          "body": "Filter können während des TLS-Handshakes eingreifen, etwa anhand sichtbarer Servernamen. DNS kann korrekt sein und der Server funktionieren. Verschlüsselung und Filtertechniken entwickeln sich weiter.",
+          "name": "Die Domain kann weiterhin normal aufgelöst werden.",
+          "users": "Die HTTPS-Verbindung wird zurückgesetzt oder läuft in einen Timeout.",
+          "actors": "Filtereinrichtungen bei Zugangsanbietern oder Vermittlern."
+        },
+        "service": {
+          "label": "Hosting oder Plattform",
+          "title": "Der Dienst verweigert die Inhalte",
+          "body": "Eine Plattform kann Inhalte entfernen, ein Konto sperren oder Inhalte nach Region begrenzen. DNS und Netzverbindung können dabei normal funktionieren. ICANN ist nicht beteiligt.",
+          "name": "Die Domain kann registriert und auflösbar bleiben.",
+          "users": "Der gewünschte Inhalt ist nach den Regeln der Plattform nicht verfügbar.",
+          "actors": "Hosting-, Anwendungs- oder Plattformbetreiber."
+        },
+        "registration": {
+          "label": "Domainsperrung",
+          "title": "Registrierung oder Delegation werden verändert",
+          "body": "Verfahren von Registry und Registrar können eine Domain sperren. Je nach Maßnahme kann die autoritative Delegation entfallen. Das ist keine Löschung der gesamten TLD.",
+          "name": "Diese Registrierung oder Delegation kann weltweit nicht mehr funktionieren.",
+          "users": "Die Auswirkungen können Nutzer in zahlreichen Netzen treffen.",
+          "actors": "Registry und Registrar nach ihren anwendbaren Verträgen und Regeln."
+        },
+        "shutdown": {
+          "label": "Netzabschaltung",
+          "title": "Ein Teil der Bevölkerung verliert die Verbindung",
+          "body": "Ein Shutdown unterbricht Internetkommunikation in einer Region oder für eine Gruppe. DNS-Namen und TLDs werden dadurch nicht gelöscht. Festnetz und Mobilfunk können unterschiedlich betroffen sein.",
+          "name": "Globale DNS-Namen werden nicht zwangsläufig verändert.",
+          "users": "Viele Dienste sind im betroffenen Netz nicht mehr erreichbar.",
+          "actors": "Netzbetreiber, gegebenenfalls aufgrund behördlicher Anordnungen."
+        }
+      },
+      "actorsTitle": "Wer kann was beeinflussen?",
+      "actorsLead": "Dieselbe Situation kann eine rechtliche Entscheidung, die technische Umsetzung eines Providers und einen unveränderten globalen DNS-Eintrag umfassen. Akteur und Eingriffsebene sind zu unterscheiden.",
+      "actors": {
+        "icann": {
+          "title": "ICANN / IANA",
+          "body": "Koordinieren das Namenssystem und die Root-Zone. Sie ordnen im Regelfall keine nationalen Website-Sperren an. Der Brief von 2022 an die Ukraine zeigt die Grenzen dieses Mandats."
+        },
+        "registry": {
+          "title": "Registry / Registrar",
+          "body": "Verwalten Registrierungen und Sperrungen nach den Regeln der jeweiligen TLD. Das unterscheidet sich von Netzsperren innerhalb eines Landes."
+        },
+        "state": {
+          "title": "Staat / Behörde",
+          "body": "Kann innerhalb seiner Zuständigkeit rechtliche Pflichten zur Sperrung schaffen. Begründung und Rechtsschutz unterscheiden sich je nach Maßnahme."
+        },
+        "isp": {
+          "title": "Internetzugangsanbieter",
+          "body": "Kann DNS-, IP-, TLS- oder Routing-Sperren umsetzen. Unterschiedliche Netze desselben Landes können sich verschieden verhalten."
+        },
+        "platform": {
+          "title": "Plattform / Hosting",
+          "body": "Kann Inhalte moderieren, Dienste verweigern oder geografisch begrenzen, ohne die DNS-Delegation zu verändern."
+        }
+      },
+      "examplesTitle": "Fünf dokumentierte Beispiele aus unterschiedlichen Kontexten",
+      "examplesLead": "Historische Auswahl mit datierten Belegen, keine vollständige oder tagesaktuelle Länderübersicht.",
+      "caseLabel": "Beobachtete Technik",
+      "caseTime": "Zeitraum der Belege",
+      "cases": {
+        "china-2023": {
+          "title": "China · DNS-Injektion und TLS-Eingriffe",
+          "body": "OONI dokumentierte, dass die eigene Website in China sowohl durch gefälschte DNS-Antworten als auch durch Eingriffe in TLS-Verbindungen blockiert wurde. Die Befunde beziehen sich auf die getesteten Netze und Dienste, nicht auf alle Websites in China.",
+          "note": "OONI-Studie, 2023"
+        },
+        "russia-2024": {
+          "title": "Russland · DNS- und Verkehrsfilterung",
+          "body": "Messungen von September 2023 bis September 2024 zeigen laut OONI und RKS Global Sperren unabhängiger Medien. In der untersuchten Stichprobe überwogen Eingriffe beim TLS-Handshake; daneben gab es DNS-Sperren.",
+          "note": "OONI / RKS Global, Dezember 2024"
+        },
+        "iran-2025": {
+          "title": "Iran · Dienstesperren und Verbindungsunterbrechungen",
+          "body": "OONI dokumentierte im Juni 2025 vorübergehende WhatsApp-Sperren und stark sinkende Messzahlen. Andere Netzbeobachtungen stützten den Befund schwerer Verbindungsunterbrechungen. Eine Dienstesperre und ein Shutdown bleiben unterschiedliche Phänomene.",
+          "note": "OONI-Messungen, Juni–Juli 2025"
+        },
+        "swiss-2026": {
+          "title": "Schweiz · gesetzliche DNS-Sperren",
+          "body": "Gespa und die Eidgenössische Spielbankenkommission führen Listen nicht bewilligter ausländischer Online-Geldspielangebote. Zugangsanbieter müssen für gelistete Domains DNS-Sperren umsetzen. Dies verändert die globale TLD-Root-Zone nicht.",
+          "note": "Gespa-Sperrlisten, August 2026"
+        },
+        "catalonia-2017": {
+          "title": "Katalonien (Spanien) · Referendumswebsites",
+          "body": "OONI beobachtete DNS-Manipulationen und HTTP-Sperren bei Websites zum Referendum vom Oktober 2017, auch unter .cat. .cat ist eine gesponserte gTLD und keine Länderkennung; der Wechsel zu einer anderen Endung garantiert keinen Zugang.",
+          "note": "OONI-Messungen, September–Oktober 2017"
+        }
+      },
+      "limitsTitle": "Messungen sind Belege, kein automatisches Urteil",
+      "limitsBody": "OONI unterscheidet automatisch bestätigte Sperren (etwa bekannte Sperrseiten oder bekannte DNS-Sperradressen) von Anomalien, die auch harmlose Ursachen haben können. Wiederholte, einem Netz und Datum zuordenbare Messungen stärken die Schlussfolgerung; ein einzelner Fehler beweist keine Zensur. Internet Society Pulse erfasst Verbindungsunterbrechungen nach eigenen Kriterien. Keines der Angebote ist eine universelle Echtzeit-Rangliste aller Länder.",
+      "sourcesTitle": "Originalquellen und Messprojekte",
+      "sourcesLead": "Zu Mechanismen und Fallbeispielen sind unmittelbare Quellen verlinkt. Es handelt sich nicht um verallgemeinernde Länderbewertungen.",
+      "relatedTitle": "Mehr bei Connecting the Dots",
+      "relatedBody": "Der OFAC-Artikel erklärt rechtliche Beschränkungen für ICANN-Geschäfte und ist nicht mit lokalen Netzsperren gleichzusetzen. Die Beobachtungen zum Round 2026 dürfen daraus nicht kausal erklärt werden.",
+      "sanctionsLink": "ICANN, OFAC und Sanktionen",
+      "fieldLink": "Beobachtungen zur Runde 2026",
+      "atlasLink": "Zurück zum Atlas",
+      "methodTitle": "Redaktioneller Hinweis",
+      "methodBody": "Geprüft am 10. Oktober 2026. Die Beispiele sind historisch, auf bestimmte Zeiträume begrenzt und nicht als Aussagen über die aktuelle Erreichbarkeit gedacht. Diese Seite führt keine Messung der Verbindung des Besuchers durch. Individuelle Motive werden ohne Belege nicht unterstellt. Die Seite ist kein Teil der eingefrorenen Forschungsrelease RR1.",
+      "reviewedLabel": "Zuletzt geprüft",
+      "sourceLabel": "Quelle"
+    },
+    "fr": {
+      "metaTitle": "Qui contrôle l'accès à Internet ? | Connecting the Dots",
+      "metaDescription": "Simulation des filtres DNS, blocages de domaine et coupures d'Internet, avec exemples documentés et sources vérifiables.",
+      "eyebrow": "Architecture d'Internet · Éclairage",
+      "title": "Qui contrôle l'accès à Internet ?",
+      "lead": "Un site peut exister dans le DNS mondial tout en étant inaccessible depuis un pays ou un réseau. Suivons une requête pour comprendre les points de contrôle, sans confondre le rôle de l'ICANN avec la censure locale.",
+      "introLabel": "La distinction essentielle",
+      "introBody": "Noms DNS, TLD, contrats de registre, filtres de réseau nationaux et décisions éditoriales des plateformes relèvent d'étages différents. Ils peuvent affecter le même site, mais pas de la même manière.",
+      "simTitle": "Tester les scénarios de blocage",
+      "simLead": "Choisissez une intervention fictive. Le schéma montre où la requête s'interrompt et si le nom peut encore exister hors du réseau affecté. Ce n'est pas un test de connexion réel.",
+      "simUrlLabel": "Adresse d'exemple",
+      "simSelectorLabel": "Choisir un scénario",
+      "simFlowLabel": "Schéma : du nom de domaine à la réponse du site",
+      "simStatusOpen": "Accessible dans ce scénario",
+      "simStatusBlocked": "Accès interrompu dans ce scénario",
+      "simStatusName": "Que devient le nom à l'échelle mondiale ?",
+      "simStatusUsers": "Que peuvent atteindre les internautes ?",
+      "simStatusActors": "Qui pourrait appliquer cette mesure ?",
+      "simStagePassed": "franchi",
+      "simStageBlocked": "interrompu",
+      "simStagePending": "non atteint",
+      "simNote": "L'étape du registre décrit la gestion de l'enregistrement et de la délégation autoritative ; ce n'est pas un nœud traversé à chaque visite. L'effet précis dépend de la mise en œuvre.",
+      "stages": {
+        "registry": {
+          "title": "TLD, registre et enregistrement",
+          "body": "Le nom est-il enregistré et délégué ? Une condition préalable, pas un filtre de paquets."
+        },
+        "dns": {
+          "title": "Résolveur DNS",
+          "body": "Le résolveur de l'utilisateur traduit-il le nom en adresse IP utilisable ?"
+        },
+        "network": {
+          "title": "Fournisseur d'accès, routage et IP",
+          "body": "Les paquets peuvent-ils atteindre le serveur depuis ce réseau ?"
+        },
+        "tls": {
+          "title": "Connexion TLS et analyse du trafic",
+          "body": "La connexion chiffrée s'établit-elle ? Certaines métadonnées restent parfois visibles."
+        },
+        "service": {
+          "title": "Hébergement, application et contenu",
+          "body": "Le service répond-il et fournit-il la ressource demandée ?"
+        }
+      },
+      "modes": {
+        "normal": {
+          "label": "Aucune restriction",
+          "title": "La requête aboutit",
+          "body": "Le nom est résolu, les paquets sont acheminés, TLS fonctionne et le service répond. C'est un cas de référence simplifié.",
+          "name": "Le domaine demeure dans le DNS.",
+          "users": "Le service d'exemple est accessible.",
+          "actors": "Aucune intervention simulée."
+        },
+        "resolver": {
+          "label": "Filtrage DNS",
+          "title": "Le résolveur modifie sa réponse",
+          "body": "Un résolveur local peut refuser la résolution ou donner une adresse de blocage. Le DNS autoritatif et le TLD peuvent rester actifs ailleurs. Un autre résolveur n'aide que si aucune autre restriction n'intervient.",
+          "name": "Le domaine peut rester délégué mondialement.",
+          "users": "Les utilisateurs du résolveur concerné peuvent ne pas atteindre le site par son nom.",
+          "actors": "Un opérateur de réseau, parfois chargé d'appliquer une obligation légale."
+        },
+        "ip": {
+          "label": "Blocage IP",
+          "title": "Le DNS marche mais la route est bloquée",
+          "body": "Une réponse DNS correcte ne suffit pas lorsqu'un réseau bloque l'adresse IP ou l'itinéraire vers le serveur. Une IP peut héberger plusieurs sites sans lien, avec des effets collatéraux.",
+          "name": "Le domaine et sa réponse DNS peuvent être intacts.",
+          "users": "La connexion à la destination échoue dans ce réseau.",
+          "actors": "Le fournisseur d'accès ou un autre opérateur."
+        },
+        "tls": {
+          "label": "Filtrage TLS / DPI",
+          "title": "La connexion chiffrée échoue",
+          "body": "Un équipement peut interrompre la négociation TLS, par exemple en détectant un nom de serveur visible. Le DNS peut être correct et le serveur disponible. Les mécanismes de chiffrement et de filtrage évoluent.",
+          "name": "Le domaine peut encore être résolu normalement.",
+          "users": "La connexion HTTPS peut être réinitialisée ou expirer.",
+          "actors": "Équipements de filtrage des fournisseurs d'accès ou intermédiaires."
+        },
+        "service": {
+          "label": "Hébergement ou plateforme",
+          "title": "Le service refuse le contenu",
+          "body": "Une application peut supprimer une page, suspendre un compte ou limiter l'accès selon le territoire. Le DNS et le réseau peuvent fonctionner normalement, sans intervention de l'ICANN.",
+          "name": "Le nom peut rester enregistré et résolu.",
+          "users": "Le contenu demandé n'est pas fourni selon les règles du service.",
+          "actors": "Plateformes, applications et hébergeurs."
+        },
+        "registration": {
+          "label": "Suspension d'un domaine",
+          "title": "L'enregistrement ou la délégation change",
+          "body": "Les procédures du bureau d'enregistrement ou du registre peuvent suspendre un domaine. Selon la mesure, la délégation autoritative peut cesser. Cela ne supprime pas l'ensemble du TLD.",
+          "name": "Cet enregistrement ou cette délégation peut cesser de fonctionner mondialement.",
+          "users": "Des usagers de nombreux réseaux peuvent être affectés.",
+          "actors": "Registres et bureaux d'enregistrement selon leurs contrats et règles."
+        },
+        "shutdown": {
+          "label": "Coupure d'Internet",
+          "title": "La connectivité est interrompue pour une population",
+          "body": "Un shutdown rend Internet indisponible dans une région ou pour un groupe. Il ne supprime pas les noms DNS ou les TLD. La portée peut différer entre réseaux fixes et mobiles.",
+          "name": "Les noms du DNS mondial ne sont pas forcément modifiés.",
+          "users": "De nombreux services ne sont plus accessibles depuis le réseau concerné.",
+          "actors": "Opérateurs de réseau, éventuellement sur décision des autorités."
+        }
+      },
+      "actorsTitle": "Qui peut agir sur quoi ?",
+      "actorsLead": "Un même épisode peut associer une décision juridique, un filtrage local et un nom DNS mondial inchangé. Il faut distinguer l'acteur de l'étage technique.",
+      "actors": {
+        "icann": {
+          "title": "ICANN / IANA",
+          "body": "Coordonnent le système des noms et la zone racine ; elles n'ordonnent normalement pas aux fournisseurs nationaux de bloquer des sites. La lettre de 2022 à l'Ukraine précise ces limites."
+        },
+        "registry": {
+          "title": "Registre / bureau d'enregistrement",
+          "body": "Gèrent les noms et suspensions suivant les règles du TLD. Une mesure sur un enregistrement n'est pas un filtrage national."
+        },
+        "state": {
+          "title": "État / autorité",
+          "body": "Peut imposer des obligations de blocage dans sa juridiction. Base légale, justification et garanties varient selon la mesure."
+        },
+        "isp": {
+          "title": "Fournisseur d'accès",
+          "body": "Peut appliquer des restrictions DNS, IP, TLS ou de routage. Deux réseaux d'un même pays peuvent se comporter différemment."
+        },
+        "platform": {
+          "title": "Plateforme / hébergeur",
+          "body": "Peut modérer des contenus, refuser des services ou limiter l'accès par territoire sans modifier la délégation DNS."
+        }
+      },
+      "examplesTitle": "Cinq situations documentées et des contextes distincts",
+      "examplesLead": "Un choix de cas historiques datés, pas une liste exhaustive ou un classement actualisé des pays.",
+      "caseLabel": "Méthodes observées",
+      "caseTime": "Période couverte",
+      "cases": {
+        "china-2023": {
+          "title": "Chine · injection DNS et perturbation TLS",
+          "body": "OONI a documenté que son propre site était bloqué en Chine au moyen de fausses réponses DNS et d'interférences TLS. Ces constatations concernent les réseaux et services testés, non tous les sites accessibles depuis la Chine.",
+          "note": "Étude OONI, 2023"
+        },
+        "russia-2024": {
+          "title": "Russie · filtres DNS et trafic",
+          "body": "À partir de mesures collectées de septembre 2023 à septembre 2024, OONI et RKS Global ont documenté le blocage de médias indépendants. Des perturbations TLS dominaient l'échantillon étudié, à côté de certains filtrages DNS.",
+          "note": "OONI / RKS Global, décembre 2024"
+        },
+        "iran-2025": {
+          "title": "Iran · blocage d'application et perturbation de connectivité",
+          "body": "OONI a documenté le blocage temporaire de WhatsApp en juin 2025 et une forte baisse du nombre de mesures pendant le conflit. D'autres observations concordaient avec une coupure sévère de connectivité. Le blocage d'une application et un shutdown demeurent deux phénomènes différents.",
+          "note": "Mesures OONI, juin–juillet 2025"
+        },
+        "swiss-2026": {
+          "title": "Suisse · filtrage DNS prévu par la loi",
+          "body": "Gespa et la Commission fédérale des maisons de jeu publient des listes d'offres de jeux étrangères non autorisées. Les fournisseurs suisses doivent bloquer ces domaines par DNS. Cette mesure locale ne retire pas les TLD de la racine mondiale.",
+          "note": "Listes officielles Gespa, août 2026"
+        },
+        "catalonia-2017": {
+          "title": "Catalogne (Espagne) · sites du référendum",
+          "body": "OONI a observé des manipulations DNS et des blocages HTTP visant des sites liés au référendum d'octobre 2017, notamment sous .cat. L'extension .cat est un gTLD sponsorisé et non un ccTLD ; changer d'extension ne garantit pas l'accès.",
+          "note": "Mesures OONI, septembre–octobre 2017"
+        }
+      },
+      "limitsTitle": "Une mesure constitue un indice ou une preuve, pas un verdict automatique",
+      "limitsBody": "OONI distingue les blocages automatiquement confirmés (par exemple pages de blocage ou adresses DNS déjà identifiées) des anomalies qui peuvent aussi avoir des causes ordinaires. Des mesures répétées et datées sur des réseaux précis renforcent l'analyse ; un échec isolé ne démontre pas une censure. Internet Society Pulse recense séparément les coupures de connectivité selon sa méthodologie. Aucun de ces outils n'établit un classement universel en temps réel.",
+      "sourcesTitle": "Sources originales et outils de mesure",
+      "sourcesLead": "Chaque cas et mécanisme renvoie aux documents des institutions ou organismes de mesure, sans classement général des pays.",
+      "relatedTitle": "Poursuivre avec Connecting the Dots",
+      "relatedBody": "La fiche OFAC explique les restrictions juridiques sur certaines opérations de l'ICANN ; ce sujet est distinct du filtrage des accès. Les Notes de terrain ne permettent pas non plus d'attribuer une cause aux écarts du round 2026 sans preuve.",
+      "sanctionsLink": "ICANN, OFAC et sanctions",
+      "fieldLink": "Notes de terrain 2026",
+      "atlasLink": "Retour à l'atlas",
+      "methodTitle": "Note éditoriale",
+      "methodBody": "Vérifié le 10 octobre 2026. Les exemples sont historiques, propres à des périodes définies et ne décrivent pas nécessairement l'accessibilité actuelle. Cette page est un modèle pédagogique et ne teste pas la connexion du visiteur. Aucune intention individuelle n'est attribuée sans preuve ; le contenu reste distinct de la release scientifique RR1 figée.",
+      "reviewedLabel": "Dernière vérification",
+      "sourceLabel": "Source"
+    }
+  }
+}

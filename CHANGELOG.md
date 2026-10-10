@@ -1,3 +1,11 @@
+# v0.7.70 — 2026-10-10
+
+- Adds a separately indexable, four-language Internet-access explainer, **Who controls access to the Internet?**, with a seven-scenario local-only interactive walkthrough distinguishing registration state, DNS resolution, IP connectivity, TLS interference, hosting moderation, domain suspension and connectivity shutdowns.
+- Explains the responsibilities of ICANN/IANA, registries and registrars, governments, access providers and hosting platforms, without conflating a domestic filter with a modification of the global root zone.
+- Documents five historic, dated network-censorship/regulatory cases: China's blocking of OONI (2023), Russia's independent-media filtering (2023–24), Iranian WhatsApp blocking/connectivity disruption (2025), Swiss gambling-domain DNS blocking (2026), and Catalan referendum websites (2017). The article includes eleven primary-source links and methodological cautions on ambiguous OONI anomalies.
+- Cross-links the new article from How it Works, the Social and Disputes themes and the OFAC governance explainer; does not add another navigation item.
+- Adds multilingual canonical/hreflang routes, Article structured data, sitemap entries (27 URLs), accessibility checks and browser-free simulation regressions. Maintains all frozen RR1 evidence, Zenodo DOI and archive identifiers unchanged.
+
 # v0.7.69 — 2026-10-10
 
 - Publishes a standalone ICANN/OFAC governance explainer in Italian, English, German and French, with 12 verifiable institutional references, source anchors, dated editorial caveats, four precedents and a clear separation between the constraints on new gTLD applicants and the technical coordination of the DNS.

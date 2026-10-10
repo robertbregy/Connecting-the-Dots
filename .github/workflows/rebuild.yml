@@ -54,6 +54,7 @@ jobs:
       - name: Validate multilingual publication and delivery
         run: |
           node scripts/validate_multilingual.js
+          node scripts/validate_internet_access.js
           CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
 
       - name: Commit generated publication

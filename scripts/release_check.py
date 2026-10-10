@@ -634,8 +634,9 @@ must_index.update(site_base+'inside-the-round/'+lang+'/' for lang in LANGS)
 must_index.update(site_base+'behind-the-round/'+lang+'/' for lang in LANGS)
 must_index.update(site_base+'behind-the-round/'+lang+'/wdo-identity/' for lang in LANGS)
 must_index.update(site_base+'behind-the-round/'+lang+'/sanctions-and-dns/' for lang in LANGS)
+must_index.update(site_base+'behind-the-round/'+lang+'/who-controls-internet-access/' for lang in LANGS)
 if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index):
-    fail('Sitemap must preserve all 23 language/research/chronicle/field-note/explainer URLs')
+    fail('Sitemap must preserve all 27 language/research/chronicle/field-note/explainer URLs')
 for lang in LANGS:
     page=(ROOT/lang/'index.html').read_text(encoding='utf-8')
     chronicle_page=ROOT/'inside-the-round'/lang/'index.html'
@@ -809,6 +810,56 @@ for lang in LANGS:
         fail('Explainer must appear alongside both 2026 main-site Field Notes: '+lang)
     if html.count('data-behind-story=') or html.count('data-event-id='):
         fail('Governance explainer is not a dated field observation')
+    check_internal_refs(path)
+
+# Internet access explainer: DNS, IP, TLS, registration and network shutdowns are different mechanisms.
+access=json_file('internet_access_explainer.json')
+if access.get('editorialLayer')!='living-public-explainer-not-frozen-RR1' or access.get('classification')!='governance-and-network-access-explainer':
+    fail('Internet access explainer mislabeled as archival research or country ranking')
+if access.get('reviewedOn')!=publication_meta.get('releasedOn') or access.get('publishedOn')!='2026-10-10':
+    fail('Access explainer has no reviewed publication date')
+if len(access['mechanisms'])!=7 or len(access['stageIds'])!=5 or len(access['cases'])!=5 or len(access['sources'])!=11:
+    fail('Internet access explainer lost technical scenarios or historic evidence')
+if set(access['languages'])!=set(LANGS):
+    fail('Internet access explainer untranslated')
+for lang in LANGS:
+    url=site_base+'behind-the-round/'+lang+'/who-controls-internet-access/'
+    path=ROOT/'behind-the-round'/lang/'who-controls-internet-access'/'index.html'
+    if not path.exists():fail('Access explainer missing: '+lang)
+    page=path.read_text(encoding='utf-8')
+    source=ROOT/lang/'index.html'
+    landing=source.read_text(encoding='utf-8')
+    sanctions=(ROOT/'behind-the-round'/lang/'sanctions-and-dns'/'index.html').read_text(encoding='utf-8')
+    tx=access['languages'][lang]
+    from html import escape as html_escape
+    if f'<html lang="{lang}">' not in page or f'<link rel="canonical" href="{url}">' not in page:
+        fail('Access explainer canonical or language mismatch: '+lang)
+    if f'<title>{html_escape(tx["metaTitle"])}</title>' not in page:
+        fail('Untranslated access explainer SEO title '+lang)
+    if page.count('<link rel="alternate" hreflang=')!=5:
+        fail('Access explainer hreflang reciprocity missing '+lang)
+    if page.count('data-access-stage=')!=5 or page.count('data-access-select=')!=7 or page.count('data-access-scenario-panel=')!=7:
+        fail('Access-control walkthrough scenarios incomplete '+lang)
+    if page.count('data-access-case=')!=5 or page.count('data-access-actor=')!=5:
+        fail('Access-control examples or responsible roles incomplete '+lang)
+    if page.count('id="access-source-')!=11:
+        fail('Access explainer did not publish all eleven sources '+lang)
+    for record in access['sources']:
+        if record['url'] not in page:
+            fail('Unlinked primary access source '+lang+'/'+record['id'])
+    for case in access['cases']:
+        if html_escape(tx['cases'][case['id']]['body']) not in page:
+            fail('Untranslated sourced access case '+lang+'/'+case['id'])
+    if landing.count('data-access-explainer-link')!=3 or landing.count(url)!=3:
+        fail('Missing links from How / Social / Disputes: '+lang)
+    if url not in sanctions:
+        fail('Missing cross-link from OFAC governance explainer '+lang)
+    if 'fetch(' in page or 'sendBeacon' in page or 'XMLHttpRequest' in page:
+        fail('Simulator must not make browser-based connectivity probes')
+    if '<meta name="robots" content="index,follow,max-image-preview:large">' not in page:
+        fail('New article is not indexable '+lang)
+    if 'data-behind-story=' in page or 'data-event-id=' in page:
+        fail('Access explainer must not masquerade as 2026 case or dated milestone')
     check_internal_refs(path)
 
 # Working-paper revisions may evolve, but the dated RR1 evidence and citation do not.
