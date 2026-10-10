@@ -1,6 +1,6 @@
 /* generated from publication.json; do not edit by hand */
 window.DOT_PUBLICATION={
-  version:'0.7.67',
+  version:'0.7.68',
   releasedOn:'2026-10-10',
   state:'reveal-day',
   freeze:true,
@@ -15,5 +15,5 @@ window.DOT_PUBLICATION={
   doiUrl:'https://doi.org/10.5281/zenodo.23262623',
   conceptDoi:null,
   archive:'Zenodo',
-  commit:'e028c0a79b613e2ed6b4ff654d3351832060bee1'
+  commit:'52651692fb5323d547a0c7fddd57b482c5fcfefa'
 };
