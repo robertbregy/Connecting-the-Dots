@@ -98,13 +98,38 @@
           "kind": "derived",
           "labelKey": "behindSourceManifest",
           "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/main/data/application_2026_snapshot.json"
+        },
+        {
+          "id": "ntld-regional",
+          "kind": "secondary",
+          "labelKey": "behindSourceRegionalSecondary",
+          "url": "https://www.ntlddata.com/applications"
+        },
+        {
+          "id": "independent-bortzmeyer",
+          "kind": "secondary",
+          "labelKey": "behindSourceBortzmeyer",
+          "url": "https://www.bortzmeyer.org/candidatures-tlds.html"
+        },
+        {
+          "id": "independent-circleid",
+          "kind": "secondary",
+          "labelKey": "behindSourceCircleID",
+          "url": "https://circleid.com/posts/icann-reveals-1615-active-applications-for-2026-new-gtld-round"
+        },
+        {
+          "id": "icann-aps-doc",
+          "kind": "primary",
+          "labelKey": "behindSourceAPSHelp",
+          "url": "https://newgtldprogram-aps.icann.org/applications"
         }
       ],
       "updateTriggers": [
         "ICANN publishes a specific explanation for the 22 September 1,616 to 7 October 1,615 change",
         "ICANN changes the WDO application administrative-check status or APS visibility",
         "ICANN revises APS counts or releases a newly reconciled application-level public list",
-        "A new independent analysis identifies an evidence-backed alternative reconciliation"
+        "A new independent analysis identifies an evidence-backed alternative reconciliation",
+        "An ICANN application-by-application export explains the regional and individual source reconciliation without assumptions about withdrawals"
       ],
       "revisionHistory": [
         {
@@ -117,6 +142,195 @@
             "icann-aps-list",
             "icann-aps-wdo",
             "frozen-secondary"
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "changeKey": "behindRevisionReconciled",
+          "sourceIds": [
+            "icann-7oct",
+            "icann-aps-list",
+            "ntld-regional",
+            "independent-bortzmeyer",
+            "independent-circleid"
+          ]
+        }
+      ],
+      "kind": "counts",
+      "regionalComparison": [
+        {
+          "code": "NA",
+          "officialApplications": 864,
+          "visibleApplications": 864,
+          "officialApplicants": 198,
+          "visibleApplicants": 198
+        },
+        {
+          "code": "EUR",
+          "officialApplications": 506,
+          "visibleApplications": 506,
+          "officialApplicants": 111,
+          "visibleApplicants": 111
+        },
+        {
+          "code": "AP",
+          "officialApplications": 218,
+          "visibleApplications": 217,
+          "officialApplicants": 156,
+          "visibleApplicants": 155
+        },
+        {
+          "code": "AF",
+          "officialApplications": 16,
+          "visibleApplications": 16,
+          "officialApplicants": 7,
+          "visibleApplicants": 7
+        },
+        {
+          "code": "LAC",
+          "officialApplications": 11,
+          "visibleApplications": 11,
+          "officialApplicants": 9,
+          "visibleApplicants": 9
+        }
+      ]
+    },
+    {
+      "id": "wdo-identity",
+      "kind": "identity",
+      "slug": "wdo-identity",
+      "number": 2,
+      "publishedOn": "2026-10-10",
+      "revisedOn": "2026-10-10",
+      "periodStart": "2015-10-23",
+      "periodEnd": "2026-10-10",
+      "state": "documented-with-open-questions",
+      "titleKey": "wdoCaseTitle",
+      "descriptionKey": "wdoCaseLead",
+      "statusKey": "wdoCaseStatus",
+      "sections": [
+        {
+          "titleKey": "wdoIdentityTitle",
+          "bodyKey": "wdoIdentityBody",
+          "sourceIds": [
+            "wdo-aps",
+            "wdo-cas",
+            "design-about"
+          ]
+        },
+        {
+          "titleKey": "wdoOriginsTitle",
+          "bodyKey": "wdoOriginsBody",
+          "sourceIds": [
+            "wdo-cas",
+            "design-about"
+          ]
+        },
+        {
+          "titleKey": "wdoTrademarkTitle",
+          "bodyKey": "wdoTrademarkBody",
+          "sourceIds": [
+            "design-trademark",
+            "design-about"
+          ]
+        },
+        {
+          "titleKey": "wdoProcessTitle",
+          "bodyKey": "wdoProcessBody",
+          "sourceIds": [
+            "icann-guidebook",
+            "icann-period",
+            "wdo-aps"
+          ]
+        },
+        {
+          "titleKey": "wdoComplianceTitle",
+          "bodyKey": "wdoComplianceBody",
+          "sourceIds": [
+            "wdo-cas",
+            "ofac-july",
+            "wdo-aps"
+          ]
+        },
+        {
+          "titleKey": "wdoUnknownTitle",
+          "bodyKey": "wdoUnknownBody",
+          "sourceIds": [
+            "wdo-aps",
+            "design-trademark"
+          ]
+        },
+        {
+          "titleKey": "wdoFollowTitle",
+          "bodyKey": "wdoFollowBody",
+          "sourceIds": [
+            "wdo-aps",
+            "design-trademark",
+            "icann-period"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "wdo-aps",
+          "kind": "primary",
+          "labelKey": "wdoSourceAPS",
+          "url": "https://newgtldprogram-aps.icann.org/applications/WDO2627T-T45217/summary"
+        },
+        {
+          "id": "wdo-cas",
+          "kind": "primary",
+          "labelKey": "wdoSourceCAS",
+          "url": "https://english.casad.cas.cn/newsroom/ma/202604/t20260430_1158287.html"
+        },
+        {
+          "id": "design-about",
+          "kind": "primary",
+          "labelKey": "wdoSourceDesignAbout",
+          "url": "https://wdo.org/about/"
+        },
+        {
+          "id": "design-trademark",
+          "kind": "primary",
+          "labelKey": "wdoSourceTrademark",
+          "url": "https://ised-isde.canada.ca/cipo/trademark-search/1752921?wbdisable=true"
+        },
+        {
+          "id": "icann-guidebook",
+          "kind": "primary",
+          "labelKey": "wdoSourceGuidebook",
+          "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/agb"
+        },
+        {
+          "id": "icann-period",
+          "kind": "primary",
+          "labelKey": "wdoSourceCalendar",
+          "url": "https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en"
+        },
+        {
+          "id": "ofac-july",
+          "kind": "primary",
+          "labelKey": "wdoSourceOFAC",
+          "url": "https://ofac.treasury.gov/recent-actions/20260717"
+        }
+      ],
+      "updateTriggers": [
+        "ICANN confirms the outcome of the administrative check concerning WDO2627T-T45217",
+        "The World Design Organization publicly asserts legal rights in the 2026 ICANN application process",
+        "The ICANN objections docket shows a new verified filing concerning .wdo",
+        "The designated individual's OFAC status or legal effect is officially modified"
+      ],
+      "revisionHistory": [
+        {
+          "date": "2026-10-10",
+          "changeKey": "wdoRevisionInitial",
+          "sourceIds": [
+            "wdo-aps",
+            "wdo-cas",
+            "design-about",
+            "design-trademark",
+            "icann-guidebook",
+            "ofac-july"
           ]
         }
       ]
