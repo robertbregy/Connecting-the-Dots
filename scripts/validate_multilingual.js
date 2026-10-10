@@ -113,6 +113,25 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.equal(wdoSchema.image,base+'assets/og-preview.png',page+' WDO article image');
   assert.equal(wdoDocument.querySelectorAll('[data-editorial-revision]').length,1,page+' WDO editorial revision');
   assert.ok(standalone.includes(base+'behind-the-round/'+language+'/wdo-identity/'),page+' WDO standalone not linked from Field Notes collection');
+  const sanctionsHref=base+'behind-the-round/'+language+'/sanctions-and-dns/';
+  const sanctionsText=fs.readFileSync(path.join(root,'behind-the-round',language,'sanctions-and-dns','index.html'),'utf8');
+  const sanctionsDocument=parseHTML(sanctionsText).document;
+  assert.equal(sanctionsDocument.querySelector('link[rel="canonical"]')?.getAttribute('href'),sanctionsHref,page+' explainer canonical wrong');
+  assert.equal(sanctionsDocument.documentElement.getAttribute('lang'),language,page+' explainer locale wrong');
+  assert.equal(sanctionsDocument.querySelectorAll('link[rel="alternate"][hreflang]').length,5,page+' explainer lacks hreflang');
+  assert.equal(sanctionsDocument.querySelectorAll('[data-explainer-section]').length,7,page+' explainer missing topics');
+  assert.equal(sanctionsDocument.querySelectorAll('[data-explainer-precedent]').length,4,page+' explainer missing precedents');
+  assert.equal(sanctionsDocument.querySelectorAll('[id^="governance-source-"]').length,12,page+' explainer missing primary-source list');
+  assert.equal(sanctionsDocument.querySelector('meta[name="robots"]')?.getAttribute('content'),'index,follow,max-image-preview:large',page+' explainer indexing');
+  assert.equal(behind.querySelectorAll('a[data-governance-explainer-link]').length,2,page+' missing two Field Note context links');
+  assert.equal(standaloneDocument.querySelectorAll('a[data-governance-explainer-link]').length,2,page+' missing standalone Field Note context links');
+  for(const link of [...behind.querySelectorAll('a[data-governance-explainer-link]'),...standaloneDocument.querySelectorAll('a[data-governance-explainer-link]')]){
+    assert.equal(link.getAttribute('href'),sanctionsHref,page+' wrong localized explainer href');
+  }
+  const sanctionsSchema=JSON.parse(sanctionsDocument.querySelector('script[type="application/ld+json"]').textContent);
+  assert.equal(sanctionsSchema['@type'],'Article',page+' explainer structured data should be Article');
+  assert.equal(sanctionsSchema.citation.length,12,page+' structured evidence list must contain all twelve sources');
+
 
   const howMenu=document.querySelector('.navMenu[data-label-key="tabHow"]');
   assert.ok(howMenu,page+' missing How disclosure');
@@ -209,9 +228,9 @@ for(const [input,target] of cases){
 }
 const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
 const locations=Array.from(sitemap.matchAll(/<loc>([^<]+)<\/loc>/g),m=>m[1]);
-const expectedLocations=[...languages.map(l=>base+l+'/'),base+'explorer/',base+'research/',base+'research/connecting-the-dots-working-paper-v1.html',...languages.map(l=>base+'inside-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/wdo-identity/')];
+const expectedLocations=[...languages.map(l=>base+l+'/'),base+'explorer/',base+'research/',base+'research/connecting-the-dots-working-paper-v1.html',...languages.map(l=>base+'inside-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/wdo-identity/'),...languages.map(l=>base+'behind-the-round/'+l+'/sanctions-and-dns/')];
 assert.deepEqual(locations,expectedLocations,'complete multilingual and research sitemap');
-assert.equal((sitemap.match(/xhtml:link/g)||[]).length,80,'main languages, timeline, two field-note routes and WDO articles all use hreflang');
+assert.equal((sitemap.match(/xhtml:link/g)||[]).length,100,'all four-language pages including sanctions explainer have reciprocal hreflang');
 assert.ok(!/\?lang=/.test(sitemap));
 const app=fs.readFileSync(path.join(root,'assets/app.js'),'utf8');
 assert.ok(!app.includes('updateSeoLanguage'));
