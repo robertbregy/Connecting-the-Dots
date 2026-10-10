@@ -98,9 +98,14 @@ jobs:
                   raise ValueError("Published DOI differs from RR1 reference")
               if not record.get("conceptrecid"):
                   raise ValueError("Public record has no concept record identifier")
+              if str(record["conceptrecid"]) != "23262622" or record.get("conceptdoi") != "10.5281/zenodo.23262622":
+                  raise ValueError("RR1 concept DOI is not the independently verified Zenodo version series")
               result.update({"status": "RR1_PUBLIC_RECORD_VERIFIED",
                              "conceptRecordId": str(record["conceptrecid"]),
-                             "conceptDoi": record.get("conceptdoi")})
+                             "conceptDoi": record.get("conceptdoi"),
+                             "recordVersion": record.get("metadata", {}).get("version"),
+                             "fileNames": [entry.get("key") for entry in record.get("files", [])],
+                             "relatedIdentifiers": record.get("metadata", {}).get("related_identifiers", [])})
           except Exception as error:
               result["error"] = str(error)
           output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")

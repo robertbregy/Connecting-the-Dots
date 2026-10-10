@@ -82,6 +82,9 @@ def check_science(plan):
            and policy["zenodoGitHubIntegration"] == "not-verified"
            and policy["preserveExistingCurrentResearchRelease"] == TAG,
            "Zenodo verification gate was silently bypassed")
+    ensure(policy["rr1ZenodoConceptDoi"] == "10.5281/zenodo.23262622"
+           and policy["rr1ZenodoConceptRecordId"] == "23262622",
+           "Verified RR1 concept DOI/record differs from the independent Zenodo audit")
     ensure(plan["followingMilestone"]["plannedIdIfRR2PublishedNow"] == "RR3",
            "String Confirmation must become RR3 if RR2 is published early")
     previous = json.loads(cmd("show", TAG + ":data/research.json"))
@@ -342,6 +345,8 @@ def verify_zenodo(new_id, out):
     rr1, rr2 = get_zenodo(RR1_ZENODO_ID), get_zenodo(new_id)
     ensure(rr1.get("doi") == DOI_RR1, "RR1 DOI differs from archived citation")
     a, b = str(rr1.get("conceptrecid") or ""), str(rr2.get("conceptrecid") or "")
+    ensure(a == "23262622" and rr1.get("conceptdoi") == "10.5281/zenodo.23262622",
+           "RR1's concept DOI/record does not match the independently verified series")
     ensure(a and a == b, "RR2 is NOT a new version of RR1's Zenodo concept record")
     ensure(rr2.get("doi") and rr2["doi"] != DOI_RR1 and
            rr2.get("metadata", {}).get("title"),

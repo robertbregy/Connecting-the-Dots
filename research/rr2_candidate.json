@@ -12,7 +12,9 @@
     "tagCommit": "5d52274935cda7712172873f46d456e4c0a09c7e",
     "specificDoi": "10.5281/zenodo.23262623",
     "publishedOn": "2026-10-09",
-    "researchSnapshot": "2026-10-07"
+    "researchSnapshot": "2026-10-07",
+    "conceptDoi": "10.5281/zenodo.23262622",
+    "conceptRecordId": "23262622"
   },
   "rationale": "Since the RR1 Git tag, the structured research dataset has been materially expanded and reconciled to the official Reveal Day totals. A candidate research release can now be tested without confusing a technical site update with a citable scientific archive.",
   "scientificChange": {
@@ -41,7 +43,7 @@
   "archivePolicy": {
     "rr2Publication": "blocked-until-verified",
     "doiForRR2": null,
-    "rr1ZenodoConceptDoi": null,
+    "rr1ZenodoConceptDoi": "10.5281/zenodo.23262622",
     "zenodoGitHubIntegration": "not-verified",
     "preserveExistingCurrentResearchRelease": "RR1",
     "publicationGate": [
@@ -51,7 +53,9 @@
       "An RR2 GitHub Release is minted from the reviewed frozen commit, not mutable main.",
       "Zenodo record supplies a real RR2-specific DOI and a verified version relationship to RR1.",
       "Only after DOI verification are public CITATION.cff, scholarly index and currentResearchRelease promoted atomically."
-    ]
+    ],
+    "rr1ZenodoConceptRecordId": "23262622",
+    "rr1PublicZenodoRecord": "verified-by-github-actions-2026-10-10"
   },
   "followingMilestone": {
     "plannedIdIfRR2PublishedNow": "RR3",

@@ -65,8 +65,12 @@ A successful GitHub build is **not** proof that Zenodo archived a new version.
 The public RR1 GitHub Release exists, and its specific DOI is in the
 repository, but the `RR1` tag predates the addition of `.zenodo.json`.
 This does not reveal whether the first Zenodo deposit originated from the
-GitHub integration or from a manual upload. Nor does it establish the
-Zenodo **concept DOI** that groups versions.
+GitHub integration or from a manual upload. The independent GitHub Actions Zenodo API probe now establishes that the
+public RR1 record has **specific DOI** `10.5281/zenodo.23262623`,
+**concept DOI** `10.5281/zenodo.23262622`, and concept record ID
+`23262622`. This verifies the public record and its series identifier,
+but **does not establish whether the GitHub-Zenodo integration is enabled**
+for the repository today.
 
 Before minting an RR2 GitHub Release, inspect the Zenodo account
 **GitHub integration** page and confirm that this exact repository is enabled
