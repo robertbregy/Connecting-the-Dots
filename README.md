@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.72
+# Connecting the Dots — v0.7.73
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -6,7 +6,11 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.72 · 10 October 2026**
+**v0.7.73 · 10 October 2026**
+
+Editorial precision update to the 2026 Field Note: clarifies the Explorer's 1,608 primary-string applications plus six variant-only applications; distinguishes .wdo's absence from the public APS list from an exclusion from the ICANN process; and corrects number formatting in all four languages, including the regional table. The two numerical discrepancies retain their evidence states, and archived RR1 remains unchanged.
+
+**Previous v0.7.72 · 10 October 2026**
 
 Audit-driven release: fixes the verified malformed `.lugano` markup, closed Explorer drawer focusability, height-constrained navigation menus and light/dark contrast defects detected across 160 Chromium/axe section scans. The long Explorer methodology is preserved verbatim in an accessible disclosure; the RR1 research snapshot is explicitly distinguished from the evolving technical site version. The Internet access simulator separates domain registration as a prerequisite from DNS and network requests. Standalone sanctions and access explainers are clearly categorized as general educational resources without changing existing canonical URLs or adding more primary menu items.
 

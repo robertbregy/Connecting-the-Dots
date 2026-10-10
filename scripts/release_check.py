@@ -736,8 +736,14 @@ for lang in LANGS:
     for source in case['sources']:
         if source['url'] not in standalone or source['url'] not in page or not translations[lang].get(source['labelKey']):
             fail('Missing case citation in '+lang+'/'+source['id'])
-    for val in ['1,616','1,615','1,614','WDO2627T-T45217']:
+    sep={'en':',','it':'.','de':'.','fr':' '}[lang]
+    expected_figures=[f'1{sep}616',f'1{sep}615',f'1{sep}614']
+    for val in [*expected_figures,'WDO2627T-T45217']:
         if val not in standalone: fail('Missing dated count or WDO application identifier '+lang)
+    if re.findall(r'<div class="behindFigure"[^>]*><strong>([^<]+)</strong>',standalone)!=expected_figures:
+        fail('Localized field-note number grouping incorrect '+lang)
+    if html_escape(translations[lang]['behindExplorerBridge']) not in standalone:
+        fail('Explorer versus APS reconciliation missing '+lang)
     if '24 hours before' in standalone or '24 ore prima' in standalone:
         fail('Private application-planning details must not be published')
     if standalone.count('data-editorial-revision=') != sum(len(entry['revisionHistory']) for entry in stories):

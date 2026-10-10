@@ -72,7 +72,7 @@ BEHIND_CSS = """
 CONTENT_KEYS = (
     "behindCaseNumber","behindCaseTitle","behindCaseLead","behindStatusPartial",
     "behindCountPaid","behindCountOfficial","behindCountSecondary",
-    "behindCountSecondaryCaveat","behindDifference1","behindDifference2",
+    "behindCountSecondaryCaveat","behindExplorerBridge","behindDifference1","behindDifference2",
     "behindExplainedBadge","behindOpenBadge","behindExplainedTitle",
     "behindExplainedBody","behindOpenTitle","behindOpenBody",
     "behindWhyTitle","behindWhyBody","behindMethodTitle",
@@ -183,6 +183,11 @@ def load():
                     raise ValueError("Untranslated narrative " + language + "/" + key)
     return stories, translations
 
+def localized_count(value, lang):
+    separators = {"en": ",", "it": ".", "de": ".", "fr": " "}
+    return format(value, ",").replace(",", separators[lang])
+
+
 def episode_markup(data, translations, lang, dynamic=False, standalone=False):
     t = translations[lang]
     def txt(key, tag="span", css=None):
@@ -235,10 +240,11 @@ def episode_markup(data, translations, lang, dynamic=False, standalone=False):
             '<div class="behindFigures">'
         ])
         for fact in case["quantities"]:
-            parts.append('<div class="behindFigure" data-count-type="' + h(fact["id"],quote=True) + '"><strong>' + f'{fact["value"]:,}' + '</strong>' + txt(labels[fact["id"]],css="factLabel") + '</div>')
+            parts.append('<div class="behindFigure" data-count-type="' + h(fact["id"],quote=True) + '"><strong>' + localized_count(fact["value"], lang) + '</strong>' + txt(labels[fact["id"]],css="factLabel") + '</div>')
         parts.extend([
             '</div>',
             txt("behindCountSecondaryCaveat",tag="p",css="behindCaveat"),
+            txt("behindExplorerBridge",tag="p",css="behindCaveat"),
             '<div class="behindFindings">',
             '<section class="behindFinding" data-status="documented">',
             txt("behindExplainedBadge",css="findingPill"),
@@ -265,9 +271,9 @@ def episode_markup(data, translations, lang, dynamic=False, standalone=False):
         for region in case["regionalComparison"]:
             diff = region["officialApplications"]-region["visibleApplications"]
             parts.append('<tr data-region="' + h(region["code"],quote=True) + '" data-gap="' + str(diff) + '"><td>' +
-                         txt(labels_region[region["code"]]) + '</td><td>' + str(region["officialApplications"]) +
-                         '</td><td>' + str(region["visibleApplications"]) + '</td><td>' + ("+"+str(diff) if diff else "—") + '</td></tr>')
-        parts.extend(['<tr><th scope="row">' + txt("behindRegionTotal") + '</th><td>1615</td><td>1614</td><td>+1</td></tr></tbody></table></div>',
+                         txt(labels_region[region["code"]]) + '</td><td>' + localized_count(region["officialApplications"], lang) +
+                         '</td><td>' + localized_count(region["visibleApplications"], lang) + '</td><td>' + ("+"+str(diff) if diff else "—") + '</td></tr>')
+        parts.extend(['<tr><th scope="row">' + txt("behindRegionTotal") + '</th><td>' + localized_count(1615,lang) + '</td><td>' + localized_count(1614,lang) + '</td><td>+1</td></tr></tbody></table></div>',
                       txt("behindRegionalConclusion",tag="p"),'</section>',
                       '<section class="behindReading">' + txt("behindIndependentTitle",tag="h3") + txt("behindIndependentBody",tag="p") + '</section>',
                       '<section class="behindReading">' + txt("behindCoverageTitle",tag="h3") + txt("behindCoverageBody",tag="p") + '</section>'])

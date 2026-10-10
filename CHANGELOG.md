@@ -1,3 +1,10 @@
+# v0.7.73 — 2026-10-10
+
+- Clarified the Explorer 2026 inventory: 1,608 primary-string application records (980 distinct primary strings) plus six variant-only applications for existing TLDs. The 1,614 total comes from a secondary index and is not the complete official 1,615-application APS corpus.
+- Revised the .wdo Field Note heading to say precisely that the record is absent from the public list, without suggesting exclusion from the application process.
+- Localized thousands separators, including regional totals, in EN, IT, DE and FR and extended regression checks for both Field Note views.
+- Preserved the two distinct discrepancy statuses, original ICANN evidence snapshots, archived RR1 research release and Zenodo DOI unchanged.
+
 # v0.7.72 — 2026-10-10
 
 - Corrected invalid `.lugano` opening markup and added release HTML shape checks (previously parsed into an unintended attribute and lost its first panel).

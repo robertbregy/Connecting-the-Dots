@@ -86,9 +86,15 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.ok(behind.querySelector('[data-behind-story="wdo-identity"]'),page+' WDO case omitted');
   const behindGuide=document.querySelector('a[data-behind-round-guide]');
   assert.equal(behindGuide?.getAttribute('href'),base+'behind-the-round/'+language+'/',page+' wrong field-note guide locale');
-  assert.ok(behind.textContent.includes('1,616')&&behind.textContent.includes('1,615')&&behind.textContent.includes('1,614'),page+' published numerical facts missing');
+  const groupSeparator={en:',',it:'.',de:'.',fr:' '}[language];
+  const expectedFieldCounts=['1616','1615','1614'].map(n=>n.slice(0,-3)+groupSeparator+n.slice(-3));
+  assert.deepEqual([...behind.querySelectorAll('.behindFigure strong')].map(el=>el.textContent.trim()),expectedFieldCounts,page+' unlocalized Reveal Day figures');
+  assert.equal(behind.querySelector('[data-status="documented"] h3')?.textContent.trim(),translations.behindExplainedTitle,page+' inaccurate .wdo heading');
+  assert.ok(behind.textContent.includes(translations.behindExplorerBridge),page+' missing Explorer reconciliation');
   const standalone=fs.readFileSync(path.join(root,'behind-the-round',language,'index.html'),'utf8');
   const standaloneDocument=parseHTML(standalone).document;
+  assert.deepEqual([...standaloneDocument.querySelectorAll('.behindFigure strong')].map(el=>el.textContent.trim()),expectedFieldCounts,page+' standalone field count formatting');
+  assert.ok(standaloneDocument.body.textContent.includes(translations.behindExplorerBridge),page+' standalone Explorer reconciliation missing');
   assert.equal(standaloneDocument.documentElement.getAttribute('lang'),language,page+' field-note page lang');
   assert.equal(standaloneDocument.title,translations.behindMetaTitle,page+' standalone Field Notes SEO title');
   assert.equal(standaloneDocument.querySelector('h1')?.textContent.trim(),notesLabel,page+' standalone Field Notes heading');

@@ -9,6 +9,7 @@ Behind the Round is a **living, independently authored field-note collection**, 
 - Locally frozen secondary index, representing 7 October data and observed on **8 October**: **1,614** applications / **480** applicants.
 - ICANN's public APS Applications page states that **WDO2627T-T45217**, the **.wdo** application, is still under administrative check and **does not appear in the public applications list**. This documents a reason why a visible list and an official aggregate can differ; it does **not** independently certify the completeness of the secondary index.
 - **Unresolved**: no direct ICANN statement reviewed on 10 October explains which application/reason caused the prior official **1,616 → 1,615** change. Never suggest that .wdo explains that first discrepancy.
+- **Explorer interpretation**: the frozen secondary 2026 layer comprises **1,608 primary-string applications** associated with **980 distinct primary strings**, plus **six variant-only applications for existing TLDs**. The total **1,614** counts indexed applications, not unique new strings, and is not a complete official APS application export. Visible numbers use local thousands separators (EN `,`, IT/DE `.`, FR space).
 
 The source-of-truth is `data/behind_round_stories.json`. All public text lives in `data/translations.json`. `scripts/render_behind_round.py` produces the case within the four in-site language pages and four canonical standalone articles. Cross-checked sources are listed in the register.
 
