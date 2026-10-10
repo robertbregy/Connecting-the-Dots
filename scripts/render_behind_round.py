@@ -61,6 +61,8 @@ BEHIND_CSS = """
 .behindIdentityCard strong{font-size:1.12rem;display:block;margin-bottom:8px}
 .behindStoryLink{display:inline-flex;align-items:center;margin-top:12px;padding:10px 13px;border-radius:10px;background:var(--accent);color:#fff!important;font-weight:760;text-decoration:none;line-height:1.3}
 .behindStoryLink:hover,.behindStoryLink:focus-visible{text-decoration:underline}
+.governanceCrosslink{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:14px 17px;margin-top:21px}
+.governanceCrosslink a{color:var(--accent-text);text-decoration:underline;text-underline-offset:3px;font-weight:730;line-height:1.5}
 .behindCaseFooter{display:flex;flex-wrap:wrap;gap:10px;align-items:center;border-top:1px solid var(--border);margin-top:21px;padding-top:18px;color:var(--muted);font-size:.83rem}
 .behindCaseFooter time{font-variant-numeric:tabular-nums}
 .behindRevisionHistory{margin:0;padding:0 0 0 20px;color:var(--muted);font-size:.87rem;line-height:1.55}.behindRevisionHistory time{font-weight:740;color:var(--text);font-variant-numeric:tabular-nums;margin-right:7px}
@@ -299,7 +301,13 @@ def episode_markup(data, translations, lang, dynamic=False, standalone=False):
             '<time datetime="' + h(case["revisedOn"],quote=True) + '">' + h(case["revisedOn"]) + '</time>',
             '</div></article>'
         ])
-    return "\n".join(parts)
+    # A governance explainer is background reading, not a third field observation.
+    # Keep distinct editorial categories; link from both dated field notes.
+    related = ('<aside class="governanceCrosslink"><a data-governance-explainer-link '
+               'href="' + BASE + 'behind-the-round/' + lang + '/sanctions-and-dns/">'
+               '<span data-i18n="sanctionsContextCta">' + h(t['sanctionsContextCta']) +
+               '</span> ↗</a></aside>')
+    return "\n".join(parts).replace("</article>", related + "</article>")
 
 def render_stories(root=None):
     stories, translations=load()
