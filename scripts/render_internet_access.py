@@ -29,14 +29,19 @@ ACCESS_CSS = """
 .accessChoices button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:750}
 .accessChoices button:hover{box-shadow:0 0 0 1px var(--accent)}
 .accessChoices button:focus-visible{outline:3px solid #327bb1;outline-offset:2px}
-.accessStages{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
-.accessStages li{border:1px solid var(--border);border-radius:11px;padding:13px;min-width:0;background:var(--surface2);transition:background .15s}
-.accessStages li h3{font-size:.93rem;line-height:1.25;margin:7px 0}
-.accessStages li p{color:var(--muted);font-size:.79rem;line-height:1.48;margin:0}
-.accessStages li .state{font-size:.75rem;font-weight:780}
-.accessStages li[data-state="passed"]{border-color:#82b8a0;background:#e9f8f1;color:#185e45}
-.accessStages li[data-state="blocked"]{border-color:#b99a5d;background:#fff2d8;color:#76520d}
-.accessStages li[data-state="pending"]{border-color:var(--border);background:var(--surface2);opacity:.67}
+.accessStages{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.accessPrerequisite{list-style:none;margin:0 0 20px;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+.accessPreconditionsHeading{font-size:1rem;margin:0 0 6px}
+.accessPreconditionsBody{color:var(--muted);font-size:.87rem;line-height:1.55;max-width:85ch;margin:0 0 10px}
+.accessPrerequisite li{max-width:100%;border-left:4px solid var(--accent)}
+.accessFlowLead{font-size:.84rem;color:var(--muted);margin:0 0 12px}
+.accessStages li,.accessPrerequisite li{border:1px solid var(--border);border-radius:11px;padding:13px;min-width:0;background:var(--surface2);transition:background .15s}
+.accessStages li h3,.accessPrerequisite li h3{font-size:.93rem;line-height:1.25;margin:7px 0}
+.accessStages li p,.accessPrerequisite li p{color:var(--muted);font-size:.79rem;line-height:1.48;margin:0}
+.accessStages li .state,.accessPrerequisite li .state{font-size:.75rem;font-weight:780}
+.accessStages li[data-state="passed"],.accessPrerequisite li[data-state="passed"]{border-color:#82b8a0;background:#e9f8f1;color:#185e45}
+.accessStages li[data-state="blocked"],.accessPrerequisite li[data-state="blocked"]{border-color:#b99a5d;background:#fff2d8;color:#76520d}
+.accessStages li[data-state="pending"],.accessPrerequisite li[data-state="pending"]{border-color:var(--border);background:var(--surface2);opacity:.67}
 .accessScenarios{margin-top:20px}
 .accessScenario{border:1px solid var(--border);border-radius:14px;padding:18px 20px}
 .accessScenario[data-outcome="blocked"]{border-left:4px solid #af8240}
@@ -144,7 +149,7 @@ def load(root: Path = ROOT) -> dict:
     for lang in LANGS:
         t = obj["languages"][lang]
         required = ("metaTitle","metaDescription","eyebrow","title","lead","introLabel","introBody",
-                    "simTitle","simLead","simUrlLabel","simSelectorLabel","simFlowLabel",
+                    "simTitle","simLead","simUrlLabel","simSelectorLabel","simFlowLabel","simPreconditionLabel","simPreconditionBody",
                     "simStatusOpen","simStatusBlocked","simStatusName","simStatusUsers","simStatusActors",
                     "simStagePassed","simStageBlocked","simStagePending","simNote",
                     "actorsTitle","actorsLead","examplesTitle","examplesLead","caseLabel","caseTime",
@@ -174,10 +179,12 @@ def render_page(obj: dict, lang: str) -> str:
             '<a href="#access-source-'+h(k,quote=True)+'" aria-label="'+h(t["sourceLabel"],quote=True)+' '+
             str(sources[k][0])+'" title="'+h(sources[k][1]["label"],quote=True)+'">['+
             str(sources[k][0])+']</a>' for k in ids) + '</div>'
-    steps = "\n".join(
-        '<li data-access-stage="'+h(stage,quote=True)+'" data-state="passed"><span class="state" data-access-state-label>'+
-        h(t["simStagePassed"])+'</span><h3>'+h(t["stages"][stage]["title"])+'</h3><p>'+
-        h(t["stages"][stage]["body"])+'</p></li>' for stage in obj["stageIds"])
+    def stage_card(stage):
+        return ('<li data-access-stage="'+h(stage,quote=True)+'" data-state="passed"><span class="state" data-access-state-label>'+
+                h(t["simStagePassed"])+'</span><h3>'+h(t["stages"][stage]["title"])+'</h3><p>'+
+                h(t["stages"][stage]["body"])+'</p></li>')
+    precondition = stage_card(obj["stageIds"][0])
+    request_steps = "\n".join(stage_card(stage) for stage in obj["stageIds"][1:])
     scenarios = "\n".join(
         '<button type="button" data-access-select="'+h(s["id"],quote=True)+
         '" data-block-stage="'+str(s["blockStage"])+
@@ -255,8 +262,11 @@ def render_page(obj: dict, lang: str) -> str:
 <div class="accessSample"><span>{h(t["simUrlLabel"])}</span><code>https://www.example.com/</code></div>
 <h3 style="font-size:1rem;margin:20px 0 8px">{h(t["simSelectorLabel"])}</h3>
 <div class="accessChoices" role="group" aria-label="{h(t["simSelectorLabel"],quote=True)}">{scenarios}</div>
+<h3 class="accessPreconditionsHeading">{h(t["simPreconditionLabel"])}</h3>
+<p class="accessPreconditionsBody">{h(t["simPreconditionBody"])}</p>
+<ul class="accessPrerequisite" aria-label="{h(t["simPreconditionLabel"],quote=True)}">{precondition}</ul>
 <h3 style="font-size:1rem;margin:0 0 10px">{h(t["simFlowLabel"])}</h3>
-<ol class="accessStages">{steps}</ol>
+<ol class="accessStages">{request_steps}</ol>
 <div id="accessPanels" class="accessScenarios">{"".join(descriptions)}</div>
 <p id="accessLive" class="accessLive" role="status" aria-live="polite" aria-atomic="true"></p>
 <p class="accessCaveat">{h(t["simNote"])}</p>

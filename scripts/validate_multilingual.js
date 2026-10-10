@@ -35,6 +35,14 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   const {document}=parseHTML(text);
   const canonical=base+language+'/';
   assert.equal(document.documentElement.getAttribute('lang'),language,page+' language');
+  const luganoSection=document.getElementById('lugano');
+  assert.equal(luganoSection?.tagName,'SECTION',page+' must preserve semantic .lugano section');
+  assert.equal(luganoSection?.querySelector(':scope > .panel.authorDisclosure')?.tagName,'DIV',page+' must preserve the introductory disclosure card (source markup regression)');
+  assert.ok(!luganoSection?.hasAttribute('<div'),page+' invalid .lugano attributes');
+  assert.ok(document.getElementById('explorerDrawer')?.hasAttribute('hidden'),page+' closed Explorer must not retain focusable modal controls');
+  assert.equal(document.querySelectorAll('.explorerMethodDepth > summary').length,1,page+' must preserve complete methodology in an accessible disclosure');
+  assert.equal(document.querySelectorAll('[data-access-explainer-link]').length,3,page+' access explanation links must remain present');
+  assert.ok(document.querySelector('.accessReadingLink [data-governance-explainer-link]'),page+' general sanctions explanation is missing from How It Works');
   assert.equal(document.documentElement.getAttribute('data-ctd-language'),language);
   assert.equal(document.querySelectorAll('link[rel="canonical"]').length,1);
   assert.equal(document.querySelector('meta[name="robots"]').getAttribute('content'),'index,follow,max-image-preview:large');

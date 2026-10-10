@@ -61,6 +61,8 @@ research_manifest = json.loads((ROOT / "research" / "research_release_manifest.j
 rr = research_manifest["currentResearchRelease"]
 if rr["id"] != meta["researchRelease"] or rr["doi"] != meta.get("doi"):
     raise SystemExit("Research release identity/DOI mismatch: refusing to rewrite CITATION.cff")
+research_manifest["currentSiteVersion"] = version
+(ROOT / "research" / "research_release_manifest.json").write_text(json.dumps(research_manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 research_published_on = rr["publishedOn"]
 cff = f'''cff-version: 1.2.0
 message: "If you use Connecting the Dots in research, please cite the living research publication and the specific research release used."

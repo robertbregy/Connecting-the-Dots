@@ -1,3 +1,15 @@
+# v0.7.72 — 2026-10-10
+
+- Corrected invalid `.lugano` opening markup and added release HTML shape checks (previously parsed into an unintended attribute and lost its first panel).
+- Closed Explorer drawer is now removed from sequential keyboard focus as well as from the accessibility tree.
+- Height-aware desktop dropdown navigation flips upwards or scrolls where necessary, while retaining all menu choices.
+- Tightened light-mode text/label contrast and dark-mode Field Notes status-card contrast, based on Chromium/axe test output in four languages.
+- Explorer's full data-provenance limits remain available verbatim in an accessible expandable note.
+- Distinguished historical IANA and 2026 Reveal Day snapshots from 9 October archived RR1 and live technical site updates.
+- Synchronized the working research manifest's technical site-version field during each build, without changing RR1 DOI or frozen evidence.
+- Improved access-explainer pedagogical flow: registry delegation is an upstream prerequisite, not a network hop during every site visit.
+- Added a contextual general-explainer reading group in How It Works while retaining stable existing canonical URLs, and repaired the working paper's main landmark.
+
 # v0.7.71 — 2026-10-10
 
 - Source precision: qualifies the June–July 2025 Iran WhatsApp anomalies as evidence consistent with possible blocking on some networks, as OONI does, rather than presenting a confirmed nationwide application ban.

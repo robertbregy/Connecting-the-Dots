@@ -1,0 +1,62 @@
+name: Full browser and WCAG regression audit
+
+on:
+  push:
+    branches:
+      - 'feat/**'
+      - 'audit/**'
+      - main
+    paths:
+      - '.github/workflows/audit-browser.yml'
+      - 'scripts/audit_browser_20261010.js'
+      - 'scripts/audit_axe_20261010.js'
+      - 'assets/**'
+      - 'src/**'
+      - 'data/translations.json'
+      - 'data/internet_access_explainer.json'
+      - 'research/**'
+      - 'publication.json'
+      - 'build.py'
+
+permissions:
+  contents: read
+
+jobs:
+  browser-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies and Chromium
+        run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Build v0.7.72 and validate all release invariants
+        run: |
+          python3 build.py
+          node scripts/validate_multilingual.js
+          node scripts/validate_internet_access.js
+          CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
+      - name: Audit actual Chromium layout, navigation and interactive behavior
+        run: |
+          python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/ctd-audit-http.log 2>&1 &
+          sleep 2
+          node scripts/audit_browser_20261010.js
+      - name: Audit all 160 combinations of locale, theme and section for WCAG A/AA
+        run: |
+          node scripts/audit_axe_20261010.js
+      - name: Attach visual evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ctd-browser-audit-v0.7.72
+          path: audit-*.png
+          if-no-files-found: ignore

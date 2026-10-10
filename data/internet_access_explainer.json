@@ -240,7 +240,7 @@
       "simLead": "Choose one hypothetical intervention. The diagram shows which stage fails and whether the name may still exist outside the affected network. This is an explanatory model, not a real connectivity test.",
       "simUrlLabel": "Example address",
       "simSelectorLabel": "Choose a scenario",
-      "simFlowLabel": "Schematic: from a domain to a web response",
+      "simFlowLabel": "During the visit: the user's actual request path",
       "simStatusOpen": "Available in this scenario",
       "simStatusBlocked": "Access interrupted in this scenario",
       "simStatusName": "What happens to the global name?",
@@ -397,7 +397,9 @@
       "methodTitle": "Editorial note",
       "methodBody": "Reviewed 10 October 2026. The examples are historical, tied to stated periods, and may not reflect present reachability. This page is an educational model and makes no technical probes from the visitor's browser. It does not attribute individual intentions without documentary evidence and remains outside frozen Research Release RR1.",
       "reviewedLabel": "Last reviewed",
-      "sourceLabel": "Source"
+      "sourceLabel": "Source",
+      "simPreconditionLabel": "Before the visit: the name must exist",
+      "simPreconditionBody": "The registry and registrar manage the domain's registration and authoritative DNS status. They are not contacted as an extra network hop every time someone opens a website."
     },
     "it": {
       "metaTitle": "Chi controlla l'accesso a Internet? | Connecting the Dots",
@@ -411,7 +413,7 @@
       "simLead": "Scegli un intervento ipotetico. Lo schema mostra in quale passaggio la richiesta si interrompe e se il nome può ancora esistere fuori dalla rete interessata. È una simulazione esplicativa, non un test reale.",
       "simUrlLabel": "Indirizzo di esempio",
       "simSelectorLabel": "Scegli uno scenario",
-      "simFlowLabel": "Schema: dal dominio alla risposta del sito",
+      "simFlowLabel": "Durante la visita: il percorso reale della richiesta",
       "simStatusOpen": "Accessibile in questo scenario",
       "simStatusBlocked": "Accesso interrotto in questo scenario",
       "simStatusName": "Che cosa succede al nome globale?",
@@ -568,7 +570,9 @@
       "methodTitle": "Nota editoriale",
       "methodBody": "Verificato il 10 ottobre 2026. Gli esempi sono storici e circoscritti a periodi definiti: potrebbero non descrivere la raggiungibilità attuale. La pagina è un modello didattico e non esegue alcuna misura dalla connessione del visitatore. Non attribuisce intenzioni individuali in mancanza di prove e rimane fuori dalla release scientifica RR1 congelata.",
       "reviewedLabel": "Ultima verifica",
-      "sourceLabel": "Fonte"
+      "sourceLabel": "Fonte",
+      "simPreconditionLabel": "Prima della visita: il nome deve esistere",
+      "simPreconditionBody": "Il registro e il registrar gestiscono la registrazione e la configurazione DNS autorevole del dominio. Non sono un nodo che il browser attraversa a ogni visita."
     },
     "de": {
       "metaTitle": "Wer kontrolliert den Internetzugang? | Connecting the Dots",
@@ -582,7 +586,7 @@
       "simLead": "Wählen Sie einen hypothetischen Eingriff. Die Grafik zeigt die unterbrochene Stufe und ob der Domainname außerhalb des betroffenen Netzes weiter bestehen kann. Dies ist keine Live-Messung.",
       "simUrlLabel": "Beispieladresse",
       "simSelectorLabel": "Szenario auswählen",
-      "simFlowLabel": "Schema: vom Domainnamen zur Webantwort",
+      "simFlowLabel": "Während des Aufrufs: der Weg der Netzwerkanfrage",
       "simStatusOpen": "In diesem Szenario erreichbar",
       "simStatusBlocked": "Zugriff in diesem Szenario unterbrochen",
       "simStatusName": "Was geschieht mit dem globalen Namen?",
@@ -739,7 +743,9 @@
       "methodTitle": "Redaktioneller Hinweis",
       "methodBody": "Geprüft am 10. Oktober 2026. Die Beispiele sind historisch, auf bestimmte Zeiträume begrenzt und nicht als Aussagen über die aktuelle Erreichbarkeit gedacht. Diese Seite führt keine Messung der Verbindung des Besuchers durch. Individuelle Motive werden ohne Belege nicht unterstellt. Die Seite ist kein Teil der eingefrorenen Forschungsrelease RR1.",
       "reviewedLabel": "Zuletzt geprüft",
-      "sourceLabel": "Quelle"
+      "sourceLabel": "Quelle",
+      "simPreconditionLabel": "Vor dem Aufruf: Der Name muss bestehen",
+      "simPreconditionBody": "Registry und Registrar verwalten Registrierung und autoritativen DNS-Status der Domain. Beim Aufruf einer Website ist dies kein zusätzlicher Netzwerkknoten, der jedes Mal passiert wird."
     },
     "fr": {
       "metaTitle": "Qui contrôle l'accès à Internet ? | Connecting the Dots",
@@ -753,7 +759,7 @@
       "simLead": "Choisissez une intervention fictive. Le schéma montre où la requête s'interrompt et si le nom peut encore exister hors du réseau affecté. Ce n'est pas un test de connexion réel.",
       "simUrlLabel": "Adresse d'exemple",
       "simSelectorLabel": "Choisir un scénario",
-      "simFlowLabel": "Schéma : du nom de domaine à la réponse du site",
+      "simFlowLabel": "Pendant la visite : le parcours de la requête",
       "simStatusOpen": "Accessible dans ce scénario",
       "simStatusBlocked": "Accès interrompu dans ce scénario",
       "simStatusName": "Que devient le nom à l'échelle mondiale ?",
@@ -910,7 +916,9 @@
       "methodTitle": "Note éditoriale",
       "methodBody": "Vérifié le 10 octobre 2026. Les exemples sont historiques, propres à des périodes définies et ne décrivent pas nécessairement l'accessibilité actuelle. Cette page est un modèle pédagogique et ne teste pas la connexion du visiteur. Aucune intention individuelle n'est attribuée sans preuve ; le contenu reste distinct de la release scientifique RR1 figée.",
       "reviewedLabel": "Dernière vérification",
-      "sourceLabel": "Source"
+      "sourceLabel": "Source",
+      "simPreconditionLabel": "Avant la visite : le nom doit exister",
+      "simPreconditionBody": "Le registre et le bureau d'enregistrement gèrent l'inscription du domaine et sa configuration DNS faisant autorité. Ils ne constituent pas une étape réseau supplémentaire lors de chaque visite."
     }
   }
 }

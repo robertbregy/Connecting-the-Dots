@@ -520,6 +520,26 @@ for marker in ['data-i18n="derived"','id="contentionBars2026"','id="strangeGridA
 for stale in ['The 2026 corpus remains incomplete until official Reveal Day data are published.','Il corpus 2026 resta incompleto fino alla pubblicazione dei dati ufficiali del Reveal Day.']:
     if stale in translations.get('en',{}).values() or stale in translations.get('it',{}).values(): fail('stale pre-Reveal copy survived: '+stale)
 
+# Audit-driven release invariants: preserve HTML structure and document the
+# three independent publication epochs without silently changing RR1 evidence.
+if 'id="lugano"<div' in source_html: fail('Malformed .lugano opening tag in canonical template')
+if not re.search(r'<section class="section" id="lugano">\s*<div class="panel authorDisclosure">',source_html):
+    fail('Lugano author disclosure must be a direct child of a valid semantic section')
+if 'class="explorerDrawer" id="explorerDrawer" hidden' not in source_html:
+    fail('Closed Explorer drawer still exposes focusable descendants')
+if 'class="coverageNotes explorerMethodDepth"' not in source_html:
+    fail('Explorer methodology and limits have been dropped from the accessible disclosure')
+if 'accessReadingLink' not in source_html or 'data-governance-explainer-link' not in source_html:
+    fail('General explainers must be discoverable from How It Works')
+rr_current=json.loads((ROOT/'research'/'research_release_manifest.json').read_text(encoding='utf-8'))
+if rr_current.get('currentSiteVersion')!=version:
+    fail('Research manifest currentSiteVersion is inconsistent with technical release')
+if rr_current['currentResearchRelease']['id']!='RR1' or rr_current['currentResearchRelease']['doi']!='10.5281/zenodo.23262623':
+    fail('Frozen scientific release identity was modified')
+for lang in LANGS:
+    if '{updated}' not in translations[lang].get('exploreSnapshotClocks',''):
+        fail('Research-versus-website version disclosure lost its renderable update date: '+lang)
+
 # Static pages and local references.
 for rel in ['index.html',*[f'{x}/index.html' for x in LANGS]]:
     p=ROOT/rel; text=p.read_text(encoding='utf-8')

@@ -13,6 +13,7 @@ on:
       - 'scripts/**'
       - 'data/translations.json'
       - 'data/sanctions_explainer.json'
+      - 'data/internet_access_explainer.json'
       - 'data/release_history.json'
       - 'publication.json'
       - 'build.py'
@@ -55,6 +56,8 @@ jobs:
         run: |
           node scripts/validate_multilingual.js
           node scripts/validate_internet_access.js
+          node scripts/validate_corrective.js
+          node scripts/validate_tld_life_histories.js
           CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
 
       - name: Commit generated publication

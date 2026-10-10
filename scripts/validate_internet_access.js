@@ -29,6 +29,9 @@ for(const lang of languages){
  assert.equal(schema.dateModified,data.reviewedOn,'Reviewed date '+lang);
  assert.equal(schema.citation.length,11,'Institutional sources '+lang);
  assert.equal(document.querySelectorAll('[data-access-stage]').length,5,'Access stages '+lang);
+ assert.equal(document.querySelectorAll('.accessPrerequisite [data-access-stage]').length,1,'Registration must be a prerequisite, not a network hop '+lang);
+ assert.equal(document.querySelectorAll('.accessStages [data-access-stage]').length,4,'Only DNS, IP, TLS and application belong in the request path '+lang);
+ assert.equal(document.querySelector('.accessPrerequisite [data-access-stage]')?.getAttribute('data-access-stage'),'registry','The registration precondition is not a network hop '+lang);
  assert.equal(document.querySelectorAll('[data-access-select]').length,7,'Scenario controls '+lang);
  assert.equal(document.querySelectorAll('[data-access-scenario-panel]').length,7,'Scenario panels '+lang);
  assert.equal(document.querySelectorAll('[data-access-case]').length,5,'Documented cases '+lang);

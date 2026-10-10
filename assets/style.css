@@ -487,3 +487,24 @@ html[data-theme="dark"] .derivedBadge{color:#f2c46d}html[data-theme="light"] .de
 .behindRevisionHistory{margin:0;padding:0 0 0 20px;color:var(--muted);font-size:.87rem;line-height:1.55}.behindRevisionHistory time{font-weight:740;color:var(--text);font-variant-numeric:tabular-nums;margin-right:7px}
 @media(max-width:720px){.behindFigures{grid-template-columns:1fr}.behindFigure{padding:16px}.behindFigure strong{font-size:2.25rem}.behindFindings{grid-template-columns:1fr}.behindSources{grid-template-columns:1fr}.behindStory{padding:16px}}
 
+
+/* v0.7.72 audited: contrast, modal focus, viewport-safe menus. */
+:root{--muted:#52555c;--good:#08613f;--accent-text:#005bab}
+:root:not([data-theme="dark"]) .readingBadge{color:var(--accent-text)}
+:root:not([data-theme="dark"]) .derivedBadge{color:#805006}
+:root:not([data-theme="dark"]) .visionBadgeMini,:root:not([data-theme="dark"]) .pillar .ep.visionBadgeMini{color:#6831a9}
+:root:not([data-theme="dark"]) .stateBadge{color:#50535a}
+.explorerDrawer[hidden]{display:none!important}
+.navDropdown{max-height:calc(100dvh - 28px);overflow-y:auto;overscroll-behavior:contain}
+.navMenu.open-up>.navDropdown{top:auto;bottom:calc(100% + 3px)}
+:root[data-theme="dark"] .behindFinding[data-status="documented"]{border-color:color-mix(in srgb,var(--good) 55%,var(--border));background:color-mix(in srgb,var(--good) 10%,var(--surface))}
+:root[data-theme="dark"] .behindFinding[data-status="unresolved"]{border-color:#58476a;background:color-mix(in srgb,#8b5cf6 8%,var(--surface))}
+.explorerMethodDepth{margin:10px 0 13px;border-radius:10px;border:1px solid var(--border);background:var(--surface2);padding:0 12px}
+.explorerMethodDepth summary{padding:10px 0;cursor:pointer;font-size:.87rem;font-weight:750;color:var(--accent-text)}
+.explorerMethodDepth p{max-width:85ch;line-height:1.6}
+@media(max-width:680px){.explorerMethodDepth{padding:0 10px}}
+
+/* Contextual reading links remain outside navigation and preserve the existing canonical URLs. */
+.guideReadingLinks{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start}
+.guideReadingLinks .sourceChip{max-width:100%;height:auto;white-space:normal;overflow-wrap:anywhere;padding:10px 12px;line-height:1.5}
+.accessReadingLink .sub strong{color:var(--text)}

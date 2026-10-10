@@ -1794,7 +1794,7 @@
     "sOpenai2026": ".openai is among OpenAI’s revealed 2026 branded applications.",
     "iOpenai2026": "A company can now seek to make its own name part of the DNS hierarchy. That shifts the dot from a destination category toward controlled identity infrastructure.",
     "strangeHistoricalToggle": "Open the historical archive · 2000–2012",
-    "exploreSnapshotClocks": "Three clocks: IANA/root snapshot · 4 Oct 2026 · 2026 Reveal-Day application snapshot · 7 Oct 2026 · publication · 9 Oct 2026. The 2026 primary-string layer is a locally frozen secondary snapshot built from public ICANN APS records; it may differ from the final confirmed set after the Replacement Period.",
+    "exploreSnapshotClocks": "Four publication dates, two kinds of evidence: IANA/root snapshot · 4 Oct 2026; 2026 Reveal Day application snapshot · 7 Oct 2026; archived research release RR1 · 9 Oct 2026; latest site update · {updated}. The technical update does not change RR1.",
     "release0745": "Post-Reveal integrity hardening: makes the partial 2026 application CSV explicit, exposes the three publication clocks, removes the last pre-Reveal placeholder wording, strengthens 2026 provenance/discrepancy metadata and optimizes the paginated external string-inventory loader while preserving conservative completeness claims.",
     "profile2026InventoryProvenance": "2026 string inventory derived from public ICANN APS records through the secondary nTLDData index",
     "profile2026Title": "2026 application snapshot",
@@ -2144,7 +2144,12 @@
     "accessCrosslinkTitle": "Can a working domain still be blocked?",
     "accessCrosslinkIntro": "DNS filtering, suspended domains, network shutdowns and ICANN's role explained through an interactive example.",
     "release0770": "Adds a four-language Internet access explainer with seven interactive blocking scenarios, five historically sourced country/regional cases, and careful distinctions between DNS, TLDs, ISPs and ICANN.",
-    "release0771": "Refines the Iran case to reflect OONI's qualified measurements and documents the distinction between registry-level .cat redirection and local ISP filtering in Catalonia (2017)."
+    "release0771": "Refines the Iran case to reflect OONI's qualified measurements and documents the distinction between registry-level .cat redirection and local ISP filtering in Catalonia (2017).",
+    "release0772": "Repairs the .lugano HTML, hidden Explorer drawer keyboard focus, adaptive navigation menus, light/dark contrast and publication metadata. Keeps long Explorer coverage details accessible without hiding facts. Separates the registry precondition from the network visit in the access tutorial.",
+    "guideRelatedTitle": "Related explanations",
+    "guideRelatedBody": "These are general explanations, not new cases from the 2026 application round. They clarify what happens beyond the TLD and what decisions ICANN does or does not make.",
+    "guideAccessCta": "Internet filtering, DNS and shutdowns",
+    "guideSanctionsCta": "International sanctions and ICANN"
   },
   "it": {
     "brand": "Brand",
@@ -3941,7 +3946,7 @@
     "sOpenai2026": ".openai figura tra le candidature brand 2026 rivelate di OpenAI.",
     "iOpenai2026": "Un’azienda può cercare di rendere il proprio nome parte della gerarchia DNS. Il punto passa così da categoria di destinazione a infrastruttura di identità controllata.",
     "strangeHistoricalToggle": "Apri l’archivio storico · 2000–2012",
-    "exploreSnapshotClocks": "Tre orologi: snapshot IANA/root · 4 ott 2026 · snapshot candidature Reveal Day 2026 · 7 ott 2026 · pubblicazione · 9 ott 2026. Il livello delle primary string 2026 è uno snapshot secondario congelato localmente, costruito sui record pubblici APS di ICANN; può differire dal set finale confermato dopo il Replacement Period.",
+    "exploreSnapshotClocks": "Quattro date, due livelli documentari: snapshot IANA/root · 4 ott 2026; candidature del Reveal Day · 7 ott 2026; release scientifica RR1 archiviata · 9 ott 2026; ultimo aggiornamento del sito · {updated}. La release tecnica non modifica RR1.",
     "release0745": "Hardening di integrità post-Reveal: rende esplicitamente parziale il CSV locale 2026, mostra i tre orologi temporali della pubblicazione, elimina l’ultimo testo segnaposto pre-Reveal, rafforza metadati e provenienza sulle discrepanze 2026 e ottimizza il caricamento paginato dell’inventario esterno delle stringhe senza gonfiare le dichiarazioni di completezza.",
     "profile2026InventoryProvenance": "Inventario delle stringhe 2026 derivato dai record pubblici APS di ICANN tramite indice secondario nTLDData",
     "profile2026Title": "Snapshot candidatura 2026",
@@ -4291,7 +4296,12 @@
     "accessCrosslinkTitle": "Un dominio valido può essere comunque bloccato?",
     "accessCrosslinkIntro": "Filtri DNS, sospensioni dei domini, interruzioni di rete e ruolo ICANN spiegati con una simulazione interattiva.",
     "release0770": "Nuova scheda multilingue sull'accesso a Internet: sette scenari interattivi, cinque casi storici documentati e distinzione rigorosa tra DNS, TLD, provider e ICANN.",
-    "release0771": "Precisa le evidenze OONI sul possibile blocco di WhatsApp in Iran e distingue il reindirizzamento di alcuni domini .cat dai filtri dei provider nel caso catalano del 2017."
+    "release0771": "Precisa le evidenze OONI sul possibile blocco di WhatsApp in Iran e distingue il reindirizzamento di alcuni domini .cat dai filtri dei provider nel caso catalano del 2017.",
+    "release0772": "Corregge l'HTML di .lugano, il focus del pannello Explorer chiuso, i menu adattivi alla finestra, i contrasti chiaro/scuro e i metadati. Rende espandibili, senza rimuoverli, i dettagli dell'Explorer e separa il registro dalla richiesta di rete nella simulazione.",
+    "guideRelatedTitle": "Approfondimenti collegati",
+    "guideRelatedBody": "Queste sono spiegazioni generali, non nuovi casi del round 2026. Chiariscono cosa accade oltre il TLD e quali decisioni rientrano, oppure no, nelle competenze di ICANN.",
+    "guideAccessCta": "Filtri Internet, DNS e interruzioni di rete",
+    "guideSanctionsCta": "Sanzioni internazionali e ICANN"
   },
   "de": {
     "brand": "Marke",
@@ -6088,7 +6098,7 @@
     "sOpenai2026": ".openai gehört zu OpenAIs veröffentlichten Marken-Bewerbungen 2026.",
     "iOpenai2026": "Ein Unternehmen kann versuchen, den eigenen Namen Teil der DNS-Hierarchie werden zu lassen. Der Punkt wird damit von einer Zielkategorie zu kontrollierter Identitätsinfrastruktur.",
     "strangeHistoricalToggle": "Historisches Archiv öffnen · 2000–2012",
-    "exploreSnapshotClocks": "Drei Zeitstempel: IANA/Root-Snapshot · 4. Okt. 2026 · Reveal-Day-Bewerbungssnapshot 2026 · 7. Okt. 2026 · Publikation · 9. Okt. 2026. Die 2026-Primary-String-Ebene ist ein lokal eingefrorener Sekundär-Snapshot auf Basis öffentlicher ICANN-APS-Datensätze und kann vom endgültig bestätigten Set nach der Replacement Period abweichen.",
+    "exploreSnapshotClocks": "Vier Daten, zwei Publikationsebenen: IANA/Root-Snapshot · 4. Okt. 2026; Reveal-Day-Bewerbungssnapshot · 7. Okt. 2026; archivierte Forschungsversion RR1 · 9. Okt. 2026; letzte Website-Aktualisierung · {updated}. Technische Updates verändern RR1 nicht.",
     "release0745": "Post-Reveal-Integritätshärtung: kennzeichnet die lokale 2026-Bewerbungs-CSV klar als partiell, zeigt die drei Zeitstempel, entfernt den letzten Pre-Reveal-Platzhalter, stärkt Provenienz- und Diskrepanzmetadaten für 2026 und optimiert den paginierten externen String-Loader, ohne Vollständigkeit vorzutäuschen.",
     "profile2026InventoryProvenance": "2026-String-Inventar aus öffentlichen ICANN-APS-Datensätzen über den sekundären nTLDData-Index abgeleitet",
     "profile2026Title": "Snapshot der Bewerbung 2026",
@@ -6438,7 +6448,12 @@
     "accessCrosslinkTitle": "Kann eine gültige Domain trotzdem gesperrt sein?",
     "accessCrosslinkIntro": "DNS-Filter, Domainsperren, Netzabschaltungen und die Rolle der ICANN mit einer interaktiven Simulation erklärt.",
     "release0770": "Vier­sprachiger Hintergrundartikel zum Internetzugang mit sieben interaktiven Szenarien, fünf dokumentierten Fallbeispielen und klarer Trennung zwischen DNS, TLDs, Providern und ICANN.",
-    "release0771": "Präzisiert die begrenzte Aussagekraft der OONI-Messungen zu WhatsApp im Iran und unterscheidet die .cat-DNS-Umleitung von ISP-Sperren in Katalonien 2017."
+    "release0771": "Präzisiert die begrenzte Aussagekraft der OONI-Messungen zu WhatsApp im Iran und unterscheidet die .cat-DNS-Umleitung von ISP-Sperren in Katalonien 2017.",
+    "release0772": "Korrigiert das .lugano-HTML, den Tastaturfokus der geschlossenen Explorer-Seitenleiste, adaptive Navigationsmenüs, Hell-/Dunkel-Kontraste und Publikationsmetadaten. Die vollständigen Erläuterungen bleiben aufklappbar erhalten; Registrierung und Netzwerkaufruf werden getrennt.",
+    "guideRelatedTitle": "Weitere Erklärungen",
+    "guideRelatedBody": "Dies sind allgemeine Erklärungen und keine neuen Fälle aus der Bewerbungsrunde 2026. Sie erläutern, was über die TLD hinaus geschieht und wo die Zuständigkeiten von ICANN enden.",
+    "guideAccessCta": "Internetfilter, DNS und Netzunterbrechungen",
+    "guideSanctionsCta": "Internationale Sanktionen und ICANN"
   },
   "fr": {
     "brand": "Marque",
@@ -8235,7 +8250,7 @@
     "sOpenai2026": ".openai figure parmi les candidatures de marque 2026 révélées d’OpenAI.",
     "iOpenai2026": "Une entreprise peut chercher à faire de son propre nom une partie de la hiérarchie DNS. Le point passe ainsi d’une catégorie de destination à une infrastructure d’identité contrôlée.",
     "strangeHistoricalToggle": "Ouvrir les archives historiques · 2000–2012",
-    "exploreSnapshotClocks": "Trois horloges : instantané IANA/root · 4 oct. 2026 · instantané des candidatures Reveal Day 2026 · 7 oct. 2026 · publication · 9 oct. 2026. La couche 2026 des chaînes primaires est un instantané secondaire figé localement à partir des dossiers publics APS de l’ICANN ; elle peut différer de l’ensemble final confirmé après la Replacement Period.",
+    "exploreSnapshotClocks": "Quatre dates, deux niveaux documentaires : instantané IANA/racine · 4 oct. 2026 ; candidatures du Reveal Day · 7 oct. 2026 ; publication scientifique RR1 archivée · 9 oct. 2026 ; dernière mise à jour du site · {updated}. La version technique ne modifie pas RR1.",
     "release0745": "Renforcement d’intégrité post-Reveal : qualifie explicitement le CSV local 2026 de partiel, affiche les trois horloges temporelles, supprime le dernier texte d’attente pré-Reveal, renforce les métadonnées de provenance et de divergence 2026 et optimise le chargeur externe paginé de chaînes sans exagérer la couverture.",
     "profile2026InventoryProvenance": "Inventaire des chaînes 2026 dérivé des dossiers publics APS de l’ICANN via l’index secondaire nTLDData",
     "profile2026Title": "Instantané de candidature 2026",
@@ -8585,6 +8600,11 @@
     "accessCrosslinkTitle": "Un domaine valide peut-il rester inaccessible ?",
     "accessCrosslinkIntro": "Filtrage DNS, suspension de domaines, coupure réseau et rôle de l'ICANN expliqués dans une simulation interactive.",
     "release0770": "Nouvelle fiche sur l'accès à Internet en quatre langues : sept scénarios interactifs, cinq cas historiques sourcés et distinction claire entre DNS, TLD, fournisseurs d'accès et ICANN.",
-    "release0771": "Précise les résultats OONI sur les possibles blocages de WhatsApp en Iran et distingue les redirections de certains domaines .cat des filtres réseau en Catalogne (2017)."
+    "release0771": "Précise les résultats OONI sur les possibles blocages de WhatsApp en Iran et distingue les redirections de certains domaines .cat des filtres réseau en Catalogne (2017).",
+    "release0772": "Corrige le balisage .lugano, le focus clavier du panneau Explorer fermé, les menus adaptatifs, les contrastes clair/sombre et les métadonnées de publication. Les explications complètes restent accessibles et la condition d'enregistrement est distinguée du parcours réseau.",
+    "guideRelatedTitle": "Explications complémentaires",
+    "guideRelatedBody": "Il s'agit d'explications générales, et non de nouveaux cas du round 2026. Elles précisent ce qui se passe au-delà des TLD et les limites du rôle de l'ICANN.",
+    "guideAccessCta": "Filtrage d'Internet, DNS et coupures réseau",
+    "guideSanctionsCta": "Sanctions internationales et ICANN"
   }
 }

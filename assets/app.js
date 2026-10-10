@@ -255,7 +255,7 @@ function openExplorerRecord(idx,trigger=null,historyMode='push'){
  explorerProfileId=row.asciiString;showProfileLinkNotice(false);
  if(historyMode!=='none')setQuery(changed?historyMode:'replace');
  renderProfileActions(row);const requestId=++drawerLoadId;
- drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+ drawer.hidden=false;drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
  const focusDialogTitle=()=>{if(!drawer.classList.contains('open'))return;document.getElementById('profileTitle')?.focus({preventScroll:true});setModalBackgroundInert(true)};
  const panel=drawer.querySelector('.explorerDrawerPanel');if(panel)panel.scrollTop=0;
  const content=document.getElementById('drawerContent'),ready=cachedExplorerProfile(row);
@@ -355,7 +355,7 @@ function renderExplorerRecord(r){
 function closeExplorerDrawer({historyMode='replace',restoreFocus=true}={}){
  drawerLoadId++;explorerProfileId='';const d=document.getElementById('explorerDrawer');
  const wasOpen=d?.classList.contains('open');
- if(d){d.classList.remove('open');d.setAttribute('aria-hidden','true');document.body.style.overflow='';setModalBackgroundInert(false);}
+ if(d){d.classList.remove('open');d.setAttribute('aria-hidden','true');d.hidden=true;document.body.style.overflow='';setModalBackgroundInert(false);}
  const target=lastDrawerTrigger;lastDrawerTrigger=null;
  if(historyMode!=='none')setQuery(historyMode);
  if(wasOpen&&restoreFocus)requestAnimationFrame(()=>{const fallback=document.getElementById('explorerSearch');(target?.isConnected&&target!==document.body?target:fallback)?.focus?.()});
@@ -576,10 +576,26 @@ function renderPublicationUpdates(){
  const dates=document.getElementById('updateDates');if(dates)dates.innerHTML=[['updatesRelease','v'+PUB.version+' · '+fmtDate(PUB.releasedOn)],['updatesResearch',fmtDate(PUB.asOf)],['updatesIana',fmtDate(D.explorerMeta.ianaSnapshot)]].map(([key,value])=>`<dt>${esc(t(key))}</dt><dd>${esc(value)}</dd>`).join('');
  const list=document.getElementById('releaseHistory');if(list)list.innerHTML=(D.releaseHistory?.releases||[]).map(r=>`<li><b>v${esc(r.version)}</b><time datetime="${esc(r.date)}">${esc(fmtDate(r.date))}</time><p>${esc(t(r.summaryKey))}</p></li>`).join('');
  const stamp=document.getElementById('publicationUpdateStamp');if(stamp)stamp.innerHTML=`<a href="?tab=sources#publication-updates" data-open-section="sources" data-open-anchor="publication-updates">v${esc(PUB.version)} · ${esc(fmtDate(PUB.releasedOn))}</a>`;
+ const clocks=document.querySelector('[data-i18n="exploreSnapshotClocks"]');if(clocks)clocks.textContent=t('exploreSnapshotClocks').replace('{updated}',fmtDate(PUB.releasedOn));
 }
 function renderAll(){renderInternetJourney();renderPublicationUpdates();renderCards();renderTypeStats();renderTimeline();render2000();renderProcess();renderNamespaceDimensions();renderDomainLifecycle();renderControlLevers();renderDnsCapabilities();renderTldModels();renderSuccessFramework();renderGlossary();renderExplorerOptions();renderExplorer();renderStrange();renderSemanticDrift();renderDnsOddities();renderPress();renderLists();renderBeyond();renderGeoMap();renderGeoBars();renderLugano();renderRound2026();renderRoundBars();renderContentionBars();renderThemeRoundLenses();renderRefusals();renderDisputes();renderEconomics();renderSocial();populateMobileNav();renderSectionTocs();syncFeedbackLinks();hardenExternalLinks()}
-function closeNavMenus(except=null){document.querySelectorAll('.navMenu.open').forEach(m=>{if(m===except)return;m.classList.remove('open');const tr=m.querySelector('.navMenuTrigger');if(tr)tr.setAttribute('aria-expanded','false')})}
-function toggleNavMenu(menu){const willOpen=!menu.classList.contains('open');closeNavMenus(menu);menu.classList.toggle('open',willOpen);const tr=menu.querySelector('.navMenuTrigger');if(tr)tr.setAttribute('aria-expanded',willOpen?'true':'false')}
+function closeNavMenus(except=null){document.querySelectorAll('.navMenu.open').forEach(m=>{if(m===except)return;m.classList.remove('open','open-up');m.querySelector('.navDropdown')?.style.removeProperty('max-height');const tr=m.querySelector('.navMenuTrigger');if(tr)tr.setAttribute('aria-expanded','false')})}
+function toggleNavMenu(menu){
+ const willOpen=!menu.classList.contains('open');
+ closeNavMenus(menu);menu.classList.toggle('open',willOpen);
+ const trigger=menu.querySelector('.navMenuTrigger'),dropdown=menu.querySelector('.navDropdown');
+ if(trigger)trigger.setAttribute('aria-expanded',willOpen?'true':'false');
+ if(!dropdown)return;
+ menu.classList.remove('open-up');dropdown.style.removeProperty('max-height');
+ if(!willOpen)return;
+ const rect=trigger.getBoundingClientRect(),full=dropdown.scrollHeight;
+ const below=Math.max(0,window.innerHeight-rect.bottom-12),above=Math.max(0,rect.top-12);
+ const flip=full>below&&above>below;
+ menu.classList.toggle('open-up',flip);
+ dropdown.style.maxHeight=Math.max(72,Math.min(full,(flip?above:below)-6))+'px';
+ const selected=dropdown.querySelector('.tab.active');
+ if(selected)selected.scrollIntoView({block:'nearest'});
+}
 function activateTab(id,userInitiated=false,historyMode='replace',scrollSection=true){if(!document.getElementById(id))id='overview';const previousTab=activeTab;if(previousTab!==id&&(previousTab==='overview'||id==='overview'))setJourneyStep(0,false);if(id!=='explore')closeExplorerDrawer({historyMode:'none',restoreFocus:false});activeTab=id;document.body.dataset.activeTab=id;document.querySelectorAll('.tab').forEach(x=>{x.classList.toggle('active',x.dataset.target===id);if(x.dataset.target===id)x.setAttribute('aria-current','location');else x.removeAttribute('aria-current')});document.querySelectorAll('.navMenu').forEach(g=>g.classList.toggle('active',!!g.querySelector('.tab.active')));document.querySelectorAll('.section').forEach(x=>x.classList.toggle('active',x.id===id));closeNavMenus();const mn=document.getElementById('mobileNav');if(mn)mn.value=id;if(historyMode!=='none')setQuery(userInitiated?'push':historyMode);if(userInitiated&&scrollSection){const heading=document.querySelector('#'+id+' h1, #'+id+' h2');focusNavigationTarget(heading);scrollToNavigationTarget(document.getElementById(id),true)}syncHowNavSelection()}
 function syncHowNavSelection(){
  const menu=document.querySelector('.navMenu[data-label-key="tabHow"]');if(!menu)return;
