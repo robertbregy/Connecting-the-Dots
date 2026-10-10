@@ -59,6 +59,12 @@ function deliveryFixture(language='it',alias=false,query='?tab=explore'){
  const getComputedStyle=()=>({display:'block',position:'static'});
  const context=vm.createContext({window:{document,innerWidth:1440,scrollY:0,scrollTo:()=>{},matchMedia:()=>({matches:false}),addEventListener:(type,fn)=>(handlers[type]??=[]).push(fn)},document,location,history,navigator,getComputedStyle,prompt:(label,value)=>prompts.push({label,value}),localStorage:{getItem:()=>null,setItem:()=>{}},requestAnimationFrame:fn=>fn(),setTimeout:(fn,ms)=>{timers.set(++timerId,{fn,ms});return timerId},clearTimeout:id=>timers.delete(id),URL,URLSearchParams,Intl,console});
  const run=code=>vm.runInContext(code,context,{timeout:10000});
+ // The browser executes this inline script before app.js. The VM fixture must do the same:
+ // otherwise it reports a fictitious 2026 inventory failure and never tests the overlay.
+ const frozen2026=document.getElementById('ctd-2026-string-snapshot');
+ assert.ok(frozen2026&&frozen2026.textContent.includes('CTD2026_STRING_SNAPSHOT'),'missing embedded Reveal Day snapshot');
+ run(frozen2026.textContent);
+ assert.equal(run('window.CTD2026_STRING_SNAPSHOT.data.rows.length'),980,'2026 test fixture must preload all frozen strings');
  for(const id of ['ctd-data-bundle','ctd-i18n-bundle','ctd-worldmap','ctd-publication','ctd-app']){const node=document.getElementById(id),src=node.getAttribute('src');run(src?fs.readFileSync(path.resolve(root,alias?'':language,src.split('?')[0]),'utf8'):node.textContent);}
  const scripts=()=>[...document.querySelectorAll('script[src]')].filter(s=>s.getAttribute('src').includes('/data/explorer_profiles_'));
  const pending=shard=>scripts().find(s=>s.getAttribute('src').includes('explorer_profiles_'+shard+'.js')&&s.onload);

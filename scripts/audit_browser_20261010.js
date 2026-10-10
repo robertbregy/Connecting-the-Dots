@@ -55,7 +55,7 @@ function assert(ok,level,cat,route,msg,extra){if(!ok)log(level,cat,route,msg,ext
   assert(r.mainH1===1,'MED','HEADING',route,'h1 in main count '+r.mainH1);
   assert(r.imgNoAlt===0,'MED','A11Y',route,'Images lacking alt '+r.imgNoAlt);
   assert(r.scroll<=r.client+3,'MED','OVERFLOW',route,'Desktop scroll width '+r.scroll+' > '+r.client);
-  for(const e of opened.errors.filter(x=>!x.includes('2026 Reveal Day string snapshot')))log('MED','JS_CONSOLE',route,e.slice(0,160));
+  for(const e of opened.errors)log('MED','JS_CONSOLE',route,e.slice(0,160));
   await p.close();
  }
  for(const locale of locales){
@@ -73,6 +73,16 @@ function assert(ok,level,cat,route,msg,extra){if(!ok)log(level,cat,route,msg,ext
    assert(dom.lugano==='SECTION','HIGH','DOM',route,'Missing semantic Lugano section',{viewport:vp.id,dom});
    assert(dom.directPanel==='DIV','HIGH','DOM',route,'Malformed Lugano section lost its direct child disclosure panel',{viewport:vp.id,dom});
    assert(dom.act.length===1,'HIGH','NAV',route,'Multiple/no active sections '+dom.act.join(','),{viewport:vp.id});
+   // Verify the actual browser loaded the complete frozen 2026 overlay.
+   // A missing inventory must fail the audit, never be filtered as harmless console noise.
+   const inventory=await p.evaluate(()=>({
+    snapshotRows:window.CTD2026_STRING_SNAPSHOT?.data?.rows?.length||0,
+    loaded:typeof D!=='undefined' && D.explorerMeta?.application2026StringCoverageComplete===true,
+    catalogStrings:typeof D!=='undefined' ? D.explorerMeta?.application2026StringCount : null,
+    runtimeError:typeof D!=='undefined' ? D.explorerMeta?.runtimeExternalEnrichmentError||null : null
+   }));
+   assert(inventory.snapshotRows===980&&inventory.loaded&&inventory.catalogStrings===980&&!inventory.runtimeError,
+    'HIGH','EXPLORER_2026',route,'2026 Reveal Day Explorer overlay missing or incomplete',{viewport:vp.id,inventory});
    await overflow(p,route,vp.id);
    if(vp.id==='desktop'){
     for(const name of ['tabHow','navThemes']){
@@ -96,7 +106,7 @@ function assert(ok,level,cat,route,msg,extra){if(!ok)log(level,cat,route,msg,ext
     assert(active.join()==='lugano','HIGH','NAV',route,'Mobile Lugano tab failed',{active});
     await p.screenshot({path:'audit-'+locale+'-mobile-lugano.png',fullPage:false});
    }
-   for(const e of opened.errors.filter(x=>!x.includes('2026 Reveal Day string snapshot')))log('MED','JS_CONSOLE',route,e.slice(0,160),{viewport:vp.id});
+   for(const e of opened.errors)log('MED','JS_CONSOLE',route,e.slice(0,160),{viewport:vp.id});
    await p.close();
   }
  }
