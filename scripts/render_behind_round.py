@@ -181,7 +181,7 @@ def load():
                     raise ValueError("Untranslated narrative " + language + "/" + key)
     return stories, translations
 
-def episode_markup(data, translations, lang, dynamic=False):
+def episode_markup(data, translations, lang, dynamic=False, standalone=False):
     t = translations[lang]
     def txt(key, tag="span", css=None):
         attrs = (' class="' + css + '"' if css else "")
@@ -206,8 +206,8 @@ def episode_markup(data, translations, lang, dynamic=False):
                 parts.append('<section class="behindReading" data-referenced-sources="' + h(",".join(section["sourceIds"]),quote=True) + '">' +
                              txt(section["titleKey"],tag="h3") + txt(section["bodyKey"],tag="p") + '</section>')
             parts.extend([
-                '<a class="behindStoryLink" href="' + BASE + 'behind-the-round/' + lang + '/wdo-identity/">' +
-                txt("wdoArticleCta") + ' ↗</a>',
+                ('<a class="behindStoryLink" href="' + BASE + 'behind-the-round/' + lang + '/wdo-identity/">' +
+                 txt("wdoArticleCta") + ' ↗</a>') if not standalone else '',
                 '<section class="behindReading behindSourcesBlock">',
                 txt("behindSourcesTitle",tag="h3"),txt("wdoSourcePreface",tag="p"),
                 '<ul class="behindSources">'
@@ -329,7 +329,7 @@ def render_page(data,tr,lang,pub,detail=False):
       "about":[{"@type":"Thing","name":"ICANN New gTLD Program 2026, .wdo and Reveal Day"}]
     }
     cases={"episodes":[case]} if detail else data
-    content=episode_markup(cases,tr,lang)
+    content=episode_markup(cases,tr,lang,standalone=detail)
     chronology=BASE+"inside-the-round/"+lang+"/"
     back=BASE+"behind-the-round/"+lang+"/"
     second_action=(back if detail else BASE+lang+"/?tab=behind-round#behind-round")

@@ -738,6 +738,8 @@ for lang in LANGS:
         fail('Standalone second case mixes unrelated articles: '+lang)
     if detail_html.count('data-source-id=')!=len(second['sources']) or detail_html.count('<link rel="alternate" hreflang=')!=5:
         fail('Second article loses evidence or hreflang: '+lang)
+    if '<a class="behindStoryLink"' in detail_html or f'<a class="behindStoryLink" href="{site_base}behind-the-round/{lang}/wdo-identity/">' not in standalone:
+        fail('Standalone article self-link or missing collection CTA: '+lang)
     for source in second['sources']:
         if source['url'] not in detail_html or source['url'] not in standalone or source['url'] not in page:
             fail('Unlinked second field-note primary evidence: '+lang+'/'+source['id'])
