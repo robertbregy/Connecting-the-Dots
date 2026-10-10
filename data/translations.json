@@ -2137,7 +2137,9 @@
     "behindRegionTotal": "Total",
     "wdoIdentityDataLabel": "Beijing · established 2026 · .wdo applicant",
     "wdoIdentityDesignLabel": "Montréal · founded 1957 · wdo.org",
-    "behindSourceJPNIC": "JPNIC · 8 October official note"
+    "behindSourceJPNIC": "JPNIC · 8 October official note",
+    "sanctionsContextCta": "Sanctions & the DNS: what ICANN can and cannot do",
+    "release0769": "Added an independently indexed, four-language explainer on OFAC and the DNS, with primary sources, case distinctions and cross-links from both 2026 field notes."
   },
   "it": {
     "brand": "Brand",
@@ -4277,7 +4279,9 @@
     "behindRegionTotal": "Totale",
     "wdoIdentityDataLabel": "Pechino · costituita nel 2026 · richiedente .wdo",
     "wdoIdentityDesignLabel": "Montréal · fondata nel 1957 · wdo.org",
-    "behindSourceJPNIC": "JPNIC · Comunicato dell'8 ottobre"
+    "behindSourceJPNIC": "JPNIC · Comunicato dell'8 ottobre",
+    "sanctionsContextCta": "Sanzioni e DNS: cosa può e non può fare ICANN",
+    "release0769": "Pubblicata una scheda di contesto autonoma in quattro lingue su OFAC e DNS, con fonti primarie, distinzione tra casi e collegamenti dalle due Note dal campo 2026."
   },
   "de": {
     "brand": "Marke",
@@ -6417,7 +6421,9 @@
     "behindRegionTotal": "Gesamt",
     "wdoIdentityDataLabel": "Peking · 2026 gegründet · .wdo-Antragstellerin",
     "wdoIdentityDesignLabel": "Montréal · 1957 gegründet · wdo.org",
-    "behindSourceJPNIC": "JPNIC · Mitteilung vom 8. Oktober"
+    "behindSourceJPNIC": "JPNIC · Mitteilung vom 8. Oktober",
+    "sanctionsContextCta": "Sanktionen und DNS: Was ICANN tun kann und was nicht",
+    "release0769": "Eigenständigen viersprachigen Hintergrundartikel zu OFAC und DNS mit Primärquellen, getrennten Fällen und Querverweisen aus beiden Beobachtungen von 2026 ergänzt."
   },
   "fr": {
     "brand": "Marque",
@@ -8557,6 +8563,8 @@
     "behindRegionTotal": "Total",
     "wdoIdentityDataLabel": "Pékin · créée en 2026 · candidate .wdo",
     "wdoIdentityDesignLabel": "Montréal · fondée en 1957 · wdo.org",
-    "behindSourceJPNIC": "JPNIC · Communiqué du 8 octobre"
+    "behindSourceJPNIC": "JPNIC · Communiqué du 8 octobre",
+    "sanctionsContextCta": "Sanctions et DNS : ce que l’ICANN peut faire ou non",
+    "release0769": "Ajout d'un éclairage indépendant en quatre langues sur l'OFAC et le DNS, avec sources primaires, distinctions juridiques et renvois depuis les deux Notes de terrain 2026."
   }
 }
