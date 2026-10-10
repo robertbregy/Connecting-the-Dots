@@ -12,7 +12,8 @@ const sections=[...fs.readFileSync('src/index.web.html','utf8').matchAll(/<secti
  const browser=await chromium.launch({headless:true,args:['--disable-dev-shm-usage']});
  const rows=[],summary={pages:0,sections:sections.length,scans:0,critical:0,serious:0,moderate:0,minor:0};
  for(const lang of language){
-   const p=await browser.newPage({viewport:{width:1366,height:800}});
+   const ctx=await browser.newContext({viewport:{width:1366,height:800}});
+   const p=await ctx.newPage();
    await p.goto(base+'/'+lang+'/',{waitUntil:'load'});
    const tabs=await p.evaluate(()=>[...document.querySelectorAll('.nav [data-target]')].map(x=>x.getAttribute('data-target')));
    const targets=sections.filter(x=>tabs.includes(x));
@@ -37,7 +38,7 @@ const sections=[...fs.readFileSync('src/index.web.html','utf8').matchAll(/<secti
        }catch(e){console.log('AUDIT_AXE_ERROR '+JSON.stringify({lang,theme,tab,error:e.message.slice(0,200)}));}
      }
    }
-   await p.close();summary.pages++;
+   await p.close();await ctx.close();summary.pages++;
  }
  await browser.close();
  let unique={};for(const r of rows){
@@ -46,4 +47,5 @@ const sections=[...fs.readFileSync('src/index.web.html','utf8').matchAll(/<secti
  }
  for(const r of Object.values(unique))console.log('AUDIT_AXE_SUMMARY '+JSON.stringify(r));
  console.log('AUDIT_AXE_RESULT '+JSON.stringify({summary:summary,uniqueRules:[...new Set(rows.map(r=>r.id))],totalViolations:rows.length,groups:Object.values(unique).length}));
+ if(summary.scans!==sections.length*languages.length*2){console.error('AUDIT_AXE_INCOMPLETE expected='+sections.length*languages.length*2+' actual='+summary.scans);process.exitCode=1;}
 })().catch(e=>{console.log('AUDIT_AXE_FATAL '+e.stack);process.exitCode=1});
