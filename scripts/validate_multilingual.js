@@ -191,7 +191,8 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
     const key=n.getAttribute('data-i18n');
     assert.ok(Object.hasOwn(translations,key),page+' unlocalized key '+key);
     const value=key==='exploreIanaDate'?translations[key].replace('{date}',new Intl.DateTimeFormat({en:'en-US',it:'it-IT',de:'de-DE',fr:'fr-FR'}[language],{year:'numeric',month:'short',day:'numeric',timeZone:'UTC'}).format(new Date(snapshot.asOf+'T00:00:00Z'))):translations[key];
-    const expected=parseHTML('<html><body><div id="value">'+value+'</div></body></html>').document.getElementById('value').textContent;
+    const formatted=key==='exploreSnapshotClocks'?value.replace('{updated}',new Intl.DateTimeFormat({en:'en-US',it:'it-IT',de:'de-DE',fr:'fr-FR'}[language],{year:'numeric',month:'short',day:'numeric',timeZone:'UTC'}).format(new Date(JSON.parse(fs.readFileSync(path.join(root,'publication.json'),'utf8')).releasedOn+'T00:00:00Z'))):value;
+    const expected=parseHTML('<html><body><div id="value">'+formatted+'</div></body></html>').document.getElementById('value').textContent;
     assert.ok(n.textContent.includes(expected),page+' unlocalized '+key);
   }
   // Detect unresolved dynamic captions and inaccessible link labels.
