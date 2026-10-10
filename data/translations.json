@@ -2133,7 +2133,10 @@
     "wdoSourceGuidebook": "ICANN · 2026 Applicant Guidebook",
     "wdoSourceCalendar": "ICANN · 2026 objections calendar",
     "wdoSourceOFAC": "US OFAC · 17 July 2026 update",
-    "release0768": "Expands the Reveal Day count case with regional reconciliation, independent CSV analysis and sourced interpretation; adds a second Field Note on the two WDO organizations, with primary evidence, explicit uncertainties and a standalone article in four languages. RR1 and DOI unchanged."
+    "release0768": "Expands the Reveal Day count case with regional reconciliation, independent CSV analysis and sourced interpretation; adds a second Field Note on the two WDO organizations, with primary evidence, explicit uncertainties and a standalone article in four languages. RR1 and DOI unchanged.",
+    "behindRegionTotal": "Total",
+    "wdoIdentityDataLabel": "Beijing · established 2026 · .wdo applicant",
+    "wdoIdentityDesignLabel": "Montréal · founded 1957 · wdo.org"
   },
   "it": {
     "brand": "Brand",
@@ -4269,7 +4272,10 @@
     "wdoSourceGuidebook": "ICANN · Applicant Guidebook 2026",
     "wdoSourceCalendar": "ICANN · Calendario obiezioni 2026",
     "wdoSourceOFAC": "OFAC USA · Misure 17 luglio 2026",
-    "release0768": "Approfondisce il caso dei conteggi del Reveal Day con confronti regionali, riscontro del CSV e fonti indipendenti; aggiunge una seconda Nota dal campo sulle due organizzazioni WDO, con fonti primarie, limiti espliciti e pagina autonoma in quattro lingue. Dati RR1 e DOI invariati."
+    "release0768": "Approfondisce il caso dei conteggi del Reveal Day con confronti regionali, riscontro del CSV e fonti indipendenti; aggiunge una seconda Nota dal campo sulle due organizzazioni WDO, con fonti primarie, limiti espliciti e pagina autonoma in quattro lingue. Dati RR1 e DOI invariati.",
+    "behindRegionTotal": "Totale",
+    "wdoIdentityDataLabel": "Pechino · costituita nel 2026 · richiedente .wdo",
+    "wdoIdentityDesignLabel": "Montréal · fondata nel 1957 · wdo.org"
   },
   "de": {
     "brand": "Marke",
@@ -6405,7 +6411,10 @@
     "wdoSourceGuidebook": "ICANN · Applicant Guidebook 2026",
     "wdoSourceCalendar": "ICANN · Fristen für Einwände 2026",
     "wdoSourceOFAC": "US OFAC · Änderung vom 17. Juli 2026",
-    "release0768": "Vertieft die Abweichungen der Reveal-Day-Zahlen mit Regional- und CSV-Abgleich und veröffentlicht eine zweite Beobachtung zu den beiden WDO-Organisationen, mit Primärquellen und begrenzten Aussagen in vier Sprachen. RR1 und DOI unverändert."
+    "release0768": "Vertieft die Abweichungen der Reveal-Day-Zahlen mit Regional- und CSV-Abgleich und veröffentlicht eine zweite Beobachtung zu den beiden WDO-Organisationen, mit Primärquellen und begrenzten Aussagen in vier Sprachen. RR1 und DOI unverändert.",
+    "behindRegionTotal": "Gesamt",
+    "wdoIdentityDataLabel": "Peking · 2026 gegründet · .wdo-Antragstellerin",
+    "wdoIdentityDesignLabel": "Montréal · 1957 gegründet · wdo.org"
   },
   "fr": {
     "brand": "Marque",
@@ -8541,6 +8550,9 @@
     "wdoSourceGuidebook": "ICANN · Guide du candidat 2026",
     "wdoSourceCalendar": "ICANN · Calendrier des objections",
     "wdoSourceOFAC": "OFAC américain · Mise à jour du 17 juillet 2026",
-    "release0768": "Complète le dossier Reveal Day par une vérification régionale et une analyse CSV indépendante ; publie une deuxième note sur les deux organisations WDO, avec sources primaires, limites explicites et article autonome en quatre langues. RR1 et DOI inchangés."
+    "release0768": "Complète le dossier Reveal Day par une vérification régionale et une analyse CSV indépendante ; publie une deuxième note sur les deux organisations WDO, avec sources primaires, limites explicites et article autonome en quatre langues. RR1 et DOI inchangés.",
+    "behindRegionTotal": "Total",
+    "wdoIdentityDataLabel": "Pékin · créée en 2026 · candidate .wdo",
+    "wdoIdentityDesignLabel": "Montréal · fondée en 1957 · wdo.org"
   }
 }
