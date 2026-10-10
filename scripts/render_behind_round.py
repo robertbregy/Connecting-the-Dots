@@ -16,8 +16,13 @@ ROOT = Path(__file__).resolve().parents[1]
 PRIMARY = (
     "https://www.icann.org/",
     "https://newgtldprogram-aps.icann.org/",
+    "https://newgtldprogram.icann.org/",
+    "https://english.casad.cas.cn/",
+    "https://wdo.org/",
+    "https://ised-isde.canada.ca/",
+    "https://ofac.treasury.gov/",
 )
-SECONDARY = ("https://www.ntlddata.com/",)
+SECONDARY = ("https://www.ntlddata.com/", "https://www.bortzmeyer.org/", "https://circleid.com/")
 RESEARCH = ("https://github.com/robertbregy/Connecting-the-Dots/",)
 
 BEHIND_CSS = """
@@ -46,10 +51,20 @@ BEHIND_CSS = """
 .behindSources a{display:block;padding:11px 13px;border:1px solid var(--border);border-radius:10px;text-decoration:none;color:var(--accent-text);overflow-wrap:anywhere;line-height:1.42;font-size:.87rem}
 .behindSources a:hover,.behindSources a:focus-visible{text-decoration:underline;background:var(--surface2)}
 .behindSources [data-source-kind="secondary"] a,.behindSources [data-source-kind="derived"] a{border-style:dashed}
+.behindComparisonTable{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;margin:12px 0 8px;overflow-wrap:anywhere}
+.behindComparisonTable th,.behindComparisonTable td{padding:9px 12px;border-bottom:1px solid var(--border);text-align:right}
+.behindComparisonTable th:first-child,.behindComparisonTable td:first-child{text-align:left}
+.behindComparisonTable thead{background:var(--surface2)}
+.behindComparisonTable [data-gap="1"]{font-weight:800}
+.behindIdentityList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0 18px}
+.behindIdentityCard{border:1px solid var(--border);border-radius:12px;padding:17px;background:var(--surface2)}
+.behindIdentityCard strong{font-size:1.12rem;display:block;margin-bottom:8px}
+.behindStoryLink{display:inline-flex;align-items:center;margin-top:12px;padding:10px 13px;border-radius:10px;background:var(--accent);color:#fff!important;font-weight:760;text-decoration:none;line-height:1.3}
+.behindStoryLink:hover,.behindStoryLink:focus-visible{text-decoration:underline}
 .behindCaseFooter{display:flex;flex-wrap:wrap;gap:10px;align-items:center;border-top:1px solid var(--border);margin-top:21px;padding-top:18px;color:var(--muted);font-size:.83rem}
 .behindCaseFooter time{font-variant-numeric:tabular-nums}
 .behindRevisionHistory{margin:0;padding:0 0 0 20px;color:var(--muted);font-size:.87rem;line-height:1.55}.behindRevisionHistory time{font-weight:740;color:var(--text);font-variant-numeric:tabular-nums;margin-right:7px}
-@media(max-width:720px){.behindFigures{grid-template-columns:1fr}.behindFigure{padding:16px}.behindFigure strong{font-size:2.25rem}.behindFindings{grid-template-columns:1fr}.behindSources{grid-template-columns:1fr}.behindStory{padding:16px}}
+@media(max-width:720px){.behindFigures{grid-template-columns:1fr}.behindFigure{padding:16px}.behindFigure strong{font-size:2.25rem}.behindFindings{grid-template-columns:1fr}.behindSources{grid-template-columns:1fr}.behindStory{padding:16px}.behindIdentityList{grid-template-columns:1fr}.behindComparisonTable th,.behindComparisonTable td{padding:8px 6px;font-size:.79rem}}
 """
 
 CONTENT_KEYS = (
@@ -61,7 +76,11 @@ CONTENT_KEYS = (
     "behindWhyTitle","behindWhyBody","behindMethodTitle",
     "behindMethodBody","behindSourcesTitle","behindReviewDateLabel",
     "behindUpdateTitle","behindUpdateBody","behindIndependenceTitle",
-    "behindIndependenceBody","behindSourcesPreface"
+    "behindIndependenceBody","behindSourcesPreface",
+    "behindRegionalTitle","behindRegionalLead","behindRegionalConclusion",
+    "behindRegionHeader","behindRegionOfficial","behindRegionVisible","behindRegionDelta",
+    "behindRegionNA","behindRegionEUR","behindRegionAP","behindRegionAF","behindRegionLAC",
+    "behindIndependentTitle","behindIndependentBody","behindCoverageTitle","behindCoverageBody"
 )
 def load():
     stories = json.loads((ROOT / "data/behind_round_stories.json").read_text(encoding="utf-8"))
@@ -77,8 +96,8 @@ def load():
         if case["id"] in ids or not case["id"].isascii() or not case["slug"].isascii():
             raise ValueError("Duplicate/non-ASCII field note identity")
         ids.add(case["id"])
-        if case["state"] != "partly-explained":
-            raise ValueError("Unknown evidentiary state " + case["id"])
+        if (case.get("kind"),case.get("state")) not in (("counts","partly-explained"),("identity","documented-with-open-questions")):
+            raise ValueError("Unknown type/evidentiary state " + case["id"])
         published = date.fromisoformat(case["publishedOn"])
         revised = date.fromisoformat(case["revisedOn"])
         if not (published <= revised <= editorial_date):
@@ -93,6 +112,41 @@ def load():
             for language in LANGS:
                 if not translations[language].get(source["labelKey"]):
                     raise ValueError("Untranslated evidence " + source["id"] + " " + language)
+        if case["kind"] == "identity":
+            if case["id"] != "wdo-identity" or case.get("slug") != "wdo-identity" or case.get("number") != 2:
+                raise ValueError("Unsupported identity case")
+            section_ids = [item.get("titleKey") for item in case.get("sections",[])]
+            if len(section_ids) != 7 or len(section_ids) != len(set(section_ids)):
+                raise ValueError("Incomplete/duplicated WDO case sections")
+            for section in case["sections"]:
+                if not section.get("sourceIds") or any(sid not in sources for sid in section["sourceIds"]):
+                    raise ValueError("Unsourced WDO analysis section")
+            if len(case["sources"]) < 7 or not any("ofac.treasury.gov" in x["url"] for x in case["sources"]):
+                raise ValueError("WDO case missing primary compliance source")
+            for lang in LANGS:
+                keys = ("wdoCaseNumber","wdoCaseTitle","wdoCaseLead","wdoCaseStatus","wdoArticleCta",
+                        "wdoArticleReturn","wdoMetaTitle","wdoMetaDescription","wdoSourcePreface",
+                        "behindSourcesTitle","behindRevisionsTitle","behindIndependenceTitle","behindIndependenceBody",
+                        "behindReviewDateLabel","wdoRevisionInitial")
+                keys += tuple(k for section in case["sections"] for k in (section["titleKey"],section["bodyKey"]))
+                if any(not translations[lang].get(k) for k in keys):
+                    raise ValueError("Untranslated WDO case in " + lang)
+            revisions=case.get("revisionHistory",[])
+            if not revisions or revisions[-1].get("changeKey")!="wdoRevisionInitial":
+                raise ValueError("Missing WDO original dated source audit")
+            if any(date.fromisoformat(x["date"])>editorial_date or any(i not in sources for i in x.get("sourceIds",[])) for x in revisions):
+                raise ValueError("WDO revision lacks checked sources")
+            continue
+        regions = case.get("regionalComparison",[])
+        if {row["code"] for row in regions} != {"NA","EUR","AP","AF","LAC"}:
+            raise ValueError("Missing five-region consistency crosscheck")
+        totals = {key:sum(row[key] for row in regions) for key in ("officialApplications","visibleApplications","officialApplicants","visibleApplicants")}
+        if totals != {"officialApplications":1615,"visibleApplications":1614,"officialApplicants":481,"visibleApplicants":480}:
+            raise ValueError("Invalid 2026 regional reconciliation: "+str(totals))
+        if any(row["officialApplications"]!=row["visibleApplications"] or row["officialApplicants"]!=row["visibleApplicants"] for row in regions if row["code"]!="AP"):
+            raise ValueError("Regional discrepancy incorrectly extends beyond Asia-Pacific")
+        if len(case.get("revisionHistory",[]))!=2 or case["revisionHistory"][-1]["changeKey"]!="behindRevisionReconciled":
+            raise ValueError("The researched 2026 revision must be date and source tracked")
         facts = {f["id"]:f for f in case["quantities"]}
         if set(facts) != {"paid","official","secondary"}:
             raise ValueError("Missing count observations")
@@ -136,6 +190,40 @@ def episode_markup(data, translations, lang, dynamic=False):
     parts = []
     labels = {"paid":"behindCountPaid","official":"behindCountOfficial","secondary":"behindCountSecondary"}
     for case in data["episodes"]:
+        if case["kind"] == "identity":
+            parts.extend([
+                '<article class="panel behindStory" data-behind-story="' + h(case["id"],quote=True) + '" id="behind-case-' + h(case["slug"],quote=True) + '">',
+                txt("wdoCaseNumber",tag="p",css="eyebrow"),
+                txt("wdoCaseTitle",tag="h2"),
+                txt("wdoCaseLead",tag="p",css="behindCaseLead"),
+                txt("wdoCaseStatus",css="behindStatus"),
+                '<div class="behindIdentityList">',
+                '<div class="behindIdentityCard"><strong>World Data Organization</strong><span>Beijing · 2026 · .wdo applicant</span></div>',
+                '<div class="behindIdentityCard"><strong>World Design Organization</strong><span>Montréal · founded 1957 · wdo.org</span></div>',
+                '</div>'
+            ])
+            for section in case["sections"]:
+                parts.append('<section class="behindReading" data-referenced-sources="' + h(",".join(section["sourceIds"]),quote=True) + '">' +
+                             txt(section["titleKey"],tag="h3") + txt(section["bodyKey"],tag="p") + '</section>')
+            parts.extend([
+                '<a class="behindStoryLink" href="' + BASE + 'behind-the-round/' + lang + '/wdo-identity/">' +
+                txt("wdoArticleCta") + ' ↗</a>',
+                '<section class="behindReading behindSourcesBlock">',
+                txt("behindSourcesTitle",tag="h3"),txt("wdoSourcePreface",tag="p"),
+                '<ul class="behindSources">'
+            ])
+            for source in case["sources"]:
+                parts.append('<li data-source-id="' + h(source["id"],quote=True) + '" data-source-kind="' + h(source["kind"],quote=True) + '"><a href="' + h(source["url"],quote=True) + '" target="_blank" rel="noopener noreferrer">' + txt(source["labelKey"]) + ' ↗</a></li>')
+            parts.extend(['</ul></section>','<section class="behindReading behindRevisions">',
+                          txt("behindRevisionsTitle",tag="h3"),'<ol class="behindRevisionHistory">'])
+            for revision in case["revisionHistory"]:
+                parts.append('<li data-editorial-revision="' + h(revision["date"],quote=True) + '"><time datetime="' + h(revision["date"],quote=True) + '">' + h(revision["date"]) + '</time> ' + txt(revision["changeKey"]) + '</li>')
+            parts.extend(['</ol></section>','<section class="behindReading">',
+                          txt("behindIndependenceTitle",tag="h3"),txt("behindIndependenceBody",tag="p"),
+                          '</section>','<div class="behindCaseFooter">',
+                          txt("behindReviewDateLabel"),'<time datetime="' + h(case["revisedOn"],quote=True) + '">' + h(case["revisedOn"]) + '</time>',
+                          '</div></article>'])
+            continue
         parts.extend([
             '<article class="panel behindStory" data-behind-story="' + h(case["id"],quote=True) + '" id="behind-case-' + h(case["slug"],quote=True) + '">',
             txt("behindCaseNumber",tag="p",css="eyebrow"),
@@ -163,6 +251,24 @@ def episode_markup(data, translations, lang, dynamic=False):
             txt("behindOpenBody",tag="p"),
             '</section></div>'
         ])
+        parts.extend(['<section class="behindReading behindRegional">',
+                      txt("behindRegionalTitle",tag="h3"),txt("behindRegionalLead",tag="p"),
+                      '<div class="behindTableWrap"><table class="behindComparisonTable"><thead><tr>',
+                      '<th scope="col">' + txt("behindRegionHeader") + '</th>',
+                      '<th scope="col">' + txt("behindRegionOfficial") + '</th>',
+                      '<th scope="col">' + txt("behindRegionVisible") + '</th>',
+                      '<th scope="col">' + txt("behindRegionDelta") + '</th>',
+                      '</tr></thead><tbody>'])
+        labels_region = {"NA":"behindRegionNA","EUR":"behindRegionEUR","AP":"behindRegionAP","AF":"behindRegionAF","LAC":"behindRegionLAC"}
+        for region in case["regionalComparison"]:
+            diff = region["officialApplications"]-region["visibleApplications"]
+            parts.append('<tr data-region="' + h(region["code"],quote=True) + '" data-gap="' + str(diff) + '"><td>' +
+                         txt(labels_region[region["code"]]) + '</td><td>' + str(region["officialApplications"]) +
+                         '</td><td>' + str(region["visibleApplications"]) + '</td><td>' + ("+"+str(diff) if diff else "—") + '</td></tr>')
+        parts.extend(['<tr><th scope="row">Total</th><td>1615</td><td>1614</td><td>+1</td></tr></tbody></table></div>',
+                      txt("behindRegionalConclusion",tag="p"),'</section>',
+                      '<section class="behindReading">' + txt("behindIndependentTitle",tag="h3") + txt("behindIndependentBody",tag="p") + '</section>',
+                      '<section class="behindReading">' + txt("behindCoverageTitle",tag="h3") + txt("behindCoverageBody",tag="p") + '</section>'])
         for title,body in (("behindWhyTitle","behindWhyBody"),("behindMethodTitle","behindMethodBody"),("behindUpdateTitle","behindUpdateBody")):
             parts.append('<section class="behindReading">' + txt(title,tag="h3") + txt(body,tag="p") + '</section>')
         parts.extend([
