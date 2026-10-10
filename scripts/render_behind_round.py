@@ -78,7 +78,7 @@ CONTENT_KEYS = (
     "behindUpdateTitle","behindUpdateBody","behindIndependenceTitle",
     "behindIndependenceBody","behindSourcesPreface",
     "behindRegionalTitle","behindRegionalLead","behindRegionalConclusion",
-    "behindRegionHeader","behindRegionOfficial","behindRegionVisible","behindRegionDelta",
+    "behindRegionHeader","behindRegionOfficial","behindRegionVisible","behindRegionDelta","behindRegionTotal",
     "behindRegionNA","behindRegionEUR","behindRegionAP","behindRegionAF","behindRegionLAC",
     "behindIndependentTitle","behindIndependentBody","behindCoverageTitle","behindCoverageBody"
 )
@@ -125,7 +125,7 @@ def load():
                 raise ValueError("WDO case missing primary compliance source")
             for lang in LANGS:
                 keys = ("wdoCaseNumber","wdoCaseTitle","wdoCaseLead","wdoCaseStatus","wdoArticleCta",
-                        "wdoArticleReturn","wdoMetaTitle","wdoMetaDescription","wdoSourcePreface",
+                        "wdoArticleReturn","wdoMetaTitle","wdoMetaDescription","wdoSourcePreface","wdoIdentityDataLabel","wdoIdentityDesignLabel",
                         "behindSourcesTitle","behindRevisionsTitle","behindIndependenceTitle","behindIndependenceBody",
                         "behindReviewDateLabel","wdoRevisionInitial")
                 keys += tuple(k for section in case["sections"] for k in (section["titleKey"],section["bodyKey"]))
@@ -198,8 +198,8 @@ def episode_markup(data, translations, lang, dynamic=False):
                 txt("wdoCaseLead",tag="p",css="behindCaseLead"),
                 txt("wdoCaseStatus",css="behindStatus"),
                 '<div class="behindIdentityList">',
-                '<div class="behindIdentityCard"><strong>World Data Organization</strong><span>Beijing · 2026 · .wdo applicant</span></div>',
-                '<div class="behindIdentityCard"><strong>World Design Organization</strong><span>Montréal · founded 1957 · wdo.org</span></div>',
+                '<div class="behindIdentityCard"><strong>World Data Organization</strong>' + txt("wdoIdentityDataLabel") + '</div>',
+                '<div class="behindIdentityCard"><strong>World Design Organization</strong>' + txt("wdoIdentityDesignLabel") + '</div>',
                 '</div>'
             ])
             for section in case["sections"]:
@@ -265,7 +265,7 @@ def episode_markup(data, translations, lang, dynamic=False):
             parts.append('<tr data-region="' + h(region["code"],quote=True) + '" data-gap="' + str(diff) + '"><td>' +
                          txt(labels_region[region["code"]]) + '</td><td>' + str(region["officialApplications"]) +
                          '</td><td>' + str(region["visibleApplications"]) + '</td><td>' + ("+"+str(diff) if diff else "—") + '</td></tr>')
-        parts.extend(['<tr><th scope="row">Total</th><td>1615</td><td>1614</td><td>+1</td></tr></tbody></table></div>',
+        parts.extend(['<tr><th scope="row">' + txt("behindRegionTotal") + '</th><td>1615</td><td>1614</td><td>+1</td></tr></tbody></table></div>',
                       txt("behindRegionalConclusion",tag="p"),'</section>',
                       '<section class="behindReading">' + txt("behindIndependentTitle",tag="h3") + txt("behindIndependentBody",tag="p") + '</section>',
                       '<section class="behindReading">' + txt("behindCoverageTitle",tag="h3") + txt("behindCoverageBody",tag="p") + '</section>'])
