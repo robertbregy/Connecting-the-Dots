@@ -7,6 +7,7 @@ on:
     paths:
       - '.github/workflows/audit-browser.yml'
       - 'scripts/audit_browser_20261010.js'
+      - 'scripts/audit_axe_20261010.js'
 
 permissions:
   contents: read
@@ -34,6 +35,7 @@ jobs:
           python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/ctd-audit-http.log 2>&1 &
           sleep 2
           node scripts/audit_browser_20261010.js
+          node scripts/audit_axe_20261010.js
       - name: Attach visual evidence
         if: always()
         uses: actions/upload-artifact@v4
