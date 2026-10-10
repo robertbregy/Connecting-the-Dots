@@ -14,6 +14,7 @@ on:
       - 'data/translations.json'
       - 'data/sanctions_explainer.json'
       - 'data/internet_access_explainer.json'
+      - 'data/field_investigations.json'
       - 'data/release_history.json'
       - 'publication.json'
       - 'build.py'

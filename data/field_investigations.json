@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "editorialLayer": "2026-round-investigations-not-part-of-frozen-RR1",
+  "lastReviewed": "2026-10-10",
+  "classification": "source-backed-editorial-field-notes",
+  "legacyCases": "data/behind_round_stories.json",
+  "episodes": [
+    {
+      "id": "objectors-eoi",
+      "kind": "investigation",
+      "slug": "objectors-eoi",
+      "number": 3,
+      "publishedOn": "2026-10-10",
+      "revisedOn": "2026-10-10",
+      "periodStart": "2026-05-30",
+      "periodEnd": "2026-06-30",
+      "state": "documented-with-open-questions",
+      "titleKey": "field03Title",
+      "descriptionKey": "field03Lead",
+      "statusKey": "field03Status",
+      "sections": [
+        {
+          "titleKey": "field03Section1Title",
+          "bodyKey": "field03Section1Body",
+          "sourceIds": [
+            "io-incident"
+          ]
+        },
+        {
+          "titleKey": "field03Section2Title",
+          "bodyKey": "field03Section2Body",
+          "sourceIds": [
+            "io-incident"
+          ]
+        },
+        {
+          "titleKey": "field03Section3Title",
+          "bodyKey": "field03Section3Body",
+          "sourceIds": [
+            "io-extension",
+            "io-incident"
+          ]
+        },
+        {
+          "titleKey": "field03Section4Title",
+          "bodyKey": "field03Section4Body",
+          "sourceIds": [
+            "io-role",
+            "io-incident"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "io-incident",
+          "url": "https://newgtldprogram.icann.org/en/news/expressions-of-interest-2026-round-independent-objectors-issues-encountered-and-next-steps-2026-06-30",
+          "kind": "primary",
+          "labelKey": "field03SourceIncident"
+        },
+        {
+          "id": "io-extension",
+          "url": "https://www.icann.org/en/announcements/details/icann-extends-deadline-for-expressions-of-interest-2026-round-independent-objectors-18-06-2026-en",
+          "kind": "primary",
+          "labelKey": "field03SourceExtension"
+        },
+        {
+          "id": "io-role",
+          "url": "https://www.icann.org/en/system/files/files/2026-round-independent-objectors-eoi-09mar26-en.pdf",
+          "kind": "primary",
+          "labelKey": "field03SourceRole"
+        }
+      ],
+      "updateTriggers": [
+        "A new ICANN incident report identifies the root cause or the effect on respondents.",
+        "ICANN confirms whether the Independent Objector roles have been filled."
+      ],
+      "revisionHistory": [
+        {
+          "date": "2026-10-10",
+          "changeKey": "field03Revision",
+          "sourceIds": [
+            "io-incident",
+            "io-extension",
+            "io-role"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "replacement-strings",
+      "kind": "investigation",
+      "slug": "replacement-strings",
+      "number": 4,
+      "publishedOn": "2026-10-10",
+      "revisedOn": "2026-10-10",
+      "periodStart": "2026-08-12",
+      "periodEnd": "2026-11-17",
+      "state": "documented-with-open-questions",
+      "titleKey": "field04Title",
+      "descriptionKey": "field04Lead",
+      "statusKey": "field04Status",
+      "quantities": [
+        {
+          "id": "replacementTotal",
+          "value": 1169,
+          "labelKey": "field04MetricTotal",
+          "valueKey": "field04ValueTotal",
+          "sourceId": "rs-internetbest"
+        },
+        {
+          "id": "replacementActive",
+          "value": 442,
+          "labelKey": "field04MetricActive",
+          "valueKey": "field04ValueActive",
+          "sourceId": "rs-internetbest"
+        },
+        {
+          "id": "replacementDeactivated",
+          "value": 727,
+          "labelKey": "field04MetricDeactivated",
+          "valueKey": "field04ValueDeactivated",
+          "sourceId": "rs-internetbest"
+        }
+      ],
+      "sections": [
+        {
+          "titleKey": "field04Section1Title",
+          "bodyKey": "field04Section1Body",
+          "sourceIds": [
+            "rs-icann-aps",
+            "rs-internetbest",
+            "rs-bortzmeyer"
+          ]
+        },
+        {
+          "titleKey": "field04Section2Title",
+          "bodyKey": "field04Section2Body",
+          "sourceIds": [
+            "rs-internetbest",
+            "rs-icann-guidebook",
+            "rs-icann-aps"
+          ]
+        },
+        {
+          "titleKey": "field04Section3Title",
+          "bodyKey": "field04Section3Body",
+          "sourceIds": [
+            "rs-internetbest",
+            "rs-local-snapshot",
+            "rs-icann-reveal"
+          ]
+        },
+        {
+          "titleKey": "field04Section4Title",
+          "bodyKey": "field04Section4Body",
+          "sourceIds": [
+            "rs-icann-aug",
+            "rs-icann-sept",
+            "rs-icann-reveal"
+          ]
+        },
+        {
+          "titleKey": "field04Section5Title",
+          "bodyKey": "field04Section5Body",
+          "sourceIds": [
+            "rs-icann-period",
+            "rs-icann-guidebook"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "rs-icann-aug",
+          "url": "https://www.icann.org/en/announcements/details/icann-2026-round-closes-with-more-than-1600-new-gtld-applications-13-08-2026-en",
+          "kind": "primary",
+          "labelKey": "field04SourceAugust"
+        },
+        {
+          "id": "rs-icann-sept",
+          "url": "https://www.icann.org/en/announcements/details/icann-confirms-number-of-applications-proceeding-in-the-2026-round-22-09-2026-en",
+          "kind": "primary",
+          "labelKey": "field04SourceSeptember"
+        },
+        {
+          "id": "rs-icann-reveal",
+          "url": "https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en",
+          "kind": "primary",
+          "labelKey": "field04SourceReveal"
+        },
+        {
+          "id": "rs-icann-aps",
+          "url": "https://newgtldprogram-aps.icann.org/help",
+          "kind": "primary",
+          "labelKey": "field04SourceAPS"
+        },
+        {
+          "id": "rs-icann-period",
+          "url": "https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en",
+          "kind": "primary",
+          "labelKey": "field04SourceTimeline"
+        },
+        {
+          "id": "rs-icann-guidebook",
+          "url": "https://newgtldprogram-2026-agb.icann.org/en/9-module-5-contention-set-resolution.html",
+          "kind": "primary",
+          "labelKey": "field04SourceGuide"
+        },
+        {
+          "id": "rs-internetbest",
+          "url": "https://internet.best/new-gtld-applications/",
+          "kind": "secondary",
+          "labelKey": "field04SourceIndex"
+        },
+        {
+          "id": "rs-bortzmeyer",
+          "url": "https://www.bortzmeyer.org/candidatures-tlds.html",
+          "kind": "secondary",
+          "labelKey": "field04SourceBortzmeyer"
+        },
+        {
+          "id": "rs-local-snapshot",
+          "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/main/data/application_2026_snapshot.json",
+          "kind": "derived",
+          "labelKey": "field04SourceSnapshot"
+        }
+      ],
+      "updateTriggers": [
+        "String replacement period closes on 2026-10-21; re-check APS and replacement statuses.",
+        "String Confirmation Day 2026-11-17: compare final applied-for strings and deactivations.",
+        "A source clarifies 727 deactivated replacement rows and 980 versus 986 string classifications."
+      ],
+      "revisionHistory": [
+        {
+          "date": "2026-10-10",
+          "changeKey": "field04Revision",
+          "sourceIds": [
+            "rs-icann-aps",
+            "rs-icann-period",
+            "rs-internetbest",
+            "rs-bortzmeyer",
+            "rs-local-snapshot"
+          ]
+        }
+      ]
+    }
+  ]
+}

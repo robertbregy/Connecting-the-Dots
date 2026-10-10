@@ -89,6 +89,10 @@ def render(page,lang,alias=False):
     if guide:guide['href']=BASE+'inside-the-round/'+lang+'/'
     behind_guide=soup.select_one('a[data-behind-round-guide]')
     if behind_guide:behind_guide['href']=BASE+'behind-the-round/'+lang+'/'
+    for newlink in soup.select('a[data-field-investigation-slug]'):
+        slug=newlink.get('data-field-investigation-slug')
+        if slug not in ('objectors-eoi','replacement-strings'):raise RuntimeError('Unexpected Field Note route '+str(slug))
+        newlink['href']=BASE+'behind-the-round/'+lang+'/'+slug+'/'
     for crosslink in soup.select('a[data-governance-explainer-link]'):
         crosslink['href']=BASE+'behind-the-round/'+lang+'/sanctions-and-dns/'
     for crosslink in soup.select('a[data-access-explainer-link]'):

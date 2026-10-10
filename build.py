@@ -14,6 +14,7 @@ from scripts.render_inside_round import render_timeline, build_inside_round_page
 from scripts.render_behind_round import render_stories, build_behind_round_pages
 from scripts.render_sanctions_explainer import build_sanctions_pages
 from scripts.render_internet_access import build_access_pages
+from scripts.render_field_investigations import build_investigations
 
 ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
@@ -328,6 +329,7 @@ def main() -> None:
     build_behind_round_pages(ROOT, PUBLICATION)
     build_sanctions_pages(ROOT)
     build_access_pages(ROOT)
+    build_investigations(ROOT)
     validate_index()
     # Release-level validation is intentionally self-contained so the browser-upload
     # bundle can verify itself even though the larger development QA suite is omitted.

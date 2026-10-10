@@ -84,6 +84,13 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.equal(behind.querySelectorAll('[data-source-id]').length,19,page+' incomplete source audit across two cases');
   assert.equal(behind.querySelectorAll('.behindComparisonTable [data-region]').length,5,page+' regional reconciliation missing');
   assert.ok(behind.querySelector('[data-behind-story="wdo-identity"]'),page+' WDO case omitted');
+  const newFieldSlugs=['objectors-eoi','replacement-strings'];
+  assert.equal(behind.querySelectorAll('[data-field-investigation-teaser]').length,2,page+' two new 2026 investigations not linked');
+  for(const slug of newFieldSlugs){
+    const teaser=behind.querySelector('[data-field-investigation-teaser="'+slug+'"]');
+    const link=teaser?.querySelector('a[data-field-investigation-slug="'+slug+'"]');
+    assert.equal(link?.getAttribute('href'),base+'behind-the-round/'+language+'/'+slug+'/',page+' untranslated investigation href: '+slug);
+  }
   const behindGuide=document.querySelector('a[data-behind-round-guide]');
   assert.equal(behindGuide?.getAttribute('href'),base+'behind-the-round/'+language+'/',page+' wrong field-note guide locale');
   const groupSeparator={en:',',it:'.',de:'.',fr:' '}[language];
@@ -115,6 +122,33 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.equal(articleSchema['@type'],'CollectionPage',page+' Field Notes index schema is a collection');
   assert.equal(standaloneDocument.querySelectorAll('.behindComparisonTable [data-region]').length,5,page+' regional comparison rows missing');
   assert.ok(standalone.includes('WDO2627T-T45217')&&standalone.includes('World Design Organization'),page+' case distinctions lost');
+  assert.equal(standaloneDocument.querySelectorAll('[data-field-investigation-teaser]').length,2,page+' collection missing two 2026 investigation teasers');
+  for(const [slug,sourceCount,sectionCount] of [['objectors-eoi',3,4],['replacement-strings',9,5]]){
+    const filename=path.join(root,'behind-the-round',language,slug,'index.html');
+    const text=fs.readFileSync(filename,'utf8');
+    const article=parseHTML(text).document;
+    const expectedTitle=translations[slug==='objectors-eoi'?'field03Title':'field04Title'];
+    assert.equal(article.documentElement.lang,language,page+' incorrect investigation locale: '+slug);
+    assert.equal(article.title,expectedTitle,page+' untranslated investigation title: '+slug);
+    assert.equal(article.querySelector('main h1')?.textContent.trim(),expectedTitle,page+' missing main heading: '+slug);
+    assert.equal(article.querySelector('link[rel="canonical"]')?.getAttribute('href'),base+'behind-the-round/'+language+'/'+slug+'/',page+' incorrect investigation canonical: '+slug);
+    assert.equal(article.querySelectorAll('link[rel="alternate"][hreflang]').length,5,page+' incomplete hreflang: '+slug);
+    assert.equal(article.querySelectorAll('[data-source-id]').length,sourceCount,page+' source audit incomplete: '+slug);
+    assert.equal(article.querySelectorAll('[data-referenced-sources]').length,sectionCount,page+' source-backed sections incomplete: '+slug);
+    assert.equal(article.querySelectorAll('[data-editorial-revision]').length,1,page+' dated revision missing: '+slug);
+    const jsonLD=JSON.parse(article.querySelector('script[type="application/ld+json"]').textContent);
+    assert.equal(jsonLD['@type'],'Article',page+' wrong structured investigation type');
+    assert.equal(jsonLD.citation.length,sourceCount,page+' unlinked article source: '+slug);
+    assert.equal(jsonLD.dateModified,'2026-10-10',page+' wrong investigation source review date');
+    assert.ok(text.includes('https://doi.org/10.5281/zenodo.23262623'),page+' missing independent archive attribution: '+slug);
+    assert.equal(article.querySelector('meta[name="description"]').getAttribute('content').length<=160,true,page+' lengthy investigation metadata: '+slug);
+    if(slug==='replacement-strings'){
+      assert.deepEqual([...article.querySelectorAll('[data-field-quantity] strong')].map(el=>el.textContent.trim()),
+        [translations.field04ValueTotal,translations.field04ValueActive,translations.field04ValueDeactivated],
+        page+' incorrect replacement counts');
+      assert.ok(article.body.textContent.includes(translations.field04Disclosure),page+' secondary-index applicant disclosure missing');
+    }
+  }
   const wdoText=fs.readFileSync(path.join(root,'behind-the-round',language,'wdo-identity','index.html'),'utf8');
   const wdoDocument=parseHTML(wdoText).document;
   assert.equal(wdoDocument.querySelector('link[rel="canonical"]').getAttribute('href'),base+'behind-the-round/'+language+'/wdo-identity/',page+' WDO canonical route');
@@ -265,9 +299,9 @@ for(const [input,target] of cases){
 }
 const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
 const locations=Array.from(sitemap.matchAll(/<loc>([^<]+)<\/loc>/g),m=>m[1]);
-const expectedLocations=[...languages.map(l=>base+l+'/'),base+'explorer/',base+'research/',base+'research/connecting-the-dots-working-paper-v1.html',...languages.map(l=>base+'inside-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/wdo-identity/'),...languages.map(l=>base+'behind-the-round/'+l+'/sanctions-and-dns/'),...languages.map(l=>base+'behind-the-round/'+l+'/who-controls-internet-access/')];
+const expectedLocations=[...languages.map(l=>base+l+'/'),base+'explorer/',base+'research/',base+'research/connecting-the-dots-working-paper-v1.html',...languages.map(l=>base+'inside-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/wdo-identity/'),...languages.map(l=>base+'behind-the-round/'+l+'/sanctions-and-dns/'),...languages.map(l=>base+'behind-the-round/'+l+'/who-controls-internet-access/'),...['objectors-eoi','replacement-strings'].flatMap(slug=>languages.map(l=>base+'behind-the-round/'+l+'/'+slug+'/'))];
 assert.deepEqual(locations,expectedLocations,'complete multilingual and research sitemap');
-assert.equal((sitemap.match(/xhtml:link/g)||[]).length,120,'all four-language articles and explainers have reciprocal hreflang');
+assert.equal((sitemap.match(/xhtml:link/g)||[]).length,160,'all four-language articles and explainers have reciprocal hreflang');
 assert.ok(!/\?lang=/.test(sitemap));
 const app=fs.readFileSync(path.join(root,'assets/app.js'),'utf8');
 assert.ok(!app.includes('updateSeoLanguage'));

@@ -655,8 +655,9 @@ must_index.update(site_base+'behind-the-round/'+lang+'/' for lang in LANGS)
 must_index.update(site_base+'behind-the-round/'+lang+'/wdo-identity/' for lang in LANGS)
 must_index.update(site_base+'behind-the-round/'+lang+'/sanctions-and-dns/' for lang in LANGS)
 must_index.update(site_base+'behind-the-round/'+lang+'/who-controls-internet-access/' for lang in LANGS)
+must_index.update(site_base+'behind-the-round/'+lang+'/'+slug+'/' for slug in ('objectors-eoi','replacement-strings') for lang in LANGS)
 if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index):
-    fail('Sitemap must preserve all 27 language/research/chronicle/field-note/explainer URLs')
+    fail('Sitemap must preserve all 35 language/research/chronicle/field-note/explainer URLs')
 for lang in LANGS:
     page=(ROOT/lang/'index.html').read_text(encoding='utf-8')
     chronicle_page=ROOT/'inside-the-round'/lang/'index.html'
@@ -792,6 +793,59 @@ if len(regions)!=5 or sum(x['officialApplications'] for x in regions)!=1615 or s
     fail('Regional reconciliation lost or altered')
 if {x['code'] for x in regions if x['officialApplications']!=x['visibleApplications']}!={'AP'}:
     fail('Incorrect claim that regional discrepancies extend beyond Asia-Pacific')
+
+
+# New independent Field Notes extend the collection with two standalone investigations;
+# they do not rewrite the original two case studies or the archived research release.
+investigations=json_file('field_investigations.json')
+if investigations.get('schemaVersion')!=1 or investigations.get('editorialLayer')!='2026-round-investigations-not-part-of-frozen-RR1':
+    fail('Unversioned or wrongly classified 2026 investigation register')
+if investigations.get('lastReviewed')!=publication_meta.get('releasedOn'):
+    fail('Investigation review date differs from website publication')
+cases=investigations.get('episodes',[])
+if [x.get('id') for x in cases]!=['objectors-eoi','replacement-strings']:
+    fail('Two distinct sourced 2026 investigations required')
+counts={q['id']:q['value'] for q in cases[1].get('quantities',[])}
+if counts!={'replacementTotal':1169,'replacementActive':442,'replacementDeactivated':727}:
+    fail('2026 replacement data has changed without source reconciliation')
+if counts['replacementActive']+counts['replacementDeactivated']!=counts['replacementTotal']:
+    fail('Replacement-string rows do not reconcile')
+for lang in LANGS:
+    index_html=(ROOT/lang/'index.html').read_text(encoding='utf-8')
+    notes_html=(ROOT/'behind-the-round'/lang/'index.html').read_text(encoding='utf-8')
+    if notes_html.count('data-field-investigation-teaser=')!=2 or index_html.count('data-field-investigation-teaser=')!=2:
+        fail('New 2026 investigations missing from the home/Field Notes collection: '+lang)
+    for case in cases:
+        slug=case['slug']
+        article_path=ROOT/'behind-the-round'/lang/slug/'index.html'
+        if not article_path.exists():
+            fail('Missing four-language source-backed investigation: '+lang+'/'+slug)
+        article=article_path.read_text(encoding='utf-8')
+        url=site_base+'behind-the-round/'+lang+'/'+slug+'/'
+        from html import escape as html_escape
+        if f'<html lang="{lang}">' not in article or f'<link rel="canonical" href="{url}">' not in article:
+            fail('Incorrect investigation metadata or canonical: '+lang+'/'+slug)
+        if f'<h1>{html_escape(translations[lang][case["titleKey"]])}</h1>' not in article:
+            fail('Untranslated 2026 investigation headline: '+lang+'/'+slug)
+        if article.count('data-source-id=')!=len(case['sources']) or article.count('data-referenced-sources=')!=len(case['sections']):
+            fail('Incomplete investigation citations: '+lang+'/'+slug)
+        if article.count('data-editorial-revision=')!=1 or article.count('<link rel="alternate" hreflang=')!=5:
+            fail('Missing dated revision or hreflang links: '+lang+'/'+slug)
+        if url not in index_html or url not in notes_html:
+            fail('2026 investigation entry point missing: '+lang+'/'+slug)
+        for record in case['sources']:
+            if record['url'] not in article or not translations[lang].get(record['labelKey']):
+                fail('Unlinked investigation evidence: '+lang+'/'+slug+'/'+record['id'])
+        for section in case['sections']:
+            if html_escape(translations[lang][section['bodyKey']]) not in article:
+                fail('Incomplete investigation text: '+lang+'/'+slug+'/'+section['bodyKey'])
+        if 'https://doi.org/10.5281/zenodo.23262623' not in article:
+            fail('Frozen RR1 independence attribution lost: '+lang+'/'+slug)
+        if slug=='replacement-strings':
+            for key in ['field04ValueTotal','field04ValueActive','field04ValueDeactivated','field04Disclosure']:
+                if html_escape(translations[lang][key]) not in article:
+                    fail('Replacement quantities or independent index disclaimer not rendered: '+lang)
+        check_internal_refs(article_path)
 
 # OFAC background is an independently indexable explainer, not a case finding or archived RR1.
 explainer=json_file('sanctions_explainer.json')

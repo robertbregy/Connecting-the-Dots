@@ -1,3 +1,12 @@
+# v0.7.74 — 2026-10-10
+
+- Published two new separately indexable, source-dated 2026 Field Notes: Independent Objector EOI email/portal incidents and secondary-index replacement-string/deactivation counts. Each article has primary/secondary source disclosure, evidentiary status, limitations and revision history in EN/IT/DE/FR.
+- Reconciled 2,783 CSV rows against 1,614 application records and 1,169 replacement rows; distinguished 442 secondary-index active alternatives, 727 marked deactivated and the 47 submitted-versus-paid applications without asserting unsupported rejections or causes.
+- Added contextual cross-links from the existing Field Notes collection and from the four-language main site, without extending the primary navigation or sacrificing the original two stories.
+- Added carefully delimited 2026 stories to Economics (concentration versus contention), Social (.meow Kickstarter), Disputes (.anime/.agent/.official) and How It Works (.bit / Namecoin versus the ICANN root); all with source links.
+- Added eight reciprocal-language Article routes, updated the sitemap to 35 indexable URLs and extended delivery, multilingual and release-integrity validation.
+- Continued to distinguish official ICANN snapshots, secondary indexes, and evolving editorial observations from the unchanged archived Research Release RR1 and DOI 10.5281/zenodo.23262623.
+
 # v0.7.73 — 2026-10-10
 
 - Clarified the Explorer 2026 inventory: 1,608 primary-string application records (980 distinct primary strings) plus six variant-only applications for existing TLDs. The 1,614 total comes from a secondary index and is not the complete official 1,615-application APS corpus.

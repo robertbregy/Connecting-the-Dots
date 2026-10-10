@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.73
+# Connecting the Dots — v0.7.74
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -6,7 +6,13 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.73 · 10 October 2026**
+**v0.7.74 · 10 October 2026**
+
+Two source-backed 2026 Field Notes now cover ICANN's documented Independent Objector EOI submission failures and replacement-string records, with individual unanswered questions rather than invented causal explanations. Both investigations have independently indexable pages in EN/IT/DE/FR, dated evidence, reciprocal hreflang and entries from the existing Field Notes collection; existing two stories, URLs and sources remain intact.
+
+The 2026 economic and social lenses now distinguish concentration from actual awards, document .meow's Kickstarter funding, explain the .anime/.agent/.official preliminary contention sets, and compare Namecoin .bit with the ICANN DNS root. No primary menu choices were added. The sitemap now includes **35 public URLs**. Frozen Research Release RR1 and its Zenodo DOI are unchanged.
+
+**Previous v0.7.73 · 10 October 2026**
 
 Editorial precision update to the 2026 Field Note: clarifies the Explorer's 1,608 primary-string applications plus six variant-only applications; distinguishes .wdo's absence from the public APS list from an exclusion from the ICANN process; and corrects number formatting in all four languages, including the regional table. The two numerical discrepancies retain their evidence states, and archived RR1 remains unchanged.
 

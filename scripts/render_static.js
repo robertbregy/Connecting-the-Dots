@@ -112,6 +112,11 @@ function render(language,alias=false){
   if(editorialGuide)editorialGuide.setAttribute('href',base+'inside-the-round/'+language+'/');
   const behindGuide=document.querySelector('a[data-behind-round-guide]');
   if(behindGuide)behindGuide.setAttribute('href',base+'behind-the-round/'+language+'/');
+  for(const link of document.querySelectorAll('a[data-field-investigation-slug]')) {
+    const slug=link.getAttribute('data-field-investigation-slug');
+    if(!['objectors-eoi','replacement-strings'].includes(slug))throw new Error('Unknown investigation route '+slug);
+    link.setAttribute('href',base+'behind-the-round/'+language+'/'+slug+'/');
+  }
   for(const link of document.querySelectorAll('a[data-governance-explainer-link]'))
     link.setAttribute('href',base+'behind-the-round/'+language+'/sanctions-and-dns/');
   for(const link of document.querySelectorAll('a[data-access-explainer-link]'))
