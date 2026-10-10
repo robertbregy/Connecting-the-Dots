@@ -632,8 +632,9 @@ site_base='https://robertbregy.github.io/Connecting-the-Dots/'
 must_index={site_base+x for x in ['en/','it/','de/','fr/','explorer/','research/','research/connecting-the-dots-working-paper-v1.html']}
 must_index.update(site_base+'inside-the-round/'+lang+'/' for lang in LANGS)
 must_index.update(site_base+'behind-the-round/'+lang+'/' for lang in LANGS)
+must_index.update(site_base+'behind-the-round/'+lang+'/wdo-identity/' for lang in LANGS)
 if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index):
-    fail('Sitemap must preserve all 15 language/research/chronicle/field-note URLs')
+    fail('Sitemap must preserve all 19 language/research/chronicle/field-note URLs')
 for lang in LANGS:
     page=(ROOT/lang/'index.html').read_text(encoding='utf-8')
     chronicle_page=ROOT/'inside-the-round'/lang/'index.html'
@@ -672,7 +673,7 @@ if fieldnotes.get('schemaVersion')!=1 or fieldnotes.get('editorialLayer')!='2026
 if fieldnotes.get('lastReviewed')!=publication_meta.get('releasedOn'):
     fail('Field-note review date differs from publication date')
 stories=fieldnotes.get('episodes',[])
-if len(stories)!=1 or stories[0]['id']!='reveal-day-counts':
+if len(stories)!=2 or [x['id'] for x in stories]!=['reveal-day-counts','wdo-identity']:
     fail('Reveal Day field-note case missing or duplicated')
 case=stories[0]
 if case['state']!='partly-explained' or {q['id']:q['status'] for q in case['discrepancies']}!={'paid-to-reveal':'unresolved','aggregate-to-visible':'documented-exclusion'}:
@@ -681,9 +682,9 @@ if {q['id']:q['value'] for q in case['quantities']}!={'paid':1616,'official':161
     fail('Reveal Day discrepancy values altered without reviewed evidence')
 if case['trackedApplication']['id']!='WDO2627T-T45217' or case['trackedApplication']['string']!='.wdo':
     fail('Officially documented administrative-check record changed')
-if not case.get('revisionHistory') or case['revisionHistory'][-1]['date']!=case['revisedOn'] or case['revisionHistory'][-1]['changeKey']!='behindRevisionInitial':
+if not case.get('revisionHistory') or case['revisionHistory'][-1]['date']!=case['revisedOn'] or case['revisionHistory'][-1]['changeKey']!='behindRevisionReconciled':
     fail('Unversioned field-note revision history')
-if len(case['sources'])<6 or not any(s['kind']=='secondary' for s in case['sources']):
+if len(case['sources'])!=11 or not any(s['kind']=='secondary' for s in case['sources']):
     fail('Editorial case lacks provenance distinction')
 if not all(s['url'].startswith('https://') and s['labelKey'] for s in case['sources']):
     fail('Incomplete case evidence')
@@ -694,9 +695,9 @@ for lang in LANGS:
     route=ROOT/'behind-the-round'/lang/'index.html'
     if not route.exists(): fail('Missing Behind the Round standalone '+lang)
     standalone=route.read_text(encoding='utf-8')
-    if page.count('data-behind-story="reveal-day-counts"')!=1 or standalone.count('data-behind-story="reveal-day-counts"')!=1:
+    if page.count('data-behind-story="reveal-day-counts"')!=1 or standalone.count('data-behind-story="reveal-day-counts"')!=1 or page.count('data-behind-story="wdo-identity"')!=1 or standalone.count('data-behind-story="wdo-identity"')!=1:
         fail('The field-note story is not fully visible in '+lang)
-    if page.count('data-source-id=')!=len(case['sources']) or standalone.count('data-source-id=')!=len(case['sources']):
+    if page.count('data-source-id=')!=sum(len(entry['sources']) for entry in stories) or standalone.count('data-source-id=')!=sum(len(entry['sources']) for entry in stories):
         fail('Missing direct case evidence links in '+lang)
     if site_base+'behind-the-round/'+lang+'/' not in page:
         fail('Localized Behind the Round guide link missing in '+lang)
@@ -717,9 +718,50 @@ for lang in LANGS:
         if val not in standalone: fail('Missing dated count or WDO application identifier '+lang)
     if '24 hours before' in standalone or '24 ore prima' in standalone:
         fail('Private application-planning details must not be published')
-    if standalone.count('data-editorial-revision=') != len(case['revisionHistory']):
+    if standalone.count('data-editorial-revision=') != sum(len(entry['revisionHistory']) for entry in stories):
         fail('No visible dated editorial change history '+lang)
+    if 'data-region="AP" data-gap="1"' not in standalone or standalone.count('data-region=')!=5:
+        fail('Regional comparison not fully published: '+lang)
+    for new_key in ['behindRegionalConclusion','behindIndependentBody','behindCoverageBody','wdoUnknownBody','wdoTrademarkBody','wdoComplianceBody']:
+        from html import escape as html_escape
+        if html_escape(translations[lang][new_key]) not in standalone:
+            fail('Independently sourced review missing in '+lang+'/'+new_key)
+    second=stories[1]
+    detail=ROOT/'behind-the-round'/lang/'wdo-identity'/'index.html'
+    if not detail.exists(): fail('Missing second field note as standalone article: '+lang)
+    detail_html=detail.read_text(encoding='utf-8')
+    if f'<link rel="canonical" href="{site_base}behind-the-round/{lang}/wdo-identity/">' not in detail_html:
+        fail('Second article canonical missing: '+lang)
+    if f'<title>{html_escape(translations[lang]["wdoMetaTitle"])}</title>' not in detail_html:
+        fail('Wrong WDO SEO title: '+lang)
+    if 'data-behind-story="wdo-identity"' not in detail_html or 'data-behind-story="reveal-day-counts"' in detail_html:
+        fail('Standalone second case mixes unrelated articles: '+lang)
+    if detail_html.count('data-source-id=')!=len(second['sources']) or detail_html.count('<link rel="alternate" hreflang=')!=5:
+        fail('Second article loses evidence or hreflang: '+lang)
+    for source in second['sources']:
+        if source['url'] not in detail_html or source['url'] not in standalone or source['url'] not in page:
+            fail('Unlinked second field-note primary evidence: '+lang+'/'+source['id'])
+    if 'World Data Organization' not in detail_html or 'World Design Organization' not in detail_html:
+        fail('Unverifiable or incomplete WDO identities: '+lang)
+    for speculative in ['due to sanctions','blocked by the trademark','wegen Sanktionen zurückgestellt','bloquée par les sanctions','bloccata dalle sanzioni']:
+        if speculative in detail_html:
+            fail('Unproven causal claim: '+lang)
+    check_internal_refs(detail)
     check_internal_refs(route)
+
+# The second observation documents identities, not a confirmed legal dispute or cause of the ICANN check.
+second=stories[1]
+if second.get('kind')!='identity' or second.get('number')!=2 or second.get('state')!='documented-with-open-questions':
+    fail('WDO case identity or evidentiary classification drift')
+if len(second.get('sources',[]))!=7 or not all(x['kind']=='primary' for x in second['sources']):
+    fail('WDO case should cite seven institutional primary sources')
+if {x['id'] for x in second['sources']}!={'wdo-aps','wdo-cas','design-about','design-trademark','icann-guidebook','icann-period','ofac-july'}:
+    fail('WDO case lacks an essential checked primary record')
+regions=case.get('regionalComparison',[])
+if len(regions)!=5 or sum(x['officialApplications'] for x in regions)!=1615 or sum(x['visibleApplications'] for x in regions)!=1614:
+    fail('Regional reconciliation lost or altered')
+if {x['code'] for x in regions if x['officialApplications']!=x['visibleApplications']}!={'AP'}:
+    fail('Incorrect claim that regional discrepancies extend beyond Asia-Pacific')
 
 # Working-paper revisions may evolve, but the dated RR1 evidence and citation do not.
 working_md=(ROOT/'research'/'connecting-the-dots-working-paper-v1.md').read_text(encoding='utf-8')
