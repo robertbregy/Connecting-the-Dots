@@ -47,6 +47,6 @@ const sections=[...fs.readFileSync('src/index.web.html','utf8').matchAll(/<secti
  }
  for(const r of Object.values(unique))console.log('AUDIT_AXE_SUMMARY '+JSON.stringify(r));
  console.log('AUDIT_AXE_RESULT '+JSON.stringify({summary:summary,uniqueRules:[...new Set(rows.map(r=>r.id))],totalViolations:rows.length,groups:Object.values(unique).length}));
- if(summary.scans!==sections.length*languages.length*2){console.error('AUDIT_AXE_INCOMPLETE expected='+sections.length*languages.length*2+' actual='+summary.scans);process.exitCode=1;}
+ if(summary.scans!==sections.length*language.length*2){console.error('AUDIT_AXE_INCOMPLETE expected='+sections.length*language.length*2+' actual='+summary.scans);process.exitCode=1;}
  if(rows.length){console.error('AUDIT_AXE_VIOLATIONS '+rows.length+' section-level WCAG violations');process.exitCode=1;}
 })().catch(e=>{console.log('AUDIT_AXE_FATAL '+e.stack);process.exitCode=1});

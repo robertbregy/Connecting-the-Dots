@@ -508,3 +508,10 @@ html[data-theme="dark"] .derivedBadge{color:#f2c46d}html[data-theme="light"] .de
 .guideReadingLinks{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start}
 .guideReadingLinks .sourceChip{max-width:100%;height:auto;white-space:normal;overflow-wrap:anywhere;padding:10px 12px;line-height:1.5}
 .accessReadingLink .sub strong{color:var(--text)}
+
+/* Contrast remediation verified against Chromium/axe 160-section audit.
+   Semantic accent text requires AA contrast on light surfaces; muted numbering
+   and source links must not be rendered partially transparent. */
+:root:not([data-theme="dark"]){--accent:#0063c7}
+.economicModelNo,.socialModelNo{opacity:1;color:var(--muted)}
+.metricSource{opacity:1}
