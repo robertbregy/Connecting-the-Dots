@@ -633,8 +633,9 @@ must_index={site_base+x for x in ['en/','it/','de/','fr/','explorer/','research/
 must_index.update(site_base+'inside-the-round/'+lang+'/' for lang in LANGS)
 must_index.update(site_base+'behind-the-round/'+lang+'/' for lang in LANGS)
 must_index.update(site_base+'behind-the-round/'+lang+'/wdo-identity/' for lang in LANGS)
+must_index.update(site_base+'behind-the-round/'+lang+'/sanctions-and-dns/' for lang in LANGS)
 if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index):
-    fail('Sitemap must preserve all 19 language/research/chronicle/field-note URLs')
+    fail('Sitemap must preserve all 23 language/research/chronicle/field-note/explainer URLs')
 for lang in LANGS:
     page=(ROOT/lang/'index.html').read_text(encoding='utf-8')
     chronicle_page=ROOT/'inside-the-round'/lang/'index.html'
@@ -764,6 +765,51 @@ if len(regions)!=5 or sum(x['officialApplications'] for x in regions)!=1615 or s
     fail('Regional reconciliation lost or altered')
 if {x['code'] for x in regions if x['officialApplications']!=x['visibleApplications']}!={'AP'}:
     fail('Incorrect claim that regional discrepancies extend beyond Asia-Pacific')
+
+# OFAC background is an independently indexable explainer, not a case finding or archived RR1.
+explainer=json_file('sanctions_explainer.json')
+if explainer.get('editorialLayer')!='governance-explainer-not-part-of-frozen-RR1' or explainer.get('classification')!='explainer':
+    fail('Sanctions narrative conflated with dated cases or archived RR1')
+if explainer.get('reviewedOn')!=publication_meta.get('releasedOn') or explainer.get('publishedOn')!='2026-10-10':
+    fail('Unversioned sanctions explainer review')
+if len(explainer.get('sources',[]))!=12 or len(explainer.get('sections',[]))!=7 or len(explainer.get('precedents',[]))!=4:
+    fail('Incomplete sanctions explainer data or sources')
+for lang in LANGS:
+    url=site_base+'behind-the-round/'+lang+'/sanctions-and-dns/'
+    path=ROOT/'behind-the-round'/lang/'sanctions-and-dns'/'index.html'
+    if not path.exists(): fail('Missing localized sanctions explainer: '+lang)
+    html=path.read_text(encoding='utf-8')
+    tx=explainer['languages'][lang]
+    from html import escape as html_escape
+    if f'<html lang="{lang}">' not in html or f'<link rel="canonical" href="{url}">' not in html:
+        fail('Sanctions explainer canonical/locale mismatch: '+lang)
+    if f'<title>{html_escape(tx["metaTitle"])}</title>' not in html:
+        fail('Sanctions explainer metadata untranslated: '+lang)
+    if html.count('<link rel="alternate" hreflang=')!=5 or 'https://doi.org/10.5281/zenodo.23262623' not in html:
+        fail('Sanctions explainer hreflang or archived-source attribution missing: '+lang)
+    if html.count('data-explainer-section=')!=7 or html.count('data-explainer-precedent=')!=4:
+        fail('Sanctions explainer incomplete topics or chronology: '+lang)
+    if html.count('id="governance-source-')!=12:
+        fail('Sanctions explainer missing primary source list: '+lang)
+    for source in explainer['sources']:
+        if source['url'] not in html:
+            fail('Unlinked sanctions explainer reference: '+lang+'/'+source['id'])
+    for item in explainer['sections']:
+        if html_escape(tx['sections'][item['id']]['body']) not in html:
+            fail('Untranslated sanctions explainer evidence: '+lang+'/'+item['id'])
+    for item in explainer['precedents']:
+        if html_escape(tx['precedents'][item['id']]['body']) not in html:
+            fail('Untranslated sanctions precedent: '+lang+'/'+item['id'])
+    for path2 in (ROOT/lang/'index.html', ROOT/'behind-the-round'/lang/'index.html', ROOT/'behind-the-round'/lang/'wdo-identity'/'index.html'):
+        html2=path2.read_text(encoding='utf-8')
+        if url not in html2:
+            fail('Missing sanctions explainer crosslink: '+str(path2.relative_to(ROOT)))
+    index_html=(ROOT/lang/'index.html').read_text(encoding='utf-8')
+    if index_html.count('data-governance-explainer-link')!=2:
+        fail('Explainer must appear alongside both 2026 main-site Field Notes: '+lang)
+    if html.count('data-behind-story=') or html.count('data-event-id='):
+        fail('Governance explainer is not a dated field observation')
+    check_internal_refs(path)
 
 # Working-paper revisions may evolve, but the dated RR1 evidence and citation do not.
 working_md=(ROOT/'research'/'connecting-the-dots-working-paper-v1.md').read_text(encoding='utf-8')
