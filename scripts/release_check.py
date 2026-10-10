@@ -826,8 +826,8 @@ for lang in LANGS:
         if url not in html2:
             fail('Missing sanctions explainer crosslink: '+str(path2.relative_to(ROOT)))
     index_html=(ROOT/lang/'index.html').read_text(encoding='utf-8')
-    if index_html.count('data-governance-explainer-link')!=2:
-        fail('Explainer must appear alongside both 2026 main-site Field Notes: '+lang)
+    if index_html.count('data-governance-explainer-link')!=3:
+        fail('Sanctions explainer must be linked from both 2026 Field Notes and the general How It Works guide: '+lang)
     if html.count('data-behind-story=') or html.count('data-event-id='):
         fail('Governance explainer is not a dated field observation')
     check_internal_refs(path)
