@@ -3,6 +3,7 @@ name: RR2 scientific release preflight (unpublished)
 on:
   push:
     branches:
+      - main
       - 'feat/rr2-scientific-release-preflight'
       - 'research/**'
     paths:
@@ -11,6 +12,14 @@ on:
       - 'research/rr2_candidate.json'
       - 'data/research.json'
       - 'data/application_2026_snapshot.json'
+      - 'data/applications_2026*'
+      - 'data/application_*'
+      - 'data/round_2026.csv'
+      - 'data/rounds_summary.csv'
+      - 'data/tld_*.csv'
+      - 'data/sector_*.csv'
+      - 'data/explorer_*.csv'
+      - 'data/iana_snapshot.json'
   workflow_dispatch:
     inputs:
       zenodo_rr2_record_id:
