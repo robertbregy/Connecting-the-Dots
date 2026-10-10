@@ -1,0 +1,105 @@
+name: Verify RR2 deposit in original Zenodo version series
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/verify-zenodo-rr2.yml
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ctd-rr2-zenodo-version-check
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Independently verify Zenodo RR2 and RR1 concept continuity
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Query public Zenodo concept series, without assuming publication
+        id: probe
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          from urllib.parse import urlencode
+          from urllib.request import Request, urlopen
+          result = {"status": "CHECK_UNAVAILABLE", "expectedConceptDoi": "10.5281/zenodo.23262622",
+                    "expectedConceptRecord": "23262622", "originalRR1Doi": "10.5281/zenodo.23262623",
+                    "rr2Doi": None, "rr2Id": None, "githubRR2Published": True}
+          query = urlencode({"q":"conceptrecid:23262622","all_versions":"true","size":"25","sort":"mostrecent"})
+          url = "https://zenodo.org/api/records?" + query
+          try:
+              request = Request(url, headers={"Accept":"application/json",
+                                              "User-Agent":"Connecting-the-Dots-RR2-Verification/1"})
+              with urlopen(request, timeout=25) as response:
+                  records = json.load(response)["hits"]["hits"]
+              same_series = [r for r in records if str(r.get("conceptrecid")) == "23262622"
+                             and r.get("conceptdoi") == "10.5281/zenodo.23262622"]
+              result["observedVersions"] = [{
+                  "recordId": r.get("id"), "version": r.get("metadata", {}).get("version"),
+                  "doi": r.get("doi")} for r in same_series]
+              rr1 = [r for r in same_series if r.get("doi") == "10.5281/zenodo.23262623"]
+              if not rr1:
+                  raise ValueError("Original published RR1 not returned by version-series query")
+              candidates = [r for r in same_series if r.get("metadata", {}).get("version") == "RR2"]
+              if not candidates:
+                  result["status"] = "RR2_NOT_YET_ARCHIVED_IN_RR1_SERIES"
+              elif len(candidates) != 1:
+                  raise ValueError("Ambiguous RR2 records in the original concept series")
+              else:
+                  rr2 = candidates[0]
+                  related = json.dumps(rr2.get("metadata",{}).get("related_identifiers",[]))
+                  filenames = [f.get("key","") for f in rr2.get("files",[])]
+                  if not ("Connecting-the-Dots/tree/RR2" in related
+                          or any("Connecting-the-Dots-RR2" in f for f in filenames)):
+                      raise ValueError("New Zenodo RR2 record has no evidence of its GitHub RR2 origin")
+                  if not rr2.get("doi") or rr2["doi"] == result["originalRR1Doi"]:
+                      raise ValueError("RR2 has no unique version DOI")
+                  result.update({"status":"ZENODO_RR2_VERSION_VERIFIED",
+                                 "rr2Doi":rr2["doi"], "rr2Id":rr2["id"],
+                                 "zenodoFiles":filenames})
+          except Exception as e:
+              if result["status"]=="CHECK_UNAVAILABLE":
+                  result["error"] = str(e)
+              else:
+                  result["status"] = "ZENODO_RECORD_AMBIGUOUS"
+                  result["error"] = str(e)
+          path = Path("rr2-zenodo-check.json")
+          path.write_text(json.dumps(result,indent=2,ensure_ascii=False)+"\n")
+          print("RR2 ZENODO INTEGRATION CHECK:",json.dumps(result,ensure_ascii=False))
+          outputs=os.environ.get("GITHUB_OUTPUT")
+          if outputs:
+              with open(outputs,"a") as stream:
+                  stream.write("verified="+str(result["status"]=="ZENODO_RR2_VERSION_VERIFIED").lower()+"\n")
+                  stream.write("rr2id="+str(result["rr2Id"] or "")+"\n")
+          with open(os.environ.get("GITHUB_STEP_SUMMARY","/dev/null"),"a") as stream:
+              stream.write("## RR2 DOI chain verification\n\n**"+result["status"]+"**\n\n")
+              stream.write("RR1 concept DOI: \`10.5281/zenodo.23262622\`\n\n")
+              stream.write("RR2 version DOI: \`"+str(result["rr2Doi"] or "not assigned / not found")+"\`\n")
+          PY
+      - name: Verify exact RR1–RR2 series with independent research-release checker
+        if: ${{ steps.probe.outputs.verified == 'true' }}
+        env:
+          RR2_RECORD_ID: ${{ steps.probe.outputs.rr2id }}
+        run: python3 scripts/scientific_release.py verify-zenodo --new-record-id "$RR2_RECORD_ID" --out-dir dist/research/RR2
+      - name: Save source-backed public evidence of DOI status
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rr2-zenodo-status-${{ github.sha }}
+          path: |
+            rr2-zenodo-check.json
+            dist/research/RR2/RR2-zenodo-version-verification.json
+          if-no-files-found: warn
+          retention-days: 90
