@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<title>Qui contrôle l&#x27;accès à Internet ? | Connecting the Dots</title><meta name="description" content="Simulation des filtres DNS, blocages de domaine et coupures d&#x27;Internet, avec exemples documentés et sources vérifiables.">
+<link rel="canonical" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/who-controls-internet-access/"><link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/">
+<link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/who-controls-internet-access/">
+<link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/who-controls-internet-access/">
+<link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/who-controls-internet-access/">
+<link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/">
+<link rel="icon" href="https://robertbregy.github.io/Connecting-the-Dots/assets/logo-mark.png" type="image/png">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Connecting the Dots">
+<meta property="og:title" content="Qui contrôle l&#x27;accès à Internet ? | Connecting the Dots">
+<meta property="og:description" content="Simulation des filtres DNS, blocages de domaine et coupures d&#x27;Internet, avec exemples documentés et sources vérifiables.">
+<meta property="og:url" content="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/who-controls-internet-access/"><meta property="og:image" content="https://robertbregy.github.io/Connecting-the-Dots/assets/og-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Qui contrôle l'accès à Internet ?","description":"Simulation des filtres DNS, blocages de domaine et coupures d'Internet, avec exemples documentés et sources vérifiables.","inLanguage":"fr","datePublished":"2026-10-10","dateModified":"2026-10-10","mainEntityOfPage":"https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/who-controls-internet-access/","isAccessibleForFree":true,"image":"https://robertbregy.github.io/Connecting-the-Dots/assets/og-preview.png","author":{"@type":"Person","name":"Robert Bregy"},"isPartOf":{"@type":"WebSite","name":"Connecting the Dots","url":"https://robertbregy.github.io/Connecting-the-Dots/"},"citation":["https://ooni.org/support/interpreting-ooni-data/","https://www.internetsociety.org/resources/policybriefs/2025/internet-shutdowns/","https://pulse.internetsociety.org/en/pulse-shutdown-tracker-methodology/","https://itp.cdn.icann.org/en/files/correspondence/marby-to-fedorov-02mar22-en.pdf","https://ooni.org/post/2023-china-blocks-ooni/","https://ooni.org/post/2024-russia-report/","https://explorer.ooni.org/findings/2025-iran-blocked-whatsapp-amid-war-with-israel","https://www.gespa.ch/it/lotta-alle-attivita-illegali/blocco-dellaccesso","https://ooni.org/post/internet-censorship-catalonia-independence-referendum","https://explorer.ooni.org/","https://pulse.internetsociety.org/en/shutdowns/"],"about":[{"@type":"Thing","name":"DNS filtering"},{"@type":"Thing","name":"Internet shutdown"},{"@type":"Thing","name":"ICANN and TLD governance"}]}</script>
+<style>
+:root{--background:#f6f7fa;--surface:#fff;--surface2:#f1f3f7;--text:#16243c;--muted:#43536c;--border:#ced9e5;--accent:#1568ab;--accent-soft:#e9f3fc;--accent-text:#165d91;color-scheme:light;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--background);color:var(--text);line-height:1.67}
+a{color:#195f99;text-underline-offset:3px}a:focus-visible{outline:3px solid #2e78ac;outline-offset:3px}
+header{background:#122c4a;color:#fff}header a{color:#fff}
+nav,main,footer{max-width:970px;margin:auto;padding:20px 24px}
+nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+nav .brand{text-decoration:none;font-weight:800}nav .lang-links{display:flex;flex-wrap:wrap;gap:13px;font-size:.88rem}
+main{padding-top:42px;padding-bottom:60px}h1{font-size:clamp(2.1rem,5vw,3.65rem);line-height:1.12;letter-spacing:-.04em;margin:8px 0 18px}
+h2{font-size:1.45rem;line-height:1.25}p{margin:0 0 14px}.eyebrow{font-weight:800;color:#276b99;letter-spacing:.12em;text-transform:uppercase;font-size:.79rem}
+.lead{color:var(--muted);font-size:1.15rem;max-width:780px}
+.actions{display:flex;flex-wrap:wrap;gap:13px;margin:22px 0 32px}
+.action{display:inline-block;text-decoration:none;border-radius:9px;padding:10px 15px;font-weight:750;background:#195e93;color:#fff}
+.action.secondary{color:#195e93;background:#fff;border:1px solid #9cb6ce}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:15px;padding:25px;margin:18px 0}
+.insideRoundLenses{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0}
+.insideRoundLens{border-radius:12px;padding:16px;border:1px solid var(--border);background:var(--surface2)}
+.insideRoundLens h3{font-size:1.03rem;margin:0 0 7px}.insideRoundLens p{color:var(--muted);font-size:.9rem}
+.insideRoundTimeline{padding:0 0 0 22px;border-left:1px solid var(--border);list-style:none;margin:25px 0 0}
+.insideRoundEntry{position:relative;border:1px solid var(--border);border-radius:13px;background:var(--surface);padding:20px;margin:0 0 18px}
+.insideRoundEntry:before{content:"";position:absolute;width:10px;height:10px;left:-29px;top:26px;background:var(--accent);border:3px solid var(--surface);border-radius:50%;box-shadow:0 0 0 1px var(--border)}
+.insideRoundMeta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-bottom:11px}
+.insideRoundDate{font-weight:750;font-variant-numeric:tabular-nums;font-size:.85rem}
+.insideRoundState,.insideRoundScope{display:inline-block;background:var(--surface2);color:var(--text);border-radius:99px;border:1px solid var(--border);font-size:.72rem;padding:4px 9px;font-weight:750}
+.insideRoundEntry[data-round-state="current"]{border-color:var(--accent)}
+.insideRoundEntry[data-round-state="current"] .insideRoundState{color:var(--accent-text);background:var(--accent-soft);border-color:var(--accent)}
+.insideRoundEntry[data-round-state="scheduled"],.insideRoundEntry[data-round-state="evolving"],.insideRoundEntry[data-round-state="conditional"]{border-style:dashed}
+.insideRoundEntry h3{font-size:1.2rem;margin:0 0 8px}
+.insideRoundEntry p{font-size:.98rem;color:var(--muted)}
+.insideRoundEntry a{font-size:.83rem;overflow-wrap:anywhere}
+.insideRoundSources{display:flex;flex-wrap:wrap;column-gap:14px;row-gap:6px;margin-top:9px}
+.muted{color:var(--muted);font-size:.94rem}
+footer{border-top:1px solid var(--border);color:var(--muted);font-size:.9rem;padding-bottom:36px}
+@media(max-width:760px){.insideRoundLenses{grid-template-columns:1fr}.panel{padding:18px}.insideRoundEntry{padding:15px}}
+
+
+.accessIntro{padding:20px 24px;border-left:4px solid var(--accent);background:var(--surface2);border-radius:0 13px 13px 0;margin:22px 0 27px}
+.accessIntro h2{font-size:1.13rem;margin:0 0 7px}.accessIntro p{margin:0;color:var(--muted)}
+.accessSimulator{border:1px solid var(--border);border-radius:18px;background:var(--surface);padding:27px;margin:22px 0 35px}
+.accessSimulator h2,.accessActorSection h2,.accessCaseSection h2{font-size:clamp(1.4rem,3.5vw,1.85rem);letter-spacing:-.018em;margin:0 0 9px}
+.accessSimulator .intro,.accessCaseSection .intro,.accessActorSection .intro{max-width:82ch;color:var(--muted);margin-bottom:19px}
+.accessSample{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:var(--surface2);border-radius:9px;padding:12px 15px}
+.accessSample span{color:var(--muted);font-size:.84rem}.accessSample code{font-size:1rem;overflow-wrap:anywhere}
+.accessChoices{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 25px}
+.accessChoices button{font:inherit;font-size:.86rem;min-height:42px;max-width:100%;border-radius:10px;cursor:pointer;border:1px solid #97afc9;background:var(--surface);color:var(--text);padding:9px 12px;text-align:center;transition:background .12s}
+.accessChoices button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:750}
+.accessChoices button:hover{box-shadow:0 0 0 1px var(--accent)}
+.accessChoices button:focus-visible{outline:3px solid #327bb1;outline-offset:2px}
+.accessStages{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.accessStages li{border:1px solid var(--border);border-radius:11px;padding:13px;min-width:0;background:var(--surface2);transition:background .15s}
+.accessStages li h3{font-size:.93rem;line-height:1.25;margin:7px 0}
+.accessStages li p{color:var(--muted);font-size:.79rem;line-height:1.48;margin:0}
+.accessStages li .state{font-size:.75rem;font-weight:780}
+.accessStages li[data-state="passed"]{border-color:#82b8a0;background:#e9f8f1;color:#185e45}
+.accessStages li[data-state="blocked"]{border-color:#b99a5d;background:#fff2d8;color:#76520d}
+.accessStages li[data-state="pending"]{border-color:var(--border);background:var(--surface2);opacity:.67}
+.accessScenarios{margin-top:20px}
+.accessScenario{border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+.accessScenario[data-outcome="blocked"]{border-left:4px solid #af8240}
+.accessScenario[data-outcome="open"]{border-left:4px solid #448a6b}
+.accessScenario[hidden]{display:none!important}
+.accessScenario h3{margin:6px 0 7px;font-size:1.15rem}
+.accessScenario p{color:var(--muted);margin:0 0 12px;line-height:1.65}
+.accessOutcome{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.accessImpacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.accessImpacts>div{border-radius:10px;padding:10px 12px;background:var(--surface2)}
+.accessImpacts strong{font-size:.81rem;display:block;line-height:1.3;margin-bottom:5px}
+.accessImpacts span{font-size:.84rem;line-height:1.45}
+.accessLive{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.accessCaveat{font-size:.83rem;color:var(--muted);margin:13px 0 0}
+.accessActors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}
+.accessActors article{background:var(--surface);padding:18px;border:1px solid var(--border);border-radius:13px}
+.accessActors h3{font-size:1.08rem;margin:0 0 8px}
+.accessActors p{color:var(--muted);font-size:.91rem;margin:0}
+.accessCases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:20px 0 33px}
+.accessCases article{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;min-width:0}
+.accessCases h3{font-size:1.09rem;margin:10px 0}
+.accessCases p{line-height:1.6;font-size:.92rem;color:var(--muted);margin:0}
+.accessCasePeriod{font-weight:820;color:var(--accent-text);font-size:.83rem}
+.accessEvidenceNote{margin-top:10px!important;font-weight:660}
+.accessSources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;list-style:none;padding:0}
+.accessSources li{min-width:0}
+.accessSources a{display:block;padding:12px 13px;border-radius:10px;border:1px solid var(--border);text-decoration:none;overflow-wrap:anywhere;font-size:.88rem;line-height:1.42}
+.accessSources a:hover,.accessSources a:focus-visible{text-decoration:underline;background:var(--surface2)}
+.accessRefs{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.accessRefs a{text-decoration:none;color:var(--accent-text);border:1px solid #9ebbd0;border-radius:6px;background:#eaf3fc;padding:2px 7px;font-size:.77rem;font-weight:750}
+.accessRefs a:hover,.accessRefs a:focus-visible{text-decoration:underline}
+.accessPanel{padding:22px!important}
+.accessPanel h2{margin:0 0 10px}
+.accessPanel p{max-width:85ch}
+.accessRelated{display:flex;flex-wrap:wrap;gap:11px;margin-top:14px}
+.accessRelated a{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid var(--border);text-decoration:none;font-weight:730}
+.accessRelated a:hover{text-decoration:underline;background:var(--surface2)}
+.accessDate{color:var(--muted);font-size:.83rem;margin:22px 0}
+@media(max-width:860px){.accessStages{grid-template-columns:repeat(2,minmax(0,1fr))}.accessImpacts{grid-template-columns:1fr}}
+@media(max-width:600px){.accessSimulator{padding:16px}.accessStages,.accessActors,.accessCases,.accessSources{grid-template-columns:1fr}.accessStages li{padding:13px}.accessChoices button{flex:1 1 calc(50% - 8px)}.accessPanel{padding:16px!important}.accessCaseSection,.accessActorSection{margin-top:26px}}
+</style></head><body>
+<header><nav aria-label="Languages"><a class="brand" href="https://robertbregy.github.io/Connecting-the-Dots/fr/">Connecting the Dots</a>
+<div class="lang-links"><a lang="en" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/">English</a> <a lang="it" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/who-controls-internet-access/">Italiano</a> <a lang="de" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/who-controls-internet-access/">Deutsch</a> <a lang="fr" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/who-controls-internet-access/" aria-current="page">Français</a></div></nav></header>
+<main class="accessArticle">
+<div class="eyebrow">Architecture d&#x27;Internet · Éclairage</div><h1>Qui contrôle l&#x27;accès à Internet ?</h1><p class="lead">Un site peut exister dans le DNS mondial tout en étant inaccessible depuis un pays ou un réseau. Suivons une requête pour comprendre les points de contrôle, sans confondre le rôle de l&#x27;ICANN avec la censure locale.</p>
+<div class="accessIntro"><h2>La distinction essentielle</h2><p>Noms DNS, TLD, contrats de registre, filtres de réseau nationaux et décisions éditoriales des plateformes relèvent d&#x27;étages différents. Ils peuvent affecter le même site, mais pas de la même manière.</p></div>
+<section class="accessSimulator" id="accessSimulator" aria-labelledby="accessSimulatorTitle"
+  data-pass-label="franchi"
+  data-block-label="interrompu"
+  data-pending-label="non atteint">
+<h2 id="accessSimulatorTitle">Tester les scénarios de blocage</h2><p class="intro">Choisissez une intervention fictive. Le schéma montre où la requête s&#x27;interrompt et si le nom peut encore exister hors du réseau affecté. Ce n&#x27;est pas un test de connexion réel.</p>
+<div class="accessSample"><span>Adresse d&#x27;exemple</span><code>https://www.example.com/</code></div>
+<h3 style="font-size:1rem;margin:20px 0 8px">Choisir un scénario</h3>
+<div class="accessChoices" role="group" aria-label="Choisir un scénario"><button type="button" data-access-select="normal" data-block-stage="-1" aria-controls="accessPanels" aria-pressed="true">Aucune restriction</button>
+<button type="button" data-access-select="resolver" data-block-stage="1" aria-controls="accessPanels" aria-pressed="false">Filtrage DNS</button>
+<button type="button" data-access-select="ip" data-block-stage="2" aria-controls="accessPanels" aria-pressed="false">Blocage IP</button>
+<button type="button" data-access-select="tls" data-block-stage="3" aria-controls="accessPanels" aria-pressed="false">Filtrage TLS / DPI</button>
+<button type="button" data-access-select="service" data-block-stage="4" aria-controls="accessPanels" aria-pressed="false">Hébergement ou plateforme</button>
+<button type="button" data-access-select="registration" data-block-stage="0" aria-controls="accessPanels" aria-pressed="false">Suspension d&#x27;un domaine</button>
+<button type="button" data-access-select="shutdown" data-block-stage="2" aria-controls="accessPanels" aria-pressed="false">Coupure d&#x27;Internet</button></div>
+<h3 style="font-size:1rem;margin:0 0 10px">Schéma : du nom de domaine à la réponse du site</h3>
+<ol class="accessStages"><li data-access-stage="registry" data-state="passed"><span class="state" data-access-state-label>franchi</span><h3>TLD, registre et enregistrement</h3><p>Le nom est-il enregistré et délégué ? Une condition préalable, pas un filtre de paquets.</p></li>
+<li data-access-stage="dns" data-state="passed"><span class="state" data-access-state-label>franchi</span><h3>Résolveur DNS</h3><p>Le résolveur de l&#x27;utilisateur traduit-il le nom en adresse IP utilisable ?</p></li>
+<li data-access-stage="network" data-state="passed"><span class="state" data-access-state-label>franchi</span><h3>Fournisseur d&#x27;accès, routage et IP</h3><p>Les paquets peuvent-ils atteindre le serveur depuis ce réseau ?</p></li>
+<li data-access-stage="tls" data-state="passed"><span class="state" data-access-state-label>franchi</span><h3>Connexion TLS et analyse du trafic</h3><p>La connexion chiffrée s&#x27;établit-elle ? Certaines métadonnées restent parfois visibles.</p></li>
+<li data-access-stage="service" data-state="passed"><span class="state" data-access-state-label>franchi</span><h3>Hébergement, application et contenu</h3><p>Le service répond-il et fournit-il la ressource demandée ?</p></li></ol>
+<div id="accessPanels" class="accessScenarios"><div class="accessScenario" data-access-scenario-panel="normal" data-outcome="open"><span class="accessOutcome">Accessible dans ce scénario</span><h3>La requête aboutit</h3><p>Le nom est résolu, les paquets sont acheminés, TLS fonctionne et le service répond. C&#x27;est un cas de référence simplifié.</p><div class="accessImpacts"><div><strong>Que devient le nom à l&#x27;échelle mondiale ?</strong><span>Le domaine demeure dans le DNS.</span></div><div><strong>Que peuvent atteindre les internautes ?</strong><span>Le service d&#x27;exemple est accessible.</span></div><div><strong>Qui pourrait appliquer cette mesure ?</strong><span>Aucune intervention simulée.</span></div></div><div class="accessRefs" aria-label="References"><a href="#access-source-ooni-method" aria-label="Source 1" title="OONI · Interpreting measurements and false positives">[1]</a></div></div><div class="accessScenario" data-access-scenario-panel="resolver" data-outcome="blocked" hidden><span class="accessOutcome">Accès interrompu dans ce scénario</span><h3>Le résolveur modifie sa réponse</h3><p>Un résolveur local peut refuser la résolution ou donner une adresse de blocage. Le DNS autoritatif et le TLD peuvent rester actifs ailleurs. Un autre résolveur n&#x27;aide que si aucune autre restriction n&#x27;intervient.</p><div class="accessImpacts"><div><strong>Que devient le nom à l&#x27;échelle mondiale ?</strong><span>Le domaine peut rester délégué mondialement.</span></div><div><strong>Que peuvent atteindre les internautes ?</strong><span>Les utilisateurs du résolveur concerné peuvent ne pas atteindre le site par son nom.</span></div><div><strong>Qui pourrait appliquer cette mesure ?</strong><span>Un opérateur de réseau, parfois chargé d&#x27;appliquer une obligation légale.</span></div></div><div class="accessRefs" aria-label="References"><a href="#access-source-ooni-method" aria-label="Source 1" title="OONI · Interpreting measurements and false positives">[1]</a><a href="#access-source-swiss" aria-label="Source 8" title="Gespa · Swiss legal DNS blocking / public blocklists (2026)">[8]</a></div></div><div class="accessScenario" data-access-scenario-panel="ip" data-outcome="blocked" hidden><span class="accessOutcome">Accès interrompu dans ce scénario</span><h3>Le DNS marche mais la route est bloquée</h3><p>Une réponse DNS correcte ne suffit pas lorsqu&#x27;un réseau bloque l&#x27;adresse IP ou l&#x27;itinéraire vers le serveur. Une IP peut héberger plusieurs sites sans lien, avec des effets collatéraux.</p><div class="accessImpacts"><div><strong>Que devient le nom à l&#x27;échelle mondiale ?</strong><span>Le domaine et sa réponse DNS peuvent être intacts.</span></div><div><strong>Que peuvent atteindre les internautes ?</strong><span>La connexion à la destination échoue dans ce réseau.</span></div><div><strong>Qui pourrait appliquer cette mesure ?</strong><span>Le fournisseur d&#x27;accès ou un autre opérateur.</span></div></div><div class="accessRefs" aria-label="References"><a href="#access-source-ooni-method" aria-label="Source 1" title="OONI · Interpreting measurements and false positives">[1]</a></div></div><div class="accessScenario" data-access-scenario-panel="tls" data-outcome="blocked" hidden><span class="accessOutcome">Accès interrompu dans ce scénario</span><h3>La connexion chiffrée échoue</h3><p>Un équipement peut interrompre la négociation TLS, par exemple en détectant un nom de serveur visible. Le DNS peut être correct et le serveur disponible. Les mécanismes de chiffrement et de filtrage évoluent.</p><div class="accessImpacts"><div><strong>Que devient le nom à l&#x27;échelle mondiale ?</strong><span>Le domaine peut encore être résolu normalement.</span></div><div><strong>Que peuvent atteindre les internautes ?</strong><span>La connexion HTTPS peut être réinitialisée ou expirer.</span></div><div><strong>Qui pourrait appliquer cette mesure ?</strong><span>Équipements de filtrage des fournisseurs d&#x27;accès ou intermédiaires.</span></div></div><div class="accessRefs" aria-label="References"><a href="#access-source-ooni-method" aria-label="Source 1" title="OONI · Interpreting measurements and false positives">[1]</a><a href="#access-source-russia" aria-label="Source 6" title="OONI · Suppression of independent media in Russia (2024)">[6]</a></div></div><div class="accessScenario" data-access-scenario-panel="service" data-outcome="blocked" hidden><span class="accessOutcome">Accès interrompu dans ce scénario</span><h3>Le service refuse le contenu</h3><p>Une application peut supprimer une page, suspendre un compte ou limiter l&#x27;accès selon le territoire. Le DNS et le réseau peuvent fonctionner normalement, sans intervention de l&#x27;ICANN.</p><div class="accessImpacts"><div><strong>Que devient le nom à l&#x27;échelle mondiale ?</strong><span>Le nom peut rester enregistré et résolu.</span></div><div><strong>Que peuvent atteindre les internautes ?</strong><span>Le contenu demandé n&#x27;est pas fourni selon les règles du service.</span></div><div><strong>Qui pourrait appliquer cette mesure ?</strong><span>Plateformes, applications et hébergeurs.</span></div></div><div class="accessRefs" aria-label="References"><a href="#access-source-ooni-method" aria-label="Source 1" title="OONI · Interpreting measurements and false positives">[1]</a></div></div><div class="accessScenario" data-access-scenario-panel="registration" data-outcome="blocked" hidden><span class="accessOutcome">Accès interrompu dans ce scénario</span><h3>L&#x27;enregistrement ou la délégation change</h3><p>Les procédures du bureau d&#x27;enregistrement ou du registre peuvent suspendre un domaine. Selon la mesure, la délégation autoritative peut cesser. Cela ne supprime pas l&#x27;ensemble du TLD.</p><div class="accessImpacts"><div><strong>Que devient le nom à l&#x27;échelle mondiale ?</strong><span>Cet enregistrement ou cette délégation peut cesser de fonctionner mondialement.</span></div><div><strong>Que peuvent atteindre les internautes ?</strong><span>Des usagers de nombreux réseaux peuvent être affectés.</span></div><div><strong>Qui pourrait appliquer cette mesure ?</strong><span>Registres et bureaux d&#x27;enregistrement selon leurs contrats et règles.</span></div></div><div class="accessRefs" aria-label="References"><a href="#access-source-icann-letter" aria-label="Source 4" title="ICANN · Response to the Ukrainian government, 2 March 2022">[4]</a></div></div><div class="accessScenario" data-access-scenario-panel="shutdown" data-outcome="blocked" hidden><span class="accessOutcome">Accès interrompu dans ce scénario</span><h3>La connectivité est interrompue pour une population</h3><p>Un shutdown rend Internet indisponible dans une région ou pour un groupe. Il ne supprime pas les noms DNS ou les TLD. La portée peut différer entre réseaux fixes et mobiles.</p><div class="accessImpacts"><div><strong>Que devient le nom à l&#x27;échelle mondiale ?</strong><span>Les noms du DNS mondial ne sont pas forcément modifiés.</span></div><div><strong>Que peuvent atteindre les internautes ?</strong><span>De nombreux services ne sont plus accessibles depuis le réseau concerné.</span></div><div><strong>Qui pourrait appliquer cette mesure ?</strong><span>Opérateurs de réseau, éventuellement sur décision des autorités.</span></div></div><div class="accessRefs" aria-label="References"><a href="#access-source-isoc-shutdown" aria-label="Source 2" title="Internet Society · Internet shutdown policy definition">[2]</a><a href="#access-source-pulse-method" aria-label="Source 3" title="Internet Society Pulse · Shutdown tracker methodology">[3]</a></div></div></div>
+<p id="accessLive" class="accessLive" role="status" aria-live="polite" aria-atomic="true"></p>
+<p class="accessCaveat">L&#x27;étape du registre décrit la gestion de l&#x27;enregistrement et de la délégation autoritative ; ce n&#x27;est pas un nœud traversé à chaque visite. L&#x27;effet précis dépend de la mise en œuvre.</p>
+<noscript><p class="accessCaveat">Choisissez une intervention fictive. Le schéma montre où la requête s&#x27;interrompt et si le nom peut encore exister hors du réseau affecté. Ce n&#x27;est pas un test de connexion réel.</p></noscript>
+</section>
+<section class="accessActorSection" aria-labelledby="accessActorsTitle"><h2 id="accessActorsTitle">Qui peut agir sur quoi ?</h2>
+<p class="intro">Un même épisode peut associer une décision juridique, un filtrage local et un nom DNS mondial inchangé. Il faut distinguer l&#x27;acteur de l&#x27;étage technique.</p><div class="accessActors"><article data-access-actor="icann"><h3>ICANN / IANA</h3><p>Coordonnent le système des noms et la zone racine ; elles n&#x27;ordonnent normalement pas aux fournisseurs nationaux de bloquer des sites. La lettre de 2022 à l&#x27;Ukraine précise ces limites.</p><div class="accessRefs" aria-label="References"><a href="#access-source-icann-letter" aria-label="Source 4" title="ICANN · Response to the Ukrainian government, 2 March 2022">[4]</a></div></article>
+<article data-access-actor="registry"><h3>Registre / bureau d&#x27;enregistrement</h3><p>Gèrent les noms et suspensions suivant les règles du TLD. Une mesure sur un enregistrement n&#x27;est pas un filtrage national.</p><div class="accessRefs" aria-label="References"><a href="#access-source-icann-letter" aria-label="Source 4" title="ICANN · Response to the Ukrainian government, 2 March 2022">[4]</a></div></article>
+<article data-access-actor="state"><h3>État / autorité</h3><p>Peut imposer des obligations de blocage dans sa juridiction. Base légale, justification et garanties varient selon la mesure.</p><div class="accessRefs" aria-label="References"><a href="#access-source-swiss" aria-label="Source 8" title="Gespa · Swiss legal DNS blocking / public blocklists (2026)">[8]</a><a href="#access-source-catalonia" aria-label="Source 9" title="OONI · Catalan referendum website blocking (2017)">[9]</a></div></article>
+<article data-access-actor="isp"><h3>Fournisseur d&#x27;accès</h3><p>Peut appliquer des restrictions DNS, IP, TLS ou de routage. Deux réseaux d&#x27;un même pays peuvent se comporter différemment.</p><div class="accessRefs" aria-label="References"><a href="#access-source-ooni-method" aria-label="Source 1" title="OONI · Interpreting measurements and false positives">[1]</a><a href="#access-source-swiss" aria-label="Source 8" title="Gespa · Swiss legal DNS blocking / public blocklists (2026)">[8]</a></div></article>
+<article data-access-actor="platform"><h3>Plateforme / hébergeur</h3><p>Peut modérer des contenus, refuser des services ou limiter l&#x27;accès par territoire sans modifier la délégation DNS.</p><div class="accessRefs" aria-label="References"><a href="#access-source-ooni-method" aria-label="Source 1" title="OONI · Interpreting measurements and false positives">[1]</a></div></article></div></section>
+<section class="accessCaseSection" aria-labelledby="accessCasesTitle"><h2 id="accessCasesTitle">Cinq situations documentées et des contextes distincts</h2>
+<p class="intro">Un choix de cas historiques datés, pas une liste exhaustive ou un classement actualisé des pays.</p><div class="accessCases"><article data-access-case="china-2023"><span class="accessCasePeriod">2023</span><h3>Chine · injection DNS et perturbation TLS</h3><p>OONI a documenté que son propre site était bloqué en Chine au moyen de fausses réponses DNS et d&#x27;interférences TLS. Ces constatations concernent les réseaux et services testés, non tous les sites accessibles depuis la Chine.</p><p class="accessEvidenceNote">Étude OONI, 2023</p><div class="accessRefs" aria-label="References"><a href="#access-source-china" aria-label="Source 5" title="OONI · China is blocking OONI (2023)">[5]</a></div></article>
+<article data-access-case="russia-2024"><span class="accessCasePeriod">2023–2024</span><h3>Russie · filtres DNS et trafic</h3><p>À partir de mesures collectées de septembre 2023 à septembre 2024, OONI et RKS Global ont documenté le blocage de médias indépendants. Des perturbations TLS dominaient l&#x27;échantillon étudié, à côté de certains filtrages DNS.</p><p class="accessEvidenceNote">OONI / RKS Global, décembre 2024</p><div class="accessRefs" aria-label="References"><a href="#access-source-russia" aria-label="Source 6" title="OONI · Suppression of independent media in Russia (2024)">[6]</a></div></article>
+<article data-access-case="iran-2025"><span class="accessCasePeriod">June 2025</span><h3>Iran · blocage d&#x27;application et perturbation de connectivité</h3><p>OONI a documenté le blocage temporaire de WhatsApp en juin 2025 et une forte baisse du nombre de mesures pendant le conflit. D&#x27;autres observations concordaient avec une coupure sévère de connectivité. Le blocage d&#x27;une application et un shutdown demeurent deux phénomènes différents.</p><p class="accessEvidenceNote">Mesures OONI, juin–juillet 2025</p><div class="accessRefs" aria-label="References"><a href="#access-source-iran" aria-label="Source 7" title="OONI Explorer · Iran blocked WhatsApp (2025)">[7]</a><a href="#access-source-pulse-method" aria-label="Source 3" title="Internet Society Pulse · Shutdown tracker methodology">[3]</a></div></article>
+<article data-access-case="swiss-2026"><span class="accessCasePeriod">2026</span><h3>Suisse · filtrage DNS prévu par la loi</h3><p>Gespa et la Commission fédérale des maisons de jeu publient des listes d&#x27;offres de jeux étrangères non autorisées. Les fournisseurs suisses doivent bloquer ces domaines par DNS. Cette mesure locale ne retire pas les TLD de la racine mondiale.</p><p class="accessEvidenceNote">Listes officielles Gespa, août 2026</p><div class="accessRefs" aria-label="References"><a href="#access-source-swiss" aria-label="Source 8" title="Gespa · Swiss legal DNS blocking / public blocklists (2026)">[8]</a></div></article>
+<article data-access-case="catalonia-2017"><span class="accessCasePeriod">2017</span><h3>Catalogne (Espagne) · sites du référendum</h3><p>OONI a observé des manipulations DNS et des blocages HTTP visant des sites liés au référendum d&#x27;octobre 2017, notamment sous .cat. L&#x27;extension .cat est un gTLD sponsorisé et non un ccTLD ; changer d&#x27;extension ne garantit pas l&#x27;accès.</p><p class="accessEvidenceNote">Mesures OONI, septembre–octobre 2017</p><div class="accessRefs" aria-label="References"><a href="#access-source-catalonia" aria-label="Source 9" title="OONI · Catalan referendum website blocking (2017)">[9]</a></div></article></div></section>
+<section class="panel accessPanel"><h2>Une mesure constitue un indice ou une preuve, pas un verdict automatique</h2><p>OONI distingue les blocages automatiquement confirmés (par exemple pages de blocage ou adresses DNS déjà identifiées) des anomalies qui peuvent aussi avoir des causes ordinaires. Des mesures répétées et datées sur des réseaux précis renforcent l&#x27;analyse ; un échec isolé ne démontre pas une censure. Internet Society Pulse recense séparément les coupures de connectivité selon sa méthodologie. Aucun de ces outils n&#x27;établit un classement universel en temps réel.</p>
+<div class="accessRefs" aria-label="References"><a href="#access-source-ooni-method" aria-label="Source 1" title="OONI · Interpreting measurements and false positives">[1]</a><a href="#access-source-pulse-method" aria-label="Source 3" title="Internet Society Pulse · Shutdown tracker methodology">[3]</a></div></section>
+<section class="panel accessPanel"><h2>Sources originales et outils de mesure</h2><p>Chaque cas et mécanisme renvoie aux documents des institutions ou organismes de mesure, sans classement général des pays.</p>
+<ol class="accessSources"><li id="access-source-ooni-method"><a href="https://ooni.org/support/interpreting-ooni-data/" target="_blank" rel="noopener noreferrer">[1] OONI · Interpreting measurements and false positives ↗</a></li>
+<li id="access-source-isoc-shutdown"><a href="https://www.internetsociety.org/resources/policybriefs/2025/internet-shutdowns/" target="_blank" rel="noopener noreferrer">[2] Internet Society · Internet shutdown policy definition ↗</a></li>
+<li id="access-source-pulse-method"><a href="https://pulse.internetsociety.org/en/pulse-shutdown-tracker-methodology/" target="_blank" rel="noopener noreferrer">[3] Internet Society Pulse · Shutdown tracker methodology ↗</a></li>
+<li id="access-source-icann-letter"><a href="https://itp.cdn.icann.org/en/files/correspondence/marby-to-fedorov-02mar22-en.pdf" target="_blank" rel="noopener noreferrer">[4] ICANN · Response to the Ukrainian government, 2 March 2022 ↗</a></li>
+<li id="access-source-china"><a href="https://ooni.org/post/2023-china-blocks-ooni/" target="_blank" rel="noopener noreferrer">[5] OONI · China is blocking OONI (2023) ↗</a></li>
+<li id="access-source-russia"><a href="https://ooni.org/post/2024-russia-report/" target="_blank" rel="noopener noreferrer">[6] OONI · Suppression of independent media in Russia (2024) ↗</a></li>
+<li id="access-source-iran"><a href="https://explorer.ooni.org/findings/2025-iran-blocked-whatsapp-amid-war-with-israel" target="_blank" rel="noopener noreferrer">[7] OONI Explorer · Iran blocked WhatsApp (2025) ↗</a></li>
+<li id="access-source-swiss"><a href="https://www.gespa.ch/it/lotta-alle-attivita-illegali/blocco-dellaccesso" target="_blank" rel="noopener noreferrer">[8] Gespa · Swiss legal DNS blocking / public blocklists (2026) ↗</a></li>
+<li id="access-source-catalonia"><a href="https://ooni.org/post/internet-censorship-catalonia-independence-referendum" target="_blank" rel="noopener noreferrer">[9] OONI · Catalan referendum website blocking (2017) ↗</a></li>
+<li id="access-source-ooni-explorer"><a href="https://explorer.ooni.org/" target="_blank" rel="noopener noreferrer">[10] OONI Explorer · Network measurements ↗</a></li>
+<li id="access-source-pulse-explorer"><a href="https://pulse.internetsociety.org/en/shutdowns/" target="_blank" rel="noopener noreferrer">[11] Internet Society Pulse · Shutdown tracker ↗</a></li></ol></section>
+<section class="panel accessPanel"><h2>Poursuivre avec Connecting the Dots</h2><p>La fiche OFAC explique les restrictions juridiques sur certaines opérations de l&#x27;ICANN ; ce sujet est distinct du filtrage des accès. Les Notes de terrain ne permettent pas non plus d&#x27;attribuer une cause aux écarts du round 2026 sans preuve.</p>
+<div class="accessRelated">
+<a href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/sanctions-and-dns/">ICANN, OFAC et sanctions ↗</a>
+<a href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/">Notes de terrain 2026 ↗</a>
+<a href="https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=how#how">Retour à l&#x27;atlas ↗</a>
+</div></section>
+<section class="panel accessPanel"><h2>Note éditoriale</h2><p>Vérifié le 10 octobre 2026. Les exemples sont historiques, propres à des périodes définies et ne décrivent pas nécessairement l&#x27;accessibilité actuelle. Cette page est un modèle pédagogique et ne teste pas la connexion du visiteur. Aucune intention individuelle n&#x27;est attribuée sans preuve ; le contenu reste distinct de la release scientifique RR1 figée.</p></section>
+<p class="accessDate">Dernière vérification: <time datetime="2026-10-10">2026-10-10</time></p>
+</main>
+<footer>Connecting the Dots · <a href="https://robertbregy.github.io/Connecting-the-Dots/fr/">ICANN 2026</a> ·
+<a href="https://doi.org/10.5281/zenodo.23262623">Research Release RR1 (archived evidence)</a></footer>
+<script>(function(){
+  'use strict';
+  var root=document.getElementById('accessSimulator');
+  if(!root)return;
+  var buttons=Array.prototype.slice.call(root.querySelectorAll('[data-access-select]'));
+  var steps=Array.prototype.slice.call(root.querySelectorAll('[data-access-stage]'));
+  var panels=Array.prototype.slice.call(root.querySelectorAll('[data-access-scenario-panel]'));
+  var live=document.getElementById('accessLive');
+  var pass=root.getAttribute('data-pass-label')||'passed';
+  var blocked=root.getAttribute('data-block-label')||'interrupted';
+  var pending=root.getAttribute('data-pending-label')||'not reached';
+  function select(button){
+    var id=button.getAttribute('data-access-select');
+    var target=Number(button.getAttribute('data-block-stage'));
+    buttons.forEach(function(b){b.setAttribute('aria-pressed',b===button?'true':'false');});
+    steps.forEach(function(step,i){
+      var state=target<0||i<target?'passed':(i===target?'blocked':'pending');
+      step.setAttribute('data-state',state);
+      var label=step.querySelector('[data-access-state-label]');
+      if(label)label.textContent=state==='passed'?pass:(state==='blocked'?blocked:pending);
+    });
+    panels.forEach(function(p){p.hidden=p.getAttribute('data-access-scenario-panel')!==id;});
+    var active=panels.find(function(p){return !p.hidden;});
+    if(live&&active)live.textContent=button.textContent.trim()+': '+active.querySelector('h3').textContent.trim();
+  }
+  buttons.forEach(function(b){b.addEventListener('click',function(){select(b);});});
+  if(buttons.length)select(buttons[0]);
+})();</script></body></html>
