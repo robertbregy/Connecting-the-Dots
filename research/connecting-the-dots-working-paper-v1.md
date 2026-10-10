@@ -136,6 +136,8 @@ ICANN's APS Applications page explicitly explains that application **WDO2627T-T4
 
 The dated, corrigible case record and primary links appear in [Field Notes](https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/). Such field notes are editorial observations, not amendments to the frozen RR1 data or its DOI. Future corrections require documented source provenance and may be reflected in subsequent working-paper revisions.
 
+A second field note documents a different methodological issue: two unrelated international organizations use the acronym WDO, and one holds an earlier registered word mark while the other has applied for `.wdo` in 2026. The case distinguishes proof of prior rights, possible standing to object, and actual filed objections. It also records a dated US OFAC listing concerning an individual associated with the applicant, without inferring that ICANN’s unpublished administrative-check reason is connected to it. See [Field Note 02](https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/wdo-identity/) for the independently source-linked case and explicit unresolved questions.
+
 ## 7. Reproducibility and publication model
 
 Connecting the Dots is published as a **living research publication** with two version layers:
