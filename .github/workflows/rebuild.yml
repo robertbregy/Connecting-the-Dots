@@ -11,6 +11,7 @@ on:
       - 'assets/**'
       - 'scripts/**'
       - 'data/translations.json'
+      - 'data/sanctions_explainer.json'
       - 'data/release_history.json'
       - 'publication.json'
       - 'build.py'
@@ -64,4 +65,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           git commit -m "Rebuild published site [skip build]"
+          # Rebase a generated commit on any intervening human/editorial changes.
+          # Without this, rapid updates can produce a false red build after tests pass.
+          git pull --rebase origin "$GITHUB_REF_NAME"
           git push
