@@ -138,10 +138,12 @@ function check(ok,level,kind,where,message,extra){if(!ok)finding(level,kind,wher
        const ready=await ep.evaluate(()=>({
          count:typeof D==='undefined'?0:D.explorer?.length||0,
          section:document.querySelector('section.section.active')?.id,
-         overlay:window.CTD2026_STRING_SNAPSHOT?.data?.rows?.length||0
+         overlay:window.CTD2026_STRING_SNAPSHOT?.data?.rows?.length||0,
+         merged:typeof D==='undefined'?false:D.explorerMeta?.application2026StringCoverageComplete===true,
+         inventoryCount:typeof D==='undefined'?0:D.explorerMeta?.application2026StringCount||0
        }));
        counts.profileChecks++;
-       check(ready.count===1849 && ready.section==='explore' && ready.overlay===980,
+       check(ready.count>=1849 && ready.section==='explore' && ready.overlay===980 && ready.merged && ready.inventoryCount===980,
          'HIGH','EXPLORER_LOADED',lang,'Explorer base counts not loaded',{width,ready});
        const input=ep.locator('#explorerSearch');
        for(const term of ['lugano','com','cat']){
