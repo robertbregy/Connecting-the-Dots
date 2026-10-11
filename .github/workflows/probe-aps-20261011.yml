@@ -1,0 +1,67 @@
+name: Probe ICANN official APS CSV (read-only)
+on:
+  push:
+    branches:
+      - research/aps-official-export-20261011
+    paths:
+      - '.github/workflows/probe-aps-20261011.yml'
+      - 'scripts/probe_aps_20261011.js'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  official-export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install headless Chromium
+        run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Discover official APS applications CSV export
+        run: node scripts/probe_aps_20261011.js
+      - name: Validate exported official rows without conflating replacements or applicants
+        run: |
+          python3 - <<'PY'
+          import csv,hashlib,json,pathlib,collections
+          folder=pathlib.Path("artifacts/aps-probe")
+          details=json.loads((folder/"probe.json").read_text())
+          csv_path=folder/"aps_official_export.csv"
+          if not csv_path.exists():
+              print("APS_RECONCILIATION "+json.dumps({"status":"unavailable","reason":details.get("reason")}))
+          else:
+              with csv_path.open(encoding="utf-8-sig",newline="") as stream:
+                  rows=list(csv.DictReader(stream))
+              cols=list(rows[0]) if rows else []
+              id_cols=[name for name in cols if "application" in name.lower() and "id" in name.lower()]
+              app_ids=[row.get(id_cols[0],"").strip() for row in rows] if id_cols else []
+              roots=[s[:-2] if s.endswith("-R") else s for s in app_ids if s]
+              status_cols=[name for name in cols if "status" in name.lower()]
+              counts=dict(collections.Counter(row.get(status_cols[0]) for row in rows)) if status_cols else {}
+              report={"status":"unverified-official-export","source":details.get("source"),"sha256":hashlib.sha256(csv_path.read_bytes()).hexdigest(),
+                  "rowCount":len(rows),"columnNames":cols,"applicationIdField":id_cols[0] if id_cols else None,
+                  "nonemptyApplicationIds":len(app_ids),"uniqueRawIds":len(set(app_ids)),
+                  "uniqueBaseApplicationIds":len(set(roots)),
+                  "replacementRecordCount":sum(x.endswith("-R") for x in app_ids),
+                  "statusCounts":counts,
+                  "officialStatistics":1615,
+                  "knownPublishedApplicationExclusion":"WDO2627T-T45217 pending administrative check",
+                  "methodology":"CSV rows include replacement -R records. Base IDs and 1615 APS statistics require human/source reconciliation; no automatic completeness claim."}
+              (folder/"reconciliation.json").write_text(json.dumps(report,indent=2)+"\n")
+              print("APS_RECONCILIATION "+json.dumps(report))
+          PY
+      - name: Preserve the CSV, evidence and diagnostics as a private CI artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: aps-official-csv-probe-20261011
+          path: artifacts/aps-probe/
+          retention-days: 14
