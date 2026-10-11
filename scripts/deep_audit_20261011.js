@@ -125,6 +125,71 @@ function check(ok,level,kind,where,message,extra){if(!ok)finding(level,kind,wher
    await p.close();await context.close();
   }
  }
+
+ // Exercise the actual Explorer product, including filters, lazy shards, drawer and keyboard exit.
+ for(const lang of languages){
+   for(const width of [390,1360]){
+     const ctxE=await browser.newContext({viewport:{width,height:850},isMobile:width<800,hasTouch:width<800});
+     const ep=await ctxE.newPage();
+     const bad=[];
+     ep.on('pageerror',e=>bad.push(e.message));
+     try{
+       await ep.goto(base+'/'+lang+'/?tab=explore',{waitUntil:'load',timeout:30000});
+       const ready=await ep.evaluate(()=>({
+         count:typeof D==='undefined'?0:D.explorer?.length||0,
+         section:document.querySelector('section.section.active')?.id,
+         overlay:window.CTD2026_STRING_SNAPSHOT?.data?.rows?.length||0
+       }));
+       counts.profileChecks++;
+       check(ready.count===1849 && ready.section==='explore' && ready.overlay===980,
+         'HIGH','EXPLORER_LOADED',lang,'Explorer base counts not loaded',{width,ready});
+       const input=ep.locator('#explorerSearch');
+       for(const term of ['lugano','com','cat']){
+         await input.fill(term);
+         await ep.waitForTimeout(120);
+         const rows=await ep.evaluate(()=>({count:[...document.querySelectorAll('#explorerTableBody [data-explorer-open]')].length,
+           text:document.getElementById('explorerResultCount')?.textContent}));
+         counts.profileChecks++;
+         check(rows.count>0,'HIGH','EXPLORER_SEARCH',lang+'/'+term,'Search returned no results',{width,rows});
+         if(term==='lugano' && rows.count>0){
+           const selector=width<800?'#explorerCards [data-explorer-open]':'#explorerTableBody [data-explorer-open]';
+           await ep.locator(selector).first().click({timeout:5000});
+           await ep.waitForTimeout(600);
+           const drawer=await ep.evaluate(()=>({
+             visible:document.getElementById('explorerDrawer')?.classList.contains('open'),
+             title:document.getElementById('profileTitle')?.innerText,
+             html:document.getElementById('drawerContent')?.innerText?.length||0,
+             loading:document.getElementById('drawerContent')?.getAttribute('aria-busy'),
+             hasError:!!document.getElementById('profileRetry'),
+             active:document.activeElement?.id
+           }));
+           counts.profileChecks++;
+           check(drawer.visible && !drawer.hasError && drawer.html>100 && !drawer.loading,
+             'HIGH','EXPLORER_RECORD',lang,'Lazy TLD detail not loaded',{width,drawer});
+           if(drawer.visible){
+             await ep.screenshot({path:'audit-independent-profile-'+lang+'-'+width+'.png',fullPage:false});
+             await ep.keyboard.press('Escape');
+             const closed=await ep.evaluate(()=>!document.getElementById('explorerDrawer')?.classList.contains('open'));
+             counts.profileChecks++;
+             check(closed,'HIGH','EXPLORER_MODAL',lang,'Escape did not close detail modal',{width});
+           }
+         }
+       }
+       await input.fill('');
+       await ep.locator('#exploreRoundFilter').selectOption('2026',{timeout:3500});
+       const filter=await ep.evaluate(()=>({count:document.querySelectorAll('#explorerTableBody [data-explorer-open]').length,
+         text:document.getElementById('explorerResultCount')?.textContent}));
+       counts.profileChecks++;
+       check(filter.count>0,'HIGH','EXPLORER_2026_FILTER',lang,'2026 filter returned no rows',{width,filter});
+       await ep.locator('#resetExplorer').click();
+       const reset=await ep.evaluate(()=>({query:document.getElementById('explorerSearch')?.value,
+         year:document.getElementById('exploreRoundFilter')?.value}));
+       check(reset.query==='' && reset.year==='all','HIGH','EXPLORER_RESET',lang,'Reset did not clear search and round filter',{width,reset});
+     }catch(e){finding('HIGH','EXPLORER_TEST_EXCEPTION',lang,e.message.slice(0,300),{width});}
+     if(bad.length)finding('HIGH','EXPLORER_RUNTIME_ERROR',lang,'JavaScript errors while using Explorer',{width,errors:bad.slice(0,4)});
+     await ep.close();await ctxE.close();
+   }
+ }
  // The live website is checked independently of GitHub Pages build status.
  const liveContext=await browser.newContext({viewport:{width:1280,height:840}});
  const lpage=await liveContext.newPage();
