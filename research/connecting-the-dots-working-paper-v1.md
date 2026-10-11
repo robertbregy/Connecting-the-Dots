@@ -61,7 +61,7 @@ Derived datasets retain provenance, dates and caveats. Unknown values are kept u
 
 ### 4.3 Snapshotting
 
-Fast-changing evidence is frozen into dated research snapshots. The 2026 round is therefore treated as a sequence of observable states rather than one final dataset. RR1 is anchored to Reveal Day, 7 October 2026. A second research release is planned for String Confirmation Day, 17 November 2026, after the replacement-string process has concluded.
+Fast-changing evidence is frozen into dated research snapshots. The 2026 round is therefore treated as a sequence of observable states rather than one final dataset. RR1 is anchored to Reveal Day, 7 October 2026. Research Release RR2 was published on 10 October 2026 as a separate, citable post-Reveal evidence snapshot (DOI: https://doi.org/10.5281/zenodo.23288603). The next planned research milestone is RR3, conditional on verified changes following String Confirmation Day, 17 November 2026.
 
 ### 4.4 Cross-round classification
 
@@ -145,7 +145,7 @@ Connecting the Dots is published as a **living research publication** with two v
 - **technical/site versions** (`v0.x.y`) for code, editorial and interface changes;
 - **research releases** (`RR1`, `RR2`, …) for material changes to the evidence base or major derived datasets.
 
-RR1 is the **Reveal Day 2026** research release. RR2 is planned around **String Confirmation Day, 17 November 2026**.
+RR1 is the **Reveal Day 2026** research release. RR2 was published on **10 October 2026** (DOI: **10.5281/zenodo.23288603**) as a post-Reveal research snapshot, preserving RR1 (**10.5281/zenodo.23262623**). The next planned release is **RR3**, subject to evidence following **String Confirmation Day, 17 November 2026**.
 
 The repository includes machine-readable manifests, downloadable CSV datasets, data hashes, release history and a `CITATION.cff` record. RR1 is archived on Zenodo with DOI **10.5281/zenodo.23262623**, providing an immutable citation target for the Reveal Day 2026 research snapshot.
 
