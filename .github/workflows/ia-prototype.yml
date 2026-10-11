@@ -1,0 +1,49 @@
+name: IA prototype QA (branch only)
+
+on:
+  push:
+    branches:
+      - feat/ia-rearchitecture-20261012
+    paths:
+      - 'prototype/ia-v1/**'
+      - '.github/workflows/ia-prototype.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ia-prototype:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - name: Check out isolated feature branch
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Check syntax and all four locale content models
+        run: |
+          node --check prototype/ia-v1/app.js
+          node --check prototype/ia-v1/qa.cjs
+          node --check prototype/ia-v1/browser-qa.cjs
+          node prototype/ia-v1/qa.cjs
+      - name: Install browser test dependencies
+        run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Serve isolated prototype and inspect real browser
+        run: |
+          python3 -m http.server 8128 --bind 127.0.0.1 > /tmp/ia-server.log 2>&1 &
+          sleep 2
+          node prototype/ia-v1/browser-qa.cjs
+      - name: Attach independent QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: connecting-dots-ia-lab-qa
+          path: audit-ia/
+          if-no-files-found: ignore
