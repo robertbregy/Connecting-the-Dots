@@ -9,6 +9,10 @@ on:
       - '.github/workflows/ia-prototype.yml'
   workflow_dispatch:
 
+concurrency:
+  group: ctd-ia-lab-feature
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
