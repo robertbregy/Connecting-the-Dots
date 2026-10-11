@@ -1,6 +1,6 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.76",
+  "version": "0.7.77",
   "release_date": "2026-10-11",
   "publication_state": "reveal-day",
   "rendering": "static-prerendered",
@@ -31,7 +31,7 @@
     "The Social Life of the Dot adds nine source-backed social cases and six analytical models covering language, community, identity, protection, locality and script inclusion; registration volume is never used as a proxy for social significance.",
     "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity.",
     "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database. The Explorer extends that universe with all locally vendored formal application strings from 2000, 2004 and 2012.",
-    "application_only_strings.csv is the build-time application-only view. The complete 2012 Reveal-Day string/applicant graph is locally integrated; the 2026 Reveal Day string inventory is frozen locally, while application-level local APS coverage remains intentionally partial until a full official export is vendored and validated."
+    "application_only_strings.csv is the build-time application-only view. The 2012 historical applicant-string graph is locally integrated. The ICANN 2026 APS public Applications CSV is now independently vendored with 2,783 published records: 1,614 unique base application IDs and 1,169 -R replacement records. Official statistics show 1,615 applications; WDO2627T-T45217 is not in the public listing pending an administrative check. Individual application PDF dossiers remain outside local full coverage."
   ],
   "current_root_snapshot": "2026-10-04",
   "iana_evidence": "iana_snapshot.json",
@@ -283,12 +283,28 @@
     "socialSignalCount": 27,
     "lifeHistoryStaticCoverageComplete": true,
     "lifeHistoryGtldContractsRuntime": false,
-    "lifeHistoryGtldContractSource": "https://www.icann.org/resources/registries/gtlds/v2/gtlds.json"
+    "lifeHistoryGtldContractSource": "https://www.icann.org/resources/registries/gtlds/v2/gtlds.json",
+    "application2026OfficialListingRows": 2783,
+    "application2026PublishedOfficialApplicationIDs": 1614,
+    "application2026OfficialReplacementRecords": 1169,
+    "application2026OfficialListingPendingWDO": true
+  },
+  "aps_2026_official_listing": {
+    "source": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+    "download": "applications_2026_aps_official_listing.csv",
+    "provenance": "applications_2026_aps_official_provenance.json",
+    "retrievedAt": "2026-10-11T21:27:40.214Z",
+    "rows": 2783,
+    "publishedApplications": 1614,
+    "replacementRecords": 1169,
+    "statisticsApplications": 1615,
+    "pendingAdministrativeCheckID": "WDO2627T-T45217",
+    "fullIndividualApplicationDossiersLocallyArchived": false
   },
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "release_history": {
     "path": "release_history.json",
-    "sha256": "3d992a2596c8f18534847e04a8b1efbd10af318790c31e71e730b32aa20a48ac"
+    "sha256": "d342698c18333b4c2805c596107b5c2cf8f2ee03d9b7f7b71a3329aa6d5cdd5e"
   },
   "freeze": {
     "status": "reveal-day-snapshot",
@@ -303,8 +319,8 @@
     "assets": [
       {
         "repository_path": "data/site_bundle.js",
-        "bytes": 2002222,
-        "sha256": "ddb278f68d1786fdc2eb7f9041304b35c311b71f86a26712d43902e37805bd1a"
+        "bytes": 2002430,
+        "sha256": "512f2c01e4cb19390ef7d516ff050b0ecc75aac508c267bb803ba2954ea2fd62"
       },
       {
         "repository_path": "assets/app.js",
@@ -324,42 +340,42 @@
       {
         "repository_path": "data/explorer_profiles_0.js",
         "bytes": 1089784,
-        "sha256": "a0b2fa79eea12169b4761ffa0419f5db378e870429f767ec5507a5d870e9ba2f"
+        "sha256": "9c09a0341674550182fde8ce31772b3adfe99f8748954309e9a3a7e0086e6e3c"
       },
       {
         "repository_path": "data/explorer_profiles_1.js",
         "bytes": 904381,
-        "sha256": "3b6d5578e09e5e5e2d80cc6a32782a39e1decc70da8504b89823cd35b9bfbc30"
+        "sha256": "8446853e1a0c1cd6c5daa2a87374b117a156820522b7322c83a4e2179aace4de"
       },
       {
         "repository_path": "data/explorer_profiles_2.js",
         "bytes": 1009406,
-        "sha256": "4291a1778239503a096e0b450cc5315538ef20cd4dd8a16e09f8a725493c0a34"
+        "sha256": "658ed40a733b558cb0c284e3245bf28c559a599c61d48d37e3b9bbf4fca47f04"
       },
       {
         "repository_path": "data/explorer_profiles_3.js",
         "bytes": 934600,
-        "sha256": "b3741fb04f851518ae4096c5d10b82c71841e0304d6354f36e2b5a8d149781d9"
+        "sha256": "01e3d8868bda1dc3629fcff90e5f01f18899627ec482e115ed28fcf7ee1d2719"
       },
       {
         "repository_path": "data/explorer_profiles_4.js",
         "bytes": 970735,
-        "sha256": "65d0f909dc9f7fc12596b050819a776ee2c6ca4d7b7a44dbc8b0d83f53a8e089"
+        "sha256": "f605f395b9a1dcef75d4405d09d28015d36431c7980b380f880f914248f8753c"
       },
       {
         "repository_path": "data/explorer_profiles_5.js",
         "bytes": 943441,
-        "sha256": "74f75f69c9ece1e89d4b3172ec7d5e3cc39509738f085a85edff34ac46bd78a9"
+        "sha256": "ff642023b79c3edf2ce0f7081a82a6f559b1a50f9663e5016cf3c09ae26c69a4"
       },
       {
         "repository_path": "data/explorer_profiles_6.js",
         "bytes": 953642,
-        "sha256": "e8cb82f03c8a052968e3f2732d0ade855f1af2173b1f04e4b8fa119edeaa9a7c"
+        "sha256": "a5e12c7f63dca74460caeba3cbd182cd47674ba11f714fead36b922ec7fcecc1"
       },
       {
         "repository_path": "data/explorer_profiles_7.js",
         "bytes": 936011,
-        "sha256": "20709cdd357005809128bd6dc3c554cbbbc55c0753c5e7b03e43b4dce609735f"
+        "sha256": "2ac22b5d9e36f446c145b9311f252ac331b72a7bc081a4b7952edfea5d1f636d"
       }
     ]
   },
@@ -417,6 +433,12 @@
       "bytes": 536,
       "records": 1,
       "sha256": "a188d93bfdcbcdabedf9a0802ff0e6724547fef91bfc6665c0c218129477cfd1"
+    },
+    {
+      "path": "applications_2026_aps_official_listing.csv",
+      "bytes": 667815,
+      "records": 2783,
+      "sha256": "520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887"
     },
     {
       "path": "applications_2026_strings_reveal.csv",
