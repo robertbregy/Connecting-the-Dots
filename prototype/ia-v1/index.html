@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="it" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Prototipo isolato dell'architettura informativa di Connecting the Dots, non pubblicato in produzione.">
+  <title>Connecting the Dots | IA Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Vai al contenuto</a>
+  <header class="site-header">
+    <div class="container top-line">
+      <a class="brand" href="#/" aria-label="Connecting the Dots, homepage del prototipo">
+        <span class="brand-dot" aria-hidden="true">.</span>
+        <span class="brand-word">Connecting <strong>the Dots</strong></span>
+      </a>
+      <span class="lab-label" aria-label="Laboratorio IA">IA LAB <span>01</span></span>
+      <div class="header-controls">
+        <label class="sr-only" for="locale" data-i18n="language">Lingua</label>
+        <select id="locale" aria-label="Lingua del prototipo">
+          <option value="it">IT</option><option value="en">EN</option>
+          <option value="de">DE</option><option value="fr">FR</option>
+        </select>
+        <button type="button" class="theme-button" id="theme-toggle" aria-label="Attiva tema scuro"><span aria-hidden="true">◐</span></button>
+      </div>
+    </div>
+    <nav class="container nav-bar" aria-label="Navigazione principale">
+      <a href="#/capire" data-section="capire" data-i18n="navUnderstand">Capire</a>
+      <a href="#/esplorare" data-section="esplorare" data-i18n="navExplore">Esplorare</a>
+      <a href="#/storie" data-section="storie" data-i18n="navStories">Storie e questioni</a>
+      <a href="#/round" data-section="round" data-i18n="navRound">Round 2026</a>
+      <a href="#/ricerca" data-section="ricerca" data-i18n="navResearch">Ricerca</a>
+    </nav>
+  </header>
+
+  <div class="lab-banner">
+    <div class="container lab-banner-inner">
+      <div class="status-line">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span data-i18n="notLive">Prototipo isolato: nessuna modifica al sito pubblico</span>
+      </div>
+      <a class="lab-test-link" href="#/test" data-i18n="testLink">Cinque prove di navigazione <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+
+  <main id="main" class="container main-stage" tabindex="-1" aria-live="off"></main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Connecting the Dots <span class="muted">/ IA Lab</span></strong>
+        <p data-i18n="footerNote">Studio di architettura informativa, non una nuova release scientifica. I contenuti reali rimangono nel sito originale.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://robertbregy.github.io/Connecting-the-Dots/" target="_blank" rel="noopener noreferrer" data-i18n="originalSite">Sito pubblico ↗</a>
+        <a href="https://github.com/robertbregy/Connecting-the-Dots/tree/feat/ia-rearchitecture-20261012/docs" target="_blank" rel="noopener noreferrer" data-i18n="projectDocs">Documentazione ↗</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
