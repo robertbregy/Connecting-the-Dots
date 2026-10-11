@@ -590,7 +590,7 @@ function currentRoute() {
   const p=location.hash.startsWith("#/")?location.hash.slice(2).split("?")[0]:"";
   return p.replace(/^\/+|\/+$/g,"");
 }
-function render() {
+function render(focusDestination=false) {
   const t=txt(),p=currentRoute();
   const stage=$("main");
   let section=p;
@@ -604,8 +604,12 @@ function render() {
     if(n.dataset.section===section)n.setAttribute("aria-current","page");
     else n.removeAttribute("aria-current");
   });
-  if(document.activeElement && document.activeElement.closest(".nav-bar")) {
-    stage.focus({preventScroll:true});
+  if(focusDestination) {
+    const heading=stage.querySelector("h1");
+    if(heading){
+      heading.setAttribute("tabindex","-1");
+      heading.focus({preventScroll:true});
+    }else stage.focus({preventScroll:true});
   }
   window.scrollTo({top:0,behavior:"auto"});
 }
@@ -640,7 +644,7 @@ function init() {
   $("locale").addEventListener("change",function(e){updateLanguage(e.target.value)});
   $("theme-toggle").addEventListener("click",toggleTheme);
   try {if(localStorage.getItem("ctd-ia-theme")==="dark")toggleTheme()}catch(_){}
-  window.addEventListener("hashchange",render);
+  window.addEventListener("hashchange",()=>render(true));
   updateLanguage(wanted);
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);
