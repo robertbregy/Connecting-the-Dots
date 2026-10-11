@@ -212,7 +212,7 @@ def build():
     report={
       "schemaVersion":1,"sourceSha256":source_sha,
       "sourceURL":provenance["sourceExportURL"],"retrievedAtUTC":provenance["retrievedAtUTC"],
-      "counts":counts,"eventHistory":event,
+      "counts":counts,"eventHistory":{"events":event["events"],"sourceSnapshots":event["sourceSnapshots"]},
       "files":{path.name:{"sha256":digest(path.read_bytes()),"bytes":path.stat().st_size}
                for path in (GRAPH,BROWSER,EDGES,HISTORY)},
       "limitations":[
