@@ -29,7 +29,9 @@ jobs:
           node --check prototype/ia-v1/app.js
           node --check prototype/ia-v1/qa.cjs
           node --check prototype/ia-v1/browser-qa.cjs
+          node --check prototype/ia-v1/build-standalone.cjs
           node prototype/ia-v1/qa.cjs
+          node prototype/ia-v1/build-standalone.cjs --check
       - name: Install browser test dependencies
         run: |
           npm ci
