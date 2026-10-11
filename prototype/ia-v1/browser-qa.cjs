@@ -19,7 +19,8 @@ const capture=(e)=>failures.push(String(e));
   for(const lang of langs){
    for(const route of routes){
     const mobile=["it","fr"].includes(lang);
-    const page=await browser.newPage({viewport:mobile?{width:390,height:844}:{width:1440,height:900}});
+    const context=await browser.newContext({viewport:mobile?{width:390,height:844}:{width:1440,height:900}});
+    const page=await context.newPage();
     const errors=[];
     page.on("pageerror",e=>errors.push(e.message));
     page.on("console",m=>{if(m.type()==="error")errors.push(m.text())});
@@ -61,10 +62,11 @@ const capture=(e)=>failures.push(String(e));
       await page.screenshot({path:"audit-ia/"+lang+"-"+(route||"home")+".png",fullPage:true});
      }
     }catch(e){capture(lang+"/"+(route||"home")+" "+e.message);}
-    finally {await page.close();}
+    finally {await context.close();}
    }
   }
-  const page=await browser.newPage({viewport:{width:390,height:844}});
+  const navContext=await browser.newContext({viewport:{width:390,height:844}});
+  const page=await navContext.newPage();
   try{
    await page.goto(ROOT+"?lang=it#/",{waitUntil:"load"});
    await page.locator('.nav-bar a[href="#/esplorare"]').click();
@@ -79,7 +81,7 @@ const capture=(e)=>failures.push(String(e));
    await page.locator("#theme-toggle").click();
    assert.equal(await page.locator("html").getAttribute("data-theme"),"dark");
   }catch(e){capture("navigation/language/theme "+e.message)}
-  finally{await page.close()}
+  finally{await navContext.close()}
  }finally{await browser.close();}
  log.errors=failures.length;
  fs.mkdirSync("audit-ia",{recursive:true});
