@@ -117,7 +117,7 @@ try:
     ds=json.loads(ds_match.group(1)) if ds_match else {}
 except Exception as exc:
     fail('Dataset JSON-LD cannot be parsed: '+str(exc))
-if ds.get('version')!=version or ds.get('dateModified')!=publication_meta.get('asOf'):
+if ds.get('version')!=version or ds.get('dateModified')!=publication_meta.get('releasedOn'):
     fail('Dataset JSON-LD version/date is stale')
 expected_based_on={
     'https://www.iana.org/domains/root/db',
