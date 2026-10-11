@@ -53,10 +53,15 @@ jobs:
       - name: Audit all 160 combinations of locale, theme and section for WCAG A/AA
         run: |
           node scripts/audit_axe_20261010.js
+      - name: Independent four-language, all-tab and Explorer regression audit
+        run: |
+          node scripts/deep_audit_20261011.js
       - name: Attach visual evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ctd-browser-audit-${{ github.sha }}
-          path: audit-*.png
+          path: |
+            audit-*.png
+            audit-independent-20261011.json
           if-no-files-found: ignore

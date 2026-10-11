@@ -1,8 +1,8 @@
 # Connecting the Dots: Reconstructing Twenty-Five Years of Top-Level Domain Expansion as a Living Research Atlas
 
 **Robert Bregy**  
-**Working Paper v1.1-draft · RR1 evidence snapshot: 7 October 2026 · revised 10 October 2026**  
-**Status:** working paper; not peer reviewed. This living draft is updated independently of the immutable RR1 Zenodo deposit (published 9 October 2026).  
+**Working Paper v1.1-draft · living revision 11 October 2026 · current citable research release RR2 (10 October 2026)**  
+**Status:** working paper; not peer reviewed. This mutable manuscript is distinct from the immutable RR1 (9 October 2026) and RR2 (10 October 2026) Zenodo research deposits.  
 **Living publication:** https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Abstract
@@ -147,11 +147,11 @@ Connecting the Dots is published as a **living research publication** with two v
 
 RR1 is the **Reveal Day 2026** research release. RR2 was published on **10 October 2026** (DOI: **10.5281/zenodo.23288603**) as a post-Reveal research snapshot, preserving RR1 (**10.5281/zenodo.23262623**). The next planned release is **RR3**, subject to evidence following **String Confirmation Day, 17 November 2026**.
 
-The repository includes machine-readable manifests, downloadable CSV datasets, data hashes, release history and a `CITATION.cff` record. RR1 is archived on Zenodo with DOI **10.5281/zenodo.23262623**, providing an immutable citation target for the Reveal Day 2026 research snapshot.
+The repository includes machine-readable manifests, downloadable CSV datasets, data hashes, release history and a `CITATION.cff` record. RR1 is archived on Zenodo with DOI **10.5281/zenodo.23262623**; RR2 is separately archived with DOI **10.5281/zenodo.23288603**. These remain immutable snapshots. This paper is a later, mutable interpretative draft, not a revision of either deposit.
 
 ## 8. Limitations
 
-The project has five main limitations at RR1.
+The project has five main limitations in this living revision, based on the RR2 research snapshot.
 
 First, the 2026 locally vendored application-level corpus is not yet complete; the official aggregate and the frozen secondary string layer must therefore remain distinct. Second, economic-sector and strategy classifications are editorial taxonomies and require judgement for diversified groups or ambiguous strings. Third, historical source quality varies between rounds. Fourth, registration volume and commercial success are not equivalent to social or institutional importance. Fifth, a living resource can change after citation, making dated research releases essential.
 
@@ -165,7 +165,9 @@ The purpose of the living-publication model is not to keep a paper perpetually u
 
 Interactive publication: https://robertbregy.github.io/Connecting-the-Dots/  
 Repository: https://github.com/robertbregy/Connecting-the-Dots  
-Data pack: https://robertbregy.github.io/Connecting-the-Dots/downloads/connecting-the-dots-data-pack.zip
+Current TLD universe CSV (live technical publication): https://robertbregy.github.io/Connecting-the-Dots/data/tld_universe.csv  
+2026 primary-string inventory (secondary-source snapshot): https://robertbregy.github.io/Connecting-the-Dots/data/applications_2026_strings_reveal.csv  
+Historical frozen data pack **v0.7.58** (not the current RR2 dataset): https://robertbregy.github.io/Connecting-the-Dots/downloads/connecting-the-dots-data-pack.zip
 
 ## Primary references
 
@@ -177,6 +179,8 @@ Data pack: https://robertbregy.github.io/Connecting-the-Dots/downloads/connectin
 - ICANN Reveal Day 2026 announcement: https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en
 - ICANN 2026 milestone schedule: https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en
 
-## Suggested citation for RR1
+## Suggested citation for RR2 (current archived evidence)
 
-Bregy, Robert (2026). *Connecting the Dots: A Living Research Atlas of Top-Level Domain Expansion*. Research Release 1: Reveal Day 2026. Zenodo. https://doi.org/10.5281/zenodo.23262623
+Bregy, Robert (2026). *Connecting the Dots: A Living Research Atlas of Top-Level Domain Expansion*. Research Release RR2: Post-Reveal Evidence Consolidation. Zenodo. https://doi.org/10.5281/zenodo.23288603
+
+For the original 7 October Reveal Day snapshot, cite RR1: https://doi.org/10.5281/zenodo.23262623. This working paper is a later, non-peer-reviewed interpretation and must not be mistaken for either frozen dataset.

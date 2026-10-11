@@ -543,7 +543,7 @@
     "strange2026Pending": "Reveal Day data are public. The Replacement Period runs from 8 to 21 October 2026; the final confirmed string list is scheduled for 17 November. This publication therefore labels current-round material as a dated snapshot rather than a final list.",
     "tabExplore": "TLD Explorer",
     "exploreTitle": "TLD Explorer",
-    "exploreSub": "Search a TLD or a historical application and open its profile. You will find root status, origin, operator, key milestones and, where documented, governance, economic and social cases.",
+    "exploreSub": "Search TLDs and applied-for strings, then open sourced profiles. Root-delegated TLDs, historical applications and 2026 proposed strings are different categories: the Explorer does not turn one into the other.",
     "exploreCoverageTitle": "Universal TLD coverage",
     "exploreCoverageBody": "Every entry preserved in the dated IANA database has a technical profile. Documented historical TLDs outside the current IANA database are added separately. Application-only strings remain distinct from delegated TLDs. The 1,849-record core catalog and the frozen 2026 overlay are separate layers; the visible Explorer total is their deduplicated union.",
     "exploreIana": "Names in the root list",
@@ -1181,7 +1181,7 @@
     "outcome_delegated_2012": "Delegated 2012",
     "outcome_delegated_2011": "Delegated 2011",
     "applicationCorpusLoading": "Application archive: complete local 2000, 2004 and 2012 string/applicant corpora are being prepared.",
-    "applicationCorpusReady": "Historical application archive complete locally: {count} applications across rounds {rounds}. The 2026 layer is now post-Reveal; verified official records are added progressively without claiming full local APS coverage.",
+    "applicationCorpusReady": "Historical 2000/2004/2012 application records archived locally: {count} ({rounds}). The Explorer shows {records} browsable records, including {strings2026} distinct 2026 applied-for strings from a secondary index. These are not all delegated TLDs. Full official 2026 APS dossiers archived locally: {official2026} of ICANN's 1,615 applications; the local APS corpus is incomplete.",
     "applicationCorpusError": "The local application archive could not be rendered correctly. The post-Reveal 2026 layer is deliberately kept separate from any unsupported completeness claim.",
     "exploreApplications": "historical applications",
     "downloadApplications2000": "2000 applications",
@@ -2241,7 +2241,8 @@
     "cemeteryTaxonomyTitle": "Four distinct outcomes",
     "cemeteryTaxonomy": "Withdrawn or rejected application; signed contract without delegation; delegated TLD later revoked; registry operator replaced while the TLD persists. These categories must not be merged into a single mortality count.",
     "cemeteryCaveat": "These are documented examples, not an exhaustive mortality census. A reproducible global graveyard requires reconciling ICANN registry agreement histories, termination determinations and dated IANA root records before publishing any total.",
-    "historicalPackNote": "Historical data pack v0.7.58 (9 October 2026), not the latest scientific release. For current RR2 evidence use its specific DOI."
+    "historicalPackNote": "Historical data pack v0.7.58 (9 October 2026), not the latest scientific release. For current RR2 evidence use its specific DOI.",
+    "release0776": "Independent audit repair: moved economic cycles and the gTLD cemetery inside Economics, corrected mobile layout in four languages, labelled historical ZIP v0.7.58 separately from current CSVs, reconciled RR2 citations and added Explorer/navigation regression tests."
   },
   "it": {
     "brand": "Brand",
@@ -2787,7 +2788,7 @@
     "strange2026Pending": "I dati del Reveal Day sono pubblici. Il Replacement Period è aperto dall’8 al 21 ottobre 2026; l’elenco definitivo delle stringhe è previsto per il 17 novembre. I contenuti 2026 sono quindi indicati come snapshot datato, non come elenco finale.",
     "tabExplore": "Cerca TLD",
     "exploreTitle": "TLD Explorer",
-    "exploreSub": "Cerca un TLD o una candidatura storica e apri la sua scheda. Troverai stato nella root, origine, gestore, tappe principali e, dove documentati, casi di governance, economia e società.",
+    "exploreSub": "Cerca TLD e stringhe oggetto di candidatura, poi apri le schede documentate. TLD delegati, candidature storiche e stringhe proposte nel 2026 sono categorie diverse: l’Explorer non le confonde.",
     "exploreCoverageTitle": "Copertura universale dei TLD",
     "exploreCoverageBody": "Ogni voce conservata nel database IANA datato ha una scheda tecnica. I TLD storici documentati non più presenti nel database IANA corrente sono aggiunti separatamente. Le stringhe rimaste solo candidature restano distinte dai TLD delegati. Il catalogo core di 1.849 record e l’overlay 2026 congelato sono livelli separati; il totale visibile nell’Explorer è la loro unione deduplicata.",
     "exploreIana": "Nomi nell’elenco della root",
@@ -3425,7 +3426,7 @@
     "outcome_delegated_2012": "Delegata nel 2012",
     "outcome_delegated_2011": "Delegata nel 2011",
     "applicationCorpusLoading": "Archivio candidature: preparazione dei corpus locali completi 2000, 2004 e 2012 a livello stringa/candidato.",
-    "applicationCorpusReady": "Archivio storico delle candidature completo localmente: {count} candidature nei round {rounds}. Il livello 2026 è ora post-Reveal; i record ufficiali verificati vengono aggiunti progressivamente senza dichiarare una copertura APS locale completa.",
+    "applicationCorpusReady": "Candidature storiche 2000/2004/2012 archiviate localmente: {count} ({rounds}). L’Explorer mostra {records} schede navigabili, incluse {strings2026} stringhe distinte candidate nel 2026 secondo un indice secondario. Non sono tutte TLD delegate. Dossier ufficiali APS 2026 integralmente archiviati localmente: {official2026} sulle 1.615 candidature ICANN; il corpus APS locale resta incompleto.",
     "applicationCorpusError": "L’archivio locale delle candidature non può essere visualizzato correttamente. Il livello 2026 post-Reveal resta deliberatamente separato da qualsiasi dichiarazione di completezza non supportata.",
     "exploreApplications": "candidature storiche",
     "downloadApplications2000": "Candidature 2000",
@@ -4485,7 +4486,8 @@
     "cemeteryTaxonomyTitle": "Quattro esiti da non confondere",
     "cemeteryTaxonomy": "Candidatura ritirata o respinta; contratto firmato senza delega; TLD delegato e poi revocato; sostituzione dell'operatore mentre il TLD continua a esistere. Mescolarli in un'unica statistica di mortalità sarebbe scorretto.",
     "cemeteryCaveat": "Casi documentati, non un censimento esaustivo. Un vero cimitero mondiale riproducibile richiede di riconciliare contratti ICANN, decisioni di cessazione e registri IANA datati prima di pubblicare un totale.",
-    "historicalPackNote": "Pacchetto dati storico v0.7.58 (9 ottobre 2026), non l'ultima release scientifica. Per i dati RR2 aggiornati utilizzare il DOI specifico."
+    "historicalPackNote": "Pacchetto dati storico v0.7.58 (9 ottobre 2026), non l'ultima release scientifica. Per i dati RR2 aggiornati utilizzare il DOI specifico.",
+    "release0776": "Correzioni dopo audit indipendente: Cicli economici e Cimitero dei gTLD ricollocati in Economia, overflow mobile corretto in quattro lingue, ZIP storico v0.7.58 distinto dai CSV correnti, citazioni RR2 allineate e nuovi test contro regressioni di navigazione ed Explorer."
   },
   "de": {
     "brand": "Marke",
@@ -5031,7 +5033,7 @@
     "strange2026Pending": "Die Reveal-Day-Daten sind veroffentlicht. Die Replacement Period lauft vom 8. bis 21. Oktober 2026; die bestatigte String-Liste ist fur den 17. November vorgesehen. Inhalte zum Round 2026 werden daher als datierter Snapshot und nicht als endgultige Liste gekennzeichnet.",
     "tabExplore": "TLD-Explorer",
     "exploreTitle": "TLD-Explorer",
-    "exploreSub": "Suchen Sie eine TLD oder eine historische Bewerbung und öffnen Sie das Profil. Sie finden Root-Status, Ursprung, Betreiber, wichtige Etappen und, soweit dokumentiert, Governance-, Wirtschafts- und Gesellschaftsfälle.",
+    "exploreSub": "Suchen Sie TLDs und beantragte Zeichenfolgen und öffnen Sie die belegten Profile. Delegierte TLDs, historische Bewerbungen und 2026 beantragte Strings sind unterschiedliche Kategorien.",
     "exploreCoverageTitle": "Universelle TLD-Abdeckung",
     "exploreCoverageBody": "Jeder Eintrag der datierten IANA-Datenbank besitzt ein technisches Profil. Dokumentierte historische TLDs außerhalb der aktuellen IANA-Datenbank werden separat ergänzt. Reine Bewerbungsstrings bleiben von delegierten TLDs getrennt. Der Kernkatalog mit 1.849 Datensätzen und das eingefrorene 2026-Overlay sind getrennte Ebenen; die sichtbare Explorer-Gesamtzahl ist ihre deduplizierte Vereinigung.",
     "exploreIana": "Namen in der Root-Liste",
@@ -5669,7 +5671,7 @@
     "outcome_delegated_2012": "2012 delegiert",
     "outcome_delegated_2011": "2011 delegiert",
     "applicationCorpusLoading": "Bewerbungsarchiv: vollständige lokale String-/Bewerber-Korpora 2000, 2004 und 2012 werden vorbereitet.",
-    "applicationCorpusReady": "Historisches Bewerbungsarchiv lokal vollständig: {count} Bewerbungen aus den Runden {rounds}. Die 2026-Ebene ist nun post-Reveal; verifizierte offizielle Datensätze werden schrittweise ergänzt, ohne eine vollständige lokale APS-Abdeckung zu behaupten.",
+    "applicationCorpusReady": "Lokal archivierte Bewerbungsdatensätze 2000/2004/2012: {count} ({rounds}). Der Explorer zeigt {records} aufrufbare Einträge, darunter {strings2026} verschiedene 2026 beantragte Strings aus einem Sekundärindex. Es handelt sich nicht durchweg um delegierte TLDs. Vollständig lokal archivierte offizielle APS-Dossiers 2026: {official2026} von 1.615 ICANN-Bewerbungen; der lokale APS-Korpus ist unvollständig.",
     "applicationCorpusError": "Das lokale Bewerbungsarchiv konnte nicht korrekt dargestellt werden. Die post-Reveal-Ebene 2026 bleibt bewusst von unbelegten Vollständigkeitsbehauptungen getrennt.",
     "exploreApplications": "historische Bewerbungen",
     "downloadApplications2000": "Bewerbungen 2000",
@@ -6729,7 +6731,8 @@
     "cemeteryTaxonomyTitle": "Vier verschiedene Ergebnisse",
     "cemeteryTaxonomy": "Zurückgezogene oder abgelehnte Bewerbung; Vertrag ohne Delegation; delegierte und später widerrufene TLD; Betreiberwechsel bei fortbestehender TLD. Keine gemeinsame Sterblichkeitszahl ohne Unterscheidung.",
     "cemeteryCaveat": "Dokumentierte Beispiele, keine vollständige globale Bestandsaufnahme. Eine belastbare Statistik muss ICANN-Verträge, Kündigungsentscheidungen und datierte IANA-Einträge abgleichen.",
-    "historicalPackNote": "Historisches Datenpaket v0.7.58 (9. Oktober 2026), nicht die neueste wissenschaftliche Version. Für RR2 den spezifischen DOI verwenden."
+    "historicalPackNote": "Historisches Datenpaket v0.7.58 (9. Oktober 2026), nicht die neueste wissenschaftliche Version. Für RR2 den spezifischen DOI verwenden.",
+    "release0776": "Unabhängige Audit-Korrektur: Wirtschaftszyklen und gTLD-Friedhof in die Wirtschaftsseite verschoben; mobiles Überlaufen in vier Sprachen behoben; historisches ZIP v0.7.58 von aktuellen CSV getrennt; RR2-Zitationen und Regressionstests aktualisiert."
   },
   "fr": {
     "brand": "Marque",
@@ -7275,7 +7278,7 @@
     "strange2026Pending": "Les donnees du Reveal Day sont publiques. La Replacement Period court du 8 au 21 octobre 2026 ; la liste confirmee des chaines est prevue le 17 novembre. Le contenu 2026 est donc presente comme un instantane date et non comme une liste definitive.",
     "tabExplore": "Explorer les TLD",
     "exploreTitle": "Explorateur de TLD",
-    "exploreSub": "Recherchez un TLD ou une candidature historique et ouvrez sa fiche. Vous y trouverez son état dans la racine, son origine, son opérateur, ses principales étapes et, lorsqu’ils sont documentés, des cas de gouvernance, d’économie et de société.",
+    "exploreSub": "Recherchez des TLD et des chaînes faisant l’objet de candidatures, puis ouvrez les fiches documentées. TLD délégués, candidatures historiques et chaînes proposées en 2026 sont des catégories distinctes.",
     "exploreCoverageTitle": "Couverture universelle des TLD",
     "exploreCoverageBody": "Chaque entrée conservée dans la base IANA datée dispose d’une fiche technique. Les TLD historiques documentés absents de la base IANA actuelle sont ajoutés séparément. Les chaînes restées de simples candidatures demeurent distinctes des TLD délégués. Le catalogue principal de 1 849 fiches et l’overlay 2026 figé sont des couches séparées ; le total visible dans l’Explorer correspond à leur union dédupliquée.",
     "exploreIana": "Noms dans la liste de la racine",
@@ -7913,7 +7916,7 @@
     "outcome_delegated_2012": "Déléguée en 2012",
     "outcome_delegated_2011": "Déléguée en 2011",
     "applicationCorpusLoading": "Archive des candidatures : préparation des corpus locaux complets 2000, 2004 et 2012 au niveau chaîne/candidat.",
-    "applicationCorpusReady": "Archive historique des candidatures complète localement : {count} candidatures pour les rounds {rounds}. La couche 2026 est désormais post-Reveal ; les dossiers officiels vérifiés sont ajoutés progressivement sans revendiquer une couverture APS locale complète.",
+    "applicationCorpusReady": "Dossiers des candidatures 2000/2004/2012 archivés localement : {count} ({rounds}). L’Explorer propose {records} fiches consultables, dont {strings2026} chaînes distinctes demandées en 2026 selon un index secondaire. Il ne s’agit pas de TLD tous délégués. Dossiers APS officiels 2026 entièrement archivés localement : {official2026} sur 1 615 candidatures ICANN ; le corpus APS local reste incomplet.",
     "applicationCorpusError": "L’archive locale des candidatures n’a pas pu être affichée correctement. La couche 2026 post-Reveal reste volontairement séparée de toute revendication de complétude non étayée.",
     "exploreApplications": "candidatures historiques",
     "downloadApplications2000": "Candidatures 2000",
@@ -8973,6 +8976,7 @@
     "cemeteryTaxonomyTitle": "Quatre issues différentes",
     "cemeteryTaxonomy": "Candidature retirée ou rejetée ; contrat sans délégation ; TLD délégué puis révoqué ; changement d'opérateur alors que le TLD subsiste. Ne pas confondre ces catégories dans un bilan unique.",
     "cemeteryCaveat": "Exemples documentés, pas un recensement exhaustif. Une statistique mondiale fiable exige le rapprochement des contrats ICANN, décisions de résiliation et données historiques de la racine IANA.",
-    "historicalPackNote": "Archive de données historique v0.7.58 (9 octobre 2026), et non la dernière publication scientifique. Pour RR2, consulter son DOI spécifique."
+    "historicalPackNote": "Archive de données historique v0.7.58 (9 octobre 2026), et non la dernière publication scientifique. Pour RR2, consulter son DOI spécifique.",
+    "release0776": "Correctifs issus de l’audit indépendant : cycles économiques et cimetière des gTLD replacés dans Économie ; débordements mobiles corrigés dans quatre langues ; ZIP historique v0.7.58 distingué des CSV actuels ; citations RR2 et tests de non-régression alignés."
   }
 }

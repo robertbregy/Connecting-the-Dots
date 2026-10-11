@@ -43,6 +43,7 @@ browser_meta = {
     'researchSnapshot': meta.get('researchSnapshot'),
     'paperVersion': meta.get('paperVersion'),
     'paperPath': meta.get('paperPath'),
+    'dataPackageVersion': meta.get('dataPackageVersion'),
     'doi': meta.get('doi'),
     'doiUrl': meta.get('doiUrl'),
     'conceptDoi': meta.get('conceptDoi'),
@@ -90,15 +91,28 @@ keywords:
 '''
 (ROOT / 'CITATION.cff').write_text(cff, encoding='utf-8')
 
-# Source template structured metadata stays aligned too.
-src = SRC.read_text(encoding='utf-8')
-src = re.sub(r'("version":")([^"]+)(")', rf'\g<1>{version}\g<3>', src, count=1)
+# Synchronize canonical Dataset, never accidentally overwrite archived ZIP version.
+src = SRC.read_text(encoding="utf-8")
 src = re.sub(r'("dateModified":")([^"]+)(")', rf'\g<1>{released}\g<3>', src)
-# Keep DOI in structured Dataset metadata in sync once an archival deposit exists.
-doi = meta.get('doi')
-if doi:
-    if '"identifier":"https://doi.org/' in src:
-        src = re.sub(r'"identifier":"https://doi.org/[^"]+"', f'"identifier":"https://doi.org/{doi}"', src, count=1)
-    else:
-        src = src.replace('"dateModified":"'+released+'"', '"dateModified":"'+released+'","identifier":"https://doi.org/'+doi+'"', 1)
-SRC.write_text(src, encoding='utf-8')
+dataset_pattern = r'(<script id="datasetStructuredData" type="application/ld\+json">)(.*?)(</script>)'
+def sync_dataset(match):
+    obj = json.loads(match.group(2))
+    obj["version"] = version
+    obj["dateModified"] = released
+    if meta.get("doi"):
+        obj["identifier"] = "https://doi.org/" + meta["doi"]
+    d = obj.get("distribution", [])
+    records = d if isinstance(d, list) else [d]
+    for entry in records:
+        url = str(entry.get("contentUrl") or "")
+        if url.endswith("/connecting-the-dots-data-pack.zip"):
+            entry["version"] = meta["dataPackageVersion"]
+            entry["name"] = "Historical frozen data pack v" + meta["dataPackageVersion"]
+        elif url.endswith("/data/tld_universe.csv") or url.endswith("/data/applications_2026_strings_reveal.csv"):
+            entry["version"] = version
+    obj["distribution"] = records
+    return match.group(1) + json.dumps(obj, ensure_ascii=False, separators=(",", ":")) + match.group(3)
+src, replacements = re.subn(dataset_pattern, sync_dataset, src, count=1, flags=re.S)
+if replacements != 1:
+    raise SystemExit("Canonical Dataset JSON-LD missing")
+SRC.write_text(src, encoding="utf-8")

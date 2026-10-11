@@ -528,3 +528,24 @@ html[data-theme="dark"] .derivedBadge{color:#f2c46d}html[data-theme="light"] .de
 .field2026Focus h3{font-size:clamp(1.18rem,2.4vw,1.5rem);line-height:1.3;margin:0 0 12px}
 .field2026Focus .sourceCluster{margin-top:14px}
 @media(max-width:720px){.fieldInvestigationGrid{grid-template-columns:1fr}.fieldInvestigationTeaser{padding:14px}}
+
+
+/* v0.7.76 · scoped independent-audit responsive repairs */
+#research .researchCitation a,
+#research .researchCitation p,
+#research .doiHero strong,
+#research .downloadCard,
+#research .downloadCard b,
+#research .downloadCard span{overflow-wrap:anywhere;min-width:0}
+#research .researchCitation a{word-break:break-word}
+#strange .strangeRoundGroups,
+#strange .strangeRoundGroup,
+#strange .strangeRoundGroup .resultGrid,
+#strange .strangeCard{min-width:0;max-width:100%}
+#strange .strangeCard{overflow-wrap:anywhere}
+@media(max-width:420px){
+ #strange .strangeRoundHead{flex-wrap:wrap;align-items:flex-start;gap:5px 12px}
+ #strange .strangeRoundHead>*{min-width:0;max-width:100%;overflow-wrap:anywhere}
+ #strange .strangeRoundGroup .resultGrid{grid-template-columns:minmax(0,1fr)}
+ #strange .strangeCard{min-width:0;width:100%}
+}

@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.75
+# Connecting the Dots — v0.7.76
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -6,7 +6,11 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.75 · 10 October 2026 (UTC)**
+**v0.7.76 · 11 October 2026 (UTC)**
+
+This corrective technical release fixes the independent full-site audit without rewriting scientific evidence. Economic cycles and the gTLD cemetery now belong to their proper Economics tab; the mobile Field Notes comparison table scrolls within a labelled, keyboard-focusable region, and unbroken Research URLs and narrow German Strange Internet cards no longer expand the viewport. The Explorer combines 1,849 core records and a frozen 980-string secondary 2026 inventory, with 41 overlaps, for **2,788 browsable records**. This is not a count of delegated TLDs or official ICANN application dossiers: only **1 of 1,615 official APS application records** is fully archived locally. Dataset structured metadata distinguishes current CSVs from the **v0.7.58 historical ZIP**. The working paper cites **RR2** as the current archived evidence while preserving the original **RR1**.
+
+**Previous v0.7.75 · 10 October 2026**
 
 **Scientific Research Release RR2 is now published and independently archived on Zenodo.** The new version-specific DOI is [10.5281/zenodo.23288603](https://doi.org/10.5281/zenodo.23288603); its **concept DOI is unchanged**, [10.5281/zenodo.23262622](https://doi.org/10.5281/zenodo.23262622). The original RR1 remains cited and archived under [10.5281/zenodo.23262623](https://doi.org/10.5281/zenodo.23262623).
 
@@ -115,7 +119,7 @@ Public CSV datasets and the downloadable data pack are exposed through the site.
 
 ## Deployment
 
-The GitHub repository is now the canonical working master. Ordinary publication updates are committed directly to `main`. The **Rebuild published site** GitHub Action regenerates and validates the static publication, commits generated outputs with `[skip build]`, and GitHub Pages deploys the committed state. Browser-upload ZIPs are retained only as secondary archival/fallback packages.
+The GitHub repository is now the canonical working master. Source and editorial changes should be prepared on `feat/**` branches and merged only after the browser and release checks pass. GitHub branch protection requires repository administration; a workflow alone cannot enforce it. The **Rebuild published site** GitHub Action regenerates and validates the static publication, commits generated outputs with `[skip build]`, and GitHub Pages deploys the committed state. Browser-upload ZIPs are retained only as secondary archival/fallback packages.
 
 See [`DEPLOY.md`](DEPLOY.md) for the current commit / verification procedure.
 

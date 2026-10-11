@@ -968,6 +968,30 @@ for lang in LANGS:
         fail('Access explainer must not masquerade as 2026 case or dated milestone')
     check_internal_refs(path)
 
+# v0.7.76 regression gates: prevent new Economics material leaking outside its tab.
+ec_start=source_html.find('<section class="section" id="economics">')
+social_start=source_html.find('<section class="section" id="social">')
+if not (0 <= ec_start < social_start):
+    fail('Economics and Social section order missing')
+economics_markup=source_html[ec_start:social_start]
+if (economics_markup.count('id="economic-cycles-2026"')!=1 or
+    economics_markup.count('id="gtld-cemetery"')!=1 or
+    not economics_markup.rstrip().endswith('</section>') or
+    economics_markup.index('id="gtld-cemetery"') > economics_markup.rfind('</section>')):
+    fail('New Economics panels are incorrectly outside the Economics tab')
+distributions=ds.get('distribution',[])
+if not isinstance(distributions,list):
+    fail('Dataset must identify live files and historical archive separately')
+current=[i for i in distributions if str(i.get('contentUrl','')).endswith('/data/tld_universe.csv')]
+archived=[i for i in distributions if str(i.get('contentUrl','')).endswith('/connecting-the-dots-data-pack.zip')]
+if (len(current)!=1 or current[0].get('version')!=version or len(archived)!=1 or
+    archived[0].get('version')!=publication_meta.get('dataPackageVersion')):
+    fail('JSON-LD must distinguish current dataset from historical frozen ZIP')
+if '## Suggested citation for RR2' not in (ROOT/'research'/'connecting-the-dots-working-paper-v1.md').read_text(encoding='utf-8'):
+    fail('Living working paper must recommend current archived RR2 first')
+if '<h2>Suggested citation for RR2' not in (ROOT/'research'/'connecting-the-dots-working-paper-v1.html').read_text(encoding='utf-8'):
+    fail('Living working paper HTML must recommend current archived RR2 first')
+
 # Working-paper revisions may evolve, but the dated RR1 evidence and citation do not.
 working_md=(ROOT/'research'/'connecting-the-dots-working-paper-v1.md').read_text(encoding='utf-8')
 working_html=(ROOT/'research'/'connecting-the-dots-working-paper-v1.html').read_text(encoding='utf-8')

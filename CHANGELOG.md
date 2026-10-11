@@ -1,3 +1,12 @@
+# v0.7.76 — 2026-10-11 (UTC)
+
+- Fixed an architectural regression: Economic Cycles and the gTLD Cemetery now live inside Economics instead of leaking onto every main section.
+- Prevented document-level mobile horizontal overflow with keyboard-accessible scrolling for the Field Notes comparison table and improved text/grid wrapping in Research and Strange Internet.
+- Separated current technical CSV distributions from the historical frozen v0.7.58 data pack in machine-readable Dataset metadata; repaired both prerender paths and version synchronization.
+- Brought mutable working-paper HTML and Markdown into agreement with the latest citable RR2 DOI 10.5281/zenodo.23288603; RR1 (10.5281/zenodo.23262623) is preserved as the original Reveal Day research release.
+- Clarified the Explorer's deduplicated 2,788 browsable records (1,849 core + 980 secondary 2026 strings, 41 overlaps), distinct from the still incomplete official 2026 application-level APS corpus (1 of 1,615 locally complete).
+- Added reproducible browser and static-release gates against recurrence; no historical research dataset or immutable scientific tag has been rewritten.
+
 # v0.7.75 — 2026-10-10 (UTC)
 
 - Promoted the independently confirmed Research Release RR2 DOI **10.5281/zenodo.23288603**. Its GitHub Release is pinned to the source freeze commit `33803aa3fa69f1abb4cce7fbd49a0788ee9a33c9`; the direct Zenodo API audit verified RR2's membership in the exact RR1 concept DOI series **10.5281/zenodo.23262622**.

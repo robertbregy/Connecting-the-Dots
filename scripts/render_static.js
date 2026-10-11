@@ -85,6 +85,18 @@ function render(language,alias=false){
   const dataset=document.getElementById('datasetStructuredData');
   const datasetData=JSON.parse(dataset.textContent);
   Object.assign(datasetData,{name:translations.metaDatasetName,description:translations.metaDatasetDescription,version:window.DOT_PUBLICATION.version,dateModified:window.DOT_PUBLICATION.releasedOn});
+  const versions=window.DOT_PUBLICATION;
+  const outputs=Array.isArray(datasetData.distribution)?datasetData.distribution:[datasetData.distribution];
+  for(const output of outputs){
+    const url=String(output?.contentUrl||'');
+    if(url.endsWith('/connecting-the-dots-data-pack.zip')){
+      output.version=versions.dataPackageVersion;
+      output.name='Historical frozen data pack v'+versions.dataPackageVersion;
+    }else if(/\/data\/(tld_universe|applications_2026_strings_reveal)\.csv$/.test(url)){
+      output.version=versions.version;
+    }
+  }
+  datasetData.distribution=outputs;
   dataset.textContent=JSON.stringify(datasetData);
 
   const links=()=>languages.map(l=>`<a href="${prefix+l}/" hreflang="${l}" lang="${l}" data-language="${l}"${l===language?' aria-current="page"':''}>${names[l]}</a>`).join('');

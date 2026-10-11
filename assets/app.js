@@ -528,7 +528,7 @@ function applicationCorpusStats(){const rounds=D.applicationArchaeology?.rounds|
 function syncApplicationCorpusComplete(){const rounds=D.applicationArchaeology?.rounds||{},required=['2000','2004','2012','2026'];D.explorerMeta.applicationCorpusComplete=required.every(round=>!!rounds[round]&&applicationRoundComplete(round));return D.explorerMeta.applicationCorpusComplete}
 function renderApplicationCorpusStatus(state='loading'){
  const el=document.getElementById('applicationCorpusStatus'),count=document.getElementById('exploreApplicationCount'),stats=applicationCorpusStats();if(count)count.textContent=fmtNum(stats.count);if(!el)return;
- el.className='applicationCorpusStatus '+state;let key=state==='ready'?'applicationCorpusReady':state==='error'?'applicationCorpusError':state==='frozen'?'applicationCorpusFrozen':'applicationCorpusLoading';let msg=t(key);if(state==='ready'||state==='frozen')msg=msg.replace('{count}',fmtNum(stats.count)).replace('{rounds}',stats.completed.join(', '));el.textContent=msg;
+ el.className='applicationCorpusStatus '+state;let key=state==='ready'?'applicationCorpusReady':state==='error'?'applicationCorpusError':state==='frozen'?'applicationCorpusFrozen':'applicationCorpusLoading';let msg=t(key);if(state==='ready'||state==='frozen')msg=msg.replace('{count}',fmtNum(stats.count)).replace('{rounds}',stats.completed.join(', ')).replace('{records}',fmtNum(D.explorer?.length||0)).replace('{strings2026}',fmtNum(D.explorerMeta?.application2026StringCount||0)).replace('{official2026}',fmtNum(D.explorerMeta?.application2026OfficialRecordCount||0));el.textContent=msg;
 }
 function initApplicationArchaeology(){renderApplicationCorpusStatus('ready')}
 

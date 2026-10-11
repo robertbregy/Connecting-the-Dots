@@ -36,13 +36,13 @@
     "A new research release is created when the underlying evidence set or a major derived analysis changes materially.",
     "Historical research releases remain archived and citable once a DOI/archive workflow is activated."
   ],
-  "currentSiteVersion": "0.7.75",
+  "currentSiteVersion": "0.7.76",
   "workingPaperRevision": {
     "version": "1.1-draft",
-    "revisedOn": "2026-10-10",
+    "revisedOn": "2026-10-11",
     "path": "research/connecting-the-dots-working-paper-v1.md",
     "relationToRR1": "RR1 is preserved as a separate previous Zenodo version.",
-    "relationToRR2": "Living draft revised 10 October 2026; distinguish from the immutable RR2 Zenodo dataset and cite RR2 for its source snapshot."
+    "relationToRR2": "RR2 is an immutable, archived 10 October 2026 research snapshot (DOI 10.5281/zenodo.23288603). This later working-paper revision corrects interpretation/citations without modifying RR1/RR2 evidence."
   },
   "previousResearchReleases": [
     {

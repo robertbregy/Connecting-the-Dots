@@ -188,7 +188,7 @@ def page(item: dict, lang: str) -> str:
 <div class="actions"><a class="action secondary" href="{related_base}">{h(t["backTitle"])}</a>
 <a class="action secondary" href="{BASE}{lang}/">{h(t["siteTitle"])}</a></div>
 </main><footer>Connecting the Dots · <a href="{BASE}{lang}/">ICANN 2026</a> ·
-<a href="https://doi.org/10.5281/zenodo.23262623">Research Release RR1 (archived evidence)</a></footer>
+<a href="https://doi.org/10.5281/zenodo.23288603">RR2 · latest archived research</a> · <a href="https://doi.org/10.5281/zenodo.23262623">RR1 · original Reveal Day snapshot</a></footer>
 </body></html>
 '''
 

@@ -212,7 +212,7 @@ def render_page(data, tr, lang, pub):
 <p><a href="https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey">{h(t["insideProgramCta"])}</a> · <a href="{BASE}{lang}/?tab=lugano#lugano">{h(t["insideCaseCta"])}</a></p></section>
 </main>
 <footer>Connecting the Dots · <a href="{BASE}{lang}/">2026 New gTLD Program</a> ·
-<a href="https://doi.org/10.5281/zenodo.23262623">Research Release RR1 (Zenodo DOI)</a></footer></body></html>
+<a href="https://doi.org/10.5281/zenodo.23288603">RR2 · latest archived research</a> · <a href="https://doi.org/10.5281/zenodo.23262623">RR1 · original Reveal Day snapshot</a></footer></body></html>
 '''
 
 
