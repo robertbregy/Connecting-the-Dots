@@ -1,0 +1,61 @@
+name: Mobile overflow DOM triage
+on:
+  push:
+    branches:
+      - audit/full-repository-independent-20261011
+    paths:
+      - .github/workflows/mobile-triage-20261011.yml
+permissions:
+  contents: read
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Chromium
+        run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Inspect exact overflowing DOM elements at narrow widths
+        run: |
+          python3 -m http.server 8123 --bind 127.0.0.1 >/tmp/server.log 2>&1 &
+          sleep 2
+          node <<'JS'
+          const {chromium}=require('playwright');
+          (async()=>{
+            const b=await chromium.launch({headless:true,args:['--disable-dev-shm-usage']});
+            for(const lang of ['it','de']){
+              for(const w of [320,390,768]){
+                const c=await b.newContext({viewport:{width:w,height:812},isMobile:true,hasTouch:true});
+                const p=await c.newPage();
+                for(const tab of ['behind-round','research','strange']){
+                  await p.goto('http://127.0.0.1:8123/'+lang+'/?tab='+tab,{waitUntil:'load'});
+                  await p.waitForTimeout(120);
+                  const result=await p.evaluate(()=>{
+                    const w=document.documentElement.clientWidth;
+                    const nodes=[...document.querySelectorAll('section.section.active *')].filter(el=>{
+                      const r=el.getBoundingClientRect(),c=getComputedStyle(el);
+                      return c.display!=='none'&&c.visibility!=='hidden'&&r.width>0&&(r.right>w+4||r.left < -4);
+                    }).map(el=>{
+                      const r=el.getBoundingClientRect(),c=getComputedStyle(el);
+                      return {tag:el.tagName,id:el.id,cls:String(el.className||'').slice(0,90),right:Math.round(r.right),width:Math.round(r.width),minWidth:c.minWidth,overflowX:c.overflowX,display:c.display,text:el.innerText?.slice(0,65)};
+                    }).sort((a,b)=>b.right-a.right);
+                    return {vw:w,docWidth:document.documentElement.scrollWidth,active:document.querySelector('.section.active')?.id,offenders:nodes.slice(0,12)};
+                  });
+                  console.log('MOBILE_DOM_TRIAGE '+JSON.stringify({lang,width:w,tab,...result}));
+                }
+                await p.close();await c.close();
+              }
+            }
+            await b.close();
+          })().catch(e=>{console.error(e.stack);process.exitCode=1});
+          JS
