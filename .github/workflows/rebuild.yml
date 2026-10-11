@@ -59,6 +59,26 @@ jobs:
           node scripts/validate_internet_access.js
           CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
 
+      - name: Verify reproducible current ZIP and unchanged historical archive
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,pathlib,subprocess,sys
+          root=pathlib.Path.cwd()
+          pub=json.loads((root/'publication.json').read_text())
+          current=root/pub['currentDataPackPath']
+          historic=root/'downloads/connecting-the-dots-data-pack.zip'
+          def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+          before_current,before_historic=sha(current),sha(historic)
+          subprocess.run([sys.executable,'build.py'],check=True)
+          after_current,after_historic=sha(current),sha(historic)
+          if before_current!=after_current:
+              raise SystemExit('NON-DETERMINISTIC DATA ZIP: same source produced different bytes')
+          if before_historic!=after_historic:
+              raise SystemExit('HISTORICAL ZIP WAS MODIFIED')
+          print('DETERMINISTIC_ZIP_VERIFIED',pub['version'],before_current)
+          print('FROZEN_LEGACY_ZIP_PRESERVED',pub['dataPackageVersion'],before_historic)
+          PY
+
       - name: Commit generated publication
         # Generate/commit assets on feature branches. No unsolicited bot writes to main.
         if: github.ref != 'refs/heads/main'
