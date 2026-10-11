@@ -88,7 +88,10 @@ const capture=async(page,which)=>{
     }else{
       await page.keyboard.press("Tab");
       const firstTag=await page.evaluate(()=>document.activeElement?.outerHTML.slice(0,150));
-      await click('.hero-actions a[href="#/capire"]',"Home > Capire");
+      await page.locator('.hero-actions a[href="#/capire"]').focus();
+      await page.keyboard.press("Enter");
+      await page.waitForTimeout(80);
+      r.path.push("Tastiera: Home > Capire (Invio)");
       r.observation={initialFocus:firstTag,focusAfterNavigation:await page.evaluate(()=>({
         active:document.activeElement?.tagName, id:document.activeElement?.id,
         h1:document.querySelector("#main h1")?.textContent
@@ -97,6 +100,8 @@ const capture=async(page,which)=>{
     const endpoint=await capture(page,"prototype");
     r.observation.route=page.url().split("#")[1];
     r.observation.mainHeading=endpoint.mainHeading;
+    if(s.viewport===390 && r.initialNav.visible!==5)errors.push(s.id+": only "+r.initialNav.visible+"/5 mobile navigation items visible");
+    if(s.id==="P08" && r.observation.focusAfterNavigation.active!=="H1")errors.push("P08: focus not transferred to new H1 after route change");
     results.push(r);
    }catch(e){errors.push(s.id+": "+e.message)}
    finally{await context.close();}
