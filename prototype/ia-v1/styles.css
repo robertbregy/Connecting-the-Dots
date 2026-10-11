@@ -160,7 +160,8 @@ noscript{display:block}
   .main-stage{padding:25px 0 58px}
   .grid,.grid.two,.grid.five{grid-template-columns:1fr}
   .top-line{min-height:61px;gap:8px}
-  .brand{font-size:16px}
+  .lab-label{display:none}
+  .brand{font-size:15px;letter-spacing:-.8px}
   .lab-label{font-size:9px;padding:4px 6px}
   .nav-bar{gap:19px}
   .hero{padding:15px 0 26px}
