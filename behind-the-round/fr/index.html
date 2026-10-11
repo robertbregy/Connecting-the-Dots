@@ -77,6 +77,8 @@ footer{border-top:1px solid var(--border);color:var(--muted);font-size:.9rem;pad
 .behindSources a{display:block;padding:11px 13px;border:1px solid var(--border);border-radius:10px;text-decoration:none;color:var(--accent-text);overflow-wrap:anywhere;line-height:1.42;font-size:.87rem}
 .behindSources a:hover,.behindSources a:focus-visible{text-decoration:underline;background:var(--surface2)}
 .behindSources [data-source-kind="secondary"] a,.behindSources [data-source-kind="derived"] a{border-style:dashed}
+.behindTableWrap{max-width:100%;min-width:0;overflow-x:auto;overflow-y:hidden;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}
+.behindTableWrap:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .behindComparisonTable{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;margin:12px 0 8px;overflow-wrap:anywhere}
 .behindComparisonTable th,.behindComparisonTable td{padding:9px 12px;border-bottom:1px solid var(--border);text-align:right}
 .behindComparisonTable th:first-child,.behindComparisonTable td:first-child{text-align:left}
@@ -137,9 +139,9 @@ footer{border-top:1px solid var(--border);color:var(--muted);font-size:.9rem;pad
 <p>Le 22 septembre, l&#x27;ICANN annonçait 1 616 candidatures payées destinées à poursuivre le processus. Le 7 octobre, le total officiel était de 1 615. Les sources publiques vérifiées n&#x27;identifient ni le dossier concerné ni la cause. Retrait, refus administratif, paiement ou correction de calendrier seraient de simples hypothèses. La question reste ouverte.</p>
 </section></div>
 <section class="behindReading behindRegional">
-<h3>L&#x27;écart régional : une vérification indépendante</h3>
+<h3 id="behindRegionalHeading">L&#x27;écart régional : une vérification indépendante</h3>
 <p>Seule la région Asie-Pacifique diffère entre les chiffres officiels du Reveal Day et l&#x27;index secondaire conservé par le projet. Le nombre de candidats y présente lui aussi un écart d&#x27;une unité.</p>
-<div class="behindTableWrap"><table class="behindComparisonTable"><thead><tr>
+<div class="behindTableWrap" role="region" aria-labelledby="behindRegionalHeading" tabindex="0"><table class="behindComparisonTable"><thead><tr>
 <th scope="col"><span>Région</span></th>
 <th scope="col"><span>ICANN</span></th>
 <th scope="col"><span>Index</span></th>
@@ -234,4 +236,4 @@ footer{border-top:1px solid var(--border);color:var(--muted);font-size:.9rem;pad
 <section class="panel fieldInvestigationIndex" id="field-investigations" aria-labelledby="field-investigations-title"><h2 id="field-investigations-title">Nouvelles enquêtes · 2026</h2><p class="intro">Sources distinctes : documents primaires de l&#x27;ICANN, index secondaires attribués et données figées du projet. Les chiffres ne mesurent pas tous la même chose ; les causalités non établies restent des hypothèses.</p><div class="fieldInvestigationGrid"><section class="fieldInvestigationTeaser" data-field-investigation-teaser="objectors-eoi"><p class="eyebrow">Carnet de terrain 03 · Procédure</p><h3><a href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/objectors-eoi/">Quand la sélection des objecteurs indépendants rencontre des défaillances</a></h3><p>Une boîte mail refusait les messages externes et, selon l&#x27;ICANN, un portail a fermé 24 heures avant l&#x27;échéance. L&#x27;ICANN a elle-même documenté ces incidents de sélection des Independent Objectors, sans lien démontré avec le nombre de candidatures TLD.</p><p class="behindStatus">Incidents de procédure documentés · conséquences individuelles non chiffrées</p></section><section class="fieldInvestigationTeaser" data-field-investigation-teaser="replacement-strings"><p class="eyebrow">Carnet de terrain 04 · Décomptes</p><h3><a href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/replacement-strings/">1 169 chaînes de remplacement : les lignes supplémentaires du Reveal Day</a></h3><p>Un fichier CSV peut contenir davantage de lignes que de candidatures. Chaînes alternatives, statuts de désactivation et variantes expliquent plusieurs écarts apparents lorsque l&#x27;on distingue les unités comptées.</p><p class="behindStatus">Enregistrements secondaires comptés · motifs individuels de désactivation à vérifier</p></section></div></section>
 </main>
 <footer>Connecting the Dots · <a href="https://robertbregy.github.io/Connecting-the-Dots/fr/">ICANN 2026</a> ·
-<a href="https://doi.org/10.5281/zenodo.23262623">Research Release RR1 (archived evidence)</a></footer></body></html>
+<a href="https://doi.org/10.5281/zenodo.23288603">RR2 · latest archived research</a> · <a href="https://doi.org/10.5281/zenodo.23262623">RR1 · original Reveal Day snapshot</a></footer></body></html>

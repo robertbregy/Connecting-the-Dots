@@ -77,6 +77,8 @@ footer{border-top:1px solid var(--border);color:var(--muted);font-size:.9rem;pad
 .behindSources a{display:block;padding:11px 13px;border:1px solid var(--border);border-radius:10px;text-decoration:none;color:var(--accent-text);overflow-wrap:anywhere;line-height:1.42;font-size:.87rem}
 .behindSources a:hover,.behindSources a:focus-visible{text-decoration:underline;background:var(--surface2)}
 .behindSources [data-source-kind="secondary"] a,.behindSources [data-source-kind="derived"] a{border-style:dashed}
+.behindTableWrap{max-width:100%;min-width:0;overflow-x:auto;overflow-y:hidden;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}
+.behindTableWrap:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .behindComparisonTable{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;margin:12px 0 8px;overflow-wrap:anywhere}
 .behindComparisonTable th,.behindComparisonTable td{padding:9px 12px;border-bottom:1px solid var(--border);text-align:right}
 .behindComparisonTable th:first-child,.behindComparisonTable td:first-child{text-align:left}
@@ -137,9 +139,9 @@ footer{border-top:1px solid var(--border);color:var(--muted);font-size:.9rem;pad
 <p>On 22 September ICANN reported 1,616 paid applications proceeding. On 7 October the official Reveal Day total was 1,615. The verified public sources reviewed here do not identify which record accounts for the change or why. Withdrawal, administrative rejection, a payment issue or a timing adjustment would be speculation. This question remains open.</p>
 </section></div>
 <section class="behindReading behindRegional">
-<h3>The regional discrepancy: a second check</h3>
+<h3 id="behindRegionalHeading">The regional discrepancy: a second check</h3>
 <p>Only Asia-Pacific differs between the official Reveal Day application counts and the project&#x27;s preserved secondary index. The applicant count also differs by one in precisely that region.</p>
-<div class="behindTableWrap"><table class="behindComparisonTable"><thead><tr>
+<div class="behindTableWrap" role="region" aria-labelledby="behindRegionalHeading" tabindex="0"><table class="behindComparisonTable"><thead><tr>
 <th scope="col"><span>Region</span></th>
 <th scope="col"><span>ICANN</span></th>
 <th scope="col"><span>Index</span></th>
@@ -234,4 +236,4 @@ footer{border-top:1px solid var(--border);color:var(--muted);font-size:.9rem;pad
 <section class="panel fieldInvestigationIndex" id="field-investigations" aria-labelledby="field-investigations-title"><h2 id="field-investigations-title">Additional investigations · 2026</h2><p class="intro">Source classification: ICANN primary documentation, attributed secondary indexes and a frozen project-derived snapshot. Reported totals use different units; explanations beyond the documents remain hypotheses.</p><div class="fieldInvestigationGrid"><section class="fieldInvestigationTeaser" data-field-investigation-teaser="objectors-eoi"><p class="eyebrow">Field Note 03 · Procedure</p><h3><a href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/objectors-eoi/">When the safeguards&#x27; own recruitment system failed</a></h3><p>An email inbox refused outside messages, and ICANN says a submission portal closed 24 hours before its deadline. These are not rumours about gTLD applications: ICANN documented the two technical problems in the Independent Objector selection process.</p><p class="behindStatus">Documented procedural incidents · individual effects not quantified</p></section><section class="fieldInvestigationTeaser" data-field-investigation-teaser="replacement-strings"><p class="eyebrow">Field Note 04 · Counting</p><h3><a href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/replacement-strings/">1,169 replacement strings: the extra rows behind Reveal Day</a></h3><p>A CSV can have more rows than applications. Alternative strings, early deactivation labels and variant-only records explain several numbers that look contradictory when read without their definitions.</p><p class="behindStatus">Counted secondary records · individual deactivation reasons still require checking</p></section></div></section>
 </main>
 <footer>Connecting the Dots · <a href="https://robertbregy.github.io/Connecting-the-Dots/en/">ICANN 2026</a> ·
-<a href="https://doi.org/10.5281/zenodo.23262623">Research Release RR1 (archived evidence)</a></footer></body></html>
+<a href="https://doi.org/10.5281/zenodo.23288603">RR2 · latest archived research</a> · <a href="https://doi.org/10.5281/zenodo.23262623">RR1 · original Reveal Day snapshot</a></footer></body></html>
