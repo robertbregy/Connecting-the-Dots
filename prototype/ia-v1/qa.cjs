@@ -93,6 +93,9 @@ for(const lang of LANG) {
     for(const m of body.matchAll(/target="_blank" rel="noopener noreferrer"/g))checkedLinks++;
     checkedPages++;
   }
+  assert.ok(vm.runInContext('area("capire")',ctx).includes("www.example.com"),"Beginner primer missing "+lang);
+  assert.ok(vm.runInContext('area("ricerca")',ctx).includes("10.5281/zenodo.23288603"),"RR2 DOI missing on Research landing "+lang);
+  assert.ok(vm.runInContext('area("ricerca")',ctx).includes("connecting-the-dots-data-pack-v0.7.78.zip"),"Current technical pack missing "+lang);
   const articleAccess=get('article("access")');
   assert.ok(articleAccess.includes("/behind-the-round/"+lang+"/who-controls-internet-access/"),"Access deep link missing "+lang);
   const articleCounts=get('article("counts")');
