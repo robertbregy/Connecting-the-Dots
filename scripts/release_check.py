@@ -117,7 +117,7 @@ try:
     ds=json.loads(ds_match.group(1)) if ds_match else {}
 except Exception as exc:
     fail('Dataset JSON-LD cannot be parsed: '+str(exc))
-if ds.get('version')!=version or ds.get('dateModified')!=publication_meta.get('releasedOn'):
+if ds.get('version')!=version or ds.get('dateModified')!=publication_meta.get('asOf'):
     fail('Dataset JSON-LD version/date is stale')
 expected_based_on={
     'https://www.iana.org/domains/root/db',
@@ -629,7 +629,7 @@ chronicle=json_file('inside_the_round_events.json')
 events=chronicle.get('events', [])
 if len(events)!=9 or len({event['id'] for event in events})!=9:
     fail('Inside the Round event count or unique ids')
-if chronicle.get('lastReviewed')!=publication_meta.get('releasedOn'):
+if chronicle.get('lastReviewed')!=publication_meta.get('asOf'):
     fail('Inside the Round editorial review date does not match this publication')
 if publication_meta.get('researchRelease')!='RR2' or publication_meta.get('doi')!='10.5281/zenodo.23288603':
     fail('Current publication does not cite the verified RR2 DOI')
@@ -715,7 +715,7 @@ for lang in LANGS:
 fieldnotes=json_file('behind_round_stories.json')
 if fieldnotes.get('schemaVersion')!=1 or fieldnotes.get('editorialLayer')!='2026-round-field-notes-not-part-of-frozen-RR1':
     fail('Unversioned/incorrect field-note evidence register')
-if fieldnotes.get('lastReviewed')!=publication_meta.get('releasedOn'):
+if fieldnotes.get('lastReviewed')!=publication_meta.get('asOf'):
     fail('Field-note review date differs from publication date')
 stories=fieldnotes.get('episodes',[])
 if len(stories)!=2 or [x['id'] for x in stories]!=['reveal-day-counts','wdo-identity']:
@@ -826,7 +826,7 @@ if {x['code'] for x in regions if x['officialApplications']!=x['visibleApplicati
 investigations=json_file('field_investigations.json')
 if investigations.get('schemaVersion')!=1 or investigations.get('editorialLayer')!='2026-round-investigations-not-part-of-frozen-RR1':
     fail('Unversioned or wrongly classified 2026 investigation register')
-if investigations.get('lastReviewed')!=publication_meta.get('releasedOn'):
+if investigations.get('lastReviewed')!=publication_meta.get('asOf'):
     fail('Investigation review date differs from website publication')
 cases=investigations.get('episodes',[])
 if [x.get('id') for x in cases]!=['objectors-eoi','replacement-strings']:
@@ -877,7 +877,7 @@ for lang in LANGS:
 explainer=json_file('sanctions_explainer.json')
 if explainer.get('editorialLayer')!='governance-explainer-not-part-of-frozen-RR1' or explainer.get('classification')!='explainer':
     fail('Sanctions narrative conflated with dated cases or archived RR1')
-if explainer.get('reviewedOn')!=publication_meta.get('releasedOn') or explainer.get('publishedOn')!='2026-10-10':
+if explainer.get('reviewedOn')!=publication_meta.get('asOf') or explainer.get('publishedOn')!='2026-10-10':
     fail('Unversioned sanctions explainer review')
 if len(explainer.get('sources',[]))!=12 or len(explainer.get('sections',[]))!=7 or len(explainer.get('precedents',[]))!=4:
     fail('Incomplete sanctions explainer data or sources')
@@ -922,7 +922,7 @@ for lang in LANGS:
 access=json_file('internet_access_explainer.json')
 if access.get('editorialLayer')!='living-public-explainer-not-frozen-RR1' or access.get('classification')!='governance-and-network-access-explainer':
     fail('Internet access explainer mislabeled as archival research or country ranking')
-if access.get('reviewedOn')!=publication_meta.get('releasedOn') or access.get('publishedOn')!='2026-10-10':
+if access.get('reviewedOn')!=publication_meta.get('asOf') or access.get('publishedOn')!='2026-10-10':
     fail('Access explainer has no reviewed publication date')
 if len(access['mechanisms'])!=7 or len(access['stageIds'])!=5 or len(access['cases'])!=5 or len(access['sources'])!=11:
     fail('Internet access explainer lost technical scenarios or historic evidence')
@@ -998,7 +998,7 @@ working_html=(ROOT/'research'/'connecting-the-dots-working-paper-v1.html').read_
 for fragment in ['Working Paper v1.1-draft', 'Editorial revision note (10 October 2026)', 'participant-observer', '6A.3 A first field note', '1,616']:
     if fragment not in working_md or fragment not in working_html:
         fail('Working paper HTML/Markdown methodological revision mismatch: '+fragment)
-if 'date-released: "2026-10-10"' not in citation or publication_meta.get('releasedOn')!='2026-10-10':
+if 'date-released: "2026-10-10"' not in citation or publication_meta.get('asOf')!='2026-10-10' or publication_meta.get('releasedOn') < publication_meta.get('asOf'):
     fail('Current RR2 publication date must match the verified release, independently of technical versions')
 research_page=(ROOT/'research'/'index.html').read_text(encoding='utf-8')
 if '10.5281/zenodo.23288603' not in research_page or '10.5281/zenodo.23262623' not in research_page or '10.5281/zenodo.23262622' not in research_page:
