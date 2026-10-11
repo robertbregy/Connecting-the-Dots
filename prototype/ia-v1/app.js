@@ -6,6 +6,13 @@
  * Original source pages remain the canonical source for all facts and links.
  */
 const LIVE = "https://robertbregy.github.io/Connecting-the-Dots/";
+const NAV_LABELS = {it:"Navigazione principale",en:"Main navigation",de:"Hauptnavigation",fr:"Navigation principale"};
+const THEME_LABELS = {
+  it:{light:"Attiva tema chiaro",dark:"Attiva tema scuro"},
+  en:{light:"Switch to light theme",dark:"Switch to dark theme"},
+  de:{light:"Helles Design aktivieren",dark:"Dunkles Design aktivieren"},
+  fr:{light:"Activer le thème clair",dark:"Activer le thème sombre"}
+};
 const AREAS = ["capire", "esplorare", "storie", "round", "ricerca"];
 const AREA_RESOURCES = {
   capire:["basics","roles","access","sanctions","glossary"],
@@ -613,7 +620,8 @@ function updateLanguage(next) {
   });
   document.title="Connecting the Dots | IA Lab · "+t.homeBack;
   document.querySelector(".brand").setAttribute("aria-label","Connecting the Dots · "+t.homeBack);
-  document.querySelector(".nav-bar").setAttribute("aria-label",t.mapTitle);
+  document.querySelector(".nav-bar").setAttribute("aria-label",NAV_LABELS[locale]);
+  $("theme-toggle").setAttribute("aria-label",THEME_LABELS[locale][document.documentElement.dataset.theme==="dark"?"light":"dark"]);
   try {
     const u = new URL(location.href);
     u.searchParams.set("lang",locale);
@@ -624,7 +632,7 @@ function updateLanguage(next) {
 function toggleTheme() {
   const next=document.documentElement.dataset.theme==="dark"?"light":"dark";
   document.documentElement.dataset.theme=next;
-  $("theme-toggle").setAttribute("aria-label",next==="dark"?"Switch to light theme":"Switch to dark theme");
+  $("theme-toggle").setAttribute("aria-label",THEME_LABELS[locale][next==="dark"?"light":"dark"]);
   try {localStorage.setItem("ctd-ia-theme",next);}catch(_){}
 }
 function init() {
