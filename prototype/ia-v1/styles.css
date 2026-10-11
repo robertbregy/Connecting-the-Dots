@@ -59,7 +59,7 @@ p{margin-bottom:16px}
 .hero-copy{min-width:0}
 .hero-copy .lead{max-width:640px}
 .hero-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:28px}
-.button{display:inline-flex;justify-content:center;align-items:center;gap:7px;border:1px solid var(--line);padding:11px 16px;background:var(--surface);border-radius:10px;color:var(--ink);font-weight:730;text-decoration:none;font-size:14px;min-height:45px;transition:background .14s,border-color .14s}
+.button{display:inline-flex;justify-content:center;align-items:center;gap:7px;border:1px solid var(--line);padding:11px 16px;background:var(--surface);border-radius:10px;color:var(--ink);font-weight:730;text-decoration:none;font-size:14px;min-height:45px;transition:none}
 .button:hover{border-color:var(--blue);background:var(--blue-soft);text-decoration:none}
 .button.primary{background:var(--blue-strong);border-color:var(--blue-strong);color:var(--surface)}
 :root[data-theme="dark"] .button.primary{background:#b7daff;color:#0a2037;border-color:#b7daff}
