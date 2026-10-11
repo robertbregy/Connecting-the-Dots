@@ -87,7 +87,7 @@ The project now has two version layers:
 - **Site releases** (`v0.x.y`) for software, editorial, accessibility and interface changes.
 - **Research releases** (`RR1`, `RR2`, …) for material changes to the evidence base or major derived datasets.
 
-Current research release: **RR1 · Reveal Day 2026**. The next planned research release is **RR2 · String Confirmation 2026**, triggered by ICANN's 17 November 2026 String Confirmation Day.
+Current research release: **RR2 · Post-Reveal Evidence Consolidation**, published 10 October 2026 (DOI [10.5281/zenodo.23288603](https://doi.org/10.5281/zenodo.23288603)). RR1 remains an immutable earlier release (DOI [10.5281/zenodo.23262623](https://doi.org/10.5281/zenodo.23262623)). The next candidate is **RR3**, contingent on verified new evidence after ICANN String Confirmation Day on 17 November 2026.
 
 Citation metadata are stored in [`CITATION.cff`](CITATION.cff). Zenodo-ready metadata are stored in [`.zenodo.json`](.zenodo.json). The research-release manifest and working paper are in [`research/`](research/). RR1 is archived on Zenodo: `10.5281/zenodo.23262623`.
 
