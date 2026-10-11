@@ -7,9 +7,10 @@ on:
       - '.github/workflows/probe-aps-20261011.yml'
       - 'scripts/probe_aps_20261011.js'
       - 'scripts/reconcile_aps_csv.py'
+      - 'scripts/publish_aps_listing.py'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   official-export:
     runs-on: ubuntu-latest
@@ -31,6 +32,17 @@ jobs:
         run: node scripts/probe_aps_20261011.js
       - name: Reconcile APS CSV IDs and -R replacement rows
         run: python3 scripts/reconcile_aps_csv.py
+      - name: Vendor verified official APS listing and provenance into research branch
+        run: |
+          python3 scripts/publish_aps_listing.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/applications_2026_aps_official_listing.csv data/applications_2026_aps_official_provenance.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Vendor official APS public listing (2783 rows / 1614 published applications)"
+            git pull --rebase origin "$GITHUB_REF_NAME"
+            git push
+          fi
       - name: Preserve the CSV, evidence and diagnostics as a private CI artifact
         if: always()
         uses: actions/upload-artifact@v4
