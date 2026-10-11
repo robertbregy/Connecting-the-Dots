@@ -2240,7 +2240,8 @@
     "cemeteryWed": "ICANN terminated the .wed registry agreement in October 2020; the subsequent determination was to transition its operation. Termination of an operator and death of a string must therefore not be conflated.",
     "cemeteryTaxonomyTitle": "Four distinct outcomes",
     "cemeteryTaxonomy": "Withdrawn or rejected application; signed contract without delegation; delegated TLD later revoked; registry operator replaced while the TLD persists. These categories must not be merged into a single mortality count.",
-    "cemeteryCaveat": "These are documented examples, not an exhaustive mortality census. A reproducible global graveyard requires reconciling ICANN registry agreement histories, termination determinations and dated IANA root records before publishing any total."
+    "cemeteryCaveat": "These are documented examples, not an exhaustive mortality census. A reproducible global graveyard requires reconciling ICANN registry agreement histories, termination determinations and dated IANA root records before publishing any total.",
+    "historicalPackNote": "Historical data pack v0.7.58 (9 October 2026), not the latest scientific release. For current RR2 evidence use its specific DOI."
   },
   "it": {
     "brand": "Brand",
@@ -4483,7 +4484,8 @@
     "cemeteryWed": "ICANN cessò il contratto di registro .wed nell'ottobre 2020, ma la successiva decisione prevedeva il trasferimento della gestione. La fine di un operatore non coincide necessariamente con la morte della stringa.",
     "cemeteryTaxonomyTitle": "Quattro esiti da non confondere",
     "cemeteryTaxonomy": "Candidatura ritirata o respinta; contratto firmato senza delega; TLD delegato e poi revocato; sostituzione dell'operatore mentre il TLD continua a esistere. Mescolarli in un'unica statistica di mortalità sarebbe scorretto.",
-    "cemeteryCaveat": "Casi documentati, non un censimento esaustivo. Un vero cimitero mondiale riproducibile richiede di riconciliare contratti ICANN, decisioni di cessazione e registri IANA datati prima di pubblicare un totale."
+    "cemeteryCaveat": "Casi documentati, non un censimento esaustivo. Un vero cimitero mondiale riproducibile richiede di riconciliare contratti ICANN, decisioni di cessazione e registri IANA datati prima di pubblicare un totale.",
+    "historicalPackNote": "Pacchetto dati storico v0.7.58 (9 ottobre 2026), non l'ultima release scientifica. Per i dati RR2 aggiornati utilizzare il DOI specifico."
   },
   "de": {
     "brand": "Marke",
@@ -6726,7 +6728,8 @@
     "cemeteryWed": "ICANN kündigte den .wed-Vertrag im Oktober 2020. Die spätere Entscheidung sah jedoch eine Übertragung des Betriebs vor. Betreiberende und Ende der Zeichenfolge sind nicht gleichzusetzen.",
     "cemeteryTaxonomyTitle": "Vier verschiedene Ergebnisse",
     "cemeteryTaxonomy": "Zurückgezogene oder abgelehnte Bewerbung; Vertrag ohne Delegation; delegierte und später widerrufene TLD; Betreiberwechsel bei fortbestehender TLD. Keine gemeinsame Sterblichkeitszahl ohne Unterscheidung.",
-    "cemeteryCaveat": "Dokumentierte Beispiele, keine vollständige globale Bestandsaufnahme. Eine belastbare Statistik muss ICANN-Verträge, Kündigungsentscheidungen und datierte IANA-Einträge abgleichen."
+    "cemeteryCaveat": "Dokumentierte Beispiele, keine vollständige globale Bestandsaufnahme. Eine belastbare Statistik muss ICANN-Verträge, Kündigungsentscheidungen und datierte IANA-Einträge abgleichen.",
+    "historicalPackNote": "Historisches Datenpaket v0.7.58 (9. Oktober 2026), nicht die neueste wissenschaftliche Version. Für RR2 den spezifischen DOI verwenden."
   },
   "fr": {
     "brand": "Marque",
@@ -8969,6 +8972,7 @@
     "cemeteryWed": "ICANN a résilié le contrat .wed en octobre 2020, mais la décision ultérieure prévoyait le transfert de son exploitation. La fin d'un opérateur n'est pas nécessairement celle d'une chaîne.",
     "cemeteryTaxonomyTitle": "Quatre issues différentes",
     "cemeteryTaxonomy": "Candidature retirée ou rejetée ; contrat sans délégation ; TLD délégué puis révoqué ; changement d'opérateur alors que le TLD subsiste. Ne pas confondre ces catégories dans un bilan unique.",
-    "cemeteryCaveat": "Exemples documentés, pas un recensement exhaustif. Une statistique mondiale fiable exige le rapprochement des contrats ICANN, décisions de résiliation et données historiques de la racine IANA."
+    "cemeteryCaveat": "Exemples documentés, pas un recensement exhaustif. Une statistique mondiale fiable exige le rapprochement des contrats ICANN, décisions de résiliation et données historiques de la racine IANA.",
+    "historicalPackNote": "Archive de données historique v0.7.58 (9 octobre 2026), et non la dernière publication scientifique. Pour RR2, consulter son DOI spécifique."
   }
 }
