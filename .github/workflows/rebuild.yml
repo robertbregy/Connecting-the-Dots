@@ -16,6 +16,9 @@ on:
       - 'data/internet_access_explainer.json'
       - 'data/field_investigations.json'
       - 'data/release_history.json'
+      - 'data/applications_2026_aps_official_listing.csv'
+      - 'data/applications_2026_aps_official_provenance.json'
+      - 'data/application_2026_snapshot.json'
       - 'publication.json'
       - 'build.py'
 
