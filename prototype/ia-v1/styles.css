@@ -102,7 +102,7 @@ p{margin-bottom:16px}
 .segment > h2{margin-bottom:16px}
 .link-collection{display:flex;gap:10px;flex-wrap:wrap;margin-top:21px}
 .link-collection a{font-size:13px;font-weight:720}
-.relation-path{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));align-items:center;gap:9px;margin:20px 0}
+.relation-path{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));align-items:center;gap:9px;margin:20px 0}
 .relation-node{grid-column:span 2;background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:16px;min-height:111px;display:flex;flex-direction:column;justify-content:center}
 .relation-node .mini{color:var(--muted);font-weight:600}
 .relation-node strong{font-size:16px}
