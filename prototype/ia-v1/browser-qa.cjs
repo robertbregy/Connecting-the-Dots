@@ -55,6 +55,11 @@ const capture=(e)=>failures.push(String(e));
       const axe=await new AxeBuilder({page}).withTags(["wcag2a","wcag2aa","wcag21a","wcag21aa"]).analyze();
       assert.equal(axe.violations.length,0,"axe: "+JSON.stringify(axe.violations.map(x=>({id:x.id,nodes:x.nodes.slice(0,5).map(n=>({target:n.target,html:n.html.slice(0,190),message:n.failureSummary}))}))));
       log.axe++;
+      await page.locator("#theme-toggle").click();
+      const axeDark=await new AxeBuilder({page}).withTags(["wcag2a","wcag2aa","wcag21a","wcag21aa"]).analyze();
+      assert.equal(axeDark.violations.length,0,"dark axe: "+JSON.stringify(axeDark.violations.map(x=>({id:x.id,nodes:x.nodes.slice(0,5).map(n=>({target:n.target,html:n.html.slice(0,190),message:n.failureSummary}))}))));
+      log.axe++;
+      await page.locator("#theme-toggle").click();
      }
      if((lang==="it"&&route==="")||(lang==="it"&&route==="guida-accesso")||(lang==="en"&&route==="nota-conteggi")||(lang==="de"&&route==="esplorare")){
       if(lang==="en")await page.locator("#theme-toggle").click();
