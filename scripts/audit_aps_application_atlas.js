@@ -2,11 +2,12 @@
 'use strict';
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
+const AxeBuilder=require('@axe-core/playwright').default;
 const fs=require('fs');
 const base='http://127.0.0.1:8123';
 (async()=>{
  const browser=await chromium.launch({headless:true,args:['--disable-dev-shm-usage']});
- const metrics={languages:4,viewports:0,searchChecks:0,linkChecks:0,filterChecks:0,overflows:0,errors:0};
+ const metrics={languages:4,viewports:0,searchChecks:0,linkChecks:0,filterChecks:0,overflows:0,errors:0,wcagScans:0};
  for(const lang of ['it','en','de','fr']){
   for(const width of [320,390,768,1360]){
    const context=await browser.newContext({viewport:{width,height:850}});
@@ -60,6 +61,13 @@ const base='http://127.0.0.1:8123';
    assert.equal(await page.locator('#apsSearch').inputValue(),'');
    assert.equal(await page.locator('#apsRole').inputValue(),'all');
    metrics.filterChecks++;
+   if(width===320||width===1360){
+    const audit=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
+    const faults=audit.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.length,
+      example:v.nodes[0]?.target?.slice(0,3)}));
+    assert.deepEqual(faults,[],lang+' '+width+'px application atlas WCAG A/AA failures');
+    metrics.wcagScans++;
+   }
    if(width===390)await page.screenshot({path:'audit-aps-atlas-'+lang+'-mobile.png'});
    assert.deepEqual(failures,[],lang+' '+width+'px page errors');
    await page.close();await context.close();
