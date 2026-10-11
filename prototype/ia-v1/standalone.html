@@ -636,6 +636,45 @@ const I = {
   }
 };
 
+const QUICK = {
+  it:{
+    briefTitle:"Un TLD in 20 secondi",
+    briefText:"In www.example.com, .com è il dominio di primo livello (TLD), example.com è il dominio registrato e www è una parte del nome host. Una stringa richiesta come .lugano non diventa automaticamente un TLD delegato.",
+    continue:"Prosegui con la spiegazione interattiva",
+    researchTitle:"Il riferimento scientifico, subito",
+    researchText:"La release scientifica RR2 è un archivio immutabile, distinto dalla versione tecnica v0.7.78 di questo sito. Per citare risultati e dataset occorre indicare quale versione si è consultata.",
+    doi:"Apri DOI specifico RR2",
+    pack:"Dati tecnici v0.7.78"
+  },
+  en:{
+    briefTitle:"A TLD in 20 seconds",
+    briefText:"In www.example.com, .com is the top-level domain (TLD), example.com is the registered domain, and www is part of the hostname. An applied-for string such as .lugano does not automatically become a delegated TLD.",
+    continue:"Continue with the interactive explainer",
+    researchTitle:"The scholarly reference, right here",
+    researchText:"Scientific release RR2 is an immutable archive, distinct from the site's v0.7.78 technical version. Always identify which version of the evidence or dataset is being cited.",
+    doi:"Open RR2-specific DOI",
+    pack:"Technical dataset v0.7.78"
+  },
+  de:{
+    briefTitle:"Eine TLD in 20 Sekunden",
+    briefText:"In www.example.com ist .com die Top-Level-Domain (TLD), example.com die registrierte Domain und www Teil des Hostnamens. Ein beantragter String wie .lugano ist nicht automatisch eine delegierte TLD.",
+    continue:"Zur interaktiven Erklärung",
+    researchTitle:"Wissenschaftliche Referenz auf einen Blick",
+    researchText:"Die wissenschaftliche Release RR2 ist ein unveränderliches Archiv und nicht identisch mit der technischen Website-Version v0.7.78. Für Zitate muss die jeweils verwendete Datenversion erkennbar sein.",
+    doi:"Versions-DOI von RR2 öffnen",
+    pack:"Technischer Datensatz v0.7.78"
+  },
+  fr:{
+    briefTitle:"Un TLD en 20 secondes",
+    briefText:"Dans www.example.com, .com est le domaine de premier niveau (TLD), example.com le domaine enregistré et www une partie du nom d'hôte. Une chaîne demandée comme .lugano ne devient pas automatiquement un TLD délégué.",
+    continue:"Lire l'explication interactive",
+    researchTitle:"La référence scientifique, directement",
+    researchText:"La publication scientifique RR2 est une archive immuable, distincte de la version technique v0.7.78 du site. Une citation doit préciser la version des données effectivement utilisées.",
+    doi:"Ouvrir le DOI propre à RR2",
+    pack:"Jeu de données technique v0.7.78"
+  }
+};
+
 let locale = "it";
 const $ = (id) => document.getElementById(id);
 const safe = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, function(c) {
@@ -733,9 +772,25 @@ function snapshot() {
     t.snapshot.map((n,i)=>'<div class="fact-box"><div class="metric">'+safe(n)+'</div><div class="caption">'+safe(t.snapshotLabels[i])+'</div></div>').join("")+
     '</div><p class="relation-note">'+safe(t.baselineNote)+'</p></section>';
 }
+function immediateAnswer(id) {
+  const p=QUICK[locale];
+  if(id==="capire"){
+    return '<section class="reading-block always" aria-labelledby="ia-intro-heading"><h2 id="ia-intro-heading">'+safe(p.briefTitle)+
+      '</h2><p>'+safe(p.briefText)+'</p><p>'+external(hrefFor("basics"),p.continue,"card-link")+'</p></section>';
+  }
+  if(id==="ricerca"){
+    return '<section class="reading-block always" aria-labelledby="ia-citation-heading"><h2 id="ia-citation-heading">'+safe(p.researchTitle)+
+      '</h2><p>'+safe(p.researchText)+'</p><p><code>10.5281/zenodo.23288603</code></p>'+
+      '<div class="hero-actions">'+
+      external("https://doi.org/10.5281/zenodo.23288603",p.doi,"button primary")+
+      external(LIVE+"downloads/connecting-the-dots-data-pack-v0.7.78.zip",p.pack,"button")+'</div></section>';
+  }
+  return "";
+}
 function area(id) {
   const t=txt(),p=t.sectionPages[id];
   let out=crumbs([{label:areaLabel(id)}])+pageHead(p[0],p[1],p[2]);
+  out+=immediateAnswer(id);
   if(id==="esplorare") out+=relationship();
   if(id==="round") out+=snapshot();
   out+='<section class="segment"><h2>'+safe(p[3])+'</h2><div class="grid">'+AREA_RESOURCES[id].map(resourceCard).join("")+'</div></section>';
