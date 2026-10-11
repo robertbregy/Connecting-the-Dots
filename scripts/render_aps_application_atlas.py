@@ -6,7 +6,7 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 SITE="https://robertbregy.github.io/Connecting-the-Dots/"
-LANGS=("it","en","de","fr")
+LANGS=("en","it","de","fr")
 LANG_LABEL={"it":"Italiano","en":"English","de":"Deutsch","fr":"Français"}
 KEYS=(
  "apsAtlasTitle","apsAtlasIntro","apsAtlasApps","apsAtlasReplacements","apsAtlasStrings",
