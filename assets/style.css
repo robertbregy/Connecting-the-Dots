@@ -549,3 +549,15 @@ html[data-theme="dark"] .derivedBadge{color:#f2c46d}html[data-theme="light"] .de
  #strange .strangeRoundGroup .resultGrid{grid-template-columns:minmax(0,1fr)}
  #strange .strangeCard{min-width:0;width:100%}
 }
+
+/* v0.7.76 audit: main-site Field Notes table, independently generated from standalone-page CSS.
+   The global table min-width must be contained within a scrollable, focusable region. */
+#behind-round .behindTableWrap{
+ display:block;box-sizing:border-box;width:100%;max-width:100%;min-width:0;
+ overflow-x:auto;overflow-y:hidden;overscroll-behavior-inline:contain;
+ -webkit-overflow-scrolling:touch;
+}
+#behind-round .behindTableWrap:focus-visible{
+ outline:3px solid var(--accent);outline-offset:3px;
+}
+#behind-round .behindComparisonTable{width:100%;}
