@@ -33,6 +33,7 @@ jobs:
           node --check prototype/ia-v1/app.js
           node --check prototype/ia-v1/qa.cjs
           node --check prototype/ia-v1/browser-qa.cjs
+          node --check prototype/ia-v1/persona-probes.cjs
           node --check prototype/ia-v1/build-standalone.cjs
           node prototype/ia-v1/qa.cjs
           node prototype/ia-v1/build-standalone.cjs --check
@@ -46,6 +47,7 @@ jobs:
           python3 -m http.server 8128 --bind 127.0.0.1 > /tmp/ia-server.log 2>&1 &
           sleep 2
           node prototype/ia-v1/browser-qa.cjs
+          node prototype/ia-v1/persona-probes.cjs
       - name: Attach independent QA evidence
         if: always()
         uses: actions/upload-artifact@v4
