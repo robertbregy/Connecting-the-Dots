@@ -440,6 +440,7 @@ const hrefFor = (key) => {
   const p = locale + "/";
   const livePages = {
     basics:p+"?tab=overview#internet-basics", roles:p+"?tab=how#how-part-3",
+    access:"behind-the-round/"+p+"who-controls-internet-access/",
     sanctions:"behind-the-round/"+p+"sanctions-and-dns/",
     glossary:p+"?tab=how#how-glossary",explorer:p+"?tab=explore#explore",
     atlas:"applications/"+p,archaeology:p+"?tab=timeline#timeline",
@@ -455,9 +456,9 @@ const hrefFor = (key) => {
   return LIVE + (livePages[key] || p);
 };
 const external = (url,label,classes) =>
-  '<a class="'+safe(classes||"button")+'" href="'+safe(url)+'" target="_blank" rel="noopener noreferrer">'+safe(label)+'</a>';
+  '<a class="'+safe(classes===undefined?"button":classes)+'" href="'+safe(url)+'" target="_blank" rel="noopener noreferrer">'+safe(label)+'</a>';
 const internal = (url,label,classes) =>
-  '<a class="'+safe(classes||"button")+'" href="'+safe(url)+'">'+safe(label)+'</a>';
+  '<a class="'+safe(classes===undefined?"button":classes)+'" href="'+safe(url)+'">'+safe(label)+'</a>';
 const crumbs = (arr) => '<nav class="breadcrumb" aria-label="Breadcrumb">' +
   internal("#/",txt().homeBack,"") + arr.map((o) => '<span aria-hidden="true">/</span>' +
   (o.link ? internal(o.link,o.label,"") : '<span aria-current="page">'+safe(o.label)+'</span>')).join("") + '</nav>';
@@ -599,7 +600,7 @@ function render() {
   if(document.activeElement && document.activeElement.closest(".nav-bar")) {
     stage.focus({preventScroll:true});
   }
-  window.scrollTo({top:0,behavior:"instant"});
+  window.scrollTo({top:0,behavior:"auto"});
 }
 function updateLanguage(next) {
   locale = Object.prototype.hasOwnProperty.call(I,next)?next:"it";
