@@ -8,7 +8,7 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 **v0.7.77 · 11 October 2026 (UTC)**
 
-**Official APS public applications listing now archived directly from ICANN.** The 11 October export contains 2,783 published CSV rows representing 1,614 base application IDs and 1,169 replacement-string (-R) records. ICANN Statistics counts 1,615 applications: .wdo (WDO2627T-T45217) is not published in the list pending an administrative check. The CSV's provisional In Contention label must not be used to infer absence of contentions before String Evaluation. Individual application PDF dossiers are not all archived.
+**Official APS public applications listing now archived directly from ICANN.** The 11 October export contains 2,783 published CSV rows representing 1,614 base application IDs and 1,169 replacement-string (-R) records. ICANN Statistics counts 1,615 applications: .wdo (WDO2627T-T45217) is not published in the list pending an administrative check. The CSV's provisional In Contention label must not be used to infer absence of contentions before String Evaluation. Individual application PDF dossiers are not all archived. The **980 distinct initial primary strings in ICANN APS match the secondary Explorer inventory exactly**, with all six existing-TLD variant-only applications excluded from the primary-string comparison.
 
 A separately versioned, SHA-256 verified v0.7.77 technical ZIP includes all current CSVs, the 34-column official ICANN list, and provenance. The original v0.7.58 historical ZIP remains unchanged. Immutable Zenodo RR1 and RR2 and their citation DOIs remain distinct from technical site versions.
 

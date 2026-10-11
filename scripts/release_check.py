@@ -622,6 +622,16 @@ ids=[x.get('Application ID','').strip() for x in aps_rows]
 if len(aps_rows)!=2783 or len(set(ids))!=2783 or not all(ids):
     fail('Official APS public listing must contain 2783 unique record IDs')
 base_ids={x[:-2] if x.endswith('-R') else x for x in ids}
+# Two independent datasets must agree on the exact 980 original primary 2026 labels.
+# Variant-only applications concern existing TLDs and do not add primary strings.
+primary_rows=[x for x in aps_rows if not x['Application ID'].endswith('-R')]
+variant_only=[x for x in primary_rows if x.get('Application Type')=='Existing gTLD with Variants']
+initial={x['Primary String'].strip().lower() for x in primary_rows
+         if x.get('Application Type')!='Existing gTLD with Variants'}
+secondary={x['string'].strip().lower() for x in rows('applications_2026_strings_reveal.csv')}
+if len(primary_rows)!=1614 or len(variant_only)!=6 or len(initial)!=980 or initial!=secondary:
+    fail('Official APS primary-string inventory differs from the 980 secondary strings or six variant-only applications')
+
 replacements=sum(x.endswith('-R') for x in ids)
 if len(base_ids)!=1614 or replacements!=1169:
     fail('ICANN published application IDs and -R replacement rows do not reconcile')

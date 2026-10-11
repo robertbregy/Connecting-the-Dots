@@ -54,6 +54,9 @@
     "file": "applications_2026_aps_official_listing.csv",
     "provenance": "applications_2026_aps_official_provenance.json",
     "individualApplicationPDFsComplete": false,
-    "note": "Complete public APS list as of retrieval; one official application missing from list pending check; not complete public questionnaires."
+    "note": "Complete public APS list as of retrieval; one official application missing from list pending check; not complete public questionnaires.",
+    "primaryStringCount": 980,
+    "primaryStringComparison": "Exact set equality: 980 official APS initial primary strings = 980 local nTLDData secondary strings; exclude six Existing gTLD with Variants applications and 1169 -R replacement records.",
+    "primaryStringInventoryReconciled": true
   }
 }
