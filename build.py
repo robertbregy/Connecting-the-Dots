@@ -59,6 +59,11 @@ def build_manifest() -> None:
             "sha256": sha256(path),
         })
     runtime = json.loads((DATA / "data_bundle.js").read_text().split("window.DOT_DATA=", 1)[1].rsplit(";", 1)[0])
+    official_listing = json.loads((DATA / "applications_2026_aps_official_provenance.json").read_text(encoding="utf-8"))
+    if (official_listing.get("totalOfficialListingRows") != 2783 or
+        official_listing.get("uniquePublishedApplicationRecords") != 1614 or
+        official_listing.get("replacementStringRecords") != 1169):
+        raise SystemExit("Official APS listing did not reconcile with published CSV baseline")
     manifest = {
         "project": "Connecting the Dots",
         "version": VERSION,
@@ -87,11 +92,26 @@ def build_manifest() -> None:
             "The Social Life of the Dot adds nine source-backed social cases and six analytical models covering language, community, identity, protection, locality and script inclusion; registration volume is never used as a proxy for social significance.",
             "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity.",
             "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database. The Explorer extends that universe with all locally vendored formal application strings from 2000, 2004 and 2012.",
-            "application_only_strings.csv is the build-time application-only view. The complete 2012 Reveal-Day string/applicant graph is locally integrated; the 2026 Reveal Day string inventory is frozen locally, while application-level local APS coverage remains intentionally partial until a full official export is vendored and validated.",
+            "application_only_strings.csv is the build-time application-only view. The 2012 historical applicant-string graph is locally integrated. The ICANN 2026 APS public Applications CSV is now independently vendored with 2,783 published records: 1,614 unique base application IDs and 1,169 -R replacement records. Official statistics show 1,615 applications; WDO2627T-T45217 is not in the public listing pending an administrative check. Individual application PDF dossiers remain outside local full coverage.",
         ],
         "current_root_snapshot": json.loads((DATA / "iana_snapshot.json").read_text())["asOf"],
         "iana_evidence": "iana_snapshot.json",
-        "explorer_coverage": runtime["explorerMeta"],
+        "explorer_coverage": {**runtime["explorerMeta"],
+            "application2026OfficialListingRows": official_listing["totalOfficialListingRows"],
+            "application2026PublishedOfficialApplicationIDs": official_listing["uniquePublishedApplicationRecords"],
+            "application2026OfficialReplacementRecords": official_listing["replacementStringRecords"],
+            "application2026OfficialListingPendingWDO": True},
+        "aps_2026_official_listing": {
+            "source": official_listing["sourceExportURL"],
+            "download": official_listing["officialRowsFile"],
+            "provenance": "applications_2026_aps_official_provenance.json",
+            "retrievedAt": official_listing["retrievedAtUTC"],
+            "rows": official_listing["totalOfficialListingRows"],
+            "publishedApplications": official_listing["uniquePublishedApplicationRecords"],
+            "replacementRecords": official_listing["replacementStringRecords"],
+            "statisticsApplications": official_listing["officialStatisticsTotalApplications"],
+            "pendingAdministrativeCheckID": official_listing["pendingAdministrativeCheckApplicationID"],
+            "fullIndividualApplicationDossiersLocallyArchived": False},
         "iana_evidence_archive": json.loads((DATA / "iana_snapshot.json").read_text())["archive_path"].removeprefix("data/"),
         "release_history": {"path": "release_history.json", "sha256": sha256(DATA / "release_history.json")},
         "freeze": {
@@ -114,14 +134,16 @@ def build_manifest() -> None:
 
 def data_pack_files() -> list[Path]:
     snapshot = json.loads((DATA / "iana_snapshot.json").read_text())
-    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "application_2026_snapshot.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "economic_cases.json", DATA / "social_cases.json", ROOT / snapshot["archive_path"]]
+    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "application_2026_snapshot.json", DATA / "applications_2026_aps_official_provenance.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "economic_cases.json", DATA / "social_cases.json", ROOT / snapshot["archive_path"]]
 
 
 def build_data_pack() -> None:
-    pack = ROOT / "downloads" / "connecting-the-dots-data-pack.zip"
-    if pack.exists() and os.environ.get("CTD_REBUILD_DATA_PACK") != "1":
-        print(f"Keeping frozen data pack at v{PUBLICATION.get('dataPackageVersion') or VERSION}")
-        return
+    legacy = ROOT / "downloads" / "connecting-the-dots-data-pack.zip"
+    if not legacy.exists():
+        raise SystemExit("Historical data pack v0.7.58 is missing")
+    if os.environ.get("CTD_REBUILD_DATA_PACK") == "1":
+        raise SystemExit("Never rewrite historical data pack: publish a new versioned ZIP")
+    print(f"Preserving historical data pack v{PUBLICATION['dataPackageVersion']}")
 
     # Semantic-drift data should stay grounded in formal ccTLD status plus documented global reinterpretation.
     with (DATA / "semantic_drift.csv").open(encoding="utf-8-sig", newline="") as fh:
@@ -142,8 +164,23 @@ def build_data_pack() -> None:
     if f"version:'{VERSION}'" not in pub:
         raise SystemExit("Publication version does not match build VERSION")
 
+    if PUBLICATION.get("currentDataPackVersion") != VERSION:
+        raise SystemExit("Current data-pack version must match the technical site version")
+    expected = f"downloads/connecting-the-dots-data-pack-v{VERSION}.zip"
+    if PUBLICATION.get("currentDataPackPath") != expected:
+        raise SystemExit("Current data-pack path diverges from versioned publication")
+    pack = ROOT / expected
     pack.parent.mkdir(parents=True, exist_ok=True)
-    write_deterministic_zip(pack, [(path, str(path.relative_to(DATA))) for path in data_pack_files()])
+    write_deterministic_zip(pack, [(item, item.relative_to(DATA).as_posix()) for item in data_pack_files()])
+    digest=sha256(pack)
+    pack.with_suffix(".sha256").write_text(f"{digest}  {pack.name}\n", encoding="utf-8")
+    with zipfile.ZipFile(pack) as zf:
+        if zf.testzip():
+            raise SystemExit("Corrupt current versioned data ZIP")
+        for item in data_pack_files():
+            if zf.read(item.relative_to(DATA).as_posix()) != item.read_bytes():
+                raise SystemExit(f"Stale entry in versioned data ZIP: {item.name}")
+    print(f"Built versioned data pack: {pack.name} SHA256={digest}")
 
 
 def build_index() -> None:

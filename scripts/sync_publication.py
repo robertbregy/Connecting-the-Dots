@@ -44,6 +44,8 @@ browser_meta = {
     'paperVersion': meta.get('paperVersion'),
     'paperPath': meta.get('paperPath'),
     'dataPackageVersion': meta.get('dataPackageVersion'),
+    'currentDataPackVersion': meta.get('currentDataPackVersion'),
+    'currentDataPackPath': meta.get('currentDataPackPath'),
     'doi': meta.get('doi'),
     'doiUrl': meta.get('doiUrl'),
     'conceptDoi': meta.get('conceptDoi'),
@@ -99,8 +101,9 @@ def sync_dataset(match):
     obj = json.loads(match.group(2))
     obj["version"] = version
     obj["dateModified"] = released
+    obj["identifier"] = meta["deployment"] + "data/manifest.json#v" + version
     if meta.get("doi"):
-        obj["identifier"] = "https://doi.org/" + meta["doi"]
+        obj["citation"] = "https://doi.org/" + meta["doi"]
     d = obj.get("distribution", [])
     records = d if isinstance(d, list) else [d]
     for entry in records:
@@ -108,7 +111,10 @@ def sync_dataset(match):
         if url.endswith("/connecting-the-dots-data-pack.zip"):
             entry["version"] = meta["dataPackageVersion"]
             entry["name"] = "Historical frozen data pack v" + meta["dataPackageVersion"]
-        elif url.endswith("/data/tld_universe.csv") or url.endswith("/data/applications_2026_strings_reveal.csv"):
+        elif url.endswith("/" + meta["currentDataPackPath"]):
+            entry["version"] = meta["currentDataPackVersion"]
+            entry["name"] = "Current comprehensive site data pack v" + version
+        elif url.endswith("/data/tld_universe.csv") or url.endswith("/data/applications_2026_strings_reveal.csv") or url.endswith("/data/applications_2026_aps_official_listing.csv"):
             entry["version"] = version
     obj["distribution"] = records
     return match.group(1) + json.dumps(obj, ensure_ascii=False, separators=(",", ":")) + match.group(3)

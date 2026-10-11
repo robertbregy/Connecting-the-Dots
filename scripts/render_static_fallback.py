@@ -74,7 +74,9 @@ def render(page,lang,alias=False):
         url=item.get('contentUrl','')
         if url.endswith('/connecting-the-dots-data-pack.zip'):
             item['version']=json.loads((ROOT/'publication.json').read_text())['dataPackageVersion']
-        elif url.endswith('/data/tld_universe.csv') or url.endswith('/data/applications_2026_strings_reveal.csv'):
+        elif url.endswith('/'+json.loads((ROOT/'publication.json').read_text())['currentDataPackPath']):
+            item['version']=VERSION
+        elif url.endswith('/data/tld_universe.csv') or url.endswith('/data/applications_2026_strings_reveal.csv') or url.endswith('/data/applications_2026_aps_official_listing.csv'):
             item['version']=VERSION
     dataset.string=json.dumps(dd,ensure_ascii=False,separators=(',',':'))
     def links():

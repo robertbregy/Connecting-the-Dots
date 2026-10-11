@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "title": "ICANN New gTLD Program 2026 Round / APS public applications export",
+  "sourceAuthority": "ICANN Application Publication and Statistics (APS)",
+  "sourcePage": "https://newgtldprogram-aps.icann.org/applications",
+  "sourceExportURL": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+  "officialStatisticsReference": "https://newgtldprogram-aps.icann.org/statistics",
+  "sourceStatisticsLastPublished": "2026-10-07T15:41:00Z",
+  "retrievedAtUTC": "2026-10-11T21:27:40.214Z",
+  "sourceExportFileName": "gtld-applications-2026-10-11T21-27-58-950Z.csv",
+  "officialRowsFile": "applications_2026_aps_official_listing.csv",
+  "originalCSVBytes": 676524,
+  "originalCSVSHA256": "a3e2bdba5d3950e87f173e3f576413d9600a6651c99b6946c35bcfd0b9d3553b",
+  "normalizedCSVSHA256": "520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887",
+  "totalOfficialListingRows": 2783,
+  "uniquePublishedApplicationRecords": 1614,
+  "replacementStringRecords": 1169,
+  "officialStatisticsTotalApplications": 1615,
+  "publishedApplicationGap": 1,
+  "pendingAdministrativeCheckApplicationID": "WDO2627T-T45217",
+  "csvColumns": [
+    "Priority",
+    "Primary String",
+    "Primary String Unicode Label",
+    "TLD Variants",
+    "TLD Type: Brand",
+    "TLD Type: Community",
+    "TLD Type: Geo (Self-Designated)",
+    "TLD Type: Geo (String Review Confirmed)",
+    "TLD Type: IDN",
+    "Application ID",
+    "Applicant Name",
+    "Application Type",
+    "Application Status",
+    "Application Processing Stage",
+    "Label: GAC Early Warning",
+    "Label: GAC Advice",
+    "Label: High Risk String",
+    "Label: Objection",
+    "Label: Safeguard",
+    "Label: In Contention",
+    "Label: Clarifying Questions",
+    "Label: Change Request",
+    "Label: Open Comment Period",
+    "Label: Comments",
+    "Label: RVC",
+    "Label: Applicant Support",
+    "Label: Variant Only (Existing TLD)",
+    "Label: Variant Included",
+    "Label: CoC Exemption",
+    "Label: Reserved Name",
+    "Label: CPE",
+    "Label: Singular/Plural",
+    "Location",
+    "Region"
+  ],
+  "csvPreambleNotice": [
+    "Please note: The \"Label: In Contention\" field in this file will not reflect contention status until String Evaluations are completed. Until then, a value of \"false\" does not mean that an applied-for string is not in contention. Please consult the separately published contention set information to determine contention status."
+  ],
+  "statusCounts": {
+    "Active": 2056,
+    "Deactivated": 727
+  },
+  "applicationTypeCounts": {
+    "New gTLD": 1605,
+    "Replacement String": 1169,
+    "Existing gTLD with Variants": 6,
+    "New gTLD with Variants": 3
+  },
+  "coverage": "Complete downloadable public APS Applications listing as retrieved. NOT all official applications or detailed per-application PDF dossiers.",
+  "licenseNote": "Public records sourced from ICANN APS. ICANN source terms and attribution apply to original fields; inclusion is not a claim of original authorship or relicensing of ICANN data.",
+  "normalization": {
+    "rules": [
+      "Strip only the introductory CSV notice and empty header-prelude lines",
+      "Preserve all 34 official column names and public cell values in original order",
+      "Convert UTF-8 BOM to UTF-8 without BOM and standardize row terminators to LF",
+      "Do not remove -R records or infer application outcomes"
+    ],
+    "rowIdentity": "Application ID (unique), group base IDs by stripping a terminal -R ONLY for reconciliation"
+  }
+}

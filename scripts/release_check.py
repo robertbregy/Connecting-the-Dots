@@ -613,6 +613,65 @@ with zipfile.ZipFile(pack) as zf:
     if packed_manifest.get('version')!=expected_pack_version:
         fail(f"data pack version mismatch: {packed_manifest.get('version')} != {expected_pack_version}")
 
+# v0.7.77 official public-application listing: 2,783 rows are not 2,783 paid applications.
+aps=DATA/'applications_2026_aps_official_listing.csv'
+prov=json_file('applications_2026_aps_official_provenance.json')
+if not aps.exists(): fail('The official APS public listing CSV is missing')
+aps_rows=rows('applications_2026_aps_official_listing.csv')
+ids=[x.get('Application ID','').strip() for x in aps_rows]
+if len(aps_rows)!=2783 or len(set(ids))!=2783 or not all(ids):
+    fail('Official APS public listing must contain 2783 unique record IDs')
+base_ids={x[:-2] if x.endswith('-R') else x for x in ids}
+replacements=sum(x.endswith('-R') for x in ids)
+if len(base_ids)!=1614 or replacements!=1169:
+    fail('ICANN published application IDs and -R replacement rows do not reconcile')
+if 'WDO2627T-T45217' in base_ids:
+    fail('Do not silently include the pending .wdo case without renewed ICANN source review')
+if (prov.get('totalOfficialListingRows')!=len(aps_rows) or
+    prov.get('uniquePublishedApplicationRecords')!=len(base_ids) or
+    prov.get('replacementStringRecords')!=replacements or
+    prov.get('officialStatisticsTotalApplications')!=1615 or
+    prov.get('pendingAdministrativeCheckApplicationID')!='WDO2627T-T45217'):
+    fail('Official APS data and provenance manifest disagree')
+if hashlib.sha256(aps.read_bytes()).hexdigest()!=prov.get('normalizedCSVSHA256'):
+    fail('Official APS normalized CSV SHA-256 differs from acquisition evidence')
+if len(prov.get('csvColumns',[]))!=34 or list(aps_rows[0])!=prov['csvColumns']:
+    fail('Official APS columns were changed or dropped')
+if not any('In Contention' in caveat for caveat in prov.get('csvPreambleNotice',[])):
+    fail('Official ICANN contention disclaimer was lost')
+if (manifest.get('aps_2026_official_listing',{}).get('publishedApplications')!=1614 or
+    manifest.get('aps_2026_official_listing',{}).get('rows')!=2783 or
+    manifest.get('explorer_coverage',{}).get('application2026OfficialRecordCount')!=1 or
+    manifest.get('explorer_coverage',{}).get('application2026CoverageComplete') is not False):
+    fail('Official application listing must remain distinct from locally archived full dossiers')
+
+# Site data-pack archive is version-stamped; frozen v0.7.58 is never replaced.
+if publication_meta.get('currentDataPackVersion')!=version:
+    fail('Current technical data-pack version mismatch')
+current_rel=f'downloads/connecting-the-dots-data-pack-v{version}.zip'
+if publication_meta.get('currentDataPackPath')!=current_rel:
+    fail('Current technical data-pack path mismatch')
+current_zip=ROOT/current_rel
+checkfile=current_zip.with_suffix('.sha256')
+if not current_zip.exists() or not checkfile.exists():
+    fail('Current versioned data pack or SHA-256 sidecar missing')
+digest=hashlib.sha256(current_zip.read_bytes()).hexdigest()
+if checkfile.read_text(encoding='utf-8').strip()!=f'{digest}  {current_zip.name}':
+    fail('Current ZIP checksum sidecar invalid')
+with zipfile.ZipFile(current_zip) as archive:
+    if archive.testzip(): fail('Current versioned ZIP integrity error')
+    sys.path.insert(0,str(ROOT))
+    from build import data_pack_files
+    expected={path.relative_to(DATA).as_posix():path for path in data_pack_files()}
+    if set(archive.namelist())!=set(expected):
+        fail('Versioned ZIP source members do not match complete current data corpus')
+    for name,path in expected.items():
+        if archive.read(name)!=path.read_bytes():
+            fail('Versioned ZIP source byte parity failed for '+name)
+    included=json.loads(archive.read('manifest.json'))
+    if included.get('version')!=version:
+        fail('Versioned ZIP manifest is not this technical publication')
+
 # JavaScript syntax where Node is available.
 node='node'
 try:
@@ -987,6 +1046,15 @@ archived=[i for i in distributions if str(i.get('contentUrl','')).endswith('/con
 if (len(current)!=1 or current[0].get('version')!=version or len(archived)!=1 or
     archived[0].get('version')!=publication_meta.get('dataPackageVersion')):
     fail('JSON-LD must distinguish current dataset from historical frozen ZIP')
+current_zip_download=[x for x in distributions if str(x.get('contentUrl','')).endswith('/downloads/connecting-the-dots-data-pack-v'+version+'.zip')]
+official_csv_download=[x for x in distributions if str(x.get('contentUrl','')).endswith('/data/applications_2026_aps_official_listing.csv')]
+if (len(current_zip_download)!=1 or current_zip_download[0].get('version')!=version or
+    len(official_csv_download)!=1 or official_csv_download[0].get('version')!=version):
+    fail('Dataset JSON-LD must advertise the current versioned ZIP and official APS CSV')
+if ds.get('identifier')!='https://robertbregy.github.io/Connecting-the-Dots/data/manifest.json#v'+version:
+    fail('Live site Dataset identity was incorrectly attributed to frozen RR2')
+if ds.get('citation')!='https://doi.org/10.5281/zenodo.23288603':
+    fail('Latest immutable research citation RR2 is missing from technical dataset metadata')
 if '## Suggested citation for RR2' not in (ROOT/'research'/'connecting-the-dots-working-paper-v1.md').read_text(encoding='utf-8'):
     fail('Living working paper must recommend current archived RR2 first')
 if '<h2>Suggested citation for RR2' not in (ROOT/'research'/'connecting-the-dots-working-paper-v1.html').read_text(encoding='utf-8'):

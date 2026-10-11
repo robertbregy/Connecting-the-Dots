@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.76
+# Connecting the Dots — v0.7.77
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -6,7 +6,13 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.76 · 11 October 2026 (UTC)**
+**v0.7.77 · 11 October 2026 (UTC)**
+
+**Official APS public applications listing now archived directly from ICANN.** The 11 October export contains 2,783 published CSV rows representing 1,614 base application IDs and 1,169 replacement-string (-R) records. ICANN Statistics counts 1,615 applications: .wdo (WDO2627T-T45217) is not published in the list pending an administrative check. The CSV's provisional In Contention label must not be used to infer absence of contentions before String Evaluation. Individual application PDF dossiers are not all archived.
+
+A separately versioned, SHA-256 verified v0.7.77 technical ZIP includes all current CSVs, the 34-column official ICANN list, and provenance. The original v0.7.58 historical ZIP remains unchanged. Immutable Zenodo RR1 and RR2 and their citation DOIs remain distinct from technical site versions.
+
+**Previous v0.7.76 · 11 October 2026**
 
 This corrective technical release fixes the independent full-site audit without rewriting scientific evidence. Economic cycles and the gTLD cemetery now belong to their proper Economics tab; the mobile Field Notes comparison table scrolls within a labelled, keyboard-focusable region, and unbroken Research URLs and narrow German Strange Internet cards no longer expand the viewport. The Explorer combines 1,849 core records and a frozen 980-string secondary 2026 inventory, with 41 overlaps, for **2,788 browsable records**. This is not a count of delegated TLDs or official ICANN application dossiers: only **1 of 1,615 official APS application records** is fully archived locally. Dataset structured metadata distinguishes current CSVs from the **v0.7.58 historical ZIP**. The working paper cites **RR2** as the current archived evidence while preserving the original **RR1**.
 

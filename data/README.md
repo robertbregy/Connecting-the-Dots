@@ -1,5 +1,14 @@
 # Connecting the Dots — data directory
 
+## Official ICANN APS public application listing · 11 October 2026
+
+The file `applications_2026_aps_official_listing.csv` is obtained from the official ICANN Applications page at https://newgtldprogram-aps.icann.org/applications via its Download CSV function. The normalization discards only the introductory CSV notice and standardizes UTF-8/LF; all 34 original columns and public field values are preserved. Download URL, retrieval time, original/normalized SHA-256 hashes and the complete ICANN disclaimer are captured in `applications_2026_aps_official_provenance.json`.
+
+**Different denominators must remain distinct.** The official listing has 2,783 rows, 1,614 distinct base application IDs and 1,169 -R replacement records. APS Statistics separately reports 1,615 applications, one of which, WDO2627T-T45217, is not in the public list pending administrative check. `applications_2026.csv` still holds one fully source-verified .lugano application record; this is NOT the official CSV listing. The separate nTLDData 980-string dataset is a secondary index of strings, not official application-level coverage. Public application-detail PDFs remain incomplete locally. The CSV warns that In Contention=false is not a negative determination before String Evaluation.
+
+Current site ZIP: `../downloads/connecting-the-dots-data-pack-v0.7.77.zip` with `...sha256` checksum. The previous `../downloads/connecting-the-dots-data-pack.zip` remains frozen as v0.7.58. Both are distinct from Zenodo RR1/RR2 scientific deposits. ICANN retains applicable third-party source rights; adding a record does not relicense it.
+
+
 Publication state: **post-Reveal / Replacement Period snapshot**  
 Publication as of: **10 October 2026** (website/editorial date; RR1 evidence remains anchored to 7 October)  
 ICANN Reveal Day application snapshot: **7 October 2026**  

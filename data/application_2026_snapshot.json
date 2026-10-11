@@ -42,5 +42,18 @@
   "integrity": {
     "fullLocalApplicationCorpusClaimed": false,
     "reason": "The official APS application-level corpus is not yet locally vendored. ICANN reports 1,615 applications / 481 applicants; the frozen secondary index reports 1,614 / 480. Its 980-string table represents 1,608 primary-string applications; six additional secondary-index records are variant-only applications for existing TLDs and therefore do not create new applied-for primary strings."
+  },
+  "officialApplicationListing": {
+    "source": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+    "retrievedAt": "2026-10-11",
+    "publicRows": 2783,
+    "publishedUniqueBaseApplicationIDs": 1614,
+    "replacementRows": 1169,
+    "pendingAdministrativeCheckID": "WDO2627T-T45217",
+    "officialStatisticsApplications": 1615,
+    "file": "applications_2026_aps_official_listing.csv",
+    "provenance": "applications_2026_aps_official_provenance.json",
+    "individualApplicationPDFsComplete": false,
+    "note": "Complete public APS list as of retrieval; one official application missing from list pending check; not complete public questionnaires."
   }
 }

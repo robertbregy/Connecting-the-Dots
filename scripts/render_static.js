@@ -92,7 +92,10 @@ function render(language,alias=false){
     if(url.endsWith('/connecting-the-dots-data-pack.zip')){
       output.version=versions.dataPackageVersion;
       output.name='Historical frozen data pack v'+versions.dataPackageVersion;
-    }else if(/\/data\/(tld_universe|applications_2026_strings_reveal)\.csv$/.test(url)){
+    }else if(url.endsWith('/'+versions.currentDataPackPath)){
+      output.version=versions.currentDataPackVersion;
+      output.name='Current comprehensive site data pack v'+versions.currentDataPackVersion;
+    }else if(/\/data\/(tld_universe|applications_2026_strings_reveal|applications_2026_aps_official_listing)\.csv$/.test(url)){
       output.version=versions.version;
     }
   }

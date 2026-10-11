@@ -60,6 +60,8 @@ jobs:
           CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
 
       - name: Commit generated publication
+        # Generate/commit assets on feature branches. No unsolicited bot writes to main.
+        if: github.ref != 'refs/heads/main'
         run: |
           if git diff --quiet; then
             echo "No generated changes."

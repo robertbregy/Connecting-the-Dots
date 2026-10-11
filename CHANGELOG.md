@@ -1,3 +1,11 @@
+# v0.7.77 — 2026-10-11 (UTC)
+
+- Reconciled the official ICANN APS Download CSV: 2,783 published rows, 1,614 base application IDs, 1,169 -R replacement records and one unpublished administrative-check application WDO2627T-T45217 relative to 1,615 official statistics.
+- Published all 34 original public CSV columns locally with source URL, retrieval timestamp, SHA-256 evidence and ICANN's caveat about provisional contention labels.
+- Generated a separate deterministic v0.7.77 technical ZIP and checksum while preserving the historical v0.7.58 ZIP and the frozen RR1/RR2 archives.
+- Differentiated official APS list, individual detailed applications and the separate secondary 980-string inventory in four-language guidance.
+- Added technical publication governance documentation, integrity gates for CSV application IDs and ZIP byte parity, and reproducible first-reader task checks.
+
 # v0.7.76 — 2026-10-11 (UTC)
 
 - Fixed an architectural regression: Economic Cycles and the gTLD Cemetery now live inside Economics instead of leaking onto every main section.
