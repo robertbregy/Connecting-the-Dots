@@ -233,8 +233,8 @@ def render_detail(case, dictionary, lang):
 def build_investigations(root: Path = ROOT):
     data, translations = load(root)
     publication = json.loads((root / "publication.json").read_text(encoding="utf-8"))
-    if data["lastReviewed"] != publication["releasedOn"]:
-        raise ValueError("Living Field Notes and site metadata review dates diverged")
+    if data["lastReviewed"] != publication["asOf"] or publication["releasedOn"] < data["lastReviewed"]:
+        raise ValueError("Field Notes evidence review must match research snapshot and not postdate site release")
     for lang in LANGS:
         target = root / "behind-the-round" / lang / "index.html"
         html = target.read_text(encoding="utf-8")
