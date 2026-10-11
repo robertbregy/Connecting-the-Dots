@@ -78,6 +78,11 @@ const capture=(e)=>failures.push(String(e));
    assert.ok(page.url().includes("lang=fr"));
    assert.equal(await page.locator('.nav-bar a[aria-current="page"]').getAttribute("href"),"#/esplorare");
    log.responsive++;
+   await page.goto("http://127.0.0.1:8128/prototype/ia-v1/standalone.html?lang=de#/guida-accesso",{waitUntil:"load"});
+   assert.equal(await page.locator("html").getAttribute("lang"),"de");
+   assert.equal(await page.locator("#main h1").count(),1);
+   assert.equal(await page.locator(".reading-block summary").count(),2);
+   log.standalone=1;
    await page.locator("#theme-toggle").click();
    assert.equal(await page.locator("html").getAttribute("data-theme"),"dark");
   }catch(e){capture("navigation/language/theme "+e.message)}
