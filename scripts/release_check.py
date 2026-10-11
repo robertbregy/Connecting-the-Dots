@@ -655,6 +655,58 @@ if (manifest.get('aps_2026_official_listing',{}).get('publishedApplications')!=1
     manifest.get('explorer_coverage',{}).get('application2026CoverageComplete') is not False):
     fail('Official application listing must remain distinct from locally archived full dossiers')
 
+
+# Application Atlas v0.7.78: every published base-ID must be indexed exactly once.
+graph=json_file('aps_2026_application_graph.json')
+graph_report=json_file('aps_2026_application_graph_manifest.json')
+if graph.get('schemaVersion')!=1 or graph.get('counts',{}).get('officialPublishedApplications')!=1614:
+    fail('2026 graph must have precisely 1614 published base applications')
+if len(graph.get('apps',[]))!=1614 or len({a['id'] for a in graph['apps']})!=1614:
+    fail('Graph base Application IDs absent or duplicated')
+if {a['id'] for a in graph['apps']} != {x['Application ID'] for x in primary_rows}:
+    fail('Application graph is not a bijection with official public APS base IDs')
+if sum(bool(a.get('replacement')) for a in graph['apps']) != 1169:
+    fail('Application graph lost replacement -R records')
+if graph.get('notPublishedApplication',{}).get('id')!='WDO2627T-T45217':
+    fail('Withheld WDO provenance missing from graph')
+if not all(a['detailUrl']=='https://newgtldprogram-aps.icann.org/applications/'+a['id']+'/summary' for a in graph['apps']):
+    fail('Official application summary links are inconsistent with their IDs')
+if graph['counts'].get('derivedExactPrimaryMatchGroups')!=263 or graph['counts'].get('applicationsInExactPrimaryMatches')!=891:
+    fail('Derived preliminary exact-string overlaps changed unexpectedly')
+if graph_report.get('sourceSha256')!=prov['normalizedCSVSHA256']:
+    fail('Graph provenance not pinned to exact official APS CSV checksum')
+for name,expected in graph_report.get('files',{}).items():
+    file=DATA/name
+    if not file.exists() or hashlib.sha256(file.read_bytes()).hexdigest()!=expected.get('sha256'):
+        fail('Analytical graph output has changed: '+name)
+edges=rows('aps_2026_application_edges.csv')
+observations=rows('aps_2026_record_observations.csv')
+if len(edges)!=2796 or len(observations)<2783:
+    fail('APS primary, replacement, variant edges or snapshot event observations missing')
+if set(x['application_id'] for x in edges)!={a['id'] for a in graph['apps']}:
+    fail('String relationships contain orphan or missing applications')
+if any(x['source_sha256']!=prov['normalizedCSVSHA256'] for x in observations if x['observed_utc']==prov['retrievedAtUTC']):
+    fail('APS observation log refers to wrong source checksum')
+if (manifest.get('aps_2026_application_graph',{}).get('officialPublishedApplications')!=1614 or
+    manifest.get('aps_2026_application_graph',{}).get('individualPDFsVendored') is not False):
+    fail('Manifest conflates application-level public listing with archived dossier PDFs')
+for lang in LANGS:
+    atlas=ROOT/'applications'/lang/'index.html'
+    if not atlas.exists(): fail('Localized APS application atlas missing: '+lang)
+    doc=atlas.read_text(encoding='utf-8')
+    if (f'<html lang="{lang}">' not in doc or
+        f'<link rel="canonical" href="{site_base}applications/{lang}/">' not in doc or
+        'id="apsSearch"' not in doc or 'id="apsResults"' not in doc or
+        'id="aps-results"' not in doc or
+        'CTD_APS_I18N' not in doc or
+        'data/aps_2026_application_graph.js' not in doc or
+        'assets/aps-atlas.js' not in doc or
+        'https://newgtldprogram-aps.icann.org/aps/applications/export/csv' not in doc):
+        fail('APS atlas route, metadata or source disclosure incomplete: '+lang)
+    home=(ROOT/lang/'index.html').read_text(encoding='utf-8')
+    if f'{site_base}applications/{lang}/' not in home:
+        fail('Explorer lacks localized link to application atlas: '+lang)
+
 # Site data-pack archive is version-stamped; frozen v0.7.58 is never replaced.
 if publication_meta.get('currentDataPackVersion')!=version:
     fail('Current technical data-pack version mismatch')
@@ -689,7 +741,7 @@ try:
 except Exception:
     node=None
 if node:
-    for p in [ROOT/'assets/app.js',DATA/'site_bundle.js',DATA/'i18n_bundle.js',DATA/'worldmap.js',DATA/'publication.js',*[DATA/f'explorer_profiles_{i}.js' for i in range(8)]]:
+    for p in [ROOT/'assets/app.js',ROOT/'assets/aps-atlas.js',DATA/'aps_2026_application_graph.js',DATA/'site_bundle.js',DATA/'i18n_bundle.js',DATA/'worldmap.js',DATA/'publication.js',*[DATA/f'explorer_profiles_{i}.js' for i in range(8)]]:
         rc=subprocess.run([node,'--check',str(p)],stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
         if rc.returncode: fail(f'JS syntax {p.relative_to(ROOT)}: {rc.stderr.strip()}')
 
@@ -747,8 +799,9 @@ must_index.update(site_base+'behind-the-round/'+lang+'/wdo-identity/' for lang i
 must_index.update(site_base+'behind-the-round/'+lang+'/sanctions-and-dns/' for lang in LANGS)
 must_index.update(site_base+'behind-the-round/'+lang+'/who-controls-internet-access/' for lang in LANGS)
 must_index.update(site_base+'behind-the-round/'+lang+'/'+slug+'/' for slug in ('objectors-eoi','replacement-strings') for lang in LANGS)
+must_index.update(site_base+'applications/'+lang+'/' for lang in LANGS)
 if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index):
-    fail('Sitemap must preserve all 35 language/research/chronicle/field-note/explainer URLs')
+    fail('Sitemap must preserve all 39 language/research/chronicle/field-note/explainer/application URLs')
 for lang in LANGS:
     page=(ROOT/lang/'index.html').read_text(encoding='utf-8')
     chronicle_page=ROOT/'inside-the-round'/lang/'index.html'

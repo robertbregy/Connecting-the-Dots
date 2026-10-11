@@ -561,3 +561,9 @@ html[data-theme="dark"] .derivedBadge{color:#f2c46d}html[data-theme="light"] .de
  outline:3px solid var(--accent);outline-offset:3px;
 }
 #behind-round .behindComparisonTable{width:100%;}
+
+/* v0.7.78: separate, accessible application-level atlas discovery inside Explorer. */
+#explore .apsAtlasBridge{margin:20px 0 23px;background:var(--panel-alt,rgba(96,150,212,.09));border:1px solid var(--border,#d0dbe5);border-radius:13px;padding:17px 19px;max-width:100%;overflow-wrap:anywhere}
+#explore .apsAtlasBridge h3{margin:0 0 8px;font-size:1.08rem}
+#explore .apsAtlasBridge p{margin:0 0 13px;line-height:1.6;max-width:90ch}
+#explore .apsAtlasOpen{display:inline-flex;align-items:center;max-width:100%;white-space:normal}

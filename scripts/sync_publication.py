@@ -114,7 +114,7 @@ def sync_dataset(match):
         elif url.endswith("/" + meta["currentDataPackPath"]):
             entry["version"] = meta["currentDataPackVersion"]
             entry["name"] = "Current comprehensive site data pack v" + version
-        elif url.endswith("/data/tld_universe.csv") or url.endswith("/data/applications_2026_strings_reveal.csv") or url.endswith("/data/applications_2026_aps_official_listing.csv"):
+        elif (url.endswith("/data/tld_universe.csv") or url.endswith("/data/applications_2026_strings_reveal.csv") or url.endswith("/data/applications_2026_aps_official_listing.csv") or url.endswith("/data/aps_2026_application_graph.json") or url.endswith("/data/aps_2026_application_edges.csv")):
             entry["version"] = version
     obj["distribution"] = records
     return match.group(1) + json.dumps(obj, ensure_ascii=False, separators=(",", ":")) + match.group(3)

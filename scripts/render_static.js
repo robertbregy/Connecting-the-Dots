@@ -95,7 +95,7 @@ function render(language,alias=false){
     }else if(url.endsWith('/'+versions.currentDataPackPath)){
       output.version=versions.currentDataPackVersion;
       output.name='Current comprehensive site data pack v'+versions.currentDataPackVersion;
-    }else if(/\/data\/(tld_universe|applications_2026_strings_reveal|applications_2026_aps_official_listing)\.csv$/.test(url)){
+    }else if(/\/data\/(tld_universe|applications_2026_strings_reveal|applications_2026_aps_official_listing|aps_2026_application_edges)\.csv$/.test(url) || url.endsWith('/data/aps_2026_application_graph.json')){
       output.version=versions.version;
     }
   }

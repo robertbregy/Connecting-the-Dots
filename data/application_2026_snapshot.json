@@ -41,7 +41,7 @@
   },
   "integrity": {
     "fullLocalApplicationCorpusClaimed": false,
-    "reason": "The official APS application-level corpus is not yet locally vendored. ICANN reports 1,615 applications / 481 applicants; the frozen secondary index reports 1,614 / 480. Its 980-string table represents 1,608 primary-string applications; six additional secondary-index records are variant-only applications for existing TLDs and therefore do not create new applied-for primary strings."
+    "reason": "The public ICANN APS export of 2,783 rows is archived and reconciled to 1,614 published distinct applications, plus the under-administrative-check .wdo application not listed. The full public per-application questionnaires and individual PDFs are NOT archived locally; the application graph represents official overview/listing fields only. The secondary 980-string index is separately sourced."
   },
   "officialApplicationListing": {
     "source": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
@@ -57,6 +57,10 @@
     "note": "Complete public APS list as of retrieval; one official application missing from list pending check; not complete public questionnaires.",
     "primaryStringCount": 980,
     "primaryStringComparison": "Exact set equality: 980 official APS initial primary strings = 980 local nTLDData secondary strings; exclude six Existing gTLD with Variants applications and 1169 -R replacement records.",
-    "primaryStringInventoryReconciled": true
+    "primaryStringInventoryReconciled": true,
+    "analysisGraph": "aps_2026_application_graph.json",
+    "graphManifest": "aps_2026_application_graph_manifest.json",
+    "statusObservations": "aps_2026_record_observations.csv",
+    "detailedPublicPagesLinkedOnly": true
   }
 }

@@ -56,6 +56,9 @@ jobs:
       - name: Independent four-language, all-tab and Explorer regression audit
         run: |
           node scripts/deep_audit_20261011.js
+      - name: Verify interactive application atlas (all languages + mobile)
+        run: |
+          node scripts/audit_aps_application_atlas.js
       - name: Attach visual evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -64,4 +67,5 @@ jobs:
           path: |
             audit-*.png
             audit-independent-20261011.json
+            audit-aps-atlas-*.png
           if-no-files-found: ignore

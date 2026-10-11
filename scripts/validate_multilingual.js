@@ -305,7 +305,7 @@ for(const [input,target] of cases){
 }
 const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
 const locations=Array.from(sitemap.matchAll(/<loc>([^<]+)<\/loc>/g),m=>m[1]);
-const expectedLocations=[...languages.map(l=>base+l+'/'),base+'explorer/',base+'research/',base+'research/connecting-the-dots-working-paper-v1.html',...languages.map(l=>base+'inside-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/wdo-identity/'),...languages.map(l=>base+'behind-the-round/'+l+'/sanctions-and-dns/'),...languages.map(l=>base+'behind-the-round/'+l+'/who-controls-internet-access/'),...['objectors-eoi','replacement-strings'].flatMap(slug=>languages.map(l=>base+'behind-the-round/'+l+'/'+slug+'/'))];
+const expectedLocations=[...languages.map(l=>base+l+'/'),base+'explorer/',base+'research/',base+'research/connecting-the-dots-working-paper-v1.html',...languages.map(l=>base+'inside-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/wdo-identity/'),...languages.map(l=>base+'behind-the-round/'+l+'/sanctions-and-dns/'),...languages.map(l=>base+'behind-the-round/'+l+'/who-controls-internet-access/'),...['objectors-eoi','replacement-strings'].flatMap(slug=>languages.map(l=>base+'behind-the-round/'+l+'/'+slug+'/')),...languages.map(l=>base+'applications/'+l+'/')];
 assert.deepEqual(locations,expectedLocations,'complete multilingual and research sitemap');
 assert.equal((sitemap.match(/xhtml:link/g)||[]).length,160,'all four-language articles and explainers have reciprocal hreflang');
 assert.ok(!/\?lang=/.test(sitemap));

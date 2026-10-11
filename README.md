@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.77
+# Connecting the Dots — v0.7.78
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -6,7 +6,11 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.77 · 11 October 2026 (UTC)**
+**v0.7.78 · 12 October 2026 (UTC)**
+
+**2026 Application Atlas.** Four localized application-oriented views at `/applications/{it,en,de,fr}/` link the 1,614 official published APS applications by stable base Application ID to their primary labels, 1,169 replacement-record IDs (-R), 13 published variant-string relationships, applicant identities, location, raw APS status and official summary/response/document pages. A separate graph JSON, CSV relationship edges and append-only source-dated status observations are generated deterministically from the pinned ICANN listing with SHA-256 verification. The 263 exact-primary-string overlapping groups (891 applications) are **analytical candidates**, not adjudicated ICANN contention sets. The .wdo administrative-check application remains separately identified but is not fabricated into the official listing. Public application questionnaires and PDFs are linked at ICANN, **not locally copied**. The current v0.7.78 package incorporates the new analytic data while the v0.7.77 and immutable RR1/RR2 archives remain unchanged.
+
+**Previous v0.7.77 · 11 October 2026**
 
 **Official APS public applications listing now archived directly from ICANN.** The 11 October export contains 2,783 published CSV rows representing 1,614 base application IDs and 1,169 replacement-string (-R) records. ICANN Statistics counts 1,615 applications: .wdo (WDO2627T-T45217) is not published in the list pending an administrative check. The CSV's provisional In Contention label must not be used to infer absence of contentions before String Evaluation. Individual application PDF dossiers are not all archived. The **980 distinct initial primary strings in ICANN APS match the secondary Explorer inventory exactly**, with all six existing-TLD variant-only applications excluded from the primary-string comparison.
 

@@ -1,3 +1,13 @@
+# v0.7.78 — 12 October 2026 (UTC)
+
+- Added four-language ICANN 2026 Application Atlas: a searchable, filtered application-level graph with direct links to official APS summaries, application responses and public documents.
+- Reconstructed 1,614 published base application identities and their 1,169 -R replacement records from the checksum-pinned 2,783-row official APS export; 13 variant string edges and 980 distinct new primary strings remain independent relationships.
+- Derived 263 exact-match ORIGINAL primary-string groups (891 applications), clearly labelled as analytical and not as ICANN adjudicated contention sets; preserved the standalone official preliminary contention-list link.
+- Preserved the administrative-check .wdo application outside the published graph, giving an accurate 1,614 / 1,615 boundary.
+- Generated deterministic application graph JSON, relationship CSV, manifest SHA-256 and an append-only, source-timestamped record-status observation CSV for future updates.
+- Connected individual 2026 TLD Explorer profiles to application search; exposed graph and events in the new v0.7.78 data pack and its separate SHA-256 file.
+- Did NOT publish or amend RR1/RR2 scientific deposits. Full application-response pages and linked PDFs are not vendored in this technical release.
+
 # v0.7.77 — 2026-10-11 (UTC)
 
 - Reconciled the official ICANN APS Download CSV: 2,783 published rows, 1,614 base application IDs, 1,169 -R replacement records and one unpublished administrative-check application WDO2627T-T45217 relative to 1,615 official statistics.

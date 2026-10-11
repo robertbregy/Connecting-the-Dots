@@ -10,6 +10,8 @@ import shutil
 import subprocess
 import zipfile
 from scripts.package_release import write_deterministic_zip
+from scripts.build_aps_application_graph import build as build_aps_application_graph
+from scripts.render_aps_application_atlas import render as render_aps_application_atlas
 from scripts.render_inside_round import render_timeline, build_inside_round_pages
 from scripts.render_behind_round import render_stories, build_behind_round_pages
 from scripts.render_sanctions_explainer import build_sanctions_pages
@@ -60,6 +62,7 @@ def build_manifest() -> None:
         })
     runtime = json.loads((DATA / "data_bundle.js").read_text().split("window.DOT_DATA=", 1)[1].rsplit(";", 1)[0])
     official_listing = json.loads((DATA / "applications_2026_aps_official_provenance.json").read_text(encoding="utf-8"))
+    aps_graph = json.loads((DATA / "aps_2026_application_graph_manifest.json").read_text(encoding="utf-8"))
     if (official_listing.get("totalOfficialListingRows") != 2783 or
         official_listing.get("uniquePublishedApplicationRecords") != 1614 or
         official_listing.get("replacementStringRecords") != 1169):
@@ -101,6 +104,7 @@ def build_manifest() -> None:
             "application2026PublishedOfficialApplicationIDs": official_listing["uniquePublishedApplicationRecords"],
             "application2026OfficialReplacementRecords": official_listing["replacementStringRecords"],
             "application2026OfficialListingPendingWDO": True},
+        "aps_2026_application_graph": {"source": "applications_2026_aps_official_listing.csv", "manifest": "aps_2026_application_graph_manifest.json", "graph": "aps_2026_application_graph.json", "edges": "aps_2026_application_edges.csv", "observations": "aps_2026_record_observations.csv", **aps_graph["counts"], "individualPDFsVendored": False},
         "aps_2026_official_listing": {
             "source": official_listing["sourceExportURL"],
             "download": official_listing["officialRowsFile"],
@@ -134,7 +138,7 @@ def build_manifest() -> None:
 
 def data_pack_files() -> list[Path]:
     snapshot = json.loads((DATA / "iana_snapshot.json").read_text())
-    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "application_2026_snapshot.json", DATA / "applications_2026_aps_official_provenance.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "economic_cases.json", DATA / "social_cases.json", ROOT / snapshot["archive_path"]]
+    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "application_2026_snapshot.json", DATA / "applications_2026_aps_official_provenance.json", DATA / "aps_2026_application_graph.json", DATA / "aps_2026_application_graph_manifest.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "economic_cases.json", DATA / "social_cases.json", ROOT / snapshot["archive_path"]]
 
 
 def build_data_pack() -> None:
@@ -358,6 +362,7 @@ def main() -> None:
         missing = [str(path.relative_to(ROOT)) for path in archaeology_outputs if not path.exists()]
         raise SystemExit("Application archaeology cannot be rebuilt and required frozen outputs are missing: " + ", ".join(missing))
 
+    build_aps_application_graph()
     bundle_runtime()
     build_manifest()
     build_data_pack()
@@ -367,6 +372,7 @@ def main() -> None:
     build_sanctions_pages(ROOT)
     build_access_pages(ROOT)
     build_investigations(ROOT)
+    render_aps_application_atlas(ROOT)
     validate_index()
     # Release-level validation is intentionally self-contained so the browser-upload
     # bundle can verify itself even though the larger development QA suite is omitted.

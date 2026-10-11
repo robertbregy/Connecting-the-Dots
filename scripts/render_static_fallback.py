@@ -76,7 +76,7 @@ def render(page,lang,alias=False):
             item['version']=json.loads((ROOT/'publication.json').read_text())['dataPackageVersion']
         elif url.endswith('/'+json.loads((ROOT/'publication.json').read_text())['currentDataPackPath']):
             item['version']=VERSION
-        elif url.endswith('/data/tld_universe.csv') or url.endswith('/data/applications_2026_strings_reveal.csv') or url.endswith('/data/applications_2026_aps_official_listing.csv'):
+        elif (url.endswith('/data/tld_universe.csv') or url.endswith('/data/applications_2026_strings_reveal.csv') or url.endswith('/data/applications_2026_aps_official_listing.csv') or url.endswith('/data/aps_2026_application_graph.json') or url.endswith('/data/aps_2026_application_edges.csv')):
             item['version']=VERSION
     dataset.string=json.dumps(dd,ensure_ascii=False,separators=(',',':'))
     def links():
