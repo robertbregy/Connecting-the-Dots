@@ -153,7 +153,7 @@ The repository includes machine-readable manifests, downloadable CSV datasets, d
 
 The project has five main limitations in this living revision, based on the RR2 research snapshot.
 
-First, the 2026 locally vendored application-level corpus is not yet complete; the official aggregate and the frozen secondary string layer must therefore remain distinct. Second, economic-sector and strategy classifications are editorial taxonomies and require judgement for diversified groups or ambiguous strings. Third, historical source quality varies between rounds. Fourth, registration volume and commercial success are not equivalent to social or institutional importance. Fifth, a living resource can change after citation, making dated research releases essential.
+First, the official 2026 APS public Applications listing is now locally archived as downloaded on 11 October: 2,783 rows representing 1,614 published application IDs and 1,169 replacement records. That is not a complete set of individual questionnaires or PDFs, and the 1,615-application official aggregate still includes a separately identified application undergoing an administrative check. The 980-string secondary inventory remains a distinct layer. Second, economic-sector and strategy classifications are editorial taxonomies and require judgement for diversified groups or ambiguous strings. Third, historical source quality varies between rounds. Fourth, registration volume and commercial success are not equivalent to social or institutional importance. Fifth, a living resource can change after citation, making dated research releases essential.
 
 ## 9. Conclusion
 
