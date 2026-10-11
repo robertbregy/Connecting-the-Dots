@@ -39,7 +39,7 @@ function check(ok,level,kind,where,message,extra){if(!ok)finding(level,kind,wher
    const html=fs.readFileSync(lang+'/index.html','utf8');
    let meta=[...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)].map(x=>x[1]);
    for(const raw of meta){
-     try{const j=JSON.parse(raw);if(j['@type']==='Dataset'&&String(j.contentUrl||'').includes('connecting-the-dots-data-pack.zip') && j.version!==pub.dataPackageVersion)
+     try{const j=JSON.parse(raw);if(j['@type']==='Dataset'&&String(j.contentUrl||j.distribution?.contentUrl||'').includes('connecting-the-dots-data-pack.zip') && j.version!==pub.dataPackageVersion)
        finding('HIGH','STRUCTURED_DATA_VERSION',lang,'SEO JSON-LD labels historical ZIP with current site version',{advertised:j.version,zip:pub.dataPackageVersion});
      }catch(e){finding('HIGH','BROKEN_JSONLD',lang,e.message.slice(0,140));}
    }
@@ -98,7 +98,7 @@ function check(ok,level,kind,where,message,extra){if(!ok)finding(level,kind,wher
           headings:[...document.querySelectorAll('section.section.active h1,section.section.active h2')].map(x=>x.textContent.trim()).filter(Boolean).slice(0,2),
           text:document.querySelector('section.section.active')?.innerText?.length||0
        }));
-       check(d.active.length===1 && d.active[0]===tab,'HIGH','NAVIGATION',lang+'/'+tab,'Navigation fails',{width,active:d.active});
+       check(d.active.length===1 && d.active[0]===tab.split('#')[0],'HIGH','NAVIGATION',lang+'/'+tab,'Navigation fails',{width,active:d.active});
        check(d.text>30,'MED','EMPTY_TAB',lang+'/'+tab,'Active section unexpectedly empty',{width,text:d.text});
        counts.overflowChecks++;
        check(d.scroll<=d.width+3,'HIGH','HORIZONTAL_OVERFLOW',lang+'/'+tab,'Horizontal scroll beyond viewport',{width,content:d.scroll,viewport:d.width});
