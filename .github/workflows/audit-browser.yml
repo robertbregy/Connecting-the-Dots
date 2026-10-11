@@ -53,7 +53,7 @@ jobs:
       - name: Audit all 160 combinations of locale, theme and section for WCAG A/AA
         run: |
           node scripts/audit_axe_20261010.js
-      - name: Independent full-site audit: source, translations, links, UX and live Pages
+      - name: 'Independent full-site audit: source, translations, links, UX and live Pages'
         run: |
           node scripts/deep_audit_20261011.js
       - name: Attach visual evidence
