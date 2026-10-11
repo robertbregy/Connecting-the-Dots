@@ -657,6 +657,7 @@ if (manifest.get('aps_2026_official_listing',{}).get('publishedApplications')!=1
 
 
 # Application Atlas v0.7.78: every published base-ID must be indexed exactly once.
+site_base='https://robertbregy.github.io/Connecting-the-Dots/'
 graph=json_file('aps_2026_application_graph.json')
 graph_report=json_file('aps_2026_application_graph_manifest.json')
 if graph.get('schemaVersion')!=1 or graph.get('counts',{}).get('officialPublishedApplications')!=1614:
