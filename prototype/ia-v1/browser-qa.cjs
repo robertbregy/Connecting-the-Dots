@@ -53,7 +53,7 @@ const capture=(e)=>failures.push(String(e));
      log.routes++;
      if(["","guida-accesso","nota-conteggi"].includes(route)){
       const axe=await new AxeBuilder({page}).withTags(["wcag2a","wcag2aa","wcag21a","wcag21aa"]).analyze();
-      assert.equal(axe.violations.length,0,"axe: "+axe.violations.map(x=>x.id+":"+x.nodes.length).join(", "));
+      assert.equal(axe.violations.length,0,"axe: "+JSON.stringify(axe.violations.map(x=>({id:x.id,nodes:x.nodes.slice(0,5).map(n=>({target:n.target,html:n.html.slice(0,190),message:n.failureSummary}))}))));
       log.axe++;
      }
      if((lang==="it"&&route==="")||(lang==="it"&&route==="guida-accesso")||(lang==="en"&&route==="nota-conteggi")||(lang==="de"&&route==="esplorare")){
