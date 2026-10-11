@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887",
+  "sourceURL": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+  "retrievedAtUTC": "2026-10-11T21:27:40.214Z",
+  "counts": {
+    "officialReportedApplications": 1615,
+    "officialPublishedApplications": 1614,
+    "officialListingRows": 2783,
+    "replacementRecords": 1169,
+    "replacementActive": 442,
+    "replacementDeactivated": 727,
+    "newPrimaryStringApplications": 1608,
+    "newPrimaryStrings": 980,
+    "variantOnlyExistingTldApplications": 6,
+    "variantRelationships": 13,
+    "derivedExactPrimaryMatchGroups": 263,
+    "applicationsInExactPrimaryMatches": 891,
+    "officialUnpublishedApplications": 1
+  },
+  "eventHistory": {
+    "events": 2783,
+    "sourceSnapshots": 1
+  },
+  "files": {
+    "aps_2026_application_graph.json": {
+      "sha256": "1342a1f13f7c707f210dda9b567d7500c899214a44ce4a1f4aab1b1de690647d",
+      "bytes": 1288819
+    },
+    "aps_2026_application_graph.js": {
+      "sha256": "37eb742916a8e79f3515b3daa7f25966bffc424003b74562299db2640a4d7bce",
+      "bytes": 947796
+    },
+    "aps_2026_application_edges.csv": {
+      "sha256": "5acced2d69dddff215e3b64885003e2a51ce366640c27db98b248dfd2f46e8e6",
+      "bytes": 413111
+    },
+    "aps_2026_record_observations.csv": {
+      "sha256": "91f8d83972d7ecffe901ee7c0ce30e9cf0d6c9d9453cf6b617d80381a1570a39",
+      "bytes": 490227
+    }
+  },
+  "limitations": [
+    "Public APS application-listing completeness excludes the under-administrative-check .wdo dossier.",
+    "A -R record is an alternative label linked to its base application, not an additional application.",
+    "13 variant links are string relationships, not 13 additional applications.",
+    "Exact same-primary-string sets are analytical candidates, not final ICANN contention sets.",
+    "Before ICANN String Evaluation, a false APS contention label does not establish no contention.",
+    "Application status/processing stage and replacement status are independently observed fields.",
+    "Application detail/response/documents pages are linked at their official APS routes but not mirrored or individually checked in full.",
+    "The application observation log is append-only by source digest; disappearance from listing is not automatically a withdrawal."
+  ]
+}
