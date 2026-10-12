@@ -38,7 +38,7 @@ function syncTopbarHeight(){const h=Math.ceil(document.querySelector('.topbar')?
 function reducedMotion(){return !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches}
 function navigationOffset(){
  let offset=0;
- for(const selector of ['.topbar','.nav','.mobileNavWrap']){
+ for(const selector of ['.topbar','.iaPrimaryNav','.nav','.mobileNavWrap']){
   const el=document.querySelector(selector);if(!el)continue;
   const cs=getComputedStyle(el);if(cs.display==='none'||(cs.position!=='sticky'&&cs.position!=='fixed'))continue;
   offset+=el.getBoundingClientRect().height||0;
@@ -596,7 +596,33 @@ function toggleNavMenu(menu){
  const selected=dropdown.querySelector('.tab.active');
  if(selected)selected.scrollIntoView({block:'nearest'});
 }
-function activateTab(id,userInitiated=false,historyMode='replace',scrollSection=true){if(!document.getElementById(id))id='overview';const previousTab=activeTab;if(previousTab!==id&&(previousTab==='overview'||id==='overview'))setJourneyStep(0,false);if(id!=='explore')closeExplorerDrawer({historyMode:'none',restoreFocus:false});activeTab=id;document.body.dataset.activeTab=id;document.querySelectorAll('.tab').forEach(x=>{x.classList.toggle('active',x.dataset.target===id);if(x.dataset.target===id)x.setAttribute('aria-current','location');else x.removeAttribute('aria-current')});document.querySelectorAll('.navMenu').forEach(g=>g.classList.toggle('active',!!g.querySelector('.tab.active')));document.querySelectorAll('.section').forEach(x=>x.classList.toggle('active',x.id===id));closeNavMenus();const mn=document.getElementById('mobileNav');if(mn)mn.value=id;if(historyMode!=='none')setQuery(userInitiated?'push':historyMode);if(userInitiated&&scrollSection){const heading=document.querySelector('#'+id+' h1, #'+id+' h2');focusNavigationTarget(heading);scrollToNavigationTarget(document.getElementById(id),true)}syncHowNavSelection()}
+
+// IA B2: a new orientation layer over preserved canonical sections.
+// These mappings never change application/TLD identity, source content or data.
+const IA_B2_AREAS={"ia-understand":["ia-understand","overview","how","beyond"],"ia-explore":["ia-explore","explore","timeline"],"ia-stories":["ia-stories","cities","geography","economics","social","contention","refusals","disputes","strange"],"ia-round":["ia-round","reveal","inside-round","behind-round","lugano"],"ia-research":["ia-research","research","paper","resources","sources"]};
+function syncIAB2Navigation(){
+  const current=Object.entries(IA_B2_AREAS).find(([,sections])=>sections.includes(activeTab))?.[0]||'ia-understand';
+  document.querySelectorAll('.iaPrimaryLink[data-b2-area]').forEach(link=>{
+    const selected=link.dataset.b2Area===current;
+    link.classList.toggle('active',selected);
+    if(selected)link.setAttribute('aria-current','location');
+    else link.removeAttribute('aria-current');
+  });
+  const root=document.documentElement.dataset.ctdRoot||'./';
+  document.querySelectorAll('a[data-b2-resource]').forEach(link=>{
+    const kind=link.dataset.b2Resource;
+    const path=kind==='atlas'?'applications/'+lang+'/':
+               kind==='sanctions'?'behind-the-round/'+lang+'/sanctions-and-dns/':
+               kind==='access'?'behind-the-round/'+lang+'/who-controls-internet-access/':'';
+    if(path)link.setAttribute('href',root+path);
+  });
+  const nav=document.querySelector('.iaPrimaryNav');
+  if(nav)nav.setAttribute('aria-label',t('iaPrimaryLabel'));
+  const home=document.querySelector('.iaHomeJumpList');
+  if(home)home.setAttribute('aria-label',t('iaHomeLaunchTitle'));
+}
+
+function activateTab(id,userInitiated=false,historyMode='replace',scrollSection=true){if(!document.getElementById(id))id='overview';const previousTab=activeTab;if(previousTab!==id&&(previousTab==='overview'||id==='overview'))setJourneyStep(0,false);if(id!=='explore')closeExplorerDrawer({historyMode:'none',restoreFocus:false});activeTab=id;document.body.dataset.activeTab=id;document.querySelectorAll('.tab').forEach(x=>{x.classList.toggle('active',x.dataset.target===id);if(x.dataset.target===id)x.setAttribute('aria-current','location');else x.removeAttribute('aria-current')});document.querySelectorAll('.navMenu').forEach(g=>g.classList.toggle('active',!!g.querySelector('.tab.active')));document.querySelectorAll('.section').forEach(x=>x.classList.toggle('active',x.id===id));closeNavMenus();const mn=document.getElementById('mobileNav');if(mn)mn.value=id;syncIAB2Navigation();if(userInitiated)document.getElementById('iaLegacyNavDisclosure')?.removeAttribute('open');if(historyMode!=='none')setQuery(userInitiated?'push':historyMode);if(userInitiated&&scrollSection){const heading=document.querySelector('#'+id+' h1, #'+id+' h2');focusNavigationTarget(heading);scrollToNavigationTarget(document.getElementById(id),true)}syncHowNavSelection()}
 function syncHowNavSelection(){
  const menu=document.querySelector('.navMenu[data-label-key="tabHow"]');if(!menu)return;
  const links=[...menu.querySelectorAll('.navDropdown .tab')];
