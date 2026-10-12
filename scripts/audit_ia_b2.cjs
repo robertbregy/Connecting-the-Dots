@@ -101,9 +101,40 @@ async function checkAxe(page,label) {
    }catch(err){tally.issues.push(err.message);report.issues.push({lang,width,message:err.message});}
    finally {report.languages.push(tally);await context.close();}
   }
+  // All independent guides and tools share the same five-area navigation.
+  const independent=[];
+  for(const lang of languages){
+    for(const family of ["applications","inside-the-round","behind-the-round"]){
+      independent.push({url:family+"/"+lang+"/",lang,selected:family==="applications"?"explore":"round"});
+    }
+    for(const slug of ["objectors-eoi","replacement-strings","wdo-identity","sanctions-and-dns","who-controls-internet-access"]){
+      independent.push({url:"behind-the-round/"+lang+"/"+slug+"/",lang,
+        selected:["sanctions-and-dns","who-controls-internet-access"].includes(slug)?"understand":"round"});
+    }
+  }
+  independent.push({url:"explorer/",lang:"en",selected:"explore"},{url:"research/",lang:"en",selected:"research"});
+  report.independentPages=0;
+  for(const entry of independent){
+    const context=await browser.newContext({viewport:{width:390,height:860}});
+    const page=await context.newPage();
+    try{
+      const response=await page.goto(BASE+entry.url,{waitUntil:"domcontentloaded",timeout:20000});
+      assert.equal(response.status(),200,entry.url+" not found");
+      assert.equal(await page.locator(".ctdB2CrossNav a").count(),5,entry.url+" missing B2 navigation");
+      assert.equal(await page.locator(".ctdB2CrossNav a[aria-current='location']").count(),1,entry.url+" active area mismatch");
+      assert.equal(await page.locator('.ctdB2CrossNav a[data-b2-cross-area="'+entry.selected+'"][aria-current="location"]').count(),1,entry.url+" wrong area");
+      if(entry.url==="applications/it/"){
+        await page.locator('.ctdB2CrossNav a[data-b2-cross-area="explore"]').click();
+        assert.ok(page.url().endsWith("/it/?tab=ia-explore#ia-explore"),"Atlas to B2 path incorrect");
+        assert.equal(await page.locator('#ia-explore.section.active').count(),1,"crosspage link did not restore B hub");
+      }
+      report.independentPages++;
+    }catch(err){report.issues.push({entry:entry.url,message:err.message})}
+    finally{await context.close()}
+  }
  }finally {await browser.close();}
  fs.mkdirSync("audit-ia-b2",{recursive:true});
  fs.writeFileSync("audit-ia-b2/report.json",JSON.stringify(report,null,2));
- console.log("IA_B2_AUDIT "+JSON.stringify({scenarios:report.languages.length,successful:report.languages.filter(x=>!x.issues.length).length,issues:report.issues,screenshots:report.screenshots}));
+ console.log("IA_B2_AUDIT "+JSON.stringify({scenarios:report.languages.length,successful:report.languages.filter(x=>!x.issues.length).length,independentPages:report.independentPages,issues:report.issues,screenshots:report.screenshots}));
  if(report.issues.length)process.exitCode=1;
 })().catch(e=>{console.error(e);process.exitCode=1});
