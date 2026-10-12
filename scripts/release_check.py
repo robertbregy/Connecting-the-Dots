@@ -1196,7 +1196,8 @@ if 'Field Notes' not in working_md or 'Timeline' not in working_md or 'Field Not
 technical_pack = publication_meta.get('currentDataPackPath')
 if not technical_pack or publication_meta.get('currentDataPackVersion') != version:
     fail('current technical pack identity is not anchored to publication.json')
-for rel in ('research/index.html', 'research/connecting-the-dots-working-paper-v1.html'):
+for rel in ('research/index.html', 'research/connecting-the-dots-working-paper-v1.html',
+            'research/connecting-the-dots-working-paper-v1.md'):
     page = (ROOT / rel).read_text(encoding='utf-8')
     if technical_pack not in page:
         fail('mutable research page still points to an old technical ZIP: ' + rel)
