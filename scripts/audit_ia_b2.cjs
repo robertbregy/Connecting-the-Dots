@@ -126,7 +126,8 @@ async function checkAxe(page,label) {
       if(entry.url==="applications/it/"){
         await page.locator('.ctdB2CrossNav a[data-b2-cross-area="explore"]').click();
         assert.ok(page.url().endsWith("/it/?tab=ia-explore#ia-explore"),"Atlas to B2 path incorrect");
-        assert.equal(await page.locator('#ia-explore.section.active').count(),1,"crosspage link did not restore B hub");
+        await page.locator("#ia-explore.section.active").waitFor({state:"visible",timeout:20000});
+        assert.equal(await page.locator("#ia-explore.section.active").count(),1,"crosspage link did not restore B hub");
       }
       report.independentPages++;
     }catch(err){report.issues.push({entry:entry.url,message:err.message})}
