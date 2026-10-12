@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.78
+# Connecting the Dots — v0.7.79
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -6,7 +6,11 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.78 · 12 October 2026 (UTC)**
+**v0.7.79 · 13 October 2026 (UTC)**
+
+**B2 reader-first architecture.** Five persistent areas, a purpose-led homepage, full-width navigational cards and a shared visual shell for independently addressable articles. Existing content, application datasets and historic URLs are retained. This is a technical redesign only; RR1 and RR2 are unchanged.
+
+**Previous v0.7.78 · 12 October 2026 (UTC)**
 
 **2026 Application Atlas.** Four localized application-oriented views at `/applications/{it,en,de,fr}/` link the 1,614 official published APS applications by stable base Application ID to their primary labels, 1,169 replacement-record IDs (-R), 13 published variant-string relationships, applicant identities, location, raw APS status and official summary/response/document pages. A separate graph JSON, CSV relationship edges and append-only source-dated status observations are generated deterministically from the pinned ICANN listing with SHA-256 verification. The 263 exact-primary-string overlapping groups (891 applications) are **analytical candidates**, not adjudicated ICANN contention sets. The .wdo administrative-check application remains separately identified but is not fabricated into the official listing. Public application questionnaires and PDFs are linked at ICANN, **not locally copied**. The current v0.7.78 package incorporates the new analytic data while the v0.7.77 and immutable RR1/RR2 archives remain unchanged.
 
