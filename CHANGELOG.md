@@ -1,3 +1,8 @@
+# v0.7.79 — 13 October 2026 (UTC)
+
+- B2 integrated redesign: five reader-first pathways, explanatory Home and aligned standalone-page navigation and breadcrumbs.
+- Conserves legacy sections, canonical routes, research data and the frozen RR1/RR2 deposits. Introduces a new technical data pack without overwriting v0.7.78.
+
 # v0.7.78 — 12 October 2026 (UTC)
 
 - Added four-language ICANN 2026 Application Atlas: a searchable, filtered application-level graph with direct links to official APS summaries, application responses and public documents.
