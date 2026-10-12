@@ -12,9 +12,11 @@ const snapshot=JSON.parse(fs.readFileSync(path.join(root,'data/iana_snapshot.jso
 // A green build requires complete translations in every language, not a historical exception list.
 const canonicalTranslations=JSON.parse(fs.readFileSync(path.join(root,'data/translations.json'),'utf8'));
 const sourceTemplate=fs.readFileSync(path.join(root,'src/index.web.html'),'utf8');
+const iaB2Fragment=fs.readFileSync(path.join(root,'src/ia-b2-hubs.html'),'utf8');
 const applicationSource=fs.readFileSync(path.join(root,'assets/app.js'),'utf8');
 const requiredKeys=new Set([
   ...Array.from(sourceTemplate.matchAll(/data-i18n="([^"]+)"/g),m=>m[1]),
+  ...Array.from(iaB2Fragment.matchAll(/data-i18n="([^"]+)"/g),m=>m[1]),
   ...Array.from(applicationSource.matchAll(/\b(?:t|tx)\(\s*['"]([A-Za-z0-9_]+)['"]\s*[,)]/g),m=>m[1])
 ]);
 for(const theme of ['economics','social','contention','outcomes','disputes','strange'])
@@ -35,6 +37,37 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   const {document}=parseHTML(text);
   const canonical=base+language+'/';
   assert.equal(document.documentElement.getAttribute('lang'),language,page+' language');
+  // B2 integrates a new task-first UI with all the former sections, not a separate website.
+  const iaAreas=['ia-understand','ia-explore','ia-stories','ia-round','ia-research'];
+  const iaNav=[...document.querySelectorAll('.iaPrimaryNav .iaPrimaryLink')];
+  assert.equal(iaNav.length,5,page+' must show precisely five primary task areas');
+  const hubSections=[...document.querySelectorAll('section.iaHub')];
+  assert.deepEqual(hubSections.map(x=>x.id),iaAreas,page+' broken IA hub order');
+  for(const [index,id] of iaAreas.entries()){
+    assert.equal(iaNav[index].getAttribute('data-open-section'),id,page+' IA route destination');
+    assert.ok(document.getElementById(id)?.querySelector('h2'),page+' missing real task landing '+id);
+    assert.equal(iaNav[index].textContent.trim(),translations[['iaNavUnderstand','iaNavExplore','iaNavStories','iaNavRound','iaNavResearch'][index]],page+' incomplete IA navigation locale');
+  }
+  assert.equal(document.querySelectorAll('.iaHubCard').length,25,page+' must preserve all 25 IA access cards');
+  const legacySections=['overview','explore','timeline','how','beyond','cities','geography','economics','social','contention','refusals','disputes','strange','reveal','inside-round','behind-round','lugano','research','paper','resources','sources'];
+  for(const id of legacySections)assert.equal(document.getElementById(id)?.tagName,'SECTION',page+' legacy content deleted: '+id);
+  assert.ok(document.querySelector('.iaLegacyNavDisclosure .nav'),page+' original desktop deep links inaccessible');
+  assert.ok(document.querySelector('.iaLegacyNavDisclosure #mobileNav'),page+' original mobile deep links inaccessible');
+  assert.ok(!document.getElementById('iaLegacyNavDisclosure').hasAttribute('open'),page+' legacy overflow must start folded');
+  assert.equal(document.querySelector('.iaPrimaryNav').getAttribute('aria-label'),translations.iaPrimaryLabel,page+' IA primary navigation aria-label');
+  assert.ok(document.querySelector('[data-i18n="heroBody"]').textContent.includes('Connecting the Dots'),page+' the project itself must be explained immediately');
+  assert.ok(document.querySelector('[data-i18n="heroPlain"]').textContent.includes('.lugano'),page+' the candidate string caveat must be visible');
+  assert.ok(document.querySelector('[data-i18n="iaProjectDefinition"]').textContent.length>90,page+' project purpose lacks meaningful detail');
+  assert.ok(document.querySelector('.iaHomeJumpList a[href="#ia-research"]'),page+' the novice cannot see direct paths');
+  assert.ok(document.querySelector('#ia-research a[href="https://doi.org/10.5281/zenodo.23288603"]'),page+' RR2 version-specific DOI not immediately available');
+  assert.equal(document.querySelector('#ia-explore [data-b2-resource="atlas"]').getAttribute('href'),(alias?'./':'../')+'applications/'+language+'/',page+' 2026 Atlas should remain in the same branch and locale');
+  assert.equal(document.querySelector('#ia-understand [data-b2-resource="access"]').getAttribute('href'),(alias?'./':'../')+'behind-the-round/'+language+'/who-controls-internet-access/',page+' access guide must stay on the current language route');
+  assert.equal(document.querySelector('#ia-understand [data-b2-resource="sanctions"]').getAttribute('href'),(alias?'./':'../')+'behind-the-round/'+language+'/sanctions-and-dns/',page+' sanctions guide must stay on the current language route');
+  for(const card of document.querySelectorAll('.iaHubCard a[data-open-section]')){
+    const target=card.getAttribute('data-open-section'),anchor=card.getAttribute('data-open-anchor');
+    assert.ok(legacySections.includes(target),page+' IA card loses canonical target '+target);
+    if(anchor)assert.ok(document.getElementById(anchor),page+' IA link anchor lost '+anchor);
+  }
   const luganoSection=document.getElementById('lugano');
   assert.equal(luganoSection?.tagName,'SECTION',page+' must preserve semantic .lugano section');
   assert.equal(luganoSection?.querySelector(':scope > .panel.authorDisclosure')?.tagName,'DIV',page+' must preserve the introductory disclosure card (source markup regression)');
