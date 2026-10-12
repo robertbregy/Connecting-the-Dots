@@ -85,6 +85,9 @@ function assert(ok,level,cat,route,msg,extra){if(!ok)log(level,cat,route,msg,ext
     'HIGH','EXPLORER_2026',route,'2026 Reveal Day Explorer overlay missing or incomplete',{viewport:vp.id,inventory});
    await overflow(p,route,vp.id);
    if(vp.id==='desktop'){
+    // The legacy shortcuts live behind a deliberate disclosure in IA B2.
+    // Expand it before exercising the original desktop navigation contract.
+    await p.locator('#iaLegacyNavDisclosure').evaluate(el=>{el.open=true});
     for(const name of ['tabHow','navThemes']){
       const btn=p.locator('.navMenu[data-label-key="'+name+'"] > button');
       await btn.click();const panel=p.locator(name==='tabHow'?'#navHowDropdown':'#navThemesDropdown');
@@ -101,6 +104,7 @@ function assert(ok,level,cat,route,msg,extra){if(!ok)log(level,cat,route,msg,ext
     await p.screenshot({path:'audit-'+locale+'-desktop-lugano.png',fullPage:false});
    }
    if(vp.id==='mobile'){
+    await p.locator('#iaLegacyNavDisclosure').evaluate(el=>{el.open=true});
     await p.locator('#mobileNav').selectOption('lugano');
     const active=await p.evaluate(()=>[...document.querySelectorAll('.section.active')].map(x=>x.id));
     assert(active.join()==='lugano','HIGH','NAV',route,'Mobile Lugano tab failed',{active});
