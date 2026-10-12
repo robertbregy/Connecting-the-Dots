@@ -9,7 +9,7 @@ const fs=require("node:fs");
 const BASE="http://127.0.0.1:8128/";
 const languages=["it","en","de","fr"];
 const hubs=[
- ["ia-understand",6,"overview"],
+ ["ia-understand",6,"how"],
  ["ia-explore",3,"explore"],
  ["ia-stories",8,"economics"],
  ["ia-round",4,"behind-round"],
@@ -80,6 +80,12 @@ async function checkAxe(page,label) {
       assert.equal(await page.locator('.iaPrimaryLink[data-b2-area="'+hub+'"][aria-current="location"]').count(),1,"cross-link lost parent context "+hub);
       tally.hubs.push({hub,cards:count,target:canonical});
     }
+    // The introductory Internet-basics article deliberately returns to the Home
+    // overview. Home must not claim that a primary area is selected.
+    await page.locator('.iaPrimaryLink[data-b2-area="ia-understand"]').click();
+    await page.locator('#ia-understand a[data-open-section="overview"]').first().click();
+    assert.equal(await page.locator('#overview.section.active').count(),1,"Understand overview entry broken");
+    assert.equal(await page.locator('.iaPrimaryLink[aria-current="location"]').count(),0,"Home overview must not claim a selected area");
     await page.locator('.iaPrimaryLink[data-b2-area="ia-explore"]').click();
     const atlas=page.locator('#ia-explore a[data-b2-resource="atlas"]');
     const atlasUrl=await atlas.getAttribute("href");
