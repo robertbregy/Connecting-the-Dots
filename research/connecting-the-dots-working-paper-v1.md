@@ -1,8 +1,9 @@
 # Connecting the Dots: Reconstructing Twenty-Five Years of Top-Level Domain Expansion as a Living Research Atlas
 
 **Robert Bregy**  
-**Working Paper v1.1-draft · living revision 11 October 2026 · current citable research release RR2 (10 October 2026)**  
+**Working Paper v1.1-draft · living revision 13 October 2026 · current citable research release RR2 (10 October 2026)**  
 **Status:** working paper; not peer reviewed. This mutable manuscript is distinct from the immutable RR1 (9 October 2026) and RR2 (10 October 2026) Zenodo research deposits.  
+**Technical-reference correction (13 October 2026):** the mutable technical data-pack link was synchronized with site v0.7.78. No scientific dataset or archived RR1/RR2 release was changed.  
 **Living publication:** https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Abstract
