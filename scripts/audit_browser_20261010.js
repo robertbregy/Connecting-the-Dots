@@ -133,7 +133,7 @@ function assert(ok,level,cat,route,msg,extra){if(!ok)log(level,cat,route,msg,ext
    if(profile==='desktop'){
      try{
       let a=await new AxeBuilder({page:p}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
-      log('INFO','AXE',route,a.violations.length+' axe rule violations',{items:a.violations.map(v=>({id:v.id,impact:v.impact,count:v.nodes.length,selectors:v.nodes.slice(0,3).map(n=>n.target)}))});
+      if(a.violations.length) log('HIGH','AXE',route,a.violations.length+' WCAG axe rule violations',{items:a.violations.map(v=>({id:v.id,impact:v.impact,count:v.nodes.length,selectors:v.nodes.slice(0,3).map(n=>n.target)}))});
      }catch(e){log('MED','AXE',route,'axe error '+e.message.slice(0,250))}
    }
    await p.locator('[data-access-select="resolver"]').click();
