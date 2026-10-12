@@ -9,6 +9,7 @@ on:
       - 'assets/**'
       - 'data/translations.json'
       - 'scripts/audit_ia_b2.cjs'
+      - 'scripts/verify_ia_b2_parity.cjs'
       - 'scripts/validate_multilingual.js'
       - 'build.py'
       - 'scripts/release_check.py'
@@ -45,6 +46,8 @@ jobs:
           node --check assets/app.js
           node --check scripts/validate_multilingual.js
           node --check scripts/audit_ia_b2.cjs
+          node --check scripts/verify_ia_b2_parity.cjs
+          node scripts/verify_ia_b2_parity.cjs
           python3 -m py_compile build.py
       - name: Generate complete local site without publishing
         run: python3 build.py
