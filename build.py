@@ -385,7 +385,7 @@ def main() -> None:
     render_aps_application_atlas(ROOT)
     apply_ia_b2_crossnav(ROOT)
     cross_nav_count = validate_ia_b2_crossnav(ROOT)
-    if cross_nav_count != 34:
+    if cross_nav_count != 35:
         raise SystemExit('IA B2 cross-site navigation coverage incomplete')
     print(f'IA B2 integrated navigation: {cross_nav_count} independent pages')
     validate_index()
