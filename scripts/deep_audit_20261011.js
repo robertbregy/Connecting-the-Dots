@@ -73,7 +73,7 @@ function check(ok,level,kind,where,message,extra){if(!ok)finding(level,kind,wher
    for(const link of [...new Set(localLinks)]){
      const u=new URL(link);let file=u.pathname.slice(1);
      file=decodeURIComponent(file);
-     if(file.endsWith('/'))file+='index.html';
+     if(!file || file.endsWith('/'))file+='index.html';
      if(!path.extname(file) && !fs.existsSync(file))file+='/index.html';
      counts.checkedLinks++;
      check(fs.existsSync(file),'HIGH','BROKEN_LOCAL_ASSET',route,'Linked local file missing',{href:link,file});
