@@ -2379,7 +2379,8 @@
     "iaCardResearchDesc": "Scientific identity, RR1/RR2 releases and citation guidance.",
     "iaCardPaperDesc": "The working paper, research questions, methods and limitations.",
     "iaCardResourcesDesc": "Datasets, packages and technical resources.",
-    "iaCardSourcesDesc": "Provenance, methods, revisions and fact/reading distinctions."
+    "iaCardSourcesDesc": "Provenance, methods, revisions and fact/reading distinctions.",
+    "release0779": "v0.7.79: B2 navigation redesign with purpose-led Home, five reader journeys and integrated article shell; previous content, research evidence and DOI archives preserved."
   },
   "it": {
     "brand": "Brand",
@@ -4761,7 +4762,8 @@
     "iaCardResearchDesc": "Identità scientifica, release RR1/RR2 e istruzioni per citare il progetto.",
     "iaCardPaperDesc": "Il working paper, con domande, metodo e limiti.",
     "iaCardResourcesDesc": "Dataset, pacchetti e risorse tecniche disponibili.",
-    "iaCardSourcesDesc": "Provenienza, metodo, revisioni e distinzione fra fatti e letture."
+    "iaCardSourcesDesc": "Provenienza, metodo, revisioni e distinzione fra fatti e letture.",
+    "release0779": "v0.7.79: nuova architettura B2 con Home esplicativa, cinque percorsi di lettura e pagine integrate; conservati i contenuti, le evidenze e gli archivi DOI."
   },
   "de": {
     "brand": "Marke",
@@ -7143,7 +7145,8 @@
     "iaCardResearchDesc": "Wissenschaftliche Identität, RR1/RR2-Releases und Zitierhinweise.",
     "iaCardPaperDesc": "Working Paper, Forschungsfragen, Methoden und Grenzen.",
     "iaCardResourcesDesc": "Datensätze, Archive und technische Ressourcen.",
-    "iaCardSourcesDesc": "Herkunft, Methode, Änderungen und Trennung von Fakten und Deutungen."
+    "iaCardSourcesDesc": "Herkunft, Methode, Änderungen und Trennung von Fakten und Deutungen.",
+    "release0779": "v0.7.79: B2-Neugestaltung mit erklärender Startseite, fünf Lesewegen und integrierten Artikelseiten; Inhalte, Forschungsbelege und DOI-Archive bleiben erhalten."
   },
   "fr": {
     "brand": "Marque",
@@ -9525,6 +9528,7 @@
     "iaCardResearchDesc": "Identité scientifique, publications RR1/RR2 et indications pour citer.",
     "iaCardPaperDesc": "Working paper, questions de recherche, méthodes et limites.",
     "iaCardResourcesDesc": "Jeux de données, archives et ressources techniques.",
-    "iaCardSourcesDesc": "Provenance, méthode, révisions et distinction faits/interprétations."
+    "iaCardSourcesDesc": "Provenance, méthode, révisions et distinction faits/interprétations.",
+    "release0779": "v0.7.79 : nouvelle architecture B2, accueil explicatif, cinq parcours et pages intégrées ; contenus, données scientifiques et archives DOI préservés."
   }
 }
