@@ -608,10 +608,14 @@ body[data-active-tab]:not([data-active-tab="overview"]) .hero{display:none}
 .iaHubDoi>a{font-size:15px;color:var(--accent-text);font-weight:750;text-underline-offset:3px}
 .iaHubDoi small{width:100%;font-size:12.5px;color:var(--muted)}
 .iaHubGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;align-items:start}
-.iaHubCard{min-width:0;background:var(--surface);border:1px solid var(--border);border-radius:17px;padding:21px 22px;box-shadow:var(--shadow)}
+.iaHubCard{position:relative;min-width:0;background:var(--surface);border:1px solid var(--border);border-radius:17px;padding:21px 22px;box-shadow:var(--shadow)}
 .iaHubCard h3{font-size:19px;line-height:1.3;margin:0 0 9px;letter-spacing:-.02em}
 .iaHubCard h3 a{color:var(--text);text-decoration:none;display:inline-block;text-underline-offset:3px}
 .iaHubCard h3 a:hover,.iaHubCard h3 a:focus-visible{color:var(--accent-text);text-decoration:underline}
+/* One destination per card: extend the native anchor hit area, preserving keyboard, open-in-new-tab and link semantics. */
+.iaHubCard h3 a::after{content:"";position:absolute;inset:0;border-radius:inherit;cursor:pointer}
+.iaHubCard:hover{border-color:var(--accent-text)}
+.iaHubCard:focus-within{outline:2px solid var(--accent-text);outline-offset:3px}
 .iaHubCard p{font-size:14px;color:var(--muted);line-height:1.6;margin:0}
 .iaHubCard:focus-within{border-color:var(--accent-text)}
 @media(max-width:1000px){
