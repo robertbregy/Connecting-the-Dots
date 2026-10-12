@@ -36,6 +36,7 @@ B non è una seconda copia del progetto. È la stessa pubblicazione strutturata 
 - [ ] Full browser/WCAG regression **success** sull'ultimo SHA effettivo, senza errori severi occultati o controlli rimossi.
 - [ ] Verifica a campione della leggibilità dei testi e delle pagine scientifiche IT/EN/DE/FR, e delle ancore profonde pubbliche.
 - [ ] Comportamento della Home e dei cinque accessi accettabile in desktop e mobile.
+- [ ] Prima del merge, attribuire alla release pubblicabile una **nuova versione tecnica** (obiettivo 1.0.0 solo quando giustificato), sincronizzando publication.json, package/version, release_history, asset cache-busting, build, manifesti e nuovo data pack versionato. Non sovrascrivere pacchetti storici, RR1 o RR2; un redesign non è automaticamente RR3.
 - [ ] Rollback predisposto; riservatezza dei dati e dati di ricerca non modificati indirettamente.
 - [ ] **Esplicita approvazione del committente alla pubblicazione.**
 
@@ -44,7 +45,7 @@ La pubblicazione **non è autorizzata** finché una di queste condizioni è aper
 ## Procedura di promozione a produzione
 
 1. Registrare gli SHA `main` e B, confrontare HEAD e le versioni correnti del sito; eseguire un rebuild definitivo se `main` ha avuto nuovi aggiornamenti dopo la baseline.
-2. Preparare una pull request **B → main**, senza merge automatico. Allegare esiti CI, screenshot di mobile/desktop e un confronto finale di contenuti, dati e URL.
+2. Preparare una release candidate con la versione tecnica **nuova** e le risorse generate in modo deterministico: pubblicare B continuando a usare la stringa cache v0.7.78 renderebbe possibile servire CSS/JS della precedente A dal browser. Poi aprire una pull request **B → main**, senza merge automatico. Allegare esiti CI, screenshot di mobile/desktop e un confronto finale di contenuti, dati e URL.
 3. Conservare un riferimento immutabile o un branch di backup al commit pre-merge di A, con inventario delle risorse di produzione.
 4. Solo dopo approvazione esplicita: procedere al merge controllato, verificare GitHub Pages e i permalink storici, homepage mobile, DOI e collegamenti alle applicazioni.
 5. Se emergono regressioni sostanziali, revert del merge tramite nuova PR o ripristino controllato dal backup. **Niente force push** su `main` e niente manipolazione dei tag scientifici RR1/RR2.
