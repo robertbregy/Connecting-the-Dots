@@ -85,7 +85,10 @@ async function checkAxe(page,label) {
     // The descriptive text is not an anchor. The native title anchor must
     // nevertheless cover the entire card surface for mouse and touch users.
     await page.locator('.iaPrimaryLink[data-b2-area="ia-stories"]').click();
-    await page.locator('#ia-stories .iaHubCard').filter({has:page.locator('a[data-open-section="economics"]')}).locator('p').click({position:{x:8,y:8}});
+    const economicsCard=page.locator('#ia-stories .iaHubCard').filter({has:page.locator('a[data-open-section="economics"]')});
+    const paragraphBox=await economicsCard.locator('p').boundingBox();
+    assert.ok(paragraphBox,"economics card description missing");
+    await page.mouse.click(paragraphBox.x+8,paragraphBox.y+Math.min(8,paragraphBox.height/2));
     assert.equal(await page.locator('#economics.section.active').count(),1,"descriptive area of hub card is not clickable");
     await page.locator('.iaPrimaryLink[data-b2-area="ia-understand"]').click();
     await page.locator('#ia-understand a[data-open-section="overview"]').first().click();
