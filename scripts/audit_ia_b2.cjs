@@ -36,6 +36,7 @@ async function checkAxe(page,label) {
     await page.waitForTimeout(100);
     assert.equal(await page.locator("html").getAttribute("lang"),lang);
     assert.equal(await page.locator(".iaPrimaryLink").count(),5,"five path navigation items");
+    assert.equal(await page.locator('.iaPrimaryLink[aria-current="location"]').count(),0,"Home must not pretend the reader has chosen Understand");
     // The primary paths and the purpose statement must not be buried beneath
     // the fold on first arrival, especially on mobile.
     const firstViewport=await page.evaluate(()=>{
