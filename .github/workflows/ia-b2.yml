@@ -6,6 +6,7 @@ on:
       - feat/ia-rearchitecture-20261012
     paths:
       - '.github/workflows/ia-b2.yml'
+      - '.github/workflows/audit-browser.yml'
       - 'src/**'
       - 'assets/**'
       - 'data/**'
