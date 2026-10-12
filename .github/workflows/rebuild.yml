@@ -82,19 +82,30 @@ jobs:
           print('FROZEN_LEGACY_ZIP_PRESERVED',pub['dataPackageVersion'],before_historic)
           PY
 
-      - name: Commit generated publication
-        # Generate/commit assets on feature branches. No unsolicited bot writes to main.
+      - name: Commit generated publication on unchanged feature tip
+        # Never publish to main. A changed branch during a running build is
+        # not a build failure; the newer push owns the next deterministic build.
         if: github.ref != 'refs/heads/main'
         run: |
-          if git diff --quiet; then
+          if git diff --quiet && test -z "$(git ls-files --others --exclude-standard)"; then
             echo "No generated changes."
+            exit 0
+          fi
+          git fetch origin "$GITHUB_REF_NAME"
+          REMOTE_TIP="$(git rev-parse FETCH_HEAD)"
+          LOCAL_TIP="$(git rev-parse HEAD)"
+          if test "$REMOTE_TIP" != "$LOCAL_TIP"; then
+            echo "::notice::Branch advanced during build; do not rebase generated outputs onto newer source. A later build will generate the current tip."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
+          if git diff --cached --quiet; then
+            echo "No generated changes after staging."
+            exit 0
+          fi
           git commit -m "Rebuild published site [skip build]"
-          # Rebase a generated commit on any intervening human/editorial changes.
-          # Without this, rapid updates can produce a false red build after tests pass.
-          git pull --rebase origin "$GITHUB_REF_NAME"
-          git push
+          if ! git push origin "HEAD:$GITHUB_REF_NAME"; then
+            echo "::notice::Branch changed while pushing generated artifacts; defer to the next build. No force push, no rebase and no merge."
+          fi
