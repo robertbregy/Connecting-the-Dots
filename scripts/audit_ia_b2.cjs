@@ -123,6 +123,18 @@ async function checkAxe(page,label) {
       assert.equal(await page.locator(".ctdB2CrossNav a").count(),5,entry.url+" missing B2 navigation");
       assert.equal(await page.locator(".ctdB2CrossNav a[aria-current='location']").count(),1,entry.url+" active area mismatch");
       assert.equal(await page.locator('.ctdB2CrossNav a[data-b2-cross-area="'+entry.selected+'"][aria-current="location"]').count(),1,entry.url+" wrong area");
+      // Old standalone documents include absolute production links. In branch
+      // preview these must stay inside the branch, but canonical/DOI stay intact.
+      assert.equal(await page.locator('#ctd-b2-link-isolation').count(),1,entry.url+" lacks preview containment");
+      const escaped=await page.evaluate(()=>{
+        const prefix="https://robertbregy.github.io/Connecting-the-Dots/";
+        return [...document.querySelectorAll("a[href]")].filter(a=>(a.getAttribute("href")||"").startsWith(prefix)).map(a=>a.getAttribute("href")).slice(0,3);
+      });
+      assert.deepEqual(escaped,[],entry.url+" contains links that escape preview: "+JSON.stringify(escaped));
+      const isEvergreen=entry.url.includes("/sanctions-and-dns/")||entry.url.includes("/who-controls-internet-access/");
+      assert.equal(await page.locator('[data-b2-editorial-kind="evergreen-guide"]').count(),isEvergreen?1:0,entry.url+" misclassified editorially");
+      if(isEvergreen)
+        assert.ok((await page.locator('[data-b2-editorial-kind="evergreen-guide"]').innerText()).length>100,entry.url+" lacks editorial explanation");
       if(entry.url==="applications/it/"){
         await page.locator('.ctdB2CrossNav a[data-b2-cross-area="explore"]').click();
         assert.ok(page.url().endsWith("/it/?tab=ia-explore#ia-explore"),"Atlas to B2 path incorrect");
