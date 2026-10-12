@@ -386,7 +386,7 @@ if '<a aria-label="Home" class="brand brandButton" href="./">' not in src: fail(
 for marker in ['function navigationOffset()','function scrollToNavigationTarget(target,smooth=true)','function scrollToDocumentTop(smooth=true)',"activateTab(id,userInitiated=false,historyMode='replace',scrollSection=true)","e.target.closest?.('[data-open-section]')","activateTab('overview',true,'replace',false)"]:
     if marker not in appjs: fail('navigation hardening invariant missing: '+marker)
 if 'userInitiated&&window.innerWidth<=960' in appjs: fail('section scrolling is still incorrectly viewport-gated')
-if "for(const selector of ['.topbar','.nav','.mobileNavWrap'])" not in appjs: fail('navigation offset does not include every sticky navigation layer')
+if "for(const selector of ['.topbar','.iaPrimaryNav','.nav','.mobileNavWrap'])" not in appjs: fail('navigation offset does not include every sticky navigation layer including B2')
 if tr['it'].get('release0728') is None: fail('release0728 translation missing')
 for marker in ['data-open-section="refusals" data-open-anchor="refusal-case-', 'data-open-section="disputes" data-open-anchor="case-', 'data-open-section="economics" data-open-anchor="econ-case-', 'data-open-section="social" data-open-anchor="social-case-', 'data-open-section="sources" data-open-anchor="publication-updates"']:
     if marker not in appjs: fail('dynamic internal navigation marker missing: '+marker)
