@@ -94,7 +94,11 @@ function check(ok,level,kind,where,message,extra){if(!ok)finding(level,kind,wher
    for(const tab of targets){
       counts.navChecks++;
       try{
-       if(mobile)await p.locator('#mobileNav').selectOption(tab,{timeout:3000});
+       if(mobile){
+         // Preserve the original 26-option shortcut layer in IA B2: open before each selection.
+         await p.locator('#iaLegacyNavDisclosure').evaluate(el=>{el.open=true});
+         await p.locator('#mobileNav').selectOption(tab,{timeout:3000});
+       }
        else await p.evaluate(tab=>{const e=[...document.querySelectorAll('.nav [data-target]')].find(x=>x.dataset.target===tab);if(e)e.click();},tab);
        await p.waitForTimeout(30);
        const d=await p.evaluate(()=>({
@@ -113,7 +117,10 @@ function check(ok,level,kind,where,message,extra){if(!ok)finding(level,kind,wher
    check(!errors.length,'HIGH','CLIENT_ERROR',lang,'Client JS exceptions',{width,errors:errors.slice(0,6)});
    for(const tab of ['economics','explore','research','behind-round']){
       try{
-        if(mobile)await p.locator('#mobileNav').selectOption(tab,{timeout:2500});
+        if(mobile){
+          await p.locator('#iaLegacyNavDisclosure').evaluate(el=>{el.open=true});
+          await p.locator('#mobileNav').selectOption(tab,{timeout:2500});
+        }
         else await p.evaluate(tab=>{let x=[...document.querySelectorAll('.nav [data-target]')].find(e=>e.dataset.target===tab);x?.click()},tab);
         const view=await p.evaluate(tab=>{const s=document.getElementById(tab);const vis=s?.classList.contains('active'); const empty=[...(s?.querySelectorAll('[data-i18n]')||[])].filter(el=>{const cs=getComputedStyle(el);return cs.display!=='none'&&cs.visibility!=='hidden'&&!el.textContent.trim()&&!el.children.length;}).slice(0,10).map(x=>x.dataset.i18n);return {visible:vis,empty};},tab);
         check(view.visible,'HIGH','SECTION_MISSING',lang+'/'+tab,'Important section hidden',{width});
