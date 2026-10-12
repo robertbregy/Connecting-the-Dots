@@ -20,6 +20,28 @@
 </style></head><body>
 <header><nav aria-label="Main navigation"><a class="brand" href="https://robertbregy.github.io/Connecting-the-Dots/en/">Connecting the Dots</a><div class="links"><a href="https://robertbregy.github.io/Connecting-the-Dots/explorer/">Explorer</a><a href="https://robertbregy.github.io/Connecting-the-Dots/research/">Research &amp; citation</a><a href="https://robertbregy.github.io/Connecting-the-Dots/research/connecting-the-dots-working-paper-v1.html">Working paper</a></div></nav></header>
 <nav class="ctdB2CrossNav" aria-label="The five paths through Connecting the Dots"><a href="../en/?tab=ia-understand#ia-understand" data-b2-cross-area="understand">Understand</a><a href="../en/?tab=ia-explore#ia-explore" data-b2-cross-area="explore" aria-current="location">Explore</a><a href="../en/?tab=ia-stories#ia-stories" data-b2-cross-area="stories">Stories &amp; issues</a><a href="../en/?tab=ia-round#ia-round" data-b2-cross-area="round">2026 round</a><a href="../en/?tab=ia-research#ia-research" data-b2-cross-area="research">Research</a></nav>
+<script id="ctd-b2-link-isolation">
+(function(){
+  "use strict";
+  var prod="https://robertbregy.github.io/Connecting-the-Dots/";
+  function isolate(){
+    var nav=document.querySelector(".ctdB2CrossNav a[data-b2-cross-area]");
+    if(!nav)return;
+    var hub=new URL(nav.getAttribute("href"),location.href);
+    var preview=new URL("../",hub);
+    if(preview.href===prod)return;
+    document.querySelectorAll("a[href]").forEach(function(link){
+      var raw=link.getAttribute("href")||"";
+      if(raw.indexOf(prod)!==0)return;
+      var tail=raw.slice(prod.length);
+      link.setAttribute("href",new URL(tail,preview).href);
+    });
+  }
+  if(document.readyState==="loading")
+    document.addEventListener("DOMContentLoaded",isolate,{once:true});
+  else isolate();
+})();
+</script>
 <main><div class="eyebrow">Interactive research atlas</div><h1>TLD Explorer: what lies beyond the dot?</h1>
 <p class="lead">Explore present and historical Internet top-level domains (TLDs), applications that never reached the DNS root, and the economic and social stories behind them.</p>
 <div class="actions"><a class="button" href="https://robertbregy.github.io/Connecting-the-Dots/en/#explore">Open the interactive Explorer →</a><a class="button secondary" href="https://robertbregy.github.io/Connecting-the-Dots/it/#explore">Explorer in italiano</a></div>

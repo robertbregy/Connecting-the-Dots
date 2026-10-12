@@ -20,6 +20,28 @@
 </style></head><body>
 <header><nav aria-label="Main navigation"><a class="brand" href="https://robertbregy.github.io/Connecting-the-Dots/en/">Connecting the Dots</a><div class="links"><a href="https://robertbregy.github.io/Connecting-the-Dots/explorer/">Explorer</a><a href="https://robertbregy.github.io/Connecting-the-Dots/research/">Research &amp; citation</a><a href="https://robertbregy.github.io/Connecting-the-Dots/research/connecting-the-dots-working-paper-v1.html">Working paper</a></div></nav></header>
 <nav class="ctdB2CrossNav" aria-label="The five paths through Connecting the Dots"><a href="../en/?tab=ia-understand#ia-understand" data-b2-cross-area="understand">Understand</a><a href="../en/?tab=ia-explore#ia-explore" data-b2-cross-area="explore">Explore</a><a href="../en/?tab=ia-stories#ia-stories" data-b2-cross-area="stories">Stories &amp; issues</a><a href="../en/?tab=ia-round#ia-round" data-b2-cross-area="round">2026 round</a><a href="../en/?tab=ia-research#ia-research" data-b2-cross-area="research" aria-current="location">Research</a></nav>
+<script id="ctd-b2-link-isolation">
+(function(){
+  "use strict";
+  var prod="https://robertbregy.github.io/Connecting-the-Dots/";
+  function isolate(){
+    var nav=document.querySelector(".ctdB2CrossNav a[data-b2-cross-area]");
+    if(!nav)return;
+    var hub=new URL(nav.getAttribute("href"),location.href);
+    var preview=new URL("../",hub);
+    if(preview.href===prod)return;
+    document.querySelectorAll("a[href]").forEach(function(link){
+      var raw=link.getAttribute("href")||"";
+      if(raw.indexOf(prod)!==0)return;
+      var tail=raw.slice(prod.length);
+      link.setAttribute("href",new URL(tail,preview).href);
+    });
+  }
+  if(document.readyState==="loading")
+    document.addEventListener("DOMContentLoaded",isolate,{once:true});
+  else isolate();
+})();
+</script>
 <main><div class="eyebrow">Research Release RR2 · Consolidated post-Reveal evidence 2026</div><h1>Research, evidence and citation</h1><p class="lead">Connecting the Dots is a living research atlas of top-level-domain applications, delegations and historical outcomes, with economic, social and governance analysis.</p>
 <div class="actions"><a class="button" href="https://doi.org/10.5281/zenodo.23288603">View RR2 on Zenodo →</a><a class="button secondary" href="https://robertbregy.github.io/Connecting-the-Dots/research/connecting-the-dots-working-paper-v1.html">Read the working paper</a></div>
 <section><h2>What RR2 identifies</h2><p><strong>Evidence milestone:</strong> ICANN Reveal Day, 7 October 2026.<br><strong>Online research release:</strong> 10 October 2026.<br><strong>Persistent DOI:</strong> <a href="https://doi.org/10.5281/zenodo.23288603">10.5281/zenodo.23288603</a>.</p>

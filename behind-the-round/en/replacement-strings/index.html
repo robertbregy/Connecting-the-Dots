@@ -112,11 +112,35 @@ footer{border-top:1px solid var(--border);color:var(--muted);font-size:.9rem;pad
 .ctdB2CrossNav a{display:flex;align-items:center;justify-content:center;min-width:0;min-height:44px;box-sizing:border-box;text-align:center;text-decoration:none;border-radius:8px;padding:8px 6px;color:var(--text,#142d40);overflow-wrap:anywhere;hyphens:auto}
 .ctdB2CrossNav a:hover,.ctdB2CrossNav a:focus-visible{outline-offset:2px;background:var(--surface2,#e5eef5);text-decoration:underline}
 .ctdB2CrossNav a[aria-current]{background:var(--accent-soft,#dcecfb);color:var(--accent-text,#124f84)}
+.ctdB2Context{box-sizing:border-box;max-width:1030px;margin:7px auto 20px;padding:14px 20px;background:var(--surface2,#eff5f9);color:var(--text,#142d40);border:1px solid var(--border,#d4dfe9);border-radius:12px;font:400 14px/1.55 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+.ctdB2Context strong{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}.ctdB2Context p{margin:0;color:var(--muted,#526171)}
 @media(max-width:700px){.ctdB2CrossNav{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;font-size:12px;padding:7px 12px}.ctdB2CrossNav a{min-height:44px;padding:7px 4px}}
 @media(prefers-color-scheme:dark){.ctdB2CrossNav{background:var(--surface,#18232e);border-color:var(--border,#435365)}.ctdB2CrossNav a{color:var(--text,#eff5fb)}.ctdB2CrossNav a[aria-current]{color:var(--accent-text,#a4d5ff);background:var(--accent-soft,#214467)}}
 </style></head><body>
 <header><nav aria-label="Languages"><a class="brand" href="https://robertbregy.github.io/Connecting-the-Dots/en/">Connecting the Dots</a><div class="lang-links"><a lang="en" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/replacement-strings/" aria-current="page">English</a> <a lang="it" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/replacement-strings/">Italiano</a> <a lang="de" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/replacement-strings/">Deutsch</a> <a lang="fr" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/replacement-strings/">Français</a></div></nav></header>
 <nav class="ctdB2CrossNav" aria-label="The five paths through Connecting the Dots"><a href="../../../en/?tab=ia-understand#ia-understand" data-b2-cross-area="understand">Understand</a><a href="../../../en/?tab=ia-explore#ia-explore" data-b2-cross-area="explore">Explore</a><a href="../../../en/?tab=ia-stories#ia-stories" data-b2-cross-area="stories">Stories &amp; issues</a><a href="../../../en/?tab=ia-round#ia-round" data-b2-cross-area="round" aria-current="location">2026 round</a><a href="../../../en/?tab=ia-research#ia-research" data-b2-cross-area="research">Research</a></nav>
+<script id="ctd-b2-link-isolation">
+(function(){
+  "use strict";
+  var prod="https://robertbregy.github.io/Connecting-the-Dots/";
+  function isolate(){
+    var nav=document.querySelector(".ctdB2CrossNav a[data-b2-cross-area]");
+    if(!nav)return;
+    var hub=new URL(nav.getAttribute("href"),location.href);
+    var preview=new URL("../",hub);
+    if(preview.href===prod)return;
+    document.querySelectorAll("a[href]").forEach(function(link){
+      var raw=link.getAttribute("href")||"";
+      if(raw.indexOf(prod)!==0)return;
+      var tail=raw.slice(prod.length);
+      link.setAttribute("href",new URL(tail,preview).href);
+    });
+  }
+  if(document.readyState==="loading")
+    document.addEventListener("DOMContentLoaded",isolate,{once:true});
+  else isolate();
+})();
+</script>
 <main id="behind-round">
 <div class="eyebrow">Field Note 04 · Counting</div>
 <h1>1,169 replacement strings: the extra rows behind Reveal Day</h1>
