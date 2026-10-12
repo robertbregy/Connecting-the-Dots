@@ -18,6 +18,15 @@ NAV_STYLE = """<style id="ctd-b2-cross-style">
 .ctdB2CrossNav a[aria-current]{background:var(--accent-soft,#dcecfb);color:var(--accent-text,#124f84)}
 .ctdB2Context{box-sizing:border-box;max-width:1030px;margin:7px auto 20px;padding:14px 20px;background:var(--surface2,#eff5f9);color:var(--text,#142d40);border:1px solid var(--border,#d4dfe9);border-radius:12px;font:400 14px/1.55 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
 .ctdB2Context strong{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}.ctdB2Context p{margin:0;color:var(--muted,#526171)}
+.ctdB2Trail{display:flex;align-items:center;flex-wrap:wrap;gap:9px;max-width:1030px;margin:12px auto 20px;padding:0 20px;font:600 13px/1.55 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--muted,#526171)}
+.ctdB2Trail a{color:var(--accent-text,#165d91);text-underline-offset:3px}
+.ctdB2Trail span[aria-hidden]{opacity:.6}
+body:has(.ctdB2CrossNav){--background:#f7f7f8;--bg:#f7f7f8;--surface:#fff;--surface2:#f1f1f3;--text:#111214;--muted:#6e6e73;--border:#e4e4e7;--accent-text:#0068d7;--accent-soft:#e9f3ff}
+body:has(.ctdB2CrossNav) header{background:#f7f7f8;color:#111214;border-bottom:1px solid #e4e4e7}
+body:has(.ctdB2CrossNav) header a{color:inherit}
+body:has(.ctdB2CrossNav) .ctdB2CrossNav{margin-bottom:8px}
+body:has(.ctdB2CrossNav) main{max-width:1030px}
+body:has(.ctdB2CrossNav) .ctdB2CrossNav a:focus-visible,body:has(.ctdB2CrossNav) .ctdB2Trail a:focus-visible{outline:3px solid #0068d7;outline-offset:3px}
 @media(max-width:700px){.ctdB2CrossNav{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;font-size:12px;padding:7px 12px}.ctdB2CrossNav a{min-height:44px;padding:7px 4px}}
 @media(prefers-color-scheme:dark){.ctdB2CrossNav{background:var(--surface,#18232e);border-color:var(--border,#435365)}.ctdB2CrossNav a{color:var(--text,#eff5fb)}.ctdB2CrossNav a[aria-current]{color:var(--accent-text,#a4d5ff);background:var(--accent-soft,#214467)}}
 </style>"""
@@ -68,6 +77,27 @@ LINK_ISOLATION = """<script id="ctd-b2-link-isolation">
 </script>"""
 
 
+TRAIL_WORDS = {
+    "it": ("Home", "Area", "Pagina"),
+    "en": ("Home", "Area", "Page"),
+    "de": ("Startseite", "Bereich", "Seite"),
+    "fr": ("Accueil", "Rubrique", "Page"),
+}
+
+
+def make_trail(file: Path, lang: str, selected: str, root: Path, texts: dict) -> str:
+    prefix = "/".join(".." for _ in file.parent.relative_to(root).parts) or "."
+    labels = dict((name, texts[key]) for name, key in AREAS)
+    home, _, page = TRAIL_WORDS[lang]
+    area_link = f"{prefix}/{lang}/?tab=ia-{selected}#ia-{selected}"
+    # The page title remains the authoritative h1; this is a secondary landmark.
+    return ('<nav class="ctdB2Trail" aria-label="Breadcrumb">'
+            '<a href="' + escape(f"{prefix}/{lang}/", quote=True) + '">' + escape(home) + '</a>'
+            '<span aria-hidden="true">/</span><a href="' + escape(area_link, quote=True) + '">'
+            + escape(labels[selected]) + '</a><span aria-hidden="true">/</span>'
+            '<span aria-current="page">' + escape(page) + '</span></nav>')
+
+
 def editorial_context(file: Path, lang: str) -> str:
     if file.parent.name not in ("sanctions-and-dns", "who-controls-internet-access"):
         return ""
@@ -76,11 +106,13 @@ def editorial_context(file: Path, lang: str) -> str:
             '<strong>' + escape(label) + '</strong><p>' + escape(description) + '</p></aside>')
 
 
-def add_crosspage_features(html: str, file: Path, lang: str) -> str:
+def add_crosspage_features(html: str, file: Path, lang: str, root: Path, selected: str, texts: dict) -> str:
     match = re.search(r'<nav class="ctdB2CrossNav"[^>]*>[\s\S]*?</nav>', html)
     if not match:
         raise ValueError(f"Missing IA B2 navigation: {file}")
     additions = ""
+    if 'class="ctdB2Trail"' not in html:
+        additions += make_trail(file, lang, selected, root, texts)
     if 'id="ctd-b2-link-isolation"' not in html:
         additions += LINK_ISOLATION
     if file.parent.name in ("sanctions-and-dns", "who-controls-internet-access"):
@@ -139,7 +171,7 @@ def apply(root: Path) -> int:
         html = file.read_text(encoding="utf-8")
         if 'class="ctdB2CrossNav"' in html:
             assert html.count('class="ctdB2CrossNav"') == 1, file
-            upgraded = add_crosspage_features(html, file, lang)
+            upgraded = add_crosspage_features(html, file, lang, root, area, translations[lang])
             if upgraded != html:
                 file.write_text(upgraded, encoding="utf-8")
                 patched += 1
@@ -155,7 +187,7 @@ def apply(root: Path) -> int:
             updated = updated.replace("<body>", "<body>\n" + navigation, 1)
         else:
             updated = re.sub(r"</header\s*>", "</header>\n" + navigation, updated, count=1, flags=re.I)
-        updated = add_crosspage_features(updated, file, lang)
+        updated = add_crosspage_features(updated, file, lang, root, area, translations[lang])
         if updated.count('class="ctdB2CrossNav"') != 1:
             raise ValueError(f"Navigation injected inconsistently: {file}")
         # Never change title, canonical, alternate languages, or original source claims.
@@ -183,6 +215,8 @@ def validate(root: Path) -> int:
         for name, _ in AREAS:
             if f'/{lang}/?tab=ia-{name}#ia-{name}' not in nav:
                 raise ValueError(f"Cross-language or dead B2 path: {file.relative_to(root)}")
+        if html.count('class="ctdB2Trail"') != 1:
+            raise ValueError(f"Missing integrated B2 breadcrumb: {file.relative_to(root)}")
         if html.count('id="ctd-b2-link-isolation"') != 1:
             raise ValueError(f"Branch preview link isolation missing: {file.relative_to(root)}")
         if file.parent.name in ("sanctions-and-dns", "who-controls-internet-access"):
