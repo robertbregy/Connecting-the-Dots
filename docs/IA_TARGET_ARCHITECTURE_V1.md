@@ -1,6 +1,8 @@
 # Connecting the Dots — Proposta di architettura dell'esperienza (IA v1)
 
-**12 ottobre 2026 · Design hypothesis · NON IMPLEMENTATA**
+**12 ottobre 2026 · Ipotesi iniziale di progetto, successivamente implementata come B2 nel ramo parallelo (aggiornamento 13 ottobre 2026). NON in produzione.**
+
+> **Nota di evoluzione:** questo documento conserva deliberatamente la proposta originaria, incluso il suo linguaggio sperimentale. L'implementazione attuale usa gli stessi cinque percorsi e un unico patrimonio di contenuti; per ciò che è stato realmente costruito e verificato si vedano [stato B2](IA_B2_BUILD_STATUS.md) e [gate di rilascio](IA_B2_RELEASE_GATE.md). Le versioni RR1/RR2 non sono modificate.
 **Baseline:** main ec231cc12d35fa91ff5340ad057a483ce23a5ca4 · v0.7.78
 **Vincolo:** un solo patrimonio scientifico, molte porte di accesso. Non creare due siti o duplicare i dataset.
 
