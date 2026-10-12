@@ -21,6 +21,11 @@ on:
 permissions:
   contents: read
 
+# Avoid launching obsolete 160-case audits after newer feature commits.
+concurrency:
+  group: ctd-full-browser-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   browser-qa:
     runs-on: ubuntu-latest
