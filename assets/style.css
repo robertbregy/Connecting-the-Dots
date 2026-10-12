@@ -567,3 +567,72 @@ html[data-theme="dark"] .derivedBadge{color:#f2c46d}html[data-theme="light"] .de
 #explore .apsAtlasBridge h3{margin:0 0 8px;font-size:1.08rem}
 #explore .apsAtlasBridge p{margin:0 0 13px;line-height:1.6;max-width:90ch}
 #explore .apsAtlasOpen{display:inline-flex;align-items:center;max-width:100%;white-space:normal}
+
+
+/* IA B2: task-first navigation and coherent integrated hubs.
+   The original content components remain unchanged and accessible. */
+body[data-active-tab]:not([data-active-tab="overview"]) .hero{display:none}
+.hero{padding:40px 0 27px;gap:28px}
+.heroLogo img{width:min(170px,100%)}
+.iaProjectPrompt{display:block;margin:0 0 12px;font-size:12px;font-weight:780;letter-spacing:.13em;text-transform:uppercase;color:var(--accent-text)}
+.hero p[data-i18n="heroBody"]{font-size:clamp(17px,1.85vw,23px);line-height:1.48;color:var(--text);font-weight:560;max-width:760px}
+.hero p.heroPlain{font-size:clamp(14px,1.23vw,16px);line-height:1.6;margin-top:13px;max-width:780px;color:var(--muted)}
+.iaPrimaryNav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;position:sticky;top:var(--topbar-height);z-index:36;padding:8px;background:color-mix(in srgb,var(--bg) 93%,transparent);backdrop-filter:blur(18px);border:1px solid var(--border);border-radius:14px;margin:9px 0 8px}
+.iaPrimaryLink{display:flex;align-items:center;justify-content:center;min-height:48px;min-width:0;text-align:center;text-decoration:none;color:var(--muted);font-size:14px;line-height:1.25;font-weight:700;border-radius:9px;padding:8px 6px;overflow-wrap:anywhere;hyphens:auto}
+.iaPrimaryLink:hover,.iaPrimaryLink:focus-visible{background:var(--surface2);color:var(--text)}
+.iaPrimaryLink.active,.iaPrimaryLink[aria-current]{background:var(--accent-soft);color:var(--accent-text)}
+.iaLegacyNavDisclosure{margin:0 0 22px;padding:0 4px;border-bottom:1px solid var(--border)}
+.iaLegacyNavDisclosure>summary{display:list-item;cursor:pointer;width:max-content;max-width:100%;min-height:44px;padding:12px 5px;color:var(--muted);font-size:12.5px;font-weight:720;line-height:1.35;overflow-wrap:anywhere}
+.iaLegacyNavDisclosure>summary:hover{color:var(--text)}
+.iaLegacyNavDisclosure>p{color:var(--muted);font-size:13px;margin:0 0 8px}
+.iaLegacyNavDisclosure .nav{position:static!important;top:auto;z-index:2;margin:5px 0 14px;flex-wrap:wrap;overflow:visible;backdrop-filter:none;background:transparent}
+.iaLegacyNavDisclosure .mobileNavWrap{position:static!important;top:auto;z-index:2;margin:8px 0 12px;background:transparent;backdrop-filter:none}
+.iaHomeEntry{border-bottom:1px solid var(--border);margin:0 0 25px;padding:0 0 28px}
+.iaHomeEntryIntro{max-width:850px}
+.iaHomeEntryIntro>p{color:var(--muted);font-size:15px;line-height:1.65;margin:7px 0 17px}
+.iaHomeEntryIntro>h2{font-size:clamp(23px,2.6vw,32px);letter-spacing:-.03em;margin:25px 0 8px}
+.iaHomeEntryIntro>h2+p{font-size:14px}
+.iaHomeJumpList{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin:20px 0 0}
+.iaHomeJumpList a{background:var(--surface2);border:1px solid var(--border);border-radius:13px;text-decoration:none;min-width:0;min-height:90px;padding:14px 12px;display:flex;flex-direction:column;gap:8px;align-items:flex-start;justify-content:space-between}
+.iaHomeJumpList a:hover,.iaHomeJumpList a:focus-visible{border-color:var(--accent-text);background:var(--accent-soft)}
+.iaHomeJumpList a span{color:var(--text);font-size:15px;font-weight:770;line-height:1.3;overflow-wrap:anywhere}
+.iaHomeJumpList a small{font-size:10px;line-height:1.3;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:650}
+.iaHub{padding:4px 0 42px}
+.iaHubHead{max-width:880px;margin:0 0 24px}
+.iaHubHead h2{font-size:clamp(29px,4vw,48px);letter-spacing:-.045em;line-height:1.1;margin:12px 0 15px}
+.iaHubHead>p{font-size:clamp(16px,1.65vw,19px);color:var(--muted);line-height:1.55;margin:0}
+.iaHubContext{margin:0 0 24px;padding:16px 19px;background:var(--surface2);border-radius:14px;border:1px solid var(--border)}
+.iaHubContext>p{color:var(--muted);font-size:13.5px;line-height:1.55;margin:0}
+.iaHubDoi{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin:18px 0 0;border-top:1px solid var(--border);padding-top:17px}
+.iaHubDoi strong{font-size:14px}
+.iaHubDoi>a{font-size:15px;color:var(--accent-text);font-weight:750;text-underline-offset:3px}
+.iaHubDoi small{width:100%;font-size:12.5px;color:var(--muted)}
+.iaHubGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;align-items:start}
+.iaHubCard{min-width:0;background:var(--surface);border:1px solid var(--border);border-radius:17px;padding:21px 22px;box-shadow:var(--shadow)}
+.iaHubCard h3{font-size:19px;line-height:1.3;margin:0 0 9px;letter-spacing:-.02em}
+.iaHubCard h3 a{color:var(--text);text-decoration:none;display:inline-block;text-underline-offset:3px}
+.iaHubCard h3 a:hover,.iaHubCard h3 a:focus-visible{color:var(--accent-text);text-decoration:underline}
+.iaHubCard p{font-size:14px;color:var(--muted);line-height:1.6;margin:0}
+.iaHubCard:focus-within{border-color:var(--accent-text)}
+@media(max-width:1000px){
+  .iaHomeJumpList{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .iaHubGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:680px){
+  .hero{padding:25px 0 22px;gap:17px}
+  .heroLogo img{max-width:94px}
+  .iaPrimaryNav{grid-template-columns:repeat(3,minmax(0,1fr));gap:3px 6px;padding:5px;margin-top:8px}
+  .iaPrimaryLink{min-height:44px;font-size:12px;padding:7px 3px}
+  .iaHomeJumpList{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .iaHomeJumpList a{min-height:82px}
+  .iaHubGrid{grid-template-columns:1fr}
+  .iaHubHead h2{font-size:30px}
+  .iaHubCard{padding:20px}
+}
+@media(max-width:390px){
+  .iaPrimaryLink{font-size:11.5px}
+  .iaHomeJumpList a{padding:12px 9px}
+}
+@media(prefers-reduced-motion:reduce){
+  .iaPrimaryLink,.iaHomeJumpList a,.iaHubCard{transition:none!important}
+}
