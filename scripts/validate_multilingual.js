@@ -37,6 +37,28 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   const {document}=parseHTML(text);
   const canonical=base+language+'/';
   assert.equal(document.documentElement.getAttribute('lang'),language,page+' language');
+  const luganoSection=document.getElementById('lugano');
+  assert.equal(luganoSection?.tagName,'SECTION',page+' must preserve semantic .lugano section');
+  assert.equal(luganoSection?.querySelector(':scope > .panel.authorDisclosure')?.tagName,'DIV',page+' must preserve the introductory disclosure card (source markup regression)');
+  assert.ok(!luganoSection?.hasAttribute('<div'),page+' invalid .lugano attributes');
+  assert.ok(document.getElementById('explorerDrawer')?.hasAttribute('hidden'),page+' closed Explorer must not retain focusable modal controls');
+  assert.equal(document.querySelectorAll('.explorerMethodDepth > summary').length,1,page+' must preserve complete methodology in an accessible disclosure');
+  assert.equal(document.querySelectorAll('[data-access-explainer-link]').length,3,page+' access explanation links must remain present');
+  assert.ok(document.querySelector('.accessReadingLink [data-governance-explainer-link]'),page+' general sanctions explanation is missing from How It Works');
+  assert.equal(document.documentElement.getAttribute('data-ctd-language'),language);
+  assert.equal(document.querySelectorAll('link[rel="canonical"]').length,1);
+  assert.equal(document.querySelector('meta[name="robots"]').getAttribute('content'),'index,follow,max-image-preview:large');
+  assert.equal(document.querySelector('link[rel="canonical"]').getAttribute('href'),canonical);
+  assert.equal(document.querySelector('meta[property="og:url"]').getAttribute('content'),canonical);
+  const alternates=Array.from(document.querySelectorAll('link[hreflang]'));
+  assert.equal(alternates.length,5);
+  for(const link of alternates){const l=link.getAttribute('hreflang');assert.equal(link.getAttribute('href'),base+(l==='x-default'?'en':l)+'/');}
+  const article=JSON.parse(document.getElementById('articleStructuredData').textContent);
+  assert.equal(article.inLanguage,language);
+  assert.equal(article.mainEntityOfPage,canonical);
+  const window={};vm.runInNewContext(document.getElementById('ctd-i18n-bundle').textContent,{window});
+  assert.deepEqual(Object.keys(window.DOT_I18N),[language],page+' ships only its own dictionary');
+  const translations=window.DOT_I18N[language];
   // B2 integrates a new task-first UI with all the former sections, not a separate website.
   const iaAreas=['ia-understand','ia-explore','ia-stories','ia-round','ia-research'];
   const iaNav=[...document.querySelectorAll('.iaPrimaryNav .iaPrimaryLink')];
@@ -68,28 +90,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
     assert.ok(legacySections.includes(target),page+' IA card loses canonical target '+target);
     if(anchor)assert.ok(document.getElementById(anchor),page+' IA link anchor lost '+anchor);
   }
-  const luganoSection=document.getElementById('lugano');
-  assert.equal(luganoSection?.tagName,'SECTION',page+' must preserve semantic .lugano section');
-  assert.equal(luganoSection?.querySelector(':scope > .panel.authorDisclosure')?.tagName,'DIV',page+' must preserve the introductory disclosure card (source markup regression)');
-  assert.ok(!luganoSection?.hasAttribute('<div'),page+' invalid .lugano attributes');
-  assert.ok(document.getElementById('explorerDrawer')?.hasAttribute('hidden'),page+' closed Explorer must not retain focusable modal controls');
-  assert.equal(document.querySelectorAll('.explorerMethodDepth > summary').length,1,page+' must preserve complete methodology in an accessible disclosure');
-  assert.equal(document.querySelectorAll('[data-access-explainer-link]').length,3,page+' access explanation links must remain present');
-  assert.ok(document.querySelector('.accessReadingLink [data-governance-explainer-link]'),page+' general sanctions explanation is missing from How It Works');
-  assert.equal(document.documentElement.getAttribute('data-ctd-language'),language);
-  assert.equal(document.querySelectorAll('link[rel="canonical"]').length,1);
-  assert.equal(document.querySelector('meta[name="robots"]').getAttribute('content'),'index,follow,max-image-preview:large');
-  assert.equal(document.querySelector('link[rel="canonical"]').getAttribute('href'),canonical);
-  assert.equal(document.querySelector('meta[property="og:url"]').getAttribute('content'),canonical);
-  const alternates=Array.from(document.querySelectorAll('link[hreflang]'));
-  assert.equal(alternates.length,5);
-  for(const link of alternates){const l=link.getAttribute('hreflang');assert.equal(link.getAttribute('href'),base+(l==='x-default'?'en':l)+'/');}
-  const article=JSON.parse(document.getElementById('articleStructuredData').textContent);
-  assert.equal(article.inLanguage,language);
-  assert.equal(article.mainEntityOfPage,canonical);
-  const window={};vm.runInNewContext(document.getElementById('ctd-i18n-bundle').textContent,{window});
-  assert.deepEqual(Object.keys(window.DOT_I18N),[language],page+' ships only its own dictionary');
-  const translations=window.DOT_I18N[language];
+
   assert.equal(document.title,translations.metaTitle);
   assert.equal(document.querySelector('meta[name="description"]').getAttribute('content'),translations.metaDescription);
   assert.ok(document.querySelector('[data-i18n="heroBody"]').textContent.length>50);
