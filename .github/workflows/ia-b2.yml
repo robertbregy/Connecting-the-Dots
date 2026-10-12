@@ -5,15 +5,25 @@ on:
     branches:
       - feat/ia-rearchitecture-20261012
     paths:
+      - '.github/workflows/ia-b2.yml'
       - 'src/**'
       - 'assets/**'
-      - 'data/translations.json'
-      - 'scripts/audit_ia_b2.cjs'
-      - 'scripts/verify_ia_b2_parity.cjs'
-      - 'scripts/validate_multilingual.js'
+      - 'data/**'
+      - 'scripts/**'
+      - 'applications/**'
+      - 'inside-the-round/**'
+      - 'behind-the-round/**'
+      - 'explorer/**'
+      - 'research/**'
+      - 'prototype/ia-v1/**'
+      - 'it/**'
+      - 'en/**'
+      - 'de/**'
+      - 'fr/**'
+      - 'index.html'
       - 'build.py'
-      - 'scripts/release_check.py'
-      - '.github/workflows/ia-b2.yml'
+      - 'publication.json'
+      - 'package.json'
   workflow_dispatch:
 
 permissions:
