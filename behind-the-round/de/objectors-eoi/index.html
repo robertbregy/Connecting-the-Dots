@@ -114,12 +114,21 @@ footer{border-top:1px solid var(--border);color:var(--muted);font-size:.9rem;pad
 .ctdB2CrossNav a[aria-current]{background:var(--accent-soft,#dcecfb);color:var(--accent-text,#124f84)}
 .ctdB2Context{box-sizing:border-box;max-width:1030px;margin:7px auto 20px;padding:14px 20px;background:var(--surface2,#eff5f9);color:var(--text,#142d40);border:1px solid var(--border,#d4dfe9);border-radius:12px;font:400 14px/1.55 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
 .ctdB2Context strong{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}.ctdB2Context p{margin:0;color:var(--muted,#526171)}
+.ctdB2Trail{display:flex;align-items:center;flex-wrap:wrap;gap:9px;max-width:1030px;margin:12px auto 20px;padding:0 20px;font:600 13px/1.55 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--muted,#526171)}
+.ctdB2Trail a{color:var(--accent-text,#165d91);text-underline-offset:3px}
+.ctdB2Trail span[aria-hidden]{opacity:.6}
+body:has(.ctdB2CrossNav){--background:#f7f7f8;--bg:#f7f7f8;--surface:#fff;--surface2:#f1f1f3;--text:#111214;--muted:#6e6e73;--border:#e4e4e7;--accent-text:#0068d7;--accent-soft:#e9f3ff}
+body:has(.ctdB2CrossNav) header{background:#f7f7f8;color:#111214;border-bottom:1px solid #e4e4e7}
+body:has(.ctdB2CrossNav) header a{color:inherit}
+body:has(.ctdB2CrossNav) .ctdB2CrossNav{margin-bottom:8px}
+body:has(.ctdB2CrossNav) main{max-width:1030px}
+body:has(.ctdB2CrossNav) .ctdB2CrossNav a:focus-visible,body:has(.ctdB2CrossNav) .ctdB2Trail a:focus-visible{outline:3px solid #0068d7;outline-offset:3px}
 @media(max-width:700px){.ctdB2CrossNav{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;font-size:12px;padding:7px 12px}.ctdB2CrossNav a{min-height:44px;padding:7px 4px}}
 @media(prefers-color-scheme:dark){.ctdB2CrossNav{background:var(--surface,#18232e);border-color:var(--border,#435365)}.ctdB2CrossNav a{color:var(--text,#eff5fb)}.ctdB2CrossNav a[aria-current]{color:var(--accent-text,#a4d5ff);background:var(--accent-soft,#214467)}}
 </style></head><body>
 <header><nav aria-label="Languages"><a class="brand" href="https://robertbregy.github.io/Connecting-the-Dots/de/">Connecting the Dots</a><div class="lang-links"><a lang="en" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/objectors-eoi/">English</a> <a lang="it" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/objectors-eoi/">Italiano</a> <a lang="de" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/objectors-eoi/" aria-current="page">Deutsch</a> <a lang="fr" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/objectors-eoi/">Français</a></div></nav></header>
 <nav class="ctdB2CrossNav" aria-label="Die fünf Zugänge zu Connecting the Dots"><a href="../../../de/?tab=ia-understand#ia-understand" data-b2-cross-area="understand">Verstehen</a><a href="../../../de/?tab=ia-explore#ia-explore" data-b2-cross-area="explore">Erkunden</a><a href="../../../de/?tab=ia-stories#ia-stories" data-b2-cross-area="stories">Geschichten &amp; Fragen</a><a href="../../../de/?tab=ia-round#ia-round" data-b2-cross-area="round" aria-current="location">Runde 2026</a><a href="../../../de/?tab=ia-research#ia-research" data-b2-cross-area="research">Forschung</a></nav>
-<script id="ctd-b2-link-isolation">
+<nav class="ctdB2Trail" aria-label="Breadcrumb"><a href="../../../de/">Startseite</a><span aria-hidden="true">/</span><a href="../../../de/?tab=ia-round#ia-round">Runde 2026</a><span aria-hidden="true">/</span><span aria-current="page">Seite</span></nav><script id="ctd-b2-link-isolation">
 (function(){
   "use strict";
   var prod="https://robertbregy.github.io/Connecting-the-Dots/";
