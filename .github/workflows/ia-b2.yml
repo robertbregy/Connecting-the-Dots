@@ -11,6 +11,7 @@ on:
       - 'scripts/audit_ia_b2.cjs'
       - 'scripts/validate_multilingual.js'
       - 'build.py'
+      - 'scripts/release_check.py'
       - '.github/workflows/ia-b2.yml'
   workflow_dispatch:
 
