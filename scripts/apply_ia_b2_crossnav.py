@@ -110,6 +110,9 @@ def files_to_patch(root: Path):
             yield root / "behind-the-round" / lang / slug / "index.html", lang, area
     yield root / "explorer" / "index.html", "en", "explore"
     yield root / "research" / "index.html", "en", "research"
+    # Mutable working paper: add a navigation landmark without altering its body,
+    # scholarly identifier, citation metadata or version-specific RR2 DOI.
+    yield root / "research" / "connecting-the-dots-working-paper-v1.html", "en", "research"
 
 
 def make_navigation(root: Path, file: Path, lang: str, selected: str, texts: dict) -> str:
@@ -129,7 +132,7 @@ def apply(root: Path) -> int:
     translations = json.loads((root / "data" / "translations.json").read_text(encoding="utf-8"))
     patched = 0
     files = list(files_to_patch(root))
-    assert len(files) == 34, "Expected 34 independent public pages"
+    assert len(files) == 35, "Expected 35 independent public pages including working paper"
     for file, lang, area in files:
         if not file.exists():
             raise ValueError(f"Missing independent page: {file.relative_to(root)}")
@@ -143,11 +146,15 @@ def apply(root: Path) -> int:
             continue
         if not re.search(r"</head\s*>", html, re.I):
             raise ValueError(f"Missing HTML head: {file}")
-        if not re.search(r"</header\s*>", html, re.I):
-            raise ValueError(f"Missing leading header: {file}")
+        paper = file.name == "connecting-the-dots-working-paper-v1.html"
+        if not re.search(r"</header\s*>", html, re.I) and not (paper and '<body>' in html):
+            raise ValueError(f"Missing leading header or paper body: {file}")
         navigation = make_navigation(root, file, lang, area, translations[lang])
         updated = re.sub(r"</head\s*>", NAV_STYLE + "</head>", html, count=1, flags=re.I)
-        updated = re.sub(r"</header\s*>", "</header>\n" + navigation, updated, count=1, flags=re.I)
+        if paper:
+            updated = updated.replace("<body>", "<body>\n" + navigation, 1)
+        else:
+            updated = re.sub(r"</header\s*>", "</header>\n" + navigation, updated, count=1, flags=re.I)
         updated = add_crosspage_features(updated, file, lang)
         if updated.count('class="ctdB2CrossNav"') != 1:
             raise ValueError(f"Navigation injected inconsistently: {file}")
