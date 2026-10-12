@@ -1,6 +1,10 @@
 # Piano operativo di validazione e migrazione IA
 
-**Stato: definito, non eseguito con partecipanti.** Nessun redesign in produzione.
+**Stato al 13 ottobre 2026:** protocollo progettuale definito; due schede A/B compilate, ma senza evidenza di un campione rappresentativo né di un esperimento controllato. Preferenza per B utile a decidere la direzione, non a certificare la comprensione. Implementazione B2 sul ramo parallelo con collaudo automatizzato; nessun redesign in produzione.
+
+**Avanzamento documentato:** IA-01 inventario 21 sezioni/39 URL e test di parità dei testi; IA-02 cinque percorsi realizzati; IA-03 guide generali riconoscibili nella sezione Capire pur conservando i vecchi URL; IA-04 distinzioni stringa/candidatura/TLD esplicite; IA-06/07 DOI e riferimento al pacchetto tecnico aggiornato; IA-08 feedback esterno raccolto ma non validazione controllata. Restano aperti lo standard editoriale progressivo IA-05, il registro relazionale IA-09 e il rilascio IA-10. Per lo stato corrente prevalgono [rapporto B2](IA_B2_BUILD_STATUS.md) e [gate finale](IA_B2_RELEASE_GATE.md).
+
+**Nota metodologica:** il backlog sotto riproduce le priorità del piano iniziale, non lo stato di avanzamento odierno.
 
 ## Cinque prove reali e comparabili
 
