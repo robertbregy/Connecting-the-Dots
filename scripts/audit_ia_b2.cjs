@@ -112,7 +112,7 @@ async function checkAxe(page,label) {
         selected:["sanctions-and-dns","who-controls-internet-access"].includes(slug)?"understand":"round"});
     }
   }
-  independent.push({url:"explorer/",lang:"en",selected:"explore"},{url:"research/",lang:"en",selected:"research"});
+  independent.push({url:"explorer/",lang:"en",selected:"explore"},{url:"research/",lang:"en",selected:"research"},{url:"research/connecting-the-dots-working-paper-v1.html",lang:"en",selected:"research"});
   report.independentPages=0;
   for(const entry of independent){
     const context=await browser.newContext({viewport:{width:390,height:860}});
