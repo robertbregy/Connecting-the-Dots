@@ -17,6 +17,7 @@ from scripts.render_behind_round import render_stories, build_behind_round_pages
 from scripts.render_sanctions_explainer import build_sanctions_pages
 from scripts.render_internet_access import build_access_pages
 from scripts.render_field_investigations import build_investigations
+from scripts.apply_ia_b2_crossnav import apply as apply_ia_b2_crossnav, validate as validate_ia_b2_crossnav
 
 ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src" / "index.web.html"
@@ -382,6 +383,11 @@ def main() -> None:
     build_access_pages(ROOT)
     build_investigations(ROOT)
     render_aps_application_atlas(ROOT)
+    apply_ia_b2_crossnav(ROOT)
+    cross_nav_count = validate_ia_b2_crossnav(ROOT)
+    if cross_nav_count != 34:
+        raise SystemExit('IA B2 cross-site navigation coverage incomplete')
+    print(f'IA B2 integrated navigation: {cross_nav_count} independent pages')
     validate_index()
     # Release-level validation is intentionally self-contained so the browser-upload
     # bundle can verify itself even though the larger development QA suite is omitted.
