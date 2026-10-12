@@ -36,6 +36,16 @@ async function checkAxe(page,label) {
     await page.waitForTimeout(100);
     assert.equal(await page.locator("html").getAttribute("lang"),lang);
     assert.equal(await page.locator(".iaPrimaryLink").count(),5,"five path navigation items");
+    // The primary paths and the purpose statement must not be buried beneath
+    // the fold on first arrival, especially on mobile.
+    const firstViewport=await page.evaluate(()=>{
+      const nav=document.querySelector(".iaPrimaryNav").getBoundingClientRect();
+      const explanation=document.querySelector('.hero p[data-i18n="heroBody"]').getBoundingClientRect();
+      return {navTop:nav.top,navBottom:nav.bottom,explanationTop:explanation.top};
+    });
+    assert.ok(firstViewport.navTop<240 && firstViewport.navBottom<365,"task-first navigation is buried on first screen: "+JSON.stringify(firstViewport));
+    assert.ok(firstViewport.explanationTop<700,"the project purpose is buried below first screen: "+JSON.stringify(firstViewport));
+
     assert.equal(await page.locator(".iaHomeJumpList a").count(),5,"home task entries");
     assert.equal(await page.locator(".iaLegacyNavDisclosure[open]").count(),0,"original nav should begin folded");
     assert.ok((await page.locator('.hero p[data-i18n="heroBody"]').innerText()).includes("Connecting the Dots"),"project purpose not visible on Home");
