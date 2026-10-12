@@ -82,6 +82,11 @@ async function checkAxe(page,label) {
     }
     // The introductory Internet-basics article deliberately returns to the Home
     // overview. Home must not claim that a primary area is selected.
+    // The descriptive text is not an anchor. The native title anchor must
+    // nevertheless cover the entire card surface for mouse and touch users.
+    await page.locator('.iaPrimaryLink[data-b2-area="ia-stories"]').click();
+    await page.locator('#ia-stories .iaHubCard').filter({has:page.locator('a[data-open-section="economics"]')}).locator('p').click({position:{x:8,y:8}});
+    assert.equal(await page.locator('#economics.section.active').count(),1,"descriptive area of hub card is not clickable");
     await page.locator('.iaPrimaryLink[data-b2-area="ia-understand"]').click();
     await page.locator('#ia-understand a[data-open-section="overview"]').first().click();
     assert.equal(await page.locator('#overview.section.active').count(),1,"Understand overview entry broken");
