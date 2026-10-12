@@ -110,6 +110,11 @@ def add_crosspage_features(html: str, file: Path, lang: str, root: Path, selecte
     match = re.search(r'<nav class="ctdB2CrossNav"[^>]*>[\s\S]*?</nav>', html)
     if not match:
         raise ValueError(f"Missing IA B2 navigation: {file}")
+    # Existing generated pages retain the original cross-style; update the
+    # common shell when its template changes without rewriting article bodies.
+    if 'id="ctd-b2-cross-style"' in html:
+        html = re.sub(r'<style id="ctd-b2-cross-style">[\\s\\S]*?</style>',
+                      lambda _m: NAV_STYLE, html, count=1)
     additions = ""
     if 'class="ctdB2Trail"' not in html:
         additions += make_trail(file, lang, selected, root, texts)
