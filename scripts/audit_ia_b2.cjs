@@ -143,6 +143,9 @@ async function checkAxe(page,label) {
       const response=await page.goto(BASE+entry.url,{waitUntil:"domcontentloaded",timeout:20000});
       assert.equal(response.status(),200,entry.url+" not found");
       assert.equal(await page.locator(".ctdB2CrossNav a").count(),5,entry.url+" missing B2 navigation");
+      assert.equal(await page.locator(".ctdB2Trail").count(),1,entry.url+" is outside the integrated B2 shell");
+      assert.equal(await page.locator(".ctdB2Trail a").count(),2,entry.url+" has no Home/area breadcrumb");
+      assert.equal(await page.locator(".ctdB2Trail [aria-current='page']").count(),1,entry.url+" has no current-page location");
       assert.equal(await page.locator(".ctdB2CrossNav a[aria-current='location']").count(),1,entry.url+" active area mismatch");
       assert.equal(await page.locator('.ctdB2CrossNav a[data-b2-cross-area="'+entry.selected+'"][aria-current="location"]').count(),1,entry.url+" wrong area");
       // Old standalone documents include absolute production links. In branch
