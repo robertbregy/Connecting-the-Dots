@@ -345,13 +345,13 @@
       },
       {
         "repository_path": "assets/app.js",
-        "bytes": 120916,
-        "sha256": "1310a55396d5dd004d25511d775f55830eb5782e3a9e4716a58dcf8c5882f402"
+        "bytes": 122711,
+        "sha256": "af8df675be83ea5b9af4e7fc994697fce795670109b0f497605a83663171722f"
       },
       {
         "repository_path": "assets/style.css",
-        "bytes": 121807,
-        "sha256": "1332893900578a70a8b6f29e4561d0ec36aab261fbbd3243f3475f3cac19b677"
+        "bytes": 127396,
+        "sha256": "4a4c938a95dd791976c2381d6158b42c879f469d9ee3172d998d2db3b85d739c"
       },
       {
         "repository_path": "data/worldmap.js",
