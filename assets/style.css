@@ -620,7 +620,7 @@ body[data-active-tab]:not([data-active-tab="overview"]) .hero{display:none}
 }
 @media(max-width:680px){
   .hero{padding:25px 0 22px;gap:17px}
-  .heroLogo img{max-width:94px}
+  .heroLogo{display:none}/* Decorative mark is already in the mobile brand; prioritize the project explanation. */
   .iaPrimaryNav{grid-template-columns:repeat(3,minmax(0,1fr));gap:3px 6px;padding:5px;margin-top:8px}
   .iaPrimaryLink{min-height:44px;font-size:12px;padding:7px 3px}
   .iaHomeJumpList{grid-template-columns:repeat(2,minmax(0,1fr))}
