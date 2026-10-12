@@ -56,7 +56,7 @@ Tutti i nuovi link tra pagine sul ramo B usano percorsi relativi. Una piccola ro
 
 - Il primo B2 build completo è riuscito sul ramo parallelo, con verifiche multilanguage, manifesti e determinismo degli ZIP: [GitHub Actions 38312786826](https://github.com/robertbregy/Connecting-the-Dots/actions/runs/38312786826).
 - La prima matrice B2 degli hub ha superato 8 percorsi Chromium (IT/EN/DE/FR × mobile/desktop), tutte le 25 card e l'integrità delle 21 sezioni: [GitHub Actions 38312786763](https://github.com/robertbregy/Connecting-the-Dots/actions/runs/38312786763).
-- La matrice più estesa, già superata, copre **8 scenari principali più 35 pagine autonome su 35**, senza problemi, comprese le guide evergreen e il working paper: [GitHub Actions 38314628172](https://github.com/robertbregy/Connecting-the-Dots/actions/runs/38314628172). Il controllo dell'anteprima impedisce l'uscita accidentale dal ramo B.
+- **Ultima matrice B2 superata, dopo la revisione della Home:** **8 scenari principali e 35 pagine autonome su 35**, nessun errore, comprese guide evergreen, Atlas e working paper; parità di tutte le 21 sezioni: [GitHub Actions 38314992333](https://github.com/robertbregy/Connecting-the-Dots/actions/runs/38314992333). Il controllo dell'anteprima impedisce l'uscita accidentale dal ramo B e verifica la posizione della presentazione e del menu nella prima schermata.
 - Il precedente full browser audit v0.7.78 continua a essere un gate indipendente (160 combinazioni lingua/tema/sezione oltre a Explorer e Atlas). Qualunque regressione **reale** deve essere risolta, non disabilitata per far diventare verde la build.
 
 ### Verifica dell'equivalenza editoriale A/B
