@@ -1,0 +1,70 @@
+name: IA B2 - Integrated site acceptance
+
+on:
+  push:
+    branches:
+      - feat/ia-rearchitecture-20261012
+    paths:
+      - 'src/**'
+      - 'assets/**'
+      - 'data/translations.json'
+      - 'scripts/audit_ia_b2.cjs'
+      - 'scripts/validate_multilingual.js'
+      - 'build.py'
+      - '.github/workflows/ia-b2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: connecting-dots-ia-b2-feature-qa
+  cancel-in-progress: true
+
+jobs:
+  build-and-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout feature branch only
+        uses: actions/checkout@v4
+      - name: Install Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install baseline dependencies
+        run: npm ci
+      - name: Validate JS syntax
+        run: |
+          node --check assets/app.js
+          node --check scripts/validate_multilingual.js
+          node --check scripts/audit_ia_b2.cjs
+          python3 -m py_compile build.py
+      - name: Generate complete local site without publishing
+        run: python3 build.py
+      - name: Validate entire multilingual corpus and integrity
+        run: |
+          node scripts/validate_multilingual.js
+          node scripts/validate_internet_access.js
+          CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
+      - name: Prepare Chromium and axe accessibility runner
+        run: |
+          npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Test integrated B2 on mobile and desktop
+        run: |
+          python3 -m http.server 8128 --bind 127.0.0.1 >/tmp/ctd-ia-b2-server.log 2>&1 &
+          sleep 3
+          node scripts/audit_ia_b2.cjs
+      - name: Upload test evidence and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ia-b2-integration-audit
+          path: audit-ia-b2/
+          if-no-files-found: ignore
