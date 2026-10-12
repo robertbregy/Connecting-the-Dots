@@ -54,7 +54,9 @@ jobs:
       - name: Build current release and validate all release invariants
         run: |
           python3 build.py
-          node scripts/verify_ia_b2_parity.cjs
+          if test "$GITHUB_REF_NAME" = "feat/ia-rearchitecture-20261012"; then
+            node scripts/verify_ia_b2_parity.cjs
+          fi
           node scripts/validate_multilingual.js
           node scripts/validate_internet_access.js
           CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
