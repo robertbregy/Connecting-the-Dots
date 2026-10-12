@@ -115,7 +115,7 @@ def add_crosspage_features(html: str, file: Path, lang: str, root: Path, selecte
     if 'id="ctd-b2-cross-style"' in html:
         html = re.sub(r'<style id="ctd-b2-cross-style">[\s\S]*?</style>',
                       lambda _m: NAV_STYLE, html, count=1)
-        match = re.search(r'<nav class="ctdB2CrossNav"[^>]*>[\\s\\S]*?</nav>', html)
+        match = re.search(r'<nav class="ctdB2CrossNav"[^>]*>[\s\S]*?</nav>', html)
     additions = ""
     if 'class="ctdB2Trail"' not in html:
         additions += make_trail(file, lang, selected, root, texts)
