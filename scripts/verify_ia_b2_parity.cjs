@@ -2,7 +2,9 @@
    Reference: main@ec231cc12d35fa91ff5340ad057a483ce23a5ca4 (v0.7.78).
    Baseline segment strings were directly compared A vs B on 13 Oct 2026.
    64-bit FNV checks detect accidental drift; they are NOT a cryptographic archive.
-   Legitimate editorial changes require review and a deliberate manifest refresh. */
+   Legitimate editorial changes require review and a deliberate manifest refresh.
+   Economics intentionally extended 14 Oct 2026: source-linked ICANN contention, Intercap portfolio and brand/AI analysis.
+   See docs/EDITORIAL_UPDATE_2026-10-14.md; other 20 section digests remain frozen. */
 'use strict';
 const fs=require('node:fs');
 const assert=require('node:assert/strict');
@@ -15,7 +17,7 @@ const baseline={
  beyond:['d5ce05ac3253ca8a',3136],
  cities:['1cdd26be34d79885',2070],
  geography:['5a19ad9c0070e2da',9613],
- economics:['01db626469a518e2',11549],
+ economics:['025e46bdaede1f70',13112],
  social:['f1248df8c136df10',2801],
  contention:['6ac6dcf1629b1d8e',3028],
  refusals:['0102bee7eebcb306',1985],
