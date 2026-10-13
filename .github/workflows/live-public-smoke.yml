@@ -1,0 +1,26 @@
+name: Live GitHub Pages smoke verification
+on:
+  push:
+    branches:
+      - audit/live-deployment-20261014
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - name: Checkout read-only baseline
+        uses: actions/checkout@v4
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium and Playwright
+        run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Independently inspect actual public GitHub Pages
+        run: node scripts/audit_live_production_20261014.cjs
