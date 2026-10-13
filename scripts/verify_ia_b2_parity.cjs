@@ -47,8 +47,8 @@ const unwrappedRaw=source.slice(0,start)+source.slice(end);
 // before comparing the untouched 21 A sections against their frozen hashes.
 // Assert they exist exactly once, so neither the legacy text nor Helsinki
 // may silently disappear on subsequent builds.
-const bridge=/<div class="panel cityHelsinkiBridge">[\\s\\S]*?<\\/div>\\n(?=<\\/section>)/g;
-const caseArticle=/\\n<article class="helsinkiCase"[\\s\\S]*?<\\/article>/g;
+const bridge=/<div class="panel cityHelsinkiBridge">[\s\S]*?<\/div>\n(?=<\/section>)/g;
+const caseArticle=/\n<article class="helsinkiCase"[\s\S]*?<\/article>/g;
 assert.equal((unwrappedRaw.match(bridge)||[]).length,1,'Missing or repeated Helsinki city-context card');
 assert.equal((unwrappedRaw.match(caseArticle)||[]).length,1,'Missing or repeated Helsinki termination case');
 const unwrapped=unwrappedRaw.replace(bridge,'').replace(caseArticle,'');
