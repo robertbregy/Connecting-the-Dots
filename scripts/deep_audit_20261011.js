@@ -220,6 +220,28 @@ function check(ok,level,kind,where,message,extra){if(!ok)finding(level,kind,wher
      check(actual.active===tab&&actual.panels.every(x=>x.parent==='economics'&&x.visible===(tab==='economics')),
        'HIGH','ORPHAN_PANELS',language+'/'+tab,'Economics panels leaked outside their section',{actual});
    }
+   // The city-TLD story must remain a native B2 pathway, including
+   // full-card pointer navigation and a sourced, still-delegated status.
+   await p.goto(base+'/'+language+'/?tab=cities',{waitUntil:'load',timeout:25000});
+   const helsinkiBridge=p.locator('#cities .cityHelsinkiBridge');
+   check((await helsinkiBridge.count())===1,'HIGH','HELSINKI_MISSING',language,'City context card missing');
+   if(await helsinkiBridge.count()){
+     const description=helsinkiBridge.locator('p.sub');
+     await description.scrollIntoViewIfNeeded();
+     const rect=await description.boundingBox();
+     check(!!rect,'HIGH','HELSINKI_HIT_AREA',language,'City card has no visible descriptive area');
+     if(rect){
+       await p.mouse.click(rect.x+8,rect.y+Math.min(9,rect.height/2));
+       await p.locator('#helsinki-termination').waitFor({state:'visible',timeout:10000});
+       const status=await p.evaluate(()=>({
+         active:document.querySelector('section.section.active')?.id,
+         sources:document.querySelectorAll('#helsinki-termination .srcs a').length,
+         body:document.querySelector('#helsinki-termination')?.innerText||''
+       }));
+       check(status.active==='economics'&&status.sources===3&&status.body.includes('.helsinki'),
+         'HIGH','HELSINKI_NAV',language,'Helsinki full-card navigation or sources broken',status);
+     }
+   }
    await p.close();await c.close();
  }
  // The live website is checked independently of GitHub Pages build status.
