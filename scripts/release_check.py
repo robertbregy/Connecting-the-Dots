@@ -107,7 +107,7 @@ for url in ('https://www.icann.org/en/contracted-parties/registry-operators/serv
             'https://www.iana.org/domains/root/db/helsinki.html',
             'https://www.hel.fi/en/decision-making/nichelsinki'):
     if url not in source_html or url not in source_urls:
-        fail('Missing primary source for Helsinki termination case: '+url+' | html='+str(url in source_html)+' | sources='+str(url in source_urls)+' | sources-tail='+str(list(source_urls)[-4:]))
+        fail('Missing primary source for Helsinki termination case: '+url+' | html='+str(url in source_html)+' | sources='+str(url in source_urls)+' | csv-raw='+str(url in (DATA/'sources.csv').read_text(encoding='utf-8'))+' | parsed-tail='+repr(rows('sources.csv')[-3:]))
 
 
 # v0.7.45 current-round integrity: do not confuse official aggregate totals, local APS rows and the secondary string index.
