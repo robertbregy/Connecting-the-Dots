@@ -12,9 +12,6 @@ D.sources.push(
  ["ICANN 2026 RSP statistics · August","https://newgtldprogram.icann.org/en/application-rounds/round2/rsp/program-statistics/2026/08","primary"],
  ["IANA root name servers","https://www.iana.org/domains/root/servers","primary"],
  ["Root Server Technical Operations Association","https://root-servers.org/","primary"],
- ["IANA Root Zone Database","https://www.iana.org/domains/root/db","primary"],
- ["ICANN - Helsinki registry agreement termination process","https://www.icann.org/en/contracted-parties/registry-operators/services/registry-agreement-termination-service","primary"],
- ["IANA - Helsinki delegated TLD record","https://www.iana.org/domains/root/db/helsinki.html","primary"],
- ["City of Helsinki - nic.helsinki original registry objectives","https://www.hel.fi/en/decision-making/nichelsinki","primary"]
+ ["IANA Root Zone Database","https://www.iana.org/domains/root/db","primary"]
 );
 })();
