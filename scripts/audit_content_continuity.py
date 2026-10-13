@@ -48,6 +48,40 @@ caseDatasets=[]
 for path in sorted(orig):
     if path.startswith('data/') and re.search(r'(cases|investigations|stories|sanctions_explainer|internet_access_explainer)\.json$',path):
         caseDatasets.append(dict(path=path,same_sha=sha(orig[path])==sha(b[path])))
+# Compare the actual browser runtime corpus, not only its source records.
+# Any Explorer record dropped during bundling is a substantive data regression.
+def bundled_json(file):
+    raw=file.read_text(encoding='utf-8')
+    return json.loads(raw.split('window.DOT_DATA=',1)[1].rsplit(';',1)[0])
+runtime={}
+for runtime_name in ('data/data_bundle.js','data/site_bundle.js'):
+    before=bundled_json(A/runtime_name)
+    after=bundled_json(B/runtime_name)
+    before_keys,after_keys=set(before),set(after)
+    removed=set(before_keys-after_keys)
+    changed=[k for k in sorted(before_keys&after_keys) if before[k]!=after[k]]
+    source_a={src[1] for src in before.get('sources',[]) if isinstance(src,list) and len(src)>1}
+    source_b={src[1] for src in after.get('sources',[]) if isinstance(src,list) and len(src)>1}
+    runtime[runtime_name]=dict(original_keys=len(before_keys),new_keys=len(after_keys),
+        removed_keys=sorted(removed),changed_top_level_keys=changed,
+        explorer_record_count_A=len(before.get('explorer',[])),
+        explorer_record_count_B=len(after.get('explorer',[])),
+        explorer_records_identical=before.get('explorer')==after.get('explorer'),
+        missing_source_urls=sorted(source_a-source_b),
+        new_source_urls=sorted(source_b-source_a))
+profile_shards=[]
+for shard in range(8):
+    filename='data/explorer_profiles_'+str(shard)+'.js'
+    def profile(root):
+        raw=(root/filename).read_text(encoding='utf-8')
+        return json.loads(raw.split('window.DOT_PROFILE_CHUNKS['+str(shard)+']=',1)[1].rsplit(';',1)[0])
+    before,after=profile(A),profile(B)
+    original_keys=set(before.get('records',{}))
+    new_keys=set(after.get('records',{}))
+    profile_shards.append(dict(shard=shard,before=len(original_keys),after=len(new_keys),
+        removed=sorted(original_keys-new_keys),
+        records_exact=before.get('records')==after.get('records'),
+        version_before=before.get('version'),version_after=after.get('version')))
 csvPaths=[p for p in sorted(orig) if p.endswith('.csv') and p.startswith('data/')]
 csvChanged=[p for p in csvPaths if sha(orig[p])!=sha(b[p])]
 def compare_json_values(x,y,prefix=''):
@@ -98,6 +132,8 @@ report=dict(
  translations=translations,
  html_articles=dict(count=len(articles),all_exact=all(x['exact'] for x in articles),not_exact=[x for x in articles if not x['exact']]),
  case_datasets=caseDatasets,
+ runtime=runtime,
+ profile_shards=profile_shards,
  csv=dict(count=len(csvPaths),changed=csvChanged),
  archives=archives,
  sitemap_sha_equal=sha(A/'sitemap.xml')==sha(B/'sitemap.xml')
@@ -112,6 +148,7 @@ summary=dict(tree=report['tree'],article_count=report['html_articles']['count'],
  source_losses={k:v['removed'] for k,v in srcMetrics.items()},
  translations={k:dict(missing=v['missing'],changed=list(v['changed']),added_count=len(v['added'])) for k,v in translations.items()},
  case_datasets_modified=[x['path'] for x in caseDatasets if not x['same_sha']],
+ runtime=runtime,profile_shards=profile_shards,
  csv_changed=csvChanged,
  archives=archives,
  sitemap_identical=report['sitemap_sha_equal'],sitemap_routes=report['sitemap_routes'])
@@ -122,6 +159,8 @@ bad=bool(missing_paths or report['html_articles']['not_exact'] or report['sitema
     any(srcMetrics[k]['removed'] for k in ('sections','i18n_references','ids')) or
     report['sitemap_routes']['removed'] or
     any(not v['same_sha'] for v in caseDatasets) or
+    any(v['removed_keys'] or v['missing_source_urls'] or not v['explorer_records_identical'] for v in runtime.values()) or
+    any(v['removed'] or not v['records_exact'] for v in profile_shards) or
     any(not z['bytes_identical'] for z in archives.values()))
 if bad:
     print('AB_CONTENT_PARITY_REVIEW_REQUIRED: audit found differences requiring human review')
