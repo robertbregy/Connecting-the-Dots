@@ -106,8 +106,10 @@ if 'data-open-anchor="helsinki-termination"' not in source_html:
 for url in ('https://www.icann.org/en/contracted-parties/registry-operators/services/registry-agreement-termination-service',
             'https://www.iana.org/domains/root/db/helsinki.html',
             'https://www.hel.fi/en/decision-making/nichelsinki'):
-    if url not in source_html or url not in source_urls:
-        fail('Missing primary source for Helsinki termination case: '+url+' | html='+str(url in source_html)+' | sources='+str(url in source_urls)+' | csv-raw='+str(url in (DATA/'sources.csv').read_text(encoding='utf-8'))+' | parsed-tail='+repr(rows('sources.csv')[-3:]))
+    if url not in source_html:
+        fail('Helsinki article is missing a primary source link: '+url)
+    if url not in source_urls:
+        fail('Helsinki source must be registered in canonical data/extra.js (sources.csv is generated): '+url)
 
 
 # v0.7.45 current-round integrity: do not confuse official aggregate totals, local APS rows and the secondary string index.
