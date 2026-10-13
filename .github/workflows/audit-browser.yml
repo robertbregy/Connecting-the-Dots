@@ -37,7 +37,7 @@ concurrency:
 jobs:
   browser-qa:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -55,9 +55,7 @@ jobs:
       - name: Build current release and validate all release invariants
         run: |
           python3 build.py
-          if test "$GITHUB_REF_NAME" = "feat/ia-rearchitecture-20261012"; then
-            node scripts/verify_ia_b2_parity.cjs
-          fi
+          node scripts/verify_ia_b2_parity.cjs
           node scripts/validate_multilingual.js
           node scripts/validate_internet_access.js
           CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
@@ -66,6 +64,12 @@ jobs:
           python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/ctd-audit-http.log 2>&1 &
           sleep 2
           node scripts/audit_browser_20261010.js
+      - name: Verify all 25 B2 cards and 35 native article pages across mobile and desktop
+        run: |
+          CTD_TEST_BASE=http://127.0.0.1:8123/ node scripts/audit_ia_b2.cjs
+      - name: Verify all 208 original A section and fragment links
+        run: |
+          CTD_TEST_BASE=http://127.0.0.1:8123/ node scripts/audit_legacy_deeplinks.cjs
       - name: Audit all 160 combinations of locale, theme and section for WCAG A/AA
         run: |
           node scripts/audit_axe_20261010.js
@@ -83,5 +87,8 @@ jobs:
           path: |
             audit-*.png
             audit-independent-20261011.json
+            audit-ia-b2/report.json
+            audit-ia-b2/*.png
+            audit-deeplinks/results.json
             audit-aps-atlas-*.png
           if-no-files-found: ignore
