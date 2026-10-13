@@ -6,7 +6,7 @@ const {chromium}=require("playwright");
 const AxeBuilder=require("@axe-core/playwright").default;
 const assert=require("node:assert/strict");
 const fs=require("node:fs");
-const BASE="http://127.0.0.1:8128/";
+const BASE=process.env.CTD_TEST_BASE||"http://127.0.0.1:8128/";
 const languages=["it","en","de","fr"];
 const hubs=[
  ["ia-understand",6,"how"],
