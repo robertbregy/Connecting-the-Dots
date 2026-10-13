@@ -3,7 +3,7 @@
 **Robert Bregy**  
 **Working Paper v1.1-draft · living revision 13 October 2026 · current citable research release RR2 (10 October 2026)**  
 **Status:** working paper; not peer reviewed. This mutable manuscript is distinct from the immutable RR1 (9 October 2026) and RR2 (10 October 2026) Zenodo research deposits.  
-**Technical-reference correction (13 October 2026):** the mutable technical data-pack link was synchronized with site v0.7.79. No scientific dataset or archived RR1/RR2 release was changed.  
+**Technical-reference correction (13 October 2026):** the mutable technical data-pack link was synchronized with site v0.7.80. No scientific dataset or archived RR1/RR2 release was changed.  
 **Living publication:** https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Abstract
@@ -168,7 +168,7 @@ Interactive publication: https://robertbregy.github.io/Connecting-the-Dots/
 Repository: https://github.com/robertbregy/Connecting-the-Dots  
 Current TLD universe CSV (live technical publication): https://robertbregy.github.io/Connecting-the-Dots/data/tld_universe.csv  
 2026 primary-string inventory (secondary-source snapshot): https://robertbregy.github.io/Connecting-the-Dots/data/applications_2026_strings_reveal.csv  
-Current technical data package **v0.7.79** (not a new Zenodo release): https://robertbregy.github.io/Connecting-the-Dots/downloads/connecting-the-dots-data-pack-v0.7.79.zip  
+Current technical data package **v0.7.80** (not a new Zenodo release): https://robertbregy.github.io/Connecting-the-Dots/downloads/connecting-the-dots-data-pack-v0.7.80.zip  
 Official ICANN APS public applications CSV (2,783 rows / 1,614 base application IDs): https://robertbregy.github.io/Connecting-the-Dots/data/applications_2026_aps_official_listing.csv  
 Historical frozen data pack **v0.7.58** (not the current RR2 dataset): https://robertbregy.github.io/Connecting-the-Dots/downloads/connecting-the-dots-data-pack.zip
 
