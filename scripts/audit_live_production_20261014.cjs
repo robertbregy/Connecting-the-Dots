@@ -60,6 +60,7 @@ const must=async(url,options={})=>{
        await page.goto(oldURL,{waitUntil:"load",timeout:40000});
        await page.locator("#cities.section.active .cityHelsinkiBridge").waitFor({state:"visible",timeout:12000});
        const description=page.locator("#cities .cityHelsinkiBridge p.sub");
+       await description.scrollIntoViewIfNeeded();
        const box=await description.boundingBox();
        assert.ok(box,"Helsinki context paragraph is not present in "+lang);
        await page.mouse.click(box.x+8,box.y+Math.min(box.height/2,8));
