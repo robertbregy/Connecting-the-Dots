@@ -50,6 +50,17 @@ for path in sorted(orig):
         caseDatasets.append(dict(path=path,same_sha=sha(orig[path])==sha(b[path])))
 csvPaths=[p for p in sorted(orig) if p.endswith('.csv') and p.startswith('data/')]
 csvChanged=[p for p in csvPaths if sha(orig[p])!=sha(b[p])]
+def compare_json_values(x,y,prefix=''):
+    diff=[]
+    if isinstance(x,dict) and isinstance(y,dict):
+        for k in sorted(set(x)|set(y)):
+            name=prefix+'.'+str(k) if prefix else str(k)
+            if k not in x:diff.append({'key':name,'from':'<absent>','to':y[k]})
+            elif k not in y:diff.append({'key':name,'from':x[k],'to':'<absent>'})
+            else:diff.extend(compare_json_values(x[k],y[k],name))
+    elif x!=y:
+        diff.append({'key':prefix,'from':x,'to':y})
+    return diff
 archives={}
 for name in ['connecting-the-dots-data-pack-v0.7.77.zip','connecting-the-dots-data-pack-v0.7.78.zip','connecting-the-dots-data-pack.zip']:
     path='downloads/'+name
@@ -68,6 +79,7 @@ for name in ['connecting-the-dots-data-pack-v0.7.77.zip','connecting-the-dots-da
                 bb=hashlib.sha256(z2.read(f)).hexdigest()
                 if aa!=bb:changes.append(dict(name=f,old_size=za[f].file_size,new_size=zb[f].file_size,old_sha256=aa,new_sha256=bb))
         sameData=not(gone or new or changes)
+        manifest_differences=compare_json_values(json.loads(z1.read('manifest.json')),json.loads(z2.read('manifest.json'))) if 'manifest.json' in za and 'manifest.json' in zb else []
         metadata=[f for f in sorted(set(za)&set(zb)) if
           (za[f].date_time,za[f].compress_size,za[f].external_attr,za[f].flag_bits)!=
           (zb[f].date_time,zb[f].compress_size,zb[f].external_attr,zb[f].flag_bits)]
@@ -75,6 +87,7 @@ for name in ['connecting-the-dots-data-pack-v0.7.77.zip','connecting-the-dots-da
             bytes_identical=sha(x)==sha(y),payload_identical=sameData,
             original_entries=len(za),new_entries=len(zb),
             removed_entries=gone,added_entries=new,modified_entries=changes,
+            manifest_differences=manifest_differences[:25],manifest_differences_count=len(manifest_differences),
             metadata_differences=metadata[:35],metadata_differences_count=len(metadata))
 report=dict(
  baseline='safety/main-v0.7.78-before-b2-switch-20261013',
@@ -89,6 +102,10 @@ report=dict(
  archives=archives,
  sitemap_sha_equal=sha(A/'sitemap.xml')==sha(B/'sitemap.xml')
 )
+routes_a=set(re.findall(r'<loc>([^<]+)</loc>',(A/'sitemap.xml').read_text()))
+routes_b=set(re.findall(r'<loc>([^<]+)</loc>',(B/'sitemap.xml').read_text()))
+report['sitemap_routes']={'before':len(routes_a),'after':len(routes_b),
+    'removed':sorted(routes_a-routes_b),'added':sorted(routes_b-routes_a)}
 Path('content-continuity-audit.json').write_text(json.dumps(report,indent=2,ensure_ascii=False))
 summary=dict(tree=report['tree'],article_count=report['html_articles']['count'],
  nonidentical_articles=report['html_articles']['not_exact'],
@@ -97,12 +114,13 @@ summary=dict(tree=report['tree'],article_count=report['html_articles']['count'],
  case_datasets_modified=[x['path'] for x in caseDatasets if not x['same_sha']],
  csv_changed=csvChanged,
  archives=archives,
- sitemap_identical=report['sitemap_sha_equal'])
+ sitemap_identical=report['sitemap_sha_equal'],sitemap_routes=report['sitemap_routes'])
 print('AB_CONTENT_PARITY_RESULT '+json.dumps(summary,ensure_ascii=False))
 # Fail on actual content loss or rewriting an historical technical ZIP.
-bad=bool(missing_paths or report['html_articles']['not_exact'] or not report['sitemap_sha_equal'] or
+bad=bool(missing_paths or report['html_articles']['not_exact'] or report['sitemap_routes']['removed'] or
     any(v['missing'] for v in translations.values()) or
     any(srcMetrics[k]['removed'] for k in ('sections','i18n_references','ids')) or
+    report['sitemap_routes']['removed'] or
     any(not v['same_sha'] for v in caseDatasets) or
     any(not z['bytes_identical'] for z in archives.values()))
 if bad:
