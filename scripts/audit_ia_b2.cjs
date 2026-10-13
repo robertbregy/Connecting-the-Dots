@@ -24,7 +24,7 @@ async function checkAxe(page,label) {
  const browser=await chromium.launch({headless:true,args:["--disable-dev-shm-usage"]});
  try {
   for(const lang of languages)for(const width of [390,1440]){
-   const context=await browser.newContext({viewport:{width,height:850}});
+   const context=await browser.newContext({viewport:{width,height:850},reducedMotion:"reduce"});
    const page=await context.newPage();
    const tally={language:lang,width,hubs:[],issues:[],contentSections:0,homePurpose:false,legacyMenu:false};
    const errors=[];
@@ -87,6 +87,8 @@ async function checkAxe(page,label) {
     tally.checkedCards=0;
     for(const [hub,count] of hubs)for(let i=0;i<count;i++){
       await page.locator('.iaPrimaryLink[data-b2-area="'+hub+'"]').click();
+      await page.locator("#"+hub+".section.active").waitFor({state:"visible",timeout:5000});
+      await page.waitForTimeout(50);
       const card=page.locator("#"+hub+" .iaHubCard").nth(i);
       const a=card.locator("h3 a");
       assert.equal(await a.count(),1,hub+" card "+i+" has no single destination");
@@ -99,8 +101,16 @@ async function checkAxe(page,label) {
       // scrollIntoViewIfNeeded can align just beneath a sticky header, so
       // coordinate-based mouse clicks otherwise hit the navigation bar.
       await desc.evaluate(el=>el.scrollIntoView({behavior:"instant",block:"center",inline:"nearest"}));
-      await page.waitForTimeout(80);
-      const box=await desc.boundingBox();
+      await page.waitForTimeout(110);
+      let box=await desc.boundingBox();
+      // Bring the pointer target below the sticky 76px topbar if a navigation
+      // scroll was still being finalized. This checks the actual hit area,
+      // rather than clicking on the topbar itself.
+      for(let attempt=0;box&&box.y<105&&attempt<3;attempt++){
+        await page.evaluate(()=>window.scrollBy({top:-175,behavior:"instant"}));
+        await page.waitForTimeout(80);
+        box=await desc.boundingBox();
+      }
       assert.ok(box&&box.width>20&&box.height>8,hub+" card "+i+" text hidden");
       const view=page.viewportSize();
       assert.ok(box.y>=-1&&box.y+8<view.height&&box.x>=-1&&box.x+8<view.width,
@@ -143,10 +153,13 @@ async function checkAxe(page,label) {
     // nevertheless cover the entire card surface for mouse and touch users.
     await page.locator('.iaPrimaryLink[data-b2-area="ia-stories"]').click();
     const economicsCard=page.locator('#ia-stories .iaHubCard').filter({has:page.locator('a[data-open-section="economics"]')});
-    const paragraphBox=await economicsCard.locator('p').boundingBox();
+    const economicsDescription=economicsCard.locator('p');
+    await economicsDescription.evaluate(el=>el.scrollIntoView({behavior:"instant",block:"center"}));
+    await page.waitForTimeout(100);
+    const paragraphBox=await economicsDescription.boundingBox();
     assert.ok(paragraphBox,"economics card description missing");
     await page.mouse.click(paragraphBox.x+8,paragraphBox.y+Math.min(8,paragraphBox.height/2));
-    assert.equal(await page.locator('#economics.section.active').count(),1,"descriptive area of hub card is not clickable");
+    await page.locator('#economics.section.active').waitFor({state:"visible",timeout:5000});
     await page.locator('.iaPrimaryLink[data-b2-area="ia-understand"]').click();
     await page.locator('#ia-understand a[data-open-section="overview"]').first().click();
     assert.equal(await page.locator('#overview.section.active').count(),1,"Understand overview entry broken");
