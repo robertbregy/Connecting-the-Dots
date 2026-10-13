@@ -92,12 +92,29 @@ async function checkAxe(page,label) {
       assert.equal(await a.count(),1,hub+" card "+i+" has no single destination");
       const dest=await a.getAttribute("data-open-section");
       const desc=card.locator("p").first();
+      // A pointer test must scroll the card into the viewport first.
+      // page.mouse.click does NOT auto-scroll, unlike locator.click; otherwise
+      // cards below the fold falsely fail only on mobile.
+      await desc.scrollIntoViewIfNeeded();
       const box=await desc.boundingBox();
       assert.ok(box&&box.width>20&&box.height>8,hub+" card "+i+" text hidden");
+      const view=page.viewportSize();
+      assert.ok(box.y>=-1&&box.y+8<view.height&&box.x>=-1&&box.x+8<view.width,
+        hub+" card "+i+" body outside viewport after scroll: "+JSON.stringify({box,view}));
       if(dest){
         const anchor=await a.getAttribute("data-open-anchor");
-        await page.mouse.click(box.x+8,box.y+Math.min(9,box.height/2));
-        assert.equal(await page.locator("#"+dest+".section.active").count(),1,hub+" card "+i+" did not open "+dest);
+        const click={x:box.x+8,y:box.y+Math.min(9,box.height/2)};
+        const top=await page.evaluate(({x,y})=>{
+          const t=document.elementFromPoint(x,y);
+          return {tag:t?.tagName,tagClass:t?.className||'',link:t?.closest('a')?.getAttribute('href'),active:document.querySelector('section.section.active')?.id};
+        },click);
+        await page.mouse.click(click.x,click.y);
+        try{
+          await page.locator("#"+dest+".section.active").waitFor({state:"visible",timeout:6000});
+        }catch(err){
+          const now=await page.evaluate(()=>({active:document.querySelector('section.section.active')?.id,hash:location.hash,scrollY:scrollY}));
+          throw Error(hub+" card "+i+" failed "+dest+" click "+JSON.stringify({click,top,now})+": "+err.message);
+        }
         if(anchor)assert.equal(await page.locator("#"+anchor).count(),1,hub+" card "+i+" lost deep anchor "+anchor);
       }else{
         const href=await a.getAttribute("href");
