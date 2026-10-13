@@ -1,3 +1,9 @@
+# v0.7.80 — 13 October 2026 (UTC)
+
+- Restore discoverability of .helsinki in the city-TLD journey and gTLD cemetery with an evidence-based 2012–2026 lifecycle, four-language copy and primary ICANN/IANA/city sources.
+- Distinguish voluntary notice and preliminary no-transition determination from actual revocation; IANA still lists .helsinki as delegated as of the 13 October 2026 editorial check.
+- Preserve all 0.7.79 and frozen RR1/RR2 artifacts; publish a separately versioned data ZIP.
+
 # v0.7.79 — 13 October 2026 (UTC)
 
 - B2 integrated redesign: five reader-first pathways, explanatory Home and aligned standalone-page navigation and breadcrumbs.
