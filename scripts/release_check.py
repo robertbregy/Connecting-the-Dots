@@ -40,6 +40,24 @@ lock=json.loads((ROOT/'package-lock.json').read_text()) if (ROOT/'package-lock.j
 if lock.get('version')!=version or lock.get('packages',{}).get('',{}).get('version')!=version: fail('package-lock/package version mismatch')
 if lock.get('packages',{}).get('',{}).get('devDependencies')!=pkg.get('devDependencies'): fail('package-lock dependency root mismatch')
 
+# Historical technical packages are immutable once published. On 13 Oct 2026
+# the A->B audit detected an accidental regeneration of the v0.7.78
+# manifest.json inside a versioned ZIP. Verify exact original archive hashes,
+# not just ZIP validity, so a future rebuild cannot silently repeat it.
+if tuple(int(x) for x in version.split('.')) >= (0,7,79):
+    FROZEN_TECHNICAL_ARCHIVES={
+        'connecting-the-dots-data-pack.zip':'105855eaec0e118418c5bbf332ffa0a0e92b6726f470baf535846bb2cd79894f',
+        'connecting-the-dots-data-pack-v0.7.77.zip':'8ff5dad0f9c18fedd7f1c30327a43efaca8ef6c16626d7475b2178be599e107a',
+        'connecting-the-dots-data-pack-v0.7.78.zip':'d812e6a01c04c451c4d68e111977a7de7492dce3919ebed48852fc19d224c1fe',
+    }
+    for archive,expected in FROZEN_TECHNICAL_ARCHIVES.items():
+        p=ROOT/'downloads'/archive
+        if not p.is_file() or hashlib.sha256(p.read_bytes()).hexdigest()!=expected:
+            fail('Historical technical data pack was rewritten or removed: '+archive)
+        sha_file=p.with_suffix('.sha256')
+        if sha_file.is_file() and sha_file.read_text(encoding='utf-8').split()[0]!=expected:
+            fail('Historical technical data pack checksum file changed: '+archive)
+
 # Maintenance release invariants: canonical Git deployment and social-preview accessibility.
 deploy_text=(ROOT/'DEPLOY.md').read_text(encoding='utf-8')
 if 'GitHub repository is the canonical working master' not in deploy_text or 'Rebuild published site' not in deploy_text:
