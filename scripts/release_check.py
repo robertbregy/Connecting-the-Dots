@@ -88,6 +88,27 @@ translations=json_file('translations.json')
 latest_summary=history[0].get('summaryKey')
 if not latest_summary or any(not translations.get(lang,{}).get(latest_summary) for lang in LANGS): fail('latest release-history summary translation missing')
 
+# v0.7.80: the Helsinki voluntary termination case must remain discoverable,
+# source-backed and distinct from an actual IANA revocation in all languages.
+helsinki_keys=('helsinkiBridgeTitle','helsinkiBridgeBody','helsinkiBridgeCta',
+               'helsinkiCaseState','helsinkiCaseHistory','helsinkiCaseFact',
+               'helsinkiCaseStatus','helsinkiCaseReading',
+               'helsinkiSourceIcann','helsinkiSourceIana','helsinkiSourceCity')
+for language in LANGS:
+    if any(not str(translations.get(language,{}).get(key,'')).strip() for key in helsinki_keys):
+        fail('Helsinki case translation lost in '+language)
+    if '.helsinki' not in translations[language]['helsinkiCaseStatus']:
+        fail('Helsinki live-delegation status lost in '+language)
+if source_html.count('id="helsinki-termination"')!=1:
+    fail('Helsinki lifecycle case missing or duplicated')
+if 'data-open-anchor="helsinki-termination"' not in source_html:
+    fail('No internal City-to-Helsinki navigation')
+for url in ('https://www.icann.org/en/contracted-parties/registry-operators/services/registry-agreement-termination-service',
+            'https://www.iana.org/domains/root/db/helsinki.html',
+            'https://www.hel.fi/en/decision-making/nichelsinki'):
+    if url not in source_html or url not in source_urls:
+        fail('Missing primary source for Helsinki termination case: '+url)
+
 
 # v0.7.45 current-round integrity: do not confuse official aggregate totals, local APS rows and the secondary string index.
 snap=json_file('application_2026_snapshot.json')
