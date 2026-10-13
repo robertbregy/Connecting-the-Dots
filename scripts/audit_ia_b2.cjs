@@ -80,6 +80,37 @@ async function checkAxe(page,label) {
       assert.equal(await page.locator('.iaPrimaryLink[data-b2-area="'+hub+'"][aria-current="location"]').count(),1,"cross-link lost parent context "+hub);
       tally.hubs.push({hub,cards:count,target:canonical});
     }
+
+    // Exhaustive discoverability check: each of the 25 B2 cards must be
+    // actionable across languages and desktop/mobile. Click descriptive copy
+    // rather than the headline to catch misleading card hit areas.
+    tally.checkedCards=0;
+    for(const [hub,count] of hubs)for(let i=0;i<count;i++){
+      await page.locator('.iaPrimaryLink[data-b2-area="'+hub+'"]').click();
+      const card=page.locator("#"+hub+" .iaHubCard").nth(i);
+      const a=card.locator("h3 a");
+      assert.equal(await a.count(),1,hub+" card "+i+" has no single destination");
+      const dest=await a.getAttribute("data-open-section");
+      const desc=card.locator("p").first();
+      const box=await desc.boundingBox();
+      assert.ok(box&&box.width>20&&box.height>8,hub+" card "+i+" text hidden");
+      if(dest){
+        const anchor=await a.getAttribute("data-open-anchor");
+        await page.mouse.click(box.x+8,box.y+Math.min(9,box.height/2));
+        assert.equal(await page.locator("#"+dest+".section.active").count(),1,hub+" card "+i+" did not open "+dest);
+        if(anchor)assert.equal(await page.locator("#"+anchor).count(),1,hub+" card "+i+" lost deep anchor "+anchor);
+      }else{
+        const href=await a.getAttribute("href");
+        assert.ok(href,hub+" external card "+i+" missing href");
+        const abs=new URL(href,page.url());
+        assert.equal(abs.origin,new URL(BASE).origin,hub+" card "+i+" leaves the B2 publication");
+        assert.ok(abs.pathname.includes("/"+lang+"/"),hub+" card "+i+" changes language "+abs.pathname);
+        const response=await page.request.get(abs.href);
+        assert.equal(response.status(),200,hub+" card "+i+" links to missing page: "+abs.href);
+      }
+      tally.checkedCards++;
+    }
+    assert.equal(tally.checkedCards,25,"not all B2 cards tested");
     // The introductory Internet-basics article deliberately returns to the Home
     // overview. Home must not claim that a primary area is selected.
     // The descriptive text is not an anchor. The native title anchor must
