@@ -1,0 +1,49 @@
+name: Restore immutable historical v0.7.78 pack
+on:
+  push:
+    branches:
+      - fix/frozen-v078-archive-20261013
+    paths:
+      - '.github/workflows/restore-v078-archive.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  restore-and-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - name: Restore the exact original files from pre-B frozen commit
+        run: |
+          git show ec231cc12d35fa91ff5340ad057a483ce23a5ca4:downloads/connecting-the-dots-data-pack-v0.7.78.zip > downloads/connecting-the-dots-data-pack-v0.7.78.zip
+          git show ec231cc12d35fa91ff5340ad057a483ce23a5ca4:downloads/connecting-the-dots-data-pack-v0.7.78.sha256 > downloads/connecting-the-dots-data-pack-v0.7.78.sha256
+          echo 'd812e6a01c04c451c4d68e111977a7de7492dce3919ebed48852fc19d224c1fe  downloads/connecting-the-dots-data-pack-v0.7.78.zip' | sha256sum --check -
+          cmp downloads/connecting-the-dots-data-pack-v0.7.78.sha256 <(git show ec231cc12d35fa91ff5340ad057a483ce23a5ca4:downloads/connecting-the-dots-data-pack-v0.7.78.sha256)
+      - name: Rebuild current technical release and validate historic archives
+        run: |
+          python3 build.py
+          node scripts/validate_multilingual.js
+          node scripts/validate_internet_access.js
+          CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
+          python3 scripts/release_check.py
+          echo 'd812e6a01c04c451c4d68e111977a7de7492dce3919ebed48852fc19d224c1fe  downloads/connecting-the-dots-data-pack-v0.7.78.zip' | sha256sum --check -
+      - name: Commit only verified repair on isolated branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add downloads/connecting-the-dots-data-pack-v0.7.78.zip downloads/connecting-the-dots-data-pack-v0.7.78.sha256
+          git diff --cached --stat
+          if git diff --cached --quiet; then exit 1; fi
+          git commit -m "Restore original immutable v0.7.78 technical data ZIP and checksum"
+          git push origin HEAD:fix/frozen-v078-archive-20261013
