@@ -1,0 +1,43 @@
+name: Audit legacy A deep links on B2
+on:
+  push:
+    branches:
+      - audit/legacy-links-20261013
+    paths:
+      - '.github/workflows/audit-legacy-deeplinks.yml'
+      - 'scripts/audit_legacy_deeplinks.cjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  legacy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - name: Verify current site and immutable historical packs
+        run: python3 build.py
+      - name: Install Chromium
+        run: |
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Visit every historical deep link in four languages and mobile/desktop
+        run: |
+          python3 -m http.server 8131 --bind 127.0.0.1 >/tmp/ctd-legacy-server.log 2>&1 &
+          sleep 3
+          node scripts/audit_legacy_deeplinks.cjs
+      - name: Upload trace
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: legacy-link-regression
+          path: audit-deeplinks/results.json
+          if-no-files-found: warn
