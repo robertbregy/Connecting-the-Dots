@@ -2392,7 +2392,17 @@
     "helsinkiSourceIcann": "ICANN · termination proceedings",
     "helsinkiSourceIana": "IANA · .helsinki delegation",
     "helsinkiSourceCity": "City of Helsinki · original rationale",
-    "release0780": "v0.7.80: adds the documented voluntary termination case of .helsinki, separating notice, preliminary determination and continued IANA delegation; content, URLs and RR2 remain intact."
+    "release0780": "v0.7.80: adds the documented voluntary termination case of .helsinki, separating notice, preliminary determination and continued IANA delegation; content, URLs and RR2 remain intact.",
+    "econEditorialTitle2026": "Words are a market. Not yet an outcome.",
+    "econEditorialIntro2026": "In the 2026 round, competition for identical strings reveals applicants' economic expectations. Filing does not mean winning a TLD, and contention is not a direct measure of future demand.",
+    "econEditorialMarketTitle": "Scarcity forms around a word",
+    "econEditorialMarketBody": "Our analysis of the 7 October APS snapshot finds 263 exact-primary-string groups comprising 891 applications. These are analytical groups, not ICANN's definitive contention sets. Replacements and subsequent evaluations can change the picture.",
+    "econEditorialPortfolioTitle": "Intercap: applying as a portfolio strategy",
+    "econEditorialPortfolioBody": "Domain Name Wire (7 October) attributes 71 applications to Intercap Registry: 58 for strings with identical-string rivals and 13 without such rivals in its analysis. These press figures require reconciliation with APS application IDs before being treated as official totals. This illustrates a portfolio strategy, not completed acquisitions.",
+    "econEditorialIdentityTitle": "Brands, products and AI agent identities: different logics",
+    "econEditorialIdentityBody": "ICANN reports 333 brand applications on Reveal Day. A corporate brand, a product name and a possible digital-agent identity are different strategies. Using TLDs as trust infrastructure for AI agents remains a hypothesis, not an established result.",
+    "econEditorialExploreContests": "Explore contention →",
+    "econEditorialDisclaimer": "Editorial analysis dated 14 October 2026. ICANN statistics, locally derived groups and third-party Intercap figures have different evidentiary status and must not be conflated."
   },
   "it": {
     "brand": "Brand",
@@ -4787,7 +4797,17 @@
     "helsinkiSourceIcann": "ICANN · procedimento di cessazione",
     "helsinkiSourceIana": "IANA · delega .helsinki",
     "helsinkiSourceCity": "Città di Helsinki · obiettivo iniziale",
-    "release0780": "v0.7.80: aggiunto il caso documentato della cessazione volontaria di .helsinki, distinguendo richiesta, decisione preliminare e delega IANA ancora attiva; continuità di contenuti, URL e RR2."
+    "release0780": "v0.7.80: aggiunto il caso documentato della cessazione volontaria di .helsinki, distinguendo richiesta, decisione preliminare e delega IANA ancora attiva; continuità di contenuti, URL e RR2.",
+    "econEditorialTitle2026": "Le parole sono un mercato. Non ancora un risultato.",
+    "econEditorialIntro2026": "Nel round 2026 la concorrenza fra stringhe identiche rende visibili le aspettative economiche degli operatori. Ma candidarsi non significa ottenere il TLD, e una contesa non misura automaticamente la domanda futura.",
+    "econEditorialMarketTitle": "La scarsità è costruita intorno a una parola",
+    "econEditorialMarketBody": "La nostra elaborazione dello snapshot APS del 7 ottobre identifica 263 gruppi di candidature con stringa primaria identica, che raccolgono 891 candidature. Sono gruppi analitici, non gli insiemi di contesa definitivi di ICANN. Replacement e successive valutazioni possono cambiare il quadro.",
+    "econEditorialPortfolioTitle": "Intercap: candidarsi su un portafoglio",
+    "econEditorialPortfolioBody": "Domain Name Wire (7 ottobre) attribuisce a Intercap Registry 71 candidature, di cui 58 per stringhe con concorrenti identici e 13 senza concorrenti identici nella sua analisi. Sono dati giornalistici da riconciliare con gli ID APS prima di considerarli un conteggio ufficiale. Il caso illustra una strategia di portafoglio, non acquisizioni già concluse.",
+    "econEditorialIdentityTitle": "Marchi, prodotti e identità per agenti AI: tre logiche diverse",
+    "econEditorialIdentityBody": "ICANN registra 333 candidature di tipo brand al Reveal Day. Un marchio aziendale, il nome di un prodotto e l'eventuale identità di un agente digitale non sono la stessa strategia. L'uso di TLD come infrastruttura di fiducia per agenti AI resta una prospettiva da valutare, non un risultato già dimostrato.",
+    "econEditorialExploreContests": "Esplora le contese →",
+    "econEditorialDisclaimer": "Lettura editoriale del 14 ottobre 2026. Fonti e denominatori diversi non vanno sommati; le statistiche ICANN, i gruppi calcolati dal progetto e l'analisi giornalistica Intercap hanno statuti probatori distinti."
   },
   "de": {
     "brand": "Marke",
@@ -7182,7 +7202,17 @@
     "helsinkiSourceIcann": "ICANN · Vertragsbeendigung",
     "helsinkiSourceIana": "IANA · Delegierung .helsinki",
     "helsinkiSourceCity": "Stadt Helsinki · ursprüngliche Zielsetzung",
-    "release0780": "v0.7.80: dokumentiert das freiwillige Beendigungsverfahren von .helsinki und unterscheidet Kündigungsmitteilung, vorläufige Entscheidung und weiterhin bestehende IANA-Delegierung; Inhalte, URLs und RR2 bleiben erhalten."
+    "release0780": "v0.7.80: dokumentiert das freiwillige Beendigungsverfahren von .helsinki und unterscheidet Kündigungsmitteilung, vorläufige Entscheidung und weiterhin bestehende IANA-Delegierung; Inhalte, URLs und RR2 bleiben erhalten.",
+    "econEditorialTitle2026": "Wörter sind ein Markt. Noch kein Ergebnis.",
+    "econEditorialIntro2026": "Im Bewerbungszyklus 2026 zeigt der Wettbewerb um identische Zeichenfolgen wirtschaftliche Erwartungen. Eine Bewerbung bedeutet weder eine Zuteilung noch belegt ein Konflikt die künftige Nachfrage.",
+    "econEditorialMarketTitle": "Knappheit entsteht rund um ein Wort",
+    "econEditorialMarketBody": "Unsere Auswertung des APS-Stands vom 7. Oktober ermittelt 263 Gruppen identischer primärer Zeichenfolgen mit 891 Bewerbungen. Es handelt sich um analytische Gruppen und nicht um endgültige ICANN-Konkurrenzgruppen. Änderungen und Prüfungen können das Bild verändern.",
+    "econEditorialPortfolioTitle": "Intercap: Bewerbungen als Portfoliostrategie",
+    "econEditorialPortfolioBody": "Domain Name Wire (7. Oktober) ordnet Intercap Registry 71 Bewerbungen zu: 58 mit identischen Mitbewerber-Zeichenfolgen und 13 ohne solche Konkurrenz in dieser Analyse. Vor einer amtlichen Einordnung müssen diese journalistischen Zahlen anhand der APS-IDs abgeglichen werden. Es handelt sich um eine Portfoliostrategie, nicht um bereits erworbene TLDs.",
+    "econEditorialIdentityTitle": "Marken, Produkte und KI-Agenten: unterschiedliche Ansätze",
+    "econEditorialIdentityBody": "ICANN meldet zum Reveal Day 333 Markenbewerbungen. Unternehmensmarke, Produktname und mögliche digitale Agentenidentität stehen für verschiedene Strategien. TLDs als Vertrauensinfrastruktur für KI-Agenten sind bisher eine Hypothese, kein belegtes Ergebnis.",
+    "econEditorialExploreContests": "Konkurrenzfälle erkunden →",
+    "econEditorialDisclaimer": "Redaktionelle Einordnung vom 14. Oktober 2026. Offizielle ICANN-Zahlen, eigene Auswertungen und Presseangaben zu Intercap haben unterschiedliche Aussagekraft."
   },
   "fr": {
     "brand": "Marque",
@@ -9577,6 +9607,16 @@
     "helsinkiSourceIcann": "ICANN · procédure de résiliation",
     "helsinkiSourceIana": "IANA · délégation .helsinki",
     "helsinkiSourceCity": "Ville d'Helsinki · objectif initial",
-    "release0780": "v0.7.80 : ajout du cas documenté de résiliation volontaire de .helsinki, distinguant notification, décision préliminaire et délégation IANA encore active ; contenu, URL et RR2 préservés."
+    "release0780": "v0.7.80 : ajout du cas documenté de résiliation volontaire de .helsinki, distinguant notification, décision préliminaire et délégation IANA encore active ; contenu, URL et RR2 préservés.",
+    "econEditorialTitle2026": "Les mots constituent un marché. Pas encore un résultat.",
+    "econEditorialIntro2026": "En 2026, la concurrence pour les mêmes chaînes révèle les anticipations économiques des candidats. Déposer un dossier ne signifie ni obtenir un TLD ni prouver la demande future.",
+    "econEditorialMarketTitle": "La rareté se construit autour d'un mot",
+    "econEditorialMarketBody": "Notre analyse de l'instantané APS du 7 octobre recense 263 groupes de chaînes primaires identiques, rassemblant 891 candidatures. Il s'agit de groupes analytiques, pas des ensembles de contention définitifs de l'ICANN. Les remplacements et évaluations peuvent modifier ce bilan.",
+    "econEditorialPortfolioTitle": "Intercap : la candidature comme stratégie de portefeuille",
+    "econEditorialPortfolioBody": "Domain Name Wire (7 octobre) attribue 71 candidatures à Intercap Registry, dont 58 pour des chaînes ayant des concurrents identiques et 13 sans concurrent identique dans son analyse. Ces chiffres de presse doivent être rapprochés des identifiants APS avant toute qualification officielle. Il s'agit d'une stratégie de portefeuille, non d'acquisitions déjà réalisées.",
+    "econEditorialIdentityTitle": "Marques, produits et agents IA : des logiques distinctes",
+    "econEditorialIdentityBody": "L'ICANN annonce 333 candidatures de type marque lors du Reveal Day. Une marque d'entreprise, un produit et une éventuelle identité d'agent numérique répondent à des stratégies différentes. Les TLD comme infrastructure de confiance pour agents IA restent une hypothèse, non un fait démontré.",
+    "econEditorialExploreContests": "Explorer les contentions →",
+    "econEditorialDisclaimer": "Analyse éditoriale au 14 octobre 2026. Chiffres officiels ICANN, regroupements calculés et données de presse sur Intercap ne présentent pas le même degré de preuve."
   }
 }
