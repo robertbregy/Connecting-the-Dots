@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - audit/final-a-b-parity-20261013
+      - main
     paths:
       - '.github/workflows/final-b2-ux.yml'
       - '.github/workflows/audit-browser.yml'
