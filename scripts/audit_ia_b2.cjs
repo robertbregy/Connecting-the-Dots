@@ -6,7 +6,7 @@ const {chromium}=require("playwright");
 const AxeBuilder=require("@axe-core/playwright").default;
 const assert=require("node:assert/strict");
 const fs=require("node:fs");
-const BASE="http://127.0.0.1:8128/";
+const BASE=process.env.CTD_TEST_BASE||"http://127.0.0.1:8128/";
 const languages=["it","en","de","fr"];
 const hubs=[
  ["ia-understand",6,"how"],
@@ -15,7 +15,7 @@ const hubs=[
  ["ia-round",4,"behind-round"],
  ["ia-research",4,"research"]
 ];
-const report={kind:"B2 integrated UI smoke test",languages:[],screenshots:[],issues:[],source:"GitHub feature branch build",isHumanUsabilityTest:false};
+const report={kind:"B2 integrated UI smoke test",languages:[],screenshots:[],issues:[],source:"GitHub CI publication build",isHumanUsabilityTest:false};
 async function checkAxe(page,label) {
  const axe=await new AxeBuilder({page}).withTags(["wcag2a","wcag2aa","wcag21a","wcag21aa"]).analyze();
  if(axe.violations.length)throw Error(label+" WCAG "+JSON.stringify(axe.violations.map(x=>({id:x.id,nodes:x.nodes.slice(0,4).map(n=>({target:n.target,why:n.failureSummary}))}))));
@@ -24,7 +24,7 @@ async function checkAxe(page,label) {
  const browser=await chromium.launch({headless:true,args:["--disable-dev-shm-usage"]});
  try {
   for(const lang of languages)for(const width of [390,1440]){
-   const context=await browser.newContext({viewport:{width,height:850}});
+   const context=await browser.newContext({viewport:{width,height:850},reducedMotion:"reduce"});
    const page=await context.newPage();
    const tally={language:lang,width,hubs:[],issues:[],contentSections:0,homePurpose:false,legacyMenu:false};
    const errors=[];
@@ -80,16 +80,86 @@ async function checkAxe(page,label) {
       assert.equal(await page.locator('.iaPrimaryLink[data-b2-area="'+hub+'"][aria-current="location"]').count(),1,"cross-link lost parent context "+hub);
       tally.hubs.push({hub,cards:count,target:canonical});
     }
+
+    // Exhaustive discoverability check: each of the 25 B2 cards must be
+    // actionable across languages and desktop/mobile. Click descriptive copy
+    // rather than the headline to catch misleading card hit areas.
+    tally.checkedCards=0;
+    for(const [hub,count] of hubs)for(let i=0;i<count;i++){
+      await page.locator('.iaPrimaryLink[data-b2-area="'+hub+'"]').click();
+      await page.locator("#"+hub+".section.active").waitFor({state:"visible",timeout:5000});
+      await page.waitForTimeout(50);
+      const card=page.locator("#"+hub+" .iaHubCard").nth(i);
+      const a=card.locator("h3 a");
+      assert.equal(await a.count(),1,hub+" card "+i+" has no single destination");
+      const dest=await a.getAttribute("data-open-section");
+      const desc=card.locator("p").first();
+      // A pointer test must scroll the card into the viewport first.
+      // page.mouse.click does NOT auto-scroll, unlike locator.click; otherwise
+      // cards below the fold falsely fail only on mobile.
+      // Scroll to a genuinely visible location. Playwright's default
+      // scrollIntoViewIfNeeded can align just beneath a sticky header, so
+      // coordinate-based mouse clicks otherwise hit the navigation bar.
+      await desc.evaluate(el=>el.scrollIntoView({behavior:"instant",block:"center",inline:"nearest"}));
+      await page.waitForTimeout(110);
+      let box=await desc.boundingBox();
+      // Bring the pointer target below the sticky 76px topbar if a navigation
+      // scroll was still being finalized. This checks the actual hit area,
+      // rather than clicking on the topbar itself.
+      for(let attempt=0;box&&box.y<105&&attempt<3;attempt++){
+        await page.evaluate(()=>window.scrollBy({top:-175,behavior:"instant"}));
+        await page.waitForTimeout(80);
+        box=await desc.boundingBox();
+      }
+      assert.ok(box&&box.width>20&&box.height>8,hub+" card "+i+" text hidden");
+      const view=page.viewportSize();
+      assert.ok(box.y>=-1&&box.y+8<view.height&&box.x>=-1&&box.x+8<view.width,
+        hub+" card "+i+" body outside viewport after scroll: "+JSON.stringify({box,view}));
+      const pointer=await page.evaluate(({x,y})=>{
+        const t=document.elementFromPoint(x,y);
+        return {tag:t?.tagName,link:t?.closest('a')?.getAttribute('href')||'',className:t?.className||''};
+      },{x:box.x+8,y:box.y+Math.min(9,box.height/2)});
+      assert.ok(pointer.link,hub+" card "+i+" descriptive area is not an active link: "+JSON.stringify({box,pointer}));
+      if(dest){
+        const anchor=await a.getAttribute("data-open-anchor");
+        const click={x:box.x+8,y:box.y+Math.min(9,box.height/2)};
+        const top=await page.evaluate(({x,y})=>{
+          const t=document.elementFromPoint(x,y);
+          return {tag:t?.tagName,tagClass:t?.className||'',link:t?.closest('a')?.getAttribute('href'),active:document.querySelector('section.section.active')?.id};
+        },click);
+        await page.mouse.click(click.x,click.y);
+        try{
+          await page.locator("#"+dest+".section.active").waitFor({state:"visible",timeout:6000});
+        }catch(err){
+          const now=await page.evaluate(()=>({active:document.querySelector('section.section.active')?.id,hash:location.hash,scrollY:scrollY}));
+          throw Error(hub+" card "+i+" failed "+dest+" click "+JSON.stringify({click,top,now})+": "+err.message);
+        }
+        if(anchor)assert.equal(await page.locator("#"+anchor).count(),1,hub+" card "+i+" lost deep anchor "+anchor);
+      }else{
+        const href=await a.getAttribute("href");
+        assert.ok(href,hub+" external card "+i+" missing href");
+        const abs=new URL(href,page.url());
+        assert.equal(abs.origin,new URL(BASE).origin,hub+" card "+i+" leaves the B2 publication");
+        assert.ok(abs.pathname.includes("/"+lang+"/"),hub+" card "+i+" changes language "+abs.pathname);
+        const response=await page.request.get(abs.href);
+        assert.equal(response.status(),200,hub+" card "+i+" links to missing page: "+abs.href);
+      }
+      tally.checkedCards++;
+    }
+    assert.equal(tally.checkedCards,25,"not all B2 cards tested");
     // The introductory Internet-basics article deliberately returns to the Home
     // overview. Home must not claim that a primary area is selected.
     // The descriptive text is not an anchor. The native title anchor must
     // nevertheless cover the entire card surface for mouse and touch users.
     await page.locator('.iaPrimaryLink[data-b2-area="ia-stories"]').click();
     const economicsCard=page.locator('#ia-stories .iaHubCard').filter({has:page.locator('a[data-open-section="economics"]')});
-    const paragraphBox=await economicsCard.locator('p').boundingBox();
+    const economicsDescription=economicsCard.locator('p');
+    await economicsDescription.evaluate(el=>el.scrollIntoView({behavior:"instant",block:"center"}));
+    await page.waitForTimeout(100);
+    const paragraphBox=await economicsDescription.boundingBox();
     assert.ok(paragraphBox,"economics card description missing");
     await page.mouse.click(paragraphBox.x+8,paragraphBox.y+Math.min(8,paragraphBox.height/2));
-    assert.equal(await page.locator('#economics.section.active').count(),1,"descriptive area of hub card is not clickable");
+    await page.locator('#economics.section.active').waitFor({state:"visible",timeout:5000});
     await page.locator('.iaPrimaryLink[data-b2-area="ia-understand"]').click();
     await page.locator('#ia-understand a[data-open-section="overview"]').first().click();
     assert.equal(await page.locator('#overview.section.active').count(),1,"Understand overview entry broken");
