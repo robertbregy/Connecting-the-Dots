@@ -85,12 +85,6 @@ def render(root:Path=ROOT):
 </head><body>
 <a class="apsSkip" href="#aps-main">{q(t['apsAtlasTitle'])}</a>
 <header class="apsHeader"><div class="apsHeaderRow"><a class="apsBrand" href="../../{lang}/"><img class="apsLogo" src="../../assets/logo-mark.png" alt=""><span>Connecting the Dots</span></a><div class="apsHeaderControls"><nav aria-label="Languages" class="apsLanguages">{languages}</nav><button type="button" class="apsThemeToggle" id="apsThemeToggle" aria-label="Toggle light and dark theme" aria-pressed="false">◐</button></div></div></header>
-<nav class="apsPrimaryNav" aria-label="Connecting the Dots">
-<a href="../../{lang}/?tab=how">{q(t['iaNavUnderstand'])}</a>
-<a class="apsActive" aria-current="page" href="../../{lang}/?tab=explore">{q(t['iaNavExplore'])}</a>
-<a href="../../{lang}/?tab=strange">{q(t['iaNavStories'])}</a>
-<a href="../../{lang}/?tab=reveal">{q(t['iaNavRound'])}</a>
-<a href="../../{lang}/?tab=research">{q(t['iaNavResearch'])}</a></nav>
 <main id="aps-main" class="apsMain">
 <nav class="apsBreadcrumb" aria-label="Breadcrumb"><a href="../../{lang}/?tab=explore">{q(t['apsAtlasBack'])}</a>
 <span aria-hidden="true">/</span><span>ICANN 2026</span></nav>
