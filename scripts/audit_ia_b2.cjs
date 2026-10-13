@@ -95,12 +95,21 @@ async function checkAxe(page,label) {
       // A pointer test must scroll the card into the viewport first.
       // page.mouse.click does NOT auto-scroll, unlike locator.click; otherwise
       // cards below the fold falsely fail only on mobile.
-      await desc.scrollIntoViewIfNeeded();
+      // Scroll to a genuinely visible location. Playwright's default
+      // scrollIntoViewIfNeeded can align just beneath a sticky header, so
+      // coordinate-based mouse clicks otherwise hit the navigation bar.
+      await desc.evaluate(el=>el.scrollIntoView({behavior:"instant",block:"center",inline:"nearest"}));
+      await page.waitForTimeout(80);
       const box=await desc.boundingBox();
       assert.ok(box&&box.width>20&&box.height>8,hub+" card "+i+" text hidden");
       const view=page.viewportSize();
       assert.ok(box.y>=-1&&box.y+8<view.height&&box.x>=-1&&box.x+8<view.width,
         hub+" card "+i+" body outside viewport after scroll: "+JSON.stringify({box,view}));
+      const pointer=await page.evaluate(({x,y})=>{
+        const t=document.elementFromPoint(x,y);
+        return {tag:t?.tagName,link:t?.closest('a')?.getAttribute('href')||'',className:t?.className||''};
+      },{x:box.x+8,y:box.y+Math.min(9,box.height/2)});
+      assert.ok(pointer.link,hub+" card "+i+" descriptive area is not an active link: "+JSON.stringify({box,pointer}));
       if(dest){
         const anchor=await a.getAttribute("data-open-anchor");
         const click={x:box.x+8,y:box.y+Math.min(9,box.height/2)};
