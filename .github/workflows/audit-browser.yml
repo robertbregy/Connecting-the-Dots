@@ -12,6 +12,7 @@ on:
       - 'assets/**'
       - 'src/**'
       - 'data/**'
+      - 'downloads/**'
       - 'applications/**'
       - 'inside-the-round/**'
       - 'behind-the-round/**'
