@@ -39,3 +39,13 @@ body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-seri
 html[data-theme="dark"] .apsTag.apsState{background:#193629;color:#a6efbb;border-color:#396d4d}
 html[data-theme="dark"] .apsTag.apsInactive{background:#332a22;color:#edcdb0;border-color:#68503e}
 @media(max-width:720px){.apsPrimaryNav{grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;padding:8px 5px}.apsPrimaryNav a{font-size:.73rem;padding:8px 3px;hyphens:auto}.apsHeaderRow{padding:12px 15px}.apsHeaderControls{gap:7px}.apsLanguages{font-size:.8rem}.apsBrand{font-size:.96rem}.apsLogo{height:29px;width:29px}}
+
+/* Keep the B2 cross-navigation as the single navigation system; align its shell without changing other pages. */
+html[data-theme="light"] body:has(.apsHeader){--surface:#fff;--surface2:#f0f5f9;--text:#142d40;--muted:#526477;--border:#d4dfe9;--accent-text:#125e91;--accent-soft:#eaf2f8}
+html[data-theme="dark"] body:has(.apsHeader){--surface:#182535;--surface2:#233a4e;--text:#edf4fc;--muted:#b9c8d7;--border:#35495e;--accent-text:#95cff9;--accent-soft:#233a4e}
+body:has(.apsHeader) header.apsHeader{background:var(--surface);color:var(--ink);border-color:var(--border)}
+body:has(.apsHeader) main.apsMain{max-width:1150px}
+body:has(.ctdB2Trail) .apsBreadcrumb{display:none}
+body:has(.apsHeader) .ctdB2CrossNav{margin-bottom:0;background:var(--surface)}
+body:has(.apsHeader) .ctdB2CrossNav a{color:var(--ink)}
+body:has(.apsHeader) .ctdB2CrossNav a[aria-current]{background:var(--tint);color:var(--accent)}
