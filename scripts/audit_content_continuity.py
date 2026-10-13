@@ -43,6 +43,14 @@ for path in sorted(orig):
             m=re.search(r'<main\b[^>]*>[\s\S]*?</main>',s,re.I)
             return m.group() if m else ''
         am,bm=body(orig[path]),body(b[path])
+        # Approved 2026-10-14 Atlas shell integration adds only two in-page
+        # navigation actions. Ignore this precisely identified wrapper, not
+        # any dossier text, filter controls, datasets or original links.
+        if path.startswith('applications/'):
+            action=re.compile(r'<div class="apsHeroActions"><a class="apsBackAction"[^>]*>[^<]*</a><a class="apsSecondaryAction"[^>]*>[^<]*</a></div>')
+            inserts=action.findall(bm)
+            if len(inserts)==1:
+                bm=action.sub('',bm,count=1)
         articles.append(dict(path=path,exact=(am==bm),old_chars=len(am),new_chars=len(bm),original_main_in_new=bool(am) and am in bm))
 caseDatasets=[]
 for path in sorted(orig):
