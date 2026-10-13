@@ -84,13 +84,18 @@ def render(root:Path=ROOT):
 <link rel="stylesheet" href="../../assets/aps-atlas.css?v={q(pub['version'])}">
 </head><body>
 <a class="apsSkip" href="#aps-main">{q(t['apsAtlasTitle'])}</a>
-<header class="apsHeader"><div class="apsHeaderRow"><a class="apsBrand" href="../../{lang}/?tab=explore">
-<span aria-hidden="true">◉</span> Connecting the Dots</a><nav aria-label="Languages" class="apsLanguages">{languages}</nav></div></header>
+<header class="apsHeader"><div class="apsHeaderRow"><a class="apsBrand" href="../../{lang}/"><img class="apsLogo" src="../../assets/logo-mark.png" alt=""><span>Connecting the Dots</span></a><div class="apsHeaderControls"><nav aria-label="Languages" class="apsLanguages">{languages}</nav><button type="button" class="apsThemeToggle" id="apsThemeToggle" aria-label="Toggle light and dark theme" aria-pressed="false">◐</button></div></div></header>
+<nav class="apsPrimaryNav" aria-label="Connecting the Dots">
+<a href="../../{lang}/?tab=how">{q(t['iaNavUnderstand'])}</a>
+<a class="apsActive" aria-current="page" href="../../{lang}/?tab=explore">{q(t['iaNavExplore'])}</a>
+<a href="../../{lang}/?tab=strange">{q(t['iaNavStories'])}</a>
+<a href="../../{lang}/?tab=reveal">{q(t['iaNavRound'])}</a>
+<a href="../../{lang}/?tab=research">{q(t['iaNavResearch'])}</a></nav>
 <main id="aps-main" class="apsMain">
 <nav class="apsBreadcrumb" aria-label="Breadcrumb"><a href="../../{lang}/?tab=explore">{q(t['apsAtlasBack'])}</a>
 <span aria-hidden="true">/</span><span>ICANN 2026</span></nav>
 <div class="apsHero"><div class="apsEyebrow">APPLICATION ARCHAEOLOGY · ICANN 2026</div>
-<h1>{q(t['apsAtlasTitle'])}</h1><p class="apsLead">{q(t['apsAtlasIntro'])}</p></div>
+<h1>{q(t['apsAtlasTitle'])}</h1><p class="apsLead">{q(t['apsAtlasIntro'])}</p><div class="apsHeroActions"><a class="apsBackAction" href="../../{lang}/?tab=explore">← {q(t['apsAtlasBack'])}</a><a class="apsSecondaryAction" href="#aps-results">{q(t['apsAtlasSearch'])} ↓</a></div></div>
 <div class="apsMetrics">
 <article><strong>{counts['officialPublishedApplications']:,}</strong><span>{q(t['apsAtlasApps'])}</span></article>
 <article><strong>{counts['replacementRecords']:,}</strong><span>{q(t['apsAtlasReplacements'])}</span></article>
@@ -130,7 +135,15 @@ def render(root:Path=ROOT):
 </main><footer class="apsFooter">{q(t['apsAtlasFooter'])} · <a href="../../{lang}/?tab=explore">Connecting the Dots</a>
 · <a href="https://doi.org/10.5281/zenodo.23288603">RR2 · DOI</a>
 · v{q(pub['version'])}</footer>
-<script>window.CTD_APS_LANG="{lang}";window.CTD_APS_I18N={config};</script>
+<script>
+(function(){{
+ const key='ctd-theme', button=document.getElementById('apsThemeToggle');
+ const saved=localStorage.getItem(key);
+ function apply(mode){{document.documentElement.dataset.theme=mode;button.setAttribute('aria-pressed',String(mode==='dark'));}}
+ apply(saved==='dark'||saved==='light'?saved:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
+ button.addEventListener('click',()=>{{const mode=document.documentElement.dataset.theme==='dark'?'light':'dark';apply(mode);localStorage.setItem(key,mode);}});
+}})();
+window.CTD_APS_LANG="{lang}";window.CTD_APS_I18N={config};</script>
 <script defer src="../../data/aps_2026_application_graph.js?v={q(pub['version'])}"></script>
 <script defer src="../../assets/aps-atlas.js?v={q(pub['version'])}"></script></body></html>
 '''
