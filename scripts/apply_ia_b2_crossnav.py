@@ -228,7 +228,7 @@ var picker=document.getElementById("ctdGuideLanguage");
 if(picker)picker.addEventListener("change",function(){{
  var selected=picker.value;
  if(["en","it","de","fr"].indexOf(selected)>=0){{
- window.location.href="{prefix}/behind-the-round/"+selected+"/{file.parent.name}/";
+ window.location.href="{CASE_SENSITIVE_PREFIX}behind-the-round/"+selected+"/{file.parent.name}/";
  }}
 }});
 }})();</script>'''
