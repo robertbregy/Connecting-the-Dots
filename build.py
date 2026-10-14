@@ -196,8 +196,8 @@ def build_index() -> None:
     if html.count(ia_marker) != 1:
         raise SystemExit("IA B2 hub injection marker missing or duplicated")
     ia_fragment = (ROOT / "src" / "ia-b2-hubs.html").read_text(encoding="utf-8")
-    if len(ia_fragment) < 3000 or ia_fragment.count('class="section iaHub"') != 5:
-        raise SystemExit("IA B2 five hub families incomplete")
+    if len(ia_fragment) < 3000 or ia_fragment.count('class="section iaHub"') != 6:
+        raise SystemExit("IA B2 six hub families incomplete")
     html = html.replace(ia_marker, ia_fragment)
     marker = "<!-- CTD_INSIDE_ROUND_EVENTS -->"
     if html.count(marker) != 1:
