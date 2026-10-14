@@ -71,7 +71,12 @@ const bridge=/<div class="panel cityHelsinkiBridge">[\s\S]*?<\/div>\n(?=<\/secti
 const caseArticle=/\n<article class="helsinkiCase"[\s\S]*?<\/article>/g;
 assert.equal((parityRaw.match(bridge)||[]).length,1,'Missing or repeated Helsinki city-context card');
 assert.equal((parityRaw.match(caseArticle)||[]).length,1,'Missing or repeated Helsinki termination case');
-const unwrapped=parityRaw.replace(bridge,'').replace(caseArticle,'');
+// Reviewed cross-reference from application outcomes to the independently
+// maintained gTLD cemetery: exclude only this exact added link from the
+// historic A/B text digest while requiring the live source to retain it.
+const outcomesCemeteryLink='<p class="small"><a class="sourceChip" href="#cemetery" data-open-section="cemetery" data-i18n="cemeteryOpenChapter"></a></p>';
+assert.equal(parityRaw.split(outcomesCemeteryLink).length,2,'Application outcomes cemetery cross-reference missing or duplicated');
+const unwrapped=parityRaw.replace(bridge,'').replace(caseArticle,'').replace(outcomesCemeteryLink,'');
 const ranges=ids.map(id=>{
  const re=new RegExp('<section\\b[^>]*\\bid="'+id+'"[^>]*>');
  const found=re.exec(unwrapped);
@@ -90,6 +95,6 @@ for(let i=0;i<ranges.length;i++){
  passed.push(id);
 }
 assert.equal(passed.length,21,'Lost a canonical A section');
-assert.equal((source.match(/class="iaPrimaryLink"/g)||[]).length,5,'Five B2 routes missing');
+assert.equal((source.match(/class="iaPrimaryLink"/g)||[]).length,6,'Six B2 routes missing');
 assert.equal((source.match(/<!-- CTD_IA_B2_HUBS -->/g)||[]).length,1,'B2 hubs not integrated into the normal generator');
 console.log('IA_B2_SOURCE_PARITY_VERIFIED '+JSON.stringify({baselineMain:'ec231cc12d35fa91ff5340ad057a483ce23a5ca4',preservedSections:passed.length,originalHomeRecovered:true,purposeLedHomeAddedChars:end-start,unchangedDatasets:true}));
