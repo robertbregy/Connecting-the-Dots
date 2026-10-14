@@ -178,7 +178,16 @@ def apply(root: Path) -> int:
         html = file.read_text(encoding="utf-8")
         if 'class="ctdB2CrossNav"' in html:
             assert html.count('class="ctdB2CrossNav"') == 1, file
-            upgraded = add_crosspage_features(html, file, lang, root, area, translations[lang])
+            # Refresh navigation in previously generated standalone pages too.
+            # These pages may still contain the old five-area menu.
+            canonical_nav = make_navigation(root, file, lang, area, translations[lang])
+            upgraded, replaced = re.subn(
+                r'<nav class="ctdB2CrossNav"[^>]*>[\\s\\S]*?</nav>',
+                lambda _m: canonical_nav, html, count=1,
+            )
+            if replaced != 1:
+                raise ValueError(f"Cannot refresh IA B2 navigation: {file}")
+            upgraded = add_crosspage_features(upgraded, file, lang, root, area, translations[lang])
             if upgraded != html:
                 file.write_text(upgraded, encoding="utf-8")
                 patched += 1
