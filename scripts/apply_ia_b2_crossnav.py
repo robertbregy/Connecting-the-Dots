@@ -202,7 +202,7 @@ def unify_governance_shell(html: str, file: Path, lang: str) -> str:
 <option value="en"{" selected" if lang=="en" else ""}>EN</option><option value="de"{" selected" if lang=="de" else ""}>DE</option><option value="fr"{" selected" if lang=="fr" else ""}>FR</option><option value="it"{" selected" if lang=="it" else ""}>IT</option>
 </select></label><button class="control" id="ctdGuideTheme" type="button" aria-label="Toggle theme">◐</button></div>
 </div></header>'''
-    html, changed = re.subn(r'<header><nav aria-label="Languages">[\\s\\S]*?</nav></header>',
+    html, changed = re.subn(r'<header><nav aria-label="Languages">[\s\S]*?</nav></header>',
                            lambda _m: shell_header, html, count=1)
     if changed != 1:
         raise ValueError(f"Cannot apply shared header to {file}")
