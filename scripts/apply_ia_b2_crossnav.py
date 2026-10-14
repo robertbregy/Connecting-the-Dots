@@ -222,13 +222,13 @@ def unify_governance_shell(html: str, file: Path, lang: str) -> str:
     html = html.replace('<main class=', '<span id="ctd-article-main" tabindex="-1"></span>\n<main class=', 1)
     # The research article remains unchanged; its framing now shares the site's footer.
     footer_html = f'''<footer class="footer ctdGuideFooter">
-<a class="footerFeedback" href="{home}?tab=sources#report-error">{home_label}</a>
+<a class="footerFeedback" href="{home}">{home_label}</a>
 <span>Connecting the Dots</span>
 <a class="footerDoi" href="https://doi.org/10.5281/zenodo.23288603" target="_blank" rel="noopener">RR2 · DOI 10.5281/zenodo.23288603</a>
 <a class="footerGithub" href="https://github.com/robertbregy/Connecting-the-Dots" target="_blank" rel="noopener">GitHub · source</a>
 <a href="https://doi.org/10.5281/zenodo.23262623" target="_blank" rel="noopener">RR1</a>
 </footer>'''
-    html, footer_count = re.subn(r'<footer>[\\s\\S]*?</footer>', lambda _m: footer_html, html, count=1)
+    html, footer_count = re.subn(r'<footer>[\s\S]*?</footer>', lambda _m: footer_html, html, count=1)
     if footer_count != 1:
         raise ValueError(f"Cannot apply shared footer to {file}")
     script = f'''<script id="ctd-guide-controls">(function(){{
