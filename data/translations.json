@@ -2406,7 +2406,15 @@
     "econEditorialIdentityTitle": "Brands, products and AI agent identities: different logics",
     "econEditorialIdentityBody": "ICANN reports 333 brand applications on Reveal Day. A corporate brand, a product name and a possible digital-agent identity are different strategies. Using TLDs as trust infrastructure for AI agents remains a hypothesis, not an established result.",
     "econEditorialExploreContests": "Explore contention →",
-    "econEditorialDisclaimer": "Editorial analysis dated 14 October 2026. ICANN statistics, locally derived groups and third-party Intercap figures have different evidentiary status and must not be conflated."
+    "econEditorialDisclaimer": "Editorial analysis dated 14 October 2026. ICANN statistics, locally derived groups and third-party Intercap figures have different evidentiary status and must not be conflated.",
+    "iaStoryGroupSocietyTitle": "TLDs in society",
+    "iaStoryGroupSocietyLead": "How domains shape cities, markets and communities.",
+    "iaStoryGroupConflictsTitle": "Conflicts and disputes",
+    "iaStoryGroupConflictsLead": "When applicants compete for a string or rights and interests collide.",
+    "iaStoryGroupLifecyclesTitle": "Outcomes and lifecycles",
+    "iaStoryGroupLifecyclesLead": "From applications never delegated to TLDs that ended or changed operators.",
+    "iaStoryGroupOdditiesTitle": "The unusual Internet",
+    "iaStoryGroupOdditiesLead": "Anomalies, exceptions and paradoxes in Internet naming."
   },
   "it": {
     "brand": "Brand",
@@ -4815,7 +4823,15 @@
     "econEditorialIdentityTitle": "Marchi, prodotti e identità per agenti AI: tre logiche diverse",
     "econEditorialIdentityBody": "ICANN registra 333 candidature di tipo brand al Reveal Day. Un marchio aziendale, il nome di un prodotto e l'eventuale identità di un agente digitale non sono la stessa strategia. L'uso di TLD come infrastruttura di fiducia per agenti AI resta una prospettiva da valutare, non un risultato già dimostrato.",
     "econEditorialExploreContests": "Esplora le contese →",
-    "econEditorialDisclaimer": "Lettura editoriale del 14 ottobre 2026. Fonti e denominatori diversi non vanno sommati; le statistiche ICANN, i gruppi calcolati dal progetto e l'analisi giornalistica Intercap hanno statuti probatori distinti."
+    "econEditorialDisclaimer": "Lettura editoriale del 14 ottobre 2026. Fonti e denominatori diversi non vanno sommati; le statistiche ICANN, i gruppi calcolati dal progetto e l'analisi giornalistica Intercap hanno statuti probatori distinti.",
+    "iaStoryGroupSocietyTitle": "I TLD nella società",
+    "iaStoryGroupSocietyLead": "Come i domini influenzano città, mercati e comunità.",
+    "iaStoryGroupConflictsTitle": "Conflitti e controversie",
+    "iaStoryGroupConflictsLead": "Quando più soggetti rivendicano una stringa o interessi e diritti entrano in collisione.",
+    "iaStoryGroupLifecyclesTitle": "Esiti e cicli di vita",
+    "iaStoryGroupLifecyclesLead": "Dalle candidature senza delega ai TLD cessati o passati a un altro operatore.",
+    "iaStoryGroupOdditiesTitle": "L’Internet insolito",
+    "iaStoryGroupOdditiesLead": "Anomalie, eccezioni e paradossi dell’Internet dei nomi."
   },
   "de": {
     "brand": "Marke",
@@ -7224,7 +7240,15 @@
     "econEditorialIdentityTitle": "Marken, Produkte und KI-Agenten: unterschiedliche Ansätze",
     "econEditorialIdentityBody": "ICANN meldet zum Reveal Day 333 Markenbewerbungen. Unternehmensmarke, Produktname und mögliche digitale Agentenidentität stehen für verschiedene Strategien. TLDs als Vertrauensinfrastruktur für KI-Agenten sind bisher eine Hypothese, kein belegtes Ergebnis.",
     "econEditorialExploreContests": "Konkurrenzfälle erkunden →",
-    "econEditorialDisclaimer": "Redaktionelle Einordnung vom 14. Oktober 2026. Offizielle ICANN-Zahlen, eigene Auswertungen und Presseangaben zu Intercap haben unterschiedliche Aussagekraft."
+    "econEditorialDisclaimer": "Redaktionelle Einordnung vom 14. Oktober 2026. Offizielle ICANN-Zahlen, eigene Auswertungen und Presseangaben zu Intercap haben unterschiedliche Aussagekraft.",
+    "iaStoryGroupSocietyTitle": "TLDs in der Gesellschaft",
+    "iaStoryGroupSocietyLead": "Wie Domains Städte, Märkte und Gemeinschaften prägen.",
+    "iaStoryGroupConflictsTitle": "Konflikte und Streitfälle",
+    "iaStoryGroupConflictsLead": "Wenn Bewerber um einen Namen konkurrieren oder Rechte und Interessen aufeinanderprallen.",
+    "iaStoryGroupLifecyclesTitle": "Ergebnisse und Lebenszyklen",
+    "iaStoryGroupLifecyclesLead": "Von nie delegierten Bewerbungen bis zu beendeten TLDs oder Betreiberwechseln.",
+    "iaStoryGroupOdditiesTitle": "Das ungewöhnliche Internet",
+    "iaStoryGroupOdditiesLead": "Anomalien, Ausnahmen und Paradoxien der Internet-Namenswelt."
   },
   "fr": {
     "brand": "Marque",
@@ -9633,6 +9657,14 @@
     "econEditorialIdentityTitle": "Marques, produits et agents IA : des logiques distinctes",
     "econEditorialIdentityBody": "L'ICANN annonce 333 candidatures de type marque lors du Reveal Day. Une marque d'entreprise, un produit et une éventuelle identité d'agent numérique répondent à des stratégies différentes. Les TLD comme infrastructure de confiance pour agents IA restent une hypothèse, non un fait démontré.",
     "econEditorialExploreContests": "Explorer les contentions →",
-    "econEditorialDisclaimer": "Analyse éditoriale au 14 octobre 2026. Chiffres officiels ICANN, regroupements calculés et données de presse sur Intercap ne présentent pas le même degré de preuve."
+    "econEditorialDisclaimer": "Analyse éditoriale au 14 octobre 2026. Chiffres officiels ICANN, regroupements calculés et données de presse sur Intercap ne présentent pas le même degré de preuve.",
+    "iaStoryGroupSocietyTitle": "Les TLD dans la société",
+    "iaStoryGroupSocietyLead": "Comment les domaines façonnent les villes, les marchés et les communautés.",
+    "iaStoryGroupConflictsTitle": "Conflits et litiges",
+    "iaStoryGroupConflictsLead": "Quand des candidats se disputent une chaîne ou que des droits et intérêts s'opposent.",
+    "iaStoryGroupLifecyclesTitle": "Issues et cycles de vie",
+    "iaStoryGroupLifecyclesLead": "Des candidatures jamais déléguées aux TLD disparus ou ayant changé d'opérateur.",
+    "iaStoryGroupOdditiesTitle": "L’Internet insolite",
+    "iaStoryGroupOdditiesLead": "Anomalies, exceptions et paradoxes du système de nommage d'Internet."
   }
 }
