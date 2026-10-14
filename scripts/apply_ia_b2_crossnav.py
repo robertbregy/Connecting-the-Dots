@@ -184,6 +184,53 @@ def make_navigation(root: Path, file: Path, lang: str, selected: str, texts: dic
     return '<nav class="ctdB2CrossNav" aria-label="' + escape(texts["iaPrimaryLabel"], quote=True) + '">' + "".join(items) + "</nav>"
 
 
+
+def unify_governance_shell(html: str, file: Path, lang: str) -> str:
+    """Use the actual main-site stylesheet and header controls on evergreen guides."""
+    if file.parent.name not in ("sanctions-and-dns", "who-controls-internet-access"):
+        return html
+    prefix = "/".join(".." for _ in file.parent.relative_to(ROOT).parts)
+    home = f"{prefix}/{lang}/"
+    # Retain article-specific styling, structured data, sources and interactive simulator.
+    css_link = f'<link rel="stylesheet" href="{prefix}/assets/style.css" id="ctd-main-style">'
+    if 'id="ctd-main-style"' not in html:
+        html = html.replace("</head>", css_link + "</head>", 1)
+    shell_header = f'''<a class="skipLink" href="#ctd-article-main">Skip to main content</a>
+<header class="topbar"><div class="topinner">
+<a class="brand brandButton" href="{home}" aria-label="Home"><img alt="" src="{prefix}/assets/logo-mark.png"><span class="brandTitle">Connecting the Dots</span></a>
+<div class="controls"><label class="ctdGuideLang"><span class="sr-only">Language</span><select aria-label="Language" class="control lang" id="ctdGuideLanguage">
+<option value="en"{" selected" if lang=="en" else ""}>EN</option><option value="de"{" selected" if lang=="de" else ""}>DE</option><option value="fr"{" selected" if lang=="fr" else ""}>FR</option><option value="it"{" selected" if lang=="it" else ""}>IT</option>
+</select></label><button class="control" id="ctdGuideTheme" type="button" aria-label="Toggle theme">◐</button></div>
+</div></header>'''
+    html, changed = re.subn(r'<header><nav aria-label="Languages">[\\s\\S]*?</nav></header>',
+                           lambda _m: shell_header, html, count=1)
+    if changed != 1:
+        raise ValueError(f"Cannot apply shared header to {file}")
+    html = html.replace('<main class=', '<main id="ctd-article-main" class=', 1)
+    script = f'''<script id="ctd-guide-controls">(function(){{
+"use strict";
+var root=document.documentElement;
+var themeKey="dotTheme";
+function theme(value){{root.setAttribute("data-theme",value==="dark"?"dark":"light");}}
+try{{theme(localStorage.getItem(themeKey)||"light");}}catch(e){{theme("light");}}
+var themeButton=document.getElementById("ctdGuideTheme");
+if(themeButton)themeButton.addEventListener("click",function(){{
+ var next=root.getAttribute("data-theme")==="dark"?"light":"dark";theme(next);
+ try{{localStorage.setItem(themeKey,next);}}catch(e){{}}
+}});
+var picker=document.getElementById("ctdGuideLanguage");
+if(picker)picker.addEventListener("change",function(){{
+ var selected=picker.value;
+ if(["en","it","de","fr"].indexOf(selected)>=0){{
+ window.location.href="{prefix}/behind-the-round/"+selected+"/{file.parent.name}/";
+ }}
+}});
+}})();</script>'''
+    if 'id="ctd-guide-controls"' not in html:
+        html=html.replace("</body>",script+"</body>",1)
+    return html
+
+
 def apply(root: Path) -> int:
     translations = json.loads((root / "data" / "translations.json").read_text(encoding="utf-8"))
     patched = 0
@@ -193,6 +240,7 @@ def apply(root: Path) -> int:
         if not file.exists():
             raise ValueError(f"Missing independent page: {file.relative_to(root)}")
         html = file.read_text(encoding="utf-8")
+        html = unify_governance_shell(html, file, lang)
         if 'class="ctdB2CrossNav"' in html:
             assert html.count('class="ctdB2CrossNav"') == 1, file
             # Refresh navigation in previously generated standalone pages too.
