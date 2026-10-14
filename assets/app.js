@@ -5,6 +5,8 @@ const PUB=window.DOT_PUBLICATION||{state:'reveal-day'};
 const qp=new URLSearchParams(location.search),validLang=['en','de','fr','it']; explorerPreset=qp.get('preset')||'all';
 function storageGet(k){try{return localStorage.getItem(k)}catch(e){return null}} function storageSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
 const pageLang=document.documentElement.dataset.ctdLanguage||document.documentElement.lang;lang=validLang.includes(pageLang)?pageLang:'en';theme=storageGet('dotTheme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');activeTab=qp.get('tab')||'overview';
+// Historic Economics deep links remain resolvable after the Cemetery chapter split.
+if(activeTab==='economics'&&['#gtld-cemetery','#helsinki-termination'].includes(location.hash))activeTab='cemetery';
 function t(k){return (I18N[lang]&&I18N[lang][k])||(I18N.en&&I18N.en[k])||k}
 function tx(k,vars={}){let out=t(k);for(const [name,value] of Object.entries(vars))out=out.split('{'+name+'}').join(String(value));return out}
 function epBadge(kind){const cls=kind==='fact'?'factBadge':kind==='derived'?'derivedBadge':kind==='reading'?'readingBadge':'visionBadgeMini';return `<span class="ep ${cls}">${t(kind)}</span>`}
