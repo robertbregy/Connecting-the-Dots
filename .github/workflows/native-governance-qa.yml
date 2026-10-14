@@ -28,6 +28,16 @@ jobs:
           CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
           node scripts/verify_ia_b2_parity.cjs
           python3 scripts/release_check.py
+      - name: Install browser regression runner
+        run: |
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Verify native routing, simulator and layout in Chromium
+        run: |
+          python3 -m http.server 8128 --bind 127.0.0.1 >/tmp/ctd-native-qa-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" || true' EXIT
+          node scripts/native_governance_browser_qa.cjs
       - name: Check the native guides in each locale
         run: |
           python3 - <<'PY'
