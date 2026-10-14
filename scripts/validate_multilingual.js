@@ -60,15 +60,15 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.deepEqual(Object.keys(window.DOT_I18N),[language],page+' ships only its own dictionary');
   const translations=window.DOT_I18N[language];
   // B2 integrates a new task-first UI with all the former sections, not a separate website.
-  const iaAreas=['ia-understand','ia-explore','ia-stories','ia-round','ia-research'];
+  const iaAreas=['ia-understand','ia-explore','ia-stories','ia-outcomes','ia-round','ia-research'];
   const iaNav=[...document.querySelectorAll('.iaPrimaryNav .iaPrimaryLink')];
-  assert.equal(iaNav.length,5,page+' must show precisely five primary task areas');
+  assert.equal(iaNav.length,6,page+' must show precisely six primary task areas');
   const hubSections=[...document.querySelectorAll('section.iaHub')];
   assert.deepEqual(hubSections.map(x=>x.id),iaAreas,page+' broken IA hub order');
   for(const [index,id] of iaAreas.entries()){
     assert.equal(iaNav[index].getAttribute('data-open-section'),id,page+' IA route destination');
     assert.ok(document.getElementById(id)?.querySelector('h2'),page+' missing real task landing '+id);
-    assert.equal(iaNav[index].textContent.trim(),translations[['iaNavUnderstand','iaNavExplore','iaNavStories','iaNavRound','iaNavResearch'][index]],page+' incomplete IA navigation locale');
+    assert.equal(iaNav[index].textContent.trim(),translations[['iaNavUnderstand','iaNavExplore','iaNavStories','iaNavOutcomes','iaNavRound','iaNavResearch'][index]],page+' incomplete IA navigation locale');
   }
   assert.equal(document.querySelectorAll('.iaHubCard').length,26,page+' must preserve all 26 IA access cards');
   const legacySections=['overview','explore','timeline','how','beyond','cities','geography','economics','cemetery','social','contention','refusals','disputes','strange','reveal','inside-round','behind-round','lugano','research','paper','resources','sources'];
