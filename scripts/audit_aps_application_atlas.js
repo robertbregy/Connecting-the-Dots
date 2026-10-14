@@ -119,4 +119,4 @@ const base='http://127.0.0.1:8123';
  await browser.close();
  assert.equal(metrics.overflows,0);assert.equal(metrics.errors,0);
  console.log('APS_ATLAS_BROWSER_AUDIT '+JSON.stringify(metrics));
-})().catch(e=>{console.error('APS_ATLAS_BROWSER_FAILURE '+e.stack);process.exitCode=2});
+})().catch(e=>{console.error('APS_ATLAS_BROWSER_FAILURE '+e.stack);process.exit(2)});
