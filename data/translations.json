@@ -2342,7 +2342,7 @@
     "iaHubExploreLead": "Search a TLD, a proposed string or a formal application. These are connected objects, not synonyms.",
     "iaHubStoriesEyebrow": "PEOPLE AND POWER",
     "iaHubStoriesTitle": "Stories and issues",
-    "iaHubStoriesLead": "Economics, communities, cities, power, application outcomes and disputes, with links to underlying evidence.",
+    "iaHubStoriesLead": "Territories, markets, communities and curiosities: what TLDs mean in the real world.",
     "iaHubRoundEyebrow": "THE ONGOING PROCESS",
     "iaHubRoundTitle": "Follow the ICANN 2026 round",
     "iaHubRoundLead": "Dated statistics, timeline, field observations and the .lugano case. Verified events are kept separate from open questions.",
@@ -2414,7 +2414,12 @@
     "iaStoryGroupLifecyclesTitle": "Outcomes and lifecycles",
     "iaStoryGroupLifecyclesLead": "From applications never delegated to TLDs that ended or changed operators.",
     "iaStoryGroupOdditiesTitle": "The unusual Internet",
-    "iaStoryGroupOdditiesLead": "Anomalies, exceptions and paradoxes in Internet naming."
+    "iaStoryGroupOdditiesLead": "Anomalies, exceptions and paradoxes in Internet naming.",
+    "iaNavOutcomes": "Conflicts & outcomes",
+    "iaHubOutcomesEyebrow": "RULES IN PRACTICE",
+    "iaHubOutcomesTitle": "Conflicts & outcomes",
+    "iaHubOutcomesLead": "From competing applications to the fate of extensions: objections, decisions, withdrawals and lifecycles.",
+    "iaHubOutcomesContext": "Applications and TLDs have distinct stages: rejection before delegation is not the same as ending an active delegation."
   },
   "it": {
     "brand": "Brand",
@@ -4759,7 +4764,7 @@
     "iaHubExploreLead": "Cerca un TLD, una stringa proposta o una candidatura formale. Sono oggetti collegati, ma non sinonimi.",
     "iaHubStoriesEyebrow": "PERSONE E POTERE",
     "iaHubStoriesTitle": "Storie e questioni",
-    "iaHubStoriesLead": "Economia, comunità, città, equilibri di potere, rifiuti e controversie: ogni tema collega i racconti alle fonti.",
+    "iaHubStoriesLead": "Territori, mercati, comunità e curiosità: cosa significano i TLD nel mondo reale.",
     "iaHubRoundEyebrow": "IL PROCESSO IN CORSO",
     "iaHubRoundTitle": "Seguire il round ICANN 2026",
     "iaHubRoundLead": "Statistiche datate, cronologia, osservazioni dal campo e il caso .lugano. Distinguiamo gli eventi verificati dalle domande ancora aperte.",
@@ -4831,7 +4836,12 @@
     "iaStoryGroupLifecyclesTitle": "Esiti e cicli di vita",
     "iaStoryGroupLifecyclesLead": "Dalle candidature senza delega ai TLD cessati o passati a un altro operatore.",
     "iaStoryGroupOdditiesTitle": "L’Internet insolito",
-    "iaStoryGroupOdditiesLead": "Anomalie, eccezioni e paradossi dell’Internet dei nomi."
+    "iaStoryGroupOdditiesLead": "Anomalie, eccezioni e paradossi dell’Internet dei nomi.",
+    "iaNavOutcomes": "Conflitti ed esiti",
+    "iaHubOutcomesEyebrow": "LE REGOLE ALLA PROVA",
+    "iaHubOutcomesTitle": "Conflitti ed esiti",
+    "iaHubOutcomesLead": "Dalle candidature contese al destino delle estensioni: obiezioni, decisioni, rinunce e cicli di vita.",
+    "iaHubOutcomesContext": "Candidature e TLD attraversano fasi diverse: un rifiuto prima della delega non è la cessazione di una delega già attiva."
   },
   "de": {
     "brand": "Marke",
@@ -7176,7 +7186,7 @@
     "iaHubExploreLead": "Suchen Sie eine TLD, einen vorgeschlagenen String oder eine Bewerbung. Diese Objekte sind verbunden, aber verschieden.",
     "iaHubStoriesEyebrow": "MENSCHEN UND MACHT",
     "iaHubStoriesTitle": "Geschichten und Fragen",
-    "iaHubStoriesLead": "Wirtschaft, Gemeinschaften, Städte, Macht, Bewerbungsfolgen und Streitfälle mit belegbaren Quellen.",
+    "iaHubStoriesLead": "Territorien, Märkte, Gemeinschaften und Kuriositäten: was TLDs in der Welt bedeuten.",
     "iaHubRoundEyebrow": "LAUFENDES VERFAHREN",
     "iaHubRoundTitle": "Die ICANN-Runde 2026 verfolgen",
     "iaHubRoundLead": "Datierte Statistiken, Chronologie, Beobachtungen und der Fall .lugano. Gesicherte Ereignisse bleiben von offenen Fragen getrennt.",
@@ -7248,7 +7258,12 @@
     "iaStoryGroupLifecyclesTitle": "Ergebnisse und Lebenszyklen",
     "iaStoryGroupLifecyclesLead": "Von nie delegierten Bewerbungen bis zu beendeten TLDs oder Betreiberwechseln.",
     "iaStoryGroupOdditiesTitle": "Das ungewöhnliche Internet",
-    "iaStoryGroupOdditiesLead": "Anomalien, Ausnahmen und Paradoxien der Internet-Namenswelt."
+    "iaStoryGroupOdditiesLead": "Anomalien, Ausnahmen und Paradoxien der Internet-Namenswelt.",
+    "iaNavOutcomes": "Konflikte und Ergebnisse",
+    "iaHubOutcomesEyebrow": "REGELN IN DER PRAXIS",
+    "iaHubOutcomesTitle": "Konflikte und Ergebnisse",
+    "iaHubOutcomesLead": "Von umstrittenen Bewerbungen bis zum Schicksal der Endungen: Einwände, Entscheidungen, Rückzüge und Lebenszyklen.",
+    "iaHubOutcomesContext": "Bewerbungen und TLDs durchlaufen verschiedene Phasen: Eine Ablehnung vor der Delegierung ist nicht deren spätere Beendigung."
   },
   "fr": {
     "brand": "Marque",
@@ -9593,7 +9608,7 @@
     "iaHubExploreLead": "Recherchez un TLD, une chaîne proposée ou une candidature. Ces objets sont liés, mais distincts.",
     "iaHubStoriesEyebrow": "PERSONNES ET POUVOIR",
     "iaHubStoriesTitle": "Histoires et enjeux",
-    "iaHubStoriesLead": "Économie, communautés, villes, pouvoir, issues de candidatures et litiges, avec leurs preuves documentaires.",
+    "iaHubStoriesLead": "Territoires, marchés, communautés et curiosités : ce que les TLD signifient dans le monde réel.",
     "iaHubRoundEyebrow": "LE PROCESSUS EN COURS",
     "iaHubRoundTitle": "Suivre le cycle ICANN 2026",
     "iaHubRoundLead": "Statistiques datées, chronologie, observations et cas .lugano. Les événements avérés sont séparés des questions ouvertes.",
@@ -9665,6 +9680,11 @@
     "iaStoryGroupLifecyclesTitle": "Issues et cycles de vie",
     "iaStoryGroupLifecyclesLead": "Des candidatures jamais déléguées aux TLD disparus ou ayant changé d'opérateur.",
     "iaStoryGroupOdditiesTitle": "L’Internet insolite",
-    "iaStoryGroupOdditiesLead": "Anomalies, exceptions et paradoxes du système de nommage d'Internet."
+    "iaStoryGroupOdditiesLead": "Anomalies, exceptions et paradoxes du système de nommage d'Internet.",
+    "iaNavOutcomes": "Conflits et issues",
+    "iaHubOutcomesEyebrow": "LES RÈGLES À L’ÉPREUVE",
+    "iaHubOutcomesTitle": "Conflits et issues",
+    "iaHubOutcomesLead": "Des candidatures concurrentes au devenir des extensions : objections, décisions, retraits et cycles de vie.",
+    "iaHubOutcomesContext": "Candidatures et TLD traversent des étapes distinctes : un refus avant délégation n'est pas la fin d'une délégation active."
   }
 }
