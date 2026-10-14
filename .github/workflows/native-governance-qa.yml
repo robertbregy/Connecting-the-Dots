@@ -36,6 +36,7 @@ jobs:
               html=(Path(lang)/'index.html').read_text()
               for slug in ('governance-access','governance-sanctions'):
                   assert html.count('id="'+slug+'"')==1, (lang,slug)
+              assert 'class="ctdNativeHeading"' in html
               assert 'id="accessSimulator"' in html
               assert 'id="ctd-native-access-simulator"' in html
           print('NATIVE_GUIDES_ALL_LOCALES_VERIFIED')
