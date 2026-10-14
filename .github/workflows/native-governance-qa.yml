@@ -1,0 +1,42 @@
+name: Native governance integration QA
+on:
+  push:
+    branches:
+      - feature/native-governance-guides-20261015
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Build the complete site in the branch
+        run: python3 build.py
+      - name: Validate languages, research and delivery
+        run: |
+          node scripts/validate_multilingual.js
+          node scripts/validate_internet_access.js
+          CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
+          node scripts/verify_ia_b2_parity.cjs
+          python3 scripts/release_check.py
+      - name: Check the native guides in each locale
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          for lang in ('it','en','de','fr'):
+              html=(Path(lang)/'index.html').read_text()
+              for slug in ('governance-access','governance-sanctions'):
+                  assert html.count('id="'+slug+'"')==1, (lang,slug)
+              assert 'id="accessSimulator"' in html
+              assert 'id="ctd-native-access-simulator"' in html
+          print('NATIVE_GUIDES_ALL_LOCALES_VERIFIED')
+          PY
