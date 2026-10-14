@@ -14,6 +14,31 @@ from scripts.render_behind_round import BEHIND_CSS
 ROOT = Path(__file__).resolve().parents[1]
 SLUG = "sanctions-and-dns"
 CSS_EXTRA = """
+/* Editorial article treatment: consistent with the main site's typography and layout. */
+:root{--background:#f6f8fb;--surface:#fff;--surface2:#eef3f8;--text:#16243c;--muted:#455872;--border:#d3dee9;--accent:#1568ab;--accent-soft:#e7f1fa;--accent-text:#155b91}
+body{font-size:16px;line-height:1.7}
+header nav{max-width:1230px}
+main.governanceArticle{max-width:1080px;padding:clamp(26px,4vw,56px) clamp(20px,4vw,48px) 76px}
+.governanceArticle>h1{max-width:19ch;font-size:clamp(2.5rem,5.3vw,4.6rem);line-height:1.08;letter-spacing:-.05em;margin:10px 0 24px}
+.governanceArticle>.eyebrow{font-size:.74rem;letter-spacing:.14em}
+.governanceArticle>.lead{font-size:clamp(1.1rem,1.7vw,1.35rem);line-height:1.65;max-width:70ch;color:var(--muted);margin-bottom:32px}
+.governanceArticle>h2{font-size:clamp(1.55rem,2.6vw,2.1rem);letter-spacing:-.035em;line-height:1.2;margin:46px 0 18px}
+.governanceHero{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:34px 0 44px}
+.governanceHero>section{padding:26px;border-radius:16px;border-top:4px solid var(--accent)}
+.governanceHero>section:nth-child(2){border-top-color:#6d879d}
+.governanceHero h2{font-size:1.15rem;letter-spacing:-.015em}
+.governanceHero p{font-size:.97rem;line-height:1.64}
+.governanceArticle section.panel{padding:clamp(20px,3vw,33px);margin:12px 0;border-radius:14px;border-color:var(--border)}
+.governanceArticle section.panel h2{font-size:clamp(1.2rem,2vw,1.55rem);line-height:1.3}
+.governanceArticle section.panel p{max-width:83ch}
+.governanceCitations a{border-radius:6px;padding:3px 9px;font-size:.79rem}
+.governancePrecedents{gap:14px}
+.governancePrecedents article{border-radius:14px;padding:23px}
+.governanceArticle a{overflow-wrap:anywhere}
+.ctdB2CrossNav{max-width:1230px}
+.ctdB2Context,.ctdB2Trail{max-width:1080px}
+@media(max-width:740px){main.governanceArticle{padding:27px 18px 55px}.governanceHero{grid-template-columns:1fr;gap:10px;margin:26px 0 34px}.governanceHero>section{padding:20px}.governanceArticle>h2{margin-top:34px}.governanceArticle section.panel{padding:20px}}
+
 .governanceHero{margin:25px 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .governanceHero>section{background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:20px}
 .governanceHero h2{font-size:1.12rem;margin:0 0 10px}
