@@ -16,6 +16,19 @@ const base='http://127.0.0.1:8123';
    const response=await page.goto(base+'/applications/'+lang+'/',{waitUntil:'load',timeout:35000});
    assert.equal(response.status(),200,lang+' must be reachable');
    await page.waitForSelector('.apsCard',{timeout:13000});
+   assert.equal(await page.locator('#apsLangSelect').inputValue(),lang,'Main-site language selector must match Atlas locale');
+   assert.equal(await page.locator('.apsHeader .apsLanguages').count(),0,'No duplicate language navigation');
+   await page.evaluate(()=>localStorage.setItem('dotTheme','light'));
+   await page.reload({waitUntil:'load'});
+   await page.waitForSelector('.apsCard',{timeout:13000});
+   const light=await page.evaluate(()=>({theme:document.documentElement.dataset.theme,bg:getComputedStyle(document.body).backgroundColor,
+      foreground:getComputedStyle(document.body).color}));
+   assert.equal(light.theme,'light','Atlas must share the main-site saved theme');
+   assert.equal(light.bg,'rgb(247, 247, 248)','Light mode must match main site even if OS prefers dark');
+   await page.locator('#apsThemeToggle').click();
+   assert.equal(await page.evaluate(()=>localStorage.getItem('dotTheme')),'dark','Atlas theme control must update the main-site preference');
+   assert.equal(await page.evaluate(()=>document.documentElement.dataset.theme),'dark');
+   await page.locator('#apsThemeToggle').click();
    const loaded=await page.evaluate(()=>({
     cards:document.querySelectorAll('.apsCard').length,
     lang:document.documentElement.lang,
