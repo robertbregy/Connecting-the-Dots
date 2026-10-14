@@ -35,7 +35,7 @@ async function checkAxe(page,label) {
     await page.locator(".iaPrimaryLink").first().waitFor({state:"visible"});
     await page.waitForTimeout(100);
     assert.equal(await page.locator("html").getAttribute("lang"),lang);
-    assert.equal(await page.locator(".iaPrimaryLink").count(),5,"five path navigation items");
+    assert.equal(await page.locator(".iaPrimaryLink").count(),6,"six path navigation items");
     assert.equal(await page.locator('.iaPrimaryLink[aria-current="location"]').count(),0,"Home must not pretend the reader has chosen Understand");
     // The primary paths and the purpose statement must not be buried beneath
     // the fold on first arrival, especially on mobile.
@@ -195,7 +195,7 @@ async function checkAxe(page,label) {
    }catch(err){tally.issues.push(err.message);report.issues.push({lang,width,message:err.message});}
    finally {report.languages.push(tally);await context.close();}
   }
-  // All independent guides and tools share the same five-area navigation.
+  // All independent guides and tools share the same six-area navigation.
   const independent=[];
   for(const lang of languages){
     for(const family of ["applications","inside-the-round","behind-the-round"]){
@@ -214,7 +214,7 @@ async function checkAxe(page,label) {
     try{
       const response=await page.goto(BASE+entry.url,{waitUntil:"domcontentloaded",timeout:20000});
       assert.equal(response.status(),200,entry.url+" not found");
-      assert.equal(await page.locator(".ctdB2CrossNav a").count(),5,entry.url+" missing B2 navigation");
+      assert.equal(await page.locator(".ctdB2CrossNav a").count(),6,entry.url+" missing B2 navigation");
       assert.equal(await page.locator(".ctdB2Trail").count(),1,entry.url+" is outside the integrated B2 shell");
       assert.equal(await page.locator(".ctdB2Trail a").count(),2,entry.url+" has no Home/area breadcrumb");
       assert.equal(await page.locator(".ctdB2Trail [aria-current='page']").count(),1,entry.url+" has no current-page location");
