@@ -215,7 +215,7 @@ def validate(root: Path) -> int:
         start = html.index('class="ctdB2CrossNav"')
         end = html.find("</nav>", start)
         nav = html[start:end]
-        if len(re.findall(r'data-b2-cross-area="', nav)) != 5:
+        if len(re.findall(r'data-b2-cross-area="', nav)) != len(AREAS):
             raise ValueError(f"Broken cross-navigation: {file.relative_to(root)}")
         if nav.count('aria-current="location"') != 1 or f'data-b2-cross-area="{area}" aria-current="location"' not in nav:
             raise ValueError(f"Wrong category: {file.relative_to(root)}")
