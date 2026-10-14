@@ -203,7 +203,7 @@ async function checkAxe(page,label) {
       independent.push({url:family+"/"+lang+"/",lang,selected:family==="applications"?"explore":"round"});
     }
     for(const slug of ["objectors-eoi","replacement-strings","wdo-identity","sanctions-and-dns","who-controls-internet-access"]){
-      independent.push({url:"behind-the-round/"+lang+"/"+slug+"/",lang,
+      independent.push({url:"behind-the-round/"+lang+"/"+slug+"/"+(["sanctions-and-dns","who-controls-internet-access"].includes(slug)?"?legacy=1":""),lang,
         selected:["sanctions-and-dns","who-controls-internet-access"].includes(slug)?"explore":"round"});
     }
   }
