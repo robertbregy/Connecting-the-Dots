@@ -10,8 +10,8 @@ const BASE=process.env.CTD_TEST_BASE||"http://127.0.0.1:8128/";
 const languages=["it","en","de","fr"];
 const hubs=[
  ["ia-understand",6,"how"],
- ["ia-explore",3,"explore"],
- ["ia-stories",8,"economics"],
+ ["ia-explore",4,"explore"],
+ ["ia-stories",7,"economics"],
  ["ia-round",4,"behind-round"],
  ["ia-research",4,"research"]
 ];
@@ -58,10 +58,9 @@ async function checkAxe(page,label) {
       return [...document.querySelectorAll(".iaPrimaryLink")].map(n=>{const x=n.getBoundingClientRect();return x.width>=45&&x.left>=r.left-2&&x.right<=r.right+2});
     });
     assert.ok(visible.every(Boolean),"not all 5 navigation buttons are on screen "+JSON.stringify(visible));
-    await page.locator("#iaLegacyNavDisclosure summary").click();
+    assert.equal(await page.locator("#iaLegacyNavDisclosure").isVisible(),false,"obsolete A navigation must stay hidden");
     const oldSelectCount=await page.locator("#mobileNav option").count();
     assert.ok(oldSelectCount>=25,"old 21 sections / chapter navigation lost");
-    await page.locator("#iaLegacyNavDisclosure summary").click();
     tally.legacyMenu=true;
     const oldSections=await page.locator('section.section:not(.iaHub)').count();
     assert.equal(oldSections,21,"the canonical sections were lost or cloned");
