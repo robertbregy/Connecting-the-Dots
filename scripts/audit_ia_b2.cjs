@@ -169,7 +169,7 @@ async function checkAxe(page,label) {
     const atlasUrl=await atlas.getAttribute("href");
     assert.equal(atlasUrl,"../applications/"+lang+"/","Atlas should not leave the feature branch");
     const guide=page.locator('#ia-explore a[data-b2-resource="access"]');
-    assert.equal(await guide.getAttribute("href"),"../behind-the-round/"+lang+"/who-controls-internet-access/","Guide link changed language/branch");
+    assert.equal(await guide.getAttribute("href"),"#governance-access","Guide must open native chapter");
     await page.locator('.iaPrimaryLink[data-b2-area="ia-research"]').click();
     assert.ok((await page.locator('#ia-research .iaHubDoi').innerText()).includes("10.5281/zenodo.23288603"),"research DOI not in landing");
     if(lang==="it"||lang==="en"){
