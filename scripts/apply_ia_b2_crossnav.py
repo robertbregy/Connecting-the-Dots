@@ -212,7 +212,7 @@ def unify_governance_shell(html: str, file: Path, lang: str) -> str:
                            lambda _m: shell_header, html, count=1)
     if changed != 1:
         raise ValueError(f"Cannot apply shared header to {file}")
-    html = html.replace('<main class=', '<main id="ctd-article-main" class=', 1)
+    html = html.replace('<main class=', '<span id="ctd-article-main" tabindex="-1"></span>\n<main class=', 1)
     script = f'''<script id="ctd-guide-controls">(function(){{
 "use strict";
 var root=document.documentElement;
