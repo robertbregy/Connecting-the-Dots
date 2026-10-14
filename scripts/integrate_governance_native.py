@@ -81,11 +81,22 @@ def integrate(root: Path) -> int:
                 )
             sections.append(
                 '<section class="section ctdNativeGuide" id="' + tab + '"'
-                ' aria-labelledby="' + tab + '-title">'
+                '>'
                 '<div class="ctdNativeArticle ' + article_class + '">'
                 + body +
                 '</div></section>'
             )
+        # All entries in the main app, including those from Field Notes, open
+        # the native chapters rather than the legacy standalone documents.
+        for slug, tab, _ in KINDS:
+            destination = BASE + "behind-the-round/" + lang + "/" + slug + "/"
+            pattern = re.compile(r'(<a\\b[^>]*?\\bhref=")' + re.escape(destination) + r'("[^>]*>)')
+            def redirect_link(match):
+                tail = match.group(2)
+                if 'data-open-section=' not in tail:
+                    tail = tail[:-1] + ' data-open-section="' + tab + '">'
+                return match.group(1) + "#" + tab + tail
+            html = pattern.sub(redirect_link, html)
         # Each native chapter is a sibling of the main app's editorial sections.
         footer = '<footer class="footer"'
         if html.count(footer) != 1:
