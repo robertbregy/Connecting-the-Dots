@@ -350,8 +350,8 @@
       },
       {
         "repository_path": "assets/style.css",
-        "bytes": 132283,
-        "sha256": "3ae0d23d7a3506ca524686a76ba323c0fe3c66ded1477683176133a81efaa768"
+        "bytes": 132468,
+        "sha256": "5de16f2ca0351d1ab4e9f4fa2a66d8782a46debf2ead56340f253519fe416258"
       },
       {
         "repository_path": "data/worldmap.js",
