@@ -62,8 +62,9 @@ def native_css() -> str:
 def integrate(root: Path) -> int:
     css = native_css()
     count = 0
-    for lang in LANGS:
-        target = root / lang / "index.html"
+    targets = [(lang, root / lang / "index.html") for lang in LANGS]
+    targets.append(("en", root / "index.html"))
+    for lang, target in targets:
         if not target.exists():
             raise ValueError("Missing rendered main app: " + str(target))
         html = target.read_text(encoding="utf-8")
