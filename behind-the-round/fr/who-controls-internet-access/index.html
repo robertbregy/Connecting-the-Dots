@@ -115,7 +115,7 @@ footer{border-top:1px solid var(--border);color:var(--muted);font-size:.9rem;pad
 .accessDate{color:var(--muted);font-size:.83rem;margin:22px 0}
 @media(max-width:860px){.accessStages{grid-template-columns:repeat(2,minmax(0,1fr))}.accessImpacts{grid-template-columns:1fr}}
 @media(max-width:600px){.accessSimulator{padding:16px}.accessStages,.accessActors,.accessCases,.accessSources{grid-template-columns:1fr}.accessStages li{padding:13px}.accessChoices button{flex:1 1 calc(50% - 8px)}.accessPanel{padding:16px!important}.accessCaseSection,.accessActorSection{margin-top:26px}}
-</style><style id="ctd-b2-cross-style">
+</style><link rel="stylesheet" href="../../../assets/style.css" id="ctd-main-style"><style id="ctd-b2-cross-style">
 .ctdB2CrossNav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;padding:9px max(14px,calc((100vw - 1230px)/2));box-sizing:border-box;margin:0 auto 15px;background:var(--surface,#f4f7fa);border-bottom:1px solid var(--border,#d4dfe9);font:700 14px/1.35 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
 .ctdB2CrossNav a{display:flex;align-items:center;justify-content:center;min-width:0;min-height:44px;box-sizing:border-box;text-align:center;text-decoration:none;border-radius:8px;padding:8px 6px;color:var(--text,#142d40);overflow-wrap:anywhere;hyphens:auto}
 .ctdB2CrossNav a:hover,.ctdB2CrossNav a:focus-visible{outline-offset:2px;background:var(--surface2,#e5eef5);text-decoration:underline}
@@ -134,6 +134,12 @@ body:has(.ctdB2CrossNav) .ctdB2CrossNav a:focus-visible,body:has(.ctdB2CrossNav)
 @media(max-width:700px){.ctdB2CrossNav{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;font-size:12px;padding:7px 12px}.ctdB2CrossNav a{min-height:44px;padding:7px 4px}}
 @media(prefers-color-scheme:dark){.ctdB2CrossNav{background:var(--surface,#18232e);border-color:var(--border,#435365)}.ctdB2CrossNav a{color:var(--text,#eff5fb)}.ctdB2CrossNav a[aria-current]{color:var(--accent-text,#a4d5ff);background:var(--accent-soft,#214467)}}
 
+html[data-theme="dark"] body:has(main.governanceArticle),html[data-theme="dark"] body:has(main.accessArticle){--background:#0f0f10;--bg:#0f0f10;--surface:#171719;--surface2:#202023;--text:#f5f5f7;--muted:#a1a1a6;--border:#2d2d31;--accent:#2997ff;--accent-text:#61b0ff;--accent-soft:#102a43;--shadow:none;color-scheme:dark}
+html[data-theme="dark"] body:has(main.governanceArticle) header,html[data-theme="dark"] body:has(main.accessArticle) header{background:var(--bg);color:var(--text);border-color:var(--border)}
+html[data-theme="dark"] body:has(main.governanceArticle) .ctdB2CrossNav,html[data-theme="dark"] body:has(main.accessArticle) .ctdB2CrossNav{background:var(--bg);border-color:var(--border)}
+html[data-theme="dark"] body:has(main.governanceArticle) a,html[data-theme="dark"] body:has(main.accessArticle) a{color:var(--accent-text)}
+html[data-theme="dark"] body:has(main.governanceArticle) .ctdB2CrossNav a,html[data-theme="dark"] body:has(main.accessArticle) .ctdB2CrossNav a{color:var(--text)}
+html[data-theme="dark"] body:has(main.governanceArticle) .ctdB2CrossNav a[aria-current],html[data-theme="dark"] body:has(main.accessArticle) .ctdB2CrossNav a[aria-current]{color:var(--accent-text)}
 /* Unified editorial shell for the two evergreen governance guides. */
 body:has(main.governanceArticle),body:has(main.accessArticle){--background:#f7f7f8;--bg:#f7f7f8;--surface:#fff;--surface2:#f1f1f3;--text:#111214;--muted:#65656d;--border:#e4e4e7;--accent:#0a84ff;--accent-text:#0068d7;--accent-soft:#e9f3ff;--shadow:0 1px 2px rgba(0,0,0,.025),0 18px 56px rgba(0,0,0,.045);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;background:var(--bg);color:var(--text)}
 body:has(main.governanceArticle) header,body:has(main.accessArticle) header{background:var(--bg);color:var(--text);border-bottom:1px solid var(--border)}
@@ -151,8 +157,13 @@ body:has(main.governanceArticle) .ctdB2Context,body:has(main.accessArticle) .ctd
 body:has(main.governanceArticle) footer,body:has(main.accessArticle) footer{max-width:1280px;border-color:var(--border);color:var(--muted)}
 @media(max-width:720px){body:has(main.governanceArticle) header nav,body:has(main.accessArticle) header nav{padding:13px 18px}body:has(main.governanceArticle) main,body:has(main.accessArticle) main{padding:28px 18px 54px}body:has(main.governanceArticle) .ctdB2CrossNav,body:has(main.accessArticle) .ctdB2CrossNav{margin:8px 12px 12px}}
 </style></head><body>
-<header><nav aria-label="Languages"><a class="brand" href="https://robertbregy.github.io/Connecting-the-Dots/fr/">Connecting the Dots</a>
-<div class="lang-links"><a lang="en" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/">English</a> <a lang="it" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/who-controls-internet-access/">Italiano</a> <a lang="de" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/who-controls-internet-access/">Deutsch</a> <a lang="fr" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/who-controls-internet-access/" aria-current="page">Français</a></div></nav></header>
+<a class="skipLink" href="#ctd-article-main">Skip to main content</a>
+<header class="topbar"><div class="topinner">
+<a class="brand brandButton" href="../../../fr/" aria-label="Home"><img alt="" src="../../../assets/logo-mark.png"><span class="brandTitle">Connecting the Dots</span></a>
+<div class="controls"><label class="ctdGuideLang"><span class="sr-only">Language</span><select aria-label="Language" class="control lang" id="ctdGuideLanguage">
+<option value="en">EN</option><option value="de">DE</option><option value="fr" selected>FR</option><option value="it">IT</option>
+</select></label><button class="control" id="ctdGuideTheme" type="button" aria-label="Toggle theme">◐</button></div>
+</div></header>
 <nav class="ctdB2CrossNav" aria-label="Les six parcours de Connecting the Dots"><a href="../../../fr/?tab=ia-understand#ia-understand" data-b2-cross-area="understand">Comprendre</a><a href="../../../fr/?tab=ia-explore#ia-explore" data-b2-cross-area="explore" aria-current="location">Explorer</a><a href="../../../fr/?tab=ia-stories#ia-stories" data-b2-cross-area="stories">Histoires &amp; enjeux</a><a href="../../../fr/?tab=ia-outcomes#ia-outcomes" data-b2-cross-area="outcomes">Conflits et issues</a><a href="../../../fr/?tab=ia-round#ia-round" data-b2-cross-area="round">Cycle 2026</a><a href="../../../fr/?tab=ia-research#ia-research" data-b2-cross-area="research">Recherche</a></nav>
 <nav class="ctdB2Trail" aria-label="Breadcrumb"><a href="../../../fr/">Accueil</a><span aria-hidden="true">/</span><a href="../../../fr/?tab=ia-explore#ia-explore">Explorer</a><span aria-hidden="true">/</span><span aria-current="page">Page</span></nav><script id="ctd-b2-link-isolation">
 (function(){
@@ -176,7 +187,7 @@ body:has(main.governanceArticle) footer,body:has(main.accessArticle) footer{max-
   else isolate();
 })();
 </script><aside class="ctdB2Context" data-b2-editorial-kind="evergreen-guide"><strong>GUIDE DE CONTEXTE</strong><p>Il s&#x27;agit d&#x27;une explication générale sur la gouvernance d&#x27;Internet, et non d&#x27;une note portant sur un événement du cycle ICANN 2026. Les notes de terrain examinent des cas et des événements précis.</p></aside>
-<main class="accessArticle">
+<main id="ctd-article-main" class="accessArticle">
 <div class="eyebrow">Architecture d&#x27;Internet · Éclairage</div><h1>Qui contrôle l&#x27;accès à Internet ?</h1><p class="lead">Un site peut exister dans le DNS mondial tout en étant inaccessible depuis un pays ou un réseau. Suivons une requête pour comprendre les points de contrôle, sans confondre le rôle de l&#x27;ICANN avec la censure locale.</p>
 <div class="accessIntro"><h2>La distinction essentielle</h2><p>Noms DNS, TLD, contrats de registre, filtres de réseau nationaux et décisions éditoriales des plateformes relèvent d&#x27;étages différents. Ils peuvent affecter le même site, mais pas de la même manière.</p></div>
 <section class="accessSimulator" id="accessSimulator" aria-labelledby="accessSimulatorTitle"
@@ -270,4 +281,22 @@ body:has(main.governanceArticle) footer,body:has(main.accessArticle) footer{max-
   }
   buttons.forEach(function(b){b.addEventListener('click',function(){select(b);});});
   if(buttons.length)select(buttons[0]);
+})();</script><script id="ctd-guide-controls">(function(){
+"use strict";
+var root=document.documentElement;
+var themeKey="dotTheme";
+function theme(value){root.setAttribute("data-theme",value==="dark"?"dark":"light");}
+try{theme(localStorage.getItem(themeKey)||(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));}catch(e){theme("light");}
+var themeButton=document.getElementById("ctdGuideTheme");
+if(themeButton)themeButton.addEventListener("click",function(){
+ var next=root.getAttribute("data-theme")==="dark"?"light":"dark";theme(next);
+ try{localStorage.setItem(themeKey,next);}catch(e){}
+});
+var picker=document.getElementById("ctdGuideLanguage");
+if(picker)picker.addEventListener("change",function(){
+ var selected=picker.value;
+ if(["en","it","de","fr"].indexOf(selected)>=0){
+ window.location.href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/"+selected+"/who-controls-internet-access/";
+ }
+});
 })();</script></body></html>
