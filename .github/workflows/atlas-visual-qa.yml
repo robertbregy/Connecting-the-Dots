@@ -1,0 +1,41 @@
+name: Focused Atlas visual parity QA
+on:
+  push:
+    branches:
+      - 'feat/atlas-visual-parity-*'
+    paths:
+      - 'assets/aps-atlas.css'
+      - 'scripts/render_aps_application_atlas.py'
+      - 'scripts/audit_aps_application_atlas.js'
+      - '.github/workflows/atlas-visual-qa.yml'
+permissions:
+  contents: read
+jobs:
+  atlas-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - run: python3 build.py
+      - name: Verify main Atlas and standalone pages
+        run: |
+          python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/ctd-visual-http.log 2>&1 &
+          sleep 2
+          timeout 240s node scripts/audit_aps_application_atlas.js
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: atlas-visual-qa
+          path: audit-aps-atlas-*.png
+          if-no-files-found: ignore
