@@ -71,7 +71,8 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
     assert.equal(iaNav[index].textContent.trim(),translations[['iaNavUnderstand','iaNavExplore','iaNavStories','iaNavOutcomes','iaNavRound','iaNavResearch'][index]],page+' incomplete IA navigation locale');
   }
   assert.equal(document.querySelectorAll('.iaHubCard').length,26,page+' must preserve all 26 IA access cards');
-  const legacySections=['overview','explore','timeline','how','beyond','cities','geography','economics','cemetery','social','contention','refusals','disputes','strange','reveal','inside-round','behind-round','lugano','research','paper','resources','sources'];
+  for(const id of ['governance-access','governance-sanctions'])assert.ok(document.getElementById(id)?.querySelector('h2.ctdNativeHeading'),page+' native governance article missing: '+id);
+  const legacySections=['overview','explore','timeline','how','beyond','cities','geography','governance-access','governance-sanctions','economics','cemetery','social','contention','refusals','disputes','strange','reveal','inside-round','behind-round','lugano','research','paper','resources','sources'];
   for(const id of legacySections)assert.equal(document.getElementById(id)?.tagName,'SECTION',page+' legacy content deleted: '+id);
   assert.ok(document.querySelector('.iaLegacyNavDisclosure .nav'),page+' original desktop deep links inaccessible');
   assert.ok(document.querySelector('.iaLegacyNavDisclosure #mobileNav'),page+' original mobile deep links inaccessible');
@@ -83,8 +84,8 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.ok(document.querySelector('.iaHomeJumpList a[href="#ia-research"]'),page+' the novice cannot see direct paths');
   assert.ok(document.querySelector('#ia-research a[href="https://doi.org/10.5281/zenodo.23288603"]'),page+' RR2 version-specific DOI not immediately available');
   assert.equal(document.querySelector('#ia-explore [data-b2-resource="atlas"]').getAttribute('href'),(alias?'./':'../')+'applications/'+language+'/',page+' 2026 Atlas should remain in the same branch and locale');
-  assert.equal(document.querySelector('#ia-explore .iaExploreGovernance [data-b2-resource="access"]').getAttribute('href'),(alias?'./':'../')+'behind-the-round/'+language+'/who-controls-internet-access/',page+' access guide must stay on the current language route');
-  assert.equal(document.querySelector('#ia-explore .iaExploreGovernance [data-b2-resource="sanctions"]').getAttribute('href'),(alias?'./':'../')+'behind-the-round/'+language+'/sanctions-and-dns/',page+' sanctions guide must stay on the current language route');
+  assert.equal(document.querySelector('#ia-explore .iaExploreGovernance [data-b2-resource="access"]').getAttribute('href'),'#governance-access',page+' native access chapter link missing');
+  assert.equal(document.querySelector('#ia-explore .iaExploreGovernance [data-b2-resource="sanctions"]').getAttribute('href'),'#governance-sanctions',page+' native sanctions chapter link missing');
   for(const card of document.querySelectorAll('.iaHubCard a[data-open-section]')){
     const target=card.getAttribute('data-open-section'),anchor=card.getAttribute('data-open-anchor');
     assert.ok(legacySections.includes(target),page+' IA card loses canonical target '+target);
