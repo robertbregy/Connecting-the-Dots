@@ -12,7 +12,7 @@ import json
 import re
 
 NAV_STYLE = """<style id="ctd-b2-cross-style">
-.ctdB2CrossNav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;padding:9px max(14px,calc((100vw - 1230px)/2));box-sizing:border-box;margin:0 auto 15px;background:var(--surface,#f4f7fa);border-bottom:1px solid var(--border,#d4dfe9);font:700 14px/1.35 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+.ctdB2CrossNav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;padding:9px max(14px,calc((100vw - 1230px)/2));box-sizing:border-box;margin:0 auto 15px;background:var(--surface,#f4f7fa);border-bottom:1px solid var(--border,#d4dfe9);font:700 14px/1.35 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
 .ctdB2CrossNav a{display:flex;align-items:center;justify-content:center;min-width:0;min-height:44px;box-sizing:border-box;text-align:center;text-decoration:none;border-radius:8px;padding:8px 6px;color:var(--text,#142d40);overflow-wrap:anywhere;hyphens:auto}
 .ctdB2CrossNav a:hover,.ctdB2CrossNav a:focus-visible{outline-offset:2px;background:var(--surface2,#e5eef5);text-decoration:underline}
 .ctdB2CrossNav a[aria-current]{background:var(--accent-soft,#dcecfb);color:var(--accent-text,#124f84)}
@@ -35,6 +35,7 @@ AREAS = [
     ("understand", "iaNavUnderstand"),
     ("explore", "iaNavExplore"),
     ("stories", "iaNavStories"),
+    ("outcomes", "iaNavOutcomes"),
     ("round", "iaNavRound"),
     ("research", "iaNavResearch"),
 ]
