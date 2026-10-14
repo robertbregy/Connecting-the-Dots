@@ -14,7 +14,7 @@ const assert=require('node:assert/strict');
 const source=fs.readFileSync('src/index.web.html','utf8');
 const baseline={
  overview:['a800715bf0b3f09f',9849],
- explore:['4a955923e368d20e',9994],
+ explore:['54b4920fd42ef0cc',10168],
  timeline:['2cb0d00b3b4d421f',1599],
  how:['d1d1e55939463c66',11713],
  beyond:['d5ce05ac3253ca8a',3136],
