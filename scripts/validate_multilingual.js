@@ -70,7 +70,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
     assert.ok(document.getElementById(id)?.querySelector('h2'),page+' missing real task landing '+id);
     assert.equal(iaNav[index].textContent.trim(),translations[['iaNavUnderstand','iaNavExplore','iaNavStories','iaNavRound','iaNavResearch'][index]],page+' incomplete IA navigation locale');
   }
-  assert.equal(document.querySelectorAll('.iaHubCard').length,25,page+' must preserve all 25 IA access cards');
+  assert.equal(document.querySelectorAll('.iaHubCard').length,26,page+' must preserve 25 original IA cards plus the cemetery chapter');
   const legacySections=['overview','explore','timeline','how','beyond','cities','geography','economics','social','contention','refusals','disputes','strange','reveal','inside-round','behind-round','lugano','research','paper','resources','sources'];
   for(const id of legacySections)assert.equal(document.getElementById(id)?.tagName,'SECTION',page+' legacy content deleted: '+id);
   assert.ok(document.querySelector('.iaLegacyNavDisclosure .nav'),page+' original desktop deep links inaccessible');
