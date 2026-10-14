@@ -1,8 +1,8 @@
 /* 2026 APS Atlas: public ICANN application-ID graph, separately from TLD Explorer. */
 (()=>{'use strict';
 const corpus=window.CTD_APS_2026||null;
-const L=window.CTD_APS_I18N||{};
-const lang=window.CTD_APS_LANG||document.documentElement.lang||'en';
+let L=window.CTD_APS_I18N||{};
+let lang=window.CTD_APS_LANG||document.documentElement.lang||'en';
 const site='https://robertbregy.github.io/Connecting-the-Dots/';
 const results=document.getElementById('apsResults'),output=document.getElementById('apsResultCount');
 const search=document.getElementById('apsSearch'),type=document.getElementById('apsType');
@@ -19,7 +19,8 @@ if(!corpus||!Array.isArray(corpus.apps)||corpus.apps.length!==1614){
 }
 const all=corpus.apps;
 const wanted=new URLSearchParams(location.search);
-const directId=(wanted.get('id')||'').trim().toUpperCase();
+const native=!!document.getElementById('aps-native');
+const directId=(wanted.get(native?'application':'id')||'').trim().toUpperCase();
 search.value=directId||wanted.get('q')||'';
 const indexes=new Map(all.map(a=>[a.id,a]));
 const matcher=a=>normal([
@@ -48,7 +49,7 @@ function officialHref(id,section='summary'){
  return 'https://newgtldprogram-aps.icann.org/applications/'+encodeURIComponent(id)+'/'+section;
 }
 function linkToExplorer(label){
- return site+lang+'/?tab=explore&q='+encodeURIComponent(label);
+ return native?'?tab=explore&q='+encodeURIComponent(label):site+lang+'/?tab=explore&q='+encodeURIComponent(label);
 }
 function pill(x,cl=''){return '<span class="apsTag '+cl+'">'+escape(x)+'</span>';}
 function item(a){
@@ -61,7 +62,7 @@ function item(a){
  const variants=a.variants.length?'<div class="apsVariants"><b>'+escape(t('apsAtlasVariants'))+': </b>'+
   a.variants.map(v=>'<bdi>.'+escape(v.ascii)+(v.unicode?' ('+escape(v.unicode)+')':'')+'</bdi>').join(' · ')+'</div>':'';
  const exact=a.primarySameStringCount>1?pill(escape(t('apsAtlasMatchesCount')).replace('{count}',fmt(a.primarySameStringCount)),'apsMatch'):'';
- const link='?id='+encodeURIComponent(a.id)+'#aps-results';
+ const link=native?(site+'applications/'+lang+'/?id='+encodeURIComponent(a.id)+'#aps-results'):('?id='+encodeURIComponent(a.id)+'#aps-results');
  const identifier='<b class="apsId">'+escape(a.id)+'</b>';
  const typeTags=(a.types||[]).map(x=>pill(x)).join('');
  const explorer='<a href="'+escape(linkToExplorer(a.primary))+'">'+escape(t('apsAtlasExplorer'))+'</a>';
@@ -105,5 +106,6 @@ reset.addEventListener('click',()=>{
  const uri=new URL(location.href);uri.search='';uri.hash='';history.replaceState({},'',uri);render();
  search.focus();
 });
+window.CTD_APS_REFRESH=(nextLang,nextDict)=>{lang=nextLang;L=nextDict||L;render();};
 render();
 })();
