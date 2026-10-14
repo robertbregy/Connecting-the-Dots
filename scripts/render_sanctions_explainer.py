@@ -199,11 +199,11 @@ def page(item: dict, lang: str) -> str:
 <style>{CSS}\n{BEHIND_CSS}\n{CSS_EXTRA}</style></head><body>
 <header><nav aria-label="Languages"><a class="brand" href="{BASE}{lang}/">Connecting the Dots</a>
 <div class="lang-links">{nav}</div></nav></header>
-<main class="governanceArticle">
 <nav class="governanceEntryLinks" aria-label="Article pathways">
 <a href="{BASE}{lang}/?tab=ia-explore#ia-explore">{h({'it':'← Esplorare','en':'← Explore','de':'← Erkunden','fr':'← Explorer'}[lang])}</a>
 <a href="{BASE}behind-the-round/{lang}/">{h({'it':'← Note dal campo','en':'← Field Notes','de':'← Beobachtungen','fr':'← Carnet de terrain'}[lang])}</a>
 </nav>
+<main class="governanceArticle">
 <div class="eyebrow">{h(t["eyebrow"])}</div>
 <h1>{h(t["title"])}</h1><p class="lead">{h(t["lead"])}</p>
 <div class="governanceHero">{top}</div>
