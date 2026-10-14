@@ -71,7 +71,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
     assert.equal(iaNav[index].textContent.trim(),translations[['iaNavUnderstand','iaNavExplore','iaNavStories','iaNavOutcomes','iaNavRound','iaNavResearch'][index]],page+' incomplete IA navigation locale');
   }
   assert.equal(document.querySelectorAll('.iaHubCard').length,26,page+' must preserve all 26 IA access cards');
-  for(const id of ['governance-access','governance-sanctions'])assert.ok(document.getElementById(id)?.querySelector('h1'),page+' native governance article missing: '+id);
+  for(const id of ['governance-access','governance-sanctions'])assert.ok(document.getElementById(id)?.querySelector('h2.ctdNativeHeading'),page+' native governance article missing: '+id);
   const legacySections=['overview','explore','timeline','how','beyond','cities','geography','economics','cemetery','social','contention','refusals','disputes','strange','reveal','inside-round','behind-round','lugano','research','paper','resources','sources'];
   for(const id of legacySections)assert.equal(document.getElementById(id)?.tagName,'SECTION',page+' legacy content deleted: '+id);
   assert.ok(document.querySelector('.iaLegacyNavDisclosure .nav'),page+' original desktop deep links inaccessible');
