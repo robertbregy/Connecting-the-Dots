@@ -11,7 +11,7 @@ const languages=["it","en","de","fr"];
 const hubs=[
  ["ia-understand",6,"how"],
  ["ia-explore",4,"explore"],
- ["ia-stories",7,"economics"],
+ ["ia-stories",8,"economics"],
  ["ia-round",4,"behind-round"],
  ["ia-research",4,"research"]
 ];
@@ -63,7 +63,7 @@ async function checkAxe(page,label) {
     assert.ok(oldSelectCount>=25,"old 21 sections / chapter navigation lost");
     tally.legacyMenu=true;
     const oldSections=await page.locator('section.section:not(.iaHub)').count();
-    assert.equal(oldSections,21,"the canonical sections were lost or cloned");
+    assert.equal(oldSections,22,"the 21 original sections and new cemetery chapter must be preserved");
     tally.contentSections=oldSections;
     for(const [hub,count,canonical] of hubs){
       await page.locator('.iaPrimaryLink[data-b2-area="'+hub+'"]').click();
