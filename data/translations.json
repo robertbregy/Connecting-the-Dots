@@ -2402,7 +2402,14 @@
     "econEditorialIdentityTitle": "Brands, products and AI agent identities: different logics",
     "econEditorialIdentityBody": "ICANN reports 333 brand applications on Reveal Day. A corporate brand, a product name and a possible digital-agent identity are different strategies. Using TLDs as trust infrastructure for AI agents remains a hypothesis, not an established result.",
     "econEditorialExploreContests": "Explore contention →",
-    "econEditorialDisclaimer": "Editorial analysis dated 14 October 2026. ICANN statistics, locally derived groups and third-party Intercap figures have different evidentiary status and must not be conflated."
+    "econEditorialDisclaimer": "Editorial analysis dated 14 October 2026. ICANN statistics, locally derived groups and third-party Intercap figures have different evidentiary status and must not be conflated.",
+    "cemeteryChapterTitle": "The gTLD cemetery",
+    "cemeteryChapterShort": "Names that were never born, projects that stopped and domains that disappeared.",
+    "cemeteryChapterIntro": "Applications never delegated, terminated contracts and removals from the root are not interchangeable. This chapter preserves the distinctions and documents outcomes from primary sources. Contract termination alone does not prove removal from the root.",
+    "cemeteryChapterMethod": "Applications, delegations, contracts and root-zone status are distinct events. The cases shown are not an exhaustive census of discontinued gTLDs.",
+    "cemeteryEconomicsBridgeTitle": "Explore the gTLD cemetery",
+    "cemeteryEconomicsBridgeBody": "A TLD's life cycle does not end at allocation. Withdrawals, terminations and operator transfers expose economic risks without being solely a market story.",
+    "cemeteryChapterCta": "Explore cases and sources →"
   },
   "it": {
     "brand": "Brand",
@@ -4807,7 +4814,14 @@
     "econEditorialIdentityTitle": "Marchi, prodotti e identità per agenti AI: tre logiche diverse",
     "econEditorialIdentityBody": "ICANN registra 333 candidature di tipo brand al Reveal Day. Un marchio aziendale, il nome di un prodotto e l'eventuale identità di un agente digitale non sono la stessa strategia. L'uso di TLD come infrastruttura di fiducia per agenti AI resta una prospettiva da valutare, non un risultato già dimostrato.",
     "econEditorialExploreContests": "Esplora le contese →",
-    "econEditorialDisclaimer": "Lettura editoriale del 14 ottobre 2026. Fonti e denominatori diversi non vanno sommati; le statistiche ICANN, i gruppi calcolati dal progetto e l'analisi giornalistica Intercap hanno statuti probatori distinti."
+    "econEditorialDisclaimer": "Lettura editoriale del 14 ottobre 2026. Fonti e denominatori diversi non vanno sommati; le statistiche ICANN, i gruppi calcolati dal progetto e l'analisi giornalistica Intercap hanno statuti probatori distinti.",
+    "cemeteryChapterTitle": "Il cimitero dei gTLD",
+    "cemeteryChapterShort": "I domini che non sono nati, quelli che si sono fermati e quelli che sono scomparsi.",
+    "cemeteryChapterIntro": "Candidature mai delegate, accordi terminati e rimozioni dalla root non sono sinonimi. Questo capitolo conserva le differenze e documenta gli esiti con fonti primarie. Una cessazione contrattuale non prova da sola che il TLD sia stato rimosso dalla root.",
+    "cemeteryChapterMethod": "Candidature, deleghe, contratti e stato della root sono eventi distinti. I casi presentati non costituiscono un censimento esaustivo dei gTLD cessati.",
+    "cemeteryEconomicsBridgeTitle": "Prosegui al Cimitero dei gTLD",
+    "cemeteryEconomicsBridgeBody": "Il ciclo di vita di un TLD non finisce con l'assegnazione. Le rinunce, le cessazioni e i passaggi di gestione illuminano i rischi economici senza esaurirsi in una questione di mercato.",
+    "cemeteryChapterCta": "Esplora i casi e le fonti →"
   },
   "de": {
     "brand": "Marke",
@@ -7212,7 +7226,14 @@
     "econEditorialIdentityTitle": "Marken, Produkte und KI-Agenten: unterschiedliche Ansätze",
     "econEditorialIdentityBody": "ICANN meldet zum Reveal Day 333 Markenbewerbungen. Unternehmensmarke, Produktname und mögliche digitale Agentenidentität stehen für verschiedene Strategien. TLDs als Vertrauensinfrastruktur für KI-Agenten sind bisher eine Hypothese, kein belegtes Ergebnis.",
     "econEditorialExploreContests": "Konkurrenzfälle erkunden →",
-    "econEditorialDisclaimer": "Redaktionelle Einordnung vom 14. Oktober 2026. Offizielle ICANN-Zahlen, eigene Auswertungen und Presseangaben zu Intercap haben unterschiedliche Aussagekraft."
+    "econEditorialDisclaimer": "Redaktionelle Einordnung vom 14. Oktober 2026. Offizielle ICANN-Zahlen, eigene Auswertungen und Presseangaben zu Intercap haben unterschiedliche Aussagekraft.",
+    "cemeteryChapterTitle": "Der Friedhof der gTLDs",
+    "cemeteryChapterShort": "Namen, die nie entstanden, Projekte, die endeten, und Domains, die verschwanden.",
+    "cemeteryChapterIntro": "Nie delegierte Bewerbungen, beendete Verträge und Löschungen aus der Root-Zone sind nicht dasselbe. Dieses Kapitel unterscheidet die Sachverhalte und dokumentiert sie anhand von Primärquellen. Eine Vertragsbeendigung allein beweist keine Entfernung aus der Root-Zone.",
+    "cemeteryChapterMethod": "Bewerbungen, Delegierungen, Verträge und der Status in der Root-Zone sind unterschiedliche Ereignisse. Die Fälle stellen keine vollständige Erhebung eingestellter gTLDs dar.",
+    "cemeteryEconomicsBridgeTitle": "Zum Friedhof der gTLDs",
+    "cemeteryEconomicsBridgeBody": "Der Lebenszyklus einer TLD endet nicht mit der Zuteilung. Rückzüge, Vertragsbeendigungen und Betreiberwechsel zeigen wirtschaftliche Risiken, die über den Markt hinausgehen.",
+    "cemeteryChapterCta": "Fälle und Quellen erkunden →"
   },
   "fr": {
     "brand": "Marque",
@@ -9617,6 +9638,13 @@
     "econEditorialIdentityTitle": "Marques, produits et agents IA : des logiques distinctes",
     "econEditorialIdentityBody": "L'ICANN annonce 333 candidatures de type marque lors du Reveal Day. Une marque d'entreprise, un produit et une éventuelle identité d'agent numérique répondent à des stratégies différentes. Les TLD comme infrastructure de confiance pour agents IA restent une hypothèse, non un fait démontré.",
     "econEditorialExploreContests": "Explorer les contentions →",
-    "econEditorialDisclaimer": "Analyse éditoriale au 14 octobre 2026. Chiffres officiels ICANN, regroupements calculés et données de presse sur Intercap ne présentent pas le même degré de preuve."
+    "econEditorialDisclaimer": "Analyse éditoriale au 14 octobre 2026. Chiffres officiels ICANN, regroupements calculés et données de presse sur Intercap ne présentent pas le même degré de preuve.",
+    "cemeteryChapterTitle": "Le cimetière des gTLD",
+    "cemeteryChapterShort": "Les noms jamais nés, les projets arrêtés et les domaines disparus.",
+    "cemeteryChapterIntro": "Candidatures jamais déléguées, contrats résiliés et suppressions de la racine ne sont pas synonymes. Ce chapitre distingue les situations et documente les résultats à partir de sources primaires. Une résiliation ne prouve pas à elle seule le retrait de la racine.",
+    "cemeteryChapterMethod": "Candidatures, délégations, contrats et état de la zone racine constituent des événements distincts. Les exemples ne sont pas un recensement exhaustif des gTLD abandonnés.",
+    "cemeteryEconomicsBridgeTitle": "Découvrir le cimetière des gTLD",
+    "cemeteryEconomicsBridgeBody": "Le cycle de vie d'un TLD ne s'arrête pas à l'attribution. Retraits, résiliations et changements d'opérateur révèlent des risques économiques sans se réduire à la seule question du marché.",
+    "cemeteryChapterCta": "Explorer les cas et sources →"
   }
 }
