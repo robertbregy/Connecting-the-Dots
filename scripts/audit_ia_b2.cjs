@@ -9,9 +9,10 @@ const fs=require("node:fs");
 const BASE=process.env.CTD_TEST_BASE||"http://127.0.0.1:8128/";
 const languages=["it","en","de","fr"];
 const hubs=[
- ["ia-understand",6,"how"],
- ["ia-explore",4,"explore"],
- ["ia-stories",8,"economics"],
+ ["ia-understand",4,"how"],
+ ["ia-explore",6,"explore"],
+ ["ia-stories",4,"economics"],
+ ["ia-outcomes",4,"refusals"],
  ["ia-round",4,"behind-round"],
  ["ia-research",4,"research"]
 ];
@@ -167,7 +168,7 @@ async function checkAxe(page,label) {
     const atlas=page.locator('#ia-explore a[data-b2-resource="atlas"]');
     const atlasUrl=await atlas.getAttribute("href");
     assert.equal(atlasUrl,"../applications/"+lang+"/","Atlas should not leave the feature branch");
-    const guide=page.locator('#ia-understand a[data-b2-resource="access"]');
+    const guide=page.locator('#ia-explore a[data-b2-resource="access"]');
     assert.equal(await guide.getAttribute("href"),"../behind-the-round/"+lang+"/who-controls-internet-access/","Guide link changed language/branch");
     await page.locator('.iaPrimaryLink[data-b2-area="ia-research"]').click();
     assert.ok((await page.locator('#ia-research .iaHubDoi').innerText()).includes("10.5281/zenodo.23288603"),"research DOI not in landing");
@@ -203,7 +204,7 @@ async function checkAxe(page,label) {
     }
     for(const slug of ["objectors-eoi","replacement-strings","wdo-identity","sanctions-and-dns","who-controls-internet-access"]){
       independent.push({url:"behind-the-round/"+lang+"/"+slug+"/",lang,
-        selected:["sanctions-and-dns","who-controls-internet-access"].includes(slug)?"understand":"round"});
+        selected:["sanctions-and-dns","who-controls-internet-access"].includes(slug)?"explore":"round"});
     }
   }
   independent.push({url:"explorer/",lang:"en",selected:"explore"},{url:"research/",lang:"en",selected:"research"},{url:"research/connecting-the-dots-working-paper-v1.html",lang:"en",selected:"research"});
