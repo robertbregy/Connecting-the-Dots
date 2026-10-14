@@ -182,7 +182,7 @@ def apply(root: Path) -> int:
             # These pages may still contain the old five-area menu.
             canonical_nav = make_navigation(root, file, lang, area, translations[lang])
             upgraded, replaced = re.subn(
-                r'<nav class="ctdB2CrossNav"[^>]*>[\\s\\S]*?</nav>',
+                r'<nav class="ctdB2CrossNav"[^>]*>[\s\S]*?</nav>',
                 lambda _m: canonical_nav, html, count=1,
             )
             if replaced != 1:
