@@ -84,7 +84,7 @@ def render(root:Path=ROOT):
 <link rel="stylesheet" href="../../assets/aps-atlas.css?v={q(pub['version'])}">
 </head><body>
 <a class="apsSkip" href="#aps-main">{q(t['apsAtlasTitle'])}</a>
-<header class="apsHeader"><div class="apsHeaderRow"><a class="apsBrand" href="../../{lang}/"><img class="apsLogo" src="../../assets/logo-mark.png" alt=""><span>Connecting the Dots</span></a><div class="apsHeaderControls"><nav aria-label="Languages" class="apsLanguages">{languages}</nav><button type="button" class="apsThemeToggle" id="apsThemeToggle" aria-label="Toggle light and dark theme" aria-pressed="false">◐</button></div></div></header>
+<header class="apsHeader"><div class="apsHeaderRow"><a class="apsBrand" href="../../{lang}/"><img class="apsLogo" src="../../assets/logo-mark.png" alt=""><span>Connecting the Dots</span></a><div class="apsHeaderControls"><select class="control lang apsLangSelect" id="apsLangSelect" aria-label="Language"><option value="en">EN</option><option value="de">DE</option><option value="fr">FR</option><option value="it">IT</option></select><button type="button" class="control apsThemeToggle" id="apsThemeToggle" aria-label="Toggle theme" aria-pressed="false">◐</button></div></div></header>
 <main id="aps-main" class="apsMain">
 <nav class="apsBreadcrumb" aria-label="Breadcrumb"><a href="../../{lang}/?tab=explore">{q(t['apsAtlasBack'])}</a>
 <span aria-hidden="true">/</span><span>ICANN 2026</span></nav>
@@ -131,11 +131,20 @@ def render(root:Path=ROOT):
 · v{q(pub['version'])}</footer>
 <script>
 (function(){{
- const key='ctd-theme', button=document.getElementById('apsThemeToggle');
- const saved=localStorage.getItem(key);
+ const key='dotTheme', button=document.getElementById('apsThemeToggle');
+ const langSelect=document.getElementById('apsLangSelect');
+ function savedTheme(){{try{{return localStorage.getItem(key)}}catch(e){{return null}}}}
  function apply(mode){{document.documentElement.dataset.theme=mode;button.setAttribute('aria-pressed',String(mode==='dark'));}}
+ const saved=savedTheme();
  apply(saved==='dark'||saved==='light'?saved:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
- button.addEventListener('click',()=>{{const mode=document.documentElement.dataset.theme==='dark'?'light':'dark';apply(mode);localStorage.setItem(key,mode);}});
+ button.addEventListener('click',()=>{{const mode=document.documentElement.dataset.theme==='dark'?'light':'dark';apply(mode);try{{localStorage.setItem(key,mode)}}catch(e){{}}}});
+ langSelect.value="{lang}";
+ langSelect.addEventListener('change',()=>{{
+  const target=langSelect.value;
+  if(!['en','de','fr','it'].includes(target))return;
+  const suffix=location.search+location.hash;
+  location.href='../../applications/'+target+'/'+suffix;
+ }});
 }})();
 window.CTD_APS_LANG="{lang}";window.CTD_APS_I18N={config};</script>
 <script defer src="../../data/aps_2026_application_graph.js?v={q(pub['version'])}"></script>
