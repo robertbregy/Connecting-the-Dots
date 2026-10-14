@@ -1132,17 +1132,22 @@ for lang in LANGS:
         fail('Access explainer must not masquerade as 2026 case or dated milestone')
     check_internal_refs(path)
 
-# v0.7.76 regression gates: prevent new Economics material leaking outside its tab.
+# Reviewed taxonomy change: Economics keeps its cycle analysis and a
+# short crosslink; the complete cemetery (including Helsinki) lives under
+# Stories & issues as its own canonical section.
 ec_start=source_html.find('<section class="section" id="economics">')
+cemetery_start=source_html.find('<section class="section" id="cemetery">')
 social_start=source_html.find('<section class="section" id="social">')
-if not (0 <= ec_start < social_start):
-    fail('Economics and Social section order missing')
-economics_markup=source_html[ec_start:social_start]
+if not (0 <= ec_start < cemetery_start < social_start):
+    fail('Economics / independent cemetery / Social section order missing')
+economics_markup=source_html[ec_start:cemetery_start]
+cemetery_markup=source_html[cemetery_start:social_start]
 if (economics_markup.count('id="economic-cycles-2026"')!=1 or
-    economics_markup.count('id="gtld-cemetery"')!=1 or
-    not economics_markup.rstrip().endswith('</section>') or
-    economics_markup.index('id="gtld-cemetery"') > economics_markup.rfind('</section>')):
-    fail('New Economics panels are incorrectly outside the Economics tab')
+    economics_markup.count('id="economics-cemetery-link"')!=1 or
+    'id="gtld-cemetery"' in economics_markup or
+    cemetery_markup.count('id="gtld-cemetery"')!=1 or
+    cemetery_markup.count('id="helsinki-termination"')!=1):
+    fail('Independent gTLD cemetery must retain all cases outside Economics')
 distributions=ds.get('distribution',[])
 if not isinstance(distributions,list):
     fail('Dataset must identify live files and historical archive separately')
