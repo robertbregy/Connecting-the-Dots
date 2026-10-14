@@ -2419,7 +2419,10 @@
     "iaHubOutcomesEyebrow": "RULES IN PRACTICE",
     "iaHubOutcomesTitle": "Conflicts & outcomes",
     "iaHubOutcomesLead": "From competing applications to the fate of extensions: objections, decisions, withdrawals and lifecycles.",
-    "iaHubOutcomesContext": "Applications and TLDs have distinct stages: rejection before delegation is not the same as ending an active delegation."
+    "iaHubOutcomesContext": "Applications and TLDs have distinct stages: rejection before delegation is not the same as ending an active delegation.",
+    "iaExploreGovernanceEyebrow": "In depth · Governance",
+    "iaExploreGovernanceTitle": "When rules meet geopolitics",
+    "iaExploreGovernanceLead": "After DNS geography and hierarchy, two complementary perspectives: legal constraints that can affect ICANN's work and the tools states use to restrict Internet access."
   },
   "it": {
     "brand": "Brand",
@@ -4841,7 +4844,10 @@
     "iaHubOutcomesEyebrow": "LE REGOLE ALLA PROVA",
     "iaHubOutcomesTitle": "Conflitti ed esiti",
     "iaHubOutcomesLead": "Dalle candidature contese al destino delle estensioni: obiezioni, decisioni, rinunce e cicli di vita.",
-    "iaHubOutcomesContext": "Candidature e TLD attraversano fasi diverse: un rifiuto prima della delega non è la cessazione di una delega già attiva."
+    "iaHubOutcomesContext": "Candidature e TLD attraversano fasi diverse: un rifiuto prima della delega non è la cessazione di una delega già attiva.",
+    "iaExploreGovernanceEyebrow": "Approfondimento · Governance",
+    "iaExploreGovernanceTitle": "Quando le regole incontrano la geopolitica",
+    "iaExploreGovernanceLead": "Dopo la geografia e la gerarchia del DNS, due prospettive complementari: i vincoli giuridici che possono incidere sulle attività di ICANN e gli strumenti con cui gli Stati limitano l'accesso a Internet."
   },
   "de": {
     "brand": "Marke",
@@ -7263,7 +7269,10 @@
     "iaHubOutcomesEyebrow": "REGELN IN DER PRAXIS",
     "iaHubOutcomesTitle": "Konflikte und Ergebnisse",
     "iaHubOutcomesLead": "Von umstrittenen Bewerbungen bis zum Schicksal der Endungen: Einwände, Entscheidungen, Rückzüge und Lebenszyklen.",
-    "iaHubOutcomesContext": "Bewerbungen und TLDs durchlaufen verschiedene Phasen: Eine Ablehnung vor der Delegierung ist nicht deren spätere Beendigung."
+    "iaHubOutcomesContext": "Bewerbungen und TLDs durchlaufen verschiedene Phasen: Eine Ablehnung vor der Delegierung ist nicht deren spätere Beendigung.",
+    "iaExploreGovernanceEyebrow": "Vertiefung · Governance",
+    "iaExploreGovernanceTitle": "Wenn Regeln auf Geopolitik treffen",
+    "iaExploreGovernanceLead": "Nach DNS-Geografie und -Hierarchie zwei ergänzende Perspektiven: rechtliche Grenzen für ICANN und die Mittel, mit denen Staaten den Internetzugang beschränken."
   },
   "fr": {
     "brand": "Marque",
@@ -9685,6 +9694,9 @@
     "iaHubOutcomesEyebrow": "LES RÈGLES À L’ÉPREUVE",
     "iaHubOutcomesTitle": "Conflits et issues",
     "iaHubOutcomesLead": "Des candidatures concurrentes au devenir des extensions : objections, décisions, retraits et cycles de vie.",
-    "iaHubOutcomesContext": "Candidatures et TLD traversent des étapes distinctes : un refus avant délégation n'est pas la fin d'une délégation active."
+    "iaHubOutcomesContext": "Candidatures et TLD traversent des étapes distinctes : un refus avant délégation n'est pas la fin d'une délégation active.",
+    "iaExploreGovernanceEyebrow": "Éclairage · Gouvernance",
+    "iaExploreGovernanceTitle": "Quand les règles rencontrent la géopolitique",
+    "iaExploreGovernanceLead": "Après la géographie et la hiérarchie du DNS, deux perspectives complémentaires : les contraintes juridiques d’ICANN et les moyens par lesquels les États limitent l’accès à Internet."
   }
 }
