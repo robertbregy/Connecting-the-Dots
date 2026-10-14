@@ -29,7 +29,7 @@ const extras=[["how","how-glossary"],["economics","economic-cycles-2026"],["econ
         await page.locator("#"+section+".section.active").waitFor({state:"visible",timeout:5000});
         const target=await page.evaluate(s=>({act:document.querySelector(".section.active")?.id,title:document.title,hash:location.hash,query:new URLSearchParams(location.search).get("tab"),lang:document.documentElement.lang,sections:document.querySelectorAll("section.section:not(.iaHub)").length}),section);
         assert.equal(target.act,section,"active section");
-        assert.equal(target.sections,21,"original section inventory");
+        assert.equal(target.sections,22,"21 original sections plus new cemetery chapter");
         assert.equal(target.lang,lang,"language");
         assert.equal(target.query,section,"query tab");
         if(width===1440)assert.equal(target.hash,"#"+section,"anchor changed");
@@ -45,7 +45,8 @@ const extras=[["how","how-glossary"],["economics","economic-cycles-2026"],["econ
         // previously loaded document. That is a valid same-document navigation.
         if(r)assert.equal(r.status(),200,"HTTP");
         else assert.equal(new URL(page.url()).pathname,"/"+lang+"/","same-document URL escaped locale");
-       await page.locator("#"+section+".section.active").waitFor({state:"visible",timeout:5000});
+       const expectedTab=["gtld-cemetery","helsinki-termination"].includes(anchor)?"cemetery":section;
+       await page.locator("#"+expectedTab+".section.active").waitFor({state:"visible",timeout:5000});
        const target=await page.locator("#"+anchor).count();
        assert.equal(target,1,"missing historical fragment");
        report.urls.push(uri);
