@@ -30,6 +30,12 @@ body:has(.ctdB2CrossNav) .ctdB2CrossNav a:focus-visible,body:has(.ctdB2CrossNav)
 @media(max-width:700px){.ctdB2CrossNav{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;font-size:12px;padding:7px 12px}.ctdB2CrossNav a{min-height:44px;padding:7px 4px}}
 @media(prefers-color-scheme:dark){.ctdB2CrossNav{background:var(--surface,#18232e);border-color:var(--border,#435365)}.ctdB2CrossNav a{color:var(--text,#eff5fb)}.ctdB2CrossNav a[aria-current]{color:var(--accent-text,#a4d5ff);background:var(--accent-soft,#214467)}}
 
+html[data-theme="dark"] body:has(main.governanceArticle),html[data-theme="dark"] body:has(main.accessArticle){--background:#0f0f10;--bg:#0f0f10;--surface:#171719;--surface2:#202023;--text:#f5f5f7;--muted:#a1a1a6;--border:#2d2d31;--accent:#2997ff;--accent-text:#61b0ff;--accent-soft:#102a43;--shadow:none;color-scheme:dark}
+html[data-theme="dark"] body:has(main.governanceArticle) header,html[data-theme="dark"] body:has(main.accessArticle) header{background:var(--bg);color:var(--text);border-color:var(--border)}
+html[data-theme="dark"] body:has(main.governanceArticle) .ctdB2CrossNav,html[data-theme="dark"] body:has(main.accessArticle) .ctdB2CrossNav{background:var(--bg);border-color:var(--border)}
+html[data-theme="dark"] body:has(main.governanceArticle) a,html[data-theme="dark"] body:has(main.accessArticle) a{color:var(--accent-text)}
+html[data-theme="dark"] body:has(main.governanceArticle) .ctdB2CrossNav a,html[data-theme="dark"] body:has(main.accessArticle) .ctdB2CrossNav a{color:var(--text)}
+html[data-theme="dark"] body:has(main.governanceArticle) .ctdB2CrossNav a[aria-current],html[data-theme="dark"] body:has(main.accessArticle) .ctdB2CrossNav a[aria-current]{color:var(--accent-text)}
 /* Unified editorial shell for the two evergreen governance guides. */
 body:has(main.governanceArticle),body:has(main.accessArticle){--background:#f7f7f8;--bg:#f7f7f8;--surface:#fff;--surface2:#f1f1f3;--text:#111214;--muted:#65656d;--border:#e4e4e7;--accent:#0a84ff;--accent-text:#0068d7;--accent-soft:#e9f3ff;--shadow:0 1px 2px rgba(0,0,0,.025),0 18px 56px rgba(0,0,0,.045);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;background:var(--bg);color:var(--text)}
 body:has(main.governanceArticle) header,body:has(main.accessArticle) header{background:var(--bg);color:var(--text);border-bottom:1px solid var(--border)}
@@ -212,7 +218,7 @@ def unify_governance_shell(html: str, file: Path, lang: str) -> str:
 var root=document.documentElement;
 var themeKey="dotTheme";
 function theme(value){{root.setAttribute("data-theme",value==="dark"?"dark":"light");}}
-try{{theme(localStorage.getItem(themeKey)||"light");}}catch(e){{theme("light");}}
+try{{theme(localStorage.getItem(themeKey)||(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));}}catch(e){{theme("light");}}
 var themeButton=document.getElementById("ctdGuideTheme");
 if(themeButton)themeButton.addEventListener("click",function(){{
  var next=root.getAttribute("data-theme")==="dark"?"light":"dark";theme(next);
