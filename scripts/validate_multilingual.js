@@ -84,8 +84,8 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.ok(document.querySelector('.iaHomeJumpList a[href="#ia-research"]'),page+' the novice cannot see direct paths');
   assert.ok(document.querySelector('#ia-research a[href="https://doi.org/10.5281/zenodo.23288603"]'),page+' RR2 version-specific DOI not immediately available');
   assert.equal(document.querySelector('#ia-explore [data-b2-resource="atlas"]').getAttribute('href'),(alias?'./':'../')+'applications/'+language+'/',page+' 2026 Atlas should remain in the same branch and locale');
-  assert.equal(document.querySelector('#ia-explore .iaExploreGovernance [data-b2-resource="access"]').getAttribute('href'),(alias?'./':'../')+'behind-the-round/'+language+'/who-controls-internet-access/',page+' access guide must stay on the current language route');
-  assert.equal(document.querySelector('#ia-explore .iaExploreGovernance [data-b2-resource="sanctions"]').getAttribute('href'),(alias?'./':'../')+'behind-the-round/'+language+'/sanctions-and-dns/',page+' sanctions guide must stay on the current language route');
+  assert.equal(document.querySelector('#ia-explore .iaExploreGovernance [data-b2-resource="access"]').getAttribute('href'),'#governance-access',page+' native access chapter link missing');
+  assert.equal(document.querySelector('#ia-explore .iaExploreGovernance [data-b2-resource="sanctions"]').getAttribute('href'),'#governance-sanctions',page+' native sanctions chapter link missing');
   for(const card of document.querySelectorAll('.iaHubCard a[data-open-section]')){
     const target=card.getAttribute('data-open-section'),anchor=card.getAttribute('data-open-anchor');
     assert.ok(legacySections.includes(target),page+' IA card loses canonical target '+target);
