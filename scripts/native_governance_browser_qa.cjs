@@ -37,6 +37,12 @@ const base = process.env.CTD_TEST_BASE || 'http://127.0.0.1:8128/';
     await page.locator('#governance-sanctions.active').waitFor({state:'visible'});
     assert.ok((await page.locator('#governance-sanctions .governanceSources a').count())>0,'Sourced sanctions content missing');
     assert.equal(await page.locator('.iaPrimaryLink[data-b2-area="ia-explore"][aria-current="location"]').count(),1);
+    await page.goto(base+'behind-the-round/'+lang+'/who-controls-internet-access/',{waitUntil:'load'});
+    await page.waitForURL(url=>url.searchParams.get('tab')==='governance-access');
+    await page.locator('#governance-access.active').waitFor({state:'visible'});
+    await page.goto(base+'behind-the-round/'+lang+'/sanctions-and-dns/',{waitUntil:'load'});
+    await page.waitForURL(url=>url.searchParams.get('tab')==='governance-sanctions');
+    await page.locator('#governance-sanctions.active').waitFor({state:'visible'});
     assert.deepEqual(errors,[],'Browser runtime errors: '+errors.join(';'));
     await context.close();
    }
