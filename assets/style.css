@@ -577,7 +577,7 @@ body[data-active-tab]:not([data-active-tab="overview"]) .hero{display:none}
 .iaProjectPrompt{display:block;margin:0 0 12px;font-size:12px;font-weight:780;letter-spacing:.13em;text-transform:uppercase;color:var(--accent-text)}
 .hero p[data-i18n="heroBody"]{font-size:clamp(17px,1.85vw,23px);line-height:1.48;color:var(--text);font-weight:560;max-width:760px}
 .hero p.heroPlain{font-size:clamp(14px,1.23vw,16px);line-height:1.6;margin-top:13px;max-width:780px;color:var(--muted)}
-.iaPrimaryNav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;position:sticky;top:var(--topbar-height);z-index:36;padding:8px;background:color-mix(in srgb,var(--bg) 93%,transparent);backdrop-filter:blur(18px);border:1px solid var(--border);border-radius:14px;margin:9px 0 8px}
+.iaPrimaryNav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px;position:sticky;top:var(--topbar-height);z-index:36;padding:8px;background:color-mix(in srgb,var(--bg) 93%,transparent);backdrop-filter:blur(18px);border:1px solid var(--border);border-radius:14px;margin:9px 0 8px}
 .iaPrimaryLink{display:flex;align-items:center;justify-content:center;min-height:48px;min-width:0;text-align:center;text-decoration:none;color:var(--muted);font-size:14px;line-height:1.25;font-weight:700;border-radius:9px;padding:8px 6px;overflow-wrap:anywhere;hyphens:auto}
 .iaPrimaryLink:hover,.iaPrimaryLink:focus-visible{background:var(--surface2);color:var(--text)}
 .iaPrimaryLink.active,.iaPrimaryLink[aria-current]{background:var(--accent-soft);color:var(--accent-text)}
