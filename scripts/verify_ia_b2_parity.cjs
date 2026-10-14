@@ -7,7 +7,7 @@
    reusing the existing official graph and filtering engine. This reviewed addition
    deliberately updates only the Explore section digest.
    Economics intentionally extended 14 Oct 2026: source-linked ICANN contention, Intercap portfolio and brand/AI analysis.
-   See docs/EDITORIAL_UPDATE_2026-10-14.md; other 20 section digests remain frozen. */
+   See docs/EDITORIAL_UPDATE_2026-10-14.md; original A section digests remain frozen except the approved Economics bridge; the new cemetery section has its own hash. */
 'use strict';
 const fs=require('node:fs');
 const assert=require('node:assert/strict');
@@ -20,7 +20,7 @@ const baseline={
  beyond:['d5ce05ac3253ca8a',3136],
  cities:['1cdd26be34d79885',2070],
  geography:['5a19ad9c0070e2da',9613],
- economics:['025e46bdaede1f70',13112],
+ economics:['17b4bb1ac5caa0d7',-62010],
  social:['f1248df8c136df10',2801],
  contention:['6ac6dcf1629b1d8e',3028],
  refusals:['0102bee7eebcb306',1985],
@@ -74,7 +74,7 @@ for(let i=0;i<ranges.length;i++){
  assert.equal(fnv64(segment),digest,'Editorial content changed without source-parity review: '+id);
  passed.push(id);
 }
-assert.equal(passed.length,21,'Lost a canonical A section');
+assert.equal(passed.length,22,'Lost a canonical A section or the cemetery chapter');
 assert.equal((source.match(/class="iaPrimaryLink"/g)||[]).length,5,'Five B2 routes missing');
 assert.equal((source.match(/<!-- CTD_IA_B2_HUBS -->/g)||[]).length,1,'B2 hubs not integrated into the normal generator');
 console.log('IA_B2_SOURCE_PARITY_VERIFIED '+JSON.stringify({baselineMain:'ec231cc12d35fa91ff5340ad057a483ce23a5ca4',preservedSections:passed.length,originalHomeRecovered:true,purposeLedHomeAddedChars:end-start,unchangedDatasets:true}));
