@@ -3,6 +3,9 @@
    Baseline segment strings were directly compared A vs B on 13 Oct 2026.
    64-bit FNV checks detect accidental drift; they are NOT a cryptographic archive.
    Legitimate editorial changes require review and a deliberate manifest refresh.
+   14 October 2026: Explore now includes a native application-level 2026 Atlas panel,
+   reusing the existing official graph and filtering engine. This reviewed addition
+   deliberately updates only the Explore section digest.
    Economics intentionally extended 14 Oct 2026: source-linked ICANN contention, Intercap portfolio and brand/AI analysis.
    See docs/EDITORIAL_UPDATE_2026-10-14.md; other 20 section digests remain frozen. */
 'use strict';
@@ -11,7 +14,7 @@ const assert=require('node:assert/strict');
 const source=fs.readFileSync('src/index.web.html','utf8');
 const baseline={
  overview:['a800715bf0b3f09f',9849],
- explore:['a91ce246ffe529e4',6326],
+ explore:['4a955923e368d20e',9994],
  timeline:['2cb0d00b3b4d421f',1599],
  how:['d1d1e55939463c66',11713],
  beyond:['d5ce05ac3253ca8a',3136],
