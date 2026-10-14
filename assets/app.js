@@ -611,9 +611,7 @@ function syncIAB2Navigation(){
   const root=document.documentElement.dataset.ctdRoot||'./';
   document.querySelectorAll('a[data-b2-resource]').forEach(link=>{
     const kind=link.dataset.b2Resource;
-    const path=kind==='atlas'?'applications/'+lang+'/':
-               kind==='sanctions'?'behind-the-round/'+lang+'/sanctions-and-dns/':
-               kind==='access'?'behind-the-round/'+lang+'/who-controls-internet-access/':'';
+    const path=kind==='atlas'?'applications/'+lang+'/':'';
     if(path)link.setAttribute('href',root+path);
   });
   const nav=document.querySelector('.iaPrimaryNav');
