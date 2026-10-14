@@ -145,7 +145,7 @@ def files_to_patch(root: Path):
             "sanctions-and-dns",
             "who-controls-internet-access",
         ):
-            area = "understand" if slug in ("sanctions-and-dns", "who-controls-internet-access") else "round"
+            area = "explore" if slug in ("sanctions-and-dns", "who-controls-internet-access") else "round"
             yield root / "behind-the-round" / lang / slug / "index.html", lang, area
     yield root / "explorer" / "index.html", "en", "explore"
     yield root / "research" / "index.html", "en", "research"
