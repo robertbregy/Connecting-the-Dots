@@ -84,31 +84,18 @@ function assert(ok,level,cat,route,msg,extra){if(!ok)log(level,cat,route,msg,ext
    assert(inventory.snapshotRows===980&&inventory.loaded&&inventory.catalogStrings===980&&!inventory.runtimeError,
     'HIGH','EXPLORER_2026',route,'2026 Reveal Day Explorer overlay missing or incomplete',{viewport:vp.id,inventory});
    await overflow(p,route,vp.id);
-   if(vp.id==='desktop'){
-    // The legacy shortcuts live behind a deliberate disclosure in IA B2.
-    // Expand it before exercising the original desktop navigation contract.
-    await p.locator('#iaLegacyNavDisclosure').evaluate(el=>{el.open=true});
-    for(const name of ['tabHow','navThemes']){
-      const btn=p.locator('.navMenu[data-label-key="'+name+'"] > button');
-      await btn.click();const panel=p.locator(name==='tabHow'?'#navHowDropdown':'#navThemesDropdown');
-      assert(await panel.isVisible(),'MED','NAV',route,name+' menu did not open');
-      const rect=await panel.boundingBox();
-      assert(rect&&rect.x>=-2&&rect.y>=-2&&rect.x+rect.width<=vp.width+2&&rect.y+rect.height<=vp.height+2,'MED','NAV_VIEWPORT',route,name+' menu clipped',{rect});
-      await p.keyboard.press('Escape');
-      assert(!(await panel.isVisible()),'MED','NAV',route,'Escape did not close '+name);
-    }
-    await p.locator('.navMenu[data-label-key="navRound"] button').click();
-    await p.locator('.navMenu[data-label-key="navRound"] [data-target="lugano"]').click();
+   if(vp.id==='desktop'||vp.id==='mobile'){
+    // B2 five-way navigation supersedes the legacy disclosure.
+    const legacy=p.locator('#iaLegacyNavDisclosure');
+    assert(!(await legacy.isVisible()),'HIGH','NAV',route,'Obsolete A navigation remains visible');
+    const round=p.locator('.iaPrimaryLink[data-b2-area="ia-round"]');
+    await round.click();
+    const hub=await p.evaluate(()=>[...document.querySelectorAll('.section.active')].map(x=>x.id));
+    assert(hub.join()==='ia-round','HIGH','NAV',route,'B2 Round navigation failed',{hub});
+    await p.goto(base+'/'+locale+'/?tab=lugano',{waitUntil:'load'});
     const active=await p.evaluate(()=>[...document.querySelectorAll('.section.active')].map(x=>x.id));
-    assert(active.join()==='lugano','HIGH','NAV',route,'Lugano tab activation failed',{active});
-    await p.screenshot({path:'audit-'+locale+'-desktop-lugano.png',fullPage:false});
-   }
-   if(vp.id==='mobile'){
-    await p.locator('#iaLegacyNavDisclosure').evaluate(el=>{el.open=true});
-    await p.locator('#mobileNav').selectOption('lugano');
-    const active=await p.evaluate(()=>[...document.querySelectorAll('.section.active')].map(x=>x.id));
-    assert(active.join()==='lugano','HIGH','NAV',route,'Mobile Lugano tab failed',{active});
-    await p.screenshot({path:'audit-'+locale+'-mobile-lugano.png',fullPage:false});
+    assert(active.join()==='lugano','HIGH','NAV',route,'Legacy Lugano deep link failed',{active});
+    await p.screenshot({path:'audit-'+locale+'-'+vp.id+'-lugano.png',fullPage:false});
    }
    for(const e of opened.errors)log('MED','JS_CONSOLE',route,e.slice(0,160),{viewport:vp.id});
    await p.close();
