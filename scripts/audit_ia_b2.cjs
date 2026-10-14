@@ -80,7 +80,7 @@ async function checkAxe(page,label) {
       tally.hubs.push({hub,cards:count,target:canonical});
     }
 
-    // Exhaustive discoverability check: each of the 25 B2 cards must be
+    // Exhaustive discoverability check: each of the 26 B2 cards must be
     // actionable across languages and desktop/mobile. Click descriptive copy
     // rather than the headline to catch misleading card hit areas.
     tally.checkedCards=0;
@@ -145,7 +145,7 @@ async function checkAxe(page,label) {
       }
       tally.checkedCards++;
     }
-    assert.equal(tally.checkedCards,25,"not all B2 cards tested");
+    assert.equal(tally.checkedCards,26,"not all B2 cards tested");
     // The introductory Internet-basics article deliberately returns to the Home
     // overview. Home must not claim that a primary area is selected.
     // The descriptive text is not an anchor. The native title anchor must
