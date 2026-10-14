@@ -21,6 +21,7 @@ const baseline={
  cities:['1cdd26be34d79885',2070],
  geography:['5a19ad9c0070e2da',9613],
  economics:['b12f2e1d85e316bb',12248],
+ cemetery:['074e18bf62b43c04',1522],
  social:['f1248df8c136df10',2801],
  contention:['6ac6dcf1629b1d8e',3028],
  refusals:['0102bee7eebcb306',1985],
