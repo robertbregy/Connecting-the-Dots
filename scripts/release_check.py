@@ -169,6 +169,21 @@ if not expected_based_on.issubset(set(ds.get('isBasedOn') or [])):
     fail('Dataset JSON-LD primary provenance is incomplete')
 
 
+# IA B2 production contract: six sections, one home for each editorial topic.
+hubs=(ROOT/'src'/'ia-b2-hubs.html').read_text(encoding='utf-8')
+expected_areas=('ia-understand','ia-explore','ia-stories','ia-outcomes','ia-round','ia-research')
+if any(hubs.count('id="'+area+'"')!=1 for area in expected_areas):
+    fail('Six IA B2 areas must have unique IDs')
+if hubs.count('class="section iaHub"')!=6 or hubs.count('class="iaHubCard"')!=26:
+    fail('Six IA hubs must preserve all 26 cards')
+for topic,area in (('cities','ia-stories'),('economics','ia-stories'),('social','ia-stories'),('strange','ia-stories'),('contention','ia-outcomes'),('disputes','ia-outcomes'),('refusals','ia-outcomes'),('cemetery','ia-outcomes')):
+    section=hubs.split('id="'+area+'"',1)[1].split('</section>',1)[0]
+    if section.count('data-open-section="'+topic+'"')!=1:
+        fail('IA B2 topic missing from canonical editorial area: '+topic)
+for language in LANGS:
+    if not translations.get(language,{}).get('iaNavOutcomes'):
+        fail('Sixth area translation missing: '+language)
+
 # Reader-experience and accessibility invariants. These are intentionally
 # structural rather than pixel-perfect so the project can evolve without
 # silently losing the novice path, keyboard entry point or search-first UX.
