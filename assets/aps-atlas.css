@@ -94,7 +94,7 @@ body:has(.apsHeader) .apsFinder,body:has(.apsHeader) .apsResources,body:has(.aps
 }
 body:has(.apsHeader) .apsMetrics article{border-radius:22px}
 body:has(.apsHeader) .apsCard{border-radius:16px}
-body:has(.apsHeader) .apsTag{background:var(--surface2);border-color:var(--border);color:var(--muted)}
+body:has(.apsHeader) .apsTag{background:var(--surface2);border-color:var(--border);color:var(--ink)}
 body:has(.apsHeader) .apsTag.apsMatch{background:var(--tint);color:var(--accent-text)}
 body:has(.apsHeader) .apsTag.apsState{background:var(--surface2);color:var(--ink);border-color:var(--border)}
 body:has(.apsHeader) .apsCardDetails summary,body:has(.apsHeader) .apsCardLinks a{color:var(--accent-text)}
