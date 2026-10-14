@@ -197,7 +197,7 @@ body:has(main.governanceArticle) footer,body:has(main.accessArticle) footer{max-
 <a class="brand brandButton" href="../../../en/" aria-label="Home"><img alt="" src="../../../assets/logo-mark.png"><span class="brandTitle">Connecting the Dots</span></a>
 <div class="controls"><label class="ctdGuideLang"><span class="sr-only">Language</span><select aria-label="Language" class="control lang" id="ctdGuideLanguage">
 <option value="en" selected>EN</option><option value="de">DE</option><option value="fr">FR</option><option value="it">IT</option>
-</select></label><button class="control" id="ctdGuideTheme" type="button" aria-label="Toggle theme">◐</button></div>
+</select></label><button class="control" id="ctdGuideCopy" type="button" aria-label="Copy link"><svg aria-hidden="true" class="copyIcon" viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2"></rect><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path></svg><span class="shareText">Copy link</span></button><button class="control" id="ctdGuideTheme" type="button" aria-label="Toggle theme">◐</button></div>
 </div></header>
 <nav class="ctdB2CrossNav" aria-label="The six paths through Connecting the Dots"><a href="../../../en/?tab=ia-understand#ia-understand" data-b2-cross-area="understand">Understand</a><a href="../../../en/?tab=ia-explore#ia-explore" data-b2-cross-area="explore" aria-current="location">Explore</a><a href="../../../en/?tab=ia-stories#ia-stories" data-b2-cross-area="stories">Stories &amp; issues</a><a href="../../../en/?tab=ia-outcomes#ia-outcomes" data-b2-cross-area="outcomes">Conflicts &amp; outcomes</a><a href="../../../en/?tab=ia-round#ia-round" data-b2-cross-area="round">2026 round</a><a href="../../../en/?tab=ia-research#ia-research" data-b2-cross-area="research">Research</a></nav>
 <nav class="ctdB2Trail" aria-label="Breadcrumb"><a href="../../../en/">Home</a><span aria-hidden="true">/</span><a href="../../../en/?tab=ia-explore#ia-explore">Explore</a><span aria-hidden="true">/</span><span aria-current="page">Page</span></nav><script id="ctd-b2-link-isolation">
@@ -246,8 +246,13 @@ body:has(main.governanceArticle) footer,body:has(main.accessArticle) footer{max-
 <p class="governanceDate">Reviewed: <time datetime="2026-10-10">2026-10-10</time></p>
 <div class="actions"><a class="action secondary" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/">Back to Field Notes</a>
 <a class="action secondary" href="https://robertbregy.github.io/Connecting-the-Dots/en/">Back to the atlas</a></div>
-</main><footer>Connecting the Dots · <a href="https://robertbregy.github.io/Connecting-the-Dots/en/">ICANN 2026</a> ·
-<a href="https://doi.org/10.5281/zenodo.23288603">RR2 · latest archived research</a> · <a href="https://doi.org/10.5281/zenodo.23262623">RR1 · original Reveal Day snapshot</a></footer>
+</main><footer class="footer ctdGuideFooter">
+<a class="footerFeedback" href="../../../en/">Back to Connecting the Dots</a>
+<span>Connecting the Dots</span>
+<a class="footerDoi" href="https://doi.org/10.5281/zenodo.23288603" target="_blank" rel="noopener">RR2 · DOI 10.5281/zenodo.23288603</a>
+<a class="footerGithub" href="https://github.com/robertbregy/Connecting-the-Dots" target="_blank" rel="noopener">GitHub · source</a>
+<a href="https://doi.org/10.5281/zenodo.23262623" target="_blank" rel="noopener">RR1</a>
+</footer>
 <script id="ctd-guide-controls">(function(){
 "use strict";
 var root=document.documentElement;
@@ -258,6 +263,12 @@ var themeButton=document.getElementById("ctdGuideTheme");
 if(themeButton)themeButton.addEventListener("click",function(){
  var next=root.getAttribute("data-theme")==="dark"?"light":"dark";theme(next);
  try{localStorage.setItem(themeKey,next);}catch(e){}
+});
+var copyButton=document.getElementById("ctdGuideCopy");
+if(copyButton)copyButton.addEventListener("click",function(){
+ if(navigator.clipboard&&navigator.clipboard.writeText){
+ navigator.clipboard.writeText(location.href).then(function(){var label=copyButton.querySelector(".shareText");if(label)label.textContent="Link copied";}).catch(function(){});
+ }
 });
 var picker=document.getElementById("ctdGuideLanguage");
 if(picker)picker.addEventListener("change",function(){
