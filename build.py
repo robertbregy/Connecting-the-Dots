@@ -385,7 +385,7 @@ def main() -> None:
     render_aps_application_atlas(ROOT)
     from scripts.integrate_governance_native import integrate
     native_count = integrate(ROOT)
-    if native_count != 4:
+    if native_count != 5:
         raise SystemExit("Native governance chapters missing in a language")
     print("NATIVE_GOVERNANCE_VERIFIED", native_count)
     apply_ia_b2_crossnav(ROOT)
