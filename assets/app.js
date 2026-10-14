@@ -599,7 +599,7 @@ function toggleNavMenu(menu){
 
 // IA B2: a new orientation layer over preserved canonical sections.
 // These mappings never change application/TLD identity, source content or data.
-const IA_B2_AREAS={"ia-understand":["ia-understand","how","beyond"],"ia-explore":["ia-explore","explore","timeline","geography"],"ia-stories":["ia-stories","cities","economics","cemetery","social","contention","refusals","disputes","strange"],"ia-round":["ia-round","reveal","inside-round","behind-round","lugano"],"ia-research":["ia-research","research","paper","resources","sources"]};
+const IA_B2_AREAS={"ia-understand":["ia-understand","how","beyond"],"ia-explore":["ia-explore","explore","timeline","geography"],"ia-stories":["ia-stories","cities","economics","social","strange"],"ia-outcomes":["ia-outcomes","contention","refusals","disputes","cemetery"],"ia-round":["ia-round","reveal","inside-round","behind-round","lugano"],"ia-research":["ia-research","research","paper","resources","sources"]};
 function syncIAB2Navigation(){
   const current=activeTab==='overview'?null:(Object.entries(IA_B2_AREAS).find(([,sections])=>sections.includes(activeTab))?.[0]||null);
   document.querySelectorAll('.iaPrimaryLink[data-b2-area]').forEach(link=>{
