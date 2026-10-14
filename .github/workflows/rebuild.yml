@@ -82,10 +82,10 @@ jobs:
           print('FROZEN_LEGACY_ZIP_PRESERVED',pub['dataPackageVersion'],before_historic)
           PY
 
-      - name: Commit generated publication on unchanged feature tip
-        # Never publish to main. A changed branch during a running build is
-        # not a build failure; the newer push owns the next deterministic build.
-        if: github.ref != 'refs/heads/main'
+      - name: Commit generated publication on unchanged branch tip
+        # Publish verified build artifacts to the triggering branch, including main.
+        # A changed branch tip is never overwritten; a newer push owns its rebuild.
+        # The generated commit includes [skip build] to prevent a rebuild loop.
         run: |
           if git diff --quiet && test -z "$(git ls-files --others --exclude-standard)"; then
             echo "No generated changes."
