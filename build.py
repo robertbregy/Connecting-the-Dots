@@ -383,6 +383,11 @@ def main() -> None:
     build_access_pages(ROOT)
     build_investigations(ROOT)
     render_aps_application_atlas(ROOT)
+    from scripts.integrate_governance_native import integrate
+    native_count = integrate(ROOT)
+    if native_count != 4:
+        raise SystemExit("Native governance chapters missing in a language")
+    print("NATIVE_GOVERNANCE_VERIFIED", native_count)
     apply_ia_b2_crossnav(ROOT)
     cross_nav_count = validate_ia_b2_crossnav(ROOT)
     if cross_nav_count != 35:
