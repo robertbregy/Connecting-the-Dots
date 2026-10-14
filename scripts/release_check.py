@@ -1132,17 +1132,21 @@ for lang in LANGS:
         fail('Access explainer must not masquerade as 2026 case or dated milestone')
     check_internal_refs(path)
 
-# v0.7.76 regression gates: prevent new Economics material leaking outside its tab.
+# Editorial chapters are distinct: economic cycles remain in Economics;
+# the gTLD cemetery is a standalone B2 chapter between Economics and Social.
 ec_start=source_html.find('<section class="section" id="economics">')
+cem_start=source_html.find('<section class="section" id="cemetery"')
 social_start=source_html.find('<section class="section" id="social">')
-if not (0 <= ec_start < social_start):
-    fail('Economics and Social section order missing')
-economics_markup=source_html[ec_start:social_start]
+if not (0 <= ec_start < cem_start < social_start):
+    fail('Economics, Cemetery and Social section order missing')
+economics_markup=source_html[ec_start:cem_start]
+cemetery_markup=source_html[cem_start:social_start]
 if (economics_markup.count('id="economic-cycles-2026"')!=1 or
-    economics_markup.count('id="gtld-cemetery"')!=1 or
-    not economics_markup.rstrip().endswith('</section>') or
-    economics_markup.index('id="gtld-cemetery"') > economics_markup.rfind('</section>')):
-    fail('New Economics panels are incorrectly outside the Economics tab')
+    economics_markup.count('id="gtld-cemetery"')!=0 or
+    cemetery_markup.count('id="gtld-cemetery"')!=1 or
+    cemetery_markup.count('id="helsinki-termination"')!=1 or
+    not cemetery_markup.rstrip().endswith('</section>')):
+    fail('Economics/Cemetery editorial chapter boundary broken')
 distributions=ds.get('distribution',[])
 if not isinstance(distributions,list):
     fail('Dataset must identify live files and historical archive separately')
