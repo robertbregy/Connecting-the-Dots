@@ -14,6 +14,31 @@ from scripts.render_behind_round import BEHIND_CSS
 ROOT = Path(__file__).resolve().parents[1]
 SLUG = "sanctions-and-dns"
 CSS_EXTRA = """
+
+.governanceHero{margin:25px 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.governanceHero>section{background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:20px}
+.governanceHero h2{font-size:1.12rem;margin:0 0 10px}
+.governanceHero p{margin:0;color:var(--muted)}
+.governanceArticle section.panel{padding:25px;margin:17px 0}
+.governanceArticle h2{font-size:clamp(1.2rem,2.5vw,1.48rem);margin:0 0 11px}
+.governanceArticle .lead{margin-bottom:20px}
+.governanceCitations{display:flex;gap:7px;flex-wrap:wrap;margin:9px 0 0}
+.governanceCitations a{display:inline-block;border:1px solid #9ebbd0;background:#ecf4fb;color:#195f99;font-size:.78rem;font-weight:720;padding:2px 7px;border-radius:6px;text-decoration:none}
+.governanceCitations a:focus-visible,.governanceCitations a:hover{text-decoration:underline}
+.governancePrecedents{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:17px 0 22px}
+.governancePrecedents article{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:19px}
+.governancePrecedents time{display:block;color:var(--accent-text);font-size:1.15rem;font-weight:830;margin-bottom:8px}
+.governancePrecedents h3{font-size:1.04rem;line-height:1.3;margin:0 0 9px}
+.governancePrecedents p{font-size:.94rem;margin:0;color:var(--muted)}
+.governanceRelated{display:flex;flex-wrap:wrap;gap:10px;margin-top:17px}
+.governanceRelated a{display:inline-block;padding:10px 13px;border-radius:10px;border:1px solid var(--border);background:var(--surface2);font-weight:720;text-decoration:none}
+.governanceSources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 13px;padding:0;list-style:none}
+.governanceSources a{display:block;overflow-wrap:anywhere;padding:10px 12px;border:1px solid var(--border);border-radius:10px;text-decoration:none}
+.governanceSources a:hover{text-decoration:underline}
+.governanceSources small{color:var(--muted);font-weight:790;margin-right:8px}
+.governanceDate{font-size:.85rem;color:var(--muted);margin-top:24px}
+@media(max-width:700px){.governanceHero,.governancePrecedents,.governanceSources{grid-template-columns:1fr}.governanceArticle section.panel{padding:18px}}
+
 /* Editorial article treatment: consistent with the main site's typography and layout. */
 :root{--background:#f6f8fb;--surface:#fff;--surface2:#eef3f8;--text:#16243c;--muted:#455872;--border:#d3dee9;--accent:#1568ab;--accent-soft:#e7f1fa;--accent-text:#155b91}
 body{font-size:16px;line-height:1.7}
@@ -39,29 +64,6 @@ main.governanceArticle{max-width:1080px;padding:clamp(26px,4vw,56px) clamp(20px,
 .ctdB2Context,.ctdB2Trail{max-width:1080px}
 @media(max-width:740px){main.governanceArticle{padding:27px 18px 55px}.governanceHero{grid-template-columns:1fr;gap:10px;margin:26px 0 34px}.governanceHero>section{padding:20px}.governanceArticle>h2{margin-top:34px}.governanceArticle section.panel{padding:20px}}
 
-.governanceHero{margin:25px 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.governanceHero>section{background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:20px}
-.governanceHero h2{font-size:1.12rem;margin:0 0 10px}
-.governanceHero p{margin:0;color:var(--muted)}
-.governanceArticle section.panel{padding:25px;margin:17px 0}
-.governanceArticle h2{font-size:clamp(1.2rem,2.5vw,1.48rem);margin:0 0 11px}
-.governanceArticle .lead{margin-bottom:20px}
-.governanceCitations{display:flex;gap:7px;flex-wrap:wrap;margin:9px 0 0}
-.governanceCitations a{display:inline-block;border:1px solid #9ebbd0;background:#ecf4fb;color:#195f99;font-size:.78rem;font-weight:720;padding:2px 7px;border-radius:6px;text-decoration:none}
-.governanceCitations a:focus-visible,.governanceCitations a:hover{text-decoration:underline}
-.governancePrecedents{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:17px 0 22px}
-.governancePrecedents article{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:19px}
-.governancePrecedents time{display:block;color:var(--accent-text);font-size:1.15rem;font-weight:830;margin-bottom:8px}
-.governancePrecedents h3{font-size:1.04rem;line-height:1.3;margin:0 0 9px}
-.governancePrecedents p{font-size:.94rem;margin:0;color:var(--muted)}
-.governanceRelated{display:flex;flex-wrap:wrap;gap:10px;margin-top:17px}
-.governanceRelated a{display:inline-block;padding:10px 13px;border-radius:10px;border:1px solid var(--border);background:var(--surface2);font-weight:720;text-decoration:none}
-.governanceSources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 13px;padding:0;list-style:none}
-.governanceSources a{display:block;overflow-wrap:anywhere;padding:10px 12px;border:1px solid var(--border);border-radius:10px;text-decoration:none}
-.governanceSources a:hover{text-decoration:underline}
-.governanceSources small{color:var(--muted);font-weight:790;margin-right:8px}
-.governanceDate{font-size:.85rem;color:var(--muted);margin-top:24px}
-@media(max-width:700px){.governanceHero,.governancePrecedents,.governanceSources{grid-template-columns:1fr}.governanceArticle section.panel{padding:18px}}
 """
 
 def load(root: Path = ROOT) -> dict:
