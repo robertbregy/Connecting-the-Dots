@@ -64,6 +64,10 @@ main.governanceArticle{max-width:1080px;padding:clamp(26px,4vw,56px) clamp(20px,
 .ctdB2Context,.ctdB2Trail{max-width:1080px}
 @media(max-width:740px){main.governanceArticle{padding:27px 18px 55px}.governanceHero{grid-template-columns:1fr;gap:10px;margin:26px 0 34px}.governanceHero>section{padding:20px}.governanceArticle>h2{margin-top:34px}.governanceArticle section.panel{padding:20px}}
 
+
+.governanceEntryLinks{max-width:none;display:flex;flex-wrap:wrap;justify-content:flex-start;gap:8px;padding:0;margin:0 0 28px}
+.governanceEntryLinks a{display:inline-flex;align-items:center;min-height:42px;border:1px solid var(--border);border-radius:10px;padding:9px 13px;background:var(--surface2);color:var(--accent-text);font-size:.86rem;font-weight:750;text-decoration:none}
+.governanceEntryLinks a:hover,.governanceEntryLinks a:focus-visible{text-decoration:underline;background:var(--accent-soft)}
 """
 
 def load(root: Path = ROOT) -> dict:
@@ -196,6 +200,10 @@ def page(item: dict, lang: str) -> str:
 <header><nav aria-label="Languages"><a class="brand" href="{BASE}{lang}/">Connecting the Dots</a>
 <div class="lang-links">{nav}</div></nav></header>
 <main class="governanceArticle">
+<nav class="governanceEntryLinks" aria-label="Article pathways">
+<a href="{BASE}{lang}/?tab=ia-explore#ia-explore">{h({'it':'← Esplorare','en':'← Explore','de':'← Erkunden','fr':'← Explorer'}[lang])}</a>
+<a href="{BASE}behind-the-round/{lang}/">{h({'it':'← Note dal campo','en':'← Field Notes','de':'← Beobachtungen','fr':'← Carnet de terrain'}[lang])}</a>
+</nav>
 <div class="eyebrow">{h(t["eyebrow"])}</div>
 <h1>{h(t["title"])}</h1><p class="lead">{h(t["lead"])}</p>
 <div class="governanceHero">{top}</div>
