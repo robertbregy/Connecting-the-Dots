@@ -20,7 +20,7 @@ const baseline={
  beyond:['d5ce05ac3253ca8a',3136],
  cities:['1cdd26be34d79885',2070],
  geography:['5a19ad9c0070e2da',9613],
- economics:['17b4bb1ac5caa0d7',-62010],
+ economics:['b12f2e1d85e316bb',12248],
  social:['f1248df8c136df10',2801],
  contention:['6ac6dcf1629b1d8e',3028],
  refusals:['0102bee7eebcb306',1985],
