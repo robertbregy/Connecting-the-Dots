@@ -26,7 +26,10 @@ def main_markup(source: str, css_class: str) -> str:
     )
     if not match:
         raise ValueError("Missing article body: " + css_class)
-    return match.group(1)
+    article = match.group(1)
+    # The parent publication owns the sole H1; each native chapter starts at H2.
+    article = article.replace("<h1>", '<h2 class="ctdNativeHeading">', 1).replace("</h1>", "</h2>", 1)
+    return article
 
 
 def native_css() -> str:
@@ -40,7 +43,7 @@ def native_css() -> str:
     return """
 /* Both chapters belong to the native six-area app, not another site shell. */
 .ctdNativeGuide .ctdNativeArticle{max-width:1050px;margin:0 auto;padding:20px 0 55px}
-.ctdNativeGuide .ctdNativeArticle>h1{font-size:clamp(34px,5vw,62px);letter-spacing:-.05em;line-height:1.08;max-width:23ch;margin:10px 0 24px}
+.ctdNativeGuide .ctdNativeArticle>.ctdNativeHeading{font-size:clamp(34px,5vw,62px);letter-spacing:-.05em;line-height:1.08;max-width:23ch;margin:10px 0 24px}
 .ctdNativeGuide .ctdNativeArticle>.lead{font-size:clamp(17px,2vw,22px);line-height:1.55;color:var(--muted);max-width:70ch}
 .ctdNativeGuide .ctdNativeArticle>.eyebrow{font-size:12px;color:var(--muted);letter-spacing:.14em}
 .ctdNativeGuide .ctdNativeArticle .panel{background:var(--surface);border:1px solid var(--border);border-radius:15px;box-shadow:var(--shadow);padding:24px;margin:16px 0}
