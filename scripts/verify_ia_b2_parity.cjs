@@ -47,6 +47,21 @@ const ids=Object.keys(baseline),start=source.indexOf('<div class="iaHomeEntry">'
 const end=source.indexOf('<div class="eyebrow" data-i18n="homeGuideLabel">',start);
 assert.ok(start>=0&&end>start&&end-start>950&&end-start<1350,'The new Home introduction must be a separate, inspectable addition');
 const unwrappedRaw=source.slice(0,start)+source.slice(end);
+// Approved 14 October editorial relocation: restore the moved cemetery panel
+// *temporarily for the parity comparison*, and check that its standalone
+// destination plus Economics teaser exist exactly once. All original 21
+// section digests are still checked against their frozen pre-B2 baselines.
+const cemeteryOpen='<section class="section" id="cemetery">';
+const cemeteryStart=unwrappedRaw.indexOf(cemeteryOpen);
+const socialBoundary='</section>\n<section class="section" id="social">';
+const cemeteryEnd=unwrappedRaw.indexOf(socialBoundary,cemeteryStart);
+const teaserStart=unwrappedRaw.indexOf('<div class="panel" id="economics-cemetery-link">');
+assert.ok(cemeteryStart>0&&cemeteryEnd>cemeteryStart&&teaserStart>0&&teaserStart<cemeteryStart,'Cemetery must have one separate Stories chapter and one Economics crosslink');
+assert.equal(unwrappedRaw.split(cemeteryOpen).length,2,'Cemetery chapter duplicated');
+assert.equal(unwrappedRaw.split('id="economics-cemetery-link"').length,2,'Economics cemetery teaser duplicated');
+const movedPanel=unwrappedRaw.slice(cemeteryStart+cemeteryOpen.length,cemeteryEnd);
+assert.ok(movedPanel.startsWith('<div class="panel" id="gtld-cemetery">')&&movedPanel.includes('id="helsinki-termination"')&&movedPanel.endsWith('</div>'),'Original cemetery evidence or Helsinki case missing');
+const parityRaw=unwrappedRaw.slice(0,teaserStart)+movedPanel+'</section>'+unwrappedRaw.slice(cemeteryEnd+('</section>\n').length);
 // .helsinki was added as a reviewed, source-backed editorial supplement
 // after the A->B freeze. Subtract ONLY these two exactly identified inserts
 // before comparing the untouched 21 A sections against their frozen hashes.
@@ -54,9 +69,9 @@ const unwrappedRaw=source.slice(0,start)+source.slice(end);
 // may silently disappear on subsequent builds.
 const bridge=/<div class="panel cityHelsinkiBridge">[\s\S]*?<\/div>\n(?=<\/section>)/g;
 const caseArticle=/\n<article class="helsinkiCase"[\s\S]*?<\/article>/g;
-assert.equal((unwrappedRaw.match(bridge)||[]).length,1,'Missing or repeated Helsinki city-context card');
-assert.equal((unwrappedRaw.match(caseArticle)||[]).length,1,'Missing or repeated Helsinki termination case');
-const unwrapped=unwrappedRaw.replace(bridge,'').replace(caseArticle,'');
+assert.equal((parityRaw.match(bridge)||[]).length,1,'Missing or repeated Helsinki city-context card');
+assert.equal((parityRaw.match(caseArticle)||[]).length,1,'Missing or repeated Helsinki termination case');
+const unwrapped=parityRaw.replace(bridge,'').replace(caseArticle,'');
 const ranges=ids.map(id=>{
  const re=new RegExp('<section\\b[^>]*\\bid="'+id+'"[^>]*>');
  const found=re.exec(unwrapped);
