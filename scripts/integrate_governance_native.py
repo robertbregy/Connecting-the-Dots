@@ -114,5 +114,28 @@ def integrate(root: Path) -> int:
     return count
 
 
+def redirect_legacy(root: Path) -> int:
+    """Preserve old URLs, but open the authoritative native chapter by default.
+
+    ?legacy=1 remains available for archival comparisons and no-JS visitors.
+    """
+    count = 0
+    for lang in LANGS:
+        for slug, tab, _ in KINDS:
+            old_page = root / "behind-the-round" / lang / slug / "index.html"
+            html = old_page.read_text(encoding="utf-8")
+            script = (
+                '<script id="ctd-native-redirect">'
+                'if(!new URLSearchParams(location.search).has("legacy"))'
+                '{location.replace("../../../' + lang + '/?tab=' + tab + '#' + tab + '")}'
+                '</script>'
+            )
+            if 'id="ctd-native-redirect"' not in html:
+                html = html.replace("</head>", script + "</head>", 1)
+            old_page.write_text(html, encoding="utf-8")
+            count += 1
+    return count
+
+
 if __name__ == "__main__":
     print("NATIVE_GOVERNANCE_PAGES", integrate(Path(__file__).resolve().parents[1]))
