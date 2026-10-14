@@ -80,6 +80,29 @@ const base='http://127.0.0.1:8123';
   assert.ok(await p.locator('.apsCard details').first().evaluate(n=>n.open),'Direct application permalink must expand details');
   await p.close();await ctx.close();metrics.searchChecks++;
  }
+ // The embedded Atlas is now a native view of Explore: test the actual B2 route,
+ // not only the retained public /applications/{lang}/ permalinks.
+ for(const lang of ['it','en','de','fr']){
+  for(const width of [320,1360]){
+   const ctx=await browser.newContext({viewport:{width,height:850}});
+   const p=await ctx.newPage();const errors=[];p.on('pageerror',e=>errors.push(e.message));
+   const res=await p.goto(base+'/'+lang+'/?tab=explore#aps-native',{waitUntil:'load',timeout:35000});
+   assert.equal(res.status(),200);
+   await p.waitForSelector('#aps-native .apsCard',{timeout:15000});
+   assert.equal(await p.locator('#aps-native .apsCard').count(),30,'Native initial card page '+lang);
+   assert.equal(await p.locator('#aps-native #apsSearch').count(),1);
+   assert.ok(await p.locator('#aps-native').isVisible(),'Atlas panel must be visible inside Explore '+lang);
+   await p.locator('#aps-native #apsSearch').fill('CDL2651T-T31516');
+   assert.equal(await p.locator('#aps-native .apsCard').count(),1,'Native search must work '+lang);
+   assert.ok((await p.locator('#aps-native .apsCard').first().innerText()).toLowerCase().includes('lugano'));
+   const widths=await p.evaluate(()=>({viewport:document.documentElement.clientWidth,doc:document.documentElement.scrollWidth}));
+   assert.ok(widths.doc<=widths.viewport+3,'Native Atlas overflow '+lang+' '+width+': '+JSON.stringify(widths));
+   await p.locator('#aps-native #apsReset').click();
+   assert.equal(await p.locator('#aps-native .apsCard').count(),30);
+   assert.deepEqual(errors,[],'Native Atlas runtime errors '+lang);
+   await p.close();await ctx.close();metrics.viewports++;metrics.searchChecks++;
+  }
+ }
  await browser.close();
  assert.equal(metrics.overflows,0);assert.equal(metrics.errors,0);
  console.log('APS_ATLAS_BROWSER_AUDIT '+JSON.stringify(metrics));
