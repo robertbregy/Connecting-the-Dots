@@ -1,7 +1,7 @@
 /* 2026 APS Atlas: public ICANN application-ID graph, separately from TLD Explorer. */
 (()=>{'use strict';
 const corpus=window.CTD_APS_2026||null;
-let L=window.CTD_APS_I18N||{};
+let L=window.CTD_APS_I18N||(window.DOT_I18N&&window.DOT_I18N[document.documentElement.lang])||{};
 let lang=window.CTD_APS_LANG||document.documentElement.lang||'en';
 const site='https://robertbregy.github.io/Connecting-the-Dots/';
 const results=document.getElementById('apsResults'),output=document.getElementById('apsResultCount');
