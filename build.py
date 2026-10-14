@@ -383,7 +383,7 @@ def main() -> None:
     build_access_pages(ROOT)
     build_investigations(ROOT)
     render_aps_application_atlas(ROOT)
-    from scripts.integrate_governance_native import integrate
+    from scripts.integrate_governance_native import integrate, redirect_legacy
     native_count = integrate(ROOT)
     if native_count != 5:
         raise SystemExit("Native governance chapters missing in a language")
@@ -393,6 +393,8 @@ def main() -> None:
     if cross_nav_count != 35:
         raise SystemExit('IA B2 cross-site navigation coverage incomplete')
     print(f'IA B2 integrated navigation: {cross_nav_count} independent pages')
+    if redirect_legacy(ROOT) != 8:
+        raise SystemExit("Legacy governance redirects incomplete")
     validate_index()
     # Release-level validation is intentionally self-contained so the browser-upload
     # bundle can verify itself even though the larger development QA suite is omitted.
