@@ -201,18 +201,36 @@ def unify_governance_shell(html: str, file: Path, lang: str) -> str:
     css_link = f'<link rel="stylesheet" href="{prefix}/assets/style.css" id="ctd-main-style">'
     if 'id="ctd-main-style"' not in html:
         html = html.replace("</head>", css_link + "</head>", 1)
+    controls_labels = {
+        "it": ("Copia link", "Collegamento copiato", "Cambia tema", "Torna a Connecting the Dots"),
+        "en": ("Copy link", "Link copied", "Toggle theme", "Back to Connecting the Dots"),
+        "de": ("Link kopieren", "Link kopiert", "Darstellung wechseln", "Zurück zu Connecting the Dots"),
+        "fr": ("Copier le lien", "Lien copié", "Changer de thème", "Retour à Connecting the Dots"),
+    }
+    copy_label, copied_label, theme_label, home_label = controls_labels[lang]
     shell_header = f'''<a class="skipLink" href="#ctd-article-main">Skip to main content</a>
 <header class="topbar"><div class="topinner">
 <a class="brand brandButton" href="{home}" aria-label="Home"><img alt="" src="{prefix}/assets/logo-mark.png"><span class="brandTitle">Connecting the Dots</span></a>
 <div class="controls"><label class="ctdGuideLang"><span class="sr-only">Language</span><select aria-label="Language" class="control lang" id="ctdGuideLanguage">
 <option value="en"{" selected" if lang=="en" else ""}>EN</option><option value="de"{" selected" if lang=="de" else ""}>DE</option><option value="fr"{" selected" if lang=="fr" else ""}>FR</option><option value="it"{" selected" if lang=="it" else ""}>IT</option>
-</select></label><button class="control" id="ctdGuideTheme" type="button" aria-label="Toggle theme">◐</button></div>
+</select></label><button class="control" id="ctdGuideCopy" type="button" aria-label="{copy_label}"><svg aria-hidden="true" class="copyIcon" viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2"></rect><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path></svg><span class="shareText">{copy_label}</span></button><button class="control" id="ctdGuideTheme" type="button" aria-label="{theme_label}">◐</button></div>
 </div></header>'''
     html, changed = re.subn(r'<header><nav aria-label="Languages">[\s\S]*?</nav></header>',
                            lambda _m: shell_header, html, count=1)
     if changed != 1:
         raise ValueError(f"Cannot apply shared header to {file}")
     html = html.replace('<main class=', '<span id="ctd-article-main" tabindex="-1"></span>\n<main class=', 1)
+    # The research article remains unchanged; its framing now shares the site's footer.
+    footer_html = f'''<footer class="footer ctdGuideFooter">
+<a class="footerFeedback" href="{home}?tab=sources#report-error">{home_label}</a>
+<span>Connecting the Dots</span>
+<a class="footerDoi" href="https://doi.org/10.5281/zenodo.23288603" target="_blank" rel="noopener">RR2 · DOI 10.5281/zenodo.23288603</a>
+<a class="footerGithub" href="https://github.com/robertbregy/Connecting-the-Dots" target="_blank" rel="noopener">GitHub · source</a>
+<a href="https://doi.org/10.5281/zenodo.23262623" target="_blank" rel="noopener">RR1</a>
+</footer>'''
+    html, footer_count = re.subn(r'<footer>[\\s\\S]*?</footer>', lambda _m: footer_html, html, count=1)
+    if footer_count != 1:
+        raise ValueError(f"Cannot apply shared footer to {file}")
     script = f'''<script id="ctd-guide-controls">(function(){{
 "use strict";
 var root=document.documentElement;
@@ -223,6 +241,12 @@ var themeButton=document.getElementById("ctdGuideTheme");
 if(themeButton)themeButton.addEventListener("click",function(){{
  var next=root.getAttribute("data-theme")==="dark"?"light":"dark";theme(next);
  try{{localStorage.setItem(themeKey,next);}}catch(e){{}}
+}});
+var copyButton=document.getElementById("ctdGuideCopy");
+if(copyButton)copyButton.addEventListener("click",function(){{
+ if(navigator.clipboard&&navigator.clipboard.writeText){{
+ navigator.clipboard.writeText(location.href).then(function(){{var label=copyButton.querySelector(".shareText");if(label)label.textContent="{copied_label}";}}).catch(function(){{}});
+ }}
 }});
 var picker=document.getElementById("ctdGuideLanguage");
 if(picker)picker.addEventListener("change",function(){{
