@@ -145,7 +145,7 @@ async function checkAxe(page,label) {
       }
       tally.checkedCards++;
     }
-    assert.equal(tally.checkedCards,25,"not all B2 cards tested");
+    assert.equal(tally.checkedCards,26,"not all B2 cards tested");
     // The introductory Internet-basics article deliberately returns to the Home
     // overview. Home must not claim that a primary area is selected.
     // The descriptive text is not an anchor. The native title anchor must
