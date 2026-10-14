@@ -146,6 +146,10 @@ main.governanceArticle{max-width:1080px;padding:clamp(26px,4vw,56px) clamp(20px,
 .ctdB2Context,.ctdB2Trail{max-width:1080px}
 @media(max-width:740px){main.governanceArticle{padding:27px 18px 55px}.governanceHero{grid-template-columns:1fr;gap:10px;margin:26px 0 34px}.governanceHero>section{padding:20px}.governanceArticle>h2{margin-top:34px}.governanceArticle section.panel{padding:20px}}
 
+
+.governanceEntryLinks{max-width:none;display:flex;flex-wrap:wrap;justify-content:flex-start;gap:8px;padding:0;margin:0 0 28px}
+.governanceEntryLinks a{display:inline-flex;align-items:center;min-height:42px;border:1px solid var(--border);border-radius:10px;padding:9px 13px;background:var(--surface2);color:var(--accent-text);font-size:.86rem;font-weight:750;text-decoration:none}
+.governanceEntryLinks a:hover,.governanceEntryLinks a:focus-visible{text-decoration:underline;background:var(--accent-soft)}
 </style><style id="ctd-b2-cross-style">
 .ctdB2CrossNav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;padding:9px max(14px,calc((100vw - 1230px)/2));box-sizing:border-box;margin:0 auto 15px;background:var(--surface,#f4f7fa);border-bottom:1px solid var(--border,#d4dfe9);font:700 14px/1.35 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
 .ctdB2CrossNav a{display:flex;align-items:center;justify-content:center;min-width:0;min-height:44px;box-sizing:border-box;text-align:center;text-decoration:none;border-radius:8px;padding:8px 6px;color:var(--text,#142d40);overflow-wrap:anywhere;hyphens:auto}
@@ -167,8 +171,8 @@ body:has(.ctdB2CrossNav) .ctdB2CrossNav a:focus-visible,body:has(.ctdB2CrossNav)
 </style></head><body>
 <header><nav aria-label="Languages"><a class="brand" href="https://robertbregy.github.io/Connecting-the-Dots/it/">Connecting the Dots</a>
 <div class="lang-links"><a lang="en" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/sanctions-and-dns/">English</a> <a lang="it" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/sanctions-and-dns/" aria-current="page">Italiano</a> <a lang="de" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/sanctions-and-dns/">Deutsch</a> <a lang="fr" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/sanctions-and-dns/">Français</a></div></nav></header>
-<nav class="ctdB2CrossNav" aria-label="I sei percorsi di Connecting the Dots"><a href="../../../it/?tab=ia-understand#ia-understand" data-b2-cross-area="understand" aria-current="location">Capire</a><a href="../../../it/?tab=ia-explore#ia-explore" data-b2-cross-area="explore">Esplorare</a><a href="../../../it/?tab=ia-stories#ia-stories" data-b2-cross-area="stories">Storie e questioni</a><a href="../../../it/?tab=ia-outcomes#ia-outcomes" data-b2-cross-area="outcomes">Conflitti ed esiti</a><a href="../../../it/?tab=ia-round#ia-round" data-b2-cross-area="round">Round 2026</a><a href="../../../it/?tab=ia-research#ia-research" data-b2-cross-area="research">Ricerca</a></nav>
-<nav class="ctdB2Trail" aria-label="Breadcrumb"><a href="../../../it/">Home</a><span aria-hidden="true">/</span><a href="../../../it/?tab=ia-understand#ia-understand">Capire</a><span aria-hidden="true">/</span><span aria-current="page">Pagina</span></nav><script id="ctd-b2-link-isolation">
+<nav class="ctdB2CrossNav" aria-label="I sei percorsi di Connecting the Dots"><a href="../../../it/?tab=ia-understand#ia-understand" data-b2-cross-area="understand">Capire</a><a href="../../../it/?tab=ia-explore#ia-explore" data-b2-cross-area="explore" aria-current="location">Esplorare</a><a href="../../../it/?tab=ia-stories#ia-stories" data-b2-cross-area="stories">Storie e questioni</a><a href="../../../it/?tab=ia-outcomes#ia-outcomes" data-b2-cross-area="outcomes">Conflitti ed esiti</a><a href="../../../it/?tab=ia-round#ia-round" data-b2-cross-area="round">Round 2026</a><a href="../../../it/?tab=ia-research#ia-research" data-b2-cross-area="research">Ricerca</a></nav>
+<nav class="ctdB2Trail" aria-label="Breadcrumb"><a href="../../../it/">Home</a><span aria-hidden="true">/</span><a href="../../../it/?tab=ia-explore#ia-explore">Esplorare</a><span aria-hidden="true">/</span><span aria-current="page">Pagina</span></nav><script id="ctd-b2-link-isolation">
 (function(){
   "use strict";
   var prod="https://robertbregy.github.io/Connecting-the-Dots/";
@@ -191,6 +195,10 @@ body:has(.ctdB2CrossNav) .ctdB2CrossNav a:focus-visible,body:has(.ctdB2CrossNav)
 })();
 </script><aside class="ctdB2Context" data-b2-editorial-kind="evergreen-guide"><strong>GUIDA DI CONTESTO</strong><p>Questo è un approfondimento generale sulla governance di Internet, non una nota su un singolo evento del round ICANN 2026. Le note dal campo analizzano invece casi ed eventi specifici.</p></aside>
 <main class="governanceArticle">
+<nav class="governanceEntryLinks" aria-label="Article pathways">
+<a href="https://robertbregy.github.io/Connecting-the-Dots/it/?tab=ia-explore#ia-explore">← Esplorare</a>
+<a href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/">← Note dal campo</a>
+</nav>
 <div class="eyebrow">Scheda di contesto · OFAC e DNS</div>
 <h1>Quando Internet globale incontra le sanzioni nazionali</h1><p class="lead">ICANN coordina un sistema di nomi globale, ma deve rispettare le leggi che le sono applicabili. Ciò può limitare l&#x27;accesso a un nuovo gTLD. Non le attribuisce però il potere generale di disconnettere un Paese dal DNS.</p>
 <div class="governanceHero"><section><h2>Conformità giuridica</h2><p>ICANN può essere tenuta a non fornire servizi a determinati richiedenti, salvo autorizzazioni o esenzioni applicabili.</p></section><section><h2>Neutralità tecnica</h2><p>Per ICANN, il proprio mandato non comprende sanzioni geopolitiche né la disconnessione unilaterale dei domini nazionali.</p></section></div>
