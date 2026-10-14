@@ -189,7 +189,7 @@ def unify_governance_shell(html: str, file: Path, lang: str) -> str:
     """Use the actual main-site stylesheet and header controls on evergreen guides."""
     if file.parent.name not in ("sanctions-and-dns", "who-controls-internet-access"):
         return html
-    prefix = "/".join(".." for _ in file.parent.relative_to(ROOT).parts)
+    prefix = "/".join(".." for _ in file.parent.relative_to(Path(__file__).resolve().parent.parent).parts)
     home = f"{prefix}/{lang}/"
     # Retain article-specific styling, structured data, sources and interactive simulator.
     css_link = f'<link rel="stylesheet" href="{prefix}/assets/style.css" id="ctd-main-style">'
