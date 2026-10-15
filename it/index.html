@@ -109,7 +109,7 @@ window.DOT_I18N={"it":{"brand":"Brand","copyLink":"Copia link","copied":"Copiato
 .accessSample span{color:var(--muted);font-size:.84rem}.accessSample code{font-size:1rem;overflow-wrap:anywhere}
 .accessChoices{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 25px}
 .accessChoices button{font:inherit;font-size:.86rem;min-height:42px;max-width:100%;border-radius:10px;cursor:pointer;border:1px solid #97afc9;background:var(--surface);color:var(--text);padding:9px 12px;text-align:center;transition:background .12s}
-.accessChoices button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:750}
+.accessChoices button[aria-pressed="true"]{background:#00539b;border-color:#00539b;color:#fff;font-weight:750}
 .accessChoices button:hover{box-shadow:0 0 0 1px var(--accent)}
 .accessChoices button:focus-visible{outline:3px solid #327bb1;outline-offset:2px}
 .accessStages{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
@@ -123,8 +123,10 @@ window.DOT_I18N={"it":{"brand":"Brand","copyLink":"Copia link","copied":"Copiato
 .accessStages li p,.accessPrerequisite li p{color:var(--muted);font-size:.79rem;line-height:1.48;margin:0}
 .accessStages li .state,.accessPrerequisite li .state{font-size:.75rem;font-weight:780}
 .accessStages li[data-state="passed"],.accessPrerequisite li[data-state="passed"]{border-color:#82b8a0;background:#e9f8f1;color:#185e45}
+.accessStages li[data-state="passed"] p,.accessPrerequisite li[data-state="passed"] p{color:#254b3a}
+.accessStages li[data-state="blocked"] p,.accessPrerequisite li[data-state="blocked"] p{color:#62450b}
 .accessStages li[data-state="blocked"],.accessPrerequisite li[data-state="blocked"]{border-color:#b99a5d;background:#fff2d8;color:#76520d}
-.accessStages li[data-state="pending"],.accessPrerequisite li[data-state="pending"]{border-color:var(--border);background:var(--surface2);opacity:.67}
+.accessStages li[data-state="pending"],.accessPrerequisite li[data-state="pending"]{border-color:var(--border);background:var(--surface2);opacity:1}
 .accessScenarios{margin-top:20px}
 .accessScenario{border:1px solid var(--border);border-radius:14px;padding:18px 20px}
 .accessScenario[data-outcome="blocked"]{border-left:4px solid #af8240}
@@ -154,7 +156,7 @@ window.DOT_I18N={"it":{"brand":"Brand","copyLink":"Copia link","copied":"Copiato
 .accessSources a{display:block;padding:12px 13px;border-radius:10px;border:1px solid var(--border);text-decoration:none;overflow-wrap:anywhere;font-size:.88rem;line-height:1.42}
 .accessSources a:hover,.accessSources a:focus-visible{text-decoration:underline;background:var(--surface2)}
 .accessRefs{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-.accessRefs a{text-decoration:none;color:var(--accent-text);border:1px solid #9ebbd0;border-radius:6px;background:#eaf3fc;padding:2px 7px;font-size:.77rem;font-weight:750}
+.accessRefs a{text-decoration:none;color:#154e78;border:1px solid #9ebbd0;border-radius:6px;background:#eaf3fc;padding:2px 7px;font-size:.77rem;font-weight:750}
 .accessRefs a:hover,.accessRefs a:focus-visible{text-decoration:underline}
 .accessPanel{padding:22px!important}
 .accessPanel h2{margin:0 0 10px}
@@ -979,7 +981,7 @@ window.DOT_PUBLICATION={
   doiUrl:'https://doi.org/10.5281/zenodo.23288603',
   conceptDoi:'10.5281/zenodo.23262622',
   archive:'Zenodo',
-  commit:'59ddefab30c50ff4ef77a42f6e5604684f52aa24'
+  commit:'8f32d24ca4729f1ee03c7f904bf1a4128daf02c8'
 };
 </script>
 <script defer src="../assets/app.js?v=0.7.80" id="ctd-app"></script>
