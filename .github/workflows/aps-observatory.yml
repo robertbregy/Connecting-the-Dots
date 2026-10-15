@@ -1,0 +1,38 @@
+name: APS longitudinal integrity and payload report
+on:
+  push:
+    branches: [main, 'feat/**']
+    paths:
+      - 'scripts/aps_observatory.py'
+      - 'scripts/payload_audit.py'
+      - 'scripts/tests/**'
+      - 'data/applications_2026_aps_official_listing.csv'
+      - 'data/applications_2026_aps_official_provenance.json'
+      - '.github/workflows/aps-observatory.yml'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  aps-snapshot-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Unit tests
+        run: python3 -m unittest discover -s scripts/tests -p 'test_aps_observatory.py' -v
+      - name: Verify official public listing and hash
+        run: python3 scripts/aps_observatory.py verify-baseline
+      - name: Measure static payload sizes
+        run: python3 scripts/payload_audit.py --output dist/payload-report.json
+      - name: Attach technical evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: aps-observatory-evidence
+          path: dist/payload-report.json
+          if-no-files-found: ignore
