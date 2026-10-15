@@ -73,7 +73,7 @@ ACCESS_CSS = """
 .accessSources a{display:block;padding:12px 13px;border-radius:10px;border:1px solid var(--border);text-decoration:none;overflow-wrap:anywhere;font-size:.88rem;line-height:1.42}
 .accessSources a:hover,.accessSources a:focus-visible{text-decoration:underline;background:var(--surface2)}
 .accessRefs{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-.accessRefs a{text-decoration:none;color:#154e78;border:1px solid #9ebbd0;border-radius:6px;background:#eaf3fc;padding:2px 7px;font-size:.77rem;font-weight:750}
+.accessRefs a{text-decoration:none;color:#154e78!important;border:1px solid #9ebbd0;border-radius:6px;background:#eaf3fc;padding:2px 7px;font-size:.77rem;font-weight:750}
 .accessRefs a:hover,.accessRefs a:focus-visible{text-decoration:underline}
 .accessPanel{padding:22px!important}
 .accessPanel h2{margin:0 0 10px}
