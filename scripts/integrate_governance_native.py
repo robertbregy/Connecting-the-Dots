@@ -56,7 +56,7 @@ def native_css() -> str:
 .ctdNativeGuide .ctdNativeReturn{display:inline-flex;align-items:center;min-height:40px;color:var(--accent-text);font-size:14px;font-weight:700;text-decoration:none}
 .ctdNativeGuide .ctdNativeReturn:hover{text-decoration:underline}
 @media(max-width:720px){.ctdNativeGuide .ctdNativeArticle{padding:12px 0 35px}.ctdNativeGuide .ctdNativeArticle .panel{padding:17px}}
-""" + ACCESS_CSS + "\n" + "\n".join(lines)
+""" + ACCESS_CSS + "\n" + "\n".join(lines) + "\n" + ".ctdNativeGuide .ctdNativeArticle .governanceCitations a{background:#ecf4fb;color:#164c75;border-color:#9ebbd0}";
 
 
 def integrate(root: Path) -> int:
