@@ -80,60 +80,64 @@ function check(ok,level,kind,where,message,extra){if(!ok)finding(level,kind,wher
    }
  }
  await page.close(); await ctx.close();
+ // Test the VISIBLE B2 six-area navigation, not the intentionally hidden A menu.
+ // Dedicated B2 card-level and legacy deep-link tests run in parallel in browser-qa.
+ const b2Hubs=['ia-understand','ia-explore','ia-stories','ia-outcomes','ia-round','ia-research'];
+ const b2Cases=[['ia-stories','economics'],['ia-explore','explore'],
+                ['ia-research','research'],['ia-round','behind-round']];
  for(const lang of languages){
   for(const width of [320,390,768,1360]){
    const mobile=width<800;
-   const context=await browser.newContext({viewport:{width,height:812},isMobile:mobile,hasTouch:mobile});
+   const context=await browser.newContext({viewport:{width,height:812},isMobile:mobile,hasTouch:mobile,reducedMotion:'reduce'});
    const p=await context.newPage();
    const errors=[];p.on('pageerror',e=>errors.push(e.message));
-   await p.goto(base+'/'+lang+'/',{waitUntil:'load',timeout:25000});
-   const targets=await p.evaluate(mobile=>{
-      return mobile?[...document.querySelectorAll('#mobileNav option')].map(x=>x.value).filter(Boolean):
-      [...new Set([...document.querySelectorAll('.nav [data-target]')].map(x=>x.dataset.target))].filter(Boolean);
-   },mobile);
-   for(const tab of targets){
+   await p.goto(base+'/'+lang+'/',{waitUntil:'load',timeout:30000});
+   check((await p.locator('#iaLegacyNavDisclosure').isVisible())===false,
+       'HIGH','OBSOLETE_A_NAV_VISIBLE',lang,'Legacy A shortcut navigation should stay hidden',{width});
+   for(const hub of b2Hubs){
       counts.navChecks++;
       try{
-       if(mobile){
-         // Preserve the original 26-option shortcut layer in IA B2: open before each selection.
-         await p.locator('#iaLegacyNavDisclosure').evaluate(el=>{el.open=true});
-         await p.locator('#mobileNav').selectOption(tab,{timeout:3000});
-       }
-       else await p.evaluate(tab=>{const e=[...document.querySelectorAll('.nav [data-target]')].find(x=>x.dataset.target===tab);if(e)e.click();},tab);
-       await p.waitForTimeout(30);
+       await p.locator('.iaPrimaryLink[data-b2-area="'+hub+'"]').click({timeout:6000});
        const d=await p.evaluate(()=>({
           active:[...document.querySelectorAll('section.section.active')].map(x=>x.id),
           width:document.documentElement.clientWidth,
           scroll:document.documentElement.scrollWidth,
-          headings:[...document.querySelectorAll('section.section.active h1,section.section.active h2')].map(x=>x.textContent.trim()).filter(Boolean).slice(0,2),
           text:document.querySelector('section.section.active')?.innerText?.length||0
        }));
-       check(d.active.length===1 && d.active[0]===tab.split('#')[0],'HIGH','NAVIGATION',lang+'/'+tab,'Navigation fails',{width,active:d.active});
-       check(d.text>30,'MED','EMPTY_TAB',lang+'/'+tab,'Active section unexpectedly empty',{width,text:d.text});
+       check(d.active.length===1 && d.active[0]===hub,'HIGH','B2_NAVIGATION',lang+'/'+hub,
+             'Visible six-area navigation failed',{width,active:d.active});
+       check(d.text>30,'MED','EMPTY_B2_HUB',lang+'/'+hub,'Selected hub unexpectedly empty',{width,text:d.text});
        counts.overflowChecks++;
-       check(d.scroll<=d.width+3,'HIGH','HORIZONTAL_OVERFLOW',lang+'/'+tab,'Horizontal scroll beyond viewport',{width,content:d.scroll,viewport:d.width});
-      }catch(e){finding('HIGH','NAV_EXCEPTION',lang+'/'+tab,e.message.slice(0,250),{width});}
+       check(d.scroll<=d.width+3,'HIGH','HORIZONTAL_OVERFLOW',lang+'/'+hub,
+             'Hub wider than viewport',{width,content:d.scroll,viewport:d.width});
+      }catch(e){finding('HIGH','B2_NAV_EXCEPTION',lang+'/'+hub,e.message.slice(0,250),{width});}
    }
-   check(!errors.length,'HIGH','CLIENT_ERROR',lang,'Client JS exceptions',{width,errors:errors.slice(0,6)});
-   for(const tab of ['economics','explore','research','behind-round']){
+   check(!errors.length,'HIGH','CLIENT_ERROR',lang,'Client JavaScript exceptions',{width,errors:errors.slice(0,6)});
+   for(const [hub,tab] of b2Cases){
       try{
-        if(mobile){
-          await p.locator('#iaLegacyNavDisclosure').evaluate(el=>{el.open=true});
-          await p.locator('#mobileNav').selectOption(tab,{timeout:2500});
-        }
-        else await p.evaluate(tab=>{let x=[...document.querySelectorAll('.nav [data-target]')].find(e=>e.dataset.target===tab);x?.click()},tab);
-        const view=await p.evaluate(tab=>{const s=document.getElementById(tab);const vis=s?.classList.contains('active'); const empty=[...(s?.querySelectorAll('[data-i18n]')||[])].filter(el=>{const cs=getComputedStyle(el);return cs.display!=='none'&&cs.visibility!=='hidden'&&!el.textContent.trim()&&!el.children.length;}).slice(0,10).map(x=>x.dataset.i18n);return {visible:vis,empty};},tab);
-        check(view.visible,'HIGH','SECTION_MISSING',lang+'/'+tab,'Important section hidden',{width});
-        if(view.empty.length)finding('MED','EMPTY_I18N',lang+'/'+tab,'Visible i18n elements have no rendered text',{width,keys:view.empty});
+        await p.locator('.iaPrimaryLink[data-b2-area="'+hub+'"]').click({timeout:6000});
+        await p.locator('#'+hub+' a[data-open-section="'+tab+'"]').first().click({timeout:6000});
+        await p.locator('#'+tab+'.section.active').waitFor({state:'visible',timeout:6000});
+        const view=await p.evaluate(tab=>{
+          const el=document.getElementById(tab);
+          const vis=el?.classList.contains('active');
+          const empty=[...(el?.querySelectorAll('[data-i18n]')||[])]
+            .filter(x=>{const css=getComputedStyle(x);return css.display!=='none' && css.visibility!=='hidden' && !x.textContent.trim() && !x.children.length;})
+            .slice(0,10).map(x=>x.dataset.i18n);
+          return {visible:vis,empty};
+        },tab);
+        check(view.visible,'HIGH','B2_CHAPTER_MISSING',lang+'/'+tab,'B2 chapter not visible after card click',{width});
+        if(view.empty.length)finding('MED','EMPTY_I18N',lang+'/'+tab,'Visible i18n text missing',{width,keys:view.empty});
         if(width===320 || width===1360){
           await p.screenshot({path:'audit-independent-'+lang+'-'+width+'-'+tab+'.png',fullPage:false});
           const AxeBuilder=require('@axe-core/playwright').default;
           const ax=await new AxeBuilder({page:p}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
           counts.axeChecks++;
-          const viol=ax.violations.filter(x=>['critical','serious','moderate'].includes(x.impact)).map(x=>({id:x.id,impact:x.impact,nodes:x.nodes.length,target:x.nodes?.[0]?.target}));
+          const viol=ax.violations.filter(x=>['critical','serious','moderate'].includes(x.impact))
+            .map(x=>({id:x.id,impact:x.impact,nodes:x.nodes.length,target:x.nodes?.[0]?.target}));
           if(viol.length)finding('HIGH','WCAG',lang+'/'+tab,'Accessibility violations',{width,violations:viol.slice(0,8)});
         }
-      }catch(e){finding('HIGH','SECTION_TEST',lang+'/'+tab,e.message.slice(0,220),{width});}
+      }catch(e){finding('HIGH','B2_CHAPTER_EXCEPTION',lang+'/'+tab,e.message.slice(0,220),{width});}
    }
    await p.close();await context.close();
   }
@@ -206,18 +210,18 @@ function check(ok,level,kind,where,message,extra){if(!ok)finding(level,kind,wher
      await ep.close();await ctxE.close();
    }
  }
- // Structural regression: two Economics panels must not leak onto other tabs.
+ // Structural regression: economic cycles stay in Economics; the cemetery has its own B2 chapter.
  for(const language of languages){
    const c=await browser.newContext({viewport:{width:390,height:812}});
    const p=await c.newPage();
-   for(const tab of ['overview','social','economics','explore','behind-round']){
+   for(const tab of ['overview','social','economics','cemetery','explore','behind-round']){
      await p.goto(base+'/'+language+'/?tab='+tab,{waitUntil:'load',timeout:25000});
      const actual=await p.evaluate(()=>({active:document.querySelector('section.section.active')?.id,
        panels:['economic-cycles-2026','gtld-cemetery'].map(id=>{
          const el=document.getElementById(id),rect=el?.getBoundingClientRect();
          return {id,parent:el?.closest('section.section')?.id,visible:!!rect&&rect.width>0&&rect.height>0};
        })}));
-     check(actual.active===tab&&actual.panels.every(x=>x.parent==='economics'&&x.visible===(tab==='economics')),
+     check(actual.active===tab&&actual.panels.every(x=>x.parent===(x.id==='gtld-cemetery'?'cemetery':'economics')&&x.visible===(tab===x.parent)),
        'HIGH','ORPHAN_PANELS',language+'/'+tab,'Economics panels leaked outside their section',{actual});
    }
    // The city-TLD story must remain a native B2 pathway, including
@@ -238,7 +242,7 @@ function check(ok,level,kind,where,message,extra){if(!ok)finding(level,kind,wher
          sources:document.querySelectorAll('#helsinki-termination .srcs a').length,
          body:document.querySelector('#helsinki-termination')?.innerText||''
        }));
-       check(status.active==='economics'&&status.sources===3&&status.body.includes('.helsinki'),
+       check(status.active==='cemetery'&&status.sources===3&&status.body.includes('.helsinki'),
          'HIGH','HELSINKI_NAV',language,'Helsinki full-card navigation or sources broken',status);
      }
    }
