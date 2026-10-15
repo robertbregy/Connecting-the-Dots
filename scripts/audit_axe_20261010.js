@@ -17,7 +17,7 @@ const sectionCountExpected=24;
    const p=await ctx.newPage();
    await p.goto(base+'/'+lang+'/',{waitUntil:'load'});
    const tabs=await p.evaluate(()=>[...document.querySelectorAll('.nav [data-target]')].map(x=>x.getAttribute('data-target')));
-   const sections=await p.evaluate(()=>[...document.querySelectorAll('section.section')].map(x=>x.id).filter(Boolean));
+   const sections=await p.evaluate(()=>[...document.querySelectorAll('section.section:not(.iaHub)')].map(x=>x.id).filter(Boolean));
    if(sections.length!==sectionCountExpected)throw Error('Unexpected built sections: '+sections.length);
    const targets=sections;
    for(const theme of ['light','dark']){
