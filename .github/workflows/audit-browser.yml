@@ -73,12 +73,6 @@ jobs:
       - name: Audit all 160 combinations of locale, theme and section for WCAG A/AA
         run: |
           node scripts/audit_axe_20261010.js
-      - name: Independent four-language, all-tab and Explorer regression audit
-        run: |
-          node scripts/deep_audit_20261011.js
-      - name: Verify interactive application atlas (all languages + mobile)
-        run: |
-          node scripts/audit_aps_application_atlas.js
       - name: Attach visual evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -90,5 +84,72 @@ jobs:
             audit-ia-b2/report.json
             audit-ia-b2/*.png
             audit-deeplinks/results.json
+            audit-aps-atlas-*.png
+          if-no-files-found: ignore
+
+  independent-qa:
+    name: Independent four-language and Explorer audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install headless browser dependencies
+        run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Build and independently audit every language, route and Explorer
+        run: |
+          python3 build.py
+          python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/ctd-independent-http.log 2>&1 &
+          sleep 2
+          node scripts/deep_audit_20261011.js
+      - name: Preserve independent audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ctd-independent-audit-${{ github.sha }}
+          path: |
+            audit-independent-20261011.json
+            audit-independent-*.png
+          if-no-files-found: ignore
+
+  atlas-qa:
+    name: APS Atlas all-language interaction and mobile regression
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install headless browser dependencies
+        run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Build and verify interactive application atlas in all languages
+        run: |
+          python3 build.py
+          python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/ctd-atlas-http.log 2>&1 &
+          sleep 2
+          node scripts/audit_aps_application_atlas.js
+      - name: Preserve atlas audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ctd-aps-atlas-${{ github.sha }}
+          path: |
             audit-aps-atlas-*.png
           if-no-files-found: ignore
