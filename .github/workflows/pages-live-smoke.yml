@@ -1,0 +1,95 @@
+name: Verify actual GitHub Pages bytes after deployment
+
+on:
+  workflow_run:
+    workflows: ["pages build and deployment"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ctd-live-pages-smoke
+  cancel-in-progress: true
+
+jobs:
+  verify-live:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout the actual Pages source commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
+          persist-credentials: false
+      - name: Compare deployed files with immutable source bytes
+        env:
+          CTD_EVENT_SHA: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          import subprocess
+          import time
+          from pathlib import Path
+          from urllib.error import URLError
+          from urllib.request import Request, urlopen
+
+          root=Path.cwd()
+          base="https://robertbregy.github.io/Connecting-the-Dots/"
+          head=subprocess.check_output(["git","ls-remote","origin","refs/heads/main"],text=True).split()[0]
+          expected_sha=os.environ["CTD_EVENT_SHA"]
+          if head!=expected_sha:
+              print("SKIP: a newer main commit superseded this Pages build",expected_sha,head)
+              raise SystemExit(0)
+          targets=[
+              "index.html",
+              "it/index.html","en/index.html","de/index.html","fr/index.html",
+              "research/index.html",
+              "applications/it/index.html","applications/en/index.html",
+              "applications/de/index.html","applications/fr/index.html",
+              "behind-the-round/it/sanctions-and-dns/index.html",
+              "behind-the-round/it/who-controls-internet-access/index.html",
+              "behind-the-round/en/sanctions-and-dns/index.html",
+              "behind-the-round/en/who-controls-internet-access/index.html",
+              "downloads/connecting-the-dots-data-pack-v0.7.80.zip",
+          ]
+          results={}
+          for attempt in range(1,9):
+              results={}
+              for path in targets:
+                  expected=root/path
+                  if not expected.is_file():
+                      raise SystemExit("MISSING REPOSITORY FILE: "+path)
+                  route="" if path=="index.html" else path.replace("/index.html","/")
+                  url=base+route
+                  try:
+                      with urlopen(Request(url,headers={"User-Agent":"ConnectingTheDots-LiveReleaseAudit/1.0"}),timeout=25) as response:
+                          actual=response.read()
+                          status=response.status
+                      same=status==200 and hashlib.sha256(actual).digest()==hashlib.sha256(expected.read_bytes()).digest()
+                      results[path]={"status":status,"matches_repo":same,"live_size":len(actual)}
+                  except (OSError,URLError) as exc:
+                      results[path]={"matches_repo":False,"error":str(exc)}
+              if all(r["matches_repo"] for r in results.values()):
+                  break
+              print("GitHub Pages still propagating or inconsistent; attempt",attempt,"of 8")
+              if attempt!=8:
+                  time.sleep(15)
+          evidence={"source_commit":expected_sha,"public_url":base,"attempts":attempt,
+                    "all_match":all(r["matches_repo"] for r in results.values()),"files":results}
+          Path("live-pages-smoke.json").write_text(json.dumps(evidence,sort_keys=True,indent=2)+"\n",encoding="utf-8")
+          print(json.dumps(evidence,sort_keys=True,indent=2))
+          if not evidence["all_match"]:
+              raise SystemExit("PUBLIC PAGES MISMATCH: verified source does not match live bytes")
+          PY
+      - name: Save live-release verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pages-live-smoke
+          path: live-pages-smoke.json
+          if-no-files-found: ignore
