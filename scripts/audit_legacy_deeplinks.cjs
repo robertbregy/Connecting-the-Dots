@@ -30,7 +30,7 @@ const oldCemeteryLinks=[["economics","gtld-cemetery"],["economics","helsinki-ter
         await page.locator("#"+section+".section.active").waitFor({state:"visible",timeout:5000});
         const target=await page.evaluate(s=>({act:document.querySelector(".section.active")?.id,title:document.title,hash:location.hash,query:new URLSearchParams(location.search).get("tab"),lang:document.documentElement.lang,sections:document.querySelectorAll("section.section:not(.iaHub)").length}),section);
         assert.equal(target.act,section,"active section");
-        assert.equal(target.sections,22,"21 original sections plus autonomous cemetery chapter");
+        assert.equal(target.sections,24,"22 preserved historical sections plus 2 native governance chapters");
         assert.equal(target.lang,lang,"language");
         assert.equal(target.query,section,"query tab");
         if(width===1440)assert.equal(target.hash,"#"+section,"anchor changed");
