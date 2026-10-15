@@ -7,20 +7,23 @@ const AxeBuilder=require('@axe-core/playwright').default;
 const fs=require('fs');
 const base='http://127.0.0.1:8123';
 const language=['en','it','de','fr'];
-const sections=[...fs.readFileSync('src/index.web.html','utf8').matchAll(/<section class="section" id="([^"]+)"/g)].map(x=>x[1]);
+// Observe the built page, not the old source template: two governance chapters are generated at build time.
+const sectionCountExpected=24;
 (async()=>{
  const browser=await chromium.launch({headless:true,args:['--disable-dev-shm-usage']});
- const rows=[],summary={pages:0,sections:sections.length,scans:0,critical:0,serious:0,moderate:0,minor:0};
+ const rows=[],summary={pages:0,sections:sectionCountExpected,scans:0,critical:0,serious:0,moderate:0,minor:0};
  for(const lang of language){
    const ctx=await browser.newContext({viewport:{width:1366,height:800}});
    const p=await ctx.newPage();
    await p.goto(base+'/'+lang+'/',{waitUntil:'load'});
    const tabs=await p.evaluate(()=>[...document.querySelectorAll('.nav [data-target]')].map(x=>x.getAttribute('data-target')));
-   const targets=sections.filter(x=>tabs.includes(x));
+   const sections=await p.evaluate(()=>[...document.querySelectorAll('section.section')].map(x=>x.id).filter(Boolean));
+   if(sections.length!==sectionCountExpected)throw Error('Unexpected built sections: '+sections.length);
+   const targets=sections;
    for(const theme of ['light','dark']){
      await p.evaluate(d=>{document.documentElement.dataset.theme=d},theme);
      for(const tab of targets){
-       await p.evaluate(t=>{let a=document.querySelector('.nav [data-target="'+t+'"]');if(a)a.click()},tab);
+       await p.evaluate(t=>{let a=document.querySelector('.nav [data-target="'+t+'"]')||document.querySelector('[data-open-section="'+t+'"]');if(a)a.click()},tab);
        await p.waitForTimeout(10);
        const active=await p.evaluate(t=>{
          let el=document.getElementById(t);
@@ -47,6 +50,6 @@ const sections=[...fs.readFileSync('src/index.web.html','utf8').matchAll(/<secti
  }
  for(const r of Object.values(unique))console.log('AUDIT_AXE_SUMMARY '+JSON.stringify(r));
  console.log('AUDIT_AXE_RESULT '+JSON.stringify({summary:summary,uniqueRules:[...new Set(rows.map(r=>r.id))],totalViolations:rows.length,groups:Object.values(unique).length}));
- if(summary.scans!==sections.length*language.length*2){console.error('AUDIT_AXE_INCOMPLETE expected='+sections.length*language.length*2+' actual='+summary.scans);process.exitCode=1;}
+ if(summary.scans!==sectionCountExpected*language.length*2){console.error('AUDIT_AXE_INCOMPLETE expected='+sectionCountExpected*language.length*2+' actual='+summary.scans);process.exitCode=1;}
  if(rows.length){console.error('AUDIT_AXE_VIOLATIONS '+rows.length+' section-level WCAG violations');process.exitCode=1;}
 })().catch(e=>{console.log('AUDIT_AXE_FATAL '+e.stack);process.exitCode=1});
