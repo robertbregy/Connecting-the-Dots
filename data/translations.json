@@ -2339,7 +2339,7 @@
     "iaHubUnderstandLead": "Begin with simple concepts, then dive into how domains work, the rules and the people who can intervene.",
     "iaHubExploreEyebrow": "TOOLS AND HISTORY",
     "iaHubExploreTitle": "Explore names, applications and data",
-    "iaHubExploreLead": "Search a TLD, a proposed string or a formal application. These are connected objects, not synonyms.",
+    "iaHubExploreLead": "Search for a TLD, a proposed string or a formal application: related objects, not synonyms. Then explore who can act on the DNS and on Internet access.",
     "iaHubStoriesEyebrow": "PEOPLE AND POWER",
     "iaHubStoriesTitle": "Stories and issues",
     "iaHubStoriesLead": "Territories, markets, communities and curiosities: what TLDs mean in the real world.",
@@ -2420,9 +2420,9 @@
     "iaHubOutcomesTitle": "Conflicts & outcomes",
     "iaHubOutcomesLead": "From competing applications to the fate of extensions: objections, decisions, withdrawals and lifecycles.",
     "iaHubOutcomesContext": "Applications and TLDs have distinct stages: rejection before delegation is not the same as ending an active delegation.",
-    "iaExploreGovernanceEyebrow": "In depth · Governance",
-    "iaExploreGovernanceTitle": "When rules meet geopolitics",
-    "iaExploreGovernanceLead": "After DNS geography and hierarchy, two complementary perspectives: legal constraints that can affect ICANN's work and the tools states use to restrict Internet access."
+    "iaExploreGovernanceEyebrow": "In depth · DNS geography and governance",
+    "iaExploreGovernanceTitle": "Who controls what on the Internet?",
+    "iaExploreGovernanceLead": "No single authority controls the Internet. DNS geography shows how infrastructure and influence are distributed; access controls explain how states and network operators can restrict connectivity; sanctions illustrate legal constraints that may affect ICANN and other DNS actors. Three related but distinct perspectives."
   },
   "it": {
     "brand": "Brand",
@@ -4764,7 +4764,7 @@
     "iaHubUnderstandLead": "Parti dai concetti semplici, poi approfondisci il funzionamento dei domini, le regole e chi può intervenire.",
     "iaHubExploreEyebrow": "STRUMENTI E STORIA",
     "iaHubExploreTitle": "Esplorare nomi, candidature e dati",
-    "iaHubExploreLead": "Cerca un TLD, una stringa proposta o una candidatura formale. Sono oggetti collegati, ma non sinonimi.",
+    "iaHubExploreLead": "Cerca un TLD, una stringa proposta o una candidatura formale: sono oggetti collegati, non sinonimi. Poi scopri chi può intervenire sul DNS e sull'accesso alla rete.",
     "iaHubStoriesEyebrow": "PERSONE E POTERE",
     "iaHubStoriesTitle": "Storie e questioni",
     "iaHubStoriesLead": "Territori, mercati, comunità e curiosità: cosa significano i TLD nel mondo reale.",
@@ -4845,9 +4845,9 @@
     "iaHubOutcomesTitle": "Conflitti ed esiti",
     "iaHubOutcomesLead": "Dalle candidature contese al destino delle estensioni: obiezioni, decisioni, rinunce e cicli di vita.",
     "iaHubOutcomesContext": "Candidature e TLD attraversano fasi diverse: un rifiuto prima della delega non è la cessazione di una delega già attiva.",
-    "iaExploreGovernanceEyebrow": "Approfondimento · Governance",
-    "iaExploreGovernanceTitle": "Quando le regole incontrano la geopolitica",
-    "iaExploreGovernanceLead": "Dopo la geografia e la gerarchia del DNS, due prospettive complementari: i vincoli giuridici che possono incidere sulle attività di ICANN e gli strumenti con cui gli Stati limitano l'accesso a Internet."
+    "iaExploreGovernanceEyebrow": "Approfondimento · Geografia e governance",
+    "iaExploreGovernanceTitle": "Chi controlla cosa su Internet?",
+    "iaExploreGovernanceLead": "Non esiste un unico centro di controllo di Internet. La geografia del DNS mostra come si distribuiscono infrastrutture e poteri; il controllo dell’accesso spiega come Stati e operatori possono limitare la connettività; le sanzioni illustrano i vincoli giuridici che possono incidere sulle attività di ICANN e di altri attori del DNS. Tre prospettive collegate, ma distinte."
   },
   "de": {
     "brand": "Marke",
@@ -7189,7 +7189,7 @@
     "iaHubUnderstandLead": "Einfach anfangen, dann die Funktionsweise der Domains, Regeln und Zuständigkeiten vertiefen.",
     "iaHubExploreEyebrow": "WERKZEUGE UND GESCHICHTE",
     "iaHubExploreTitle": "Namen, Bewerbungen und Daten erkunden",
-    "iaHubExploreLead": "Suchen Sie eine TLD, einen vorgeschlagenen String oder eine Bewerbung. Diese Objekte sind verbunden, aber verschieden.",
+    "iaHubExploreLead": "Suche nach einer TLD, einer beantragten Zeichenfolge oder einer formellen Bewerbung: miteinander verknüpft, aber nicht identisch. Entdecke anschließend, wer im DNS und beim Internetzugang eingreifen kann.",
     "iaHubStoriesEyebrow": "MENSCHEN UND MACHT",
     "iaHubStoriesTitle": "Geschichten und Fragen",
     "iaHubStoriesLead": "Territorien, Märkte, Gemeinschaften und Kuriositäten: was TLDs in der Welt bedeuten.",
@@ -7270,9 +7270,9 @@
     "iaHubOutcomesTitle": "Konflikte und Ergebnisse",
     "iaHubOutcomesLead": "Von umstrittenen Bewerbungen bis zum Schicksal der Endungen: Einwände, Entscheidungen, Rückzüge und Lebenszyklen.",
     "iaHubOutcomesContext": "Bewerbungen und TLDs durchlaufen verschiedene Phasen: Eine Ablehnung vor der Delegierung ist nicht deren spätere Beendigung.",
-    "iaExploreGovernanceEyebrow": "Vertiefung · Governance",
-    "iaExploreGovernanceTitle": "Wenn Regeln auf Geopolitik treffen",
-    "iaExploreGovernanceLead": "Nach DNS-Geografie und -Hierarchie zwei ergänzende Perspektiven: rechtliche Grenzen für ICANN und die Mittel, mit denen Staaten den Internetzugang beschränken."
+    "iaExploreGovernanceEyebrow": "Vertiefung · DNS-Geografie und Governance",
+    "iaExploreGovernanceTitle": "Wer kontrolliert was im Internet?",
+    "iaExploreGovernanceLead": "Keine einzelne Stelle kontrolliert das Internet. Die DNS-Geografie zeigt, wie Infrastruktur und Einfluss verteilt sind; Zugangskontrollen erklären, wie Staaten und Netzbetreiber die Konnektivität einschränken können; Sanktionen verdeutlichen rechtliche Vorgaben, die ICANN und weitere DNS-Akteure betreffen können. Drei miteinander verbundene, aber unterschiedliche Perspektiven."
   },
   "fr": {
     "brand": "Marque",
@@ -9614,7 +9614,7 @@
     "iaHubUnderstandLead": "Commencez par les notions simples, puis approfondissez le fonctionnement, les règles et les responsabilités.",
     "iaHubExploreEyebrow": "OUTILS ET HISTOIRE",
     "iaHubExploreTitle": "Explorer noms, candidatures et données",
-    "iaHubExploreLead": "Recherchez un TLD, une chaîne proposée ou une candidature. Ces objets sont liés, mais distincts.",
+    "iaHubExploreLead": "Recherche un TLD, une chaîne proposée ou une candidature formelle : des objets liés, mais distincts. Découvre ensuite qui peut agir sur le DNS et sur l’accès à Internet.",
     "iaHubStoriesEyebrow": "PERSONNES ET POUVOIR",
     "iaHubStoriesTitle": "Histoires et enjeux",
     "iaHubStoriesLead": "Territoires, marchés, communautés et curiosités : ce que les TLD signifient dans le monde réel.",
@@ -9695,8 +9695,8 @@
     "iaHubOutcomesTitle": "Conflits et issues",
     "iaHubOutcomesLead": "Des candidatures concurrentes au devenir des extensions : objections, décisions, retraits et cycles de vie.",
     "iaHubOutcomesContext": "Candidatures et TLD traversent des étapes distinctes : un refus avant délégation n'est pas la fin d'une délégation active.",
-    "iaExploreGovernanceEyebrow": "Éclairage · Gouvernance",
-    "iaExploreGovernanceTitle": "Quand les règles rencontrent la géopolitique",
-    "iaExploreGovernanceLead": "Après la géographie et la hiérarchie du DNS, deux perspectives complémentaires : les contraintes juridiques d’ICANN et les moyens par lesquels les États limitent l’accès à Internet."
+    "iaExploreGovernanceEyebrow": "Éclairage · Géographie du DNS et gouvernance",
+    "iaExploreGovernanceTitle": "Qui contrôle quoi sur Internet ?",
+    "iaExploreGovernanceLead": "Aucune autorité ne contrôle à elle seule Internet. La géographie du DNS montre la répartition des infrastructures et des pouvoirs ; les contrôles d’accès expliquent comment États et opérateurs peuvent restreindre la connectivité ; les sanctions illustrent les contraintes juridiques susceptibles d’affecter ICANN et d’autres acteurs du DNS. Trois perspectives liées, mais distinctes."
   }
 }
