@@ -184,6 +184,29 @@ for language in LANGS:
     if not translations.get(language,{}).get('iaNavOutcomes'):
         fail('Sixth area translation missing: '+language)
 
+# Explore IA: keep three data tools separate from three governance perspectives.
+# The Geography page keeps its original canonical ID and deep links.
+explore_group=hubs.split('id="ia-explore"',1)[1].split('</section>',1)[0]
+if explore_group.count('<div class="iaHubGrid">')!=1 or explore_group.count('<div class="iaHubGrid iaExploreGovernanceCards">')!=1:
+    fail('Explore must retain a single data-tool grid and a single governance card grid')
+tool_grid=explore_group.split('<div class="iaHubGrid">',1)[1].split('</div>',1)[0]
+governance_grid=explore_group.split('<div class="iaHubGrid iaExploreGovernanceCards">',1)[1].split('</div>',1)[0]
+if tool_grid.count('class="iaHubCard"')!=3 or governance_grid.count('class="iaHubCard"')!=3:
+    fail('Explore must expose exactly three data tools and three governance routes')
+for token in ('data-open-section="explore"','data-open-section="timeline"','data-b2-resource="atlas"'):
+    if tool_grid.count(token)!=1: fail('Explore lost a data tool: '+token)
+governance_destinations=('data-open-section="geography"','data-open-section="governance-access"','data-open-section="governance-sanctions"')
+if any(governance_grid.count(token)!=1 for token in governance_destinations):
+    fail('Explore governance must retain the geography, access and sanctions routes')
+if [governance_grid.index(token) for token in governance_destinations]!=sorted(governance_grid.index(token) for token in governance_destinations):
+    fail('Explore governance order must be Geography > Access > Sanctions')
+if 'data-open-section="geography"' in tool_grid:
+    fail('DNS geography was accidentally returned to the data-tool grid')
+for language in LANGS:
+    if any(not translations.get(language,{}).get(key) for key in ('iaHubExploreLead','iaExploreGovernanceEyebrow','iaExploreGovernanceTitle','iaExploreGovernanceLead')):
+        fail('Missing translated Explore governance context in '+language)
+
+
 # Reader-experience and accessibility invariants. These are intentionally
 # structural rather than pixel-perfect so the project can evolve without
 # silently losing the novice path, keyboard entry point or search-first UX.
