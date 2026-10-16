@@ -1,3 +1,10 @@
+# v0.7.81 — 16 October 2026 (UTC)
+
+- Explore: group DNS geography, access restrictions and sanctions into a single three-card governance reading path, distinct from the three data exploration tools.
+- Rewrite the section's introduction and contextual lead in four languages; distinguish DNS infrastructure, connectivity restrictions and sanctions.
+- Preserve all canonical chapters, routes, 26 B2 cards and immutable RR1/RR2 scientific deposits; run B2 and multilingual browser regression tests.
+- Publish a new technical data ZIP; retain and pin the original v0.7.80 ZIP and SHA-256 without modifications.
+
 # v0.7.80 — 13 October 2026 (UTC)
 
 - Restore discoverability of .helsinki in the city-TLD journey and gTLD cemetery with an evidence-based 2012–2026 lifecycle, four-language copy and primary ICANN/IANA/city sources.
