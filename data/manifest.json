@@ -1,7 +1,7 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.80",
-  "release_date": "2026-10-13",
+  "version": "0.7.81",
+  "release_date": "2026-10-16",
   "publication_state": "reveal-day",
   "rendering": "static-prerendered",
   "language_routes": {
@@ -325,7 +325,7 @@
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "release_history": {
     "path": "release_history.json",
-    "sha256": "a34c0299581b54835b70dfe7dd159c33860de0580ea3a3d30b4fbdbc50e1e68a"
+    "sha256": "303d9f832d8cebda7bf7f44f1469bd0691b8bcf8b38c70cb3ac2e27b03aa6b37"
   },
   "freeze": {
     "status": "reveal-day-snapshot",
@@ -340,8 +340,8 @@
     "assets": [
       {
         "repository_path": "data/site_bundle.js",
-        "bytes": 2003468,
-        "sha256": "8146de33e22e730e47c76658366fecb9d68ea1af75d9d4451edd0f8a1b9ad3fd"
+        "bytes": 2003676,
+        "sha256": "77a3351307824ab0d8fd596d572d73672b6a944073f33aa6d15ad737a2e09c2a"
       },
       {
         "repository_path": "assets/app.js",
@@ -361,42 +361,42 @@
       {
         "repository_path": "data/explorer_profiles_0.js",
         "bytes": 1089784,
-        "sha256": "c48b10d9ae47d275e784195bdf3605fc3e9da14a02a8ae75f240387b14b13d5d"
+        "sha256": "846a507c4fa7cfb57ccc105194a6450db5abf7c9bdeccbdea00c971018ba4bfb"
       },
       {
         "repository_path": "data/explorer_profiles_1.js",
         "bytes": 904381,
-        "sha256": "f5ffb671f4a45e2b7118273582b97ff70391479280eb32482d070cf8950ae6bc"
+        "sha256": "a48f60fee1616017ffde0f8c44ca768abcfe4cdeaf3d05d64b5f7987a3444f63"
       },
       {
         "repository_path": "data/explorer_profiles_2.js",
         "bytes": 1009406,
-        "sha256": "8e2555749d9647d8790176928dacf275eebdfa8bab93b290ac6ec0781b9212be"
+        "sha256": "6c6d0f9690111d030b2eedf9b551cd33c5e7c6db0d9df872f8d9d973117c6203"
       },
       {
         "repository_path": "data/explorer_profiles_3.js",
         "bytes": 934600,
-        "sha256": "145e83abad8ef84f84af152aa9a33ed3083cc2a3a1a04205bd3d247417a7e5ba"
+        "sha256": "a4ae4d68d09fa356244a6646e13b7eaa05885fbb9414d78526ef1f2451c34dbe"
       },
       {
         "repository_path": "data/explorer_profiles_4.js",
         "bytes": 970735,
-        "sha256": "6cbd479d78e86f84a0545ff6cfbefd0cdcbac775583f77580539798fa9c02b9e"
+        "sha256": "27ebf5e59cc6539e0253b24e5086fc127213304ae8f7776d40db39332ce0f9da"
       },
       {
         "repository_path": "data/explorer_profiles_5.js",
         "bytes": 943441,
-        "sha256": "3ffe580bf00d9e5780da0c5594ea6398d0b8159ad6adbbcfe84205ecbce6fd36"
+        "sha256": "4568517f62cd22c9cd242b91af3111d8a8aeb629ca542516cd2450cb47f5226d"
       },
       {
         "repository_path": "data/explorer_profiles_6.js",
         "bytes": 953642,
-        "sha256": "11ee8706e40b5c142d54244b947536191f4328ec53bf1fff544dfff7140d7fcf"
+        "sha256": "c2c1a383d15ba7301b5c69065dc2a42b47efb3e2a8f3866084c2e5f6099f028f"
       },
       {
         "repository_path": "data/explorer_profiles_7.js",
         "bytes": 936011,
-        "sha256": "82b3cbc09bf399f5f188d1b33452dffcbe640beb416c3ca7ec0c20d7d05b92ea"
+        "sha256": "2c9c93471285bb7930f8e8dc44d2589d02ae3d0141f73ffb336c855a28724d83"
       }
     ]
   },
