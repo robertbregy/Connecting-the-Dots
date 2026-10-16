@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.80
+# Connecting the Dots — v0.7.81
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -6,7 +6,11 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.80 · 13 October 2026 (UTC)**
+**v0.7.81 · 16 October 2026 (UTC)**
+
+**Explore · DNS geography and governance.** The Explore landing now groups three data tools separately from three complementary governance chapters: DNS geography, Internet access controls and sanctions. Introductions are revised in IT/EN/DE/FR, while all 26 B2 cards, canonical chapter URLs and RR1/RR2 scientific deposits are preserved. The technical v0.7.80 ZIP remains immutable and v0.7.81 has its own package.
+
+**Previous v0.7.80 · 13 October 2026 (UTC)**
 
 **Helsinki city-TLD lifecycle.** Added a source-backed account of the voluntary .helsinki registry-termination process to the city journey and gTLD cemetery, explicitly distinguishing an ICANN termination notice from the still-active IANA delegation. The 2012/2015 timeline and ICANN decisions are linked to primary sources. RR1 and RR2 remain unchanged.
 
