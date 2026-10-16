@@ -11,7 +11,7 @@ This directory contains the scholarly-publication layer of **Connecting the Dots
 **RR2 · Post-Reveal Evidence Consolidation**  
 Published on GitHub and automatically archived by Zenodo: **10 October 2026 (UTC)**  
 Evidence observation: **ICANN Reveal Day, 7 October 2026**  
-Latest technical site: **v0.7.80**  
+Latest technical site: **v0.7.81**  
 **RR2-specific DOI:** https://doi.org/10.5281/zenodo.23288603  
 **Version-series concept DOI:** https://doi.org/10.5281/zenodo.23262622  
 **RR2 GitHub tag:** `33803aa3fa69f1abb4cce7fbd49a0788ee9a33c9`
