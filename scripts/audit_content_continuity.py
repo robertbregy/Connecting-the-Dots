@@ -114,7 +114,106 @@ routes_a=set(re.findall(r'<loc>([^<]+)</loc>',(A/'sitemap.xml').read_text()))
 routes_b=set(re.findall(r'<loc>([^<]+)</loc>',(B/'sitemap.xml').read_text()))
 report['sitemap_routes']={'before':len(routes_a),'after':len(routes_b),
     'removed':sorted(routes_a-routes_b),'added':sorted(routes_b-routes_a)}
+# 17 October reviewed editorial delta: the A snapshot is immutable, while
+# the living Field Notes and process timeline deliberately acquire dated facts.
+# Whitelist only the exact additive changes validated below. The original
+# articles, source IDs, archived ZIPs and old case-history observations remain
+# subject to the same fail-closed checks as before.
+def verify_reviewed_fieldnotes_delta():
+    try:
+        pub=json.loads((B/'publication.json').read_text(encoding='utf-8'))
+        if pub.get('version')!='0.7.82' or pub.get('asOf')!='2026-10-10' or pub.get('releasedOn')!='2026-10-17':
+            return []
+        old=json.loads((A/'data/field_investigations.json').read_text(encoding='utf-8'))
+        new=json.loads((B/'data/field_investigations.json').read_text(encoding='utf-8'))
+        if old['lastReviewed']!='2026-10-10' or new['lastReviewed']!='2026-10-17':
+            return []
+        if [x['id'] for x in old['episodes']]!=['objectors-eoi','replacement-strings'] or [x['id'] for x in new['episodes']]!=['objectors-eoi','replacement-strings','background-screening']:
+            return []
+        if old['episodes'][0]!=new['episodes'][0]:
+            return []
+        original,revision=old['episodes'][1],new['episodes'][1]
+        additive=('revisedOn','sections','sources','updateTriggers','revisionHistory')
+        if any(original[k]!=revision.get(k) for k in original if k not in additive):
+            return []
+        if (revision['revisedOn']!='2026-10-17' or
+            revision['sections'][:len(original['sections'])]!=original['sections'] or
+            len(revision['sections'])!=len(original['sections'])+1 or
+            revision['sources'][:len(original['sources'])]!=original['sources'] or
+            len(revision['sources'])!=len(original['sources'])+2 or
+            revision['updateTriggers'][:len(original['updateTriggers'])]!=original['updateTriggers'] or
+            revision['revisionHistory'][:len(original['revisionHistory'])]!=original['revisionHistory'] or
+            len(revision['revisionHistory'])!=2 or
+            revision['revisionHistory'][-1]['date']!='2026-10-17'):
+            return []
+        fifth=new['episodes'][2]
+        if fifth['number']!=5 or fifth['revisedOn']!='2026-10-17' or fifth['publishedOn']!='2026-10-17' or len(fifth['sections'])!=5 or len(fifth['sources'])!=6:
+            return []
+        if not {'bs-icann-announcement','bs-board-blog','bs-icann-eligibility','bs-aps-wdo'}.issubset({x['id'] for x in fifth['sources']}):
+            return []
+        oldTimeline=json.loads((A/'data/inside_the_round_events.json').read_text(encoding='utf-8'))
+        newTimeline=json.loads((B/'data/inside_the_round_events.json').read_text(encoding='utf-8'))
+        oldBy={x['id']:x for x in oldTimeline['events']}
+        newBy={x['id']:x for x in newTimeline['events']}
+        if (len(oldBy)!=9 or len(newBy)!=11 or
+            set(newBy)-set(oldBy)!={'board-auctions-preview','background-screening-provider'} or
+            newTimeline['lastReviewed']!='2026-10-17'):
+            return []
+        for event_id,event in oldBy.items():
+            candidate=newBy.get(event_id)
+            if not candidate:
+                return []
+            if event_id=='replacement':
+                candidate=dict(candidate);candidate.pop('extraSources',None)
+            if candidate!=event:
+                return []
+        if newBy['board-auctions-preview']['date']!='2026-10-13' or newBy['background-screening-provider']['date']!='2026-10-15':
+            return []
+        allowed=[]
+        for lang in ('it','en','de','fr'):
+            for family,detail in [('behind-the-round','index.html'),('behind-the-round','replacement-strings/index.html'),('inside-the-round','index.html')]:
+                path=f'{family}/{lang}/{detail}'
+                a=orig[path].read_text(encoding='utf-8')
+                b=B.joinpath(path).read_text(encoding='utf-8')
+                oldMain=re.search(r'<main\\b[^>]*>[\\s\\S]*?</main>',a,re.I).group()
+                newMain=re.search(r'<main\\b[^>]*>[\\s\\S]*?</main>',b,re.I).group()
+                if family=='inside-the-round':
+                    oldEvents=re.findall(r'<li\\b[^>]*data-event-id="([^"]+)"[\\s\\S]*?</li>',oldMain)
+                    newEvents=re.findall(r'<li\\b[^>]*data-event-id="([^"]+)"[\\s\\S]*?</li>',newMain)
+                    if len(oldEvents)!=9 or len(newEvents)!=11 or set(oldEvents)-set(newEvents) or set(newEvents)-set(oldEvents)!={'board-auctions-preview','background-screening-provider'}:
+                        return []
+                elif detail=='index.html':
+                    oldStories=re.findall(r'<article\\b[^>]*data-behind-story="[^"]+"[\\s\\S]*?</article>',oldMain)
+                    if len(oldStories)!=2 or any(x not in newMain for x in oldStories):
+                        return []
+                    if (newMain.count('data-field-investigation-teaser=')!=3 or
+                        'data-field-investigation-teaser="background-screening"' not in newMain):
+                        return []
+                else:
+                    oldParts=re.findall(r'<section class="behindReading" data-referenced-sources="[^"]*">[\\s\\S]*?</section>',oldMain)
+                    if len(oldParts)!=5 or any(x not in newMain for x in oldParts):
+                        return []
+                    oldNumbers=re.findall(r'data-field-quantity="([^"]+)"',oldMain)
+                    newNumbers=re.findall(r'data-field-quantity="([^"]+)"',newMain)
+                    if oldNumbers!=newNumbers or len(oldNumbers)!=3:
+                        return []
+                    if newMain.count('data-editorial-revision=')!=2 or newMain.count('data-referenced-sources=')!=6:
+                        return []
+                allowed.append(path)
+        return allowed
+    except (KeyError,IndexError,ValueError,AttributeError,TypeError,FileNotFoundError):
+        return []
+
+approved_pages=verify_reviewed_fieldnotes_delta()
+approved_case_data={'data/field_investigations.json'} if len(approved_pages)==12 else set()
+report['reviewed_editorial_additions']={
+    'date':'2026-10-17','validated':len(approved_pages)==12,
+    'allowed_pages':approved_pages,
+    'allowed_modified_dataset':sorted(approved_case_data),
+    'limitations':'Only specific sourced Field Note and timeline additions are accepted; lost content and frozen ZIP modifications still fail.'
+}
 Path('content-continuity-audit.json').write_text(json.dumps(report,indent=2,ensure_ascii=False))
+
 summary=dict(tree=report['tree'],article_count=report['html_articles']['count'],
  nonidentical_articles=report['html_articles']['not_exact'],
  source_losses={k:v['removed'] for k,v in srcMetrics.items()},
@@ -125,12 +224,16 @@ summary=dict(tree=report['tree'],article_count=report['html_articles']['count'],
  sitemap_identical=report['sitemap_sha_equal'],sitemap_routes=report['sitemap_routes'])
 print('AB_CONTENT_PARITY_RESULT '+json.dumps(summary,ensure_ascii=False))
 # Fail on actual content loss or rewriting an historical technical ZIP.
-bad=bool(missing_paths or report['html_articles']['not_exact'] or report['sitemap_routes']['removed'] or
+unapproved_articles=[x for x in report['html_articles']['not_exact'] if x['path'] not in approved_pages]
+unapproved_case_data=[x for x in caseDatasets if not x['same_sha'] and x['path'] not in approved_case_data]
+bad=bool(missing_paths or unapproved_articles or report['sitemap_routes']['removed'] or
     any(v['missing'] for v in translations.values()) or
     any(srcMetrics[k]['removed'] for k in ('sections','i18n_references','ids')) or
-    report['sitemap_routes']['removed'] or
-    any(not v['same_sha'] for v in caseDatasets) or
+    unapproved_case_data or
     any(not z['bytes_identical'] for z in archives.values()))
+if report['html_articles']['not_exact'] and not approved_pages:
+    print('AB_CONTENT_PARITY_UNREVIEWED_EDITORIAL_CHANGE: dated addition failed structural/evidence checks')
+
 if bad:
     print('AB_CONTENT_PARITY_REVIEW_REQUIRED: audit found differences requiring human review')
     sys.exit(2)
