@@ -15,6 +15,7 @@ on:
       - 'data/sanctions_explainer.json'
       - 'data/internet_access_explainer.json'
       - 'data/field_investigations.json'
+      - 'data/city_namespace_editorial.json'
       - 'data/release_history.json'
       - 'data/applications_2026_aps_official_listing.csv'
       - 'data/applications_2026_aps_official_provenance.json'

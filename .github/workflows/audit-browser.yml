@@ -29,7 +29,6 @@ on:
 permissions:
   contents: read
 
-# Avoid launching obsolete 160-case audits after newer feature commits.
 concurrency:
   group: ctd-full-browser-${{ github.ref }}
   cancel-in-progress: true
@@ -64,7 +63,7 @@ jobs:
           python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/ctd-audit-http.log 2>&1 &
           sleep 2
           node scripts/audit_browser_20261010.js
-      - name: Verify all 25 B2 cards and 35 native article pages across mobile and desktop
+      - name: Verify all 26 B2 cards and 39 independent pages across mobile and desktop
         run: |
           CTD_TEST_BASE=http://127.0.0.1:8123/ node scripts/audit_ia_b2.cjs
       - name: Verify all 208 original A section and fragment links
@@ -152,4 +151,36 @@ jobs:
           name: ctd-aps-atlas-${{ github.sha }}
           path: |
             audit-aps-atlas-*.png
+          if-no-files-found: ignore
+
+  city-namespace-qa:
+    name: City namespace four-language and accessibility audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test dependencies
+        run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Verify native governance, metrics, Lugano and reception links
+        run: |
+          python3 build.py
+          python3 -m http.server 8128 --bind 127.0.0.1 > /tmp/ctd-city-http.log 2>&1 &
+          sleep 2
+          node scripts/audit_city_namespace.cjs
+      - name: Preserve city-domain browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ctd-city-namespace-${{ github.sha }}
+          path: dist/city-namespace-qa/
           if-no-files-found: ignore
