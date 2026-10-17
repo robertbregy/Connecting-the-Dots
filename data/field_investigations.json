@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "editorialLayer": "2026-round-investigations-not-part-of-frozen-RR1",
-  "lastReviewed": "2026-10-10",
+  "lastReviewed": "2026-10-17",
   "classification": "source-backed-editorial-field-notes",
   "legacyCases": "data/behind_round_stories.json",
   "episodes": [
@@ -92,7 +92,7 @@
       "slug": "replacement-strings",
       "number": 4,
       "publishedOn": "2026-10-10",
-      "revisedOn": "2026-10-10",
+      "revisedOn": "2026-10-17",
       "periodStart": "2026-08-12",
       "periodEnd": "2026-11-17",
       "state": "documented-with-open-questions",
@@ -166,6 +166,15 @@
             "rs-icann-period",
             "rs-icann-guidebook"
           ]
+        },
+        {
+          "titleKey": "field04Section6Title",
+          "bodyKey": "field04Section6Body",
+          "sourceIds": [
+            "rs-choice-faq",
+            "rs-active-faq",
+            "rs-icann-period"
+          ]
         }
       ],
       "sources": [
@@ -222,12 +231,25 @@
           "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/main/data/application_2026_snapshot.json",
           "kind": "derived",
           "labelKey": "field04SourceSnapshot"
+        },
+        {
+          "id": "rs-choice-faq",
+          "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/pre-evaluation-processes/faqs/replacement-strings/can-a-replacement-string-be-used-if-the-original-applied-for-string-is-not-in-contention",
+          "kind": "primary",
+          "labelKey": "field04SourceChoiceFAQ"
+        },
+        {
+          "id": "rs-active-faq",
+          "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/pre-evaluation-processes/faqs/replacement-strings/i-submitted-my-replacement-string-attestation-in-tams-why-is-my-unchosen-application-still-showing-as-active",
+          "kind": "primary",
+          "labelKey": "field04SourceActiveFAQ"
         }
       ],
       "updateTriggers": [
         "String replacement period closes on 2026-10-21; re-check APS and replacement statuses.",
         "String Confirmation Day 2026-11-17: compare final applied-for strings and deactivations.",
-        "A source clarifies 727 deactivated replacement rows and 980 versus 986 string classifications."
+        "A source clarifies 727 deactivated replacement rows and 980 versus 986 string classifications.",
+        "Review official final replacement selections on 17 November; do not infer choices or applicant motivations from APS states alone."
       ],
       "revisionHistory": [
         {
@@ -239,6 +261,123 @@
             "rs-internetbest",
             "rs-bortzmeyer",
             "rs-local-snapshot"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "changeKey": "field04Revision20261017",
+          "sourceIds": [
+            "rs-choice-faq",
+            "rs-active-faq",
+            "rs-icann-period",
+            "rs-icann-aps"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "background-screening",
+      "kind": "investigation",
+      "slug": "background-screening",
+      "number": 5,
+      "publishedOn": "2026-10-17",
+      "revisedOn": "2026-10-17",
+      "periodStart": "2026-10-13",
+      "periodEnd": "2026-10-15",
+      "state": "documented-with-open-questions",
+      "titleKey": "field05Title",
+      "descriptionKey": "field05Lead",
+      "statusKey": "field05Status",
+      "sections": [
+        {
+          "titleKey": "field05Section1Title",
+          "bodyKey": "field05Section1Body",
+          "sourceIds": [
+            "bs-icann-announcement"
+          ]
+        },
+        {
+          "titleKey": "field05Section2Title",
+          "bodyKey": "field05Section2Body",
+          "sourceIds": [
+            "bs-icann-announcement",
+            "bs-icann-eligibility",
+            "bs-icann-what"
+          ]
+        },
+        {
+          "titleKey": "field05Section3Title",
+          "bodyKey": "field05Section3Body",
+          "sourceIds": [
+            "bs-icann-what",
+            "bs-icann-when",
+            "bs-icann-announcement"
+          ]
+        },
+        {
+          "titleKey": "field05Section4Title",
+          "bodyKey": "field05Section4Body",
+          "sourceIds": [
+            "bs-board-blog"
+          ]
+        },
+        {
+          "titleKey": "field05Section5Title",
+          "bodyKey": "field05Section5Body",
+          "sourceIds": [
+            "bs-icann-announcement",
+            "bs-icann-when",
+            "bs-board-blog"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "bs-icann-announcement",
+          "kind": "primary",
+          "labelKey": "field05SourceAnnouncement",
+          "url": "https://www.icann.org/en/announcements/details/icann-announces-2026-round-background-screening-services-provider-15-10-2026-en"
+        },
+        {
+          "id": "bs-icann-eligibility",
+          "kind": "primary",
+          "labelKey": "field05SourceCriteria",
+          "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/applicant-evaluation/faqs/background-screening/what-eligibility-criteria-are-considered-for-background-screening"
+        },
+        {
+          "id": "bs-icann-what",
+          "kind": "primary",
+          "labelKey": "field05SourcePurpose",
+          "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/applicant-evaluation/faqs/background-screening/what-is-background-screening"
+        },
+        {
+          "id": "bs-icann-when",
+          "kind": "primary",
+          "labelKey": "field05SourceWhen",
+          "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/applicant-evaluation/faqs/background-screening/when-is-the-background-screening-conducted"
+        },
+        {
+          "id": "bs-board-blog",
+          "kind": "primary",
+          "labelKey": "field05SourceBoard",
+          "url": "https://www.icann.org/en/blogs/details/chairs-blog-preview-of-the-october-board-workshop-and-icann87-13-10-2026-en"
+        }
+      ],
+      "updateTriggers": [
+        "ICANN publishes identifiable applicant evaluation outcomes or a revised background-screening process.",
+        "ICANN Board documents a decision on use of 2026 auction proceeds; the 13 October preview is not a decision.",
+        "New primary evidence clarifies a specific 2026 candidate screening case without speculation about .wdo or counting discrepancies."
+      ],
+      "revisionHistory": [
+        {
+          "date": "2026-10-17",
+          "changeKey": "field05Revision",
+          "sourceIds": [
+            "bs-icann-announcement",
+            "bs-icann-eligibility",
+            "bs-icann-what",
+            "bs-icann-when",
+            "bs-board-blog"
           ]
         }
       ]
