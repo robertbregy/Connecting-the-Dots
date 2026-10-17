@@ -175,22 +175,22 @@ def verify_reviewed_fieldnotes_delta():
                 path=f'{family}/{lang}/{detail}'
                 a=orig[path].read_text(encoding='utf-8')
                 b=B.joinpath(path).read_text(encoding='utf-8')
-                oldMain=re.search(r'<main\\b[^>]*>[\\s\\S]*?</main>',a,re.I).group()
-                newMain=re.search(r'<main\\b[^>]*>[\\s\\S]*?</main>',b,re.I).group()
+                oldMain=re.search(r'<main\b[^>]*>[\s\S]*?</main>',a,re.I).group()
+                newMain=re.search(r'<main\b[^>]*>[\s\S]*?</main>',b,re.I).group()
                 if family=='inside-the-round':
-                    oldEvents=re.findall(r'<li\\b[^>]*data-event-id="([^"]+)"[\\s\\S]*?</li>',oldMain)
-                    newEvents=re.findall(r'<li\\b[^>]*data-event-id="([^"]+)"[\\s\\S]*?</li>',newMain)
+                    oldEvents=re.findall(r'<li\b[^>]*data-event-id="([^"]+)"[\s\S]*?</li>',oldMain)
+                    newEvents=re.findall(r'<li\b[^>]*data-event-id="([^"]+)"[\s\S]*?</li>',newMain)
                     if len(oldEvents)!=9 or len(newEvents)!=11 or set(oldEvents)-set(newEvents) or set(newEvents)-set(oldEvents)!={'board-auctions-preview','background-screening-provider'}:
                         return []
                 elif detail=='index.html':
-                    oldStories=re.findall(r'<article\\b[^>]*data-behind-story="[^"]+"[\\s\\S]*?</article>',oldMain)
+                    oldStories=re.findall(r'<article\b[^>]*data-behind-story="[^"]+"[\s\S]*?</article>',oldMain)
                     if len(oldStories)!=2 or any(x not in newMain for x in oldStories):
                         return []
                     if (newMain.count('data-field-investigation-teaser=')!=3 or
                         'data-field-investigation-teaser="background-screening"' not in newMain):
                         return []
                 else:
-                    oldParts=re.findall(r'<section class="behindReading" data-referenced-sources="[^"]*">[\\s\\S]*?</section>',oldMain)
+                    oldParts=re.findall(r'<section class="behindReading" data-referenced-sources="[^"]*">[\s\S]*?</section>',oldMain)
                     if len(oldParts)!=5 or any(x not in newMain for x in oldParts):
                         return []
                     oldNumbers=re.findall(r'data-field-quantity="([^"]+)"',oldMain)
