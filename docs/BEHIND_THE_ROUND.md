@@ -14,9 +14,9 @@ Behind the Round is a **living, independently authored field-note collection**, 
 The source-of-truth is `data/behind_round_stories.json`. All public text lives in `data/translations.json`. `scripts/render_behind_round.py` produces the case within the four in-site language pages and four canonical standalone articles. Cross-checked sources are listed in the register.
 
 
-## Cases 03–04 · Additional investigations (10 October 2026)
+## Cases 03–05 · Additional investigations (10–17 October 2026)
 
-The original cases 01–02 remain in `data/behind_round_stories.json`, rendered by `scripts/render_behind_round.py`. The two new editorial investigations are stored in `data/field_investigations.json`, validated and rendered by `scripts/render_field_investigations.py` **after** the original pages and existing explainers. The public collection links to these independent full-length articles, rather than duplicating all their paragraphs inside the homepage.
+The original cases 01–02 remain in `data/behind_round_stories.json`, rendered by `scripts/render_behind_round.py`. The additional editorial investigations are stored in `data/field_investigations.json`, validated and rendered by `scripts/render_field_investigations.py` **after** the original pages and existing explainers. The public collection links to these independent full-length articles, rather than duplicating all their paragraphs inside the homepage.
 
 - **Case 03, Independent Objectors EOI:** ICANN's 30 June notice documents a dedicated inbox rejecting external messages, loss of earlier emails, and a portal closing early on 30 May before the then-extended deadline. Its corrective steps are documented. There is no evidence linking these procurement incidents to the TAMS application-count discrepancies. Source: `https://newgtldprogram.icann.org/en/news/expressions-of-interest-2026-round-independent-objectors-issues-encountered-and-next-steps-2026-06-30`.
 - **Case 04, replacement strings:** The internet.Best secondary reconstruction says 1,169 replacement records, 442 marked active and 727 deactivated; Bortzmeyer's independently inspected CSV contains 2,783 rows, or 1,614 application-level records once replacements are removed. ICANN APS says replacement and primary records count once for the official application total, and ordinary post-confirmation deactivation occurs **after** String Confirmation Day. Consequently, a blanket explanation for early secondary deactivation labels is **not** established. internet.Best itself applied for `.socialmedia`; its potential interest is disclosed.
@@ -24,7 +24,23 @@ The original cases 01–02 remain in `data/behind_round_stories.json`, rendered 
 - The 980 primary strings in the frozen nTLDData inventory and 986 strings in the internet.Best index use potentially different scopes; six variant-only application records offer an arithmetically suggestive correspondence but not a verified string-by-string reconciliation.
 - **Follow-up:** check new individual APS status records, the end of the replacement period on 21 October and String Confirmation Day on 17 November. Do not silently revise the frozen 7 October snapshot or infer winners prematurely.
 
-The eight new canonical standalone articles use `behind-the-round/{lang}/objectors-eoi/` and `behind-the-round/{lang}/replacement-strings/`. They share source attribution, structured Article metadata and reciprocal language links. The addition brings the sitemap from 27 to **35 URLs**, with no extra primary menu entries. Every update must preserve all EN/IT/DE/FR narratives and run the generated-page and link-integrity checks.
+The twelve additional canonical standalone articles use `behind-the-round/{lang}/objectors-eoi/`, `behind-the-round/{lang}/replacement-strings/` and `behind-the-round/{lang}/background-screening/`. They share source attribution, structured Article metadata and reciprocal language links. With the latest case, the sitemap grows from 39 to **43 URLs**, with no extra primary menu entries. Every update must preserve all EN/IT/DE/FR narratives and run the generated-page and link-integrity checks.
+
+## Case 04 revision · What APS statuses cannot reveal (17 October 2026)
+
+ICANN official FAQs now explicitly say that a candidate with an eligible replacement may choose it even if the original string has no identical-string contention, without declaring why. Both original and replacement records may continue to show as active after the attestation, while the applicant's TAMS record reflects its actual election. Thus a status label, the existence of an -R row, or an observed CSV difference cannot prove the applicant's selection, motivation or outcome. The 11 October official snapshot and the original attributed secondary 1,169 / 442 / 727 classification remain dated evidence. See:
+- https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/pre-evaluation-processes/faqs/replacement-strings/can-a-replacement-string-be-used-if-the-original-applied-for-string-is-not-in-contention
+- https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/pre-evaluation-processes/faqs/replacement-strings/i-submitted-my-replacement-string-attestation-in-tams-why-is-my-unchosen-application-still-showing-as-active
+
+## Case 05 · Screening and auction-value governance (17 October 2026)
+
+**15 October 2026:** ICANN selected PricewaterhouseCoopers Advisory Services LLC to perform the mandatory background-screening service for applicants. Provider appointment is not evaluation of any individual application. Screening during Applicant Evaluation follows Section 6.1 of the Guidebook, includes individuals and entities and is governed by defined criteria. ICANN announcement: https://www.icann.org/en/announcements/details/icann-announces-2026-round-background-screening-services-provider-15-10-2026-en
+
+**13 October 2026:** Board chair Tripti Sinha announced a future discussion on defining uses for *potential* 2026 string-auction proceeds. No allocation or Board resolution was announced. Source: https://www.icann.org/en/blogs/details/chairs-blog-preview-of-the-october-board-workshop-and-icann87-13-10-2026-en
+
+These are separate governance stages. No source confirms a link between PwC's appointment and the independent administrative review of the .wdo application or the 1,616-to-1,615 application-count gap. Sources and uncertainties are visible separately in the five-section multilingual article. The period is 13–15 October, editorial review 17 October. Public case 05 URL: `behind-the-round/{lang}/background-screening/`.
+
+The **Inside the Round** timeline adds two observed events (13 and 15 October). Its editorial `lastReviewed` is 17 October, while `publication.json.asOf` and the scientific evidence observation remain 10 October. These clocks must not be conflated. Only a technical release (v0.7.82), not an RR3 deposit, is warranted.
 
 ## Change protocol
 
