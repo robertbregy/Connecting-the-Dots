@@ -829,10 +829,10 @@ if node:
 # v0.7.60: the live editorial chronicle must remain independent from frozen RR1.
 chronicle=json_file('inside_the_round_events.json')
 events=chronicle.get('events', [])
-if len(events)!=9 or len({event['id'] for event in events})!=9:
+if len(events)!=11 or len({event['id'] for event in events})!=11:
     fail('Inside the Round event count or unique ids')
-if chronicle.get('lastReviewed')!=publication_meta.get('asOf'):
-    fail('Inside the Round editorial review date does not match this publication')
+if not (publication_meta['asOf'] <= chronicle.get('lastReviewed','') <= publication_meta['releasedOn']):
+    fail('Inside the Round editorial review outside snapshot/publication date range')
 if publication_meta.get('researchRelease')!='RR2' or publication_meta.get('doi')!='10.5281/zenodo.23288603':
     fail('Current publication does not cite the verified RR2 DOI')
 if publication_meta.get('conceptDoi')!='10.5281/zenodo.23262622':
@@ -851,7 +851,7 @@ for event in events:
                 fail('Inside the Round supplementary source invalid: '+event['id'])
         if event.get('sourceLabelKey') and not translations[lang].get(event['sourceLabelKey']):
             fail('Inside the Round source attribution untranslated: '+event['id'])
-if not {'reveal-day','lugano-public-information','community-input'}.issubset({e['id'] for e in events}):
+if not {'reveal-day','lugano-public-information','community-input','board-auctions-preview','background-screening-provider'}.issubset({e['id'] for e in events}):
     fail('Required program and .lugano public milestones missing')
 reveal=next(e for e in events if e['id']=='reveal-day')
 if not any('CDL2651T-T31516/summary' in item.get('source','') for item in reveal.get('extraSources',[])):
@@ -879,10 +879,10 @@ must_index.update(site_base+'behind-the-round/'+lang+'/' for lang in LANGS)
 must_index.update(site_base+'behind-the-round/'+lang+'/wdo-identity/' for lang in LANGS)
 must_index.update(site_base+'behind-the-round/'+lang+'/sanctions-and-dns/' for lang in LANGS)
 must_index.update(site_base+'behind-the-round/'+lang+'/who-controls-internet-access/' for lang in LANGS)
-must_index.update(site_base+'behind-the-round/'+lang+'/'+slug+'/' for slug in ('objectors-eoi','replacement-strings') for lang in LANGS)
+must_index.update(site_base+'behind-the-round/'+lang+'/'+slug+'/' for slug in ('objectors-eoi','replacement-strings','background-screening') for lang in LANGS)
 must_index.update(site_base+'applications/'+lang+'/' for lang in LANGS)
 if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index):
-    fail('Sitemap must preserve all 39 language/research/chronicle/field-note/explainer/application URLs')
+    fail('Sitemap must preserve all 43 language/research/chronicle/field-note/explainer/application URLs')
 for lang in LANGS:
     page=(ROOT/lang/'index.html').read_text(encoding='utf-8')
     chronicle_page=ROOT/'inside-the-round'/lang/'index.html'
@@ -1024,16 +1024,16 @@ if {x['code'] for x in regions if x['officialApplications']!=x['visibleApplicati
     fail('Incorrect claim that regional discrepancies extend beyond Asia-Pacific')
 
 
-# New independent Field Notes extend the collection with two standalone investigations;
+# Field Notes include three additional independent investigations, with source-dated revisions;
 # they do not rewrite the original two case studies or the archived research release.
 investigations=json_file('field_investigations.json')
 if investigations.get('schemaVersion')!=1 or investigations.get('editorialLayer')!='2026-round-investigations-not-part-of-frozen-RR1':
     fail('Unversioned or wrongly classified 2026 investigation register')
-if investigations.get('lastReviewed')!=publication_meta.get('asOf'):
-    fail('Investigation review date differs from website publication')
+if not (publication_meta['asOf'] <= investigations.get('lastReviewed','') <= publication_meta['releasedOn']):
+    fail('Investigation review date outside data snapshot / technical publication window')
 cases=investigations.get('episodes',[])
-if [x.get('id') for x in cases]!=['objectors-eoi','replacement-strings']:
-    fail('Two distinct sourced 2026 investigations required')
+if [x.get('id') for x in cases]!=['objectors-eoi','replacement-strings','background-screening']:
+    fail('Three distinct sourced 2026 investigations required')
 counts={q['id']:q['value'] for q in cases[1].get('quantities',[])}
 if counts!={'replacementTotal':1169,'replacementActive':442,'replacementDeactivated':727}:
     fail('2026 replacement data has changed without source reconciliation')
@@ -1042,7 +1042,7 @@ if counts['replacementActive']+counts['replacementDeactivated']!=counts['replace
 for lang in LANGS:
     index_html=(ROOT/lang/'index.html').read_text(encoding='utf-8')
     notes_html=(ROOT/'behind-the-round'/lang/'index.html').read_text(encoding='utf-8')
-    if notes_html.count('data-field-investigation-teaser=')!=2 or index_html.count('data-field-investigation-teaser=')!=2:
+    if notes_html.count('data-field-investigation-teaser=')!=3 or index_html.count('data-field-investigation-teaser=')!=3:
         fail('New 2026 investigations missing from the home/Field Notes collection: '+lang)
     for case in cases:
         slug=case['slug']
@@ -1058,7 +1058,7 @@ for lang in LANGS:
             fail('Untranslated 2026 investigation headline: '+lang+'/'+slug)
         if article.count('data-source-id=')!=len(case['sources']) or article.count('data-referenced-sources=')!=len(case['sections']):
             fail('Incomplete investigation citations: '+lang+'/'+slug)
-        if article.count('data-editorial-revision=')!=1 or article.count('<link rel="alternate" hreflang=')!=5:
+        if article.count('data-editorial-revision=')!=len(case['revisionHistory']) or article.count('<link rel="alternate" hreflang=')!=5:
             fail('Missing dated revision or hreflang links: '+lang+'/'+slug)
         if url not in index_html or url not in notes_html:
             fail('2026 investigation entry point missing: '+lang+'/'+slug)
@@ -1074,6 +1074,12 @@ for lang in LANGS:
             for key in ['field04ValueTotal','field04ValueActive','field04ValueDeactivated','field04Disclosure']:
                 if html_escape(translations[lang][key]) not in article:
                     fail('Replacement quantities or independent index disclaimer not rendered: '+lang)
+        if slug=='background-screening':
+            if len(case['sections'])!=5 or len(case['sources'])!=6:
+                fail('October screening / Board evidence incomplete: '+lang)
+            for required_id in ('bs-icann-announcement','bs-board-blog','bs-icann-eligibility','bs-aps-wdo'):
+                if not any(item['id']==required_id for item in case['sources']):
+                    fail('Missing governance primary evidence: '+lang+'/'+required_id)
         check_internal_refs(article_path)
 
 # OFAC background is an independently indexable explainer, not a case finding or archived RR1.
