@@ -1,3 +1,11 @@
+# v0.7.82 — 17 October 2026 (UTC)
+
+- Published a fifth source-backed Field Note on ICANN's PwC background-screening services appointment (15 October), alongside the Board chair's separate preview of discussion on potential auction proceeds (13 October); no applicant outcome or Board decision inferred.
+- Revised Field Note 04 on replacement-string observability with ICANN FAQs, explaining discretionary switches without stated reason and why both records may remain Active after TAMS attestation. Preserved all dated original secondary counts and their limitations.
+- Added two dated, sourced milestones to the four-language 2026 chronology and translated the complete new note into IT/EN/DE/FR.
+- Extended canonical article routes, sitemap and B2 cross-navigation, with deterministic source, metadata and accessibility checks. Publication-specific editorial review now advances independently of the frozen 10 October evidence snapshot.
+- Created a new versioned v0.7.82 technical ZIP; prior v0.7.81 and archived RR1/RR2 files and identifiers are unchanged.
+
 # v0.7.81 — 16 October 2026 (UTC)
 
 - Explore: group DNS geography, access restrictions and sanctions into a single three-card governance reading path, distinct from the three data exploration tools.
