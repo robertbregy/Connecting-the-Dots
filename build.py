@@ -207,6 +207,24 @@ def build_index() -> None:
     if html.count(story_marker) != 1:
         raise SystemExit("Behind the Round field-note placeholder missing or duplicated")
     html = html.replace(story_marker, render_stories(ROOT))
+    # The original 21 editorial source sections remain frozen for A/B parity.
+    # Append the new dated investigation to the generated document only,
+    # keeping the canonical legacy editorial text byte-for-byte intact.
+    fifth_start = '<section class="fieldInvestigationTeaser" data-field-investigation-teaser="replacement-strings">'
+    if html.count(fifth_start) != 1 or html.count('data-field-investigation-teaser="background-screening"'):
+        raise SystemExit("Unexpected 2026 field-note teaser template state")
+    old_end = html.index("</section>", html.index(fifth_start)) + len("</section>")
+    fifth_card = (
+        '\n    <section class="fieldInvestigationTeaser" data-field-investigation-teaser="background-screening">'
+        '\n      <p class="eyebrow" data-i18n="field05Number"></p>'
+        '\n      <h4 data-i18n="field05Title"></h4>'
+        '\n      <p data-i18n="field05Lead"></p>'
+        '\n      <a class="sourceChip" data-field-investigation-slug="background-screening" href="'
+        'https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/background-screening/">'
+        '<span data-i18n="fieldReadInvestigation"></span> ↗</a>'
+        '\n    </section>'
+    )
+    html = html[:old_end] + fifth_card + html[old_end:]
     reveal_2026_js = (DATA / "applications_2026_strings_reveal.js").read_text(encoding="utf-8")
     # The prerenderer loads runtime from disk; never inject huge inline bundles.
     html = html.replace('<link href="assets/style.css" rel="stylesheet"/>', '<link id="ctd-runtime-style" href="assets/style.css" rel="stylesheet"/>')
