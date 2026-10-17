@@ -390,7 +390,7 @@ def main() -> None:
     print("NATIVE_GOVERNANCE_VERIFIED", native_count)
     apply_ia_b2_crossnav(ROOT)
     cross_nav_count = validate_ia_b2_crossnav(ROOT)
-    if cross_nav_count != 35:
+    if cross_nav_count != 39:
         raise SystemExit('IA B2 cross-site navigation coverage incomplete')
     print(f'IA B2 integrated navigation: {cross_nav_count} independent pages')
     if redirect_legacy(ROOT) != 8:
