@@ -311,7 +311,8 @@
           "sourceIds": [
             "bs-icann-what",
             "bs-icann-when",
-            "bs-icann-announcement"
+            "bs-icann-announcement",
+            "bs-aps-wdo"
           ]
         },
         {
@@ -361,6 +362,12 @@
           "kind": "primary",
           "labelKey": "field05SourceBoard",
           "url": "https://www.icann.org/en/blogs/details/chairs-blog-preview-of-the-october-board-workshop-and-icann87-13-10-2026-en"
+        },
+        {
+          "id": "bs-aps-wdo",
+          "kind": "primary",
+          "labelKey": "field05SourceWdo",
+          "url": "https://newgtldprogram-aps.icann.org/applications/WDO2627T-T45217/summary"
         }
       ],
       "updateTriggers": [
