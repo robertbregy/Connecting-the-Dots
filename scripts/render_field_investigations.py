@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""2026 Field Notes 03–04: separately indexable investigations, outside frozen RR1.
+"""2026 Field Notes 03–05: separately indexable investigations, outside frozen RR1.
 
 Build after the original two notes and the existing sanctions/access explainers.
 The source-of-truth is data/field_investigations.json, not a mutable APS live feed.
@@ -15,7 +15,7 @@ import xml.etree.ElementTree as ET
 from scripts.render_behind_round import BASE, LANGS, CSS, BEHIND_CSS
 
 ROOT = Path(__file__).resolve().parents[1]
-SLUGS = ("objectors-eoi", "replacement-strings")
+SLUGS = ("objectors-eoi", "replacement-strings", "background-screening")
 PRIMARY = ("https://www.icann.org/", "https://newgtldprogram.icann.org/",
            "https://newgtldprogram-aps.icann.org/", "https://newgtldprogram-2026-agb.icann.org/")
 SECONDARY = ("https://internet.best/", "https://www.bortzmeyer.org/")
@@ -25,12 +25,13 @@ INVESTIGATION_CSS = """
 .fieldInvestigationIndex{margin:22px 0}
 .fieldInvestigationIndex h2{font-size:clamp(1.25rem,2.4vw,1.65rem)}
 .fieldInvestigationIndex .intro{color:var(--muted);line-height:1.65}
-.fieldInvestigationGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.fieldInvestigationGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .fieldInvestigationTeaser{border:1px solid var(--border);border-radius:13px;background:var(--surface2);padding:19px}
 .fieldInvestigationTeaser h3{font-size:1.12rem;line-height:1.3;margin:9px 0}
 .fieldInvestigationTeaser p{color:var(--muted);font-size:.94rem;line-height:1.6}
 .fieldInvestigationTeaser a{color:var(--accent-text);text-decoration:underline;text-underline-offset:3px;font-weight:720}
 .fieldEvidenceDisclaimer{font-size:.88rem;line-height:1.6;color:var(--muted);border-left:3px solid var(--border);padding-left:13px}
+@media(max-width:1020px){.fieldInvestigationGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:720px){.fieldInvestigationGrid{grid-template-columns:1fr}.fieldInvestigationTeaser{padding:15px}}
 """
 
@@ -59,16 +60,18 @@ def load(root: Path = ROOT):
             prefix = {"primary": PRIMARY, "secondary": SECONDARY, "derived": DERIVED}.get(item["kind"])
             if not prefix or not item["url"].startswith(prefix):
                 raise ValueError("Unknown investigation source origin: " + item["id"])
-        if len(case.get("sections", [])) != (4 if index == 3 else 5):
+        if len(case.get("sections", [])) != {3: 4, 4: 6, 5: 5}[index]:
             raise ValueError("Incomplete narrative evidence")
         for section in case["sections"]:
             if not section.get("sourceIds") or any(i not in sources for i in section["sourceIds"]):
                 raise ValueError("Narrative section lacks identifiable evidence")
         revisions = case.get("revisionHistory", [])
-        if len(revisions) != 1 or revisions[0]["date"] != case["revisedOn"] or any(
-            i not in sources for i in revisions[0]["sourceIds"]
-        ):
-            raise ValueError("Dated revision is not evidence linked")
+        if (len(revisions) != (2 if index == 4 else 1)
+                or revisions[-1]["date"] != case["revisedOn"]
+                or any(date.fromisoformat(x["date"]) > reviewed or not x.get("sourceIds")
+                       or any(i not in sources for i in x["sourceIds"]) for x in revisions)
+                or any(revisions[i]["date"] > revisions[i + 1]["date"] for i in range(len(revisions) - 1))):
+            raise ValueError("Dated revision history is not complete or evidence linked")
         if len(case.get("updateTriggers", [])) < 2:
             raise ValueError("Investigation lacks follow-up conditions")
         if index == 4:
@@ -86,16 +89,16 @@ def load(root: Path = ROOT):
             keys = [case["titleKey"], case["descriptionKey"], case["statusKey"],
                     "fieldReadInvestigation", "fieldCaseIndex", "fieldSourceDisclaimer", "behindSourcesTitle",
                     "behindRevisionsTitle", "behindReviewDateLabel", "behindIndependenceTitle", "behindIndependenceBody",
-                    "field03Number" if index == 3 else "field04Number",
-                    "field03MetaDescription" if index == 3 else "field04MetaDescription",
-                    revisions[0]["changeKey"]]
+                    "field{:02d}Number".format(index),
+                    "field{:02d}MetaDescription".format(index),
+                    *[revision["changeKey"] for revision in revisions]]
             keys += [key for section in case["sections"] for key in (section["titleKey"], section["bodyKey"])]
             keys += [item["labelKey"] for item in case["sources"]]
             if index == 4:
                 keys += ["field04Disclosure"] + [q[k] for q in case["quantities"] for k in ("valueKey", "labelKey")]
             if any(not isinstance(dictionary.get(k), str) or not dictionary[k].strip() for k in keys):
                 raise ValueError("Missing investigation translation: " + lang + " / " + case["id"])
-            meta = dictionary["field03MetaDescription" if index == 3 else "field04MetaDescription"]
+            meta = dictionary["field{:02d}MetaDescription".format(index)]
             if len(meta) > 160:
                 raise ValueError("Field note metadata exceeds 160 characters: " + lang)
             if index == 4:
@@ -110,8 +113,8 @@ def teaser(case, dictionary, lang):
     href = BASE + "behind-the-round/" + lang + "/" + case["slug"] + "/"
     return (
         '<section class="fieldInvestigationTeaser" data-field-investigation-teaser="' + h(case["id"], quote=True) + '">'
-        '<p class="eyebrow">' + h(dictionary["field03Number" if case["number"] == 3 else "field04Number"]) + '</p>'
-        '<h3><a href="' + href + '">' + h(dictionary[case["titleKey"]]) + '</a></h3>'
+        '<p class="eyebrow">' + h(dictionary["field{:02d}Number".format(case["number"])]) + '</p>'
+        '<h3><a data-field-investigation-slug="' + h(case["slug"], quote=True) + '" href="' + href + '">' + h(dictionary[case["titleKey"]]) + '</a></h3>'
         '<p>' + h(dictionary[case["descriptionKey"]]) + '</p>'
         '<p class="behindStatus">' + h(dictionary[case["statusKey"]]) + '</p>'
         '</section>'
@@ -130,7 +133,7 @@ def render_detail(case, dictionary, lang):
     path = case["slug"] + "/"
     url = BASE + "behind-the-round/" + lang + "/" + path
     title = dictionary[case["titleKey"]]
-    summary = dictionary["field03MetaDescription" if case["number"] == 3 else "field04MetaDescription"]
+    summary = dictionary["field{:02d}MetaDescription".format(case["number"])]
     alternatives = "\n".join(
         '<link rel="alternate" hreflang="' + l + '" href="' + BASE + 'behind-the-round/' +
         ("en" if l == "x-default" else l) + '/' + path + '">'
@@ -218,7 +221,7 @@ def render_detail(case, dictionary, lang):
 <style>{CSS}\n{BEHIND_CSS}\n{INVESTIGATION_CSS}</style></head><body>
 <header><nav aria-label="Languages"><a class="brand" href="{BASE}{lang}/">Connecting the Dots</a><div class="lang-links">{nav}</div></nav></header>
 <main id="behind-round">
-<div class="eyebrow">{h(dictionary["field03Number" if case["number"]==3 else "field04Number"])}</div>
+<div class="eyebrow">{h(dictionary["field{:02d}Number".format(case["number"])])}</div>
 <h1>{h(title)}</h1>
 <p class="lead">{h(dictionary[case["descriptionKey"]])}</p>
 <div class="actions"><a class="action" href="{back}">{h(dictionary["fieldCaseIndex"])}</a>
@@ -233,14 +236,22 @@ def render_detail(case, dictionary, lang):
 def build_investigations(root: Path = ROOT):
     data, translations = load(root)
     publication = json.loads((root / "publication.json").read_text(encoding="utf-8"))
-    if data["lastReviewed"] != publication["asOf"] or publication["releasedOn"] < data["lastReviewed"]:
-        raise ValueError("Field Notes evidence review must match research snapshot and not postdate site release")
+    if not (date.fromisoformat(publication["asOf"]) <= date.fromisoformat(data["lastReviewed"])
+            <= date.fromisoformat(publication["releasedOn"])):
+        raise ValueError("Editorial review must be between frozen research snapshot and technical publication date")
     for lang in LANGS:
         target = root / "behind-the-round" / lang / "index.html"
         html = target.read_text(encoding="utf-8")
         if html.count("</main>") != 1 or "data-field-investigation-teaser" in html:
             raise ValueError("Field Note collection is missing or already modified: " + lang)
         html = html.replace("</main>", collection_markup(data, translations[lang], lang) + "\n</main>")
+        # Original cases retain their own revision dates; collection metadata
+        # reflects the latest checked episode in this living editorial layer.
+        old_modified = '"dateModified":"' + publication["asOf"] + '"'
+        new_modified = '"dateModified":"' + data["lastReviewed"] + '"'
+        if html.count(old_modified) != 1:
+            raise ValueError("Cannot locate dated Field Notes CollectionPage metadata")
+        html = html.replace(old_modified, new_modified, 1)
         html = html.replace("</style></head>", INVESTIGATION_CSS + "</style></head>", 1)
         target.write_text(html, encoding="utf-8")
         for case in data["episodes"]:
@@ -263,7 +274,7 @@ def build_investigations(root: Path = ROOT):
     xml = xml.replace("</urlset>", "\n".join(items) + "\n</urlset>")
     sitemap.write_text(xml, encoding="utf-8")
     ET.parse(sitemap)
-    print(f"Generated two more Field Notes in {len(LANGS)} languages; {xml.count('<url>')} sitemap URLs")
+    print(f"Generated three additional Field Notes in {len(LANGS)} languages; {xml.count('<url>')} sitemap URLs")
 
 
 if __name__ == "__main__":
