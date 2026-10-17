@@ -57,6 +57,13 @@ jobs:
               "behind-the-round/it/who-controls-internet-access/index.html",
               "behind-the-round/en/sanctions-and-dns/index.html",
               "behind-the-round/en/who-controls-internet-access/index.html",
+              "behind-the-round/it/index.html",
+              "behind-the-round/it/replacement-strings/index.html",
+              "behind-the-round/it/background-screening/index.html",
+              "behind-the-round/en/background-screening/index.html",
+              "behind-the-round/de/background-screening/index.html",
+              "behind-the-round/fr/background-screening/index.html",
+              "inside-the-round/it/index.html",
               "downloads/connecting-the-dots-data-pack-v0.7.82.zip",
           ]
           results={}
