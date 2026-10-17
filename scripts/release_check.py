@@ -50,6 +50,7 @@ if tuple(int(x) for x in version.split('.')) >= (0,7,79):
         'connecting-the-dots-data-pack-v0.7.77.zip':'8ff5dad0f9c18fedd7f1c30327a43efaca8ef6c16626d7475b2178be599e107a',
         'connecting-the-dots-data-pack-v0.7.78.zip':'d812e6a01c04c451c4d68e111977a7de7492dce3919ebed48852fc19d224c1fe',
         'connecting-the-dots-data-pack-v0.7.80.zip':'4ba79e195f73ac863b1871f0a7d34b2cbd5b25459547d01e2dfd74644e81f3f5',
+        'connecting-the-dots-data-pack-v0.7.81.zip':'88d7ce0945ad29b2617ce421e2dfe1c62da6aa028d405c48dc1fec7a32dd2710',
     }
     for archive,expected in FROZEN_TECHNICAL_ARCHIVES.items():
         p=ROOT/'downloads'/archive
