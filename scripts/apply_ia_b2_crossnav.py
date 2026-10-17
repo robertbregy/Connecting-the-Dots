@@ -183,6 +183,7 @@ def files_to_patch(root: Path):
         for slug in (
             "objectors-eoi",
             "replacement-strings",
+            "background-screening",
             "wdo-identity",
             "sanctions-and-dns",
             "who-controls-internet-access",
@@ -284,7 +285,7 @@ def apply(root: Path) -> int:
     translations = json.loads((root / "data" / "translations.json").read_text(encoding="utf-8"))
     patched = 0
     files = list(files_to_patch(root))
-    assert len(files) == 35, "Expected 35 independent public pages including working paper"
+    assert len(files) == 39, "Expected 39 independent public pages including working paper"
     for file, lang, area in files:
         if not file.exists():
             raise ValueError(f"Missing independent page: {file.relative_to(root)}")
