@@ -32,6 +32,7 @@ CSS = '''<style id="city-namespace-style">
 .cityNamespace table{width:100%;border-collapse:collapse;font-size:14px;table-layout:fixed}
 .cityNamespace th,.cityNamespace td{padding:10px 12px;text-align:left;vertical-align:top;white-space:normal;overflow-wrap:anywhere;border-bottom:1px solid var(--border)}
 .cityNamespace th{font-weight:700;background:var(--surface2)}
+.cityNamespace tbody th{text-transform:none;letter-spacing:normal;color:var(--text)}
 .cityNamespace td:last-child,.cityNamespace th:last-child{text-align:right;font-variant-numeric:tabular-nums}
 .cityNamespace details{margin:20px 0 4px;padding:14px 16px;border:1px solid var(--border);border-radius:12px}
 .cityNamespace summary{cursor:pointer;font-weight:700;line-height:1.45;overflow-wrap:anywhere}
@@ -119,7 +120,7 @@ def cities(data: dict, lang: str) -> str:
         rate = f'{renewal:.1f}'.replace('.',',' if lang in ('it','de','fr') else '.')+'%'
         body += '<tr><th scope="row">'+h(domain)+'</th><td>'+h(t['categories'][kind])+'</td><td>'+h(number)+'</td><td>'+h(rate)+'</td></tr>'
     body += '</tbody></table></div>'+paragraph(t['methodNote'])+refs(data,['renewals','dnib'],t['sources'])+'</details>'
-    body += paragraph(t['governanceQuestion'])+jump(lang,'cemetery','helsinki-termination',t['cemeteryLink'])
+    body += jump(lang,'cemetery','helsinki-termination',t['cemeteryLink'])
     return governance+panel('city-namespace-measures',t['metricsTitle'],body,t,t['proposal'])
 
 

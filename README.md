@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.82
+# Connecting the Dots — v0.7.83
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -6,7 +6,11 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.82 · 17 October 2026 (UTC)**
+**v0.7.83 · 17 October 2026 (UTC)**
+
+**City domains: governance, use and public value.** Adds a source-backed comparison of Lugano, Bremen, Paris and New York, four evaluation dimensions and an explicitly qualified industry renewal sample. The Lugano chapter distinguishes documented intentions, proposed commons/identity safeguards and decisions still open. External commercial coverage is assessed against primary sources, including private sponsorship of the application fee. Four languages, native chapters, no additional menu or canonical route; previous technical archives and RR1/RR2 remain unchanged.
+
+**Previous v0.7.82 · 17 October 2026 (UTC)**
 
 **Field Notes · 2026 round updates.** Published Case 05 on ICANN's 15 October selection of PwC as background-screening provider and the Board chair's 13 October preview of deliberation on potential auction proceeds. The updated Case 04 explains why public -R and Active/Deactivated records do not establish final replacement decisions or applicant motives. Two new observed events are included in Inside the Round. Independent articles are fully localized in EN/IT/DE/FR, with dated provenance, canonical links and new regression tests. The 11 October APS baseline, previous technical data ZIPs and frozen RR1/RR2 deposits remain intact.
 

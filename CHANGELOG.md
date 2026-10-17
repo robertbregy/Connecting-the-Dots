@@ -1,3 +1,11 @@
+# v0.7.83 - 17 October 2026 (UTC)
+
+- Added city-domain governance models and a four-case comparison; applicant, adopted policy and delegated TLD are explicitly different states.
+- Added use, persistence, public value and sustainability indicators; renewal sample carries date, source, sector-interest and estimation caveats, including .tokyo.
+- Expanded .lugano with documented facts, proposed collective-name and machine-verifiability safeguards, phased adoption and outstanding decisions.
+- Added a dated, critical external-reception observation without claiming another official event or creating a new menu entry.
+- Preserved historical files, canonical routes, original field-note evidence and RR1/RR2; v0.7.83 has a distinct technical ZIP.
+
 # v0.7.82 — 17 October 2026 (UTC)
 
 - Published a fifth source-backed Field Note on ICANN's PwC background-screening services appointment (15 October), alongside the Board chair's separate preview of discussion on potential auction proceeds (13 October); no applicant outcome or Board decision inferred.

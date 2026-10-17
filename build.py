@@ -17,6 +17,7 @@ from scripts.render_behind_round import render_stories, build_behind_round_pages
 from scripts.render_sanctions_explainer import build_sanctions_pages
 from scripts.render_internet_access import build_access_pages
 from scripts.render_field_investigations import build_investigations
+from scripts.city_namespace_editorial import render as render_city_namespace
 from scripts.apply_ia_b2_crossnav import apply as apply_ia_b2_crossnav, validate as validate_ia_b2_crossnav
 
 ROOT = Path(__file__).resolve().parent
@@ -134,12 +135,13 @@ def build_manifest() -> None:
         },
         "files": files,
     }
+    manifest["city_namespace_editorial"] = {"path":"city_namespace_editorial.json", "sha256":sha256(DATA / "city_namespace_editorial.json"), "reviewedOn":"2026-10-17", "classification":"source-backed-analysis-and-proposals"}
     (DATA / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 def data_pack_files() -> list[Path]:
     snapshot = json.loads((DATA / "iana_snapshot.json").read_text())
-    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "application_2026_snapshot.json", DATA / "applications_2026_aps_official_provenance.json", DATA / "aps_2026_application_graph.json", DATA / "aps_2026_application_graph_manifest.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "economic_cases.json", DATA / "social_cases.json", ROOT / snapshot["archive_path"]]
+    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "application_2026_snapshot.json", DATA / "applications_2026_aps_official_provenance.json", DATA / "aps_2026_application_graph.json", DATA / "aps_2026_application_graph_manifest.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "economic_cases.json", DATA / "social_cases.json", DATA / "city_namespace_editorial.json", ROOT / snapshot["archive_path"]]
 
 
 def build_data_pack() -> None:
@@ -400,6 +402,7 @@ def main() -> None:
     build_sanctions_pages(ROOT)
     build_access_pages(ROOT)
     build_investigations(ROOT)
+    render_city_namespace(ROOT)
     render_aps_application_atlas(ROOT)
     from scripts.integrate_governance_native import integrate, redirect_legacy
     native_count = integrate(ROOT)

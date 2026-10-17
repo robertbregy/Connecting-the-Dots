@@ -122,7 +122,7 @@ report['sitemap_routes']={'before':len(routes_a),'after':len(routes_b),
 def verify_reviewed_fieldnotes_delta():
     try:
         pub=json.loads((B/'publication.json').read_text(encoding='utf-8'))
-        if pub.get('version')!='0.7.82' or pub.get('asOf')!='2026-10-10' or pub.get('releasedOn')!='2026-10-17':
+        if pub.get('version') not in ('0.7.82','0.7.83') or pub.get('asOf')!='2026-10-10' or pub.get('releasedOn')!='2026-10-17':
             return []
         old=json.loads((A/'data/field_investigations.json').read_text(encoding='utf-8'))
         new=json.loads((B/'data/field_investigations.json').read_text(encoding='utf-8'))

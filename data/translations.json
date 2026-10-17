@@ -2460,7 +2460,8 @@
     "insideScreenBody": "ICANN announces the provider for mandatory background checks. The appointment is not a finding on any individual applicant.",
     "insideScreenSource": "ICANN · Official PwC announcement",
     "insideChoiceSource": "ICANN · Replacement string rules",
-    "release0782": "v0.7.82: 13–15 October observations on potential auction proceeds and PwC screening; updated replacement-string methodology in Note 04 and sourced new Note 05. RR1/RR2 unchanged."
+    "release0782": "v0.7.82: 13–15 October observations on potential auction proceeds and PwC screening; updated replacement-string methodology in Note 04 and sourced new Note 05. RR1/RR2 unchanged.",
+    "release0783": "v0.7.83: city-domain governance comparisons, use and sustainability indicators, and a stronger .lugano case. Sources, design proposals and external reception are distinguished; RR1/RR2 unchanged."
   },
   "it": {
     "brand": "Brand",
@@ -4923,7 +4924,8 @@
     "insideScreenBody": "ICANN annuncia il fornitore dei background screening obbligatori. La selezione non riguarda l'esito della verifica di una singola candidatura.",
     "insideScreenSource": "ICANN · Annuncio ufficiale PwC",
     "insideChoiceSource": "ICANN · Regole per la stringa sostitutiva",
-    "release0782": "v0.7.82: nuove osservazioni del 13–15 ottobre su possibili proventi delle aste e controlli PwC; Nota 04 aggiornata sulle stringhe sostitutive, Nota 05 pubblicata con fonti ICANN. RR1/RR2 invariati."
+    "release0782": "v0.7.82: nuove osservazioni del 13–15 ottobre su possibili proventi delle aste e controlli PwC; Nota 04 aggiornata sulle stringhe sostitutive, Nota 05 pubblicata con fonti ICANN. RR1/RR2 invariati.",
+    "release0783": "v0.7.83: confronto dei modelli di governo dei domini cittadini, indicatori di uso e sostenibilità e caso .lugano approfondito. Fonti, proposte e ricezione esterna distinti; RR1/RR2 invariati."
   },
   "de": {
     "brand": "Marke",
@@ -7386,7 +7388,8 @@
     "insideScreenBody": "ICANN benennt den Dienstleister für das obligatorische Background Screening. Damit liegt noch kein Prüfergebnis für eine einzelne Bewerbung vor.",
     "insideScreenSource": "ICANN · Offizielle PwC-Mitteilung",
     "insideChoiceSource": "ICANN · Regeln zur Ersatzstring-Auswahl",
-    "release0782": "v0.7.82: neue Beobachtungen vom 13.–15. Oktober zu möglichen Auktionserlösen und PwC-Prüfungen; aktualisierte Feldnotiz 04 und neue Feldnotiz 05. RR1/RR2 unverändert."
+    "release0782": "v0.7.82: neue Beobachtungen vom 13.–15. Oktober zu möglichen Auktionserlösen und PwC-Prüfungen; aktualisierte Feldnotiz 04 und neue Feldnotiz 05. RR1/RR2 unverändert.",
+    "release0783": "v0.7.83: Governance-Modelle, Nutzung und Tragfähigkeit von Stadtdomains sowie Vertiefung von .lugano. Quellen, Vorschläge und externe Wahrnehmung getrennt; RR1/RR2 unverändert."
   },
   "fr": {
     "brand": "Marque",
@@ -9849,6 +9852,7 @@
     "insideScreenBody": "L'ICANN annonce le prestataire des contrôles obligatoires. Cette sélection ne constitue pas un résultat concernant une candidature particulière.",
     "insideScreenSource": "ICANN · Annonce officielle PwC",
     "insideChoiceSource": "ICANN · Règles des chaînes de remplacement",
-    "release0782": "v0.7.82 : observations des 13–15 octobre sur les éventuelles recettes des enchères et les contrôles PwC ; note 04 actualisée et nouvelle note 05 sourcée. RR1/RR2 inchangées."
+    "release0782": "v0.7.82 : observations des 13–15 octobre sur les éventuelles recettes des enchères et les contrôles PwC ; note 04 actualisée et nouvelle note 05 sourcée. RR1/RR2 inchangées.",
+    "release0783": "v0.7.83 : modèles de gouvernance, usage et viabilité des domaines urbains et cas .lugano approfondi. Sources, propositions et réception externe distinguées ; RR1/RR2 inchangées."
   }
 }
