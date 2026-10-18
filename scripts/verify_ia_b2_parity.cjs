@@ -13,7 +13,17 @@ const fs=require('node:fs');
 const assert=require('node:assert/strict');
 const crypto=require('node:crypto');
 const path=require('node:path');
-const REVIEW_PATH='docs/editorial-review-'+JSON.parse(fs.readFileSync('publication.json','utf8')).releasedOn+'.json';
+// Same-day releases have distinct manifests; archived dated reviews stay intact.
+function resolveReviewPath(publication){
+ assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(publication.releasedOn||''),'Review requires an exact publication date');
+ assert.ok(/^\d+\.\d+\.\d+$/.test(publication.version||''),'Review requires an exact publication version');
+ const dated='docs/editorial-review-'+publication.releasedOn+'.json';
+ if(!Object.prototype.hasOwnProperty.call(publication,'editorialReviewPath'))return relativeFile(dated);
+ const versioned='docs/editorial-review-'+publication.releasedOn+'-v'+publication.version+'.json';
+ assert.equal(publication.editorialReviewPath,versioned,'Explicit review path must match this exact release date and version');
+ return relativeFile(publication.editorialReviewPath);
+}
+const ARCHIVED_REVIEW_V85={path:'docs/editorial-review-2026-10-19.json',sha256:'03b48a852312d6385c524c6966d6f290e718560890af1d9112bdc0cb199bcc42'};
 const REVIEW_BASE='65e0fbe2080c2ee841e8abc01e1ddec113a74b8e';
 const INVARIANTS_SHA='0abaa5eb1c9c93ac506790a79768e8859079baa8800a79d1851e6590d4890844';
 const IMMUTABLE_SHA='b3499c7678cba3eb0fea84eb9f0fc1b87fd06248997ecd60ab0573e88d97592c';
@@ -121,6 +131,9 @@ function relativeFile(filename){
  return filename;
 }
 function checkProtection(review,source,publication){
+ relativeFile(ARCHIVED_REVIEW_V85.path);
+ assert.ok(fs.existsSync(ARCHIVED_REVIEW_V85.path),'Archived v0.7.85 review is missing');
+ assert.equal(sha256(fs.readFileSync(ARCHIVED_REVIEW_V85.path)),ARCHIVED_REVIEW_V85.sha256,'Archived v0.7.85 editorial review was modified');
  assert.equal(review.schemaVersion,1,'Unknown editorial-review schema');
  assert.equal(review.baselineCommit,REVIEW_BASE,'Pre-audit baseline must remain immutable');
  assert.equal(review.originalABBaseline,'safety/main-v0.7.78-before-b2-switch-20261013','Original A backup changed');
@@ -197,6 +210,7 @@ function main(){
   return;
  }
  const publication=JSON.parse(fs.readFileSync('publication.json','utf8'));
+ const REVIEW_PATH=resolveReviewPath(publication);
  const review=fs.existsSync(REVIEW_PATH)?JSON.parse(fs.readFileSync(REVIEW_PATH,'utf8')):null;
  assert.ok(review||['0.7.82','0.7.83'].includes(publication.version),'EDITORIAL_REVIEW_REQUIRED: no exact-file review manifest for this release');
  if(review){checkProtection(review,source,publication);validateReviewedFiles(review,publication);}
@@ -216,5 +230,5 @@ function main(){
  }
  console.log('IA_B2_SOURCE_PARITY_VERIFIED '+JSON.stringify({baselineMain:'ec231cc12d35fa91ff5340ad057a483ce23a5ca4',reviewedAgainst:review?.baselineCommit||null,preservedSections:Object.keys(sections).length,reviewedSections,purposeLedHomeAddedChars,immutableFilesVerified:review?Object.keys(review.immutableFiles).length:0}));
 }
-module.exports={sourceSections,sectionDigests,sha256,canonical,checkProtection,validateReviewedFiles};
+module.exports={sourceSections,sectionDigests,sha256,canonical,checkProtection,validateReviewedFiles,resolveReviewPath};
 if(require.main===module){try{main();}catch(error){console.error(error.stack||String(error));process.exitCode=2;}}

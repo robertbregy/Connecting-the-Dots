@@ -216,7 +216,23 @@ def verify_reviewed_fieldnotes_delta():
 # section SHA-256 fingerprints, not a version/date-based exemption. Reuse the
 # source guard so both gates enforce the same protected inventories, DOI
 # identifiers, link replacements and immutable research/technical archives.
-review_path=B/('docs/editorial-review-'+publication['releasedOn']+'.json')
+def editorial_review_path(publication):
+    released_on,version=publication.get('releasedOn',''),publication.get('version','')
+    if not re.fullmatch(r'\d{4}-\d{2}-\d{2}',released_on) or not re.fullmatch(r'\d+\.\d+\.\d+',version):
+        raise ValueError('Review requires an exact publication date and version')
+    dated='docs/editorial-review-'+released_on+'.json'
+    selected=publication.get('editorialReviewPath',dated)
+    if 'editorialReviewPath' in publication and selected!='docs/editorial-review-'+released_on+'-v'+version+'.json':
+        raise ValueError('Explicit review path must match this exact release date and version')
+    candidate=B/selected
+    if candidate.exists() and not candidate.resolve().is_relative_to(B.resolve()):
+        raise ValueError('Editorial review must remain inside this checkout')
+    return candidate
+try:
+    review_path=editorial_review_path(publication)
+except (TypeError,ValueError) as error:
+    print('AB_CONTENT_PARITY_REVIEW_REQUIRED: '+str(error))
+    sys.exit(2)
 editorial_review={'manifest':review_path.as_posix(),'validated':False,
     'allowed_paths':[],'errors':[]}
 review=None

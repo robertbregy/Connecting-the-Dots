@@ -55,6 +55,11 @@ if tuple(int(x) for x in version.split('.')) >= (0,7,79):
     FROZEN_TECHNICAL_ARCHIVES["connecting-the-dots-data-pack-v0.7.82.zip"]="786058bda9cca5f75124c30cc55dc10f9c7c9df86b739f378c061354d75b57b0"
     FROZEN_TECHNICAL_ARCHIVES["connecting-the-dots-data-pack-v0.7.83.zip"]="e5a2d2c1d78d943c61d8481d94bbb2d1a0b0636216f6d4c0a5c122a740ec17f3"
     FROZEN_TECHNICAL_ARCHIVES["connecting-the-dots-data-pack-v0.7.84.zip"]="b2ffb3502559c927a0e61666b1bda232f6bbcb51f4e9f600b8d09c72e1ac57c4"
+    if tuple(int(x) for x in version.split('.')) >= (0,7,86):
+        FROZEN_TECHNICAL_ARCHIVES["connecting-the-dots-data-pack-v0.7.85.zip"]="d1a17cca20a8dbeffa00b0273261b119c2dae5a2bb39d4b02485a90baec8c74f"
+        v85_checksum=ROOT/'downloads'/'connecting-the-dots-data-pack-v0.7.85.sha256'
+        if not v85_checksum.is_file() or hashlib.sha256(v85_checksum.read_bytes()).hexdigest()!="c03c23178c3a166e687d991261e75072a2f8123eb570be41453386622dcc4525":
+            fail('Historical v0.7.85 data pack checksum was rewritten or removed')
     for archive,expected in FROZEN_TECHNICAL_ARCHIVES.items():
         p=ROOT/'downloads'/archive
         if not p.is_file() or hashlib.sha256(p.read_bytes()).hexdigest()!=expected:

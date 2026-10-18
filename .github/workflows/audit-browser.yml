@@ -69,6 +69,8 @@ jobs:
           CTD_TEST_BASE: http://127.0.0.1:8123/
           CTD_AUDIT_OUTPUT: audit-20261018
         run: node scripts/audit_20261018_browser.cjs
+      - name: Verify technical portfolios and registered-domain ranking in four languages
+        run: CTD_TEST_BASE=http://127.0.0.1:8123/ node scripts/audit_tld_power.cjs
       - name: Verify all 26 B2 cards and 39 independent pages across mobile and desktop
         run: |
           CTD_TEST_BASE=http://127.0.0.1:8123/ node scripts/audit_ia_b2.cjs
@@ -90,6 +92,7 @@ jobs:
             audit-ia-b2/*.png
             audit-deeplinks/results.json
             audit-aps-atlas-*.png
+            audit-tld-power-*.png
             audit-20261018/report.json
           if-no-files-found: ignore
 

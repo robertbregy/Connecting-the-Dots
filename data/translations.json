@@ -2531,7 +2531,8 @@
     "sectorAutomotive": "Automotive & mobility",
     "sectorTelecom": "Telecom & connectivity",
     "sectorRealEstate": "Real estate & construction",
-    "release0785": "Application fees by round, a cultural history of TLDs and a reproducible name census, with classification coverage and sources."
+    "release0785": "Application fees by round, a cultural history of TLDs and a reproducible name census, with classification coverage and sources.",
+    "release0786": "Technical-platform TLD portfolios and a sourced top 50 of documented registered-domain stocks, with dates, introduction pathways, coverage limits and a separate website-use comparison."
   },
   "it": {
     "brand": "Brand",
@@ -5065,7 +5066,8 @@
     "sectorAutomotive": "Auto e mobilità",
     "sectorTelecom": "Telecomunicazioni e connettività",
     "sectorRealEstate": "Immobiliare e costruzioni",
-    "release0785": "Fee di candidatura per round, traiettoria culturale dei TLD e censimento riproducibile dei nomi, con copertura delle classificazioni e fonti."
+    "release0785": "Fee di candidatura per round, traiettoria culturale dei TLD e censimento riproducibile dei nomi, con copertura delle classificazioni e fonti.",
+    "release0786": "Portafogli di TLD per piattaforma tecnica e top 50 degli stock di domini registrati documentati, con date, percorsi di introduzione, limiti di copertura e confronto separato sull’uso Web."
   },
   "de": {
     "brand": "Marke",
@@ -7599,7 +7601,8 @@
     "sectorAutomotive": "Automobil und Mobilität",
     "sectorTelecom": "Telekommunikation und Konnektivität",
     "sectorRealEstate": "Immobilien und Bauwesen",
-    "release0785": "Antragsgebühren je Runde, Kulturgeschichte der TLDs und reproduzierbares Namensinventar mit Klassifikationsabdeckung und Quellen."
+    "release0785": "Antragsgebühren je Runde, Kulturgeschichte der TLDs und reproduzierbares Namensinventar mit Klassifikationsabdeckung und Quellen.",
+    "release0786": "TLD-Portfolios technischer Plattformen und belegte Top 50 dokumentierter Domainbestände, mit Datenständen, Einführungswegen, Abdeckungsgrenzen und getrenntem Webnutzungsvergleich."
   },
   "fr": {
     "brand": "Marque",
@@ -10133,6 +10136,7 @@
     "sectorAutomotive": "Automobile et mobilité",
     "sectorTelecom": "Télécommunications et connectivité",
     "sectorRealEstate": "Immobilier et construction",
-    "release0785": "Frais de candidature par cycle, histoire culturelle des TLD et recensement reproductible des noms avec couverture des classifications et sources."
+    "release0785": "Frais de candidature par cycle, histoire culturelle des TLD et recensement reproductible des noms avec couverture des classifications et sources.",
+    "release0786": "Portefeuilles de TLD par plateforme technique et classement de 50 stocks de domaines enregistrés documentés, avec dates, voies d’introduction, limites de couverture et comparaison distincte des usages Web."
   }
 }

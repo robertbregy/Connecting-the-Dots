@@ -1,3 +1,10 @@
+## v0.7.86 — 19 October 2026
+
+- Added dated technical-platform portfolios next to the power map, with counts, searchable TLD lists, explicit inferred attribution and an IANA scope reconciliation.
+- Added a sourced top 50 of documented registered-domain stocks, row-level dates, introduction pathways and cohort shares in Economics, cross-linked to the cultural timeline.
+- Separated registered domains from website use with a small, explicitly sampled W3Techs comparison. Coverage gaps and lifecycle/reporting differences are documented rather than filled with estimates.
+- Published reproducible source records and downloads in four languages. Preserved RR1/RR2, all previous technical ZIPs and the v0.7.85 editorial review; added a version-specific review for this same-day release.
+
 ## v0.7.85 — 19 October 2026
 
 - Added source-backed round application fees, separating documented collections, reconstructed amounts and unavailable accounting totals.

@@ -171,3 +171,13 @@ These are **editorial research classifications, not ICANN industry categories**.
 `behind_round_stories.json` is a **living editorial evidence register**, separate from the immutable RR1 data pack. Its first case follows two distinct discrepancies around the 2026 Reveal Day. ICANN's 22 September count is 1,616 paid applications, the 7 October official aggregate is 1,615, and the frozen secondary index reports 1,614 applications / 480 applicants (observed 8 October). ICANN's APS explicitly excludes application WDO2627T-T45217 (.wdo) from its public list while an administrative check continues, but the available official sources do **not** establish the specific cause of the earlier 1,616 → 1,615 change. Dates, epistemic status, review conditions and primary/secondary sources are preserved in the field-note record.
 
 The case is published independently at `behind-the-round/{en,it,de,fr}/` and embedded in the matching in-site section, rendered from the same source and translation dictionary. Each substantive update must be evidence-backed, reviewed and committed; monitoring alerts do not automatically rewrite research claims.
+
+
+## Technical portfolios and registered-domain adoption (v0.7.86)
+
+- `tld_technical_observation.json`: frozen nTLDData API observation (18 October 2026, data version 73), joined to the archived IANA inventory. The source's 8 IDN ccTLDs are excluded explicitly; 1,123 delegated gTLDs remain, including 22 without backend attribution. The 23 nonempty platform groups are infrastructure attributions, not a contractual Main RSP census or a registry ownership list. `.edu`, `.gov`, `.int` and `.mil` are outside this source's coverage.
+- `tld_technical_mapping.csv` and `tld_technical_portfolios.json`: per-TLD attribution and recalculated platform counts. Source: nTLDData, CC BY 4.0; filtering, IANA reconciliation and presentation by Connecting the Dots. Curated and automatic source assignments remain distinct.
+- `tld_registration_candidates.csv`, `tld_registration_sources.json`, `tld_registration_ranking.json` and `tld_registration_top50.csv`: dated stocks and provenance, ordered only within documented coverage. Figures have different observation dates and registry lifecycle definitions. Lower bounds and missing measurements are not inserted into an exact ranking. Neither registrations nor technical attribution measure active websites, users, traffic or social value.
+- The separate W3Techs comparison reports shares of its relevant-Web sample on 18 October 2026, not global active-site counts or domain activation rates. Source-specific rights apply; the project does not relicense third-party data.
+
+This current analytical layer is outside the immutable scientific RR1/RR2 snapshots.

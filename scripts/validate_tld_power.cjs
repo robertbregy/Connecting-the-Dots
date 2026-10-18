@@ -1,0 +1,42 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict'),vm=require('node:vm');
+const {parseHTML}=require('linkedom'),root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p),'utf8'),json=p=>JSON.parse(read(p));
+const obs=json('data/tld_technical_observation.json'),data=json('data/tld_technical_portfolios.json'),rank=json('data/tld_registration_ranking.json');
+const sha=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,obs.ianaJoin.file))).digest('hex');
+assert.equal(sha,obs.ianaJoin.sha256,'The attribution join must use the archived IANA corpus');
+assert.equal(obs.records.length,1123);assert.equal(new Set(obs.records.map(r=>r.tld)).size,1123);
+assert.equal(obs.excludedCountryCodeRecords.length,8);assert.equal(data.platforms.length,23);
+assert.ok(obs.records.every(r=>r.ianaFormalType!=='country-code'&&r.ianaRootStatus==='delegated'));
+assert.deepEqual(obs.coverage.localIanaGtldsAbsentFromSource,['edu','gov','int','mil']);
+assert.equal(data.platforms.reduce((n,r)=>n+r.count,0)+data.unattributedCount,obs.records.length);
+assert.equal(data.unattributedCount,22);assert.ok(data.attribution.includes('CC-BY-4.0'));
+for(const r of data.platforms){const expected=obs.records.filter(o=>o.backendSlug===r.slug).map(o=>o.tld).sort();assert.equal(r.count,expected.length);assert.deepEqual(r.tlds,expected);}
+const source=json('data/tld_registration_sources.json');
+assert.deepEqual(rank.rows,[...source.candidates].sort((a,b)=>b.registeredDomains-a.registeredDomains||a.tld.localeCompare(b.tld)).slice(0,50));
+assert.ok(!rank.rows.some(r=>source.omitted.some(o=>o.tld===r.tld)));
+assert.equal(rank.rows.length,50);assert.equal(new Set(rank.rows.map(r=>r.tld)).size,50);
+assert.ok(rank.rows.every((r,i)=>Number.isSafeInteger(r.registeredDomains)&&r.registeredDomains>0&&r.registeredDomains<200e6&&(!i||rank.rows[i-1].registeredDomains>=r.registeredDomains)),'Rank documented stocks, not lower bounds or cumulative observations');
+assert.ok(rank.rows.every(r=>/^https:\/\//.test(r.sourceUrl)&&r.asOf&&['legacy','2000','2004','2012','ccTLD'].includes(r.era)));
+assert.ok(rank.rows.filter(r=>r.era==='ccTLD').length>15,'This comparison must retain substantial territorial coverage');
+for(const l of ['en','it','de','fr']){
+ assert.ok(data.locales[l].method&&rank.locales[l].method.length>=3);
+ const {document,Event}=parseHTML(read(l+'/index.html'));
+ for(const id of ['rsp-tld-portfolios','tld-registration-top50'])assert.equal(document.querySelectorAll('#'+id).length,1,l+' unique panel '+id);
+ assert.equal(document.querySelectorAll('[data-power-platform]').length,data.platforms.length);
+ assert.equal(document.querySelectorAll('[data-power-ranking]').length,50);
+ assert.equal(document.querySelector('#rsp-tld-portfolios').closest('section').id,'geography');
+ assert.equal(document.querySelector('#tld-registration-top50').closest('section').id,'economics');
+ const script=document.querySelector('script[src*="assets/tld-power.js"]');assert.equal(script.getAttribute('src'),'../assets/tld-power.js?v=0.7.86');
+ const era=document.getElementById('power-ranking-era');let value='';Object.defineProperty(era,'value',{get:()=>value,set:v=>value=String(v)});
+ vm.runInNewContext(read('assets/tld-power.js'),{document});
+ const visible=s=>[...document.querySelectorAll(s)].filter(r=>!r.hidden);
+ const search=document.getElementById('power-platform-search');search.value='.org';search.dispatchEvent(new Event('input'));
+ assert.equal(visible('[data-power-platform]').length,1);assert.ok(visible('[data-power-platform]')[0].textContent.includes('Identity Digital'));
+ search.value='.fr';search.dispatchEvent(new Event('input'));assert.equal(visible('[data-power-platform]').length,0,'ccTLDs must not leak into the gTLD attribution counts');
+ search.value='';search.dispatchEvent(new Event('input'));assert.equal(visible('[data-power-platform]').length,23);
+ era.value='2012';era.dispatchEvent(new Event('change'));assert.equal(visible('[data-power-ranking]').length,rank.rows.filter(r=>r.era==='2012').length);
+ era.value='ccTLD';era.dispatchEvent(new Event('change'));assert.equal(visible('[data-power-ranking]').length,rank.rows.filter(r=>r.era==='ccTLD').length);
+ era.value='';const q=document.getElementById('power-ranking-search');q.value='.com';q.dispatchEvent(new Event('input'));assert.equal(visible('[data-power-ranking]').length,1);assert.equal(visible('[data-power-ranking]')[0].querySelector('td').textContent,'1');
+ q.value='ctd-nonexistent';q.dispatchEvent(new Event('input'));assert.equal(visible('[data-power-ranking]').length,0);
+}
+console.log('TLD_POWER_VALIDATED',JSON.stringify({platforms:23,gtlds:1123,unattributed:22,ranking:50,languages:4}));
