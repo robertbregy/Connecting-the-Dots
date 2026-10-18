@@ -1953,6 +1953,38 @@
       "rationaleIds": [
         "T01"
       ]
+    },
+    "scripts/audit_content_continuity.py": {
+      "baselineSHA256": "5e4f27becc338d5c51fc5737e2e796c0846991d85dce5524b381de293930c5c9",
+      "sha256": "ce630c5cba97650742160c55ef0e4ae978171b47edaf06201e634ae6412a1ce5",
+      "rationaleIds": [
+        "T01",
+        "CI03"
+      ]
+    },
+    "scripts/verify_ia_b2_parity.cjs": {
+      "baselineSHA256": "feae797a59cecdf898d67159e487861b30e87b2cafd7d44fcf924f8f48415312",
+      "sha256": "0ac643aef32425ebedc655677d8e1feb76b4110e4d589c1720ab58b9917fa3e8",
+      "rationaleIds": [
+        "T01",
+        "CI03"
+      ]
+    },
+    "scripts/release_check.py": {
+      "baselineSHA256": "4ccca58dacc30d5347ef710871d7c3debbe4d21a44bb3c269307d5a93ed19304",
+      "sha256": "d55a407f2cd8350cda82c7e289e1125971289a5c21c2b7ea106f02e640bf53ca",
+      "rationaleIds": [
+        "T01",
+        "CI03"
+      ]
+    },
+    "build.py": {
+      "baselineSHA256": "1e375ef181f88942d94657f7cf210324ff3976f49d053aba8edb7a2ae16f86c0",
+      "sha256": "db41a8f8af8bc0ae2f46e60da74677b6139454abf136109e4030e66f5a203cb2",
+      "rationaleIds": [
+        "T01",
+        "CI03"
+      ]
     }
   },
   "sourceSections": {
@@ -2205,5 +2237,6 @@
   "parentReview": {
     "path": "docs/editorial-review-2026-10-18.json",
     "sha256": "2f17c704608dd2864e0cf321977aced78ee7b665c2102e946849ac2541635d49"
-  }
+  },
+  "priorTechnicalBaseline": "7af9b5df836b0f7bc60bbcc6b64f22b5b19a6ccf"
 }
