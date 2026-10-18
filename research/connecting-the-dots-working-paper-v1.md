@@ -1,7 +1,7 @@
 # Connecting the Dots: Reconstructing Twenty-Five Years of Top-Level Domain Expansion as a Living Research Atlas
 
 **Robert Bregy**  
-**Working Paper v1.1-draft · living revision 13 October 2026 · current citable research release RR2 (10 October 2026)**  
+**Working Paper v1.2-draft · living revision 18 October 2026 · current citable research release RR2 (10 October 2026)**  
 **Status:** working paper; not peer reviewed. This mutable manuscript is distinct from the immutable RR1 (9 October 2026) and RR2 (10 October 2026) Zenodo research deposits.  
 **Technical-reference correction (13 October 2026):** the mutable technical data-pack link was synchronized with site v0.7.80. No scientific dataset or archived RR1/RR2 release was changed.  
 **Living publication:** https://robertbregy.github.io/Connecting-the-Dots/
@@ -66,9 +66,19 @@ Fast-changing evidence is frozen into dated research snapshots. The 2026 round i
 
 ### 4.4 Cross-round classification
 
-The project uses consistent cross-round taxonomies where ICANN itself does not provide one. The economic analysis, for example, separates the **sector represented** from the **naming strategy** of the string. Thus `.ubs` and `.bank` can both map to finance while remaining different types of namespace strategy; likewise `.tether` and `.bitcoin` can both map to digital assets while one may be a brand namespace and the other a contested generic or ecosystem term.
+The earlier 2012/2026 economic map combined classifications of applicants with classifications of strings. Its counts are preserved as a historical exploratory reconstruction, but they do not form a homogeneous industry census. A string such as `.agent` can evoke AI while the legal applicant is a registry operator; a brand string alone does not establish its applicant’s industry or ultimate ownership.
 
-These classifications are editorial research outputs, not ICANN categories, and unresolved mappings remain explicit.
+**Methodological correction (18 October 2026).** The current APS analytical layer separates **string theme**, **documented activity of the legal applicant**, and **source application designations**. Each classification has its own status, confidence and evidence. Applicant names are joined by exact published identity; corporate families are not inferred. The historical 2012 taxonomy has not yet been recoded to these separate dimensions, so the new 2026 percentages must not be presented as a comparable 2012–2026 industry trend.
+
+### 4.5 Current analysis from official application identifiers
+
+The official APS export acquired on 11 October 2026 contains 2,783 public rows, comprising 1,614 base Application IDs and 1,169 replacement records. The current analytical CSV retains one row for each base Application ID. A comparable subset excludes six `Existing gTLD with Variants` applications, yielding 1,608 applications and 980 primary labels. The set of 980 labels exactly equals the archived secondary inventory. This reconciliation is distinct from the still unexplained change in ICANN’s aggregate from 1,616 before Reveal Day to 1,615 on Reveal Day.
+
+The earlier economic layer contained 891 synthetic application rows. The current layer replaces that reconstruction with official application identities while preserving the earlier files. It inherits 332 string-theme assertions only where the old evidence classified the string; these cover 608 of the 1,608 applications. It separately classifies the documented activity of eleven selected legal applicants, covering 622 applications. The remaining 1,000 string-theme values and 986 applicant-sector values are unclassified. All shares use the full 1,608-application denominator. This purposive applicant selection is not representative of the round or the wider economy.
+
+The `.agent` example makes the distinction concrete: thirteen official applications share the inherited AI theme, while independently reviewed applicant activity identifies one AI applicant, four registry-industry applicants and eight unclassified applicants. An unclassified value records limited evidence and is not an economic sector.
+
+Project-derived location and applicant distributions use all 1,614 published base IDs. There are 480 distinct published legal names and 56 location codes. The APS `Location` and `Region` fields do not establish ultimate ownership, effective headquarters, DNS-serving location or regulatory control. These calculations are not ICANN-published aggregate rankings. Source hashes, filters, exclusions and per-variable evidence are published in the current analytical manifest.
 
 ## 5. Findings from a longitudinal view
 
@@ -82,13 +92,13 @@ The unit of analysis cannot be only the string. In 2012, applicants such as Donu
 
 ### 5.3 The economic vocabulary changes
 
-A cross-round application-level economic map shows both continuity and discontinuity. Finance, technology, media, health, retail, travel and automotive were already visible in 2012 through both generic and brand strings. By 2026, AI and digital assets emerge as distinct economic clusters, while infrastructure vocabulary shifts toward concepts such as agents, APIs, identity, wallets, tokens and compute.
+The historical exploratory map suggests continuity and discontinuity in the vocabulary of applications; its mixed classification cannot establish a homogeneous industry trend. Finance, technology, media, health, retail, travel and automotive were already visible in 2012 through both generic and brand strings. By 2026, AI and digital assets emerge as distinct economic clusters, while infrastructure vocabulary shifts toward concepts such as agents, APIs, identity, wallets, tokens and compute.
 
-The important methodological result is that sectoral analysis must classify the applicant or represented economic activity as well as the literal string. Otherwise brand namespaces disappear from sector counts.
+The methodological requirement is to classify the applicant’s documented activity separately from the theme evoked by a string. Brand names and generic vocabulary require different evidence. Comparing industries over time requires both rounds to be recoded with the same variables and coverage rules; that harmonisation is not yet complete.
 
-### 5.4 Trust becomes a more explicit namespace function
+### 5.4 Trust as a proposed namespace function
 
-The 2026 string set contains a denser vocabulary around authentication, identity, certification, security and verification. This does not prove that the DNS is becoming an identity system, but it does show increased economic and institutional interest in using namespaces as part of trust architectures.
+The presence of authentication, identity, certification, security and verification themes in the 2026 string set raises a research hypothesis: some applicants may intend namespaces to support trust-related services. String vocabulary alone establishes neither an applicant’s intended service nor an increase in economic or institutional interest compared with 2012. Testing those propositions requires reading application-level commitments and recoding both rounds with the same variables and coverage rules. Whether any proposed service becomes operational, and whether it improves trust, can only be assessed later.
 
 ### 5.5 Cities and territories remain a distinct governance problem
 
@@ -139,6 +149,12 @@ The dated, corrigible case record and primary links appear in [Field Notes](http
 
 A second field note documents a different methodological issue: two unrelated international organizations use the acronym WDO, and one holds an earlier registered word mark while the other has applied for `.wdo` in 2026. The case distinguishes proof of prior rights, possible standing to object, and actual filed objections. It also records a dated US OFAC listing concerning an individual associated with the applicant, without inferring that ICANN’s unpublished administrative-check reason is connected to it. See [Field Note 02](https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/wdo-identity/) for the independently source-linked case and explicit unresolved questions.
 
+### 6A.4 Public visibility and dated reconciliation
+
+**Revision (18 October 2026).** The APS About page states that the public site is not updated between Reveal Day and String Confirmation Day. Later updates are periodic, not real time; applicants are directed to TAMS for the most current information about their own applications. The 21 October replacement-choice deadline and the 17 November publication of confirmed strings are different milestones. An unchanged public listing does not prove that internal processing has stopped, and the calendar does not guarantee resolution of `.wdo` on 17 November.
+
+The dated Field Notes update now documents the six excluded variant-only Application IDs, the exact equality of the two 980-label sets and the input hashes. The original October observations remain readable as historical observations; subsequent evidence is appended and dated.
+
 ## 7. Reproducibility and publication model
 
 Connecting the Dots is published as a **living research publication** with two version layers:
@@ -148,13 +164,13 @@ Connecting the Dots is published as a **living research publication** with two v
 
 RR1 is the **Reveal Day 2026** research release. RR2 was published on **10 October 2026** (DOI: **10.5281/zenodo.23288603**) as a post-Reveal research snapshot, preserving RR1 (**10.5281/zenodo.23262623**). The next planned release is **RR3**, subject to evidence following **String Confirmation Day, 17 November 2026**.
 
-The repository includes machine-readable manifests, downloadable CSV datasets, data hashes, release history and a `CITATION.cff` record. RR1 is archived on Zenodo with DOI **10.5281/zenodo.23262623**; RR2 is separately archived with DOI **10.5281/zenodo.23288603**. These remain immutable snapshots. This paper is a later, mutable interpretative draft, not a revision of either deposit.
+The repository includes machine-readable manifests, downloadable CSV datasets, data hashes, release history and a `CITATION.cff` record. RR1 is archived on Zenodo with DOI **10.5281/zenodo.23262623**; RR2 is separately archived with DOI **10.5281/zenodo.23288603**. These remain immutable snapshots. This paper is a later, mutable interpretative draft, not a revision of either deposit. The 18 October official-ID analysis is a new working research output with its own version, input hashes and reproducible generator. It is not covered by the RR1 or RR2 DOI. Before its new results are cited as a DOI-backed dataset, a subsequent research release must freeze the revised method and outputs; the existing deposits must never be silently replaced.
 
 ## 8. Limitations
 
-The project has five main limitations in this living revision, based on the RR2 research snapshot.
+The living manuscript distinguishes the archived RR2 snapshot from subsequent, explicitly unarchived analysis. Five limits remain central.
 
-First, the official 2026 APS public Applications listing is now locally archived as downloaded on 11 October: 2,783 rows representing 1,614 published application IDs and 1,169 replacement records. That is not a complete set of individual questionnaires or PDFs, and the 1,615-application official aggregate still includes a separately identified application undergoing an administrative check. The 980-string secondary inventory remains a distinct layer. Second, economic-sector and strategy classifications are editorial taxonomies and require judgement for diversified groups or ambiguous strings. Third, historical source quality varies between rounds. Fourth, registration volume and commercial success are not equivalent to social or institutional importance. Fifth, a living resource can change after citation, making dated research releases essential.
+First, the official 2026 APS public Applications listing is now locally archived as downloaded on 11 October: 2,783 rows representing 1,614 published application IDs and 1,169 replacement records. That is not a complete set of individual questionnaires or PDFs, and the 1,615-application official aggregate still includes a separately identified application undergoing an administrative check. The 980-string secondary inventory remains a distinct layer. Second, string themes and applicant activities remain partial editorial classifications. The new applicant subset is purposively selected and not representative; the 2012 data are not yet harmonised with the two-variable 2026 model. Third, historical source quality varies between rounds. Fourth, registration volume and commercial success are not equivalent to social or institutional importance. Fifth, a living resource can change after citation, making dated research releases essential.
 
 ## 9. Conclusion
 
@@ -168,15 +184,19 @@ Interactive publication: https://robertbregy.github.io/Connecting-the-Dots/
 Repository: https://github.com/robertbregy/Connecting-the-Dots  
 Current TLD universe CSV (live technical publication): https://robertbregy.github.io/Connecting-the-Dots/data/tld_universe.csv  
 2026 primary-string inventory (secondary-source snapshot): https://robertbregy.github.io/Connecting-the-Dots/data/applications_2026_strings_reveal.csv  
-Current technical data package **v0.7.83** (not a new Zenodo release): https://robertbregy.github.io/Connecting-the-Dots/downloads/connecting-the-dots-data-pack-v0.7.83.zip  
+Current technical data package **v0.7.84** (not a new Zenodo release): https://robertbregy.github.io/Connecting-the-Dots/downloads/connecting-the-dots-data-pack-v0.7.84.zip  
 Official ICANN APS public applications CSV (2,783 rows / 1,614 base application IDs): https://robertbregy.github.io/Connecting-the-Dots/data/applications_2026_aps_official_listing.csv  
 Historical frozen data pack **v0.7.58** (not the current RR2 dataset): https://robertbregy.github.io/Connecting-the-Dots/downloads/connecting-the-dots-data-pack.zip
+
+Current official-ID analysis (new working research output, not archived RR1/RR2): https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_current_analytics.csv  
+Coverage, exclusions, provenance and hashes: https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_current_analytics_manifest.json
 
 ## Primary references
 
 - IANA Root Zone Database: https://www.iana.org/domains/root/db
 - ICANN 2000 TLD applications archive: https://archive.icann.org/en/tlds/app-index.htm
 - ICANN 2012 New gTLD statistics: https://newgtlds.icann.org/en/program-status/statistics
+- ICANN APS publication calendar and visibility: https://newgtldprogram-aps.icann.org/about
 - ICANN 2026 APS statistics: https://newgtldprogram-aps.icann.org/statistics
 - ICANN 2026 applications: https://newgtldprogram-aps.icann.org/applications
 - ICANN Reveal Day 2026 announcement: https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "editorialLayer": "2026-round-field-notes-not-part-of-frozen-RR1",
-  "lastReviewed": "2026-10-10",
+  "lastReviewed": "2026-10-18",
   "policy": "Only sourced public observations, explicitly dated reconstructions and open questions; never infer causes from mismatched aggregate snapshots or include privileged application details.",
   "episodes": [
     {
@@ -9,7 +9,7 @@
       "slug": "reveal-day-counts",
       "number": 1,
       "publishedOn": "2026-10-10",
-      "revisedOn": "2026-10-10",
+      "revisedOn": "2026-10-18",
       "periodStart": "2026-09-22",
       "periodEnd": "2026-10-08",
       "state": "partly-explained",
@@ -128,6 +128,36 @@
           "kind": "secondary",
           "labelKey": "behindSourceJPNIC",
           "url": "https://www.nic.ad.jp/ja/topics/2026/20261008-01.html"
+        },
+        {
+          "id": "aps-about-20261018",
+          "kind": "primary",
+          "labelKey": "field18SourceAbout",
+          "url": "https://newgtldprogram-aps.icann.org/about"
+        },
+        {
+          "id": "aps-export-20261018",
+          "kind": "primary",
+          "labelKey": "field18SourceExport",
+          "url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv"
+        },
+        {
+          "id": "aps-local-export-20261018",
+          "kind": "derived",
+          "labelKey": "field18SourceLocalExport",
+          "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/65e0fbe2080c2ee841e8abc01e1ddec113a74b8e/data/applications_2026_aps_official_listing.csv"
+        },
+        {
+          "id": "aps-local-strings-20261018",
+          "kind": "derived",
+          "labelKey": "field18SourceLocalStrings",
+          "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/65e0fbe2080c2ee841e8abc01e1ddec113a74b8e/data/applications_2026_strings_reveal.csv"
+        },
+        {
+          "id": "aps-calendar-20261018",
+          "kind": "primary",
+          "labelKey": "field04SourceTimeline",
+          "url": "https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en"
         }
       ],
       "updateTriggers": [
@@ -135,7 +165,8 @@
         "ICANN changes the WDO application administrative-check status or APS visibility",
         "ICANN revises APS counts or releases a newly reconciled application-level public list",
         "A new independent analysis identifies an evidence-backed alternative reconciliation",
-        "An ICANN application-by-application export explains the regional and individual source reconciliation without assumptions about withdrawals"
+        "An ICANN application-by-application export explains the regional and individual source reconciliation without assumptions about withdrawals",
+        "After String Confirmation Day, compare the next dated APS public export; do not infer internal inactivity from the planned public update interval."
       ],
       "revisionHistory": [
         {
@@ -160,6 +191,18 @@
             "independent-bortzmeyer",
             "independent-circleid",
             "independent-jpnic"
+          ]
+        },
+        {
+          "date": "2026-10-18",
+          "changeKey": "field18Revision",
+          "sourceIds": [
+            "aps-about-20261018",
+            "aps-calendar-20261018",
+            "aps-export-20261018",
+            "aps-local-export-20261018",
+            "aps-local-strings-20261018",
+            "icann-aps-wdo"
           ]
         }
       ],
@@ -199,6 +242,39 @@
           "visibleApplications": 11,
           "officialApplicants": 9,
           "visibleApplicants": 9
+        }
+      ],
+      "editorialUpdates": [
+        {
+          "id": "aps-count-reconciliation",
+          "date": "2026-10-18",
+          "titleKey": "field18ShortReconciliationTitle",
+          "paragraphKeys": [
+            "field18ShortReconciliationBody"
+          ],
+          "sourceIds": [
+            "aps-export-20261018",
+            "aps-local-export-20261018",
+            "aps-local-strings-20261018"
+          ],
+          "link": {
+            "path": "replacement-strings/#aps-string-reconciliation",
+            "labelKey": "field18FullReconciliationLink"
+          }
+        },
+        {
+          "id": "aps-publication-calendar",
+          "date": "2026-10-18",
+          "titleKey": "field18CalendarTitle",
+          "paragraphKeys": [
+            "field18CalendarBody",
+            "field18CalendarLimit"
+          ],
+          "sourceIds": [
+            "aps-about-20261018",
+            "aps-calendar-20261018",
+            "icann-aps-wdo"
+          ]
         }
       ]
     },

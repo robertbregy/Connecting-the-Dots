@@ -54,6 +54,7 @@ jobs:
       - name: Build current release and validate all release invariants
         run: |
           python3 build.py
+          python3 scripts/test_aps_current_analytics.py
           node scripts/verify_ia_b2_parity.cjs
           node scripts/validate_multilingual.js
           node scripts/validate_internet_access.js
@@ -63,13 +64,18 @@ jobs:
           python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/ctd-audit-http.log 2>&1 &
           sleep 2
           node scripts/audit_browser_20261010.js
+      - name: Verify the audit corrections and actual filtered CSV exports
+        env:
+          CTD_TEST_BASE: http://127.0.0.1:8123/
+          CTD_AUDIT_OUTPUT: audit-20261018
+        run: node scripts/audit_20261018_browser.cjs
       - name: Verify all 26 B2 cards and 39 independent pages across mobile and desktop
         run: |
           CTD_TEST_BASE=http://127.0.0.1:8123/ node scripts/audit_ia_b2.cjs
-      - name: Verify all 208 original A section and fragment links
+      - name: Verify all original A section and fragment links
         run: |
           CTD_TEST_BASE=http://127.0.0.1:8123/ node scripts/audit_legacy_deeplinks.cjs
-      - name: Audit all 160 combinations of locale, theme and section for WCAG A/AA
+      - name: Audit every locale, theme and section for WCAG A/AA
         run: |
           node scripts/audit_axe_20261010.js
       - name: Attach visual evidence
@@ -84,6 +90,7 @@ jobs:
             audit-ia-b2/*.png
             audit-deeplinks/results.json
             audit-aps-atlas-*.png
+            audit-20261018/report.json
           if-no-files-found: ignore
 
   independent-qa:

@@ -27,6 +27,9 @@ def source_for(lang):
         attrs=re.sub(r'\s+lang="[^"]*"','',attrs)
         return '<html'+attrs+f' lang="{lang}" data-ctd-language="{lang}" data-ctd-root="../">'
     staged=re.sub(r'<html([^>]*)>',repl,raw,count=1)
+    inventory_pattern=r'<script\b[^>]*\bsrc="data/applications_2026_strings_reveal\.js[^\"]*"[^>]*></script>'
+    staged,n=re.subn(inventory_pattern,lambda _: '<script>\n'+(ROOT/'data/applications_2026_strings_reveal.js').read_text(encoding='utf-8')+'\n</script>',staged,count=1)
+    if n!=1:raise RuntimeError('missing frozen 2026 inventory')
     for identifier,filename in [
         ('ctd-data-bundle','data/site_bundle.js'),
         ('ctd-i18n-bundle','data/i18n_bundle.js'),
@@ -47,6 +50,7 @@ def render(page,lang,alias=False):
     page.set_content(source_for(lang),wait_until='domcontentloaded',timeout=30000)
     page.wait_for_function("document.querySelectorAll('#disputeGrid .disputeCase').length===9",timeout=10000)
     page.wait_for_function("document.querySelectorAll('#socialGrid .socialCase').length===9",timeout=10000)
+    page.wait_for_function("window.DOT_DATA.explorerMeta.application2026StringCoverageComplete===true",timeout=10000)
     page.wait_for_timeout(100)
     html=page.content();soup=BeautifulSoup(html,'lxml');root=soup.html
     prefix='' if alias else '../';canonical=BASE+lang+'/'
@@ -84,12 +88,6 @@ def render(page,lang,alias=False):
     footer=soup.select_one('#languageVersions');footer['aria-label']=tr['languageVersions'];set_content(footer,links())
     nos=soup.select_one('#staticReading')
     if nos:set_content(nos,f'<div class="staticReading"><p>{tr["staticReading"]}</p><nav class="languageVersions" aria-label="{tr["languageVersions"]}">{links()}</nav></div>')
-    st=soup.select_one('#applicationCorpusStatus')
-    if st:
-        st['class']=['applicationCorpusStatus','ready']
-        st.string=tr['applicationCorpusReady'].replace('{count}',str(LOCAL_APPLICATION_COUNT)).replace('{rounds}','2000, 2004, 2012')
-    cnt=soup.select_one('#exploreApplicationCount')
-    if cnt:cnt.string=str(LOCAL_APPLICATION_COUNT)
     style=soup.select_one('#ctd-runtime-style');link=soup.new_tag('link',id='ctd-runtime-style');link['rel']='stylesheet';link['href']=f'assets/style.css?v={VERSION}';style.replace_with(link)
     for sid,file in [('ctd-data-bundle','data/site_bundle.js'),('ctd-worldmap','data/worldmap.js'),('ctd-app','assets/app.js')]:
         n=soup.select_one('#'+sid);n.clear();n['src']=f'{file}?v={VERSION}';n['defer']=''
@@ -100,8 +98,10 @@ def render(page,lang,alias=False):
     if behind_guide:behind_guide['href']=BASE+'behind-the-round/'+lang+'/'
     for newlink in soup.select('a[data-field-investigation-slug]'):
         slug=newlink.get('data-field-investigation-slug')
-        if slug not in ('objectors-eoi','replacement-strings'):raise RuntimeError('Unexpected Field Note route '+str(slug))
+        if slug not in ('objectors-eoi','replacement-strings','background-screening'):raise RuntimeError('Unexpected Field Note route '+str(slug))
         newlink['href']=BASE+'behind-the-round/'+lang+'/'+slug+'/'
+    for crosslink in soup.select('a[data-field-reconciliation-link]'):
+        crosslink['href'] = BASE + 'behind-the-round/' + lang + '/replacement-strings/#aps-string-reconciliation'
     for crosslink in soup.select('a[data-governance-explainer-link]'):
         crosslink['href']=BASE+'behind-the-round/'+lang+'/sanctions-and-dns/'
     for crosslink in soup.select('a[data-access-explainer-link]'):

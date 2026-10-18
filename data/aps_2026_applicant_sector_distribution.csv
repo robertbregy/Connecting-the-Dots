@@ -1,0 +1,9 @@
+scope,category,applications,denominator,share_of_all_pct,distinct_applicant_names,observed_location_codes,source_observed_utc,source_sha256
+all_published,[not classified or missing],992,1614,61.462206,469,AE | AT | AU | BD | BE | BM | BR | CA | CH | CK | CN | CO | CY | DE | DK | EE | ES | FR | GB | GI | HK | HU | ID | IE | IL | IN | IT | JO | JP | KE | KH | KN | KR | KY | LT | MC | MU | MY | NL | NP | NZ | PA | SC | SE | SG | SV | TH | TR | TW | UA | US | UY | UZ | VG | ZA,2026-10-11T21:27:40.214Z,520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887
+all_published,Registry & domain industry,585,1614,36.245353,8,IE | KY | MT | US,2026-10-11T21:27:40.214Z,520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887
+all_published,"Cybersecurity, identity & trust",20,1614,1.239157,1,IT,2026-10-11T21:27:40.214Z,520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887
+all_published,AI & automation,17,1614,1.053284,2,US,2026-10-11T21:27:40.214Z,520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887
+new_primary,[not classified or missing],986,1608,61.318408,466,AE | AT | AU | BD | BE | BM | BR | CA | CH | CK | CN | CO | CY | DE | DK | EE | ES | FR | GB | GI | HK | HU | ID | IE | IL | IN | IT | JO | JP | KE | KH | KN | KR | KY | LT | MC | MU | MY | NL | NP | NZ | PA | SC | SE | SG | SV | TH | TR | TW | UA | US | UY | UZ | VG | ZA,2026-10-11T21:27:40.214Z,520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887
+new_primary,Registry & domain industry,585,1608,36.380597,8,IE | KY | MT | US,2026-10-11T21:27:40.214Z,520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887
+new_primary,"Cybersecurity, identity & trust",20,1608,1.243781,1,IT,2026-10-11T21:27:40.214Z,520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887
+new_primary,AI & automation,17,1608,1.057214,2,US,2026-10-11T21:27:40.214Z,520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887

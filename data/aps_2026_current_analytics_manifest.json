@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "layerId": "aps-current-analytics-2026-10-18",
+  "publicationStatus": "current-derived-analysis-not-archived-RR1-or-RR2",
+  "editorialRevisionDate": "2026-10-18",
+  "sourceObservedUTC": "2026-10-11T21:27:40.214Z",
+  "generator": "scripts/build_aps_current_analytics.py",
+  "generatorSHA256": "96b03723b58b9b1773a16763cdf2ff14f2e2846383ba81cee46fa113ed750243",
+  "inputs": {
+    "applications_2026_aps_official_listing.csv": {
+      "sha256": "520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887",
+      "bytes": 667815
+    },
+    "applications_2026_aps_official_provenance.json": {
+      "sha256": "928c77917c7dba4b0a9b4e6705e131984b83dc2d50b64b6c805143358fe596a6",
+      "bytes": 3517
+    },
+    "application_economic_map_2012_2026.csv": {
+      "sha256": "fd296f84bddca790e9b581c0665c08f5903c2b86758d90d23e8008d434296f28",
+      "bytes": 1419151
+    },
+    "aps_2026_applicant_sector_evidence.json": {
+      "sha256": "2f61a46069dcc82a704746110a4994f284b85b1e2da1804fe81712760b5a8b12",
+      "bytes": 6157
+    },
+    "applications_2026_strings_reveal.csv": {
+      "sha256": "defffa4dcc1339b15164f4be9293402daf24d0d7291c038a8e21b36967cbe6a8",
+      "bytes": 54107
+    },
+    "applications_2012.csv": {
+      "sha256": "96b93fafc298cfc632481f43fdf439b9d65eb4a022356ea4124a6e494fd50822",
+      "bytes": 813903
+    },
+    "registry_concentration_context.csv": {
+      "sha256": "a7b62180df2ac200e8c1bc6a0819ecebd7ff914cfc9c04f191cc6064c65d6f1f",
+      "bytes": 3718
+    }
+  },
+  "coverage": {
+    "all_published": {
+      "applications": 1614,
+      "distinctPrimaryStrings": 986,
+      "distinctApplicantNames": 480,
+      "distinctLocationCodes": 56,
+      "stringThemeClassified": 608,
+      "stringThemeMissing": 1006,
+      "applicantSectorClassified": 622,
+      "applicantSectorMissing": 992,
+      "reviewedApplicantNames": 11,
+      "locationMissing": 0,
+      "regionMissing": 0,
+      "corporateGroupResolved": 0,
+      "officialFlagCounts": {
+        "brand": 333,
+        "community": 16,
+        "geoSelfDesignated": 15,
+        "geoReviewConfirmed": 0
+      }
+    },
+    "new_primary": {
+      "applications": 1608,
+      "distinctPrimaryStrings": 980,
+      "distinctApplicantNames": 477,
+      "distinctLocationCodes": 56,
+      "stringThemeClassified": 608,
+      "stringThemeMissing": 1000,
+      "applicantSectorClassified": 622,
+      "applicantSectorMissing": 986,
+      "reviewedApplicantNames": 11,
+      "locationMissing": 0,
+      "regionMissing": 0,
+      "corporateGroupResolved": 0,
+      "officialFlagCounts": {
+        "brand": 333,
+        "community": 16,
+        "geoSelfDesignated": 15,
+        "geoReviewConfirmed": 0
+      }
+    }
+  },
+  "scopes": {
+    "all_published": "1614 unique published base Application IDs; -R replacement records excluded.",
+    "new_primary": "1608 published base IDs after excluding six Existing gTLD with Variants applications; 980 primary labels."
+  },
+  "legacyImport": {
+    "file": "application_economic_map_2012_2026.csv",
+    "sha256": "fd296f84bddca790e9b581c0665c08f5903c2b86758d90d23e8008d434296f28",
+    "rule": "Only classified 2026 string-taxonomy rows, collapsed to one theme assertion per primary string, then joined to each official base ID. No applicant-sector, group-override or brand-based legacy classifications are propagated.",
+    "distinctImportedThemeStrings": 332,
+    "legacySourceRowsCollapsed": 608,
+    "officialApplicationsWithImportedTheme": 608,
+    "legacyMixedClassifiedApplications": 690,
+    "applicationWeight": 1
+  },
+  "excludedExistingVariantApplications": [
+    "BTRT2633T-T38161",
+    "BTRT2633T-T83538",
+    "CINI2622T-T81530",
+    "IDOL2621T-T12142",
+    "IDOL2621T-T53999",
+    "NHXN2684T-T27476"
+  ],
+  "officialReportedApplications": 1615,
+  "absentFromPublicListing": "WDO2627T-T45217",
+  "files": {
+    "aps_2026_current_analytics.csv": {
+      "sha256": "9734855dc1451e59c99badb271248dc2a1464223e6b1c9fe036d61746fed7e75",
+      "bytes": 957399
+    },
+    "aps_2026_current_analytics.json": {
+      "sha256": "d14050baf026791b30167f689fbeb18ef3c435ac9354f3622ebb656db01f7dd9",
+      "bytes": 487893
+    },
+    "aps_2026_current_analytics.js": {
+      "sha256": "303e4354391464e0612b47e1e6499fd806716c1179b0107e6fde67bbb54a0cab",
+      "bytes": 368676
+    },
+    "registry_concentration.csv": {
+      "sha256": "5f9efac583fe08b3bf9d6e0edf9715ed37bb54f25191fe7eddf9311d6742cec7",
+      "bytes": 5575
+    },
+    "aps_2026_applicant_distribution.csv": {
+      "sha256": "bf43f77af73b71f281175f90999d4b0478fbe02696bc0a6a0465c111fc36bb13",
+      "bytes": 142351
+    },
+    "aps_2026_location_distribution.csv": {
+      "sha256": "ad296ae43a9a11d325d4e34b0530b48481fc8969769c661e302a159be8e93728",
+      "bytes": 14427
+    },
+    "aps_2026_region_distribution.csv": {
+      "sha256": "d9ce301a19b7dd5af2e2e383dc5c034f329f764d27cc23f5bf3546cdd92072b7",
+      "bytes": 1957
+    },
+    "aps_2026_string_theme_distribution.csv": {
+      "sha256": "af7017ab396f0b7a0eb915bac7add9cd08fd17ac2a13109ec8193ceec10bf4b6",
+      "bytes": 7678
+    },
+    "aps_2026_applicant_sector_distribution.csv": {
+      "sha256": "18607e7bcbbcacd0d9fcd0659bbe57f71a85b3f4d5e22117e9131d113417d2bf",
+      "bytes": 1932
+    }
+  },
+  "limitations": [
+    "All rankings and shares are project-derived from a dated official listing, not ICANN-published aggregate rankings.",
+    "One application has weight 1; no weight is added for a replacement, variant or duplicated legacy theme assertion.",
+    "Location and Region are copied APS fields, including ICANN regional assignments; they do not establish headquarters, ultimate ownership, DNS serving location or sovereign jurisdiction over users.",
+    "Legal applicants are grouped by exact published name, not by corporate family; display trimming does not merge entities.",
+    "String themes retain a selected inherited editorial taxonomy and its per-theme confidence; ICANN does not classify those themes.",
+    "Applicant sectors are an intentionally partial evidence-reviewed selection. Missing is not an economic sector and the classified subset is not a representative sample.",
+    "The legal applicant's documented activity is distinct from the industry of a parent company. A registry affiliate need not already operate an awarded 2026 TLD.",
+    "Naming designations are source flags; a FALSE brand flag does not prove a generic naming strategy or a final eligibility outcome.",
+    "Naming-designation combinations partition applications, while individual flags overlap: 331 brand-only plus two brand-and-geo applications give 333 TRUE brand flags.",
+    "No ultimate-parent classification is imported. The archived mixed 2012/2026 economic map and RR1/RR2 artifacts are unchanged.",
+    "2012 and this new 2026 two-variable model do not yet form a harmonized industry time series; archived mixed-sector charts remain historical context."
+  ],
+  "checks": [
+    "APS source digest and full column schema",
+    "2783 unique records = 1614 base + 1169 linked replacements",
+    "exact six existing-variant-only exclusions",
+    "1608 applications / 980 labels; exact frozen-index label-set equality",
+    "legacy immutable map digest",
+    "one non-conflicting imported assertion per string",
+    "unit application weights",
+    "all distributions conserve their explicit denominator",
+    "no synthesized parent groups",
+    "Amazon exact local corpus count 76"
+  ]
+}

@@ -28,11 +28,9 @@ Technical/site releases (`v0.x.y`) do not create a new research release. Researc
 
 ## Data pack discipline
 
-Technical-only site releases leave the archived downloadable research data pack unchanged. For a new research release that intentionally refreshes it, run:
+Each technical release has a new versioned current data package. Set `version`, `currentDataPackVersion`, `currentDataPackPath` and `releasedOn` in `publication.json`, then run the normal build. Existing versioned ZIPs and their checksums are immutable and independently checked. `CTD_REBUILD_DATA_PACK=1` is intentionally rejected: it must never rewrite the historical v0.7.58 archive.
 
-```bash
-CTD_REBUILD_DATA_PACK=1 python3 build.py
-```
+The working paper is generated from its Markdown source by `scripts/render_research.cjs`; manuscript version and review date also come from `publication.json`. New analytical outputs outside RR1/RR2 are labelled as current working research and may be archived only as a subsequent research release, never under an earlier release DOI.
 
 ## Fallback archives
 

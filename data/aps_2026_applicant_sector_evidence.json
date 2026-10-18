@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "editorialRevisionDate": "2026-10-18",
+  "title": "Selected source-reviewed activities of exact APS legal applicants",
+  "scope": "Purposeful partial review; not a representative industry census and not an ultimate-parent mapping.",
+  "matchingRule": "Exact Applicant Name from APS, after trimming outer whitespace only; no fuzzy matching, aliases, group propagation or string-based sector inference.",
+  "entries": [
+    {
+      "applicant": "Link Freedom Group Ltd",
+      "sector": "Registry & domain industry",
+      "confidence": "high",
+      "basis": "applicant-disclosed-domain-business",
+      "sources": ["https://lfg.link/about", "https://newgtldprogram-aps.icann.org/applications/LFGL2683T-T33637/summary"],
+      "evidence": "The applicant describes developing and operating domain-name infrastructure; APS identifies the legal applicant.",
+      "reviewedAt": "2026-10-18"
+    },
+    {
+      "applicant": "XYZ.COM LLC",
+      "sector": "Registry & domain industry",
+      "confidence": "high",
+      "basis": "registry-agreement-and-applicant-business",
+      "sources": ["https://www.icann.org/en/registry-agreements/details/xyz", "https://xyz.xyz/"],
+      "evidence": "ICANN identifies this legal entity as the .xyz operator; the business describes a portfolio of domain extensions.",
+      "reviewedAt": "2026-10-18"
+    },
+    {
+      "applicant": "Registry Services, LLC",
+      "sector": "Registry & domain industry",
+      "confidence": "high",
+      "basis": "registry-agreement-and-evaluated-services",
+      "sources": ["https://itp.cdn.icann.org/en/files/registry-agreements/biz/biz-agmt-html-30jun19-en.htm", "https://newgtldprogram-2026-documents.icann.org/rsp-documents/rsp-registry-services.html"],
+      "evidence": "The .biz registry agreement names the entity; ICANN's evaluated registry-services list documents its registry-services activity.",
+      "reviewedAt": "2026-10-18"
+    },
+    {
+      "applicant": "Intercap Registry Inc.",
+      "sector": "Registry & domain industry",
+      "confidence": "high",
+      "basis": "applicant-disclosed-domain-business",
+      "sources": ["https://www.intercap.inc/"],
+      "evidence": "The company identifies itself by its legal name as a provider of domain extensions.",
+      "reviewedAt": "2026-10-18"
+    },
+    {
+      "applicant": "Radix Technologies Inc SEZC",
+      "sector": "Registry & domain industry",
+      "confidence": "high",
+      "basis": "registry-agreements-and-APS-entity-disclosure",
+      "sources": ["https://www.icann.org/en/registry-agreements/details/store", "https://newgtldprogram-aps.icann.org/applications/RTIS2674T-T51870/application-responses"],
+      "evidence": "The .store agreement identifies the operator; APS discloses this entity's registry and registrar-industry relationships.",
+      "reviewedAt": "2026-10-18"
+    },
+    {
+      "applicant": "ShortDot (Ireland) Limited",
+      "sector": "Registry & domain industry",
+      "confidence": "medium",
+      "basis": "APS-declared-registry-affiliate-activity",
+      "sources": ["https://newgtldprogram-aps.icann.org/applications/NA2626T-T55140/application-responses"],
+      "evidence": "AGB Q11-Q12 describe the applying entity as a subsidiary of an existing registry operator. Sector is an editorial reading of the applying vehicle's declared activity, not proof that it already operates an awarded 2026 TLD.",
+      "reviewedAt": "2026-10-18"
+    },
+    {
+      "applicant": "Charleston Road Registry Inc.",
+      "sector": "Registry & domain industry",
+      "confidence": "high",
+      "basis": "applicant-disclosed-registry-business",
+      "sources": ["https://www.registry.google/faqs/", "https://www.registry.google/policies/registrar-abuse/"],
+      "evidence": "Google Registry identifies its registry legal entity as Charleston Road Registry. This classification concerns that applicant's domain business, not the consolidated activities of Google or Alphabet.",
+      "reviewedAt": "2026-10-18"
+    },
+    {
+      "applicant": "Squarespace Registry LLC",
+      "sector": "Registry & domain industry",
+      "confidence": "medium",
+      "basis": "APS-declared-registry-affiliate-activity",
+      "sources": ["https://newgtldprogram-aps.icann.org/applications/SRL2616T-T62801-R/application-responses"],
+      "evidence": "AGB Q11-Q14 identify the applying registry vehicle and its relationship to accredited domain registrars. Sector is an editorial reading of the applicant's declared domain-industry role, not a consolidated parent-sector classification.",
+      "reviewedAt": "2026-10-18"
+    },
+    {
+      "applicant": "OPENAI OPCO, LLC",
+      "sector": "AI & automation",
+      "confidence": "high",
+      "basis": "APS-applicant-website-and-business-description",
+      "sources": ["https://newgtldprogram-aps.icann.org/applications/OOL2614T-T34282/summary", "https://openai.com/"],
+      "evidence": "APS links this legal applicant to openai.com; the organization's stated activity is artificial-intelligence research and deployment. This is not inferred from the .agent string.",
+      "reviewedAt": "2026-10-18"
+    },
+    {
+      "applicant": "Anthropic, PBC",
+      "sector": "AI & automation",
+      "confidence": "high",
+      "basis": "applicant-business-and-legal-form-description",
+      "sources": ["https://www.anthropic.com/company", "https://www.anthropic.com/"],
+      "evidence": "The organization's company page identifies a public benefit corporation devoted to advanced AI development and research.",
+      "reviewedAt": "2026-10-18"
+    },
+    {
+      "applicant": "Aruba PEC S.P.A.",
+      "sector": "Cybersecurity, identity & trust",
+      "confidence": "high",
+      "basis": "legal-applicant-certified-services-description",
+      "sources": ["https://www.pec.it/", "https://www.agid.gov.it/it/piattaforme/soggetti-accreditati/aruba-pec-spa-0"],
+      "evidence": "The service site names Aruba PEC S.p.A. as the provider of certified mail, digital identity and trust services; AgID lists the legal entity. This concerns Aruba PEC, not every activity of the Aruba group.",
+      "reviewedAt": "2026-10-18"
+    }
+  ]
+}

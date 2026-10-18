@@ -36,8 +36,10 @@ jobs:
           import os
           import subprocess
           import time
+          from html.parser import HTMLParser
           from pathlib import Path
           from urllib.error import URLError
+          from urllib.parse import urljoin, urlsplit
           from urllib.request import Request, urlopen
 
           root=Path.cwd()
@@ -47,49 +49,77 @@ jobs:
           if head!=expected_sha:
               print("SKIP: a newer main commit superseded this Pages build",expected_sha,head)
               raise SystemExit(0)
-          targets=[
-              "index.html",
-              "it/index.html","en/index.html","de/index.html","fr/index.html",
-              "research/index.html",
-              "data/city_namespace_editorial.json",
-              "applications/it/index.html","applications/en/index.html",
-              "applications/de/index.html","applications/fr/index.html",
-              "behind-the-round/it/sanctions-and-dns/index.html",
-              "behind-the-round/it/who-controls-internet-access/index.html",
-              "behind-the-round/en/sanctions-and-dns/index.html",
-              "behind-the-round/en/who-controls-internet-access/index.html",
-              "behind-the-round/it/index.html",
-              "behind-the-round/it/replacement-strings/index.html",
-              "behind-the-round/it/background-screening/index.html",
-              "behind-the-round/en/background-screening/index.html",
-              "behind-the-round/de/background-screening/index.html",
-              "behind-the-round/fr/background-screening/index.html",
-              "inside-the-round/it/index.html",
-              "downloads/connecting-the-dots-data-pack-v0.7.83.zip",
-          ]
+          publication=json.loads((root/"publication.json").read_text(encoding="utf-8"))
+          current_pack=publication["currentDataPackPath"]
+          if (not current_pack.startswith("downloads/") or ".." in Path(current_pack).parts
+                  or not current_pack.endswith(".zip")):
+              raise SystemExit("INVALID CURRENT DATA PACK PATH: "+str(current_pack))
+          targets=["index.html","research/index.html","publication.json",
+                   "data/city_namespace_editorial.json",current_pack,
+                   str(Path(current_pack).with_suffix(".sha256"))]
+          for lang in ("it","en","de","fr"):
+              targets.extend([lang+"/index.html","applications/"+lang+"/index.html",
+                              "behind-the-round/"+lang+"/index.html",
+                              "inside-the-round/"+lang+"/index.html"])
+              for slug in ("sanctions-and-dns","who-controls-internet-access",
+                           "replacement-strings","background-screening"):
+                  targets.append("behind-the-round/"+lang+"/"+slug+"/index.html")
+
+          # The HTML can be current while a separately served stylesheet, runtime
+          # or dataset is stale. Inspect the actual script/stylesheet references,
+          # including their query strings, instead of maintaining a second list.
+          class RuntimeAssets(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.urls=[]
+              def handle_starttag(self, tag, attrs):
+                  attrs=dict(attrs)
+                  if tag=="script" and attrs.get("src"):
+                      self.urls.append(attrs["src"])
+                  if tag=="link" and set(attrs.get("rel","").split()) & {"stylesheet","modulepreload"} and attrs.get("href"):
+                      self.urls.append(attrs["href"])
+
+          resources={path:(path,"" if path=="index.html" else path.replace("/index.html","/"))
+                     for path in targets}
+          origin=urlsplit(base)
+          for path in targets:
+              if not path.endswith(".html"):
+                  continue
+              parser=RuntimeAssets()
+              parser.feed((root/path).read_text(encoding="utf-8"))
+              for reference in parser.urls:
+                  resolved=urlsplit(urljoin(base+path,reference))
+                  if (resolved.scheme,resolved.netloc)!=(origin.scheme,origin.netloc):
+                      continue
+                  if not resolved.path.startswith(origin.path):
+                      raise SystemExit("RUNTIME ASSET OUTSIDE PROJECT: "+reference)
+                  local=resolved.path[len(origin.path):]
+                  route=local+("?"+resolved.query if resolved.query else "")
+                  resources[route]=(local,route)
+          # Each request retains its browser URL but maps to a query-free source file.
           results={}
           for attempt in range(1,9):
               results={}
-              for path in targets:
+              for key,(path,route) in resources.items():
                   expected=root/path
                   if not expected.is_file():
                       raise SystemExit("MISSING REPOSITORY FILE: "+path)
-                  route="" if path=="index.html" else path.replace("/index.html","/")
                   url=base+route
                   try:
                       with urlopen(Request(url,headers={"User-Agent":"ConnectingTheDots-LiveReleaseAudit/1.0"}),timeout=25) as response:
                           actual=response.read()
                           status=response.status
                       same=status==200 and hashlib.sha256(actual).digest()==hashlib.sha256(expected.read_bytes()).digest()
-                      results[path]={"status":status,"matches_repo":same,"live_size":len(actual)}
+                      results[key]={"source_path":path,"status":status,"matches_repo":same,"live_size":len(actual)}
                   except (OSError,URLError) as exc:
-                      results[path]={"matches_repo":False,"error":str(exc)}
+                      results[key]={"source_path":path,"matches_repo":False,"error":str(exc)}
               if all(r["matches_repo"] for r in results.values()):
                   break
               print("GitHub Pages still propagating or inconsistent; attempt",attempt,"of 8")
               if attempt!=8:
                   time.sleep(15)
-          evidence={"source_commit":expected_sha,"public_url":base,"attempts":attempt,
+          evidence={"source_commit":expected_sha,"publication_version":publication["version"],
+                    "current_data_pack":current_pack,"public_url":base,"attempts":attempt,
                     "all_match":all(r["matches_repo"] for r in results.values()),"files":results}
           Path("live-pages-smoke.json").write_text(json.dumps(evidence,sort_keys=True,indent=2)+"\n",encoding="utf-8")
           print(json.dumps(evidence,sort_keys=True,indent=2))

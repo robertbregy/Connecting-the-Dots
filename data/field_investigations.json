@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "editorialLayer": "2026-round-investigations-not-part-of-frozen-RR1",
-  "lastReviewed": "2026-10-17",
+  "lastReviewed": "2026-10-18",
   "classification": "source-backed-editorial-field-notes",
   "legacyCases": "data/behind_round_stories.json",
   "episodes": [
@@ -92,7 +92,7 @@
       "slug": "replacement-strings",
       "number": 4,
       "publishedOn": "2026-10-10",
-      "revisedOn": "2026-10-17",
+      "revisedOn": "2026-10-18",
       "periodStart": "2026-08-12",
       "periodEnd": "2026-11-17",
       "state": "documented-with-open-questions",
@@ -148,7 +148,9 @@
             "rs-internetbest",
             "rs-local-snapshot",
             "rs-icann-reveal"
-          ]
+          ],
+          "observationDate": "2026-10-10",
+          "observationLabelKey": "field18HistoricalObservation"
         },
         {
           "titleKey": "field04Section4Title",
@@ -243,6 +245,24 @@
           "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/pre-evaluation-processes/faqs/replacement-strings/i-submitted-my-replacement-string-attestation-in-tams-why-is-my-unchosen-application-still-showing-as-active",
           "kind": "primary",
           "labelKey": "field04SourceActiveFAQ"
+        },
+        {
+          "id": "aps-export-20261018",
+          "kind": "primary",
+          "labelKey": "field18SourceExport",
+          "url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv"
+        },
+        {
+          "id": "aps-local-export-20261018",
+          "kind": "derived",
+          "labelKey": "field18SourceLocalExport",
+          "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/65e0fbe2080c2ee841e8abc01e1ddec113a74b8e/data/applications_2026_aps_official_listing.csv"
+        },
+        {
+          "id": "aps-local-strings-20261018",
+          "kind": "derived",
+          "labelKey": "field18SourceLocalStrings",
+          "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/65e0fbe2080c2ee841e8abc01e1ddec113a74b8e/data/applications_2026_strings_reveal.csv"
         }
       ],
       "updateTriggers": [
@@ -272,6 +292,99 @@
             "rs-icann-period",
             "rs-icann-aps"
           ]
+        },
+        {
+          "date": "2026-10-18",
+          "changeKey": "field18ReconciliationRevision",
+          "sourceIds": [
+            "aps-export-20261018",
+            "aps-local-export-20261018",
+            "aps-local-strings-20261018"
+          ]
+        }
+      ],
+      "editorialUpdates": [
+        {
+          "id": "aps-string-reconciliation",
+          "date": "2026-10-18",
+          "titleKey": "field18ReconciliationTitle",
+          "paragraphKeys": [
+            "field18ReconciliationBody",
+            "field18EqualityBody"
+          ],
+          "closingKey": "field18SnapshotBoundary",
+          "sourceIds": [
+            "aps-export-20261018",
+            "aps-local-export-20261018",
+            "aps-local-strings-20261018"
+          ],
+          "reconciliation": {
+            "officialFile": "data/applications_2026_aps_official_listing.csv",
+            "secondaryFile": "data/applications_2026_strings_reveal.csv",
+            "officialArchivedOn": "2026-10-11",
+            "secondarySnapshot": "2026-10-07",
+            "filter": {
+              "baseApplication": "Application ID does not end with -R",
+              "excludedApplicationType": "Existing gTLD with Variants",
+              "setComparison": "strip and lowercase Primary String / string ASCII values"
+            },
+            "result": {
+              "publicRows": 2783,
+              "replacementRows": 1169,
+              "baseApplications": 1614,
+              "existingVariantApplications": 6,
+              "remainingApplications": 1608,
+              "allPrimaryStrings": 986,
+              "filteredPrimaryStrings": 980,
+              "secondaryPrimaryStrings": 980,
+              "exactSetEquality": true,
+              "missingFromSecondary": [],
+              "missingFromOfficial": []
+            },
+            "excludedApplications": [
+              {
+                "applicationId": "BTRT2633T-T38161",
+                "primaryString": "xn--fiq228c5hs",
+                "applicant": "Beijing TLD Registry Technology Limited"
+              },
+              {
+                "applicationId": "BTRT2633T-T83538",
+                "primaryString": "xn--3ds443g",
+                "applicant": "Beijing TLD Registry Technology Limited"
+              },
+              {
+                "applicationId": "CINI2622T-T81530",
+                "primaryString": "xn--io0a7i",
+                "applicant": "China Internet Network Information Center (CNNIC)"
+              },
+              {
+                "applicationId": "IDOL2621T-T12142",
+                "primaryString": "xn--imr513n",
+                "applicant": "Internet DotTrademark Organisation Limited"
+              },
+              {
+                "applicationId": "IDOL2621T-T53999",
+                "primaryString": "xn--czr694b",
+                "applicant": "Internet DotTrademark Organisation Limited"
+              },
+              {
+                "applicationId": "NHXN2684T-T27476",
+                "primaryString": "xn--g2xx48c",
+                "applicant": "Nawang Heli(Xiamen) Network Service Co., LTD."
+              }
+            ],
+            "sourceSHA256": {
+              "official": "520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887",
+              "secondary": "defffa4dcc1339b15164f4be9293402daf24d0d7291c038a8e21b36967cbe6a8"
+            },
+            "setSHA256": "aef7cf47750b1648e3425c7c3a7a4430d021c0edb839bef2d5065d26844edfd0",
+            "tableCaptionKey": "field18ExcludedCaption",
+            "tableHeaderKeys": [
+              "field18ApplicationID",
+              "field18PrimaryString",
+              "field18Applicant"
+            ]
+          }
         }
       ]
     },

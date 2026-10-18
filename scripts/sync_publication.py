@@ -43,6 +43,7 @@ browser_meta = {
     'researchSnapshot': meta.get('researchSnapshot'),
     'paperVersion': meta.get('paperVersion'),
     'paperPath': meta.get('paperPath'),
+    'paperRevisedOn': meta.get('paperRevisedOn'),
     'dataPackageVersion': meta.get('dataPackageVersion'),
     'currentDataPackVersion': meta.get('currentDataPackVersion'),
     'currentDataPackPath': meta.get('currentDataPackPath'),
@@ -65,6 +66,10 @@ rr = research_manifest["currentResearchRelease"]
 if rr["id"] != meta["researchRelease"] or rr["doi"] != meta.get("doi"):
     raise SystemExit("Research release identity/DOI mismatch: refusing to rewrite CITATION.cff")
 research_manifest["currentSiteVersion"] = version
+working_paper = research_manifest.setdefault("workingPaperRevision", {})
+working_paper["version"] = meta["paperVersion"]
+working_paper["revisedOn"] = meta["paperRevisedOn"]
+working_paper["relationToRR2"] = "RR2 is the immutable archived dataset. This later working-paper revision includes a separately versioned, current APS analytical layer that is not covered by the RR1 or RR2 DOI; the new methods and results require a future archival research release."
 (ROOT / "research" / "research_release_manifest.json").write_text(json.dumps(research_manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 research_published_on = rr["publishedOn"]
 cff = f'''cff-version: 1.2.0
@@ -111,11 +116,14 @@ def sync_dataset(match):
         if url.endswith("/connecting-the-dots-data-pack.zip"):
             entry["version"] = meta["dataPackageVersion"]
             entry["name"] = "Historical frozen data pack v" + meta["dataPackageVersion"]
-        elif url.endswith("/" + meta["currentDataPackPath"]):
+        elif entry.get("name", "").startswith("Current comprehensive site data pack"):
+            entry["contentUrl"] = meta["deployment"] + meta["currentDataPackPath"]
             entry["version"] = meta["currentDataPackVersion"]
             entry["name"] = "Current comprehensive site data pack v" + version
         elif (url.endswith("/data/tld_universe.csv") or url.endswith("/data/applications_2026_strings_reveal.csv") or url.endswith("/data/applications_2026_aps_official_listing.csv") or url.endswith("/data/aps_2026_application_graph.json") or url.endswith("/data/aps_2026_application_edges.csv")):
             entry["version"] = version
+            if url.endswith("/data/tld_universe.csv"):
+                entry["name"] = "Current TLD universe (site v" + version + ")"
     obj["distribution"] = records
     return match.group(1) + json.dumps(obj, ensure_ascii=False, separators=(",", ":")) + match.group(3)
 src, replacements = re.subn(dataset_pattern, sync_dataset, src, count=1, flags=re.S)

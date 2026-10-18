@@ -10,7 +10,7 @@ const locale={en:'en_US',it:'it_IT',de:'de_DE',fr:'fr_FR'};
 const names={en:'English',it:'Italiano',de:'Deutsch',fr:'Français'};
 const input=fs.readFileSync(path.join(root,'index.html'),'utf8');
 
-function render(language,alias=false){
+async function render(language,alias=false){
   const {document,HTMLElement}=parseHTML(input);
   // Match browser DOMStringMap conversion, including digit-containing keys such as i18n.
   Object.defineProperty(HTMLElement.prototype,'dataset',{configurable:true,get(){
@@ -45,6 +45,9 @@ function render(language,alias=false){
   const context=vm.createContext({window,document,location,navigator:{language},
     localStorage:{getItem:()=>null,setItem:()=>{}},history:{pushState:()=>{},replaceState:()=>{}},
     requestAnimationFrame:()=>{},setTimeout:()=>0,clearTimeout:()=>{},URL,URLSearchParams,Intl,console});
+  // The browser loads the frozen 2026 inventory before the app. Prerender the
+  // same union, including readers without JavaScript and initial search results.
+  vm.runInContext(fs.readFileSync(path.join(root,'data/applications_2026_strings_reveal.js'),'utf8'),context,{filename:'ctd-2026-strings',timeout:10000});
   for(const id of ['ctd-data-bundle','ctd-i18n-bundle','ctd-worldmap','ctd-publication','ctd-app']){
     const node=document.getElementById(id);
     if(!node)throw new Error('Missing runtime block '+id);
@@ -53,6 +56,8 @@ function render(language,alias=false){
     if(id==='ctd-app')runtime=runtime.replace('if(v!==undefined)el.innerHTML=v', 'if(v!==undefined){try{el.innerHTML=v}catch(e){throw new Error("Static translation "+el.dataset.i18n+" failed: "+JSON.stringify(v)+"; "+e.message)}}');
     vm.runInContext(runtime,context,{filename:id,timeout:10000});
   }
+  await vm.runInContext('Promise.resolve()',context);
+  if(!window.DOT_DATA.explorerMeta.application2026StringCoverageComplete)throw new Error('Static 2026 Explorer inventory did not finish loading');
   const translations={...window.DOT_I18N.en,...window.DOT_I18N[language]};
   const meta=(selector,value)=>{
     const node=document.querySelector(selector);
@@ -132,6 +137,7 @@ function render(language,alias=false){
     if(!['objectors-eoi','replacement-strings','background-screening'].includes(slug))throw new Error('Unknown investigation route '+slug);
     link.setAttribute('href',base+'behind-the-round/'+language+'/'+slug+'/');
   }
+  for(const link of document.querySelectorAll('a[data-field-reconciliation-link]'))link.setAttribute('href',base+'behind-the-round/'+language+'/replacement-strings/#aps-string-reconciliation');
   for(const link of document.querySelectorAll('a[data-governance-explainer-link]'))
     link.setAttribute('href',base+'behind-the-round/'+language+'/sanctions-and-dns/');
   for(const link of document.querySelectorAll('a[data-access-explainer-link]'))
@@ -149,10 +155,12 @@ function render(language,alias=false){
   return window.DOT_PUBLICATION.releasedOn;
 }
 
+(async()=>{
 let modified;
-for(const language of languages)modified=render(language);
-render('en',true);
+for(const language of languages)modified=await render(language);
+await render('en',true);
 const hreflang=[...languages,'x-default'].map(l=>`    <xhtml:link rel="alternate" hreflang="${l}" href="${base+(l==='x-default'?'en':l)}/"/>`).join('\n');
 const entries=languages.map(l=>`  <url>\n    <loc>${base+l}/</loc>\n    <lastmod>${modified}</lastmod>\n${hreflang}\n  </url>`).join('\n');
 fs.writeFileSync(path.join(root,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${entries}\n</urlset>\n`);
 console.log('Prerendered EN, IT, DE, FR and the compatible root alias; generated reciprocal sitemap alternates.');
+})().catch(error=>{console.error(error);process.exitCode=1;});

@@ -11,6 +11,13 @@ on:
       - 'src/**'
       - 'assets/**'
       - 'scripts/**'
+      - 'data/behind_round_stories.json'
+      - 'data/inside_the_round_events.json'
+      - 'data/audit_20261018_editorial.json'
+      - 'data/aps_2026_applicant_sector_evidence.json'
+      - 'data/domain_governance_glossary.csv'
+      - 'data/registry_concentration.csv'
+      - 'research/connecting-the-dots-working-paper-v1.md'
       - 'data/translations.json'
       - 'data/sanctions_explainer.json'
       - 'data/internet_access_explainer.json'
@@ -73,14 +80,22 @@ jobs:
           historic=root/'downloads/connecting-the-dots-data-pack.zip'
           def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
           before_current,before_historic=sha(current),sha(historic)
+          research_files=[root/'research'/name for name in (
+              'connecting-the-dots-working-paper-v1.md',
+              'connecting-the-dots-working-paper-v1.html','index.html')]
+          before_research={str(p.relative_to(root)):sha(p) for p in research_files}
           subprocess.run([sys.executable,'build.py'],check=True)
           after_current,after_historic=sha(current),sha(historic)
           if before_current!=after_current:
               raise SystemExit('NON-DETERMINISTIC DATA ZIP: same source produced different bytes')
           if before_historic!=after_historic:
               raise SystemExit('HISTORICAL ZIP WAS MODIFIED')
+          after_research={str(p.relative_to(root)):sha(p) for p in research_files}
+          if before_research!=after_research:
+              raise SystemExit('NON-DETERMINISTIC RESEARCH RENDER: repeated build changed manuscript bytes')
           print('DETERMINISTIC_ZIP_VERIFIED',pub['version'],before_current)
           print('FROZEN_LEGACY_ZIP_PRESERVED',pub['dataPackageVersion'],before_historic)
+          print('DETERMINISTIC_RESEARCH_VERIFIED',before_research)
           PY
 
       - name: Commit generated publication on unchanged branch tip

@@ -30,20 +30,30 @@ jobs:
         id: probe
         run: |
           python3 - <<'PY'
-          import json, os
+          import json, os, time
           from pathlib import Path
+          from urllib.error import URLError
           from urllib.parse import urlencode
           from urllib.request import Request, urlopen
           result = {"status": "CHECK_UNAVAILABLE", "expectedConceptDoi": "10.5281/zenodo.23262622",
                     "expectedConceptRecord": "23262622", "originalRR1Doi": "10.5281/zenodo.23262623",
+                    "expectedRR2Doi": "10.5281/zenodo.23288603", "expectedRR2Id": 23288603,
                     "rr2Doi": None, "rr2Id": None, "githubRR2Published": True}
           query = urlencode({"q":"conceptrecid:23262622","all_versions":"true","size":"25","sort":"mostrecent"})
           url = "https://zenodo.org/api/records?" + query
           try:
               request = Request(url, headers={"Accept":"application/json",
                                               "User-Agent":"Connecting-the-Dots-RR2-Verification/1"})
-              with urlopen(request, timeout=25) as response:
-                  records = json.load(response)["hits"]["hits"]
+              for attempt in range(1, 4):
+                  result["attempts"] = attempt
+                  try:
+                      with urlopen(request, timeout=25) as response:
+                          records = json.load(response)["hits"]["hits"]
+                      break
+                  except (OSError, URLError, TimeoutError):
+                      if attempt == 3:
+                          raise
+                      time.sleep(5 * attempt)
               same_series = [r for r in records if str(r.get("conceptrecid")) == "23262622"
                              and r.get("conceptdoi") == "10.5281/zenodo.23262622"]
               result["observedVersions"] = [{
@@ -54,7 +64,7 @@ jobs:
                   raise ValueError("Original published RR1 not returned by version-series query")
               candidates = [r for r in same_series if r.get("metadata", {}).get("version") == "RR2"]
               if not candidates:
-                  result["status"] = "RR2_NOT_YET_ARCHIVED_IN_RR1_SERIES"
+                  raise ValueError("Previously verified RR2 is missing from the original concept series")
               elif len(candidates) != 1:
                   raise ValueError("Ambiguous RR2 records in the original concept series")
               else:
@@ -66,15 +76,17 @@ jobs:
                       raise ValueError("New Zenodo RR2 record has no evidence of its GitHub RR2 origin")
                   if not rr2.get("doi") or rr2["doi"] == result["originalRR1Doi"]:
                       raise ValueError("RR2 has no unique version DOI")
+                  if rr2["doi"] != result["expectedRR2Doi"] or rr2["id"] != result["expectedRR2Id"]:
+                      raise ValueError("RR2 identity differs from the published, immutable version DOI")
                   result.update({"status":"ZENODO_RR2_VERSION_VERIFIED",
                                  "rr2Doi":rr2["doi"], "rr2Id":rr2["id"],
                                  "zenodoFiles":filenames})
+          except (OSError, URLError, TimeoutError) as e:
+              result.update({"status": "CHECK_UNAVAILABLE", "error": str(e)})
+          except (ValueError, KeyError, TypeError) as e:
+              result.update({"status": "ZENODO_RECORD_MISMATCH", "error": str(e)})
           except Exception as e:
-              if result["status"]=="CHECK_UNAVAILABLE":
-                  result["error"] = str(e)
-              else:
-                  result["status"] = "ZENODO_RECORD_AMBIGUOUS"
-                  result["error"] = str(e)
+              result.update({"status": "CHECK_ERROR", "error": str(e)})
           path = Path("rr2-zenodo-check.json")
           path.write_text(json.dumps(result,indent=2,ensure_ascii=False)+"\n")
           print("RR2 ZENODO INTEGRATION CHECK:",json.dumps(result,ensure_ascii=False))
@@ -85,8 +97,12 @@ jobs:
                   stream.write("rr2id="+str(result["rr2Id"] or "")+"\n")
           with open(os.environ.get("GITHUB_STEP_SUMMARY","/dev/null"),"a") as stream:
               stream.write("## RR2 DOI chain verification\n\n**"+result["status"]+"**\n\n")
-              stream.write("RR1 concept DOI: \`10.5281/zenodo.23262622\`\n\n")
-              stream.write("RR2 version DOI: \`"+str(result["rr2Doi"] or "not assigned / not found")+"\`\n")
+              stream.write("RR1 concept DOI: `10.5281/zenodo.23262622`\n\n")
+              stream.write("RR2 version DOI: `"+str(result["rr2Doi"] or "not verified")+"`\n")
+          if result["status"] != "ZENODO_RR2_VERSION_VERIFIED":
+              # A completed probe is not a successful verification. Keep a network
+              # outage distinct from contradictory records, and fail both visibly.
+              raise SystemExit(result["status"]+": "+result.get("error", "verification incomplete"))
           PY
       - name: Verify exact RR1–RR2 series with independent research-release checker
         if: ${{ steps.probe.outputs.verified == 'true' }}

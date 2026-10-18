@@ -53,6 +53,7 @@ if tuple(int(x) for x in version.split('.')) >= (0,7,79):
         'connecting-the-dots-data-pack-v0.7.81.zip':'88d7ce0945ad29b2617ce421e2dfe1c62da6aa028d405c48dc1fec7a32dd2710',
     }
     FROZEN_TECHNICAL_ARCHIVES["connecting-the-dots-data-pack-v0.7.82.zip"]="786058bda9cca5f75124c30cc55dc10f9c7c9df86b739f378c061354d75b57b0"
+    FROZEN_TECHNICAL_ARCHIVES["connecting-the-dots-data-pack-v0.7.83.zip"]="e5a2d2c1d78d943c61d8481d94bbb2d1a0b0636216f6d4c0a5c122a740ec17f3"
     for archive,expected in FROZEN_TECHNICAL_ARCHIVES.items():
         p=ROOT/'downloads'/archive
         if not p.is_file() or hashlib.sha256(p.read_bytes()).hexdigest()!=expected:
@@ -864,8 +865,13 @@ if f'date-released: "{rrmeta["publishedOn"]}"' not in citation or f'version: "{r
     fail('CITATION.cff must match the actual version-specific scientific release date, not the technical site update')
 if rrmeta['doi']!=publication_meta.get('doi') or f'value: "{rrmeta["doi"]}"' not in citation:
     fail('Current RR2 DOI citation differs from the verified Zenodo deposit')
-if publication_meta.get('paperVersion')!='1.1-draft':
-    fail('Working paper revision metadata mismatch')
+paper_revision=json.loads((ROOT/'research'/'research_release_manifest.json').read_text(encoding='utf-8')).get('workingPaperRevision', {})
+if not re.fullmatch(r'\d+\.\d+-draft', publication_meta.get('paperVersion', '')):
+    fail('Working paper revision must have an explicit draft version')
+if paper_revision.get('version')!=publication_meta['paperVersion'] or paper_revision.get('revisedOn')!=publication_meta.get('paperRevisedOn'):
+    fail('Working paper revision metadata differs from publication.json')
+if not (publication_meta['asOf'] <= publication_meta.get('paperRevisedOn','') <= publication_meta['releasedOn']):
+    fail('Working paper revision date outside snapshot/publication range')
 if 'id="inside-round"' not in source_html or 'data-target="inside-round"' not in source_html:
     fail('Inside the Round missing from primary navigation and site source')
 if '<!-- CTD_INSIDE_ROUND_EVENTS -->' not in source_html:
@@ -920,8 +926,8 @@ for lang in LANGS:
 fieldnotes=json_file('behind_round_stories.json')
 if fieldnotes.get('schemaVersion')!=1 or fieldnotes.get('editorialLayer')!='2026-round-field-notes-not-part-of-frozen-RR1':
     fail('Unversioned/incorrect field-note evidence register')
-if fieldnotes.get('lastReviewed')!=publication_meta.get('asOf'):
-    fail('Field-note review date differs from publication date')
+if not (publication_meta['asOf'] <= fieldnotes.get('lastReviewed','') <= publication_meta['releasedOn']):
+    fail('Field-note review date falls outside the publication chronology')
 stories=fieldnotes.get('episodes',[])
 if len(stories)!=2 or [x['id'] for x in stories]!=['reveal-day-counts','wdo-identity']:
     fail('Reveal Day field-note case missing or duplicated')
@@ -932,9 +938,9 @@ if {q['id']:q['value'] for q in case['quantities']}!={'paid':1616,'official':161
     fail('Reveal Day discrepancy values altered without reviewed evidence')
 if case['trackedApplication']['id']!='WDO2627T-T45217' or case['trackedApplication']['string']!='.wdo':
     fail('Officially documented administrative-check record changed')
-if not case.get('revisionHistory') or case['revisionHistory'][-1]['date']!=case['revisedOn'] or case['revisionHistory'][-1]['changeKey']!='behindRevisionReconciled':
+if not case.get('revisionHistory') or case['revisionHistory'][-1]['date']!=case['revisedOn'] or case['revisionHistory'][-1]['changeKey']!='field18Revision':
     fail('Unversioned field-note revision history')
-if len(case['sources'])!=12 or not any(s['kind']=='secondary' for s in case['sources']):
+if len(case['sources'])!=17 or not any(s['kind']=='secondary' for s in case['sources']):
     fail('Editorial case lacks provenance distinction')
 if not all(s['url'].startswith('https://') and s['labelKey'] for s in case['sources']):
     fail('Incomplete case evidence')
@@ -1058,7 +1064,8 @@ for lang in LANGS:
             fail('Incorrect investigation metadata or canonical: '+lang+'/'+slug)
         if f'<h1>{html_escape(translations[lang][case["titleKey"]])}</h1>' not in article:
             fail('Untranslated 2026 investigation headline: '+lang+'/'+slug)
-        if article.count('data-source-id=')!=len(case['sources']) or article.count('data-referenced-sources=')!=len(case['sections']):
+        referenced_sections=len(case['sections'])+len(case.get('editorialUpdates', []))
+        if article.count('data-source-id=')!=len(case['sources']) or article.count('data-referenced-sources=')!=referenced_sections:
             fail('Incomplete investigation citations: '+lang+'/'+slug)
         if article.count('data-editorial-revision=')!=len(case['revisionHistory']) or article.count('<link rel="alternate" hreflang=')!=5:
             fail('Missing dated revision or hreflang links: '+lang+'/'+slug)
@@ -1070,6 +1077,10 @@ for lang in LANGS:
         for section in case['sections']:
             if html_escape(translations[lang][section['bodyKey']]) not in article:
                 fail('Incomplete investigation text: '+lang+'/'+slug+'/'+section['bodyKey'])
+        for update in case.get('editorialUpdates', []):
+            for key in [update['titleKey'], *update['paragraphKeys'], update['closingKey']]:
+                if html_escape(translations[lang][key]) not in article:
+                    fail('Incomplete investigation update: '+lang+'/'+slug+'/'+key)
         if 'https://doi.org/10.5281/zenodo.23262623' not in article:
             fail('Frozen RR1 independence attribution lost: '+lang+'/'+slug)
         if slug=='replacement-strings':
@@ -1220,7 +1231,7 @@ if '<h2>Suggested citation for RR2' not in (ROOT/'research'/'connecting-the-dots
 # Working-paper revisions may evolve, but the dated RR1 evidence and citation do not.
 working_md=(ROOT/'research'/'connecting-the-dots-working-paper-v1.md').read_text(encoding='utf-8')
 working_html=(ROOT/'research'/'connecting-the-dots-working-paper-v1.html').read_text(encoding='utf-8')
-for fragment in ['Working Paper v1.1-draft', 'Editorial revision note (10 October 2026)', 'participant-observer', '6A.3 A first field note', '1,616']:
+for fragment in ['Working Paper v'+publication_meta['paperVersion'], 'Editorial revision note (10 October 2026)', 'participant-observer', '6A.3 A first field note', '1,616']:
     if fragment not in working_md or fragment not in working_html:
         fail('Working paper HTML/Markdown methodological revision mismatch: '+fragment)
 if 'date-released: "2026-10-10"' not in citation or publication_meta.get('asOf')!='2026-10-10' or publication_meta.get('releasedOn') < publication_meta.get('asOf'):

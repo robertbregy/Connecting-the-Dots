@@ -38,7 +38,7 @@ assert.equal(latest.version,version);assert.equal(latest.ianaSnapshot,snapshot.a
 const manifest=JSON.parse(read('data/manifest.json')),hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 assert.equal(manifest.release_history.sha256,hash(read('data/release_history.json')));assert.equal(manifest.web_delivery.detail_batches,8);
 for(const asset of manifest.web_delivery.assets){const bytes=fs.readFileSync(path.join(root,asset.repository_path));assert.equal(bytes.length,asset.bytes,asset.repository_path+' byte count');assert.equal(hash(bytes),asset.sha256,asset.repository_path+' integrity');}
-const translations=JSON.parse(read('data/translations.json'));
+const translations=JSON.parse(read('data/translations.json')),publication=JSON.parse(read('publication.json'));
 for(const language of ['en','it','de','fr'])assert.ok(translations[language][latest.summaryKey],language+' current release note '+latest.version);
 console.log(`Validated lightweight index, eight deferred batches, ${total} intact profiles and dated release history.`);
 
@@ -129,7 +129,13 @@ async function validateAsyncDelivery(){
   const b=deliveryFixture(language,alias),n=b.shard('.ch');assert.equal(b.scripts().length,0,'no eager detail request');
   const loading=b.open('.ch');assert.equal(b.document.getElementById('drawerContent').getAttribute('aria-busy'),'true');
   assert.equal(b.pending(n).getAttribute('src'),'https://robertbregy.github.io/Connecting-the-Dots/data/explorer_profiles_'+n+'.js?v='+version);
-  assert.equal(b.document.activeElement.id,'drawerClose');b.complete(n);await loading;
+  // The long record dialog starts on its heading, matching the accessible
+  // browser behavior that predates this release. Closing still restores the trigger.
+  const drawer=b.document.getElementById('explorerDrawer'),title=b.document.getElementById('profileTitle');
+  assert.equal(drawer.hidden,false);assert.equal(drawer.getAttribute('aria-hidden'),'false');
+  assert.equal(b.document.activeElement,title);assert.equal(title.getAttribute('tabindex'),'-1');
+  assert.equal(title.closest('[role="dialog"]').getAttribute('aria-labelledby'),title.id);
+  b.complete(n);await loading;
   assert.ok(b.document.getElementById('drawerContent').textContent.includes('whois.nic.ch'));assert.ok(!b.document.getElementById('drawerContent').hasAttribute('aria-busy'));assert.equal(b.timers.size,0);
   assert.equal(b.url().searchParams.get('tld'),'ch');
   const panel=b.document.querySelector('[role="dialog"]');assert.equal(b.document.getElementById(panel.getAttribute('aria-labelledby')).textContent,'.ch');
@@ -151,8 +157,10 @@ async function validateAsyncDelivery(){
  {
   const b=deliveryFixture(),n=b.shard('.ch');const p=b.open('.ch');b.fail(n);await p;
   assert.ok(b.document.querySelector('#drawerContent [role="alert"]'));assert.ok(b.document.getElementById('profileRetry'));assert.ok(!b.document.getElementById('drawerContent').hasAttribute('aria-busy'));assert.equal(b.scripts().length,0);
-  assert.ok(b.document.querySelector('#drawerContent a[href$="connecting-the-dots-data-pack.zip"]'));
-  b.document.getElementById('profileRetry').click();assert.ok(b.pending(n));b.complete(n);await flush();assert.ok(b.document.getElementById('drawerContent').textContent.includes('whois.nic.ch'));
+  assert.equal(b.document.querySelector('#drawerContent a[href$=".zip"]').getAttribute('href'),new URL(publication.currentDataPackPath,publication.deployment).href);
+  b.document.getElementById('profileRetry').click();
+  assert.equal(b.document.querySelector('.drawerTld').textContent,'.ch','retry must preserve record identity after the 2026 inventory reorders the index');
+  assert.ok(b.pending(n));b.complete(n);await flush();assert.ok(b.document.getElementById('drawerContent').textContent.includes('whois.nic.ch'));
  }
  for(const failure of ['timeout','version','missing']){
   const b=deliveryFixture(),n=b.shard('.ch'),p=b.open('.ch');

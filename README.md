@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.83
+# Connecting the Dots — v0.7.84
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -6,7 +6,11 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.83 · 17 October 2026 (UTC)**
+**v0.7.84 · 18 October 2026**
+
+**Audit closure: coherent sources, measures and publication.** The current Resources download and checksum now follow `publication.json`; the timeline follows its editorial review date. A new official-ID analytical layer covers 1,614 published APS applications, with a 1,608-application comparable scope, separate string themes and documented applicant activities, complete derived location/applicant distributions and explicit missing values. The previous mixed economic reconstruction and every earlier technical/research archive remain unchanged. Field Notes append a reproducible 980/986 reconciliation and explain the APS publication calendar. Home, Lugano, Resources and the cemetery retain their evidence with clearer grouping and source-specific status. Working Paper v1.2-draft is rendered from Markdown; new analysis is explicitly outside the immutable RR1/RR2 DOI. Release checks, browser tests and live asset checks cover the corrected relationships.
+
+**Previous v0.7.83 · 17 October 2026 (UTC)**
 
 **City domains: governance, use and public value.** Adds a source-backed comparison of Lugano, Bremen, Paris and New York, four evaluation dimensions and an explicitly qualified industry renewal sample. The Lugano chapter distinguishes documented intentions, proposed commons/identity safeguards and decisions still open. External commercial coverage is assessed against primary sources, including private sponsorship of the application fee. Four languages, native chapters, no additional menu or canonical route; previous technical archives and RR1/RR2 remain unchanged.
 

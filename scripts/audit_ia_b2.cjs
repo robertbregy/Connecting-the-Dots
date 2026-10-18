@@ -48,7 +48,12 @@ async function checkAxe(page,label) {
     assert.ok(firstViewport.navTop<240 && firstViewport.navBottom<365,"task-first navigation is buried on first screen: "+JSON.stringify(firstViewport));
     assert.ok(firstViewport.explanationTop<700,"the project purpose is buried below first screen: "+JSON.stringify(firstViewport));
 
-    assert.equal(await page.locator(".iaHomeJumpList a").count(),5,"home task entries");
+    assert.equal(await page.locator(".iaHomeJumpList a").count(),6,"six Home task entries");
+    const homeDestinations=await page.locator(".iaHomeJumpList a").evaluateAll(links=>links.map(link=>({
+      section:link.getAttribute("data-open-section"),href:link.getAttribute("href")
+    })));
+    assert.deepEqual(homeDestinations,hubs.map(([section])=>({section,href:"#"+section})),
+      "Home must link to all six primary areas in navigation order");
     assert.equal(await page.locator(".iaLegacyNavDisclosure[open]").count(),0,"original nav should begin folded");
     assert.ok((await page.locator('.hero p[data-i18n="heroBody"]').innerText()).includes("Connecting the Dots"),"project purpose not visible on Home");
     assert.ok((await page.locator(".iaProjectPrompt").innerText()).length>6,"no question introducing the project");
@@ -58,7 +63,7 @@ async function checkAxe(page,label) {
       const r=document.querySelector(".iaPrimaryNav").getBoundingClientRect();
       return [...document.querySelectorAll(".iaPrimaryLink")].map(n=>{const x=n.getBoundingClientRect();return x.width>=45&&x.left>=r.left-2&&x.right<=r.right+2});
     });
-    assert.ok(visible.every(Boolean),"not all 5 navigation buttons are on screen "+JSON.stringify(visible));
+    assert.ok(visible.every(Boolean),"not all six navigation buttons are on screen "+JSON.stringify(visible));
     assert.equal(await page.locator("#iaLegacyNavDisclosure").isVisible(),false,"obsolete A navigation must stay hidden");
     const oldSelectCount=await page.locator("#mobileNav option").count();
     assert.ok(oldSelectCount>=25,"old 21 sections / chapter navigation lost");

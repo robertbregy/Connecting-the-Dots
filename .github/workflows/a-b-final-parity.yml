@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - audit/final-a-b-parity-20261013
+      - 'feat/**'
       - main
   workflow_dispatch:
 permissions:

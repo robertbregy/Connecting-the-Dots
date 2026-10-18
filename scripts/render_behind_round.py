@@ -9,6 +9,8 @@ from __future__ import annotations
 from datetime import date
 from html import escape as h
 from pathlib import Path
+import csv
+import hashlib
 import json
 from scripts.render_inside_round import BASE, LANGS, CSS
 
@@ -58,6 +60,11 @@ BEHIND_CSS = """
 .behindComparisonTable th:first-child,.behindComparisonTable td:first-child{text-align:left}
 .behindComparisonTable thead{background:var(--surface2)}
 .behindComparisonTable [data-gap="1"]{font-weight:800}
+.behindStringTable{width:100%;border-collapse:collapse;margin:12px 0;overflow-wrap:anywhere}
+.behindStringTable caption{text-align:left;font-weight:720;line-height:1.5;margin-bottom:10px}
+.behindStringTable th,.behindStringTable td{padding:10px 8px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.behindStringTable thead{background:var(--surface2)}
+.behindStringTable code{white-space:normal;overflow-wrap:anywhere}
 .behindIdentityList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0 18px}
 .behindIdentityCard{border:1px solid var(--border);border-radius:12px;padding:17px;background:var(--surface2)}
 .behindIdentityCard strong{font-size:1.12rem;display:block;margin-bottom:8px}
@@ -86,6 +93,106 @@ CONTENT_KEYS = (
     "behindRegionNA","behindRegionEUR","behindRegionAP","behindRegionAF","behindRegionLAC",
     "behindIndependentTitle","behindIndependentBody","behindCoverageTitle","behindCoverageBody"
 )
+
+def validate_editorial_updates(case, translations, root=ROOT):
+    """Validate new dated evidence separately from the preserved first observation."""
+    updates=case.get("editorialUpdates",[])
+    if not updates:
+        return
+    expected={
+        "reveal-day-counts":["aps-count-reconciliation","aps-publication-calendar"],
+        "replacement-strings":["aps-string-reconciliation"],
+    }
+    if [item.get("id") for item in updates]!=expected.get(case["id"]):
+        raise ValueError("Unreviewed field-note update identity: "+case["id"])
+    sources={source["id"] for source in case["sources"]}
+    for item in updates:
+        if item["date"]!="2026-10-18" or item["date"]!=case["revisedOn"]:
+            raise ValueError("Updated evidence must keep its explicit review date")
+        if not item.get("sourceIds") or any(s not in sources for s in item["sourceIds"]):
+            raise ValueError("Updated field-note evidence lacks sources")
+        keys=["field18ReviewLabel",item["titleKey"],*item["paragraphKeys"]]
+        if item.get("closingKey"):
+            keys.append(item["closingKey"])
+        if item.get("link"):
+            if item["link"]["path"]!="replacement-strings/#aps-string-reconciliation":
+                raise ValueError("Unexpected reconciliation destination")
+            keys.append(item["link"]["labelKey"])
+        evidence=item.get("reconciliation")
+        if evidence:
+            if (evidence["officialFile"]!="data/applications_2026_aps_official_listing.csv" or
+                    evidence["secondaryFile"]!="data/applications_2026_strings_reveal.csv" or
+                    evidence["officialArchivedOn"]!="2026-10-11" or
+                    evidence["secondarySnapshot"]!="2026-10-07"):
+                raise ValueError("Reconciliation must identify the two dated archived inputs")
+            official_path=root/evidence["officialFile"]
+            secondary_path=root/evidence["secondaryFile"]
+            with official_path.open(encoding="utf-8-sig",newline="") as stream:
+                rows=list(csv.DictReader(stream))
+            base=[r for r in rows if not r["Application ID"].endswith("-R")]
+            if len({r["Application ID"] for r in base})!=len(base):
+                raise ValueError("APS base application IDs are not unique")
+            excluded=[r for r in base if r["Application Type"]=="Existing gTLD with Variants"]
+            kept=[r for r in base if r["Application Type"]!="Existing gTLD with Variants"]
+            official={r["Primary String"].strip().lower() for r in kept}
+            with secondary_path.open(encoding="utf-8-sig",newline="") as stream:
+                secondary={r["string"].strip().lower() for r in csv.DictReader(stream)}
+            result={"publicRows":len(rows),"replacementRows":len(rows)-len(base),
+                    "baseApplications":len(base),"existingVariantApplications":len(excluded),
+                    "remainingApplications":len(kept),
+                    "allPrimaryStrings":len({r["Primary String"].strip().lower() for r in base}),
+                    "filteredPrimaryStrings":len(official),"secondaryPrimaryStrings":len(secondary),
+                    "exactSetEquality":official==secondary,
+                    "missingFromSecondary":sorted(official-secondary),
+                    "missingFromOfficial":sorted(secondary-official)}
+            excluded_records=[{"applicationId":r["Application ID"],"primaryString":r["Primary String"],
+                               "applicant":r["Applicant Name"]}
+                              for r in sorted(excluded,key=lambda r:r["Application ID"])]
+            hashes={"official":hashlib.sha256(official_path.read_bytes()).hexdigest(),
+                    "secondary":hashlib.sha256(secondary_path.read_bytes()).hexdigest()}
+            set_hash=hashlib.sha256(("\n".join(sorted(official))+"\n").encode()).hexdigest()
+            if (result!=evidence["result"] or excluded_records!=evidence["excludedApplications"] or
+                    hashes!=evidence["sourceSHA256"] or set_hash!=evidence["setSHA256"] or
+                    not result["exactSetEquality"] or result["filteredPrimaryStrings"]!=980 or
+                    len(excluded_records)!=6):
+                raise ValueError("Dated 980/986 evidence no longer matches the archived records")
+            keys.extend([evidence["tableCaptionKey"],*evidence["tableHeaderKeys"]])
+        for lang in LANGS:
+            if any(not isinstance(translations[lang].get(key),str) or not translations[lang][key].strip() for key in keys):
+                raise ValueError("Untranslated dated field-note update: "+lang)
+
+
+def editorial_updates_markup(case, dictionary, lang, dynamic=False, heading="h3"):
+    """The same sourced update appears in the native page and standalone article."""
+    def copy(key,tag="p",extra=""):
+        attr=(' data-i18n="'+h(key,quote=True)+'"') if dynamic else ""
+        return '<'+tag+extra+attr+'>'+h(dictionary[key])+'</'+tag+'>'
+    parts=[]
+    for update in case.get("editorialUpdates",[]):
+        identity=h(update["id"],quote=True)
+        parts.append('<section class="behindReading behindEditorialUpdate" id="'+identity+'" data-field-update="'+identity+'" data-update-date="'+update["date"]+'" data-referenced-sources="'+h(",".join(update["sourceIds"]),quote=True)+'">')
+        parts.append(copy("field18ReviewLabel","time",' class="eyebrow" datetime="'+update["date"]+'"'))
+        parts.append(copy(update["titleKey"],heading))
+        parts.extend(copy(key) for key in update["paragraphKeys"])
+        evidence=update.get("reconciliation")
+        if evidence:
+            caption_id=identity+'-caption'
+            parts.append('<div class="behindTableWrap" role="region" tabindex="0" aria-labelledby="'+caption_id+'"><table class="behindStringTable">')
+            parts.append(copy(evidence["tableCaptionKey"],"caption",' id="'+caption_id+'"'))
+            parts.append('<thead><tr>'+''.join(copy(key,"th",' scope="col"') for key in evidence["tableHeaderKeys"])+'</tr></thead><tbody>')
+            for row in evidence["excludedApplications"]:
+                aid=h(row["applicationId"],quote=True)
+                parts.append('<tr data-excluded-application="'+aid+'"><td><a href="https://newgtldprogram-aps.icann.org/applications/'+aid+'/summary" target="_blank" rel="noopener noreferrer">'+aid+'</a></td><td><code>.'+h(row["primaryString"])+ '</code></td><td>'+h(row["applicant"])+ '</td></tr>')
+            parts.append('</tbody></table></div>')
+        if update.get("closingKey"):
+            parts.append(copy(update["closingKey"]))
+        if update.get("link"):
+            link=update["link"]
+            parts.append('<p><a data-field-reconciliation-link href="'+BASE+'behind-the-round/'+lang+'/'+h(link["path"],quote=True)+'">'+copy(link["labelKey"],"span")+'</a></p>')
+        parts.append('</section>')
+    return "\n".join(parts)
+
+
 def load():
     stories = json.loads((ROOT / "data/behind_round_stories.json").read_text(encoding="utf-8"))
     translations = json.loads((ROOT / "data/translations.json").read_text(encoding="utf-8"))
@@ -149,8 +256,13 @@ def load():
             raise ValueError("Invalid 2026 regional reconciliation: "+str(totals))
         if any(row["officialApplications"]!=row["visibleApplications"] or row["officialApplicants"]!=row["visibleApplicants"] for row in regions if row["code"]!="AP"):
             raise ValueError("Regional discrepancy incorrectly extends beyond Asia-Pacific")
-        if len(case.get("revisionHistory",[]))!=2 or case["revisionHistory"][-1]["changeKey"]!="behindRevisionReconciled":
+        revisions=case.get("revisionHistory",[])
+        if (len(revisions)!=3 or revisions[0]["changeKey"]!="behindRevisionInitial" or
+                revisions[1]["changeKey"]!="behindRevisionReconciled" or
+                any(r["date"]!="2026-10-10" for r in revisions[:2]) or
+                revisions[-1]["changeKey"]!="field18Revision"):
             raise ValueError("The researched 2026 revision must be date and source tracked")
+        validate_editorial_updates(case,translations)
         facts = {f["id"]:f for f in case["quantities"]}
         if set(facts) != {"paid","official","secondary"}:
             raise ValueError("Missing count observations")
@@ -285,6 +397,7 @@ def episode_markup(data, translations, lang, dynamic=False, standalone=False):
                       '<section class="behindReading">' + txt("behindCoverageTitle",tag="h3") + txt("behindCoverageBody",tag="p") + '</section>'])
         for title,body in (("behindWhyTitle","behindWhyBody"),("behindMethodTitle","behindMethodBody"),("behindUpdateTitle","behindUpdateBody")):
             parts.append('<section class="behindReading">' + txt(title,tag="h3") + txt(body,tag="p") + '</section>')
+        parts.append(editorial_updates_markup(case,t,lang,dynamic=dynamic))
         parts.extend([
             '<section class="behindReading behindSourcesBlock">',
             txt("behindSourcesTitle",tag="h3"),

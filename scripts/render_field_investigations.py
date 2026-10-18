@@ -10,9 +10,11 @@ from datetime import date
 from html import escape as h
 from pathlib import Path
 import json
+import re
 import xml.etree.ElementTree as ET
 
-from scripts.render_behind_round import BASE, LANGS, CSS, BEHIND_CSS
+from scripts.render_behind_round import (BASE, LANGS, CSS, BEHIND_CSS,
+                                         validate_editorial_updates, editorial_updates_markup)
 
 ROOT = Path(__file__).resolve().parents[1]
 SLUGS = ("objectors-eoi", "replacement-strings", "background-screening")
@@ -66,7 +68,7 @@ def load(root: Path = ROOT):
             if not section.get("sourceIds") or any(i not in sources for i in section["sourceIds"]):
                 raise ValueError("Narrative section lacks identifiable evidence")
         revisions = case.get("revisionHistory", [])
-        if (len(revisions) != (2 if index == 4 else 1)
+        if (len(revisions) != (3 if index == 4 else 1)
                 or revisions[-1]["date"] != case["revisedOn"]
                 or any(date.fromisoformat(x["date"]) > reviewed or not x.get("sourceIds")
                        or any(i not in sources for i in x["sourceIds"]) for x in revisions)
@@ -75,6 +77,10 @@ def load(root: Path = ROOT):
         if len(case.get("updateTriggers", [])) < 2:
             raise ValueError("Investigation lacks follow-up conditions")
         if index == 4:
+            if (revisions[0]["date"]!="2026-10-10" or revisions[1]["date"]!="2026-10-17" or
+                    revisions[2]["changeKey"]!="field18ReconciliationRevision"):
+                raise ValueError("Original 10/17 October replacement reviews must be retained")
+            validate_editorial_updates(case,translations,root)
             observed = {item["id"]: item["value"] for item in case.get("quantities", [])}
             if observed != {"replacementTotal": 1169, "replacementActive": 442, "replacementDeactivated": 727}:
                 raise ValueError("Secondary replacement evidence altered without new dated review")
@@ -93,6 +99,7 @@ def load(root: Path = ROOT):
                     "field{:02d}MetaDescription".format(index),
                     *[revision["changeKey"] for revision in revisions]]
             keys += [key for section in case["sections"] for key in (section["titleKey"], section["bodyKey"])]
+            keys += [section["observationLabelKey"] for section in case["sections"] if section.get("observationLabelKey")]
             keys += [item["labelKey"] for item in case["sources"]]
             if index == 4:
                 keys += ["field04Disclosure"] + [q[k] for q in case["quantities"] for k in ("valueKey", "labelKey")]
@@ -171,8 +178,10 @@ def render_detail(case, dictionary, lang):
         parts.extend([
             '<section class="behindReading" data-referenced-sources="' + h(",".join(section["sourceIds"]), quote=True) + '">',
             '<h2>' + h(dictionary[section["titleKey"]]) + '</h2>',
+            ('<p class="eyebrow" data-observation-date="'+h(section["observationDate"],quote=True)+'">'+h(dictionary[section["observationLabelKey"]])+'</p>') if section.get("observationLabelKey") else '',
             '<p>' + h(dictionary[section["bodyKey"]]) + '</p></section>'
         ])
+    parts.append(editorial_updates_markup(case,dictionary,lang,heading="h2"))
     parts.extend([
         '<section class="behindReading behindSourcesBlock">',
         '<h2>' + h(dictionary["behindSourcesTitle"]) + '</h2>',
@@ -247,11 +256,18 @@ def build_investigations(root: Path = ROOT):
         html = html.replace("</main>", collection_markup(data, translations[lang], lang) + "\n</main>")
         # Original cases retain their own revision dates; collection metadata
         # reflects the latest checked episode in this living editorial layer.
-        old_modified = '"dateModified":"' + publication["asOf"] + '"'
-        new_modified = '"dateModified":"' + data["lastReviewed"] + '"'
-        if html.count(old_modified) != 1:
+        schema_match=re.search(r'(<script type="application/ld\+json">)(.*?)(</script>)',html,re.S)
+        if not schema_match:
             raise ValueError("Cannot locate dated Field Notes CollectionPage metadata")
-        html = html.replace(old_modified, new_modified, 1)
+        schema=json.loads(schema_match.group(2))
+        if schema.get("@type")!="CollectionPage":
+            raise ValueError("Field Notes index must retain its CollectionPage identity")
+        existing=date.fromisoformat(schema["dateModified"])
+        modified=max(existing,date.fromisoformat(data["lastReviewed"]))
+        if modified>date.fromisoformat(publication["releasedOn"]):
+            raise ValueError("Collection metadata cannot postdate the technical publication")
+        schema["dateModified"]=modified.isoformat()
+        html=html[:schema_match.start(2)]+json.dumps(schema,ensure_ascii=False,separators=(",",":"))+html[schema_match.end(2):]
         html = html.replace("</style></head>", INVESTIGATION_CSS + "</style></head>", 1)
         target.write_text(html, encoding="utf-8")
         for case in data["episodes"]:

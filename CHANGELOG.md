@@ -1,3 +1,13 @@
+# v0.7.84 - 18 October 2026
+
+- Closed the 20 content-audit findings with source-specific dates, consistent current downloads, a corrected glossary and equivalent qualifications in four languages.
+- Added a reproducible official-ID current analytical layer: 1,614 published APS applications; 1,608 in the new-primary scope; string themes and applicant activities classified separately with missing values retained. Historical mixed 2012/2026 files and archived RR1/RR2 are immutable.
+- Added project-derived legal-applicant, location and region distributions. Reconciled the 76 Amazon EU S.à r.l. records with the separately attributed historical statement of 78; removed placeholder pseudo-observations from registry concentration.
+- Appended an exact set-level 980/986 reconciliation, the six excluded IDs and source hashes to Field Notes. Preserved original observations and the unresolved 1,616-to-1,615 discrepancy. Explained APS visibility and the separate replacement/confirmation dates.
+- Completed the six Home paths, grouped Lugano into four parts, made repeated cross-round comparisons collapsible, added filtered Explorer export, classified Resources and distinguished contract/root status per cemetery case.
+- Generated working-paper HTML and current metadata from one Markdown source and publication.json. Explicitly identified new working analysis as outside the existing research DOIs.
+- Strengthened live checks to derive current ZIP/checksum from metadata and cover actual assets. Zenodo mismatches and unavailable verification no longer silently pass. Editorial changes require a reviewed hash manifest; archive continuity checks remain active.
+
 # v0.7.83 - 17 October 2026 (UTC)
 
 - Added city-domain governance models and a four-case comparison; applicant, adopted policy and delegated TLD are explicitly different states.

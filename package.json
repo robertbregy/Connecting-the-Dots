@@ -1,6 +1,6 @@
 {
   "name": "connecting-the-dots",
-  "version": "0.7.83",
+  "version": "0.7.84",
   "private": true,
   "description": "Static multilingual research publication",
   "engines": {
@@ -11,6 +11,7 @@
     "check": "python3 scripts/release_check.py"
   },
   "devDependencies": {
-    "linkedom": "0.18.12"
+    "linkedom": "0.18.12",
+    "marked": "15.0.12"
   }
 }

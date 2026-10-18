@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
 """Read-only A->B content continuity audit: run in checkout 'current', A in '../baseline'."""
-import csv, hashlib, html, json, re, sys, zipfile
+import csv, hashlib, html, json, re, subprocess, sys, zipfile
 from pathlib import Path
 A=Path('../baseline')
 B=Path('.')
 def sha(p):
     return hashlib.sha256(p.read_bytes()).hexdigest()
 def sourcepaths(root):
-    return {p.relative_to(root).as_posix():p for p in root.rglob('*') if p.is_file() and '.git' not in p.parts}
+    return {p.relative_to(root).as_posix():p for p in root.rglob('*')
+        if p.is_file() and not {'.git','node_modules','__pycache__'}.intersection(p.parts)}
+if not (A/'src/index.web.html').is_file():
+    print('AB_CONTENT_PARITY_REVIEW_REQUIRED: frozen A checkout is missing at ../baseline')
+    sys.exit(2)
 a,b=sourcepaths(A),sourcepaths(B)
 orig={k:v for k,v in a.items() if not k.startswith('.git/')}
 missing_paths=sorted(set(orig)-set(b))
@@ -55,9 +59,9 @@ for path in sorted(orig):
 caseDatasets=[]
 for path in sorted(orig):
     if path.startswith('data/') and re.search(r'(cases|investigations|stories|sanctions_explainer|internet_access_explainer)\.json$',path):
-        caseDatasets.append(dict(path=path,same_sha=sha(orig[path])==sha(b[path])))
+        caseDatasets.append(dict(path=path,same_sha=path in b and sha(orig[path])==sha(b[path])))
 csvPaths=[p for p in sorted(orig) if p.endswith('.csv') and p.startswith('data/')]
-csvChanged=[p for p in csvPaths if sha(orig[p])!=sha(b[p])]
+csvChanged=[p for p in csvPaths if p not in b or sha(orig[p])!=sha(b[p])]
 def compare_json_values(x,y,prefix=''):
     diff=[]
     if isinstance(x,dict) and isinstance(y,dict):
@@ -97,9 +101,12 @@ for name in ['connecting-the-dots-data-pack-v0.7.77.zip','connecting-the-dots-da
             removed_entries=gone,added_entries=new,modified_entries=changes,
             manifest_differences=manifest_differences[:25],manifest_differences_count=len(manifest_differences),
             metadata_differences=metadata[:35],metadata_differences_count=len(metadata))
+publication=json.loads((B/'publication.json').read_text(encoding='utf-8'))
 report=dict(
  baseline='safety/main-v0.7.78-before-b2-switch-20261013',
- current='main v0.7.80 / audit branch',
+ current='v'+publication['version'],
+ publication_released_on=publication['releasedOn'],
+ research_snapshot=publication['asOf'],
  tree=dict(A=len(orig),B=len(b),missing=missing_paths,identical=len(identical),
    changed=len(changed),added=added),
  source_model=srcMetrics,
@@ -204,13 +211,56 @@ def verify_reviewed_fieldnotes_delta():
     except (KeyError,IndexError,ValueError,AttributeError,TypeError,FileNotFoundError):
         return []
 
-approved_pages=verify_reviewed_fieldnotes_delta()
-approved_case_data={'data/field_investigations.json'} if len(approved_pages)==12 else set()
+# The 18 October audit deliberately corrects existing prose as well as adding
+# dated observations. Its approval is a list of exact files and exact source
+# section SHA-256 fingerprints, not a version/date-based exemption. Reuse the
+# source guard so both gates enforce the same protected inventories, DOI
+# identifiers, link replacements and immutable research/technical archives.
+review_path=B/'docs/editorial-review-2026-10-18.json'
+editorial_review={'manifest':review_path.as_posix(),'validated':False,
+    'allowed_paths':[],'errors':[]}
+review=None
+if review_path.is_file():
+    try:
+        review=json.loads(review_path.read_text(encoding='utf-8'))
+        verification=subprocess.run(['node','scripts/verify_ia_b2_parity.cjs'],
+            check=False,capture_output=True,text=True,timeout=60)
+        proof_lines=[line for line in verification.stdout.splitlines()
+            if line.startswith('IA_B2_SOURCE_PARITY_VERIFIED ')]
+        if verification.returncode or len(proof_lines)!=1:
+            editorial_review['errors'].append((verification.stderr or verification.stdout or
+                'Source parity guard returned no proof').strip())
+        else:
+            proof=json.loads(proof_lines[0].split(' ',1)[1])
+            if proof.get('reviewedAgainst')!='65e0fbe2080c2ee841e8abc01e1ddec113a74b8e':
+                raise ValueError('The review does not preserve the pre-audit source baseline')
+            editorial_review.update(validated=True,allowed_paths=sorted(review['files']),
+                review_id=review['reviewId'],reviewed_on=review['reviewedOn'],
+                manifest_sha256=sha(review_path),source_verification=proof)
+    except (OSError,ValueError,KeyError,TypeError,subprocess.TimeoutExpired) as error:
+        editorial_review['errors'].append(str(error))
+elif publication.get('version') not in ('0.7.82','0.7.83'):
+    editorial_review['errors'].append('An exact-file editorial review is required for this release')
+
+approved_paths=set(editorial_review['allowed_paths']) if editorial_review['validated'] else set()
+if editorial_review['validated']:
+    approved_pages=sorted(path for path in approved_paths if path.endswith('.html'))
+    approved_case_data={item['path'] for item in caseDatasets if item['path'] in approved_paths}
+    approved_csv=set(csvChanged)&approved_paths
+else:
+    # Retain the previous, narrowly structural 17 October review for its own
+    # releases. It cannot approve this audit or any later editorial change.
+    approved_pages=verify_reviewed_fieldnotes_delta()
+    approved_case_data={'data/field_investigations.json'} if len(approved_pages)==12 else set()
+    approved_csv=set()
+
+report['editorial_review']=editorial_review
 report['reviewed_editorial_additions']={
-    'date':'2026-10-17','validated':len(approved_pages)==12,
-    'allowed_pages':approved_pages,
-    'allowed_modified_dataset':sorted(approved_case_data),
-    'limitations':'Only specific sourced Field Note and timeline additions are accepted; lost content and frozen ZIP modifications still fail.'
+    'date':'2026-10-17','validated':not editorial_review['validated'] and len(approved_pages)==12,
+    'superseded_by':review.get('reviewId') if editorial_review['validated'] else None,
+    'allowed_pages':approved_pages if not editorial_review['validated'] else [],
+    'allowed_modified_dataset':sorted(approved_case_data) if not editorial_review['validated'] else [],
+    'limitations':'The original 17 October additive review applies only to versions 0.7.82 and 0.7.83. Later reviews require exact file and source-section fingerprints; lost content and frozen ZIP modifications still fail.'
 }
 Path('content-continuity-audit.json').write_text(json.dumps(report,indent=2,ensure_ascii=False))
 
@@ -220,16 +270,20 @@ summary=dict(tree=report['tree'],article_count=report['html_articles']['count'],
  translations={k:dict(missing=v['missing'],changed=list(v['changed']),added_count=len(v['added'])) for k,v in translations.items()},
  case_datasets_modified=[x['path'] for x in caseDatasets if not x['same_sha']],
  csv_changed=csvChanged,
+ editorial_review=editorial_review,
  archives=archives,
  sitemap_identical=report['sitemap_sha_equal'],sitemap_routes=report['sitemap_routes'])
 print('AB_CONTENT_PARITY_RESULT '+json.dumps(summary,ensure_ascii=False))
 # Fail on actual content loss or rewriting an historical technical ZIP.
 unapproved_articles=[x for x in report['html_articles']['not_exact'] if x['path'] not in approved_pages]
 unapproved_case_data=[x for x in caseDatasets if not x['same_sha'] and x['path'] not in approved_case_data]
+unapproved_csv=[path for path in csvChanged if path not in approved_csv]
+replaced_hrefs={item['from'] for item in review['linkReplacements']} if editorial_review['validated'] else set()
+unapproved_hrefs=[href for href in srcMetrics['hrefs']['removed'] if href not in replaced_hrefs]
 bad=bool(missing_paths or unapproved_articles or report['sitemap_routes']['removed'] or
     any(v['missing'] for v in translations.values()) or
     any(srcMetrics[k]['removed'] for k in ('sections','i18n_references','ids')) or
-    unapproved_case_data or
+    unapproved_case_data or unapproved_csv or unapproved_hrefs or editorial_review['errors'] or
     any(not z['bytes_identical'] for z in archives.values()))
 if report['html_articles']['not_exact'] and not approved_pages:
     print('AB_CONTENT_PARITY_UNREVIEWED_EDITORIAL_CHANGE: dated addition failed structural/evidence checks')

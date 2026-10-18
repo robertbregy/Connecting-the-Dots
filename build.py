@@ -141,7 +141,7 @@ def build_manifest() -> None:
 
 def data_pack_files() -> list[Path]:
     snapshot = json.loads((DATA / "iana_snapshot.json").read_text())
-    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "application_2026_snapshot.json", DATA / "applications_2026_aps_official_provenance.json", DATA / "aps_2026_application_graph.json", DATA / "aps_2026_application_graph_manifest.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "economic_cases.json", DATA / "social_cases.json", DATA / "city_namespace_editorial.json", ROOT / snapshot["archive_path"]]
+    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "application_2026_snapshot.json", DATA / "applications_2026_aps_official_provenance.json", DATA / "aps_2026_application_graph.json", DATA / "aps_2026_application_graph_manifest.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "economic_cases.json", DATA / "social_cases.json", DATA / "city_namespace_editorial.json", DATA / "audit_20261018_editorial.json", DATA / "aps_2026_current_analytics.json", DATA / "aps_2026_current_analytics_manifest.json", DATA / "aps_2026_applicant_sector_evidence.json", ROOT / snapshot["archive_path"]]
 
 
 def build_data_pack() -> None:
@@ -192,6 +192,10 @@ def build_data_pack() -> None:
 
 def build_index() -> None:
     html = SRC.read_text(encoding="utf-8")
+    timeline = json.loads((DATA / "inside_the_round_events.json").read_text(encoding="utf-8"))
+    replacements = {"CURRENT_PACK_PATH": PUBLICATION["currentDataPackPath"], "CURRENT_PACK_FILENAME": Path(PUBLICATION["currentDataPackPath"]).name, "CURRENT_CHECKSUM_PATH": PUBLICATION["currentDataPackPath"].replace(".zip", ".sha256"), "CURRENT_CHECKSUM_FILENAME": Path(PUBLICATION["currentDataPackPath"]).with_suffix(".sha256").name, "INSIDE_REVIEWED": timeline["lastReviewed"]}
+    for key, value in replacements.items():
+        html = html.replace("{{" + key + "}}", value)
     # IA B2 is an alternate interface over the SAME 21 canonical editorial sections,
     # generated Explorer, Application Atlas and archival research assets.
     ia_marker = "<!-- CTD_IA_B2_HUBS -->"
@@ -393,6 +397,7 @@ def main() -> None:
         raise SystemExit("Application archaeology cannot be rebuilt and required frozen outputs are missing: " + ", ".join(missing))
 
     build_aps_application_graph()
+    subprocess.run(["python3", str(ROOT / "scripts" / "build_aps_current_analytics.py")], check=True)
     bundle_runtime()
     build_manifest()
     build_data_pack()
@@ -403,6 +408,8 @@ def main() -> None:
     build_access_pages(ROOT)
     build_investigations(ROOT)
     render_city_namespace(ROOT)
+    subprocess.run(["node", str(ROOT / "scripts" / "reconcile_editorial.cjs")], check=True)
+    subprocess.run(["node", str(ROOT / "scripts" / "render_research.cjs")], check=True)
     render_aps_application_atlas(ROOT)
     from scripts.integrate_governance_native import integrate, redirect_legacy
     native_count = integrate(ROOT)
@@ -420,6 +427,7 @@ def main() -> None:
     # Release-level validation is intentionally self-contained so the browser-upload
     # bundle can verify itself even though the larger development QA suite is omitted.
     subprocess.run(["python3", str(ROOT / "scripts" / "release_check.py")], check=True)
+    subprocess.run(["node", str(ROOT / "scripts" / "validate_audit_20261018.cjs")], check=True)
     print(f"Built static {INDEX.name} with shared assets and deferred Explorer profiles from {SRC.relative_to(ROOT)}")
     print("Validated runtime, event history, provenance, local assets, Reveal Day state and data-pack sync")
     print(f"Refreshed manifest and data pack for v{VERSION}")
