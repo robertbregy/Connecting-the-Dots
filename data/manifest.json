@@ -1,6 +1,6 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.85",
+  "version": "0.7.86",
   "release_date": "2026-10-19",
   "publication_state": "reveal-day",
   "rendering": "static-prerendered",
@@ -325,7 +325,7 @@
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "release_history": {
     "path": "release_history.json",
-    "sha256": "46f8690982464f1ca11c216ef993b64844bbe30104d5173960271e532e52b1c6"
+    "sha256": "98b6ca36115cb069c62ec73d3b34baa916f5c99a7cc40acc77cabfe0f6df2c55"
   },
   "freeze": {
     "status": "reveal-day-snapshot",
@@ -340,8 +340,8 @@
     "assets": [
       {
         "repository_path": "data/site_bundle.js",
-        "bytes": 2469538,
-        "sha256": "1ff6b14fcef2bcd7a0b82954349d8e12f050cb6cd28f5a47d216273fe84c465e"
+        "bytes": 2469746,
+        "sha256": "57a7d3ea939a6cae7f3b845b3ad2348a0fb568b01993bf3ce70224744cb8932d"
       },
       {
         "repository_path": "assets/app.js",
@@ -361,42 +361,42 @@
       {
         "repository_path": "data/explorer_profiles_0.js",
         "bytes": 1089784,
-        "sha256": "cc0eeb26ef341405983f5a4e90fda8775a65c8e3b9ed757900598e799754cdd0"
+        "sha256": "15e33a55944538bec297b79a0b71c7d0485407473fed7c7ea44b6b56aa3bf4ed"
       },
       {
         "repository_path": "data/explorer_profiles_1.js",
         "bytes": 904381,
-        "sha256": "a289e3c039f4c1c521aa1bd2ecc57b7fa4101ada8f936719a08c4f1058f5f8d3"
+        "sha256": "d80b138734e262282cad21e207eb9af00c35af6c8f7f7a821a53243d0d934bf9"
       },
       {
         "repository_path": "data/explorer_profiles_2.js",
         "bytes": 1009406,
-        "sha256": "6235da2b8c0a10a0385c8d2d8e6b9c3b921b08a522af26f0de8dba457aa66b1a"
+        "sha256": "9f186784e1b3ddd51bb26e750398d71feef9fa2ea43dbc023e2862d817790b80"
       },
       {
         "repository_path": "data/explorer_profiles_3.js",
         "bytes": 934600,
-        "sha256": "56e2fac00e2f9c4ac1f8a62f6e5b55d173a73ee7ba9df8e71a76fb0601195524"
+        "sha256": "c0c3142887366e5d9fc4c4a9664212a6be16f8aa0cc3a33d02c430780f418c03"
       },
       {
         "repository_path": "data/explorer_profiles_4.js",
         "bytes": 970735,
-        "sha256": "c8871d2ebf6752b7110073a4148b8584bd29e9a8f040214fddb34aed886eda8e"
+        "sha256": "8550a1355ff9d9681b11315c325318a1ae9e7bf012db704e1ed1fc5c1ac2ad7a"
       },
       {
         "repository_path": "data/explorer_profiles_5.js",
         "bytes": 943441,
-        "sha256": "b5d12c3cdb857d16c42a0e7ac559c2df5161a7cdc3252ab0e87232d6aff5f35a"
+        "sha256": "30c32695d345a18f2207d68efb150ccb5d2499e270146031b4f38e85c86c66c2"
       },
       {
         "repository_path": "data/explorer_profiles_6.js",
         "bytes": 953642,
-        "sha256": "47375d5651f7450114391deb2dacd5955e21b94afcb90b666178546a9b8be0e2"
+        "sha256": "2b70baed582c49d1ea42823f83f5f541676447bb0579a6ef8a0e0c98f9b08708"
       },
       {
         "repository_path": "data/explorer_profiles_7.js",
         "bytes": 936011,
-        "sha256": "2f1d88c7aeecb841034636c0bc4674cf973209d8a99d2e7e320942c36868fb53"
+        "sha256": "fd8f88933b914b9c9066d7cc4cc258754270be0f912d90c544b3dec9bfd6fea4"
       }
     ]
   },
@@ -750,6 +750,30 @@
       "sha256": "1a7fdbb67b9b503d4d54d23289b21be379362fa22219077bc55e4499b696e8d6"
     },
     {
+      "path": "tld_registration_candidates.csv",
+      "bytes": 38435,
+      "records": 133,
+      "sha256": "4951ca79d9b65ef5bdaeb83e9ef5eaaf0be74af70c629ccdbc6c57466ec5bd05"
+    },
+    {
+      "path": "tld_registration_centr_snapshot.csv",
+      "bytes": 44002,
+      "records": 1290,
+      "sha256": "6086f09b2e0c4517bad6c11c17638c4124ced6463f09af6a283661768549eae2"
+    },
+    {
+      "path": "tld_registration_top50.csv",
+      "bytes": 15136,
+      "records": 50,
+      "sha256": "c72bd448a3939db1cd733b6f1dff89c507ece49440ecfd030b59eb4d1d24a17a"
+    },
+    {
+      "path": "tld_technical_mapping.csv",
+      "bytes": 110373,
+      "records": 1123,
+      "sha256": "b18ddd8e4e1e97408a563f07cd4dfda8f61a48183182056b4574eb1238c96f84"
+    },
+    {
       "path": "tld_universe.csv",
       "bytes": 387567,
       "records": 1599,
@@ -761,5 +785,27 @@
     "sha256": "d7a3ae321c9c0e398794bb3faf6321dbfec09de121ccc56981d48e329c316134",
     "reviewedOn": "2026-10-17",
     "classification": "source-backed-analysis-and-proposals"
+  },
+  "tld_power_analysis": {
+    "reviewedOn": "2026-10-19",
+    "researchScope": "current-analysis-outside-RR1-RR2",
+    "files": [
+      {
+        "path": "tld_technical_observation.json",
+        "sha256": "00ae2c7dfcc5600d5b3670aca8d6bb025697b3eb7fab4f6bda5af604bc179697"
+      },
+      {
+        "path": "tld_technical_portfolios.json",
+        "sha256": "522d5b3dc768d92e902603b5567f8b2f114bf4e7e9443fb66b39b0ef250481d8"
+      },
+      {
+        "path": "tld_registration_ranking.json",
+        "sha256": "47b7c0efe323da77e69d1262a0178c409e2c9a484232da8e6869bbb3b734b788"
+      },
+      {
+        "path": "tld_registration_sources.json",
+        "sha256": "780635dc0150e2f3a6f55875fbb1ea26b64cf2bbaae50a8f6cfce547c2d0cfe5"
+      }
+    ]
   }
 }
