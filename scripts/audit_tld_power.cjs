@@ -19,6 +19,8 @@ const base=process.env.CTD_TEST_BASE||'http://127.0.0.1:8123/';
   await page.goto(base+lang+'/?tab=economics#tld-registration-top50');
   await page.locator('#power-ranking-era').selectOption('2012');
   assert.equal(await page.locator('[data-power-ranking]:not([hidden])').count(),rank.rows.filter(r=>r.era==='2012').length);
+  await page.locator('#power-ranking-era').selectOption('2004');
+  assert.equal(await page.locator('[data-power-ranking]:not([hidden])').count(),0,'The 2004 cohort has no entries in this frozen top 50');
   await page.locator('#power-ranking-era').selectOption('ccTLD');
   assert.equal(await page.locator('[data-power-ranking]:not([hidden])').count(),rank.rows.filter(r=>r.era==='ccTLD').length);
   await page.locator('#power-ranking-era').selectOption('');await page.locator('#power-ranking-search').fill('.com');

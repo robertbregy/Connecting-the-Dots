@@ -2109,7 +2109,7 @@
     },
     "scripts/audit_tld_power.cjs": {
       "baselineSHA256": null,
-      "sha256": "680d27e57809fabd628bc6bb55ef36c196e96fbff6a71d4418705fcb97814e55",
+      "sha256": "3f04941b2a237a59e1a21a5d0c9539578a9909ab1606bd92193ddfffa6d04485",
       "rationaleIds": [
         "T02"
       ]
