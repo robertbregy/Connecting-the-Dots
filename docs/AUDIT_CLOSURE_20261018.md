@@ -2,23 +2,26 @@
 
 ## Stato del lavoro
 
-I 20 rilievi C01–C06, M01–M06 ed E01–E08 dell’audit sono stati implementati nella release candidata **v0.7.84** e verificati semanticamente. Per M06 sono verificati anche il prerender nelle quattro lingue e l’esportazione reale del CSV nel browser. Le verifiche locali già concluse sono riportate separatamente dai controlli ancora indicati come **pending final verification**.
+I 20 rilievi C01–C06, M01–M06 ed E01–E08 dell’audit sono stati corretti nella **v0.7.84, pubblicata su GitHub Pages**. Le verifiche semantiche, i test nelle quattro lingue e i controlli automatici sono completati. Per M06 sono stati verificati anche il prerender e l’esportazione reale del CSV nel browser.
 
-Questo documento descrive il contenuto della candidatura di release. Gli esiti locali non attestano ancora la pubblicazione di questi stessi byte su GitHub Pages. La review dei fingerprint è conclusa; il commit finale e gli esiti dei workflow della release saranno registrati a conclusione della pubblicazione.
+La pubblicazione è verificata sul commit [`20394b7`](https://github.com/robertbregy/Connecting-the-Dots/commit/20394b729a9c1a4047f5428e4955c22addee5fa6): **65 verifiche di URL, corrispondenti a 62 file pubblici distinti, coincidono con i byte del repository**. Il controllo comprende pagine, asset del browser, pacchetto corrente e checksum; una verifica aggiuntiva comprende l’analisi APS, il glossario, gli indicatori di concentrazione e il working paper. Il confronto pubblico è distinto dalla review editoriale, che protegge un proprio insieme di 62 file. Le prove e gli hash sono conservati nell’[evidenza strutturata della pubblicazione](audit-publication-2026-10-18.json).
 
 | Riferimento | Valore |
 |---|---|
 | Audit di partenza | 17 ottobre 2026, pubblicazione v0.7.83 |
-| Commit sottoposto all’audit | `65e0fbe2080c2ee841e8abc01e1ddec113a74b8e` |
-| Release tecnica candidata | `0.7.84`, data editoriale `2026-10-18` |
+| Commit sottoposto all’audit | [`65e0fbe2080c2ee841e8abc01e1ddec113a74b8e`](https://github.com/robertbregy/Connecting-the-Dots/commit/65e0fbe2080c2ee841e8abc01e1ddec113a74b8e) |
+| Release tecnica pubblicata | `0.7.84`, data editoriale `2026-10-18` |
 | Working paper corrente | `1.2-draft`, revisione `2026-10-18` |
-| Pacchetto tecnico corrente | `downloads/connecting-the-dots-data-pack-v0.7.84.zip` e relativo `.sha256` |
+| Pacchetto tecnico corrente | [`connecting-the-dots-data-pack-v0.7.84.zip`](https://robertbregy.github.io/Connecting-the-Dots/downloads/connecting-the-dots-data-pack-v0.7.84.zip) e relativo [checksum](https://robertbregy.github.io/Connecting-the-Dots/downloads/connecting-the-dots-data-pack-v0.7.84.sha256) |
 | Snapshot scientifico conservato | RR2; `researchSnapshot: 2026-10-07`, cutoff `asOf: 2026-10-10` |
 | Manifesto di review editoriale | `docs/editorial-review-2026-10-18.json`: **reviewed**, 62 file e 21 sezioni; guard Node e confronto A/B **PASS** |
 | Backup A del confronto storico | `safety/main-v0.7.78-before-b2-switch-20261013`, commit `ec231cc12d35fa91ff5340ad057a483ce23a5ca4` |
-| Commit finale della chiusura | **pending final verification** |
+| Commit delle correzioni verificato sul branch | [`6d12c87bac8dd10f37201806f5ef804af62fcdbc`](https://github.com/robertbregy/Connecting-the-Dots/commit/6d12c87bac8dd10f37201806f5ef804af62fcdbc) |
+| Commit pubblicato e confrontato con Pages | [`20394b729a9c1a4047f5428e4955c22addee5fa6`](https://github.com/robertbregy/Connecting-the-Dots/commit/20394b729a9c1a4047f5428e4955c22addee5fa6) |
+| Tree pubblicato | `2e79f056309045e458e29d64e1aaf49f96fbb7af` |
+| Verifica dei byte pubblicati | 18 ottobre 2026, **22:25–22:26 UTC**; 19 ottobre 2026, **00:25–00:26 Europe/Zurich** |
 
-I valori correnti provengono da [`publication.json`](../publication.json), dal [manifesto scientifico](../research/research_release_manifest.json) e dal [manifesto di review editoriale](editorial-review-2026-10-18.json). Le date della fonte, dell’acquisizione, della revisione editoriale e del download restano campi distinti.
+I valori correnti provengono da [`publication.json`](../publication.json), dal [manifesto scientifico](../research/research_release_manifest.json) e dal [manifesto di review editoriale](editorial-review-2026-10-18.json). La data editoriale della release resta il 18 ottobre; le date della fonte, dell’acquisizione, della revisione editoriale, del download e della verifica di pubblicazione restano campi distinti.
 
 ## 1. Correzioni prioritarie
 
@@ -93,9 +96,9 @@ I DOI rimangono [RR1 — 10.5281/zenodo.23262623](https://doi.org/10.5281/zenodo
 
 I precedenti ZIP tecnici, i checksum storici, gli input ufficiali congelati, la vecchia mappa economica e i suoi aggregati sono preservati. Nel manifesto scientifico cambiano soltanto i metadati del sito e del working paper corrente; le altre proprietà scientifiche sono protette separatamente. Il paper **1.2-draft** e la nuova analisi APS sono revisioni correnti **non coperte dai DOI RR1/RR2**. Un futuro rilascio scientifico dei nuovi metodi e risultati richiede un deposito distinto e una propria descrizione delle modifiche.
 
-## 5. Verifiche confermate e controlli da completare
+## 5. Verifiche concluse e pubblicazione
 
-Gli esiti PASS seguenti sono stati confermati nel lavoro locale sulla candidata v0.7.84. La verifica finale deve riferirli al commit e agli artefatti conclusivi; ulteriori modifiche ai file coinvolti richiedono il controllo pertinente prima della pubblicazione.
+Gli esiti seguenti documentano la verifica locale della v0.7.84 e i successivi controlli sul commit delle correzioni e sul commit pubblicato. Il [workflow completo sul branch](https://github.com/robertbregy/Connecting-the-Dots/actions/runs/39171250736) ha concluso con successo tutti e quattro i job: browser/WCAG, audit indipendente, namespace cittadini e Application Atlas. Il confronto con il sito pubblico è riportato separatamente, con il proprio commit di riferimento.
 
 | Verifica | Esito confermato | Ambito |
 |---|---|---|
@@ -105,8 +108,8 @@ Gli esiti PASS seguenti sono stati confermati nel lavoro locale sulla candidata 
 | `node scripts/validate_internet_access.js` | **PASS** | Contenuti e invarianti della guida sull’accesso a Internet. |
 | `CTD_STATIC_ONLY=1 node scripts/validate_delivery.js` | **PASS** | Indice leggero, profili e consegna statica; non sostituisce i test di interazione nel browser. |
 | `node scripts/validate_delivery.js`, percorso completo | **PASS · exit 0 dopo le due build finali** | Integrità di 1.849 profili e otto shard; navigazione nelle quattro lingue; caricamento asincrono nelle quattro lingue e root alias, cache, retry con identità stabile, timeout, payload invalidi, focus e ritorno al controllo, risposte tardive, deep link ASCII/Unicode, Back/Forward e condivisione. |
-| `node scripts/audit_browser_20261010.js` | **PASS · 43 route, 4 lingue, 5 viewport, 0 issue** | Audit browser generale sulla candidata locale. |
-| `node scripts/validate_audit_20261018.cjs` | **PASS · 26 gruppi di controllo** | Gate statico delle correzioni del 18 ottobre; esito locale precedente alla finalizzazione della release. |
+| `node scripts/audit_browser_20261010.js` | **PASS · 43 route, 4 lingue, 5 viewport, 0 issue** | Audit browser generale, confermato anche dal workflow GitHub sul commit delle correzioni. |
+| `node scripts/validate_audit_20261018.cjs` | **PASS · 26 gruppi di controllo** | Gate statico delle correzioni del 18 ottobre, confermato anche dal workflow GitHub sul commit delle correzioni. |
 | `node scripts/audit_20261018_browser.cjs` | **PASS · 8 scenari, 4 lingue × 390/1.440 px, 56 gruppi di controllo** | Percorsi Home, struttura `.lugano`, download corrente ed export. Il CSV contiene **980 nomi reali** quando la pagina ne mostra 50; l’esportazione non effettua fetch aggiuntivi. Verificati il cambio del filtro a `.lugano`, il caso con zero risultati e gli ID dopo render ripetuti degli indici. |
 | `node scripts/audit_city_namespace.cjs` | **PASS · 48 controlli di pagina, 112 controlli delle fonti, 48 scansioni axe, 0 issue** | Audit dedicato ai namespace cittadini e alle rispettive fonti. |
 | `node scripts/audit_axe_20261010.js` | **PASS · 4 pagine, 24 sezioni, 192 scansioni, 0 violazioni** | Il risultato conclusivo `AUDIT_AXE_RESULT` registra zero violazioni critical, serious, moderate e minor. |
@@ -117,21 +120,32 @@ Gli esiti PASS seguenti sono stati confermati nel lavoro locale sulla candidata 
 | `node scripts/verify_ia_b2_parity.cjs` | **PASS** | Manifesto reviewed di 62 file, 21 sezioni preservate e 28 file immutabili verificati, ricontrollati dopo le due build finali. |
 | `python3 scripts/audit_content_continuity.py` | **PASS** | Confronto conclusivo dopo le due build con il backup A `ec231cc`; nessuna perdita di file, ID, route o riferimenti protetti, archivi storici identici. |
 | Due build complete finali e pacchetto corrente | **PASS · 70 file identici, zero differenze fra le ricostruzioni** | Verifica successiva alle correzioni del runtime: 62 file della review, cinque pagine principali, manifesto dati, ZIP e checksum. SHA-256 ZIP finale: `b2ffb3502559c927a0e61666b1bda232f6bbcb51f4e9f600b8d09c72e1ac57c4`. |
-| Raggiungibilità pubblica prima della pubblicazione | **PASS · 5 pagine HTTP 200, TLS standard** | Verificate `/it/`, `/en/`, `/research/`, `/behind-the-round/it/` e `/inside-the-round/it/`. Dimostra la raggiungibilità, non la pubblicazione dei byte candidati. |
-| Controllo remoto RR2 prima della pubblicazione | **PASS · 8 controlli, 3 endpoint HTTP 200** | Record e DOI attesi verificati con TLS standard; resta da registrare anche il workflow della release. |
+| Raggiungibilità pubblica prima della pubblicazione | **PASS · 5 pagine HTTP 200, TLS standard** | Verificate `/it/`, `/en/`, `/research/`, `/behind-the-round/it/` e `/inside-the-round/it/`. Controllo preliminare di raggiungibilità; il successivo confronto dei byte pubblicati è documentato sotto. |
+| Controllo remoto RR2 prima della pubblicazione | **PASS · 8 controlli, 3 endpoint HTTP 200** | Record e DOI attesi verificati con TLS standard; il workflow sul commit pubblicato è riportato sotto. |
 
-| Controllo finale | Stato | Evidenza da registrare |
+### Workflow e corrispondenza del sito pubblico
+
+| Controllo | Esito | Evidenza |
 |---|---|---|
-| Approfondimenti browser (`scripts/deep_audit_20261011.js`) | **pending final verification** | Esecuzione completa sul commit conclusivo; i due tipi di errore del precedente report sono documentati sotto. |
-| Workflow GitHub sul commit finale | **pending final verification** | Commit, URL delle esecuzioni e conclusioni effettive. |
-| Pages e confronto dei byte pubblicati (`pages-live-smoke.yml`) | **pending final verification** | Stesso commit, pagine, asset del browser, ZIP corrente e checksum. |
-| Controllo remoto RR2 (`verify-zenodo-rr2.yml`) | **pending final verification** | DOI/record attesi verificati; un problema di rete resta distinguibile da un record mancante o diverso. |
+| Audit completo sul branch, commit `6d12c87` | **PASS · quattro job su quattro** | [Run 39171250736](https://github.com/robertbregy/Connecting-the-Dots/actions/runs/39171250736): 192 scansioni axe senza violazioni; 224/224 collegamenti storici; otto scenari e 56 gruppi del nuovo audit; audit indipendente, città e Atlas senza issue. |
+| Approfondimento indipendente `deep_audit_20261011.js` sul branch | **PASS · 43 route, quattro lingue, zero issue** | [Job indipendente 117804592543](https://github.com/robertbregy/Connecting-the-Dots/actions/runs/39171250736/job/117804592543): 96 controlli di navigazione, 56 dei profili, 96 di overflow, 32 scansioni axe, 3.551 verifiche di collegamenti e cinque controlli live. |
+| Doppia ricostruzione nel workflow del branch | **PASS** | [Run 39171250768](https://github.com/robertbregy/Connecting-the-Dots/actions/runs/39171250768): pacchetto riproducibile, checksum finale invariato. |
+| Continuità A/B sul commit pubblicato `20394b7` | **PASS** | [Run 39172090300](https://github.com/robertbregy/Connecting-the-Dots/actions/runs/39172090300). |
+| Full Browser sul commit pubblicato `20394b7` | **PASS · quattro job su quattro** | [Run 39172090340](https://github.com/robertbregy/Connecting-the-Dots/actions/runs/39172090340), concluso il 18 ottobre alle 22:33:43 UTC: 192 scansioni axe senza violazioni, 224/224 collegamenti storici, 56 gruppi di accettazione, IA B2 8/8 con 39 pagine autonome; zero issue. |
+| Final B2 sul commit pubblicato `20394b7` | **PASS · 8/8 scenari, 39 pagine autonome, zero issue** | [Run 39172090312](https://github.com/robertbregy/Connecting-the-Dots/actions/runs/39172090312), concluso il 18 ottobre alle 22:27:30 UTC; anche la verifica browser della governance nativa è PASS nelle quattro lingue su mobile e desktop. |
+| Pubblicazione GitHub Pages | **PASS** | [Run 39172089554](https://github.com/robertbregy/Connecting-the-Dots/actions/runs/39172089554), commit `20394b729a9c1a4047f5428e4955c22addee5fa6`. |
+| Live smoke Pages | **PASS · 48 URL, 45 file distinti, tutti corrispondenti** | [Run 39172090311](https://github.com/robertbregy/Connecting-the-Dots/actions/runs/39172090311), [job 117807106763](https://github.com/robertbregy/Connecting-the-Dots/actions/runs/39172090311/job/117807106763), [artefatto 12152802906](https://github.com/robertbregy/Connecting-the-Dots/actions/runs/39172090311/artifacts/12152802906). Il report registra `all_match: true`, versione `0.7.84` e commit sorgente `20394b7`. |
+| Verifica pubblica aggiuntiva di dati e ricerca | **PASS · 17/17 file aggiuntivi, senza sovrapposizioni con il live smoke** | [Evidenza strutturata](audit-publication-2026-10-18.json): confronto SHA-256 con il medesimo commit `20394b7`, concluso il 18 ottobre alle 22:26:03 UTC. Totale dei due controlli: 65 verifiche di URL, 62 file distinti, HTTP 200 e byte identici. |
+| RR2 remoto sul commit pubblicato | **PASS** | [Run 39172090335](https://github.com/robertbregy/Connecting-the-Dots/actions/runs/39172090335): identità dei record RR1/RR2 e della serie preservata. |
+| Rebuild su main | **SKIPPED, intenzionale** | [Run 39172090413](https://github.com/robertbregy/Connecting-the-Dots/actions/runs/39172090413): la release è stata integrata con gli artefatti già ricostruiti e verificati. Questo esito non è conteggiato come PASS di una nuova build. |
+
+Il live smoke ha confrontato le risposte pubbliche con i file del commit pubblicato, includendo il pacchetto v0.7.84 e il suo checksum. La verifica aggiuntiva ha coperto i dieci file del nuovo livello APS, i testi editoriali di supporto, il glossario, i due file di concentrazione, il paper HTML/Markdown e il manifesto scientifico. Il **pacchetto scaricato da Pages** ha SHA-256 `b2ffb3502559c927a0e61666b1bda232f6bbcb51f4e9f600b8d09c72e1ac57c4`, identico al pacchetto delle due build finali.
 
 ### Difetti emersi nei controlli conclusivi
 
-Il precedente report di approfondimento registrava 12 collisioni di ID e cinque errori di raggiungibilità del sito. Le collisioni comparivano nel browser: l’assegnazione numerica ai nuovi titoli poteva riusare `geography-part-3` o `economics-part-3`, già presenti nei titoli storici. L’allocatore ora salta gli ID occupati e conserva ogni ID esistente. La regressione mirata sulle 12 route è PASS; il gate browser del 18 ottobre verifica anche unicità e stabilità dopo due ricostruzioni degli indici.
+Il precedente report di approfondimento registrava 12 collisioni di ID e cinque errori di raggiungibilità del sito. Le collisioni comparivano nel browser: l’assegnazione numerica ai nuovi titoli poteva riusare `geography-part-3` o `economics-part-3`, già presenti nei titoli storici. L’allocatore ora salta gli ID occupati e conserva ogni ID esistente. La regressione mirata sulle 12 route è PASS; il gate browser del 18 ottobre verifica anche unicità e stabilità dopo due ricostruzioni degli indici. Il successivo audit indipendente su GitHub ha verificato tutte le 43 route senza alcuna collisione o altra issue.
 
-I cinque errori esterni erano `ERR_CERT_AUTHORITY_INVALID` nel browser di prova. Tutte e cinque le stesse pagine sono state raggiunte con HTTP 200 e verifica TLS standard tramite un client indipendente. Questo controllo non disabilita la verifica dei certificati e non attribuisce al sito una disponibilità della nuova release ancora da provare.
+I cinque errori esterni erano `ERR_CERT_AUTHORITY_INVALID` nel browser di prova. Tutte e cinque le stesse pagine sono state raggiunte con HTTP 200 e verifica TLS standard tramite un client indipendente. La verifica dei certificati è rimasta attiva. Nel successivo audit GitHub anche i cinque controlli live del browser sono passati senza errori; dopo la pubblicazione, il live smoke ha verificato la corrispondenza della v0.7.84 con il commit pubblicato.
 
 Il test completo della consegna ha inoltre individuato un errore nel tentativo successivo al caricamento fallito di un profilo: il caricamento dell’inventario 2026 riordinava l’elenco, mentre il pulsante conservava il vecchio indice numerico. La correzione risolve il profilo al clic dalla sua identità ASCII, evitando che il retry di `.ch` apra `.bit`. Il collegamento di recupero ai dati completi viene allineato al pacchetto corrente. Il test completo della consegna, eseguito dopo le due build finali, ha verificato questi percorsi con esito PASS.
 
