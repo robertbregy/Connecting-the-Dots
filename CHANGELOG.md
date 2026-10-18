@@ -1,3 +1,9 @@
+## v0.7.85 — 19 October 2026
+
+- Added source-backed round application fees, separating documented collections, reconstructed amounts and unavailable accounting totals.
+- Added a four-language cultural trajectory distinguishing origin, application, delegation and use.
+- Added a reproducible census and explicit semantic coverage, cohort denominators and local filtering. The analytical layer is current working research, outside immutable RR1/RR2.
+
 # v0.7.84 - 18 October 2026
 
 - Closed the 20 content-audit findings with source-specific dates, consistent current downloads, a corrected glossary and equivalent qualifications in four languages.

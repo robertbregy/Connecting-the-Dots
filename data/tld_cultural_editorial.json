@@ -1,0 +1,520 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-19",
+  "sources": {
+    "rfc920": {
+      "label": "IETF · RFC 920, Domain Requirements (1984)",
+      "url": "https://www.rfc-editor.org/info/rfc920/"
+    },
+    "rfc1591": {
+      "label": "IETF · RFC 1591, Domain Name System Structure and Delegation (1994)",
+      "url": "https://www.rfc-editor.org/rfc/rfc1591.html"
+    },
+    "cern_web": {
+      "label": "CERN · The birth of the Web",
+      "url": "https://home.cern/science/computing/the-birth-of-the-web"
+    },
+    "round2000": {
+      "label": "ICANN · New TLDs: FAQs (17 November 2000)",
+      "url": "https://archive.icann.org/en/tlds/new-tld-faq.htm"
+    },
+    "cat_delegation": {
+      "label": "IANA · Report on the Delegation of .CAT (2005)",
+      "url": "https://www.iana.org/reports/2005/cat-report-18nov2005.html"
+    },
+    "mobi_charter": {
+      "label": "ICANN · .MOBI Sponsorship Charter (2005)",
+      "url": "https://www.icann.org/es/registry-agreements/mobi/mobi-appendix-s-23-11-2005-en"
+    },
+    "mobi_conversion": {
+      "label": "ICANN · Board minutes, resolution 2017.03.16.04",
+      "url": "https://www.icann.org/en/board-activities-and-meetings/materials/minutes-regular-meeting-of-the-icann-board-16-03-2017-en"
+    },
+    "idn2010": {
+      "label": "ICANN · First IDN ccTLDs Available (5 May 2010)",
+      "url": "https://www.icann.org/en/announcements/details/first-idn-cctlds-available-5-5-2010-en"
+    },
+    "reveal2012": {
+      "label": "ICANN · New gTLD Reveal Day (13 June 2012)",
+      "url": "https://www.icann.org/en/announcements/details/new-gtld-reveal-day---applied-for-strings-13-6-2012-en"
+    },
+    "delegated2012": {
+      "label": "ICANN · Delegated Strings, 2012 round",
+      "url": "https://newgtlds.icann.org/en/program-status/delegated-strings"
+    },
+    "berlin_case": {
+      "label": "ICANN / dotBERLIN · .BERLIN case study",
+      "url": "https://newgtlds.icann.org/sites/default/files/berlin-a4-13feb19-en.pdf"
+    },
+    "google_policy": {
+      "label": "Google Registry · .google Domain Registration Policy",
+      "url": "https://www.registry.google/policies/registration/google/"
+    },
+    "google_use": {
+      "label": "Google Registry · 3 lessons learned from launching .google (2025)",
+      "url": "https://blog.google/products-and-platforms/products/registry/3-lessons-learned-from-launching-google/"
+    },
+    "ai_iana": {
+      "label": "IANA · .ai, country-code TLD for Anguilla",
+      "url": "https://www.iana.org/domains/root/db/ai.html"
+    },
+    "ai_registry": {
+      "label": ".ai · Official Registry Operator Website",
+      "url": "https://www.nic.ai/"
+    },
+    "reveal2026": {
+      "label": "ICANN · Applications revealed, 2026 round (7 October 2026)",
+      "url": "https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en"
+    },
+    "root_files": {
+      "label": "IANA · Root Files and TLD Registry Data",
+      "url": "https://www.iana.org/domains/root/files"
+    }
+  },
+  "locales": {
+    "it": {
+      "title": "I nomi con cui Internet racconta la società",
+      "intro": "Dopo il punto non ci sono soltanto indirizzi. Ci sono istituzioni, mercati, appartenenze e idee di futuro. Leggere i TLD nel tempo permette di seguire come cambia Internet e come le persone cercano di riconoscersi nella rete. Questa è una lettura storica sostenuta da casi documentati: le categorie si sovrappongono, mentre nomi già esistenti possono acquistare nuovi significati.",
+      "methodTitle": "Come leggere questa traiettoria",
+      "methodBody": "Ogni tappa separa fatti documentati e interpretazione; gli esempi scelti non costituiscono un censimento. Il censimento riproducibile che segue comprende tutte le stringhe delle fonti raccolte nel progetto e applica ai diversi round lo stesso vocabolario di classificazione attuale. L'assegnazione semantica è incompleta: i nomi senza categoria restano nel corpus e i conteggi dipendono dalla copertura delle regole. Questa lettura non ricostruisce automaticamente il significato storico di ogni nome né rappresenta l'intero universo delle identità online. Candidatura, delega e apertura al pubblico sono eventi distinti; i conteggi non misurano l'uso o l'adozione.",
+      "stages": [
+        {
+          "id": "institutions",
+          "title": "Prima del Web: dare ordine alla rete",
+          "period": "1984–1985 · definizione delle categorie originarie",
+          "fact": "Nell'ottobre 1984 il RFC 920 descrive .com per le attività commerciali, .edu per l'istruzione, .gov per il governo, .mil per i militari e .org per le altre organizzazioni, insieme ai codici paese. Il Web verrà proposto soltanto nel 1989: .com precede i siti aziendali.",
+          "reading": "La prima mappa dei nomi riflette soprattutto le istituzioni e le responsabilità amministrative di una rete ancora precedente al Web. I codici paese affiancano la geografia a questa classificazione per funzione.",
+          "sources": [
+            "rfc920",
+            "cern_web"
+          ],
+          "strings": [
+            ".com",
+            ".edu",
+            ".gov",
+            ".mil",
+            ".org"
+          ]
+        },
+        {
+          "id": "commercial_web",
+          "title": "Un indirizzo diventa una presenza",
+          "period": "1993–1994 · apertura del Web e crescita di .com",
+          "fact": "Il 30 aprile 1993 il CERN rende pubblico il software del Web. Nel marzo 1994 il RFC 1591 descrive già .com come una categoria molto cresciuta, destinata alle imprese. Nello stesso documento .org resta la categoria per organizzazioni che non trovano posto altrove.",
+          "reading": "Con la diffusione del Web, l'indirizzo può diventare vetrina, servizio e identità pubblica. La lettura di .com come simbolo della presenza commerciale appartiene a questa storia d'uso successiva, non alla sua origine tecnica. L'intenzione iniziale di un suffisso non ne esaurisce il significato.",
+          "sources": [
+            "cern_web",
+            "rfc1591"
+          ],
+          "strings": [
+            ".com",
+            ".org"
+          ]
+        },
+        {
+          "id": "differentiation",
+          "title": "Persone, comunità e modi di connettersi",
+          "period": "Round 2000 e 2004 · introduzioni successive; revisione di .mobi nel 2017",
+          "fact": "Nel 2000 ICANN seleziona sette nuove proposte, fra cui .name e .coop. Dal processo 2003–2004 arrivano .cat per la comunità linguistica e culturale catalana e .mobi per l'accesso mobile. Nel 2017 ICANN approva la conversione di .mobi in gTLD standard, senza mantenere lo statuto mobile.",
+          "reading": "I nomi iniziano a dichiarare chi siamo, a chi apparteniamo e come ci colleghiamo. .mobi conserva anche un'aspettativa poi riformulata nelle regole: una trasformazione documentata, che da sola non dimostra un fallimento commerciale.",
+          "sources": [
+            "round2000",
+            "cat_delegation",
+            "mobi_charter",
+            "mobi_conversion"
+          ],
+          "strings": [
+            ".biz",
+            ".info",
+            ".name",
+            ".coop",
+            ".cat",
+            ".mobi"
+          ]
+        },
+        {
+          "id": "scripts",
+          "title": "La rete può finire nella nostra scrittura",
+          "period": "Maggio 2010 · prime deleghe di ccTLD internazionalizzati",
+          "fact": "Il 5 maggio 2010 ICANN annuncia i primi ccTLD internazionalizzati delegati nella radice: quelli in arabo per Egitto, Arabia Saudita ed Emirati Arabi Uniti. Le richieste erano iniziate nel novembre 2009. Non sono TLD del round 2012: seguono il percorso dedicato ai codici paese.",
+          "reading": "L'appartenenza non passa soltanto dal territorio o dall'attività. Può essere espressa anche dalla scrittura con cui una persona legge e comunica. È un passaggio concreto verso una rete linguisticamente più plurale; la disponibilità tecnica, però, non misura da sola l'inclusione effettiva.",
+          "sources": [
+            "idn2010"
+          ],
+          "strings": [
+            ".مصر",
+            ".السعودية",
+            ".امارات"
+          ]
+        },
+        {
+          "id": "plurality",
+          "title": "Città e marchi entrano nello stesso spazio",
+          "period": "Round 2012 · deleghe dal 2013; aperture e usi in anni diversi",
+          "fact": "Il round 2012 riceve 1.930 candidature, comprese proposte geografiche e in altre scritture. Da questo stesso round arrivano .berlin, aperto nel marzo 2014, e .google, riservato a Google e alle sue affiliate. .google è delegato nel settembre 2014; Google ne colloca l'inizio d'uso nel 2016.",
+          "reading": "La mappa si moltiplica: identità urbane e controllo del marchio convivono nella stessa espansione. Non sono epoche che si sostituiscono: sono progetti diversi resi possibili dalle stesse regole. La distanza fra domanda, delega e uso rende visibile il tempo necessario a trasformare un nome in presenza.",
+          "sources": [
+            "reveal2012",
+            "delegated2012",
+            "berlin_case",
+            "google_policy",
+            "google_use"
+          ],
+          "strings": [
+            ".berlin",
+            ".google"
+          ]
+        },
+        {
+          "id": "reinterpretation",
+          "title": "Le epoche cambiano anche il significato dei nomi",
+          "period": "Riuso attuale di .ai · candidature 2026 pubblicate il 7 ottobre",
+          "fact": ".ai resta il codice paese di Anguilla, ma il registro ufficiale lo presenta anche come segno di innovazione e intelligenza artificiale. Il 7 ottobre 2026 ICANN pubblica le candidature del nuovo round: sono proposte ancora in valutazione, non nuovi TLD già operativi.",
+          "reading": "Un nome può raccontare il presente senza essere appena nato. Il caso .ai mostra una nuova associazione culturale su un'infrastruttura esistente; le candidature 2026 mostrano invece ciò che gli attori vorrebbero chiamare domani. Origine, desiderio e uso sono tre tracce da leggere insieme.",
+          "sources": [
+            "ai_iana",
+            "ai_registry",
+            "reveal2026"
+          ],
+          "strings": [
+            ".ai"
+          ]
+        }
+      ],
+      "closing": "I TLD non sono uno specchio completo della società: mostrano chi ha potuto chiedere un nome, quale spazio ha ottenuto e come quel nome è stato usato. La traiettoria più interessante nasce dall'incrocio fra queste tre storie."
+    },
+    "en": {
+      "title": "The names through which the Internet tells society's story",
+      "intro": "Beyond the dot lie institutions, markets, communities and ideas about the future. Reading TLDs over time helps us follow changes in the Internet and the ways people seek a place within it. This historical interpretation draws on documented cases: categories overlap, and existing names can acquire new meanings.",
+      "methodTitle": "How to read this trajectory",
+      "methodBody": "Each stage separates documented facts from interpretation; the selected examples are not a census. The reproducible census below includes every string from the sources collected for this project and applies the same present-day classification vocabulary across the different rounds. Semantic assignment is incomplete: names without a category remain in the corpus, and counts depend on rule coverage. This reading does not automatically reconstruct each name's historical meaning or represent the full range of online identities. Application, delegation and public availability are distinct events; the counts do not measure use or adoption.",
+      "stages": [
+        {
+          "id": "institutions",
+          "title": "Before the Web: giving the network an order",
+          "period": "1984–1985 · defining the original categories",
+          "fact": "In October 1984, RFC 920 describes .com for commercial activities, .edu for education, .gov for government, .mil for the military and .org for other organizations, alongside country codes. The Web would only be proposed in 1989: .com predates company websites.",
+          "reading": "The earliest naming map mainly reflects the institutions and administrative responsibilities of a network that predates the Web. Country codes place geography alongside this classification by function.",
+          "sources": [
+            "rfc920",
+            "cern_web"
+          ],
+          "strings": [
+            ".com",
+            ".edu",
+            ".gov",
+            ".mil",
+            ".org"
+          ]
+        },
+        {
+          "id": "commercial_web",
+          "title": "An address becomes a public presence",
+          "period": "1993–1994 · opening the Web and the growth of .com",
+          "fact": "On 30 April 1993, CERN releases the Web software into the public domain. By March 1994, RFC 1591 already describes .com as a much enlarged category intended for companies. In the same document, .org remains the category for organizations that do not fit elsewhere.",
+          "reading": "As the Web spreads, an address can become a shop window, a service and a public identity. Reading .com as a symbol of commercial presence belongs to this later history of use, rather than its technical origins. A suffix's original purpose does not exhaust its meaning.",
+          "sources": [
+            "cern_web",
+            "rfc1591"
+          ],
+          "strings": [
+            ".com",
+            ".org"
+          ]
+        },
+        {
+          "id": "differentiation",
+          "title": "People, communities and ways to connect",
+          "period": "2000 and 2004 rounds · later introductions; .mobi revised in 2017",
+          "fact": "In 2000, ICANN selects seven new proposals, including .name and .coop. The 2003–2004 process brings .cat for the Catalan linguistic and cultural community and .mobi for mobile access. In 2017, ICANN approves .mobi's conversion to a standard gTLD without retaining its mobile charter.",
+          "reading": "Names begin to declare who we are, where we belong and how we connect. .mobi also preserves an expectation later recast in its rules: a documented transformation that does not, by itself, establish commercial failure.",
+          "sources": [
+            "round2000",
+            "cat_delegation",
+            "mobi_charter",
+            "mobi_conversion"
+          ],
+          "strings": [
+            ".biz",
+            ".info",
+            ".name",
+            ".coop",
+            ".cat",
+            ".mobi"
+          ]
+        },
+        {
+          "id": "scripts",
+          "title": "An address can end in our own script",
+          "period": "May 2010 · first internationalized ccTLD delegations",
+          "fact": "On 5 May 2010, ICANN announces the first internationalized ccTLDs delegated into the root: Arabic names for Egypt, Saudi Arabia and the United Arab Emirates. Requests had opened in November 2009. These are not TLDs from the 2012 round; they follow the dedicated country-code process.",
+          "reading": "Belonging is expressed through more than territory or activity. It can also appear in the script a person reads and uses to communicate. This is a concrete step toward a more linguistically plural network, although technical availability alone does not measure effective inclusion.",
+          "sources": [
+            "idn2010"
+          ],
+          "strings": [
+            ".مصر",
+            ".السعودية",
+            ".امارات"
+          ]
+        },
+        {
+          "id": "plurality",
+          "title": "Cities and brands enter the same space",
+          "period": "2012 round · delegations from 2013; launches and use in different years",
+          "fact": "The 2012 round receives 1,930 applications, including geographic proposals and names in other scripts. That same round brings .berlin, publicly available in March 2014, and .google, restricted to Google and its affiliates. .google is delegated in September 2014; Google dates its first use to 2016.",
+          "reading": "The map expands: urban identities and control of a brand coexist within one expansion. These are overlapping projects enabled by the same rules, not eras replacing one another. The gap between application, delegation and use reveals the time needed to turn a name into a presence.",
+          "sources": [
+            "reveal2012",
+            "delegated2012",
+            "berlin_case",
+            "google_policy",
+            "google_use"
+          ],
+          "strings": [
+            ".berlin",
+            ".google"
+          ]
+        },
+        {
+          "id": "reinterpretation",
+          "title": "Changing times give existing names new meanings",
+          "period": "Current reuse of .ai · 2026 applications published on 7 October",
+          "fact": ".ai remains Anguilla's country code, while its official registry also promotes it as a sign of innovation and artificial intelligence. On 7 October 2026, ICANN publishes applications for the new round: proposals still under review, rather than newly operational TLDs.",
+          "reading": "A name can express the present without being newly created. .ai shows a new cultural association attached to existing infrastructure; the 2026 applications reveal what participants would like to name next. Origin, aspiration and use are three traces to read together.",
+          "sources": [
+            "ai_iana",
+            "ai_registry",
+            "reveal2026"
+          ],
+          "strings": [
+            ".ai"
+          ]
+        }
+      ],
+      "closing": "TLDs are not a complete mirror of society. They show who was able to request a name, what space they obtained and how that name was used. The most revealing trajectory emerges where these three histories meet."
+    },
+    "de": {
+      "title": "Wie Internetnamen von der Gesellschaft erzählen",
+      "intro": "Hinter dem Punkt stehen Institutionen, Märkte, Gemeinschaften und Vorstellungen von der Zukunft. Wer TLDs im Zeitverlauf betrachtet, kann verfolgen, wie sich das Internet verändert und wie Menschen darin ihren Platz suchen. Diese historische Deutung stützt sich auf dokumentierte Fälle: Kategorien überschneiden sich, und bestehende Namen können neue Bedeutungen annehmen.",
+      "methodTitle": "Wie diese Entwicklung zu lesen ist",
+      "methodBody": "Jede Etappe trennt belegte Fakten von ihrer Deutung; die ausgewählten Beispiele sind keine Vollerhebung. Die nachfolgende reproduzierbare Erfassung umfasst alle Namen aus den für das Projekt gesammelten Quellen und wendet dasselbe heutige Klassifikationsvokabular auf die verschiedenen Vergaberunden an. Die semantische Zuordnung ist unvollständig: Namen ohne Kategorie bleiben im Bestand, und die Zahlen hängen von der Abdeckung der Regeln ab. Diese Lesart rekonstruiert weder automatisch die historische Bedeutung jedes Namens noch die gesamte Vielfalt der Online-Identitäten. Bewerbung, Delegierung und öffentliche Verfügbarkeit sind verschiedene Ereignisse; die Zählungen messen weder Nutzung noch Verbreitung.",
+      "stages": [
+        {
+          "id": "institutions",
+          "title": "Vor dem Web: Ordnung für das Netz",
+          "period": "1984–1985 · Festlegung der ursprünglichen Kategorien",
+          "fact": "Im Oktober 1984 beschreibt RFC 920 neben Ländercodes die Kategorien .com für kommerzielle Tätigkeiten, .edu für Bildung, .gov für staatliche Stellen, .mil für das Militär und .org für andere Organisationen. Das Web wird erst 1989 vorgeschlagen: .com ist älter als Unternehmenswebsites.",
+          "reading": "Die erste Namenskarte spiegelt vor allem Institutionen und administrative Zuständigkeiten eines Netzes vor dem Web. Ländercodes ergänzen diese Einteilung nach Funktionen um die geografische Zugehörigkeit.",
+          "sources": [
+            "rfc920",
+            "cern_web"
+          ],
+          "strings": [
+            ".com",
+            ".edu",
+            ".gov",
+            ".mil",
+            ".org"
+          ]
+        },
+        {
+          "id": "commercial_web",
+          "title": "Eine Adresse wird zum öffentlichen Auftritt",
+          "period": "1993–1994 · Öffnung des Web und Wachstum von .com",
+          "fact": "Am 30. April 1993 gibt das CERN die Websoftware als Gemeingut frei. Im März 1994 beschreibt RFC 1591 .com bereits als stark gewachsene Kategorie für Unternehmen. Im selben Dokument bleibt .org für Organisationen vorgesehen, die in keine andere Kategorie passen.",
+          "reading": "Mit der Verbreitung des Web kann eine Adresse zum Schaufenster, zum Dienst und zur öffentlichen Identität werden. Die Deutung von .com als Zeichen kommerzieller Präsenz gehört zu dieser späteren Nutzungsgeschichte, nicht zu seinem technischen Ursprung. Der ursprüngliche Zweck einer Endung bestimmt ihre Bedeutung nicht abschliessend.",
+          "sources": [
+            "cern_web",
+            "rfc1591"
+          ],
+          "strings": [
+            ".com",
+            ".org"
+          ]
+        },
+        {
+          "id": "differentiation",
+          "title": "Menschen, Gemeinschaften und Zugangsformen",
+          "period": "Vergaberunden 2000 und 2004 · spätere Einführungen; Anpassung von .mobi 2017",
+          "fact": "Im Jahr 2000 wählt ICANN sieben neue Vorschläge aus, darunter .name und .coop. Aus dem Verfahren 2003–2004 gehen .cat für die katalanische Sprach- und Kulturgemeinschaft und .mobi für den mobilen Zugang hervor. 2017 genehmigt ICANN die Umwandlung von .mobi in eine Standard-gTLD ohne die bisherige Mobilfunk-Charta.",
+          "reading": "Namen drücken zunehmend aus, wer wir sind, wohin wir gehören und wie wir uns verbinden. .mobi bewahrt zugleich eine Erwartung, die später in den Regeln neu gefasst wurde. Diese belegte Veränderung allein beweist keinen wirtschaftlichen Misserfolg.",
+          "sources": [
+            "round2000",
+            "cat_delegation",
+            "mobi_charter",
+            "mobi_conversion"
+          ],
+          "strings": [
+            ".biz",
+            ".info",
+            ".name",
+            ".coop",
+            ".cat",
+            ".mobi"
+          ]
+        },
+        {
+          "id": "scripts",
+          "title": "Die Adresse kann in unserer Schrift enden",
+          "period": "Mai 2010 · erste Delegierungen internationalisierter ccTLDs",
+          "fact": "Am 5. Mai 2010 meldet ICANN die ersten internationalisierten ccTLDs in der Root-Zone: arabische Namen für Ägypten, Saudi-Arabien und die Vereinigten Arabischen Emirate. Anträge waren seit November 2009 möglich. Diese TLDs stammen nicht aus der Runde 2012, sondern aus dem eigenen Verfahren für Ländercodes.",
+          "reading": "Zugehörigkeit wird nicht nur durch Gebiet oder Tätigkeit ausgedrückt. Sie kann auch in der Schrift sichtbar werden, in der ein Mensch liest und kommuniziert. Das ist ein konkreter Schritt zu einem sprachlich vielfältigeren Netz. Technische Verfügbarkeit allein misst jedoch noch keine wirksame Teilhabe.",
+          "sources": [
+            "idn2010"
+          ],
+          "strings": [
+            ".مصر",
+            ".السعودية",
+            ".امارات"
+          ]
+        },
+        {
+          "id": "plurality",
+          "title": "Städte und Marken im selben Namensraum",
+          "period": "Runde 2012 · Delegierungen ab 2013; Einführung und Nutzung in verschiedenen Jahren",
+          "fact": "Für die Runde 2012 gehen 1.930 Bewerbungen ein, darunter geografische Namen und Namen in anderen Schriften. Aus derselben Runde stammen .berlin, seit März 2014 öffentlich verfügbar, und .google, das Google und seinen verbundenen Unternehmen vorbehalten ist. .google wird im September 2014 delegiert; Google datiert den Nutzungsbeginn auf 2016.",
+          "reading": "Die Karte wird vielfältiger: städtische Identitäten und die Kontrolle einer Marke stehen innerhalb derselben Erweiterung nebeneinander. Es sind verschiedene Vorhaben unter denselben Regeln, keine einander ablösenden Epochen. Der Abstand zwischen Bewerbung, Delegierung und Nutzung zeigt, wie viel Zeit ein Name bis zum öffentlichen Auftritt brauchen kann.",
+          "sources": [
+            "reveal2012",
+            "delegated2012",
+            "berlin_case",
+            "google_policy",
+            "google_use"
+          ],
+          "strings": [
+            ".berlin",
+            ".google"
+          ]
+        },
+        {
+          "id": "reinterpretation",
+          "title": "Neue Zeiten geben alten Namen neue Bedeutungen",
+          "period": "Heutige Umdeutung von .ai · Bewerbungen 2026 am 7. Oktober veröffentlicht",
+          "fact": ".ai bleibt der Ländercode Anguillas, während die offizielle Registrierungsstelle ihn auch als Zeichen für Innovation und künstliche Intelligenz bewirbt. Am 7. Oktober 2026 veröffentlicht ICANN die Bewerbungen der neuen Runde. Es sind noch zu prüfende Vorschläge, keine bereits neu betriebenen TLDs.",
+          "reading": "Ein Name kann von der Gegenwart erzählen, ohne neu geschaffen worden zu sein. .ai zeigt eine neue kulturelle Bedeutung auf bestehender Infrastruktur; die Bewerbungen 2026 zeigen dagegen, was die Beteiligten künftig benennen möchten. Ursprung, Erwartung und Nutzung sind drei Spuren, die zusammengehören.",
+          "sources": [
+            "ai_iana",
+            "ai_registry",
+            "reveal2026"
+          ],
+          "strings": [
+            ".ai"
+          ]
+        }
+      ],
+      "closing": "TLDs sind kein vollständiges Spiegelbild der Gesellschaft. Sie zeigen, wer einen Namen beantragen konnte, welchen Raum er erhielt und wie dieser Name genutzt wurde. Die aufschlussreichste Entwicklung zeigt sich dort, wo diese drei Geschichten zusammenkommen."
+    },
+    "fr": {
+      "title": "Les noms par lesquels Internet raconte la société",
+      "intro": "Après le point se trouvent aussi des institutions, des marchés, des appartenances et des idées d'avenir. Lire les TLD dans le temps permet de suivre les transformations d'Internet et les façons d'y chercher sa place. Cette interprétation historique s'appuie sur des cas documentés : les catégories se chevauchent et des noms existants peuvent acquérir de nouveaux sens.",
+      "methodTitle": "Comment lire cette trajectoire",
+      "methodBody": "Chaque étape sépare faits documentés et interprétation ; les exemples choisis ne constituent pas un recensement. Le recensement reproductible ci-dessous comprend tous les noms des sources rassemblées pour ce projet et applique le même vocabulaire de classification actuel aux différentes vagues. L'attribution sémantique reste incomplète : les noms sans catégorie restent dans le corpus et les décomptes dépendent de la couverture des règles. Cette lecture ne reconstitue pas automatiquement le sens historique de chaque nom et ne représente pas toute la diversité des identités en ligne. Candidature, délégation et ouverture au public sont distinctes ; les décomptes ne mesurent ni l'usage ni l'adoption.",
+      "stages": [
+        {
+          "id": "institutions",
+          "title": "Avant le Web : donner un ordre au réseau",
+          "period": "1984–1985 · définition des catégories initiales",
+          "fact": "En octobre 1984, le RFC 920 décrit .com pour les activités commerciales, .edu pour l'éducation, .gov pour les administrations, .mil pour le secteur militaire et .org pour les autres organisations, aux côtés des codes pays. Le Web ne sera proposé qu'en 1989 : .com précède les sites d'entreprise.",
+          "reading": "La première carte des noms reflète surtout les institutions et les responsabilités administratives d'un réseau antérieur au Web. Les codes pays ajoutent la géographie à cette classification par fonction.",
+          "sources": [
+            "rfc920",
+            "cern_web"
+          ],
+          "strings": [
+            ".com",
+            ".edu",
+            ".gov",
+            ".mil",
+            ".org"
+          ]
+        },
+        {
+          "id": "commercial_web",
+          "title": "Une adresse devient une présence publique",
+          "period": "1993–1994 · ouverture du Web et croissance de .com",
+          "fact": "Le 30 avril 1993, le CERN place le logiciel du Web dans le domaine public. En mars 1994, le RFC 1591 décrit déjà .com comme une catégorie devenue très importante, destinée aux entreprises. Dans le même document, .org reste prévu pour les organisations qui ne trouvent pas leur place ailleurs.",
+          "reading": "Avec la diffusion du Web, l'adresse peut devenir vitrine, service et identité publique. Voir .com comme un symbole de présence commerciale relève de cette histoire des usages, postérieure à son origine technique. La vocation initiale d'une extension n'en épuise pas le sens.",
+          "sources": [
+            "cern_web",
+            "rfc1591"
+          ],
+          "strings": [
+            ".com",
+            ".org"
+          ]
+        },
+        {
+          "id": "differentiation",
+          "title": "Personnes, communautés et façons de se connecter",
+          "period": "Vagues de 2000 et 2004 · introductions ultérieures ; révision de .mobi en 2017",
+          "fact": "En 2000, l'ICANN sélectionne sept nouvelles propositions, dont .name et .coop. Le processus de 2003–2004 apporte .cat pour la communauté linguistique et culturelle catalane et .mobi pour l'accès mobile. En 2017, l'ICANN approuve la conversion de .mobi en gTLD standard, sans conserver sa charte mobile.",
+          "reading": "Les noms commencent à dire qui nous sommes, à quelles communautés nous appartenons et comment nous nous connectons. .mobi conserve aussi une attente reformulée ensuite dans ses règles : une transformation documentée qui, à elle seule, ne démontre pas un échec commercial.",
+          "sources": [
+            "round2000",
+            "cat_delegation",
+            "mobi_charter",
+            "mobi_conversion"
+          ],
+          "strings": [
+            ".biz",
+            ".info",
+            ".name",
+            ".coop",
+            ".cat",
+            ".mobi"
+          ]
+        },
+        {
+          "id": "scripts",
+          "title": "L'adresse peut se terminer dans notre écriture",
+          "period": "Mai 2010 · premières délégations de ccTLD internationalisés",
+          "fact": "Le 5 mai 2010, l'ICANN annonce les premiers ccTLD internationalisés délégués dans la racine : des noms en arabe pour l'Égypte, l'Arabie saoudite et les Émirats arabes unis. Les demandes avaient commencé en novembre 2009. Ces TLD suivent la procédure dédiée aux codes pays, et non la vague de 2012.",
+          "reading": "L'appartenance ne passe pas seulement par un territoire ou une activité. Elle peut aussi s'exprimer dans l'écriture que l'on lit et que l'on utilise pour communiquer. C'est un pas concret vers un réseau plus pluriel sur le plan linguistique ; la disponibilité technique ne mesure toutefois pas, à elle seule, l'inclusion réelle.",
+          "sources": [
+            "idn2010"
+          ],
+          "strings": [
+            ".مصر",
+            ".السعودية",
+            ".امارات"
+          ]
+        },
+        {
+          "id": "plurality",
+          "title": "Villes et marques dans un même espace",
+          "period": "Vague de 2012 · délégations dès 2013 ; ouvertures et usages à des dates différentes",
+          "fact": "La vague de 2012 reçoit 1 930 candidatures, dont des noms géographiques et des noms dans d'autres écritures. Elle donne naissance à .berlin, ouvert au public en mars 2014, et à .google, réservé à Google et à ses sociétés affiliées. .google est délégué en septembre 2014 ; Google situe son premier usage en 2016.",
+          "reading": "La carte se diversifie : identités urbaines et contrôle de la marque coexistent dans une même expansion. Ce sont des projets différents permis par les mêmes règles, et non des époques qui se remplacent. L'écart entre candidature, délégation et usage montre le temps nécessaire pour transformer un nom en présence.",
+          "sources": [
+            "reveal2012",
+            "delegated2012",
+            "berlin_case",
+            "google_policy",
+            "google_use"
+          ],
+          "strings": [
+            ".berlin",
+            ".google"
+          ]
+        },
+        {
+          "id": "reinterpretation",
+          "title": "Les époques changent aussi le sens des noms",
+          "period": "Réinterprétation actuelle de .ai · candidatures 2026 publiées le 7 octobre",
+          "fact": ".ai reste le code pays d'Anguilla, mais son registre officiel le présente aussi comme un signe d'innovation et d'intelligence artificielle. Le 7 octobre 2026, l'ICANN publie les candidatures de la nouvelle vague : ce sont des propositions encore à examiner, pas de nouveaux TLD déjà opérationnels.",
+          "reading": "Un nom peut raconter le présent sans venir de naître. .ai montre une nouvelle association culturelle sur une infrastructure existante ; les candidatures 2026 montrent ce que les acteurs aimeraient nommer demain. Origine, aspiration et usage sont trois traces à lire ensemble.",
+          "sources": [
+            "ai_iana",
+            "ai_registry",
+            "reveal2026"
+          ],
+          "strings": [
+            ".ai"
+          ]
+        }
+      ],
+      "closing": "Les TLD ne sont pas un miroir complet de la société. Ils montrent qui a pu demander un nom, quel espace lui a été accordé et comment ce nom a été utilisé. La trajectoire la plus révélatrice apparaît au croisement de ces trois histoires."
+    }
+  }
+}

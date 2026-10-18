@@ -13,7 +13,7 @@ const fs=require('node:fs');
 const assert=require('node:assert/strict');
 const crypto=require('node:crypto');
 const path=require('node:path');
-const REVIEW_PATH='docs/editorial-review-2026-10-18.json';
+const REVIEW_PATH='docs/editorial-review-'+JSON.parse(fs.readFileSync('publication.json','utf8')).releasedOn+'.json';
 const REVIEW_BASE='65e0fbe2080c2ee841e8abc01e1ddec113a74b8e';
 const INVARIANTS_SHA='0abaa5eb1c9c93ac506790a79768e8859079baa8800a79d1851e6590d4890844';
 const IMMUTABLE_SHA='b3499c7678cba3eb0fea84eb9f0fc1b87fd06248997ecd60ab0573e88d97592c';
@@ -167,7 +167,7 @@ function checkProtection(review,source,publication){
 }
 function validateReviewedFiles(review,publication){
  assert.equal(review.status,'reviewed','EDITORIAL_REVIEW_REQUIRED: final hashes have not been reviewed');
- assert.equal(review.reviewedOn,'2026-10-18','Review date changed');
+ assert.equal(review.reviewedOn,publication.releasedOn,'Review must cover the exact publication date');
  assert.equal(review.publicationVersion,publication.version,'This review does not cover another release');
  assert.equal(publication.releasedOn,review.reviewedOn,'Publication and review dates differ');
  assert.ok(review.files&&review.files['src/index.web.html']&&review.files['data/translations.json'],'Review must include the source and four-language dictionary');

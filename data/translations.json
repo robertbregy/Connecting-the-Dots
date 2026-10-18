@@ -2530,7 +2530,8 @@
     "sectorFood": "Food & beverage",
     "sectorAutomotive": "Automotive & mobility",
     "sectorTelecom": "Telecom & connectivity",
-    "sectorRealEstate": "Real estate & construction"
+    "sectorRealEstate": "Real estate & construction",
+    "release0785": "Application fees by round, a cultural history of TLDs and a reproducible name census, with classification coverage and sources."
   },
   "it": {
     "brand": "Brand",
@@ -5063,7 +5064,8 @@
     "sectorFood": "Alimentari e bevande",
     "sectorAutomotive": "Auto e mobilità",
     "sectorTelecom": "Telecomunicazioni e connettività",
-    "sectorRealEstate": "Immobiliare e costruzioni"
+    "sectorRealEstate": "Immobiliare e costruzioni",
+    "release0785": "Fee di candidatura per round, traiettoria culturale dei TLD e censimento riproducibile dei nomi, con copertura delle classificazioni e fonti."
   },
   "de": {
     "brand": "Marke",
@@ -7596,7 +7598,8 @@
     "sectorFood": "Lebensmittel und Getränke",
     "sectorAutomotive": "Automobil und Mobilität",
     "sectorTelecom": "Telekommunikation und Konnektivität",
-    "sectorRealEstate": "Immobilien und Bauwesen"
+    "sectorRealEstate": "Immobilien und Bauwesen",
+    "release0785": "Antragsgebühren je Runde, Kulturgeschichte der TLDs und reproduzierbares Namensinventar mit Klassifikationsabdeckung und Quellen."
   },
   "fr": {
     "brand": "Marque",
@@ -10129,6 +10132,7 @@
     "sectorFood": "Alimentation et boissons",
     "sectorAutomotive": "Automobile et mobilité",
     "sectorTelecom": "Télécommunications et connectivité",
-    "sectorRealEstate": "Immobilier et construction"
+    "sectorRealEstate": "Immobilier et construction",
+    "release0785": "Frais de candidature par cycle, histoire culturelle des TLD et recensement reproductible des noms avec couverture des classifications et sources."
   }
 }
