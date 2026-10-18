@@ -1,0 +1,388 @@
+{
+  "axes": {
+    "idn": {
+      "basis": "ASCII A-label starts xn--; separate from semantic categories",
+      "strings": 216
+    }
+  },
+  "categories": [
+    {
+      "availability": [
+        "all-corpus"
+      ],
+      "count": 167,
+      "dimension": "editorial-string-theme",
+      "id": "technology",
+      "label": "Technology"
+    },
+    {
+      "availability": [
+        "all-corpus"
+      ],
+      "count": 152,
+      "dimension": "editorial-string-theme",
+      "id": "commerce",
+      "label": "Commerce & finance"
+    },
+    {
+      "availability": [
+        "all-corpus"
+      ],
+      "count": 71,
+      "dimension": "editorial-string-theme",
+      "id": "professions",
+      "label": "Professions & services"
+    },
+    {
+      "availability": [
+        "all-corpus"
+      ],
+      "count": 90,
+      "dimension": "editorial-string-theme",
+      "id": "culture",
+      "label": "Culture, media & education"
+    },
+    {
+      "availability": [
+        "all-corpus"
+      ],
+      "count": 150,
+      "dimension": "editorial-string-theme",
+      "id": "lifestyle",
+      "label": "Lifestyle, mobility & leisure"
+    },
+    {
+      "availability": [
+        "all-corpus"
+      ],
+      "count": 29,
+      "dimension": "editorial-string-theme",
+      "id": "health",
+      "label": "Health"
+    },
+    {
+      "availability": [
+        "all-corpus"
+      ],
+      "count": 24,
+      "dimension": "editorial-string-theme",
+      "id": "community",
+      "label": "Identity & community"
+    },
+    {
+      "availability": [
+        "all-corpus"
+      ],
+      "count": 69,
+      "dimension": "editorial-string-theme",
+      "id": "geography",
+      "label": "Places & territories"
+    },
+    {
+      "availability": [
+        "2026"
+      ],
+      "count": 332,
+      "dimension": "official-designation",
+      "id": "brand",
+      "label": "Brand designation (APS 2026)"
+    },
+    {
+      "availability": [
+        "all-corpus"
+      ],
+      "count": 19,
+      "dimension": "editorial-string-theme",
+      "id": "institutions",
+      "label": "Institutions & public interest"
+    },
+    {
+      "availability": [
+        "all-corpus"
+      ],
+      "count": 319,
+      "dimension": "formal-type",
+      "id": "territorial-code",
+      "label": "Territorial codes"
+    }
+  ],
+  "comparableCategoryIds": [
+    "technology",
+    "commerce",
+    "professions",
+    "culture",
+    "lifestyle",
+    "health",
+    "community",
+    "geography",
+    "institutions"
+  ],
+  "counts": {
+    "classified": 1174,
+    "strings": 3240,
+    "unclassified": 2066
+  },
+  "coverage": {
+    "apsNewPrimaryDistinctStrings": 980,
+    "apsRows": 2783,
+    "conflictingStringThemesExcluded": [],
+    "inheritedStringThemeStrings": 525,
+    "roles": {
+      "2000-requested": 190,
+      "2004-requested": 9,
+      "2012-approved-string-change": 4,
+      "2012-requested": 1409,
+      "2026-existing-variant-only": 6,
+      "2026-new-primary": 980,
+      "2026-replacement": 763,
+      "2026-requested-idn-variant": 12,
+      "explorer-catalog": 1849,
+      "iana-root-history": 1599
+    },
+    "semanticClassified": 713
+  },
+  "methodology": [
+    "Complete deduplicated union of the pinned IANA/history universe, every recorded 2000 requested string, 2004 and 2012 applications, official 2026 APS listing, variants, approved changes and Explorer catalog. One row per ASCII label; no case-study selection.",
+    "Cohort denominators are distinct requested primary strings: 190 (2000), 9 (2004), 1409 (2012), 980 (2026). The seven legacy gTLDs are a different institutional baseline, not an ICANN application round. Country-code, infrastructure and test labels remain in the corpus.",
+    "2026 replacement records, existing-TLD variant-only applications and requested IDN variants remain searchable with explicit roles. They add no weight to the 980-string main comparison. A label also requested as a new primary string is counted once in that cohort.",
+    "Semantic families reuse the existing Explorer exact-label dictionaries and explicit editorial themes, plus consistently classified 2012 string-taxonomy rows and the separate 2026 string_theme field. Seven exact-label readings of the documented selected 2000 mandates complete biz/info/name/pro/coop/aero/museum. They are applied identically across cohorts as a present editorial reading of labels, not proof of historical intention or observed use. In particular info remains unrestricted and its technology family is an editorial aggregation, never a registrant-sector claim.",
+    "No applicant sectors, parent companies, registry-name matches, Explorer business-name similarity heuristics, fallback topics or status-based special topics are imported as semantic evidence. A word is never used to infer the applicant's industry or identity.",
+    "The family aggregation is explicit in TOPIC_FAMILY and SECTOR_FAMILY in the builder. Culture includes media and education; commerce includes finance; professions includes property services; lifestyle includes mobility and leisure. Categories overlap, so their counts and shares must not be summed.",
+    "Only positive official APS 2026 flags support brand designation. Historic brand values are null, not zero. Official geographic/community flags are retained separately from the semantic categories; their absence is not a negative determination. comparableCategoryIds excludes brand and territorial-code.",
+    "Country-code is a formal territorial-code category and does not describe current use (.ai, for example). IDN is an independent A-label axis and does not automatically imply a technology, cultural or community category.",
+    "Unclassified is explicit (blank category_ids in CSV): it means no positive category in the limited inherited rules, not absence of social meaning. Unequal language/dictionary coverage prevents treating differences as a census of society. Show classified/unclassified coverage and the full cohort denominator beside every percentage. Global classified counts include formal territorial codes and APS brand designations; semantic_classified counts only the comparable editorial families.",
+    "IANA registration dates are profile/root-history dates, never commercial opening dates. Applications record proposals, root records record delegation/history, and neither proves registration volumes, active sites or social adoption. Snapshots are pinned and no future APS confirmation is presumed."
+  ],
+  "rounds": [
+    {
+      "categories": {
+        "brand": null,
+        "commerce": 1,
+        "community": 1,
+        "culture": 1,
+        "geography": 0,
+        "health": 0,
+        "institutions": 3,
+        "lifestyle": 0,
+        "professions": 0,
+        "technology": 1,
+        "territorial-code": 0,
+        "unclassified": 0
+      },
+      "classified": 7,
+      "idn_strings": 0,
+      "round": "legacy",
+      "scope": "legacy gTLD definitions",
+      "semantic_classified": 7,
+      "semantic_unclassified": 0,
+      "string_themes": {},
+      "strings": 7,
+      "unclassified": 0
+    },
+    {
+      "categories": {
+        "brand": null,
+        "commerce": 13,
+        "community": 10,
+        "culture": 19,
+        "geography": 4,
+        "health": 1,
+        "institutions": 4,
+        "lifestyle": 18,
+        "professions": 12,
+        "technology": 16,
+        "territorial-code": 0,
+        "unclassified": 99
+      },
+      "classified": 91,
+      "idn_strings": 0,
+      "round": "2000",
+      "scope": "distinct requested primary strings; application count is not the denominator",
+      "semantic_classified": 91,
+      "semantic_unclassified": 99,
+      "string_themes": {
+        "Automotive & mobility": 1,
+        "Consumer & lifestyle": 2,
+        "Cybersecurity, identity & trust": 2,
+        "Education & research": 2,
+        "Energy, industrial & materials": 2,
+        "Finance & insurance": 3,
+        "Food & beverage": 1,
+        "Gaming, sports & entertainment": 4,
+        "Health & life sciences": 1,
+        "Media, social & communications": 10,
+        "Professional & business services": 8,
+        "Real estate & construction": 2,
+        "Retail & commerce": 6,
+        "Technology, software & infrastructure": 8,
+        "Travel & hospitality": 3
+      },
+      "strings": 190,
+      "unclassified": 99
+    },
+    {
+      "categories": {
+        "brand": null,
+        "commerce": 0,
+        "community": 1,
+        "culture": 2,
+        "geography": 2,
+        "health": 0,
+        "institutions": 3,
+        "lifestyle": 1,
+        "professions": 1,
+        "technology": 2,
+        "territorial-code": 0,
+        "unclassified": 0
+      },
+      "classified": 9,
+      "idn_strings": 0,
+      "round": "2004",
+      "scope": "distinct requested primary strings; application count is not the denominator",
+      "semantic_classified": 9,
+      "semantic_unclassified": 0,
+      "string_themes": {
+        "Media, social & communications": 1
+      },
+      "strings": 9,
+      "unclassified": 0
+    },
+    {
+      "categories": {
+        "brand": null,
+        "commerce": 46,
+        "community": 16,
+        "culture": 49,
+        "geography": 53,
+        "health": 9,
+        "institutions": 11,
+        "lifestyle": 78,
+        "professions": 55,
+        "technology": 36,
+        "territorial-code": 0,
+        "unclassified": 1076
+      },
+      "classified": 333,
+      "idn_strings": 109,
+      "round": "2012",
+      "scope": "distinct requested primary strings; application count is not the denominator",
+      "semantic_classified": 333,
+      "semantic_unclassified": 1076,
+      "string_themes": {
+        "Automotive & mobility": 6,
+        "Consumer & lifestyle": 18,
+        "Cybersecurity, identity & trust": 4,
+        "Education & research": 5,
+        "Energy, industrial & materials": 5,
+        "Finance & insurance": 17,
+        "Food & beverage": 7,
+        "Gaming, sports & entertainment": 18,
+        "Health & life sciences": 9,
+        "Media, social & communications": 26,
+        "Professional & business services": 22,
+        "Real estate & construction": 16,
+        "Retail & commerce": 13,
+        "Technology, software & infrastructure": 21,
+        "Telecom & connectivity": 2,
+        "Travel & hospitality": 7
+      },
+      "strings": 1409,
+      "unclassified": 1076
+    },
+    {
+      "categories": {
+        "brand": 332,
+        "commerce": 103,
+        "community": 1,
+        "culture": 35,
+        "geography": 1,
+        "health": 20,
+        "institutions": 2,
+        "lifestyle": 69,
+        "professions": 16,
+        "technology": 123,
+        "territorial-code": 0,
+        "unclassified": 486
+      },
+      "classified": 494,
+      "idn_strings": 12,
+      "round": "2026",
+      "scope": "distinct requested primary strings; application count is not the denominator",
+      "semantic_classified": 334,
+      "semantic_unclassified": 646,
+      "string_themes": {
+        "AI & automation": 25,
+        "Automotive & mobility": 10,
+        "Consumer & lifestyle": 18,
+        "Crypto & digital assets": 33,
+        "Cybersecurity, identity & trust": 20,
+        "Education & research": 8,
+        "Energy, industrial & materials": 20,
+        "Finance & insurance": 30,
+        "Food & beverage": 12,
+        "Gaming, sports & entertainment": 15,
+        "Health & life sciences": 20,
+        "Media, social & communications": 27,
+        "Professional & business services": 13,
+        "Real estate & construction": 3,
+        "Retail & commerce": 19,
+        "Technology, software & infrastructure": 41,
+        "Telecom & connectivity": 4,
+        "Travel & hospitality": 14
+      },
+      "strings": 980,
+      "unclassified": 486
+    }
+  ],
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "file": "tld_universe.csv",
+      "sha256": "fa9718504c52b11197a716c217be35462bb3fb4fa466e6924d2389814ec60ad2"
+    },
+    {
+      "file": "application_strings_2000.csv",
+      "sha256": "abc6b07b17d4a8e3882f0ab885e4fd4d66ed795224758a22ac6726c1e81486a3"
+    },
+    {
+      "file": "applications_2000.csv",
+      "sha256": "e6b7143b5b73b3c9a00dfccb95f2409747d234f37b8903275cb77fcf8885d656"
+    },
+    {
+      "file": "applications_2004.csv",
+      "sha256": "ae50f520605518655bb8ec08ecbb756cc0d31140427037c19bff3a88c73fce1b"
+    },
+    {
+      "file": "applications_2012.csv",
+      "sha256": "96b93fafc298cfc632481f43fdf439b9d65eb4a022356ea4124a6e494fd50822"
+    },
+    {
+      "file": "applications_2026_aps_official_listing.csv",
+      "sha256": "520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887"
+    },
+    {
+      "file": "applications_2026_aps_official_provenance.json",
+      "sha256": "928c77917c7dba4b0a9b4e6705e131984b83dc2d50b64b6c805143358fe596a6"
+    },
+    {
+      "file": "aps_2026_current_analytics.csv",
+      "sha256": "9734855dc1451e59c99badb271248dc2a1464223e6b1c9fe036d61746fed7e75"
+    },
+    {
+      "file": "application_economic_map_2012_2026.csv",
+      "sha256": "fd296f84bddca790e9b581c0665c08f5903c2b86758d90d23e8008d434296f28"
+    },
+    {
+      "file": "explorer_catalog.csv",
+      "sha256": "5ce16d53cd9bb1860c35c2dbab661d02817caff86974514433dd453ac4860b53"
+    },
+    {
+      "file": "scripts/assemble_data.js",
+      "sha256": "cdf3be31c5224b0bb98304eca9b9de535739e25a252d5eb7a4e913b5d59a7e6a"
+    },
+    {
+      "file": "scripts/build_tld_cultural_trajectory.py",
+      "sha256": "949c3065e50266536eeaa7a1b5b386c9de08d79755b2a124d0459154ad10473d"
+    }
+  ]
+}
