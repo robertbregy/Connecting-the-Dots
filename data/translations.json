@@ -476,7 +476,7 @@
     "powerBackendBody": "Registry Service Providers supply registry, DNS and DNSSEC infrastructure across many TLDs. Technical concentration can differ sharply from ownership.",
     "powerDemand": "Demand",
     "powerDemandBody": "Applicants decide which strings are worth pursuing. Their public business locations reveal where commercial, civic and institutional demand originates.",
-    "geoMapTitle": "One map, four different questions",
+    "geoMapTitle": "Mapping and measuring power",
     "geoMapSub": "Switch layers to see institutional coordination, evaluated technical supply and applicant demand. They overlap, but they are not the same kind of power.",
     "applicantRegion2026": "Applicant organizations by ICANN region · 2026",
     "applicantRegion2026Note": "ICANN reports applicants by region in the Reveal Day overview, not applications per region. This maps the applicants' region, not DNS infrastructure or the market served.",
@@ -2531,7 +2531,8 @@
     "sectorAutomotive": "Automotive & mobility",
     "sectorTelecom": "Telecom & connectivity",
     "sectorRealEstate": "Real estate & construction",
-    "release0785": "Application fees by round, a cultural history of TLDs and a reproducible name census, with classification coverage and sources."
+    "release0785": "Application fees by round, a cultural history of TLDs and a reproducible name census, with classification coverage and sources.",
+    "release0786": "Added gTLD counts by technical platform and two top-50 comparisons: website presence and delegated domains, with origins, dates, sources and distinct limitations."
   },
   "it": {
     "brand": "Brand",
@@ -3010,7 +3011,7 @@
     "powerBackendBody": "I Registry Service Provider forniscono infrastruttura di registro, DNS e DNSSEC a molti TLD. La concentrazione tecnica può essere molto diversa dalla proprietà dei namespace.",
     "powerDemand": "Domanda",
     "powerDemandBody": "Gli applicant decidono quali stringhe vale la pena richiedere. Le loro sedi operative pubbliche mostrano da dove nasce la domanda commerciale, civica e istituzionale.",
-    "geoMapTitle": "Una mappa, quattro domande diverse",
+    "geoMapTitle": "Mappe e numeri del potere",
     "geoMapSub": "Cambia livello per vedere coordinamento istituzionale, offerta tecnica valutata e domanda degli applicant. Si sovrappongono, ma non rappresentano lo stesso tipo di potere.",
     "applicantRegion2026": "Soggetti candidati per regione ICANN · 2026",
     "applicantRegion2026Note": "ICANN pubblica i candidati per regione nel riepilogo del Reveal Day, non le candidature per regione. La mappa rappresenta l’origine dei candidati, non l’infrastruttura DNS o i mercati serviti.",
@@ -5065,7 +5066,8 @@
     "sectorAutomotive": "Auto e mobilità",
     "sectorTelecom": "Telecomunicazioni e connettività",
     "sectorRealEstate": "Immobiliare e costruzioni",
-    "release0785": "Fee di candidatura per round, traiettoria culturale dei TLD e censimento riproducibile dei nomi, con copertura delle classificazioni e fonti."
+    "release0785": "Fee di candidatura per round, traiettoria culturale dei TLD e censimento riproducibile dei nomi, con copertura delle classificazioni e fonti.",
+    "release0786": "Aggiunti i conteggi dei gTLD per piattaforma tecnica e due classifiche dei primi 50: presenza nei siti web e domini delegati, con origine, date, fonti e limiti distinti."
   },
   "de": {
     "brand": "Marke",
@@ -5544,7 +5546,7 @@
     "powerBackendBody": "Registry Service Provider liefern Registry-, DNS- und DNSSEC-Infrastruktur für viele TLDs. Technische Konzentration kann sich stark von Eigentum oder Registry-Betrieb unterscheiden.",
     "powerDemand": "Nachfrage",
     "powerDemandBody": "Antragsteller entscheiden, welche Strings eine Bewerbung wert sind. Ihre öffentlichen Geschäftssitze zeigen, wo kommerzielle, gesellschaftliche und institutionelle Nachfrage entsteht.",
-    "geoMapTitle": "Eine Karte, vier verschiedene Fragen",
+    "geoMapTitle": "Macht kartieren und messen",
     "geoMapSub": "Wechsle die Ebene, um institutionelle Koordination, bewertetes technisches Angebot und Nachfrage der Antragsteller zu sehen. Sie überlappen, sind aber nicht dieselbe Form von Macht.",
     "applicantRegion2026": "Bewerber nach ICANN-Region · 2026",
     "applicantRegion2026Note": "ICANN veröffentlicht Bewerber nach Region, nicht Bewerbungen pro Region. Die Karte zeigt die Herkunft der Bewerber, nicht die DNS-Infrastruktur oder bediente Märkte.",
@@ -7599,7 +7601,8 @@
     "sectorAutomotive": "Automobil und Mobilität",
     "sectorTelecom": "Telekommunikation und Konnektivität",
     "sectorRealEstate": "Immobilien und Bauwesen",
-    "release0785": "Antragsgebühren je Runde, Kulturgeschichte der TLDs und reproduzierbares Namensinventar mit Klassifikationsabdeckung und Quellen."
+    "release0785": "Antragsgebühren je Runde, Kulturgeschichte der TLDs und reproduzierbares Namensinventar mit Klassifikationsabdeckung und Quellen.",
+    "release0786": "gTLD-Zählungen nach technischer Plattform und zwei Top-50-Vergleiche ergänzt: Websitepräsenz und delegierte Domains, mit Herkunft, Daten, Quellen und getrennten Grenzen."
   },
   "fr": {
     "brand": "Marque",
@@ -8078,7 +8081,7 @@
     "powerBackendBody": "Les Registry Service Providers fournissent l’infrastructure de registre, DNS et DNSSEC à de nombreux TLD. La concentration technique peut être très différente de la propriété ou de l’exploitation des espaces de noms.",
     "powerDemand": "Demande",
     "powerDemandBody": "Les candidats décident quelles chaînes méritent une candidature. Leurs adresses professionnelles publiques montrent d’où vient la demande commerciale, civique et institutionnelle.",
-    "geoMapTitle": "Une carte, quatre questions différentes",
+    "geoMapTitle": "Cartographier et mesurer le pouvoir",
     "geoMapSub": "Changez de couche pour voir la coordination institutionnelle, l’offre technique évaluée et la demande des candidats. Elles se recoupent, mais ne représentent pas la même forme de pouvoir.",
     "applicantRegion2026": "Candidats par région ICANN · 2026",
     "applicantRegion2026Note": "L’ICANN publie les candidats par région, non les candidatures par région. La carte représente leur origine, pas l’infrastructure DNS ni les marchés desservis.",
@@ -10133,6 +10136,7 @@
     "sectorAutomotive": "Automobile et mobilité",
     "sectorTelecom": "Télécommunications et connectivité",
     "sectorRealEstate": "Immobilier et construction",
-    "release0785": "Frais de candidature par cycle, histoire culturelle des TLD et recensement reproductible des noms avec couverture des classifications et sources."
+    "release0785": "Frais de candidature par cycle, histoire culturelle des TLD et recensement reproductible des noms avec couverture des classifications et sources.",
+    "release0786": "Ajout des décomptes de gTLD par plateforme technique et de deux comparaisons des 50 premiers : présence sur les sites et domaines délégués, avec origines, dates, sources et limites distinctes."
   }
 }

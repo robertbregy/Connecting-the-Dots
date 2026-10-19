@@ -19,6 +19,7 @@ from scripts.render_internet_access import build_access_pages
 from scripts.render_field_investigations import build_investigations
 from scripts.city_namespace_editorial import render as render_city_namespace
 from scripts.render_tld_cultural_trajectory import render as render_tld_cultural_trajectory
+from scripts.render_tld_market import render as render_tld_market
 from scripts.apply_ia_b2_crossnav import apply as apply_ia_b2_crossnav, validate as validate_ia_b2_crossnav
 
 ROOT = Path(__file__).resolve().parent
@@ -142,7 +143,7 @@ def build_manifest() -> None:
 
 def data_pack_files() -> list[Path]:
     snapshot = json.loads((DATA / "iana_snapshot.json").read_text())
-    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "application_2026_snapshot.json", DATA / "applications_2026_aps_official_provenance.json", DATA / "aps_2026_application_graph.json", DATA / "aps_2026_application_graph_manifest.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "economic_cases.json", DATA / "social_cases.json", DATA / "city_namespace_editorial.json", DATA / "audit_20261018_editorial.json", DATA / "aps_2026_current_analytics.json", DATA / "aps_2026_current_analytics_manifest.json", DATA / "aps_2026_applicant_sector_evidence.json", DATA / "round_application_fees.json", DATA / "tld_cultural_editorial.json", DATA / "tld_cultural_patterns.json", ROOT / snapshot["archive_path"]]
+    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "application_2026_snapshot.json", DATA / "applications_2026_aps_official_provenance.json", DATA / "aps_2026_application_graph.json", DATA / "aps_2026_application_graph_manifest.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "economic_cases.json", DATA / "social_cases.json", DATA / "city_namespace_editorial.json", DATA / "audit_20261018_editorial.json", DATA / "aps_2026_current_analytics.json", DATA / "aps_2026_current_analytics_manifest.json", DATA / "aps_2026_applicant_sector_evidence.json", DATA / "round_application_fees.json", DATA / "tld_cultural_editorial.json", DATA / "tld_cultural_patterns.json", DATA / "tld_market_snapshot.json", DATA / "tld_market_provenance.json", *sorted((DATA / "evidence" / "tld-market-2026-10-19").glob("*.json")), ROOT / snapshot["archive_path"]]
 
 
 def build_data_pack() -> None:
@@ -401,6 +402,7 @@ def main() -> None:
     subprocess.run(["python3", str(ROOT / "scripts" / "build_aps_current_analytics.py")], check=True)
     bundle_runtime()
     subprocess.run(["python3", str(ROOT / "scripts" / "build_tld_cultural_trajectory.py")], check=True)
+    subprocess.run(["python3", str(ROOT / "scripts" / "build_tld_market.py")], check=True)
     build_manifest()
     build_data_pack()
     build_index()
@@ -411,6 +413,7 @@ def main() -> None:
     build_investigations(ROOT)
     render_city_namespace(ROOT)
     render_tld_cultural_trajectory(ROOT)
+    render_tld_market(ROOT)
     subprocess.run(["node", str(ROOT / "scripts" / "reconcile_editorial.cjs")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "render_research.cjs")], check=True)
     render_aps_application_atlas(ROOT)
@@ -432,6 +435,7 @@ def main() -> None:
     subprocess.run(["python3", str(ROOT / "scripts" / "release_check.py")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "validate_audit_20261018.cjs")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "validate_tld_cultural.cjs")], check=True)
+    subprocess.run(["node", str(ROOT / "scripts" / "validate_tld_market.cjs")], check=True)
     print(f"Built static {INDEX.name} with shared assets and deferred Explorer profiles from {SRC.relative_to(ROOT)}")
     print("Validated runtime, event history, provenance, local assets, Reveal Day state and data-pack sync")
     print(f"Refreshed manifest and data pack for v{VERSION}")

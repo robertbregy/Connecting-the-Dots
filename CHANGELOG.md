@@ -1,3 +1,9 @@
+## v0.7.86 — 19 October 2026
+
+- Added a provider footprint view beside the power map: attributed gTLD counts, shared infrastructure groups and unattributed TLDs. Technical inference is distinguished from contractual responsibility and the 2026 RSP evaluation inventory.
+- Added two top-50 views in Economics: website-use shares including ccTLDs, and delegated-domain counts for observed gTLDs. Each row carries its documented origin and IANA registration date; filters retain original positions.
+- Archived attributed aggregate sources with hashes, reproducible cohort joins and CSV exports. Exact global website totals remain unavailable; no such counts are inferred from percentages. Preserved RR1/RR2 and all prior technical ZIPs.
+
 ## v0.7.85 — 19 October 2026
 
 - Added source-backed round application fees, separating documented collections, reconstructed amounts and unavailable accounting totals.

@@ -1,0 +1,27 @@
+name,slug,url,evidence,tlds,attributionKind
+Identity Digital,identity-digital,https://www.identity.digital/,,458,named-fingerprint
+GoDaddy Registry,godaddy-registry,https://registry.godaddy/,,208,named-fingerprint
+CentralNic (Team Internet),centralnic-team-internet,https://www.centralnic.com/,,87,named-fingerprint
+Nominet,nominet,https://www.nominet.uk/,,79,named-fingerprint
+Tucows,tucows,https://tucowsdomains.com/,,54,named-fingerprint
+GMO Registry,gmo-registry,https://www.gmoregistry.com/,,46,named-fingerprint
+Google Registry,google-registry,https://www.registry.google/,,46,named-fingerprint
+Knipp / TANGO Registry,knipp-tango-registry,https://www.knipp.de/,,29,named-fingerprint
+KNET,knet,https://www.knet.cn/,,22,named-fingerprint
+Verisign,verisign,https://www.verisign.com/,,17,named-fingerprint
+AFNIC,afnic,https://www.afnic.fr/,,12,named-fingerprint
+Teleinfo,teleinfo,https://www.teleinfo.cn/,,10,named-fingerprint
+CNNIC,cnnic,https://www.cnnic.cn/,,9,named-fingerprint
+NIC.br,nic-br,https://registro.br/,,5,named-fingerprint
+fury.ca,auto-fury-ca,,rdap_host shared by 5 TLDs,5,unnamed-infrastructure
+RyCE,ryce,https://www.ryce-rsp.com/,,4,named-fingerprint
+dns.net.za,auto-dns-net-za,,ns_suffix shared by 7 TLDs,3,unnamed-infrastructure
+FlexiReg,flexireg,https://flexireg.net/,,2,named-fingerprint
+aka-ns.net,auto-aka-ns-net,,ns_suffix shared by 12 TLDs,2,unnamed-infrastructure
+dnsnode.net,auto-dnsnode-net,,ns_suffix shared by 16 TLDs,2,unnamed-infrastructure
+ripn.net,auto-ripn-net,,ns_suffix shared by 25 TLDs,2,unnamed-infrastructure
+anycastdns.cz,auto-anycastdns-cz,,ns_suffix shared by 25 TLDs,1,unnamed-infrastructure
+monic.mo,auto-monic-mo,,ns_suffix shared by 5 TLDs,1,unnamed-infrastructure
+ns.il,auto-ns-il,,ns_suffix shared by 6 TLDs,1,unnamed-infrastructure
+ntc.org.pk,auto-ntc-org-pk,,ns_suffix shared by 3 TLDs,1,unnamed-infrastructure
+pch.net,auto-pch-net,,ns_suffix shared by 17 TLDs,1,unnamed-infrastructure

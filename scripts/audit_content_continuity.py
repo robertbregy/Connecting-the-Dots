@@ -216,7 +216,7 @@ def verify_reviewed_fieldnotes_delta():
 # section SHA-256 fingerprints, not a version/date-based exemption. Reuse the
 # source guard so both gates enforce the same protected inventories, DOI
 # identifiers, link replacements and immutable research/technical archives.
-review_path=B/('docs/editorial-review-'+publication['releasedOn']+'.json')
+review_path=B/publication.get('editorialReviewPath','docs/editorial-review-'+publication['releasedOn']+'.json')
 editorial_review={'manifest':review_path.as_posix(),'validated':False,
     'allowed_paths':[],'errors':[]}
 review=None

@@ -1,0 +1,1046 @@
+{
+  "schemaVersion": 1,
+  "retrievedOn": "2026-10-19",
+  "zoneDate": "2026-10-18",
+  "webDate": "2026-10-18",
+  "scope": "all gTLDs in nTLDData snapshot; web survey also includes ccTLDs",
+  "inventoryTLDs": 1131,
+  "zoneMeasuredTLDs": 1101,
+  "missingZoneTLDs": 30,
+  "backends": [
+    {
+      "name": "Identity Digital",
+      "slug": "identity-digital",
+      "url": "https://www.identity.digital/",
+      "evidence": null,
+      "tlds": 458,
+      "attributionKind": "named-fingerprint"
+    },
+    {
+      "name": "GoDaddy Registry",
+      "slug": "godaddy-registry",
+      "url": "https://registry.godaddy/",
+      "evidence": null,
+      "tlds": 208,
+      "attributionKind": "named-fingerprint"
+    },
+    {
+      "name": "CentralNic (Team Internet)",
+      "slug": "centralnic-team-internet",
+      "url": "https://www.centralnic.com/",
+      "evidence": null,
+      "tlds": 87,
+      "attributionKind": "named-fingerprint"
+    },
+    {
+      "name": "Nominet",
+      "slug": "nominet",
+      "url": "https://www.nominet.uk/",
+      "evidence": null,
+      "tlds": 79,
+      "attributionKind": "named-fingerprint"
+    },
+    {
+      "name": "Tucows",
+      "slug": "tucows",
+      "url": "https://tucowsdomains.com/",
+      "evidence": null,
+      "tlds": 54,
+      "attributionKind": "named-fingerprint"
+    },
+    {
+      "name": "GMO Registry",
+      "slug": "gmo-registry",
+      "url": "https://www.gmoregistry.com/",
+      "evidence": null,
+      "tlds": 46,
+      "attributionKind": "named-fingerprint"
+    },
+    {
+      "name": "Google Registry",
+      "slug": "google-registry",
+      "url": "https://www.registry.google/",
+      "evidence": null,
+      "tlds": 46,
+      "attributionKind": "named-fingerprint"
+    },
+    {
+      "name": "Knipp / TANGO Registry",
+      "slug": "knipp-tango-registry",
+      "url": "https://www.knipp.de/",
+      "evidence": null,
+      "tlds": 29,
+      "attributionKind": "named-fingerprint"
+    },
+    {
+      "name": "KNET",
+      "slug": "knet",
+      "url": "https://www.knet.cn/",
+      "evidence": null,
+      "tlds": 22,
+      "attributionKind": "named-fingerprint"
+    },
+    {
+      "name": "Verisign",
+      "slug": "verisign",
+      "url": "https://www.verisign.com/",
+      "evidence": null,
+      "tlds": 17,
+      "attributionKind": "named-fingerprint"
+    },
+    {
+      "name": "AFNIC",
+      "slug": "afnic",
+      "url": "https://www.afnic.fr/",
+      "evidence": null,
+      "tlds": 12,
+      "attributionKind": "named-fingerprint"
+    },
+    {
+      "name": "Teleinfo",
+      "slug": "teleinfo",
+      "url": "https://www.teleinfo.cn/",
+      "evidence": null,
+      "tlds": 10,
+      "attributionKind": "named-fingerprint"
+    },
+    {
+      "name": "CNNIC",
+      "slug": "cnnic",
+      "url": "https://www.cnnic.cn/",
+      "evidence": null,
+      "tlds": 9,
+      "attributionKind": "named-fingerprint"
+    },
+    {
+      "name": "NIC.br",
+      "slug": "nic-br",
+      "url": "https://registro.br/",
+      "evidence": null,
+      "tlds": 5,
+      "attributionKind": "named-fingerprint"
+    },
+    {
+      "name": "fury.ca",
+      "slug": "auto-fury-ca",
+      "url": null,
+      "evidence": "rdap_host shared by 5 TLDs",
+      "tlds": 5,
+      "attributionKind": "unnamed-infrastructure"
+    },
+    {
+      "name": "RyCE",
+      "slug": "ryce",
+      "url": "https://www.ryce-rsp.com/",
+      "evidence": null,
+      "tlds": 4,
+      "attributionKind": "named-fingerprint"
+    },
+    {
+      "name": "dns.net.za",
+      "slug": "auto-dns-net-za",
+      "url": null,
+      "evidence": "ns_suffix shared by 7 TLDs",
+      "tlds": 3,
+      "attributionKind": "unnamed-infrastructure"
+    },
+    {
+      "name": "FlexiReg",
+      "slug": "flexireg",
+      "url": "https://flexireg.net/",
+      "evidence": null,
+      "tlds": 2,
+      "attributionKind": "named-fingerprint"
+    },
+    {
+      "name": "aka-ns.net",
+      "slug": "auto-aka-ns-net",
+      "url": null,
+      "evidence": "ns_suffix shared by 12 TLDs",
+      "tlds": 2,
+      "attributionKind": "unnamed-infrastructure"
+    },
+    {
+      "name": "dnsnode.net",
+      "slug": "auto-dnsnode-net",
+      "url": null,
+      "evidence": "ns_suffix shared by 16 TLDs",
+      "tlds": 2,
+      "attributionKind": "unnamed-infrastructure"
+    },
+    {
+      "name": "ripn.net",
+      "slug": "auto-ripn-net",
+      "url": null,
+      "evidence": "ns_suffix shared by 25 TLDs",
+      "tlds": 2,
+      "attributionKind": "unnamed-infrastructure"
+    },
+    {
+      "name": "anycastdns.cz",
+      "slug": "auto-anycastdns-cz",
+      "url": null,
+      "evidence": "ns_suffix shared by 25 TLDs",
+      "tlds": 1,
+      "attributionKind": "unnamed-infrastructure"
+    },
+    {
+      "name": "monic.mo",
+      "slug": "auto-monic-mo",
+      "url": null,
+      "evidence": "ns_suffix shared by 5 TLDs",
+      "tlds": 1,
+      "attributionKind": "unnamed-infrastructure"
+    },
+    {
+      "name": "ns.il",
+      "slug": "auto-ns-il",
+      "url": null,
+      "evidence": "ns_suffix shared by 6 TLDs",
+      "tlds": 1,
+      "attributionKind": "unnamed-infrastructure"
+    },
+    {
+      "name": "ntc.org.pk",
+      "slug": "auto-ntc-org-pk",
+      "url": null,
+      "evidence": "ns_suffix shared by 3 TLDs",
+      "tlds": 1,
+      "attributionKind": "unnamed-infrastructure"
+    },
+    {
+      "name": "pch.net",
+      "slug": "auto-pch-net",
+      "url": null,
+      "evidence": "ns_suffix shared by 17 TLDs",
+      "tlds": 1,
+      "attributionKind": "unnamed-infrastructure"
+    }
+  ],
+  "unattributedTLDs": 24,
+  "groups": {
+    "zones": [
+      {
+        "cohort": "legacy",
+        "tlds": 3,
+        "value": 192393446
+      },
+      {
+        "cohort": "2000",
+        "tlds": 3,
+        "value": 7581119
+      },
+      {
+        "cohort": "2004",
+        "tlds": 2,
+        "value": 960285
+      },
+      {
+        "cohort": "2012",
+        "tlds": 42,
+        "value": 48448216
+      },
+      {
+        "cohort": "cctld",
+        "tlds": 0,
+        "value": 0
+      }
+    ],
+    "web": [
+      {
+        "cohort": "legacy",
+        "tlds": 3,
+        "value": 49.7
+      },
+      {
+        "cohort": "2000",
+        "tlds": 1,
+        "value": 0.5
+      },
+      {
+        "cohort": "2004",
+        "tlds": 0,
+        "value": 0
+      },
+      {
+        "cohort": "2012",
+        "tlds": 3,
+        "value": 1.1
+      },
+      {
+        "cohort": "cctld",
+        "tlds": 43,
+        "value": 40.1
+      }
+    ]
+  },
+  "top50Zones": [
+    {
+      "rank": 1,
+      "tld": "com",
+      "domains": 167754543,
+      "zoneDate": "2026-10-18",
+      "cohort": "legacy",
+      "ianaRegistrationDate": "1985-01-01"
+    },
+    {
+      "rank": 2,
+      "tld": "net",
+      "domains": 12439085,
+      "zoneDate": "2026-10-18",
+      "cohort": "legacy",
+      "ianaRegistrationDate": "1985-01-01"
+    },
+    {
+      "rank": 3,
+      "tld": "org",
+      "domains": 12199818,
+      "zoneDate": "2026-10-18",
+      "cohort": "legacy",
+      "ianaRegistrationDate": "1985-01-01"
+    },
+    {
+      "rank": 4,
+      "tld": "xyz",
+      "domains": 11187648,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2014-02-06"
+    },
+    {
+      "rank": 5,
+      "tld": "top",
+      "domains": 6321422,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2014-07-24"
+    },
+    {
+      "rank": 6,
+      "tld": "info",
+      "domains": 5133698,
+      "zoneDate": "2026-10-18",
+      "cohort": "2000",
+      "ianaRegistrationDate": "2001-06-26"
+    },
+    {
+      "rank": 7,
+      "tld": "shop",
+      "domains": 4288118,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2016-05-05"
+    },
+    {
+      "rank": 8,
+      "tld": "online",
+      "domains": 3606350,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2015-03-06"
+    },
+    {
+      "rank": 9,
+      "tld": "store",
+      "domains": 2079273,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2016-02-11"
+    },
+    {
+      "rank": 10,
+      "tld": "vip",
+      "domains": 1962501,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2015-07-30"
+    },
+    {
+      "rank": 11,
+      "tld": "site",
+      "domains": 1931047,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2015-03-06"
+    },
+    {
+      "rank": 12,
+      "tld": "app",
+      "domains": 1755341,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2015-06-25"
+    },
+    {
+      "rank": 13,
+      "tld": "biz",
+      "domains": 1300895,
+      "zoneDate": "2026-10-18",
+      "cohort": "2000",
+      "ianaRegistrationDate": "2001-06-26"
+    },
+    {
+      "rank": 14,
+      "tld": "bond",
+      "domains": 1177745,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2014-10-30"
+    },
+    {
+      "rank": 15,
+      "tld": "pro",
+      "domains": 1146526,
+      "zoneDate": "2026-10-18",
+      "cohort": "2000",
+      "ianaRegistrationDate": "2002-05-08"
+    },
+    {
+      "rank": 16,
+      "tld": "lol",
+      "domains": 1108114,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2015-04-23"
+    },
+    {
+      "rank": 17,
+      "tld": "sbs",
+      "domains": 1073287,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2015-09-24"
+    },
+    {
+      "rank": 18,
+      "tld": "click",
+      "domains": 898761,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2014-08-15"
+    },
+    {
+      "rank": 19,
+      "tld": "dev",
+      "domains": 795358,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2014-11-20"
+    },
+    {
+      "rank": 20,
+      "tld": "asia",
+      "domains": 752432,
+      "zoneDate": "2026-10-18",
+      "cohort": "2004",
+      "ianaRegistrationDate": "2007-05-02"
+    },
+    {
+      "rank": 21,
+      "tld": "live",
+      "domains": 621017,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2015-06-25"
+    },
+    {
+      "rank": 22,
+      "tld": "cfd",
+      "domains": 620890,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2015-03-06"
+    },
+    {
+      "rank": 23,
+      "tld": "tech",
+      "domains": 594711,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2015-03-12"
+    },
+    {
+      "rank": 24,
+      "tld": "space",
+      "domains": 588328,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2014-05-22"
+    },
+    {
+      "rank": 25,
+      "tld": "cloud",
+      "domains": 564964,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2015-06-18"
+    },
+    {
+      "rank": 26,
+      "tld": "icu",
+      "domains": 558212,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2015-03-06"
+    },
+    {
+      "rank": 27,
+      "tld": "club",
+      "domains": 555565,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2014-01-09"
+    },
+    {
+      "rank": 28,
+      "tld": "cyou",
+      "domains": 534064,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2015-03-19"
+    },
+    {
+      "rank": 29,
+      "tld": "digital",
+      "domains": 459110,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2014-04-17"
+    },
+    {
+      "rank": 30,
+      "tld": "life",
+      "domains": 434207,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2014-05-08"
+    },
+    {
+      "rank": 31,
+      "tld": "world",
+      "domains": 431675,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2014-09-11"
+    },
+    {
+      "rank": 32,
+      "tld": "fun",
+      "domains": 400557,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2016-11-30"
+    },
+    {
+      "rank": 33,
+      "tld": "blog",
+      "domains": 369616,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2016-05-12"
+    },
+    {
+      "rank": 34,
+      "tld": "work",
+      "domains": 346623,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2014-08-18"
+    },
+    {
+      "rank": 35,
+      "tld": "art",
+      "domains": 310178,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2016-06-09"
+    },
+    {
+      "rank": 36,
+      "tld": "buzz",
+      "domains": 264527,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2013-12-12"
+    },
+    {
+      "rank": 37,
+      "tld": "one",
+      "domains": 263650,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2014-12-18"
+    },
+    {
+      "rank": 38,
+      "tld": "link",
+      "domains": 262887,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2014-01-09"
+    },
+    {
+      "rank": 39,
+      "tld": "website",
+      "domains": 240414,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2014-05-22"
+    },
+    {
+      "rank": 40,
+      "tld": "lat",
+      "domains": 233705,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2014-12-04"
+    },
+    {
+      "rank": 41,
+      "tld": "garden",
+      "domains": 209878,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2014-10-23"
+    },
+    {
+      "rank": 42,
+      "tld": "studio",
+      "domains": 209260,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2015-06-25"
+    },
+    {
+      "rank": 43,
+      "tld": "mobi",
+      "domains": 207853,
+      "zoneDate": "2026-10-18",
+      "cohort": "2004",
+      "ianaRegistrationDate": "2005-10-17"
+    },
+    {
+      "rank": 44,
+      "tld": "bet",
+      "domains": 191022,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2015-07-16"
+    },
+    {
+      "rank": 45,
+      "tld": "help",
+      "domains": 184574,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2014-08-15"
+    },
+    {
+      "rank": 46,
+      "tld": "beer",
+      "domains": 178674,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2014-03-13"
+    },
+    {
+      "rank": 47,
+      "tld": "win",
+      "domains": 174835,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2015-02-05"
+    },
+    {
+      "rank": 48,
+      "tld": "wiki",
+      "domains": 164802,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2014-02-06"
+    },
+    {
+      "rank": 49,
+      "tld": "autos",
+      "domains": 149040,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2014-05-01"
+    },
+    {
+      "rank": 50,
+      "tld": "cam",
+      "domains": 146266,
+      "zoneDate": "2026-10-18",
+      "cohort": "2012",
+      "ianaRegistrationDate": "2016-06-09"
+    }
+  ],
+  "top50Web": [
+    {
+      "tld": "com",
+      "sharePercent": 43.6,
+      "sourcePosition": 1,
+      "cohort": "legacy",
+      "ianaRegistrationDate": "1985-01-01"
+    },
+    {
+      "tld": "org",
+      "sharePercent": 3.9,
+      "sourcePosition": 2,
+      "cohort": "legacy",
+      "ianaRegistrationDate": "1985-01-01"
+    },
+    {
+      "tld": "de",
+      "sharePercent": 3.9,
+      "sourcePosition": 3,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1986-11-05"
+    },
+    {
+      "tld": "br",
+      "sharePercent": 3.1,
+      "sourcePosition": 4,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1989-04-18"
+    },
+    {
+      "tld": "ru",
+      "sharePercent": 2.8,
+      "sourcePosition": 5,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1994-04-07"
+    },
+    {
+      "tld": "uk",
+      "sharePercent": 2.4,
+      "sourcePosition": 6,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1985-07-24"
+    },
+    {
+      "tld": "net",
+      "sharePercent": 2.2,
+      "sourcePosition": 7,
+      "cohort": "legacy",
+      "ianaRegistrationDate": "1985-01-01"
+    },
+    {
+      "tld": "jp",
+      "sharePercent": 2.0,
+      "sourcePosition": 8,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1986-08-05"
+    },
+    {
+      "tld": "fr",
+      "sharePercent": 1.9,
+      "sourcePosition": 9,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1986-09-02"
+    },
+    {
+      "tld": "it",
+      "sharePercent": 1.9,
+      "sourcePosition": 10,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1987-12-23"
+    },
+    {
+      "tld": "nl",
+      "sharePercent": 1.6,
+      "sourcePosition": 11,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1986-04-25"
+    },
+    {
+      "tld": "pl",
+      "sharePercent": 1.6,
+      "sourcePosition": 12,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1990-07-30"
+    },
+    {
+      "tld": "in",
+      "sharePercent": 1.5,
+      "sourcePosition": 13,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1989-05-08"
+    },
+    {
+      "tld": "au",
+      "sharePercent": 1.4,
+      "sourcePosition": 14,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1986-03-05"
+    },
+    {
+      "tld": "ca",
+      "sharePercent": 1.0,
+      "sourcePosition": 15,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1987-05-14"
+    },
+    {
+      "tld": "cz",
+      "sharePercent": 0.9,
+      "sourcePosition": 16,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1993-01-13"
+    },
+    {
+      "tld": "es",
+      "sharePercent": 0.8,
+      "sourcePosition": 17,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1988-04-14"
+    },
+    {
+      "tld": "ch",
+      "sharePercent": 0.7,
+      "sourcePosition": 18,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1987-05-20"
+    },
+    {
+      "tld": "be",
+      "sharePercent": 0.7,
+      "sourcePosition": 19,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1988-08-05"
+    },
+    {
+      "tld": "co",
+      "sharePercent": 0.6,
+      "sourcePosition": 20,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1991-12-24"
+    },
+    {
+      "tld": "ar",
+      "sharePercent": 0.6,
+      "sourcePosition": 21,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1987-09-23"
+    },
+    {
+      "tld": "ua",
+      "sharePercent": 0.6,
+      "sourcePosition": 22,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1992-12-01"
+    },
+    {
+      "tld": "eu",
+      "sharePercent": 0.6,
+      "sourcePosition": 23,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "2005-04-28"
+    },
+    {
+      "tld": "at",
+      "sharePercent": 0.5,
+      "sourcePosition": 24,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1988-01-20"
+    },
+    {
+      "tld": "hu",
+      "sharePercent": 0.5,
+      "sourcePosition": 25,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1990-11-07"
+    },
+    {
+      "tld": "ir",
+      "sharePercent": 0.5,
+      "sourcePosition": 26,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1994-04-06"
+    },
+    {
+      "tld": "ro",
+      "sharePercent": 0.5,
+      "sourcePosition": 27,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1993-02-26"
+    },
+    {
+      "tld": "info",
+      "sharePercent": 0.5,
+      "sourcePosition": 28,
+      "cohort": "2000",
+      "ianaRegistrationDate": "2001-06-26"
+    },
+    {
+      "tld": "se",
+      "sharePercent": 0.5,
+      "sourcePosition": 29,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1986-09-04"
+    },
+    {
+      "tld": "za",
+      "sharePercent": 0.5,
+      "sourcePosition": 30,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1990-11-07"
+    },
+    {
+      "tld": "tr",
+      "sharePercent": 0.5,
+      "sourcePosition": 31,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1990-09-17"
+    },
+    {
+      "tld": "kr",
+      "sharePercent": 0.5,
+      "sourcePosition": 32,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1986-09-29"
+    },
+    {
+      "tld": "gr",
+      "sharePercent": 0.5,
+      "sourcePosition": 33,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1989-02-19"
+    },
+    {
+      "tld": "id",
+      "sharePercent": 0.5,
+      "sourcePosition": 34,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1993-02-27"
+    },
+    {
+      "tld": "mx",
+      "sharePercent": 0.4,
+      "sourcePosition": 35,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1989-02-01"
+    },
+    {
+      "tld": "vn",
+      "sharePercent": 0.4,
+      "sourcePosition": 36,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1994-04-14"
+    },
+    {
+      "tld": "cl",
+      "sharePercent": 0.4,
+      "sourcePosition": 37,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1987-12-15"
+    },
+    {
+      "tld": "dk",
+      "sharePercent": 0.4,
+      "sourcePosition": 38,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1987-07-14"
+    },
+    {
+      "tld": "shop",
+      "sharePercent": 0.4,
+      "sourcePosition": 39,
+      "cohort": "2012",
+      "ianaRegistrationDate": "2016-05-05"
+    },
+    {
+      "tld": "fi",
+      "sharePercent": 0.4,
+      "sourcePosition": 40,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1986-12-17"
+    },
+    {
+      "tld": "online",
+      "sharePercent": 0.4,
+      "sourcePosition": 41,
+      "cohort": "2012",
+      "ianaRegistrationDate": "2015-03-06"
+    },
+    {
+      "tld": "nz",
+      "sharePercent": 0.4,
+      "sourcePosition": 42,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1987-01-19"
+    },
+    {
+      "tld": "io",
+      "sharePercent": 0.3,
+      "sourcePosition": 43,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1997-09-16"
+    },
+    {
+      "tld": "sk",
+      "sharePercent": 0.3,
+      "sourcePosition": 44,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1993-03-29"
+    },
+    {
+      "tld": "tw",
+      "sharePercent": 0.3,
+      "sourcePosition": 45,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1989-07-31"
+    },
+    {
+      "tld": "il",
+      "sharePercent": 0.3,
+      "sourcePosition": 46,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1985-10-24"
+    },
+    {
+      "tld": "ai",
+      "sharePercent": 0.3,
+      "sourcePosition": 47,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1995-02-16"
+    },
+    {
+      "tld": "app",
+      "sharePercent": 0.3,
+      "sourcePosition": 48,
+      "cohort": "2012",
+      "ianaRegistrationDate": "2015-06-25"
+    },
+    {
+      "tld": "no",
+      "sharePercent": 0.3,
+      "sourcePosition": 49,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1987-03-17"
+    },
+    {
+      "tld": "pt",
+      "sharePercent": 0.3,
+      "sourcePosition": 50,
+      "cohort": "cctld",
+      "ianaRegistrationDate": "1988-06-30"
+    }
+  ],
+  "sources": {
+    "zones": "https://ntlddata.com/tld?scope=all",
+    "backends": "https://ntlddata.com/backend?scope=all",
+    "method": "https://ntlddata.com/methodology",
+    "web": "https://w3techs.com/technologies/overview/top_level_domain",
+    "webMethod": "https://w3techs.com/technologies",
+    "cohorts": "https://compliance-reports.icann.org/compliance/complaints-by-tld.html",
+    "iana": "https://www.iana.org/domains/root/db"
+  },
+  "attribution": "Data: nTLDData (ntlddata.com), CC-BY-4.0; website-use percentages: W3Techs / Q-Success, 18 October 2026. Cohort annotation and aggregation: Connecting the Dots.",
+  "limitations": [
+    "Backend signals identify shared technical infrastructure, not contractual service responsibility or ownership. All backend attribution is inferred, including rows whose upstream inferred flag is false (named fingerprint).",
+    "gTLD snapshot excludes ccTLDs and undelegated 2026 applications. Missing zone counts are unknown, not zero.",
+    "W3Techs publishes rounded percentages, not exact site totals. Do not infer global site counts from these values."
+  ]
+}

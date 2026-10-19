@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "retrievedOn": "2026-10-19",
+  "researchScope": "Current working research, outside RR1/RR2",
+  "sources": [
+    {
+      "path": "data/evidence/tld-market-2026-10-19/ntlddata-tlds-1.json",
+      "url": "https://ntlddata.com/api/v1/tld?scope=all&per=500&page=1",
+      "sha256": "126206b02dd11256809b167d8c27f46053b4caba5053fc77afd5dd18cbad691e",
+      "retrievedOn": "2026-10-19"
+    },
+    {
+      "path": "data/evidence/tld-market-2026-10-19/ntlddata-tlds-2.json",
+      "url": "https://ntlddata.com/api/v1/tld?scope=all&per=500&page=2",
+      "sha256": "748dce504c861d0fbcc2289008ba8ac7dea9b239d73c56efbdc5cddf8bd9ba0c",
+      "retrievedOn": "2026-10-19"
+    },
+    {
+      "path": "data/evidence/tld-market-2026-10-19/ntlddata-tlds-3.json",
+      "url": "https://ntlddata.com/api/v1/tld?scope=all&per=500&page=3",
+      "sha256": "262de1324f142a93b1f6fa23fcca6165336784645b73d43cb0892d4a6cebcf3a",
+      "retrievedOn": "2026-10-19"
+    },
+    {
+      "path": "data/evidence/tld-market-2026-10-19/ntlddata-backends.json",
+      "url": "https://ntlddata.com/api/v1/backend?scope=all",
+      "sha256": "2a348b86d3b978d73c2785087bcdd1951625a7ba49890f7456ddbb0751430bf0",
+      "retrievedOn": "2026-10-19"
+    },
+    {
+      "path": "data/evidence/tld-market-2026-10-19/w3techs-top50.json",
+      "url": "https://w3techs.com/technologies/overview/top_level_domain",
+      "sha256": "bac72603a960adecf2f9c752c99420b81d4f0aaf61f907c0164bfb9d79770004",
+      "retrievedOn": "2026-10-19"
+    }
+  ],
+  "attribution": "Data: nTLDData (ntlddata.com), CC-BY-4.0; website-use percentages: W3Techs / Q-Success, 18 October 2026. Cohort annotation and aggregation: Connecting the Dots.",
+  "limitations": [
+    "Backend signals identify shared technical infrastructure, not contractual service responsibility or ownership. All backend attribution is inferred, including rows whose upstream inferred flag is false (named fingerprint).",
+    "gTLD snapshot excludes ccTLDs and undelegated 2026 applications. Missing zone counts are unknown, not zero.",
+    "W3Techs publishes rounded percentages, not exact site totals. Do not infer global site counts from these values."
+  ]
+}

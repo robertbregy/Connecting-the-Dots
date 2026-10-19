@@ -16,7 +16,7 @@ function syncSectionLinks(){document.querySelectorAll('.tab[data-target]').forEa
 function restoreUrlState(){
  const wasRestoring=restoringState;restoringState=true;const p=new URLSearchParams(location.search);
  explorerPreset=['all','root','outsideRoot','curated','2026','strange','cities','contention','refusals','disputes','economics','social','trust'].includes(p.get('preset'))?p.get('preset'):'all';
- geoMode=['governance','rsp','applicant2012','applicant2026'].includes(p.get('map'))?p.get('map'):'governance';
+ geoMode=['governance','rsp','rspFootprint','applicant2012','applicant2026'].includes(p.get('map'))?p.get('map'):'governance';
  const values={explorerSearch:p.get('q')||'',exploreRoundFilter:p.get('round')||'all',exploreStatusFilter:p.get('status')||'all',exploreTypeFilter:p.get('type')||'all',exploreThemeFilter:normalizeExplorerTopic(p.get('topic')||p.get('category')||'all'),exploreCountryFilter:p.get('country')||'all'};
  for(const [id,v] of Object.entries(values)){const el=document.getElementById(id);if(el)el.value=el.tagName==='INPUT'||[...el.options].some(o=>o.value===v)?v:'all'}
  const advanced=document.getElementById('explorerAdvanced');if(advanced)advanced.open=values.exploreRoundFilter!=='all'||values.exploreThemeFilter!=='all'||!['all','root','outsideRoot','curated'].includes(explorerPreset);
@@ -464,11 +464,16 @@ function renderSocial(){
 
 function regionLabel(d){const key={NA:'regionNorthAmerica',EUR:'regionEurope',AP:'regionAsiaPacific',LAC:'regionLatinAmerica',AF:'regionAfrica'}[d.code];return key?t(key):d.name}
 function mapXY(lon,lat){return{x:(lon+180)/360*1000,y:(90-Math.max(-60,Math.min(85,lat)))/180*500}}
-let geoMode=['governance','rsp','applicant2012','applicant2026'].includes(qp.get('map'))?qp.get('map'):'governance';
+let geoMode=['governance','rsp','rspFootprint','applicant2012','applicant2026'].includes(qp.get('map'))?qp.get('map'):'governance';
 function renderGeoMap(){
  const el=document.getElementById('geoMap'); if(!el)return; const path=window.DOT_WORLD_PATH||'';
  let layer='',a11y=[];
- if(geoMode==='governance'){
+ if(geoMode==='rspFootprint'){
+  const footprint=JSON.parse(document.getElementById('rsp-footprint-data').textContent);
+  a11y=footprint.rows.map(d=>d.name+': '+fmtNum(d.tlds)+' '+footprint.unit);
+  const maximum=Math.max(...footprint.rows.map(d=>d.tlds));
+  layer=footprint.rows.map((d,i)=>{const y=22+i*29;return `<g class="mapDatum" data-tip="${esc(d.name)}: ${fmtNum(d.tlds)} ${esc(footprint.unit)}"><text class="rspChartLabel" x="12" y="${y+16}">${esc(d.name)}</text><rect class="rspChartBar" x="290" y="${y}" height="20" width="${d.tlds/maximum*590}"></rect><text class="rspChartValue" x="${300+d.tlds/maximum*590}" y="${y+16}">${fmtNum(d.tlds)}</text></g>`}).join('');
+ }else if(geoMode==='governance'){
   a11y=D.governanceNodes.map(d=>d.name+' — '+t(d.detailKey));
   layer=D.governanceNodes.map(d=>{const p=mapXY(d.lon,d.lat);return `<g class="mapDatum" data-tip="${d.name} — ${t(d.detailKey)}"><circle class="mapPoint ${d.kind}" cx="${p.x}" cy="${p.y}" r="${d.kind==='core'?7:5}"></circle><text class="mapLabel" x="${p.x+8}" y="${p.y-8}">${d.name.replace('ICANN ','')}</text></g>`}).join('');
  }else if(geoMode==='rsp'){
@@ -482,8 +487,8 @@ function renderGeoMap(){
   a11y=ready?D.geoApplicantRegions2026.map(d=>regionLabel(d)+': '+fmtNum(d.count)+' '+t('round2026Applicants')):[t('awaitRevealShort')+' — '+t('applicantRegion2026')];
   layer=ready?D.geoApplicantRegions2026.map(d=>{const p=mapXY(d.lon,d.lat),r=16+Math.sqrt(d.count||0)*1.2;return `<g class="mapDatum" data-tip="${esc(regionLabel(d))}: ${fmtNum(d.count)} ${t('round2026Applicants')}"><circle class="mapBubble applicantBubble" cx="${p.x}" cy="${p.y}" r="${r}"></circle><text class="mapBubbleLabel" x="${p.x}" y="${p.y+4}">${fmtNum(d.count)}</text><text class="mapLabel" x="${p.x}" y="${p.y+r+16}" text-anchor="middle">${d.code}</text></g>`}).join(''):`<g class="mapPending"><text x="500" y="235" text-anchor="middle" class="mapPendingTitle">${t('awaitRevealShort')}</text><text x="500" y="263" text-anchor="middle" class="mapPendingSub">${t('applicantRegion2026')}</text></g>`;
  }
- el.innerHTML=`<svg viewBox="0 0 1000 500" aria-hidden="true" focusable="false"><path class="worldCountry" d="${path}"></path>${layer}</svg><ul class="srOnly geoMapData" aria-label="${esc(t('geoMapTitle'))}">${a11y.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;
- const note=document.getElementById('geoNote'); if(note)note.innerHTML=t(geoMode==='governance'?'geoGovernanceNote':geoMode==='rsp'?'geoRspNote':geoMode==='applicant2012'?'applicantRegion2012Note':'applicantRegion2026Note');
+ el.innerHTML=`<svg viewBox="0 0 1000 500" aria-hidden="true" focusable="false">${geoMode==='rspFootprint'?'':`<path class="worldCountry" d="${path}"></path>`}${layer}</svg><ul class="srOnly geoMapData" aria-label="${esc(t('geoMapTitle'))}">${a11y.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;
+ const note=document.getElementById('geoNote'); if(note)note.innerHTML=geoMode==='rspFootprint'?esc(JSON.parse(document.getElementById('rsp-footprint-data').textContent).note):t(geoMode==='governance'?'geoGovernanceNote':geoMode==='rsp'?'geoRspNote':geoMode==='applicant2012'?'applicantRegion2012Note':'applicantRegion2026Note');
  let tt=document.getElementById('mapTooltip'); if(tt)tt.style.display='none';if(!tt){tt=document.createElement('div');tt.id='mapTooltip';tt.className='mapTooltip';document.body.appendChild(tt)}
  el.querySelectorAll('.mapDatum').forEach(g=>{g.addEventListener('pointerenter',()=>{tt.textContent=g.dataset.tip;tt.style.display='block'});g.addEventListener('pointermove',e=>{tt.style.left=(e.clientX+14)+'px';tt.style.top=(e.clientY+14)+'px'});g.addEventListener('pointerleave',()=>tt.style.display='none');g.addEventListener('click',e=>{tt.textContent=g.dataset.tip;tt.style.display='block';tt.style.left=(e.clientX+14)+'px';tt.style.top=(e.clientY+14)+'px'})});
  document.querySelectorAll('.mapToggle').forEach(b=>{const selected=b.dataset.mapmode===geoMode;b.classList.toggle('active',selected);b.setAttribute('aria-pressed',String(selected))});setQuery();

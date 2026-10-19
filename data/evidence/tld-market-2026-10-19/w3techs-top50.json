@@ -1,0 +1,261 @@
+{
+  "source": "https://w3techs.com/technologies/overview/top_level_domain",
+  "sourceDate": "2026-10-18",
+  "retrievedOn": "2026-10-19",
+  "sourceHTMLSHA256": "e742e9ad0b5a7aa463b64b2d629fd5f64b1265dd3157475da915f7230f20643c",
+  "metric": "percentage of websites in W3Techs relevant-web survey",
+  "order": "first 50 in source order; rounded values do not resolve ties",
+  "absoluteSiteCounts": null,
+  "rows": [
+    {
+      "tld": "com",
+      "sharePercent": 43.6,
+      "sourcePosition": 1
+    },
+    {
+      "tld": "org",
+      "sharePercent": 3.9,
+      "sourcePosition": 2
+    },
+    {
+      "tld": "de",
+      "sharePercent": 3.9,
+      "sourcePosition": 3
+    },
+    {
+      "tld": "br",
+      "sharePercent": 3.1,
+      "sourcePosition": 4
+    },
+    {
+      "tld": "ru",
+      "sharePercent": 2.8,
+      "sourcePosition": 5
+    },
+    {
+      "tld": "uk",
+      "sharePercent": 2.4,
+      "sourcePosition": 6
+    },
+    {
+      "tld": "net",
+      "sharePercent": 2.2,
+      "sourcePosition": 7
+    },
+    {
+      "tld": "jp",
+      "sharePercent": 2.0,
+      "sourcePosition": 8
+    },
+    {
+      "tld": "fr",
+      "sharePercent": 1.9,
+      "sourcePosition": 9
+    },
+    {
+      "tld": "it",
+      "sharePercent": 1.9,
+      "sourcePosition": 10
+    },
+    {
+      "tld": "nl",
+      "sharePercent": 1.6,
+      "sourcePosition": 11
+    },
+    {
+      "tld": "pl",
+      "sharePercent": 1.6,
+      "sourcePosition": 12
+    },
+    {
+      "tld": "in",
+      "sharePercent": 1.5,
+      "sourcePosition": 13
+    },
+    {
+      "tld": "au",
+      "sharePercent": 1.4,
+      "sourcePosition": 14
+    },
+    {
+      "tld": "ca",
+      "sharePercent": 1.0,
+      "sourcePosition": 15
+    },
+    {
+      "tld": "cz",
+      "sharePercent": 0.9,
+      "sourcePosition": 16
+    },
+    {
+      "tld": "es",
+      "sharePercent": 0.8,
+      "sourcePosition": 17
+    },
+    {
+      "tld": "ch",
+      "sharePercent": 0.7,
+      "sourcePosition": 18
+    },
+    {
+      "tld": "be",
+      "sharePercent": 0.7,
+      "sourcePosition": 19
+    },
+    {
+      "tld": "co",
+      "sharePercent": 0.6,
+      "sourcePosition": 20
+    },
+    {
+      "tld": "ar",
+      "sharePercent": 0.6,
+      "sourcePosition": 21
+    },
+    {
+      "tld": "ua",
+      "sharePercent": 0.6,
+      "sourcePosition": 22
+    },
+    {
+      "tld": "eu",
+      "sharePercent": 0.6,
+      "sourcePosition": 23
+    },
+    {
+      "tld": "at",
+      "sharePercent": 0.5,
+      "sourcePosition": 24
+    },
+    {
+      "tld": "hu",
+      "sharePercent": 0.5,
+      "sourcePosition": 25
+    },
+    {
+      "tld": "ir",
+      "sharePercent": 0.5,
+      "sourcePosition": 26
+    },
+    {
+      "tld": "ro",
+      "sharePercent": 0.5,
+      "sourcePosition": 27
+    },
+    {
+      "tld": "info",
+      "sharePercent": 0.5,
+      "sourcePosition": 28
+    },
+    {
+      "tld": "se",
+      "sharePercent": 0.5,
+      "sourcePosition": 29
+    },
+    {
+      "tld": "za",
+      "sharePercent": 0.5,
+      "sourcePosition": 30
+    },
+    {
+      "tld": "tr",
+      "sharePercent": 0.5,
+      "sourcePosition": 31
+    },
+    {
+      "tld": "kr",
+      "sharePercent": 0.5,
+      "sourcePosition": 32
+    },
+    {
+      "tld": "gr",
+      "sharePercent": 0.5,
+      "sourcePosition": 33
+    },
+    {
+      "tld": "id",
+      "sharePercent": 0.5,
+      "sourcePosition": 34
+    },
+    {
+      "tld": "mx",
+      "sharePercent": 0.4,
+      "sourcePosition": 35
+    },
+    {
+      "tld": "vn",
+      "sharePercent": 0.4,
+      "sourcePosition": 36
+    },
+    {
+      "tld": "cl",
+      "sharePercent": 0.4,
+      "sourcePosition": 37
+    },
+    {
+      "tld": "dk",
+      "sharePercent": 0.4,
+      "sourcePosition": 38
+    },
+    {
+      "tld": "shop",
+      "sharePercent": 0.4,
+      "sourcePosition": 39
+    },
+    {
+      "tld": "fi",
+      "sharePercent": 0.4,
+      "sourcePosition": 40
+    },
+    {
+      "tld": "online",
+      "sharePercent": 0.4,
+      "sourcePosition": 41
+    },
+    {
+      "tld": "nz",
+      "sharePercent": 0.4,
+      "sourcePosition": 42
+    },
+    {
+      "tld": "io",
+      "sharePercent": 0.3,
+      "sourcePosition": 43
+    },
+    {
+      "tld": "sk",
+      "sharePercent": 0.3,
+      "sourcePosition": 44
+    },
+    {
+      "tld": "tw",
+      "sharePercent": 0.3,
+      "sourcePosition": 45
+    },
+    {
+      "tld": "il",
+      "sharePercent": 0.3,
+      "sourcePosition": 46
+    },
+    {
+      "tld": "ai",
+      "sharePercent": 0.3,
+      "sourcePosition": 47
+    },
+    {
+      "tld": "app",
+      "sharePercent": 0.3,
+      "sourcePosition": 48
+    },
+    {
+      "tld": "no",
+      "sharePercent": 0.3,
+      "sourcePosition": 49
+    },
+    {
+      "tld": "pt",
+      "sharePercent": 0.3,
+      "sourcePosition": 50
+    }
+  ]
+}
