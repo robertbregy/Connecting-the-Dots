@@ -36,7 +36,8 @@
     "T01": "Add source-backed round fees with explicit accounting scopes; source-backed cultural narrative in four languages; reproducible complete local name inventory with incomplete semantic coverage and identical lexical rules across cohorts. Preserve all archived research and prior editorial corrections.",
     "T02": "Add dated, attributed technical-platform footprint and two separate top-50 metrics in four languages. Preserve unknown backend assignments, missing zone counts, ccTLD scope, rounded website shares and selected-round cohorts; never infer absolute website totals. Keep the v0.7.85 review and archive immutable; select the exact versioned review path for a second release on the same day.",
     "A19": "Resolve audit findings A01–A18: dated bibliographic correction, same-unit geographic comparison, truthful candidate/operator labels, inferred platform scope, qualified cultural interpretation, visible semantic missingness, mobile rows, persistent URL filters, fee arithmetic, source hash normalization, deferred optional graph, validation protocols and immutable technical packages. Real reader and independent classification studies remain explicitly pending.",
-    "H01": "Extend explicit string-level vocabulary, preserve prior classifications, compare lexical-only and combined results, expose IDN coverage and ambiguity; add source-backed social history with no adoption or causal inference."
+    "H01": "Extend explicit string-level vocabulary, preserve prior classifications, compare lexical-only and combined results, expose IDN coverage and ambiguity; add source-backed social history with no adoption or causal inference.",
+    "H02": "Rebuild publication and data package when cultural research source JSON changes; no visual/runtime/source-dataset delta."
   },
   "sourceInvariants": {
     "sections": [
@@ -2604,6 +2605,13 @@
       "sha256": "52a70e881f7ac28cd1439c68d903c1f5082f036065025e1e003782ecb331a637",
       "rationaleIds": [
         "H01"
+      ]
+    },
+    ".github/workflows/rebuild.yml": {
+      "baselineSHA256": "3da73a6fad7995f03b80e8ba4cb646ef8dca09250fa19d1addf924f2e27ade6a",
+      "sha256": "91c040faaf671198aed846d5d45a3ad4984e5e7e7893281bf069d382534f5ad3",
+      "rationaleIds": [
+        "H02"
       ]
     }
   },

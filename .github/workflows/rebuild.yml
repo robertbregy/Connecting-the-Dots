@@ -14,6 +14,8 @@ on:
       - 'data/behind_round_stories.json'
       - 'data/inside_the_round_events.json'
       - 'data/audit_20261018_editorial.json'
+      - 'data/cultural_*.json'
+      - 'data/tld_cultural_editorial.json'
       - 'data/aps_2026_applicant_sector_evidence.json'
       - 'data/domain_governance_glossary.csv'
       - 'data/registry_concentration.csv'
