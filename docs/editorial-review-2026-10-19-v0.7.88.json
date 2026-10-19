@@ -1951,7 +1951,7 @@
     },
     "publication.json": {
       "baselineSHA256": "b5d225fa96dc9573b2dac3c18e39236c2e570c65aaa08afdbfedbdc0292368ef",
-      "sha256": "d740b786f79634bd72292d940f081720e43cd7e21cb87252eb72b9237a71ddb9",
+      "sha256": "5ba4a69ce977afade16826c968c4ee7604f7b1d7edb9d2e05cac51eefd61b1d5",
       "rationaleIds": [
         "C01",
         "C02",
@@ -1963,7 +1963,7 @@
     },
     "research/connecting-the-dots-working-paper-v1.html": {
       "baselineSHA256": "5599e8f890e732a80bfc0852c686465b69309f055f4853673d55fb8725bc9948",
-      "sha256": "7d835e7710594e69998f51100ae6fe786c811371967b51d566ec8dffce57254d",
+      "sha256": "0ef1f1ef57aa4e68f54a80b72f1354333eb6c42c8fd42e2d4eb0bc9fc0c79514",
       "rationaleIds": [
         "C05",
         "M01",
@@ -1978,7 +1978,7 @@
     },
     "research/connecting-the-dots-working-paper-v1.md": {
       "baselineSHA256": "c02a5dd4dbc8056fdc4e8efaebf2ee2b3cb9c94577e0fa98b63cfe65dcb185d7",
-      "sha256": "360dd775449d1824e974b0f49658a47ca0564dc2b026c2737b2c3c1f760c3f15",
+      "sha256": "de8e555660351efcf523bd0270618f226431f3832ecf820653e40c91f7325d18",
       "rationaleIds": [
         "C05",
         "M01",
@@ -1993,7 +1993,7 @@
     },
     "research/index.html": {
       "baselineSHA256": "e9a26de35e6eada49de00b1d9df234d3f67c8e40f93591134477a064c0694245",
-      "sha256": "ea355650847e598bcca18d930dcfd53c070e0cf508eaf0f7fce69901bf60676f",
+      "sha256": "fd75215568609552caa308287c1a80b6ddc4a57651f5df53f9f4324ea9c8dfd5",
       "rationaleIds": [
         "C05",
         "T02",
@@ -2019,7 +2019,7 @@
     },
     "research/research_release_manifest.json": {
       "baselineSHA256": "c928f7857e4cf66ea98983ba13aad299dadd7d6674ab7b4b9e4a54fe65d031b7",
-      "sha256": "d0dbbe3bac5036f2f66c99806d36e2b1e1215c06eaace610c30080b58a27f209",
+      "sha256": "f6a4809039842724d304535979fe8ce4678a6ed3b48e2061aef56765fa541b87",
       "rationaleIds": [
         "C05",
         "T02",
@@ -2375,7 +2375,7 @@
     },
     "research/README.md": {
       "baselineSHA256": "e73bf4e607e4cbc95be972f81584215e079c81f5d835592176dbfa16a4ee6c77",
-      "sha256": "b08782a1688e5b1385d27da25fc8e1014e84cedd1a0f15c36c9db528129a5345",
+      "sha256": "d84ef4df3324fe42e2b97a0e036a93fbd5260a3e62d3672fb183bad9fa4bd36f",
       "rationaleIds": [
         "A19",
         "H01"
@@ -2503,7 +2503,7 @@
     },
     "scripts/audit_20261019_browser.cjs": {
       "baselineSHA256": null,
-      "sha256": "7468b9f6759e8b035925517e542f920c68276d6fd42964c6d83d0e371cae4bed",
+      "sha256": "12ade389ab36c56eda94f350c9df1181b9142ea6066afd37c329310a7bf6ed0f",
       "rationaleIds": [
         "A19",
         "H01"
@@ -2601,7 +2601,7 @@
     },
     "scripts/test_cultural_research_v2.py": {
       "baselineSHA256": null,
-      "sha256": "66b7132e9f473847def7119b292f5ab22df9703476a17cb2fd4db8f64f8f1353",
+      "sha256": "52a70e881f7ac28cd1439c68d903c1f5082f036065025e1e003782ecb331a637",
       "rationaleIds": [
         "H01"
       ]

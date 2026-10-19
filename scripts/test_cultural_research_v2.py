@@ -40,6 +40,10 @@ assert [a['strings'],b['strings']]==[1409,980]
 assert [a['views']['baseline']['classified'],b['views']['baseline']['classified']]==[333,334]
 delta=lambda mode:b['views'][mode]['categories']['commerce']/980-a['views'][mode]['categories']['commerce']/1409
 assert delta('baseline')>0 and delta('lexiconOnly')<0, 'Localized sensitivity example must remain supported'
+paper=(ROOT/'research/connecting-the-dots-working-paper-v1.md').read_text()
+assert f"{a['views']['lexiconOnly']['categories']['commerce']}/1,409 and {b['views']['lexiconOnly']['categories']['commerce']}/980" in paper, 'Paper lexical-count example is stale'
+assert f"**{a['views']['expanded']['classified']} of 1,409**" in paper
+assert f"**{b['views']['expanded']['classified']} of 980**" in paper
 assert 'technology' in tokens(current['api']['lexicon_category_ids'])
 assert not tokens(current['apple']['lexicon_category_ids'])
 assert not tokens(current['amazon']['lexicon_category_ids'])

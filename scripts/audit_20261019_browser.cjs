@@ -66,7 +66,7 @@ const base=process.env.CTD_TEST_BASE||'http://127.0.0.1:8123/';
   await page.locator('#tld-cultural-search').fill('人工智能');
   assert.equal(await page.locator('#tld-cultural-records tr').count(),1);
   await page.goto(base+lang+'/?tab=research');
-  assert.ok((await page.locator('#research [data-i18n="researchPaperFormat"]').innerText()).includes('1.3-draft'));
+  assert.ok((await page.locator('#research [data-i18n="researchPaperFormat"]').innerText()).includes(JSON.parse(fs.readFileSync('publication.json','utf8')).paperVersion));
   assert.ok((await page.locator('#research .auditEvidence').innerText()).includes('11'));
   assert.deepEqual(errors,[],'Browser runtime errors');
   results.push({lang,mobile,status:'pass'});await page.close();

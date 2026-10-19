@@ -1,7 +1,7 @@
 # Connecting the Dots: Reconstructing Twenty-Five Years of Top-Level Domain Expansion as a Living Research Atlas
 
 **Robert Bregy**  
-**Working Paper v1.3-draft · living revision 19 October 2026 · current citable research release RR2 (Zenodo: 11 October 2026; evidence cutoff: 10 October)**  
+**Working Paper v1.4-draft · living revision 19 October 2026 · current citable research release RR2 (Zenodo: 11 October 2026; evidence cutoff: 10 October)**  
 **Status:** working paper; not peer reviewed. This mutable manuscript is distinct from the immutable RR1 (9 October 2026) and RR2 (Zenodo bibliographic publication: 11 October 2026; evidence cutoff: 10 October) Zenodo research deposits.  
 **Technical-reference correction (13 October 2026):** the mutable technical data-pack link was synchronized with site v0.7.80. No scientific dataset or archived RR1/RR2 release was changed.  
 **Living publication:** https://robertbregy.github.io/Connecting-the-Dots/
@@ -84,7 +84,7 @@ Project-derived location and applicant distributions use all 1,614 published bas
 
 ### 5.1 Namespace expansion is not a single growth curve
 
-Application rounds reflect different policy regimes and different conceptions of what a TLD is for. The 2000 proof-of-concept round tested a small set of models. The 2004 sponsored round focused on defined communities. The 2012 program industrialised large-scale application portfolios and introduced extensive brand participation. The 2026 round retains many mature sectors while adding economic vocabularies that were not comparably represented in 2012.
+Application rounds reflect different policy regimes and different conceptions of what a TLD is for. The 2000 proof-of-concept round tested a small set of models. The 2004 sponsored round focused on defined communities. The 2012 program industrialised large-scale application portfolios and introduced extensive brand participation. The 2026 corpus contains familiar and newly requested vocabulary, but the available classifications do not establish a representative change in economic sectors between rounds.
 
 ### 5.2 Portfolio strategies matter
 
@@ -92,7 +92,7 @@ The unit of analysis cannot be only the string. In 2012, applicants such as Donu
 
 ### 5.3 The economic vocabulary changes
 
-The historical exploratory map suggests continuity and discontinuity in the vocabulary of applications; its mixed classification cannot establish a homogeneous industry trend. Finance, technology, media, health, retail, travel and automotive were already visible in 2012 through both generic and brand strings. By 2026, AI and digital assets emerge as distinct economic clusters, while infrastructure vocabulary shifts toward concepts such as agents, APIs, identity, wallets, tokens and compute.
+The historical exploratory map suggests continuity and discontinuity in the vocabulary of applications; its mixed classification cannot establish a homogeneous industry trend. Finance, technology, media, health, retail, travel and automotive were already visible in 2012 through both generic and brand strings. The 2026 inventory includes names associated with AI, digital assets and infrastructure, such as agents, APIs, identity, wallets, tokens and compute. Their presence is documented; a population-wide shift or emergence of distinct economic clusters is not established by these editorial labels.
 
 The methodological requirement is to classify the applicant’s documented activity separately from the theme evoked by a string. Brand names and generic vocabulary require different evidence. Comparing industries over time requires both rounds to be recoded with the same variables and coverage rules; that harmonisation is not yet complete.
 
@@ -213,6 +213,19 @@ For the original 7 October Reveal Day snapshot, cite RR1: https://doi.org/10.528
 
 Zenodo RR2 metadata records `dateCreated` as 10 October 2026 at 22:04 UTC and `datePublished` as 11 October 2026. The GitHub release and evidence cutoff remain 10 October. Earlier dated statements using 10 October as the deposit publication date are corrected by this note; the frozen RR1/RR2 deposits are not replaced.
 
-The current lexical inventory recognizes semantic themes in 333 of 1,409 strings in 2012 and 334 of 980 in 2026. Official brand designations are a separate variable. These incomplete, overlapping editorial categories have not undergone independent validation. Applied-for names document proposals within differently regulated, costly rounds; they are not a representative measure of society or of deployed use. The agent, API, robot and AGI examples establish the presence of this vocabulary, not a measured population-wide shift. A stronger longitudinal claim requires a common codebook, stratified double coding, published error analysis and evidence about actual use.
+The v0.7.87 recognizer assigned semantic themes to 333 of 1,409 distinct primary strings in 2012 and 334 of 980 in 2026. These values are preserved as the baseline, rather than presented as the current expanded counts. Official brand designations are a separate variable. These incomplete, overlapping editorial categories have not undergone independent validation. Applied-for names document proposals within differently regulated, costly rounds; they are not a representative measure of society or of deployed use. The agent, API, robot and AGI examples establish the presence of this vocabulary, not a measured population-wide shift. A stronger longitudinal claim requires a common codebook, stratified double coding, published error analysis and evidence about actual use.
 
 The current interface compares regional application counts (1,930 in 2012 and 1,615 in 2026), while keeping applicant organizations and evaluated RSPs separate. Platform footprints are technically inferred gTLD attributions, not a census of verified RSP contracts or ownership. Domain-zone counts and website-survey percentages are different adoption measures.
+
+
+## Cultural research v2: vocabulary and rule sensitivity (19 October 2026)
+
+The v0.7.88 working layer preserves all 3,240 labels and their cohort membership, application IDs, official designations and root-history dates. It adds a versioned vocabulary of **412 exact-label editorial proposals**, including explicit multilingual glosses and abstentions for ambiguous names. Rules are applied identically across all cohorts. This vocabulary was designed after inspecting unmatched names; it is not an independent test set or a validated language resource.
+
+The combined recognizer assigns at least one semantic theme to **459 of 1,409** distinct primary strings in 2012 (32.6%) and **407 of 980** in 2026 (41.5%). This adds 126 and 73 recognized names respectively. The full denominator is retained and overlapping category shares are not additive. Overall corpus category totals also include formal territorial codes and official brand designations; those variables are excluded from this semantic comparison.
+
+`cultural_sensitivity_v2.json` separates three views: the inherited recognizer, the explicit vocabulary alone, and their union. For commerce and finance, the inherited reading assigns 46/1,409 names in 2012 and 103/980 in 2026, whereas the explicit vocabulary assigns 50/1,409 and 9/980. The direction of the apparent difference reverses. Technology also reverses direction between these two views. These contrasts expose dependence on editorial context and vocabulary coverage; they neither measure classification accuracy nor establish societal change. IDN/ASCII coverage is reported separately; IDN encoding does not identify a language or imply a non-Latin script.
+
+The documentary trajectory adds .bank eligibility rules and .blog publication within a platform. These cases distinguish the ability to register a name, the ability to publish under a hosted subdomain, and control of the underlying infrastructure. Eligibility does not establish measured user trust or immunity to abuse. The sources and retrieval limitations are recorded in `cultural_history_evidence_v2.json`.
+
+The operational codebook and a **366-row unreviewed worksheet** are published as `cultural_classification_protocol_v2.json` and `cultural_lexicon_review_queue_v2.csv`. Proposed labels, languages and glosses must be hidden during initial independent coding; the original 88-row sample remains available to inspect non-matches. Reviewer and adjudication fields are blank. No independent agreement score, native-speaker validation or reader-study result is claimed. This working layer is not included in either frozen RR1/RR2 DOI.
