@@ -57,7 +57,8 @@ ROUND2000_MANDATES = {
 COLUMNS = ["ascii_string", "display_string", "rounds", "comparable_rounds", "category_ids",
            "classification_basis", "source_files", "source_urls", "roles", "is_idn",
            "current_root_status", "iana_registration_date", "inherited_string_themes",
-           "explorer_topic_facets", "official_designations_2026", "primary_application_ids_2026"]
+           "explorer_topic_facets", "official_designations_2026", "primary_application_ids_2026",
+           "baseline_category_ids", "lexicon_category_ids", "lexicon_rule_ids", "lexicon_languages", "lexicon_gloss"]
 
 
 def rows(name):
@@ -249,6 +250,25 @@ def build():
         semantic_basis[key].add("inherited editorial string taxonomy, never applicant sector: " + theme)
         semantic_sources[key].update(s for s in candidate_sources[key] if s)
 
+    # Preserve the previous recognizer, then apply one versioned whole-label
+    # vocabulary to every cohort. This is an editorial expansion, not validation.
+    baseline_themes = {key: (set(thematic[key]) | (item['categories'] & set(COMPARABLE))) for key,item in corpus.items()}
+    lexicon = json.loads((DATA / "cultural_lexicon_v2.json").read_text())
+    lexical, lexical_rules, lexical_languages, lexical_gloss = {}, {}, {}, {}
+    assert len({e['ruleId'] for e in lexicon['entries']}) == len(lexicon['entries'])
+    for entry in lexicon['entries']:
+        key = ascii_label(entry['label'])
+        assert key not in lexical, 'Duplicate normalized lexical label: ' + key
+        assert set(entry['categoryIds']) <= set(COMPARABLE)
+        lexical[key] = set(entry['categoryIds'])
+        lexical_rules[key] = entry['ruleId']
+        lexical_languages[key] = entry['language']
+        lexical_gloss[key] = entry['gloss']
+        thematic[key].update(lexical[key])
+        semantic_basis[key].add('v2 editorial exact-label rule ' + entry['ruleId'] + '; independent validation pending')
+        semantic_sources[key].add('cultural_lexicon_v2.json')
+        semantic_urls[key].update(lexicon['sources'][s]['url'] for s in entry['sourceIds'])
+
     output = []
     for key, item in sorted(corpus.items()):
         item["categories"].update(thematic[key])
@@ -265,7 +285,12 @@ def build():
                        "is_idn": str(key.startswith("xn--")).lower(), "current_root_status": join(item["root"]),
                        "iana_registration_date": join(item["dates"]), "inherited_string_themes": join(imported_themes[key]),
                        "explorer_topic_facets": join(item["facets"]), "official_designations_2026": join(item["designations"]),
-                       "primary_application_ids_2026": join(item["application_ids"])})
+                       "primary_application_ids_2026": join(item["application_ids"]),
+                       "baseline_category_ids": join(baseline_themes.get(key,set())),
+                       "lexicon_category_ids": join(lexical.get(key,set())),
+                       "lexicon_rule_ids": lexical_rules.get(key,''),
+                       "lexicon_languages": lexical_languages.get(key,''),
+                       "lexicon_gloss": lexical_gloss.get(key,'')})
 
     def distribution(keys, rnd=""):
         available = {key: corpus[key]["categories"] - ({"brand"} if rnd and rnd != "2026" else set()) - {"unclassified"}
@@ -293,11 +318,44 @@ def build():
     assert len({r["ascii_string"] for r in output}) == len(output)
     assert not any("unclassified" in x["categories"] and len(x["categories"]) > 1 for x in corpus.values())
 
+    sensitivity = []
+    for rnd in ['legacy', '2000', '2004', '2012', '2026']:
+        keys = cohort[rnd]
+        modes = {'baseline': baseline_themes, 'lexiconOnly': lexical,
+                 'expanded': {k: corpus[k]['categories'] & set(COMPARABLE) for k in keys}}
+        views = {}
+        for mode, mapping in modes.items():
+            views[mode] = {'classified': sum(bool(mapping.get(k,set())) for k in keys),
+                           'categories': {c: sum(c in mapping.get(k,set()) for k in keys) for c in COMPARABLE}}
+        strata = []
+        for stratum, test in [('idn', lambda k:k.startswith('xn--')),('ascii',lambda k:not k.startswith('xn--'))]:
+            members = {k for k in keys if test(k)}
+            strata.append({'stratum':stratum,'strings':len(members), **{
+                mode: sum(bool(mapping.get(k,set())) for k in members) for mode,mapping in modes.items()}})
+        sensitivity.append({'round':rnd,'strings':len(keys),'views':views,'strata':strata,
+                            'newlyRecognized':sum(not baseline_themes.get(k) and bool(lexical.get(k)) for k in keys)})
+    common = cohort['2012'] & cohort['2026']
+    analysis = {'schemaVersion':2,'lexiconId':lexicon['lexiconId'],
+                'status':'exploratory-editorial-not-independently-validated',
+                'lexiconEntries':len(lexicon['entries']),
+                'matchedLexiconEntries':sum(k in corpus for k in lexical),
+                'rounds':sensitivity,
+                'recurrence':{'rounds':['2012','2026'],'sharedDistinctPrimaryStrings':len(common),
+                              'only2012':len(cohort['2012']-common),'only2026':len(cohort['2026']-common),
+                              'sharedLabels':sorted(common),
+                              'scope':'Repeated primary proposals in the pinned cohorts, not retention, continuity of operators, delegation or observed use.'},
+                'interpretationLimits':[
+                    'The expanded dictionary was designed after inspecting unclassified labels; it cannot be its own blind validation set.',
+                    'Baseline reuses inherited editorial themes; lexiconOnly removes these and uses the explicit v2 word list alone. Expanded is their union. This measures sensitivity to rules, not accuracy.',
+                    'Unequal IDN/ASCII coverage remains visible. IDN is an encoding property, not a language, ethnicity or non-Latin-script label.',
+                    'All category percentages retain the complete distinct primary-string denominator; categories overlap and are not additive.',
+                    'No p-values or societal trend estimates: the cohorts are selected application inventories and not representative samples of Internet users.',
+                ]}
     sources = []
-    for name in INPUTS + [assembly_name, "scripts/build_tld_cultural_trajectory.py"]:
+    for name in INPUTS + ['cultural_lexicon_v2.json', assembly_name, "scripts/build_tld_cultural_trajectory.py"]:
         path = ROOT / name if name.startswith("scripts/") else DATA / name
         sources.append({"file": name, "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
-    summary = {"schemaVersion": 1, "counts": counts,
+    summary = {"schemaVersion": 2, "counts": counts,
                "categories": [{"id": c, "label": label, "count": totals.get(c, 0),
                                "availability": ["2026"] if c == "brand" else ["all-corpus"],
                                "dimension": "official-designation" if c == "brand" else "formal-type" if c == "territorial-code" else "editorial-string-theme"}
@@ -319,7 +377,8 @@ def build():
                    "Country-code is a formal territorial-code category and does not describe current use (.ai, for example). IDN is an independent A-label axis and does not automatically imply a technology, cultural or community category.",
                    "Unclassified is explicit (blank category_ids in CSV): it means no positive category in the limited inherited rules, not absence of social meaning. Unequal language/dictionary coverage prevents treating differences as a census of society. Show classified/unclassified coverage and the full cohort denominator beside every percentage. Global classified counts include formal territorial codes and APS brand designations; semantic_classified counts only the comparable editorial families.",
                    "IANA registration dates are profile/root-history dates, never commercial opening dates. Applications record proposals, root records record delegation/history, and neither proves registration volumes, active sites or social adoption. Snapshots are pinned and no future APS confirmation is presumed.",
-               ], "sources": sources}
+               ] + ['Versioned editorial exact-label lexicon v2 supplements the inherited recognizer across all cohorts. Baseline, lexicon-only and combined results and IDN/ASCII coverage are published in cultural_sensitivity_v2.json. The expansion is not an independent validation.'], "sources": sources,
+               'sensitivity':analysis}
     return output, summary
 
 
@@ -333,7 +392,18 @@ def main():
     writer.writeheader()
     writer.writerows(corpus)
     artifacts = {"tld_cultural_corpus.csv": stream.getvalue(),
-                 "tld_cultural_patterns.json": json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True) + "\n"}
+                 "tld_cultural_patterns.json": json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+                 "cultural_sensitivity_v2.json": json.dumps(summary['sensitivity'], ensure_ascii=False, indent=2, sort_keys=True) + "\n"}
+    queue=io.StringIO(newline='')
+    fields=['ascii_string','display_string','comparable_rounds','proposed_categories','proposed_language','proposed_gloss','rule_id','reviewer_1_categories','reviewer_1_language','reviewer_1_reason','reviewer_2_categories','reviewer_2_language','reviewer_2_reason','adjudication','status']
+    writer=csv.DictWriter(queue,fieldnames=fields,lineterminator='\n');writer.writeheader()
+    for r in corpus:
+        if not r['lexicon_rule_ids'] or not r['comparable_rounds']:continue
+        writer.writerow({'ascii_string':r['ascii_string'],'display_string':r['display_string'],
+                         'comparable_rounds':r['comparable_rounds'],'proposed_categories':r['lexicon_category_ids'],
+                         'proposed_language':r['lexicon_languages'],'proposed_gloss':r['lexicon_gloss'],
+                         'rule_id':r['lexicon_rule_ids'],'status':'not-reviewed'})
+    artifacts['cultural_lexicon_review_queue_v2.csv']=queue.getvalue()
     for name, value in artifacts.items():
         if args.check:
             assert (DATA / name).read_text() == value, name + " is stale"

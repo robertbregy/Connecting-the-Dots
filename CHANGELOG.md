@@ -749,3 +749,12 @@
 ## 0.7.87 — 2026-10-19
 
 Resolve the 19 October audit: distinguish source and publication dates, correct the current bibliographic RR2 date with an appended source note, keep candidates separate from current operators, compare regional applications using the same unit, qualify inferred platform footprints and incomplete cultural themes, expose fee reconstruction arithmetic, retain ranking filters in shared and translated links, and present rankings as readable phone rows. Load the optional APS graph on opening Explorer. Preserve all historical archives and add controlled performance and multilingual regression checks. Human comprehension and independent semantic validation remain explicitly pending, with reproducible protocols and blank recording templates.
+
+
+## 0.7.88 — 2026-10-19
+
+- Extend cultural string recognition with versioned, exact-label editorial vocabulary and explicit ambiguity/translation limits.
+- Preserve the previous recognizer and expose sensitivity to inherited classifications versus lexical rules, including IDN coverage.
+- Add source-backed .bank eligibility and .blog publishing/platform cases in all four languages.
+- Publish a blank review queue and operational codebook; independent and reader validation remain pending.
+- Protect the final v0.7.87 ZIP and preserve all previous research releases.

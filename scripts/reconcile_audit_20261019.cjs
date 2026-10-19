@@ -5,6 +5,7 @@ const {parseHTML}=require('linkedom');
 const root=path.resolve(__dirname,'..');
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const locales=read('data/audit_20261019_editorial.json').locales;
+const cultural=read('data/tld_cultural_patterns.json');
 const translations=read('data/translations.json');
 const source=fs.readFileSync(path.join(root,'data/site_bundle.js'),'utf8');
 const data=JSON.parse(source.split('window.DOT_DATA=')[1].trim().replace(/;$/,''));
@@ -45,7 +46,8 @@ for(const lang of ['en','it','de','fr'])for(const filename of [lang+'/index.html
 
  // Partial thematic recognition is not a representative social census.
  const culture=document.getElementById('tld-cultural-patterns');
- culture.querySelector('h2').after(make(`<div class="auditEvidence"><p class="auditCoverage">${esc(L.coverage)}</p><p>${esc(L.science)}</p><a href="${prefix}data/cultural_classification_protocol.json" download>${esc(L.protocol)} · JSON</a></div>`));
+ const coverage=cultural.rounds.filter(r=>['2012','2026'].includes(r.round)).map(r=>r.round+': '+nf.format(r.semantic_classified)+' / '+nf.format(r.strings)+' ('+new Intl.NumberFormat(lang,{maximumFractionDigits:1,minimumFractionDigits:1}).format(100*r.semantic_classified/r.strings)+'%)').join(' · ');
+ culture.querySelector('h2').after(make(`<div class="auditEvidence"><p class="auditCoverage">${esc(L.coverage.split(':')[0]+': '+coverage)}</p><p>${esc(L.science)}</p><a href="${prefix}data/cultural_classification_protocol_v2.json" download>${esc(L.protocol)} · JSON</a></div>`));
  const trajectory=document.getElementById('tld-cultural-trajectory');trajectory.querySelector('h2').after(make(`<p class="auditEvidence">${esc(L.science)}</p>`));
 
  // The short entry precedes the route map. Keep all six routes immediately usable.

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "recordedOn": "2026-10-19",
+  "status": "documentary research and editorial interpretation; independent validation pending",
+  "sources": [
+    {
+      "id": "bank_contract",
+      "label": "ICANN · .bank Registry Agreement, Specification 12 (2014)",
+      "url": "https://itp.cdn.icann.org/en/files/registry-agreements/bank/bank-agmt-html-25sep14-en.htm",
+      "observedOn": "2026-10-19",
+      "locator": "Specification 12, community registration policies and registrant eligibility",
+      "supports": "Eligibility rules and verification; not actual user trust, fraud rates or present compliance."
+    },
+    {
+      "id": "bank_eligibility",
+      "label": "fTLD · .Bank registrant eligibility",
+      "url": "https://register.bank/eligibility/",
+      "observedOn": "2026-10-19",
+      "locator": "Organization Eligibility and Domain Name Eligibility",
+      "supports": "Current eligibility categories; not an assertion that all current rules were identical in 2014."
+    },
+    {
+      "id": "blog_launch",
+      "label": "Nominet · .blog general availability (21 November 2016)",
+      "url": "https://nominet.uk/news/blog-enters-general-availability-phase/",
+      "observedOn": "2026-10-19",
+      "locator": "Indexed Nominet article: general availability at 15:00 on 21 November 2016",
+      "retrieval": "primary publisher search extract; direct request returned 429",
+      "supports": "Public launch date and platform/RSP relationship; no adoption estimate."
+    },
+    {
+      "id": "blog_platform",
+      "label": "WordPress.com · Free .blog subdomains (28 November 2018; updated 2024)",
+      "url": "https://wordpress.com/blog/2018/11/28/announcing-free-dotblog-subdomains/",
+      "observedOn": "2026-10-19",
+      "locator": "Article dated 28 November 2018, updated 11 October 2024; examples mollys.food.blog / advice.tech.blog",
+      "supports": "Documented offering of hosted subdomains, distinct from independent second-level registrations."
+    }
+  ],
+  "interpretiveClaims": [
+    {
+      "id": "access-boundary",
+      "case": ".bank",
+      "status": "interpretation",
+      "claim": "A namespace can make institutional membership part of access to a name.",
+      "notEstablished": "Measured trust, immunity to abuse or a historical causal change in society."
+    },
+    {
+      "id": "platform-voice",
+      "case": ".blog",
+      "status": "interpretation",
+      "claim": "Personal publication and platform mediation can coexist.",
+      "notEstablished": "Decentralization, independent hosting, or all bloggers using .blog."
+    }
+  ],
+  "scientificReleaseScope": "Current working layer only; RR1/RR2 deposits, DOI identifiers and frozen metadata are unchanged."
+}

@@ -2535,7 +2535,8 @@
     "release0786": "Added gTLD counts by technical platform and two top-50 comparisons: website presence and delegated domains, with origins, dates, sources and distinct limitations.",
     "researchPaperFormat": "HTML · v{paperVersion} · in English",
     "release0787": "Audit revision: bibliographic dates, comparable regional application counts, qualified RSP and cultural inferences, mobile rankings and shareable filters; historical archives preserved.",
-    "periodPolicyFramework": "policy framework"
+    "periodPolicyFramework": "policy framework",
+    "release0788": "Expanded cultural research: explicit multilingual vocabulary, comparison of rules and new documented cases. Independent validation remains pending."
   },
   "it": {
     "brand": "Brand",
@@ -5073,7 +5074,8 @@
     "release0786": "Aggiunti i conteggi dei gTLD per piattaforma tecnica e due classifiche dei primi 50: presenza nei siti web e domini delegati, con origine, date, fonti e limiti distinti.",
     "researchPaperFormat": "HTML · v{paperVersion} · in inglese",
     "release0787": "Revisione completa dell’audit: date bibliografiche, unità geografiche omogenee, limiti delle inferenze RSP e culturali, classifiche mobili e filtri condivisibili; archivi preservati.",
-    "periodPolicyFramework": "quadro delle regole"
+    "periodPolicyFramework": "quadro delle regole",
+    "release0788": "Ricerca culturale ampliata: vocabolario multilingue esplicito, confronto tra regole e nuovi casi documentati. Validazione indipendente ancora da svolgere."
   },
   "de": {
     "brand": "Marke",
@@ -7611,7 +7613,8 @@
     "release0786": "gTLD-Zählungen nach technischer Plattform und zwei Top-50-Vergleiche ergänzt: Websitepräsenz und delegierte Domains, mit Herkunft, Daten, Quellen und getrennten Grenzen.",
     "researchPaperFormat": "HTML · v{paperVersion} · auf Englisch",
     "release0787": "Auditkorrekturen: bibliografische Daten, vergleichbare regionale Bewerbungszahlen, präzisierte RSP- und Kulturinterpretationen, mobile Ranglisten und teilbare Filter; Archive bewahrt.",
-    "periodPolicyFramework": "Regelwerk"
+    "periodPolicyFramework": "Regelwerk",
+    "release0788": "Erweiterte Kulturrecherche: explizites mehrsprachiges Vokabular, Regelvergleich und neue dokumentierte Fälle. Unabhängige Validierung steht noch aus."
   },
   "fr": {
     "brand": "Marque",
@@ -10149,6 +10152,7 @@
     "release0786": "Ajout des décomptes de gTLD par plateforme technique et de deux comparaisons des 50 premiers : présence sur les sites et domaines délégués, avec origines, dates, sources et limites distinctes.",
     "researchPaperFormat": "HTML · v{paperVersion} · en anglais",
     "release0787": "Révision de l’audit : dates bibliographiques, candidatures régionales comparables, limites des inférences RSP et culturelles, classements mobiles et filtres partageables ; archives conservées.",
-    "periodPolicyFramework": "cadre des règles"
+    "periodPolicyFramework": "cadre des règles",
+    "release0788": "Recherche culturelle élargie : vocabulaire multilingue explicite, comparaison des règles et nouveaux cas documentés. La validation indépendante reste à réaliser."
   }
 }

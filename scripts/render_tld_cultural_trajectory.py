@@ -8,6 +8,7 @@ import re
 from html import escape
 from html.parser import HTMLParser
 from pathlib import Path
+from scripts.render_cultural_sensitivity import render as render_sensitivity
 
 
 LANGS = ('en', 'it', 'de', 'fr')
@@ -118,8 +119,10 @@ CSS = '''<style id="tld-cultural-style">
 .tldStage .tldPeriod{color:var(--muted);font-size:13px;font-weight:700}.tldStage h3{margin:7px 0 12px}.tldReading{border-left:3px solid var(--accent-text);padding:10px 14px;background:var(--surface2)}
 .tldStats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0}.tldStat{padding:14px;border:1px solid var(--border);border-radius:12px}.tldStat strong{display:block;font-size:25px}.tldStat span{display:block;font-size:13px;color:var(--muted)}
 .tldControls{display:grid;grid-template-columns:2fr 1fr 1.5fr;gap:12px;margin:18px 0}.tldControls label{display:block;font-size:13px;font-weight:700}.tldControls input,.tldControls select{display:block;width:100%;margin-top:6px;padding:10px;border:1px solid var(--border);border-radius:8px;background:var(--surface2);color:var(--text);font:inherit;min-width:0}
+.culturalSensitivity{margin:28px 0;scroll-margin-top:155px}.culturalSensitivity h4{font-size:17px;line-height:1.5}.culturalSensitivity caption{text-align:left;padding:12px;font-weight:650}.culturalSensitivity table{table-layout:fixed;min-width:0!important}.culturalSensitivity th:first-child{width:38%}
 .tldResearch a:focus-visible,.tldResearch summary:focus-visible,.tldResearch [tabindex]:focus-visible,.tldControls input:focus-visible,.tldControls select:focus-visible{outline:2px solid var(--accent-text);outline-offset:4px}
 @media(max-width:720px){.tldControls{grid-template-columns:1fr}.tldStats{grid-template-columns:1fr}.tldResearch th,.tldResearch td{padding:9px 7px;font-size:12px}.tldStages{padding-left:16px}.tldStage:before{left:-22px}#round-application-fees table{table-layout:fixed}#round-application-fees th:nth-child(1){width:18%;white-space:nowrap}#round-application-fees th:nth-child(2){width:28%}#round-application-fees th:nth-child(3){width:18%}#round-application-fees th:nth-child(4){width:36%}}
+@media(max-width:720px){.culturalSensitivity{scroll-margin-top:190px}.culturalSensitivity th,.culturalSensitivity td{font-size:13px;line-height:1.5}}
 </style>'''
 
 
@@ -175,10 +178,10 @@ def patterns(data: dict, corpus: list, lang: str) -> str:
     research_scope = {'it': 'Analisi corrente, non inclusa negli snapshot scientifici RR1/RR2.', 'en': 'Current working analysis, not included in the RR1/RR2 scientific snapshots.', 'de': 'Aktuelle Arbeitsanalyse, nicht in den wissenschaftlichen Snapshots RR1/RR2 enthalten.', 'fr': 'Analyse de travail actuelle, non incluse dans les instantanés scientifiques RR1/RR2.'}[lang]
     body = '<p>'+h(t['patternsIntro'])+'</p><div class="tldStats">'+''.join('<div class="tldStat"><strong>'+number(counts[key],lang)+'</strong><span>'+h(t[key])+'</span></div>' for key in ('strings','classified','unclassified'))+'</div>'
     semantic_labels = {
-      'en':('With a semantic theme','Without a semantic theme','Themes recognised by the same lexical rules','Percentages use every distinct primary string in the round. These are minimum recognised shares under a partial, present-day classification; they do not measure adoption or society as a whole.'),
-      'it':('Con un tema semantico','Senza tema semantico','Temi riconosciuti con le stesse regole lessicali','Le percentuali usano tutte le stringhe primarie distinte del round. Sono quote minime riconosciute da una classificazione attuale e parziale; non misurano l’adozione o l’intera società.'),
-      'de':('Mit semantischem Thema','Ohne semantisches Thema','Mit denselben lexikalischen Regeln erkannte Themen','Die Prozentwerte beziehen sich auf alle unterschiedlichen primären Zeichenfolgen der Runde. Es sind erkannte Mindestanteile einer heutigen, unvollständigen Klassifikation; sie messen weder Nutzung noch die gesamte Gesellschaft.'),
-      'fr':('Avec un thème sémantique','Sans thème sémantique','Thèmes reconnus par les mêmes règles lexicales','Les pourcentages portent sur toutes les chaînes primaires distinctes du cycle. Ce sont des parts minimales reconnues par une classification actuelle et partielle ; elles ne mesurent ni l’adoption ni l’ensemble de la société.'),
+      'en':('With a semantic theme','Without a semantic theme','Themes recognised by the same lexical rules','Percentages use every distinct primary string in the round. These are rule-dependent results of a partial, present-day classification; they do not measure adoption or society as a whole.'),
+      'it':('Con un tema semantico','Senza tema semantico','Temi riconosciuti con le stesse regole lessicali','Le percentuali usano tutte le stringhe primarie distinte del round. Sono risultati dipendenti dalle regole di una classificazione attuale e parziale; non misurano l’adozione o l’intera società.'),
+      'de':('Mit semantischem Thema','Ohne semantisches Thema','Mit denselben lexikalischen Regeln erkannte Themen','Die Prozentwerte beziehen sich auf alle unterschiedlichen primären Zeichenfolgen der Runde. Es sind regelabhängige Ergebnisse einer heutigen, unvollständigen Klassifikation; sie messen weder Nutzung noch die gesamte Gesellschaft.'),
+      'fr':('Avec un thème sémantique','Sans thème sémantique','Thèmes reconnus par les mêmes règles lexicales','Les pourcentages portent sur toutes les chaînes primaires distinctes du cycle. Ces résultats dépendent des règles d’une classification actuelle et partielle ; ils ne mesurent ni l’adoption ni l’ensemble de la société.'),
     }[lang]
     body += '<div class="tldTable" tabindex="0" role="region" aria-label="'+h(t['coverage'])+'"><table><thead><tr>'+''.join('<th scope="col">'+h(x)+'</th>' for x in (t['round'],t['strings'],semantic_labels[0],semantic_labels[1]))+'</tr></thead><tbody>'
     for row in data['rounds']:
@@ -186,6 +189,7 @@ def patterns(data: dict, corpus: list, lang: str) -> str:
     body += '</tbody></table></div><p class="small">'+h(t['scope']+' '+research_scope)+'</p>'
     cats = [c for c in data['categories'] if c['id']!='unclassified']
     labels = {c['id']:CATEGORY_LABELS[c['id']][LANGS.index(lang)] for c in cats}
+    body += render_sensitivity(data,lang,labels,number)
     rounds=[r for r in data['rounds'] if r['round']!='legacy']
     body += '<h3>'+h(semantic_labels[2])+'</h3><p>'+h(semantic_labels[3])+'</p><div class="tldTable" tabindex="0" role="region" aria-label="'+h(semantic_labels[2])+'"><table><thead><tr><th scope="col">'+h(t['category'])+'</th>'+''.join('<th scope="col">'+h(r['round'])+'<br>n = '+number(r['strings'],lang)+'</th>' for r in rounds)+'</tr></thead><tbody>'
     for cat in data['comparableCategoryIds']:
@@ -245,7 +249,7 @@ def render(root: Path) -> None:
         text=after_intro(text,'overview',panel('tld-cultural-home',t['homeTitle'],'<p>'+h(t['homeBody'])+'</p><div class="tldLinks">'+link(lang,'timeline','tld-cultural-trajectory',t['historyLink'])+link(lang,'economics','round-application-fees',t['feesLink'])+'</div>',lang))
         text=text.replace('</head>',CSS+'</head>',1)
         prefix='' if path==root/'index.html' else '../'
-        for resource in ('data/round_application_fees.json','data/tld_cultural_corpus.csv','data/tld_cultural_patterns.json','assets/tld-cultural.js'):
+        for resource in ('data/round_application_fees.json','data/tld_cultural_corpus.csv','data/tld_cultural_patterns.json','data/cultural_lexicon_v2.json','data/cultural_sensitivity_v2.json','data/cultural_classification_protocol_v2.json','data/cultural_lexicon_review_queue_v2.csv','assets/tld-cultural.js'):
             text=text.replace(BASE+resource,prefix+resource)
         path.write_text(text,encoding='utf-8')
     print('TLD_CULTURAL_RESEARCH_OK',json.dumps({'strings':len(corpus),'languages':list(LANGS),'feeRounds':len(fee['rounds'])}))

@@ -69,6 +69,22 @@
     "root_files": {
       "label": "IANA · Root Files and TLD Registry Data",
       "url": "https://www.iana.org/domains/root/files"
+    },
+    "bank_contract": {
+      "label": "ICANN · .bank Registry Agreement, Specification 12 (2014)",
+      "url": "https://itp.cdn.icann.org/en/files/registry-agreements/bank/bank-agmt-html-25sep14-en.htm"
+    },
+    "bank_eligibility": {
+      "label": "fTLD · .Bank registrant eligibility",
+      "url": "https://register.bank/eligibility/"
+    },
+    "blog_launch": {
+      "label": "Nominet · .blog general availability (21 November 2016)",
+      "url": "https://nominet.uk/news/blog-enters-general-availability-phase/"
+    },
+    "blog_platform": {
+      "label": "WordPress.com · Free .blog subdomains (28 November 2018; updated 2024)",
+      "url": "https://wordpress.com/blog/2018/11/28/announcing-free-dotblog-subdomains/"
     }
   },
   "locales": {
@@ -163,6 +179,34 @@
           "strings": [
             ".berlin",
             ".google"
+          ]
+        },
+        {
+          "id": "governed_access",
+          "title": "Il nome promette anche un’appartenenza verificata",
+          "period": "Round 2012 · contratto .bank del 2014; requisiti correnti consultati nel 2026",
+          "fact": "Il contratto .bank prevede regole per la comunità bancaria e verifiche di ammissibilità. Il registro attuale limita chi può registrare, includendo banche regolamentate e alcune organizzazioni collegate.",
+          "reading": "Il suffisso può funzionare come confine di accesso, oltre che come etichetta. La fiducia è qui un progetto sostenuto da regole: queste fonti non misurano la fiducia degli utenti né dimostrano l’assenza di abusi.",
+          "sources": [
+            "bank_contract",
+            "bank_eligibility"
+          ],
+          "strings": [
+            ".bank"
+          ]
+        },
+        {
+          "id": "publishing",
+          "title": "Pubblicare una voce, dentro una piattaforma",
+          "period": "Round 2012 · apertura .blog nel 2016; sottodomini WordPress.com nel 2018",
+          "fact": "Nominet annuncia l’apertura generale di .blog il 21 novembre 2016. Nel novembre 2018 WordPress.com offre indirizzi gratuiti sotto nomi come food.blog: sono sottodomini, non registrazioni autonome di un dominio .blog.",
+          "reading": "La partecipazione al Web acquista un nome riconoscibile, mentre l’accesso può restare mediato da una piattaforma. Un indirizzo personale non equivale al controllo dell’infrastruttura: apertura editoriale e dipendenza tecnica possono convivere.",
+          "sources": [
+            "blog_launch",
+            "blog_platform"
+          ],
+          "strings": [
+            ".blog"
           ]
         },
         {
@@ -277,6 +321,34 @@
           ]
         },
         {
+          "id": "governed_access",
+          "title": "A name can promise verified membership",
+          "period": "2012 round · .bank agreement in 2014; current requirements consulted in 2026",
+          "fact": "The .bank agreement sets banking-community rules and eligibility verification. The current registry restricts registration, including regulated banks and certain related organizations.",
+          "reading": "A suffix can set an access boundary as well as name an activity. Trust is a project supported by rules here: these sources neither measure users’ trust nor establish an absence of abuse.",
+          "sources": [
+            "bank_contract",
+            "bank_eligibility"
+          ],
+          "strings": [
+            ".bank"
+          ]
+        },
+        {
+          "id": "publishing",
+          "title": "Publishing a voice, within a platform",
+          "period": "2012 round · .blog opens in 2016; WordPress.com subdomains in 2018",
+          "fact": "Nominet announces .blog general availability on 21 November 2016. In November 2018, WordPress.com offers free addresses beneath names such as food.blog: subdomains, rather than independent .blog domain registrations.",
+          "reading": "Web participation gains a recognizable name while access can remain mediated by a platform. A personal address does not imply infrastructure control: editorial openness and technical dependence can coexist.",
+          "sources": [
+            "blog_launch",
+            "blog_platform"
+          ],
+          "strings": [
+            ".blog"
+          ]
+        },
+        {
           "id": "reinterpretation",
           "title": "Changing times give existing names new meanings",
           "period": "Current reuse of .ai · 2026 applications published on 7 October",
@@ -388,6 +460,34 @@
           ]
         },
         {
+          "id": "governed_access",
+          "title": "Ein Name kann geprüfte Zugehörigkeit versprechen",
+          "period": "Runde 2012 · .bank-Vertrag 2014; heutige Anforderungen 2026 abgerufen",
+          "fact": "Der .bank-Vertrag legt Regeln für die Bankengemeinschaft und Zulassungsprüfungen fest. Die heutige Registry beschränkt Registrierungen unter anderem auf regulierte Banken und bestimmte verbundene Organisationen.",
+          "reading": "Ein Suffix kann eine Zugangsgrenze setzen und zugleich eine Tätigkeit benennen. Vertrauen wird hier durch Regeln angestrebt: Diese Quellen messen weder das Vertrauen der Nutzer noch belegen sie die Abwesenheit von Missbrauch.",
+          "sources": [
+            "bank_contract",
+            "bank_eligibility"
+          ],
+          "strings": [
+            ".bank"
+          ]
+        },
+        {
+          "id": "publishing",
+          "title": "Eine eigene Stimme innerhalb einer Plattform",
+          "period": "Runde 2012 · .blog startet 2016; WordPress.com-Subdomains 2018",
+          "fact": "Nominet meldet die allgemeine Verfügbarkeit von .blog am 21. November 2016. Im November 2018 bietet WordPress.com kostenlose Adressen unter Namen wie food.blog an: Subdomains statt eigenständiger .blog-Domainregistrierungen.",
+          "reading": "Die Beteiligung am Web erhält einen erkennbaren Namen, während eine Plattform den Zugang vermitteln kann. Eine persönliche Adresse bedeutet keine Kontrolle über die Infrastruktur: Redaktionelle Offenheit und technische Abhängigkeit können zusammenbestehen.",
+          "sources": [
+            "blog_launch",
+            "blog_platform"
+          ],
+          "strings": [
+            ".blog"
+          ]
+        },
+        {
           "id": "reinterpretation",
           "title": "Neue Zeiten geben alten Namen neue Bedeutungen",
           "period": "Heutige Umdeutung von .ai · Bewerbungen 2026 am 7. Oktober veröffentlicht",
@@ -496,6 +596,34 @@
           "strings": [
             ".berlin",
             ".google"
+          ]
+        },
+        {
+          "id": "governed_access",
+          "title": "Un nom peut promettre une appartenance vérifiée",
+          "period": "Cycle 2012 · contrat .bank en 2014 ; conditions actuelles consultées en 2026",
+          "fact": "Le contrat .bank prévoit des règles communautaires bancaires et une vérification d’éligibilité. Le registre actuel limite les inscriptions, notamment aux banques réglementées et à certaines organisations liées.",
+          "reading": "Un suffixe peut fixer une frontière d’accès tout en désignant une activité. La confiance est ici un projet encadré par des règles : ces sources ne mesurent ni la confiance des utilisateurs ni l’absence d’abus.",
+          "sources": [
+            "bank_contract",
+            "bank_eligibility"
+          ],
+          "strings": [
+            ".bank"
+          ]
+        },
+        {
+          "id": "publishing",
+          "title": "Publier une voix au sein d’une plateforme",
+          "period": "Cycle 2012 · ouverture de .blog en 2016 ; sous-domaines WordPress.com en 2018",
+          "fact": "Nominet annonce l’ouverture générale de .blog le 21 novembre 2016. En novembre 2018, WordPress.com propose des adresses gratuites sous des noms comme food.blog : des sous-domaines, pas des enregistrements autonomes de domaines .blog.",
+          "reading": "La participation au Web reçoit un nom reconnaissable, tandis qu’une plateforme peut encore servir d’intermédiaire. Une adresse personnelle ne donne pas le contrôle de l’infrastructure : ouverture éditoriale et dépendance technique peuvent coexister.",
+          "sources": [
+            "blog_launch",
+            "blog_platform"
+          ],
+          "strings": [
+            ".blog"
           ]
         },
         {

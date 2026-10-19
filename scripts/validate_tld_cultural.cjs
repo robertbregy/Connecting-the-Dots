@@ -15,7 +15,8 @@ for(const r of summary.rounds){assert.equal(r.strings,expected[r.round]);assert.
 for(const lang of ['en','it','de','fr']){
  const {document,Event}=parseHTML(read(lang+'/index.html'));
  for(const id of ['round-application-fees','tld-cultural-trajectory','tld-cultural-patterns','tld-cultural-home','tld-cultural-social'])assert.equal(document.querySelectorAll('#'+id).length,1,lang+' unique '+id);
- assert.equal(document.querySelectorAll('[data-cultural-stage]').length,6);
+ assert.equal(document.querySelectorAll('[data-cultural-stage]').length,8);
+ assert.equal(document.querySelectorAll('#cultural-sensitivity-v2').length,1);
  assert.equal(document.querySelectorAll('[data-fee-round]').length,4);
  assert.ok(document.querySelector('[data-fee-round="2026"]').textContent.includes(fees.locales[lang].unknown));
  const script=document.querySelector('script[src$="assets/tld-cultural.js"]');assert.ok(script);assert.equal(script.getAttribute('src'),'../assets/tld-cultural.js');

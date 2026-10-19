@@ -181,3 +181,14 @@ The case is published independently at `behind-the-round/{en,it,de,fr}/` and emb
 ## Audit corrections in technical release 0.7.87 (19 October 2026)
 
 The current package includes `research_bibliographic_corrections.json` (Zenodo publication date versus creation/cutoff), `source_method_corrections_20261019.json` (W3Techs newline normalization), `financial_source_verification_20261019.json` (rendered ICANN 2012 p.183 and the 2001 preliminary budget), `audit_20261019_resolution.json`, and `cultural_classification_protocol.json`. The CSV validation sample and reader recording sheet are unreviewed templates, not participant results or new measured evidence. Independent classification and real reader studies have not been completed. The older research deposits and all previously versioned ZIPs remain unchanged. Website-share percentages, zone-domain counts and technical platform inferences retain their separate units and scopes.
+
+
+## Cultural research v2 — technical release 0.7.88
+
+`cultural_lexicon_v2.json` publishes 412 exact-label editorial proposals and explicit abstentions. The vocabulary was selected after examining unmatched names; language and meaning glosses are provisional, not native-speaker or independent validation. These rules apply equally to all comparison cohorts. `tld_cultural_corpus.csv` preserves baseline, lexical-only and combined category columns, rule IDs, proposed languages and glosses. It keeps every one of the 3,240 prior labels and the original cohort membership, application IDs, designations and root-history dates.
+
+`cultural_sensitivity_v2.json` compares the v0.7.87 recognizer with the explicit vocabulary alone and their union, retaining the full denominator and disclosing IDN/ASCII coverage. Some apparent changes reverse direction under a different rule set; these are method-dependent readings, not measured social trends or tests of classification accuracy. IDN is an encoding property, including some accented Latin labels, not a language classification.
+
+`cultural_classification_protocol_v2.json` adds operational inclusion/exclusion criteria and links to `cultural_lexicon_review_queue_v2.csv`, whose 366 rows have blank reviewer/adjudication fields. Hide the proposed labels and glosses for first independent coding. The original 88-row sample and v1 protocol remain available for examining non-matches. No human agreement scores or reader results have been collected.
+
+`cultural_history_evidence_v2.json` records the scope and retrieval limitations of the new .bank and .blog sources. Eligibility rules do not establish user trust or absence of abuse; WordPress.com subdomains do not establish infrastructure independence. The new current layer does not alter frozen RR1/RR2 deposits. All twelve previous technical ZIPs, including v0.7.87, are protected.

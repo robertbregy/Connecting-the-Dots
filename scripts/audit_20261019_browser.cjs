@@ -51,12 +51,26 @@ const base=process.env.CTD_TEST_BASE||'http://127.0.0.1:8123/';
   assert.ok((await page.locator('[role="dialog"]').innerText()).includes('Lugano'));
   await page.locator('#profileTitle').press('Escape');
   assert.equal(await page.locator('[role="dialog"]:visible').count(),0);
+  await page.goto(base+lang+'/?tab=timeline#cultural-sensitivity-v2');
+  assert.ok(await page.locator('#cultural-sensitivity-v2').isVisible());
+  assert.equal(await page.locator('[data-cultural-stage]').count(),8);
+  assert.equal(await page.locator('[data-cultural-stage="governed_access"] .tldSources a').count(),2);
+  assert.equal(await page.locator('[data-cultural-stage="publishing"] .tldSources a').count(),2);
+  assert.equal(await page.locator('#cultural-sensitivity-v2 > .tldTable tbody tr').count(),3);
+  if(mobile){assert.ok(await page.locator('#cultural-sensitivity-v2 > .tldTable').evaluate(n=>n.scrollWidth<=n.clientWidth+2),'Sensitivity table overflows on phone');}
+  await page.screenshot({path:'audit-20261019/cultural-'+lang+(mobile?'-mobile':'-desktop')+'.png'});
+  await page.locator('#tld-cultural-round').selectOption('2012');
+  await page.locator('#tld-cultural-search').fill('商店');
+  assert.equal(await page.locator('#tld-cultural-records tr').count(),1);
+  await page.locator('#tld-cultural-round').selectOption('2026');
+  await page.locator('#tld-cultural-search').fill('人工智能');
+  assert.equal(await page.locator('#tld-cultural-records tr').count(),1);
   await page.goto(base+lang+'/?tab=research');
   assert.ok((await page.locator('#research [data-i18n="researchPaperFormat"]').innerText()).includes('1.3-draft'));
   assert.ok((await page.locator('#research .auditEvidence').innerText()).includes('11'));
   assert.deepEqual(errors,[],'Browser runtime errors');
   results.push({lang,mobile,status:'pass'});await page.close();
  }}finally{await browser.close()}
- fs.writeFileSync('audit-20261019/remediation-report.json',JSON.stringify({version:'0.7.87',scenarios:results.length,results,humanParticipants:0},null,2));
+ fs.writeFileSync('audit-20261019/remediation-report.json',JSON.stringify({version:JSON.parse(fs.readFileSync('publication.json','utf8')).version,scenarios:results.length,results,humanParticipants:0},null,2));
  console.log('AUDIT_20261019_BROWSER_PASS',JSON.stringify({scenarios:results.length,languages:4,viewports:2}));
 })().catch(e=>{console.error(e);process.exitCode=1});

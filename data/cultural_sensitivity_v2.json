@@ -1,0 +1,366 @@
+{
+  "interpretationLimits": [
+    "The expanded dictionary was designed after inspecting unclassified labels; it cannot be its own blind validation set.",
+    "Baseline reuses inherited editorial themes; lexiconOnly removes these and uses the explicit v2 word list alone. Expanded is their union. This measures sensitivity to rules, not accuracy.",
+    "Unequal IDN/ASCII coverage remains visible. IDN is an encoding property, not a language, ethnicity or non-Latin-script label.",
+    "All category percentages retain the complete distinct primary-string denominator; categories overlap and are not additive.",
+    "No p-values or societal trend estimates: the cohorts are selected application inventories and not representative samples of Internet users."
+  ],
+  "lexiconEntries": 412,
+  "lexiconId": "ctd-cultural-exact-lexicon-v2",
+  "matchedLexiconEntries": 369,
+  "recurrence": {
+    "only2012": 1396,
+    "only2026": 967,
+    "rounds": [
+      "2012",
+      "2026"
+    ],
+    "scope": "Repeated primary proposals in the pinned cohorts, not retention, continuity of operators, delegation or observed use.",
+    "sharedDistinctPrimaryStrings": 13,
+    "sharedLabels": [
+      "active",
+      "axis",
+      "budapest",
+      "corp",
+      "csc",
+      "docomo",
+      "dunlop",
+      "heart",
+      "hilton",
+      "intel",
+      "mail",
+      "matrix",
+      "roma"
+    ]
+  },
+  "rounds": [
+    {
+      "newlyRecognized": 0,
+      "round": "legacy",
+      "strata": [
+        {
+          "baseline": 0,
+          "expanded": 0,
+          "lexiconOnly": 0,
+          "stratum": "idn",
+          "strings": 0
+        },
+        {
+          "baseline": 7,
+          "expanded": 7,
+          "lexiconOnly": 1,
+          "stratum": "ascii",
+          "strings": 7
+        }
+      ],
+      "strings": 7,
+      "views": {
+        "baseline": {
+          "categories": {
+            "commerce": 1,
+            "community": 1,
+            "culture": 1,
+            "geography": 0,
+            "health": 0,
+            "institutions": 3,
+            "lifestyle": 0,
+            "professions": 0,
+            "technology": 1
+          },
+          "classified": 7
+        },
+        "expanded": {
+          "categories": {
+            "commerce": 1,
+            "community": 1,
+            "culture": 1,
+            "geography": 0,
+            "health": 0,
+            "institutions": 3,
+            "lifestyle": 0,
+            "professions": 0,
+            "technology": 1
+          },
+          "classified": 7
+        },
+        "lexiconOnly": {
+          "categories": {
+            "commerce": 0,
+            "community": 0,
+            "culture": 0,
+            "geography": 0,
+            "health": 0,
+            "institutions": 1,
+            "lifestyle": 0,
+            "professions": 0,
+            "technology": 0
+          },
+          "classified": 1
+        }
+      }
+    },
+    {
+      "newlyRecognized": 14,
+      "round": "2000",
+      "strata": [
+        {
+          "baseline": 0,
+          "expanded": 0,
+          "lexiconOnly": 0,
+          "stratum": "idn",
+          "strings": 0
+        },
+        {
+          "baseline": 91,
+          "expanded": 105,
+          "lexiconOnly": 59,
+          "stratum": "ascii",
+          "strings": 190
+        }
+      ],
+      "strings": 190,
+      "views": {
+        "baseline": {
+          "categories": {
+            "commerce": 13,
+            "community": 10,
+            "culture": 19,
+            "geography": 4,
+            "health": 1,
+            "institutions": 4,
+            "lifestyle": 18,
+            "professions": 12,
+            "technology": 16
+          },
+          "classified": 91
+        },
+        "expanded": {
+          "categories": {
+            "commerce": 17,
+            "community": 13,
+            "culture": 25,
+            "geography": 4,
+            "health": 1,
+            "institutions": 5,
+            "lifestyle": 19,
+            "professions": 13,
+            "technology": 16
+          },
+          "classified": 105
+        },
+        "lexiconOnly": {
+          "categories": {
+            "commerce": 10,
+            "community": 8,
+            "culture": 20,
+            "geography": 0,
+            "health": 1,
+            "institutions": 1,
+            "lifestyle": 9,
+            "professions": 4,
+            "technology": 6
+          },
+          "classified": 59
+        }
+      }
+    },
+    {
+      "newlyRecognized": 0,
+      "round": "2004",
+      "strata": [
+        {
+          "baseline": 0,
+          "expanded": 0,
+          "lexiconOnly": 0,
+          "stratum": "idn",
+          "strings": 0
+        },
+        {
+          "baseline": 9,
+          "expanded": 9,
+          "lexiconOnly": 2,
+          "stratum": "ascii",
+          "strings": 9
+        }
+      ],
+      "strings": 9,
+      "views": {
+        "baseline": {
+          "categories": {
+            "commerce": 0,
+            "community": 1,
+            "culture": 2,
+            "geography": 2,
+            "health": 0,
+            "institutions": 3,
+            "lifestyle": 1,
+            "professions": 1,
+            "technology": 2
+          },
+          "classified": 9
+        },
+        "expanded": {
+          "categories": {
+            "commerce": 0,
+            "community": 1,
+            "culture": 2,
+            "geography": 2,
+            "health": 0,
+            "institutions": 3,
+            "lifestyle": 1,
+            "professions": 1,
+            "technology": 2
+          },
+          "classified": 9
+        },
+        "lexiconOnly": {
+          "categories": {
+            "commerce": 0,
+            "community": 0,
+            "culture": 0,
+            "geography": 0,
+            "health": 0,
+            "institutions": 0,
+            "lifestyle": 1,
+            "professions": 1,
+            "technology": 0
+          },
+          "classified": 2
+        }
+      }
+    },
+    {
+      "newlyRecognized": 126,
+      "round": "2012",
+      "strata": [
+        {
+          "baseline": 0,
+          "expanded": 39,
+          "lexiconOnly": 39,
+          "stratum": "idn",
+          "strings": 109
+        },
+        {
+          "baseline": 333,
+          "expanded": 420,
+          "lexiconOnly": 231,
+          "stratum": "ascii",
+          "strings": 1300
+        }
+      ],
+      "strings": 1409,
+      "views": {
+        "baseline": {
+          "categories": {
+            "commerce": 46,
+            "community": 16,
+            "culture": 49,
+            "geography": 53,
+            "health": 9,
+            "institutions": 11,
+            "lifestyle": 78,
+            "professions": 55,
+            "technology": 36
+          },
+          "classified": 333
+        },
+        "expanded": {
+          "categories": {
+            "commerce": 76,
+            "community": 24,
+            "culture": 65,
+            "geography": 53,
+            "health": 20,
+            "institutions": 17,
+            "lifestyle": 118,
+            "professions": 64,
+            "technology": 50
+          },
+          "classified": 459
+        },
+        "lexiconOnly": {
+          "categories": {
+            "commerce": 50,
+            "community": 19,
+            "culture": 43,
+            "geography": 0,
+            "health": 18,
+            "institutions": 6,
+            "lifestyle": 83,
+            "professions": 22,
+            "technology": 32
+          },
+          "classified": 270
+        }
+      }
+    },
+    {
+      "newlyRecognized": 73,
+      "round": "2026",
+      "strata": [
+        {
+          "baseline": 0,
+          "expanded": 4,
+          "lexiconOnly": 4,
+          "stratum": "idn",
+          "strings": 12
+        },
+        {
+          "baseline": 334,
+          "expanded": 403,
+          "lexiconOnly": 86,
+          "stratum": "ascii",
+          "strings": 968
+        }
+      ],
+      "strings": 980,
+      "views": {
+        "baseline": {
+          "categories": {
+            "commerce": 103,
+            "community": 1,
+            "culture": 35,
+            "geography": 1,
+            "health": 20,
+            "institutions": 2,
+            "lifestyle": 69,
+            "professions": 16,
+            "technology": 123
+          },
+          "classified": 334
+        },
+        "expanded": {
+          "categories": {
+            "commerce": 108,
+            "community": 16,
+            "culture": 54,
+            "geography": 1,
+            "health": 23,
+            "institutions": 7,
+            "lifestyle": 80,
+            "professions": 26,
+            "technology": 133
+          },
+          "classified": 407
+        },
+        "lexiconOnly": {
+          "categories": {
+            "commerce": 9,
+            "community": 15,
+            "culture": 20,
+            "geography": 0,
+            "health": 5,
+            "institutions": 5,
+            "lifestyle": 11,
+            "professions": 10,
+            "technology": 20
+          },
+          "classified": 90
+        }
+      }
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "exploratory-editorial-not-independently-validated"
+}
