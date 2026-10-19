@@ -2534,7 +2534,8 @@
     "release0785": "Application fees by round, a cultural history of TLDs and a reproducible name census, with classification coverage and sources.",
     "release0786": "Added gTLD counts by technical platform and two top-50 comparisons: website presence and delegated domains, with origins, dates, sources and distinct limitations.",
     "researchPaperFormat": "HTML · v{paperVersion} · in English",
-    "release0787": "Audit revision: bibliographic dates, comparable regional application counts, qualified RSP and cultural inferences, mobile rankings and shareable filters; historical archives preserved."
+    "release0787": "Audit revision: bibliographic dates, comparable regional application counts, qualified RSP and cultural inferences, mobile rankings and shareable filters; historical archives preserved.",
+    "periodPolicyFramework": "policy framework"
   },
   "it": {
     "brand": "Brand",
@@ -4338,7 +4339,7 @@
     "profile2026Sub": "Dati disponibili a livello di stringa nel Reveal Day snapshot. Una candidatura 2026 non è ancora un TLD delegato.",
     "profile2026Snapshot": "Snapshot",
     "profile2026Applications": "Candidature per questa stringa",
-    "profile2026Applicant": "Applicant",
+    "profile2026Applicant": "Richiedente",
     "profile2026Contention": "Contesa per stringa identica",
     "profile2026ContentionSet": "Contention set",
     "profile2026ApplicationType": "Caratteristiche della candidatura",
@@ -5071,7 +5072,8 @@
     "release0785": "Fee di candidatura per round, traiettoria culturale dei TLD e censimento riproducibile dei nomi, con copertura delle classificazioni e fonti.",
     "release0786": "Aggiunti i conteggi dei gTLD per piattaforma tecnica e due classifiche dei primi 50: presenza nei siti web e domini delegati, con origine, date, fonti e limiti distinti.",
     "researchPaperFormat": "HTML · v{paperVersion} · in inglese",
-    "release0787": "Revisione completa dell’audit: date bibliografiche, unità geografiche omogenee, limiti delle inferenze RSP e culturali, classifiche mobili e filtri condivisibili; archivi preservati."
+    "release0787": "Revisione completa dell’audit: date bibliografiche, unità geografiche omogenee, limiti delle inferenze RSP e culturali, classifiche mobili e filtri condivisibili; archivi preservati.",
+    "periodPolicyFramework": "quadro delle regole"
   },
   "de": {
     "brand": "Marke",
@@ -7608,7 +7610,8 @@
     "release0785": "Antragsgebühren je Runde, Kulturgeschichte der TLDs und reproduzierbares Namensinventar mit Klassifikationsabdeckung und Quellen.",
     "release0786": "gTLD-Zählungen nach technischer Plattform und zwei Top-50-Vergleiche ergänzt: Websitepräsenz und delegierte Domains, mit Herkunft, Daten, Quellen und getrennten Grenzen.",
     "researchPaperFormat": "HTML · v{paperVersion} · auf Englisch",
-    "release0787": "Auditkorrekturen: bibliografische Daten, vergleichbare regionale Bewerbungszahlen, präzisierte RSP- und Kulturinterpretationen, mobile Ranglisten und teilbare Filter; Archive bewahrt."
+    "release0787": "Auditkorrekturen: bibliografische Daten, vergleichbare regionale Bewerbungszahlen, präzisierte RSP- und Kulturinterpretationen, mobile Ranglisten und teilbare Filter; Archive bewahrt.",
+    "periodPolicyFramework": "Regelwerk"
   },
   "fr": {
     "brand": "Marque",
@@ -10145,6 +10148,7 @@
     "release0785": "Frais de candidature par cycle, histoire culturelle des TLD et recensement reproductible des noms avec couverture des classifications et sources.",
     "release0786": "Ajout des décomptes de gTLD par plateforme technique et de deux comparaisons des 50 premiers : présence sur les sites et domaines délégués, avec origines, dates, sources et limites distinctes.",
     "researchPaperFormat": "HTML · v{paperVersion} · en anglais",
-    "release0787": "Révision de l’audit : dates bibliographiques, candidatures régionales comparables, limites des inférences RSP et culturelles, classements mobiles et filtres partageables ; archives conservées."
+    "release0787": "Révision de l’audit : dates bibliographiques, candidatures régionales comparables, limites des inférences RSP et culturelles, classements mobiles et filtres partageables ; archives conservées.",
+    "periodPolicyFramework": "cadre des règles"
   }
 }

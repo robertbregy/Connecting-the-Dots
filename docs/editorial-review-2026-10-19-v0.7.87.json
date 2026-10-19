@@ -1393,7 +1393,7 @@
     },
     "assets/app.js": {
       "baselineSHA256": "7b05a9ac42c01123b1f80d36b39a75c2824d8e1cf5c04ade837d60d665334c16",
-      "sha256": "aecc8f1fcffe394ea60127ce2f7a720032ddbb6768662f039f9208d784ed7a5a",
+      "sha256": "be4525f4803e12ef9baba6261c8b369d14f00a157c1dbac63e271debd4ca9e5e",
       "rationaleIds": [
         "C01",
         "C03",
@@ -1810,7 +1810,7 @@
     },
     "data/release_history.json": {
       "baselineSHA256": "e084001ed1150db3d2195e2e1c669808084dbc50535fcd2e5b5bf349bf8ebac7",
-      "sha256": "a4d618cde4001d4d2d42cd8fcb858ce3a7360414828bf029ebbc189f01521a49",
+      "sha256": "3bc9534ab04806e2cc4cba80de3f482a209921af0b3adb6f25a845fe1325835e",
       "rationaleIds": [
         "C01",
         "C02",
@@ -1824,7 +1824,7 @@
     },
     "data/translations.json": {
       "baselineSHA256": "6c71a4516d657f571e6fd714540e15be56fc423984681c3c003d46bf0ee5fc49",
-      "sha256": "638ecca55328c8e50c813111a73c5a7ddf93fc790fae848667ab4d1f6b980ddc",
+      "sha256": "a890fc8ca430a4d0bcc4adcdb14bc4423b378dbf117e99135641333f3fb48407",
       "rationaleIds": [
         "C01",
         "C02",
@@ -2338,7 +2338,7 @@
     },
     "data/cultural_classification_protocol.json": {
       "baselineSHA256": null,
-      "sha256": "7e062e8ffcb40094bcdaec3ed5f028880ed8c3a02db147f94e3e2c8164954402",
+      "sha256": "24483a6bc5abdc2877ae8afddf2099503929a4c50b515837fa94e29ac45508a0",
       "rationaleIds": [
         "A19"
       ]
