@@ -19,6 +19,7 @@ const base=process.env.CTD_TEST_BASE||'http://127.0.0.1:8123/';
   const button=page.locator('#themeBtn');await button.click();await page.waitForTimeout(200);
   const interaction=await page.evaluate(()=>Math.max(0,...window.__auditPerf.events));
   assert.ok(Number.isFinite(pre.lcp)&&pre.lcp>0,'No usable LCP observation; do not report an invented timing');
+  assert.ok(pre.lcp<12000,'Requested chapter exceeds the controlled lab visibility budget: '+pre.lcp);
   const graph=pre.resources.some(r=>r.name.includes('/data/aps_2026_application_graph.js'));
   assert.equal(graph,tab==='explore','Optional graph loading regression');
   const bytes=pre.resources.reduce((n,r)=>n+r.transferSize,0)+(pre.navigation?.transferSize||0);
@@ -28,7 +29,7 @@ const base=process.env.CTD_TEST_BASE||'http://127.0.0.1:8123/';
  }}finally{await browser.close()}
  const median=xs=>[...xs].sort((a,b)=>a-b)[Math.floor(xs.length/2)];
  const summary=['overview','explore','economics'].map(tab=>{const rows=runs.filter(x=>x.tab===tab);return {tab,median_lcp_ms:median(rows.map(x=>x.lcp_ms)),median_cls:median(rows.map(x=>x.cls)),median_bytes:median(rows.map(x=>x.transferred_bytes)),min_lcp_ms:Math.min(...rows.map(x=>x.lcp_ms)),max_lcp_ms:Math.max(...rows.map(x=>x.lcp_ms))}});
- const report={version:'0.7.87',environment:'GitHub Actions Chromium against local Python HTTP server; uncompressed source responses, not production Pages or field data',conditions:{cache:'cold, disabled',viewport:'390x844',latency_ms:150,download_bytes_per_second:204800,upload_bytes_per_second:131072,cpu_slowdown:4,repeats:3,post_load_observation_ms:1500},limitations:['LCP is a controlled lab observation, not a field percentile.','max_observed_event_ms is the observed theme-toggle event duration, not field INP.','Uncompressed local responses are not actual GitHub Pages transfer sizes.'],budget:{cold_transfer_bytes:5500000,home_must_not_load_APS_graph:true},summary,runs};
+ const report={version:'0.7.87',environment:'GitHub Actions Chromium against local Python HTTP server; uncompressed source responses, not production Pages or field data',conditions:{cache:'cold, disabled',viewport:'390x844',latency_ms:150,download_bytes_per_second:204800,upload_bytes_per_second:131072,cpu_slowdown:4,repeats:3,post_load_observation_ms:1500},limitations:['LCP is a controlled lab observation, not a field percentile.','max_observed_event_ms is the observed theme-toggle event duration, not field INP.','Uncompressed local responses are not actual GitHub Pages transfer sizes.'],budget:{cold_transfer_bytes:5500000,lab_lcp_ceiling_ms:12000,home_must_not_load_APS_graph:true},summary,runs};
  fs.mkdirSync('audit-20261019',{recursive:true});fs.writeFileSync('audit-20261019/performance.json',JSON.stringify(report,null,2));
  console.log('AUDIT_20261019_PERFORMANCE',JSON.stringify(summary));
 })().catch(e=>{console.error(e);process.exitCode=1});

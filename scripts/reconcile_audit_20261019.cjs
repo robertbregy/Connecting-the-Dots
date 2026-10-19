@@ -19,6 +19,12 @@ for(const lang of ['en','it','de','fr'])for(const filename of [lang+'/index.html
  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const style=document.createElement('style');style.id='audit-20261019-style';style.textContent=css;document.head.append(style);
  document.getElementById('ctd-worldmap').setAttribute('src',prefix+'assets/worldmap-lazy.js?v='+read('publication.json').version);
+ // Show the requested prerendered chapter while the deferred data index loads.
+ // The no-JavaScript document is unchanged; the full app takes over when ready.
+ const initial=document.createElement('script');initial.id='ctd-initial-route';
+ const ids=[...document.querySelectorAll('section.section[id]')].map(n=>n.id);
+ initial.textContent=`(()=>{const ids=${JSON.stringify(ids)};function route(){if(window.CTD_APP_READY)return;const q=new URLSearchParams(location.search);let hash='';try{hash=decodeURIComponent(location.hash.slice(1))}catch{}const tab=ids.find(x=>hash===x||hash.startsWith(x+'-part-'))||q.get('tab')||(q.has('tld')||q.has('q')?'explore':'overview');const id=ids.includes(tab)?tab:'overview';document.documentElement.classList.add('ctd-initial-route');let style=document.getElementById('ctd-first-route-style');if(!style){style=document.createElement('style');style.id='ctd-first-route-style';document.head.append(style)}style.textContent='html.ctd-initial-route .section{display:none!important}html.ctd-initial-route #'+id+'.section{display:block!important}'+(id==='overview'?'':'html.ctd-initial-route .hero{display:none!important}')}route();window.addEventListener('hashchange',route)})();`;
+ document.head.append(initial);
 
  // The two dates are a bibliography correction, not a rewrite of archived data.
  const note=()=>make(`<p class="auditEvidence">${esc(L.dates)} <a href="${prefix}data/research_bibliographic_corrections.json">JSON · Zenodo</a></p>`);

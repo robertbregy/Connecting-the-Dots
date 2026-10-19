@@ -4,7 +4,16 @@ const {chromium}=require('playwright');
 const dict=require('../data/translations.json');
 const base=process.env.CTD_TEST_BASE||'http://127.0.0.1:8123/';
 (async()=>{const browser=await chromium.launch({headless:true}),results=[];fs.mkdirSync('audit-20261019',{recursive:true});
- try{for(const lang of ['en','it','de','fr'])for(const mobile of [false,true]){
+ try{
+ // A chapter must be readable even while its large interactive index is delayed.
+ const slow=await browser.newPage();
+ await slow.route('**/data/site_bundle.js*',route=>route.abort());
+ await slow.route('**/assets/app.js*',route=>route.abort());
+ await slow.goto(base+'it/?tab=economics');
+ assert.ok(await slow.locator('#economics').isVisible(),'Requested static chapter hidden behind interactive data');
+ assert.equal(await slow.locator('#overview').isVisible(),false,'Wrong home chapter flashes while data load');
+ await slow.close();
+ for(const lang of ['en','it','de','fr'])for(const mobile of [false,true]){
   const page=await browser.newPage({viewport:mobile?{width:390,height:844}:{width:1280,height:900},reducedMotion:'reduce'});
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto(base+lang+'/');

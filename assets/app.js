@@ -738,3 +738,6 @@ document.documentElement.classList.remove('no-js');document.documentElement.clas
 document.addEventListener("ctd:viewchange",()=>{syncLanguageLinks();syncSectionLinks();syncFeedbackLinks()});
 
 window.CTD_RENDER_GEO=renderGeoMap;
+window.CTD_APP_READY=true;
+document.getElementById('ctd-first-route-style')?.remove();
+document.documentElement.classList.remove('ctd-initial-route');

@@ -1393,7 +1393,7 @@
     },
     "assets/app.js": {
       "baselineSHA256": "7b05a9ac42c01123b1f80d36b39a75c2824d8e1cf5c04ade837d60d665334c16",
-      "sha256": "74a5512983e98830e181c315b4ed888cb2e13dd160b6a489c7a6201f46c42ab8",
+      "sha256": "0e9e18c22413c5210ecc6d15bc666892a0419973704fe9882a003f877ba78e2d",
       "rationaleIds": [
         "C01",
         "C03",
@@ -2387,21 +2387,21 @@
     },
     "scripts/audit_20261019_browser.cjs": {
       "baselineSHA256": null,
-      "sha256": "f5b67d8e6dbc7b7f8ab3cc55aecb1929a73dc2acac509e504a55f77a5b8de3b1",
+      "sha256": "ee5dbafcdd4b0edcdf2bb624b788034f268a966a4d664b94ea4dbac63cfba8d1",
       "rationaleIds": [
         "A19"
       ]
     },
     "scripts/audit_performance_20261019.cjs": {
       "baselineSHA256": null,
-      "sha256": "52f4533e1b8bef821e2b395ea6216fb6ca4a816e5ffdc674b2c81433f601b00a",
+      "sha256": "ca83d915362553a894c3a52af511349f2c7092687d5544141b57ce59f051151a",
       "rationaleIds": [
         "A19"
       ]
     },
     "scripts/reconcile_audit_20261019.cjs": {
       "baselineSHA256": null,
-      "sha256": "4b17965f2ad9a5399f9b37cac700e95e03ad381ecdad66c857679c4be63b7e15",
+      "sha256": "ce492fda8ffc4669766fe9106114ea1b96755e9d73dbcb768c3ba852fd1457ae",
       "rationaleIds": [
         "A19"
       ]
