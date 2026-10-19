@@ -1,5 +1,11 @@
 ## v0.7.86 — 19 October 2026
 
+## 0.7.89 — 19 October 2026
+
+Story-led four-language home, six-part historical overview linked to the unchanged documented cases, compact ranking with explicit 10/all pagination and shareable state, name-only Explorer search with exact-match labels, narrative introductions for .com/.ai/.cat/.lugano, compact record tools, and a direct citation guide. Full corpus reconciliation and measurement scope remain available in disclosures. The optional APS application graph loads on explicit atlas intent instead of every TLD search.
+
+Prepared an 88-row blind pilot and neutral reader-study materials; independent coding and real-reader observations remain pending with zero participants. Existing datasets, uncertainty, official application status, immutable DOI snapshots and prior technical ZIPs are preserved. Controlled browser and live Pages checks accompany the release; automated checks do not establish reader comprehension.
+
 - Added a provider footprint view beside the power map: attributed gTLD counts, shared infrastructure groups and unattributed TLDs. Technical inference is distinguished from contractual responsibility and the 2026 RSP evaluation inventory.
 - Added two top-50 views in Economics: website-use shares including ccTLDs, and delegated-domain counts for observed gTLDs. Each row carries its documented origin and IANA registration date; filters retain original positions.
 - Archived attributed aggregate sources with hashes, reproducible cohort joins and CSV exports. Exact global website totals remain unavailable; no such counts are inferred from percentages. Preserved RR1/RR2 and all prior technical ZIPs.

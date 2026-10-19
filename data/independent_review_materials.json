@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "createdOn": "2026-10-19",
+  "status": "materials-ready-no-results",
+  "humanParticipants": 0,
+  "independentCoders": 0,
+  "culturalReview": {
+    "codebook": "cultural_classification_protocol_v2.json",
+    "blindWorksheet": "cultural_blind_review_v2.csv",
+    "pilotRows": 88,
+    "sampling": "Preserved 88-row stratified pilot; not a representative random sample. All independently reviewed conclusions must disclose this selection.",
+    "instructions": [
+      "Two independent people code the blind worksheet separately using the same codebook. Do not expose proposed labels, glosses or the expanded lexicon before coding.",
+      "Record uncertainty, polysemy, original language and supporting evidence; abstain where evidence is insufficient. Seek competent readers of the relevant languages.",
+      "Keep official ICANN designations and applicant activities separate from name semantics.",
+      "Compare independent decisions before adjudication; report disagreements by stratum, missing labels and errors. Do not calculate or publish an agreement score until real observations exist.",
+      "Freeze methods and a broader sampling design before any confirmatory claim. This pilot alone cannot establish society-wide trajectories."
+    ]
+  },
+  "readerStudy": {
+    "design": "qualitative formative study, not statistically representative",
+    "plannedParticipants": {
+      "nonSpecialists": 6,
+      "researchers": 2
+    },
+    "observedParticipants": 0,
+    "instructions": [
+      "Ask consent for observation; do not collect identifying information in public research records.",
+      "Use the same neutral tasks, without suggesting the expected answer. Record assistance, errors, hesitations and spontaneous interest.",
+      "Do not infer comprehension from clicks, completion time or automated accessibility checks alone.",
+      "After corrective changes, repeat affected tasks with new people."
+    ],
+    "tasks": {
+      "it": [
+        "Di che cosa parla il sito? Che cosa ti incuriosisce?",
+        "Trova .ai e spiega che cosa rappresenta.",
+        "Che cosa conta una cifra della classifica e a quando risale?",
+        "Che cosa è .lugano oggi? Quali passaggi restano?",
+        "Trova il costo di presentare una domanda e spiega che cosa consente di ottenere.",
+        "Per ricercatori: trova fonte, metodo, limiti e riferimento per citare un risultato corrente."
+      ],
+      "en": [
+        "What is this site about? What interests you?",
+        "Find .ai and explain what it represents.",
+        "What does a ranking value count, and when was it observed?",
+        "What is .lugano today? What stages remain?",
+        "Find the cost of an application and explain what that payment provides.",
+        "For researchers: find the source, method, limitations and citation for a current result."
+      ]
+    },
+    "blankObservationFields": [
+      "participant_code",
+      "audience",
+      "task",
+      "path",
+      "assistance",
+      "hesitation",
+      "interpretation",
+      "error",
+      "spontaneous_interest",
+      "follow_up_change"
+    ]
+  }
+}

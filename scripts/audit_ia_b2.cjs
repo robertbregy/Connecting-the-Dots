@@ -55,8 +55,8 @@ async function checkAxe(page,label) {
     assert.deepEqual(homeDestinations,hubs.map(([section])=>({section,href:"#"+section})),
       "Home must link to all six primary areas in navigation order");
     assert.equal(await page.locator(".iaLegacyNavDisclosure[open]").count(),0,"original nav should begin folded");
-    assert.ok((await page.locator('.hero p[data-i18n="heroBody"]').innerText()).includes("Connecting the Dots"),"project purpose not visible on Home");
-    assert.ok((await page.locator(".iaProjectPrompt").innerText()).length>6,"no question introducing the project");
+    assert.ok((await page.locator('.hero h1').innerText()).includes("Connecting the Dots"),"project purpose not visible on Home");
+    assert.equal(await page.locator(".audienceDiscovery:visible").count(),3,"three source-backed discovery paths");
     assert.ok((await page.locator(".heroPlain").innerText()).includes(".lugano"),"no distinction for candidate .lugano");
     tally.homePurpose=true;
     const visible=await page.evaluate(()=>{

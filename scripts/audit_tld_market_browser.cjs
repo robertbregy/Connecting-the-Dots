@@ -12,7 +12,8 @@ module.exports=async function auditTldMarket(){
    const page=await browser.newPage({viewport:mobile?{width:390,height:844}:{width:1280,height:900},reducedMotion:'reduce'});
    await page.goto(base+lang+'/?tab=economics#tld-market-reach');
    await page.locator('.marketViews:visible').waitFor();
-   await page.locator('[data-market-view="zones"]').click();
+   assert.equal(await page.locator('#market-web tbody tr:visible').count(),10,'Compact first page');await page.locator('#market-more').click();
+  await page.locator('[data-market-view="zones"]').click();
    await page.locator('#market-origin').selectOption('2012');
    assert.equal(await page.locator('#market-zones tbody tr:visible').count(),42);
    await page.locator('#market-search').fill('com');

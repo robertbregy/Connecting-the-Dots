@@ -1,0 +1,572 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-19",
+  "humanParticipants": 0,
+  "independentCulturalReviewCompleted": false,
+  "locales": {
+    "it": {
+      "hook": "Dietro un punto c’è un mondo.",
+      "heroBody": "Perché un’isola dei Caraibi ha un nome legato all’intelligenza artificiale? Chi può dare a una città il suo posto su Internet? Scopri le storie, il denaro e le identità dietro .com, .ai e gli altri nomi della rete.",
+      "heroPlain": "In example.com, .com è l’estensione finale: un dominio di primo livello, o TLD. Qui puoi capirne la storia e verificare dati e fonti. .lugano è una candidatura, non un’estensione già operativa.",
+      "eyebrow": "NOMI DI INTERNET · PERSONE · POTERE",
+      "heroLearnCta": "Segui la storia dei nomi",
+      "heroExploreCta": "Cerca un’estensione",
+      "stories": [
+        [
+          ".com",
+          "Prima dei siti web",
+          "Nasce per le attività commerciali, prima che esista il Web.",
+          "origins"
+        ],
+        [
+          ".ai",
+          "Un’isola, un nuovo significato",
+          "È il codice di Anguilla; oggi richiama anche l’intelligenza artificiale.",
+          "reinterpretation"
+        ],
+        [
+          ".cat",
+          "Una lingua trova il suo spazio",
+          "Un nome per la comunità linguistica e culturale catalana.",
+          "community"
+        ]
+      ],
+      "start": "Da una curiosità alla sua fonte",
+      "startBody": "Segui una storia, cerca un nome oppure scopri come funziona la rete.",
+      "allRoutes": "Scegli un percorso",
+      "corpus": "Che cosa conta questo archivio?",
+      "bridge": "Dalle estensioni alle singole domande ICANN",
+      "moreContext": "Per capire il contesto",
+      "plainStatus": "Stato documentato al",
+      "scopeLabel": "Cerca in",
+      "scopeAll": "Nomi, organizzazioni e storie",
+      "scopeNames": "Solo nomi delle estensioni",
+      "exact": "Corrispondenza esatta",
+      "other": "Altri risultati",
+      "searchHelp": "Il risultato esatto viene prima. La ricerca estesa include anche organizzazioni, paesi e storie; scegli “Solo nomi” per limitarla.",
+      "review": "Revisione editoriale del 19 ottobre 2026",
+      "mapTitle": "Come cambiano i nomi, come cambia la rete",
+      "mapLead": "Una lettura storica attraverso casi documentati. Le trasformazioni si sovrappongono: i nomi più antichi continuano a vivere e possono cambiare significato.",
+      "epochs": [
+        [
+          "1984–1985",
+          "Dare ordine",
+          ".com · .edu · .org",
+          "La rete si organizza per funzioni e istituzioni.",
+          "origins"
+        ],
+        [
+          "1993–1994",
+          "Essere presenti",
+          ".com",
+          "Con il Web, il nome diventa anche vetrina e servizio.",
+          "web_presence"
+        ],
+        [
+          "2000–2004",
+          "Riconoscersi",
+          ".coop · .cat · .mobi",
+          "Comunità, lingue e modi di connettersi cercano uno spazio.",
+          "community"
+        ],
+        [
+          "2010",
+          "Usare la propria scrittura",
+          "مصر. · السعودية.",
+          "I primi codici territoriali in arabo entrano nella radice DNS.",
+          "scripts"
+        ],
+        [
+          "2012 →",
+          "Abitare e organizzare",
+          ".berlin · .google · .bank · .blog",
+          "Città, marchi, regole di accesso e pubblicazione convivono.",
+          "cities_brands"
+        ],
+        [
+          "Oggi",
+          "Rileggere i nomi",
+          ".ai",
+          "Un codice territoriale acquista una nuova associazione culturale.",
+          "reinterpretation"
+        ]
+      ],
+      "epochMore": "Caso e fonti",
+      "limits": "Metodo e limiti della lettura",
+      "cultureLimit": "I casi documentano storie specifiche. La classificazione dei nomi resta esplorativa e non misura da sola un cambiamento dell’intera società.",
+      "marketIntro": "Quali estensioni incontriamo nei siti? E quali contengono più nomi di dominio? Sono due classifiche diverse, entrambe con dati del 18 ottobre 2026.",
+      "marketSummary": "Come si distribuiscono tutte le 50 posizioni?",
+      "marketFilters": "Cerca o filtra la classifica",
+      "showAll": "Mostra tutti i risultati",
+      "showTen": "Mostra i primi 10",
+      "shown": "{shown} mostrati su {total} risultati · classifica completa: 50",
+      "webScopeShort": "Quota dei siti osservati da W3Techs · 18 ottobre 2026. Include i codici territoriali. È una percentuale, non un numero assoluto di siti.",
+      "zoneScopeShort": "Domini delegati nelle zone DNS rilevate da nTLDData · 18 ottobre 2026. Esclude i codici territoriali e non conta i siti attivi.",
+      "measureDetails": "Perimetro completo della misura",
+      "citeTitle": "Che cosa vuoi citare?",
+      "citeIntro": "Scegli l’oggetto che hai effettivamente usato. Il DOI RR2 identifica il suo archivio, non ogni analisi aggiunta al sito.",
+      "citeHeaders": [
+        "Oggetto",
+        "Versione e data",
+        "Riferimento e limiti"
+      ],
+      "citeRows": [
+        [
+          "Dati scientifici archiviati",
+          "RR2 · evidenze al 10 ottobre 2026",
+          "Deposito immutabile · pubblicazione Zenodo 11 ottobre 2026",
+          "doi"
+        ],
+        [
+          "Dati correnti del sito",
+          "v0.7.89 · 19 ottobre 2026",
+          "Pacchetto, manifest e fonti; indicare versione e data di consultazione. Esterno al DOI RR2.",
+          "pack"
+        ],
+        [
+          "Metodo e interpretazione",
+          "Working paper 1.4-draft · 19 ottobre 2026",
+          "Bozza in inglese, non sottoposta a revisione paritaria; citare la revisione consultata.",
+          "paper"
+        ]
+      ],
+      "verificationTitle": "Che cosa resta da verificare con persone indipendenti?",
+      "verificationBody": "Il protocollo è pubblico, ma non sono ancora disponibili risultati di classificazione indipendente né prove di comprensione con lettori. Le verifiche automatiche controllano il funzionamento, non sostituiscono queste osservazioni.",
+      "kit": "Materiali per la verifica indipendente",
+      "journeyIntro": "Quando apri un sito, il nome aiuta a trovare il computer che risponde. Segui i passaggi, uno alla volta.",
+      "journeyFoundation": "Le persone ricordano nomi come example.com. Le reti usano indirizzi numerici: il DNS è il sistema che collega nomi e indirizzi.",
+      "homeScope": "Un progetto indipendente di Robert Bregy: storie spiegate, dati consultabili e fonti per verificare ogni passaggio.",
+      "iaHomeOutcomesDesc": "CONTESE, CONTROVERSIE ED ESITI",
+      "presetRoot": "Estensioni operative",
+      "presetOutsideRoot": "Fuori dalla radice DNS",
+      "briefAi": "È il codice territoriale di Anguilla. La sua associazione con l’intelligenza artificiale mostra come un nome esistente possa acquisire un nuovo significato.",
+      "briefCat": "Rappresenta la comunità linguistica e culturale catalana: un’appartenenza che attraversa i confini di uno Stato.",
+      "briefCom": "Nasce per le attività commerciali prima del Web. In seguito diventa uno dei simboli della presenza online.",
+      "briefLugano": "È una candidatura della Città di Lugano nel round 2026. Non è ancora un’estensione operativa: approvazione, delega e usi futuri restano da verificare.",
+      "whyInteresting": "Perché questo nome è interessante"
+    },
+    "en": {
+      "hook": "There’s a world behind a dot.",
+      "heroBody": "Why does a Caribbean island have a name associated with artificial intelligence? Who can give a city its own place on the Internet? Discover the stories, money and identities behind .com, .ai and other Internet names.",
+      "heroPlain": "In example.com, .com is the ending: a top-level domain, or TLD. Explore its history and check the data and sources here. .lugano is an application, not an operational extension.",
+      "eyebrow": "INTERNET NAMES · PEOPLE · POWER",
+      "heroLearnCta": "Follow the story of names",
+      "heroExploreCta": "Find an extension",
+      "stories": [
+        [
+          ".com",
+          "Before websites",
+          "Created for commercial activities before the Web existed.",
+          "origins"
+        ],
+        [
+          ".ai",
+          "An island, a new meaning",
+          "Anguilla’s country code now also evokes artificial intelligence.",
+          "reinterpretation"
+        ],
+        [
+          ".cat",
+          "A language finds its space",
+          "A name for the Catalan linguistic and cultural community.",
+          "community"
+        ]
+      ],
+      "start": "From curiosity to evidence",
+      "startBody": "Follow a story, look up a name or discover how the network works.",
+      "allRoutes": "Choose a route",
+      "corpus": "What does this archive count?",
+      "bridge": "From extensions to individual ICANN applications",
+      "moreContext": "Understand the context",
+      "plainStatus": "Documented status as of",
+      "scopeLabel": "Search in",
+      "scopeAll": "Names, organisations and stories",
+      "scopeNames": "Extension names only",
+      "exact": "Exact match",
+      "other": "Other results",
+      "searchHelp": "An exact name match comes first. Extended search also includes organisations, countries and stories; choose “Names only” to narrow it.",
+      "review": "Editorial review · 19 October 2026",
+      "mapTitle": "Changing names, a changing network",
+      "mapLead": "A historical reading through documented cases. These changes overlap: older names live on and can acquire new meanings.",
+      "epochs": [
+        [
+          "1984–1985",
+          "Organising the network",
+          ".com · .edu · .org",
+          "Names distinguish functions and institutions.",
+          "origins"
+        ],
+        [
+          "1993–1994",
+          "Being present",
+          ".com",
+          "With the Web, a name also becomes a storefront and service.",
+          "web_presence"
+        ],
+        [
+          "2000–2004",
+          "Belonging",
+          ".coop · .cat · .mobi",
+          "Communities, languages and ways of connecting seek a space.",
+          "community"
+        ],
+        [
+          "2010",
+          "Using your own script",
+          "مصر. · السعودية.",
+          "The first Arabic-script country codes enter the DNS root.",
+          "scripts"
+        ],
+        [
+          "2012 →",
+          "Making a place",
+          ".berlin · .google · .bank · .blog",
+          "Cities, brands, access rules and publishing coexist.",
+          "cities_brands"
+        ],
+        [
+          "Today",
+          "Reinterpreting names",
+          ".ai",
+          "An existing country code acquires a new cultural association.",
+          "reinterpretation"
+        ]
+      ],
+      "epochMore": "Case and sources",
+      "limits": "Reading method and limits",
+      "cultureLimit": "These cases document particular histories. Name classification remains exploratory and cannot by itself measure society-wide change.",
+      "marketIntro": "Which endings appear on websites? And which contain the most domain names? These are two different rankings, both dated 18 October 2026.",
+      "marketSummary": "How are all 50 positions distributed?",
+      "marketFilters": "Search or filter the ranking",
+      "showAll": "Show all results",
+      "showTen": "Show the first 10",
+      "shown": "{shown} shown out of {total} matches · full ranking: 50",
+      "webScopeShort": "Share of websites surveyed by W3Techs · 18 October 2026. Includes country codes. A percentage, not an absolute website count.",
+      "zoneScopeShort": "Delegated domains in DNS zones observed by nTLDData · 18 October 2026. Excludes country codes; does not count active websites.",
+      "measureDetails": "Full scope of this measure",
+      "citeTitle": "What do you want to cite?",
+      "citeIntro": "Choose the object you actually used. The RR2 DOI identifies its archive, not every analysis later added to the site.",
+      "citeHeaders": [
+        "Object",
+        "Version and date",
+        "Reference and limitations"
+      ],
+      "citeRows": [
+        [
+          "Archived research data",
+          "RR2 · evidence through 10 October 2026",
+          "Immutable deposit · Zenodo publication 11 October 2026",
+          "doi"
+        ],
+        [
+          "Current website data",
+          "v0.7.89 · 19 October 2026",
+          "Package, manifest and sources; report version and access date. Outside the RR2 DOI.",
+          "pack"
+        ],
+        [
+          "Method and interpretation",
+          "Working paper 1.4-draft · 19 October 2026",
+          "English draft, not peer reviewed; cite the revision consulted.",
+          "paper"
+        ]
+      ],
+      "verificationTitle": "What still requires independent people?",
+      "verificationBody": "The protocol is public, but independent coding results and reader-comprehension observations are not yet available. Automated checks test functionality and do not replace these observations.",
+      "kit": "Independent review materials",
+      "journeyIntro": "When you open a website, its name helps find the computer that responds. Follow the steps one at a time.",
+      "journeyFoundation": "People remember names such as example.com. Networks use numerical addresses: DNS connects the two.",
+      "homeScope": "An independent project by Robert Bregy: explained stories, accessible data and sources to check each step.",
+      "iaHomeOutcomesDesc": "CONTENTION, DISPUTES AND OUTCOMES",
+      "presetRoot": "Operational extensions",
+      "presetOutsideRoot": "Outside the DNS root",
+      "briefAi": "Anguilla’s country code. Its association with artificial intelligence illustrates how an existing name can acquire a new meaning.",
+      "briefCat": "A name for the Catalan linguistic and cultural community: a belonging that crosses state borders.",
+      "briefCom": "Created for commercial activities before the Web. It later became a symbol of online presence.",
+      "briefLugano": "An application by the City of Lugano in the 2026 round. It is not yet operational: approval, delegation and future uses remain to be established.",
+      "whyInteresting": "Why this name matters"
+    },
+    "de": {
+      "hook": "Hinter einem Punkt steckt eine Welt.",
+      "heroBody": "Warum wird das Kürzel einer Karibikinsel mit künstlicher Intelligenz verbunden? Wer kann einer Stadt ihren eigenen Platz im Internet geben? Entdecke Geschichten, Geld und Identitäten hinter .com, .ai und anderen Internetnamen.",
+      "heroPlain": "In example.com ist .com die Endung: eine Top-Level-Domain, kurz TLD. Hier kannst du ihre Geschichte erkunden sowie Daten und Quellen prüfen. .lugano ist eine Bewerbung, keine bereits betriebene Endung.",
+      "eyebrow": "INTERNETNAMEN · MENSCHEN · MACHT",
+      "heroLearnCta": "Der Geschichte der Namen folgen",
+      "heroExploreCta": "Eine Endung suchen",
+      "stories": [
+        [
+          ".com",
+          "Vor den Websites",
+          "Für kommerzielle Aktivitäten geschaffen, bevor das Web existierte.",
+          "origins"
+        ],
+        [
+          ".ai",
+          "Eine Insel, neue Bedeutung",
+          "Anguillas Ländercode steht heute auch für künstliche Intelligenz.",
+          "reinterpretation"
+        ],
+        [
+          ".cat",
+          "Eine Sprache findet ihren Raum",
+          "Ein Name für die katalanische Sprach- und Kulturgemeinschaft.",
+          "community"
+        ]
+      ],
+      "start": "Von der Neugier zur Quelle",
+      "startBody": "Folge einer Geschichte, suche einen Namen oder entdecke, wie das Netz funktioniert.",
+      "allRoutes": "Einen Weg wählen",
+      "corpus": "Was zählt dieses Archiv?",
+      "bridge": "Von Endungen zu einzelnen ICANN-Bewerbungen",
+      "moreContext": "Den Zusammenhang verstehen",
+      "plainStatus": "Dokumentierter Stand vom",
+      "scopeLabel": "Suchen in",
+      "scopeAll": "Namen, Organisationen und Geschichten",
+      "scopeNames": "Nur Namen der Endungen",
+      "exact": "Genaue Übereinstimmung",
+      "other": "Weitere Ergebnisse",
+      "searchHelp": "Ein genau passender Name erscheint zuerst. Die erweiterte Suche umfasst auch Organisationen, Länder und Geschichten; „Nur Namen“ grenzt sie ein.",
+      "review": "Redaktionelle Prüfung · 19. Oktober 2026",
+      "mapTitle": "Namen verändern sich, das Netz verändert sich",
+      "mapLead": "Eine historische Lesart anhand dokumentierter Fälle. Die Entwicklungen überlagern sich: ältere Namen bleiben bestehen und erhalten neue Bedeutungen.",
+      "epochs": [
+        [
+          "1984–1985",
+          "Das Netz ordnen",
+          ".com · .edu · .org",
+          "Namen unterscheiden Funktionen und Institutionen.",
+          "origins"
+        ],
+        [
+          "1993–1994",
+          "Präsenz zeigen",
+          ".com",
+          "Mit dem Web wird ein Name auch Schaufenster und Dienst.",
+          "web_presence"
+        ],
+        [
+          "2000–2004",
+          "Zugehörigkeit zeigen",
+          ".coop · .cat · .mobi",
+          "Gemeinschaften, Sprachen und Zugangsformen suchen Raum.",
+          "community"
+        ],
+        [
+          "2010",
+          "Die eigene Schrift nutzen",
+          "مصر. · السعودية.",
+          "Die ersten arabisch geschriebenen Ländercodes gelangen in die DNS-Root.",
+          "scripts"
+        ],
+        [
+          "2012 →",
+          "Einen Ort gestalten",
+          ".berlin · .google · .bank · .blog",
+          "Städte, Marken, Zugangsregeln und Publizieren bestehen nebeneinander.",
+          "cities_brands"
+        ],
+        [
+          "Heute",
+          "Namen neu lesen",
+          ".ai",
+          "Ein vorhandener Ländercode erhält eine neue kulturelle Bedeutung.",
+          "reinterpretation"
+        ]
+      ],
+      "epochMore": "Fall und Quellen",
+      "limits": "Methode und Grenzen der Lesart",
+      "cultureLimit": "Die Fälle dokumentieren einzelne Entwicklungen. Die Namensklassifikation bleibt explorativ und misst allein keinen gesamtgesellschaftlichen Wandel.",
+      "marketIntro": "Welche Endungen erscheinen auf Websites? Und welche enthalten die meisten Domainnamen? Zwei verschiedene Ranglisten mit Daten vom 18. Oktober 2026.",
+      "marketSummary": "Wie verteilen sich alle 50 Plätze?",
+      "marketFilters": "Rangliste durchsuchen oder filtern",
+      "showAll": "Alle Ergebnisse anzeigen",
+      "showTen": "Die ersten 10 anzeigen",
+      "shown": "{shown} von {total} Treffern angezeigt · gesamte Rangliste: 50",
+      "webScopeShort": "Anteil der von W3Techs untersuchten Websites · 18. Oktober 2026. Ländercodes eingeschlossen. Ein Prozentanteil, keine absolute Websitezahl.",
+      "zoneScopeShort": "Delegierte Domains in den von nTLDData beobachteten DNS-Zonen · 18. Oktober 2026. Ohne Ländercodes; keine Zählung aktiver Websites.",
+      "measureDetails": "Vollständiger Umfang der Kennzahl",
+      "citeTitle": "Was möchtest du zitieren?",
+      "citeIntro": "Wähle das tatsächlich verwendete Objekt. Der RR2-DOI bezeichnet dessen Archiv, nicht jede spätere Analyse auf der Website.",
+      "citeHeaders": [
+        "Objekt",
+        "Version und Datum",
+        "Referenz und Grenzen"
+      ],
+      "citeRows": [
+        [
+          "Archivierte Forschungsdaten",
+          "RR2 · Evidenz bis 10. Oktober 2026",
+          "Unveränderliches Archiv · Zenodo-Veröffentlichung 11. Oktober 2026",
+          "doi"
+        ],
+        [
+          "Aktuelle Website-Daten",
+          "v0.7.89 · 19. Oktober 2026",
+          "Paket, Manifest und Quellen; Version und Abrufdatum angeben. Ausserhalb des RR2-DOI.",
+          "pack"
+        ],
+        [
+          "Methode und Interpretation",
+          "Working Paper 1.4-draft · 19. Oktober 2026",
+          "Englischer Entwurf ohne Peer-Review; die verwendete Revision zitieren.",
+          "paper"
+        ]
+      ],
+      "verificationTitle": "Was muss noch unabhängig geprüft werden?",
+      "verificationBody": "Das Protokoll ist öffentlich. Ergebnisse unabhängiger Kodierung und Beobachtungen zum Leseverständnis liegen noch nicht vor. Automatische Prüfungen testen Funktionen und ersetzen diese Beobachtungen nicht.",
+      "kit": "Material für die unabhängige Prüfung",
+      "journeyIntro": "Wenn du eine Website öffnest, hilft der Name, den antwortenden Computer zu finden. Folge den Schritten nacheinander.",
+      "journeyFoundation": "Menschen merken sich Namen wie example.com. Netze verwenden numerische Adressen: DNS verbindet beides.",
+      "homeScope": "Ein unabhängiges Projekt von Robert Bregy: erklärte Geschichten, zugängliche Daten und Quellen für jeden Schritt.",
+      "iaHomeOutcomesDesc": "KONKURRENZ, STREITFÄLLE UND ERGEBNISSE",
+      "presetRoot": "Betriebene Endungen",
+      "presetOutsideRoot": "Ausserhalb der DNS-Root",
+      "briefAi": "Der Ländercode von Anguilla. Seine Verbindung mit künstlicher Intelligenz zeigt, wie ein bestehender Name neue Bedeutung erhält.",
+      "briefCat": "Ein Name für die katalanische Sprach- und Kulturgemeinschaft: Zugehörigkeit über Staatsgrenzen hinweg.",
+      "briefCom": "Für kommerzielle Aktivitäten vor dem Web geschaffen. Später wurde der Name zum Symbol der Onlinepräsenz.",
+      "briefLugano": "Eine Bewerbung der Stadt Lugano in der Runde 2026. Noch keine betriebene Endung: Genehmigung, Delegierung und künftige Nutzung bleiben offen.",
+      "whyInteresting": "Warum dieser Name interessant ist"
+    },
+    "fr": {
+      "hook": "Derrière un point, tout un monde.",
+      "heroBody": "Pourquoi le code d’une île des Caraïbes évoque-t-il l’intelligence artificielle ? Qui peut donner à une ville sa propre place sur Internet ? Découvrez les histoires, l’argent et les identités derrière .com, .ai et les autres noms du réseau.",
+      "heroPlain": "Dans example.com, .com est la terminaison : un domaine de premier niveau, ou TLD. Explorez son histoire et vérifiez les données et les sources. .lugano est une candidature, pas une extension déjà opérationnelle.",
+      "eyebrow": "NOMS INTERNET · PERSONNES · POUVOIR",
+      "heroLearnCta": "Suivre l’histoire des noms",
+      "heroExploreCta": "Chercher une extension",
+      "stories": [
+        [
+          ".com",
+          "Avant les sites web",
+          "Créé pour les activités commerciales avant l’existence du Web.",
+          "origins"
+        ],
+        [
+          ".ai",
+          "Une île, un nouveau sens",
+          "Le code territorial d’Anguilla évoque aussi l’intelligence artificielle.",
+          "reinterpretation"
+        ],
+        [
+          ".cat",
+          "Une langue trouve sa place",
+          "Un nom pour la communauté linguistique et culturelle catalane.",
+          "community"
+        ]
+      ],
+      "start": "De la curiosité à la source",
+      "startBody": "Suivez une histoire, cherchez un nom ou découvrez le fonctionnement du réseau.",
+      "allRoutes": "Choisir un parcours",
+      "corpus": "Que compte cette archive ?",
+      "bridge": "Des extensions aux candidatures individuelles ICANN",
+      "moreContext": "Comprendre le contexte",
+      "plainStatus": "État documenté au",
+      "scopeLabel": "Chercher dans",
+      "scopeAll": "Noms, organisations et histoires",
+      "scopeNames": "Noms des extensions uniquement",
+      "exact": "Correspondance exacte",
+      "other": "Autres résultats",
+      "searchHelp": "Le nom exact apparaît en premier. La recherche étendue inclut aussi les organisations, pays et histoires ; choisissez « Noms uniquement » pour la limiter.",
+      "review": "Révision éditoriale · 19 octobre 2026",
+      "mapTitle": "Les noms changent, le réseau évolue",
+      "mapLead": "Une lecture historique à travers des cas documentés. Les transformations se superposent : les noms anciens perdurent et peuvent acquérir de nouveaux sens.",
+      "epochs": [
+        [
+          "1984–1985",
+          "Organiser le réseau",
+          ".com · .edu · .org",
+          "Les noms distinguent fonctions et institutions.",
+          "origins"
+        ],
+        [
+          "1993–1994",
+          "Être présent",
+          ".com",
+          "Avec le Web, le nom devient aussi vitrine et service.",
+          "web_presence"
+        ],
+        [
+          "2000–2004",
+          "Exprimer une appartenance",
+          ".coop · .cat · .mobi",
+          "Communautés, langues et modes de connexion cherchent leur place.",
+          "community"
+        ],
+        [
+          "2010",
+          "Employer sa propre écriture",
+          "مصر. · السعودية.",
+          "Les premiers codes territoriaux en arabe entrent dans la racine DNS.",
+          "scripts"
+        ],
+        [
+          "2012 →",
+          "Construire un espace",
+          ".berlin · .google · .bank · .blog",
+          "Villes, marques, règles d’accès et publication coexistent.",
+          "cities_brands"
+        ],
+        [
+          "Aujourd’hui",
+          "Relire les noms",
+          ".ai",
+          "Un code territorial existant acquiert une nouvelle association culturelle.",
+          "reinterpretation"
+        ]
+      ],
+      "epochMore": "Cas et sources",
+      "limits": "Méthode et limites de lecture",
+      "cultureLimit": "Ces cas documentent des histoires particulières. La classification des noms reste exploratoire et ne mesure pas, à elle seule, une transformation de toute la société.",
+      "marketIntro": "Quelles extensions voit-on sur les sites ? Et lesquelles contiennent le plus de noms de domaine ? Deux classements différents, datés du 18 octobre 2026.",
+      "marketSummary": "Comment se répartissent les 50 positions ?",
+      "marketFilters": "Chercher ou filtrer le classement",
+      "showAll": "Afficher tous les résultats",
+      "showTen": "Afficher les 10 premiers",
+      "shown": "{shown} affichés sur {total} résultats · classement complet : 50",
+      "webScopeShort": "Part des sites observés par W3Techs · 18 octobre 2026. Codes territoriaux inclus. Un pourcentage, pas un nombre absolu de sites.",
+      "zoneScopeShort": "Domaines délégués dans les zones DNS observées par nTLDData · 18 octobre 2026. Codes territoriaux exclus ; ce ne sont pas des sites actifs.",
+      "measureDetails": "Périmètre complet de la mesure",
+      "citeTitle": "Que souhaitez-vous citer ?",
+      "citeIntro": "Choisissez l’objet réellement utilisé. Le DOI RR2 identifie son archive, pas chaque analyse ajoutée ensuite au site.",
+      "citeHeaders": [
+        "Objet",
+        "Version et date",
+        "Référence et limites"
+      ],
+      "citeRows": [
+        [
+          "Données scientifiques archivées",
+          "RR2 · données jusqu’au 10 octobre 2026",
+          "Dépôt immuable · publication Zenodo le 11 octobre 2026",
+          "doi"
+        ],
+        [
+          "Données actuelles du site",
+          "v0.7.89 · 19 octobre 2026",
+          "Paquet, manifeste et sources ; préciser version et date de consultation. Hors du DOI RR2.",
+          "pack"
+        ],
+        [
+          "Méthode et interprétation",
+          "Working paper 1.4-draft · 19 octobre 2026",
+          "Brouillon en anglais, sans évaluation par les pairs ; citer la révision consultée.",
+          "paper"
+        ]
+      ],
+      "verificationTitle": "Que reste-t-il à vérifier avec des personnes indépendantes ?",
+      "verificationBody": "Le protocole est public, mais les résultats de classification indépendante et les observations de compréhension des lecteurs ne sont pas encore disponibles. Les contrôles automatiques testent les fonctions et ne remplacent pas ces observations.",
+      "kit": "Matériel pour la vérification indépendante",
+      "journeyIntro": "Quand vous ouvrez un site, son nom aide à trouver l’ordinateur qui répond. Suivez les étapes, une à une.",
+      "journeyFoundation": "Nous retenons des noms comme example.com. Les réseaux utilisent des adresses numériques : le DNS relie les deux.",
+      "homeScope": "Un projet indépendant de Robert Bregy : histoires expliquées, données accessibles et sources pour vérifier chaque étape.",
+      "iaHomeOutcomesDesc": "CONCURRENCE, LITIGES ET ISSUES",
+      "presetRoot": "Extensions opérationnelles",
+      "presetOutsideRoot": "Hors de la racine DNS",
+      "briefAi": "Le code territorial d’Anguilla. Son association avec l’intelligence artificielle illustre comment un nom existant acquiert un nouveau sens.",
+      "briefCat": "Un nom pour la communauté linguistique et culturelle catalane : une appartenance qui traverse les frontières d’un État.",
+      "briefCom": "Créé pour les activités commerciales avant le Web. Il est ensuite devenu un symbole de présence en ligne.",
+      "briefLugano": "Une candidature de la Ville de Lugano dans le cycle 2026. L’extension n’est pas encore opérationnelle : approbation, délégation et usages futurs restent à établir.",
+      "whyInteresting": "Pourquoi ce nom est intéressant"
+    }
+  }
+}

@@ -126,10 +126,29 @@ jobs:
           if not evidence["all_match"]:
               raise SystemExit("PUBLIC PAGES MISMATCH: verified source does not match live bytes")
           PY
+      - name: Set up Node for controlled published-page measurements
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install the published-page measurement runtime
+        run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Measure the verified published pages under controlled mobile conditions
+        env:
+          CTD_TEST_BASE: https://robertbregy.github.io/Connecting-the-Dots/
+        run: |
+          if test -f live-pages-smoke.json; then
+            node scripts/audit_performance_20261019.cjs
+          fi
       - name: Save live-release verification evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: pages-live-smoke
-          path: live-pages-smoke.json
+          path: |
+            live-pages-smoke.json
+            audit-20261019/performance.json
           if-no-files-found: ignore

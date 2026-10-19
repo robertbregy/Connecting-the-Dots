@@ -220,6 +220,7 @@ jobs:
           python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/audit19-http.log 2>&1 &
           sleep 2
           node scripts/audit_20261019_browser.cjs
+          node scripts/audit_audience.cjs
           node scripts/audit_performance_20261019.cjs
       - name: Preserve measurements and visual evidence
         if: always()

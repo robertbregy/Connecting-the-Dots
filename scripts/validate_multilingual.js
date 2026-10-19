@@ -79,7 +79,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.ok(document.querySelector('.iaLegacyNavDisclosure #mobileNav'),page+' original mobile deep links inaccessible');
   assert.ok(!document.getElementById('iaLegacyNavDisclosure').hasAttribute('open'),page+' legacy overflow must start folded');
   assert.equal(document.querySelector('.iaPrimaryNav').getAttribute('aria-label'),translations.iaPrimaryLabel,page+' IA primary navigation aria-label');
-  assert.ok(document.querySelector('[data-i18n="heroBody"]').textContent.includes('Connecting the Dots'),page+' the project itself must be explained immediately');
+  assert.ok(document.querySelector('.hero h1').textContent.includes('Connecting the Dots')&&document.querySelectorAll('.audienceDiscovery').length===3,page+' the project itself must be explained immediately');
   assert.ok(document.querySelector('[data-i18n="heroPlain"]').textContent.includes('.lugano'),page+' the candidate string caveat must be visible');
   assert.ok(document.querySelector('[data-i18n="iaProjectDefinition"]').textContent.length>90,page+' project purpose lacks meaningful detail');
   assert.ok(document.querySelector('.iaHomeJumpList a[href="#ia-research"]'),page+' the novice cannot see direct paths');

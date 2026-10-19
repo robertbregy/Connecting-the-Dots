@@ -29,7 +29,7 @@ CATEGORY_LABELS = {
 TEXT = {
  'it': {
   'eyebrow':'Nomi, società e accesso', 'fact':'Fatto documentato', 'reading':'Lettura interpretativa',
-  'review':'Ricerca verificata il 19 ottobre 2026', 'sources':'Fonti', 'initial':'Raccolta iniziale, circa',
+  'review':'Revisione editoriale del 19 ottobre 2026', 'sources':'Fonti', 'initial':'Raccolta iniziale, circa',
   'feeNotes':'Perimetro e fonti di ciascun round', 'homeTitle':'La storia che portiamo dopo il punto',
   'homeBody':'I nomi di Internet raccontano istituzioni, mercati, appartenenze e aspettative. Segui la loro traiettoria e scopri quanto costava proporre un nuovo TLD.',
   'historyLink':'Leggi la traiettoria', 'feesLink':'Confronta le fee', 'patternsLink':'Esplora i pattern',
@@ -48,7 +48,7 @@ TEXT = {
  },
  'en': {
   'eyebrow':'Names, society and access', 'fact':'Documented fact', 'reading':'Interpretation',
-  'review':'Research reviewed on 19 October 2026', 'sources':'Sources', 'initial':'Initial collections, about',
+  'review':'Editorial review · 19 October 2026', 'sources':'Sources', 'initial':'Initial collections, about',
   'feeNotes':'Scope and sources for each round', 'homeTitle':'The history we carry after the dot',
   'homeBody':'Internet names tell stories of institutions, markets, belonging and expectations. Follow their trajectory and discover what it cost to propose a new TLD.',
   'historyLink':'Read the trajectory', 'feesLink':'Compare application fees', 'patternsLink':'Explore the patterns',
@@ -86,7 +86,7 @@ TEXT = {
  },
  'fr': {
   'eyebrow':'Noms, société et accès', 'fact':'Fait documenté', 'reading':'Interprétation',
-  'review':'Recherche vérifiée le 19 octobre 2026', 'sources':'Sources', 'initial':'Encaissements initiaux, environ',
+  'review':'Révision éditoriale · 19 octobre 2026', 'sources':'Sources', 'initial':'Encaissements initiaux, environ',
   'feeNotes':'Périmètre et sources de chaque cycle', 'homeTitle':'L’histoire que nous portons après le point',
   'homeBody':'Les noms d’Internet racontent institutions, marchés, appartenances et attentes. Suivez leur trajectoire et découvrez ce que coûtait une candidature pour un nouveau TLD.',
   'historyLink':'Lire la trajectoire', 'feesLink':'Comparer les frais', 'patternsLink':'Explorer les tendances',
