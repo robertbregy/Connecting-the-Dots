@@ -34,7 +34,7 @@ TEXT = {
   'homeBody':'I nomi di Internet raccontano istituzioni, mercati, appartenenze e aspettative. Segui la loro traiettoria e scopri quanto costava proporre un nuovo TLD.',
   'historyLink':'Leggi la traiettoria', 'feesLink':'Confronta le fee', 'patternsLink':'Esplora i pattern',
   'patternsTitle':'Dal censimento dei nomi ai pattern',
-  'patternsIntro':'L’analisi considera ogni stringa presente nei corpus archiviati del progetto. La copertura dell’inventario e quella della classificazione sono misure distinte: un nome senza tema assegnato resta nel denominatore.',
+  'patternsIntro':'L’analisi considera ogni stringa presente nei corpus archiviati del progetto. La copertura dell’inventario e quella della classificazione sono misure distinte: un nome senza tema assegnato resta nel denominatore. I totali generali includono anche codici territoriali e designazioni ufficiali di marchio; il confronto fra round conta separatamente i temi editoriali.',
   'strings':'Stringhe distinte', 'classified':'Con almeno una categoria', 'unclassified':'Senza categoria assegnata',
   'round':'Round', 'coverage':'Copertura della classificazione', 'category':'Categoria', 'all':'Tutti',
   'search':'Cerca un nome', 'results':'risultati', 'limit':'Prime 60 corrispondenze. Il CSV contiene tutti i record e la provenienza.',
@@ -53,7 +53,7 @@ TEXT = {
   'homeBody':'Internet names tell stories of institutions, markets, belonging and expectations. Follow their trajectory and discover what it cost to propose a new TLD.',
   'historyLink':'Read the trajectory', 'feesLink':'Compare application fees', 'patternsLink':'Explore the patterns',
   'patternsTitle':'From a name census to patterns',
-  'patternsIntro':'The analysis includes every string in the project’s archived corpora. Inventory coverage and classification coverage are separate measures: names without an assigned theme remain in the denominator.',
+  'patternsIntro':'The analysis includes every string in the project’s archived corpora. Inventory coverage and classification coverage are separate measures: names without an assigned theme remain in the denominator. The overall totals also include territorial codes and official brand designations; the round comparison counts editorial themes separately.',
   'strings':'Distinct strings', 'classified':'With at least one category', 'unclassified':'Without an assigned category',
   'round':'Round', 'coverage':'Classification coverage', 'category':'Category', 'all':'All',
   'search':'Search a name', 'results':'results', 'limit':'First 60 matches. The CSV contains every record and its provenance.',
@@ -72,7 +72,7 @@ TEXT = {
   'homeBody':'Internetnamen erzählen von Institutionen, Märkten, Zugehörigkeit und Erwartungen. Verfolge ihre Entwicklung und erfahre, was ein Antrag für eine neue TLD kostete.',
   'historyLink':'Die Entwicklung lesen', 'feesLink':'Antragsgebühren vergleichen', 'patternsLink':'Muster erkunden',
   'patternsTitle':'Vom Namensinventar zu Mustern',
-  'patternsIntro':'Die Analyse umfasst jede Zeichenfolge in den archivierten Korpora des Projekts. Inventar- und Klassifikationsabdeckung sind getrennte Grössen: Namen ohne zugeordnetes Thema bleiben im Nenner.',
+  'patternsIntro':'Die Analyse umfasst jede Zeichenfolge in den archivierten Korpora des Projekts. Inventar- und Klassifikationsabdeckung sind getrennte Grössen: Namen ohne zugeordnetes Thema bleiben im Nenner. Die Gesamtzahlen umfassen auch Ländercodes und offizielle Markenkennzeichnungen; der Rundenvergleich zählt redaktionelle Themen getrennt.',
   'strings':'Unterschiedliche Zeichenfolgen', 'classified':'Mit mindestens einer Kategorie', 'unclassified':'Ohne zugeordnete Kategorie',
   'round':'Runde', 'coverage':'Klassifikationsabdeckung', 'category':'Kategorie', 'all':'Alle',
   'search':'Namen suchen', 'results':'Ergebnisse', 'limit':'Die ersten 60 Treffer. Die CSV enthält alle Datensätze und ihre Herkunft.',
@@ -91,7 +91,7 @@ TEXT = {
   'homeBody':'Les noms d’Internet racontent institutions, marchés, appartenances et attentes. Suivez leur trajectoire et découvrez ce que coûtait une candidature pour un nouveau TLD.',
   'historyLink':'Lire la trajectoire', 'feesLink':'Comparer les frais', 'patternsLink':'Explorer les tendances',
   'patternsTitle':'Du recensement des noms aux tendances',
-  'patternsIntro':'L’analyse inclut chaque chaîne des corpus archivés du projet. La couverture de l’inventaire et celle de la classification sont deux mesures distinctes : les noms sans thème attribué restent dans le dénominateur.',
+  'patternsIntro':'L’analyse inclut chaque chaîne des corpus archivés du projet. La couverture de l’inventaire et celle de la classification sont deux mesures distinctes : les noms sans thème attribué restent dans le dénominateur. Les totaux généraux incluent aussi les codes territoriaux et les désignations officielles de marque ; le comparatif des cycles compte séparément les thèmes éditoriaux.',
   'strings':'Chaînes distinctes', 'classified':'Avec au moins une catégorie', 'unclassified':'Sans catégorie attribuée',
   'round':'Cycle', 'coverage':'Couverture de la classification', 'category':'Catégorie', 'all':'Tous',
   'search':'Rechercher un nom', 'results':'résultats', 'limit':'Les 60 premières correspondances. Le CSV contient tous les enregistrements et leur provenance.',
@@ -178,10 +178,10 @@ def patterns(data: dict, corpus: list, lang: str) -> str:
     research_scope = {'it': 'Analisi corrente, non inclusa negli snapshot scientifici RR1/RR2.', 'en': 'Current working analysis, not included in the RR1/RR2 scientific snapshots.', 'de': 'Aktuelle Arbeitsanalyse, nicht in den wissenschaftlichen Snapshots RR1/RR2 enthalten.', 'fr': 'Analyse de travail actuelle, non incluse dans les instantanés scientifiques RR1/RR2.'}[lang]
     body = '<p>'+h(t['patternsIntro'])+'</p><div class="tldStats">'+''.join('<div class="tldStat"><strong>'+number(counts[key],lang)+'</strong><span>'+h(t[key])+'</span></div>' for key in ('strings','classified','unclassified'))+'</div>'
     semantic_labels = {
-      'en':('With a semantic theme','Without a semantic theme','Themes recognised by the same lexical rules','Percentages use every distinct primary string in the round. These are rule-dependent results of a partial, present-day classification; they do not measure adoption or society as a whole.'),
-      'it':('Con un tema semantico','Senza tema semantico','Temi riconosciuti con le stesse regole lessicali','Le percentuali usano tutte le stringhe primarie distinte del round. Sono risultati dipendenti dalle regole di una classificazione attuale e parziale; non misurano l’adozione o l’intera società.'),
-      'de':('Mit semantischem Thema','Ohne semantisches Thema','Mit denselben lexikalischen Regeln erkannte Themen','Die Prozentwerte beziehen sich auf alle unterschiedlichen primären Zeichenfolgen der Runde. Es sind regelabhängige Ergebnisse einer heutigen, unvollständigen Klassifikation; sie messen weder Nutzung noch die gesamte Gesellschaft.'),
-      'fr':('Avec un thème sémantique','Sans thème sémantique','Thèmes reconnus par les mêmes règles lexicales','Les pourcentages portent sur toutes les chaînes primaires distinctes du cycle. Ces résultats dépendent des règles d’une classification actuelle et partielle ; ils ne mesurent ni l’adoption ni l’ensemble de la société.'),
+      'en':('With a semantic theme','Without a semantic theme','Proposed themes under the current editorial rules','Percentages use every distinct primary string in the round. These are rule-dependent results of a partial, present-day classification; they do not measure adoption or society as a whole.'),
+      'it':('Con un tema semantico','Senza tema semantico','Temi proposti secondo le regole editoriali attuali','Le percentuali usano tutte le stringhe primarie distinte del round. Sono risultati dipendenti dalle regole di una classificazione attuale e parziale; non misurano l’adozione o l’intera società.'),
+      'de':('Mit semantischem Thema','Ohne semantisches Thema','Vorgeschlagene Themen nach den heutigen redaktionellen Regeln','Die Prozentwerte beziehen sich auf alle unterschiedlichen primären Zeichenfolgen der Runde. Es sind regelabhängige Ergebnisse einer heutigen, unvollständigen Klassifikation; sie messen weder Nutzung noch die gesamte Gesellschaft.'),
+      'fr':('Avec un thème sémantique','Sans thème sémantique','Thèmes proposés selon les règles éditoriales actuelles','Les pourcentages portent sur toutes les chaînes primaires distinctes du cycle. Ces résultats dépendent des règles d’une classification actuelle et partielle ; ils ne mesurent ni l’adoption ni l’ensemble de la société.'),
     }[lang]
     body += '<div class="tldTable" tabindex="0" role="region" aria-label="'+h(t['coverage'])+'"><table><thead><tr>'+''.join('<th scope="col">'+h(x)+'</th>' for x in (t['round'],t['strings'],semantic_labels[0],semantic_labels[1]))+'</tr></thead><tbody>'
     for row in data['rounds']:

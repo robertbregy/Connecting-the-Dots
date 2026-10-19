@@ -4,7 +4,7 @@ from html import escape as h
 COPY={
  'it':{
   'title':'Quanto cambia il racconto se cambiano le regole?',
-  'lead':'Un nome riconosciuto in più non è una nuova osservazione sulla società. Confrontiamo tre letture dello stesso insieme di nomi: il metodo precedente, il solo vocabolario esplicito e la loro unione attuale.',
+  'lead':'Un nome riconosciuto in più non è una nuova osservazione sulla società. Confrontiamo tre letture dello stesso insieme di nomi: il metodo precedente, il solo vocabolario esplicito e la loro unione attuale. Il primo conserva anche letture contestuali ereditate; il secondo assegna temi soltanto alle parole elencate nel nuovo vocabolario.',
   'methods':['Metodo precedente','Solo vocabolario esplicito','Metodo attuale: unione'],
   'coverage':'Nomi con almeno un tema: numero e quota sul totale del round',
   'rule':'Lettura applicata','conclusion':'Un segnale da verificare, non una conclusione definitiva',
@@ -18,7 +18,7 @@ COPY={
  },
  'en':{
   'title':'How much does the story depend on the rules?',
-  'lead':'Recognizing one more name is not a new observation of society. We compare three readings of the same names: the previous method, the explicit vocabulary alone, and their current union.',
+  'lead':'Recognizing one more name is not a new observation of society. We compare three readings of the same names: the previous method, the explicit vocabulary alone, and their current union. The first also retains inherited contextual readings; the second assigns themes only to words listed in the new vocabulary.',
   'methods':['Previous method','Explicit vocabulary only','Current method: union'],
   'coverage':'Names with at least one theme: count and share of the full round',
   'rule':'Applied reading','conclusion':'A signal to investigate, not a settled conclusion',
@@ -32,7 +32,7 @@ COPY={
  },
  'de':{
   'title':'Wie stark hängt die Geschichte von den Regeln ab?',
-  'lead':'Ein zusätzlich erkannter Name ist keine neue Beobachtung der Gesellschaft. Wir vergleichen drei Lesarten derselben Namen: die bisherige Methode, nur das explizite Vokabular und ihre heutige Vereinigung.',
+  'lead':'Ein zusätzlich erkannter Name ist keine neue Beobachtung der Gesellschaft. Wir vergleichen drei Lesarten derselben Namen: die bisherige Methode, nur das explizite Vokabular und ihre heutige Vereinigung. Die erste bewahrt auch übernommene kontextuelle Deutungen; die zweite ordnet nur den Wörtern im neuen Vokabular Themen zu.',
   'methods':['Bisherige Methode','Nur explizites Vokabular','Heutige Methode: Vereinigung'],
   'coverage':'Namen mit mindestens einem Thema: Anzahl und Anteil an der gesamten Runde',
   'rule':'Angewandte Lesart','conclusion':'Ein Hinweis für weitere Forschung, kein gesicherter Befund',
@@ -46,7 +46,7 @@ COPY={
  },
  'fr':{
   'title':'À quel point le récit dépend-il des règles ?',
-  'lead':'Reconnaître un nom supplémentaire ne constitue pas une nouvelle observation de la société. Nous comparons trois lectures des mêmes noms : la méthode précédente, le seul vocabulaire explicite et leur union actuelle.',
+  'lead':'Reconnaître un nom supplémentaire ne constitue pas une nouvelle observation de la société. Nous comparons trois lectures des mêmes noms : la méthode précédente, le seul vocabulaire explicite et leur union actuelle. La première conserve aussi des lectures contextuelles héritées ; la seconde ne classe que les mots du nouveau vocabulaire.',
   'methods':['Méthode précédente','Vocabulaire explicite seul','Méthode actuelle : union'],
   'coverage':'Noms ayant au moins un thème : nombre et part du cycle complet',
   'rule':'Lecture appliquée','conclusion':'Un signal à étudier, pas une conclusion établie',

@@ -2049,7 +2049,7 @@
     },
     "scripts/render_tld_cultural_trajectory.py": {
       "baselineSHA256": "9f1f74f303e9f9142a60a8a14bed7ed314f5dba62e7da666c59aa021b0777dcc",
-      "sha256": "4a66c445330c2a41a22b7e3bc087ebe73ab9489fb7368e849c763af2c3b1539f",
+      "sha256": "852fa4059d991ca67ca77206885c4821b55b63461fc610c5b6ef911a24289029",
       "rationaleIds": [
         "T01",
         "A19",
@@ -2594,7 +2594,7 @@
     },
     "scripts/render_cultural_sensitivity.py": {
       "baselineSHA256": null,
-      "sha256": "9e265aa0905276e442b463a29523803143ad3228fec746c850a0a3929573d82c",
+      "sha256": "1bbf6c5e67f733001287ca691b4add820788b7bcf488cb578a9325797f8ad99d",
       "rationaleIds": [
         "H01"
       ]
