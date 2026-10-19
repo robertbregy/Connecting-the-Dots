@@ -220,9 +220,11 @@ jobs:
         run: |
           python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/audit19-http.log 2>&1 &
           sleep 2
-          node scripts/audit_20261019_browser.cjs
-          node scripts/audit_audience.cjs
-          node scripts/audit_performance_20261019.cjs
+          audit_status=0
+          node scripts/audit_20261019_browser.cjs || audit_status=1
+          node scripts/audit_audience.cjs || audit_status=1
+          node scripts/audit_performance_20261019.cjs || audit_status=1
+          exit "$audit_status"
       - name: Preserve measurements and visual evidence
         if: always()
         uses: actions/upload-artifact@v4

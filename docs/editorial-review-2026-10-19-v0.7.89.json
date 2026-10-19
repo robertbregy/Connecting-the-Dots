@@ -2346,7 +2346,7 @@
     },
     ".github/workflows/audit-browser.yml": {
       "baselineSHA256": "ed063e0e2ffe43df54dfe3e1a98a4292dad5524d76a46c174c6a0943554a1296",
-      "sha256": "79f2034302836c33a5788a3ff8a85826a057064ffc26abb889e7eca25746307b",
+      "sha256": "5a2ec0e9f1be9fee570f2be8bc33b864ab1a41d3eda7e51747524b6ed335507e",
       "rationaleIds": [
         "A19",
         "H01",
@@ -2529,7 +2529,7 @@
     },
     "scripts/audit_20261019_browser.cjs": {
       "baselineSHA256": null,
-      "sha256": "f4ab7f7ac922239af8e82e62dd1cfa736a9e4780eeeec9de78ffddb7151b457f",
+      "sha256": "0924eb7654d883a4c8ad29bc4c8fb90dcbebf0e7222ddcb0e0d39ff4974208b6",
       "rationaleIds": [
         "A19",
         "H01",

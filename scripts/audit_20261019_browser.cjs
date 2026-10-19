@@ -29,7 +29,9 @@ const base=process.env.CTD_TEST_BASE||'http://127.0.0.1:8123/';
   assert.equal(new URL(languageLink,page.url()).searchParams.get('origin'),'2012','Language link discarded ranking state');
   await page.reload();await page.locator('[data-market-view="zones"][aria-pressed="true"]').waitFor();
   assert.equal(await page.locator('#market-zones tbody tr:visible').count(),42);
+  await page.locator('#market-zones .audienceMarketSummary > summary').click();
   assert.ok((await page.locator('#market-zones .marketSummaryScope').innerText()).length>70);
+  await page.locator('#market-zones .audienceMarketSummary > summary').click();
   const first=page.locator('#market-zones tbody tr:visible').first();await first.scrollIntoViewIfNeeded();
   if(mobile){
    const rects=await first.evaluate(row=>[row,...row.querySelectorAll('th,td')].map(n=>{const r=n.getBoundingClientRect();return {x:r.x,right:r.right,width:r.width,font:parseFloat(getComputedStyle(n).fontSize)}}));
