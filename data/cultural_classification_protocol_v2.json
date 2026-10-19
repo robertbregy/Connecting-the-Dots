@@ -402,7 +402,7 @@
     "sourceSHA256": "17fe1161af382496dd272554b8f8b0ede0c1fe28ff608c30cca357693dfa8ab2",
     "inheritedThemePolicy": "Source string-theme assertions are retained with their original evidence. They are never reused as an applicant sector. Round-specific official flags stay separate.",
     "boundaryRule": "Classify only the theme supported by the label and allowed source context; document polysemy, unsupported inference and language uncertainty. Multiple labels are allowed; category totals are not additive.",
-    "lexiconSHA256": "fe354c686efff756335d662c2ed2c93f7d28fc85253262ede029fa9bfec6729a"
+    "lexiconSHA256": "fc47ae2cdbd67c9399b9eaa7c30456b207fd228afffe17d88db24ad83350c541"
   },
   "predecessor": "cultural_classification_protocol.json",
   "lexicon": "cultural_lexicon_v2.json",

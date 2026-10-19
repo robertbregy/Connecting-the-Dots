@@ -745,7 +745,7 @@
     },
     {
       "file": "cultural_lexicon_v2.json",
-      "sha256": "fe354c686efff756335d662c2ed2c93f7d28fc85253262ede029fa9bfec6729a"
+      "sha256": "fc47ae2cdbd67c9399b9eaa7c30456b207fd228afffe17d88db24ad83350c541"
     },
     {
       "file": "scripts/assemble_data.js",

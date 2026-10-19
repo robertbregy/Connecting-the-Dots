@@ -2094,7 +2094,7 @@
     },
     "data/tld_cultural_patterns.json": {
       "baselineSHA256": "fb48b2f719b94d7f0d1f27862d068709b0d3171a3011b826f0101d7a12140675",
-      "sha256": "b302bd6a097ab579a8af90bf4cbcd0a485fef9e1f76daaa702a5dc97d2aa9184",
+      "sha256": "97e02640a58c1c6239c0786ab29417e9755c1d2df1f04f8a22d5591ac4864135",
       "rationaleIds": [
         "T01",
         "A19",
@@ -2103,7 +2103,7 @@
     },
     "data/tld_cultural_corpus.csv": {
       "baselineSHA256": "7fb7fd2b5d41e0e3b6be0be957dc9c0d4ff5bd78a31bef2501b6da10d0b46bdf",
-      "sha256": "be9fd57043895d7de7d0a6fc11bb49178059494572e369531bd14ed5e25a2b95",
+      "sha256": "55ba2ed29942698e359195de67f818e56337eb46ad61afe04bb6c9ae555158b2",
       "rationaleIds": [
         "T01",
         "A19",
@@ -2559,7 +2559,7 @@
     },
     "data/cultural_classification_protocol_v2.json": {
       "baselineSHA256": null,
-      "sha256": "efed74c5dc5f1228daec75698f0289fb0e3629da06e8843fcb1f5a88656ca58f",
+      "sha256": "947987f3749c994a7965442ba8e4aba365e2a1da434e4523815cefb2e2bbaaa8",
       "rationaleIds": [
         "H01"
       ]
@@ -2573,14 +2573,14 @@
     },
     "data/cultural_lexicon_review_queue_v2.csv": {
       "baselineSHA256": null,
-      "sha256": "5c0adb5211e04b1eae9b3ce9532049c71a7fb0b8311c622f1622dde064ce88ed",
+      "sha256": "26b6e29ee6997044e34fae45376c4a41fe78f4229d62eb4f4400c235eb8cb9b7",
       "rationaleIds": [
         "H01"
       ]
     },
     "data/cultural_lexicon_v2.json": {
       "baselineSHA256": null,
-      "sha256": "fe354c686efff756335d662c2ed2c93f7d28fc85253262ede029fa9bfec6729a",
+      "sha256": "fc47ae2cdbd67c9399b9eaa7c30456b207fd228afffe17d88db24ad83350c541",
       "rationaleIds": [
         "H01"
       ]
