@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-19",
+  "source": "https://zenodo.org/records/23288603",
+  "researchRelease": "RR2",
+  "doi": "10.5281/zenodo.23288603",
+  "zenodoDatePublished": "2026-10-11",
+  "zenodoDateCreated": "2026-10-10T22:04:35.931760+00:00",
+  "githubReleaseDate": "2026-10-10",
+  "evidenceCutoff": "2026-10-10",
+  "archivedManifestPublishedOn": "2026-10-10",
+  "archivedManifestDateScope": "Original GitHub release / evidence cutoff; bibliographic citation uses corrected Zenodo datePublished.",
+  "immutableDepositsChanged": false
+}

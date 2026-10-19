@@ -276,6 +276,9 @@ module.exports=function assembleData(){
  D.tldLifeHistory={schemaVersion:1,asOf:S.asOf,staticCoverage:'Frozen IANA registration dates, delegation/transfer/revocation reports, current root state, curated historical events and vendored 2000/2004/2012 applications',gtldContractSource:GTLD_LIFECYCLE_SOURCE,gtldContractFields:['applicationId','dateOfContractSignature','delegationDate','contractTerminated','removalDate','registryOperator'],ccTldMethod:'IANA registration data and delegation/redelegation reports; ICANN gTLD Registry Agreement data is not applied to ccTLDs',sourcePolicy:'Only dated, attributable events preserved in the local release are rendered as facts; 2026 APS records are included only where explicitly vendored and verified'};
  D.explorerMeta.lifeHistoryStaticCoverageComplete=true;D.explorerMeta.lifeHistoryGtldContractsRuntime=false;D.explorerMeta.preRevealFreeze=false;D.explorerMeta.revealDaySnapshot=true;D.explorerMeta.lifeHistoryGtldContractSource=GTLD_LIFECYCLE_SOURCE;
  D.ianaCountryCodes=Object.fromEntries(Object.values(S.records).flatMap(r=>[['registryCountry','registryCountryCode'],['administrativeContactCountry','administrativeContactCountryCode'],['technicalContactCountry','technicalContactCountryCode']].filter(([name,code])=>r[name]&&r[code]).map(([name,code])=>[r[name],r[code]])));
+ const regionalApplications=csvRecords('data/application_regions_2026.csv');
+ D.geoApplicationRegions2026=D.geoApplicantRegions2026.map(r=>({...r,count:Number(regionalApplications.find(x=>x.Code===r.code)?.Applications)}));
+ if(D.geoApplicationRegions2026.some(r=>!Number.isInteger(r.count))||D.geoApplicationRegions2026.reduce((n,r)=>n+r.count,0)!==1615)throw new Error('2026 regional application denominator mismatch');
  D.normalizationVersion=json('package.json').version;
  return D;
 };

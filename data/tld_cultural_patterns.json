@@ -378,7 +378,7 @@
     },
     {
       "file": "scripts/assemble_data.js",
-      "sha256": "cdf3be31c5224b0bb98304eca9b9de535739e25a252d5eb7a4e913b5d59a7e6a"
+      "sha256": "a4254b7913680856a7e197428d019f09ed7541ce80672c5d7d0421a1d6a9946b"
     },
     {
       "file": "scripts/build_tld_cultural_trajectory.py",

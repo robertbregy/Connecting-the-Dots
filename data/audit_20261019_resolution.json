@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-10-19",
+  "version": "0.7.87",
+  "baselineCommit": "60534fe37d370541fa477b9189acc6db3edfc79b",
+  "independentReview": false,
+  "humanParticipants": 0,
+  "findings": [
+    {
+      "id": "A01",
+      "title": "Le date del sito non hanno un significato univoco",
+      "status": "implemented",
+      "acceptance": "In tutte le lingue ogni data ha un oggetto esplicito; nessun campo di pubblicazione rimane fissato a un aggiornamento passato. Il Reveal Day è sempre 7 ottobre quando si indica l’evento."
+    },
+    {
+      "id": "A02",
+      "title": "La data bibliografica RR2 va distinta dalla creazione del deposito",
+      "status": "implemented",
+      "acceptance": "Data pubblicata, data di creazione e data delle evidenze sono nominate separatamente; citazione corrente e metadati del deposito concordano senza riscrivere gli archivi."
+    },
+    {
+      "id": "A03",
+      "title": "I casi legati all’IA non dimostrano uno spostamento complessivo del round",
+      "status": "implemented",
+      "acceptance": "Le quattro lingue non affermano un trend generale a partire dai soli esempi; nessun conteggio congelato viene chiamato in tempo reale."
+    },
+    {
+      "id": "A04",
+      "title": "“TLD per RSP” presenta una ricostruzione tecnica con un titolo troppo assertivo",
+      "status": "implemented",
+      "acceptance": "Unità, universo gTLD, data e natura inferita sono visibili senza aprire un dettaglio; ogni aggregato resta ricalcolabile dai record."
+    },
+    {
+      "id": "A05",
+      "title": "Le barre geografiche affiancano candidature e organizzazioni",
+      "status": "implemented",
+      "acceptance": "Ogni grafico comparativo usa la stessa unità e lo stesso denominatore; l’intestazione dichiara anche che la sede indicata non misura la proprietà ultima o il luogo da cui viene servito il DNS."
+    },
+    {
+      "id": "A06",
+      "title": "Un richiedente appare come gestore attuale di un TLD non delegato",
+      "status": "implemented",
+      "acceptance": "La scheda .lugano mantiene il candidato e lo stato non delegato, senza un gestore attuale; .com conserva la voce del gestore corrente. Controllo eseguito in quattro lingue."
+    },
+    {
+      "id": "A07",
+      "title": "La copertura semantica non consente ancora una traiettoria rappresentativa",
+      "status": "interpretive-risk-mitigated-independent-validation-pending",
+      "acceptance": "Ogni percentuale espone il denominatore completo, le categorie sovrapponibili e i mancanti. Le conclusioni parlano di temi riconosciuti nel corpus finché non esiste una verifica di rappresentatività."
+    },
+    {
+      "id": "A08",
+      "title": "Nel 2000 il totale delle fee usa 44 domande, la colonna ne mostra 47",
+      "status": "implemented",
+      "acceptance": "La base della moltiplicazione è visibile nella riga; il valore resta marcato ricostruito e la fonte contabile mancante non è presentata come nuovamente verificata."
+    },
+    {
+      "id": "A09",
+      "title": "La classifica nasconde l’epoca del TLD su schermi piccoli",
+      "status": "implemented",
+      "acceptance": "A 390 px, senza scorrimento orizzontale, si leggono almeno TLD, valore, unità e origine; zoom e tastiera mantengono accessibili i dettagli."
+    },
+    {
+      "id": "A10",
+      "title": "La condivisione non conserva i filtri della nuova classifica",
+      "status": "implemented",
+      "acceptance": "Aprire il collegamento condiviso in una scheda pulita restituisce modalità domini, origine 2012 e 42 risultati; aggiornare o cambiare lingua conserva la selezione."
+    },
+    {
+      "id": "A11",
+      "title": "Le schede riepilogative rimangono riferite ai primi 50 mentre la lista è filtrata",
+      "status": "implemented",
+      "acceptance": "Ogni riepilogo dichiara se riguarda 50 posizioni o il sottoinsieme filtrato e resta coerente dopo ogni selezione."
+    },
+    {
+      "id": "A12",
+      "title": "L’impronta W3Techs è del testo normalizzato, non dei byte HTML",
+      "status": "implemented",
+      "acceptance": "Un verificatore riproduce entrambe le impronte usando la trasformazione documentata; il manifest distingue i valori estratti dalla cattura della fonte."
+    },
+    {
+      "id": "A13",
+      "title": "Il collegamento al working paper indica una versione precedente",
+      "status": "implemented",
+      "acceptance": "Etichetta, descrizione e titolo del documento concordano in tutte le lingue; è esplicito che il paper si apre in inglese."
+    },
+    {
+      "id": "A14",
+      "title": "Le cautele metodologiche richiedono già competenze tecniche",
+      "status": "implemented",
+      "acceptance": "Ogni vista permette di rispondere a “che cosa conto, a quando risale e quanto è certo?” senza aprire il glossario; i termini specialistici restano disponibili nel metodo."
+    },
+    {
+      "id": "A15",
+      "title": "La home propone più sistemi di orientamento sovrapposti",
+      "status": "hierarchy-improved-reader-validation-pending",
+      "acceptance": "Un test con persone nuove distingue l’azione per iniziare da quelle per approfondire; il percorso di base resta raggiungibile direttamente."
+    },
+    {
+      "id": "A16",
+      "title": "Il peso statico richiede una verifica prestazionale reale",
+      "status": "implemented",
+      "acceptance": "Esiste una misura riproducibile dei percorsi principali con condizioni documentate; il rapporto distingue dimensione statica, rete e indicatori di esperienza."
+    },
+    {
+      "id": "A17",
+      "title": "Due bozze diverse usano il numero v0.7.86",
+      "status": "implemented",
+      "acceptance": "Ogni versione pubblicata conserva un solo pacchetto identificato da hash; nessuna integrazione rimpiazza ZIP o DOI già archiviati."
+    },
+    {
+      "id": "A18",
+      "title": "I controlli automatici non misurano la comprensione dei non specialisti",
+      "status": "protocol-ready-real-participants-required",
+      "acceptance": "Sono raccolte osservazioni reali, senza suggerire le risposte. I risultati sono descrittivi, con errori riportati e corretti; non si promettono percentuali statisticamente generalizzabili da un piccolo campione."
+    }
+  ],
+  "archivedResearchModified": false,
+  "verificationPolicy": "Release checks and controlled browser measurements are retained as CI artifacts for the exact source commit. Human studies remain explicitly pending."
+}

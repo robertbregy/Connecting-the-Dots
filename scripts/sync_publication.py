@@ -71,7 +71,7 @@ working_paper["version"] = meta["paperVersion"]
 working_paper["revisedOn"] = meta["paperRevisedOn"]
 working_paper["relationToRR2"] = "RR2 is the immutable archived dataset. This later working-paper revision includes a separately versioned, current APS analytical layer that is not covered by the RR1 or RR2 DOI; the new methods and results require a future archival research release."
 (ROOT / "research" / "research_release_manifest.json").write_text(json.dumps(research_manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-research_published_on = rr["publishedOn"]
+research_published_on = json.loads((DATA / "research_bibliographic_corrections.json").read_text())["zenodoDatePublished"]
 cff = f'''cff-version: 1.2.0
 message: "If you use Connecting the Dots in research, please cite the living research publication and the specific research release used."
 title: "Connecting the Dots: A Living Research Atlas of Top-Level Domain Expansion"

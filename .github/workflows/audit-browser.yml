@@ -191,3 +191,40 @@ jobs:
           name: ctd-city-namespace-${{ github.sha }}
           path: dist/city-namespace-qa/
           if-no-files-found: ignore
+
+  remediation-qa:
+    name: Audit corrections, mobile semantics and controlled performance
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser dependencies
+        run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Build and check source invariants
+        run: |
+          python3 build.py
+          node scripts/verify_ia_b2_parity.cjs
+      - name: Verify audit corrections and controlled cold loads
+        env:
+          CTD_TEST_BASE: http://127.0.0.1:8123/
+        run: |
+          python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/audit19-http.log 2>&1 &
+          sleep 2
+          node scripts/audit_20261019_browser.cjs
+          node scripts/audit_performance_20261019.cjs
+      - name: Preserve measurements and visual evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-remediation-${{ github.sha }}
+          path: audit-20261019/
+          if-no-files-found: warn

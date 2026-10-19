@@ -2,6 +2,11 @@
   "schemaVersion": 1,
   "releases": [
     {
+      "version": "0.7.87",
+      "date": "2026-10-19",
+      "summaryKey": "release0787"
+    },
+    {
       "version": "0.7.86",
       "date": "2026-10-19",
       "summaryKey": "release0786",

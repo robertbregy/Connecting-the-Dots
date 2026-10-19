@@ -13,3 +13,8 @@
 Record task completion, time, navigation errors, backtracks, wrong assumptions and optional participant feedback, without personal identifiers. An unfinished task counts as a failure.
 
 **Release acceptance:** Do not claim 'tested with users' without real study results. Revisit labels and navigation if two or more independent participants fail the same task.
+
+
+## 19 October 2026 revision
+
+No participant study has been conducted. The assistant walkthrough and automated checks do not establish novice comprehension. Recruit 6–8 non-specialists across phone and desktop, with informed consent for any recording; do not lead them to controls or answers. Record their verbatim explanation, help needed, source found and confusion in `data/reader_validation_recording.csv`. Ask whether .lugano is delegated; distinguish domains from surveyed sites; interpret the 44-application fee reconstruction; explain the technical nature of the RSP count; distinguish examples of AI vocabulary from a representative social trend; reproduce a shared 2012-filtered ranking; and cite archived versus current analysis. Add two separate expert reviews of method. Report outcomes descriptively and fix consequential interpretation errors before treating comprehension as validated.

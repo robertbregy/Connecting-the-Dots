@@ -9,3 +9,8 @@ __pycache__/
 .DS_Store
 *.swp
 *.tmp
+
+# Audit acquisition and local measurements
+tmp/
+audit-20261019/
+node_modules

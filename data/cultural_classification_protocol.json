@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "protocolId": "ctd-cultural-validation-v1",
+  "createdOn": "2026-10-19",
+  "validationStatus": "not independently validated",
+  "currentUse": "Exploratory recognition of string themes; not a representative social trend.",
+  "unit": "One distinct primary string per comparison cohort; do not weight by application count unless a separate analysis explicitly does so.",
+  "separateVariables": [
+    "semantic themes of string",
+    "official APS designations (including brand)",
+    "documented activity of legal applicant",
+    "observed adoption and use"
+  ],
+  "codebook": [
+    {
+      "id": "technology",
+      "definition": "Technology",
+      "rule": "Use explicit lexical evidence and cited contextual documents; record ambiguity, polysemy and absence of evidence. Never infer applicant activity from this label."
+    },
+    {
+      "id": "commerce",
+      "definition": "Commerce & finance",
+      "rule": "Use explicit lexical evidence and cited contextual documents; record ambiguity, polysemy and absence of evidence. Never infer applicant activity from this label."
+    },
+    {
+      "id": "professions",
+      "definition": "Professions & services",
+      "rule": "Use explicit lexical evidence and cited contextual documents; record ambiguity, polysemy and absence of evidence. Never infer applicant activity from this label."
+    },
+    {
+      "id": "culture",
+      "definition": "Culture, media & education",
+      "rule": "Use explicit lexical evidence and cited contextual documents; record ambiguity, polysemy and absence of evidence. Never infer applicant activity from this label."
+    },
+    {
+      "id": "lifestyle",
+      "definition": "Lifestyle, mobility & leisure",
+      "rule": "Use explicit lexical evidence and cited contextual documents; record ambiguity, polysemy and absence of evidence. Never infer applicant activity from this label."
+    },
+    {
+      "id": "health",
+      "definition": "Health",
+      "rule": "Use explicit lexical evidence and cited contextual documents; record ambiguity, polysemy and absence of evidence. Never infer applicant activity from this label."
+    },
+    {
+      "id": "community",
+      "definition": "Identity & community",
+      "rule": "Use explicit lexical evidence and cited contextual documents; record ambiguity, polysemy and absence of evidence. Never infer applicant activity from this label."
+    },
+    {
+      "id": "geography",
+      "definition": "Places & territories",
+      "rule": "Use explicit lexical evidence and cited contextual documents; record ambiguity, polysemy and absence of evidence. Never infer applicant activity from this label."
+    },
+    {
+      "id": "institutions",
+      "definition": "Institutions & public interest",
+      "rule": "Use explicit lexical evidence and cited contextual documents; record ambiguity, polysemy and absence of evidence. Never infer applicant activity from this label."
+    }
+  ],
+  "sampling": {
+    "sampleFile": "cultural_validation_sample.csv",
+    "rows": 88,
+    "maximumPerCohort": 24,
+    "idnTargetPerCohort": 8,
+    "nonIdnTargetPerCohort": 16,
+    "selection": "SHA-256 order of ctd-validation-v1|cohort|ascii_string, with available strata and deterministic fill. Purposive validation sample, not representative prevalence estimate.",
+    "language": "Reviewers identify language/script; automatic inference of language from the suffix is not accepted."
+  },
+  "reviewSteps": [
+    "Two reviewers independently read each string with the same permitted context and codebook; hide the current machine label during first coding.",
+    "Allow zero, one or several themes. Use not-classified when evidence is insufficient; it is not a category of activity. Record source and reason.",
+    "Publish independent labels, ambiguity and agreement per category before adjudication. Report raw agreement and appropriate multi-label chance-corrected measures with sample limitations.",
+    "Adjudicate disagreements with sources, publish correction/error analysis and rules changed, then apply the same revised rules to both rounds.",
+    "Only after validation assess whether coverage and language bias permit stronger longitudinal claims; actual social use needs additional independent evidence."
+  ],
+  "readerValidation": {
+    "status": "not conducted",
+    "participants": 0,
+    "protocol": "docs/READER_TASKS.md",
+    "recordingTemplate": "reader_validation_recording.csv"
+  }
+}

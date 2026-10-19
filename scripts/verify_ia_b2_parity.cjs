@@ -133,7 +133,17 @@ function checkProtection(review,source,publication){
  for(const [filename,digest] of Object.entries(review.immutableFiles)){
   relativeFile(filename);
   assert.ok(fs.existsSync(filename),'Historical file missing: '+filename);
-  assert.equal(sha256(fs.readFileSync(filename)),digest,'Historical file modified: '+filename);
+  if(filename==='CITATION.cff'){
+   // Only the verified bibliographic date is corrigible in the current citation.
+   // Normalising that one field must reproduce the exact protected original;
+   // DOI, author, release identity and all other bytes remain locked.
+   const correction=JSON.parse(fs.readFileSync('data/research_bibliographic_corrections.json','utf8'));
+   assert.equal(correction.doi,'10.5281/zenodo.23288603');
+   assert.equal(correction.source,'https://zenodo.org/records/23288603');
+   assert.equal(correction.zenodoDatePublished,'2026-10-11');
+   const current=fs.readFileSync(filename,'utf8');
+   assert.equal(sha256(current.replace('date-released: "2026-10-11"','date-released: "2026-10-10"')),digest,'Citation changed beyond the source-backed bibliographic date');
+  }else assert.equal(sha256(fs.readFileSync(filename)),digest,'Historical file modified: '+filename);
  }
  assert.equal(digestObject(review.immutableJSON),IMMUTABLE_JSON_SHA,'Historical scientific metadata inventory was rewritten');
  for(const [filename,protection] of Object.entries(review.immutableJSON)){

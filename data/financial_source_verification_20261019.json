@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "verifiedOn": "2026-10-19",
+  "observations": [
+    {
+      "source": "https://www.icann.org/en/system/files/files/program-review-29jan16-en.pdf#page=183",
+      "sourceSHA256": "e1e6f3e9093713b1ae860fb5f1b220943542d9f00957ad1492a93e580f16a2b7",
+      "method": "Page 183 rendered and visually inspected; PDF text extraction omits key embedded-font content.",
+      "section": "8.3.1",
+      "applicationFeeUSD": 185000,
+      "applicationCount": 1930,
+      "initialCollectedUSD": 357000000,
+      "qualification": "Rounded amount documented by ICANN for initial program fund; not net receipts over all later fiscal years."
+    },
+    {
+      "source": "https://www.icann.org/resources/unthemed-pages/preliminary-budget-2001-02-19-en",
+      "sourceSHA256": "f0a3cd077b33253ea7be38198df11fc8f148a9f9200653c7d405fbd088342ead",
+      "method": "Schedule A headings and application-fee row inspected in acquired HTML.",
+      "tableUnit": "Thousands of US dollars",
+      "column": "FY00-01 Budget 12 Months Projected Actual as of 19 Feb 2001",
+      "row": "Application Fees / Top Level Domains",
+      "valueInTable": 2200,
+      "valueUSD": 2200000,
+      "qualification": "Projected actual in preliminary budget; not an isolated final certified cash receipt."
+    }
+  ]
+}

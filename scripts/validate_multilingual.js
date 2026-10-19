@@ -272,7 +272,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
     const value=key==='exploreIanaDate'?translations[key].replace('{date}',new Intl.DateTimeFormat({en:'en-US',it:'it-IT',de:'de-DE',fr:'fr-FR'}[language],{year:'numeric',month:'short',day:'numeric',timeZone:'UTC'}).format(new Date(snapshot.asOf+'T00:00:00Z'))):translations[key];
     let formatted=key==='exploreSnapshotClocks'?value.replace('{updated}',new Intl.DateTimeFormat({en:'en-US',it:'it-IT',de:'de-DE',fr:'fr-FR'}[language],{year:'numeric',month:'short',day:'numeric',timeZone:'UTC'}).format(new Date(publication.releasedOn+'T00:00:00Z'))):value;
     if(['downloadPack','currentDataPackNote'].includes(key))formatted=formatted.replaceAll('{version}',publication.currentDataPackVersion);
-    if(key==='researchPaperBody')formatted=formatted.replaceAll('{paperVersion}',publication.paperVersion).replaceAll('{paperDate}',new Intl.DateTimeFormat({en:'en-US',it:'it-IT',de:'de-DE',fr:'fr-FR'}[language],{year:'numeric',month:'short',day:'numeric',timeZone:'UTC'}).format(new Date(publication.paperRevisedOn+'T00:00:00Z')));
+    if(['researchPaperBody','researchPaperFormat'].includes(key))formatted=formatted.replaceAll('{paperVersion}',publication.paperVersion).replaceAll('{paperDate}',new Intl.DateTimeFormat({en:'en-US',it:'it-IT',de:'de-DE',fr:'fr-FR'}[language],{year:'numeric',month:'short',day:'numeric',timeZone:'UTC'}).format(new Date(publication.paperRevisedOn+'T00:00:00Z')));
     const expected=parseHTML('<html><body><div id="value">'+formatted+'</div></body></html>').document.getElementById('value').textContent;
     assert.ok(n.textContent.includes(expected),page+' unlocalized '+key);
   }
@@ -291,7 +291,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.ok(reveal&&reveal.textContent.includes('263')&&reveal.textContent.includes('333'),page+' stale Reveal Day metrics');
   const home=document.getElementById('cards');
   assert.ok(home&&home.querySelector('.num').textContent.replace(/\D/g,'')==='1615',page+' obsolete 1,616 application total');
-  assert.ok(document.getElementById('demand2026Bars')?.textContent.includes('198'),page+' missing official regional applicant counts');
+  assert.ok(document.getElementById('demand2026Bars')?.textContent.includes('864'),page+' missing comparable official regional application counts');
   const research=document.getElementById('research');
   assert.ok(research?.textContent.includes('10.5281/zenodo.23288603'),page+' verified current RR2 DOI is missing');
   assert.ok(research?.textContent.includes('10.5281/zenodo.23262623'),page+' archived RR1 DOI is missing');

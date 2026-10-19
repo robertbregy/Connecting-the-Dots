@@ -12,7 +12,12 @@
       "reconstructed": 2200000,
       "refunds": null,
       "net": null,
-      "sources": ["instructions2000", "review2000", "budget2001"]
+      "sources": [
+        "instructions2000",
+        "review2000",
+        "budget2001"
+      ],
+      "reconstructionApplications": 44
     },
     {
       "round": 2004,
@@ -23,7 +28,9 @@
       "reconstructed": null,
       "refunds": null,
       "net": null,
-      "sources": ["report2004"]
+      "sources": [
+        "report2004"
+      ]
     },
     {
       "round": 2012,
@@ -34,7 +41,10 @@
       "reconstructed": null,
       "refunds": null,
       "net": null,
-      "sources": ["review2012", "budget2026"]
+      "sources": [
+        "review2012",
+        "budget2026"
+      ]
     },
     {
       "round": 2026,
@@ -45,7 +55,12 @@
       "reconstructed": null,
       "refunds": null,
       "net": null,
-      "sources": ["fees2026", "reveal2026", "statistics2026", "guidebook2026"]
+      "sources": [
+        "fees2026",
+        "reveal2026",
+        "statistics2026",
+        "guidebook2026"
+      ]
     }
   ],
   "sources": {
@@ -66,8 +81,8 @@
       "url": "https://itp.cdn.icann.org/en/files/governance/mou-status-report-07oct04-en.pdf#page=10"
     },
     "review2012": {
-      "label": "ICANN — New gTLD Program Implementation Review, 29 January 2016, § 8.3.1",
-      "url": "https://www.icann.org/en/system/files/files/program-review-29jan16-en.pdf"
+      "label": "ICANN — New gTLD Program Implementation Review, 29 January 2016, § 8.3.1; p. 183",
+      "url": "https://www.icann.org/en/system/files/files/program-review-29jan16-en.pdf#page=183"
     },
     "budget2026": {
       "label": "ICANN — FY26 Budget, May 2025, p. 29, § 5.1.1",
@@ -94,9 +109,14 @@
     "it": {
       "title": "Il costo di candidare un TLD",
       "intro": "La fee per domanda e le somme raccolte nei diversi round mostrano anche la soglia economica di accesso al sistema.",
-      "columns": ["Round", "Fee standard per domanda", "Domande", "Fee raccolte"],
+      "columns": [
+        "Round",
+        "Fee standard per domanda",
+        "Domande",
+        "Fee raccolte"
+      ],
       "notes": {
-        "2000": "47 domande ricevute, 44 valutate: US$2,2 milioni sono ricostruiti su 44 × US$50.000. Due domande non avevano pagato e una fu ritirata per riservatezza. Il preventivo ICANN del febbraio 2001 riporta lo stesso totale come previsione a consuntivo; manca qui un incasso del round isolato e certificato.",
+        "2000": "47 domande ricevute, 44 valutate: US$2,2 milioni sono ricostruiti su 44 × US$50.000. Due domande non avevano pagato e una fu ritirata per riservatezza. Il preventivo ICANN del febbraio 2001 riporta lo stesso totale come previsione a consuntivo; manca qui un incasso del round isolato e certificato. La base della ricostruzione è esplicitata nella riga; non è un totale certificato di cassa.",
         "2004": "Dieci domande a US$45.000 ciascuna. ICANN dichiara esplicitamente US$450.000 raccolti nel rapporto al Dipartimento del Commercio del 7 ottobre 2004.",
         "2012": "Circa US$357 milioni raccolti all'avvio, secondo la revisione ICANN. Il successivo rendiconto FY12–FY23 riporta circa US$360 milioni di fee, US$52 milioni di rimborsi e US$308 milioni netti: è una misura su un periodo diverso, non il netto dei soli US$357 milioni iniziali.",
         "2026": "1.615 è il totale ufficiale del 7 ottobre; l'export pubblico analizzato contiene 1.614 candidature e ulteriori record di sostituzione. Ci sono 51 domande ASP, con sconti previsti del 75–85%, ed esenzioni per alcune varianti. Il totale effettivamente incassato non è stato reperito nelle fonti consultate: moltiplicare 1.615 × US$227.000 non lo dimostra."
@@ -112,7 +132,12 @@
     "en": {
       "title": "The cost of applying for a TLD",
       "intro": "The application fee and the amounts collected in each round also reveal the financial threshold for entering the system.",
-      "columns": ["Round", "Standard fee per application", "Applications", "Fees collected"],
+      "columns": [
+        "Round",
+        "Standard fee per application",
+        "Applications",
+        "Fees collected"
+      ],
       "notes": {
         "2000": "47 applications received, 44 evaluated: US$2.2 million is reconstructed as 44 × US$50,000. Two applications had not paid and one was withdrawn over confidentiality. ICANN's February 2001 budget lists the same total as projected actual revenue; a separately verified final collection figure for the round is not established here.",
         "2004": "Ten applications at US$45,000 each. ICANN explicitly reports US$450,000 collected in its 7 October 2004 report to the U.S. Department of Commerce.",
@@ -130,7 +155,12 @@
     "de": {
       "title": "Was eine TLD-Bewerbung kostet",
       "intro": "Die Gebühr pro Antrag und die Einnahmen der einzelnen Runden zeigen auch die finanzielle Zugangsschwelle zum System.",
-      "columns": ["Runde", "Standardgebühr pro Antrag", "Anträge", "Eingenommene Gebühren"],
+      "columns": [
+        "Runde",
+        "Standardgebühr pro Antrag",
+        "Anträge",
+        "Eingenommene Gebühren"
+      ],
       "notes": {
         "2000": "47 Anträge gingen ein, 44 wurden bewertet: 2,2 Mio. US-Dollar sind aus 44 × 50.000 US-Dollar rekonstruiert. Bei zwei Anträgen fehlte die Zahlung; einer wurde wegen Vertraulichkeitsfragen zurückgezogen. ICANNs Budget vom Februar 2001 nennt denselben Betrag als erwartetes Ist-Ergebnis. Ein gesondert bestätigter endgültiger Zahlungseingang der Runde liegt hier nicht vor.",
         "2004": "Zehn Anträge zu je 45.000 US-Dollar. ICANN nennt im Bericht an das US-Handelsministerium vom 7. Oktober 2004 ausdrücklich 450.000 US-Dollar an eingenommenen Gebühren.",
@@ -148,7 +178,12 @@
     "fr": {
       "title": "Le coût d'une candidature pour un TLD",
       "intro": "Les frais par candidature et les sommes perçues à chaque cycle révèlent aussi le seuil financier d'accès au système.",
-      "columns": ["Cycle", "Frais standard par candidature", "Candidatures", "Frais perçus"],
+      "columns": [
+        "Cycle",
+        "Frais standard par candidature",
+        "Candidatures",
+        "Frais perçus"
+      ],
       "notes": {
         "2000": "47 candidatures reçues, 44 évaluées : les 2,2 millions de dollars sont reconstitués par 44 × 50 000 dollars. Deux candidatures n'avaient pas payé et une a été retirée pour des raisons de confidentialité. Le budget ICANN de février 2001 indique le même montant comme réalisation prévisionnelle ; aucun montant définitif distinct et vérifié n'est établi ici pour ce cycle.",
         "2004": "Dix candidatures à 45 000 dollars chacune. ICANN déclare explicitement avoir perçu 450 000 dollars dans son rapport au Département du commerce américain du 7 octobre 2004.",
@@ -163,5 +198,6 @@
       "documentedLabel": "Documenté par ICANN",
       "download": "Télécharger les données et sources des frais"
     }
-  }
+  },
+  "sourceVerification": "financial_source_verification_20261019.json"
 }

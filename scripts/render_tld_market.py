@@ -76,6 +76,42 @@ TEXT = {
  }
 }
 
+for _lang, _values in {'it': {'rspTitle': 'gTLD attribuiti a ogni piattaforma',
+        'rspMode': 'Piattaforme · attribuzione tecnica',
+        'rspIntro': 'Questi numeri ricostruiscono quali gTLD usano la stessa infrastruttura, a partire dai segnali '
+                    'pubblici della rete. Non sono un censimento dei contratti o della proprietà. Il perimetro '
+                    'comprende 1.131 gTLD e non include i ccTLD.',
+        'origin': 'Gruppo di introduzione',
+        'summaryScope': 'Distribuzione della classifica completa (50 TLD). I filtri modificano soltanto la lista '
+                        'sottostante. La quota dei TLD e la quota dei domini sono misure diverse.',
+        'derived': 'DERIVATO · ATTRIBUZIONE TECNICA'},
+ 'en': {'rspTitle': 'gTLDs technically attributed to each platform',
+        'rspMode': 'Platforms · technical attribution',
+        'rspIntro': 'These numbers reconstruct which gTLDs share infrastructure from public network signals. They are '
+                    'not a census of contracts or ownership. Scope: 1,131 gTLDs; ccTLDs are excluded.',
+        'origin': 'Introduction group',
+        'summaryScope': 'Distribution of the complete ranking (50 TLDs). Filters change only the list below. TLD '
+                        'shares and domain shares are different measures.',
+        'derived': 'DERIVED · TECHNICAL ATTRIBUTION'},
+ 'de': {'rspTitle': 'Den Plattformen technisch zugeordnete gTLDs',
+        'rspMode': 'Plattformen · technische Zuordnung',
+        'rspIntro': 'Die Zahlen rekonstruieren aus öffentlichen Netzsignalen, welche gTLDs Infrastruktur teilen. Sie '
+                    'sind kein Vertrags- oder Eigentumsverzeichnis. Erfasst sind 1.131 gTLDs; ccTLDs fehlen.',
+        'origin': 'Einführungsgruppe',
+        'summaryScope': 'Verteilung der vollständigen Rangliste (50 TLDs). Filter ändern nur die Liste darunter. '
+                        'TLD-Anteile und Domain-Anteile sind verschiedene Kennzahlen.',
+        'derived': 'ABGELEITET · TECHNISCHE ZUORDNUNG'},
+ 'fr': {'rspTitle': 'gTLD attribués techniquement à chaque plateforme',
+        'rspMode': 'Plateformes · attribution technique',
+        'rspIntro': 'Ces chiffres reconstituent les gTLD partageant une infrastructure à partir de signaux publics du '
+                    'réseau. Ils ne recensent ni les contrats ni la propriété. Périmètre : 1 131 gTLD ; les ccTLD sont '
+                    'exclus.',
+        'origin': 'Groupe d’introduction',
+        'summaryScope': 'Répartition du classement complet (50 TLD). Les filtres modifient uniquement la liste '
+                        'ci-dessous. Parts de TLD et parts de domaines sont deux mesures différentes.',
+        'derived': 'DÉRIVÉ · ATTRIBUTION TECHNIQUE'}}.items():
+    TEXT[_lang].update(_values)
+
 CSS = '''<style id="tld-market-style">
 .marketResearch{scroll-margin-top:110px;min-width:0}.marketResearch p{line-height:1.7;overflow-wrap:anywhere}.marketResearch h2,.marketResearch h3{line-height:1.35;overflow-wrap:anywhere}
 .marketViews{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}.marketViews button{font:inherit;cursor:pointer;border:1px solid var(--border);padding:10px 14px;border-radius:9px;background:var(--surface2);color:var(--text)}.marketViews button[aria-pressed="true"]{border:2px solid var(--accent-text);font-weight:700}
@@ -106,7 +142,7 @@ def market(data, lang):
     body+='<div class="marketViews" role="group" aria-label="'+h(t['title'])+'" hidden>'+''.join('<button type="button" data-market-view="'+k+'" aria-pressed="'+str(k=='web').lower()+'" aria-controls="market-'+k+'">'+h(t[k])+'</button>' for k in ('web','zones'))+'</div>'
     body+='<div class="marketFilters" hidden><label>'+h(t['search'])+'<input type="search" id="market-search" autocomplete="off"></label><label>'+h(t['origin'])+'<select id="market-origin"><option value="">'+h(t['all'])+'</option>'+''.join('<option value="'+k+'">'+h(v)+'</option>' for k,v in t['labels'].items())+'</select></label></div><p id="market-result-count" aria-live="polite"></p>'
     for key, name in [('web','top50Web'),('zones','top50Zones')]:
-        body+='<div id="market-'+key+'" data-market-panel="'+key+'"><h3>'+h(t[key])+'</h3><p>'+h(t['webScope' if key=='web' else 'zoneScope'])+'</p><div class="marketGroups">'
+        body+='<div id="market-'+key+'" data-market-panel="'+key+'"><h3>'+h(t[key])+'</h3><p>'+h(t['webScope' if key=='web' else 'zoneScope'])+'</p><p class="marketSummaryScope">'+h(t['summaryScope'])+'</p><div class="marketGroups">'
         for g in data['groups'][key]:
             if not g['tlds']:continue
             body+='<div class="marketGroup"><span>'+h(t['labels'][g['cohort']])+'</span><strong>'+str(g['tlds'])+' / 50</strong><small>'+h(t['count'])+'</small>'
@@ -122,7 +158,7 @@ def market(data, lang):
         body+=table([t['rank'],t['tld'],t['webMetric' if key=='web' else 'zoneMetric'],t['origin'],t['date']],rows,t[key])
         if key=='zones':body+='<p class="small">'+h(t['coverage'])+': '+number(data['zoneMeasuredTLDs'],lang)+' / '+number(data['inventoryTLDs'],lang)+' gTLD · '+str(data['missingZoneTLDs'])+' '+h(t['unknown'])+'.</p>'
         body+='</div>'
-    body+='<p class="marketReading">'+h(t['reading'])+'</p><p>'+h(t['cohortNote'])+'</p><details><summary>'+h(t['method'])+'</summary>'+sources(data,['zones','method','web','webMethod','cohorts','iana'])+'<p>'+h(data['attribution'])+'</p><div class="marketLinks">'+download('tld_top50_zone_domains.csv',t['zones']+' · CSV')+download('tld_top50_website_share.csv',t['web']+' · CSV')+download('tld_market_snapshot.json','JSON')+download('tld_market_provenance.json',t['provenance'])+'</div></details><p class="small">'+h(t['current'])+'</p><div class="marketLinks">'+link(lang,'timeline','tld-cultural-trajectory',t['history'])+link(lang,'geography','rsp-tld-footprint',t['geo'])+'</div></div>'
+    body+='<p class="marketReading">'+h(t['reading'])+'</p><p>'+h(t['cohortNote'])+'</p><details><summary>'+h(t['method'])+'</summary>'+sources(data,['zones','method','web','webMethod','cohorts','iana'])+'<p>'+h(data['attribution'])+'</p><div class="marketLinks">'+download('tld_top50_zone_domains.csv',t['zones']+' · CSV')+download('tld_top50_website_share.csv',t['web']+' · CSV')+download('tld_market_snapshot.json','JSON')+download('tld_market_provenance.json',t['provenance'])+download('source_method_corrections_20261019.json',t['provenance']+' · 2026-10-19')+'</div></details><p class="small">'+h(t['current'])+'</p><div class="marketLinks">'+link(lang,'timeline','tld-cultural-trajectory',t['history'])+link(lang,'geography','rsp-tld-footprint',t['geo'])+'</div></div>'
     return body
 
 
@@ -130,10 +166,10 @@ def rsp(data, lang):
     t=TEXT[lang]; named=[r for r in data['backends'] if r['attributionKind']=='named-fingerprint']; unnamed=[r for r in data['backends'] if r['attributionKind']!='named-fingerprint']
     def rows(items):
         return ['<tr><th scope="row">'+h(r['name'])+'</th><td>'+str(r['tlds'])+'</td><td>'+h(t['named' if r['attributionKind']=='named-fingerprint' else 'unnamed'])+'</td></tr>' for r in items]
-    body='<div class="marketResearch" id="rsp-tld-footprint"><h3>'+h(t['rspTitle'])+'</h3><p>'+h(t['rspIntro'])+'</p><p class="small">'+h(t['rspNote'])+'</p>'
+    body='<div class="marketResearch" id="rsp-tld-footprint"><p class="marketEvidence">'+h(t['derived'])+'</p><h3>'+h(t['rspTitle'])+'</h3><p>'+h(t['rspIntro'])+'</p>'
     body+=table([t['rspProvider'],t['rspUnit'],t['rspKind']],rows(named),t['rspTitle'])
     body+='<details><summary>'+h(t['rspAuto'])+' · '+str(len(unnamed))+'</summary>'+table([t['rspProvider'],t['rspUnit'],t['rspKind']],rows(unnamed),t['rspAuto'])+'</details>'
-    body+='<p><strong>'+h(t['unattributed'])+': '+str(data['unattributedTLDs'])+' gTLD.</strong> '+h(t['rspSum'])+': '+number(data['inventoryTLDs'],lang)+'.</p><details><summary>'+h(t['rspDetails'])+'</summary><p>'+h(t['rspMap'])+'</p>'+sources(data,['backends','method'])+'<p>'+h(data['attribution'])+'</p><p>'+h(t['current'])+' DNS: '+h(data['zoneDate'])+'.</p><div class="marketLinks">'+download('rsp_tld_footprint.csv',t['csv'])+download('tld_market_snapshot.json','JSON')+download('tld_market_provenance.json',t['provenance'])+'</div></details><div class="marketLinks">'+link(lang,'economics','tld-market-reach',t['ranking'])+'</div></div>'
+    body+='<p><strong>'+h(t['unattributed'])+': '+str(data['unattributedTLDs'])+' gTLD.</strong> '+h(t['rspSum'])+': '+number(data['inventoryTLDs'],lang)+'.</p><details><summary>'+h(t['rspDetails'])+'</summary><p>'+h(t['rspMap'])+'</p>'+sources(data,['backends','method'])+'<p>'+h(data['attribution'])+'</p><p>'+h(t['current'])+' DNS: '+h(data['zoneDate'])+'.</p><div class="marketLinks">'+download('rsp_tld_footprint.csv',t['csv'])+download('tld_market_snapshot.json','JSON')+download('tld_market_provenance.json',t['provenance'])+download('source_method_corrections_20261019.json',t['provenance']+' · 2026-10-19')+'</div></details><div class="marketLinks">'+link(lang,'economics','tld-market-reach',t['ranking'])+'</div></div>'
     return body
 
 

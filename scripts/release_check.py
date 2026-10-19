@@ -861,9 +861,10 @@ if not {'reveal-day','lugano-public-information','community-input','board-auctio
 reveal=next(e for e in events if e['id']=='reveal-day')
 if not any('CDL2651T-T31516/summary' in item.get('source','') for item in reveal.get('extraSources',[])):
     fail('Official .lugano ICANN APS application source missing')
+bibliographic_date=json.loads((DATA/'research_bibliographic_corrections.json').read_text())['zenodoDatePublished']
 rrmeta=json.loads((ROOT/'research'/'research_release_manifest.json').read_text(encoding='utf-8'))['currentResearchRelease']
 citation=(ROOT/'CITATION.cff').read_text(encoding='utf-8')
-if f'date-released: "{rrmeta["publishedOn"]}"' not in citation or f'version: "{rrmeta["id"]}"' not in citation:
+if f'date-released: "{bibliographic_date}"' not in citation or f'version: "{rrmeta["id"]}"' not in citation:
     fail('CITATION.cff must match the actual version-specific scientific release date, not the technical site update')
 if rrmeta['doi']!=publication_meta.get('doi') or f'value: "{rrmeta["doi"]}"' not in citation:
     fail('Current RR2 DOI citation differs from the verified Zenodo deposit')
@@ -1236,7 +1237,7 @@ working_html=(ROOT/'research'/'connecting-the-dots-working-paper-v1.html').read_
 for fragment in ['Working Paper v'+publication_meta['paperVersion'], 'Editorial revision note (10 October 2026)', 'participant-observer', '6A.3 A first field note', '1,616']:
     if fragment not in working_md or fragment not in working_html:
         fail('Working paper HTML/Markdown methodological revision mismatch: '+fragment)
-if 'date-released: "2026-10-10"' not in citation or publication_meta.get('asOf')!='2026-10-10' or publication_meta.get('releasedOn') < publication_meta.get('asOf'):
+if f'date-released: "{bibliographic_date}"' not in citation or publication_meta.get('asOf')!='2026-10-10' or publication_meta.get('releasedOn') < publication_meta.get('asOf'):
     fail('Current RR2 publication date must match the verified release, independently of technical versions')
 research_page=(ROOT/'research'/'index.html').read_text(encoding='utf-8')
 if '10.5281/zenodo.23288603' not in research_page or '10.5281/zenodo.23262623' not in research_page or '10.5281/zenodo.23262622' not in research_page:

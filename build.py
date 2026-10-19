@@ -178,6 +178,12 @@ def build_data_pack() -> None:
     expected = f"downloads/connecting-the-dots-data-pack-v{VERSION}.zip"
     if PUBLICATION.get("currentDataPackPath") != expected:
         raise SystemExit("Current data-pack path diverges from versioned publication")
+    frozen = json.loads((DATA / 'frozen_technical_packages.json').read_text())['files']
+    for path, expected_digest in frozen.items():
+        if not (ROOT/path).exists() or sha256(ROOT/path) != expected_digest:
+            raise SystemExit('Previously published package changed: '+path)
+    if expected in frozen:
+        raise SystemExit('Refusing to reuse an archived technical release version: '+VERSION)
     pack = ROOT / expected
     pack.parent.mkdir(parents=True, exist_ok=True)
     write_deterministic_zip(pack, [(item, item.relative_to(DATA).as_posix()) for item in data_pack_files()])
@@ -429,6 +435,7 @@ def main() -> None:
     print(f'IA B2 integrated navigation: {cross_nav_count} independent pages')
     if redirect_legacy(ROOT) != 8:
         raise SystemExit("Legacy governance redirects incomplete")
+    subprocess.run(["node", str(ROOT / "scripts" / "reconcile_audit_20261019.cjs")], check=True)
     validate_index()
     # Release-level validation is intentionally self-contained so the browser-upload
     # bundle can verify itself even though the larger development QA suite is omitted.

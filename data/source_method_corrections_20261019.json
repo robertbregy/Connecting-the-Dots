@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-19",
+  "corrections": [
+    {
+      "id": "w3-source-html-normalization",
+      "sourceSnapshot": "data/evidence/tld-market-2026-10-19/w3techs-top50.json",
+      "scope": "Source HTML fingerprint metadata only; extracted ranking unchanged",
+      "originalField": "sourceHTMLSHA256",
+      "originalFieldMeaning": "SHA-256 of UTF-8 text after universal-newline normalization, not raw response bytes",
+      "normalization": "Python Path.read_text() converts CRLF to LF, followed by UTF-8 encoding",
+      "normalizedTextSHA256": "e742e9ad0b5a7aa463b64b2d629fd5f64b1265dd3157475da915f7230f20643c",
+      "rawResponseSHA256": "222ca8839c9af83b05144d6d96a2a5260b2cb7443f36125aea59289b606e2f9c",
+      "crlfCount": 53,
+      "originalSnapshotPreserved": true,
+      "captureLimitation": "The original HTML is not distributed in the immutable source snapshot. This note documents normalization; it does not claim the extract alone can reconstruct the full webpage."
+    }
+  ]
+}

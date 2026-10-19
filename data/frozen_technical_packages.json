@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "recordedOn": "2026-10-19",
+  "policy": "Existing published packages are immutable; a changed release requires a new unique version. Current work must not overwrite these paths.",
+  "files": {
+    "downloads/connecting-the-dots-data-pack-v0.7.77.zip": "8ff5dad0f9c18fedd7f1c30327a43efaca8ef6c16626d7475b2178be599e107a",
+    "downloads/connecting-the-dots-data-pack.zip": "105855eaec0e118418c5bbf332ffa0a0e92b6726f470baf535846bb2cd79894f",
+    "downloads/connecting-the-dots-data-pack-v0.7.83.zip": "e5a2d2c1d78d943c61d8481d94bbb2d1a0b0636216f6d4c0a5c122a740ec17f3",
+    "downloads/connecting-the-dots-data-pack-v0.7.82.zip": "786058bda9cca5f75124c30cc55dc10f9c7c9df86b739f378c061354d75b57b0",
+    "downloads/connecting-the-dots-data-pack-v0.7.80.zip": "4ba79e195f73ac863b1871f0a7d34b2cbd5b25459547d01e2dfd74644e81f3f5",
+    "downloads/connecting-the-dots-data-pack-v0.7.81.zip": "88d7ce0945ad29b2617ce421e2dfe1c62da6aa028d405c48dc1fec7a32dd2710",
+    "downloads/connecting-the-dots-data-pack-v0.7.85.zip": "d1a17cca20a8dbeffa00b0273261b119c2dae5a2bb39d4b02485a90baec8c74f",
+    "downloads/connecting-the-dots-data-pack-v0.7.84.zip": "b2ffb3502559c927a0e61666b1bda232f6bbcb51f4e9f600b8d09c72e1ac57c4",
+    "downloads/connecting-the-dots-data-pack-v0.7.86.zip": "1ed98f9a57e9712ffcc64e7843095a35453fe3a1e9d7a93fbf9f303f077eafa3",
+    "downloads/connecting-the-dots-data-pack-v0.7.79.zip": "13308a339f13e0169c35159dbd2cdeba3fc58459eda33394278dbcd80772f88e",
+    "downloads/connecting-the-dots-data-pack-v0.7.78.zip": "d812e6a01c04c451c4d68e111977a7de7492dce3919ebed48852fc19d224c1fe"
+  }
+}

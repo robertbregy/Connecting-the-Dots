@@ -151,6 +151,8 @@ def fees(data: dict, lang: str) -> str:
         amount = row['collected'] if row['collected'] is not None else row['reconstructed']
         label = u['initial'] if row['collectedKind']=='documented-initial' else (t['documentedLabel'] if row['collected'] is not None else t['reconstructedLabel'])
         collected = ('<span class="tldAmount">US$ '+number(amount,lang)+'</span><span class="tldBasis">'+h(label)+'</span>') if amount is not None else h(t['unknown'])
+        if row.get('reconstructionApplications'):
+            collected += '<span class="tldBasis">'+str(row['reconstructionApplications'])+' × US$ '+number(row['fee'],lang)+'</span>'
         rows.append('<tr data-fee-round="'+str(row['round'])+'"><th scope="row">'+str(row['round'])+'</th><td><span class="tldAmount">US$ '+number(row['fee'],lang)+'</span></td><td>'+number(row['applications'],lang)+'</td><td>'+collected+'</td></tr>')
     body = '<p class="sectionLead">'+h(t['intro'])+'</p><div class="tldTable" tabindex="0" role="region" aria-label="'+h(t['title'])+'"><table><thead><tr>'+''.join('<th scope="col">'+h(x)+'</th>' for x in t['columns'])+'</tr></thead><tbody>'+''.join(rows)+'</tbody></table></div>'
     body += '<details><summary>'+h(u['feeNotes'])+'</summary>'+''.join('<h3>'+str(row['round'])+'</h3><p>'+h(t['notes'][str(row['round'])])+'</p>'+refs(data,row['sources'],lang) for row in data['rounds'])+'</details>'

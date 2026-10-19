@@ -11,7 +11,7 @@ const mdPath=path.join(root,'research/connecting-the-dots-working-paper-v1.md');
 let md=fs.readFileSync(mdPath,'utf8');
 const heading=/\*\*Working Paper v[^*]+\*\*/g;
 assert.equal([...md.matchAll(heading)].length,1);
-md=md.replace(heading,`**Working Paper v${pub.paperVersion} · living revision ${revised} · current citable research release RR2 (10 October 2026)**`);
+md=md.replace(heading,`**Working Paper v${pub.paperVersion} · living revision ${revised} · current citable research release RR2 (Zenodo: 11 October 2026; evidence cutoff: 10 October)**`);
 md=md.replace(/Current technical data package \*\*v[0-9.]+\*\* \(not a new Zenodo release\): https:\/\/robertbregy.github.io\/Connecting-the-Dots\/downloads\/connecting-the-dots-data-pack-v[0-9.]+\.zip/,
  `Current technical data package **v${pub.currentDataPackVersion}** (not a new Zenodo release): ${pub.deployment}${pub.currentDataPackPath}`);
 fs.writeFileSync(mdPath,md);
