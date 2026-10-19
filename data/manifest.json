@@ -345,13 +345,43 @@
       },
       {
         "repository_path": "assets/app.js",
-        "bytes": 129279,
-        "sha256": "be4525f4803e12ef9baba6261c8b369d14f00a157c1dbac63e271debd4ca9e5e"
+        "bytes": 129383,
+        "sha256": "74a5512983e98830e181c315b4ed888cb2e13dd160b6a489c7a6201f46c42ab8"
       },
       {
         "repository_path": "assets/style.css",
         "bytes": 136877,
         "sha256": "c58b7998ae70ad71349658e0ae85ef9ddb44ab4daa05b6793b391b3d0887e833"
+      },
+      {
+        "repository_path": "assets/aps-lazy.js",
+        "bytes": 860,
+        "sha256": "56de6501096c9e962130e994280d0e4b514280ab061c8ab180757c5e0f2144c9"
+      },
+      {
+        "repository_path": "assets/worldmap-lazy.js",
+        "bytes": 843,
+        "sha256": "e666879b00c96d3950bca964bf4d1da52bf815f64cd679c443a03d0c478ba87b"
+      },
+      {
+        "repository_path": "assets/tld-market.js",
+        "bytes": 2267,
+        "sha256": "6a69ff7370701bb3ce2b336720fe60fcf7135d12881b7174ec5dd2ba78db0222"
+      },
+      {
+        "repository_path": "assets/tld-cultural.js",
+        "bytes": 2006,
+        "sha256": "71fffa9b38ff8a86e445607af812dca9f3c2fa0ef24e8b11cded8496dc683c85"
+      },
+      {
+        "repository_path": "assets/aps-atlas.js",
+        "bytes": 7345,
+        "sha256": "4af2e1c909feef2530c6175b2293e7be13380f0dfc4766bd8f4043ce335e028c"
+      },
+      {
+        "repository_path": "data/aps_2026_application_graph.js",
+        "bytes": 947796,
+        "sha256": "37eb742916a8e79f3515b3daa7f25966bffc424003b74562299db2640a4d7bce"
       },
       {
         "repository_path": "data/worldmap.js",
