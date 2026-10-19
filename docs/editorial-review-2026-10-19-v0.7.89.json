@@ -2346,7 +2346,7 @@
     },
     ".github/workflows/audit-browser.yml": {
       "baselineSHA256": "ed063e0e2ffe43df54dfe3e1a98a4292dad5524d76a46c174c6a0943554a1296",
-      "sha256": "bc27967941f2e6f791315c63f38304a93a0bf9ee1db3155713aad2cf9d79dd00",
+      "sha256": "79f2034302836c33a5788a3ff8a85826a057064ffc26abb889e7eca25746307b",
       "rationaleIds": [
         "A19",
         "H01",
@@ -2637,7 +2637,7 @@
     },
     ".github/workflows/rebuild.yml": {
       "baselineSHA256": "3da73a6fad7995f03b80e8ba4cb646ef8dca09250fa19d1addf924f2e27ade6a",
-      "sha256": "704359cc679654d9c232ed8374e09777b218e773abdd0181021d9ed75b91e95c",
+      "sha256": "4d97e09359336fe2f05e35e54bcbd48b74a2c92bbab7f0dcdb59bb1ee25c6b98",
       "rationaleIds": [
         "H02",
         "U01"

@@ -7,6 +7,7 @@ on:
       - 'audit/**'
       - main
     paths:
+      - 'docs/editorial-review-*.json'
       - '.github/workflows/audit-browser.yml'
       - 'scripts/**'
       - 'assets/**'
