@@ -1352,7 +1352,7 @@
   "files": {
     "applications/de/index.html": {
       "baselineSHA256": "30e00a377b01d61cce5c4ce178275dab3fd053485fc9d691c6e210ae0716ff9a",
-      "sha256": "ce3c1efb80fa4dc66f5c1dc1a0e3f4b504588d71e297ed4900ea852a2052de84",
+      "sha256": "917d75d78e9ac68e12a4b10efce4e27ea555cfc2a4ffe873cb4a3c03ca6b0bd1",
       "rationaleIds": [
         "C04",
         "M01",
@@ -1365,7 +1365,7 @@
     },
     "applications/en/index.html": {
       "baselineSHA256": "1f52c66b908ed9fc5e17caffd77f9157ba254d04ee081cc1b8bb983ce9c934c5",
-      "sha256": "64f83ce5973f9621e31b9aa0be347f20e334aba67332f1a512ff58e4b8299ce1",
+      "sha256": "d7d7d9e1abdfb5e286bdaeaa283d3c75032d19fc26539e8c20c271005fbfa223",
       "rationaleIds": [
         "C04",
         "M01",
@@ -1378,7 +1378,7 @@
     },
     "applications/fr/index.html": {
       "baselineSHA256": "c069a3a5b79c9c558964bfe8d23c5c4ee305ab93e3cdb4ef61f844ff89e7db79",
-      "sha256": "1691033204f1d8b5c635c77fc1d286bb90589b94d191a2860bf4948f74a8f6fd",
+      "sha256": "e39f9315d6e957c83537ca3cf6ef4ac9a7a67749bc7c7feaa3b05ae231ce8724",
       "rationaleIds": [
         "C04",
         "M01",
@@ -1391,7 +1391,7 @@
     },
     "applications/it/index.html": {
       "baselineSHA256": "7830eae652c261d48bb590c8456d534793a394432672187303313eef92bcb1cc",
-      "sha256": "86189e521a86dc9dccd530800c99567524eeffcf205b70af171dd06967b4d87c",
+      "sha256": "da4e1132fcf5445d30352202d6cffd9d4c4bea6eaf2b0a3322f73479e9a166c6",
       "rationaleIds": [
         "C04",
         "M01",
@@ -2447,7 +2447,7 @@
     },
     "assets/aps-lazy.js": {
       "baselineSHA256": null,
-      "sha256": "07dec3df9a48bcb2ca47d543dbc29fddece1bdf9d681b3b0caadf42eaf9c6df6",
+      "sha256": "2632914a7b71b514ccad7ebc0b98ebb67fb07ebf38e6ca1039a1e5ff0caa35f5",
       "rationaleIds": [
         "A19",
         "H01",
@@ -2652,7 +2652,7 @@
     },
     "assets/audience.css": {
       "baselineSHA256": null,
-      "sha256": "6168b39dcab5d66d39bdbbe0596b8699f51e733f51ec8015f2d5628ab6966b75",
+      "sha256": "e90f40ebdb51f1accf017324966cf3d16986a40047646bddfbf199efdb7da089",
       "rationaleIds": [
         "U01"
       ]
@@ -2680,7 +2680,7 @@
     },
     "scripts/audit_audience.cjs": {
       "baselineSHA256": null,
-      "sha256": "56bb1fdcf7d2d2881717e5e7a0829235b703eced40a0269ba3687a441c17cf4a",
+      "sha256": "1feea24face1b6e192c09a62c4c57549e6a03c331596369b8cf3f0bea6176801",
       "rationaleIds": [
         "U01"
       ]
@@ -2694,10 +2694,17 @@
     },
     "scripts/reconcile_audience.cjs": {
       "baselineSHA256": null,
-      "sha256": "953311b09d27f60620c5234c49e977e20a18b2ccb2279b36d47ca8ee675ea540",
+      "sha256": "a242c3852f2a0961277e77f9dcdab8af0f1de2e434c08fd075b795e914ee51f9",
       "rationaleIds": [
         "U01"
       ]
+    },
+    "scripts/render_aps_application_atlas.py": {
+      "baselineSHA256": "3ca0d473eda8adc7dcb2b9b94d2d83dcecc0e96503e923f8c59ca0cdfc831f74",
+      "rationaleIds": [
+        "U01"
+      ],
+      "sha256": "8916e9f295175d526948a6f614945d31a26b0de5b65e3759e56315f8f27030b8"
     }
   },
   "sourceSections": {

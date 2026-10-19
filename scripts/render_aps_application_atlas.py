@@ -116,7 +116,7 @@ def render(root:Path=ROOT):
 <button type="button" id="apsReset" class="apsReset">{q(t['apsAtlasReset'])}</button></div>
 <div class="apsResultsTop"><p id="apsResultCount" role="status" aria-live="polite"></p>
 <a href="../../data/aps_2026_application_graph.json" download>{q(t['apsAtlasDownloadGraph'])}</a></div>
-<div id="apsResults" class="apsResults" aria-label="{q(t['apsAtlasResults'])}"></div>
+<div id="apsResults" class="apsResults"></div>
 <div class="apsMoreWrap"><button id="apsMore" type="button">{q(t['apsAtlasMore'])}</button></div>
 <noscript><p>{q(t['apsAtlasNoJs'])}
 <a href="../../data/applications_2026_aps_official_listing.csv">CSV ICANN</a></p></noscript>

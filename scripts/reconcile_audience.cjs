@@ -40,6 +40,8 @@ for(const lang of ['en','it','de','fr'])for(const filename of [lang+'/index.html
  about.insertBefore(corpus,about.children[1]);
  const bridge=document.getElementById('apsAtlasBridge');
  const bridgeDisclosure=make('<details class="audienceDetails audienceAtlasLink"><summary>'+h(t.bridge)+'</summary></details>');bridge.before(bridgeDisclosure);bridgeDisclosure.append(bridge);
+ const native=document.getElementById('aps-native');
+ if(native){const disclosure=make('<details class="audienceDetails audienceAtlasPanel"><summary>'+h(t.bridge)+' · 2026</summary></details>');native.before(disclosure);disclosure.append(native);}
  const search=document.querySelector('.explorerSearchPrimary');
  search.after(make('<div class="audienceSearchScope"><label for="explorerSearchScope">'+h(t.scopeLabel)+'</label><select id="explorerSearchScope"><option value="all">'+h(t.scopeAll)+'</option><option value="names">'+h(t.scopeNames)+'</option></select><p class="small">'+h(t.searchHelp)+'</p></div>'));
  about.querySelector('summary').textContent=t.corpus;
