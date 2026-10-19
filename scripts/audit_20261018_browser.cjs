@@ -197,4 +197,4 @@ async function downloadCSV(page,requests){
  fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2)+'\n');
  console.log('AUDIT_20261018_BROWSER_QA '+JSON.stringify({scenarios:report.scenarios.length,passed:report.scenarios.filter(s=>s.status==='passed').length,issues:report.issues.length,report:path.join(out,'report.json')}));
  if(report.issues.length)process.exitCode=1;
-})().catch(error=>{console.error(error.stack||error);process.exitCode=2;});
+})().then(async()=>{if(!process.exitCode)await require('./audit_tld_market_browser.cjs')();}).catch(error=>{console.error(error.stack||error);process.exitCode=2;});

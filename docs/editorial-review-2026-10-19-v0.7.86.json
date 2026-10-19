@@ -2122,6 +2122,20 @@
       "rationaleIds": [
         "T02"
       ]
+    },
+    "scripts/audit_20261018_browser.cjs": {
+      "baselineSHA256": null,
+      "sha256": "96a18d15d53749bc60df6ee6fe8c3df3d6018565643663ab8bc5ed3474d8a789",
+      "rationaleIds": [
+        "T02"
+      ]
+    },
+    "scripts/audit_tld_market_browser.cjs": {
+      "baselineSHA256": null,
+      "sha256": "ba7b050577cda9c0f50240c40136a9cedd216d6e51d2a9f6785ab332b1a651fb",
+      "rationaleIds": [
+        "T02"
+      ]
     }
   },
   "sourceSections": {
@@ -2378,5 +2392,12 @@
   "priorTechnicalBaseline": {
     "version": "0.7.85",
     "commit": "7c37ec9c667283676b13c123ba6b34513cb2daa4"
-  }
+  },
+  "verifiedBuiltCommit": "15cb779437093117de86e2146ac2e3473bb8cf09",
+  "verification": [
+    "Archived aggregate source hashes and deterministic derivation passed.",
+    "Four-language filters and mobile layout reviewed locally.",
+    "All reviewed source/data/page files match the fully rebuilt feature commit by Git blob SHA.",
+    "Browser regression now includes eight market/RSP interaction scenarios across four languages and two viewport sizes."
+  ]
 }
