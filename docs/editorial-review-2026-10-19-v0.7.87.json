@@ -2345,7 +2345,7 @@
     },
     "data/cultural_validation_sample.csv": {
       "baselineSHA256": null,
-      "sha256": "2fac2ade05b185e697004f4f9050370adc4604fb3d70964cd43bcbd5e0dcbbf1",
+      "sha256": "ada2d4c72ec31a977525bf54a2e5e2084a0ac6f36f43e32d0056635b07833fe1",
       "rationaleIds": [
         "A19"
       ]
@@ -2366,7 +2366,7 @@
     },
     "data/reader_validation_recording.csv": {
       "baselineSHA256": null,
-      "sha256": "a0c8fa6b21362883887156ab4282741624a00888857535dd1ea2c0bc371263d9",
+      "sha256": "b8bf854749e3368a82c6192c5082344a50477f40c5e712fdb0cfa7b5adee6720",
       "rationaleIds": [
         "A19"
       ]
