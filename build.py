@@ -133,7 +133,7 @@ def build_manifest() -> None:
             "profile_loading": "on-demand",
             "detail_batches": 8,
             "assets": [{"repository_path": str(path.relative_to(ROOT)), "bytes": path.stat().st_size, "sha256": sha256(path)}
-                       for path in [DATA / "site_bundle.js", ROOT / "assets/app.js", ROOT / "assets/style.css", ROOT / "assets/aps-lazy.js", ROOT / "assets/worldmap-lazy.js", ROOT / "assets/tld-market.js", ROOT / "assets/tld-cultural.js", ROOT / "assets/aps-atlas.js", DATA / "aps_2026_application_graph.js", DATA / "worldmap.js", *sorted(DATA.glob("explorer_profiles_*.js"))]],
+                       for path in [DATA / "site_bundle.js", ROOT / "assets/app.js", ROOT / "assets/style.css", ROOT / "assets/audience.css", ROOT / "assets/aps-lazy.js", ROOT / "assets/worldmap-lazy.js", ROOT / "assets/tld-market.js", ROOT / "assets/tld-cultural.js", ROOT / "assets/aps-atlas.js", DATA / "aps_2026_application_graph.js", DATA / "worldmap.js", *sorted(DATA.glob("explorer_profiles_*.js"))]],
         },
         "files": files,
     }

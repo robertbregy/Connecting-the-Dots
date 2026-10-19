@@ -2161,7 +2161,7 @@
     },
     "build.py": {
       "baselineSHA256": "1e375ef181f88942d94657f7cf210324ff3976f49d053aba8edb7a2ae16f86c0",
-      "sha256": "c0ce1b884e7abbaae79071a6a296b1b6d021dcffcd6984ce271d2232a19fa272",
+      "sha256": "24ca1c8c30396d0932e19a9d05ecee98f8e1fc71cb8eb0bb047f25950d243187",
       "rationaleIds": [
         "T01",
         "CI03",
@@ -2652,7 +2652,7 @@
     },
     "assets/audience.css": {
       "baselineSHA256": null,
-      "sha256": "db92bc724d77c6e11682d4a12e4cc800e5b5faba721c79b12ea48d364db75b4c",
+      "sha256": "7e423cf3f5b07947b14e0ee23773e05fc0906efb8d239dc4e03d2a16b7e23ab2",
       "rationaleIds": [
         "U01"
       ]
@@ -2680,7 +2680,7 @@
     },
     "scripts/audit_audience.cjs": {
       "baselineSHA256": null,
-      "sha256": "a5919b095c620061304e40a40a322d27eab4e83ea03f620880b44a84be7ee9fa",
+      "sha256": "56bb1fdcf7d2d2881717e5e7a0829235b703eced40a0269ba3687a441c17cf4a",
       "rationaleIds": [
         "U01"
       ]

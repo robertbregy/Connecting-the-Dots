@@ -38,6 +38,8 @@ const base=process.env.CTD_TEST_BASE||'http://127.0.0.1:8123/';
   await page.locator('#profileTitle').press('Escape');
   await page.locator('.audienceAtlasLink > summary').click();await page.waitForFunction(()=>!!window.CTD_APS_2026);
   await page.goto(base+lang+'/?tab=research#research-citation-guide');
+  const titleTop=await page.locator('#research-citation-guide h3').evaluate(e=>e.getBoundingClientRect().top);
+  assert.ok(titleTop>=65,'Direct citation link hides its title under the header: '+titleTop);
   assert.equal(await page.locator('.audienceCiteGrid article').count(),3);
   assert.ok((await page.locator('#independent-review-status').innerText()).length>100);
   assert.ok(await page.locator('.audienceCiteGrid a[href*="v0.7.89.zip"]').count());
