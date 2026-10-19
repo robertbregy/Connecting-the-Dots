@@ -355,13 +355,13 @@
       },
       {
         "repository_path": "assets/audience.css",
-        "bytes": 7466,
-        "sha256": "6168b39dcab5d66d39bdbbe0596b8699f51e733f51ec8015f2d5628ab6966b75"
+        "bytes": 7463,
+        "sha256": "e90f40ebdb51f1accf017324966cf3d16986a40047646bddfbf199efdb7da089"
       },
       {
         "repository_path": "assets/aps-lazy.js",
-        "bytes": 1328,
-        "sha256": "07dec3df9a48bcb2ca47d543dbc29fddece1bdf9d681b3b0caadf42eaf9c6df6"
+        "bytes": 2223,
+        "sha256": "2632914a7b71b514ccad7ebc0b98ebb67fb07ebf38e6ca1039a1e5ff0caa35f5"
       },
       {
         "repository_path": "assets/worldmap-lazy.js",
