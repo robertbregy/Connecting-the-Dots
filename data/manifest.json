@@ -1,6 +1,6 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.88",
+  "version": "0.7.89",
   "release_date": "2026-10-19",
   "publication_state": "reveal-day",
   "rendering": "static-prerendered",
@@ -325,7 +325,7 @@
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "release_history": {
     "path": "release_history.json",
-    "sha256": "2b6e09f8852746142ebb4bc2ff4b2826816811bf46050a1e39b96928176e0641"
+    "sha256": "50870c935099601f0893cda418a5102b763c0cea6a30b0723cec96850788cd29"
   },
   "freeze": {
     "status": "reveal-day-snapshot",
@@ -340,13 +340,13 @@
     "assets": [
       {
         "repository_path": "data/site_bundle.js",
-        "bytes": 2470528,
-        "sha256": "210ba47d1590e59604a9088fccbff9e43219efab732fae18b9c38dc747deaa55"
+        "bytes": 2470736,
+        "sha256": "bd42e222ed9402b1f9ea034662b9b131dea837c3e067c27afca1a8c86ce4d675"
       },
       {
         "repository_path": "assets/app.js",
-        "bytes": 129534,
-        "sha256": "0e9e18c22413c5210ecc6d15bc666892a0419973704fe9882a003f877ba78e2d"
+        "bytes": 131061,
+        "sha256": "d62be08a787c5abecbb69ce7ce4e9e8015c50333fef657117883141bd1ad28fd"
       },
       {
         "repository_path": "assets/style.css",
@@ -354,9 +354,14 @@
         "sha256": "c58b7998ae70ad71349658e0ae85ef9ddb44ab4daa05b6793b391b3d0887e833"
       },
       {
+        "repository_path": "assets/audience.css",
+        "bytes": 7466,
+        "sha256": "6168b39dcab5d66d39bdbbe0596b8699f51e733f51ec8015f2d5628ab6966b75"
+      },
+      {
         "repository_path": "assets/aps-lazy.js",
-        "bytes": 860,
-        "sha256": "56de6501096c9e962130e994280d0e4b514280ab061c8ab180757c5e0f2144c9"
+        "bytes": 1328,
+        "sha256": "07dec3df9a48bcb2ca47d543dbc29fddece1bdf9d681b3b0caadf42eaf9c6df6"
       },
       {
         "repository_path": "assets/worldmap-lazy.js",
@@ -365,8 +370,8 @@
       },
       {
         "repository_path": "assets/tld-market.js",
-        "bytes": 2267,
-        "sha256": "6a69ff7370701bb3ce2b336720fe60fcf7135d12881b7174ec5dd2ba78db0222"
+        "bytes": 2888,
+        "sha256": "bddbf49ac146495fbafa94e203f472ae2c80fd4380d613528c1405cc42807828"
       },
       {
         "repository_path": "assets/tld-cultural.js",
@@ -391,42 +396,42 @@
       {
         "repository_path": "data/explorer_profiles_0.js",
         "bytes": 1089784,
-        "sha256": "c01517f04023c7f32936dfb9b3b71fe460e1f2a79a0cdc4737487bbb681fac1d"
+        "sha256": "1fe959340945bffd42cded83b6fa2692cc9dc93ca815bdb3200dddca069b8ea2"
       },
       {
         "repository_path": "data/explorer_profiles_1.js",
         "bytes": 904381,
-        "sha256": "7ed39567500f97c1c671f611511a325c4538fb947eea22c5e2d476b1e6008b8c"
+        "sha256": "b476453593f99a1c149239e01d57e4bb54297c73aea27c6b87d7d93bfc26392e"
       },
       {
         "repository_path": "data/explorer_profiles_2.js",
         "bytes": 1009406,
-        "sha256": "a781ad36c1495796bd346b98bdfbbef2634e30dfaec4540f611c6f080c13e2b2"
+        "sha256": "b05759e0c3d6c521d1c995f48d0379c5b3970c36f239709add384c1831549768"
       },
       {
         "repository_path": "data/explorer_profiles_3.js",
         "bytes": 934600,
-        "sha256": "42014a7a3bfb1143c71bf26e774f28d7e8391fe118ded36322d77db76360c8a6"
+        "sha256": "68602f74aeb50c4b2aa78625f7dd9db0d0ffa3a25e95ee3fc6ad933741c19c56"
       },
       {
         "repository_path": "data/explorer_profiles_4.js",
         "bytes": 970735,
-        "sha256": "ee985744d84b236bca55167647ed9c2fcfbe7820409281af0c3ff52b27a8146e"
+        "sha256": "0c4ed4c6eb5c3ba689f24558134b656dcd831b8897ff192612c89c0d5d0e77cf"
       },
       {
         "repository_path": "data/explorer_profiles_5.js",
         "bytes": 943441,
-        "sha256": "08da48116a77f6cae8c9b75a75d19becfc237af9191d7b672a5ce363138be3e4"
+        "sha256": "f3ec34e4c8eb46e049af993fc974db051e03a0fe3cc6e64e1c334ed9253975d6"
       },
       {
         "repository_path": "data/explorer_profiles_6.js",
         "bytes": 953642,
-        "sha256": "a81525ca6719a37503f6cacb5e9017257a39256d4d79c5a6ca15575f97581c70"
+        "sha256": "5312ffa306502b24bbb54f490ff7de9ecfbece1f758f9328b400677631e02106"
       },
       {
         "repository_path": "data/explorer_profiles_7.js",
         "bytes": 936011,
-        "sha256": "452095941450eb0b2372a867b69a640018c12939e8ccbdfe269fafe5913cd6af"
+        "sha256": "fb907c9ed005a06734dad5a97c165a8dfc58fc553f9806460ac463aecd8470d7"
       }
     ]
   },
@@ -568,6 +573,12 @@
       "bytes": 725,
       "records": 6,
       "sha256": "a6f05f17e83f2862e55e9704e15a98485c3dd187527c093e39953bb1fef3a932"
+    },
+    {
+      "path": "cultural_blind_review_v2.csv",
+      "bytes": 4379,
+      "records": 88,
+      "sha256": "c0f1c2fe4ebc99241655ef2fd1d85aa93065eb3f4f34afa01e99c39001588f87"
     },
     {
       "path": "cultural_lexicon_review_queue_v2.csv",
