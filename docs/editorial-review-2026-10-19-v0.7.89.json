@@ -2680,7 +2680,7 @@
     },
     "scripts/audit_audience.cjs": {
       "baselineSHA256": null,
-      "sha256": "b181a5715789a9f0db7fc82480716bd38754b97717a91f2c607843e45020768b",
+      "sha256": "526901a3cc701a3945ce4844e1d743013b4ab106db8e3559321050733a05e8d0",
       "rationaleIds": [
         "U01"
       ]

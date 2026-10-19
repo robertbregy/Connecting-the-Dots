@@ -6,7 +6,7 @@ const AxeBuilder=require('@axe-core/playwright').default;
 const base=process.env.CTD_TEST_BASE||'http://127.0.0.1:8123/';
 (async()=>{const browser=await chromium.launch(),results=[];fs.mkdirSync('audit-20261019',{recursive:true});
  try{for(const lang of ['en','it','de','fr'])for(const mobile of [false,true]){
-  const page=await browser.newPage({viewport:mobile?{width:390,height:844}:{width:1280,height:900},reducedMotion:'reduce'}),errors=[];
+  const context=await browser.newContext({viewport:mobile?{width:390,height:844}:{width:1280,height:900},reducedMotion:'reduce'}),page=await context.newPage(),errors=[];
   page.on('pageerror',e=>errors.push(e.message));
   await page.goto(base+lang+'/');await page.waitForFunction(()=>!!window.CTD_APP_READY);
   assert.equal(await page.locator('.audienceDiscovery').count(),3);
@@ -51,7 +51,7 @@ const base=process.env.CTD_TEST_BASE||'http://127.0.0.1:8123/';
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth+2));
   assert.deepEqual(errors,[]);
   await page.screenshot({path:'audit-20261019/audience-research-'+lang+(mobile?'-phone':'-desktop')+'.png'});
-  results.push({lang,mobile,status:'pass'});await page.close();
+  results.push({lang,mobile,status:'pass'});await context.close();
  }}finally{await browser.close()}
  fs.writeFileSync('audit-20261019/audience-report.json',JSON.stringify({version:require('../publication.json').version,results,humanParticipants:0,independentCoding:'pending'},null,2));
  console.log('AUDIENCE_BROWSER_PASS',JSON.stringify({scenarios:results.length,humanParticipants:0}));
