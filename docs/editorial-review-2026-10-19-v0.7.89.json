@@ -38,7 +38,8 @@
     "A19": "Resolve audit findings A01–A18: dated bibliographic correction, same-unit geographic comparison, truthful candidate/operator labels, inferred platform scope, qualified cultural interpretation, visible semantic missingness, mobile rows, persistent URL filters, fee arithmetic, source hash normalization, deferred optional graph, validation protocols and immutable technical packages. Real reader and independent classification studies remain explicitly pending.",
     "H01": "Extend explicit string-level vocabulary, preserve prior classifications, compare lexical-only and combined results, expose IDN coverage and ambiguity; add source-backed social history with no adoption or causal inference.",
     "H02": "Rebuild publication and data package when cultural research source JSON changes; no visual/runtime/source-dataset delta.",
-    "U01": "Reviewed audience hierarchy and wording across four locales; source-backed stories and visual summary, compact mobile and ranking navigation, exact-name search and exports, explicit archival citations, deferred APS graph, blank independent-review materials and honest pending status. No new semantic classifications or human-study results."
+    "U01": "Reviewed audience hierarchy and wording across four locales; source-backed stories and visual summary, compact mobile and ranking navigation, exact-name search and exports, explicit archival citations, deferred APS graph, blank independent-review materials and honest pending status. No new semantic classifications or human-study results.",
+    "U02": "Version first-party runtime asset URLs with the publication version to avoid stale cached scripts. All five rendered pages are byte-equivalent after removing only asset query parameters; no runtime asset body or data-pack bytes changed."
   },
   "sourceInvariants": {
     "sections": [
@@ -2083,11 +2084,12 @@
     },
     "scripts/validate_tld_cultural.cjs": {
       "baselineSHA256": "65712d45d289197917faf55c63c5e7f2e786c85cb1b3929e05d10fd9147d2536",
-      "sha256": "a6c65735e51840aaf75a0c7d97a279526edf98605b7491fd5bedab894539c37a",
+      "sha256": "1a2a55a985fe87f9b3a0f2bbcb755913d0c7e19e468ea11836bbf8c0e4530de0",
       "rationaleIds": [
         "T01",
         "A19",
-        "H01"
+        "H01",
+        "U02"
       ]
     },
     "data/round_application_fees.json": {
@@ -2694,9 +2696,10 @@
     },
     "scripts/reconcile_audience.cjs": {
       "baselineSHA256": null,
-      "sha256": "a242c3852f2a0961277e77f9dcdab8af0f1de2e434c08fd075b795e914ee51f9",
+      "sha256": "b13d78929dbc9727e069b53204c5d9de8613fee10c9483ed7bd3fc8b53ded190",
       "rationaleIds": [
-        "U01"
+        "U01",
+        "U02"
       ]
     },
     "scripts/render_aps_application_atlas.py": {

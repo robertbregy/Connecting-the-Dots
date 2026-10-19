@@ -19,7 +19,7 @@ for(const lang of ['en','it','de','fr']){
  assert.equal(document.querySelectorAll('#cultural-sensitivity-v2').length,1);
  assert.equal(document.querySelectorAll('[data-fee-round]').length,4);
  assert.ok(document.querySelector('[data-fee-round="2026"]').textContent.includes(fees.locales[lang].unknown));
- const script=document.querySelector('script[src$="assets/tld-cultural.js"]');assert.ok(script);assert.equal(script.getAttribute('src'),'../assets/tld-cultural.js');
+ const script=document.querySelector('script[src*="assets/tld-cultural.js"]');assert.ok(script);assert.equal(script.getAttribute('src'),'../assets/tld-cultural.js?v='+JSON.parse(read('publication.json')).version);
  const payload=JSON.parse(document.getElementById('tld-cultural-data').textContent);
  assert.equal(payload.records.length,summary.counts.strings);
  assert.equal(new Set(payload.records.map(r=>r[3])).size,payload.records.length);

@@ -75,6 +75,11 @@ for(const lang of ['en','it','de','fr'])for(const filename of [lang+'/index.html
  research.append(make('<div class="panel audienceValidation" id="independent-review-status"><h3>'+h(t.verificationTitle)+'</h3><p>'+h(t.verificationBody)+'</p><p><a href="'+prefix+'data/independent_review_materials.json">'+h(t.kit)+' · JSON</a> · <a href="'+prefix+'data/cultural_blind_review_v2.csv" download>CSV · '+h(t.kit)+'</a></p></div>'));
 
  const sheet=document.createElement('link');sheet.rel='stylesheet';sheet.href=prefix+'assets/audience.css?v='+pub.version;document.head.append(sheet);
+ // A new HTML release must not execute an older cached enhancement script.
+ for(const node of document.querySelectorAll('script[src],link[rel="stylesheet"][href]')){
+  const attr=node.tagName==='SCRIPT'?'src':'href',ref=node.getAttribute(attr);
+  if(!/^https?:/.test(ref)&&/(?:^|\/)assets\/[^?#]+\.(?:js|css)(?:\?|$)/.test(ref))node.setAttribute(attr,ref.split('?')[0]+'?v='+pub.version);
+ }
  // Route styling must precede large inline dictionaries and census payloads.
  const initial=document.getElementById('ctd-initial-route');if(initial)document.head.insertBefore(initial,document.head.children[1]);
  fs.writeFileSync(file,'<!DOCTYPE html>\n'+document.documentElement.outerHTML+'\n');
