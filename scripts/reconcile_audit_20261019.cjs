@@ -18,6 +18,7 @@ for(const lang of ['en','it','de','fr'])for(const filename of [lang+'/index.html
  const make=html=>{const n=document.createElement('div');n.innerHTML=html;return n.firstElementChild};
  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const style=document.createElement('style');style.id='audit-20261019-style';style.textContent=css;document.head.append(style);
+ document.getElementById('ctd-worldmap').setAttribute('src',prefix+'assets/worldmap-lazy.js?v='+read('publication.json').version);
 
  // The two dates are a bibliography correction, not a rewrite of archived data.
  const note=()=>make(`<p class="auditEvidence">${esc(L.dates)} <a href="${prefix}data/research_bibliographic_corrections.json">JSON · Zenodo</a></p>`);

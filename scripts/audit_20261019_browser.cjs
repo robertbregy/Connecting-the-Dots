@@ -8,6 +8,7 @@ const base=process.env.CTD_TEST_BASE||'http://127.0.0.1:8123/';
   const page=await browser.newPage({viewport:mobile?{width:390,height:844}:{width:1280,height:900},reducedMotion:'reduce'});
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto(base+lang+'/');
+  assert.equal(await page.evaluate(()=>!!window.DOT_WORLD_PATH),false,'Home fetched optional map geometry');
   assert.equal(await page.evaluate(()=>!!window.CTD_APS_2026),false,'Home fetched the optional APS graph');
   assert.equal(await page.evaluate(()=>performance.getEntriesByType('resource').some(r=>r.name.includes('/data/aps_2026_application_graph.js'))),false);
   await page.goto(base+lang+'/?tab=economics#tld-market-reach');
@@ -29,6 +30,7 @@ const base=process.env.CTD_TEST_BASE||'http://127.0.0.1:8123/';
   }
   await page.screenshot({path:'audit-20261019/ranking-'+lang+(mobile?'-mobile':'-desktop')+'.png'});
   await page.goto(base+lang+'/?tab=geography');
+  await page.waitForFunction(()=>!!window.DOT_WORLD_PATH);
   assert.ok((await page.locator('#demand2026Bars').innerText()).includes('864'));
   assert.equal(await page.locator('.auditUnitCompare > .panel').count(),2);
   assert.ok((await page.locator('#applicantOrganizations2026Bars').textContent()).includes('198'));

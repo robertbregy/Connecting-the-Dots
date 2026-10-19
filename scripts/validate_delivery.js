@@ -25,7 +25,7 @@ for(const language of ['en','it','de','fr']){
  // One reviewed autonomous cemetery chapter adds source-backed content; cap initial HTML growth to +3.4%.\n assert.ok(Buffer.byteLength(text)<1240000,language+' initial HTML budget');
  assert.ok(!text.includes('window.DOT_DATA='),language+' data must be shared');
  assert.ok(!text.includes('window.DOT_PROFILE_CHUNKS='),language+' details must be deferred');
- for(const [id,file] of [['ctd-data-bundle','data/site_bundle.js'],['ctd-app','assets/app.js'],['ctd-worldmap','data/worldmap.js']]){
+ for(const [id,file] of [['ctd-data-bundle','data/site_bundle.js'],['ctd-app','assets/app.js'],['ctd-worldmap','assets/worldmap-lazy.js']]){
   const node=document.getElementById(id);assert.equal(node.getAttribute('src'),'../'+file+'?v='+version);assert.ok(node.hasAttribute('defer'));
  }
  assert.equal(document.getElementById('ctd-runtime-style').getAttribute('href'),'../assets/style.css?v='+version);

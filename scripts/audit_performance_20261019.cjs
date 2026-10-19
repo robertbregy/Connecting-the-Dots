@@ -18,6 +18,7 @@ const base=process.env.CTD_TEST_BASE||'http://127.0.0.1:8123/';
   const pre=await page.evaluate(()=>({...window.__auditPerf,resources:performance.getEntriesByType('resource').map(x=>({name:x.name,transferSize:x.transferSize,encodedBodySize:x.encodedBodySize})),navigation:performance.getEntriesByType('navigation')[0]?.toJSON()}));
   const button=page.locator('#themeBtn');await button.click();await page.waitForTimeout(200);
   const interaction=await page.evaluate(()=>Math.max(0,...window.__auditPerf.events));
+  assert.ok(Number.isFinite(pre.lcp)&&pre.lcp>0,'No usable LCP observation; do not report an invented timing');
   const graph=pre.resources.some(r=>r.name.includes('/data/aps_2026_application_graph.js'));
   assert.equal(graph,tab==='explore','Optional graph loading regression');
   const bytes=pre.resources.reduce((n,r)=>n+r.transferSize,0)+(pre.navigation?.transferSize||0);

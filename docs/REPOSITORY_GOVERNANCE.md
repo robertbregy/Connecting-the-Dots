@@ -13,3 +13,8 @@ Open https://github.com/robertbregy/Connecting-the-Dots/settings/rules and estab
 Protect the immutable research tags `RR1` and `RR2` from rewriting and deletion if supported by the repository's plan. Research tags must never be force-moved.
 
 Before any merge: confirm actual checks, source provenance, language coverage and visual/browser QA. After a merge: confirm deployed Pages SHA and important live URLs. A green GitHub commit alone is not deployment proof.
+
+
+## Technical package identity after the 19 October audit
+
+`data/frozen_technical_packages.json` locks every package published before v0.7.87 by SHA-256. The builder refuses either a changed protected ZIP or reuse of its version as the current release. Before preparing the next release, add the final published v0.7.87 package hash to that registry, then select a new version. Do not merge the separate `feat/tld-power-adoption-20261019` draft under its already published v0.7.86 number. Reconcile its registered-domain metric with the current separate zone-domain and surveyed-website measures before incorporating any of its content. This is a local integration risk; the draft was not published by this audit fix. Current bibliography corrections are appended outside the frozen RR1/RR2 metadata; the current CFF permits only the verified one-field date correction and retains exact protection of all other bytes.

@@ -1393,7 +1393,7 @@
     },
     "assets/app.js": {
       "baselineSHA256": "7b05a9ac42c01123b1f80d36b39a75c2824d8e1cf5c04ade837d60d665334c16",
-      "sha256": "be4525f4803e12ef9baba6261c8b369d14f00a157c1dbac63e271debd4ca9e5e",
+      "sha256": "74a5512983e98830e181c315b4ed888cb2e13dd160b6a489c7a6201f46c42ab8",
       "rationaleIds": [
         "C01",
         "C03",
@@ -1824,7 +1824,7 @@
     },
     "data/translations.json": {
       "baselineSHA256": "6c71a4516d657f571e6fd714540e15be56fc423984681c3c003d46bf0ee5fc49",
-      "sha256": "a890fc8ca430a4d0bcc4adcdb14bc4423b378dbf117e99135641333f3fb48407",
+      "sha256": "93301a9b5ed43ec250a15c0ab0f06bcbbf82d3e29497fdcf0040055640a84f7b",
       "rationaleIds": [
         "C01",
         "C02",
@@ -2071,7 +2071,7 @@
     },
     "build.py": {
       "baselineSHA256": "1e375ef181f88942d94657f7cf210324ff3976f49d053aba8edb7a2ae16f86c0",
-      "sha256": "791e0666e24f33e14dd39edc99951b4487dbf54ffcf65eac45c4e3a80042c68e",
+      "sha256": "96f50fb25c042befe1920ebb202c0883b5609cd5879bd998331a6f5369a1d036",
       "rationaleIds": [
         "T01",
         "CI03",
@@ -2153,7 +2153,7 @@
     },
     "data/README.md": {
       "baselineSHA256": "2a99692ea31c540c10530d654853889b566cd61fa5ef41aabc273d3db4fc72c2",
-      "sha256": "2a99692ea31c540c10530d654853889b566cd61fa5ef41aabc273d3db4fc72c2",
+      "sha256": "779c7d914232e59a7002ed27cec3360c775c48072ff6ce771aac84925cf33525",
       "rationaleIds": [
         "T02",
         "A19"
@@ -2387,21 +2387,49 @@
     },
     "scripts/audit_20261019_browser.cjs": {
       "baselineSHA256": null,
-      "sha256": "6bce61f5f2457313b37048ca79fed38fe0f6af15ec61d57e5f4aba886bf1e561",
+      "sha256": "f5b67d8e6dbc7b7f8ab3cc55aecb1929a73dc2acac509e504a55f77a5b8de3b1",
       "rationaleIds": [
         "A19"
       ]
     },
     "scripts/audit_performance_20261019.cjs": {
       "baselineSHA256": null,
-      "sha256": "1f012568c0e0bb50068f86d527bacf92942f214b31370064377536d9922db22d",
+      "sha256": "52f4533e1b8bef821e2b395ea6216fb6ca4a816e5ffdc674b2c81433f601b00a",
       "rationaleIds": [
         "A19"
       ]
     },
     "scripts/reconcile_audit_20261019.cjs": {
       "baselineSHA256": null,
-      "sha256": "a04d404b921bceb6102f2c31f7b7094a9e2724525fb725e154464b15c385dff0",
+      "sha256": "4b17965f2ad9a5399f9b37cac700e95e03ad381ecdad66c857679c4be63b7e15",
+      "rationaleIds": [
+        "A19"
+      ]
+    },
+    "CHANGELOG.md": {
+      "baselineSHA256": "08308b4d751353182a834f71c730d08866a0375ac9ee866701e4caf8eb41d4ff",
+      "sha256": "765dbafa381fe52c92057003a79db6377e8f0ee4e7ef8ee688e83480fac73fc6",
+      "rationaleIds": [
+        "A19"
+      ]
+    },
+    "docs/REPOSITORY_GOVERNANCE.md": {
+      "baselineSHA256": "a0a21b166158beae4135a308fb36251bf462e14019f362483145052031502657",
+      "sha256": "82d7f2050a49a938e37471a326e6422cb55585a405b1f92b239e754ad2f57bfe",
+      "rationaleIds": [
+        "A19"
+      ]
+    },
+    "scripts/validate_delivery.js": {
+      "baselineSHA256": "48f055a05acc6b942b68381309a2bf4ca23fadf84d775fe785006517ff35ec5a",
+      "sha256": "c06b3f1be4a5ed2b455a822df4f56a81bdef346a7d576562a34bd269e608e95b",
+      "rationaleIds": [
+        "A19"
+      ]
+    },
+    "assets/worldmap-lazy.js": {
+      "baselineSHA256": null,
+      "sha256": "e666879b00c96d3950bca964bf4d1da52bf815f64cd679c443a03d0c478ba87b",
       "rationaleIds": [
         "A19"
       ]

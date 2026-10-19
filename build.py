@@ -133,7 +133,7 @@ def build_manifest() -> None:
             "profile_loading": "on-demand",
             "detail_batches": 8,
             "assets": [{"repository_path": str(path.relative_to(ROOT)), "bytes": path.stat().st_size, "sha256": sha256(path)}
-                       for path in [DATA / "site_bundle.js", ROOT / "assets/app.js", ROOT / "assets/style.css", DATA / "worldmap.js", *sorted(DATA.glob("explorer_profiles_*.js"))]],
+                       for path in [DATA / "site_bundle.js", ROOT / "assets/app.js", ROOT / "assets/style.css", ROOT / "assets/aps-lazy.js", ROOT / "assets/worldmap-lazy.js", ROOT / "assets/tld-market.js", ROOT / "assets/tld-cultural.js", ROOT / "assets/aps-atlas.js", DATA / "aps_2026_application_graph.js", DATA / "worldmap.js", *sorted(DATA.glob("explorer_profiles_*.js"))]],
         },
         "files": files,
     }
@@ -143,7 +143,7 @@ def build_manifest() -> None:
 
 def data_pack_files() -> list[Path]:
     snapshot = json.loads((DATA / "iana_snapshot.json").read_text())
-    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "application_2026_snapshot.json", DATA / "applications_2026_aps_official_provenance.json", DATA / "aps_2026_application_graph.json", DATA / "aps_2026_application_graph_manifest.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "economic_cases.json", DATA / "social_cases.json", DATA / "city_namespace_editorial.json", DATA / "audit_20261018_editorial.json", DATA / "aps_2026_current_analytics.json", DATA / "aps_2026_current_analytics_manifest.json", DATA / "aps_2026_applicant_sector_evidence.json", DATA / "round_application_fees.json", DATA / "tld_cultural_editorial.json", DATA / "tld_cultural_patterns.json", DATA / "tld_market_snapshot.json", DATA / "tld_market_provenance.json", *sorted((DATA / "evidence" / "tld-market-2026-10-19").glob("*.json")), ROOT / snapshot["archive_path"]]
+    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "application_2026_snapshot.json", DATA / "applications_2026_aps_official_provenance.json", DATA / "aps_2026_application_graph.json", DATA / "aps_2026_application_graph_manifest.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "economic_cases.json", DATA / "social_cases.json", DATA / "city_namespace_editorial.json", DATA / "audit_20261018_editorial.json", DATA / "audit_20261019_editorial.json", DATA / "audit_20261019_resolution.json", DATA / "cultural_classification_protocol.json", DATA / "financial_source_verification_20261019.json", DATA / "frozen_technical_packages.json", DATA / "research_bibliographic_corrections.json", DATA / "source_method_corrections_20261019.json", DATA / "aps_2026_current_analytics.json", DATA / "aps_2026_current_analytics_manifest.json", DATA / "aps_2026_applicant_sector_evidence.json", DATA / "round_application_fees.json", DATA / "tld_cultural_editorial.json", DATA / "tld_cultural_patterns.json", DATA / "tld_market_snapshot.json", DATA / "tld_market_provenance.json", *sorted((DATA / "evidence" / "tld-market-2026-10-19").glob("*.json")), ROOT / snapshot["archive_path"]]
 
 
 def build_data_pack() -> None:

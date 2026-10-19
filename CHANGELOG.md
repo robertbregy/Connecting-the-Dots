@@ -744,3 +744,8 @@
 - Long chapters expose a local section index (How it works, Geography, Methodology).
 - Pre-Reveal `applications_2026.csv` became a header-only schema: no fake placeholder observation.
 - `data/manifest.json` added SHA-256 hashes, record counts and snapshot metadata.
+
+
+## 0.7.87 — 2026-10-19
+
+Resolve the 19 October audit: distinguish source and publication dates, correct the current bibliographic RR2 date with an appended source note, keep candidates separate from current operators, compare regional applications using the same unit, qualify inferred platform footprints and incomplete cultural themes, expose fee reconstruction arithmetic, retain ranking filters in shared and translated links, and present rankings as readable phone rows. Load the optional APS graph on opening Explorer. Preserve all historical archives and add controlled performance and multilingual regression checks. Human comprehension and independent semantic validation remain explicitly pending, with reproducible protocols and blank recording templates.
