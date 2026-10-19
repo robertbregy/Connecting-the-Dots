@@ -571,9 +571,9 @@
     },
     {
       "path": "cultural_lexicon_review_queue_v2.csv",
-      "bytes": 29156,
+      "bytes": 29191,
       "records": 366,
-      "sha256": "5c0adb5211e04b1eae9b3ce9532049c71a7fb0b8311c622f1622dde064ce88ed"
+      "sha256": "26b6e29ee6997044e34fae45376c4a41fe78f4229d62eb4f4400c235eb8cb9b7"
     },
     {
       "path": "cultural_validation_sample.csv",
@@ -787,9 +787,9 @@
     },
     {
       "path": "tld_cultural_corpus.csv",
-      "bytes": 1564239,
+      "bytes": 1564274,
       "records": 3240,
-      "sha256": "be9fd57043895d7de7d0a6fc11bb49178059494572e369531bd14ed5e25a2b95"
+      "sha256": "55ba2ed29942698e359195de67f818e56337eb46ad61afe04bb6c9ae555158b2"
     },
     {
       "path": "tld_life_histories.csv",
