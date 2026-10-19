@@ -9,7 +9,7 @@ window.DOT_PUBLICATION={
   stringConfirmation:'2026-11-17',
   researchRelease:'RR2',
   researchSnapshot:'2026-10-07',
-  paperVersion:'1.3-draft',
+  paperVersion:'1.4-draft',
   paperPath:'research/connecting-the-dots-working-paper-v1.html',
   paperRevisedOn:'2026-10-19',
   dataPackageVersion:'0.7.58',
@@ -19,5 +19,5 @@ window.DOT_PUBLICATION={
   doiUrl:'https://doi.org/10.5281/zenodo.23288603',
   conceptDoi:'10.5281/zenodo.23262622',
   archive:'Zenodo',
-  commit:'5acd8515ebbd15389a80d7a098c986b5cb61ec54'
+  commit:'fd93f72fa1fef4744146f9dec6413cc15d09efc2'
 };
