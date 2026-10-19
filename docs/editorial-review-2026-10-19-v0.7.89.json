@@ -2016,7 +2016,7 @@
     },
     "src/index.web.html": {
       "baselineSHA256": "b6a65c951dc6c990671ca558580dbfaec97f33d6bf0b1050e83d1b9399c028c2",
-      "sha256": "8064d532a0575f7d2cf08bb2301fe864bb154fa9559301e04426bb9124442f4e",
+      "sha256": "660d5eeb0c17ac959fc7d19769c1aab30faadb4a24021273699070c6c028ebbf",
       "rationaleIds": [
         "C01",
         "C02",
@@ -2346,7 +2346,7 @@
     },
     ".github/workflows/audit-browser.yml": {
       "baselineSHA256": "ed063e0e2ffe43df54dfe3e1a98a4292dad5524d76a46c174c6a0943554a1296",
-      "sha256": "5a2ec0e9f1be9fee570f2be8bc33b864ab1a41d3eda7e51747524b6ed335507e",
+      "sha256": "0fa9c80a73646195e30fe1ee935fd21a4b5adf6787288fe0db8e31126b085436",
       "rationaleIds": [
         "A19",
         "H01",
@@ -2680,7 +2680,7 @@
     },
     "scripts/audit_audience.cjs": {
       "baselineSHA256": null,
-      "sha256": "1feea24face1b6e192c09a62c4c57549e6a03c331596369b8cf3f0bea6176801",
+      "sha256": "b181a5715789a9f0db7fc82480716bd38754b97717a91f2c607843e45020768b",
       "rationaleIds": [
         "U01"
       ]
@@ -2722,14 +2722,15 @@
     "explore": {
       "baselineSHA256": "5a0bd6b5824f802f01e2abb1bcc564bdddc8c3d79ff21b26d4f42e702c70e153",
       "baselineCharacters": 10168,
-      "sha256": "471ace7a6592d3e6d8b914267220081adb11faf03a3d9c8c21744528a25c0a97",
-      "characters": 10469,
+      "sha256": "9373f56cc58d7ff00e80f76eabeb0d32dc8e2ad98b004a679c4159893a5d77e7",
+      "characters": 10432,
       "rationaleIds": [
         "C04",
         "M01",
         "M06",
         "E03",
-        "A19"
+        "A19",
+        "U01"
       ]
     },
     "timeline": {

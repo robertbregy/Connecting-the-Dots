@@ -2,6 +2,7 @@
 'use strict';
 const assert=require('node:assert/strict'),fs=require('node:fs');
 const {chromium}=require('playwright');
+const AxeBuilder=require('@axe-core/playwright').default;
 const base=process.env.CTD_TEST_BASE||'http://127.0.0.1:8123/';
 (async()=>{const browser=await chromium.launch(),results=[];fs.mkdirSync('audit-20261019',{recursive:true});
  try{for(const lang of ['en','it','de','fr'])for(const mobile of [false,true]){
@@ -37,6 +38,10 @@ const base=process.env.CTD_TEST_BASE||'http://127.0.0.1:8123/';
   await page.locator('.audienceBrief').waitFor({state:'visible'});assert.ok(await page.locator('.audienceBrief').isVisible());assert.ok((await page.locator('.audienceBrief').innerText()).includes('2026'));
   await page.locator('#profileTitle').press('Escape');
   await page.locator('.audienceAtlasLink > summary').click();await page.waitForFunction(()=>!!window.CTD_APS_2026&&!!window.CTD_APS_REFRESH);
+  await page.goto(base+lang+'/?tab=explore#aps-native');
+  await page.locator('#aps-native .apsCard').first().waitFor({state:'visible'});
+  const accessibility=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
+  assert.deepEqual(accessibility.violations.map(v=>({id:v.id,impact:v.impact})),[],'Expanded atlas accessibility');
   await page.goto(base+lang+'/?tab=research#research-citation-guide');
   const titleTop=await page.locator('#research-citation-guide h3').evaluate(e=>e.getBoundingClientRect().top);
   assert.ok(titleTop>=65,'Direct citation link hides its title under the header: '+titleTop);
