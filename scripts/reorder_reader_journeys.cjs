@@ -97,7 +97,12 @@ for(const lang of ['en','it','de','fr'])for(const file of [lang+'/index.html',..
 let standalone=0;
 for(const dir of ['applications','inside-the-round','behind-the-round','research','explorer']){
  function walk(p){for(const entry of fs.readdirSync(p,{withFileTypes:true})){const f=path.join(p,entry.name);if(entry.isDirectory())walk(f);else if(entry.name.endsWith('.html')){
-  const source=fs.readFileSync(f,'utf8');if(!source.includes('ctdB2CrossNav'))continue;
+  // Research HTML is also a persistent rendering frame. Remove only this
+  // renderer's own previous additions before adding exactly one current copy.
+  const source=fs.readFileSync(f,'utf8')
+   .replace(/<a\b[^>]*\bclass="readerStandaloneSearch"[^>]*>[\s\S]*?<\/a>/g,'')
+   .replace(/<link\b[^>]*\bhref="[^"]*assets\/reader-journeys\.css(?:\?[^"]*)?"[^>]*>/g,'');
+  if(!source.includes('ctdB2CrossNav'))continue;
   const {document}=parseHTML(source),lang=document.documentElement.lang,L=config.locales[lang];if(!L)continue;
   const title=document.querySelector('main h1,h1')?.textContent.trim();
   const bar=document.querySelector('.ctdB2Trail');if(!bar)continue;
@@ -106,7 +111,11 @@ for(const dir of ['applications','inside-the-round','behind-the-round','research
   const sheet=document.createElement('link');sheet.rel='stylesheet';sheet.href=prefix+'/assets/reader-journeys.css?v='+pub.version;
   const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   let output=source.replace(/(<nav[^>]*class="ctdB2Trail"[^>]*>)([\s\S]*?)(<\/nav>)/,(_,open,body,close)=>open+body.replace(/(<span aria-current="page">)[^<]*(<\/span>)/,(_,x,y)=>x+escape(title||L.ui.index)+y)+a.outerHTML+close);
-  assert.notEqual(output,source,'Standalone breadcrumb not found '+f);output=output.replace('</head>',sheet.outerHTML+'</head>');fs.writeFileSync(f,output);standalone++;
+  assert.notEqual(output,source,'Standalone breadcrumb not found '+f);output=output.replace('</head>',sheet.outerHTML+'</head>');
+  const checked=parseHTML(output).document;
+  assert.equal(checked.querySelectorAll('.readerStandaloneSearch').length,1,'Repeated topic link '+f);
+  assert.equal(checked.querySelectorAll('link[href*="reader-journeys.css"]').length,1,'Repeated reader stylesheet '+f);
+  fs.writeFileSync(f,output);standalone++;
  }}}
  walk(path.join(root,dir));
 }
