@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-20",
+  "purpose": "Six-step reading order; existing evidence, units, datasets and archived releases remain unchanged.",
+  "order": ["value", "reach", "cases", "concentration", "cycles", "round2026"],
+  "locales": {
+    "it": {
+      "titles": ["Da dove viene il valore?", "Quanto sono diffusi i TLD?", "Come si traduce in risultati economici?", "Chi concentra il mercato?", "Come cambiano le scommesse?", "Che cosa racconta il round 2026?"],
+      "labels": ["Valore", "Diffusione", "Casi", "Concentrazione", "Cicli", "Round 2026"],
+      "leads": ["Prima i meccanismi: non tutti investono in un’estensione per la stessa ragione.", "La diffusione descrive il mercato esistente. Da sola non misura ricavi, redditività o valore pubblico.", "Dai modelli ai casi: ogni cifra resta legata al proprio meccanismo e alla propria base contabile.", "Portafogli e contese aiutano a leggere le strategie degli operatori. Candidature, gruppi societari e TLD operativi restano unità diverse.", "Le aspettative cambiano nel tempo. I cicli economici preparano la lettura delle candidature, senza predirne gli esiti.", "Ora possiamo distinguere che cosa viene chiesto, chi lo chiede e che cosa i dati consentono davvero di concludere."],
+      "guide": "Dai meccanismi economici al mercato esistente, fino alle aspettative del round 2026.",
+      "flow": "Chi paga e chi incassa: la filiera dei domini",
+      "fees": "Costo d’ingresso: fee e confronto fra round",
+      "additional": "Contese e portafogli: dati complementari del 2026",
+      "history": "Consulta la ricostruzione precedente 2012–2026",
+      "release": "v0.7.91: Economia riordinata in sei passaggi, dai modelli alla lettura del 2026. Indice, raccordi e gerarchia dei titoli aggiornati; casi, fonti, dati e vecchi collegamenti conservati."
+    },
+    "en": {
+      "titles": ["Where does the value come from?", "How widespread are TLDs?", "How does this translate into economic results?", "Who concentrates the market?", "How do the bets change?", "What does the 2026 round tell us?"],
+      "labels": ["Value", "Reach", "Cases", "Concentration", "Cycles", "2026 round"],
+      "leads": ["Start with the mechanisms: not everyone invests in an extension for the same reason.", "Adoption describes the existing market. On its own, it does not measure revenue, profitability or public value.", "From models to cases: each figure retains its own economic mechanism and accounting basis.", "Portfolios and contention reveal operators’ strategies. Applications, corporate groups and operational TLDs remain different units.", "Expectations change over time. Economic cycles prepare the reading of applications without predicting their outcomes.", "We can now distinguish what is being requested, who is requesting it and what the data actually supports."],
+      "guide": "From economic mechanisms to the existing market and the expectations behind the 2026 round.",
+      "flow": "Who pays whom: the domain value chain",
+      "fees": "Entry costs: fees across rounds",
+      "additional": "Contention and portfolios: additional 2026 evidence",
+      "history": "Consult the earlier 2012–2026 reconstruction",
+      "release": "v0.7.91: Economics reordered into six steps, from mechanisms to the 2026 analysis. Updated contents, transitions and heading hierarchy; existing cases, sources, data and deep links retained."
+    },
+    "de": {
+      "titles": ["Woher kommt der Wert?", "Wie verbreitet sind TLDs?", "Welche wirtschaftlichen Ergebnisse entstehen?", "Wer konzentriert den Markt?", "Wie verändern sich die Erwartungen?", "Was zeigt die Runde 2026?"],
+      "labels": ["Wert", "Verbreitung", "Fallbeispiele", "Konzentration", "Zyklen", "Runde 2026"],
+      "leads": ["Zuerst die Mechanismen: Nicht alle investieren aus demselben Grund in eine Endung.", "Die Verbreitung beschreibt den bestehenden Markt. Allein misst sie weder Einnahmen noch Rentabilität oder öffentlichen Nutzen.", "Von Modellen zu Fallbeispielen: Jede Zahl behält ihren wirtschaftlichen Zusammenhang und ihre Rechnungsgrundlage.", "Portfolios und Namenskonflikte verdeutlichen die Strategien der Betreiber. Anträge, Konzerne und betriebene TLDs bleiben unterschiedliche Einheiten.", "Erwartungen verändern sich. Wirtschaftszyklen helfen, Anträge einzuordnen, ohne ihre Ergebnisse vorherzusagen.", "Nun lassen sich beantragte Namen, Antragsteller und belastbare Aussagen der Daten auseinanderhalten."],
+      "guide": "Von wirtschaftlichen Mechanismen zum bestehenden Markt und den Erwartungen hinter der Runde 2026.",
+      "flow": "Wer zahlt wem: die Wertschöpfungskette der Domains",
+      "fees": "Eintrittskosten: Gebühren im Rundenvergleich",
+      "additional": "Namenskonflikte und Portfolios: ergänzende Daten 2026",
+      "history": "Frühere Rekonstruktion 2012–2026 ansehen",
+      "release": "v0.7.91: Wirtschaft in sechs Leseschritte gegliedert, von den Mechanismen zur Analyse 2026. Inhaltsverzeichnis, Übergänge und Überschriften aktualisiert; Beispiele, Quellen, Daten und bestehende Direktlinks erhalten."
+    },
+    "fr": {
+      "titles": ["D’où vient la valeur ?", "Quelle est la diffusion des TLD ?", "Quels résultats économiques en découlent ?", "Qui concentre le marché ?", "Comment les paris évoluent-ils ?", "Que nous apprend le cycle 2026 ?"],
+      "labels": ["Valeur", "Diffusion", "Cas", "Concentration", "Cycles", "Cycle 2026"],
+      "leads": ["D’abord les mécanismes : tous n’investissent pas dans une extension pour la même raison.", "La diffusion décrit le marché existant. À elle seule, elle ne mesure ni revenus, ni rentabilité, ni valeur publique.", "Des modèles aux cas : chaque chiffre conserve son mécanisme économique et sa base comptable.", "Portefeuilles et concurrences entre noms éclairent les stratégies des opérateurs. Candidatures, groupes et TLD exploités restent des unités distinctes.", "Les attentes évoluent. Les cycles économiques préparent la lecture des candidatures sans en prédire les résultats.", "Nous pouvons maintenant distinguer les noms demandés, les candidats et ce que les données permettent de conclure."],
+      "guide": "Des mécanismes économiques au marché existant, puis aux attentes du cycle 2026.",
+      "flow": "Qui paie qui : la chaîne de valeur des domaines",
+      "fees": "Coûts d’entrée : frais comparés entre cycles",
+      "additional": "Concurrences et portefeuilles : données complémentaires de 2026",
+      "history": "Consulter la reconstruction antérieure 2012–2026",
+      "release": "v0.7.91 : Économie réorganisée en six étapes, des mécanismes à l’analyse de 2026. Sommaire, transitions et titres actualisés ; cas, sources, données et liens existants conservés."
+    }
+  }
+}
