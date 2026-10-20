@@ -70,11 +70,22 @@ jobs:
           CTD_ECONOMICS_QA: /tmp/economics-qa
           CTD_AUDIT_OUTPUT: /tmp/previous-qa
         run: |
-          node scripts/audit_reader_journeys.cjs
-          node scripts/audit_economics_order.cjs
-          node scripts/audit_20261018_browser.cjs
-          node scripts/audit_legacy_deeplinks.cjs
-          CTD_CITY_TEST_BASE=http://127.0.0.1:8123/ node scripts/audit_city_namespace.cjs
+          # Independent read-only suites share the server, not browser contexts.
+          # Preserve both exit statuses: a successful last suite cannot mask a failure.
+          node scripts/audit_reader_journeys.cjs &
+          READER_PID=$!
+          (
+            set -e
+            node scripts/audit_economics_order.cjs
+            node scripts/audit_20261018_browser.cjs
+            node scripts/audit_legacy_deeplinks.cjs
+            CTD_CITY_TEST_BASE=http://127.0.0.1:8123/ node scripts/audit_city_namespace.cjs
+          ) &
+          REGRESSION_PID=$!
+          STATUS=0
+          wait "$READER_PID" || STATUS=1
+          wait "$REGRESSION_PID" || STATUS=1
+          exit "$STATUS"
       - name: Verify exact review, frozen inputs and reproducibility
         env:
           CTD_READER_REPORT: /tmp/reader-preservation.json
