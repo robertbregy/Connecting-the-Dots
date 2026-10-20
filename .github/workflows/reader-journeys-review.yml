@@ -17,7 +17,7 @@ jobs:
   verify:
     if: ${{ !contains(github.event.head_commit.message || '', '[skip build]') }}
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -47,19 +47,34 @@ jobs:
           node scripts/validate_multilingual.js
           node scripts/validate_internet_access.js
           CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
-      - name: Test reader paths and existing behavior in Chromium
+          python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/reader-http.log 2>&1 &
+      - name: Verify the mobile reading entry
+        env:
+          CTD_TEST_BASE: http://127.0.0.1:8123/
+          CTD_READER_QA: /tmp/reader-preview
+          CTD_READER_LANGS: it
+          CTD_READER_WIDTHS: '390'
+        run: node scripts/audit_reader_journeys.cjs
+      - name: Preserve mobile preview for visual review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reader-mobile-preview
+          path: /tmp/reader-preview/
+          if-no-files-found: warn
+          retention-days: 7
+      - name: Test all reader paths and existing behavior in Chromium
         env:
           CTD_TEST_BASE: http://127.0.0.1:8123/
           CTD_READER_QA: /tmp/reader-qa
           CTD_ECONOMICS_QA: /tmp/economics-qa
           CTD_AUDIT_OUTPUT: /tmp/previous-qa
         run: |
-          python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/reader-http.log 2>&1 &
-          sleep 2
           node scripts/audit_reader_journeys.cjs
           node scripts/audit_economics_order.cjs
           node scripts/audit_20261018_browser.cjs
           node scripts/audit_legacy_deeplinks.cjs
+          CTD_CITY_TEST_BASE=http://127.0.0.1:8123/ node scripts/audit_city_namespace.cjs
       - name: Verify exact review, frozen inputs and reproducibility
         env:
           CTD_READER_REPORT: /tmp/reader-preservation.json
@@ -104,5 +119,6 @@ jobs:
             /tmp/economics-qa/
             /tmp/previous-qa/
             audit-deeplinks/results.json
+            dist/city-namespace-qa/
           if-no-files-found: warn
           retention-days: 7
