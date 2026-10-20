@@ -20,6 +20,8 @@ try{for(const lang of langs)for(const width of widths){
    if(config.layouts[id]){
     assert.equal(await page.locator('#'+id+' > .readerStage').count(),config.layouts[id].groups.length);
     const nav=page.locator('#'+id+' > .sectionToc');assert.equal(await nav.locator('a').count(),config.layouts[id].groups.length);
+    const dimensions=await nav.locator('a').evaluateAll(nodes=>nodes.map(n=>({width:n.getBoundingClientRect().width,height:n.getBoundingClientRect().height,font:parseFloat(getComputedStyle(n).fontSize)})));
+    assert.ok(dimensions.every(d=>d.width>=130&&d.height>=44&&d.font>=14),id+' cramped reading index');
     await nav.locator('a').last().click();
     await page.waitForFunction(id=>document.activeElement.id===id,'read-'+id+'-'+config.layouts[id].groups.length);
    }
@@ -46,7 +48,7 @@ try{for(const lang of langs)for(const width of widths){
   await page.goto(base+lang+'/?tab=how#how-part-5',{waitUntil:'load'});await page.waitForFunction(()=>window.CTD_APP_READY);assert.ok(await page.locator('#how-part-5').isVisible());
   await page.locator('#how > .sectionToc a').first().click();const hash=new URL(page.url()).hash;const other=lang==='en'?'it':'en';
   await page.selectOption('#langSelect',other);await page.waitForURL('**/'+other+'/**');await page.waitForFunction(()=>window.CTD_APP_READY);assert.equal(new URL(page.url()).hash,hash,'Language lost chapter anchor');
-  assert.deepEqual(errors,[],'Runtime errors');report.scenarios.push({lang,width,status:'passed',chapters:23,themes:2,automatedAccessibilityChapters:7});
+  assert.deepEqual(errors,[],'Runtime errors');report.scenarios.push({lang,width,status:'passed',chapters:23,themes:2,automatedAccessibilityChapters:7,readableIndexDimensions:true});
  }catch(e){const issue={lang,width,message:String(e),stack:e.stack};report.issues.push(issue);console.log(JSON.stringify(issue));await page.screenshot({path:path.join(out,lang+'-'+width+'-failure.png')}).catch(()=>{});}
  finally{await context.close();fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2));console.log('READER_QA',lang,width,report.issues.length?'issues':'passed');}
 }
