@@ -2551,7 +2551,8 @@
     "audienceBriefLugano": "An application by the City of Lugano in the 2026 round. It is not yet operational: approval, delegation and future uses remain to be established.",
     "release0789": "Story-led entry, visual historical overview, compact rankings, name-only search and citation guide. Independent review materials prepared; human validation remains pending.",
     "audienceRecordTools": "Languages, sharing and corrections",
-    "release0790": "A roughly three-minute introduction through four everyday situations with sources. Printable reader-study protocol and empty observation sheet in four languages; no human observations collected yet."
+    "release0790": "A roughly three-minute introduction through four everyday situations with sources. Printable reader-study protocol and empty observation sheet in four languages; no human observations collected yet.",
+    "release0791": "v0.7.91: Economics reordered into six steps, from mechanisms to the 2026 analysis. Updated contents, transitions and heading hierarchy; existing cases, sources, data and deep links retained."
   },
   "it": {
     "brand": "Brand",
@@ -5105,7 +5106,8 @@
     "audienceBriefLugano": "È una candidatura della Città di Lugano nel round 2026. Non è ancora un’estensione operativa: approvazione, delega e usi futuri restano da verificare.",
     "release0789": "Un ingresso attraverso le storie, una sintesi visiva delle epoche, classifiche compatte, ricerca per nome e guida alle citazioni. Materiali indipendenti pronti; validazione con persone ancora da svolgere.",
     "audienceRecordTools": "Lingue, condivisione e segnalazioni",
-    "release0790": "Percorso introduttivo di circa tre minuti con quattro situazioni quotidiane e fonti. Protocollo di lettura stampabile e scheda vuota in quattro lingue; nessuna osservazione umana ancora raccolta."
+    "release0790": "Percorso introduttivo di circa tre minuti con quattro situazioni quotidiane e fonti. Protocollo di lettura stampabile e scheda vuota in quattro lingue; nessuna osservazione umana ancora raccolta.",
+    "release0791": "v0.7.91: Economia riordinata in sei passaggi, dai modelli alla lettura del 2026. Indice, raccordi e gerarchia dei titoli aggiornati; casi, fonti, dati e vecchi collegamenti conservati."
   },
   "de": {
     "brand": "Marke",
@@ -7659,7 +7661,8 @@
     "audienceBriefLugano": "Eine Bewerbung der Stadt Lugano in der Runde 2026. Noch keine betriebene Endung: Genehmigung, Delegierung und künftige Nutzung bleiben offen.",
     "release0789": "Einstieg über Geschichten, visuelle historische Übersicht, kompakte Ranglisten, Namenssuche und Zitierhilfe. Material für unabhängige Prüfung vorbereitet; Prüfung mit Menschen steht aus.",
     "audienceRecordTools": "Sprachen, Teilen und Korrekturen",
-    "release0790": "Etwa dreiminütiger Einstieg mit vier Alltagssituationen und Quellen. Druckbares Leseprotokoll und leerer Beobachtungsbogen in vier Sprachen; noch keine menschlichen Beobachtungen."
+    "release0790": "Etwa dreiminütiger Einstieg mit vier Alltagssituationen und Quellen. Druckbares Leseprotokoll und leerer Beobachtungsbogen in vier Sprachen; noch keine menschlichen Beobachtungen.",
+    "release0791": "v0.7.91: Wirtschaft in sechs Leseschritte gegliedert, von den Mechanismen zur Analyse 2026. Inhaltsverzeichnis, Übergänge und Überschriften aktualisiert; Beispiele, Quellen, Daten und bestehende Direktlinks erhalten."
   },
   "fr": {
     "brand": "Marque",
@@ -10213,6 +10216,7 @@
     "audienceBriefLugano": "Une candidature de la Ville de Lugano dans le cycle 2026. L’extension n’est pas encore opérationnelle : approbation, délégation et usages futurs restent à établir.",
     "release0789": "Entrée par les histoires, synthèse historique visuelle, classements compacts, recherche par nom et aide à la citation. Matériel indépendant prêt ; validation humaine encore à réaliser.",
     "audienceRecordTools": "Langues, partage et corrections",
-    "release0790": "Parcours introductif d’environ trois minutes avec quatre situations du quotidien et leurs sources. Protocole de lecture imprimable et fiche vierge en quatre langues ; aucune observation humaine encore recueillie."
+    "release0790": "Parcours introductif d’environ trois minutes avec quatre situations du quotidien et leurs sources. Protocole de lecture imprimable et fiche vierge en quatre langues ; aucune observation humaine encore recueillie.",
+    "release0791": "v0.7.91 : Économie réorganisée en six étapes, des mécanismes à l’analyse de 2026. Sommaire, transitions et titres actualisés ; cas, sources, données et liens existants conservés."
   }
 }

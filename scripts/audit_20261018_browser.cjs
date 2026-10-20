@@ -128,9 +128,9 @@ async function downloadCSV(page,requests){
     await anchorVisible(page,'#economy-sectors');
     await goto(page,language,'?tab=economics');
     assert.equal(await page.locator('#economics details.historicalEconomy').getAttribute('open'),null);
-    const heading=page.locator('#economy-sectors h2').first(),headingId=await heading.getAttribute('id');
+    const heading=page.locator('#economy-sectors [data-i18n="sectorEconomyTitle"]').first(),headingId=await heading.getAttribute('id');
     assert.ok(headingId,'Historical comparison has no TOC target');
-    await click(page,page.locator('#economics .sectionToc a[href$="#'+headingId+'"]'));
+    await click(page,page.locator('#economics-historical-link'));
     await anchorVisible(page,'#'+headingId);
     assert.equal(await page.evaluate(()=>document.activeElement?.id),headingId,'TOC focus did not follow the opened chapter');
     scenario.checks.push('direct links and TOC reveal nested content');

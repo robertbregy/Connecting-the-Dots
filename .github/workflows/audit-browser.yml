@@ -70,6 +70,10 @@ jobs:
           CTD_TEST_BASE: http://127.0.0.1:8123/
           CTD_AUDIT_OUTPUT: audit-20261018
         run: node scripts/audit_20261018_browser.cjs
+      - name: Verify six-step Economics navigation and preservation
+        env:
+          CTD_TEST_BASE: http://127.0.0.1:8123/
+        run: node scripts/audit_economics_order.cjs
       - name: Verify all 26 B2 cards and 39 independent pages across mobile and desktop
         run: |
           CTD_TEST_BASE=http://127.0.0.1:8123/ node scripts/audit_ia_b2.cjs

@@ -1,3 +1,10 @@
+# v0.7.91 - 20 October 2026
+
+- Reordered Economics into value, reach, cases, concentration, cycles and the 2026 analysis.
+- Preserved fourteen original blocks, eight models, eight cases, sources and legacy fragments.
+- Six-step table of contents and proper subheading hierarchy in four languages.
+- Historical comparisons remain labelled; the cemetery stays independent. No research dataset or archived release is changed.
+
 ## v0.7.86 — 19 October 2026
 
 ## v0.7.90 — 20 October 2026

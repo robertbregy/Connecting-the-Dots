@@ -1,0 +1,84 @@
+{
+  "version": "0.7.91",
+  "date": "2026-10-20",
+  "baselineCommit": "ad9cb0de2e5f8c0ea9771509f003e4f3011ddcc1",
+  "preservation": [
+    {
+      "file": "index.html",
+      "retainedTextSegments": 783,
+      "retainedSourceDestinations": 75,
+      "retainedIds": 32
+    },
+    {
+      "file": "it/index.html",
+      "retainedTextSegments": 774,
+      "retainedSourceDestinations": 75,
+      "retainedIds": 32
+    },
+    {
+      "file": "en/index.html",
+      "retainedTextSegments": 783,
+      "retainedSourceDestinations": 75,
+      "retainedIds": 32
+    },
+    {
+      "file": "de/index.html",
+      "retainedTextSegments": 775,
+      "retainedSourceDestinations": 75,
+      "retainedIds": 32
+    },
+    {
+      "file": "fr/index.html",
+      "retainedTextSegments": 775,
+      "retainedSourceDestinations": 75,
+      "retainedIds": 32
+    }
+  ],
+  "browser": {
+    "scenarios": [
+      {
+        "lang": "it",
+        "width": 390,
+        "passed": true
+      },
+      {
+        "lang": "it",
+        "width": 1440,
+        "passed": true
+      },
+      {
+        "lang": "en",
+        "width": 390,
+        "passed": true
+      },
+      {
+        "lang": "en",
+        "width": 1440,
+        "passed": true
+      },
+      {
+        "lang": "de",
+        "width": 390,
+        "passed": true
+      },
+      {
+        "lang": "de",
+        "width": 1440,
+        "passed": true
+      },
+      {
+        "lang": "fr",
+        "width": 390,
+        "passed": true
+      },
+      {
+        "lang": "fr",
+        "width": 1440,
+        "passed": true
+      }
+    ],
+    "errors": []
+  },
+  "archives": "RR1/RR2 and all 15 previously published technical ZIPs unchanged",
+  "publication": "Candidate verified; live deployment is checked separately."
+}
