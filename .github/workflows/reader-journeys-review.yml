@@ -2,24 +2,106 @@ name: Reader journey review
 on:
   push:
     branches: [work/reader-journeys-20261020]
-    paths: ['.github/workflows/reader-journeys-review.yml']
+    paths:
+      - '.github/workflows/reader-journeys-review.yml'
+      - 'scripts/*reader*'
+      - 'assets/reader-journeys.*'
+      - 'data/reader_journeys.json'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
+concurrency:
+  group: reader-journeys-review
+  cancel-in-progress: false
 jobs:
-  prepare:
+  verify:
+    if: ${{ !contains(github.event.head_commit.message || '', '[skip build]') }}
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: |
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fixed build and browser dependencies
+        run: |
           npm ci
           npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
-          tar -czf /tmp/reader-tooling.tar.gz node_modules .github
-      - uses: actions/upload-artifact@v4
+          npx playwright install --with-deps chromium
+      - name: Prepare bounded source changes
+        run: |
+          if python3 -c "import json,sys;sys.exit(json.load(open('publication.json'))['version']!='0.7.91')"; then
+            python3 scripts/prepare_reader_site.py
+          fi
+      - name: Build and validate every language and resource
+        env:
+          CTD_READER_REPORT: /tmp/reader-preservation.json
+        run: |
+          python3 build.py
+          node scripts/validate_multilingual.js
+          node scripts/validate_internet_access.js
+          CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
+      - name: Test reader paths and existing behavior in Chromium
+        env:
+          CTD_TEST_BASE: http://127.0.0.1:8123/
+          CTD_READER_QA: /tmp/reader-qa
+          CTD_ECONOMICS_QA: /tmp/economics-qa
+          CTD_AUDIT_OUTPUT: /tmp/previous-qa
+        run: |
+          python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/reader-http.log 2>&1 &
+          sleep 2
+          node scripts/audit_reader_journeys.cjs
+          node scripts/audit_economics_order.cjs
+          node scripts/audit_20261018_browser.cjs
+          node scripts/audit_legacy_deeplinks.cjs
+      - name: Verify exact review, frozen inputs and reproducibility
+        env:
+          CTD_READER_REPORT: /tmp/reader-preservation.json
+        run: |
+          python3 scripts/prepare_reader_site.py finalize
+          node scripts/verify_ia_b2_parity.cjs
+          python3 - <<'PY'
+          import hashlib,json,subprocess
+          from pathlib import Path
+          pub=json.loads(Path('publication.json').read_text())
+          p=Path(pub['currentDataPackPath']);before=hashlib.sha256(p.read_bytes()).hexdigest()
+          subprocess.run(['python3','build.py'],check=True)
+          assert hashlib.sha256(p.read_bytes()).hexdigest()==before,'Data pack is not reproducible'
+          PY
+          node scripts/verify_ia_b2_parity.cjs
+      - name: Record evidence and commit candidate without changing main
+        run: |
+          test "$(git ls-remote origin refs/heads/work/reader-journeys-20261020 | cut -f1)" = "$GITHUB_SHA"
+          python3 - <<'PY'
+          import json,subprocess
+          from pathlib import Path
+          evidence={'version':'0.7.92','baselineCommit':'639617f5b79cf5524825ab7093f4c7bb722d1d42','preservation':json.loads(Path('/tmp/reader-preservation.json').read_text()),'browser':json.loads(Path('/tmp/reader-qa/report.json').read_text()),'economics':json.loads(Path('/tmp/economics-qa/report.json').read_text()),'previousAudit':json.loads(Path('/tmp/previous-qa/report.json').read_text()),'humanParticipants':0,'publication':'Candidate verified; live delivery checked separately.'}
+          Path('docs/reader-journeys-verification-20261020.json').write_text(json.dumps(evidence,ensure_ascii=False,indent=2)+'\n')
+          for f in subprocess.check_output(['git','ls-files','--others','--exclude-standard'],text=True).splitlines():
+            if f.startswith('audit-') and f.endswith(('.png','.json')):Path(f).unlink()
+          PY
+          git diff --exit-code -- .github/workflows
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Publish v0.7.92: reader-first site architecture [skip build]'
+          git push origin HEAD:work/reader-journeys-20261020
+          git rev-parse HEAD
+      - name: Preserve visual and test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          name: reader-review-tooling
-          path: /tmp/reader-tooling.tar.gz
-          retention-days: 1
+          name: reader-journeys-qa
+          path: |
+            /tmp/reader-preservation.json
+            /tmp/reader-qa/
+            /tmp/economics-qa/
+            /tmp/previous-qa/
+            audit-deeplinks/results.json
+          if-no-files-found: warn
+          retention-days: 7
