@@ -10,15 +10,21 @@ permissions:
 jobs:
   workspace:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Preserve exact source for local editorial tests
-        run: git archive --format=zip HEAD -o /tmp/economics-source.zip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned build and test dependencies
+        run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
+          tar -czf /tmp/economics-dependencies.tar.gz node_modules
       - uses: actions/upload-artifact@v4
         with:
-          name: economics-source
-          path: /tmp/economics-source.zip
+          name: economics-dependencies
+          path: /tmp/economics-dependencies.tar.gz
           retention-days: 3
