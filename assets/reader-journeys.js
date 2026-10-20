@@ -11,8 +11,6 @@ window.CTD_REFRESH_READING=function(section){
   const directory=document.getElementById('reader-directory'),input=document.getElementById('reader-search');if(!directory||!input)return;
   const rows=[...directory.querySelectorAll('[data-reader-topic]')],status=document.getElementById('reader-search-status'),empty=document.getElementById('reader-no-results');
   const norm=s=>String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase().trim();
-  // Index existing local prose once. Exclude onward links so another chapter's
-  // description cannot cause a false match. Subsection results use their own text.
   const texts=new Map();
   function content(row){
    const link=row.querySelector('a[data-open-section]'),anchor=link?.dataset.openAnchor,id=link?.dataset.openSection;
@@ -21,6 +19,7 @@ window.CTD_REFRESH_READING=function(section){
    const text=target?[...target.children].filter(n=>!n.matches('nav,.readerNext')).map(n=>n.textContent).join(' '):'';
    const value=norm(text);texts.set(key,value);return value;
   }
+  // Cache actual local prose without indexing the descriptions of onward links.
   const corpus=rows.map(row=>({row,text:norm(row.dataset.readerSearchText)+' '+content(row),detail:row.hasAttribute('data-reader-detail')}));
   function filter(){const words=norm(input.value).split(/\s+/).filter(Boolean);let count=0;for(const item of corpus){const show=(!item.detail||words.length>0)&&words.every(w=>item.text.includes(w));item.row.hidden=!show;if(show)count++;}empty.hidden=count>0;status.textContent=count+' '+directory.dataset.resultsWord;}
   directory.querySelector('.readerSearchControls').hidden=false;
@@ -31,5 +30,6 @@ window.CTD_REFRESH_READING=function(section){
   filter();
   if(location.hash==='#reader-search'){directory.open=true;input.focus();}
  }
- if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+ // Defer initialization until app.js has finished refreshing all case headings.
+ if(document.readyState==='complete')init();else document.addEventListener('DOMContentLoaded',init,{once:true});
 })();
