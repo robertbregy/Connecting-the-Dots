@@ -1,0 +1,54 @@
+name: Reader paths and accessible topic navigation
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/reader-journeys-audit.yml'
+      - 'assets/**'
+      - 'scripts/**'
+      - 'src/**'
+      - 'data/reader_journeys.json'
+      - 'data/translations.json'
+      - 'publication.json'
+      - 'build.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: reader-paths-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  reader-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Verify reviewed source and rebuild every chapter
+        run: |
+          node scripts/verify_ia_b2_parity.cjs
+          python3 build.py
+      - name: Verify navigation, keyboard, no-script fallback and reflow
+        env:
+          CTD_TEST_BASE: http://127.0.0.1:8123/
+          CTD_READER_QA: /tmp/reader-qa
+        run: |
+          python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/reader-http.log 2>&1 &
+          sleep 2
+          node scripts/audit_reader_journeys.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reader-journeys-${{ github.sha }}
+          path: /tmp/reader-qa/
+          if-no-files-found: warn
+          retention-days: 14
