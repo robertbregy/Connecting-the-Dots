@@ -46,11 +46,31 @@
         "What is .lugano today? What stages remain?",
         "Find the cost of an application and explain what that payment provides.",
         "For researchers: find the source, method, limitations and citation for a current result."
+      ],
+      "de": [
+        "Worum geht es auf der Website? Was macht Sie neugierig?",
+        "Suchen Sie .ai und erklären Sie, wofür es steht.",
+        "Was zählt ein Wert in der Rangliste und von wann stammt er?",
+        "Was ist .lugano in dieser Dokumentation? Welche Schritte stehen noch aus?",
+        "Finden Sie die Gebühr für einen Antrag und erklären Sie, was sie ermöglicht.",
+        "Für Forschende: Finden Sie Quelle, Methode, Grenzen und Zitiervorschlag für ein aktuelles Ergebnis."
+      ],
+      "fr": [
+        "De quoi parle ce site ? Qu’est-ce qui vous intrigue ?",
+        "Trouvez .ai et expliquez ce qu’il représente.",
+        "Que compte un chiffre du classement et de quand date-t-il ?",
+        "Qu’est-ce que .lugano dans cette documentation ? Quelles étapes restent à franchir ?",
+        "Trouvez le coût d’une candidature et expliquez ce que ce paiement permet.",
+        "Pour les chercheurs : trouvez la source, la méthode, les limites et la référence pour citer un résultat actuel."
       ]
     },
     "blankObservationFields": [
       "participant_code",
       "audience",
+      "locale",
+      "site_version",
+      "device",
+      "phase",
       "task",
       "path",
       "assistance",
@@ -58,7 +78,231 @@
       "interpretation",
       "error",
       "spontaneous_interest",
+      "recall_without_page",
       "follow_up_change"
-    ]
-  }
+    ],
+    "protocolVersion": "1.1",
+    "durationMinutes": 15,
+    "guideAnchor": "three-minute-guide",
+    "observationTemplate": "reader_observations_blank.csv",
+    "locales": {
+      "it": {
+        "title": "Prova di lettura · guida per chi osserva",
+        "lead": "Una sessione di circa 15 minuti per capire che cosa incuriosisce, che cosa viene compreso e dove il sito fa perdere il filo. Si osserva il sito, non si esamina la persona.",
+        "status": "Materiali pronti; nessuna sessione svolta o risultato disponibile.",
+        "plan": "Piano: 6 adulti non specialisti e 2 ricercatori. È uno studio qualitativo per migliorare il sito, non un campione rappresentativo. Varia familiarità digitale e dispositivo; annota come sono stati coinvolti i partecipanti.",
+        "beforeTitle": "Prima della sessione",
+        "before": [
+          "Chiedi il consenso all’osservazione e spiega che si può interrompere in qualsiasi momento. Non chiedere nomi, contatti o altri dati identificativi; usa codici come P01. Non registrare audio o video senza un consenso separato.",
+          "Apri il sito nella lingua scelta e annota versione e dispositivo. Le tue note restano fuori dal sito: questa pagina non raccoglie né invia risposte. Il CSV scaricabile è vuoto.",
+          "Dì: «Stiamo provando il sito. Non ci sono risposte da indovinare. Raccontami che cosa noti e che cosa stai cercando; se qualcosa non è chiaro, ci aiuta saperlo». Evita spiegazioni e suggerimenti mentre la persona cerca."
+        ],
+        "phasesTitle": "Una sessione, quattro momenti",
+        "phases": [
+          [
+            "1 minuto · primo impatto",
+            "Mostra la home. Chiedi: «Di che cosa pensi che parli? Che cosa apriresti per primo?». Registra le parole usate, prima di indicare il percorso breve."
+          ],
+          [
+            "Circa 3 minuti · lettura libera",
+            "Invita a usare «Parti da qui». Lascia che la persona legga al proprio ritmo. Annota passaggi saltati, termini poco chiari e curiosità spontanee; il tempo non determina se abbia capito."
+          ],
+          [
+            "2 minuti · ricordo",
+            "Chiedi di guardare altrove, senza rileggere: «Che cosa racconteresti a un amico? Che cosa ti ha sorpreso? Che cosa è rimasto poco chiaro?». Riporta la risposta, senza correggerla subito."
+          ],
+          [
+            "Circa 9 minuti · ricerca e confronto",
+            "Riapri il sito e usa i compiti seguenti senza indicare dove cliccare. Chiedi che cosa porta a quella risposta. Concludi con: «Che cosa toglieresti, aggiungeresti o cambieresti?»."
+          ]
+        ],
+        "tasksTitle": "Compiti neutrali",
+        "taskNote": "Per i non specialisti usa i compiti 2–5 dopo il primo impatto; per i ricercatori aggiungi il compito 6. Se il tempo finisce, annota ciò che non è stato osservato.",
+        "notesTitle": "Scheda delle osservazioni",
+        "columns": [
+          "Codice, pubblico, lingua, versione, dispositivo",
+          "Compito e percorso seguito",
+          "Parole della persona e ricordo senza pagina",
+          "Esitazioni, errori, aiuto e curiosità",
+          "Modifica da verificare"
+        ],
+        "notesHelp": "Una riga per compito nel CSV. Se non hai osservato qualcosa, lascialo mancante: non trasformarlo in uno zero. Le citazioni nelle note non devono identificare la persona.",
+        "download": "Scarica la scheda CSV vuota",
+        "print": "Puoi stampare questa guida dal browser. Conserva le note localmente e condividi soltanto una sintesi anonima concordata con i partecipanti.",
+        "criteriaTitle": "Per chi conduce: che cosa cercare",
+        "criteria": [
+          "Verifica come la persona distingue nome, sito e visite; origine di .ai e associazione con l’intelligenza artificiale; candidatura e disponibilità di .lugano. Per la classifica chiedi che cosa conta il valore e a quale data si riferisce. Non mostrare questi criteri prima delle risposte.",
+          "Valuta l’uso delle fonti, non la memoria di una formula. Per i ricercatori osserva anche se distinguono l’archivio DOI dalla versione corrente del sito e sanno trovare i limiti.",
+          "Correggi ogni fraintendimento che induca una conclusione fattuale errata; dai priorità a quelli ripetuti da persone diverse. Registra anche i casi contrari. Dopo le modifiche, ripeti i compiti interessati con nuove persone. Non pubblicare percentuali di comprensione o risultati di validazione prima di avere osservazioni reali."
+        ],
+        "home": "Apri il percorso breve",
+        "research": "Torna a Ricerca",
+        "observed": "Partecipanti osservati: 0",
+        "metadata": "Protocollo 1.1 · preparato il 20 ottobre 2026"
+      },
+      "en": {
+        "title": "Reader study · facilitator guide",
+        "lead": "An approximately 15-minute session to learn what sparks curiosity, what is understood and where readers lose the thread. The website is being tested, not the person.",
+        "status": "Materials ready; no sessions conducted or results available.",
+        "plan": "Plan: 6 adult non-specialists and 2 researchers. This is a qualitative study to improve the website, not a representative sample. Vary digital familiarity and device; record how participants were recruited.",
+        "beforeTitle": "Before the session",
+        "before": [
+          "Ask for consent to observation and explain that participants may stop at any time. Do not request names, contacts or other identifiers; use codes such as P01. Do not record audio or video without separate consent.",
+          "Open the site in the chosen language and record its version and the device. Keep notes outside the website: this page neither collects nor submits answers. The downloadable CSV is empty.",
+          "Say: “We are trying out the website. There are no answers to guess. Tell me what you notice and what you are looking for; knowing what is unclear helps us.” Avoid explanations and hints while the person searches."
+        ],
+        "phasesTitle": "One session, four moments",
+        "phases": [
+          [
+            "1 minute · first impression",
+            "Show the home page. Ask: “What do you think this is about? What would you open first?” Record the words used before pointing out the short guide."
+          ],
+          [
+            "About 3 minutes · free reading",
+            "Invite the person to use “Start here”. Let them read at their own pace. Note skipped passages, unclear terms and spontaneous interest; time alone does not establish comprehension."
+          ],
+          [
+            "2 minutes · recall",
+            "Ask the person to look away without rereading: “What would you tell a friend? What surprised you? What remained unclear?” Record the answer without immediately correcting it."
+          ],
+          [
+            "About 9 minutes · finding and discussing",
+            "Reopen the website and use the tasks below without telling the person where to click. Ask what led them to each answer. End with: “What would you remove, add or change?”"
+          ]
+        ],
+        "tasksTitle": "Neutral tasks",
+        "taskNote": "For non-specialists, use tasks 2–5 after the first impression; add task 6 for researchers. If time runs out, record what was not observed.",
+        "notesTitle": "Observation sheet",
+        "columns": [
+          "Code, audience, language, version, device",
+          "Task and route taken",
+          "Own words and recall without the page",
+          "Hesitations, errors, assistance and interest",
+          "Change to test"
+        ],
+        "notesHelp": "One CSV row per task. Leave unobserved information missing rather than turning it into zero. Quotations in the notes must not identify the person.",
+        "download": "Download the empty CSV sheet",
+        "print": "You can print this guide from your browser. Keep notes locally and share only an anonymous summary agreed with participants.",
+        "criteriaTitle": "For facilitators: what to look for",
+        "criteria": [
+          "Observe how the person distinguishes a name, a website and visits; .ai’s origin and its AI association; an application and .lugano’s availability. For rankings, ask what a value counts and its date. Do not reveal these criteria before the answers.",
+          "Assess use of sources, not recall of a formula. For researchers, also observe whether they distinguish the DOI archive from the current website and can locate limitations.",
+          "Correct misunderstandings that lead to a false factual conclusion; prioritise those repeated by different people. Record contrary observations too. After changes, repeat affected tasks with new people. Do not publish comprehension percentages or validation results before real observations exist."
+        ],
+        "home": "Open the short guide",
+        "research": "Back to Research",
+        "observed": "Observed participants: 0",
+        "metadata": "Protocol 1.1 · prepared 20 October 2026"
+      },
+      "de": {
+        "title": "Lesestudie · Leitfaden für Beobachtende",
+        "lead": "Eine Sitzung von etwa 15 Minuten zeigt, was Neugier weckt, was verstanden wird und wo der rote Faden verloren geht. Geprüft wird die Website, nicht die Person.",
+        "status": "Materialien vorbereitet; noch keine Sitzungen oder Ergebnisse.",
+        "plan": "Geplant: 6 Erwachsene ohne Fachwissen und 2 Forschende. Dies ist eine qualitative Untersuchung zur Verbesserung der Website, keine repräsentative Stichprobe. Digitale Erfahrung und Geräte sollen variieren; halten Sie die Rekrutierung fest.",
+        "beforeTitle": "Vor der Sitzung",
+        "before": [
+          "Holen Sie die Zustimmung zur Beobachtung ein und erklären Sie, dass ein Abbruch jederzeit möglich ist. Fragen Sie nicht nach Namen, Kontaktdaten oder anderen Identifikatoren; verwenden Sie Codes wie P01. Audio- und Videoaufnahmen benötigen eine separate Zustimmung.",
+          "Öffnen Sie die Website in der gewählten Sprache und notieren Sie Version und Gerät. Die Notizen bleiben ausserhalb der Website: Diese Seite sammelt und versendet keine Antworten. Die herunterladbare CSV-Datei ist leer.",
+          "Sagen Sie: «Wir probieren die Website aus. Es gibt keine Antworten zu erraten. Erzählen Sie, was Ihnen auffällt und wonach Sie suchen. Unklarheiten helfen uns weiter.» Geben Sie während der Suche keine Erklärungen oder Hinweise."
+        ],
+        "phasesTitle": "Eine Sitzung, vier Momente",
+        "phases": [
+          [
+            "1 Minute · erster Eindruck",
+            "Zeigen Sie die Startseite. Fragen Sie: «Worum geht es hier Ihrer Meinung nach? Was würden Sie zuerst öffnen?» Notieren Sie die Wortwahl, bevor Sie auf den kurzen Lesepfad hinweisen."
+          ],
+          [
+            "Etwa 3 Minuten · freies Lesen",
+            "Laden Sie zur Nutzung von «Hier beginnen» ein. Lassen Sie die Person im eigenen Tempo lesen. Notieren Sie übersprungene Passagen, unklare Begriffe und spontane Neugier. Zeit allein belegt kein Verständnis."
+          ],
+          [
+            "2 Minuten · Erinnerung",
+            "Bitten Sie, wegzusehen und nicht nachzulesen: «Was würden Sie einem Freund erzählen? Was hat Sie überrascht? Was blieb unklar?» Halten Sie die Antwort fest, ohne sofort zu korrigieren."
+          ],
+          [
+            "Etwa 9 Minuten · suchen und besprechen",
+            "Öffnen Sie die Website erneut und verwenden Sie die Aufgaben unten, ohne Klickwege vorzugeben. Fragen Sie nach der Begründung der Antwort. Zum Schluss: «Was würden Sie streichen, ergänzen oder ändern?»"
+          ]
+        ],
+        "tasksTitle": "Neutrale Aufgaben",
+        "taskNote": "Für Personen ohne Fachwissen verwenden Sie nach dem ersten Eindruck die Aufgaben 2–5, für Forschende zusätzlich Aufgabe 6. Halten Sie bei Zeitmangel fest, was nicht beobachtet wurde.",
+        "notesTitle": "Beobachtungsbogen",
+        "columns": [
+          "Code, Publikum, Sprache, Version, Gerät",
+          "Aufgabe und gewählter Weg",
+          "Eigene Worte und Erinnerung ohne Seite",
+          "Zögern, Fehler, Hilfe und Interesse",
+          "Zu prüfende Änderung"
+        ],
+        "notesHelp": "Eine CSV-Zeile pro Aufgabe. Lassen Sie nicht Beobachtetes offen, statt eine Null einzutragen. Zitate in den Notizen dürfen die Person nicht identifizieren.",
+        "download": "Leeren CSV-Bogen herunterladen",
+        "print": "Sie können diesen Leitfaden im Browser ausdrucken. Bewahren Sie Notizen lokal auf und teilen Sie nur eine mit den Teilnehmenden vereinbarte anonyme Zusammenfassung.",
+        "criteriaTitle": "Für die Durchführung: worauf achten?",
+        "criteria": [
+          "Beobachten Sie die Unterscheidung von Name, Website und Besuchen; von Ursprung und KI-Assoziation bei .ai; von Bewerbung und Verfügbarkeit bei .lugano. Fragen Sie bei einer Rangliste nach Zähleinheit und Datum. Zeigen Sie diese Kriterien nicht vor den Antworten.",
+          "Bewerten Sie den Umgang mit Quellen, nicht das Auswendiglernen einer Formel. Beobachten Sie bei Forschenden auch, ob sie DOI-Archiv und aktuelle Website unterscheiden und Grenzen der Aussagen finden.",
+          "Korrigieren Sie Missverständnisse mit sachlich falschen Schlussfolgerungen und priorisieren Sie solche, die bei verschiedenen Personen auftreten. Halten Sie auch Gegenbeobachtungen fest. Wiederholen Sie betroffene Aufgaben nach Änderungen mit neuen Personen. Veröffentlichen Sie keine Verständnisquoten oder Validierungsergebnisse ohne reale Beobachtungen."
+        ],
+        "home": "Kurzen Lesepfad öffnen",
+        "research": "Zurück zur Forschung",
+        "observed": "Beobachtete Teilnehmende: 0",
+        "metadata": "Protokoll 1.1 · vorbereitet am 20. Oktober 2026"
+      },
+      "fr": {
+        "title": "Étude de lecture · guide d’observation",
+        "lead": "Une séance d’environ 15 minutes pour comprendre ce qui intrigue, ce qui est compris et où le lecteur perd le fil. On teste le site, pas la personne.",
+        "status": "Matériel prêt ; aucune séance réalisée ni aucun résultat disponible.",
+        "plan": "Prévision : 6 adultes non spécialistes et 2 chercheurs. Il s’agit d’une étude qualitative pour améliorer le site, pas d’un échantillon représentatif. Variez la familiarité numérique et l’appareil ; notez le mode de recrutement.",
+        "beforeTitle": "Avant la séance",
+        "before": [
+          "Demandez le consentement à l’observation et expliquez que la personne peut s’arrêter à tout moment. Ne demandez ni nom, ni coordonnées, ni autre identifiant ; utilisez des codes comme P01. Tout enregistrement audio ou vidéo nécessite un consentement distinct.",
+          "Ouvrez le site dans la langue choisie et notez sa version et l’appareil. Gardez les notes hors du site : cette page ne collecte ni ne transmet de réponses. Le CSV téléchargeable est vide.",
+          "Dites : « Nous essayons le site. Il n’y a pas de réponse à deviner. Dites-moi ce que vous remarquez et ce que vous cherchez ; savoir ce qui n’est pas clair nous aide. » Évitez les explications et les indices pendant la recherche."
+        ],
+        "phasesTitle": "Une séance, quatre moments",
+        "phases": [
+          [
+            "1 minute · première impression",
+            "Montrez l’accueil. Demandez : « À votre avis, de quoi s’agit-il ? Que voudriez-vous ouvrir en premier ? » Notez les mots employés avant de signaler le parcours court."
+          ],
+          [
+            "Environ 3 minutes · lecture libre",
+            "Invitez à utiliser « Commencez ici ». Laissez la personne lire à son rythme. Notez les passages sautés, les termes obscurs et la curiosité spontanée ; le temps seul ne démontre pas la compréhension."
+          ],
+          [
+            "2 minutes · souvenir",
+            "Demandez de regarder ailleurs sans relire : « Que raconteriez-vous à un ami ? Qu’est-ce qui vous a surpris ? Qu’est-ce qui reste flou ? » Notez la réponse sans la corriger immédiatement."
+          ],
+          [
+            "Environ 9 minutes · recherche et échange",
+            "Rouvrez le site et utilisez les tâches ci-dessous sans indiquer où cliquer. Demandez ce qui conduit à chaque réponse. Terminez par : « Que retireriez-vous, ajouteriez-vous ou changeriez-vous ? »"
+          ]
+        ],
+        "tasksTitle": "Tâches neutres",
+        "taskNote": "Pour les non-spécialistes, utilisez les tâches 2–5 après la première impression ; ajoutez la tâche 6 pour les chercheurs. Si le temps manque, notez ce qui n’a pas été observé.",
+        "notesTitle": "Fiche d’observation",
+        "columns": [
+          "Code, public, langue, version, appareil",
+          "Tâche et chemin suivi",
+          "Propres mots et souvenir sans la page",
+          "Hésitations, erreurs, aide et intérêt",
+          "Modification à vérifier"
+        ],
+        "notesHelp": "Une ligne CSV par tâche. Laissez les informations non observées manquantes au lieu d’y inscrire zéro. Les citations dans les notes ne doivent pas identifier la personne.",
+        "download": "Télécharger la fiche CSV vide",
+        "print": "Vous pouvez imprimer ce guide depuis le navigateur. Conservez les notes localement et ne partagez qu’une synthèse anonyme convenue avec les participants.",
+        "criteriaTitle": "Pour l’animation : que regarder ?",
+        "criteria": [
+          "Observez comment la personne distingue nom, site et visites ; origine de .ai et association avec l’IA ; candidature et disponibilité de .lugano. Pour un classement, demandez l’unité et la date. Ne dévoilez pas ces critères avant les réponses.",
+          "Évaluez le recours aux sources, pas la mémorisation d’une formule. Pour les chercheurs, observez aussi la distinction entre archive DOI et site actuel, ainsi que la recherche des limites.",
+          "Corrigez les malentendus conduisant à une conclusion factuellement fausse ; donnez priorité à ceux répétés par plusieurs personnes. Notez aussi les observations contraires. Après les modifications, répétez les tâches concernées avec de nouvelles personnes. Ne publiez ni pourcentages de compréhension ni résultats de validation avant de disposer d’observations réelles."
+        ],
+        "home": "Ouvrir le parcours court",
+        "research": "Retour à la recherche",
+        "observed": "Participants observés : 0",
+        "metadata": "Protocole 1.1 · préparé le 20 octobre 2026"
+      }
+    }
+  },
+  "revisedOn": "2026-10-20"
 }

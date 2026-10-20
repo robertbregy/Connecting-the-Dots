@@ -9,7 +9,7 @@
       "heroBody": "Perché un’isola dei Caraibi ha un nome legato all’intelligenza artificiale? Chi può dare a una città il suo posto su Internet? Scopri le storie, il denaro e le identità dietro .com, .ai e gli altri nomi della rete.",
       "heroPlain": "In example.com, .com è l’estensione finale: un dominio di primo livello, o TLD. Qui puoi capirne la storia e verificare dati e fonti. .lugano è una candidatura, non un’estensione già operativa.",
       "eyebrow": "NOMI DI INTERNET · PERSONE · POTERE",
-      "heroLearnCta": "Segui la storia dei nomi",
+      "heroLearnCta": "Parti da qui · 3 minuti",
       "heroExploreCta": "Cerca un’estensione",
       "stories": [
         [
@@ -143,14 +143,90 @@
       "briefCat": "Rappresenta la comunità linguistica e culturale catalana: un’appartenenza che attraversa i confini di uno Stato.",
       "briefCom": "Nasce per le attività commerciali prima del Web. In seguito diventa uno dei simboli della presenza online.",
       "briefLugano": "È una candidatura della Città di Lugano nel round 2026. Non è ancora un’estensione operativa: approvazione, delega e usi futuri restano da verificare.",
-      "whyInteresting": "Perché questo nome è interessante"
+      "whyInteresting": "Perché questo nome è interessante",
+      "quickGuide": {
+        "cta": "Parti da qui · 3 minuti",
+        "eyebrow": "UNA LETTURA PER COMINCIARE",
+        "title": "Quattro situazioni in cui un punto ti riguarda",
+        "preview": "Un negozio, un servizio di intelligenza artificiale, una lingua, la tua città. Nessuna conoscenza tecnica richiesta.",
+        "open": "Lettura guidata · circa 3 minuti",
+        "lead": "Il finale di un indirizzo sembra un dettaglio. Eppure può parlare di attività, territori e comunità. Queste situazioni sono illustrative; i nomi e i fatti rimandano a casi documentati. Il tempo è una stima di lettura: fermati dove vuoi.",
+        "steps": [
+          {
+            "title": "Apri una piccola attività online",
+            "name": "example.com",
+            "hook": "Il nome sulla porta non è il negozio.",
+            "body": "Immagina di voler mettere online il catalogo del tuo negozio. In example.com, .com è l’estensione finale, chiamata TLD. Registrare un nome e costruire il sito sono operazioni diverse: avere l’indirizzo non significa avere già pagine, prodotti o clienti. Per lo stesso motivo, una classifica dei domini registrati non è una classifica dei siti visitati. example.com è un nome riservato agli esempi, non un’attività reale.",
+            "takeaway": "Quando leggi un numero, chiedi che cosa conta: indirizzi, siti o visite?",
+            "tab": "economics",
+            "anchor": "tld-market-reach",
+            "more": "Confronta le due classifiche",
+            "sources": [
+              "example",
+              "dns"
+            ]
+          },
+          {
+            "title": "Incontri un nuovo servizio di intelligenza artificiale",
+            "name": ".ai",
+            "hook": "Due lettere tecnologiche, una storia caraibica.",
+            "body": "Vedi .ai e pensi all’intelligenza artificiale. Ma .ai è il codice territoriale di Anguilla, nei Caraibi. Uno stesso nome può mantenere la propria funzione e acquisire un’associazione nuova. Per chi sceglie un indirizzo è anche un modo di presentarsi; per chi lo legge è un indizio da interpretare. Il suffisso, da solo, non dimostra dove si trovi il servizio né la qualità di ciò che offre.",
+            "takeaway": "L’associazione che riconosci in un nome non esaurisce la sua storia.",
+            "tab": "timeline",
+            "anchor": "cultural-case-reinterpretation",
+            "more": "Segui la storia di .ai",
+            "sources": [
+              "ai"
+            ]
+          },
+          {
+            "title": "Cerchi uno spazio per la tua lingua",
+            "name": ".cat",
+            "hook": "Un’appartenenza può attraversare i confini.",
+            "body": "Immagina un’associazione che vuole farsi riconoscere attraverso la lingua che usa. .cat nasce per la comunità linguistica e culturale catalana: il rapporto IANA del 2005 ne documenta questa finalità. Qui il nome racconta una comunità, anziché essere un codice di Stato. Per chi pubblica, scegliere un nome può essere anche una scelta di appartenenza. Questo non misura, da solo, quante persone si sentano incluse o usino quei siti.",
+            "takeaway": "I nomi possono esprimere identità; i loro effetti sulle persone vanno osservati.",
+            "tab": "timeline",
+            "anchor": "cultural-case-differentiation",
+            "more": "Scopri il caso e le sue fonti",
+            "sources": [
+              "cat"
+            ]
+          },
+          {
+            "title": "La tua città propone una propria estensione",
+            "name": ".lugano",
+            "hook": "Chiedere un nome non significa averlo già ottenuto.",
+            "body": "Ti chiedi se i servizi della città avranno un nuovo indirizzo. Nel corpus 2026 documentato qui, .lugano è una candidatura, non un’estensione già operativa. Presentare una domanda non garantisce approvazione o disponibilità al pubblico. Le decisioni su chi potrà usare il nome e per quali servizi restano da verificare. Da cittadino puoi chiedere quali usi siano proposti, quali risorse richiedano e come se ne valuteranno i risultati.",
+            "takeaway": "Distingui sempre proposta, decisione e servizio effettivamente disponibile.",
+            "tab": "lugano",
+            "anchor": "lugano-status-sources",
+            "more": "Controlla lo stato e le decisioni aperte",
+            "sources": []
+          }
+        ],
+        "takeawayTitle": "Tre idee da portare con te",
+        "takeawayIntro": "Prova a spiegarle a qualcuno con parole tue; poi confrontale qui.",
+        "recall": "Rileggi le tre distinzioni",
+        "ideas": [
+          "Un indirizzo non coincide con un sito, e nessuno dei due conta le visite.",
+          "Un nome può esprimere un’attività, un territorio o un’appartenenza; il suo significato può cambiare.",
+          "Una candidatura non è un’approvazione: stato, data e fonte fanno parte della storia."
+        ],
+        "nextTitle": "Dove ti porta la curiosità?",
+        "nextHistory": "Segui le epoche",
+        "nextSearch": "Cerca un nome",
+        "nextCity": "Esamina il caso .lugano",
+        "studyLink": "Come verifichiamo che sia chiaro",
+        "sourceLabel": "Fonti e contesto",
+        "statusNote": "Lo stato delle candidature resta riferito alle fonti e alle date indicate nelle schede, non a una verifica in tempo reale."
+      }
     },
     "en": {
       "hook": "There’s a world behind a dot.",
       "heroBody": "Why does a Caribbean island have a name associated with artificial intelligence? Who can give a city its own place on the Internet? Discover the stories, money and identities behind .com, .ai and other Internet names.",
       "heroPlain": "In example.com, .com is the ending: a top-level domain, or TLD. Explore its history and check the data and sources here. .lugano is an application, not an operational extension.",
       "eyebrow": "INTERNET NAMES · PEOPLE · POWER",
-      "heroLearnCta": "Follow the story of names",
+      "heroLearnCta": "Start here · 3 minutes",
       "heroExploreCta": "Find an extension",
       "stories": [
         [
@@ -284,14 +360,90 @@
       "briefCat": "A name for the Catalan linguistic and cultural community: a belonging that crosses state borders.",
       "briefCom": "Created for commercial activities before the Web. It later became a symbol of online presence.",
       "briefLugano": "An application by the City of Lugano in the 2026 round. It is not yet operational: approval, delegation and future uses remain to be established.",
-      "whyInteresting": "Why this name matters"
+      "whyInteresting": "Why this name matters",
+      "quickGuide": {
+        "cta": "Start here · 3 minutes",
+        "eyebrow": "A FIRST LOOK",
+        "title": "Four everyday situations behind a dot",
+        "preview": "A shop, an AI service, a language, your city. No technical knowledge needed.",
+        "open": "Guided reading · about 3 minutes",
+        "lead": "The end of an address looks like a small detail. Yet it can speak of businesses, territories and communities. These situations are illustrative; the names and facts lead to documented cases. Reading time is an estimate: pause wherever you like.",
+        "steps": [
+          {
+            "title": "You take a small business online",
+            "name": "example.com",
+            "hook": "The name above the door is not the shop.",
+            "body": "Imagine putting your shop’s catalogue online. In example.com, .com is the final extension, called a TLD. Registering a name and building a website are different tasks: having an address does not mean you already have pages, products or customers. Likewise, a ranking of registered domains is not a ranking of visited websites. example.com is reserved for examples; it is not a real business.",
+            "takeaway": "When you see a number, ask what it counts: addresses, websites or visits?",
+            "tab": "economics",
+            "anchor": "tld-market-reach",
+            "more": "Compare the two rankings",
+            "sources": [
+              "example",
+              "dns"
+            ]
+          },
+          {
+            "title": "You come across a new AI service",
+            "name": ".ai",
+            "hook": "Two technological letters, a Caribbean history.",
+            "body": "You see .ai and think of artificial intelligence. But .ai is the country code for Anguilla, in the Caribbean. A name can keep its function while acquiring a new association. For someone choosing an address, it is also a way to present themselves; for a reader, it is a clue to interpret. The suffix alone establishes neither where the service is located nor the quality of what it offers.",
+            "takeaway": "The association you recognise in a name does not tell its whole history.",
+            "tab": "timeline",
+            "anchor": "cultural-case-reinterpretation",
+            "more": "Follow the story of .ai",
+            "sources": [
+              "ai"
+            ]
+          },
+          {
+            "title": "You look for a place for your language",
+            "name": ".cat",
+            "hook": "Belonging can cross state borders.",
+            "body": "Imagine an association that wants to be recognised through the language it uses. .cat was created for the Catalan linguistic and cultural community: the 2005 IANA report documents this purpose. Here a name represents a community rather than a country code. For a publisher, choosing a name can also express belonging. That alone does not measure how many people feel included or use those websites.",
+            "takeaway": "Names can express identity; their effects on people require observation.",
+            "tab": "timeline",
+            "anchor": "cultural-case-differentiation",
+            "more": "Explore the case and its sources",
+            "sources": [
+              "cat"
+            ]
+          },
+          {
+            "title": "Your city proposes its own extension",
+            "name": ".lugano",
+            "hook": "Applying for a name does not mean it has been granted.",
+            "body": "You wonder whether city services will have a new address. In the 2026 corpus documented here, .lugano is an application, not an operational extension. Submitting an application guarantees neither approval nor public availability. Decisions about who could use the name and for which services remain to be established. As a citizen, you can ask which uses are proposed, what resources they need and how their results would be assessed.",
+            "takeaway": "Always distinguish a proposal, a decision and an available service.",
+            "tab": "lugano",
+            "anchor": "lugano-status-sources",
+            "more": "Check its status and open decisions",
+            "sources": []
+          }
+        ],
+        "takeawayTitle": "Three ideas to take with you",
+        "takeawayIntro": "Try explaining them to someone in your own words; then compare them here.",
+        "recall": "Revisit the three distinctions",
+        "ideas": [
+          "An address is not a website, and neither is a count of visits.",
+          "A name can express an activity, a territory or a community; its meaning can change.",
+          "An application is not an approval: status, date and source are part of the story."
+        ],
+        "nextTitle": "Where will your curiosity take you?",
+        "nextHistory": "Follow the historical periods",
+        "nextSearch": "Look up a name",
+        "nextCity": "Explore the .lugano case",
+        "studyLink": "How we check whether this is clear",
+        "sourceLabel": "Sources and context",
+        "statusNote": "Application status refers to the sources and dates shown in the case records, not to a real-time check."
+      }
     },
     "de": {
       "hook": "Hinter einem Punkt steckt eine Welt.",
       "heroBody": "Warum wird das Kürzel einer Karibikinsel mit künstlicher Intelligenz verbunden? Wer kann einer Stadt ihren eigenen Platz im Internet geben? Entdecke Geschichten, Geld und Identitäten hinter .com, .ai und anderen Internetnamen.",
       "heroPlain": "In example.com ist .com die Endung: eine Top-Level-Domain, kurz TLD. Hier kannst du ihre Geschichte erkunden sowie Daten und Quellen prüfen. .lugano ist eine Bewerbung, keine bereits betriebene Endung.",
       "eyebrow": "INTERNETNAMEN · MENSCHEN · MACHT",
-      "heroLearnCta": "Der Geschichte der Namen folgen",
+      "heroLearnCta": "Hier beginnen · 3 Minuten",
       "heroExploreCta": "Eine Endung suchen",
       "stories": [
         [
@@ -425,14 +577,90 @@
       "briefCat": "Ein Name für die katalanische Sprach- und Kulturgemeinschaft: Zugehörigkeit über Staatsgrenzen hinweg.",
       "briefCom": "Für kommerzielle Aktivitäten vor dem Web geschaffen. Später wurde der Name zum Symbol der Onlinepräsenz.",
       "briefLugano": "Eine Bewerbung der Stadt Lugano in der Runde 2026. Noch keine betriebene Endung: Genehmigung, Delegierung und künftige Nutzung bleiben offen.",
-      "whyInteresting": "Warum dieser Name interessant ist"
+      "whyInteresting": "Warum dieser Name interessant ist",
+      "quickGuide": {
+        "cta": "Hier beginnen · 3 Minuten",
+        "eyebrow": "EIN ERSTER EINBLICK",
+        "title": "Vier Alltagssituationen hinter einem Punkt",
+        "preview": "Ein Geschäft, ein KI-Dienst, eine Sprache, Ihre Stadt. Ohne technisches Vorwissen.",
+        "open": "Lesepfad · etwa 3 Minuten",
+        "lead": "Das Ende einer Adresse wirkt wie eine Kleinigkeit. Doch es kann von Unternehmen, Gebieten und Gemeinschaften erzählen. Die Situationen sind Beispiele; Namen und Fakten führen zu dokumentierten Fällen. Die Lesezeit ist geschätzt: Halten Sie an, wo Sie möchten.",
+        "steps": [
+          {
+            "title": "Sie bringen ein kleines Geschäft ins Internet",
+            "name": "example.com",
+            "hook": "Der Name über der Tür ist noch nicht das Geschäft.",
+            "body": "Stellen Sie sich vor, Sie veröffentlichen den Katalog Ihres Geschäfts im Netz. Bei example.com ist .com die Endung, auch TLD genannt. Einen Namen zu registrieren und eine Website aufzubauen sind verschiedene Aufgaben: Mit einer Adresse haben Sie noch keine Seiten, Produkte oder Kundschaft. Ebenso ist eine Rangliste registrierter Domains keine Rangliste besuchter Websites. example.com ist für Beispiele reserviert und kein echtes Unternehmen.",
+            "takeaway": "Fragen Sie bei jeder Zahl: Zählt sie Adressen, Websites oder Besuche?",
+            "tab": "economics",
+            "anchor": "tld-market-reach",
+            "more": "Die beiden Ranglisten vergleichen",
+            "sources": [
+              "example",
+              "dns"
+            ]
+          },
+          {
+            "title": "Sie entdecken einen neuen KI-Dienst",
+            "name": ".ai",
+            "hook": "Zwei technische Buchstaben mit karibischer Geschichte.",
+            "body": "Sie sehen .ai und denken an künstliche Intelligenz. Doch .ai ist die Länderendung von Anguilla in der Karibik. Ein Name kann seine Funktion behalten und zugleich eine neue Assoziation bekommen. Wer eine Adresse wählt, stellt sich damit auch dar; wer sie liest, deutet einen Hinweis. Die Endung allein belegt weder den Standort eines Dienstes noch die Qualität seines Angebots.",
+            "takeaway": "Die vertraute Assoziation eines Namens erzählt nicht seine ganze Geschichte.",
+            "tab": "timeline",
+            "anchor": "cultural-case-reinterpretation",
+            "more": "Der Geschichte von .ai folgen",
+            "sources": [
+              "ai"
+            ]
+          },
+          {
+            "title": "Sie suchen einen Ort für Ihre Sprache",
+            "name": ".cat",
+            "hook": "Zugehörigkeit kann Staatsgrenzen überschreiten.",
+            "body": "Stellen Sie sich einen Verein vor, der sich über seine Sprache zu erkennen geben möchte. .cat entstand für die katalanische Sprach- und Kulturgemeinschaft; der IANA-Bericht von 2005 dokumentiert diesen Zweck. Der Name steht hier für eine Gemeinschaft statt für einen Ländercode. Wer Inhalte veröffentlicht, kann mit der Namenswahl auch Zugehörigkeit ausdrücken. Daraus lässt sich noch nicht ablesen, wie viele Menschen sich einbezogen fühlen oder diese Websites nutzen.",
+            "takeaway": "Namen können Identität ausdrücken; ihre Wirkung auf Menschen muss untersucht werden.",
+            "tab": "timeline",
+            "anchor": "cultural-case-differentiation",
+            "more": "Fall und Quellen entdecken",
+            "sources": [
+              "cat"
+            ]
+          },
+          {
+            "title": "Ihre Stadt schlägt eine eigene Endung vor",
+            "name": ".lugano",
+            "hook": "Ein Antrag bedeutet noch keine Bewilligung.",
+            "body": "Sie fragen sich, ob städtische Dienste eine neue Adresse bekommen. Im hier dokumentierten Korpus von 2026 ist .lugano ein Antrag und keine bereits betriebsbereite Endung. Eine Bewerbung garantiert weder Genehmigung noch öffentliche Verfügbarkeit. Wer den Namen für welche Dienste nutzen könnte, bleibt zu klären. Als Bürgerin oder Bürger können Sie fragen, welche Nutzungen vorgeschlagen werden, welche Ressourcen sie benötigen und wie ihre Ergebnisse bewertet würden.",
+            "takeaway": "Unterscheiden Sie Vorschlag, Entscheidung und tatsächlich verfügbaren Dienst.",
+            "tab": "lugano",
+            "anchor": "lugano-status-sources",
+            "more": "Status und offene Entscheidungen prüfen",
+            "sources": []
+          }
+        ],
+        "takeawayTitle": "Drei Gedanken zum Mitnehmen",
+        "takeawayIntro": "Erklären Sie sie jemandem in eigenen Worten und vergleichen Sie dann hier.",
+        "recall": "Die drei Unterschiede noch einmal ansehen",
+        "ideas": [
+          "Eine Adresse ist keine Website; beide sind keine Zahl von Besuchen.",
+          "Ein Name kann Tätigkeit, Gebiet oder Gemeinschaft ausdrücken; seine Bedeutung kann sich ändern.",
+          "Ein Antrag ist keine Genehmigung: Status, Datum und Quelle gehören zur Geschichte."
+        ],
+        "nextTitle": "Wohin führt Ihre Neugier?",
+        "nextHistory": "Den Epochen folgen",
+        "nextSearch": "Einen Namen suchen",
+        "nextCity": "Den Fall .lugano untersuchen",
+        "studyLink": "Wie wir die Verständlichkeit prüfen",
+        "sourceLabel": "Quellen und Kontext",
+        "statusNote": "Der Bewerbungsstatus bezieht sich auf die Quellen und Daten der jeweiligen Fallakte, nicht auf eine Echtzeitprüfung."
+      }
     },
     "fr": {
       "hook": "Derrière un point, tout un monde.",
       "heroBody": "Pourquoi le code d’une île des Caraïbes évoque-t-il l’intelligence artificielle ? Qui peut donner à une ville sa propre place sur Internet ? Découvrez les histoires, l’argent et les identités derrière .com, .ai et les autres noms du réseau.",
       "heroPlain": "Dans example.com, .com est la terminaison : un domaine de premier niveau, ou TLD. Explorez son histoire et vérifiez les données et les sources. .lugano est une candidature, pas une extension déjà opérationnelle.",
       "eyebrow": "NOMS INTERNET · PERSONNES · POUVOIR",
-      "heroLearnCta": "Suivre l’histoire des noms",
+      "heroLearnCta": "Commencez ici · 3 minutes",
       "heroExploreCta": "Chercher une extension",
       "stories": [
         [
@@ -566,7 +794,110 @@
       "briefCat": "Un nom pour la communauté linguistique et culturelle catalane : une appartenance qui traverse les frontières d’un État.",
       "briefCom": "Créé pour les activités commerciales avant le Web. Il est ensuite devenu un symbole de présence en ligne.",
       "briefLugano": "Une candidature de la Ville de Lugano dans le cycle 2026. L’extension n’est pas encore opérationnelle : approbation, délégation et usages futurs restent à établir.",
-      "whyInteresting": "Pourquoi ce nom est intéressant"
+      "whyInteresting": "Pourquoi ce nom est intéressant",
+      "quickGuide": {
+        "cta": "Commencez ici · 3 minutes",
+        "eyebrow": "UN PREMIER REGARD",
+        "title": "Quatre situations du quotidien derrière un point",
+        "preview": "Une boutique, un service d’IA, une langue, votre ville. Aucune connaissance technique nécessaire.",
+        "open": "Lecture guidée · environ 3 minutes",
+        "lead": "La fin d’une adresse semble un détail. Elle peut pourtant parler d’activités, de territoires et de communautés. Ces situations sont illustratives ; les noms et les faits renvoient à des cas documentés. Le temps de lecture est une estimation : arrêtez-vous où vous voulez.",
+        "steps": [
+          {
+            "title": "Vous mettez une petite activité en ligne",
+            "name": "example.com",
+            "hook": "Le nom sur la porte n’est pas la boutique.",
+            "body": "Imaginez publier le catalogue de votre boutique sur Internet. Dans example.com, .com est l’extension finale, appelée TLD. Enregistrer un nom et construire un site sont deux opérations différentes : avoir une adresse ne signifie pas disposer de pages, de produits ou de clients. De même, un classement des domaines enregistrés n’est pas un classement des sites visités. example.com est réservé aux exemples ; ce n’est pas une entreprise réelle.",
+            "takeaway": "Devant un chiffre, demandez ce qu’il compte : adresses, sites ou visites ?",
+            "tab": "economics",
+            "anchor": "tld-market-reach",
+            "more": "Comparer les deux classements",
+            "sources": [
+              "example",
+              "dns"
+            ]
+          },
+          {
+            "title": "Vous découvrez un nouveau service d’IA",
+            "name": ".ai",
+            "hook": "Deux lettres technologiques, une histoire caribéenne.",
+            "body": "Vous voyez .ai et pensez à l’intelligence artificielle. Mais .ai est le code territorial d’Anguilla, dans les Caraïbes. Un nom peut conserver sa fonction tout en acquérant une nouvelle association. Pour qui choisit une adresse, c’est aussi une façon de se présenter ; pour qui la lit, un indice à interpréter. Le suffixe seul ne démontre ni où se trouve le service ni la qualité de ce qu’il propose.",
+            "takeaway": "L’association que vous reconnaissez dans un nom ne raconte pas toute son histoire.",
+            "tab": "timeline",
+            "anchor": "cultural-case-reinterpretation",
+            "more": "Suivre l’histoire de .ai",
+            "sources": [
+              "ai"
+            ]
+          },
+          {
+            "title": "Vous cherchez une place pour votre langue",
+            "name": ".cat",
+            "hook": "Une appartenance peut traverser les frontières.",
+            "body": "Imaginez une association qui souhaite être reconnue à travers sa langue. .cat est né pour la communauté linguistique et culturelle catalane : le rapport IANA de 2005 documente cette finalité. Le nom représente ici une communauté plutôt qu’un code de pays. Pour qui publie, choisir un nom peut aussi exprimer une appartenance. Cela ne mesure pas, à soi seul, combien de personnes se sentent incluses ou utilisent ces sites.",
+            "takeaway": "Les noms peuvent exprimer une identité ; leurs effets sur les personnes demandent à être observés.",
+            "tab": "timeline",
+            "anchor": "cultural-case-differentiation",
+            "more": "Découvrir le cas et ses sources",
+            "sources": [
+              "cat"
+            ]
+          },
+          {
+            "title": "Votre ville propose sa propre extension",
+            "name": ".lugano",
+            "hook": "Demander un nom ne signifie pas l’avoir obtenu.",
+            "body": "Vous vous demandez si les services municipaux auront une nouvelle adresse. Dans le corpus 2026 documenté ici, .lugano est une candidature, pas une extension déjà opérationnelle. Déposer une demande ne garantit ni son approbation ni son ouverture au public. Les décisions sur les personnes pouvant utiliser le nom et sur les services concernés restent à établir. Comme habitant, vous pouvez demander quels usages sont proposés, quelles ressources ils exigent et comment leurs résultats seraient évalués.",
+            "takeaway": "Distinguez toujours proposition, décision et service effectivement disponible.",
+            "tab": "lugano",
+            "anchor": "lugano-status-sources",
+            "more": "Vérifier l’état et les décisions ouvertes",
+            "sources": []
+          }
+        ],
+        "takeawayTitle": "Trois idées à emporter",
+        "takeawayIntro": "Essayez de les expliquer à quelqu’un avec vos mots, puis comparez ici.",
+        "recall": "Relire les trois distinctions",
+        "ideas": [
+          "Une adresse n’est pas un site, et aucun des deux ne compte les visites.",
+          "Un nom peut exprimer une activité, un territoire ou une communauté ; son sens peut changer.",
+          "Une candidature n’est pas une approbation : état, date et source font partie de l’histoire."
+        ],
+        "nextTitle": "Où vous mène la curiosité ?",
+        "nextHistory": "Suivre les époques",
+        "nextSearch": "Chercher un nom",
+        "nextCity": "Examiner le cas .lugano",
+        "studyLink": "Comment nous vérifions la clarté",
+        "sourceLabel": "Sources et contexte",
+        "statusNote": "L’état des candidatures se rapporte aux sources et aux dates indiquées dans chaque fiche, pas à une vérification en temps réel."
+      }
     }
-  }
+  },
+  "everydaySources": {
+    "example": {
+      "label": "IANA · Example domains",
+      "url": "https://www.iana.org/help/example-domains",
+      "checkedOn": "2026-10-20",
+      "supports": "example.com is reserved for documentation, not a real shop."
+    },
+    "dns": {
+      "label": "RFC 1034 · Domain names: concepts and facilities",
+      "url": "https://www.rfc-editor.org/rfc/rfc1034.html",
+      "checkedOn": "2026-10-20",
+      "supports": "DNS names identify resources; naming and hosting are distinct. The shop scenario is illustrative."
+    },
+    "ai": {
+      "label": "IANA · .ai / Anguilla",
+      "url": "https://www.iana.org/domains/root/db/ai.html",
+      "checkedOn": "2026-10-20",
+      "supports": "Territorial designation and manager; not service quality or a census of AI activity. Cultural reinterpretation links to the existing documented case."
+    },
+    "cat": {
+      "label": "IANA · .CAT delegation report (2005)",
+      "url": "https://www.iana.org/reports/2005/cat-report-18nov2005.html",
+      "checkedOn": "2026-10-20",
+      "supports": "Catalan linguistic and cultural purpose; not measured inclusion or current registration compliance."
+    }
+  },
+  "introductoryReadingReviewedOn": "2026-10-20"
 }

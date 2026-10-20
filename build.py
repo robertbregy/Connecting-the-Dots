@@ -438,6 +438,8 @@ def main() -> None:
         raise SystemExit("Legacy governance redirects incomplete")
     subprocess.run(["node", str(ROOT / "scripts" / "reconcile_audit_20261019.cjs")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "reconcile_audience.cjs")], check=True)
+    subprocess.run(["python3", str(ROOT / "scripts" / "render_reader_study.py")], check=True)
+    subprocess.run(["node", str(ROOT / "scripts" / "validate_quick_guide.cjs")], check=True)
     validate_index()
     # Release-level validation is intentionally self-contained so the browser-upload
     # bundle can verify itself even though the larger development QA suite is omitted.

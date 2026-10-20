@@ -1543,7 +1543,7 @@
     "release0718": "Release integrity hardening: publication dates now derive from one state object; 2012 runtime enrichment no longer marks the full application corpus complete; archaeology counts are data-derived; 2026 round comparisons separate 1,663 submitted applications from 1,616 proceeding; historical private contention settlement is explicitly prohibited in 2026; release packaging, build metadata and QA are hardened.",
     "skipToContent": "Skip to main content",
     "heroPlain": "In example.com, .com is the ending: a top-level domain, or TLD. Explore its history and check the data and sources here. .lugano is an application, not an operational extension.",
-    "heroLearnCta": "Follow the story of names",
+    "heroLearnCta": "Start here · 3 minutes",
     "heroExploreCta": "Find an extension",
     "exploreAboutTitle": "What does this archive count?",
     "exploreFiltersTitle": "Filters",
@@ -2550,7 +2550,8 @@
     "audienceBriefCom": "Created for commercial activities before the Web. It later became a symbol of online presence.",
     "audienceBriefLugano": "An application by the City of Lugano in the 2026 round. It is not yet operational: approval, delegation and future uses remain to be established.",
     "release0789": "Story-led entry, visual historical overview, compact rankings, name-only search and citation guide. Independent review materials prepared; human validation remains pending.",
-    "audienceRecordTools": "Languages, sharing and corrections"
+    "audienceRecordTools": "Languages, sharing and corrections",
+    "release0790": "A roughly three-minute introduction through four everyday situations with sources. Printable reader-study protocol and empty observation sheet in four languages; no human observations collected yet."
   },
   "it": {
     "brand": "Brand",
@@ -4096,7 +4097,7 @@
     "release0718": "Hardening dell’integrità della release: le date di pubblicazione derivano ora da un unico oggetto di stato; l’arricchimento runtime 2012 non marca più l’intero corpus applicativo come completo; i conteggi dell’archeologia sono derivati dai dati; il confronto 2026 separa 1.663 candidature presentate da 1.616 candidature procedenti; gli accordi privati di contention storici sono esplicitamente vietati nel 2026; packaging, metadati di build e QA sono rafforzati.",
     "skipToContent": "Vai al contenuto principale",
     "heroPlain": "In example.com, .com è l’estensione finale: un dominio di primo livello, o TLD. Qui puoi capirne la storia e verificare dati e fonti. .lugano è una candidatura, non un’estensione già operativa.",
-    "heroLearnCta": "Segui la storia dei nomi",
+    "heroLearnCta": "Parti da qui · 3 minuti",
     "heroExploreCta": "Cerca un’estensione",
     "exploreAboutTitle": "Che cosa conta questo archivio?",
     "exploreFiltersTitle": "Filtri",
@@ -5103,7 +5104,8 @@
     "audienceBriefCom": "Nasce per le attività commerciali prima del Web. In seguito diventa uno dei simboli della presenza online.",
     "audienceBriefLugano": "È una candidatura della Città di Lugano nel round 2026. Non è ancora un’estensione operativa: approvazione, delega e usi futuri restano da verificare.",
     "release0789": "Un ingresso attraverso le storie, una sintesi visiva delle epoche, classifiche compatte, ricerca per nome e guida alle citazioni. Materiali indipendenti pronti; validazione con persone ancora da svolgere.",
-    "audienceRecordTools": "Lingue, condivisione e segnalazioni"
+    "audienceRecordTools": "Lingue, condivisione e segnalazioni",
+    "release0790": "Percorso introduttivo di circa tre minuti con quattro situazioni quotidiane e fonti. Protocollo di lettura stampabile e scheda vuota in quattro lingue; nessuna osservazione umana ancora raccolta."
   },
   "de": {
     "brand": "Marke",
@@ -6649,7 +6651,7 @@
     "release0718": "Release-Integrity-Hardening: Publikationsdaten werden aus einem einzigen Statusobjekt abgeleitet; die 2012-Runtime-Erweiterung markiert nicht mehr den gesamten Bewerbungskorpus als vollständig; Archaeology-Zahlen werden aus den Daten abgeleitet; der 2026-Vergleich trennt 1.663 eingereichte von 1.616 weiterlaufenden Bewerbungen; historische private Contention-Einigungen sind 2026 ausdrücklich verboten; Packaging, Build-Metadaten und QA wurden gehärtet.",
     "skipToContent": "Zum Hauptinhalt springen",
     "heroPlain": "In example.com ist .com die Endung: eine Top-Level-Domain, kurz TLD. Hier kannst du ihre Geschichte erkunden sowie Daten und Quellen prüfen. .lugano ist eine Bewerbung, keine bereits betriebene Endung.",
-    "heroLearnCta": "Der Geschichte der Namen folgen",
+    "heroLearnCta": "Hier beginnen · 3 Minuten",
     "heroExploreCta": "Eine Endung suchen",
     "exploreAboutTitle": "Was zählt dieses Archiv?",
     "exploreFiltersTitle": "Filter",
@@ -7656,7 +7658,8 @@
     "audienceBriefCom": "Für kommerzielle Aktivitäten vor dem Web geschaffen. Später wurde der Name zum Symbol der Onlinepräsenz.",
     "audienceBriefLugano": "Eine Bewerbung der Stadt Lugano in der Runde 2026. Noch keine betriebene Endung: Genehmigung, Delegierung und künftige Nutzung bleiben offen.",
     "release0789": "Einstieg über Geschichten, visuelle historische Übersicht, kompakte Ranglisten, Namenssuche und Zitierhilfe. Material für unabhängige Prüfung vorbereitet; Prüfung mit Menschen steht aus.",
-    "audienceRecordTools": "Sprachen, Teilen und Korrekturen"
+    "audienceRecordTools": "Sprachen, Teilen und Korrekturen",
+    "release0790": "Etwa dreiminütiger Einstieg mit vier Alltagssituationen und Quellen. Druckbares Leseprotokoll und leerer Beobachtungsbogen in vier Sprachen; noch keine menschlichen Beobachtungen."
   },
   "fr": {
     "brand": "Marque",
@@ -9202,7 +9205,7 @@
     "release0718": "Durcissement de l’intégrité de la release : les dates de publication dérivent désormais d’un seul objet d’état ; l’enrichissement runtime 2012 ne marque plus l’ensemble du corpus de candidatures comme complet ; les compteurs Archaeology sont dérivés des données ; la comparaison 2026 distingue 1 663 candidatures soumises de 1 616 candidatures poursuivant la procédure ; les accords privés de contention historiques sont explicitement interdits en 2026 ; packaging, métadonnées de build et QA sont renforcés.",
     "skipToContent": "Aller au contenu principal",
     "heroPlain": "Dans example.com, .com est la terminaison : un domaine de premier niveau, ou TLD. Explorez son histoire et vérifiez les données et les sources. .lugano est une candidature, pas une extension déjà opérationnelle.",
-    "heroLearnCta": "Suivre l’histoire des noms",
+    "heroLearnCta": "Commencez ici · 3 minutes",
     "heroExploreCta": "Chercher une extension",
     "exploreAboutTitle": "Que compte cette archive ?",
     "exploreFiltersTitle": "Filtres",
@@ -10209,6 +10212,7 @@
     "audienceBriefCom": "Créé pour les activités commerciales avant le Web. Il est ensuite devenu un symbole de présence en ligne.",
     "audienceBriefLugano": "Une candidature de la Ville de Lugano dans le cycle 2026. L’extension n’est pas encore opérationnelle : approbation, délégation et usages futurs restent à établir.",
     "release0789": "Entrée par les histoires, synthèse historique visuelle, classements compacts, recherche par nom et aide à la citation. Matériel indépendant prêt ; validation humaine encore à réaliser.",
-    "audienceRecordTools": "Langues, partage et corrections"
+    "audienceRecordTools": "Langues, partage et corrections",
+    "release0790": "Parcours introductif d’environ trois minutes avec quatre situations du quotidien et leurs sources. Protocole de lecture imprimable et fiche vierge en quatre langues ; aucune observation humaine encore recueillie."
   }
 }

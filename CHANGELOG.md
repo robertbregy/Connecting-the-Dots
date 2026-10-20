@@ -1,5 +1,11 @@
 ## v0.7.86 — 19 October 2026
 
+## v0.7.90 — 20 October 2026
+
+- Added a source-linked introductory reading path through four everyday situations, with a clearly estimated three-minute duration, optional recall prompts and direct routes to evidence.
+- Added a printable four-language reader-study protocol and blank observation CSV. The planned formative study remains unperformed: zero observed participants and no invented results.
+- Preserved all 14 previous technical ZIPs and immutable RR1/RR2.
+
 ## 0.7.89 — 19 October 2026
 
 Story-led four-language home, six-part historical overview linked to the unchanged documented cases, compact ranking with explicit 10/all pagination and shareable state, name-only Explorer search with exact-match labels, narrative introductions for .com/.ai/.cat/.lugano, compact record tools, and a direct citation guide. Full corpus reconciliation and measurement scope remain available in disclosures. The optional APS application graph loads on explicit atlas intent instead of every TLD search.
