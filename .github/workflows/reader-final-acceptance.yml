@@ -6,6 +6,7 @@ on:
       - '.github/workflows/reader-final-acceptance.yml'
       - 'scripts/finish_readability.py'
       - 'scripts/stabilize_landmarks.py'
+      - 'scripts/finish_accessibility.py'
 permissions:
   contents: write
 concurrency:
@@ -37,6 +38,7 @@ jobs:
           python3 scripts/prepare_reader_site.py navigation-checks
           python3 scripts/finish_readability.py
           python3 scripts/stabilize_landmarks.py
+          python3 scripts/finish_accessibility.py
       - name: Build complete candidate and validate evidence
         env:
           CTD_READER_REPORT: /tmp/reader-final/preservation.json
@@ -63,6 +65,8 @@ jobs:
           node scripts/audit_20261018_browser.cjs
           node scripts/audit_legacy_deeplinks.cjs
           CTD_CITY_TEST_BASE=http://127.0.0.1:8123/ node scripts/audit_city_namespace.cjs
+          node scripts/audit_ia_b2.cjs
+          node scripts/deep_audit_20261011.js
       - name: Review exact files and verify reproducible data package
         env:
           CTD_READER_REPORT: /tmp/reader-final/preservation.json
@@ -102,6 +106,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: reader-final-qa
-          path: /tmp/reader-final/
+          path: |
+            /tmp/reader-final/
+            audit-ia-b2/report.json
+            audit-independent-20261011.json
           retention-days: 7
           if-no-files-found: warn
