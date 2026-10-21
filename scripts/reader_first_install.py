@@ -28,19 +28,27 @@ old = "  d.documentElement.dataset.readerOriginalIds = String(originalCount);\n 
 new = r'''  d.body.dataset.readerOriginalIds = String(originalCount);
   d.body.dataset.readerFirst = '1';
   addAssets(d, prefix);
-  // Keep the original language, canonical, hreflang and structured metadata
-  // exactly as emitted by their own generator. Only our stylesheet is added.
+  // Keep language, canonical, hreflang and structured metadata byte-for-byte.
+  // Preserve the original Python text-entity convention without changing text.
   let head = raw.slice(0, raw.search(/<body\b/i));
   assert.ok(head.includes('</head>'), 'Independent document head missing: ' + relative);
   head = head.replace(/ data-reader-(?:first|original-ids)="[^"]*"/g, '');
   head = head.replace(/<link\b(?=[^>]*data-reader-asset="reader-first\.css")[^>]*>\s*/g, '');
   const style = d.querySelector('link[data-reader-asset="reader-first.css"]');
   head = head.replace('</head>', style.outerHTML + '</head>');
-  fs.writeFileSync(file, head + d.body.outerHTML + '\n</html>\n');
+  const {serializeBody} = require('./reader_first_serialization.cjs');
+  fs.writeFileSync(file, head + serializeBody(d.body) + '\n</html>\n');
   report.independent.push({file: relative, lang, area, retainedExistingIds: originalCount});'''
 if old in text:
     text = text.replace(old, new)
+# Also support a worktree already bootstrapped by the previous installer.
+old_writer = "  fs.writeFileSync(file, head + d.body.outerHTML + '\\n</html>\\n');"
+if old_writer in text:
+    text = text.replace(old_writer, "  const {serializeBody} = require('./reader_first_serialization.cjs');\n  fs.writeFileSync(file, head + serializeBody(d.body) + '\\n</html>\\n');")
+if "serializeBody(d.body)" not in text:
+    raise SystemExit('Independent reader serializer insertion point is missing')
 reader.write_text(text, encoding='utf-8')
+subprocess.run(['node', str(ROOT / 'scripts' / 'reader_first_serialization.cjs')], cwd=ROOT, check=True)
 
 runtime = ROOT / 'assets' / 'reader-first.js'
 text = runtime.read_text(encoding='utf-8')
@@ -73,6 +81,16 @@ if guard not in text:
         raise SystemExit('Expected exactly one legacy TOC renderer')
     app.write_text(updated, encoding='utf-8')
 
+# The serializer is part of the independently reviewed exact-file candidate.
+review_script = ROOT / 'scripts' / 'reader_first_review.cjs'
+if review_script.exists():
+    text = review_script.read_text(encoding='utf-8')
+    if "'scripts/reader_first_serialization.cjs'" not in text:
+        anchor = "'scripts/reader_first_browser.cjs',"
+        if text.count(anchor) != 1:
+            raise SystemExit('Review candidate serializer insertion point is missing')
+        review_script.write_text(text.replace(anchor, anchor + " 'scripts/reader_first_serialization.cjs',"), encoding='utf-8')
+
 def read(p):
     return json.loads((ROOT / p).read_text(encoding='utf-8'))
 def write(p, value):
@@ -103,7 +121,6 @@ if pub['version'] == '0.7.92':
         text = text.replace('v0.7.91', 'v0.7.92', 1)
         text = text.replace('## Current release\n\n', '## Current release\n\n**v0.7.92 · 21 October 2026**\n\nReader-first pathways across 23 chapters and four languages: preserved evidence, local contents, coherent next steps, direct research access and keyboard-aware navigation. This is an editorial/technical release, not a new research release. Independent human reader studies remain pending.\n\n## Previous release\n\n', 1)
         readme.write_text(text, encoding='utf-8')
-    review_script = ROOT / 'scripts' / 'reader_first_review.cjs'
     if review_script.exists():
         subprocess.run(['node', str(review_script), '--apply-approval'], cwd=ROOT, check=True)
 print('READER_BUILD_INTEGRATED: original anchors, archival identities and source dates retained')
