@@ -15,17 +15,44 @@ if entry not in text:
         raise SystemExit('Reader transform insertion point is missing or ambiguous')
     build.write_text(text.replace(anchor, anchor + '\n' + entry), encoding='utf-8')
 
-# Explicit boolean attributes survive Linkedom serialization and work without JS.
+# Own renderer corrections; legacy publication validators remain unchanged.
 reader = ROOT / 'scripts' / 'reader_first.cjs'
 text = reader.read_text(encoding='utf-8')
 for old, new in [("disclosure.open = true;", "disclosure.setAttribute('open', '');"),
                  ("oldNav.hidden = true;", "oldNav.setAttribute('hidden', '');"),
                  ("legacy.hidden = true;", "legacy.setAttribute('hidden', '');"),
-                 ("node(d, 'h1', L.routes[id][0], 'readerSrOnly')", "node(d, 'h2', L.routes[id][0], 'readerChapterTitle')")]:
+                 ("node(d, 'h1', L.routes[id][0], 'readerSrOnly')", "node(d, 'h2', L.routes[id][0], 'readerChapterTitle')"),
+                 ("Number(d.documentElement.dataset.readerOriginalIds || ids.length)", "Number(d.body.dataset.readerOriginalIds || d.documentElement.dataset.readerOriginalIds || ids.length)")]:
+    text = text.replace(old, new)
+old = "  d.documentElement.dataset.readerOriginalIds = String(originalCount);\n  addAssets(d, prefix); write(file, d); report.independent.push({file: relative, lang, area, retainedExistingIds: originalCount});"
+new = r'''  d.body.dataset.readerOriginalIds = String(originalCount);
+  d.body.dataset.readerFirst = '1';
+  addAssets(d, prefix);
+  // Keep the original language, canonical, hreflang and structured metadata
+  // exactly as emitted by their own generator. Only our stylesheet is added.
+  let head = raw.slice(0, raw.search(/<body\b/i));
+  assert.ok(head.includes('</head>'), 'Independent document head missing: ' + relative);
+  head = head.replace(/ data-reader-(?:first|original-ids)="[^"]*"/g, '');
+  head = head.replace(/<link\b(?=[^>]*data-reader-asset="reader-first\.css")[^>]*>\s*/g, '');
+  const style = d.querySelector('link[data-reader-asset="reader-first.css"]');
+  head = head.replace('</head>', style.outerHTML + '</head>');
+  fs.writeFileSync(file, head + d.body.outerHTML + '\n</html>\n');
+  report.independent.push({file: relative, lang, area, retainedExistingIds: originalCount});'''
+if old in text:
     text = text.replace(old, new)
 reader.write_text(text, encoding='utf-8')
+
+runtime = ROOT / 'assets' / 'reader-first.js'
+text = runtime.read_text(encoding='utf-8')
+old = "  if (!root.hasAttribute('data-reader-first')) return;"
+new = "  if (!root.hasAttribute('data-reader-first') && !document.body.hasAttribute('data-reader-first')) return;\n  root.dataset.readerFirst = '1';"
+text = text.replace(old, new)
+runtime.write_text(text, encoding='utf-8')
+
 css = ROOT / 'assets' / 'reader-first.css'
 text = css.read_text(encoding='utf-8')
+text = text.replace('html[data-reader-first] { --reader-fg:', 'html[data-reader-first], body[data-reader-first] { --reader-fg:')
+text = text.replace('html[data-reader-first][data-theme="dark"] { --reader-fg:', 'html[data-reader-first][data-theme="dark"], html[data-theme="dark"] body[data-reader-first] { --reader-fg:')
 marker = '/* Independent pages retain their existing breadcrumb, not a duplicate. */'
 if marker not in text:
     text += '\n' + marker + '\n.readerToc{display:block}\nbody:has(.ctdB2Trail) .readerArticleTrail{display:none}\n'
