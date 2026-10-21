@@ -1,0 +1,124 @@
+diff --git a/.github/workflows/rebuild.yml b/.github/workflows/rebuild.yml
+index 98967cb..f4d007e 100644
+--- a/.github/workflows/rebuild.yml
++++ b/.github/workflows/rebuild.yml
+@@ -18,6 +18,7 @@ on:
+       - 'data/cultural_*.json'
+       - 'data/audience_editorial.json'
+       - 'data/economics_reading_order.json'
++      - 'data/reader_pathways.json'
+       - 'data/independent_review_materials.json'
+       - 'data/cultural_blind_review_v2.csv'
+       - 'data/tld_cultural_editorial.json'
+diff --git a/scripts/audit_20261018_browser.cjs b/scripts/audit_20261018_browser.cjs
+index fee69d4..90ea1f9 100644
+--- a/scripts/audit_20261018_browser.cjs
++++ b/scripts/audit_20261018_browser.cjs
+@@ -97,15 +97,16 @@ async function downloadCSV(page,requests){
+     assert.deepEqual(tocIdentity.duplicates,[],'TOC must not create duplicate IDs');
+     assert.deepEqual(tocIdentity.after,tocIdentity.before,'Repeated TOC rendering must preserve every existing ID');
+     scenario.checks.push('unique and stable IDs after repeated TOC rendering');
+-    assert.deepEqual(await page.locator('.iaHomeJumpList a').evaluateAll(links=>links.map(link=>link.dataset.openSection)),paths,'Home must expose all six journeys in navigation order');
++    assert.deepEqual(await page.locator('.iaHomeJumpList a').evaluateAll(links=>links.map(link=>link.dataset.openSection)),['overview','explore','research'],'Home must offer three direct reader intentions');
++    assert.deepEqual(await page.locator('.iaPrimaryLink').evaluateAll(links=>links.map(link=>link.dataset.b2Area)),paths,'All six journeys remain in primary navigation order');
+     for(const area of paths){
+-     await click(page,page.locator('.iaHomeJumpList a[data-open-section="'+area+'"]'));
++     await click(page,page.locator('.iaPrimaryLink[data-b2-area="'+area+'"]'));
+      await page.locator('#'+area+'.section.active').waitFor({state:'visible'});
+      assert.equal(await page.locator('.iaPrimaryLink[aria-current="location"]').getAttribute('data-b2-area'),area,'Home entry activates wrong primary area');
+      await click(page,page.locator('.brand'));
+      await page.locator('#overview.section.active').waitFor({state:'visible'});
+     }
+-    scenario.checks.push('six actionable Home journeys');
++    scenario.checks.push('three distinct Home intentions and six actionable primary journeys');
+ 
+     await goto(page,language,'?tab=lugano');
+     assert.equal(await page.locator('#lugano > .authorDisclosure').count(),1,'Author role disclosure must appear once');
+diff --git a/scripts/audit_ia_b2.cjs b/scripts/audit_ia_b2.cjs
+index 8816ee7..db8b239 100644
+--- a/scripts/audit_ia_b2.cjs
++++ b/scripts/audit_ia_b2.cjs
+@@ -48,12 +48,16 @@ async function checkAxe(page,label) {
+     assert.ok(firstViewport.navTop<240 && firstViewport.navBottom<365,"task-first navigation is buried on first screen: "+JSON.stringify(firstViewport));
+     assert.ok(firstViewport.explanationTop<700,"the project purpose is buried below first screen: "+JSON.stringify(firstViewport));
+ 
+-    assert.equal(await page.locator(".iaHomeJumpList a").count(),6,"six Home task entries");
++    assert.equal(await page.locator(".iaHomeJumpList a").count(),3,"three distinct Home entry intentions");
+     const homeDestinations=await page.locator(".iaHomeJumpList a").evaluateAll(links=>links.map(link=>({
+       section:link.getAttribute("data-open-section"),href:link.getAttribute("href")
+     })));
+-    assert.deepEqual(homeDestinations,hubs.map(([section])=>({section,href:"#"+section})),
+-      "Home must link to all six primary areas in navigation order");
++    assert.deepEqual(homeDestinations,[
++      {section:"overview",href:"?tab=overview#three-minute-guide"},
++      {section:"explore",href:"?tab=explore"},
++      {section:"research",href:"?tab=research#research-citation-guide"}
++    ],"Home must provide direct routes to understand, explore and verify");
++    assert.deepEqual(await page.locator(".iaPrimaryLink").evaluateAll(links=>links.map(a=>a.dataset.b2Area)),hubs.map(([section])=>section),"All six primary areas remain in navigation order");
+     assert.equal(await page.locator(".iaLegacyNavDisclosure[open]").count(),0,"original nav should begin folded");
+     assert.ok((await page.locator('.hero h1').innerText()).includes("Connecting the Dots"),"project purpose not visible on Home");
+     assert.equal(await page.locator(".audienceDiscovery:visible").count(),3,"three source-backed discovery paths");
+--- a/assets/reader.css
++++ b/assets/reader.css
+@@ -42,3 +42,14 @@
+ @media print{.readerTrail,.readerOutline,.readerNext,.readerIndex,.readerIndexTrigger{display:none!important}}
+ 
+ .topbar .control{min-height:44px}.topbar #themeBtn{min-width:44px}
++
++/* Tables remain scrollable with keyboard; source chips meet target spacing. */
++#timeline .tableWrap[tabindex],#timeline .tldTable[tabindex]{max-width:100%;overflow-x:auto}
++#timeline .tableWrap:focus-visible,#timeline .tldTable:focus-visible{outline:3px solid var(--accent-text,#0068d7);outline-offset:3px}
++#timeline .tldSources{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
++#timeline .tldSources a{display:inline-flex;align-items:center;min-height:32px;padding:5px 0;line-height:1.5;max-width:100%;overflow-wrap:anywhere}
++/* Allow long words and identifiers to reflow when readers enlarge the text. */
++#how,#research{overflow-wrap:anywhere}
++#how .panel,#research .panel,#how .readerUtilities a,#research .readerUtilities a{min-width:0;max-width:100%}
++#research .doiHero a{min-width:0;max-width:100%}
++@media(max-width:680px){#timeline .tldSources a{min-height:44px}}
+--- a/scripts/reconcile_reader_first.cjs
++++ b/scripts/reconcile_reader_first.cjs
+@@ -83,6 +83,16 @@
+  const [cityIntro,cityHistory]=[...cityGrid.children],cityBlocks=[...city.children];
+  cityGrid.replaceWith(cityIntro);city.append(cityBlocks[4],cityBlocks[5],cityBlocks[3],cityHistory,cityBlocks[1],cityBlocks[2]);
+  city.dataset.readerOrder='intro,governance,outcomes,helsinki,history,2026,prospects';
++ // Every horizontal table region is reachable by keyboard, including tables
++ // inside collapsed analytical details. Labels reuse the existing local text.
++ let tableNumber=0;
++ for(const box of document.querySelectorAll('#timeline .tableWrap,#timeline .tldTable')){
++  tableNumber++;
++  box.setAttribute('tabindex','0');box.setAttribute('role','region');
++  const caption=box.querySelector('caption')?.textContent.trim();
++  const heading=box.closest('section,article,.panel')?.querySelector('h2,h3')?.textContent.trim();
++  box.setAttribute('aria-label',caption||((heading||title('timeline'))+' ('+tableNumber+')'));
++ }
+  // Stable IDs are assigned before new navigation is inserted, never derived
+  // from translated wording. Existing inbound links remain unchanged.
+  for(const section of sections){let count=0;for(const h of section.querySelectorAll('h2,h3')){count++;if(!h.id)h.id='reader-'+section.id+'-heading-'+count;}}
+--- a/scripts/audit_reader_first.cjs
++++ b/scripts/audit_reader_first.cjs
+@@ -57,6 +57,11 @@
+    }catch(e){row.error=e.message;report.issues.push(row);try{await page.screenshot({path:path.join(out,lang+'-'+width+'-'+id+'-failure.png')});}catch{}}
+    report.scenarios.push(row);console.log('READER_BROWSER '+JSON.stringify(row));
+   }
++  // Review the actual reading exits and complete index, not just page tops.
++  if(lang==='it'){
++   await choose(page,'social');await page.locator('#social > .readerNext').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,'it-'+width+'-reading-exits.png')});
++   await page.locator('.readerIndexTrigger').click();await page.screenshot({path:path.join(out,'it-'+width+'-complete-index.png')});
++  }
+   // Three entry intentions, the novice guide and direct citation flow.
+   await choose(page,'overview');await page.locator('.readerIntents [data-open-section="overview"]').click();
+   assert.equal(await page.locator('#three-minute-guide').evaluate(n=>n.open),true);
+@@ -86,7 +91,12 @@
+   const context=await browser.newContext({viewport:{width:320,height:900},reducedMotion:'reduce'}),page=await context.newPage();
+   for(const tab of ['overview','ia-stories','how','cities','research']){
+    try{await load(page,base+'it/?tab='+tab);await page.addStyleTag({content:'html{font-size:200%!important}'});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),'320px / 200% text reflow');report.scenarios.push({reflow:tab,width:320,textSize:'200%',passed:true});}
+-   catch(e){report.issues.push({reflow:tab,error:e.message});}
++   catch(e){
++    const overflow=await page.evaluate(()=>({viewport:innerWidth,scroll:document.documentElement.scrollWidth,elements:[...document.querySelectorAll('body *')].filter(n=>{const r=n.getBoundingClientRect();return r.width>0&&r.height>0&&(r.right>innerWidth+2||r.left< -2)&&getComputedStyle(n).position!=='fixed'&&!n.closest('[role="region"]')}).slice(0,25).map(n=>{const r=n.getBoundingClientRect(),s=getComputedStyle(n);return {tag:n.tagName,id:n.id,classes:n.className,text:n.textContent.trim().slice(0,90),left:r.left,right:r.right,width:r.width,display:s.display,minWidth:s.minWidth,whiteSpace:s.whiteSpace,fontSize:s.fontSize}})}));
++    report.issues.push({reflow:tab,error:e.message,overflow});
++    await page.screenshot({path:path.join(out,'reflow-'+tab+'-failure.png'),fullPage:false});
++   }
++   await page.screenshot({path:path.join(out,'reflow-'+tab+'.png'),fullPage:false});
+   }
+   await context.close();
+   const noJs=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:900}}),np=await noJs.newPage();
