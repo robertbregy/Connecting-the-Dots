@@ -1,0 +1,12 @@
+/* The reader can choose a narrative continuation or evidence at each chapter's end. */
+.readerPaths{box-sizing:border-box;margin:clamp(24px,5vw,52px) 0 18px;padding:clamp(18px,3vw,28px);border:1px solid var(--border,#b9c7d5);border-radius:16px;background:var(--surface,#f5f7fa);color:var(--text,#142d40)}
+.readerPathsHeader h2{font-size:clamp(1.2rem,2.2vw,1.55rem);line-height:1.25;margin:0 0 6px}
+.readerPathsHeader p{font-size:1rem;line-height:1.6;margin:0 0 18px;max-width:68ch}
+.readerPathsLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.readerPathsLink{display:flex;flex-direction:column;justify-content:center;gap:6px;min-height:76px;padding:15px 18px;border:1px solid var(--border,#b9c7d5);border-radius:12px;color:inherit;background:var(--card-bg,var(--surface,#fff));text-decoration:none;overflow-wrap:anywhere;transition:border-color .15s ease,transform .15s ease}
+.readerPathsLink:hover{border-color:var(--accent,#2a74a9);transform:translateY(-1px)}
+.readerPathsLink:focus-visible{outline:3px solid var(--accent,#2a74a9);outline-offset:3px}
+.readerPathsLabel{font-size:.82rem;letter-spacing:.035em;text-transform:uppercase;opacity:.78}
+.readerPathsLink strong{font-size:1.08rem;line-height:1.35}
+@media(max-width:620px){.readerPathsLinks{grid-template-columns:1fr}.readerPathsLink{min-height:68px}}
+@media(prefers-reduced-motion:reduce){.readerPathsLink{transition:none}.readerPathsLink:hover{transform:none}}
