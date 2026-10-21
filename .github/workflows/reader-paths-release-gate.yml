@@ -28,6 +28,49 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Apply exact reviewed legacy-fragment repair
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json
+          p=Path('scripts/render_reader_paths.cjs');s=p.read_text()
+          before='505ce4d8be5d335700729daacf8c2c66b06226eea36ddc5377999ac4cb13c870'
+          after='5839bf09a609668d882c7564a5a4a2852f85c6756a8d2e5c6be11a08c40bb055'
+          digest=hashlib.sha256(s.encode()).hexdigest()
+          assert digest in [before,after], 'Unreviewed renderer version'
+          if digest==before:
+              s=s.replace("  const oldIds = [...doc.querySelectorAll('[id]')].map(n => n.id);", """  // Earlier generators replaced some old heading nodes but left published
+            // fragments in their indexes. Restore those fragments on the same content.
+            for (const [id, selector] of [
+              ['social-part-2', '#social h2:not([id])'],
+              ['contention-part-1', '#contention h2:not([id])'],
+              ['disputes-part-2', '#disputes .crossRoundDisclosure > summary'],
+              ['strange-part-2', '#strange .crossRoundDisclosure > summary']
+            ]) {
+              if (!doc.getElementById(id)) {
+                const target = doc.querySelector(selector);
+                assert.ok(target && !target.id, 'Missing legacy fragment target ' + id);
+                target.id = id;
+              }
+            }
+            const oldIds = [...doc.querySelectorAll('[id]')].map(n => n.id);""")
+              s=s.replace("if (a) { unused.delete(a); a.dataset.openSection=sec.id; a.dataset.openAnchor=h.id; nav.append(a); }", "if (a) { unused.delete(a); a.textContent=h.textContent.trim(); a.removeAttribute('data-i18n'); a.dataset.openSection=sec.id; a.dataset.openAnchor=h.id; nav.append(a); }")
+              s=s.replace("  for (const a of unused) nav.append(a);", """  for (const a of unused) {
+              const id = a.getAttribute('href').split('#')[1], target=doc.getElementById(id);
+              assert.ok(target && sec.contains(target), 'Unresolved complete-index link ' + id);
+              a.dataset.openSection=sec.id; a.dataset.openAnchor=id;
+              if (target.matches('h2,summary')) { a.textContent=target.textContent.trim(); a.removeAttribute('data-i18n'); }
+              nav.append(a);
+            }""")
+              assert hashlib.sha256(s.encode()).hexdigest()==after,'Repair differs from local review'
+              p.write_text(s)
+          p=Path('docs/editorial-review-2026-10-21-v0.7.92.json');r=json.loads(p.read_text())
+          entry=r['files']['scripts/render_reader_paths.cjs']
+          assert entry['sha256'] in [before,after]
+          entry['sha256']=after
+          p.write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n')
+          print('FOUR_LEGACY_FRAGMENTS_RESTORED_EXACTLY')
+          PY
       - name: Dependencies
         run: |
           npm ci
@@ -72,7 +115,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          git add -- index.html en it de fr applications behind-the-round inside-the-round explorer research data downloads sitemap.xml src/index.web.html package.json package-lock.json CITATION.cff
+          git add -- scripts/render_reader_paths.cjs docs/editorial-review-2026-10-21-v0.7.92.json index.html en it de fr applications behind-the-round inside-the-round explorer research data downloads sitemap.xml src/index.web.html package.json package-lock.json CITATION.cff
           python3 - <<'PY'
           import os,json,base64,subprocess,urllib.request,urllib.error
           from pathlib import Path
