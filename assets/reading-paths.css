@@ -44,3 +44,9 @@
 @media(prefers-reduced-motion:reduce){
  .readerBreadcrumb a,.readerOutline a,.readerNext a,.readerResearchShortcut{scroll-behavior:auto;transition:none!important}
 }
+
+/* Intrinsic-width safety: long scientific and language-specific labels may shrink
+   and break rather than stretching a chapter wider than a phone. */
+.readerBreadcrumb>a,.readerBreadcrumb>span{min-width:0;max-width:100%;overflow-wrap:anywhere}
+.readerOutlineLinks a,.readerNextLinks a{min-width:0;max-width:100%;overflow-wrap:anywhere}
+.section:not(#overview)>.sectionToc .tocLink{flex:0 1 auto;min-width:0;max-width:100%;overflow-wrap:anywhere;word-break:normal}
