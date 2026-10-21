@@ -24,6 +24,15 @@ for old, new in [("disclosure.open = true;", "disclosure.setAttribute('open', ''
                  ("node(d, 'h1', L.routes[id][0], 'readerSrOnly')", "node(d, 'h2', L.routes[id][0], 'readerChapterTitle')"),
                  ("Number(d.documentElement.dataset.readerOriginalIds || ids.length)", "Number(d.body.dataset.readerOriginalIds || d.documentElement.dataset.readerOriginalIds || ids.length)")]:
     text = text.replace(old, new)
+# Persistent independent documents must establish their anchor namespace before
+# building a contents list. Some original generators replace individual sections
+# on each build; late assignment changed those headings' IDs on the second run.
+marker = '  // Establish the stable main ID before assigning any contents anchors.'
+if marker not in text:
+    anchor = '  const index = toc(d, main, lang, true); if (index) {'
+    if text.count(anchor) != 1:
+        raise SystemExit('Independent contents insertion point is missing or ambiguous')
+    text = text.replace(anchor, marker + "\n  if (!main.id) main.id = 'reader-main';\n" + anchor)
 old = "  d.documentElement.dataset.readerOriginalIds = String(originalCount);\n  addAssets(d, prefix); write(file, d); report.independent.push({file: relative, lang, area, retainedExistingIds: originalCount});"
 new = r'''  d.body.dataset.readerOriginalIds = String(originalCount);
   d.body.dataset.readerFirst = '1';
