@@ -2,9 +2,7 @@ name: Reader-first publication checks
 on:
   push:
     branches: ['feat/reader-first-20261021']
-    paths: ['.github/workflows/reader-first.yml', 'scripts/**', 'assets/**', 'data/reader_first.json', 'publication.json']
-  pull_request:
-    paths: ['scripts/reader_first*', 'assets/reader-first*', 'data/reader_first.json']
+    paths: ['.github/workflows/reader-first.yml', 'scripts/**', 'assets/**', 'data/reader_first.json', 'publication.json', 'docs/reader-first-approval.json']
 permissions:
   contents: write
 concurrency:
@@ -26,50 +24,79 @@ jobs:
         with:
           python-version: '3.12'
       - run: npm ci
-      - name: Install build integration
+      - name: Integrate reviewed source changes
         run: |
-          if test -f scripts/reader_first_install.py; then python3 scripts/reader_first_install.py; fi
-      - name: Build and existing static checks
+          python3 scripts/reader_first_install.py
+          rm -f docs/reader-first-structure.json docs/reader-first-verification.json
+      - name: Build publication
+        id: build
+        continue-on-error: true
+        run: python3 build.py
+      - name: Existing static regression tests
+        id: static
+        continue-on-error: true
         run: |
-          python3 build.py
           node scripts/validate_multilingual.js
           CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
-      - name: Navigation inventory
-        run: |
-          node - <<'JS'
-          const fs=require('fs'),{parseHTML}=require('linkedom');
-          const {document:d}=parseHTML(fs.readFileSync('it/index.html','utf8'));
-          const sections=[...d.querySelectorAll('main > section.section, main > section.iaLanding')].map(n=>({id:n.id,cls:n.className,headings:[...n.querySelectorAll('h2,h3')].slice(0,18).map(h=>({id:h.id,parent:h.parentElement.id,tag:h.tagName,text:h.textContent.trim().slice(0,125)})),navigation:[...n.querySelectorAll('.iaCard,.iaHubCard,.iaPathCard,.iaReadingPath a')].map(a=>({href:a.getAttribute('href'),text:a.textContent.trim().slice(0,150)}))}));
-          const inventory={sections,iaNodes:[...d.querySelectorAll('[id^="ia-"]')].map(n=>({id:n.id,tag:n.tagName,html:n.outerHTML.slice(0,9000)}))};
-          fs.writeFileSync('docs/reader-first-inventory.json',JSON.stringify(inventory,null,2)+'\n');
-          console.log('READER_INVENTORY',JSON.stringify(inventory));
-          const app=fs.readFileSync('assets/app.js','utf8');
-          for(const key of ['function openSection','function showSection','function navigateTo','function activateTab','iaPrimaryLink','data-open-section','iaLegacyNavDisclosure']){const i=app.indexOf(key);if(i>=0)console.log('RUNTIME_CONTEXT',key,app.slice(Math.max(0,i-150),i+3200))}
-          JS
       - name: Browser regressions and accessibility
+        id: browser
+        continue-on-error: true
         run: |
-          if test -f scripts/reader_first_browser.cjs; then
-            npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
-            npx playwright install --with-deps chromium
-            node scripts/reader_first_browser.cjs
-          fi
+          test -f docs/reader-first-structure.json
+          npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+          node scripts/reader_first_browser.cjs
+      - name: Prepare exact editorial review candidate
+        id: candidate
+        if: always()
+        continue-on-error: true
+        run: |
+          test -f docs/reader-first-structure.json
+          node scripts/reader_first_review.cjs
+      - name: Enforce independent exact-file editorial approval
+        id: parity
+        if: always()
+        continue-on-error: true
+        run: node scripts/verify_ia_b2_parity.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: reader-first-verification
           path: |
             docs/reader-first*.json
+            docs/reader-first*.b64
             /tmp/reader-first-qa/
           if-no-files-found: ignore
-      - name: Commit verified feature-branch artifacts
-        if: github.event_name == 'push'
+      - name: Save review evidence, promote generated files only after all gates pass
+        if: always() && github.event_name == 'push'
+        env:
+          BUILD_OK: ${{ steps.build.outcome == 'success' }}
+          STATIC_OK: ${{ steps.static.outcome == 'success' }}
+          BROWSER_OK: ${{ steps.browser.outcome == 'success' }}
+          REVIEW_OK: ${{ steps.parity.outcome == 'success' }}
+          CANDIDATE_OK: ${{ steps.candidate.outcome == 'success' }}
         run: |
           git fetch origin "$GITHUB_REF_NAME"
-          test "$(git rev-parse FETCH_HEAD)" = "$(git rev-parse HEAD)" || { echo 'Branch advanced; no generated files committed.'; exit 0; }
+          test "$(git rev-parse FETCH_HEAD)" = "$(git rev-parse HEAD)" || { echo 'Branch advanced; no files committed.'; exit 0; }
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A
+          if test "$BUILD_OK:$STATIC_OK:$BROWSER_OK:$REVIEW_OK:$CANDIDATE_OK" = 'true:true:true:true:true'; then
+            git add -A
+            message='Verified reader-first publication artifacts [reader artifacts] [skip build]'
+          else
+            git add -- 'docs/reader-first-*'
+            message='Reader-first review evidence; publication not approved [reader artifacts] [skip build]'
+          fi
           if ! git diff --cached --quiet; then
-            git commit -m 'Verified reader-first artifacts [reader artifacts] [skip build]'
+            git commit -m "$message"
             git push origin "HEAD:$GITHUB_REF_NAME"
           fi
+      - name: Fail closed on any unmet publication gate
+        if: always()
+        env:
+          BUILD_OK: ${{ steps.build.outcome == 'success' }}
+          STATIC_OK: ${{ steps.static.outcome == 'success' }}
+          BROWSER_OK: ${{ steps.browser.outcome == 'success' }}
+          REVIEW_OK: ${{ steps.parity.outcome == 'success' }}
+          CANDIDATE_OK: ${{ steps.candidate.outcome == 'success' }}
+        run: test "$BUILD_OK:$STATIC_OK:$BROWSER_OK:$REVIEW_OK:$CANDIDATE_OK" = 'true:true:true:true:true'
