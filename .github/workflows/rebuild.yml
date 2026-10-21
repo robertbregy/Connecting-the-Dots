@@ -18,6 +18,7 @@ on:
       - 'data/cultural_*.json'
       - 'data/audience_editorial.json'
       - 'data/economics_reading_order.json'
+      - 'data/reader_pathways.json'
       - 'data/independent_review_materials.json'
       - 'data/cultural_blind_review_v2.csv'
       - 'data/tld_cultural_editorial.json'
