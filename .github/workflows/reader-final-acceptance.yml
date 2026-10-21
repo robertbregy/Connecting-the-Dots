@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/reader-final-acceptance.yml'
       - 'scripts/finish_readability.py'
+      - 'scripts/stabilize_landmarks.py'
 permissions:
   contents: write
 concurrency:
@@ -35,6 +36,7 @@ jobs:
           fi
           python3 scripts/prepare_reader_site.py navigation-checks
           python3 scripts/finish_readability.py
+          python3 scripts/stabilize_landmarks.py
       - name: Build complete candidate and validate evidence
         env:
           CTD_READER_REPORT: /tmp/reader-final/preservation.json
