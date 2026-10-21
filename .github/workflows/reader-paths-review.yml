@@ -27,7 +27,9 @@ jobs:
         with:
           node-version: '22'
           cache: npm
-      - run: npm ci
+      - run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
       - name: Export reproducible development snapshot
         run: |
           mkdir -p /tmp/ctd-reader-review
@@ -44,7 +46,6 @@ jobs:
       - name: Reader-path regression review
         run: |
           if test -f scripts/reader_paths_review.cjs; then
-            npm install --no-save --package-lock=false playwright@1.55.1 @axe-core/playwright@4.10.2
             npx playwright install --with-deps chromium
             node scripts/reader_paths_review.cjs
           fi

@@ -1,0 +1,1179 @@
+{
+  "schemaVersion": 1,
+  "revision": "reader-paths-2",
+  "reviewedOn": "2026-10-21",
+  "scope": "Editorial presentation only; no scientific observations, statuses or records changed.",
+  "areas": {
+    "understand": [
+      "overview",
+      "how",
+      "beyond"
+    ],
+    "explore": [
+      "explore",
+      "timeline",
+      "geography",
+      "governance-access",
+      "governance-sanctions"
+    ],
+    "stories": [
+      "cities",
+      "social",
+      "economics",
+      "strange"
+    ],
+    "outcomes": [
+      "contention",
+      "disputes",
+      "refusals",
+      "cemetery"
+    ],
+    "round": [
+      "reveal",
+      "inside-round",
+      "behind-round",
+      "lugano"
+    ],
+    "research": [
+      "research",
+      "paper",
+      "resources",
+      "sources"
+    ]
+  },
+  "orders": {
+    "timeline": [
+      0,
+      4,
+      1,
+      3,
+      2
+    ],
+    "how": [
+      0,
+      3,
+      4,
+      5,
+      6,
+      12,
+      7,
+      8,
+      9,
+      10,
+      11,
+      1,
+      2,
+      13,
+      14,
+      15,
+      16
+    ],
+    "cities": [
+      0,
+      4,
+      5,
+      2,
+      1,
+      3
+    ],
+    "social": [
+      0,
+      6,
+      5,
+      1,
+      2,
+      4,
+      3
+    ],
+    "contention": [
+      0,
+      5,
+      4,
+      2,
+      3,
+      1
+    ],
+    "refusals": [
+      0,
+      3,
+      5,
+      4,
+      2,
+      1
+    ],
+    "disputes": [
+      0,
+      5,
+      4,
+      1,
+      3,
+      2
+    ],
+    "strange": [
+      0,
+      2,
+      3,
+      1,
+      4
+    ],
+    "reveal": [
+      2,
+      0,
+      1,
+      3,
+      5,
+      4
+    ],
+    "research": [
+      1,
+      0,
+      2,
+      3,
+      5,
+      4,
+      6,
+      7
+    ],
+    "resources": [
+      2,
+      0,
+      1
+    ],
+    "sources": [
+      0,
+      2,
+      3,
+      1,
+      4,
+      6,
+      5
+    ]
+  },
+  "stops": {
+    "timeline": [
+      4,
+      1,
+      3,
+      2
+    ],
+    "how": [
+      0,
+      5,
+      8,
+      11,
+      14
+    ],
+    "cities": [
+      0,
+      4,
+      5,
+      1,
+      3
+    ],
+    "social": [
+      6,
+      5,
+      1,
+      4
+    ],
+    "contention": [
+      5,
+      4,
+      2,
+      3
+    ],
+    "refusals": [
+      3,
+      5,
+      4,
+      2
+    ],
+    "disputes": [
+      5,
+      4,
+      1,
+      3
+    ],
+    "strange": [
+      2,
+      3,
+      1
+    ],
+    "reveal": [
+      0,
+      3,
+      5,
+      4
+    ],
+    "research": [
+      0,
+      2,
+      3,
+      5,
+      6
+    ],
+    "resources": [
+      2,
+      0,
+      1
+    ],
+    "sources": [
+      2,
+      3,
+      1,
+      4,
+      5
+    ],
+    "beyond": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "geography": [
+      1,
+      6,
+      7,
+      9,
+      10
+    ],
+    "lugano": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "inside-round": [
+      1,
+      2
+    ],
+    "behind-round": [
+      1,
+      2
+    ]
+  },
+  "next": {
+    "overview": [
+      [
+        "how",
+        "how-part-1"
+      ],
+      [
+        "explore",
+        "explore"
+      ]
+    ],
+    "how": [
+      [
+        "beyond",
+        "beyond-part-1"
+      ],
+      [
+        "sources",
+        "sources-part-4"
+      ]
+    ],
+    "timeline": [
+      [
+        "social",
+        "social-part-1"
+      ],
+      [
+        "explore",
+        "explore"
+      ]
+    ],
+    "explore": [
+      [
+        "timeline",
+        "cultural-epoch-map"
+      ],
+      [
+        "explore",
+        "aps-native"
+      ]
+    ],
+    "beyond": [
+      [
+        "cities",
+        "city-namespace-governance"
+      ],
+      [
+        "how",
+        "how-part-9"
+      ]
+    ],
+    "cities": [
+      [
+        "lugano",
+        "lugano-status-sources"
+      ],
+      [
+        "economics",
+        "economics-value"
+      ]
+    ],
+    "geography": [
+      [
+        "governance-access",
+        "governance-access"
+      ],
+      [
+        "sources",
+        "sources-part-4"
+      ]
+    ],
+    "economics": [
+      [
+        "social",
+        "social-part-1"
+      ],
+      [
+        "research",
+        "research-citation-guide"
+      ]
+    ],
+    "cemetery": [
+      [
+        "refusals",
+        "refusals"
+      ],
+      [
+        "cities",
+        "city-namespace-measures"
+      ]
+    ],
+    "social": [
+      [
+        "cities",
+        "city-namespace-governance"
+      ],
+      [
+        "timeline",
+        "tld-cultural-patterns"
+      ]
+    ],
+    "contention": [
+      [
+        "disputes",
+        "disputes-part-1"
+      ],
+      [
+        "explore",
+        "aps-native"
+      ]
+    ],
+    "refusals": [
+      [
+        "cemetery",
+        "gtld-cemetery"
+      ],
+      [
+        "timeline",
+        "timeline"
+      ]
+    ],
+    "disputes": [
+      [
+        "refusals",
+        "refusals"
+      ],
+      [
+        "sources",
+        "sources-part-4"
+      ]
+    ],
+    "strange": [
+      [
+        "timeline",
+        "cultural-epoch-map"
+      ],
+      [
+        "beyond",
+        "beyond-part-4"
+      ]
+    ],
+    "reveal": [
+      [
+        "inside-round",
+        "insideRoundTimelineTitle"
+      ],
+      [
+        "explore",
+        "aps-native"
+      ]
+    ],
+    "inside-round": [
+      [
+        "behind-round",
+        "behindRoundTitle"
+      ],
+      [
+        "sources",
+        "sources-part-4"
+      ]
+    ],
+    "behind-round": [
+      [
+        "reveal",
+        "reveal"
+      ],
+      [
+        "research",
+        "research-citation-guide"
+      ]
+    ],
+    "lugano": [
+      [
+        "cities",
+        "city-namespace-measures"
+      ],
+      [
+        "sources",
+        "sources-part-1"
+      ]
+    ],
+    "research": [
+      [
+        "paper",
+        "paper"
+      ],
+      [
+        "resources",
+        "resources"
+      ]
+    ],
+    "paper": [
+      [
+        "resources",
+        "resources"
+      ],
+      [
+        "sources",
+        "sources-part-4"
+      ]
+    ],
+    "resources": [
+      [
+        "explore",
+        "explore"
+      ],
+      [
+        "sources",
+        "sources-part-4"
+      ]
+    ],
+    "sources": [
+      [
+        "research",
+        "research-citation-guide"
+      ],
+      [
+        "resources",
+        "resources"
+      ]
+    ],
+    "governance-access": [
+      [
+        "governance-sanctions",
+        "governance-sanctions"
+      ],
+      [
+        "geography",
+        "geography"
+      ]
+    ],
+    "governance-sanctions": [
+      [
+        "governance-access",
+        "governance-access"
+      ],
+      [
+        "sources",
+        "sources-part-4"
+      ]
+    ]
+  },
+  "locales": {
+    "it": {
+      "home": "Home",
+      "breadcrumb": "Ti trovi qui",
+      "guide": "Percorso di lettura",
+      "allTopics": "Tutti gli argomenti del capitolo",
+      "nextTitle": "Il prossimo punto da collegare",
+      "next": "Continua a leggere",
+      "deeper": "Verifica e approfondisci",
+      "researchEntry": "Dati e fonti",
+      "skip": "Vai al contenuto",
+      "back": "Torna al contesto",
+      "reference": "Consulta dati e fonti",
+      "atlas": "Atlante delle candidature 2026",
+      "areas": [
+        "Capire",
+        "Esplorare",
+        "Storie e questioni",
+        "Conflitti ed esiti",
+        "Round 2026",
+        "Ricerca"
+      ],
+      "labels": {
+        "timeline": [
+          "I round",
+          "Il racconto dei nomi",
+          "Il caso 2000",
+          "Dati e limiti"
+        ],
+        "how": [
+          "Indirizzo e DNS",
+          "Chi fa cosa",
+          "Un nuovo TLD",
+          "Glossario",
+          "Il caso .lugano"
+        ],
+        "cities": [
+          "Perché una città",
+          "Chi decide",
+          "Come valutarlo",
+          "Le candidature",
+          "Quando finisce"
+        ],
+        "social": [
+          "I casi",
+          "Le forme sociali",
+          "La storia",
+          "Le regole 2026"
+        ],
+        "contention": [
+          "Chi controlla un nome",
+          "Le regole",
+          "Il confronto",
+          "Che cosa cambia"
+        ],
+        "refusals": [
+          "I possibili esiti",
+          "I casi",
+          "Il 2012",
+          "Il 2026"
+        ],
+        "disputes": [
+          "Le storie",
+          "I meccanismi",
+          "I casi 2026",
+          "Lo stato del round"
+        ],
+        "strange": [
+          "Significati inattesi",
+          "Tracce della geopolitica",
+          "I round a confronto"
+        ],
+        "reveal": [
+          "I numeri e il loro ambito",
+          "Che cosa può cambiare",
+          "Il calendario pubblico",
+          "Come interpretarli"
+        ],
+        "research": [
+          "Scegli cosa citare",
+          "La citazione",
+          "Il paper",
+          "La provenienza",
+          "Le verifiche aperte"
+        ],
+        "resources": [
+          "Scegli i dati",
+          "I fatti chiave",
+          "Le domande"
+        ],
+        "sources": [
+          "Come leggere",
+          "Fonti e limiti",
+          "Criteri di successo",
+          "Le versioni",
+          "Segnala un errore"
+        ],
+        "beyond": [
+          "I casi",
+          "Il DNS invisibile",
+          "Lingue e scritture",
+          "Sistemi alternativi"
+        ],
+        "geography": [
+          "La mappa",
+          "I candidati",
+          "La concentrazione",
+          "Le istituzioni",
+          "Le risorse digitali"
+        ],
+        "lugano": [
+          "Stato e fonti",
+          "Le decisioni",
+          "Usi e risultati",
+          "Rischi e verifiche"
+        ],
+        "inside-round": [
+          "La cronologia",
+          "Il punto di osservazione"
+        ],
+        "behind-round": [
+          "Le indagini",
+          "Il caso .lugano"
+        ]
+      },
+      "leads": {
+        "timeline": "Prima i round e le storie dei nomi; poi il corpus, i confronti e i limiti dell’analisi.",
+        "how": "Parti da un indirizzo, distingui ruoli e contratti, poi segui la nascita di un nuovo dominio di primo livello.",
+        "cities": "Dal valore per una città a chi decide e come valutarlo. I numeri delle candidature vengono dopo.",
+        "social": "Parti dalle comunità e dai casi concreti; poi confronta forme di appartenenza, storia e regole.",
+        "contention": "Prima la domanda su chi controlla un nome, poi le regole e il confronto tra candidature.",
+        "refusals": "Distingui i modi in cui una candidatura può fermarsi. I casi storici aiutano a leggere il round ancora aperto.",
+        "disputes": "Prima le controversie concrete, poi i meccanismi che le affrontano e ciò che è documentato nel 2026.",
+        "strange": "Segui i significati inattesi e le tracce della geopolitica, poi confrontali con la storia dei round.",
+        "reveal": "Leggi i numeri insieme al loro ambito e alla data. Una fotografia delle candidature non è un elenco di TLD già operativi.",
+        "research": "Scegli che cosa vuoi citare, poi raggiungi il paper, i dati e le verifiche ancora aperte.",
+        "resources": "Scegli prima il corpus che ti serve: ogni download conserva il proprio ambito e riferimento temporale.",
+        "sources": "Distingui fatti, interpretazioni e proposte. Qui trovi provenienza, limiti, versioni e correzioni.",
+        "beyond": "Dai casi concreti ai servizi del DNS, alle scritture e ai sistemi di nomi alternativi.",
+        "geography": "Tieni separati candidati, operatori tecnici e istituzioni: la loro posizione non misura la stessa cosa.",
+        "lugano": "Prima lo stato documentato; poi le decisioni ancora aperte, gli usi proposti e i criteri per verificarli.",
+        "inside-round": "Segui eventi e scadenze in ordine temporale, distinguendo ciò che è accaduto da ciò che è previsto.",
+        "behind-round": "Ogni indagine parte da una domanda e torna alle fonti: osservazioni documentate, interpretazioni e questioni aperte restano distinte."
+      },
+      "names": {
+        "overview": "Inizia dal principio",
+        "how": "Come funziona Internet e il DNS",
+        "timeline": "Le candidature nella storia",
+        "explore": "Esplora i domini",
+        "beyond": "Oltre il punto",
+        "cities": "Le città su Internet",
+        "geography": "La geografia del DNS",
+        "economics": "Economia dei domini",
+        "cemetery": "Il cimitero dei gTLD",
+        "social": "La dimensione sociale",
+        "contention": "Le contese",
+        "refusals": "Esiti delle candidature",
+        "disputes": "Le controversie",
+        "strange": "Internet insolito",
+        "reveal": "Le candidature del 2026",
+        "inside-round": "La cronologia del round",
+        "behind-round": "Note dal campo",
+        "lugano": "Il caso .lugano",
+        "research": "La ricerca",
+        "paper": "Il working paper",
+        "resources": "Dati e risorse",
+        "sources": "Metodi e fonti",
+        "governance-access": "Chi controlla l’accesso a Internet?",
+        "governance-sanctions": "Sanzioni e DNS"
+      }
+    },
+    "en": {
+      "home": "Home",
+      "breadcrumb": "You are here",
+      "guide": "Reading route",
+      "allTopics": "All topics in this chapter",
+      "nextTitle": "The next dot to connect",
+      "next": "Continue reading",
+      "deeper": "Check and explore",
+      "researchEntry": "Data and sources",
+      "skip": "Skip to content",
+      "back": "Return to the context",
+      "reference": "Consult data and sources",
+      "atlas": "2026 application atlas",
+      "areas": [
+        "Understand",
+        "Explore",
+        "Stories & issues",
+        "Conflicts & outcomes",
+        "2026 round",
+        "Research"
+      ],
+      "labels": {
+        "timeline": [
+          "The rounds",
+          "The story of names",
+          "The 2000 case",
+          "Data and limits"
+        ],
+        "how": [
+          "Address and DNS",
+          "Who does what",
+          "A new TLD",
+          "Glossary",
+          "The .lugano case"
+        ],
+        "cities": [
+          "Why a city",
+          "Who decides",
+          "How to assess it",
+          "Applications",
+          "When it ends"
+        ],
+        "social": [
+          "The cases",
+          "Social models",
+          "The history",
+          "2026 rules"
+        ],
+        "contention": [
+          "Who controls a name",
+          "The rules",
+          "The comparison",
+          "What changes"
+        ],
+        "refusals": [
+          "Possible outcomes",
+          "The cases",
+          "2012",
+          "2026"
+        ],
+        "disputes": [
+          "The stories",
+          "The mechanisms",
+          "2026 cases",
+          "Round status"
+        ],
+        "strange": [
+          "Unexpected meanings",
+          "Traces of geopolitics",
+          "Comparing rounds"
+        ],
+        "reveal": [
+          "Numbers and scope",
+          "What may change",
+          "Publication calendar",
+          "Interpreting the data"
+        ],
+        "research": [
+          "Choose what to cite",
+          "The citation",
+          "The paper",
+          "Provenance",
+          "Open checks"
+        ],
+        "resources": [
+          "Choose the data",
+          "Key facts",
+          "The questions"
+        ],
+        "sources": [
+          "How to read",
+          "Sources and limits",
+          "Success criteria",
+          "Versions",
+          "Report an error"
+        ],
+        "beyond": [
+          "The cases",
+          "The invisible DNS",
+          "Languages and scripts",
+          "Alternative systems"
+        ],
+        "geography": [
+          "The map",
+          "Applicants",
+          "Concentration",
+          "Institutions",
+          "Digital resources"
+        ],
+        "lugano": [
+          "Status and sources",
+          "The decisions",
+          "Uses and outcomes",
+          "Risks and checks"
+        ],
+        "inside-round": [
+          "The timeline",
+          "The observation point"
+        ],
+        "behind-round": [
+          "The investigations",
+          "The .lugano case"
+        ]
+      },
+      "leads": {
+        "timeline": "Start with the rounds and the stories of names; then examine the corpus, comparisons and limits of the analysis.",
+        "how": "Start with an address, distinguish roles and contracts, then follow the creation of a new top-level domain.",
+        "cities": "From value for a city to who decides and how to assess it. Application counts come afterwards.",
+        "social": "Start with communities and concrete cases; then compare forms of belonging, history and rules.",
+        "contention": "First ask who controls a name, then examine the rules and compare applications.",
+        "refusals": "Distinguish the ways an application can stop. Historical cases help interpret the round still in progress.",
+        "disputes": "Start with concrete disputes, then examine the mechanisms that address them and what is documented in 2026.",
+        "strange": "Follow unexpected meanings and traces of geopolitics, then compare them with the history of the rounds.",
+        "reveal": "Read figures with their scope and date. An application snapshot is not a list of top-level domains already operating.",
+        "research": "Choose what to cite, then find the paper, data and checks that remain open.",
+        "resources": "First choose the corpus you need: each download keeps its own scope and time reference.",
+        "sources": "Distinguish facts, interpretations and proposals. Find provenance, limits, versions and corrections here.",
+        "beyond": "From concrete cases to DNS services, writing systems and alternative naming systems.",
+        "geography": "Keep applicants, technical operators and institutions separate: their locations do not measure the same thing.",
+        "lugano": "Start with the documented status; then explore open decisions, proposed uses and criteria for checking them.",
+        "inside-round": "Follow events and milestones in chronological order, distinguishing what happened from what is scheduled.",
+        "behind-round": "Each investigation starts with a question and returns to its sources: documented observations, interpretations and open questions remain distinct."
+      },
+      "names": {
+        "overview": "Start here",
+        "how": "How the Internet and DNS work",
+        "timeline": "Applications through history",
+        "explore": "Explore domains",
+        "beyond": "Beyond the dot",
+        "cities": "Cities on the Internet",
+        "geography": "DNS geography",
+        "economics": "The domain economy",
+        "cemetery": "The gTLD cemetery",
+        "social": "Social dimensions",
+        "contention": "Contention sets",
+        "refusals": "Application outcomes",
+        "disputes": "Disputes",
+        "strange": "The strange Internet",
+        "reveal": "2026 applications",
+        "inside-round": "Round timeline",
+        "behind-round": "Field notes",
+        "lugano": "The .lugano case",
+        "research": "Research",
+        "paper": "Working paper",
+        "resources": "Data and resources",
+        "sources": "Methods and sources",
+        "governance-access": "Who controls Internet access?",
+        "governance-sanctions": "Sanctions and DNS"
+      }
+    },
+    "de": {
+      "home": "Startseite",
+      "breadcrumb": "Sie sind hier",
+      "guide": "Lesepfad",
+      "allTopics": "Alle Themen dieses Kapitels",
+      "nextTitle": "Der nächste Zusammenhang",
+      "next": "Weiterlesen",
+      "deeper": "Prüfen und vertiefen",
+      "researchEntry": "Daten und Quellen",
+      "skip": "Zum Inhalt springen",
+      "back": "Zurück zum Kontext",
+      "reference": "Daten und Quellen einsehen",
+      "atlas": "Bewerbungsatlas 2026",
+      "areas": [
+        "Verstehen",
+        "Erkunden",
+        "Geschichten & Fragen",
+        "Konflikte & Ergebnisse",
+        "Runde 2026",
+        "Forschung"
+      ],
+      "labels": {
+        "timeline": [
+          "Die Runden",
+          "Geschichten der Namen",
+          "Der Fall 2000",
+          "Daten und Grenzen"
+        ],
+        "how": [
+          "Adresse und DNS",
+          "Wer macht was",
+          "Eine neue TLD",
+          "Glossar",
+          "Der Fall .lugano"
+        ],
+        "cities": [
+          "Warum eine Stadt",
+          "Wer entscheidet",
+          "Wie bewerten",
+          "Bewerbungen",
+          "Wenn es endet"
+        ],
+        "social": [
+          "Die Fälle",
+          "Soziale Modelle",
+          "Die Geschichte",
+          "Regeln 2026"
+        ],
+        "contention": [
+          "Wer einen Namen kontrolliert",
+          "Die Regeln",
+          "Der Vergleich",
+          "Was sich ändert"
+        ],
+        "refusals": [
+          "Mögliche Ergebnisse",
+          "Die Fälle",
+          "2012",
+          "2026"
+        ],
+        "disputes": [
+          "Die Geschichten",
+          "Die Mechanismen",
+          "Fälle 2026",
+          "Stand der Runde"
+        ],
+        "strange": [
+          "Unerwartete Bedeutungen",
+          "Spuren der Geopolitik",
+          "Runden im Vergleich"
+        ],
+        "reveal": [
+          "Zahlen und Bezugsrahmen",
+          "Was sich ändern kann",
+          "Veröffentlichungskalender",
+          "Daten einordnen"
+        ],
+        "research": [
+          "Was zitieren",
+          "Die Zitierweise",
+          "Das Paper",
+          "Herkunft",
+          "Offene Prüfungen"
+        ],
+        "resources": [
+          "Daten auswählen",
+          "Kernaussagen",
+          "Die Fragen"
+        ],
+        "sources": [
+          "Lesehinweise",
+          "Quellen und Grenzen",
+          "Erfolgskriterien",
+          "Versionen",
+          "Fehler melden"
+        ],
+        "beyond": [
+          "Die Fälle",
+          "Das unsichtbare DNS",
+          "Sprachen und Schriften",
+          "Alternative Systeme"
+        ],
+        "geography": [
+          "Die Karte",
+          "Bewerber",
+          "Konzentration",
+          "Institutionen",
+          "Digitale Ressourcen"
+        ],
+        "lugano": [
+          "Stand und Quellen",
+          "Die Entscheidungen",
+          "Nutzung und Ergebnisse",
+          "Risiken und Prüfungen"
+        ],
+        "inside-round": [
+          "Die Chronologie",
+          "Der Beobachtungsstandpunkt"
+        ],
+        "behind-round": [
+          "Die Untersuchungen",
+          "Der Fall .lugano"
+        ]
+      },
+      "leads": {
+        "timeline": "Zuerst die Runden und die Geschichten der Namen; danach das Korpus, die Vergleiche und die Grenzen der Analyse.",
+        "how": "Beginnen Sie mit einer Adresse, unterscheiden Sie Rollen und Verträge und verfolgen Sie dann die Entstehung einer neuen Top-Level-Domain.",
+        "cities": "Vom Nutzen für eine Stadt zu Entscheidungsbefugnissen und Bewertungskriterien. Die Bewerbungszahlen folgen danach.",
+        "social": "Beginnen Sie mit Gemeinschaften und konkreten Fällen; vergleichen Sie danach Zugehörigkeit, Geschichte und Regeln.",
+        "contention": "Zuerst die Frage, wer einen Namen kontrolliert; danach die Regeln und der Vergleich der Bewerbungen.",
+        "refusals": "Unterscheiden Sie, warum Bewerbungen enden können. Historische Fälle helfen, die laufende Runde einzuordnen.",
+        "disputes": "Zuerst konkrete Kontroversen, dann die zuständigen Mechanismen und die dokumentierten Beobachtungen von 2026.",
+        "strange": "Folgen Sie unerwarteten Bedeutungen und geopolitischen Spuren und vergleichen Sie diese mit der Geschichte der Runden.",
+        "reveal": "Lesen Sie Zahlen zusammen mit Bezugsrahmen und Datum. Eine Momentaufnahme von Bewerbungen ist keine Liste bereits betriebener TLDs.",
+        "research": "Wählen Sie, was Sie zitieren möchten, und finden Sie dann Paper, Daten und noch offene Prüfungen.",
+        "resources": "Wählen Sie zuerst das benötigte Korpus: Jeder Download behält seinen Bezugsrahmen und Zeitbezug.",
+        "sources": "Unterscheiden Sie Fakten, Interpretationen und Vorschläge. Hier finden Sie Herkunft, Grenzen, Versionen und Korrekturen.",
+        "beyond": "Von konkreten Fällen zu DNS-Diensten, Schriftsystemen und alternativen Namenssystemen.",
+        "geography": "Trennen Sie Bewerber, technische Betreiber und Institutionen: Ihre Standorte messen nicht dasselbe.",
+        "lugano": "Zuerst der dokumentierte Stand; danach offene Entscheidungen, vorgeschlagene Nutzungen und Prüfkriterien.",
+        "inside-round": "Folgen Sie Ereignissen und Meilensteinen chronologisch und unterscheiden Sie Geschehenes von Geplantem.",
+        "behind-round": "Jede Untersuchung beginnt mit einer Frage und führt zu den Quellen zurück: Beobachtungen, Interpretationen und offene Fragen bleiben getrennt."
+      },
+      "names": {
+        "overview": "Hier beginnen",
+        "how": "Internet und DNS verstehen",
+        "timeline": "Geschichte der Bewerbungen",
+        "explore": "Domains erkunden",
+        "beyond": "Jenseits des Punktes",
+        "cities": "Städte im Internet",
+        "geography": "Geografie des DNS",
+        "economics": "Ökonomie der Domains",
+        "cemetery": "Der gTLD-Friedhof",
+        "social": "Gesellschaftliche Dimension",
+        "contention": "Namenskonflikte",
+        "refusals": "Ergebnisse der Bewerbungen",
+        "disputes": "Kontroversen",
+        "strange": "Das ungewöhnliche Internet",
+        "reveal": "Bewerbungen 2026",
+        "inside-round": "Chronologie der Runde",
+        "behind-round": "Feldnotizen",
+        "lugano": "Der Fall .lugano",
+        "research": "Forschung",
+        "paper": "Working Paper",
+        "resources": "Daten und Ressourcen",
+        "sources": "Methodik und Quellen",
+        "governance-access": "Wer kontrolliert den Internetzugang?",
+        "governance-sanctions": "Sanktionen und DNS"
+      }
+    },
+    "fr": {
+      "home": "Accueil",
+      "breadcrumb": "Vous êtes ici",
+      "guide": "Parcours de lecture",
+      "allTopics": "Tous les sujets du chapitre",
+      "nextTitle": "Le prochain point à relier",
+      "next": "Poursuivre la lecture",
+      "deeper": "Vérifier et approfondir",
+      "researchEntry": "Données et sources",
+      "skip": "Aller au contenu",
+      "back": "Revenir au contexte",
+      "reference": "Consulter les données et les sources",
+      "atlas": "Atlas des candidatures 2026",
+      "areas": [
+        "Comprendre",
+        "Explorer",
+        "Récits et questions",
+        "Conflits et résultats",
+        "Cycle 2026",
+        "Recherche"
+      ],
+      "labels": {
+        "timeline": [
+          "Les cycles",
+          "Le récit des noms",
+          "Le cas de 2000",
+          "Données et limites"
+        ],
+        "how": [
+          "Adresse et DNS",
+          "Qui fait quoi",
+          "Un nouveau TLD",
+          "Glossaire",
+          "Le cas .lugano"
+        ],
+        "cities": [
+          "Pourquoi une ville",
+          "Qui décide",
+          "Comment évaluer",
+          "Les candidatures",
+          "Quand cela se termine"
+        ],
+        "social": [
+          "Les cas",
+          "Les modèles sociaux",
+          "L’histoire",
+          "Les règles de 2026"
+        ],
+        "contention": [
+          "Qui contrôle un nom",
+          "Les règles",
+          "La comparaison",
+          "Ce qui change"
+        ],
+        "refusals": [
+          "Les issues possibles",
+          "Les cas",
+          "2012",
+          "2026"
+        ],
+        "disputes": [
+          "Les récits",
+          "Les mécanismes",
+          "Les cas de 2026",
+          "L’état du cycle"
+        ],
+        "strange": [
+          "Des sens inattendus",
+          "Les traces géopolitiques",
+          "Comparer les cycles"
+        ],
+        "reveal": [
+          "Chiffres et périmètre",
+          "Ce qui peut changer",
+          "Calendrier de publication",
+          "Interpréter les données"
+        ],
+        "research": [
+          "Choisir quoi citer",
+          "La citation",
+          "Le document",
+          "La provenance",
+          "Les vérifications ouvertes"
+        ],
+        "resources": [
+          "Choisir les données",
+          "Les faits clés",
+          "Les questions"
+        ],
+        "sources": [
+          "Comment lire",
+          "Sources et limites",
+          "Critères de réussite",
+          "Les versions",
+          "Signaler une erreur"
+        ],
+        "beyond": [
+          "Les cas",
+          "Le DNS invisible",
+          "Langues et écritures",
+          "Systèmes alternatifs"
+        ],
+        "geography": [
+          "La carte",
+          "Les candidats",
+          "La concentration",
+          "Les institutions",
+          "Les ressources numériques"
+        ],
+        "lugano": [
+          "État et sources",
+          "Les décisions",
+          "Usages et résultats",
+          "Risques et vérifications"
+        ],
+        "inside-round": [
+          "La chronologie",
+          "Le point d’observation"
+        ],
+        "behind-round": [
+          "Les enquêtes",
+          "Le cas .lugano"
+        ]
+      },
+      "leads": {
+        "timeline": "D’abord les cycles et les histoires des noms, puis le corpus, les comparaisons et les limites de l’analyse.",
+        "how": "Partez d’une adresse, distinguez les rôles et les contrats, puis suivez la création d’un nouveau domaine de premier niveau.",
+        "cities": "De la valeur pour une ville aux décisions et aux critères d’évaluation. Les chiffres des candidatures viennent ensuite.",
+        "social": "Partez des communautés et des cas concrets, puis comparez les formes d’appartenance, l’histoire et les règles.",
+        "contention": "D’abord la question du contrôle d’un nom, puis les règles et la comparaison des candidatures.",
+        "refusals": "Distinguez les raisons qui peuvent arrêter une candidature. Les cas historiques aident à lire le cycle encore en cours.",
+        "disputes": "D’abord les controverses concrètes, puis les mécanismes qui les traitent et ce qui est documenté en 2026.",
+        "strange": "Suivez les sens inattendus et les traces géopolitiques, puis comparez-les avec l’histoire des cycles.",
+        "reveal": "Lisez les chiffres avec leur périmètre et leur date. Une photographie des candidatures n’est pas une liste de TLD déjà opérationnels.",
+        "research": "Choisissez ce que vous souhaitez citer, puis retrouvez le document, les données et les vérifications encore ouvertes.",
+        "resources": "Choisissez d’abord le corpus utile : chaque téléchargement conserve son périmètre et sa référence temporelle.",
+        "sources": "Distinguez faits, interprétations et propositions. Vous trouverez ici provenance, limites, versions et corrections.",
+        "beyond": "Des cas concrets aux services DNS, aux écritures et aux systèmes de noms alternatifs.",
+        "geography": "Séparez candidats, opérateurs techniques et institutions : leurs localisations ne mesurent pas la même chose.",
+        "lugano": "D’abord l’état documenté, puis les décisions ouvertes, les usages proposés et les critères pour les vérifier.",
+        "inside-round": "Suivez les événements et les échéances dans l’ordre chronologique, en distinguant les faits des prévisions.",
+        "behind-round": "Chaque enquête part d’une question et revient aux sources : observations documentées, interprétations et questions ouvertes restent distinctes."
+      },
+      "names": {
+        "overview": "Commencer ici",
+        "how": "Comprendre Internet et le DNS",
+        "timeline": "Histoire des candidatures",
+        "explore": "Explorer les domaines",
+        "beyond": "Au-delà du point",
+        "cities": "Les villes sur Internet",
+        "geography": "Géographie du DNS",
+        "economics": "Économie des domaines",
+        "cemetery": "Le cimetière des gTLD",
+        "social": "Dimension sociale",
+        "contention": "Concurrences entre noms",
+        "refusals": "Issues des candidatures",
+        "disputes": "Controverses",
+        "strange": "Internet insolite",
+        "reveal": "Candidatures 2026",
+        "inside-round": "Chronologie du cycle",
+        "behind-round": "Notes de terrain",
+        "lugano": "Le cas .lugano",
+        "research": "Recherche",
+        "paper": "Document de travail",
+        "resources": "Données et ressources",
+        "sources": "Méthodes et sources",
+        "governance-access": "Qui contrôle l’accès à Internet ?",
+        "governance-sanctions": "Sanctions et DNS"
+      }
+    }
+  }
+}

@@ -1,0 +1,3298 @@
+{
+  "schemaVersion": 1,
+  "reviewId": "sitewide-reader-paths-2026-10-21-v0.7.92",
+  "status": "reviewed",
+  "reviewedOn": "2026-10-21",
+  "publicationVersion": "0.7.92",
+  "baselineCommit": "65e0fbe2080c2ee841e8abc01e1ddec113a74b8e",
+  "originalABBaseline": "safety/main-v0.7.78-before-b2-switch-20261013",
+  "originalSectionBaseline": "ec231cc12d35fa91ff5340ad057a483ce23a5ca4",
+  "normalization": "ia-b2-v1",
+  "reviewInstruction": "Root must review the complete final diff and generated output before replacing null sha256 values and setting status to reviewed. A version number or this status alone never authorizes changed bytes.",
+  "rationales": {
+    "C01": "Current download, filename, label and checksum must derive from publication metadata; keep the previous archive.",
+    "C02": "Use the event register review date in the timeline; distinguish event, acquisition and editorial dates.",
+    "C03": "Use 76 Amazon EU applications in the 2012 local corpus; preserve the contextual 78 claim separately.",
+    "C04": "Distinguish the 1,615 official total from the 1,614 public base application IDs and local corpus layers.",
+    "C05": "Synchronize the current working-paper metadata and data pack without rewriting RR1 or RR2.",
+    "C06": "Correct A-label/Punycode, TLD/gTLD and domain-label definitions with primary technical sources.",
+    "M01": "Add current application-level economic analysis on official APS IDs; preserve the secondary historic layer.",
+    "M02": "Separate the string topic, applicant economic sector and naming strategy, with coverage and confidence.",
+    "M03": "Document the six existing-TLD variant IDs and exact equality of the two 980-name sets; leave 1,616 to 1,615 unresolved.",
+    "M04": "Explain APS publication latency, the 21 October choice deadline and 17 November publication, without predicting .wdo outcomes.",
+    "M05": "Publish explicitly derived APS distributions and remove planning placeholders from factual CSV exports.",
+    "M06": "Explain the distinct Explorer universes and export the same filtered population shown to the reader.",
+    "E01": "Expose six coherent Home paths and remove redundant framing without deleting substantive content.",
+    "E02": "Group .lugano into status, governance decisions, uses/results and risks/checks while preserving safeguards.",
+    "E03": "Lead each chapter with its question; collapse repetitive cross-round context while keeping it accessible.",
+    "E04": "Keep the cemetery title and distinguish termination, successor operation and withdrawal.",
+    "E05": "Restore semantic equivalence, accents, dates and plain user language in all four translations.",
+    "E06": "Place evidence labels beside the individual metric to avoid implying official values are unavailable.",
+    "E07": "Group resources by provenance, explain downloadable scope and date, and preserve source links.",
+    "E08": "Use prospective language for application-stage scenarios; distinguish proposals, approvals, operations and measured effects.",
+    "CI01": "Verify browser-referenced asset bytes and the metadata-selected current ZIP and checksum in live smoke.",
+    "CI02": "Fail visibly on missing or mismatched Zenodo RR2 evidence while distinguishing temporary network unavailability.",
+    "CI03": "Keep original A baselines and immutable snapshots while accepting only individually reviewed, exact-hash editorial changes.",
+    "T01": "Add source-backed round fees with explicit accounting scopes; source-backed cultural narrative in four languages; reproducible complete local name inventory with incomplete semantic coverage and identical lexical rules across cohorts. Preserve all archived research and prior editorial corrections.",
+    "T02": "Add dated, attributed technical-platform footprint and two separate top-50 metrics in four languages. Preserve unknown backend assignments, missing zone counts, ccTLD scope, rounded website shares and selected-round cohorts; never infer absolute website totals. Keep the v0.7.85 review and archive immutable; select the exact versioned review path for a second release on the same day.",
+    "A19": "Resolve audit findings A01–A18: dated bibliographic correction, same-unit geographic comparison, truthful candidate/operator labels, inferred platform scope, qualified cultural interpretation, visible semantic missingness, mobile rows, persistent URL filters, fee arithmetic, source hash normalization, deferred optional graph, validation protocols and immutable technical packages. Real reader and independent classification studies remain explicitly pending.",
+    "H01": "Extend explicit string-level vocabulary, preserve prior classifications, compare lexical-only and combined results, expose IDN coverage and ambiguity; add source-backed social history with no adoption or causal inference.",
+    "H02": "Rebuild publication and data package when cultural research source JSON changes; no visual/runtime/source-dataset delta.",
+    "U01": "Reviewed audience hierarchy and wording across four locales; source-backed stories and visual summary, compact mobile and ranking navigation, exact-name search and exports, explicit archival citations, deferred APS graph, blank independent-review materials and honest pending status. No new semantic classifications or human-study results.",
+    "U02": "Version first-party runtime asset URLs with the publication version to avoid stale cached scripts. All five rendered pages are byte-equivalent after removing only asset query parameters; no runtime asset body or data-pack bytes changed.",
+    "U03": "Add a four-language, source-linked estimated three-minute path through illustrative everyday scenarios. Retain documented distinctions, all original evidence and existing destinations. Prepare printable neutral reader-study materials and a header-only observation template; zero observed participants, no human validation claimed.",
+    "E09": "Approved six-step Economics order; preserve source facts, all original text, eight models/cases, legacy anchors, archived research and previous ZIPs. Current publication metadata follows v0.7.91.",
+    "R01": "Reviewed reader-first presentation in four languages: exact original blocks and links retained, 12 chapter permutations, complete optional indexes, 67 guide stops, 24 native chapter contexts and onward routes, 31 independent article return paths, explicit APS nesting, keyboard focus and static HTML. Preserve all scientific baselines and archive identifiers; no human usability results claimed.",
+    "R02": "Version 0.7.92 metadata and immutable previous 0.7.91 package; reproducible rendering, exact-hash editorial review and mandatory browser regression gates. The existing validation logic is not weakened."
+  },
+  "sourceInvariants": {
+    "sections": [
+      "behind-round",
+      "beyond",
+      "cemetery",
+      "cities",
+      "contention",
+      "disputes",
+      "economics",
+      "explore",
+      "geography",
+      "how",
+      "inside-round",
+      "lugano",
+      "overview",
+      "paper",
+      "refusals",
+      "research",
+      "resources",
+      "reveal",
+      "social",
+      "sources",
+      "strange",
+      "timeline"
+    ],
+    "ids": [
+      "accessModels",
+      "angleGrid",
+      "applicationCorpusStatus",
+      "applicationModels",
+      "aps-native",
+      "apsAtlasArchiveLink",
+      "apsAtlasBridge",
+      "apsAtlasLink",
+      "apsMore",
+      "apsNativeHeading",
+      "apsRegion",
+      "apsReset",
+      "apsResultCount",
+      "apsResults",
+      "apsRole",
+      "apsSearch",
+      "apsSearchHeading",
+      "apsType",
+      "articleStructuredData",
+      "behind-round",
+      "behindRoundTitle",
+      "beyond",
+      "beyondCases",
+      "canonicalLink",
+      "cards",
+      "cemetery",
+      "cities",
+      "city2026CityValue",
+      "city2026GeoValue",
+      "city2026State",
+      "contention",
+      "contentionBars2012",
+      "contentionBars2026",
+      "controlLevers",
+      "curated2000",
+      "datasetStructuredData",
+      "demand2012Bars",
+      "demand2026Bars",
+      "demand2026State",
+      "disputeGrid",
+      "disputeMechanisms",
+      "disputes",
+      "dnsCapabilities",
+      "dnsOddities",
+      "domainGlossary",
+      "domainLifecycle",
+      "drawerActions",
+      "drawerClose",
+      "drawerContent",
+      "economic-cycles-2026",
+      "economicGrid",
+      "economicModels",
+      "economics",
+      "economics-cemetery-link",
+      "economics-contention-2026",
+      "economy-sectors",
+      "explore",
+      "exploreApplicationCount",
+      "exploreCountryFilter",
+      "exploreFromStrange",
+      "exploreIanaCount",
+      "exploreProfileCount",
+      "exploreRoundFilter",
+      "exploreSeedCount",
+      "exploreStatusFilter",
+      "exploreThemeFilter",
+      "exploreTypeFilter",
+      "explorerAdvanced",
+      "explorerCards",
+      "explorerDrawer",
+      "explorerLoadMore",
+      "explorerResultCount",
+      "explorerSearch",
+      "explorerTableBody",
+      "feedbackNote",
+      "geoMap",
+      "geoNote",
+      "geography",
+      "gtld-cemetery",
+      "guardrailList",
+      "guideRelatedHeading",
+      "guideRows",
+      "helsinki-termination",
+      "how",
+      "how-glossary",
+      "how-part-1",
+      "how-part-10",
+      "how-part-11",
+      "how-part-12",
+      "how-part-2",
+      "how-part-3",
+      "how-part-4",
+      "how-part-5",
+      "how-part-6",
+      "how-part-7",
+      "how-part-8",
+      "how-part-9",
+      "iaLegacyNavDisclosure",
+      "identity2026GroupName",
+      "identity2026GroupState",
+      "identity2026GroupValue",
+      "identity2026TopName",
+      "identity2026TopState",
+      "identity2026TopValue",
+      "inside-round",
+      "insideRoundTimelineTitle",
+      "insideRoundTitle",
+      "internet-basics",
+      "internet-guide",
+      "journeyAddressLane",
+      "journeyAnnounce",
+      "journeyBack",
+      "journeyDnsLane",
+      "journeyLesson",
+      "journeyNext",
+      "journeyNow",
+      "journeyNowFrom",
+      "journeyNowHint",
+      "journeyNowTo",
+      "journeyPhase",
+      "journeyProgress",
+      "journeyRecap",
+      "journeyRecapTitle",
+      "journeyResolverNode",
+      "journeyRestart",
+      "journeyStepper",
+      "journeySteps",
+      "journeyWebLane",
+      "langSelect",
+      "languageVersions",
+      "lugano",
+      "luganoGuideRows",
+      "luganoRoadmap",
+      "main-content",
+      "metricsFootnote",
+      "mobileNav",
+      "namespaceDimensions",
+      "navHowDropdown",
+      "navResearchDropdown",
+      "navRoundDropdown",
+      "navThemesDropdown",
+      "overview",
+      "paper",
+      "pressFacts",
+      "processGrid",
+      "profileLinkNotice",
+      "profileTitle",
+      "publication-updates",
+      "publicationUpdateStamp",
+      "refusalGrid",
+      "refusalSnapshot",
+      "refusalTaxonomy",
+      "refusals",
+      "releaseHistory",
+      "report-error",
+      "research",
+      "resetExplorer",
+      "resources",
+      "reveal",
+      "round2026Grid",
+      "roundBars",
+      "rsp2026Bars",
+      "sector-chart-caption",
+      "semanticDriftGrid",
+      "shareBtn",
+      "social",
+      "socialGrid",
+      "socialModels",
+      "sourceList",
+      "sources",
+      "staticReading",
+      "strange",
+      "strangeGridAll",
+      "successFramework",
+      "themeBtn",
+      "timeline",
+      "timelineList",
+      "topCountries2026",
+      "trustLadder",
+      "typeStats",
+      "updateDates"
+    ],
+    "i18nReferences": [
+      "accessCrosslinkIntro",
+      "accessCrosslinkText",
+      "accessCrosslinkTitle",
+      "afterReveal",
+      "aiRevenueCaveat",
+      "aiRevenueLabel",
+      "anatomyBody",
+      "anglesTitle",
+      "applicantDisclosureDate",
+      "applicantRegion2012",
+      "applicantRegion2026",
+      "applications2026Download",
+      "applications2026DownloadSub",
+      "apsAtlasAll",
+      "apsAtlasApps",
+      "apsAtlasBrand",
+      "apsAtlasCommunity",
+      "apsAtlasCtaBody",
+      "apsAtlasCtaTitle",
+      "apsAtlasDownloadEdges",
+      "apsAtlasDownloadGraph",
+      "apsAtlasDownloadHistory",
+      "apsAtlasDownloadManifest",
+      "apsAtlasExactMatch",
+      "apsAtlasExistingVariant",
+      "apsAtlasFilterRegion",
+      "apsAtlasFilterRole",
+      "apsAtlasFilterType",
+      "apsAtlasGeo",
+      "apsAtlasHasReplacement",
+      "apsAtlasIdn",
+      "apsAtlasIntro",
+      "apsAtlasMethod",
+      "apsAtlasMore",
+      "apsAtlasObservedStatusNote",
+      "apsAtlasOpen",
+      "apsAtlasOverlap",
+      "apsAtlasOverlapHint",
+      "apsAtlasPublicDetail",
+      "apsAtlasRegionAll",
+      "apsAtlasReplacements",
+      "apsAtlasReset",
+      "apsAtlasScope",
+      "apsAtlasSearch",
+      "apsAtlasSourceDate",
+      "apsAtlasStrings",
+      "apsAtlasTitle",
+      "apsAtlasVariant",
+      "apsAtlasWdo",
+      "apsAtlasWdoLink",
+      "archSub",
+      "archTitle",
+      "arubaPortfolioBody",
+      "arubaPortfolioTitle",
+      "authorDisclosureBody",
+      "authorDisclosureTitle",
+      "awaitReveal",
+      "behindChronicleCta",
+      "behindEyebrow",
+      "behindIntro",
+      "behindNav",
+      "behindStandaloneCta",
+      "behindTitle",
+      "beyondQuote",
+      "beyondSub",
+      "beyondTitle",
+      "birthSub",
+      "birthTitle",
+      "can1",
+      "can2",
+      "can3",
+      "canTitle",
+      "cannot1",
+      "cannot2",
+      "cannot3",
+      "cannotTitle",
+      "cemeteryCaveat",
+      "cemeteryDoosan",
+      "cemeteryEconomicsTeaser",
+      "cemeteryLead",
+      "cemeteryLupin",
+      "cemeteryOpenChapter",
+      "cemeteryTaxonomy",
+      "cemeteryTaxonomyTitle",
+      "cemeteryTitle",
+      "cemeteryWed",
+      "cityMiniApplication",
+      "cityMiniDisclosure",
+      "cityMiniIdea",
+      "cityMiniLaunch",
+      "citySub",
+      "cityTitle",
+      "closedBody",
+      "closedExample",
+      "closedTitle",
+      "community",
+      "contention2012Title",
+      "contention2026Derived",
+      "contention2026Sub",
+      "contentionCompareBody",
+      "contentionCompareTitle",
+      "contentionResolution2026Body",
+      "contentionResolution2026Title",
+      "contentionSub",
+      "contentionTitle2026",
+      "controlLeversSub",
+      "controlLeversTitle",
+      "controlReadingBody",
+      "controlReadingTitle",
+      "controlSourceNote",
+      "controlTitle",
+      "copyLink",
+      "currentDataPackNote",
+      "cyclesAiBody",
+      "cyclesAiTitle",
+      "cyclesCaveat",
+      "cyclesCryptoBody",
+      "cyclesCryptoTitle",
+      "cyclesDotcomBody",
+      "cyclesDotcomTitle",
+      "cyclesLead",
+      "cyclesPlatformsBody",
+      "cyclesPlatformsTitle",
+      "cyclesTitle",
+      "dataPackSub",
+      "dataStatusSub",
+      "dataStatusTitle",
+      "demand2012Concentration",
+      "demand2012Sub",
+      "demand2012Title",
+      "demand2026Sub",
+      "demand2026Title",
+      "derived",
+      "digitalResourceReadingBody",
+      "digitalResourceReadingTitle",
+      "digitalResourceSub",
+      "digitalResourceTitle",
+      "disputes2026CaseBody",
+      "disputes2026CaseTitle",
+      "disputes2026StatusBody",
+      "disputes2026StatusTitle",
+      "disputesBoundaryLink",
+      "disputesBoundaryNote",
+      "disputesCasesSub",
+      "disputesCasesTitle",
+      "disputesIntro",
+      "disputesMechanismsSub",
+      "disputesMechanismsTitle",
+      "disputesSelectionNote",
+      "disputesSubtitle",
+      "disputesTitle",
+      "domainRightSub",
+      "domainRightTitle",
+      "dotMapReadingBody",
+      "dotMapReadingTitle",
+      "dotMapSub",
+      "dotMapTitle",
+      "download2026StringSnapshot",
+      "download2026StringSnapshotSub",
+      "downloadApplicationOnly",
+      "downloadApplicationOnlySub",
+      "downloadApplicationStrings2000",
+      "downloadApplicationStrings2000Sub",
+      "downloadApplications2000",
+      "downloadApplications2000Sub",
+      "downloadApplications2004",
+      "downloadApplications2004Sub",
+      "downloadApplications2012",
+      "downloadApplications2012Sub",
+      "downloadApsOfficial",
+      "downloadApsOfficialSub",
+      "downloadApsProvenance",
+      "downloadApsProvenanceSub",
+      "downloadConcentration",
+      "downloadConcentrationSub",
+      "downloadContention",
+      "downloadDimensions",
+      "downloadDimensionsSub",
+      "downloadDnsCapabilities",
+      "downloadDnsCapabilitiesSub",
+      "downloadDrift",
+      "downloadDriftSub",
+      "downloadEconomicCases",
+      "downloadEconomicCasesSub",
+      "downloadEconomicMap",
+      "downloadEconomicMapSub",
+      "downloadEconomicMetrics",
+      "downloadEconomicMetricsSub",
+      "downloadFacts",
+      "downloadGeo2026",
+      "downloadGeo2026Sub",
+      "downloadGeoRegions",
+      "downloadGeoRegionsSub",
+      "downloadGlossary",
+      "downloadGovernanceCases",
+      "downloadGovernanceCasesSub",
+      "downloadGovernanceEvents",
+      "downloadGovernanceEventsSub",
+      "downloadLevers",
+      "downloadLeversSub",
+      "downloadLifecycle",
+      "downloadLifecycleSub",
+      "downloadModels",
+      "downloadModelsSub",
+      "downloadOddities",
+      "downloadOdditiesSub",
+      "downloadPack",
+      "downloadPackArchive",
+      "downloadPackChecksum",
+      "downloadPackChecksumSub",
+      "downloadPortfolioApplications",
+      "downloadPortfolioApplicationsSub",
+      "downloadRound2026",
+      "downloadRound2026Sub",
+      "downloadRounds",
+      "downloadSectorEvolution",
+      "downloadSectorEvolutionSub",
+      "downloadSectorMix",
+      "downloadSectorMixSub",
+      "downloadSocialCases",
+      "downloadSocialCasesSub",
+      "downloadStrange",
+      "downloadSuccess",
+      "downloadSuccessSub",
+      "downloadTldUniverse",
+      "downloadTldUniverseSub",
+      "downloadsSub",
+      "downloadsTitle",
+      "drawerLabel",
+      "driftReadingBody",
+      "driftReadingTitle",
+      "driftSub",
+      "driftTitle",
+      "econEditorialDisclaimer",
+      "econEditorialExploreContests",
+      "econEditorialIdentityBody",
+      "econEditorialIdentityTitle",
+      "econEditorialIntro2026",
+      "econEditorialMarketBody",
+      "econEditorialMarketTitle",
+      "econEditorialPortfolioBody",
+      "econEditorialPortfolioTitle",
+      "econEditorialTitle2026",
+      "economics2026Apps",
+      "economics2026Body",
+      "economics2026Brands",
+      "economics2026DeepBody",
+      "economics2026DeepTitle",
+      "economics2026Fee",
+      "economics2026Title",
+      "economicsCasesGridSub",
+      "economicsCasesGridTitle",
+      "economicsCasesIntro",
+      "economicsCasesSubtitle",
+      "economicsCasesTitle",
+      "economicsModelsSub",
+      "economicsModelsTitle",
+      "economicsReading",
+      "economicsSelectionNote",
+      "economicsSub",
+      "economicsTitle",
+      "exploreAboutTitle",
+      "exploreApplications",
+      "exploreColCountry",
+      "exploreColEntity",
+      "exploreColRound",
+      "exploreColStatus",
+      "exploreColTheme",
+      "exploreColTld",
+      "exploreColType",
+      "exploreCorpusNote",
+      "exploreCorpusNoteBody",
+      "exploreCoverageBody",
+      "exploreCoverageTitle",
+      "exploreFiltersTitle",
+      "exploreIana",
+      "exploreIanaDate",
+      "exploreLoadMore",
+      "explorePresetDisputes",
+      "explorePresetEconomics",
+      "explorePresetRefusals",
+      "explorePresetSocial",
+      "exploreProfiles",
+      "exploreSearchHint",
+      "exploreSeed",
+      "exploreSnapshotClocks",
+      "exploreStateHelp",
+      "exploreSub",
+      "exploreTitle",
+      "eyebrow",
+      "fact",
+      "feedbackIntro",
+      "feedbackLink",
+      "feedbackNote",
+      "feedbackOpen",
+      "feedbackTitle",
+      "field03Lead",
+      "field03Number",
+      "field03Title",
+      "field04Lead",
+      "field04Number",
+      "field04Title",
+      "fieldCaseCollectionIntro",
+      "fieldReadInvestigation",
+      "fieldSourceDisclaimer",
+      "filterAll",
+      "filterCountryShort",
+      "filterRoundShort",
+      "filterStatusShort",
+      "filterThemeShort",
+      "filterTypeShort",
+      "footerAttribution",
+      "footerLeftV05",
+      "footerRightV05",
+      "geoApps",
+      "geoApps2026",
+      "geoApps2026Note",
+      "geoCities2026",
+      "geoCities2026Note",
+      "geoDelegated",
+      "geoGovernance",
+      "geoInterpretBody",
+      "geoInterpretTitle",
+      "geoLayer",
+      "geoLayer2026",
+      "geoMapSub",
+      "geoMapTitle",
+      "geoRsp",
+      "geoSourceLine",
+      "geoSub",
+      "geoTitle",
+      "geographic",
+      "glossaryCsv",
+      "glossaryOfficial",
+      "glossaryProject",
+      "glossarySub",
+      "glossaryTitle",
+      "guardrails",
+      "guideAccessCta",
+      "guideRelatedBody",
+      "guideRelatedTitle",
+      "guideSanctionsCta",
+      "helsinkiBridgeBody",
+      "helsinkiBridgeCta",
+      "helsinkiBridgeTitle",
+      "helsinkiCaseFact",
+      "helsinkiCaseHistory",
+      "helsinkiCaseReading",
+      "helsinkiCaseState",
+      "helsinkiCaseStatus",
+      "helsinkiSourceCity",
+      "helsinkiSourceIana",
+      "helsinkiSourceIcann",
+      "heroBody",
+      "heroExploreCta",
+      "heroLearnCta",
+      "heroPlain",
+      "historicalPackNote",
+      "homeExplorerLink",
+      "homeGuideIntro",
+      "homeGuideLabel",
+      "homeGuideTitle",
+      "homeHistoryLink",
+      "homeReadEconomics",
+      "homeReadPower",
+      "homeReadRoles",
+      "homeReadRound",
+      "homeReadSocial",
+      "homeScope",
+      "homeWhatChanges",
+      "homeWhatChangesBody",
+      "homeWhoBelongs",
+      "homeWhoBelongsBody",
+      "homeWhoDecides",
+      "homeWhoDecidesBody",
+      "homeWhoProfits",
+      "homeWhoProfitsBody",
+      "homeWhoRuns",
+      "homeWhoRunsBody",
+      "hostBody",
+      "hostLabel",
+      "howBit2026Body",
+      "howBit2026Title",
+      "howSub",
+      "howTitle",
+      "iaHomeLaunchLead",
+      "iaHomeLaunchTitle",
+      "iaHubExploreEyebrow",
+      "iaHubResearchEyebrow",
+      "iaHubRoundEyebrow",
+      "iaHubStoriesEyebrow",
+      "iaHubUnderstandEyebrow",
+      "iaLegacyNote",
+      "iaLegacySummary",
+      "iaNavExplore",
+      "iaNavOutcomes",
+      "iaNavResearch",
+      "iaNavRound",
+      "iaNavStories",
+      "iaNavUnderstand",
+      "iaProjectDefinition",
+      "iaProjectQuestion",
+      "icann2012",
+      "icann2012Sub",
+      "identity2026GroupSub",
+      "identity2026Top",
+      "identity2026TopGroup",
+      "identity2026TopSub",
+      "identityApps",
+      "identityBreadthLabel",
+      "identityCaveat",
+      "identityGap",
+      "identityHQ",
+      "identityManaged",
+      "identityPortfolio",
+      "identityPortfolioClaim",
+      "identityReadingBody",
+      "identityReadingTitle",
+      "identitySub",
+      "identityT2012",
+      "identityT2017",
+      "identityT2020",
+      "identityT2022",
+      "identityT2026",
+      "identityTitle",
+      "idn",
+      "insideCaseBody",
+      "insideCaseCta",
+      "insideCaseTitle",
+      "insideDisclosureBody",
+      "insideDisclosureTitle",
+      "insideEyebrow",
+      "insideGuideCta",
+      "insideIntro",
+      "insideLandscapeBody",
+      "insideLandscapeTitle",
+      "insideMethodNote",
+      "insideNav",
+      "insideProgramBody",
+      "insideProgramCta",
+      "insideProgramTitle",
+      "insideResearchCta",
+      "insideReviewedLabel",
+      "insideTimelineIntro",
+      "insideTimelineTitle",
+      "insideTitle",
+      "invisibleReading",
+      "invisibleSub",
+      "invisibleTitle",
+      "journeyAddressLabel",
+      "journeyAddressLane",
+      "journeyAnatomy",
+      "journeyAuthority",
+      "journeyAuthorityAnswer",
+      "journeyBack",
+      "journeyBrowser",
+      "journeyDnsLane",
+      "journeyDnsNote",
+      "journeyExample",
+      "journeyExplore",
+      "journeyEyebrow",
+      "journeyFoundation",
+      "journeyHomeBody",
+      "journeyHomeLink",
+      "journeyHomeTitle",
+      "journeyIntro",
+      "journeyNetworks",
+      "journeyNoJs",
+      "journeyNowLabel",
+      "journeyPageReady",
+      "journeyPageSample",
+      "journeyRecap0",
+      "journeyRecap1",
+      "journeyRecap2",
+      "journeyRecap3",
+      "journeyRecap4",
+      "journeyRecap5",
+      "journeyRecap6",
+      "journeyRecapBody",
+      "journeyRecapKicker",
+      "journeyRecapTitle",
+      "journeyResolved",
+      "journeyResolver",
+      "journeyRestart",
+      "journeyRoot",
+      "journeyRootAnswer",
+      "journeyServer",
+      "journeySimplified",
+      "journeySources",
+      "journeyStart",
+      "journeyTakeaway",
+      "journeyTitle",
+      "journeyTld",
+      "journeyTldAnswer",
+      "journeyUrlHow",
+      "journeyUrlHowBody",
+      "journeyUrlWhat",
+      "journeyUrlWhatBody",
+      "journeyUrlWhere",
+      "journeyUrlWhereBody",
+      "journeyWebLane",
+      "journeyWebNote",
+      "languageGuide",
+      "languageGuideSub",
+      "legacy",
+      "legendText",
+      "lifeCaveat",
+      "lugPillar1",
+      "lugPillar1b",
+      "lugPillar2",
+      "lugPillar2b",
+      "lugPillar3",
+      "lugPillar3b",
+      "lugPillar4",
+      "lugPillar4b",
+      "lugRoadmap",
+      "lugRoadmapSub",
+      "luganoApplicantLabel",
+      "luganoApplicantValue",
+      "luganoApplicationIdLabel",
+      "luganoAppliedBody",
+      "luganoAppliedTitle",
+      "luganoCityPeersBody",
+      "luganoCityPeersTitle",
+      "luganoContextBody",
+      "luganoContextTitle",
+      "luganoExampleBody",
+      "luganoExampleLabel",
+      "luganoExploreCitiesCta",
+      "luganoExplorerCta",
+      "luganoGeographyCta",
+      "luganoGuard",
+      "luganoLanguageGuide",
+      "luganoLanguageGuideSub",
+      "luganoLead",
+      "luganoNotDelegatedValue",
+      "luganoOfficialBody",
+      "luganoOfficialCta",
+      "luganoOfficialTitle",
+      "luganoProvenanceNote",
+      "luganoRevealLabel",
+      "luganoRoundCta",
+      "luganoStatusBody",
+      "luganoStatusLabel",
+      "luganoStatusTitle",
+      "luganoSub",
+      "luganoSwissFirstBody",
+      "luganoSwissFirstTitle",
+      "luganoSwissIntro",
+      "luganoSwissTitle",
+      "luganoTitle",
+      "luganoTwoPathsIntro",
+      "luganoTwoPathsTitle",
+      "luganoVisionCondition",
+      "luganoWhyGovernanceBody",
+      "luganoWhyGovernanceTitle",
+      "luganoWhyIntro",
+      "luganoWhyNameBody",
+      "luganoWhyNameTitle",
+      "luganoWhyProgressiveBody",
+      "luganoWhyProgressiveTitle",
+      "luganoWhyRecognitionBody",
+      "luganoWhyRecognitionTitle",
+      "luganoWhyTitle",
+      "luganoZurichBody",
+      "luganoZurichTitle",
+      "mapHint",
+      "method",
+      "methodLegendBody",
+      "methodLegendTitle",
+      "methodNav",
+      "milestoneConfirm",
+      "milestoneConfirmBody",
+      "milestoneReplacement",
+      "milestoneReplacementBody",
+      "milestoneReveal",
+      "milestoneRevealBody",
+      "mobileNavigate",
+      "modelAccessAxis",
+      "modelApplicationAxis",
+      "modelNote",
+      "modelSub",
+      "modelTitle",
+      "navHowOverview",
+      "navResearch",
+      "navRound",
+      "navThemes",
+      "odditiesSub",
+      "odditiesTitle",
+      "oddityReadingBody",
+      "oddityReadingTitle",
+      "operator",
+      "outcomes2026StatusBody",
+      "outcomes2026StatusTitle",
+      "overviewCallout",
+      "patternApplicants",
+      "patternApplicantsBody",
+      "patternCompetition",
+      "patternCompetitionBody",
+      "patternGeo",
+      "patternGeoBody",
+      "patternWords",
+      "patternWordsBody",
+      "portfolio2012Amazon",
+      "portfolio2012Body",
+      "portfolio2012Donuts",
+      "portfolio2012Google",
+      "portfolio2012Title",
+      "portfolio2026Body",
+      "portfolio2026Title",
+      "portfolio2026Top1",
+      "portfolio2026Top2",
+      "portfolio2026Top3",
+      "portfolioCaveat",
+      "portfolioIntro",
+      "portfolioQuestion",
+      "portfolioReading",
+      "portfolioReadingTitle",
+      "portfolioTitle",
+      "powerBackend",
+      "powerBackendBody",
+      "powerContracts",
+      "powerContractsBody",
+      "powerDemand",
+      "powerDemandBody",
+      "powerRoot",
+      "powerRootBody",
+      "powerRules",
+      "powerRulesBody",
+      "powerStackSub",
+      "powerStackTitle",
+      "preset2026",
+      "presetAll",
+      "presetCities",
+      "presetContention",
+      "presetCurated",
+      "presetOutsideRoot",
+      "presetRoot",
+      "presetStrange",
+      "presetTrust",
+      "pressSub",
+      "pressTitle",
+      "projectByline",
+      "projectDisclaimer",
+      "provisionalUntilConfirmation",
+      "publicAdoptionBody",
+      "publicAdoptionTitle",
+      "publicNeedBody",
+      "publicNeedTitle",
+      "publicOpenBody",
+      "publicOpenTitle",
+      "publicQuestionsIntro",
+      "publicQuestionsTitle",
+      "publicRulesBody",
+      "publicRulesTitle",
+      "publicationState",
+      "publicationStateNote",
+      "reading",
+      "refusalCasesSub",
+      "refusalCasesTitle",
+      "refusalSnapshotSub",
+      "refusalSnapshotTitle",
+      "refusalTaxonomySub",
+      "refusalTaxonomyTitle",
+      "refusalsBoundaryBody",
+      "refusalsBoundaryLink",
+      "refusalsBoundaryTitle",
+      "refusalsIntro",
+      "refusalsSubtitle",
+      "refusalsTitle",
+      "researchArchiveBody",
+      "researchArchiveTitle",
+      "researchCitationFile",
+      "researchCitationNav",
+      "researchCitationText",
+      "researchCitationTitle",
+      "researchConceptLink",
+      "researchDoiLabel",
+      "researchDoiPending",
+      "researchDoiStatus",
+      "researchDownloadPaper",
+      "researchGithubSub",
+      "researchGithubTitle",
+      "researchManifest",
+      "researchNextBody",
+      "researchNextLabel",
+      "researchNextTitle",
+      "researchOpenPaper",
+      "researchPaperBody",
+      "researchPaperTitle",
+      "researchPriorBody",
+      "researchPriorLink",
+      "researchPriorTitle",
+      "researchPubIntro",
+      "researchPubTitle",
+      "researchReleaseBody",
+      "researchReleaseLabel",
+      "researchReleaseTitle",
+      "researchVersionRuleBody",
+      "researchVersionRuleTitle",
+      "reset",
+      "resourcesNav",
+      "roleIana",
+      "roleIanaBody",
+      "roleIcann",
+      "roleIcannBody",
+      "roleMaintainer",
+      "roleMaintainerBody",
+      "roleRegistrant",
+      "roleRegistrantBody",
+      "roleRegistrar",
+      "roleRegistrarBody",
+      "roleRegistry",
+      "roleRegistryBody",
+      "roleRsp",
+      "roleRspBody",
+      "roleTagGovernance",
+      "roleTagMaintain",
+      "roleTagPolicy",
+      "roleTagRetail",
+      "roleTagRoot",
+      "roleTagTech",
+      "roleTagUser",
+      "rootBody",
+      "rootDistributedBody",
+      "rootDistributedTitle",
+      "rootLabel",
+      "rootStat1",
+      "rootStat2",
+      "rootStat3",
+      "round2026Patterns",
+      "round2026PatternsSub",
+      "round2026Snapshot",
+      "round2026Sub",
+      "round2026Title",
+      "roundAtGlance",
+      "roundAtGlanceSub",
+      "roundOverviewNav",
+      "rspEuropeShare",
+      "rspStat",
+      "rspSupplySub",
+      "rspSupplyTitle",
+      "safeFacts",
+      "scaleContrastReading",
+      "scaleContrastSub",
+      "scaleContrastTitle",
+      "scopeGeneral",
+      "scopeGeneralSub",
+      "scopeLugano",
+      "scopeLuganoSub",
+      "scriptsSub",
+      "scriptsTitle",
+      "searchLabelExplorer",
+      "secondBody",
+      "secondGen",
+      "secondGenBody",
+      "secondLabel",
+      "sectorAI",
+      "sectorChartAlt",
+      "sectorChartSub",
+      "sectorChartTitle",
+      "sectorCoverage2012",
+      "sectorCoverage2026",
+      "sectorCrypto",
+      "sectorDenominatorNote",
+      "sectorEconomyIntro",
+      "sectorEconomyKicker",
+      "sectorEconomyTitle",
+      "sectorFinance",
+      "sectorFinanceExampleBody",
+      "sectorFinanceExampleTitle",
+      "sectorHealth",
+      "sectorMedia",
+      "sectorMethodBody",
+      "sectorMethodTitle",
+      "sectorMovementFinanceBody",
+      "sectorMovementFinanceTitle",
+      "sectorMovementMediaBody",
+      "sectorMovementMediaTitle",
+      "sectorMovementNewBody",
+      "sectorMovementNewTitle",
+      "sectorMovementTrustBody",
+      "sectorMovementTrustTitle",
+      "sectorRetail",
+      "sectorTech",
+      "sectorTrust",
+      "skipToContent",
+      "social2026Body",
+      "social2026Title",
+      "socialCasesGridSub",
+      "socialCasesGridTitle",
+      "socialCasesIntro",
+      "socialCasesSubtitle",
+      "socialCasesTitle",
+      "socialMeow2026Body",
+      "socialMeow2026Title",
+      "socialModelsSub",
+      "socialModelsTitle",
+      "socialSelectionNote",
+      "source2012",
+      "sourceGuide",
+      "sourcesSub",
+      "sourcesTitle",
+      "staticExplorerNotice",
+      "status",
+      "statusApplication2026",
+      "statusNotImplemented",
+      "strangeAcrossRoundsSub",
+      "strangeAcrossRoundsTitle",
+      "strangeExplorerCta",
+      "strangeExplorerNote",
+      "strangeNext",
+      "strangeSub",
+      "strangeTitle",
+      "string",
+      "successReading",
+      "successSub",
+      "successTitle",
+      "tabArchaeology",
+      "tabBeyond",
+      "tabCities",
+      "tabContention",
+      "tabDisputes",
+      "tabEconomics",
+      "tabExplore",
+      "tabGeo",
+      "tabHow",
+      "tabLugano",
+      "tabOverview",
+      "tabRefusals",
+      "tabSocial",
+      "tabStrange",
+      "theme",
+      "themeRoundLensSub",
+      "themeRoundLensTitle",
+      "timeCapsule",
+      "timeCapsuleSub",
+      "tldBody",
+      "tldLabel",
+      "tocHowDimensions",
+      "tocHowEconomics",
+      "tocHowLuganoCase",
+      "tocHowRoles",
+      "tocHowTerms",
+      "topCountries2026Title",
+      "uaBody",
+      "uaReading",
+      "uaTitle",
+      "universeAlternative",
+      "universeAlternativeBody",
+      "universePublic",
+      "universePublicBody",
+      "universeReadingBody",
+      "universeReadingTitle",
+      "universeSpecial",
+      "universeSpecialBody",
+      "universesSub",
+      "universesTitle",
+      "updatesChanges",
+      "updatesIntro",
+      "updatesManifest",
+      "updatesPolicy",
+      "updatesTitle",
+      "valueAftermarket",
+      "valueAftermarketBody",
+      "valueIcann",
+      "valueIcannBody",
+      "valueRegistrant",
+      "valueRegistrantBody",
+      "valueRegistrar",
+      "valueRegistrarBody",
+      "valueRegistry",
+      "valueRegistryBody",
+      "verisignDepthLabel",
+      "verisignInfraLabel",
+      "vision",
+      "whoSub",
+      "whoTitle",
+      "why",
+      "wordReadingBody",
+      "wordReadingTitle",
+      "wordSub",
+      "wordTitle"
+    ],
+    "hrefs": [
+      "#behind-round",
+      "#beyond",
+      "#cemetery",
+      "#cities",
+      "#contention",
+      "#disputes",
+      "#economics",
+      "#explore",
+      "#geography",
+      "#helsinki-termination",
+      "#how",
+      "#how-part-2",
+      "#ia-explore",
+      "#ia-outcomes",
+      "#ia-research",
+      "#ia-round",
+      "#ia-stories",
+      "#ia-understand",
+      "#inside-round",
+      "#internet-basics",
+      "#lugano",
+      "#main-content",
+      "#overview",
+      "#paper",
+      "#refusals",
+      "#research",
+      "#resources",
+      "#reveal",
+      "#social",
+      "#sources",
+      "#strange",
+      "#timeline",
+      "./",
+      "?tab=explore#aps-native",
+      "?tab=explore&preset=cities#explore",
+      "?tab=explore&q=.lugano#explore",
+      "?tab=geography#geography",
+      "?tab=how#how",
+      "?tab=how#how-part-1",
+      "?tab=how#how-part-10",
+      "?tab=how#how-part-3",
+      "?tab=how#how-part-5",
+      "?tab=how#how-part-8",
+      "?tab=reveal#reveal",
+      "?tab=sources#report-error",
+      "CITATION.cff",
+      "assets/logo-mark.png",
+      "assets/style.css",
+      "data/application_economic_map_2012_2026.csv",
+      "data/application_only_strings.csv",
+      "data/application_regions_2012.csv",
+      "data/application_regions_2026.csv",
+      "data/application_strings_2000.csv",
+      "data/applications_2000.csv",
+      "data/applications_2004.csv",
+      "data/applications_2012.csv",
+      "data/applications_2026.csv",
+      "data/applications_2026_aps_official_listing.csv",
+      "data/applications_2026_aps_official_provenance.json",
+      "data/applications_2026_strings_reveal.csv",
+      "data/aps_2026_application_edges.csv",
+      "data/aps_2026_application_graph.json",
+      "data/aps_2026_application_graph_manifest.json",
+      "data/aps_2026_record_observations.csv",
+      "data/beyond_the_dot.csv",
+      "data/contention_rounds.csv",
+      "data/control_levers.csv",
+      "data/dns_capabilities.csv",
+      "data/dns_oddities.csv",
+      "data/domain_governance_glossary.csv",
+      "data/domain_lifecycle.csv",
+      "data/economic_cases.csv",
+      "data/economic_metrics.csv",
+      "data/explorer_catalog.csv",
+      "data/governance_case_events.csv",
+      "data/governance_cases.csv",
+      "data/key_facts.csv",
+      "data/manifest.json",
+      "data/namespace_dimensions.csv",
+      "data/portfolio_applications.csv",
+      "data/registry_concentration.csv",
+      "data/round_2026.csv",
+      "data/rounds_summary.csv",
+      "data/rsp_geography_aug_2026.csv",
+      "data/sector_evolution_2012_2026.csv",
+      "data/sector_strategy_mix_2012_2026.csv",
+      "data/semantic_drift.csv",
+      "data/social_cases.csv",
+      "data/strange_internet.csv",
+      "data/success_framework.csv",
+      "data/tld_models.csv",
+      "data/tld_universe.csv",
+      "downloads/connecting-the-dots-data-pack-v0.7.78.sha256",
+      "downloads/connecting-the-dots-data-pack-v0.7.78.zip",
+      "downloads/connecting-the-dots-data-pack.zip",
+      "https://data.iana.org/TLD/tlds-alpha-by-domain.txt",
+      "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works",
+      "https://docs.ens.domains/learn/protocol/",
+      "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files",
+      "https://doi.org/10.5281/zenodo.23262622",
+      "https://doi.org/10.5281/zenodo.23262623",
+      "https://doi.org/10.5281/zenodo.23288603",
+      "https://domainnamewire.com/2026/10/07/surprise-intercap-registry-is-one-of-biggest-new-tld-applicants/",
+      "https://github.com/robertbregy/Connecting-the-Dots",
+      "https://github.com/robertbregy/Connecting-the-Dots/blob/main/data/aps_2026_application_graph_manifest.json",
+      "https://github.com/robertbregy/Connecting-the-Dots/issues/new",
+      "https://gov.ai/document/2026-03-18-011937_1898942126.pdf",
+      "https://gtldresult.icann.org/applicationstatus/viewstatus",
+      "https://handshake.org/",
+      "https://help.zenodo.org/docs/github/",
+      "https://identity.digital/contact",
+      "https://identity.digital/newsroom/what-makes-a-great-registry-services-provider",
+      "https://internet.best/new-gtld-applications/",
+      "https://investor.verisign.com/news-releases/news-release-details/dnibcom-reports-internet-has-4016-million-domain-name",
+      "https://newgtldprogram-aps.icann.org/applications",
+      "https://newgtldprogram-aps.icann.org/applications/WDO2627T-T45217/summary",
+      "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+      "https://newgtldprogram-aps.icann.org/statistics",
+      "https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/application-types/faqs/general/what-types-of-gtld-applications-can-be-submitted-in-the-new-gtld-program",
+      "https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/application-types/faqs/non-permitted-strings/what-are-closed-generics",
+      "https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/gtld-evaluation-fee/faqs",
+      "https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/string-contention-resolution/faqs/general/can-applicants-resolve-contention-privately",
+      "https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey",
+      "https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv",
+      "https://newgtldprogram.icann.org/en/application-rounds/round2/rsp/program-statistics/2026/08",
+      "https://newgtlds.icann.org/en/announcements-and-media/video/applicants",
+      "https://newgtlds.icann.org/en/program-status/statistics",
+      "https://newgtlds.icann.org/sites/default/files/drsp/25sep13/determination-1-1-1462-36448-en.pdf",
+      "https://register.bank/eligibility/",
+      "https://robertbregy.github.io/Connecting-the-Dots/",
+      "https://robertbregy.github.io/Connecting-the-Dots/applications/it/",
+      "https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/",
+      "https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/objectors-eoi/",
+      "https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/replacement-strings/",
+      "https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/sanctions-and-dns/",
+      "https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/",
+      "https://robertbregy.github.io/Connecting-the-Dots/de/",
+      "https://robertbregy.github.io/Connecting-the-Dots/en/",
+      "https://robertbregy.github.io/Connecting-the-Dots/fr/",
+      "https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/en/",
+      "https://robertbregy.github.io/Connecting-the-Dots/it/",
+      "https://root-servers.org/",
+      "https://www.aruba.it/en/press-kit/aruba-applies-for-39-new-domain-extensions.aspx",
+      "https://www.dotmeow.org/en/what/",
+      "https://www.hel.fi/en/decision-making/nichelsinki",
+      "https://www.iana.org/assignments/special-use-domain-names",
+      "https://www.iana.org/dnssec/procedures/ksk-operator/ksk-dps-20201104.html",
+      "https://www.iana.org/domains/root/db",
+      "https://www.iana.org/domains/root/db/helsinki.html",
+      "https://www.iana.org/domains/root/servers",
+      "https://www.iana.org/help/example-domains",
+      "https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en",
+      "https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en",
+      "https://www.icann.org/en/announcements/details/new-gtld-reveal-day---applied-for-strings-13-6-2012-en",
+      "https://www.icann.org/en/contracted-parties/accredited-registrars",
+      "https://www.icann.org/en/contracted-parties/registry-operators/services/registry-agreement-termination-service",
+      "https://www.icann.org/en/icann-acronyms-and-terms/registry-operator-en",
+      "https://www.icann.org/en/registry-agreements/details/zuerich?section=agreement",
+      "https://www.icann.org/en/registry-agreements/terminated/doosan",
+      "https://www.icann.org/en/registry-agreements/terminated/wed",
+      "https://www.icann.org/en/ssac/members/archive/25-01-2026",
+      "https://www.icann.org/en/system/files/files/donuts-witness-statements-13oct14-en.pdf",
+      "https://www.icann.org/resources/pages/domain-name-renewal-expiration-faqs-2018-12-07-en/",
+      "https://www.icann.org/resources/pages/epp-status-codes-2014-06-16-en",
+      "https://www.icann.org/resources/pages/gtld-registry-agreement-termination-2015-10-09-en/",
+      "https://www.icann.org/resources/pages/spam-phishing-2017-06-20-en",
+      "https://www.icann.org/resources/pages/universal-acceptance-faqs-2014-09-26-en/",
+      "https://www.identity.digital/newsroom/donuts-inc-and-afilias-inc-rebrand-to-identity-digital",
+      "https://www.identity.digital/registrar",
+      "https://www.kickstarter.com/projects/dotmeow/meow-next-round-gtld-application",
+      "https://www.lugano.ch/la-mia-citta/la-citta-si-racconta/progetti/dominio-primo-livello-lugano.html",
+      "https://www.namecoin.org/dot-bit/",
+      "https://www.ntlddata.com/applications",
+      "https://www.ntlddata.com/applications/strings",
+      "https://www.rfc-editor.org/rfc/rfc1034.html",
+      "https://www.rfc-editor.org/rfc/rfc4033.html",
+      "https://www.rfc-editor.org/rfc/rfc5737.html",
+      "https://www.rfc-editor.org/rfc/rfc8446.html",
+      "https://www.rfc-editor.org/rfc/rfc9114.html",
+      "https://www.rfc-editor.org/rfc/rfc9293.html",
+      "research/connecting-the-dots-working-paper-v1.html",
+      "research/connecting-the-dots-working-paper-v1.md",
+      "research/research_release_manifest.json"
+    ]
+  },
+  "immutableFiles": {
+    "CITATION.cff": "16b3532e7b3b5219259d47fdbb5aca938d1f2314950172e5625bf6d414c8ed2b",
+    "data/application_2026_snapshot.json": "5efeb70086dbb6886da519f33f3c71005534333d63a263d47f51799c390fded6",
+    "data/application_economic_map_2012_2026.csv": "fd296f84bddca790e9b581c0665c08f5903c2b86758d90d23e8008d434296f28",
+    "data/applications_2000.csv": "e6b7143b5b73b3c9a00dfccb95f2409747d234f37b8903275cb77fcf8885d656",
+    "data/applications_2004.csv": "ae50f520605518655bb8ec08ecbb756cc0d31140427037c19bff3a88c73fce1b",
+    "data/applications_2012.csv": "96b93fafc298cfc632481f43fdf439b9d65eb4a022356ea4124a6e494fd50822",
+    "data/applications_2026_aps_official_listing.csv": "520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887",
+    "data/applications_2026_aps_official_provenance.json": "928c77917c7dba4b0a9b4e6705e131984b83dc2d50b64b6c805143358fe596a6",
+    "data/applications_2026_strings_reveal.csv": "defffa4dcc1339b15164f4be9293402daf24d0d7291c038a8e21b36967cbe6a8",
+    "data/sector_evolution_2012_2026.csv": "420dc7bf2d8aa4644d011a8420f78f742156f9b57c2cee271620c512fc1d996b",
+    "data/sector_strategy_mix_2012_2026.csv": "ca92e80aeecce95a3a71e4720c8b2fb2c6317b6e772c0a3fa26c6b12ab309771",
+    "downloads/connecting-the-dots-data-pack-v0.7.77.sha256": "5067b2a27a21432ff097d4d94b278d7f574bd2f080010d8f895258472e5f3cb6",
+    "downloads/connecting-the-dots-data-pack-v0.7.77.zip": "8ff5dad0f9c18fedd7f1c30327a43efaca8ef6c16626d7475b2178be599e107a",
+    "downloads/connecting-the-dots-data-pack-v0.7.78.sha256": "f0f76c5073cc3a0506ab8da5a7bd4e7608c361d8fd5fa497569fddf36c84852b",
+    "downloads/connecting-the-dots-data-pack-v0.7.78.zip": "d812e6a01c04c451c4d68e111977a7de7492dce3919ebed48852fc19d224c1fe",
+    "downloads/connecting-the-dots-data-pack-v0.7.79.sha256": "601d793d924838644c273693793f0ea237db5e5080fff57361c41e4db2b3046b",
+    "downloads/connecting-the-dots-data-pack-v0.7.79.zip": "13308a339f13e0169c35159dbd2cdeba3fc58459eda33394278dbcd80772f88e",
+    "downloads/connecting-the-dots-data-pack-v0.7.80.sha256": "c3ed408c3e952bec334288e62f961bfb7cf7f338b3c18f2bc5cd1be453087779",
+    "downloads/connecting-the-dots-data-pack-v0.7.80.zip": "4ba79e195f73ac863b1871f0a7d34b2cbd5b25459547d01e2dfd74644e81f3f5",
+    "downloads/connecting-the-dots-data-pack-v0.7.81.sha256": "02f6b5921499d9bad1710c81eba733e309aa1400b41eb311093d6a3e4eabd239",
+    "downloads/connecting-the-dots-data-pack-v0.7.81.zip": "88d7ce0945ad29b2617ce421e2dfe1c62da6aa028d405c48dc1fec7a32dd2710",
+    "downloads/connecting-the-dots-data-pack-v0.7.82.sha256": "09ddb9906b00031f1e2b60b6cef176d42950196b498c21a3612b17db83fc12c8",
+    "downloads/connecting-the-dots-data-pack-v0.7.82.zip": "786058bda9cca5f75124c30cc55dc10f9c7c9df86b739f378c061354d75b57b0",
+    "downloads/connecting-the-dots-data-pack-v0.7.83.sha256": "900551d7ceee421a64bc232a7f7f4196cb1a347c6f2513355ed1ab694ac2f5cb",
+    "downloads/connecting-the-dots-data-pack-v0.7.83.zip": "e5a2d2c1d78d943c61d8481d94bbb2d1a0b0636216f6d4c0a5c122a740ec17f3",
+    "downloads/connecting-the-dots-data-pack.zip": "105855eaec0e118418c5bbf332ffa0a0e92b6726f470baf535846bb2cd79894f",
+    "research/rr2_candidate.json": "abc50b237a49636bd57ba0f52268ab6505c7305b1bc02fbb620d39d3cef136b3",
+    "research/rr2_publication_verification.json": "632098763759d353bfec7b04dd9860d7297b955695b14cdd5984ada4ec5ec6c1"
+  },
+  "files": {
+    "applications/de/index.html": {
+      "baselineSHA256": "30e00a377b01d61cce5c4ce178275dab3fd053485fc9d691c6e210ae0716ff9a",
+      "sha256": "8d15c4f015e44975649b4ed050bbcd006a999013c07b017e95bee3a0167236fd",
+      "rationaleIds": [
+        "C04",
+        "M01",
+        "E05",
+        "T02",
+        "A19",
+        "H01",
+        "U01",
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "applications/en/index.html": {
+      "baselineSHA256": "1f52c66b908ed9fc5e17caffd77f9157ba254d04ee081cc1b8bb983ce9c934c5",
+      "sha256": "5ee0eda1c0a434e09f7eb5264c5d91fdd0bc3d2f9d8eef9c415a365376d1600d",
+      "rationaleIds": [
+        "C04",
+        "M01",
+        "E05",
+        "T02",
+        "A19",
+        "H01",
+        "U01",
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "applications/fr/index.html": {
+      "baselineSHA256": "c069a3a5b79c9c558964bfe8d23c5c4ee305ab93e3cdb4ef61f844ff89e7db79",
+      "sha256": "49c0c5415f95e5408cb5bd2504c9b77e235bae5f08d5b3006b3f934ffe0190bd",
+      "rationaleIds": [
+        "C04",
+        "M01",
+        "E05",
+        "T02",
+        "A19",
+        "H01",
+        "U01",
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "applications/it/index.html": {
+      "baselineSHA256": "7830eae652c261d48bb590c8456d534793a394432672187303313eef92bcb1cc",
+      "sha256": "495d60030acff45d1d39f91ea2f062241514013e0748f6aba81a8f196986a037",
+      "rationaleIds": [
+        "C04",
+        "M01",
+        "E05",
+        "T02",
+        "A19",
+        "H01",
+        "U01",
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "assets/app.js": {
+      "baselineSHA256": "7b05a9ac42c01123b1f80d36b39a75c2824d8e1cf5c04ade837d60d665334c16",
+      "sha256": "3d2a18d60ac1d5d71ab97840d600e6667c634c2718636fbedebdb213eb8ed91a",
+      "rationaleIds": [
+        "C01",
+        "C03",
+        "C04",
+        "C05",
+        "M01",
+        "M02",
+        "M04",
+        "M05",
+        "M06",
+        "E02",
+        "E03",
+        "E06",
+        "E07",
+        "T02",
+        "A19",
+        "H01",
+        "U01",
+        "E09"
+      ]
+    },
+    "behind-the-round/de/background-screening/index.html": {
+      "baselineSHA256": "a984356385ce4e0867c61068b96587caa6a993e90a4b40b69f476d77d965711c",
+      "sha256": "82c5356aeb2b27b19868dbad6522aec9cc96cbf3e3b72f16c1a9cbfc2f499d20",
+      "rationaleIds": [
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "behind-the-round/de/index.html": {
+      "baselineSHA256": "564f0e014fc0a7e6d6131f6e47480cfb56b73116e2ca4ed013b685dd64519078",
+      "sha256": "48c8098a068cf14278e4e31d302a23f2e8b310bb4595a397bb0466bea7a31825",
+      "rationaleIds": [
+        "C02",
+        "M03",
+        "M04",
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "behind-the-round/de/objectors-eoi/index.html": {
+      "baselineSHA256": "ef7f4798e2427d5691e28931c78ffe0b183ca55146845d4ff0b04ebf8d76e1f8",
+      "sha256": "7a3d3f8ccb89d2d02fa6039d5828f7c3d9545482f3ea3abeca6788b992d8cebd",
+      "rationaleIds": [
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "behind-the-round/de/replacement-strings/index.html": {
+      "baselineSHA256": "4af49d4fde2f16ba0e02616db2723f4eae302ff0547c2ae50ef326db6ffe65cd",
+      "sha256": "ebe4750ff16078f72a040276e26080767899c830f68910759e23708390c6972d",
+      "rationaleIds": [
+        "M03",
+        "M04",
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "behind-the-round/de/sanctions-and-dns/index.html": {
+      "baselineSHA256": "a729b3af21770246b82590b03e037ff1fd6fbfeccfcacbbb108daea9315f0136",
+      "sha256": "f3cc5f926af40360c930ca793b1d9e883f92ed280c4f971c09faa7928f7225cc",
+      "rationaleIds": [
+        "E05",
+        "A19",
+        "H01"
+      ]
+    },
+    "behind-the-round/de/wdo-identity/index.html": {
+      "baselineSHA256": "ce6c244b49e2141e92ff6f083bcfa2d1122011a0c41e1d9e63c3a585b9432b35",
+      "sha256": "b5f701939a615a8aae1401b7e224886ada3e54ab644454b854bf181bef97c68a",
+      "rationaleIds": [
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "behind-the-round/de/who-controls-internet-access/index.html": {
+      "baselineSHA256": "0373ba3210ac9dc6770a60f801f9b422f2a574e15ca36757f36e2084dee47d11",
+      "sha256": "0373ba3210ac9dc6770a60f801f9b422f2a574e15ca36757f36e2084dee47d11",
+      "rationaleIds": [
+        "E05",
+        "A19",
+        "H01"
+      ]
+    },
+    "behind-the-round/en/background-screening/index.html": {
+      "baselineSHA256": "d34fe33fdbee89ac67c85a961651f700022362732f6ddb527fe36e7da87e46ad",
+      "sha256": "6e5916df8989d8a1e142d0232ac32f6104334cfdf4457432dd5898e27f429e3a",
+      "rationaleIds": [
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "behind-the-round/en/index.html": {
+      "baselineSHA256": "af1ad762e8244e28c0749e8123c3ce61f0deac32e4c3e1dac3c55b41d8457d7b",
+      "sha256": "e9fee31758958f5886c56b879aef0da520f56535e960c58ccc8dc2e5dfad5884",
+      "rationaleIds": [
+        "C02",
+        "M03",
+        "M04",
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "behind-the-round/en/objectors-eoi/index.html": {
+      "baselineSHA256": "e64d35945aaacb3ddb153109c41927381304e83993e14dbc22d348c373c4a5a1",
+      "sha256": "9e15794824ed4b8099456c6fcc9011b464d826505d8641faf25197e0be268e54",
+      "rationaleIds": [
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "behind-the-round/en/replacement-strings/index.html": {
+      "baselineSHA256": "67a79cb108812134a57279c8f593448bd0c776cb318e84cd40a61b0beccffaf2",
+      "sha256": "8e15f105818cf98fc897736e102b3141a672b697f7529c07d3316c1a100e2755",
+      "rationaleIds": [
+        "M03",
+        "M04",
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "behind-the-round/en/sanctions-and-dns/index.html": {
+      "baselineSHA256": "4a89ca7ff3683cab2c635a226b4edab871f8d9852fb54a2d802ea5538b3642eb",
+      "sha256": "13cb9e3abf791c3d1af5631e03c56ae389d56df5290769251ec21ff992a6287b",
+      "rationaleIds": [
+        "E05",
+        "A19",
+        "H01"
+      ]
+    },
+    "behind-the-round/en/wdo-identity/index.html": {
+      "baselineSHA256": "e3620d3be65315e8c7ab7c445cf64c7f2a195a7baff4aaaf84b67ad9978f6d1c",
+      "sha256": "74961d1c41bcab57199602da42d3bb92e7474a0becf68c0145884dca8a6c6f51",
+      "rationaleIds": [
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "behind-the-round/en/who-controls-internet-access/index.html": {
+      "baselineSHA256": "ef63c49fbd9fee82b025fb8ba908fbff4f026f03c4d00922d720a8ca0e88560c",
+      "sha256": "ef63c49fbd9fee82b025fb8ba908fbff4f026f03c4d00922d720a8ca0e88560c",
+      "rationaleIds": [
+        "E05",
+        "A19",
+        "H01"
+      ]
+    },
+    "behind-the-round/fr/background-screening/index.html": {
+      "baselineSHA256": "3d1fc6e5478ca30df2e7ef2000015f13605919007145e1b573851adf3e6f4ee4",
+      "sha256": "900206cb8c08159bc8b395d3067626594d91e645a8c1cdc0d30ae697b091f416",
+      "rationaleIds": [
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "behind-the-round/fr/index.html": {
+      "baselineSHA256": "9659e9b15112802fd7038e4d3242fac9133a49c849f2c0b60fcf1d9ec5dedca4",
+      "sha256": "664839d6f0562ea0fbe5366723a14e69a43ac761925ca7697c3c6e7d42043f38",
+      "rationaleIds": [
+        "C02",
+        "M03",
+        "M04",
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "behind-the-round/fr/objectors-eoi/index.html": {
+      "baselineSHA256": "83471ba6f9f0e9c173414d20df3f35dfba622f2299fcc6ed96dfa6770f4615ae",
+      "sha256": "c1bae7fa25b8955aa19eb83ae18a37946c29759809ce18749169e9a3c7434b51",
+      "rationaleIds": [
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "behind-the-round/fr/replacement-strings/index.html": {
+      "baselineSHA256": "c7f0147ae42f88f08b2fb187422917d93fb552527c526a8146583bece4ddd1cf",
+      "sha256": "0bb7631a5b0de33dfa5b264db724a6539281854005da20641b6286ea5ee64950",
+      "rationaleIds": [
+        "M03",
+        "M04",
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "behind-the-round/fr/sanctions-and-dns/index.html": {
+      "baselineSHA256": "3e491fbc08b588f6e46dce9f03fad63d738badcd7ae793e871b7afcafa9cada0",
+      "sha256": "31a300e2e6cb9c3cf57934d4700b3220c7cb2ae269800c512351d562812f68d3",
+      "rationaleIds": [
+        "E05",
+        "A19",
+        "H01"
+      ]
+    },
+    "behind-the-round/fr/wdo-identity/index.html": {
+      "baselineSHA256": "8ee2396c446975aa0d4487a5774ce7f322b441d55340e2a55fce83881ee61d87",
+      "sha256": "75641f362630df763bb4580bdf57059caa989d278ddd2ba49b5cd225ae8a9922",
+      "rationaleIds": [
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "behind-the-round/fr/who-controls-internet-access/index.html": {
+      "baselineSHA256": "9b01d3ef0b99124a0b77a977b20b4967e4d86cd5442bcd0da79ea3ce00c63b49",
+      "sha256": "9b01d3ef0b99124a0b77a977b20b4967e4d86cd5442bcd0da79ea3ce00c63b49",
+      "rationaleIds": [
+        "E05",
+        "A19",
+        "H01"
+      ]
+    },
+    "behind-the-round/it/background-screening/index.html": {
+      "baselineSHA256": "4d21a6f625bac55b627528b692f8f6e933955228fb32690e18cb28725bd56e43",
+      "sha256": "3ece66d55630e96a463068ce596511bf9acdf17a2be7a2118be7a0ee55d06067",
+      "rationaleIds": [
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "behind-the-round/it/index.html": {
+      "baselineSHA256": "fa8a3251fd779775cfe5d7aa3f187dee46cae288a58d570a434b835a8312efd2",
+      "sha256": "e8cb80787355c716b0add9eebff22ff62fd85b1208256db72cea06ce772b9d7c",
+      "rationaleIds": [
+        "C02",
+        "M03",
+        "M04",
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "behind-the-round/it/objectors-eoi/index.html": {
+      "baselineSHA256": "f19e692e1f023a21caa282b5cee2d8853f2293aafbe1dbbed82fb15dbff3c584",
+      "sha256": "96a234c966d584d6829a39e873ae7bf1f1cbb8daddd208055f6926428caa9ac4",
+      "rationaleIds": [
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "behind-the-round/it/replacement-strings/index.html": {
+      "baselineSHA256": "50e773f7eb7a0e1b723253adf6e514b439687d9f3e586fbdde2b6ec384957e2f",
+      "sha256": "844c3095f67a3c3e87c1273921e3bf7a813692b6b428115a5b5ff968c5359075",
+      "rationaleIds": [
+        "M03",
+        "M04",
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "behind-the-round/it/sanctions-and-dns/index.html": {
+      "baselineSHA256": "eb9f0663194f2a1d00f66f58f763b99f783aaea31d40584ba6d1aedae56b55d9",
+      "sha256": "e0abead410df165bae48d0db9b2daf9bdc5b23c1866d307d9f102409fc2ff686",
+      "rationaleIds": [
+        "E05",
+        "A19",
+        "H01"
+      ]
+    },
+    "behind-the-round/it/wdo-identity/index.html": {
+      "baselineSHA256": "7be67c9e27b89266d950c64170534d10a20fd64b2a8809f05b9d7b7ce5ca944d",
+      "sha256": "1d1aa4f481ef61a1bc1d815df741a0bd64a90cb2ca9580d606fcc60c1a759499",
+      "rationaleIds": [
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "behind-the-round/it/who-controls-internet-access/index.html": {
+      "baselineSHA256": "f7f8627965be401cc75ba0a240c610dfc8ef629ccac659230d0ddead0d885a71",
+      "sha256": "f7f8627965be401cc75ba0a240c610dfc8ef629ccac659230d0ddead0d885a71",
+      "rationaleIds": [
+        "E05",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/aps_2026_applicant_distribution.csv": {
+      "baselineSHA256": "bf43f77af73b71f281175f90999d4b0478fbe02696bc0a6a0465c111fc36bb13",
+      "sha256": "bf43f77af73b71f281175f90999d4b0478fbe02696bc0a6a0465c111fc36bb13",
+      "rationaleIds": [
+        "M01",
+        "M02",
+        "M05",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/aps_2026_applicant_sector_distribution.csv": {
+      "baselineSHA256": "18607e7bcbbcacd0d9fcd0659bbe57f71a85b3f4d5e22117e9131d113417d2bf",
+      "sha256": "18607e7bcbbcacd0d9fcd0659bbe57f71a85b3f4d5e22117e9131d113417d2bf",
+      "rationaleIds": [
+        "M01",
+        "M02",
+        "M05",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/aps_2026_applicant_sector_evidence.json": {
+      "baselineSHA256": "2f61a46069dcc82a704746110a4994f284b85b1e2da1804fe81712760b5a8b12",
+      "sha256": "2f61a46069dcc82a704746110a4994f284b85b1e2da1804fe81712760b5a8b12",
+      "rationaleIds": [
+        "M01",
+        "M02",
+        "M05",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/aps_2026_current_analytics.csv": {
+      "baselineSHA256": "9734855dc1451e59c99badb271248dc2a1464223e6b1c9fe036d61746fed7e75",
+      "sha256": "9734855dc1451e59c99badb271248dc2a1464223e6b1c9fe036d61746fed7e75",
+      "rationaleIds": [
+        "M01",
+        "M02",
+        "M05",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/aps_2026_current_analytics.js": {
+      "baselineSHA256": "303e4354391464e0612b47e1e6499fd806716c1179b0107e6fde67bbb54a0cab",
+      "sha256": "303e4354391464e0612b47e1e6499fd806716c1179b0107e6fde67bbb54a0cab",
+      "rationaleIds": [
+        "M01",
+        "M02",
+        "M05",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/aps_2026_current_analytics.json": {
+      "baselineSHA256": "d14050baf026791b30167f689fbeb18ef3c435ac9354f3622ebb656db01f7dd9",
+      "sha256": "d14050baf026791b30167f689fbeb18ef3c435ac9354f3622ebb656db01f7dd9",
+      "rationaleIds": [
+        "M01",
+        "M02",
+        "M05",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/aps_2026_current_analytics_manifest.json": {
+      "baselineSHA256": "ded1a4234ceb96d53304d5a48b9946c4b64d2f00c76adcb2a3a36e2901879847",
+      "sha256": "ded1a4234ceb96d53304d5a48b9946c4b64d2f00c76adcb2a3a36e2901879847",
+      "rationaleIds": [
+        "M01",
+        "M02",
+        "M05",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/aps_2026_location_distribution.csv": {
+      "baselineSHA256": "ad296ae43a9a11d325d4e34b0530b48481fc8969769c661e302a159be8e93728",
+      "sha256": "ad296ae43a9a11d325d4e34b0530b48481fc8969769c661e302a159be8e93728",
+      "rationaleIds": [
+        "M01",
+        "M02",
+        "M05",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/aps_2026_region_distribution.csv": {
+      "baselineSHA256": "d9ce301a19b7dd5af2e2e383dc5c034f329f764d27cc23f5bf3546cdd92072b7",
+      "sha256": "d9ce301a19b7dd5af2e2e383dc5c034f329f764d27cc23f5bf3546cdd92072b7",
+      "rationaleIds": [
+        "M01",
+        "M02",
+        "M05",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/aps_2026_string_theme_distribution.csv": {
+      "baselineSHA256": "af7017ab396f0b7a0eb915bac7add9cd08fd17ac2a13109ec8193ceec10bf4b6",
+      "sha256": "af7017ab396f0b7a0eb915bac7add9cd08fd17ac2a13109ec8193ceec10bf4b6",
+      "rationaleIds": [
+        "M01",
+        "M02",
+        "M05",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/behind_round_stories.json": {
+      "baselineSHA256": "dd651efce2d448ca95c6978798466aef807ea19975efae8addc2ac252c05e495",
+      "sha256": "d3fe23c418a4ce16eaa78f196b3c3c7540724050d1eecb4e6a538172ffac0b5e",
+      "rationaleIds": [
+        "M03",
+        "M04",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/domain_governance_glossary.csv": {
+      "baselineSHA256": "fb0cd5d0e6973b8bf0ea932317ccdb5da0a356ae8f99e7853d007692fbc654a2",
+      "sha256": "32115e08f27076ff6e4691d0c0e865635533ea3a8acdd8349f0b66a7b0a7e5be",
+      "rationaleIds": [
+        "C06",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/field_investigations.json": {
+      "baselineSHA256": "b85bf886a91f522599b7a6666079b0f2d1b063a01a48684ff6cbe774fb85c929",
+      "sha256": "442eda113b52cbdbd5e2a5274d9fceb7cf13fd765c5cb6f820700765c2dea879",
+      "rationaleIds": [
+        "M03",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/inside_the_round_events.json": {
+      "baselineSHA256": "a81e92caf54051da5bb2def6f2720f7a867a1e30f327c137c7c9e3fbe75dd2f4",
+      "sha256": "905d0b80e90a4a44a64297774a46afd05a0bd6b7ae5940914f6f30c39e9a0b1d",
+      "rationaleIds": [
+        "C02",
+        "M04",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/registry_concentration.csv": {
+      "baselineSHA256": "5a7928fb909a538bc32b8fd3c66a7abdb92ce25bbfc70b9052649ef0021b9bfe",
+      "sha256": "5f9efac583fe08b3bf9d6e0edf9715ed37bb54f25191fe7eddf9311d6742cec7",
+      "rationaleIds": [
+        "C03",
+        "M05",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/registry_concentration_context.csv": {
+      "baselineSHA256": "a7b62180df2ac200e8c1bc6a0819ecebd7ff914cfc9c04f191cc6064c65d6f1f",
+      "sha256": "a7b62180df2ac200e8c1bc6a0819ecebd7ff914cfc9c04f191cc6064c65d6f1f",
+      "rationaleIds": [
+        "C03",
+        "M05",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/release_history.json": {
+      "baselineSHA256": "e084001ed1150db3d2195e2e1c669808084dbc50535fcd2e5b5bf349bf8ebac7",
+      "sha256": "db594028757f9d6ad25da1448897c0d6eebe888fa4a7a6867b6383cc6769bfc9",
+      "rationaleIds": [
+        "C01",
+        "C02",
+        "C05",
+        "M01",
+        "M03",
+        "M04",
+        "T02",
+        "A19",
+        "H01",
+        "U01",
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "data/translations.json": {
+      "baselineSHA256": "6c71a4516d657f571e6fd714540e15be56fc423984681c3c003d46bf0ee5fc49",
+      "sha256": "ae1f2172712b38f39dc7a2e58d08136e6409296a6e71b5b7e43345d4cd6ce308",
+      "rationaleIds": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "E06",
+        "E07",
+        "E08",
+        "T02",
+        "A19",
+        "H01",
+        "U01",
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "inside-the-round/de/index.html": {
+      "baselineSHA256": "c7ad32d04ab943f95d934a41f96a94aa6b73e5955ec44fdefd30aeb956f028a2",
+      "sha256": "c722bb947d314a52aa1d4d08afc7ed8effcdc15e5bfac8c9ea791cdd375e2ce9",
+      "rationaleIds": [
+        "C02",
+        "M03",
+        "M04",
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "inside-the-round/en/index.html": {
+      "baselineSHA256": "bab16d3d558fc800079f4c3c1aebfc64e71ae97cc6c9b6aa236d09a12a3b4db7",
+      "sha256": "a5aac577a01335a07ecafbf392c4934d82d81a3426c99a667c189298c4ccbe9c",
+      "rationaleIds": [
+        "C02",
+        "M03",
+        "M04",
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "inside-the-round/fr/index.html": {
+      "baselineSHA256": "709bdc1f3e0dda04e169f2287d5db8b55637aef6ef32b5df823685278cd1df6d",
+      "sha256": "83d6129a31bb6cd5e8521acfeb7d6b728756308b2c2b80a94c099e550900418a",
+      "rationaleIds": [
+        "C02",
+        "M03",
+        "M04",
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "inside-the-round/it/index.html": {
+      "baselineSHA256": "0356f7c2cd5d1d30d584ef35530e8c6445bf66569c4684e5599ff94965b23bf3",
+      "sha256": "0029417a98cc3a516edea52fdfe818ba304c6bd43578378e0ae00492a2042ca9",
+      "rationaleIds": [
+        "C02",
+        "M03",
+        "M04",
+        "E05",
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "publication.json": {
+      "baselineSHA256": "b5d225fa96dc9573b2dac3c18e39236c2e570c65aaa08afdbfedbdc0292368ef",
+      "sha256": "29113282ebc138345bce11e49c70b42da9ae6005b8b9d761f99815342b156ab7",
+      "rationaleIds": [
+        "C01",
+        "C02",
+        "C05",
+        "T02",
+        "A19",
+        "H01",
+        "U01",
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "research/connecting-the-dots-working-paper-v1.html": {
+      "baselineSHA256": "5599e8f890e732a80bfc0852c686465b69309f055f4853673d55fb8725bc9948",
+      "sha256": "a2f410565a6e04026f84c7bf858eab420b61e4e1c576bfde00421084cedb0521",
+      "rationaleIds": [
+        "C05",
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "T02",
+        "A19",
+        "H01",
+        "U01",
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "research/connecting-the-dots-working-paper-v1.md": {
+      "baselineSHA256": "c02a5dd4dbc8056fdc4e8efaebf2ee2b3cb9c94577e0fa98b63cfe65dcb185d7",
+      "sha256": "86ecf2adb083f877ea064b8bb270700c88acd8e46a9c9202cb55d64fe31d6297",
+      "rationaleIds": [
+        "C05",
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "T02",
+        "A19",
+        "H01",
+        "U01",
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "research/index.html": {
+      "baselineSHA256": "e9a26de35e6eada49de00b1d9df234d3f67c8e40f93591134477a064c0694245",
+      "sha256": "8e24739e4a401cbd1f4d07ad57a6619d742a5d2662ed1470ff0600d54d3d0e90",
+      "rationaleIds": [
+        "C05",
+        "T02",
+        "A19",
+        "H01",
+        "U01",
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "src/index.web.html": {
+      "baselineSHA256": "b6a65c951dc6c990671ca558580dbfaec97f33d6bf0b1050e83d1b9399c028c2",
+      "sha256": "e53286ca0704c5398b1169b06cf755cffee22aa3cd6db41653851164739e56cf",
+      "rationaleIds": [
+        "C01",
+        "C02",
+        "E01",
+        "E02",
+        "E03",
+        "E06",
+        "E07",
+        "T02",
+        "A19",
+        "H01",
+        "U01",
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "research/research_release_manifest.json": {
+      "baselineSHA256": "c928f7857e4cf66ea98983ba13aad299dadd7d6674ab7b4b9e4a54fe65d031b7",
+      "sha256": "c770478b6095887ac1fbf5a5283f8af5bef888ab098e82bbbf87029e31075047",
+      "rationaleIds": [
+        "C05",
+        "T02",
+        "A19",
+        "H01",
+        "U01",
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "data/sources.csv": {
+      "baselineSHA256": "5ac8724ad4e066c360f39348c6512aa9533ddf5599ae2cc43b0e343be949d60f",
+      "sha256": "5ac8724ad4e066c360f39348c6512aa9533ddf5599ae2cc43b0e343be949d60f",
+      "rationaleIds": [
+        "E04",
+        "E07",
+        "CI03",
+        "A19",
+        "H01"
+      ]
+    },
+    "assets/tld-cultural.js": {
+      "baselineSHA256": "71fffa9b38ff8a86e445607af812dca9f3c2fa0ef24e8b11cded8496dc683c85",
+      "sha256": "71fffa9b38ff8a86e445607af812dca9f3c2fa0ef24e8b11cded8496dc683c85",
+      "rationaleIds": [
+        "T01",
+        "A19",
+        "H01"
+      ]
+    },
+    "scripts/render_tld_cultural_trajectory.py": {
+      "baselineSHA256": "9f1f74f303e9f9142a60a8a14bed7ed314f5dba62e7da666c59aa021b0777dcc",
+      "sha256": "ff87fb417c8971d1eb93a51cc69f3656b330208c5b538300ae3abd81739f0f13",
+      "rationaleIds": [
+        "T01",
+        "A19",
+        "H01",
+        "U01"
+      ]
+    },
+    "scripts/build_tld_cultural_trajectory.py": {
+      "baselineSHA256": "949c3065e50266536eeaa7a1b5b386c9de08d79755b2a124d0459154ad10473d",
+      "sha256": "17fe1161af382496dd272554b8f8b0ede0c1fe28ff608c30cca357693dfa8ab2",
+      "rationaleIds": [
+        "T01",
+        "A19",
+        "H01"
+      ]
+    },
+    "scripts/validate_tld_cultural.cjs": {
+      "baselineSHA256": "65712d45d289197917faf55c63c5e7f2e786c85cb1b3929e05d10fd9147d2536",
+      "sha256": "1a2a55a985fe87f9b3a0f2bbcb755913d0c7e19e468ea11836bbf8c0e4530de0",
+      "rationaleIds": [
+        "T01",
+        "A19",
+        "H01",
+        "U02"
+      ]
+    },
+    "data/round_application_fees.json": {
+      "baselineSHA256": "1f0b1c0de682d033d01265e0c1fbfdb290b9027a14696608f9bfbc8ba69692cf",
+      "sha256": "d6e65555b308a72e602ead9245212086cd13262670627dc65cb55d8214546ff2",
+      "rationaleIds": [
+        "T01",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/tld_cultural_editorial.json": {
+      "baselineSHA256": "f3f29d5cfa2c5b502d6796ae883738d9efc4893803b78977476e1ececa1cfd24",
+      "sha256": "2d89b4a8bff61c3bcc67cf267d4433f4ccf8f527271c15647f9f153d95bb3523",
+      "rationaleIds": [
+        "T01",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/tld_cultural_patterns.json": {
+      "baselineSHA256": "fb48b2f719b94d7f0d1f27862d068709b0d3171a3011b826f0101d7a12140675",
+      "sha256": "97e02640a58c1c6239c0786ab29417e9755c1d2df1f04f8a22d5591ac4864135",
+      "rationaleIds": [
+        "T01",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/tld_cultural_corpus.csv": {
+      "baselineSHA256": "7fb7fd2b5d41e0e3b6be0be957dc9c0d4ff5bd78a31bef2501b6da10d0b46bdf",
+      "sha256": "55ba2ed29942698e359195de67f818e56337eb46ad61afe04bb6c9ae555158b2",
+      "rationaleIds": [
+        "T01",
+        "A19",
+        "H01"
+      ]
+    },
+    "scripts/audit_content_continuity.py": {
+      "baselineSHA256": "5e4f27becc338d5c51fc5737e2e796c0846991d85dce5524b381de293930c5c9",
+      "sha256": "902261f7ef25ac1f4da9e613ab1d51cd3472bd5dc699aaa93d135f5ce9b1440f",
+      "rationaleIds": [
+        "T01",
+        "CI03",
+        "T02",
+        "A19",
+        "H01"
+      ]
+    },
+    "scripts/verify_ia_b2_parity.cjs": {
+      "baselineSHA256": "feae797a59cecdf898d67159e487861b30e87b2cafd7d44fcf924f8f48415312",
+      "sha256": "ca7b51a83ca7f3daabdc800b8db3e8e2b2a81f4a39e13586b33e0f551bde8c35",
+      "rationaleIds": [
+        "T01",
+        "CI03",
+        "T02",
+        "A19",
+        "H01"
+      ]
+    },
+    "scripts/release_check.py": {
+      "baselineSHA256": "4ccca58dacc30d5347ef710871d7c3debbe4d21a44bb3c269307d5a93ed19304",
+      "sha256": "c16c9c63baf65c1b65315d4b8b8ed554ec89b9857452bb5dde0191bae4ca1869",
+      "rationaleIds": [
+        "T01",
+        "CI03",
+        "T02",
+        "A19",
+        "H01"
+      ]
+    },
+    "build.py": {
+      "baselineSHA256": "1e375ef181f88942d94657f7cf210324ff3976f49d053aba8edb7a2ae16f86c0",
+      "sha256": "5fd661666ddc5aa444a9fc64de28e51515d6b209c73e338e3f71f1bcb8ac08d5",
+      "rationaleIds": [
+        "T01",
+        "CI03",
+        "T02",
+        "A19",
+        "H01",
+        "U01",
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "scripts/build_tld_market.py": {
+      "baselineSHA256": "99ecf40c0b840abcaa1ab0342b72ede26220df7b6278678b28c2f60bcd07064d",
+      "sha256": "99ecf40c0b840abcaa1ab0342b72ede26220df7b6278678b28c2f60bcd07064d",
+      "rationaleIds": [
+        "T02",
+        "A19",
+        "H01"
+      ]
+    },
+    "scripts/render_tld_market.py": {
+      "baselineSHA256": "539f8a078ea6e19a429b9ba13f9934d98a7d79eee060f8bdca8d2eb3db691308",
+      "sha256": "53b496f01386173314869012de3c7260adc4de58183632accdf774f22fe00dba",
+      "rationaleIds": [
+        "T02",
+        "A19",
+        "H01"
+      ]
+    },
+    "scripts/validate_tld_market.cjs": {
+      "baselineSHA256": "72ec0dbe664c28434183b69692704dc825c899748781f02d7aa20f8afaf463a5",
+      "sha256": "72ec0dbe664c28434183b69692704dc825c899748781f02d7aa20f8afaf463a5",
+      "rationaleIds": [
+        "T02",
+        "A19",
+        "H01"
+      ]
+    },
+    "assets/tld-market.js": {
+      "baselineSHA256": "0947285d7f46c906309efcf161e8bc3903766fafc28c3cfafd02b989b0bf1ef8",
+      "sha256": "bddbf49ac146495fbafa94e203f472ae2c80fd4380d613528c1405cc42807828",
+      "rationaleIds": [
+        "T02",
+        "A19",
+        "H01",
+        "U01"
+      ]
+    },
+    "data/tld_market_snapshot.json": {
+      "baselineSHA256": "5ab933a05ee5cf26373569cc9b5bfcf5e99091560faf31c28cfcc91012694ca4",
+      "sha256": "5ab933a05ee5cf26373569cc9b5bfcf5e99091560faf31c28cfcc91012694ca4",
+      "rationaleIds": [
+        "T02",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/tld_market_provenance.json": {
+      "baselineSHA256": "aa193a346f5b7dc072605e07180cd21f75cf15e12566a5c45b4168f6f2d92e30",
+      "sha256": "aa193a346f5b7dc072605e07180cd21f75cf15e12566a5c45b4168f6f2d92e30",
+      "rationaleIds": [
+        "T02",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/tld_top50_zone_domains.csv": {
+      "baselineSHA256": "9551bf926152e89b3fdb1cd346695a07887b0cb5c8743097746a878b340bf446",
+      "sha256": "9551bf926152e89b3fdb1cd346695a07887b0cb5c8743097746a878b340bf446",
+      "rationaleIds": [
+        "T02",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/tld_top50_website_share.csv": {
+      "baselineSHA256": "fb182f04f9baed6a05fd9d63cee1680d93d02838a4446c5604d4130b4d230fb5",
+      "sha256": "fb182f04f9baed6a05fd9d63cee1680d93d02838a4446c5604d4130b4d230fb5",
+      "rationaleIds": [
+        "T02",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/rsp_tld_footprint.csv": {
+      "baselineSHA256": "c1905b7ba0005bb406ffad0a503815c9da53fae99e4cc01a09b3547bcfadadab",
+      "sha256": "c1905b7ba0005bb406ffad0a503815c9da53fae99e4cc01a09b3547bcfadadab",
+      "rationaleIds": [
+        "T02",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/README.md": {
+      "baselineSHA256": "2a99692ea31c540c10530d654853889b566cd61fa5ef41aabc273d3db4fc72c2",
+      "sha256": "50c889dd83a9e6cd750e8c0fcaaa6f48295a14bb66ec601460aa65e135dda028",
+      "rationaleIds": [
+        "T02",
+        "A19",
+        "H01"
+      ]
+    },
+    "docs/TLD_MARKET_2026-10-19.md": {
+      "baselineSHA256": "69dae03b28f8dee1b7665188a3c8eccdb3f6a06dcfed1572488603dd48ddddc4",
+      "sha256": "69dae03b28f8dee1b7665188a3c8eccdb3f6a06dcfed1572488603dd48ddddc4",
+      "rationaleIds": [
+        "T02",
+        "A19",
+        "H01"
+      ]
+    },
+    "docs/editorial-review-2026-10-19.json": {
+      "baselineSHA256": "03b48a852312d6385c524c6966d6f290e718560890af1d9112bdc0cb199bcc42",
+      "sha256": "03b48a852312d6385c524c6966d6f290e718560890af1d9112bdc0cb199bcc42",
+      "rationaleIds": [
+        "T02",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/evidence/tld-market-2026-10-19/ntlddata-tlds-2.json": {
+      "baselineSHA256": "748dce504c861d0fbcc2289008ba8ac7dea9b239d73c56efbdc5cddf8bd9ba0c",
+      "sha256": "748dce504c861d0fbcc2289008ba8ac7dea9b239d73c56efbdc5cddf8bd9ba0c",
+      "rationaleIds": [
+        "T02",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/evidence/tld-market-2026-10-19/ntlddata-tlds-3.json": {
+      "baselineSHA256": "262de1324f142a93b1f6fa23fcca6165336784645b73d43cb0892d4a6cebcf3a",
+      "sha256": "262de1324f142a93b1f6fa23fcca6165336784645b73d43cb0892d4a6cebcf3a",
+      "rationaleIds": [
+        "T02",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/evidence/tld-market-2026-10-19/ntlddata-backends.json": {
+      "baselineSHA256": "2a348b86d3b978d73c2785087bcdd1951625a7ba49890f7456ddbb0751430bf0",
+      "sha256": "2a348b86d3b978d73c2785087bcdd1951625a7ba49890f7456ddbb0751430bf0",
+      "rationaleIds": [
+        "T02",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/evidence/tld-market-2026-10-19/ntlddata-tlds-1.json": {
+      "baselineSHA256": "126206b02dd11256809b167d8c27f46053b4caba5053fc77afd5dd18cbad691e",
+      "sha256": "126206b02dd11256809b167d8c27f46053b4caba5053fc77afd5dd18cbad691e",
+      "rationaleIds": [
+        "T02",
+        "A19",
+        "H01"
+      ]
+    },
+    "data/evidence/tld-market-2026-10-19/w3techs-top50.json": {
+      "baselineSHA256": "bac72603a960adecf2f9c752c99420b81d4f0aaf61f907c0164bfb9d79770004",
+      "sha256": "bac72603a960adecf2f9c752c99420b81d4f0aaf61f907c0164bfb9d79770004",
+      "rationaleIds": [
+        "T02",
+        "A19",
+        "H01"
+      ]
+    },
+    "scripts/audit_20261018_browser.cjs": {
+      "baselineSHA256": "96a18d15d53749bc60df6ee6fe8c3df3d6018565643663ab8bc5ed3474d8a789",
+      "sha256": "d0c747d728979bb5eb184cb038a5af6e48e26f56107d7434fd545334a5a552cb",
+      "rationaleIds": [
+        "T02",
+        "A19",
+        "H01",
+        "E09"
+      ]
+    },
+    "scripts/audit_tld_market_browser.cjs": {
+      "baselineSHA256": "ba7b050577cda9c0f50240c40136a9cedd216d6e51d2a9f6785ab332b1a651fb",
+      "sha256": "e5db36dea4882ba007301a478db64be6f3ffa1dc08691fd6e8c26a1123c8d9f5",
+      "rationaleIds": [
+        "T02",
+        "A19",
+        "H01",
+        "U01"
+      ]
+    },
+    ".github/workflows/audit-browser.yml": {
+      "baselineSHA256": "ed063e0e2ffe43df54dfe3e1a98a4292dad5524d76a46c174c6a0943554a1296",
+      "sha256": "c9fdcb2e30dac68aa1a9c418d35ae31976e3fee7873c59ef4d7abbe09482aee9",
+      "rationaleIds": [
+        "A19",
+        "H01",
+        "U01",
+        "E09"
+      ]
+    },
+    ".gitignore": {
+      "baselineSHA256": "1591671f06576b26a8f3cb1b7690b79b01e128319960a66b6c450cc51f4e9af0",
+      "sha256": "c6ec1f435305567ca1c74a649c1a7cb216da05ffc6f764521458321fa7002493",
+      "rationaleIds": [
+        "A19",
+        "H01",
+        "R01",
+        "R02"
+      ]
+    },
+    "CITATION.cff": {
+      "baselineSHA256": "16b3532e7b3b5219259d47fdbb5aca938d1f2314950172e5625bf6d414c8ed2b",
+      "sha256": "d8d8cc36155be503ac31e3f5868b273ca44707db1edd3d9fe5a3f06d2c2490a4",
+      "rationaleIds": [
+        "A19",
+        "H01"
+      ]
+    },
+    "docs/READER_TASKS.md": {
+      "baselineSHA256": "24822d8f6337879e66537dda7c62617c332207c28cdfa2f40bf0344b95d48701",
+      "sha256": "f261c0f99b106c157aaeda7f1513e36c4974ab570a644444af63af1c60ace586",
+      "rationaleIds": [
+        "A19",
+        "H01"
+      ]
+    },
+    "package-lock.json": {
+      "baselineSHA256": "3580e7fa5485bd55e532e7bc5644dfa0e48c1bf9769fab8108722ee1dd5ae708",
+      "sha256": "0df68dd6e8b4ca0383b41a8f1e74420178bf4ba55e3ace2a3dccda7c2fbb45bd",
+      "rationaleIds": [
+        "A19",
+        "H01",
+        "U01",
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "package.json": {
+      "baselineSHA256": "e317eceaaca55386ac43bab966e1479052d93331e204104ce5d36c107e43f28f",
+      "sha256": "d30d869f753a25b82213978cccdce57ae2cf1d7100da0aad692e6a3dbdd079b7",
+      "rationaleIds": [
+        "A19",
+        "H01",
+        "U01",
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "research/README.md": {
+      "baselineSHA256": "e73bf4e607e4cbc95be972f81584215e079c81f5d835592176dbfa16a4ee6c77",
+      "sha256": "d0b196b2002b381fdc264dcaf1b12546fd34cb31369ce4b3aa04e36aa2ebc814",
+      "rationaleIds": [
+        "A19",
+        "H01",
+        "U01",
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "scripts/assemble_data.js": {
+      "baselineSHA256": "cdf3be31c5224b0bb98304eca9b9de535739e25a252d5eb7a4e913b5d59a7e6a",
+      "sha256": "a4254b7913680856a7e197428d019f09ed7541ce80672c5d7d0421a1d6a9946b",
+      "rationaleIds": [
+        "A19",
+        "H01"
+      ]
+    },
+    "scripts/payload_audit.py": {
+      "baselineSHA256": "ee3d9b0f429d493332cea9578b00ad167d07b701bbe744bccfae5f85a385c62c",
+      "sha256": "7f524b46a92add9768ad0f77e264782e105c9633ce81aa9f0f19994115b16922",
+      "rationaleIds": [
+        "A19",
+        "H01"
+      ]
+    },
+    "scripts/render_research.cjs": {
+      "baselineSHA256": "0d909a55a031e966003f70a5fe3033b2689f323390cdfc326f5a0f92bea32578",
+      "sha256": "5aa94535fb9ce083bf711ec38992756565f9a4d076dd73f0061268ddb8ef7fab",
+      "rationaleIds": [
+        "A19",
+        "H01"
+      ]
+    },
+    "scripts/sync_publication.py": {
+      "baselineSHA256": "507128389bf3554f9377308879627000e878882601833f2c479f56fe23c3f6d9",
+      "sha256": "122e2517889e3974427018f3d282afade4b2e684ba94b0daa15f7233072d22c9",
+      "rationaleIds": [
+        "A19",
+        "H01"
+      ]
+    },
+    "scripts/validate_multilingual.js": {
+      "baselineSHA256": "1b784ead691d9f1300c67e5db337fa3e7819df3356e930a3f9bb816c1c051461",
+      "sha256": "356ab5f79810e86808a888fb3f092c253e326f47c67b566e5691e3ff15820bf5",
+      "rationaleIds": [
+        "A19",
+        "H01",
+        "U01"
+      ]
+    },
+    "assets/aps-lazy.js": {
+      "baselineSHA256": null,
+      "sha256": "2632914a7b71b514ccad7ebc0b98ebb67fb07ebf38e6ca1039a1e5ff0caa35f5",
+      "rationaleIds": [
+        "A19",
+        "H01",
+        "U01"
+      ]
+    },
+    "data/audit_20261019_editorial.json": {
+      "baselineSHA256": null,
+      "sha256": "7d62b9dce3351bcaada10b65caa58ec580088ff3199b4c44e0472760355e4b08",
+      "rationaleIds": [
+        "A19",
+        "H01"
+      ]
+    },
+    "data/audit_20261019_resolution.json": {
+      "baselineSHA256": null,
+      "sha256": "2a84c8264a0768f44246d0c1afb7b7de3c578827ae231be995d114b9ad522f84",
+      "rationaleIds": [
+        "A19",
+        "H01"
+      ]
+    },
+    "data/cultural_classification_protocol.json": {
+      "baselineSHA256": null,
+      "sha256": "24483a6bc5abdc2877ae8afddf2099503929a4c50b515837fa94e29ac45508a0",
+      "rationaleIds": [
+        "A19",
+        "H01"
+      ]
+    },
+    "data/cultural_validation_sample.csv": {
+      "baselineSHA256": null,
+      "sha256": "ada2d4c72ec31a977525bf54a2e5e2084a0ac6f36f43e32d0056635b07833fe1",
+      "rationaleIds": [
+        "A19",
+        "H01"
+      ]
+    },
+    "data/financial_source_verification_20261019.json": {
+      "baselineSHA256": null,
+      "sha256": "d7bba26987fd53b76dd5c013394a89b2b2b0a3459480a10d30e284c689626421",
+      "rationaleIds": [
+        "A19",
+        "H01"
+      ]
+    },
+    "data/frozen_technical_packages.json": {
+      "baselineSHA256": null,
+      "sha256": "7974adc4fd8cef7d7d602d4d6a0e8794815affc05ccdea601618bce34e2928e8",
+      "rationaleIds": [
+        "A19",
+        "H01",
+        "U01",
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "data/reader_validation_recording.csv": {
+      "baselineSHA256": null,
+      "sha256": "b8bf854749e3368a82c6192c5082344a50477f40c5e712fdb0cfa7b5adee6720",
+      "rationaleIds": [
+        "A19",
+        "H01"
+      ]
+    },
+    "data/research_bibliographic_corrections.json": {
+      "baselineSHA256": null,
+      "sha256": "6e6e18006bcfad7155b8933169adb2beef2b94d2d05b7449af0f7b51cb73db41",
+      "rationaleIds": [
+        "A19",
+        "H01"
+      ]
+    },
+    "data/source_method_corrections_20261019.json": {
+      "baselineSHA256": null,
+      "sha256": "9eb9b1b319ea1e89d0f6324c9db54515a02fcb71ec4d5964d7519ccd5a11c815",
+      "rationaleIds": [
+        "A19",
+        "H01"
+      ]
+    },
+    "scripts/audit_20261019_browser.cjs": {
+      "baselineSHA256": null,
+      "sha256": "0924eb7654d883a4c8ad29bc4c8fb90dcbebf0e7222ddcb0e0d39ff4974208b6",
+      "rationaleIds": [
+        "A19",
+        "H01",
+        "U01"
+      ]
+    },
+    "scripts/audit_performance_20261019.cjs": {
+      "baselineSHA256": null,
+      "sha256": "ebb250d52b3458c93cfed9f68f4930169bc0379e02221f5a0601a82c9b81ad83",
+      "rationaleIds": [
+        "A19",
+        "H01",
+        "U01"
+      ]
+    },
+    "scripts/reconcile_audit_20261019.cjs": {
+      "baselineSHA256": null,
+      "sha256": "b3461d444200a87db3e220e16597b9fe30ad4cdea2fd86387ecfc6440b5a574f",
+      "rationaleIds": [
+        "A19",
+        "H01"
+      ]
+    },
+    "CHANGELOG.md": {
+      "baselineSHA256": "08308b4d751353182a834f71c730d08866a0375ac9ee866701e4caf8eb41d4ff",
+      "sha256": "d598158b1683f54dd374e429646f3b1488364995d4d389c43e08af7d654481ce",
+      "rationaleIds": [
+        "A19",
+        "H01",
+        "U01",
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "docs/REPOSITORY_GOVERNANCE.md": {
+      "baselineSHA256": "a0a21b166158beae4135a308fb36251bf462e14019f362483145052031502657",
+      "sha256": "82d7f2050a49a938e37471a326e6422cb55585a405b1f92b239e754ad2f57bfe",
+      "rationaleIds": [
+        "A19",
+        "H01"
+      ]
+    },
+    "scripts/validate_delivery.js": {
+      "baselineSHA256": "48f055a05acc6b942b68381309a2bf4ca23fadf84d775fe785006517ff35ec5a",
+      "sha256": "c06b3f1be4a5ed2b455a822df4f56a81bdef346a7d576562a34bd269e608e95b",
+      "rationaleIds": [
+        "A19",
+        "H01"
+      ]
+    },
+    "assets/worldmap-lazy.js": {
+      "baselineSHA256": null,
+      "sha256": "e666879b00c96d3950bca964bf4d1da52bf815f64cd679c443a03d0c478ba87b",
+      "rationaleIds": [
+        "A19",
+        "H01"
+      ]
+    },
+    "data/cultural_classification_protocol_v2.json": {
+      "baselineSHA256": null,
+      "sha256": "947987f3749c994a7965442ba8e4aba365e2a1da434e4523815cefb2e2bbaaa8",
+      "rationaleIds": [
+        "H01"
+      ]
+    },
+    "data/cultural_history_evidence_v2.json": {
+      "baselineSHA256": null,
+      "sha256": "6f4fe20a728fb5f1387230ed5c6e8b393c982fd0f7075fb3efa506af0ba83154",
+      "rationaleIds": [
+        "H01"
+      ]
+    },
+    "data/cultural_lexicon_review_queue_v2.csv": {
+      "baselineSHA256": null,
+      "sha256": "26b6e29ee6997044e34fae45376c4a41fe78f4229d62eb4f4400c235eb8cb9b7",
+      "rationaleIds": [
+        "H01"
+      ]
+    },
+    "data/cultural_lexicon_v2.json": {
+      "baselineSHA256": null,
+      "sha256": "fc47ae2cdbd67c9399b9eaa7c30456b207fd228afffe17d88db24ad83350c541",
+      "rationaleIds": [
+        "H01"
+      ]
+    },
+    "data/cultural_sensitivity_v2.json": {
+      "baselineSHA256": null,
+      "sha256": "89f9ee8aa51aba2c98dc987ccb6e39633d70d9d4c3cdd4d1ee062ca5d3ec4041",
+      "rationaleIds": [
+        "H01"
+      ]
+    },
+    "scripts/render_cultural_sensitivity.py": {
+      "baselineSHA256": null,
+      "sha256": "1bbf6c5e67f733001287ca691b4add820788b7bcf488cb578a9325797f8ad99d",
+      "rationaleIds": [
+        "H01"
+      ]
+    },
+    "scripts/test_cultural_research_v2.py": {
+      "baselineSHA256": null,
+      "sha256": "52a70e881f7ac28cd1439c68d903c1f5082f036065025e1e003782ecb331a637",
+      "rationaleIds": [
+        "H01"
+      ]
+    },
+    ".github/workflows/rebuild.yml": {
+      "baselineSHA256": "3da73a6fad7995f03b80e8ba4cb646ef8dca09250fa19d1addf924f2e27ade6a",
+      "sha256": "5c1cb4d462a52a9a58f0d7d67b869588e5c468225301c0313318676d90eb7e6b",
+      "rationaleIds": [
+        "H02",
+        "U01",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    ".github/workflows/pages-live-smoke.yml": {
+      "baselineSHA256": "4bf59135ccdc9482e94f28d10c7feeb996b12b24faa1a7495db9ed5512a84626",
+      "sha256": "e8b1bab98c5e3147ff4c3734bb6f9834524106d3d6f9e0d1a7e9c08157d4caa5",
+      "rationaleIds": [
+        "U01",
+        "U03"
+      ]
+    },
+    "assets/audience.css": {
+      "baselineSHA256": null,
+      "sha256": "0b2b945c00593f6888efc9166fa9716fd3910569dd3b3d388d9dc778b9220e4b",
+      "rationaleIds": [
+        "U01",
+        "U03",
+        "E09"
+      ]
+    },
+    "data/audience_editorial.json": {
+      "baselineSHA256": null,
+      "sha256": "50c290097ce3f9679ff92e91f06b07d69628aae938c50286a88b817e9ce247cc",
+      "rationaleIds": [
+        "U01",
+        "U03"
+      ]
+    },
+    "data/cultural_blind_review_v2.csv": {
+      "baselineSHA256": null,
+      "sha256": "c0f1c2fe4ebc99241655ef2fd1d85aa93065eb3f4f34afa01e99c39001588f87",
+      "rationaleIds": [
+        "U01"
+      ]
+    },
+    "data/independent_review_materials.json": {
+      "baselineSHA256": null,
+      "sha256": "c574d8047db74be57940cf348b7a348251e2f58f5e5a8142d311291618b49564",
+      "rationaleIds": [
+        "U01",
+        "U03"
+      ]
+    },
+    "scripts/audit_audience.cjs": {
+      "baselineSHA256": null,
+      "sha256": "aba183021c78075bde0f10360077bf90e42e9b6c904634a7ac7199612c9c1cce",
+      "rationaleIds": [
+        "U01",
+        "U03"
+      ]
+    },
+    "scripts/audit_ia_b2.cjs": {
+      "baselineSHA256": "69b0c092ad93286154b346dd6f37c14fef05b71cc9156afe957cb87f81d3a985",
+      "sha256": "1c4bc027bc221dce944a2af38f7fa6fcb81fe9008d7e6d90efffc2f14f664bb5",
+      "rationaleIds": [
+        "U01"
+      ]
+    },
+    "scripts/reconcile_audience.cjs": {
+      "baselineSHA256": null,
+      "sha256": "8311dd09c7a4ff7ac0b029f7322e576895dafc9ffcaafda608bf9f96cdcaa473",
+      "rationaleIds": [
+        "U01",
+        "U02",
+        "U03"
+      ]
+    },
+    "scripts/render_aps_application_atlas.py": {
+      "baselineSHA256": "3ca0d473eda8adc7dcb2b9b94d2d83dcecc0e96503e923f8c59ca0cdfc831f74",
+      "rationaleIds": [
+        "U01"
+      ],
+      "sha256": "8916e9f295175d526948a6f614945d31a26b0de5b65e3759e56315f8f27030b8"
+    },
+    "scripts/render_reader_study.py": {
+      "baselineSHA256": null,
+      "sha256": "985f3cf596ae077a8613f98f09ae1632fbdccc43a57aa71f4debd85ed38db77e",
+      "rationaleIds": [
+        "U03"
+      ]
+    },
+    "scripts/validate_quick_guide.cjs": {
+      "baselineSHA256": null,
+      "sha256": "5313de7f16338b7dee7df276f4066b6ae2a2517799f7da21972da3dbc2a4e015",
+      "rationaleIds": [
+        "U03"
+      ]
+    },
+    "data/reader_observations_blank.csv": {
+      "baselineSHA256": null,
+      "sha256": "09d6e1636966ee62cc738626253298dd9cf68b0b3e302f1250daa6cd264cd695",
+      "rationaleIds": [
+        "U03"
+      ]
+    },
+    "research/reader-study/it/index.html": {
+      "baselineSHA256": null,
+      "sha256": "6be6dc35be948dedac5e6888dad0e40a3e19397a2f8a4c73c3058c44b8b439ca",
+      "rationaleIds": [
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "research/reader-study/en/index.html": {
+      "baselineSHA256": null,
+      "sha256": "49c48f576ad41d18323678362ed96e675df51512611d59fda95dafb4b3d10d2d",
+      "rationaleIds": [
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "research/reader-study/de/index.html": {
+      "baselineSHA256": null,
+      "sha256": "4596333f120624a1bbb3a7e93cb96513919e25974d9fa63f2d05143c3edb8735",
+      "rationaleIds": [
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "research/reader-study/fr/index.html": {
+      "baselineSHA256": null,
+      "sha256": "6212337383eaa4279b103b42c627244eb9a5afafdd08515ec6ae30e2a90ba513",
+      "rationaleIds": [
+        "U03",
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "scripts/reorder_economics.cjs": {
+      "sha256": "5964aa3eca8b60a8dbedbb3a3af26b62281f4d6ecef3353ecca157a03113bbd6",
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "E09"
+      ]
+    },
+    "scripts/validate_economics_order.cjs": {
+      "sha256": "a9716256e43bacd634c7708ba27e7d19437d4835382aad079a46447572e1900a",
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "E09"
+      ]
+    },
+    "scripts/audit_economics_order.cjs": {
+      "sha256": "9c022afc3661d4db940cab16cf13b425c2b7824f911a53622e3b747ef36965eb",
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "E09"
+      ]
+    },
+    "data/economics_reading_order.json": {
+      "sha256": "eb745f3bcb4c228788f18bf5405f7c3830dc9229ac7a3cfb058c8e425a8f7f0e",
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "E09"
+      ]
+    },
+    "docs/ECONOMICS_READING_ORDER_2026-10-20.md": {
+      "sha256": "184e55b4aad5975c7897f0a858afa45d8ebf12320e1f8c00a1a4dd699086dbe7",
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "E09"
+      ]
+    },
+    "README.md": {
+      "sha256": "02b36644cd8b95e8ee5aaa5e225df6d182222d264e4facc4ad1f5e4d74c1c44d",
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "E09",
+        "R01",
+        "R02"
+      ]
+    },
+    "assets/reader-paths.js": {
+      "baselineSHA256": "a0d277ef7a3c4cc0ebe1a04b494d6fb85790068c3f2fa9167bcc8b019bf6bd5f",
+      "sha256": "a3a0d37b27e888ef8bc4d7792870951052eab75fd51fa0f0a0e2c32b1e3dbbc6",
+      "rationaleIds": [
+        "R01",
+        "R02"
+      ]
+    },
+    "assets/reader-paths.css": {
+      "baselineSHA256": "ea34b0def854540a3e527cc719006535894d8abff3c2c67b284a461625442289",
+      "sha256": "67632c371ae81492c164ed52b45d9db21f85886d163a5122b5f4345660fde162",
+      "rationaleIds": [
+        "R01",
+        "R02"
+      ]
+    },
+    "scripts/render_reader_paths.cjs": {
+      "baselineSHA256": null,
+      "sha256": "505ce4d8be5d335700729daacf8c2c66b06226eea36ddc5377999ac4cb13c870",
+      "rationaleIds": [
+        "R01",
+        "R02"
+      ]
+    },
+    "scripts/reader_paths_review.cjs": {
+      "baselineSHA256": null,
+      "sha256": "a0184257d1eefae37da3c07e3a183b2c2ca3d6f4fd842763167601a17e570307",
+      "rationaleIds": [
+        "R01",
+        "R02"
+      ]
+    },
+    "data/reader_paths.json": {
+      "baselineSHA256": null,
+      "sha256": "a43103159dc8969dcf149f9298f2a88628598c0de33ea5fce8324a1f234d1f80",
+      "rationaleIds": [
+        "R01",
+        "R02"
+      ]
+    },
+    "docs/READER_PATHS_2026-10-21.md": {
+      "baselineSHA256": null,
+      "sha256": "2da38f381c2b2c1ff2cf74d164c6b0cc115dd427dd7a06c85d2b028e3cf6efca",
+      "rationaleIds": [
+        "R01",
+        "R02"
+      ]
+    },
+    ".github/workflows/reader-paths-review.yml": {
+      "baselineSHA256": "8b4f230a2547a1af6b447549f4638ae5b9dbfec176d56cf4ceff6e3a1f3b89f3",
+      "sha256": "3870fe258f394c4ab65780e0a5f9e80ecc992d0686258b17e50f4ace1ab318bb",
+      "rationaleIds": [
+        "R01",
+        "R02"
+      ]
+    },
+    "docs/editorial-review-2026-10-20-v0.7.91.json": {
+      "baselineSHA256": "18fe10afb0eb4eef8532a14b7ed20a8c59b4c6dd13104b376d028bb2273a6a33",
+      "sha256": "18fe10afb0eb4eef8532a14b7ed20a8c59b4c6dd13104b376d028bb2273a6a33",
+      "rationaleIds": [
+        "R01",
+        "R02"
+      ]
+    }
+  },
+  "sourceSections": {
+    "overview": {
+      "baselineSHA256": "488cd4e31fb9d3fc14a6e93bbd27551d33491a07aaec4806966671703b75deab",
+      "baselineCharacters": 9849,
+      "sha256": "488cd4e31fb9d3fc14a6e93bbd27551d33491a07aaec4806966671703b75deab",
+      "characters": 9849,
+      "rationaleIds": [
+        "E01",
+        "E03",
+        "A19"
+      ]
+    },
+    "explore": {
+      "baselineSHA256": "5a0bd6b5824f802f01e2abb1bcc564bdddc8c3d79ff21b26d4f42e702c70e153",
+      "baselineCharacters": 10168,
+      "sha256": "9373f56cc58d7ff00e80f76eabeb0d32dc8e2ad98b004a679c4159893a5d77e7",
+      "characters": 10432,
+      "rationaleIds": [
+        "C04",
+        "M01",
+        "M06",
+        "E03",
+        "A19",
+        "U01"
+      ]
+    },
+    "timeline": {
+      "baselineSHA256": "7a783fdc342c02904f6effed04decbf36e1d72a120ca90f55545619937edaf5c",
+      "baselineCharacters": 1599,
+      "sha256": "7a783fdc342c02904f6effed04decbf36e1d72a120ca90f55545619937edaf5c",
+      "characters": 1599,
+      "rationaleIds": [
+        "E03",
+        "A19"
+      ]
+    },
+    "how": {
+      "baselineSHA256": "8191f0973f6edde0f0c5619bc9844a46f3fcfb20f287b6ad63f9bef04c016ccf",
+      "baselineCharacters": 11713,
+      "sha256": "8191f0973f6edde0f0c5619bc9844a46f3fcfb20f287b6ad63f9bef04c016ccf",
+      "characters": 11713,
+      "rationaleIds": [
+        "C06",
+        "E03",
+        "A19"
+      ]
+    },
+    "beyond": {
+      "baselineSHA256": "fba1c60abe13b3b9234baf4ae9c9622e36106d159d5b45d1bb9fd90f8bd5a6d2",
+      "baselineCharacters": 3136,
+      "sha256": "fba1c60abe13b3b9234baf4ae9c9622e36106d159d5b45d1bb9fd90f8bd5a6d2",
+      "characters": 3136,
+      "rationaleIds": [
+        "E03",
+        "E08",
+        "A19"
+      ]
+    },
+    "cities": {
+      "baselineSHA256": "e116da60ab5b00a5ffe201885b61d71b0b717094fa76e12ce3b627193ce9a9d5",
+      "baselineCharacters": 2070,
+      "sha256": "8c3e813e9e2047b51e1d307179884a31b55c2d8f04f8062a2265bf6998dd0319",
+      "characters": 2121,
+      "rationaleIds": [
+        "E03",
+        "E06",
+        "A19"
+      ]
+    },
+    "geography": {
+      "baselineSHA256": "73beed522c2040a27f4dcf3063f774e5d6098ff5368a704610b405d0b7ecec98",
+      "baselineCharacters": 9613,
+      "sha256": "73beed522c2040a27f4dcf3063f774e5d6098ff5368a704610b405d0b7ecec98",
+      "characters": 9613,
+      "rationaleIds": [
+        "C03",
+        "M01",
+        "E03",
+        "E06",
+        "A19"
+      ]
+    },
+    "economics": {
+      "baselineSHA256": "bf4ef14527fb397bfa6028bd486aebc4a96a1cfd9b152b1862fd108799f3c8ea",
+      "baselineCharacters": 13112,
+      "sha256": "fc15c8a3e41abebd0f06e180cf3608912334bb2ac036a51e6f886bacdbb04388",
+      "characters": 13138,
+      "rationaleIds": [
+        "C03",
+        "M01",
+        "M02",
+        "M05",
+        "E03",
+        "E06",
+        "A19"
+      ]
+    },
+    "social": {
+      "baselineSHA256": "e51a99c5b7f0b2bb3a561550f566e059b60872e47ccdce771bb0b3979828bfb3",
+      "baselineCharacters": 2801,
+      "sha256": "e51a99c5b7f0b2bb3a561550f566e059b60872e47ccdce771bb0b3979828bfb3",
+      "characters": 2801,
+      "rationaleIds": [
+        "E03",
+        "E08",
+        "A19"
+      ]
+    },
+    "contention": {
+      "baselineSHA256": "e45a6b2befea6e134d76cd7708f314901df9b824e6862c7963a4727542e5e88c",
+      "baselineCharacters": 3028,
+      "sha256": "e45a6b2befea6e134d76cd7708f314901df9b824e6862c7963a4727542e5e88c",
+      "characters": 3028,
+      "rationaleIds": [
+        "E03",
+        "M01",
+        "A19"
+      ]
+    },
+    "refusals": {
+      "baselineSHA256": "b7cf4b08d0ca7c790e8f7a28802e33b4da50191521cb91e4532e953676061ce9",
+      "baselineCharacters": 1985,
+      "sha256": "b7cf4b08d0ca7c790e8f7a28802e33b4da50191521cb91e4532e953676061ce9",
+      "characters": 1985,
+      "rationaleIds": [
+        "E03",
+        "A19"
+      ]
+    },
+    "disputes": {
+      "baselineSHA256": "548b32637ea2640ba9bb380c7180af5942c8f233e90db885edacf3572ec17441",
+      "baselineCharacters": 2694,
+      "sha256": "548b32637ea2640ba9bb380c7180af5942c8f233e90db885edacf3572ec17441",
+      "characters": 2694,
+      "rationaleIds": [
+        "E03",
+        "A19"
+      ]
+    },
+    "strange": {
+      "baselineSHA256": "38f3bdf50894696df116656650153f9eae1d004f7939a406aac8f284d69ad2b3",
+      "baselineCharacters": 1845,
+      "sha256": "38f3bdf50894696df116656650153f9eae1d004f7939a406aac8f284d69ad2b3",
+      "characters": 1845,
+      "rationaleIds": [
+        "E03",
+        "A19"
+      ]
+    },
+    "reveal": {
+      "baselineSHA256": "429f6c902f8e5e33956aff734674fe4eadd1eb59ca7cbdbbe3c958202abde38b",
+      "baselineCharacters": 2487,
+      "sha256": "429f6c902f8e5e33956aff734674fe4eadd1eb59ca7cbdbbe3c958202abde38b",
+      "characters": 2487,
+      "rationaleIds": [
+        "C04",
+        "M04",
+        "A19"
+      ]
+    },
+    "inside-round": {
+      "baselineSHA256": "c81eb41ad8756508c3371fec63aa7e315de102fb96ed5031a0aa16bfb0af830e",
+      "baselineCharacters": 2936,
+      "sha256": "a08a5b46b5d1dd0c6df12ed528d6c9d9c44ca310e6457c9bec662eb7d9e743a6",
+      "characters": 2983,
+      "rationaleIds": [
+        "C02",
+        "M04",
+        "A19"
+      ]
+    },
+    "behind-round": {
+      "baselineSHA256": "1dfb78e9ed552fdd8f8cde64f4723ac4267d6a522fcc252b1e7d66ef00aee8bc",
+      "baselineCharacters": 2167,
+      "sha256": "1dfb78e9ed552fdd8f8cde64f4723ac4267d6a522fcc252b1e7d66ef00aee8bc",
+      "characters": 2167,
+      "rationaleIds": [
+        "M03",
+        "M04",
+        "A19"
+      ]
+    },
+    "lugano": {
+      "baselineSHA256": "1838035f6f1127f3d93f1820d066aa22807fa3d79fdbbd18d710e82e461ad8ec",
+      "baselineCharacters": 6378,
+      "sha256": "1838035f6f1127f3d93f1820d066aa22807fa3d79fdbbd18d710e82e461ad8ec",
+      "characters": 6378,
+      "rationaleIds": [
+        "E02",
+        "E08",
+        "A19"
+      ]
+    },
+    "research": {
+      "baselineSHA256": "7ffc428d5ee68317c8b6f9f26fc6029fef8f3fafd7de1e02999b6c8930a28ccc",
+      "baselineCharacters": 3729,
+      "sha256": "f38ff462b85596c3291d5d938652d4fc2f9d1b1e498dc5062f0979cfdacdc792",
+      "characters": 3744,
+      "rationaleIds": [
+        "C05",
+        "M01",
+        "A19"
+      ]
+    },
+    "paper": {
+      "baselineSHA256": "0ca60f0603bdf828cdbb18b24d62c5913080f220f013b58d5345959aadbe937a",
+      "baselineCharacters": 1236,
+      "sha256": "e0de646a48f5338d7c930896f5cc70afdb8a8156aa78c1f50718fef850e9b2ab",
+      "characters": 1251,
+      "rationaleIds": [
+        "C05",
+        "A19"
+      ]
+    },
+    "resources": {
+      "baselineSHA256": "5d057c32ffafae98574dbeacbccb62b7b8752a5d569db43ee71cd8ae8053fc85",
+      "baselineCharacters": 8508,
+      "sha256": "482e80e0529a8a84c3602c5f07813879b970dc01a96a4855882f34b9fd677e12",
+      "characters": 8468,
+      "rationaleIds": [
+        "C01",
+        "M01",
+        "E07",
+        "A19"
+      ]
+    },
+    "sources": {
+      "baselineSHA256": "a805366b0f7fad0c520cfa09c14c40f2f8898b0d32c76200c026dc0ba9308324",
+      "baselineCharacters": 2716,
+      "sha256": "a805366b0f7fad0c520cfa09c14c40f2f8898b0d32c76200c026dc0ba9308324",
+      "characters": 2716,
+      "rationaleIds": [
+        "E07",
+        "A19"
+      ]
+    }
+  },
+  "linkReplacements": [
+    {
+      "from": "downloads/connecting-the-dots-data-pack-v0.7.78.zip",
+      "to": "{{CURRENT_PACK_PATH}}",
+      "publishedPath": "downloads/connecting-the-dots-data-pack-v0.7.92.zip",
+      "rationaleIds": [
+        "C01"
+      ]
+    },
+    {
+      "from": "downloads/connecting-the-dots-data-pack-v0.7.78.sha256",
+      "to": "{{CURRENT_CHECKSUM_PATH}}",
+      "publishedPath": "downloads/connecting-the-dots-data-pack-v0.7.92.sha256",
+      "rationaleIds": [
+        "C01"
+      ]
+    }
+  ],
+  "immutableResearchIdentifiers": {
+    "RR1": "10.5281/zenodo.23262623",
+    "RR2": "10.5281/zenodo.23288603",
+    "concept": "10.5281/zenodo.23262622"
+  },
+  "immutableJSON": {
+    "research/research_release_manifest.json": {
+      "excludedCurrentMetadata": [
+        "currentSiteVersion",
+        "workingPaperRevision"
+      ],
+      "sha256": "659be8be247a3062a4c1a8dcb55bc875b0967eac745531203e156bf869cd763a"
+    }
+  },
+  "parentReview": "docs/editorial-review-2026-10-20-v0.7.91.json",
+  "priorTechnicalBaseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
+  "verification": {
+    "scope": "Exact-hash source review and non-destructive build assertions. Functional browser and automated accessibility reports are separate CI artifacts and remain publication gates.",
+    "humanParticipants": 0,
+    "archivedResearch": "RR1/RR2 unchanged; sixteen prior technical ZIPs protected",
+    "priorReviewSha256": "18fe10afb0eb4eef8532a14b7ed20a8c59b4c6dd13104b376d028bb2273a6a33"
+  }
+}

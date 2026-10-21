@@ -1,12 +1,31 @@
-/* The reader can choose a narrative continuation or evidence at each chapter's end. */
-.readerPaths{box-sizing:border-box;margin:clamp(24px,5vw,52px) 0 18px;padding:clamp(18px,3vw,28px);border:1px solid var(--border,#b9c7d5);border-radius:16px;background:var(--surface,#f5f7fa);color:var(--text,#142d40)}
-.readerPathsHeader h2{font-size:clamp(1.2rem,2.2vw,1.55rem);line-height:1.25;margin:0 0 6px}
-.readerPathsHeader p{font-size:1rem;line-height:1.6;margin:0 0 18px;max-width:68ch}
-.readerPathsLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.readerPathsLink{display:flex;flex-direction:column;justify-content:center;gap:6px;min-height:76px;padding:15px 18px;border:1px solid var(--border,#b9c7d5);border-radius:12px;color:inherit;background:var(--card-bg,var(--surface,#fff));text-decoration:none;overflow-wrap:anywhere;transition:border-color .15s ease,transform .15s ease}
-.readerPathsLink:hover{border-color:var(--accent,#2a74a9);transform:translateY(-1px)}
-.readerPathsLink:focus-visible{outline:3px solid var(--accent,#2a74a9);outline-offset:3px}
-.readerPathsLabel{font-size:.82rem;letter-spacing:.035em;text-transform:uppercase;opacity:.78}
-.readerPathsLink strong{font-size:1.08rem;line-height:1.35}
-@media(max-width:620px){.readerPathsLinks{grid-template-columns:1fr}.readerPathsLink{min-height:68px}}
-@media(prefers-reduced-motion:reduce){.readerPathsLink{transition:none}.readerPathsLink:hover{transform:none}}
+/* Shared reader components. Native content, existing colour themes, no tracking. */
+.readerBreadcrumb{display:flex;align-items:center;flex-wrap:wrap;gap:4px 9px;margin:0 0 16px;font-size:13px;line-height:1.5;color:var(--muted,#50505a)}
+.readerBreadcrumb a{display:inline-flex;align-items:center;min-height:44px;color:var(--accent-text,#0068d7);text-decoration:underline;text-underline-offset:3px}
+.readerBreadcrumb [aria-current]{color:var(--text,#111214);font-weight:600;overflow-wrap:anywhere}
+.readerBreadcrumb [aria-hidden]{opacity:.6}
+.readerGuide{margin:18px 0 26px;padding:20px 22px;border:1px solid var(--border,#d4d4d8);border-radius:14px;background:var(--surface,#fff);color:var(--text,#111214)}
+.readerGuideLead{max-width:76ch;margin:0 0 14px;font-size:16px;line-height:1.65;color:var(--text,#111214)}
+.readerGuideSteps ol{display:flex;flex-wrap:wrap;gap:8px;counter-reset:reader-step;list-style:none;padding:0;margin:0}
+.readerGuideSteps li{counter-increment:reader-step;min-width:0;flex:1 1 165px}
+.readerGuideSteps a{display:flex;gap:9px;align-items:center;min-height:48px;height:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--border,#d4d4d8);border-radius:9px;color:var(--text,#111214);background:var(--surface2,#f1f1f3);font-size:14px;line-height:1.45;font-weight:650;text-decoration:none;overflow-wrap:anywhere}
+.readerGuideSteps a::before{content:counter(reader-step,decimal-leading-zero);font-variant-numeric:tabular-nums;color:var(--accent-text,#0068d7);font-weight:750;flex-shrink:0}
+.readerGuideSteps a:hover,.readerPathsLink:hover{border-color:var(--accent-text,#0068d7);text-decoration:underline;text-underline-offset:3px}
+.readerFullIndex{margin-top:15px;border-top:1px solid var(--border,#d4d4d8);padding-top:6px}
+.readerFullIndex summary{display:list-item;padding:10px 0;min-height:44px;box-sizing:border-box;cursor:pointer;font-size:14px;font-weight:650;color:var(--accent-text,#0068d7)}
+.readerFullIndex>:is(.sectionToc,.readerIndexLinks){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));position:static;margin:6px 0 0;padding:0;background:transparent;box-shadow:none;border:0;gap:4px 14px;max-height:none;overflow:visible}
+.readerFullIndex>:is(.sectionToc,.readerIndexLinks) a{display:flex;align-items:center;box-sizing:border-box;min-height:44px;padding:8px 10px;font-size:14px;line-height:1.45;white-space:normal;text-align:left;overflow-wrap:anywhere;color:var(--text,#111214);background:var(--surface2,#f1f1f3);border-radius:7px;text-decoration:underline;text-underline-offset:3px}
+.readerGuideCompact{padding-top:8px;padding-bottom:8px}.readerGuideCompact .readerFullIndex{border:0;padding:0;margin:0}
+.readerPaths{margin:32px 0 12px;padding:24px 0 0;border-top:1px solid var(--border,#d4d4d8);color:var(--text,#111214)}
+.readerPaths .readerPathsHeading{margin:0 0 15px;font-size:clamp(19px,2.4vw,24px);line-height:1.3;letter-spacing:-.02em;color:var(--text,#111214)}
+.readerPathsLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.readerPaths .readerPathsLink{display:grid;grid-template-columns:1fr auto;align-content:center;position:relative;gap:6px 16px;padding:22px 24px;border:1px solid var(--border,#d4d4d8);border-radius:14px;color:var(--text,#111214);background:var(--surface,#fff);text-decoration:none;min-height:110px;box-sizing:border-box;line-height:1.45;text-align:left}
+.readerPathsLabel{grid-column:1;font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--accent-text,#0068d7)}
+.readerPathsLink strong{grid-column:1;font-size:18px;line-height:1.4;overflow-wrap:anywhere}.readerPathArrow{grid-column:2;grid-row:1 / span 2;align-self:center;font-size:24px;color:var(--accent-text,#0068d7)}
+.readerBreadcrumb a:focus-visible,.readerGuide a:focus-visible,.readerFullIndex summary:focus-visible,.readerPaths a:focus-visible,.readerStandaloneSkip:focus-visible{outline:3px solid var(--accent-text,#0068d7);outline-offset:4px}
+.readerStopTarget{scroll-margin-top:calc(var(--topbar-height,80px) + 28px)}
+.readerStandaloneSkip{position:fixed;left:16px;top:10px;z-index:9999;padding:12px 18px;background:var(--surface,#fff);color:var(--text,#111214);border:2px solid currentColor;border-radius:8px;transform:translateY(-160%)}
+.readerStandaloneSkip:focus{transform:translateY(0)}
+.readerStandalonePaths{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+@media(max-width:640px){.readerBreadcrumb{margin-bottom:10px;font-size:12px;gap:2px 7px}.readerGuide{padding:16px;margin:16px 0 22px}.readerGuideLead{font-size:15px}.readerGuideSteps li{flex-basis:135px}.readerFullIndex>:is(.sectionToc,.readerIndexLinks){grid-template-columns:1fr}.readerPathsLinks{grid-template-columns:1fr;gap:10px}.readerPaths .readerPathsLink{min-height:100px;padding:18px 20px}.readerPathsLink strong{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.readerGuide *,.readerPaths *,.readerStandaloneSkip{scroll-behavior:auto;transition:none;animation:none}}
+@media print{.readerBreadcrumb,.readerGuide,.readerPaths,.readerStandaloneSkip{display:none!important}}

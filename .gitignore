@@ -14,3 +14,6 @@ __pycache__/
 tmp/
 audit-20261019/
 node_modules
+
+# Generated review screenshots and measurements
+artifacts/

@@ -1,3 +1,11 @@
+# v0.7.92 · 21 October 2026
+
+- Build-time reader paths across all 24 native chapters and 31 active independent pages in four languages.
+- Non-destructive reordering of 12 chapters; accessible breadcrumbs, compact guided stops, complete expandable indexes and onward reading/evidence cards.
+- Direct researcher entry from Home; stories landing leads with accessible examples.
+- Existing article text, source links, deep links, scientific records, RR1/RR2 identifiers and prior technical ZIPs preserved.
+- Automated preservation and browser checks distinguish technical verification from pending human reader studies.
+
 # v0.7.91 - 20 October 2026
 
 - Reordered Economics into value, reach, cases, concentration, cycles and the 2026 analysis.
