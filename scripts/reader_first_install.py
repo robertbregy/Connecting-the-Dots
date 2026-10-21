@@ -81,7 +81,7 @@ css.write_text(text, encoding='utf-8')
 app = ROOT / 'assets' / 'app.js'
 text = app.read_text(encoding='utf-8')
 guard = "if(document.documentElement.hasAttribute('data-reader-first'))return;"
-if guard not in text:
+if guard not in text and "const readerFirst=document.documentElement.hasAttribute('data-reader-first');" not in text:
     expected = '3d2a18d60ac1d5d71ab97840d600e6667c634c2718636fbedebdb213eb8ed91a'
     if hashlib.sha256(app.read_bytes()).hexdigest() != expected:
         raise SystemExit('Runtime changed since the inspected baseline; review the TOC integration again')

@@ -159,11 +159,35 @@ async function checkAxe(page,label) {
     await page.locator('.iaPrimaryLink[data-b2-area="ia-stories"]').click();
     const economicsCard=page.locator('#ia-stories .iaHubCard').filter({has:page.locator('a[data-open-section="economics"]')});
     const economicsDescription=economicsCard.locator('p');
-    await economicsDescription.evaluate(el=>el.scrollIntoView({behavior:"instant",block:"center"}));
-    await page.waitForTimeout(100);
-    const paragraphBox=await economicsDescription.boundingBox();
-    assert.ok(paragraphBox,"economics card description missing");
-    await page.mouse.click(paragraphBox.x+8,paragraphBox.y+Math.min(8,paragraphBox.height/2));
+    const pointerSamples=[];
+    let economicsPointer=null;
+    for(let attempt=0;attempt<6;attempt++){
+      await economicsDescription.evaluate(el=>{
+        const r=el.getBoundingClientRect();
+        const overlays=[...document.querySelectorAll('.topbar,.iaPrimaryNav')]
+          .filter(n=>['sticky','fixed'].includes(getComputedStyle(n).position))
+          .map(n=>n.getBoundingClientRect().bottom);
+        const safeTop=Math.max(0,...overlays)+16;
+        const y=safeTop+(innerHeight-safeTop)/2;
+        window.scrollBy({top:r.top+Math.min(8,r.height/2)-y,behavior:'instant'});
+      });
+      await page.waitForTimeout(120);
+      const sample=await economicsDescription.evaluate(el=>{
+        const r=el.getBoundingClientRect();
+        const x=r.left+8,y=r.top+Math.min(8,r.height/2);
+        const hit=document.elementFromPoint(x,y)?.closest('a');
+        return {x,y,scrollY,hit:hit?.getAttribute('data-open-section')||null,
+          href:hit?.getAttribute('href')||null,inside:x>=0&&x<innerWidth&&y>=0&&y<innerHeight};
+      });
+      pointerSamples.push(sample);
+      if(sample.inside&&sample.hit==='economics'){
+        economicsPointer=sample;
+        break;
+      }
+    }
+    tally.economicsPointerSamples=pointerSamples;
+    assert.ok(economicsPointer,'Economics description is not pointer-accessible: '+JSON.stringify(pointerSamples));
+    await page.mouse.click(economicsPointer.x,economicsPointer.y);
     await page.locator('#economics.section.active').waitFor({state:"visible",timeout:5000});
     await page.locator('.iaPrimaryLink[data-b2-area="ia-understand"]').click();
     await page.locator('#ia-understand a[data-open-section="overview"]').first().click();
