@@ -1,3 +1,10 @@
+# v0.7.92 - 21 October 2026
+
+- Extended the question-led reading architecture from Economics to all 23 chapters in four languages.
+- Added contextual breadcrumbs, optional chapter waypoints, complementary narrative and evidence exits, and a direct research/citation route from Home.
+- Preserved every original source paragraph, application identity, data file, deep link, six-area navigation and frozen RR1/RR2 scientific archive.
+- Added build-time and browser regression checks for chapter routes, keyboard focus, mobile navigation and access to scientific evidence. No human-usability outcome is claimed.
+
 # v0.7.91 - 20 October 2026
 
 - Reordered Economics into value, reach, cases, concentration, cycles and the 2026 analysis.
