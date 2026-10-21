@@ -26,6 +26,7 @@ jobs:
       - run: npm ci
       - name: Integrate reviewed source changes
         run: |
+          python3 scripts/reader_first_compat.py
           python3 scripts/reader_first_install.py
           rm -f docs/reader-first-structure.json docs/reader-first-verification.json
       - name: Build publication
@@ -46,6 +47,21 @@ jobs:
           npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
           npx playwright install --with-deps chromium
           node scripts/reader_first_browser.cjs
+      - name: Full legacy Economics and mobile body-click regression
+        id: legacy
+        continue-on-error: true
+        env:
+          CTD_TEST_BASE: http://127.0.0.1:8128/
+          CTD_ECONOMICS_QA: /tmp/reader-first-qa/economics
+        run: |
+          python3 -m http.server 8128 --bind 127.0.0.1 >/tmp/reader-legacy-http.log 2>&1 &
+          server=$!
+          trap 'kill "$server" 2>/dev/null || true' EXIT
+          sleep 2
+          node scripts/audit_economics_order.cjs
+          node scripts/audit_ia_b2.cjs
+          node scripts/audit_legacy_deeplinks.cjs
+          node scripts/native_governance_browser_qa.cjs
       - name: Prepare exact editorial review candidate
         id: candidate
         if: always()
@@ -66,6 +82,8 @@ jobs:
             docs/reader-first*.json
             docs/reader-first*.b64
             /tmp/reader-first-qa/
+            audit-ia-b2/
+            audit-deeplinks/
           if-no-files-found: ignore
       - name: Save review evidence, promote generated files only after all gates pass
         if: always() && github.event_name == 'push'
@@ -73,6 +91,7 @@ jobs:
           BUILD_OK: ${{ steps.build.outcome == 'success' }}
           STATIC_OK: ${{ steps.static.outcome == 'success' }}
           BROWSER_OK: ${{ steps.browser.outcome == 'success' }}
+          LEGACY_OK: ${{ steps.legacy.outcome == 'success' }}
           REVIEW_OK: ${{ steps.parity.outcome == 'success' }}
           CANDIDATE_OK: ${{ steps.candidate.outcome == 'success' }}
         run: |
@@ -80,7 +99,7 @@ jobs:
           test "$(git rev-parse FETCH_HEAD)" = "$(git rev-parse HEAD)" || { echo 'Branch advanced; no files committed.'; exit 0; }
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          if test "$BUILD_OK:$STATIC_OK:$BROWSER_OK:$REVIEW_OK:$CANDIDATE_OK" = 'true:true:true:true:true'; then
+          if test "$BUILD_OK:$STATIC_OK:$BROWSER_OK:$LEGACY_OK:$REVIEW_OK:$CANDIDATE_OK" = 'true:true:true:true:true:true'; then
             git add -A
             message='Verified reader-first publication artifacts [reader artifacts] [skip build]'
           else
@@ -97,6 +116,7 @@ jobs:
           BUILD_OK: ${{ steps.build.outcome == 'success' }}
           STATIC_OK: ${{ steps.static.outcome == 'success' }}
           BROWSER_OK: ${{ steps.browser.outcome == 'success' }}
+          LEGACY_OK: ${{ steps.legacy.outcome == 'success' }}
           REVIEW_OK: ${{ steps.parity.outcome == 'success' }}
           CANDIDATE_OK: ${{ steps.candidate.outcome == 'success' }}
-        run: test "$BUILD_OK:$STATIC_OK:$BROWSER_OK:$REVIEW_OK:$CANDIDATE_OK" = 'true:true:true:true:true'
+        run: test "$BUILD_OK:$STATIC_OK:$BROWSER_OK:$LEGACY_OK:$REVIEW_OK:$CANDIDATE_OK" = 'true:true:true:true:true:true'
