@@ -71,6 +71,20 @@ async function checkAxe(page,label) {
     const oldSections=await page.locator('section.section:not(.iaHub)').count();
     assert.equal(oldSections,24,"22 preserved legacy chapters plus 2 native governance chapters required");
     tally.contentSections=oldSections;
+    assert.equal(await page.locator('.readerOrientation').count(),23,'All canonical chapters need a reading entry');
+    assert.equal(await page.locator('.readerNext').count(),23,'All chapters need a next step and evidence path');
+    assert.equal(await page.locator('.readerResearchShortcut').count(),1,'Researchers need a direct first-screen shortcut');
+    // An actual journey, not merely a DOM inventory: hub, chapter, inner
+    // waypoint, next chapter and keyboard-focus restoration.
+    await page.locator('.iaPrimaryLink[data-b2-area="ia-outcomes"]').click();
+    await page.locator('#ia-outcomes .iaHubCard a[data-open-section="refusals"]').click();
+    assert.equal(await page.locator('#refusals.active .readerOutline a').count(),4,'Curated outcomes outline must be visible');
+    await page.locator('#refusals .readerOutline a').nth(1).click();
+    assert.equal(new URL(page.url()).hash,'#reading-refusals-2','Waypoint deep link lost');
+    assert.equal(await page.locator('#reading-refusals-2').evaluate(n=>document.activeElement===n),true,'Waypoint focus lost');
+    await page.locator('#refusals .readerNextPrimary').click();
+    assert.equal(await page.locator('#cemetery.section.active').count(),1,'Reading continuation did not resolve');
+    assert.equal(await page.locator('.iaPrimaryLink[data-b2-area="ia-outcomes"][aria-current="location"]').count(),1,'Continuation lost active parent');
     for(const [hub,count,canonical] of hubs){
       await page.locator('.iaPrimaryLink[data-b2-area="'+hub+'"]').click();
       assert.equal(await page.locator("section#"+hub+".active").count(),1,hub+" does not activate");

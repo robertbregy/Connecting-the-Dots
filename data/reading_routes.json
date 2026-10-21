@@ -1,0 +1,780 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-21",
+  "classification": "Reader-orientation editorial layer; not new research and not a usage study.",
+  "evidenceStatus": "Heuristic reader journey; no recruited user-testing results.",
+  "chapters": {
+    "explore": {
+      "parent": "ia-explore",
+      "next": "timeline",
+      "verify": "resources",
+      "anchors": [
+        "exploreTitle",
+        "apsAtlasTitle"
+      ]
+    },
+    "timeline": {
+      "parent": "ia-explore",
+      "next": "how",
+      "verify": "research",
+      "anchors": [
+        "archTitle",
+        "timeCapsule",
+        "roundAtGlance",
+        "icann2012"
+      ]
+    },
+    "how": {
+      "parent": "ia-understand",
+      "next": "beyond",
+      "verify": "sources",
+      "anchors": [
+        "id:how-part-1",
+        "id:how-part-3",
+        "id:how-part-6",
+        "id:how-glossary"
+      ]
+    },
+    "beyond": {
+      "parent": "ia-understand",
+      "next": "geography",
+      "verify": "sources",
+      "anchors": [
+        "beyondTitle",
+        "invisibleTitle",
+        "scriptsTitle",
+        "universesTitle"
+      ]
+    },
+    "cities": {
+      "parent": "ia-stories",
+      "next": "lugano",
+      "verify": "research",
+      "anchors": [
+        "cityTitle",
+        "geoLayer2026",
+        "secondGen"
+      ]
+    },
+    "geography": {
+      "parent": "ia-explore",
+      "next": "governance-access",
+      "verify": "sources",
+      "anchors": [
+        "geoTitle",
+        "geoMapTitle",
+        "identityTitle",
+        "digitalResourceTitle"
+      ]
+    },
+    "governance-access": {
+      "parent": "ia-explore",
+      "next": "governance-sanctions",
+      "verify": "sources",
+      "anchors": []
+    },
+    "governance-sanctions": {
+      "parent": "ia-explore",
+      "next": "disputes",
+      "verify": "sources",
+      "anchors": []
+    },
+    "economics": {
+      "parent": "ia-stories",
+      "next": "reveal",
+      "verify": "resources",
+      "anchors": []
+    },
+    "social": {
+      "parent": "ia-stories",
+      "next": "strange",
+      "verify": "sources",
+      "anchors": [
+        "socialCasesTitle",
+        "social2026Title",
+        "socialModelsTitle"
+      ]
+    },
+    "strange": {
+      "parent": "ia-stories",
+      "next": "social",
+      "verify": "sources",
+      "anchors": [
+        "strangeTitle",
+        "strangeAcrossRoundsTitle",
+        "driftTitle",
+        "odditiesTitle"
+      ]
+    },
+    "contention": {
+      "parent": "ia-outcomes",
+      "next": "disputes",
+      "verify": "reveal",
+      "anchors": [
+        "contentionTitle2026",
+        "contention2012Title",
+        "contentionResolution2026Title"
+      ]
+    },
+    "disputes": {
+      "parent": "ia-outcomes",
+      "next": "refusals",
+      "verify": "sources",
+      "anchors": [
+        "disputesTitle",
+        "disputesMechanismsTitle",
+        "disputesCasesTitle"
+      ]
+    },
+    "refusals": {
+      "parent": "ia-outcomes",
+      "next": "cemetery",
+      "verify": "sources",
+      "anchors": [
+        "refusalsTitle",
+        "outcomes2026StatusTitle",
+        "refusalTaxonomyTitle",
+        "refusalCasesTitle"
+      ]
+    },
+    "cemetery": {
+      "parent": "ia-outcomes",
+      "next": "timeline",
+      "verify": "sources",
+      "anchors": [
+        "cemeteryTitle",
+        "cemeteryTaxonomyTitle",
+        "id:helsinki-termination"
+      ]
+    },
+    "reveal": {
+      "parent": "ia-round",
+      "next": "inside-round",
+      "verify": "resources",
+      "anchors": [
+        "round2026Title",
+        "dataStatusTitle",
+        "round2026Patterns"
+      ]
+    },
+    "inside-round": {
+      "parent": "ia-round",
+      "next": "behind-round",
+      "verify": "research",
+      "anchors": [
+        "id:insideRoundTitle",
+        "id:insideRoundTimelineTitle",
+        "insideDisclosureTitle"
+      ]
+    },
+    "behind-round": {
+      "parent": "ia-round",
+      "next": "lugano",
+      "verify": "sources",
+      "anchors": [
+        "id:behindRoundTitle",
+        "fieldCaseCollectionIntro"
+      ]
+    },
+    "lugano": {
+      "parent": "ia-round",
+      "next": "cities",
+      "verify": "research",
+      "anchors": [
+        "luganoStatusTitle",
+        "luganoWhyTitle",
+        "luganoTitle",
+        "publicQuestionsTitle"
+      ]
+    },
+    "research": {
+      "parent": "ia-research",
+      "next": "sources",
+      "verify": "resources",
+      "anchors": [
+        "id:research-citation-guide",
+        "researchPubTitle",
+        "researchPaperTitle",
+        "researchArchiveTitle"
+      ]
+    },
+    "paper": {
+      "parent": "ia-research",
+      "next": "research",
+      "verify": "resources",
+      "anchors": []
+    },
+    "resources": {
+      "parent": "ia-research",
+      "next": "sources",
+      "verify": "research",
+      "anchors": [
+        "pressTitle",
+        "anglesTitle",
+        "downloadsTitle"
+      ]
+    },
+    "sources": {
+      "parent": "ia-research",
+      "next": "research",
+      "verify": "resources",
+      "anchors": [
+        "successTitle",
+        "methodLegendTitle",
+        "sourcesTitle",
+        "feedbackTitle"
+      ]
+    }
+  },
+  "locales": {
+    "it": {
+      "ui": {
+        "home": "Inizio",
+        "questionLabel": "La domanda guida",
+        "contents": "In questo capitolo",
+        "next": "Continua a esplorare",
+        "verify": "Dati, metodo e fonti",
+        "choose": "Per chi vuole partire dalle evidenze",
+        "researchShortcut": "Vai direttamente a dati e citazioni",
+        "guide": "Orientamento nel capitolo",
+        "trail": "Alla prossima domanda",
+        "breadcrumbs": "Percorso di lettura",
+        "round": "Il round 2026",
+        "ia-understand": "Capire",
+        "ia-explore": "Esplorare",
+        "ia-stories": "Storie e questioni",
+        "ia-outcomes": "Contese ed esiti",
+        "ia-round": "Round 2026",
+        "ia-research": "Ricerca"
+      },
+      "chapters": {
+        "explore": {
+          "label": "Explorer",
+          "question": "Che cosa esiste davvero nella radice di Internet?",
+          "lead": "Le schede raccontano i TLD; l’Atlante delle candidature racconta le domande. Sono due oggetti diversi."
+        },
+        "timeline": {
+          "label": "Archeologia",
+          "question": "Come siamo arrivati alle estensioni di oggi?",
+          "lead": "Segui tentativi, decisioni e svolte storiche. Una stringa richiesta non è automaticamente un TLD attivo."
+        },
+        "how": {
+          "label": "Come funziona",
+          "question": "Chi decide che cosa può esserci dopo il punto?",
+          "lead": "Attori, ruoli e passaggi del sistema dei domini, dal nome richiesto alla sua eventuale delegazione."
+        },
+        "beyond": {
+          "label": "Oltre il punto",
+          "question": "Internet è soltanto ciò che compare nella barra degli indirizzi?",
+          "lead": "Lingue, protocolli e sistemi alternativi mostrano quanto una semplice estensione possa nascondere."
+        },
+        "cities": {
+          "label": "Città",
+          "question": "Un dominio cittadino è un simbolo o uno strumento?",
+          "lead": "Confronta esperienze e scelte di governo: il nome di una città non garantisce da solo utilità pubblica."
+        },
+        "geography": {
+          "label": "Geografia del DNS",
+          "question": "Dove si concentra il potere su Internet?",
+          "lead": "Le regole, le infrastrutture, gli operatori e gli Stati esercitano poteri distinti. Qui si vede come si incrociano."
+        },
+        "governance-access": {
+          "label": "Accesso a Internet",
+          "question": "Chi può davvero limitare l'accesso a un sito?",
+          "lead": "Filtri, blocchi di rete e DNS non coincidono. La guida distingue gli strumenti e le responsabilità."
+        },
+        "governance-sanctions": {
+          "label": "Sanzioni e DNS",
+          "question": "Che effetto possono avere le sanzioni sui nomi di dominio?",
+          "lead": "Obblighi legali, operatori e coordinamento del DNS vanno distinti dalle scelte di censura."
+        },
+        "economics": {
+          "label": "Economia",
+          "question": "Da dove viene il valore di un dominio di primo livello?",
+          "lead": "Sei passaggi collegano modelli di ricavo, diffusione, casi e scommesse economiche del round 2026."
+        },
+        "social": {
+          "label": "Società",
+          "question": "Perché un punto può diventare un fatto culturale?",
+          "lead": "Lingue, comunità, identità e simboli trasformano alcune estensioni in molto più che indirizzi."
+        },
+        "strange": {
+          "label": "Internet insolito",
+          "question": "Che cosa raccontano le stranezze dei domini?",
+          "lead": "Le anomalie aiutano a vedere il rapporto fra regole tecniche, linguaggio e comportamenti collettivi."
+        },
+        "contention": {
+          "label": "Contese",
+          "question": "Che succede quando più candidati vogliono la stessa estensione?",
+          "lead": "Concorrenza per una stringa e controversia sulle regole non sono la stessa cosa."
+        },
+        "disputes": {
+          "label": "Controversie",
+          "question": "Quando un nome diventa una controversia?",
+          "lead": "Esamina obiezioni, contestazioni e casi documentati senza confonderli con le sole candidature concorrenti."
+        },
+        "refusals": {
+          "label": "Esiti",
+          "question": "Che fine fanno le candidature che non arrivano alla radice?",
+          "lead": "Rinunce, mancata approvazione e altri percorsi hanno cause e conseguenze differenti."
+        },
+        "cemetery": {
+          "label": "Cimitero dei gTLD",
+          "question": "Un dominio di primo livello può scomparire?",
+          "lead": "Fine di un contratto, subentro e rimozione dalla radice non sono sinonimi. I casi mostrano perché."
+        },
+        "reveal": {
+          "label": "Il 2026 nei dati",
+          "question": "Che cosa sappiamo davvero del nuovo round?",
+          "lead": "Fotografie datate e unità di conteggio diverse spiegano perché alcuni numeri non vanno sommati."
+        },
+        "inside-round": {
+          "label": "Cronologia 2026",
+          "question": "Come si sviluppa una candidatura nel tempo?",
+          "lead": "Una cronologia distingue regole ufficiali, eventi osservabili e ciò che resta ancora aperto."
+        },
+        "behind-round": {
+          "label": "Note dal campo",
+          "question": "Che cosa emerge tra una tappa ufficiale e l’altra?",
+          "lead": "Indagini datate, fonti esplicite e domande ancora senza risposta: osservare non significa prevedere."
+        },
+        "lugano": {
+          "label": "Il caso .lugano",
+          "question": "Che cosa potrebbe significare .lugano per la città?",
+          "lead": "Stato della candidatura, possibilità e limiti: un progetto non va raccontato come un servizio già attivo."
+        },
+        "research": {
+          "label": "Ricerca",
+          "question": "Come si verifica e si cita questa ricerca?",
+          "lead": "Distingui pubblicazione scientifica, manoscritto in evoluzione, dataset e release tecnica del sito."
+        },
+        "paper": {
+          "label": "Working paper",
+          "question": "Dove sono ipotesi e metodo in forma estesa?",
+          "lead": "Il manoscritto corrente prosegue la ricerca; non riscrive retroattivamente gli archivi RR1 e RR2."
+        },
+        "resources": {
+          "label": "Risorse",
+          "question": "Vuoi esaminare i dati senza passare dal racconto?",
+          "lead": "Archivi, elaborazioni e download sono organizzati secondo provenienza, unità e versione."
+        },
+        "sources": {
+          "label": "Metodo e fonti",
+          "question": "Da dove provengono le affermazioni del progetto?",
+          "lead": "Qui trovi fonti, criteri, revisioni, limiti e il modo per segnalare una correzione."
+        }
+      }
+    },
+    "en": {
+      "ui": {
+        "home": "Home",
+        "questionLabel": "The guiding question",
+        "contents": "In this chapter",
+        "next": "Keep exploring",
+        "verify": "Data, methods and sources",
+        "choose": "For evidence-first readers",
+        "researchShortcut": "Go straight to data and citations",
+        "guide": "Chapter orientation",
+        "trail": "The next question",
+        "breadcrumbs": "Reading path",
+        "ia-understand": "Understand",
+        "ia-explore": "Explore",
+        "ia-stories": "Stories & issues",
+        "ia-outcomes": "Conflicts & outcomes",
+        "ia-round": "2026 round",
+        "ia-research": "Research"
+      },
+      "chapters": {
+        "explore": {
+          "label": "Explorer",
+          "question": "What actually exists in the Internet root?",
+          "lead": "TLD profiles describe extensions; the Application Atlas describes applications. They are different objects."
+        },
+        "timeline": {
+          "label": "Application archaeology",
+          "question": "How did today's extensions come about?",
+          "lead": "Follow proposals, decisions and turning points. A requested string is not automatically a live TLD."
+        },
+        "how": {
+          "label": "How it works",
+          "question": "Who decides what can come after the dot?",
+          "lead": "Actors, roles and steps in the domain system, from a requested name to possible delegation."
+        },
+        "beyond": {
+          "label": "Beyond the dot",
+          "question": "Is the Internet only what appears in your address bar?",
+          "lead": "Languages, protocols and alternative naming systems reveal what a simple extension can conceal."
+        },
+        "cities": {
+          "label": "City domains",
+          "question": "Is a city domain a symbol or a tool?",
+          "lead": "Compare experiences and governance choices: a city's name alone does not guarantee public value."
+        },
+        "geography": {
+          "label": "DNS geography",
+          "question": "Where is power over the Internet concentrated?",
+          "lead": "Rules, infrastructure, operators and states exercise different kinds of power. See how they intersect."
+        },
+        "governance-access": {
+          "label": "Internet access",
+          "question": "Who can actually restrict access to a website?",
+          "lead": "Filtering, network blocks and DNS interventions are not interchangeable. This guide separates tools and responsibilities."
+        },
+        "governance-sanctions": {
+          "label": "Sanctions and DNS",
+          "question": "How can sanctions affect domain names?",
+          "lead": "Legal obligations, operators and DNS coordination must be distinguished from censorship choices."
+        },
+        "economics": {
+          "label": "Economics",
+          "question": "Where does the value of a top-level domain come from?",
+          "lead": "Six connected steps link revenue models, reach, cases and the economic bets behind the 2026 round."
+        },
+        "social": {
+          "label": "Society",
+          "question": "Why can a dot become a cultural fact?",
+          "lead": "Languages, communities, identities and symbols make some extensions much more than addresses."
+        },
+        "strange": {
+          "label": "Unusual Internet",
+          "question": "What do domain oddities tell us?",
+          "lead": "Anomalies expose the relationship between technical rules, language and collective behaviour."
+        },
+        "contention": {
+          "label": "Contention",
+          "question": "What happens when applicants want the same extension?",
+          "lead": "Competition for a string and a dispute over the rules are not the same thing."
+        },
+        "disputes": {
+          "label": "Disputes",
+          "question": "When does a name become a controversy?",
+          "lead": "Explore objections, challenges and documented cases without confusing them with competing applications."
+        },
+        "refusals": {
+          "label": "Outcomes",
+          "question": "What happens to applications that never reach the root?",
+          "lead": "Withdrawals, non-approval and other routes have different causes and consequences."
+        },
+        "cemetery": {
+          "label": "gTLD cemetery",
+          "question": "Can a top-level domain disappear?",
+          "lead": "Contract termination, succession and root removal are not synonyms. The cases show why."
+        },
+        "reveal": {
+          "label": "2026 in numbers",
+          "question": "What do we really know about the new round?",
+          "lead": "Dated snapshots and different counting units show why some numbers cannot simply be added together."
+        },
+        "inside-round": {
+          "label": "2026 timeline",
+          "question": "How does an application unfold over time?",
+          "lead": "A chronology separates official rules, observable events and decisions still unresolved."
+        },
+        "behind-round": {
+          "label": "Field Notes",
+          "question": "What emerges between official milestones?",
+          "lead": "Dated investigations, explicit sources and unanswered questions: observing is not predicting."
+        },
+        "lugano": {
+          "label": "The .lugano case",
+          "question": "What could .lugano mean for the city?",
+          "lead": "Application status, possibilities and limits: a proposal must not be presented as a live service."
+        },
+        "research": {
+          "label": "Research",
+          "question": "How can you verify and cite this research?",
+          "lead": "Distinguish the scientific releases, evolving manuscript, datasets and the site's technical version."
+        },
+        "paper": {
+          "label": "Working paper",
+          "question": "Where are the hypotheses and methods in full?",
+          "lead": "The current manuscript develops the research; it does not rewrite the RR1 and RR2 archives."
+        },
+        "resources": {
+          "label": "Resources",
+          "question": "Want to inspect the data without the narrative?",
+          "lead": "Archives, derived analyses and downloads are organised by provenance, unit and version."
+        },
+        "sources": {
+          "label": "Methods and sources",
+          "question": "Where do the project's claims come from?",
+          "lead": "Find primary references, criteria, revisions, limitations and the correction process."
+        }
+      }
+    },
+    "de": {
+      "ui": {
+        "home": "Startseite",
+        "questionLabel": "Die Leitfrage",
+        "contents": "In diesem Kapitel",
+        "next": "Weiter erkunden",
+        "verify": "Daten, Methoden und Quellen",
+        "choose": "Für alle, die mit Belegen beginnen möchten",
+        "researchShortcut": "Direkt zu Daten und Zitierhinweisen",
+        "guide": "Orientierung im Kapitel",
+        "trail": "Die nächste Frage",
+        "breadcrumbs": "Lesepfad",
+        "ia-understand": "Verstehen",
+        "ia-explore": "Erkunden",
+        "ia-stories": "Geschichten & Fragen",
+        "ia-outcomes": "Konflikte & Ergebnisse",
+        "ia-round": "Runde 2026",
+        "ia-research": "Forschung"
+      },
+      "chapters": {
+        "explore": {
+          "label": "Explorer",
+          "question": "Was existiert tatsächlich in der Root-Zone des Internets?",
+          "lead": "TLD-Profile beschreiben Endungen; der Bewerbungsatlas beschreibt Anträge. Es sind unterschiedliche Gegenstände."
+        },
+        "timeline": {
+          "label": "Antragsarchäologie",
+          "question": "Wie sind die heutigen Endungen entstanden?",
+          "lead": "Verfolge Vorschläge, Entscheidungen und Wendepunkte. Ein beantragter Name ist nicht automatisch eine aktive TLD."
+        },
+        "how": {
+          "label": "So funktioniert es",
+          "question": "Wer bestimmt, was nach dem Punkt stehen darf?",
+          "lead": "Akteure, Rollen und Schritte des Domainsystems, vom beantragten Namen bis zur möglichen Delegierung."
+        },
+        "beyond": {
+          "label": "Jenseits des Punkts",
+          "question": "Ist das Internet nur das, was in der Adresszeile steht?",
+          "lead": "Sprachen, Protokolle und alternative Namenssysteme zeigen, was eine Endung verbergen kann."
+        },
+        "cities": {
+          "label": "Stadt-Domains",
+          "question": "Ist eine Stadt-Domain Symbol oder Werkzeug?",
+          "lead": "Vergleiche Erfahrungen und Governance: Ein Stadtname allein schafft noch keinen öffentlichen Nutzen."
+        },
+        "geography": {
+          "label": "Geografie des DNS",
+          "question": "Wo konzentriert sich die Macht über das Internet?",
+          "lead": "Regeln, Infrastruktur, Betreiber und Staaten verfügen über unterschiedliche Befugnisse. Hier treffen sie aufeinander."
+        },
+        "governance-access": {
+          "label": "Internetzugang",
+          "question": "Wer kann den Zugang zu einer Website tatsächlich einschränken?",
+          "lead": "Filter, Netzsperren und DNS-Eingriffe sind nicht austauschbar. Die Anleitung trennt Instrumente und Zuständigkeiten."
+        },
+        "governance-sanctions": {
+          "label": "Sanktionen und DNS",
+          "question": "Wie können Sanktionen Domainnamen betreffen?",
+          "lead": "Rechtliche Pflichten, Betreiber und DNS-Koordination sind von Zensurentscheidungen zu unterscheiden."
+        },
+        "economics": {
+          "label": "Wirtschaft",
+          "question": "Woher kommt der Wert einer Top-Level-Domain?",
+          "lead": "Sechs verknüpfte Schritte verbinden Geschäftsmodelle, Verbreitung, Beispiele und Erwartungen an die Runde 2026."
+        },
+        "social": {
+          "label": "Gesellschaft",
+          "question": "Warum kann ein Punkt kulturelle Bedeutung bekommen?",
+          "lead": "Sprachen, Gemeinschaften, Identitäten und Symbole machen manche Endungen zu mehr als Adressen."
+        },
+        "strange": {
+          "label": "Kurioses Internet",
+          "question": "Was verraten kuriose Domains?",
+          "lead": "Ausnahmen machen das Zusammenspiel von Technik, Sprache und kollektivem Verhalten sichtbar."
+        },
+        "contention": {
+          "label": "Namenskonflikte",
+          "question": "Was passiert, wenn mehrere Bewerber dieselbe Endung wollen?",
+          "lead": "Der Wettbewerb um eine Zeichenfolge ist nicht dasselbe wie ein Streit um die Regeln."
+        },
+        "disputes": {
+          "label": "Kontroversen",
+          "question": "Wann wird aus einem Namen eine Kontroverse?",
+          "lead": "Einwände, Streitfälle und belegte Ereignisse sind von konkurrierenden Bewerbungen zu unterscheiden."
+        },
+        "refusals": {
+          "label": "Ergebnisse",
+          "question": "Was geschieht mit Bewerbungen, die nie die Root-Zone erreichen?",
+          "lead": "Rückzüge, Ablehnungen und andere Verläufe haben unterschiedliche Gründe und Folgen."
+        },
+        "cemetery": {
+          "label": "gTLD-Friedhof",
+          "question": "Kann eine Top-Level-Domain verschwinden?",
+          "lead": "Vertragsende, Nachfolge und Entfernung aus der Root-Zone sind nicht dasselbe. Die Fälle zeigen warum."
+        },
+        "reveal": {
+          "label": "2026 in Zahlen",
+          "question": "Was wissen wir wirklich über die neue Runde?",
+          "lead": "Datierte Momentaufnahmen und verschiedene Zähleinheiten erklären, warum manche Zahlen nicht addierbar sind."
+        },
+        "inside-round": {
+          "label": "Chronik 2026",
+          "question": "Wie entwickelt sich eine Bewerbung über die Zeit?",
+          "lead": "Die Chronik trennt offizielle Regeln, beobachtbare Ereignisse und noch offene Entscheidungen."
+        },
+        "behind-round": {
+          "label": "Feldnotizen",
+          "question": "Was zeigt sich zwischen den offiziellen Meilensteinen?",
+          "lead": "Datierte Untersuchungen, nachvollziehbare Quellen und offene Fragen: Beobachtung ist keine Vorhersage."
+        },
+        "lugano": {
+          "label": "Der Fall .lugano",
+          "question": "Was könnte .lugano für die Stadt bedeuten?",
+          "lead": "Antragsstatus, Möglichkeiten und Grenzen: Ein Vorhaben ist noch kein aktiver Dienst."
+        },
+        "research": {
+          "label": "Forschung",
+          "question": "Wie kann man diese Forschung prüfen und zitieren?",
+          "lead": "Unterscheide wissenschaftliche Releases, laufendes Manuskript, Datensätze und technische Website-Version."
+        },
+        "paper": {
+          "label": "Working Paper",
+          "question": "Wo stehen Hypothesen und Methoden ausführlich?",
+          "lead": "Das aktuelle Manuskript entwickelt die Forschung weiter, ohne die Archive RR1 und RR2 umzuschreiben."
+        },
+        "resources": {
+          "label": "Materialien",
+          "question": "Möchtest du die Daten ohne Erzählung prüfen?",
+          "lead": "Archive, Auswertungen und Downloads sind nach Herkunft, Einheit und Version gegliedert."
+        },
+        "sources": {
+          "label": "Methoden und Quellen",
+          "question": "Woher stammen die Aussagen dieses Projekts?",
+          "lead": "Hier stehen Primärquellen, Kriterien, Revisionen, Grenzen und der Weg zur Korrektur."
+        }
+      }
+    },
+    "fr": {
+      "ui": {
+        "home": "Accueil",
+        "questionLabel": "La question directrice",
+        "contents": "Dans ce chapitre",
+        "next": "Poursuivre l'exploration",
+        "verify": "Données, méthode et sources",
+        "choose": "Pour commencer par les preuves",
+        "researchShortcut": "Accéder directement aux données et citations",
+        "guide": "Se repérer dans le chapitre",
+        "trail": "La prochaine question",
+        "breadcrumbs": "Parcours de lecture",
+        "ia-understand": "Comprendre",
+        "ia-explore": "Explorer",
+        "ia-stories": "Histoires & enjeux",
+        "ia-outcomes": "Conflits & issues",
+        "ia-round": "Cycle 2026",
+        "ia-research": "Recherche"
+      },
+      "chapters": {
+        "explore": {
+          "label": "Explorateur",
+          "question": "Qu'existe-t-il réellement dans la racine d'Internet ?",
+          "lead": "Les fiches décrivent les TLD ; l'Atlas des candidatures décrit les demandes. Ce sont deux objets distincts."
+        },
+        "timeline": {
+          "label": "Archéologie",
+          "question": "Comment les extensions actuelles sont-elles apparues ?",
+          "lead": "Suivez les propositions, décisions et tournants. Une chaîne demandée n'est pas forcément un TLD actif."
+        },
+        "how": {
+          "label": "Fonctionnement",
+          "question": "Qui décide de ce qui peut apparaître après le point ?",
+          "lead": "Acteurs, rôles et étapes du système des domaines, du nom demandé à son éventuelle délégation."
+        },
+        "beyond": {
+          "label": "Au-delà du point",
+          "question": "Internet se limite-t-il à la barre d'adresse ?",
+          "lead": "Langues, protocoles et systèmes de nommage alternatifs dévoilent ce qu'une extension peut cacher."
+        },
+        "cities": {
+          "label": "Domaines urbains",
+          "question": "Un domaine de ville est-il un symbole ou un outil ?",
+          "lead": "Comparez les expériences et la gouvernance : le nom d'une ville ne garantit pas l'intérêt public."
+        },
+        "geography": {
+          "label": "Géographie du DNS",
+          "question": "Où se concentre le pouvoir sur Internet ?",
+          "lead": "Règles, infrastructures, opérateurs et États exercent des pouvoirs distincts qui se croisent."
+        },
+        "governance-access": {
+          "label": "Accès à Internet",
+          "question": "Qui peut réellement restreindre l'accès à un site ?",
+          "lead": "Filtres, blocages réseau et interventions DNS ne sont pas interchangeables. Ce guide distingue les responsabilités."
+        },
+        "governance-sanctions": {
+          "label": "Sanctions et DNS",
+          "question": "Comment les sanctions peuvent-elles affecter les noms de domaine ?",
+          "lead": "Obligations juridiques, opérateurs et coordination DNS doivent être séparés de la censure."
+        },
+        "economics": {
+          "label": "Économie",
+          "question": "D'où vient la valeur d'un domaine de premier niveau ?",
+          "lead": "Six étapes relient modèles de revenus, diffusion, exemples et paris économiques du cycle 2026."
+        },
+        "social": {
+          "label": "Société",
+          "question": "Pourquoi un point peut-il devenir un fait culturel ?",
+          "lead": "Langues, communautés, identités et symboles font de certaines extensions bien plus que des adresses."
+        },
+        "strange": {
+          "label": "Internet insolite",
+          "question": "Que nous apprennent les curiosités des domaines ?",
+          "lead": "Les anomalies révèlent les rapports entre règles techniques, langage et comportements collectifs."
+        },
+        "contention": {
+          "label": "Concurrence",
+          "question": "Que se passe-t-il quand plusieurs candidats visent la même extension ?",
+          "lead": "La concurrence pour une chaîne et la contestation des règles sont deux choses différentes."
+        },
+        "disputes": {
+          "label": "Controverses",
+          "question": "Quand un nom devient-il une controverse ?",
+          "lead": "Explorez objections, contestations et cas documentés, sans les confondre avec des candidatures concurrentes."
+        },
+        "refusals": {
+          "label": "Issues",
+          "question": "Que deviennent les candidatures qui n'atteignent jamais la racine ?",
+          "lead": "Retraits, refus et autres trajectoires ont des causes et des conséquences différentes."
+        },
+        "cemetery": {
+          "label": "Cimetière des gTLD",
+          "question": "Un domaine de premier niveau peut-il disparaître ?",
+          "lead": "Fin de contrat, succession et retrait de la racine ne sont pas synonymes. Les cas montrent pourquoi."
+        },
+        "reveal": {
+          "label": "2026 en chiffres",
+          "question": "Que savons-nous vraiment du nouveau cycle ?",
+          "lead": "Des instantanés datés et des unités de comptage différentes expliquent pourquoi certains totaux ne s'additionnent pas."
+        },
+        "inside-round": {
+          "label": "Chronologie 2026",
+          "question": "Comment évolue une candidature au fil du temps ?",
+          "lead": "La chronologie distingue les règles officielles, les événements observables et les décisions en suspens."
+        },
+        "behind-round": {
+          "label": "Notes de terrain",
+          "question": "Que se passe-t-il entre deux jalons officiels ?",
+          "lead": "Enquêtes datées, sources explicites et questions ouvertes : observer ne signifie pas prédire."
+        },
+        "lugano": {
+          "label": "Le cas .lugano",
+          "question": "Que pourrait signifier .lugano pour la ville ?",
+          "lead": "État de la candidature, possibilités et limites : un projet n'est pas encore un service actif."
+        },
+        "research": {
+          "label": "Recherche",
+          "question": "Comment vérifier et citer cette recherche ?",
+          "lead": "Distinguez les publications scientifiques, le manuscrit évolutif, les données et la version technique du site."
+        },
+        "paper": {
+          "label": "Working paper",
+          "question": "Où trouver les hypothèses et la méthode détaillées ?",
+          "lead": "Le manuscrit actuel développe la recherche sans réécrire rétroactivement les archives RR1 et RR2."
+        },
+        "resources": {
+          "label": "Ressources",
+          "question": "Envie d'examiner les données sans passer par le récit ?",
+          "lead": "Archives, analyses dérivées et téléchargements sont classés par provenance, unité et version."
+        },
+        "sources": {
+          "label": "Méthode et sources",
+          "question": "D'où viennent les affirmations du projet ?",
+          "lead": "Vous trouverez sources primaires, critères, révisions, limites et procédure de correction."
+        }
+      }
+    }
+  }
+}

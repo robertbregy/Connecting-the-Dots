@@ -442,6 +442,8 @@ def main() -> None:
     subprocess.run(["python3", str(ROOT / "scripts" / "render_reader_study.py")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "validate_quick_guide.cjs")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "validate_economics_order.cjs")], check=True)
+    subprocess.run(["node", str(ROOT / "scripts" / "reconcile_reader_paths.cjs")], check=True)
+    subprocess.run(["node", str(ROOT / "scripts" / "validate_reader_paths.cjs")], check=True)
     validate_index()
     # Release-level validation is intentionally self-contained so the browser-upload
     # bundle can verify itself even though the larger development QA suite is omitted.

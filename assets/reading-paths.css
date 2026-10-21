@@ -1,0 +1,46 @@
+/* Reading paths 2026-10-21. This is orientation, not a parallel menu.
+   Visible at all text sizes, readable without motion or JavaScript. */
+.readerOrientation,.readerOutline,.readerNext{min-width:0;max-width:100%;overflow-wrap:anywhere}
+.readerOrientation{border-bottom:1px solid var(--border);padding:10px 2px 18px;margin:14px 0 20px}
+.readerBreadcrumb{display:flex;align-items:center;gap:8px 10px;flex-wrap:wrap;font-size:13px;line-height:1.5;color:var(--muted);margin:0 0 20px}
+.readerBreadcrumb a{display:inline-flex;align-items:center;min-height:40px;color:var(--accent-text);font-weight:650;text-underline-offset:3px}
+.readerBreadcrumb [aria-current="page"]{color:var(--text);font-weight:700}
+.readerBreadcrumb span[aria-hidden]{color:var(--muted)}
+.readerIntro{max-width:940px}
+.readerEyebrow,.readerOutlineLabel,.readerNextIntro{font-size:12px;font-weight:750;letter-spacing:.065em;text-transform:uppercase;color:var(--muted)}
+.readerEyebrow{margin:0 0 7px}
+.readerQuestion{font-size:clamp(24px,3vw,33px);font-weight:760;letter-spacing:-.025em;line-height:1.2;margin:0 0 12px;color:var(--text);text-wrap:balance}
+.readerLead{font-size:clamp(15px,1.75vw,17px);line-height:1.7;color:var(--muted);max-width:80ch;margin:0}
+.readerOutline{margin:0 0 24px;padding:15px 17px 17px;border:1px solid var(--border);border-radius:14px;background:var(--surface)}
+.readerOutlineLabel{margin:0 0 10px}
+.readerOutlineLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.readerOutlineLinks a{display:flex;align-items:center;min-height:44px;padding:10px 13px;border:1px solid var(--border);border-radius:9px;background:var(--surface2);color:var(--accent-text);font-size:14px;line-height:1.4;font-weight:650;text-decoration:none;overflow-wrap:anywhere}
+.readerOutlineLinks a:hover{background:var(--accent-soft);text-decoration:underline}
+.readerNext{margin:36px 0 20px;padding:22px 0 0;border-top:1px solid var(--border)}
+.readerNextIntro{margin:0 0 12px}
+.readerNextLinks{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:12px}
+.readerNextLinks a{position:relative;display:grid;gap:7px;align-content:center;min-height:110px;padding:18px 36px 18px 20px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);background:var(--surface);line-height:1.4}
+.readerNextLinks a>span:first-child{font-size:12px;font-weight:750;color:var(--muted)}
+.readerNextLinks a>strong{font-size:clamp(15px,1.7vw,18px);line-height:1.4;color:var(--text);font-weight:680}
+.readerNextLinks a>span:last-child{position:absolute;right:14px;top:calc(50% - 12px);font-size:22px;color:var(--accent-text)}
+.readerNextLinks a:hover{border-color:var(--accent-text);background:var(--surface2)}
+.readerNextPrimary{border-color:var(--accent-text)!important}
+.readerResearchShortcut{display:inline-flex;align-items:center;min-height:44px;padding:8px 4px;color:var(--accent-text);font-size:14px;font-weight:700;text-underline-offset:3px}
+.readerResearchShortcut:hover{text-decoration:underline}
+.section:not(#overview)>.sectionToc{display:flex;flex-wrap:wrap;overflow:visible;gap:7px;scrollbar-width:auto;position:static}
+.section:not(#overview)>.sectionToc .tocLink{white-space:normal;min-height:44px;line-height:1.45}
+.readerBreadcrumb a:focus-visible,.readerOutline a:focus-visible,.readerNext a:focus-visible,.readerResearchShortcut:focus-visible{outline:3px solid var(--accent-text);outline-offset:3px;text-decoration:underline}
+@media(max-width:680px){
+ .readerOrientation{margin:12px 0 16px;padding:4px 0 14px}
+ .readerBreadcrumb{gap:4px 8px;margin-bottom:12px}
+ .readerQuestion{font-size:25px}
+ .readerLead{font-size:15px}
+ .readerOutline{padding:12px}
+ .readerOutlineLinks,.readerNextLinks{grid-template-columns:1fr}
+ .readerNextLinks a{min-height:90px;padding:15px 36px 15px 16px}
+ .readerNext{margin-top:24px}
+ .readerResearchShortcut{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+ .readerBreadcrumb a,.readerOutline a,.readerNext a,.readerResearchShortcut{scroll-behavior:auto;transition:none!important}
+}
