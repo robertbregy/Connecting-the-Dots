@@ -2552,7 +2552,8 @@
     "release0789": "Story-led entry, visual historical overview, compact rankings, name-only search and citation guide. Independent review materials prepared; human validation remains pending.",
     "audienceRecordTools": "Languages, sharing and corrections",
     "release0790": "A roughly three-minute introduction through four everyday situations with sources. Printable reader-study protocol and empty observation sheet in four languages; no human observations collected yet.",
-    "release0791": "v0.7.91: Economics reordered into six steps, from mechanisms to the 2026 analysis. Updated contents, transitions and heading hierarchy; existing cases, sources, data and deep links retained."
+    "release0791": "v0.7.91: Economics reordered into six steps, from mechanisms to the 2026 analysis. Updated contents, transitions and heading hierarchy; existing cases, sources, data and deep links retained.",
+    "release0792": "Reading pathways across every chapter: narrative order, local contents, meaningful next links and direct research access. Content, sources, legacy links and scientific archives retained; no new research findings."
   },
   "it": {
     "brand": "Brand",
@@ -5107,7 +5108,8 @@
     "release0789": "Un ingresso attraverso le storie, una sintesi visiva delle epoche, classifiche compatte, ricerca per nome e guida alle citazioni. Materiali indipendenti pronti; validazione con persone ancora da svolgere.",
     "audienceRecordTools": "Lingue, condivisione e segnalazioni",
     "release0790": "Percorso introduttivo di circa tre minuti con quattro situazioni quotidiane e fonti. Protocollo di lettura stampabile e scheda vuota in quattro lingue; nessuna osservazione umana ancora raccolta.",
-    "release0791": "v0.7.91: Economia riordinata in sei passaggi, dai modelli alla lettura del 2026. Indice, raccordi e gerarchia dei titoli aggiornati; casi, fonti, dati e vecchi collegamenti conservati."
+    "release0791": "v0.7.91: Economia riordinata in sei passaggi, dai modelli alla lettura del 2026. Indice, raccordi e gerarchia dei titoli aggiornati; casi, fonti, dati e vecchi collegamenti conservati.",
+    "release0792": "Percorsi di lettura in tutti i capitoli: ordine narrativo, indici locali, collegamenti per proseguire e accessi diretti alla ricerca. Contenuti, fonti, vecchi collegamenti e archivi scientifici conservati; nessun nuovo risultato di ricerca."
   },
   "de": {
     "brand": "Marke",
@@ -7662,7 +7664,8 @@
     "release0789": "Einstieg über Geschichten, visuelle historische Übersicht, kompakte Ranglisten, Namenssuche und Zitierhilfe. Material für unabhängige Prüfung vorbereitet; Prüfung mit Menschen steht aus.",
     "audienceRecordTools": "Sprachen, Teilen und Korrekturen",
     "release0790": "Etwa dreiminütiger Einstieg mit vier Alltagssituationen und Quellen. Druckbares Leseprotokoll und leerer Beobachtungsbogen in vier Sprachen; noch keine menschlichen Beobachtungen.",
-    "release0791": "v0.7.91: Wirtschaft in sechs Leseschritte gegliedert, von den Mechanismen zur Analyse 2026. Inhaltsverzeichnis, Übergänge und Überschriften aktualisiert; Beispiele, Quellen, Daten und bestehende Direktlinks erhalten."
+    "release0791": "v0.7.91: Wirtschaft in sechs Leseschritte gegliedert, von den Mechanismen zur Analyse 2026. Inhaltsverzeichnis, Übergänge und Überschriften aktualisiert; Beispiele, Quellen, Daten und bestehende Direktlinks erhalten.",
+    "release0792": "Lesepfade durch alle Kapitel: nachvollziehbare Reihenfolge, lokale Inhaltsverzeichnisse, weiterführende Links und direkter Forschungszugang. Inhalte, Quellen, alte Links und Forschungsarchive bleiben erhalten; keine neuen Forschungsergebnisse."
   },
   "fr": {
     "brand": "Marque",
@@ -10217,6 +10220,7 @@
     "release0789": "Entrée par les histoires, synthèse historique visuelle, classements compacts, recherche par nom et aide à la citation. Matériel indépendant prêt ; validation humaine encore à réaliser.",
     "audienceRecordTools": "Langues, partage et corrections",
     "release0790": "Parcours introductif d’environ trois minutes avec quatre situations du quotidien et leurs sources. Protocole de lecture imprimable et fiche vierge en quatre langues ; aucune observation humaine encore recueillie.",
-    "release0791": "v0.7.91 : Économie réorganisée en six étapes, des mécanismes à l’analyse de 2026. Sommaire, transitions et titres actualisés ; cas, sources, données et liens existants conservés."
+    "release0791": "v0.7.91 : Économie réorganisée en six étapes, des mécanismes à l’analyse de 2026. Sommaire, transitions et titres actualisés ; cas, sources, données et liens existants conservés.",
+    "release0792": "Parcours de lecture dans tous les chapitres : ordre narratif, sommaires locaux, liens pour poursuivre et accès direct à la recherche. Contenus, sources, anciens liens et archives scientifiques conservés ; aucun nouveau résultat de recherche."
   }
 }

@@ -68,7 +68,7 @@ function toc(d, section, lang, independent = false) {
   const L = DATA.locales[lang], headings = headingsFor(section);
   if (headings.length < 2) return null;
   const nav = ui(node(d, 'nav', null, 'readerToc')); nav.setAttribute('aria-label', L.ui.contents);
-  const disclosure = node(d, 'details'); disclosure.open = true;
+  const disclosure = node(d, 'details'); disclosure.setAttribute('open', '');
   disclosure.append(node(d, 'summary', L.ui.contents));
   const list = node(d, 'ol'); let remaining;
   for (const [i, heading] of headings.entries()) {
@@ -160,10 +160,10 @@ function nativePage(lang, filename) {
     trail.append(link(d, L.ui.home, 'overview'));
     const sep = node(d, 'span', ' / '); sep.setAttribute('aria-hidden', 'true'); trail.append(sep);
     trail.append(link(d, hubTitles[area], area));
-    intro.append(trail, node(d, 'h1', L.routes[id][0], 'readerSrOnly'), node(d, 'p', L.routes[id][1], 'readerLead'));
+    intro.append(trail, node(d, 'h2', L.routes[id][0], 'readerChapterTitle'), node(d, 'p', L.routes[id][1], 'readerLead'));
     section.prepend(intro);
     if (id !== 'economics') {
-      for (const oldNav of section.querySelectorAll(':scope > nav.sectionToc')) { oldNav.hidden = true; oldNav.setAttribute('inert', ''); }
+      for (const oldNav of section.querySelectorAll(':scope > nav.sectionToc')) { oldNav.setAttribute('hidden', ''); oldNav.setAttribute('inert', ''); }
       const index = toc(d, section, lang); if (index) intro.after(index);
     }
     const next = ui(node(d, 'nav', null, 'readerNext')); next.setAttribute('aria-label', L.ui.articleNext);
@@ -189,7 +189,7 @@ function nativePage(lang, filename) {
     group.append(list); groups.append(group);
   }
   directory.append(groups); main.append(directory);
-  const legacy = d.getElementById('iaLegacyNavDisclosure'); if (legacy) { legacy.hidden = true; legacy.setAttribute('inert', ''); }
+  const legacy = d.getElementById('iaLegacyNavDisclosure'); if (legacy) { legacy.setAttribute('hidden', ''); legacy.setAttribute('inert', ''); }
   for (const id of oldIds) assert.ok(d.getElementById(id), 'Lost existing fragment ' + id);
   for (const a of d.querySelectorAll('[data-reader-ui] [data-open-section]')) {
     assert.ok(d.getElementById(a.dataset.openSection), 'Invalid reader destination');
@@ -209,12 +209,14 @@ function independentPage(file) {
   for (const n of d.querySelectorAll('[data-reader-ui]')) n.remove();
   const lang = LANGS.includes(d.documentElement.lang) ? d.documentElement.lang : 'en', L = DATA.locales[lang];
   const original = bodySnapshot(main), ids = [...d.querySelectorAll('[id]')].map(n => n.id);
-  const originalCount = Number(d.documentElement.dataset.readerOriginalIds || ids.length);
+  const originalCount = Number(d.body.dataset.readerOriginalIds || d.documentElement.dataset.readerOriginalIds || ids.length);
   const relative = path.relative(ROOT, file).split(path.sep).join('/'), prefix = '../'.repeat(relative.split('/').length - 1), base = prefix + lang + '/';
   const selected = d.querySelector('.ctdB2CrossNav a[aria-current]')?.getAttribute('href')?.match(/[?&]tab=(ia-[a-z]+)/)?.[1];
   const area = selected && DATA.areas[selected] ? selected : relative.startsWith('applications/') || relative.startsWith('explorer/') ? 'ia-explore' : relative.startsWith('research/') ? 'ia-research' : 'ia-round';
   const trail = ui(node(d, 'nav', null, 'readerTrail readerArticleTrail')); trail.setAttribute('aria-label', L.ui.context);
   trail.append(link(d, L.ui.home, 'overview', null, base), link(d, L.ui.back, area, null, base)); main.prepend(trail);
+  // Establish the stable main ID before assigning any contents anchors.
+  if (!main.id) main.id = 'reader-main';
   const index = toc(d, main, lang, true); if (index) {
     const heading = main.querySelector('h1'); if (heading) heading.after(index); else trail.after(index);
   }
@@ -230,8 +232,20 @@ function independentPage(file) {
   }
   assert.deepEqual(bodySnapshot(main), original, 'Independent article evidence changed: ' + relative);
   for (const id of ids) assert.ok(d.getElementById(id), 'Lost independent anchor: ' + id);
-  d.documentElement.dataset.readerOriginalIds = String(originalCount);
-  addAssets(d, prefix); write(file, d); report.independent.push({file: relative, lang, area, retainedExistingIds: originalCount});
+  d.body.dataset.readerOriginalIds = String(originalCount);
+  d.body.dataset.readerFirst = '1';
+  addAssets(d, prefix);
+  // Keep language, canonical, hreflang and structured metadata byte-for-byte.
+  // Preserve the original Python text-entity convention without changing text.
+  let head = raw.slice(0, raw.search(/<body\b/i));
+  assert.ok(head.includes('</head>'), 'Independent document head missing: ' + relative);
+  head = head.replace(/ data-reader-(?:first|original-ids)="[^"]*"/g, '');
+  head = head.replace(/<link\b(?=[^>]*data-reader-asset="reader-first\.css")[^>]*>\s*/g, '');
+  const style = d.querySelector('link[data-reader-asset="reader-first.css"]');
+  head = head.replace('</head>', style.outerHTML + '</head>');
+  const {serializeBody} = require('./reader_first_serialization.cjs');
+  fs.writeFileSync(file, head + serializeBody(d.body) + '\n</html>\n');
+  report.independent.push({file: relative, lang, area, retainedExistingIds: originalCount});
 }
 for (const lang of LANGS) { nativePage(lang, lang + '/index.html'); if (lang === 'en') nativePage(lang, 'index.html'); }
 for (const directory of ['applications', 'behind-the-round', 'inside-the-round', 'explorer', 'research']) {

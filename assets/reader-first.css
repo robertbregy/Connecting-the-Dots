@@ -1,6 +1,6 @@
 /* Shared reader navigation. Theme values are deliberately isolated from data charts. */
-html[data-reader-first] { --reader-fg:#18202b; --reader-muted:#475365; --reader-panel:#ffffff; --reader-soft:#f2f5f8; --reader-border:#bdc8d5; --reader-link:#0057ad; }
-html[data-reader-first][data-theme="dark"] { --reader-fg:#f1f5fa; --reader-muted:#c0cbd9; --reader-panel:#191d24; --reader-soft:#222a35; --reader-border:#627086; --reader-link:#8fc8ff; }
+html[data-reader-first], body[data-reader-first] { --reader-fg:#18202b; --reader-muted:#475365; --reader-panel:#ffffff; --reader-soft:#f2f5f8; --reader-border:#bdc8d5; --reader-link:#0057ad; }
+html[data-reader-first][data-theme="dark"], html[data-theme="dark"] body[data-reader-first] { --reader-fg:#f1f5fa; --reader-muted:#c0cbd9; --reader-panel:#191d24; --reader-soft:#222a35; --reader-border:#627086; --reader-link:#8fc8ff; }
 .readerIntro, .readerToc, .readerNext, .readerDirectory, .readerArticleTrail, .readerHubGuide { box-sizing:border-box; min-width:0; color:var(--reader-fg); }
 .readerIntro { margin:12px 0 22px; }
 .readerTrail { display:flex; flex-wrap:wrap; align-items:center; gap:6px 12px; margin:0 0 8px; font-size:.88rem; line-height:1.45; }
@@ -61,3 +61,12 @@ html[data-reader-first][data-theme="dark"] { --reader-fg:#f1f5fa; --reader-muted
  .readerToc, .readerNext, .readerDirectory, .readerTrail, .readerResearchCta { display:none!important; }
  .readerLead { color:#222; }
 }
+
+/* Independent pages retain their existing breadcrumb, not a duplicate. */
+.readerToc{display:block}
+body:has(.ctdB2Trail) .readerArticleTrail{display:none}
+
+/* Each chapter opens with a visible question under the publication title. */
+.readerChapterTitle{font-size:clamp(1.65rem,3.2vw,2.6rem);line-height:1.16;letter-spacing:-.035em;max-width:32ch;margin:4px 0 16px;color:var(--reader-fg);overflow-wrap:anywhere}
+.readerNext{align-items:stretch;justify-content:stretch}
+.readerChapterTitle:focus-visible{outline:3px solid var(--reader-link);outline-offset:5px}

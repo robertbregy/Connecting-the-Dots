@@ -2,7 +2,8 @@
 (function () {
   'use strict';
   const root = document.documentElement;
-  if (!root.hasAttribute('data-reader-first')) return;
+  if (!root.hasAttribute('data-reader-first') && !document.body.hasAttribute('data-reader-first')) return;
+  root.dataset.readerFirst = '1';
   const initialTitle = document.title;
   // Keep the first phone screen for the article, not a long contents list.
   // This runs once; it never overrides a reader's later disclosure choices.
