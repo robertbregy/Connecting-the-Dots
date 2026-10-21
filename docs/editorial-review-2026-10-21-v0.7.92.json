@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "reviewId": "reading-paths-2026-10-21-v0.7.92",
-  "status": "pending-review",
+  "status": "reviewed",
   "reviewedOn": "2026-10-21",
   "publicationVersion": "0.7.92",
   "baselineCommit": "65e0fbe2080c2ee841e8abc01e1ddec113a74b8e",
   "originalABBaseline": "safety/main-v0.7.78-before-b2-switch-20261013",
   "originalSectionBaseline": "ec231cc12d35fa91ff5340ad057a483ce23a5ca4",
   "normalization": "ia-b2-v1",
-  "reviewInstruction": "Review all changed source and generated files, verify the all-language journey tests, then replace pending hashes with exact SHA-256 checksums and set status to reviewed. The present candidate is not approval.",
+  "reviewInstruction": "Exact v0.7.92 file fingerprints reviewed and recorded with rationale R01. No human reader-study results are claimed; independent browser QA and the actual deployed pages are checked separately.",
   "rationales": {
     "C01": "Current download, filename, label and checksum must derive from publication metadata; keep the previous archive.",
     "C02": "Use the event register review date in the timeline; distinguish event, acquisition and editorial dates.",
@@ -1356,7 +1356,7 @@
   "files": {
     "applications/de/index.html": {
       "baselineSHA256": "30e00a377b01d61cce5c4ce178275dab3fd053485fc9d691c6e210ae0716ff9a",
-      "sha256": "4f5c9ca6cb1392fc3b877fb96a5b92d9734dd8f3a36eab303511fa359eb889ba",
+      "sha256": "b9ae7d66da5e0931bee6cd0de370b583484ea7d4f45df98205b375f400b0fc84",
       "rationaleIds": [
         "C04",
         "M01",
@@ -1366,12 +1366,13 @@
         "H01",
         "U01",
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "applications/en/index.html": {
       "baselineSHA256": "1f52c66b908ed9fc5e17caffd77f9157ba254d04ee081cc1b8bb983ce9c934c5",
-      "sha256": "e0834ebdb9cd1ccdcc839247b1a7840590074406b083dcb148150ec7b7ca35ab",
+      "sha256": "d5800d1ce92d8fac3f34413802b1d71313d16cb285cd23afcdacda5fe52f152c",
       "rationaleIds": [
         "C04",
         "M01",
@@ -1381,12 +1382,13 @@
         "H01",
         "U01",
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "applications/fr/index.html": {
       "baselineSHA256": "c069a3a5b79c9c558964bfe8d23c5c4ee305ab93e3cdb4ef61f844ff89e7db79",
-      "sha256": "bde58a64e7da3e665a107744776278e258746d14882f8227a8ae6c892f275528",
+      "sha256": "04f35dbccbaf4d04f27e5db378ed2354cea8e8c123f0d18c0939ec65b79d8457",
       "rationaleIds": [
         "C04",
         "M01",
@@ -1396,12 +1398,13 @@
         "H01",
         "U01",
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "applications/it/index.html": {
       "baselineSHA256": "7830eae652c261d48bb590c8456d534793a394432672187303313eef92bcb1cc",
-      "sha256": "04df520d32189e4ec0d4eb0bc5603e804d7e2fa0fb55f74a54fe4e7406847c12",
+      "sha256": "ebec4c737bd0f16610b47a8beab3e04b2eb6f30a56ceca8580c653a00fa843e9",
       "rationaleIds": [
         "C04",
         "M01",
@@ -1411,7 +1414,8 @@
         "H01",
         "U01",
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "assets/app.js": {
@@ -1880,7 +1884,7 @@
     },
     "data/release_history.json": {
       "baselineSHA256": "e084001ed1150db3d2195e2e1c669808084dbc50535fcd2e5b5bf349bf8ebac7",
-      "sha256": "decc9eae221acdfe8aa8e62ac857be4c35ea35c0616babd59acc9466bab68aa1",
+      "sha256": "db594028757f9d6ad25da1448897c0d6eebe888fa4a7a6867b6383cc6769bfc9",
       "rationaleIds": [
         "C01",
         "C02",
@@ -1893,12 +1897,13 @@
         "H01",
         "U01",
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "data/translations.json": {
       "baselineSHA256": "6c71a4516d657f571e6fd714540e15be56fc423984681c3c003d46bf0ee5fc49",
-      "sha256": "423fe2b8798f3c6961ee01c7b72cdb4cba975b7ebabc708c5f3584dd0b13517e",
+      "sha256": "b7ef3aa11b9f6688ca4db382e7960fcd031a03d9dc244558685efb44252c1bfb",
       "rationaleIds": [
         "C01",
         "C02",
@@ -1924,7 +1929,8 @@
         "H01",
         "U01",
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "inside-the-round/de/index.html": {
@@ -1977,7 +1983,7 @@
     },
     "publication.json": {
       "baselineSHA256": "b5d225fa96dc9573b2dac3c18e39236c2e570c65aaa08afdbfedbdc0292368ef",
-      "sha256": "d2ab22d5e8467ac3ce93d7a36363793dfb6dd07b0ceefaacba6d9efec5cac962",
+      "sha256": "29113282ebc138345bce11e49c70b42da9ae6005b8b9d761f99815342b156ab7",
       "rationaleIds": [
         "C01",
         "C02",
@@ -1987,12 +1993,13 @@
         "H01",
         "U01",
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "research/connecting-the-dots-working-paper-v1.html": {
       "baselineSHA256": "5599e8f890e732a80bfc0852c686465b69309f055f4853673d55fb8725bc9948",
-      "sha256": "485f4fbf54eb66ceb98a19869def15296fee07d11f7c881070c0d121b844953d",
+      "sha256": "1e19e64e0c8e86478133fb0b419a1fec42a9a642f57d879d0353023c6cd9e537",
       "rationaleIds": [
         "C05",
         "M01",
@@ -2005,12 +2012,13 @@
         "H01",
         "U01",
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "research/connecting-the-dots-working-paper-v1.md": {
       "baselineSHA256": "c02a5dd4dbc8056fdc4e8efaebf2ee2b3cb9c94577e0fa98b63cfe65dcb185d7",
-      "sha256": "129f03d5177126f8f1616b8bece761f04f42f719482c0f21a6d8f89072022347",
+      "sha256": "86ecf2adb083f877ea064b8bb270700c88acd8e46a9c9202cb55d64fe31d6297",
       "rationaleIds": [
         "C05",
         "M01",
@@ -2023,12 +2031,13 @@
         "H01",
         "U01",
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "research/index.html": {
       "baselineSHA256": "e9a26de35e6eada49de00b1d9df234d3f67c8e40f93591134477a064c0694245",
-      "sha256": "d2133977f585d04c3b6cc6a097e72dba1a6956ea013c808475587479cef81a1d",
+      "sha256": "ea9300804e7b316b5387d2304189c35f7193381c588dcf86ce3c0048aaae5d68",
       "rationaleIds": [
         "C05",
         "T02",
@@ -2036,12 +2045,13 @@
         "H01",
         "U01",
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "src/index.web.html": {
       "baselineSHA256": "b6a65c951dc6c990671ca558580dbfaec97f33d6bf0b1050e83d1b9399c028c2",
-      "sha256": "69badb78d97900eee46d7fdda77572589c465c18e165b8e39a42a7e41dc16b63",
+      "sha256": "96ca71f9635b335d19941e63978d44bbd7fb99681d00e1fc96143a8845a68f5c",
       "rationaleIds": [
         "C01",
         "C02",
@@ -2055,12 +2065,13 @@
         "H01",
         "U01",
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "research/research_release_manifest.json": {
       "baselineSHA256": "c928f7857e4cf66ea98983ba13aad299dadd7d6674ab7b4b9e4a54fe65d031b7",
-      "sha256": "9b99ba8d2a4b08bd73b54b7e8330ef9b91ae040b9ea8d1cff9c5bda26988e080",
+      "sha256": "c770478b6095887ac1fbf5a5283f8af5bef888ab098e82bbbf87029e31075047",
       "rationaleIds": [
         "C05",
         "T02",
@@ -2068,7 +2079,8 @@
         "H01",
         "U01",
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "data/sources.csv": {
@@ -2191,7 +2203,7 @@
     },
     "build.py": {
       "baselineSHA256": "1e375ef181f88942d94657f7cf210324ff3976f49d053aba8edb7a2ae16f86c0",
-      "sha256": "35392077952ca22c827705160aa5e5f450ca15f37ac2b7a16a5f3e7563a5e759",
+      "sha256": "edef72d167d01ad6852cfe9499a9980038f62016a255ed3438fc9547522065a0",
       "rationaleIds": [
         "T01",
         "CI03",
@@ -2200,7 +2212,8 @@
         "H01",
         "U01",
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "scripts/build_tld_market.py": {
@@ -2413,35 +2426,38 @@
     },
     "package-lock.json": {
       "baselineSHA256": "3580e7fa5485bd55e532e7bc5644dfa0e48c1bf9769fab8108722ee1dd5ae708",
-      "sha256": "ff41ce07a5ffb5e83a13e9d79b1c819bcb214df9702e0b6784357d082cb4184a",
+      "sha256": "0df68dd6e8b4ca0383b41a8f1e74420178bf4ba55e3ace2a3dccda7c2fbb45bd",
       "rationaleIds": [
         "A19",
         "H01",
         "U01",
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "package.json": {
       "baselineSHA256": "e317eceaaca55386ac43bab966e1479052d93331e204104ce5d36c107e43f28f",
-      "sha256": "e4ae5de3daee17607dbe9462cc67ebc0c996c4a547c40d919e23804fb3c0c90d",
+      "sha256": "d30d869f753a25b82213978cccdce57ae2cf1d7100da0aad692e6a3dbdd079b7",
       "rationaleIds": [
         "A19",
         "H01",
         "U01",
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "research/README.md": {
       "baselineSHA256": "e73bf4e607e4cbc95be972f81584215e079c81f5d835592176dbfa16a4ee6c77",
-      "sha256": "e536790b6c596fc0285ad6f164c9b8c47cc6fa58292a99b234df556492a67e1e",
+      "sha256": "d0b196b2002b381fdc264dcaf1b12546fd34cb31369ce4b3aa04e36aa2ebc814",
       "rationaleIds": [
         "A19",
         "H01",
         "U01",
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "scripts/assemble_data.js": {
@@ -2597,13 +2613,14 @@
     },
     "CHANGELOG.md": {
       "baselineSHA256": "08308b4d751353182a834f71c730d08866a0375ac9ee866701e4caf8eb41d4ff",
-      "sha256": "1683cf4317f0d73cef00d183fbfd6d4d211d43a4ac13be01b7b4d7af4e59feb5",
+      "sha256": "abaafaaee386cd69c965a607d8bacedfd2a883a433f0546ec707526cc58bdc4f",
       "rationaleIds": [
         "A19",
         "H01",
         "U01",
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "docs/REPOSITORY_GOVERNANCE.md": {
@@ -2738,9 +2755,10 @@
     },
     "scripts/audit_ia_b2.cjs": {
       "baselineSHA256": "69b0c092ad93286154b346dd6f37c14fef05b71cc9156afe957cb87f81d3a985",
-      "sha256": "1c4bc027bc221dce944a2af38f7fa6fcb81fe9008d7e6d90efffc2f14f664bb5",
+      "sha256": "8f2d6989bfcddd0993545ac37ec715518865881a99c915906a7c29bd36512656",
       "rationaleIds": [
-        "U01"
+        "U01",
+        "R01"
       ]
     },
     "scripts/reconcile_audience.cjs": {
@@ -2782,34 +2800,38 @@
     },
     "research/reader-study/it/index.html": {
       "baselineSHA256": null,
-      "sha256": "d3a938bded0a3640c07fedc72dc89f6cdfb35d1556b29c2059a8a8ab4d57afc4",
+      "sha256": "6be6dc35be948dedac5e6888dad0e40a3e19397a2f8a4c73c3058c44b8b439ca",
       "rationaleIds": [
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "research/reader-study/en/index.html": {
       "baselineSHA256": null,
-      "sha256": "7b42fceb7f48afb26393327f6d380254126d8b9804be45a761c86d4f2ea017a6",
+      "sha256": "49c48f576ad41d18323678362ed96e675df51512611d59fda95dafb4b3d10d2d",
       "rationaleIds": [
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "research/reader-study/de/index.html": {
       "baselineSHA256": null,
-      "sha256": "981b78991fda51dcad717782a4754f1330e720706be8e85af3e469bca098deb4",
+      "sha256": "4596333f120624a1bbb3a7e93cb96513919e25974d9fa63f2d05143c3edb8735",
       "rationaleIds": [
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "research/reader-study/fr/index.html": {
       "baselineSHA256": null,
-      "sha256": "a34155253673818b1d8d55f7a06561f42c8600521ff07cf44dbb3abc6a08774f",
+      "sha256": "6212337383eaa4279b103b42c627244eb9a5afafdd08515ec6ae30e2a90ba513",
       "rationaleIds": [
         "U03",
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "scripts/reorder_economics.cjs": {
@@ -2848,42 +2870,43 @@
       ]
     },
     "README.md": {
-      "sha256": "626fa6f6e1f776e0d6cc291961990ff7502f5cfee62d77c4f481e548e7624c57",
+      "sha256": "2157eea7399b61d182be1d010e678067ead49f94ce2e83975b8d2d3130b2768e",
       "baselineSHA256": null,
       "rationaleIds": [
-        "E09"
+        "E09",
+        "R01"
       ]
     },
     "data/reading_routes.json": {
-      "sha256": null,
+      "sha256": "5268712f46ccb6cffd6a7e082313eade5e2e39815d983a3c96489cf13af79ae0",
       "baselineSHA256": null,
       "rationaleIds": [
         "R01"
       ]
     },
     "scripts/reconcile_reader_paths.cjs": {
-      "sha256": null,
+      "sha256": "00c732fbd7095ed94344b130fc83c00b3538d43443bad2559674bac9365545e9",
       "baselineSHA256": null,
       "rationaleIds": [
         "R01"
       ]
     },
     "assets/reading-paths.css": {
-      "sha256": null,
+      "sha256": "5383b7d7f298fae10d4c4e58a7ea560d4e6c2acb805d36b6d0fce8f6fde6e660",
       "baselineSHA256": null,
       "rationaleIds": [
         "R01"
       ]
     },
     "scripts/validate_reader_paths.cjs": {
-      "sha256": null,
+      "sha256": "d0ae448ee53452c1596dbd4a8ada2104911f18b14b266988c78c8c2db234f4b6",
       "baselineSHA256": null,
       "rationaleIds": [
         "R01"
       ]
     },
     "docs/READING_PATHS_2026-10-21.md": {
-      "sha256": null,
+      "sha256": "0b7df56d5f89818f45f1368d3b4cec74516f76b268c027af32c358aea876c6e1",
       "baselineSHA256": null,
       "rationaleIds": [
         "R01"
@@ -3162,9 +3185,9 @@
   "parentReview": "docs/editorial-review-2026-10-20-v0.7.91.json",
   "priorTechnicalBaseline": "ad9cb0de2e5f8c0ea9771509f003e4f3011ddcc1",
   "verification": {
-    "scope": "Candidate: four-language question-led reader paths and static/browser checks; release gate remains closed pending exact file review and CI.",
+    "scope": "All 28 changed reviewed source files independently hashed from the generated v0.7.92 feature-branch snapshot. All prior scientific archives and original editorial sections remain protected. Browser QA is a separate required gate.",
     "humanParticipants": 0,
     "archivedResearch": "RR1/RR2 unchanged; previously published technical ZIPs protected",
-    "priorReviewSha256": null
+    "priorReviewSha256": "18fe10afb0eb4eef8532a14b7ed20a8c59b4c6dd13104b376d028bb2273a6a33"
   }
 }
