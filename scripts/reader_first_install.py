@@ -20,14 +20,19 @@ reader = ROOT / 'scripts' / 'reader_first.cjs'
 text = reader.read_text(encoding='utf-8')
 for old, new in [("disclosure.open = true;", "disclosure.setAttribute('open', '');"),
                  ("oldNav.hidden = true;", "oldNav.setAttribute('hidden', '');"),
-                 ("legacy.hidden = true;", "legacy.setAttribute('hidden', '');")]:
+                 ("legacy.hidden = true;", "legacy.setAttribute('hidden', '');"),
+                 ("node(d, 'h1', L.routes[id][0], 'readerSrOnly')", "node(d, 'h2', L.routes[id][0], 'readerChapterTitle')")]:
     text = text.replace(old, new)
 reader.write_text(text, encoding='utf-8')
 css = ROOT / 'assets' / 'reader-first.css'
 text = css.read_text(encoding='utf-8')
 marker = '/* Independent pages retain their existing breadcrumb, not a duplicate. */'
 if marker not in text:
-    css.write_text(text + '\n' + marker + '\n.readerToc{display:block}\nbody:has(.ctdB2Trail) .readerArticleTrail{display:none}\n', encoding='utf-8')
+    text += '\n' + marker + '\n.readerToc{display:block}\nbody:has(.ctdB2Trail) .readerArticleTrail{display:none}\n'
+marker = '/* Each chapter opens with a visible question under the publication title. */'
+if marker not in text:
+    text += '\n' + marker + '\n.readerChapterTitle{font-size:clamp(1.65rem,3.2vw,2.6rem);line-height:1.16;letter-spacing:-.035em;max-width:32ch;margin:4px 0 16px;color:var(--reader-fg);overflow-wrap:anywhere}\n.readerNext{align-items:stretch;justify-content:stretch}\n.readerChapterTitle:focus-visible{outline:3px solid var(--reader-link);outline-offset:5px}\n'
+css.write_text(text, encoding='utf-8')
 
 app = ROOT / 'assets' / 'app.js'
 text = app.read_text(encoding='utf-8')
