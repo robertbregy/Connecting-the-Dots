@@ -1,0 +1,113 @@
+name: Reader release gate
+
+on:
+  push:
+    branches: [feat/sitewide-reader-paths-20261021]
+    paths: [.github/workflows/reader-paths-release-gate.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reader-release-gate
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Dependencies
+        run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Build and exact source review
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/reader-review
+          python3 build.py | tee artifacts/reader-review/build.log
+          node scripts/verify_ia_b2_parity.cjs | tee artifacts/reader-review/parity.log
+          node scripts/validate_multilingual.js
+          node scripts/validate_internet_access.js
+          CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
+          python3 scripts/test_aps_current_analytics.py
+          sha256sum downloads/connecting-the-dots-data-pack-v0.7.92.zip > /tmp/reader-pack.sha256
+      - name: Reading paths and automated accessibility
+        run: node scripts/reader_paths_review.cjs
+      - name: Original browser and deep-link regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 8123 --bind 127.0.0.1 >/tmp/reader-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID"' EXIT
+          sleep 2
+          node scripts/audit_browser_20261010.js
+          CTD_TEST_BASE=http://127.0.0.1:8123/ node scripts/audit_ia_b2.cjs
+          CTD_TEST_BASE=http://127.0.0.1:8123/ node scripts/audit_legacy_deeplinks.cjs
+          CTD_TEST_BASE=http://127.0.0.1:8123/ CTD_ECONOMICS_QA=artifacts/reader-review/economics node scripts/audit_economics_order.cjs
+      - name: Reproducible rebuild
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 build.py | tee artifacts/reader-review/rebuild.log
+          sha256sum -c /tmp/reader-pack.sha256
+          node scripts/verify_ia_b2_parity.cjs
+      - name: Save verified Git objects without changing any branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -- index.html en it de fr applications behind-the-round inside-the-round explorer research data downloads sitemap.xml src/index.web.html package.json package-lock.json CITATION.cff
+          python3 - <<'PY'
+          import os,json,base64,subprocess,urllib.request,urllib.error
+          from pathlib import Path
+          repo=os.environ['GITHUB_REPOSITORY']; original=os.environ['GITHUB_SHA']
+          def git(*args):return subprocess.check_output(['git',*args]).decode().strip()
+          def post(endpoint,data):
+              req=urllib.request.Request('https://api.github.com/repos/'+repo+'/git/'+endpoint,data=json.dumps(data).encode(),headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','Content-Type':'application/json'})
+              try:
+                  with urllib.request.urlopen(req) as r:return json.load(r)
+              except urllib.error.HTTPError as e:
+                  print(e.read().decode());raise
+          paths=git('diff','--cached','--name-only','--diff-filter=ACDMRT').splitlines();entries=[]
+          for p in paths:
+              assert not p.startswith('.github/'),'Build may not change workflow permissions or definitions'
+              assert Path(p).is_file(),'Unexpected deletion: '+p
+              blob=git('rev-parse',':'+p);content=subprocess.check_output(['git','show',':'+p])
+              got=post('blobs',{'encoding':'base64','content':base64.b64encode(content).decode()})['sha']
+              assert got==blob,(p,got,blob)
+              mode=git('ls-files','--stage','--',p).split()[0]
+              entries.append({'path':p,'mode':mode,'type':'blob','sha':blob})
+          tree=post('trees',{'base_tree':git('rev-parse','HEAD^{tree}'),'tree':entries})['sha']
+          assert tree==git('write-tree'),'Remote tree differs from tested worktree'
+          commit=post('commits',{'message':'Build verified reader-first v0.7.92 [skip build]','tree':tree,'parents':[original]})['sha']
+          out={'sha':commit,'tree':tree,'sourceCommit':original,'branchExpectedSHA':original,'changedFiles':paths,'promoted':False}
+          Path('artifacts/reader-review/verified-commit.json').write_text(json.dumps(out,indent=2)+'\n')
+          print('VERIFIED_READER_OBJECT',json.dumps(out))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reader-release-gate-${{ github.sha }}
+          path: |
+            artifacts/reader-review/
+            audit-ia-b2/
+            audit-deeplinks/
+            audit-20261010.json
+          retention-days: 14
+          if-no-files-found: error
