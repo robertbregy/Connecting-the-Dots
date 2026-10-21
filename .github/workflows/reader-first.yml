@@ -1,5 +1,4 @@
 name: Reader-first navigation and accessibility
-
 on:
   push:
     branches: [reader-first-2026-10-21]
@@ -44,7 +43,7 @@ jobs:
           git apply --exclude=.github/workflows/rebuild.yml --check scripts/reader-first-followup.patch
           git apply --exclude=.github/workflows/rebuild.yml scripts/reader-first-followup.patch
           git diff --exit-code -- .github/workflows
-      - name: Build, preserve evidence and record the reviewed browser result
+      - name: Build and finalize the inspected editorial review
         if: steps.source.outputs.ready == 'true'
         run: |
           npm ci
@@ -52,19 +51,19 @@ jobs:
           node scripts/validate_reader_first.cjs
           python3 scripts/prepare_reader_review.py --finalize --browser-run 39615726717
           node scripts/verify_ia_b2_parity.cjs
-      - name: Check repeated build, historical archives and manuscript bytes
+      - name: Verify reproducibility, historic archives and manuscript
         if: steps.source.outputs.ready == 'true'
         run: |
           python3 - <<'PY'
           from pathlib import Path
           import hashlib,json,subprocess,sys
-          root=Path.cwd(); pub=json.loads(Path('publication.json').read_text())
+          pub=json.loads(Path('publication.json').read_text())
           files=[Path(pub['currentDataPackPath']),Path('downloads/connecting-the-dots-data-pack.zip')]
           files += [Path('research')/n for n in ['connecting-the-dots-working-paper-v1.md','connecting-the-dots-working-paper-v1.html','index.html']]
           def hashes(): return {str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
           before=hashes();subprocess.run([sys.executable,'build.py'],check=True)
           assert before==hashes(),'Repeated build changed package, archive or manuscript'
-          assert before[pub['currentDataPackPath']]=='dba829d230b7e4ff27219c77ecd66a3034361fd49ceaeee4e2f93a549014c843','Data package differs from browser-tested build'
+          assert before[pub['currentDataPackPath']]=='dba829d230b7e4ff27219c77ecd66a3034361fd49ceaeee4e2f93a549014c843','Package differs from browser-tested build'
           print('READER_REPRODUCIBLE',json.dumps(before))
           PY
           node scripts/validate_multilingual.js
@@ -80,30 +79,39 @@ jobs:
           run-id: 39615726717
           github-token: ${{ github.token }}
           path: /tmp/reviewed-reader
-      - name: Verify the retained browser report and rendered source equality
+      - name: Verify browser report and equality of the reviewed page contents
         if: steps.source.outputs.ready == 'true'
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          import json,tarfile,hashlib
+          import json,tarfile,re,os
           r=json.loads(Path('/tmp/reviewed-reader/ctd-reader-qa/report.json').read_text())
           assert len(r['scenarios'])==302 and not r['issues']
+          native=['index.html','it/index.html','en/index.html','de/index.html','fr/index.html']
+          checked=0;provenance=0
           with tarfile.open('/tmp/reviewed-reader/reader-built.tar.gz') as t:
-              checked=0
               for m in t.getmembers():
-                  if m.isfile() and (m.name.startswith(('assets/','applications/','inside-the-round/','behind-the-round/')) or m.name in ['index.html','it/index.html','en/index.html','de/index.html','fr/index.html']):
-                      assert t.extractfile(m).read()==Path(m.name).read_bytes(),'Reviewed page differs: '+m.name
+                  if m.isfile() and (m.name.startswith(('assets/','applications/','inside-the-round/','behind-the-round/')) or m.name in native):
+                      reviewed=t.extractfile(m).read();current=Path(m.name).read_bytes()
+                      if m.name in native and reviewed!=current:
+                          pattern=re.compile(rb"commit:'([0-9a-f]{40})'")
+                          assert pattern.findall(reviewed)==[b'09562f6c758b2e876a3438b7edd96677be319fa2']
+                          assert pattern.findall(current)==[os.environ['GITHUB_SHA'].encode()]
+                          reviewed=pattern.sub(b"commit:'BUILD_REF'",reviewed)
+                          current=pattern.sub(b"commit:'BUILD_REF'",current)
+                          provenance+=1
+                      assert reviewed==current,'Reviewed content differs: '+m.name
                       checked+=1
-          summary={'browserRun':39615726717,'scenarios':302,'issues':0,'matchedRenderedFiles':checked,'humanParticipants':0,'accessibilityConformanceClaim':False}
+          summary={'browserRun':39615726717,'scenarios':302,'issues':0,'matchedRenderedFiles':checked,'truthfulBuildProvenanceChanges':provenance,'humanParticipants':0,'accessibilityConformanceClaim':False}
           Path('docs/reader-first-browser-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
-          print('REVIEWED_BROWSER_BYTES_MATCH',json.dumps(summary))
+          print('REVIEWED_BROWSER_CONTENT_MATCH',json.dumps(summary))
           PY
       - name: Install pinned browser tools
         if: steps.source.outputs.ready == 'true'
         run: |
           npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
           npx playwright install --with-deps chromium
-      - name: Run the earlier navigation, data, guide and legacy-link regressions
+      - name: Run earlier navigation, data, guide and legacy-link regressions
         if: steps.source.outputs.ready == 'true'
         env:
           CTD_TEST_BASE: http://127.0.0.1:8128/
@@ -132,7 +140,7 @@ jobs:
             /tmp/ctd-economics-order/
             docs/reader-first-browser-summary.json
           retention-days: 7
-      - name: Commit reviewed source and generated pages, never workflow changes
+      - name: Commit verified source and pages without workflow mutations
         if: success() && steps.source.outputs.ready == 'true'
         run: |
           test "$GITHUB_REF_NAME" = 'reader-first-2026-10-21'
