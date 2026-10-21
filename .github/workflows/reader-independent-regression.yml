@@ -1,0 +1,51 @@
+name: Reader site independent regression
+on:
+  push:
+    branches: [audit/reader-site-regression-20261021]
+    paths: ['.github/workflows/reader-independent-regression.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prepare exactly the candidate under review
+        run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+          python3 scripts/prepare_reader_site.py
+          python3 scripts/prepare_reader_site.py navigation-checks
+          python3 scripts/finish_readability.py
+          python3 scripts/stabilize_landmarks.py
+          python3 build.py
+          python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/reader-global-http.log 2>&1 &
+          sleep 2
+      - name: Verify global pathways, cards, focus and standalone navigation
+        env:
+          CTD_TEST_BASE: http://127.0.0.1:8123/
+        run: node scripts/audit_ia_b2.cjs
+      - name: Verify all published routes and the Explorer independently
+        run: node scripts/deep_audit_20261011.js
+      - name: Keep test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reader-independent-qa
+          path: |
+            audit-ia-b2/
+            audit-independent-20261011.json
+            audit-independent-*.png
+          retention-days: 7
+          if-no-files-found: warn
