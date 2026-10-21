@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
+  "scope": "Navigation and reading order only. No new observations, classifications or research claims.",
+  "areas": {
+    "ia-understand": ["how", "beyond"],
+    "ia-explore": ["explore", "timeline", "geography", "governance-access", "governance-sanctions"],
+    "ia-stories": ["strange", "social", "cities", "economics"],
+    "ia-outcomes": ["contention", "disputes", "refusals", "cemetery"],
+    "ia-round": ["reveal", "inside-round", "behind-round", "lugano"],
+    "ia-research": ["research", "paper", "resources", "sources"]
+  },
+  "next": {
+    "how": ["beyond", "sources"], "beyond": ["cities", "explore"],
+    "explore": ["timeline", "resources"], "timeline": ["social", "research"],
+    "geography": ["governance-access", "resources"], "governance-access": ["governance-sanctions", "geography"],
+    "governance-sanctions": ["disputes", "sources"], "strange": ["social", "explore"],
+    "social": ["cities", "explore"], "cities": ["lugano", "explore"],
+    "economics": ["contention", "resources"], "contention": ["disputes", "explore"],
+    "disputes": ["refusals", "sources"], "refusals": ["cemetery", "explore"],
+    "cemetery": ["cities", "explore"], "reveal": ["inside-round", "explore"],
+    "inside-round": ["behind-round", "reveal"], "behind-round": ["reveal", "sources"],
+    "lugano": ["cities", "sources"], "research": ["paper", "resources"],
+    "paper": ["sources", "research"], "resources": ["sources", "research"], "sources": ["research", "resources"]
+  },
+  "locales": {
+    "it": {
+      "ui": {"home":"Home", "context":"Dove ti trovi", "contents":"In questa pagina", "more":"Altri passaggi e approfondimenti", "next":"La prossima domanda", "verify":"Per verificare e approfondire", "directory":"Mappa dei percorsi", "research":"Usa la ricerca", "start":"Comincia da una storia", "data":"Esplora nomi e dati", "back":"Torna al percorso", "guide":"Un percorso, non un obbligo: puoi partire dal punto che ti interessa.", "articleNext":"Continua a collegare i punti", "sourceDates":"Le date delle fonti restano quelle indicate nei singoli contenuti."},
+      "hubs": {
+        "ia-understand":"Che cosa succede dietro un indirizzo Internet? Parti da un esempio quotidiano, scopri chi fa cosa e approfondisci soltanto quando ti serve.",
+        "ia-explore":"Cerchi un nome, una candidatura o una spiegazione del potere nella rete? Scegli lo strumento adatto: il catalogo dei nomi e i fascicoli delle candidature non contano la stessa cosa.",
+        "ia-stories":"Un nome può raccontare una lingua, una città o un modello economico. Parti da ciò che ti incuriosisce e segui le connessioni.",
+        "ia-outcomes":"Chiedere un nome, contenderselo, ottenerlo e mantenerlo sono passaggi diversi. Qui trovi i meccanismi, i casi e gli esiti, senza confonderli.",
+        "ia-round":"Che cosa sappiamo del round 2026, e che cosa resta aperto? Il quadro generale viene prima, gli eventi e le verifiche ti portano nel dettaglio.",
+        "ia-research":"Vuoi capire il metodo, riutilizzare i dati o citare un risultato? Qui trovi accessi diretti, versioni e limiti, senza dover attraversare il percorso divulgativo."
+      },
+      "routes": {
+        "how":["Come funziona un nome Internet?","Prima l’indirizzo e gli attori, poi il ciclo di vita, l’economia e le regole. Il glossario resta a portata di mano."],
+        "beyond":["Un dominio serve soltanto a trovare un sito?","Dai servizi che usiamo alle funzioni invisibili del DNS, fino alle scritture e ai sistemi di nomi alternativi."],
+        "explore":["Qual è la storia di questo nome?","Cerca un nome nel catalogo. Per studiare le singole domande del 2026, passa all’Application Atlas: una candidatura non è un TLD delegato."],
+        "timeline":["Come sono cambiati i nomi di Internet?","Segui la storia, confronta le diverse tornate di candidature e solo dopo entra nelle classificazioni e nei loro limiti."],
+        "geography":["Dove si concentra il potere del DNS?","Distingui chi stabilisce le regole, chi gestisce l’infrastruttura e chi presenta candidature. Poi confronta mappe e dati."],
+        "governance-access":["Chi può impedirci di raggiungere un sito?","Parti dalla distinzione fra nome, rete e contenuto. La simulazione mostra i meccanismi; i casi e le fonti ne spiegano i limiti."],
+        "governance-sanctions":["Che cosa succede quando le sanzioni incontrano il DNS?","Prima il perimetro delle responsabilità, poi gli obblighi, i casi documentati e ciò che non si può dedurre."],
+        "strange":["Perché Internet conserva nomi così strani?","Dalle candidature insolite ai significati reinventati, fino ai nomi che conservano tracce della geopolitica."],
+        "social":["Chi si riconosce dopo il punto?","Prima le appartenenze e i casi concreti, poi i meccanismi sociali e le distinzioni necessarie per leggere il 2026."],
+        "cities":["A che cosa serve il dominio di una città?","Parti dai modelli di governo e dai casi. Chiediti come misurarne l’utilità, poi confronta le diverse generazioni di progetti."],
+        "economics":["Chi crea valore, e chi lo incassa?","Valore, diffusione, risultati, concentrazione, cicli e round 2026: sei passaggi per leggere il mercato senza confondere le misure."],
+        "contention":["A chi va un nome quando lo chiedono in tanti?","Dal precedente del 2012 alle regole del 2026, poi alle stringhe richieste e alle implicazioni. Una sovrapposizione osservata non è un esito."],
+        "disputes":["Chi ha il diritto di rappresentare una parola?","Incontra le controversie, capisci i meccanismi di decisione e distingui i precedenti dagli interrogativi del 2026."],
+        "refusals":["Perché una candidatura può fermarsi?","Prima i casi, poi i diversi tipi di stop e il confronto storico. Un ritiro, un rifiuto e un iter ancora aperto non sono sinonimi."],
+        "cemetery":["Può finire anche la vita di un dominio?","Leggi gli esiti prima di dare un nome alla fine: cessazione, cambio di gestore e ritiro di una candidatura sono situazioni diverse."],
+        "reveal":["Che cosa ci dice davvero il round 2026?","Leggi il quadro generale insieme alle date e alle unità di conteggio; usa poi la cronologia e i fascicoli per verificare i dettagli."],
+        "inside-round":["Che cosa è successo, e che cosa è soltanto previsto?","Segui gli eventi nel tempo. Le tappe previste restano distinte dai fatti già osservati."],
+        "behind-round":["Che cosa non torna dietro i numeri?","Scegli un’indagine dall’indice. Ogni caso distingue il problema, le prove disponibili e le domande ancora aperte."],
+        "lugano":["Che cosa potrebbe diventare .lugano?","Parti dallo stato della candidatura e dalla posizione dell’autore. Poi leggi intenzioni, decisioni aperte, impieghi possibili e criteri di verifica."],
+        "research":["Come si cita una ricerca che continua a cambiare?","Scegli l’oggetto da citare: archivio scientifico, dati correnti o working paper. Le versioni non sono intercambiabili."],
+        "paper":["Quale metodo sostiene il racconto?","Il working paper espone domande, metodo e interpretazione. Fonti e istruzioni di citazione restano accessibili separatamente."],
+        "resources":["Come posso riutilizzare i dati?","Vai ai download, controlla provenienza e ambito del file e scegli la versione adatta al tuo lavoro."],
+        "sources":["Come distinguere un fatto da una lettura?","Posizione dell’autore, istruzioni di lettura, fonti e limiti vengono prima dei criteri di valutazione e della storia delle revisioni."]
+      }
+    },
+    "en": {
+      "ui": {"home":"Home", "context":"Your location", "contents":"On this page", "more":"More steps and detail", "next":"The next question", "verify":"Check and explore further", "directory":"Pathway map", "research":"Use the research", "start":"Start with a story", "data":"Explore names and data", "back":"Back to the pathway", "guide":"A suggested path, not a requirement: start with what interests you.", "articleNext":"Keep connecting the dots", "sourceDates":"Source dates remain those stated in each item."},
+      "hubs": {
+        "ia-understand":"What happens behind an Internet address? Start with an everyday example, find out who does what and go deeper when you need to.",
+        "ia-explore":"Looking for a name, an application or an explanation of power in the network? Choose the right tool: the name catalogue and application dossiers count different things.",
+        "ia-stories":"A name can tell the story of a language, a city or a business model. Start with your curiosity and follow the connections.",
+        "ia-outcomes":"Applying for a name, contesting it, obtaining it and keeping it are different stages. Explore mechanisms, cases and outcomes without conflating them.",
+        "ia-round":"What do we know about the 2026 round, and what remains open? Start with the overview, then follow the events and investigations into the detail.",
+        "ia-research":"Need to understand the method, reuse data or cite a result? Go straight to the relevant files, versions and limitations, without taking the introductory journey."
+      },
+      "routes": {
+        "how":["How does an Internet name work?","First the address and the actors, then the lifecycle, economics and rules. The glossary is always within reach."],
+        "beyond":["Is a domain only there to find a website?","From services we use to the invisible functions of DNS, then writing systems and alternative naming systems."],
+        "explore":["What is the story behind this name?","Search the name catalogue. To study individual 2026 applications, use the Application Atlas: an application is not a delegated TLD."],
+        "timeline":["How have Internet names changed?","Follow the history, compare application rounds and then examine the classifications and their limitations."],
+        "geography":["Where is power in the DNS concentrated?","Distinguish rule-making, infrastructure operations and application demand. Then compare maps and data."],
+        "governance-access":["Who can stop us reaching a website?","Start with the difference between a name, a network and content. The simulator illustrates mechanisms; cases and sources explain their limits."],
+        "governance-sanctions":["What happens when sanctions meet the DNS?","First the boundaries of responsibility, then obligations, documented cases and what cannot be inferred."],
+        "strange":["Why does the Internet keep such unusual names?","From unusual applications to reinvented meanings and names that preserve traces of geopolitics."],
+        "social":["Who finds a sense of belonging after the dot?","Start with identities and concrete cases, then explore social mechanisms and the distinctions needed to read the 2026 round."],
+        "cities":["What is a city's own domain for?","Start with governance models and cases. Ask how to measure usefulness, then compare different generations of projects."],
+        "economics":["Who creates value, and who collects it?","Value, reach, results, concentration, cycles and the 2026 round: six steps through the market without conflating measures."],
+        "contention":["Who gets a name when many applicants want it?","From the 2012 precedent to the 2026 rules, then requested strings and implications. An observed overlap is not an outcome."],
+        "disputes":["Who has the right to represent a word?","Meet the disputes, understand decision mechanisms and distinguish precedents from questions raised by the 2026 round."],
+        "refusals":["Why might an application stop?","First the cases, then different types of stopping points and the historical comparison. Withdrawal, rejection and a pending process are not synonyms."],
+        "cemetery":["Can a domain's life come to an end?","Read the outcome before naming the ending: termination, a change of operator and withdrawal of an application are different situations."],
+        "reveal":["What does the 2026 round actually tell us?","Read the overview alongside dates and counting units, then use the timeline and dossiers to verify details."],
+        "inside-round":["What has happened, and what is only planned?","Follow events over time. Planned milestones remain distinct from facts already observed."],
+        "behind-round":["What does not add up behind the numbers?","Choose an investigation from the contents. Each case separates the problem, available evidence and open questions."],
+        "lugano":["What might .lugano become?","Start with the application's status and the author's position. Then read intentions, open decisions, possible uses and verification criteria."],
+        "research":["How do you cite research that keeps changing?","Choose what to cite: the scientific archive, current data or working paper. Their versions are not interchangeable."],
+        "paper":["What method supports the story?","The working paper presents questions, methods and interpretation. Sources and citation guidance remain separately accessible."],
+        "resources":["How can I reuse the data?","Go to the downloads, check the provenance and scope of the file, and choose the version that suits your work."],
+        "sources":["How do you distinguish a fact from an interpretation?","The author's position, reading guidance, sources and limitations come before evaluation criteria and revision history."]
+      }
+    },
+    "de": {
+      "ui": {"home":"Startseite", "context":"Ihr Standort", "contents":"Auf dieser Seite", "more":"Weitere Schritte und Vertiefungen", "next":"Die nächste Frage", "verify":"Prüfen und vertiefen", "directory":"Wegweiser", "research":"Forschung nutzen", "start":"Mit einer Geschichte beginnen", "data":"Namen und Daten erkunden", "back":"Zurück zum Themenpfad", "guide":"Ein Vorschlag, keine Pflicht: Beginnen Sie dort, wo Ihre Neugier liegt.", "articleNext":"Die Zusammenhänge weiterverfolgen", "sourceDates":"Für die Quellen gelten weiterhin die jeweils angegebenen Datumsangaben."},
+      "hubs": {
+        "ia-understand":"Was steckt hinter einer Internetadresse? Beginnen Sie mit einem Alltagsbeispiel, lernen Sie die Akteure kennen und vertiefen Sie bei Bedarf.",
+        "ia-explore":"Suchen Sie einen Namen, eine Bewerbung oder eine Erklärung der Machtverhältnisse im Netz? Wählen Sie das passende Werkzeug: Namenskatalog und Bewerbungsdossiers zählen unterschiedliche Dinge.",
+        "ia-stories":"Ein Name kann von einer Sprache, einer Stadt oder einem Geschäftsmodell erzählen. Folgen Sie Ihrer Neugier und den Zusammenhängen.",
+        "ia-outcomes":"Einen Namen beantragen, um ihn streiten, ihn erhalten und behalten sind verschiedene Schritte. Hier finden Sie Verfahren, Fälle und Ergebnisse, klar voneinander getrennt.",
+        "ia-round":"Was wissen wir über die Runde 2026, und was ist noch offen? Beginnen Sie mit dem Überblick und folgen Sie dann den Ereignissen und Untersuchungen.",
+        "ia-research":"Möchten Sie die Methode verstehen, Daten weiterverwenden oder ein Ergebnis zitieren? Hier finden Sie direkte Zugänge, Versionen und Grenzen, ohne den Einführungspfad durchlaufen zu müssen."
+      },
+      "routes": {
+        "how":["Wie funktioniert ein Internetname?","Zuerst die Adresse und die Akteure, dann Lebenszyklus, Wirtschaft und Regeln. Das Glossar bleibt leicht erreichbar."],
+        "beyond":["Dient eine Domain nur dazu, eine Website zu finden?","Von alltäglichen Diensten zu den unsichtbaren DNS-Funktionen, dann zu Schriftsystemen und alternativen Namenssystemen."],
+        "explore":["Welche Geschichte steckt hinter diesem Namen?","Suchen Sie im Namenskatalog. Für einzelne Bewerbungen von 2026 gibt es den Application Atlas: Eine Bewerbung ist keine delegierte TLD."],
+        "timeline":["Wie haben sich die Namen des Internets verändert?","Folgen Sie der Geschichte, vergleichen Sie Bewerbungsrunden und prüfen Sie danach die Klassifikationen und ihre Grenzen."],
+        "geography":["Wo konzentriert sich die Macht im DNS?","Unterscheiden Sie Regelsetzung, Infrastrukturbetrieb und Bewerbungsnachfrage. Vergleichen Sie danach Karten und Daten."],
+        "governance-access":["Wer kann den Zugang zu einer Website verhindern?","Zuerst der Unterschied zwischen Name, Netz und Inhalt. Die Simulation zeigt Mechanismen; Fälle und Quellen erklären ihre Grenzen."],
+        "governance-sanctions":["Was geschieht, wenn Sanktionen auf das DNS treffen?","Zuerst Zuständigkeiten, dann Pflichten, dokumentierte Fälle und die Grenzen möglicher Schlussfolgerungen."],
+        "strange":["Warum bewahrt das Internet so ungewöhnliche Namen?","Von ungewöhnlichen Bewerbungen über neue Bedeutungen bis zu Namen, die Spuren der Geopolitik bewahren."],
+        "social":["Wer findet Zugehörigkeit hinter dem Punkt?","Zuerst Identitäten und konkrete Fälle, dann soziale Mechanismen und die für die Runde 2026 nötigen Unterscheidungen."],
+        "cities":["Wozu braucht eine Stadt eine eigene Domain?","Beginnen Sie mit Governance-Modellen und Fällen. Fragen Sie nach dem Nutzen und vergleichen Sie verschiedene Projektgenerationen."],
+        "economics":["Wer schafft Wert, und wer erhält die Einnahmen?","Wert, Verbreitung, Ergebnisse, Konzentration, Zyklen und die Runde 2026: sechs Schritte durch den Markt mit klar getrennten Messgrössen."],
+        "contention":["Wer erhält einen Namen, wenn viele ihn beantragen?","Vom Vergleich mit 2012 zu den Regeln von 2026, dann zu beantragten Zeichenfolgen und ihren Implikationen. Eine Überschneidung ist kein Ergebnis."],
+        "disputes":["Wer darf ein Wort repräsentieren?","Lernen Sie die Streitfälle und Entscheidungsverfahren kennen und unterscheiden Sie Präzedenzfälle von Fragen der Runde 2026."],
+        "refusals":["Warum kann eine Bewerbung zum Stillstand kommen?","Zuerst Fälle, dann unterschiedliche Abbruchgründe und der historische Vergleich. Rückzug, Ablehnung und ein offenes Verfahren sind nicht dasselbe."],
+        "cemetery":["Kann auch das Leben einer Domain enden?","Prüfen Sie zuerst das Ergebnis: Beendigung, Betreiberwechsel und Rückzug einer Bewerbung sind verschiedene Situationen."],
+        "reveal":["Was sagt die Runde 2026 tatsächlich aus?","Lesen Sie den Überblick zusammen mit Datumsangaben und Zähleinheiten. Prüfen Sie Details danach in Chronologie und Dossiers."],
+        "inside-round":["Was ist geschehen, und was ist nur geplant?","Folgen Sie den Ereignissen. Geplante Meilensteine bleiben von bereits beobachteten Tatsachen getrennt."],
+        "behind-round":["Was stimmt hinter den Zahlen nicht?","Wählen Sie eine Untersuchung im Inhaltsverzeichnis. Jeder Fall trennt Problem, verfügbare Belege und offene Fragen."],
+        "lugano":["Was könnte aus .lugano werden?","Beginnen Sie mit dem Bewerbungsstatus und der Position des Autors. Danach folgen Absichten, offene Entscheidungen, mögliche Nutzungen und Prüfkriterien."],
+        "research":["Wie zitiert man Forschung, die sich weiterentwickelt?","Wählen Sie das Zitierobjekt: wissenschaftliches Archiv, aktuelle Daten oder Working Paper. Die Versionen sind nicht austauschbar."],
+        "paper":["Welche Methode trägt die Darstellung?","Das Working Paper erläutert Fragen, Methode und Interpretation. Quellen und Zitierhinweise bleiben separat zugänglich."],
+        "resources":["Wie kann ich die Daten weiterverwenden?","Gehen Sie zu den Downloads, prüfen Sie Herkunft und Umfang der Datei und wählen Sie die passende Version."],
+        "sources":["Wie unterscheidet man eine Tatsache von einer Interpretation?","Autorenposition, Lesehinweise, Quellen und Grenzen stehen vor Bewertungskriterien und Revisionsgeschichte."]
+      }
+    },
+    "fr": {
+      "ui": {"home":"Accueil", "context":"Votre position", "contents":"Dans cette page", "more":"Autres étapes et approfondissements", "next":"La question suivante", "verify":"Vérifier et approfondir", "directory":"Carte des parcours", "research":"Utiliser la recherche", "start":"Commencer par une histoire", "data":"Explorer les noms et les données", "back":"Revenir au parcours", "guide":"Un parcours suggéré, pas une obligation : commencez par ce qui vous intéresse.", "articleNext":"Continuer à relier les points", "sourceDates":"Les dates des sources restent celles indiquées dans chaque contenu."},
+      "hubs": {
+        "ia-understand":"Que se passe-t-il derrière une adresse Internet ? Partez d’un exemple quotidien, découvrez qui fait quoi et approfondissez selon vos besoins.",
+        "ia-explore":"Vous cherchez un nom, une candidature ou une explication du pouvoir dans le réseau ? Choisissez le bon outil : catalogue des noms et dossiers de candidature ne comptent pas les mêmes objets.",
+        "ia-stories":"Un nom peut raconter une langue, une ville ou un modèle économique. Partez de votre curiosité et suivez les liens.",
+        "ia-outcomes":"Demander un nom, se le disputer, l’obtenir et le conserver sont des étapes différentes. Explorez les mécanismes, les cas et les issues sans les confondre.",
+        "ia-round":"Que savons-nous du cycle 2026, et qu’est-ce qui reste ouvert ? Commencez par la vue d’ensemble, puis suivez les événements et les enquêtes.",
+        "ia-research":"Vous souhaitez comprendre la méthode, réutiliser les données ou citer un résultat ? Accédez directement aux fichiers, aux versions et aux limites, sans suivre le parcours introductif."
+      },
+      "routes": {
+        "how":["Comment fonctionne un nom Internet ?","D’abord l’adresse et les acteurs, puis le cycle de vie, l’économie et les règles. Le glossaire reste à portée de main."],
+        "beyond":["Un domaine sert-il seulement à trouver un site ?","Des services quotidiens aux fonctions invisibles du DNS, puis aux écritures et aux systèmes de noms alternatifs."],
+        "explore":["Quelle histoire se cache derrière ce nom ?","Cherchez dans le catalogue des noms. Pour les candidatures individuelles de 2026, utilisez l’Application Atlas : une candidature n’est pas un TLD délégué."],
+        "timeline":["Comment les noms d’Internet ont-ils changé ?","Suivez l’histoire, comparez les cycles de candidatures, puis examinez les classifications et leurs limites."],
+        "geography":["Où se concentre le pouvoir du DNS ?","Distinguez la définition des règles, l’exploitation de l’infrastructure et la demande des candidats. Comparez ensuite cartes et données."],
+        "governance-access":["Qui peut nous empêcher d’atteindre un site ?","D’abord la distinction entre nom, réseau et contenu. La simulation illustre les mécanismes ; les cas et les sources en expliquent les limites."],
+        "governance-sanctions":["Que se passe-t-il quand les sanctions rencontrent le DNS ?","D’abord les responsabilités, puis les obligations, les cas documentés et ce qu’on ne peut pas en déduire."],
+        "strange":["Pourquoi Internet conserve-t-il des noms si étranges ?","Des candidatures insolites aux significations réinventées, jusqu’aux noms qui gardent les traces de la géopolitique."],
+        "social":["Qui se reconnaît après le point ?","D’abord les appartenances et les cas concrets, puis les mécanismes sociaux et les distinctions nécessaires pour lire le cycle 2026."],
+        "cities":["À quoi sert le domaine d’une ville ?","Partez des modèles de gouvernance et des cas. Demandez-vous comment mesurer l’utilité, puis comparez les générations de projets."],
+        "economics":["Qui crée de la valeur, et qui l’encaisse ?","Valeur, diffusion, résultats, concentration, cycles et candidatures de 2026 : six étapes pour lire le marché sans confondre les mesures."],
+        "contention":["À qui va un nom lorsque plusieurs candidats le demandent ?","Du précédent de 2012 aux règles de 2026, puis aux chaînes demandées et à leurs implications. Un chevauchement observé n’est pas une issue."],
+        "disputes":["Qui a le droit de représenter un mot ?","Découvrez les controverses, comprenez les mécanismes de décision et distinguez les précédents des questions soulevées en 2026."],
+        "refusals":["Pourquoi une candidature peut-elle s’arrêter ?","D’abord les cas, puis les types d’arrêt et la comparaison historique. Retrait, rejet et procédure en cours ne sont pas synonymes."],
+        "cemetery":["La vie d’un domaine peut-elle aussi se terminer ?","Examinez l’issue avant de nommer la fin : résiliation, changement d’opérateur et retrait d’une candidature sont des situations différentes."],
+        "reveal":["Que nous dit réellement le cycle 2026 ?","Lisez la vue d’ensemble avec les dates et les unités de comptage, puis vérifiez les détails dans la chronologie et les dossiers."],
+        "inside-round":["Qu’est-il arrivé, et qu’est-ce qui est seulement prévu ?","Suivez les événements dans le temps. Les étapes prévues restent distinctes des faits déjà observés."],
+        "behind-round":["Qu’est-ce qui ne colle pas derrière les chiffres ?","Choisissez une enquête dans le sommaire. Chaque cas distingue le problème, les preuves disponibles et les questions ouvertes."],
+        "lugano":["Que pourrait devenir .lugano ?","Commencez par le statut de la candidature et la position de l’auteur. Puis examinez intentions, décisions ouvertes, usages possibles et critères de vérification."],
+        "research":["Comment citer une recherche qui continue d’évoluer ?","Choisissez l’objet à citer : archive scientifique, données actuelles ou working paper. Les versions ne sont pas interchangeables."],
+        "paper":["Quelle méthode soutient le récit ?","Le working paper présente les questions, la méthode et l’interprétation. Sources et consignes de citation restent accessibles séparément."],
+        "resources":["Comment réutiliser les données ?","Accédez aux téléchargements, vérifiez la provenance et le périmètre du fichier, puis choisissez la version adaptée à votre travail."],
+        "sources":["Comment distinguer un fait d’une interprétation ?","Position de l’auteur, consignes de lecture, sources et limites précèdent les critères d’évaluation et l’historique des révisions."]
+      }
+    }
+  }
+}
