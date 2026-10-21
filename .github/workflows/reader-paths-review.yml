@@ -1,0 +1,57 @@
+name: Reader paths review
+
+on:
+  push:
+    branches:
+      - feat/sitewide-reader-paths-20261021
+    paths:
+      - .github/workflows/reader-paths-review.yml
+      - assets/reader-paths.css
+      - assets/reader-paths.js
+      - scripts/reader_paths_review.cjs
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: reader-paths-review-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Export reproducible development snapshot
+        run: |
+          mkdir -p /tmp/ctd-reader-review
+          git archive --format=tar HEAD | gzip > /tmp/ctd-reader-review/source.tar.gz
+          tar -czf /tmp/ctd-reader-review/node-dependencies.tar.gz node_modules
+          git rev-parse HEAD > /tmp/ctd-reader-review/commit.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reader-source-${{ github.sha }}
+          path: /tmp/ctd-reader-review/
+          retention-days: 7
+      - name: Rebuild and validate
+        run: python3 build.py
+      - name: Reader-path regression review
+        run: |
+          if test -f scripts/reader_paths_review.cjs; then
+            npm install --no-save --package-lock=false playwright@1.55.1 @axe-core/playwright@4.10.2
+            npx playwright install --with-deps chromium
+            node scripts/reader_paths_review.cjs
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reader-review-${{ github.sha }}
+          path: artifacts/reader-review/
+          if-no-files-found: ignore
+          retention-days: 14
