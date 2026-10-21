@@ -1,0 +1,2623 @@
+{
+  "sections": [
+    {
+      "id": "ia-understand",
+      "cls": "section iaHub",
+      "headings": [
+        {
+          "id": "ia-title-understand",
+          "parent": "",
+          "tag": "H2",
+          "text": "Capire Internet, DNS e TLD"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Parti da qui · 3 minuti"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Come funziona"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "TLD come infrastruttura"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Glossario e parole chiave"
+        }
+      ],
+      "navigation": [
+        {
+          "href": null,
+          "text": "Parti da qui · 3 minutiUna spiegazione guidata dal browser alla root DNS, per chi parte da zero."
+        },
+        {
+          "href": null,
+          "text": "Come funzionaChi decide, chi gestisce e come funzionano registrazione, candidatura e ciclo di vita."
+        },
+        {
+          "href": null,
+          "text": "TLD come infrastrutturaCiò che non si vede dietro una semplice estensione: infrastruttura, nomi e accesso."
+        },
+        {
+          "href": null,
+          "text": "Glossario e parole chiaveDefinizioni operative per non confondere stringhe, TLD, registri e candidature."
+        }
+      ]
+    },
+    {
+      "id": "ia-explore",
+      "cls": "section iaHub",
+      "headings": [
+        {
+          "id": "ia-title-explore",
+          "parent": "",
+          "tag": "H2",
+          "text": "Esplorare nomi, candidature e dati"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Cerca TLD"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Storia"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Application Atlas 2026"
+        },
+        {
+          "id": "ia-explore-governance-title",
+          "parent": "",
+          "tag": "H3",
+          "text": "Chi controlla cosa su Internet?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Geografia del DNS"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Chi controlla l’accesso a Internet?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Sanzioni e DNS"
+        }
+      ],
+      "navigation": [
+        {
+          "href": null,
+          "text": "Cerca TLDCerca record TLD, eventi, tipi, stati e profili nel catalogo interattivo."
+        },
+        {
+          "href": null,
+          "text": "StoriaStoria delle candidature nei round 2000, 2004, 2012 e 2026, distinta dalla cronologia del round attuale."
+        },
+        {
+          "href": null,
+          "text": "Application Atlas 2026Le candidature ufficiali APS con Application ID, richiedenti e stringhe alternative."
+        },
+        {
+          "href": null,
+          "text": "Geografia del DNSOperatori, territori e concentrazione del potere nel DNS."
+        },
+        {
+          "href": null,
+          "text": "Chi controlla l’accesso a Internet?Filtri DNS, blocchi di rete e sospensioni di un dominio non sono la stessa cosa."
+        },
+        {
+          "href": null,
+          "text": "Sanzioni e DNSCome gli obblighi giuridici interagiscono con la governance di un sistema globale."
+        }
+      ]
+    },
+    {
+      "id": "ia-stories",
+      "cls": "section iaHub",
+      "headings": [
+        {
+          "id": "ia-title-stories",
+          "parent": "",
+          "tag": "H2",
+          "text": "Storie e questioni"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Città e territori"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Economia"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Vita sociale"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Internet strano"
+        }
+      ],
+      "navigation": [
+        {
+          "href": null,
+          "text": "Città e territoriEstensioni geografiche e responsabilità pubblica."
+        },
+        {
+          "href": null,
+          "text": "EconomiaValore economico, modelli di business e cicli di sviluppo dell’industria dei domini."
+        },
+        {
+          "href": null,
+          "text": "Vita socialeLingue, comunità, identità e significati sociali delle estensioni."
+        },
+        {
+          "href": null,
+          "text": "Internet stranoAnomalie, eccezioni e storie curiose dell’Internet dei nomi."
+        }
+      ]
+    },
+    {
+      "id": "ia-outcomes",
+      "cls": "section iaHub",
+      "headings": [
+        {
+          "id": "ia-title-outcomes",
+          "parent": "",
+          "tag": "H2",
+          "text": "Conflitti ed esiti"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Stringhe contese"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Controversie"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Esiti delle candidature"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Il cimitero dei gTLD"
+        }
+      ],
+      "navigation": [
+        {
+          "href": null,
+          "text": "Stringhe conteseCosa accade quando più soggetti chiedono la stessa stringa."
+        },
+        {
+          "href": null,
+          "text": "ControversieObiezioni e controversie, distinte dai meccanismi di contention."
+        },
+        {
+          "href": null,
+          "text": "Esiti delle candidatureRinunce, rifiuti e candidature che non hanno raggiunto la delegazione. Per la vita successiva dei TLD, vedi il Cimitero."
+        },
+        {
+          "href": null,
+          "text": "Il cimitero dei gTLDCasi di deleghe cessate, cambi di gestione e progetti mai arrivati alla root, con esiti rigorosamente distinti."
+        }
+      ]
+    },
+    {
+      "id": "ia-round",
+      "cls": "section iaHub",
+      "headings": [
+        {
+          "id": "ia-title-round",
+          "parent": "",
+          "tag": "H2",
+          "text": "Seguire il round ICANN 2026"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Il round 2026"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Cronologia"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Note dal campo"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": ".lugano"
+        }
+      ],
+      "navigation": [
+        {
+          "href": null,
+          "text": "Il round 2026I dati del Reveal Day, con date, unità di misura e limiti."
+        },
+        {
+          "href": null,
+          "text": "CronologiaCronologia del round 2026: eventi e milestone documentati, senza confondere previsioni e fatti."
+        },
+        {
+          "href": null,
+          "text": "Note dal campoNote dal campo, domande aperte e verifiche in corso."
+        },
+        {
+          "href": null,
+          "text": ".luganoUna candidatura osservata dall’interno come caso del round, senza anticiparne l’esito."
+        }
+      ]
+    },
+    {
+      "id": "ia-research",
+      "cls": "section iaHub",
+      "headings": [
+        {
+          "id": "ia-title-research",
+          "parent": "",
+          "tag": "H2",
+          "text": "Ricerca verificabile e citabile"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Ricerca e citazioni"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Working paper · metodo e interpretazione"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Risorse"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Metodo e fonti"
+        }
+      ],
+      "navigation": [
+        {
+          "href": null,
+          "text": "Ricerca e citazioniIdentità scientifica, release RR1/RR2 e istruzioni per citare il progetto."
+        },
+        {
+          "href": null,
+          "text": "Working paper · metodo e interpretazioneIl working paper, con domande, metodo e limiti."
+        },
+        {
+          "href": null,
+          "text": "RisorseDataset, pacchetti e risorse tecniche disponibili."
+        },
+        {
+          "href": null,
+          "text": "Metodo e fontiProvenienza, metodo, revisioni e distinzione fra fatti e letture."
+        }
+      ]
+    },
+    {
+      "id": "overview",
+      "cls": "section active",
+      "headings": [
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "UNA LETTURA PER COMINCIAREQuattro situazioni in cui un punto ti riguardaUn negozio, un servizio di intelligenza artificiale, "
+        },
+        {
+          "id": "",
+          "parent": "quick-step-1",
+          "tag": "H3",
+          "text": "Apri una piccola attività online"
+        },
+        {
+          "id": "",
+          "parent": "quick-step-2",
+          "tag": "H3",
+          "text": "Incontri un nuovo servizio di intelligenza artificiale"
+        },
+        {
+          "id": "",
+          "parent": "quick-step-3",
+          "tag": "H3",
+          "text": "Cerchi uno spazio per la tua lingua"
+        },
+        {
+          "id": "",
+          "parent": "quick-step-4",
+          "tag": "H3",
+          "text": "La tua città propone una propria estensione"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Tre idee da portare con te"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Dove ti porta la curiosità?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Da una curiosità alla sua fonte"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Che cosa succede quando apri un sito?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Un nome. Una storia. Regole, denaro, persone. Un posto nel mondo."
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Chi decide?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Chi gestisce?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Che cosa succede quando i nomi si scontrano?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Chi guadagna da un punto?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Chi si riconosce dopo il punto?"
+        },
+        {
+          "id": "",
+          "parent": "tld-cultural-home",
+          "tag": "H2",
+          "text": "La storia che portiamo dopo il punto"
+        },
+        {
+          "id": "internet-basics",
+          "parent": "internet-guide",
+          "tag": "H2",
+          "text": "Dietro un clic: come funziona Internet"
+        },
+        {
+          "id": "journey-title-0",
+          "parent": "",
+          "tag": "H3",
+          "text": "Un URL dice al browser come, dove e che cosa chiedere"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "explore",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "TLD Explorer"
+        },
+        {
+          "id": "",
+          "parent": "apsAtlasBridge",
+          "tag": "H3",
+          "text": "Dal TLD alla singola candidatura"
+        },
+        {
+          "id": "apsNativeHeading",
+          "parent": "aps-native",
+          "tag": "H2",
+          "text": "Atlante delle candidature ICANN 2026"
+        },
+        {
+          "id": "apsSearchHeading",
+          "parent": "",
+          "tag": "H3",
+          "text": "Cerca candidature"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "timeline",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "L’archeologia del punto"
+        },
+        {
+          "id": "",
+          "parent": "tld-cultural-trajectory",
+          "tag": "H2",
+          "text": "I nomi con cui Internet racconta la società"
+        },
+        {
+          "id": "",
+          "parent": "cultural-epoch-map",
+          "tag": "H3",
+          "text": "Come cambiano i nomi, come cambia la rete"
+        },
+        {
+          "id": "",
+          "parent": "cultural-case-institutions",
+          "tag": "H3",
+          "text": "Prima del Web: dare ordine alla rete"
+        },
+        {
+          "id": "",
+          "parent": "cultural-case-commercial_web",
+          "tag": "H3",
+          "text": "Un indirizzo diventa una presenza"
+        },
+        {
+          "id": "",
+          "parent": "cultural-case-differentiation",
+          "tag": "H3",
+          "text": "Persone, comunità e modi di connettersi"
+        },
+        {
+          "id": "",
+          "parent": "cultural-case-scripts",
+          "tag": "H3",
+          "text": "La rete può finire nella nostra scrittura"
+        },
+        {
+          "id": "",
+          "parent": "cultural-case-plurality",
+          "tag": "H3",
+          "text": "Città e marchi entrano nello stesso spazio"
+        },
+        {
+          "id": "",
+          "parent": "cultural-case-governed_access",
+          "tag": "H3",
+          "text": "Il nome promette anche un’appartenenza verificata"
+        },
+        {
+          "id": "",
+          "parent": "cultural-case-publishing",
+          "tag": "H3",
+          "text": "Pubblicare una voce, dentro una piattaforma"
+        },
+        {
+          "id": "",
+          "parent": "cultural-case-reinterpretation",
+          "tag": "H3",
+          "text": "Le epoche cambiano anche il significato dei nomi"
+        },
+        {
+          "id": "",
+          "parent": "tld-cultural-patterns",
+          "tag": "H2",
+          "text": "Dal censimento dei nomi ai pattern"
+        },
+        {
+          "id": "cultural-sensitivity-title",
+          "parent": "cultural-sensitivity-v2",
+          "tag": "H3",
+          "text": "Quanto cambia il racconto se cambiano le regole?"
+        },
+        {
+          "id": "",
+          "parent": "tld-cultural-patterns",
+          "tag": "H3",
+          "text": "Temi proposti secondo le regole editoriali attuali"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Il 2000 sembra già una capsula del tempo"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "I round a colpo d’occhio"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "2012: cosa ricevette ICANN"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "how",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "how-part-1",
+          "parent": "",
+          "tag": "H2",
+          "text": "Che cos’è davvero un punto?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Indirizzo"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Contratto"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Mercato"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Giurisdizione"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Identità"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Confine di fiducia"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Segno culturale"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Oggetto politico"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Una parola, due sistemi di nomi: .bit"
+        },
+        {
+          "id": "guideRelatedHeading",
+          "parent": "",
+          "tag": "H3",
+          "text": "Approfondimenti collegati"
+        },
+        {
+          "id": "how-part-2",
+          "parent": "",
+          "tag": "H2",
+          "text": "Come funzionano davvero i domini Internet"
+        },
+        {
+          "id": "how-part-3",
+          "parent": "",
+          "tag": "H2",
+          "text": "Chi fa cosa?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "ICANN"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "IANA / PTI"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Root Zone Maintainer"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Operatore del registro"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Registry Service Provider (RSP)"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "beyond",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "beyond-part-1",
+          "parent": "",
+          "tag": "H2",
+          "text": "Quando un TLD diventa infrastruttura"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Un TLD con uno strato di servizi"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Un dominio che finanzia un bene comune digitale"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Regole di sicurezza incorporate nell’appartenenza"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Il suffisso diventa una credenziale istituzionale"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Un dominio legato a un accreditamento"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "L’attivazione richiede profilo e impegno"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Un namespace riservato a una comunità definita"
+        },
+        {
+          "id": "beyond-part-2",
+          "parent": "",
+          "tag": "H2",
+          "text": "Il DNS invisibile"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Instradamento della posta"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Autenticazione email"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Autorizzazione dei certificati"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Integrità e autenticità dell’origine"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Scoperta di servizi"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Indicazioni di connessione"
+        },
+        {
+          "id": "beyond-part-3",
+          "parent": "",
+          "tag": "H2",
+          "text": "Internet non è scritto soltanto in caratteri latini"
+        },
+        {
+          "id": "beyond-part-4",
+          "parent": "",
+          "tag": "H2",
+          "text": "Un punto, universi diversi"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "cities",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Dal nome di luogo all’infrastruttura pubblica"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Lo strato geografico del 2012"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Livello geografico · 2026"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Una seconda generazione di city-TLD?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": ".helsinki: una città può anche rinunciare al proprio TLD"
+        },
+        {
+          "id": "",
+          "parent": "city-namespace-governance",
+          "tag": "H2",
+          "text": "Chi governa il dominio di una città?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Amministrazione responsabile"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Società partecipata"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Organizzazione comunitaria"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Operatore convenzionato"
+        },
+        {
+          "id": "",
+          "parent": "city-namespace-governance",
+          "tag": "H3",
+          "text": "Quattro casi, non quattro risultati già confrontabili"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": ".lugano · candidatura 2026"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": ".bremen · modello deliberato nel 2026"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": ".paris · dominio delegato"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": ".nyc · dominio delegato"
+        },
+        {
+          "id": "",
+          "parent": "city-namespace-measures",
+          "tag": "H2",
+          "text": "Il successo non coincide con i nomi venduti"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Uso effettivo"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Persistenza"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "geography",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "geography-part-1",
+          "parent": "",
+          "tag": "H2",
+          "text": "La geografia del potere nel DNS"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Il potere è una stratificazione, non un punto sulla mappa"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Regole"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Coordinamento della root"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Contratti di registro"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Backend tecnico"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Domanda"
+        },
+        {
+          "id": "geography-part-2",
+          "parent": "",
+          "tag": "H2",
+          "text": "Mappe e numeri del potere"
+        },
+        {
+          "id": "",
+          "parent": "rsp-tld-footprint",
+          "tag": "H3",
+          "text": "gTLD attribuiti a ogni piattaforma"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Confronto nel tempo: numero di candidature"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Domanda dei candidati · 2012"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Candidature per regione · 2026"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Offerta tecnica · RSP valutati"
+        },
+        {
+          "id": "",
+          "parent": "aps-current-geography",
+          "tag": "H2",
+          "text": "Dove sono localizzati i candidati pubblicati?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Primi dieci candidati per nome legale"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Prime dieci localizzazioni dichiarate"
+        },
+        {
+          "id": "geography-part-3",
+          "parent": "",
+          "tag": "H2",
+          "text": "Chi ha costruito il portafoglio TLD più ampio? Donuts → Identity Digital"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Perché emerge la concentrazione?"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "economics",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "economics-part-1",
+          "parent": "",
+          "tag": "H2",
+          "text": "L’economia del punto"
+        },
+        {
+          "id": "economics-value",
+          "parent": "economics-chapter-value",
+          "tag": "H2",
+          "text": "Da dove viene il valore?"
+        },
+        {
+          "id": "economics-part-6",
+          "parent": "",
+          "tag": "H3",
+          "text": "Otto modi in cui il denaro entra nel namespace"
+        },
+        {
+          "id": "",
+          "parent": "round-application-fees",
+          "tag": "H3",
+          "text": "Il costo di candidare un TLD"
+        },
+        {
+          "id": "economics-reach",
+          "parent": "economics-chapter-reach",
+          "tag": "H2",
+          "text": "Quanto sono diffusi i TLD?"
+        },
+        {
+          "id": "",
+          "parent": "tld-market-reach",
+          "tag": "H3",
+          "text": "Quanto sono diffusi i TLD?"
+        },
+        {
+          "id": "economics-cases",
+          "parent": "economics-chapter-cases",
+          "tag": "H2",
+          "text": "Come si traduce in risultati economici?"
+        },
+        {
+          "id": "economics-part-7",
+          "parent": "",
+          "tag": "H3",
+          "text": "Casi economici"
+        },
+        {
+          "id": "economics-concentration",
+          "parent": "economics-chapter-concentration",
+          "tag": "H2",
+          "text": "Chi concentra il mercato?"
+        },
+        {
+          "id": "economics-part-5",
+          "parent": "",
+          "tag": "H3",
+          "text": "Chi presenta candidature su larga scala?"
+        },
+        {
+          "id": "",
+          "parent": "economics-contention-2026",
+          "tag": "H3",
+          "text": "Le parole sono un mercato. Non ancora un risultato."
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "La concorrenza nascosta in 980 stringhe"
+        },
+        {
+          "id": "economics-cycles",
+          "parent": "economics-chapter-cycles",
+          "tag": "H2",
+          "text": "Come cambiano le scommesse?"
+        },
+        {
+          "id": "economics-part-8",
+          "parent": "economic-cycles-2026",
+          "tag": "H3",
+          "text": "Cicli economici: che cosa raccontano le stringhe richieste (e che cosa no)"
+        },
+        {
+          "id": "economics-round2026",
+          "parent": "economics-chapter-round2026",
+          "tag": "H2",
+          "text": "Che cosa racconta il round 2026?"
+        },
+        {
+          "id": "economics-part-3",
+          "parent": "",
+          "tag": "H3",
+          "text": "2026: l’economia comincia prima della delega"
+        },
+        {
+          "id": "",
+          "parent": "aps-current-economics",
+          "tag": "H3",
+          "text": "Che cosa viene chiesto, e da chi?"
+        },
+        {
+          "id": "economics-part-4",
+          "parent": "economy-sectors",
+          "tag": "H3",
+          "text": "Quali categorie emergevano nella ricostruzione precedente?"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "cemetery",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "",
+          "parent": "gtld-cemetery",
+          "tag": "H2",
+          "text": "Il cimitero dei gTLD"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": ".doosan"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": ".lupin"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": ".wed"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Quattro esiti da non confondere"
+        },
+        {
+          "id": "",
+          "parent": "helsinki-termination",
+          "tag": "H3",
+          "text": ".helsinki"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "social",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "social-part-1",
+          "parent": "",
+          "tag": "H2",
+          "text": "La vita sociale del punto"
+        },
+        {
+          "id": "",
+          "parent": "tld-cultural-social",
+          "tag": "H2",
+          "text": "Appartenenze che cambiano nel tempo"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": ".meow: il crowdfunding dell'infrastruttura"
+        },
+        {
+          "id": "social-part-3",
+          "parent": "",
+          "tag": "H2",
+          "text": "2026: finalità sociale e classificazione ICANN “Community” non sono la stessa cosa"
+        },
+        {
+          "id": "social-part-4",
+          "parent": "",
+          "tag": "H2",
+          "text": "Sei modi in cui un namespace diventa sociale"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Lingua e identità culturale"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Appartenenza civica e territoriale"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Identità e rappresentazione"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Istituzioni comunitarie"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Sicurezza, norme e tutela"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Scrittura e inclusione digitale"
+        },
+        {
+          "id": "social-part-5",
+          "parent": "",
+          "tag": "H2",
+          "text": "Nove casi sociali"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Un TLD può rappresentare una comunità linguistica anziché uno Stato?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Un namespace può diventare parte della memoria culturale di una comunità?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Le policy di un registry possono modellare deliberatamente le norme sociali di un namespace?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Che cosa cambia quando un TLD verifica l’appartenenza a un movimento sociale ed economico?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Che cosa significa essere “locale” su una rete globale?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Un namespace può rendere Internet realmente più sicuro per i minori?"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "contention",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "A chi va un nome quando più candidati lo chiedono?"
+        },
+        {
+          "id": "contention-part-2",
+          "parent": "",
+          "tag": "H2",
+          "text": "Le stringhe più contese del 2026"
+        },
+        {
+          "id": "contention-part-3",
+          "parent": "",
+          "tag": "H2",
+          "text": "Il benchmark 2012"
+        },
+        {
+          "id": "contention-part-4",
+          "parent": "",
+          "tag": "H2",
+          "text": "Stessa scarsità, vocabolario diverso"
+        },
+        {
+          "id": "contention-part-5",
+          "parent": "",
+          "tag": "H2",
+          "text": "Nel 2026 è cambiata una regola importante"
+        },
+        {
+          "id": "contention-part-6",
+          "parent": "",
+          "tag": "H2",
+          "text": "Chi può controllare una parola?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Closed generics"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "refusals",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Candidature che non ce l’hanno fatta"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Stato 2026: è troppo presto per parlare di esiti"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Sei modi diversi in cui una candidatura può fermarsi"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Cancello amministrativo"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Ammissibilità al sostegno"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Valutazione non superata"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Stop di politica pubblica"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Stop per sicurezza tecnica"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Ritiro"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Com’era l’imbuto del 2012 nell’agosto 2013"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Sei esiti che vale la pena capire"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Una candidatura può morire prima che qualcuno valuti l’idea?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Un ritiro equivale a essere rifiutati?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Una proposta può essere valutata bene e non venire comunque selezionata?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Che succede quando l’aiuto economico diventa esso stesso un cancello della candidatura?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Un parere di politica pubblica può fermare una candidatura prima che decida un’obiezione?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "E se il problema fosse la stringa stessa, non il candidato?"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "disputes",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "disputes-part-1",
+          "parent": "",
+          "tag": "H2",
+          "text": "Controversie che hanno cambiato il punto"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Tre casi 2026: .anime, .agent e .official"
+        },
+        {
+          "id": "disputes-part-3",
+          "parent": "",
+          "tag": "H2",
+          "text": "Stato 2026: le candidature sono pubbliche, le obiezioni formali non sono ancora aperte"
+        },
+        {
+          "id": "disputes-part-4",
+          "parent": "",
+          "tag": "H2",
+          "text": "Come una controversia su un TLD entra nel sistema"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Parere GAC"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Obiezione formale"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Community Priority Evaluation"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Risoluzione della contesa / asta"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Revisione di accountability"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Decisione del Board ICANN"
+        },
+        {
+          "id": "disputes-part-5",
+          "parent": "",
+          "tag": "H2",
+          "text": "Nove controversie che hanno cambiato il significato del punto"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "ICANN può cambiare rotta su una stringa controversa e che cosa accade quando il suo stesso meccanismo di accountability non c"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Chi dovrebbe poter gestire un TLD che è anche il nome di una regione transnazionale?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Come si assegna un TLD con il nome di un continente quando i candidati contestano legittimità e sostegno governativo?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Gli accordi di finanziamento e di controllo futuro dietro un candidato possono cambiare chi ha titolo a vincere un’asta di co"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Fin dove dovrebbero estendersi le protezioni delle indicazioni geografiche dentro uno spazio dei nomi globale?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Che cosa accade quando un marchio è anche il nome di una regione geografica condivisa da più Paesi?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Un candidato privato può gestire un termine religioso di rilevanza globale senza un ampio sostegno della comunità che richiam"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "strange",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "strange-part-1",
+          "parent": "",
+          "tag": "H2",
+          "text": "L’Internet strano"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "2000"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "2004"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "2012"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "2026"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Tra i diversi round"
+        },
+        {
+          "id": "strange-part-3",
+          "parent": "",
+          "tag": "H2",
+          "text": "Quando il punto cambia significato"
+        },
+        {
+          "id": "strange-part-4",
+          "parent": "",
+          "tag": "H2",
+          "text": "Quando il DNS ricorda un mondo diverso"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Fantasmi della geopolitica"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Un codice riutilizzato, ma non ridelegato"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Un’eccezione storica rimasta in piedi"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Namespace senza quasi mercato"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Oltre lo Stato — e oltre l’alfabeto latino"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "reveal",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Il round 2026"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Snapshot Reveal Day · 7 ottobre 2026"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Il Reveal Day è il primo snapshot pubblico, non l’elenco definitivo delle stringhe"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Cosa mostra già il Reveal Day"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "La domanda resta geograficamente asimmetrica"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Il round è anche una partita di portafoglio"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "AI e agenti sono il nuovo vocabolario"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "La scarsità non è sparita"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "L’APS pubblico segue un calendario di pubblicazione"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "inside-round",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "insideRoundTitle",
+          "parent": "",
+          "tag": "H2",
+          "text": "Cronologia"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Che cosa prevedono le regole"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Che cosa rivela il round"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Che cosa permette di osservare .lugano"
+        },
+        {
+          "id": "insideRoundTimelineTitle",
+          "parent": "",
+          "tag": "H2",
+          "text": "Milestone ed eventi decisivi"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Si aprono le candidature"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Si chiude la finestra di candidatura"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Reveal Day: il round diventa visibile"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "La Città pubblica le informazioni sul progetto"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Il periodo delle stringhe sostitutive"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Il Board discuterà dei possibili proventi delle aste"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "PwC scelta per i controlli sui candidati"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "String Confirmation Day"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Contributi pubblici e obiezioni: periodo previsto"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Contributi pubblici e valutazioni"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "L'esito, qualunque esso sia"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Osservazione dall'interno, non comunicazione istituzionale"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "behind-round",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "behindRoundTitle",
+          "parent": "",
+          "tag": "H2",
+          "text": "Note dal campo"
+        },
+        {
+          "id": "",
+          "parent": "behind-case-reveal-day-counts",
+          "tag": "H2",
+          "text": "Manca una candidatura. Ma le domande sono due."
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "La candidatura .wdo: un’assenza documentata nell’elenco pubblico"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Perché il totale ufficiale è diminuito prima del Reveal Day?"
+        },
+        {
+          "id": "behindRegionalHeading",
+          "parent": "",
+          "tag": "H3",
+          "text": "Lo scarto geografico: una verifica indipendente"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "La verifica di un ricercatore indipendente"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Una spiegazione diffusa non è necessariamente una riconciliazione"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Perché perdere tempo per una differenza di uno?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Fonti, non supposizioni"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Che cosa ci permetterebbe di chiudere il caso?"
+        },
+        {
+          "id": "",
+          "parent": "aps-count-reconciliation",
+          "tag": "H3",
+          "text": "Un’altra differenza di conteggio ora ha una verifica per record"
+        },
+        {
+          "id": "",
+          "parent": "aps-publication-calendar",
+          "tag": "H3",
+          "text": "L’APS pubblico segue un calendario di pubblicazione"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Le fonti per verificare"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Revisioni editoriali datate"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Un'osservazione indipendente"
+        },
+        {
+          "id": "",
+          "parent": "behind-case-wdo-identity",
+          "tag": "H2",
+          "text": "Due organizzazioni, una sigla: chi può chiedere .wdo?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Prima la distinzione fondamentale: non sono la stessa organizzazione"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Due storie, separate da quasi settant'anni"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "lugano",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "La posizione dell’autore"
+        },
+        {
+          "id": "",
+          "parent": "lugano-status-sources",
+          "tag": "H2",
+          "text": "Stato e fonti"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Stato attuale"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Una candidatura, due fonti con ruoli diversi"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "La comunicazione ufficiale della Città"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Dove si colloca .lugano nel round 2026"
+        },
+        {
+          "id": "",
+          "parent": "lugano-governance-decisions",
+          "tag": "H2",
+          "text": "Decisioni di governo ancora da prendere"
+        },
+        {
+          "id": "",
+          "parent": "lugano-public-commons",
+          "tag": "H2",
+          "text": "Da bene comune digitale a scelte verificabili"
+        },
+        {
+          "id": "",
+          "parent": "lugano-public-commons",
+          "tag": "H3",
+          "text": "Ciò che è documentato"
+        },
+        {
+          "id": "",
+          "parent": "lugano-public-commons",
+          "tag": "H3",
+          "text": "A chi appartiene un nome che rappresenta tutti?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Perché una città dovrebbe candidarsi per un dominio di primo livello?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Un nome riconoscibile"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Governance nell’interesse pubblico"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Un indirizzo, non un certificato d’identità"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Procedere per fasi, se approvato"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Che cosa insegnano i precedenti svizzeri, e che cosa no"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Città e territori hanno seguito strade diverse"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": ".zuerich: un riferimento svizzero"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "research",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "",
+          "parent": "research-citation-guide",
+          "tag": "H3",
+          "text": "Che cosa vuoi citare?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Una ricerca citabile anche mentre il sito evolve"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "RR2 · Consolidamento delle evidenze post-Reveal"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "17 novembre 2026 · String Confirmation Day"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Come citare il progetto"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Working paper · metodo e interpretazione"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Release scientifica precedente · RR1"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Provenienza, archivio e riproducibilità"
+        },
+        {
+          "id": "",
+          "parent": "independent-review-status",
+          "tag": "H3",
+          "text": "Che cosa resta da verificare con persone indipendenti?"
+        },
+        {
+          "id": "",
+          "parent": "reader-study-protocol",
+          "tag": "H3",
+          "text": "Prova di lettura · guida per chi osserva"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "paper",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Working paper · metodo e interpretazione"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "resources",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Dati, fatti e risorse riutilizzabili"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Cinque fatti chiave"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Domande che emergono dai dati"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Scarica i dati di lavoro"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Dati ufficiali archiviati"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Elaborazioni del progetto"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Release e archivi"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "sources",
+      "cls": "section",
+      "headings": [
+        {
+          "id": "sources-part-1",
+          "parent": "",
+          "tag": "H2",
+          "text": "La posizione dell’autore"
+        },
+        {
+          "id": "sources-part-2",
+          "parent": "",
+          "tag": "H2",
+          "text": "Che cosa rende “di successo” un TLD?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Scala"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Uso attivo"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Rinnovo"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Fiducia e abuso"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Diversità"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Raggiungimento dello scopo"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Valore pubblico"
+        },
+        {
+          "id": "sources-part-3",
+          "parent": "",
+          "tag": "H2",
+          "text": "Come leggere questa pubblicazione"
+        },
+        {
+          "id": "sources-part-4",
+          "parent": "",
+          "tag": "H2",
+          "text": "Fonti e metodologia"
+        },
+        {
+          "id": "sources-part-5",
+          "parent": "",
+          "tag": "H2",
+          "text": "Paletti metodologici"
+        },
+        {
+          "id": "sources-part-6",
+          "parent": "publication-updates",
+          "tag": "H2",
+          "text": "Versioni e aggiornamenti"
+        },
+        {
+          "id": "",
+          "parent": "publication-updates",
+          "tag": "H3",
+          "text": "Modifiche recenti"
+        },
+        {
+          "id": "report-error",
+          "parent": "",
+          "tag": "H2",
+          "text": "Hai trovato qualcosa da correggere?"
+        },
+        {
+          "id": "",
+          "parent": "audit-documentary-corrections",
+          "tag": "H3",
+          "text": "Correzioni documentali del 19 ottobre 2026"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "governance-access",
+      "cls": "section ctdNativeGuide",
+      "headings": [
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Chi controlla l'accesso a Internet?"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "La distinzione fondamentale"
+        },
+        {
+          "id": "accessSimulatorTitle",
+          "parent": "accessSimulator",
+          "tag": "H2",
+          "text": "Prova la simulazione dei blocchi"
+        },
+        {
+          "id": "",
+          "parent": "accessSimulator",
+          "tag": "H3",
+          "text": "Scegli uno scenario"
+        },
+        {
+          "id": "",
+          "parent": "accessSimulator",
+          "tag": "H3",
+          "text": "Prima della visita: il nome deve esistere"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "TLD, registro e registrazione"
+        },
+        {
+          "id": "",
+          "parent": "accessSimulator",
+          "tag": "H3",
+          "text": "Durante la visita: il percorso reale della richiesta"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Resolver DNS"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Provider, instradamento e IP"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Connessione TLS e filtri sul traffico"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Hosting, applicazione e contenuti"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "La richiesta arriva a destinazione"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Il resolver altera la risposta"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Il DNS funziona, la rete no"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "La connessione cifrata non si stabilisce"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Il servizio non rende disponibile il contenuto"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Cambia lo stato della registrazione o della delega"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "La connettività viene interrotta per una popolazione"
+        }
+      ],
+      "navigation": []
+    },
+    {
+      "id": "governance-sanctions",
+      "cls": "section ctdNativeGuide",
+      "headings": [
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Quando Internet globale incontra le sanzioni nazionali"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Conformità giuridica"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Neutralità tecnica"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Cosa prevedono davvero le regole"
+        },
+        {
+          "id": "",
+          "parent": "topic-why",
+          "tag": "H2",
+          "text": "Perché le sanzioni USA incidono su un organismo globale"
+        },
+        {
+          "id": "",
+          "parent": "topic-sdn",
+          "tag": "H2",
+          "text": "Candidature gTLD: soggetti designati e residenti non sono la stessa cosa"
+        },
+        {
+          "id": "",
+          "parent": "topic-licenses",
+          "tag": "H2",
+          "text": "Le licenze contano. Ma non sono garantite."
+        },
+        {
+          "id": "",
+          "parent": "topic-layers",
+          "tag": "H2",
+          "text": "Quattro ruoli, quattro conseguenze diverse"
+        },
+        {
+          "id": "",
+          "parent": "topic-exceptions",
+          "tag": "H2",
+          "text": "«Paese sanzionato» non significa «domini proibiti»"
+        },
+        {
+          "id": "",
+          "parent": "topic-other",
+          "tag": "H2",
+          "text": "OFAC non è l'unico regime sanzionatorio"
+        },
+        {
+          "id": "",
+          "parent": "topic-count",
+          "tag": "H2",
+          "text": "Cosa non dimostrano i dati del 2026"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Quattro momenti documentati"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Nessun rifiuto attribuito alle sanzioni"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Un tribunale impedisce il sequestro di .ir, .sy e .kp"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "ICANN rifiuta di disconnettere i ccTLD russi"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H3",
+          "text": "Idoneità e conformità diventano esplicite"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "Il collegamento con il round 2026"
+        },
+        {
+          "id": "",
+          "parent": "",
+          "tag": "H2",
+          "text": "I blocchi nazionali sono un fenomeno diverso"
+        }
+      ],
+      "navigation": []
+    }
+  ],
+  "iaNodes": [
+    {
+      "id": "ia-understand",
+      "tag": "SECTION",
+      "html": "<section class=\"section iaHub\" id=\"ia-understand\" aria-labelledby=\"ia-title-understand\">\n  <div class=\"iaHubHead\"><span class=\"eyebrow\" data-i18n=\"iaHubUnderstandEyebrow\">LE BASI</span><h2 id=\"ia-title-understand\" data-i18n=\"iaHubUnderstandTitle\">Capire Internet, DNS e TLD</h2><p data-i18n=\"iaHubUnderstandLead\">Parti dai concetti semplici, poi approfondisci il funzionamento dei domini, le regole e chi può intervenire.</p></div>\n  <div class=\"iaHubContext\"><p data-i18n=\"iaB2AboutRole\">Questa è un’opera indipendente di ricerca e divulgazione, non un sito di vendita di domini né una posizione ufficiale di ICANN o della Città di Lugano.</p></div>\n  <div class=\"iaHubGrid\"><article class=\"iaHubCard\"><h3><a href=\"#internet-basics\" data-open-section=\"overview\" data-open-anchor=\"internet-basics\" data-i18n=\"heroLearnCta\">Parti da qui · 3 minuti</a></h3><p data-i18n=\"iaCardOverviewDesc\">Una spiegazione guidata dal browser alla root DNS, per chi parte da zero.</p></article>\n<article class=\"iaHubCard\"><h3><a href=\"#how\" data-open-section=\"how\" data-i18n=\"tabHow\">Come funziona</a></h3><p data-i18n=\"iaCardHowDesc\">Chi decide, chi gestisce e come funzionano registrazione, candidatura e ciclo di vita.</p></article>\n<article class=\"iaHubCard\"><h3><a href=\"#beyond\" data-open-section=\"beyond\" data-i18n=\"tabBeyond\">TLD come infrastruttura</a></h3><p data-i18n=\"iaCardBeyondDesc\">Ciò che non si vede dietro una semplice estensione: infrastruttura, nomi e accesso.</p></article>\n<article class=\"iaHubCard\"><h3><a href=\"#how-glossary\" data-open-section=\"how\" data-open-anchor=\"how-glossary\" data-i18n=\"iaCardGlossaryTitle\">Glossario e parole chiave</a></h3><p data-i18n=\"iaCardGlossaryDesc\">Definizioni operative per non confondere stringhe, TLD, registri e candidature.</p></article></div>\n</section>"
+    },
+    {
+      "id": "ia-title-understand",
+      "tag": "H2",
+      "html": "<h2 id=\"ia-title-understand\" data-i18n=\"iaHubUnderstandTitle\">Capire Internet, DNS e TLD</h2>"
+    },
+    {
+      "id": "ia-explore",
+      "tag": "SECTION",
+      "html": "<section class=\"section iaHub\" id=\"ia-explore\" aria-labelledby=\"ia-title-explore\">\n  <div class=\"iaHubHead\"><span class=\"eyebrow\" data-i18n=\"iaHubExploreEyebrow\">STRUMENTI E STORIA</span><h2 id=\"ia-title-explore\" data-i18n=\"iaHubExploreTitle\">Esplorare nomi, candidature e dati</h2><p data-i18n=\"iaHubExploreLead\">Cerca un TLD, una stringa proposta o una candidatura formale: sono oggetti collegati, non sinonimi. Poi scopri chi può intervenire sul DNS e sull'accesso alla rete.</p></div>\n  <div class=\"iaHubContext\"><p data-i18n=\"iaB2ObjectNote\">Una stringa richiesta, una candidatura (Application ID) e un TLD delegato sono tre cose diverse. Una stringa non è automaticamente nella root DNS.</p></div>\n  <div class=\"iaHubGrid\"><article class=\"iaHubCard\"><h3><a href=\"#explore\" data-open-section=\"explore\" data-i18n=\"tabExplore\">Cerca TLD</a></h3><p data-i18n=\"iaCardExplorerDesc\">Cerca record TLD, eventi, tipi, stati e profili nel catalogo interattivo.</p></article>\n<article class=\"iaHubCard\"><h3><a href=\"#timeline\" data-open-section=\"timeline\" data-i18n=\"tabArchaeology\">Storia</a></h3><p data-i18n=\"iaCardArchaeologyDesc\">Storia delle candidature nei round 2000, 2004, 2012 e 2026, distinta dalla cronologia del round attuale.</p></article>\n<article class=\"iaHubCard\"><h3><a href=\"../applications/it/\" data-b2-resource=\"atlas\" data-i18n=\"iaCardAtlasTitle\">Application Atlas 2026</a></h3><p data-i18n=\"iaCardAtlasDesc\">Le candidature ufficiali APS con Application ID, richiedenti e stringhe alternative.</p></article></div>\n  <!-- v0.7.81: Geography -> Access -> Sanctions. Separate mechanisms; original chapter anchors and deep links remain canonical. -->\n  <aside class=\"iaExploreGovernance\" aria-labelledby=\"ia-explore-governance-title\">\n    <div class=\"iaExploreGovernanceHead\"><span class=\"eyebrow\" data-i18n=\"iaExploreGovernanceEyebrow\">Approfondimento · Geografia e governance</span><h3 id=\"ia-explore-governance-title\" data-i18n=\"iaExploreGovernanceTitle\">Chi controlla cosa su Internet?</h3><p data-i18n=\"iaExploreGovernanceLead\">Non esiste un unico centro di controllo di Internet. La geografia del DNS mostra come si distribuiscono infrastrutture e poteri; il controllo dell’accesso spiega come Stati e operatori possono limitare la connettività; le sanzioni illustrano i vincoli giuridici che possono incidere sulle attività di ICANN e di altri attori del DNS. Tre prospettive collegate, ma distinte.</p></div>\n    <div class=\"iaHubGrid iaExploreGovernanceCards\">\n<article class=\"iaHubCard\"><h3><a href=\"#geography\" data-open-section=\"geography\" data-i18n=\"tabGeo\">Geografia del DNS</a></h3><p data-i18n=\"iaCardGeographyDesc\">Operatori, territori e concentrazione del potere nel DNS.</p></article>\n<article class=\"iaHubCard\"><h3><a href=\"#governance-access\" data-open-section=\"governance-access\" data-b2-resource=\"access\" data-i18n=\"iaCardAccessTitle\">Chi controlla l’accesso a Internet?</a></h3><p data-i18n=\"iaCardAccessDesc\">Filtri DNS, blocchi di rete e sospensioni di un dominio non sono la stessa cosa.</p></article>\n<article class=\"iaHubCard\"><h3><a href=\"#governance-sanctions\" data-open-section=\"governance-sanctions\" data-b2-resource=\"sanctions\" data-i18n=\"iaCardSanctionsTitle\">Sanzioni e DNS</a></h3><p data-i18n=\"iaCardSanctionsDesc\">Come gli obblighi giuridici interagiscono con la governance di un sistema globale.</p></article>\n    </div>\n  </aside>\n</section>"
+    },
+    {
+      "id": "ia-title-explore",
+      "tag": "H2",
+      "html": "<h2 id=\"ia-title-explore\" data-i18n=\"iaHubExploreTitle\">Esplorare nomi, candidature e dati</h2>"
+    },
+    {
+      "id": "ia-explore-governance-title",
+      "tag": "H3",
+      "html": "<h3 id=\"ia-explore-governance-title\" data-i18n=\"iaExploreGovernanceTitle\">Chi controlla cosa su Internet?</h3>"
+    },
+    {
+      "id": "ia-stories",
+      "tag": "SECTION",
+      "html": "<section class=\"section iaHub\" id=\"ia-stories\" aria-labelledby=\"ia-title-stories\">\n  <div class=\"iaHubHead\"><span class=\"eyebrow\" data-i18n=\"iaHubStoriesEyebrow\">PERSONE E POTERE</span><h2 id=\"ia-title-stories\" data-i18n=\"iaHubStoriesTitle\">Storie e questioni</h2><p data-i18n=\"iaHubStoriesLead\">Territori, mercati, comunità e curiosità: cosa significano i TLD nel mondo reale.</p></div>\n  <div class=\"iaHubContext\"><p data-i18n=\"iaB2MethodHint\">Sintesi e approfondimenti non sostituiscono le fonti. Fatti, interpretazioni e visioni sono indicati separatamente.</p></div>\n  <div class=\"iaHubGrid\">\n<article class=\"iaHubCard\"><h3><a href=\"#cities\" data-open-section=\"cities\" data-i18n=\"tabCities\">Città e territori</a></h3><p data-i18n=\"iaCardCitiesDesc\">Estensioni geografiche e responsabilità pubblica.</p></article>\n<article class=\"iaHubCard\"><h3><a href=\"#economics\" data-open-section=\"economics\" data-i18n=\"tabEconomics\">Economia</a></h3><p data-i18n=\"iaCardEconomicsDesc\">Valore economico, modelli di business e cicli di sviluppo dell’industria dei domini.</p></article>\n<article class=\"iaHubCard\"><h3><a href=\"#social\" data-open-section=\"social\" data-i18n=\"tabSocial\">Vita sociale</a></h3><p data-i18n=\"iaCardSocialDesc\">Lingue, comunità, identità e significati sociali delle estensioni.</p></article>\n<article class=\"iaHubCard\"><h3><a href=\"#strange\" data-open-section=\"strange\" data-i18n=\"tabStrange\">Internet strano</a></h3><p data-i18n=\"iaCardStrangeDesc\">Anomalie, eccezioni e storie curiose dell’Internet dei nomi.</p></article>\n  </div>\n</section>"
+    },
+    {
+      "id": "ia-title-stories",
+      "tag": "H2",
+      "html": "<h2 id=\"ia-title-stories\" data-i18n=\"iaHubStoriesTitle\">Storie e questioni</h2>"
+    },
+    {
+      "id": "ia-outcomes",
+      "tag": "SECTION",
+      "html": "<section class=\"section iaHub\" id=\"ia-outcomes\" aria-labelledby=\"ia-title-outcomes\">\n  <div class=\"iaHubHead\"><span class=\"eyebrow\" data-i18n=\"iaHubOutcomesEyebrow\">LE REGOLE ALLA PROVA</span><h2 id=\"ia-title-outcomes\" data-i18n=\"iaHubOutcomesTitle\">Conflitti ed esiti</h2><p data-i18n=\"iaHubOutcomesLead\">Dalle candidature contese al destino delle estensioni: obiezioni, decisioni, rinunce e cicli di vita.</p></div>\n  <div class=\"iaHubContext\"><p data-i18n=\"iaHubOutcomesContext\">Candidature e TLD attraversano fasi diverse: un rifiuto prima della delega non è la cessazione di una delega già attiva.</p></div>\n  <div class=\"iaHubGrid\">\n<article class=\"iaHubCard\"><h3><a href=\"#contention\" data-open-section=\"contention\" data-i18n=\"tabContention\">Stringhe contese</a></h3><p data-i18n=\"iaCardContentionDesc\">Cosa accade quando più soggetti chiedono la stessa stringa.</p></article>\n<article class=\"iaHubCard\"><h3><a href=\"#disputes\" data-open-section=\"disputes\" data-i18n=\"tabDisputes\">Controversie</a></h3><p data-i18n=\"iaCardDisputesDesc\">Obiezioni e controversie, distinte dai meccanismi di contention.</p></article>\n<article class=\"iaHubCard\"><h3><a href=\"#refusals\" data-open-section=\"refusals\" data-i18n=\"tabRefusals\">Esiti delle candidature</a></h3><p data-i18n=\"iaCardOutcomesDesc\">Rinunce, rifiuti e candidature che non hanno raggiunto la delegazione. Per la vita successiva dei TLD, vedi il Cimitero.</p></article>\n<article class=\"iaHubCard\"><h3><a href=\"#cemetery\" data-open-section=\"cemetery\" data-i18n=\"cemeteryChapterNav\">Il cimitero dei gTLD</a></h3><p data-i18n=\"cemeteryChapterCardDesc\">Casi di deleghe cessate, cambi di gestione e progetti mai arrivati alla root, con esiti rigorosamente distinti.</p></article>\n  </div>\n</section>"
+    },
+    {
+      "id": "ia-title-outcomes",
+      "tag": "H2",
+      "html": "<h2 id=\"ia-title-outcomes\" data-i18n=\"iaHubOutcomesTitle\">Conflitti ed esiti</h2>"
+    },
+    {
+      "id": "ia-round",
+      "tag": "SECTION",
+      "html": "<section class=\"section iaHub\" id=\"ia-round\" aria-labelledby=\"ia-title-round\">\n  <div class=\"iaHubHead\"><span class=\"eyebrow\" data-i18n=\"iaHubRoundEyebrow\">IL PROCESSO IN CORSO</span><h2 id=\"ia-title-round\" data-i18n=\"iaHubRoundTitle\">Seguire il round ICANN 2026</h2><p data-i18n=\"iaHubRoundLead\">Statistiche datate, cronologia, osservazioni dal campo e il caso .lugano. Distinguiamo gli eventi verificati dalle domande ancora aperte.</p></div>\n  <div class=\"iaHubContext\"><p data-i18n=\"iaB2RoundNote\">Fotografia del Reveal Day e dell’elenco pubblico APS acquisito l’11 ottobre 2026: 1’615 candidature nel totale ICANN, 1’614 Application ID pubblicati e 2’783 righe, incluse le alternative -R. Lo scarto va letto con le fonti e le date.</p></div>\n  <div class=\"iaHubGrid\"><article class=\"iaHubCard\"><h3><a href=\"#reveal\" data-open-section=\"reveal\" data-i18n=\"roundOverviewNav\">Il round 2026</a></h3><p data-i18n=\"iaCardRevealDesc\">I dati del Reveal Day, con date, unità di misura e limiti.</p></article>\n<article class=\"iaHubCard\"><h3><a href=\"#inside-round\" data-open-section=\"inside-round\" data-i18n=\"insideNav\">Cronologia</a></h3><p data-i18n=\"iaCardInsideDesc\">Cronologia del round 2026: eventi e milestone documentati, senza confondere previsioni e fatti.</p></article>\n<article class=\"iaHubCard\"><h3><a href=\"#behind-round\" data-open-section=\"behind-round\" data-i18n=\"behindNav\">Note dal campo</a></h3><p data-i18n=\"iaCardBehindDesc\">Note dal campo, domande aperte e verifiche in corso.</p></article>\n<article class=\"iaHubCard\"><h3><a href=\"#lugano\" data-open-section=\"lugano\" data-i18n=\"tabLugano\">.lugano</a></h3><p data-i18n=\"iaCardLuganoDesc\">Una candidatura osservata dall’interno come caso del round, senza anticiparne l’esito.</p></article></div>\n</section>"
+    },
+    {
+      "id": "ia-title-round",
+      "tag": "H2",
+      "html": "<h2 id=\"ia-title-round\" data-i18n=\"iaHubRoundTitle\">Seguire il round ICANN 2026</h2>"
+    },
+    {
+      "id": "ia-research",
+      "tag": "SECTION",
+      "html": "<section class=\"section iaHub\" id=\"ia-research\" aria-labelledby=\"ia-title-research\">\n  <div class=\"iaHubHead\"><span class=\"eyebrow\" data-i18n=\"iaHubResearchEyebrow\">FONTI E METODO</span><h2 id=\"ia-title-research\" data-i18n=\"iaHubResearchTitle\">Ricerca verificabile e citabile</h2><p data-i18n=\"iaHubResearchLead\">Paper, dataset, metodi e release archiviate. La versione tecnica del sito e le release scientifiche hanno identità distinte.</p></div>\n  <div class=\"iaHubContext\"><p data-i18n=\"iaB2MethodHint\">Sintesi e approfondimenti non sostituiscono le fonti. Fatti, interpretazioni e visioni sono indicati separatamente.</p><div class=\"iaHubDoi\"><strong data-i18n=\"iaB2RrLabel\">DOI specifico della release scientifica RR2</strong><a aria-label=\"10.5281/zenodo.23288603; si apre in una nuova scheda\" href=\"https://doi.org/10.5281/zenodo.23288603\" target=\"_blank\" rel=\"noopener noreferrer\">10.5281/zenodo.23288603 ↗</a><small data-i18n=\"iaB2RrNote\">RR2 è una release scientifica congelata, diversa dalla versione tecnica aggiornabile del sito.</small></div></div>\n  <div class=\"iaHubGrid\"><article class=\"iaHubCard\"><h3><a href=\"#research\" data-open-section=\"research\" data-i18n=\"researchCitationNav\">Ricerca e citazioni</a></h3><p data-i18n=\"iaCardResearchDesc\">Identità scientifica, release RR1/RR2 e istruzioni per citare il progetto.</p></article>\n<article class=\"iaHubCard\"><h3><a href=\"#paper\" data-open-section=\"paper\" data-i18n=\"researchPaperTitle\">Working paper · metodo e interpretazione</a></h3><p data-i18n=\"iaCardPaperDesc\">Il working paper, con domande, metodo e limiti.</p></article>\n<article class=\"iaHubCard\"><h3><a href=\"#resources\" data-open-section=\"resources\" data-i18n=\"resourcesNav\">Risorse</a></h3><p data-i18n=\"iaCardResourcesDesc\">Dataset, pacchetti e risorse tecniche disponibili.</p></article>\n<article class=\"iaHubCard\"><h3><a href=\"#sources\" data-open-section=\"sources\" data-i18n=\"methodNav\">Metodo e fonti</a></h3><p data-i18n=\"iaCardSourcesDesc\">Provenienza, metodo, revisioni e distinzione fra fatti e letture.</p></article></div>\n</section>"
+    },
+    {
+      "id": "ia-title-research",
+      "tag": "H2",
+      "html": "<h2 id=\"ia-title-research\" data-i18n=\"iaHubResearchTitle\">Ricerca verificabile e citabile</h2>"
+    }
+  ]
+}
