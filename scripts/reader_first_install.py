@@ -14,6 +14,21 @@ if entry not in text:
     if text.count(anchor) != 1:
         raise SystemExit('Reader transform insertion point is missing or ambiguous')
     build.write_text(text.replace(anchor, anchor + '\n' + entry), encoding='utf-8')
+
+# Explicit boolean attributes survive Linkedom serialization and work without JS.
+reader = ROOT / 'scripts' / 'reader_first.cjs'
+text = reader.read_text(encoding='utf-8')
+for old, new in [("disclosure.open = true;", "disclosure.setAttribute('open', '');"),
+                 ("oldNav.hidden = true;", "oldNav.setAttribute('hidden', '');"),
+                 ("legacy.hidden = true;", "legacy.setAttribute('hidden', '');")]:
+    text = text.replace(old, new)
+reader.write_text(text, encoding='utf-8')
+css = ROOT / 'assets' / 'reader-first.css'
+text = css.read_text(encoding='utf-8')
+marker = '/* Independent pages retain their existing breadcrumb, not a duplicate. */'
+if marker not in text:
+    css.write_text(text + '\n' + marker + '\n.readerToc{display:block}\nbody:has(.ctdB2Trail) .readerArticleTrail{display:none}\n', encoding='utf-8')
+
 app = ROOT / 'assets' / 'app.js'
 text = app.read_text(encoding='utf-8')
 guard = "if(document.documentElement.hasAttribute('data-reader-first'))return;"

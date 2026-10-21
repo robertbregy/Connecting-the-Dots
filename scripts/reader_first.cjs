@@ -25,7 +25,9 @@ function node(d, tag, text, cls) {
 function ui(n) { n.setAttribute('data-reader-ui', ''); return n; }
 function link(d, label, id, anchor, prefix = '') {
   const a = node(d, 'a', label);
-  a.href = prefix + '?tab=' + encodeURIComponent(id) + (anchor ? '#' + encodeURIComponent(anchor) : '');
+  // Ordinary fragments work without the JavaScript router as well.
+  if (id === 'overview' && !anchor) { a.href = prefix || './'; return a; }
+  a.href = prefix + '?tab=' + encodeURIComponent(id) + '#' + encodeURIComponent(anchor || id);
   if (!prefix) {
     a.dataset.openSection = id;
     if (anchor) a.dataset.openAnchor = anchor;
@@ -40,10 +42,7 @@ function rootBlock(n, section) {
 function bodySnapshot(section) {
   const clone = section.cloneNode(true);
   for (const n of clone.querySelectorAll('[data-reader-ui],nav.sectionToc')) n.remove();
-  return {
-    text: clone.textContent,
-    hrefs: [...clone.querySelectorAll('a[href]')].map(a => a.getAttribute('href')).sort()
-  };
+  return {text: clone.textContent, hrefs: [...clone.querySelectorAll('a[href]')].map(a => a.getAttribute('href')).sort()};
 }
 function arrange(section, selectors) {
   const original = [...section.children].filter(n => !n.matches('nav.sectionToc,[data-reader-ui]'));
@@ -55,27 +54,23 @@ function arrange(section, selectors) {
     if (!chosen.includes(n)) chosen.push(n);
   }
   const order = [...chosen, ...original.filter(n => !chosen.includes(n))];
-  const before = original.map(n => n.querySelector('h2')?.textContent.trim() || n.id || n.className);
+  const describe = n => n.querySelector('h2')?.textContent.trim() || n.id || n.className;
+  const before = original.map(describe);
   for (const n of order) section.append(n);
   for (const r of records) {
     assert.ok(section.contains(r.node), 'Lost original block in ' + section.id);
     assert.deepEqual(bodySnapshot(r.node), {text: r.text, hrefs: r.hrefs}, 'Reorder changed evidence in ' + section.id);
   }
-  return {before, after: order.map(n => n.querySelector('h2')?.textContent.trim() || n.id || n.className), originalBlocks: original.length};
+  return {before, after: order.map(describe), originalBlocks: original.length};
 }
-function headingsFor(section) {
-  return [...section.querySelectorAll('h2')].filter(h => !h.closest('[data-reader-ui]'));
-}
+function headingsFor(section) { return [...section.querySelectorAll('h2')].filter(h => !h.closest('[data-reader-ui]')); }
 function toc(d, section, lang, independent = false) {
-  const L = DATA.locales[lang];
-  const headings = headingsFor(section);
+  const L = DATA.locales[lang], headings = headingsFor(section);
   if (headings.length < 2) return null;
-  const nav = ui(node(d, 'nav', null, 'readerToc'));
-  nav.setAttribute('aria-label', L.ui.contents);
+  const nav = ui(node(d, 'nav', null, 'readerToc')); nav.setAttribute('aria-label', L.ui.contents);
   const disclosure = node(d, 'details'); disclosure.open = true;
   disclosure.append(node(d, 'summary', L.ui.contents));
-  const list = node(d, 'ol');
-  let remaining;
+  const list = node(d, 'ol'); let remaining;
   for (const [i, heading] of headings.entries()) {
     if (!heading.id) heading.id = 'reader-anchor-' + (section.id || 'article') + '-' + (i + 1);
     const item = node(d, 'li');
@@ -83,10 +78,7 @@ function toc(d, section, lang, independent = false) {
     if (independent) a.href = '#' + encodeURIComponent(heading.id);
     item.append(a);
     if (i < 5) list.append(item);
-    else {
-      if (!remaining) remaining = node(d, 'ol');
-      remaining.append(item);
-    }
+    else { if (!remaining) remaining = node(d, 'ol'); remaining.append(item); }
   }
   disclosure.append(list);
   if (remaining) {
@@ -97,11 +89,13 @@ function toc(d, section, lang, independent = false) {
 }
 function addAssets(d, prefix) {
   for (const [tag, attr, file] of [['link', 'href', 'reader-first.css'], ['script', 'src', 'reader-first.js']]) {
-    if (d.querySelector('[data-reader-asset="' + file + '"]')) continue;
-    const el = node(d, tag); el.setAttribute('data-reader-asset', file);
+    let el = d.querySelector('[data-reader-asset="' + file + '"]');
+    if (!el) {
+      el = node(d, tag); el.setAttribute('data-reader-asset', file);
+      if (tag === 'link') { el.rel = 'stylesheet'; d.head.append(el); }
+      else { el.defer = true; d.body.append(el); }
+    }
     el.setAttribute(attr, prefix + 'assets/' + file + '?v=' + PUB.version);
-    if (tag === 'link') { el.rel = 'stylesheet'; d.head.append(el); }
-    else { el.defer = true; d.body.append(el); }
   }
   d.documentElement.dataset.readerFirst = '1';
 }
@@ -109,8 +103,7 @@ function write(file, d) { fs.writeFileSync(file, '<!DOCTYPE html>\n' + d.documen
 function nativePage(lang, filename) {
   const file = path.join(ROOT, filename), {document: d} = parseHTML(fs.readFileSync(file, 'utf8'));
   assert.ok(!d.documentElement.hasAttribute('data-reader-first'), 'Native page must be rebuilt before applying reader architecture');
-  const L = DATA.locales[lang];
-  const prefix = filename === 'index.html' ? '' : '../';
+  const L = DATA.locales[lang], prefix = filename === 'index.html' ? '' : '../';
   const oldIds = [...d.querySelectorAll('[id]')].map(n => n.id);
   const main = d.querySelector('main'); assert.ok(main);
   const titles = {};
@@ -118,7 +111,6 @@ function nativePage(lang, filename) {
     const section = d.getElementById(id); assert.ok(section, 'Missing chapter: ' + id);
     const menu = d.querySelector('.tab[data-target="' + id + '"]');
     titles[id] = menu?.textContent.trim() || section.querySelector('h2')?.textContent.trim() || L.routes[id][0];
-    // Assign stable, language-independent IDs before changing document order.
     headingsFor(section).forEach((h, i) => { if (!h.id) h.id = 'reader-anchor-' + id + '-' + (i + 1); });
   }
   const reorder = {
@@ -139,11 +131,9 @@ function nativePage(lang, filename) {
     return '#' + n.id;
   }));
   const resource = d.getElementById('resources');
-  const pack = resource.querySelector('a[href*="connecting-the-dots-data-pack-v"]');
-  assert.ok(pack, 'Current data download missing');
+  const pack = resource.querySelector('a[href*="connecting-the-dots-data-pack-v"]'); assert.ok(pack, 'Current data download missing');
   const downloads = rootBlock(pack, resource); if (!downloads.id) downloads.id = 'reader-downloads';
   changes.resources = arrange(resource, [':first', '#' + downloads.id]);
-
   const hubTitles = {};
   for (const [area, ids] of Object.entries(DATA.areas)) {
     const hub = d.getElementById(area); assert.ok(hub);
@@ -159,7 +149,7 @@ function nativePage(lang, filename) {
       const first = grid.querySelector('[data-open-section="overview"]'); assert.ok(first);
       first.dataset.openAnchor = 'three-minute-guide'; first.href = '?tab=overview#three-minute-guide';
     }
-    const orientation = ui(node(d, 'p', L.ui.guide, 'readerHubGuide')); hub.append(orientation);
+    hub.append(ui(node(d, 'p', L.ui.guide, 'readerHubGuide')));
   }
   const chapters = [];
   for (const [id, area] of Object.entries(AREA)) {
@@ -170,26 +160,20 @@ function nativePage(lang, filename) {
     trail.append(link(d, L.ui.home, 'overview'));
     const sep = node(d, 'span', ' / '); sep.setAttribute('aria-hidden', 'true'); trail.append(sep);
     trail.append(link(d, hubTitles[area], area));
-    const h1 = node(d, 'h1', L.routes[id][0], 'readerSrOnly');
-    intro.append(trail, h1, node(d, 'p', L.routes[id][1], 'readerLead'));
+    intro.append(trail, node(d, 'h1', L.routes[id][0], 'readerSrOnly'), node(d, 'p', L.routes[id][1], 'readerLead'));
     section.prepend(intro);
     if (id !== 'economics') {
-      for (const oldNav of section.querySelectorAll(':scope > nav.sectionToc')) {
-        oldNav.hidden = true; oldNav.setAttribute('inert', '');
-      }
+      for (const oldNav of section.querySelectorAll(':scope > nav.sectionToc')) { oldNav.hidden = true; oldNav.setAttribute('inert', ''); }
       const index = toc(d, section, lang); if (index) intro.after(index);
     }
     const next = ui(node(d, 'nav', null, 'readerNext')); next.setAttribute('aria-label', L.ui.articleNext);
     for (const [i, dest] of DATA.next[id].entries()) {
       assert.ok(AREA[dest] && dest !== id, 'Invalid next chapter');
       const card = link(d, '', dest); card.className = 'readerNextCard';
-      card.append(node(d, 'span', i === 0 ? L.ui.next : L.ui.verify, 'readerNextLabel'));
-      card.append(node(d, 'strong', L.routes[dest][0]));
-      const caption = node(d, 'span', titles[dest], 'readerNextTopic'); card.append(caption);
+      card.append(node(d, 'span', i === 0 ? L.ui.next : L.ui.verify, 'readerNextLabel'), node(d, 'strong', L.routes[dest][0]), node(d, 'span', titles[dest], 'readerNextTopic'));
       next.append(card);
     }
-    section.append(next); section.dataset.readerChapter = id;
-    section.dataset.readerTitle = L.routes[id][0];
+    section.append(next); section.dataset.readerChapter = id; section.dataset.readerTitle = L.routes[id][0];
     for (const {node: original, snapshot} of beforeBlocks) assert.deepEqual(bodySnapshot(original), snapshot, 'Original chapter content changed: ' + id);
     chapters.push({id, headings: headingsFor(section).length, parent: area, next: DATA.next[id]});
   }
@@ -199,14 +183,12 @@ function nativePage(lang, filename) {
   directory.append(node(d, 'summary', L.ui.directory));
   const groups = node(d, 'div', null, 'readerDirectoryGrid');
   for (const [area, ids] of Object.entries(DATA.areas)) {
-    const group = node(d, 'div');
-    const title = node(d, 'h2'); title.append(link(d, hubTitles[area], area)); group.append(title);
+    const group = node(d, 'div'), title = node(d, 'h2'); title.append(link(d, hubTitles[area], area)); group.append(title);
     const list = node(d, 'ul');
     for (const id of ids) { const item = node(d, 'li'); item.append(link(d, titles[id], id)); list.append(item); }
     group.append(list); groups.append(group);
   }
   directory.append(groups); main.append(directory);
-  // Keep the legacy runtime elements and every old URL; replace only their visible presentation.
   const legacy = d.getElementById('iaLegacyNavDisclosure'); if (legacy) { legacy.hidden = true; legacy.setAttribute('inert', ''); }
   for (const id of oldIds) assert.ok(d.getElementById(id), 'Lost existing fragment ' + id);
   for (const a of d.querySelectorAll('[data-reader-ui] [data-open-section]')) {
@@ -217,22 +199,20 @@ function nativePage(lang, filename) {
   addAssets(d, prefix); write(file, d);
   report.native.push({file: filename, lang, retainedExistingIds: oldIds.length, chapters, reorders: changes, originalCards: 26});
 }
-function walk(dir) {
-  return fs.readdirSync(dir, {withFileTypes: true}).flatMap(e => e.isDirectory() ? walk(path.join(dir, e.name)) : [path.join(dir, e.name)]);
-}
+function walk(dir) { return fs.readdirSync(dir, {withFileTypes: true}).flatMap(e => e.isDirectory() ? walk(path.join(dir, e.name)) : [path.join(dir, e.name)]); }
 function independentPage(file) {
   const raw = fs.readFileSync(file, 'utf8');
   if (!raw.includes('ctdB2CrossNav') || /http-equiv=["']refresh/i.test(raw)) return;
-  const {document: d} = parseHTML(raw);
-  if (d.documentElement.hasAttribute('data-reader-first')) return;
-  const main = d.querySelector('main'); if (!main) return;
-  const lang = LANGS.includes(d.documentElement.lang) ? d.documentElement.lang : 'en';
-  const L = DATA.locales[lang];
+  const {document: d} = parseHTML(raw), main = d.querySelector('main'); if (!main) return;
+  // Static independent pages can survive a rebuild. Replace only our UI so the
+  // operation remains idempotent and never duplicates navigation or old copy.
+  for (const n of d.querySelectorAll('[data-reader-ui]')) n.remove();
+  const lang = LANGS.includes(d.documentElement.lang) ? d.documentElement.lang : 'en', L = DATA.locales[lang];
   const original = bodySnapshot(main), ids = [...d.querySelectorAll('[id]')].map(n => n.id);
-  const relative = path.relative(ROOT, file).split(path.sep).join('/');
-  const prefix = '../'.repeat(relative.split('/').length - 1);
-  const base = prefix + lang + '/';
-  const area = relative.startsWith('applications/') || relative.startsWith('explorer/') ? 'ia-explore' : relative.startsWith('research/') ? 'ia-research' : 'ia-round';
+  const originalCount = Number(d.documentElement.dataset.readerOriginalIds || ids.length);
+  const relative = path.relative(ROOT, file).split(path.sep).join('/'), prefix = '../'.repeat(relative.split('/').length - 1), base = prefix + lang + '/';
+  const selected = d.querySelector('.ctdB2CrossNav a[aria-current]')?.getAttribute('href')?.match(/[?&]tab=(ia-[a-z]+)/)?.[1];
+  const area = selected && DATA.areas[selected] ? selected : relative.startsWith('applications/') || relative.startsWith('explorer/') ? 'ia-explore' : relative.startsWith('research/') ? 'ia-research' : 'ia-round';
   const trail = ui(node(d, 'nav', null, 'readerTrail readerArticleTrail')); trail.setAttribute('aria-label', L.ui.context);
   trail.append(link(d, L.ui.home, 'overview', null, base), link(d, L.ui.back, area, null, base)); main.prepend(trail);
   const index = toc(d, main, lang, true); if (index) {
@@ -250,12 +230,10 @@ function independentPage(file) {
   }
   assert.deepEqual(bodySnapshot(main), original, 'Independent article evidence changed: ' + relative);
   for (const id of ids) assert.ok(d.getElementById(id), 'Lost independent anchor: ' + id);
-  addAssets(d, prefix); write(file, d); report.independent.push({file: relative, lang, area, retainedExistingIds: ids.length});
+  d.documentElement.dataset.readerOriginalIds = String(originalCount);
+  addAssets(d, prefix); write(file, d); report.independent.push({file: relative, lang, area, retainedExistingIds: originalCount});
 }
-for (const lang of LANGS) {
-  nativePage(lang, lang + '/index.html');
-  if (lang === 'en') nativePage(lang, 'index.html');
-}
+for (const lang of LANGS) { nativePage(lang, lang + '/index.html'); if (lang === 'en') nativePage(lang, 'index.html'); }
 for (const directory of ['applications', 'behind-the-round', 'inside-the-round', 'explorer', 'research']) {
   const folder = path.join(ROOT, directory); if (!fs.existsSync(folder)) continue;
   for (const file of walk(folder).filter(f => path.basename(f) === 'index.html' && !f.includes('/reader-study/'))) independentPage(file);

@@ -1,9 +1,14 @@
-/* Small progressive enhancement; navigation itself remains ordinary links and details. */
+/* Progressive enhancement; navigation remains ordinary links and native details. */
 (function () {
   'use strict';
   const root = document.documentElement;
   if (!root.hasAttribute('data-reader-first')) return;
   const initialTitle = document.title;
+  // Keep the first phone screen for the article, not a long contents list.
+  // This runs once; it never overrides a reader's later disclosure choices.
+  if (window.matchMedia('(max-width:700px)').matches) {
+    for (const details of document.querySelectorAll('.readerToc > details')) details.open = false;
+  }
   function sync() {
     const current = document.body.dataset.activeTab;
     if (!current) return;
@@ -18,8 +23,6 @@
   observer.observe(document.body, {attributes: true, attributeFilter: ['data-active-tab']});
   window.addEventListener('pageshow', sync);
   sync();
-  // Independent articles do not load the application router. A hash target inside
-  // a disclosure must still become visible, both on entry and on local clicks.
   function revealHash() {
     if (document.body.dataset.activeTab) return;
     let id;
