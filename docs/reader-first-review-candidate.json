@@ -1420,7 +1420,7 @@
     },
     "assets/app.js": {
       "baselineSHA256": "7b05a9ac42c01123b1f80d36b39a75c2824d8e1cf5c04ade837d60d665334c16",
-      "sha256": "fa3ca4a44eb15a0a63c1c5b7df078392f09f0658baea86ba5e5521a10de0929c",
+      "sha256": "47269705586c93af2a1a036b69fdeef86b80ec8e098561f431e23ccfc62804a7",
       "rationaleIds": [
         "C01",
         "C03",
@@ -2787,9 +2787,10 @@
     },
     "scripts/audit_ia_b2.cjs": {
       "baselineSHA256": "69b0c092ad93286154b346dd6f37c14fef05b71cc9156afe957cb87f81d3a985",
-      "sha256": "1c4bc027bc221dce944a2af38f7fa6fcb81fe9008d7e6d90efffc2f14f664bb5",
+      "sha256": "40c3213e37f3564872ab4dcfcee2d20ccd765387b89ae896ac95ceca3ccf8022",
       "rationaleIds": [
-        "U01"
+        "U01",
+        "E10"
       ]
     },
     "scripts/reconcile_audience.cjs": {
@@ -2908,6 +2909,13 @@
         "E10"
       ]
     },
+    ".github/workflows/reader-first.yml": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "E10"
+      ],
+      "sha256": "6790250f96a460d04a77dcdcf44d0452bb2ae81884709a3701601933be2c815a"
+    },
     "assets/reader-first.css": {
       "baselineSHA256": null,
       "rationaleIds": [
@@ -2934,14 +2942,14 @@
       "rationaleIds": [
         "E10"
       ],
-      "sha256": "8d0d326f4b6c274d1b63c750dced7e5da4a50c69db5175a76848a1d6f8f8a21d"
+      "sha256": "6797361a76d53e969380b9a3bd04bb2cd873ef9708c855b553670dac2e0717d3"
     },
     "downloads/connecting-the-dots-data-pack-v0.7.92.zip": {
       "baselineSHA256": null,
       "rationaleIds": [
         "E10"
       ],
-      "sha256": "92285f39662f9ff38d3e317339d2c5176c1528e7e6b3b475ca72c6f2150865da"
+      "sha256": "4a350f79126141559770ae27ea018100cc2e640ab04ebb4fb103f9e5ed1a245b"
     },
     "scripts/reader_first.cjs": {
       "baselineSHA256": null,
@@ -2957,19 +2965,26 @@
       ],
       "sha256": "4e22eb85fa292bebd084222af0ca9387fe690fb2ce577915d5c813689ab7b3e0"
     },
+    "scripts/reader_first_compat.py": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "E10"
+      ],
+      "sha256": "25aa0e0759dde3daf6607c6f194fe897824e3d0ecffb9822f3bf45c4956ae880"
+    },
     "scripts/reader_first_install.py": {
       "baselineSHA256": null,
       "rationaleIds": [
         "E10"
       ],
-      "sha256": "b41e966760c29f79f9f70f02d25f70fa6612eaca3a930df8b64e1b0abc83a5ba"
+      "sha256": "d728d7afb48885addc27608b14cef3734351f711bc395840aa93fe41376a012a"
     },
     "scripts/reader_first_review.cjs": {
       "baselineSHA256": null,
       "rationaleIds": [
         "E10"
       ],
-      "sha256": "a10d97b85ae84845496788282616a3f04381a6020327f0c0d718b24a7cc463d1"
+      "sha256": "d774b1526e9405b713dd0aab01ee1f1f0acb64735797924fb17577fba98ddbfb"
     },
     "scripts/reader_first_serialization.cjs": {
       "baselineSHA256": null,

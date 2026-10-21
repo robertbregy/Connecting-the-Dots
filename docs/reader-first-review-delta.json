@@ -1,8 +1,13 @@
 {
   "status": "pending-review",
-  "candidateSHA256": "06392bd6c860abe2b648ffb531ddb3ad2d926c1396f47ee26df01323b00b765d",
+  "candidateSHA256": "0d96e6ccc5b8912bf219056736e7714932d4f42dd7991da9d89767e0616125e6",
   "target": "docs/editorial-review-2026-10-21-v0.7.92.json",
   "changedFiles": [
+    {
+      "file": ".github/workflows/reader-first.yml",
+      "previous": null,
+      "sha256": "6790250f96a460d04a77dcdcf44d0452bb2ae81884709a3701601933be2c815a"
+    },
     {
       "file": "README.md",
       "previous": "626fa6f6e1f776e0d6cc291961990ff7502f5cfee62d77c4f481e548e7624c57",
@@ -31,7 +36,7 @@
     {
       "file": "assets/app.js",
       "previous": "3d2a18d60ac1d5d71ab97840d600e6667c634c2718636fbedebdb213eb8ed91a",
-      "sha256": "fa3ca4a44eb15a0a63c1c5b7df078392f09f0658baea86ba5e5521a10de0929c"
+      "sha256": "47269705586c93af2a1a036b69fdeef86b80ec8e098561f431e23ccfc62804a7"
     },
     {
       "file": "assets/reader-first.css",
@@ -206,12 +211,12 @@
     {
       "file": "downloads/connecting-the-dots-data-pack-v0.7.92.sha256",
       "previous": null,
-      "sha256": "8d0d326f4b6c274d1b63c750dced7e5da4a50c69db5175a76848a1d6f8f8a21d"
+      "sha256": "6797361a76d53e969380b9a3bd04bb2cd873ef9708c855b553670dac2e0717d3"
     },
     {
       "file": "downloads/connecting-the-dots-data-pack-v0.7.92.zip",
       "previous": null,
-      "sha256": "92285f39662f9ff38d3e317339d2c5176c1528e7e6b3b475ca72c6f2150865da"
+      "sha256": "4a350f79126141559770ae27ea018100cc2e640ab04ebb4fb103f9e5ed1a245b"
     },
     {
       "file": "inside-the-round/de/index.html",
@@ -294,6 +299,11 @@
       "sha256": "c770478b6095887ac1fbf5a5283f8af5bef888ab098e82bbbf87029e31075047"
     },
     {
+      "file": "scripts/audit_ia_b2.cjs",
+      "previous": "1c4bc027bc221dce944a2af38f7fa6fcb81fe9008d7e6d90efffc2f14f664bb5",
+      "sha256": "40c3213e37f3564872ab4dcfcee2d20ccd765387b89ae896ac95ceca3ccf8022"
+    },
+    {
       "file": "scripts/reader_first.cjs",
       "previous": null,
       "sha256": "453afd5ded559149580d791e6265256df5cf487cd33b9ac07df7728cc9661024"
@@ -304,14 +314,19 @@
       "sha256": "4e22eb85fa292bebd084222af0ca9387fe690fb2ce577915d5c813689ab7b3e0"
     },
     {
+      "file": "scripts/reader_first_compat.py",
+      "previous": null,
+      "sha256": "25aa0e0759dde3daf6607c6f194fe897824e3d0ecffb9822f3bf45c4956ae880"
+    },
+    {
       "file": "scripts/reader_first_install.py",
       "previous": null,
-      "sha256": "b41e966760c29f79f9f70f02d25f70fa6612eaca3a930df8b64e1b0abc83a5ba"
+      "sha256": "d728d7afb48885addc27608b14cef3734351f711bc395840aa93fe41376a012a"
     },
     {
       "file": "scripts/reader_first_review.cjs",
       "previous": null,
-      "sha256": "a10d97b85ae84845496788282616a3f04381a6020327f0c0d718b24a7cc463d1"
+      "sha256": "d774b1526e9405b713dd0aab01ee1f1f0acb64735797924fb17577fba98ddbfb"
     },
     {
       "file": "scripts/reader_first_serialization.cjs",
