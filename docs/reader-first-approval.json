@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "candidateSHA256": "06392bd6c860abe2b648ffb531ddb3ad2d926c1396f47ee26df01323b00b765d",
+  "verifiedSourceCommit": "2d0e49ecf965f866e98a713ac71082dda5dd5087",
+  "reviewType": "AI-assisted code, editorial and rendered-output review",
+  "scope": "Reader-first technical/editorial release 0.7.92. Reviewed localized pathways, full-block ordering, original content and link preservation, independent-page serialization, stable anchors and generated mobile/desktop screenshots. Existing scientific observations and archived DOI identities are not revised.",
+  "evidence": {
+    "browserWorkflowRun": 39682914899,
+    "browserReport": "docs/reader-first-verification.json",
+    "routeStates": 480,
+    "repeatedBuildFiles": 46,
+    "repeatedBuildChanges": 0,
+    "preservedArchives": 16,
+    "preservedEvidenceFiles": 74,
+    "humanParticipants": 0
+  },
+  "limitations": [
+    "This is not an independent human usability study or a WCAG conformance certification.",
+    "Publication requires the exact-file integrity gate and all build and browser checks to pass again."
+  ]
+}
