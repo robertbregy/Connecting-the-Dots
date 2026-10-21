@@ -1,6 +1,6 @@
 {
   "status": "pending-review",
-  "candidateSHA256": "1e857b134c4e6f43714acaf5b3d6633277378e3a9832f5cc6128a933ab3809c2",
+  "candidateSHA256": "42dd5f418b4b078ef13f4759f4727cbbce0fb2001909af7c664b8f79defe31fe",
   "target": "docs/editorial-review-2026-10-21-v0.7.92.json",
   "changedFiles": [
     {
@@ -36,7 +36,7 @@
     {
       "file": "assets/reader-first.css",
       "previous": null,
-      "sha256": "85c66f4db24dca4b2fc5e285ddd0d6a1049d55afa32d4e6c8c2a976dcdd1c2a3"
+      "sha256": "7c4614bb8a3717130414e8491e655aadb486deaa864b3cf2f679656876f3d5e8"
     },
     {
       "file": "assets/reader-first.js",
@@ -296,7 +296,7 @@
     {
       "file": "scripts/reader_first.cjs",
       "previous": null,
-      "sha256": "e2efd08c159323316b25168d4677e4f3fdf8362590d49c604626d3367ba67092"
+      "sha256": "c40640835317faa1dea7457ff41389a248ff9a39848c435e0b792816c36f585f"
     },
     {
       "file": "scripts/reader_first_browser.cjs",
@@ -306,7 +306,7 @@
     {
       "file": "scripts/reader_first_install.py",
       "previous": null,
-      "sha256": "cfc405361c98c71fa5f8e6b998e3c74ef59f175b35f66ad6a00e2febc5a97186"
+      "sha256": "b6eca0a651d3505f48ea496bd15535900c9e4fceb39f42c48de1b7336000f097"
     },
     {
       "file": "scripts/reader_first_review.cjs",

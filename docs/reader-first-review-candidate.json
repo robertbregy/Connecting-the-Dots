@@ -2913,7 +2913,7 @@
       "rationaleIds": [
         "E10"
       ],
-      "sha256": "85c66f4db24dca4b2fc5e285ddd0d6a1049d55afa32d4e6c8c2a976dcdd1c2a3"
+      "sha256": "7c4614bb8a3717130414e8491e655aadb486deaa864b3cf2f679656876f3d5e8"
     },
     "assets/reader-first.js": {
       "baselineSHA256": null,
@@ -2948,7 +2948,7 @@
       "rationaleIds": [
         "E10"
       ],
-      "sha256": "e2efd08c159323316b25168d4677e4f3fdf8362590d49c604626d3367ba67092"
+      "sha256": "c40640835317faa1dea7457ff41389a248ff9a39848c435e0b792816c36f585f"
     },
     "scripts/reader_first_browser.cjs": {
       "baselineSHA256": null,
@@ -2962,7 +2962,7 @@
       "rationaleIds": [
         "E10"
       ],
-      "sha256": "cfc405361c98c71fa5f8e6b998e3c74ef59f175b35f66ad6a00e2febc5a97186"
+      "sha256": "b6eca0a651d3505f48ea496bd15535900c9e4fceb39f42c48de1b7336000f097"
     },
     "scripts/reader_first_review.cjs": {
       "baselineSHA256": null,
