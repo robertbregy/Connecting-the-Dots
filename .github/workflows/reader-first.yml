@@ -1,0 +1,75 @@
+name: Reader-first publication checks
+on:
+  push:
+    branches: ['feat/reader-first-20261021']
+    paths: ['.github/workflows/reader-first.yml', 'scripts/**', 'assets/**', 'data/reader_first.json', 'publication.json']
+  pull_request:
+    paths: ['scripts/reader_first*', 'assets/reader-first*', 'data/reader_first.json']
+permissions:
+  contents: write
+concurrency:
+  group: reader-first-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  verify:
+    if: ${{ !contains(github.event.head_commit.message || '', '[reader artifacts]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - name: Install build integration
+        run: |
+          if test -f scripts/reader_first_install.py; then python3 scripts/reader_first_install.py; fi
+      - name: Build and existing static checks
+        run: |
+          python3 build.py
+          node scripts/validate_multilingual.js
+          CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
+      - name: Navigation inventory
+        run: |
+          node - <<'JS'
+          const fs=require('fs'),{parseHTML}=require('linkedom');
+          const {document:d}=parseHTML(fs.readFileSync('it/index.html','utf8'));
+          const sections=[...d.querySelectorAll('main > section.section, main > section.iaLanding')].map(n=>({id:n.id,cls:n.className,headings:[...n.querySelectorAll('h2,h3')].slice(0,18).map(h=>({id:h.id,parent:h.parentElement.id,tag:h.tagName,text:h.textContent.trim().slice(0,125)})),navigation:[...n.querySelectorAll('.iaCard,.iaHubCard,.iaPathCard,.iaReadingPath a')].map(a=>({href:a.getAttribute('href'),text:a.textContent.trim().slice(0,150)}))}));
+          const inventory={sections,iaNodes:[...d.querySelectorAll('[id^="ia-"]')].map(n=>({id:n.id,tag:n.tagName,html:n.outerHTML.slice(0,9000)}))};
+          fs.writeFileSync('docs/reader-first-inventory.json',JSON.stringify(inventory,null,2)+'\n');
+          console.log('READER_INVENTORY',JSON.stringify(inventory));
+          const app=fs.readFileSync('assets/app.js','utf8');
+          for(const key of ['function openSection','function showSection','function navigateTo','function activateTab','iaPrimaryLink','data-open-section','iaLegacyNavDisclosure']){const i=app.indexOf(key);if(i>=0)console.log('RUNTIME_CONTEXT',key,app.slice(Math.max(0,i-150),i+3200))}
+          JS
+      - name: Browser regressions and accessibility
+        run: |
+          if test -f scripts/reader_first_browser.cjs; then
+            npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
+            npx playwright install --with-deps chromium
+            node scripts/reader_first_browser.cjs
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reader-first-verification
+          path: |
+            docs/reader-first*.json
+            /tmp/reader-first-qa/
+          if-no-files-found: ignore
+      - name: Commit verified feature-branch artifacts
+        if: github.event_name == 'push'
+        run: |
+          git fetch origin "$GITHUB_REF_NAME"
+          test "$(git rev-parse FETCH_HEAD)" = "$(git rev-parse HEAD)" || { echo 'Branch advanced; no generated files committed.'; exit 0; }
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m 'Verified reader-first artifacts [reader artifacts] [skip build]'
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi
