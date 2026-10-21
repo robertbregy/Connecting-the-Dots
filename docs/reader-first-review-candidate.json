@@ -1356,7 +1356,7 @@
   "files": {
     "applications/de/index.html": {
       "baselineSHA256": "30e00a377b01d61cce5c4ce178275dab3fd053485fc9d691c6e210ae0716ff9a",
-      "sha256": "87659cf201b45a9c0425973b07e0d86295bc2247a78febd628c1acbd54a038e3",
+      "sha256": "9d29997b33a9d782b81b75c73bf3e418cb239a8e3a76eeccd8cb2d30c9ca643f",
       "rationaleIds": [
         "C04",
         "M01",
@@ -1372,7 +1372,7 @@
     },
     "applications/en/index.html": {
       "baselineSHA256": "1f52c66b908ed9fc5e17caffd77f9157ba254d04ee081cc1b8bb983ce9c934c5",
-      "sha256": "341aef975c8517c26ece2757dd96dcc6f30c409ee145477b89313cbf4cb495c7",
+      "sha256": "69813ca38d8f95d8df3992eda512f95d55181c92df777e56d0bd0c6017546506",
       "rationaleIds": [
         "C04",
         "M01",
@@ -1388,7 +1388,7 @@
     },
     "applications/fr/index.html": {
       "baselineSHA256": "c069a3a5b79c9c558964bfe8d23c5c4ee305ab93e3cdb4ef61f844ff89e7db79",
-      "sha256": "4275091c0786dd4bb5b7c74183122857a34a634d5cc4cd966e2f638b4cdc4b58",
+      "sha256": "fab715555aa2fce88b35001ab001571a8668b1e5e8638ac211263bf2a6001b75",
       "rationaleIds": [
         "C04",
         "M01",
@@ -1404,7 +1404,7 @@
     },
     "applications/it/index.html": {
       "baselineSHA256": "7830eae652c261d48bb590c8456d534793a394432672187303313eef92bcb1cc",
-      "sha256": "d6b11a509f55cf74677c76675de57a61047522efda75c63c48024637bf94f2ee",
+      "sha256": "819f9cef3e0bd567963766672ca592e8c6901e04a2c1f3f6681b03928aed858f",
       "rationaleIds": [
         "C04",
         "M01",
@@ -1445,7 +1445,7 @@
     },
     "behind-the-round/de/background-screening/index.html": {
       "baselineSHA256": "a984356385ce4e0867c61068b96587caa6a993e90a4b40b69f476d77d965711c",
-      "sha256": "ecaf289b9eca5070359e6049205d35ce9b3a63ae5af0c457de438252829adb49",
+      "sha256": "76377945e8d56e12935b2cd4391329176ee320789303c8b129f3589d3b391548",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1455,7 +1455,7 @@
     },
     "behind-the-round/de/index.html": {
       "baselineSHA256": "564f0e014fc0a7e6d6131f6e47480cfb56b73116e2ca4ed013b685dd64519078",
-      "sha256": "9e30489e2b6d5b11f6aacc1b9760b07505b61c2f9d3ef4725cd23cdd117adfa3",
+      "sha256": "0737a35bbc8b656301d7f54579fd17ae2b6277d931dfd1849f18006f5a34e469",
       "rationaleIds": [
         "C02",
         "M03",
@@ -1468,7 +1468,7 @@
     },
     "behind-the-round/de/objectors-eoi/index.html": {
       "baselineSHA256": "ef7f4798e2427d5691e28931c78ffe0b183ca55146845d4ff0b04ebf8d76e1f8",
-      "sha256": "55d640d540ede068577d080eb2d9a574d06a9b053a30d120391cafa7996bf36b",
+      "sha256": "3df50e8802abefc4d48695a3cf1a1262c3d151685680ba5848b29470a492e2a8",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1478,7 +1478,7 @@
     },
     "behind-the-round/de/replacement-strings/index.html": {
       "baselineSHA256": "4af49d4fde2f16ba0e02616db2723f4eae302ff0547c2ae50ef326db6ffe65cd",
-      "sha256": "45f5784cf241a3634590a1d261e199b2cde7f135e28af64a4ea4b5a7f9f901e8",
+      "sha256": "abc2756ea79af40df5f91f987a0a082e73b42234e0ce0a7299bed8f99c153b79",
       "rationaleIds": [
         "M03",
         "M04",
@@ -1490,7 +1490,7 @@
     },
     "behind-the-round/de/sanctions-and-dns/index.html": {
       "baselineSHA256": "a729b3af21770246b82590b03e037ff1fd6fbfeccfcacbbb108daea9315f0136",
-      "sha256": "df920365e2ebdb50ac4e1afc397eb94bb5aec6de6e277b953d24e94a6dd5de19",
+      "sha256": "0ef4e37a54afbcb0ae9ff1342d03e817417bee6115551b6993169b4b980325aa",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1500,7 +1500,7 @@
     },
     "behind-the-round/de/wdo-identity/index.html": {
       "baselineSHA256": "ce6c244b49e2141e92ff6f083bcfa2d1122011a0c41e1d9e63c3a585b9432b35",
-      "sha256": "22e45b85060a529cc17bde9bc72532676993b57b0a8e1763a09512686c1b3258",
+      "sha256": "9f2606ac1ec0ff87bd5016649a411e345fa0edd64671c30b39950842300851ca",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1510,7 +1510,7 @@
     },
     "behind-the-round/de/who-controls-internet-access/index.html": {
       "baselineSHA256": "0373ba3210ac9dc6770a60f801f9b422f2a574e15ca36757f36e2084dee47d11",
-      "sha256": "0b51ef9bf35f4b589d193013b2285e6cbf082742baedf8079a351ef7b22a4afe",
+      "sha256": "d2e8e72c2699ec6216e0d03b8d724c5dbaa0d4d6adfc421c3edddc7c76c8aef5",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1520,7 +1520,7 @@
     },
     "behind-the-round/en/background-screening/index.html": {
       "baselineSHA256": "d34fe33fdbee89ac67c85a961651f700022362732f6ddb527fe36e7da87e46ad",
-      "sha256": "71a62c15785a9eaa0b0570b083ab4138acc904d6e7cdcece5646f5c4c7b6bf50",
+      "sha256": "4088310bac2c54ef4be3cdffa66cf08fc48656402e36707a63901456dcca1104",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1530,7 +1530,7 @@
     },
     "behind-the-round/en/index.html": {
       "baselineSHA256": "af1ad762e8244e28c0749e8123c3ce61f0deac32e4c3e1dac3c55b41d8457d7b",
-      "sha256": "0b42afa2ba144db667917720dbd67729066e3b945b25eea57f1386a093c63265",
+      "sha256": "0699280f199a01d5c2bd89381d7c3284ec3bb743fcc5d2beb76bd099883b3f31",
       "rationaleIds": [
         "C02",
         "M03",
@@ -1543,7 +1543,7 @@
     },
     "behind-the-round/en/objectors-eoi/index.html": {
       "baselineSHA256": "e64d35945aaacb3ddb153109c41927381304e83993e14dbc22d348c373c4a5a1",
-      "sha256": "7ef344ff41b5810943a7c14bea24e40d2a005d0083941d53308a1a9fbea5e272",
+      "sha256": "ab78c56aa706d305d5381364e429280b435b43f2af2da0741d12209d55e8b4a2",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1553,7 +1553,7 @@
     },
     "behind-the-round/en/replacement-strings/index.html": {
       "baselineSHA256": "67a79cb108812134a57279c8f593448bd0c776cb318e84cd40a61b0beccffaf2",
-      "sha256": "b060931cc565f8acbe0e46ebd93af80a5e4325f34600215bdb7ab7d935e1a799",
+      "sha256": "083786b7c4f329919c60ff3b3ca0bc0b384c5203c476a1575c4a861ee4a52e1e",
       "rationaleIds": [
         "M03",
         "M04",
@@ -1565,7 +1565,7 @@
     },
     "behind-the-round/en/sanctions-and-dns/index.html": {
       "baselineSHA256": "4a89ca7ff3683cab2c635a226b4edab871f8d9852fb54a2d802ea5538b3642eb",
-      "sha256": "83cca055589cc7c8c98a142a712ebb7ed06442b4a98124b26380e96c0b107108",
+      "sha256": "1bd33692070715c3993ed06504e346f61df0f80e341a4f698518416558b0bf22",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1575,7 +1575,7 @@
     },
     "behind-the-round/en/wdo-identity/index.html": {
       "baselineSHA256": "e3620d3be65315e8c7ab7c445cf64c7f2a195a7baff4aaaf84b67ad9978f6d1c",
-      "sha256": "370a7b313e47f069a1b0fb3938c964e9bc8ee7191d574c97bee589256cc1553e",
+      "sha256": "3823af4f2abe91fd734e501a21aeb03cdad9040270ffacd1f3a9f7712b088f06",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1585,7 +1585,7 @@
     },
     "behind-the-round/en/who-controls-internet-access/index.html": {
       "baselineSHA256": "ef63c49fbd9fee82b025fb8ba908fbff4f026f03c4d00922d720a8ca0e88560c",
-      "sha256": "4426311ef6a38e108095725581ad5e329f707fb1644de376b524bf59c3f3743e",
+      "sha256": "53820485d01bed2001a9b33c03b7038b7b08e7e333714e48fea9312e39fd73c5",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1595,7 +1595,7 @@
     },
     "behind-the-round/fr/background-screening/index.html": {
       "baselineSHA256": "3d1fc6e5478ca30df2e7ef2000015f13605919007145e1b573851adf3e6f4ee4",
-      "sha256": "4b1c2eaf43a25ae578ad63491d87894c4c48892e68fbe192557aec66c57e8c3c",
+      "sha256": "055848b6617050570a2b3e752b01a5ddc5ec471e0f54d6ab83db24435d6e9343",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1605,7 +1605,7 @@
     },
     "behind-the-round/fr/index.html": {
       "baselineSHA256": "9659e9b15112802fd7038e4d3242fac9133a49c849f2c0b60fcf1d9ec5dedca4",
-      "sha256": "65a72be4e7a9529646cf7c8712919985d958919e1c3198cedc141623d7c9c21a",
+      "sha256": "80a7ac22525b38b3b047b4288f5b2365920aa417e48bc17a46f2f67c71edc9d4",
       "rationaleIds": [
         "C02",
         "M03",
@@ -1618,7 +1618,7 @@
     },
     "behind-the-round/fr/objectors-eoi/index.html": {
       "baselineSHA256": "83471ba6f9f0e9c173414d20df3f35dfba622f2299fcc6ed96dfa6770f4615ae",
-      "sha256": "42a3dffd01a5a0175002731b1f4599d6ce77e02e0aa2187c1226996b5c06f0af",
+      "sha256": "95ca9f4620bb04d460354897d676da1b7e5a2d0f37a35db2084c236501244734",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1628,7 +1628,7 @@
     },
     "behind-the-round/fr/replacement-strings/index.html": {
       "baselineSHA256": "c7f0147ae42f88f08b2fb187422917d93fb552527c526a8146583bece4ddd1cf",
-      "sha256": "0740709366811f8ab1f159a3a6bd967e51599a317fa7868d7d959f8ccd8382f6",
+      "sha256": "d3d2083d796668fee3439ba3c34c7ba440ad6e3831126dd3cb24eebfec95d7f9",
       "rationaleIds": [
         "M03",
         "M04",
@@ -1640,7 +1640,7 @@
     },
     "behind-the-round/fr/sanctions-and-dns/index.html": {
       "baselineSHA256": "3e491fbc08b588f6e46dce9f03fad63d738badcd7ae793e871b7afcafa9cada0",
-      "sha256": "df5cad51f186e0b06176aaec266f6e0487c2e0e2924aa92462eb2f67dd9acf67",
+      "sha256": "e22d4d713c1eec0ad3f5ab71d3513401b3c7f2dc11346de061d74787e9540296",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1650,7 +1650,7 @@
     },
     "behind-the-round/fr/wdo-identity/index.html": {
       "baselineSHA256": "8ee2396c446975aa0d4487a5774ce7f322b441d55340e2a55fce83881ee61d87",
-      "sha256": "6549dc955c20557e8b856529b3e231cc6886182740cbe0ff4d0e5ece7a6e3da2",
+      "sha256": "f38f71bc49f4d7c21038cebb36bbeebb671fb960e769df5101e4d7fcf12d3329",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1660,7 +1660,7 @@
     },
     "behind-the-round/fr/who-controls-internet-access/index.html": {
       "baselineSHA256": "9b01d3ef0b99124a0b77a977b20b4967e4d86cd5442bcd0da79ea3ce00c63b49",
-      "sha256": "6a0f2b73124591a5e5e145977ffa7b98aa497f35289d6a02fcf0daa14202ee11",
+      "sha256": "0b357e195bcffe6dcd10df9ebadeecaa1ea07754b15d2c27a67969b5dce77509",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1670,7 +1670,7 @@
     },
     "behind-the-round/it/background-screening/index.html": {
       "baselineSHA256": "4d21a6f625bac55b627528b692f8f6e933955228fb32690e18cb28725bd56e43",
-      "sha256": "b62c306048ee8dba2a012c4adc8ec2c5bf58ca476c08f2124c3ad9879e5594cd",
+      "sha256": "2883d94e818b8355e4fde4667fbbe007856755ad22d2529dbb3ab654a1a3de2b",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1680,7 +1680,7 @@
     },
     "behind-the-round/it/index.html": {
       "baselineSHA256": "fa8a3251fd779775cfe5d7aa3f187dee46cae288a58d570a434b835a8312efd2",
-      "sha256": "78e09580494b4fdd29a3cb53652f9a9fb1f67b35f64488606af383af12d31ecf",
+      "sha256": "20bf0813ac05d235d2b58ed354599864e35b03d78779fba507c881d6b70e5220",
       "rationaleIds": [
         "C02",
         "M03",
@@ -1693,7 +1693,7 @@
     },
     "behind-the-round/it/objectors-eoi/index.html": {
       "baselineSHA256": "f19e692e1f023a21caa282b5cee2d8853f2293aafbe1dbbed82fb15dbff3c584",
-      "sha256": "081a18b607d1269e6b0a9f9036e4ad716e92813f1726c8456f60878b7b36c45a",
+      "sha256": "ae726ac415998ff3f4f860da4cb94c6a6a7dcf7700042571b3752ce506b0ee48",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1703,7 +1703,7 @@
     },
     "behind-the-round/it/replacement-strings/index.html": {
       "baselineSHA256": "50e773f7eb7a0e1b723253adf6e514b439687d9f3e586fbdde2b6ec384957e2f",
-      "sha256": "47b6cbc5e7f7ba5ee6a041cf97f36ad745496e44a25a4c9017989773bca0e560",
+      "sha256": "471b5c013435da2bdc95090ae841bd93cd8b96ee8f06352e63c6be08eb19451d",
       "rationaleIds": [
         "M03",
         "M04",
@@ -1715,7 +1715,7 @@
     },
     "behind-the-round/it/sanctions-and-dns/index.html": {
       "baselineSHA256": "eb9f0663194f2a1d00f66f58f763b99f783aaea31d40584ba6d1aedae56b55d9",
-      "sha256": "42740840ad3412e7fb6b36d338c9f7ac59b806f8a87e022cf6bba3efcc6ef94d",
+      "sha256": "e670d83035adad9fd142abc93aa06e0d00392175232ec0de2cf309d40bc37c07",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1725,7 +1725,7 @@
     },
     "behind-the-round/it/wdo-identity/index.html": {
       "baselineSHA256": "7be67c9e27b89266d950c64170534d10a20fd64b2a8809f05b9d7b7ce5ca944d",
-      "sha256": "8c447cb6a8ddf87bbb8fcf1e7c036dc563b62410e808a1913249e6b9c6d0e374",
+      "sha256": "58b44e0452dbb2a7ef46b33ac2c3242d14b00f6b02b31afa6648be44a9067af1",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1735,7 +1735,7 @@
     },
     "behind-the-round/it/who-controls-internet-access/index.html": {
       "baselineSHA256": "f7f8627965be401cc75ba0a240c610dfc8ef629ccac659230d0ddead0d885a71",
-      "sha256": "ce834fd6f78c5bc1caabdfc46ec9707b1e788250c785d2a260bbb8795e8e5ba1",
+      "sha256": "f92bd3cd5826c6aa047dfd8cd363c65818d9fdaa54c9addc4c35f8a6b8be40f9",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1964,7 +1964,7 @@
     },
     "inside-the-round/de/index.html": {
       "baselineSHA256": "c7ad32d04ab943f95d934a41f96a94aa6b73e5955ec44fdefd30aeb956f028a2",
-      "sha256": "016615ca70aaf3fec533398c28088b6221241d70a85d1da8fcad46ca763e6700",
+      "sha256": "e42a61ec49a5790fd4556df30d07d738eaddc22341e5fba487298a2407f22915",
       "rationaleIds": [
         "C02",
         "M03",
@@ -1977,7 +1977,7 @@
     },
     "inside-the-round/en/index.html": {
       "baselineSHA256": "bab16d3d558fc800079f4c3c1aebfc64e71ae97cc6c9b6aa236d09a12a3b4db7",
-      "sha256": "e1bd44a8d897ea9ae8e51e9b577db95b395c9494575dceb26f79ecfef51c6611",
+      "sha256": "e9afb85b6dd36d4080f5e0ffacae7abbeda46563605800531cfc0f2b48671110",
       "rationaleIds": [
         "C02",
         "M03",
@@ -1990,7 +1990,7 @@
     },
     "inside-the-round/fr/index.html": {
       "baselineSHA256": "709bdc1f3e0dda04e169f2287d5db8b55637aef6ef32b5df823685278cd1df6d",
-      "sha256": "005d37520b77dfc082191321cb86232d9dacddd07c1bad092be030de8451dad6",
+      "sha256": "f34797e275a02795b017d07a4cdf02f57cbdfb79c279e0f63feac54ed26b0ee3",
       "rationaleIds": [
         "C02",
         "M03",
@@ -2003,7 +2003,7 @@
     },
     "inside-the-round/it/index.html": {
       "baselineSHA256": "0356f7c2cd5d1d30d584ef35530e8c6445bf66569c4684e5599ff94965b23bf3",
-      "sha256": "2de2aa68e89d3dd90216cca7a318a1fe3c4cf8bacf593e6164ee7e335d885a56",
+      "sha256": "c187d949b166722d779e72d605950459d73c7d71bb363f1b6cf82a77deb2c875",
       "rationaleIds": [
         "C02",
         "M03",
@@ -2070,7 +2070,7 @@
     },
     "research/index.html": {
       "baselineSHA256": "e9a26de35e6eada49de00b1d9df234d3f67c8e40f93591134477a064c0694245",
-      "sha256": "c326dd43543264f2ba2091e45b97f96358b102f90c1e6e57150cdccfd4a63bb2",
+      "sha256": "7c3443e16a30c52a66ee54ca0b363172d4a0b4548ef854fb6bb70ac44ce8a6ef",
       "rationaleIds": [
         "C05",
         "T02",
@@ -2913,14 +2913,14 @@
       "rationaleIds": [
         "E10"
       ],
-      "sha256": "4f6951e583ef9f5f1f4524c2c0483de975c6e7f7cdb4bd1e4b83484df000f340"
+      "sha256": "85c66f4db24dca4b2fc5e285ddd0d6a1049d55afa32d4e6c8c2a976dcdd1c2a3"
     },
     "assets/reader-first.js": {
       "baselineSHA256": null,
       "rationaleIds": [
         "E10"
       ],
-      "sha256": "468e65034afecc39e55bd01e2c2847c9c479ff0cf1afe0d329fee99e57f233e2"
+      "sha256": "fd380aa68636f9e8d38c95b568279853d84e36a474248e2509a8f808443ef121"
     },
     "data/reader_first.json": {
       "baselineSHA256": null,
@@ -2948,21 +2948,21 @@
       "rationaleIds": [
         "E10"
       ],
-      "sha256": "2526f7109e5fbe1a0f6069d0476010f758a58dac1459ed808e92bfcea3a18205"
+      "sha256": "e2efd08c159323316b25168d4677e4f3fdf8362590d49c604626d3367ba67092"
     },
     "scripts/reader_first_browser.cjs": {
       "baselineSHA256": null,
       "rationaleIds": [
         "E10"
       ],
-      "sha256": "b513d1c7bd1bd842c61aa3e4a7eb13d271903d6fb7835c84d9f37559ec202762"
+      "sha256": "4e22eb85fa292bebd084222af0ca9387fe690fb2ce577915d5c813689ab7b3e0"
     },
     "scripts/reader_first_install.py": {
       "baselineSHA256": null,
       "rationaleIds": [
         "E10"
       ],
-      "sha256": "84d2bfecb05232b241a8856ddad114a43e604cf7b8420678a1c3d964d7308e49"
+      "sha256": "cfc405361c98c71fa5f8e6b998e3c74ef59f175b35f66ad6a00e2febc5a97186"
     },
     "scripts/reader_first_review.cjs": {
       "baselineSHA256": null,

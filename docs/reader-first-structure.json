@@ -2086,7 +2086,7 @@
     {
       "file": "behind-the-round/de/sanctions-and-dns/index.html",
       "lang": "de",
-      "area": "ia-round",
+      "area": "ia-explore",
       "retainedExistingIds": 28
     },
     {
@@ -2098,7 +2098,7 @@
     {
       "file": "behind-the-round/de/who-controls-internet-access/index.html",
       "lang": "de",
-      "area": "ia-round",
+      "area": "ia-explore",
       "retainedExistingIds": 26
     },
     {
@@ -2128,7 +2128,7 @@
     {
       "file": "behind-the-round/en/sanctions-and-dns/index.html",
       "lang": "en",
-      "area": "ia-round",
+      "area": "ia-explore",
       "retainedExistingIds": 28
     },
     {
@@ -2140,7 +2140,7 @@
     {
       "file": "behind-the-round/en/who-controls-internet-access/index.html",
       "lang": "en",
-      "area": "ia-round",
+      "area": "ia-explore",
       "retainedExistingIds": 26
     },
     {
@@ -2170,7 +2170,7 @@
     {
       "file": "behind-the-round/fr/sanctions-and-dns/index.html",
       "lang": "fr",
-      "area": "ia-round",
+      "area": "ia-explore",
       "retainedExistingIds": 28
     },
     {
@@ -2182,7 +2182,7 @@
     {
       "file": "behind-the-round/fr/who-controls-internet-access/index.html",
       "lang": "fr",
-      "area": "ia-round",
+      "area": "ia-explore",
       "retainedExistingIds": 26
     },
     {
@@ -2212,7 +2212,7 @@
     {
       "file": "behind-the-round/it/sanctions-and-dns/index.html",
       "lang": "it",
-      "area": "ia-round",
+      "area": "ia-explore",
       "retainedExistingIds": 28
     },
     {
@@ -2224,7 +2224,7 @@
     {
       "file": "behind-the-round/it/who-controls-internet-access/index.html",
       "lang": "it",
-      "area": "ia-round",
+      "area": "ia-explore",
       "retainedExistingIds": 26
     },
     {

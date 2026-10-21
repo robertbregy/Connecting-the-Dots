@@ -1,15 +1,184 @@
 {
   "schemaVersion": 1,
-  "sourceCommit": "79624ac3913b47de741bf6b717e2ba8d8574cee2",
+  "sourceCommit": "7567d510deb29b011a3f8d6010a917c0ea2d7e42",
   "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
   "browser": "Chromium",
   "routeStates": 480,
-  "journeys": [],
-  "independentPages": 0,
+  "verifiedThemes": [
+    {
+      "lang": "it",
+      "theme": "light",
+      "width": 320
+    },
+    {
+      "lang": "it",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "lang": "it",
+      "theme": "dark",
+      "width": 320
+    },
+    {
+      "lang": "it",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "lang": "en",
+      "theme": "light",
+      "width": 320
+    },
+    {
+      "lang": "en",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "lang": "en",
+      "theme": "dark",
+      "width": 320
+    },
+    {
+      "lang": "en",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "lang": "de",
+      "theme": "light",
+      "width": 320
+    },
+    {
+      "lang": "de",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "lang": "de",
+      "theme": "dark",
+      "width": 320
+    },
+    {
+      "lang": "de",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "lang": "fr",
+      "theme": "light",
+      "width": 320
+    },
+    {
+      "lang": "fr",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "lang": "fr",
+      "theme": "dark",
+      "width": 320
+    },
+    {
+      "lang": "fr",
+      "theme": "dark",
+      "width": 1280
+    }
+  ],
+  "journeys": [
+    {
+      "lang": "it",
+      "legacyAnchor": "how-part-1",
+      "localAnchor": "how-part-2",
+      "nextChapter": "beyond",
+      "switchedTo": "en",
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "legacyAnchor": "how-part-1",
+      "localAnchor": "how-part-2",
+      "nextChapter": "beyond",
+      "switchedTo": "it",
+      "passed": true
+    },
+    {
+      "lang": "de",
+      "legacyAnchor": "how-part-1",
+      "localAnchor": "how-part-2",
+      "nextChapter": "beyond",
+      "switchedTo": "en",
+      "passed": true
+    },
+    {
+      "lang": "fr",
+      "legacyAnchor": "how-part-1",
+      "localAnchor": "how-part-2",
+      "nextChapter": "beyond",
+      "switchedTo": "en",
+      "passed": true
+    }
+  ],
+  "independentPages": 30,
+  "legacyRedirects": [
+    {
+      "from": "behind-the-round/de/sanctions-and-dns/index.html",
+      "to": "/de/?tab=governance-sanctions"
+    },
+    {
+      "from": "behind-the-round/de/who-controls-internet-access/index.html",
+      "to": "/de/?tab=governance-access"
+    },
+    {
+      "from": "behind-the-round/en/sanctions-and-dns/index.html",
+      "to": "/en/?tab=governance-sanctions"
+    },
+    {
+      "from": "behind-the-round/en/who-controls-internet-access/index.html",
+      "to": "/en/?tab=governance-access"
+    },
+    {
+      "from": "behind-the-round/fr/sanctions-and-dns/index.html",
+      "to": "/fr/?tab=governance-sanctions"
+    },
+    {
+      "from": "behind-the-round/fr/who-controls-internet-access/index.html",
+      "to": "/fr/?tab=governance-access"
+    },
+    {
+      "from": "behind-the-round/it/sanctions-and-dns/index.html",
+      "to": "/it/?tab=governance-sanctions"
+    },
+    {
+      "from": "behind-the-round/it/who-controls-internet-access/index.html",
+      "to": "/it/?tab=governance-access"
+    }
+  ],
+  "noJavaScript": [
+    {
+      "lang": "it",
+      "readable": true,
+      "href": "?tab=beyond#beyond"
+    },
+    {
+      "lang": "en",
+      "readable": true,
+      "href": "?tab=beyond#beyond"
+    },
+    {
+      "lang": "de",
+      "readable": true,
+      "href": "?tab=beyond#beyond"
+    },
+    {
+      "lang": "fr",
+      "readable": true,
+      "href": "?tab=beyond#beyond"
+    }
+  ],
   "errors": [
-    "Keyboard disclosure did not close: it",
-    "Keyboard disclosure did not open: it",
-    "locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#how .readerToc a').first()\n    - locator resolved to <a data-open-section=\"how\" href=\"?tab=how#how-part-2\" data-open-anchor=\"how-part-2\">Come funzionano davvero i domini Internet</a>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    58 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n\n    at /home/runner/work/Connecting-the-Dots/Connecting-the-Dots/scripts/reader_first_browser.cjs:92:80"
+    "Build determinism and research preservation: Error: Command failed: python3 build.py\nRELEASE CHECK FAILED: expected exactly one h1 in index.html\nTraceback (most recent call last):\n  File \"/home/runner/work/Connecting-the-Dots/Connecting-the-Dots/build.py\", line 459, in <module>\n    main()\n  File \"/home/runner/work/Connecting-the-Dots/Connecting-the-Dots/build.py\", line 449, in main\n    subprocess.run([\"python3\", str(ROOT / \"scripts\" / \"release_check.py\")], check=True)\n  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['python3', '/home/runner/work/Connecting-the-Dots/Connecting-the-Dots/scripts/release_check.py']' returned non-zero exit status 1.\n\n    at genericNodeError (node:internal/errors:983:15)\n    at wrappedFn (node:internal/errors:537:14)\n    at checkExecSyncError (node:child_process:916:11)\n    at execFileSync (node:child_process:952:15)\n    at /home/runner/work/Connecting-the-Dots/Connecting-the-Dots/scripts/reader_first_browser.cjs:159:7\n    at capture (/home/runner/work/Connecting-the-Dots/Connecting-the-Dots/scripts/reader_first_browser.cjs:38:49)\n    at /home/runner/work/Connecting-the-Dots/Connecting-the-Dots/scripts/reader_first_browser.cjs:154:11"
   ],
   "componentAccessibility": [
     {
@@ -85,8 +254,50 @@
       "violations": []
     }
   ],
-  "fullPageAccessibility": [],
+  "fullPageAccessibility": [
+    {
+      "id": "overview",
+      "variant": "baseline",
+      "violations": []
+    },
+    {
+      "id": "overview",
+      "variant": "reader",
+      "violations": []
+    },
+    {
+      "id": "how",
+      "variant": "baseline",
+      "violations": []
+    },
+    {
+      "id": "how",
+      "variant": "reader",
+      "violations": []
+    },
+    {
+      "id": "cities",
+      "variant": "baseline",
+      "violations": []
+    },
+    {
+      "id": "cities",
+      "variant": "reader",
+      "violations": []
+    },
+    {
+      "id": "research",
+      "variant": "baseline",
+      "violations": []
+    },
+    {
+      "id": "research",
+      "variant": "reader",
+      "violations": []
+    }
+  ],
   "preservedArchives": [],
+  "preservedEvidenceFiles": [],
   "humanParticipants": 0,
   "limitations": [
     "Automated Chromium checks, not a WCAG conformance certification.",
