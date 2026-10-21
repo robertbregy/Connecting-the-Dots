@@ -440,6 +440,7 @@ def main() -> None:
     subprocess.run(["node", str(ROOT / "scripts" / "reconcile_audience.cjs")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "reorder_economics.cjs")], check=True)
     subprocess.run(["python3", str(ROOT / "scripts" / "render_reader_study.py")], check=True)
+    subprocess.run(["node", str(ROOT / "scripts" / "reconcile_reader_first.cjs")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "validate_quick_guide.cjs")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "validate_economics_order.cjs")], check=True)
     validate_index()

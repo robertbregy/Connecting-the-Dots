@@ -48,12 +48,16 @@ async function checkAxe(page,label) {
     assert.ok(firstViewport.navTop<240 && firstViewport.navBottom<365,"task-first navigation is buried on first screen: "+JSON.stringify(firstViewport));
     assert.ok(firstViewport.explanationTop<700,"the project purpose is buried below first screen: "+JSON.stringify(firstViewport));
 
-    assert.equal(await page.locator(".iaHomeJumpList a").count(),6,"six Home task entries");
+    assert.equal(await page.locator(".iaHomeJumpList a").count(),3,"three distinct Home entry intentions");
     const homeDestinations=await page.locator(".iaHomeJumpList a").evaluateAll(links=>links.map(link=>({
       section:link.getAttribute("data-open-section"),href:link.getAttribute("href")
     })));
-    assert.deepEqual(homeDestinations,hubs.map(([section])=>({section,href:"#"+section})),
-      "Home must link to all six primary areas in navigation order");
+    assert.deepEqual(homeDestinations,[
+      {section:"overview",href:"?tab=overview#three-minute-guide"},
+      {section:"explore",href:"?tab=explore"},
+      {section:"research",href:"?tab=research#research-citation-guide"}
+    ],"Home must provide direct routes to understand, explore and verify");
+    assert.deepEqual(await page.locator(".iaPrimaryLink").evaluateAll(links=>links.map(a=>a.dataset.b2Area)),hubs.map(([section])=>section),"All six primary areas remain in navigation order");
     assert.equal(await page.locator(".iaLegacyNavDisclosure[open]").count(),0,"original nav should begin folded");
     assert.ok((await page.locator('.hero h1').innerText()).includes("Connecting the Dots"),"project purpose not visible on Home");
     assert.equal(await page.locator(".audienceDiscovery:visible").count(),3,"three source-backed discovery paths");

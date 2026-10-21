@@ -93,7 +93,8 @@ function validateExplorer(document,t,expected){
 }
 function validateStructure(document,t){
  const links=[...document.querySelectorAll('.iaHomeJumpList a')];
- assert.deepEqual(links.map(link=>link.getAttribute('data-open-section')),homePaths,'Home must expose six distinct journeys');
+ assert.deepEqual(links.map(link=>link.getAttribute('data-open-section')),['overview','explore','research'],'Home must expose three distinct reader intentions');
+ assert.deepEqual([...document.querySelectorAll('.iaPrimaryLink')].map(link=>link.dataset.openSection),homePaths,'All six subject areas must remain in primary navigation');
  for(const link of links){
   const target=link.getAttribute('data-open-section');
   one(document,'#'+target+'.section');

@@ -1,0 +1,388 @@
+{
+  "version": "0.7.92",
+  "nativePages": 5,
+  "chapterRoutes": 23,
+  "languageCount": 4,
+  "independentPages": 28,
+  "reorderedChapters": 10,
+  "unchangedCsvAndZipFiles": 83,
+  "checks": [
+    {
+      "file": "index.html",
+      "chapters": 23,
+      "outlines": [
+        {
+          "id": "timeline",
+          "links": 4
+        },
+        {
+          "id": "how",
+          "links": 7
+        },
+        {
+          "id": "beyond",
+          "links": 4
+        },
+        {
+          "id": "cities",
+          "links": 3
+        },
+        {
+          "id": "geography",
+          "links": 5
+        },
+        {
+          "id": "cemetery",
+          "links": 2
+        },
+        {
+          "id": "social",
+          "links": 4
+        },
+        {
+          "id": "contention",
+          "links": 4
+        },
+        {
+          "id": "refusals",
+          "links": 4
+        },
+        {
+          "id": "disputes",
+          "links": 4
+        },
+        {
+          "id": "strange",
+          "links": 3
+        },
+        {
+          "id": "behind-round",
+          "links": 4
+        },
+        {
+          "id": "lugano",
+          "links": 4
+        },
+        {
+          "id": "research",
+          "links": 2
+        },
+        {
+          "id": "resources",
+          "links": 3
+        },
+        {
+          "id": "sources",
+          "links": 5
+        },
+        {
+          "id": "governance-access",
+          "links": 3
+        }
+      ],
+      "localLinks": 233
+    },
+    {
+      "file": "it/index.html",
+      "chapters": 23,
+      "outlines": [
+        {
+          "id": "timeline",
+          "links": 4
+        },
+        {
+          "id": "how",
+          "links": 7
+        },
+        {
+          "id": "beyond",
+          "links": 4
+        },
+        {
+          "id": "cities",
+          "links": 3
+        },
+        {
+          "id": "geography",
+          "links": 5
+        },
+        {
+          "id": "cemetery",
+          "links": 2
+        },
+        {
+          "id": "social",
+          "links": 4
+        },
+        {
+          "id": "contention",
+          "links": 4
+        },
+        {
+          "id": "refusals",
+          "links": 4
+        },
+        {
+          "id": "disputes",
+          "links": 4
+        },
+        {
+          "id": "strange",
+          "links": 3
+        },
+        {
+          "id": "behind-round",
+          "links": 4
+        },
+        {
+          "id": "lugano",
+          "links": 4
+        },
+        {
+          "id": "research",
+          "links": 2
+        },
+        {
+          "id": "resources",
+          "links": 3
+        },
+        {
+          "id": "sources",
+          "links": 5
+        },
+        {
+          "id": "governance-access",
+          "links": 3
+        }
+      ],
+      "localLinks": 233
+    },
+    {
+      "file": "en/index.html",
+      "chapters": 23,
+      "outlines": [
+        {
+          "id": "timeline",
+          "links": 4
+        },
+        {
+          "id": "how",
+          "links": 7
+        },
+        {
+          "id": "beyond",
+          "links": 4
+        },
+        {
+          "id": "cities",
+          "links": 3
+        },
+        {
+          "id": "geography",
+          "links": 5
+        },
+        {
+          "id": "cemetery",
+          "links": 2
+        },
+        {
+          "id": "social",
+          "links": 4
+        },
+        {
+          "id": "contention",
+          "links": 4
+        },
+        {
+          "id": "refusals",
+          "links": 4
+        },
+        {
+          "id": "disputes",
+          "links": 4
+        },
+        {
+          "id": "strange",
+          "links": 3
+        },
+        {
+          "id": "behind-round",
+          "links": 4
+        },
+        {
+          "id": "lugano",
+          "links": 4
+        },
+        {
+          "id": "research",
+          "links": 2
+        },
+        {
+          "id": "resources",
+          "links": 3
+        },
+        {
+          "id": "sources",
+          "links": 5
+        },
+        {
+          "id": "governance-access",
+          "links": 3
+        }
+      ],
+      "localLinks": 233
+    },
+    {
+      "file": "de/index.html",
+      "chapters": 23,
+      "outlines": [
+        {
+          "id": "timeline",
+          "links": 4
+        },
+        {
+          "id": "how",
+          "links": 7
+        },
+        {
+          "id": "beyond",
+          "links": 4
+        },
+        {
+          "id": "cities",
+          "links": 3
+        },
+        {
+          "id": "geography",
+          "links": 5
+        },
+        {
+          "id": "cemetery",
+          "links": 2
+        },
+        {
+          "id": "social",
+          "links": 4
+        },
+        {
+          "id": "contention",
+          "links": 4
+        },
+        {
+          "id": "refusals",
+          "links": 4
+        },
+        {
+          "id": "disputes",
+          "links": 4
+        },
+        {
+          "id": "strange",
+          "links": 3
+        },
+        {
+          "id": "behind-round",
+          "links": 4
+        },
+        {
+          "id": "lugano",
+          "links": 4
+        },
+        {
+          "id": "research",
+          "links": 2
+        },
+        {
+          "id": "resources",
+          "links": 3
+        },
+        {
+          "id": "sources",
+          "links": 5
+        },
+        {
+          "id": "governance-access",
+          "links": 3
+        }
+      ],
+      "localLinks": 233
+    },
+    {
+      "file": "fr/index.html",
+      "chapters": 23,
+      "outlines": [
+        {
+          "id": "timeline",
+          "links": 4
+        },
+        {
+          "id": "how",
+          "links": 7
+        },
+        {
+          "id": "beyond",
+          "links": 4
+        },
+        {
+          "id": "cities",
+          "links": 3
+        },
+        {
+          "id": "geography",
+          "links": 5
+        },
+        {
+          "id": "cemetery",
+          "links": 2
+        },
+        {
+          "id": "social",
+          "links": 4
+        },
+        {
+          "id": "contention",
+          "links": 4
+        },
+        {
+          "id": "refusals",
+          "links": 4
+        },
+        {
+          "id": "disputes",
+          "links": 4
+        },
+        {
+          "id": "strange",
+          "links": 3
+        },
+        {
+          "id": "behind-round",
+          "links": 4
+        },
+        {
+          "id": "lugano",
+          "links": 4
+        },
+        {
+          "id": "research",
+          "links": 2
+        },
+        {
+          "id": "resources",
+          "links": 3
+        },
+        {
+          "id": "sources",
+          "links": 5
+        },
+        {
+          "id": "governance-access",
+          "links": 3
+        }
+      ],
+      "localLinks": 233
+    }
+  ],
+  "humanParticipants": 0,
+  "accessibilityConformanceClaim": false
+}

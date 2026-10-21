@@ -1,0 +1,343 @@
+{
+  "kind": "B2 integrated UI smoke test",
+  "languages": [
+    {
+      "language": "it",
+      "width": 390,
+      "hubs": [
+        {
+          "hub": "ia-understand",
+          "cards": 4,
+          "target": "how"
+        },
+        {
+          "hub": "ia-explore",
+          "cards": 6,
+          "target": "explore"
+        },
+        {
+          "hub": "ia-stories",
+          "cards": 4,
+          "target": "economics"
+        },
+        {
+          "hub": "ia-outcomes",
+          "cards": 4,
+          "target": "refusals"
+        },
+        {
+          "hub": "ia-round",
+          "cards": 4,
+          "target": "behind-round"
+        },
+        {
+          "hub": "ia-research",
+          "cards": 4,
+          "target": "research"
+        }
+      ],
+      "issues": [],
+      "contentSections": 24,
+      "homePurpose": true,
+      "legacyMenu": true,
+      "checkedCards": 26
+    },
+    {
+      "language": "it",
+      "width": 1440,
+      "hubs": [
+        {
+          "hub": "ia-understand",
+          "cards": 4,
+          "target": "how"
+        },
+        {
+          "hub": "ia-explore",
+          "cards": 6,
+          "target": "explore"
+        },
+        {
+          "hub": "ia-stories",
+          "cards": 4,
+          "target": "economics"
+        },
+        {
+          "hub": "ia-outcomes",
+          "cards": 4,
+          "target": "refusals"
+        },
+        {
+          "hub": "ia-round",
+          "cards": 4,
+          "target": "behind-round"
+        },
+        {
+          "hub": "ia-research",
+          "cards": 4,
+          "target": "research"
+        }
+      ],
+      "issues": [],
+      "contentSections": 24,
+      "homePurpose": true,
+      "legacyMenu": true,
+      "checkedCards": 26
+    },
+    {
+      "language": "en",
+      "width": 390,
+      "hubs": [
+        {
+          "hub": "ia-understand",
+          "cards": 4,
+          "target": "how"
+        },
+        {
+          "hub": "ia-explore",
+          "cards": 6,
+          "target": "explore"
+        },
+        {
+          "hub": "ia-stories",
+          "cards": 4,
+          "target": "economics"
+        },
+        {
+          "hub": "ia-outcomes",
+          "cards": 4,
+          "target": "refusals"
+        },
+        {
+          "hub": "ia-round",
+          "cards": 4,
+          "target": "behind-round"
+        },
+        {
+          "hub": "ia-research",
+          "cards": 4,
+          "target": "research"
+        }
+      ],
+      "issues": [],
+      "contentSections": 24,
+      "homePurpose": true,
+      "legacyMenu": true,
+      "checkedCards": 26
+    },
+    {
+      "language": "en",
+      "width": 1440,
+      "hubs": [
+        {
+          "hub": "ia-understand",
+          "cards": 4,
+          "target": "how"
+        },
+        {
+          "hub": "ia-explore",
+          "cards": 6,
+          "target": "explore"
+        },
+        {
+          "hub": "ia-stories",
+          "cards": 4,
+          "target": "economics"
+        },
+        {
+          "hub": "ia-outcomes",
+          "cards": 4,
+          "target": "refusals"
+        },
+        {
+          "hub": "ia-round",
+          "cards": 4,
+          "target": "behind-round"
+        },
+        {
+          "hub": "ia-research",
+          "cards": 4,
+          "target": "research"
+        }
+      ],
+      "issues": [],
+      "contentSections": 24,
+      "homePurpose": true,
+      "legacyMenu": true,
+      "checkedCards": 26
+    },
+    {
+      "language": "de",
+      "width": 390,
+      "hubs": [
+        {
+          "hub": "ia-understand",
+          "cards": 4,
+          "target": "how"
+        },
+        {
+          "hub": "ia-explore",
+          "cards": 6,
+          "target": "explore"
+        },
+        {
+          "hub": "ia-stories",
+          "cards": 4,
+          "target": "economics"
+        },
+        {
+          "hub": "ia-outcomes",
+          "cards": 4,
+          "target": "refusals"
+        },
+        {
+          "hub": "ia-round",
+          "cards": 4,
+          "target": "behind-round"
+        },
+        {
+          "hub": "ia-research",
+          "cards": 4,
+          "target": "research"
+        }
+      ],
+      "issues": [],
+      "contentSections": 24,
+      "homePurpose": true,
+      "legacyMenu": true,
+      "checkedCards": 26
+    },
+    {
+      "language": "de",
+      "width": 1440,
+      "hubs": [
+        {
+          "hub": "ia-understand",
+          "cards": 4,
+          "target": "how"
+        },
+        {
+          "hub": "ia-explore",
+          "cards": 6,
+          "target": "explore"
+        },
+        {
+          "hub": "ia-stories",
+          "cards": 4,
+          "target": "economics"
+        },
+        {
+          "hub": "ia-outcomes",
+          "cards": 4,
+          "target": "refusals"
+        },
+        {
+          "hub": "ia-round",
+          "cards": 4,
+          "target": "behind-round"
+        },
+        {
+          "hub": "ia-research",
+          "cards": 4,
+          "target": "research"
+        }
+      ],
+      "issues": [],
+      "contentSections": 24,
+      "homePurpose": true,
+      "legacyMenu": true,
+      "checkedCards": 26
+    },
+    {
+      "language": "fr",
+      "width": 390,
+      "hubs": [
+        {
+          "hub": "ia-understand",
+          "cards": 4,
+          "target": "how"
+        },
+        {
+          "hub": "ia-explore",
+          "cards": 6,
+          "target": "explore"
+        },
+        {
+          "hub": "ia-stories",
+          "cards": 4,
+          "target": "economics"
+        },
+        {
+          "hub": "ia-outcomes",
+          "cards": 4,
+          "target": "refusals"
+        },
+        {
+          "hub": "ia-round",
+          "cards": 4,
+          "target": "behind-round"
+        },
+        {
+          "hub": "ia-research",
+          "cards": 4,
+          "target": "research"
+        }
+      ],
+      "issues": [],
+      "contentSections": 24,
+      "homePurpose": true,
+      "legacyMenu": true,
+      "checkedCards": 26
+    },
+    {
+      "language": "fr",
+      "width": 1440,
+      "hubs": [
+        {
+          "hub": "ia-understand",
+          "cards": 4,
+          "target": "how"
+        },
+        {
+          "hub": "ia-explore",
+          "cards": 6,
+          "target": "explore"
+        },
+        {
+          "hub": "ia-stories",
+          "cards": 4,
+          "target": "economics"
+        },
+        {
+          "hub": "ia-outcomes",
+          "cards": 4,
+          "target": "refusals"
+        },
+        {
+          "hub": "ia-round",
+          "cards": 4,
+          "target": "behind-round"
+        },
+        {
+          "hub": "ia-research",
+          "cards": 4,
+          "target": "research"
+        }
+      ],
+      "issues": [],
+      "contentSections": 24,
+      "homePurpose": true,
+      "legacyMenu": true,
+      "checkedCards": 26
+    }
+  ],
+  "screenshots": [
+    "audit-ia-b2/it-390-home.png",
+    "audit-ia-b2/it-390-stories.png",
+    "audit-ia-b2/en-1440-home.png",
+    "audit-ia-b2/en-1440-stories.png"
+  ],
+  "issues": [],
+  "source": "GitHub feature branch build",
+  "isHumanUsabilityTest": false,
+  "independentPages": 39
+}

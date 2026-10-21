@@ -82,7 +82,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.ok(document.querySelector('.hero h1').textContent.includes('Connecting the Dots')&&document.querySelectorAll('.audienceDiscovery').length===3,page+' the project itself must be explained immediately');
   assert.ok(document.querySelector('[data-i18n="heroPlain"]').textContent.includes('.lugano'),page+' the candidate string caveat must be visible');
   assert.ok(document.querySelector('[data-i18n="iaProjectDefinition"]').textContent.length>90,page+' project purpose lacks meaningful detail');
-  assert.ok(document.querySelector('.iaHomeJumpList a[href="#ia-research"]'),page+' the novice cannot see direct paths');
+  assert.ok(document.querySelector('.iaHomeJumpList a[data-open-section="research"][data-open-anchor="research-citation-guide"]'),page+' the novice cannot see direct paths');
   assert.ok(document.querySelector('#ia-research a[href="https://doi.org/10.5281/zenodo.23288603"]'),page+' RR2 version-specific DOI not immediately available');
   assert.equal(document.querySelector('#ia-explore [data-b2-resource="atlas"]').getAttribute('href'),(alias?'./':'../')+'applications/'+language+'/',page+' 2026 Atlas should remain in the same branch and locale');
   assert.equal(document.querySelector('#ia-explore .iaExploreGovernance [data-b2-resource="access"]').getAttribute('href'),'#governance-access',page+' native access chapter link missing');

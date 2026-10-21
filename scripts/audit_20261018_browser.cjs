@@ -97,15 +97,16 @@ async function downloadCSV(page,requests){
     assert.deepEqual(tocIdentity.duplicates,[],'TOC must not create duplicate IDs');
     assert.deepEqual(tocIdentity.after,tocIdentity.before,'Repeated TOC rendering must preserve every existing ID');
     scenario.checks.push('unique and stable IDs after repeated TOC rendering');
-    assert.deepEqual(await page.locator('.iaHomeJumpList a').evaluateAll(links=>links.map(link=>link.dataset.openSection)),paths,'Home must expose all six journeys in navigation order');
+    assert.deepEqual(await page.locator('.iaHomeJumpList a').evaluateAll(links=>links.map(link=>link.dataset.openSection)),['overview','explore','research'],'Home must offer three direct reader intentions');
+    assert.deepEqual(await page.locator('.iaPrimaryLink').evaluateAll(links=>links.map(link=>link.dataset.b2Area)),paths,'All six journeys remain in primary navigation order');
     for(const area of paths){
-     await click(page,page.locator('.iaHomeJumpList a[data-open-section="'+area+'"]'));
+     await click(page,page.locator('.iaPrimaryLink[data-b2-area="'+area+'"]'));
      await page.locator('#'+area+'.section.active').waitFor({state:'visible'});
      assert.equal(await page.locator('.iaPrimaryLink[aria-current="location"]').getAttribute('data-b2-area'),area,'Home entry activates wrong primary area');
      await click(page,page.locator('.brand'));
      await page.locator('#overview.section.active').waitFor({state:'visible'});
     }
-    scenario.checks.push('six actionable Home journeys');
+    scenario.checks.push('three distinct Home intentions and six actionable primary journeys');
 
     await goto(page,language,'?tab=lugano');
     assert.equal(await page.locator('#lugano > .authorDisclosure').count(),1,'Author role disclosure must appear once');

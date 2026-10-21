@@ -1,0 +1,230 @@
+{
+  "version": "0.7.92",
+  "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
+  "scope": "Original evidence text nodes, source links and fragments; navigation intentionally revised",
+  "pages": [
+    {
+      "file": "index.html",
+      "language": "en",
+      "chapters": 23,
+      "reordered": 10,
+      "protectedTexts": 7756,
+      "protectedLinks": 892,
+      "protectedIds": 297,
+      "hubs": 6,
+      "homeIntents": 3
+    },
+    {
+      "file": "it/index.html",
+      "language": "it",
+      "chapters": 23,
+      "reordered": 10,
+      "protectedTexts": 7486,
+      "protectedLinks": 892,
+      "protectedIds": 297,
+      "hubs": 6,
+      "homeIntents": 3
+    },
+    {
+      "file": "en/index.html",
+      "language": "en",
+      "chapters": 23,
+      "reordered": 10,
+      "protectedTexts": 7756,
+      "protectedLinks": 892,
+      "protectedIds": 297,
+      "hubs": 6,
+      "homeIntents": 3
+    },
+    {
+      "file": "de/index.html",
+      "language": "de",
+      "chapters": 23,
+      "reordered": 10,
+      "protectedTexts": 7670,
+      "protectedLinks": 892,
+      "protectedIds": 297,
+      "hubs": 6,
+      "homeIntents": 3
+    },
+    {
+      "file": "fr/index.html",
+      "language": "fr",
+      "chapters": 23,
+      "reordered": 10,
+      "protectedTexts": 7626,
+      "protectedLinks": 892,
+      "protectedIds": 297,
+      "hubs": 6,
+      "homeIntents": 3
+    },
+    {
+      "file": "applications/it/index.html",
+      "language": "it",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "applications/en/index.html",
+      "language": "en",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "applications/de/index.html",
+      "language": "de",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "applications/fr/index.html",
+      "language": "fr",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "inside-the-round/it/index.html",
+      "language": "it",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "inside-the-round/en/index.html",
+      "language": "en",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "inside-the-round/de/index.html",
+      "language": "de",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "inside-the-round/fr/index.html",
+      "language": "fr",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "behind-the-round/it/background-screening/index.html",
+      "language": "it",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "behind-the-round/it/index.html",
+      "language": "it",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "behind-the-round/it/objectors-eoi/index.html",
+      "language": "it",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "behind-the-round/it/replacement-strings/index.html",
+      "language": "it",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "behind-the-round/it/wdo-identity/index.html",
+      "language": "it",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "behind-the-round/en/background-screening/index.html",
+      "language": "en",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "behind-the-round/en/index.html",
+      "language": "en",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "behind-the-round/en/objectors-eoi/index.html",
+      "language": "en",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "behind-the-round/en/replacement-strings/index.html",
+      "language": "en",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "behind-the-round/en/wdo-identity/index.html",
+      "language": "en",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "behind-the-round/de/background-screening/index.html",
+      "language": "de",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "behind-the-round/de/index.html",
+      "language": "de",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "behind-the-round/de/objectors-eoi/index.html",
+      "language": "de",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "behind-the-round/de/replacement-strings/index.html",
+      "language": "de",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "behind-the-round/de/wdo-identity/index.html",
+      "language": "de",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "behind-the-round/fr/background-screening/index.html",
+      "language": "fr",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "behind-the-round/fr/index.html",
+      "language": "fr",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "behind-the-round/fr/objectors-eoi/index.html",
+      "language": "fr",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "behind-the-round/fr/replacement-strings/index.html",
+      "language": "fr",
+      "independentArticle": true,
+      "body": "preserved"
+    },
+    {
+      "file": "behind-the-round/fr/wdo-identity/index.html",
+      "language": "fr",
+      "independentArticle": true,
+      "body": "preserved"
+    }
+  ]
+}

@@ -1,5 +1,10 @@
 # v0.7.91 - 20 October 2026
 
+## v0.7.92 - 2026-10-21
+
+Reader-first pathways across the publication: three Home intentions, six coherent landings, ten reordered chapters, contextual breadcrumbs, local outlines, a complete index and selected onward links in four languages. Existing Economics order, scholarly evidence, citations, frozen CSVs, previous ZIPs and historic URLs are retained. The current-pack citation label follows publication metadata. See `docs/READER_FIRST_2026-10-21.md` for exact scope and validation limits.
+
+
 - Reordered Economics into value, reach, cases, concentration, cycles and the 2026 analysis.
 - Preserved fourteen original blocks, eight models, eight cases, sources and legacy fragments.
 - Six-step table of contents and proper subheading hierarchy in four languages.

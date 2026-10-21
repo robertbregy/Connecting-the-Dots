@@ -1,0 +1,55 @@
+/* Shared reading navigation. Uses the existing light/dark design tokens. */
+.readerTrail{display:flex;flex-wrap:wrap;gap:5px 10px;align-items:center;margin:4px 0 12px;padding:0 2px;font-size:.85rem;line-height:1.5;color:var(--muted);overflow-wrap:anywhere}
+.readerTrail a{display:inline-flex;align-items:center;min-height:36px;color:var(--accent-text,var(--text));text-decoration:underline;text-underline-offset:3px}
+.readerTrail [aria-current]{font-weight:600;color:var(--text)}
+.readerOutline{margin:0 0 18px;border:1px solid var(--border);border-radius:12px;background:var(--surface);color:var(--text);overflow:hidden}
+.readerOutline>summary{min-height:44px;padding:12px 17px;cursor:pointer;font-weight:650;font-size:.9rem;line-height:1.45}
+.readerToc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:0 10px 10px;gap:5px}
+.readerTocLink{display:flex;align-items:center;min-height:44px;padding:9px 12px;border-radius:7px;color:var(--text);background:var(--surface2);font-size:.87rem;line-height:1.45;text-decoration:none;overflow-wrap:anywhere;hyphens:auto}
+.readerTocLink:hover{text-decoration:underline;text-underline-offset:3px}
+.readerNext{margin:40px 0 12px;padding:25px 0 12px;border-top:1px solid var(--border);color:var(--text);clear:both}
+.readerNext>h2{font-size:clamp(1.2rem,2vw,1.65rem);line-height:1.3;letter-spacing:-.02em;margin:0 0 17px;max-width:none}
+.readerNextGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.readerNextCard{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:7px;min-width:0;min-height:110px;padding:20px 44px 20px 20px;background:var(--surface);border:1px solid var(--border);border-radius:14px;text-decoration:none;color:var(--text)!important;overflow-wrap:anywhere}
+.readerRelation{font-size:.83rem;line-height:1.45;color:var(--muted);font-weight:500}
+.readerNextCard strong{font-size:1.05rem;line-height:1.4;font-weight:700}
+.readerArrow{position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:1.3rem}
+.readerNextCard:hover strong{text-decoration:underline;text-underline-offset:4px}
+.readerUtilities{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between;margin-top:14px}
+.readerUtilities a{display:inline-flex;align-items:center;min-height:44px;color:var(--accent-text,var(--text));text-underline-offset:3px;font-size:.85rem}
+.readerStartHere{display:block;font-size:.74rem;font-weight:650;letter-spacing:.04em;margin-bottom:10px;color:var(--accent-text,var(--text))}
+.readerFeatured{border-color:var(--accent-text,var(--border))}
+.iaHub .iaHubContext{margin-top:20px;margin-bottom:0}
+.iaHomeJumpList.readerIntents{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.iaHomeJumpList.readerIntents .readerIntent{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;min-height:142px;padding:22px;gap:12px;text-align:left;white-space:normal}
+.readerIntent strong{font-size:1.15rem;line-height:1.3;color:var(--text)}
+.readerIntent>span{font-size:.94rem;line-height:1.55;color:var(--muted);max-width:38ch;text-transform:none;font-weight:400}
+.readerIndex{margin:40px 0 20px;padding:0 22px;border:1px solid var(--border);border-radius:14px;background:var(--surface);color:var(--text)}
+.readerIndex>summary{min-height:52px;display:list-item;padding:18px 0;cursor:pointer;line-height:1.45;font-weight:650}
+.readerIndex>p{max-width:72ch;line-height:1.6;color:var(--muted)}
+.readerIndexGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 25px;padding:10px 0 22px}
+.readerIndexGrid nav{display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+.readerIndexGrid h2{font-size:1rem;line-height:1.4;margin:0 0 7px}
+.readerIndexGrid a{display:inline-flex;align-items:center;min-height:44px;padding:7px 0;color:var(--text);font-size:.88rem;line-height:1.4;text-underline-offset:3px;overflow-wrap:anywhere}
+.readerIndexTrigger{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+.readerOwned a:focus-visible,.readerOwned summary:focus-visible,.readerIndexTrigger:focus-visible,.readerIntent:focus-visible,.readerResearchLink:focus-visible{outline:3px solid var(--accent-text,#0068d7);outline-offset:4px}
+[data-reader-pathways]>.panel>p:not(.small):not(.note),[data-reader-pathways]>.panel>.sectionLead{max-width:76ch;line-height:1.65}
+.readerStandaloneNext{max-width:100%;box-sizing:border-box}
+@media(max-width:900px){.readerToc{grid-template-columns:repeat(2,minmax(0,1fr))}.readerIndexGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.readerNextGrid,.iaHomeJumpList.readerIntents{grid-template-columns:1fr}.readerNextCard{min-height:96px;padding:18px 42px 18px 18px}.readerNext{margin-top:26px}.iaHomeJumpList.readerIntents .readerIntent{min-height:0;padding:18px;gap:8px}.readerTrail{gap:3px 8px;font-size:.8rem}.readerTrail a{min-height:44px}.readerIndex{padding:0 16px}.readerIndexTrigger{font-size:.8rem;padding:8px!important}.readerResearchLink{font-size:.85rem}}
+@media(max-width:400px){.readerToc{grid-template-columns:1fr}.readerIndexGrid{grid-template-columns:1fr}.readerIndexTrigger{min-height:44px}}
+@media(prefers-reduced-motion:reduce){.readerOwned *,.readerIntent{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media print{.readerTrail,.readerOutline,.readerNext,.readerIndex,.readerIndexTrigger{display:none!important}}
+
+.topbar .control{min-height:44px}.topbar #themeBtn{min-width:44px}
+
+/* Tables remain scrollable with keyboard; source chips meet target spacing. */
+#timeline .tableWrap[tabindex],#timeline .tldTable[tabindex]{max-width:100%;overflow-x:auto}
+#timeline .tableWrap:focus-visible,#timeline .tldTable:focus-visible{outline:3px solid var(--accent-text,#0068d7);outline-offset:3px}
+#timeline .tldSources{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+#timeline .tldSources a{display:inline-flex;align-items:center;min-height:32px;padding:5px 0;line-height:1.5;max-width:100%;overflow-wrap:anywhere}
+/* Allow long words and identifiers to reflow when readers enlarge the text. */
+#how,#research{overflow-wrap:anywhere}
+#how .panel,#research .panel,#how .readerUtilities a,#research .readerUtilities a{min-width:0;max-width:100%}
+#research .doiHero a{min-width:0;max-width:100%}
+@media(max-width:680px){#timeline .tldSources a{min-height:44px}}

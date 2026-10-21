@@ -1,0 +1,1097 @@
+{
+  "schemaVersion": 1,
+  "languages": [
+    "it",
+    "en",
+    "de",
+    "fr"
+  ],
+  "version": "reader-first-v1",
+  "ui": {
+    "home": {
+      "it": "Home",
+      "en": "Home",
+      "de": "Startseite",
+      "fr": "Accueil"
+    },
+    "youAreHere": {
+      "it": "Ti trovi qui",
+      "en": "You are here",
+      "de": "Sie sind hier",
+      "fr": "Vous êtes ici"
+    },
+    "guide": {
+      "it": "In questa pagina",
+      "en": "On this page",
+      "de": "Auf dieser Seite",
+      "fr": "Dans cette page"
+    },
+    "next": {
+      "it": "Il prossimo punto da collegare",
+      "en": "The next dot to connect",
+      "de": "Der nächste Zusammenhang",
+      "fr": "Le prochain point à relier"
+    },
+    "index": {
+      "it": "Tutti i capitoli, a colpo d'occhio",
+      "en": "Every chapter at a glance",
+      "de": "Alle Kapitel auf einen Blick",
+      "fr": "Tous les chapitres en un coup d'oeil"
+    },
+    "indexIntro": {
+      "it": "Un indice unico, con accesso diretto a ogni capitolo. Puoi seguire il racconto o andare subito a ciò che cerchi.",
+      "en": "One index, with a direct route to every chapter. Follow a story or go straight to what you need.",
+      "de": "Ein Verzeichnis mit direktem Zugang zu jedem Kapitel. Folgen Sie einer Geschichte oder gehen Sie direkt zu Ihrem Thema.",
+      "fr": "Un seul sommaire, avec un accès direct à chaque chapitre. Suivez une histoire ou allez directement à ce que vous cherchez."
+    },
+    "homeTitle": {
+      "it": "Da dove vuoi cominciare?",
+      "en": "Where would you like to start?",
+      "de": "Wo möchten Sie anfangen?",
+      "fr": "Par où commencer ?"
+    },
+    "homeLead": {
+      "it": "Non serve conoscere le sigle. Scegli una porta d'ingresso: i percorsi si incontrano, le fonti restano accessibili.",
+      "en": "No acronyms required. Choose a starting point: the paths connect, and the sources are always within reach.",
+      "de": "Vorkenntnisse sind nicht nötig. Wählen Sie einen Einstieg: Die Wege verbinden sich, die Quellen bleiben zugänglich.",
+      "fr": "Pas besoin de connaître les sigles. Choisissez un point de départ : les parcours se rejoignent, les sources restent accessibles."
+    },
+    "discover": {
+      "it": "Voglio capire",
+      "en": "I want to understand",
+      "de": "Ich möchte verstehen",
+      "fr": "Je veux comprendre"
+    },
+    "discoverBody": {
+      "it": "Quattro situazioni quotidiane per scoprire perché un nome su Internet ci riguarda.",
+      "en": "Four everyday situations that show why an Internet name matters to us.",
+      "de": "Vier Alltagssituationen zeigen, warum Internetnamen uns betreffen.",
+      "fr": "Quatre situations du quotidien pour comprendre pourquoi un nom sur Internet nous concerne."
+    },
+    "explore": {
+      "it": "Voglio esplorare",
+      "en": "I want to explore",
+      "de": "Ich möchte erkunden",
+      "fr": "Je veux explorer"
+    },
+    "exploreBody": {
+      "it": "Cerca un nome, segui la sua storia, confronta candidature e risultati.",
+      "en": "Look up a name, follow its history and compare applications and outcomes.",
+      "de": "Suchen Sie einen Namen, verfolgen Sie seine Geschichte und vergleichen Sie Anträge und Ergebnisse.",
+      "fr": "Cherchez un nom, suivez son histoire, comparez les candidatures et leurs suites."
+    },
+    "verify": {
+      "it": "Voglio verificare",
+      "en": "I want to verify",
+      "de": "Ich möchte nachprüfen",
+      "fr": "Je veux vérifier"
+    },
+    "verifyBody": {
+      "it": "Vai direttamente a metodo, dati scaricabili e versioni della ricerca da citare.",
+      "en": "Go straight to methods, downloadable data and citable research versions.",
+      "de": "Direkt zu Methoden, herunterladbaren Daten und zitierbaren Forschungsversionen.",
+      "fr": "Accédez directement à la méthode, aux données et aux versions de la recherche à citer."
+    },
+    "proof": {
+      "it": "Fonti e metodo",
+      "en": "Sources and method",
+      "de": "Quellen und Methode",
+      "fr": "Sources et méthode"
+    },
+    "mechanism": {
+      "it": "Per capire il meccanismo",
+      "en": "Understand the mechanism",
+      "de": "Den Mechanismus verstehen",
+      "fr": "Comprendre le mécanisme"
+    },
+    "cases": {
+      "it": "Per seguire le storie",
+      "en": "Follow the stories",
+      "de": "Den Geschichten folgen",
+      "fr": "Suivre les histoires"
+    },
+    "compare": {
+      "it": "Per confrontare i casi",
+      "en": "Compare the cases",
+      "de": "Fälle vergleichen",
+      "fr": "Comparer les cas"
+    },
+    "data": {
+      "it": "Per esplorare le prove",
+      "en": "Explore the evidence",
+      "de": "Die Belege erkunden",
+      "fr": "Explorer les preuves"
+    },
+    "consequence": {
+      "it": "Per capire le conseguenze",
+      "en": "Understand the consequences",
+      "de": "Die Folgen verstehen",
+      "fr": "Comprendre les conséquences"
+    },
+    "current": {
+      "it": "Per seguire il round",
+      "en": "Follow the round",
+      "de": "Die Runde verfolgen",
+      "fr": "Suivre le cycle"
+    },
+    "cite": {
+      "it": "Per verificare e citare",
+      "en": "Verify and cite",
+      "de": "Nachprüfen und zitieren",
+      "fr": "Vérifier et citer"
+    },
+    "backTop": {
+      "it": "Torna all'inizio del capitolo",
+      "en": "Back to the chapter start",
+      "de": "Zum Kapitelanfang",
+      "fr": "Revenir au début du chapitre"
+    },
+    "startHere": {
+      "it": "Comincia da qui",
+      "en": "Start here",
+      "de": "Hier beginnen",
+      "fr": "Commencez ici"
+    },
+    "fullIndex": {
+      "it": "Indice completo",
+      "en": "Full index",
+      "de": "Vollständiges Verzeichnis",
+      "fr": "Sommaire complet"
+    },
+    "readResearch": {
+      "it": "Metodo, dati e citazioni",
+      "en": "Methods, data and citations",
+      "de": "Methoden, Daten und Zitate",
+      "fr": "Méthode, données et citations"
+    }
+  },
+  "titles": {
+    "overview": {
+      "it": "La guida per cominciare",
+      "en": "The starting guide",
+      "de": "Der Einstieg",
+      "fr": "Le guide pour commencer"
+    },
+    "how": {
+      "it": "Come funzionano i domini",
+      "en": "How domains work",
+      "de": "Wie Domains funktionieren",
+      "fr": "Comment fonctionnent les domaines"
+    },
+    "beyond": {
+      "it": "Il DNS oltre il Web",
+      "en": "DNS beyond the Web",
+      "de": "DNS jenseits des Webs",
+      "fr": "Le DNS au-delà du Web"
+    },
+    "explore": {
+      "it": "Cerca un nome",
+      "en": "Look up a name",
+      "de": "Einen Namen suchen",
+      "fr": "Chercher un nom"
+    },
+    "timeline": {
+      "it": "La storia dei nomi",
+      "en": "The history of names",
+      "de": "Die Geschichte der Namen",
+      "fr": "L'histoire des noms"
+    },
+    "geography": {
+      "it": "Geografia del DNS",
+      "en": "DNS geography",
+      "de": "Geografie des DNS",
+      "fr": "Géographie du DNS"
+    },
+    "governance-access": {
+      "it": "Chi controlla l'accesso",
+      "en": "Who controls access",
+      "de": "Wer den Zugang kontrolliert",
+      "fr": "Qui contrôle l'accès"
+    },
+    "governance-sanctions": {
+      "it": "Sanzioni e DNS",
+      "en": "Sanctions and DNS",
+      "de": "Sanktionen und DNS",
+      "fr": "Sanctions et DNS"
+    },
+    "cities": {
+      "it": "Città e territori",
+      "en": "Cities and territories",
+      "de": "Städte und Regionen",
+      "fr": "Villes et territoires"
+    },
+    "economics": {
+      "it": "L'economia dei domini",
+      "en": "The domain economy",
+      "de": "Die Domainwirtschaft",
+      "fr": "L'économie des domaines"
+    },
+    "social": {
+      "it": "Lingue, comunità e identità",
+      "en": "Languages, communities and identity",
+      "de": "Sprachen, Gemeinschaften und Identität",
+      "fr": "Langues, communautés et identités"
+    },
+    "strange": {
+      "it": "Le sorprese di Internet",
+      "en": "Internet's surprises",
+      "de": "Die Überraschungen des Internets",
+      "fr": "Les surprises d'Internet"
+    },
+    "contention": {
+      "it": "Quando più candidati vogliono un nome",
+      "en": "When applicants want the same name",
+      "de": "Wenn mehrere denselben Namen wollen",
+      "fr": "Quand plusieurs candidats veulent un nom"
+    },
+    "disputes": {
+      "it": "Le controversie",
+      "en": "The disputes",
+      "de": "Die Streitfälle",
+      "fr": "Les controverses"
+    },
+    "refusals": {
+      "it": "Le candidature che si fermano",
+      "en": "Applications that stop",
+      "de": "Anträge, die nicht weiterkommen",
+      "fr": "Les candidatures qui s'arrêtent"
+    },
+    "cemetery": {
+      "it": "Il cimitero dei gTLD",
+      "en": "The gTLD cemetery",
+      "de": "Der gTLD-Friedhof",
+      "fr": "Le cimetière des gTLD"
+    },
+    "reveal": {
+      "it": "Il round 2026",
+      "en": "The 2026 round",
+      "de": "Die Runde 2026",
+      "fr": "Le cycle 2026"
+    },
+    "inside-round": {
+      "it": "La cronologia del round",
+      "en": "The round timeline",
+      "de": "Die Chronologie der Runde",
+      "fr": "La chronologie du cycle"
+    },
+    "behind-round": {
+      "it": "Le note dal campo",
+      "en": "Field Notes",
+      "de": "Feldnotizen",
+      "fr": "Notes de terrain"
+    },
+    "lugano": {
+      "it": "Il caso .lugano",
+      "en": "The .lugano case",
+      "de": "Der Fall .lugano",
+      "fr": "Le cas .lugano"
+    },
+    "research": {
+      "it": "Ricerca e citazioni",
+      "en": "Research and citations",
+      "de": "Forschung und Zitate",
+      "fr": "Recherche et citations"
+    },
+    "paper": {
+      "it": "Il working paper",
+      "en": "The working paper",
+      "de": "Das Arbeitspapier",
+      "fr": "Le document de travail"
+    },
+    "resources": {
+      "it": "Dati da scaricare",
+      "en": "Downloadable data",
+      "de": "Daten zum Herunterladen",
+      "fr": "Données à télécharger"
+    },
+    "sources": {
+      "it": "Metodo e fonti",
+      "en": "Methods and sources",
+      "de": "Methoden und Quellen",
+      "fr": "Méthode et sources"
+    }
+  },
+  "areas": {
+    "understand": [
+      "how",
+      "beyond"
+    ],
+    "explore": [
+      "explore",
+      "timeline",
+      "geography",
+      "governance-access",
+      "governance-sanctions"
+    ],
+    "stories": [
+      "strange",
+      "social",
+      "cities",
+      "economics"
+    ],
+    "outcomes": [
+      "contention",
+      "disputes",
+      "refusals",
+      "cemetery"
+    ],
+    "round": [
+      "reveal",
+      "inside-round",
+      "behind-round",
+      "lugano"
+    ],
+    "research": [
+      "research",
+      "paper",
+      "resources",
+      "sources"
+    ]
+  },
+  "hubLeads": {
+    "understand": {
+      "it": "Un indirizzo familiare, poi il sistema che lo fa funzionare. Parti dalla guida quotidiana; passa alle regole solo quando ti servono.",
+      "en": "A familiar address, then the system behind it. Start with everyday examples and move to the rules when you need them.",
+      "de": "Eine vertraute Adresse, dann das System dahinter. Beginnen Sie mit Alltagsbeispielen und vertiefen Sie die Regeln nach Bedarf.",
+      "fr": "Une adresse familière, puis le système qui la fait fonctionner. Partez du quotidien et abordez les règles selon vos besoins."
+    },
+    "explore": {
+      "it": "Cerchi una storia o una prova? Il catalogo segue i nomi; l'atlante segue le singole candidature. Poi allarga lo sguardo a territori e potere.",
+      "en": "Looking for a story or evidence? The catalogue follows names; the atlas follows individual applications. Then explore geography and power.",
+      "de": "Suchen Sie eine Geschichte oder einen Beleg? Der Katalog folgt Namen, der Atlas einzelnen Anträgen. Danach geht es um Geografie und Macht.",
+      "fr": "Vous cherchez une histoire ou une preuve ? Le catalogue suit les noms ; l'atlas suit les candidatures. Élargissez ensuite le regard aux territoires et au pouvoir."
+    },
+    "stories": {
+      "it": "Una sigla può cambiare significato, rappresentare una comunità o diventare un mercato. Parti dalla sorpresa e segui le sue conseguenze.",
+      "en": "A suffix can change meaning, represent a community or become a market. Start with a surprise and follow its consequences.",
+      "de": "Eine Endung kann ihre Bedeutung wechseln, eine Gemeinschaft vertreten oder zum Markt werden. Beginnen Sie mit einer Überraschung und folgen Sie den Auswirkungen.",
+      "fr": "Une extension peut changer de sens, représenter une communauté ou devenir un marché. Partez d'une surprise et suivez ses conséquences."
+    },
+    "outcomes": {
+      "it": "Più richieste per lo stesso nome, interessi in conflitto, progetti interrotti. Segui il percorso senza confondere contesa, rifiuto e chiusura.",
+      "en": "Several requests for one name, competing interests, projects that stop. Follow the process without confusing contention, refusal and closure.",
+      "de": "Mehrere Anträge für einen Namen, widerstreitende Interessen, beendete Projekte. Unterscheiden Sie Namenskonkurrenz, Ablehnung und Schließung.",
+      "fr": "Plusieurs demandes pour un nom, des intérêts opposés, des projets interrompus. Distinguez concurrence, refus et fermeture."
+    },
+    "round": {
+      "it": "Prima il quadro generale, poi la cronologia e le verifiche. Ogni dato ha una data: una candidatura pubblicata non è un dominio già attivo.",
+      "en": "First the overview, then the timeline and investigations. Every observation has a date: a published application is not an active domain.",
+      "de": "Zuerst der Überblick, dann Chronologie und Prüfungen. Jede Beobachtung hat ein Datum: Ein veröffentlichter Antrag ist keine aktive Domain.",
+      "fr": "D'abord la vue d'ensemble, puis la chronologie et les enquêtes. Chaque observation est datée : une candidature publiée n'est pas un domaine actif."
+    },
+    "research": {
+      "it": "Verifica una tesi, scarica i dati o scegli la versione da citare. Il sito in evoluzione, il working paper e gli archivi scientifici restano distinti.",
+      "en": "Check a claim, download the data or choose a version to cite. The evolving site, working paper and scientific archives remain distinct.",
+      "de": "Prüfen Sie eine These, laden Sie Daten herunter oder wählen Sie eine zitierbare Version. Website, Arbeitspapier und Forschungsarchive bleiben getrennt.",
+      "fr": "Vérifiez une thèse, téléchargez les données ou choisissez une version à citer. Le site, le document de travail et les archives scientifiques restent distincts."
+    }
+  },
+  "next": {
+    "how": [
+      [
+        "beyond",
+        "mechanism"
+      ],
+      [
+        "contention",
+        "consequence"
+      ]
+    ],
+    "beyond": [
+      [
+        "governance-access",
+        "consequence"
+      ],
+      [
+        "social",
+        "cases"
+      ]
+    ],
+    "explore": [
+      [
+        "timeline",
+        "cases"
+      ],
+      [
+        "resources",
+        "cite"
+      ]
+    ],
+    "timeline": [
+      [
+        "social",
+        "consequence"
+      ],
+      [
+        "explore",
+        "data"
+      ]
+    ],
+    "geography": [
+      [
+        "governance-access",
+        "mechanism"
+      ],
+      [
+        "economics",
+        "consequence"
+      ]
+    ],
+    "governance-access": [
+      [
+        "governance-sanctions",
+        "compare"
+      ],
+      [
+        "geography",
+        "data"
+      ]
+    ],
+    "governance-sanctions": [
+      [
+        "governance-access",
+        "compare"
+      ],
+      [
+        "reveal",
+        "current"
+      ]
+    ],
+    "cities": [
+      [
+        "lugano",
+        "cases"
+      ],
+      [
+        "cemetery",
+        "compare"
+      ]
+    ],
+    "economics": [
+      [
+        "cemetery",
+        "consequence"
+      ],
+      [
+        "geography",
+        "data"
+      ]
+    ],
+    "social": [
+      [
+        "cities",
+        "compare"
+      ],
+      [
+        "disputes",
+        "consequence"
+      ]
+    ],
+    "strange": [
+      [
+        "social",
+        "consequence"
+      ],
+      [
+        "timeline",
+        "cases"
+      ]
+    ],
+    "contention": [
+      [
+        "disputes",
+        "compare"
+      ],
+      [
+        "refusals",
+        "consequence"
+      ]
+    ],
+    "disputes": [
+      [
+        "refusals",
+        "consequence"
+      ],
+      [
+        "contention",
+        "mechanism"
+      ]
+    ],
+    "refusals": [
+      [
+        "cemetery",
+        "consequence"
+      ],
+      [
+        "explore",
+        "data"
+      ]
+    ],
+    "cemetery": [
+      [
+        "cities",
+        "consequence"
+      ],
+      [
+        "refusals",
+        "compare"
+      ]
+    ],
+    "reveal": [
+      [
+        "inside-round",
+        "current"
+      ],
+      [
+        "explore",
+        "data",
+        "aps-native"
+      ]
+    ],
+    "inside-round": [
+      [
+        "behind-round",
+        "cases"
+      ],
+      [
+        "lugano",
+        "compare"
+      ]
+    ],
+    "behind-round": [
+      [
+        "inside-round",
+        "current"
+      ],
+      [
+        "sources",
+        "cite"
+      ]
+    ],
+    "lugano": [
+      [
+        "cities",
+        "compare"
+      ],
+      [
+        "inside-round",
+        "current"
+      ]
+    ],
+    "research": [
+      [
+        "paper",
+        "mechanism"
+      ],
+      [
+        "resources",
+        "data"
+      ]
+    ],
+    "paper": [
+      [
+        "sources",
+        "cite"
+      ],
+      [
+        "resources",
+        "data"
+      ]
+    ],
+    "resources": [
+      [
+        "sources",
+        "cite"
+      ],
+      [
+        "explore",
+        "data"
+      ]
+    ],
+    "sources": [
+      [
+        "research",
+        "cite",
+        "research-citation-guide"
+      ],
+      [
+        "resources",
+        "data"
+      ]
+    ]
+  },
+  "orders": {
+    "how": [
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      7,
+      0,
+      12,
+      1,
+      2,
+      10,
+      11,
+      13,
+      14,
+      15,
+      16
+    ],
+    "social": [
+      0,
+      5,
+      6,
+      1,
+      2,
+      4,
+      3
+    ],
+    "refusals": [
+      0,
+      3,
+      5,
+      4,
+      2,
+      1
+    ],
+    "disputes": [
+      0,
+      5,
+      4,
+      3,
+      1,
+      2
+    ],
+    "strange": [
+      0,
+      2,
+      3,
+      1,
+      4
+    ],
+    "sources": [
+      0,
+      2,
+      3,
+      1,
+      4,
+      6,
+      5
+    ],
+    "resources": [
+      0,
+      2,
+      1
+    ],
+    "timeline": [
+      0,
+      1,
+      3,
+      4,
+      2
+    ],
+    "contention": [
+      0,
+      5,
+      4,
+      2,
+      3,
+      1
+    ]
+  },
+  "shape": {
+    "how": [
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel namespaceMapPanel",
+        "heading": "how-part-1"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel field2026Focus",
+        "heading": null
+      },
+      {
+        "tag": "ASIDE",
+        "id": "",
+        "classes": "panel accessReadingLink",
+        "heading": "guideRelatedHeading"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "scopeHeader",
+        "heading": null
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": "how-part-2"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": "how-part-3"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel lifecyclePanel",
+        "heading": "how-part-4"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel economicsPanel",
+        "heading": "how-part-5"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": "how-part-6"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel tldModelsPanel",
+        "heading": "how-part-7"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": "how-part-8"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel glossaryPanel",
+        "heading": "how-glossary"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel controlLeversPanel",
+        "heading": "how-part-9"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "scopeHeader luganoScope",
+        "heading": null
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": "how-part-10"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": "how-part-11"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": "how-part-12"
+      }
+    ],
+    "social": [
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel socialHero",
+        "heading": "social-part-1"
+      },
+      {
+        "tag": "DIV",
+        "id": "tld-cultural-social",
+        "classes": "panel tldResearch",
+        "heading": null
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel field2026Focus",
+        "heading": null
+      },
+      {
+        "tag": "DETAILS",
+        "id": "",
+        "classes": "panel crossRoundDisclosure",
+        "heading": null
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": "social-part-3"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": "social-part-4"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": "social-part-5"
+      }
+    ],
+    "refusals": [
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel refusalsHero",
+        "heading": null
+      },
+      {
+        "tag": "DETAILS",
+        "id": "",
+        "classes": "panel crossRoundDisclosure",
+        "heading": null
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": null
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": null
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": null
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": null
+      }
+    ],
+    "disputes": [
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel disputesHero",
+        "heading": "disputes-part-1"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel field2026Focus",
+        "heading": null
+      },
+      {
+        "tag": "DETAILS",
+        "id": "",
+        "classes": "panel crossRoundDisclosure",
+        "heading": null
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": "disputes-part-3"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": "disputes-part-4"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": "disputes-part-5"
+      }
+    ],
+    "strange": [
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": "strange-part-1"
+      },
+      {
+        "tag": "DETAILS",
+        "id": "",
+        "classes": "panel crossRoundDisclosure",
+        "heading": null
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel semanticDriftPanel",
+        "heading": "strange-part-3"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel institutionalOdditiesPanel",
+        "heading": "strange-part-4"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": null
+      }
+    ],
+    "sources": [
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel authorDisclosure",
+        "heading": "sources-part-1"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel successPanel",
+        "heading": "sources-part-2"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": "sources-part-3"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "grid2",
+        "heading": "sources-part-4"
+      },
+      {
+        "tag": "DIV",
+        "id": "publication-updates",
+        "classes": "panel publicationUpdates",
+        "heading": "sources-part-6"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel feedbackPanel",
+        "heading": "report-error"
+      },
+      {
+        "tag": "DIV",
+        "id": "audit-documentary-corrections",
+        "classes": "panel",
+        "heading": null
+      }
+    ],
+    "resources": [
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": null
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": null
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": null
+      }
+    ],
+    "timeline": [
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": null
+      },
+      {
+        "tag": "DIV",
+        "id": "tld-cultural-trajectory",
+        "classes": "panel tldResearch",
+        "heading": null
+      },
+      {
+        "tag": "DIV",
+        "id": "tld-cultural-patterns",
+        "classes": "panel tldResearch",
+        "heading": null
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": null
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "grid2",
+        "heading": null
+      }
+    ],
+    "contention": [
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel chapterQuestion",
+        "heading": null
+      },
+      {
+        "tag": "DETAILS",
+        "id": "",
+        "classes": "panel crossRoundDisclosure",
+        "heading": null
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "grid2 contentionCompareGrid",
+        "heading": "contention-part-2"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": "contention-part-4"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "heading": "contention-part-5"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel wordPanel",
+        "heading": "contention-part-6"
+      }
+    ]
+  }
+}
