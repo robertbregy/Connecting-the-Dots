@@ -1,0 +1,30 @@
+name: Reader-first source snapshot
+on:
+  push:
+    branches: [reader-first-2026-10-21]
+    paths: ['.github/workflows/reader-first-export.yml']
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Package repository without Git credentials
+        run: |
+          git rev-parse HEAD > /tmp/source-ref.txt
+          tar --exclude='./.git' -czf /tmp/reader-first-source.tar.gz .
+          du -h /tmp/reader-first-source.tar.gz
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reader-first-source
+          path: |
+            /tmp/reader-first-source.tar.gz
+            /tmp/source-ref.txt
+          compression-level: 0
+          retention-days: 1
