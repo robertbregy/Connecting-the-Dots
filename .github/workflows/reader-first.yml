@@ -3,10 +3,13 @@ name: Reader-first navigation and accessibility
 on:
   push:
     branches: [reader-first-2026-10-21]
+    paths:
+      - '.github/workflows/reader-first.yml'
+      - 'scripts/reader-first.patch.04'
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: reader-first-${{ github.ref }}
@@ -14,47 +17,76 @@ concurrency:
 
 jobs:
   verify:
+    if: ${{ !contains(github.event.head_commit.message || '', '[skip reader]') }}
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Detect complete source change
+        id: source
+        run: |
+          if test -f scripts/reader-first.patch.04; then
+            echo 'ready=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'ready=false' >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/setup-node@v4
+        if: steps.source.outputs.ready == 'true'
         with:
           node-version: '22'
           cache: npm
       - uses: actions/setup-python@v5
+        if: steps.source.outputs.ready == 'true'
         with:
           python-version: '3.12'
-      - run: npm ci
-      - name: Map current routes and editorial structure
+      - name: Apply checked source delta on the isolated branch
+        if: steps.source.outputs.ready == 'true'
         run: |
-          node - <<'JS'
-          const fs=require('fs'),{parseHTML}=require('linkedom');
-          const {document:d}=parseHTML(fs.readFileSync('it/index.html','utf8'));
-          for(const s of d.querySelectorAll('main > section,main > .section')){
-            console.log('SECTION',s.id,s.className);
-            for(const n of s.querySelectorAll('h2,h3'))console.log(' HEADING',n.id,n.textContent.trim().replace(/\s+/g,' ').slice(0,180));
-            for(const a of s.querySelectorAll('.iaCard,.iaHomeCard,.iaHubCard,.iaPathCard'))console.log(' CARD',a.getAttribute('href'),a.textContent.trim().replace(/\s+/g,' ').slice(0,220));
-          }
-          console.log('HOME',d.querySelector('.iaHomeEntries')?.outerHTML||[...d.querySelectorAll('[class*="iaHome"]')].map(n=>n.outerHTML).join('\n').slice(0,12000));
-          console.log('HUB_SAMPLE',d.getElementById('ia-understand')?.outerHTML?.slice(0,16000));
-          console.log('BOTTOM',d.body.outerHTML.slice(-3500));
-          JS
-          python3 - <<'PY'
-          from pathlib import Path
-          print('SCRIPTS',*[str(p) for p in Path('scripts').iterdir()],sep='\n')
-          lines=Path('assets/app.js').read_text().splitlines()
-          keys=['function show','function setLang','function openSection','function activate','iaHome','iaHub','ia-understand','dispatchEvent','popstate','hashchange','DOMContentLoaded','function route']
-          seen=set()
-          for i,line in enumerate(lines):
-              if any(key in line for key in keys):
-                  for j in range(max(0,i-2),min(len(lines),i+9)):
-                      if j not in seen: print(f'APP {j+1}: {lines[j]}');seen.add(j)
-          PY
-      - name: Check reader-first changes when present
+          cat scripts/reader-first.patch.0[1-4] | base64 --decode | gzip --decompress > /tmp/reader-first.patch
+          echo '69da58d5abbcf5b528928b169a4bbb646cced2f1dfeed5b032e524ab5525a5f7  /tmp/reader-first.patch' | sha256sum --check
+          git apply --check /tmp/reader-first.patch
+          git apply /tmp/reader-first.patch
+      - name: Build and check every locale
+        if: steps.source.outputs.ready == 'true'
         run: |
-          if test -f scripts/install_reader_first.py; then python3 scripts/install_reader_first.py; fi
-          if test -f scripts/reconcile_reader_first.cjs; then
-            python3 build.py
-            node scripts/validate_reader_first.cjs
-          fi
+          npm ci
+          python3 build.py
+          node scripts/validate_multilingual.js
+          node scripts/validate_internet_access.js
+          CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
+          node scripts/validate_reader_first.cjs
+          python3 scripts/prepare_reader_review.py
+      - name: Install the existing pinned browser-test tools
+        if: steps.source.outputs.ready == 'true'
+        run: |
+          npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Exercise reading, keyboard, themes and mobile layouts
+        if: steps.source.outputs.ready == 'true'
+        run: node scripts/audit_reader_first.cjs
+      - name: Package the rendered pages for visual review
+        if: always() && steps.source.outputs.ready == 'true'
+        run: |
+          tar -czf /tmp/reader-built.tar.gz index.html it en de fr applications inside-the-round behind-the-round research docs publication.json data/publication.js data/manifest.json assets/reader.css assets/reader.js assets/app.js
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.source.outputs.ready == 'true'
+        with:
+          name: reader-first-review-${{ github.run_id }}
+          path: |
+            /tmp/ctd-reader-qa/
+            /tmp/reader-built.tar.gz
+          retention-days: 7
+      - name: Commit verified staging output without overwriting another push
+        if: success() && steps.source.outputs.ready == 'true'
+        run: |
+          test "$GITHUB_REF_NAME" = 'reader-first-2026-10-21'
+          git fetch origin "$GITHUB_REF_NAME"
+          test "$(git rev-parse FETCH_HEAD)" = "$(git rev-parse HEAD)"
+          rm -f scripts/reader-first.patch.0[1-4] .github/workflows/reader-first-export.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Implement reader-first pathways v0.7.92 [skip reader] [skip build]'
+          git push origin "HEAD:$GITHUB_REF_NAME"
