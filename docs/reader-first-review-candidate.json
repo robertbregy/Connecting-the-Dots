@@ -1490,7 +1490,7 @@
     },
     "behind-the-round/de/sanctions-and-dns/index.html": {
       "baselineSHA256": "a729b3af21770246b82590b03e037ff1fd6fbfeccfcacbbb108daea9315f0136",
-      "sha256": "9d4586e709073734b2a077b71660448d639952f7be789ee126268123a008bfd9",
+      "sha256": "3bad19d4fc7418e6fd092dc347a86168cbc91be1ccb3095715eda28436634aed",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1510,7 +1510,7 @@
     },
     "behind-the-round/de/who-controls-internet-access/index.html": {
       "baselineSHA256": "0373ba3210ac9dc6770a60f801f9b422f2a574e15ca36757f36e2084dee47d11",
-      "sha256": "f48207bf9274e0ac60669822fb9d448ed596ed477f1b48f7577e0f2e8b364f36",
+      "sha256": "efdcfd6ce74998d1e9962a9912fa4b24607eac67597eaa7b119b0c4d2512a9eb",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1565,7 +1565,7 @@
     },
     "behind-the-round/en/sanctions-and-dns/index.html": {
       "baselineSHA256": "4a89ca7ff3683cab2c635a226b4edab871f8d9852fb54a2d802ea5538b3642eb",
-      "sha256": "c6bba56e0a7e2ad4aa80c2fa1e40369d67302a95022704ec16ab93627541207b",
+      "sha256": "8c38737d016f2f865b43a95cf30456703d21f6edfc3e8ad45ab6bd16e7073ca6",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1585,7 +1585,7 @@
     },
     "behind-the-round/en/who-controls-internet-access/index.html": {
       "baselineSHA256": "ef63c49fbd9fee82b025fb8ba908fbff4f026f03c4d00922d720a8ca0e88560c",
-      "sha256": "a9015d79829c8f9c3942ad9caef15c377d4c49f3c788b5bad42b405d45c6f09a",
+      "sha256": "99d541411e73fa36e8d6b67b2bef2104f1e58d9ec577dbffa5e3f3a8d9d88e84",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1640,7 +1640,7 @@
     },
     "behind-the-round/fr/sanctions-and-dns/index.html": {
       "baselineSHA256": "3e491fbc08b588f6e46dce9f03fad63d738badcd7ae793e871b7afcafa9cada0",
-      "sha256": "3aa9697af13befce3a780cedd61dcb866f84bdec67d4683cd790c128431fdb73",
+      "sha256": "c1f5b5b57eb5527a481769dc1ae48c731bc4abb5a1c20129dbc222b61d46e762",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1660,7 +1660,7 @@
     },
     "behind-the-round/fr/who-controls-internet-access/index.html": {
       "baselineSHA256": "9b01d3ef0b99124a0b77a977b20b4967e4d86cd5442bcd0da79ea3ce00c63b49",
-      "sha256": "4960e1729cadf22a553389f1ef61ca516c5536550c49dacf3e1a2e26a22bff41",
+      "sha256": "508196e94cbe833f92fceb288235b11002ab00508d71276a58d74d472de6fed4",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1715,7 +1715,7 @@
     },
     "behind-the-round/it/sanctions-and-dns/index.html": {
       "baselineSHA256": "eb9f0663194f2a1d00f66f58f763b99f783aaea31d40584ba6d1aedae56b55d9",
-      "sha256": "20876d0b707fdf803ed3de3dd40ffef4c459ca0cce53d74c0b0b6a3cfef4d0da",
+      "sha256": "b935ded6c2d571adebafaedf99e88d5f0b87445e1b2ea46410d56291806d1f81",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1735,7 +1735,7 @@
     },
     "behind-the-round/it/who-controls-internet-access/index.html": {
       "baselineSHA256": "f7f8627965be401cc75ba0a240c610dfc8ef629ccac659230d0ddead0d885a71",
-      "sha256": "ba2f96b9b8b84d91250a988a7e2a2e5530735043ba17c5a29ab689f45d73fc00",
+      "sha256": "5def32176e5fd6cecd6d97182820bc4250bedfcfa3787006990e1bc899ee79ad",
       "rationaleIds": [
         "E05",
         "A19",
@@ -2070,7 +2070,7 @@
     },
     "research/index.html": {
       "baselineSHA256": "e9a26de35e6eada49de00b1d9df234d3f67c8e40f93591134477a064c0694245",
-      "sha256": "29f3296fd9f7f14d5a56f092f90338f1c384dbf47e4f93f9f48a7895d5fa9d98",
+      "sha256": "29966410b3eb1032eaafc3b71a6f1348ee6e1281ff59ce5bab1b6d2f4ae18557",
       "rationaleIds": [
         "C05",
         "T02",
@@ -2948,7 +2948,7 @@
       "rationaleIds": [
         "E10"
       ],
-      "sha256": "b434fc2cffcadf631e2e57356bf61d5487f73d1ad2a4074eeb1e3aff4d86ef35"
+      "sha256": "453afd5ded559149580d791e6265256df5cf487cd33b9ac07df7728cc9661024"
     },
     "scripts/reader_first_browser.cjs": {
       "baselineSHA256": null,
@@ -2962,7 +2962,7 @@
       "rationaleIds": [
         "E10"
       ],
-      "sha256": "7f568f3d6f7a7503903b5a0557db5ae5e97e876f2098792c6dab91b4a26cc8fb"
+      "sha256": "b41e966760c29f79f9f70f02d25f70fa6612eaca3a930df8b64e1b0abc83a5ba"
     },
     "scripts/reader_first_review.cjs": {
       "baselineSHA256": null,

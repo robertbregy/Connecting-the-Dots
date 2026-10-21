@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "sourceCommit": "dfdea5295e07ba0045ead0b68439bad5e5692f50",
+  "sourceCommit": "2d0e49ecf965f866e98a713ac71082dda5dd5087",
   "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
   "browser": "Chromium",
   "routeStates": 480,
@@ -177,9 +177,7 @@
       "href": "?tab=beyond#beyond"
     }
   ],
-  "errors": [
-    "Non-deterministic rebuild: research/index.html"
-  ],
+  "errors": [],
   "componentAccessibility": [
     {
       "lang": "it",
@@ -397,9 +395,7 @@
   ],
   "deterministicBuild": {
     "files": 46,
-    "changed": [
-      "research/index.html"
-    ]
+    "changed": []
   },
-  "passed": false
+  "passed": true
 }
