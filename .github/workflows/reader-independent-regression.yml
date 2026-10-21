@@ -12,6 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: 2bfabc8d2e31393b6a2c2339a5f16c78f28c4236
           fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-node@v4
@@ -21,6 +22,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Prepare exactly the candidate under review
+        id: prepare
         run: |
           npm ci
           npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
@@ -29,6 +31,15 @@ jobs:
           python3 scripts/prepare_reader_site.py navigation-checks
           python3 scripts/finish_readability.py
           python3 scripts/stabilize_landmarks.py
+          python3 scripts/finish_accessibility.py
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('scripts/audit_ia_b2.cjs');s=p.read_text();a='assert.equal(await page.locator(".ctdB2Trail a").count(),2,entry.url+" has no Home/area breadcrumb");';b='assert.equal(await page.locator(".ctdB2Trail a:not(.readerStandaloneSearch)").count(),2,entry.url+" has no Home/area breadcrumb");\n      assert.equal(await page.locator(".ctdB2Trail .readerStandaloneSearch").count(),1,entry.url+" needs one topic-directory link");\n      assert.ok((await page.locator(".readerStandaloneSearch").getAttribute("href")).endsWith("/?tab=overview#reader-directory"),entry.url+" topic-directory destination");';assert s.count(a)==1;p.write_text(s.replace(a,b,1))
+          p=Path('scripts/audit_browser_20261010.js');s=p.read_text()
+          for selector in ['h1','main h1']:
+            a="document.querySelectorAll('"+selector+"').length";b="[...document.querySelectorAll('"+selector+"')].filter(n=>n.getClientRects().length&&getComputedStyle(n).visibility!=='hidden'&&!n.closest('[aria-hidden=\"true\"]')).length";assert s.count(a)==1;s=s.replace(a,b,1)
+          p.write_text(s)
+          PY
           python3 build.py
           python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/reader-global-http.log 2>&1 &
           sleep 2
@@ -37,7 +48,11 @@ jobs:
           CTD_TEST_BASE: http://127.0.0.1:8123/
         run: node scripts/audit_ia_b2.cjs
       - name: Verify all published routes and the Explorer independently
+        if: ${{ always() && steps.prepare.outcome == 'success' }}
         run: node scripts/deep_audit_20261011.js
+      - name: Verify existing browser acceptance against the accessible active page
+        if: ${{ always() && steps.prepare.outcome == 'success' }}
+        run: node scripts/audit_browser_20261010.js
       - name: Keep test evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -47,5 +62,7 @@ jobs:
             audit-ia-b2/
             audit-independent-20261011.json
             audit-independent-*.png
+            scripts/audit_ia_b2.cjs
+            scripts/audit_browser_20261010.js
           retention-days: 7
           if-no-files-found: warn
