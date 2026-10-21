@@ -1,0 +1,42 @@
+name: Export reader candidate for review
+on:
+  push:
+    branches: [work/reader-journeys-20261020]
+    paths: ['.github/workflows/reader-review-export.yml']
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build candidate and retain published baseline
+        run: |
+          git archive --format=tar.gz 639617f5b79cf5524825ab7093f4c7bb722d1d42 > /tmp/reader-baseline.tar.gz
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
+          if python3 -c "import json,sys;sys.exit(json.load(open('publication.json'))['version']!='0.7.91')"; then
+            python3 scripts/prepare_reader_site.py
+          fi
+          python3 scripts/prepare_reader_site.py navigation-checks
+          CTD_READER_REPORT=/tmp/reader-preservation.json python3 build.py
+          tar --exclude=.git --exclude=./.git -czf /tmp/reader-candidate.tar.gz .
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reader-review-snapshot
+          path: |
+            /tmp/reader-candidate.tar.gz
+            /tmp/reader-baseline.tar.gz
+            /tmp/reader-preservation.json
+          retention-days: 7
