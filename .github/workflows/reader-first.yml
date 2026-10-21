@@ -3,18 +3,14 @@ name: Reader-first navigation and accessibility
 on:
   push:
     branches: [reader-first-2026-10-21]
-    paths:
-      - '.github/workflows/reader-first.yml'
-      - 'scripts/reader-first.patch.04'
+    paths: ['.github/workflows/reader-first.yml', 'scripts/reader-first.patch.04']
   workflow_dispatch:
-
 permissions:
   contents: write
-
+  actions: read
 concurrency:
   group: reader-first-${{ github.ref }}
   cancel-in-progress: true
-
 jobs:
   verify:
     if: ${{ !contains(github.event.head_commit.message || '', '[skip reader]') }}
@@ -24,14 +20,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Detect complete source change
+      - name: Detect source delta
         id: source
         run: |
-          if test -f scripts/reader-first.patch.04; then
-            echo 'ready=true' >> "$GITHUB_OUTPUT"
-          else
-            echo 'ready=false' >> "$GITHUB_OUTPUT"
-          fi
+          if test -f scripts/reader-first.patch.04; then echo 'ready=true' >> "$GITHUB_OUTPUT"; else echo 'ready=false' >> "$GITHUB_OUTPUT"; fi
       - uses: actions/setup-node@v4
         if: steps.source.outputs.ready == 'true'
         with:
@@ -41,7 +33,7 @@ jobs:
         if: steps.source.outputs.ready == 'true'
         with:
           python-version: '3.12'
-      - name: Apply checked source delta on the isolated branch
+      - name: Apply the exact source changes tested in run 39615726717
         if: steps.source.outputs.ready == 'true'
         run: |
           cat scripts/reader-first.patch.0[1-4] | base64 --decode | gzip --decompress > /tmp/reader-first.patch
@@ -49,51 +41,108 @@ jobs:
           git apply --check /tmp/reader-first.patch
           git apply /tmp/reader-first.patch
           echo '95ded81055cc257fdab47a28d6baa0f35eac709e68d57ce45f83073f7e67a9ff  scripts/reader-first-followup.patch' | sha256sum --check
-          git apply --check scripts/reader-first-followup.patch
-          git apply scripts/reader-first-followup.patch
-      - name: Build and check every locale
+          git apply --exclude=.github/workflows/rebuild.yml --check scripts/reader-first-followup.patch
+          git apply --exclude=.github/workflows/rebuild.yml scripts/reader-first-followup.patch
+          git diff --exit-code -- .github/workflows
+      - name: Build, preserve evidence and record the reviewed browser result
         if: steps.source.outputs.ready == 'true'
         run: |
           npm ci
           python3 build.py
+          node scripts/validate_reader_first.cjs
+          python3 scripts/prepare_reader_review.py --finalize --browser-run 39615726717
+          node scripts/verify_ia_b2_parity.cjs
+      - name: Check repeated build, historical archives and manuscript bytes
+        if: steps.source.outputs.ready == 'true'
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json,subprocess,sys
+          root=Path.cwd(); pub=json.loads(Path('publication.json').read_text())
+          files=[Path(pub['currentDataPackPath']),Path('downloads/connecting-the-dots-data-pack.zip')]
+          files += [Path('research')/n for n in ['connecting-the-dots-working-paper-v1.md','connecting-the-dots-working-paper-v1.html','index.html']]
+          def hashes(): return {str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
+          before=hashes();subprocess.run([sys.executable,'build.py'],check=True)
+          assert before==hashes(),'Repeated build changed package, archive or manuscript'
+          assert before[pub['currentDataPackPath']]=='dba829d230b7e4ff27219c77ecd66a3034361fd49ceaeee4e2f93a549014c843','Data package differs from browser-tested build'
+          print('READER_REPRODUCIBLE',json.dumps(before))
+          PY
           node scripts/validate_multilingual.js
           node scripts/validate_internet_access.js
           CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
           node scripts/validate_reader_first.cjs
-          python3 scripts/prepare_reader_review.py
-      - name: Install the existing pinned browser-test tools
+          python3 scripts/prepare_reader_review.py --finalize --browser-run 39615726717
+          node scripts/verify_ia_b2_parity.cjs
+      - uses: actions/download-artifact@v4
+        if: steps.source.outputs.ready == 'true'
+        with:
+          name: reader-first-review-39615726717
+          run-id: 39615726717
+          github-token: ${{ github.token }}
+          path: /tmp/reviewed-reader
+      - name: Verify the retained browser report and rendered source equality
+        if: steps.source.outputs.ready == 'true'
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,tarfile,hashlib
+          r=json.loads(Path('/tmp/reviewed-reader/ctd-reader-qa/report.json').read_text())
+          assert len(r['scenarios'])==302 and not r['issues']
+          with tarfile.open('/tmp/reviewed-reader/reader-built.tar.gz') as t:
+              checked=0
+              for m in t.getmembers():
+                  if m.isfile() and (m.name.startswith(('assets/','applications/','inside-the-round/','behind-the-round/')) or m.name in ['index.html','it/index.html','en/index.html','de/index.html','fr/index.html']):
+                      assert t.extractfile(m).read()==Path(m.name).read_bytes(),'Reviewed page differs: '+m.name
+                      checked+=1
+          summary={'browserRun':39615726717,'scenarios':302,'issues':0,'matchedRenderedFiles':checked,'humanParticipants':0,'accessibilityConformanceClaim':False}
+          Path('docs/reader-first-browser-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
+          print('REVIEWED_BROWSER_BYTES_MATCH',json.dumps(summary))
+          PY
+      - name: Install pinned browser tools
         if: steps.source.outputs.ready == 'true'
         run: |
           npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
           npx playwright install --with-deps chromium
-      - name: Exercise reading, keyboard, themes and mobile layouts
+      - name: Run the earlier navigation, data, guide and legacy-link regressions
         if: steps.source.outputs.ready == 'true'
+        env:
+          CTD_TEST_BASE: http://127.0.0.1:8128/
         run: |
-          python3 -m http.server 8128 --bind 127.0.0.1 > /tmp/reader-http.log 2>&1 &
+          mkdir -p /tmp/reader-final-regression
+          python3 -m http.server 8128 --bind 127.0.0.1 > /tmp/reader-final-regression/http.log 2>&1 &
           SERVER_PID=$!
           trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
-          node scripts/audit_reader_first.cjs
-      - name: Package the rendered pages for visual review
-        if: always() && steps.source.outputs.ready == 'true'
-        run: |
-          tar -czf /tmp/reader-built.tar.gz index.html it en de fr applications inside-the-round behind-the-round research docs publication.json data/publication.js data/manifest.json assets/reader.css assets/reader.js assets/app.js
+          (node scripts/audit_ia_b2.cjs && node scripts/audit_20261018_browser.cjs) > /tmp/reader-final-regression/navigation.log 2>&1 &
+          NAV_PID=$!
+          (node scripts/audit_economics_order.cjs && node scripts/audit_audience.cjs && node scripts/audit_legacy_deeplinks.cjs) > /tmp/reader-final-regression/content.log 2>&1 &
+          CONTENT_PID=$!
+          STATUS=0
+          wait "$NAV_PID" || STATUS=1
+          wait "$CONTENT_PID" || STATUS=1
+          tail -n 35 /tmp/reader-final-regression/navigation.log
+          tail -n 35 /tmp/reader-final-regression/content.log
+          test "$STATUS" -eq 0
       - uses: actions/upload-artifact@v4
         if: always() && steps.source.outputs.ready == 'true'
         with:
-          name: reader-first-review-${{ github.run_id }}
+          name: reader-first-final-regression-${{ github.run_id }}
           path: |
-            /tmp/ctd-reader-qa/
-            /tmp/reader-built.tar.gz
+            /tmp/reader-final-regression/
+            /tmp/ctd-audit-20261018/
+            /tmp/ctd-economics-order/
+            docs/reader-first-browser-summary.json
           retention-days: 7
-      - name: Commit verified staging output without overwriting another push
+      - name: Commit reviewed source and generated pages, never workflow changes
         if: success() && steps.source.outputs.ready == 'true'
         run: |
           test "$GITHUB_REF_NAME" = 'reader-first-2026-10-21'
           git fetch origin "$GITHUB_REF_NAME"
           test "$(git rev-parse FETCH_HEAD)" = "$(git rev-parse HEAD)"
-          rm -f scripts/reader-first.patch.0[1-4] scripts/reader-first-followup.patch .github/workflows/reader-first-export.yml
+          git diff --exit-code -- .github/workflows
+          rm -f scripts/reader-first.patch.0[1-4] scripts/reader-first-followup.patch
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
-          git commit -m 'Implement reader-first pathways v0.7.92 [skip reader] [skip build]'
+          git diff --cached --exit-code -- .github/workflows
+          git commit -m 'Implement and verify reader-first pathways v0.7.92 [skip reader] [skip build]'
           git push origin "HEAD:$GITHUB_REF_NAME"
