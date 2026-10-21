@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "79624ac3913b47de741bf6b717e2ba8d8574cee2",
+  "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
+  "browser": "Chromium",
+  "routeStates": 480,
+  "journeys": [],
+  "independentPages": 0,
+  "errors": [
+    "Keyboard disclosure did not close: it",
+    "Keyboard disclosure did not open: it",
+    "locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#how .readerToc a').first()\n    - locator resolved to <a data-open-section=\"how\" href=\"?tab=how#how-part-2\" data-open-anchor=\"how-part-2\">Come funzionano davvero i domini Internet</a>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    58 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n\n    at /home/runner/work/Connecting-the-Dots/Connecting-the-Dots/scripts/reader_first_browser.cjs:92:80"
+  ],
+  "componentAccessibility": [
+    {
+      "lang": "it",
+      "theme": "light",
+      "id": "how",
+      "violations": []
+    },
+    {
+      "lang": "it",
+      "theme": "light",
+      "id": "cities",
+      "violations": []
+    },
+    {
+      "lang": "it",
+      "theme": "light",
+      "id": "social",
+      "violations": []
+    },
+    {
+      "lang": "it",
+      "theme": "light",
+      "id": "disputes",
+      "violations": []
+    },
+    {
+      "lang": "it",
+      "theme": "light",
+      "id": "governance-access",
+      "violations": []
+    },
+    {
+      "lang": "it",
+      "theme": "light",
+      "id": "research",
+      "violations": []
+    },
+    {
+      "lang": "it",
+      "theme": "dark",
+      "id": "how",
+      "violations": []
+    },
+    {
+      "lang": "it",
+      "theme": "dark",
+      "id": "cities",
+      "violations": []
+    },
+    {
+      "lang": "it",
+      "theme": "dark",
+      "id": "social",
+      "violations": []
+    },
+    {
+      "lang": "it",
+      "theme": "dark",
+      "id": "disputes",
+      "violations": []
+    },
+    {
+      "lang": "it",
+      "theme": "dark",
+      "id": "governance-access",
+      "violations": []
+    },
+    {
+      "lang": "it",
+      "theme": "dark",
+      "id": "research",
+      "violations": []
+    }
+  ],
+  "fullPageAccessibility": [],
+  "preservedArchives": [],
+  "humanParticipants": 0,
+  "limitations": [
+    "Automated Chromium checks, not a WCAG conformance certification.",
+    "No human participants or independent screen-reader evaluation."
+  ],
+  "passed": false
+}

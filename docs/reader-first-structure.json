@@ -1,0 +1,2268 @@
+{
+  "schemaVersion": 1,
+  "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
+  "version": "0.7.92",
+  "native": [
+    {
+      "file": "en/index.html",
+      "lang": "en",
+      "retainedExistingIds": 405,
+      "chapters": [
+        {
+          "id": "how",
+          "headings": 13,
+          "parent": "ia-understand",
+          "next": [
+            "beyond",
+            "sources"
+          ]
+        },
+        {
+          "id": "beyond",
+          "headings": 4,
+          "parent": "ia-understand",
+          "next": [
+            "cities",
+            "explore"
+          ]
+        },
+        {
+          "id": "explore",
+          "headings": 2,
+          "parent": "ia-explore",
+          "next": [
+            "timeline",
+            "resources"
+          ]
+        },
+        {
+          "id": "timeline",
+          "headings": 6,
+          "parent": "ia-explore",
+          "next": [
+            "social",
+            "research"
+          ]
+        },
+        {
+          "id": "geography",
+          "headings": 6,
+          "parent": "ia-explore",
+          "next": [
+            "governance-access",
+            "resources"
+          ]
+        },
+        {
+          "id": "governance-access",
+          "headings": 9,
+          "parent": "ia-explore",
+          "next": [
+            "governance-sanctions",
+            "geography"
+          ]
+        },
+        {
+          "id": "governance-sanctions",
+          "headings": 16,
+          "parent": "ia-explore",
+          "next": [
+            "disputes",
+            "sources"
+          ]
+        },
+        {
+          "id": "strange",
+          "headings": 3,
+          "parent": "ia-stories",
+          "next": [
+            "social",
+            "explore"
+          ]
+        },
+        {
+          "id": "social",
+          "headings": 5,
+          "parent": "ia-stories",
+          "next": [
+            "cities",
+            "explore"
+          ]
+        },
+        {
+          "id": "cities",
+          "headings": 6,
+          "parent": "ia-stories",
+          "next": [
+            "lugano",
+            "explore"
+          ]
+        },
+        {
+          "id": "economics",
+          "headings": 7,
+          "parent": "ia-stories",
+          "next": [
+            "contention",
+            "resources"
+          ]
+        },
+        {
+          "id": "contention",
+          "headings": 6,
+          "parent": "ia-outcomes",
+          "next": [
+            "disputes",
+            "explore"
+          ]
+        },
+        {
+          "id": "disputes",
+          "headings": 4,
+          "parent": "ia-outcomes",
+          "next": [
+            "refusals",
+            "sources"
+          ]
+        },
+        {
+          "id": "refusals",
+          "headings": 5,
+          "parent": "ia-outcomes",
+          "next": [
+            "cemetery",
+            "explore"
+          ]
+        },
+        {
+          "id": "cemetery",
+          "headings": 1,
+          "parent": "ia-outcomes",
+          "next": [
+            "cities",
+            "explore"
+          ]
+        },
+        {
+          "id": "reveal",
+          "headings": 4,
+          "parent": "ia-round",
+          "next": [
+            "inside-round",
+            "explore"
+          ]
+        },
+        {
+          "id": "inside-round",
+          "headings": 3,
+          "parent": "ia-round",
+          "next": [
+            "behind-round",
+            "reveal"
+          ]
+        },
+        {
+          "id": "behind-round",
+          "headings": 4,
+          "parent": "ia-round",
+          "next": [
+            "reveal",
+            "sources"
+          ]
+        },
+        {
+          "id": "lugano",
+          "headings": 16,
+          "parent": "ia-round",
+          "next": [
+            "cities",
+            "sources"
+          ]
+        },
+        {
+          "id": "research",
+          "headings": 5,
+          "parent": "ia-research",
+          "next": [
+            "paper",
+            "resources"
+          ]
+        },
+        {
+          "id": "paper",
+          "headings": 1,
+          "parent": "ia-research",
+          "next": [
+            "sources",
+            "research"
+          ]
+        },
+        {
+          "id": "resources",
+          "headings": 3,
+          "parent": "ia-research",
+          "next": [
+            "sources",
+            "research"
+          ]
+        },
+        {
+          "id": "sources",
+          "headings": 7,
+          "parent": "ia-research",
+          "next": [
+            "research",
+            "resources"
+          ]
+        }
+      ],
+      "reorders": {
+        "how": {
+          "before": [
+            "What is a dot?",
+            "panel field2026Focus",
+            "panel accessReadingLink",
+            "scopeHeader",
+            "How Internet domains actually work",
+            "Who does what?",
+            "What do you actually get when you register a domain?",
+            "The economics of the dot",
+            "How a new TLD is born",
+            "Two different questions: what kind of application is it, and who can register?",
+            "Precise words, clear concepts",
+            "Essential glossary",
+            "Who can actually pull which lever?",
+            "scopeHeader luganoScope",
+            "From the general rule to .lugano",
+            "For .lugano: what the registry could govern, and what it would not mean",
+            "Speaking precisely about .lugano"
+          ],
+          "after": [
+            "How Internet domains actually work",
+            "Who does what?",
+            "What do you actually get when you register a domain?",
+            "What is a dot?",
+            "panel field2026Focus",
+            "panel accessReadingLink",
+            "scopeHeader",
+            "The economics of the dot",
+            "How a new TLD is born",
+            "Two different questions: what kind of application is it, and who can register?",
+            "Precise words, clear concepts",
+            "Essential glossary",
+            "Who can actually pull which lever?",
+            "scopeHeader luganoScope",
+            "From the general rule to .lugano",
+            "For .lugano: what the registry could govern, and what it would not mean",
+            "Speaking precisely about .lugano"
+          ],
+          "originalBlocks": 17
+        },
+        "social": {
+          "before": [
+            "The social life of the dot",
+            "Belonging changes over time",
+            "panel field2026Focus",
+            "panel crossRoundDisclosure",
+            "2026: social purpose is not the same as an ICANN Community designation",
+            "Six ways a namespace becomes social",
+            "Nine social cases"
+          ],
+          "after": [
+            "The social life of the dot",
+            "Belonging changes over time",
+            "Nine social cases",
+            "Six ways a namespace becomes social",
+            "panel field2026Focus",
+            "panel crossRoundDisclosure",
+            "2026: social purpose is not the same as an ICANN Community designation"
+          ],
+          "originalBlocks": 7
+        },
+        "cities": {
+          "before": [
+            "From place name to public infrastructure",
+            "Geographic layer · 2026",
+            "A second generation of city TLDs?",
+            "panel cityHelsinkiBridge",
+            "Who governs a city's domain?",
+            "Success is more than names sold"
+          ],
+          "after": [
+            "From place name to public infrastructure",
+            "Who governs a city's domain?",
+            "Success is more than names sold",
+            "Geographic layer · 2026",
+            "A second generation of city TLDs?",
+            "panel cityHelsinkiBridge"
+          ],
+          "originalBlocks": 6
+        },
+        "contention": {
+          "before": [
+            "Who gets a name when several applicants want it?",
+            "panel crossRoundDisclosure",
+            "The most contested strings of 2026",
+            "Same scarcity, different vocabulary",
+            "A major rule changed in 2026",
+            "Who gets to control a word?"
+          ],
+          "after": [
+            "Who gets a name when several applicants want it?",
+            "The most contested strings of 2026",
+            "A major rule changed in 2026",
+            "Same scarcity, different vocabulary",
+            "Who gets to control a word?",
+            "panel crossRoundDisclosure"
+          ],
+          "originalBlocks": 6
+        },
+        "disputes": {
+          "before": [
+            "Disputed Dots",
+            "panel field2026Focus",
+            "panel crossRoundDisclosure",
+            "2026 status: applications are public, formal objections are not open yet",
+            "How a TLD dispute can enter the system",
+            "Nine disputes that changed what the dot means"
+          ],
+          "after": [
+            "Disputed Dots",
+            "Nine disputes that changed what the dot means",
+            "How a TLD dispute can enter the system",
+            "panel field2026Focus",
+            "panel crossRoundDisclosure",
+            "2026 status: applications are public, formal objections are not open yet"
+          ],
+          "originalBlocks": 6
+        },
+        "refusals": {
+          "before": [
+            "Applications that didn't make it",
+            "panel crossRoundDisclosure",
+            "2026 status: too early for outcomes",
+            "Six different ways an application can stop",
+            "What the 2012 funnel looked like in August 2013",
+            "Six outcomes worth understanding"
+          ],
+          "after": [
+            "Applications that didn't make it",
+            "Six outcomes worth understanding",
+            "Six different ways an application can stop",
+            "What the 2012 funnel looked like in August 2013",
+            "panel crossRoundDisclosure",
+            "2026 status: too early for outcomes"
+          ],
+          "originalBlocks": 6
+        },
+        "sources": {
+          "before": [
+            "The author’s position",
+            "What makes a TLD successful?",
+            "How to read this publication",
+            "Sources & methodology",
+            "Versions and updates",
+            "Found something to correct?",
+            "audit-documentary-corrections"
+          ],
+          "after": [
+            "The author’s position",
+            "How to read this publication",
+            "Sources & methodology",
+            "What makes a TLD successful?",
+            "Versions and updates",
+            "Found something to correct?",
+            "audit-documentary-corrections"
+          ],
+          "originalBlocks": 7
+        },
+        "timeline": {
+          "before": [
+            "The archaeology of the dot",
+            "The names through which the Internet tells society's story",
+            "From a name census to patterns",
+            "2000 already looks like a time capsule",
+            "Rounds at a glance"
+          ],
+          "after": [
+            "The archaeology of the dot",
+            "The names through which the Internet tells society's story",
+            "2000 already looks like a time capsule",
+            "Rounds at a glance",
+            "From a name census to patterns"
+          ],
+          "originalBlocks": 5
+        },
+        "resources": {
+          "before": [
+            "Data, facts & reusable resources",
+            "Questions raised by the data",
+            "Download the working data"
+          ],
+          "after": [
+            "Data, facts & reusable resources",
+            "Download the working data",
+            "Questions raised by the data"
+          ],
+          "originalBlocks": 3
+        }
+      },
+      "originalCards": 26
+    },
+    {
+      "file": "index.html",
+      "lang": "en",
+      "retainedExistingIds": 405,
+      "chapters": [
+        {
+          "id": "how",
+          "headings": 13,
+          "parent": "ia-understand",
+          "next": [
+            "beyond",
+            "sources"
+          ]
+        },
+        {
+          "id": "beyond",
+          "headings": 4,
+          "parent": "ia-understand",
+          "next": [
+            "cities",
+            "explore"
+          ]
+        },
+        {
+          "id": "explore",
+          "headings": 2,
+          "parent": "ia-explore",
+          "next": [
+            "timeline",
+            "resources"
+          ]
+        },
+        {
+          "id": "timeline",
+          "headings": 6,
+          "parent": "ia-explore",
+          "next": [
+            "social",
+            "research"
+          ]
+        },
+        {
+          "id": "geography",
+          "headings": 6,
+          "parent": "ia-explore",
+          "next": [
+            "governance-access",
+            "resources"
+          ]
+        },
+        {
+          "id": "governance-access",
+          "headings": 9,
+          "parent": "ia-explore",
+          "next": [
+            "governance-sanctions",
+            "geography"
+          ]
+        },
+        {
+          "id": "governance-sanctions",
+          "headings": 16,
+          "parent": "ia-explore",
+          "next": [
+            "disputes",
+            "sources"
+          ]
+        },
+        {
+          "id": "strange",
+          "headings": 3,
+          "parent": "ia-stories",
+          "next": [
+            "social",
+            "explore"
+          ]
+        },
+        {
+          "id": "social",
+          "headings": 5,
+          "parent": "ia-stories",
+          "next": [
+            "cities",
+            "explore"
+          ]
+        },
+        {
+          "id": "cities",
+          "headings": 6,
+          "parent": "ia-stories",
+          "next": [
+            "lugano",
+            "explore"
+          ]
+        },
+        {
+          "id": "economics",
+          "headings": 7,
+          "parent": "ia-stories",
+          "next": [
+            "contention",
+            "resources"
+          ]
+        },
+        {
+          "id": "contention",
+          "headings": 6,
+          "parent": "ia-outcomes",
+          "next": [
+            "disputes",
+            "explore"
+          ]
+        },
+        {
+          "id": "disputes",
+          "headings": 4,
+          "parent": "ia-outcomes",
+          "next": [
+            "refusals",
+            "sources"
+          ]
+        },
+        {
+          "id": "refusals",
+          "headings": 5,
+          "parent": "ia-outcomes",
+          "next": [
+            "cemetery",
+            "explore"
+          ]
+        },
+        {
+          "id": "cemetery",
+          "headings": 1,
+          "parent": "ia-outcomes",
+          "next": [
+            "cities",
+            "explore"
+          ]
+        },
+        {
+          "id": "reveal",
+          "headings": 4,
+          "parent": "ia-round",
+          "next": [
+            "inside-round",
+            "explore"
+          ]
+        },
+        {
+          "id": "inside-round",
+          "headings": 3,
+          "parent": "ia-round",
+          "next": [
+            "behind-round",
+            "reveal"
+          ]
+        },
+        {
+          "id": "behind-round",
+          "headings": 4,
+          "parent": "ia-round",
+          "next": [
+            "reveal",
+            "sources"
+          ]
+        },
+        {
+          "id": "lugano",
+          "headings": 16,
+          "parent": "ia-round",
+          "next": [
+            "cities",
+            "sources"
+          ]
+        },
+        {
+          "id": "research",
+          "headings": 5,
+          "parent": "ia-research",
+          "next": [
+            "paper",
+            "resources"
+          ]
+        },
+        {
+          "id": "paper",
+          "headings": 1,
+          "parent": "ia-research",
+          "next": [
+            "sources",
+            "research"
+          ]
+        },
+        {
+          "id": "resources",
+          "headings": 3,
+          "parent": "ia-research",
+          "next": [
+            "sources",
+            "research"
+          ]
+        },
+        {
+          "id": "sources",
+          "headings": 7,
+          "parent": "ia-research",
+          "next": [
+            "research",
+            "resources"
+          ]
+        }
+      ],
+      "reorders": {
+        "how": {
+          "before": [
+            "What is a dot?",
+            "panel field2026Focus",
+            "panel accessReadingLink",
+            "scopeHeader",
+            "How Internet domains actually work",
+            "Who does what?",
+            "What do you actually get when you register a domain?",
+            "The economics of the dot",
+            "How a new TLD is born",
+            "Two different questions: what kind of application is it, and who can register?",
+            "Precise words, clear concepts",
+            "Essential glossary",
+            "Who can actually pull which lever?",
+            "scopeHeader luganoScope",
+            "From the general rule to .lugano",
+            "For .lugano: what the registry could govern, and what it would not mean",
+            "Speaking precisely about .lugano"
+          ],
+          "after": [
+            "How Internet domains actually work",
+            "Who does what?",
+            "What do you actually get when you register a domain?",
+            "What is a dot?",
+            "panel field2026Focus",
+            "panel accessReadingLink",
+            "scopeHeader",
+            "The economics of the dot",
+            "How a new TLD is born",
+            "Two different questions: what kind of application is it, and who can register?",
+            "Precise words, clear concepts",
+            "Essential glossary",
+            "Who can actually pull which lever?",
+            "scopeHeader luganoScope",
+            "From the general rule to .lugano",
+            "For .lugano: what the registry could govern, and what it would not mean",
+            "Speaking precisely about .lugano"
+          ],
+          "originalBlocks": 17
+        },
+        "social": {
+          "before": [
+            "The social life of the dot",
+            "Belonging changes over time",
+            "panel field2026Focus",
+            "panel crossRoundDisclosure",
+            "2026: social purpose is not the same as an ICANN Community designation",
+            "Six ways a namespace becomes social",
+            "Nine social cases"
+          ],
+          "after": [
+            "The social life of the dot",
+            "Belonging changes over time",
+            "Nine social cases",
+            "Six ways a namespace becomes social",
+            "panel field2026Focus",
+            "panel crossRoundDisclosure",
+            "2026: social purpose is not the same as an ICANN Community designation"
+          ],
+          "originalBlocks": 7
+        },
+        "cities": {
+          "before": [
+            "From place name to public infrastructure",
+            "Geographic layer · 2026",
+            "A second generation of city TLDs?",
+            "panel cityHelsinkiBridge",
+            "Who governs a city's domain?",
+            "Success is more than names sold"
+          ],
+          "after": [
+            "From place name to public infrastructure",
+            "Who governs a city's domain?",
+            "Success is more than names sold",
+            "Geographic layer · 2026",
+            "A second generation of city TLDs?",
+            "panel cityHelsinkiBridge"
+          ],
+          "originalBlocks": 6
+        },
+        "contention": {
+          "before": [
+            "Who gets a name when several applicants want it?",
+            "panel crossRoundDisclosure",
+            "The most contested strings of 2026",
+            "Same scarcity, different vocabulary",
+            "A major rule changed in 2026",
+            "Who gets to control a word?"
+          ],
+          "after": [
+            "Who gets a name when several applicants want it?",
+            "The most contested strings of 2026",
+            "A major rule changed in 2026",
+            "Same scarcity, different vocabulary",
+            "Who gets to control a word?",
+            "panel crossRoundDisclosure"
+          ],
+          "originalBlocks": 6
+        },
+        "disputes": {
+          "before": [
+            "Disputed Dots",
+            "panel field2026Focus",
+            "panel crossRoundDisclosure",
+            "2026 status: applications are public, formal objections are not open yet",
+            "How a TLD dispute can enter the system",
+            "Nine disputes that changed what the dot means"
+          ],
+          "after": [
+            "Disputed Dots",
+            "Nine disputes that changed what the dot means",
+            "How a TLD dispute can enter the system",
+            "panel field2026Focus",
+            "panel crossRoundDisclosure",
+            "2026 status: applications are public, formal objections are not open yet"
+          ],
+          "originalBlocks": 6
+        },
+        "refusals": {
+          "before": [
+            "Applications that didn't make it",
+            "panel crossRoundDisclosure",
+            "2026 status: too early for outcomes",
+            "Six different ways an application can stop",
+            "What the 2012 funnel looked like in August 2013",
+            "Six outcomes worth understanding"
+          ],
+          "after": [
+            "Applications that didn't make it",
+            "Six outcomes worth understanding",
+            "Six different ways an application can stop",
+            "What the 2012 funnel looked like in August 2013",
+            "panel crossRoundDisclosure",
+            "2026 status: too early for outcomes"
+          ],
+          "originalBlocks": 6
+        },
+        "sources": {
+          "before": [
+            "The author’s position",
+            "What makes a TLD successful?",
+            "How to read this publication",
+            "Sources & methodology",
+            "Versions and updates",
+            "Found something to correct?",
+            "audit-documentary-corrections"
+          ],
+          "after": [
+            "The author’s position",
+            "How to read this publication",
+            "Sources & methodology",
+            "What makes a TLD successful?",
+            "Versions and updates",
+            "Found something to correct?",
+            "audit-documentary-corrections"
+          ],
+          "originalBlocks": 7
+        },
+        "timeline": {
+          "before": [
+            "The archaeology of the dot",
+            "The names through which the Internet tells society's story",
+            "From a name census to patterns",
+            "2000 already looks like a time capsule",
+            "Rounds at a glance"
+          ],
+          "after": [
+            "The archaeology of the dot",
+            "The names through which the Internet tells society's story",
+            "2000 already looks like a time capsule",
+            "Rounds at a glance",
+            "From a name census to patterns"
+          ],
+          "originalBlocks": 5
+        },
+        "resources": {
+          "before": [
+            "Data, facts & reusable resources",
+            "Questions raised by the data",
+            "Download the working data"
+          ],
+          "after": [
+            "Data, facts & reusable resources",
+            "Download the working data",
+            "Questions raised by the data"
+          ],
+          "originalBlocks": 3
+        }
+      },
+      "originalCards": 26
+    },
+    {
+      "file": "it/index.html",
+      "lang": "it",
+      "retainedExistingIds": 405,
+      "chapters": [
+        {
+          "id": "how",
+          "headings": 13,
+          "parent": "ia-understand",
+          "next": [
+            "beyond",
+            "sources"
+          ]
+        },
+        {
+          "id": "beyond",
+          "headings": 4,
+          "parent": "ia-understand",
+          "next": [
+            "cities",
+            "explore"
+          ]
+        },
+        {
+          "id": "explore",
+          "headings": 2,
+          "parent": "ia-explore",
+          "next": [
+            "timeline",
+            "resources"
+          ]
+        },
+        {
+          "id": "timeline",
+          "headings": 6,
+          "parent": "ia-explore",
+          "next": [
+            "social",
+            "research"
+          ]
+        },
+        {
+          "id": "geography",
+          "headings": 6,
+          "parent": "ia-explore",
+          "next": [
+            "governance-access",
+            "resources"
+          ]
+        },
+        {
+          "id": "governance-access",
+          "headings": 9,
+          "parent": "ia-explore",
+          "next": [
+            "governance-sanctions",
+            "geography"
+          ]
+        },
+        {
+          "id": "governance-sanctions",
+          "headings": 16,
+          "parent": "ia-explore",
+          "next": [
+            "disputes",
+            "sources"
+          ]
+        },
+        {
+          "id": "strange",
+          "headings": 3,
+          "parent": "ia-stories",
+          "next": [
+            "social",
+            "explore"
+          ]
+        },
+        {
+          "id": "social",
+          "headings": 5,
+          "parent": "ia-stories",
+          "next": [
+            "cities",
+            "explore"
+          ]
+        },
+        {
+          "id": "cities",
+          "headings": 6,
+          "parent": "ia-stories",
+          "next": [
+            "lugano",
+            "explore"
+          ]
+        },
+        {
+          "id": "economics",
+          "headings": 7,
+          "parent": "ia-stories",
+          "next": [
+            "contention",
+            "resources"
+          ]
+        },
+        {
+          "id": "contention",
+          "headings": 6,
+          "parent": "ia-outcomes",
+          "next": [
+            "disputes",
+            "explore"
+          ]
+        },
+        {
+          "id": "disputes",
+          "headings": 4,
+          "parent": "ia-outcomes",
+          "next": [
+            "refusals",
+            "sources"
+          ]
+        },
+        {
+          "id": "refusals",
+          "headings": 5,
+          "parent": "ia-outcomes",
+          "next": [
+            "cemetery",
+            "explore"
+          ]
+        },
+        {
+          "id": "cemetery",
+          "headings": 1,
+          "parent": "ia-outcomes",
+          "next": [
+            "cities",
+            "explore"
+          ]
+        },
+        {
+          "id": "reveal",
+          "headings": 4,
+          "parent": "ia-round",
+          "next": [
+            "inside-round",
+            "explore"
+          ]
+        },
+        {
+          "id": "inside-round",
+          "headings": 3,
+          "parent": "ia-round",
+          "next": [
+            "behind-round",
+            "reveal"
+          ]
+        },
+        {
+          "id": "behind-round",
+          "headings": 4,
+          "parent": "ia-round",
+          "next": [
+            "reveal",
+            "sources"
+          ]
+        },
+        {
+          "id": "lugano",
+          "headings": 16,
+          "parent": "ia-round",
+          "next": [
+            "cities",
+            "sources"
+          ]
+        },
+        {
+          "id": "research",
+          "headings": 5,
+          "parent": "ia-research",
+          "next": [
+            "paper",
+            "resources"
+          ]
+        },
+        {
+          "id": "paper",
+          "headings": 1,
+          "parent": "ia-research",
+          "next": [
+            "sources",
+            "research"
+          ]
+        },
+        {
+          "id": "resources",
+          "headings": 3,
+          "parent": "ia-research",
+          "next": [
+            "sources",
+            "research"
+          ]
+        },
+        {
+          "id": "sources",
+          "headings": 7,
+          "parent": "ia-research",
+          "next": [
+            "research",
+            "resources"
+          ]
+        }
+      ],
+      "reorders": {
+        "how": {
+          "before": [
+            "Che cos’è davvero un punto?",
+            "panel field2026Focus",
+            "panel accessReadingLink",
+            "scopeHeader",
+            "Come funzionano davvero i domini Internet",
+            "Chi fa cosa?",
+            "Che cosa ottieni davvero quando registri un dominio?",
+            "L’economia del punto",
+            "Come nasce un nuovo TLD",
+            "Due domande diverse: che tipo di candidatura è e chi può registrare?",
+            "Parole precise, concetti chiari",
+            "Glossario essenziale",
+            "Chi può davvero azionare quale leva?",
+            "scopeHeader luganoScope",
+            "Dalla regola generale al caso .lugano",
+            "Nel caso .lugano: cosa potrebbe governare il registro e cosa non significherebbe",
+            "Parlare con precisione di .lugano"
+          ],
+          "after": [
+            "Come funzionano davvero i domini Internet",
+            "Chi fa cosa?",
+            "Che cosa ottieni davvero quando registri un dominio?",
+            "Che cos’è davvero un punto?",
+            "panel field2026Focus",
+            "panel accessReadingLink",
+            "scopeHeader",
+            "L’economia del punto",
+            "Come nasce un nuovo TLD",
+            "Due domande diverse: che tipo di candidatura è e chi può registrare?",
+            "Parole precise, concetti chiari",
+            "Glossario essenziale",
+            "Chi può davvero azionare quale leva?",
+            "scopeHeader luganoScope",
+            "Dalla regola generale al caso .lugano",
+            "Nel caso .lugano: cosa potrebbe governare il registro e cosa non significherebbe",
+            "Parlare con precisione di .lugano"
+          ],
+          "originalBlocks": 17
+        },
+        "social": {
+          "before": [
+            "La vita sociale del punto",
+            "Appartenenze che cambiano nel tempo",
+            "panel field2026Focus",
+            "panel crossRoundDisclosure",
+            "2026: finalità sociale e classificazione ICANN “Community” non sono la stessa cosa",
+            "Sei modi in cui un namespace diventa sociale",
+            "Nove casi sociali"
+          ],
+          "after": [
+            "La vita sociale del punto",
+            "Appartenenze che cambiano nel tempo",
+            "Nove casi sociali",
+            "Sei modi in cui un namespace diventa sociale",
+            "panel field2026Focus",
+            "panel crossRoundDisclosure",
+            "2026: finalità sociale e classificazione ICANN “Community” non sono la stessa cosa"
+          ],
+          "originalBlocks": 7
+        },
+        "cities": {
+          "before": [
+            "Dal nome di luogo all’infrastruttura pubblica",
+            "Livello geografico · 2026",
+            "Una seconda generazione di city-TLD?",
+            "panel cityHelsinkiBridge",
+            "Chi governa il dominio di una città?",
+            "Il successo non coincide con i nomi venduti"
+          ],
+          "after": [
+            "Dal nome di luogo all’infrastruttura pubblica",
+            "Chi governa il dominio di una città?",
+            "Il successo non coincide con i nomi venduti",
+            "Livello geografico · 2026",
+            "Una seconda generazione di city-TLD?",
+            "panel cityHelsinkiBridge"
+          ],
+          "originalBlocks": 6
+        },
+        "contention": {
+          "before": [
+            "A chi va un nome quando più candidati lo chiedono?",
+            "panel crossRoundDisclosure",
+            "Le stringhe più contese del 2026",
+            "Stessa scarsità, vocabolario diverso",
+            "Nel 2026 è cambiata una regola importante",
+            "Chi può controllare una parola?"
+          ],
+          "after": [
+            "A chi va un nome quando più candidati lo chiedono?",
+            "Le stringhe più contese del 2026",
+            "Nel 2026 è cambiata una regola importante",
+            "Stessa scarsità, vocabolario diverso",
+            "Chi può controllare una parola?",
+            "panel crossRoundDisclosure"
+          ],
+          "originalBlocks": 6
+        },
+        "disputes": {
+          "before": [
+            "Controversie che hanno cambiato il punto",
+            "panel field2026Focus",
+            "panel crossRoundDisclosure",
+            "Stato 2026: le candidature sono pubbliche, le obiezioni formali non sono ancora aperte",
+            "Come una controversia su un TLD entra nel sistema",
+            "Nove controversie che hanno cambiato il significato del punto"
+          ],
+          "after": [
+            "Controversie che hanno cambiato il punto",
+            "Nove controversie che hanno cambiato il significato del punto",
+            "Come una controversia su un TLD entra nel sistema",
+            "panel field2026Focus",
+            "panel crossRoundDisclosure",
+            "Stato 2026: le candidature sono pubbliche, le obiezioni formali non sono ancora aperte"
+          ],
+          "originalBlocks": 6
+        },
+        "refusals": {
+          "before": [
+            "Candidature che non ce l’hanno fatta",
+            "panel crossRoundDisclosure",
+            "Stato 2026: è troppo presto per parlare di esiti",
+            "Sei modi diversi in cui una candidatura può fermarsi",
+            "Com’era l’imbuto del 2012 nell’agosto 2013",
+            "Sei esiti che vale la pena capire"
+          ],
+          "after": [
+            "Candidature che non ce l’hanno fatta",
+            "Sei esiti che vale la pena capire",
+            "Sei modi diversi in cui una candidatura può fermarsi",
+            "Com’era l’imbuto del 2012 nell’agosto 2013",
+            "panel crossRoundDisclosure",
+            "Stato 2026: è troppo presto per parlare di esiti"
+          ],
+          "originalBlocks": 6
+        },
+        "sources": {
+          "before": [
+            "La posizione dell’autore",
+            "Che cosa rende “di successo” un TLD?",
+            "Come leggere questa pubblicazione",
+            "Fonti e metodologia",
+            "Versioni e aggiornamenti",
+            "Hai trovato qualcosa da correggere?",
+            "audit-documentary-corrections"
+          ],
+          "after": [
+            "La posizione dell’autore",
+            "Come leggere questa pubblicazione",
+            "Fonti e metodologia",
+            "Che cosa rende “di successo” un TLD?",
+            "Versioni e aggiornamenti",
+            "Hai trovato qualcosa da correggere?",
+            "audit-documentary-corrections"
+          ],
+          "originalBlocks": 7
+        },
+        "timeline": {
+          "before": [
+            "L’archeologia del punto",
+            "I nomi con cui Internet racconta la società",
+            "Dal censimento dei nomi ai pattern",
+            "Il 2000 sembra già una capsula del tempo",
+            "I round a colpo d’occhio"
+          ],
+          "after": [
+            "L’archeologia del punto",
+            "I nomi con cui Internet racconta la società",
+            "Il 2000 sembra già una capsula del tempo",
+            "I round a colpo d’occhio",
+            "Dal censimento dei nomi ai pattern"
+          ],
+          "originalBlocks": 5
+        },
+        "resources": {
+          "before": [
+            "Dati, fatti e risorse riutilizzabili",
+            "Domande che emergono dai dati",
+            "Scarica i dati di lavoro"
+          ],
+          "after": [
+            "Dati, fatti e risorse riutilizzabili",
+            "Scarica i dati di lavoro",
+            "Domande che emergono dai dati"
+          ],
+          "originalBlocks": 3
+        }
+      },
+      "originalCards": 26
+    },
+    {
+      "file": "de/index.html",
+      "lang": "de",
+      "retainedExistingIds": 405,
+      "chapters": [
+        {
+          "id": "how",
+          "headings": 13,
+          "parent": "ia-understand",
+          "next": [
+            "beyond",
+            "sources"
+          ]
+        },
+        {
+          "id": "beyond",
+          "headings": 4,
+          "parent": "ia-understand",
+          "next": [
+            "cities",
+            "explore"
+          ]
+        },
+        {
+          "id": "explore",
+          "headings": 2,
+          "parent": "ia-explore",
+          "next": [
+            "timeline",
+            "resources"
+          ]
+        },
+        {
+          "id": "timeline",
+          "headings": 6,
+          "parent": "ia-explore",
+          "next": [
+            "social",
+            "research"
+          ]
+        },
+        {
+          "id": "geography",
+          "headings": 6,
+          "parent": "ia-explore",
+          "next": [
+            "governance-access",
+            "resources"
+          ]
+        },
+        {
+          "id": "governance-access",
+          "headings": 9,
+          "parent": "ia-explore",
+          "next": [
+            "governance-sanctions",
+            "geography"
+          ]
+        },
+        {
+          "id": "governance-sanctions",
+          "headings": 16,
+          "parent": "ia-explore",
+          "next": [
+            "disputes",
+            "sources"
+          ]
+        },
+        {
+          "id": "strange",
+          "headings": 3,
+          "parent": "ia-stories",
+          "next": [
+            "social",
+            "explore"
+          ]
+        },
+        {
+          "id": "social",
+          "headings": 5,
+          "parent": "ia-stories",
+          "next": [
+            "cities",
+            "explore"
+          ]
+        },
+        {
+          "id": "cities",
+          "headings": 6,
+          "parent": "ia-stories",
+          "next": [
+            "lugano",
+            "explore"
+          ]
+        },
+        {
+          "id": "economics",
+          "headings": 7,
+          "parent": "ia-stories",
+          "next": [
+            "contention",
+            "resources"
+          ]
+        },
+        {
+          "id": "contention",
+          "headings": 6,
+          "parent": "ia-outcomes",
+          "next": [
+            "disputes",
+            "explore"
+          ]
+        },
+        {
+          "id": "disputes",
+          "headings": 4,
+          "parent": "ia-outcomes",
+          "next": [
+            "refusals",
+            "sources"
+          ]
+        },
+        {
+          "id": "refusals",
+          "headings": 5,
+          "parent": "ia-outcomes",
+          "next": [
+            "cemetery",
+            "explore"
+          ]
+        },
+        {
+          "id": "cemetery",
+          "headings": 1,
+          "parent": "ia-outcomes",
+          "next": [
+            "cities",
+            "explore"
+          ]
+        },
+        {
+          "id": "reveal",
+          "headings": 4,
+          "parent": "ia-round",
+          "next": [
+            "inside-round",
+            "explore"
+          ]
+        },
+        {
+          "id": "inside-round",
+          "headings": 3,
+          "parent": "ia-round",
+          "next": [
+            "behind-round",
+            "reveal"
+          ]
+        },
+        {
+          "id": "behind-round",
+          "headings": 4,
+          "parent": "ia-round",
+          "next": [
+            "reveal",
+            "sources"
+          ]
+        },
+        {
+          "id": "lugano",
+          "headings": 16,
+          "parent": "ia-round",
+          "next": [
+            "cities",
+            "sources"
+          ]
+        },
+        {
+          "id": "research",
+          "headings": 5,
+          "parent": "ia-research",
+          "next": [
+            "paper",
+            "resources"
+          ]
+        },
+        {
+          "id": "paper",
+          "headings": 1,
+          "parent": "ia-research",
+          "next": [
+            "sources",
+            "research"
+          ]
+        },
+        {
+          "id": "resources",
+          "headings": 3,
+          "parent": "ia-research",
+          "next": [
+            "sources",
+            "research"
+          ]
+        },
+        {
+          "id": "sources",
+          "headings": 7,
+          "parent": "ia-research",
+          "next": [
+            "research",
+            "resources"
+          ]
+        }
+      ],
+      "reorders": {
+        "how": {
+          "before": [
+            "Was ist ein Punkt eigentlich?",
+            "panel field2026Focus",
+            "panel accessReadingLink",
+            "scopeHeader",
+            "Wie Internet-Domains wirklich funktionieren",
+            "Wer macht was?",
+            "Was erhält man eigentlich, wenn man eine Domain registriert?",
+            "Die Ökonomie des Punkts",
+            "Wie eine neue TLD entsteht",
+            "Zwei verschiedene Fragen: Welche Art Antrag ist es, und wer darf registrieren?",
+            "Präzise Begriffe, klare Konzepte",
+            "Grundlegendes Glossar",
+            "Wer kann welchen Hebel tatsächlich betätigen?",
+            "scopeHeader luganoScope",
+            "Von der allgemeinen Regel zum Fall .lugano",
+            "Im Fall .lugano: was die Registry regeln könnte und was dies nicht bedeuten würde",
+            "Präzise über .lugano sprechen"
+          ],
+          "after": [
+            "Wie Internet-Domains wirklich funktionieren",
+            "Wer macht was?",
+            "Was erhält man eigentlich, wenn man eine Domain registriert?",
+            "Was ist ein Punkt eigentlich?",
+            "panel field2026Focus",
+            "panel accessReadingLink",
+            "scopeHeader",
+            "Die Ökonomie des Punkts",
+            "Wie eine neue TLD entsteht",
+            "Zwei verschiedene Fragen: Welche Art Antrag ist es, und wer darf registrieren?",
+            "Präzise Begriffe, klare Konzepte",
+            "Grundlegendes Glossar",
+            "Wer kann welchen Hebel tatsächlich betätigen?",
+            "scopeHeader luganoScope",
+            "Von der allgemeinen Regel zum Fall .lugano",
+            "Im Fall .lugano: was die Registry regeln könnte und was dies nicht bedeuten würde",
+            "Präzise über .lugano sprechen"
+          ],
+          "originalBlocks": 17
+        },
+        "social": {
+          "before": [
+            "Das soziale Leben des Punkts",
+            "Zugehörigkeit verändert sich",
+            "panel field2026Focus",
+            "panel crossRoundDisclosure",
+            "2026: Sozialer Zweck ist nicht dasselbe wie ICANNs „Community“-Bezeichnung",
+            "Sechs Wege, wie ein Namensraum sozial wird",
+            "Neun soziale Fälle"
+          ],
+          "after": [
+            "Das soziale Leben des Punkts",
+            "Zugehörigkeit verändert sich",
+            "Neun soziale Fälle",
+            "Sechs Wege, wie ein Namensraum sozial wird",
+            "panel field2026Focus",
+            "panel crossRoundDisclosure",
+            "2026: Sozialer Zweck ist nicht dasselbe wie ICANNs „Community“-Bezeichnung"
+          ],
+          "originalBlocks": 7
+        },
+        "cities": {
+          "before": [
+            "Vom Ortsnamen zur öffentlichen Infrastruktur",
+            "Geografische Ebene · 2026",
+            "Eine zweite Generation von Stadt-TLDs?",
+            "panel cityHelsinkiBridge",
+            "Wer steuert die Domain einer Stadt?",
+            "Erfolg ist mehr als die Zahl verkaufter Namen"
+          ],
+          "after": [
+            "Vom Ortsnamen zur öffentlichen Infrastruktur",
+            "Wer steuert die Domain einer Stadt?",
+            "Erfolg ist mehr als die Zahl verkaufter Namen",
+            "Geografische Ebene · 2026",
+            "Eine zweite Generation von Stadt-TLDs?",
+            "panel cityHelsinkiBridge"
+          ],
+          "originalBlocks": 6
+        },
+        "contention": {
+          "before": [
+            "Wer erhält einen Namen, wenn mehrere Bewerber ihn wollen?",
+            "panel crossRoundDisclosure",
+            "Die am stärksten umkämpften Strings 2026",
+            "Gleiche Knappheit, anderes Vokabular",
+            "2026 hat sich eine wichtige Regel geändert",
+            "Wer darf ein Wort kontrollieren?"
+          ],
+          "after": [
+            "Wer erhält einen Namen, wenn mehrere Bewerber ihn wollen?",
+            "Die am stärksten umkämpften Strings 2026",
+            "2026 hat sich eine wichtige Regel geändert",
+            "Gleiche Knappheit, anderes Vokabular",
+            "Wer darf ein Wort kontrollieren?",
+            "panel crossRoundDisclosure"
+          ],
+          "originalBlocks": 6
+        },
+        "disputes": {
+          "before": [
+            "Streitfälle, die den Punkt verändert haben",
+            "panel field2026Focus",
+            "panel crossRoundDisclosure",
+            "Status 2026: Bewerbungen sind öffentlich, formale Einwände noch nicht geöffnet",
+            "Wie ein TLD-Streit in das System gelangt",
+            "Neun Streitfälle, die die Bedeutung des Punkts verändert haben"
+          ],
+          "after": [
+            "Streitfälle, die den Punkt verändert haben",
+            "Neun Streitfälle, die die Bedeutung des Punkts verändert haben",
+            "Wie ein TLD-Streit in das System gelangt",
+            "panel field2026Focus",
+            "panel crossRoundDisclosure",
+            "Status 2026: Bewerbungen sind öffentlich, formale Einwände noch nicht geöffnet"
+          ],
+          "originalBlocks": 6
+        },
+        "refusals": {
+          "before": [
+            "Bewerbungen, die es nicht geschafft haben",
+            "panel crossRoundDisclosure",
+            "Status 2026: Für Ergebnisse ist es zu früh",
+            "Sechs unterschiedliche Wege, wie eine Bewerbung stoppen kann",
+            "So sah der 2012er Trichter im August 2013 aus",
+            "Sechs Ergebnisse, die man verstehen sollte"
+          ],
+          "after": [
+            "Bewerbungen, die es nicht geschafft haben",
+            "Sechs Ergebnisse, die man verstehen sollte",
+            "Sechs unterschiedliche Wege, wie eine Bewerbung stoppen kann",
+            "So sah der 2012er Trichter im August 2013 aus",
+            "panel crossRoundDisclosure",
+            "Status 2026: Für Ergebnisse ist es zu früh"
+          ],
+          "originalBlocks": 6
+        },
+        "sources": {
+          "before": [
+            "Die Position des Autors",
+            "Was macht eine TLD „erfolgreich“?",
+            "Wie diese Publikation zu lesen ist",
+            "Quellen & Methodik",
+            "Versionen und Aktualisierungen",
+            "Etwas gefunden, das korrigiert werden sollte?",
+            "audit-documentary-corrections"
+          ],
+          "after": [
+            "Die Position des Autors",
+            "Wie diese Publikation zu lesen ist",
+            "Quellen & Methodik",
+            "Was macht eine TLD „erfolgreich“?",
+            "Versionen und Aktualisierungen",
+            "Etwas gefunden, das korrigiert werden sollte?",
+            "audit-documentary-corrections"
+          ],
+          "originalBlocks": 7
+        },
+        "timeline": {
+          "before": [
+            "Die Archäologie des Punkts",
+            "Wie Internetnamen von der Gesellschaft erzählen",
+            "Vom Namensinventar zu Mustern",
+            "Das Jahr 2000 wirkt bereits wie eine Zeitkapsel",
+            "Die Runden auf einen Blick"
+          ],
+          "after": [
+            "Die Archäologie des Punkts",
+            "Wie Internetnamen von der Gesellschaft erzählen",
+            "Das Jahr 2000 wirkt bereits wie eine Zeitkapsel",
+            "Die Runden auf einen Blick",
+            "Vom Namensinventar zu Mustern"
+          ],
+          "originalBlocks": 5
+        },
+        "resources": {
+          "before": [
+            "Daten, Fakten & wiederverwendbare Ressourcen",
+            "Fragen, die sich aus den Daten ergeben",
+            "Arbeitsdaten herunterladen"
+          ],
+          "after": [
+            "Daten, Fakten & wiederverwendbare Ressourcen",
+            "Arbeitsdaten herunterladen",
+            "Fragen, die sich aus den Daten ergeben"
+          ],
+          "originalBlocks": 3
+        }
+      },
+      "originalCards": 26
+    },
+    {
+      "file": "fr/index.html",
+      "lang": "fr",
+      "retainedExistingIds": 405,
+      "chapters": [
+        {
+          "id": "how",
+          "headings": 13,
+          "parent": "ia-understand",
+          "next": [
+            "beyond",
+            "sources"
+          ]
+        },
+        {
+          "id": "beyond",
+          "headings": 4,
+          "parent": "ia-understand",
+          "next": [
+            "cities",
+            "explore"
+          ]
+        },
+        {
+          "id": "explore",
+          "headings": 2,
+          "parent": "ia-explore",
+          "next": [
+            "timeline",
+            "resources"
+          ]
+        },
+        {
+          "id": "timeline",
+          "headings": 6,
+          "parent": "ia-explore",
+          "next": [
+            "social",
+            "research"
+          ]
+        },
+        {
+          "id": "geography",
+          "headings": 6,
+          "parent": "ia-explore",
+          "next": [
+            "governance-access",
+            "resources"
+          ]
+        },
+        {
+          "id": "governance-access",
+          "headings": 9,
+          "parent": "ia-explore",
+          "next": [
+            "governance-sanctions",
+            "geography"
+          ]
+        },
+        {
+          "id": "governance-sanctions",
+          "headings": 16,
+          "parent": "ia-explore",
+          "next": [
+            "disputes",
+            "sources"
+          ]
+        },
+        {
+          "id": "strange",
+          "headings": 3,
+          "parent": "ia-stories",
+          "next": [
+            "social",
+            "explore"
+          ]
+        },
+        {
+          "id": "social",
+          "headings": 5,
+          "parent": "ia-stories",
+          "next": [
+            "cities",
+            "explore"
+          ]
+        },
+        {
+          "id": "cities",
+          "headings": 6,
+          "parent": "ia-stories",
+          "next": [
+            "lugano",
+            "explore"
+          ]
+        },
+        {
+          "id": "economics",
+          "headings": 7,
+          "parent": "ia-stories",
+          "next": [
+            "contention",
+            "resources"
+          ]
+        },
+        {
+          "id": "contention",
+          "headings": 6,
+          "parent": "ia-outcomes",
+          "next": [
+            "disputes",
+            "explore"
+          ]
+        },
+        {
+          "id": "disputes",
+          "headings": 4,
+          "parent": "ia-outcomes",
+          "next": [
+            "refusals",
+            "sources"
+          ]
+        },
+        {
+          "id": "refusals",
+          "headings": 5,
+          "parent": "ia-outcomes",
+          "next": [
+            "cemetery",
+            "explore"
+          ]
+        },
+        {
+          "id": "cemetery",
+          "headings": 1,
+          "parent": "ia-outcomes",
+          "next": [
+            "cities",
+            "explore"
+          ]
+        },
+        {
+          "id": "reveal",
+          "headings": 4,
+          "parent": "ia-round",
+          "next": [
+            "inside-round",
+            "explore"
+          ]
+        },
+        {
+          "id": "inside-round",
+          "headings": 3,
+          "parent": "ia-round",
+          "next": [
+            "behind-round",
+            "reveal"
+          ]
+        },
+        {
+          "id": "behind-round",
+          "headings": 4,
+          "parent": "ia-round",
+          "next": [
+            "reveal",
+            "sources"
+          ]
+        },
+        {
+          "id": "lugano",
+          "headings": 16,
+          "parent": "ia-round",
+          "next": [
+            "cities",
+            "sources"
+          ]
+        },
+        {
+          "id": "research",
+          "headings": 5,
+          "parent": "ia-research",
+          "next": [
+            "paper",
+            "resources"
+          ]
+        },
+        {
+          "id": "paper",
+          "headings": 1,
+          "parent": "ia-research",
+          "next": [
+            "sources",
+            "research"
+          ]
+        },
+        {
+          "id": "resources",
+          "headings": 3,
+          "parent": "ia-research",
+          "next": [
+            "sources",
+            "research"
+          ]
+        },
+        {
+          "id": "sources",
+          "headings": 7,
+          "parent": "ia-research",
+          "next": [
+            "research",
+            "resources"
+          ]
+        }
+      ],
+      "reorders": {
+        "how": {
+          "before": [
+            "Qu’est-ce qu’un point, au fond ?",
+            "panel field2026Focus",
+            "panel accessReadingLink",
+            "scopeHeader",
+            "Comment fonctionnent vraiment les domaines Internet",
+            "Qui fait quoi ?",
+            "Qu’obtient-on vraiment en enregistrant un domaine ?",
+            "L’économie du point",
+            "Comment naît un nouveau TLD",
+            "Deux questions différentes : quel type de candidature, et qui peut enregistrer ?",
+            "Des mots précis, des concepts clairs",
+            "Glossaire essentiel",
+            "Qui peut réellement actionner quel levier ?",
+            "scopeHeader luganoScope",
+            "De la règle générale au cas .lugano",
+            "Dans le cas de .lugano : ce que le registre pourrait gouverner et ce que cela ne signifierait pas",
+            "Parler de .lugano avec précision"
+          ],
+          "after": [
+            "Comment fonctionnent vraiment les domaines Internet",
+            "Qui fait quoi ?",
+            "Qu’obtient-on vraiment en enregistrant un domaine ?",
+            "Qu’est-ce qu’un point, au fond ?",
+            "panel field2026Focus",
+            "panel accessReadingLink",
+            "scopeHeader",
+            "L’économie du point",
+            "Comment naît un nouveau TLD",
+            "Deux questions différentes : quel type de candidature, et qui peut enregistrer ?",
+            "Des mots précis, des concepts clairs",
+            "Glossaire essentiel",
+            "Qui peut réellement actionner quel levier ?",
+            "scopeHeader luganoScope",
+            "De la règle générale au cas .lugano",
+            "Dans le cas de .lugano : ce que le registre pourrait gouverner et ce que cela ne signifierait pas",
+            "Parler de .lugano avec précision"
+          ],
+          "originalBlocks": 17
+        },
+        "social": {
+          "before": [
+            "La vie sociale du point",
+            "Des appartenances qui évoluent",
+            "panel field2026Focus",
+            "panel crossRoundDisclosure",
+            "2026 : finalité sociale et désignation ICANN « Community » ne sont pas synonymes",
+            "Six façons pour un espace de noms de devenir social",
+            "Neuf cas sociaux"
+          ],
+          "after": [
+            "La vie sociale du point",
+            "Des appartenances qui évoluent",
+            "Neuf cas sociaux",
+            "Six façons pour un espace de noms de devenir social",
+            "panel field2026Focus",
+            "panel crossRoundDisclosure",
+            "2026 : finalité sociale et désignation ICANN « Community » ne sont pas synonymes"
+          ],
+          "originalBlocks": 7
+        },
+        "cities": {
+          "before": [
+            "Du nom de lieu à l’infrastructure publique",
+            "Couche géographique · 2026",
+            "Une deuxième génération de city-TLD ?",
+            "panel cityHelsinkiBridge",
+            "Qui gouverne le domaine d'une ville ?",
+            "Le succès ne se réduit pas aux noms vendus"
+          ],
+          "after": [
+            "Du nom de lieu à l’infrastructure publique",
+            "Qui gouverne le domaine d'une ville ?",
+            "Le succès ne se réduit pas aux noms vendus",
+            "Couche géographique · 2026",
+            "Une deuxième génération de city-TLD ?",
+            "panel cityHelsinkiBridge"
+          ],
+          "originalBlocks": 6
+        },
+        "contention": {
+          "before": [
+            "À qui revient un nom lorsque plusieurs candidats le demandent ?",
+            "panel crossRoundDisclosure",
+            "Les chaînes les plus disputées de 2026",
+            "Même rareté, autre vocabulaire",
+            "Une règle majeure a changé en 2026",
+            "Qui peut contrôler un mot ?"
+          ],
+          "after": [
+            "À qui revient un nom lorsque plusieurs candidats le demandent ?",
+            "Les chaînes les plus disputées de 2026",
+            "Une règle majeure a changé en 2026",
+            "Même rareté, autre vocabulaire",
+            "Qui peut contrôler un mot ?",
+            "panel crossRoundDisclosure"
+          ],
+          "originalBlocks": 6
+        },
+        "disputes": {
+          "before": [
+            "Les litiges qui ont changé le point",
+            "panel field2026Focus",
+            "panel crossRoundDisclosure",
+            "Statut 2026 : les candidatures sont publiques, les objections formelles ne sont pas encore ouvertes",
+            "Comment un litige sur un TLD entre dans le système",
+            "Neuf litiges qui ont changé le sens du point"
+          ],
+          "after": [
+            "Les litiges qui ont changé le point",
+            "Neuf litiges qui ont changé le sens du point",
+            "Comment un litige sur un TLD entre dans le système",
+            "panel field2026Focus",
+            "panel crossRoundDisclosure",
+            "Statut 2026 : les candidatures sont publiques, les objections formelles ne sont pas encore ouvertes"
+          ],
+          "originalBlocks": 6
+        },
+        "refusals": {
+          "before": [
+            "Candidatures qui n’ont pas abouti",
+            "panel crossRoundDisclosure",
+            "Statut 2026 : trop tôt pour parler de résultats",
+            "Six façons différentes pour une candidature de s’arrêter",
+            "À quoi ressemblait l’entonnoir 2012 en août 2013",
+            "Six issues qui méritent d’être comprises"
+          ],
+          "after": [
+            "Candidatures qui n’ont pas abouti",
+            "Six issues qui méritent d’être comprises",
+            "Six façons différentes pour une candidature de s’arrêter",
+            "À quoi ressemblait l’entonnoir 2012 en août 2013",
+            "panel crossRoundDisclosure",
+            "Statut 2026 : trop tôt pour parler de résultats"
+          ],
+          "originalBlocks": 6
+        },
+        "sources": {
+          "before": [
+            "La position de l’auteur",
+            "Qu’est-ce qui rend un TLD « réussi » ?",
+            "Comment lire cette publication",
+            "Sources & méthodologie",
+            "Versions et mises à jour",
+            "Vous avez trouvé quelque chose à corriger ?",
+            "audit-documentary-corrections"
+          ],
+          "after": [
+            "La position de l’auteur",
+            "Comment lire cette publication",
+            "Sources & méthodologie",
+            "Qu’est-ce qui rend un TLD « réussi » ?",
+            "Versions et mises à jour",
+            "Vous avez trouvé quelque chose à corriger ?",
+            "audit-documentary-corrections"
+          ],
+          "originalBlocks": 7
+        },
+        "timeline": {
+          "before": [
+            "L’archéologie du point",
+            "Les noms par lesquels Internet raconte la société",
+            "Du recensement des noms aux tendances",
+            "L’an 2000 ressemble déjà à une capsule temporelle",
+            "Les rounds en un coup d’œil"
+          ],
+          "after": [
+            "L’archéologie du point",
+            "Les noms par lesquels Internet raconte la société",
+            "L’an 2000 ressemble déjà à une capsule temporelle",
+            "Les rounds en un coup d’œil",
+            "Du recensement des noms aux tendances"
+          ],
+          "originalBlocks": 5
+        },
+        "resources": {
+          "before": [
+            "Données, faits & ressources réutilisables",
+            "Questions soulevées par les données",
+            "Télécharger les données de travail"
+          ],
+          "after": [
+            "Données, faits & ressources réutilisables",
+            "Télécharger les données de travail",
+            "Questions soulevées par les données"
+          ],
+          "originalBlocks": 3
+        }
+      },
+      "originalCards": 26
+    }
+  ],
+  "independent": [
+    {
+      "file": "applications/de/index.html",
+      "lang": "de",
+      "area": "ia-explore",
+      "retainedExistingIds": 15
+    },
+    {
+      "file": "applications/en/index.html",
+      "lang": "en",
+      "area": "ia-explore",
+      "retainedExistingIds": 15
+    },
+    {
+      "file": "applications/fr/index.html",
+      "lang": "fr",
+      "area": "ia-explore",
+      "retainedExistingIds": 15
+    },
+    {
+      "file": "applications/it/index.html",
+      "lang": "it",
+      "area": "ia-explore",
+      "retainedExistingIds": 15
+    },
+    {
+      "file": "behind-the-round/de/background-screening/index.html",
+      "lang": "de",
+      "area": "ia-round",
+      "retainedExistingIds": 3
+    },
+    {
+      "file": "behind-the-round/de/index.html",
+      "lang": "de",
+      "area": "ia-round",
+      "retainedExistingIds": 12
+    },
+    {
+      "file": "behind-the-round/de/objectors-eoi/index.html",
+      "lang": "de",
+      "area": "ia-round",
+      "retainedExistingIds": 3
+    },
+    {
+      "file": "behind-the-round/de/replacement-strings/index.html",
+      "lang": "de",
+      "area": "ia-round",
+      "retainedExistingIds": 5
+    },
+    {
+      "file": "behind-the-round/de/sanctions-and-dns/index.html",
+      "lang": "de",
+      "area": "ia-round",
+      "retainedExistingIds": 28
+    },
+    {
+      "file": "behind-the-round/de/wdo-identity/index.html",
+      "lang": "de",
+      "area": "ia-round",
+      "retainedExistingIds": 4
+    },
+    {
+      "file": "behind-the-round/de/who-controls-internet-access/index.html",
+      "lang": "de",
+      "area": "ia-round",
+      "retainedExistingIds": 26
+    },
+    {
+      "file": "behind-the-round/en/background-screening/index.html",
+      "lang": "en",
+      "area": "ia-round",
+      "retainedExistingIds": 3
+    },
+    {
+      "file": "behind-the-round/en/index.html",
+      "lang": "en",
+      "area": "ia-round",
+      "retainedExistingIds": 12
+    },
+    {
+      "file": "behind-the-round/en/objectors-eoi/index.html",
+      "lang": "en",
+      "area": "ia-round",
+      "retainedExistingIds": 3
+    },
+    {
+      "file": "behind-the-round/en/replacement-strings/index.html",
+      "lang": "en",
+      "area": "ia-round",
+      "retainedExistingIds": 5
+    },
+    {
+      "file": "behind-the-round/en/sanctions-and-dns/index.html",
+      "lang": "en",
+      "area": "ia-round",
+      "retainedExistingIds": 28
+    },
+    {
+      "file": "behind-the-round/en/wdo-identity/index.html",
+      "lang": "en",
+      "area": "ia-round",
+      "retainedExistingIds": 4
+    },
+    {
+      "file": "behind-the-round/en/who-controls-internet-access/index.html",
+      "lang": "en",
+      "area": "ia-round",
+      "retainedExistingIds": 26
+    },
+    {
+      "file": "behind-the-round/fr/background-screening/index.html",
+      "lang": "fr",
+      "area": "ia-round",
+      "retainedExistingIds": 3
+    },
+    {
+      "file": "behind-the-round/fr/index.html",
+      "lang": "fr",
+      "area": "ia-round",
+      "retainedExistingIds": 12
+    },
+    {
+      "file": "behind-the-round/fr/objectors-eoi/index.html",
+      "lang": "fr",
+      "area": "ia-round",
+      "retainedExistingIds": 3
+    },
+    {
+      "file": "behind-the-round/fr/replacement-strings/index.html",
+      "lang": "fr",
+      "area": "ia-round",
+      "retainedExistingIds": 5
+    },
+    {
+      "file": "behind-the-round/fr/sanctions-and-dns/index.html",
+      "lang": "fr",
+      "area": "ia-round",
+      "retainedExistingIds": 28
+    },
+    {
+      "file": "behind-the-round/fr/wdo-identity/index.html",
+      "lang": "fr",
+      "area": "ia-round",
+      "retainedExistingIds": 4
+    },
+    {
+      "file": "behind-the-round/fr/who-controls-internet-access/index.html",
+      "lang": "fr",
+      "area": "ia-round",
+      "retainedExistingIds": 26
+    },
+    {
+      "file": "behind-the-round/it/background-screening/index.html",
+      "lang": "it",
+      "area": "ia-round",
+      "retainedExistingIds": 3
+    },
+    {
+      "file": "behind-the-round/it/index.html",
+      "lang": "it",
+      "area": "ia-round",
+      "retainedExistingIds": 12
+    },
+    {
+      "file": "behind-the-round/it/objectors-eoi/index.html",
+      "lang": "it",
+      "area": "ia-round",
+      "retainedExistingIds": 3
+    },
+    {
+      "file": "behind-the-round/it/replacement-strings/index.html",
+      "lang": "it",
+      "area": "ia-round",
+      "retainedExistingIds": 5
+    },
+    {
+      "file": "behind-the-round/it/sanctions-and-dns/index.html",
+      "lang": "it",
+      "area": "ia-round",
+      "retainedExistingIds": 28
+    },
+    {
+      "file": "behind-the-round/it/wdo-identity/index.html",
+      "lang": "it",
+      "area": "ia-round",
+      "retainedExistingIds": 4
+    },
+    {
+      "file": "behind-the-round/it/who-controls-internet-access/index.html",
+      "lang": "it",
+      "area": "ia-round",
+      "retainedExistingIds": 26
+    },
+    {
+      "file": "inside-the-round/de/index.html",
+      "lang": "de",
+      "area": "ia-round",
+      "retainedExistingIds": 4
+    },
+    {
+      "file": "inside-the-round/en/index.html",
+      "lang": "en",
+      "area": "ia-round",
+      "retainedExistingIds": 4
+    },
+    {
+      "file": "inside-the-round/fr/index.html",
+      "lang": "fr",
+      "area": "ia-round",
+      "retainedExistingIds": 4
+    },
+    {
+      "file": "inside-the-round/it/index.html",
+      "lang": "it",
+      "area": "ia-round",
+      "retainedExistingIds": 4
+    },
+    {
+      "file": "explorer/index.html",
+      "lang": "en",
+      "area": "ia-explore",
+      "retainedExistingIds": 2
+    },
+    {
+      "file": "research/index.html",
+      "lang": "en",
+      "area": "ia-research",
+      "retainedExistingIds": 3
+    }
+  ],
+  "humanParticipants": 0
+}

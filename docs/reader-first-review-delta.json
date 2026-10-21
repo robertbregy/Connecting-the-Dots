@@ -1,0 +1,324 @@
+{
+  "status": "pending-review",
+  "candidateSHA256": "9591dbee7a09f2f29080506cd695843f3a0b7795e86d38093fc60c06c6e388c3",
+  "target": "docs/editorial-review-2026-10-21-v0.7.92.json",
+  "changedFiles": [
+    {
+      "file": "README.md",
+      "previous": "626fa6f6e1f776e0d6cc291961990ff7502f5cfee62d77c4f481e548e7624c57",
+      "sha256": "768a0de8bcd2bd03f07ea34fac3b6e5f96c613e1716756d7c7ddb3f9737c8bb6"
+    },
+    {
+      "file": "applications/de/index.html",
+      "previous": "4f5c9ca6cb1392fc3b877fb96a5b92d9734dd8f3a36eab303511fa359eb889ba",
+      "sha256": "87659cf201b45a9c0425973b07e0d86295bc2247a78febd628c1acbd54a038e3"
+    },
+    {
+      "file": "applications/en/index.html",
+      "previous": "e0834ebdb9cd1ccdcc839247b1a7840590074406b083dcb148150ec7b7ca35ab",
+      "sha256": "341aef975c8517c26ece2757dd96dcc6f30c409ee145477b89313cbf4cb495c7"
+    },
+    {
+      "file": "applications/fr/index.html",
+      "previous": "bde58a64e7da3e665a107744776278e258746d14882f8227a8ae6c892f275528",
+      "sha256": "4275091c0786dd4bb5b7c74183122857a34a634d5cc4cd966e2f638b4cdc4b58"
+    },
+    {
+      "file": "applications/it/index.html",
+      "previous": "04df520d32189e4ec0d4eb0bc5603e804d7e2fa0fb55f74a54fe4e7406847c12",
+      "sha256": "d6b11a509f55cf74677c76675de57a61047522efda75c63c48024637bf94f2ee"
+    },
+    {
+      "file": "assets/app.js",
+      "previous": "3d2a18d60ac1d5d71ab97840d600e6667c634c2718636fbedebdb213eb8ed91a",
+      "sha256": "fa3ca4a44eb15a0a63c1c5b7df078392f09f0658baea86ba5e5521a10de0929c"
+    },
+    {
+      "file": "assets/reader-first.css",
+      "previous": null,
+      "sha256": "4f6951e583ef9f5f1f4524c2c0483de975c6e7f7cdb4bd1e4b83484df000f340"
+    },
+    {
+      "file": "assets/reader-first.js",
+      "previous": null,
+      "sha256": "468e65034afecc39e55bd01e2c2847c9c479ff0cf1afe0d329fee99e57f233e2"
+    },
+    {
+      "file": "behind-the-round/de/background-screening/index.html",
+      "previous": "cbc14ef8d380ee3bbfc213ffeb8c95096df1bcb3cbe09141450c1141dc3db3b5",
+      "sha256": "ecaf289b9eca5070359e6049205d35ce9b3a63ae5af0c457de438252829adb49"
+    },
+    {
+      "file": "behind-the-round/de/index.html",
+      "previous": "a9c86254ca229aeb862315c6fc0e1163199848f9df93239313661059db61ac8e",
+      "sha256": "9e30489e2b6d5b11f6aacc1b9760b07505b61c2f9d3ef4725cd23cdd117adfa3"
+    },
+    {
+      "file": "behind-the-round/de/objectors-eoi/index.html",
+      "previous": "f7908106b6d699ff789d8c56840bb4f61d6c4efd81bbf349e183e960d5f421a7",
+      "sha256": "55d640d540ede068577d080eb2d9a574d06a9b053a30d120391cafa7996bf36b"
+    },
+    {
+      "file": "behind-the-round/de/replacement-strings/index.html",
+      "previous": "7da756e7b977fae21bd5c5b95b759788c37816491a2abcf930f840b5829e3cdd",
+      "sha256": "45f5784cf241a3634590a1d261e199b2cde7f135e28af64a4ea4b5a7f9f901e8"
+    },
+    {
+      "file": "behind-the-round/de/sanctions-and-dns/index.html",
+      "previous": "f3cc5f926af40360c930ca793b1d9e883f92ed280c4f971c09faa7928f7225cc",
+      "sha256": "df920365e2ebdb50ac4e1afc397eb94bb5aec6de6e277b953d24e94a6dd5de19"
+    },
+    {
+      "file": "behind-the-round/de/wdo-identity/index.html",
+      "previous": "c3a5ed58fa4d43becb3096a3a88c063bf46ea2ab76ba9c89f37ffb27c0aa89d9",
+      "sha256": "22e45b85060a529cc17bde9bc72532676993b57b0a8e1763a09512686c1b3258"
+    },
+    {
+      "file": "behind-the-round/de/who-controls-internet-access/index.html",
+      "previous": "0373ba3210ac9dc6770a60f801f9b422f2a574e15ca36757f36e2084dee47d11",
+      "sha256": "0b51ef9bf35f4b589d193013b2285e6cbf082742baedf8079a351ef7b22a4afe"
+    },
+    {
+      "file": "behind-the-round/en/background-screening/index.html",
+      "previous": "b8cba209a4391336789c1213a35469aee94ea543c39ed8afb32f24daaa36d8ce",
+      "sha256": "71a62c15785a9eaa0b0570b083ab4138acc904d6e7cdcece5646f5c4c7b6bf50"
+    },
+    {
+      "file": "behind-the-round/en/index.html",
+      "previous": "86ae8af5ca0111498092963298c65742fb68becfc04ca9c80e03bd6f09457783",
+      "sha256": "0b42afa2ba144db667917720dbd67729066e3b945b25eea57f1386a093c63265"
+    },
+    {
+      "file": "behind-the-round/en/objectors-eoi/index.html",
+      "previous": "ee511d564b86cc87e65d79c8d69c05b5db1be8e6a559f58b962f6b47d6017e23",
+      "sha256": "7ef344ff41b5810943a7c14bea24e40d2a005d0083941d53308a1a9fbea5e272"
+    },
+    {
+      "file": "behind-the-round/en/replacement-strings/index.html",
+      "previous": "9236c4ff963830746e15d4d1a0f9c2bf580ac00b25a22d4f1d3908fa64c5d6bc",
+      "sha256": "b060931cc565f8acbe0e46ebd93af80a5e4325f34600215bdb7ab7d935e1a799"
+    },
+    {
+      "file": "behind-the-round/en/sanctions-and-dns/index.html",
+      "previous": "13cb9e3abf791c3d1af5631e03c56ae389d56df5290769251ec21ff992a6287b",
+      "sha256": "83cca055589cc7c8c98a142a712ebb7ed06442b4a98124b26380e96c0b107108"
+    },
+    {
+      "file": "behind-the-round/en/wdo-identity/index.html",
+      "previous": "55cb1069c2bf680f2a2a133e5eecdff1ad90dc4e0bf126fcc58fe247d4feb1a8",
+      "sha256": "370a7b313e47f069a1b0fb3938c964e9bc8ee7191d574c97bee589256cc1553e"
+    },
+    {
+      "file": "behind-the-round/en/who-controls-internet-access/index.html",
+      "previous": "ef63c49fbd9fee82b025fb8ba908fbff4f026f03c4d00922d720a8ca0e88560c",
+      "sha256": "4426311ef6a38e108095725581ad5e329f707fb1644de376b524bf59c3f3743e"
+    },
+    {
+      "file": "behind-the-round/fr/background-screening/index.html",
+      "previous": "cdc0c0829d94524be310ecacb35dbdcff7b0a4783518d048ff53f64fecfac131",
+      "sha256": "4b1c2eaf43a25ae578ad63491d87894c4c48892e68fbe192557aec66c57e8c3c"
+    },
+    {
+      "file": "behind-the-round/fr/index.html",
+      "previous": "b6d2ab926bad3c42d161355fe92bd0c338cb155839cdb55d6765fd51719f297b",
+      "sha256": "65a72be4e7a9529646cf7c8712919985d958919e1c3198cedc141623d7c9c21a"
+    },
+    {
+      "file": "behind-the-round/fr/objectors-eoi/index.html",
+      "previous": "89a47902e92c8e86e65070e707257741cfd0872cb39baf38cc7bafe344445b3f",
+      "sha256": "42a3dffd01a5a0175002731b1f4599d6ce77e02e0aa2187c1226996b5c06f0af"
+    },
+    {
+      "file": "behind-the-round/fr/replacement-strings/index.html",
+      "previous": "426664805eb1be9457dce75e0a056ad9fd9908ef0c81c947aeee1d889712cd93",
+      "sha256": "0740709366811f8ab1f159a3a6bd967e51599a317fa7868d7d959f8ccd8382f6"
+    },
+    {
+      "file": "behind-the-round/fr/sanctions-and-dns/index.html",
+      "previous": "31a300e2e6cb9c3cf57934d4700b3220c7cb2ae269800c512351d562812f68d3",
+      "sha256": "df5cad51f186e0b06176aaec266f6e0487c2e0e2924aa92462eb2f67dd9acf67"
+    },
+    {
+      "file": "behind-the-round/fr/wdo-identity/index.html",
+      "previous": "723c227c55e785ce8776715deaf5e6093438d4d4f02cd9ce84fb1dc57db9502d",
+      "sha256": "6549dc955c20557e8b856529b3e231cc6886182740cbe0ff4d0e5ece7a6e3da2"
+    },
+    {
+      "file": "behind-the-round/fr/who-controls-internet-access/index.html",
+      "previous": "9b01d3ef0b99124a0b77a977b20b4967e4d86cd5442bcd0da79ea3ce00c63b49",
+      "sha256": "6a0f2b73124591a5e5e145977ffa7b98aa497f35289d6a02fcf0daa14202ee11"
+    },
+    {
+      "file": "behind-the-round/it/background-screening/index.html",
+      "previous": "b782f8bd946c6f3bc6704f9968a72c047c5a43936f54b857166abdf17fec0f18",
+      "sha256": "b62c306048ee8dba2a012c4adc8ec2c5bf58ca476c08f2124c3ad9879e5594cd"
+    },
+    {
+      "file": "behind-the-round/it/index.html",
+      "previous": "8d5a5b3ae223c6d8064cfd8ddf973c0fa73d9db4bb96cf3c38621a7899379ecd",
+      "sha256": "78e09580494b4fdd29a3cb53652f9a9fb1f67b35f64488606af383af12d31ecf"
+    },
+    {
+      "file": "behind-the-round/it/objectors-eoi/index.html",
+      "previous": "7d92dde259e811c98cedd41eab8b10c94f62e5bed42b556dcb420de42d0390b9",
+      "sha256": "081a18b607d1269e6b0a9f9036e4ad716e92813f1726c8456f60878b7b36c45a"
+    },
+    {
+      "file": "behind-the-round/it/replacement-strings/index.html",
+      "previous": "8f58ca55fc0409f9c5640ac630c1f4bb28227e0cbca69dc229bf8a5765b7f3d8",
+      "sha256": "47b6cbc5e7f7ba5ee6a041cf97f36ad745496e44a25a4c9017989773bca0e560"
+    },
+    {
+      "file": "behind-the-round/it/sanctions-and-dns/index.html",
+      "previous": "e0abead410df165bae48d0db9b2daf9bdc5b23c1866d307d9f102409fc2ff686",
+      "sha256": "42740840ad3412e7fb6b36d338c9f7ac59b806f8a87e022cf6bba3efcc6ef94d"
+    },
+    {
+      "file": "behind-the-round/it/wdo-identity/index.html",
+      "previous": "4531fa3049f92d4ddf51acef7094787c36b92b28fcbeda3cca07c9c54ad72144",
+      "sha256": "8c447cb6a8ddf87bbb8fcf1e7c036dc563b62410e808a1913249e6b9c6d0e374"
+    },
+    {
+      "file": "behind-the-round/it/who-controls-internet-access/index.html",
+      "previous": "f7f8627965be401cc75ba0a240c610dfc8ef629ccac659230d0ddead0d885a71",
+      "sha256": "ce834fd6f78c5bc1caabdfc46ec9707b1e788250c785d2a260bbb8795e8e5ba1"
+    },
+    {
+      "file": "build.py",
+      "previous": "35392077952ca22c827705160aa5e5f450ca15f37ac2b7a16a5f3e7563a5e759",
+      "sha256": "7daaebc68821879e4f36c5f36902639ca2915b2f7fde4a265eb0cacfd70f83d3"
+    },
+    {
+      "file": "data/reader_first.json",
+      "previous": null,
+      "sha256": "3ed223f738d5b019e40473dc2102beac6e10e10b1e922d8d34d6757e124c64cb"
+    },
+    {
+      "file": "data/release_history.json",
+      "previous": "decc9eae221acdfe8aa8e62ac857be4c35ea35c0616babd59acc9466bab68aa1",
+      "sha256": "db594028757f9d6ad25da1448897c0d6eebe888fa4a7a6867b6383cc6769bfc9"
+    },
+    {
+      "file": "data/translations.json",
+      "previous": "423fe2b8798f3c6961ee01c7b72cdb4cba975b7ebabc708c5f3584dd0b13517e",
+      "sha256": "9c576286813add6e8b158ae54d2f819b3ee9160d84994fe27989ad19f108c04d"
+    },
+    {
+      "file": "downloads/connecting-the-dots-data-pack-v0.7.92.sha256",
+      "previous": null,
+      "sha256": "8d0d326f4b6c274d1b63c750dced7e5da4a50c69db5175a76848a1d6f8f8a21d"
+    },
+    {
+      "file": "downloads/connecting-the-dots-data-pack-v0.7.92.zip",
+      "previous": null,
+      "sha256": "92285f39662f9ff38d3e317339d2c5176c1528e7e6b3b475ca72c6f2150865da"
+    },
+    {
+      "file": "inside-the-round/de/index.html",
+      "previous": "c884abef7ee2f8a0dd882539fe16e78dc48ed82bdfbcd6ed69e62bcf0f2a9655",
+      "sha256": "016615ca70aaf3fec533398c28088b6221241d70a85d1da8fcad46ca763e6700"
+    },
+    {
+      "file": "inside-the-round/en/index.html",
+      "previous": "e51bee72c4b48e3bfe346c5dcee3c7d5ae0972a3ba8d027d2754dd4baf321a8b",
+      "sha256": "e1bd44a8d897ea9ae8e51e9b577db95b395c9494575dceb26f79ecfef51c6611"
+    },
+    {
+      "file": "inside-the-round/fr/index.html",
+      "previous": "4ffe6a4c1e050b40b19fec0a82e8249b38182507f42b9f015f39b65a4482b992",
+      "sha256": "005d37520b77dfc082191321cb86232d9dacddd07c1bad092be030de8451dad6"
+    },
+    {
+      "file": "inside-the-round/it/index.html",
+      "previous": "59447f9863fcb5955840b6101f9b2404f5326f34f15adf7490f35f0b91a06530",
+      "sha256": "2de2aa68e89d3dd90216cca7a318a1fe3c4cf8bacf593e6164ee7e335d885a56"
+    },
+    {
+      "file": "package-lock.json",
+      "previous": "ff41ce07a5ffb5e83a13e9d79b1c819bcb214df9702e0b6784357d082cb4184a",
+      "sha256": "0df68dd6e8b4ca0383b41a8f1e74420178bf4ba55e3ace2a3dccda7c2fbb45bd"
+    },
+    {
+      "file": "package.json",
+      "previous": "e4ae5de3daee17607dbe9462cc67ebc0c996c4a547c40d919e23804fb3c0c90d",
+      "sha256": "d30d869f753a25b82213978cccdce57ae2cf1d7100da0aad692e6a3dbdd079b7"
+    },
+    {
+      "file": "publication.json",
+      "previous": "d2ab22d5e8467ac3ce93d7a36363793dfb6dd07b0ceefaacba6d9efec5cac962",
+      "sha256": "29113282ebc138345bce11e49c70b42da9ae6005b8b9d761f99815342b156ab7"
+    },
+    {
+      "file": "research/README.md",
+      "previous": "e536790b6c596fc0285ad6f164c9b8c47cc6fa58292a99b234df556492a67e1e",
+      "sha256": "d0b196b2002b381fdc264dcaf1b12546fd34cb31369ce4b3aa04e36aa2ebc814"
+    },
+    {
+      "file": "research/connecting-the-dots-working-paper-v1.html",
+      "previous": "485f4fbf54eb66ceb98a19869def15296fee07d11f7c881070c0d121b844953d",
+      "sha256": "1e19e64e0c8e86478133fb0b419a1fec42a9a642f57d879d0353023c6cd9e537"
+    },
+    {
+      "file": "research/connecting-the-dots-working-paper-v1.md",
+      "previous": "129f03d5177126f8f1616b8bece761f04f42f719482c0f21a6d8f89072022347",
+      "sha256": "86ecf2adb083f877ea064b8bb270700c88acd8e46a9c9202cb55d64fe31d6297"
+    },
+    {
+      "file": "research/index.html",
+      "previous": "d2133977f585d04c3b6cc6a097e72dba1a6956ea013c808475587479cef81a1d",
+      "sha256": "c326dd43543264f2ba2091e45b97f96358b102f90c1e6e57150cdccfd4a63bb2"
+    },
+    {
+      "file": "research/reader-study/de/index.html",
+      "previous": "981b78991fda51dcad717782a4754f1330e720706be8e85af3e469bca098deb4",
+      "sha256": "4596333f120624a1bbb3a7e93cb96513919e25974d9fa63f2d05143c3edb8735"
+    },
+    {
+      "file": "research/reader-study/en/index.html",
+      "previous": "7b42fceb7f48afb26393327f6d380254126d8b9804be45a761c86d4f2ea017a6",
+      "sha256": "49c48f576ad41d18323678362ed96e675df51512611d59fda95dafb4b3d10d2d"
+    },
+    {
+      "file": "research/reader-study/fr/index.html",
+      "previous": "a34155253673818b1d8d55f7a06561f42c8600521ff07cf44dbb3abc6a08774f",
+      "sha256": "6212337383eaa4279b103b42c627244eb9a5afafdd08515ec6ae30e2a90ba513"
+    },
+    {
+      "file": "research/reader-study/it/index.html",
+      "previous": "d3a938bded0a3640c07fedc72dc89f6cdfb35d1556b29c2059a8a8ab4d57afc4",
+      "sha256": "6be6dc35be948dedac5e6888dad0e40a3e19397a2f8a4c73c3058c44b8b439ca"
+    },
+    {
+      "file": "research/research_release_manifest.json",
+      "previous": "9b99ba8d2a4b08bd73b54b7e8330ef9b91ae040b9ea8d1cff9c5bda26988e080",
+      "sha256": "c770478b6095887ac1fbf5a5283f8af5bef888ab098e82bbbf87029e31075047"
+    },
+    {
+      "file": "scripts/reader_first.cjs",
+      "previous": null,
+      "sha256": "2526f7109e5fbe1a0f6069d0476010f758a58dac1459ed808e92bfcea3a18205"
+    },
+    {
+      "file": "scripts/reader_first_browser.cjs",
+      "previous": null,
+      "sha256": "b513d1c7bd1bd842c61aa3e4a7eb13d271903d6fb7835c84d9f37559ec202762"
+    },
+    {
+      "file": "scripts/reader_first_install.py",
+      "previous": null,
+      "sha256": "84d2bfecb05232b241a8856ddad114a43e604cf7b8420678a1c3d964d7308e49"
+    },
+    {
+      "file": "scripts/reader_first_review.cjs",
+      "previous": null,
+      "sha256": "145753d7fe828f3a443bae3eac079890e32fe16a80a3a1371e3802ab750c4861"
+    },
+    {
+      "file": "src/index.web.html",
+      "previous": "69badb78d97900eee46d7fdda77572589c465c18e165b8e39a42a7e41dc16b63",
+      "sha256": "96ca71f9635b335d19941e63978d44bbd7fb99681d00e1fc96143a8845a68f5c"
+    }
+  ],
+  "sourceSections": 21,
+  "immutableFiles": 28
+}
