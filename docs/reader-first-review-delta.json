@@ -1,6 +1,6 @@
 {
   "status": "pending-review",
-  "candidateSHA256": "42dd5f418b4b078ef13f4759f4727cbbce0fb2001909af7c664b8f79defe31fe",
+  "candidateSHA256": "fd7a709b1d36e539ef2a5650b46d394c04c21850eb9008e0b845bfbd7cbc32d9",
   "target": "docs/editorial-review-2026-10-21-v0.7.92.json",
   "changedFiles": [
     {
@@ -11,22 +11,22 @@
     {
       "file": "applications/de/index.html",
       "previous": "4f5c9ca6cb1392fc3b877fb96a5b92d9734dd8f3a36eab303511fa359eb889ba",
-      "sha256": "9d29997b33a9d782b81b75c73bf3e418cb239a8e3a76eeccd8cb2d30c9ca643f"
+      "sha256": "2e236eafe135e6a0468cf9790b6aeeef160883e2141715488d59fc38752ba063"
     },
     {
       "file": "applications/en/index.html",
       "previous": "e0834ebdb9cd1ccdcc839247b1a7840590074406b083dcb148150ec7b7ca35ab",
-      "sha256": "69813ca38d8f95d8df3992eda512f95d55181c92df777e56d0bd0c6017546506"
+      "sha256": "a81aeb4fbb89ee5f518575d02e918f72dac69eadabc44905144770672c3e4dc7"
     },
     {
       "file": "applications/fr/index.html",
       "previous": "bde58a64e7da3e665a107744776278e258746d14882f8227a8ae6c892f275528",
-      "sha256": "fab715555aa2fce88b35001ab001571a8668b1e5e8638ac211263bf2a6001b75"
+      "sha256": "7ec0aafa3d023d9d80d1c9cafdb7216349fd3585f8a6a8a3a734eec8b4804d72"
     },
     {
       "file": "applications/it/index.html",
       "previous": "04df520d32189e4ec0d4eb0bc5603e804d7e2fa0fb55f74a54fe4e7406847c12",
-      "sha256": "819f9cef3e0bd567963766672ca592e8c6901e04a2c1f3f6681b03928aed858f"
+      "sha256": "41e565188e01cff152de6d256d40ab5819e88be90019cf799707bf608555d42a"
     },
     {
       "file": "assets/app.js",
@@ -36,152 +36,152 @@
     {
       "file": "assets/reader-first.css",
       "previous": null,
-      "sha256": "7c4614bb8a3717130414e8491e655aadb486deaa864b3cf2f679656876f3d5e8"
+      "sha256": "cd5aea9ab61e05854eae462a763043d5a6d74efb5292823cb2d3b7ac9202d5a2"
     },
     {
       "file": "assets/reader-first.js",
       "previous": null,
-      "sha256": "fd380aa68636f9e8d38c95b568279853d84e36a474248e2509a8f808443ef121"
+      "sha256": "939f8ce3b74b20182dc9059747823f6a212e3987cf8a5b4f957313f1e3ed3b80"
     },
     {
       "file": "behind-the-round/de/background-screening/index.html",
       "previous": "cbc14ef8d380ee3bbfc213ffeb8c95096df1bcb3cbe09141450c1141dc3db3b5",
-      "sha256": "76377945e8d56e12935b2cd4391329176ee320789303c8b129f3589d3b391548"
+      "sha256": "4a53ef8f49ce4e20362739b0e6b5660bdbf9df2b9b3efee0e001cd99eca77b46"
     },
     {
       "file": "behind-the-round/de/index.html",
       "previous": "a9c86254ca229aeb862315c6fc0e1163199848f9df93239313661059db61ac8e",
-      "sha256": "0737a35bbc8b656301d7f54579fd17ae2b6277d931dfd1849f18006f5a34e469"
+      "sha256": "3e4b4c7ab29213de2643fc87b35bea3ee18bd1e9687238c7fe20dea1ee6e1f6d"
     },
     {
       "file": "behind-the-round/de/objectors-eoi/index.html",
       "previous": "f7908106b6d699ff789d8c56840bb4f61d6c4efd81bbf349e183e960d5f421a7",
-      "sha256": "3df50e8802abefc4d48695a3cf1a1262c3d151685680ba5848b29470a492e2a8"
+      "sha256": "890d8df9363964514aff9305742acf57e512c2d79434fbf2d0c44f27149742e3"
     },
     {
       "file": "behind-the-round/de/replacement-strings/index.html",
       "previous": "7da756e7b977fae21bd5c5b95b759788c37816491a2abcf930f840b5829e3cdd",
-      "sha256": "abc2756ea79af40df5f91f987a0a082e73b42234e0ce0a7299bed8f99c153b79"
+      "sha256": "a2558baac9b471880ccb35c58e6218aca14e92936ae7757b1f6b15d4a566d965"
     },
     {
       "file": "behind-the-round/de/sanctions-and-dns/index.html",
       "previous": "f3cc5f926af40360c930ca793b1d9e883f92ed280c4f971c09faa7928f7225cc",
-      "sha256": "0ef4e37a54afbcb0ae9ff1342d03e817417bee6115551b6993169b4b980325aa"
+      "sha256": "9d4586e709073734b2a077b71660448d639952f7be789ee126268123a008bfd9"
     },
     {
       "file": "behind-the-round/de/wdo-identity/index.html",
       "previous": "c3a5ed58fa4d43becb3096a3a88c063bf46ea2ab76ba9c89f37ffb27c0aa89d9",
-      "sha256": "9f2606ac1ec0ff87bd5016649a411e345fa0edd64671c30b39950842300851ca"
+      "sha256": "540ce152a109228deaef62da7b21f47522238b090737c7ef837e5f74b38d0d01"
     },
     {
       "file": "behind-the-round/de/who-controls-internet-access/index.html",
       "previous": "0373ba3210ac9dc6770a60f801f9b422f2a574e15ca36757f36e2084dee47d11",
-      "sha256": "d2e8e72c2699ec6216e0d03b8d724c5dbaa0d4d6adfc421c3edddc7c76c8aef5"
+      "sha256": "f48207bf9274e0ac60669822fb9d448ed596ed477f1b48f7577e0f2e8b364f36"
     },
     {
       "file": "behind-the-round/en/background-screening/index.html",
       "previous": "b8cba209a4391336789c1213a35469aee94ea543c39ed8afb32f24daaa36d8ce",
-      "sha256": "4088310bac2c54ef4be3cdffa66cf08fc48656402e36707a63901456dcca1104"
+      "sha256": "f65af4f27f9b52c129bd4d80fc6344af26574a67272d7a763191c7ae86c74a1b"
     },
     {
       "file": "behind-the-round/en/index.html",
       "previous": "86ae8af5ca0111498092963298c65742fb68becfc04ca9c80e03bd6f09457783",
-      "sha256": "0699280f199a01d5c2bd89381d7c3284ec3bb743fcc5d2beb76bd099883b3f31"
+      "sha256": "d9413870ac9070c828213b42d309134e002cb5e8c9b009d86d86e295444b95fd"
     },
     {
       "file": "behind-the-round/en/objectors-eoi/index.html",
       "previous": "ee511d564b86cc87e65d79c8d69c05b5db1be8e6a559f58b962f6b47d6017e23",
-      "sha256": "ab78c56aa706d305d5381364e429280b435b43f2af2da0741d12209d55e8b4a2"
+      "sha256": "f40f9a7b67f78b80c652c8048933a2f171a87e8409029dd5611fb2d0a65c223e"
     },
     {
       "file": "behind-the-round/en/replacement-strings/index.html",
       "previous": "9236c4ff963830746e15d4d1a0f9c2bf580ac00b25a22d4f1d3908fa64c5d6bc",
-      "sha256": "083786b7c4f329919c60ff3b3ca0bc0b384c5203c476a1575c4a861ee4a52e1e"
+      "sha256": "0ca847d97135d6a3b8e7f1376ce19539ce06291d9fdbdba25dd153e25d8da5e2"
     },
     {
       "file": "behind-the-round/en/sanctions-and-dns/index.html",
       "previous": "13cb9e3abf791c3d1af5631e03c56ae389d56df5290769251ec21ff992a6287b",
-      "sha256": "1bd33692070715c3993ed06504e346f61df0f80e341a4f698518416558b0bf22"
+      "sha256": "00dd8425a33fa2715f2d22c023e9dae9de9213fe6b0b76271ca2148b23d6b243"
     },
     {
       "file": "behind-the-round/en/wdo-identity/index.html",
       "previous": "55cb1069c2bf680f2a2a133e5eecdff1ad90dc4e0bf126fcc58fe247d4feb1a8",
-      "sha256": "3823af4f2abe91fd734e501a21aeb03cdad9040270ffacd1f3a9f7712b088f06"
+      "sha256": "534f9072a606367278778e239909b06c44ca162766cd5ad076e1ba703a0532dc"
     },
     {
       "file": "behind-the-round/en/who-controls-internet-access/index.html",
       "previous": "ef63c49fbd9fee82b025fb8ba908fbff4f026f03c4d00922d720a8ca0e88560c",
-      "sha256": "53820485d01bed2001a9b33c03b7038b7b08e7e333714e48fea9312e39fd73c5"
+      "sha256": "6c3cf0ab807a8a17614804494405928cf7c6614be4d35ad59b6f0020e4b44337"
     },
     {
       "file": "behind-the-round/fr/background-screening/index.html",
       "previous": "cdc0c0829d94524be310ecacb35dbdcff7b0a4783518d048ff53f64fecfac131",
-      "sha256": "055848b6617050570a2b3e752b01a5ddc5ec471e0f54d6ab83db24435d6e9343"
+      "sha256": "9044e523a16dd2dc7188d7d366aa4c95418c2fa376ee75e43fa3743014f6737f"
     },
     {
       "file": "behind-the-round/fr/index.html",
       "previous": "b6d2ab926bad3c42d161355fe92bd0c338cb155839cdb55d6765fd51719f297b",
-      "sha256": "80a7ac22525b38b3b047b4288f5b2365920aa417e48bc17a46f2f67c71edc9d4"
+      "sha256": "c146ca5c2403d5077ef8b78b348e7accf5d1d0acb3cde1b3f86ff625ff137a96"
     },
     {
       "file": "behind-the-round/fr/objectors-eoi/index.html",
       "previous": "89a47902e92c8e86e65070e707257741cfd0872cb39baf38cc7bafe344445b3f",
-      "sha256": "95ca9f4620bb04d460354897d676da1b7e5a2d0f37a35db2084c236501244734"
+      "sha256": "8c9fe0b5d83686e5ded8e45bd8f3521cafc2db7ef7bc724e93392747fafa0f69"
     },
     {
       "file": "behind-the-round/fr/replacement-strings/index.html",
       "previous": "426664805eb1be9457dce75e0a056ad9fd9908ef0c81c947aeee1d889712cd93",
-      "sha256": "d3d2083d796668fee3439ba3c34c7ba440ad6e3831126dd3cb24eebfec95d7f9"
+      "sha256": "9b921ab2135b82d1db7f564ade262c944716309c012cc8f75e19a194f2bac22f"
     },
     {
       "file": "behind-the-round/fr/sanctions-and-dns/index.html",
       "previous": "31a300e2e6cb9c3cf57934d4700b3220c7cb2ae269800c512351d562812f68d3",
-      "sha256": "e22d4d713c1eec0ad3f5ab71d3513401b3c7f2dc11346de061d74787e9540296"
+      "sha256": "9bce74d49b0ab5a3b8ef97ea7a9afcb8f28fe41ceda8b94245fb20c8be2caacf"
     },
     {
       "file": "behind-the-round/fr/wdo-identity/index.html",
       "previous": "723c227c55e785ce8776715deaf5e6093438d4d4f02cd9ce84fb1dc57db9502d",
-      "sha256": "f38f71bc49f4d7c21038cebb36bbeebb671fb960e769df5101e4d7fcf12d3329"
+      "sha256": "becd539795e06792f4ad385d5eb5e93c9270b55caa858747f0d66a91e197588c"
     },
     {
       "file": "behind-the-round/fr/who-controls-internet-access/index.html",
       "previous": "9b01d3ef0b99124a0b77a977b20b4967e4d86cd5442bcd0da79ea3ce00c63b49",
-      "sha256": "0b357e195bcffe6dcd10df9ebadeecaa1ea07754b15d2c27a67969b5dce77509"
+      "sha256": "b4b9ee6f570836d7ebd5c97453c2bc46b9677a465d76326967c786947abd36be"
     },
     {
       "file": "behind-the-round/it/background-screening/index.html",
       "previous": "b782f8bd946c6f3bc6704f9968a72c047c5a43936f54b857166abdf17fec0f18",
-      "sha256": "2883d94e818b8355e4fde4667fbbe007856755ad22d2529dbb3ab654a1a3de2b"
+      "sha256": "0880970dbceebec86d6365db14f135c2f45893930ccf5993d479063471a340aa"
     },
     {
       "file": "behind-the-round/it/index.html",
       "previous": "8d5a5b3ae223c6d8064cfd8ddf973c0fa73d9db4bb96cf3c38621a7899379ecd",
-      "sha256": "20bf0813ac05d235d2b58ed354599864e35b03d78779fba507c881d6b70e5220"
+      "sha256": "bb6c37b9dc1467fdf7e83d3df795913c8b0d32537bdcd69fe9a00ca9b672bd37"
     },
     {
       "file": "behind-the-round/it/objectors-eoi/index.html",
       "previous": "7d92dde259e811c98cedd41eab8b10c94f62e5bed42b556dcb420de42d0390b9",
-      "sha256": "ae726ac415998ff3f4f860da4cb94c6a6a7dcf7700042571b3752ce506b0ee48"
+      "sha256": "d3bc58740d124d27ff8b9afe37e9d81d5e4744e7f578640795c6226993628204"
     },
     {
       "file": "behind-the-round/it/replacement-strings/index.html",
       "previous": "8f58ca55fc0409f9c5640ac630c1f4bb28227e0cbca69dc229bf8a5765b7f3d8",
-      "sha256": "471b5c013435da2bdc95090ae841bd93cd8b96ee8f06352e63c6be08eb19451d"
+      "sha256": "8aaa82dd85243e38335789f08f12b091bbfe13bc72ff99f7f3f80239da661250"
     },
     {
       "file": "behind-the-round/it/sanctions-and-dns/index.html",
       "previous": "e0abead410df165bae48d0db9b2daf9bdc5b23c1866d307d9f102409fc2ff686",
-      "sha256": "e670d83035adad9fd142abc93aa06e0d00392175232ec0de2cf309d40bc37c07"
+      "sha256": "eff95b5017c44042b1ac91eed8eeb30e7e8748f17fb7aa443559638198daacf7"
     },
     {
       "file": "behind-the-round/it/wdo-identity/index.html",
       "previous": "4531fa3049f92d4ddf51acef7094787c36b92b28fcbeda3cca07c9c54ad72144",
-      "sha256": "58b44e0452dbb2a7ef46b33ac2c3242d14b00f6b02b31afa6648be44a9067af1"
+      "sha256": "f2fc420d7431f7938e270a89d604971d0b24ba4ddb6824d679c129b100285931"
     },
     {
       "file": "behind-the-round/it/who-controls-internet-access/index.html",
       "previous": "f7f8627965be401cc75ba0a240c610dfc8ef629ccac659230d0ddead0d885a71",
-      "sha256": "f92bd3cd5826c6aa047dfd8cd363c65818d9fdaa54c9addc4c35f8a6b8be40f9"
+      "sha256": "1aaaac383808d3699cc6c43a30b2eaac4606b87c8ecfd5503aa717ad89c543a0"
     },
     {
       "file": "build.py",
@@ -216,22 +216,22 @@
     {
       "file": "inside-the-round/de/index.html",
       "previous": "c884abef7ee2f8a0dd882539fe16e78dc48ed82bdfbcd6ed69e62bcf0f2a9655",
-      "sha256": "e42a61ec49a5790fd4556df30d07d738eaddc22341e5fba487298a2407f22915"
+      "sha256": "e64a666ff28000d98327609c90e9172333a6f5194301fac65d185c22a4a4d399"
     },
     {
       "file": "inside-the-round/en/index.html",
       "previous": "e51bee72c4b48e3bfe346c5dcee3c7d5ae0972a3ba8d027d2754dd4baf321a8b",
-      "sha256": "e9afb85b6dd36d4080f5e0ffacae7abbeda46563605800531cfc0f2b48671110"
+      "sha256": "714c13290ccc1eb00898e6f85b05cd3ed69d3bb793d202267cbcde77dd872d40"
     },
     {
       "file": "inside-the-round/fr/index.html",
       "previous": "4ffe6a4c1e050b40b19fec0a82e8249b38182507f42b9f015f39b65a4482b992",
-      "sha256": "f34797e275a02795b017d07a4cdf02f57cbdfb79c279e0f63feac54ed26b0ee3"
+      "sha256": "19009847b020b75845ed7eb7ec2de05068c98dcc2e8ea0ca0552f81bb8554a12"
     },
     {
       "file": "inside-the-round/it/index.html",
       "previous": "59447f9863fcb5955840b6101f9b2404f5326f34f15adf7490f35f0b91a06530",
-      "sha256": "c187d949b166722d779e72d605950459d73c7d71bb363f1b6cf82a77deb2c875"
+      "sha256": "bcf0e3c8b56296302912b4f79a47051ec09a8b9c5c50c6d06437606d513c004a"
     },
     {
       "file": "package-lock.json",
@@ -266,7 +266,7 @@
     {
       "file": "research/index.html",
       "previous": "d2133977f585d04c3b6cc6a097e72dba1a6956ea013c808475587479cef81a1d",
-      "sha256": "7c3443e16a30c52a66ee54ca0b363172d4a0b4548ef854fb6bb70ac44ce8a6ef"
+      "sha256": "29f3296fd9f7f14d5a56f092f90338f1c384dbf47e4f93f9f48a7895d5fa9d98"
     },
     {
       "file": "research/reader-study/de/index.html",
@@ -296,7 +296,7 @@
     {
       "file": "scripts/reader_first.cjs",
       "previous": null,
-      "sha256": "c40640835317faa1dea7457ff41389a248ff9a39848c435e0b792816c36f585f"
+      "sha256": "dd679b6e2b5f9a40ca6ee4f8fb973c19a56c3133ee28b61f42260f3d2d245485"
     },
     {
       "file": "scripts/reader_first_browser.cjs",
@@ -306,7 +306,7 @@
     {
       "file": "scripts/reader_first_install.py",
       "previous": null,
-      "sha256": "b6eca0a651d3505f48ea496bd15535900c9e4fceb39f42c48de1b7336000f097"
+      "sha256": "15292e5460969af668fd8e8533c775509da8164c4011b9273cb254395c7c814b"
     },
     {
       "file": "scripts/reader_first_review.cjs",

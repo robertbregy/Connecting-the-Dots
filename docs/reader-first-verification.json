@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "sourceCommit": "065592b298da76637b4e694093caabb3159af532",
+  "sourceCommit": "28c21fc7657253e4b8b9ba09252f1f1412d62234",
   "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
   "browser": "Chromium",
   "routeStates": 480,
@@ -178,7 +178,7 @@
     }
   ],
   "errors": [
-    "Build determinism and research preservation: Error: Command failed: python3 build.py\nRELEASE CHECK FAILED: APS atlas route, metadata or source disclosure incomplete: en\nTraceback (most recent call last):\n  File \"/home/runner/work/Connecting-the-Dots/Connecting-the-Dots/build.py\", line 459, in <module>\n    main()\n  File \"/home/runner/work/Connecting-the-Dots/Connecting-the-Dots/build.py\", line 449, in main\n    subprocess.run([\"python3\", str(ROOT / \"scripts\" / \"release_check.py\")], check=True)\n  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['python3', '/home/runner/work/Connecting-the-Dots/Connecting-the-Dots/scripts/release_check.py']' returned non-zero exit status 1.\n\n    at genericNodeError (node:internal/errors:983:15)\n    at wrappedFn (node:internal/errors:537:14)\n    at checkExecSyncError (node:child_process:916:11)\n    at execFileSync (node:child_process:952:15)\n    at /home/runner/work/Connecting-the-Dots/Connecting-the-Dots/scripts/reader_first_browser.cjs:159:7\n    at capture (/home/runner/work/Connecting-the-Dots/Connecting-the-Dots/scripts/reader_first_browser.cjs:38:49)\n    at /home/runner/work/Connecting-the-Dots/Connecting-the-Dots/scripts/reader_first_browser.cjs:154:11"
+    "Build determinism and research preservation: Error: Command failed: python3 build.py\nRELEASE CHECK FAILED: Standalone chronicle translation missing: en\nTraceback (most recent call last):\n  File \"/home/runner/work/Connecting-the-Dots/Connecting-the-Dots/build.py\", line 459, in <module>\n    main()\n  File \"/home/runner/work/Connecting-the-Dots/Connecting-the-Dots/build.py\", line 449, in main\n    subprocess.run([\"python3\", str(ROOT / \"scripts\" / \"release_check.py\")], check=True)\n  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['python3', '/home/runner/work/Connecting-the-Dots/Connecting-the-Dots/scripts/release_check.py']' returned non-zero exit status 1.\n\n    at genericNodeError (node:internal/errors:983:15)\n    at wrappedFn (node:internal/errors:537:14)\n    at checkExecSyncError (node:child_process:916:11)\n    at execFileSync (node:child_process:952:15)\n    at /home/runner/work/Connecting-the-Dots/Connecting-the-Dots/scripts/reader_first_browser.cjs:159:7\n    at capture (/home/runner/work/Connecting-the-Dots/Connecting-the-Dots/scripts/reader_first_browser.cjs:38:49)\n    at /home/runner/work/Connecting-the-Dots/Connecting-the-Dots/scripts/reader_first_browser.cjs:154:11"
   ],
   "componentAccessibility": [
     {

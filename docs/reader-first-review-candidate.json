@@ -1356,7 +1356,7 @@
   "files": {
     "applications/de/index.html": {
       "baselineSHA256": "30e00a377b01d61cce5c4ce178275dab3fd053485fc9d691c6e210ae0716ff9a",
-      "sha256": "9d29997b33a9d782b81b75c73bf3e418cb239a8e3a76eeccd8cb2d30c9ca643f",
+      "sha256": "2e236eafe135e6a0468cf9790b6aeeef160883e2141715488d59fc38752ba063",
       "rationaleIds": [
         "C04",
         "M01",
@@ -1372,7 +1372,7 @@
     },
     "applications/en/index.html": {
       "baselineSHA256": "1f52c66b908ed9fc5e17caffd77f9157ba254d04ee081cc1b8bb983ce9c934c5",
-      "sha256": "69813ca38d8f95d8df3992eda512f95d55181c92df777e56d0bd0c6017546506",
+      "sha256": "a81aeb4fbb89ee5f518575d02e918f72dac69eadabc44905144770672c3e4dc7",
       "rationaleIds": [
         "C04",
         "M01",
@@ -1388,7 +1388,7 @@
     },
     "applications/fr/index.html": {
       "baselineSHA256": "c069a3a5b79c9c558964bfe8d23c5c4ee305ab93e3cdb4ef61f844ff89e7db79",
-      "sha256": "fab715555aa2fce88b35001ab001571a8668b1e5e8638ac211263bf2a6001b75",
+      "sha256": "7ec0aafa3d023d9d80d1c9cafdb7216349fd3585f8a6a8a3a734eec8b4804d72",
       "rationaleIds": [
         "C04",
         "M01",
@@ -1404,7 +1404,7 @@
     },
     "applications/it/index.html": {
       "baselineSHA256": "7830eae652c261d48bb590c8456d534793a394432672187303313eef92bcb1cc",
-      "sha256": "819f9cef3e0bd567963766672ca592e8c6901e04a2c1f3f6681b03928aed858f",
+      "sha256": "41e565188e01cff152de6d256d40ab5819e88be90019cf799707bf608555d42a",
       "rationaleIds": [
         "C04",
         "M01",
@@ -1445,7 +1445,7 @@
     },
     "behind-the-round/de/background-screening/index.html": {
       "baselineSHA256": "a984356385ce4e0867c61068b96587caa6a993e90a4b40b69f476d77d965711c",
-      "sha256": "76377945e8d56e12935b2cd4391329176ee320789303c8b129f3589d3b391548",
+      "sha256": "4a53ef8f49ce4e20362739b0e6b5660bdbf9df2b9b3efee0e001cd99eca77b46",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1455,7 +1455,7 @@
     },
     "behind-the-round/de/index.html": {
       "baselineSHA256": "564f0e014fc0a7e6d6131f6e47480cfb56b73116e2ca4ed013b685dd64519078",
-      "sha256": "0737a35bbc8b656301d7f54579fd17ae2b6277d931dfd1849f18006f5a34e469",
+      "sha256": "3e4b4c7ab29213de2643fc87b35bea3ee18bd1e9687238c7fe20dea1ee6e1f6d",
       "rationaleIds": [
         "C02",
         "M03",
@@ -1468,7 +1468,7 @@
     },
     "behind-the-round/de/objectors-eoi/index.html": {
       "baselineSHA256": "ef7f4798e2427d5691e28931c78ffe0b183ca55146845d4ff0b04ebf8d76e1f8",
-      "sha256": "3df50e8802abefc4d48695a3cf1a1262c3d151685680ba5848b29470a492e2a8",
+      "sha256": "890d8df9363964514aff9305742acf57e512c2d79434fbf2d0c44f27149742e3",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1478,7 +1478,7 @@
     },
     "behind-the-round/de/replacement-strings/index.html": {
       "baselineSHA256": "4af49d4fde2f16ba0e02616db2723f4eae302ff0547c2ae50ef326db6ffe65cd",
-      "sha256": "abc2756ea79af40df5f91f987a0a082e73b42234e0ce0a7299bed8f99c153b79",
+      "sha256": "a2558baac9b471880ccb35c58e6218aca14e92936ae7757b1f6b15d4a566d965",
       "rationaleIds": [
         "M03",
         "M04",
@@ -1490,7 +1490,7 @@
     },
     "behind-the-round/de/sanctions-and-dns/index.html": {
       "baselineSHA256": "a729b3af21770246b82590b03e037ff1fd6fbfeccfcacbbb108daea9315f0136",
-      "sha256": "0ef4e37a54afbcb0ae9ff1342d03e817417bee6115551b6993169b4b980325aa",
+      "sha256": "9d4586e709073734b2a077b71660448d639952f7be789ee126268123a008bfd9",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1500,7 +1500,7 @@
     },
     "behind-the-round/de/wdo-identity/index.html": {
       "baselineSHA256": "ce6c244b49e2141e92ff6f083bcfa2d1122011a0c41e1d9e63c3a585b9432b35",
-      "sha256": "9f2606ac1ec0ff87bd5016649a411e345fa0edd64671c30b39950842300851ca",
+      "sha256": "540ce152a109228deaef62da7b21f47522238b090737c7ef837e5f74b38d0d01",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1510,7 +1510,7 @@
     },
     "behind-the-round/de/who-controls-internet-access/index.html": {
       "baselineSHA256": "0373ba3210ac9dc6770a60f801f9b422f2a574e15ca36757f36e2084dee47d11",
-      "sha256": "d2e8e72c2699ec6216e0d03b8d724c5dbaa0d4d6adfc421c3edddc7c76c8aef5",
+      "sha256": "f48207bf9274e0ac60669822fb9d448ed596ed477f1b48f7577e0f2e8b364f36",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1520,7 +1520,7 @@
     },
     "behind-the-round/en/background-screening/index.html": {
       "baselineSHA256": "d34fe33fdbee89ac67c85a961651f700022362732f6ddb527fe36e7da87e46ad",
-      "sha256": "4088310bac2c54ef4be3cdffa66cf08fc48656402e36707a63901456dcca1104",
+      "sha256": "f65af4f27f9b52c129bd4d80fc6344af26574a67272d7a763191c7ae86c74a1b",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1530,7 +1530,7 @@
     },
     "behind-the-round/en/index.html": {
       "baselineSHA256": "af1ad762e8244e28c0749e8123c3ce61f0deac32e4c3e1dac3c55b41d8457d7b",
-      "sha256": "0699280f199a01d5c2bd89381d7c3284ec3bb743fcc5d2beb76bd099883b3f31",
+      "sha256": "d9413870ac9070c828213b42d309134e002cb5e8c9b009d86d86e295444b95fd",
       "rationaleIds": [
         "C02",
         "M03",
@@ -1543,7 +1543,7 @@
     },
     "behind-the-round/en/objectors-eoi/index.html": {
       "baselineSHA256": "e64d35945aaacb3ddb153109c41927381304e83993e14dbc22d348c373c4a5a1",
-      "sha256": "ab78c56aa706d305d5381364e429280b435b43f2af2da0741d12209d55e8b4a2",
+      "sha256": "f40f9a7b67f78b80c652c8048933a2f171a87e8409029dd5611fb2d0a65c223e",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1553,7 +1553,7 @@
     },
     "behind-the-round/en/replacement-strings/index.html": {
       "baselineSHA256": "67a79cb108812134a57279c8f593448bd0c776cb318e84cd40a61b0beccffaf2",
-      "sha256": "083786b7c4f329919c60ff3b3ca0bc0b384c5203c476a1575c4a861ee4a52e1e",
+      "sha256": "0ca847d97135d6a3b8e7f1376ce19539ce06291d9fdbdba25dd153e25d8da5e2",
       "rationaleIds": [
         "M03",
         "M04",
@@ -1565,7 +1565,7 @@
     },
     "behind-the-round/en/sanctions-and-dns/index.html": {
       "baselineSHA256": "4a89ca7ff3683cab2c635a226b4edab871f8d9852fb54a2d802ea5538b3642eb",
-      "sha256": "1bd33692070715c3993ed06504e346f61df0f80e341a4f698518416558b0bf22",
+      "sha256": "00dd8425a33fa2715f2d22c023e9dae9de9213fe6b0b76271ca2148b23d6b243",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1575,7 +1575,7 @@
     },
     "behind-the-round/en/wdo-identity/index.html": {
       "baselineSHA256": "e3620d3be65315e8c7ab7c445cf64c7f2a195a7baff4aaaf84b67ad9978f6d1c",
-      "sha256": "3823af4f2abe91fd734e501a21aeb03cdad9040270ffacd1f3a9f7712b088f06",
+      "sha256": "534f9072a606367278778e239909b06c44ca162766cd5ad076e1ba703a0532dc",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1585,7 +1585,7 @@
     },
     "behind-the-round/en/who-controls-internet-access/index.html": {
       "baselineSHA256": "ef63c49fbd9fee82b025fb8ba908fbff4f026f03c4d00922d720a8ca0e88560c",
-      "sha256": "53820485d01bed2001a9b33c03b7038b7b08e7e333714e48fea9312e39fd73c5",
+      "sha256": "6c3cf0ab807a8a17614804494405928cf7c6614be4d35ad59b6f0020e4b44337",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1595,7 +1595,7 @@
     },
     "behind-the-round/fr/background-screening/index.html": {
       "baselineSHA256": "3d1fc6e5478ca30df2e7ef2000015f13605919007145e1b573851adf3e6f4ee4",
-      "sha256": "055848b6617050570a2b3e752b01a5ddc5ec471e0f54d6ab83db24435d6e9343",
+      "sha256": "9044e523a16dd2dc7188d7d366aa4c95418c2fa376ee75e43fa3743014f6737f",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1605,7 +1605,7 @@
     },
     "behind-the-round/fr/index.html": {
       "baselineSHA256": "9659e9b15112802fd7038e4d3242fac9133a49c849f2c0b60fcf1d9ec5dedca4",
-      "sha256": "80a7ac22525b38b3b047b4288f5b2365920aa417e48bc17a46f2f67c71edc9d4",
+      "sha256": "c146ca5c2403d5077ef8b78b348e7accf5d1d0acb3cde1b3f86ff625ff137a96",
       "rationaleIds": [
         "C02",
         "M03",
@@ -1618,7 +1618,7 @@
     },
     "behind-the-round/fr/objectors-eoi/index.html": {
       "baselineSHA256": "83471ba6f9f0e9c173414d20df3f35dfba622f2299fcc6ed96dfa6770f4615ae",
-      "sha256": "95ca9f4620bb04d460354897d676da1b7e5a2d0f37a35db2084c236501244734",
+      "sha256": "8c9fe0b5d83686e5ded8e45bd8f3521cafc2db7ef7bc724e93392747fafa0f69",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1628,7 +1628,7 @@
     },
     "behind-the-round/fr/replacement-strings/index.html": {
       "baselineSHA256": "c7f0147ae42f88f08b2fb187422917d93fb552527c526a8146583bece4ddd1cf",
-      "sha256": "d3d2083d796668fee3439ba3c34c7ba440ad6e3831126dd3cb24eebfec95d7f9",
+      "sha256": "9b921ab2135b82d1db7f564ade262c944716309c012cc8f75e19a194f2bac22f",
       "rationaleIds": [
         "M03",
         "M04",
@@ -1640,7 +1640,7 @@
     },
     "behind-the-round/fr/sanctions-and-dns/index.html": {
       "baselineSHA256": "3e491fbc08b588f6e46dce9f03fad63d738badcd7ae793e871b7afcafa9cada0",
-      "sha256": "e22d4d713c1eec0ad3f5ab71d3513401b3c7f2dc11346de061d74787e9540296",
+      "sha256": "9bce74d49b0ab5a3b8ef97ea7a9afcb8f28fe41ceda8b94245fb20c8be2caacf",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1650,7 +1650,7 @@
     },
     "behind-the-round/fr/wdo-identity/index.html": {
       "baselineSHA256": "8ee2396c446975aa0d4487a5774ce7f322b441d55340e2a55fce83881ee61d87",
-      "sha256": "f38f71bc49f4d7c21038cebb36bbeebb671fb960e769df5101e4d7fcf12d3329",
+      "sha256": "becd539795e06792f4ad385d5eb5e93c9270b55caa858747f0d66a91e197588c",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1660,7 +1660,7 @@
     },
     "behind-the-round/fr/who-controls-internet-access/index.html": {
       "baselineSHA256": "9b01d3ef0b99124a0b77a977b20b4967e4d86cd5442bcd0da79ea3ce00c63b49",
-      "sha256": "0b357e195bcffe6dcd10df9ebadeecaa1ea07754b15d2c27a67969b5dce77509",
+      "sha256": "b4b9ee6f570836d7ebd5c97453c2bc46b9677a465d76326967c786947abd36be",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1670,7 +1670,7 @@
     },
     "behind-the-round/it/background-screening/index.html": {
       "baselineSHA256": "4d21a6f625bac55b627528b692f8f6e933955228fb32690e18cb28725bd56e43",
-      "sha256": "2883d94e818b8355e4fde4667fbbe007856755ad22d2529dbb3ab654a1a3de2b",
+      "sha256": "0880970dbceebec86d6365db14f135c2f45893930ccf5993d479063471a340aa",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1680,7 +1680,7 @@
     },
     "behind-the-round/it/index.html": {
       "baselineSHA256": "fa8a3251fd779775cfe5d7aa3f187dee46cae288a58d570a434b835a8312efd2",
-      "sha256": "20bf0813ac05d235d2b58ed354599864e35b03d78779fba507c881d6b70e5220",
+      "sha256": "bb6c37b9dc1467fdf7e83d3df795913c8b0d32537bdcd69fe9a00ca9b672bd37",
       "rationaleIds": [
         "C02",
         "M03",
@@ -1693,7 +1693,7 @@
     },
     "behind-the-round/it/objectors-eoi/index.html": {
       "baselineSHA256": "f19e692e1f023a21caa282b5cee2d8853f2293aafbe1dbbed82fb15dbff3c584",
-      "sha256": "ae726ac415998ff3f4f860da4cb94c6a6a7dcf7700042571b3752ce506b0ee48",
+      "sha256": "d3bc58740d124d27ff8b9afe37e9d81d5e4744e7f578640795c6226993628204",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1703,7 +1703,7 @@
     },
     "behind-the-round/it/replacement-strings/index.html": {
       "baselineSHA256": "50e773f7eb7a0e1b723253adf6e514b439687d9f3e586fbdde2b6ec384957e2f",
-      "sha256": "471b5c013435da2bdc95090ae841bd93cd8b96ee8f06352e63c6be08eb19451d",
+      "sha256": "8aaa82dd85243e38335789f08f12b091bbfe13bc72ff99f7f3f80239da661250",
       "rationaleIds": [
         "M03",
         "M04",
@@ -1715,7 +1715,7 @@
     },
     "behind-the-round/it/sanctions-and-dns/index.html": {
       "baselineSHA256": "eb9f0663194f2a1d00f66f58f763b99f783aaea31d40584ba6d1aedae56b55d9",
-      "sha256": "e670d83035adad9fd142abc93aa06e0d00392175232ec0de2cf309d40bc37c07",
+      "sha256": "eff95b5017c44042b1ac91eed8eeb30e7e8748f17fb7aa443559638198daacf7",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1725,7 +1725,7 @@
     },
     "behind-the-round/it/wdo-identity/index.html": {
       "baselineSHA256": "7be67c9e27b89266d950c64170534d10a20fd64b2a8809f05b9d7b7ce5ca944d",
-      "sha256": "58b44e0452dbb2a7ef46b33ac2c3242d14b00f6b02b31afa6648be44a9067af1",
+      "sha256": "f2fc420d7431f7938e270a89d604971d0b24ba4ddb6824d679c129b100285931",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1735,7 +1735,7 @@
     },
     "behind-the-round/it/who-controls-internet-access/index.html": {
       "baselineSHA256": "f7f8627965be401cc75ba0a240c610dfc8ef629ccac659230d0ddead0d885a71",
-      "sha256": "f92bd3cd5826c6aa047dfd8cd363c65818d9fdaa54c9addc4c35f8a6b8be40f9",
+      "sha256": "1aaaac383808d3699cc6c43a30b2eaac4606b87c8ecfd5503aa717ad89c543a0",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1964,7 +1964,7 @@
     },
     "inside-the-round/de/index.html": {
       "baselineSHA256": "c7ad32d04ab943f95d934a41f96a94aa6b73e5955ec44fdefd30aeb956f028a2",
-      "sha256": "e42a61ec49a5790fd4556df30d07d738eaddc22341e5fba487298a2407f22915",
+      "sha256": "e64a666ff28000d98327609c90e9172333a6f5194301fac65d185c22a4a4d399",
       "rationaleIds": [
         "C02",
         "M03",
@@ -1977,7 +1977,7 @@
     },
     "inside-the-round/en/index.html": {
       "baselineSHA256": "bab16d3d558fc800079f4c3c1aebfc64e71ae97cc6c9b6aa236d09a12a3b4db7",
-      "sha256": "e9afb85b6dd36d4080f5e0ffacae7abbeda46563605800531cfc0f2b48671110",
+      "sha256": "714c13290ccc1eb00898e6f85b05cd3ed69d3bb793d202267cbcde77dd872d40",
       "rationaleIds": [
         "C02",
         "M03",
@@ -1990,7 +1990,7 @@
     },
     "inside-the-round/fr/index.html": {
       "baselineSHA256": "709bdc1f3e0dda04e169f2287d5db8b55637aef6ef32b5df823685278cd1df6d",
-      "sha256": "f34797e275a02795b017d07a4cdf02f57cbdfb79c279e0f63feac54ed26b0ee3",
+      "sha256": "19009847b020b75845ed7eb7ec2de05068c98dcc2e8ea0ca0552f81bb8554a12",
       "rationaleIds": [
         "C02",
         "M03",
@@ -2003,7 +2003,7 @@
     },
     "inside-the-round/it/index.html": {
       "baselineSHA256": "0356f7c2cd5d1d30d584ef35530e8c6445bf66569c4684e5599ff94965b23bf3",
-      "sha256": "c187d949b166722d779e72d605950459d73c7d71bb363f1b6cf82a77deb2c875",
+      "sha256": "bcf0e3c8b56296302912b4f79a47051ec09a8b9c5c50c6d06437606d513c004a",
       "rationaleIds": [
         "C02",
         "M03",
@@ -2070,7 +2070,7 @@
     },
     "research/index.html": {
       "baselineSHA256": "e9a26de35e6eada49de00b1d9df234d3f67c8e40f93591134477a064c0694245",
-      "sha256": "7c3443e16a30c52a66ee54ca0b363172d4a0b4548ef854fb6bb70ac44ce8a6ef",
+      "sha256": "29f3296fd9f7f14d5a56f092f90338f1c384dbf47e4f93f9f48a7895d5fa9d98",
       "rationaleIds": [
         "C05",
         "T02",
@@ -2913,14 +2913,14 @@
       "rationaleIds": [
         "E10"
       ],
-      "sha256": "7c4614bb8a3717130414e8491e655aadb486deaa864b3cf2f679656876f3d5e8"
+      "sha256": "cd5aea9ab61e05854eae462a763043d5a6d74efb5292823cb2d3b7ac9202d5a2"
     },
     "assets/reader-first.js": {
       "baselineSHA256": null,
       "rationaleIds": [
         "E10"
       ],
-      "sha256": "fd380aa68636f9e8d38c95b568279853d84e36a474248e2509a8f808443ef121"
+      "sha256": "939f8ce3b74b20182dc9059747823f6a212e3987cf8a5b4f957313f1e3ed3b80"
     },
     "data/reader_first.json": {
       "baselineSHA256": null,
@@ -2948,7 +2948,7 @@
       "rationaleIds": [
         "E10"
       ],
-      "sha256": "c40640835317faa1dea7457ff41389a248ff9a39848c435e0b792816c36f585f"
+      "sha256": "dd679b6e2b5f9a40ca6ee4f8fb973c19a56c3133ee28b61f42260f3d2d245485"
     },
     "scripts/reader_first_browser.cjs": {
       "baselineSHA256": null,
@@ -2962,7 +2962,7 @@
       "rationaleIds": [
         "E10"
       ],
-      "sha256": "b6eca0a651d3505f48ea496bd15535900c9e4fceb39f42c48de1b7336000f097"
+      "sha256": "15292e5460969af668fd8e8533c775509da8164c4011b9273cb254395c7c814b"
     },
     "scripts/reader_first_review.cjs": {
       "baselineSHA256": null,
