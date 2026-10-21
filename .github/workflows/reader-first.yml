@@ -48,6 +48,9 @@ jobs:
           echo '69da58d5abbcf5b528928b169a4bbb646cced2f1dfeed5b032e524ab5525a5f7  /tmp/reader-first.patch' | sha256sum --check
           git apply --check /tmp/reader-first.patch
           git apply /tmp/reader-first.patch
+          echo '95ded81055cc257fdab47a28d6baa0f35eac709e68d57ce45f83073f7e67a9ff  scripts/reader-first-followup.patch' | sha256sum --check
+          git apply --check scripts/reader-first-followup.patch
+          git apply scripts/reader-first-followup.patch
       - name: Build and check every locale
         if: steps.source.outputs.ready == 'true'
         run: |
@@ -88,7 +91,7 @@ jobs:
           test "$GITHUB_REF_NAME" = 'reader-first-2026-10-21'
           git fetch origin "$GITHUB_REF_NAME"
           test "$(git rev-parse FETCH_HEAD)" = "$(git rev-parse HEAD)"
-          rm -f scripts/reader-first.patch.0[1-4] .github/workflows/reader-first-export.yml
+          rm -f scripts/reader-first.patch.0[1-4] scripts/reader-first-followup.patch .github/workflows/reader-first-export.yml
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
