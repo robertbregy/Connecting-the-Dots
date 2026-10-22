@@ -72,12 +72,12 @@
           ]
         },
         {
-          "id": "strange",
-          "headings": 3,
+          "id": "economics",
+          "headings": 7,
           "parent": "ia-stories",
           "next": [
-            "social",
-            "explore"
+            "contention",
+            "resources"
           ]
         },
         {
@@ -99,12 +99,12 @@
           ]
         },
         {
-          "id": "economics",
-          "headings": 7,
+          "id": "strange",
+          "headings": 3,
           "parent": "ia-stories",
           "next": [
-            "contention",
-            "resources"
+            "social",
+            "explore"
           ]
         },
         {
@@ -478,12 +478,12 @@
           ]
         },
         {
-          "id": "strange",
-          "headings": 3,
+          "id": "economics",
+          "headings": 7,
           "parent": "ia-stories",
           "next": [
-            "social",
-            "explore"
+            "contention",
+            "resources"
           ]
         },
         {
@@ -505,12 +505,12 @@
           ]
         },
         {
-          "id": "economics",
-          "headings": 7,
+          "id": "strange",
+          "headings": 3,
           "parent": "ia-stories",
           "next": [
-            "contention",
-            "resources"
+            "social",
+            "explore"
           ]
         },
         {
@@ -884,12 +884,12 @@
           ]
         },
         {
-          "id": "strange",
-          "headings": 3,
+          "id": "economics",
+          "headings": 7,
           "parent": "ia-stories",
           "next": [
-            "social",
-            "explore"
+            "contention",
+            "resources"
           ]
         },
         {
@@ -911,12 +911,12 @@
           ]
         },
         {
-          "id": "economics",
-          "headings": 7,
+          "id": "strange",
+          "headings": 3,
           "parent": "ia-stories",
           "next": [
-            "contention",
-            "resources"
+            "social",
+            "explore"
           ]
         },
         {
@@ -1290,12 +1290,12 @@
           ]
         },
         {
-          "id": "strange",
-          "headings": 3,
+          "id": "economics",
+          "headings": 7,
           "parent": "ia-stories",
           "next": [
-            "social",
-            "explore"
+            "contention",
+            "resources"
           ]
         },
         {
@@ -1317,12 +1317,12 @@
           ]
         },
         {
-          "id": "economics",
-          "headings": 7,
+          "id": "strange",
+          "headings": 3,
           "parent": "ia-stories",
           "next": [
-            "contention",
-            "resources"
+            "social",
+            "explore"
           ]
         },
         {
@@ -1696,12 +1696,12 @@
           ]
         },
         {
-          "id": "strange",
-          "headings": 3,
+          "id": "economics",
+          "headings": 7,
           "parent": "ia-stories",
           "next": [
-            "social",
-            "explore"
+            "contention",
+            "resources"
           ]
         },
         {
@@ -1723,12 +1723,12 @@
           ]
         },
         {
-          "id": "economics",
-          "headings": 7,
+          "id": "strange",
+          "headings": 3,
           "parent": "ia-stories",
           "next": [
-            "contention",
-            "resources"
+            "social",
+            "explore"
           ]
         },
         {

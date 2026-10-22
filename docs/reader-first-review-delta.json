@@ -1,6 +1,6 @@
 {
   "status": "pending-review",
-  "candidateSHA256": "0d96e6ccc5b8912bf219056736e7714932d4f42dd7991da9d89767e0616125e6",
+  "candidateSHA256": "358c191787d700a39004441b359746615d84e2937838947e31707ab560944cbd",
   "target": "docs/editorial-review-2026-10-21-v0.7.92.json",
   "changedFiles": [
     {
@@ -196,7 +196,7 @@
     {
       "file": "data/reader_first.json",
       "previous": null,
-      "sha256": "3ed223f738d5b019e40473dc2102beac6e10e10b1e922d8d34d6757e124c64cb"
+      "sha256": "7f89eaea42a4c43b0aae467753de056bf27e668af8325c60a2c7bbf4be96479b"
     },
     {
       "file": "data/release_history.json",
