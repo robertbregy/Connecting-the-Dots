@@ -1,0 +1,42 @@
+name: Full usability audit workspace
+on:
+  push:
+    branches: ['qa/full-usability-20261022']
+    paths: ['.github/workflows/full-usability-audit.yml']
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: '90d21e6059871c36148e1860d017e7409ed3f8bb'
+          persist-credentials: false
+      - name: Archive exact published source without credentials or git metadata
+        run: |
+          mkdir -p /tmp/usability-source
+          git archive --format=tar.gz HEAD > /tmp/usability-source/published-source.tar.gz
+          git rev-parse HEAD > /tmp/usability-source/commit.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: full-audit-published-source
+          path: /tmp/usability-source/
+          retention-days: 30
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare isolated browser audit dependencies
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+        run: |
+          mkdir -p /tmp/usability-runtime
+          cd /tmp/usability-runtime
+          timeout 150 npm install --no-audit --no-fund --fetch-retries=1 --fetch-timeout=30000 playwright@1.56.1 @axe-core/playwright@4.10.2 linkedom@0.18.12 marked@15.0.12
+          tar -czf /tmp/usability-runtime.tar.gz node_modules package-lock.json package.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: full-audit-isolated-runtime
+          path: /tmp/usability-runtime.tar.gz
+          retention-days: 30
