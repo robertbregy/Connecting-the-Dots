@@ -58,7 +58,9 @@ function refineNarrative(d, lang) {
   // Explain what the publication is at its entrance, not inside optional context.
   const definition = one('[data-i18n="iaProjectDefinition"]');
   one('.hero .heroPlain').after(definition);
-  definition.classList.add('heroPlain'); definition.dataset.narrativeEssential = 'project';
+  definition.classList.add('narrativeProjectDefinition');
+  definition.style.cssText = 'font-size:15px;line-height:1.6;color:var(--text);max-width:780px;margin-top:16px';
+  definition.dataset.narrativeEssential = 'project';
   unwrap(one('.homeScope > details.audienceDetails'));
   const foundation = one('.journeyFoundation');
   one('#internet-guide [data-i18n="journeyIntro"]').after(foundation);

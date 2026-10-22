@@ -5,7 +5,7 @@
   "reviewType": "AI-assisted targeted implementation review, subject to browser acceptance",
   "rationale": "Expose the project definition and DNS foundation, make the Atlas entry and tool directly accessible with viewport-triggered loading, show the Lugano proposal, principles and conditions while retaining an optional roadmap, and add a visible interpretation guide before the unchanged historical Economics analysis. Preserve source text, datasets, archived research identities and original links. The current technical data package changes only its manifest runtime-asset fingerprint. Original validators and archival baselines remain unchanged.",
   "sourceFiles": {
-    "scripts/narrative_clarity.cjs": "55ba7f153f933e659bd6563ff2b98f1849f4fa6da85598d36e494c3a4b3496b1",
+    "scripts/narrative_clarity.cjs": "4c40b96a63e817dd3465755cfea9183c3758511a0e20d2c1d0b3cb9073fd198c",
     "scripts/narrative_clarity_qa.cjs": "63134836311a7189151cc7f5553ffcacd0c3e3e98eed238daa6dd07a18543992",
     "scripts/narrative_clarity.patch": "37904472028afb1971b34f2a2ec85c82a3abf067e75c1a7642b40bb3c1ab3b22",
     "scripts/reader_first.cjs": "31fcf95cda3a5bd46422836abf6d14cea9d16479a12d4dcb45c3550a7958bfad",
