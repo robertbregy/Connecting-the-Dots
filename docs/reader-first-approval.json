@@ -1,20 +1,22 @@
 {
   "schemaVersion": 1,
-  "candidateSHA256": "0d96e6ccc5b8912bf219056736e7714932d4f42dd7991da9d89767e0616125e6",
-  "verifiedSourceCommit": "16b32c1ce8657b8ef387b79fa039f3247aa8f945",
-  "reviewType": "AI-assisted code, editorial and rendered-output review",
-  "scope": "Reader-first technical/editorial release 0.7.92 with narrow legacy compatibility correction. Preserve Economics six-step runtime heading normalization and focus navigation while retaining the new reader indexes elsewhere. Strengthen the duplicate mobile card test with real viewport hit testing, without force clicks or weakened destination assertions. Reviewed candidate hash against downloaded workflow artifact and all saved browser reports. Existing scientific observations, archived files, DOI identities and publication URLs are not revised.",
+  "candidateSHA256": "358c191787d700a39004441b359746615d84e2937838947e31707ab560944cbd",
+  "verifiedSourceCommit": "55a517993768c1e695e38149d5f34720edc64a52",
+  "reviewedOn": "2026-10-22",
+  "reviewType": "AI-assisted exact-file and rendered-output review of explicit user-requested navigation order",
+  "scope": "Put Economics first and Strange Internet last in Stories and Issues, preserving Social life and Cities and territories in their existing relative order. The same configuration drives the localized cards and pathway map. Compared the downloaded candidate with the previously published candidate: only data/reader_first.json differs among reviewed file entries; protected files and source-section digests are identical. The source commit changes exactly one line. Visually inspected Italian mobile and English desktop screenshots. No article text, research data, DOI identity, canonical URL, runtime, style or publication version is changed.",
+  "requestedOrder": ["economics", "social", "cities", "strange"],
   "evidence": {
-    "browserWorkflowRun": 39685452197,
-    "browserArtifact": 12385464728,
+    "browserWorkflowRun": 39720972242,
+    "browserArtifact": 12401118215,
     "browserReport": "docs/reader-first-verification.json",
     "routeStates": 480,
+    "browserErrors": 0,
     "economicsScenarios": 8,
     "economicsErrors": 0,
     "navigationCardScenarios": 8,
     "cardsPerScenario": 26,
     "navigationCardIssues": 0,
-    "independentPagesInLegacyAudit": 39,
     "legacyLinks": 224,
     "legacyLinkFailures": 0,
     "repeatedBuildFiles": 46,
@@ -24,7 +26,7 @@
     "humanParticipants": 0
   },
   "limitations": [
-    "This is not an independent human usability study or a WCAG conformance certification.",
-    "Publication requires the exact-file integrity gate, build, static, browser and legacy checks to pass again."
+    "Automated browser checks and AI visual review are not an independent human usability study or WCAG certification.",
+    "Publication still requires the unchanged exact-file integrity, build, static, browser and legacy gates to pass."
   ]
 }
