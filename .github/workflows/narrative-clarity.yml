@@ -1,0 +1,32 @@
+name: Narrative clarity verification
+on:
+  push:
+    branches: ['feat/narrative-clarity-20261022']
+    paths: ['.github/workflows/narrative-clarity.yml', 'scripts/narrative*', 'data/narrative*', 'docs/narrative*']
+permissions:
+  contents: read
+concurrency:
+  group: narrative-clarity-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Export public source and locked build dependencies for inspection
+        run: |
+          git archive --format=tar HEAD > /tmp/narrative-source.tar
+          tar -rf /tmp/narrative-source.tar node_modules
+          gzip /tmp/narrative-source.tar
+      - uses: actions/upload-artifact@v4
+        with:
+          name: narrative-source-review
+          path: /tmp/narrative-source.tar.gz
