@@ -1,0 +1,204 @@
+name: Usability audit remediation
+on:
+  push:
+    branches: ['fix/usability-audit-20261022']
+permissions:
+  contents: read
+concurrency:
+  group: usability-remediation-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    if: ${{ !contains(github.event.head_commit.message || '', '[usability artifacts]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    outputs:
+      candidate: ${{ steps.commit.outputs.candidate }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Materialize the checksummed inspected source candidate
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import base64, gzip, hashlib, json, subprocess
+          parts=[Path('.github/usability-candidate.'+str(i)) for i in range(7)]
+          if parts[0].exists():
+              raw=b''.join(p.read_bytes() for p in parts)
+              assert len(raw)==21540, 'Transport length mismatch'
+              assert hashlib.sha256(raw[:10768]).hexdigest()=='fe75a615505372953b89aa4a3abfb019cef04ab7a857782dc4caeb3a2a1b2037'
+              assert hashlib.sha256(raw[10768:]).hexdigest()=='b8408e6eee05d4887a512a2067fc8ea062c6c7dfe1f4598f6fc3f402f368b026'
+              payload=gzip.decompress(base64.b64decode(raw,validate=True))
+              assert hashlib.sha256(payload).hexdigest()=='8eeef2468ac18494598a443e1b7a47dea380054050544181db8138e9039e8389'
+              files=json.loads(payload)
+              allowed={'scripts/usability_remediation.cjs','scripts/usability_remediation_qa.cjs','scripts/run_browser_regressions.py','scripts/usability_remediation.patch','docs/usability-remediation-review.json'}
+              assert set(files)==allowed, 'Unexpected source file'
+              for name,text in files.items():
+                  Path(name).write_text(text,encoding='utf-8')
+              subprocess.run(['git','apply','--check','scripts/usability_remediation.patch'],check=True)
+              subprocess.run(['git','apply','scripts/usability_remediation.patch'],check=True)
+              for p in parts:p.unlink()
+          review=json.loads(Path('docs/usability-remediation-review.json').read_text())
+          for name,digest in review['expectedFiles'].items():
+              if not name.endswith('.html'):
+                  assert hashlib.sha256(Path(name).read_bytes()).hexdigest()==digest, 'Inspected source mismatch: '+name
+          print('EXACT_SOURCE_CANDIDATE_VERIFIED; publication still requires browser acceptance')
+          PY
+      - name: Install locked build dependencies
+        run: timeout 150 npm ci --no-audit --no-fund --prefer-offline --fetch-retries=1 --fetch-timeout=30000
+      - name: Build twice and preserve every research byte
+        run: |
+          python3 build.py
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json
+          paths=[Path('index.html'),*Path('.').glob('*/index.html'),*Path('applications').rglob('index.html'),*Path('behind-the-round').rglob('index.html'),*Path('inside-the-round').rglob('index.html')]
+          pub=json.loads(Path('publication.json').read_text());paths.append(Path(pub['currentDataPackPath']))
+          Path('/tmp/usability-build-hashes.json').write_text(json.dumps({str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}))
+          PY
+          python3 build.py
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json
+          checks=json.loads(Path('/tmp/usability-build-hashes.json').read_text())
+          changed=[p for p,h in checks.items() if hashlib.sha256(Path(p).read_bytes()).hexdigest()!=h]
+          assert not changed, 'Repeated build drift: '+str(changed)
+          print('REPEATED_BUILD_IDENTICAL',len(checks))
+          PY
+          node scripts/usability_remediation_qa.cjs --static-only
+          node scripts/validate_multilingual.js
+          node scripts/validate_internet_access.js
+          CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
+      - name: Record only the pre-inspected exact fingerprints
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json,subprocess
+          candidate=json.loads(Path('docs/usability-remediation-review.json').read_text())
+          baseline=candidate['baseline']
+          for name,digest in candidate['expectedFiles'].items():
+              assert hashlib.sha256(Path(name).read_bytes()).hexdigest()==digest, 'Candidate drift: '+name
+          for name in candidate['independentAssetsOnly']:
+              old=subprocess.check_output(['git','show',baseline+':'+name]).decode('utf-8')
+              expected=old.replace('reader-first.css?v=0.7.92','reader-first.css?v=0.7.92-usability-20261022').replace('reader-first.js?v=0.7.92','reader-first.js?v=0.7.92-usability-20261022')
+              assert Path(name).read_text(encoding='utf-8')==expected, 'Independent content changed: '+name
+          changed=subprocess.check_output(['git','diff','--name-only',baseline,'--','data','downloads','publication.json','CITATION.cff']).decode().splitlines()
+          assert set(changed)<= {'data/publication.js'}, 'Research data drift: '+str(changed)
+          pub=json.loads(Path('publication.json').read_text());p=Path(pub['editorialReviewPath']);review=json.loads(p.read_text())
+          review['rationales']['E13']=candidate['rationale']
+          for name,digest in candidate['expectedFiles'].items():
+              item=review['files'].setdefault(name,{'baselineSHA256':None,'rationaleIds':[]})
+              item['sha256']=digest
+              if 'E13' not in item['rationaleIds']:item['rationaleIds'].append('E13')
+          review['usabilityAuditReview']={'reviewedOn':'2026-10-22','baseline':baseline,'type':candidate['reviewType'],'humanParticipants':0,'acceptanceScript':'scripts/usability_remediation_qa.cjs'}
+          p.write_text(json.dumps(review,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          PY
+          node scripts/verify_ia_b2_parity.cjs
+      - name: Commit candidate on unchanged feature branch only
+        id: commit
+        run: |
+          git fetch origin "$GITHUB_REF_NAME"
+          test "$(git rev-parse FETCH_HEAD)" = "$(git rev-parse HEAD)"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          cp audit-usability/report.json docs/usability-remediation-static.json
+          git add scripts assets .github docs data/publication.js index.html it en de fr applications behind-the-round inside-the-round explorer research/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build exact usability audit corrections for browser acceptance [usability artifacts] [skip build]'
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi
+          echo "candidate=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: usability-static
+          path: |
+            audit-usability/report.json
+            docs/usability-remediation-review.json
+          if-no-files-found: ignore
+  verify:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        group: [focused, exports, navigation, accessibility]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.build.outputs.candidate }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fixed browser dependencies
+        run: |
+          timeout 150 npm ci --no-audit --no-fund --prefer-offline --fetch-retries=1 --fetch-timeout=30000
+          timeout 180 npm install --no-save --package-lock=false --no-audit --no-fund --fetch-retries=1 --fetch-timeout=30000 playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Run every check independently against the exact candidate
+        env:
+          CTD_TEST_BASE: http://127.0.0.1:8123/
+          CTD_AUDIT_OUTPUT: audit-20261018
+          CTD_ECONOMICS_QA: audit-economics
+          CTD_CITY_TEST_BASE: http://127.0.0.1:8123/
+          GITHUB_SHA: ${{ needs.build.outputs.candidate }}
+          AUDIT_GROUP: ${{ matrix.group }}
+        run: |
+          python3 -m http.server 8123 --bind 127.0.0.1 >/tmp/usability-http.log 2>&1 &
+          server=$!
+          trap 'kill "$server" 2>/dev/null || true' EXIT
+          sleep 2
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,os,subprocess
+          groups={
+            'focused':[('focused','scripts/usability_remediation_qa.cjs',{})],
+            'exports':[('settled','scripts/audit_20261018_browser.cjs',{'CTD_EXPORT_MODE':'settled'}),('cold','scripts/audit_20261018_browser.cjs',{'CTD_EXPORT_MODE':'cold','CTD_AUDIT_OUTPUT':'audit-20261018-cold'})],
+            'navigation':[('legacy','scripts/audit_legacy_deeplinks.cjs',{}),('economics','scripts/audit_economics_order.cjs',{}),('cards','scripts/audit_ia_b2.cjs',{})],
+            'accessibility':[('axe','scripts/audit_axe_20261010.js',{}),('audience','scripts/audit_audience.cjs',{}),('city','scripts/audit_city_namespace.cjs',{})]
+          }
+          group=os.environ['AUDIT_GROUP'];results=[];Path('audit-logs').mkdir(exist_ok=True)
+          for name,script,override in groups[group]:
+              with Path('audit-logs/'+name+'.log').open('w') as out:
+                  try:code=subprocess.run(['node',script],env={**os.environ,**override},stdout=out,stderr=subprocess.STDOUT,timeout=720).returncode
+                  except subprocess.TimeoutExpired:code=124
+              results.append({'check':name,'exitCode':code,'passed':code==0})
+              Path('audit-group-status.json').write_text(json.dumps({'sourceCommit':os.environ['GITHUB_SHA'],'group':group,'checks':results,'passed':all(x['passed'] for x in results)},indent=2)+'\n')
+              print(results[-1],flush=True)
+          raise SystemExit(int(any(not x['passed'] for x in results)))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: usability-${{ matrix.group }}
+          path: |
+            audit-group-status.json
+            audit-logs/
+            audit-usability/
+            audit-20261018/
+            audit-20261018-cold/
+            audit-economics/
+            audit-deeplinks/
+            audit-ia-b2/
+            audit-*.json
+            audit-*.png
+            dist/city-namespace-qa/
+          if-no-files-found: ignore
+          retention-days: 30
