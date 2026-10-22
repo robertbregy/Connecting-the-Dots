@@ -217,6 +217,30 @@
         }
       ],
       "reorders": {
+        "lugano": {
+          "before": [
+            "The author’s position",
+            "Status and sources",
+            "Governance decisions still to be made",
+            "Uses and criteria for results",
+            "Risks and next checks"
+          ],
+          "after": [
+            "The author’s position",
+            "Status and sources",
+            "Why would a city seek its own top-level domain?",
+            "What Swiss precedents can and cannot tell us",
+            "Governance decisions still to be made",
+            "Uses and criteria for results",
+            "Risks and next checks"
+          ],
+          "originalBlocks": 5,
+          "motivationsVisible": true,
+          "comparisonLabel": "Other city domains and .zuerich: a comparison",
+          "retainedExistingIds": 25,
+          "retainedLinks": 20,
+          "evidenceUnchanged": true
+        },
         "how": {
           "before": [
             "What is a dot?",
@@ -623,6 +647,30 @@
         }
       ],
       "reorders": {
+        "lugano": {
+          "before": [
+            "The author’s position",
+            "Status and sources",
+            "Governance decisions still to be made",
+            "Uses and criteria for results",
+            "Risks and next checks"
+          ],
+          "after": [
+            "The author’s position",
+            "Status and sources",
+            "Why would a city seek its own top-level domain?",
+            "What Swiss precedents can and cannot tell us",
+            "Governance decisions still to be made",
+            "Uses and criteria for results",
+            "Risks and next checks"
+          ],
+          "originalBlocks": 5,
+          "motivationsVisible": true,
+          "comparisonLabel": "Other city domains and .zuerich: a comparison",
+          "retainedExistingIds": 25,
+          "retainedLinks": 20,
+          "evidenceUnchanged": true
+        },
         "how": {
           "before": [
             "What is a dot?",
@@ -1029,6 +1077,30 @@
         }
       ],
       "reorders": {
+        "lugano": {
+          "before": [
+            "La posizione dell’autore",
+            "Stato e fonti",
+            "Decisioni di governo ancora da prendere",
+            "Usi e criteri di risultato",
+            "Rischi e prossime verifiche"
+          ],
+          "after": [
+            "La posizione dell’autore",
+            "Stato e fonti",
+            "Perché una città dovrebbe candidarsi per un dominio di primo livello?",
+            "Che cosa insegnano i precedenti svizzeri, e che cosa no",
+            "Decisioni di governo ancora da prendere",
+            "Usi e criteri di risultato",
+            "Rischi e prossime verifiche"
+          ],
+          "originalBlocks": 5,
+          "motivationsVisible": true,
+          "comparisonLabel": "Il confronto con gli altri domini cittadini e con .zuerich",
+          "retainedExistingIds": 25,
+          "retainedLinks": 20,
+          "evidenceUnchanged": true
+        },
         "how": {
           "before": [
             "Che cos’è davvero un punto?",
@@ -1435,6 +1507,30 @@
         }
       ],
       "reorders": {
+        "lugano": {
+          "before": [
+            "Die Position des Autors",
+            "Status und Quellen",
+            "Noch offene Governance-Entscheidungen",
+            "Nutzungen und Ergebniskriterien",
+            "Risiken und nächste Prüfungen"
+          ],
+          "after": [
+            "Die Position des Autors",
+            "Status und Quellen",
+            "Warum sollte sich eine Stadt um eine eigene Top-Level-Domain bewerben?",
+            "Was Schweizer Präzedenzfälle zeigen und was nicht",
+            "Noch offene Governance-Entscheidungen",
+            "Nutzungen und Ergebniskriterien",
+            "Risiken und nächste Prüfungen"
+          ],
+          "originalBlocks": 5,
+          "motivationsVisible": true,
+          "comparisonLabel": "Andere Stadtdomains und .zuerich im Vergleich",
+          "retainedExistingIds": 25,
+          "retainedLinks": 20,
+          "evidenceUnchanged": true
+        },
         "how": {
           "before": [
             "Was ist ein Punkt eigentlich?",
@@ -1841,6 +1937,30 @@
         }
       ],
       "reorders": {
+        "lugano": {
+          "before": [
+            "La position de l’auteur",
+            "État et sources",
+            "Décisions de gouvernance encore à prendre",
+            "Usages et critères de résultat",
+            "Risques et prochaines vérifications"
+          ],
+          "after": [
+            "La position de l’auteur",
+            "État et sources",
+            "Pourquoi une ville demanderait-elle son propre domaine de premier niveau ?",
+            "Ce que les précédents suisses montrent, et ce qu’ils ne montrent pas",
+            "Décisions de gouvernance encore à prendre",
+            "Usages et critères de résultat",
+            "Risques et prochaines vérifications"
+          ],
+          "originalBlocks": 5,
+          "motivationsVisible": true,
+          "comparisonLabel": "Les autres domaines urbains et .zuerich en comparaison",
+          "retainedExistingIds": 25,
+          "retainedLinks": 20,
+          "evidenceUnchanged": true
+        },
         "how": {
           "before": [
             "Qu’est-ce qu’un point, au fond ?",
