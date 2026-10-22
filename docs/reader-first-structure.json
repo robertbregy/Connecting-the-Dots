@@ -241,6 +241,20 @@
           "retainedLinks": 20,
           "evidenceUnchanged": true
         },
+        "narrative": {
+          "lang": "en",
+          "essentialBlocks": 7,
+          "originalTranslatedItems": 1336,
+          "originalLinks": 1050,
+          "originalIds": 483,
+          "removedNavigationLabels": [
+            "Understand the context",
+            "From extensions to individual ICANN applications",
+            "From extensions to individual ICANN applications · 2026",
+            "Scenarios and proposed path"
+          ],
+          "dataChanged": false
+        },
         "how": {
           "before": [
             "What is a dot?",
@@ -670,6 +684,20 @@
           "retainedExistingIds": 25,
           "retainedLinks": 20,
           "evidenceUnchanged": true
+        },
+        "narrative": {
+          "lang": "en",
+          "essentialBlocks": 7,
+          "originalTranslatedItems": 1336,
+          "originalLinks": 1050,
+          "originalIds": 483,
+          "removedNavigationLabels": [
+            "Understand the context",
+            "From extensions to individual ICANN applications",
+            "From extensions to individual ICANN applications · 2026",
+            "Scenarios and proposed path"
+          ],
+          "dataChanged": false
         },
         "how": {
           "before": [
@@ -1101,6 +1129,20 @@
           "retainedLinks": 20,
           "evidenceUnchanged": true
         },
+        "narrative": {
+          "lang": "it",
+          "essentialBlocks": 7,
+          "originalTranslatedItems": 1336,
+          "originalLinks": 1050,
+          "originalIds": 483,
+          "removedNavigationLabels": [
+            "Per capire il contesto",
+            "Dalle estensioni alle singole domande ICANN",
+            "Dalle estensioni alle singole domande ICANN · 2026",
+            "Scenari e percorso proposto"
+          ],
+          "dataChanged": false
+        },
         "how": {
           "before": [
             "Che cos’è davvero un punto?",
@@ -1531,6 +1573,20 @@
           "retainedLinks": 20,
           "evidenceUnchanged": true
         },
+        "narrative": {
+          "lang": "de",
+          "essentialBlocks": 7,
+          "originalTranslatedItems": 1336,
+          "originalLinks": 1050,
+          "originalIds": 483,
+          "removedNavigationLabels": [
+            "Den Zusammenhang verstehen",
+            "Von Endungen zu einzelnen ICANN-Bewerbungen",
+            "Von Endungen zu einzelnen ICANN-Bewerbungen · 2026",
+            "Szenarien und vorgeschlagener Weg"
+          ],
+          "dataChanged": false
+        },
         "how": {
           "before": [
             "Was ist ein Punkt eigentlich?",
@@ -1960,6 +2016,20 @@
           "retainedExistingIds": 25,
           "retainedLinks": 20,
           "evidenceUnchanged": true
+        },
+        "narrative": {
+          "lang": "fr",
+          "essentialBlocks": 7,
+          "originalTranslatedItems": 1336,
+          "originalLinks": 1050,
+          "originalIds": 483,
+          "removedNavigationLabels": [
+            "Comprendre le contexte",
+            "Des extensions aux candidatures individuelles ICANN",
+            "Des extensions aux candidatures individuelles ICANN · 2026",
+            "Scénarios et parcours proposé"
+          ],
+          "dataChanged": false
         },
         "how": {
           "before": [

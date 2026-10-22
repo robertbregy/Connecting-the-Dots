@@ -21,6 +21,16 @@
   if(document.body.dataset.activeTab==='explore')window.CTD_LOAD_APS();
   document.querySelectorAll('.audienceAtlasLink,.audienceAtlasPanel').forEach(details=>details.addEventListener('toggle',e=>{if(e.currentTarget.open)window.CTD_LOAD_APS(true)}));
   document.addEventListener('click',e=>{if(e.target.closest('a[data-open-anchor="aps-native"]'))window.CTD_LOAD_APS(true)},true);
+  // The atlas is visible in the page, but its graph loads only near the reader.
+  const panel=document.querySelector('#aps-native[data-narrative-atlas]');
+  if(panel){
+   const visible=()=>{const r=panel.getBoundingClientRect();return document.body.dataset.activeTab==='explore'&&r.width>0&&r.top<innerHeight+200&&r.bottom>0};
+   if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)&&visible())window.CTD_LOAD_APS(true)},{rootMargin:'200px 0px'});observer.observe(panel);}
+   else window.addEventListener('scroll',()=>{if(visible())window.CTD_LOAD_APS(true)},{passive:true});
+   panel.addEventListener('focusin',()=>window.CTD_LOAD_APS(true));
+   window.addEventListener('hashchange',()=>{if(visible())window.CTD_LOAD_APS(true)});
+   if(visible())window.CTD_LOAD_APS(true);
+  }
  };
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();

@@ -360,8 +360,8 @@
       },
       {
         "repository_path": "assets/aps-lazy.js",
-        "bytes": 2223,
-        "sha256": "2632914a7b71b514ccad7ebc0b98ebb67fb07ebf38e6ca1039a1e5ff0caa35f5"
+        "bytes": 3073,
+        "sha256": "9836be686e3d6c55c8e3d57c4f272efc3b53c2aca7bb4e458015555c87e74565"
       },
       {
         "repository_path": "assets/worldmap-lazy.js",

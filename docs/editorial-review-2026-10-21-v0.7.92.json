@@ -43,7 +43,8 @@
     "U03": "Add a four-language, source-linked estimated three-minute path through illustrative everyday scenarios. Retain documented distinctions, all original evidence and existing destinations. Prepare printable neutral reader-study materials and a header-only observation template; zero observed participants, no human validation claimed.",
     "E09": "Approved six-step Economics order; preserve source facts, all original text, eight models/cases, legacy anchors, archived research and previous ZIPs. Current publication metadata follows v0.7.91.",
     "E10": "Reader-first editorial navigation in four languages: reorder complete existing blocks, preserve every original body and fragment, add local indexes, breadcrumbs, contextual next links and direct research access. New UI copy contains no new research observations. Preserve all prior archives and research identifiers.",
-    "E11": "22 October 2026, explicit user-requested Lugano layout correction: expose the unchanged motivations before governance; separate the unchanged city and .zuerich comparison behind an accurately named native disclosure in all four languages. Preserve all prior heading targets, links, research text, other sections, archives and research identifiers. AI-assisted source and browser review, not a human usability study."
+    "E11": "22 October 2026, explicit user-requested Lugano layout correction: expose the unchanged motivations before governance; separate the unchanged city and .zuerich comparison behind an accurately named native disclosure in all four languages. Preserve all prior heading targets, links, research text, other sections, archives and research identifiers. AI-assisted source and browser review, not a human usability study.",
+    "E12": "Expose the project definition and DNS foundation, make the Atlas entry and tool directly accessible with viewport-triggered loading, show the Lugano proposal, principles and conditions while retaining an optional roadmap, and add a visible interpretation guide before the unchanged historical Economics analysis. Preserve source text, datasets, archived research identities and original links. The current technical data package changes only its manifest runtime-asset fingerprint. Original validators and archival baselines remain unchanged."
   },
   "sourceInvariants": {
     "sections": [
@@ -2537,11 +2538,12 @@
     },
     "assets/aps-lazy.js": {
       "baselineSHA256": null,
-      "sha256": "2632914a7b71b514ccad7ebc0b98ebb67fb07ebf38e6ca1039a1e5ff0caa35f5",
+      "sha256": "9836be686e3d6c55c8e3d57c4f272efc3b53c2aca7bb4e458015555c87e74565",
       "rationaleIds": [
         "A19",
         "H01",
-        "U01"
+        "U01",
+        "E12"
       ]
     },
     "data/audit_20261019_editorial.json": {
@@ -2780,10 +2782,11 @@
     },
     "scripts/audit_audience.cjs": {
       "baselineSHA256": null,
-      "sha256": "aba183021c78075bde0f10360077bf90e42e9b6c904634a7ac7199612c9c1cce",
+      "sha256": "960b9cddd156fa71ad77355901ea146c9ca8f1c222a185f2fb4ae790ec323fee",
       "rationaleIds": [
         "U01",
-        "U03"
+        "U03",
+        "E12"
       ]
     },
     "scripts/audit_ia_b2.cjs": {
@@ -2941,24 +2944,27 @@
     "downloads/connecting-the-dots-data-pack-v0.7.92.sha256": {
       "baselineSHA256": null,
       "rationaleIds": [
-        "E10"
+        "E10",
+        "E12"
       ],
-      "sha256": "6797361a76d53e969380b9a3bd04bb2cd873ef9708c855b553670dac2e0717d3"
+      "sha256": "03a4a0e38e882871d0a7be4b50fc665ae63590b1ed95d9c906bfc523d33ae1f2"
     },
     "downloads/connecting-the-dots-data-pack-v0.7.92.zip": {
       "baselineSHA256": null,
       "rationaleIds": [
-        "E10"
+        "E10",
+        "E12"
       ],
-      "sha256": "4a350f79126141559770ae27ea018100cc2e640ab04ebb4fb103f9e5ed1a245b"
+      "sha256": "841c47bd0160d3c2ee9b484382b0b70fc862a229d3ead266149f302976f15032"
     },
     "scripts/reader_first.cjs": {
       "baselineSHA256": null,
       "rationaleIds": [
         "E10",
-        "E11"
+        "E11",
+        "E12"
       ],
-      "sha256": "9800e5479d858f1e3f77d1a85bfccec65267e2a3d74dc536788a326422db246b"
+      "sha256": "ca60279c4d1570715c1150c649732e1b8c898da46268ad5a8441ace40517f079"
     },
     "scripts/reader_first_browser.cjs": {
       "baselineSHA256": null,
@@ -3001,6 +3007,41 @@
       "rationaleIds": [
         "E11"
       ]
+    },
+    "scripts/narrative_clarity.cjs": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "E12"
+      ],
+      "sha256": "4c40b96a63e817dd3465755cfea9183c3758511a0e20d2c1d0b3cb9073fd198c"
+    },
+    "scripts/narrative_clarity_qa.cjs": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "E12"
+      ],
+      "sha256": "63134836311a7189151cc7f5553ffcacd0c3e3e98eed238daa6dd07a18543992"
+    },
+    "scripts/narrative_clarity.patch": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "E12"
+      ],
+      "sha256": "02675fd44a7e31eb2385fd08628ceb0a7efae0dc70cbf6f1a5f55cf64c0b256b"
+    },
+    ".github/workflows/narrative-clarity.yml": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "E12"
+      ],
+      "sha256": "f3d240e12ce52e63fecfd07bdd339dbcd9422915de068ddfc873fc3745aba63a"
+    },
+    "data/manifest.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "E12"
+      ],
+      "sha256": "640f918b185ec12e7d7457df817f7cf4af9fbb016a23c89204353b658bc6b9d6"
     }
   },
   "sourceSections": {
@@ -3294,6 +3335,13 @@
     "sourceSHA256": "9800e5479d858f1e3f77d1a85bfccec65267e2a3d74dc536788a326422db246b",
     "evidence": "docs/lugano-reading-order-20261022.json",
     "reviewType": "AI-assisted code, evidence-preservation and browser review",
+    "humanParticipants": 0
+  },
+  "narrativeClarityReview": {
+    "reviewedOn": "2026-10-22",
+    "baseline": "2038d07df9c491a0fa30e8ff2a9a8da32494b406",
+    "reviewType": "AI-assisted targeted code and editorial review",
+    "verification": "docs/narrative-clarity-verification.json",
     "humanParticipants": 0
   }
 }
