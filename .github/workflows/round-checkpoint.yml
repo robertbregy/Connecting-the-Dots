@@ -2,22 +2,109 @@ name: Round checkpoint editorial verification
 on:
   push:
     branches: ['editorial/round-checkpoint-20261022']
-    paths: ['.github/workflows/round-checkpoint.yml', 'scripts/apply_round_checkpoint.py', 'scripts/round_checkpoint.cjs', 'scripts/round_checkpoint_qa.cjs', 'docs/round-checkpoint-approval.json']
+    paths: ['.github/workflows/round-checkpoint.yml', '.github/round-input.*', 'scripts/**', 'docs/round-checkpoint-approval.json']
 permissions:
-  contents: read
+  contents: write
+concurrency:
+  group: round-checkpoint-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
-  snapshot:
+  verify:
+    if: ${{ !contains(github.event.head_commit.message || '', '[round artifacts]') }}
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
-      - name: Archive exact current source for offline inspection
-        run: |
-          git rev-parse HEAD > /tmp/source-commit.txt
-          git archive HEAD -o /tmp/round-checkpoint-source.tar.gz
-      - uses: actions/upload-artifact@v4
         with:
-          name: round-checkpoint-source
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply the exact inspected source
+        run: python3 scripts/apply_round_checkpoint.py
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Build and verify editorial integrity
+        id: build
+        run: |
+          python3 build.py
+          node scripts/round_checkpoint_qa.cjs --static-only
+          node scripts/validate_multilingual.js
+          node scripts/verify_ia_b2_parity.cjs
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, hashlib
+          paths=[*Path('.').glob('index.html'),*Path('.').glob('*/index.html'),*Path('behind-the-round').rglob('index.html'),*Path('inside-the-round').rglob('index.html'),*Path('applications').rglob('index.html')]
+          paths.append(Path(json.loads(Path('publication.json').read_text())['currentDataPackPath']))
+          Path('/tmp/round-build.json').write_text(json.dumps({str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}))
+          PY
+          python3 build.py
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, hashlib
+          before=json.loads(Path('/tmp/round-build.json').read_text())
+          changed=[p for p,h in before.items() if hashlib.sha256(Path(p).read_bytes()).hexdigest()!=h]
+          assert not changed, 'Build drift: '+str(changed)
+          Path('docs/round-checkpoint-build.json').write_text(json.dumps({'files':len(before),'changed':changed,'passed':True},indent=2)+'\n')
+          PY
+          node scripts/verify_ia_b2_parity.cjs
+      - name: Install fixed browser verification runtime
+        run: |
+          npm install --no-save --package-lock=false --no-audit --no-fund playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Check all browser groups independently
+        id: browser
+        env:
+          CTD_TEST_BASE: http://127.0.0.1:8123/
+          CTD_ROUND_QA: audit-round-checkpoint/focused
+        run: |
+          mkdir -p audit-round-checkpoint
+          python3 -m http.server 8123 --bind 127.0.0.1 >/tmp/round-server.log 2>&1 &
+          server=$!
+          trap 'kill "$server" 2>/dev/null || true' EXIT
+          sleep 2
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,os,subprocess
+          checks=[('checkpoint','scripts/round_checkpoint_qa.cjs',{}),('navigation','scripts/audit_ia_b2.cjs',{}),('legacy','scripts/audit_legacy_deeplinks.cjs',{}),('export-settled','scripts/audit_20261018_browser.cjs',{'CTD_EXPORT_MODE':'settled','CTD_AUDIT_OUTPUT':'audit-round-checkpoint/export-settled'}),('export-cold','scripts/audit_20261018_browser.cjs',{'CTD_EXPORT_MODE':'cold','CTD_AUDIT_OUTPUT':'audit-round-checkpoint/export-cold'})]
+          rows=[]
+          for name,script,env in checks:
+              with Path('audit-round-checkpoint/'+name+'.log').open('w') as f:
+                  try: code=subprocess.run(['node',script],env={**os.environ,**env},stdout=f,stderr=subprocess.STDOUT,timeout=600).returncode
+                  except subprocess.TimeoutExpired: code=124
+              rows.append({'check':name,'exitCode':code,'passed':code==0})
+              print(json.dumps(rows[-1]),flush=True)
+              Path('audit-round-checkpoint/regressions.json').write_text(json.dumps({'checks':rows,'passed':all(x['passed'] for x in rows)},indent=2)+'\n')
+          raise SystemExit(int(any(not x['passed'] for x in rows)))
+          PY
+      - name: Commit only verified publication artifacts
+        if: success()
+        run: |
+          node scripts/verify_ia_b2_parity.cjs
+          git fetch origin "$GITHUB_REF_NAME"
+          test "$(git rev-parse FETCH_HEAD)" = "$(git rev-parse HEAD)"
+          cp audit-round-checkpoint/focused/report.json docs/round-checkpoint-verification.json
+          cp audit-round-checkpoint/regressions.json docs/round-checkpoint-regressions.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -u
+          git add scripts/round_checkpoint.cjs scripts/round_checkpoint_qa.cjs data/round_2026_checkpoint.json docs/round-checkpoint*.json docs/editorial-review-2026-10-22-v0.7.93.json downloads/connecting-the-dots-data-pack-v0.7.93.zip downloads/connecting-the-dots-data-pack-v0.7.93.sha256
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish verified 22 October round checkpoint v0.7.93 [round artifacts] [skip build]'
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: round-checkpoint-verification
           path: |
-            /tmp/source-commit.txt
-            /tmp/round-checkpoint-source.tar.gz
-          retention-days: 7
+            audit-round-checkpoint/
+            audit-ia-b2/
+            audit-deeplinks/
+            docs/round-checkpoint*.json
+          if-no-files-found: ignore
+          retention-days: 30
