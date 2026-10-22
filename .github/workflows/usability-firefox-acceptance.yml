@@ -1,0 +1,60 @@
+name: Usability remediation Firefox acceptance
+on:
+  push:
+    branches: ['qa/full-usability-20261022']
+    paths: ['.github/workflows/usability-firefox-acceptance.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 'c83fd1284e9a50d5965db7617c3d0bfe656ce69b'
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned Firefox verification runtime
+        run: |
+          timeout 150 npm ci --no-audit --no-fund --prefer-offline --fetch-retries=1 --fetch-timeout=30000
+          timeout 180 npm install --no-save --package-lock=false --no-audit --no-fund --fetch-retries=1 --fetch-timeout=30000 playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps firefox
+      - name: Run unchanged assertions in Firefox
+        env:
+          CTD_TEST_BASE: http://127.0.0.1:8123/
+          CTD_USABILITY_WIDTHS: '320,1440'
+          CTD_USABILITY_QA: audit-usability-firefox
+          GITHUB_SHA: c83fd1284e9a50d5965db7617c3d0bfe656ce69b
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('scripts/usability_remediation_qa.cjs');s=p.read_text()
+          old="const {chromium}=require('playwright'),AxeBuilder="
+          assert s.count(old)==1
+          s=s.replace(old,"const {firefox:chromium}=require('playwright'),AxeBuilder=")
+          old="const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{}),args:['--no-sandbox','--disable-dev-shm-usage']});"
+          assert s.count(old)==1
+          s=s.replace(old,"const browser=await chromium.launch({headless:true});")
+          Path('scripts/usability_firefox_qa.cjs').write_text(s)
+          Path('audit-usability-firefox').mkdir(exist_ok=True)
+          Path('audit-usability-firefox/method.txt').write_text('Candidate c83fd1284e9a50d5965db7617c3d0bfe656ce69b. Only the test browser engine and launch arguments change. All page bytes, static preservation assertions, keyboard, anchors, CSV-independent checks, accessibility rules and first-screen CTA conditions remain unchanged. Four languages, two widths, both themes. No human participants.\n')
+          PY
+          python3 -m http.server 8123 --bind 127.0.0.1 >/tmp/firefox-http.log 2>&1 &
+          server=$!
+          trap 'kill "$server" 2>/dev/null || true' EXIT
+          sleep 2
+          node scripts/usability_firefox_qa.cjs > audit-usability-firefox/execution.log 2>&1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: usability-firefox
+          path: audit-usability-firefox/
+          retention-days: 30
