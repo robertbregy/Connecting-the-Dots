@@ -63,6 +63,52 @@ function arrange(section, selectors) {
   }
   return {before, after: order.map(describe), originalBlocks: original.length};
 }
+function refineLugano(d, lang) {
+  // Assign legacy heading anchors before this relocation (see nativePage).
+  // Motivations belong in the main reading path, not inside an optional panel.
+  const labels = {
+    en: 'Other city domains and .zuerich: a comparison',
+    it: 'Il confronto con gli altri domini cittadini e con .zuerich',
+    de: 'Andere Stadtdomains und .zuerich im Vergleich',
+    fr: 'Les autres domaines urbains et .zuerich en comparaison'
+  };
+  assert.ok(labels[lang], 'Missing Lugano comparison label: ' + lang);
+  const section = d.getElementById('lugano');
+  const governance = d.getElementById('lugano-governance-decisions');
+  const why = section?.querySelector('[data-i18n="luganoWhyTitle"]')?.closest('.panel');
+  const swiss = section?.querySelector('[data-i18n="luganoSwissTitle"]')?.closest('.panel');
+  const context = why?.closest('details.editorialDetails');
+  const summary = context?.querySelector(':scope > summary');
+  const commons = d.getElementById('lugano-public-commons');
+  assert.ok(section && governance && why && swiss && context && summary && commons, 'Incomplete Lugano reading-order source');
+  assert.ok(governance.parentElement === section && governance.contains(context) && context.contains(swiss), 'Unexpected Lugano context placement');
+  assert.deepEqual([...context.children], [summary, why, swiss], 'Unexpected content in Lugano context; review before relocating');
+  const describe = n => n.querySelector('h2')?.textContent.trim() || n.id || n.className;
+  const before = [...section.children].map(describe);
+  const ids = [...section.querySelectorAll('[id]')].map(n => n.id).sort();
+  const hrefs = () => [...section.querySelectorAll('a[href]')].map(n => n.getAttribute('href')).sort();
+  const originalLinks = hrefs();
+  const evidence = [why, swiss, commons].map(n => ({node: n, html: n.outerHTML}));
+  const localizedEvidence = () => [...section.querySelectorAll('[data-i18n]')].map(n => [n.getAttribute('data-i18n'), n.textContent]).sort((a, b) => JSON.stringify(a).localeCompare(JSON.stringify(b)));
+  const originalEvidence = localizedEvidence();
+  const chapterIds = () => [...section.children].filter(n => n.classList.contains('luganoChapter')).map(n => n.id);
+  const originalChapters = chapterIds();
+  governance.before(why, context);
+  summary.textContent = labels[lang];
+  if (!context.id) context.id = 'lugano-city-comparison';
+  assert.equal(why.parentElement, section, 'Lugano motivations must remain in the main reading path');
+  assert.equal(why.closest('details'), null, 'Lugano motivations must not require expansion');
+  assert.equal(why.nextElementSibling, context, 'Lugano comparison must follow the motivations');
+  assert.equal(context.nextElementSibling, governance, 'Lugano motivations and comparison must precede governance');
+  assert.equal(context.hasAttribute('open'), false, 'Only the city comparison remains optional');
+  assert.deepEqual([...context.children], [summary, swiss], 'Lugano comparison must contain only the territorial precedents');
+  for (const record of evidence) assert.equal(record.node.outerHTML, record.html, 'Lugano evidence was rewritten');
+  assert.deepEqual(localizedEvidence(), originalEvidence, 'Lugano translated evidence changed');
+  assert.deepEqual(hrefs(), originalLinks, 'Lugano source links changed');
+  assert.deepEqual(chapterIds(), originalChapters, 'Lugano main groups or their legacy anchors changed');
+  for (const id of ids) assert.ok(section.querySelectorAll('[id]').length && d.getElementById(id) && section.contains(d.getElementById(id)), 'Lost Lugano anchor: ' + id);
+  return {before, after: [...section.children].map(describe), originalBlocks: before.length, motivationsVisible: true, comparisonLabel: labels[lang], retainedExistingIds: ids.length, retainedLinks: originalLinks.length, evidenceUnchanged: true};
+}
 function headingsFor(section) { return [...section.querySelectorAll('h2')].filter(h => !h.closest('[data-reader-ui]')); }
 function toc(d, section, lang, independent = false) {
   const L = DATA.locales[lang], headings = headingsFor(section);
@@ -122,7 +168,7 @@ function nativePage(lang, filename) {
     refusals: [':first', '#refusalGrid', '#refusalTaxonomy', '#refusalSnapshot'],
     sources: [':first', '#sources-part-3', '#sources-part-4', '#sources-part-5', '#sources-part-2']
   };
-  const changes = {};
+  const changes = {lugano: refineLugano(d, lang)};
   for (const [id, selectors] of Object.entries(reorder)) changes[id] = arrange(d.getElementById(id), selectors);
   const history = d.getElementById('timeline'), patterns = rootBlock(d.getElementById('tld-cultural-patterns'), history);
   assert.ok(patterns, 'Cultural analysis block missing');
