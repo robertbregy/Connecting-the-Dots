@@ -1,0 +1,184 @@
+name: Verify Lugano reading-order patch
+on:
+  push:
+    branches: ['feat/lugano-reading-order-20261022']
+    paths: ['.github/workflows/lugano-reading-order.yml']
+permissions:
+  contents: write
+concurrency:
+  group: lugano-reading-order-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build the inspected source
+        run: |
+          npm ci
+          python3 build.py
+          node scripts/validate_multilingual.js
+          CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
+      - name: Install browser verification
+        run: |
+          npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Independently verify preservation, reading order and browser behavior
+        run: |
+          python3 -m http.server 8137 --bind 127.0.0.1 >/tmp/lugano-http.log 2>&1 &
+          server=$!
+          trap 'kill "$server" 2>/dev/null || true' EXIT
+          sleep 2
+          node <<'JS'
+          const fs = require('node:fs'), assert = require('node:assert/strict');
+          const {execFileSync} = require('node:child_process');
+          const {parseHTML} = require('linkedom');
+          const {chromium} = require('playwright');
+          const AxeBuilder = require('@axe-core/playwright').default;
+          const baseline = 'f7555163f567e04e270c1ca8ca0a8e5917e30167';
+          const report = {baseline, sourceCommit: process.env.GITHUB_SHA, structural: [], browser: [], noJavaScript: [], humanParticipants: 0};
+          const langs = ['it', 'en', 'de', 'fr'];
+          const out = 'lugano-reading-order-qa'; fs.mkdirSync(out, {recursive: true});
+          const labels = {it:'Il confronto con gli altri domini cittadini e con .zuerich',en:'Other city domains and .zuerich: a comparison',de:'Andere Stadtdomains und .zuerich im Vergleich',fr:'Les autres domaines urbains et .zuerich en comparaison'};
+          const anchors = {};
+          for (const file of ['index.html', ...langs.map(l => l + '/index.html')]) {
+            const old = parseHTML(execFileSync('git', ['show', baseline + ':' + file], {encoding:'utf8',maxBuffer:16000000})).document;
+            const current = parseHTML(fs.readFileSync(file, 'utf8')).document;
+            const before = old.getElementById('lugano'), after = current.getElementById('lugano');
+            const texts = s => [...s.querySelectorAll('[data-i18n]')].map(n => [n.getAttribute('data-i18n'),n.textContent]).sort((a,b) => JSON.stringify(a).localeCompare(JSON.stringify(b)));
+            const links = s => [...s.querySelectorAll('a[href]')].map(n => n.getAttribute('href')).sort();
+            assert.deepEqual(texts(after), texts(before), file + ' changed research text');
+            assert.deepEqual(links(after), links(before), file + ' changed source or contents links');
+            for (const n of before.querySelectorAll('[id]')) {
+              const preserved = current.getElementById(n.id);
+              assert.ok(preserved && after.contains(preserved), file + ' lost anchor ' + n.id);
+              if (/^H[1-6]$/.test(n.tagName)) assert.equal(preserved.textContent, n.textContent, file + ' retargeted heading ' + n.id);
+            }
+            for (const section of old.querySelectorAll('main > section[id]')) {
+              if (section.id !== 'lugano') assert.equal(current.getElementById(section.id).outerHTML, section.outerHTML, file + ' changed another section: ' + section.id);
+            }
+            const ids = [...current.querySelectorAll('[id]')].map(n => n.id);
+            assert.equal(new Set(ids).size, ids.length, file + ' duplicated IDs');
+            const why = after.querySelector('[data-i18n="luganoWhyTitle"]');
+            const panel = why.closest('.panel'), comparison = current.getElementById('lugano-city-comparison');
+            assert.equal(panel.parentElement, after);
+            assert.equal(panel.closest('details'), null);
+            assert.equal(panel.nextElementSibling, comparison);
+            assert.equal(comparison.nextElementSibling.id, 'lugano-governance-decisions');
+            assert.equal(comparison.hasAttribute('open'), false);
+            const lang = file === 'index.html' ? 'en' : file.split('/')[0];
+            assert.equal(comparison.querySelector('summary').textContent, labels[lang]);
+            anchors[lang] = {why:why.id,swiss:after.querySelector('[data-i18n="luganoSwissTitle"]').id};
+            report.structural.push({file,originalTextItems:texts(before).length,preservedLinks:links(before).length,legacyAnchors:[...before.querySelectorAll('[id]')].length,otherSectionsUnchanged:true});
+          }
+          (async () => {
+            const browser = await chromium.launch({headless:true});
+            try {
+              for (const lang of langs) for (const width of [320,1280]) for (const theme of ['light','dark']) {
+                const context = await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce'});
+                const page = await context.newPage(), errors = [];
+                page.on('pageerror', e => errors.push(e.message));
+                await page.goto('http://127.0.0.1:8137/' + lang + '/?tab=lugano#lugano', {waitUntil:'load'});
+                await page.locator('#lugano.section.active').waitFor({state:'visible'});
+                if (await page.locator('html').getAttribute('data-theme') !== theme) await page.locator('#themeBtn').click();
+                assert.equal(await page.locator('html').getAttribute('data-theme'), theme);
+                const heading = page.locator('#lugano [data-i18n="luganoWhyTitle"]');
+                assert.ok(await heading.isVisible(), 'Motivations hidden on initial load');
+                const comparison = page.locator('#lugano-city-comparison');
+                assert.equal(await comparison.getAttribute('open'), null);
+                const summary = comparison.locator(':scope > summary');
+                assert.equal(await summary.innerText(), labels[lang]);
+                await summary.focus(); await page.keyboard.press('Enter');
+                assert.notEqual(await comparison.getAttribute('open'), null, 'Keyboard cannot open comparison');
+                assert.ok(await comparison.locator('[data-i18n="luganoSwissTitle"]').isVisible());
+                const axe = await new AxeBuilder({page}).include('#lugano-city-comparison').withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
+                assert.deepEqual(axe.violations.map(v => v.id), []);
+                await summary.focus(); await page.keyboard.press('Enter');
+                assert.equal(await comparison.getAttribute('open'), null, 'Keyboard cannot close comparison');
+                const metrics = await page.evaluate(() => ({scroll:document.documentElement.scrollWidth,width:innerWidth}));
+                assert.ok(metrics.scroll <= metrics.width + 3, 'Horizontal overflow');
+                for (const [key, anchor] of Object.entries(anchors[lang])) {
+                  await page.goto('http://127.0.0.1:8137/' + lang + '/?tab=lugano#' + anchor, {waitUntil:'load'});
+                  await page.locator('#lugano.section.active').waitFor({state:'visible'});
+                  assert.ok(await page.locator('#' + anchor).isVisible(), 'Legacy heading link hidden: ' + key);
+                }
+                if (lang === 'it') {
+                  await heading.scrollIntoViewIfNeeded();
+                  await page.screenshot({path:out + '/it-' + width + '-' + theme + '.png'});
+                }
+                assert.deepEqual(errors, [], 'Browser errors');
+                report.browser.push({lang,width,theme,motivationsVisible:true,keyboardDisclosure:true,legacyLinks:true,horizontalOverflow:false,comparisonAxeViolations:0});
+                await context.close();
+              }
+              for (const lang of langs) {
+                const context = await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:900}});
+                const page = await context.newPage();
+                await page.goto('http://127.0.0.1:8137/' + lang + '/#lugano', {waitUntil:'load'});
+                assert.ok(await page.locator('#lugano [data-i18n="luganoWhyTitle"]').isVisible());
+                await page.locator('#lugano-city-comparison > summary').click();
+                assert.ok(await page.locator('#lugano-city-comparison [data-i18n="luganoSwissTitle"]').isVisible());
+                report.noJavaScript.push({lang,motivationsVisible:true,nativeDisclosure:true});
+                await context.close();
+              }
+              report.passed = true;
+              fs.writeFileSync('docs/lugano-reading-order-20261022.json', JSON.stringify(report,null,2) + '\n');
+              console.log('LUGANO_READING_ORDER_VERIFIED', JSON.stringify(report));
+            } finally { await browser.close(); }
+          })().catch(e => {console.error(e);process.exitCode=1;});
+          JS
+      - name: Record the exact inspected layout-only change in the editorial review
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib
+          root=pathlib.Path('.')
+          pub=json.loads((root/'publication.json').read_text())
+          target=root/pub['editorialReviewPath']
+          review=json.loads(target.read_text())
+          script='scripts/reader_first.cjs'
+          expected_old='453afd5ded559149580d791e6265256df5cf487cd33b9ac07df7728cc9661024'
+          expected_new='9800e5479d858f1e3f77d1a85bfccec65267e2a3d74dc536788a326422db246b'
+          actual=hashlib.sha256((root/script).read_bytes()).hexdigest()
+          assert actual==expected_new, 'The source differs from the inspected patch'
+          assert review['files'][script]['sha256'] in (expected_old,expected_new)
+          evidence=json.loads((root/'docs/lugano-reading-order-20261022.json').read_text())
+          assert evidence['passed'] and len(evidence['structural'])==5 and len(evidence['browser'])==16 and len(evidence['noJavaScript'])==4
+          assert evidence['sourceCommit']==os.environ['GITHUB_SHA']
+          review['rationales']['E11']='22 October 2026, explicit user-requested Lugano layout correction: expose the unchanged motivations before governance; separate the unchanged city and .zuerich comparison behind an accurately named native disclosure in all four languages. Preserve all prior heading targets, links, research text, other sections, archives and research identifiers. AI-assisted source and browser review, not a human usability study.'
+          review['files'][script]['sha256']=actual
+          review['files'][script]['rationaleIds']=list(dict.fromkeys(review['files'][script]['rationaleIds']+['E11']))
+          workflow='.github/workflows/lugano-reading-order.yml'
+          review['files'][workflow]={'sha256':hashlib.sha256((root/workflow).read_bytes()).hexdigest(),'baselineSHA256':None,'rationaleIds':['E11']}
+          review['supplementalLayoutReview']={'reviewedOn':'2026-10-22','sourceCommit':os.environ['GITHUB_SHA'],'workflowRun':os.environ['GITHUB_RUN_ID'],'sourceSHA256':actual,'evidence':'docs/lugano-reading-order-20261022.json','reviewType':'AI-assisted code, evidence-preservation and browser review','humanParticipants':0}
+          target.write_text(json.dumps(review,ensure_ascii=False,indent=2)+'\n')
+          PY
+          node scripts/verify_ia_b2_parity.cjs
+      - name: Preserve browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lugano-reading-order-verification
+          path: |
+            docs/lugano-reading-order-20261022.json
+            lugano-reading-order-qa/
+          if-no-files-found: ignore
+      - name: Commit reviewed artifacts only on the unchanged branch
+        run: |
+          git fetch origin "$GITHUB_REF_NAME"
+          test "$(git rev-parse FETCH_HEAD)" = "$(git rev-parse HEAD)" || { echo 'Branch advanced; no artifacts committed.'; exit 1; }
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html en/index.html it/index.html de/index.html fr/index.html docs/reader-first-structure.json docs/lugano-reading-order-20261022.json docs/editorial-review-2026-10-21-v0.7.92.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Verified Lugano reading-order correction and exact editorial review [skip build]'
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi
