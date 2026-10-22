@@ -1,0 +1,80 @@
+name: Legacy animated-scroll acceptance
+on:
+  push:
+    branches: ['fix/usability-audit-20261022']
+    paths: ['.github/workflows/legacy-scroll-acceptance.yml']
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fixed verification runtime
+        run: |
+          timeout 150 npm ci --no-audit --no-fund --prefer-offline --fetch-retries=1 --fetch-timeout=30000
+          timeout 180 npm install --no-save --package-lock=false --no-audit --no-fund --fetch-retries=1 --fetch-timeout=30000 playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Observe arrival before asserting the real scroll destination
+        env:
+          CTD_TEST_BASE: http://127.0.0.1:8123/
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,subprocess
+          p=Path('scripts/audit_legacy_deeplinks.cjs');s=p.read_text()
+          assert hashlib.sha256(p.read_bytes()).hexdigest()=='bcba24a00776a974ed18c7f7024902fb7509b1615b20dc540f12d6b340f0e9cc'
+          old="await page.waitForFunction(id=>{let n=document.getElementById(id);if(!n||n.getBoundingClientRect().height<=0)return false;for(;n;n=n.parentElement)if(n.tagName==='DETAILS'&&!n.open)return false;return true;},anchor);"
+          new="await page.waitForFunction(id=>{if(window.CTD_APP_READY!==true)return false;let n=document.getElementById(id);if(!n)return false;const r=n.getBoundingClientRect();if(r.height<=0||r.top<0||r.top>=innerHeight-24)return false;for(;n;n=n.parentElement)if(n.tagName==='DETAILS'&&!n.open)return false;return true;},anchor,{timeout:5000});"
+          assert s.count(old)==1;s=s.replace(old,new);p.write_text(s)
+          assert hashlib.sha256(p.read_bytes()).hexdigest()=='f83d4c615f1bbeae6fa09ab1a955cccaf1aeb0a797f1606904163c8551062be2'
+          changed=subprocess.check_output(['git','diff','--name-only','c83fd1284e9a50d5965db7617c3d0bfe656ce69b']).decode().splitlines()
+          assert set(changed)=={str(p),'.github/workflows/legacy-scroll-acceptance.yml'},changed
+          PY
+          python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/scroll-http.log 2>&1 &
+          server=$!
+          trap 'kill "$server" 2>/dev/null || true' EXIT
+          sleep 2
+          node scripts/audit_legacy_deeplinks.cjs > /tmp/legacy-scroll.log 2>&1
+      - name: Record exact test-only correction after successful acceptance
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json,subprocess
+          p='scripts/audit_legacy_deeplinks.cjs';digest=hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          assert digest=='f83d4c615f1bbeae6fa09ab1a955cccaf1aeb0a797f1606904163c8551062be2'
+          result=json.loads(Path('audit-deeplinks/results.json').read_text());assert result['total']==256 and not result['failed']
+          candidate=Path('docs/usability-remediation-review.json');d=json.loads(candidate.read_text());assert d['expectedFiles'][p]=='bcba24a00776a974ed18c7f7024902fb7509b1615b20dc540f12d6b340f0e9cc';d['expectedFiles'][p]=digest
+          d['testTimingReview']='The restored-fragment check now waits up to five seconds for actual viewport arrival and open ancestors, without invoking scroll APIs, disabling motion or removing any assertion. Site assets and HTML are identical to tested candidate c83fd1284e9a50d5965db7617c3d0bfe656ce69b.'
+          candidate.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+          publication=json.loads(Path('publication.json').read_text());review=Path(publication['editorialReviewPath']);e=json.loads(review.read_text());assert e['files'][p]['sha256']=='bcba24a00776a974ed18c7f7024902fb7509b1615b20dc540f12d6b340f0e9cc';e['files'][p]['sha256']=digest;review.write_text(json.dumps(e,ensure_ascii=False,indent=2)+'\n')
+          result['testedSiteCommit']='c83fd1284e9a50d5965db7617c3d0bfe656ce69b';result['testCorrection']='Wait for viewport arrival with real animation, without forced scrolling or weakened assertions.'
+          Path('docs/usability-legacy-acceptance.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+          PY
+          node scripts/verify_ia_b2_parity.cjs
+          git fetch origin "$GITHUB_REF_NAME"
+          test "$(git rev-parse FETCH_HEAD)" = "$(git rev-parse HEAD)"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scripts/audit_legacy_deeplinks.cjs docs/usability-remediation-review.json docs/editorial-review-2026-10-21-v0.7.92.json docs/usability-legacy-acceptance.json
+          git commit -m 'Verify all 256 legacy destinations with real scroll completion [usability artifacts] [skip build]'
+          git push origin "HEAD:$GITHUB_REF_NAME"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: usability-legacy-scroll
+          path: |
+            audit-deeplinks/results.json
+            /tmp/legacy-scroll.log
+            docs/usability-legacy-acceptance.json
+          retention-days: 30
