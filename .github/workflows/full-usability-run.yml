@@ -1,0 +1,94 @@
+name: Full published-site usability and regression audit
+on:
+  push:
+    branches: ['qa/full-usability-20261022']
+    paths: ['.github/workflows/full-usability-run.yml']
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        suite: [static, navigation, accessibility, reader-journeys]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: '90d21e6059871c36148e1860d017e7409ed3f8bb'
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fixed audit dependencies
+        run: |
+          timeout 150 npm ci --no-audit --no-fund --fetch-retries=1 --fetch-timeout=30000
+          if test '${{ matrix.suite }}' != static; then
+            timeout 180 npm install --no-save --package-lock=false --no-audit --no-fund --fetch-retries=1 --fetch-timeout=30000 playwright@1.56.1 @axe-core/playwright@4.10.2
+            npx playwright install --with-deps chromium
+          fi
+      - name: Run each check independently and retain failures
+        env:
+          CTD_TEST_BASE: http://127.0.0.1:8123/
+          CTD_AUDIT_OUTPUT: audit-20261022/legacy18-adapted
+          CTD_ECONOMICS_QA: audit-20261022/economics
+          CTD_NARRATIVE_QA: audit-20261022/narrative
+          CTD_NARRATIVE_BASELINE: /tmp/narrative-baseline
+          CTD_STATIC_ONLY: '1'
+          AUDIT_SUITE: ${{ matrix.suite }}
+        run: |
+          mkdir -p audit-20261022 /tmp/narrative-baseline
+          git archive 2038d07df9c491a0fa30e8ff2a9a8da32494b406 | tar -x -C /tmp/narrative-baseline
+          python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/audit-http.log 2>&1 &
+          sleep 2
+          python3 - <<'PY'
+          import json,os,pathlib,subprocess,time
+          out=pathlib.Path('audit-20261022');results=[]
+          suite=os.environ['AUDIT_SUITE']
+          if suite=='navigation':
+              p=pathlib.Path('scripts/audit_20261018_browser.cjs');text=p.read_text()
+              old="const contextDetail=page.locator('#lugano-governance-decisions details.editorialDetails');"
+              new="assert.equal(await page.locator('#lugano [data-i18n=\"luganoWhyTitle\"]').evaluate(n=>n.closest('details')),null,'Motivations must be outside collapsed detail'); const contextDetail=page.locator('#lugano-city-comparison');"
+              assert text.count(old)==1
+              pathlib.Path('scripts/audit_20261018_browser_audit_adapted.cjs').write_text(text.replace(old,new))
+              (out/'test-adaptation.txt').write_text('Audit-only compatibility correction: obsolete Lugano selector replaced with the published city-comparison selector. All original checks retained; added a check that motivations are not collapsed. No site change.\n')
+          commands={
+           'static':[['node','scripts/verify_ia_b2_parity.cjs'],['node','scripts/validate_multilingual.js'],['node','scripts/validate_delivery.js'],['python3','scripts/release_check.py'],['python3','scripts/test_aps_current_analytics.py'],['python3','scripts/test_cultural_research_v2.py'],['node','scripts/validate_quick_guide.cjs']],
+           'navigation':[['node','scripts/audit_20261018_browser_audit_adapted.cjs'],['node','scripts/audit_ia_b2.cjs'],['node','scripts/audit_legacy_deeplinks.cjs'],['node','scripts/audit_economics_order.cjs']],
+           'accessibility':[['node','scripts/audit_axe_20261010.js'],['node','scripts/deep_audit_20261011.js']],
+           'reader-journeys':[['node','scripts/narrative_clarity_qa.cjs'],['node','scripts/audit_audience.cjs'],['node','scripts/audit_aps_application_atlas.js'],['node','scripts/audit_20261019_browser.cjs']]
+          }[suite]
+          for cmd in commands:
+              name=pathlib.Path(cmd[1]).stem;start=time.monotonic()
+              with (out/(name+'.log')).open('w') as log:
+                  try:r=subprocess.run(cmd,stdout=log,stderr=subprocess.STDOUT,timeout=600);code=r.returncode
+                  except subprocess.TimeoutExpired:code=124
+              item={'test':name,'command':cmd,'exitCode':code,'seconds':round(time.monotonic()-start,2)};results.append(item);print(json.dumps(item),flush=True)
+              (out/(suite+'-results.json')).write_text(json.dumps({'commit':'90d21e6059871c36148e1860d017e7409ed3f8bb','suite':suite,'humanParticipants':0,'tests':results},indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: full-audit-${{ matrix.suite }}
+          path: |
+            audit-20261022/
+            audit-20261019/
+            audit-ia-b2/
+            audit-deeplinks/
+            audit-independent-20261011.json
+            audit-aps-atlas-*.png
+            docs/narrative-clarity-verification.json
+          retention-days: 30
+      - name: Report real test failures without skipping other groups
+        run: |
+          python3 - <<'PY'
+          import json,pathlib
+          report=json.loads(pathlib.Path('audit-20261022/${{ matrix.suite }}-results.json').read_text())
+          assert all(t['exitCode']==0 for t in report['tests']),report
+          PY
