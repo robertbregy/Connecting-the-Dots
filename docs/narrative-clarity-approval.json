@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "baseline": "2038d07df9c491a0fa30e8ff2a9a8da32494b406",
+  "reviewedOn": "2026-10-22",
+  "reviewType": "AI-assisted targeted implementation review, subject to browser acceptance",
+  "rationale": "Expose the project definition and DNS foundation, make the Atlas entry and tool directly accessible with viewport-triggered loading, show the Lugano proposal, principles and conditions while retaining an optional roadmap, and add a visible interpretation guide before the unchanged historical Economics analysis. Preserve source text, datasets, archived research identities and original links. The current technical data package changes only its manifest runtime-asset fingerprint. Original validators and archival baselines remain unchanged.",
+  "sourceFiles": {
+    "scripts/narrative_clarity.cjs": "55ba7f153f933e659bd6563ff2b98f1849f4fa6da85598d36e494c3a4b3496b1",
+    "scripts/narrative_clarity_qa.cjs": "63134836311a7189151cc7f5553ffcacd0c3e3e98eed238daa6dd07a18543992",
+    "scripts/narrative_clarity.patch": "37904472028afb1971b34f2a2ec85c82a3abf067e75c1a7642b40bb3c1ab3b22",
+    "scripts/reader_first.cjs": "31fcf95cda3a5bd46422836abf6d14cea9d16479a12d4dcb45c3550a7958bfad",
+    "assets/aps-lazy.js": "9836be686e3d6c55c8e3d57c4f272efc3b53c2aca7bb4e458015555c87e74565",
+    "scripts/audit_audience.cjs": "960b9cddd156fa71ad77355901ea146c9ca8f1c222a185f2fb4ae790ec323fee",
+    ".github/workflows/narrative-clarity.yml": "fa33729a3f3d42d5de856d939e6fb8f70e4dda28420f7e338b506648642f3827"
+  },
+  "generatedFiles": {
+    "data/manifest.json": "640f918b185ec12e7d7457df817f7cf4af9fbb016a23c89204353b658bc6b9d6",
+    "downloads/connecting-the-dots-data-pack-v0.7.92.zip": "841c47bd0160d3c2ee9b484382b0b70fc862a229d3ead266149f302976f15032",
+    "downloads/connecting-the-dots-data-pack-v0.7.92.sha256": "03a4a0e38e882871d0a7be4b50fc665ae63590b1ed95d9c906bfc523d33ae1f2"
+  }
+}

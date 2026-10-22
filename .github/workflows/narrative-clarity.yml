@@ -2,31 +2,124 @@ name: Narrative clarity verification
 on:
   push:
     branches: ['feat/narrative-clarity-20261022']
-    paths: ['.github/workflows/narrative-clarity.yml', 'scripts/narrative*', 'data/narrative*', 'docs/narrative*']
+    paths: ['.github/workflows/narrative-clarity.yml', 'scripts/narrative*', 'docs/narrative*']
 permissions:
-  contents: read
+  contents: write
 concurrency:
   group: narrative-clarity-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 jobs:
   review:
+    if: ${{ !contains(github.event.head_commit.message || '', '[narrative artifacts]') }}
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      CTD_TEST_BASE: http://127.0.0.1:8123/
+      CTD_NARRATIVE_BASELINE: /tmp/narrative-baseline
+      CTD_NARRATIVE_QA: /tmp/narrative-qa
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: npm
-      - run: npm ci
-      - name: Export public source and locked build dependencies for inspection
-        run: |
-          git archive --format=tar HEAD > /tmp/narrative-source.tar
-          tar -rf /tmp/narrative-source.tar node_modules
-          gzip /tmp/narrative-source.tar
-      - uses: actions/upload-artifact@v4
+      - uses: actions/setup-python@v5
         with:
-          name: narrative-source-review
-          path: /tmp/narrative-source.tar.gz
+          python-version: '3.12'
+      - run: npm ci
+      - name: Apply the exact inspected narrow patch
+        run: |
+          mkdir -p /tmp/narrative-baseline
+          git archive 2038d07df9c491a0fa30e8ff2a9a8da32494b406 | tar -x -C /tmp/narrative-baseline
+          if git apply --check scripts/narrative_clarity.patch; then
+            git apply scripts/narrative_clarity.patch
+          else
+            git apply --reverse --check scripts/narrative_clarity.patch
+          fi
+          python3 - <<'PY'
+          import json,hashlib,pathlib
+          review=json.loads(pathlib.Path('docs/narrative-clarity-approval.json').read_text())
+          for name,expected in review['sourceFiles'].items():
+              assert hashlib.sha256(pathlib.Path(name).read_bytes()).hexdigest()==expected,name
+          print('EXACT_NARRATIVE_SOURCE_VERIFIED')
+          PY
+      - name: Build and verify reproducible publication
+        run: |
+          python3 build.py
+          python3 - <<'PY'
+          import pathlib,hashlib,subprocess
+          paths=[pathlib.Path('index.html')]+[p for d in ['it','en','de','fr','applications','behind-the-round','inside-the-round','research','explorer'] for p in pathlib.Path(d).rglob('index.html')]
+          paths.append(pathlib.Path('downloads/connecting-the-dots-data-pack-v0.7.92.zip'))
+          digest=lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+          before={str(p):digest(p) for p in paths}
+          subprocess.run(['python3','build.py'],check=True)
+          assert before=={str(p):digest(p) for p in paths},'Non-deterministic publication'
+          print('NARRATIVE_REPEATED_BUILD_IDENTICAL',len(paths))
+          PY
+          node scripts/validate_multilingual.js
+          CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
+          node scripts/validate_internet_access.js
+      - name: Install browser verification
+        run: |
+          npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Verify narrative, accessibility and all affected reader journeys
+        run: |
+          python3 -m http.server 8123 --bind 127.0.0.1 >/tmp/narrative-http.log 2>&1 &
+          server=$!
+          trap 'kill "$server" 2>/dev/null || true' EXIT
+          sleep 2
+          node scripts/narrative_clarity_qa.cjs
+          node scripts/audit_audience.cjs
+          node scripts/audit_economics_order.cjs
+          node scripts/audit_20261019_browser.cjs
+          node scripts/audit_ia_b2.cjs
+          node scripts/audit_legacy_deeplinks.cjs
+      - name: Record only the independently inspected exact file fingerprints
+        run: |
+          python3 - <<'PY'
+          import json,hashlib,pathlib
+          root=pathlib.Path('.')
+          approval=json.loads((root/'docs/narrative-clarity-approval.json').read_text())
+          evidence=json.loads((root/'docs/narrative-clarity-verification.json').read_text())
+          assert evidence['passed'] and len(evidence['browser'])==16 and evidence['axeScans']==64
+          assert all(r['passed'] for r in evidence['browser'])
+          pub=json.loads((root/'publication.json').read_text())
+          target=root/pub['editorialReviewPath']
+          review=json.loads(target.read_text())
+          review['rationales']['E12']=approval['rationale']
+          for name,expected in {**approval['sourceFiles'],**approval['generatedFiles']}.items():
+              assert hashlib.sha256((root/name).read_bytes()).hexdigest()==expected,'Unreviewed bytes: '+name
+              item=review['files'].setdefault(name,{'baselineSHA256':None,'rationaleIds':[]})
+              item['sha256']=expected
+              item['rationaleIds']=list(dict.fromkeys(item['rationaleIds']+['E12']))
+          review['narrativeClarityReview']={'reviewedOn':'2026-10-22','baseline':approval['baseline'],'reviewType':'AI-assisted targeted code and editorial review','verification':'docs/narrative-clarity-verification.json','humanParticipants':0}
+          target.write_text(json.dumps(review,ensure_ascii=False,indent=2)+'\n')
+          PY
+          node scripts/verify_ia_b2_parity.cjs
+      - name: Save browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: narrative-clarity-verification
+          path: |
+            /tmp/narrative-qa/
+            /tmp/ctd-economics-order/report.json
+            docs/narrative-clarity*.json
+            audit-20261019/*report.json
+            audit-ia-b2/report.json
+            audit-deeplinks/results.json
+          if-no-files-found: ignore
+      - name: Save verified outputs only on the unchanged feature branch
+        run: |
+          git fetch origin "$GITHUB_REF_NAME"
+          test "$(git rev-parse FETCH_HEAD)" = "$(git rev-parse HEAD)" || { echo 'Branch advanced; no outputs committed.'; exit 1; }
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scripts/reader_first.cjs assets/aps-lazy.js scripts/audit_audience.cjs data/publication.js data/manifest.json index.html it/index.html en/index.html de/index.html fr/index.html docs/reader-first-structure.json docs/narrative-clarity-verification.json docs/editorial-review-2026-10-21-v0.7.92.json downloads/connecting-the-dots-data-pack-v0.7.92.zip downloads/connecting-the-dots-data-pack-v0.7.92.sha256
+          if ! git diff --cached --quiet; then
+            git commit -m 'Verified targeted narrative clarity and evidence preservation [narrative artifacts] [skip build]'
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi

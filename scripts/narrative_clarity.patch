@@ -1,0 +1,42 @@
+--- a/scripts/reader_first.cjs
++++ b/scripts/reader_first.cjs
+@@ -169,6 +169,7 @@
+     sources: [':first', '#sources-part-3', '#sources-part-4', '#sources-part-5', '#sources-part-2']
+   };
+   const changes = {lugano: refineLugano(d, lang)};
++  changes.narrative = require('./narrative_clarity.cjs').refineNarrative(d, lang);
+   for (const [id, selectors] of Object.entries(reorder)) changes[id] = arrange(d.getElementById(id), selectors);
+   const history = d.getElementById('timeline'), patterns = rootBlock(d.getElementById('tld-cultural-patterns'), history);
+   assert.ok(patterns, 'Cultural analysis block missing');
+--- a/assets/aps-lazy.js
++++ b/assets/aps-lazy.js
+@@ -21,6 +21,16 @@
+   if(document.body.dataset.activeTab==='explore')window.CTD_LOAD_APS();
+   document.querySelectorAll('.audienceAtlasLink,.audienceAtlasPanel').forEach(details=>details.addEventListener('toggle',e=>{if(e.currentTarget.open)window.CTD_LOAD_APS(true)}));
+   document.addEventListener('click',e=>{if(e.target.closest('a[data-open-anchor="aps-native"]'))window.CTD_LOAD_APS(true)},true);
++  // The atlas is visible in the page, but its graph loads only near the reader.
++  const panel=document.querySelector('#aps-native[data-narrative-atlas]');
++  if(panel){
++   const visible=()=>{const r=panel.getBoundingClientRect();return document.body.dataset.activeTab==='explore'&&r.width>0&&r.top<innerHeight+200&&r.bottom>0};
++   if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)&&visible())window.CTD_LOAD_APS(true)},{rootMargin:'200px 0px'});observer.observe(panel);}
++   else window.addEventListener('scroll',()=>{if(visible())window.CTD_LOAD_APS(true)},{passive:true});
++   panel.addEventListener('focusin',()=>window.CTD_LOAD_APS(true));
++   window.addEventListener('hashchange',()=>{if(visible())window.CTD_LOAD_APS(true)});
++   if(visible())window.CTD_LOAD_APS(true);
++  }
+  };
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+ })();
+--- a/scripts/audit_audience.cjs
++++ b/scripts/audit_audience.cjs
+@@ -45,7 +45,9 @@
+   await page.locator('button[data-explorer-open]:visible').first().click();
+   await page.locator('.audienceBrief').waitFor({state:'visible'});assert.ok(await page.locator('.audienceBrief').isVisible());assert.ok((await page.locator('.audienceBrief').innerText()).includes('2026'));
+   await page.locator('#profileTitle').press('Escape');
+-  await page.locator('.audienceAtlasLink > summary').click();await page.waitForFunction(()=>!!window.CTD_APS_2026&&!!window.CTD_APS_REFRESH);
++  assert.equal(await page.locator('#apsAtlasBridge').evaluate(n=>n.closest('details')),null,'Atlas entry must not be collapsed');
++  await page.locator('#apsAtlasLink').click();await page.waitForFunction(()=>!!window.CTD_APS_2026&&!!window.CTD_APS_REFRESH);
++  assert.equal(await page.locator('#aps-native').evaluate(n=>n.closest('details')),null,'Atlas tool must not be collapsed');
+   await page.goto(base+lang+'/?tab=explore#aps-native');
+   await page.locator('#aps-native .apsCard').first().waitFor({state:'visible'});
+   const accessibility=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
