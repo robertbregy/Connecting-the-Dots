@@ -12,6 +12,8 @@ const base=(process.env.CTD_TEST_BASE||'http://127.0.0.1:8128/').replace(/\/?$/,
 const out=process.env.CTD_AUDIT_OUTPUT||path.join(os.tmpdir(),'ctd-audit-20261018');
 const languages=(process.env.CTD_AUDIT_LANGUAGES||'it,en,de,fr').split(',');
 const widths=(process.env.CTD_AUDIT_WIDTHS||'390,1440').split(',').map(Number);
+const exportMode=process.env.CTD_EXPORT_MODE||'settled';
+assert.ok(['cold','settled'].includes(exportMode),'Unknown export state');
 const read=name=>fs.readFileSync(path.join(root,name),'utf8');
 const pub=JSON.parse(read('publication.json')),translations=JSON.parse(read('data/translations.json'));
 function csvRows(text){
@@ -42,7 +44,7 @@ for(const row of applications)applicantCounts.set(row['Applicant Name'],(applica
 const [expectedTopName,expectedTopCount]=[...applicantCounts].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]))[0];
 const paths=['ia-understand','ia-explore','ia-stories','ia-outcomes','ia-round','ia-research'];
 const luganoGroups=[['lugano-status-sources','luganoSectionStatusTitle'],['lugano-governance-decisions','luganoSectionGovernanceTitle'],['lugano-uses-results','luganoSectionUsesTitle'],['lugano-risks-checks','luganoSectionRisksTitle']];
-const report={kind:'18 October audit browser acceptance',base,version:pub.version,expected2026Names:expected2026.length,expectedTopApplicant:{name:expectedTopName,applications:expectedTopCount},scenarios:[],issues:[]};
+const report={exportMode,backgroundRequests:[],kind:'18 October audit browser acceptance',base,version:pub.version,expected2026Names:expected2026.length,expectedTopApplicant:{name:expectedTopName,applications:expectedTopCount},scenarios:[],issues:[]};
 fs.mkdirSync(out,{recursive:true});
 async function settle(page){await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));}
 async function goto(page,language,query=''){
@@ -67,6 +69,13 @@ async function anchorVisible(page,selector){
  assert.ok(result.top>=result.barBottom-4&&result.top<result.viewport-8,selector+' is obscured or outside the viewport: '+JSON.stringify(result));
 }
 async function downloadCSV(page,requests){
+ // A visible Atlas may load concurrently with a real pointer scroll. In the
+ // settled control, complete that specific loader before measuring the export.
+ if(exportMode==='settled'){
+  assert.equal(await page.evaluate(()=>window.CTD_LOAD_APS(true)),true,'Atlas failed to settle');
+  await page.waitForFunction(()=>document.querySelector('#aps-native')?.getAttribute('aria-busy')==='false'&&!!window.CTD_APS_REFRESH);
+  await settle(page);
+ }
  const before=requests.length;
  const pending=page.waitForEvent('download',{timeout:15000});
  await click(page,page.locator('#explorerExport'));
@@ -75,7 +84,15 @@ async function downloadCSV(page,requests){
  const stream=await download.createReadStream();assert.ok(stream,'CSV download has no readable stream');
  const chunks=[];for await(const chunk of stream)chunks.push(chunk);
  await settle(page);
- assert.deepEqual(requests.slice(before),[],'Export fetched HTTP resources instead of using the visible dataset');
+ const during=requests.slice(before);
+ if(exportMode==='settled')assert.deepEqual(during,[],'Export fetched HTTP resources instead of using the visible dataset');
+ else {
+  // No broad exception: only these two same-origin, independently identified
+  // background resources may appear. CSV contents and provenance stay checked.
+  const allowed=['data/aps_2026_application_graph.js','assets/aps-atlas.js'].map(p=>new URL(p,base).href);
+  assert.deepEqual(during.filter(url=>!allowed.includes(url)),[],'Unexpected request during cold export');
+  report.backgroundRequests.push({url:page.url(),resources:during});
+ }
  return {rows:csvRows(Buffer.concat(chunks).toString('utf8')),filename:download.suggestedFilename()};
 }
 (async()=>{
@@ -115,7 +132,8 @@ async function downloadCSV(page,requests){
     for(const id of ['lugano-public-commons','lugano-verifiable-services','lugano-use-before-scale','lugano-external-reading'])assert.equal(await page.locator('#lugano #'+id).count(),1,'Preserved argument missing: '+id);
     assert.ok(await page.locator('#lugano-status-sources a[href*="lugano.ch"]').count()>0,'Official City source lost');
     assert.ok(await page.locator('#lugano-status-sources a[href*="newgtldprogram-aps.icann.org"]').count()>0,'Official application source lost');
-    const contextDetail=page.locator('#lugano-governance-decisions details.editorialDetails');
+    assert.equal(await page.locator('#lugano [data-i18n="luganoWhyTitle"]').evaluate(n=>n.closest('details')),null,'Motivations must be in the main reading path');
+    const contextDetail=page.locator('#lugano-city-comparison');
     assert.equal(await contextDetail.getAttribute('open'),null,'Context should begin collapsed');
     await contextDetail.locator('summary').focus();await page.keyboard.press('Enter');
     assert.equal(await contextDetail.evaluate(node=>node.open),true,'Lugano disclosure is not keyboard operable');

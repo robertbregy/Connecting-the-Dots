@@ -1,0 +1,53 @@
+{
+  "baselineCommit": "90d21e6059871c36148e1860d017e7409ed3f8bb",
+  "sourceCommit": "51b20f0aedd65f14112dc582a133cc9b47585809",
+  "static": [
+    {
+      "file": "index.html",
+      "originalTranslatedItems": 1330,
+      "originalAnchors": 513,
+      "restoredAnchors": 4,
+      "originalContentLinks": 1051,
+      "untouchedSections": 23
+    },
+    {
+      "file": "it/index.html",
+      "originalTranslatedItems": 1330,
+      "originalAnchors": 513,
+      "restoredAnchors": 4,
+      "originalContentLinks": 1051,
+      "untouchedSections": 23
+    },
+    {
+      "file": "en/index.html",
+      "originalTranslatedItems": 1330,
+      "originalAnchors": 513,
+      "restoredAnchors": 4,
+      "originalContentLinks": 1051,
+      "untouchedSections": 23
+    },
+    {
+      "file": "de/index.html",
+      "originalTranslatedItems": 1330,
+      "originalAnchors": 513,
+      "restoredAnchors": 4,
+      "originalContentLinks": 1051,
+      "untouchedSections": 23
+    },
+    {
+      "file": "fr/index.html",
+      "originalTranslatedItems": 1330,
+      "originalAnchors": 513,
+      "restoredAnchors": 4,
+      "originalContentLinks": 1051,
+      "untouchedSections": 23
+    }
+  ],
+  "browser": [],
+  "noJavaScript": [],
+  "axeScans": 0,
+  "errors": [],
+  "humanParticipants": 0,
+  "passed": true,
+  "researchDataUnchanged": true
+}

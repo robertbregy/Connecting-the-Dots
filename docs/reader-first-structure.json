@@ -443,6 +443,16 @@
             "Questions raised by the data"
           ],
           "originalBlocks": 3
+        },
+        "usability": {
+          "aliases": [
+            "social-part-2",
+            "contention-part-1",
+            "disputes-part-2",
+            "strange-part-2"
+          ],
+          "homeActionBeforeDefinitions": true,
+          "legacyTooltipsCleaned": 35
         }
       },
       "originalCards": 26
@@ -887,6 +897,16 @@
             "Questions raised by the data"
           ],
           "originalBlocks": 3
+        },
+        "usability": {
+          "aliases": [
+            "social-part-2",
+            "contention-part-1",
+            "disputes-part-2",
+            "strange-part-2"
+          ],
+          "homeActionBeforeDefinitions": true,
+          "legacyTooltipsCleaned": 35
         }
       },
       "originalCards": 26
@@ -1331,6 +1351,16 @@
             "Domande che emergono dai dati"
           ],
           "originalBlocks": 3
+        },
+        "usability": {
+          "aliases": [
+            "social-part-2",
+            "contention-part-1",
+            "disputes-part-2",
+            "strange-part-2"
+          ],
+          "homeActionBeforeDefinitions": true,
+          "legacyTooltipsCleaned": 35
         }
       },
       "originalCards": 26
@@ -1775,6 +1805,16 @@
             "Fragen, die sich aus den Daten ergeben"
           ],
           "originalBlocks": 3
+        },
+        "usability": {
+          "aliases": [
+            "social-part-2",
+            "contention-part-1",
+            "disputes-part-2",
+            "strange-part-2"
+          ],
+          "homeActionBeforeDefinitions": true,
+          "legacyTooltipsCleaned": 35
         }
       },
       "originalCards": 26
@@ -2219,6 +2259,16 @@
             "Questions soulevées par les données"
           ],
           "originalBlocks": 3
+        },
+        "usability": {
+          "aliases": [
+            "social-part-2",
+            "contention-part-1",
+            "disputes-part-2",
+            "strange-part-2"
+          ],
+          "homeActionBeforeDefinitions": true,
+          "legacyTooltipsCleaned": 35
         }
       },
       "originalCards": 26

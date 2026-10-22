@@ -111,6 +111,8 @@ function refineLugano(d, lang) {
 }
 function headingsFor(section) { return [...section.querySelectorAll('h2')].filter(h => !h.closest('[data-reader-ui]')); }
 function toc(d, section, lang, independent = false) {
+  const curated = !independent && require('./usability_remediation.cjs').curatedToc(d, section, lang);
+  if (curated) return curated;
   const L = DATA.locales[lang], headings = headingsFor(section);
   if (headings.length < 2) return null;
   const nav = ui(node(d, 'nav', null, 'readerToc')); nav.setAttribute('aria-label', L.ui.contents);
@@ -141,7 +143,7 @@ function addAssets(d, prefix) {
       if (tag === 'link') { el.rel = 'stylesheet'; d.head.append(el); }
       else { el.defer = true; d.body.append(el); }
     }
-    el.setAttribute(attr, prefix + 'assets/' + file + '?v=' + PUB.version);
+    el.setAttribute(attr, prefix + 'assets/' + file + '?v=' + PUB.version + '-usability-20261022');
   }
   d.documentElement.dataset.readerFirst = '1';
 }
@@ -183,6 +185,7 @@ function nativePage(lang, filename) {
   const pack = resource.querySelector('a[href*="connecting-the-dots-data-pack-v"]'); assert.ok(pack, 'Current data download missing');
   const downloads = rootBlock(pack, resource); if (!downloads.id) downloads.id = 'reader-downloads';
   changes.resources = arrange(resource, [':first', '#' + downloads.id]);
+  changes.usability = require('./usability_remediation.cjs').refine(d, lang);
   const hubTitles = {};
   for (const [area, ids] of Object.entries(DATA.areas)) {
     const hub = d.getElementById(area); assert.ok(hub);
@@ -210,6 +213,8 @@ function nativePage(lang, filename) {
     const sep = node(d, 'span', ' / '); sep.setAttribute('aria-hidden', 'true'); trail.append(sep);
     trail.append(link(d, hubTitles[area], area));
     intro.append(trail, node(d, 'h2', L.routes[id][0], 'readerChapterTitle'), node(d, 'p', L.routes[id][1], 'readerLead'));
+    const readingBrief = require('./usability_remediation.cjs').brief(d, id, lang);
+    if (readingBrief) intro.append(readingBrief);
     section.prepend(intro);
     if (id !== 'economics') {
       for (const oldNav of section.querySelectorAll(':scope > nav.sectionToc')) { oldNav.setAttribute('hidden', ''); oldNav.setAttribute('inert', ''); }

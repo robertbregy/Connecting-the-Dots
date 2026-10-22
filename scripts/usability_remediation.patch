@@ -1,0 +1,224 @@
+diff --git a/.github/workflows/audit-browser.yml b/.github/workflows/audit-browser.yml
+index 472bc67..e9b6159 100644
+--- a/.github/workflows/audit-browser.yml
++++ b/.github/workflows/audit-browser.yml
+@@ -40,6 +40,8 @@ jobs:
+     timeout-minutes: 30
+     steps:
+       - uses: actions/checkout@v4
++        with:
++          fetch-depth: 0
+       - uses: actions/setup-node@v4
+         with:
+           node-version: '22'
+@@ -60,29 +62,16 @@ jobs:
+           node scripts/validate_multilingual.js
+           node scripts/validate_internet_access.js
+           CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
+-      - name: Audit actual Chromium layout, navigation and interactive behavior
+-        run: |
+-          python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/ctd-audit-http.log 2>&1 &
+-          sleep 2
+-          node scripts/audit_browser_20261010.js
+-      - name: Verify the audit corrections and actual filtered CSV exports
++      - name: Run independent browser checks and retain every outcome
+         env:
+           CTD_TEST_BASE: http://127.0.0.1:8123/
+           CTD_AUDIT_OUTPUT: audit-20261018
+-        run: node scripts/audit_20261018_browser.cjs
+-      - name: Verify six-step Economics navigation and preservation
+-        env:
+-          CTD_TEST_BASE: http://127.0.0.1:8123/
+-        run: node scripts/audit_economics_order.cjs
+-      - name: Verify all 26 B2 cards and 39 independent pages across mobile and desktop
+-        run: |
+-          CTD_TEST_BASE=http://127.0.0.1:8123/ node scripts/audit_ia_b2.cjs
+-      - name: Verify all original A section and fragment links
+-        run: |
+-          CTD_TEST_BASE=http://127.0.0.1:8123/ node scripts/audit_legacy_deeplinks.cjs
+-      - name: Audit every locale, theme and section for WCAG A/AA
+         run: |
+-          node scripts/audit_axe_20261010.js
++          python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/ctd-audit-http.log 2>&1 &
++          server=$!
++          trap 'kill "$server" 2>/dev/null || true' EXIT
++          sleep 2
++          python3 scripts/run_browser_regressions.py
+       - name: Attach visual evidence
+         if: always()
+         uses: actions/upload-artifact@v4
+@@ -96,6 +85,10 @@ jobs:
+             audit-deeplinks/results.json
+             audit-aps-atlas-*.png
+             audit-20261018/report.json
++            audit-20261018-cold/report.json
++            audit-regression-status.json
++            audit-regression-logs/
++            audit-usability/
+           if-no-files-found: ignore
+ 
+   independent-qa:
+diff --git a/assets/reader-first.css b/assets/reader-first.css
+index abbc952..717c5f5 100644
+--- a/assets/reader-first.css
++++ b/assets/reader-first.css
+@@ -70,3 +70,19 @@ body:has(.ctdB2Trail) .readerArticleTrail{display:none}
+ .readerChapterTitle{font-size:clamp(1.65rem,3.2vw,2.6rem);line-height:1.16;letter-spacing:-.035em;max-width:32ch;margin:4px 0 16px;color:var(--reader-fg);overflow-wrap:anywhere}
+ .readerNext{align-items:stretch;justify-content:stretch}
+ .readerChapterTitle:focus-visible{outline:3px solid var(--reader-link);outline-offset:5px}
++
++/* Audit 2026-10-22: semantic local indexes and short reading orientation. */
++.readerTocCurated .readerTocPrimary{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px 22px;list-style:none;padding:0}
++.readerTocCurated .readerTocPrimary>li>a{font-weight:700;display:inline-block;padding:8px 0;min-height:36px}
++.readerTocCurated .readerTocGroup{font-size:.9rem;margin:0}
++.readerTocCurated .readerTocGroup>summary{font-size:.86rem;font-weight:400;min-height:32px;padding:4px 0;color:var(--reader-fg)}
++.readerTocCurated .readerTocGroup ol{display:block;padding-left:18px;margin:8px 0}
++.readerTocCurated .readerTocGroup li{margin:6px 0}
++.readerTocTransparency{margin:14px 0 4px;font-size:.88rem}
++.readerBrief{margin:20px 0 6px;padding:16px 18px;border-left:3px solid var(--reader-link);background:var(--reader-panel);border-radius:0 10px 10px 0;color:var(--reader-fg);max-width:78ch}
++.readerBriefTitle{font-weight:750;margin:0 0 8px}
++.readerBrief p{line-height:1.6}
++.readerBriefLinks{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:10px}
++.readerBriefLinks a{display:inline-block;padding:8px 0;color:var(--reader-link);text-decoration:underline;text-underline-offset:3px}
++@media(max-width:700px){.readerTocCurated .readerTocPrimary{grid-template-columns:1fr;gap:3px}.readerBrief{padding:12px 14px}.readerTocCurated .readerTocGroup[open]{margin-bottom:12px}}
++@media print{.readerBriefLinks{display:none}}
+diff --git a/assets/reader-first.js b/assets/reader-first.js
+index a46bb04..de031df 100644
+--- a/assets/reader-first.js
++++ b/assets/reader-first.js
+@@ -8,7 +8,7 @@
+   // Keep the first phone screen for the article, not a long contents list.
+   // This runs once; it never overrides a reader's later disclosure choices.
+   if (window.matchMedia('(max-width:700px)').matches) {
+-    for (const details of document.querySelectorAll('.readerToc > details')) details.open = false;
++    for (const details of document.querySelectorAll('.readerToc:not(.readerTocCurated) > details')) details.open = false;
+   }
+   function sync() {
+     const current = document.body.dataset.activeTab;
+diff --git a/scripts/audit_20261018_browser.cjs b/scripts/audit_20261018_browser.cjs
+index fee69d4..b5d8a9f 100644
+--- a/scripts/audit_20261018_browser.cjs
++++ b/scripts/audit_20261018_browser.cjs
+@@ -12,6 +12,8 @@ const base=(process.env.CTD_TEST_BASE||'http://127.0.0.1:8128/').replace(/\/?$/,
+ const out=process.env.CTD_AUDIT_OUTPUT||path.join(os.tmpdir(),'ctd-audit-20261018');
+ const languages=(process.env.CTD_AUDIT_LANGUAGES||'it,en,de,fr').split(',');
+ const widths=(process.env.CTD_AUDIT_WIDTHS||'390,1440').split(',').map(Number);
++const exportMode=process.env.CTD_EXPORT_MODE||'settled';
++assert.ok(['cold','settled'].includes(exportMode),'Unknown export state');
+ const read=name=>fs.readFileSync(path.join(root,name),'utf8');
+ const pub=JSON.parse(read('publication.json')),translations=JSON.parse(read('data/translations.json'));
+ function csvRows(text){
+@@ -42,7 +44,7 @@ for(const row of applications)applicantCounts.set(row['Applicant Name'],(applica
+ const [expectedTopName,expectedTopCount]=[...applicantCounts].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]))[0];
+ const paths=['ia-understand','ia-explore','ia-stories','ia-outcomes','ia-round','ia-research'];
+ const luganoGroups=[['lugano-status-sources','luganoSectionStatusTitle'],['lugano-governance-decisions','luganoSectionGovernanceTitle'],['lugano-uses-results','luganoSectionUsesTitle'],['lugano-risks-checks','luganoSectionRisksTitle']];
+-const report={kind:'18 October audit browser acceptance',base,version:pub.version,expected2026Names:expected2026.length,expectedTopApplicant:{name:expectedTopName,applications:expectedTopCount},scenarios:[],issues:[]};
++const report={exportMode,backgroundRequests:[],kind:'18 October audit browser acceptance',base,version:pub.version,expected2026Names:expected2026.length,expectedTopApplicant:{name:expectedTopName,applications:expectedTopCount},scenarios:[],issues:[]};
+ fs.mkdirSync(out,{recursive:true});
+ async function settle(page){await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));}
+ async function goto(page,language,query=''){
+@@ -67,6 +69,13 @@ async function anchorVisible(page,selector){
+  assert.ok(result.top>=result.barBottom-4&&result.top<result.viewport-8,selector+' is obscured or outside the viewport: '+JSON.stringify(result));
+ }
+ async function downloadCSV(page,requests){
++ // A visible Atlas may load concurrently with a real pointer scroll. In the
++ // settled control, complete that specific loader before measuring the export.
++ if(exportMode==='settled'){
++  assert.equal(await page.evaluate(()=>window.CTD_LOAD_APS(true)),true,'Atlas failed to settle');
++  await page.waitForFunction(()=>document.querySelector('#aps-native')?.getAttribute('aria-busy')==='false'&&!!window.CTD_APS_REFRESH);
++  await settle(page);
++ }
+  const before=requests.length;
+  const pending=page.waitForEvent('download',{timeout:15000});
+  await click(page,page.locator('#explorerExport'));
+@@ -75,7 +84,15 @@ async function downloadCSV(page,requests){
+  const stream=await download.createReadStream();assert.ok(stream,'CSV download has no readable stream');
+  const chunks=[];for await(const chunk of stream)chunks.push(chunk);
+  await settle(page);
+- assert.deepEqual(requests.slice(before),[],'Export fetched HTTP resources instead of using the visible dataset');
++ const during=requests.slice(before);
++ if(exportMode==='settled')assert.deepEqual(during,[],'Export fetched HTTP resources instead of using the visible dataset');
++ else {
++  // No broad exception: only these two same-origin, independently identified
++  // background resources may appear. CSV contents and provenance stay checked.
++  const allowed=['data/aps_2026_application_graph.js','assets/aps-atlas.js'].map(p=>new URL(p,base).href);
++  assert.deepEqual(during.filter(url=>!allowed.includes(url)),[],'Unexpected request during cold export');
++  report.backgroundRequests.push({url:page.url(),resources:during});
++ }
+  return {rows:csvRows(Buffer.concat(chunks).toString('utf8')),filename:download.suggestedFilename()};
+ }
+ (async()=>{
+@@ -115,7 +132,8 @@ async function downloadCSV(page,requests){
+     for(const id of ['lugano-public-commons','lugano-verifiable-services','lugano-use-before-scale','lugano-external-reading'])assert.equal(await page.locator('#lugano #'+id).count(),1,'Preserved argument missing: '+id);
+     assert.ok(await page.locator('#lugano-status-sources a[href*="lugano.ch"]').count()>0,'Official City source lost');
+     assert.ok(await page.locator('#lugano-status-sources a[href*="newgtldprogram-aps.icann.org"]').count()>0,'Official application source lost');
+-    const contextDetail=page.locator('#lugano-governance-decisions details.editorialDetails');
++    assert.equal(await page.locator('#lugano [data-i18n="luganoWhyTitle"]').evaluate(n=>n.closest('details')),null,'Motivations must be in the main reading path');
++    const contextDetail=page.locator('#lugano-city-comparison');
+     assert.equal(await contextDetail.getAttribute('open'),null,'Context should begin collapsed');
+     await contextDetail.locator('summary').focus();await page.keyboard.press('Enter');
+     assert.equal(await contextDetail.evaluate(node=>node.open),true,'Lugano disclosure is not keyboard operable');
+diff --git a/scripts/audit_legacy_deeplinks.cjs b/scripts/audit_legacy_deeplinks.cjs
+index 6acc7fa..75c005f 100644
+--- a/scripts/audit_legacy_deeplinks.cjs
++++ b/scripts/audit_legacy_deeplinks.cjs
+@@ -6,6 +6,8 @@ const assert=require("node:assert/strict");
+ const BASE=process.env.CTD_TEST_BASE||"http://127.0.0.1:8131/";
+ const ids=["overview","explore","timeline","how","beyond","cities","geography","economics","social","contention","refusals","disputes","strange","reveal","inside-round","behind-round","lugano","research","paper","resources","sources"];
+ const extras=[["how","how-glossary"],["economics","economic-cycles-2026"],["cemetery","gtld-cemetery"],["cemetery","helsinki-termination"],["overview","internet-basics"]];
++const restoredFragments=[["social","social-part-2"],["contention","contention-part-1"],["disputes","disputes-part-2"],["strange","strange-part-2"]];
++extras.push(...restoredFragments);
+ const oldCemeteryLinks=[["economics","gtld-cemetery"],["economics","helsinki-termination"]];
+ (async()=>{
+  const browser=await chromium.launch({headless:true,args:["--disable-dev-shm-usage"]});
+@@ -49,6 +51,11 @@ const oldCemeteryLinks=[["economics","gtld-cemetery"],["economics","helsinki-ter
+        await page.locator("#"+section+".section.active").waitFor({state:"visible",timeout:5000});
+        const target=await page.locator("#"+anchor).count();
+        assert.equal(target,1,"missing historical fragment");
++       if(restoredFragments.some(([,id])=>id===anchor)){
++        await page.waitForFunction(id=>{let n=document.getElementById(id);if(!n||n.getBoundingClientRect().height<=0)return false;for(;n;n=n.parentElement)if(n.tagName==='DETAILS'&&!n.open)return false;return true;},anchor);
++        const state=await page.locator('#'+anchor).evaluate(n=>({top:n.getBoundingClientRect().top,height:n.getBoundingClientRect().height,viewport:innerHeight}));
++        assert.ok(state.top>=0&&state.top<state.viewport,'Restored fragment not reached: '+JSON.stringify(state));
++       }
+        report.urls.push(uri);
+       }catch(e){report.failed.push({uri,why:e.message.slice(0,330)})}
+     }
+diff --git a/scripts/reader_first.cjs b/scripts/reader_first.cjs
+index 19e3132..2837a39 100644
+--- a/scripts/reader_first.cjs
++++ b/scripts/reader_first.cjs
+@@ -111,6 +111,8 @@ function refineLugano(d, lang) {
+ }
+ function headingsFor(section) { return [...section.querySelectorAll('h2')].filter(h => !h.closest('[data-reader-ui]')); }
+ function toc(d, section, lang, independent = false) {
++  const curated = !independent && require('./usability_remediation.cjs').curatedToc(d, section, lang);
++  if (curated) return curated;
+   const L = DATA.locales[lang], headings = headingsFor(section);
+   if (headings.length < 2) return null;
+   const nav = ui(node(d, 'nav', null, 'readerToc')); nav.setAttribute('aria-label', L.ui.contents);
+@@ -141,7 +143,7 @@ function addAssets(d, prefix) {
+       if (tag === 'link') { el.rel = 'stylesheet'; d.head.append(el); }
+       else { el.defer = true; d.body.append(el); }
+     }
+-    el.setAttribute(attr, prefix + 'assets/' + file + '?v=' + PUB.version);
++    el.setAttribute(attr, prefix + 'assets/' + file + '?v=' + PUB.version + '-usability-20261022');
+   }
+   d.documentElement.dataset.readerFirst = '1';
+ }
+@@ -183,6 +185,7 @@ function nativePage(lang, filename) {
+   const pack = resource.querySelector('a[href*="connecting-the-dots-data-pack-v"]'); assert.ok(pack, 'Current data download missing');
+   const downloads = rootBlock(pack, resource); if (!downloads.id) downloads.id = 'reader-downloads';
+   changes.resources = arrange(resource, [':first', '#' + downloads.id]);
++  changes.usability = require('./usability_remediation.cjs').refine(d, lang);
+   const hubTitles = {};
+   for (const [area, ids] of Object.entries(DATA.areas)) {
+     const hub = d.getElementById(area); assert.ok(hub);
+@@ -210,6 +213,8 @@ function nativePage(lang, filename) {
+     const sep = node(d, 'span', ' / '); sep.setAttribute('aria-hidden', 'true'); trail.append(sep);
+     trail.append(link(d, hubTitles[area], area));
+     intro.append(trail, node(d, 'h2', L.routes[id][0], 'readerChapterTitle'), node(d, 'p', L.routes[id][1], 'readerLead'));
++    const readingBrief = require('./usability_remediation.cjs').brief(d, id, lang);
++    if (readingBrief) intro.append(readingBrief);
+     section.prepend(intro);
+     if (id !== 'economics') {
+       for (const oldNav of section.querySelectorAll(':scope > nav.sectionToc')) { oldNav.setAttribute('hidden', ''); oldNav.setAttribute('inert', ''); }

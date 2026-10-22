@@ -6,6 +6,8 @@ const assert=require("node:assert/strict");
 const BASE=process.env.CTD_TEST_BASE||"http://127.0.0.1:8131/";
 const ids=["overview","explore","timeline","how","beyond","cities","geography","economics","social","contention","refusals","disputes","strange","reveal","inside-round","behind-round","lugano","research","paper","resources","sources"];
 const extras=[["how","how-glossary"],["economics","economic-cycles-2026"],["cemetery","gtld-cemetery"],["cemetery","helsinki-termination"],["overview","internet-basics"]];
+const restoredFragments=[["social","social-part-2"],["contention","contention-part-1"],["disputes","disputes-part-2"],["strange","strange-part-2"]];
+extras.push(...restoredFragments);
 const oldCemeteryLinks=[["economics","gtld-cemetery"],["economics","helsinki-termination"]];
 (async()=>{
  const browser=await chromium.launch({headless:true,args:["--disable-dev-shm-usage"]});
@@ -49,6 +51,11 @@ const oldCemeteryLinks=[["economics","gtld-cemetery"],["economics","helsinki-ter
        await page.locator("#"+section+".section.active").waitFor({state:"visible",timeout:5000});
        const target=await page.locator("#"+anchor).count();
        assert.equal(target,1,"missing historical fragment");
+       if(restoredFragments.some(([,id])=>id===anchor)){
+        await page.waitForFunction(id=>{let n=document.getElementById(id);if(!n||n.getBoundingClientRect().height<=0)return false;for(;n;n=n.parentElement)if(n.tagName==='DETAILS'&&!n.open)return false;return true;},anchor);
+        const state=await page.locator('#'+anchor).evaluate(n=>({top:n.getBoundingClientRect().top,height:n.getBoundingClientRect().height,viewport:innerHeight}));
+        assert.ok(state.top>=0&&state.top<state.viewport,'Restored fragment not reached: '+JSON.stringify(state));
+       }
        report.urls.push(uri);
       }catch(e){report.failed.push({uri,why:e.message.slice(0,330)})}
     }

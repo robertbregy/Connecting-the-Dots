@@ -8,7 +8,7 @@
   // Keep the first phone screen for the article, not a long contents list.
   // This runs once; it never overrides a reader's later disclosure choices.
   if (window.matchMedia('(max-width:700px)').matches) {
-    for (const details of document.querySelectorAll('.readerToc > details')) details.open = false;
+    for (const details of document.querySelectorAll('.readerToc:not(.readerTocCurated) > details')) details.open = false;
   }
   function sync() {
     const current = document.body.dataset.activeTab;
