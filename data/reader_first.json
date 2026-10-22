@@ -5,7 +5,7 @@
   "areas": {
     "ia-understand": ["how", "beyond"],
     "ia-explore": ["explore", "timeline", "geography", "governance-access", "governance-sanctions"],
-    "ia-stories": ["strange", "social", "cities", "economics"],
+    "ia-stories": ["economics", "social", "cities", "strange"],
     "ia-outcomes": ["contention", "disputes", "refusals", "cemetery"],
     "ia-round": ["reveal", "inside-round", "behind-round", "lugano"],
     "ia-research": ["research", "paper", "resources", "sources"]
