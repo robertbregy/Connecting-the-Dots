@@ -3091,7 +3091,7 @@
       "rationaleIds": [
         "E13"
       ],
-      "sha256": "bcba24a00776a974ed18c7f7024902fb7509b1615b20dc540f12d6b340f0e9cc"
+      "sha256": "f83d4c615f1bbeae6fa09ab1a955cccaf1aeb0a797f1606904163c8551062be2"
     },
     "scripts/usability_remediation.cjs": {
       "baselineSHA256": null,

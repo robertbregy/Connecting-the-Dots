@@ -52,7 +52,7 @@ const oldCemeteryLinks=[["economics","gtld-cemetery"],["economics","helsinki-ter
        const target=await page.locator("#"+anchor).count();
        assert.equal(target,1,"missing historical fragment");
        if(restoredFragments.some(([,id])=>id===anchor)){
-        await page.waitForFunction(id=>{let n=document.getElementById(id);if(!n||n.getBoundingClientRect().height<=0)return false;for(;n;n=n.parentElement)if(n.tagName==='DETAILS'&&!n.open)return false;return true;},anchor);
+        await page.waitForFunction(id=>{if(window.CTD_APP_READY!==true)return false;let n=document.getElementById(id);if(!n)return false;const r=n.getBoundingClientRect();if(r.height<=0||r.top<0||r.top>=innerHeight-24)return false;for(;n;n=n.parentElement)if(n.tagName==='DETAILS'&&!n.open)return false;return true;},anchor,{timeout:5000});
         const state=await page.locator('#'+anchor).evaluate(n=>({top:n.getBoundingClientRect().top,height:n.getBoundingClientRect().height,viewport:innerHeight}));
         assert.ok(state.top>=0&&state.top<state.viewport,'Restored fragment not reached: '+JSON.stringify(state));
        }

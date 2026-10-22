@@ -10,7 +10,7 @@
     "assets/reader-first.css": "0b33767a77c19ee0e81b1e8c0624738892e9a6172f4c00abf442237117c4c55e",
     "assets/reader-first.js": "16542b3d8b4506ca04aee3e6e9aada3c05d8c29d04165cb4f3fcb4ef3633c010",
     "scripts/audit_20261018_browser.cjs": "b98c0d7742342979940a619874fdf94809a7607be00b4fa6e245253bdf794b5b",
-    "scripts/audit_legacy_deeplinks.cjs": "bcba24a00776a974ed18c7f7024902fb7509b1615b20dc540f12d6b340f0e9cc",
+    "scripts/audit_legacy_deeplinks.cjs": "f83d4c615f1bbeae6fa09ab1a955cccaf1aeb0a797f1606904163c8551062be2",
     ".github/workflows/audit-browser.yml": "5fd164521a8eb890138403066e147570b54041135937e87c65275da4c2bb0585",
     "scripts/usability_remediation.cjs": "617f930c851b090752508680c60f602c03b276d349652e09e06906dbd0a6a1c5",
     "scripts/usability_remediation_qa.cjs": "bc45d15493b789ad81fea225ca5737e4a28b9a2c3b175cbfac3ae85fbfc88f4b",
@@ -94,5 +94,6 @@
     "inside-the-round/en/index.html",
     "explorer/index.html",
     "research/index.html"
-  ]
+  ],
+  "testTimingReview": "The restored-fragment check now waits up to five seconds for actual viewport arrival and open ancestors, without invoking scroll APIs, disabling motion or removing any assertion. Site assets and HTML are identical to tested candidate c83fd1284e9a50d5965db7617c3d0bfe656ce69b."
 }
