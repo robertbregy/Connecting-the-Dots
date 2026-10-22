@@ -1,0 +1,23 @@
+name: Round checkpoint editorial verification
+on:
+  push:
+    branches: ['editorial/round-checkpoint-20261022']
+    paths: ['.github/workflows/round-checkpoint.yml', 'scripts/apply_round_checkpoint.py', 'scripts/round_checkpoint.cjs', 'scripts/round_checkpoint_qa.cjs', 'docs/round-checkpoint-approval.json']
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Archive exact current source for offline inspection
+        run: |
+          git rev-parse HEAD > /tmp/source-commit.txt
+          git archive HEAD -o /tmp/round-checkpoint-source.tar.gz
+      - uses: actions/upload-artifact@v4
+        with:
+          name: round-checkpoint-source
+          path: |
+            /tmp/source-commit.txt
+            /tmp/round-checkpoint-source.tar.gz
+          retention-days: 7
