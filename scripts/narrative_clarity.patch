@@ -1,10 +1,12 @@
 --- a/scripts/reader_first.cjs
 +++ b/scripts/reader_first.cjs
-@@ -169,6 +169,7 @@
+@@ -169,6 +169,9 @@
      sources: [':first', '#sources-part-3', '#sources-part-4', '#sources-part-5', '#sources-part-2']
    };
    const changes = {lugano: refineLugano(d, lang)};
 +  changes.narrative = require('./narrative_clarity.cjs').refineNarrative(d, lang);
++  const atlasLoader = d.querySelector('script[src*="assets/aps-lazy.js"]');
++  assert.ok(atlasLoader); atlasLoader.setAttribute('src', prefix + 'assets/aps-lazy.js?v=' + PUB.version + '-narrative-20261022');
    for (const [id, selectors] of Object.entries(reorder)) changes[id] = arrange(d.getElementById(id), selectors);
    const history = d.getElementById('timeline'), patterns = rootBlock(d.getElementById('tld-cultural-patterns'), history);
    assert.ok(patterns, 'Cultural analysis block missing');

@@ -7,8 +7,8 @@
   "sourceFiles": {
     "scripts/narrative_clarity.cjs": "4c40b96a63e817dd3465755cfea9183c3758511a0e20d2c1d0b3cb9073fd198c",
     "scripts/narrative_clarity_qa.cjs": "63134836311a7189151cc7f5553ffcacd0c3e3e98eed238daa6dd07a18543992",
-    "scripts/narrative_clarity.patch": "37904472028afb1971b34f2a2ec85c82a3abf067e75c1a7642b40bb3c1ab3b22",
-    "scripts/reader_first.cjs": "31fcf95cda3a5bd46422836abf6d14cea9d16479a12d4dcb45c3550a7958bfad",
+    "scripts/narrative_clarity.patch": "02675fd44a7e31eb2385fd08628ceb0a7efae0dc70cbf6f1a5f55cf64c0b256b",
+    "scripts/reader_first.cjs": "ca60279c4d1570715c1150c649732e1b8c898da46268ad5a8441ace40517f079",
     "assets/aps-lazy.js": "9836be686e3d6c55c8e3d57c4f272efc3b53c2aca7bb4e458015555c87e74565",
     "scripts/audit_audience.cjs": "960b9cddd156fa71ad77355901ea146c9ca8f1c222a185f2fb4ae790ec323fee",
     ".github/workflows/narrative-clarity.yml": "f3d240e12ce52e63fecfd07bdd339dbcd9422915de068ddfc873fc3745aba63a"
