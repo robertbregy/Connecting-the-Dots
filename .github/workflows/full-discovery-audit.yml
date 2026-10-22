@@ -1,0 +1,94 @@
+name: Independent discovery and cross-browser audit
+on:
+  push:
+    branches: ['qa/full-usability-20261022']
+    paths: ['.github/workflows/full-discovery-audit.yml']
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: '90d21e6059871c36148e1860d017e7409ed3f8bb'
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: |
+          timeout 150 npm ci --no-audit --no-fund --fetch-retries=1 --fetch-timeout=30000
+          timeout 180 npm install --no-save --package-lock=false --no-audit --no-fund --fetch-retries=1 --fetch-timeout=30000 playwright@1.56.1
+          npx playwright install --with-deps ${{ matrix.browser }}
+      - name: Probe real pages and preserve observations, not synthetic satisfaction scores
+        env:
+          AUDIT_BROWSER: ${{ matrix.browser }}
+        run: |
+          python3 -m http.server 8123 --bind 127.0.0.1 >/tmp/discovery-http.log 2>&1 &
+          sleep 2
+          cat > discovery-audit.cjs <<'JS'
+          const fs=require('fs'),pw=require('playwright');
+          const out='discovery-audit';fs.mkdirSync(out,{recursive:true});
+          const kind=process.env.AUDIT_BROWSER,base='http://127.0.0.1:8123/';
+          const report={commit:'90d21e6059871c36148e1860d017e7409ed3f8bb',browser:kind,humanParticipants:0,routes:[],keyboard:[],fragments:[],languageSwitch:[],errors:[],screenshots:[]};
+          const save=()=>fs.writeFileSync(out+'/'+kind+'.json',JSON.stringify(report,null,2));
+          (async()=>{
+           const browser=await pw[kind].launch({headless:true});
+           for(const lang of ['it','en','de','fr'])for(const width of [320,1440]){
+            const ctx=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce'}),page=await ctx.newPage();
+            page.setDefaultTimeout(12000);page.on('pageerror',e=>report.errors.push({lang,width,error:e.message}));
+            const goto=async(tab,hash='')=>{await page.goto(base+lang+'/?tab='+tab+hash,{waitUntil:'load'});await page.waitForFunction(()=>window.CTD_APP_READY);};
+            try{
+             await goto('overview');await page.keyboard.press('Tab');
+             const first=await page.evaluate(()=>({id:document.activeElement.id,cls:document.activeElement.className,text:document.activeElement.textContent}));
+             await page.keyboard.press('Enter');
+             report.keyboard.push({lang,width,first,afterEnter:await page.evaluate(()=>document.activeElement.id)});
+             const all=await page.locator('section.section').evaluateAll(ns=>ns.map(n=>n.id));
+             const tabs=kind==='chromium'?all:['overview','explore','lugano','research','economics','ia-stories'];
+             for(const theme of (kind==='chromium'?['light','dark']:['light']))for(const tab of tabs){
+              try{
+               await goto(tab);if(await page.locator('html').getAttribute('data-theme')!==theme)await page.locator('#themeBtn').click();
+               const m=await page.evaluate(tab=>{
+                const e=document.getElementById(tab),r=e.getBoundingClientRect();
+                const visible=n=>{const b=n.getBoundingClientRect(),s=getComputedStyle(n);return b.width>0&&b.height>0&&s.visibility!=='hidden'&&s.display!=='none';};
+                const rect=n=>{if(!n||!visible(n))return null;const b=n.getBoundingClientRect();return {top:Math.round(b.top),height:Math.round(b.height),width:Math.round(b.width)};};
+                const hs=[...e.querySelectorAll('h1,h2,h3')].filter(visible);
+                const nav=document.querySelector('.iaPrimaryNav');
+                return {active:e.classList.contains('active'),pageHeight:document.documentElement.scrollHeight,sectionHeight:Math.round(r.height),overflow:document.documentElement.scrollWidth-innerWidth,
+                 heading:hs[0]?.textContent.trim(),visibleHeadings:hs.length,visibleWords:e.innerText.trim().split(/\s+/).length,
+                 firstParagraph:rect(e.querySelector('.readerLead,.sectionLead,p')),homeCTA:rect(document.querySelector('.heroPrimary')),projectDefinition:rect(document.querySelector('.narrativeProjectDefinition')),
+                 nav:rect(nav),navHorizontalOverflow:nav.scrollWidth-nav.clientWidth,
+                 clipped:[...e.querySelectorAll('h2,h3,p,button,input,select')].filter(visible).filter(n=>{const b=n.getBoundingClientRect();return b.left<-3||b.right>innerWidth+3}).slice(0,6).map(n=>({tag:n.tagName,id:n.id,text:n.textContent.trim().slice(0,100)}))};
+               },tab);report.routes.push({lang,width,theme,tab,...m});
+               if(lang==='it'&&['overview','ia-stories','lugano','research','economics','explore'].includes(tab)&&theme==='light'){
+                const file=out+'/'+kind+'-'+tab+'-'+width+'.png';await page.screenshot({path:file});report.screenshots.push(file);
+               }
+              }catch(e){report.errors.push({lang,width,theme,tab,error:String(e)})}
+             }
+             for(const [tab,anchor] of [['social','social-part-2'],['contention','contention-part-1'],['disputes','disputes-part-2'],['strange','strange-part-2']]){
+              await goto(tab,'#'+anchor);report.fragments.push({lang,width,tab,anchor,...await page.evaluate(id=>({exists:!!document.getElementById(id),activeSection:document.querySelector('section.section.active')?.id,scrollY,focus:document.activeElement.id}),anchor)});
+             }
+             if(lang==='it'){
+              await page.goto(base+'it/?tab=explore&q=.ai&scope=names',{waitUntil:'load'});await page.waitForFunction(()=>window.CTD_APP_READY);
+              await page.locator('#langSelect').selectOption('en');await page.waitForFunction(()=>document.documentElement.lang==='en'&&window.CTD_APP_READY);
+              report.languageSwitch.push({width,url:page.url(),scope:await page.locator('#explorerSearchScope').inputValue(),query:await page.locator('#q').count()?await page.locator('#q').inputValue():null,active:await page.locator('section.section.active').getAttribute('id')});
+             }
+            }catch(e){report.errors.push({lang,width,error:String(e)})}
+            await ctx.close();save();
+           }
+           await browser.close();save();console.log(JSON.stringify({browser:kind,routeStates:report.routes.length,errors:report.errors.length,missingFragments:report.fragments.filter(x=>!x.exists).length}));
+          })().catch(e=>{report.errors.push({fatal:String(e)});save();process.exitCode=1});
+          JS
+          node discovery-audit.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: full-discovery-${{ matrix.browser }}
+          path: discovery-audit/
+          retention-days: 30
