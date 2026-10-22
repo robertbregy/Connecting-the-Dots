@@ -1,0 +1,227 @@
+{
+  "baseline": "f7555163f567e04e270c1ca8ca0a8e5917e30167",
+  "sourceCommit": "087ef96b7f842532bf82d67a97889a48a57c7b15",
+  "structural": [
+    {
+      "file": "index.html",
+      "originalTextItems": 84,
+      "preservedLinks": 40,
+      "legacyAnchors": 26,
+      "otherSectionsUnchanged": true
+    },
+    {
+      "file": "it/index.html",
+      "originalTextItems": 84,
+      "preservedLinks": 40,
+      "legacyAnchors": 26,
+      "otherSectionsUnchanged": true
+    },
+    {
+      "file": "en/index.html",
+      "originalTextItems": 84,
+      "preservedLinks": 40,
+      "legacyAnchors": 26,
+      "otherSectionsUnchanged": true
+    },
+    {
+      "file": "de/index.html",
+      "originalTextItems": 84,
+      "preservedLinks": 40,
+      "legacyAnchors": 26,
+      "otherSectionsUnchanged": true
+    },
+    {
+      "file": "fr/index.html",
+      "originalTextItems": 84,
+      "preservedLinks": 40,
+      "legacyAnchors": 26,
+      "otherSectionsUnchanged": true
+    }
+  ],
+  "browser": [
+    {
+      "lang": "it",
+      "width": 320,
+      "theme": "light",
+      "motivationsVisible": true,
+      "keyboardDisclosure": true,
+      "legacyLinks": true,
+      "horizontalOverflow": false,
+      "comparisonAxeViolations": 0
+    },
+    {
+      "lang": "it",
+      "width": 320,
+      "theme": "dark",
+      "motivationsVisible": true,
+      "keyboardDisclosure": true,
+      "legacyLinks": true,
+      "horizontalOverflow": false,
+      "comparisonAxeViolations": 0
+    },
+    {
+      "lang": "it",
+      "width": 1280,
+      "theme": "light",
+      "motivationsVisible": true,
+      "keyboardDisclosure": true,
+      "legacyLinks": true,
+      "horizontalOverflow": false,
+      "comparisonAxeViolations": 0
+    },
+    {
+      "lang": "it",
+      "width": 1280,
+      "theme": "dark",
+      "motivationsVisible": true,
+      "keyboardDisclosure": true,
+      "legacyLinks": true,
+      "horizontalOverflow": false,
+      "comparisonAxeViolations": 0
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "theme": "light",
+      "motivationsVisible": true,
+      "keyboardDisclosure": true,
+      "legacyLinks": true,
+      "horizontalOverflow": false,
+      "comparisonAxeViolations": 0
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "theme": "dark",
+      "motivationsVisible": true,
+      "keyboardDisclosure": true,
+      "legacyLinks": true,
+      "horizontalOverflow": false,
+      "comparisonAxeViolations": 0
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "theme": "light",
+      "motivationsVisible": true,
+      "keyboardDisclosure": true,
+      "legacyLinks": true,
+      "horizontalOverflow": false,
+      "comparisonAxeViolations": 0
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "theme": "dark",
+      "motivationsVisible": true,
+      "keyboardDisclosure": true,
+      "legacyLinks": true,
+      "horizontalOverflow": false,
+      "comparisonAxeViolations": 0
+    },
+    {
+      "lang": "de",
+      "width": 320,
+      "theme": "light",
+      "motivationsVisible": true,
+      "keyboardDisclosure": true,
+      "legacyLinks": true,
+      "horizontalOverflow": false,
+      "comparisonAxeViolations": 0
+    },
+    {
+      "lang": "de",
+      "width": 320,
+      "theme": "dark",
+      "motivationsVisible": true,
+      "keyboardDisclosure": true,
+      "legacyLinks": true,
+      "horizontalOverflow": false,
+      "comparisonAxeViolations": 0
+    },
+    {
+      "lang": "de",
+      "width": 1280,
+      "theme": "light",
+      "motivationsVisible": true,
+      "keyboardDisclosure": true,
+      "legacyLinks": true,
+      "horizontalOverflow": false,
+      "comparisonAxeViolations": 0
+    },
+    {
+      "lang": "de",
+      "width": 1280,
+      "theme": "dark",
+      "motivationsVisible": true,
+      "keyboardDisclosure": true,
+      "legacyLinks": true,
+      "horizontalOverflow": false,
+      "comparisonAxeViolations": 0
+    },
+    {
+      "lang": "fr",
+      "width": 320,
+      "theme": "light",
+      "motivationsVisible": true,
+      "keyboardDisclosure": true,
+      "legacyLinks": true,
+      "horizontalOverflow": false,
+      "comparisonAxeViolations": 0
+    },
+    {
+      "lang": "fr",
+      "width": 320,
+      "theme": "dark",
+      "motivationsVisible": true,
+      "keyboardDisclosure": true,
+      "legacyLinks": true,
+      "horizontalOverflow": false,
+      "comparisonAxeViolations": 0
+    },
+    {
+      "lang": "fr",
+      "width": 1280,
+      "theme": "light",
+      "motivationsVisible": true,
+      "keyboardDisclosure": true,
+      "legacyLinks": true,
+      "horizontalOverflow": false,
+      "comparisonAxeViolations": 0
+    },
+    {
+      "lang": "fr",
+      "width": 1280,
+      "theme": "dark",
+      "motivationsVisible": true,
+      "keyboardDisclosure": true,
+      "legacyLinks": true,
+      "horizontalOverflow": false,
+      "comparisonAxeViolations": 0
+    }
+  ],
+  "noJavaScript": [
+    {
+      "lang": "it",
+      "motivationsVisible": true,
+      "nativeDisclosure": true
+    },
+    {
+      "lang": "en",
+      "motivationsVisible": true,
+      "nativeDisclosure": true
+    },
+    {
+      "lang": "de",
+      "motivationsVisible": true,
+      "nativeDisclosure": true
+    },
+    {
+      "lang": "fr",
+      "motivationsVisible": true,
+      "nativeDisclosure": true
+    }
+  ],
+  "humanParticipants": 0,
+  "passed": true
+}

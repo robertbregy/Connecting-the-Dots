@@ -42,7 +42,8 @@
     "U02": "Version first-party runtime asset URLs with the publication version to avoid stale cached scripts. All five rendered pages are byte-equivalent after removing only asset query parameters; no runtime asset body or data-pack bytes changed.",
     "U03": "Add a four-language, source-linked estimated three-minute path through illustrative everyday scenarios. Retain documented distinctions, all original evidence and existing destinations. Prepare printable neutral reader-study materials and a header-only observation template; zero observed participants, no human validation claimed.",
     "E09": "Approved six-step Economics order; preserve source facts, all original text, eight models/cases, legacy anchors, archived research and previous ZIPs. Current publication metadata follows v0.7.91.",
-    "E10": "Reader-first editorial navigation in four languages: reorder complete existing blocks, preserve every original body and fragment, add local indexes, breadcrumbs, contextual next links and direct research access. New UI copy contains no new research observations. Preserve all prior archives and research identifiers."
+    "E10": "Reader-first editorial navigation in four languages: reorder complete existing blocks, preserve every original body and fragment, add local indexes, breadcrumbs, contextual next links and direct research access. New UI copy contains no new research observations. Preserve all prior archives and research identifiers.",
+    "E11": "22 October 2026, explicit user-requested Lugano layout correction: expose the unchanged motivations before governance; separate the unchanged city and .zuerich comparison behind an accurately named native disclosure in all four languages. Preserve all prior heading targets, links, research text, other sections, archives and research identifiers. AI-assisted source and browser review, not a human usability study."
   },
   "sourceInvariants": {
     "sections": [
@@ -2954,9 +2955,10 @@
     "scripts/reader_first.cjs": {
       "baselineSHA256": null,
       "rationaleIds": [
-        "E10"
+        "E10",
+        "E11"
       ],
-      "sha256": "453afd5ded559149580d791e6265256df5cf487cd33b9ac07df7728cc9661024"
+      "sha256": "9800e5479d858f1e3f77d1a85bfccec65267e2a3d74dc536788a326422db246b"
     },
     "scripts/reader_first_browser.cjs": {
       "baselineSHA256": null,
@@ -2992,6 +2994,13 @@
         "E10"
       ],
       "sha256": "4148701fa84b61b1bf1ba70416f558c71e1d8ffed3c8696beb4ecfadff9868d8"
+    },
+    ".github/workflows/lugano-reading-order.yml": {
+      "sha256": "3bb621634998be78a65a83818b97603e97c3b6d32fe3840ad2bec8ae87c53454",
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "E11"
+      ]
     }
   },
   "sourceSections": {
@@ -3277,5 +3286,14 @@
     "browserReport": "docs/reader-first-verification.json",
     "humanParticipants": 0
   },
-  "approvedCandidateSHA256": "358c191787d700a39004441b359746615d84e2937838947e31707ab560944cbd"
+  "approvedCandidateSHA256": "358c191787d700a39004441b359746615d84e2937838947e31707ab560944cbd",
+  "supplementalLayoutReview": {
+    "reviewedOn": "2026-10-22",
+    "sourceCommit": "087ef96b7f842532bf82d67a97889a48a57c7b15",
+    "workflowRun": "39732491606",
+    "sourceSHA256": "9800e5479d858f1e3f77d1a85bfccec65267e2a3d74dc536788a326422db246b",
+    "evidence": "docs/lugano-reading-order-20261022.json",
+    "reviewType": "AI-assisted code, evidence-preservation and browser review",
+    "humanParticipants": 0
+  }
 }
