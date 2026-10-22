@@ -11,7 +11,7 @@
     "scripts/reader_first.cjs": "31fcf95cda3a5bd46422836abf6d14cea9d16479a12d4dcb45c3550a7958bfad",
     "assets/aps-lazy.js": "9836be686e3d6c55c8e3d57c4f272efc3b53c2aca7bb4e458015555c87e74565",
     "scripts/audit_audience.cjs": "960b9cddd156fa71ad77355901ea146c9ca8f1c222a185f2fb4ae790ec323fee",
-    ".github/workflows/narrative-clarity.yml": "fa33729a3f3d42d5de856d939e6fb8f70e4dda28420f7e338b506648642f3827"
+    ".github/workflows/narrative-clarity.yml": "f3d240e12ce52e63fecfd07bdd339dbcd9422915de068ddfc873fc3745aba63a"
   },
   "generatedFiles": {
     "data/manifest.json": "640f918b185ec12e7d7457df817f7cf4af9fbb016a23c89204353b658bc6b9d6",
