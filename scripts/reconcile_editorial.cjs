@@ -89,7 +89,7 @@ for(const lang of ['en','it','de','fr']){
 
   // The public-visibility calendar belongs next to the round overview as well
   // as in the dated field investigation; it predicts no individual outcome.
-  section('reveal').append(make(`<aside class="panel apsVisibility"><h2>${e(t('field18CalendarTitle'))}</h2><p>${e(t('field18CalendarBody'))}</p><p class="note">${e(t('field18CalendarLimit'))}</p><div class="srcs"><a href="https://newgtldprogram-aps.icann.org/about" target="_blank" rel="noopener noreferrer">ICANN APS · About ↗</a><a href="https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en" target="_blank" rel="noopener noreferrer">ICANN · ${e(t('insideNav'))} ↗</a></div></aside>`));
+  section('reveal').append(make(`<aside class="panel apsVisibility"><h2>${e(t('field18CalendarTitle'))}</h2><p>${e(t('field22PhaseBody'))}</p><p class="note">${e(t('field22PhaseLimit'))}</p><div class="srcs"><a href="https://newgtldprogram-aps.icann.org/about" target="_blank" rel="noopener noreferrer">ICANN APS · About ↗</a><a href="https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en" target="_blank" rel="noopener noreferrer">ICANN · ${e(t('insideNav'))} ↗</a></div></aside>`));
 
   // Classify every existing resource and label the date as a file release,
   // without pretending that all underlying observations were made that day.

@@ -117,7 +117,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.equal(timelineStandalone.querySelector('link[rel="canonical"]')?.getAttribute('href'),base+'inside-the-round/'+language+'/',page+' chronology URL changed');
   assert.ok(behind.querySelector('[data-behind-story="reveal-day-counts"]'),page+' missing main field note');
   assert.equal(behind.querySelectorAll('[data-behind-story]').length,2,page+' two research cases not published');
-  assert.equal(behind.querySelectorAll('[data-source-id]').length,24,page+' incomplete source audit across two cases');
+  assert.equal(behind.querySelectorAll('[data-source-id]').length,26,page+' incomplete source audit across two cases');
   assert.equal(behind.querySelectorAll('.behindComparisonTable [data-region]').length,5,page+' regional reconciliation missing');
   assert.ok(behind.querySelector('[data-behind-story="wdo-identity"]'),page+' WDO case omitted');
   const newFieldSlugs=['objectors-eoi','replacement-strings','background-screening'];
@@ -146,20 +146,20 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.equal(standaloneDocument.querySelector('link[rel="canonical"]').getAttribute('href'),base+'behind-the-round/'+language+'/',page+' field-note canonical');
   assert.equal(standaloneDocument.querySelectorAll('link[rel="alternate"][hreflang]').length,5,page+' field-note hreflang');
   assert.equal(standaloneDocument.querySelector('meta[name="robots"]').getAttribute('content'),'index,follow,max-image-preview:large',page+' field-note indexing');
-  assert.equal(standaloneDocument.querySelectorAll('[data-source-id]').length,24,page+' all source links must be preserved');
+  assert.equal(standaloneDocument.querySelectorAll('[data-source-id]').length,26,page+' all source links must be preserved');
   assert.equal(standaloneDocument.querySelectorAll('.behindFinding').length,2,page+' explanatory statuses missing');
-  assert.equal(standaloneDocument.querySelectorAll('[data-editorial-revision]').length,4,page+' dated case histories must remain visible');
+  assert.equal(standaloneDocument.querySelectorAll('[data-editorial-revision]').length,6,page+' dated case histories must remain visible');
   assert.ok(standalone.includes(translations.behindTitle)&&standalone.includes('WDO2627T-T45217'),page+' translated field note missing');
   const articleSchema=JSON.parse(standaloneDocument.querySelector('script[type="application/ld+json"]').textContent);
-  assert.equal(articleSchema.dateModified,'2026-10-18',page+' dated field-note collection review missing');
+  assert.equal(articleSchema.dateModified,'2026-10-22',page+' dated field-note collection review missing');
   assert.equal(articleSchema.image,base+'assets/og-preview.png',page+' field-note Article image');
   assert.ok(translations.behindMetaDescription.length<=160,page+' overlong field-note description');
-  assert.equal(articleSchema.citation.length,24,page+' schema citation list incomplete');
+  assert.equal(articleSchema.citation.length,26,page+' schema citation list incomplete');
   assert.equal(articleSchema['@type'],'CollectionPage',page+' Field Notes index schema is a collection');
   assert.equal(standaloneDocument.querySelectorAll('.behindComparisonTable [data-region]').length,5,page+' regional comparison rows missing');
   assert.ok(standalone.includes('WDO2627T-T45217')&&standalone.includes('World Design Organization'),page+' case distinctions lost');
   assert.equal(standaloneDocument.querySelectorAll('[data-field-investigation-teaser]').length,3,page+' collection missing three 2026 investigation teasers');
-  for(const [slug,sourceCount,sectionCount] of [['objectors-eoi',3,4],['replacement-strings',14,7],['background-screening',6,5]]){
+  for(const [slug,sourceCount,sectionCount] of [['objectors-eoi',3,4],['replacement-strings',16,8],['background-screening',6,5]]){
     const filename=path.join(root,'behind-the-round',language,slug,'index.html');
     const text=fs.readFileSync(filename,'utf8');
     const article=parseHTML(text).document;
@@ -172,11 +172,11 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
     assert.equal(article.querySelectorAll('link[rel="alternate"][hreflang]').length,5,page+' incomplete hreflang: '+slug);
     assert.equal(article.querySelectorAll('[data-source-id]').length,sourceCount,page+' source audit incomplete: '+slug);
     assert.equal(article.querySelectorAll('[data-referenced-sources]').length,sectionCount,page+' source-backed sections incomplete: '+slug);
-    assert.equal(article.querySelectorAll('[data-editorial-revision]').length,slug==='replacement-strings'?3:1,page+' dated revision missing: '+slug);
+    assert.equal(article.querySelectorAll('[data-editorial-revision]').length,slug==='replacement-strings'?4:1,page+' dated revision missing: '+slug);
     const jsonLD=JSON.parse(article.querySelector('script[type="application/ld+json"]').textContent);
     assert.equal(jsonLD['@type'],'Article',page+' wrong structured investigation type');
     assert.equal(jsonLD.citation.length,sourceCount,page+' unlinked article source: '+slug);
-    assert.equal(jsonLD.dateModified,slug==='objectors-eoi'?'2026-10-10':slug==='replacement-strings'?'2026-10-18':'2026-10-17',page+' wrong investigation source review date');
+    assert.equal(jsonLD.dateModified,slug==='objectors-eoi'?'2026-10-10':slug==='replacement-strings'?'2026-10-22':'2026-10-17',page+' wrong investigation source review date');
     assert.ok(text.includes('https://doi.org/10.5281/zenodo.23262623'),page+' missing independent archive attribution: '+slug);
     assert.equal(article.querySelector('meta[name="description"]').getAttribute('content').length<=160,true,page+' lengthy investigation metadata: '+slug);
     if(slug==='replacement-strings'){
@@ -192,13 +192,13 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.equal(wdoDocument.title,translations.wdoMetaTitle,page+' WDO translated metadata');
   assert.equal(wdoDocument.querySelectorAll('link[rel="alternate"][hreflang]').length,5,page+' WDO reciprocal locale links');
   assert.equal(wdoDocument.querySelectorAll('[data-behind-story]').length,1,page+' WDO standalone must be one article');
-  assert.equal(wdoDocument.querySelectorAll('[data-source-id]').length,7,page+' WDO article missing primary-source links');
+  assert.equal(wdoDocument.querySelectorAll('[data-source-id]').length,9,page+' WDO article missing primary-source links');
   assert.equal(wdoDocument.querySelector('script[type="application/ld+json"]')===null,false,page+' WDO Article structured data');
   const wdoSchema=JSON.parse(wdoDocument.querySelector('script[type="application/ld+json"]').textContent);
   assert.equal(wdoSchema['@type'],'Article',page+' WDO standalone article structured metadata');
-  assert.equal(wdoSchema.citation.length,7,page+' WDO article cites seven primary records');
+  assert.equal(wdoSchema.citation.length,9,page+' WDO article cites original seven records and two dated APS notices');
   assert.equal(wdoSchema.image,base+'assets/og-preview.png',page+' WDO article image');
-  assert.equal(wdoDocument.querySelectorAll('[data-editorial-revision]').length,1,page+' WDO editorial revision');
+  assert.equal(wdoDocument.querySelectorAll('[data-editorial-revision]').length,2,page+' WDO editorial revision');
   assert.ok(standalone.includes(base+'behind-the-round/'+language+'/wdo-identity/'),page+' WDO standalone not linked from Field Notes collection');
   const sanctionsHref=base+'behind-the-round/'+language+'/sanctions-and-dns/';
   const sanctionsText=fs.readFileSync(path.join(root,'behind-the-round',language,'sanctions-and-dns','index.html'),'utf8');

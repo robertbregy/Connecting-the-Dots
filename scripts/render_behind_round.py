@@ -100,18 +100,19 @@ def validate_editorial_updates(case, translations, root=ROOT):
     if not updates:
         return
     expected={
-        "reveal-day-counts":["aps-count-reconciliation","aps-publication-calendar"],
-        "replacement-strings":["aps-string-reconciliation"],
+        "reveal-day-counts":["aps-count-reconciliation","aps-publication-calendar","counts-check-20261022"],
+        "replacement-strings":["aps-string-reconciliation","replacement-check-20261022"],
+        "wdo-identity":["wdo-check-20261022"],
     }
     if [item.get("id") for item in updates]!=expected.get(case["id"]):
         raise ValueError("Unreviewed field-note update identity: "+case["id"])
     sources={source["id"] for source in case["sources"]}
     for item in updates:
-        if item["date"]!="2026-10-18" or item["date"]!=case["revisedOn"]:
+        if item["date"] != ("2026-10-22" if item["id"].endswith("20261022") else "2026-10-18") or item["date"]>case["revisedOn"]:
             raise ValueError("Updated evidence must keep its explicit review date")
         if not item.get("sourceIds") or any(s not in sources for s in item["sourceIds"]):
             raise ValueError("Updated field-note evidence lacks sources")
-        keys=["field18ReviewLabel",item["titleKey"],*item["paragraphKeys"]]
+        keys=[item.get("reviewLabelKey","field18ReviewLabel"),item["titleKey"],*item["paragraphKeys"]]
         if item.get("closingKey"):
             keys.append(item["closingKey"])
         if item.get("link"):
@@ -162,17 +163,19 @@ def validate_editorial_updates(case, translations, root=ROOT):
                 raise ValueError("Untranslated dated field-note update: "+lang)
 
 
-def editorial_updates_markup(case, dictionary, lang, dynamic=False, heading="h3"):
+def editorial_updates_markup(case, dictionary, lang, dynamic=False, heading="h3", placement="body"):
     """The same sourced update appears in the native page and standalone article."""
     def copy(key,tag="p",extra=""):
         attr=(' data-i18n="'+h(key,quote=True)+'"') if dynamic else ""
         return '<'+tag+extra+attr+'>'+h(dictionary[key])+'</'+tag+'>'
     parts=[]
     for update in case.get("editorialUpdates",[]):
+        if update.get("placement","body") != placement:
+            continue
         identity=h(update["id"],quote=True)
         parts.append('<section class="behindReading behindEditorialUpdate" id="'+identity+'" data-field-update="'+identity+'" data-update-date="'+update["date"]+'" data-referenced-sources="'+h(",".join(update["sourceIds"]),quote=True)+'">')
-        parts.append(copy("field18ReviewLabel","time",' class="eyebrow" datetime="'+update["date"]+'"'))
-        parts.append(copy(update["titleKey"],heading))
+        parts.append(copy(update.get("reviewLabelKey","field18ReviewLabel"),"time",' class="eyebrow" datetime="'+update["date"]+'"'))
+        parts.append("<p>"+copy(update["titleKey"],"strong")+"</p>" if placement=="lead" else copy(update["titleKey"],heading))
         parts.extend(copy(key) for key in update["paragraphKeys"])
         evidence=update.get("reconciliation")
         if evidence:
@@ -243,10 +246,14 @@ def load():
                 if any(not translations[lang].get(k) for k in keys):
                     raise ValueError("Untranslated WDO case in " + lang)
             revisions=case.get("revisionHistory",[])
-            if not revisions or revisions[-1].get("changeKey")!="wdoRevisionInitial":
+            if len(revisions)!=2 or revisions[0].get("changeKey")!="wdoRevisionInitial" or revisions[-1].get("changeKey")!="field22Revision" or revisions[-1]["date"]!="2026-10-22":
                 raise ValueError("Missing WDO original dated source audit")
             if any(date.fromisoformat(x["date"])>editorial_date or any(i not in sources for i in x.get("sourceIds",[])) for x in revisions):
                 raise ValueError("WDO revision lacks checked sources")
+            validate_editorial_updates(case, translations)
+            for lang in LANGS:
+                if not translations[lang].get("field22Revision"):
+                    raise ValueError("Missing WDO follow-up translation")
             continue
         regions = case.get("regionalComparison",[])
         if {row["code"] for row in regions} != {"NA","EUR","AP","AF","LAC"}:
@@ -257,10 +264,11 @@ def load():
         if any(row["officialApplications"]!=row["visibleApplications"] or row["officialApplicants"]!=row["visibleApplicants"] for row in regions if row["code"]!="AP"):
             raise ValueError("Regional discrepancy incorrectly extends beyond Asia-Pacific")
         revisions=case.get("revisionHistory",[])
-        if (len(revisions)!=3 or revisions[0]["changeKey"]!="behindRevisionInitial" or
+        if (len(revisions)!=4 or revisions[0]["changeKey"]!="behindRevisionInitial" or
                 revisions[1]["changeKey"]!="behindRevisionReconciled" or
                 any(r["date"]!="2026-10-10" for r in revisions[:2]) or
-                revisions[-1]["changeKey"]!="field18Revision"):
+                revisions[2]["changeKey"]!="field18Revision" or revisions[2]["date"]!="2026-10-18" or
+                revisions[-1]["changeKey"]!="field22Revision" or revisions[-1]["date"]!="2026-10-22"):
             raise ValueError("The researched 2026 revision must be date and source tracked")
         validate_editorial_updates(case,translations)
         facts = {f["id"]:f for f in case["quantities"]}
@@ -322,6 +330,7 @@ def episode_markup(data, translations, lang, dynamic=False, standalone=False):
                 txt("wdoCaseTitle",tag="h2"),
                 txt("wdoCaseLead",tag="p",css="behindCaseLead"),
                 txt("wdoCaseStatus",css="behindStatus"),
+                editorial_updates_markup(case,t,lang,dynamic=dynamic,placement="lead"),
                 '<div class="behindIdentityList">',
                 '<div class="behindIdentityCard"><strong>World Data Organization</strong>' + txt("wdoIdentityDataLabel") + '</div>',
                 '<div class="behindIdentityCard"><strong>World Design Organization</strong>' + txt("wdoIdentityDesignLabel") + '</div>',
@@ -355,6 +364,7 @@ def episode_markup(data, translations, lang, dynamic=False, standalone=False):
             txt("behindCaseTitle",tag="h2"),
             txt("behindCaseLead",tag="p",css="behindCaseLead"),
             txt("behindStatusPartial",css="behindStatus"),
+            editorial_updates_markup(case,t,lang,dynamic=dynamic,placement="lead"),
             '<div class="behindFigures">'
         ])
         for fact in case["quantities"]:

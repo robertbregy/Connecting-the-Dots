@@ -184,7 +184,7 @@ Interactive publication: https://robertbregy.github.io/Connecting-the-Dots/
 Repository: https://github.com/robertbregy/Connecting-the-Dots  
 Current TLD universe CSV (live technical publication): https://robertbregy.github.io/Connecting-the-Dots/data/tld_universe.csv  
 2026 primary-string inventory (secondary-source snapshot): https://robertbregy.github.io/Connecting-the-Dots/data/applications_2026_strings_reveal.csv  
-Current technical data package **v0.7.92** (not a new Zenodo release): https://robertbregy.github.io/Connecting-the-Dots/downloads/connecting-the-dots-data-pack-v0.7.92.zip  
+Current technical data package **v0.7.93** (not a new Zenodo release): https://robertbregy.github.io/Connecting-the-Dots/downloads/connecting-the-dots-data-pack-v0.7.93.zip  
 Official ICANN APS public applications CSV (2,783 rows / 1,614 base application IDs): https://robertbregy.github.io/Connecting-the-Dots/data/applications_2026_aps_official_listing.csv  
 Historical frozen data pack **v0.7.58** (not the current RR2 dataset): https://robertbregy.github.io/Connecting-the-Dots/downloads/connecting-the-dots-data-pack.zip
 

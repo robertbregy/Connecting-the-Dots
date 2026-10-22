@@ -44,8 +44,8 @@
       "economicsPointerSamples": [
         {
           "x": 45,
-          "y": 524.84375,
-          "scrollY": 1,
+          "y": 509.84375,
+          "scrollY": 16,
           "hit": "economics",
           "href": "#economics",
           "inside": true
@@ -95,8 +95,8 @@
       "economicsPointerSamples": [
         {
           "x": 137,
-          "y": 468.28125,
-          "scrollY": 5,
+          "y": 473.28125,
+          "scrollY": 0,
           "hit": "economics",
           "href": "#economics",
           "inside": true
@@ -146,8 +146,8 @@
       "economicsPointerSamples": [
         {
           "x": 45,
-          "y": 508.515625,
-          "scrollY": 1,
+          "y": 509.515625,
+          "scrollY": 0,
           "hit": "economics",
           "href": "#economics",
           "inside": true
@@ -197,58 +197,7 @@
       "economicsPointerSamples": [
         {
           "x": 137,
-          "y": 468.28125,
-          "scrollY": 5,
-          "hit": "economics",
-          "href": "#economics",
-          "inside": true
-        }
-      ]
-    },
-    {
-      "language": "de",
-      "width": 390,
-      "hubs": [
-        {
-          "hub": "ia-understand",
-          "cards": 4,
-          "target": "how"
-        },
-        {
-          "hub": "ia-explore",
-          "cards": 6,
-          "target": "explore"
-        },
-        {
-          "hub": "ia-stories",
-          "cards": 4,
-          "target": "economics"
-        },
-        {
-          "hub": "ia-outcomes",
-          "cards": 4,
-          "target": "refusals"
-        },
-        {
-          "hub": "ia-round",
-          "cards": 4,
-          "target": "behind-round"
-        },
-        {
-          "hub": "ia-research",
-          "cards": 4,
-          "target": "research"
-        }
-      ],
-      "issues": [],
-      "contentSections": 24,
-      "homePurpose": true,
-      "legacyMenu": true,
-      "checkedCards": 26,
-      "economicsPointerSamples": [
-        {
-          "x": 45,
-          "y": 535.03125,
+          "y": 473.28125,
           "scrollY": 0,
           "hit": "economics",
           "href": "#economics",
@@ -258,6 +207,57 @@
     },
     {
       "language": "de",
+      "width": 390,
+      "hubs": [
+        {
+          "hub": "ia-understand",
+          "cards": 4,
+          "target": "how"
+        },
+        {
+          "hub": "ia-explore",
+          "cards": 6,
+          "target": "explore"
+        },
+        {
+          "hub": "ia-stories",
+          "cards": 4,
+          "target": "economics"
+        },
+        {
+          "hub": "ia-outcomes",
+          "cards": 4,
+          "target": "refusals"
+        },
+        {
+          "hub": "ia-round",
+          "cards": 4,
+          "target": "behind-round"
+        },
+        {
+          "hub": "ia-research",
+          "cards": 4,
+          "target": "research"
+        }
+      ],
+      "issues": [],
+      "contentSections": 24,
+      "homePurpose": true,
+      "legacyMenu": true,
+      "checkedCards": 26,
+      "economicsPointerSamples": [
+        {
+          "x": 45,
+          "y": 515.03125,
+          "scrollY": 20,
+          "hit": "economics",
+          "href": "#economics",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "language": "de",
       "width": 1440,
       "hubs": [
         {
@@ -299,8 +299,8 @@
       "economicsPointerSamples": [
         {
           "x": 137,
-          "y": 468.28125,
-          "scrollY": 5,
+          "y": 473.28125,
+          "scrollY": 0,
           "hit": "economics",
           "href": "#economics",
           "inside": true
@@ -350,8 +350,8 @@
       "economicsPointerSamples": [
         {
           "x": 45,
-          "y": 524.84375,
-          "scrollY": 1,
+          "y": 509.84375,
+          "scrollY": 16,
           "hit": "economics",
           "href": "#economics",
           "inside": true
@@ -401,8 +401,8 @@
       "economicsPointerSamples": [
         {
           "x": 137,
-          "y": 468.28125,
-          "scrollY": 5,
+          "y": 473.28125,
+          "scrollY": 0,
           "hit": "economics",
           "href": "#economics",
           "inside": true

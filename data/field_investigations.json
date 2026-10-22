@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "editorialLayer": "2026-round-investigations-not-part-of-frozen-RR1",
-  "lastReviewed": "2026-10-18",
+  "lastReviewed": "2026-10-22",
   "classification": "source-backed-editorial-field-notes",
   "legacyCases": "data/behind_round_stories.json",
   "episodes": [
@@ -92,13 +92,13 @@
       "slug": "replacement-strings",
       "number": 4,
       "publishedOn": "2026-10-10",
-      "revisedOn": "2026-10-18",
+      "revisedOn": "2026-10-22",
       "periodStart": "2026-08-12",
       "periodEnd": "2026-11-17",
       "state": "documented-with-open-questions",
       "titleKey": "field04Title",
       "descriptionKey": "field04Lead",
-      "statusKey": "field04Status",
+      "statusKey": "field22ReplacementStatus",
       "quantities": [
         {
           "id": "replacementTotal",
@@ -263,6 +263,18 @@
           "kind": "derived",
           "labelKey": "field18SourceLocalStrings",
           "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/65e0fbe2080c2ee841e8abc01e1ddec113a74b8e/data/applications_2026_strings_reveal.csv"
+        },
+        {
+          "id": "rs-checkpoint-calendar",
+          "url": "https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en",
+          "kind": "primary",
+          "labelKey": "field04SourceTimeline"
+        },
+        {
+          "id": "rs-checkpoint-about",
+          "url": "https://newgtldprogram-aps.icann.org/about",
+          "kind": "primary",
+          "labelKey": "field18SourceAbout"
         }
       ],
       "updateTriggers": [
@@ -300,6 +312,15 @@
             "aps-export-20261018",
             "aps-local-export-20261018",
             "aps-local-strings-20261018"
+          ]
+        },
+        {
+          "date": "2026-10-22",
+          "changeKey": "field22Revision",
+          "sourceIds": [
+            "rs-icann-aps",
+            "rs-checkpoint-calendar",
+            "rs-checkpoint-about"
           ]
         }
       ],
@@ -385,6 +406,22 @@
               "field18Applicant"
             ]
           }
+        },
+        {
+          "id": "replacement-check-20261022",
+          "date": "2026-10-22",
+          "reviewLabelKey": "field22ReviewLabel",
+          "placement": "lead",
+          "titleKey": "field22PhaseTitle",
+          "paragraphKeys": [
+            "field22ReplacementBody",
+            "field22PhaseBody"
+          ],
+          "sourceIds": [
+            "rs-icann-aps",
+            "rs-checkpoint-calendar",
+            "rs-checkpoint-about"
+          ]
         }
       ]
     },

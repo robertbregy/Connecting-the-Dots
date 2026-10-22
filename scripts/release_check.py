@@ -843,7 +843,7 @@ if publication_meta.get('researchRelease')!='RR2' or publication_meta.get('doi')
 if publication_meta.get('conceptDoi')!='10.5281/zenodo.23262622':
     fail('Current website does not link the original RR1/RR2 version concept')
 chronicle_states={event['state'] for event in events}
-if chronicle_states!={'observed','current','scheduled','evolving','conditional'}:
+if chronicle_states!={'observed','scheduled','evolving','conditional'} or chronicle.get('phaseCheckpoint',{}).get('state')!='awaiting-public-confirmation':
     fail('Inside the Round status distinctions missing')
 for event in events:
     if not event['source'].startswith(('https://www.icann.org/','https://newgtldprogram.icann.org/','https://newgtldprogram-aps.icann.org/','https://www.lugano.ch/')):
@@ -941,7 +941,7 @@ if {q['id']:q['value'] for q in case['quantities']}!={'paid':1616,'official':161
     fail('Reveal Day discrepancy values altered without reviewed evidence')
 if case['trackedApplication']['id']!='WDO2627T-T45217' or case['trackedApplication']['string']!='.wdo':
     fail('Officially documented administrative-check record changed')
-if not case.get('revisionHistory') or case['revisionHistory'][-1]['date']!=case['revisedOn'] or case['revisionHistory'][-1]['changeKey']!='field18Revision':
+if not case.get('revisionHistory') or case['revisionHistory'][-1]['date']!=case['revisedOn'] or case['revisionHistory'][-1]['changeKey']!='field22Revision' or case['revisionHistory'][-1]['date']!='2026-10-22':
     fail('Unversioned field-note revision history')
 if len(case['sources'])!=17 or not any(s['kind']=='secondary' for s in case['sources']):
     fail('Editorial case lacks provenance distinction')
@@ -1024,9 +1024,9 @@ for lang in LANGS:
 second=stories[1]
 if second.get('kind')!='identity' or second.get('number')!=2 or second.get('state')!='documented-with-open-questions':
     fail('WDO case identity or evidentiary classification drift')
-if len(second.get('sources',[]))!=7 or not all(x['kind']=='primary' for x in second['sources']):
-    fail('WDO case should cite seven institutional primary sources')
-if {x['id'] for x in second['sources']}!={'wdo-aps','wdo-cas','design-about','design-trademark','icann-guidebook','icann-period','ofac-july'}:
+if len(second.get('sources',[]))!=9 or not all(x['kind']=='primary' for x in second['sources']):
+    fail('WDO case must retain seven original sources plus two dated APS verification sources')
+if {x['id'] for x in second['sources']}!={'wdo-aps','wdo-cas','design-about','design-trademark','icann-guidebook','icann-period','ofac-july','wdo-aps-about','wdo-aps-list'}:
     fail('WDO case lacks an essential checked primary record')
 regions=case.get('regionalComparison',[])
 if len(regions)!=5 or sum(x['officialApplications'] for x in regions)!=1615 or sum(x['visibleApplications'] for x in regions)!=1614:
@@ -1081,7 +1081,7 @@ for lang in LANGS:
             if html_escape(translations[lang][section['bodyKey']]) not in article:
                 fail('Incomplete investigation text: '+lang+'/'+slug+'/'+section['bodyKey'])
         for update in case.get('editorialUpdates', []):
-            for key in [update['titleKey'], *update['paragraphKeys'], update['closingKey']]:
+            for key in [update['titleKey'], *update['paragraphKeys'], *([update['closingKey']] if update.get('closingKey') else [])]:
                 if html_escape(translations[lang][key]) not in article:
                     fail('Incomplete investigation update: '+lang+'/'+slug+'/'+key)
         if 'https://doi.org/10.5281/zenodo.23262623' not in article:

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-10-22",
+  "reviewType": "public-source editorial verification",
+  "newApplicationExportAcquired": false,
+  "statisticsPublishedAtUTC": "2026-10-07T15:41:00Z",
+  "wdoPublishedAtUTC": "2026-10-07T18:00:00Z",
+  "historicalExportAcquiredAtUTC": "2026-10-11T21:27:40.214Z",
+  "findings": {
+    "replacementDeadlineUTC": "2026-10-21T23:59:00Z",
+    "replacementClosed": true,
+    "nextScheduledPublication": "2026-11-17",
+    "paidToRevealGap": "unresolved-in-consulted-public-sources",
+    "aggregateToPublicListingGap": "documented-wdo-exclusion",
+    "wdoNewPublicOutcomeVerified": false
+  },
+  "sources": {
+    "calendar": "https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en",
+    "publicationPolicy": "https://newgtldprogram-aps.icann.org/about",
+    "statistics": "https://newgtldprogram-aps.icann.org/statistics",
+    "wdo": "https://newgtldprogram-aps.icann.org/applications/WDO2627T-T45217/summary",
+    "publicList": "https://newgtldprogram-aps.icann.org/applications",
+    "news": "https://newgtldprogram.icann.org/en/news/2026"
+  }
+}

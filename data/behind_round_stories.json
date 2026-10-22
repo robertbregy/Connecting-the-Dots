@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "editorialLayer": "2026-round-field-notes-not-part-of-frozen-RR1",
-  "lastReviewed": "2026-10-18",
+  "lastReviewed": "2026-10-22",
   "policy": "Only sourced public observations, explicitly dated reconstructions and open questions; never infer causes from mismatched aggregate snapshots or include privileged application details.",
   "episodes": [
     {
@@ -9,7 +9,7 @@
       "slug": "reveal-day-counts",
       "number": 1,
       "publishedOn": "2026-10-10",
-      "revisedOn": "2026-10-18",
+      "revisedOn": "2026-10-22",
       "periodStart": "2026-09-22",
       "periodEnd": "2026-10-08",
       "state": "partly-explained",
@@ -40,7 +40,7 @@
           "from": 1616,
           "to": 1615,
           "status": "unresolved",
-          "explanation": "No specific verified public cause identified as of 2026-10-10"
+          "explanation": "No specific verified public cause identified in the official sources checked on 2026-10-22; historical totals retained."
         },
         {
           "id": "aggregate-to-visible",
@@ -204,6 +204,17 @@
             "aps-local-strings-20261018",
             "icann-aps-wdo"
           ]
+        },
+        {
+          "date": "2026-10-22",
+          "changeKey": "field22Revision",
+          "sourceIds": [
+            "icann-aps-stats",
+            "icann-aps-list",
+            "icann-aps-wdo",
+            "aps-about-20261018",
+            "aps-calendar-20261018"
+          ]
         }
       ],
       "kind": "counts",
@@ -275,6 +286,25 @@
             "aps-calendar-20261018",
             "icann-aps-wdo"
           ]
+        },
+        {
+          "id": "counts-check-20261022",
+          "date": "2026-10-22",
+          "reviewLabelKey": "field22ReviewLabel",
+          "placement": "lead",
+          "titleKey": "field22CountsTitle",
+          "paragraphKeys": [
+            "field22CountsBody",
+            "field22StatsBody",
+            "field22WdoBody"
+          ],
+          "sourceIds": [
+            "icann-aps-stats",
+            "icann-aps-list",
+            "icann-aps-wdo",
+            "aps-about-20261018",
+            "aps-calendar-20261018"
+          ]
         }
       ]
     },
@@ -284,7 +314,7 @@
       "slug": "wdo-identity",
       "number": 2,
       "publishedOn": "2026-10-10",
-      "revisedOn": "2026-10-10",
+      "revisedOn": "2026-10-22",
       "periodStart": "2015-10-23",
       "periodEnd": "2026-10-10",
       "state": "documented-with-open-questions",
@@ -395,6 +425,18 @@
           "kind": "primary",
           "labelKey": "wdoSourceOFAC",
           "url": "https://ofac.treasury.gov/recent-actions/20260717"
+        },
+        {
+          "id": "wdo-aps-about",
+          "kind": "primary",
+          "labelKey": "field18SourceAbout",
+          "url": "https://newgtldprogram-aps.icann.org/about"
+        },
+        {
+          "id": "wdo-aps-list",
+          "kind": "primary",
+          "labelKey": "behindSourceList",
+          "url": "https://newgtldprogram-aps.icann.org/applications"
         }
       ],
       "updateTriggers": [
@@ -414,6 +456,35 @@
             "design-trademark",
             "icann-guidebook",
             "ofac-july"
+          ]
+        },
+        {
+          "date": "2026-10-22",
+          "changeKey": "field22Revision",
+          "sourceIds": [
+            "wdo-aps",
+            "wdo-aps-about",
+            "wdo-aps-list",
+            "icann-period"
+          ]
+        }
+      ],
+      "editorialUpdates": [
+        {
+          "id": "wdo-check-20261022",
+          "date": "2026-10-22",
+          "reviewLabelKey": "field22ReviewLabel",
+          "placement": "lead",
+          "titleKey": "field22WdoTitle",
+          "paragraphKeys": [
+            "field22WdoBody",
+            "field22PhaseLimit"
+          ],
+          "sourceIds": [
+            "wdo-aps",
+            "wdo-aps-about",
+            "wdo-aps-list",
+            "icann-period"
           ]
         }
       ]

@@ -1,0 +1,226 @@
+{
+  "checkedOn": "2026-10-22",
+  "baseline": "ba6947fd432f6d5d60019948d182928ad84b10f8",
+  "staticPages": 25,
+  "preservedNativeIDs": [
+    {
+      "file": "it/index.html",
+      "count": 522
+    },
+    {
+      "file": "en/index.html",
+      "count": 522
+    },
+    {
+      "file": "index.html",
+      "count": 522
+    },
+    {
+      "file": "de/index.html",
+      "count": 522
+    },
+    {
+      "file": "fr/index.html",
+      "count": 522
+    }
+  ],
+  "preservedFiles": [
+    "downloads/connecting-the-dots-data-pack-v0.7.77.zip",
+    "downloads/connecting-the-dots-data-pack.zip",
+    "downloads/connecting-the-dots-data-pack-v0.7.83.zip",
+    "downloads/connecting-the-dots-data-pack-v0.7.82.zip",
+    "downloads/connecting-the-dots-data-pack-v0.7.80.zip",
+    "downloads/connecting-the-dots-data-pack-v0.7.81.zip",
+    "downloads/connecting-the-dots-data-pack-v0.7.85.zip",
+    "downloads/connecting-the-dots-data-pack-v0.7.84.zip",
+    "downloads/connecting-the-dots-data-pack-v0.7.86.zip",
+    "downloads/connecting-the-dots-data-pack-v0.7.79.zip",
+    "downloads/connecting-the-dots-data-pack-v0.7.78.zip",
+    "downloads/connecting-the-dots-data-pack-v0.7.87.zip",
+    "downloads/connecting-the-dots-data-pack-v0.7.88.zip",
+    "downloads/connecting-the-dots-data-pack-v0.7.89.zip",
+    "downloads/connecting-the-dots-data-pack-v0.7.90.zip",
+    "downloads/connecting-the-dots-data-pack-v0.7.91.zip",
+    "downloads/connecting-the-dots-data-pack-v0.7.92.zip",
+    "data/application_2026_snapshot.json",
+    "data/application_economic_map_2012_2026.csv",
+    "data/application_only_strings.csv",
+    "data/application_regions_2012.csv",
+    "data/application_regions_2026.csv",
+    "data/application_strings_2000.csv",
+    "data/applications_2000.csv",
+    "data/applications_2004.csv",
+    "data/applications_2012.csv",
+    "data/applications_2026.csv",
+    "data/applications_2026_aps_official_listing.csv",
+    "data/applications_2026_aps_official_provenance.json",
+    "data/applications_2026_strings_reveal.csv",
+    "data/aps_2026_applicant_distribution.csv",
+    "data/aps_2026_applicant_sector_distribution.csv",
+    "data/aps_2026_application_edges.csv",
+    "data/aps_2026_application_graph.json",
+    "data/aps_2026_current_analytics.csv",
+    "data/aps_2026_current_analytics.json",
+    "data/aps_2026_location_distribution.csv",
+    "data/aps_2026_record_observations.csv",
+    "data/aps_2026_region_distribution.csv",
+    "data/aps_2026_string_theme_distribution.csv",
+    "data/beyond_the_dot.csv",
+    "data/city_timeline.csv",
+    "data/contention_rounds.csv",
+    "data/control_levers.csv",
+    "data/cultural_blind_review_v2.csv",
+    "data/cultural_lexicon_review_queue_v2.csv",
+    "data/cultural_validation_sample.csv",
+    "data/dns_capabilities.csv",
+    "data/dns_oddities.csv",
+    "data/domain_governance_glossary.csv",
+    "data/domain_lifecycle.csv",
+    "data/early_dns.csv",
+    "data/economic_cases.csv",
+    "data/economic_metrics.csv",
+    "data/explorer_catalog.csv",
+    "data/explorer_events.csv",
+    "data/explorer_iana_reports.csv",
+    "data/explorer_nameservers.csv",
+    "data/governance_case_events.csv",
+    "data/governance_cases.csv",
+    "data/governance_locations.csv",
+    "data/iana_snapshot.json",
+    "data/key_facts.csv",
+    "data/lugano_vision.csv",
+    "data/namespace_dimensions.csv",
+    "data/portfolio_applications.csv",
+    "data/reader_observations_blank.csv",
+    "data/reader_validation_recording.csv",
+    "data/registry_concentration.csv",
+    "data/registry_concentration_context.csv",
+    "data/round_2000_curated.csv",
+    "data/round_2004.csv",
+    "data/round_2026.csv",
+    "data/rounds_summary.csv",
+    "data/rsp_geography_aug_2026.csv",
+    "data/rsp_tld_footprint.csv",
+    "data/sector_evolution_2012_2026.csv",
+    "data/sector_strategy_mix_2012_2026.csv",
+    "data/semantic_drift.csv",
+    "data/social_cases.csv",
+    "data/sources.csv",
+    "data/strange_internet.csv",
+    "data/success_framework.csv",
+    "data/tld_cultural_corpus.csv",
+    "data/tld_life_histories.csv",
+    "data/tld_models.csv",
+    "data/tld_top50_website_share.csv",
+    "data/tld_top50_zone_domains.csv",
+    "data/tld_universe.csv"
+  ],
+  "browser": [
+    {
+      "lang": "it",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "lang": "it",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "lang": "it",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "lang": "it",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "lang": "de",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "lang": "de",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "lang": "de",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "lang": "de",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "lang": "fr",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "lang": "fr",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "lang": "fr",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "lang": "fr",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    }
+  ],
+  "noJavaScript": [
+    "it",
+    "en",
+    "de",
+    "fr"
+  ],
+  "axeScans": 10,
+  "errors": [],
+  "humanParticipants": 0,
+  "passed": true
+}

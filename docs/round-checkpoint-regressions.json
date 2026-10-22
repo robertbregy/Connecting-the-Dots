@@ -1,0 +1,30 @@
+{
+  "checks": [
+    {
+      "check": "checkpoint",
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "check": "navigation",
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "check": "legacy",
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "check": "export-settled",
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "check": "export-cold",
+      "exitCode": 0,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,20 @@
+{
+  "checkedOn": "2026-10-22",
+  "pages": [
+    "en/index.html",
+    "index.html",
+    "applications/en/index.html",
+    "inside-the-round/en/index.html",
+    "it/index.html",
+    "applications/it/index.html",
+    "inside-the-round/it/index.html",
+    "de/index.html",
+    "applications/de/index.html",
+    "inside-the-round/de/index.html",
+    "fr/index.html",
+    "applications/fr/index.html",
+    "inside-the-round/fr/index.html"
+  ],
+  "oldAnchorsRetained": true,
+  "newExport": false
+}
