@@ -1,0 +1,57 @@
+name: CSV export isolation audit
+on:
+  push:
+    branches: ['qa/full-usability-20261022']
+    paths: ['.github/workflows/export-isolation-audit.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: '90d21e6059871c36148e1860d017e7409ed3f8bb'
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: |
+          timeout 150 npm ci --no-audit --no-fund --fetch-retries=1 --fetch-timeout=30000
+          timeout 180 npm install --no-save --package-lock=false --no-audit --no-fund --fetch-retries=1 --fetch-timeout=30000 playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Separate scroll-induced background loading from actual export requests
+        env:
+          CTD_TEST_BASE: http://127.0.0.1:8123/
+          CTD_AUDIT_OUTPUT: export-audit
+          CTD_ECONOMICS_QA: export-audit/economics
+        run: |
+          mkdir -p export-audit
+          python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/export-http.log 2>&1 &
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('scripts/audit_20261018_browser.cjs');s=p.read_text()
+          old="const contextDetail=page.locator('#lugano-governance-decisions details.editorialDetails');"
+          new="assert.equal(await page.locator('#lugano [data-i18n=\"luganoWhyTitle\"]').evaluate(n=>n.closest('details')),null); const contextDetail=page.locator('#lugano-city-comparison');"
+          assert s.count(old)==1;s=s.replace(old,new)
+          old='async function downloadCSV(page,requests){\n const before=requests.length;'
+          new='''async function downloadCSV(page,requests){
+           const beforeScroll=requests.length;
+           await page.locator('#explorerExport').evaluate(el=>el.scrollIntoView({block:'center',behavior:'instant'}));
+           await page.waitForLoadState('networkidle');
+           const background=requests.slice(beforeScroll);
+           console.log('EXPORT_BACKGROUND_BEFORE_ACTION '+JSON.stringify({url:page.url(),requests:background}));
+           const before=requests.length;'''
+          assert s.count(old)==1;s=s.replace(old,new)
+          Path('scripts/audit_20261018_export_isolated.cjs').write_text(s)
+          Path('export-audit/method.txt').write_text('Source commit 90d21e6. Site code unchanged. Obsolete Lugano test selector corrected. The export button is scrolled into view before the measurement; networkidle completes any viewport-triggered Atlas load. All original assertions, including zero HTTP requests during the export action, 980 expected names, provenance, changing filters and disabled empty exports, are retained.\n')
+          PY
+          node scripts/audit_20261018_export_isolated.cjs > export-audit/execution.log 2>&1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: full-audit-export-isolation
+          path: export-audit/
+          retention-days: 30
