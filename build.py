@@ -387,6 +387,16 @@ def validate_index() -> None:
 
 def main() -> None:
     subprocess.run(["python3", str(ROOT / "scripts" / "sync_publication.py")], check=True)
+    # Merge verified multilingual Helsinki update into the canonical translation source.
+    # Idempotent: rebuilding never duplicates text and never changes unrelated keys.
+    helsinki = json.loads((DATA / "helsinki_editorial_20261025.json").read_text(encoding="utf-8"))
+    translations_path = DATA / "translations.json"
+    translations = json.loads(translations_path.read_text(encoding="utf-8"))
+    for lang, values in helsinki["translations"].items():
+        translations[lang].update(values)
+    updated_translations = json.dumps(translations, ensure_ascii=False, indent=2) + "\n"
+    if translations_path.read_text(encoding="utf-8") != updated_translations:
+        translations_path.write_text(updated_translations, encoding="utf-8")
 
     archaeology_source = DATA / "applications_2012_pairs_source.txt"
     archaeology_outputs = [
