@@ -1,0 +1,33 @@
+{
+  "reviewed": "2026-10-25",
+  "sources": [
+    "https://www.icann.org/en/contracted-parties/registry-operators/services/registry-agreement-termination-service",
+    "https://www.iana.org/domains/root/db/helsinki.html"
+  ],
+  "translations": {
+    "en": {
+      "helsinkiCaseState": "Final ICANN non-transition decision · still delegated",
+      "helsinkiCaseFact": "On 21 October 2026 ICANN published its final determination not to transition .helsinki to a successor registry operator. The City of Helsinki notified voluntary termination on 28 May 2026; the preliminary determination was issued on 19 August. This concerns the succession process, not completed removal from the DNS root.",
+      "helsinkiCaseStatus": "Verified 25 October 2026: ICANN has decided not to transfer operations to a successor. IANA still lists .helsinki as Active and delegated to the City of Helsinki. Revocation and termination are not yet confirmed.",
+      "helsinkiCaseReading": "The decision offers a documented case of a city gTLD entering the termination process, but the public primary sources do not establish the city's economic motives. A final non-transition decision is not the same as completed revocation."
+    },
+    "it": {
+      "helsinkiCaseState": "Decisione ICANN definitiva sul mancato subentro · delega ancora attiva",
+      "helsinkiCaseFact": "Il 21 ottobre 2026 ICANN ha pubblicato la determinazione definitiva di non trasferire .helsinki a un registro successore. La Città di Helsinki aveva notificato la cessazione volontaria il 28 maggio 2026; la determinazione preliminare era del 19 agosto. Il provvedimento riguarda il mancato subentro, non l'avvenuta rimozione dalla root DNS.",
+      "helsinkiCaseStatus": "Verifica al 25 ottobre 2026: ICANN ha deciso di non trasferire la gestione a un successore. IANA indica ancora .helsinki come Active e delegato alla Città di Helsinki. Revoca della delega e cessazione contrattuale non sono ancora confermate.",
+      "helsinkiCaseReading": "Il caso documenta la cessazione di un progetto di dominio cittadino, ma le fonti primarie non consentono di attribuire motivazioni economiche alla scelta della Città. La decisione di non trasferire il registro non equivale alla revoca già eseguita."
+    },
+    "de": {
+      "helsinkiCaseState": "Endgültige ICANN-Entscheidung gegen einen Nachfolger · weiter delegiert",
+      "helsinkiCaseFact": "Am 21. Oktober 2026 veröffentlichte ICANN die endgültige Entscheidung, .helsinki nicht an einen nachfolgenden Registry-Betreiber zu übertragen. Die Stadt Helsinki hatte die freiwillige Beendigung am 28. Mai 2026 gemeldet; die vorläufige Entscheidung datiert vom 19. August. Dies bedeutet noch keine Entfernung aus der DNS-Root.",
+      "helsinkiCaseStatus": "Stand 25. Oktober 2026: ICANN hat den Übergang zu einem Nachfolger abgelehnt. IANA führt .helsinki weiterhin als Active und an die Stadt Helsinki delegiert. Widerruf der Delegation und Vertragsbeendigung sind noch nicht bestätigt.",
+      "helsinkiCaseReading": "Der Fall dokumentiert die Beendigung eines Stadt-Domainprojekts. Die Primärquellen belegen jedoch keine wirtschaftlichen Gründe für die Entscheidung. Die endgültige Ablehnung eines Nachfolgers ist nicht mit einer vollzogenen Delegationsaufhebung gleichzusetzen."
+    },
+    "fr": {
+      "helsinkiCaseState": "Décision définitive d'ICANN sans successeur · délégation toujours active",
+      "helsinkiCaseFact": "Le 21 octobre 2026, ICANN a publié sa décision définitive de ne pas transférer .helsinki à un opérateur de registre successeur. La Ville d'Helsinki avait notifié la résiliation volontaire le 28 mai 2026; la décision préliminaire date du 19 août. Il ne s'agit pas d'un retrait déjà effectué de la racine DNS.",
+      "helsinkiCaseStatus": "Vérification au 25 octobre 2026 : ICANN a décidé de ne pas désigner de successeur. IANA indique toujours .helsinki comme Active, délégué à la Ville d'Helsinki. La révocation de la délégation et la résiliation du contrat ne sont pas encore confirmées.",
+      "helsinkiCaseReading": "Cette affaire illustre la fin d'un projet de domaine municipal. Les sources primaires ne permettent toutefois pas d'attribuer une motivation économique à la décision de la Ville. La décision de non-transfert n'est pas une révocation déjà exécutée."
+    }
+  }
+}
