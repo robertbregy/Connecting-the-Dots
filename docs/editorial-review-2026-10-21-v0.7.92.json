@@ -45,7 +45,8 @@
     "E10": "Reader-first editorial navigation in four languages: reorder complete existing blocks, preserve every original body and fragment, add local indexes, breadcrumbs, contextual next links and direct research access. New UI copy contains no new research observations. Preserve all prior archives and research identifiers.",
     "E11": "22 October 2026, explicit user-requested Lugano layout correction: expose the unchanged motivations before governance; separate the unchanged city and .zuerich comparison behind an accurately named native disclosure in all four languages. Preserve all prior heading targets, links, research text, other sections, archives and research identifiers. AI-assisted source and browser review, not a human usability study.",
     "E12": "Expose the project definition and DNS foundation, make the Atlas entry and tool directly accessible with viewport-triggered loading, show the Lugano proposal, principles and conditions while retaining an optional roadmap, and add a visible interpretation guide before the unchanged historical Economics analysis. Preserve source text, datasets, archived research identities and original links. The current technical data package changes only its manifest runtime-asset fingerprint. Original validators and archival baselines remain unchanged.",
-    "E13": "Audit A01-A05: restore four semantic legacy destinations; separate CSV export from the two identified concurrent Atlas loads and retain a strict zero-request settled control; run regression checks independently; move the Home CTA before explanatory paragraphs without hiding them; use five curated primary links in Lugano and Sources; add short Economics and Sources orientation; remove only corrupted hidden-nav title attributes. Preserve translated evidence, source links, research identifiers and all data/package bytes. No change to global menu or research claims."
+    "E13": "Audit A01-A05: restore four semantic legacy destinations; separate CSV export from the two identified concurrent Atlas loads and retain a strict zero-request settled control; run regression checks independently; move the Home CTA before explanatory paragraphs without hiding them; use five curated primary links in Lugano and Sources; add short Economics and Sources orientation; remove only corrupted hidden-nav title attributes. Preserve translated evidence, source links, research identifiers and all data/package bytes. No change to global menu or research claims.",
+    "H03": "25 October 2026: Verify ICANN final non-transition decision for .helsinki against the official termination page and ongoing IANA Active delegation; retain all four reviewed translations in the committed canonical dictionary, stop mutating translations.json during builds, and preserve the immutable RR1/RR2 research snapshots and all previous technical archives."
   },
   "sourceInvariants": {
     "sections": [
@@ -1967,7 +1968,7 @@
     },
     "data/translations.json": {
       "baselineSHA256": "6c71a4516d657f571e6fd714540e15be56fc423984681c3c003d46bf0ee5fc49",
-      "sha256": "9c576286813add6e8b158ae54d2f819b3ee9160d84994fe27989ad19f108c04d",
+      "sha256": "1a4f9405b1f005b3d26544df27d5a96545b69b3671da36228cfc49146ee3d4d4",
       "rationaleIds": [
         "C01",
         "C02",
@@ -1994,7 +1995,8 @@
         "U01",
         "U03",
         "E09",
-        "E10"
+        "E10",
+        "H03"
       ]
     },
     "inside-the-round/de/index.html": {
@@ -2276,7 +2278,7 @@
     },
     "build.py": {
       "baselineSHA256": "1e375ef181f88942d94657f7cf210324ff3976f49d053aba8edb7a2ae16f86c0",
-      "sha256": "7daaebc68821879e4f36c5f36902639ca2915b2f7fde4a265eb0cacfd70f83d3",
+      "sha256": "7bccad301a7eb96988121fef92e92371c68653a0bfb4e55291d556e40e04fe23",
       "rationaleIds": [
         "T01",
         "CI03",
@@ -2286,7 +2288,8 @@
         "U01",
         "U03",
         "E09",
-        "E10"
+        "E10",
+        "H03"
       ]
     },
     "scripts/build_tld_market.py": {
