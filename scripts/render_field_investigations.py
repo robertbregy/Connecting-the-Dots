@@ -62,18 +62,27 @@ def load(root: Path = ROOT):
             prefix = {"primary": PRIMARY, "secondary": SECONDARY, "derived": DERIVED}.get(item["kind"])
             if not prefix or not item["url"].startswith(prefix):
                 raise ValueError("Unknown investigation source origin: " + item["id"])
-        if len(case.get("sections", [])) != {3: 4, 4: 6, 5: 5}[index]:
+        if len(case.get("sections", [])) != {3: 5, 4: 6, 5: 5}[index]:
             raise ValueError("Incomplete narrative evidence")
         for section in case["sections"]:
             if not section.get("sourceIds") or any(i not in sources for i in section["sourceIds"]):
                 raise ValueError("Narrative section lacks identifiable evidence")
         revisions = case.get("revisionHistory", [])
-        if (len(revisions) != (3 if index == 4 else 1)
+        if (len(revisions) != (3 if index == 4 else 2 if index == 3 else 1)
                 or revisions[-1]["date"] != case["revisedOn"]
                 or any(date.fromisoformat(x["date"]) > reviewed or not x.get("sourceIds")
                        or any(i not in sources for i in x["sourceIds"]) for x in revisions)
                 or any(revisions[i]["date"] > revisions[i + 1]["date"] for i in range(len(revisions) - 1))):
             raise ValueError("Dated revision history is not complete or evidence linked")
+        if index == 3:
+            if (revisions[0]["date"] != "2026-10-10" or
+                    revisions[1]["date"] != "2026-10-26" or
+                    revisions[1]["changeKey"] != "field03AppointmentRevision" or
+                    [section["titleKey"] for section in case["sections"]][-1] != "field03Section5Title" or
+                    case["sections"][-1].get("observationDate") != "2026-10-23" or
+                    not any(item["id"] == "io-appointed" and item["kind"] == "primary"
+                            for item in case["sources"])):
+                raise ValueError("23 October Independent Objector appointments require a dated primary-source follow-up")
         if len(case.get("updateTriggers", [])) < 2:
             raise ValueError("Investigation lacks follow-up conditions")
         if index == 4:
