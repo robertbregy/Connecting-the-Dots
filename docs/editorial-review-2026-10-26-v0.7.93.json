@@ -2173,7 +2173,7 @@
     },
     "src/index.web.html": {
       "baselineSHA256": "b6a65c951dc6c990671ca558580dbfaec97f33d6bf0b1050e83d1b9399c028c2",
-      "sha256": "96ca71f9635b335d19941e63978d44bbd7fb99681d00e1fc96143a8845a68f5c",
+      "sha256": "72830231befd653dc897b03129b72e2ff4b3b409273840d1099e8d694d38a8af",
       "rationaleIds": [
         "C01",
         "C02",
@@ -2188,12 +2188,13 @@
         "U01",
         "U03",
         "E09",
-        "E10"
+        "E10",
+        "T93"
       ]
     },
     "research/research_release_manifest.json": {
       "baselineSHA256": "c928f7857e4cf66ea98983ba13aad299dadd7d6674ab7b4b9e4a54fe65d031b7",
-      "sha256": "c770478b6095887ac1fbf5a5283f8af5bef888ab098e82bbbf87029e31075047",
+      "sha256": "d21cf3183aabf913208c2c886e59c23df8e79417e7a405c8a9d33cc0d9939025",
       "rationaleIds": [
         "C05",
         "T02",
@@ -2202,7 +2203,8 @@
         "U01",
         "U03",
         "E09",
-        "E10"
+        "E10",
+        "T93"
       ]
     },
     "data/sources.csv": {
@@ -2622,11 +2624,12 @@
     },
     "scripts/validate_multilingual.js": {
       "baselineSHA256": "1b784ead691d9f1300c67e5db337fa3e7819df3356e930a3f9bb816c1c051461",
-      "sha256": "356ab5f79810e86808a888fb3f092c253e326f47c67b566e5691e3ff15820bf5",
+      "sha256": "ee6a89d1f4023ad2552c99ac4d97e29b7f5e24790faded3543c5e835fd15a014",
       "rationaleIds": [
         "A19",
         "H01",
-        "U01"
+        "U01",
+        "T93"
       ]
     },
     "assets/aps-lazy.js": {
@@ -2930,38 +2933,42 @@
     },
     "research/reader-study/it/index.html": {
       "baselineSHA256": null,
-      "sha256": "6be6dc35be948dedac5e6888dad0e40a3e19397a2f8a4c73c3058c44b8b439ca",
+      "sha256": "aaf1aba6d0198b9c156a9f158766e361bba626738a6810b60bf8864f63b9b302",
       "rationaleIds": [
         "U03",
         "E09",
-        "E10"
+        "E10",
+        "T93"
       ]
     },
     "research/reader-study/en/index.html": {
       "baselineSHA256": null,
-      "sha256": "49c48f576ad41d18323678362ed96e675df51512611d59fda95dafb4b3d10d2d",
+      "sha256": "a23724c53396599ce6eca45719f916a9bf63f312808f95cbcfa23c43e395e6f6",
       "rationaleIds": [
         "U03",
         "E09",
-        "E10"
+        "E10",
+        "T93"
       ]
     },
     "research/reader-study/de/index.html": {
       "baselineSHA256": null,
-      "sha256": "4596333f120624a1bbb3a7e93cb96513919e25974d9fa63f2d05143c3edb8735",
+      "sha256": "45c40bf8e33c62012b260d23afc7a93b84cee4434e6a14191492a15ee36c2734",
       "rationaleIds": [
         "U03",
         "E09",
-        "E10"
+        "E10",
+        "T93"
       ]
     },
     "research/reader-study/fr/index.html": {
       "baselineSHA256": null,
-      "sha256": "6212337383eaa4279b103b42c627244eb9a5afafdd08515ec6ae30e2a90ba513",
+      "sha256": "740410d22e0f23c5118a84637e89e648623a90d3e6e774d86c2c3e19a5de5aae",
       "rationaleIds": [
         "U03",
         "E09",
-        "E10"
+        "E10",
+        "T93"
       ]
     },
     "scripts/reorder_economics.cjs": {
