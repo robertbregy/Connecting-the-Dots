@@ -1779,35 +1779,38 @@
     },
     "behind-the-round/it/sanctions-and-dns/index.html": {
       "baselineSHA256": "eb9f0663194f2a1d00f66f58f763b99f783aaea31d40584ba6d1aedae56b55d9",
-      "sha256": "9f6cd1c02ddd88a4febcd6e7fb963d277ed9057a1a7d67503cf81fc59d7b80fc",
+      "sha256": "3e17aabf505f39f22ffdd64096ccfaa83db49f860951f99d432150beb5df65ec",
       "rationaleIds": [
         "E05",
         "A19",
         "H01",
         "E10",
-        "E13"
+        "E13",
+        "IO26"
       ]
     },
     "behind-the-round/it/wdo-identity/index.html": {
       "baselineSHA256": "7be67c9e27b89266d950c64170534d10a20fd64b2a8809f05b9d7b7ce5ca944d",
-      "sha256": "fe5dd29211a29fa75feabd6b8f31642a17fb31fcbffbd5a8302b8dd7149f448d",
+      "sha256": "627908436fa7a5fe38665f648d196c4517eaf873f3166c1294e46734817ff9ea",
       "rationaleIds": [
         "E05",
         "A19",
         "H01",
         "E10",
-        "E13"
+        "E13",
+        "IO26"
       ]
     },
     "behind-the-round/it/who-controls-internet-access/index.html": {
       "baselineSHA256": "f7f8627965be401cc75ba0a240c610dfc8ef629ccac659230d0ddead0d885a71",
-      "sha256": "3a366ca71584f9e9afd0273655961b0ebb398011b3a71ac63e09d1efe869edca",
+      "sha256": "5c47c41baa81057b62a8a0ad26ccac55e8c424c01ec99b47efef1ff0ef69cb5a",
       "rationaleIds": [
         "E05",
         "A19",
         "H01",
         "E10",
-        "E13"
+        "E13",
+        "IO26"
       ]
     },
     "data/aps_2026_applicant_distribution.csv": {
@@ -1941,11 +1944,12 @@
     },
     "data/field_investigations.json": {
       "baselineSHA256": "b85bf886a91f522599b7a6666079b0f2d1b063a01a48684ff6cbe774fb85c929",
-      "sha256": "442eda113b52cbdbd5e2a5274d9fceb7cf13fd765c5cb6f820700765c2dea879",
+      "sha256": "ed7dfc93d7bb5ece76f34166e156d867711e2572ebaad783ac325157febe2af4",
       "rationaleIds": [
         "M03",
         "A19",
-        "H01"
+        "H01",
+        "T93"
       ]
     },
     "data/inside_the_round_events.json": {
@@ -1980,7 +1984,7 @@
     },
     "data/release_history.json": {
       "baselineSHA256": "e084001ed1150db3d2195e2e1c669808084dbc50535fcd2e5b5bf349bf8ebac7",
-      "sha256": "db594028757f9d6ad25da1448897c0d6eebe888fa4a7a6867b6383cc6769bfc9",
+      "sha256": "463c36a35cf428b7c20b19f8fa31e72537f1c654edaa4e5f98bf003209b2e1e6",
       "rationaleIds": [
         "C01",
         "C02",
@@ -1994,12 +1998,13 @@
         "U01",
         "U03",
         "E09",
-        "E10"
+        "E10",
+        "T93"
       ]
     },
     "data/translations.json": {
       "baselineSHA256": "6c71a4516d657f571e6fd714540e15be56fc423984681c3c003d46bf0ee5fc49",
-      "sha256": "9c576286813add6e8b158ae54d2f819b3ee9160d84994fe27989ad19f108c04d",
+      "sha256": "aacabca05badf44b5f13f1aba13673dc5a202fadc0228b2da73625f7a342339f",
       "rationaleIds": [
         "C01",
         "C02",
@@ -2026,12 +2031,13 @@
         "U01",
         "U03",
         "E09",
-        "E10"
+        "E10",
+        "T93"
       ]
     },
     "inside-the-round/de/index.html": {
       "baselineSHA256": "c7ad32d04ab943f95d934a41f96a94aa6b73e5955ec44fdefd30aeb956f028a2",
-      "sha256": "d22ccca935ec2388fa2fb80608d8bc766f9df5727ec4b2990cc75a8a65f68d37",
+      "sha256": "5b141486e37990924613a4376a261d5cf02ae5d7ca9df0ca123f9288a8718208",
       "rationaleIds": [
         "C02",
         "M03",
@@ -2040,7 +2046,8 @@
         "A19",
         "H01",
         "E10",
-        "E13"
+        "E13",
+        "T93"
       ]
     },
     "inside-the-round/en/index.html": {
@@ -2308,7 +2315,7 @@
     },
     "build.py": {
       "baselineSHA256": "1e375ef181f88942d94657f7cf210324ff3976f49d053aba8edb7a2ae16f86c0",
-      "sha256": "7daaebc68821879e4f36c5f36902639ca2915b2f7fde4a265eb0cacfd70f83d3",
+      "sha256": "f248a43a8168b4fc4e0bda5579d57e3ff94a009794c624c5cba9ca229fca5774",
       "rationaleIds": [
         "T01",
         "CI03",
@@ -2318,7 +2325,8 @@
         "U01",
         "U03",
         "E09",
-        "E10"
+        "E10",
+        "T93"
       ]
     },
     "scripts/build_tld_market.py": {
@@ -3115,9 +3123,10 @@
     "data/manifest.json": {
       "baselineSHA256": null,
       "rationaleIds": [
-        "E12"
+        "E12",
+        "T93"
       ],
-      "sha256": "640f918b185ec12e7d7457df817f7cf4af9fbb016a23c89204353b658bc6b9d6"
+      "sha256": "c206ed8fc6360b45e3db19026371c3678e71254189e636879222009dffde5ab7"
     },
     "scripts/audit_legacy_deeplinks.cjs": {
       "baselineSHA256": null,
@@ -3157,9 +3166,10 @@
     "explorer/index.html": {
       "baselineSHA256": null,
       "rationaleIds": [
-        "E13"
+        "E13",
+        "T93"
       ],
-      "sha256": "aa47d80ffd11f7b12a0d52c41ce419903e74f3dbabb164d3ddd764c392497be7"
+      "sha256": "7489a730f2a7ec9c539227e0cd31c52e49122e2d78c144def77f0d57b112e3c4"
     }
   },
   "sourceSections": {
