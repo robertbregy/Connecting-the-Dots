@@ -3232,6 +3232,46 @@
       "rationaleIds": [
         "T93"
       ]
+    },
+    "index.html": {
+      "baselineSHA256": null,
+      "sha256": "be02dafb43b18ce9422906f63a03c079ed675e679e0389689a4dc836ce4cbf72",
+      "rationaleIds": [
+        "IO26",
+        "T93"
+      ]
+    },
+    "it/index.html": {
+      "baselineSHA256": null,
+      "sha256": "2a210cf8f48abfa8efd875588a064a964dfebcde027e337692f9d8956c45fbdd",
+      "rationaleIds": [
+        "IO26",
+        "T93"
+      ]
+    },
+    "en/index.html": {
+      "baselineSHA256": null,
+      "sha256": "fa3ea0e7df61631ac03fa4a924548d7f9b4586075daf06e55b9e99c5eaed93d5",
+      "rationaleIds": [
+        "IO26",
+        "T93"
+      ]
+    },
+    "de/index.html": {
+      "baselineSHA256": null,
+      "sha256": "f0fc09e264132abcfa59fc99a948961d6d2deaaba958847f59b3b4f785467f99",
+      "rationaleIds": [
+        "IO26",
+        "T93"
+      ]
+    },
+    "fr/index.html": {
+      "baselineSHA256": null,
+      "sha256": "75743070fcbbd24f933b2030081fcbcfd7c3a08b1d2d8e869d8ad13ef5ebd25d",
+      "rationaleIds": [
+        "IO26",
+        "T93"
+      ]
     }
   },
   "sourceSections": {
