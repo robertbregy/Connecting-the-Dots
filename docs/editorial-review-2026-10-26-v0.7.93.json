@@ -1524,40 +1524,43 @@
     },
     "behind-the-round/de/wdo-identity/index.html": {
       "baselineSHA256": "ce6c244b49e2141e92ff6f083bcfa2d1122011a0c41e1d9e63c3a585b9432b35",
-      "sha256": "7f4eef87441c9babde40cb2c3a8fb23915ee48032eaecad6a4c1ea002ad2b3c4",
+      "sha256": "f569bc133524f80ff2fcab2eab01da061b0c61eb5c9d2ba94cc9968bc0b7b9ad",
       "rationaleIds": [
         "E05",
         "A19",
         "H01",
         "E10",
-        "E13"
+        "E13",
+        "IO26"
       ]
     },
     "behind-the-round/de/who-controls-internet-access/index.html": {
       "baselineSHA256": "0373ba3210ac9dc6770a60f801f9b422f2a574e15ca36757f36e2084dee47d11",
-      "sha256": "67e0ad69b58f54863a93c4940560839ded6d1ca5e5330cac578ad1f28e6c24db",
+      "sha256": "9a67ea0b1898e7413745cca4fa1892e0202744968462ec627c3bd15b866885b5",
       "rationaleIds": [
         "E05",
         "A19",
         "H01",
         "E10",
-        "E13"
+        "E13",
+        "IO26"
       ]
     },
     "behind-the-round/en/background-screening/index.html": {
       "baselineSHA256": "d34fe33fdbee89ac67c85a961651f700022362732f6ddb527fe36e7da87e46ad",
-      "sha256": "6f8d6428102a8b11d61643803bb34db5468bfa14e761ea3389905bdd4fe81a1e",
+      "sha256": "6b80d3b2a4b3fad0e7ec54e2f2799bb0aa0f2b4091ba15428c6aa1cba140da99",
       "rationaleIds": [
         "E05",
         "A19",
         "H01",
         "E10",
-        "E13"
+        "E13",
+        "IO26"
       ]
     },
     "behind-the-round/en/index.html": {
       "baselineSHA256": "af1ad762e8244e28c0749e8123c3ce61f0deac32e4c3e1dac3c55b41d8457d7b",
-      "sha256": "d49bd7746bcba7937c4a1487e41813808dcd3e7ae9aa6ae2be423c8e2ce758d6",
+      "sha256": "04f713d62637f04cf67256d2c746c6f2a17bb97c54a9897ccf6257ed5ad6d8eb",
       "rationaleIds": [
         "C02",
         "M03",
@@ -1566,23 +1569,25 @@
         "A19",
         "H01",
         "E10",
-        "E13"
+        "E13",
+        "IO26"
       ]
     },
     "behind-the-round/en/objectors-eoi/index.html": {
       "baselineSHA256": "e64d35945aaacb3ddb153109c41927381304e83993e14dbc22d348c373c4a5a1",
-      "sha256": "7c10cfd6066f052795ac13ec6e6728dbc8124c920c4a4afb5d7352f516c7db60",
+      "sha256": "0eeb5ae1b65ef2834969b1331a84077f9ccc7ed36695304ab91fd7b2e5cd9ef8",
       "rationaleIds": [
         "E05",
         "A19",
         "H01",
         "E10",
-        "E13"
+        "E13",
+        "IO26"
       ]
     },
     "behind-the-round/en/replacement-strings/index.html": {
       "baselineSHA256": "67a79cb108812134a57279c8f593448bd0c776cb318e84cd40a61b0beccffaf2",
-      "sha256": "4e1ea2658f06ad43958606d3f11ed06e9ca56c2c1ea677f0f3f8b719bd3a6f09",
+      "sha256": "11b19557920f5f765659375ca1e508c928664c5f860deb26e84e33b30f6075ab",
       "rationaleIds": [
         "M03",
         "M04",
@@ -1590,51 +1595,56 @@
         "A19",
         "H01",
         "E10",
-        "E13"
+        "E13",
+        "IO26"
       ]
     },
     "behind-the-round/en/sanctions-and-dns/index.html": {
       "baselineSHA256": "4a89ca7ff3683cab2c635a226b4edab871f8d9852fb54a2d802ea5538b3642eb",
-      "sha256": "70eb1a98fffa8814486934ef8bb1954b15275927fab04b3bca8aecd9af6e01b4",
+      "sha256": "352b8f463991963149362a073d7def44949d752671855c3c1463a154bac0f579",
       "rationaleIds": [
         "E05",
         "A19",
         "H01",
         "E10",
-        "E13"
+        "E13",
+        "IO26"
       ]
     },
     "behind-the-round/en/wdo-identity/index.html": {
       "baselineSHA256": "e3620d3be65315e8c7ab7c445cf64c7f2a195a7baff4aaaf84b67ad9978f6d1c",
-      "sha256": "ce487b54842a385e00aeea9cb5991bf4e2fe9d7f83237dbd669a5e2f1d16a86c",
+      "sha256": "38fcb71a15c54a6e2237bc26de52ba24a6e9d18864090801824dc50d3cfa1b6b",
       "rationaleIds": [
         "E05",
         "A19",
         "H01",
         "E10",
-        "E13"
+        "E13",
+        "IO26"
       ]
     },
     "behind-the-round/en/who-controls-internet-access/index.html": {
       "baselineSHA256": "ef63c49fbd9fee82b025fb8ba908fbff4f026f03c4d00922d720a8ca0e88560c",
-      "sha256": "f34b097dbecebc8709b73faa2aa73b55fa441829dce83db93d27868712e0abe1",
+      "sha256": "e0dfb697a2d9844f00baab734fdcc42a37d1d708e382fa6b7f6c3e8e468d4802",
       "rationaleIds": [
         "E05",
         "A19",
         "H01",
         "E10",
-        "E13"
+        "E13",
+        "IO26"
       ]
     },
     "behind-the-round/fr/background-screening/index.html": {
       "baselineSHA256": "3d1fc6e5478ca30df2e7ef2000015f13605919007145e1b573851adf3e6f4ee4",
-      "sha256": "5051040fdc11194c3e8ed1ce587a712b2d6a30c659cf367d12c028bbb44270c2",
+      "sha256": "c4b67a23cd83a84dfc5b39cfc239bab2ace71fa1838c8cdd710a61f5388a7342",
       "rationaleIds": [
         "E05",
         "A19",
         "H01",
         "E10",
-        "E13"
+        "E13",
+        "IO26"
       ]
     },
     "behind-the-round/fr/index.html": {
