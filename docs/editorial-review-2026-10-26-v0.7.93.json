@@ -3190,6 +3190,48 @@
         "T93"
       ],
       "sha256": "9fd300f389957085a7e93db1c7be0471a521597932df179c686288087e57a72f"
+    },
+    "data/editorial_io_appointments_20261023.json": {
+      "baselineSHA256": null,
+      "sha256": "8e9241253468ec72db6e63213764dc4fc99329fc31cb30318987d1b047c3cc7c",
+      "rationaleIds": [
+        "IO26"
+      ]
+    },
+    "data/helsinki_editorial_20261025.json": {
+      "baselineSHA256": null,
+      "sha256": "be0ffa12b3e8160627d7666543837263151488efba3b17403e7608cc92cb1a91",
+      "rationaleIds": [
+        "H25"
+      ]
+    },
+    "scripts/render_field_investigations.py": {
+      "baselineSHA256": null,
+      "sha256": "585c915433d2f60cccd50a4819fff91136ba964b1b1df3e48a925f73d11fc6c1",
+      "rationaleIds": [
+        "IO26"
+      ]
+    },
+    "downloads/connecting-the-dots-data-pack-v0.7.93.sha256": {
+      "baselineSHA256": null,
+      "sha256": "847cdc4439ec576a2b63aa929bec6a05182ee271c8d0c60d3033396e45a5d701",
+      "rationaleIds": [
+        "T93"
+      ]
+    },
+    "sitemap.xml": {
+      "baselineSHA256": null,
+      "sha256": "ed69d43f473c275dcc13b8b4d4378576ce8f06bf77ff826c698c51a2707de3c7",
+      "rationaleIds": [
+        "T93"
+      ]
+    },
+    "downloads/connecting-the-dots-data-pack-v0.7.93.zip": {
+      "baselineSHA256": null,
+      "sha256": "6b6f483413408e43c7362d8ab47af926ed53f213f576e0d7c42f301b376e7d35",
+      "rationaleIds": [
+        "T93"
+      ]
     }
   },
   "sourceSections": {
