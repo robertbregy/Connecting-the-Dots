@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "editorialLayer": "2026-round-investigations-not-part-of-frozen-RR1",
-  "lastReviewed": "2026-10-18",
+  "lastReviewed": "2026-10-26",
   "classification": "source-backed-editorial-field-notes",
   "legacyCases": "data/behind_round_stories.json",
   "episodes": [
@@ -11,9 +11,9 @@
       "slug": "objectors-eoi",
       "number": 3,
       "publishedOn": "2026-10-10",
-      "revisedOn": "2026-10-10",
+      "revisedOn": "2026-10-26",
       "periodStart": "2026-05-30",
-      "periodEnd": "2026-06-30",
+      "periodEnd": "2026-10-23",
       "state": "documented-with-open-questions",
       "titleKey": "field03Title",
       "descriptionKey": "field03Lead",
@@ -48,6 +48,16 @@
             "io-role",
             "io-incident"
           ]
+        },
+        {
+          "titleKey": "field03Section5Title",
+          "observationDate": "2026-10-23",
+          "observationLabelKey": "field03AppointmentDate",
+          "bodyKey": "field03Section5Body",
+          "sourceIds": [
+            "io-appointed",
+            "io-incident"
+          ]
         }
       ],
       "sources": [
@@ -68,11 +78,17 @@
           "url": "https://www.icann.org/en/system/files/files/2026-round-independent-objectors-eoi-09mar26-en.pdf",
           "kind": "primary",
           "labelKey": "field03SourceRole"
+        },
+        {
+          "id": "io-appointed",
+          "url": "https://www.icann.org/en/announcements/details/icann-announces-independent-objectors-for-the-2026-round-23-10-2026-en",
+          "kind": "primary",
+          "labelKey": "field03SourceAppointment"
         }
       ],
       "updateTriggers": [
-        "A new ICANN incident report identifies the root cause or the effect on respondents.",
-        "ICANN confirms whether the Independent Objector roles have been filled."
+        "A new ICANN incident report quantifies the impact of the June selection failures or explains the premature portal closure.",
+        "The official objection docket discloses whether the appointed Independent Objectors filed objections in the 2026 Round."
       ],
       "revisionHistory": [
         {
@@ -82,6 +98,14 @@
             "io-incident",
             "io-extension",
             "io-role"
+          ]
+        },
+        {
+          "date": "2026-10-26",
+          "changeKey": "field03AppointmentRevision",
+          "sourceIds": [
+            "io-appointed",
+            "io-incident"
           ]
         }
       ]
