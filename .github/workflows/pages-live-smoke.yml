@@ -64,7 +64,7 @@ jobs:
                               "behind-the-round/"+lang+"/index.html",
                               "inside-the-round/"+lang+"/index.html"])
               for slug in ("sanctions-and-dns","who-controls-internet-access",
-                           "replacement-strings","background-screening"):
+                           "objectors-eoi","replacement-strings","background-screening"):
                   targets.append("behind-the-round/"+lang+"/"+slug+"/index.html")
 
           # The HTML can be current while a separately served stylesheet, runtime
