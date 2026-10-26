@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reviewId": "city-investigations-helsinki-io-2026-10-26-v0.7.93",
-  "status": "pending-review",
+  "status": "reviewed",
   "reviewedOn": "2026-10-26",
   "publicationVersion": "0.7.93",
   "baselineCommit": "65e0fbe2080c2ee841e8abc01e1ddec113a74b8e",
@@ -3543,13 +3543,18 @@
       "sha256": "659be8be247a3062a4c1a8dcb55bc875b0967eac745531203e156bf869cd763a"
     }
   },
-  "parentReview": "docs/editorial-review-2026-10-20-v0.7.90.json",
+  "parentReview": "docs/editorial-review-2026-10-21-v0.7.92.json",
   "priorTechnicalBaseline": "ad9cb0de2e5f8c0ea9771509f003e4f3011ddcc1",
   "verification": {
-    "scope": "Four-language six-step order, original text and source links preserved; browser tests and exact live-byte check recorded separately.",
+    "scope": "26 October 2026 v0.7.93: dated, primary-source-backed .helsinki and Independent Objector updates; committed four-language content and 57 previously reviewed changed files fingerprinted against repository bytes, plus 11 new evidence/generated targets; immutability inventories retained; full GitHub CI/Pages gates to be verified separately.",
     "humanParticipants": 0,
     "archivedResearch": "RR1/RR2 unchanged; fifteen prior technical ZIPs protected",
-    "priorReviewSha256": "1ef10feb08c361df535838ac5fd494ef3902f23da644c36ebd4604e66ea2b08c"
+    "priorReviewSha256": "1ef10feb08c361df535838ac5fd494ef3902f23da644c36ebd4604e66ea2b08c",
+    "reviewType": "AI-assisted exact-file SHA-256 and source-delta review; not independent human participant testing",
+    "reviewedPaths": 187,
+    "changedPriorReviewedPathsChecked": 57,
+    "releaseSourceHead": "7a43068e3bd1d5aba0168cf4c97f1740ec69c4bc",
+    "browserAcceptance": "must pass independently on main"
   },
   "readerFirstEvidence": {
     "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
