@@ -394,6 +394,10 @@ def main() -> None:
     translations = json.loads(translations_path.read_text(encoding="utf-8"))
     for lang, values in helsinki["translations"].items():
         translations[lang].update(values)
+    # Dated follow-up to Field Note 03; keep article text and release notes multilingual.
+    io_update = json.loads((DATA / "editorial_io_appointments_20261023.json").read_text(encoding="utf-8"))
+    for lang, values in io_update["translations"].items():
+        translations[lang].update(values)
     updated_translations = json.dumps(translations, ensure_ascii=False, indent=2) + "\n"
     if translations_path.read_text(encoding="utf-8") != updated_translations:
         translations_path.write_text(updated_translations, encoding="utf-8")
