@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reviewId": "jas-quality-nissay-replacement-2026-10-30-v0.7.94",
-  "status": "pending-review",
+  "status": "reviewed",
   "reviewedOn": "2026-10-30",
   "publicationVersion": "0.7.94",
   "baselineCommit": "65e0fbe2080c2ee841e8abc01e1ddec113a74b8e",
@@ -3306,7 +3306,7 @@
     },
     "downloads/connecting-the-dots-data-pack-v0.7.94.zip": {
       "baselineSHA256": null,
-      "sha256": null,
+      "sha256": "e3dd06b26f29e85d32efb4aff8f204fe49203dc3ede3851bde004d10c4fb2e6e",
       "rationaleIds": [
         "T94"
       ]
@@ -3595,7 +3595,13 @@
     "humanParticipants": 0,
     "archivedResearch": "RR1/RR2 and APS 11 October frozen; source-only living editorial layer",
     "baseMain": "4417e1baa091e9bfde7e87308917cc0964647f48",
-    "reviewedFiles": "pending"
+    "reviewedFiles": "pending",
+    "reviewedPaths": 185,
+    "changedPathsWithActualSourceHashes": 59,
+    "unchangedCanonicalSectionBodySinceV0793": true,
+    "currentArchiveSHA256": "e3dd06b26f29e85d32efb4aff8f204fe49203dc3ede3851bde004d10c4fb2e6e",
+    "reviewType": "AI-assisted exact SHA-256 and official-source review; not independent human-subject research",
+    "qualityGates": "A/B continuity and browser/WCAG must pass on candidate before main merge"
   },
   "readerFirstEvidence": {
     "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
@@ -3603,7 +3609,7 @@
     "browserReport": "docs/reader-first-verification.json",
     "humanParticipants": 0
   },
-  "approvedCandidateSHA256": "358c191787d700a39004441b359746615d84e2937838947e31707ab560944cbd",
+  "approvedCandidateSHA256": "b55ced71d831cd59665fe714ae10863b407e0266d24a3709eee097de776c67b4",
   "supplementalLayoutReview": {
     "reviewedOn": "2026-10-22",
     "sourceCommit": "087ef96b7f842532bf82d67a97889a48a57c7b15",
