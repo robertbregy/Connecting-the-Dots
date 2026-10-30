@@ -52,7 +52,8 @@
     "Q94": "ICANN 26 October 2026: appoint JAS Global Advisors as 2026 Round Quality Control provider for procedural evaluation consistency, without asserting any individual applicant approval.",
     "N94": "ICANN registry-termination register 26 October 2026, IANA active .nissay record verified 30 October: voluntary termination notice 8 September, preliminary decision not to transition, comment period until 25 November; no claim of final termination, root revocation or economic motive.",
     "R94": "ICANN replacement calendar 8–21 October 2026: choice window closed on 21 October, public string confirmation scheduled for 17 November; no inferred individual choices or changes to frozen APS snapshot.",
-    "T94": "Editorial site v0.7.94 only, including four languages, independent source register, unchanged existing 43 routes, prior ZIPs, RR1 and RR2. Source and built-file fingerprints must be recorded after inspection and before merging."
+    "T94": "Editorial site v0.7.94 only, including four languages, independent source register, unchanged existing 43 routes, prior ZIPs, RR1 and RR2. Source and built-file fingerprints must be recorded after inspection and before merging.",
+    "QA94": "Scope the 22 Oct usability acceptance to protected canonical editorial source, retained anchors and source links, versioned asset continuity and immutable RR1/RR2, instead of rejecting explicitly source-reviewed later translations or current ZIP metadata."
   },
   "sourceInvariants": {
     "sections": [
@@ -3224,9 +3225,11 @@
     "scripts/usability_remediation_qa.cjs": {
       "baselineSHA256": null,
       "rationaleIds": [
-        "E13"
+        "E13",
+        "T94",
+        "QA94"
       ],
-      "sha256": "bc45d15493b789ad81fea225ca5737e4a28b9a2c3b175cbfac3ae85fbfc88f4b"
+      "sha256": "19648638bf50fa1bfa0cedbe473d0a6ca528f9e372ea51635feb81070eae597e"
     },
     "scripts/run_browser_regressions.py": {
       "baselineSHA256": null,
@@ -3601,7 +3604,8 @@
     "unchangedCanonicalSectionBodySinceV0793": true,
     "currentArchiveSHA256": "e3dd06b26f29e85d32efb4aff8f204fe49203dc3ede3851bde004d10c4fb2e6e",
     "reviewType": "AI-assisted exact SHA-256 and official-source review; not independent human-subject research",
-    "qualityGates": "A/B continuity and browser/WCAG must pass on candidate before main merge"
+    "qualityGates": "A/B continuity and browser/WCAG must pass on candidate before main merge",
+    "browserAcceptance": "Re-run entire original full browser/WCAG audit after source-guard-aware usability QA update; no static guard bypass or silent output rewriting."
   },
   "readerFirstEvidence": {
     "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
