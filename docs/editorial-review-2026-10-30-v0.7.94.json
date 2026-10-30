@@ -2161,7 +2161,7 @@
     },
     "research/connecting-the-dots-working-paper-v1.html": {
       "baselineSHA256": "5599e8f890e732a80bfc0852c686465b69309f055f4853673d55fb8725bc9948",
-      "sha256": "8603ff5f151e0ff162c792090e89d66994160eacc92329eddf210a11d9c8c511",
+      "sha256": "73aabaee4c348ae4b81aa59426ade37bf37652d1c07e55af56d9f3f4161a2075",
       "rationaleIds": [
         "C05",
         "M01",
@@ -2176,12 +2176,13 @@
         "U03",
         "E09",
         "E10",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "research/connecting-the-dots-working-paper-v1.md": {
       "baselineSHA256": "c02a5dd4dbc8056fdc4e8efaebf2ee2b3cb9c94577e0fa98b63cfe65dcb185d7",
-      "sha256": "1cb68d97ad566ec1479cc5a632d83eb3e598c1bf77230657d686c63e07f5c1b3",
+      "sha256": "5c6ef988c585824c6ed1a5b922488a07f9cd56e3f90e1dc34983a13e49b8e740",
       "rationaleIds": [
         "C05",
         "M01",
@@ -2196,12 +2197,13 @@
         "U03",
         "E09",
         "E10",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "research/index.html": {
       "baselineSHA256": "e9a26de35e6eada49de00b1d9df234d3f67c8e40f93591134477a064c0694245",
-      "sha256": "074a343f99e0ad2d55a1edb4a9f323c4b9fb28a4189482b5e1145eb5d8d08cec",
+      "sha256": "54f6380dba6dee8dc5ad8f5e712f10a9204d0aa5e5d42a032b8c551341ac274a",
       "rationaleIds": [
         "C05",
         "T02",
@@ -2212,12 +2214,13 @@
         "E09",
         "E10",
         "E13",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "src/index.web.html": {
       "baselineSHA256": "b6a65c951dc6c990671ca558580dbfaec97f33d6bf0b1050e83d1b9399c028c2",
-      "sha256": "72830231befd653dc897b03129b72e2ff4b3b409273840d1099e8d694d38a8af",
+      "sha256": "b55ced71d831cd59665fe714ae10863b407e0266d24a3709eee097de776c67b4",
       "rationaleIds": [
         "C01",
         "C02",
@@ -2233,12 +2236,13 @@
         "U03",
         "E09",
         "E10",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "research/research_release_manifest.json": {
       "baselineSHA256": "c928f7857e4cf66ea98983ba13aad299dadd7d6674ab7b4b9e4a54fe65d031b7",
-      "sha256": "d21cf3183aabf913208c2c886e59c23df8e79417e7a405c8a9d33cc0d9939025",
+      "sha256": "eeef570e290df01ec0e61aa005150ae8b651c999dd436979333be294495e782f",
       "rationaleIds": [
         "C05",
         "T02",
@@ -2248,7 +2252,8 @@
         "U03",
         "E09",
         "E10",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "data/sources.csv": {
@@ -2360,13 +2365,14 @@
     },
     "scripts/release_check.py": {
       "baselineSHA256": "4ccca58dacc30d5347ef710871d7c3debbe4d21a44bb3c269307d5a93ed19304",
-      "sha256": "c16c9c63baf65c1b65315d4b8b8ed554ec89b9857452bb5dde0191bae4ca1869",
+      "sha256": "c7d14882554752ff13c797c40ca2e72bb80a809a99c5fc5a0700d322ed5b534a",
       "rationaleIds": [
         "T01",
         "CI03",
         "T02",
         "A19",
-        "H01"
+        "H01",
+        "T94"
       ]
     },
     "build.py": {
@@ -2981,42 +2987,46 @@
     },
     "research/reader-study/it/index.html": {
       "baselineSHA256": null,
-      "sha256": "aaf1aba6d0198b9c156a9f158766e361bba626738a6810b60bf8864f63b9b302",
+      "sha256": "3738f922bc0e3b9cc64422cded0fd45f618c08ecf731fd692100bf6b83ba230d",
       "rationaleIds": [
         "U03",
         "E09",
         "E10",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "research/reader-study/en/index.html": {
       "baselineSHA256": null,
-      "sha256": "a23724c53396599ce6eca45719f916a9bf63f312808f95cbcfa23c43e395e6f6",
+      "sha256": "3218944ded4c8f5da98bf0b503915b4257acfe4894cd08d349b1b227f682c7e5",
       "rationaleIds": [
         "U03",
         "E09",
         "E10",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "research/reader-study/de/index.html": {
       "baselineSHA256": null,
-      "sha256": "45c40bf8e33c62012b260d23afc7a93b84cee4434e6a14191492a15ee36c2734",
+      "sha256": "ca255fbeca654d85f97719bdaf35717cb8a4f59cde2bb30e949c45cf64d2bdf6",
       "rationaleIds": [
         "U03",
         "E09",
         "E10",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "research/reader-study/fr/index.html": {
       "baselineSHA256": null,
-      "sha256": "740410d22e0f23c5118a84637e89e648623a90d3e6e774d86c2c3e19a5de5aae",
+      "sha256": "86b6305db162a80e1de62dd7b9d2d4c6dff61033274faffe2f1423a7bec2b1ed",
       "rationaleIds": [
         "U03",
         "E09",
         "E10",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "scripts/reorder_economics.cjs": {
@@ -3271,9 +3281,10 @@
     },
     "sitemap.xml": {
       "baselineSHA256": null,
-      "sha256": "ed69d43f473c275dcc13b8b4d4378576ce8f06bf77ff826c698c51a2707de3c7",
+      "sha256": "a012871dd2510d7e08c81eda79382decb440723c426aeb0a55b138a96359a3f4",
       "rationaleIds": [
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "downloads/connecting-the-dots-data-pack-v0.7.93.zip": {
