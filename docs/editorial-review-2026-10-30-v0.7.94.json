@@ -2024,7 +2024,7 @@
     },
     "data/release_history.json": {
       "baselineSHA256": "e084001ed1150db3d2195e2e1c669808084dbc50535fcd2e5b5bf349bf8ebac7",
-      "sha256": "463c36a35cf428b7c20b19f8fa31e72537f1c654edaa4e5f98bf003209b2e1e6",
+      "sha256": "eda7b8bf5a2e2e3b39da31169d62f8f9535c0c2bbfa64006cad2c752823cd23c",
       "rationaleIds": [
         "C01",
         "C02",
@@ -2039,12 +2039,13 @@
         "U03",
         "E09",
         "E10",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "data/translations.json": {
       "baselineSHA256": "6c71a4516d657f571e6fd714540e15be56fc423984681c3c003d46bf0ee5fc49",
-      "sha256": "7c6b53ca3c0299a1d503921f42431f1744de79a59818d0e7f09d9160b5072240",
+      "sha256": "19f607bd01c97e86e6ed572e1a8205df8fb14af766a515b6a79b0ae367cfc16b",
       "rationaleIds": [
         "C01",
         "C02",
@@ -2072,12 +2073,13 @@
         "U03",
         "E09",
         "E10",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "inside-the-round/de/index.html": {
       "baselineSHA256": "c7ad32d04ab943f95d934a41f96a94aa6b73e5955ec44fdefd30aeb956f028a2",
-      "sha256": "2748e7e4f41d888af756d4c7433223b8e73a7e1dc9f254036317efe447b68140",
+      "sha256": "4e5bdda52c8aee07c510ed414324dd5e36831ae815a8475be089d02a00fbbf5e",
       "rationaleIds": [
         "C02",
         "M03",
@@ -2087,12 +2089,13 @@
         "H01",
         "E10",
         "E13",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "inside-the-round/en/index.html": {
       "baselineSHA256": "bab16d3d558fc800079f4c3c1aebfc64e71ae97cc6c9b6aa236d09a12a3b4db7",
-      "sha256": "89dbb22dee863cf6efc3a1756f15cc0557ef221747741880724597b70857398f",
+      "sha256": "5a55db096d010577c8c3ef34cf23dacc9b0c56b034a33977aaae0ccb1b95ce63",
       "rationaleIds": [
         "C02",
         "M03",
@@ -2102,12 +2105,13 @@
         "H01",
         "E10",
         "E13",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "inside-the-round/fr/index.html": {
       "baselineSHA256": "709bdc1f3e0dda04e169f2287d5db8b55637aef6ef32b5df823685278cd1df6d",
-      "sha256": "643decd9895fc8b5baa535d3c8eb115b24939e8baac8943d8cdaeda05511410d",
+      "sha256": "29c69f84d4343db091646467b10f8fbe3bdadce218e5c2cf7ae8a20975831f6a",
       "rationaleIds": [
         "C02",
         "M03",
@@ -2117,12 +2121,13 @@
         "H01",
         "E10",
         "E13",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "inside-the-round/it/index.html": {
       "baselineSHA256": "0356f7c2cd5d1d30d584ef35530e8c6445bf66569c4684e5599ff94965b23bf3",
-      "sha256": "428b36236030a5ade02547c9babb4eec623aa0727f313e2d4f7e5066f0262608",
+      "sha256": "6d2e7c51a08a0655aa2baeb3e989e3eb6011ef017973207c508ecbbbfd5e428d",
       "rationaleIds": [
         "C02",
         "M03",
@@ -2132,12 +2137,13 @@
         "H01",
         "E10",
         "E13",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "publication.json": {
       "baselineSHA256": "b5d225fa96dc9573b2dac3c18e39236c2e570c65aaa08afdbfedbdc0292368ef",
-      "sha256": "8255fd05fe14b54241fc17544e8fb4a5e2b40b9b670ece22b4b5324b42454737",
+      "sha256": "03cc77aad18405dacd1be31c56225cd793b7a85e2a83ff2b724ae96535c3ac06",
       "rationaleIds": [
         "C01",
         "C02",
@@ -2149,7 +2155,8 @@
         "U03",
         "E09",
         "E10",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "research/connecting-the-dots-working-paper-v1.html": {
@@ -2591,7 +2598,7 @@
     },
     "package-lock.json": {
       "baselineSHA256": "3580e7fa5485bd55e532e7bc5644dfa0e48c1bf9769fab8108722ee1dd5ae708",
-      "sha256": "7cb92f3af0e40cf4338cfc355088a23b4978df0a0586d487c70fd6c55a3976c9",
+      "sha256": "bca896b553801bdf0e35906045c2df451d8af915d2453ce0e9ae361860555ea6",
       "rationaleIds": [
         "A19",
         "H01",
@@ -2599,12 +2606,13 @@
         "U03",
         "E09",
         "E10",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "package.json": {
       "baselineSHA256": "e317eceaaca55386ac43bab966e1479052d93331e204104ce5d36c107e43f28f",
-      "sha256": "6749dad06583d55d696cff3df7630f248f56da2a841342b75d9c295dff86ff5f",
+      "sha256": "1dc7e74d56ec306b09ccc577931bfb89a14f3514ecb7a705cbd9ebfdf7c2b934",
       "rationaleIds": [
         "A19",
         "H01",
@@ -2612,12 +2620,13 @@
         "U03",
         "E09",
         "E10",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "research/README.md": {
       "baselineSHA256": "e73bf4e607e4cbc95be972f81584215e079c81f5d835592176dbfa16a4ee6c77",
-      "sha256": "66a0d6b34c5073852afd4f9a3353b3f1529e35101c659139080b6e033e0d1886",
+      "sha256": "5583b0600daa22724cfc6f70fb17487e42320c55f0717d0e4fd017cf93af083e",
       "rationaleIds": [
         "A19",
         "H01",
@@ -2625,7 +2634,8 @@
         "U03",
         "E09",
         "E10",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "scripts/assemble_data.js": {
@@ -3226,9 +3236,10 @@
       "baselineSHA256": null,
       "rationaleIds": [
         "E13",
-        "T93"
+        "T93",
+        "T94"
       ],
-      "sha256": "9fd300f389957085a7e93db1c7be0471a521597932df179c686288087e57a72f"
+      "sha256": "9904cce2be78e4f6ce7c943a7f6e64b1e4c93ca6b462a7e10ff2e2b63c0454e3"
     },
     "data/editorial_io_appointments_20261023.json": {
       "baselineSHA256": null,
@@ -3291,7 +3302,7 @@
     },
     "downloads/connecting-the-dots-data-pack-v0.7.94.sha256": {
       "baselineSHA256": null,
-      "sha256": null,
+      "sha256": "b44c9b5c32e12c139bab1b78be2f0416e60fcc4bcc0ec29a5a205eef238a8c5a",
       "rationaleIds": [
         "T94"
       ]
