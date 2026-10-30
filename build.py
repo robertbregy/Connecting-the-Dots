@@ -221,6 +221,27 @@ def build_index() -> None:
     if html.count(story_marker) != 1:
         raise SystemExit("Behind the Round field-note placeholder missing or duplicated")
     html = html.replace(story_marker, render_stories(ROOT))
+    # Sourced, native cemetery comparison; the original 21 source sections stay intact.
+    nissay_close = '</article></div><div class="note" data-i18n="cemeteryCaveat">'
+    if html.count(nissay_close) != 1 or 'id="nissay-termination"' in html:
+        raise SystemExit('Missing or duplicate cemetery insertion anchor')
+    nissay_markup = (
+        '<article class="helsinkiCase nissayCase" id="nissay-termination" aria-label=".nissay">'
+        '<div class="panelTop"><span class="ep factBadge" data-i18n="fact"></span>'
+        '<span class="ep readingBadge" data-i18n="reading"></span>'
+        '<span class="stateBadge" data-i18n="nissayCaseState"></span></div>'
+        '<h3>.nissay</h3><p data-i18n="nissayCaseFact"></p>'
+        '<div class="note"><b data-i18n="nissayCaseState"></b>'
+        '<p data-i18n="nissayCaseStatus"></p></div>'
+        '<p class="small" data-i18n="nissayCaseReading"></p>'
+        '<div class="srcs">'
+        '<a href="https://www.icann.org/en/contracted-parties/registry-operators/services/registry-agreement-termination-service" target="_blank" rel="noopener noreferrer">'
+        '<span data-i18n="nissaySourceIcann"></span> ↗</a>'
+        '<a href="https://www.iana.org/domains/root/db/nissay.html" target="_blank" rel="noopener noreferrer">'
+        '<span data-i18n="nissaySourceIana"></span> ↗</a>'
+        '</div></article>'
+    )
+    html = html.replace(nissay_close, '</article>' + nissay_markup + '</div><div class="note" data-i18n="cemeteryCaveat">', 1)
     # The original 21 editorial source sections remain frozen for A/B parity.
     # Append the new dated investigation to the generated document only,
     # keeping the canonical legacy editorial text byte-for-byte intact.
@@ -396,6 +417,16 @@ def main() -> None:
             for key, value in keys.items():
                 if translations.get(lang, {}).get(key) != value:
                     raise SystemExit(f"Uncommitted reviewed translation: {amendment} {lang}.{key}")
+
+    evidence = json.loads((DATA / 'editorial_20261030_quality_and_termination.json').read_text(encoding='utf-8'))
+    if evidence.get('reviewedOn') != PUBLICATION['releasedOn'] or evidence.get('targetVersion') != VERSION:
+        raise SystemExit('Unreviewed or mismatched 2026-10-30 editorial evidence')
+    required = ('insideReplaceCompletedBody', 'insideQualityDate', 'insideQualityTitle',
+                'insideQualityBody', 'insideQualitySource', 'nissayCaseState',
+                'nissayCaseFact', 'nissayCaseStatus', 'nissayCaseReading',
+                'nissaySourceIcann', 'nissaySourceIana', 'release0794')
+    if any(not translations.get(lang, {}).get(key) for lang in ('en','it','de','fr') for key in required):
+        raise SystemExit('Incomplete four-language 30 October editorial update')
 
     archaeology_source = DATA / "applications_2012_pairs_source.txt"
     archaeology_outputs = [
