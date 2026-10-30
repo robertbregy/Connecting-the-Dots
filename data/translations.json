@@ -2559,7 +2559,19 @@
     "field03Section5Body": "ICANN announced that it had entered into agreements with Daniel Müller (chair), Abdelmohsen Sheha and Eran Sthoeger. They may file Limited Public Interest or Community objections on behalf of the public interest, without direction from ICANN or its Board. Their objection window begins on String Confirmation Day and lasts 111 calendar days, seven longer than the general public window. Verified fact: all three roles have been filled. Open question: the appointment announcement does not quantify how many people were affected by the earlier technical failures or establish the cause of the portal’s premature closure. The appointments do not, by themselves, demonstrate that the earlier procedural problems were fully remedied.",
     "field03AppointmentRevision": "Recorded the three Independent Objectors, the chair and the 111-day filing window. Appointments are confirmed; individual effects of the June technical incidents are not established.",
     "field03SourceAppointment": "ICANN · 23 October: three Independent Objectors appointed",
-    "release0793": "Independent Objector appointments: the sourced investigation now records the official outcome and outstanding procedural questions."
+    "release0793": "Independent Objector appointments: the sourced investigation now records the official outcome and outstanding procedural questions.",
+    "insideReplaceCompletedBody": "The replacement-string choice window closed on 21 October 2026 at 23:59 UTC. This does not reveal any applicant's final choice. ICANN schedules public string confirmation for 17 November. The 11 October APS -R records are alternatives, not additional applications.",
+    "insideQualityDate": "26 October 2026",
+    "insideQualityTitle": "Quality control of the 2026 evaluations: JAS appointed",
+    "insideQualityBody": "ICANN selected JAS Global Advisors to check that string, applicant, application and Community Priority evaluations follow the Applicant Guidebook consistently and impartially. This is program-wide procedural oversight, not a decision about any individual application, including .lugano.",
+    "insideQualitySource": "ICANN · 26 October provider announcement",
+    "nissayCaseState": "Preliminary non-transition decision · public consultation",
+    "nissayCaseFact": "Nippon Life Insurance Company notified ICANN on 8 September 2026 that it wished to terminate its .nissay registry agreement. On 26 October ICANN published a preliminary decision not to transition operation to a successor. Comments are invited from 26 October through 25 November 2026.",
+    "nissayCaseStatus": "As checked on 30 October, IANA still lists .nissay as delegated to Nippon Life Insurance Company. Neither a final determination nor completed DNS-root revocation has been documented.",
+    "nissayCaseReading": "This corporate gTLD provides a useful comparison with the municipal .helsinki case: a termination notice, a preliminary transition decision and removal from the root are different steps. These public sources do not establish economic motives.",
+    "nissaySourceIcann": "ICANN · registry termination procedure",
+    "nissaySourceIana": "IANA · .nissay delegation record",
+    "release0794": "Adds ICANN's 2026 evaluation quality-control provider, a source-dated .nissay termination case and the completed replacement-choice window. Editorial update only: 11 October APS and RR1/RR2 remain frozen."
   },
   "it": {
     "brand": "Brand",
@@ -5121,7 +5133,19 @@
     "field03Section5Body": "ICANN comunica di aver stipulato accordi con Daniel Müller (presidente), Abdelmohsen Sheha ed Eran Sthoeger. I tre possono presentare obiezioni per motivi di Limited Public Interest o Community nell’interesse degli utenti di Internet, senza istruzioni di ICANN o del suo Board. La finestra per le loro obiezioni inizierà allo String Confirmation Day e durerà 111 giorni, sette più di quella ordinaria. Fatto verificato: tutti e tre gli incarichi sono stati assegnati. Questione ancora aperta: il comunicato sulle nomine non documenta quante persone siano state effettivamente danneggiate dagli incidenti tecnici né chiarisce la causa della chiusura anticipata del portale. L’avvenuta nomina non prova che ogni problema procedurale sia stato risolto retroattivamente.",
     "field03AppointmentRevision": "Aggiunti i tre nominativi, il presidente e i 111 giorni previsti per le obiezioni. Le nomine sono confermate, ma non sono stati accertati gli effetti individuali degli incidenti di giugno.",
     "field03SourceAppointment": "ICANN · 23 ottobre: nomina dei tre Independent Objectors",
-    "release0793": "Nomine degli Independent Objectors: aggiornamento dell’inchiesta con fonte ufficiale e questioni procedurali ancora aperte."
+    "release0793": "Nomine degli Independent Objectors: aggiornamento dell’inchiesta con fonte ufficiale e questioni procedurali ancora aperte.",
+    "insideReplaceCompletedBody": "La finestra per scegliere le stringhe sostitutive si è chiusa il 21 ottobre 2026 alle 23:59 UTC. La scadenza non rivela le scelte definitive dei singoli candidati. ICANN prevede la conferma pubblica delle stringhe per il 17 novembre. I record -R del corpus APS dell'11 ottobre sono alternative, non candidature aggiuntive.",
+    "insideQualityDate": "26 ottobre 2026",
+    "insideQualityTitle": "Valutazioni 2026: il controllo di qualità affidato a JAS",
+    "insideQualityBody": "ICANN ha incaricato JAS Global Advisors di verificare l'applicazione coerente e imparziale dell'Applicant Guidebook nelle valutazioni delle stringhe, dei candidati, delle candidature e nella Community Priority Evaluation. È un controllo procedurale sul programma, non una decisione su singole candidature, inclusa .lugano.",
+    "insideQualitySource": "ICANN · annuncio del 26 ottobre",
+    "nissayCaseState": "Determinazione preliminare · consultazione aperta",
+    "nissayCaseFact": "L'8 settembre 2026 Nippon Life Insurance Company ha notificato la volontà di cessare il contratto di registro per .nissay. Il 26 ottobre ICANN ha pubblicato la determinazione preliminare di non trasferire il TLD a un successore. La consultazione si svolge dal 26 ottobre al 25 novembre 2026.",
+    "nissayCaseStatus": "Alla verifica del 30 ottobre IANA indica ancora .nissay come delegato a Nippon Life Insurance Company. Non risultano documentate una determinazione definitiva né la revoca dalla radice DNS.",
+    "nissayCaseReading": "Questo gTLD aziendale offre un confronto con il caso cittadino .helsinki: notifica di cessazione, decisione preliminare sul subentro e rimozione dalla radice sono passaggi distinti. Le fonti pubbliche non documentano motivazioni economiche.",
+    "nissaySourceIcann": "ICANN · procedura di cessazione",
+    "nissaySourceIana": "IANA · delega di .nissay",
+    "release0794": "Aggiunti il controllo qualità JAS per il round 2026, il caso .nissay con stato procedurale verificato e la chiusura delle scelte sostitutive. Aggiornamento editoriale: corpus APS dell'11 ottobre e RR1/RR2 invariati."
   },
   "de": {
     "brand": "Marke",
@@ -7683,7 +7707,19 @@
     "field03Section5Body": "ICANN teilte mit, Vereinbarungen mit Daniel Müller (Vorsitz), Abdelmohsen Sheha und Eran Sthoeger geschlossen zu haben. Sie dürfen im öffentlichen Interesse Einwände aus den Gründen Limited Public Interest oder Community erheben, ohne Weisungen von ICANN oder dessen Board. Die Frist beginnt am String Confirmation Day und umfasst 111 Kalendertage, sieben mehr als die allgemeine Frist. Bestätigte Tatsache: Alle drei Positionen sind besetzt. Offen bleibt, wie viele Personen durch die früheren technischen Probleme betroffen waren und wodurch die vorzeitige Schließung des Portals ausgelöst wurde; die Ernennungsmitteilung klärt dies nicht. Die erfolgte Besetzung beweist für sich genommen keine vollständige nachträgliche Behebung der Verfahrensprobleme.",
     "field03AppointmentRevision": "Die drei Independent Objectors, der Vorsitz und das 111-tägige Einwendungsfenster wurden ergänzt. Ernennungen bestätigt; individuelle Folgen der technischen Vorfälle im Juni weiterhin offen.",
     "field03SourceAppointment": "ICANN · 23. Oktober: Ernennung der drei Independent Objectors",
-    "release0793": "Independent Objectors ernannt: die Untersuchung dokumentiert das Ergebnis und die weiterhin offenen Verfahrensfragen."
+    "release0793": "Independent Objectors ernannt: die Untersuchung dokumentiert das Ergebnis und die weiterhin offenen Verfahrensfragen.",
+    "insideReplaceCompletedBody": "Die Frist zur Wahl von Ersatz-Zeichenfolgen endete am 21. Oktober 2026 um 23:59 UTC. Daraus lässt sich nicht ableiten, welche Wahl einzelne Bewerber getroffen haben. ICANN plant die öffentliche Bestätigung der Zeichenfolgen für den 17. November. Die -R-Datensätze des APS-Bestands vom 11. Oktober sind Alternativen und keine zusätzlichen Bewerbungen.",
+    "insideQualityDate": "26. Oktober 2026",
+    "insideQualityTitle": "Qualitätskontrolle der Bewertungen 2026: JAS beauftragt",
+    "insideQualityBody": "ICANN hat JAS Global Advisors beauftragt, die einheitliche und unparteiische Anwendung des Applicant Guidebook bei der Prüfung von Zeichenfolgen, Bewerbern, Anträgen und im Community-Priority-Verfahren zu kontrollieren. Dies ist eine verfahrensbezogene Programmaufsicht, keine Entscheidung über einzelne Bewerbungen wie .lugano.",
+    "insideQualitySource": "ICANN · Mitteilung vom 26. Oktober",
+    "nissayCaseState": "Vorläufige Entscheidung · öffentliche Stellungnahmefrist",
+    "nissayCaseFact": "Am 8. September 2026 teilte Nippon Life Insurance Company ICANN mit, den Registry-Vertrag für .nissay beenden zu wollen. Am 26. Oktober veröffentlichte ICANN die vorläufige Entscheidung, den Betrieb nicht auf einen Nachfolger zu übertragen. Stellungnahmen sind vom 26. Oktober bis 25. November 2026 möglich.",
+    "nissayCaseStatus": "Bei der Überprüfung am 30. Oktober führte IANA .nissay weiterhin als an Nippon Life Insurance Company delegiert. Eine endgültige Entscheidung oder der Widerruf der Root-Zone-Delegation sind nicht belegt.",
+    "nissayCaseReading": "Diese Unternehmens-TLD ergänzt den kommunalen Fall .helsinki: Kündigungsmitteilung, vorläufige Übergangsentscheidung und Entfernung aus der Root-Zone sind unterschiedliche Schritte. Die öffentlichen Quellen belegen keine wirtschaftlichen Motive.",
+    "nissaySourceIcann": "ICANN · Verfahren zur Vertragsbeendigung",
+    "nissaySourceIana": "IANA · Delegation von .nissay",
+    "release0794": "Ergänzt die JAS-Qualitätskontrolle für 2026, den quellenbelegten Fall .nissay und das Ende der Frist für Ersatz-Zeichenfolgen. Nur redaktionell: APS-Bestand vom 11. Oktober und RR1/RR2 unverändert."
   },
   "fr": {
     "brand": "Marque",
@@ -10245,6 +10281,18 @@
     "field03Section5Body": "ICANN annonce avoir conclu des accords avec Daniel Müller (président), Abdelmohsen Sheha et Eran Sthoeger. Ils pourront déposer, dans l’intérêt des internautes, des objections pour Limited Public Interest ou Community, sans recevoir d’instructions d’ICANN ou de son conseil d’administration. Leur délai de dépôt commencera au String Confirmation Day et durera 111 jours calendaires, soit sept jours de plus que la période ordinaire. Fait vérifié : les trois postes sont pourvus. Question ouverte : l’annonce ne précise ni combien de personnes ont été lésées par les problèmes techniques antérieurs ni la cause de la fermeture anticipée du portail. Ces nominations ne démontrent pas à elles seules que les difficultés procédurales ont été entièrement corrigées a posteriori.",
     "field03AppointmentRevision": "Ajout des trois noms, de la présidence et de la période de 111 jours. Nominations confirmées ; conséquences individuelles des incidents de juin non établies.",
     "field03SourceAppointment": "ICANN · 23 octobre : nomination des trois Independent Objectors",
-    "release0793": "Nomination des Independent Objectors : enquête actualisée à partir de l’annonce officielle, avec ses questions procédurales encore ouvertes."
+    "release0793": "Nomination des Independent Objectors : enquête actualisée à partir de l’annonce officielle, avec ses questions procédurales encore ouvertes.",
+    "insideReplaceCompletedBody": "La période de choix des chaînes de remplacement s'est terminée le 21 octobre 2026 à 23 h 59 UTC. Cette échéance ne permet pas de connaître les choix définitifs des candidats. L'ICANN prévoit la confirmation publique des chaînes pour le 17 novembre. Les enregistrements -R du corpus APS du 11 octobre sont des variantes de remplacement, pas des candidatures supplémentaires.",
+    "insideQualityDate": "26 octobre 2026",
+    "insideQualityTitle": "Évaluations 2026 : JAS chargé du contrôle qualité",
+    "insideQualityBody": "L'ICANN a retenu JAS Global Advisors pour vérifier l'application cohérente et impartiale du Guide de candidature aux évaluations des chaînes, des candidats, des dossiers et à l'évaluation de priorité communautaire. Il s'agit d'un contrôle procédural du programme, non d'une décision sur une candidature particulière comme .lugano.",
+    "insideQualitySource": "ICANN · annonce du 26 octobre",
+    "nissayCaseState": "Décision préliminaire · consultation ouverte",
+    "nissayCaseFact": "Le 8 septembre 2026, Nippon Life Insurance Company a notifié son intention de mettre fin au contrat de registre de .nissay. Le 26 octobre, l'ICANN a publié sa décision préliminaire de ne pas transférer l'exploitation à un successeur. La consultation est ouverte du 26 octobre au 25 novembre 2026.",
+    "nissayCaseStatus": "Au 30 octobre, l'IANA indiquait toujours .nissay comme délégué à Nippon Life Insurance Company. Aucune décision définitive ni révocation de la zone racine n'est établie.",
+    "nissayCaseReading": "Ce gTLD d'entreprise complète le cas municipal .helsinki : notification de résiliation, décision préliminaire sur la succession et retrait de la racine DNS sont trois étapes distinctes. Les sources publiques ne prouvent aucun motif économique.",
+    "nissaySourceIcann": "ICANN · procédure de résiliation",
+    "nissaySourceIana": "IANA · délégation de .nissay",
+    "release0794": "Ajout du contrôle qualité JAS pour 2026, du cas documenté .nissay et de la clôture du choix des chaînes de remplacement. Mise à jour éditoriale uniquement : corpus APS du 11 octobre et RR1/RR2 inchangés."
   }
 }
