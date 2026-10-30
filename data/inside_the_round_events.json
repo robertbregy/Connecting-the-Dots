@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "editorialLayer": "2026-round-observation-not-research-release",
-  "lastReviewed": "2026-10-18",
+  "lastReviewed": "2026-10-30",
   "policy": "Only dated public milestones, attributed evidence and explicitly conditional future stages. Do not present a milestone as an application-specific approval.",
   "events": [
     {
@@ -55,11 +55,11 @@
       "id": "replacement",
       "date": "2026-10-08",
       "endDate": "2026-10-21",
-      "state": "current",
+      "state": "observed",
       "scope": "program",
       "dateKey": "insideReplaceDate",
       "titleKey": "insideReplaceTitle",
-      "bodyKey": "insideReplacePublicScheduleBody",
+      "bodyKey": "insideReplaceCompletedBody",
       "source": "https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en",
       "extraSources": [
         {
@@ -80,6 +80,16 @@
           "sources": [
             "https://newgtldprogram-aps.icann.org/about",
             "https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en"
+          ]
+        },
+        {
+          "date": "2026-10-30",
+          "previousBodyKey": "insideReplacePublicScheduleBody",
+          "bodyKey": "insideReplaceCompletedBody",
+          "reason": "The 8–21 October replacement selection window has elapsed. Closure is not evidence of individual applicant choices or String Confirmation, which is scheduled for 17 November.",
+          "sources": [
+            "https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en",
+            "https://newgtldprogram-aps.icann.org/about"
           ]
         }
       ]
@@ -105,6 +115,17 @@
       "bodyKey": "insideScreenBody",
       "source": "https://www.icann.org/en/announcements/details/icann-announces-2026-round-background-screening-services-provider-15-10-2026-en",
       "sourceLabelKey": "insideScreenSource"
+    },
+    {
+      "id": "quality-control-provider",
+      "date": "2026-10-26",
+      "state": "observed",
+      "scope": "program",
+      "dateKey": "insideQualityDate",
+      "titleKey": "insideQualityTitle",
+      "bodyKey": "insideQualityBody",
+      "source": "https://www.icann.org/en/announcements/details/icann-announces-quality-control-provider-for-2026-round-26-10-2026-en",
+      "sourceLabelKey": "insideQualitySource"
     },
     {
       "id": "confirmation",
