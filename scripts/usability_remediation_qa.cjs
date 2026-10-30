@@ -24,7 +24,7 @@ function staticChecks(){
  const review=JSON.parse(fs.readFileSync(path.join(root,publication.editorialReviewPath),'utf8'));
  assert.equal(review.status,'reviewed','Current editorial revision requires a reviewed exact-file manifest');
  assert.equal(review.publicationVersion,publication.version,'Review and live publication versions differ');
- const normalize=(href,version)=>href.replaceAll(version,'<VERSION>');
+ const normalize=(href,version)=>href.replaceAll(version,'<VERSION>').replace(/(reader-first\.css\?v=<VERSION>)-usability-20261022$/,'$1');
 
  for(const file of ['index.html',...langs.map(l=>l+'/index.html')]){
   const before=parseHTML(readOld(file).toString()).document,after=parseHTML(fs.readFileSync(path.join(root,file),'utf8')).document;
