@@ -1742,31 +1742,33 @@
     },
     "behind-the-round/fr/who-controls-internet-access/index.html": {
       "baselineSHA256": "9b01d3ef0b99124a0b77a977b20b4967e4d86cd5442bcd0da79ea3ce00c63b49",
-      "sha256": "f41644defdea474394f43ac5215ff79212f9d7978d359a700af656ce6a7ba000",
+      "sha256": "9d0b1383ec2bab424eb349e46872a93c40fde0ce261599bd76bd97eebe319e6e",
       "rationaleIds": [
         "E05",
         "A19",
         "H01",
         "E10",
         "E13",
-        "IO26"
+        "IO26",
+        "T94"
       ]
     },
     "behind-the-round/it/background-screening/index.html": {
       "baselineSHA256": "4d21a6f625bac55b627528b692f8f6e933955228fb32690e18cb28725bd56e43",
-      "sha256": "d9087081c286d5567c5279be1929d186add0bc4f517bd031dea14bebe05685fd",
+      "sha256": "16920be610f74f06fefc95da20c047a993e7ec33a72a47dc9aca6a0c570252a5",
       "rationaleIds": [
         "E05",
         "A19",
         "H01",
         "E10",
         "E13",
-        "IO26"
+        "IO26",
+        "T94"
       ]
     },
     "behind-the-round/it/index.html": {
       "baselineSHA256": "fa8a3251fd779775cfe5d7aa3f187dee46cae288a58d570a434b835a8312efd2",
-      "sha256": "a5f74642b157c602364edeef83fe8dba92774ecbded17de5b5a0e3b9cbd2d3f7",
+      "sha256": "c48131b3e4551ec04cf20713667d07f01cfea1dd9a313236db170328770463bc",
       "rationaleIds": [
         "C02",
         "M03",
@@ -1776,24 +1778,26 @@
         "H01",
         "E10",
         "E13",
-        "IO26"
+        "IO26",
+        "T94"
       ]
     },
     "behind-the-round/it/objectors-eoi/index.html": {
       "baselineSHA256": "f19e692e1f023a21caa282b5cee2d8853f2293aafbe1dbbed82fb15dbff3c584",
-      "sha256": "3117014215250aa403044d63b9199148997fc1b185ffb3337b0db07aa0f2dbfd",
+      "sha256": "04509a211b788d926fa0f328018166ad198846c6d00dd842fa6c97ca6795b747",
       "rationaleIds": [
         "E05",
         "A19",
         "H01",
         "E10",
         "E13",
-        "IO26"
+        "IO26",
+        "T94"
       ]
     },
     "behind-the-round/it/replacement-strings/index.html": {
       "baselineSHA256": "50e773f7eb7a0e1b723253adf6e514b439687d9f3e586fbdde2b6ec384957e2f",
-      "sha256": "e686134cd2936476fb0429ca24cc24d40eed2a08942a9116153c46826e77a83f",
+      "sha256": "b48ad6af6ce798a68733f47aa33208ed6edef2e2310fc47a91b61d25b5a2ae24",
       "rationaleIds": [
         "M03",
         "M04",
@@ -1802,12 +1806,13 @@
         "H01",
         "E10",
         "E13",
-        "IO26"
+        "IO26",
+        "T94"
       ]
     },
     "behind-the-round/it/sanctions-and-dns/index.html": {
       "baselineSHA256": "eb9f0663194f2a1d00f66f58f763b99f783aaea31d40584ba6d1aedae56b55d9",
-      "sha256": "a751ebc9b55fb5a7ef10d6fb57849eb49c81dfcb17ff99b13a5fca75cd573f48",
+      "sha256": "692d0aae26817495fec96c215bc81fdcc06c231d72067549f88977c76aa64149",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1815,12 +1820,13 @@
         "E10",
         "E13",
         "IO26",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "behind-the-round/it/wdo-identity/index.html": {
       "baselineSHA256": "7be67c9e27b89266d950c64170534d10a20fd64b2a8809f05b9d7b7ce5ca944d",
-      "sha256": "dba27dabe14aa830482bc768d6cb86e5ca244961e9047e2d5cf679e8e400433e",
+      "sha256": "36c29acfad4e73aff0c51c582f17ba4558d06a473b36aba994e40d0d9da4152b",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1828,12 +1834,13 @@
         "E10",
         "E13",
         "IO26",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "behind-the-round/it/who-controls-internet-access/index.html": {
       "baselineSHA256": "f7f8627965be401cc75ba0a240c610dfc8ef629ccac659230d0ddead0d885a71",
-      "sha256": "523839f1ab44a48546da369c0502835136f0c61393087abf6d6a531e10cc6529",
+      "sha256": "548ba6ababfb94e7d439e60539a8d95c1f40d33263190b9e1ccf12b2209dec97",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1841,7 +1848,8 @@
         "E10",
         "E13",
         "IO26",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "data/aps_2026_applicant_distribution.csv": {
@@ -1985,12 +1993,13 @@
     },
     "data/inside_the_round_events.json": {
       "baselineSHA256": "a81e92caf54051da5bb2def6f2720f7a867a1e30f327c137c7c9e3fbe75dd2f4",
-      "sha256": "905d0b80e90a4a44a64297774a46afd05a0bd6b7ae5940914f6f30c39e9a0b1d",
+      "sha256": "2cda36c01aa69ba7ed03175ca18cba9cbf06d8f382ee5af428085c0868efbf07",
       "rationaleIds": [
         "C02",
         "M04",
         "A19",
-        "H01"
+        "H01",
+        "T94"
       ]
     },
     "data/registry_concentration.csv": {
@@ -2355,7 +2364,7 @@
     },
     "build.py": {
       "baselineSHA256": "1e375ef181f88942d94657f7cf210324ff3976f49d053aba8edb7a2ae16f86c0",
-      "sha256": "5f7652d80e13c865fb086fd9c798af309558708042f9735be975ec7f9515e7a4",
+      "sha256": "e572d949d144b55932a1f42fe7072827aa1bdb9ef685df2a7562553989d1b840",
       "rationaleIds": [
         "T01",
         "CI03",
@@ -2366,7 +2375,8 @@
         "U03",
         "E09",
         "E10",
-        "T93"
+        "T93",
+        "T94"
       ]
     },
     "scripts/build_tld_market.py": {
@@ -3172,9 +3182,10 @@
       "baselineSHA256": null,
       "rationaleIds": [
         "E12",
-        "T93"
+        "T93",
+        "T94"
       ],
-      "sha256": "4e9258261b0a368c5b4c2c8d92dfe8c5703f37c87ac59efe3f5cad0ce4ebb3c7"
+      "sha256": "42c95ae1be553d8d354640f2c126ab484725fc194002d4dd41417928b57d6719"
     },
     "scripts/audit_legacy_deeplinks.cjs": {
       "baselineSHA256": null,
@@ -3263,11 +3274,12 @@
     },
     "data/editorial_20261030_quality_and_termination.json": {
       "baselineSHA256": null,
-      "sha256": null,
+      "sha256": "310aa52d2c9de27c60af304cbf427cf97266c17c1a2faf8d90d829e6c5448ce8",
       "rationaleIds": [
         "Q94",
         "N94",
-        "R94"
+        "R94",
+        "T94"
       ]
     },
     "downloads/connecting-the-dots-data-pack-v0.7.94.zip": {
