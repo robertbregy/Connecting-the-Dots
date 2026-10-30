@@ -834,7 +834,7 @@ if node:
 # v0.7.60: the live editorial chronicle must remain independent from frozen RR1.
 chronicle=json_file('inside_the_round_events.json')
 events=chronicle.get('events', [])
-if len(events)!=11 or len({event['id'] for event in events})!=11:
+if len(events)!=12 or len({event['id'] for event in events})!=12:
     fail('Inside the Round event count or unique ids')
 if not (publication_meta['asOf'] <= chronicle.get('lastReviewed','') <= publication_meta['releasedOn']):
     fail('Inside the Round editorial review outside snapshot/publication date range')
@@ -843,7 +843,7 @@ if publication_meta.get('researchRelease')!='RR2' or publication_meta.get('doi')
 if publication_meta.get('conceptDoi')!='10.5281/zenodo.23262622':
     fail('Current website does not link the original RR1/RR2 version concept')
 chronicle_states={event['state'] for event in events}
-if chronicle_states!={'observed','current','scheduled','evolving','conditional'}:
+if chronicle_states!={'observed','scheduled','evolving','conditional'}:
     fail('Inside the Round status distinctions missing')
 for event in events:
     if not event['source'].startswith(('https://www.icann.org/','https://newgtldprogram.icann.org/','https://newgtldprogram-aps.icann.org/','https://www.lugano.ch/')):
@@ -858,6 +858,16 @@ for event in events:
             fail('Inside the Round source attribution untranslated: '+event['id'])
 if not {'reveal-day','lugano-public-information','community-input','board-auctions-preview','background-screening-provider'}.issubset({e['id'] for e in events}):
     fail('Required program and .lugano public milestones missing')
+quality=next((e for e in events if e['id']=='quality-control-provider'),None)
+replacement=next((e for e in events if e['id']=='replacement'),None)
+if not quality or quality.get('date')!='2026-10-26' or quality.get('state')!='observed' or not quality['source'].endswith('icann-announces-quality-control-provider-for-2026-round-26-10-2026-en'):
+    fail('Missing official 26 October 2026 quality-control-provider event')
+if (not replacement or replacement.get('state')!='observed' or replacement.get('endDate')!='2026-10-21' or
+    replacement.get('bodyKey')!='insideReplaceCompletedBody' or
+    replacement.get('revisionHistory',[])[-1].get('date')!='2026-10-30'):
+    fail('Replacement period must be closed without implying confirmed applicant choices')
+if chronicle.get('lastReviewed')!='2026-10-30':
+    fail('Current technical release lacks dated 30 October timeline review')
 reveal=next(e for e in events if e['id']=='reveal-day')
 if not any('CDL2651T-T31516/summary' in item.get('source','') for item in reveal.get('extraSources',[])):
     fail('Official .lugano ICANN APS application source missing')
@@ -1209,6 +1219,23 @@ if (economics_markup.count('id="economic-cycles-2026"')!=1 or
     cemetery_markup.count('id="gtld-cemetery"')!=1 or
     cemetery_markup.count('id="helsinki-termination"')!=1):
     fail('Independent gTLD cemetery must retain all cases outside Economics')
+# The preliminary .nissay case is part of the existing cemetery chapter,
+# not a new canonical route, a completed revocation or a change to the APS corpus.
+expected_nissay_sources=(
+    'https://www.icann.org/en/contracted-parties/registry-operators/services/registry-agreement-termination-service',
+    'https://www.iana.org/domains/root/db/nissay.html')
+for lang in LANGS:
+    homepage=(ROOT/lang/'index.html').read_text(encoding='utf-8')
+    if homepage.count('id="nissay-termination"')!=1:
+        fail('Missing or duplicate native .nissay case: '+lang)
+    if any(link not in homepage for link in expected_nissay_sources):
+        fail('Native .nissay primary sources missing: '+lang)
+    for key in ('nissayCaseState','nissayCaseFact','nissayCaseStatus','nissayCaseReading',
+                'nissaySourceIcann','nissaySourceIana'):
+        if not translations[lang].get(key) or f'data-i18n="{key}"' not in homepage:
+            fail('Incomplete .nissay four-language native reading: '+lang+'/'+key)
+    if '.nissay' not in translations[lang]['nissayCaseStatus']:
+        fail('Preliminary .nissay outcome must not be presented as a completed revocation: '+lang)
 distributions=ds.get('distribution',[])
 if not isinstance(distributions,list):
     fail('Dataset must identify live files and historical archive separately')
