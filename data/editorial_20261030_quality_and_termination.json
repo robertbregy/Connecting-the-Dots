@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "editorialLayer": "2026-10-30 source-backed editorial update; not an APS or RR1/RR2 research snapshot",
+  "reviewedOn": "2026-10-30",
+  "baselineVersion": "0.7.93",
+  "targetVersion": "0.7.94",
+  "releaseRationale": "Add ICANN JAS evaluator quality-control announcement, document .nissay preliminary termination consultation as separate from revocation, and close the 8–21 October replacement-choice period without asserting undisclosed applicant decisions.",
+  "sources": [
+    {
+      "id": "icann-quality-provider",
+      "kind": "primary",
+      "url": "https://www.icann.org/en/announcements/details/icann-announces-quality-control-provider-for-2026-round-26-10-2026-en",
+      "date": "2026-10-26",
+      "supports": [
+        "jas-provider",
+        "scope",
+        "no-applicant-finding"
+      ]
+    },
+    {
+      "id": "icann-termination-status",
+      "kind": "primary",
+      "url": "https://www.icann.org/en/contracted-parties/registry-operators/services/registry-agreement-termination-service",
+      "checkedOn": "2026-10-30",
+      "supports": [
+        "nissay-termination-notice-2026-09-08",
+        "preliminary-no-transition-2026-10-26",
+        "comment-period-through-2026-11-25"
+      ]
+    },
+    {
+      "id": "iana-nissay",
+      "kind": "primary",
+      "url": "https://www.iana.org/domains/root/db/nissay.html",
+      "checkedOn": "2026-10-30",
+      "supports": [
+        "nissay-delegated-to-nippon-life"
+      ]
+    },
+    {
+      "id": "icann-replacement-calendar",
+      "kind": "primary",
+      "url": "https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en",
+      "supports": [
+        "replacement-period-ended-2026-10-21",
+        "string-confirmation-scheduled-2026-11-17"
+      ]
+    },
+    {
+      "id": "aps-about",
+      "kind": "primary",
+      "url": "https://newgtldprogram-aps.icann.org/about",
+      "supports": [
+        "publication-latency-not-applicant-outcome"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "jas",
+      "observedOn": "2026-10-26",
+      "sourceIds": [
+        "icann-quality-provider"
+      ],
+      "scope": "2026-program",
+      "limitations": [
+        "Quality-control provider selection is not proof of an evaluation outcome or an individual .lugano decision."
+      ]
+    },
+    {
+      "id": "nissay",
+      "observedOn": "2026-10-26",
+      "sourceIds": [
+        "icann-termination-status",
+        "iana-nissay"
+      ],
+      "scope": "registry-termination-procedure",
+      "state": "preliminary-determination-comment-period",
+      "commentsClose": "2026-11-25",
+      "limitations": [
+        "Not a final determination, actual revocation or inferred business motive.",
+        "IANA delegation and ICANN contractual-termination stages are distinct."
+      ]
+    },
+    {
+      "id": "replacement-close",
+      "observedOn": "2026-10-21",
+      "sourceIds": [
+        "icann-replacement-calendar",
+        "aps-about"
+      ],
+      "scope": "2026-program",
+      "state": "ended",
+      "limitations": [
+        "The deadline does not establish how each applicant ultimately chose.",
+        "The frozen October 11 APS corpus remains unchanged; the November 17 confirmation is scheduled, not completed."
+      ]
+    }
+  ],
+  "changes": [
+    "2026 timeline gains a 26 October provider event; original 11 events retained",
+    "Replacement-period timeline state corrected from current to observed, with a dated editorial revision",
+    "Native cemetery gains an anchored .nissay article beside .helsinki, without new canonical routes",
+    "Keep four language translations and official source citations",
+    "Preserve RR1, RR2, all pre-0.7.94 technical archives and APS snapshot unchanged"
+  ]
+}
