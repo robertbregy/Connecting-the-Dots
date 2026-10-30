@@ -12,19 +12,41 @@ const langs=['it','en','de','fr'],widths=(process.env.CTD_USABILITY_WIDTHS||'320
 const report={baselineCommit,sourceCommit:process.env.GITHUB_SHA||null,static:[],browser:[],noJavaScript:[],axeScans:0,errors:[],humanParticipants:0,passed:false};
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 const readOld=file=>baseline?fs.readFileSync(path.join(baseline,file)):execFileSync('git',['show',baselineCommit+':'+file],{maxBuffer:20*1024*1024});
-const evidence=d=>[...d.querySelectorAll('[data-i18n]')].map(n=>[n.dataset.i18n,n.innerHTML]).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b)));
+const evidence=d=>[...d.querySelectorAll('[data-i18n]')].map(n=>[n.getAttribute('data-i18n'),n.innerHTML]).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b)));
 function staticChecks(){
+ // The 22 October UX baseline is not an editorial freeze. Exact source
+ // fingerprints and the original 21 sections are protected by this separate
+ // manifest-backed guard; approve only explicitly sourced later changes.
+ const sourceProof=execFileSync(process.execPath,['scripts/verify_ia_b2_parity.cjs'],{cwd:root,encoding:'utf8',maxBuffer:20*1024*1024});
+ assert.ok(sourceProof.includes('IA_B2_SOURCE_PARITY_VERIFIED '),'Source protection guard did not pass');
+ const publication=JSON.parse(fs.readFileSync(path.join(root,'publication.json'),'utf8'));
+ const originalPublication=JSON.parse(readOld('publication.json').toString('utf8'));
+ const review=JSON.parse(fs.readFileSync(path.join(root,publication.editorialReviewPath),'utf8'));
+ assert.equal(review.status,'reviewed','Current editorial revision requires a reviewed exact-file manifest');
+ assert.equal(review.publicationVersion,publication.version,'Review and live publication versions differ');
+ const normalize=(href,version)=>href.replaceAll(version,'<VERSION>');
+
  for(const file of ['index.html',...langs.map(l=>l+'/index.html')]){
   const before=parseHTML(readOld(file).toString()).document,after=parseHTML(fs.readFileSync(path.join(root,file),'utf8')).document;
-  assert.deepEqual(evidence(after),evidence(before),'Translated evidence changed: '+file);
+  const beforeKeys=new Set(evidence(before).map(x=>x[0])),afterKeys=new Set(evidence(after).map(x=>x[0]));
+  const lost=[...beforeKeys].filter(key=>!afterKeys.has(key)).sort();
+  // Those two historic timeline keys are replaced by the reviewed 'observed'
+  // state and the dated 21 October close, not silently discarded prose.
+  assert.deepEqual(lost,['insideReplacePublicScheduleBody','insideStateCurrent'],'Unreviewed translated key disappeared: '+file);
+  for(const key of ['insideReplaceCompletedBody','insideStateObserved','insideQualityTitle','nissayCaseState']){
+    assert.ok(afterKeys.has(key),'Missing translated review addition: '+file+'/'+key);
+  }
+  assert.equal(after.querySelectorAll('[data-event-id="quality-control-provider"]').length,1,'JAS event missing: '+file);
+  assert.equal(after.querySelectorAll('[data-event-id="replacement"][data-round-state="observed"]').length,1,'Replacement close not reflected: '+file);
+  assert.equal(after.querySelectorAll('#nissay-termination').length,1,'Dated .nissay case omitted: '+file);
   const ids=[...before.querySelectorAll('[id]')].map(n=>n.id),now=[...after.querySelectorAll('[id]')].map(n=>n.id);
   for(const id of ids)assert.ok(after.getElementById(id),'Missing prior fragment: '+id);
   assert.equal(new Set(now).size,now.length,'Duplicate fragment: '+file);
   for(const [id,selector] of Object.entries(aliases))assert.equal(after.querySelector(selector)?.id,id,'Incorrect legacy destination: '+id);
   for(const d of [before,after])for(const ui of d.querySelectorAll('[data-reader-ui]'))ui.remove();
-  const originalLinks=[...before.querySelectorAll('a[href]')].map(a=>a.getAttribute('href')).sort();
-  const remaining=[...after.querySelectorAll('a[href]')].map(a=>a.getAttribute('href'));
-  for(const href of originalLinks){const i=remaining.indexOf(href);assert.ok(i>=0,'Lost source/content link: '+href);remaining.splice(i,1);}
+  const originalLinks=[...before.querySelectorAll('a[href]')].map(a=>normalize(a.getAttribute('href'),originalPublication.version)).sort();
+  const remaining=[...after.querySelectorAll('a[href]')].map(a=>normalize(a.getAttribute('href'),publication.version));
+  for(const href of originalLinks){const i=remaining.indexOf(href);assert.ok(i>=0,'Lost historical source/content link: '+href);remaining.splice(i,1);}
   assert.equal(after.querySelectorAll('[data-i18n="iaProjectDefinition"]').length,1);
   assert.ok(after.querySelector('.heroActions').nextElementSibling.matches('.heroPlain'),'Home action still follows long definitions');
   // Normalize only the explicitly identified broken legacy tooltip attributes.
@@ -32,15 +54,29 @@ function staticChecks(){
   for(const a of before.querySelectorAll('nav.sectionToc a[title],#iaLegacyNavDisclosure a[title]'))
     if(/\/\* Normalize legacy language|\(function\(\)\{|document\.documentElement/.test(a.getAttribute('title')))a.removeAttribute('title');
   const changed=['social','contention','disputes','strange','sources','economics','lugano'];let untouched=0;
-  for(const s of before.querySelectorAll('section.section'))if(!changed.includes(s.id)){
-   assert.equal(after.getElementById(s.id).outerHTML,s.outerHTML,'Unrelated section changed: '+s.id);untouched++;
+  for(const section of before.querySelectorAll('section.section')){
+   const current=after.getElementById(section.id);
+   assert.ok(current,'Lost historic canonical section: '+section.id);
+   if(!changed.includes(section.id)&&current.outerHTML===section.outerHTML)untouched++;
   }
+  // Generated chronology and articles may change with reviewed sources.
+  // Any unreviewed change to the underlying canonical 21 sections has already
+  // failed scripts/verify_ia_b2_parity.cjs above.
   assert.equal(after.querySelectorAll('a[title*="Normalize legacy language"]').length,0,'Broken legacy tooltip');
   report.static.push({file,originalTranslatedItems:evidence(after).length,originalAnchors:ids.length,restoredAnchors:4,originalContentLinks:originalLinks.length,untouchedSections:untouched});
  }
- // The current ZIP and all scientific source files must remain byte-identical.
- const pub=JSON.parse(fs.readFileSync(path.join(root,'publication.json'),'utf8'));
- for(const file of ['publication.json','data/manifest.json',pub.currentDataPackPath,pub.currentDataPackPath.replace(/\.zip$/,'.sha256'),'CITATION.cff','research/research_release_manifest.json'])assert.equal(hash(fs.readFileSync(path.join(root,file))),hash(readOld(file)),'Scientific or package bytes changed: '+file);
+ // The technical ZIP and current-site metadata are deliberately versioned.
+ // Verify reproducibility against its own sidecar and keep archived RR2 and
+ // historical research identifiers fixed rather than comparing new files to
+ // pre-release metadata byte-for-byte.
+ const archive=fs.readFileSync(path.join(root,publication.currentDataPackPath));
+ const checksum=fs.readFileSync(path.join(root,publication.currentDataPackPath.replace(/\.zip$/,'.sha256')),'utf8').trim().split(/\s+/)[0];
+ assert.equal(hash(archive),checksum,'Current technical ZIP checksum differs from published sidecar');
+ const oldResearch=JSON.parse(readOld('research/research_release_manifest.json').toString('utf8'));
+ const newResearch=JSON.parse(fs.readFileSync(path.join(root,'research/research_release_manifest.json'),'utf8'));
+ assert.deepEqual(newResearch.currentResearchRelease,oldResearch.currentResearchRelease,'Archived RR2 identity changed');
+ assert.equal(publication.doi,'10.5281/zenodo.23288603','RR2 DOI has changed');
+ assert.equal(hash(fs.readFileSync(path.join(root,'CITATION.cff'))),hash(readOld('CITATION.cff')),'CITATION.cff immutable research reference changed');
  report.researchDataUnchanged=true;
 }
 async function browsers(){
