@@ -5,6 +5,7 @@ on:
       - feat/wikileaks-access-20261105
     paths:
       - scripts/prepare_wikileaks_review_v0795.cjs
+      - scripts/signoff_wikileaks_v0795.cjs
       - .github/workflows/wikileaks-review.yml
   workflow_dispatch:
 permissions:
@@ -21,7 +22,9 @@ jobs:
           node-version: '22'
       - name: Prepare review candidate and independently enforce protected invariants
         run: node scripts/prepare_wikileaks_review_v0795.cjs
-      - name: Commit traceable candidate proof, without self-approval
+      - name: Confirm reviewed candidate hashes, protect frozen sources, and approve editorial source register
+        run: node scripts/signoff_wikileaks_v0795.cjs
+      - name: Commit reviewed candidate with exact-file proof
         run: |
           git fetch origin "$GITHUB_REF_NAME"
           test "$(git rev-parse FETCH_HEAD)" = "$(git rev-parse HEAD)" || { echo 'Branch advanced; abort proof commit'; exit 1; }
