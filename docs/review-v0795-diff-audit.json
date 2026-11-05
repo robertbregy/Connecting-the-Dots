@@ -1,0 +1,447 @@
+{
+  "release": "0.7.95",
+  "reviewedOn": "2026-11-05",
+  "baseline": "0.7.94",
+  "sourceReviewStatus": "candidate-pending-editorial-signoff",
+  "requiredSections": 21,
+  "exactFileFingerprints": 188,
+  "changedFingerprints": 61,
+  "changes": [
+    {
+      "path": "applications/de/index.html",
+      "previousSHA256": "74686d4e0e4e41c60c3a06e5d66a7a5f213895b0c9ea1783b8d8159f57c06d60",
+      "currentSHA256": "604e70fb1b2dd4fd832a7bec3c9bb1b4609b6854eaea2c81ed1ac2416ec47c28",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "applications/en/index.html",
+      "previousSHA256": "c357169882f9a9abf138c0eeca727be62f29d459efae07edfa22e83805efb0bd",
+      "currentSHA256": "90cb0c61c942c26221a21fe25524fd5bef9c9efeec9d8e71fd33750140130855",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "applications/fr/index.html",
+      "previousSHA256": "6a85ce4955fd1763fd134efb8299f33ef006b6d60032d344ffe2e0b17c336f1a",
+      "currentSHA256": "26834369a80173ec0ebf49e777d15825d62ecc3eccefb1d78229bb3080156071",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "applications/it/index.html",
+      "previousSHA256": "fbf5a2939d5c8ea690923fa25384fbac8c61c1038f8e422c688221210d3f7126",
+      "currentSHA256": "f268c2dbab5872e688bd655dfa23a0af9dbd579e64909ff872467e68ce7d874b",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/de/background-screening/index.html",
+      "previousSHA256": "e988b3d6f119c8477c7abf5a4799afa6224ea9838fb1682f2bf790c5ba1d5294",
+      "currentSHA256": "58ee4ba9cad0a5773833b591be563a8562eb6d32caeff68127ff1995a0567aab",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/de/index.html",
+      "previousSHA256": "1b110a58db005072a3909d69b7f28edc591938e33b34d2d6a5dbd3700d56bd95",
+      "currentSHA256": "cfa5f3d6df9d0fb7907d319893ffde0ac9bd0f69f87fa613ee8caa4378fdcd0d",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/de/objectors-eoi/index.html",
+      "previousSHA256": "8abb5205dcf6f2cee67e8169cf297d355dc59409e0ff909bddd3343293eb37ab",
+      "currentSHA256": "f556de4c6b5d27e4ce60feb26ffedf80d23b9e829aa1c6c949199663078fc92b",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/de/replacement-strings/index.html",
+      "previousSHA256": "4d28b5f6352e81bea2f0d5ae320a0fa8591b4be461b483c7067a93db8d2fcf80",
+      "currentSHA256": "e91234e416c5e517aac54a37a057d6559aae955941e12f36a01a9c94aea3a0e0",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/de/sanctions-and-dns/index.html",
+      "previousSHA256": "51e3e5ba0fc9cb41c56d2a5092fcff2788813fa8d96fe6a03bbb3cd357208d33",
+      "currentSHA256": "cc4765366c4c54755e39e845a1a12691897ec76cfa8e3ecfbb033698bb87662b",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/de/wdo-identity/index.html",
+      "previousSHA256": "842e831726ebd9e28f4bdf6ffd19d057e552febeff879096f9b1a9bbabf8a1e4",
+      "currentSHA256": "6899708ebaf9c27b1ac453b90b57256534cca72cf0d18af84601bf93243119e4",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/de/who-controls-internet-access/index.html",
+      "previousSHA256": "d535f97cf9e0e54414ba6e0ffa178ba0c8c10e4b5e3923e8918c9e6f042614f3",
+      "currentSHA256": "3c7f5baebecab02cc132c7975a875c17faadc7df121f7c3e81225cb6f4288527",
+      "classification": "direct-editorial",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/en/background-screening/index.html",
+      "previousSHA256": "c8800a7a206b6ae8c9e272cd81d1a3fafdd1299e75aa3876641a267e64df6176",
+      "currentSHA256": "bd4cf7afd5570b2b9dcd7d68cad08935c162029abaafbabb90ad688d4509d2e7",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/en/index.html",
+      "previousSHA256": "64a4d6aece27396770083d3730371e393b2667a1ce2503e5f2bd04622e785aba",
+      "currentSHA256": "264ce5a03614e6001d82c0621e05b42b3cf373113c34e55d94c0afb56835d8e4",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/en/objectors-eoi/index.html",
+      "previousSHA256": "5d7e0b5ca2af10a6f213b4487733fdfda6d4f1f69d66dfa6a3d827da3e0274a7",
+      "currentSHA256": "957829743531816f942ee7fcdd4a3dc4fa4bf4c1435598b1d7fcd1bfc1d8d0dc",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/en/replacement-strings/index.html",
+      "previousSHA256": "f63240ca1869190e19314ff5facb759bd5632e7f2bf6e05b88c1d4e25b0a0f63",
+      "currentSHA256": "62c8c123fcf0326c3892b62e6a31267f750fbb907ec7df201b3934756bb0dcba",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/en/sanctions-and-dns/index.html",
+      "previousSHA256": "edd6994a6a918e5e6987204dce7e50942dea8eadc668f28f40f5fe6b7f36d858",
+      "currentSHA256": "287e303bc12409b3eb7cb9a48dfbbb1aa72f9df207d3a1047409acba920fff88",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/en/wdo-identity/index.html",
+      "previousSHA256": "bb6adceb92e3e0277c60e695612f0624d8b8228d7af6f9dd5aa6f5b37e9bfe26",
+      "currentSHA256": "213ad5213aa209a8380339196483dd25abd67e3c1454233de63104f81831866e",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/en/who-controls-internet-access/index.html",
+      "previousSHA256": "530a32fdf8b00d7958689ddfcae03d092bdad0dbb962e9c00fb70307f3887ee4",
+      "currentSHA256": "a7d652e5af2f08452885549e57553543956aca695cf6801d1f1d5f5084462050",
+      "classification": "direct-editorial",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/fr/background-screening/index.html",
+      "previousSHA256": "b80373b72e5d05e08ad01ccdd4d23797820622b52e1e557c84312990f205b86b",
+      "currentSHA256": "aa37bfb1686254278d71f924ba722e19227c25a4582081fd0f44e536de5d0eef",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/fr/index.html",
+      "previousSHA256": "63afc64e2ed98a54ec64bd27c055b89dfb44d1d937ee296ec65cf883300f0608",
+      "currentSHA256": "18980af608544835f27453a6613c847e75841b89e824f660ee560f63cc6f327d",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/fr/objectors-eoi/index.html",
+      "previousSHA256": "256fd8b8c81360f2b85a09fcf57e36fc37a5cb7b25e7975541da654c09ebe812",
+      "currentSHA256": "4e95a931adac379fef02b1b81f7b0b5204b1fe13d2da17a9e54108d4057978cd",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/fr/replacement-strings/index.html",
+      "previousSHA256": "8387f0c45239813f35b772f44c46701256bc0fc3648cf286c36b6c498a0ec302",
+      "currentSHA256": "5d258686dcce8a4d2f6ebe0ed7ee76d929484c94ed9332616d9d7a4ab63637df",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/fr/sanctions-and-dns/index.html",
+      "previousSHA256": "c3e39522e64aed9c134024401c63ba8eeb06f08fd108c8d26e05cbc70060c5be",
+      "currentSHA256": "aa687c90d2e3e5657e4ab4df4cfc3c75fbd5dfe715568cee70b7b8071c60c199",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/fr/wdo-identity/index.html",
+      "previousSHA256": "8fdd140be61f2b9942f4ea54d829b6c2552b645e86012adde5c8eaa6b3fd08ef",
+      "currentSHA256": "78da3d727939cdc766e460ee4fae0acb708d389c2b50509c0e5ec6f577a2dbf0",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/fr/who-controls-internet-access/index.html",
+      "previousSHA256": "9d0b1383ec2bab424eb349e46872a93c40fde0ce261599bd76bd97eebe319e6e",
+      "currentSHA256": "24d1aea6d69ab6a065b3ff0ac78ee8ea45de08012843cfcbbfc759e8becff7d8",
+      "classification": "direct-editorial",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/it/background-screening/index.html",
+      "previousSHA256": "16920be610f74f06fefc95da20c047a993e7ec33a72a47dc9aca6a0c570252a5",
+      "currentSHA256": "58444a1c3d55a5cc34a8168f91f1eedd2f8fc2ed066addc2756332d1efd09cff",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/it/index.html",
+      "previousSHA256": "c48131b3e4551ec04cf20713667d07f01cfea1dd9a313236db170328770463bc",
+      "currentSHA256": "ae5c29f5f52d9dd437f5bc69fd9058759874c7c7051f13c2b35842e42cc218bc",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/it/objectors-eoi/index.html",
+      "previousSHA256": "04509a211b788d926fa0f328018166ad198846c6d00dd842fa6c97ca6795b747",
+      "currentSHA256": "0a285f9744ab645e62aa82b1d5bb46d2b816653d99f03b7bede6d6e7277624be",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/it/replacement-strings/index.html",
+      "previousSHA256": "b48ad6af6ce798a68733f47aa33208ed6edef2e2310fc47a91b61d25b5a2ae24",
+      "currentSHA256": "3ab7caab409fcd1f7b1994ac814ea297aaafafa5a2b2cd9ed20be5bc93fca0fb",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/it/sanctions-and-dns/index.html",
+      "previousSHA256": "692d0aae26817495fec96c215bc81fdcc06c231d72067549f88977c76aa64149",
+      "currentSHA256": "50e1ad4421440ff3ec54aa87928d2d10414a393ee2d3bef59d36636f62bf042d",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/it/wdo-identity/index.html",
+      "previousSHA256": "36c29acfad4e73aff0c51c582f17ba4558d06a473b36aba994e40d0d9da4152b",
+      "currentSHA256": "4eae39ab97af70ecadf097c3ed94a99d0917c7f46d489b2804f7edf9b494e72a",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "behind-the-round/it/who-controls-internet-access/index.html",
+      "previousSHA256": "548ba6ababfb94e7d439e60539a8d95c1f40d33263190b9e1ccf12b2209dec97",
+      "currentSHA256": "baf3693907db0958aa4c4f685c34a499a8d38c52e104afe1b52669d7dbe89340",
+      "classification": "direct-editorial",
+      "reviewRequired": true
+    },
+    {
+      "path": "data/release_history.json",
+      "previousSHA256": "eda7b8bf5a2e2e3b39da31169d62f8f9535c0c2bbfa64006cad2c752823cd23c",
+      "currentSHA256": "a810ed4b9ba1fb0523b7679dc0d9e393db228f16a350cf06d4719d3e840c5c44",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "data/translations.json",
+      "previousSHA256": "19f607bd01c97e86e6ed572e1a8205df8fb14af766a515b6a79b0ae367cfc16b",
+      "currentSHA256": "7c9017bcee88d5c8be8a5bfd3fef6078d11b4e9790482a226f3324c8677db437",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "inside-the-round/de/index.html",
+      "previousSHA256": "4e5bdda52c8aee07c510ed414324dd5e36831ae815a8475be089d02a00fbbf5e",
+      "currentSHA256": "2406dd7050d7c60eb4feeeab724dfd4a91e0aa962c3e64a728bf651753a3bdea",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "inside-the-round/en/index.html",
+      "previousSHA256": "5a55db096d010577c8c3ef34cf23dacc9b0c56b034a33977aaae0ccb1b95ce63",
+      "currentSHA256": "52036b4461908c764ef031b781956b7ba75b799af5dc5340438422f0cd336677",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "inside-the-round/fr/index.html",
+      "previousSHA256": "29c69f84d4343db091646467b10f8fbe3bdadce218e5c2cf7ae8a20975831f6a",
+      "currentSHA256": "b3e456f9fdb1b10db5269a577300cc82b454b80e413b3dc630ed0cf9c7908377",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "inside-the-round/it/index.html",
+      "previousSHA256": "6d2e7c51a08a0655aa2baeb3e989e3eb6011ef017973207c508ecbbbfd5e428d",
+      "currentSHA256": "8dc91837135f9a673e690dd20c9dad9d002df0618636f2e757f3a770e49ce68a",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "publication.json",
+      "previousSHA256": "03cc77aad18405dacd1be31c56225cd793b7a85e2a83ff2b724ae96535c3ac06",
+      "currentSHA256": "58416042eec8f53fbfa86000749607e3fae10c6f6b1de982bf925d3943d8fde2",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "research/connecting-the-dots-working-paper-v1.html",
+      "previousSHA256": "73aabaee4c348ae4b81aa59426ade37bf37652d1c07e55af56d9f3f4161a2075",
+      "currentSHA256": "c1721c9d8e83b92fff83e31a51c0103ff291a514660d26b97f2554146874d5c8",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "research/connecting-the-dots-working-paper-v1.md",
+      "previousSHA256": "5c6ef988c585824c6ed1a5b922488a07f9cd56e3f90e1dc34983a13e49b8e740",
+      "currentSHA256": "1949c5353aed0e3f686d5cdd1260f9111506387a5610c9e1ee6102e2fee7f704",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "research/index.html",
+      "previousSHA256": "54f6380dba6dee8dc5ad8f5e712f10a9204d0aa5e5d42a032b8c551341ac274a",
+      "currentSHA256": "68044914ac0b87ff742588cd2c770955a376f3e645954c77cf55b9ef1d193d11",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "src/index.web.html",
+      "previousSHA256": "b55ced71d831cd59665fe714ae10863b407e0266d24a3709eee097de776c67b4",
+      "currentSHA256": "748c79265c95772b1b8f79239ede82e14e0eb9c8e97e114c5d4251d5b7106d19",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "research/research_release_manifest.json",
+      "previousSHA256": "eeef570e290df01ec0e61aa005150ae8b651c999dd436979333be294495e782f",
+      "currentSHA256": "87042d97b14b6e8426bcd727427c4efdbec8c74c943de791f23ed68e056a008e",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "scripts/release_check.py",
+      "previousSHA256": "c7d14882554752ff13c797c40ca2e72bb80a809a99c5fc5a0700d322ed5b534a",
+      "currentSHA256": "420b712e0e4bf3918f6f4aae4455c7834fa37f37ae9a5003a96bd92080eae2c8",
+      "classification": "release-gate",
+      "reviewRequired": true
+    },
+    {
+      "path": "build.py",
+      "previousSHA256": "e572d949d144b55932a1f42fe7072827aa1bdb9ef685df2a7562553989d1b840",
+      "currentSHA256": "e4d117a917c76636309b3673d9372ad17f5c706612c949fc33da2d6d08b663bc",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "package-lock.json",
+      "previousSHA256": "bca896b553801bdf0e35906045c2df451d8af915d2453ce0e9ae361860555ea6",
+      "currentSHA256": "d688b70c6f1be4cabd1fafaa6932fdeb5c2c42ad32df8e5661e987f10a1a8668",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "package.json",
+      "previousSHA256": "1dc7e74d56ec306b09ccc577931bfb89a14f3514ecb7a705cbd9ebfdf7c2b934",
+      "currentSHA256": "eeb8748500270e3ab8d45ecac846a9d66e55ed585caaffa638b178789d268484",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "research/README.md",
+      "previousSHA256": "5583b0600daa22724cfc6f70fb17487e42320c55f0717d0e4fd017cf93af083e",
+      "currentSHA256": "efdc4470c1bba9320ccdaeaf6634e7265e3767c59cb7e500bc99a7eca349613d",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "scripts/validate_multilingual.js",
+      "previousSHA256": "ee6a89d1f4023ad2552c99ac4d97e29b7f5e24790faded3543c5e835fd15a014",
+      "currentSHA256": "4c34a05104f4d7a5de54fdd4b09ee39c9b537a7cd8948472a3006beebb6af379",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "data/frozen_technical_packages.json",
+      "previousSHA256": "b74098ea016178f56415fff8dd489b27fa9d77915e4f0ac7ed5631f938280262",
+      "currentSHA256": "827a4d93f369f5f00dc298bfd7774d29dde0876d2b6fa3dda4e77c8ac3db7f0d",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "research/reader-study/it/index.html",
+      "previousSHA256": "3738f922bc0e3b9cc64422cded0fd45f618c08ecf731fd692100bf6b83ba230d",
+      "currentSHA256": "f49b7ba36e75ef73c24162559c302bad6bf62a55f6eeca455ee973c2b0ce0b0a",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "research/reader-study/en/index.html",
+      "previousSHA256": "3218944ded4c8f5da98bf0b503915b4257acfe4894cd08d349b1b227f682c7e5",
+      "currentSHA256": "2c59fc96a516f524885a9efcde5d39c9de2edf6d3b2fb4095074537c3ddac758",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "research/reader-study/de/index.html",
+      "previousSHA256": "ca255fbeca654d85f97719bdaf35717cb8a4f59cde2bb30e949c45cf64d2bdf6",
+      "currentSHA256": "47dc7dd8c9f2c51876915288f30b0f07e76664d8c5072ed01b5a3e427c814a22",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "research/reader-study/fr/index.html",
+      "previousSHA256": "86b6305db162a80e1de62dd7b9d2d4c6dff61033274faffe2f1423a7bec2b1ed",
+      "currentSHA256": "bb0848d24401e3393b63f6d9d051dd5b69c7b1efa4c116141bda44991f16c3c2",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "data/manifest.json",
+      "previousSHA256": "42c95ae1be553d8d354640f2c126ab484725fc194002d4dd41417928b57d6719",
+      "currentSHA256": "4ff76305854a691158b525612b5ad757a358f6c8971a2b96d0207736e71be614",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "explorer/index.html",
+      "previousSHA256": "9904cce2be78e4f6ce7c943a7f6e64b1e4c93ca6b462a7e10ff2e2b63c0454e3",
+      "currentSHA256": "8ef9b8c0a6b7bd31a2922b11878e49b50805f5f5bf96b09e28f84dc4dac37e1f",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "sitemap.xml",
+      "previousSHA256": "a012871dd2510d7e08c81eda79382decb440723c426aeb0a55b138a96359a3f4",
+      "currentSHA256": "94a79680611d590500cb356d31895c624bce3bf199c64ebdc1b1ef8235fee854",
+      "classification": "version-or-generated",
+      "reviewRequired": true
+    },
+    {
+      "path": "data/internet_access_explainer.json",
+      "currentSHA256": "c95058479a5f449370ef23a3865a8a2598ac1903c88c993123a3c47aab956597",
+      "classification": "new-direct-fingerprint",
+      "reviewRequired": true
+    },
+    {
+      "path": "scripts/render_internet_access.py",
+      "currentSHA256": "02e3f4ef4cf95eb40aa954414218c2ba8c6d25699d2b4030e55fa97a0e7ed743",
+      "classification": "new-direct-fingerprint",
+      "reviewRequired": true
+    },
+    {
+      "path": "scripts/validate_internet_access.js",
+      "currentSHA256": "ecf9fe5e35eadcaa59a10b7a87801fd3f5ffd2fa51ddf325d61242ad537a88c4",
+      "classification": "new-direct-fingerprint",
+      "reviewRequired": true
+    }
+  ],
+  "sourceLinks": [
+    "https://www.aclunorcal.org/cases/bank-julius-baer-co-ltd-v-wikileaks/",
+    "https://epic.org/documents/epic-v-doj-fbi-wikileaks/",
+    "https://www.theregister.com/on-prem/2010/12/03/wikileaks-dns-pulls-plug-citing-collateral_ddos_damage/",
+    "https://www.theguardian.com/media/2010/dec/07/wikileaks-under-attack-definitive-timeline"
+  ],
+  "invariants": {
+    "rootSourceInvariants": "unchanged; validated",
+    "historicalTechnicalArchives": "validated by checkProtection",
+    "RR1RR2": "unchanged; validated",
+    "frozenAPS": "unchanged; validated"
+  }
+}
