@@ -1,0 +1,33 @@
+name: WikiLeaks 0.7.95 source-review preflight
+on:
+  push:
+    branches:
+      - feat/wikileaks-access-20261105
+    paths:
+      - scripts/prepare_wikileaks_review_v0795.cjs
+      - .github/workflows/wikileaks-review.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  exact-source-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare review candidate and independently enforce protected invariants
+        run: node scripts/prepare_wikileaks_review_v0795.cjs
+      - name: Commit traceable candidate proof, without self-approval
+        run: |
+          git fetch origin "$GITHUB_REF_NAME"
+          test "$(git rev-parse FETCH_HEAD)" = "$(git rev-parse HEAD)" || { echo 'Branch advanced; abort proof commit'; exit 1; }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/editorial-review-2026-11-05-v0.7.95.json docs/review-v0795-diff-audit.json
+          git diff --cached --quiet && exit 0
+          git commit -m "audit: record v0.7.95 candidate fingerprints for signoff [skip build]"
+          git push origin "HEAD:$GITHUB_REF_NAME"
