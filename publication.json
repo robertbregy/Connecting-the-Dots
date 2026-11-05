@@ -1,7 +1,7 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.94",
-  "releasedOn": "2026-10-30",
+  "version": "0.7.95",
+  "releasedOn": "2026-11-05",
   "state": "reveal-day",
   "freeze": true,
   "asOf": "2026-10-10",
@@ -18,8 +18,8 @@
   "conceptDoi": "10.5281/zenodo.23262622",
   "archive": "Zenodo",
   "dataPackageVersion": "0.7.58",
-  "currentDataPackVersion": "0.7.94",
-  "currentDataPackPath": "downloads/connecting-the-dots-data-pack-v0.7.94.zip",
+  "currentDataPackVersion": "0.7.95",
+  "currentDataPackPath": "downloads/connecting-the-dots-data-pack-v0.7.95.zip",
   "paperRevisedOn": "2026-10-19",
-  "editorialReviewPath": "docs/editorial-review-2026-10-30-v0.7.94.json"
+  "editorialReviewPath": "docs/editorial-review-2026-11-05-v0.7.95.json"
 }
