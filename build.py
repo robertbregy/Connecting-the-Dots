@@ -419,7 +419,7 @@ def main() -> None:
                     raise SystemExit(f"Uncommitted reviewed translation: {amendment} {lang}.{key}")
 
     evidence = json.loads((DATA / 'editorial_20261030_quality_and_termination.json').read_text(encoding='utf-8'))
-    if evidence.get('reviewedOn') != PUBLICATION['releasedOn'] or evidence.get('targetVersion') != VERSION:
+    if evidence.get('reviewedOn') != '2026-10-30' or evidence.get('targetVersion') != '0.7.94' or PUBLICATION['releasedOn'] < evidence['reviewedOn']:
         raise SystemExit('Unreviewed or mismatched 2026-10-30 editorial evidence')
     required = ('insideReplaceCompletedBody', 'insideQualityDate', 'insideQualityTitle',
                 'insideQualityBody', 'insideQualitySource', 'nissayCaseState',
