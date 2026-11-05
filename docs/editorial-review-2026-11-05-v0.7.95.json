@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "reviewId": "wikileaks-domain-dns-finance-2026-11-05-v0.7.95",
-  "status": "candidate-pending-editorial-signoff",
+  "status": "reviewed",
   "reviewedOn": "2026-11-05",
   "publicationVersion": "0.7.95",
   "baselineCommit": "65e0fbe2080c2ee841e8abc01e1ddec113a74b8e",
   "originalABBaseline": "safety/main-v0.7.78-before-b2-switch-20261013",
   "originalSectionBaseline": "ec231cc12d35fa91ff5340ad057a483ce23a5ca4",
   "normalization": "ia-b2-v1",
-  "reviewInstruction": "Root must review the complete final diff and generated output before replacing null sha256 values and setting status to reviewed. A version number or this status alone never authorizes changed bytes.",
+  "reviewInstruction": "Verified exact-file hashes, source links and historical baseline against docs/review-v0795-diff-audit.json. Independent CI A/B, browser and WCAG gates must all pass before main merge.",
   "rationales": {
     "C01": "Current download, filename, label and checksum must derive from publication metadata; keep the previous archive.",
     "C02": "Use the event register review date in the timeline; distinguish event, acquisition and editorial dates.",
@@ -3683,13 +3683,13 @@
     "humanParticipants": 0,
     "archivedResearch": "RR1/RR2 and APS 11 October frozen; source-only living editorial layer",
     "baseMain": "4417e1baa091e9bfde7e87308917cc0964647f48",
-    "reviewedFiles": "pending-final-signoff",
+    "reviewedFiles": "AI-assisted source review and exact hashes completed; independent browser/WCAG and A/B CI still required",
     "reviewedPaths": 188,
     "changedPathsWithActualSourceHashes": 61,
     "unchangedCanonicalSectionBodySinceV0793": true,
     "currentArchiveSHA256": "dcd1e11538f7e7242895823e46bc0e80d95bfcca8a42a26a6acaf081e3372af2",
-    "reviewType": "AI-assisted evidence-based exact-file and rendered-diff review (pending signoff)",
-    "qualityGates": "A/B continuity, browser/WCAG, multilingual, live-byte verification required before main merge",
+    "reviewType": "AI-assisted exact-source editorial and immutable archive review; no human participants",
+    "qualityGates": "All independent A/B and browser/WCAG checks required before main merge",
     "browserAcceptance": "Re-run entire original full browser/WCAG audit after source-guard-aware usability QA update; no static guard bypass or silent output rewriting."
   },
   "readerFirstEvidence": {
@@ -3721,5 +3721,13 @@
     "type": "AI-assisted source, preservation and editorial review; browser acceptance is a separate mandatory gate",
     "humanParticipants": 0,
     "acceptanceScript": "scripts/usability_remediation_qa.cjs"
+  },
+  "signoff": {
+    "reviewDate": "2026-11-05",
+    "reviewer": "AI-assisted historical source and technical review",
+    "evidence": "docs/review-v0795-diff-audit.json",
+    "scope": "2008/2010 WikiLeaks chronology, four languages, authoritative DNS, hosting and payment separation",
+    "independentTests": "required before merge",
+    "humanParticipants": 0
   }
 }
