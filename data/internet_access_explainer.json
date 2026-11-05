@@ -4,8 +4,8 @@
   "editorialLayer": "living-public-explainer-not-frozen-RR1",
   "slug": "who-controls-internet-access",
   "publishedOn": "2026-10-10",
-  "reviewedOn": "2026-10-10",
-  "policy": "A historically sourced selection, not an exhaustive country classification. Separate DNS resolver interference, registry/registrar status, IP/TLS access blocking, platform actions and connectivity shutdowns. Avoid inferring state intent from an individual anomalous probe, or ICANN action from domestic ISP filtering.",
+  "reviewedOn": "2026-11-05",
+  "policy": "A historically sourced selection, not an exhaustive country classification. Separate DNS resolver interference, registry/registrar status, IP/TLS access blocking, platform actions and connectivity shutdowns. Avoid inferring state intent from an individual anomalous probe, or ICANN action from domestic ISP filtering. WikiLeaks 2008 and 2010 are separate events. A DNS hosting provider stopping authoritative service is not a national resolver filter, nor a registry/registrar domain suspension. Payment processors act outside the browser request path.",
   "sources": [
     {
       "id": "ooni-method",
@@ -61,10 +61,31 @@
       "id": "pulse-explorer",
       "label": "Internet Society Pulse · Shutdown tracker",
       "url": "https://pulse.internetsociety.org/en/shutdowns/"
+    },
+    {
+      "id": "wikileaks-2008-aclu",
+      "label": "ACLU of Northern California · Bank Julius Baer v. WikiLeaks (2008)",
+      "url": "https://www.aclunorcal.org/cases/bank-julius-baer-co-ltd-v-wikileaks/"
+    },
+    {
+      "id": "wikileaks-2010-epic",
+      "label": "EPIC · WikiLeaks, DNS and payment intermediaries (2010)",
+      "url": "https://epic.org/documents/epic-v-doj-fbi-wikileaks/"
+    },
+    {
+      "id": "wikileaks-2010-everydns",
+      "label": "The Register · EveryDNS withdrawal and DDoS rationale, 3 December 2010",
+      "url": "https://www.theregister.com/2010/12/03/wikileaks_dns_pulls_plug_citing_collateral_ddos_damage/"
+    },
+    {
+      "id": "wikileaks-2010-timeline",
+      "label": "The Guardian · WikiLeaks under attack: timeline, 7 December 2010",
+      "url": "https://www.theguardian.com/media/2010/dec/07/wikileaks-under-attack-definitive-timeline"
     }
   ],
   "stageIds": [
     "registry",
+    "authoritative",
     "dns",
     "network",
     "tls",
@@ -81,7 +102,7 @@
     },
     {
       "id": "resolver",
-      "blockStage": 1,
+      "blockStage": 2,
       "scope": "local",
       "sourceIds": [
         "ooni-method",
@@ -89,8 +110,17 @@
       ]
     },
     {
+      "id": "authoritative",
+      "blockStage": 1,
+      "scope": "authoritative-dns-service",
+      "sourceIds": [
+        "wikileaks-2010-epic",
+        "wikileaks-2010-everydns"
+      ]
+    },
+    {
       "id": "ip",
-      "blockStage": 2,
+      "blockStage": 3,
       "scope": "local",
       "sourceIds": [
         "ooni-method"
@@ -98,7 +128,7 @@
     },
     {
       "id": "tls",
-      "blockStage": 3,
+      "blockStage": 4,
       "scope": "local",
       "sourceIds": [
         "ooni-method",
@@ -107,7 +137,7 @@
     },
     {
       "id": "service",
-      "blockStage": 4,
+      "blockStage": 5,
       "scope": "service",
       "sourceIds": [
         "ooni-method"
@@ -123,7 +153,7 @@
     },
     {
       "id": "shutdown",
-      "blockStage": 2,
+      "blockStage": 3,
       "scope": "network",
       "sourceIds": [
         "isoc-shutdown",
@@ -225,6 +255,33 @@
         "dns",
         "http"
       ]
+    },
+    {
+      "id": "wikileaks-2008",
+      "period": "2008",
+      "jurisdiction": "US",
+      "sourceIds": [
+        "wikileaks-2008-aclu"
+      ],
+      "method": [
+        "registrar",
+        "judicial-domain-suspension"
+      ]
+    },
+    {
+      "id": "wikileaks-2010",
+      "period": "2010",
+      "jurisdiction": "cross-border",
+      "sourceIds": [
+        "wikileaks-2010-epic",
+        "wikileaks-2010-everydns",
+        "wikileaks-2010-timeline"
+      ],
+      "method": [
+        "hosting",
+        "authoritative-dns",
+        "payments"
+      ]
     }
   ],
   "languages": {
@@ -249,7 +306,7 @@
       "simStagePassed": "passed",
       "simStageBlocked": "interrupted",
       "simStagePending": "not reached",
-      "simNote": "The registry step describes control over registration and authoritative delegation, not an additional network hop on each visit. The exact outcome depends on how the measure is implemented.",
+      "simNote": "Registration and authoritative DNS are prerequisites to finding the site, not network hops that every browser request traverses. Payment restrictions are outside this path.",
       "stages": {
         "registry": {
           "title": "TLD, registry & registration",
@@ -270,6 +327,10 @@
         "service": {
           "title": "Hosting, application & content",
           "body": "Does the remote service answer and provide the requested resource?"
+        },
+        "authoritative": {
+          "title": "Authoritative DNS service",
+          "body": "Does the domain's DNS provider publish and serve the records needed to find the site? This differs from filtering by the user's recursive resolver."
         }
       },
       "modes": {
@@ -328,6 +389,14 @@
           "name": "Global DNS names are not necessarily changed.",
           "users": "Broad groups of services become unavailable from the affected network.",
           "actors": "Network operators, potentially acting under government orders."
+        },
+        "authoritative": {
+          "label": "Authoritative DNS withdrawn",
+          "title": "Authoritative nameservers stop answering for the site",
+          "body": "A domain's DNS hosting provider may stop serving its zone. The registration and TLD can remain in place while name resolution fails across many networks. The registrant can move authoritative DNS to another provider.",
+          "name": "The domain registration may remain valid; the authoritative DNS service is unavailable.",
+          "users": "Name resolution may fail across different networks until authoritative service is restored or replaced.",
+          "actors": "The authoritative DNS operator, not necessarily the registry, registrar or ICANN."
         }
       },
       "actorsTitle": "Who controls what?",
@@ -354,8 +423,8 @@
           "body": "May moderate content, refuse service or apply territorial restrictions without changing DNS delegation."
         }
       },
-      "examplesTitle": "Five documented examples, five different contexts",
-      "examplesLead": "A curated historical selection with dated evidence, not a complete or current inventory of countries that restrict online access.",
+      "examplesTitle": "Seven documented cases, distinct mechanisms",
+      "examplesLead": "Historical, dated cases; WikiLeaks 2008 and 2010 are separate episodes, not a global censorship ranking.",
       "caseLabel": "How it was observed",
       "caseTime": "Evidence period",
       "cases": {
@@ -383,6 +452,16 @@
           "title": "Catalonia (Spain) · domain actions and network blocking",
           "body": "During the 2017 referendum, OONI measured DNS tampering and HTTP blocking of referendum sites. Some .cat domains were also redirected at the DNS level after Fundació .cat implemented a court order, while ISPs applied other blocks. Actions affecting particular registrations are not removal of the .cat TLD: it is a sponsored gTLD, not a ccTLD.",
           "note": "OONI measurements, September–October 2017"
+        },
+        "wikileaks-2008": {
+          "title": "WikiLeaks 2008 · registrar court order",
+          "body": "In litigation brought by bank Julius Baer, a US court ordered registrar Dynadot to disable wikileaks.org. The order was lifted on 29 February 2008. This was a domain-level intervention, not filtering by users' DNS resolvers or deletion of the .org TLD.",
+          "note": "ACLU · proceedings and reversal, February 2008"
+        },
+        "wikileaks-2010": {
+          "title": "WikiLeaks 2010 · hosting, DNS and payments",
+          "body": "Three distinct service decisions followed one another: Amazon ended hosting; EveryDNS withdrew authoritative DNS service after DDoS attacks it said threatened other customers; and payment intermediaries restricted donation channels. None removed the .org TLD from the DNS root. Reported rationales must be attributed to each source rather than inferred from their timing.",
+          "note": "EPIC, EveryDNS as reported by The Register and Guardian timeline · December 2010"
         }
       },
       "limitsTitle": "Measurements are evidence, not an automatic verdict",
@@ -399,7 +478,9 @@
       "reviewedLabel": "Last reviewed",
       "sourceLabel": "Source",
       "simPreconditionLabel": "Before the visit: the name must exist",
-      "simPreconditionBody": "The registry and registrar manage the domain's registration and authoritative DNS status. They are not contacted as an extra network hop every time someone opens a website."
+      "simPreconditionBody": "The registry and registrar manage the domain's registration and authoritative DNS status. They are not contacted as an extra network hop every time someone opens a website.",
+      "financeTitle": "A payment blockade does not break the network connection",
+      "financeBody": "PayPal, Visa and Mastercard can restrict donations via their payment networks. That is control through financial services, not a step in the DNS → network → HTTPS → hosting request path. WikiLeaks in 2010 illustrates why technical reachability and financial sustainability must be analysed separately."
     },
     "it": {
       "metaTitle": "Chi controlla l'accesso a Internet? | Connecting the Dots",
@@ -422,7 +503,7 @@
       "simStagePassed": "superato",
       "simStageBlocked": "interrotto",
       "simStagePending": "non raggiunto",
-      "simNote": "Il passaggio relativo al registro rappresenta la gestione della registrazione e della delega autorevole, non un ulteriore nodo di rete attraversato a ogni visita. Gli effetti esatti dipendono dall'attuazione concreta.",
+      "simNote": "Registrazione e DNS autorevole sono condizioni per trovare il sito, non nodi che il browser attraversa sempre a ogni visita. Il blocco dei pagamenti non appartiene a questo percorso.",
       "stages": {
         "registry": {
           "title": "TLD, registro e registrazione",
@@ -443,6 +524,10 @@
         "service": {
           "title": "Hosting, applicazione e contenuti",
           "body": "Il servizio risponde e rende disponibile la risorsa richiesta?"
+        },
+        "authoritative": {
+          "title": "Servizio DNS autorevole",
+          "body": "Un gestore pubblica e serve i record DNS necessari per individuare il dominio? È diverso dal filtro DNS applicato dal resolver dell'utente."
         }
       },
       "modes": {
@@ -501,6 +586,14 @@
           "name": "I nomi nel DNS globale non vengono necessariamente modificati.",
           "users": "Numerosi servizi diventano irraggiungibili dalla rete interessata.",
           "actors": "Operatori di rete, anche in esecuzione di ordini delle autorità."
+        },
+        "authoritative": {
+          "label": "Ritiro del DNS autorevole",
+          "title": "I server autorevoli non forniscono più le risposte",
+          "body": "Il fornitore DNS del sito può cessare di servire la zona. Il dominio può restare registrato e il TLD continuare a funzionare, ma la risoluzione tramite quel servizio può fallire per utenti di molte reti. Il titolare può ripristinare il nome affidandosi a un altro provider DNS.",
+          "name": "La registrazione del dominio può restare valida; è il servizio autorevole a mancare.",
+          "users": "La risoluzione può fallire in molte reti, finché il servizio non viene ripristinato o sostituito.",
+          "actors": "Il gestore del DNS autorevole, non necessariamente il registry, il registrar o ICANN."
         }
       },
       "actorsTitle": "Chi può intervenire e su che cosa?",
@@ -527,8 +620,8 @@
           "body": "Può moderare contenuti, negare servizi o limitarli per territorio senza modificare la delega DNS."
         }
       },
-      "examplesTitle": "Cinque casi documentati, cinque contesti diversi",
-      "examplesLead": "Una selezione storica con fonti datate. Non è un elenco completo né una classifica aggiornata dei Paesi che limitano l'accesso.",
+      "examplesTitle": "Sette casi documentati, meccanismi differenti",
+      "examplesLead": "Casi storici con fonti datate; WikiLeaks 2008 e 2010 sono episodi distinti. Nessuna classifica mondiale della censura.",
       "caseLabel": "Come è stato osservato",
       "caseTime": "Periodo delle evidenze",
       "cases": {
@@ -556,6 +649,16 @@
           "title": "Catalogna (Spagna) · interventi sui domini e blocchi di rete",
           "body": "Durante il referendum del 2017, OONI ha misurato manipolazioni DNS e blocchi HTTP dei siti interessati. Alcuni domini .cat furono inoltre reindirizzati nel DNS dopo che la Fundació .cat aveva applicato un ordine giudiziario, mentre i provider attuarono altri blocchi. Le misure su singole registrazioni non equivalgono alla rimozione del TLD .cat, che è un gTLD sponsorizzato e non un ccTLD.",
           "note": "Misurazioni OONI, settembre–ottobre 2017"
+        },
+        "wikileaks-2008": {
+          "title": "WikiLeaks 2008 · ordine contro il registrar",
+          "body": "Nel contenzioso con la banca Julius Baer, un tribunale statunitense ordinò al registrar Dynadot di disabilitare wikileaks.org. L'ordine fu revocato il 29 febbraio 2008. Era un intervento sul nome registrato, non un filtraggio dei resolver degli utenti né la cancellazione del TLD .org.",
+          "note": "ACLU · vicenda giudiziaria e revoca dell'ordine, febbraio 2008"
+        },
+        "wikileaks-2010": {
+          "title": "WikiLeaks 2010 · hosting, DNS e pagamenti",
+          "body": "Tre interventi distinti si susseguirono: Amazon cessò l'hosting, EveryDNS interruppe il servizio DNS autorevole a seguito di attacchi DDoS che, secondo il fornitore, minacciavano gli altri clienti, e processori di pagamento limitarono le donazioni. Nessuno dei tre equivale alla rimozione di .org dalla root DNS. Le cause e responsabilità dei diversi interventi vanno attribuite alle fonti, non dedotte dalla coincidenza temporale.",
+          "note": "EPIC, EveryDNS (tramite The Register) e cronologia Guardian · dicembre 2010"
         }
       },
       "limitsTitle": "Una misura di rete è una prova, non una sentenza automatica",
@@ -572,7 +675,9 @@
       "reviewedLabel": "Ultima verifica",
       "sourceLabel": "Fonte",
       "simPreconditionLabel": "Prima della visita: il nome deve esistere",
-      "simPreconditionBody": "Il registro e il registrar gestiscono la registrazione e la configurazione DNS autorevole del dominio. Non sono un nodo che il browser attraversa a ogni visita."
+      "simPreconditionBody": "Il registro e il registrar gestiscono la registrazione e la configurazione DNS autorevole del dominio. Non sono un nodo che il browser attraversa a ogni visita.",
+      "financeTitle": "Il blocco dei pagamenti non interrompe la connessione",
+      "financeBody": "PayPal, Visa e Mastercard possono limitare la raccolta di fondi attraverso i propri circuiti. È una forma di controllo esercitata su un servizio finanziario, esterna al percorso DNS → rete → HTTPS → hosting. Il caso WikiLeaks del 2010 mostra perché accessibilità tecnica e sostenibilità economica devono essere analizzate separatamente."
     },
     "de": {
       "metaTitle": "Wer kontrolliert den Internetzugang? | Connecting the Dots",
@@ -595,7 +700,7 @@
       "simStagePassed": "erreicht",
       "simStageBlocked": "unterbrochen",
       "simStagePending": "nicht erreicht",
-      "simNote": "Die Registry-Stufe beschreibt Registrierung und autoritative Delegation, keinen zusätzlichen Netzwerkknoten bei jedem Abruf. Die konkreten Wirkungen hängen von der Umsetzung ab.",
+      "simNote": "Registrierung und autoritatives DNS sind Voraussetzungen, nicht stets durchlaufene Netzwerkknoten. Zahlungssperren liegen außerhalb dieses Pfads.",
       "stages": {
         "registry": {
           "title": "TLD, Registry & Registrierung",
@@ -616,6 +721,10 @@
         "service": {
           "title": "Hosting, Anwendung & Inhalte",
           "body": "Antwortet der Dienst und liefert er die angeforderte Ressource?"
+        },
+        "authoritative": {
+          "title": "Autoritativer DNS-Dienst",
+          "body": "Veröffentlicht der DNS-Anbieter der Domain die nötigen Einträge? Das unterscheidet sich von einer DNS-Sperre beim rekursiven Resolver des Nutzers."
         }
       },
       "modes": {
@@ -674,6 +783,14 @@
           "name": "Globale DNS-Namen werden nicht zwangsläufig verändert.",
           "users": "Viele Dienste sind im betroffenen Netz nicht mehr erreichbar.",
           "actors": "Netzbetreiber, gegebenenfalls aufgrund behördlicher Anordnungen."
+        },
+        "authoritative": {
+          "label": "Autoritatives DNS abgeschaltet",
+          "title": "Autoritative Nameserver liefern keine Antworten mehr",
+          "body": "Ein DNS-Hosting-Anbieter kann die Zone einer Domain nicht mehr bereitstellen. Registrierung und TLD können bestehen bleiben, während die Namensauflösung in vielen Netzen scheitert. Der Domaininhaber kann den autoritativen DNS-Dienst wechseln.",
+          "name": "Die Domainregistrierung kann bestehen bleiben; betroffen ist der autoritative DNS-Dienst.",
+          "users": "Die Namensauflösung kann in mehreren Netzen fehlschlagen, bis der Dienst ersetzt oder wiederhergestellt ist.",
+          "actors": "Der Betreiber des autoritativen DNS, nicht zwingend Registry, Registrar oder ICANN."
         }
       },
       "actorsTitle": "Wer kann was beeinflussen?",
@@ -700,8 +817,8 @@
           "body": "Kann Inhalte moderieren, Dienste verweigern oder geografisch begrenzen, ohne die DNS-Delegation zu verändern."
         }
       },
-      "examplesTitle": "Fünf dokumentierte Beispiele aus unterschiedlichen Kontexten",
-      "examplesLead": "Historische Auswahl mit datierten Belegen, keine vollständige oder tagesaktuelle Länderübersicht.",
+      "examplesTitle": "Sieben dokumentierte Fälle, unterschiedliche Mechanismen",
+      "examplesLead": "Historische Fallauswahl mit datierten Belegen; WikiLeaks 2008 und 2010 sind unterschiedliche Vorgänge, keine weltweite Zensurrangliste.",
       "caseLabel": "Beobachtete Technik",
       "caseTime": "Zeitraum der Belege",
       "cases": {
@@ -729,6 +846,16 @@
           "title": "Katalonien (Spanien) · Eingriffe in Domains und Netzsperren",
           "body": "Zum Referendum 2017 dokumentierte OONI DNS-Manipulationen und HTTP-Sperren. Einige .cat-Domains wurden zudem auf DNS-Ebene umgeleitet, nachdem die Fundació .cat eine gerichtliche Anordnung umgesetzt hatte; Provider setzten weitere Sperren durch. Maßnahmen gegen einzelne Domainregistrierungen sind keine Entfernung der gesamten TLD .cat, die eine gesponserte gTLD und keine ccTLD ist.",
           "note": "OONI-Messungen, September–Oktober 2017"
+        },
+        "wikileaks-2008": {
+          "title": "WikiLeaks 2008 · gerichtliche Anordnung an Registrar",
+          "body": "Im Streit mit der Bank Julius Baer ordnete ein US-Gericht gegenüber Registrar Dynadot die Deaktivierung von wikileaks.org an. Die Anordnung wurde am 29. Februar 2008 aufgehoben. Es ging um die Domain, nicht um DNS-Filter der Nutzer oder die Entfernung der TLD .org.",
+          "note": "ACLU · Gerichtsverfahren und Aufhebung, Februar 2008"
+        },
+        "wikileaks-2010": {
+          "title": "WikiLeaks 2010 · Hosting, DNS und Zahlungswege",
+          "body": "Drei getrennte Maßnahmen folgten aufeinander: Amazon beendete das Hosting; EveryDNS stellte den autoritativen DNS-Dienst nach DDoS-Angriffen ein, die nach Angaben des Anbieters andere Kunden gefährdeten; und Zahlungsdienstleister beschränkten Spendenkanäle. Keine dieser Maßnahmen entfernte .org aus der DNS-Root. Die Motive müssen den jeweiligen Quellen zugeordnet werden.",
+          "note": "EPIC, EveryDNS laut The Register und Guardian-Chronologie · Dezember 2010"
         }
       },
       "limitsTitle": "Messungen sind Belege, kein automatisches Urteil",
@@ -745,7 +872,9 @@
       "reviewedLabel": "Zuletzt geprüft",
       "sourceLabel": "Quelle",
       "simPreconditionLabel": "Vor dem Aufruf: Der Name muss bestehen",
-      "simPreconditionBody": "Registry und Registrar verwalten Registrierung und autoritativen DNS-Status der Domain. Beim Aufruf einer Website ist dies kein zusätzlicher Netzwerkknoten, der jedes Mal passiert wird."
+      "simPreconditionBody": "Registry und Registrar verwalten Registrierung und autoritativen DNS-Status der Domain. Beim Aufruf einer Website ist dies kein zusätzlicher Netzwerkknoten, der jedes Mal passiert wird.",
+      "financeTitle": "Eine Zahlungssperre unterbricht nicht die Internetverbindung",
+      "financeBody": "PayPal, Visa und Mastercard können Spenden in ihren Zahlungssystemen einschränken. Das betrifft Finanzdienstleistungen, nicht den technischen Weg DNS → Netzwerk → HTTPS → Hosting. WikiLeaks 2010 zeigt, warum Erreichbarkeit und wirtschaftliche Tragfähigkeit getrennt betrachtet werden müssen."
     },
     "fr": {
       "metaTitle": "Qui contrôle l'accès à Internet ? | Connecting the Dots",
@@ -768,7 +897,7 @@
       "simStagePassed": "franchi",
       "simStageBlocked": "interrompu",
       "simStagePending": "non atteint",
-      "simNote": "L'étape du registre décrit la gestion de l'enregistrement et de la délégation autoritative ; ce n'est pas un nœud traversé à chaque visite. L'effet précis dépend de la mise en œuvre.",
+      "simNote": "Enregistrement et DNS faisant autorité sont des prérequis, pas des nœuds traversés à chaque visite. Les restrictions de paiement sont hors de ce parcours.",
       "stages": {
         "registry": {
           "title": "TLD, registre et enregistrement",
@@ -789,6 +918,10 @@
         "service": {
           "title": "Hébergement, application et contenu",
           "body": "Le service répond-il et fournit-il la ressource demandée ?"
+        },
+        "authoritative": {
+          "title": "Service DNS faisant autorité",
+          "body": "Le prestataire DNS publie-t-il les enregistrements permettant de trouver le site ? Ce mécanisme diffère du filtrage opéré par le résolveur de l'utilisateur."
         }
       },
       "modes": {
@@ -847,6 +980,14 @@
           "name": "Les noms du DNS mondial ne sont pas forcément modifiés.",
           "users": "De nombreux services ne sont plus accessibles depuis le réseau concerné.",
           "actors": "Opérateurs de réseau, éventuellement sur décision des autorités."
+        },
+        "authoritative": {
+          "label": "Retrait du DNS faisant autorité",
+          "title": "Les serveurs DNS faisant autorité cessent de répondre",
+          "body": "Un prestataire DNS peut cesser de servir la zone d'un domaine. L'enregistrement et le TLD peuvent subsister alors que la résolution échoue sur plusieurs réseaux. Le titulaire peut transférer ce service à un autre prestataire.",
+          "name": "L'enregistrement peut rester valide ; le service DNS faisant autorité est indisponible.",
+          "users": "La résolution peut échouer sur plusieurs réseaux jusqu'au rétablissement ou au remplacement du service.",
+          "actors": "Le prestataire DNS faisant autorité, pas nécessairement le registre, le bureau d'enregistrement ou l'ICANN."
         }
       },
       "actorsTitle": "Qui peut agir sur quoi ?",
@@ -873,8 +1014,8 @@
           "body": "Peut modérer des contenus, refuser des services ou limiter l'accès par territoire sans modifier la délégation DNS."
         }
       },
-      "examplesTitle": "Cinq situations documentées et des contextes distincts",
-      "examplesLead": "Un choix de cas historiques datés, pas une liste exhaustive ou un classement actualisé des pays.",
+      "examplesTitle": "Sept cas documentés, des mécanismes différents",
+      "examplesLead": "Sélection historique datée ; WikiLeaks 2008 et 2010 sont deux épisodes distincts, pas un classement mondial de la censure.",
       "caseLabel": "Méthodes observées",
       "caseTime": "Période couverte",
       "cases": {
@@ -902,6 +1043,16 @@
           "title": "Catalogne (Espagne) · mesures sur des domaines et filtrage réseau",
           "body": "Pendant le référendum de 2017, OONI a documenté des manipulations DNS et des blocages HTTP. Certains domaines .cat ont aussi été redirigés dans le DNS après l'exécution d'une ordonnance judiciaire par la Fundació .cat, tandis que des fournisseurs d'accès appliquaient d'autres blocages. Des mesures visant des enregistrements individuels ne suppriment pas le TLD .cat, un gTLD sponsorisé et non un ccTLD.",
           "note": "Mesures OONI, septembre–octobre 2017"
+        },
+        "wikileaks-2008": {
+          "title": "WikiLeaks 2008 · ordonnance visant le registrar",
+          "body": "Dans le litige avec la banque Julius Baer, un tribunal américain a ordonné au bureau d'enregistrement Dynadot de désactiver wikileaks.org. L'ordonnance a été levée le 29 février 2008. Il s'agissait d'une mesure visant le domaine, pas d'un filtre DNS local ni d'une suppression du TLD .org.",
+          "note": "ACLU · procédure et levée de l'ordonnance, février 2008"
+        },
+        "wikileaks-2010": {
+          "title": "WikiLeaks 2010 · hébergement, DNS et paiements",
+          "body": "Trois décisions distinctes se sont succédé : Amazon a cessé l'hébergement ; EveryDNS a retiré le service DNS faisant autorité après des attaques DDoS qui, selon l'entreprise, menaçaient ses autres clients ; et des intermédiaires de paiement ont limité les dons. Aucune ne supprimait le TLD .org de la racine DNS. Il faut attribuer les motifs aux sources plutôt que les déduire de leur chronologie.",
+          "note": "EPIC, déclaration EveryDNS rapportée par The Register et chronologie Guardian · décembre 2010"
         }
       },
       "limitsTitle": "Une mesure constitue un indice ou une preuve, pas un verdict automatique",
@@ -918,7 +1069,9 @@
       "reviewedLabel": "Dernière vérification",
       "sourceLabel": "Source",
       "simPreconditionLabel": "Avant la visite : le nom doit exister",
-      "simPreconditionBody": "Le registre et le bureau d'enregistrement gèrent l'inscription du domaine et sa configuration DNS faisant autorité. Ils ne constituent pas une étape réseau supplémentaire lors de chaque visite."
+      "simPreconditionBody": "Le registre et le bureau d'enregistrement gèrent l'inscription du domaine et sa configuration DNS faisant autorité. Ils ne constituent pas une étape réseau supplémentaire lors de chaque visite.",
+      "financeTitle": "Bloquer les paiements n'interrompt pas la connexion",
+      "financeBody": "PayPal, Visa et Mastercard peuvent restreindre les dons dans leurs réseaux de paiement. C'est un contrôle financier, extérieur au parcours DNS → réseau → HTTPS → hébergement. Le cas WikiLeaks de 2010 montre pourquoi accessibilité technique et viabilité économique doivent être analysées séparément."
     }
   }
 }
