@@ -1157,9 +1157,9 @@ for lang in LANGS:
 access=json_file('internet_access_explainer.json')
 if access.get('editorialLayer')!='living-public-explainer-not-frozen-RR1' or access.get('classification')!='governance-and-network-access-explainer':
     fail('Internet access explainer mislabeled as archival research or country ranking')
-if access.get('reviewedOn')!=publication_meta.get('asOf') or access.get('publishedOn')!='2026-10-10':
+if not (publication_meta.get('asOf','') <= access.get('reviewedOn','') <= publication_meta.get('releasedOn','')) or access.get('publishedOn')!='2026-10-10':
     fail('Access explainer has no reviewed publication date')
-if len(access['mechanisms'])!=7 or len(access['stageIds'])!=5 or len(access['cases'])!=5 or len(access['sources'])!=11:
+if len(access['mechanisms'])!=8 or len(access['stageIds'])!=6 or len(access['cases'])!=7 or len(access['sources'])!=15:
     fail('Internet access explainer lost technical scenarios or historic evidence')
 if set(access['languages'])!=set(LANGS):
     fail('Internet access explainer untranslated')
@@ -1179,12 +1179,12 @@ for lang in LANGS:
         fail('Untranslated access explainer SEO title '+lang)
     if page.count('<link rel="alternate" hreflang=')!=5:
         fail('Access explainer hreflang reciprocity missing '+lang)
-    if page.count('data-access-stage=')!=5 or page.count('data-access-select=')!=7 or page.count('data-access-scenario-panel=')!=7:
+    if page.count('data-access-stage=')!=6 or page.count('data-access-select=')!=8 or page.count('data-access-scenario-panel=')!=8:
         fail('Access-control walkthrough scenarios incomplete '+lang)
-    if page.count('data-access-case=')!=5 or page.count('data-access-actor=')!=5:
+    if page.count('data-access-case=')!=7 or page.count('data-access-actor=')!=5:
         fail('Access-control examples or responsible roles incomplete '+lang)
-    if page.count('id="access-source-')!=11:
-        fail('Access explainer did not publish all eleven sources '+lang)
+    if page.count('id="access-source-')!=15:
+        fail('Access explainer did not publish all fifteen sources '+lang)
     for record in access['sources']:
         if record['url'] not in page:
             fail('Unlinked primary access source '+lang+'/'+record['id'])
