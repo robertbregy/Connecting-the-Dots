@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "version": "0.7.95",
+  "reviewedOn": "2026-11-05",
+  "status": "candidate-pending-CI",
+  "scope": "Improve four-language Internet access explainer by distinguishing domain registration, authoritative DNS, network blocking, hosting and payment services.",
+  "history": [
+    "2008: court order involving domain registrar, later reversed",
+    "2010: separate service interruptions affecting hosting, DNS and donation processing"
+  ],
+  "sourceLinks": [
+    "https://www.aclunorcal.org/cases/bank-julius-baer-co-ltd-v-wikileaks/",
+    "https://epic.org/documents/epic-v-doj-fbi-wikileaks/",
+    "https://www.theregister.com/on-prem/2010/12/03/wikileaks-dns-pulls-plug-citing-collateral-ddos-damage/1496505",
+    "https://www.theguardian.com/media/2010/dec/07/wikileaks-under-attack-definitive-timeline"
+  ],
+  "unchanged": [
+    "RR1",
+    "RR2",
+    "APS 2026 frozen snapshot"
+  ],
+  "checks": "Build integrity, multilingual simulator, A/B continuity, browser accessibility and live Pages smoke must pass before release."
+}
