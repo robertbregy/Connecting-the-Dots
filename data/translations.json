@@ -2571,7 +2571,8 @@
     "nissayCaseReading": "This corporate gTLD provides a useful comparison with the municipal .helsinki case: a termination notice, a preliminary transition decision and removal from the root are different steps. These public sources do not establish economic motives.",
     "nissaySourceIcann": "ICANN · registry termination procedure",
     "nissaySourceIana": "IANA · .nissay delegation record",
-    "release0794": "Adds ICANN's 2026 evaluation quality-control provider, a source-dated .nissay termination case and the completed replacement-choice window. Editorial update only: 11 October APS and RR1/RR2 remain frozen."
+    "release0794": "Adds ICANN's 2026 evaluation quality-control provider, a source-dated .nissay termination case and the completed replacement-choice window. Editorial update only: 11 October APS and RR1/RR2 remain frozen.",
+    "release0795": "WikiLeaks (2008/2010): domain court order, withdrawn authoritative DNS, hosting and payment restrictions shown as separate control points."
   },
   "it": {
     "brand": "Brand",
@@ -5145,7 +5146,8 @@
     "nissayCaseReading": "Questo gTLD aziendale offre un confronto con il caso cittadino .helsinki: notifica di cessazione, decisione preliminare sul subentro e rimozione dalla radice sono passaggi distinti. Le fonti pubbliche non documentano motivazioni economiche.",
     "nissaySourceIcann": "ICANN · procedura di cessazione",
     "nissaySourceIana": "IANA · delega di .nissay",
-    "release0794": "Aggiunti il controllo qualità JAS per il round 2026, il caso .nissay con stato procedurale verificato e la chiusura delle scelte sostitutive. Aggiornamento editoriale: corpus APS dell'11 ottobre e RR1/RR2 invariati."
+    "release0794": "Aggiunti il controllo qualità JAS per il round 2026, il caso .nissay con stato procedurale verificato e la chiusura delle scelte sostitutive. Aggiornamento editoriale: corpus APS dell'11 ottobre e RR1/RR2 invariati.",
+    "release0795": "WikiLeaks (2008/2010): ordine sul dominio, ritiro del DNS autorevole, hosting e pagamenti distinti come leve di controllo."
   },
   "de": {
     "brand": "Marke",
@@ -7719,7 +7721,8 @@
     "nissayCaseReading": "Diese Unternehmens-TLD ergänzt den kommunalen Fall .helsinki: Kündigungsmitteilung, vorläufige Übergangsentscheidung und Entfernung aus der Root-Zone sind unterschiedliche Schritte. Die öffentlichen Quellen belegen keine wirtschaftlichen Motive.",
     "nissaySourceIcann": "ICANN · Verfahren zur Vertragsbeendigung",
     "nissaySourceIana": "IANA · Delegation von .nissay",
-    "release0794": "Ergänzt die JAS-Qualitätskontrolle für 2026, den quellenbelegten Fall .nissay und das Ende der Frist für Ersatz-Zeichenfolgen. Nur redaktionell: APS-Bestand vom 11. Oktober und RR1/RR2 unverändert."
+    "release0794": "Ergänzt die JAS-Qualitätskontrolle für 2026, den quellenbelegten Fall .nissay und das Ende der Frist für Ersatz-Zeichenfolgen. Nur redaktionell: APS-Bestand vom 11. Oktober und RR1/RR2 unverändert.",
+    "release0795": "WikiLeaks (2008/2010): gerichtliche Domainsperre, Ausfall des autoritativen DNS, Hosting und Zahlungen als getrennte Kontrollpunkte."
   },
   "fr": {
     "brand": "Marque",
@@ -10293,6 +10296,7 @@
     "nissayCaseReading": "Ce gTLD d'entreprise complète le cas municipal .helsinki : notification de résiliation, décision préliminaire sur la succession et retrait de la racine DNS sont trois étapes distinctes. Les sources publiques ne prouvent aucun motif économique.",
     "nissaySourceIcann": "ICANN · procédure de résiliation",
     "nissaySourceIana": "IANA · délégation de .nissay",
-    "release0794": "Ajout du contrôle qualité JAS pour 2026, du cas documenté .nissay et de la clôture du choix des chaînes de remplacement. Mise à jour éditoriale uniquement : corpus APS du 11 octobre et RR1/RR2 inchangés."
+    "release0794": "Ajout du contrôle qualité JAS pour 2026, du cas documenté .nissay et de la clôture du choix des chaînes de remplacement. Mise à jour éditoriale uniquement : corpus APS du 11 octobre et RR1/RR2 inchangés.",
+    "release0795": "WikiLeaks (2008/2010) : ordonnance visant le domaine, retrait du DNS faisant autorité, hébergement et paiements distingués."
   }
 }
