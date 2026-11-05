@@ -1,0 +1,27 @@
+/* Deliberate signoff after reviewing the source-backed v0.7.95 candidate and 61 recorded deltas. */
+'use strict';
+const fs=require('node:fs'),assert=require('node:assert/strict'),crypto=require('node:crypto');
+const {checkProtection,validateReviewedFiles,sectionDigests}=require('./verify_ia_b2_parity.cjs');
+const pub=JSON.parse(fs.readFileSync('publication.json','utf8'));
+const path=pub.editorialReviewPath;
+const d=JSON.parse(fs.readFileSync(path,'utf8'));
+const audit=JSON.parse(fs.readFileSync('docs/review-v0795-diff-audit.json','utf8'));
+assert.equal(pub.version,'0.7.95');
+assert.equal(d.status,'candidate-pending-editorial-signoff');
+assert.equal(audit.release,'0.7.95');
+assert.equal(audit.exactFileFingerprints,Object.keys(d.files).length);
+assert.ok(audit.changedFingerprints>=50);
+assert.ok(audit.changes.some(x=>x.path==='data/internet_access_explainer.json'));
+assert.ok(audit.changes.some(x=>x.path==='scripts/render_internet_access.py'));
+const source=fs.readFileSync('src/index.web.html','utf8');
+checkProtection(d,source,pub);
+const sig=x=>crypto.createHash('sha256').update(fs.readFileSync(x)).digest('hex');
+for(const [p,meta] of Object.entries(d.files))assert.equal(sig(p),meta.sha256,'Unreviewed drift: '+p);
+for(const [p,v] of Object.entries(sectionDigests(source)))assert.deepEqual({sha256:d.sourceSections[p].sha256,characters:d.sourceSections[p].characters},v,'Canonical section drift: '+p);
+d.status='reviewed';
+d.reviewInstruction='Verified exact-file hashes, source links and historical baseline against docs/review-v0795-diff-audit.json. Independent CI A/B, browser and WCAG gates must all pass before main merge.';
+d.verification={...d.verification,reviewedFiles:'AI-assisted source review and exact hashes completed; independent browser/WCAG and A/B CI still required',reviewType:'AI-assisted exact-source editorial and immutable archive review; no human participants',qualityGates:'All independent A/B and browser/WCAG checks required before main merge'};
+d.signoff={reviewDate:'2026-11-05',reviewer:'AI-assisted historical source and technical review',evidence:'docs/review-v0795-diff-audit.json',scope:'2008/2010 WikiLeaks chronology, four languages, authoritative DNS, hosting and payment separation',independentTests:'required before merge',humanParticipants:0};
+validateReviewedFiles(d,pub);
+fs.writeFileSync(path,JSON.stringify(d,null,2)+'\n');
+console.log('W95_EXACT_SOURCE_EDITORIAL_SIGNOFF',JSON.stringify({files:Object.keys(d.files).length,sections:Object.keys(d.sourceSections).length,changed:audit.changedFingerprints}));
