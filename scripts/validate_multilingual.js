@@ -230,10 +230,10 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.equal(accessDocument.documentElement.getAttribute('lang'),language,page+' access explainer wrong locale');
   assert.equal(accessDocument.querySelector('link[rel="canonical"]')?.getAttribute('href'),accessHref,page+' access explainer canonical');
   assert.equal(accessDocument.querySelectorAll('link[rel="alternate"][hreflang]').length,5,page+' access explainer hreflang');
-  assert.equal(accessDocument.querySelectorAll('[data-access-select]').length,7,page+' access simulation missing controls');
-  assert.equal(accessDocument.querySelectorAll('[data-access-stage]').length,5,page+' access simulation missing stages');
-  assert.equal(accessDocument.querySelectorAll('[data-access-case]').length,5,page+' five historical examples missing');
-  assert.equal(accessDocument.querySelectorAll('[id^="access-source-"]').length,11,page+' complete access evidence list missing');
+  assert.equal(accessDocument.querySelectorAll('[data-access-select]').length,8,page+' access simulation missing controls');
+  assert.equal(accessDocument.querySelectorAll('[data-access-stage]').length,6,page+' access simulation missing stages');
+  assert.equal(accessDocument.querySelectorAll('[data-access-case]').length,7,page+' five historical examples missing');
+  assert.equal(accessDocument.querySelectorAll('[id^="access-source-"]').length,15,page+' complete access evidence list missing');
   assert.equal(accessDocument.querySelector('meta[name="robots"]')?.getAttribute('content'),'index,follow,max-image-preview:large',page+' access SEO');
   assert.equal(document.querySelectorAll('[data-access-explainer-link]').length,3,page+' How, Social and Disputes links');
   for(const link of document.querySelectorAll('a[data-access-explainer-link]')){
@@ -242,7 +242,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.ok(sanctionsText.includes(accessHref),page+' sanctions guide must link to access explainer');
   const accessSchema=JSON.parse(accessDocument.querySelector('script[type="application/ld+json"]').textContent);
   assert.equal(accessSchema['@type'],'Article',page+' access structured metadata');
-  assert.equal(accessSchema.citation.length,11,page+' access source references incomplete');
+  assert.equal(accessSchema.citation.length,15,page+' access source references incomplete');
 
 
 
