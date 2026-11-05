@@ -75,6 +75,7 @@ ACCESS_CSS = """
 .accessRefs{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 .accessRefs a{text-decoration:none;color:#154e78!important;border:1px solid #9ebbd0;border-radius:6px;background:#eaf3fc;padding:2px 7px;font-size:.77rem;font-weight:750}
 .accessRefs a:hover,.accessRefs a:focus-visible{text-decoration:underline}
+.accessFinance{border-left:4px solid var(--accent)!important;margin:16px 0 35px}.accessFinance h2{font-size:1.32rem;margin:0 0 8px}.accessFinance p{max-width:84ch}
 .accessPanel{padding:22px!important}
 .accessPanel h2{margin:0 0 10px}
 .accessPanel p{max-width:85ch}
@@ -128,21 +129,22 @@ def load(root: Path = ROOT) -> dict:
     if set(obj.get("languages",{})) != set(LANGS):
         raise ValueError("Incomplete translations for access explainer")
     valid = ("https://ooni.org/", "https://explorer.ooni.org/", "https://www.internetsociety.org/",
-             "https://pulse.internetsociety.org/", "https://itp.cdn.icann.org/", "https://www.gespa.ch/")
+             "https://pulse.internetsociety.org/", "https://itp.cdn.icann.org/", "https://www.gespa.ch/",
+             "https://www.aclunorcal.org/", "https://epic.org/", "https://www.theregister.com/", "https://www.theguardian.com/")
     src = {r["id"]:r for r in obj.get("sources",[])}
-    if len(src) != len(obj["sources"]) or len(src) != 11:
-        raise ValueError("Access explainer requires eleven unique source records")
+    if len(src) != len(obj["sources"]) or len(src) != 15:
+        raise ValueError("Access explainer requires fifteen unique source records")
     if any(not r["url"].startswith(valid) for r in src.values()):
         raise ValueError("Unsupported access explainer evidence source")
-    if obj["stageIds"] != ["registry","dns","network","tls","service"]:
+    if obj["stageIds"] != ["registry","authoritative","dns","network","tls","service"]:
         raise ValueError("Educational stage ordering changed without review")
     modes = {r["id"]:r for r in obj["mechanisms"]}
-    if list(modes)!=["normal","resolver","ip","tls","service","registration","shutdown"] or len(modes)!=7:
-        raise ValueError("Access simulation requires seven distinct scenarios")
-    if any((not isinstance(r["blockStage"],int) or r["blockStage"] < -1 or r["blockStage"] > 4) for r in modes.values()):
+    if list(modes)!=["normal","resolver","authoritative","ip","tls","service","registration","shutdown"] or len(modes)!=8:
+        raise ValueError("Access simulation requires eight distinct scenarios")
+    if any((not isinstance(r["blockStage"],int) or r["blockStage"] < -1 or r["blockStage"] > 5) for r in modes.values()):
         raise ValueError("Invalid simulation stage")
-    if len(obj["cases"]) != 5 or len({x["id"] for x in obj["cases"]}) != 5:
-        raise ValueError("Access explainer requires five unique documented historical cases")
+    if len(obj["cases"]) != 7 or len({x["id"] for x in obj["cases"]}) != 7:
+        raise ValueError("Access explainer requires seven unique documented historical cases")
     if len(obj["actors"]) != 5 or len({x["id"] for x in obj["actors"]}) != 5:
         raise ValueError("Access explainer requires five distinct responsible roles")
     for r in (*obj["mechanisms"], *obj["actors"], *obj["cases"]):
@@ -153,7 +155,7 @@ def load(root: Path = ROOT) -> dict:
         required = ("metaTitle","metaDescription","eyebrow","title","lead","introLabel","introBody",
                     "simTitle","simLead","simUrlLabel","simSelectorLabel","simFlowLabel","simPreconditionLabel","simPreconditionBody",
                     "simStatusOpen","simStatusBlocked","simStatusName","simStatusUsers","simStatusActors",
-                    "simStagePassed","simStageBlocked","simStagePending","simNote",
+                    "simStagePassed","simStageBlocked","simStagePending","simNote","financeTitle","financeBody",
                     "actorsTitle","actorsLead","examplesTitle","examplesLead","caseLabel","caseTime",
                     "limitsTitle","limitsBody","sourcesTitle","sourcesLead",
                     "relatedTitle","relatedBody","sanctionsLink","fieldLink","atlasLink",
@@ -185,8 +187,8 @@ def render_page(obj: dict, lang: str) -> str:
         return ('<li data-access-stage="'+h(stage,quote=True)+'" data-state="passed"><span class="state" data-access-state-label>'+
                 h(t["simStagePassed"])+'</span><h3>'+h(t["stages"][stage]["title"])+'</h3><p>'+
                 h(t["stages"][stage]["body"])+'</p></li>')
-    precondition = stage_card(obj["stageIds"][0])
-    request_steps = "\n".join(stage_card(stage) for stage in obj["stageIds"][1:])
+    precondition = "\n".join(stage_card(stage) for stage in obj["stageIds"][:2])
+    request_steps = "\n".join(stage_card(stage) for stage in obj["stageIds"][2:])
     scenarios = "\n".join(
         '<button type="button" data-access-select="'+h(s["id"],quote=True)+
         '" data-block-stage="'+str(s["blockStage"])+
@@ -235,6 +237,7 @@ def render_page(obj: dict, lang: str) -> str:
        "isPartOf":{"@type":"WebSite","name":"Connecting the Dots","url":BASE},
        "citation":[s["url"] for s in obj["sources"]],
        "about":[{"@type":"Thing","name":"DNS filtering"},{"@type":"Thing","name":"Internet shutdown"},
+                {"@type":"Thing","name":"Authoritative DNS hosting and payment services"},
                 {"@type":"Thing","name":"ICANN and TLD governance"}]
     }
     related = BASE+"behind-the-round/"+lang+"/"
@@ -274,6 +277,8 @@ def render_page(obj: dict, lang: str) -> str:
 <p class="accessCaveat">{h(t["simNote"])}</p>
 <noscript><p class="accessCaveat">{h(t["simLead"])}</p></noscript>
 </section>
+<section class="panel accessFinance" aria-labelledby="accessFinanceTitle"><h2 id="accessFinanceTitle">{h(t["financeTitle"])}</h2><p>{h(t["financeBody"])}</p>
+{refs(["wikileaks-2010-epic","wikileaks-2010-timeline"])}</section>
 <section class="accessActorSection" aria-labelledby="accessActorsTitle"><h2 id="accessActorsTitle">{h(t["actorsTitle"])}</h2>
 <p class="intro">{h(t["actorsLead"])}</p><div class="accessActors">{actors}</div></section>
 <section class="accessCaseSection" aria-labelledby="accessCasesTitle"><h2 id="accessCasesTitle">{h(t["examplesTitle"])}</h2>
@@ -318,7 +323,7 @@ def build_access_pages(root: Path = ROOT) -> None:
     text=text.replace("</urlset>","\n".join(additions)+"\n</urlset>")
     sitemap.write_text(text,encoding="utf-8")
     ET.parse(sitemap)
-    print(f"Built Internet access explainer for {len(LANGS)} languages; {len(obj['sources'])} primary sources; 27 indexable URLs")
+    print(f"Built Internet access explainer for {len(LANGS)} languages; {len(obj['sources'])} documented sources; 27 indexable URLs")
 
 if __name__=="__main__":
     build_access_pages()
