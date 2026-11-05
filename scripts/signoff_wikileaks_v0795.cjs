@@ -9,6 +9,9 @@ const audit=JSON.parse(fs.readFileSync('docs/review-v0795-diff-audit.json','utf8
 assert.equal(pub.version,'0.7.95');
 assert.equal(d.status,'candidate-pending-editorial-signoff');
 assert.equal(audit.release,'0.7.95');
+// Immutable two-event, four-language scope: no retrospective combination into one central block.
+assert.deepEqual(audit.sourceLinks.length,4);
+assert.ok(d.rationales.W95 && d.rationales.V95, 'Evidence and version rationale required');
 assert.equal(audit.exactFileFingerprints,Object.keys(d.files).length);
 assert.ok(audit.changedFingerprints>=50);
 assert.ok(audit.changes.some(x=>x.path==='data/internet_access_explainer.json'));
