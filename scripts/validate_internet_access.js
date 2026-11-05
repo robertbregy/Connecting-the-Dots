@@ -1,13 +1,13 @@
-/* Test multilingual static articles and the seven local-only access-control scenarios. */
+/* Test multilingual static articles, eight local-only access-control scenarios, and the separate payment lever. */
 'use strict';
 const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('assert/strict');
 const {parseHTML}=require('linkedom');
 const root=path.resolve(__dirname,'..'),base='https://robertbregy.github.io/Connecting-the-Dots/';
 const data=JSON.parse(fs.readFileSync(path.join(root,'data/internet_access_explainer.json'),'utf8'));
 const languages=['en','it','de','fr'];
-assert.equal(data.cases.length,5);
-assert.equal(data.mechanisms.length,7);
-assert.equal(data.sources.length,11);
+assert.equal(data.cases.length,7);
+assert.equal(data.mechanisms.length,8);
+assert.equal(data.sources.length,15);
 const seenSources=new Set(data.sources.map(x=>x.id));
 for(const record of [...data.mechanisms,...data.actors,...data.cases]){
  assert.ok(record.sourceIds.length,record.id+' must reference sources');
@@ -27,16 +27,17 @@ for(const lang of languages){
  const schema=JSON.parse(document.querySelector('script[type="application/ld+json"]').textContent);
  assert.equal(schema['@type'],'Article','Article schema '+lang);
  assert.equal(schema.dateModified,data.reviewedOn,'Reviewed date '+lang);
- assert.equal(schema.citation.length,11,'Institutional sources '+lang);
- assert.equal(document.querySelectorAll('[data-access-stage]').length,5,'Access stages '+lang);
- assert.equal(document.querySelectorAll('.accessPrerequisite [data-access-stage]').length,1,'Registration must be a prerequisite, not a network hop '+lang);
+ assert.equal(schema.citation.length,15,'Institutional sources '+lang);
+ assert.equal(document.querySelectorAll('[data-access-stage]').length,6,'Access stages '+lang);
+ assert.equal(document.querySelectorAll('.accessPrerequisite [data-access-stage]').length,2,'Registration and authoritative DNS must be prerequisites, not request hops '+lang);
  assert.equal(document.querySelectorAll('.accessStages [data-access-stage]').length,4,'Only DNS, IP, TLS and application belong in the request path '+lang);
  assert.equal(document.querySelector('.accessPrerequisite [data-access-stage]')?.getAttribute('data-access-stage'),'registry','The registration precondition is not a network hop '+lang);
- assert.equal(document.querySelectorAll('[data-access-select]').length,7,'Scenario controls '+lang);
- assert.equal(document.querySelectorAll('[data-access-scenario-panel]').length,7,'Scenario panels '+lang);
- assert.equal(document.querySelectorAll('[data-access-case]').length,5,'Documented cases '+lang);
+ assert.equal(document.querySelectorAll('.accessPrerequisite [data-access-stage]')[1]?.getAttribute('data-access-stage'),'authoritative','Authoritative DNS must be a prerequisite '+lang);
+ assert.equal(document.querySelectorAll('[data-access-select]').length,8,'Scenario controls '+lang);
+ assert.equal(document.querySelectorAll('[data-access-scenario-panel]').length,8,'Scenario panels '+lang);
+ assert.equal(document.querySelectorAll('[data-access-case]').length,7,'Documented cases '+lang);
  assert.equal(document.querySelectorAll('[data-access-actor]').length,5,'Actors '+lang);
- assert.equal(document.querySelectorAll('[id^="access-source-"]').length,11,'Evidence links '+lang);
+ assert.equal(document.querySelectorAll('[id^="access-source-"]').length,15,'Evidence links '+lang);
  assert.equal(document.querySelectorAll('a[href^="#access-source-"]').length>15,true,'Inline source refs '+lang);
  assert.equal(document.querySelector('a[href="'+base+'behind-the-round/'+lang+'/sanctions-and-dns/"]')!==null,true,'OFAC link '+lang);
  for(const entry of data.cases){
@@ -83,6 +84,8 @@ for(const lang of languages){
  }
  const ofac=fs.readFileSync(path.join(root,'behind-the-round',lang,'sanctions-and-dns','index.html'),'utf8');
  assert.ok(ofac.includes(expectedUrl),'Related OFAC guide misses access explainer '+lang);
- console.log('Access simulator and sources PASS: '+lang+' / 7 scenarios / 5 cases / 11 sources');
+ assert.ok(document.querySelector('.accessFinance')?.textContent.includes(tr.financeTitle),'Standalone finance explainer missing '+lang);
+ assert.ok(!document.querySelector('.accessChoices [data-access-select="payments"]'),'Payments must stay outside the network simulator '+lang);
+ console.log('Access simulator and sources PASS: '+lang+' / 8 scenarios / 7 cases / 15 sources');
 }
-console.log('Internet access explainer: all four languages, 28 scenario selections and links validated.');
+console.log('Internet access explainer: all four languages, 32 scenario selections and links validated.');
