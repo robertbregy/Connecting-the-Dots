@@ -1,7 +1,7 @@
 /* generated from publication.json; do not edit by hand */
 window.DOT_PUBLICATION={
-  version:'0.7.95',
-  releasedOn:'2026-11-05',
+  version:'0.7.96',
+  releasedOn:'2026-11-06',
   state:'reveal-day',
   freeze:true,
   asOf:'2026-10-10',
@@ -13,11 +13,11 @@ window.DOT_PUBLICATION={
   paperPath:'research/connecting-the-dots-working-paper-v1.html',
   paperRevisedOn:'2026-10-19',
   dataPackageVersion:'0.7.58',
-  currentDataPackVersion:'0.7.95',
-  currentDataPackPath:'downloads/connecting-the-dots-data-pack-v0.7.95.zip',
+  currentDataPackVersion:'0.7.96',
+  currentDataPackPath:'downloads/connecting-the-dots-data-pack-v0.7.96.zip',
   doi:'10.5281/zenodo.23288603',
   doiUrl:'https://doi.org/10.5281/zenodo.23288603',
   conceptDoi:'10.5281/zenodo.23262622',
   archive:'Zenodo',
-  commit:'ce4572966a7c832b7f255ea0cafff8dbd0776fc7'
+  commit:'c2da5484d4c4e1cf57361f0b4d3e697258adc415'
 };

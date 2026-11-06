@@ -2572,7 +2572,8 @@
     "nissaySourceIcann": "ICANN · registry termination procedure",
     "nissaySourceIana": "IANA · .nissay delegation record",
     "release0794": "Adds ICANN's 2026 evaluation quality-control provider, a source-dated .nissay termination case and the completed replacement-choice window. Editorial update only: 11 October APS and RR1/RR2 remain frozen.",
-    "release0795": "WikiLeaks (2008/2010): domain court order, withdrawn authoritative DNS, hosting and payment restrictions shown as separate control points."
+    "release0795": "WikiLeaks (2008/2010): domain court order, withdrawn authoritative DNS, hosting and payment restrictions shown as separate control points.",
+    "release0796": "Seven Internet-access control case studies presented chronologically (2008–2026) across four languages; unchanged evidence and separate WikiLeaks episodes."
   },
   "it": {
     "brand": "Brand",
@@ -5147,7 +5148,8 @@
     "nissaySourceIcann": "ICANN · procedura di cessazione",
     "nissaySourceIana": "IANA · delega di .nissay",
     "release0794": "Aggiunti il controllo qualità JAS per il round 2026, il caso .nissay con stato procedurale verificato e la chiusura delle scelte sostitutive. Aggiornamento editoriale: corpus APS dell'11 ottobre e RR1/RR2 invariati.",
-    "release0795": "WikiLeaks (2008/2010): ordine sul dominio, ritiro del DNS autorevole, hosting e pagamenti distinti come leve di controllo."
+    "release0795": "WikiLeaks (2008/2010): ordine sul dominio, ritiro del DNS autorevole, hosting e pagamenti distinti come leve di controllo.",
+    "release0796": "Sette casi sul controllo dell’accesso a Internet in ordine cronologico (2008–2026), in quattro lingue: contenuti e fonti invariati, con i due episodi WikiLeaks distinti."
   },
   "de": {
     "brand": "Marke",
@@ -7722,7 +7724,8 @@
     "nissaySourceIcann": "ICANN · Verfahren zur Vertragsbeendigung",
     "nissaySourceIana": "IANA · Delegation von .nissay",
     "release0794": "Ergänzt die JAS-Qualitätskontrolle für 2026, den quellenbelegten Fall .nissay und das Ende der Frist für Ersatz-Zeichenfolgen. Nur redaktionell: APS-Bestand vom 11. Oktober und RR1/RR2 unverändert.",
-    "release0795": "WikiLeaks (2008/2010): gerichtliche Domainsperre, Ausfall des autoritativen DNS, Hosting und Zahlungen als getrennte Kontrollpunkte."
+    "release0795": "WikiLeaks (2008/2010): gerichtliche Domainsperre, Ausfall des autoritativen DNS, Hosting und Zahlungen als getrennte Kontrollpunkte.",
+    "release0796": "Sieben Fallbeispiele zur Internetzugangskontrolle in chronologischer Reihenfolge (2008–2026), in vier Sprachen; unveränderte Belege und getrennte WikiLeaks-Ereignisse."
   },
   "fr": {
     "brand": "Marque",
@@ -10297,6 +10300,7 @@
     "nissaySourceIcann": "ICANN · procédure de résiliation",
     "nissaySourceIana": "IANA · délégation de .nissay",
     "release0794": "Ajout du contrôle qualité JAS pour 2026, du cas documenté .nissay et de la clôture du choix des chaînes de remplacement. Mise à jour éditoriale uniquement : corpus APS du 11 octobre et RR1/RR2 inchangés.",
-    "release0795": "WikiLeaks (2008/2010) : ordonnance visant le domaine, retrait du DNS faisant autorité, hébergement et paiements distingués."
+    "release0795": "WikiLeaks (2008/2010) : ordonnance visant le domaine, retrait du DNS faisant autorité, hébergement et paiements distingués.",
+    "release0796": "Sept études de cas sur le contrôle de l’accès à Internet, classées chronologiquement (2008–2026) en quatre langues ; sources inchangées et épisodes WikiLeaks distincts."
   }
 }

@@ -4,7 +4,7 @@
   "editorialLayer": "living-public-explainer-not-frozen-RR1",
   "slug": "who-controls-internet-access",
   "publishedOn": "2026-10-10",
-  "reviewedOn": "2026-11-05",
+  "reviewedOn": "2026-11-06",
   "policy": "A historically sourced selection, not an exhaustive country classification. Separate DNS resolver interference, registry/registrar status, IP/TLS access blocking, platform actions and connectivity shutdowns. Avoid inferring state intent from an individual anomalous probe, or ICANN action from domestic ISP filtering. WikiLeaks 2008 and 2010 are separate events. A DNS hosting provider stopping authoritative service is not a national resolver filter, nor a registry/registrar domain suspension. Payment processors act outside the browser request path.",
   "sources": [
     {
@@ -197,6 +197,45 @@
   ],
   "cases": [
     {
+      "id": "wikileaks-2008",
+      "period": "2008",
+      "jurisdiction": "US",
+      "sourceIds": [
+        "wikileaks-2008-aclu"
+      ],
+      "method": [
+        "registrar",
+        "judicial-domain-suspension"
+      ]
+    },
+    {
+      "id": "wikileaks-2010",
+      "period": "2010",
+      "jurisdiction": "cross-border",
+      "sourceIds": [
+        "wikileaks-2010-epic",
+        "wikileaks-2010-everydns",
+        "wikileaks-2010-timeline"
+      ],
+      "method": [
+        "hosting",
+        "authoritative-dns",
+        "payments"
+      ]
+    },
+    {
+      "id": "catalonia-2017",
+      "period": "2017",
+      "jurisdiction": "ES",
+      "sourceIds": [
+        "catalonia"
+      ],
+      "method": [
+        "dns",
+        "http"
+      ]
+    },
+    {
       "id": "china-2023",
       "period": "2023",
       "jurisdiction": "CN",
@@ -242,45 +281,6 @@
       ],
       "method": [
         "dns"
-      ]
-    },
-    {
-      "id": "catalonia-2017",
-      "period": "2017",
-      "jurisdiction": "ES",
-      "sourceIds": [
-        "catalonia"
-      ],
-      "method": [
-        "dns",
-        "http"
-      ]
-    },
-    {
-      "id": "wikileaks-2008",
-      "period": "2008",
-      "jurisdiction": "US",
-      "sourceIds": [
-        "wikileaks-2008-aclu"
-      ],
-      "method": [
-        "registrar",
-        "judicial-domain-suspension"
-      ]
-    },
-    {
-      "id": "wikileaks-2010",
-      "period": "2010",
-      "jurisdiction": "cross-border",
-      "sourceIds": [
-        "wikileaks-2010-epic",
-        "wikileaks-2010-everydns",
-        "wikileaks-2010-timeline"
-      ],
-      "method": [
-        "hosting",
-        "authoritative-dns",
-        "payments"
       ]
     }
   ],
@@ -424,7 +424,7 @@
         }
       },
       "examplesTitle": "Seven documented cases, distinct mechanisms",
-      "examplesLead": "Historical, dated cases; WikiLeaks 2008 and 2010 are separate episodes, not a global censorship ranking.",
+      "examplesLead": "Seven documented cases in chronological order, from 2008 to 2026. Distinct events and mechanisms, not a global censorship ranking.",
       "caseLabel": "How it was observed",
       "caseTime": "Evidence period",
       "cases": {
@@ -621,7 +621,7 @@
         }
       },
       "examplesTitle": "Sette casi documentati, meccanismi differenti",
-      "examplesLead": "Casi storici con fonti datate; WikiLeaks 2008 e 2010 sono episodi distinti. Nessuna classifica mondiale della censura.",
+      "examplesLead": "Sette casi documentati in ordine cronologico, dal 2008 al 2026. Episodi e meccanismi differenti: non una classifica mondiale della censura.",
       "caseLabel": "Come è stato osservato",
       "caseTime": "Periodo delle evidenze",
       "cases": {
@@ -818,7 +818,7 @@
         }
       },
       "examplesTitle": "Sieben dokumentierte Fälle, unterschiedliche Mechanismen",
-      "examplesLead": "Historische Fallauswahl mit datierten Belegen; WikiLeaks 2008 und 2010 sind unterschiedliche Vorgänge, keine weltweite Zensurrangliste.",
+      "examplesLead": "Sieben dokumentierte Fälle in chronologischer Reihenfolge, von 2008 bis 2026. Unterschiedliche Ereignisse und Mechanismen, keine weltweite Zensurrangliste.",
       "caseLabel": "Beobachtete Technik",
       "caseTime": "Zeitraum der Belege",
       "cases": {
@@ -1015,7 +1015,7 @@
         }
       },
       "examplesTitle": "Sept cas documentés, des mécanismes différents",
-      "examplesLead": "Sélection historique datée ; WikiLeaks 2008 et 2010 sont deux épisodes distincts, pas un classement mondial de la censure.",
+      "examplesLead": "Sept cas documentés dans l’ordre chronologique, de 2008 à 2026. Des épisodes et des mécanismes distincts, pas un classement mondial de la censure.",
       "caseLabel": "Méthodes observées",
       "caseTime": "Période couverte",
       "cases": {
