@@ -1,5 +1,4 @@
 name: Full browser and WCAG regression audit
-# v0.7.97 reviewed BRS/INTA release: rerun unchanged browser tests after exact-source approval.
 
 on:
   push:
