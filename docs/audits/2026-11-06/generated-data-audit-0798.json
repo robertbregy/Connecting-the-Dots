@@ -1,0 +1,1227 @@
+{
+  "schemaVersion": 1,
+  "auditType": "Independent generated-data and archive verification",
+  "generatedAtUTC": "2026-11-06T23:18:59.617528+00:00",
+  "repository": "/workspace/scratch/0d3176a7f6f4/ctd-recovery/repository",
+  "baselineMain": "94a01d185f0153c1787751e9a08948d3728e6f3b",
+  "buildProvenanceCommit": "579e488d8f0bbb4f4dece0700e6339cbcba0548e",
+  "readOnlyRepository": true,
+  "passed": true,
+  "checksPassed": 28,
+  "checksTotal": 28,
+  "checks": [
+    {
+      "check": "source pin exists and equals current HEAD",
+      "pass": true
+    },
+    {
+      "check": "complete CSV manifest coverage",
+      "pass": true,
+      "evidence": {
+        "files": 67
+      }
+    },
+    {
+      "check": "67 CSV files unchanged; all hashes, sizes and record counts accurate",
+      "pass": true,
+      "evidence": {
+        "files": 67,
+        "nonblankRecords": 51085
+      }
+    },
+    {
+      "check": "scientific JSON and compressed evidence unchanged",
+      "pass": true,
+      "evidence": {
+        "files": 56,
+        "differences": []
+      }
+    },
+    {
+      "check": "22 historical ZIP files unchanged with valid CRC and frozen digests",
+      "pass": true,
+      "evidence": {
+        "files": 22
+      }
+    },
+    {
+      "check": "all existing historical checksum sidecars unchanged and accurate",
+      "pass": true,
+      "evidence": {
+        "sidecars": 21,
+        "legacyWithoutSidecar": [
+          "downloads/connecting-the-dots-data-pack.zip"
+        ]
+      }
+    },
+    {
+      "check": "new ZIP has 112 unique members, matching sources and passing CRC",
+      "pass": true
+    },
+    {
+      "check": "new ZIP preserves inventory and all scientific members from 0.7.97",
+      "pass": true,
+      "evidence": {
+        "changedMembers": [
+          "README.md",
+          "frozen_technical_packages.json",
+          "manifest.json",
+          "release_history.json"
+        ],
+        "unchangedMembers": 108
+      }
+    },
+    {
+      "check": "new ZIP checksum matches",
+      "pass": true
+    },
+    {
+      "check": "IANA frozen snapshot and 1597 embedded evidence files validate",
+      "pass": true,
+      "evidence": {
+        "asOf": "2026-10-04",
+        "databaseCount": 1595,
+        "rootListCount": 1437,
+        "embeddedFiles": 1597,
+        "badFiles": []
+      }
+    },
+    {
+      "check": "scientific publication identity unchanged",
+      "pass": true,
+      "evidence": {
+        "asOf": "2026-10-10",
+        "revealAt": "2026-10-07T18:00:00Z",
+        "researchRelease": "RR2",
+        "researchSnapshot": "2026-10-07",
+        "paperVersion": "1.4-draft",
+        "paperRevisedOn": "2026-10-19",
+        "doi": "10.5281/zenodo.23288603",
+        "doiUrl": "https://doi.org/10.5281/zenodo.23288603",
+        "conceptDoi": "10.5281/zenodo.23262622",
+        "dataPackageVersion": "0.7.58"
+      }
+    },
+    {
+      "check": "research release manifest changes only current technical version",
+      "pass": true
+    },
+    {
+      "check": "immutable citation/archive metadata: CITATION.cff",
+      "pass": true,
+      "evidence": {
+        "sha256": "d8d8cc36155be503ac31e3f5868b273ca44707db1edd3d9fe5a3f06d2c2490a4"
+      }
+    },
+    {
+      "check": "immutable citation/archive metadata: .zenodo.json",
+      "pass": true,
+      "evidence": {
+        "sha256": "d3a031d28e71a90bffb7d34df299fe6b365e1774897291e006a6d41316a0e706"
+      }
+    },
+    {
+      "check": "immutable citation/archive metadata: research/rr2_candidate.json",
+      "pass": true,
+      "evidence": {
+        "sha256": "abc50b237a49636bd57ba0f52268ab6505c7305b1bc02fbb620d39d3cef136b3"
+      }
+    },
+    {
+      "check": "immutable citation/archive metadata: research/rr2_publication_verification.json",
+      "pass": true,
+      "evidence": {
+        "sha256": "632098763759d353bfec7b04dd9860d7297b955695b14cdd5984ada4ec5ec6c1"
+      }
+    },
+    {
+      "check": "working paper markdown changes only current technical package version/link",
+      "pass": true
+    },
+    {
+      "check": "working paper HTML changes only package link/version and corresponding source hash",
+      "pass": true
+    },
+    {
+      "check": "publication, data manifest, npm and release history agree on v98/date",
+      "pass": true
+    },
+    {
+      "check": "old release history entries retained verbatim",
+      "pass": true
+    },
+    {
+      "check": "full data bundle and all 8 explorer shards change only technical version",
+      "pass": true,
+      "evidence": {
+        "files": [
+          "data/data_bundle.js",
+          "data/explorer_profiles_0.js",
+          "data/explorer_profiles_1.js",
+          "data/explorer_profiles_2.js",
+          "data/explorer_profiles_3.js",
+          "data/explorer_profiles_4.js",
+          "data/explorer_profiles_5.js",
+          "data/explorer_profiles_6.js",
+          "data/explorer_profiles_7.js"
+        ]
+      }
+    },
+    {
+      "check": "initial site data bundle changes only version and release history entry",
+      "pass": true
+    },
+    {
+      "check": "all delivery assets match manifest hashes/sizes",
+      "pass": true,
+      "evidence": {
+        "assets": 24,
+        "mismatches": []
+      }
+    },
+    {
+      "check": "source checkpoint retained except approved pin and template technical metadata",
+      "pass": true,
+      "evidence": {
+        "checkpointFiles": 40,
+        "unchanged": 38,
+        "changed": [
+          "publication.json",
+          "src/index.web.html"
+        ]
+      }
+    },
+    {
+      "check": "v97 review preserved and protected review fields unchanged",
+      "pass": true
+    },
+    {
+      "check": "candidate signoff remains honestly pending",
+      "pass": true
+    },
+    {
+      "check": "every local published HTML download link resolves",
+      "pass": true,
+      "evidence": {
+        "pages": 51,
+        "downloadLinks": 24,
+        "badLinks": []
+      }
+    },
+    {
+      "check": "five primary routes expose current technical metadata with historical DOI/package retained",
+      "pass": true,
+      "evidence": {
+        "pages": [
+          "index.html",
+          "en/index.html",
+          "it/index.html",
+          "de/index.html",
+          "fr/index.html"
+        ],
+        "mismatches": []
+      }
+    }
+  ],
+  "details": {
+    "csv": [
+      {
+        "path": "data/application_economic_map_2012_2026.csv",
+        "bytes": 1419151,
+        "sha256": "fd296f84bddca790e9b581c0665c08f5903c2b86758d90d23e8008d434296f28",
+        "records": 3538,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/application_only_strings.csv",
+        "bytes": 44210,
+        "sha256": "ed741cec7e5f0e11a0f84646b162058d870cf72b1e270497b50727ec509b13c7",
+        "records": 250,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/application_regions_2012.csv",
+        "bytes": 763,
+        "sha256": "e93e51af3a26f2dd3aa08c808102aff13d71d241778c068bb078de1a11bd7f9e",
+        "records": 5,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/application_regions_2026.csv",
+        "bytes": 1566,
+        "sha256": "b2e3dc0752a14442f085ba14ed9d2cd202741a20654048a1952cba972e2f7be6",
+        "records": 5,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/application_strings_2000.csv",
+        "bytes": 63364,
+        "sha256": "abc6b07b17d4a8e3882f0ab885e4fd4d66ed795224758a22ac6726c1e81486a3",
+        "records": 225,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/applications_2000.csv",
+        "bytes": 14439,
+        "sha256": "e6b7143b5b73b3c9a00dfccb95f2409747d234f37b8903275cb77fcf8885d656",
+        "records": 47,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/applications_2004.csv",
+        "bytes": 2388,
+        "sha256": "ae50f520605518655bb8ec08ecbb756cc0d31140427037c19bff3a88c73fce1b",
+        "records": 10,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/applications_2012.csv",
+        "bytes": 813903,
+        "sha256": "96b93fafc298cfc632481f43fdf439b9d65eb4a022356ea4124a6e494fd50822",
+        "records": 1930,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/applications_2026.csv",
+        "bytes": 536,
+        "sha256": "a188d93bfdcbcdabedf9a0802ff0e6724547fef91bfc6665c0c218129477cfd1",
+        "records": 1,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/applications_2026_aps_official_listing.csv",
+        "bytes": 667815,
+        "sha256": "520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887",
+        "records": 2783,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/applications_2026_strings_reveal.csv",
+        "bytes": 54107,
+        "sha256": "defffa4dcc1339b15164f4be9293402daf24d0d7291c038a8e21b36967cbe6a8",
+        "records": 980,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/aps_2026_applicant_distribution.csv",
+        "bytes": 142351,
+        "sha256": "bf43f77af73b71f281175f90999d4b0478fbe02696bc0a6a0465c111fc36bb13",
+        "records": 957,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/aps_2026_applicant_sector_distribution.csv",
+        "bytes": 1932,
+        "sha256": "18607e7bcbbcacd0d9fcd0659bbe57f71a85b3f4d5e22117e9131d113417d2bf",
+        "records": 8,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/aps_2026_application_edges.csv",
+        "bytes": 413111,
+        "sha256": "5acced2d69dddff215e3b64885003e2a51ce366640c27db98b248dfd2f46e8e6",
+        "records": 2796,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/aps_2026_current_analytics.csv",
+        "bytes": 957399,
+        "sha256": "9734855dc1451e59c99badb271248dc2a1464223e6b1c9fe036d61746fed7e75",
+        "records": 1614,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/aps_2026_location_distribution.csv",
+        "bytes": 14427,
+        "sha256": "ad296ae43a9a11d325d4e34b0530b48481fc8969769c661e302a159be8e93728",
+        "records": 112,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/aps_2026_record_observations.csv",
+        "bytes": 490227,
+        "sha256": "91f8d83972d7ecffe901ee7c0ce30e9cf0d6c9d9453cf6b617d80381a1570a39",
+        "records": 2783,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/aps_2026_region_distribution.csv",
+        "bytes": 1957,
+        "sha256": "d9ce301a19b7dd5af2e2e383dc5c034f329f764d27cc23f5bf3546cdd92072b7",
+        "records": 10,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/aps_2026_string_theme_distribution.csv",
+        "bytes": 7678,
+        "sha256": "af7017ab396f0b7a0eb915bac7add9cd08fd17ac2a13109ec8193ceec10bf4b6",
+        "records": 38,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/beyond_the_dot.csv",
+        "bytes": 3719,
+        "sha256": "18cc77939982c946aa92f09570d284832139ae0f04cf65991c7dae1647947381",
+        "records": 7,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/city_timeline.csv",
+        "bytes": 1639,
+        "sha256": "a5b76e232493212eea9b612c07df95830ba5d741d3ca555b40e2612e3897a3af",
+        "records": 8,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/contention_rounds.csv",
+        "bytes": 4121,
+        "sha256": "a8cd3e17a8344b49537d1a8e2ca07742ce07835e31547724142e83424af573b2",
+        "records": 26,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/control_levers.csv",
+        "bytes": 725,
+        "sha256": "a6f05f17e83f2862e55e9704e15a98485c3dd187527c093e39953bb1fef3a932",
+        "records": 6,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/cultural_blind_review_v2.csv",
+        "bytes": 4379,
+        "sha256": "c0f1c2fe4ebc99241655ef2fd1d85aa93065eb3f4f34afa01e99c39001588f87",
+        "records": 88,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/cultural_lexicon_review_queue_v2.csv",
+        "bytes": 29191,
+        "sha256": "26b6e29ee6997044e34fae45376c4a41fe78f4229d62eb4f4400c235eb8cb9b7",
+        "records": 366,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/cultural_validation_sample.csv",
+        "bytes": 6199,
+        "sha256": "ada2d4c72ec31a977525bf54a2e5e2084a0ac6f36f43e32d0056635b07833fe1",
+        "records": 88,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/dns_capabilities.csv",
+        "bytes": 1150,
+        "sha256": "31f86153792bba368edc88487b50bd8849e0932378f5d005a30c73a54f8f4c17",
+        "records": 6,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/dns_oddities.csv",
+        "bytes": 1942,
+        "sha256": "909cb4602b35e07de825004bc9f2b9dfe002ea98f7bd64c6a39856586bdc29b2",
+        "records": 11,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/domain_governance_glossary.csv",
+        "bytes": 20363,
+        "sha256": "32115e08f27076ff6e4691d0c0e865635533ea3a8acdd8349f0b66a7b0a7e5be",
+        "records": 28,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/domain_lifecycle.csv",
+        "bytes": 985,
+        "sha256": "55c3ee5c0516c0b43a99218a79a3cc78d874ef002ee0d1ebcbbcc47f5bbfcc3d",
+        "records": 7,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/early_dns.csv",
+        "bytes": 667,
+        "sha256": "46a098bf36a207dc718b39fcd92ebbb2a4f89de0f7f3c41644615ddaaa739ea8",
+        "records": 2,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/economic_cases.csv",
+        "bytes": 2393,
+        "sha256": "06b41434390c960eecbc663808ee52ff5b177afcba132186fc5b056820da74ba",
+        "records": 8,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/economic_metrics.csv",
+        "bytes": 3882,
+        "sha256": "d4936365bfd2412721cc6ea605ce4fb6e5388abea2a8edb195b527e78302feb9",
+        "records": 22,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/explorer_catalog.csv",
+        "bytes": 1339931,
+        "sha256": "5ce16d53cd9bb1860c35c2dbab661d02817caff86974514433dd453ac4860b53",
+        "records": 1849,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/explorer_events.csv",
+        "bytes": 1374791,
+        "sha256": "3f20e39311c37efe3ed53faa1b10a45de4e922d3f075682847727cfd36a6efe0",
+        "records": 7679,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/explorer_iana_reports.csv",
+        "bytes": 455406,
+        "sha256": "4b893138d142b417213c3ef78d576641c5646f1283fb7868247e2e5021d37288",
+        "records": 2008,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/explorer_nameservers.csv",
+        "bytes": 1128411,
+        "sha256": "dc6633beaec0b4e908dc7ebe83a12f27a5869258b1d43326cc1607a5c64db05c",
+        "records": 7563,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/governance_case_events.csv",
+        "bytes": 5767,
+        "sha256": "6979c1d3e6fa61dd2743b3b3519411c246fb4575ea21517ceed6646b4407f4f8",
+        "records": 39,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/governance_cases.csv",
+        "bytes": 4329,
+        "sha256": "f11c7505d8f602aeaaa20a64fdc938f2fb5016dc15af3ceef24f7fd14f814c22",
+        "records": 9,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/governance_locations.csv",
+        "bytes": 864,
+        "sha256": "99bbf39a6d9e81632638c8f631a8571cec3767018a9d62afd5193871b0165758",
+        "records": 10,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/key_facts.csv",
+        "bytes": 1218,
+        "sha256": "692c0a22e48bacbaf14935b6af49f0cf797d0991bdc166606139a673890d5378",
+        "records": 5,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/lugano_vision.csv",
+        "bytes": 660,
+        "sha256": "5b41d51a560665aad5b89caecf75fc6b8ce07904e70f7b87c36ef359da104b82",
+        "records": 4,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/namespace_dimensions.csv",
+        "bytes": 953,
+        "sha256": "7d32ead09868e049f753d7aa437b1af1c38bf2a81abb10b21dc7b96b4c1d35c9",
+        "records": 8,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/portfolio_applications.csv",
+        "bytes": 2880,
+        "sha256": "9aab2f6a0bd46eb6b5b14dfb8b992f8c0ce3243cb1291945e66cf6c3701072d6",
+        "records": 12,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/reader_observations_blank.csv",
+        "bytes": 170,
+        "sha256": "09d6e1636966ee62cc738626253298dd9cf68b0b3e302f1250daa6cd264cd695",
+        "records": 0,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/reader_validation_recording.csv",
+        "bytes": 224,
+        "sha256": "b8bf854749e3368a82c6192c5082344a50477f40c5e712fdb0cfa7b5adee6720",
+        "records": 9,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/registry_concentration.csv",
+        "bytes": 5575,
+        "sha256": "5f9efac583fe08b3bf9d6e0edf9715ed37bb54f25191fe7eddf9311d6742cec7",
+        "records": 15,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/registry_concentration_context.csv",
+        "bytes": 3718,
+        "sha256": "a7b62180df2ac200e8c1bc6a0819ecebd7ff914cfc9c04f191cc6064c65d6f1f",
+        "records": 11,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/round_2000_curated.csv",
+        "bytes": 2274,
+        "sha256": "658e9351d447288c22b76f549487b79639755a72027af1a78f5c4a2dff8b0126",
+        "records": 15,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/round_2004.csv",
+        "bytes": 1905,
+        "sha256": "b945b04295974b0eeb56be3abc95a36887741a52f0cc85af61eee7c8dfd97cb1",
+        "records": 10,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/round_2026.csv",
+        "bytes": 3404,
+        "sha256": "0cde275ca243bd55d42f2db3140e017c093ade1d60b938b06e0700fc8a0085dd",
+        "records": 15,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/rounds_summary.csv",
+        "bytes": 1200,
+        "sha256": "3e9db2506080f8cbe1c4df12dcd4e4e3f550c9eaa8bb8e4a04f16f2f4bcd98e0",
+        "records": 4,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/rsp_geography_aug_2026.csv",
+        "bytes": 199,
+        "sha256": "046e8d347f7b33f1b79d0ca066f80decce9f1fef71d448037165eabc81a4245d",
+        "records": 5,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/rsp_tld_footprint.csv",
+        "bytes": 1941,
+        "sha256": "c1905b7ba0005bb406ffad0a503815c9da53fae99e4cc01a09b3547bcfadadab",
+        "records": 26,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/sector_evolution_2012_2026.csv",
+        "bytes": 2780,
+        "sha256": "420dc7bf2d8aa4644d011a8420f78f742156f9b57c2cee271620c512fc1d996b",
+        "records": 44,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/sector_strategy_mix_2012_2026.csv",
+        "bytes": 6970,
+        "sha256": "ca92e80aeecce95a3a71e4720c8b2fb2c6317b6e772c0a3fa26c6b12ab309771",
+        "records": 109,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/semantic_drift.csv",
+        "bytes": 958,
+        "sha256": "7b8a583b6c70b464639e71fddad4428140a2cff247228aaf2978874cdf85e600",
+        "records": 6,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/social_cases.csv",
+        "bytes": 4200,
+        "sha256": "9c6278541078337963b476ad43896c22af61567d4605c248af205ccbd6c605a0",
+        "records": 9,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/sources.csv",
+        "bytes": 21999,
+        "sha256": "5ac8724ad4e066c360f39348c6512aa9533ddf5599ae2cc43b0e343be949d60f",
+        "records": 188,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/strange_internet.csv",
+        "bytes": 4324,
+        "sha256": "787fbb4f966f4447719433d4f95454ce1018143a32ce5fcf653b3f067fdcb7c3",
+        "records": 32,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/success_framework.csv",
+        "bytes": 865,
+        "sha256": "2085515d5f6bcb4a0ef511f03a574fe8de03b52d211b68cc6ef162a35c1489fb",
+        "records": 7,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/tld_cultural_corpus.csv",
+        "bytes": 1564274,
+        "sha256": "55ba2ed29942698e359195de67f818e56337eb46ad61afe04bb6c9ae555158b2",
+        "records": 3240,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/tld_life_histories.csv",
+        "bytes": 1374791,
+        "sha256": "3f20e39311c37efe3ed53faa1b10a45de4e922d3f075682847727cfd36a6efe0",
+        "records": 7679,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/tld_models.csv",
+        "bytes": 1735,
+        "sha256": "1a7fdbb67b9b503d4d54d23289b21be379362fa22219077bc55e4499b696e8d6",
+        "records": 11,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/tld_top50_website_share.csv",
+        "bytes": 1413,
+        "sha256": "fb182f04f9baed6a05fd9d63cee1680d93d02838a4446c5604d4130b4d230fb5",
+        "records": 50,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/tld_top50_zone_domains.csv",
+        "bytes": 2170,
+        "sha256": "9551bf926152e89b3fdb1cd346695a07887b0cb5c8743097746a878b340bf446",
+        "records": 50,
+        "baselineEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "data/tld_universe.csv",
+        "bytes": 387567,
+        "sha256": "fa9718504c52b11197a716c217be35462bb3fb4fa466e6924d2389814ec60ad2",
+        "records": 1599,
+        "baselineEqual": true,
+        "manifestEqual": true
+      }
+    ],
+    "historicalArchives": [
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.77.zip",
+        "bytes": 3847315,
+        "sha256": "8ff5dad0f9c18fedd7f1c30327a43efaca8ef6c16626d7475b2178be599e107a",
+        "members": 63,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.78.zip",
+        "bytes": 3988255,
+        "sha256": "d812e6a01c04c451c4d68e111977a7de7492dce3919ebed48852fc19d224c1fe",
+        "members": 67,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.79.zip",
+        "bytes": 3988265,
+        "sha256": "13308a339f13e0169c35159dbd2cdeba3fc58459eda33394278dbcd80772f88e",
+        "members": 67,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.80.zip",
+        "bytes": 3988372,
+        "sha256": "4ba79e195f73ac863b1871f0a7d34b2cbd5b25459547d01e2dfd74644e81f3f5",
+        "members": 67,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.81.zip",
+        "bytes": 3988382,
+        "sha256": "88d7ce0945ad29b2617ce421e2dfe1c62da6aa028d405c48dc1fec7a32dd2710",
+        "members": 67,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.82.zip",
+        "bytes": 3988388,
+        "sha256": "786058bda9cca5f75124c30cc55dc10f9c7c9df86b739f378c061354d75b57b0",
+        "members": 67,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.83.zip",
+        "bytes": 4003870,
+        "sha256": "e5a2d2c1d78d943c61d8481d94bbb2d1a0b0636216f6d4c0a5c122a740ec17f3",
+        "members": 68,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.84.zip",
+        "bytes": 4105400,
+        "sha256": "b2ffb3502559c927a0e61666b1bda232f6bbcb51f4e9f600b8d09c72e1ac57c4",
+        "members": 79,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.85.zip",
+        "bytes": 4224603,
+        "sha256": "d1a17cca20a8dbeffa00b0273261b119c2dae5a2bb39d4b02485a90baec8c74f",
+        "members": 83,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.86.zip",
+        "bytes": 4264728,
+        "sha256": "1ed98f9a57e9712ffcc64e7843095a35453fe3a1e9d7a93fbf9f303f077eafa3",
+        "members": 93,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.87.zip",
+        "bytes": 4279336,
+        "sha256": "8231bf27ad276e706dc213657fa4d8dd658e06bdc461d2da04c550f56610212d",
+        "members": 102,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.88.zip",
+        "bytes": 4314705,
+        "sha256": "f338bbcc25be9adb0da8f77ed9c7d20c38c8e8ce494455106160da8ed1decca5",
+        "members": 107,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.89.zip",
+        "bytes": 4327400,
+        "sha256": "a89488826bc7eee08409622b9e10bad32c8d62e6ab7bb84342697f7a826d7def",
+        "members": 110,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.90.zip",
+        "bytes": 4341905,
+        "sha256": "236ba72bf42e8ec59e3a53c47fd3cf8e3c72e00c4351bbcbe30558eb52fccb30",
+        "members": 111,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.91.zip",
+        "bytes": 4345010,
+        "sha256": "9e445ad422a1ec42e0f929e8c887e2c0fc3174e27ac2920c0901adc5287e2926",
+        "members": 112,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.92.zip",
+        "bytes": 4345027,
+        "sha256": "841c47bd0160d3c2ee9b484382b0b70fc862a229d3ead266149f302976f15032",
+        "members": 112,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.93.zip",
+        "bytes": 4345035,
+        "sha256": "6b6f483413408e43c7362d8ab47af926ed53f213f576e0d7c42f301b376e7d35",
+        "members": 112,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.94.zip",
+        "bytes": 4345041,
+        "sha256": "e3dd06b26f29e85d32efb4aff8f204fe49203dc3ede3851bde004d10c4fb2e6e",
+        "members": 112,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.95.zip",
+        "bytes": 4345101,
+        "sha256": "dcd1e11538f7e7242895823e46bc0e80d95bfcca8a42a26a6acaf081e3372af2",
+        "members": 112,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.96.zip",
+        "bytes": 4345155,
+        "sha256": "643033d5aec7ea04f3bf9472aa810968495e6400b24508f93357237611344165",
+        "members": 112,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.97.zip",
+        "bytes": 4345203,
+        "sha256": "032a375c855100b8b82ca39d188362a3f8b6ce31f459398c96e8a229d76010c0",
+        "members": 112,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": true,
+        "sidecarBaselineEqual": true,
+        "sidecarDigestValid": true,
+        "frozenRegistryMatch": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack.zip",
+        "bytes": 3792406,
+        "sha256": "105855eaec0e118418c5bbf332ffa0a0e92b6726f470baf535846bb2cd79894f",
+        "members": 61,
+        "baselineEqual": true,
+        "crcPass": true,
+        "sidecarPresent": false,
+        "sidecarBaselineEqual": null,
+        "sidecarDigestValid": null,
+        "frozenRegistryMatch": true
+      }
+    ],
+    "currentArchive": {
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.98.zip",
+      "bytes": 4345959,
+      "sha256": "f9bbbf917e26cbe64b6a96f4c3db04e4ddbbe6536db4f37160737e00cdb54299",
+      "members": 112,
+      "sameInventoryAs097": true,
+      "duplicateMembers": 0,
+      "changedMembersFrom097": [
+        "README.md",
+        "frozen_technical_packages.json",
+        "manifest.json",
+        "release_history.json"
+      ],
+      "unchangedMembersFrom097": 108,
+      "sourceMismatches": [],
+      "crcFirstBadMember": null
+    },
+    "sourceCheckpointFiles": {
+      ".github/workflows/audit-browser.yml": {
+        "checkpointSHA256": "f31205e6963c9971ecd8b7b48d01d2a032dfa55409d4a9f2b9d8d0e43dc897a0",
+        "currentSHA256": "f31205e6963c9971ecd8b7b48d01d2a032dfa55409d4a9f2b9d8d0e43dc897a0"
+      },
+      ".github/workflows/pages-deploy.yml": {
+        "checkpointSHA256": "42a2392d946b932bfa3d95dcfa9cb6f82b7379434009b5b1871638db61564e84",
+        "currentSHA256": "42a2392d946b932bfa3d95dcfa9cb6f82b7379434009b5b1871638db61564e84"
+      },
+      ".github/workflows/pages-live-smoke.yml": {
+        "checkpointSHA256": "77c3d2a6f666e948dacbb2f2008e715dd5edc13e6e56c0478beca87c4dd13d89",
+        "currentSHA256": "77c3d2a6f666e948dacbb2f2008e715dd5edc13e6e56c0478beca87c4dd13d89"
+      },
+      ".github/workflows/rebuild.yml": {
+        "checkpointSHA256": "eb1cb7cf9439336be97f0dccae2356599c973190c3be0b8242da9e935a7f03bc",
+        "currentSHA256": "eb1cb7cf9439336be97f0dccae2356599c973190c3be0b8242da9e935a7f03bc"
+      },
+      "CHANGELOG.md": {
+        "checkpointSHA256": "81d60550feefe71ec7d0077f6a1eeb452fe5ca1fbc53aad34c77a2dad6d593cf",
+        "currentSHA256": "81d60550feefe71ec7d0077f6a1eeb452fe5ca1fbc53aad34c77a2dad6d593cf"
+      },
+      "DEPLOY.md": {
+        "checkpointSHA256": "c6c20de5ba413637df82ac228b3bfbd4893f871f4d06069662a7b79c91327b87",
+        "currentSHA256": "c6c20de5ba413637df82ac228b3bfbd4893f871f4d06069662a7b79c91327b87"
+      },
+      "README.md": {
+        "checkpointSHA256": "7f31f24503c00582eb0767d0523b660f3634215ac505d0909852897997a4d8d6",
+        "currentSHA256": "7f31f24503c00582eb0767d0523b660f3634215ac505d0909852897997a4d8d6"
+      },
+      "assets/app.js": {
+        "checkpointSHA256": "e39bfe631a885e7713b847d94548073be3326e8ffeb88632c61ea7192c178400",
+        "currentSHA256": "e39bfe631a885e7713b847d94548073be3326e8ffeb88632c61ea7192c178400"
+      },
+      "assets/aps-atlas.js": {
+        "checkpointSHA256": "8bb1c44676df5784df94d833451b58ef5157437ff6700cf574e5e761dad7ec33",
+        "currentSHA256": "8bb1c44676df5784df94d833451b58ef5157437ff6700cf574e5e761dad7ec33"
+      },
+      "build.py": {
+        "checkpointSHA256": "e68c9a6508b5bcfec4009289efd045abeb3971a41ef78db1825ec45838265074",
+        "currentSHA256": "e68c9a6508b5bcfec4009289efd045abeb3971a41ef78db1825ec45838265074"
+      },
+      "data/README.md": {
+        "checkpointSHA256": "1b2686a12c66c72a89ebf3c899642c6a79414de74ea6c2977efdd3437ac86416",
+        "currentSHA256": "1b2686a12c66c72a89ebf3c899642c6a79414de74ea6c2977efdd3437ac86416"
+      },
+      "data/frozen_technical_packages.json": {
+        "checkpointSHA256": "b042eadb75bd4cdb47b96d203a6c076cfa5366ae3658570d20dbfd9b05c3e9bd",
+        "currentSHA256": "b042eadb75bd4cdb47b96d203a6c076cfa5366ae3658570d20dbfd9b05c3e9bd"
+      },
+      "data/release_history.json": {
+        "checkpointSHA256": "41248705f42fdb48e31fa34ec2225f66a5c80d3695035c01eca4e30f71538f57",
+        "currentSHA256": "41248705f42fdb48e31fa34ec2225f66a5c80d3695035c01eca4e30f71538f57"
+      },
+      "data/translations.json": {
+        "checkpointSHA256": "51ea317292d38cd32c8c3fa69229f866ac53e980d5934678e94239f81b891e26",
+        "currentSHA256": "51ea317292d38cd32c8c3fa69229f866ac53e980d5934678e94239f81b891e26"
+      },
+      "docs/audits/2026-11-06/delivery-patch-recovery.json": {
+        "checkpointSHA256": "3bb6d35f6b70be4cf65ad9a9a50277213d5dfe64875171754daca0593275e8d6",
+        "currentSHA256": "3bb6d35f6b70be4cf65ad9a9a50277213d5dfe64875171754daca0593275e8d6"
+      },
+      "docs/audits/2026-11-06/live-deployment-origin-tests.json": {
+        "checkpointSHA256": "d978bb5008c30db4aa508d63a5a8df527ce028bad1481d487d6568636e349d0b",
+        "currentSHA256": "d978bb5008c30db4aa508d63a5a8df527ce028bad1481d487d6568636e349d0b"
+      },
+      "docs/audits/2026-11-06/pipeline-fault-tests.json": {
+        "checkpointSHA256": "389efc6c3b99ff14fdd0d6b8e81f8c672e770fb791217710e9019d0f3c111e54",
+        "currentSHA256": "389efc6c3b99ff14fdd0d6b8e81f8c672e770fb791217710e9019d0f3c111e54"
+      },
+      "docs/audits/2026-11-06/pipeline-recovery-tests.json": {
+        "checkpointSHA256": "5884d200f433b9adb1527b78a2ca4e683761bb86a50399bd482abfbe66f0dfa8",
+        "currentSHA256": "5884d200f433b9adb1527b78a2ca4e683761bb86a50399bd482abfbe66f0dfa8"
+      },
+      "docs/editorial-review-2026-11-06-v0.7.98.json": {
+        "checkpointSHA256": "c522124472a76085da5afc3ed74c6e2ab53b896528596f3c6412efe75fe0def3",
+        "currentSHA256": "c522124472a76085da5afc3ed74c6e2ab53b896528596f3c6412efe75fe0def3"
+      },
+      "docs/full-site-audit-2026-11-06.md": {
+        "checkpointSHA256": "4a1e8ab09aa3bc1e2a3920a1d3dc659da432faa894410e09b1fd7a741abf4c5f",
+        "currentSHA256": "4a1e8ab09aa3bc1e2a3920a1d3dc659da432faa894410e09b1fd7a741abf4c5f"
+      },
+      "docs/technical-archive-integrity-20261106.json": {
+        "checkpointSHA256": "02f56a581f17e4360a79bbe28977acefc7a96cc65e6f73c33b356b07b3749a38",
+        "currentSHA256": "02f56a581f17e4360a79bbe28977acefc7a96cc65e6f73c33b356b07b3749a38"
+      },
+      "publication.json": {
+        "checkpointSHA256": "9f3eb20b1c252cd2c0a4104119f9059ae0dfd06661556abb3eac1bee24acc8d1",
+        "currentSHA256": "ee85ebfd3662312def51c32b8a4406209b281b6d2bca33d7967cced8318e7249"
+      },
+      "scripts/apply_ia_b2_crossnav.py": {
+        "checkpointSHA256": "fa981a4d0d93261634979d8da4f8df02fc24bae5f778a3d785a52ea338760ae6",
+        "currentSHA256": "fa981a4d0d93261634979d8da4f8df02fc24bae5f778a3d785a52ea338760ae6"
+      },
+      "scripts/audit_performance_20261019.cjs": {
+        "checkpointSHA256": "b8b69102dad53f3f34d1745a7d4347f90642e843fa0d1e25e69a80e4920287d8",
+        "currentSHA256": "b8b69102dad53f3f34d1745a7d4347f90642e843fa0d1e25e69a80e4920287d8"
+      },
+      "scripts/bundle_runtime.js": {
+        "checkpointSHA256": "61c3acdde6beababa57601ae6ec5989b3da19f2f26e67b7c446f04120dd81cbc",
+        "currentSHA256": "61c3acdde6beababa57601ae6ec5989b3da19f2f26e67b7c446f04120dd81cbc"
+      },
+      "scripts/package_release.py": {
+        "checkpointSHA256": "0e2900489433f232cb868fc32d24b344cd3eee90b7ad0f1811b04d5d07042e47",
+        "currentSHA256": "0e2900489433f232cb868fc32d24b344cd3eee90b7ad0f1811b04d5d07042e47"
+      },
+      "scripts/performance_metrics.cjs": {
+        "checkpointSHA256": "567385a04d4de44f14d5e3d7e434eeb4de8114c434e8f61010b9224789eccfc7",
+        "currentSHA256": "567385a04d4de44f14d5e3d7e434eeb4de8114c434e8f61010b9224789eccfc7"
+      },
+      "scripts/reader_first.cjs": {
+        "checkpointSHA256": "6b01bed6ebff17e55bdd3c23adecc12db482000789a1a0fa28855a2962c9e195",
+        "currentSHA256": "6b01bed6ebff17e55bdd3c23adecc12db482000789a1a0fa28855a2962c9e195"
+      },
+      "scripts/reconcile_audience.cjs": {
+        "checkpointSHA256": "448e9b09f8989115411a234ff692b7ede825f6edf552413492761bf707294076",
+        "currentSHA256": "448e9b09f8989115411a234ff692b7ede825f6edf552413492761bf707294076"
+      },
+      "scripts/release_check.py": {
+        "checkpointSHA256": "802807bf45a7c867d06ae53d00aa39a9637e4416bd5f475e7c40d57f889b2412",
+        "currentSHA256": "802807bf45a7c867d06ae53d00aa39a9637e4416bd5f475e7c40d57f889b2412"
+      },
+      "scripts/render_aps_application_atlas.py": {
+        "checkpointSHA256": "d040811282bfb431c8ba4d3e63a2b46eda93ef080d6c804825eb435423e54acb",
+        "currentSHA256": "d040811282bfb431c8ba4d3e63a2b46eda93ef080d6c804825eb435423e54acb"
+      },
+      "scripts/render_round_debate_v0797.cjs": {
+        "checkpointSHA256": "aebbd2fa412264788d71e2faf0dde9e29df618d38f688698bac8beeca8847a40",
+        "currentSHA256": "aebbd2fa412264788d71e2faf0dde9e29df618d38f688698bac8beeca8847a40"
+      },
+      "scripts/render_static.js": {
+        "checkpointSHA256": "1cd66159f591e0e71f1b53425d163650e7531a9e57eb4667fba477b64a3b42d9",
+        "currentSHA256": "1cd66159f591e0e71f1b53425d163650e7531a9e57eb4667fba477b64a3b42d9"
+      },
+      "scripts/render_static_fallback.py": {
+        "checkpointSHA256": "0a6a079d46c1f0a6d98083e07f83f9a8f8f4987a903bee2b33fa5a5f2f050680",
+        "currentSHA256": "0a6a079d46c1f0a6d98083e07f83f9a8f8f4987a903bee2b33fa5a5f2f050680"
+      },
+      "scripts/test_performance_metrics.cjs": {
+        "checkpointSHA256": "b1760b1b15b6c3b5055d8c17465fe14b09b9bc5dc549cd4f45966d9c4620e4d5",
+        "currentSHA256": "b1760b1b15b6c3b5055d8c17465fe14b09b9bc5dc549cd4f45966d9c4620e4d5"
+      },
+      "scripts/validate_delivery.js": {
+        "checkpointSHA256": "087c46a1d150bc233a9f09ab340b0116db54b822b60d08dd77614a3f5bbeccee",
+        "currentSHA256": "087c46a1d150bc233a9f09ab340b0116db54b822b60d08dd77614a3f5bbeccee"
+      },
+      "scripts/validate_multilingual.js": {
+        "checkpointSHA256": "5266ace5c26d4a74452b377db356cec865d33bb8a3f4307bbdc7fa3ec3295918",
+        "currentSHA256": "5266ace5c26d4a74452b377db356cec865d33bb8a3f4307bbdc7fa3ec3295918"
+      },
+      "scripts/validate_round_debate_v0797.cjs": {
+        "checkpointSHA256": "5e3388cbcf97bd6c999b6f0f7c1ed39093878cbe46b9cc8a577f1149cdb5e6fa",
+        "currentSHA256": "5e3388cbcf97bd6c999b6f0f7c1ed39093878cbe46b9cc8a577f1149cdb5e6fa"
+      },
+      "scripts/verify_ia_b2_parity.cjs": {
+        "checkpointSHA256": "1b04fb0147c7c85c17f0d18f6e36322e85c9b89492167242e724cc1edd59d1a2",
+        "currentSHA256": "1b04fb0147c7c85c17f0d18f6e36322e85c9b89492167242e724cc1edd59d1a2"
+      },
+      "src/index.web.html": {
+        "checkpointSHA256": "77584028d858828ea243bc8a55e51fa8a968354c9011dc664fa83de4c2a54444",
+        "currentSHA256": "b31ab572fa2b7016d3b08c6b0f57abac1f64d069532d468d3b780033ece6caf8"
+      }
+    },
+    "pendingFinalization": {
+      "reviewPath": "docs/editorial-review-2026-11-06-v0.7.98.json",
+      "status": "candidate-pending-technical-signoff",
+      "reviewedOn": "2026-11-06",
+      "buildPinInPublication": "579e488d8f0bbb4f4dece0700e6339cbcba0548e",
+      "buildPinInPendingReview": "18b1db48da1bd3f63fad92d774ab3616fcbd9342",
+      "required": [
+        "Root must update final review fingerprints and reviewed buildProvenancePolicy after independent output review.",
+        "Remote assembly equivalence and browser/A-B gates remain separate."
+      ]
+    }
+  },
+  "limits": [
+    "This checks assembled local outputs; it does not claim that this candidate has been deployed.",
+    "It preserves the scientific corpus; it does not refresh or independently reassess ICANN observations.",
+    "Final editorial-review fingerprints, remote tree equivalence, browser acceptance and live verification are separate gates."
+  ]
+}

@@ -1,0 +1,313 @@
+{
+  "status": "pass",
+  "checks": 421,
+  "failures": [],
+  "pages": [
+    {
+      "page": "applications/de/index.html",
+      "bytes": 28710,
+      "existing_ids": 17,
+      "current_ids": 17
+    },
+    {
+      "page": "applications/en/index.html",
+      "bytes": 28271,
+      "existing_ids": 17,
+      "current_ids": 17
+    },
+    {
+      "page": "applications/fr/index.html",
+      "bytes": 29119,
+      "existing_ids": 17,
+      "current_ids": 17
+    },
+    {
+      "page": "applications/it/index.html",
+      "bytes": 28696,
+      "existing_ids": 17,
+      "current_ids": 17
+    },
+    {
+      "page": "behind-the-round/de/background-screening/index.html",
+      "bytes": 37134,
+      "existing_ids": 11,
+      "current_ids": 11
+    },
+    {
+      "page": "behind-the-round/de/index.html",
+      "bytes": 65297,
+      "existing_ids": 17,
+      "current_ids": 17
+    },
+    {
+      "page": "behind-the-round/de/objectors-eoi/index.html",
+      "bytes": 36268,
+      "existing_ids": 11,
+      "current_ids": 11
+    },
+    {
+      "page": "behind-the-round/de/replacement-strings/index.html",
+      "bytes": 46572,
+      "existing_ids": 15,
+      "current_ids": 15
+    },
+    {
+      "page": "behind-the-round/de/sanctions-and-dns/index.html",
+      "bytes": 52862,
+      "existing_ids": 44,
+      "current_ids": 44
+    },
+    {
+      "page": "behind-the-round/de/wdo-identity/index.html",
+      "bytes": 36018,
+      "existing_ids": 4,
+      "current_ids": 4
+    },
+    {
+      "page": "behind-the-round/de/who-controls-internet-access/index.html",
+      "bytes": 63834,
+      "existing_ids": 37,
+      "current_ids": 37
+    },
+    {
+      "page": "behind-the-round/en/background-screening/index.html",
+      "bytes": 36701,
+      "existing_ids": 11,
+      "current_ids": 11
+    },
+    {
+      "page": "behind-the-round/en/index.html",
+      "bytes": 64640,
+      "existing_ids": 17,
+      "current_ids": 17
+    },
+    {
+      "page": "behind-the-round/en/objectors-eoi/index.html",
+      "bytes": 36106,
+      "existing_ids": 11,
+      "current_ids": 11
+    },
+    {
+      "page": "behind-the-round/en/replacement-strings/index.html",
+      "bytes": 46305,
+      "existing_ids": 15,
+      "current_ids": 15
+    },
+    {
+      "page": "behind-the-round/en/sanctions-and-dns/index.html",
+      "bytes": 52591,
+      "existing_ids": 44,
+      "current_ids": 44
+    },
+    {
+      "page": "behind-the-round/en/wdo-identity/index.html",
+      "bytes": 35846,
+      "existing_ids": 4,
+      "current_ids": 4
+    },
+    {
+      "page": "behind-the-round/en/who-controls-internet-access/index.html",
+      "bytes": 63215,
+      "existing_ids": 37,
+      "current_ids": 37
+    },
+    {
+      "page": "behind-the-round/fr/background-screening/index.html",
+      "bytes": 37468,
+      "existing_ids": 11,
+      "current_ids": 11
+    },
+    {
+      "page": "behind-the-round/fr/index.html",
+      "bytes": 66073,
+      "existing_ids": 17,
+      "current_ids": 17
+    },
+    {
+      "page": "behind-the-round/fr/objectors-eoi/index.html",
+      "bytes": 36668,
+      "existing_ids": 11,
+      "current_ids": 11
+    },
+    {
+      "page": "behind-the-round/fr/replacement-strings/index.html",
+      "bytes": 47071,
+      "existing_ids": 15,
+      "current_ids": 15
+    },
+    {
+      "page": "behind-the-round/fr/sanctions-and-dns/index.html",
+      "bytes": 53539,
+      "existing_ids": 44,
+      "current_ids": 44
+    },
+    {
+      "page": "behind-the-round/fr/wdo-identity/index.html",
+      "bytes": 36196,
+      "existing_ids": 4,
+      "current_ids": 4
+    },
+    {
+      "page": "behind-the-round/fr/who-controls-internet-access/index.html",
+      "bytes": 64759,
+      "existing_ids": 37,
+      "current_ids": 37
+    },
+    {
+      "page": "behind-the-round/it/background-screening/index.html",
+      "bytes": 36996,
+      "existing_ids": 11,
+      "current_ids": 11
+    },
+    {
+      "page": "behind-the-round/it/index.html",
+      "bytes": 65854,
+      "existing_ids": 17,
+      "current_ids": 17
+    },
+    {
+      "page": "behind-the-round/it/objectors-eoi/index.html",
+      "bytes": 36323,
+      "existing_ids": 11,
+      "current_ids": 11
+    },
+    {
+      "page": "behind-the-round/it/replacement-strings/index.html",
+      "bytes": 46706,
+      "existing_ids": 15,
+      "current_ids": 15
+    },
+    {
+      "page": "behind-the-round/it/sanctions-and-dns/index.html",
+      "bytes": 52956,
+      "existing_ids": 44,
+      "current_ids": 44
+    },
+    {
+      "page": "behind-the-round/it/wdo-identity/index.html",
+      "bytes": 36418,
+      "existing_ids": 4,
+      "current_ids": 4
+    },
+    {
+      "page": "behind-the-round/it/who-controls-internet-access/index.html",
+      "bytes": 64448,
+      "existing_ids": 37,
+      "current_ids": 37
+    },
+    {
+      "page": "de/index.html",
+      "bytes": 1203291,
+      "existing_ids": 529,
+      "current_ids": 529
+    },
+    {
+      "page": "en/index.html",
+      "bytes": 1172817,
+      "existing_ids": 529,
+      "current_ids": 529
+    },
+    {
+      "page": "explorer/index.html",
+      "bytes": 22793,
+      "existing_ids": 7,
+      "current_ids": 7
+    },
+    {
+      "page": "fr/index.html",
+      "bytes": 1219881,
+      "existing_ids": 529,
+      "current_ids": 529
+    },
+    {
+      "page": "index.html",
+      "bytes": 1172431,
+      "existing_ids": 529,
+      "current_ids": 529
+    },
+    {
+      "page": "inside-the-round/de/index.html",
+      "bytes": 35627,
+      "existing_ids": 5,
+      "current_ids": 5
+    },
+    {
+      "page": "inside-the-round/en/index.html",
+      "bytes": 34898,
+      "existing_ids": 5,
+      "current_ids": 5
+    },
+    {
+      "page": "inside-the-round/fr/index.html",
+      "bytes": 35895,
+      "existing_ids": 5,
+      "current_ids": 5
+    },
+    {
+      "page": "inside-the-round/it/index.html",
+      "bytes": 35463,
+      "existing_ids": 5,
+      "current_ids": 5
+    },
+    {
+      "page": "it/index.html",
+      "bytes": 1197309,
+      "existing_ids": 529,
+      "current_ids": 529
+    },
+    {
+      "page": "research/connecting-the-dots-working-paper-v1.html",
+      "bytes": 49984,
+      "existing_ids": 3,
+      "current_ids": 3
+    },
+    {
+      "page": "research/index.html",
+      "bytes": 27055,
+      "existing_ids": 11,
+      "current_ids": 11
+    },
+    {
+      "page": "research/reader-study/de/index.html",
+      "bytes": 8247,
+      "existing_ids": 0,
+      "current_ids": 0
+    },
+    {
+      "page": "research/reader-study/en/index.html",
+      "bytes": 7668,
+      "existing_ids": 0,
+      "current_ids": 0
+    },
+    {
+      "page": "research/reader-study/fr/index.html",
+      "bytes": 8251,
+      "existing_ids": 0,
+      "current_ids": 0
+    },
+    {
+      "page": "research/reader-study/it/index.html",
+      "bytes": 7974,
+      "existing_ids": 0,
+      "current_ids": 0
+    }
+  ],
+  "source_changes": [
+    {
+      "path": "publication.json",
+      "before": "819960d4f7d782f8c21e2c4ceba58365d617eac9",
+      "after": "835b8b389af375d85f6789e72a694618888ea50b",
+      "allowed_generated_version_sync": true
+    },
+    {
+      "path": "src/index.web.html",
+      "before": "cb99a6c42665a6d8c086d51ed7b5c2304b50e6f6",
+      "after": "a81e5357391e6f5cb9502ab2a47c9ee5e298c549",
+      "allowed_generated_version_sync": true
+    }
+  ],
+  "repository": "/workspace/scratch/0d3176a7f6f4/ctd-recovery/repository",
+  "build_provenance_commit": "579e488d8f0bbb4f4dece0700e6339cbcba0548e",
+  "provenance_checks": 6,
+  "scope": "48-page static comparison to published 94a01d baseline; exceptions only agreed UI labels, current-pack citation date, new release entry, technical version substitution and the unchanged round_2026.csv record label corrected from 16 to 15; no browser execution"
+}

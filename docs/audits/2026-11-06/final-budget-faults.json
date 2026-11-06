@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "cases": 4,
+  "root": "/workspace/scratch/0d3176a7f6f4/ctd-recovery/repository",
+  "scope": "executes the actual budget/dependency block from validate_delivery.js against the generated candidate with isolated faulty inputs; product files remain unchanged",
+  "tests": [
+    "restored HTML cap rejects an oversized document",
+    "aggregate cap rejects hiding bytes in extracted JS",
+    "duplicate asset request rejected",
+    "app before snapshot rejected"
+  ],
+  "build_provenance_commit": "579e488d8f0bbb4f4dece0700e6339cbcba0548e",
+  "publication_version": "0.7.98",
+  "validation_scope": "Final generated v0.7.98 candidate with pinned source 579e; actual validator block, in-memory faults, no product file changes"
+}

@@ -51,7 +51,15 @@ Sono disponibili anche i [test browser/WCAG 42275697222](https://github.com/robe
 | Metriche | Campo CLS calcolato come somma totale. | Massima finestra di sessione, somma diagnostica distinta e nove prove dei casi limite, inclusi shift iniziali nulli. |
 | Documentazione | README e comandi storici scambiabili per indicazioni correnti; renderer legato esattamente a v0.7.97. | Metadati e istruzioni allineati; supporto a release tecniche successive preservando la data delle evidenze. |
 
-Le prove locali precedenti hanno verificato 432 condizioni UI, 16 casi singolare/plurale, 50 condizioni di parità dopo estrazione, quattro fallimenti intenzionali del budget, sette fallimenti intenzionali delle guardie dati, 40 scenari CI e 18 scenari della sostituzione i18n. I rapporti ricostruiti dopo il riavvio dell'ambiente sono distinti dalle nuove esecuzioni, senza dichiarare recuperati log originali non disponibili. Il candidato aggregato deve superare nuovamente build, guardie di revisione, browser e verifica online.
+Le prove locali precedenti hanno verificato 432 condizioni UI, 16 casi singolare/plurale, 50 condizioni di parità dopo estrazione, quattro fallimenti intenzionali del budget, sette fallimenti intenzionali delle guardie dati, 40 scenari CI e 18 scenari della sostituzione i18n. I rapporti ricostruiti dopo il riavvio dell'ambiente sono distinti dalle nuove esecuzioni, senza dichiarare recuperati log originali non disponibili.
+
+### Verifica del candidato completo
+
+Il checkpoint delle sorgenti combinate è [`579e488d8f0bbb4f4dece0700e6339cbcba0548e`](https://github.com/robertbregy/Connecting-the-Dots/commit/579e488d8f0bbb4f4dece0700e6339cbcba0548e). La build completa con questo pin è riuscita. Le verifiche indipendenti ripetute sul candidato finale hanno superato **421 controlli statici su 48 pagine, sei controlli di provenienza, quattro prove negative del budget e 28 controlli sui dati e sugli archivi**. Sono state rieseguite inoltre 34 prove della pipeline recuperata, otto prove del workflow temporaneo di assemblaggio e nove casi del calcolo CLS.
+
+I 67 CSV e i loro 51.085 record, 56 JSON/evidenze scientifiche, 22 ZIP precedenti e 21 sidecar sono invariati. Lo ZIP v0.7.98 contiene gli stessi 112 membri del precedente: 108 sono byte-identici, cambiano soltanto README.md, frozen_technical_packages.json, manifest.json e release_history.json. Dimensione: 4.345.959 byte; SHA256: `f9bbbf917e26cbe64b6a96f4c3db04e4ddbbe6536db4f37160737e00cdb54299`.
+
+Le prove sono nei JSON [di struttura](audits/2026-11-06/final-static-parity.json), [dei limiti](audits/2026-11-06/final-budget-faults.json), [delle dimensioni](audits/2026-11-06/final-budget-measurements.json) e [dei dati generati](audits/2026-11-06/generated-data-audit-0798.json). Il verbale v0.7.98 registra la review tecnica delle sorgenti e degli output esatti, preservando tutte le baseline storiche. L'accettazione remota è un gate distinto: doppia build deterministica, confronto dell'intero albero Git, A/B e browser sul commit completo, quindi deploy e confronto dei byte pubblicati. Le esecuzioni rimangono consultabili in [GitHub Actions](https://github.com/robertbregy/Connecting-the-Dots/actions); il workflow temporaneo si elimina prima del commit finale e può scrivere soltanto sul ramo di assemblaggio dedicato.
 
 ## Eccezione storica v0.7.92
 
@@ -63,7 +71,7 @@ Viene preservata e congelata l'ultima copia già online, senza chiamarla prima c
 
 Sulla baseline pubblica, con cache fredda, viewport 390×844, 150 ms di latenza, download 200 KiB/s, CPU 4× e tre ripetizioni, i mediani LCP sono 1.608 ms per Panoramica, 1.460 ms per Explorer e 3.028 ms per Economia. Il trasferimento osservato è 888.638 byte. Il vecchio valore 0,01105377 era una somma degli spostamenti, non viene retroattivamente chiamato CLS corretto.
 
-L'estrazione riduce l'HTML duplicato di circa il 28% nella proposta iniziale e permette il riuso della cache. Non elimina i payload dalla prima visita: HTML più asset resta quasi invariato e viene controllato esplicitamente. I tempi effettivi richiedono il confronto pubblico dopo il rilascio.
+L'estrazione riduce l'HTML duplicato di circa il 28% e permette il riuso della cache. Non elimina i payload dalla prima visita: HTML più asset resta quasi invariato e viene controllato esplicitamente. Gli HTML finali delle quattro lingue pesano 1.172.817–1.219.881 byte, sotto il limite originale di 1.240.000. L'aggregato HTML più dizionario e snapshot cresce soltanto di 1.084–1.210 byte rispetto alla baseline, entro i 2 KiB consentiti; il margine minimo residuo è 838 byte in francese. I tempi effettivi richiedono il confronto pubblico dopo il rilascio.
 
 Le definizioni di [LCP](https://web.dev/articles/lcp) e [CLS](https://web.dev/articles/cls) distinguono misure sintetiche e percentili sul campo. Economia merita ulteriore attenzione. La soglia CI di 12 secondi intercetta regressioni gravi e non certifica prestazioni ottimali; l'evento del cambio tema non equivale a INP sul campo.
 

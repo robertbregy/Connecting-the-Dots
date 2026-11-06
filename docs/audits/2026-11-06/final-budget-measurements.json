@@ -1,0 +1,34 @@
+{
+  "build_provenance_commit": "579e488d8f0bbb4f4dece0700e6339cbcba0548e",
+  "publication_version": "0.7.98",
+  "measurements": [
+    {
+      "lang": "en",
+      "htmlBytes": 1172817,
+      "htmlAndPayloadBytes": 1619480,
+      "baselineBytes": 1618396,
+      "aggregateMarginBytes": 964
+    },
+    {
+      "lang": "it",
+      "htmlBytes": 1197309,
+      "htmlAndPayloadBytes": 1657621,
+      "baselineBytes": 1656469,
+      "aggregateMarginBytes": 896
+    },
+    {
+      "lang": "de",
+      "htmlBytes": 1203291,
+      "htmlAndPayloadBytes": 1665294,
+      "baselineBytes": 1664095,
+      "aggregateMarginBytes": 849
+    },
+    {
+      "lang": "fr",
+      "htmlBytes": 1219881,
+      "htmlAndPayloadBytes": 1693232,
+      "baselineBytes": 1692022,
+      "aggregateMarginBytes": 838
+    }
+  ]
+}

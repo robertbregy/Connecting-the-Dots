@@ -1,0 +1,56 @@
+{
+  "workflow_sha256": "c5d8f4e997310c1180d1fb5621b0025de046b7f3813152360fb287f4c3107869",
+  "syntax_and_contract_passed": true,
+  "cases": [
+    {
+      "case": "success",
+      "passed": true,
+      "exit_code": 0,
+      "main_unchanged": true
+    },
+    {
+      "case": "wrong_branch",
+      "passed": true,
+      "exit_code": 1,
+      "main_unchanged": true
+    },
+    {
+      "case": "branch_advanced",
+      "passed": true,
+      "exit_code": 1,
+      "main_unchanged": true
+    },
+    {
+      "case": "push_rejected",
+      "passed": true,
+      "exit_code": 1,
+      "main_unchanged": true
+    },
+    {
+      "case": "source_changed",
+      "passed": true,
+      "exit_code": 1,
+      "main_unchanged": true
+    },
+    {
+      "case": "production_workflow_changed",
+      "passed": true,
+      "exit_code": 1,
+      "main_unchanged": true
+    },
+    {
+      "case": "remote_read_failed",
+      "passed": true,
+      "exit_code": 128,
+      "main_unchanged": true
+    },
+    {
+      "case": "advance_during_push",
+      "passed": true,
+      "exit_code": 1,
+      "main_unchanged": true
+    }
+  ],
+  "scope": "Only disposable local Git repositories; build and remote GitHub permission are not simulated as successes.",
+  "passed_cases": 8
+}
