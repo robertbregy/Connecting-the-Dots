@@ -24,8 +24,10 @@ jobs:
       - run: npm ci
       - name: Patch only stable anchor assignments in the current generator
         run: node scripts/fix_wikileaks_anchors_v0795.cjs
-      - name: Rebuild reproducible static publication
-        run: python3 build.py
+      - name: Rebuild the presentation using its original v0.7.95 data-bundle provenance
+        # Anchors are a presentation-only correction. Keep the reviewed data-pack
+        # source identity and its checksum untouched, not a new research snapshot.
+        run: GITHUB_SHA=ce4572966a7c832b7f255ea0cafff8dbd0776fc7 python3 build.py
       - name: Review affected pages, previous public links and exact hashes
         run: node scripts/review_wikileaks_anchors_v0795.cjs
       - name: Run existing integrity, translation and functional source gates unchanged
