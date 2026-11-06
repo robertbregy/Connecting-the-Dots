@@ -211,6 +211,7 @@ jobs:
         run: |
           python3 build.py
           node scripts/verify_ia_b2_parity.cjs
+          node scripts/test_performance_metrics.cjs
       - name: Verify audit corrections and controlled cold loads
         env:
           CTD_TEST_BASE: http://127.0.0.1:8123/

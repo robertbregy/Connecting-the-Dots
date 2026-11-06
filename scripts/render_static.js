@@ -119,7 +119,7 @@ async function render(language,alias=false){
   const sheet=document.getElementById('ctd-runtime-style');
   if(!sheet || sheet.tagName!=='LINK')throw new Error('Missing stylesheet link');
   sheet.setAttribute('href',`assets/style.css?v=${version}`);
-  for(const [id,file] of [['ctd-data-bundle','data/site_bundle.js'],['ctd-worldmap','data/worldmap.js'],['ctd-app','assets/app.js']]){
+  for(const [id,file] of [['ctd-data-bundle','data/site_bundle.js'],['ctd-i18n-bundle',`data/i18n_${language}.js`],['ctd-worldmap','data/worldmap.js'],['ctd-2026-string-snapshot','data/applications_2026_strings_reveal.js'],['ctd-app','assets/app.js']]){
     const node=document.getElementById(id);node.textContent='';node.setAttribute('src',`${file}?v=${version}`);node.setAttribute('defer','');
   }
   for(const node of document.querySelectorAll('[src],[href]')){
@@ -143,8 +143,8 @@ async function render(language,alias=false){
   for(const link of document.querySelectorAll('a[data-access-explainer-link]'))
     link.setAttribute('href',base+'behind-the-round/'+language+'/who-controls-internet-access/');
   document.getElementById('ctd-publication').textContent=fs.readFileSync(path.join(root,'data/publication.js'),'utf8');
-  // A localized page only needs its own complete dictionary at runtime.
-  document.getElementById('ctd-i18n-bundle').textContent='\nwindow.DOT_I18N='+JSON.stringify({[language]:translations})+';\n';
+  // The locale dictionary and frozen snapshot are shared, versioned assets.
+  // Their deferred script tags precede app.js; the prerendered body stays intact.
   html.classList.remove('js');html.classList.add('no-js');
   html.style.removeProperty('--topbar-height');
   if(!html.getAttribute('style'))html.removeAttribute('style');

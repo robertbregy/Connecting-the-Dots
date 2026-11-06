@@ -1,0 +1,241 @@
+{
+  "kind": "fresh_execution_after_filesystem_recovery",
+  "cases": [
+    {
+      "case": "yaml_bash_embedded_python_syntax",
+      "passed": true
+    },
+    {
+      "case": "actual_completed_successful_pages_step",
+      "passed": true,
+      "expected": "ready",
+      "exit_code": 0,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "successful_job_with_deployment_step_skipped",
+      "passed": true,
+      "expected": "not_deployed",
+      "exit_code": 0,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "entire_upstream_deploy_job_skipped",
+      "passed": true,
+      "expected": "not_deployed",
+      "exit_code": 0,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "api_failure_is_not_a_skip",
+      "passed": true,
+      "expected": "failure",
+      "exit_code": 1,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "ambiguous_deploy_job_fails",
+      "passed": true,
+      "expected": "failure",
+      "exit_code": 1,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "incomplete_paginated_metadata_fails",
+      "passed": true,
+      "expected": "failure",
+      "exit_code": 1,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "missing_deployment_step_fails",
+      "passed": true,
+      "expected": "failure",
+      "exit_code": 1,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "ambiguous_deployment_step_fails",
+      "passed": true,
+      "expected": "failure",
+      "exit_code": 1,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "failed_deploy_inside_successful_job_is_rejected",
+      "passed": true,
+      "expected": "failure",
+      "exit_code": 1,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "wrong_source_sha_fails",
+      "passed": true,
+      "expected": "failure",
+      "exit_code": 1,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "wrong_upstream_run_fails",
+      "passed": true,
+      "expected": "failure",
+      "exit_code": 1,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "wrong_attempt_response_fails",
+      "passed": true,
+      "expected": "failure",
+      "exit_code": 1,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "old_skipped_attempt_does_not_borrow_retry_success",
+      "passed": true,
+      "expected": "not_deployed",
+      "exit_code": 0,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "skipped_retry_does_not_reuse_old_success",
+      "passed": true,
+      "expected": "not_deployed",
+      "exit_code": 0,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "successful_retry_uses_its_exact_attempt",
+      "passed": true,
+      "expected": "ready",
+      "exit_code": 0,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "manual_verification_requires_no_upstream_api",
+      "passed": true,
+      "expected": "ready",
+      "exit_code": 0,
+      "api_calls": 0,
+      "site_requests": 0
+    },
+    {
+      "case": "least_privilege_and_no_downstream_work_without_positive_outputs",
+      "passed": true
+    },
+    {
+      "case": "event_policy_and_explicit_precompiled_optout",
+      "passed": true
+    },
+    {
+      "case": "push_succeeds",
+      "passed": true,
+      "exit_code": 0,
+      "provenance_preserved": true
+    },
+    {
+      "case": "remote_advances_while_pushing",
+      "passed": true,
+      "exit_code": 0,
+      "provenance_preserved": true
+    },
+    {
+      "case": "push_denied_tip_unchanged",
+      "passed": true,
+      "exit_code": 1,
+      "provenance_preserved": true
+    },
+    {
+      "case": "remote_read_fails_after_denied_push",
+      "passed": true,
+      "exit_code": 1,
+      "provenance_preserved": true
+    },
+    {
+      "case": "pages_event_and_provenance_matrix",
+      "passed": true
+    },
+    {
+      "case": "readme_race_new_rebuild_and_handoff",
+      "passed": true
+    },
+    {
+      "case": "fresh_live_resource_version_and_new_i18n_coverage",
+      "passed": true,
+      "exit_code": 0,
+      "status": "verified",
+      "request_count": 66
+    },
+    {
+      "case": "fresh_live_rejects_all_eleven_omitted_resources",
+      "passed": true,
+      "exit_code": 1,
+      "status": "mismatch",
+      "request_count": 528
+    },
+    {
+      "case": "fresh_existing_aps_graph_negative_control",
+      "passed": true,
+      "exit_code": 1,
+      "status": "mismatch",
+      "request_count": 528
+    },
+    {
+      "case": "fresh_superseded_before_http",
+      "passed": true,
+      "exit_code": 0,
+      "status": "superseded",
+      "request_count": 0
+    },
+    {
+      "case": "fresh_advanced_during_comparison",
+      "passed": true,
+      "exit_code": 0,
+      "status": "superseded",
+      "request_count": 66
+    },
+    {
+      "case": "fresh_live_remote_error_fails",
+      "passed": true,
+      "exit_code": 1,
+      "status": null,
+      "request_count": 0
+    },
+    {
+      "case": "fresh_measurement_current_sha",
+      "passed": true,
+      "exit_code": 0,
+      "status": "verified",
+      "request_count": 0
+    },
+    {
+      "case": "fresh_measurement_advanced_sha_skips",
+      "passed": true,
+      "exit_code": 0,
+      "status": "superseded",
+      "request_count": 0
+    },
+    {
+      "case": "fresh_measurement_remote_error_fails",
+      "passed": true,
+      "exit_code": 1,
+      "status": "verified",
+      "request_count": 0
+    }
+  ],
+  "passed_cases": 34
+}

@@ -122,6 +122,41 @@ function relativeFile(filename){
  if(fs.existsSync(filename))assert.ok(fs.realpathSync(filename).startsWith(fs.realpathSync('.')+path.sep),'Review file must remain in this checkout: '+filename);
  return filename;
 }
+function checkedI18nReplacements(review,source){
+ const declared=review.i18nReplacements??[];
+ assert.ok(Array.isArray(declared),'Reviewed translation replacements must be an array');
+ if(declared.length===0)return [];
+ const approved={elementId:'apsAtlasArchiveLink',from:'apsAtlasPublicDetail',to:'apsAtlasStandalone',
+  href:'https://robertbregy.github.io/Connecting-the-Dots/applications/it/',rationaleIds:['A98']};
+ assert.deepEqual(declared,[approved],'Only the reviewed local Atlas link label replacement is allowed');
+ assert.ok(typeof review.rationales?.A98==='string'&&review.rationales.A98.trim(),'Atlas link label replacement needs its explicit review rationale');
+ // This is one visible local link, not a global alias or a retained hidden token.
+ const anchor='<a class="sourceChip apsAtlasArchive" id="'+approved.elementId+'" href="'+approved.href+'" data-i18n="'+approved.to+'"></a>';
+ assert.equal(source.split(anchor).length,2,'Reviewed Atlas link must retain its exact local destination and label');
+ assert.equal((source.match(/\bid="apsAtlasArchiveLink"/g)||[]).length,1,'Reviewed Atlas link must occur exactly once');
+ assert.equal((source.match(/data-i18n="apsAtlasStandalone"/g)||[]).length,1,'Atlas label replacement must be limited to one source link');
+ assert.equal((source.match(/data-i18n="apsAtlasPublicDetail"/g)||[]).length,0,'Do not retain a ghost APS label token in the source template');
+ const translations=JSON.parse(fs.readFileSync('data/translations.json','utf8'));
+ const originalLabels={en:'Official APS summary',it:'Scheda ufficiale APS',de:'Offizieller APS-Eintrag',fr:'Fiche APS officielle'};
+ for(const [lang,label] of Object.entries(originalLabels)){
+  assert.equal(translations[lang]?.apsAtlasPublicDetail,label,'Original official APS label changed: '+lang);
+  assert.ok(typeof translations[lang]?.apsAtlasStandalone==='string'&&translations[lang].apsAtlasStandalone.trim(),'Missing localized standalone Atlas label: '+lang);
+ }
+ // Actual ICANN application links still use the original label and URL builder.
+ const atlas=fs.readFileSync('assets/aps-atlas.js','utf8');
+ const officialHref=[
+  "function officialHref(id,section='summary'){",
+  " if(!/^[A-Za-z0-9-]{8,80}$/.test(id))return 'https://newgtldprogram-aps.icann.org/applications';",
+  " return 'https://newgtldprogram-aps.icann.org/applications/'+encodeURIComponent(id)+'/'+section;",
+  '}'
+ ].join('\n');
+ assert.equal(atlas.split(officialHref).length,2,'Official APS application destination changed');
+ assert.ok(atlas.includes('const direct=officialHref(a.id);'),'Primary application link must use its official APS destination');
+ assert.equal((atlas.match(/t\('apsAtlasPublicDetail'\)/g)||[]).length,2,'Both official APS summary links must retain their original label');
+ assert.ok(atlas.includes("href=\"'+escape(officialHref(replacement.id))+'\">'+escape(t('apsAtlasPublicDetail'))"),'Replacement application summary must retain its official APS link label');
+ assert.ok(atlas.includes("'<a href=\"'+escape(direct)+'\" target=\"_blank\" rel=\"noopener\">'+escape(t('apsAtlasPublicDetail'))"),'Primary application summary must retain its official APS link label');
+ return declared;
+}
 function checkProtection(review,source,publication){
  assert.equal(review.schemaVersion,1,'Unknown editorial-review schema');
  assert.equal(review.baselineCommit,REVIEW_BASE,'Pre-audit baseline must remain immutable');
@@ -170,10 +205,15 @@ function checkProtection(review,source,publication){
   {from:'downloads/connecting-the-dots-data-pack-v0.7.78.sha256',to:'{{CURRENT_CHECKSUM_PATH}}',publishedPath:publication.currentDataPackPath.replace(/\.zip$/,'.sha256'),rationaleIds:['C01']}
  ];
  assert.deepEqual(review.linkReplacements,replacements,'Only the two reviewed current-pack link replacements are allowed');
+ const i18nReplacements=checkedI18nReplacements(review,source);
  for(const [kind,pattern] of Object.entries(patterns)){
   const actual=new Set([...source.matchAll(pattern)].map(m=>m[1]));
   const missing=review.sourceInvariants[kind].filter(value=>!actual.has(value));
-  const unapproved=missing.filter(value=>kind!=='hrefs'||!replacements.some(r=>r.from===value&&actual.has(r.to)&&fs.existsSync(r.from)));
+  const unapproved=missing.filter(value=>{
+   if(kind==='hrefs')return !replacements.some(r=>r.from===value&&actual.has(r.to)&&fs.existsSync(r.from));
+   if(kind==='i18nReferences')return !i18nReplacements.some(r=>r.from===value);
+   return true;
+  });
   assert.deepEqual(unapproved,[],'Original source '+kind+' missing: '+unapproved.join(', '));
  }
 }

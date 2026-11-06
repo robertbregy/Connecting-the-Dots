@@ -1,0 +1,115 @@
+{
+  "base_commit": "94a01d185f0153c1787751e9a08948d3728e6f3b",
+  "recovery": {
+    "source": "Actual test results printed in the agent conversation before the filesystem reset.",
+    "is_fresh_execution": false,
+    "warning": "These historical results concern the originally tested patch, not a new execution of the reconstructed files."
+  },
+  "original_final_workflow_sha256": {
+    "rebuild.yml": "eb1cb7cf9439336be97f0dccae2356599c973190c3be0b8242da9e935a7f03bc",
+    "pages-deploy.yml": "8dabbbefa71e4e8ebf5fc1aa9f58dc7d80399dbaef4a91bfd20dd41106e9601a",
+    "pages-live-smoke.yml": "480de490815dba6ecf7ce2e56e0126cb6ac460a29ffd2527c7851024e6a4f888"
+  },
+  "passed_cases": 24,
+  "cases": [
+    {
+      "case": "yaml_bash_and_embedded_python_syntax",
+      "passed": true
+    },
+    {
+      "case": "event_policy_and_explicit_precompiled_opt_out",
+      "passed": true
+    },
+    {
+      "case": "push_succeeds",
+      "passed": true
+    },
+    {
+      "case": "remote_advances_while_pushing",
+      "passed": true
+    },
+    {
+      "case": "push_denied_tip_unchanged",
+      "passed": true
+    },
+    {
+      "case": "remote_read_fails_after_denied_push",
+      "passed": true
+    },
+    {
+      "case": "readme_race_gets_a_new_rebuild_and_verified_handoff",
+      "passed": true
+    },
+    {
+      "case": "pages_guard_event_and_provenance_matrix",
+      "passed": true
+    },
+    {
+      "case": "predeploy_checks_accept_reviewed_bytes_without_modifying_them",
+      "passed": true
+    },
+    {
+      "case": "predeploy_rejects_metadata_html_mismatch",
+      "passed": true,
+      "error": "RELEASE CHECK FAILED: Dataset JSON-LD version/date is stale"
+    },
+    {
+      "case": "existing_guard_rejects_unreviewed_ci_patch",
+      "passed": true,
+      "error": "AssertionError [ERR_ASSERTION]: File drift after editorial review: .github/workflows/rebuild.yml"
+    },
+    {
+      "case": "live_checks_expanded_real_resource_set",
+      "passed": true,
+      "resource_count": 74
+    },
+    {
+      "case": "live_rejects_each_of_the_11_previously_omitted_paths",
+      "passed": true
+    },
+    {
+      "case": "existing_aps_graph_negative_control_preserved",
+      "passed": true
+    },
+    {
+      "case": "profile_urls_derive_and_encode_actual_runtime_version",
+      "passed": true
+    },
+    {
+      "case": "working_paper_target_derives_from_publication_metadata",
+      "passed": true
+    },
+    {
+      "case": "obsolete_live_run_records_skip_without_network_checks",
+      "passed": true
+    },
+    {
+      "case": "main_advance_during_byte_comparison_skips_measurements",
+      "passed": true
+    },
+    {
+      "case": "live_remote_read_error_is_a_failure",
+      "passed": true
+    },
+    {
+      "case": "measurement_guard_accepts_exact_current_verified_source",
+      "passed": true
+    },
+    {
+      "case": "main_advance_during_browser_install_skips_measurements",
+      "passed": true
+    },
+    {
+      "case": "measurement_remote_read_error_is_not_a_skip",
+      "passed": true
+    },
+    {
+      "case": "installation_and_measurement_steps_require_positive_outputs",
+      "passed": true
+    },
+    {
+      "case": "obsolete_rerun_uses_a_distinct_concurrency_group",
+      "passed": true
+    }
+  ]
+}

@@ -2,7 +2,9 @@
 
 ## Canonical workflow
 
-The GitHub repository is the canonical working master. Ordinary updates are made as Git commits to `main`. The **Rebuild published site** GitHub Action regenerates and validates the static publication, commits generated outputs with `[skip build]`, and GitHub Pages deploys the committed state.
+The GitHub repository is the canonical working master. Ordinary updates are made as Git commits to `main`. Every ordinary push to `main` or `feat/**`, including documentation-only changes, starts **Rebuild published site**. The action regenerates and validates the static publication and commits generated outputs with `[skip build]`. An ordinary main push waits for its successful rebuild before Pages publishes the committed state.
+
+The generated commit is either the unchanged source SHA or its direct child with the builder's exact commit message and identity. Pages also requires that SHA to remain the current main tip. Failed pushes with an unchanged remote tip, and failures to read that tip, fail the rebuild instead of reporting a concurrent update.
 
 Recommended local sequence:
 
@@ -17,6 +19,22 @@ git push origin main
 ```
 
 When ChatGPT is connected through the GitHub integration, the same principle applies: inspect current `main`, prepare and validate the source change, commit it, then verify the automated rebuild and GitHub Pages deployment.
+
+## Reviewed precompiled publications
+
+Use `[skip build]` in the commit message only when the committed publication has already been generated and reviewed. This is the explicit rebuild opt-out. A main push with that marker publishes its committed files directly; ordinary pushes wait for the successful rebuild handoff. Pages runs `python3 scripts/release_check.py` and `node scripts/verify_ia_b2_parity.cjs` before packaging. Those checks do not rebuild or alter the publication.
+
+GitHub does not normally trigger another push workflow for a commit made with the workflow's `GITHUB_TOKEN`. The successful rebuild's `workflow_run` event therefore provides the deployment handoff for its generated commit.
+
+## Recovery and manual verification
+
+If a rebuild fails, resolve the reported failure and rerun **Rebuild published site**, or push a corrected source commit. A later documentation-only push receives its own rebuild, so an older superseded build does not leave its generated outputs stranded.
+
+Use **pages build and deployment → Run workflow → main** to publish the already committed, validated main state without rebuilding. The current-SHA and release/review checks still apply. Use this fallback only when the committed publication is the intended output.
+
+Use **Verify actual GitHub Pages bytes after deployment → Run workflow → main** to repeat the live verification without publishing. Normal live verification starts only after a successful Pages workflow, so it checks the publication that was deployed instead of the earlier source push. Runs for different source SHAs cannot cancel one another.
+
+Automatic live verification first reads the jobs of the exact triggering Pages run and attempt. The `Deploy the committed publication` step must have completed successfully for the expected source SHA. A successful workflow that skipped deployment records `status: not_deployed` and `verified: false`, and performs no site requests, browser installation or measurements. API errors or ambiguous upstream metadata fail the verification. A manual verification has no upstream run to attest, but still enforces the current-SHA and live-byte gates.
 
 ## Research releases
 
@@ -36,6 +54,15 @@ The working paper is generated from its Markdown source by `scripts/render_resea
 
 Deterministic deployment/source ZIPs may still be generated for rollback or offline preservation, but they are no longer the normal publication path. Do not stack old browser-upload archives over the repository because omitted files are not deleted by that workflow.
 
+After building and checking the publication, generate either offline archive with:
+
+```bash
+python3 scripts/package_release.py --kind deploy
+python3 scripts/package_release.py --kind source
+```
+
+These commands write versioned ZIPs beside the repository. Continue to use Git for repository updates.
+
 ## Verification
 
 After each publish:
@@ -45,6 +72,8 @@ After each publish:
 3. verify the live footer/version and key research metadata;
 4. run the release checker before any tag or research release;
 5. keep the working paper, sitemap, DOI metadata and research-release manifest synchronized.
+
+The live check covers the native and standalone pages, the working paper from `publication.json`, their referenced scripts and stylesheets, the map runtime, all Explorer profile shards with their actual version query strings, and the current data package. It compares immutable source bytes before running controlled browser measurements and checks the source again before those measurements. A superseded run records `status: superseded` and `verified: false`, skips measurements, and is not evidence that the current publication passed verification. A `not_deployed` report likewise records a skipped verification rather than a successful publication check.
 
 ## robots.txt note
 

@@ -134,7 +134,7 @@ def make_trail(file: Path, lang: str, selected: str, root: Path, texts: dict) ->
     home, _, page = TRAIL_WORDS[lang]
     area_link = f"{prefix}/{lang}/?tab=ia-{selected}#ia-{selected}"
     # The page title remains the authoritative h1; this is a secondary landmark.
-    return ('<nav class="ctdB2Trail" aria-label="Breadcrumb">'
+    return ('<nav class="ctdB2Trail" aria-label="' + escape(texts["breadcrumbLabel"], quote=True) + '">'
             '<a href="' + escape(f"{prefix}/{lang}/", quote=True) + '">' + escape(home) + '</a>'
             '<span aria-hidden="true">/</span><a href="' + escape(area_link, quote=True) + '">'
             + escape(labels[selected]) + '</a><span aria-hidden="true">/</span>'
@@ -162,6 +162,11 @@ def add_crosspage_features(html: str, file: Path, lang: str, root: Path, selecte
     additions = ""
     if 'class="ctdB2Trail"' not in html:
         additions += make_trail(file, lang, selected, root, texts)
+    else:
+        # Static entry pages also retain their trail between complete builds.
+        html = re.sub(r'<nav class="ctdB2Trail"[^>]*>[\s\S]*?</nav>',
+                      lambda _m: make_trail(file, lang, selected, root, texts),
+                      html, count=1)
     if 'id="ctd-b2-link-isolation"' not in html:
         additions += LINK_ISOLATION
     if file.parent.name in ("sanctions-and-dns", "who-controls-internet-access"):
@@ -211,7 +216,7 @@ def make_navigation(root: Path, file: Path, lang: str, selected: str, texts: dic
 
 
 
-def unify_governance_shell(html: str, file: Path, lang: str) -> str:
+def unify_governance_shell(html: str, file: Path, lang: str, texts: dict) -> str:
     """Use the actual main-site stylesheet and header controls on evergreen guides."""
     if file.parent.name not in ("sanctions-and-dns", "who-controls-internet-access"):
         return html
@@ -228,10 +233,13 @@ def unify_governance_shell(html: str, file: Path, lang: str) -> str:
         "fr": ("Copier le lien", "Lien copié", "Changer de thème", "Retour à Connecting the Dots"),
     }
     copy_label, copied_label, theme_label, home_label = controls_labels[lang]
-    shell_header = f'''<a class="skipLink" href="#ctd-article-main">Skip to main content</a>
+    language_label = escape(texts["languageLabel"], quote=True)
+    skip_label = escape(texts["skipToContent"])
+    brand_label = escape(texts["homeLabel"], quote=True)
+    shell_header = f'''<a class="skipLink" href="#ctd-article-main">{skip_label}</a>
 <header class="topbar"><div class="topinner">
-<a class="brand brandButton" href="{home}" aria-label="Home"><img alt="" src="{prefix}/assets/logo-mark.png"><span class="brandTitle">Connecting the Dots</span></a>
-<div class="controls"><label class="ctdGuideLang"><span class="sr-only">Language</span><select aria-label="Language" class="control lang" id="ctdGuideLanguage">
+<a class="brand brandButton" href="{home}" aria-label="{brand_label}"><img alt="" src="{prefix}/assets/logo-mark.png"><span class="brandTitle">Connecting the Dots</span></a>
+<div class="controls"><label class="ctdGuideLang"><span class="sr-only">{language_label}</span><select aria-label="{language_label}" class="control lang" id="ctdGuideLanguage">
 <option value="en"{" selected" if lang=="en" else ""}>EN</option><option value="de"{" selected" if lang=="de" else ""}>DE</option><option value="fr"{" selected" if lang=="fr" else ""}>FR</option><option value="it"{" selected" if lang=="it" else ""}>IT</option>
 </select></label><button class="control" id="ctdGuideCopy" type="button" aria-label="{copy_label}"><svg aria-hidden="true" class="copyIcon" viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2"></rect><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path></svg><span class="shareText">{copy_label}</span></button><button class="control" id="ctdGuideTheme" type="button" aria-label="{theme_label}">◐</button></div>
 </div></header>'''
@@ -290,7 +298,7 @@ def apply(root: Path) -> int:
         if not file.exists():
             raise ValueError(f"Missing independent page: {file.relative_to(root)}")
         html = file.read_text(encoding="utf-8")
-        html = unify_governance_shell(html, file, lang)
+        html = unify_governance_shell(html, file, lang, translations[lang])
         if 'class="ctdB2CrossNav"' in html:
             assert html.count('class="ctdB2CrossNav"') == 1, file
             # Refresh navigation in previously generated standalone pages too.

@@ -141,6 +141,12 @@ const payload2026={
 };
 fs.writeFileSync(path.join(root,'data/applications_2026_strings_reveal.js'),`/* generated from applications_2026_strings_reveal.csv + application_2026_snapshot.json */\nwindow.CTD2026_STRING_SNAPSHOT=${JSON.stringify(payload2026)};\n`);
 
-write('data/i18n_bundle.js','DOT_I18N',JSON.parse(fs.readFileSync(path.join(root,'data/translations.json'),'utf8')));
+const translations=JSON.parse(fs.readFileSync(path.join(root,'data/translations.json'),'utf8'));
+write('data/i18n_bundle.js','DOT_I18N',translations);
+// Match the previously inline dictionary exactly; each route loads one locale.
+for(const language of ['en','it','de','fr']){
+ const localized={...translations.en,...translations[language]};
+ fs.writeFileSync(path.join(root,`data/i18n_${language}.js`),'\nwindow.DOT_I18N='+JSON.stringify({[language]:localized})+';\n');
+}
 
-console.log('Generated data/data_bundle.js, data/i18n_bundle.js and frozen 2026 string snapshot');
+console.log('Generated runtime bundles, four locale dictionaries and frozen 2026 string snapshot');

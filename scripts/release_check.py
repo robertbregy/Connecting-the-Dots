@@ -56,12 +56,27 @@ if tuple(int(x) for x in version.split('.')) >= (0,7,79):
     FROZEN_TECHNICAL_ARCHIVES["connecting-the-dots-data-pack-v0.7.83.zip"]="e5a2d2c1d78d943c61d8481d94bbb2d1a0b0636216f6d4c0a5c122a740ec17f3"
     FROZEN_TECHNICAL_ARCHIVES["connecting-the-dots-data-pack-v0.7.84.zip"]="b2ffb3502559c927a0e61666b1bda232f6bbcb51f4e9f600b8d09c72e1ac57c4"
     FROZEN_TECHNICAL_ARCHIVES["connecting-the-dots-data-pack-v0.7.85.zip"]="d1a17cca20a8dbeffa00b0273261b119c2dae5a2bb39d4b02485a90baec8c74f"
+    frozen=json_file('frozen_technical_packages.json')['files']
     for archive,expected in FROZEN_TECHNICAL_ARCHIVES.items():
-        p=ROOT/'downloads'/archive
+        if frozen.get('downloads/'+archive)!=expected:
+            fail('Historical technical data pack baseline changed: '+archive)
+    current_archive=f'downloads/connecting-the-dots-data-pack-v{version}.zip'
+    historical_archives={p.relative_to(ROOT).as_posix()
+                         for p in (ROOT/'downloads').glob('*.zip')
+                         if p.relative_to(ROOT).as_posix()!=current_archive}
+    if set(frozen)!=historical_archives:
+        fail('Historical archive registry coverage mismatch: missing='+
+             ', '.join(sorted(historical_archives-set(frozen)))+'; unexpected='+
+             ', '.join(sorted(set(frozen)-historical_archives)))
+    for relative_path,expected in frozen.items():
+        p=ROOT/relative_path
+        archive=p.name
         if not p.is_file() or hashlib.sha256(p.read_bytes()).hexdigest()!=expected:
             fail('Historical technical data pack was rewritten or removed: '+archive)
         sha_file=p.with_suffix('.sha256')
-        if sha_file.is_file() and sha_file.read_text(encoding='utf-8').split()[0]!=expected:
+        if archive!='connecting-the-dots-data-pack.zip' and not sha_file.is_file():
+            fail('Historical technical data pack checksum file missing: '+archive)
+        if sha_file.is_file() and sha_file.read_text(encoding='utf-8').strip()!=f'{expected}  {archive}':
             fail('Historical technical data pack checksum file changed: '+archive)
 
 # Maintenance release invariants: canonical Git deployment and social-preview accessibility.
@@ -74,6 +89,15 @@ for token in ['property="og:image:alt"','name="twitter:image:alt"']:
         fail(f'missing social image alt metadata: {token}')
 manifest=json_file('manifest.json')
 if manifest.get('version')!=version: fail('manifest/package version mismatch')
+manifest_files=manifest.get('files',[])
+csv_paths={p.name for p in DATA.glob('*.csv')}
+if len(manifest_files)!=len(csv_paths) or {item.get('path') for item in manifest_files}!=csv_paths:
+    fail('CSV manifest must describe every current CSV exactly once')
+for item in manifest_files:
+    content=(DATA/item['path']).read_bytes()
+    actual={'bytes':len(content),'sha256':hashlib.sha256(content).hexdigest(),'records':count(item['path'])}
+    for key,value in actual.items():
+        if item.get(key)!=value: fail(f'CSV manifest {key} mismatch: '+item['path'])
 publication_meta=json.loads((ROOT/'publication.json').read_text(encoding='utf-8'))
 if manifest.get('as_of')!=publication_meta.get('asOf'): fail('manifest/publication snapshot mismatch')
 pub=(DATA/'publication.js').read_text()

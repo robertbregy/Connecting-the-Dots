@@ -1,4 +1,4 @@
-"""Package either the browser-upload publication payload or the complete source release."""
+"""Package either the static publication payload or the complete source release."""
 from pathlib import Path
 import argparse
 import hashlib
@@ -8,7 +8,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 EXCLUDED_DIRS = {'.git', 'node_modules', '__pycache__', '.venv'}
 EXCLUDED_NAMES = {'.DS_Store'}
-DEPLOY_OMIT = {'DEPLOY.md', 'package-lock.json', 'requirements-fallback.txt'}
+DEPLOY_OMIT = {'DEPLOY.md', 'package-lock.json'}
 
 ZIP_TIMESTAMP = (2026, 10, 5, 0, 0, 0)
 ZIP_FILE_MODE = 0o100644 << 16
@@ -64,10 +64,8 @@ def main():
     files=files_for(args.kind,output)
     if archive not in files:
         raise SystemExit('IANA evidence archive is missing from package')
-    if args.kind=='deploy' and len(files)>100:
-        raise SystemExit(f'Deploy release has {len(files)} files; GitHub browser upload allows at most 100')
     if args.kind=='source':
-        required={'package-lock.json','DEPLOY.md','requirements-fallback.txt'}
+        required={'package-lock.json','DEPLOY.md','build.py'}
         missing=required-{p.relative_to(ROOT).as_posix() for p in files}
         if missing: raise SystemExit('Source release missing: '+', '.join(sorted(missing)))
     write_deterministic_zip(output,[(path,path.relative_to(ROOT).as_posix()) for path in files])

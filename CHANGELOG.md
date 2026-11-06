@@ -1,3 +1,13 @@
+# v0.7.98 — 6 November 2026
+
+- Hardened rebuild/Pages publication, upstream deployment verification and live resource coverage.
+- Protected every historical technical archive, documented the v0.7.92 manifest-only revisions, repaired offline packaging and CSV manifest counts.
+- Corrected current citation metadata, localized accessibility controls, Atlas labels, skip links, numbers and singular search summaries.
+- Restored the original HTML cap with shared versioned assets and a combined delivery budget; corrected CLS session-window measurement.
+- Preserved scientific CSVs, APS/IANA evidence, all previous ZIPs, RR1/RR2 and the working-paper revision. No human reader study was performed.
+
+See the [complete audit](docs/full-site-audit-2026-11-06.md) for evidence and limits.
+
 # v0.7.91 - 20 October 2026
 
 - Reordered Economics into value, reach, cases, concentration, cycles and the 2026 analysis.

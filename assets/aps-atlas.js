@@ -12,7 +12,7 @@ let limit=30;
 const escape=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const t=k=>L[k]||k;
 const normal=x=>String(x??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/^\./,'').trim();
-const fmt=n=>new Intl.NumberFormat(lang==='it'?'it-IT':lang==='de'?'de-DE':lang==='fr'?'fr-FR':'en-US').format(n);
+const fmt=n=>new Intl.NumberFormat(lang==='it'?'it-IT':lang==='de'?'de-DE':lang==='fr'?'fr-FR':'en-US',{useGrouping:true}).format(n);
 if(!results||!search||!more||!output)return;
 if(!corpus||!Array.isArray(corpus.apps)||corpus.apps.length!==1614){
  output.textContent=t('apsAtlasError');more.hidden=true;return;

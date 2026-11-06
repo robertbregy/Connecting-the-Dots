@@ -28,7 +28,7 @@ def source_for(lang):
         return '<html'+attrs+f' lang="{lang}" data-ctd-language="{lang}" data-ctd-root="../">'
     staged=re.sub(r'<html([^>]*)>',repl,raw,count=1)
     inventory_pattern=r'<script\b[^>]*\bsrc="data/applications_2026_strings_reveal\.js[^\"]*"[^>]*></script>'
-    staged,n=re.subn(inventory_pattern,lambda _: '<script>\n'+(ROOT/'data/applications_2026_strings_reveal.js').read_text(encoding='utf-8')+'\n</script>',staged,count=1)
+    staged,n=re.subn(inventory_pattern,lambda _: '<script id="ctd-2026-string-snapshot">\n'+(ROOT/'data/applications_2026_strings_reveal.js').read_text(encoding='utf-8')+'\n</script>',staged,count=1)
     if n!=1:raise RuntimeError('missing frozen 2026 inventory')
     for identifier,filename in [
         ('ctd-data-bundle','data/site_bundle.js'),
@@ -89,9 +89,8 @@ def render(page,lang,alias=False):
     nos=soup.select_one('#staticReading')
     if nos:set_content(nos,f'<div class="staticReading"><p>{tr["staticReading"]}</p><nav class="languageVersions" aria-label="{tr["languageVersions"]}">{links()}</nav></div>')
     style=soup.select_one('#ctd-runtime-style');link=soup.new_tag('link',id='ctd-runtime-style');link['rel']='stylesheet';link['href']=f'assets/style.css?v={VERSION}';style.replace_with(link)
-    for sid,file in [('ctd-data-bundle','data/site_bundle.js'),('ctd-worldmap','data/worldmap.js'),('ctd-app','assets/app.js')]:
+    for sid,file in [('ctd-data-bundle','data/site_bundle.js'),('ctd-i18n-bundle',f'data/i18n_{lang}.js'),('ctd-worldmap','data/worldmap.js'),('ctd-2026-string-snapshot','data/applications_2026_strings_reveal.js'),('ctd-app','assets/app.js')]:
         n=soup.select_one('#'+sid);n.clear();n['src']=f'{file}?v={VERSION}';n['defer']=''
-    i18n=soup.select_one('#ctd-i18n-bundle');i18n.string='\nwindow.DOT_I18N='+json.dumps({lang:tr},ensure_ascii=False,separators=(',',':'))+';\n'
     guide=soup.select_one('a[data-inside-round-guide]')
     if guide:guide['href']=BASE+'inside-the-round/'+lang+'/'
     behind_guide=soup.select_one('a[data-behind-round-guide]')

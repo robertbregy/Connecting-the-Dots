@@ -1,0 +1,152 @@
+{
+  "base_commit": "94a01d185f0153c1787751e9a08948d3728e6f3b",
+  "recovery": {
+    "source": "Actual test results printed in the agent conversation before the filesystem reset.",
+    "is_fresh_execution": false,
+    "warning": "These historical results concern the originally tested patch, not a new execution of the reconstructed files."
+  },
+  "original_final_workflow_sha256": {
+    "rebuild.yml": "eb1cb7cf9439336be97f0dccae2356599c973190c3be0b8242da9e935a7f03bc",
+    "pages-deploy.yml": "8dabbbefa71e4e8ebf5fc1aa9f58dc7d80399dbaef4a91bfd20dd41106e9601a",
+    "pages-live-smoke.yml": "480de490815dba6ecf7ce2e56e0126cb6ac460a29ffd2527c7851024e6a4f888"
+  },
+  "passed_cases": 16,
+  "actual_success_fixture_run": 42299132419,
+  "actual_success_fixture_attempt": 1,
+  "cases": [
+    {
+      "case": "actual_completed_successful_pages_step",
+      "passed": true,
+      "expected": "ready",
+      "exit_code": 0,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "successful_job_with_deployment_step_skipped",
+      "passed": true,
+      "expected": "not_deployed",
+      "exit_code": 0,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "entire_upstream_deploy_job_skipped",
+      "passed": true,
+      "expected": "not_deployed",
+      "exit_code": 0,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "api_failure_is_not_a_skip",
+      "passed": true,
+      "expected": "failure",
+      "exit_code": 1,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "ambiguous_deploy_job_fails",
+      "passed": true,
+      "expected": "failure",
+      "exit_code": 1,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "incomplete_paginated_metadata_fails",
+      "passed": true,
+      "expected": "failure",
+      "exit_code": 1,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "missing_deployment_step_fails",
+      "passed": true,
+      "expected": "failure",
+      "exit_code": 1,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "ambiguous_deployment_step_fails",
+      "passed": true,
+      "expected": "failure",
+      "exit_code": 1,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "failed_deploy_inside_successful_job_is_rejected",
+      "passed": true,
+      "expected": "failure",
+      "exit_code": 1,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "wrong_source_sha_fails",
+      "passed": true,
+      "expected": "failure",
+      "exit_code": 1,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "wrong_upstream_run_fails",
+      "passed": true,
+      "expected": "failure",
+      "exit_code": 1,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "wrong_attempt_response_fails",
+      "passed": true,
+      "expected": "failure",
+      "exit_code": 1,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "old_skipped_attempt_does_not_borrow_retry_success",
+      "passed": true,
+      "expected": "not_deployed",
+      "exit_code": 0,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "skipped_retry_does_not_reuse_old_success",
+      "passed": true,
+      "expected": "not_deployed",
+      "exit_code": 0,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "successful_retry_uses_its_exact_attempt",
+      "passed": true,
+      "expected": "ready",
+      "exit_code": 0,
+      "api_calls": 1,
+      "site_requests": 0
+    },
+    {
+      "case": "manual_verification_requires_no_upstream_api",
+      "passed": true,
+      "expected": "ready",
+      "exit_code": 0,
+      "api_calls": 0,
+      "site_requests": 0
+    }
+  ],
+  "gating": {
+    "checkout_and_site_checks_require_ready": true,
+    "no_installation_without_verified_bytes": true,
+    "actions_read_added_only_to_live_smoke": true
+  },
+  "token_not_logged": true
+}

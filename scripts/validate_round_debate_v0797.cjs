@@ -4,8 +4,12 @@ const fs=require('node:fs'),assert=require('node:assert/strict'),cp=require('nod
 const {parseHTML}=require('linkedom');
 const d=JSON.parse(fs.readFileSync('data/round_debate_20261106.json','utf8'));
 const pub=JSON.parse(fs.readFileSync('publication.json','utf8'));
-assert.equal(pub.version,'0.7.97');assert.equal(pub.asOf,'2026-10-10');
+const version=pub.version.match(/^(\d+)\.(\d+)\.(\d+)$/);
+assert.ok(version&&(Number(version[1])>0||Number(version[2])>7||(Number(version[2])===7&&Number(version[3])>=97)),
+ 'The dated commentary requires technical release v0.7.97 or later');
+assert.equal(pub.asOf,'2026-10-10');
 assert.equal(d.reviewedOn,'2026-11-06');assert.equal(d.sources.length,4);
+assert.ok(d.reviewedOn<=pub.releasedOn,'Publication predates the reviewed commentary');
 assert.deepEqual(d.items.map(x=>x.id),['brs-cpe-outcomes','inta-private-auctions']);
 for(const p of ['data/field_investigations.json','data/inside_the_round_events.json','data/application_2026_snapshot.json','data/applications_2026_aps_official_listing.csv','data/applications_2026_aps_official_provenance.json','data/aps_2026_current_analytics.json','CITATION.cff']){
  assert.deepEqual(fs.readFileSync(p),cp.execFileSync('git',['show','HEAD:'+p],{maxBuffer:80*1024*1024}),'Frozen application/research data changed: '+p);

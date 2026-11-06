@@ -1,10 +1,16 @@
-# Connecting the Dots — v0.7.92
+# Connecting the Dots — v0.7.98
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
 Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
+
+**v0.7.98 · 6 November 2026**
+
+Technical audit of publication, archive integrity, accessibility, delivery and citation metadata. See the [full audit](docs/full-site-audit-2026-11-06.md). Scientific evidence, prior ZIPs and RR1/RR2 remain preserved. Human reader studies remain pending.
+
+## Earlier reader-first release
 
 **v0.7.92 · 21 October 2026**
 
@@ -137,7 +143,7 @@ The project now has two version layers:
 - **Site releases** (`v0.x.y`) for software, editorial, accessibility and interface changes.
 - **Research releases** (`RR1`, `RR2`, …) for material changes to the evidence base or major derived datasets.
 
-Current research release: **RR2 · Post-Reveal Evidence Consolidation**, published 10 October 2026 (DOI [10.5281/zenodo.23288603](https://doi.org/10.5281/zenodo.23288603)). RR1 remains an immutable earlier release (DOI [10.5281/zenodo.23262623](https://doi.org/10.5281/zenodo.23262623)). The next candidate is **RR3**, contingent on verified new evidence after ICANN String Confirmation Day on 17 November 2026.
+Current research release: **RR2 · Post-Reveal Evidence Consolidation**, bibliographic publication date 11 October 2026 (created 10 October UTC; evidence cut-off 10 October) (DOI [10.5281/zenodo.23288603](https://doi.org/10.5281/zenodo.23288603)). RR1 remains an immutable earlier release (DOI [10.5281/zenodo.23262623](https://doi.org/10.5281/zenodo.23262623)). The next candidate is **RR3**, contingent on verified new evidence after ICANN String Confirmation Day on 17 November 2026.
 
 Citation metadata are stored in [`CITATION.cff`](CITATION.cff). Zenodo-ready metadata are stored in [`.zenodo.json`](.zenodo.json). The research-release manifest and working paper are in [`research/`](research/). RR1 is archived on Zenodo: `10.5281/zenodo.23262623`.
 
@@ -147,7 +153,7 @@ The program-wide chronology is maintained in [`data/inside_the_round_events.json
 
 ## Field Notes
 
-The public evidence register [`data/behind_round_stories.json`](data/behind_round_stories.json) now contains two source-audited, corrigible field notes and tracks each observation and their source provenance separately from the milestone chronology and the immutable RR1 data. The first case distinguishes a source-backed explanation for the mismatch between the APS aggregate and publicly listed applications from the still unexplained September-to-October official count change. Four standalone language routes are generated deterministically from the editorial register. New explanations are adopted only after public source verification; automated monitoring is advisory, not an unsupervised change to the publication.
+The public evidence register [`data/behind_round_stories.json`](data/behind_round_stories.json) contains source-audited, corrigible field notes and tracks each observation and their source provenance separately from the milestone chronology and the immutable RR1 data. The first case distinguishes a source-backed explanation for the mismatch between the APS aggregate and publicly listed applications from the still unexplained September-to-October official count change. Four standalone language routes are generated deterministically from the editorial register. New explanations are adopted only after public source verification; automated monitoring is advisory, not an unsupervised change to the publication.
 
 ## `.lugano`
 
@@ -159,7 +165,7 @@ Connecting the Dots remains a personal, independent research project. Its interp
 
 ## Data and reproducibility
 
-Current publication metadata are maintained once in root `publication.json`. The build propagates them to runtime labels, footer/version stamps, structured metadata and citation metadata. When built in GitHub Actions, `GITHUB_SHA` can also be embedded as the build commit; manual browser-upload builds intentionally leave that field empty rather than guessing a commit that does not yet exist.
+Current publication metadata are maintained once in root `publication.json`. The build propagates them to runtime labels, footer/version stamps, structured metadata and citation metadata. The buildProvenanceCommit field pins the reviewed source commit independently of subsequent packaging or CI commits, preserving reproducible provenance.
 
 Public CSV datasets and the downloadable data pack are exposed through the site. The full source release also retains build scripts, validation checks and frozen evidence used to reproduce the publication. The visitor-facing site performs no live 2026 inventory fetch: the Reveal Day browsing layer is vendored locally for deterministic results.
 

@@ -34,7 +34,7 @@ AS_OF = PUBLICATION["asOf"]
 
 def csv_records(path: Path) -> int:
     with path.open("r", encoding="utf-8-sig", newline="") as fh:
-        return max(sum(1 for _ in csv.reader(fh)) - 1, 0)
+        return max(sum(1 for row in csv.reader(fh) if row) - 1, 0)
 
 
 def sha256(path: Path) -> str:
@@ -127,13 +127,13 @@ def build_manifest() -> None:
             "frozen_on": "2026-10-07",
             "runtime_external_enrichment": False,
             "browser_time_external_data_fetches": "none",
-            "policy": "Core research datasets and the frozen 2026 Reveal Day string inventory are packaged locally for deterministic browsing; no visitor-time 2026 inventory fetch is performed."
+            "policy": "Core research datasets and the frozen 2026 Reveal Day string inventory are packaged locally for deterministic browsing; no visitor-time requests to external 2026 data services are performed."
         },
         "web_delivery": {
             "profile_loading": "on-demand",
             "detail_batches": 8,
             "assets": [{"repository_path": str(path.relative_to(ROOT)), "bytes": path.stat().st_size, "sha256": sha256(path)}
-                       for path in [DATA / "site_bundle.js", ROOT / "assets/app.js", ROOT / "assets/style.css", ROOT / "assets/audience.css", ROOT / "assets/aps-lazy.js", ROOT / "assets/worldmap-lazy.js", ROOT / "assets/tld-market.js", ROOT / "assets/tld-cultural.js", ROOT / "assets/aps-atlas.js", DATA / "aps_2026_application_graph.js", DATA / "worldmap.js", *sorted(DATA.glob("explorer_profiles_*.js"))]],
+                       for path in [DATA / "site_bundle.js", *[DATA / f"i18n_{lang}.js" for lang in ("en", "it", "de", "fr")], DATA / "applications_2026_strings_reveal.js", ROOT / "assets/app.js", ROOT / "assets/style.css", ROOT / "assets/audience.css", ROOT / "assets/aps-lazy.js", ROOT / "assets/worldmap-lazy.js", ROOT / "assets/tld-market.js", ROOT / "assets/tld-cultural.js", ROOT / "assets/aps-atlas.js", DATA / "aps_2026_application_graph.js", DATA / "worldmap.js", *sorted(DATA.glob("explorer_profiles_*.js"))]],
         },
         "files": files,
     }
@@ -260,12 +260,11 @@ def build_index() -> None:
         '\n    </section>'
     )
     html = html[:old_end] + fifth_card + html[old_end:]
-    reveal_2026_js = (DATA / "applications_2026_strings_reveal.js").read_text(encoding="utf-8")
     # The prerenderer loads runtime from disk; never inject huge inline bundles.
     html = html.replace('<link href="assets/style.css" rel="stylesheet"/>', '<link id="ctd-runtime-style" href="assets/style.css" rel="stylesheet"/>')
     for ref in ['data/data_bundle.js', 'data/i18n_bundle.js', 'data/worldmap.js']:
         html = html.replace(f'<script src="{ref}"></script>', '')
-    html = html.replace('<script src="data/applications_2026_strings_reveal.js"></script>', '<script id="ctd-2026-string-snapshot">\n' + reveal_2026_js + '\n</script>')
+    html = html.replace('<script src="data/applications_2026_strings_reveal.js"></script>', '<script id="ctd-2026-string-snapshot" src="data/applications_2026_strings_reveal.js"></script>')
     html = html.replace('<script src="data/publication.js"></script><script src="assets/app.js"></script>', '')
 
     routing_js = (ROOT / "assets" / "legacy-routing.js").read_text(encoding="utf-8")

@@ -10,6 +10,7 @@ const languages=['en','it','de','fr'];
 const rootHtml=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const snapshot=JSON.parse(fs.readFileSync(path.join(root,'data/iana_snapshot.json'),'utf8'));
 const publication=JSON.parse(fs.readFileSync(path.join(root,'publication.json'),'utf8'));
+const audienceEditorial=JSON.parse(fs.readFileSync(path.join(root,'data/audience_editorial.json'),'utf8'));
 // A green build requires complete translations in every language, not a historical exception list.
 const canonicalTranslations=JSON.parse(fs.readFileSync(path.join(root,'data/translations.json'),'utf8'));
 const sourceTemplate=fs.readFileSync(path.join(root,'src/index.web.html'),'utf8');
@@ -57,8 +58,13 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   const article=JSON.parse(document.getElementById('articleStructuredData').textContent);
   assert.equal(article.inLanguage,language);
   assert.equal(article.mainEntityOfPage,canonical);
-  const window={};vm.runInNewContext(document.getElementById('ctd-i18n-bundle').textContent,{window});
+  const dictionary=document.getElementById('ctd-i18n-bundle');
+  assert.equal(dictionary.getAttribute('src'),(alias?'':'../')+'data/i18n_'+language+'.js?v='+publication.version,page+' locale dictionary asset');
+  assert.ok(dictionary.hasAttribute('defer'),page+' locale dictionary must preserve script order');
+  assert.equal(dictionary.textContent.trim(),'');
+  const window={};vm.runInNewContext(fs.readFileSync(path.join(root,'data/i18n_'+language+'.js'),'utf8'),{window});
   assert.deepEqual(Object.keys(window.DOT_I18N),[language],page+' ships only its own dictionary');
+  assert.equal(JSON.stringify(window.DOT_I18N[language]),JSON.stringify({...canonicalTranslations.en,...canonicalTranslations[language]}),page+' complete canonical dictionary preserved');
   const translations=window.DOT_I18N[language];
   // B2 integrates a new task-first UI with all the former sections, not a separate website.
   const iaAreas=['ia-understand','ia-explore','ia-stories','ia-outcomes','ia-round','ia-research'];
@@ -84,6 +90,16 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.ok(document.querySelector('[data-i18n="iaProjectDefinition"]').textContent.length>90,page+' project purpose lacks meaningful detail');
   assert.ok(document.querySelector('.iaHomeJumpList a[href="#ia-research"]'),page+' the novice cannot see direct paths');
   assert.ok(document.querySelector('#ia-research a[href="https://doi.org/10.5281/zenodo.23288603"]'),page+' RR2 version-specific DOI not immediately available');
+  // Verify the visible static citation, not only its ZIP destination, including the no-JavaScript page.
+  const citationCards=[...document.querySelectorAll('#research-citation-guide .audienceCiteGrid article')];
+  assert.equal(citationCards.length,3,page+' must distinguish archived research, current data and the working paper');
+  const currentPackDate=new Intl.DateTimeFormat(language==='en'?'en-GB':language,{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(publication.releasedOn+'T00:00:00Z'));
+  const citationRefs={doi:'https://doi.org/'+publication.doi,pack:(alias?'':'../')+publication.currentDataPackPath,paper:(alias?'':'../')+publication.paperPath};
+  for(const [index,[,date,,type]] of audienceEditorial.locales[language].citeRows.entries()){
+    const card=citationCards[index],expectedDate=type==='pack'?'v'+publication.currentDataPackVersion+' · '+currentPackDate:date;
+    assert.equal(card.querySelector('strong')?.textContent,expectedDate,page+' citation version/date is stale: '+type);
+    assert.equal(card.querySelector('a')?.getAttribute('href'),citationRefs[type],page+' citation destination is stale: '+type);
+  }
   assert.equal(document.querySelector('#ia-explore [data-b2-resource="atlas"]').getAttribute('href'),(alias?'./':'../')+'applications/'+language+'/',page+' 2026 Atlas should remain in the same branch and locale');
   assert.equal(document.querySelector('#ia-explore .iaExploreGovernance [data-b2-resource="access"]').getAttribute('href'),'#governance-access',page+' native access chapter link missing');
   assert.equal(document.querySelector('#ia-explore .iaExploreGovernance [data-b2-resource="sanctions"]').getAttribute('href'),'#governance-sanctions',page+' native sanctions chapter link missing');

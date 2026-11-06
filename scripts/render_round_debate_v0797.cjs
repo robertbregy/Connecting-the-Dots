@@ -4,10 +4,13 @@ const fs=require('node:fs'),assert=require('node:assert/strict');
 const {parseHTML}=require('linkedom');
 const path=require('node:path');
 const pub=JSON.parse(fs.readFileSync('publication.json','utf8'));
-assert.equal(pub.version,'0.7.97','A review and technical release are required for editorial changes');
+const version=pub.version.match(/^(\d+)\.(\d+)\.(\d+)$/);
+assert.ok(version&&(Number(version[1])>0||Number(version[2])>7||(Number(version[2])===7&&Number(version[3])>=97)),
+ 'The dated commentary requires technical release v0.7.97 or later');
 const d=JSON.parse(fs.readFileSync('data/round_debate_20261106.json','utf8'));
 assert.equal(d.editorialLayer,'living-commentary-not-official-APS-or-frozen-RR1-RR2');
-assert.equal(d.reviewedOn,pub.releasedOn);
+assert.equal(d.reviewedOn,'2026-11-06');
+assert.ok(d.reviewedOn<=pub.releasedOn,'Publication predates the reviewed commentary');
 assert.deepEqual(d.items.map(x=>x.id),['brs-cpe-outcomes','inta-private-auctions']);
 const sources=new Map(d.sources.map(x=>[x.id,x]));
 assert.equal(sources.size,4);
@@ -80,7 +83,7 @@ for(const lang of ['it','en','de','fr']){
  const style=doc.createElement('style');style.setAttribute('data-round-debate-style','');style.textContent=css;doc.head.append(style);
  const structured=doc.querySelector('script[type="application/ld+json"]');assert.ok(structured);
  const meta=JSON.parse(structured.textContent);assert.equal(meta['@type'],'CollectionPage');
- meta.dateModified=pub.releasedOn;structured.textContent=JSON.stringify(meta);
+ meta.dateModified=d.reviewedOn;structured.textContent=JSON.stringify(meta);
  fs.writeFileSync(file,'<!DOCTYPE html>\n'+doc.documentElement.outerHTML+'\n');
  for(const native of [path.join(lang,'index.html'),...(lang==='en'?['index.html']:[])]){
    const original=fs.readFileSync(native,'utf8');const {document}=parseHTML(original);

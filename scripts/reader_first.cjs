@@ -8,6 +8,7 @@ const assert = require('node:assert/strict');
 const {parseHTML} = require('linkedom');
 const ROOT = path.resolve(__dirname, '..');
 const DATA = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/reader_first.json'), 'utf8'));
+const TRANSLATIONS = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/translations.json'), 'utf8'));
 const PUB = JSON.parse(fs.readFileSync(path.join(ROOT, 'publication.json'), 'utf8'));
 const LANGS = ['en', 'it', 'de', 'fr'];
 const AREA = Object.fromEntries(Object.entries(DATA.areas).flatMap(([area, ids]) => ids.map(id => [id, area])));
@@ -305,7 +306,7 @@ function independentPage(file) {
   main.append(end);
   if (!main.id) main.id = 'reader-main'; main.tabIndex = -1;
   if (!d.querySelector('.skipLink')) {
-    const skip = ui(node(d, 'a', L.ui.contents, 'skipLink readerSkip')); skip.href = '#' + main.id; d.body.prepend(skip);
+    const skip = ui(node(d, 'a', TRANSLATIONS[lang].skipToContent, 'skipLink readerSkip')); skip.href = '#' + main.id; d.body.prepend(skip);
   }
   assert.deepEqual(bodySnapshot(main), original, 'Independent article evidence changed: ' + relative);
   for (const id of ids) assert.ok(d.getElementById(id), 'Lost independent anchor: ' + id);

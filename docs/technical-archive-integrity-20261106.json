@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "verifiedOn": "2026-11-06",
+  "verificationType": "AI-assisted byte and public deployment-record audit",
+  "baselineCommit": "94a01d185f0153c1787751e9a08948d3728e6f3b",
+  "humanParticipants": 0,
+  "policy": "Preserve every archive currently served; freeze its verified byte digest. Document historical revisions without replacing a published file.",
+  "newlyProtectedPaths": [
+    {
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.91.zip",
+      "sha256": "9e445ad422a1ec42e0f929e8c887e2c0fc3174e27ac2920c0901adc5287e2926"
+    },
+    {
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.92.zip",
+      "sha256": "841c47bd0160d3c2ee9b484382b0b70fc862a229d3ead266149f302976f15032"
+    },
+    {
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.93.zip",
+      "sha256": "6b6f483413408e43c7362d8ab47af926ed53f213f576e0d7c42f301b376e7d35"
+    },
+    {
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.97.zip",
+      "sha256": "032a375c855100b8b82ca39d188362a3f8b6ce31f459398c96e8a229d76010c0"
+    }
+  ],
+  "historicalException": {
+    "path": "downloads/connecting-the-dots-data-pack-v0.7.92.zip",
+    "finding": "Three different byte digests were deployed under the same filename before this audit. Each later revision changed only the ZIP member manifest.json.",
+    "currentDigestBasis": "Final published copy from commit 90d21e6059871c36148e1860d017e7409ed3f8bb; not the first published copy.",
+    "scientificMembersUnchanged": true,
+    "publishedRevisions": [
+      {
+        "commit": "87f4eb5cea252fcc3a6845c2d8af624473fbb99b",
+        "archiveSHA256": "92285f39662f9ff38d3e317339d2c5176c1528e7e6b3b475ca72c6f2150865da",
+        "sourceURL": "https://raw.githubusercontent.com/robertbregy/Connecting-the-Dots/87f4eb5cea252fcc3a6845c2d8af624473fbb99b/downloads/connecting-the-dots-data-pack-v0.7.92.zip",
+        "changedMembers": null,
+        "successfulDeployments": [
+          {
+            "deploymentId": 7238487574,
+            "statusURL": "https://api.github.com/repos/robertbregy/Connecting-the-Dots/deployments/7238487574/statuses",
+            "succeededAt": "2026-10-21T22:09:38Z"
+          }
+        ]
+      },
+      {
+        "commit": "77cc5001feaaf2e33205046b99630404b29eb7c1",
+        "archiveSHA256": "4a350f79126141559770ae27ea018100cc2e640ab04ebb4fb103f9e5ed1a245b",
+        "sourceURL": "https://raw.githubusercontent.com/robertbregy/Connecting-the-Dots/77cc5001feaaf2e33205046b99630404b29eb7c1/downloads/connecting-the-dots-data-pack-v0.7.92.zip",
+        "changedMembers": [
+          "manifest.json"
+        ],
+        "successfulDeployments": [
+          {
+            "deploymentId": 7238972001,
+            "statusURL": "https://api.github.com/repos/robertbregy/Connecting-the-Dots/deployments/7238972001/statuses",
+            "succeededAt": "2026-10-21T22:37:33Z"
+          }
+        ]
+      },
+      {
+        "commit": "90d21e6059871c36148e1860d017e7409ed3f8bb",
+        "archiveSHA256": "841c47bd0160d3c2ee9b484382b0b70fc862a229d3ead266149f302976f15032",
+        "sourceURL": "https://raw.githubusercontent.com/robertbregy/Connecting-the-Dots/90d21e6059871c36148e1860d017e7409ed3f8bb/downloads/connecting-the-dots-data-pack-v0.7.92.zip",
+        "changedMembers": [
+          "manifest.json"
+        ],
+        "successfulDeployments": [
+          {
+            "deploymentId": 7246360523,
+            "statusURL": "https://api.github.com/repos/robertbregy/Connecting-the-Dots/deployments/7246360523/statuses",
+            "succeededAt": "2026-10-22T07:28:01Z"
+          }
+        ]
+      }
+    ]
+  },
+  "researchArchives": {
+    "RR1": {
+      "doi": "10.5281/zenodo.23262623",
+      "sourceFilesVerified": 154
+    },
+    "RR2": {
+      "doi": "10.5281/zenodo.23288603",
+      "sourceFilesVerified": 212
+    },
+    "result": "Downloaded Zenodo ZIP checksums and all Git blob identities match the immutable GitHub research tags."
+  }
+}

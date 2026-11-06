@@ -20,19 +20,39 @@ for(let i=0;i<full.explorer.length;i++){
  assert.equal(row.technicalSearch,terms,r.string+' technical search');
  for(const key of ['nameServers','ianaReports','events','registrationDate'])assert.ok(!(key in row),r.string+' eagerly delivered details');
 }
-for(const language of ['en','it','de','fr']){
- const text=read(language+'/index.html'),document=parseHTML(text).document;
- // One reviewed autonomous cemetery chapter adds source-backed content; cap initial HTML growth to +3.4%.\n assert.ok(Buffer.byteLength(text)<1240000,language+' initial HTML budget');
+// Measured before extraction at 94a01d185f0153c1787751e9a08948d3728e6f3b (v0.7.97).
+// Moving an inline payload cannot count as a cold-load byte reduction. Include
+// both extracted assets and allow only 2 KiB for the reviewed UI copy/tag changes.
+const deliveryBaseline={'en/index.html':1618396,'it/index.html':1656469,'de/index.html':1664095,'fr/index.html':1692022,'index.html':1618016};
+const initialDeliverySizes=[];
+for(const [language,alias] of [...['en','it','de','fr'].map(l=>[l,false]),['en',true]]){
+ const page=alias?'index.html':language+'/index.html',prefix=alias?'':'../';
+ const text=read(page),document=parseHTML(text).document;
+ // Preserve the original HTML cap; executable payloads are cacheable assets.
+ assert.ok(Buffer.byteLength(text)<1240000,page+' initial HTML budget');
+ const dictionaryFile='data/i18n_'+language+'.js',snapshotFile='data/applications_2026_strings_reveal.js';
+ const aggregateBytes=Buffer.byteLength(text)+Buffer.byteLength(read(dictionaryFile))+Buffer.byteLength(read(snapshotFile));
+ assert.ok(aggregateBytes<=deliveryBaseline[page]+2048,page+' HTML plus extracted payload budget');
+ initialDeliverySizes.push({page,htmlBytes:Buffer.byteLength(text),htmlAndExtractedBytes:aggregateBytes,baselineBytes:deliveryBaseline[page]});
+ assert.ok(!text.includes('window.DOT_I18N='),page+' dictionary must not be delivered twice');
+ assert.ok(!text.includes('window.CTD2026_STRING_SNAPSHOT='),page+' frozen snapshot must not be delivered twice');
  assert.ok(!text.includes('window.DOT_DATA='),language+' data must be shared');
  assert.ok(!text.includes('window.DOT_PROFILE_CHUNKS='),language+' details must be deferred');
- for(const [id,file] of [['ctd-data-bundle','data/site_bundle.js'],['ctd-app','assets/app.js'],['ctd-worldmap','assets/worldmap-lazy.js']]){
-  const node=document.getElementById(id);assert.equal(node.getAttribute('src'),'../'+file+'?v='+version);assert.ok(node.hasAttribute('defer'));
+ const dependencies=[['ctd-data-bundle','data/site_bundle.js'],['ctd-i18n-bundle',dictionaryFile],['ctd-worldmap','assets/worldmap-lazy.js'],['ctd-2026-string-snapshot',snapshotFile],['ctd-app','assets/app.js']];
+ const scriptOrder=[...document.querySelectorAll('script')];let previous=-1;
+ for(const [id,file] of dependencies){
+  const node=document.getElementById(id);assert.ok(node,page+' missing '+id);
+  assert.equal(node.getAttribute('src'),prefix+file+'?v='+version);assert.ok(node.hasAttribute('defer'));assert.ok(!node.hasAttribute('async'));
+  assert.equal(node.textContent.trim(),'');
+  assert.equal(scriptOrder.filter(s=>s.getAttribute('src')?.split('?')[0]===prefix+file).length,1,page+' duplicate '+file);
+  const position=scriptOrder.indexOf(node);assert.ok(position>previous,page+' deferred dependency order: '+id);previous=position;
  }
- assert.equal(document.getElementById('ctd-runtime-style').getAttribute('href'),'../assets/style.css?v='+version);
+ assert.equal(document.getElementById('ctd-runtime-style').getAttribute('href'),prefix+'assets/style.css?v='+version);
  assert.equal(document.querySelectorAll('#publicationUpdateStamp a').length,1);assert.ok(document.getElementById('publicationUpdateStamp').textContent.includes(version));
  assert.equal(document.querySelectorAll('#releaseHistory li').length,site.releaseHistory.releases.length);
  assert.ok(!document.getElementById('explorerAdvanced').hasAttribute('open'));
 }
+console.log('Validated HTML cap and honest HTML+payload budget:',JSON.stringify(initialDeliverySizes));
 const snapshot=JSON.parse(read('data/iana_snapshot.json')),latest=site.releaseHistory.releases[0];
 assert.equal(latest.version,version);assert.equal(latest.ianaSnapshot,snapshot.asOf);assert.equal(latest.ianaEvidenceSha256,snapshot.archive_sha256);
 const manifest=JSON.parse(read('data/manifest.json')),hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
@@ -59,11 +79,12 @@ function deliveryFixture(language='it',alias=false,query='?tab=explore'){
  const getComputedStyle=()=>({display:'block',position:'static'});
  const context=vm.createContext({window:{document,innerWidth:1440,scrollY:0,scrollTo:()=>{},matchMedia:()=>({matches:false}),addEventListener:(type,fn)=>(handlers[type]??=[]).push(fn)},document,location,history,navigator,getComputedStyle,prompt:(label,value)=>prompts.push({label,value}),localStorage:{getItem:()=>null,setItem:()=>{}},requestAnimationFrame:fn=>fn(),setTimeout:(fn,ms)=>{timers.set(++timerId,{fn,ms});return timerId},clearTimeout:id=>timers.delete(id),URL,URLSearchParams,Intl,console});
  const run=code=>vm.runInContext(code,context,{timeout:10000});
- // The browser executes this inline script before app.js. The VM fixture must do the same:
+ // The browser executes this deferred local asset before app.js. The VM fixture must do the same:
  // otherwise it reports a fictitious 2026 inventory failure and never tests the overlay.
  const frozen2026=document.getElementById('ctd-2026-string-snapshot');
- assert.ok(frozen2026&&frozen2026.textContent.includes('CTD2026_STRING_SNAPSHOT'),'missing embedded Reveal Day snapshot');
- run(frozen2026.textContent);
+ const snapshotSource=frozen2026?.getAttribute('src');
+ assert.equal(snapshotSource,(alias?'':'../')+'data/applications_2026_strings_reveal.js?v='+version,'missing versioned Reveal Day snapshot');
+ run(fs.readFileSync(path.resolve(root,alias?'':language,snapshotSource.split('?')[0]),'utf8'));
  assert.equal(run('window.CTD2026_STRING_SNAPSHOT.data.rows.length'),980,'2026 test fixture must preload all frozen strings');
  for(const id of ['ctd-data-bundle','ctd-i18n-bundle','ctd-worldmap','ctd-publication','ctd-app']){const node=document.getElementById(id),src=node.getAttribute('src');run(src?fs.readFileSync(path.resolve(root,alias?'':language,src.split('?')[0]),'utf8'):node.textContent);}
  const scripts=()=>[...document.querySelectorAll('script[src]')].filter(s=>s.getAttribute('src').includes('/data/explorer_profiles_'));

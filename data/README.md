@@ -6,17 +6,23 @@ The file `applications_2026_aps_official_listing.csv` is obtained from the offic
 
 **Different denominators must remain distinct.** The official listing has 2,783 rows, 1,614 distinct base application IDs and 1,169 -R replacement records. APS Statistics separately reports 1,615 applications, one of which, WDO2627T-T45217, is not in the public list pending administrative check. `applications_2026.csv` still holds one fully source-verified .lugano application record; this is NOT the official CSV listing. The separate nTLDData 980-string dataset is a secondary index of strings, not official application-level coverage. Public application-detail PDFs remain incomplete locally. The CSV warns that In Contention=false is not a negative determination before String Evaluation.
 
-Current site ZIP: `../downloads/connecting-the-dots-data-pack-v0.7.77.zip` with `...sha256` checksum. The previous `../downloads/connecting-the-dots-data-pack.zip` remains frozen as v0.7.58. Both are distinct from Zenodo RR1/RR2 scientific deposits. ICANN retains applicable third-party source rights; adding a record does not relicense it.
+The current technical ZIP and version are selected by currentDataPackPath/currentDataPackVersion in [publication.json](../publication.json), with a matching .sha256 checksum. The previous `../downloads/connecting-the-dots-data-pack.zip` remains frozen as v0.7.58. Both are distinct from Zenodo RR1/RR2 scientific deposits. ICANN retains applicable third-party source rights; adding a record does not relicense it.
 
 
 Publication state: **post-Reveal / Replacement Period snapshot**  
-Publication as of: **10 October 2026** (website/editorial date; RR1 evidence remains anchored to 7 October)  
+Research evidence cut-off: **10 October 2026** (technical release dates are separate; RR1 evidence remains anchored to 7 October)
 ICANN Reveal Day application snapshot: **7 October 2026**  
 IANA/root snapshot: **4 October 2026**  
-Working paper revision: **10 October 2026, v1.1-draft** (not a new research release)
+Working paper version/date: see paperVersion/paperRevisedOn in [publication.json](../publication.json); distinct from the archived research releases.
 
 The CSV files are research inputs and reusable publication data. `applications_2026.csv` now contains verified official 2026 records that are explicitly vendored locally, beginning with `.lugano`; this does **not** yet constitute a claim that the complete APS application corpus is locally archived. `round_2026.csv` contains official Reveal Day aggregate metrics and leaves APS fields blank where ICANN has not yet published a confirmed value.
 
+
+## Current verification and historical notes
+
+The current IANA archive contains **1,597 source files**. Version-labelled sections below describe historical stages. Their counts and commands are not current release gates: validate_corrective.js, validate_application_archaeology.js and validate_tld_life_histories.js retain historical assumptions.
+
+After a complete build, use `python3 scripts/release_check.py`, `node scripts/verify_ia_b2_parity.cjs`, `node scripts/validate_multilingual.js` and `CTD_STATIC_ONLY=1 node scripts/validate_delivery.js` from the repository root. CI adds browser, accessibility and live-byte checks. The manifest verifies record count, byte length and hash for every current CSV; archived manifests remain unchanged.
 
 ## v0.7.32 application outcome model
 

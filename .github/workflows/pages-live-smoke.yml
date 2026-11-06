@@ -1,8 +1,6 @@
 name: Verify actual GitHub Pages bytes after deployment
 
 on:
-  push:
-    branches: [main]
   workflow_run:
     workflows: ["pages build and deployment"]
     types: [completed]
@@ -10,23 +8,97 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 concurrency:
-  group: ctd-live-pages-smoke
+  group: ctd-live-pages-smoke-${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
   cancel-in-progress: true
 
 jobs:
   verify-live:
-    if: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
+      - name: Confirm the exact upstream Pages deployment
+        id: deployment-origin
+        env:
+          CTD_EVENT_NAME: ${{ github.event_name }}
+          CTD_EVENT_SHA: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
+          CTD_UPSTREAM_RUN_ID: ${{ github.event.workflow_run.id || '' }}
+          CTD_UPSTREAM_ATTEMPT: ${{ github.event.workflow_run.run_attempt || '' }}
+          CTD_GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          def ready(value):
+              with open(os.environ["GITHUB_OUTPUT"],"a") as stream:
+                  stream.write("ready="+str(value).lower()+"\n")
+          if os.environ["CTD_EVENT_NAME"]=="workflow_dispatch":
+              ready(True)
+              print("Manual verification: the current-SHA and live-byte gates still apply.")
+              raise SystemExit(0)
+          if os.environ["CTD_EVENT_NAME"]!="workflow_run":
+              raise SystemExit("Unsupported live-verification event")
+          run_id=int(os.environ["CTD_UPSTREAM_RUN_ID"])
+          attempt=int(os.environ["CTD_UPSTREAM_ATTEMPT"])
+          if run_id<1 or attempt<1:
+              raise SystemExit("Invalid upstream workflow run or attempt")
+          expected_sha=os.environ["CTD_EVENT_SHA"]
+          url=(os.environ["GITHUB_API_URL"].rstrip("/")+"/repos/"+os.environ["GITHUB_REPOSITORY"]
+               +"/actions/runs/"+str(run_id)+"/attempts/"+str(attempt)+"/jobs?per_page=100")
+          request=Request(url,headers={"Accept":"application/vnd.github+json",
+                                      "Authorization":"Bearer "+os.environ["CTD_GITHUB_TOKEN"],
+                                      "X-GitHub-Api-Version":"2026-03-10"})
+          with urlopen(request,timeout=25) as response:
+              payload=json.load(response)
+          jobs=payload.get("jobs")
+          if not isinstance(jobs,list) or payload.get("total_count")!=len(jobs):
+              raise SystemExit("Incomplete or ambiguous upstream job metadata")
+          deployments=[job for job in jobs if job.get("name")=="deploy"]
+          if len(deployments)!=1:
+              raise SystemExit("Expected exactly one upstream Pages deploy job")
+          job=deployments[0]
+          if (job.get("run_id")!=run_id or job.get("run_attempt")!=attempt
+                  or job.get("head_sha")!=expected_sha or job.get("head_branch")!="main"
+                  or job.get("workflow_name")!="pages build and deployment"
+                  or job.get("status")!="completed"):
+              raise SystemExit("Upstream deployment metadata does not identify this exact completed run, attempt and source")
+          def not_deployed():
+              evidence={"status":"not_deployed","verified":False,"all_match":None,
+                        "source_commit":expected_sha,"upstream_run_id":run_id,"upstream_attempt":attempt,
+                        "files":{},"reason":"Skipped: the triggering Pages run did not execute a successful deployment; no site checks or measurements will run."}
+              Path("live-pages-smoke.json").write_text(json.dumps(evidence,sort_keys=True,indent=2)+"\n",encoding="utf-8")
+              print(json.dumps(evidence,sort_keys=True,indent=2))
+              with open(os.environ["GITHUB_STEP_SUMMARY"],"a") as stream:
+                  stream.write("## Live verification\n\nStatus: **not_deployed**\n\n"+evidence["reason"]+"\n")
+              ready(False)
+              raise SystemExit(0)
+          if job.get("conclusion")=="skipped":
+              not_deployed()
+          if job.get("conclusion")!="success" or not isinstance(job.get("steps"),list):
+              raise SystemExit("Upstream deployment job did not complete successfully")
+          steps=[step for step in job["steps"] if step.get("name")=="Deploy the committed publication"]
+          if len(steps)!=1 or steps[0].get("status")!="completed":
+              raise SystemExit("Missing or ambiguous completed Pages deployment step")
+          if steps[0].get("conclusion")=="skipped":
+              not_deployed()
+          if steps[0].get("conclusion")!="success":
+              raise SystemExit("The upstream Pages deployment step did not succeed")
+          ready(True)
+          print("Verified completed Pages deployment",run_id,"attempt",attempt,"source",expected_sha)
+          PY
       - name: Checkout the actual Pages source commit
+        if: steps.deployment-origin.outputs.ready == 'true'
         uses: actions/checkout@v5
         with:
           ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
           persist-credentials: false
       - name: Compare deployed files with immutable source bytes
+        id: bytes
+        if: steps.deployment-origin.outputs.ready == 'true'
         env:
           CTD_EVENT_SHA: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
         run: |
@@ -39,24 +111,45 @@ jobs:
           from html.parser import HTMLParser
           from pathlib import Path
           from urllib.error import URLError
-          from urllib.parse import urljoin, urlsplit
+          from urllib.parse import quote, urljoin, urlsplit
           from urllib.request import Request, urlopen
 
           root=Path.cwd()
           base="https://robertbregy.github.io/Connecting-the-Dots/"
-          head=subprocess.check_output(["git","ls-remote","origin","refs/heads/main"],text=True).split()[0]
           expected_sha=os.environ["CTD_EVENT_SHA"]
-          if head!=expected_sha:
-              print("SKIP: a newer main commit superseded this Pages build",expected_sha,head)
-              raise SystemExit(0)
+          def write_evidence(evidence):
+              Path("live-pages-smoke.json").write_text(json.dumps(evidence,sort_keys=True,indent=2)+"\n",encoding="utf-8")
+              print(json.dumps(evidence,sort_keys=True,indent=2))
+              if os.environ.get("GITHUB_OUTPUT"):
+                  with open(os.environ["GITHUB_OUTPUT"],"a") as stream:
+                      stream.write("verified="+str(evidence["verified"]).lower()+"\n")
+              if os.environ.get("GITHUB_STEP_SUMMARY"):
+                  with open(os.environ["GITHUB_STEP_SUMMARY"],"a") as stream:
+                      stream.write("## Live byte comparison\n\nStatus: **"+evidence["status"]+"**\n\n")
+                      stream.write("Source commit: `"+expected_sha+"`\n\n")
+                      stream.write("Compared resources: "+str(len(evidence["files"]))+"\n\n")
+                      if evidence.get("reason"):
+                          stream.write(evidence["reason"]+"\n")
+          def require_current_source():
+              head=subprocess.check_output(["git","ls-remote","--exit-code","origin","refs/heads/main"],text=True).split()[0]
+              if head!=expected_sha:
+                  write_evidence({"status":"superseded","verified":False,"all_match":None,
+                                  "source_commit":expected_sha,"current_main_commit":head,
+                                  "public_url":base,"files":{},
+                                  "reason":"Skipped: a newer main commit superseded this publication; no measurements will run."})
+                  raise SystemExit(0)
+          require_current_source()
           publication=json.loads((root/"publication.json").read_text(encoding="utf-8"))
           current_pack=publication["currentDataPackPath"]
           if (not current_pack.startswith("downloads/") or ".." in Path(current_pack).parts
                   or not current_pack.endswith(".zip")):
               raise SystemExit("INVALID CURRENT DATA PACK PATH: "+str(current_pack))
-          targets=["index.html","research/index.html","publication.json",
+          paper_path=publication["paperPath"]
+          if not paper_path.startswith("research/") or ".." in Path(paper_path).parts or not paper_path.endswith(".html"):
+              raise SystemExit("INVALID WORKING PAPER PATH: "+str(paper_path))
+          targets=["index.html","explorer/index.html","research/index.html",paper_path,"publication.json",
                    "data/city_namespace_editorial.json","data/audience_editorial.json",
-                   "data/independent_review_materials.json","data/reader_observations_blank.csv",current_pack,
+                   "data/independent_review_materials.json","data/reader_observations_blank.csv","data/worldmap.js",current_pack,
                    str(Path(current_pack).with_suffix(".sha256"))]
           for lang in ("it","en","de","fr"):
               targets.extend([lang+"/index.html","applications/"+lang+"/index.html",
@@ -98,6 +191,16 @@ jobs:
                   local=resolved.path[len(origin.path):]
                   route=local+("?"+resolved.query if resolved.query else "")
                   resources[route]=(local,route)
+          # Explorer detail scripts are created dynamically, using this exact
+          # delivery version and shard count from the committed browser runtime.
+          runtime=(root/"data/site_bundle.js").read_text(encoding="utf-8")
+          delivery=json.loads(runtime.split("window.DOT_DATA=",1)[1].rsplit(";",1)[0])["profileDelivery"]
+          if type(delivery["shards"]) is not int or delivery["shards"]<1 or not isinstance(delivery["version"],str) or not delivery["version"]:
+              raise SystemExit("INVALID EXPLORER PROFILE DELIVERY CONTRACT")
+          for shard in range(delivery["shards"]):
+              path="data/explorer_profiles_"+str(shard)+".js"
+              route=path+"?v="+quote(delivery["version"],safe="")
+              resources[route]=(path,route)
           # Each request retains its browser URL but maps to a query-free source file.
           results={}
           for attempt in range(1,9):
@@ -119,32 +222,59 @@ jobs:
                   break
               print("GitHub Pages still propagating or inconsistent; attempt",attempt,"of 8")
               if attempt!=8:
+                  require_current_source()
                   time.sleep(15)
-          evidence={"source_commit":expected_sha,"publication_version":publication["version"],
+          require_current_source()
+          matches=all(r["matches_repo"] for r in results.values())
+          evidence={"status":"verified" if matches else "mismatch","verified":matches,
+                    "source_commit":expected_sha,"publication_version":publication["version"],
                     "current_data_pack":current_pack,"public_url":base,"attempts":attempt,
-                    "all_match":all(r["matches_repo"] for r in results.values()),"files":results}
-          Path("live-pages-smoke.json").write_text(json.dumps(evidence,sort_keys=True,indent=2)+"\n",encoding="utf-8")
-          print(json.dumps(evidence,sort_keys=True,indent=2))
+                    "all_match":matches,"files":results}
+          write_evidence(evidence)
           if not evidence["all_match"]:
               raise SystemExit("PUBLIC PAGES MISMATCH: verified source does not match live bytes")
           PY
       - name: Set up Node for controlled published-page measurements
+        if: steps.bytes.outputs.verified == 'true'
         uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: npm
       - name: Install the published-page measurement runtime
+        if: steps.bytes.outputs.verified == 'true'
         run: |
           npm ci
           npm install --no-save --package-lock=false playwright@1.56.1
           npx playwright install --with-deps chromium
+      - name: Confirm the verified source is still current before measurements
+        id: measurement-source
+        if: steps.bytes.outputs.verified == 'true'
+        run: |
+          python3 - <<'PY'
+          import json, os, subprocess
+          from pathlib import Path
+          path=Path("live-pages-smoke.json")
+          evidence=json.loads(path.read_text(encoding="utf-8"))
+          if evidence.get("verified") is not True or evidence.get("all_match") is not True:
+              raise SystemExit("Measurements require a successful byte verification")
+          head=subprocess.check_output(["git","ls-remote","--exit-code","origin","refs/heads/main"],text=True).split()[0]
+          current=head==evidence["source_commit"]
+          if not current:
+              evidence.update({"status":"superseded","verified":False,"all_match":None,
+                               "current_main_commit":head,
+                               "reason":"Skipped: main advanced after byte verification; no measurements will run."})
+              path.write_text(json.dumps(evidence,sort_keys=True,indent=2)+"\n",encoding="utf-8")
+              print(json.dumps(evidence,sort_keys=True,indent=2))
+              with open(os.environ["GITHUB_STEP_SUMMARY"],"a") as stream:
+                  stream.write("## Published-page measurements\n\nStatus: **superseded**\n\n"+evidence["reason"]+"\n")
+          with open(os.environ["GITHUB_OUTPUT"],"a") as stream:
+              stream.write("current="+str(current).lower()+"\n")
+          PY
       - name: Measure the verified published pages under controlled mobile conditions
+        if: steps.measurement-source.outputs.current == 'true'
         env:
           CTD_TEST_BASE: https://robertbregy.github.io/Connecting-the-Dots/
-        run: |
-          if test -f live-pages-smoke.json; then
-            node scripts/audit_performance_20261019.cjs
-          fi
+        run: node scripts/audit_performance_20261019.cjs
       - name: Save live-release verification evidence
         if: always()
         uses: actions/upload-artifact@v6

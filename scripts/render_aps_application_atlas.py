@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Static four-language entry points for the ICANN 2026 application-level atlas."""
 from __future__ import annotations
-import html,json
+import html,json,re
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -26,11 +26,28 @@ KEYS=(
  "apsAtlasScope","apsAtlasWdoLink","apsAtlasPreliminaryList",
  "apsAtlasPermalink","apsAtlasMatchesCount","apsAtlasWithout",
  "apsAtlasPagination","apsAtlasRegionAll","apsAtlasNone","apsAtlasCountOf",
+ "languageLabel","themeLabel","breadcrumbLabel","skipToContent",
  "apsAtlasObservedStatusNote","apsAtlasFooter","apsAtlasOpen"
 )
 
 def q(x):
     return html.escape(str(x),quote=True)
+
+def fmt_count(value, lang):
+    """Match the site's Intl integer formatting with explicit grouping."""
+    separator={"en":",","it":".","de":".","fr":"\u202f"}[lang]
+    return f"{int(value):,}".replace(",",separator)
+
+def meta_description(text, limit=200):
+    """Reuse complete approved scope sentences instead of cutting a word."""
+    text=" ".join(str(text).split())
+    if len(text)<=limit:
+        return text
+    prefix=text[:limit]
+    ends=[m.end() for m in re.finditer(r"[.!?](?=\s|$)",prefix)]
+    if ends:
+        return prefix[:ends[-1]]
+    return text[:limit-1].rsplit(" ",1)[0].rstrip(" ,;:")+"…"
 
 def render(root:Path=ROOT):
     pub=json.loads((root/"publication.json").read_text(encoding="utf-8"))
@@ -44,6 +61,7 @@ def render(root:Path=ROOT):
         t=translations[lang]
         missing=[k for k in KEYS if not isinstance(t.get(k),str) or not t[k].strip()]
         if missing: raise ValueError("Missing APS Atlas translations in "+lang+": "+", ".join(missing))
+        description=meta_description(t["apsAtlasScope"])
         label=SITE+"applications/"+lang+"/"
         languages=" ".join(
           f'<a href="{SITE}applications/{other}/" hreflang="{other}" lang="{other}"'
@@ -74,27 +92,27 @@ def render(root:Path=ROOT):
 <html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta content="{q(pub['version'])}" name="ctd-version">
 <title>{q(t['apsAtlasTitle'])} | Connecting the Dots</title>
-<meta name="description" content="{q(t['apsAtlasScope'][:200])}">
+<meta name="description" content="{q(description)}">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="{label}">{alternate}
 <meta property="og:title" content="{q(t['apsAtlasTitle'])}">
-<meta property="og:description" content="{q(t['apsAtlasScope'][:200])}">
+<meta property="og:description" content="{q(description)}">
 <meta property="og:url" content="{label}"><meta property="og:type" content="website">
 <script type="application/ld+json">{structured}</script>
 <link rel="stylesheet" href="../../assets/aps-atlas.css?v={q(pub['version'])}">
 </head><body>
-<a class="apsSkip" href="#aps-main">{q(t['apsAtlasTitle'])}</a>
-<header class="apsHeader"><div class="apsHeaderRow"><a class="apsBrand" href="../../{lang}/"><img class="apsLogo" src="../../assets/logo-mark.png" alt=""><span>Connecting the Dots</span></a><div class="apsHeaderControls"><select class="control lang apsLangSelect" id="apsLangSelect" aria-label="Language"><option value="en">EN</option><option value="de">DE</option><option value="fr">FR</option><option value="it">IT</option></select><button type="button" class="control apsThemeToggle" id="apsThemeToggle" aria-label="Toggle theme" aria-pressed="false">◐</button></div></div></header>
+<a class="apsSkip skipLink" href="#aps-main">{q(t['skipToContent'])}</a>
+<header class="apsHeader"><div class="apsHeaderRow"><a class="apsBrand" href="../../{lang}/"><img class="apsLogo" src="../../assets/logo-mark.png" alt=""><span>Connecting the Dots</span></a><div class="apsHeaderControls"><select class="control lang apsLangSelect" id="apsLangSelect" aria-label="{q(t['languageLabel'])}"><option value="en">EN</option><option value="de">DE</option><option value="fr">FR</option><option value="it">IT</option></select><button type="button" class="control apsThemeToggle" id="apsThemeToggle" aria-label="{q(t['themeLabel'])}" aria-pressed="false">◐</button></div></div></header>
 <main id="aps-main" class="apsMain">
-<nav class="apsBreadcrumb" aria-label="Breadcrumb"><a href="../../{lang}/?tab=explore">{q(t['apsAtlasBack'])}</a>
+<nav class="apsBreadcrumb" aria-label="{q(t['breadcrumbLabel'])}"><a href="../../{lang}/?tab=explore">{q(t['apsAtlasBack'])}</a>
 <span aria-hidden="true">/</span><span>ICANN 2026</span></nav>
 <div class="apsHero"><div class="apsEyebrow">APPLICATION ARCHAEOLOGY · ICANN 2026</div>
 <h1>{q(t['apsAtlasTitle'])}</h1><p class="apsLead">{q(t['apsAtlasIntro'])}</p><div class="apsHeroActions"><a class="apsBackAction" href="../../{lang}/?tab=explore">← {q(t['apsAtlasBack'])}</a><a class="apsSecondaryAction" href="#aps-results">{q(t['apsAtlasSearch'])} ↓</a></div></div>
 <div class="apsMetrics">
-<article><strong>{counts['officialPublishedApplications']:,}</strong><span>{q(t['apsAtlasApps'])}</span></article>
-<article><strong>{counts['replacementRecords']:,}</strong><span>{q(t['apsAtlasReplacements'])}</span></article>
-<article><strong>{counts['newPrimaryStrings']:,}</strong><span>{q(t['apsAtlasStrings'])}</span></article>
-<article><strong>{counts['derivedExactPrimaryMatchGroups']:,}</strong><span>{q(t['apsAtlasOverlap'])}</span></article>
+<article><strong>{fmt_count(counts['officialPublishedApplications'],lang)}</strong><span>{q(t['apsAtlasApps'])}</span></article>
+<article><strong>{fmt_count(counts['replacementRecords'],lang)}</strong><span>{q(t['apsAtlasReplacements'])}</span></article>
+<article><strong>{fmt_count(counts['newPrimaryStrings'],lang)}</strong><span>{q(t['apsAtlasStrings'])}</span></article>
+<article><strong>{fmt_count(counts['derivedExactPrimaryMatchGroups'],lang)}</strong><span>{q(t['apsAtlasOverlap'])}</span></article>
 </div>
 <div class="apsMethod" role="note"><h2>{q(t['apsAtlasMethod'])}</h2>
 <p>{q(t['apsAtlasScope'])}</p>

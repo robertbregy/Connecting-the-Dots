@@ -6,36 +6,6 @@ on:
     branches:
       - main
       - 'feat/**'
-    paths:
-      - 'docs/editorial-review-*.json'
-      - '.github/workflows/rebuild.yml'
-      - 'src/**'
-      - 'assets/**'
-      - 'scripts/**'
-      - 'data/behind_round_stories.json'
-      - 'data/inside_the_round_events.json'
-      - 'data/audit_20261018_editorial.json'
-      - 'data/cultural_*.json'
-      - 'data/audience_editorial.json'
-      - 'data/economics_reading_order.json'
-      - 'data/independent_review_materials.json'
-      - 'data/cultural_blind_review_v2.csv'
-      - 'data/tld_cultural_editorial.json'
-      - 'data/aps_2026_applicant_sector_evidence.json'
-      - 'data/domain_governance_glossary.csv'
-      - 'data/registry_concentration.csv'
-      - 'research/connecting-the-dots-working-paper-v1.md'
-      - 'data/translations.json'
-      - 'data/sanctions_explainer.json'
-      - 'data/internet_access_explainer.json'
-      - 'data/field_investigations.json'
-      - 'data/city_namespace_editorial.json'
-      - 'data/release_history.json'
-      - 'data/applications_2026_aps_official_listing.csv'
-      - 'data/applications_2026_aps_official_provenance.json'
-      - 'data/application_2026_snapshot.json'
-      - 'publication.json'
-      - 'build.py'
 
 permissions:
   contents: write
@@ -130,5 +100,14 @@ jobs:
           fi
           git commit -m "Rebuild published site [skip build]"
           if ! git push origin "HEAD:$GITHUB_REF_NAME"; then
+            if ! REMOTE_STATE="$(git ls-remote --exit-code origin "refs/heads/$GITHUB_REF_NAME")"; then
+              echo "::error::Generated artifacts were not pushed and the remote branch tip could not be verified."
+              exit 1
+            fi
+            CURRENT_REMOTE_TIP="${REMOTE_STATE%%[[:space:]]*}"
+            if test "$CURRENT_REMOTE_TIP" = "$LOCAL_TIP"; then
+              echo "::error::Generated artifacts were not pushed although the remote branch tip is unchanged."
+              exit 1
+            fi
             echo "::notice::Branch changed while pushing generated artifacts; defer to the next build. No force push, no rebase and no merge."
           fi
