@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "release": "0.7.97",
+  "reviewedCandidate": "11214ccf07a29e38f698b28b294e403c4f048428",
+  "editorialDate": "2026-11-06",
+  "scope": "Two non-ICANN stakeholder positions (BRS Media and INTA, both 4 November 2026), cited separately from existing ICANN Guidebook rules",
+  "independentValidation": [
+    "Full browser and WCAG regression audit",
+    "Final A/B editorial and archived-data parity"
+  ],
+  "archivePolicy": "Official APS 2026, RR1/RR2 and prior versioned ZIPs must not change",
+  "sourceEvidence": "docs/round-debate-v0797-evidence.json",
+  "status": "Pending independent GitHub CI acceptance; this record does not self-approve publication"
+}
