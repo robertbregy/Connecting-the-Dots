@@ -1,0 +1,97 @@
+name: v0.7.96 · Chronological access cases with immutable evidence
+on:
+  push:
+    branches: ['feat/access-chronology-20261106']
+    paths: ['.github/workflows/access-chronology-v0796.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  prepare-reviewed-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - name: Reorder only seven existing cases; preserve previous ZIP as a locked technical archive
+        run: node scripts/prepare_access_chronology_v0796.cjs
+      - name: Generate candidate files; allow ONLY the intentional unreviewed-fingerprint gate to fail
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+        run: |
+          set +e
+          python3 build.py > /tmp/chronology-first-build.log 2>&1
+          code=$?
+          set -e
+          if [ "$code" -ne 0 ]; then
+            if grep -q 'EDITORIAL_REVIEW_REQUIRED: final hashes have not been reviewed' /tmp/chronology-first-build.log; then
+              echo 'Correctly blocked until the new editorial review records exact file hashes.'
+            else
+              tail -n 100 /tmp/chronology-first-build.log
+              exit "$code"
+            fi
+          fi
+      - name: Audit seven exact original case bodies, new release metadata, and protected research archives
+        run: node scripts/review_access_chronology_v0796.cjs
+      - name: Build the final reviewed publication without bypassing validation
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+        run: python3 build.py
+      - name: Validate case order in four native and standalone languages
+        run: |
+          node scripts/validate_access_chronology_v0796.cjs
+          node scripts/validate_internet_access.js
+          node scripts/validate_multilingual.js
+          CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
+          node scripts/verify_ia_b2_parity.cjs
+      - name: Protect the old archive, frozen data and release reproducibility
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib,subprocess,sys
+          root=pathlib.Path.cwd()
+          pub=json.loads((root/'publication.json').read_text())
+          assert pub['version']=='0.7.96'
+          old=root/'downloads/connecting-the-dots-data-pack-v0.7.95.zip'
+          current=root/pub['currentDataPackPath']
+          def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+          digest=sha(current)
+          frozen=json.loads((root/'data/frozen_technical_packages.json').read_text())
+          assert frozen['files']['downloads/connecting-the-dots-data-pack-v0.7.95.zip']==sha(old)
+          for path,d in frozen['files'].items():assert sha(root/path)==d,path
+          original=subprocess.check_output(['git','show','HEAD:downloads/connecting-the-dots-data-pack-v0.7.95.sha256']).decode().split()[0]
+          assert original==sha(old),'Previous release ZIP was modified'
+          for immutable in ['CITATION.cff','data/applications_2026_aps_official_listing.csv','data/applications_2026_aps_official_provenance.json']:
+           assert (root/immutable).read_bytes()==subprocess.check_output(['git','show','HEAD:'+immutable]),immutable
+          subprocess.run([sys.executable,'build.py'],check=True)
+          assert sha(current)==digest,'Non-deterministic new v0.7.96 data package'
+          print('CHRONOLOGY_PREVIOUS_PACK_FROZEN',sha(old))
+          print('CHRONOLOGY_NEW_PACK_REPRODUCIBLE',digest)
+          PY
+      - name: Commit only if original development branch is unchanged
+        env:
+          EXPECTED_HEAD: ${{ github.sha }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          test "$BRANCH" = 'feat/access-chronology-20261106'
+          git fetch origin "$BRANCH"
+          test "$(git rev-parse FETCH_HEAD)" = "$EXPECTED_HEAD" || { echo 'Branch advanced; refusing to overwrite'; exit 1; }
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -u
+          git add docs/editorial-review-2026-11-06-v0.7.96.json docs/access-chronology-v0796-evidence.json
+          git add downloads/connecting-the-dots-data-pack-v0.7.96.zip downloads/connecting-the-dots-data-pack-v0.7.96.sha256
+          git diff --cached --quiet && { echo 'No generated changes recorded'; exit 1; }
+          git commit -m 'editorial: chronology 2008–2026, four languages, v0.7.96 review [skip build]'
+          git push origin "HEAD:$BRANCH"
+          echo "CHRONOLOGY_REVIEWED_COMMIT=$(git rev-parse HEAD)"
