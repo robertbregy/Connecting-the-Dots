@@ -63,7 +63,8 @@
     "V96": "New v0.7.96 site/data-package identity, new review date, versioned download and manifest. Freeze previous v0.7.95 archive by SHA-256; retain immutable RR1/RR2 and all earlier technical packages.",
     "P96": "Pin the source commit used to build v0.7.96 so rebuilt HTML contains stable release provenance instead of the ever-changing CI GITHUB_SHA. This only fixes metadata reproducibility and does not change user-visible case content or frozen scientific datasets.",
     "E97": "Add four-language, dated, source-linked BRS Media CPE outcome-review request to Field Notes and INTA trademark/auction critique to Field Notes and the existing Contention chapter. Classify both as stakeholder perspectives, not ICANN decisions, not new official numbers, and not an outcome for any application.",
-    "V97": "Rebuild one new deterministic technical release v0.7.97, preserving all frozen 2012/2026 APS scientific datasets, RR1/RR2 identifiers and historical ZIPs, including v0.7.96."
+    "V97": "Rebuild one new deterministic technical release v0.7.97, preserving all frozen 2012/2026 APS scientific datasets, RR1/RR2 identifiers and historical ZIPs, including v0.7.96.",
+    "CI24": "Reviewed CI maintenance: migrate workflow actions to native Node 24 and pin the tested Ubuntu 24.04 runner. Preserve workflow triggers, permissions, scripts, project runtimes, published content and archival checks; update only the six already-reviewed workflow fingerprints."
   },
   "sourceInvariants": {
     "sections": [
@@ -2724,13 +2725,14 @@
     },
     ".github/workflows/audit-browser.yml": {
       "baselineSHA256": "ed063e0e2ffe43df54dfe3e1a98a4292dad5524d76a46c174c6a0943554a1296",
-      "sha256": "5fd164521a8eb890138403066e147570b54041135937e87c65275da4c2bb0585",
+      "sha256": "dc33a51d23f4c9969bd8d542a1908db838526a9c776674e65d8fad84fce63e14",
       "rationaleIds": [
         "A19",
         "H01",
         "U01",
         "E09",
-        "E13"
+        "E13",
+        "CI24"
       ]
     },
     ".gitignore": {
@@ -3053,20 +3055,22 @@
     },
     ".github/workflows/rebuild.yml": {
       "baselineSHA256": "3da73a6fad7995f03b80e8ba4cb646ef8dca09250fa19d1addf924f2e27ade6a",
-      "sha256": "381df8beedd95b90e84ae05b7331968dcf6f8c36b834bc5638aac7a9002a3a0b",
+      "sha256": "9029371adacce5b76623b4fe37a3c7755ea9d06e6ab4c3d4d0b87778eebbaa64",
       "rationaleIds": [
         "H02",
         "U01",
-        "E09"
+        "E09",
+        "CI24"
       ]
     },
     ".github/workflows/pages-live-smoke.yml": {
       "baselineSHA256": "4bf59135ccdc9482e94f28d10c7feeb996b12b24faa1a7495db9ed5512a84626",
-      "sha256": "e46c3f5d430e0dedb1fead50d4af56285e87fa6c8fac90d229826e62127a9f86",
+      "sha256": "e2a9b1b6e4ddfc2cfa36cb92bf14e84041701baa69093b3eb253c194cc70d0bb",
       "rationaleIds": [
         "U01",
         "U03",
-        "T93"
+        "T93",
+        "CI24"
       ]
     },
     "assets/audience.css": {
@@ -3257,9 +3261,10 @@
     ".github/workflows/reader-first.yml": {
       "baselineSHA256": null,
       "rationaleIds": [
-        "E10"
+        "E10",
+        "CI24"
       ],
-      "sha256": "6790250f96a460d04a77dcdcf44d0452bb2ae81884709a3701601933be2c815a"
+      "sha256": "dc854a23f4390f13418f705ab7721123cc60af9dce446803cc805883b0fba456"
     },
     "assets/reader-first.css": {
       "baselineSHA256": null,
@@ -3348,10 +3353,11 @@
       "sha256": "4148701fa84b61b1bf1ba70416f558c71e1d8ffed3c8696beb4ecfadff9868d8"
     },
     ".github/workflows/lugano-reading-order.yml": {
-      "sha256": "3bb621634998be78a65a83818b97603e97c3b6d32fe3840ad2bec8ae87c53454",
+      "sha256": "e511e6ad7956f19e0cf8434b270cdac37153b9f7e7efbb1150db5fabc4ba5c75",
       "baselineSHA256": null,
       "rationaleIds": [
-        "E11"
+        "E11",
+        "CI24"
       ]
     },
     "scripts/narrative_clarity.cjs": {
@@ -3378,9 +3384,10 @@
     ".github/workflows/narrative-clarity.yml": {
       "baselineSHA256": null,
       "rationaleIds": [
-        "E12"
+        "E12",
+        "CI24"
       ],
-      "sha256": "f3d240e12ce52e63fecfd07bdd339dbcd9422915de068ddfc873fc3745aba63a"
+      "sha256": "c4c6ae1a0befbdc39bd17cba9d112212159d5bd5f08514e4326409885d6c6467"
     },
     "data/manifest.json": {
       "baselineSHA256": null,
@@ -4088,5 +4095,50 @@
     "version": "0.7.97",
     "sourceCommit": "18b1db48da1bd3f63fad92d774ab3616fcbd9342",
     "semantics": "Pinned reviewed generator source commit, not necessarily the final deployment SHA"
+  },
+  "ciRuntimeMaintenanceReview": {
+    "reviewedOn": "2026-11-06",
+    "reviewType": "AI-assisted implementation and independent exact-diff technical review",
+    "sourceCommitBeforeMaintenance": "263668fd1d731746b13875ba5b87bd81d8ca7d83",
+    "workflowCandidateCommit": "e360cc0807e462f9238098aa968edc851dc48a74",
+    "priorReviewSHA256": "5bfc1470fc1476d5669c9a9a3d27d748e5100cd879cc7e427613474833a59a04",
+    "workflowFilesChanged": 22,
+    "runnerJobsPinned": 31,
+    "actionReferencesUpdated": 106,
+    "semanticReview": "Parsed all workflow YAML before and after: only action versions and runner labels changed.",
+    "reviewedWorkflowFingerprints": [
+      {
+        "path": ".github/workflows/audit-browser.yml",
+        "beforeSHA256": "5fd164521a8eb890138403066e147570b54041135937e87c65275da4c2bb0585",
+        "afterSHA256": "dc33a51d23f4c9969bd8d542a1908db838526a9c776674e65d8fad84fce63e14"
+      },
+      {
+        "path": ".github/workflows/rebuild.yml",
+        "beforeSHA256": "381df8beedd95b90e84ae05b7331968dcf6f8c36b834bc5638aac7a9002a3a0b",
+        "afterSHA256": "9029371adacce5b76623b4fe37a3c7755ea9d06e6ab4c3d4d0b87778eebbaa64"
+      },
+      {
+        "path": ".github/workflows/pages-live-smoke.yml",
+        "beforeSHA256": "e46c3f5d430e0dedb1fead50d4af56285e87fa6c8fac90d229826e62127a9f86",
+        "afterSHA256": "e2a9b1b6e4ddfc2cfa36cb92bf14e84041701baa69093b3eb253c194cc70d0bb"
+      },
+      {
+        "path": ".github/workflows/reader-first.yml",
+        "beforeSHA256": "6790250f96a460d04a77dcdcf44d0452bb2ae81884709a3701601933be2c815a",
+        "afterSHA256": "dc854a23f4390f13418f705ab7721123cc60af9dce446803cc805883b0fba456"
+      },
+      {
+        "path": ".github/workflows/lugano-reading-order.yml",
+        "beforeSHA256": "3bb621634998be78a65a83818b97603e97c3b6d32fe3840ad2bec8ae87c53454",
+        "afterSHA256": "e511e6ad7956f19e0cf8434b270cdac37153b9f7e7efbb1150db5fabc4ba5c75"
+      },
+      {
+        "path": ".github/workflows/narrative-clarity.yml",
+        "beforeSHA256": "f3d240e12ce52e63fecfd07bdd339dbcd9422915de068ddfc873fc3745aba63a",
+        "afterSHA256": "c4c6ae1a0befbdc39bd17cba9d112212159d5bd5f08514e4326409885d6c6467"
+      }
+    ],
+    "qualityGates": "Unmodified source, A/B, browser/WCAG and live-byte checks remain required.",
+    "scope": "CI configuration maintenance only; prior editorial signoff, source sections, public release bytes, datasets, frozen archives and research identifiers retain their reviewed fingerprints."
   }
 }
