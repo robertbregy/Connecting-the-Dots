@@ -39,7 +39,7 @@ const css=`
 const a=(url,label)=>`<a href="${escape(url)}" target="_blank" rel="noopener noreferrer">${escape(label)}</a>`;
 const get=id=>sources.get(id).url;
 for(const lang of ['it','en','de','fr']){
- const t=d.languages[lang];assert.ok(t && Object.keys(t).length===16,'Incomplete locale '+lang);
+ const t=d.languages[lang];assert.ok(t && Object.keys(t).length===17,'Incomplete locale '+lang);
  const file=path.join('behind-the-round',lang,'index.html');
  const html=fs.readFileSync(file,'utf8');
  const {document:doc}=parseHTML(html);
