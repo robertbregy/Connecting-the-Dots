@@ -1,0 +1,347 @@
+{
+  "release": "0.7.97",
+  "observedDate": "2026-11-06",
+  "sourcePublicationDate": "2026-11-04",
+  "status": "stakeholder perspectives, NOT official actions",
+  "sourceIdentifiers": [
+    {
+      "id": "brs-media",
+      "kind": "stakeholder-position",
+      "url": "https://brsmedia.com/cperesponse/"
+    },
+    {
+      "id": "inta",
+      "kind": "stakeholder-analysis",
+      "url": "https://www.inta.org/news-and-press/inta-news/icanns-new-generic-top-level-domain-applications-revealed/"
+    },
+    {
+      "id": "icann-agb",
+      "kind": "official-rule",
+      "url": "https://newgtldprogram-2026-agb.icann.org/en/9-module-5-contention-set-resolution.html"
+    },
+    {
+      "id": "icann-faq",
+      "kind": "official-rule",
+      "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/string-contention-resolution/faqs/general/how-are-the-finalized-contention-sets-resolved"
+    }
+  ],
+  "limitedTo": [
+    "Field Notes entry",
+    "existing Contention chapter",
+    "four languages",
+    "technical publication identifiers"
+  ],
+  "officialAPS": "frozen as in v0.7.96",
+  "scientificArchives": "RR1/RR2 frozen",
+  "oldTechnicalZipSHA256": "643033d5aec7ea04f3bf9472aa810968495e6400b24508f93357237611344165",
+  "qualityGates": "Exact source SHA-256 and scientific invariants passed; independent CI acceptance pending",
+  "humanParticipants": 0,
+  "reviewedPaths": 207,
+  "changedFingerprints": [
+    {
+      "path": "applications/de/index.html",
+      "previous": "ee9d6d7f505af1f7eaa0559713fd4285e0a47aa730eefa5d33fe55995b59b7eb",
+      "current": "c228353f565b508aa622d2d407894ce42979c2e02e60e1ede4fb44585239def7"
+    },
+    {
+      "path": "applications/en/index.html",
+      "previous": "cf96e74fb2bf1247fd569abff6093734876578c350c429ea72c737012992860e",
+      "current": "c09c4e87a407431dab81e03d2197ff0ca0386a5dea5a48410c3095fd85a3843e"
+    },
+    {
+      "path": "applications/fr/index.html",
+      "previous": "6c7f25914533ad7731949e823d453ebb9ec4a60e3c15455bd0cc49c0e184a36c",
+      "current": "ee0184685e666d675c74df162db360e189da97f8d496ecf4dfa5e165703f0d59"
+    },
+    {
+      "path": "applications/it/index.html",
+      "previous": "cadf767195113f7e24478c8c4c8ee77ef7d4feb60a9c6c5fe77f441672ae2523",
+      "current": "cbcefc7a967493f6b0142b70f132c0f1062173b63a80c33fefb90a73bbe55cec"
+    },
+    {
+      "path": "behind-the-round/de/background-screening/index.html",
+      "previous": "f64cba8c80db7fd7be6e3ee046af6399ac17ee9eb60d1210378a96d332fc4ef7",
+      "current": "025dc357d4b2c58f2ce29958e143497695c425745e35547a7b3be58e5910467d"
+    },
+    {
+      "path": "behind-the-round/de/index.html",
+      "previous": "e57cc7d459033dd092311e205381cd8ce9e1b1058efd6bce9bc4b6c41e6cf800",
+      "current": "95d5d1f6269fd563de04453426b9cdeed192f448cc507240b3439856972eb3f4"
+    },
+    {
+      "path": "behind-the-round/de/objectors-eoi/index.html",
+      "previous": "359628bbe8d1f2bae824aad9cfdfcb5fc91bf901a54ad35c9e790d19916aa493",
+      "current": "aec3b88dfe12b583eea7a68b796e330d001d8c83d90673b84a0f655e0a174510"
+    },
+    {
+      "path": "behind-the-round/de/replacement-strings/index.html",
+      "previous": "c2b5422c8cf08c3a959382433370316bc608941b4613ffbce076df0422da273f",
+      "current": "55cc1d6a2d65c5ff694590d86a88a2f1413c21bc4d79ba3c5a0c4e22b795a876"
+    },
+    {
+      "path": "behind-the-round/de/sanctions-and-dns/index.html",
+      "previous": "973ff7a11a04d76f776a1a70415fe7991fcaea5fd2bf3676adda1a8d2fa4fe38",
+      "current": "65aa8378cd3f3c6c5dbebffd6c70057a7714facc6cb13814903c977bb7819907"
+    },
+    {
+      "path": "behind-the-round/de/wdo-identity/index.html",
+      "previous": "2539c7fb05a90a97009a83b711eec3a367654834c4e60bb776cb8f6978643ca0",
+      "current": "b134a9d215031246233bde0164d6d21da9bcec1310a3bf619683158f7495fea4"
+    },
+    {
+      "path": "behind-the-round/de/who-controls-internet-access/index.html",
+      "previous": "ca8d33eb46d91d6017b141cf403b0cf08c45cc3770261f6328ec7e3b0bc9eccb",
+      "current": "63ce68968cc43deb42d5e49bfd09f089a7f40348abff9108dfa9e1a1f53900df"
+    },
+    {
+      "path": "behind-the-round/en/background-screening/index.html",
+      "previous": "1a921232aa09536da65e6ceb5b99a8410edfee339e9874c99295da6d052e5786",
+      "current": "abb5a01d1028a5fe1a772b642d42f6f101534d638d3b444fc3474e13c907f800"
+    },
+    {
+      "path": "behind-the-round/en/index.html",
+      "previous": "d5b38edc0f8b4a62647f36ac92ca0c971ac661a6a9d58917d537cbe77761a4bc",
+      "current": "7ce6f070bd3dec378da9dfe0a15987fe06d10dd3d59e965b8cdda2ed7fccb63d"
+    },
+    {
+      "path": "behind-the-round/en/objectors-eoi/index.html",
+      "previous": "5168053143f9a160599b69dd7c96806d2437b4fb8b74647aa96c6e788f96599f",
+      "current": "2c81a5f79b2e23615b931e29fbb4f661a73b7c90d300f031bac9e539e81a04c2"
+    },
+    {
+      "path": "behind-the-round/en/replacement-strings/index.html",
+      "previous": "38a082bf4815e252c1fd09e2556586c136909b70ef49376ee5a729f2011b93e3",
+      "current": "0195e7119ad3d6ed006ee171561b9ba09b4d3cda536468610e94c2a645bb2b4a"
+    },
+    {
+      "path": "behind-the-round/en/sanctions-and-dns/index.html",
+      "previous": "91f5c6819b4b1c5b02a6328a19451bb2858736b13281114528241eb270d8a847",
+      "current": "7615e873eb2826b0451b133274e49bbde8e2586e5ef2f6b590ecb3e55538c863"
+    },
+    {
+      "path": "behind-the-round/en/wdo-identity/index.html",
+      "previous": "5aca44c64e34094db351aa611717071ffa6070fb27d01be8b1974370dc782556",
+      "current": "788979a2a0bf0637b4c81f01818c17c1014f0e0f30c86085c9c0d669a3d0015d"
+    },
+    {
+      "path": "behind-the-round/en/who-controls-internet-access/index.html",
+      "previous": "685729a45d8adb93cf0431a16de14e01b9d2f2a1fe455e9aa94e950d7530c32e",
+      "current": "126cef5a3a403979bed3951ba1446a9350fa1f7203f5254fb2496aee62e75e22"
+    },
+    {
+      "path": "behind-the-round/fr/background-screening/index.html",
+      "previous": "6e62a42fef4ffd5f5a011c20ef2f7f2bd26832eda3f5bae4a30a68a599ff92cd",
+      "current": "24c532a6144833064252f0b02b9370d59b577431a661742074f7a39d5bb9f4fc"
+    },
+    {
+      "path": "behind-the-round/fr/index.html",
+      "previous": "afc7ef57b8cd695342f29d3c1af2b229a94a629280cdf6ccd37e8f79d9fc65f6",
+      "current": "2426f981d42175515cd21c644479aa1d52fe99e7618aad6464f337e954b04681"
+    },
+    {
+      "path": "behind-the-round/fr/objectors-eoi/index.html",
+      "previous": "018e25eea70e64e54157397f0d31d1b1ea3b9696b60059e3054ce3f589c7f433",
+      "current": "fa3c7d69ac6ff3881129713b43ce05ca760da7c0da10ce6124c8d4ea3b8b6aa2"
+    },
+    {
+      "path": "behind-the-round/fr/replacement-strings/index.html",
+      "previous": "c12e83b091bee8ba4bcba68f35aa375e975848995496094693cecc9713be29d4",
+      "current": "dcf00b56771e9c77cfddc236d31ffb91a0181b56863f7510f3b33dcedc139846"
+    },
+    {
+      "path": "behind-the-round/fr/sanctions-and-dns/index.html",
+      "previous": "38a46a5a178a43b5128025ddd7c4a420b1d9b3d5e2945231e92698b63d76e3d3",
+      "current": "383522c49e0a98b607e7fa04c62d123995114d46a79501b2c36917b53b516cb4"
+    },
+    {
+      "path": "behind-the-round/fr/wdo-identity/index.html",
+      "previous": "e4e667293595e241ef46df0ddcf36f78ae0409afce4b4ad7903d5c04f8a8ec02",
+      "current": "df9f0aa40ff3e28648480bfcb8049a2ece107b8533635e2b13c82f1861b6164c"
+    },
+    {
+      "path": "behind-the-round/fr/who-controls-internet-access/index.html",
+      "previous": "5b0e33e5ab31d6ca9b4679319bc816b206aedc3df089c9f3be97fff314473079",
+      "current": "33893f8e800ea50b815c8bc837bb73e025972cb945fd04c869f97f7ce13b911a"
+    },
+    {
+      "path": "behind-the-round/it/background-screening/index.html",
+      "previous": "bb5302b745d17e8922dabef8143c0cf3c77e4375180ebd220be57aaabde9a8fd",
+      "current": "484e664eef34bb580597f33c4f227bce13537d08a820c42435683426b4f7f43d"
+    },
+    {
+      "path": "behind-the-round/it/index.html",
+      "previous": "a0ff1f80f071bedb744091bd9cb87fa6027fd7b162b13004aa8badb32544d41c",
+      "current": "2c9d54f76860700005b89159b98225efd0cb171fc93e04755b608bca123729e1"
+    },
+    {
+      "path": "behind-the-round/it/objectors-eoi/index.html",
+      "previous": "1e11b7c6754794496d74b30c949b9425962b5e7ca5bf61ace8ec58c8811d1f55",
+      "current": "084bd7fb12fac03b908383a182e190e96569702304b79fc7df6d5c36f6ff3768"
+    },
+    {
+      "path": "behind-the-round/it/replacement-strings/index.html",
+      "previous": "2eb541acc1341212e5029f8565e9a690f6161643a3e34a36c6bad7f43b701d41",
+      "current": "e90236af2ae5e19c909329aa169e42793392d45d78b52f4a07912048561d1525"
+    },
+    {
+      "path": "behind-the-round/it/sanctions-and-dns/index.html",
+      "previous": "0c225d966151e6e381162ac155c12dae481a9fd2d30f240433a495e282753da8",
+      "current": "dec68431dd8af0ed5940371b1e55372b44da3fedf2bd317a36c67360e9514834"
+    },
+    {
+      "path": "behind-the-round/it/wdo-identity/index.html",
+      "previous": "989f509e032a206f5ea35ad7193e306268b08d57c9d2d390d9cafd2c22f43692",
+      "current": "b6e64a5705e050121782fa939afdce92840b26c776f1600409c4f8a17d01b6c8"
+    },
+    {
+      "path": "behind-the-round/it/who-controls-internet-access/index.html",
+      "previous": "d12ef06ee8f9a98261863616dd42efe0231c75183ed8b1ea89863ed6e696e7f7",
+      "current": "32c1c9fe5055c2cc2c003950947f534dd826f82a6d0c6b5a420015684015c83b"
+    },
+    {
+      "path": "data/release_history.json",
+      "previous": "4960c50988c64808c04e8fc63cc1ad2c485c68ce51cf0d5aad5d733de3a9191e",
+      "current": "67ca71b2dd59576459af3e8548e9096ad4b5bca3dcc9bab98cc6f384c09a3aa8"
+    },
+    {
+      "path": "data/translations.json",
+      "previous": "54cd3278517e5d27999c6936dbd33f195921886845b1adca785f629d74e87982",
+      "current": "4491307b704f95c45a9c0fab89eb099c06c1846e0f50c36a2ff5dd5971c5ea11"
+    },
+    {
+      "path": "inside-the-round/de/index.html",
+      "previous": "aaa501568c8ca53de6c2e0b772baf90d47a15ffaa64603439e827e05821dde31",
+      "current": "10e625b2bffaae6b4b3f25f1a18fd7b240360599c5c227cf2b1be9e311bd844b"
+    },
+    {
+      "path": "inside-the-round/en/index.html",
+      "previous": "95ec3dc2aca682ed7544224eea6c695c03a7f40e366f736c942de79ba5d6092d",
+      "current": "d230c2bd1be1023b7f6b999344a3ba18037ffd49171c3482415785e97f41c921"
+    },
+    {
+      "path": "inside-the-round/fr/index.html",
+      "previous": "14a4464a3877cdc4d1bc5f9887a57acca62fee81821111f7372d4e27f93257fc",
+      "current": "9b3b563334fc77cc4fecfd0f9b3e3a7512c654d9114dc36a347f54afcc9c381d"
+    },
+    {
+      "path": "inside-the-round/it/index.html",
+      "previous": "b9550ebe0e700ffd3619cfd07657ff737cd07bba6426c46ead95c42b9db01f23",
+      "current": "fa7802fddf0174ef0f5545bf54c59861b0233ff0a6156b378fcc962aa484d84d"
+    },
+    {
+      "path": "publication.json",
+      "previous": "7dd16ad430374a47debdc67950e98065027f2ba818e64de709c437a6da9e5e6b",
+      "current": "0356161c37915096d1931806390e80c08f4852b34b91890e7303920e7c82b15d"
+    },
+    {
+      "path": "research/connecting-the-dots-working-paper-v1.html",
+      "previous": "c8be5e6d7409b6296c0c9eaf04da1490f1000009f295696dfebac1c190f3b870",
+      "current": "c4daf8c5f775be29a2658229dede86a9e388540965e575d4bd0056bbf877bddc"
+    },
+    {
+      "path": "research/connecting-the-dots-working-paper-v1.md",
+      "previous": "7baed5ce9cfd88b9e8eb0610e5ad613de2005f1ffd976909673747e48f5019c0",
+      "current": "bb3e618fe00fce40c27d49a0e8a7023aa00c9e7719f8af1a4a2bd9b120aca4cf"
+    },
+    {
+      "path": "research/index.html",
+      "previous": "22fb81e9802d7ce8a80094f12c2b598ce51772913590de4b1f841bf392615f1e",
+      "current": "ee527ad7ff59b329dc0c420a85f9ec8e4ad5c2587dcf510a267ae95a10e71c35"
+    },
+    {
+      "path": "src/index.web.html",
+      "previous": "4e54466f640f0cea6795f49ff06549a1022fd65c585db928cbbe17e37b923252",
+      "current": "4ccaeb302fc3c5d8970d1f82f412fe5a4ccc21aae206bcf1e19363fa8ca2461b"
+    },
+    {
+      "path": "research/research_release_manifest.json",
+      "previous": "2f4fa04568f5511243ee403bc06d8970a979e084de50851e3fc3fb84ddc40fe3",
+      "current": "7a9893e90851488ca620903a8dd5f3947e705bb820c4491639c4d428b4b1cf25"
+    },
+    {
+      "path": "build.py",
+      "previous": "e4d117a917c76636309b3673d9372ad17f5c706612c949fc33da2d6d08b663bc",
+      "current": "3ab98a9f990f122eba8b1c5bf19d1cbe619ff252d28a9506c925327423c8c1c2"
+    },
+    {
+      "path": "package-lock.json",
+      "previous": "5c2a1c7ee28571c181d2a9ed2e108a12c364777c43990c09066ee727cd164684",
+      "current": "dc81f125471c8954f92c064fcf382f2db6743498cbf15f0bbf749ee0ace83e97"
+    },
+    {
+      "path": "package.json",
+      "previous": "8e6d8d0af44f7e1b969ea295bef0be997d7e31eb5b17cfcb66897ec2f60415a4",
+      "current": "9db745bc3b231b70c4e08ce8f50aea17d860f7aae38b38eb230df196bd4c6455"
+    },
+    {
+      "path": "research/README.md",
+      "previous": "c260a1901d121089717778f51dca6b6a3cc4e21cd8f9a105998fd241da10763a",
+      "current": "3238927dfd40785f3c1586fc32431498bf1af2694c471e6598db08537e7a15d1"
+    },
+    {
+      "path": "scripts/validate_multilingual.js",
+      "previous": "4c34a05104f4d7a5de54fdd4b09ee39c9b537a7cd8948472a3006beebb6af379",
+      "current": "2911e5ead77779bdb3cc61823cb136d87df7987f11929f26d194de1775f05c2d"
+    },
+    {
+      "path": "data/frozen_technical_packages.json",
+      "previous": "f3fdce85e967465bb17b14e2a8879a3e0f6aeda3f15c26a3725e279b3d9c26b8",
+      "current": "2169590fbd1e98234aca1c4f9663550ecfe677c7087a412ede1076519d72b78b"
+    },
+    {
+      "path": "research/reader-study/it/index.html",
+      "previous": "ea7b0c97131d426d8ba42d7cd3064926a9c055249f9e13ef08004b29827b1a68",
+      "current": "d0b9f34df253218d662763ae7b7803bc64ef46a5dd9e976eca1a5d91f5a84ab9"
+    },
+    {
+      "path": "research/reader-study/en/index.html",
+      "previous": "b49c178301605844fe2804ff929ca7545c18c768ad3a7f4915b9cc85c2791a0d",
+      "current": "054ec03234a7d9a559d24221c36c370bcc232dd5f97cea19d73b617219d7b0f2"
+    },
+    {
+      "path": "research/reader-study/de/index.html",
+      "previous": "cf40bffe5a5359a0f93dc5956f5676f08cf277c021157b00aed6718d08312444",
+      "current": "224eb4cd49c6b14d27ea1a547d051173d07ea5d886a84889f709270cedfff4ba"
+    },
+    {
+      "path": "research/reader-study/fr/index.html",
+      "previous": "533e9ff677b649d95e3cea7b91f08ef066b63cb8402a74386144f84a7ea2c518",
+      "current": "ba2464377b783e19c33ff82567a3b301663f65f4ae0ef1b0a82e7dd900736eb7"
+    },
+    {
+      "path": "data/manifest.json",
+      "previous": "0d8dcf187fab3a3576755bffb243f4beb21b6898bfa2e6b0b1298adbe255ffe4",
+      "current": "dcf4cd8bd6c85b948e33fed7fe387efec40c0e0a1c48f534066fb76fa10a194d"
+    },
+    {
+      "path": "explorer/index.html",
+      "previous": "e487ddb6635f857afafe5d0957c436dfbe6c0558b853892fd399c108326ae0b8",
+      "current": "e2661a05f5c1a5feddce37732ae62d73d1d3dc9df6d7cec83136d331251e79eb"
+    },
+    {
+      "path": "de/index.html",
+      "previous": "97910c164bd77477a9ef5b24157728f8f3bd08918ddc2f34f3ac37b54ce319a4",
+      "current": "c08afb0ce97e86282d1443f31dd7789063182ed546d8e452ced5847bb88bee69"
+    },
+    {
+      "path": "en/index.html",
+      "previous": "aa97af42e4dd0702c76ddce8bfbdde8247b04e9d43a14cd3ead0ca803c7af3c1",
+      "current": "2481917c3718b5d9859ceb093f755c37456bb510ce6054122870aad5d1b809a9"
+    },
+    {
+      "path": "fr/index.html",
+      "previous": "5bd56d407aeaa655e811e1e0c09285806d04eb14732d68f4371c047b4899c27e",
+      "current": "ccea266cc751a9fdf55768d897eba61cd123bf85305c1feef0927b89e7b91ca6"
+    },
+    {
+      "path": "index.html",
+      "previous": "6dca6288e57cfee4951336780959b59b5d7d40b50c572d6e0a22e8038f7b7360",
+      "current": "ffacaef13654d158331d3b32304c2f6faf94d052270d9cf28147ef2467f96460"
+    },
+    {
+      "path": "it/index.html",
+      "previous": "383d6589c0ad6b792ea6bdbaf03101d4dfd8511b092108c5d5b9360f47311198",
+      "current": "59efd51b97f7a2d05e63c5b55e3adfbd5834076b2dbda3446fb63440d6662909"
+    }
+  ]
+}
