@@ -27,6 +27,8 @@ jobs:
         run: node scripts/fix_wikileaks_anchors_v0795.cjs
       - name: Preserve strict scroll assertion while waiting for the app's queued animation frame
         run: node scripts/fix_usability_scroll_timing_v0795.cjs
+      - name: Restore initial route anchor after late page layout without overriding user scrolling
+        run: node scripts/fix_initial_deeplink_scroll_v0795.cjs
       - name: Rebuild the presentation using its original v0.7.95 data-bundle provenance
         # Anchors are a presentation-only correction. Keep the reviewed data-pack
         # source identity and its checksum untouched, not a new research snapshot.
@@ -46,7 +48,7 @@ jobs:
           python3 scripts/audit_content_continuity.py
       - name: Make reviewed candidate patch without overwriting any branch
         run: |
-          git add scripts/reader_first.cjs scripts/usability_remediation_qa.cjs docs/editorial-review-2026-11-05-v0.7.95.json docs/reader-first-structure.json docs/v0795-anchor-compatibility-review.json index.html en/index.html it/index.html de/index.html fr/index.html behind-the-round/en/who-controls-internet-access/index.html behind-the-round/it/who-controls-internet-access/index.html behind-the-round/de/who-controls-internet-access/index.html behind-the-round/fr/who-controls-internet-access/index.html
+          git add scripts/reader_first.cjs scripts/usability_remediation_qa.cjs assets/reader-first.js docs/editorial-review-2026-11-05-v0.7.95.json docs/reader-first-structure.json docs/v0795-anchor-compatibility-review.json index.html en/index.html it/index.html de/index.html fr/index.html behind-the-round/en/who-controls-internet-access/index.html behind-the-round/it/who-controls-internet-access/index.html behind-the-round/de/who-controls-internet-access/index.html behind-the-round/fr/who-controls-internet-access/index.html
           git diff --cached --binary > w95-reviewed.patch
           test -s w95-reviewed.patch
           echo 'Reviewed candidate patch prepared'
@@ -144,7 +146,7 @@ jobs:
           git apply w95-reviewed.patch
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add scripts/reader_first.cjs scripts/usability_remediation_qa.cjs docs/editorial-review-2026-11-05-v0.7.95.json docs/reader-first-structure.json docs/v0795-anchor-compatibility-review.json index.html en/index.html it/index.html de/index.html fr/index.html behind-the-round/en/who-controls-internet-access/index.html behind-the-round/it/who-controls-internet-access/index.html behind-the-round/de/who-controls-internet-access/index.html behind-the-round/fr/who-controls-internet-access/index.html
+          git add scripts/reader_first.cjs scripts/usability_remediation_qa.cjs assets/reader-first.js docs/editorial-review-2026-11-05-v0.7.95.json docs/reader-first-structure.json docs/v0795-anchor-compatibility-review.json index.html en/index.html it/index.html de/index.html fr/index.html behind-the-round/en/who-controls-internet-access/index.html behind-the-round/it/who-controls-internet-access/index.html behind-the-round/de/who-controls-internet-access/index.html behind-the-round/fr/who-controls-internet-access/index.html
           git diff --cached --quiet && { echo 'Nothing to commit'; exit 1; }
           git commit -m 'fix: preserve published access-guide anchors; original browser regressions verified [skip build]'
           git push origin "HEAD:$BRANCH"
