@@ -24,11 +24,36 @@ function staticChecks(){
  const review=JSON.parse(fs.readFileSync(path.join(root,publication.editorialReviewPath),'utf8'));
  assert.equal(review.status,'reviewed','Current editorial revision requires a reviewed exact-file manifest');
  assert.equal(review.publicationVersion,publication.version,'Review and live publication versions differ');
+ // The source guard has already checked the exact approved mapping and rationale.
+ const i18nReplacements=review.i18nReplacements??[];
+ const translations=JSON.parse(fs.readFileSync(path.join(root,'data/translations.json'),'utf8'));
+ const unchangedAttributes=node=>[...node.attributes].filter(a=>a.name!=='data-i18n').map(a=>[a.name,a.value]).sort((a,b)=>a[0].localeCompare(b[0]));
  const normalize=(href,version)=>href.replaceAll(version,'<VERSION>').replace(/(reader-first\.css\?v=<VERSION>)-usability-20261022$/,'$1');
 
  for(const file of ['index.html',...langs.map(l=>l+'/index.html')]){
   const before=parseHTML(readOld(file).toString()).document,after=parseHTML(fs.readFileSync(path.join(root,file),'utf8')).document;
   const beforeKeys=new Set(evidence(before).map(x=>x[0])),afterKeys=new Set(evidence(after).map(x=>x[0]));
+  for(const {elementId,from,to,href} of i18nReplacements){
+   const prior=before.querySelectorAll('[id="'+elementId+'"]'),current=after.querySelectorAll('[id="'+elementId+'"]');
+   assert.equal(prior.length,1,'Reviewed label baseline anchor must be unique: '+file+'/'+elementId);
+   assert.equal(current.length,1,'Reviewed label candidate anchor must be unique: '+file+'/'+elementId);
+   assert.equal(prior[0].tagName,'A','Reviewed label baseline must remain an anchor: '+file+'/'+elementId);
+   assert.equal(current[0].tagName,'A','Reviewed label candidate must remain an anchor: '+file+'/'+elementId);
+   assert.equal(prior[0].getAttribute('data-i18n'),from,'Reviewed label baseline key differs: '+file+'/'+elementId);
+   assert.equal(current[0].getAttribute('data-i18n'),to,'Reviewed label candidate key differs: '+file+'/'+elementId);
+   assert.equal(before.querySelectorAll('[data-i18n="'+from+'"]').length,1,'Reviewed baseline key must occur once: '+file+'/'+from);
+   assert.equal(before.querySelectorAll('[data-i18n="'+to+'"]').length,0,'Reviewed replacement key already present in baseline: '+file+'/'+to);
+   assert.equal(after.querySelectorAll('[data-i18n="'+from+'"]').length,0,'Reviewed old key must not survive as a ghost token: '+file+'/'+from);
+   assert.equal(after.querySelectorAll('[data-i18n="'+to+'"]').length,1,'Reviewed replacement key must occur once: '+file+'/'+to);
+   const lang=file==='index.html'?'en':file.split('/')[0],expectedHref=new URL('../'+lang+'/',href).href;
+   assert.equal(prior[0].getAttribute('href'),expectedHref,'Reviewed label baseline destination differs: '+file+'/'+elementId);
+   assert.equal(current[0].getAttribute('href'),expectedHref,'Reviewed label candidate destination differs: '+file+'/'+elementId);
+   assert.equal(prior[0].textContent,translations[lang][from],'Reviewed baseline label text differs: '+file+'/'+elementId);
+   assert.equal(current[0].textContent,translations[lang][to],'Reviewed candidate label text differs: '+file+'/'+elementId);
+   assert.deepEqual(unchangedAttributes(current[0]),unchangedAttributes(prior[0]),'Reviewed label changed attributes beyond its translation key: '+file+'/'+elementId);
+   // Normalize this one verified visible anchor only; every other lost key fails below.
+   beforeKeys.delete(from);beforeKeys.add(to);
+  }
   const lost=[...beforeKeys].filter(key=>!afterKeys.has(key)).sort();
   // Those two historic timeline keys are replaced by the reviewed 'observed'
   // state and the dated 21 October close, not silently discarded prose.

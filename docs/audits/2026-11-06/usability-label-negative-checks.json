@@ -1,0 +1,186 @@
+{
+  "candidate": "5024877a758ca56707a9724d17bcbbe861fcc5bb",
+  "checks_passed": 18,
+  "checks_total": 18,
+  "cases": [
+    {
+      "name": "unrelated_key_lost",
+      "rejected_as_expected": true,
+      "expected_error": "Unreviewed translated key disappeared",
+      "observed_error": "AssertionError [ERR_ASSERTION]: Unreviewed translated key disappeared: index.html",
+      "exit_code": 1,
+      "actual_source_guard_passed": true,
+      "in_memory_injections": 1
+    },
+    {
+      "name": "candidate_wrong_key",
+      "rejected_as_expected": true,
+      "expected_error": "Reviewed label candidate key differs",
+      "observed_error": "AssertionError [ERR_ASSERTION]: Reviewed label candidate key differs: index.html/apsAtlasArchiveLink",
+      "exit_code": 1,
+      "actual_source_guard_passed": true,
+      "in_memory_injections": 1
+    },
+    {
+      "name": "candidate_old_ghost_key",
+      "rejected_as_expected": true,
+      "expected_error": "Reviewed old key must not survive as a ghost token",
+      "observed_error": "AssertionError [ERR_ASSERTION]: Reviewed old key must not survive as a ghost token: index.html/apsAtlasPublicDetail",
+      "exit_code": 1,
+      "actual_source_guard_passed": true,
+      "in_memory_injections": 1
+    },
+    {
+      "name": "candidate_duplicate_new_key",
+      "rejected_as_expected": true,
+      "expected_error": "Reviewed replacement key must occur once",
+      "observed_error": "AssertionError [ERR_ASSERTION]: Reviewed replacement key must occur once: index.html/apsAtlasStandalone",
+      "exit_code": 1,
+      "actual_source_guard_passed": true,
+      "in_memory_injections": 1
+    },
+    {
+      "name": "candidate_missing_id",
+      "rejected_as_expected": true,
+      "expected_error": "Reviewed label candidate anchor must be unique",
+      "observed_error": "AssertionError [ERR_ASSERTION]: Reviewed label candidate anchor must be unique: index.html/apsAtlasArchiveLink",
+      "exit_code": 1,
+      "actual_source_guard_passed": true,
+      "in_memory_injections": 1
+    },
+    {
+      "name": "candidate_duplicate_id",
+      "rejected_as_expected": true,
+      "expected_error": "Reviewed label candidate anchor must be unique",
+      "observed_error": "AssertionError [ERR_ASSERTION]: Reviewed label candidate anchor must be unique: index.html/apsAtlasArchiveLink",
+      "exit_code": 1,
+      "actual_source_guard_passed": true,
+      "in_memory_injections": 1
+    },
+    {
+      "name": "candidate_wrong_element",
+      "rejected_as_expected": true,
+      "expected_error": "Reviewed label candidate must remain an anchor",
+      "observed_error": "AssertionError [ERR_ASSERTION]: Reviewed label candidate must remain an anchor: index.html/apsAtlasArchiveLink",
+      "exit_code": 1,
+      "actual_source_guard_passed": true,
+      "in_memory_injections": 1
+    },
+    {
+      "name": "candidate_external_href",
+      "rejected_as_expected": true,
+      "expected_error": "Reviewed label candidate destination differs",
+      "observed_error": "AssertionError [ERR_ASSERTION]: Reviewed label candidate destination differs: index.html/apsAtlasArchiveLink",
+      "exit_code": 1,
+      "actual_source_guard_passed": true,
+      "in_memory_injections": 1
+    },
+    {
+      "name": "candidate_alias_wrong_locale",
+      "rejected_as_expected": true,
+      "expected_error": "Reviewed label candidate destination differs",
+      "observed_error": "AssertionError [ERR_ASSERTION]: Reviewed label candidate destination differs: index.html/apsAtlasArchiveLink",
+      "exit_code": 1,
+      "actual_source_guard_passed": true,
+      "in_memory_injections": 1
+    },
+    {
+      "name": "candidate_old_label_text",
+      "rejected_as_expected": true,
+      "expected_error": "Reviewed candidate label text differs",
+      "observed_error": "AssertionError [ERR_ASSERTION]: Reviewed candidate label text differs: index.html/apsAtlasArchiveLink",
+      "exit_code": 1,
+      "actual_source_guard_passed": true,
+      "in_memory_injections": 1
+    },
+    {
+      "name": "candidate_extra_hidden_attribute",
+      "rejected_as_expected": true,
+      "expected_error": "Reviewed label changed attributes beyond its translation key",
+      "observed_error": "AssertionError [ERR_ASSERTION]: Reviewed label changed attributes beyond its translation key: index.html/apsAtlasArchiveLink",
+      "exit_code": 1,
+      "actual_source_guard_passed": true,
+      "in_memory_injections": 1
+    },
+    {
+      "name": "baseline_wrong_key",
+      "rejected_as_expected": true,
+      "expected_error": "Reviewed label baseline key differs",
+      "observed_error": "AssertionError [ERR_ASSERTION]: Reviewed label baseline key differs: index.html/apsAtlasArchiveLink",
+      "exit_code": 1,
+      "actual_source_guard_passed": true,
+      "in_memory_injections": 1
+    },
+    {
+      "name": "baseline_duplicate_old_key",
+      "rejected_as_expected": true,
+      "expected_error": "Reviewed baseline key must occur once",
+      "observed_error": "AssertionError [ERR_ASSERTION]: Reviewed baseline key must occur once: index.html/apsAtlasPublicDetail",
+      "exit_code": 1,
+      "actual_source_guard_passed": true,
+      "in_memory_injections": 1
+    },
+    {
+      "name": "baseline_new_key_present",
+      "rejected_as_expected": true,
+      "expected_error": "Reviewed replacement key already present in baseline",
+      "observed_error": "AssertionError [ERR_ASSERTION]: Reviewed replacement key already present in baseline: index.html/apsAtlasStandalone",
+      "exit_code": 1,
+      "actual_source_guard_passed": true,
+      "in_memory_injections": 1
+    },
+    {
+      "name": "baseline_missing_id",
+      "rejected_as_expected": true,
+      "expected_error": "Reviewed label baseline anchor must be unique",
+      "observed_error": "AssertionError [ERR_ASSERTION]: Reviewed label baseline anchor must be unique: index.html/apsAtlasArchiveLink",
+      "exit_code": 1,
+      "actual_source_guard_passed": true,
+      "in_memory_injections": 1
+    },
+    {
+      "name": "baseline_wrong_href",
+      "rejected_as_expected": true,
+      "expected_error": "Reviewed label baseline destination differs",
+      "observed_error": "AssertionError [ERR_ASSERTION]: Reviewed label baseline destination differs: index.html/apsAtlasArchiveLink",
+      "exit_code": 1,
+      "actual_source_guard_passed": true,
+      "in_memory_injections": 1
+    },
+    {
+      "name": "baseline_wrong_label_text",
+      "rejected_as_expected": true,
+      "expected_error": "Reviewed baseline label text differs",
+      "observed_error": "AssertionError [ERR_ASSERTION]: Reviewed baseline label text differs: index.html/apsAtlasArchiveLink",
+      "exit_code": 1,
+      "actual_source_guard_passed": true,
+      "in_memory_injections": 1
+    },
+    {
+      "name": "unapproved_review_mapping",
+      "rejected_as_expected": true,
+      "expected_error": "Only the reviewed local Atlas link label replacement is allowed",
+      "observed_error": "Source proof rejected unapproved mapping",
+      "exit_code": 1,
+      "actual_source_guard_rejected": true
+    }
+  ],
+  "faults_confined_to_test_process": true,
+  "test_mapping_manifest_restored": true,
+  "product_and_baseline_on_disk_unchanged": true,
+  "browser_and_nojs_code_byte_identical": true,
+  "browser_scenarios_unchanged": 32,
+  "axe_scans_unchanged": 64,
+  "browser_executed": false,
+  "review_fingerprint_changed_only_for_qa_in_test_copy": true,
+  "qa_sha256": "76150c17ce3af3e8e77268ac31d640785520ad90e78998a1d24e89e6208d3eeb",
+  "fixture_file_hashes": {
+    "index.html": "843bcbb25bdc3ce1483028643066e1750b6a69faec45a47260d16bda791397c3",
+    "it/index.html": "a46ca548b8f13c5d495388570dccf029d344e83f7c92cf5eee70f70fce40e6dc",
+    "en/index.html": "0c92cf07f99fc56a371b94a1bf35fef3ede299573788dd5171b26e873bf69aef",
+    "de/index.html": "612757e12fd8671d6f0af8c2dfbd39f9d1316ab7f452ac35a60735e49547ac43",
+    "fr/index.html": "921b5287dc65748efd50afd844a6b5326f48c6a1d34b7be973c2ae1a17977f31",
+    "scripts/usability_remediation_qa.cjs": "76150c17ce3af3e8e77268ac31d640785520ad90e78998a1d24e89e6208d3eeb",
+    "docs/editorial-review-2026-11-06-v0.7.98.json": "50bed6fba9d1acfc12ea109397e50ed18291379157e856014aa81317ce22087e"
+  }
+}

@@ -62,6 +62,7 @@ jobs:
           node scripts/validate_multilingual.js
           node scripts/validate_internet_access.js
           CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
+          node scripts/usability_remediation_qa.cjs --static-only
       - name: Run independent browser checks and retain every outcome
         env:
           CTD_TEST_BASE: http://127.0.0.1:8123/

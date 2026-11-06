@@ -72,7 +72,8 @@
     "UI98": "Correct the local Atlas label, localized accessible controls and skip link, singular one-result wording, number grouping and complete meta descriptions. Preserve all original destinations, scientific bodies and existing translations; the exact Atlas i18n replacement has its separate A98 constraint.",
     "DEL98": "Restore the original 1,240,000-byte HTML limit. Extract the unchanged locale dictionary and 2026 snapshot into ordered, versioned, deferred local assets; enforce HTML plus extracted payload at baseline plus 2 KiB and validate payload equality. Do not claim the first visit no longer transfers these data.",
     "PER98": "Compute lab CLS as the maximum session window with official gap/duration boundaries and exclusion of recent input; retain the raw shift sum under a different name. Test nine boundary cases, including zero-value leading shifts. No field performance or human validation is implied.",
-    "DOC98": "Record the technical audit, exact candidate preservation evidence, historical v0.7.92 archive exception and reproducible release procedure. Distinguish original observations, reconstructed reports, fresh local executions and required remote acceptance."
+    "DOC98": "Record the technical audit, exact candidate preservation evidence, historical v0.7.92 archive exception and reproducible release procedure. Distinguish original observations, reconstructed reports, fresh local executions and required remote acceptance.",
+    "UA98": "Align rendered-HTML acceptance with the exact A98 replacement already enforced by the source guard: require the same unique anchor, localized destination, exact old/new translations and unchanged attributes, with no ghost or duplicate keys. Keep all other lost-key, historic ID/link and browser/no-JS checks unchanged. Run static preflight early and retain the original failed acceptance evidence."
   },
   "sourceInvariants": {
     "sections": [
@@ -2828,7 +2829,7 @@
     },
     ".github/workflows/audit-browser.yml": {
       "baselineSHA256": "ed063e0e2ffe43df54dfe3e1a98a4292dad5524d76a46c174c6a0943554a1296",
-      "sha256": "f31205e6963c9971ecd8b7b48d01d2a032dfa55409d4a9f2b9d8d0e43dc897a0",
+      "sha256": "29173b14dd9eadc5bc8e42c10c064861cb80a7f6a0f2ea241cf999b5f8a7a283",
       "rationaleIds": [
         "A19",
         "H01",
@@ -2837,7 +2838,8 @@
         "E13",
         "CI24",
         "CI98",
-        "PER98"
+        "PER98",
+        "UA98"
       ]
     },
     ".gitignore": {
@@ -3554,9 +3556,10 @@
         "E13",
         "T94",
         "QA94",
-        "Q95"
+        "Q95",
+        "UA98"
       ],
-      "sha256": "861d3f3b6de8b2a2512c80addd84cfddb1c73557d4d419b552c20eda9a55bbf9"
+      "sha256": "76150c17ce3af3e8e77268ac31d640785520ad90e78998a1d24e89e6208d3eeb"
     },
     "scripts/run_browser_regressions.py": {
       "baselineSHA256": null,
@@ -4067,9 +4070,10 @@
     },
     "docs/full-site-audit-2026-11-06.md": {
       "baselineSHA256": null,
-      "sha256": "7bb2b24c237ac1445517aae67edc907d1c6d3f051d73416f9e4aa7347806c938",
+      "sha256": "b09cda1036401caa402a246f282b9d78a20cd4a88704782cc066020bbbb77c81",
       "rationaleIds": [
-        "DOC98"
+        "DOC98",
+        "UA98"
       ]
     },
     "docs/reader-first-structure.json": {
@@ -4155,6 +4159,30 @@
       "baselineSHA256": "1d2828678e7e01b54996c544b1351005c3564df7b79975bad43b1dedb857097a",
       "sha256": "1d2828678e7e01b54996c544b1351005c3564df7b79975bad43b1dedb857097a",
       "rationaleIds": [
+        "DOC98"
+      ]
+    },
+    "docs/audits/2026-11-06/usability-label-static-positive.json": {
+      "baselineSHA256": null,
+      "sha256": "da7aebdc28b74d96f4ebcf142d015517a585b6640e32eebe29bb539b0da03eaa",
+      "rationaleIds": [
+        "UA98",
+        "DOC98"
+      ]
+    },
+    "docs/audits/2026-11-06/usability-label-negative-checks.json": {
+      "baselineSHA256": null,
+      "sha256": "a7b93ec342e13ec349493b079845a53b90857bdea8f5b79731871b066e4041c5",
+      "rationaleIds": [
+        "UA98",
+        "DOC98"
+      ]
+    },
+    "docs/audits/2026-11-06/initial-browser-acceptance-failure.json": {
+      "baselineSHA256": null,
+      "sha256": "23d7034d59d8301042d008c0c391cdac6650455b6d4bd6ab31ddced74f276a93",
+      "rationaleIds": [
+        "UA98",
         "DOC98"
       ]
     }
@@ -4439,8 +4467,8 @@
     "humanParticipants": 0,
     "reviewType": "AI-assisted technical source and exact generated-file review with separate independent agent audits",
     "status": "Source and generated artifacts reviewed; remote acceptance is a distinct required gate.",
-    "reviewedPaths": 250,
-    "changedPathsWithActualSourceHashes": 119,
+    "reviewedPaths": 253,
+    "changedPathsWithActualSourceHashes": 123,
     "currentArchiveSHA256": "f9bbbf917e26cbe64b6a96f4c3db04e4ddbbe6536db4f37160737e00cdb54299",
     "evidence": [
       "docs/full-site-audit-2026-11-06.md",
@@ -4449,7 +4477,10 @@
       "docs/audits/2026-11-06/final-budget-measurements.json",
       "docs/audits/2026-11-06/generated-data-audit-0798.json",
       "docs/audits/2026-11-06/pipeline-recovery-tests.json",
-      "docs/audits/2026-11-06/assembly-workflow-tests.json"
+      "docs/audits/2026-11-06/assembly-workflow-tests.json",
+      "docs/audits/2026-11-06/usability-label-static-positive.json",
+      "docs/audits/2026-11-06/usability-label-negative-checks.json",
+      "docs/audits/2026-11-06/initial-browser-acceptance-failure.json"
     ],
     "qualityGates": "Required: repeated deterministic CI assembly; exact local/remote Git-tree equality; independent A/B and browser jobs before main; Pages deployment and live-byte checks; published-site browser audit.",
     "priorReviewEvidenceScope": "Inherited layout, navigation, anchor and CI24 review records describe their original versions; they are preserved as history and are not represented as new v0.7.98 browser evidence.",
@@ -4465,6 +4496,24 @@
       "releaseAndExactFileGuards": "success",
       "temporaryWorkflowRemoved": true,
       "scope": "This post-assembly record changes only this review document. Product sources, generated pages, data assets and every package retain the verified assembled bytes. Independent A/B and browser acceptance remain required before main."
+    },
+    "renderedAcceptanceFollowup": {
+      "baseCandidateCommit": "5024877a758ca56707a9724d17bcbbe861fcc5bb",
+      "initialRun": "https://github.com/robertbregy/Connecting-the-Dots/actions/runs/42312234969",
+      "initialResult": "failure: rendered-key guard rejected the specifically approved A98 replacement; no usability browser scenarios executed",
+      "productBytesUnchangedFromAssembly": true,
+      "reviewedChanges": [
+        ".github/workflows/audit-browser.yml",
+        "scripts/usability_remediation_qa.cjs",
+        "docs/full-site-audit-2026-11-06.md",
+        "docs/audits/2026-11-06/usability-label-static-positive.json",
+        "docs/audits/2026-11-06/usability-label-negative-checks.json",
+        "docs/audits/2026-11-06/initial-browser-acceptance-failure.json"
+      ],
+      "localStaticPagesPassed": 5,
+      "negativeCasesPassed": 18,
+      "browserAndNoJavaScriptCodeUnchanged": true,
+      "remoteAcceptance": "New complete A/B and browser runs required before main. Prior failed run retained as evidence."
     }
   },
   "readerFirstEvidence": {
@@ -4510,7 +4559,10 @@
       "docs/audits/2026-11-06/final-budget-measurements.json",
       "docs/audits/2026-11-06/generated-data-audit-0798.json",
       "docs/audits/2026-11-06/pipeline-recovery-tests.json",
-      "docs/audits/2026-11-06/assembly-workflow-tests.json"
+      "docs/audits/2026-11-06/assembly-workflow-tests.json",
+      "docs/audits/2026-11-06/usability-label-static-positive.json",
+      "docs/audits/2026-11-06/usability-label-negative-checks.json",
+      "docs/audits/2026-11-06/initial-browser-acceptance-failure.json"
     ],
     "humanParticipants": 0,
     "independentTests": "Remote deterministic assembly, exact-tree comparison, A/B and browser acceptance required before main; successful deployment and public byte/browser checks required to close the audit."
