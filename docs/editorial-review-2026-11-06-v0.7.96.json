@@ -60,7 +60,8 @@
     "Q95": "The existing usability acceptance sometimes asserted scroll before the application requestAnimationFrame callback ran. Keep the identical strict viewport destination assertion and allow up to 3.5 seconds for the real asynchronous scroll to complete; do not skip tests, alter routes or accept an offscreen target.",
     "R95": "On initial URL navigation, the article may reposition after the first asynchronous scroll. Reader-first presentation now checks the requested deep link after load/late layout, restores only an offscreen target, uses the existing sticky navigation offset, and cancels on any user interaction. This changes neither route state nor datasets.",
     "C96": "Present exactly the same seven evidence-backed cases in historical order 2008, 2010, 2017, 2023, 2023-2024, 2025 and 2026. Keep every case body, date, source and source ID byte-for-byte; only reorder the canonical array and refresh a localized introductory sentence in four languages.",
-    "V96": "New v0.7.96 site/data-package identity, new review date, versioned download and manifest. Freeze previous v0.7.95 archive by SHA-256; retain immutable RR1/RR2 and all earlier technical packages."
+    "V96": "New v0.7.96 site/data-package identity, new review date, versioned download and manifest. Freeze previous v0.7.95 archive by SHA-256; retain immutable RR1/RR2 and all earlier technical packages.",
+    "P96": "Pin the source commit used to build v0.7.96 so rebuilt HTML contains stable release provenance instead of the ever-changing CI GITHUB_SHA. This only fixes metadata reproducibility and does not change user-visible case content or frozen scientific datasets."
   },
   "sourceInvariants": {
     "sections": [
@@ -2235,7 +2236,7 @@
     },
     "publication.json": {
       "baselineSHA256": "b5d225fa96dc9573b2dac3c18e39236c2e570c65aaa08afdbfedbdc0292368ef",
-      "sha256": "b62d3b42cc2c12eea340c7b5159db735dd74a57161d19cf025bbe133d7bab1a2",
+      "sha256": "7dd16ad430374a47debdc67950e98065027f2ba818e64de709c437a6da9e5e6b",
       "rationaleIds": [
         "C01",
         "C02",
@@ -2250,7 +2251,8 @@
         "T93",
         "T94",
         "V95",
-        "V96"
+        "V96",
+        "P96"
       ]
     },
     "research/connecting-the-dots-working-paper-v1.html": {
@@ -2782,10 +2784,11 @@
     },
     "scripts/sync_publication.py": {
       "baselineSHA256": "507128389bf3554f9377308879627000e878882601833f2c479f56fe23c3f6d9",
-      "sha256": "122e2517889e3974427018f3d282afade4b2e684ba94b0daa15f7233072d22c9",
+      "sha256": "f8b943fda7556d2c391082391897a7609631342f28ea258337cb17b52a7dab7f",
       "rationaleIds": [
         "A19",
-        "H01"
+        "H01",
+        "P96"
       ]
     },
     "scripts/validate_multilingual.js": {
@@ -3956,5 +3959,10 @@
     "scope": "stable heading IDs, reader-first initial deep-link layout reconciliation and strict QA timing; unchanged editorial and research evidence",
     "humanParticipants": 0,
     "gate": "A/B plus independent browser/WCAG suite required on committed branch"
+  },
+  "buildProvenancePolicy": {
+    "version": "0.7.96",
+    "sourceCommit": "c2da5484d4c4e1cf57361f0b4d3e697258adc415",
+    "semantics": "Stable original GitHub source of reviewed artifact generation, not necessarily the later deployment commit"
   }
 }

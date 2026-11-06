@@ -21,7 +21,10 @@ lock.setdefault('packages', {}).setdefault('', {})['version'] = version
 lock_path.write_text(json.dumps(lock, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
 # Runtime publication metadata; GitHub Actions can add the actual commit SHA automatically.
-commit = (os.environ.get('GITHUB_SHA') or '').strip() or None
+build_commit = (meta.get('buildProvenanceCommit') or '').strip()
+if build_commit and not re.fullmatch(r'[a-f0-9]{40}', build_commit):
+    raise SystemExit('Invalid frozen build provenance commit')
+commit = build_commit or (os.environ.get('GITHUB_SHA') or '').strip() or None
 def js_value(value):
     if value is None:
         return 'null'
