@@ -1,0 +1,58 @@
+name: v0.7.96 · Stable reviewed build provenance
+on:
+  push:
+    branches: ['feat/access-chronology-20261106']
+    paths: ['.github/workflows/pin-access-chronology-provenance.yml']
+permissions:
+  contents: write
+jobs:
+  pin-and-reverify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - name: Pin reviewed source commit for reproducible static page byte fingerprints
+        run: node scripts/pin_access_chronology_provenance_v0796.cjs
+      - name: Rebuild with arbitrary GitHub Actions SHA and prove output bytes unchanged
+        run: |
+          GITHUB_SHA=abcdef0123456789abcdef0123456789abcdef01 python3 build.py
+          python3 - <<'PY'
+          import hashlib,subprocess,pathlib
+          files=['index.html','en/index.html','it/index.html','de/index.html','fr/index.html','data/publication.js','downloads/connecting-the-dots-data-pack-v0.7.96.zip']
+          for p in files:
+            original=subprocess.check_output(['git','show','HEAD:'+p])
+            current=pathlib.Path(p).read_bytes()
+            assert hashlib.sha256(original).digest()==hashlib.sha256(current).digest(),'Versioned output depends on GitHub runner commit: '+p
+          print('V0796_REPRODUCIBLE_SOURCE_AND_PAGES',len(files))
+          PY
+      - name: Validate full reviewed files, four-language cases and delivery
+        run: |
+          node scripts/verify_ia_b2_parity.cjs
+          node scripts/validate_access_chronology_v0796.cjs
+          node scripts/validate_internet_access.js
+          node scripts/validate_multilingual.js
+          CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
+      - name: Commit only reviewed metadata correction on unchanged feature branch
+        env:
+          BRANCH: ${{ github.ref_name }}
+          EXPECTED: ${{ github.sha }}
+        run: |
+          git fetch origin "$BRANCH"
+          test "$(git rev-parse FETCH_HEAD)" = "$EXPECTED" || { echo 'Branch moved, refusing to overwrite'; exit 1; }
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add publication.json scripts/sync_publication.py docs/editorial-review-2026-11-06-v0.7.96.json
+          git diff --cached --quiet && { echo 'No stable-provenance changes'; exit 1; }
+          git commit -m 'fix: pin v0.7.96 source commit for deterministic HTML checks [skip build]'
+          git push origin "HEAD:$BRANCH"
+          echo "STABLE_RELEASE_CANDIDATE=$(git rev-parse HEAD)"
