@@ -1,0 +1,91 @@
+name: v0.7.97 · BRS and INTA editorial perspectives, evidence gated
+on:
+  push:
+    branches:
+      - feat/round-debate-20261106
+    paths:
+      - .github/workflows/round-debate-v0797.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  create-reviewed-candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - name: Create v0.7.97 editorial-only candidate and freeze historical archives
+        run: node scripts/prepare_round_debate_v0797.cjs
+      - name: Generate all pages and require the existing editorial-review gate to block unreviewed files
+        run: |
+          set +e
+          python3 build.py > /tmp/v0797-first-build.log 2>&1
+          code=$?
+          set -e
+          if test "$code" -eq 0; then
+            echo "Unreviewed release unexpectedly passed initial approval gate"
+            exit 1
+          fi
+          if ! grep -q 'EDITORIAL_REVIEW_REQUIRED: final hashes have not been reviewed' /tmp/v0797-first-build.log; then
+            tail -n 120 /tmp/v0797-first-build.log
+            exit "$code"
+          fi
+          echo "Review lock correctly rejects unapproved generated output."
+      - name: Independently review source attribution and exact generated SHA-256 hashes
+        run: node scripts/review_round_debate_v0797.cjs
+      - name: Rebuild with approved source and all original release validations
+        run: python3 build.py
+      - name: Validate every translated Field Notes and contention panel
+        run: |
+          node scripts/validate_round_debate_v0797.cjs
+          node scripts/verify_ia_b2_parity.cjs
+          node scripts/validate_multilingual.js
+          node scripts/validate_internet_access.js
+          CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
+      - name: Confirm prior technical ZIP, data snapshots, and deterministic output
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,pathlib,subprocess,sys
+          root=pathlib.Path.cwd()
+          pub=json.loads((root/'publication.json').read_text())
+          assert pub['version']=='0.7.97'
+          new=root/pub['currentDataPackPath']
+          old=root/'downloads/connecting-the-dots-data-pack-v0.7.96.zip'
+          f=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+          oldHash=f(old);newHash=f(new)
+          frozen=json.loads((root/'data/frozen_technical_packages.json').read_text())['files']
+          assert frozen['downloads/connecting-the-dots-data-pack-v0.7.96.zip']==oldHash
+          for p,x in frozen.items():assert f(root/p)==x,p
+          for p in ['data/field_investigations.json','data/inside_the_round_events.json','data/application_2026_snapshot.json','data/applications_2026_aps_official_listing.csv','data/applications_2026_aps_official_provenance.json','CITATION.cff']:
+           original=subprocess.check_output(['git','show','HEAD:'+p])
+           assert (root/p).read_bytes()==original,p
+          subprocess.run([sys.executable,'build.py'],check=True)
+          assert f(new)==newHash,'Non-deterministic current technical ZIP'
+          assert f(old)==oldHash,'Previously published ZIP changed'
+          print('OLD_ZIP_FROZEN',oldHash,'NEW_ZIP_DETERMINISTIC',newHash)
+          PY
+      - name: Commit only verified generated files if development branch has not advanced
+        env:
+          EXPECTED_HEAD: ${{ github.sha }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          test "$BRANCH" = feat/round-debate-20261106
+          git fetch origin "$BRANCH"
+          test "$(git rev-parse FETCH_HEAD)" = "$EXPECTED_HEAD" || { echo 'Branch moved: refusing to overwrite'; exit 1; }
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --cached --quiet && { echo 'No generated changes'; exit 1; }
+          git commit -m 'editorial: BRS/CPE and INTA discussion, four languages, v0.7.97 reviewed [skip build]'
+          git push origin "HEAD:$BRANCH"
+          echo "EDITORIAL_0797_CANDIDATE=$(git rev-parse HEAD)"
