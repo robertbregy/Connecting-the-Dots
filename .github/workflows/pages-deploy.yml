@@ -1,0 +1,98 @@
+name: pages build and deployment
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Rebuild published site"]
+    branches: [main]
+    types: [completed]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Keep queued deployments instead of replacing them with a later stale event.
+concurrency:
+  group: github-pages
+  queue: max
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: ${{ github.ref == 'refs/heads/main' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success') }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out the exact committed publication
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 2
+          persist-credentials: false
+
+      - name: Check that the publication is still current
+        id: source
+        env:
+          CTD_DEPLOY_SHA: ${{ github.sha }}
+          CTD_EVENT_NAME: ${{ github.event_name }}
+          CTD_REBUILD_SHA: ${{ github.event.workflow_run.head_sha || '' }}
+          CTD_REBUILD_BRANCH: ${{ github.event.workflow_run.head_branch || '' }}
+          CTD_REBUILD_CONCLUSION: ${{ github.event.workflow_run.conclusion || '' }}
+        shell: bash
+        run: |
+          test "$(git rev-parse HEAD)" = "$CTD_DEPLOY_SHA"
+          current_main="$(git ls-remote --exit-code origin refs/heads/main | cut -f1)"
+          publish=false
+          if test "$current_main" != "$CTD_DEPLOY_SHA"; then
+            echo "A newer main commit superseded $CTD_DEPLOY_SHA; this run will not publish."
+          else
+            case "$CTD_EVENT_NAME" in
+              push|workflow_dispatch)
+                publish=true
+                ;;
+              workflow_run)
+                if test "$CTD_REBUILD_BRANCH" != 'main' || test "$CTD_REBUILD_CONCLUSION" != 'success'; then
+                  echo 'The triggering rebuild is not a successful main run; this run will not publish.'
+                elif test "$CTD_DEPLOY_SHA" = "$CTD_REBUILD_SHA"; then
+                  publish=true
+                  echo 'The successful rebuild left the source commit unchanged.'
+                elif test -n "$CTD_REBUILD_SHA" \
+                  && test "$(git show -s --format=%P HEAD)" = "$CTD_REBUILD_SHA" \
+                  && test "$(git show -s --format=%B HEAD)" = 'Rebuild published site [skip build]' \
+                  && test "$(git show -s --format=%an HEAD)" = 'github-actions[bot]' \
+                  && test "$(git show -s --format=%ae HEAD)" = '41898282+github-actions[bot]@users.noreply.github.com'; then
+                  publish=true
+                  echo 'Publishing the direct generated commit from the successful rebuild.'
+                else
+                  echo 'Main no longer identifies this rebuild or its direct generated commit; this run will not publish.'
+                fi
+                ;;
+              *)
+                echo 'Unsupported deployment event; this run will not publish.'
+                ;;
+            esac
+          fi
+          echo "publish=$publish" >> "$GITHUB_OUTPUT"
+
+      - name: Read the existing Pages configuration
+        if: steps.source.outputs.publish == 'true'
+        uses: actions/configure-pages@v6
+
+      - name: Package the committed publication without rebuilding
+        if: steps.source.outputs.publish == 'true'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: '.'
+          # Match the existing managed deployment, including .nojekyll.
+          include-hidden-files: true
+
+      - name: Deploy the committed publication
+        if: steps.source.outputs.publish == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v5
