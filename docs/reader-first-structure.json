@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
-  "version": "0.7.96",
+  "version": "0.7.97",
   "native": [
     {
       "file": "en/index.html",
       "lang": "en",
-      "retainedExistingIds": 411,
+      "retainedExistingIds": 412,
       "chapters": [
         {
           "id": "how",
@@ -245,8 +245,8 @@
           "lang": "en",
           "essentialBlocks": 7,
           "originalTranslatedItems": 1350,
-          "originalLinks": 1065,
-          "originalIds": 489,
+          "originalLinks": 1068,
+          "originalIds": 490,
           "removedNavigationLabels": [
             "Understand the context",
             "From extensions to individual ICANN applications",
@@ -343,7 +343,8 @@
             "The most contested strings of 2026",
             "Same scarcity, different vocabulary",
             "A major rule changed in 2026",
-            "Who gets to control a word?"
+            "Who gets to control a word?",
+            "round-auctions-debate-20261106"
           ],
           "after": [
             "Who gets a name when several applicants want it?",
@@ -351,9 +352,10 @@
             "A major rule changed in 2026",
             "Same scarcity, different vocabulary",
             "Who gets to control a word?",
-            "panel crossRoundDisclosure"
+            "panel crossRoundDisclosure",
+            "round-auctions-debate-20261106"
           ],
-          "originalBlocks": 6
+          "originalBlocks": 7
         },
         "disputes": {
           "before": [
@@ -460,7 +462,7 @@
     {
       "file": "index.html",
       "lang": "en",
-      "retainedExistingIds": 411,
+      "retainedExistingIds": 412,
       "chapters": [
         {
           "id": "how",
@@ -699,8 +701,8 @@
           "lang": "en",
           "essentialBlocks": 7,
           "originalTranslatedItems": 1350,
-          "originalLinks": 1065,
-          "originalIds": 489,
+          "originalLinks": 1068,
+          "originalIds": 490,
           "removedNavigationLabels": [
             "Understand the context",
             "From extensions to individual ICANN applications",
@@ -797,7 +799,8 @@
             "The most contested strings of 2026",
             "Same scarcity, different vocabulary",
             "A major rule changed in 2026",
-            "Who gets to control a word?"
+            "Who gets to control a word?",
+            "round-auctions-debate-20261106"
           ],
           "after": [
             "Who gets a name when several applicants want it?",
@@ -805,9 +808,10 @@
             "A major rule changed in 2026",
             "Same scarcity, different vocabulary",
             "Who gets to control a word?",
-            "panel crossRoundDisclosure"
+            "panel crossRoundDisclosure",
+            "round-auctions-debate-20261106"
           ],
-          "originalBlocks": 6
+          "originalBlocks": 7
         },
         "disputes": {
           "before": [
@@ -914,7 +918,7 @@
     {
       "file": "it/index.html",
       "lang": "it",
-      "retainedExistingIds": 411,
+      "retainedExistingIds": 412,
       "chapters": [
         {
           "id": "how",
@@ -1153,8 +1157,8 @@
           "lang": "it",
           "essentialBlocks": 7,
           "originalTranslatedItems": 1350,
-          "originalLinks": 1065,
-          "originalIds": 489,
+          "originalLinks": 1068,
+          "originalIds": 490,
           "removedNavigationLabels": [
             "Per capire il contesto",
             "Dalle estensioni alle singole domande ICANN",
@@ -1251,7 +1255,8 @@
             "Le stringhe più contese del 2026",
             "Stessa scarsità, vocabolario diverso",
             "Nel 2026 è cambiata una regola importante",
-            "Chi può controllare una parola?"
+            "Chi può controllare una parola?",
+            "round-auctions-debate-20261106"
           ],
           "after": [
             "A chi va un nome quando più candidati lo chiedono?",
@@ -1259,9 +1264,10 @@
             "Nel 2026 è cambiata una regola importante",
             "Stessa scarsità, vocabolario diverso",
             "Chi può controllare una parola?",
-            "panel crossRoundDisclosure"
+            "panel crossRoundDisclosure",
+            "round-auctions-debate-20261106"
           ],
-          "originalBlocks": 6
+          "originalBlocks": 7
         },
         "disputes": {
           "before": [
@@ -1368,7 +1374,7 @@
     {
       "file": "de/index.html",
       "lang": "de",
-      "retainedExistingIds": 411,
+      "retainedExistingIds": 412,
       "chapters": [
         {
           "id": "how",
@@ -1607,8 +1613,8 @@
           "lang": "de",
           "essentialBlocks": 7,
           "originalTranslatedItems": 1350,
-          "originalLinks": 1065,
-          "originalIds": 489,
+          "originalLinks": 1068,
+          "originalIds": 490,
           "removedNavigationLabels": [
             "Den Zusammenhang verstehen",
             "Von Endungen zu einzelnen ICANN-Bewerbungen",
@@ -1705,7 +1711,8 @@
             "Die am stärksten umkämpften Strings 2026",
             "Gleiche Knappheit, anderes Vokabular",
             "2026 hat sich eine wichtige Regel geändert",
-            "Wer darf ein Wort kontrollieren?"
+            "Wer darf ein Wort kontrollieren?",
+            "round-auctions-debate-20261106"
           ],
           "after": [
             "Wer erhält einen Namen, wenn mehrere Bewerber ihn wollen?",
@@ -1713,9 +1720,10 @@
             "2026 hat sich eine wichtige Regel geändert",
             "Gleiche Knappheit, anderes Vokabular",
             "Wer darf ein Wort kontrollieren?",
-            "panel crossRoundDisclosure"
+            "panel crossRoundDisclosure",
+            "round-auctions-debate-20261106"
           ],
-          "originalBlocks": 6
+          "originalBlocks": 7
         },
         "disputes": {
           "before": [
@@ -1822,7 +1830,7 @@
     {
       "file": "fr/index.html",
       "lang": "fr",
-      "retainedExistingIds": 411,
+      "retainedExistingIds": 412,
       "chapters": [
         {
           "id": "how",
@@ -2061,8 +2069,8 @@
           "lang": "fr",
           "essentialBlocks": 7,
           "originalTranslatedItems": 1350,
-          "originalLinks": 1065,
-          "originalIds": 489,
+          "originalLinks": 1068,
+          "originalIds": 490,
           "removedNavigationLabels": [
             "Comprendre le contexte",
             "Des extensions aux candidatures individuelles ICANN",
@@ -2159,7 +2167,8 @@
             "Les chaînes les plus disputées de 2026",
             "Même rareté, autre vocabulaire",
             "Une règle majeure a changé en 2026",
-            "Qui peut contrôler un mot ?"
+            "Qui peut contrôler un mot ?",
+            "round-auctions-debate-20261106"
           ],
           "after": [
             "À qui revient un nom lorsque plusieurs candidats le demandent ?",
@@ -2167,9 +2176,10 @@
             "Une règle majeure a changé en 2026",
             "Même rareté, autre vocabulaire",
             "Qui peut contrôler un mot ?",
-            "panel crossRoundDisclosure"
+            "panel crossRoundDisclosure",
+            "round-auctions-debate-20261106"
           ],
-          "originalBlocks": 6
+          "originalBlocks": 7
         },
         "disputes": {
           "before": [
@@ -2309,7 +2319,7 @@
       "file": "behind-the-round/de/index.html",
       "lang": "de",
       "area": "ia-round",
-      "retainedExistingIds": 12
+      "retainedExistingIds": 14
     },
     {
       "file": "behind-the-round/de/objectors-eoi/index.html",
@@ -2351,7 +2361,7 @@
       "file": "behind-the-round/en/index.html",
       "lang": "en",
       "area": "ia-round",
-      "retainedExistingIds": 12
+      "retainedExistingIds": 14
     },
     {
       "file": "behind-the-round/en/objectors-eoi/index.html",
@@ -2393,7 +2403,7 @@
       "file": "behind-the-round/fr/index.html",
       "lang": "fr",
       "area": "ia-round",
-      "retainedExistingIds": 12
+      "retainedExistingIds": 14
     },
     {
       "file": "behind-the-round/fr/objectors-eoi/index.html",
@@ -2435,7 +2445,7 @@
       "file": "behind-the-round/it/index.html",
       "lang": "it",
       "area": "ia-round",
-      "retainedExistingIds": 12
+      "retainedExistingIds": 14
     },
     {
       "file": "behind-the-round/it/objectors-eoi/index.html",

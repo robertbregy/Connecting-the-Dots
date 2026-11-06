@@ -2573,7 +2573,8 @@
     "nissaySourceIana": "IANA · .nissay delegation record",
     "release0794": "Adds ICANN's 2026 evaluation quality-control provider, a source-dated .nissay termination case and the completed replacement-choice window. Editorial update only: 11 October APS and RR1/RR2 remain frozen.",
     "release0795": "WikiLeaks (2008/2010): domain court order, withdrawn authoritative DNS, hosting and payment restrictions shown as separate control points.",
-    "release0796": "Seven Internet-access control case studies presented chronologically (2008–2026) across four languages; unchanged evidence and separate WikiLeaks episodes."
+    "release0796": "Seven Internet-access control case studies presented chronologically (2008–2026) across four languages; unchanged evidence and separate WikiLeaks episodes.",
+    "release0797": "Two 4 November 2026 stakeholder perspectives, BRS Media on community-TLD outcomes and INTA on private auctions: Field Notes and Contention, with no changes to APS data."
   },
   "it": {
     "brand": "Brand",
@@ -5149,7 +5150,8 @@
     "nissaySourceIana": "IANA · delega di .nissay",
     "release0794": "Aggiunti il controllo qualità JAS per il round 2026, il caso .nissay con stato procedurale verificato e la chiusura delle scelte sostitutive. Aggiornamento editoriale: corpus APS dell'11 ottobre e RR1/RR2 invariati.",
     "release0795": "WikiLeaks (2008/2010): ordine sul dominio, ritiro del DNS autorevole, hosting e pagamenti distinti come leve di controllo.",
-    "release0796": "Sette casi sul controllo dell’accesso a Internet in ordine cronologico (2008–2026), in quattro lingue: contenuti e fonti invariati, con i due episodi WikiLeaks distinti."
+    "release0796": "Sette casi sul controllo dell’accesso a Internet in ordine cronologico (2008–2026), in quattro lingue: contenuti e fonti invariati, con i due episodi WikiLeaks distinti.",
+    "release0797": "Due posizioni del 4 novembre 2026, BRS Media sulla valutazione dei domini comunitari e INTA sulle aste private: Note dal campo e capitolo Contese, senza modifiche ai dati APS."
   },
   "de": {
     "brand": "Marke",
@@ -7725,7 +7727,8 @@
     "nissaySourceIana": "IANA · Delegation von .nissay",
     "release0794": "Ergänzt die JAS-Qualitätskontrolle für 2026, den quellenbelegten Fall .nissay und das Ende der Frist für Ersatz-Zeichenfolgen. Nur redaktionell: APS-Bestand vom 11. Oktober und RR1/RR2 unverändert.",
     "release0795": "WikiLeaks (2008/2010): gerichtliche Domainsperre, Ausfall des autoritativen DNS, Hosting und Zahlungen als getrennte Kontrollpunkte.",
-    "release0796": "Sieben Fallbeispiele zur Internetzugangskontrolle in chronologischer Reihenfolge (2008–2026), in vier Sprachen; unveränderte Belege und getrennte WikiLeaks-Ereignisse."
+    "release0796": "Sieben Fallbeispiele zur Internetzugangskontrolle in chronologischer Reihenfolge (2008–2026), in vier Sprachen; unveränderte Belege und getrennte WikiLeaks-Ereignisse.",
+    "release0797": "Zwei Positionen vom 4. November 2026: BRS Media zur Wirkung von Community-Domains und INTA zu privaten Auktionen; Feldnotizen und Konflikte, ohne Änderung der APS-Daten."
   },
   "fr": {
     "brand": "Marque",
@@ -10301,6 +10304,7 @@
     "nissaySourceIana": "IANA · délégation de .nissay",
     "release0794": "Ajout du contrôle qualité JAS pour 2026, du cas documenté .nissay et de la clôture du choix des chaînes de remplacement. Mise à jour éditoriale uniquement : corpus APS du 11 octobre et RR1/RR2 inchangés.",
     "release0795": "WikiLeaks (2008/2010) : ordonnance visant le domaine, retrait du DNS faisant autorité, hébergement et paiements distingués.",
-    "release0796": "Sept études de cas sur le contrôle de l’accès à Internet, classées chronologiquement (2008–2026) en quatre langues ; sources inchangées et épisodes WikiLeaks distincts."
+    "release0796": "Sept études de cas sur le contrôle de l’accès à Internet, classées chronologiquement (2008–2026) en quatre langues ; sources inchangées et épisodes WikiLeaks distincts.",
+    "release0797": "Deux positions du 4 novembre 2026 : BRS Media sur les domaines communautaires et INTA sur les enchères privées, dans les Notes de terrain et les conflits, sans changement des données APS."
   }
 }
