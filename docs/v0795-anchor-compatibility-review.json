@@ -1,0 +1,74 @@
+{
+  "reviewedOn": "2026-11-06",
+  "base": "c5fb79225488abf787602872585a398705579a54",
+  "changedPaths": [
+    "assets/reader-first.js",
+    "behind-the-round/de/who-controls-internet-access/index.html",
+    "behind-the-round/en/who-controls-internet-access/index.html",
+    "behind-the-round/fr/who-controls-internet-access/index.html",
+    "behind-the-round/it/who-controls-internet-access/index.html",
+    "de/index.html",
+    "en/index.html",
+    "fr/index.html",
+    "index.html",
+    "it/index.html",
+    "scripts/reader_first.cjs",
+    "scripts/usability_remediation_qa.cjs"
+  ],
+  "proof": [
+    {
+      "file": "index.html",
+      "publishedIdsRetained": 523,
+      "publishedHeadingTargetsChecked": 6,
+      "sha256": "d25565d54c93f981c9878dcb204cf01dd43e02c8cda1a42327db5290ec862f56"
+    },
+    {
+      "file": "en/index.html",
+      "publishedIdsRetained": 523,
+      "publishedHeadingTargetsChecked": 6,
+      "sha256": "ee4f7b09f5f36dc97b45834080efd210c11283fbab6c491ad1ab676b909f6ab8"
+    },
+    {
+      "file": "it/index.html",
+      "publishedIdsRetained": 523,
+      "publishedHeadingTargetsChecked": 6,
+      "sha256": "42b0c81c064307492bea30653d39d8731e22fce1c71d350e879d455198eccf09"
+    },
+    {
+      "file": "de/index.html",
+      "publishedIdsRetained": 523,
+      "publishedHeadingTargetsChecked": 6,
+      "sha256": "d94eee8ba0303416ffb5429427dc8ab9b06e43a8886820194e8c3d4bc0e28b8f"
+    },
+    {
+      "file": "fr/index.html",
+      "publishedIdsRetained": 523,
+      "publishedHeadingTargetsChecked": 6,
+      "sha256": "663893646d98c655ebf9bf01cb192035d6fb658b203973c4eceae1df35af16a1"
+    },
+    {
+      "file": "behind-the-round/en/who-controls-internet-access/index.html",
+      "publishedIdsRetained": 32,
+      "publishedHeadingTargetsChecked": 5,
+      "sha256": "fdda29d05105ad689f7d28a26aa973d1adc7b6eedadc0a7d6e289e387e5f554e"
+    },
+    {
+      "file": "behind-the-round/it/who-controls-internet-access/index.html",
+      "publishedIdsRetained": 32,
+      "publishedHeadingTargetsChecked": 5,
+      "sha256": "1fb1a8ac65d2c7c3ca9b8f5432cabdb75731cc26a492cf5cdacd3ee37c66e4c1"
+    },
+    {
+      "file": "behind-the-round/de/who-controls-internet-access/index.html",
+      "publishedIdsRetained": 32,
+      "publishedHeadingTargetsChecked": 5,
+      "sha256": "6059877c9c291ab7e8af84639bea898ec0e277ca299ae6f1a36cb7847382823a"
+    },
+    {
+      "file": "behind-the-round/fr/who-controls-internet-access/index.html",
+      "publishedIdsRetained": 32,
+      "publishedHeadingTargetsChecked": 5,
+      "sha256": "ef0ea8130e3586922602b964c7696b94e966c7eb171262bf395026082c07ce62"
+    }
+  ]
+}

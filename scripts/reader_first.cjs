@@ -109,6 +109,27 @@ function refineLugano(d, lang) {
   for (const id of ids) assert.ok(section.querySelectorAll('[id]').length && d.getElementById(id) && section.contains(d.getElementById(id)), 'Lost Lugano anchor: ' + id);
   return {before, after: [...section.children].map(describe), originalBlocks: before.length, motivationsVisible: true, comparisonLabel: labels[lang], retainedExistingIds: ids.length, retainedLinks: originalLinks.length, evidenceUnchanged: true};
 }
+// Stable v0.7.94 heading fragments must survive extra editorial sections.
+// The other headings already have semantic IDs used by ARIA and MUST NOT be renamed.
+function preserveAccessHeadingIds(section) {
+  const native=section.id==='governance-access';
+  if(!native && !section.matches('main.accessArticle'))return;
+  const stem='reader-anchor-'+(native?'governance-access':'reader-main')+'-';
+  const intro=section.querySelector('.accessIntro > h2');
+  const panels=[...section.querySelectorAll('section.accessPanel > h2')];
+  assert.ok(intro && panels.length===4,'Unexpected access guide headings; abort compatibility fix');
+  if(native){
+    const title=section.querySelector('.ctdNativeHeading');
+    assert.ok(title && !title.id,'Unexpected original access title ID');
+    title.id=stem+'1';
+  }
+  assert.ok(!intro.id,'Unexpected original access intro ID');
+  intro.id=stem+(native?2:1);
+  for(const [i,heading] of panels.entries()){
+    assert.ok(!heading.id,'Unexpected original access panel ID');
+    heading.id=stem+(i+(native?6:5));
+  }
+}
 function headingsFor(section) { return [...section.querySelectorAll('h2')].filter(h => !h.closest('[data-reader-ui]')); }
 function toc(d, section, lang, independent = false) {
   const curated = !independent && require('./usability_remediation.cjs').curatedToc(d, section, lang);
@@ -159,6 +180,7 @@ function nativePage(lang, filename) {
     const section = d.getElementById(id); assert.ok(section, 'Missing chapter: ' + id);
     const menu = d.querySelector('.tab[data-target="' + id + '"]');
     titles[id] = menu?.textContent.trim() || section.querySelector('h2')?.textContent.trim() || L.routes[id][0];
+    preserveAccessHeadingIds(section);
     headingsFor(section).forEach((h, i) => { if (!h.id) h.id = 'reader-anchor-' + id + '-' + (i + 1); });
   }
   const reorder = {
@@ -271,6 +293,7 @@ function independentPage(file) {
   trail.append(link(d, L.ui.home, 'overview', null, base), link(d, L.ui.back, area, null, base)); main.prepend(trail);
   // Establish the stable main ID before assigning any contents anchors.
   if (!main.id) main.id = 'reader-main';
+  preserveAccessHeadingIds(main);
   const index = toc(d, main, lang, true); if (index) {
     const heading = main.querySelector('h1'); if (heading) heading.after(index); else trail.after(index);
   }

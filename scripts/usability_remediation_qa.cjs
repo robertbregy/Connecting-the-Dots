@@ -128,6 +128,9 @@ async function browsers(){
     for(const [id] of Object.entries(aliases)){
      const tab=id.split('-part-')[0];await go(page,lang,tab,id);
      await page.waitForFunction(id=>{let n=document.getElementById(id);if(!n||!n.getBoundingClientRect().height)return false;for(;n;n=n.parentElement)if(n.tagName==='DETAILS'&&!n.open)return false;return true;},id);
+      // app.js schedules the actual scroll in requestAnimationFrame. Wait for that scroll,
+      // but still fail if the original target does not enter the viewport within 3.5s.
+      await page.waitForFunction(id=>{const el=document.getElementById(id);if(!el)return false;const r=el.getBoundingClientRect();return r.height>0&&r.y>=0&&r.y<innerHeight;},id,{timeout:3500});
      const rect=await page.locator('#'+id).boundingBox();assert.ok(rect&&rect.y>=0&&rect.y<900,'Legacy destination not reached: '+id);
     }
     await go(page,lang,'economics');assert.equal(await page.locator('#economics > .sectionToc a').count(),6);
