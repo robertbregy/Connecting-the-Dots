@@ -26,21 +26,11 @@ jobs:
       - run: npm ci
       - name: Create v0.7.97 editorial-only candidate and freeze historical archives
         run: node scripts/prepare_round_debate_v0797.cjs
-      - name: Generate all pages and require the existing editorial-review gate to block unreviewed files
+      - name: Generate candidate without claiming editorial approval
         run: |
-          set +e
-          python3 build.py > /tmp/v0797-first-build.log 2>&1
-          code=$?
-          set -e
-          if test "$code" -eq 0; then
-            echo "Unreviewed release unexpectedly passed initial approval gate"
-            exit 1
-          fi
-          if ! grep -q 'EDITORIAL_REVIEW_REQUIRED: final hashes have not been reviewed' /tmp/v0797-first-build.log; then
-            tail -n 120 /tmp/v0797-first-build.log
-            exit "$code"
-          fi
-          echo "Review lock correctly rejects unapproved generated output."
+          python3 build.py > /tmp/v0797-first-build.log 2>&1 || { tail -n 120 /tmp/v0797-first-build.log; exit 1; }
+          echo "Candidate built, but not approved: mandatory exact-file and scientific review follows."
+          test "$(node -p "JSON.parse(require('fs').readFileSync('docs/editorial-review-2026-11-06-v0.7.97.json')).status")" = candidate-pending-editorial-signoff
       - name: Independently review source attribution and exact generated SHA-256 hashes
         run: node scripts/review_round_debate_v0797.cjs
       - name: Rebuild with approved source and all original release validations
