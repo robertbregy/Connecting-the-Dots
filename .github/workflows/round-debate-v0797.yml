@@ -2,7 +2,9 @@ name: v0.7.97 · source-backed BRS and INTA editorial release candidate
 on:
   push:
     branches: ['feat/round-debate-v0797-20261106']
-    paths: ['.github/workflows/round-debate-v0797.yml']
+    paths:
+      - '.github/workflows/round-debate-v0797.yml'
+      - 'scripts/validate_multilingual.js'
   workflow_dispatch:
 permissions:
   contents: write
