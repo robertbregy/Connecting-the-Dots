@@ -1,0 +1,62 @@
+name: v0.7.97 · source-backed BRS and INTA editorial release candidate
+on:
+  push:
+    branches: ['feat/round-debate-v0797-20261106']
+    paths: ['.github/workflows/round-debate-v0797.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  prepare-review-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - name: Prepare version metadata, translations, exact old ZIP fingerprint and pending editorial review
+        run: node scripts/prepare_round_debate_v0797.cjs
+      - name: Rebuild complete site and new deterministic technical package without changing research archives
+        run: python3 build.py
+      - name: Source-to-render checks for four languages and untouched scientific evidence
+        run: |
+          node scripts/validate_round_debate_v0797.cjs
+          node scripts/validate_internet_access.js
+          node scripts/validate_multilingual.js
+          CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
+      - name: Review actual generated file hashes, attribute stakeholder views, and approve exact source fingerprints
+        run: |
+          node scripts/review_round_debate_v0797.cjs
+          node scripts/verify_ia_b2_parity.cjs
+      - name: Independent content continuity check against the original immutable version A
+        run: |
+          mkdir -p ../baseline
+          git archive refs/remotes/origin/safety/main-v0.7.78-before-b2-switch-20261013 | tar -xf - -C ../baseline
+          python3 scripts/audit_content_continuity.py
+      - name: Verify deterministic release output on unchanged sources
+        run: |
+          sha256sum downloads/connecting-the-dots-data-pack-v0.7.97.zip > /tmp/ctd-before.sha
+          python3 build.py
+          sha256sum downloads/connecting-the-dots-data-pack-v0.7.97.zip > /tmp/ctd-after.sha
+          diff -u /tmp/ctd-before.sha /tmp/ctd-after.sha
+          node scripts/verify_ia_b2_parity.cjs
+          node scripts/validate_round_debate_v0797.cjs
+      - name: Commit reviewed candidate only if the branch has not advanced
+        run: |
+          git fetch origin "$GITHUB_REF_NAME"
+          test "$(git rev-parse FETCH_HEAD)" = "$(git rev-parse HEAD)" || { echo 'A newer branch revision exists; refusing to overwrite'; exit 1; }
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --cached --quiet && { echo 'No reviewed change to commit'; exit 1; }
+          git commit -m 'release: v0.7.97 BRS/INTA context, four languages, exact archive review [skip build]'
+          git push origin "HEAD:$GITHUB_REF_NAME"
+          echo "REVIEWED_V0797_COMMIT=$(git rev-parse HEAD)"
