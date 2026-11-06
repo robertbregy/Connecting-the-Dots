@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "editorialLayer": "living-commentary-not-official-APS-or-frozen-RR1-RR2",
+  "reviewedOn": "2026-11-06",
+  "policy": "Two dated third-party positions published 4 November 2026. Neither is an ICANN decision, a new 2026 Round applicant outcome, a community gTLD designation for .lugano, or a change to official APS data. Distinguish BRS request and INTA criticism from binding AGB Section 5.2.3.",
+  "items": [
+    {
+      "id": "brs-cpe-outcomes",
+      "publishedOn": "2026-11-04",
+      "kind": "stakeholder-request",
+      "entity": "BRS Media",
+      "sourceIds": [
+        "brs-media",
+        "icann-agb"
+      ]
+    },
+    {
+      "id": "inta-private-auctions",
+      "publishedOn": "2026-11-04",
+      "kind": "stakeholder-analysis",
+      "entity": "INTA",
+      "sourceIds": [
+        "inta",
+        "icann-agb",
+        "icann-faq"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "brs-media",
+      "kind": "stakeholder-position",
+      "url": "https://brsmedia.com/cperesponse/",
+      "label": "BRS Media · Independent review of CPE outcomes · 4 Nov 2026"
+    },
+    {
+      "id": "inta",
+      "kind": "stakeholder-analysis",
+      "url": "https://www.inta.org/news-and-press/inta-news/icanns-new-generic-top-level-domain-applications-revealed/",
+      "label": "INTA · ICANN’s new gTLD applications revealed · 4 Nov 2026"
+    },
+    {
+      "id": "icann-agb",
+      "kind": "official-rule",
+      "url": "https://newgtldprogram-2026-agb.icann.org/en/9-module-5-contention-set-resolution.html",
+      "label": "ICANN · 2026 Applicant Guidebook · Module 5, §§ 5.2–5.3"
+    },
+    {
+      "id": "icann-faq",
+      "kind": "official-rule",
+      "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/string-contention-resolution/faqs/general/how-are-the-finalized-contention-sets-resolved",
+      "label": "ICANN · How are finalized contention sets resolved?"
+    }
+  ],
+  "languages": {
+    "it": {
+      "sectionEyebrow": "Dibattito documentato · 4 novembre 2026",
+      "sectionTitle": "Dopo le regole, chi misura i risultati?",
+      "sectionLead": "Due interventi esterni al round ICANN 2026, pubblicati il 4 novembre. Sono posizioni attribuite, non decisioni ICANN né nuove statistiche APS.",
+      "brsType": "Richiesta di un operatore",
+      "brsTitle": "Domini comunitari: le regole hanno funzionato?",
+      "brsBody": "BRS Media chiede una valutazione indipendente degli esiti della Community Priority Evaluation (CPE) del round 2012: adozione da parte delle comunità, rappresentatività nel tempo, restrizioni alle registrazioni e cambi di gestore. È una richiesta di un operatore interessato, non una conclusione di ICANN né un audit già svolto.",
+      "brsReading": "La domanda da conservare nel 2026 è come misurare il beneficio reale, oltre alla conformità alle regole. Per i domini cittadini il parallelismo riguarda l’utilità pubblica, non la classificazione di .lugano come candidatura comunitaria.",
+      "intaType": "Analisi di un’associazione",
+      "intaTitle": "Aste private e marchi: una posizione, non una nuova regola",
+      "intaBody": "INTA, associazione che rappresenta interessi dei titolari di marchi, critica il divieto delle aste private nel round 2026. La norma era già nel Guidebook: le contese passano dai percorsi ICANN, tra cui CPE e aste ICANN; gli accordi privati destinati a risolverle sono vietati.",
+      "intaReading": "La novità è la presa di posizione INTA, non una modifica del regolamento e nemmeno una nuova contesa o un risultato di candidatura.",
+      "sourceLabel": "Leggi la fonte",
+      "ruleLabel": "Verifica la regola ICANN",
+      "backLabel": "Leggi le due note dal campo",
+      "contextTitle": "Una regola, incentivi differenti",
+      "contextLead": "Il divieto di risoluzione privata delle contese è già in vigore nel round 2026. INTA lo critica: la critica è notizia, non la regola.",
+      "contextBody": "Nel Guidebook ICANN la Community Priority Evaluation e le aste ICANN costituiscono le vie previste per risolvere una contesa. Le aste private e gli altri accordi concepiti per risolverla privatamente sono vietati. Questa distinzione è decisiva per capire il dibattito sui marchi, sui costi e sugli incentivi, senza attribuire esiti a singole candidature."
+    },
+    "en": {
+      "sectionEyebrow": "Documented debate · 4 November 2026",
+      "sectionTitle": "Beyond compliance: who measures outcomes?",
+      "sectionLead": "Two outside perspectives on the 2026 ICANN round, published on 4 November. Attributed stakeholder positions, not ICANN decisions or new APS statistics.",
+      "brsType": "Stakeholder request",
+      "brsTitle": "Community domains: did the rules deliver?",
+      "brsBody": "BRS Media calls for an independent assessment of Community Priority Evaluation (CPE) outcomes from the 2012 round: community adoption, continuing representation, registration restrictions, and changes of registry operator. This is a request by an interested operator, not an ICANN finding or an already-completed audit.",
+      "brsReading": "The question for 2026 is how to measure actual community benefit alongside compliance. For city domains, the parallel concerns public value, not a claim that .lugano is a community application.",
+      "intaType": "Association analysis",
+      "intaTitle": "Private auctions and trademarks: a position, not a rule change",
+      "intaBody": "INTA, representing trademark-owner interests, criticizes the prohibition of private auctions in the 2026 round. The rule was already in the Guidebook: contention follows ICANN processes, including CPE and ICANN auctions; private arrangements designed to resolve contention are prohibited.",
+      "intaReading": "What is new is INTA's position, not an amendment to the rules, a newly identified contention set, or an application outcome.",
+      "sourceLabel": "Read the source",
+      "ruleLabel": "Check the ICANN rule",
+      "backLabel": "Read both field observations",
+      "contextTitle": "One rule, competing incentives",
+      "contextLead": "The ban on private contention resolution already applies to the 2026 round. INTA criticizes it: the criticism is news; the rule is not.",
+      "contextBody": "Under ICANN's Guidebook, Community Priority Evaluation and ICANN auctions are designated routes for resolving contention. Private auctions and other arrangements designed to settle it privately are prohibited. This matters to the debate over trademark protection, costs and incentives without prejudging individual applications."
+    },
+    "de": {
+      "sectionEyebrow": "Dokumentierte Debatte · 4. November 2026",
+      "sectionTitle": "Nach den Regeln: Wer misst die Wirkung?",
+      "sectionLead": "Zwei externe Positionen zur ICANN-Runde 2026 vom 4. November. Es sind Aussagen von Interessenvertretern, keine ICANN-Entscheidungen oder neuen APS-Zahlen.",
+      "brsType": "Forderung eines Betreibers",
+      "brsTitle": "Community-Domains: Haben die Regeln ihr Ziel erreicht?",
+      "brsBody": "BRS Media fordert eine unabhängige Untersuchung der Ergebnisse der Community Priority Evaluation (CPE) aus der Runde 2012: Nutzung durch die Gemeinschaften, dauerhafte Repräsentation, Registrierungsbeschränkungen und Betreiberwechsel. Es handelt sich um die Forderung eines interessierten Unternehmens, nicht um ein ICANN-Ergebnis oder eine bereits durchgeführte Prüfung.",
+      "brsReading": "Die offene Frage für 2026 lautet, wie sich der tatsächliche Nutzen zusätzlich zur Einhaltung von Regeln messen lässt. Für Städtedomains betrifft der Vergleich ihren öffentlichen Nutzen, nicht eine Einstufung von .lugano als Community-Bewerbung.",
+      "intaType": "Analyse eines Verbands",
+      "intaTitle": "Private Auktionen und Marken: Kritik, keine Regeländerung",
+      "intaBody": "INTA, ein Verband mit Interessenvertretung für Markeninhaber, kritisiert das Verbot privater Auktionen in der Runde 2026. Das Verbot steht bereits im Guidebook: Konflikte werden über ICANN-Verfahren wie CPE und ICANN-Auktionen gelöst; private Absprachen zur Konfliktlösung sind untersagt.",
+      "intaReading": "Neu ist die Stellungnahme der INTA, nicht eine neue Regel, ein neuer Konflikt oder ein Bewerbungsergebnis.",
+      "sourceLabel": "Quelle lesen",
+      "ruleLabel": "ICANN-Regel prüfen",
+      "backLabel": "Beide Feldnotizen lesen",
+      "contextTitle": "Eine Regel, unterschiedliche Anreize",
+      "contextLead": "Das Verbot privater Konfliktlösungen gilt bereits für die Runde 2026. INTA kritisiert es: Neu ist die Kritik, nicht die Regel.",
+      "contextBody": "Nach dem ICANN-Guidebook sind Community Priority Evaluation und ICANN-Auktionen die vorgesehenen Wege zur Beilegung von Konflikten. Private Auktionen und sonstige private Vereinbarungen zur Konfliktlösung sind verboten. Das ist zentral für die Diskussion um Markenrechte, Kosten und Anreize, ohne Entscheidungen zu einzelnen Bewerbungen vorwegzunehmen."
+    },
+    "fr": {
+      "sectionEyebrow": "Débat documenté · 4 novembre 2026",
+      "sectionTitle": "Au-delà des règles : qui mesure les résultats ?",
+      "sectionLead": "Deux prises de position extérieures au round ICANN 2026, publiées le 4 novembre. Ce ne sont ni des décisions d’ICANN ni de nouvelles statistiques APS.",
+      "brsType": "Demande d’un opérateur",
+      "brsTitle": "Domaines communautaires : les règles ont-elles produit leurs effets ?",
+      "brsBody": "BRS Media demande une évaluation indépendante des résultats de la Community Priority Evaluation (CPE) du round 2012 : adoption par les communautés, représentation durable, restrictions d’enregistrement et changements d’opérateur. Il s’agit de la demande d’un acteur intéressé, non d’une conclusion d’ICANN ou d’un audit déjà réalisé.",
+      "brsReading": "La question pour 2026 est de mesurer les bénéfices réels, au-delà de la conformité. Pour les domaines urbains, le parallèle porte sur l’utilité publique, sans assimiler .lugano à une candidature communautaire.",
+      "intaType": "Analyse d’une association",
+      "intaTitle": "Enchères privées et marques : une position, pas une nouvelle règle",
+      "intaBody": "INTA, qui représente les intérêts des titulaires de marques, critique l’interdiction des enchères privées pour le round 2026. Cette règle figurait déjà dans le Guidebook : les conflits se résolvent par les procédures ICANN, notamment la CPE et les enchères ICANN ; les accords privés visant à résoudre ces conflits sont interdits.",
+      "intaReading": "La nouveauté est la position d’INTA, pas une modification du règlement ni un nouveau conflit ou un résultat de candidature.",
+      "sourceLabel": "Lire la source",
+      "ruleLabel": "Vérifier la règle ICANN",
+      "backLabel": "Lire les deux notes de terrain",
+      "contextTitle": "Une règle, des intérêts divergents",
+      "contextLead": "L’interdiction des règlements privés des conflits s’applique déjà au round 2026. INTA la critique : c’est la critique qui est nouvelle, pas la règle.",
+      "contextBody": "Selon le Guidebook d’ICANN, la Community Priority Evaluation et les enchères ICANN sont des voies prévues pour résoudre les conflits. Les enchères privées et autres accords destinés à les régler de façon privée sont interdits. Cette distinction éclaire les débats sur les marques, les coûts et les incitations, sans présumer des décisions concernant des candidatures individuelles."
+    }
+  }
+}
