@@ -151,7 +151,13 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.equal(standaloneDocument.querySelectorAll('[data-editorial-revision]').length,4,page+' dated case histories must remain visible');
   assert.ok(standalone.includes(translations.behindTitle)&&standalone.includes('WDO2627T-T45217'),page+' translated field note missing');
   const articleSchema=JSON.parse(standaloneDocument.querySelector('script[type="application/ld+json"]').textContent);
-  assert.equal(articleSchema.dateModified,'2026-10-26',page+' dated field-note collection review missing');
+  // The CollectionPage changes on the latest dated editorial item, not only on its original investigations.
+  const fieldReviewed=JSON.parse(fs.readFileSync(path.join(root,'data/field_investigations.json'),'utf8')).lastReviewed;
+  const debateReviewed=JSON.parse(fs.readFileSync(path.join(root,'data/round_debate_20261106.json'),'utf8')).reviewedOn;
+  const currentPublished=JSON.parse(fs.readFileSync(path.join(root,'publication.json'),'utf8')).releasedOn;
+  const expectedCollectionReview=[fieldReviewed,debateReviewed].sort().at(-1);
+  assert.ok(expectedCollectionReview<=currentPublished,page+' collection review after publication date');
+  assert.equal(articleSchema.dateModified,expectedCollectionReview,page+' dated field-note collection review missing');
   assert.equal(articleSchema.image,base+'assets/og-preview.png',page+' field-note Article image');
   assert.ok(translations.behindMetaDescription.length<=160,page+' overlong field-note description');
   assert.equal(articleSchema.citation.length,24,page+' schema citation list incomplete');
