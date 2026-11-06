@@ -4452,7 +4452,20 @@
       "docs/audits/2026-11-06/assembly-workflow-tests.json"
     ],
     "qualityGates": "Required: repeated deterministic CI assembly; exact local/remote Git-tree equality; independent A/B and browser jobs before main; Pages deployment and live-byte checks; published-site browser audit.",
-    "priorReviewEvidenceScope": "Inherited layout, navigation, anchor and CI24 review records describe their original versions; they are preserved as history and are not represented as new v0.7.98 browser evidence."
+    "priorReviewEvidenceScope": "Inherited layout, navigation, anchor and CI24 review records describe their original versions; they are preserved as history and are not represented as new v0.7.98 browser evidence.",
+    "remoteAssemblyEvidence": {
+      "run": "https://github.com/robertbregy/Connecting-the-Dots/actions/runs/42311673214",
+      "conclusion": "success",
+      "sourceCommit": "1af7e7f25264ae2d5c71859564fe000448e2d8c6",
+      "assembledCommit": "15f8d86314aaa48736c5b5d1640a470b06ed28e2",
+      "expectedLocalTree": "4edcdeef5a4ab0746324eb6f1a990ded8e756a33",
+      "actualRemoteTree": "4edcdeef5a4ab0746324eb6f1a990ded8e756a33",
+      "wholeTreeIdentical": true,
+      "repeatedBuild": "success",
+      "releaseAndExactFileGuards": "success",
+      "temporaryWorkflowRemoved": true,
+      "scope": "This post-assembly record changes only this review document. Product sources, generated pages, data assets and every package retain the verified assembled bytes. Independent A/B and browser acceptance remain required before main."
+    }
   },
   "readerFirstEvidence": {
     "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
