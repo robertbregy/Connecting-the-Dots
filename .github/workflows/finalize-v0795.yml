@@ -39,7 +39,7 @@ jobs:
       - name: Verify original A/B content and immutable archives
         run: |
           mkdir -p ../baseline
-          git archive safety/main-v0.7.78-before-b2-switch-20261013 | tar -xf - -C ../baseline
+          git archive refs/remotes/origin/safety/main-v0.7.78-before-b2-switch-20261013 | tar -xf - -C ../baseline
           python3 scripts/audit_content_continuity.py
       - name: Make reviewed candidate patch without overwriting any branch
         run: |
