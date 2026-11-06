@@ -1,0 +1,75 @@
+name: Full audit of the published site
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['qa/published-site-20261106']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ctd-published-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  published-browser:
+    name: Published browser audit (${{ matrix.suite }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        suite: [audience, responsive]
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install controlled browser and accessibility tools
+        run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Confirm the published release matches this audit source
+        run: |
+          python3 - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          root=Path.cwd()
+          base='https://robertbregy.github.io/Connecting-the-Dots/'
+          checked=[]
+          for name in ['publication.json','index.html',*[lang+'/index.html' for lang in ('it','en','de','fr')]]:
+              with urlopen(Request(base+name,headers={'User-Agent':'ConnectingTheDots-PublishedAudit/1.0'}),timeout=30) as response:
+                  body=response.read()
+              if hashlib.sha256(body).digest()!=hashlib.sha256((root/name).read_bytes()).digest():
+                  raise SystemExit('PUBLISHED AUDIT SOURCE MISMATCH: '+name)
+              checked.append(name)
+          print('PUBLISHED_AUDIT_SOURCE_VERIFIED',json.dumps({'version':json.loads((root/'publication.json').read_text())['version'],'files':checked}))
+          PY
+      - name: Exercise the real published pages
+        env:
+          CTD_TEST_BASE: https://robertbregy.github.io/Connecting-the-Dots/
+          CTD_USABILITY_QA: audit-published-responsive
+          AUDIT_SUITE: ${{ matrix.suite }}
+        run: |
+          if test "$AUDIT_SUITE" = audience; then
+            node scripts/audit_audience.cjs
+          else
+            node scripts/usability_remediation_qa.cjs
+          fi
+      - name: Preserve complete audit evidence
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: published-site-${{ matrix.suite }}-${{ github.sha }}
+          path: |
+            audit-20261019/audience-report.json
+            audit-20261019/audience-*.png
+            audit-published-responsive/
+          if-no-files-found: warn
