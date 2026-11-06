@@ -3,7 +3,7 @@
 'use strict';
 const fs=require('node:fs'),assert=require('node:assert/strict');
 const p='scripts/usability_remediation_qa.cjs',original=fs.readFileSync(p,'utf8');
-const match="      const rect=await page.locator('#'+id).boundingBox();assert.ok(rect&&rect.y>=0&&rect.y<900,'Legacy destination not reached: '+id);";
+const match="     const rect=await page.locator('#'+id).boundingBox();assert.ok(rect&&rect.y>=0&&rect.y<900,'Legacy destination not reached: '+id);";
 assert.equal(original.split(match).length,2,'Original legacy-link assertion changed: review test instead of patching blindly');
 const replacement="      // app.js schedules the actual scroll in requestAnimationFrame. Wait for that scroll,\n"+
 "      // but still fail if the original target does not enter the viewport within 3.5s.\n"+
