@@ -18,11 +18,11 @@ concurrency:
 jobs:
   verify-live:
     if: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - name: Checkout the actual Pages source commit
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
           persist-credentials: false
@@ -129,7 +129,7 @@ jobs:
               raise SystemExit("PUBLIC PAGES MISMATCH: verified source does not match live bytes")
           PY
       - name: Set up Node for controlled published-page measurements
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: npm
@@ -147,7 +147,7 @@ jobs:
           fi
       - name: Save live-release verification evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: pages-live-smoke
           path: |

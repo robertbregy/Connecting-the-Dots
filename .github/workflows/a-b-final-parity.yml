@@ -10,16 +10,16 @@ permissions:
   contents: read
 jobs:
   compare:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 12
     steps:
       - name: Check out current B version
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           path: current
           persist-credentials: false
       - name: Check out frozen A backup
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: safety/main-v0.7.78-before-b2-switch-20261013
           path: baseline
@@ -29,7 +29,7 @@ jobs:
         run: python3 scripts/audit_content_continuity.py
       - name: Preserve detailed content parity evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ab-content-continuity-report
           path: current/content-continuity-audit.json

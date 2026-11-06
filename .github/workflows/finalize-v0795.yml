@@ -9,17 +9,17 @@ permissions:
   contents: read
 jobs:
   prepare:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: npm
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - run: npm ci
@@ -52,34 +52,34 @@ jobs:
           git diff --cached --binary > w95-reviewed.patch
           test -s w95-reviewed.patch
           echo 'Reviewed candidate patch prepared'
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: w95-reviewed-candidate
           path: w95-reviewed.patch
           retention-days: 7
   regression:
     needs: prepare
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 25
     strategy:
       fail-fast: false
       matrix:
         check: [layout, export-settled, export-cold, economics, navigation, legacy-links, accessibility, usability-remediation]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v7
         with:
           name: w95-reviewed-candidate
           path: .
       - name: Apply only the reviewed verified candidate
         run: git apply --check w95-reviewed.patch && git apply w95-reviewed.patch
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: npm
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - name: Install original regression dependencies
@@ -110,7 +110,7 @@ jobs:
           print(status)
           raise SystemExit(result.returncode)
           PY
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         if: always()
         with:
           name: w95-acceptance-${{ matrix.check }}
@@ -123,14 +123,14 @@ jobs:
           if-no-files-found: warn
   verified-candidate:
     needs: [prepare, regression]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v7
         with:
           name: w95-reviewed-candidate
           path: .

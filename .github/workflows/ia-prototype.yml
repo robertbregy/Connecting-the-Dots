@@ -18,13 +18,13 @@ permissions:
 
 jobs:
   ia-prototype:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 18
     steps:
       - name: Check out isolated feature branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: npm
@@ -52,7 +52,7 @@ jobs:
           node prototype/ia-v1/baseline-probes.cjs
       - name: Attach independent QA evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: connecting-dots-ia-lab-qa
           path: audit-ia/

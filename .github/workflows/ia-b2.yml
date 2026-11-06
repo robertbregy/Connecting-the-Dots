@@ -36,18 +36,18 @@ concurrency:
 
 jobs:
   build-and-audit:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 25
     steps:
       - name: Checkout feature branch only
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Install Node 22
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: npm
       - name: Install Python 3.12
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - name: Install baseline dependencies
@@ -78,7 +78,7 @@ jobs:
           node scripts/audit_ia_b2.cjs
       - name: Upload test evidence and screenshots
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ia-b2-integration-audit
           path: audit-ia-b2/

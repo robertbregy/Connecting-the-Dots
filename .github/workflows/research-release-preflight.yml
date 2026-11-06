@@ -36,17 +36,17 @@ concurrency:
 jobs:
   candidate:
     name: Create and verify reproducible RR2 candidate
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - name: Check out the source and the immutable RR1 tag
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
           persist-credentials: false
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
@@ -64,7 +64,7 @@ jobs:
           echo "REPRODUCIBLE ARCHIVE PASS: two independently produced ZIP files and manifests are byte-identical"
 
       - name: Upload scientific prepublication evidence
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: rr2-candidate-${{ github.sha }}
           path: dist/research/RR2/
@@ -73,7 +73,7 @@ jobs:
 
   rr1-zenodo-record:
     name: Probe public Zenodo RR1 concept DOI (not repository integration)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 4
     steps:
       - name: Read public RR1 metadata, without assuming GitHub integration
@@ -111,7 +111,7 @@ jobs:
           print("RR1 ZENODO EXTERNAL AUDIT: " + json.dumps(result, sort_keys=True))
           PY
       - name: Preserve the independently fetched public DOI evidence
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: rr1-zenodo-public-check-${{ github.sha }}
           path: rr1-zenodo-public-check.json
@@ -122,13 +122,13 @@ jobs:
     name: Verify published RR2 belongs to the original RR1 Zenodo series
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.zenodo_rr2_record_id != '' }}
     needs: candidate
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           persist-credentials: false
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - name: Compare public Zenodo concept-record IDs
@@ -137,7 +137,7 @@ jobs:
         run: |
           python3 scripts/scientific_release.py verify-zenodo --new-record-id "$ZENODO_RR2_RECORD_ID" --out-dir dist/research/RR2
       - name: Keep the verified version-chain evidence
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: rr2-zenodo-version-chain-${{ github.sha }}
           path: dist/research/RR2/RR2-zenodo-version-verification.json

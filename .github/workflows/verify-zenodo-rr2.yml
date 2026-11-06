@@ -19,11 +19,11 @@ concurrency:
 jobs:
   verify:
     name: Independently verify Zenodo RR2 and RR1 concept continuity
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - name: Query public Zenodo concept series, without assuming publication
@@ -111,7 +111,7 @@ jobs:
         run: python3 scripts/scientific_release.py verify-zenodo --new-record-id "$RR2_RECORD_ID" --out-dir dist/research/RR2
       - name: Save source-backed public evidence of DOI status
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: rr2-zenodo-status-${{ github.sha }}
           path: |

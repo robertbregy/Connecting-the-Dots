@@ -36,17 +36,17 @@ concurrency:
 
 jobs:
   browser-qa:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: npm
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - name: Install dependencies and Chromium
@@ -74,7 +74,7 @@ jobs:
           python3 scripts/run_browser_regressions.py
       - name: Attach visual evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ctd-browser-audit-${{ github.sha }}
           path: |
@@ -93,15 +93,15 @@ jobs:
 
   independent-qa:
     name: Independent four-language and Explorer audit
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 40
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: npm
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - name: Install headless browser dependencies
@@ -117,7 +117,7 @@ jobs:
           node scripts/deep_audit_20261011.js
       - name: Preserve independent audit evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ctd-independent-audit-${{ github.sha }}
           path: |
@@ -127,15 +127,15 @@ jobs:
 
   atlas-qa:
     name: APS Atlas all-language interaction and mobile regression
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: npm
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - name: Install headless browser dependencies
@@ -151,7 +151,7 @@ jobs:
           node scripts/audit_aps_application_atlas.js
       - name: Preserve atlas audit evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ctd-aps-atlas-${{ github.sha }}
           path: |
@@ -160,15 +160,15 @@ jobs:
 
   city-namespace-qa:
     name: City namespace four-language and accessibility audit
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: npm
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - name: Install test dependencies
@@ -184,7 +184,7 @@ jobs:
           node scripts/audit_city_namespace.cjs
       - name: Preserve city-domain browser evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ctd-city-namespace-${{ github.sha }}
           path: dist/city-namespace-qa/
@@ -192,14 +192,14 @@ jobs:
 
   remediation-qa:
     name: Audit corrections, mobile semantics and controlled performance
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: '22'
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - name: Install browser dependencies
@@ -224,7 +224,7 @@ jobs:
           exit "$audit_status"
       - name: Preserve measurements and visual evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: audit-remediation-${{ github.sha }}
           path: audit-20261019/

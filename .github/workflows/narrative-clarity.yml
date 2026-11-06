@@ -11,21 +11,21 @@ concurrency:
 jobs:
   review:
     if: ${{ !contains(github.event.head_commit.message || '', '[narrative artifacts]') }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     env:
       CTD_TEST_BASE: http://127.0.0.1:8123/
       CTD_NARRATIVE_BASELINE: /tmp/narrative-baseline
       CTD_NARRATIVE_QA: /tmp/narrative-qa
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: npm
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - name: Install locked build dependencies
@@ -103,7 +103,7 @@ jobs:
           node scripts/verify_ia_b2_parity.cjs
       - name: Save browser evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: narrative-clarity-verification
           path: |
