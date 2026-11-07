@@ -1,3 +1,11 @@
+# v0.7.101 - 7 November 2026
+
+- Complete the deferred Home and Economics editorial corrections in all four languages.
+- Give Home introductions distinct roles without repeating the initial choice of pathway.
+- Separate the Economics lead from its measurement guidance; retain the six-stage reading order.
+- Rename the inner adoption panel to “Two rankings, two measures” while preserving headings, anchors, scopes and source links.
+- Reconcile earlier audit statuses in a closure note. Preserve all scientific data and historical packages.
+
 # v0.7.100 - 7 November 2026
 
 - Keep keyboard focus visible by releasing the sticky primary navigation in short viewports.
