@@ -1,0 +1,47 @@
+name: Keyboard focus and readable mobile metrics regression
+on:
+  push:
+    branches: [main, 'feat/**']
+    paths: ['assets/**', 'src/**', 'scripts/**', 'publication.json', 'data/translations.json', '.github/workflows/focus-reflow-regression.yml']
+permissions:
+  contents: read
+concurrency:
+  group: ctd-focus-reflow-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  focus-reflow:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install established browser dependencies
+        run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Build and verify the exact reviewed source
+        run: |
+          python3 build.py
+          node scripts/verify_ia_b2_parity.cjs
+      - name: Exercise actual focus and metric layout in four languages and two themes
+        run: |
+          python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/ctd-focus-http.log 2>&1 &
+          server=$!
+          trap 'kill "$server" 2>/dev/null || true' EXIT
+          node scripts/audit_focus_reflow.cjs
+      - name: Preserve every browser result and screenshot
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: focus-reflow-${{ github.sha }}
+          path: audit-focus-reflow/
+          if-no-files-found: warn
