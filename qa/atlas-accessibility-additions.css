@@ -1,0 +1,2 @@
+/* The keyboard skip link must appear above the sticky Atlas header. */
+.apsSkip:focus { z-index: 100; }

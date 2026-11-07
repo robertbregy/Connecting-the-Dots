@@ -1,0 +1,8 @@
+/* Preserve usable reading space at high zoom or in short viewports. */
+@media (max-height: 500px) {
+  .iaPrimaryNav { position: static; }
+}
+/* Keep long translated labels intact instead of splitting words. */
+@media (max-width: 360px) {
+  .apsNativePanel .apsMetrics { grid-template-columns: minmax(0, 1fr); }
+}

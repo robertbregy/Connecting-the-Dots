@@ -1,0 +1,30 @@
+name: Readable metric-card layout and source-position CSS verification
+on:
+  push:
+    branches: ['qa/focus-confirmation-20261107']
+    paths: ['qa/metric-layout-review-20261107.cjs', 'qa/style-accessibility-additions.css', 'qa/atlas-accessibility-additions.css', '.github/workflows/metric-layout-review-20261107.yml']
+permissions:
+  contents: read
+jobs:
+  readable-metrics:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - name: Install controlled browser
+        run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Compare actual stylesheet-position candidates with the live product
+        run: node qa/metric-layout-review-20261107.cjs
+      - name: Preserve observations and visual evidence
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: readable-metrics-${{ github.sha }}
+          path: audit-readable-metrics/
+          if-no-files-found: error
