@@ -1,0 +1,8 @@
+{
+  "baseline": "dee7b777d5ca6ac042167ed02d2e1fe253a36931",
+  "method": "Run the real prior asset through the same state acceptance",
+  "expectedFailure": true,
+  "actual": ".lugano",
+  "expected": "tether",
+  "message": "Expected values to be strictly equal:\n+ actual - expected\n\n+ '.lugano'\n- 'tether'\n"
+}

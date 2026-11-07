@@ -54,6 +54,10 @@ def render(root:Path=ROOT):
     translations=json.loads((root/"data/translations.json").read_text(encoding="utf-8"))
     graph=json.loads((root/"data/aps_2026_application_graph.json").read_text(encoding="utf-8"))
     counts=graph["counts"]
+    # The historical CSV URL remains in provenance and structured metadata.
+    source_link=graph["officialCSVURL"]
+    if source_link=="https://newgtldprogram-aps.icann.org/aps/applications/export/csv":
+        source_link="https://newgtldprogram-aps.icann.org/applications"
     if len(graph["apps"])!=1614 or counts["officialPublishedApplications"]!=1614:
         raise ValueError("Application atlas rendered from incomplete official APS graph")
     rows=[]
@@ -119,7 +123,7 @@ def render(root:Path=ROOT):
 <p>{q(t['apsAtlasOverlapHint'])}</p>
 <p><b>{q(t['apsAtlasWdo'])}</b> <a target="_blank" rel="noopener" href="{q(graph['notPublishedApplication']['detailUrl'])}">{q(t['apsAtlasWdoLink'])} ↗</a></p>
 <div class="apsSources">
-<a target="_blank" rel="noopener" href="{q(graph['officialCSVURL'])}">{q(t['apsAtlasSource'])} ↗</a>
+<a target="_blank" rel="noopener" href="{q(source_link)}">{q(t['apsAtlasSource'])} ↗</a>
 <a target="_blank" rel="noopener" href="{q(graph['contention']['officialRevealListURL'])}">{q(t['apsAtlasPreliminaryList'])} ↗</a>
 <a href="../../{lang}/?tab=research">{q(t['apsAtlasResearch'])}</a>
 </div>

@@ -1,0 +1,123 @@
+{
+  "baselineCommit": "dee7b777d5ca6ac042167ed02d2e1fe253a36931",
+  "endpoint": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+  "publishedAnchorCount": 22,
+  "templateAnchorCount": 1,
+  "links": [
+    {
+      "file": "applications/de/index.html",
+      "label": "Offizieller ICANN-APS-Export ↗",
+      "closestAncestorID": "aps-main"
+    },
+    {
+      "file": "applications/en/index.html",
+      "label": "Official ICANN APS export ↗",
+      "closestAncestorID": "aps-main"
+    },
+    {
+      "file": "applications/fr/index.html",
+      "label": "Export officiel ICANN APS ↗",
+      "closestAncestorID": "aps-main"
+    },
+    {
+      "file": "applications/it/index.html",
+      "label": "CSV ufficiale ICANN APS ↗",
+      "closestAncestorID": "aps-main"
+    },
+    {
+      "file": "behind-the-round/de/index.html",
+      "label": "ICANN APS — offizieller CSV-Export ↗",
+      "closestAncestorID": "behind-case-reveal-day-counts"
+    },
+    {
+      "file": "behind-the-round/de/replacement-strings/index.html",
+      "label": "ICANN APS — offizieller CSV-Export ↗",
+      "closestAncestorID": "behind-round"
+    },
+    {
+      "file": "behind-the-round/en/index.html",
+      "label": "ICANN APS — official CSV export ↗",
+      "closestAncestorID": "behind-case-reveal-day-counts"
+    },
+    {
+      "file": "behind-the-round/en/replacement-strings/index.html",
+      "label": "ICANN APS — official CSV export ↗",
+      "closestAncestorID": "behind-round"
+    },
+    {
+      "file": "behind-the-round/fr/index.html",
+      "label": "ICANN APS — export CSV officiel ↗",
+      "closestAncestorID": "behind-case-reveal-day-counts"
+    },
+    {
+      "file": "behind-the-round/fr/replacement-strings/index.html",
+      "label": "ICANN APS — export CSV officiel ↗",
+      "closestAncestorID": "behind-round"
+    },
+    {
+      "file": "behind-the-round/it/index.html",
+      "label": "ICANN APS — export CSV ufficiale ↗",
+      "closestAncestorID": "behind-case-reveal-day-counts"
+    },
+    {
+      "file": "behind-the-round/it/replacement-strings/index.html",
+      "label": "ICANN APS — export CSV ufficiale ↗",
+      "closestAncestorID": "behind-round"
+    },
+    {
+      "file": "de/index.html",
+      "label": "ICANN · APS ↗",
+      "closestAncestorID": "aps-native"
+    },
+    {
+      "file": "de/index.html",
+      "label": "ICANN APS — offizieller CSV-Export ↗",
+      "closestAncestorID": "behind-case-reveal-day-counts"
+    },
+    {
+      "file": "en/index.html",
+      "label": "ICANN · APS ↗",
+      "closestAncestorID": "aps-native"
+    },
+    {
+      "file": "en/index.html",
+      "label": "ICANN APS — official CSV export ↗",
+      "closestAncestorID": "behind-case-reveal-day-counts"
+    },
+    {
+      "file": "fr/index.html",
+      "label": "ICANN · APS ↗",
+      "closestAncestorID": "aps-native"
+    },
+    {
+      "file": "fr/index.html",
+      "label": "ICANN APS — export CSV officiel ↗",
+      "closestAncestorID": "behind-case-reveal-day-counts"
+    },
+    {
+      "file": "index.html",
+      "label": "ICANN · APS ↗",
+      "closestAncestorID": "aps-native"
+    },
+    {
+      "file": "index.html",
+      "label": "ICANN APS — official CSV export ↗",
+      "closestAncestorID": "behind-case-reveal-day-counts"
+    },
+    {
+      "file": "it/index.html",
+      "label": "ICANN · APS ↗",
+      "closestAncestorID": "aps-native"
+    },
+    {
+      "file": "it/index.html",
+      "label": "ICANN APS — export CSV ufficiale ↗",
+      "closestAncestorID": "behind-case-reveal-day-counts"
+    },
+    {
+      "file": "src/index.web.html",
+      "label": "ICANN · APS ↗",
+      "closestAncestorID": "aps-native"
+    }
+  ]
+}

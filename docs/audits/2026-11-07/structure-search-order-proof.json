@@ -1,0 +1,43 @@
+{
+  "proposalOnly": true,
+  "appliedToExperienceWorktree": false,
+  "browserLayoutNotMeasured": true,
+  "scope": "DOM reorder only; original search node moved immediately after Explorer title, before unchanged secondary explanation",
+  "results": [
+    {
+      "file": "en/index.html",
+      "searchFollowsTitle": true,
+      "explanationPreservedVisible": true,
+      "idsLinksAndTranslationsPreserved": true,
+      "htmlByteDelta": 0
+    },
+    {
+      "file": "it/index.html",
+      "searchFollowsTitle": true,
+      "explanationPreservedVisible": true,
+      "idsLinksAndTranslationsPreserved": true,
+      "htmlByteDelta": 0
+    },
+    {
+      "file": "de/index.html",
+      "searchFollowsTitle": true,
+      "explanationPreservedVisible": true,
+      "idsLinksAndTranslationsPreserved": true,
+      "htmlByteDelta": 0
+    },
+    {
+      "file": "fr/index.html",
+      "searchFollowsTitle": true,
+      "explanationPreservedVisible": true,
+      "idsLinksAndTranslationsPreserved": true,
+      "htmlByteDelta": 0
+    },
+    {
+      "file": "index.html",
+      "searchFollowsTitle": true,
+      "explanationPreservedVisible": true,
+      "idsLinksAndTranslationsPreserved": true,
+      "htmlByteDelta": 0
+    }
+  ]
+}

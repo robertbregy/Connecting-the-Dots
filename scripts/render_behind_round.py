@@ -27,6 +27,13 @@ PRIMARY = (
 SECONDARY = ("https://www.ntlddata.com/", "https://www.bortzmeyer.org/", "https://circleid.com/", "https://www.nic.ad.jp/")
 RESEARCH = ("https://github.com/robertbregy/Connecting-the-Dots/",)
 
+
+def reader_source_url(url):
+    """Keep historical provenance; send readers to the available APS listing."""
+    if url == "https://newgtldprogram-aps.icann.org/aps/applications/export/csv":
+        return "https://newgtldprogram-aps.icann.org/applications"
+    return url
+
 BEHIND_CSS = """
 .behindStory{padding:26px;margin:20px 0}
 .behindStory .eyebrow{margin:0 0 8px}
@@ -338,7 +345,9 @@ def episode_markup(data, translations, lang, dynamic=False, standalone=False):
                 '<ul class="behindSources">'
             ])
             for source in case["sources"]:
-                parts.append('<li data-source-id="' + h(source["id"],quote=True) + '" data-source-kind="' + h(source["kind"],quote=True) + '"><a href="' + h(source["url"],quote=True) + '" target="_blank" rel="noopener noreferrer">' + txt(source["labelKey"]) + ' ↗</a></li>')
+                source_url=reader_source_url(source["url"])
+                label=source["labelKey"]
+                parts.append('<li data-source-id="' + h(source["id"],quote=True) + '" data-source-kind="' + h(source["kind"],quote=True) + '"><a href="' + h(source_url,quote=True) + '" target="_blank" rel="noopener noreferrer">' + txt(label) + ' ↗</a></li>')
             parts.extend(['</ul></section>','<section class="behindReading behindRevisions">',
                           txt("behindRevisionsTitle",tag="h3"),'<ol class="behindRevisionHistory">'])
             for revision in case["revisionHistory"]:
@@ -405,8 +414,9 @@ def episode_markup(data, translations, lang, dynamic=False, standalone=False):
             '<ul class="behindSources">'
         ])
         for source in case["sources"]:
+            source_url=reader_source_url(source["url"])
             label=source["labelKey"]
-            parts.append('<li data-source-id="' + h(source["id"],quote=True) + '" data-source-kind="' + h(source["kind"],quote=True) + '"><a href="' + h(source["url"],quote=True) + '" target="_blank" rel="noopener noreferrer">' + txt(label) + ' ↗</a></li>')
+            parts.append('<li data-source-id="' + h(source["id"],quote=True) + '" data-source-kind="' + h(source["kind"],quote=True) + '"><a href="' + h(source_url,quote=True) + '" target="_blank" rel="noopener noreferrer">' + txt(label) + ' ↗</a></li>')
         parts.extend([
             '</ul></section>',
             '<section class="behindReading behindRevisions">',

@@ -1,0 +1,30 @@
+[
+  {
+    "url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+    "retrievedAtUTC": "2026-11-07T00:07:00.556542+00:00",
+    "status": 404,
+    "reason": "Not Found"
+  },
+  {
+    "url": "https://newgtldprogram-aps.icann.org/applications/CDL2651T-T31516/summary",
+    "retrievedAtUTC": "2026-11-07T00:07:06.812305+00:00",
+    "status": 200,
+    "bytes": 29894,
+    "sha256": "9afa65f65fae47e5689f4f8537df1933dac44531206d53aa51326d679b563a4f",
+    "observedFields": {
+      "lastPublished": "2026-10-07T15:21:00Z",
+      "applicationID": "CDL2651T-T31516",
+      "primaryString": "lugano",
+      "applicationType": "New gTLD",
+      "tldTypes": [
+        "Geo (Self-Designated)"
+      ],
+      "applicationStatus": "Active",
+      "processingStage": "Pre-Evaluation Processing",
+      "applicantName": "Città di Lugano",
+      "applicantLocation": "CH",
+      "applicantRegion": "EUR"
+    },
+    "interpretation": "Application record; these fields do not establish approval, delegation, operational service, or open registration."
+  }
+]

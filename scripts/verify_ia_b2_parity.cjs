@@ -157,6 +157,27 @@ function checkedI18nReplacements(review,source){
  assert.ok(atlas.includes("'<a href=\"'+escape(direct)+'\" target=\"_blank\" rel=\"noopener\">'+escape(t('apsAtlasPublicDetail'))"),'Primary application summary must retain its official APS link label');
  return declared;
 }
+function checkedOperationalLinks(review,source){
+ const declared=review.operationalLinkReplacements??[];
+ assert.ok(Array.isArray(declared),'Operational source replacements must be an array');
+ if(!declared.length)return [];
+ const approved={from:'https://newgtldprogram-aps.icann.org/aps/applications/export/csv',
+  to:'https://newgtldprogram-aps.icann.org/applications',rationaleIds:['UX99']};
+ assert.deepEqual(declared,[approved],'Only the reviewed unavailable APS export URL may be replaced');
+ assert.ok(review.rationales?.UX99?.trim(),'Operational APS link needs an explicit review rationale');
+ const {document}=require('linkedom').parseHTML(source);
+ const links=document.querySelectorAll('#aps-native .apsResources a[href="'+approved.to+'"]');
+ assert.equal(links.length,1,'The native Atlas must retain one official public listing link');
+ assert.equal(document.querySelectorAll('a[href="'+approved.from+'"]').length,0,'Unavailable APS export still used as an operational source link');
+ assert.equal(links[0].getAttribute('target'),'_blank');
+ assert.equal(links[0].getAttribute('rel'),'noopener');
+ assert.equal(links[0].textContent,'ICANN · APS ↗');
+ assert.deepEqual([...links[0].attributes].map(a=>[a.name,a.value]).sort(),[['href',approved.to],['rel','noopener'],['target','_blank']],'Operational APS source changed beyond its reviewed destination');
+ // The source used to acquire the frozen data remains a historical fact.
+ assert.equal(JSON.parse(fs.readFileSync('data/aps_2026_application_graph.json','utf8')).officialCSVURL,approved.from,'Historical APS acquisition URL changed');
+ assert.equal(JSON.parse(fs.readFileSync('data/applications_2026_aps_official_provenance.json','utf8')).sourceExportURL,approved.from,'Historical APS provenance URL changed');
+ return declared;
+}
 function checkProtection(review,source,publication){
  assert.equal(review.schemaVersion,1,'Unknown editorial-review schema');
  assert.equal(review.baselineCommit,REVIEW_BASE,'Pre-audit baseline must remain immutable');
@@ -206,11 +227,12 @@ function checkProtection(review,source,publication){
  ];
  assert.deepEqual(review.linkReplacements,replacements,'Only the two reviewed current-pack link replacements are allowed');
  const i18nReplacements=checkedI18nReplacements(review,source);
+ const operationalLinks=checkedOperationalLinks(review,source);
  for(const [kind,pattern] of Object.entries(patterns)){
   const actual=new Set([...source.matchAll(pattern)].map(m=>m[1]));
   const missing=review.sourceInvariants[kind].filter(value=>!actual.has(value));
   const unapproved=missing.filter(value=>{
-   if(kind==='hrefs')return !replacements.some(r=>r.from===value&&actual.has(r.to)&&fs.existsSync(r.from));
+   if(kind==='hrefs')return !replacements.some(r=>r.from===value&&actual.has(r.to)&&fs.existsSync(r.from))&&!operationalLinks.some(r=>r.from===value&&actual.has(r.to));
    if(kind==='i18nReferences')return !i18nReplacements.some(r=>r.from===value);
    return true;
   });

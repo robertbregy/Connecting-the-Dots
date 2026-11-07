@@ -1,0 +1,135 @@
+{
+  "candidate": "dee7b777 (experience source patch)",
+  "status": "PASS_DOM_ACCNAME_CHECK",
+  "cardsChecked": 250,
+  "locales": [
+    "en",
+    "it",
+    "de",
+    "fr"
+  ],
+  "rootAliasChecked": true,
+  "positive": [
+    {
+      "file": "en/index.html",
+      "cards": 50,
+      "first": {
+        "oldAction": "Open record for .aaa",
+        "oldDescription": "",
+        "newName": ".aaa IANA profile Delegated 2012 Generic Other / general American Automobile Association, Inc. · United States",
+        "description": "Open record for .aaa",
+        "facts": [
+          ".aaa",
+          "IANA profile",
+          "Delegated",
+          "2012",
+          "Generic",
+          "Other / general",
+          "American Automobile Association, Inc. · United States"
+        ]
+      },
+      "htmlByteDelta": -250
+    },
+    {
+      "file": "it/index.html",
+      "cards": 50,
+      "first": {
+        "oldAction": "Apri la scheda di .aaa",
+        "oldDescription": "",
+        "newName": ".aaa Scheda IANA Delegata 2012 Generico Altro / generale American Automobile Association, Inc. · Stati Uniti",
+        "description": "Apri la scheda di .aaa",
+        "facts": [
+          ".aaa",
+          "Scheda IANA",
+          "Delegata",
+          "2012",
+          "Generico",
+          "Altro / generale",
+          "American Automobile Association, Inc. · Stati Uniti"
+        ]
+      },
+      "htmlByteDelta": -250
+    },
+    {
+      "file": "de/index.html",
+      "cards": 50,
+      "first": {
+        "oldAction": "Datensatz für .aaa öffnen",
+        "oldDescription": "",
+        "newName": ".aaa IANA-Datensatz Delegiert 2012 Generisch Sonstiges / allgemein American Automobile Association, Inc. · Vereinigte Staaten",
+        "description": "Datensatz für .aaa öffnen",
+        "facts": [
+          ".aaa",
+          "IANA-Datensatz",
+          "Delegiert",
+          "2012",
+          "Generisch",
+          "Sonstiges / allgemein",
+          "American Automobile Association, Inc. · Vereinigte Staaten"
+        ]
+      },
+      "htmlByteDelta": -250
+    },
+    {
+      "file": "fr/index.html",
+      "cards": 50,
+      "first": {
+        "oldAction": "Ouvrir la fiche de .aaa",
+        "oldDescription": "",
+        "newName": ".aaa Fiche IANA Déléguée 2012 Générique Autres / général American Automobile Association, Inc. · États-Unis",
+        "description": "Ouvrir la fiche de .aaa",
+        "facts": [
+          ".aaa",
+          "Fiche IANA",
+          "Déléguée",
+          "2012",
+          "Générique",
+          "Autres / général",
+          "American Automobile Association, Inc. · États-Unis"
+        ]
+      },
+      "htmlByteDelta": -250
+    },
+    {
+      "file": "index.html",
+      "cards": 50,
+      "first": {
+        "oldAction": "Open record for .aaa",
+        "oldDescription": "",
+        "newName": ".aaa IANA profile Delegated 2012 Generic Other / general American Automobile Association, Inc. · United States",
+        "description": "Open record for .aaa",
+        "facts": [
+          ".aaa",
+          "IANA profile",
+          "Delegated",
+          "2012",
+          "Generic",
+          "Other / general",
+          "American Automobile Association, Inc. · United States"
+        ]
+      },
+      "htmlByteDelta": -250
+    }
+  ],
+  "negatives": [
+    {
+      "name": "old_aria_label_regression",
+      "rejected": true,
+      "expectedError": "Visible record information omitted"
+    },
+    {
+      "name": "state_hidden_from_assistive_technology",
+      "rejected": true,
+      "expectedError": "Visible record information omitted"
+    },
+    {
+      "name": "wrong_locale_action",
+      "rejected": true,
+      "expectedError": "Localized record action description lost"
+    }
+  ],
+  "sourceChangeOnly": "Mobile card button aria-label -> title",
+  "browserExecuted": false,
+  "limitations": "AccName/Description calculated with dom-accessibility-api 0.7.1 on real Node-prerendered DOM and explicit mobile-card display values; not a browser accessibility tree or human screen-reader session.",
+  "noContentOrDatasetChanges": true
+}

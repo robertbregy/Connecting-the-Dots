@@ -1,0 +1,92 @@
+{
+  "baseline": "dee7b777d5ca6ac042167ed02d2e1fe253a36931",
+  "findings": 8,
+  "reproducedBehaviorDefects": [
+    "E01",
+    "E02",
+    "E03"
+  ],
+  "heuristicFindings": [
+    "E04",
+    "E07",
+    "E08"
+  ],
+  "semanticImprovements": [
+    "E05",
+    "E06"
+  ],
+  "mobileFixAppliedInExperienceWorktree": true,
+  "searchOrderAppliedInExperienceWorktree": true,
+  "localBrowserLaunched": false,
+  "newBrowserQAExecuted": false,
+  "artifacts": {
+    "structure-experience-audit.md": {
+      "path": "/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/structure-experience-audit.md",
+      "bytes": 19542,
+      "sha256": "914b7bafbfb6456463617b00a10c29bbb3abaa01cb57551d547c5e4abe9fb671"
+    },
+    "structure-mobile-card-description.patch": {
+      "path": "/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/structure-mobile-card-description.patch",
+      "bytes": 9918,
+      "sha256": "341249727abd7154ed4f31c865b0189a76a7c4de476a5d4a2c3f506d0607c2e1"
+    },
+    "structure-mobile-card-semantics.json": {
+      "path": "/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/structure-mobile-card-semantics.json",
+      "bytes": 4103,
+      "sha256": "eb4a874700cb7da4332a9674685c9e006b6b7440652d99344a1f0d62786a64be"
+    },
+    "structure-atlas-current-behavior.json": {
+      "path": "/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/structure-atlas-current-behavior.json",
+      "bytes": 1153,
+      "sha256": "0dc6d4a28b0b8cce32d8f5967bedbd2d478441cd4171895c789e6dface49bd39"
+    },
+    "structure-explorer-search-order-proposal.patch": {
+      "path": "/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/structure-explorer-search-order-proposal.patch",
+      "bytes": 1050,
+      "sha256": "4ea036cad604d67e390e1e8a0252ae40b357d24129bec4c207bf827c2ff1d00c"
+    },
+    "structure-search-order-proof.json": {
+      "path": "/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/structure-search-order-proof.json",
+      "bytes": 1221,
+      "sha256": "33ee0b2ca7e8e0bcbfa28c3271ba07f544a72a66ff5a4f4e8d88a07143ab27b8"
+    },
+    "heading-proposal/headings-proof.json": {
+      "path": "/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/heading-proposal/headings-proof.json",
+      "bytes": 5457,
+      "sha256": "9cf4642fb34ec1fe2ad64c2f527e8fcee419acf863eb7d647d1da2e8ea36eaef"
+    },
+    "heading-proposal/structure-headings-proposal.patch": {
+      "path": "/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/heading-proposal/structure-headings-proposal.patch",
+      "bytes": 20806,
+      "sha256": "8bdbaf1a85214e0bb60087191c70cd58e773fb2cb38a4a19a172b59756769cf3"
+    },
+    "heading-proposal/proposal.json": {
+      "path": "/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/heading-proposal/proposal.json",
+      "bytes": 1592,
+      "sha256": "58b255ee4ee666324bab8161c58ed94a51effb0a979ad9de1c32d425895603f1"
+    }
+  },
+  "browserQA": {
+    "path": "/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-repository/scripts/experience_browser_qa.cjs",
+    "sha256": "3b421718352f885c57209bf79a5dd1e06b240ee0b812c553bbf9d61455c15a28",
+    "syntaxCheckPassed": true,
+    "requiredScenarios": 8,
+    "requiredAxeScans": 8,
+    "independentCodeReview": "No blocking issues; full-field viewport assertion added per reviewer suggestion.",
+    "headingChecks": "Computed AX level on direct view, real link switches through hub/chapter, and home; node/focus preservation; pending CI execution."
+  },
+  "baselinePublished": false,
+  "targetRelease": "0.7.99",
+  "atlasFixesAppliedInExperienceWorktree": true,
+  "atlasDomScenariosPassed": 72,
+  "atlasBrowser99": "pending",
+  "orientationChanges": "deferred_pending_reader_evidence_no_new_cards",
+  "headingFixesAppliedInExperienceWorktree": true,
+  "headingDomRouteChecks": 116,
+  "headingDomCardChecks": 480,
+  "headingBaselineFailuresConfirmed": 12,
+  "headingExternalAssetDeltaBytes": 546,
+  "headingStaticHtmlByteDelta": 0,
+  "headingBrowser99": "pending",
+  "headingExternalAssetDeltaScope": "Only E05/E06 heading changes; not the total 0.7.99 release delta."
+}

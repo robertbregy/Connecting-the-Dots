@@ -1,0 +1,22 @@
+[
+  {
+    "path": "data/application_2026_snapshot.json",
+    "url": "https://raw.githubusercontent.com/robertbregy/Connecting-the-Dots/5d52274935cda7712172873f46d456e4c0a09c7e/data/application_2026_snapshot.json",
+    "sha256": "ce6fe5cdbdd3ed9d4f44dad5a99da23b91d2fdc2baf3ec6d62bf12ae3c5b16c6",
+    "text": "{\n  \"schemaVersion\": 1,\n  \"snapshot\": \"2026-10-07\",\n  \"official\": {\n    \"source\": \"https://newgtldprogram-aps.icann.org/statistics\",\n    \"lastPublished\": \"2026-10-07T15:41:00Z\",\n    \"activeApplications\": 1615,\n    \"applicants\": 481,\n    \"uniqueStrings\": null,\n    \"countriesTerritories\": null,\n    \"icannRegionsRepresented\": 5,\n    \"regionApplicantCounts\": {\n      \"North America\": 198,\n      \"Europe\": 111,\n      \"Asia/Australia/Pacific\": 156,\n      \"Africa\": 7,\n      \"Latin America/Caribbean\": 9\n    }\n  },\n  \"stringInventory\": {\n    \"source\": \"https://www.ntlddata.com/applications/strings\",\n    \"role\": \"secondary-index-over-public-ICANN-APS-records\",\n    \"observedStrings\": 980,\n    \"license\": \"CC BY 4.0\",\n    \"delivery\": \"local-frozen-file\",\n    \"snapshot\": \"2026-10-07\",\n    \"representedPrimaryApplications\": 1608,\n    \"secondaryApplicationsObserved\": 1614,\n    \"secondaryApplicantsObserved\": 480,\n    \"variantOnlyApplicationsOutsideStringInventory\": 6,\n    \"localRuntimeFile\": \"applications_2026_strings_reveal.js\",\n    \"localDownloadFile\": \"applications_2026_strings_reveal.csv\",\n    \"observedAt\": \"2026-10-08\",\n    \"observedUniquePrimaryStrings\": 980\n  },\n  \"period\": {\n    \"revealDay\": \"2026-10-07\",\n    \"replacementPeriodStart\": \"2026-10-08\",\n    \"replacementPeriodEnd\": \"2026-10-21\",\n    \"stringConfirmationDay\": \"2026-11-17\"\n  },\n  \"integrity\": {\n    \"fullLocalApplicationCorpusClaimed\": false,\n    \"reason\": \"The official APS application-level corpus is not yet locally vendored. ICANN reports 1,615 applications / 481 applicants; the frozen secondary index reports 1,614 / 480. Its 980-string table represents 1,608 primary-string applications; six additional secondary-index records are variant-only applications for existing TLDs and therefore do not create new applied-for primary strings.\"\n  }\n}\n"
+  },
+  {
+    "path": "data/rounds.csv",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "path": "data/applications_2026.csv",
+    "url": "https://raw.githubusercontent.com/robertbregy/Connecting-the-Dots/5d52274935cda7712172873f46d456e4c0a09c7e/data/applications_2026.csv",
+    "sha256": "a188d93bfdcbcdabedf9a0802ff0e6724547fef91bfc6665c0c218129477cfd1",
+    "text": "application_id,primary_string,replacement_string,applicant_legal_name,direct_parent,ultimate_parent,country_or_territory,icann_region,application_type,is_geographic,is_community,is_brand,is_idn_or_variant,contention_set,public_application_url,source_snapshot,notes\r\nCDL2651T-T31516,.lugano,,Città di Lugano,,,CH,EUR,New gTLD,yes,no,no,no,,https://newgtldprogram-aps.icann.org/applications/CDL2651T-T31516/summary,2026-10-07,Active at Reveal Day; self-designated geographic application; no preliminary identical-string contention set.\r\n"
+  },
+  {
+    "path": "publication.json",
+    "error": "HTTP Error 404: Not Found"
+  }
+]

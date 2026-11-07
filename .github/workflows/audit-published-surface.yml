@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        suite: [audience, responsive]
+        suite: [audience, responsive, experience]
     steps:
       - uses: actions/checkout@v5
         with:
@@ -56,10 +56,16 @@ jobs:
         env:
           CTD_TEST_BASE: https://robertbregy.github.io/Connecting-the-Dots/
           CTD_USABILITY_QA: audit-published-responsive
+          CTD_EXPERIENCE_QA: audit-published-experience
           AUDIT_SUITE: ${{ matrix.suite }}
         run: |
           if test "$AUDIT_SUITE" = audience; then
             node scripts/audit_audience.cjs
+          elif test "$AUDIT_SUITE" = experience; then
+            audit_status=0
+            node scripts/experience_browser_qa.cjs || audit_status=1
+            node scripts/audit_aps_application_atlas.js || audit_status=1
+            exit "$audit_status"
           else
             node scripts/usability_remediation_qa.cjs
           fi
@@ -72,4 +78,7 @@ jobs:
             audit-20261019/audience-report.json
             audit-20261019/audience-*.png
             audit-published-responsive/
+            audit-published-experience/
+            audit-aps-atlas-state.json
+            audit-aps-atlas-*.png
           if-no-files-found: warn

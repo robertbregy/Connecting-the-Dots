@@ -1,0 +1,110 @@
+{
+  "surfaces": 8,
+  "checksPerSurface": 9,
+  "results": [
+    {
+      "language": "it",
+      "surface": "standalone",
+      "legacyQuery": true,
+      "independentFilters": true,
+      "sharedReload": true,
+      "emptyReset": true,
+      "expandedPagination": true,
+      "popstate": true,
+      "languageChange": true,
+      "directLink": true,
+      "invalidFilters": true
+    },
+    {
+      "language": "it",
+      "surface": "embedded",
+      "legacyQuery": true,
+      "independentFilters": true,
+      "sharedReload": true,
+      "emptyReset": true,
+      "expandedPagination": true,
+      "popstate": true,
+      "languageChange": true,
+      "directLink": true,
+      "invalidFilters": true
+    },
+    {
+      "language": "en",
+      "surface": "standalone",
+      "legacyQuery": true,
+      "independentFilters": true,
+      "sharedReload": true,
+      "emptyReset": true,
+      "expandedPagination": true,
+      "popstate": true,
+      "languageChange": true,
+      "directLink": true,
+      "invalidFilters": true
+    },
+    {
+      "language": "en",
+      "surface": "embedded",
+      "legacyQuery": true,
+      "independentFilters": true,
+      "sharedReload": true,
+      "emptyReset": true,
+      "expandedPagination": true,
+      "popstate": true,
+      "languageChange": true,
+      "directLink": true,
+      "invalidFilters": true
+    },
+    {
+      "language": "de",
+      "surface": "standalone",
+      "legacyQuery": true,
+      "independentFilters": true,
+      "sharedReload": true,
+      "emptyReset": true,
+      "expandedPagination": true,
+      "popstate": true,
+      "languageChange": true,
+      "directLink": true,
+      "invalidFilters": true
+    },
+    {
+      "language": "de",
+      "surface": "embedded",
+      "legacyQuery": true,
+      "independentFilters": true,
+      "sharedReload": true,
+      "emptyReset": true,
+      "expandedPagination": true,
+      "popstate": true,
+      "languageChange": true,
+      "directLink": true,
+      "invalidFilters": true
+    },
+    {
+      "language": "fr",
+      "surface": "standalone",
+      "legacyQuery": true,
+      "independentFilters": true,
+      "sharedReload": true,
+      "emptyReset": true,
+      "expandedPagination": true,
+      "popstate": true,
+      "languageChange": true,
+      "directLink": true,
+      "invalidFilters": true
+    },
+    {
+      "language": "fr",
+      "surface": "embedded",
+      "legacyQuery": true,
+      "independentFilters": true,
+      "sharedReload": true,
+      "emptyReset": true,
+      "expandedPagination": true,
+      "popstate": true,
+      "languageChange": true,
+      "directLink": true,
+      "invalidFilters": true
+    }
+  ]
+}

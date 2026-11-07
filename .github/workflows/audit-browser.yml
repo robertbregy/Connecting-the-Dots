@@ -147,6 +147,7 @@ jobs:
       - name: Build and verify interactive application atlas in all languages
         run: |
           python3 build.py
+          node scripts/atlas_state_qa.cjs
           python3 -m http.server 8123 --bind 127.0.0.1 > /tmp/ctd-atlas-http.log 2>&1 &
           sleep 2
           node scripts/audit_aps_application_atlas.js
@@ -157,6 +158,7 @@ jobs:
           name: ctd-aps-atlas-${{ github.sha }}
           path: |
             audit-aps-atlas-*.png
+            audit-aps-atlas-state.json
           if-no-files-found: ignore
 
   city-namespace-qa:
@@ -222,6 +224,7 @@ jobs:
           audit_status=0
           node scripts/audit_20261019_browser.cjs || audit_status=1
           node scripts/audit_audience.cjs || audit_status=1
+          CTD_EXPERIENCE_QA=audit-20261019/experience node scripts/experience_browser_qa.cjs || audit_status=1
           node scripts/audit_performance_20261019.cjs || audit_status=1
           exit "$audit_status"
       - name: Preserve measurements and visual evidence

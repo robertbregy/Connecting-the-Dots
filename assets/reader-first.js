@@ -5,6 +5,7 @@
   if (!root.hasAttribute('data-reader-first') && !document.body.hasAttribute('data-reader-first')) return;
   root.dataset.readerFirst = '1';
   const initialTitle = document.title;
+  let activeHeading = null;
   // Keep the first phone screen for the article, not a long contents list.
   // This runs once; it never overrides a reader's later disclosure choices.
   if (window.matchMedia('(max-width:700px)').matches) {
@@ -12,8 +13,14 @@
   }
   function sync() {
     const current = document.body.dataset.activeTab;
+    const section = current && document.getElementById(current);
+    // The complete no-JS document keeps H1 > H2. A routed view exposes its
+    // existing primary heading at level 1 without replacing a focused node.
+    const heading = section && section.querySelector('.readerChapterTitle, .iaHubHead h2');
+    if (activeHeading && activeHeading !== heading) activeHeading.removeAttribute('aria-level');
+    if (heading) heading.setAttribute('aria-level', '1');
+    activeHeading = heading;
     if (!current) return;
-    const section = document.getElementById(current);
     const question = section && section.dataset.readerTitle;
     const hubTitle = section && section.querySelector('.iaHubHead h2');
     document.title = question ? question + ' | Connecting the Dots' : hubTitle ? hubTitle.textContent.trim() + ' | Connecting the Dots' : initialTitle;

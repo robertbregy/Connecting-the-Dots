@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-07",
+  "method": "AI-assisted CUA walkthrough, not a human user study or assistive-technology certification",
+  "observedVersion": "0.7.97",
+  "candidateUnderReview": "dee7b777d5ca6ac042167ed02d2e1fe253a36931",
+  "checks": [
+    {
+      "id": "EXP-URL-01",
+      "area": "embedded application Atlas",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=explore&q=.lugano#aps-native",
+      "steps": [
+        "Explorer search .lugano, enter embedded Atlas",
+        "Atlas search tether returns .tether and .usdt, two applications",
+        "Browser URL retains q=.lugano",
+        "Reload resets Atlas query to .lugano, one application"
+      ],
+      "outcome": "reproduced state-loss and share-state defect",
+      "candidateCodeParity": "pending verification"
+    }
+  ]
+}

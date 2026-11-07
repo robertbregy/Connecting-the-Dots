@@ -1,0 +1,50 @@
+{
+  "candidateVersion": "0.7.99",
+  "candidateReleasedOn": "2026-11-07",
+  "baselineCommit": "dee7b777d5ca6ac042167ed02d2e1fe253a36931",
+  "scope": "Read-only review of coordinator changes; no scientific refresh",
+  "languagesReviewed": 4,
+  "result": "PASS",
+  "checks": [
+    {
+      "language": "it",
+      "key": "dataStatusSub",
+      "before": "ICANN ha pubblicato lo snapshot iniziale del Reveal Day il 7 ottobre. Dall’8 al 21 ottobre è aperto il Replacement Period; l’elenco confermato delle stringhe e i contention set aggiornati sono previsti per il 17 novembre.",
+      "after": "ICANN ha pubblicato lo snapshot iniziale del Reveal Day il 7 ottobre. Il Replacement Period si è svolto dall’8 al 21 ottobre; l’elenco confermato delle stringhe e i contention set aggiornati sono previsti per il 17 novembre.",
+      "pastTenseCorrect": true,
+      "dateNumbersUnchanged": true,
+      "initialSnapshotClauseUnchanged": true,
+      "confirmationForecastClauseUnchanged": true
+    },
+    {
+      "language": "en",
+      "key": "dataStatusSub",
+      "before": "ICANN published the initial Reveal Day snapshot on 7 October. The Replacement Period is now open from 8 to 21 October; the confirmed string list and updated contention sets are scheduled for 17 November.",
+      "after": "ICANN published the initial Reveal Day snapshot on 7 October. The Replacement Period ran from 8 to 21 October; the confirmed string list and updated contention sets are scheduled for 17 November.",
+      "pastTenseCorrect": true,
+      "dateNumbersUnchanged": true,
+      "initialSnapshotClauseUnchanged": true,
+      "confirmationForecastClauseUnchanged": true
+    },
+    {
+      "language": "de",
+      "key": "dataStatusSub",
+      "before": "ICANN veröffentlichte den ersten Reveal-Day-Snapshot am 7. Oktober. Vom 8. bis 21. Oktober läuft die Replacement-Periode; die bestätigte String-Liste und aktualisierte Contention Sets sind für den 17. November vorgesehen.",
+      "after": "ICANN veröffentlichte den ersten Reveal-Day-Snapshot am 7. Oktober. Die Replacement-Periode dauerte vom 8. bis 21. Oktober; die bestätigte String-Liste und aktualisierte Contention Sets sind für den 17. November vorgesehen.",
+      "pastTenseCorrect": true,
+      "dateNumbersUnchanged": true,
+      "initialSnapshotClauseUnchanged": true,
+      "confirmationForecastClauseUnchanged": true
+    },
+    {
+      "language": "fr",
+      "key": "dataStatusSub",
+      "before": "L’ICANN a publié le snapshot initial du Reveal Day le 7 octobre. La Replacement Period est ouverte du 8 au 21 octobre ; la liste confirmée des chaînes et les contention sets mis à jour sont prévus pour le 17 novembre.",
+      "after": "L’ICANN a publié le snapshot initial du Reveal Day le 7 octobre. La période de remplacement s’est déroulée du 8 au 21 octobre ; la liste confirmée des chaînes et les contention sets mis à jour sont prévus pour le 17 novembre.",
+      "pastTenseCorrect": true,
+      "dateNumbersUnchanged": true,
+      "initialSnapshotClauseUnchanged": true,
+      "confirmationForecastClauseUnchanged": true
+    }
+  ]
+}

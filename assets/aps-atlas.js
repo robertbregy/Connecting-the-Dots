@@ -9,6 +9,7 @@ const search=document.getElementById('apsSearch'),type=document.getElementById('
 const role=document.getElementById('apsRole'),region=document.getElementById('apsRegion');
 const more=document.getElementById('apsMore'),reset=document.getElementById('apsReset');
 let limit=30;
+let expandedIds=new Set();
 const escape=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const t=k=>L[k]||k;
 const normal=x=>String(x??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/^\./,'').trim();
@@ -18,10 +19,38 @@ if(!corpus||!Array.isArray(corpus.apps)||corpus.apps.length!==1614){
  output.textContent=t('apsAtlasError');more.hidden=true;return;
 }
 const all=corpus.apps;
-const wanted=new URLSearchParams(location.search);
 const native=!!document.getElementById('aps-native');
-const directId=(wanted.get(native?'application':'id')||'').trim().toUpperCase();
-search.value=directId||wanted.get('q')||'';
+const cardHeading=native?'h4':'h3';
+const stateKeys=native?{query:'aps_q',type:'aps_type',role:'aps_role',region:'aps_region',id:'application'}:
+ {query:'q',type:'type',role:'role',region:'region',id:'id'};
+let directId='';
+function restoreState(){
+ const wanted=new URLSearchParams(location.search);
+ directId=(wanted.get(stateKeys.id)||'').trim().toUpperCase();
+ // Old Explorer links seed the Atlas once. An explicitly empty Atlas query
+ // must stay empty after reset, even when the Explorer still has its own q.
+ search.value=directId||(wanted.has(stateKeys.query)?wanted.get(stateKeys.query):native?wanted.get('q'):'')||'';
+ for(const [key,field] of [['type',type],['role',role],['region',region]]){
+  const value=wanted.get(stateKeys[key])||'all';
+  field.value=[...field.options].some(option=>option.value===value)?value:'all';
+ }
+ limit=30;
+}
+function saveState(){
+ const uri=new URL(location.href);
+ uri.searchParams.set(stateKeys.query,search.value);
+ for(const [key,field] of [['type',type],['role',role],['region',region]]){
+  if(field.value==='all')uri.searchParams.delete(stateKeys[key]);
+  else uri.searchParams.set(stateKeys[key],field.value);
+ }
+ uri.searchParams.delete(stateKeys.id);
+ if(location.protocol==='http:'||location.protocol==='https:'){
+  history.replaceState(history.state,'',uri);
+  // Main-site language and share links must describe the current Atlas view.
+  if(native)window.dispatchEvent(new Event('ctd:atlas-state'));
+ }
+}
+restoreState();
 const indexes=new Map(all.map(a=>[a.id,a]));
 const matcher=a=>normal([
  a.id,a.primary,a.primaryUnicode,a.applicant,a.location,a.region,a.type,a.status,
@@ -67,14 +96,14 @@ function item(a){
  const typeTags=(a.types||[]).map(x=>pill(x)).join('');
  const explorer='<a href="'+escape(linkToExplorer(a.primary))+'">'+escape(t('apsAtlasExplorer'))+'</a>';
  return '<article class="apsCard" id="aps-card-'+escape(a.id)+'" data-aps-id="'+escape(a.id)+'">'+
-  '<div class="apsCardHead"><div><div class="apsCardString"><bdi>.'+escape(a.primary)+'</bdi>'+
-  (a.primaryUnicode?'<small lang="und">'+escape(a.primaryUnicode)+'</small>':'')+'</div>'+
+  '<div class="apsCardHead"><div><'+cardHeading+' class="apsCardString"><bdi>.'+escape(a.primary)+'</bdi>'+
+  (a.primaryUnicode?'<small lang="und">'+escape(a.primaryUnicode)+'</small>':'')+'</'+cardHeading+'>'+
   '<div class="apsApplicant">'+escape(a.applicant)+'</div></div><div class="apsCardSide">'+
   pill(a.status,'apsState')+identifier+'</div></div>'+
   '<div class="apsCardMeta">'+pill(a.region)+pill(a.location)+typeTags+exact+
    (replacement?pill(t('apsAtlasHasReplacement')):'')+
    (a.variantOnlyExistingTld?pill(t('apsAtlasExistingVariant')):'')+'</div>'+
-  '<details class="apsCardDetails" '+(directId===a.id?'open':'')+'><summary>'+escape(t('apsAtlasDetails'))+'</summary>'+
+  '<details class="apsCardDetails" '+(directId===a.id||expandedIds.has(a.id)?'open':'')+'><summary>'+escape(t('apsAtlasDetails'))+'</summary>'+
   '<dl class="apsFacts"><dt>'+escape(t('apsAtlasApplicationId'))+'</dt><dd>'+escape(a.id)+'</dd>'+
   '<dt>'+escape(t('apsAtlasApplicant'))+'</dt><dd>'+escape(a.applicant)+'</dd>'+
   '<dt>'+escape(t('apsAtlasBaseStatus'))+'</dt><dd>'+escape(a.status)+'</dd>'+
@@ -89,7 +118,8 @@ function item(a){
    explorer+
   '<a href="'+link+'">'+escape(t('apsAtlasPermalink'))+'</a></div></details></article>';
 }
-function render(){
+function render(preserveOpen=true){
+ expandedIds=preserveOpen?new Set([...results.querySelectorAll('.apsCard details[open]')].map(node=>node.closest('.apsCard').getAttribute('data-aps-id'))):new Set();
  const found=filtered(),view=found.slice(0,limit);
  const label=t('apsAtlasCountOf').replace('{shown}',fmt(view.length)).replace('{total}',fmt(found.length));
  output.textContent=label;
@@ -98,14 +128,15 @@ function render(){
  if(directId){const node=document.getElementById('aps-card-'+directId);if(node){node.querySelector('details').open=true;}}
 }
 for(const field of [search,type,role,region]){
- field.addEventListener(field===search?'input':'change',()=>{limit=30;render()});
+ field.addEventListener(field===search?'input':'change',()=>{limit=30;directId='';saveState();render()});
 }
 more.addEventListener('click',()=>{limit+=30;render()});
 reset.addEventListener('click',()=>{
- search.value='';type.value='all';role.value='all';region.value='all';limit=30;
- const uri=new URL(location.href);uri.search='';uri.hash='';history.replaceState({},'',uri);render();
+ search.value='';type.value='all';role.value='all';region.value='all';limit=30;directId='';
+ saveState();render(false);
  search.focus();
 });
+window.addEventListener('popstate',()=>{restoreState();render(false)});
 window.CTD_APS_REFRESH=(nextLang,nextDict)=>{lang=nextLang;L=nextDict||L;render();};
 render();
 })();

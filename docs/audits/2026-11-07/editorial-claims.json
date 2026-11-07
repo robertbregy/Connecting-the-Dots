@@ -1,0 +1,270 @@
+{
+  "baselineCommit": "dee7b777d5ca6ac042167ed02d2e1fe253a36931",
+  "publicationVersion": "0.7.98",
+  "publicationReleasedOn": "2026-11-06",
+  "auditDateUTC": "2026-11-07",
+  "scientificSnapshot": "Frozen; no scientific update or source replacement in datasets",
+  "method": "Purposeful expert/text/source sample; no user study; primary sources only for factual verification",
+  "claims": [
+    {
+      "id": "C01",
+      "locations": [
+        "it/index.html#internet-guide",
+        "it/index.html#journey-title-2",
+        "it/index.html#quick-step-1"
+      ],
+      "claim": "Il DNS usa una gerarchia radice/TLD/nome; example.com e 192.0.2.10 sono esempi documentali. DNS e trasporto del contenuto web sono distinti.",
+      "verdict": "Confermato, con semplificazione didattica dichiarata.",
+      "sources": [
+        {
+          "url": "https://www.rfc-editor.org/rfc/rfc1034.html",
+          "citationRef": "turn45view4"
+        },
+        {
+          "url": "https://www.iana.org/help/example-domains",
+          "citationRef": "turn45view2"
+        },
+        {
+          "url": "https://www.rfc-editor.org/rfc/rfc5737.html",
+          "citationRef": "turn48view1"
+        }
+      ],
+      "limits": "Non è una misura della risoluzione reale di example.com; la guida chiarisce cache e passi semplificati."
+    },
+    {
+      "id": "C02",
+      "locations": [
+        "it/index.html#journey-title-5",
+        "it/index.html#lugano"
+      ],
+      "claim": "HTTPS/TLS e DNSSEC proteggono aspetti diversi; nessuno dei due dimostra che un contenuto o un commerciante sia affidabile.",
+      "verdict": "Confermato.",
+      "sources": [
+        {
+          "url": "https://www.rfc-editor.org/rfc/rfc4033.html",
+          "citationRef": "turn45view3"
+        },
+        {
+          "url": "https://www.rfc-editor.org/rfc/rfc8446.html",
+          "citationRef": "turn48view2"
+        }
+      ],
+      "limits": "La conclusione sull’affidabilità dei contenuti è un’inferenza esplicita dai limiti tecnici dei protocolli, non una citazione letterale degli RFC."
+    },
+    {
+      "id": "C03",
+      "locations": [
+        "it/index.html#quick-step-2",
+        "it/index.html#economics"
+      ],
+      "claim": ".ai è il ccTLD di Anguilla; la reinterpretazione commerciale legata all’intelligenza artificiale non cambia questa classificazione.",
+      "verdict": "Confermato.",
+      "sources": [
+        {
+          "url": "https://www.iana.org/domains/root/db/ai.html",
+          "citationRef": "turn45view0"
+        }
+      ],
+      "limits": "Verificata la classificazione stabile, non aggiornati contatti o dati del corpus congelato. Non sono state ri-verificate tutte le previsioni finanziarie di Anguilla."
+    },
+    {
+      "id": "C04",
+      "locations": [
+        "it/index.html#quick-step-3"
+      ],
+      "claim": ".cat nasce per la comunità linguistica e culturale catalana, non come codice paese.",
+      "verdict": "Confermato.",
+      "sources": [
+        {
+          "url": "https://www.iana.org/reports/2005/cat-report-18nov2005.html",
+          "citationRef": "turn48view0"
+        }
+      ],
+      "limits": "L’obiettivo documentato del dominio non è una misura empirica del suo impatto culturale."
+    },
+    {
+      "id": "C05",
+      "locations": [
+        "it/index.html#reveal",
+        "it/index.html#explore",
+        "research/connecting-the-dots-working-paper-v1.html — sezione 3"
+      ],
+      "claim": "Il riferimento al Reveal Day 2012 distingue 1.930 domande e 1.409 stringhe distinte.",
+      "verdict": "Confermato per il perimetro originale del Reveal Day 2012.",
+      "sources": [
+        {
+          "url": "https://www.icann.org/en/announcements/details/new-gtld-reveal-day---applied-for-strings-13-6-2012-en",
+          "citationRef": "turn42search4"
+        },
+        {
+          "url": "https://www.icann.org/en/about/ceo/connections-conflict-30jun12-en.pdf",
+          "citationRef": "turn48view3"
+        }
+      ],
+      "limits": "Non confrontare senza spiegazione con conteggi successivi che usano perimetri o stati diversi; il secondo documento riporta entrambi i numeri a pagina 8 stampata."
+    },
+    {
+      "id": "C06",
+      "locations": [
+        "it/index.html#reveal",
+        "it/index.html#explore",
+        "data/application_2026_snapshot.json",
+        "data/applications_2026_aps_official_listing.csv"
+      ],
+      "claim": "Il dato ufficiale è 1.615 candidature e 481 richiedenti. Il CSV pubblico congelato ha 2.783 record: 1.614 ID base e 1.169 sostituzioni. Il conteggio di 980 stringhe è identificato come inventario derivato e distinto dall’aggregato ufficiale.",
+      "verdict": "Confermato, mantenendo separate le unità di conteggio e la provenienza.",
+      "sources": [
+        {
+          "url": "https://newgtldprogram-aps.icann.org/statistics",
+          "citationRef": "turn44view2"
+        },
+        {
+          "url": "https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en",
+          "citationRef": "turn44view0"
+        },
+        {
+          "url": "https://newgtldprogram-aps.icann.org/help",
+          "citationRef": "turn48view5"
+        },
+        {
+          "url": "https://newgtldprogram-aps.icann.org/applications",
+          "citationRef": "turn54view2"
+        }
+      ],
+      "limits": "Il numero delle righe deriva dalla copia locale già sottoposta all’audit dati. L’endpoint storico CSV restituisce 404: non viene asserita uguaglianza byte per byte con un nuovo download remoto. WDO è esplicitamente esclusa dalla lista pubblica mentre resta nel totale ufficiale."
+    },
+    {
+      "id": "C07",
+      "locations": [
+        "it/index.html#lugano-status-sources",
+        "it/index.html#lugano",
+        "data/applications_2026.csv"
+      ],
+      "claim": ".lugano è la candidatura CDL2651T-T31516 della Città di Lugano, geografica autodichiarata; una candidatura attiva in pre-valutazione non equivale ad approvazione, delega o servizio operativo.",
+      "verdict": "Confermato nel record primario consultato, pubblicato il 7 ottobre.",
+      "sources": [
+        {
+          "url": "https://newgtldprogram-aps.icann.org/applications/CDL2651T-T31516/summary"
+        },
+        {
+          "url": "https://newgtldprogram-aps.icann.org/statistics",
+          "citationRef": "turn44view2"
+        }
+      ],
+      "limits": "La scheda specifica è stata verificata con HTTP diretto 200: la ricerca web non riusciva a renderla. Prova normalizzata in primary-http-checks.json con timestamp, dimensione e SHA-256. Nessuna previsione sull’esito della procedura."
+    },
+    {
+      "id": "C08",
+      "locations": [
+        "it/index.html#reveal",
+        "inside-the-round/it/index.html",
+        "data/translations.json /it/dataStatusSub",
+        "data/application_2026_snapshot.json /period"
+      ],
+      "claim": "Reveal Day il 7 ottobre; Replacement Period 8–21 ottobre 2026; String Confirmation Day previsto il 17 novembre.",
+      "verdict": "Date confermate; tempo verbale da migliorare in un punto dell’interfaccia.",
+      "sources": [
+        {
+          "url": "https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en",
+          "citationRef": "turn44view1"
+        },
+        {
+          "url": "https://newgtldprogram-aps.icann.org/about",
+          "citationRef": "turn51view2"
+        }
+      ],
+      "limits": "Nella baseline, dataStatusSub usava il presente “è aperto”: il calendario era corretto, ma il lettore di novembre poteva interpretarlo come stato attuale. Il candidato 0.7.99 ha corretto il tempo verbale nelle quattro lingue. Il corpus resta uno snapshot datato, non un feed in tempo reale.",
+      "followUpStatus": {
+        "candidateVersion": "0.7.99",
+        "state": "Corrected in source and independently reviewed",
+        "keys": [
+          "it/dataStatusSub",
+          "en/dataStatusSub",
+          "de/dataStatusSub",
+          "fr/dataStatusSub"
+        ],
+        "scientificDatesUnchanged": true,
+        "confirmationForecastUnchanged": true,
+        "evidence": "temporal-label-review.json"
+      }
+    },
+    {
+      "id": "C09",
+      "locations": [
+        "it/index.html#economics",
+        "data/round_application_fees.json"
+      ],
+      "claim": "La tariffa base di valutazione 2026 è 227.000 USD per domanda; non equivale al denaro effettivamente incassato e non comprende necessariamente ogni costo condizionale.",
+      "verdict": "Confermato, inclusa la prudenza sul confronto economico.",
+      "sources": [
+        {
+          "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/gtld-evaluation-fee/faqs",
+          "citationRef": "turn44view5"
+        }
+      ],
+      "limits": "La fonte prevede costi condizionali e riduzioni ASP; il sito non deve calcolare ricavi reali moltiplicando semplicemente tariffa e candidature. Non è stato svolto un audit contabile di ogni caso economico."
+    },
+    {
+      "id": "C10",
+      "locations": [
+        "it/index.html#contention",
+        "it/index.html#economics"
+      ],
+      "claim": "Nel round 2026 la risoluzione privata dei contention set, comprese aste private o accordi equivalenti, non è consentita; i casi 2012 restano storici.",
+      "verdict": "Confermato rispetto alle regole pubblicate consultate.",
+      "sources": [
+        {
+          "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/string-contention-resolution/faqs/general/can-applicants-resolve-contention-privately",
+          "citationRef": "turn44view4"
+        }
+      ],
+      "limits": "Non confondere commenti di stakeholder o proposte con una modifica già entrata nelle regole."
+    },
+    {
+      "id": "C11",
+      "locations": [
+        "it/index.html#governance-access",
+        "it/index.html#governance-sanctions"
+      ],
+      "claim": "ICANN non controlla da sola l’accesso a Internet o i suoi contenuti e non dispone di un potere generale di disconnettere paesi tramite sanzioni DNS.",
+      "verdict": "Confermato, con distinzione corretta tra ruoli tecnici e obblighi di legge.",
+      "sources": [
+        {
+          "url": "https://itp.cdn.icann.org/en/files/correspondence/marby-to-fedorov-02mar22-en.pdf",
+          "citationRef": "turn48view4"
+        }
+      ],
+      "limits": "La lettera del 2 marzo 2022 sostiene il limite istituzionale descritto. Non è una verifica legale universale delle sanzioni in ogni giurisdizione."
+    },
+    {
+      "id": "C12",
+      "locations": [
+        "it/index.html#how"
+      ],
+      "claim": "Per il ciclo gTLD illustrato, redemptionPeriod dura 30 giorni dopo l’eliminazione richiesta dal registrar, seguito dal periodo pendingDelete di cinque giorni; scadenza ed eliminazione non sono sinonimi.",
+      "verdict": "Confermato con il perimetro indicato.",
+      "sources": [
+        {
+          "url": "https://www.icann.org/resources/pages/epp-status-codes-2014-06-16-en",
+          "citationRef": "turn45view5"
+        }
+      ],
+      "limits": "Non presentare questo ciclo come universale per ogni ccTLD; il testo campionato contiene già la cautela."
+    }
+  ],
+  "claimsWithSubstantiveContradiction": 0,
+  "claimsWithEditorialQualification": [
+    "C08"
+  ],
+  "externalSourceAvailabilityDefects": [
+    "historical APS CSV endpoint returns 404"
+  ],
+  "evidenceFiles": [
+    "primary-http-checks.json",
+    "dead-source-link-inventory.json",
+    "source-link-fix-checks.json",
+    "rr1-attribution-check.json",
+    "temporal-label-review.json"
+  ],
+  "publicationStatus": "Unpublished technical candidate 0.7.98; not deployed to main or Pages; superseded by candidate 0.7.99"
+}

@@ -1,0 +1,215 @@
+{
+  "baselineCommit": "dee7b777d5ca6ac042167ed02d2e1fe253a36931",
+  "scope": "Source navigation only; no scientific roll-forward or provenance rewrite",
+  "checks": [
+    {
+      "name": "exact historical URL maps to official listing",
+      "pass": true
+    },
+    {
+      "name": "unrelated or non-exact URL unchanged",
+      "pass": true,
+      "url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv?x=1"
+    },
+    {
+      "name": "unrelated or non-exact URL unchanged",
+      "pass": true,
+      "url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv/"
+    },
+    {
+      "name": "unrelated or non-exact URL unchanged",
+      "pass": true,
+      "url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv-other"
+    },
+    {
+      "name": "unrelated or non-exact URL unchanged",
+      "pass": true,
+      "url": "https://newgtldprogram-aps.icann.org/applications/CDL2651T-T31516/summary"
+    },
+    {
+      "name": "behind/en: exact source anchor repaired",
+      "pass": true
+    },
+    {
+      "name": "behind/en: historical URL still in structured metadata",
+      "pass": true
+    },
+    {
+      "name": "behind/en: accurate link label",
+      "pass": true
+    },
+    {
+      "name": "replacement/en: exact source anchor repaired",
+      "pass": true
+    },
+    {
+      "name": "replacement/en: historical URL still in structured metadata",
+      "pass": true
+    },
+    {
+      "name": "replacement/en: accurate link label",
+      "pass": true
+    },
+    {
+      "name": "atlas/en: exact source anchor repaired",
+      "pass": true
+    },
+    {
+      "name": "atlas/en: historical URL still in structured metadata",
+      "pass": true
+    },
+    {
+      "name": "atlas/en: accurate link label",
+      "pass": true
+    },
+    {
+      "name": "dynamic en: exact source and translated label",
+      "pass": true
+    },
+    {
+      "name": "behind/it: exact source anchor repaired",
+      "pass": true
+    },
+    {
+      "name": "behind/it: historical URL still in structured metadata",
+      "pass": true
+    },
+    {
+      "name": "behind/it: accurate link label",
+      "pass": true
+    },
+    {
+      "name": "replacement/it: exact source anchor repaired",
+      "pass": true
+    },
+    {
+      "name": "replacement/it: historical URL still in structured metadata",
+      "pass": true
+    },
+    {
+      "name": "replacement/it: accurate link label",
+      "pass": true
+    },
+    {
+      "name": "atlas/it: exact source anchor repaired",
+      "pass": true
+    },
+    {
+      "name": "atlas/it: historical URL still in structured metadata",
+      "pass": true
+    },
+    {
+      "name": "atlas/it: accurate link label",
+      "pass": true
+    },
+    {
+      "name": "dynamic it: exact source and translated label",
+      "pass": true
+    },
+    {
+      "name": "behind/de: exact source anchor repaired",
+      "pass": true
+    },
+    {
+      "name": "behind/de: historical URL still in structured metadata",
+      "pass": true
+    },
+    {
+      "name": "behind/de: accurate link label",
+      "pass": true
+    },
+    {
+      "name": "replacement/de: exact source anchor repaired",
+      "pass": true
+    },
+    {
+      "name": "replacement/de: historical URL still in structured metadata",
+      "pass": true
+    },
+    {
+      "name": "replacement/de: accurate link label",
+      "pass": true
+    },
+    {
+      "name": "atlas/de: exact source anchor repaired",
+      "pass": true
+    },
+    {
+      "name": "atlas/de: historical URL still in structured metadata",
+      "pass": true
+    },
+    {
+      "name": "atlas/de: accurate link label",
+      "pass": true
+    },
+    {
+      "name": "dynamic de: exact source and translated label",
+      "pass": true
+    },
+    {
+      "name": "behind/fr: exact source anchor repaired",
+      "pass": true
+    },
+    {
+      "name": "behind/fr: historical URL still in structured metadata",
+      "pass": true
+    },
+    {
+      "name": "behind/fr: accurate link label",
+      "pass": true
+    },
+    {
+      "name": "replacement/fr: exact source anchor repaired",
+      "pass": true
+    },
+    {
+      "name": "replacement/fr: historical URL still in structured metadata",
+      "pass": true
+    },
+    {
+      "name": "replacement/fr: accurate link label",
+      "pass": true
+    },
+    {
+      "name": "atlas/fr: exact source anchor repaired",
+      "pass": true
+    },
+    {
+      "name": "atlas/fr: historical URL still in structured metadata",
+      "pass": true
+    },
+    {
+      "name": "atlas/fr: accurate link label",
+      "pass": true
+    },
+    {
+      "name": "dynamic fr: exact source and translated label",
+      "pass": true
+    },
+    {
+      "name": "data/behind_round_stories.json: scientific/source data unchanged",
+      "pass": true
+    },
+    {
+      "name": "data/field_investigations.json: scientific/source data unchanged",
+      "pass": true
+    },
+    {
+      "name": "data/applications_2026_aps_official_provenance.json: scientific/source data unchanged",
+      "pass": true
+    },
+    {
+      "name": "data/aps_2026_application_graph.json: scientific/source data unchanged",
+      "pass": true
+    },
+    {
+      "name": "template historical source anchor repaired",
+      "pass": true
+    }
+  ],
+  "passCount": 50,
+  "renderedStandalonePages": 12,
+  "renderedDynamicFragments": 4,
+  "oldURL": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+  "newURL": "https://newgtldprogram-aps.icann.org/applications"
+}

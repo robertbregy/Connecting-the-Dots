@@ -26,12 +26,23 @@ function staticChecks(){
  assert.equal(review.publicationVersion,publication.version,'Review and live publication versions differ');
  // The source guard has already checked the exact approved mapping and rationale.
  const i18nReplacements=review.i18nReplacements??[];
+ const operationalLinks=review.operationalLinkReplacements??[];
  const translations=JSON.parse(fs.readFileSync(path.join(root,'data/translations.json'),'utf8'));
  const unchangedAttributes=node=>[...node.attributes].filter(a=>a.name!=='data-i18n').map(a=>[a.name,a.value]).sort((a,b)=>a[0].localeCompare(b[0]));
  const normalize=(href,version)=>href.replaceAll(version,'<VERSION>').replace(/(reader-first\.css\?v=<VERSION>)-usability-20261022$/,'$1');
 
  for(const file of ['index.html',...langs.map(l=>l+'/index.html')]){
   const before=parseHTML(readOld(file).toString()).document,after=parseHTML(fs.readFileSync(path.join(root,file),'utf8')).document;
+  for(const replacement of operationalLinks){
+   assert.equal(after.querySelectorAll('a[href="'+replacement.from+'"]').length,0,'Unavailable APS export remains in rendered navigation: '+file);
+   for(const selector of ['#aps-native .apsResources','#behind-round [data-source-id="aps-export-20261018"]']){
+    assert.equal(before.querySelectorAll(selector+' a[href="'+replacement.from+'"]').length,1,'Reviewed original APS source scope changed: '+file+'/'+selector);
+    const links=after.querySelectorAll(selector+' a[href="'+replacement.to+'"]');
+    assert.equal(links.length,1,'Reviewed APS source listing must occur once in its original context: '+file+'/'+selector);
+    assert.equal(links[0].getAttribute('target'),'_blank','Reviewed source target changed: '+file);
+    assert.ok((links[0].getAttribute('rel')||'').split(/\s+/).includes('noopener'),'Reviewed source link lost noopener: '+file);
+   }
+  }
   const beforeKeys=new Set(evidence(before).map(x=>x[0])),afterKeys=new Set(evidence(after).map(x=>x[0]));
   for(const {elementId,from,to,href} of i18nReplacements){
    const prior=before.querySelectorAll('[id="'+elementId+'"]'),current=after.querySelectorAll('[id="'+elementId+'"]');
@@ -69,7 +80,12 @@ function staticChecks(){
   assert.equal(new Set(now).size,now.length,'Duplicate fragment: '+file);
   for(const [id,selector] of Object.entries(aliases))assert.equal(after.querySelector(selector)?.id,id,'Incorrect legacy destination: '+id);
   for(const d of [before,after])for(const ui of d.querySelectorAll('[data-reader-ui]'))ui.remove();
-  const originalLinks=[...before.querySelectorAll('a[href]')].map(a=>normalize(a.getAttribute('href'),originalPublication.version)).sort();
+  // Source protection above approves one exact obsolete APS export destination.
+  // Match its current official listing while retaining every other link occurrence.
+  const originalLinks=[...before.querySelectorAll('a[href]')].map(a=>{
+   const href=a.getAttribute('href'),replacement=operationalLinks.find(link=>link.from===href);
+   return normalize(replacement?replacement.to:href,originalPublication.version);
+  }).sort();
   const remaining=[...after.querySelectorAll('a[href]')].map(a=>normalize(a.getAttribute('href'),publication.version));
   for(const href of originalLinks){const i=remaining.indexOf(href);assert.ok(i>=0,'Lost historical source/content link: '+href);remaining.splice(i,1);}
   assert.equal(after.querySelectorAll('[data-i18n="iaProjectDefinition"]').length,1);

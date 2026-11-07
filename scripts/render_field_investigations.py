@@ -14,7 +14,8 @@ import re
 import xml.etree.ElementTree as ET
 
 from scripts.render_behind_round import (BASE, LANGS, CSS, BEHIND_CSS,
-                                         validate_editorial_updates, editorial_updates_markup)
+                                         validate_editorial_updates, editorial_updates_markup,
+                                         reader_source_url)
 
 ROOT = Path(__file__).resolve().parents[1]
 SLUGS = ("objectors-eoi", "replacement-strings", "background-screening")
@@ -198,10 +199,12 @@ def render_detail(case, dictionary, lang):
         '<ul class="behindSources">'
     ])
     for source in case["sources"]:
+        source_url = reader_source_url(source["url"])
+        label_key = source["labelKey"]
         parts.append(
             '<li data-source-id="' + h(source["id"], quote=True) + '" data-source-kind="' + h(source["kind"]) + '">'
-            '<a href="' + h(source["url"], quote=True) + '" target="_blank" rel="noopener noreferrer">' +
-            h(dictionary[source["labelKey"]]) + ' ↗</a></li>'
+            '<a href="' + h(source_url, quote=True) + '" target="_blank" rel="noopener noreferrer">' +
+            h(dictionary[label_key]) + ' ↗</a></li>'
         )
     parts.extend(['</ul></section>','<section class="behindReading behindRevisions">',
                   '<h2>' + h(dictionary["behindRevisionsTitle"]) + '</h2>',

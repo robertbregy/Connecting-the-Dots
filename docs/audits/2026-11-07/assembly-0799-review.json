@@ -1,0 +1,141 @@
+{
+  "workflow": "assemble-audit-release-0799.yml",
+  "reference": "assemble-audit-release-0798-reference.yml",
+  "reference_sha256": "8acca9c7a30e5348be56e3d4d3eb799a20bde81dc59fa668e17339467ee916ee",
+  "executed_reference_source_commit": "1af7e7f25264ae2d5c71859564fe000448e2d8c6",
+  "executed_reference_run_id": 42311673214,
+  "executed_reference_sha256": "c5d8f4e997310c1180d1fb5621b0025de046b7f3813152360fb287f4c3107869",
+  "workflow_sha256": "baa2e44c9885559ca8717866b5c7c20e134ac8061099457c0f7f988ba7bcf545",
+  "checks_passed": 24,
+  "checks_total": 24,
+  "checks": [
+    {
+      "name": "only_authorized_delta",
+      "passed": true,
+      "detail": "Only release/date/branch identity and the two requested final read-only gates differ from the reference."
+    },
+    {
+      "name": "reference_matches_successfully_executed_assembly",
+      "passed": true,
+      "detail": "The supplied reference differs from assembly run 42311673214 only by a trailing blank line."
+    },
+    {
+      "name": "only_dedicated_branch_trigger",
+      "passed": true,
+      "detail": "No main, feature, manual or workflow_run trigger was introduced."
+    },
+    {
+      "name": "same_minimal_permissions",
+      "passed": true,
+      "detail": "The existing token can push the assembly result; no additional permission or credential is introduced."
+    },
+    {
+      "name": "same_concurrency_policy",
+      "passed": true,
+      "detail": "The assembly has its own release-specific group and does not cancel a running build."
+    },
+    {
+      "name": "repository_and_ref_job_guard",
+      "passed": true,
+      "detail": "Only the named repository and literal assembly branch can execute the write job."
+    },
+    {
+      "name": "same_runtime_and_timeout",
+      "passed": true,
+      "detail": "Runtime and timeout are unchanged."
+    },
+    {
+      "name": "exact_source_checkout",
+      "passed": true,
+      "detail": "Checkout is the triggering SHA with complete history for baseline reads; credentials are retained only for the existing normal push."
+    },
+    {
+      "name": "source_tip_guard_unchanged",
+      "passed": true,
+      "detail": "Repository/ref/HEAD and remote-tip checks before any build are byte-identical after identity substitution."
+    },
+    {
+      "name": "dependency_setup_unchanged",
+      "passed": true,
+      "detail": "Python 3.12, Node 22 and npm ci are retained without browser installation or a new dependency."
+    },
+    {
+      "name": "first_build_unchanged",
+      "passed": true,
+      "detail": "The ordinary release build is retained."
+    },
+    {
+      "name": "second_build_and_determinism_unchanged",
+      "passed": true,
+      "detail": "The second full build and current-ZIP, legacy-ZIP and manuscript determinism comparisons are unchanged."
+    },
+    {
+      "name": "all_existing_release_gates_retained",
+      "passed": true,
+      "detail": "Version assertion 0.7.99, release_check, exact reviewed-source parity, multilingual, Internet access and static delivery remain mandatory."
+    },
+    {
+      "name": "new_gates_after_second_build",
+      "passed": true,
+      "detail": "State and static-usability checks run against the final second build before staging or committing."
+    },
+    {
+      "name": "new_reports_outside_checkout",
+      "passed": true,
+      "detail": "Neither gate leaves audit output inside the checkout for git add -A to stage."
+    },
+    {
+      "name": "source_immutability_and_push_unchanged",
+      "passed": true,
+      "detail": "Source/review/dependency/workflow guards, direct-parent assertion and fail-closed ordinary push are unchanged."
+    },
+    {
+      "name": "remove_only_own_workflow",
+      "passed": true,
+      "detail": "Only the canonical temporary workflow is removed; no production workflow is changed."
+    },
+    {
+      "name": "literal_branch_push_no_force_rebase",
+      "passed": true,
+      "detail": "The only push targets the literal assembly branch and fails on error without retry, rebase or force."
+    },
+    {
+      "name": "bash_syntax_step_2",
+      "passed": true,
+      "detail": "Require the dedicated branch and unchanged source tip"
+    },
+    {
+      "name": "bash_syntax_step_5",
+      "passed": true,
+      "detail": "Install Node dependencies"
+    },
+    {
+      "name": "bash_syntax_step_6",
+      "passed": true,
+      "detail": "Rebuild and validate publication"
+    },
+    {
+      "name": "bash_syntax_step_7",
+      "passed": true,
+      "detail": "Verify reproducible current ZIP and unchanged historical archive"
+    },
+    {
+      "name": "bash_syntax_step_8",
+      "passed": true,
+      "detail": "Validate the final release and exact reviewed sources"
+    },
+    {
+      "name": "bash_syntax_step_9",
+      "passed": true,
+      "detail": "Remove this temporary workflow and push only the assembly branch"
+    }
+  ],
+  "product_checkouts_modified": false,
+  "remote_writes_performed": false,
+  "build_or_browser_execution_claimed": false,
+  "limits": [
+    "This is a structural and shell review of the new temporary workflow, not a new remote assembly run.",
+    "The complete v0.7.99 review and all inputs must be finalized before the assembly branch is published.",
+    "The final assembled commit still requires its own A/B and full browser acceptance before main promotion."
+  ]
+}

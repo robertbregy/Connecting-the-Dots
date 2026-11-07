@@ -72,6 +72,12 @@ function refine(d, lang) {
   const actions=d.querySelector('.heroActions'), intro=d.querySelector('.hero [data-i18n="heroBody"]');
   assert.ok(actions&&intro); intro.after(actions);
   d.querySelector('.hero').dataset.usabilityEntry='action-first';
+  // Put the requested search action before its secondary explanation.
+  // Reparent the existing node: copy, sources, IDs and keyboard order stay intact.
+  const explorerSearch=d.querySelector('#explore .explorerSearchPrimary');
+  const explorerTitle=d.querySelector('#explore [data-i18n="exploreTitle"]');
+  assert.ok(explorerSearch&&explorerTitle&&explorerSearch.parentElement===explorerTitle.parentElement,'Unexpected Explorer search layout');
+  explorerTitle.after(explorerSearch);
   let cleaned=0;
   for(const a of d.querySelectorAll('nav.sectionToc a[title],#iaLegacyNavDisclosure a[title]')) {
     if(/\/\* Normalize legacy language|\(function\(\)\{|document\.documentElement/.test(a.getAttribute('title'))) {

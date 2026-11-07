@@ -1,3 +1,14 @@
+# v0.7.99 — 7 November 2026
+
+- Preserve Atlas searches and filters in shared URLs, reloads, language changes and browser history; preserve open source details when loading more results.
+- Expose the visible mobile Explorer metadata as the accessible name, with a concise action description; move search ahead of its second introduction.
+- Expose the active chapter title at accessible heading level 1 and give Atlas application cards headings appropriate to their standalone or embedded context, preserving layout and the complete no-JavaScript hierarchy.
+- Describe DNS-root membership precisely in all four languages. Repair obsolete operational APS export links while preserving historical acquisition URLs and frozen CSVs.
+- Verify selected factual claims against primary sources and distinguish heuristic review from real-reader observations.
+- Include the technical v0.7.98 maintenance; retain its exact candidate archive and review, without claiming it was deployed to Pages.
+
+See the [experience and content audit](docs/experience-audit-2026-11-07.md) for findings, decisions, evidence and limits.
+
 # v0.7.98 — 6 November 2026
 
 - Hardened rebuild/Pages publication, upstream deployment verification and live resource coverage.

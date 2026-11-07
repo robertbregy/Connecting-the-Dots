@@ -1,0 +1,207 @@
+{
+  "sourceWorktree": "/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-repository",
+  "method": "Production scripts executed on LinkeDOM with explicit route notifications; no browser, layout or actual AT session",
+  "fullBuildRun": false,
+  "localBrowserLaunched": false,
+  "reader": [
+    {
+      "language": "en",
+      "routesChecked": 29,
+      "homeReset": true,
+      "fullDocumentReset": true,
+      "nodeIdentityAndFocusPreserved": true,
+      "titleMarkupPreserved": true,
+      "unrelatedAriaLevelPreserved": true,
+      "staticH1Count": 1,
+      "staticChapterH2Count": 29
+    },
+    {
+      "language": "it",
+      "routesChecked": 29,
+      "homeReset": true,
+      "fullDocumentReset": true,
+      "nodeIdentityAndFocusPreserved": true,
+      "titleMarkupPreserved": true,
+      "unrelatedAriaLevelPreserved": true,
+      "staticH1Count": 1,
+      "staticChapterH2Count": 29
+    },
+    {
+      "language": "de",
+      "routesChecked": 29,
+      "homeReset": true,
+      "fullDocumentReset": true,
+      "nodeIdentityAndFocusPreserved": true,
+      "titleMarkupPreserved": true,
+      "unrelatedAriaLevelPreserved": true,
+      "staticH1Count": 1,
+      "staticChapterH2Count": 29
+    },
+    {
+      "language": "fr",
+      "routesChecked": 29,
+      "homeReset": true,
+      "fullDocumentReset": true,
+      "nodeIdentityAndFocusPreserved": true,
+      "titleMarkupPreserved": true,
+      "unrelatedAriaLevelPreserved": true,
+      "staticH1Count": 1,
+      "staticChapterH2Count": 29
+    }
+  ],
+  "atlas": [
+    {
+      "language": "en",
+      "surface": "standalone",
+      "cardsChecked": 60,
+      "headingTag": "H3",
+      "allOtherRenderedMarkupIdentical": true
+    },
+    {
+      "language": "en",
+      "surface": "embedded",
+      "cardsChecked": 60,
+      "headingTag": "H4",
+      "allOtherRenderedMarkupIdentical": true
+    },
+    {
+      "language": "it",
+      "surface": "standalone",
+      "cardsChecked": 60,
+      "headingTag": "H3",
+      "allOtherRenderedMarkupIdentical": true
+    },
+    {
+      "language": "it",
+      "surface": "embedded",
+      "cardsChecked": 60,
+      "headingTag": "H4",
+      "allOtherRenderedMarkupIdentical": true
+    },
+    {
+      "language": "de",
+      "surface": "standalone",
+      "cardsChecked": 60,
+      "headingTag": "H3",
+      "allOtherRenderedMarkupIdentical": true
+    },
+    {
+      "language": "de",
+      "surface": "embedded",
+      "cardsChecked": 60,
+      "headingTag": "H4",
+      "allOtherRenderedMarkupIdentical": true
+    },
+    {
+      "language": "fr",
+      "surface": "standalone",
+      "cardsChecked": 60,
+      "headingTag": "H3",
+      "allOtherRenderedMarkupIdentical": true
+    },
+    {
+      "language": "fr",
+      "surface": "embedded",
+      "cardsChecked": 60,
+      "headingTag": "H4",
+      "allOtherRenderedMarkupIdentical": true
+    }
+  ],
+  "css": [
+    {
+      "file": "assets/style.css",
+      "selector": ".apsNativePanel .apsCardString",
+      "onlyChange": "margin:0",
+      "explicitFontSize": "1.35rem",
+      "explicitFontWeight": "800",
+      "otherSourceBytesIdentical": true
+    },
+    {
+      "file": "assets/aps-atlas.css",
+      "selector": ".apsCardString",
+      "onlyChange": "margin:0",
+      "explicitFontSize": "1.35rem",
+      "explicitFontWeight": "800",
+      "otherSourceBytesIdentical": true
+    }
+  ],
+  "baselineFailures": [
+    {
+      "finding": "E05",
+      "language": "en",
+      "expectedFailure": "Routed Explorer remains native level two"
+    },
+    {
+      "finding": "E06",
+      "language": "en",
+      "surface": "standalone",
+      "expectedFailure": "Application strings are generic DIVs"
+    },
+    {
+      "finding": "E06",
+      "language": "en",
+      "surface": "embedded",
+      "expectedFailure": "Application strings are generic DIVs"
+    },
+    {
+      "finding": "E05",
+      "language": "it",
+      "expectedFailure": "Routed Explorer remains native level two"
+    },
+    {
+      "finding": "E06",
+      "language": "it",
+      "surface": "standalone",
+      "expectedFailure": "Application strings are generic DIVs"
+    },
+    {
+      "finding": "E06",
+      "language": "it",
+      "surface": "embedded",
+      "expectedFailure": "Application strings are generic DIVs"
+    },
+    {
+      "finding": "E05",
+      "language": "de",
+      "expectedFailure": "Routed Explorer remains native level two"
+    },
+    {
+      "finding": "E06",
+      "language": "de",
+      "surface": "standalone",
+      "expectedFailure": "Application strings are generic DIVs"
+    },
+    {
+      "finding": "E06",
+      "language": "de",
+      "surface": "embedded",
+      "expectedFailure": "Application strings are generic DIVs"
+    },
+    {
+      "finding": "E05",
+      "language": "fr",
+      "expectedFailure": "Routed Explorer remains native level two"
+    },
+    {
+      "finding": "E06",
+      "language": "fr",
+      "surface": "standalone",
+      "expectedFailure": "Application strings are generic DIVs"
+    },
+    {
+      "finding": "E06",
+      "language": "fr",
+      "surface": "embedded",
+      "expectedFailure": "Application strings are generic DIVs"
+    }
+  ],
+  "passed": true,
+  "initialHtmlByteDelta": 0,
+  "externalAssetDeltaBytes": 546,
+  "totals": {
+    "routeChecks": 116,
+    "atlasCards": 480,
+    "baselineFailuresConfirmed": 12
+  },
+  "initialHtmlByteDeltaBasis": "Asset-only patch: no generated HTML file changed. Full aggregated build and browser validation remain pending."
+}

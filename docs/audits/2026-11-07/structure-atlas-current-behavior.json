@@ -1,0 +1,34 @@
+{
+  "candidate": "dee7b777",
+  "runtime": "Exact production atlas JavaScript on LinkeDOM; no browser/layout or network",
+  "results": [
+    {
+      "native": false,
+      "initialUrl": "https://robertbregy.github.io/Connecting-the-Dots/applications/it/",
+      "initialCount": 30,
+      "afterMore": 60,
+      "previousDetailStillOpen": false,
+      "matches": [
+        ".tether",
+        ".usdt"
+      ],
+      "urlAfterSearch": "https://robertbregy.github.io/Connecting-the-Dots/applications/it/",
+      "urlUnchangedAfterSearch": true,
+      "urlAfterReset": "https://robertbregy.github.io/Connecting-the-Dots/applications/it/"
+    },
+    {
+      "native": true,
+      "initialUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=explore#aps-native",
+      "initialCount": 30,
+      "afterMore": 60,
+      "previousDetailStillOpen": false,
+      "matches": [
+        ".tether",
+        ".usdt"
+      ],
+      "urlAfterSearch": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=explore#aps-native",
+      "urlUnchangedAfterSearch": true,
+      "urlAfterReset": "https://robertbregy.github.io/Connecting-the-Dots/it/"
+    }
+  ]
+}

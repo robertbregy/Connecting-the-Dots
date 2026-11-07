@@ -1,0 +1,226 @@
+{
+  "candidateBase": "dee7b777d5ca6ac042167ed02d2e1fe253a36931",
+  "method": "Actual proposed guard source is evaluated in an isolated VM; HTML/JSON faults exist only in memory. These are focused guard tests, not complete review-manifest acceptance or browser tests.",
+  "sourceGuardSha256": "7e44221d35a4f9265cdac4a407624e19e933b3aa2485fb6b68c7f217d11f28d9",
+  "renderedGuardSha256": "11b64a9d7e5d5b654a72953c9dc9f2fb9c2f2481cd27fb61709b4a42d5b78b79",
+  "sourceTemplateSha256": "3f7d561d291bed7cec43261e821ee63115c7f8aff40c3448a0cf2005f3997527",
+  "productFilesModified": false,
+  "baselineObjectsModified": false,
+  "tests": [
+    {
+      "name": "exact_operational_mapping_and_source",
+      "expected": "accepted",
+      "observed": "accepted",
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "extra_mapping",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Only the reviewed unavailable APS export URL may be replaced\n+ actual - expected\n... Skipped lines\n\n  [\n    {\n      from: 'https://newgtldprogram-aps.icann.org/aps/applications/export/csv',\n      rationaleIds: [\n        'UX99'\n...\n    },\n+   {\n+     from: 'https://example.invalid/old',\n+     rationaleIds: [\n+       'UX99'\n+     ],\n+     to: 'https://newgtldprogram-aps.icann.org/applications'\n+   }\n  ]\n"
+    },
+    {
+      "name": "different_old_url",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Only the reviewed unavailable APS export URL may be replaced\n+ actual - expected\n\n  [\n    {\n+     from: 'https://example.invalid/old',\n-     from: 'https://newgtldprogram-aps.icann.org/aps/applications/export/csv',\n      rationaleIds: [\n        'UX99'\n      ],\n      to: 'https://newgtldprogram-aps.icann.org/applications'\n    }\n"
+    },
+    {
+      "name": "different_new_url",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Only the reviewed unavailable APS export URL may be replaced\n+ actual - expected\n\n  [\n    {\n      from: 'https://newgtldprogram-aps.icann.org/aps/applications/export/csv',\n      rationaleIds: [\n        'UX99'\n      ],\n+     to: 'https://example.invalid/new'\n-     to: 'https://newgtldprogram-aps.icann.org/applications'\n    }\n  ]\n"
+    },
+    {
+      "name": "unapproved_rationale",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Only the reviewed unavailable APS export URL may be replaced\n+ actual - expected\n\n  [\n    {\n      from: 'https://newgtldprogram-aps.icann.org/aps/applications/export/csv',\n      rationaleIds: [\n+       'OTHER'\n-       'UX99'\n      ],\n      to: 'https://newgtldprogram-aps.icann.org/applications'\n    }\n  ]\n"
+    },
+    {
+      "name": "missing_rationale",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Operational APS link needs an explicit review rationale"
+    },
+    {
+      "name": "blank_rationale",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Operational APS link needs an explicit review rationale"
+    },
+    {
+      "name": "mapping_not_array",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Operational source replacements must be an array"
+    },
+    {
+      "name": "missing_native_listing",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "The native Atlas must retain one official public listing link\n\n0 !== 1\n"
+    },
+    {
+      "name": "wrong_native_listing_destination",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "The native Atlas must retain one official public listing link\n\n0 !== 1\n"
+    },
+    {
+      "name": "duplicate_native_listing",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "The native Atlas must retain one official public listing link\n\n2 !== 1\n"
+    },
+    {
+      "name": "old_operational_link_survives",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Unavailable APS export still used as an operational source link\n\n1 !== 0\n"
+    },
+    {
+      "name": "wrong_native_target",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Expected values to be strictly equal:\n\n'_self' !== '_blank'\n"
+    },
+    {
+      "name": "wrong_native_label",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'Different source'\n- 'ICANN · APS ↗'\n"
+    },
+    {
+      "name": "missing_noopener",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Expected values to be strictly equal:\n\nnull !== 'noopener'\n"
+    },
+    {
+      "name": "hidden_native_link",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Operational APS source changed beyond its reviewed destination\n+ actual - expected\n\n  [\n    [\n+     'hidden',\n+     ''\n+   ],\n+   [\n      'href',\n      'https://newgtldprogram-aps.icann.org/applications'\n    ],\n    [\n      'rel',\n"
+    },
+    {
+      "name": "historical_graph_acquisition_url_changed",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Historical APS acquisition URL changed\n+ actual - expected\n\n+ 'https://newgtldprogram-aps.icann.org/applications'\n- 'https://newgtldprogram-aps.icann.org/aps/applications/export/csv'\n"
+    },
+    {
+      "name": "historical_provenance_export_url_changed",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Historical APS provenance URL changed\n+ actual - expected\n\n+ 'https://newgtldprogram-aps.icann.org/applications'\n- 'https://newgtldprogram-aps.icann.org/aps/applications/export/csv'\n"
+    },
+    {
+      "name": "rendered_replacement_preserves_all_other_link_occurrences:index.html",
+      "expected": "accepted",
+      "observed": "accepted",
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "rendered_replacement_preserves_all_other_link_occurrences:it/index.html",
+      "expected": "accepted",
+      "observed": "accepted",
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "rendered_replacement_preserves_all_other_link_occurrences:en/index.html",
+      "expected": "accepted",
+      "observed": "accepted",
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "rendered_replacement_preserves_all_other_link_occurrences:de/index.html",
+      "expected": "accepted",
+      "observed": "accepted",
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "rendered_replacement_preserves_all_other_link_occurrences:fr/index.html",
+      "expected": "accepted",
+      "observed": "accepted",
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "rendered_old_404_link_cannot_survive_with_extra_listing_links",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Unavailable APS export remains in rendered navigation: index.html\n\n1 !== 0\n"
+    },
+    {
+      "name": "rendered_missing_replacement_occurrence",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Reviewed APS source listing must occur once in its original context: index.html/#aps-native .apsResources\n\n0 !== 1\n"
+    },
+    {
+      "name": "rendered_replacement_in_wrong_context",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Reviewed APS source listing must occur once in its original context: index.html/#aps-native .apsResources\n\n0 !== 1\n"
+    },
+    {
+      "name": "rendered_duplicate_replacement_in_original_context",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Reviewed APS source listing must occur once in its original context: index.html/#aps-native .apsResources\n\n2 !== 1\n"
+    },
+    {
+      "name": "rendered_replacement_loses_noopener",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Reviewed source link lost noopener: index.html"
+    },
+    {
+      "name": "rendered_replacement_changes_target",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Reviewed source target changed: index.html\n\n'_self' !== '_blank'\n"
+    },
+    {
+      "name": "rendered_unrelated_historical_url_loss",
+      "expected": "rejected",
+      "observed": "rejected",
+      "passed": true,
+      "error": "Lost historical source/content link: https://www.iana.org/domains/root/db"
+    }
+  ],
+  "unexpected": [],
+  "passed": true,
+  "historicalDataFilesUnchanged": true,
+  "total": 30,
+  "correct": 30
+}
