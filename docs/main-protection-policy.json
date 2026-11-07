@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-11-07",
+  "repository": "robertbregy/Connecting-the-Dots",
+  "baseCommit": "86f89c21c5821f455bf29a079a5431bd1305fc62",
+  "name": "Protect main - reviewed publication",
+  "target": "refs/heads/main",
+  "enforcementWhenApplied": "active",
+  "bypassActors": [],
+  "blockDeletion": true,
+  "blockForcePushes": true,
+  "requirePullRequest": true,
+  "requiredApprovals": 0,
+  "requireCodeOwnerReview": false,
+  "requireLastPushApproval": false,
+  "allowedMergeMethod": "merge",
+  "requireBranchUpToDate": true,
+  "requiredChecksSource": {
+    "name": "GitHub Actions",
+    "integrationId": 15368
+  },
+  "requiredChecks": [
+    "browser-qa",
+    "Independent four-language and Explorer audit",
+    "APS Atlas all-language interaction and mobile regression",
+    "City namespace four-language and accessibility audit",
+    "Audit corrections, mobile semantics and controlled performance",
+    "compare",
+    "focus-reflow"
+  ],
+  "restrictUpdates": false,
+  "requireLinearHistory": false,
+  "requireSignedCommits": false,
+  "requireMergeQueue": false,
+  "requireDeploymentBeforeMerge": false,
+  "excludedPreMergeChecks": [
+    "rebuild",
+    "deploy",
+    "verify-live",
+    "build-and-audit"
+  ],
+  "featureBranchPolicy": "The ruleset does not target feat/**. The existing rebuild may write generated commits there; it receives no bypass on main.",
+  "acceptance": [
+    "All three read-only workflows run on pull_request targeting main without path filters.",
+    "All seven eligible PR check contexts succeed on the current merge candidate.",
+    "GitHub reports the corresponding active rules for main and no matching rules for feat/**.",
+    "The compiled publication and immutable archives remain byte-identical."
+  ],
+  "references": [
+    "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/troubleshooting-required-status-checks",
+    "https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow",
+    "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets"
+  ],
+  "activationEvidence": "Desired configuration only. Verify actual enforcement through GitHub active branch rules; this file is not proof of activation."
+}

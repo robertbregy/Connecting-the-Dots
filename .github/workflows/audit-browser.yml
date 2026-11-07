@@ -1,6 +1,8 @@
 name: Full browser and WCAG regression audit
 
 on:
+  pull_request:
+    branches: [main]
   push:
     branches:
       - 'feat/**'

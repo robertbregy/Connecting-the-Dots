@@ -1,5 +1,7 @@
 name: Final A/B editorial and archived-data parity
 on:
+  pull_request:
+    branches: [main]
   push:
     branches:
       - audit/final-a-b-parity-20261013
