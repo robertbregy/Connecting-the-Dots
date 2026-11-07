@@ -1,6 +1,7 @@
-/* Preserve usable reading space at high zoom or in short viewports. */
+/* Preserve usable reading space at high zoom or in short viewports.
+   The html qualifier wins over the later audience.css mobile rule. */
 @media (max-height: 500px) {
-  .iaPrimaryNav { position: static; }
+  html .iaPrimaryNav { position: static; }
 }
 /* Keep long translated labels intact instead of splitting words. */
 @media (max-width: 360px) {
