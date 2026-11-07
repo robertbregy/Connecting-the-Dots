@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "version": "0.7.101",
+  "reviewedOn": "2026-11-07",
+  "baseCommit": "014093cc95c52ef36f976b94564dd1847f2d1688",
+  "sourceCommit": "676517d4ef4c1e7b6f78464b8601e1fd90a3cff7",
+  "sourceScope": "Twenty reviewed editorial string replacements in four source files, plus distinct current technical-release metadata and audit closure. No navigation, layout, source-measurement or research-dataset change.",
+  "humanParticipants": 0,
+  "reviewType": "Independent AI-assisted source review and exact generated-output comparison; browser and deployment gates are recorded separately.",
+  "sourceFiles": [
+    "data/translations.json",
+    "data/reader_first.json",
+    "scripts/usability_remediation.cjs",
+    "scripts/render_tld_market.py"
+  ],
+  "generatedPages": [
+    {
+      "lang": "en",
+      "file": "index.html",
+      "stages": 6,
+      "rankedTablesIdentical": 2,
+      "retainedLinks": 134,
+      "retainedIDs": 87,
+      "heroChoicesUnchanged": true,
+      "stageTitle": "How widespread are TLDs?",
+      "innerTitle": "Two rankings, two measures"
+    },
+    {
+      "lang": "en",
+      "file": "en/index.html",
+      "stages": 6,
+      "rankedTablesIdentical": 2,
+      "retainedLinks": 134,
+      "retainedIDs": 87,
+      "heroChoicesUnchanged": true,
+      "stageTitle": "How widespread are TLDs?",
+      "innerTitle": "Two rankings, two measures"
+    },
+    {
+      "lang": "it",
+      "file": "it/index.html",
+      "stages": 6,
+      "rankedTablesIdentical": 2,
+      "retainedLinks": 134,
+      "retainedIDs": 87,
+      "heroChoicesUnchanged": true,
+      "stageTitle": "Quanto sono diffusi i TLD?",
+      "innerTitle": "Due classifiche, due misure"
+    },
+    {
+      "lang": "de",
+      "file": "de/index.html",
+      "stages": 6,
+      "rankedTablesIdentical": 2,
+      "retainedLinks": 134,
+      "retainedIDs": 87,
+      "heroChoicesUnchanged": true,
+      "stageTitle": "Wie verbreitet sind TLDs?",
+      "innerTitle": "Zwei Ranglisten, zwei Messgrössen"
+    },
+    {
+      "lang": "fr",
+      "file": "fr/index.html",
+      "stages": 6,
+      "rankedTablesIdentical": 2,
+      "retainedLinks": 134,
+      "retainedIDs": 87,
+      "heroChoicesUnchanged": true,
+      "stageTitle": "Quelle est la diffusion des TLD ?",
+      "innerTitle": "Deux classements, deux mesures"
+    }
+  ],
+  "preservation": {
+    "protectedFilesIdentical": 170,
+    "csvFilesIdentical": 67,
+    "allHistoricalDownloadsIdentical": true,
+    "allScientificJSONIdentical": true,
+    "rr1RR2AndDOIsIdentical": true,
+    "originalValidationScriptsUnchanged": true
+  },
+  "localBuild": "python3 build.py passed; existing release, four-language quick-guide, six-stage Economics, cultural and market checks retained.",
+  "currentPackageSHA256": "b1ac13c1b60b09b7fcc15455c10709460cbf94527c86184574adefc92ca86289",
+  "deliveryBudget": {
+    "thresholdsUnchanged": true,
+    "initialAttempt": "The first candidate exceeded the French HTML-plus-payload budget by 43 bytes. Only the new release-history summaries were shortened in all four languages; no older content, source evidence or budget was removed.",
+    "final": "Existing validate_delivery.js static check passed after reassembling localization assets, the manifest and current data package. Full CI rebuild must reproduce the reviewed output."
+  },
+  "ciAndPublicationEvidence": "Existing exact-file and A/B guards, branch browser/accessibility/focus/B2 checks, then successful Pages deployment and verification of actual served bytes. No completed deployment is claimed by this preparatory report."
+}

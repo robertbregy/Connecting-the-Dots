@@ -2581,7 +2581,8 @@
     "explorerExportNoteOne": "CSV · {count} name · all filtered results, not only the displayed rows",
     "release0798": "Technical audit: more reliable publication checks, current citation metadata, localized accessibility controls, lighter HTML and complete archive protection. Scientific evidence and archived releases are preserved.",
     "release0799": "Accessible mobile results, earlier search, shareable Atlas filters and repaired official-source links. Scientific data and archives remain unchanged.",
-    "release07100": "Visible focus, accessible skip link and readable mobile metrics. Data unchanged."
+    "release07100": "Visible focus, accessible skip link and readable mobile metrics. Data unchanged.",
+    "release07101": "Home and Economics: clearer introductions and distinct headings. Data and sources preserved."
   },
   "it": {
     "brand": "Brand",
@@ -5165,7 +5166,8 @@
     "explorerExportNoteOne": "CSV · {count} nome · tutti i risultati del filtro, non solo quelli mostrati",
     "release0798": "Audit tecnico: controlli di pubblicazione più affidabili, citazioni aggiornate, comandi accessibili nelle quattro lingue, HTML più leggero e protezione completa degli archivi. Evidenze scientifiche e release archiviate preservate.",
     "release0799": "Schede mobili accessibili, ricerca più immediata, filtri dell’atlante condivisibili e collegamenti alle fonti corretti. Dati e archivi scientifici invariati.",
-    "release07100": "Focus visibile, salto al contenuto e riquadri mobili leggibili. Dati invariati."
+    "release07100": "Focus visibile, salto al contenuto e riquadri mobili leggibili. Dati invariati.",
+    "release07101": "Home ed Economia: introduzioni più chiare e titoli distinti. Dati e fonti conservati."
   },
   "de": {
     "brand": "Marke",
@@ -7749,7 +7751,8 @@
     "explorerExportNoteOne": "CSV · {count} Name · alle gefilterten Ergebnisse, nicht nur die angezeigten Zeilen",
     "release0798": "Technisches Audit: zuverlässigere Veröffentlichungsprüfungen, aktuelle Zitiermetadaten, lokalisierte barrierefreie Bedienelemente, schlankeres HTML und vollständiger Archivschutz. Forschungsbelege und archivierte Versionen bleiben erhalten.",
     "release0799": "Zugängliche mobile Ergebnisse, frühere Suche, teilbare Atlas-Filter und korrigierte Quellenlinks. Forschungsdaten und Archive bleiben unverändert.",
-    "release07100": "Sichtbarer Fokus, Sprunglink und lesbare mobile Kennzahlen. Daten unverändert."
+    "release07100": "Sichtbarer Fokus, Sprunglink und lesbare mobile Kennzahlen. Daten unverändert.",
+    "release07101": "Klarere Einleitungen und eindeutige Titel in Startseite und Wirtschaft. Daten und Quellen unverändert."
   },
   "fr": {
     "brand": "Marque",
@@ -10333,6 +10336,7 @@
     "explorerExportNoteOne": "CSV · {count} nom · tous les résultats filtrés, pas seulement les lignes affichées",
     "release0798": "Audit technique : contrôles de publication plus fiables, métadonnées de citation à jour, commandes accessibles dans les quatre langues, HTML allégé et protection complète des archives. Données scientifiques et versions archivées préservées.",
     "release0799": "Résultats mobiles accessibles, recherche plus directe, filtres de l’atlas partageables et liens vers les sources corrigés. Données et archives scientifiques inchangées.",
-    "release07100": "Focus visible, lien d’évitement et indicateurs mobiles lisibles. Données inchangées."
+    "release07100": "Focus visible, lien d’évitement et indicateurs mobiles lisibles. Données inchangées.",
+    "release07101": "Accueil et Économie : introductions clarifiées, titres distincts. Données et sources conservées."
   }
 }
