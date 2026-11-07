@@ -165,14 +165,20 @@ function checkedOperationalLinks(review,source){
   to:'https://newgtldprogram-aps.icann.org/applications',rationaleIds:['UX99']};
  assert.deepEqual(declared,[approved],'Only the reviewed unavailable APS export URL may be replaced');
  assert.ok(review.rationales?.UX99?.trim(),'Operational APS link needs an explicit review rationale');
- const {document}=require('linkedom').parseHTML(source);
- const links=document.querySelectorAll('#aps-native .apsResources a[href="'+approved.to+'"]');
- assert.equal(links.length,1,'The native Atlas must retain one official public listing link');
- assert.equal(document.querySelectorAll('a[href="'+approved.from+'"]').length,0,'Unavailable APS export still used as an operational source link');
- assert.equal(links[0].getAttribute('target'),'_blank');
- assert.equal(links[0].getAttribute('rel'),'noopener');
- assert.equal(links[0].textContent,'ICANN · APS ↗');
- assert.deepEqual([...links[0].attributes].map(a=>[a.name,a.value]).sort(),[['href',approved.to],['rel','noopener'],['target','_blank']],'Operational APS source changed beyond its reviewed destination');
+  // A/B and Pages run this guard directly from a checkout, without npm packages.
+  // Pin the exact reviewed native panel, including the source-link container,
+  // so its scope, attributes and visible label cannot change with this exception.
+  const panelOpen='<section class="panel apsNativePanel" id="aps-native" aria-labelledby="apsNativeHeading">';
+  assert.equal(source.split(panelOpen).length,2,'The reviewed native Atlas panel must occur exactly once');
+  assert.equal((source.match(/\bid\s*=\s*["']aps-native["']/gi)||[]).length,1,'Native Atlas panel ID duplicated');
+  const panelStart=source.indexOf(panelOpen),panelEnd=source.indexOf('</section>',panelStart);
+  assert.ok(panelEnd>panelStart,'The reviewed native Atlas panel must close');
+  const panel=source.slice(panelStart,panelEnd+'</section>'.length);
+  assert.equal(sha256(panel),'b62604a83105a1cd7bd185afb1efd8b14b81505cf11cebb62656dbc3cc09a7b9','Operational APS source changed beyond its reviewed destination');
+  const anchor='<a href="'+approved.to+'" target="_blank" rel="noopener">ICANN · APS ↗</a>';
+  assert.equal(panel.split(anchor).length,2,'The native Atlas must retain one exact official public listing link');
+  const obsolete=approved.from.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  assert.ok(!new RegExp('\\bhref\\s*=\\s*(?:"'+obsolete+'"|\''+obsolete+'\'|'+obsolete+'(?=[\\s>]))','i').test(source),'Unavailable APS export still used as an operational source link');
  // The source used to acquire the frozen data remains a historical fact.
  assert.equal(JSON.parse(fs.readFileSync('data/aps_2026_application_graph.json','utf8')).officialCSVURL,approved.from,'Historical APS acquisition URL changed');
  assert.equal(JSON.parse(fs.readFileSync('data/applications_2026_aps_official_provenance.json','utf8')).sourceExportURL,approved.from,'Historical APS provenance URL changed');

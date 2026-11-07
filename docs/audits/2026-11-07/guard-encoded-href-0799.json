@@ -1,0 +1,35 @@
+{
+  "scope": "Full acceptance path, without node_modules; only the isolated fixture source was changed temporarily.",
+  "injected_anchor": "<a href=\"https:&#x2f;/newgtldprogram-aps.icann.org/aps/applications/export/csv\">obsolete export</a>",
+  "location": "Immediately before </body>, outside #aps-native",
+  "review_fingerprints_modified_for_fault": false,
+  "review_sha256": "1366e660d6bf3888647084667c26427c3cc2b307c9a37f7ae8f321197123aa72",
+  "source_restored_sha256": "3f7d561d291bed7cec43261e821ee63115c7f8aff40c3448a0cf2005f3997527",
+  "results": [
+    {
+      "name": "source-guard",
+      "returncode": 2,
+      "expected": "Reject unreviewed encoded old URL outside the exact panel",
+      "observed": {
+        "stderr": "AssertionError [ERR_ASSERTION]: File drift after editorial review: src/index.web.html\n+ actual - expected\n\n+ 'c83a2431ffce44c7430788437a25aeca4626f85355f92c6472f6086984f0a8a2'\n- '3f7d561d291bed7cec43261e821ee63115c7f8aff40c3448a0cf2005f3997527'\n\n    at validateReviewedFiles (/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/guard-runtime-fix-0799/clean-checkouts/current/scripts/verify_ia_b2_parity.cjs:261:10)\n    at main (/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/guard-runtime-fix-0799/clean-checkouts/current/scripts/verify_ia_b2_parity.cjs:282:56)\n    at Object.<anonymous> (/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/guard-runtime-fix-0799/clean-checkouts/current/scripts/verify_ia_b2_parity.cjs:300:31)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47\n",
+        "proof_marker_present": false
+      },
+      "passed": true
+    },
+    {
+      "name": "ab-continuity",
+      "returncode": 2,
+      "expected": "Reject unreviewed encoded old URL outside the exact panel",
+      "observed": {
+        "validated": false,
+        "errors": [
+          "AssertionError [ERR_ASSERTION]: File drift after editorial review: src/index.web.html\n+ actual - expected\n\n+ 'c83a2431ffce44c7430788437a25aeca4626f85355f92c6472f6086984f0a8a2'\n- '3f7d561d291bed7cec43261e821ee63115c7f8aff40c3448a0cf2005f3997527'\n\n    at validateReviewedFiles (/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/guard-runtime-fix-0799/clean-checkouts/current/scripts/verify_ia_b2_parity.cjs:261:10)\n    at main (/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/guard-runtime-fix-0799/clean-checkouts/current/scripts/verify_ia_b2_parity.cjs:282:56)\n    at Object.<anonymous> (/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/guard-runtime-fix-0799/clean-checkouts/current/scripts/verify_ia_b2_parity.cjs:300:31)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47"
+        ],
+        "pass_marker_present": false
+      },
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "limitation": "The local operational-link regex does not decode HTML entities. The complete exact-file review rejects this mutation, emits no verification proof, and A/B consequently grants no exception. No source hash was automatically refreshed for this fault."
+}

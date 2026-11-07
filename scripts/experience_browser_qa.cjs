@@ -11,7 +11,7 @@ const base=(process.env.CTD_TEST_BASE||'http://127.0.0.1:8123/').replace(/\/?$/,
 const out=process.env.CTD_EXPERIENCE_QA||'audit-experience';
 const languages=['en','it','de','fr'],widths=[320,390],height=844;
 const report={sourceCommit:process.env.GITHUB_SHA||null,base,viewportHeight:height,
- humanParticipants:0,accessibilityMethod:'Chromium CDP computed AX name and description',
+ humanParticipants:0,accessibilityMethod:'Chromium CDP computed AX name, description and full-tree heading levels',
  coverageLimits:['Automated checks are not an accessibility certification or a human study.','No actual assistive-technology session or 200% text-zoom test is claimed.'],
  scenarios:[],axeScans:0,errors:[],passed:false};
 const flat=value=>String(value??'').replace(/\s+/g,' ').trim();
@@ -28,8 +28,25 @@ async function elementAX(context,page,selector='.explorerCardButton',role='butto
   const {nodes}=await session.send('Accessibility.getPartialAXTree',{backendNodeId:node.backendNodeId,fetchRelatives:false});
   const control=nodes.find(n=>n.backendDOMNodeId===node.backendNodeId&&n.role?.value===role&&!n.ignored);
   assert.ok(control,'Element is not exposed as an accessible '+role+': '+selector);
-  return {role:control.role.value,name:flat(control.name?.value),description:flat(control.description?.value),
+  return {backendDOMNodeId:control.backendDOMNodeId,role:control.role.value,name:flat(control.name?.value),description:flat(control.description?.value),
    level:control.properties?.find(property=>property.name==='level')?.value?.value};
+ }finally{await session.detach();}
+}
+
+async function assertSingleLevelOneHeading(context,page,expected){
+ const session=await context.newCDPSession(page);
+ try{
+  await session.send('Accessibility.enable');
+  const {nodes}=await session.send('Accessibility.getFullAXTree');
+  // Playwright 1.56.1's role matcher gives native H1-H6 tags precedence over
+  // aria-level. Count Chromium's actual exposed headings, as used by AT.
+  const headings=nodes.filter(node=>!node.ignored&&node.role?.value==='heading'&&
+   node.properties?.find(property=>property.name==='level')?.value?.value===1)
+   .map(node=>({backendDOMNodeId:node.backendDOMNodeId,name:flat(node.name?.value),level:1}));
+  assert.equal(headings.length,1,'Only the active view may expose one level-one title: '+JSON.stringify(headings));
+  assert.equal(headings[0].backendDOMNodeId,expected.backendDOMNodeId,'The sole level-one heading must be the verified active title node');
+  assert.equal(headings[0].name,expected.name,'The full AX tree must retain the verified active title name');
+  return headings;
  }finally{await session.detach();}
 }
 
@@ -64,7 +81,7 @@ async function scenario(browser,lang,width){
    state.directHeading=await elementAX(context,page,'#explore .readerChapterTitle','heading');
    assert.equal(state.directHeading.level,1,'The routed title must be exposed at level one');
    assert.equal(state.directHeading.name,flat(await page.locator('#explore .readerChapterTitle').textContent()));
-   assert.equal(await page.getByRole('heading',{level:1}).count(),1,'Only the active view has a visible level-one title');
+   state.directLevelOneHeadings=await assertSingleLevelOneHeading(context,page,state.directHeading);
   });
 
   await page.locator('#explorerSearch').fill('.lugano');
@@ -117,17 +134,17 @@ async function scenario(browser,lang,width){
     await page.waitForFunction(id=>document.body.dataset.activeTab===id,view);
     const ax=await elementAX(context,page,selector,'heading');
     assert.equal(ax.level,1,'The switched title must be exposed at level one');
-    assert.equal(await page.getByRole('heading',{level:1}).count(),1);
+    const exposedLevelOneHeadings=await assertSingleLevelOneHeading(context,page,ax);
     assert.ok(await original.evaluate((node,sel)=>node===document.querySelector(sel)&&document.activeElement===node,selector),'Routing must retain and focus the original title node');
     assert.equal(await previous.getAttribute('aria-level'),null,'Previous title must regain its native level');
-    state.headingSwitches.push({view,ax,nodeAndFocusPreserved:true});
+    state.headingSwitches.push({view,ax,nodeAndFocusPreserved:true,exposedLevelOneHeadings});
     previous=original;
    }
    await page.locator('.brand').click();
    await page.waitForFunction(()=>document.body.dataset.activeTab==='overview');
    state.homeHeading=await elementAX(context,page,'.hero h1','heading');
    assert.equal(state.homeHeading.level,1);
-   assert.equal(await page.getByRole('heading',{level:1}).count(),1);
+   state.homeLevelOneHeadings=await assertSingleLevelOneHeading(context,page,state.homeHeading);
    assert.equal(await page.locator('.readerChapterTitle[aria-level],.iaHubHead h2[aria-level]').count(),0,'Home must not retain a routed heading override');
    assert.equal(await previous.getAttribute('aria-level'),null);
   });

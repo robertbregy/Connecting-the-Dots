@@ -278,7 +278,10 @@ print('AB_CONTENT_PARITY_RESULT '+json.dumps(summary,ensure_ascii=False))
 unapproved_articles=[x for x in report['html_articles']['not_exact'] if x['path'] not in approved_pages]
 unapproved_case_data=[x for x in caseDatasets if not x['same_sha'] and x['path'] not in approved_case_data]
 unapproved_csv=[path for path in csvChanged if path not in approved_csv]
-replaced_hrefs={item['from'] for item in review['linkReplacements']} if editorial_review['validated'] else set()
+# Both inventories are admitted only after the source guard has validated their
+# exact mappings, destinations, scope, provenance and reviewed fingerprints.
+replaced_hrefs={item['from'] for item in [*review['linkReplacements'],
+    *review.get('operationalLinkReplacements',[])]} if editorial_review['validated'] else set()
 unapproved_hrefs=[href for href in srcMetrics['hrefs']['removed'] if href not in replaced_hrefs]
 bad=bool(missing_paths or unapproved_articles or report['sitemap_routes']['removed'] or
     any(v['missing'] for v in translations.values()) or

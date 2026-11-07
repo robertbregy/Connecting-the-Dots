@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 1,
+  "release": "0.7.99",
+  "status": "Local correction validated; complete browser acceptance pending the next candidate run",
+  "modifiedProductFiles": [
+    "scripts/experience_browser_qa.cjs"
+  ],
+  "beforeSHA256": "3b421718352f885c57209bf79a5dd1e06b240ee0b812c553bbf9d61455c15a28",
+  "afterSHA256": "24070d4b125e1cb42a5600e6fda48f7332da737d7473ef24937f28fd01ed9bc1",
+  "originalFailure": {
+    "runId": 42319496981,
+    "jobId": 128240316744,
+    "headSha": "6326112ea06a23eff5a3fc385e5411789ded111b",
+    "artifactId": 13552397355,
+    "artifactDigest": "sha256:67f5bea2237754f48fa026edc9b0b9c0e4dfda36a3f5d2b880fbd8cc9de6762a",
+    "scenarioCount": 8,
+    "failedAssertions": 16,
+    "allDirectHeadingsExposedAtLevelOneByCDP": true,
+    "failedChecks": [
+      "direct view has one accessible level-one title",
+      "view switches preserve title nodes and restore the home hierarchy"
+    ],
+    "axeViolations": 0,
+    "axeIncomplete": [
+      {
+        "lang": "en",
+        "width": 320,
+        "axeIncomplete": [
+          {
+            "id": "color-contrast",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodes": [
+              [
+                "#themeBtn"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "lang": "en",
+        "width": 390,
+        "axeIncomplete": [
+          {
+            "id": "color-contrast",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodes": [
+              [
+                "#themeBtn"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "lang": "it",
+        "width": 320,
+        "axeIncomplete": [
+          {
+            "id": "color-contrast",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodes": [
+              [
+                "#themeBtn"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "lang": "it",
+        "width": 390,
+        "axeIncomplete": [
+          {
+            "id": "color-contrast",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodes": [
+              [
+                "#themeBtn"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "lang": "de",
+        "width": 320,
+        "axeIncomplete": [
+          {
+            "id": "color-contrast",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodes": [
+              [
+                "#themeBtn"
+              ],
+              [
+                "span[data-i18n=\"apsAtlasStrings\"]"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "lang": "de",
+        "width": 390,
+        "axeIncomplete": [
+          {
+            "id": "color-contrast",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodes": [
+              [
+                "#themeBtn"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "lang": "fr",
+        "width": 320,
+        "axeIncomplete": [
+          {
+            "id": "color-contrast",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodes": [
+              [
+                "#themeBtn"
+              ],
+              [
+                "span[data-i18n=\"apsAtlasReplacements\"]"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "lang": "fr",
+        "width": 390,
+        "axeIncomplete": [
+          {
+            "id": "color-contrast",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodes": [
+              [
+                "#themeBtn"
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "retainedOriginalLog": "../guard-runtime-fix-0799/candidate_0799-original-remediation.log"
+  },
+  "primarySource": {
+    "url": "https://registry.npmjs.org/playwright-core/-/playwright-core-1.56.1.tgz",
+    "status": 200,
+    "tarball_sha256": "fa648e5442796d4160c68dcfc3914ed5224f147852264993e6376e29f0228238",
+    "matching_files": [
+      "package/lib/generated/injectedScriptSource.js"
+    ],
+    "package_version": "1.56.1"
+  },
+  "rootCauseProof": {
+    "package": "playwright-core",
+    "version": "1.56.1",
+    "source": "https://registry.npmjs.org/playwright-core/-/playwright-core-1.56.1.tgz",
+    "function": "function getAriaLevel(element) {\n  const native = { \"H1\": 1, \"H2\": 2, \"H3\": 3, \"H4\": 4, \"H5\": 5, \"H6\": 6 }[elementSafeTagName(element)];\n  if (native)\n    return native;\n  if (kAriaLevelRoles.includes(getAriaRole(element) || \"\")) {\n    const attr = element.getAttribute(\"aria-level\");\n    const value = attr === null ? Number.NaN : Number(attr);\n    if (Number.isInteger(value) && value >= 1)\n      return value;\n  }\n  return 0;\n}",
+    "input": {
+      "tagName": "H2",
+      "aria-level": "1"
+    },
+    "observedMatcherLevel": 2,
+    "ciChromiumObservedLevel": 1,
+    "confirmed": true
+  },
+  "newAssertion": "Accessibility.getFullAXTree counts non-ignored heading nodes whose computed level is exactly one, requires exactly one, and matches its backend DOM node ID and computed name to the already independently verified active title.",
+  "preservedAssertions": {
+    "perNodeComputedRoleLevelName": true,
+    "nodeIdentityAndFocus": true,
+    "previousAriaLevelRemoved": true,
+    "homeHierarchyRestored": true,
+    "eightLanguageViewportScenarios": true,
+    "eightWCAGAxeScansAndIncompleteReports": true,
+    "keyboardEnterEscapeTab": true,
+    "initialFullSearchVisibilityBeforeAutoScroll": true,
+    "runtimeErrors": true,
+    "allOtherSourceByteIdenticalAfterMechanicalReplacementReversal": true
+  },
+  "localValidation": {
+    "nodeCheckPassed": true,
+    "gitDiffCheckPassed": true,
+    "helperTests": {
+      "method": "Execute the actual new CDP assertion helper in an isolated VM with controlled protocol responses; no browser acceptance is claimed.",
+      "sourceSha256": "24070d4b125e1cb42a5600e6fda48f7332da737d7473ef24937f28fd01ed9bc1",
+      "cases": 8,
+      "passed": true,
+      "tests": [
+        {
+          "name": "one_correct_exposed_level_one_heading",
+          "expected": "accepted",
+          "observed": "accepted",
+          "passed": true,
+          "detached": true,
+          "requests": [
+            "Accessibility.enable",
+            "Accessibility.getFullAXTree"
+          ],
+          "result": [
+            {
+              "backendDOMNodeId": 42,
+              "name": "Current view",
+              "level": 1
+            }
+          ],
+          "error": null
+        },
+        {
+          "name": "ignored_level_one_does_not_count",
+          "expected": "accepted",
+          "observed": "accepted",
+          "passed": true,
+          "detached": true,
+          "requests": [
+            "Accessibility.enable",
+            "Accessibility.getFullAXTree"
+          ],
+          "result": [
+            {
+              "backendDOMNodeId": 42,
+              "name": "Current view",
+              "level": 1
+            }
+          ],
+          "error": null
+        },
+        {
+          "name": "other_levels_and_non_headings_do_not_count",
+          "expected": "accepted",
+          "observed": "accepted",
+          "passed": true,
+          "detached": true,
+          "requests": [
+            "Accessibility.enable",
+            "Accessibility.getFullAXTree"
+          ],
+          "result": [
+            {
+              "backendDOMNodeId": 42,
+              "name": "Current view",
+              "level": 1
+            }
+          ],
+          "error": null
+        },
+        {
+          "name": "zero_exposed_level_one_headings_rejected",
+          "expected": "rejected",
+          "observed": "rejected",
+          "passed": true,
+          "detached": true,
+          "requests": [
+            "Accessibility.enable",
+            "Accessibility.getFullAXTree"
+          ],
+          "error": "Only the active view may expose one level-one title: []\n\n0 !== 1\n"
+        },
+        {
+          "name": "two_exposed_level_one_headings_rejected",
+          "expected": "rejected",
+          "observed": "rejected",
+          "passed": true,
+          "detached": true,
+          "requests": [
+            "Accessibility.enable",
+            "Accessibility.getFullAXTree"
+          ],
+          "error": "Only the active view may expose one level-one title: [{\"backendDOMNodeId\":42,\"name\":\"Current view\",\"level\":1},{\"backendDOMNodeId\":43,\"name\":\"Unexpected second title\",\"level\":1}]\n\n2 !== 1\n"
+        },
+        {
+          "name": "wrong_node_with_same_name_rejected",
+          "expected": "rejected",
+          "observed": "rejected",
+          "passed": true,
+          "detached": true,
+          "requests": [
+            "Accessibility.enable",
+            "Accessibility.getFullAXTree"
+          ],
+          "error": "The sole level-one heading must be the verified active title node\n\n43 !== 42\n"
+        },
+        {
+          "name": "same_node_with_wrong_name_rejected",
+          "expected": "rejected",
+          "observed": "rejected",
+          "passed": true,
+          "detached": true,
+          "requests": [
+            "Accessibility.enable",
+            "Accessibility.getFullAXTree"
+          ],
+          "error": "The full AX tree must retain the verified active title name\n+ actual - expected\n\n+ 'Wrong view'\n- 'Current view'\n"
+        },
+        {
+          "name": "cdp_failure_fails_closed_and_detaches",
+          "expected": "rejected",
+          "observed": "rejected",
+          "passed": true,
+          "detached": true,
+          "requests": [
+            "Accessibility.enable",
+            "Accessibility.getFullAXTree"
+          ],
+          "error": "Fixture CDP error"
+        }
+      ]
+    }
+  },
+  "publicationAssetsChanged": false,
+  "workflowsReviewBaselinesChangedByThisFix": false,
+  "limits": [
+    "No local Chromium execution is claimed. Mock CDP cases test that the actual helper rejects zero/multiple/wrong-node headings and protocol failures; they do not substitute for browser acceptance.",
+    "The old run stopped each Storie-to-Economia-to-Home check at the first Playwright count. The next CI run must complete both view changes and Home for all eight scenarios.",
+    "Axe incomplete contrast observations remain in reports and are not reclassified as passes."
+  ]
+}

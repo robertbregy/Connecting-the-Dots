@@ -1,0 +1,539 @@
+{
+  "schemaVersion": 1,
+  "release": "0.7.99",
+  "preparedUTC": "2026-11-07T00:45:17.684629+00:00",
+  "status": "PASS: local corrective validation; remote final candidate acceptance remains pending",
+  "scope": {
+    "modified_product_files": [
+      "scripts/verify_ia_b2_parity.cjs",
+      "scripts/audit_content_continuity.py"
+    ],
+    "publication_assets_modified": false,
+    "review_or_baselines_modified": false,
+    "remote_mutations": false
+  },
+  "original_failed_remote_attempts": [
+    {
+      "head_sha": "430c6a49138e7c00f32c3b623989e283c3807e6d",
+      "run_id": 42319464201,
+      "run_url": "https://github.com/robertbregy/Connecting-the-Dots/actions/runs/42319464201",
+      "job_ids": [
+        128240206075
+      ],
+      "annotations": {
+        "job_id": 128240206075,
+        "http_status": 200,
+        "annotations": [
+          {
+            "path": ".github",
+            "blob_href": "https://github.com/robertbregy/Connecting-the-Dots/blob/430c6a49138e7c00f32c3b623989e283c3807e6d/.github",
+            "start_line": 8,
+            "start_column": null,
+            "end_line": 8,
+            "end_column": null,
+            "annotation_level": "failure",
+            "title": "",
+            "message": "Process completed with exit code 2.",
+            "raw_details": ""
+          }
+        ]
+      },
+      "cause": "The new operational-link source guard imports linkedom, unavailable in this checkout-only workflow. No npm dependencies were installed.",
+      "essential_log": [
+        "Error: Cannot find module 'linkedom'\nRequire stack:\n- /home/runner/work/Connecting-the-Dots/Connecting-the-Dots/current/scripts/verify_ia_b2_parity.cjs\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)\n    at Function._load (node:internal/modules/cjs/loader:1216:25)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)\n    at Module.require (node:internal/modules/cjs/loader:1527:12)\n    at require (node:internal/modules/helpers:147:16)\n    at checkedOperationalLinks (/home/runner/work/Connecting-the-Dots/Connecting-the-Dots/current/scripts/verify_ia_b2_parity.cjs:168:19)\n    at checkProtection (/home/runner/work/Connecting-the-Dots/Connecting-the-Dots/current/scripts/verify_ia_b2_parity.cjs:230:25)\n    at main (/home/runner/work/Connecting-the-Dots/Connecting-the-Dots/current/scripts/verify_ia_b2_parity.cjs:276:13)"
+      ]
+    },
+    {
+      "head_sha": "6326112ea06a23eff5a3fc385e5411789ded111b",
+      "run_id": 42319496942,
+      "run_url": "https://github.com/robertbregy/Connecting-the-Dots/actions/runs/42319496942",
+      "job_ids": [
+        128240316037
+      ],
+      "annotations": {
+        "job_id": 128240316037,
+        "http_status": 200,
+        "annotations": [
+          {
+            "path": ".github",
+            "blob_href": "https://github.com/robertbregy/Connecting-the-Dots/blob/6326112ea06a23eff5a3fc385e5411789ded111b/.github",
+            "start_line": 8,
+            "start_column": null,
+            "end_line": 8,
+            "end_column": null,
+            "annotation_level": "failure",
+            "title": "",
+            "message": "Process completed with exit code 2.",
+            "raw_details": ""
+          }
+        ]
+      },
+      "cause": "The new operational-link source guard imports linkedom, unavailable in this checkout-only workflow. No npm dependencies were installed.",
+      "essential_log": [
+        "Error: Cannot find module 'linkedom'\nRequire stack:\n- /home/runner/work/Connecting-the-Dots/Connecting-the-Dots/current/scripts/verify_ia_b2_parity.cjs\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)\n    at Function._load (node:internal/modules/cjs/loader:1216:25)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)\n    at Module.require (node:internal/modules/cjs/loader:1527:12)\n    at require (node:internal/modules/helpers:147:16)\n    at checkedOperationalLinks (/home/runner/work/Connecting-the-Dots/Connecting-the-Dots/current/scripts/verify_ia_b2_parity.cjs:168:19)\n    at checkProtection (/home/runner/work/Connecting-the-Dots/Connecting-the-Dots/current/scripts/verify_ia_b2_parity.cjs:230:25)\n    at main (/home/runner/work/Connecting-the-Dots/Connecting-the-Dots/current/scripts/verify_ia_b2_parity.cjs:276:13)"
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "file": "scripts/verify_ia_b2_parity.cjs",
+      "reason": "Restore checkout-only execution in A/B and Pages, without npm or a DOM parser.",
+      "protection": "One exact native panel and ID; SHA-256 of the full reviewed native-panel fragment locks resource scope, destination, all attributes and label; exact anchor count; old operational href forbidden with quoted/unquoted forms; historical acquisition/provenance JSON URLs remain unchanged.",
+      "panelSha256": "b62604a83105a1cd7bd185afb1efd8b14b81505cf11cebb62656dbc3cc09a7b9",
+      "beforeSHA256": "7e44221d35a4f9265cdac4a407624e19e933b3aa2485fb6b68c7f217d11f28d9",
+      "afterSHA256": "e7d4e6c7b4aafff760a225941e3aa82f6ffbcd2311b6378f7ddf4ba57cb00095"
+    },
+    {
+      "file": "scripts/audit_content_continuity.py",
+      "reason": "Admit the single operational replacement only after successful exact source-review verification, preserving all other href losses as failures.",
+      "beforeSHA256": "902261f7ef25ac1f4da9e613ab1d51cd3472bd5dc699aaa93d135f5ce9b1440f",
+      "afterSHA256": "34753aece55dbf50551986ea2fbe179bf3c284f9c876d9a5ff7552ad738d4355"
+    }
+  ],
+  "focused_guard_tests": {
+    "candidateBase": "dee7b777d5ca6ac042167ed02d2e1fe253a36931",
+    "method": "Actual proposed guard source is evaluated in an isolated VM; HTML/JSON faults exist only in memory. These are focused guard tests, not complete review-manifest acceptance or browser tests.",
+    "sourceGuardSha256": "e7d4e6c7b4aafff760a225941e3aa82f6ffbcd2311b6378f7ddf4ba57cb00095",
+    "renderedGuardSha256": "11b64a9d7e5d5b654a72953c9dc9f2fb9c2f2481cd27fb61709b4a42d5b78b79",
+    "sourceTemplateSha256": "3f7d561d291bed7cec43261e821ee63115c7f8aff40c3448a0cf2005f3997527",
+    "productFilesModified": false,
+    "baselineObjectsModified": false,
+    "tests": [
+      {
+        "name": "exact_operational_mapping_and_source",
+        "expected": "accepted",
+        "observed": "accepted",
+        "passed": true,
+        "error": null
+      },
+      {
+        "name": "extra_mapping",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Only the reviewed unavailable APS export URL may be replaced\n+ actual - expected\n... Skipped lines\n\n  [\n    {\n      from: 'https://newgtldprogram-aps.icann.org/aps/applications/export/csv',\n      rationaleIds: [\n        'UX99'\n...\n    },\n+   {\n+     from: 'https://example.invalid/old',\n+     rationaleIds: [\n+       'UX99'\n+     ],\n+     to: 'https://newgtldprogram-aps.icann.org/applications'\n+   }\n  ]\n"
+      },
+      {
+        "name": "different_old_url",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Only the reviewed unavailable APS export URL may be replaced\n+ actual - expected\n\n  [\n    {\n+     from: 'https://example.invalid/old',\n-     from: 'https://newgtldprogram-aps.icann.org/aps/applications/export/csv',\n      rationaleIds: [\n        'UX99'\n      ],\n      to: 'https://newgtldprogram-aps.icann.org/applications'\n    }\n"
+      },
+      {
+        "name": "different_new_url",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Only the reviewed unavailable APS export URL may be replaced\n+ actual - expected\n\n  [\n    {\n      from: 'https://newgtldprogram-aps.icann.org/aps/applications/export/csv',\n      rationaleIds: [\n        'UX99'\n      ],\n+     to: 'https://example.invalid/new'\n-     to: 'https://newgtldprogram-aps.icann.org/applications'\n    }\n  ]\n"
+      },
+      {
+        "name": "unapproved_rationale",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Only the reviewed unavailable APS export URL may be replaced\n+ actual - expected\n\n  [\n    {\n      from: 'https://newgtldprogram-aps.icann.org/aps/applications/export/csv',\n      rationaleIds: [\n+       'OTHER'\n-       'UX99'\n      ],\n      to: 'https://newgtldprogram-aps.icann.org/applications'\n    }\n  ]\n"
+      },
+      {
+        "name": "missing_rationale",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Operational APS link needs an explicit review rationale"
+      },
+      {
+        "name": "blank_rationale",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Operational APS link needs an explicit review rationale"
+      },
+      {
+        "name": "mapping_not_array",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Operational source replacements must be an array"
+      },
+      {
+        "name": "missing_native_listing",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Operational APS source changed beyond its reviewed destination\n+ actual - expected\n\n+ 'd33772d74fb246ab5c79a2e0fb97b7b83bbc717571724525bb468c32492b51c0'\n- 'b62604a83105a1cd7bd185afb1efd8b14b81505cf11cebb62656dbc3cc09a7b9'\n"
+      },
+      {
+        "name": "wrong_native_listing_destination",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Operational APS source changed beyond its reviewed destination\n+ actual - expected\n\n+ 'ce0cc64f13d6ef49277b30f589be8af98e13d8ed67cac646a039fe27f0c45578'\n- 'b62604a83105a1cd7bd185afb1efd8b14b81505cf11cebb62656dbc3cc09a7b9'\n"
+      },
+      {
+        "name": "duplicate_native_listing",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Operational APS source changed beyond its reviewed destination\n+ actual - expected\n\n+ 'af607f1ac91af18c36128aab442174830e548d6c8aad3e032fd0691236c50edf'\n- 'b62604a83105a1cd7bd185afb1efd8b14b81505cf11cebb62656dbc3cc09a7b9'\n"
+      },
+      {
+        "name": "old_operational_link_survives",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Operational APS source changed beyond its reviewed destination\n+ actual - expected\n\n+ 'efc526c5c2b62f23d146d05f70948abc328ee35e57e51ca18c459c61e6ef2a48'\n- 'b62604a83105a1cd7bd185afb1efd8b14b81505cf11cebb62656dbc3cc09a7b9'\n"
+      },
+      {
+        "name": "wrong_native_target",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Operational APS source changed beyond its reviewed destination\n+ actual - expected\n\n+ 'e4998672f777e1c0b6b359362e7dd526941ed4776934c84322d0cb22c055cb6a'\n- 'b62604a83105a1cd7bd185afb1efd8b14b81505cf11cebb62656dbc3cc09a7b9'\n"
+      },
+      {
+        "name": "wrong_native_label",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Operational APS source changed beyond its reviewed destination\n+ actual - expected\n\n+ '0c1a7075ac2416d37f79b121466e66b2ebd74f373915e918c66220e2431b6f95'\n- 'b62604a83105a1cd7bd185afb1efd8b14b81505cf11cebb62656dbc3cc09a7b9'\n"
+      },
+      {
+        "name": "missing_noopener",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Operational APS source changed beyond its reviewed destination\n+ actual - expected\n\n+ '228d1645dcd968c336e68dd08ad145f0c61f0e42e3fe5a78b3577478281870cb'\n- 'b62604a83105a1cd7bd185afb1efd8b14b81505cf11cebb62656dbc3cc09a7b9'\n"
+      },
+      {
+        "name": "hidden_native_link",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Operational APS source changed beyond its reviewed destination\n+ actual - expected\n\n+ 'fe6cf30619741075d7fee5f701401ca9df8f9c4a1bed15e811408a832ea89c01'\n- 'b62604a83105a1cd7bd185afb1efd8b14b81505cf11cebb62656dbc3cc09a7b9'\n"
+      },
+      {
+        "name": "historical_graph_acquisition_url_changed",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Historical APS acquisition URL changed\n+ actual - expected\n\n+ 'https://newgtldprogram-aps.icann.org/applications'\n- 'https://newgtldprogram-aps.icann.org/aps/applications/export/csv'\n"
+      },
+      {
+        "name": "historical_provenance_export_url_changed",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Historical APS provenance URL changed\n+ actual - expected\n\n+ 'https://newgtldprogram-aps.icann.org/applications'\n- 'https://newgtldprogram-aps.icann.org/aps/applications/export/csv'\n"
+      },
+      {
+        "name": "source_guard_requires_no_external_package",
+        "expected": "accepted",
+        "observed": "accepted",
+        "passed": true,
+        "error": null
+      },
+      {
+        "name": "historical_schema_isBasedOn_reference_is_preserved",
+        "expected": "accepted",
+        "observed": "accepted",
+        "passed": true,
+        "error": null
+      },
+      {
+        "name": "source_resource_container_changed",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Operational APS source changed beyond its reviewed destination\n+ actual - expected\n\n+ 'd8c3c8eb03aac346158a3ffa8a5f21d45640e77566bbc35fe7f38812a152a582'\n- 'b62604a83105a1cd7bd185afb1efd8b14b81505cf11cebb62656dbc3cc09a7b9'\n"
+      },
+      {
+        "name": "source_exact_anchor_relocated_outside_native_panel",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Operational APS source changed beyond its reviewed destination\n+ actual - expected\n\n+ 'be408ef2cfe72d05b9940a34740f58acdce22035657b3a51939845b4dbc541b0'\n- 'b62604a83105a1cd7bd185afb1efd8b14b81505cf11cebb62656dbc3cc09a7b9'\n"
+      },
+      {
+        "name": "source_exact_panel_closed_before_resources",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Operational APS source changed beyond its reviewed destination\n+ actual - expected\n\n+ 'c7ac4002a22f12cea6894a023e890f93567065f803a5baeade644a0f84da3f26'\n- 'b62604a83105a1cd7bd185afb1efd8b14b81505cf11cebb62656dbc3cc09a7b9'\n"
+      },
+      {
+        "name": "source_duplicate_native_id_single_quotes",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Native Atlas panel ID duplicated\n\n2 !== 1\n"
+      },
+      {
+        "name": "source_native_link_extra_attribute",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Operational APS source changed beyond its reviewed destination\n+ actual - expected\n\n+ '671b83a7075bcad4c9159a40dd8009b91c1d5e31de93c7d6ccd0121964946654'\n- 'b62604a83105a1cd7bd185afb1efd8b14b81505cf11cebb62656dbc3cc09a7b9'\n"
+      },
+      {
+        "name": "source_native_link_label_markup_changed",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Operational APS source changed beyond its reviewed destination\n+ actual - expected\n\n+ '4a49280239ee04e6c000af60b18ad38a3a075250b2833dc471da807de6318792'\n- 'b62604a83105a1cd7bd185afb1efd8b14b81505cf11cebb62656dbc3cc09a7b9'\n"
+      },
+      {
+        "name": "source_obsolete_href_single_quotes",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Unavailable APS export still used as an operational source link"
+      },
+      {
+        "name": "source_obsolete_href_unquoted",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Unavailable APS export still used as an operational source link"
+      },
+      {
+        "name": "source_obsolete_href_uppercase_spaces",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Unavailable APS export still used as an operational source link"
+      },
+      {
+        "name": "source_native_panel_duplicated",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "The reviewed native Atlas panel must occur exactly once\n\n3 !== 2\n"
+      },
+      {
+        "name": "rendered_replacement_preserves_all_other_link_occurrences:index.html",
+        "expected": "accepted",
+        "observed": "accepted",
+        "passed": true,
+        "error": null
+      },
+      {
+        "name": "rendered_replacement_preserves_all_other_link_occurrences:it/index.html",
+        "expected": "accepted",
+        "observed": "accepted",
+        "passed": true,
+        "error": null
+      },
+      {
+        "name": "rendered_replacement_preserves_all_other_link_occurrences:en/index.html",
+        "expected": "accepted",
+        "observed": "accepted",
+        "passed": true,
+        "error": null
+      },
+      {
+        "name": "rendered_replacement_preserves_all_other_link_occurrences:de/index.html",
+        "expected": "accepted",
+        "observed": "accepted",
+        "passed": true,
+        "error": null
+      },
+      {
+        "name": "rendered_replacement_preserves_all_other_link_occurrences:fr/index.html",
+        "expected": "accepted",
+        "observed": "accepted",
+        "passed": true,
+        "error": null
+      },
+      {
+        "name": "rendered_old_404_link_cannot_survive_with_extra_listing_links",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Unavailable APS export remains in rendered navigation: index.html\n\n1 !== 0\n"
+      },
+      {
+        "name": "rendered_missing_replacement_occurrence",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Reviewed APS source listing must occur once in its original context: index.html/#aps-native .apsResources\n\n0 !== 1\n"
+      },
+      {
+        "name": "rendered_replacement_in_wrong_context",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Reviewed APS source listing must occur once in its original context: index.html/#aps-native .apsResources\n\n0 !== 1\n"
+      },
+      {
+        "name": "rendered_duplicate_replacement_in_original_context",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Reviewed APS source listing must occur once in its original context: index.html/#aps-native .apsResources\n\n2 !== 1\n"
+      },
+      {
+        "name": "rendered_replacement_loses_noopener",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Reviewed source link lost noopener: index.html"
+      },
+      {
+        "name": "rendered_replacement_changes_target",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Reviewed source target changed: index.html\n\n'_self' !== '_blank'\n"
+      },
+      {
+        "name": "rendered_unrelated_historical_url_loss",
+        "expected": "rejected",
+        "observed": "rejected",
+        "passed": true,
+        "error": "Lost historical source/content link: https://www.iana.org/domains/root/db"
+      }
+    ],
+    "unexpected": [],
+    "passed": true,
+    "historicalDataFilesUnchanged": true,
+    "total": 42,
+    "correct": 42
+  },
+  "ab_exception_scope_tests": {
+    "method": "Execute the two actual A/B assignment AST nodes, without reimplementing the admission logic; the full checkout-only A/B gate is independently tested in without-npm-after.json.",
+    "validated_exact_mapping_control": {
+      "replaced_hrefs": [
+        "downloads/connecting-the-dots-data-pack-v0.7.78.sha256",
+        "downloads/connecting-the-dots-data-pack-v0.7.78.zip",
+        "https://newgtldprogram-aps.icann.org/aps/applications/export/csv"
+      ],
+      "unapproved_hrefs": []
+    },
+    "original_filter_did_not_admit_operational_mapping": {
+      "replaced_hrefs": [
+        "downloads/connecting-the-dots-data-pack-v0.7.78.sha256",
+        "downloads/connecting-the-dots-data-pack-v0.7.78.zip"
+      ],
+      "unapproved_hrefs": [
+        "https://newgtldprogram-aps.icann.org/aps/applications/export/csv"
+      ]
+    },
+    "tests": [
+      {
+        "name": "unvalidated_review_grants_no_url_exception",
+        "expected_unapproved_hrefs": [
+          "https://newgtldprogram-aps.icann.org/aps/applications/export/csv"
+        ],
+        "observed": {
+          "replaced_hrefs": [],
+          "unapproved_hrefs": [
+            "https://newgtldprogram-aps.icann.org/aps/applications/export/csv"
+          ]
+        },
+        "passed": true
+      },
+      {
+        "name": "validated_operational_mapping_does_not_hide_unrelated_url_loss",
+        "expected_unapproved_hrefs": [
+          "https://www.iana.org/domains/root/db"
+        ],
+        "observed": {
+          "replaced_hrefs": [
+            "downloads/connecting-the-dots-data-pack-v0.7.78.sha256",
+            "downloads/connecting-the-dots-data-pack-v0.7.78.zip",
+            "https://newgtldprogram-aps.icann.org/aps/applications/export/csv"
+          ],
+          "unapproved_hrefs": [
+            "https://www.iana.org/domains/root/db"
+          ]
+        },
+        "passed": true
+      }
+    ],
+    "passed": true,
+    "product_files_modified": false
+  },
+  "dependency_isolation": {
+    "cwd": "/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/guard-runtime-fix-0799/clean-checkouts/current",
+    "returncode": 0,
+    "stdout": "{\"code\":\"MODULE_NOT_FOUND\",\"searchPaths\":[\"/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/guard-runtime-fix-0799/clean-checkouts/current/node_modules\",\"/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/guard-runtime-fix-0799/clean-checkouts/node_modules\",\"/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/guard-runtime-fix-0799/node_modules\",\"/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/node_modules\",\"/workspace/scratch/0d3176a7f6f4/ctd-recovery/node_modules\",\"/workspace/scratch/0d3176a7f6f4/node_modules\",\"/workspace/scratch/node_modules\",\"/workspace/node_modules\",\"/node_modules\",\"/home/agent/.node_modules\",\"/home/agent/.node_libraries\",\"/opt/codex/runtimes/codex-primary-runtime/dependencies/node/lib/node\"]}\n",
+    "stderr": "",
+    "NODE_PATH_removed": true,
+    "NODE_OPTIONS_removed": true,
+    "node_modules_in_checkout": [],
+    "ancestor_node_modules": []
+  },
+  "original_dependency_failure": {
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "Error: Cannot find module 'linkedom'\nRequire stack:\n- /workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/guard-runtime-fix-0799/clean-checkouts/current/scripts/verify_ia_b2_parity.cjs\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)\n    at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)\n    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)\n    at Module._load (node:internal/modules/cjs/loader:1341:5)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.require (node:internal/modules/cjs/loader:1674:12)\n    at require (node:internal/modules/helpers:157:16)\n    at checkedOperationalLinks (/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/guard-runtime-fix-0799/clean-checkouts/current/scripts/verify_ia_b2_parity.cjs:168:19)\n    at checkProtection (/workspace/scratch/0d3176a7f6f4/ctd-recovery/experience-audit/guard-runtime-fix-0799/clean-checkouts/current/scripts/verify_ia_b2_parity.cjs:230:25)\n",
+    "node_modules": false,
+    "commit": "6326112ea06a23eff5a3fc385e5411789ded111b"
+  },
+  "clean_checkout_acceptance": {
+    "tests": [
+      {
+        "name": "standalone-source-guard",
+        "command": [
+          "node",
+          "scripts/verify_ia_b2_parity.cjs"
+        ],
+        "returncode": 0,
+        "result_lines": [
+          "IA_B2_SOURCE_PARITY_VERIFIED {\"baselineMain\":\"ec231cc12d35fa91ff5340ad057a483ce23a5ca4\",\"reviewedAgainst\":\"65e0fbe2080c2ee841e8abc01e1ddec113a74b8e\",\"preservedSections\":21,\"reviewedSections\":[\"explore\",\"cities\",\"economics\",\"inside-round\",\"research\",\"paper\",\"resources\"],\"purposeLedHomeAddedChars\":1185,\"immutableFilesVerified\":28}"
+        ],
+        "stderr": "",
+        "no_node_modules": true
+      },
+      {
+        "name": "full-ab-continuity",
+        "command": [
+          "python3",
+          "scripts/audit_content_continuity.py"
+        ],
+        "returncode": 0,
+        "result_lines": [
+          "AB_CONTENT_PARITY_PASS"
+        ],
+        "stderr": "",
+        "no_node_modules": true
+      }
+    ],
+    "passed": true,
+    "original_failure_preserved": "without-npm-original.json",
+    "fixture_manifest_adjustments": "fixture-only-manifest-adjustments.json"
+  },
+  "fixture_manifest_adjustments": {
+    "scope": "Only isolated fixture manifest; product review untouched. Two updated implementation fingerprints enable exercising the full unmodified acceptance path.",
+    "changes": [
+      {
+        "path": "scripts/verify_ia_b2_parity.cjs",
+        "before": "7e44221d35a4f9265cdac4a407624e19e933b3aa2485fb6b68c7f217d11f28d9",
+        "after": "e7d4e6c7b4aafff760a225941e3aa82f6ffbcd2311b6378f7ddf4ba57cb00095"
+      },
+      {
+        "path": "scripts/audit_content_continuity.py",
+        "before": "902261f7ef25ac1f4da9e613ab1d51cd3472bd5dc699aaa93d135f5ce9b1440f",
+        "after": "34753aece55dbf50551986ea2fbe179bf3c284f9c876d9a5ff7552ad738d4355"
+      }
+    ]
+  },
+  "preserved_controls": {
+    "only_operational_function_changed_in_node_guard": true,
+    "constants_baselines_existing_functions_byte_identical": true,
+    "product_review_byte_identical_to_HEAD": true,
+    "diff_check_passed": true,
+    "no_new_dependencies_or_install_step": true
+  },
+  "final_real_checkout_commands_after_parent_updates_review": [
+    "node scripts/verify_ia_b2_parity.cjs",
+    "python3 scripts/audit_content_continuity.py"
+  ],
+  "final_command_context": "The A/B command requires the immutable baseline ec231cc12d35fa91ff5340ad057a483ce23a5ca4 at ../baseline, as in the existing workflow. No rebuild is needed for these guard-only changes.",
+  "limitations": [
+    "The local clean-checkout review changes exactly the two current implementation SHA-256 fingerprints only; the product review is intentionally left to the parent.",
+    "The original remote A/B logs contained only the two current-pack source-href removals. Admission of an operational old href and rejection of an unrelated loss are tested with the actual A/B assignment AST, not claimed as an observed extra remote failure.",
+    "Browser evidence at 6326112 is a separate attempt and cannot approve a later corrected candidate."
+  ]
+}
