@@ -1,0 +1,56 @@
+name: Published v0.7.100 focus and readable metrics acceptance
+on:
+  push:
+    branches: ['qa/live-focus-v07100-20261107']
+permissions:
+  contents: read
+jobs:
+  published-focus:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - name: Install the established browser version
+        run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Verify public HTML and stylesheet bytes before interaction
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import urlopen, Request
+          import hashlib, json
+          base = 'https://robertbregy.github.io/Connecting-the-Dots/'
+          files = ['publication.json', 'assets/style.css', 'assets/aps-atlas.css', 'assets/audience.css', 'assets/reader-first.css']
+          files += [p for l in ('it','en','de','fr') for p in (l+'/index.html','applications/'+l+'/index.html')]
+          rows = []
+          for name in files:
+              with urlopen(Request(base+name, headers={'User-Agent':'CTD-Focus-Acceptance/1.0'}), timeout=30) as response:
+                  data = response.read()
+              expected = hashlib.sha256(Path(name).read_bytes()).hexdigest()
+              observed = hashlib.sha256(data).hexdigest()
+              if observed != expected:
+                  raise SystemExit('PUBLIC SOURCE MISMATCH: '+name)
+              rows.append({'path':name,'sha256':observed,'matches':True})
+          assert json.loads(Path('publication.json').read_text())['version'] == '0.7.100'
+          Path('audit-focus-reflow').mkdir(exist_ok=True)
+          Path('audit-focus-reflow/source-identity.json').write_text(json.dumps({'productCommit':'014093cc95c52ef36f976b94564dd1847f2d1688','version':'0.7.100','all_match':True,'files':rows},indent=2)+'\n')
+          print('PUBLIC_FOCUS_SOURCE_VERIFIED',len(rows))
+          PY
+      - name: Exercise real published CSS without overrides
+        env:
+          CTD_TEST_BASE: https://robertbregy.github.io/Connecting-the-Dots/
+        run: node scripts/audit_focus_reflow.cjs
+      - name: Retain exact public results and screenshots
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: published-focus-v07100-${{ github.sha }}
+          path: audit-focus-reflow/
+          if-no-files-found: error
