@@ -75,7 +75,8 @@
     "DOC98": "Record the technical audit, exact candidate preservation evidence, historical v0.7.92 archive exception and reproducible release procedure. Distinguish original observations, reconstructed reports, fresh local executions and required remote acceptance.",
     "UA98": "Align rendered-HTML acceptance with the exact A98 replacement already enforced by the source guard: require the same unique anchor, localized destination, exact old/new translations and unchanged attributes, with no ghost or duplicate keys. Keep all other lost-key, historic ID/link and browser/no-JS checks unchanged. Run static preflight early and retain the original failed acceptance evidence.",
     "UX99": "Correct mobile accessible names using visible record data; bring the unchanged search input before repeated explanation; preserve Atlas query/filter/router state and expanded details; replace only the unavailable operational APS export URL with its official public listing while preserving frozen provenance; clarify DNS-root and dated-period labels in four languages. Keep scientific snapshots, original A/B invariants, prior reviews and archives unchanged. Audit evidence and acceptance tests cover the actual edits. Expose the active routed title at accessible heading level 1 without replacing its node; give Atlas application strings native headings appropriate to each surface while preserving layout and the no-JavaScript document hierarchy. Synchronize only exact current-technical-package references in the working-paper Markdown, research README and rendered HTML; preserve the scientific text, paper revision/date and research release identities.",
-    "QA99": "Restore checkout-only A/B and Pages source verification using Node built-ins. Lock the exact native Atlas source panel and one operational APS replacement; keep both acquisition/provenance URLs and every historical invariant unchanged. Permit the already validated single operational mapping in the A/B href-loss check, with no exception from an unvalidated review. Preserve failed attempts and negative tests. Publication source, generated pages, runtime assets, data and archives remain byte-identical to the assembled candidate. Verify heading uniqueness through Chromium’s exposed accessibility tree because the pinned Playwright 1.56.1 role matcher prioritizes the native H2 level over aria-level. Keep the exact one-heading requirement, backend node identity, computed name, focus, prior-title cleanup and Home checks. Retain the initial failure and require a complete fresh browser run."
+    "QA99": "Restore checkout-only A/B and Pages source verification using Node built-ins. Lock the exact native Atlas source panel and one operational APS replacement; keep both acquisition/provenance URLs and every historical invariant unchanged. Permit the already validated single operational mapping in the A/B href-loss check, with no exception from an unvalidated review. Preserve failed attempts and negative tests. Publication source, generated pages, runtime assets, data and archives remain byte-identical to the assembled candidate. Verify heading uniqueness through Chromium’s exposed accessibility tree because the pinned Playwright 1.56.1 role matcher prioritizes the native H2 level over aria-level. Keep the exact one-heading requirement, backend node identity, computed name, focus, prior-title cleanup and Home checks. Retain the initial failure and require a complete fresh browser run.",
+    "CI99_ORIGIN": "Separate live verification by its actual upstream Pages run and attempt, so a successful-but-skipped Pages execution on the same commit cannot cancel the verification of a real deploy. Retain every deployment-origin, current-source, public-byte and measurement gate unchanged. This is post-publication workflow maintenance; the accepted v0.7.99 product bytes remain identical."
   },
   "sourceInvariants": {
     "sections": [
@@ -3291,13 +3292,14 @@
     },
     ".github/workflows/pages-live-smoke.yml": {
       "baselineSHA256": "4bf59135ccdc9482e94f28d10c7feeb996b12b24faa1a7495db9ed5512a84626",
-      "sha256": "77c3d2a6f666e948dacbb2f2008e715dd5edc13e6e56c0478beca87c4dd13d89",
+      "sha256": "9b043171031d13a456fecde7cf6714f90c399b2662cad97ee37056ce69bf476b",
       "rationaleIds": [
         "U01",
         "U03",
         "T93",
         "CI24",
-        "CI98"
+        "CI98",
+        "CI99_ORIGIN"
       ]
     },
     "assets/audience.css": {
@@ -4696,6 +4698,13 @@
         "QA99"
       ],
       "priorTechnicalSHA256": null
+    },
+    "docs/audits/2026-11-07/live-concurrency-fix-0799.json": {
+      "baselineSHA256": null,
+      "sha256": "57c50094113c9ef472725a2edf5659a68fcad82756a6475cdf94d690f5c05197",
+      "rationaleIds": [
+        "CI99_ORIGIN"
+      ]
     }
   },
   "sourceSections": {
@@ -4983,8 +4992,8 @@
     "qualityGates": "Deterministic assembly; exact Git-tree comparison; A/B; five browser jobs on exact candidate; successful Pages deploy; public-byte/live checks; published-site browser acceptance.",
     "priorReviewEvidenceScope": "Inherited records refer to their named earlier commits and versions and do not attest v0.7.99.",
     "sourceCommit": "d00e948c35fa3353b15a5db7f130fec988867888",
-    "reviewedPaths": 294,
-    "changedPathsWithActualSourceHashes": 131,
+    "reviewedPaths": 295,
+    "changedPathsWithActualSourceHashes": 266,
     "currentArchiveSHA256": "5c2f5f9c344378e98990a09aea3776882479b27e3d17114b5918194c84487eba",
     "evidence": [
       "docs/experience-audit-2026-11-07.md",
@@ -5018,7 +5027,8 @@
       "docs/audits/2026-11-07/temporal-label-review.json",
       "docs/audits/2026-11-07/guard-runtime-fix-0799.json",
       "docs/audits/2026-11-07/guard-encoded-href-0799.json",
-      "docs/audits/2026-11-07/heading-ax-fix-0799.json"
+      "docs/audits/2026-11-07/heading-ax-fix-0799.json",
+      "docs/audits/2026-11-07/live-concurrency-fix-0799.json"
     ],
     "remoteAssemblyEvidence": {
       "run": "https://github.com/robertbregy/Connecting-the-Dots/actions/runs/42319075462",
@@ -5060,6 +5070,19 @@
       "evidence": "docs/audits/2026-11-07/heading-ax-fix-0799.json",
       "localValidation": "Syntax, preserved-assertion source comparison, eight protocol-fixture cases passed. No browser acceptance inferred.",
       "remoteAcceptance": "All eight Experience scenarios, including both view changes and Home, must pass on the resulting exact candidate."
+    },
+    "postPublicationWorkflowMaintenance": {
+      "acceptedProductCommit": "68ab0347b9edbb0a2c3f9d1fa13ac8350ced0df5",
+      "acceptedBrowserRun": 42320701327,
+      "acceptedABRun": 42320701278,
+      "successfulPagesRun": 42322922392,
+      "incident": {
+        "cancelledLiveRun": 42322960588,
+        "skippedLiveRun": 42322961426,
+        "cause": "Different upstream Pages runs with the same source SHA shared a workflow-level concurrency group."
+      },
+      "scope": "One workflow concurrency group, this exact-file review, and its QA evidence only. Product sources, generated pages, runtime assets, datasets, archives, all browser scripts, source/A-B gates and all live-verification job steps retain the accepted bytes.",
+      "validation": "Independent exact-diff review; YAML parse; group separation using observed Pages metadata and explicit synthetic retry/dispatch cases; exact source gate; A/B; subsequent real deployment, complete live-byte measurements and published-browser acceptance. The cancelled and skipped runs do not attest live verification."
     }
   },
   "readerFirstEvidence": {

@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "baseCommit": "68ab0347b9edbb0a2c3f9d1fa13ac8350ced0df5",
+  "worktree": "/workspace/scratch/0d3176a7f6f4/ctd-recovery/live-concurrency-fix-0799",
+  "modifiedFiles": [
+    ".github/workflows/pages-live-smoke.yml"
+  ],
+  "originalWorkflowSHA256": "77c3d2a6f666e948dacbb2f2008e715dd5edc13e6e56c0478beca87c4dd13d89",
+  "updatedWorkflowSHA256": "9b043171031d13a456fecde7cf6714f90c399b2662cad97ee37056ce69bf476b",
+  "oldGroupExpression": "ctd-live-pages-smoke-${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}",
+  "newGroupExpression": "ctd-live-pages-smoke-${{ github.event.workflow_run.id || github.run_id }}-${{ github.event.workflow_run.run_attempt || github.run_attempt }}",
+  "observedIncident": {
+    "successfulPagesRun": 42322922392,
+    "skippedPagesRun": 42322937768,
+    "sameSourceCommit": "68ab0347b9edbb0a2c3f9d1fa13ac8350ced0df5",
+    "cancelledLiveRun": 42322960588,
+    "skippedLiveRun": 42322961426,
+    "annotations": [
+      {
+        "job_id": 128251586991,
+        "http_status": 200,
+        "annotations": [
+          {
+            "path": ".github",
+            "blob_href": "https://github.com/robertbregy/Connecting-the-Dots/blob/68ab0347b9edbb0a2c3f9d1fa13ac8350ced0df5/.github",
+            "start_line": 1,
+            "start_column": null,
+            "end_line": 1,
+            "end_column": null,
+            "annotation_level": "failure",
+            "title": "",
+            "message": "Canceling since a higher priority waiting request for ctd-live-pages-smoke-68ab0347b9edbb0a2c3f9d1fa13ac8350ced0df5 exists",
+            "raw_details": ""
+          }
+        ]
+      },
+      {
+        "job_id": 128251617389,
+        "http_status": 200,
+        "annotations": []
+      }
+    ],
+    "liveBytesVerifiedByThoseRuns": false
+  },
+  "checks": {
+    "yamlParsePassed": true,
+    "onlyConcurrencyGroupChangesInParsedWorkflow": true,
+    "allJobsAndGuardsByteIdentical": true,
+    "cancelInProgressUnchanged": true,
+    "gitDiffCheckPassed": true,
+    "remoteMutations": false,
+    "newDependencies": false
+  },
+  "cases": [
+    {
+      "name": "real_successful_and_skipped_pages_on_same_sha",
+      "kind": "Observed upstream run metadata; event contexts reconstructed from those metadata",
+      "old_groups": [
+        "ctd-live-pages-smoke-68ab0347b9edbb0a2c3f9d1fa13ac8350ced0df5",
+        "ctd-live-pages-smoke-68ab0347b9edbb0a2c3f9d1fa13ac8350ced0df5"
+      ],
+      "new_groups": [
+        "ctd-live-pages-smoke-42322922392-1",
+        "ctd-live-pages-smoke-42322937768-1"
+      ],
+      "passed": true
+    },
+    {
+      "name": "upstream_retry_cannot_cancel_another_attempt",
+      "kind": "Synthetic retry of the observed upstream identity",
+      "groups": [
+        "ctd-live-pages-smoke-42322922392-1",
+        "ctd-live-pages-smoke-42322922392-2"
+      ],
+      "passed": true
+    },
+    {
+      "name": "manual_runs_with_same_sha_are_distinct",
+      "kind": "Synthetic workflow_dispatch contexts",
+      "groups": [
+        "ctd-live-pages-smoke-700000001-1",
+        "ctd-live-pages-smoke-700000002-1"
+      ],
+      "passed": true
+    },
+    {
+      "name": "manual_rerun_attempt_is_distinct",
+      "kind": "Synthetic workflow_dispatch retry contexts",
+      "groups": [
+        "ctd-live-pages-smoke-700000001-1",
+        "ctd-live-pages-smoke-700000001-2"
+      ],
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "reasoning": "Upstream Pages run ID and attempt identify one deployment event. A second Pages execution on the same source SHA receives a distinct group, so its skipped verification cannot cancel the first verification before the job condition is evaluated. Manual dispatches use their own run ID and attempt. Existing source-current, exact deployment-origin, byte comparison and pre-measurement guards remain unchanged.",
+  "limits": [
+    "Local validation establishes group separation for real metadata and synthetic retry/manual cases. A new CI execution is still required to prove the complete scheduling and live-byte path.",
+    "The two initial live runs never executed a verification step and must remain cancelled/skipped in the record.",
+    "This worktree has no new commit or remote reference update."
+  ]
+}
