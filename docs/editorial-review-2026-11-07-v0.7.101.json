@@ -82,7 +82,8 @@
     "QA100": "Retain all existing acceptance checks unchanged and add permanent browser regression coverage of the three CSS corrections at their real stylesheet positions.",
     "E101": "Complete the deferred Home/Economics editorial work: twenty string replacements in four languages distinguish existing pathway introductions, economic framing and measurement guidance, and the inner two-rankings heading. Preserve navigation, section order, all facts, measurement caveats, sources and data; no new layout or research claim.",
     "V101": "Publish a separate deterministic technical package and update current technical version references only. Freeze v0.7.100 without changing any prior package, RR1/RR2 identity, paper revision or APS source.",
-    "D101": "Document which historical audit findings are already integrated, close the observed editorial repetitions, and retain unperformed reader and assistive-technology studies as limitations."
+    "D101": "Document which historical audit findings are already integrated, close the observed editorial repetitions, and retain unperformed reader and assistive-technology studies as limitations.",
+    "CI101_PR": "Prepare main branch protection by adding read-only pull_request triggers targeting main without path filters to the existing browser, exact archival-parity and focus workflows. Preserve all push triggers, job names, test commands, permissions and thresholds. Record the desired administrative policy separately from its actual activation; retain all published site, package and research bytes."
   },
   "sourceInvariants": {
     "sections": [
@@ -3021,7 +3022,7 @@
     },
     ".github/workflows/audit-browser.yml": {
       "baselineSHA256": "ed063e0e2ffe43df54dfe3e1a98a4292dad5524d76a46c174c6a0943554a1296",
-      "sha256": "762d7a6c0db101647a45fc3a77388e26c72c227e4cc42a4c982475dd37125516",
+      "sha256": "29e9a68e9b510a420ef6ece0343c3d06c1189f1251449a3ae1b4fb8a40a99bbd",
       "rationaleIds": [
         "A19",
         "H01",
@@ -3032,9 +3033,11 @@
         "CI98",
         "PER98",
         "UA98",
-        "UX99"
+        "UX99",
+        "CI101_PR"
       ],
-      "priorTechnicalSHA256": "29173b14dd9eadc5bc8e42c10c064861cb80a7f6a0f2ea241cf999b5f8a7a283"
+      "priorTechnicalSHA256": "29173b14dd9eadc5bc8e42c10c064861cb80a7f6a0f2ea241cf999b5f8a7a283",
+      "priorCIReadinessSHA256": "762d7a6c0db101647a45fc3a77388e26c72c227e4cc42a4c982475dd37125516"
     },
     ".gitignore": {
       "baselineSHA256": "1591671f06576b26a8f3cb1b7690b79b01e128319960a66b6c450cc51f4e9af0",
@@ -4911,9 +4914,11 @@
     ".github/workflows/focus-reflow-regression.yml": {
       "baselineSHA256": null,
       "rationaleIds": [
-        "QA100"
+        "QA100",
+        "CI101_PR"
       ],
-      "sha256": "09511c0d6699c21077d4224627e53df2ddb82f3cdfacbfad3f1490865ff2a64e"
+      "sha256": "c191243348d0de20e6fb0a9717b81f6eb2bd1701bb522a09acec12e6bbffca88",
+      "priorCIReadinessSHA256": "09511c0d6699c21077d4224627e53df2ddb82f3cdfacbfad3f1490865ff2a64e"
     },
     "docs/editorial-review-2026-11-07-v0.7.99.json": {
       "baselineSHA256": null,
@@ -4949,6 +4954,30 @@
         "V101"
       ],
       "sha256": "b1ac13c1b60b09b7fcc15455c10709460cbf94527c86184574adefc92ca86289"
+    },
+    ".github/workflows/a-b-final-parity.yml": {
+      "baselineSHA256": "5e5faadcff2e645f080940157ae17e5ff173fe992c0fecc6bc8dccfa2d23553c",
+      "rationaleIds": [
+        "CI101_PR"
+      ],
+      "sha256": "93fbac410551d13961f15829a50f6360321ce4a3ad51b8db7d0048409df91f48",
+      "priorCIReadinessSHA256": "f5d4057fc66ad81b590a0e931720535076b2c902ec6ae1f9169f92a49b4a82bd"
+    },
+    "docs/PUBLISHING_SAFETY.md": {
+      "baselineSHA256": "a94128371771cb013efa8503e54a88748a8943d77bbbb4a7858acca8d94a2a54",
+      "rationaleIds": [
+        "CI101_PR"
+      ],
+      "sha256": "63d4c000a71c06dcc8f16dd490d8851d3f682502c1503f6840e2db6c17081ee3",
+      "priorCIReadinessSHA256": "a94128371771cb013efa8503e54a88748a8943d77bbbb4a7858acca8d94a2a54"
+    },
+    "docs/main-protection-policy.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "CI101_PR"
+      ],
+      "sha256": "cc79547d170b0c75d73225080b8fa3404c4e9128de6a55847c2c716ff2a8cff1",
+      "priorCIReadinessSHA256": null
     }
   },
   "sourceSections": {
@@ -5232,7 +5261,7 @@
     "sourceCommit": "f78294f27ad6833081ee31ce65f84501dfdac41c",
     "humanParticipants": 0,
     "reviewType": "Independent AI-assisted source review and exact generated-output comparison; browser and deployment gates are recorded separately.",
-    "reviewedPaths": 306,
+    "reviewedPaths": 309,
     "currentArchiveSHA256": "b1ac13c1b60b09b7fcc15455c10709460cbf94527c86184574adefc92ca86289",
     "evidence": [
       "docs/audits/2026-11-07/editorial-completion-v0.7.101.json",
@@ -5459,5 +5488,43 @@
     "candidateCommit": "dee7b777d5ca6ac042167ed02d2e1fe253a36931",
     "publishedToMainOrPages": false,
     "semantics": "Verified technical candidate superseded by v0.7.99 before main/Pages publication; its tests and signoff remain historical evidence, not current v0.7.99 acceptance."
+  },
+  "ciProtectionReadinessReview": {
+    "reviewedOn": "2026-11-07",
+    "status": "reviewed",
+    "baselineCommit": "86f89c21c5821f455bf29a079a5431bd1305fc62",
+    "priorPublishedReviewSHA256": "681013e61faf6993cc85caa5f278f985786a1239eeba1d0fcf763ca4daca4294",
+    "rationaleId": "CI101_PR",
+    "changedPaths": [
+      ".github/workflows/audit-browser.yml",
+      ".github/workflows/a-b-final-parity.yml",
+      ".github/workflows/focus-reflow-regression.yml",
+      "docs/PUBLISHING_SAFETY.md",
+      "docs/main-protection-policy.json"
+    ],
+    "scope": "PR trigger coverage and administrative protection policy only. No scientific, editorial, UI, runtime, package, validation or permission change.",
+    "existingPermissions": "contents: read",
+    "requiredChecks": [
+      "browser-qa",
+      "Independent four-language and Explorer audit",
+      "APS Atlas all-language interaction and mobile regression",
+      "City namespace four-language and accessibility audit",
+      "Audit corrections, mobile semantics and controlled performance",
+      "compare",
+      "focus-reflow"
+    ],
+    "requiredChecksAppId": 15368,
+    "publicSiteVersion": "0.7.101",
+    "publicSiteBytesChanged": false,
+    "administrativeActivation": "Separate authenticated GitHub settings action; verify actual active rules before marking protection complete.",
+    "reviewType": "Independent AI-assisted source, policy and exact-file review; live PR checks remain required.",
+    "sourceVerification": {
+      "reviewedFileHashes": 309,
+      "unchangedTrackedBaseFiles": 572,
+      "localReleaseCheck": "passed",
+      "localSourceParity": "passed",
+      "workflowSemanticDiff": "Only pull_request targeting main added; all previous event filters, jobs, permissions and commands preserved.",
+      "livePRChecks": "Required before administrative enforcement."
+    }
   }
 }
