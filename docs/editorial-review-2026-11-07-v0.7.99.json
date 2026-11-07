@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "reviewId": "experience-and-content-2026-11-07-v0.7.99",
-  "status": "pending-exact-artifact-review",
+  "status": "reviewed",
   "reviewedOn": "2026-11-07",
   "publicationVersion": "0.7.99",
   "baselineCommit": "65e0fbe2080c2ee841e8abc01e1ddec113a74b8e",
   "originalABBaseline": "safety/main-v0.7.78-before-b2-switch-20261013",
   "originalSectionBaseline": "ec231cc12d35fa91ff5340ad057a483ce23a5ca4",
   "normalization": "ia-b2-v1",
-  "reviewInstruction": "AI-assisted expert audit of accessibility semantics, content accuracy, comprehension and interaction. Confirmed defects are addressed in v0.7.99. Exact source/generated fingerprints and preservation proof must be reviewed before status promotion. Mandatory remote assembly, exact tree comparison and independent A/B/browser acceptance precede main; real deploy and published-byte/browser checks follow. No human user study, assistive-technology session or WCAG certification is claimed.",
+  "reviewInstruction": "AI-assisted expert review of the actual v0.7.99 source and generated files is complete, with independent preservation, editorial and interaction reviews. Scientific snapshots, historical reviews and original A/B invariants are unchanged. Exact remote assembly, A/B and browser acceptance remain mandatory before main; real deploy and public-byte/browser verification follow publication. No human reader study, actual assistive-technology session or WCAG certification is claimed.",
   "rationales": {
     "C01": "Current download, filename, label and checksum must derive from publication metadata; keep the previous archive.",
     "C02": "Use the event register review date in the timeline; distinguish event, acquisition and editorial dates.",
@@ -74,7 +74,7 @@
     "PER98": "Compute lab CLS as the maximum session window with official gap/duration boundaries and exclusion of recent input; retain the raw shift sum under a different name. Test nine boundary cases, including zero-value leading shifts. No field performance or human validation is implied.",
     "DOC98": "Record the technical audit, exact candidate preservation evidence, historical v0.7.92 archive exception and reproducible release procedure. Distinguish original observations, reconstructed reports, fresh local executions and required remote acceptance.",
     "UA98": "Align rendered-HTML acceptance with the exact A98 replacement already enforced by the source guard: require the same unique anchor, localized destination, exact old/new translations and unchanged attributes, with no ghost or duplicate keys. Keep all other lost-key, historic ID/link and browser/no-JS checks unchanged. Run static preflight early and retain the original failed acceptance evidence.",
-    "UX99": "Correct mobile accessible names using visible record data; bring the unchanged search input before repeated explanation; preserve Atlas query/filter/router state and expanded details; replace only the unavailable operational APS export URL with its official public listing while preserving frozen provenance; clarify DNS-root and dated-period labels in four languages. Keep scientific snapshots, original A/B invariants, prior reviews and archives unchanged. Audit evidence and acceptance tests cover the actual edits. Expose the active routed title at accessible heading level 1 without replacing its node; give Atlas application strings native headings appropriate to each surface while preserving layout and the no-JavaScript document hierarchy."
+    "UX99": "Correct mobile accessible names using visible record data; bring the unchanged search input before repeated explanation; preserve Atlas query/filter/router state and expanded details; replace only the unavailable operational APS export URL with its official public listing while preserving frozen provenance; clarify DNS-root and dated-period labels in four languages. Keep scientific snapshots, original A/B invariants, prior reviews and archives unchanged. Audit evidence and acceptance tests cover the actual edits. Expose the active routed title at accessible heading level 1 without replacing its node; give Atlas application strings native headings appropriate to each surface while preserving layout and the no-JavaScript document hierarchy. Synchronize only exact current-technical-package references in the working-paper Markdown, research README and rendered HTML; preserve the scientific text, paper revision/date and research release identities."
   },
   "sourceInvariants": {
     "sections": [
@@ -1388,7 +1388,7 @@
   "files": {
     "applications/de/index.html": {
       "baselineSHA256": "30e00a377b01d61cce5c4ce178275dab3fd053485fc9d691c6e210ae0716ff9a",
-      "sha256": "74ffdceacca8c03f0cf5e49eea7d63a4c8bf9a5872b13a08efdd5e25a045979c",
+      "sha256": "5a91b091ab90aacbc2d303de1ae36b2a12f43607f32e3ac45ef6902b05cfbce4",
       "rationaleIds": [
         "C04",
         "M01",
@@ -1407,12 +1407,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "74ffdceacca8c03f0cf5e49eea7d63a4c8bf9a5872b13a08efdd5e25a045979c"
     },
     "applications/en/index.html": {
       "baselineSHA256": "1f52c66b908ed9fc5e17caffd77f9157ba254d04ee081cc1b8bb983ce9c934c5",
-      "sha256": "dcf41cb7680be33ece5154a92a33a9111b8d004d7f536c11aaa562223e5a5246",
+      "sha256": "56e1234a80bb330a7a3a1caab01eabeb0240f4c138fbc28fb79742eeff506769",
       "rationaleIds": [
         "C04",
         "M01",
@@ -1431,12 +1433,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "dcf41cb7680be33ece5154a92a33a9111b8d004d7f536c11aaa562223e5a5246"
     },
     "applications/fr/index.html": {
       "baselineSHA256": "c069a3a5b79c9c558964bfe8d23c5c4ee305ab93e3cdb4ef61f844ff89e7db79",
-      "sha256": "0f08c05102e478252e5490c00528b24be008acf8c5da1065f291c9f9e95e3321",
+      "sha256": "f29f9e34dd4c6d20675a742363c630bb749ab5504ff6bf5e43bc7e4a9514bde0",
       "rationaleIds": [
         "C04",
         "M01",
@@ -1455,12 +1459,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "0f08c05102e478252e5490c00528b24be008acf8c5da1065f291c9f9e95e3321"
     },
     "applications/it/index.html": {
       "baselineSHA256": "7830eae652c261d48bb590c8456d534793a394432672187303313eef92bcb1cc",
-      "sha256": "e02326976a9679472858aedcd3384175469242e074dff73a66a5be32bb2dc60b",
+      "sha256": "16f0ff2f71f9adebc6d9a6566031a3ff2c2b616ac8d2cce4f5b94d62afd41dca",
       "rationaleIds": [
         "C04",
         "M01",
@@ -1479,12 +1485,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "e02326976a9679472858aedcd3384175469242e074dff73a66a5be32bb2dc60b"
     },
     "assets/app.js": {
       "baselineSHA256": "7b05a9ac42c01123b1f80d36b39a75c2824d8e1cf5c04ade837d60d665334c16",
-      "sha256": "e39bfe631a885e7713b847d94548073be3326e8ffeb88632c61ea7192c178400",
+      "sha256": "8e656d24a89829d704a7667ed5669a0060b548c182a335e29940a94e3ff7bea6",
       "rationaleIds": [
         "C01",
         "C03",
@@ -1505,12 +1513,14 @@
         "U01",
         "E09",
         "E10",
-        "UI98"
-      ]
+        "UI98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "e39bfe631a885e7713b847d94548073be3326e8ffeb88632c61ea7192c178400"
     },
     "behind-the-round/de/background-screening/index.html": {
       "baselineSHA256": "a984356385ce4e0867c61068b96587caa6a993e90a4b40b69f476d77d965711c",
-      "sha256": "b2459fe7d42b717b1dab09d829d4616eeddba92b12561551c6a9615faf0bddbf",
+      "sha256": "1d62d31ec4fa4a0ca2561042885d867600400f45967f45d242aec2c8e92efd50",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1523,12 +1533,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "b2459fe7d42b717b1dab09d829d4616eeddba92b12561551c6a9615faf0bddbf"
     },
     "behind-the-round/de/index.html": {
       "baselineSHA256": "564f0e014fc0a7e6d6131f6e47480cfb56b73116e2ca4ed013b685dd64519078",
-      "sha256": "a2e7b90324ff7842413e873692a95413718a9c03603513362c1068c3f18e79ec",
+      "sha256": "4761c5b8c7364d6603bf1a656bf6749ffb8811891ad46a8d7af0709d707f7008",
       "rationaleIds": [
         "C02",
         "M03",
@@ -1544,12 +1556,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "a2e7b90324ff7842413e873692a95413718a9c03603513362c1068c3f18e79ec"
     },
     "behind-the-round/de/objectors-eoi/index.html": {
       "baselineSHA256": "ef7f4798e2427d5691e28931c78ffe0b183ca55146845d4ff0b04ebf8d76e1f8",
-      "sha256": "6efc82526e8686918c9a2ff95edccbb1d6305340d5847a857f0860e42214e05e",
+      "sha256": "63b1b21d9d61e5ee7ee6b7ce04c731001d63e0bd504275502a51426aff065522",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1562,12 +1576,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "6efc82526e8686918c9a2ff95edccbb1d6305340d5847a857f0860e42214e05e"
     },
     "behind-the-round/de/replacement-strings/index.html": {
       "baselineSHA256": "4af49d4fde2f16ba0e02616db2723f4eae302ff0547c2ae50ef326db6ffe65cd",
-      "sha256": "37dacbac1fe87d4255c54c6efca139d422019654028a48224820f482c336eac8",
+      "sha256": "2d3ae1fb255949354b36db618b53ac11d3662c5bc26b9eef7037fd3da5cf0c82",
       "rationaleIds": [
         "M03",
         "M04",
@@ -1582,12 +1598,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "37dacbac1fe87d4255c54c6efca139d422019654028a48224820f482c336eac8"
     },
     "behind-the-round/de/sanctions-and-dns/index.html": {
       "baselineSHA256": "a729b3af21770246b82590b03e037ff1fd6fbfeccfcacbbb108daea9315f0136",
-      "sha256": "0d0cee5a6cfeaba6872965d68e16da27136c2c133aa20a36786559d612b89ad7",
+      "sha256": "8c6461e275879866148bc7c5e39fa8af0edb7a96f90247681e521b19139f32d2",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1600,12 +1618,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "0d0cee5a6cfeaba6872965d68e16da27136c2c133aa20a36786559d612b89ad7"
     },
     "behind-the-round/de/wdo-identity/index.html": {
       "baselineSHA256": "ce6c244b49e2141e92ff6f083bcfa2d1122011a0c41e1d9e63c3a585b9432b35",
-      "sha256": "153077fa4d2c8328c5f0a649e2d9d7ee60fc7f126aa513ab9270da0dd46cc5fd",
+      "sha256": "3bb8734fbf994f1d83eab24ded87df6e83be69ff9284adbb1bc30617a3f168ad",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1618,12 +1638,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "153077fa4d2c8328c5f0a649e2d9d7ee60fc7f126aa513ab9270da0dd46cc5fd"
     },
     "behind-the-round/de/who-controls-internet-access/index.html": {
       "baselineSHA256": "0373ba3210ac9dc6770a60f801f9b422f2a574e15ca36757f36e2084dee47d11",
-      "sha256": "9964f03023f0990bc66455f86639189285d4e337b0b801971018b6da0278dd59",
+      "sha256": "afce48c041d0375ab83f8365e38960f6f8d6466207694e01cf043a7da82359da",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1638,12 +1660,14 @@
         "C96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "9964f03023f0990bc66455f86639189285d4e337b0b801971018b6da0278dd59"
     },
     "behind-the-round/en/background-screening/index.html": {
       "baselineSHA256": "d34fe33fdbee89ac67c85a961651f700022362732f6ddb527fe36e7da87e46ad",
-      "sha256": "74dffa5d2c4ec3d4c0521f146849d7fe69d9b0f205429a04e508add9c53753d1",
+      "sha256": "faf572158c04e2591e1394cfa0d9c31c94d7577d63285f0fd2322e451eeb1904",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1656,12 +1680,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "74dffa5d2c4ec3d4c0521f146849d7fe69d9b0f205429a04e508add9c53753d1"
     },
     "behind-the-round/en/index.html": {
       "baselineSHA256": "af1ad762e8244e28c0749e8123c3ce61f0deac32e4c3e1dac3c55b41d8457d7b",
-      "sha256": "0fe74258e30320bac9f340640a35ef51ebc58fc139ab240663f8cb64eaab7588",
+      "sha256": "c9451411b13e17efffb42680affbc58b8fb11ba1d8de7f28c1caf353fbfb269a",
       "rationaleIds": [
         "C02",
         "M03",
@@ -1677,12 +1703,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "0fe74258e30320bac9f340640a35ef51ebc58fc139ab240663f8cb64eaab7588"
     },
     "behind-the-round/en/objectors-eoi/index.html": {
       "baselineSHA256": "e64d35945aaacb3ddb153109c41927381304e83993e14dbc22d348c373c4a5a1",
-      "sha256": "dbadda40ca6bd949118323e62f77774559034797af5ef4b4458bb791afa1816c",
+      "sha256": "cb2d48329adc5fad54a5a86098ce9059191555fa9ce07ce2a4685899d74d26eb",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1695,12 +1723,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "dbadda40ca6bd949118323e62f77774559034797af5ef4b4458bb791afa1816c"
     },
     "behind-the-round/en/replacement-strings/index.html": {
       "baselineSHA256": "67a79cb108812134a57279c8f593448bd0c776cb318e84cd40a61b0beccffaf2",
-      "sha256": "857e2b5b9af89feac2571304a02d07cbf1eef807f5c13ca0acf0f33c13b5c5db",
+      "sha256": "5fbac86b6cc7678325d4e2ad163733125f4233e2238257676b9ef74f95c2c579",
       "rationaleIds": [
         "M03",
         "M04",
@@ -1715,12 +1745,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "857e2b5b9af89feac2571304a02d07cbf1eef807f5c13ca0acf0f33c13b5c5db"
     },
     "behind-the-round/en/sanctions-and-dns/index.html": {
       "baselineSHA256": "4a89ca7ff3683cab2c635a226b4edab871f8d9852fb54a2d802ea5538b3642eb",
-      "sha256": "ff2289b3597cd63cbe0566aa3668324cdf18da524bce3ff38b053e31d4e945be",
+      "sha256": "3c840d97d2026525d4b9ae9682aed56831e6b89867b88def9661d5213f3e64ac",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1733,12 +1765,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "ff2289b3597cd63cbe0566aa3668324cdf18da524bce3ff38b053e31d4e945be"
     },
     "behind-the-round/en/wdo-identity/index.html": {
       "baselineSHA256": "e3620d3be65315e8c7ab7c445cf64c7f2a195a7baff4aaaf84b67ad9978f6d1c",
-      "sha256": "cb38eeda7e73698f840d682b66cd366303f65fe48dd44f7ce0fcb151126cce52",
+      "sha256": "2914f725fbc8ce993bfbd83f022381549c93f9e34fd18892831ce603b0e4d431",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1751,12 +1785,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "cb38eeda7e73698f840d682b66cd366303f65fe48dd44f7ce0fcb151126cce52"
     },
     "behind-the-round/en/who-controls-internet-access/index.html": {
       "baselineSHA256": "ef63c49fbd9fee82b025fb8ba908fbff4f026f03c4d00922d720a8ca0e88560c",
-      "sha256": "d10819ea8073ab2ac83b943777d6e8aa5ca9ece097c8a29623ea1d887458ccf9",
+      "sha256": "a1a1166db11f8e4c3b5e16ef895956b98b373b44cd8b0e239ed298825502e676",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1771,12 +1807,14 @@
         "C96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "d10819ea8073ab2ac83b943777d6e8aa5ca9ece097c8a29623ea1d887458ccf9"
     },
     "behind-the-round/fr/background-screening/index.html": {
       "baselineSHA256": "3d1fc6e5478ca30df2e7ef2000015f13605919007145e1b573851adf3e6f4ee4",
-      "sha256": "e86fc3f53500b455a010689f9dbb94accbd21297f3ee5e552b7248bca6bee7e0",
+      "sha256": "a5ab461d3f30721cb57bca4a18db93f5d91b8daa52f3de68bdc3fd20b2cdcbe9",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1789,12 +1827,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "e86fc3f53500b455a010689f9dbb94accbd21297f3ee5e552b7248bca6bee7e0"
     },
     "behind-the-round/fr/index.html": {
       "baselineSHA256": "9659e9b15112802fd7038e4d3242fac9133a49c849f2c0b60fcf1d9ec5dedca4",
-      "sha256": "106454426a8a76573f7abc01a9fde207dddca08ec9e8ffd41ca7ab74af4b122d",
+      "sha256": "a02bca92e21ebb37b559f36ba4bd93182fd22a0f7cf46a36f9b9a9005f6b720b",
       "rationaleIds": [
         "C02",
         "M03",
@@ -1810,12 +1850,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "106454426a8a76573f7abc01a9fde207dddca08ec9e8ffd41ca7ab74af4b122d"
     },
     "behind-the-round/fr/objectors-eoi/index.html": {
       "baselineSHA256": "83471ba6f9f0e9c173414d20df3f35dfba622f2299fcc6ed96dfa6770f4615ae",
-      "sha256": "7251b2bb3bd6694f5cedf0b5cf2449dd2a53c6e5872ae8e967c76a8a306eaea5",
+      "sha256": "5058aa2d9921cd13305a5f72627e611d167ad21471bea6ab993dd1584588d4ca",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1828,12 +1870,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "7251b2bb3bd6694f5cedf0b5cf2449dd2a53c6e5872ae8e967c76a8a306eaea5"
     },
     "behind-the-round/fr/replacement-strings/index.html": {
       "baselineSHA256": "c7f0147ae42f88f08b2fb187422917d93fb552527c526a8146583bece4ddd1cf",
-      "sha256": "4422f28efaa051c09fd71895e2007333a5519a12b0bcce64a10f9767856903b4",
+      "sha256": "a48456faeb3c991bcf821db38d4998129a5c0d9dfb2195e0781fd6a8c622e5fd",
       "rationaleIds": [
         "M03",
         "M04",
@@ -1848,12 +1892,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "4422f28efaa051c09fd71895e2007333a5519a12b0bcce64a10f9767856903b4"
     },
     "behind-the-round/fr/sanctions-and-dns/index.html": {
       "baselineSHA256": "3e491fbc08b588f6e46dce9f03fad63d738badcd7ae793e871b7afcafa9cada0",
-      "sha256": "530f95ca2ee63bf9362be495a5673d1f521ad7ee6548622ac10f6de089c574c7",
+      "sha256": "950b42304111e7b9315109892747df326ab9d4428bbab9b993530886db6ac8a3",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1866,12 +1912,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "530f95ca2ee63bf9362be495a5673d1f521ad7ee6548622ac10f6de089c574c7"
     },
     "behind-the-round/fr/wdo-identity/index.html": {
       "baselineSHA256": "8ee2396c446975aa0d4487a5774ce7f322b441d55340e2a55fce83881ee61d87",
-      "sha256": "5d4e9d6ce1387479a87925670f442c71290b313c255d01b5f8f02c22bdfbd670",
+      "sha256": "b9612b30c1a2b790f3d5ea5eb60952c08f231ae13c48d3c2b50d838b7861af49",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1884,12 +1932,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "5d4e9d6ce1387479a87925670f442c71290b313c255d01b5f8f02c22bdfbd670"
     },
     "behind-the-round/fr/who-controls-internet-access/index.html": {
       "baselineSHA256": "9b01d3ef0b99124a0b77a977b20b4967e4d86cd5442bcd0da79ea3ce00c63b49",
-      "sha256": "39ac721db6aa83edd6e39ed6e5e76a3f9978117203d0f0ca1f1586ce982f3dd2",
+      "sha256": "051f09dedecf12ef96a2dcb0abee4aa46e8dd3f0143a2fddbe70773f57b87fc5",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1904,12 +1954,14 @@
         "C96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "39ac721db6aa83edd6e39ed6e5e76a3f9978117203d0f0ca1f1586ce982f3dd2"
     },
     "behind-the-round/it/background-screening/index.html": {
       "baselineSHA256": "4d21a6f625bac55b627528b692f8f6e933955228fb32690e18cb28725bd56e43",
-      "sha256": "cdd0c8800fb6a24d6e019fa29d47b30b5ab4d7b88d857837eb91d983dc0c5427",
+      "sha256": "58b0cd2d213e092ca74e39a19d7dc9e0e776760e90a5250913f79bd0d5899235",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1922,12 +1974,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "cdd0c8800fb6a24d6e019fa29d47b30b5ab4d7b88d857837eb91d983dc0c5427"
     },
     "behind-the-round/it/index.html": {
       "baselineSHA256": "fa8a3251fd779775cfe5d7aa3f187dee46cae288a58d570a434b835a8312efd2",
-      "sha256": "73120404700ddb2bdfba7fad7d74b182da8de694ea36091b25ba48db8fd0ba45",
+      "sha256": "bb9521cc72aa4aecff375dd0ce6b55af60fb5450deeee7450700a32e79939e6c",
       "rationaleIds": [
         "C02",
         "M03",
@@ -1943,12 +1997,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "73120404700ddb2bdfba7fad7d74b182da8de694ea36091b25ba48db8fd0ba45"
     },
     "behind-the-round/it/objectors-eoi/index.html": {
       "baselineSHA256": "f19e692e1f023a21caa282b5cee2d8853f2293aafbe1dbbed82fb15dbff3c584",
-      "sha256": "520d03240df6df93649cb93db6ef05a1f1d918695284dbbe91470ca86c320f9b",
+      "sha256": "0b87cf87ed3e69084d6f2364a40d0df22bd7c56fbb14f75f820f3abd5e30136f",
       "rationaleIds": [
         "E05",
         "A19",
@@ -1961,12 +2017,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "520d03240df6df93649cb93db6ef05a1f1d918695284dbbe91470ca86c320f9b"
     },
     "behind-the-round/it/replacement-strings/index.html": {
       "baselineSHA256": "50e773f7eb7a0e1b723253adf6e514b439687d9f3e586fbdde2b6ec384957e2f",
-      "sha256": "407ced4049f8d71a104cf692d49dbcafbf5b5ab1cdfc419dac4caf1435677197",
+      "sha256": "ec1e38e445a3dcc8e2a259f6082ab612aff4b5e8eed979e51b83e30e4494326d",
       "rationaleIds": [
         "M03",
         "M04",
@@ -1981,12 +2039,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "407ced4049f8d71a104cf692d49dbcafbf5b5ab1cdfc419dac4caf1435677197"
     },
     "behind-the-round/it/sanctions-and-dns/index.html": {
       "baselineSHA256": "eb9f0663194f2a1d00f66f58f763b99f783aaea31d40584ba6d1aedae56b55d9",
-      "sha256": "46c5ba33bf3b623f89fb2b83390760e479e8deb173948a3cb3f0e7ed11ba83f8",
+      "sha256": "61581f2013aae447cd26f5bef65a11d60e3b2782a8449e6a03595d605f6e298b",
       "rationaleIds": [
         "E05",
         "A19",
@@ -2000,12 +2060,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "46c5ba33bf3b623f89fb2b83390760e479e8deb173948a3cb3f0e7ed11ba83f8"
     },
     "behind-the-round/it/wdo-identity/index.html": {
       "baselineSHA256": "7be67c9e27b89266d950c64170534d10a20fd64b2a8809f05b9d7b7ce5ca944d",
-      "sha256": "152b8eab263a97aec61e7e8c0e6e1e1f6c6703fd276e40f186f6cacbaba35fe8",
+      "sha256": "b60b986d252a7cfa299ee0fcf4761f967fa63816de314646c369517cefb7b592",
       "rationaleIds": [
         "E05",
         "A19",
@@ -2019,12 +2081,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "152b8eab263a97aec61e7e8c0e6e1e1f6c6703fd276e40f186f6cacbaba35fe8"
     },
     "behind-the-round/it/who-controls-internet-access/index.html": {
       "baselineSHA256": "f7f8627965be401cc75ba0a240c610dfc8ef629ccac659230d0ddead0d885a71",
-      "sha256": "620342a5c15ac0814ee15534bcbfd6ab806dd02391cc413533497b6d66979370",
+      "sha256": "145161fd0f4f9d905fc1b16f3704549e22dfb95ad1ad7dc9ac7145419a7588cd",
       "rationaleIds": [
         "E05",
         "A19",
@@ -2040,8 +2104,10 @@
         "C96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "620342a5c15ac0814ee15534bcbfd6ab806dd02391cc413533497b6d66979370"
     },
     "data/aps_2026_applicant_distribution.csv": {
       "baselineSHA256": "bf43f77af73b71f281175f90999d4b0478fbe02696bc0a6a0465c111fc36bb13",
@@ -2215,7 +2281,7 @@
     },
     "data/release_history.json": {
       "baselineSHA256": "e084001ed1150db3d2195e2e1c669808084dbc50535fcd2e5b5bf349bf8ebac7",
-      "sha256": "41248705f42fdb48e31fa34ec2225f66a5c80d3695035c01eca4e30f71538f57",
+      "sha256": "10c53d3688e500e4b81b47b3e0d38073adc3d2cbb96f3381b07371fbd54fa17f",
       "rationaleIds": [
         "C01",
         "C02",
@@ -2236,12 +2302,14 @@
         "V96",
         "V97",
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "41248705f42fdb48e31fa34ec2225f66a5c80d3695035c01eca4e30f71538f57"
     },
     "data/translations.json": {
       "baselineSHA256": "6c71a4516d657f571e6fd714540e15be56fc423984681c3c003d46bf0ee5fc49",
-      "sha256": "51ea317292d38cd32c8c3fa69229f866ac53e980d5934678e94239f81b891e26",
+      "sha256": "2cf9c1cf81a76380f12563793f74aebef884bec28efc1d9d9ea8ede58a0845f5",
       "rationaleIds": [
         "C01",
         "C02",
@@ -2276,12 +2344,14 @@
         "V97",
         "UI98",
         "A98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "51ea317292d38cd32c8c3fa69229f866ac53e980d5934678e94239f81b891e26"
     },
     "inside-the-round/de/index.html": {
       "baselineSHA256": "c7ad32d04ab943f95d934a41f96a94aa6b73e5955ec44fdefd30aeb956f028a2",
-      "sha256": "73d033f4c237ac63323323413dfb6718621a4d47593a9f1f1544dc0e146469c9",
+      "sha256": "b456b0d919d520be1f7276140f51c77a797118821ae18e2e6ba71128ade23489",
       "rationaleIds": [
         "C02",
         "M03",
@@ -2297,12 +2367,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "73d033f4c237ac63323323413dfb6718621a4d47593a9f1f1544dc0e146469c9"
     },
     "inside-the-round/en/index.html": {
       "baselineSHA256": "bab16d3d558fc800079f4c3c1aebfc64e71ae97cc6c9b6aa236d09a12a3b4db7",
-      "sha256": "86219f01fdc5422efaf3dcca49111c9f0855a4fd59a0b652bbf6a486de1333da",
+      "sha256": "1c2b06a8c894a7022916a2aced4a289424259bc8ccd486480dcbd7da761e96ef",
       "rationaleIds": [
         "C02",
         "M03",
@@ -2318,12 +2390,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "86219f01fdc5422efaf3dcca49111c9f0855a4fd59a0b652bbf6a486de1333da"
     },
     "inside-the-round/fr/index.html": {
       "baselineSHA256": "709bdc1f3e0dda04e169f2287d5db8b55637aef6ef32b5df823685278cd1df6d",
-      "sha256": "e1e1639f613eb86f8f1ce883f0558a95105838229fbfeb1f476fb77042fbb624",
+      "sha256": "900ac656bfbfcd59a9dce043eb45664ee670f64cac6f35f1866d0620294abcfb",
       "rationaleIds": [
         "C02",
         "M03",
@@ -2339,12 +2413,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "e1e1639f613eb86f8f1ce883f0558a95105838229fbfeb1f476fb77042fbb624"
     },
     "inside-the-round/it/index.html": {
       "baselineSHA256": "0356f7c2cd5d1d30d584ef35530e8c6445bf66569c4684e5599ff94965b23bf3",
-      "sha256": "11ac3182fa728bfba82cc0ee5b7c29dcab1ac61fdc3f556bd18be4942b839c67",
+      "sha256": "858d1997d1eef75beaff30a938f3228d982e806b8d1b3e402d622e353e51bf44",
       "rationaleIds": [
         "C02",
         "M03",
@@ -2360,12 +2436,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "11ac3182fa728bfba82cc0ee5b7c29dcab1ac61fdc3f556bd18be4942b839c67"
     },
     "publication.json": {
       "baselineSHA256": "b5d225fa96dc9573b2dac3c18e39236c2e570c65aaa08afdbfedbdc0292368ef",
-      "sha256": "ee85ebfd3662312def51c32b8a4406209b281b6d2bca33d7967cced8318e7249",
+      "sha256": "f118a99aa66c619cfe7485c34748527dd5780021b55ae4f727aa967252a2fb85",
       "rationaleIds": [
         "C01",
         "C02",
@@ -2383,12 +2461,14 @@
         "V96",
         "P96",
         "V97",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "ee85ebfd3662312def51c32b8a4406209b281b6d2bca33d7967cced8318e7249"
     },
     "research/connecting-the-dots-working-paper-v1.html": {
       "baselineSHA256": "5599e8f890e732a80bfc0852c686465b69309f055f4853673d55fb8725bc9948",
-      "sha256": "f586ac5d8b7759534d73ad0b872de7e8cf6adab38ab18082e2fee51f279966cd",
+      "sha256": "5819b38c0e549f4bb10fda60591e2e1ed857eed414fc7c6300736003b9d80f1e",
       "rationaleIds": [
         "C05",
         "M01",
@@ -2409,12 +2489,14 @@
         "V96",
         "V97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "f586ac5d8b7759534d73ad0b872de7e8cf6adab38ab18082e2fee51f279966cd"
     },
     "research/connecting-the-dots-working-paper-v1.md": {
       "baselineSHA256": "c02a5dd4dbc8056fdc4e8efaebf2ee2b3cb9c94577e0fa98b63cfe65dcb185d7",
-      "sha256": "3df86493467120fb58fb8627d3bf6c8f7bb4df2c5c8f0c26e373b9aacfd4a31d",
+      "sha256": "762357e07ef9e6286c5313791f40693837f695e9e9be6a7afb31b4ff85e63611",
       "rationaleIds": [
         "C05",
         "M01",
@@ -2434,12 +2516,14 @@
         "V95",
         "V96",
         "V97",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "3df86493467120fb58fb8627d3bf6c8f7bb4df2c5c8f0c26e373b9aacfd4a31d"
     },
     "research/index.html": {
       "baselineSHA256": "e9a26de35e6eada49de00b1d9df234d3f67c8e40f93591134477a064c0694245",
-      "sha256": "e20b8f05476edfd0354c7870311131dbf2adf7450162fee111490d7f1809c6cc",
+      "sha256": "33acab31970c39a02497f2d2993d9c2d160800d0a40305869bee2df1fed3666a",
       "rationaleIds": [
         "C05",
         "T02",
@@ -2456,12 +2540,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "e20b8f05476edfd0354c7870311131dbf2adf7450162fee111490d7f1809c6cc"
     },
     "src/index.web.html": {
       "baselineSHA256": "b6a65c951dc6c990671ca558580dbfaec97f33d6bf0b1050e83d1b9399c028c2",
-      "sha256": "b31ab572fa2b7016d3b08c6b0f57abac1f64d069532d468d3b780033ece6caf8",
+      "sha256": "3f7d561d291bed7cec43261e821ee63115c7f8aff40c3448a0cf2005f3997527",
       "rationaleIds": [
         "C01",
         "C02",
@@ -2484,12 +2570,14 @@
         "V97",
         "UI98",
         "A98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "b31ab572fa2b7016d3b08c6b0f57abac1f64d069532d468d3b780033ece6caf8"
     },
     "research/research_release_manifest.json": {
       "baselineSHA256": "c928f7857e4cf66ea98983ba13aad299dadd7d6674ab7b4b9e4a54fe65d031b7",
-      "sha256": "4ac630f189ef681ed1da7411238e2fb64237f4a331cd61b6763306cd724c70b2",
+      "sha256": "4fa9d895447245b59208f116d4800475b60520c1b660e193f709c0b1f8036341",
       "rationaleIds": [
         "C05",
         "T02",
@@ -2504,8 +2592,10 @@
         "V95",
         "V96",
         "V97",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "4ac630f189ef681ed1da7411238e2fb64237f4a331cd61b6763306cd724c70b2"
     },
     "data/sources.csv": {
       "baselineSHA256": "5ac8724ad4e066c360f39348c6512aa9533ddf5599ae2cc43b0e343be949d60f",
@@ -2605,15 +2695,17 @@
     },
     "scripts/verify_ia_b2_parity.cjs": {
       "baselineSHA256": "feae797a59cecdf898d67159e487861b30e87b2cafd7d44fcf924f8f48415312",
-      "sha256": "1b04fb0147c7c85c17f0d18f6e36322e85c9b89492167242e724cc1edd59d1a2",
+      "sha256": "7e44221d35a4f9265cdac4a407624e19e933b3aa2485fb6b68c7f217d11f28d9",
       "rationaleIds": [
         "T01",
         "CI03",
         "T02",
         "A19",
         "H01",
-        "A98"
-      ]
+        "A98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "1b04fb0147c7c85c17f0d18f6e36322e85c9b89492167242e724cc1edd59d1a2"
     },
     "scripts/release_check.py": {
       "baselineSHA256": "4ccca58dacc30d5347ef710871d7c3debbe4d21a44bb3c269307d5a93ed19304",
@@ -2830,7 +2922,7 @@
     },
     ".github/workflows/audit-browser.yml": {
       "baselineSHA256": "ed063e0e2ffe43df54dfe3e1a98a4292dad5524d76a46c174c6a0943554a1296",
-      "sha256": "29173b14dd9eadc5bc8e42c10c064861cb80a7f6a0f2ea241cf999b5f8a7a283",
+      "sha256": "762d7a6c0db101647a45fc3a77388e26c72c227e4cc42a4c982475dd37125516",
       "rationaleIds": [
         "A19",
         "H01",
@@ -2840,8 +2932,10 @@
         "CI24",
         "CI98",
         "PER98",
-        "UA98"
-      ]
+        "UA98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "29173b14dd9eadc5bc8e42c10c064861cb80a7f6a0f2ea241cf999b5f8a7a283"
     },
     ".gitignore": {
       "baselineSHA256": "1591671f06576b26a8f3cb1b7690b79b01e128319960a66b6c450cc51f4e9af0",
@@ -2869,7 +2963,7 @@
     },
     "package-lock.json": {
       "baselineSHA256": "3580e7fa5485bd55e532e7bc5644dfa0e48c1bf9769fab8108722ee1dd5ae708",
-      "sha256": "802ea49b0be02efd309df4cba29bdd5f775038f762b8e5ab1d8f81c0f0668901",
+      "sha256": "6f5f9e5f4f8a034304771db380d37d0aff1357f2bfb1f5d209c87a3d8b10984c",
       "rationaleIds": [
         "A19",
         "H01",
@@ -2882,12 +2976,14 @@
         "V95",
         "V96",
         "V97",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "802ea49b0be02efd309df4cba29bdd5f775038f762b8e5ab1d8f81c0f0668901"
     },
     "package.json": {
       "baselineSHA256": "e317eceaaca55386ac43bab966e1479052d93331e204104ce5d36c107e43f28f",
-      "sha256": "ff53c0f7fe61fac8230c3d91e2345381ee8f960712ce51db123f5f65d84351a3",
+      "sha256": "c9c29c422b0e11c64ad2c333a44206538bb0c83414d6cc6343ba50d0c1af896b",
       "rationaleIds": [
         "A19",
         "H01",
@@ -2900,12 +2996,14 @@
         "V95",
         "V96",
         "V97",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "ff53c0f7fe61fac8230c3d91e2345381ee8f960712ce51db123f5f65d84351a3"
     },
     "research/README.md": {
       "baselineSHA256": "e73bf4e607e4cbc95be972f81584215e079c81f5d835592176dbfa16a4ee6c77",
-      "sha256": "635efd874a76d24d946f06ffa6f77db5c1837edcffd122bb15713a3acb077e3a",
+      "sha256": "470f128b6178737c35f90da40343e5e6ace977dae86f93e025c31f585a661e07",
       "rationaleIds": [
         "A19",
         "H01",
@@ -2918,8 +3016,10 @@
         "V95",
         "V96",
         "V97",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "635efd874a76d24d946f06ffa6f77db5c1837edcffd122bb15713a3acb077e3a"
     },
     "scripts/assemble_data.js": {
       "baselineSHA256": "cdf3be31c5224b0bb98304eca9b9de535739e25a252d5eb7a4e913b5d59a7e6a",
@@ -3020,7 +3120,7 @@
     },
     "data/frozen_technical_packages.json": {
       "baselineSHA256": null,
-      "sha256": "b042eadb75bd4cdb47b96d203a6c076cfa5366ae3658570d20dbfd9b05c3e9bd",
+      "sha256": "f0f1e8bc5593b9049976c34634a6d31939b38e2009f50cd558cc26c49be864fc",
       "rationaleIds": [
         "A19",
         "H01",
@@ -3030,8 +3130,10 @@
         "V95",
         "V96",
         "V97",
-        "T98"
-      ]
+        "T98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "b042eadb75bd4cdb47b96d203a6c076cfa5366ae3658570d20dbfd9b05c3e9bd"
     },
     "data/reader_validation_recording.csv": {
       "baselineSHA256": null,
@@ -3086,7 +3188,7 @@
     },
     "CHANGELOG.md": {
       "baselineSHA256": "08308b4d751353182a834f71c730d08866a0375ac9ee866701e4caf8eb41d4ff",
-      "sha256": "81d60550feefe71ec7d0077f6a1eeb452fe5ca1fbc53aad34c77a2dad6d593cf",
+      "sha256": "ac0d89e9c43e728b138d4464afce2196cecc9ed60b761c1939c13ae2cf59583c",
       "rationaleIds": [
         "A19",
         "H01",
@@ -3094,8 +3196,10 @@
         "U03",
         "E09",
         "DOC98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "81d60550feefe71ec7d0077f6a1eeb452fe5ca1fbc53aad34c77a2dad6d593cf"
     },
     "docs/REPOSITORY_GOVERNANCE.md": {
       "baselineSHA256": "a0a21b166158beae4135a308fb36251bf462e14019f362483145052031502657",
@@ -3256,9 +3360,11 @@
       "baselineSHA256": "3ca0d473eda8adc7dcb2b9b94d2d83dcecc0e96503e923f8c59ca0cdfc831f74",
       "rationaleIds": [
         "U01",
-        "UI98"
+        "UI98",
+        "UX99"
       ],
-      "sha256": "d040811282bfb431c8ba4d3e63a2b46eda93ef080d6c804825eb435423e54acb"
+      "sha256": "aea1618e63062ff872b2c4860292576746f3b29a3927759922df67aa8e18874c",
+      "priorTechnicalSHA256": "d040811282bfb431c8ba4d3e63a2b46eda93ef080d6c804825eb435423e54acb"
     },
     "scripts/render_reader_study.py": {
       "baselineSHA256": null,
@@ -3283,7 +3389,7 @@
     },
     "research/reader-study/it/index.html": {
       "baselineSHA256": null,
-      "sha256": "017091a52d2a451d9502cb4a219834581b87404a2fbbeec4cf826eca9d7fbbc7",
+      "sha256": "8bd513198ab31a48a42dfcb42d8f93cdc8a4bf79523770dc1d34b12572b30dc6",
       "rationaleIds": [
         "U03",
         "E09",
@@ -3294,12 +3400,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "017091a52d2a451d9502cb4a219834581b87404a2fbbeec4cf826eca9d7fbbc7"
     },
     "research/reader-study/en/index.html": {
       "baselineSHA256": null,
-      "sha256": "747ae0b0c9604e681dd7a345cdc9d5ec76e2d826d04bc4950305c81d024871a3",
+      "sha256": "a9d015d71fb04808fd50f6772a660a210ade951b95928de3d35f72a57dd0eba4",
       "rationaleIds": [
         "U03",
         "E09",
@@ -3310,12 +3418,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "747ae0b0c9604e681dd7a345cdc9d5ec76e2d826d04bc4950305c81d024871a3"
     },
     "research/reader-study/de/index.html": {
       "baselineSHA256": null,
-      "sha256": "f28ac1a893540703c95a4c4b852768516886cad693182107ac0e01815ac1f327",
+      "sha256": "2a6e2887d88bfe4e05755da272fe7efaa95c9105d33b60885782553fffcf742d",
       "rationaleIds": [
         "U03",
         "E09",
@@ -3326,12 +3436,14 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "f28ac1a893540703c95a4c4b852768516886cad693182107ac0e01815ac1f327"
     },
     "research/reader-study/fr/index.html": {
       "baselineSHA256": null,
-      "sha256": "64eead15e631ab26301b012f44e00ce4fdd6114f659e2b14b977136fc2ad4978",
+      "sha256": "1b1a3c3768048fc536b013302d5d90baff40a0f96e3fe2c4a95c2143eb91341f",
       "rationaleIds": [
         "U03",
         "E09",
@@ -3342,8 +3454,10 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "64eead15e631ab26301b012f44e00ce4fdd6114f659e2b14b977136fc2ad4978"
     },
     "scripts/reorder_economics.cjs": {
       "sha256": "5964aa3eca8b60a8dbedbb3a3af26b62281f4d6ecef3353ecca157a03113bbd6",
@@ -3381,14 +3495,16 @@
       ]
     },
     "README.md": {
-      "sha256": "7f31f24503c00582eb0767d0523b660f3634215ac505d0909852897997a4d8d6",
+      "sha256": "1535a73886c64ef72b13db81825bbe486ee727ce66d639b2567cd59b8b91c749",
       "baselineSHA256": null,
       "rationaleIds": [
         "E09",
         "E10",
         "DOC98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "7f31f24503c00582eb0767d0523b660f3634215ac505d0909852897997a4d8d6"
     },
     ".github/workflows/reader-first.yml": {
       "baselineSHA256": null,
@@ -3411,9 +3527,11 @@
       "rationaleIds": [
         "E10",
         "E13",
-        "R95"
+        "R95",
+        "UX99"
       ],
-      "sha256": "8ec1c35a34325f21b2de864e8cf912d02bea4e053239840e02de9529bd9a27df"
+      "sha256": "526c85d71fdf31663a085ca4eaf1141459088631ad790c7e467011d031245678",
+      "priorTechnicalSHA256": "8ec1c35a34325f21b2de864e8cf912d02bea4e053239840e02de9529bd9a27df"
     },
     "data/reader_first.json": {
       "baselineSHA256": null,
@@ -3533,9 +3651,11 @@
         "V97",
         "T98",
         "DEL98",
-        "V98"
+        "V98",
+        "UX99"
       ],
-      "sha256": "4c5fab3fc46e791ba51376dd999f5140e149b8fdede25ebe4bf6142e9d94d4f5"
+      "sha256": "3e994e48899e91c04a6c81b4e2a59a6472814005d551269d77f0db88e7235525",
+      "priorTechnicalSHA256": "4c5fab3fc46e791ba51376dd999f5140e149b8fdede25ebe4bf6142e9d94d4f5"
     },
     "scripts/audit_legacy_deeplinks.cjs": {
       "baselineSHA256": null,
@@ -3547,9 +3667,11 @@
     "scripts/usability_remediation.cjs": {
       "baselineSHA256": null,
       "rationaleIds": [
-        "E13"
+        "E13",
+        "UX99"
       ],
-      "sha256": "617f930c851b090752508680c60f602c03b276d349652e09e06906dbd0a6a1c5"
+      "sha256": "82e0b7efdafd94c37bbb54c4ffcd75c5dd82f3054fa452234ac3bd5a1fd28d3c",
+      "priorTechnicalSHA256": "617f930c851b090752508680c60f602c03b276d349652e09e06906dbd0a6a1c5"
     },
     "scripts/usability_remediation_qa.cjs": {
       "baselineSHA256": null,
@@ -3558,9 +3680,11 @@
         "T94",
         "QA94",
         "Q95",
-        "UA98"
+        "UA98",
+        "UX99"
       ],
-      "sha256": "76150c17ce3af3e8e77268ac31d640785520ad90e78998a1d24e89e6208d3eeb"
+      "sha256": "11b64a9d7e5d5b654a72953c9dc9f2fb9c2f2481cd27fb61709b4a42d5b78b79",
+      "priorTechnicalSHA256": "76150c17ce3af3e8e77268ac31d640785520ad90e78998a1d24e89e6208d3eeb"
     },
     "scripts/run_browser_regressions.py": {
       "baselineSHA256": null,
@@ -3586,9 +3710,11 @@
         "V96",
         "E97",
         "UI98",
-        "V98"
+        "V98",
+        "UX99"
       ],
-      "sha256": "d501cf0f4e6b3fae42515e482051468d79f9122f6b935aae084f6014de0a688c"
+      "sha256": "9748f08e4eaa6d786df65e3258ecfb143d643474e2c5af83c221c4923cbe0361",
+      "priorTechnicalSHA256": "d501cf0f4e6b3fae42515e482051468d79f9122f6b935aae084f6014de0a688c"
     },
     "data/editorial_io_appointments_20261023.json": {
       "baselineSHA256": null,
@@ -3606,10 +3732,12 @@
     },
     "scripts/render_field_investigations.py": {
       "baselineSHA256": null,
-      "sha256": "585c915433d2f60cccd50a4819fff91136ba964b1b1df3e48a925f73d11fc6c1",
+      "sha256": "2bf8f5bcdac7ba6b6940badb44fd9c8c708517c481891178c2f5c7838ff31835",
       "rationaleIds": [
-        "IO26"
-      ]
+        "IO26",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "585c915433d2f60cccd50a4819fff91136ba964b1b1df3e48a925f73d11fc6c1"
     },
     "downloads/connecting-the-dots-data-pack-v0.7.93.sha256": {
       "baselineSHA256": null,
@@ -3620,13 +3748,15 @@
     },
     "sitemap.xml": {
       "baselineSHA256": null,
-      "sha256": "b794a5fd969e4b9b39cf04c79410f1e47eff1c4d8013c03da024405b2a85121b",
+      "sha256": "6c7a138049241b6ead77d42bd725fe938de34d72bcf9efb0bca6300a1b95f02c",
       "rationaleIds": [
         "T93",
         "T94",
         "V95",
-        "V96"
-      ]
+        "V96",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "b794a5fd969e4b9b39cf04c79410f1e47eff1c4d8013c03da024405b2a85121b"
     },
     "downloads/connecting-the-dots-data-pack-v0.7.93.zip": {
       "baselineSHA256": null,
@@ -3683,63 +3813,73 @@
     },
     "de/index.html": {
       "baselineSHA256": "8a44d19e73614912f6a2c420974ae801c98bc3e8a99be366051608cdc0d524be",
-      "sha256": "612757e12fd8671d6f0af8c2dfbd39f9d1316ab7f452ac35a60735e49547ac43",
+      "sha256": "4b4f870129b92ba89104b5ad754c2e30c339af8f92fd20b81366396d13719367",
       "rationaleIds": [
         "A95",
         "V96",
         "E97",
         "UI98",
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "612757e12fd8671d6f0af8c2dfbd39f9d1316ab7f452ac35a60735e49547ac43"
     },
     "en/index.html": {
       "baselineSHA256": "98a47906b5d79c444243a60370c9f76a429bf965e4f89f4d9f3aa77d6c3c794b",
-      "sha256": "0c92cf07f99fc56a371b94a1bf35fef3ede299573788dd5171b26e873bf69aef",
+      "sha256": "4c0f6e6e1ca0861c63d85c893b723765a31e23a3d5206604650d44d186d30c9d",
       "rationaleIds": [
         "A95",
         "V96",
         "E97",
         "UI98",
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "0c92cf07f99fc56a371b94a1bf35fef3ede299573788dd5171b26e873bf69aef"
     },
     "fr/index.html": {
       "baselineSHA256": "127650e29f8cd27c6915ad1a1c46e709acc798cfe1f81bb132264aa3030e509f",
-      "sha256": "921b5287dc65748efd50afd844a6b5326f48c6a1d34b7be973c2ae1a17977f31",
+      "sha256": "cc9cb6e12ae55d05f728b42499da62891b93fa4bafd3de933d30069be926bfd4",
       "rationaleIds": [
         "A95",
         "V96",
         "E97",
         "UI98",
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "921b5287dc65748efd50afd844a6b5326f48c6a1d34b7be973c2ae1a17977f31"
     },
     "index.html": {
       "baselineSHA256": "5e4a6f107439ff09dd25ac7202bfe9ea4864c127481f8bf12f58db5160df3b90",
-      "sha256": "843bcbb25bdc3ce1483028643066e1750b6a69faec45a47260d16bda791397c3",
+      "sha256": "3c9734bd31fe6ed5f347ed493010857f7611fa23ca6a8b0bc1c6412e9e3f413e",
       "rationaleIds": [
         "A95",
         "V96",
         "E97",
         "UI98",
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "843bcbb25bdc3ce1483028643066e1750b6a69faec45a47260d16bda791397c3"
     },
     "it/index.html": {
       "baselineSHA256": "d23a5360a62709ae1fbe6c4b039ac8742e521a084e4b24eabecb63457ed33a20",
-      "sha256": "a46ca548b8f13c5d495388570dccf029d344e83f7c92cf5eee70f70fce40e6dc",
+      "sha256": "0842df739c8674597f81a7338f513a9c18d2ac008fd20ca807d384f88f2a5219",
       "rationaleIds": [
         "A95",
         "V96",
         "E97",
         "UI98",
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "a46ca548b8f13c5d495388570dccf029d344e83f7c92cf5eee70f70fce40e6dc"
     },
     "scripts/prepare_access_chronology_v0796.cjs": {
       "baselineSHA256": null,
@@ -3843,10 +3983,12 @@
     },
     ".github/workflows/audit-published-surface.yml": {
       "baselineSHA256": null,
-      "sha256": "c2f7be7cc8d5a03a540ae5d1d75ea6b1e3766dcff78e56f5c13d4452ae8977cd",
+      "sha256": "0c8ce529d428218e1ec772d8e216554095cb4d72f88aaec45a73ec38602bafdc",
       "rationaleIds": [
-        "CI98"
-      ]
+        "CI98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "c2f7be7cc8d5a03a540ae5d1d75ea6b1e3766dcff78e56f5c13d4452ae8977cd"
     },
     ".github/workflows/pages-deploy.yml": {
       "baselineSHA256": "ef5c74c552c6370930647c7a7f3d6c0103109cf074c1f982877b60654c7e5789",
@@ -3865,139 +4007,173 @@
     },
     "assets/aps-atlas.js": {
       "baselineSHA256": "4af2e1c909feef2530c6175b2293e7be13380f0dfc4766bd8f4043ce335e028c",
-      "sha256": "8bb1c44676df5784df94d833451b58ef5157437ff6700cf574e5e761dad7ec33",
+      "sha256": "d40e8374e43b425398dc5385bdd8cc131c1f0046d2a930699f31978639036c1e",
       "rationaleIds": [
         "UI98",
-        "A98"
-      ]
+        "A98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "8bb1c44676df5784df94d833451b58ef5157437ff6700cf574e5e761dad7ec33"
     },
     "data/data_bundle.js": {
       "baselineSHA256": "139dc5e6a05df6dace44e77b6e02d7b49e386b801384368995b74fa3fc8404b4",
-      "sha256": "cc19fbba1c7f77adc950fd3469de8b5ba4c0bc8a60039cfeb66c0a6cc21fb3ea",
+      "sha256": "ce2e9ef23df3b15f06f60d9b596e7afdcf63d3b4c3d6e00a6b2060aeaf13d63b",
       "rationaleIds": [
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "cc19fbba1c7f77adc950fd3469de8b5ba4c0bc8a60039cfeb66c0a6cc21fb3ea"
     },
     "data/explorer_profiles_0.js": {
       "baselineSHA256": "8033d695c9594ea4b8a37f8cd687b611422319c325e1c33c6fcf58bbe63c2353",
-      "sha256": "60a709b8140da184410f44ca9512f0c38a4152d60065f3fe88d89bf1e579183b",
+      "sha256": "92053486708d9ef01672f48b0d7d0d237bd9547f0c8616025c657dab72936ffd",
       "rationaleIds": [
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "60a709b8140da184410f44ca9512f0c38a4152d60065f3fe88d89bf1e579183b"
     },
     "data/explorer_profiles_1.js": {
       "baselineSHA256": "d0d6df4934504a4fbec0537dfdcc117954270b4caea9bdf6859a5b549ce9276e",
-      "sha256": "92f09e3eb4d98603ce44f183d80d234f44253802b8f8bdd1c516c26094a10dbf",
+      "sha256": "a88786a45fdbc64b45d2a7696334132c4a43877eff806596e991c23711aa3c0b",
       "rationaleIds": [
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "92f09e3eb4d98603ce44f183d80d234f44253802b8f8bdd1c516c26094a10dbf"
     },
     "data/explorer_profiles_2.js": {
       "baselineSHA256": "a79b3a29cd4f85d0ba5ae0ee9e6e017b8d2153121a435a49359f9f3183f115e9",
-      "sha256": "349f73363c7c934d5c412ce4d33c73a2009fc0717031ad852f5021e4e9b0b29b",
+      "sha256": "3b950de4c70d64a536dfcf48fdf75c8bffc714234702e1facc7452562f936f96",
       "rationaleIds": [
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "349f73363c7c934d5c412ce4d33c73a2009fc0717031ad852f5021e4e9b0b29b"
     },
     "data/explorer_profiles_3.js": {
       "baselineSHA256": "a7eceb6b8afc9116ceeaa2387d1a5a2b3924130c9cbfc6b8efdb6c638aa4b7f2",
-      "sha256": "816134bcf2193eb0e0724e1ef141e8148e1767e8e347ef4cc20334490616275b",
+      "sha256": "b0ca929aed0a99d076fc227ecdbdd04eadfe3d55c1388e065cc5cd3ce7d4c8d7",
       "rationaleIds": [
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "816134bcf2193eb0e0724e1ef141e8148e1767e8e347ef4cc20334490616275b"
     },
     "data/explorer_profiles_4.js": {
       "baselineSHA256": "4a3c52b0d4fc664241241a64f4865be076650b2f2eb7f542d8aa678d4e845c23",
-      "sha256": "200518dcada4e458e513f47f2cde884dddd6e5b4492e3da0fb506e7e11554e1f",
+      "sha256": "cb08c2721bc167637838546e56d53278226a64f1d24ca4aefa545da9bae90804",
       "rationaleIds": [
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "200518dcada4e458e513f47f2cde884dddd6e5b4492e3da0fb506e7e11554e1f"
     },
     "data/explorer_profiles_5.js": {
       "baselineSHA256": "74a690c2ec950b34a63e1909428531d4e1edcc867d01da4a0a8fedd564bb187c",
-      "sha256": "d7394157fe44d2f5e1d4bce7c51b11b1d74837da49c12668c03d2b3e1a072169",
+      "sha256": "e90d1bad21f2a21469ec2ed9c9c3690998da60e9009407de9a9b0058e8409a51",
       "rationaleIds": [
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "d7394157fe44d2f5e1d4bce7c51b11b1d74837da49c12668c03d2b3e1a072169"
     },
     "data/explorer_profiles_6.js": {
       "baselineSHA256": "0606a10dd591a23357772d2c5d488f72cb196c3a2e0650f2dfe745dc2e6096d9",
-      "sha256": "b1ba962115f761ceb1b58029f9688d85440553c4b9488ace2ae4a6f51e8085b4",
+      "sha256": "ca0caa66bcc8199f454c18fa3f2e1a4e2fda2b30854b8beef92f7b1ca255e44d",
       "rationaleIds": [
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "b1ba962115f761ceb1b58029f9688d85440553c4b9488ace2ae4a6f51e8085b4"
     },
     "data/explorer_profiles_7.js": {
       "baselineSHA256": "887d7dc3c20ba2e7fcc5c0f423430a0a8a35eeded81a8c785555c1a999622e26",
-      "sha256": "4fd4181451b4eaf3a817856213e47fb59479f46d391fd1e0b3bf7be35d72755c",
+      "sha256": "f10a3e2721759e4d732acc487916604c0bd70db264f518372ce5a22aa9057820",
       "rationaleIds": [
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "4fd4181451b4eaf3a817856213e47fb59479f46d391fd1e0b3bf7be35d72755c"
     },
     "data/i18n_bundle.js": {
       "baselineSHA256": "16cc89adeccee85d0ac118c3924337d3de3338c4db09fa020a61043e61d3d652",
-      "sha256": "46d6ce7b913ab93b66908dd0fc9118a126926503a7ed376f969a1e1c7aff339d",
+      "sha256": "b25ce7de1e1a02b089e7e583f8e2d5aff2b1b9b3fc55ed27cb8355b7c74606f5",
       "rationaleIds": [
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "46d6ce7b913ab93b66908dd0fc9118a126926503a7ed376f969a1e1c7aff339d"
     },
     "data/i18n_de.js": {
       "baselineSHA256": null,
-      "sha256": "4a69bbd8a7dc4ab5b6946413b04fcc7caf61307be399d22b6af485c7e9a67249",
+      "sha256": "374a72824d46c9c252342342a633eeea63ee55a5c09c93a501ee17c82fdff078",
       "rationaleIds": [
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "4a69bbd8a7dc4ab5b6946413b04fcc7caf61307be399d22b6af485c7e9a67249"
     },
     "data/i18n_en.js": {
       "baselineSHA256": null,
-      "sha256": "cb9e064492f4eeebabf41fed170e1eac017a33e2516701212d5fa9f9c48f2799",
+      "sha256": "92d9dade76f0175069a5d05db42fb492dd4bbc5d9d003e67f76ee544afe7d487",
       "rationaleIds": [
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "cb9e064492f4eeebabf41fed170e1eac017a33e2516701212d5fa9f9c48f2799"
     },
     "data/i18n_fr.js": {
       "baselineSHA256": null,
-      "sha256": "0d1f6d61426f3c771f2c0ff25a50b14afb2957fc56c61433ae7b16aa07a891b3",
+      "sha256": "643b2bced5c950d8def4b59956059bb4fcf92eefb6518e4e247b653574706c5c",
       "rationaleIds": [
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "0d1f6d61426f3c771f2c0ff25a50b14afb2957fc56c61433ae7b16aa07a891b3"
     },
     "data/i18n_it.js": {
       "baselineSHA256": null,
-      "sha256": "7a1aa00af40a0d713b3e0a4c3e18a1bbd6821b2de4d178f59ecceb89e4d3b6d7",
+      "sha256": "2bd1e91b5fb361f364c5a327ee31b320c6f2840d29d548038dd232f7d907e2df",
       "rationaleIds": [
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "7a1aa00af40a0d713b3e0a4c3e18a1bbd6821b2de4d178f59ecceb89e4d3b6d7"
     },
     "data/publication.js": {
       "baselineSHA256": "899025d5da40e4100c67a0fd410de58d5d11f50cbea7c0a7b5ea7f4b9045ef23",
-      "sha256": "537191e1cffd4bf7102cbec34be46c9d122d22813a711278f5d6fb465cc3b81b",
+      "sha256": "d57b064173e700804e2196468eeec1e049add10c382d9d345ee725f760a8f8cf",
       "rationaleIds": [
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "537191e1cffd4bf7102cbec34be46c9d122d22813a711278f5d6fb465cc3b81b"
     },
     "data/site_bundle.js": {
       "baselineSHA256": "1c9b99c1d7fb3d6df5f63d06cbb957eafc634675a7a9c2dae3ceb78e842176bf",
-      "sha256": "c24b3120b5b24262230479f027804e2d1bc639431a64c3d4b8dc5a61505185a5",
+      "sha256": "a5b32aad864b97b0e8cde71e6d6256754f3d913614922089191a3ffb1d8d9680",
       "rationaleIds": [
         "DEL98",
-        "V98"
-      ]
+        "V98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "c24b3120b5b24262230479f027804e2d1bc639431a64c3d4b8dc5a61505185a5"
     },
     "docs/audits/2026-11-06/assembly-workflow-review.md": {
       "baselineSHA256": null,
@@ -4079,10 +4255,12 @@
     },
     "docs/reader-first-structure.json": {
       "baselineSHA256": "99f2c1df849cdb73a72901da957e9f7ad706ca02d14c360be2f5099c103ef0fd",
-      "sha256": "f80a83e915a0ddc6dfbdaac16936aab649ae4b2ad6a7291d212ae60a2e183106",
+      "sha256": "cce0fec279d38c64954361e4729c06cab240d6aea77853d8c4a7a1497d256772",
       "rationaleIds": [
-        "DOC98"
-      ]
+        "DOC98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "f80a83e915a0ddc6dfbdaac16936aab649ae4b2ad6a7291d212ae60a2e183106"
     },
     "docs/technical-archive-integrity-20261106.json": {
       "baselineSHA256": null,
@@ -4189,10 +4367,307 @@
     },
     "docs/editorial-review-2026-11-06-v0.7.98.json": {
       "baselineSHA256": "c0d5bc38be76387beb17ffdb0bea4150bbc92af61028fa2183da2bbe62b39409",
-      "sha256": "c0d5bc38be76387beb17ffdb0bea4150bbc92af61028fa2183da2bbe62b39409",
       "rationaleIds": [
         "UX99"
-      ]
+      ],
+      "priorTechnicalSHA256": "c0d5bc38be76387beb17ffdb0bea4150bbc92af61028fa2183da2bbe62b39409",
+      "sha256": "c0d5bc38be76387beb17ffdb0bea4150bbc92af61028fa2183da2bbe62b39409"
+    },
+    "assets/aps-atlas.css": {
+      "baselineSHA256": "bfc277b5c53ab561ef48d8e6d526c6ee5ef38ef8eff1aa21fe79477c91d67a50",
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "bfc277b5c53ab561ef48d8e6d526c6ee5ef38ef8eff1aa21fe79477c91d67a50",
+      "sha256": "fd2b432095bef1f8d9cb40f32865989c280b1e788986a654d36eb980b890093a"
+    },
+    "assets/style.css": {
+      "baselineSHA256": "c58b7998ae70ad71349658e0ae85ef9ddb44ab4daa05b6793b391b3d0887e833",
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "c58b7998ae70ad71349658e0ae85ef9ddb44ab4daa05b6793b391b3d0887e833",
+      "sha256": "400264731447c1a0c5ee315b21903d0fcbf8662b9bb069a658a3bebe16651b9e"
+    },
+    "docs/audits/2026-11-07/assembly-0799-review.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "1a4441b535117f14b63cc32a08b6c162d47cdb4d18c770b0c8505298ecabc2ef"
+    },
+    "docs/audits/2026-11-07/assembly-0799-review.md": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "61a1a6bf844c0d2a4ab99e64f93a0e9322309f16fc113909beaeb66f73e13af0"
+    },
+    "docs/audits/2026-11-07/atlas-baseline-failure.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "1e288b516196054c7ceb93943243c5d08ab77462b35268f7279988ece7d501c5"
+    },
+    "docs/audits/2026-11-07/atlas-state-final.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "d1d7cd7bf17a63b2f274f35ebd75d3ef00fafc3a8d07e8a59b81acab11982a64"
+    },
+    "docs/audits/2026-11-07/atlas-state-positive.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "d1d7cd7bf17a63b2f274f35ebd75d3ef00fafc3a8d07e8a59b81acab11982a64"
+    },
+    "docs/audits/2026-11-07/dead-source-link-inventory.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "3afe9f52f8cfa72e82a5714308ecbe80870714ad43fe1cf3210c6d630105bf54"
+    },
+    "docs/audits/2026-11-07/delivery-budget-measurements.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "fd672c79369b4ab91a98c7264a49de1a85942e810039882f09202309f77a9f16"
+    },
+    "docs/audits/2026-11-07/editorial-claims.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "a14065a1692f4d482ff2a940e2bc74e0b684b94c4091e1713ade7292102b4f1f"
+    },
+    "docs/audits/2026-11-07/editorial-factual-audit.md": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "70c0efa06c185d96ed8a1fbd5b30f9fbc826ca45cf741c74299bfdd4b7e1a4af"
+    },
+    "docs/audits/2026-11-07/editorial-source-review.md": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "12c345d3f9260ebdb0adacec8927ec96d85245648fd09c2c2832083f15192deb"
+    },
+    "docs/audits/2026-11-07/generated-data-audit-0799.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "653d7efc7e53225c92243c0dd23beff277ad384d44de58ebbd8826b65a9cf637"
+    },
+    "docs/audits/2026-11-07/headings-proof.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "9cf4642fb34ec1fe2ad64c2f527e8fcee419acf863eb7d647d1da2e8ea36eaef"
+    },
+    "docs/audits/2026-11-07/initial-local-build-failure.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "85853a41577a4809968b16c9f319f1808eb8bbaabb1c38613a35e05d7cae4a1a"
+    },
+    "docs/audits/2026-11-07/interaction-code-review-0799.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "40d74e52f8ca6564733d8889b62e9d9a0164d106dacea8a01fbc9d13cea721b4"
+    },
+    "docs/audits/2026-11-07/local-validation.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "6f4d7207c86bd09fb198ddcfe3d0674807db3d4bcf580633afb7f268206204fe"
+    },
+    "docs/audits/2026-11-07/manual-observations.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "a8cbe0ec1a44b0010e12ad2adbe34c29275d29ecf68a59cad2f963c2a892f5ff"
+    },
+    "docs/audits/2026-11-07/operational-link-guard-checks.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "c02a8b577be0b855a5bdf758658d2be8bdfa90242b632d2a3268d6899d8087ad"
+    },
+    "docs/audits/2026-11-07/primary-http-checks.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "5ca75ba82db4da8fe7672a1664dfd9fa184f39efc15ce5351782d90d20b24d77"
+    },
+    "docs/audits/2026-11-07/rr1-attribution-check.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "04d027abc722c8f22f307bbe9375dac6e64534f00580133aad49bf10ceef704d"
+    },
+    "docs/audits/2026-11-07/source-checkpoint-0799.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "725bb77f93bf53a7ba8a6683338d8d5f98f1b53060e1a858bbe34ed408633094"
+    },
+    "docs/audits/2026-11-07/source-link-fix-checks.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "31bbbc6dbd245e8d6d384f60cf1cddcac41c113b887820aa960971df523a608e"
+    },
+    "docs/audits/2026-11-07/structure-atlas-current-behavior.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "0dc6d4a28b0b8cce32d8f5967bedbd2d478441cd4171895c789e6dface49bd39"
+    },
+    "docs/audits/2026-11-07/structure-experience-audit.md": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "914b7bafbfb6456463617b00a10c29bbb3abaa01cb57551d547c5e4abe9fb671"
+    },
+    "docs/audits/2026-11-07/structure-experience-delivery.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "009654dc0f971d441a984423408a243dddc63c4c82556b434d663530feb41db8"
+    },
+    "docs/audits/2026-11-07/structure-mobile-card-semantics.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "eb4a874700cb7da4332a9674685c9e006b6b7440652d99344a1f0d62786a64be"
+    },
+    "docs/audits/2026-11-07/structure-search-order-proof.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "33ee0b2ca7e8e0bcbfa28c3271ba07f544a72a66ff5a4f4e8d88a07143ab27b8"
+    },
+    "docs/audits/2026-11-07/technical-candidate-0798-ci.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "1af0be3bde6ef7ba1af7917ac06a627daf0cbdb052eae27e3846c06637f5d214"
+    },
+    "docs/audits/2026-11-07/temporal-label-review.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "2dc312722fd8f3f1c0b87889d5fed8629f2414e7adf1881e2b9f0bee6f3cb98d"
+    },
+    "docs/experience-audit-2026-11-07.md": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "0e2233c029b6db58281e579820c36cbb8ddb32e0ee7f22796511738048510a0b"
+    },
+    "downloads/connecting-the-dots-data-pack-v0.7.99.sha256": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "f92fef50c6dfc2c5099b197d378c5a2fe2120177d461267e8b3e8f28f13cef37"
+    },
+    "downloads/connecting-the-dots-data-pack-v0.7.99.zip": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "5c2f5f9c344378e98990a09aea3776882479b27e3d17114b5918194c84487eba"
+    },
+    "scripts/atlas_state_qa.cjs": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "bbef18beb446be9ed3ca20313ee09d03b8336c8a70bb48067962936b11245379"
+    },
+    "scripts/audit_aps_application_atlas.js": {
+      "baselineSHA256": "953fb7d097b409143eed59c916c7e3238d0684269d8d6b8d160bc594291c7ebd",
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "953fb7d097b409143eed59c916c7e3238d0684269d8d6b8d160bc594291c7ebd",
+      "sha256": "9de889a2b97464877eb2478d350aab43d586be68a9f9d60288c759a58930cc74"
+    },
+    "scripts/experience_browser_qa.cjs": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": null,
+      "sha256": "3b421718352f885c57209bf79a5dd1e06b240ee0b812c553bbf9d61455c15a28"
+    },
+    "scripts/render_behind_round.py": {
+      "baselineSHA256": "6b232a706a6228104d260e7d6e383b870ba814ce2d05d45226c88437791941cd",
+      "rationaleIds": [
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "6b232a706a6228104d260e7d6e383b870ba814ce2d05d45226c88437791941cd",
+      "sha256": "a46cb0811e0f0c7b07d7c309698936f506b223cd8ee3b4b2b596634af20cb975"
     }
   },
   "sourceSections": {
@@ -4210,8 +4685,8 @@
     "explore": {
       "baselineSHA256": "5a0bd6b5824f802f01e2abb1bcc564bdddc8c3d79ff21b26d4f42e702c70e153",
       "baselineCharacters": 10168,
-      "sha256": "39e9a78c63dca024be69a09cea7da8ecc124d57b40abd20ab6a09207952dd3ae",
-      "characters": 10504,
+      "sha256": "db5bb1c5c48939826b07dfc1e902d600bb08836f9aaa7d5b1230d7d99cb5fbc1",
+      "characters": 10489,
       "rationaleIds": [
         "C04",
         "M01",
@@ -4220,8 +4695,10 @@
         "A19",
         "U01",
         "UI98",
-        "A98"
-      ]
+        "A98",
+        "UX99"
+      ],
+      "priorTechnicalSHA256": "39e9a78c63dca024be69a09cea7da8ecc124d57b40abd20ab6a09207952dd3ae"
     },
     "timeline": {
       "baselineSHA256": "7a783fdc342c02904f6effed04decbf36e1d72a120ca90f55545619937edaf5c",
@@ -4474,9 +4951,44 @@
     "priorCandidate": "dee7b777d5ca6ac042167ed02d2e1fe253a36931",
     "humanParticipants": 0,
     "reviewType": "AI-assisted source and generated-output review with independent agent audits",
-    "status": "pending exact generated-artifact review",
+    "status": "Source and generated artifacts reviewed; remote acceptance is a separate required gate.",
     "qualityGates": "Deterministic assembly; exact Git-tree comparison; A/B; five browser jobs on exact candidate; successful Pages deploy; public-byte/live checks; published-site browser acceptance.",
-    "priorReviewEvidenceScope": "Inherited records refer to their named earlier commits and versions and do not attest v0.7.99."
+    "priorReviewEvidenceScope": "Inherited records refer to their named earlier commits and versions and do not attest v0.7.99.",
+    "sourceCommit": "d00e948c35fa3353b15a5db7f130fec988867888",
+    "reviewedPaths": 291,
+    "changedPathsWithActualSourceHashes": 127,
+    "currentArchiveSHA256": "5c2f5f9c344378e98990a09aea3776882479b27e3d17114b5918194c84487eba",
+    "evidence": [
+      "docs/experience-audit-2026-11-07.md",
+      "docs/audits/2026-11-07/assembly-0799-review.json",
+      "docs/audits/2026-11-07/assembly-0799-review.md",
+      "docs/audits/2026-11-07/atlas-baseline-failure.json",
+      "docs/audits/2026-11-07/atlas-state-final.json",
+      "docs/audits/2026-11-07/atlas-state-positive.json",
+      "docs/audits/2026-11-07/dead-source-link-inventory.json",
+      "docs/audits/2026-11-07/delivery-budget-measurements.json",
+      "docs/audits/2026-11-07/editorial-claims.json",
+      "docs/audits/2026-11-07/editorial-factual-audit.md",
+      "docs/audits/2026-11-07/editorial-source-review.md",
+      "docs/audits/2026-11-07/generated-data-audit-0799.json",
+      "docs/audits/2026-11-07/headings-proof.json",
+      "docs/audits/2026-11-07/initial-local-build-failure.json",
+      "docs/audits/2026-11-07/interaction-code-review-0799.json",
+      "docs/audits/2026-11-07/local-validation.json",
+      "docs/audits/2026-11-07/manual-observations.json",
+      "docs/audits/2026-11-07/operational-link-guard-checks.json",
+      "docs/audits/2026-11-07/primary-http-checks.json",
+      "docs/audits/2026-11-07/rr1-attribution-check.json",
+      "docs/audits/2026-11-07/source-checkpoint-0799.json",
+      "docs/audits/2026-11-07/source-link-fix-checks.json",
+      "docs/audits/2026-11-07/structure-atlas-current-behavior.json",
+      "docs/audits/2026-11-07/structure-experience-audit.md",
+      "docs/audits/2026-11-07/structure-experience-delivery.json",
+      "docs/audits/2026-11-07/structure-mobile-card-semantics.json",
+      "docs/audits/2026-11-07/structure-search-order-proof.json",
+      "docs/audits/2026-11-07/technical-candidate-0798-ci.json",
+      "docs/audits/2026-11-07/temporal-label-review.json"
+    ]
   },
   "readerFirstEvidence": {
     "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
@@ -4484,7 +4996,7 @@
     "browserReport": "docs/reader-first-verification.json",
     "humanParticipants": 0
   },
-  "approvedCandidateSHA256": "b31ab572fa2b7016d3b08c6b0f57abac1f64d069532d468d3b780033ece6caf8",
+  "approvedCandidateSHA256": "3f7d561d291bed7cec43261e821ee63115c7f8aff40c3448a0cf2005f3997527",
   "supplementalLayoutReview": {
     "reviewedOn": "2026-10-22",
     "sourceCommit": "087ef96b7f842532bf82d67a97889a48a57c7b15",
@@ -4509,11 +5021,44 @@
     "acceptanceScript": "scripts/usability_remediation_qa.cjs"
   },
   "signoff": {
-    "status": "pending exact generated-artifact review",
+    "status": "reviewed source and generated artifacts",
     "reviewDate": "2026-11-07",
-    "reviewer": "AI-assisted expert audit",
+    "reviewer": "AI-assisted expert review with independent agent checks",
+    "sourceCommit": "d00e948c35fa3353b15a5db7f130fec988867888",
+    "scope": "Correct mobile accessible names using visible record data; bring the unchanged search input before repeated explanation; preserve Atlas query/filter/router state and expanded details; replace only the unavailable operational APS export URL with its official public listing while preserving frozen provenance; clarify DNS-root and dated-period labels in four languages. Keep scientific snapshots, original A/B invariants, prior reviews and archives unchanged. Audit evidence and acceptance tests cover the actual edits. Expose the active routed title at accessible heading level 1 without replacing its node; give Atlas application strings native headings appropriate to each surface while preserving layout and the no-JavaScript document hierarchy. Synchronize only exact current-technical-package references in the working-paper Markdown, research README and rendered HTML; preserve the scientific text, paper revision/date and research release identities.",
+    "evidence": [
+      "docs/experience-audit-2026-11-07.md",
+      "docs/audits/2026-11-07/assembly-0799-review.json",
+      "docs/audits/2026-11-07/assembly-0799-review.md",
+      "docs/audits/2026-11-07/atlas-baseline-failure.json",
+      "docs/audits/2026-11-07/atlas-state-final.json",
+      "docs/audits/2026-11-07/atlas-state-positive.json",
+      "docs/audits/2026-11-07/dead-source-link-inventory.json",
+      "docs/audits/2026-11-07/delivery-budget-measurements.json",
+      "docs/audits/2026-11-07/editorial-claims.json",
+      "docs/audits/2026-11-07/editorial-factual-audit.md",
+      "docs/audits/2026-11-07/editorial-source-review.md",
+      "docs/audits/2026-11-07/generated-data-audit-0799.json",
+      "docs/audits/2026-11-07/headings-proof.json",
+      "docs/audits/2026-11-07/initial-local-build-failure.json",
+      "docs/audits/2026-11-07/interaction-code-review-0799.json",
+      "docs/audits/2026-11-07/local-validation.json",
+      "docs/audits/2026-11-07/manual-observations.json",
+      "docs/audits/2026-11-07/operational-link-guard-checks.json",
+      "docs/audits/2026-11-07/primary-http-checks.json",
+      "docs/audits/2026-11-07/rr1-attribution-check.json",
+      "docs/audits/2026-11-07/source-checkpoint-0799.json",
+      "docs/audits/2026-11-07/source-link-fix-checks.json",
+      "docs/audits/2026-11-07/structure-atlas-current-behavior.json",
+      "docs/audits/2026-11-07/structure-experience-audit.md",
+      "docs/audits/2026-11-07/structure-experience-delivery.json",
+      "docs/audits/2026-11-07/structure-mobile-card-semantics.json",
+      "docs/audits/2026-11-07/structure-search-order-proof.json",
+      "docs/audits/2026-11-07/technical-candidate-0798-ci.json",
+      "docs/audits/2026-11-07/temporal-label-review.json"
+    ],
     "humanParticipants": 0,
-    "independentTests": "Required before main; successful real deployment and live acceptance are separate."
+    "independentTests": "Required: deterministic assembly, exact tree equality, A/B and all browser jobs before main; real Pages deployment and public-byte/browser acceptance to close publication."
   },
   "anchorCompatibilityReview": {
     "reviewedOn": "2026-11-06",
@@ -4594,8 +5139,8 @@
   },
   "buildProvenancePolicy": {
     "version": "0.7.99",
-    "sourceCommit": null,
-    "semantics": "To be pinned to the actual generator-source checkpoint; later review metadata and deterministic assembly are separately fingerprinted."
+    "sourceCommit": "d00e948c35fa3353b15a5db7f130fec988867888",
+    "semantics": "Pinned actual combined generator-source checkpoint, not the later exact-review, assembly or deployment commit. Subsequent publication pin, generated metadata and reviewed fingerprints are checked separately."
   },
   "ciRuntimeMaintenanceReview": {
     "reviewedOn": "2026-11-06",

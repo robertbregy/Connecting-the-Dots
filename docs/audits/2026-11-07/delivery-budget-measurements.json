@@ -1,0 +1,46 @@
+{
+  "version": "0.7.99",
+  "sourceCommit": "d00e948c35fa3353b15a5db7f130fec988867888",
+  "htmlCapBytes": 1240000,
+  "aggregateAllowanceOverImmutableBaselineBytes": 2048,
+  "checkerSHA256": "087c46a1d150bc233a9f09ab340b0116db54b822b60d08dd77614a3f5bbeccee",
+  "checkerChanged": false,
+  "measurements": [
+    {
+      "page": "en/index.html",
+      "htmlBytes": 1172755,
+      "htmlAndExtractedBytes": 1619581,
+      "baselineBytes": 1618396,
+      "remainingAggregateBudgetBytes": 863
+    },
+    {
+      "page": "it/index.html",
+      "htmlBytes": 1197273,
+      "htmlAndExtractedBytes": 1657778,
+      "baselineBytes": 1656469,
+      "remainingAggregateBudgetBytes": 739
+    },
+    {
+      "page": "de/index.html",
+      "htmlBytes": 1203248,
+      "htmlAndExtractedBytes": 1665432,
+      "baselineBytes": 1664095,
+      "remainingAggregateBudgetBytes": 711
+    },
+    {
+      "page": "fr/index.html",
+      "htmlBytes": 1219867,
+      "htmlAndExtractedBytes": 1693429,
+      "baselineBytes": 1692022,
+      "remainingAggregateBudgetBytes": 641
+    },
+    {
+      "page": "index.html",
+      "htmlBytes": 1172369,
+      "htmlAndExtractedBytes": 1619195,
+      "baselineBytes": 1618016,
+      "remainingAggregateBudgetBytes": 869
+    }
+  ],
+  "source": "Actual official static delivery checker output; complete process result recorded separately."
+}

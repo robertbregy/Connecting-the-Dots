@@ -1,0 +1,4288 @@
+{
+  "schemaVersion": 1,
+  "auditType": "Independent preservation and current-data-package audit",
+  "baselineCommit": "dee7b777d5ca6ac042167ed02d2e1fe253a36931",
+  "baselineStatus": "Unpublished technical candidate retained exactly; superseded by candidate 0.7.99",
+  "candidateHeadAtAudit": "d00e948c35fa3353b15a5db7f130fec988867888",
+  "candidateVersion": "0.7.99",
+  "generatedAtUTC": "2026-11-07T00:32:15.598207+00:00",
+  "readOnlyCandidate": true,
+  "passed": true,
+  "checksPassed": 353,
+  "checksTotal": 353,
+  "coverage": {
+    "paperCitationAndResearch": 3,
+    "scientificJson": 53,
+    "csv": 67,
+    "frozenEvidence": 6,
+    "priorReview": 15,
+    "priorSidecar": 22,
+    "priorZip": 23,
+    "technicalResearchReferences": 4
+  },
+  "checks": [
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "CITATION.cff",
+      "categories": [
+        "paperCitationAndResearch"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/application_2026_snapshot.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/application_archaeology_local.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/application_archaeology_manifest.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/application_economic_map_2012_2026.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/application_only_strings.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/application_regions_2012.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/application_regions_2026.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/application_strings_2000.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/applications_2000.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/applications_2004.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/applications_2012.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/applications_2026.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/applications_2026_aps_official_listing.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/applications_2026_aps_official_provenance.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/applications_2026_strings_reveal.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/aps_2026_applicant_distribution.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/aps_2026_applicant_sector_distribution.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/aps_2026_applicant_sector_evidence.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/aps_2026_application_edges.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/aps_2026_application_graph.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/aps_2026_application_graph_manifest.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/aps_2026_current_analytics.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/aps_2026_current_analytics.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/aps_2026_current_analytics_manifest.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/aps_2026_location_distribution.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/aps_2026_record_observations.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/aps_2026_region_distribution.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/aps_2026_string_theme_distribution.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/audience_editorial.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/audit_20261018_editorial.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/audit_20261019_editorial.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/audit_20261019_resolution.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/behind_round_stories.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/beyond_the_dot.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/city_namespace_editorial.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/city_timeline.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/contention_rounds.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/control_levers.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/cultural_blind_review_v2.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/cultural_classification_protocol.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/cultural_classification_protocol_v2.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/cultural_history_evidence_v2.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/cultural_lexicon_review_queue_v2.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/cultural_lexicon_v2.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/cultural_sensitivity_v2.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/cultural_validation_sample.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/dns_capabilities.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/dns_oddities.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/domain_governance_glossary.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/domain_lifecycle.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/early_dns.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/economic_cases.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/economic_cases.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/economic_metrics.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/economics_reading_order.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/editorial_20261030_quality_and_termination.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/editorial_io_appointments_20261023.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/evidence/iana-snapshot-2026-10-04.json.gz",
+      "categories": [
+        "frozenEvidence"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/evidence/tld-market-2026-10-19/ntlddata-backends.json",
+      "categories": [
+        "scientificJson",
+        "frozenEvidence"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/evidence/tld-market-2026-10-19/ntlddata-tlds-1.json",
+      "categories": [
+        "scientificJson",
+        "frozenEvidence"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/evidence/tld-market-2026-10-19/ntlddata-tlds-2.json",
+      "categories": [
+        "scientificJson",
+        "frozenEvidence"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/evidence/tld-market-2026-10-19/ntlddata-tlds-3.json",
+      "categories": [
+        "scientificJson",
+        "frozenEvidence"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/evidence/tld-market-2026-10-19/w3techs-top50.json",
+      "categories": [
+        "scientificJson",
+        "frozenEvidence"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/explorer_catalog.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/explorer_curated.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/explorer_events.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/explorer_iana_reports.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/explorer_nameservers.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/field_investigations.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/financial_source_verification_20261019.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/governance_case_events.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/governance_cases.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/governance_cases.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/governance_locations.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/helsinki_editorial_20261025.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/iana_snapshot.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/independent_review_materials.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/inside_the_round_events.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/internet_access_explainer.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/key_facts.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/lugano_vision.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/namespace_dimensions.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/portfolio_applications.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/qa/round_debate_v0797_qa_context.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/reader_first.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/reader_observations_blank.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/reader_validation_recording.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/registry_concentration.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/registry_concentration_context.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/research.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/research_bibliographic_corrections.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/round_2000_curated.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/round_2004.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/round_2026.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/round_application_fees.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/round_debate_20261106.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/rounds_summary.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/rsp_geography_aug_2026.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/rsp_tld_footprint.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/sanctions_explainer.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/sector_evolution_2012_2026.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/sector_evolution_2012_2026.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/sector_strategy_mix_2012_2026.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/semantic_drift.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/social_cases.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/social_cases.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/source_method_corrections_20261019.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/sources.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/strange_internet.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/success_framework.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/tld_cultural_corpus.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/tld_cultural_editorial.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/tld_cultural_patterns.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/tld_life_histories.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/tld_life_history_manifest.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/tld_market_provenance.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/tld_market_snapshot.json",
+      "categories": [
+        "scientificJson"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/tld_models.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/tld_top50_website_share.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/tld_top50_zone_domains.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "data/tld_universe.csv",
+      "categories": [
+        "csv"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "docs/editorial-review-2026-10-18.json",
+      "categories": [
+        "priorReview"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "docs/editorial-review-2026-10-19-v0.7.86.json",
+      "categories": [
+        "priorReview"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "docs/editorial-review-2026-10-19-v0.7.87.json",
+      "categories": [
+        "priorReview"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "docs/editorial-review-2026-10-19-v0.7.88.json",
+      "categories": [
+        "priorReview"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "docs/editorial-review-2026-10-19-v0.7.89.json",
+      "categories": [
+        "priorReview"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "docs/editorial-review-2026-10-19.json",
+      "categories": [
+        "priorReview"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "docs/editorial-review-2026-10-20-v0.7.90.json",
+      "categories": [
+        "priorReview"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "docs/editorial-review-2026-10-20-v0.7.91.json",
+      "categories": [
+        "priorReview"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "docs/editorial-review-2026-10-21-v0.7.92.json",
+      "categories": [
+        "priorReview"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "docs/editorial-review-2026-10-26-v0.7.93.json",
+      "categories": [
+        "priorReview"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "docs/editorial-review-2026-10-30-v0.7.94.json",
+      "categories": [
+        "priorReview"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "docs/editorial-review-2026-11-05-v0.7.95.json",
+      "categories": [
+        "priorReview"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "docs/editorial-review-2026-11-06-v0.7.96.json",
+      "categories": [
+        "priorReview"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "docs/editorial-review-2026-11-06-v0.7.97.json",
+      "categories": [
+        "priorReview"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "docs/editorial-review-2026-11-06-v0.7.98.json",
+      "categories": [
+        "priorReview"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.77.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.77.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.78.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.78.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.79.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.79.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.80.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.80.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.81.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.81.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.82.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.82.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.83.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.83.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.84.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.84.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.85.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.85.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.86.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.86.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.87.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.87.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.88.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.88.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.89.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.89.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.90.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.90.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.91.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.91.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.92.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.92.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.93.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.93.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.94.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.94.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.95.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.95.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.96.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.96.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.97.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.97.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.98.sha256",
+      "categories": [
+        "priorSidecar"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.98.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack.zip",
+      "categories": [
+        "priorZip"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "research/rr2_candidate.json",
+      "categories": [
+        "paperCitationAndResearch"
+      ]
+    },
+    {
+      "name": "Baseline bytes preserved",
+      "passed": true,
+      "path": "research/rr2_publication_verification.json",
+      "categories": [
+        "paperCitationAndResearch"
+      ]
+    },
+    {
+      "name": "CSV inventory unchanged",
+      "passed": true,
+      "added": [],
+      "missing": []
+    },
+    {
+      "name": "Scientific JSON inventory unchanged",
+      "passed": true,
+      "added": [],
+      "missing": []
+    },
+    {
+      "name": "Version and technical release date",
+      "passed": true
+    },
+    {
+      "name": "Scientific publication fields unchanged",
+      "passed": true
+    },
+    {
+      "name": "Current versioned archive path",
+      "passed": true
+    },
+    {
+      "name": "Current editorial review path",
+      "passed": true
+    },
+    {
+      "name": "Explicit approved source provenance pin",
+      "passed": true,
+      "expected": "d00e948c35fa3353b15a5db7f130fec988867888",
+      "observed": "d00e948c35fa3353b15a5db7f130fec988867888"
+    },
+    {
+      "name": "Approved source pin resolves to a Git commit",
+      "passed": true,
+      "pin": "d00e948c35fa3353b15a5db7f130fec988867888"
+    },
+    {
+      "name": "Technical research scope exact",
+      "passed": true
+    },
+    {
+      "name": "Authorized technical reference occurs exactly once",
+      "passed": true,
+      "scope": "paper Markdown current package line",
+      "occurrences": 1
+    },
+    {
+      "name": "Authorized technical reference occurs exactly once",
+      "passed": true,
+      "scope": "research README technical site",
+      "occurrences": 1
+    },
+    {
+      "name": "Authorized technical reference occurs exactly once",
+      "passed": true,
+      "scope": "paper HTML current package line",
+      "occurrences": 1
+    },
+    {
+      "name": "Authorized technical reference occurs exactly once",
+      "passed": true,
+      "scope": "paper HTML digest of the exactly authorized Markdown",
+      "occurrences": 1
+    },
+    {
+      "name": "Authorized technical reference occurs exactly once",
+      "passed": true,
+      "scope": "research index current archive anchor",
+      "occurrences": 1
+    },
+    {
+      "name": "Authorized technical reference occurs exactly once",
+      "passed": true,
+      "scope": "research index current archive note; scientific numbers fixed",
+      "occurrences": 1
+    },
+    {
+      "name": "Authorized technical reference occurs exactly once",
+      "passed": true,
+      "scope": "research index technical asset reader-first.css",
+      "occurrences": 1
+    },
+    {
+      "name": "Authorized technical reference occurs exactly once",
+      "passed": true,
+      "scope": "research index technical asset reader-first.js",
+      "occurrences": 1
+    },
+    {
+      "name": "Only exact authorized technical research references changed",
+      "passed": true,
+      "path": "research/connecting-the-dots-working-paper-v1.md"
+    },
+    {
+      "name": "Only exact authorized technical research references changed",
+      "passed": true,
+      "path": "research/README.md"
+    },
+    {
+      "name": "Only exact authorized technical research references changed",
+      "passed": true,
+      "path": "research/connecting-the-dots-working-paper-v1.html"
+    },
+    {
+      "name": "Only exact authorized technical research references changed",
+      "passed": true,
+      "path": "research/index.html"
+    },
+    {
+      "name": "Research manifest changes only currentSiteVersion",
+      "passed": true
+    },
+    {
+      "name": "Historical release records preserved",
+      "passed": true
+    },
+    {
+      "name": "New release retains scientific snapshot",
+      "passed": true
+    },
+    {
+      "name": "Prior immutable package entries retained",
+      "passed": true
+    },
+    {
+      "name": "Frozen registry adds only exact 0.7.98 candidate",
+      "passed": true,
+      "added": [
+        "downloads/connecting-the-dots-data-pack-v0.7.98.zip"
+      ],
+      "removed": []
+    },
+    {
+      "name": "0.7.98 frozen digest matches Git baseline",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.98.zip"
+    },
+    {
+      "name": "Generated manifest release metadata",
+      "passed": true
+    },
+    {
+      "name": "Scientific manifest field preserved",
+      "passed": true,
+      "field": "notes"
+    },
+    {
+      "name": "Scientific manifest field preserved",
+      "passed": true,
+      "field": "publication_state"
+    },
+    {
+      "name": "Scientific manifest field preserved",
+      "passed": true,
+      "field": "as_of"
+    },
+    {
+      "name": "Scientific manifest field preserved",
+      "passed": true,
+      "field": "temporal_coverage"
+    },
+    {
+      "name": "Scientific manifest field preserved",
+      "passed": true,
+      "field": "reveal_day"
+    },
+    {
+      "name": "Scientific manifest field preserved",
+      "passed": true,
+      "field": "string_confirmation_day"
+    },
+    {
+      "name": "Scientific manifest field preserved",
+      "passed": true,
+      "field": "current_root_snapshot"
+    },
+    {
+      "name": "Scientific manifest field preserved",
+      "passed": true,
+      "field": "iana_evidence"
+    },
+    {
+      "name": "Scientific manifest field preserved",
+      "passed": true,
+      "field": "explorer_coverage"
+    },
+    {
+      "name": "Scientific manifest field preserved",
+      "passed": true,
+      "field": "aps_2026_application_graph"
+    },
+    {
+      "name": "Scientific manifest field preserved",
+      "passed": true,
+      "field": "aps_2026_official_listing"
+    },
+    {
+      "name": "Scientific manifest field preserved",
+      "passed": true,
+      "field": "iana_evidence_archive"
+    },
+    {
+      "name": "Scientific manifest field preserved",
+      "passed": true,
+      "field": "freeze"
+    },
+    {
+      "name": "Scientific manifest field preserved",
+      "passed": true,
+      "field": "city_namespace_editorial"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/application_economic_map_2012_2026.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/application_only_strings.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/application_regions_2012.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/application_regions_2026.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/application_strings_2000.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/applications_2000.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/applications_2004.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/applications_2012.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/applications_2026.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/applications_2026_aps_official_listing.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/applications_2026_strings_reveal.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/aps_2026_applicant_distribution.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/aps_2026_applicant_sector_distribution.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/aps_2026_application_edges.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/aps_2026_current_analytics.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/aps_2026_location_distribution.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/aps_2026_record_observations.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/aps_2026_region_distribution.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/aps_2026_string_theme_distribution.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/beyond_the_dot.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/city_timeline.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/contention_rounds.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/control_levers.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/cultural_blind_review_v2.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/cultural_lexicon_review_queue_v2.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/cultural_validation_sample.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/dns_capabilities.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/dns_oddities.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/domain_governance_glossary.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/domain_lifecycle.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/early_dns.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/economic_cases.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/economic_metrics.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/explorer_catalog.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/explorer_events.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/explorer_iana_reports.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/explorer_nameservers.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/governance_case_events.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/governance_cases.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/governance_locations.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/key_facts.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/lugano_vision.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/namespace_dimensions.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/portfolio_applications.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/reader_observations_blank.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/reader_validation_recording.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/registry_concentration.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/registry_concentration_context.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/round_2000_curated.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/round_2004.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/round_2026.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/rounds_summary.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/rsp_geography_aug_2026.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/rsp_tld_footprint.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/sector_evolution_2012_2026.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/sector_strategy_mix_2012_2026.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/semantic_drift.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/social_cases.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/sources.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/strange_internet.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/success_framework.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/tld_cultural_corpus.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/tld_life_histories.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/tld_models.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/tld_top50_website_share.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/tld_top50_zone_domains.csv"
+    },
+    {
+      "name": "CSV manifest matches immutable content",
+      "passed": true,
+      "path": "data/tld_universe.csv"
+    },
+    {
+      "name": "Manifest release-history digest matches current source",
+      "passed": true
+    },
+    {
+      "name": "Manifest delivery asset inventory preserved",
+      "passed": true
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "data/site_bundle.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "data/i18n_en.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "data/i18n_it.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "data/i18n_de.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "data/i18n_fr.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "data/applications_2026_strings_reveal.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "assets/app.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "assets/style.css"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "assets/audience.css"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "assets/aps-lazy.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "assets/worldmap-lazy.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "assets/tld-market.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "assets/tld-cultural.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "assets/aps-atlas.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "data/aps_2026_application_graph.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "data/worldmap.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "data/explorer_profiles_0.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "data/explorer_profiles_1.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "data/explorer_profiles_2.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "data/explorer_profiles_3.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "data/explorer_profiles_4.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "data/explorer_profiles_5.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "data/explorer_profiles_6.js"
+    },
+    {
+      "name": "Manifest delivery asset bytes and digest match source",
+      "passed": true,
+      "path": "data/explorer_profiles_7.js"
+    },
+    {
+      "name": "Archive inventory extends only with 0.7.99",
+      "passed": true,
+      "added": [],
+      "missing": []
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.77.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.78.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.79.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.80.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.81.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.82.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.83.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.84.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.85.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.86.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.87.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.88.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.89.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.90.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.91.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.92.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.93.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.94.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.95.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.96.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.97.sha256"
+    },
+    {
+      "name": "Preserved sidecar authenticates archive",
+      "passed": true,
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.98.sha256"
+    },
+    {
+      "name": "New archive checksum and filename",
+      "passed": true
+    },
+    {
+      "name": "New archive has no duplicate members",
+      "passed": true
+    },
+    {
+      "name": "New archive inventory equals 0.7.98",
+      "passed": true,
+      "members": 112
+    },
+    {
+      "name": "New archive CRC",
+      "passed": true,
+      "firstBadMember": null
+    },
+    {
+      "name": "New archive changes only technical metadata",
+      "passed": true,
+      "changedMembers": [
+        "frozen_technical_packages.json",
+        "manifest.json",
+        "release_history.json"
+      ]
+    },
+    {
+      "name": "Every archive member matches its candidate source",
+      "passed": true,
+      "mismatches": []
+    },
+    {
+      "name": "Official delivery checker unchanged",
+      "passed": true
+    },
+    {
+      "name": "Heading asset matches reviewed proposal",
+      "passed": true,
+      "path": "assets/reader-first.js"
+    },
+    {
+      "name": "Heading asset matches reviewed proposal",
+      "passed": true,
+      "path": "assets/aps-atlas.js"
+    },
+    {
+      "name": "Heading asset matches reviewed proposal",
+      "passed": true,
+      "path": "assets/aps-atlas.css"
+    },
+    {
+      "name": "Heading asset matches reviewed proposal",
+      "passed": true,
+      "path": "assets/style.css"
+    }
+  ],
+  "failures": [],
+  "details": {
+    "preservedFiles": [
+      {
+        "path": "CITATION.cff",
+        "categories": [
+          "paperCitationAndResearch"
+        ],
+        "bytes": 700,
+        "sha256": "d8d8cc36155be503ac31e3f5868b273ca44707db1edd3d9fe5a3f06d2c2490a4",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/application_2026_snapshot.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 3029,
+        "sha256": "5efeb70086dbb6886da519f33f3c71005534333d63a263d47f51799c390fded6",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/application_archaeology_local.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 1859046,
+        "sha256": "0e37ff55c1d3b18d31bf8db9f1c2e8b64bf90ff75dbc8e5530cf2e5d91be634b",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/application_archaeology_manifest.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 9484,
+        "sha256": "49635b35e9c6dbb9aa153ab424630d20038ad2d15ff48c553df5afaccc259851",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/application_economic_map_2012_2026.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 1419151,
+        "sha256": "fd296f84bddca790e9b581c0665c08f5903c2b86758d90d23e8008d434296f28",
+        "baselineEqual": true,
+        "records": 3538
+      },
+      {
+        "path": "data/application_only_strings.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 44210,
+        "sha256": "ed741cec7e5f0e11a0f84646b162058d870cf72b1e270497b50727ec509b13c7",
+        "baselineEqual": true,
+        "records": 250
+      },
+      {
+        "path": "data/application_regions_2012.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 763,
+        "sha256": "e93e51af3a26f2dd3aa08c808102aff13d71d241778c068bb078de1a11bd7f9e",
+        "baselineEqual": true,
+        "records": 5
+      },
+      {
+        "path": "data/application_regions_2026.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 1566,
+        "sha256": "b2e3dc0752a14442f085ba14ed9d2cd202741a20654048a1952cba972e2f7be6",
+        "baselineEqual": true,
+        "records": 5
+      },
+      {
+        "path": "data/application_strings_2000.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 63364,
+        "sha256": "abc6b07b17d4a8e3882f0ab885e4fd4d66ed795224758a22ac6726c1e81486a3",
+        "baselineEqual": true,
+        "records": 225
+      },
+      {
+        "path": "data/applications_2000.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 14439,
+        "sha256": "e6b7143b5b73b3c9a00dfccb95f2409747d234f37b8903275cb77fcf8885d656",
+        "baselineEqual": true,
+        "records": 47
+      },
+      {
+        "path": "data/applications_2004.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 2388,
+        "sha256": "ae50f520605518655bb8ec08ecbb756cc0d31140427037c19bff3a88c73fce1b",
+        "baselineEqual": true,
+        "records": 10
+      },
+      {
+        "path": "data/applications_2012.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 813903,
+        "sha256": "96b93fafc298cfc632481f43fdf439b9d65eb4a022356ea4124a6e494fd50822",
+        "baselineEqual": true,
+        "records": 1930
+      },
+      {
+        "path": "data/applications_2026.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 536,
+        "sha256": "a188d93bfdcbcdabedf9a0802ff0e6724547fef91bfc6665c0c218129477cfd1",
+        "baselineEqual": true,
+        "records": 1
+      },
+      {
+        "path": "data/applications_2026_aps_official_listing.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 667815,
+        "sha256": "520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887",
+        "baselineEqual": true,
+        "records": 2783
+      },
+      {
+        "path": "data/applications_2026_aps_official_provenance.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 3517,
+        "sha256": "928c77917c7dba4b0a9b4e6705e131984b83dc2d50b64b6c805143358fe596a6",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/applications_2026_strings_reveal.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 54107,
+        "sha256": "defffa4dcc1339b15164f4be9293402daf24d0d7291c038a8e21b36967cbe6a8",
+        "baselineEqual": true,
+        "records": 980
+      },
+      {
+        "path": "data/aps_2026_applicant_distribution.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 142351,
+        "sha256": "bf43f77af73b71f281175f90999d4b0478fbe02696bc0a6a0465c111fc36bb13",
+        "baselineEqual": true,
+        "records": 957
+      },
+      {
+        "path": "data/aps_2026_applicant_sector_distribution.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 1932,
+        "sha256": "18607e7bcbbcacd0d9fcd0659bbe57f71a85b3f4d5e22117e9131d113417d2bf",
+        "baselineEqual": true,
+        "records": 8
+      },
+      {
+        "path": "data/aps_2026_applicant_sector_evidence.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 6157,
+        "sha256": "2f61a46069dcc82a704746110a4994f284b85b1e2da1804fe81712760b5a8b12",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/aps_2026_application_edges.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 413111,
+        "sha256": "5acced2d69dddff215e3b64885003e2a51ce366640c27db98b248dfd2f46e8e6",
+        "baselineEqual": true,
+        "records": 2796
+      },
+      {
+        "path": "data/aps_2026_application_graph.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 1288819,
+        "sha256": "1342a1f13f7c707f210dda9b567d7500c899214a44ce4a1f4aab1b1de690647d",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/aps_2026_application_graph_manifest.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 2349,
+        "sha256": "86f7f8c26d0053b6535627c96c2988cd5fbf8620c285e89ae31ee1263b49d996",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/aps_2026_current_analytics.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 957399,
+        "sha256": "9734855dc1451e59c99badb271248dc2a1464223e6b1c9fe036d61746fed7e75",
+        "baselineEqual": true,
+        "records": 1614
+      },
+      {
+        "path": "data/aps_2026_current_analytics.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 487893,
+        "sha256": "d14050baf026791b30167f689fbeb18ef3c435ac9354f3622ebb656db01f7dd9",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/aps_2026_current_analytics_manifest.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 7448,
+        "sha256": "ded1a4234ceb96d53304d5a48b9946c4b64d2f00c76adcb2a3a36e2901879847",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/aps_2026_location_distribution.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 14427,
+        "sha256": "ad296ae43a9a11d325d4e34b0530b48481fc8969769c661e302a159be8e93728",
+        "baselineEqual": true,
+        "records": 112
+      },
+      {
+        "path": "data/aps_2026_record_observations.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 490227,
+        "sha256": "91f8d83972d7ecffe901ee7c0ce30e9cf0d6c9d9453cf6b617d80381a1570a39",
+        "baselineEqual": true,
+        "records": 2783
+      },
+      {
+        "path": "data/aps_2026_region_distribution.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 1957,
+        "sha256": "d9ce301a19b7dd5af2e2e383dc5c034f329f764d27cc23f5bf3546cdd92072b7",
+        "baselineEqual": true,
+        "records": 10
+      },
+      {
+        "path": "data/aps_2026_string_theme_distribution.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 7678,
+        "sha256": "af7017ab396f0b7a0eb915bac7add9cd08fd17ac2a13109ec8193ceec10bf4b6",
+        "baselineEqual": true,
+        "records": 38
+      },
+      {
+        "path": "data/audience_editorial.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 52129,
+        "sha256": "50c290097ce3f9679ff92e91f06b07d69628aae938c50286a88b817e9ce247cc",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/audit_20261018_editorial.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 16892,
+        "sha256": "50c3a059e5a0623a9a20d75e028e2d8065521d546525b745792c68b6e7a988a0",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/audit_20261019_editorial.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 9188,
+        "sha256": "7d62b9dce3351bcaada10b65caa58ec580088ff3199b4c44e0472760355e4b08",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/audit_20261019_resolution.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 6450,
+        "sha256": "2a84c8264a0768f44246d0c1afb7b7de3c578827ae231be995d114b9ad522f84",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/behind_round_stories.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 13750,
+        "sha256": "d3fe23c418a4ce16eaa78f196b3c3c7540724050d1eecb4e6a538172ffac0b5e",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/beyond_the_dot.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 3719,
+        "sha256": "18cc77939982c946aa92f09570d284832139ae0f04cf65991c7dae1647947381",
+        "baselineEqual": true,
+        "records": 7
+      },
+      {
+        "path": "data/city_namespace_editorial.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 40609,
+        "sha256": "d7a3ae321c9c0e398794bb3faf6321dbfec09de121ccc56981d48e329c316134",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/city_timeline.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 1639,
+        "sha256": "a5b76e232493212eea9b612c07df95830ba5d741d3ca555b40e2612e3897a3af",
+        "baselineEqual": true,
+        "records": 8
+      },
+      {
+        "path": "data/contention_rounds.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 4121,
+        "sha256": "a8cd3e17a8344b49537d1a8e2ca07742ce07835e31547724142e83424af573b2",
+        "baselineEqual": true,
+        "records": 26
+      },
+      {
+        "path": "data/control_levers.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 725,
+        "sha256": "a6f05f17e83f2862e55e9704e15a98485c3dd187527c093e39953bb1fef3a932",
+        "baselineEqual": true,
+        "records": 6
+      },
+      {
+        "path": "data/cultural_blind_review_v2.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 4379,
+        "sha256": "c0f1c2fe4ebc99241655ef2fd1d85aa93065eb3f4f34afa01e99c39001588f87",
+        "baselineEqual": true,
+        "records": 88
+      },
+      {
+        "path": "data/cultural_classification_protocol.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 10278,
+        "sha256": "24483a6bc5abdc2877ae8afddf2099503929a4c50b515837fa94e29ac45508a0",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/cultural_classification_protocol_v2.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 13067,
+        "sha256": "947987f3749c994a7965442ba8e4aba365e2a1da434e4523815cefb2e2bbaaa8",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/cultural_history_evidence_v2.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 2729,
+        "sha256": "6f4fe20a728fb5f1387230ed5c6e8b393c982fd0f7075fb3efa506af0ba83154",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/cultural_lexicon_review_queue_v2.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 29191,
+        "sha256": "26b6e29ee6997044e34fae45376c4a41fe78f4229d62eb4f4400c235eb8cb9b7",
+        "baselineEqual": true,
+        "records": 366
+      },
+      {
+        "path": "data/cultural_lexicon_v2.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 161403,
+        "sha256": "fc47ae2cdbd67c9399b9eaa7c30456b207fd228afffe17d88db24ad83350c541",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/cultural_sensitivity_v2.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 9034,
+        "sha256": "89f9ee8aa51aba2c98dc987ccb6e39633d70d9d4c3cdd4d1ee062ca5d3ec4041",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/cultural_validation_sample.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 6199,
+        "sha256": "ada2d4c72ec31a977525bf54a2e5e2084a0ac6f36f43e32d0056635b07833fe1",
+        "baselineEqual": true,
+        "records": 88
+      },
+      {
+        "path": "data/dns_capabilities.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 1150,
+        "sha256": "31f86153792bba368edc88487b50bd8849e0932378f5d005a30c73a54f8f4c17",
+        "baselineEqual": true,
+        "records": 6
+      },
+      {
+        "path": "data/dns_oddities.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 1942,
+        "sha256": "909cb4602b35e07de825004bc9f2b9dfe002ea98f7bd64c6a39856586bdc29b2",
+        "baselineEqual": true,
+        "records": 11
+      },
+      {
+        "path": "data/domain_governance_glossary.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 20363,
+        "sha256": "32115e08f27076ff6e4691d0c0e865635533ea3a8acdd8349f0b66a7b0a7e5be",
+        "baselineEqual": true,
+        "records": 28
+      },
+      {
+        "path": "data/domain_lifecycle.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 985,
+        "sha256": "55c3ee5c0516c0b43a99218a79a3cc78d874ef002ee0d1ebcbbcc47f5bbfcc3d",
+        "baselineEqual": true,
+        "records": 7
+      },
+      {
+        "path": "data/early_dns.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 667,
+        "sha256": "46a098bf36a207dc718b39fcd92ebbb2a4f89de0f7f3c41644615ddaaa739ea8",
+        "baselineEqual": true,
+        "records": 2
+      },
+      {
+        "path": "data/economic_cases.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 2393,
+        "sha256": "06b41434390c960eecbc663808ee52ff5b177afcba132186fc5b056820da74ba",
+        "baselineEqual": true,
+        "records": 8
+      },
+      {
+        "path": "data/economic_cases.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 15383,
+        "sha256": "216a12a6134daec03664236f0a2bca274bdcccbd74f0f9611ff785f3038c04ad",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/economic_metrics.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 3882,
+        "sha256": "d4936365bfd2412721cc6ea605ce4fb6e5388abea2a8edb195b527e78302feb9",
+        "baselineEqual": true,
+        "records": 22
+      },
+      {
+        "path": "data/economics_reading_order.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 6822,
+        "sha256": "eb745f3bcb4c228788f18bf5405f7c3830dc9229ac7a3cfb058c8e425a8f7f0e",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/editorial_20261030_quality_and_termination.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 3788,
+        "sha256": "310aa52d2c9de27c60af304cbf427cf97266c17c1a2faf8d90d829e6c5448ce8",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/editorial_io_appointments_20261023.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 8091,
+        "sha256": "8e9241253468ec72db6e63213764dc4fc99329fc31cb30318987d1b047c3cc7c",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/evidence/iana-snapshot-2026-10-04.json.gz",
+        "categories": [
+          "frozenEvidence"
+        ],
+        "bytes": 2572719,
+        "sha256": "c1c756354383eed7410fd071e277d9096cd33e210a180d1f4b6d1d0db45216e9",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/evidence/tld-market-2026-10-19/ntlddata-backends.json",
+        "categories": [
+          "scientificJson",
+          "frozenEvidence"
+        ],
+        "bytes": 4018,
+        "sha256": "2a348b86d3b978d73c2785087bcdd1951625a7ba49890f7456ddbb0751430bf0",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/evidence/tld-market-2026-10-19/ntlddata-tlds-1.json",
+        "categories": [
+          "scientificJson",
+          "frozenEvidence"
+        ],
+        "bytes": 142731,
+        "sha256": "126206b02dd11256809b167d8c27f46053b4caba5053fc77afd5dd18cbad691e",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/evidence/tld-market-2026-10-19/ntlddata-tlds-2.json",
+        "categories": [
+          "scientificJson",
+          "frozenEvidence"
+        ],
+        "bytes": 137628,
+        "sha256": "748dce504c861d0fbcc2289008ba8ac7dea9b239d73c56efbdc5cddf8bd9ba0c",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/evidence/tld-market-2026-10-19/ntlddata-tlds-3.json",
+        "categories": [
+          "scientificJson",
+          "frozenEvidence"
+        ],
+        "bytes": 36560,
+        "sha256": "262de1324f142a93b1f6fa23fcca6165336784645b73d43cb0892d4a6cebcf3a",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/evidence/tld-market-2026-10-19/w3techs-top50.json",
+        "categories": [
+          "scientificJson",
+          "frozenEvidence"
+        ],
+        "bytes": 4722,
+        "sha256": "bac72603a960adecf2f9c752c99420b81d4f0aaf61f907c0164bfb9d79770004",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/explorer_catalog.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 1339931,
+        "sha256": "5ce16d53cd9bb1860c35c2dbab661d02817caff86974514433dd453ac4860b53",
+        "baselineEqual": true,
+        "records": 1849
+      },
+      {
+        "path": "data/explorer_curated.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 95032,
+        "sha256": "bad05912361a6a1036b3ba8b5b3f5305191e7b118ade5b05779a4396d85cf3ac",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/explorer_events.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 1374791,
+        "sha256": "3f20e39311c37efe3ed53faa1b10a45de4e922d3f075682847727cfd36a6efe0",
+        "baselineEqual": true,
+        "records": 7679
+      },
+      {
+        "path": "data/explorer_iana_reports.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 455406,
+        "sha256": "4b893138d142b417213c3ef78d576641c5646f1283fb7868247e2e5021d37288",
+        "baselineEqual": true,
+        "records": 2008
+      },
+      {
+        "path": "data/explorer_nameservers.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 1128411,
+        "sha256": "dc6633beaec0b4e908dc7ebe83a12f27a5869258b1d43326cc1607a5c64db05c",
+        "baselineEqual": true,
+        "records": 7563
+      },
+      {
+        "path": "data/field_investigations.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 18855,
+        "sha256": "ed7dfc93d7bb5ece76f34166e156d867711e2572ebaad783ac325157febe2af4",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/financial_source_verification_20261019.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 1300,
+        "sha256": "d7bba26987fd53b76dd5c013394a89b2b2b0a3459480a10d30e284c689626421",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/governance_case_events.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 5767,
+        "sha256": "6979c1d3e6fa61dd2743b3b3519411c246fb4575ea21517ceed6646b4407f4f8",
+        "baselineEqual": true,
+        "records": 39
+      },
+      {
+        "path": "data/governance_cases.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 4329,
+        "sha256": "f11c7505d8f602aeaaa20a64fdc938f2fb5016dc15af3ceef24f7fd14f814c22",
+        "baselineEqual": true,
+        "records": 9
+      },
+      {
+        "path": "data/governance_cases.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 21313,
+        "sha256": "328f632f00f0cbb28580b1921552f32f93370f17b832f850f776937c6e8e34d1",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/governance_locations.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 864,
+        "sha256": "99bbf39a6d9e81632638c8f631a8571cec3767018a9d62afd5193871b0165758",
+        "baselineEqual": true,
+        "records": 10
+      },
+      {
+        "path": "data/helsinki_editorial_20261025.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 4373,
+        "sha256": "be0ffa12b3e8160627d7666543837263151488efba3b17403e7608cc92cb1a91",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/iana_snapshot.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 2650539,
+        "sha256": "f39f5475122a4a7fb3f36fd939926ea0c2621fed845fb58e4259d226bc1cf3cd",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/independent_review_materials.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 23020,
+        "sha256": "c574d8047db74be57940cf348b7a348251e2f58f5e5a8142d311291618b49564",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/inside_the_round_events.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 7526,
+        "sha256": "2cda36c01aa69ba7ed03175ca18cba9cbf06d8f382ee5af428085c0868efbf07",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/internet_access_explainer.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 69895,
+        "sha256": "cf5fa5eaf388beec83ce43555a6e2a8b213d873a505bbf3a9bb73084b0dde809",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/key_facts.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 1218,
+        "sha256": "692c0a22e48bacbaf14935b6af49f0cf797d0991bdc166606139a673890d5378",
+        "baselineEqual": true,
+        "records": 5
+      },
+      {
+        "path": "data/lugano_vision.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 660,
+        "sha256": "5b41d51a560665aad5b89caecf75fc6b8ce07904e70f7b87c36ef359da104b82",
+        "baselineEqual": true,
+        "records": 4
+      },
+      {
+        "path": "data/namespace_dimensions.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 953,
+        "sha256": "7d32ead09868e049f753d7aa437b1af1c38bf2a81abb10b21dc7b96b4c1d35c9",
+        "baselineEqual": true,
+        "records": 8
+      },
+      {
+        "path": "data/portfolio_applications.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 2880,
+        "sha256": "9aab2f6a0bd46eb6b5b14dfb8b992f8c0ce3243cb1291945e66cf6c3701072d6",
+        "baselineEqual": true,
+        "records": 12
+      },
+      {
+        "path": "data/qa/round_debate_v0797_qa_context.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 680,
+        "sha256": "db1bce18f3baa3f243daab165ea2365ae0d4da8e680d127e95c11ccd9bbd2a98",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/reader_first.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 26371,
+        "sha256": "7f89eaea42a4c43b0aae467753de056bf27e668af8325c60a2c7bbf4be96479b",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/reader_observations_blank.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 170,
+        "sha256": "09d6e1636966ee62cc738626253298dd9cf68b0b3e302f1250daa6cd264cd695",
+        "baselineEqual": true,
+        "records": 0
+      },
+      {
+        "path": "data/reader_validation_recording.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 224,
+        "sha256": "b8bf854749e3368a82c6192c5082344a50477f40c5e712fdb0cfa7b5adee6720",
+        "baselineEqual": true,
+        "records": 9
+      },
+      {
+        "path": "data/registry_concentration.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 5575,
+        "sha256": "5f9efac583fe08b3bf9d6e0edf9715ed37bb54f25191fe7eddf9311d6742cec7",
+        "baselineEqual": true,
+        "records": 15
+      },
+      {
+        "path": "data/registry_concentration_context.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 3718,
+        "sha256": "a7b62180df2ac200e8c1bc6a0819ecebd7ff914cfc9c04f191cc6064c65d6f1f",
+        "baselineEqual": true,
+        "records": 11
+      },
+      {
+        "path": "data/research.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 70239,
+        "sha256": "11fd42df849b9442915e57eb510c634397ed5a5a7e7365c66ee40b8edd843d91",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/research_bibliographic_corrections.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 560,
+        "sha256": "6e6e18006bcfad7155b8933169adb2beef2b94d2d05b7449af0f7b51cb73db41",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/round_2000_curated.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 2274,
+        "sha256": "658e9351d447288c22b76f549487b79639755a72027af1a78f5c4a2dff8b0126",
+        "baselineEqual": true,
+        "records": 15
+      },
+      {
+        "path": "data/round_2004.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 1905,
+        "sha256": "b945b04295974b0eeb56be3abc95a36887741a52f0cc85af61eee7c8dfd97cb1",
+        "baselineEqual": true,
+        "records": 10
+      },
+      {
+        "path": "data/round_2026.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 3404,
+        "sha256": "0cde275ca243bd55d42f2db3140e017c093ade1d60b938b06e0700fc8a0085dd",
+        "baselineEqual": true,
+        "records": 15
+      },
+      {
+        "path": "data/round_application_fees.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 13352,
+        "sha256": "d6e65555b308a72e602ead9245212086cd13262670627dc65cb55d8214546ff2",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/round_debate_20261106.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 11616,
+        "sha256": "2814e7e833d4fa2f742554345f7ebfef471bb68f71faba5955d2b7736b59111a",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/rounds_summary.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 1200,
+        "sha256": "3e9db2506080f8cbe1c4df12dcd4e4e3f550c9eaa8bb8e4a04f16f2f4bcd98e0",
+        "baselineEqual": true,
+        "records": 4
+      },
+      {
+        "path": "data/rsp_geography_aug_2026.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 199,
+        "sha256": "046e8d347f7b33f1b79d0ca066f80decce9f1fef71d448037165eabc81a4245d",
+        "baselineEqual": true,
+        "records": 5
+      },
+      {
+        "path": "data/rsp_tld_footprint.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 1941,
+        "sha256": "c1905b7ba0005bb406ffad0a503815c9da53fae99e4cc01a09b3547bcfadadab",
+        "baselineEqual": true,
+        "records": 26
+      },
+      {
+        "path": "data/sanctions_explainer.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 36298,
+        "sha256": "d02d19acefae1d0f03cea77fca3912492981a99cc7d445bbdd072e3deb3c29b0",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/sector_evolution_2012_2026.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 2780,
+        "sha256": "420dc7bf2d8aa4644d011a8420f78f742156f9b57c2cee271620c512fc1d996b",
+        "baselineEqual": true,
+        "records": 44
+      },
+      {
+        "path": "data/sector_evolution_2012_2026.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 6784,
+        "sha256": "1842f783e20c110bdd2a2b5f1ae22c14b2c6d8ce32574ef4392865ee1c7d39a0",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/sector_strategy_mix_2012_2026.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 6970,
+        "sha256": "ca92e80aeecce95a3a71e4720c8b2fb2c6317b6e772c0a3fa26c6b12ab309771",
+        "baselineEqual": true,
+        "records": 109
+      },
+      {
+        "path": "data/semantic_drift.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 958,
+        "sha256": "7b8a583b6c70b464639e71fddad4428140a2cff247228aaf2978874cdf85e600",
+        "baselineEqual": true,
+        "records": 6
+      },
+      {
+        "path": "data/social_cases.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 4200,
+        "sha256": "9c6278541078337963b476ad43896c22af61567d4605c248af205ccbd6c605a0",
+        "baselineEqual": true,
+        "records": 9
+      },
+      {
+        "path": "data/social_cases.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 12185,
+        "sha256": "2b132142a66441266a77b15e403b336c880efc2fd96bbb1659f72a57320383f8",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/source_method_corrections_20261019.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 1022,
+        "sha256": "9eb9b1b319ea1e89d0f6324c9db54515a02fcb71ec4d5964d7519ccd5a11c815",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/sources.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 21999,
+        "sha256": "5ac8724ad4e066c360f39348c6512aa9533ddf5599ae2cc43b0e343be949d60f",
+        "baselineEqual": true,
+        "records": 188
+      },
+      {
+        "path": "data/strange_internet.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 4324,
+        "sha256": "787fbb4f966f4447719433d4f95454ce1018143a32ce5fcf653b3f067fdcb7c3",
+        "baselineEqual": true,
+        "records": 32
+      },
+      {
+        "path": "data/success_framework.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 865,
+        "sha256": "2085515d5f6bcb4a0ef511f03a574fe8de03b52d211b68cc6ef162a35c1489fb",
+        "baselineEqual": true,
+        "records": 7
+      },
+      {
+        "path": "data/tld_cultural_corpus.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 1564274,
+        "sha256": "55ba2ed29942698e359195de67f818e56337eb46ad61afe04bb6c9ae555158b2",
+        "baselineEqual": true,
+        "records": 3240
+      },
+      {
+        "path": "data/tld_cultural_editorial.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 41531,
+        "sha256": "2d89b4a8bff61c3bcc67cf267d4433f4ccf8f527271c15647f9f153d95bb3523",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/tld_cultural_patterns.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 23641,
+        "sha256": "97e02640a58c1c6239c0786ab29417e9755c1d2df1f04f8a22d5591ac4864135",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/tld_life_histories.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 1374791,
+        "sha256": "3f20e39311c37efe3ed53faa1b10a45de4e922d3f075682847727cfd36a6efe0",
+        "baselineEqual": true,
+        "records": 7679
+      },
+      {
+        "path": "data/tld_life_history_manifest.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 1653,
+        "sha256": "c5aad2de7636056c829faf35f48ffe9c8cb2bef4c0aa36082c3b73120fd3c937",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/tld_market_provenance.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 2188,
+        "sha256": "aa193a346f5b7dc072605e07180cd21f75cf15e12566a5c45b4168f6f2d92e30",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/tld_market_snapshot.json",
+        "categories": [
+          "scientificJson"
+        ],
+        "bytes": 24174,
+        "sha256": "5ab933a05ee5cf26373569cc9b5bfcf5e99091560faf31c28cfcc91012694ca4",
+        "baselineEqual": true
+      },
+      {
+        "path": "data/tld_models.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 1735,
+        "sha256": "1a7fdbb67b9b503d4d54d23289b21be379362fa22219077bc55e4499b696e8d6",
+        "baselineEqual": true,
+        "records": 11
+      },
+      {
+        "path": "data/tld_top50_website_share.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 1413,
+        "sha256": "fb182f04f9baed6a05fd9d63cee1680d93d02838a4446c5604d4130b4d230fb5",
+        "baselineEqual": true,
+        "records": 50
+      },
+      {
+        "path": "data/tld_top50_zone_domains.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 2170,
+        "sha256": "9551bf926152e89b3fdb1cd346695a07887b0cb5c8743097746a878b340bf446",
+        "baselineEqual": true,
+        "records": 50
+      },
+      {
+        "path": "data/tld_universe.csv",
+        "categories": [
+          "csv"
+        ],
+        "bytes": 387567,
+        "sha256": "fa9718504c52b11197a716c217be35462bb3fb4fa466e6924d2389814ec60ad2",
+        "baselineEqual": true,
+        "records": 1599
+      },
+      {
+        "path": "docs/editorial-review-2026-10-18.json",
+        "categories": [
+          "priorReview"
+        ],
+        "bytes": 70293,
+        "sha256": "2f17c704608dd2864e0cf321977aced78ee7b665c2102e946849ac2541635d49",
+        "baselineEqual": true
+      },
+      {
+        "path": "docs/editorial-review-2026-10-19-v0.7.86.json",
+        "categories": [
+          "priorReview"
+        ],
+        "bytes": 78849,
+        "sha256": "15a654df8b66aa6497179e2fda2f258b7fee520494bd38ae9c48b62d59493c5f",
+        "baselineEqual": true
+      },
+      {
+        "path": "docs/editorial-review-2026-10-19-v0.7.87.json",
+        "categories": [
+          "priorReview"
+        ],
+        "bytes": 90201,
+        "sha256": "f82a0eb23c991f6b2e27c9bd6de549687bcfeafb27c99e317f6a83efb7d3535a",
+        "baselineEqual": true
+      },
+      {
+        "path": "docs/editorial-review-2026-10-19-v0.7.88.json",
+        "categories": [
+          "priorReview"
+        ],
+        "bytes": 93979,
+        "sha256": "962354e9270b6c227ef2b71f2621018ff113f6a37dcd267b9293a85450a1106c",
+        "baselineEqual": true
+      },
+      {
+        "path": "docs/editorial-review-2026-10-19-v0.7.89.json",
+        "categories": [
+          "priorReview"
+        ],
+        "bytes": 97218,
+        "sha256": "8d3d39534f20c0317bc4404d7c0de8adefed5e53600ded342bc8fab7bb40aa55",
+        "baselineEqual": true
+      },
+      {
+        "path": "docs/editorial-review-2026-10-19.json",
+        "categories": [
+          "priorReview"
+        ],
+        "bytes": 73631,
+        "sha256": "03b48a852312d6385c524c6966d6f290e718560890af1d9112bdc0cb199bcc42",
+        "baselineEqual": true
+      },
+      {
+        "path": "docs/editorial-review-2026-10-20-v0.7.90.json",
+        "categories": [
+          "priorReview"
+        ],
+        "bytes": 99435,
+        "sha256": "1ef10feb08c361df535838ac5fd494ef3902f23da644c36ebd4604e66ea2b08c",
+        "baselineEqual": true
+      },
+      {
+        "path": "docs/editorial-review-2026-10-20-v0.7.91.json",
+        "categories": [
+          "priorReview"
+        ],
+        "bytes": 101201,
+        "sha256": "18fe10afb0eb4eef8532a14b7ed20a8c59b4c6dd13104b376d028bb2273a6a33",
+        "baselineEqual": true
+      },
+      {
+        "path": "docs/editorial-review-2026-10-21-v0.7.92.json",
+        "categories": [
+          "priorReview"
+        ],
+        "bytes": 111045,
+        "sha256": "72275bca4dab157bfc2fb75d3f7d5b7772e5943c0c9e791ef2fa192e4db8e419",
+        "baselineEqual": true
+      },
+      {
+        "path": "docs/editorial-review-2026-10-26-v0.7.93.json",
+        "categories": [
+          "priorReview"
+        ],
+        "bytes": 114754,
+        "sha256": "cdd611c4632bfb27b53bb452bc084d01741b2267ce42d53326204c7ed5501a2f",
+        "baselineEqual": true
+      },
+      {
+        "path": "docs/editorial-review-2026-10-30-v0.7.94.json",
+        "categories": [
+          "priorReview"
+        ],
+        "bytes": 117430,
+        "sha256": "ba6289f673ee0c14e46599f0e1d51c5ac5c0d3b343c37fdd2fde33eb8e41f90e",
+        "baselineEqual": true
+      },
+      {
+        "path": "docs/editorial-review-2026-11-05-v0.7.95.json",
+        "categories": [
+          "priorReview"
+        ],
+        "bytes": 125204,
+        "sha256": "e0f0d129a4a9d28cb3596d42c58810dbac7746a98739ec651479f7c936765899",
+        "baselineEqual": true
+      },
+      {
+        "path": "docs/editorial-review-2026-11-06-v0.7.96.json",
+        "categories": [
+          "priorReview"
+        ],
+        "bytes": 128575,
+        "sha256": "b06289e5d8e8ba616258f32221e29b7cb477373d96c8b9dfa5c7d19730117df3",
+        "baselineEqual": true
+      },
+      {
+        "path": "docs/editorial-review-2026-11-06-v0.7.97.json",
+        "categories": [
+          "priorReview"
+        ],
+        "bytes": 135008,
+        "sha256": "1d2828678e7e01b54996c544b1351005c3564df7b79975bad43b1dedb857097a",
+        "baselineEqual": true
+      },
+      {
+        "path": "docs/editorial-review-2026-11-06-v0.7.98.json",
+        "categories": [
+          "priorReview"
+        ],
+        "bytes": 156635,
+        "sha256": "c0d5bc38be76387beb17ffdb0bea4150bbc92af61028fa2183da2bbe62b39409",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.77.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "5067b2a27a21432ff097d4d94b278d7f574bd2f080010d8f895258472e5f3cb6",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.77.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 3847315,
+        "sha256": "8ff5dad0f9c18fedd7f1c30327a43efaca8ef6c16626d7475b2178be599e107a",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.78.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "f0f76c5073cc3a0506ab8da5a7bd4e7608c361d8fd5fa497569fddf36c84852b",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.78.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 3988255,
+        "sha256": "d812e6a01c04c451c4d68e111977a7de7492dce3919ebed48852fc19d224c1fe",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.79.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "601d793d924838644c273693793f0ea237db5e5080fff57361c41e4db2b3046b",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.79.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 3988265,
+        "sha256": "13308a339f13e0169c35159dbd2cdeba3fc58459eda33394278dbcd80772f88e",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.80.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "c3ed408c3e952bec334288e62f961bfb7cf7f338b3c18f2bc5cd1be453087779",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.80.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 3988372,
+        "sha256": "4ba79e195f73ac863b1871f0a7d34b2cbd5b25459547d01e2dfd74644e81f3f5",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.81.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "02f6b5921499d9bad1710c81eba733e309aa1400b41eb311093d6a3e4eabd239",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.81.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 3988382,
+        "sha256": "88d7ce0945ad29b2617ce421e2dfe1c62da6aa028d405c48dc1fec7a32dd2710",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.82.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "09ddb9906b00031f1e2b60b6cef176d42950196b498c21a3612b17db83fc12c8",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.82.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 3988388,
+        "sha256": "786058bda9cca5f75124c30cc55dc10f9c7c9df86b739f378c061354d75b57b0",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.83.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "900551d7ceee421a64bc232a7f7f4196cb1a347c6f2513355ed1ab694ac2f5cb",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.83.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 4003870,
+        "sha256": "e5a2d2c1d78d943c61d8481d94bbb2d1a0b0636216f6d4c0a5c122a740ec17f3",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.84.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "90e83fe30a237377abd97a69e7661adfb5ccddff20c36d47b26caeb2a242cab7",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.84.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 4105400,
+        "sha256": "b2ffb3502559c927a0e61666b1bda232f6bbcb51f4e9f600b8d09c72e1ac57c4",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.85.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "c03c23178c3a166e687d991261e75072a2f8123eb570be41453386622dcc4525",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.85.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 4224603,
+        "sha256": "d1a17cca20a8dbeffa00b0273261b119c2dae5a2bb39d4b02485a90baec8c74f",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.86.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "80ec75649dae06d2d2c6fd6120160034211f133bf1a3a7a364eabbe473e329d5",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.86.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 4264728,
+        "sha256": "1ed98f9a57e9712ffcc64e7843095a35453fe3a1e9d7a93fbf9f303f077eafa3",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.87.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "cdd3cd2725f0f7f72fdad47b92402d964029855cdaa3b051ac6060f3d6af31c4",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.87.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 4279336,
+        "sha256": "8231bf27ad276e706dc213657fa4d8dd658e06bdc461d2da04c550f56610212d",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.88.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "8aeabc17323913972893e8b374e11f3b7fb7f57e0bcc13fadfd08735916189fd",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.88.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 4314705,
+        "sha256": "f338bbcc25be9adb0da8f77ed9c7d20c38c8e8ce494455106160da8ed1decca5",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.89.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "4be9ed7935386294ee450733881dd18976daa3ce34e9d952ca31f3fdae478611",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.89.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 4327400,
+        "sha256": "a89488826bc7eee08409622b9e10bad32c8d62e6ab7bb84342697f7a826d7def",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.90.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "376436999184b7487faa2f11e8959f1ac3a88d438ab88ff644def2155f75cfb5",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.90.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 4341905,
+        "sha256": "236ba72bf42e8ec59e3a53c47fd3cf8e3c72e00c4351bbcbe30558eb52fccb30",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.91.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "16cb3f201ab88b89898214c7cb69d72d0ea264d355a6547ae2a7736310848047",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.91.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 4345010,
+        "sha256": "9e445ad422a1ec42e0f929e8c887e2c0fc3174e27ac2920c0901adc5287e2926",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.92.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "03a4a0e38e882871d0a7be4b50fc665ae63590b1ed95d9c906bfc523d33ae1f2",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.92.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 4345027,
+        "sha256": "841c47bd0160d3c2ee9b484382b0b70fc862a229d3ead266149f302976f15032",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.93.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "847cdc4439ec576a2b63aa929bec6a05182ee271c8d0c60d3033396e45a5d701",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.93.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 4345035,
+        "sha256": "6b6f483413408e43c7362d8ab47af926ed53f213f576e0d7c42f301b376e7d35",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.94.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "b44c9b5c32e12c139bab1b78be2f0416e60fcc4bcc0ec29a5a205eef238a8c5a",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.94.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 4345041,
+        "sha256": "e3dd06b26f29e85d32efb4aff8f204fe49203dc3ede3851bde004d10c4fb2e6e",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.95.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "bf6def2d561acac2ede29b3c1cb7421bcf1e7ae7562824fe7a9ea660fae17ec9",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.95.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 4345101,
+        "sha256": "dcd1e11538f7e7242895823e46bc0e80d95bfcca8a42a26a6acaf081e3372af2",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.96.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "7a037ed9b11dc5516a9e9a713c5569ed15e95c73924a3ac089799b200e1212b0",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.96.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 4345155,
+        "sha256": "643033d5aec7ea04f3bf9472aa810968495e6400b24508f93357237611344165",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.97.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "c2d537ad91cc123f2b9c7ac3f378d8f20c9c2332b79cc81f5033652d8c8826cb",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.97.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 4345203,
+        "sha256": "032a375c855100b8b82ca39d188362a3f8b6ce31f459398c96e8a229d76010c0",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.98.sha256",
+        "categories": [
+          "priorSidecar"
+        ],
+        "bytes": 108,
+        "sha256": "5d78eb371f514958d0d95073f1c3ece0d1ba19b80ddf38b46804dad145ff41fc",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack-v0.7.98.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 4345959,
+        "sha256": "f9bbbf917e26cbe64b6a96f4c3db04e4ddbbe6536db4f37160737e00cdb54299",
+        "baselineEqual": true
+      },
+      {
+        "path": "downloads/connecting-the-dots-data-pack.zip",
+        "categories": [
+          "priorZip"
+        ],
+        "bytes": 3792406,
+        "sha256": "105855eaec0e118418c5bbf332ffa0a0e92b6726f470baf535846bb2cd79894f",
+        "baselineEqual": true
+      },
+      {
+        "path": "research/README.md",
+        "categories": [
+          "technicalResearchReferences"
+        ],
+        "bytes": 3716,
+        "sha256": "470f128b6178737c35f90da40343e5e6ace977dae86f93e025c31f585a661e07",
+        "baselineEqual": false,
+        "comparisonMode": "Exact approved technical-reference transformation; all remaining bytes must match"
+      },
+      {
+        "path": "research/connecting-the-dots-working-paper-v1.html",
+        "categories": [
+          "technicalResearchReferences"
+        ],
+        "bytes": 49984,
+        "sha256": "5819b38c0e549f4bb10fda60591e2e1ed857eed414fc7c6300736003b9d80f1e",
+        "baselineEqual": false,
+        "comparisonMode": "Exact approved technical-reference transformation; all remaining bytes must match"
+      },
+      {
+        "path": "research/connecting-the-dots-working-paper-v1.md",
+        "categories": [
+          "technicalResearchReferences"
+        ],
+        "bytes": 30858,
+        "sha256": "762357e07ef9e6286c5313791f40693837f695e9e9be6a7afb31b4ff85e63611",
+        "baselineEqual": false,
+        "comparisonMode": "Exact approved technical-reference transformation; all remaining bytes must match"
+      },
+      {
+        "path": "research/index.html",
+        "categories": [
+          "technicalResearchReferences"
+        ],
+        "bytes": 27055,
+        "sha256": "33acab31970c39a02497f2d2993d9c2d160800d0a40305869bee2df1fed3666a",
+        "baselineEqual": false,
+        "comparisonMode": "Exact approved technical-reference transformation; all remaining bytes must match"
+      },
+      {
+        "path": "research/rr2_candidate.json",
+        "categories": [
+          "paperCitationAndResearch"
+        ],
+        "bytes": 3311,
+        "sha256": "abc50b237a49636bd57ba0f52268ab6505c7305b1bc02fbb620d39d3cef136b3",
+        "baselineEqual": true
+      },
+      {
+        "path": "research/rr2_publication_verification.json",
+        "categories": [
+          "paperCitationAndResearch"
+        ],
+        "bytes": 1480,
+        "sha256": "632098763759d353bfec7b04dd9860d7297b955695b14cdd5984ada4ec5ec6c1",
+        "baselineEqual": true
+      }
+    ],
+    "technicalResearchReferences": {
+      "scope": "Only current package/version indications, corresponding research-index cache references and the resulting manuscript source digest; no global version replacement",
+      "documents": [
+        {
+          "path": "research/connecting-the-dots-working-paper-v1.md",
+          "baselineSHA256": "3df86493467120fb58fb8627d3bf6c8f7bb4df2c5c8f0c26e373b9aacfd4a31d",
+          "expectedSHA256": "762357e07ef9e6286c5313791f40693837f695e9e9be6a7afb31b4ff85e63611",
+          "actualSHA256": "762357e07ef9e6286c5313791f40693837f695e9e9be6a7afb31b4ff85e63611",
+          "allOtherBytesUnchanged": true
+        },
+        {
+          "path": "research/README.md",
+          "baselineSHA256": "635efd874a76d24d946f06ffa6f77db5c1837edcffd122bb15713a3acb077e3a",
+          "expectedSHA256": "470f128b6178737c35f90da40343e5e6ace977dae86f93e025c31f585a661e07",
+          "actualSHA256": "470f128b6178737c35f90da40343e5e6ace977dae86f93e025c31f585a661e07",
+          "allOtherBytesUnchanged": true
+        },
+        {
+          "path": "research/connecting-the-dots-working-paper-v1.html",
+          "baselineSHA256": "f586ac5d8b7759534d73ad0b872de7e8cf6adab38ab18082e2fee51f279966cd",
+          "expectedSHA256": "5819b38c0e549f4bb10fda60591e2e1ed857eed414fc7c6300736003b9d80f1e",
+          "actualSHA256": "5819b38c0e549f4bb10fda60591e2e1ed857eed414fc7c6300736003b9d80f1e",
+          "allOtherBytesUnchanged": true
+        },
+        {
+          "path": "research/index.html",
+          "baselineSHA256": "e20b8f05476edfd0354c7870311131dbf2adf7450162fee111490d7f1809c6cc",
+          "expectedSHA256": "33acab31970c39a02497f2d2993d9c2d160800d0a40305869bee2df1fed3666a",
+          "actualSHA256": "33acab31970c39a02497f2d2993d9c2d160800d0a40305869bee2df1fed3666a",
+          "allOtherBytesUnchanged": true
+        }
+      ],
+      "paperVersion": "1.4-draft",
+      "paperRevisedOn": "2026-10-19"
+    },
+    "newArchive": {
+      "path": "downloads/connecting-the-dots-data-pack-v0.7.99.zip",
+      "bytes": 4346009,
+      "sha256": "5c2f5f9c344378e98990a09aea3776882479b27e3d17114b5918194c84487eba",
+      "members": 112,
+      "changedMembers": [
+        "frozen_technical_packages.json",
+        "manifest.json",
+        "release_history.json"
+      ],
+      "unchangedMembers": 109,
+      "crcFirstBadMember": null
+    },
+    "supplementaryDeliveryObservations": {
+      "scope": "Supplementary byte observations; the official delivery checker remains a separate mandatory gate",
+      "officialCheckerExecution": "Separate required gate; not executed by this audit harness",
+      "headingAssets": [
+        {
+          "path": "assets/reader-first.js",
+          "bytes": 4428,
+          "deltaFromPreHeading0799": 468,
+          "sha256": "526c85d71fdf31663a085ca4eaf1141459088631ad790c7e467011d031245678"
+        },
+        {
+          "path": "assets/aps-atlas.js",
+          "bytes": 8956,
+          "deltaFromPreHeading0799": 60,
+          "sha256": "d40e8374e43b425398dc5385bdd8cc131c1f0046d2a930699f31978639036c1e"
+        },
+        {
+          "path": "assets/aps-atlas.css",
+          "bytes": 14067,
+          "deltaFromPreHeading0799": 9,
+          "sha256": "fd2b432095bef1f8d9cb40f32865989c280b1e788986a654d36eb980b890093a"
+        },
+        {
+          "path": "assets/style.css",
+          "bytes": 136886,
+          "deltaFromPreHeading0799": 9,
+          "sha256": "400264731447c1a0c5ee315b21903d0fcbf8662b9bb069a658a3bebe16651b9e"
+        }
+      ],
+      "headingAssetDeltaBytes": 546,
+      "headingInitialHtmlDeltaExpected": 0,
+      "headingDeltaAttribution": "Four external CSS/JS changes; this is not the total 0.7.98-to-0.7.99 HTML delta",
+      "pages": [
+        {
+          "path": "index.html",
+          "htmlBytes": 1172369,
+          "deltaFrom0798Html": -62,
+          "htmlExclusiveCapBytes": 1240000,
+          "belowObservedHtmlCap": true,
+          "htmlAndExtractedBytes": 1619195,
+          "observedAggregateCapBytes": 1620064,
+          "belowObservedAggregateCap": true
+        },
+        {
+          "path": "en/index.html",
+          "htmlBytes": 1172755,
+          "deltaFrom0798Html": -62,
+          "htmlExclusiveCapBytes": 1240000,
+          "belowObservedHtmlCap": true,
+          "htmlAndExtractedBytes": 1619581,
+          "observedAggregateCapBytes": 1620444,
+          "belowObservedAggregateCap": true
+        },
+        {
+          "path": "it/index.html",
+          "htmlBytes": 1197273,
+          "deltaFrom0798Html": -36,
+          "htmlExclusiveCapBytes": 1240000,
+          "belowObservedHtmlCap": true,
+          "htmlAndExtractedBytes": 1657778,
+          "observedAggregateCapBytes": 1658517,
+          "belowObservedAggregateCap": true
+        },
+        {
+          "path": "de/index.html",
+          "htmlBytes": 1203248,
+          "deltaFrom0798Html": -43,
+          "htmlExclusiveCapBytes": 1240000,
+          "belowObservedHtmlCap": true,
+          "htmlAndExtractedBytes": 1665432,
+          "observedAggregateCapBytes": 1666143,
+          "belowObservedAggregateCap": true
+        },
+        {
+          "path": "fr/index.html",
+          "htmlBytes": 1219867,
+          "deltaFrom0798Html": -14,
+          "htmlExclusiveCapBytes": 1240000,
+          "belowObservedHtmlCap": true,
+          "htmlAndExtractedBytes": 1693429,
+          "observedAggregateCapBytes": 1694070,
+          "belowObservedAggregateCap": true
+        }
+      ]
+    },
+    "publication": {
+      "project": "Connecting the Dots",
+      "version": "0.7.99",
+      "releasedOn": "2026-11-07",
+      "state": "reveal-day",
+      "freeze": true,
+      "asOf": "2026-10-10",
+      "revealAt": "2026-10-07T18:00:00Z",
+      "stringConfirmation": "2026-11-17",
+      "researchRelease": "RR2",
+      "researchSnapshot": "2026-10-07",
+      "paperVersion": "1.4-draft",
+      "paperPath": "research/connecting-the-dots-working-paper-v1.html",
+      "repository": "https://github.com/robertbregy/Connecting-the-Dots",
+      "deployment": "https://robertbregy.github.io/Connecting-the-Dots/",
+      "doi": "10.5281/zenodo.23288603",
+      "doiUrl": "https://doi.org/10.5281/zenodo.23288603",
+      "conceptDoi": "10.5281/zenodo.23262622",
+      "archive": "Zenodo",
+      "dataPackageVersion": "0.7.58",
+      "currentDataPackVersion": "0.7.99",
+      "currentDataPackPath": "downloads/connecting-the-dots-data-pack-v0.7.99.zip",
+      "paperRevisedOn": "2026-10-19",
+      "editorialReviewPath": "docs/editorial-review-2026-11-07-v0.7.99.json",
+      "buildProvenanceCommit": "d00e948c35fa3353b15a5db7f130fec988867888"
+    }
+  },
+  "limits": [
+    "This validates preservation and package integrity, not new scientific conclusions.",
+    "Final editorial fingerprints, browser tests and remote deployment equivalence remain separate release gates.",
+    "The 12-claim editorial sample does not certify every economic amount or every translated proposition."
+  ]
+}

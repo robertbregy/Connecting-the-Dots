@@ -1,0 +1,42 @@
+{
+  "version": "0.7.99",
+  "sourceCommit": "d00e948c35fa3353b15a5db7f130fec988867888",
+  "passed": true,
+  "checks": [
+    {
+      "command": "python3 build.py",
+      "exitCode": 0,
+      "logSHA256": "22ade1a84858e5455810b851d882709876293e3d1929ce1b6fef2fd8df84dcf4"
+    },
+    {
+      "command": "CTD_STATIC_ONLY=1 node scripts/validate_delivery.js",
+      "exitCode": 0,
+      "logSHA256": "d862dd1eb52c2ef4e48f40c576f5214a7dc7f8a3ae0e21d6f4d4e40cbb08af0b"
+    },
+    {
+      "command": "node scripts/atlas_state_qa.cjs",
+      "exitCode": 0,
+      "logSHA256": "98cc4591eaa79b9fbba7e7780d4a422cef394587c3406ed558483caa28c50ca4"
+    },
+    {
+      "command": "node scripts/validate_multilingual.js",
+      "exitCode": 0,
+      "logSHA256": "b0b12f2f1838b586ccecf8c0ff809b77bdeeb3681abead1dc5c3e9d226e66ab9"
+    },
+    {
+      "command": "node scripts/validate_internet_access.js",
+      "exitCode": 0,
+      "logSHA256": "1d4246fb1a16f69af9f436f33acb38f7db8d7b060e39e73c4cbdeb2f5fb31e1e"
+    },
+    {
+      "command": "node scripts/usability_remediation_qa.cjs --static-only",
+      "exitCode": 0,
+      "staticPages": 5,
+      "errors": 0,
+      "logSHA256": "e07a2bf0a6f153d59cb4b3215e612089045010c6fd54a7528dbd736646d57aa8"
+    }
+  ],
+  "initialFailurePreserved": "initial-local-build-failure.json",
+  "browserAndPublicationStatus": "not yet executed for v0.7.99",
+  "reportSynchronization": "After the static pass, only the two supporting editorial reports and this evidence record were completed; product bytes are unchanged. The exact review guard is rerun for their final hashes."
+}

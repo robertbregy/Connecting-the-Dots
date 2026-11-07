@@ -1,0 +1,15 @@
+{
+  "version": "0.7.99",
+  "recordedOn": "2026-11-07",
+  "sourceCommit": "d00e948c35fa3353b15a5db7f130fec988867888",
+  "sourceTree": "5e7232359a571bb949815ab939fd430e8bf41ccf",
+  "parentCommit": "dee7b777d5ca6ac042167ed02d2e1fe253a36931",
+  "branch": "qa/experience-source-20261107",
+  "paths": 50,
+  "localRemoteTreeEqual": true,
+  "scientificSnapshotUpdated": false,
+  "exactGeneratedReviewStatus": "pending at source checkpoint",
+  "semantics": "Actual combined source checkpoint. Final provenance pin, generated metadata, preservation evidence and exact-file review are added separately before deterministic assembly. No 0.7.99 browser or public deployment result is claimed here.",
+  "initialSourceCommit": "0ad153c234b4adc285fe3ae987f6e499babe7180",
+  "metadataCorrection": "Only remove the unsupported .sha256 entry from the ZIP-only freeze registry; archive bytes and checksum sidecar are unchanged. All generator and interaction assets are identical to the initial checkpoint."
+}

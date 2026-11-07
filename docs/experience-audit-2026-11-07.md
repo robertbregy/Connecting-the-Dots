@@ -17,10 +17,10 @@ Il giudizio sull’engagement resta qualitativo. Non sono disponibili misure di 
 | Accuratezza | Nessuna contraddizione sostanziale nelle 12 affermazioni sensibili campionate; un filtro semanticamente troppo ampio e un tempo verbale da correggere. | Etichette più precise in tutte le lingue; snapshot scientifici invariati. |
 | Fonti e fiducia | Provenienza ben documentata; un vecchio endpoint APS non disponibile, ripetuto in 22 link. | Aggiornare la destinazione di consultazione, conservando l’indirizzo storico di acquisizione. |
 | Accessibilità | Un nome ARIA nascondeva i metadati delle schede mobili; mancava un livello principale nelle viste e un heading per le candidature Atlas. | Nomi derivati dai dati visibili e gerarchia esplicita; verifica dell’albero AX e della tastiera. |
-| Facilità di comprensione | Introduzione concreta; maggiore carico cognitivo nei capitoli economia e .lugano. | Conservare cautele e definizioni; chiarire gli stati al punto d’uso, senza diluire i dati. |
+| Facilità di comprensione | Introduzione concreta; maggiore densità di termini e cautele in Economia e .lugano, con possibile difficoltà da validare. | Conservare cautele e definizioni; chiarire gli stati al punto d’uso, senza diluire i dati. |
 | UX | Stato Atlas perso con reload/lingua, reset troppo esteso, dettagli richiusi durante la paginazione. | URL riproducibili, filtri indipendenti, dettagli conservati. |
 | UI mobile | Ricerca primaria preceduta da spiegazioni ripetute. | Anticipare il campo nel DOM, mantenendo integralmente i testi. |
-| Engagement | Storie e domande concrete sono buoni ingressi; la home offre più punti di partenza sovrapposti. | Concentrarne la gerarchia prima di aggiungere nuove componenti; validare con compiti reali. |
+| Engagement | Storie e domande concrete sono buoni ingressi; la home offre più punti di partenza potenzialmente sovrapposti. | Verificare con compiti reali se gli ingressi si sovrappongono; migliorare quelli esistenti quando emerge una difficoltà. |
 | Prestazioni | Budget di peso ripristinati nella manutenzione tecnica; misure locali e pubbliche hanno condizioni diverse. | Mantenere i limiti, misurare il sito reale e non spacciare il laboratorio per esperienza sul campo. |
 
 ## Correzioni verificabili
@@ -99,9 +99,9 @@ Riferimento metodologico: [W3C WAI — Use Clear and Understandable Content](htt
 
 ### Un percorso riconoscibile per chi valuta un progetto
 
-Curioso e ricercatore hanno ingressi immediatamente riconoscibili. Il decisore deve collegare Città, Economia, .lugano e Round 2026. I materiali esistono; l’opportunità è presentarli come un compito unitario dentro un hub già presente, distinguendo stato, governance, impieghi e criteri di valutazione.
+I materiali per valutare un progetto sono distribuiti fra Città, Economia, .lugano e Round 2026; il percorso collega già Città a .lugano. Non è stato misurato se questa distribuzione ostacoli chi deve prendere una decisione.
 
-La proposta va provata prima di aggiungere una nuova carta permanente. Un nuovo riquadro è utile solo se riduce una scelta o una ricerca, non se si limita a duplicare un’altra introduzione.
+Prima di modificare l’orientamento, verificare se un lettore riesce a trovare lo stato documentato, distinguere fatti e proposta e recuperare le prove. Se emerge una difficoltà, migliorare l’etichetta o la destinazione di un ingresso esistente. Non è prevista una nuova carta.
 
 ## Protocollo per verificare l’eccellenza con persone
 
@@ -114,6 +114,8 @@ Questo è un protocollo proposto. Non sono stati reclutati partecipanti, raccolt
 ## Conservazione, prove e limiti
 
 La 0.7.99 comprende le correzioni tecniche della 0.7.98 e gli interventi di esperienza descritti qui. Restano congelati i dati scientifici, i riferimenti RR1/RR2, le acquisizioni IANA/APS e gli archivi precedenti. Il pacchetto 0.7.98 viene conservato come candidato tecnico verificato, senza attribuirgli una pubblicazione mai avvenuta su Pages.
+
+Il generatore aggiorna i riferimenti al pacchetto tecnico corrente anche nel Markdown del working paper, negli HTML e nel README della ricerca. Queste indicazioni di versione e collegamento sono distinte dal testo scientifico, dalla versione del paper e dalla sua data di revisione. La verifica di conservazione ammette soltanto le sostituzioni tecniche esatte e controlla tutto il contenuto restante.
 
 Le evidenze di base sono conservate in `docs/audits/2026-11-07/`: rapporto strutturale, rapporto editoriale, matrice delle affermazioni, osservazioni manuali, prove sul DOM, controlli dei link e mutazioni negative delle guardie. La review della release conserva gli hash dei file e tutte le invarianti storiche; non riscrive la baseline per far passare i controlli.
 

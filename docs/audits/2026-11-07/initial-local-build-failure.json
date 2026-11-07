@@ -1,0 +1,14 @@
+{
+  "version": "0.7.99",
+  "sourceCommit": "0ad153c234b4adc285fe3ae987f6e499babe7180",
+  "status": "failed before publication",
+  "command": "python3 build.py",
+  "failingGate": "scripts/release_check.py",
+  "message": "Historical archive registry coverage mismatch: unexpected=downloads/connecting-the-dots-data-pack-v0.7.98.sha256",
+  "cause": "Incorrect release metadata: the ZIP-only registry also included a checksum sidecar.",
+  "correctionSourceCommit": "d00e948c35fa3353b15a5db7f130fec988867888",
+  "correction": "Remove only the unsupported registry entry; preserve ZIP, sidecar and all existing guard code.",
+  "guardChanged": false,
+  "mainOrPagesChanged": false,
+  "logSHA256": "9cc6d80b9a887ca3b3bf18a0c970b50126ff026a2bd92a0d12b02c642f88f8ca"
+}

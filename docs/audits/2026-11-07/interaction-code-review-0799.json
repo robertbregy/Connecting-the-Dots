@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "release": "0.7.99",
+  "status": "PASS",
+  "reviewType": "Independent AI code review; no human-study or browser-acceptance claim",
+  "humanParticipants": 0,
+  "recordedAt": "2026-11-07T00:27:00.839512+00:00",
+  "reviewedCheckpoint": {
+    "commit": "0ad153c234b4adc285fe3ae987f6e499babe7180",
+    "tree": "a41b911c1599c053859ac377231e158a15834fff",
+    "branch": "qa/experience-source-20261107",
+    "comparisonBase": "dee7b777d5ca6ac042167ed02d2e1fe253a36931",
+    "hashSource": "Exact Git blobs from the checkpoint; local byte comparison is recorded per file."
+  },
+  "scope": [
+    "Atlas query, filters, reset, history, language and application permalinks",
+    "Main router listener and propagation to language/section/share context",
+    "Accessible mobile record content",
+    "Active-view heading semantics without DOM-node replacement",
+    "Standalone/native Atlas card heading semantics",
+    "DOM-state and browser acceptance harnesses; preservation of prior assertions"
+  ],
+  "findings": [
+    {
+      "id": "URL-01",
+      "status": "PASS",
+      "files": [
+        "assets/aps-atlas.js",
+        "assets/app.js"
+      ],
+      "finding": "Embedded Atlas uses aps_q/aps_type/aps_role/aps_region, preserving the Explorer q/type/other filters. setQuery begins with the current query and does not discard these Atlas keys."
+    },
+    {
+      "id": "URL-02",
+      "status": "PASS",
+      "files": [
+        "assets/aps-atlas.js"
+      ],
+      "finding": "State updates preserve history.state and the existing hash. Editing releases the explicit application ID; reset records an explicitly empty query, distinguished from an absent query so the legacy Explorer q does not reappear after reload."
+    },
+    {
+      "id": "URL-03",
+      "status": "PASS",
+      "files": [
+        "assets/aps-atlas.js",
+        "assets/app.js"
+      ],
+      "finding": "The new event refreshes language and section links after the URL update. Main-site and standalone language navigation retain query/hash. Existing application-ID permalink destinations remain unchanged and open the requested details."
+    },
+    {
+      "id": "URL-04",
+      "status": "PASS",
+      "files": [
+        "assets/aps-atlas.js"
+      ],
+      "finding": "Popstate restores the Atlas controls from URL parameters; invalid filter values fall back to existing all options. Pagination preserves open details; reset explicitly clears the preserved-open set."
+    },
+    {
+      "id": "AX-01",
+      "status": "PASS",
+      "files": [
+        "assets/app.js",
+        "scripts/experience_browser_qa.cjs"
+      ],
+      "finding": "Mobile record buttons retain the visible record facts as their accessible name; the localized action is retained through title. The browser harness checks actual computed AX name and description, keyboard activation and focus restoration."
+    },
+    {
+      "id": "AX-02",
+      "status": "PASS",
+      "files": [
+        "assets/reader-first.js",
+        "assets/style.css",
+        "scripts/experience_browser_qa.cjs"
+      ],
+      "finding": "Only the current routed title receives aria-level=1; its predecessor loses the override on a view change and Home retains the native hero H1. Nodes are not replaced. Existing CSS hides the hero outside overview. Test navigation links were confirmed unique and consistent with the router focus target."
+    },
+    {
+      "id": "AX-03",
+      "status": "PASS",
+      "files": [
+        "assets/aps-atlas.js",
+        "assets/aps-atlas.css",
+        "assets/style.css",
+        "scripts/audit_aps_application_atlas.js"
+      ],
+      "finding": "Atlas card titles become native H3 headings standalone and H4 headings embedded, while IDs, labels and permalinks remain stable. margin:0 prevents heading default margins from changing the intended card spacing. Browser checks validate the DOM tags and computed AX level on the first card, both initially and after pagination."
+    },
+    {
+      "id": "QA-01",
+      "status": "PASS",
+      "files": [
+        "scripts/atlas_state_qa.cjs",
+        "scripts/audit_aps_application_atlas.js",
+        "scripts/experience_browser_qa.cjs"
+      ],
+      "finding": "Existing corpus, viewport, filter, link, runtime-error and axe checks are retained. Added browser state checks require exact application IDs after reload/language changes, reset continuity and open-details preservation. Assertions propagate failure; the experience harness retains errors and requires all eight scenarios and eight axe scans."
+    }
+  ],
+  "blockingFindings": [],
+  "verificationAlreadyPerformed": {
+    "codeReview": "Side-by-side diff review against dee7b777, including router/language helper code and the final heading assertions.",
+    "domStateRun": {
+      "command": "env -u CTD_ATLAS_STATE_QA node scripts/atlas_state_qa.cjs",
+      "result": "ATLAS_STATE_PASS",
+      "surfaces": 8,
+      "checkFamiliesPerSurface": 9,
+      "languages": [
+        "it",
+        "en",
+        "de",
+        "fr"
+      ],
+      "surfacesPerLanguage": [
+        "standalone",
+        "embedded"
+      ],
+      "families": [
+        "legacyQuery",
+        "independentFilters",
+        "sharedReload",
+        "emptyReset",
+        "expandedPagination",
+        "popstate",
+        "languageChange",
+        "directLink",
+        "invalidFilters"
+      ],
+      "timing": "Executed during the interaction review before the final heading-only additions. Those additions and their browser assertions were subsequently reviewed; this run is not represented as final checkpoint browser acceptance.",
+      "reportWrittenInsideProductRepo": false
+    },
+    "finalHashCapture": "All eight recorded files were read from the exact source checkpoint and compared with the local copies; no tests were rerun while saving this report."
+  },
+  "standardsReference": {
+    "url": "https://www.w3.org/TR/html-aria/",
+    "section": "h1 to h6 element conformance table",
+    "use": "Checked native heading role and permitted ARIA attributes while reviewing the active-view aria-level change. The final browser suite separately checks computed AX levels."
+  },
+  "files": {
+    "assets/app.js": {
+      "sha256": "8e656d24a89829d704a7667ed5669a0060b548c182a335e29940a94e3ff7bea6",
+      "bytes": 131879,
+      "gitBlobSha1": "061e47d93c95f3dc18f8416b2f4e652de1a540a2",
+      "localBytesMatchCheckpoint": true
+    },
+    "assets/aps-atlas.js": {
+      "sha256": "d40e8374e43b425398dc5385bdd8cc131c1f0046d2a930699f31978639036c1e",
+      "bytes": 8956,
+      "gitBlobSha1": "f57df4b7d397bde8e3604744003051b4c0b42d61",
+      "localBytesMatchCheckpoint": true
+    },
+    "assets/reader-first.js": {
+      "sha256": "526c85d71fdf31663a085ca4eaf1141459088631ad790c7e467011d031245678",
+      "bytes": 4428,
+      "gitBlobSha1": "18e60547741f73359d570d65e6a0f50d6bb360e9",
+      "localBytesMatchCheckpoint": true
+    },
+    "assets/aps-atlas.css": {
+      "sha256": "fd2b432095bef1f8d9cb40f32865989c280b1e788986a654d36eb980b890093a",
+      "bytes": 14067,
+      "gitBlobSha1": "9c4e8f42ba5bb064ae597157edf9c0913449018d",
+      "localBytesMatchCheckpoint": true
+    },
+    "assets/style.css": {
+      "sha256": "400264731447c1a0c5ee315b21903d0fcbf8662b9bb069a658a3bebe16651b9e",
+      "bytes": 136886,
+      "gitBlobSha1": "f5c429b87b2576868fbed80d6034af7cb363f40f",
+      "localBytesMatchCheckpoint": true
+    },
+    "scripts/atlas_state_qa.cjs": {
+      "sha256": "bbef18beb446be9ed3ca20313ee09d03b8336c8a70bb48067962936b11245379",
+      "bytes": 6917,
+      "gitBlobSha1": "36ce5ec133b283bfa685feb21687074831607e06",
+      "localBytesMatchCheckpoint": true
+    },
+    "scripts/audit_aps_application_atlas.js": {
+      "sha256": "9de889a2b97464877eb2478d350aab43d586be68a9f9d60288c759a58930cc74",
+      "bytes": 13034,
+      "gitBlobSha1": "2249e430f79694131bf3c77126df100543ab8893",
+      "localBytesMatchCheckpoint": true
+    },
+    "scripts/experience_browser_qa.cjs": {
+      "sha256": "3b421718352f885c57209bf79a5dd1e06b240ee0b812c553bbf9d61455c15a28",
+      "bytes": 10614,
+      "gitBlobSha1": "743197377221e5c6cc11bb9bfe33208f45cc4f3f",
+      "localBytesMatchCheckpoint": true
+    }
+  },
+  "limitations": [
+    "No local Chromium execution was performed by this reviewer.",
+    "The successful 0.7.98 browser run does not validate the 0.7.99 changes.",
+    "The final assembled 0.7.99 commit must pass its own exact review, A/B and full browser checks before main promotion.",
+    "A DOM-state fixture does not certify browser history behavior, assistive technology support, accessibility compliance or human comprehension."
+  ],
+  "mutationRecord": {
+    "productFilesChangedByReviewer": false,
+    "remoteWritesPerformed": false,
+    "newTestsRunDuringReportPersistence": false
+  }
+}
