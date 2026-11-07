@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
-  "version": "0.7.99",
+  "version": "0.7.100",
   "native": [
     {
       "file": "en/index.html",

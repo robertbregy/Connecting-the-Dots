@@ -706,3 +706,13 @@ body[data-active-tab]:not([data-active-tab="overview"]) .hero{display:none}
 .resourceGroup{margin-top:28px}.resourceGroup>h3{margin-bottom:8px}.resourceMetadata{display:block;color:var(--muted);font-size:12px;line-height:1.55}
 .auditTableWrap:focus-visible,.auditAnalytics summary:focus-visible,.historicalEconomy>summary:focus-visible,.crossRoundDisclosure>summary:focus-visible,.editorialDetails>summary:focus-visible{outline:2px solid var(--accent-text);outline-offset:4px}
 @media(max-width:800px){.auditTwoColumns{grid-template-columns:1fr;gap:20px}.auditDataTable th,.auditDataTable td{padding:9px 7px;font-size:12px}.luganoChapter>h2{font-size:1.2rem}}
+
+/* Preserve usable reading space at high zoom or in short viewports.
+   The html qualifier wins over the later audience.css mobile rule. */
+@media (max-height: 500px) {
+  html .iaPrimaryNav { position: static; }
+}
+/* Keep long translated labels intact instead of splitting words. */
+@media (max-width: 360px) {
+  .apsNativePanel .apsMetrics { grid-template-columns: minmax(0, 1fr); }
+}

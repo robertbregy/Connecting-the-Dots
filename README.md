@@ -1,10 +1,16 @@
-# Connecting the Dots — v0.7.99
+# Connecting the Dots — v0.7.100
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
 Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
+
+**v0.7.100 - 7 November 2026**
+
+Keyboard focus remains visible in short viewports; the Atlas skip link appears above the header; embedded Atlas metrics use one column on narrow screens. Scientific data and earlier archives remain unchanged.
+
+## Previous experience audit
 
 **v0.7.99 · 7 November 2026**
 

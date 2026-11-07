@@ -1,0 +1,446 @@
+{
+  "schemaVersion": 1,
+  "version": "0.7.100",
+  "baseCommit": "fbbbecf7d9f03d65e7e3026afcc083a353f196f0",
+  "assemblyRecipeCommit": "3d15ee5fa431f3c6de41f7d86e205ce9e7f95448",
+  "sourceScope": "Three exact CSS additions and technical publication metadata only; editorial rewording deferred.",
+  "priorQA": [
+    42353464063,
+    42354145162
+  ],
+  "humanParticipants": 0,
+  "priorAssemblyAttempt": {
+    "run": 42371226113,
+    "result": "Failed before commit: generic git whitespace check flagged two unchanged authored Markdown hard breaks on version-only lines. Product and static checks passed; no output was committed or deployed."
+  },
+  "cssAdditions": {
+    "assets/style.css": {
+      "bytes": 386,
+      "sha256": "4f544c6aa9d74518237628425746025e0cd7a07f88f22d1ee573a391f7b197b7"
+    },
+    "assets/aps-atlas.css": {
+      "bytes": 105,
+      "sha256": "47e2498ee2933ee45b8d88768c86a40796be889047090ba486ecb4d259223c98"
+    }
+  },
+  "changedExistingPaths": [
+    {
+      "path": "CHANGELOG.md",
+      "before": "ac0d89e9c43e728b138d4464afce2196cecc9ed60b761c1939c13ae2cf59583c",
+      "after": "c033bc8887afe21330ca45aca832034795ae72e5de43ee900e175f0561079772"
+    },
+    {
+      "path": "README.md",
+      "before": "1535a73886c64ef72b13db81825bbe486ee727ce66d639b2567cd59b8b91c749",
+      "after": "286cf0537fa1eaa2123e35d7890f16af00de8cacdbd301baa38cfe344bbe90d0"
+    },
+    {
+      "path": "applications/de/index.html",
+      "before": "5a91b091ab90aacbc2d303de1ae36b2a12f43607f32e3ac45ef6902b05cfbce4",
+      "after": "ac656a2b9ef1d2563bca81b13d0ec541dd366faf2b8881eac0ddaf6fed2b23b4"
+    },
+    {
+      "path": "applications/en/index.html",
+      "before": "56e1234a80bb330a7a3a1caab01eabeb0240f4c138fbc28fb79742eeff506769",
+      "after": "1d0ad06d1c3617402a5cef4b4015a5654f3c44f6cf001f7157e216b53a3e77ea"
+    },
+    {
+      "path": "applications/fr/index.html",
+      "before": "f29f9e34dd4c6d20675a742363c630bb749ab5504ff6bf5e43bc7e4a9514bde0",
+      "after": "8a47732e308d276a910b97e5d05947320c523022fcec5c96f067ca83813e2f6c"
+    },
+    {
+      "path": "applications/it/index.html",
+      "before": "16f0ff2f71f9adebc6d9a6566031a3ff2c2b616ac8d2cce4f5b94d62afd41dca",
+      "after": "a723fb7c5d5b531a5936841814cd3a621bec433e98ac51b3bfee27779989c311"
+    },
+    {
+      "path": "assets/aps-atlas.css",
+      "before": "fd2b432095bef1f8d9cb40f32865989c280b1e788986a654d36eb980b890093a",
+      "after": "cce035c149c279c97f173e18a55e225ac99dbb5008d6853c359aa923e7d65a39"
+    },
+    {
+      "path": "assets/style.css",
+      "before": "400264731447c1a0c5ee315b21903d0fcbf8662b9bb069a658a3bebe16651b9e",
+      "after": "6ba055f890bab5669c2461b1ddbe4b299530c9b4028d9a3c4068f21e8f35666e"
+    },
+    {
+      "path": "behind-the-round/de/background-screening/index.html",
+      "before": "1d62d31ec4fa4a0ca2561042885d867600400f45967f45d242aec2c8e92efd50",
+      "after": "7fcc95d0cad97056fe550e21694e59a60038c6dee1d24b928f79debabf5eccb0"
+    },
+    {
+      "path": "behind-the-round/de/index.html",
+      "before": "4761c5b8c7364d6603bf1a656bf6749ffb8811891ad46a8d7af0709d707f7008",
+      "after": "3ae329b3ed77c53c0e3b0b6f70fa2fa6dcbee5c426bb18c6518a1cf2d3cda60b"
+    },
+    {
+      "path": "behind-the-round/de/objectors-eoi/index.html",
+      "before": "63b1b21d9d61e5ee7ee6b7ce04c731001d63e0bd504275502a51426aff065522",
+      "after": "ea9acead318cdfc8e554702e9774859fff7013e3fb9f189c2b4f60163d359892"
+    },
+    {
+      "path": "behind-the-round/de/replacement-strings/index.html",
+      "before": "2d3ae1fb255949354b36db618b53ac11d3662c5bc26b9eef7037fd3da5cf0c82",
+      "after": "2afd6160f4ba5b68f9ed78fa699c5fbb1f900be6aba099465a707f234626ad30"
+    },
+    {
+      "path": "behind-the-round/de/sanctions-and-dns/index.html",
+      "before": "8c6461e275879866148bc7c5e39fa8af0edb7a96f90247681e521b19139f32d2",
+      "after": "8b411a105331300274a820792b62c86762c320b8cc31625010c5c1954eec6789"
+    },
+    {
+      "path": "behind-the-round/de/wdo-identity/index.html",
+      "before": "3bb8734fbf994f1d83eab24ded87df6e83be69ff9284adbb1bc30617a3f168ad",
+      "after": "194a07bf88a70b970a3b5c033a410c4d85673675335d3704fb47308da0400d83"
+    },
+    {
+      "path": "behind-the-round/de/who-controls-internet-access/index.html",
+      "before": "afce48c041d0375ab83f8365e38960f6f8d6466207694e01cf043a7da82359da",
+      "after": "27f664bdede8856dbf03b0e5e2c4d1a39ee0f7aa7e4afe206b1bdefad749f0b1"
+    },
+    {
+      "path": "behind-the-round/en/background-screening/index.html",
+      "before": "faf572158c04e2591e1394cfa0d9c31c94d7577d63285f0fd2322e451eeb1904",
+      "after": "625c09fdebab861adfb9e14932ddd9054f209e95e332043f5759e8a589c0988f"
+    },
+    {
+      "path": "behind-the-round/en/index.html",
+      "before": "c9451411b13e17efffb42680affbc58b8fb11ba1d8de7f28c1caf353fbfb269a",
+      "after": "f20ad05bd51331aea5331751b895af0bf41e5bdebf36057f797dbc5c12ad9fa7"
+    },
+    {
+      "path": "behind-the-round/en/objectors-eoi/index.html",
+      "before": "cb2d48329adc5fad54a5a86098ce9059191555fa9ce07ce2a4685899d74d26eb",
+      "after": "17b94af87e7862389f8c8eb2d22cc732b5421fc7ace7950918fbad3333bdbb60"
+    },
+    {
+      "path": "behind-the-round/en/replacement-strings/index.html",
+      "before": "5fbac86b6cc7678325d4e2ad163733125f4233e2238257676b9ef74f95c2c579",
+      "after": "44ee4edc74cc75ae4434612c70247842cc87be0c4ce66380d7f0fcd41f44b45a"
+    },
+    {
+      "path": "behind-the-round/en/sanctions-and-dns/index.html",
+      "before": "3c840d97d2026525d4b9ae9682aed56831e6b89867b88def9661d5213f3e64ac",
+      "after": "cf3d5afeedf349545e0aa80f2fb9ab660361056b67684404ebf9519ff9c21649"
+    },
+    {
+      "path": "behind-the-round/en/wdo-identity/index.html",
+      "before": "2914f725fbc8ce993bfbd83f022381549c93f9e34fd18892831ce603b0e4d431",
+      "after": "4a64b29f75c830ce8507cff74c03b86d295e5bf5456b653b5ab1d8f2277d1ccf"
+    },
+    {
+      "path": "behind-the-round/en/who-controls-internet-access/index.html",
+      "before": "a1a1166db11f8e4c3b5e16ef895956b98b373b44cd8b0e239ed298825502e676",
+      "after": "3affc06cf46a012c94c53fc2c1b4e9e9f14ee25e5f64a93cbac10310a02b15d0"
+    },
+    {
+      "path": "behind-the-round/fr/background-screening/index.html",
+      "before": "a5ab461d3f30721cb57bca4a18db93f5d91b8daa52f3de68bdc3fd20b2cdcbe9",
+      "after": "09c6cdb459803dc29cd11fa34fafaf86fb61ac1524be9055ec95a2f309511a36"
+    },
+    {
+      "path": "behind-the-round/fr/index.html",
+      "before": "a02bca92e21ebb37b559f36ba4bd93182fd22a0f7cf46a36f9b9a9005f6b720b",
+      "after": "33cb8985d3493804c7234ad9b2cceec8b797a33455d1ae1bd41a9eb3d6e58b46"
+    },
+    {
+      "path": "behind-the-round/fr/objectors-eoi/index.html",
+      "before": "5058aa2d9921cd13305a5f72627e611d167ad21471bea6ab993dd1584588d4ca",
+      "after": "6094c0374064e49f4b264f7dcfa6bc0854c4e25fc38104b45d8dd72f18852905"
+    },
+    {
+      "path": "behind-the-round/fr/replacement-strings/index.html",
+      "before": "a48456faeb3c991bcf821db38d4998129a5c0d9dfb2195e0781fd6a8c622e5fd",
+      "after": "24ebd863cc4b9f67f0b20522e2eaa5d6f188acacef6b13c697b35d3b1fd63232"
+    },
+    {
+      "path": "behind-the-round/fr/sanctions-and-dns/index.html",
+      "before": "950b42304111e7b9315109892747df326ab9d4428bbab9b993530886db6ac8a3",
+      "after": "fcb1ba57418a3f84cf961e613c2527345bbaa7ddaffd6bc6a6e802e4a0d26d50"
+    },
+    {
+      "path": "behind-the-round/fr/wdo-identity/index.html",
+      "before": "b9612b30c1a2b790f3d5ea5eb60952c08f231ae13c48d3c2b50d838b7861af49",
+      "after": "ff8c3d16829b419e3cb4cf9a78cf5d27a8b1cf952a7d8ebad1a07097f356e31c"
+    },
+    {
+      "path": "behind-the-round/fr/who-controls-internet-access/index.html",
+      "before": "051f09dedecf12ef96a2dcb0abee4aa46e8dd3f0143a2fddbe70773f57b87fc5",
+      "after": "aff5e6c8fbfb34a1f4bd6d76aa0f8ee269595cbc6a71e78092bdaeed16cba741"
+    },
+    {
+      "path": "behind-the-round/it/background-screening/index.html",
+      "before": "58b0cd2d213e092ca74e39a19d7dc9e0e776760e90a5250913f79bd0d5899235",
+      "after": "9a869aaa02e9a16d860216e051c2652ab44ff03ae7e0bb867532aa28ab820c52"
+    },
+    {
+      "path": "behind-the-round/it/index.html",
+      "before": "bb9521cc72aa4aecff375dd0ce6b55af60fb5450deeee7450700a32e79939e6c",
+      "after": "006794222e0d0498190f57e11a61106e95e6868d4dbe77f1375c1215f666851a"
+    },
+    {
+      "path": "behind-the-round/it/objectors-eoi/index.html",
+      "before": "0b87cf87ed3e69084d6f2364a40d0df22bd7c56fbb14f75f820f3abd5e30136f",
+      "after": "7d1cef795821ae3f6a5753edd6ac7d4179fac0f681712d404e582daad8afd044"
+    },
+    {
+      "path": "behind-the-round/it/replacement-strings/index.html",
+      "before": "ec1e38e445a3dcc8e2a259f6082ab612aff4b5e8eed979e51b83e30e4494326d",
+      "after": "1a4f1e18b9a451e2232a31d966aa061bf7b1f128ae3dc2d021e3488f2638187a"
+    },
+    {
+      "path": "behind-the-round/it/sanctions-and-dns/index.html",
+      "before": "61581f2013aae447cd26f5bef65a11d60e3b2782a8449e6a03595d605f6e298b",
+      "after": "c6736b71195daad6b40d9608984a822b4bade4c353e64a3987903b3a7934eef9"
+    },
+    {
+      "path": "behind-the-round/it/wdo-identity/index.html",
+      "before": "b60b986d252a7cfa299ee0fcf4761f967fa63816de314646c369517cefb7b592",
+      "after": "af78ce6d4701ae7837f02e8c1bf0a3b5e806bf96851d3d66cbc555db0ab6afb4"
+    },
+    {
+      "path": "behind-the-round/it/who-controls-internet-access/index.html",
+      "before": "145161fd0f4f9d905fc1b16f3704549e22dfb95ad1ad7dc9ac7145419a7588cd",
+      "after": "034d3f666054b0ad9da73225ce0b1f1bf59a6efbdccf78491970f4a385edff54"
+    },
+    {
+      "path": "data/data_bundle.js",
+      "before": "ce2e9ef23df3b15f06f60d9b596e7afdcf63d3b4c3d6e00a6b2060aeaf13d63b",
+      "after": "a84d7614d54f344507a5c4ae2c866b1a9fb51fb420a379036c9834cf7b4bf23b"
+    },
+    {
+      "path": "data/explorer_profiles_0.js",
+      "before": "92053486708d9ef01672f48b0d7d0d237bd9547f0c8616025c657dab72936ffd",
+      "after": "6b912cd72a42ae78fdbf5591d28afa511ec1bb74955fc13a2624b6d4b6bc3342"
+    },
+    {
+      "path": "data/explorer_profiles_1.js",
+      "before": "a88786a45fdbc64b45d2a7696334132c4a43877eff806596e991c23711aa3c0b",
+      "after": "4ff5fa568cb711bccf8c66544f03d3ae46a7955ed62240c28e507377e0f988df"
+    },
+    {
+      "path": "data/explorer_profiles_2.js",
+      "before": "3b950de4c70d64a536dfcf48fdf75c8bffc714234702e1facc7452562f936f96",
+      "after": "5f25d20041df3a3ee4d26411a4e11159a9bfb4a05c976b7775b1a690a02a555f"
+    },
+    {
+      "path": "data/explorer_profiles_3.js",
+      "before": "b0ca929aed0a99d076fc227ecdbdd04eadfe3d55c1388e065cc5cd3ce7d4c8d7",
+      "after": "4227d8e2ae1dd14609e9fc54ca87045f57d342e95043f71691e9f958a0410d85"
+    },
+    {
+      "path": "data/explorer_profiles_4.js",
+      "before": "cb08c2721bc167637838546e56d53278226a64f1d24ca4aefa545da9bae90804",
+      "after": "96156d8210770e3fc9cf4531e834cc5d0a3b1af4dd8705bb74d719b66fb84fcd"
+    },
+    {
+      "path": "data/explorer_profiles_5.js",
+      "before": "e90d1bad21f2a21469ec2ed9c9c3690998da60e9009407de9a9b0058e8409a51",
+      "after": "cee057bfde592e6c8e7b31786a701b5a91b9a335c75f33c2cae4537728e242c3"
+    },
+    {
+      "path": "data/explorer_profiles_6.js",
+      "before": "ca0caa66bcc8199f454c18fa3f2e1a4e2fda2b30854b8beef92f7b1ca255e44d",
+      "after": "08f094eb0d13b2f12fdc4d3b58e0c8009b137d46b473e3fc1b35881850fca6b9"
+    },
+    {
+      "path": "data/explorer_profiles_7.js",
+      "before": "f10a3e2721759e4d732acc487916604c0bd70db264f518372ce5a22aa9057820",
+      "after": "a06d1891b8c82fa7e7a08bf62076ce61a675b6787d0a19c9d8398e64a278e4d5"
+    },
+    {
+      "path": "data/frozen_technical_packages.json",
+      "before": "f0f1e8bc5593b9049976c34634a6d31939b38e2009f50cd558cc26c49be864fc",
+      "after": "5663844f8af63a793adabb792b244b2ac02bf2f19699754519e1d30af1d7ba42"
+    },
+    {
+      "path": "data/i18n_bundle.js",
+      "before": "b25ce7de1e1a02b089e7e583f8e2d5aff2b1b9b3fc55ed27cb8355b7c74606f5",
+      "after": "60cec86d9c909d4ad158d9f33298f24df6d5bca4fc63a641644837bb748b613b"
+    },
+    {
+      "path": "data/i18n_de.js",
+      "before": "374a72824d46c9c252342342a633eeea63ee55a5c09c93a501ee17c82fdff078",
+      "after": "7628a06a7d5cd496601ed775d1aced4d535231b7e64290956986a3a3441d5fef"
+    },
+    {
+      "path": "data/i18n_en.js",
+      "before": "92d9dade76f0175069a5d05db42fb492dd4bbc5d9d003e67f76ee544afe7d487",
+      "after": "8fabd1e7331d990371063f768347344d2d05eb8f560b30be0fbb358f6031a100"
+    },
+    {
+      "path": "data/i18n_fr.js",
+      "before": "643b2bced5c950d8def4b59956059bb4fcf92eefb6518e4e247b653574706c5c",
+      "after": "ffcbb45e649006b6fe769a16165dfbe8fe1b0db82b286729f07a50ecde239e56"
+    },
+    {
+      "path": "data/i18n_it.js",
+      "before": "2bd1e91b5fb361f364c5a327ee31b320c6f2840d29d548038dd232f7d907e2df",
+      "after": "749caf8da4721e1aa80d79448eca700abe6bf1e9892f3e4c46dbe069ee6d9d12"
+    },
+    {
+      "path": "data/manifest.json",
+      "before": "3e994e48899e91c04a6c81b4e2a59a6472814005d551269d77f0db88e7235525",
+      "after": "2dccd47966bdbb2012cc1673ac960edcfba5b505750a5f041d95e43cc4811eac"
+    },
+    {
+      "path": "data/publication.js",
+      "before": "d57b064173e700804e2196468eeec1e049add10c382d9d345ee725f760a8f8cf",
+      "after": "8511174b17f08e1e13f458cb281936da74926bc3ce03bb5375f7b40d7582f1a4"
+    },
+    {
+      "path": "data/release_history.json",
+      "before": "10c53d3688e500e4b81b47b3e0d38073adc3d2cbb96f3381b07371fbd54fa17f",
+      "after": "a02c112a8bf8d5c1c200a63245047b77974daf262f5d757f7362ebd4fca3b1c5"
+    },
+    {
+      "path": "data/site_bundle.js",
+      "before": "a5b32aad864b97b0e8cde71e6d6256754f3d913614922089191a3ffb1d8d9680",
+      "after": "63ddf505e424c05d8d8cc07d6def260fc3ed6d4f4efc51ac3fcc3576f17b7d9e"
+    },
+    {
+      "path": "data/translations.json",
+      "before": "2cf9c1cf81a76380f12563793f74aebef884bec28efc1d9d9ea8ede58a0845f5",
+      "after": "7633c10ad255db4fff5c0b32b165b4ee67def63a5c089e29450cd2fecbba5803"
+    },
+    {
+      "path": "de/index.html",
+      "before": "4b4f870129b92ba89104b5ad754c2e30c339af8f92fd20b81366396d13719367",
+      "after": "97305a380c409b25bb14306f02040dc14eeb80f9deb3337d5d8a2cf32cb7c405"
+    },
+    {
+      "path": "docs/reader-first-structure.json",
+      "before": "cce0fec279d38c64954361e4729c06cab240d6aea77853d8c4a7a1497d256772",
+      "after": "ffd827215f10bff7852ffb8706e8921e42d5cc3a11ac8f8c53867b9ef7728cf1"
+    },
+    {
+      "path": "en/index.html",
+      "before": "4c0f6e6e1ca0861c63d85c893b723765a31e23a3d5206604650d44d186d30c9d",
+      "after": "29f3c123490598f5b053a539fbbde3e58aaa8dcd26c662bc09f888047a738c3e"
+    },
+    {
+      "path": "explorer/index.html",
+      "before": "9748f08e4eaa6d786df65e3258ecfb143d643474e2c5af83c221c4923cbe0361",
+      "after": "aa98460bf6372c985f00aaa45cc47f3265cd7f34cd7161d2f97e2d1a51db1544"
+    },
+    {
+      "path": "fr/index.html",
+      "before": "cc9cb6e12ae55d05f728b42499da62891b93fa4bafd3de933d30069be926bfd4",
+      "after": "aa4890e44a9cbd61495c98b80c7399d7d1eac310392ec6c8ff31cd79f053745d"
+    },
+    {
+      "path": "index.html",
+      "before": "3c9734bd31fe6ed5f347ed493010857f7611fa23ca6a8b0bc1c6412e9e3f413e",
+      "after": "967f57736d707e60a073f9b17b0f8dfb7b738d4da038c16a10ddc11dfdad136d"
+    },
+    {
+      "path": "inside-the-round/de/index.html",
+      "before": "b456b0d919d520be1f7276140f51c77a797118821ae18e2e6ba71128ade23489",
+      "after": "1970a4248d11c5670ee2c94d7369194b612c02fb735f42fabb9d22e5a2dfbc4b"
+    },
+    {
+      "path": "inside-the-round/en/index.html",
+      "before": "1c2b06a8c894a7022916a2aced4a289424259bc8ccd486480dcbd7da761e96ef",
+      "after": "a334ecd1d8a1f095259c7d2a8126bbfdae6427c3ec4afc2677555c1debc410d5"
+    },
+    {
+      "path": "inside-the-round/fr/index.html",
+      "before": "900ac656bfbfcd59a9dce043eb45664ee670f64cac6f35f1866d0620294abcfb",
+      "after": "26156f32f9b530d4cf23c994dfe773f0c7b0ef4a0f2f28051c61a91dda55ea2d"
+    },
+    {
+      "path": "inside-the-round/it/index.html",
+      "before": "858d1997d1eef75beaff30a938f3228d982e806b8d1b3e402d622e353e51bf44",
+      "after": "03f8afc33a6b460e0d73388a10d29e9f3d2f8d231dde54c2aa28c93dd27eec08"
+    },
+    {
+      "path": "it/index.html",
+      "before": "0842df739c8674597f81a7338f513a9c18d2ac008fd20ca807d384f88f2a5219",
+      "after": "632ccb8f35aeb637973735bff482eee6727415e82c8865d027b6b33d58340020"
+    },
+    {
+      "path": "package-lock.json",
+      "before": "6f5f9e5f4f8a034304771db380d37d0aff1357f2bfb1f5d209c87a3d8b10984c",
+      "after": "3f4b6c219d480bf788fa06130f7880d07d27ee70292d6fd525b4ffd45dda502b"
+    },
+    {
+      "path": "package.json",
+      "before": "c9c29c422b0e11c64ad2c333a44206538bb0c83414d6cc6343ba50d0c1af896b",
+      "after": "9d88b234aa522e87f97c0cb4b08155404d8b38f53b4a7165af22c0d07bb81424"
+    },
+    {
+      "path": "publication.json",
+      "before": "f118a99aa66c619cfe7485c34748527dd5780021b55ae4f727aa967252a2fb85",
+      "after": "b2a64633afe77adbec2421e284ddabb96c8f4fd231be1807c47ecc6c209c3459"
+    },
+    {
+      "path": "research/README.md",
+      "before": "470f128b6178737c35f90da40343e5e6ace977dae86f93e025c31f585a661e07",
+      "after": "5eb952c98f5935daec93403f9cbd15507be8d3b2841edd7f378234a0698fc73d"
+    },
+    {
+      "path": "research/connecting-the-dots-working-paper-v1.html",
+      "before": "5819b38c0e549f4bb10fda60591e2e1ed857eed414fc7c6300736003b9d80f1e",
+      "after": "c08ea64f8c6c61a06c9d1c3ace2751607e696e6a0c610dd67144a5ca355e37af"
+    },
+    {
+      "path": "research/connecting-the-dots-working-paper-v1.md",
+      "before": "762357e07ef9e6286c5313791f40693837f695e9e9be6a7afb31b4ff85e63611",
+      "after": "43fd652e6de906a6d674905c37ff6f55e869a8557fb6255b1028578a4e424421"
+    },
+    {
+      "path": "research/index.html",
+      "before": "33acab31970c39a02497f2d2993d9c2d160800d0a40305869bee2df1fed3666a",
+      "after": "10d2beb0bc5edc55e00619858f86c59fdfec7f38d43edb839e1d384287d1adbd"
+    },
+    {
+      "path": "research/reader-study/de/index.html",
+      "before": "2a6e2887d88bfe4e05755da272fe7efaa95c9105d33b60885782553fffcf742d",
+      "after": "8f853faff3007a5bf6d859cbba4afab9a4fc43360f8c2f3625f3675fe4cc983a"
+    },
+    {
+      "path": "research/reader-study/en/index.html",
+      "before": "a9d015d71fb04808fd50f6772a660a210ade951b95928de3d35f72a57dd0eba4",
+      "after": "d1b751386ececb6a78bdf5b61ae3dba5772a25145cedebe25c98bac23441a791"
+    },
+    {
+      "path": "research/reader-study/fr/index.html",
+      "before": "1b1a3c3768048fc536b013302d5d90baff40a0f96e3fe2c4a95c2143eb91341f",
+      "after": "40d1e80866c31a70151b48f1c91865345fa1f42cebef0819d459ccb6c4861915"
+    },
+    {
+      "path": "research/reader-study/it/index.html",
+      "before": "8bd513198ab31a48a42dfcb42d8f93cdc8a4bf79523770dc1d34b12572b30dc6",
+      "after": "63dbdcb6ae83a1d3f7b4202b46da2eea043a0f75278ef22b6e092618acd19404"
+    },
+    {
+      "path": "research/research_release_manifest.json",
+      "before": "4fa9d895447245b59208f116d4800475b60520c1b660e193f709c0b1f8036341",
+      "after": "b67de68381bf78dcf3bdb7807c58326a3eda2e6e3217f0fae5eff2f6c18d94b8"
+    },
+    {
+      "path": "src/index.web.html",
+      "before": "3f7d561d291bed7cec43261e821ee63115c7f8aff40c3448a0cf2005f3997527",
+      "after": "99d534e093fa1fad41c00875b7009ce1206b9b2b2e5398e1a3cf22982e2c889d"
+    }
+  ],
+  "preservation": {
+    "allHistoricalDownloadsIdentical": true,
+    "allCSVFilesIdentical": true,
+    "csvFiles": 67,
+    "scientificJSONIdentical": true,
+    "originalValidatorsIdentical": true,
+    "existingTranslationKeysIdentical": true,
+    "canonicalSectionsUnchanged": true,
+    "researchReleaseAndPaperRevisionUnchanged": true,
+    "metadataMarkdownExactVersionOnly": [
+      "research/README.md",
+      "research/connecting-the-dots-working-paper-v1.md"
+    ],
+    "twoCompleteBuildsIdentical": true,
+    "comparedFiles": 567
+  },
+  "currentPackageSHA256": "f2ba4ddb120bc6e44023eeed243e7b081fe6628186c8d1ade894851ae30791de",
+  "acceptance": "Source whitelist and repeated-build checks executed. Full branch browser, A/B, deployment and live-byte acceptance are separate required gates; no deployment or conformance claim is made here."
+}

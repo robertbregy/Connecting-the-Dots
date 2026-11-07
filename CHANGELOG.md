@@ -1,3 +1,10 @@
+# v0.7.100 - 7 November 2026
+
+- Keep keyboard focus visible by releasing the sticky primary navigation in short viewports.
+- Show the focused Atlas skip link above its sticky header.
+- Preserve complete metric labels with one column in the embedded Atlas at widths up to 360 CSS pixels.
+- Add permanent focus/reflow regression coverage; retain all research and previous technical archives.
+
 # v0.7.99 — 7 November 2026
 
 - Preserve Atlas searches and filters in shared URLs, reloads, language changes and browser history; preserve open source details when loading more results.

@@ -2580,7 +2580,8 @@
     "explorerUniverseNoteOne": "{total} name displayed: historical/technical catalogue and applications, deduplicated. This is not the number of delegated TLDs. Exports follow the selected filters.",
     "explorerExportNoteOne": "CSV · {count} name · all filtered results, not only the displayed rows",
     "release0798": "Technical audit: more reliable publication checks, current citation metadata, localized accessibility controls, lighter HTML and complete archive protection. Scientific evidence and archived releases are preserved.",
-    "release0799": "Accessible mobile results, earlier search, shareable Atlas filters and repaired official-source links. Scientific data and archives remain unchanged."
+    "release0799": "Accessible mobile results, earlier search, shareable Atlas filters and repaired official-source links. Scientific data and archives remain unchanged.",
+    "release07100": "Visible focus, accessible skip link and readable mobile metrics. Data unchanged."
   },
   "it": {
     "brand": "Brand",
@@ -5163,7 +5164,8 @@
     "explorerUniverseNoteOne": "{total} nome visualizzato: catalogo storico/tecnico e candidature, deduplicati. Non è il totale dei TLD delegati. L’esportazione rispetta i filtri selezionati.",
     "explorerExportNoteOne": "CSV · {count} nome · tutti i risultati del filtro, non solo quelli mostrati",
     "release0798": "Audit tecnico: controlli di pubblicazione più affidabili, citazioni aggiornate, comandi accessibili nelle quattro lingue, HTML più leggero e protezione completa degli archivi. Evidenze scientifiche e release archiviate preservate.",
-    "release0799": "Schede mobili accessibili, ricerca più immediata, filtri dell’atlante condivisibili e collegamenti alle fonti corretti. Dati e archivi scientifici invariati."
+    "release0799": "Schede mobili accessibili, ricerca più immediata, filtri dell’atlante condivisibili e collegamenti alle fonti corretti. Dati e archivi scientifici invariati.",
+    "release07100": "Focus visibile, salto al contenuto e riquadri mobili leggibili. Dati invariati."
   },
   "de": {
     "brand": "Marke",
@@ -7746,7 +7748,8 @@
     "explorerUniverseNoteOne": "{total} angezeigter Name: historischer/technischer Katalog und Bewerbungen, ohne doppelte Namen. Dies ist nicht die Zahl delegierter TLDs. Der Export berücksichtigt die ausgewählten Filter.",
     "explorerExportNoteOne": "CSV · {count} Name · alle gefilterten Ergebnisse, nicht nur die angezeigten Zeilen",
     "release0798": "Technisches Audit: zuverlässigere Veröffentlichungsprüfungen, aktuelle Zitiermetadaten, lokalisierte barrierefreie Bedienelemente, schlankeres HTML und vollständiger Archivschutz. Forschungsbelege und archivierte Versionen bleiben erhalten.",
-    "release0799": "Zugängliche mobile Ergebnisse, frühere Suche, teilbare Atlas-Filter und korrigierte Quellenlinks. Forschungsdaten und Archive bleiben unverändert."
+    "release0799": "Zugängliche mobile Ergebnisse, frühere Suche, teilbare Atlas-Filter und korrigierte Quellenlinks. Forschungsdaten und Archive bleiben unverändert.",
+    "release07100": "Sichtbarer Fokus, Sprunglink und lesbare mobile Kennzahlen. Daten unverändert."
   },
   "fr": {
     "brand": "Marque",
@@ -10329,6 +10332,7 @@
     "explorerUniverseNoteOne": "{total} nom affiché : catalogue historique/technique et candidatures, sans doublons. Ce n’est pas le total des TLD délégués. L’export respecte les filtres sélectionnés.",
     "explorerExportNoteOne": "CSV · {count} nom · tous les résultats filtrés, pas seulement les lignes affichées",
     "release0798": "Audit technique : contrôles de publication plus fiables, métadonnées de citation à jour, commandes accessibles dans les quatre langues, HTML allégé et protection complète des archives. Données scientifiques et versions archivées préservées.",
-    "release0799": "Résultats mobiles accessibles, recherche plus directe, filtres de l’atlas partageables et liens vers les sources corrigés. Données et archives scientifiques inchangées."
+    "release0799": "Résultats mobiles accessibles, recherche plus directe, filtres de l’atlas partageables et liens vers les sources corrigés. Données et archives scientifiques inchangées.",
+    "release07100": "Focus visible, lien d’évitement et indicateurs mobiles lisibles. Données inchangées."
   }
 }

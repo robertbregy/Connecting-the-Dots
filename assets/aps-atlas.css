@@ -105,3 +105,6 @@ html[data-theme="dark"] body:has(.apsHeader) .apsMoreWrap button{color:#0f0f10}
  body:has(.apsHeader) .apsHeaderRow{padding:12px 15px}
  body:has(.apsHeader) main.apsMain{padding:18px 14px 50px}
 }
+
+/* The keyboard skip link must appear above the sticky Atlas header. */
+.apsSkip:focus { z-index: 100; }
