@@ -5,19 +5,24 @@ const base='https://robertbregy.github.io/Connecting-the-Dots/',out='audit-reada
 const files=['assets/style.css','assets/aps-atlas.css'];
 const original=Object.fromEntries(files.map(p=>[p,fs.readFileSync(p,'utf8')]));
 const additions={'assets/style.css':fs.readFileSync('qa/style-accessibility-additions.css','utf8'),'assets/aps-atlas.css':fs.readFileSync('qa/atlas-accessibility-additions.css','utf8')};
-const report={productCommit:'fbbbecf7d9f03d65e7e3026afcc083a353f196f0',auditCommit:process.env.GITHUB_SHA,startedAt:new Date().toISOString(),humanParticipants:0,method:'Live pages with original CSS versus browser-only response overrides. Append the exact candidate rules to each original stylesheet at its original document position. Do not inject a last-in-document override or change server files.',decision:'Reject the earlier overflow-wrap:anywhere candidate despite passing bounds checks: screenshots showed fragmented German words. Use one column only for native metric cards at widths <=360 CSS pixels.',patches:additions,byteChecks:[],scenarios:[],focusPositionChecks:[],errors:[],limits:['Proposed CSS is not deployed.','Metrics checked at widths 320, 360 and 390; not all devices.','No human screen-reader or native zoom session.']};
+// Authored ASCII hyphens are ordinary wrap opportunities. Each component must still remain intact.
+const wordComponentPattern='[^\\s-]+';
+const report={productCommit:'fbbbecf7d9f03d65e7e3026afcc083a353f196f0',auditCommit:process.env.GITHUB_SHA,startedAt:new Date().toISOString(),humanParticipants:0,method:'Live pages with original CSS versus browser-only response overrides. Append the exact candidate rules to each original stylesheet at its original document position. Do not inject a last-in-document override or change server files.',decision:'Reject the earlier overflow-wrap:anywhere candidate despite passing bounds checks: screenshots showed fragmented German words. Use one column only for native metric cards at widths <=360 CSS pixels.',priorRun:'https://github.com/robertbregy/Connecting-the-Dots/actions/runs/42353886914',detectorCorrection:'The prior run passed all 48 bounds/text checks and 16 source-order checks but treated ordinary breaks at authored hyphens as arbitrary word splitting. Check every non-whitespace component between ASCII hyphens, including every part of a compound; do not exempt entire hyphenated words. Preserve the prior observations.',patches:additions,byteChecks:[],tokenChecks:[],scenarios:[],focusPositionChecks:[],errors:[],limits:['Proposed CSS is not deployed.','Metrics checked at widths 320, 360 and 390; not all devices.','No human screen-reader or native zoom session.']};
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 const save=()=>{report.finishedAt=new Date().toISOString();fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2)+'\n');};
 const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
-async function measure(page){return page.locator('.apsMetrics article').evaluateAll(cards=>cards.map(card=>{
+async function measure(page){return page.locator('.apsMetrics article').evaluateAll((cards,pattern)=>cards.map(card=>{
  const cr=card.getBoundingClientRect(),overflow=[],splitWords=[],walk=document.createTreeWalker(card,NodeFilter.SHOW_TEXT);let node;
  while((node=walk.nextNode())){if(!node.textContent.trim())continue;const range=document.createRange();range.selectNodeContents(node);
   for(const r of range.getClientRects())if(r.left<cr.left-1||r.right>cr.right+1||r.top<cr.top-1||r.bottom>cr.bottom+1)overflow.push({text:node.textContent,x:r.x,y:r.y,width:r.width,height:r.height});
-  for(const m of node.textContent.matchAll(/\S+/g)){const word=document.createRange();word.setStart(node,m.index);word.setEnd(node,m.index+m[0].length);const lines=[...word.getClientRects()].filter(r=>r.width>0&&r.height>0);if(new Set(lines.map(r=>Math.round(r.top))).size>1)splitWords.push(m[0]);}
+  for(const m of node.textContent.matchAll(new RegExp(pattern,'g'))){const word=document.createRange();word.setStart(node,m.index);word.setEnd(node,m.index+m[0].length);const lines=[...word.getClientRects()].filter(r=>r.width>0&&r.height>0);if(new Set(lines.map(r=>Math.round(r.top))).size>1)splitWords.push(m[0]);}
  }
  return{text:card.textContent,rect:{x:cr.x,y:cr.y,width:cr.width,height:cr.height},overflow,splitWords};
-}));}
+}),wordComponentPattern);}
 (async()=>{let browser;try{
+ for(const [text,expected] of [['Replacement-string',['Replacement','string']],['Identical-primary-string',['Identical','primary','string']],['(Basis-IDs)',['(Basis','IDs)']],['Unterschiedliche neue Primaerstrings',['Unterschiedliche','neue','Primaerstrings']]]){
+  const actual=[...text.matchAll(new RegExp(wordComponentPattern,'g'))].map(m=>({text:m[0],index:m.index}));assert.deepEqual(actual.map(m=>m.text),expected);for(const m of actual)assert.equal(text.slice(m.index,m.index+m.text.length),m.text);report.tokenChecks.push({text,components:actual,passed:true});
+ }
  for(const file of ['publication.json',...files,...['it','en','de','fr'].flatMap(l=>[l+'/index.html','applications/'+l+'/index.html'])]){
   const r=await fetch(base+file+'?metricreview=fbbbecf7',{signal:AbortSignal.timeout(30000)});assert.equal(r.status,200,file);const bytes=Buffer.from(await r.arrayBuffer());assert.equal(hash(bytes),hash(fs.readFileSync(file)),'Published bytes changed: '+file);report.byteChecks.push({file,sha256:hash(bytes),matches:true});
  }
