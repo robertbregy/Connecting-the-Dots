@@ -1,0 +1,35 @@
+name: UX follow-up - reflow, text spacing and keyboard
+on:
+  push:
+    branches: ['qa/ux-followup-20261107']
+    paths: ['qa/ux-followup-20261107.cjs', '.github/workflows/ux-followup-20261107.yml']
+permissions:
+  contents: read
+concurrency:
+  group: ctd-ux-followup-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  ux-followup:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - name: Install the existing controlled browser versions
+        run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Audit unchanged published product and retain findings
+        run: node qa/ux-followup-20261107.cjs
+      - name: Preserve reports and screenshots, including failures
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: ux-followup-${{ github.sha }}
+          path: audit-ux-followup/
+          if-no-files-found: error
