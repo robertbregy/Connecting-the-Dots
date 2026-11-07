@@ -38,6 +38,7 @@ SUMMARIES = {
     'de': 'Sichtbarer Fokus, Sprunglink und lesbare mobile Kennzahlen. Daten unver\u00e4ndert.',
     'fr': 'Focus visible, lien d\u2019\u00e9vitement et indicateurs mobiles lisibles. Donn\u00e9es inchang\u00e9es.',
 }
+METADATA_MARKDOWN = ['research/README.md', 'research/connecting-the-dots-working-paper-v1.md']
 
 def command(*args):
     return subprocess.check_output(args, text=True).strip()
@@ -94,7 +95,7 @@ frozen = load('data/frozen_technical_packages.json')
 assert old_pub['currentDataPackPath'] not in frozen['files']
 frozen['files'][old_pub['currentDataPackPath']] = sha(old_pub['currentDataPackPath'])
 write('data/frozen_technical_packages.json', frozen)
-for name in ['research/README.md', 'research/connecting-the-dots-working-paper-v1.md']:
+for name in METADATA_MARKDOWN:
     assert b'0.7.99' in original[name]
     Path(name).write_bytes(original[name].replace(b'0.7.99', b'0.7.100'))
 readme = original['README.md'].decode('utf-8')
@@ -169,11 +170,16 @@ first = {name: sha(name) for name in set(tracked) | new_paths}
 run('python3', 'build.py')
 assert all(sha(name) == value for name, value in first.items()), 'Second complete build is not deterministic'
 print('REPEATED_BUILD_IDENTICAL', len(first), flush=True)
+# These two version-only updates deliberately retain existing Markdown hard breaks.
+# Exact byte comparison is stricter than a generic whitespace check for these files.
+for name in METADATA_MARKDOWN:
+    assert Path(name).read_bytes() == original[name].replace(b'0.7.99', b'0.7.100'), 'Unexpected Markdown or whitespace change: ' + name
 # Snapshot the inspected whitelist before any exact fingerprint is accepted.
 evidence = {
     'schemaVersion': 1, 'version': VERSION, 'baseCommit': BASE, 'assemblyRecipeCommit': HEAD,
     'sourceScope': 'Three exact CSS additions and technical publication metadata only; editorial rewording deferred.',
     'priorQA': [42353464063, 42354145162], 'humanParticipants': 0,
+    'priorAssemblyAttempt': {'run': 42371226113, 'result': 'Failed before commit: generic git whitespace check flagged two unchanged authored Markdown hard breaks on version-only lines. Product and static checks passed; no output was committed or deployed.'},
     'cssAdditions': {name: {'bytes': len(text.encode()), 'sha256': digest(text.encode())} for name, text in [('assets/style.css', STYLE), ('assets/aps-atlas.css', ATLAS)]},
     'changedExistingPaths': [{'path': n, 'before': digest(original[n]), 'after': sha(n)} for n in changed],
     'preservation': {
@@ -183,6 +189,7 @@ evidence = {
         'scientificJSONIdentical': True, 'originalValidatorsIdentical': True,
         'existingTranslationKeysIdentical': True, 'canonicalSectionsUnchanged': True,
         'researchReleaseAndPaperRevisionUnchanged': True,
+        'metadataMarkdownExactVersionOnly': METADATA_MARKDOWN,
         'twoCompleteBuildsIdentical': True, 'comparedFiles': len(first),
     },
     'currentPackageSHA256': sha(new_pack),
@@ -220,7 +227,11 @@ run('git', 'config', 'user.name', 'github-actions[bot]')
 run('git', 'config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com')
 run('git', 'add', '--', *sorted(set(changed) | new_paths | {REVIEW, EVIDENCE}))
 assert '.github/' not in command('git', 'diff', '--cached', '--name-only'), 'Do not modify workflows through the build token'
-run('git', 'diff', '--cached', '--check')
+# Keep the full whitespace guard on every other file. The two exclusions above
+# must be byte-identical to the originals except for the literal version token.
+run('git', 'diff', '--cached', '--check', '--', '.', *[':(exclude)' + name for name in METADATA_MARKDOWN])
+for name in METADATA_MARKDOWN:
+    assert subprocess.check_output(['git', 'show', ':' + name]) == original[name].replace(b'0.7.99', b'0.7.100'), 'Staged Markdown drift: ' + name
 run('git', 'commit', '-m', 'Assemble reviewed v0.7.100 focus and reflow corrections [skip build]')
 run('git', 'push', 'origin', 'HEAD:refs/heads/' + BRANCH)
 candidate = command('git', 'rev-parse', 'HEAD')
