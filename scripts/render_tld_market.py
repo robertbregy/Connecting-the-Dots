@@ -7,7 +7,7 @@ from .render_tld_cultural_trajectory import h, number, link, after_intro, BASE
 
 TEXT = {
  'it': {
-  'title':'Quanto sono diffusi i TLD?', 'intro':'Due misure rispondono a due domande diverse: quali estensioni compaiono nei siti web e quali gTLD contengono più domini delegati. Cambiando vista puoi confrontarne l’origine.',
+  'title':'Due classifiche, due misure', 'intro':'Due misure rispondono a due domande diverse: quali estensioni compaiono nei siti web e quali gTLD contengono più domini delegati. Cambiando vista puoi confrontarne l’origine.',
   'web':'Presenza nei siti web', 'zones':'Domini nei gTLD', 'origin':'Origine', 'all':'Tutte le origini', 'search':'Cerca un TLD', 'tld':'TLD', 'rank':'Posizione', 'date':'Registrazione IANA',
   'webMetric':'Quota dei siti osservati', 'zoneMetric':'Domini nella zona DNS', 'count':'TLD nei primi 50', 'weight':'Domini nei primi 50', 'weightShare':'dei domini di questa top 50',
   'webScope':'W3Techs · 18 ottobre 2026. Siti con contenuti o funzioni rilevanti, inclusi i ccTLD. La fonte pubblica percentuali arrotondate: non permette di ricavare quanti siti esistano in assoluto. L’ordine segue la fonte; quote uguali non dimostrano un primato.',
@@ -24,7 +24,7 @@ TEXT = {
   'labels':{'legacy':'gTLD originari','2000':'Round 2000','2004':'Round 2004','2012':'Round 2012','cctld':'ccTLD · senza round ICANN'}
  },
  'en': {
-  'title':'How widespread are TLDs?', 'intro':'Two measures answer different questions: which extensions appear on websites, and which gTLDs contain the most delegated domains. Switch views to compare their origins.',
+  'title':'Two rankings, two measures', 'intro':'Two measures answer different questions: which extensions appear on websites, and which gTLDs contain the most delegated domains. Switch views to compare their origins.',
   'web':'Website presence', 'zones':'Domains in gTLDs', 'origin':'Origin', 'all':'All origins', 'search':'Find a TLD', 'tld':'TLD', 'rank':'Position', 'date':'IANA registration',
   'webMetric':'Share of surveyed websites', 'zoneMetric':'Domains in the DNS zone', 'count':'TLDs in the top 50', 'weight':'Domains in the top 50', 'weightShare':'of domains in this top 50',
   'webScope':'W3Techs · 18 October 2026. Websites with relevant content or functionality, including ccTLDs. The source publishes rounded percentages, which cannot establish absolute website totals. Source order is retained; equal shares do not establish a unique rank.',
@@ -41,7 +41,7 @@ TEXT = {
   'labels':{'legacy':'Original gTLDs','2000':'2000 round','2004':'2004 round','2012':'2012 round','cctld':'ccTLD · no ICANN round'}
  },
  'de': {
-  'title':'Wie verbreitet sind TLDs?', 'intro':'Zwei Kennzahlen beantworten verschiedene Fragen: Welche Endungen erscheinen auf Websites, und welche gTLDs enthalten die meisten delegierten Domains? Vergleiche ihre Herkunft in beiden Ansichten.',
+  'title':'Zwei Ranglisten, zwei Messgrössen', 'intro':'Zwei Kennzahlen beantworten verschiedene Fragen: Welche Endungen erscheinen auf Websites, und welche gTLDs enthalten die meisten delegierten Domains? Vergleiche ihre Herkunft in beiden Ansichten.',
   'web':'Präsenz auf Websites', 'zones':'Domains unter gTLDs', 'origin':'Herkunft', 'all':'Alle Ursprünge', 'search':'TLD suchen', 'tld':'TLD', 'rank':'Position', 'date':'IANA-Registrierung',
   'webMetric':'Anteil der untersuchten Websites', 'zoneMetric':'Domains in der DNS-Zone', 'count':'TLDs unter den ersten 50', 'weight':'Domains unter den ersten 50', 'weightShare':'der Domains dieser Top 50',
   'webScope':'W3Techs · 18. Oktober 2026. Websites mit relevanten Inhalten oder Funktionen, einschliesslich ccTLDs. Die Quelle veröffentlicht gerundete Prozentwerte, aus denen keine absolute Websitezahl ableitbar ist. Die Quellenreihenfolge bleibt erhalten; gleiche Anteile belegen keinen eindeutigen Rang.',
@@ -58,7 +58,7 @@ TEXT = {
   'labels':{'legacy':'Ursprüngliche gTLDs','2000':'Runde 2000','2004':'Runde 2004','2012':'Runde 2012','cctld':'ccTLD · keine ICANN-Runde'}
  },
  'fr': {
-  'title':'Quelle est la diffusion des TLD ?', 'intro':'Deux mesures répondent à deux questions : quelles extensions apparaissent sur les sites web et quels gTLD contiennent le plus de domaines délégués ? Comparez leurs origines en changeant de vue.',
+  'title':'Deux classements, deux mesures', 'intro':'Deux mesures répondent à deux questions : quelles extensions apparaissent sur les sites web et quels gTLD contiennent le plus de domaines délégués ? Comparez leurs origines en changeant de vue.',
   'web':'Présence sur les sites web', 'zones':'Domaines sous les gTLD', 'origin':'Origine', 'all':'Toutes les origines', 'search':'Chercher un TLD', 'tld':'TLD', 'rank':'Position', 'date':'Enregistrement IANA',
   'webMetric':'Part des sites observés', 'zoneMetric':'Domaines dans la zone DNS', 'count':'TLD parmi les 50 premiers', 'weight':'Domaines parmi les 50 premiers', 'weightShare':'des domaines de ce top 50',
   'webScope':'W3Techs · 18 octobre 2026. Sites au contenu ou aux fonctions pertinents, ccTLD compris. La source publie des pourcentages arrondis qui ne permettent pas de calculer un nombre absolu de sites. L’ordre de la source est conservé ; des parts égales ne prouvent pas un rang unique.',

@@ -9,7 +9,7 @@ const labels = {
     lugano: ['Stato e fonti', 'Perch\u00e9 .lugano', 'Governance', 'Usi proposti', 'Rischi e verifiche'],
     sources: ['Come leggere', 'Fonti e metodo', 'Limiti e criteri', 'Versioni e correzioni', 'Segnalare un errore'],
     brief: 'Il punto, in breve', shortcuts: 'Scegli da dove proseguire',
-    economicsBrief: 'Registrazioni, siti attivi e candidature non misurano la stessa cosa. Questo capitolo distingue modelli di ricavo, diffusione, casi concreti e aspettative: usa i sei passaggi per seguire il ragionamento oppure vai direttamente ai dati.',
+    economicsBrief: 'Registrazioni, siti attivi e candidature non misurano la stessa cosa. Per confrontare due cifre, controlla l’unità di misura, il periodo e la fonte.',
     economicsLinks: ['Capire i modelli', 'Leggere i dati', 'Analisi del round 2026'],
     sourcesBrief: 'Per verificare un\u2019affermazione, parti dalla fonte e dalla data, poi controlla che cosa misura. Metodo e limiti sono separati dalla cronologia delle revisioni; citazioni e dati riutilizzabili sono raggiungibili direttamente.',
     sourcesLinks: ['Come citare', 'Dati e download', 'Cronologia delle revisioni']
@@ -19,7 +19,7 @@ const labels = {
     lugano: ['Status and sources', 'Why .lugano', 'Governance', 'Proposed uses', 'Risks and checks'],
     sources: ['How to read', 'Sources and method', 'Limits and criteria', 'Versions and corrections', 'Report an error'],
     brief: 'The point, in brief', shortcuts: 'Choose where to continue',
-    economicsBrief: 'Registrations, active websites and applications measure different things. This chapter separates revenue models, reach, concrete cases and expectations: follow the six steps or go straight to the data.',
+    economicsBrief: 'Registrations, active websites and applications measure different things. Before comparing figures, check the unit, period and source.',
     economicsLinks: ['Understand the models', 'Read the data', '2026 round analysis'],
     sourcesBrief: 'To verify a claim, start with its source and date, then check what it measures. Methods and limitations are separate from the revision history; citation guidance and reusable data are directly accessible.',
     sourcesLinks: ['How to cite', 'Data and downloads', 'Revision history']
@@ -29,7 +29,7 @@ const labels = {
     lugano: ['Stand und Quellen', 'Warum .lugano', 'Governance', 'Vorgeschlagene Nutzung', 'Risiken und Pr\u00fcfung'],
     sources: ['Lesehinweise', 'Quellen und Methode', 'Grenzen und Kriterien', 'Versionen und Korrekturen', 'Fehler melden'],
     brief: 'Das Wichtigste in K\u00fcrze', shortcuts: 'Hier weiterlesen',
-    economicsBrief: 'Registrierungen, aktive Websites und Bewerbungen messen unterschiedliche Dinge. Dieses Kapitel trennt Erl\u00f6smodelle, Verbreitung, konkrete F\u00e4lle und Erwartungen: Folgen Sie den sechs Schritten oder gehen Sie direkt zu den Daten.',
+    economicsBrief: 'Registrierungen, aktive Websites und Bewerbungen messen unterschiedliche Dinge. Prüfe vor einem Zahlenvergleich die Einheit, den Zeitraum und die Quelle.',
     economicsLinks: ['Modelle verstehen', 'Daten einordnen', 'Analyse der Runde 2026'],
     sourcesBrief: 'Um eine Aussage zu pr\u00fcfen, beginnen Sie mit Quelle und Datum und kl\u00e4ren Sie, was gemessen wird. Methode und Grenzen sind vom \u00c4nderungsverlauf getrennt; Zitierhinweise und wiederverwendbare Daten sind direkt erreichbar.',
     sourcesLinks: ['Richtig zitieren', 'Daten und Downloads', '\u00c4nderungsverlauf']
@@ -39,7 +39,7 @@ const labels = {
     lugano: ['Statut et sources', 'Pourquoi .lugano', 'Gouvernance', 'Usages propos\u00e9s', 'Risques et v\u00e9rifications'],
     sources: ['Comment lire', 'Sources et m\u00e9thode', 'Limites et crit\u00e8res', 'Versions et corrections', 'Signaler une erreur'],
     brief: 'L\u2019essentiel en bref', shortcuts: 'Choisir la suite de la lecture',
-    economicsBrief: 'Enregistrements, sites actifs et candidatures ne mesurent pas la m\u00eame chose. Ce chapitre distingue mod\u00e8les de revenus, diffusion, cas concrets et attentes : suivez les six \u00e9tapes ou acc\u00e9dez directement aux donn\u00e9es.',
+    economicsBrief: 'Enregistrements, sites actifs et candidatures ne mesurent pas la m\u00eame chose. Avant de comparer deux chiffres, vérifiez l’unité, la période et la source.',
     economicsLinks: ['Comprendre les mod\u00e8les', 'Lire les donn\u00e9es', 'Analyse du cycle 2026'],
     sourcesBrief: 'Pour v\u00e9rifier une affirmation, partez de sa source et de sa date, puis examinez ce qui est mesur\u00e9. M\u00e9thode et limites sont s\u00e9par\u00e9es de l\u2019historique des r\u00e9visions ; les indications de citation et les donn\u00e9es r\u00e9utilisables sont directement accessibles.',
     sourcesLinks: ['Comment citer', 'Donn\u00e9es et t\u00e9l\u00e9chargements', 'Historique des r\u00e9visions']
