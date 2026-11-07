@@ -83,7 +83,8 @@
     "E101": "Complete the deferred Home/Economics editorial work: twenty string replacements in four languages distinguish existing pathway introductions, economic framing and measurement guidance, and the inner two-rankings heading. Preserve navigation, section order, all facts, measurement caveats, sources and data; no new layout or research claim.",
     "V101": "Publish a separate deterministic technical package and update current technical version references only. Freeze v0.7.100 without changing any prior package, RR1/RR2 identity, paper revision or APS source.",
     "D101": "Document which historical audit findings are already integrated, close the observed editorial repetitions, and retain unperformed reader and assistive-technology studies as limitations.",
-    "CI101_PR": "Prepare main branch protection by adding read-only pull_request triggers targeting main without path filters to the existing browser, exact archival-parity and focus workflows. Preserve all push triggers, job names, test commands, permissions and thresholds. Record the desired administrative policy separately from its actual activation; retain all published site, package and research bytes."
+    "CI101_PR": "Prepare main branch protection by adding read-only pull_request triggers targeting main without path filters to the existing browser, exact archival-parity and focus workflows. Preserve all push triggers, job names, test commands, permissions and thresholds. Record the desired administrative policy separately from its actual activation; retain all published site, package and research bytes.",
+    "DOC101_FINAL": "Final acceptance audit: align operational guides with the verified active main ruleset and checked feature-to-PR publication; retain historical checkpoints explicitly as history; select the current reader-task package from publication metadata; prepare a separate exact-RR1/RR2 tag ruleset proposal without claiming activation. Preserve all source, generated publication, runtime, data, archives, existing validation rules and historical review baselines."
   },
   "sourceInvariants": {
     "sections": [
@@ -3057,11 +3058,13 @@
     },
     "docs/READER_TASKS.md": {
       "baselineSHA256": "24822d8f6337879e66537dda7c62617c332207c28cdfa2f40bf0344b95d48701",
-      "sha256": "f261c0f99b106c157aaeda7f1513e36c4974ab570a644444af63af1c60ace586",
+      "sha256": "a992d45eb46c44c84e533f34f853985623d176d80895f313db6fc6f80b0f6537",
       "rationaleIds": [
         "A19",
-        "H01"
-      ]
+        "H01",
+        "DOC101_FINAL"
+      ],
+      "priorFinalAuditSHA256": "f261c0f99b106c157aaeda7f1513e36c4974ab570a644444af63af1c60ace586"
     },
     "package-lock.json": {
       "baselineSHA256": "3580e7fa5485bd55e532e7bc5644dfa0e48c1bf9769fab8108722ee1dd5ae708",
@@ -3315,11 +3318,13 @@
     },
     "docs/REPOSITORY_GOVERNANCE.md": {
       "baselineSHA256": "a0a21b166158beae4135a308fb36251bf462e14019f362483145052031502657",
-      "sha256": "82d7f2050a49a938e37471a326e6422cb55585a405b1f92b239e754ad2f57bfe",
+      "sha256": "61e6a1562f8080a6dab000b0bcdcfcb0ad0d8f77c5bffff743cfc8cd051749ba",
       "rationaleIds": [
         "A19",
-        "H01"
-      ]
+        "H01",
+        "DOC101_FINAL"
+      ],
+      "priorFinalAuditSHA256": "82d7f2050a49a938e37471a326e6422cb55585a405b1f92b239e754ad2f57bfe"
     },
     "scripts/validate_delivery.js": {
       "baselineSHA256": "48f055a05acc6b942b68381309a2bf4ca23fadf84d775fe785006517ff35ec5a",
@@ -4138,11 +4143,13 @@
     },
     "DEPLOY.md": {
       "baselineSHA256": "3645c893366701e8a606dff8c7a549c61b0c6b1aaadf78f396110ff5304d63aa",
-      "sha256": "c6c20de5ba413637df82ac228b3bfbd4893f871f4d06069662a7b79c91327b87",
+      "sha256": "9529c16ff02257227b1799a40124a7498cd89e659a6ab514f3b039f36a27dee3",
       "rationaleIds": [
         "CI98",
-        "DOC98"
-      ]
+        "DOC98",
+        "DOC101_FINAL"
+      ],
+      "priorFinalAuditSHA256": "c6c20de5ba413637df82ac228b3bfbd4893f871f4d06069662a7b79c91327b87"
     },
     "assets/aps-atlas.js": {
       "baselineSHA256": "4af2e1c909feef2530c6175b2293e7be13380f0dfc4766bd8f4043ce335e028c",
@@ -4966,10 +4973,12 @@
     "docs/PUBLISHING_SAFETY.md": {
       "baselineSHA256": "a94128371771cb013efa8503e54a88748a8943d77bbbb4a7858acca8d94a2a54",
       "rationaleIds": [
-        "CI101_PR"
+        "CI101_PR",
+        "DOC101_FINAL"
       ],
-      "sha256": "63d4c000a71c06dcc8f16dd490d8851d3f682502c1503f6840e2db6c17081ee3",
-      "priorCIReadinessSHA256": "a94128371771cb013efa8503e54a88748a8943d77bbbb4a7858acca8d94a2a54"
+      "sha256": "baf7f681138f7dd174ace696b9b1c9727aef2b9feaf85bd712e4acfa479b47aa",
+      "priorCIReadinessSHA256": "a94128371771cb013efa8503e54a88748a8943d77bbbb4a7858acca8d94a2a54",
+      "priorFinalAuditSHA256": "63d4c000a71c06dcc8f16dd490d8851d3f682502c1503f6840e2db6c17081ee3"
     },
     "docs/main-protection-policy.json": {
       "baselineSHA256": null,
@@ -4978,6 +4987,14 @@
       ],
       "sha256": "cc79547d170b0c75d73225080b8fa3404c4e9128de6a55847c2c716ff2a8cff1",
       "priorCIReadinessSHA256": null
+    },
+    "docs/research-tags-ruleset.json": {
+      "baselineSHA256": null,
+      "rationaleIds": [
+        "DOC101_FINAL"
+      ],
+      "priorFinalAuditSHA256": null,
+      "sha256": "49cdf13f2f00146605ea07aae908e0b0fe5d92e794fc9da9e48a9210a8cee4aa"
     }
   },
   "sourceSections": {
@@ -5261,7 +5278,7 @@
     "sourceCommit": "f78294f27ad6833081ee31ce65f84501dfdac41c",
     "humanParticipants": 0,
     "reviewType": "Independent AI-assisted source review and exact generated-output comparison; browser and deployment gates are recorded separately.",
-    "reviewedPaths": 309,
+    "reviewedPaths": 310,
     "currentArchiveSHA256": "b1ac13c1b60b09b7fcc15455c10709460cbf94527c86184574adefc92ca86289",
     "evidence": [
       "docs/audits/2026-11-07/editorial-completion-v0.7.101.json",
@@ -5526,5 +5543,27 @@
       "workflowSemanticDiff": "Only pull_request targeting main added; all previous event filters, jobs, permissions and commands preserved.",
       "livePRChecks": "Required before administrative enforcement."
     }
+  },
+  "finalAcceptanceDocumentationReview": {
+    "reviewedOn": "2026-11-08",
+    "status": "reviewed",
+    "baselineCommit": "d9ea370d7639cc55af9b08a1783b187a58e8964d",
+    "priorPublishedReviewSHA256": "ab0c28d3a25a7fb349b83e4c0dbe0d50e748047e9a9d8d16a6956cef28305881",
+    "rationaleId": "DOC101_FINAL",
+    "changedPaths": [
+      "DEPLOY.md",
+      "docs/REPOSITORY_GOVERNANCE.md",
+      "docs/PUBLISHING_SAFETY.md",
+      "docs/READER_TASKS.md",
+      "docs/research-tags-ruleset.json"
+    ],
+    "scope": "Operational documentation and a desired tag-ruleset import only. No publication rebuild, version change or scientific-data change.",
+    "activeMainRulesetId": 26778298,
+    "mainProtectionVerified": true,
+    "researchTagProtection": "Not active at audit readback; the JSON is an import proposal requiring a separate administrator action and readback.",
+    "publicSiteVersion": "0.7.101",
+    "publicSiteBytesChanged": false,
+    "requiredPRChecks": "All seven existing checks remain mandatory; no bypass or threshold change.",
+    "reviewType": "AI-assisted source and exact-file review. This is not an administrator activation, PR-check completion or deployment attestation."
   }
 }

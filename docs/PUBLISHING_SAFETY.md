@@ -6,15 +6,15 @@ The repository is a **living technical site** with **immutable scientific releas
 
 1. Prepare changes on `feat/**`. GitHub Actions rebuilds all derived assets, runs integrity and multilingual checks and commits generated outputs **to that feature branch**.
 2. Open a pull request to `main` from the completed generated commit through the maintainer or GitHub connector. The read-only browser, archival-parity and focus workflows run on every PR to `main`, including documentation-only changes. Require all seven checks listed below, including 192 WCAG A/AA scans plus independent mobile/Explorer checks. Fix failures before promotion.
-3. Merge the verified pull request to `main`; make a `safety/**` rollback ref first. Use the repository's enabled merge-commit method. Do not amend or force-update research tags RR1/RR2.
-4. GitHub Pages must deploy the *exact promoted SHA*. Verify HTTP 200, live canonical/JSON-LD versions, and the post-publish `browser-qa` run.
+3. Merge the verified pull request to `main`; make a `safety/**` rollback ref first. Use the repository's enabled merge-commit method and include `[skip build]` in the merge commit message so protected `main` publishes the reviewed files without a generated follow-up write. Do not amend or force-update research tags RR1/RR2.
+4. GitHub Pages must deploy the *exact promoted SHA*. Require the actual deployment step and a live-byte report with `status: verified` and `verified: true` for that SHA. Verify HTTP 200 and live canonical/JSON-LD versions; inspect post-publish browser checks when triggered. The seven required PR checks remain mandatory for documentation-only PRs as well.
 5. Current technical ZIP must have matching manifest version, member bytes, SHA-256 sidecar and correct public link. Preserve historic ZIP v0.7.58.
 
 ## Required PR checks and branch protection
 
-The PR triggers prepare the repository for protection; workflow changes alone do not activate an administrative ruleset. The installed GitHub connector has no branch protection / ruleset write capability. The desired settings are recorded in [`main-protection-policy.json`](main-protection-policy.json). This file defines the intended configuration; GitHub is the source of truth for whether the matching rules are active. An authenticated repository administrator must configure:
+The seven PR checks are enforced by active ruleset [Protect main - reviewed publication](https://github.com/robertbregy/Connecting-the-Dots/rules/26778298), verified on 8 November 2026: `main.protected=true`, only `refs/heads/main` is targeted, and there are no bypass actors. Workflow changes alone do not activate or modify an administrative ruleset; the installed GitHub connector has no branch protection / ruleset write capability. [`main-protection-policy.json`](main-protection-policy.json) records the intended settings, while GitHub remains the source of truth. The following configuration is retained for administrator verification and maintenance:
 
-**GitHub repository > Settings > Rules > Rulesets > New branch ruleset**, target `main`, mark it active.
+Inspect **GitHub repository > Settings > Rules > Rulesets > Protect main - reviewed publication** (ruleset `26778298`). Create a new branch ruleset only when restoring this configuration where it does not already exist; target `main` and mark it active.
 
 - Target only `refs/heads/main`; leave the bypass list empty, including GitHub Actions.
 - Block force pushes and branch deletion. Require pull requests with **zero required approvals**, without code-owner or last-push approval requirements; a maintainer cannot approve their own PR.

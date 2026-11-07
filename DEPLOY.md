@@ -2,33 +2,35 @@
 
 ## Canonical workflow
 
-The GitHub repository is the canonical working master. Ordinary updates are made as Git commits to `main`. Every ordinary push to `main` or `feat/**`, including documentation-only changes, starts **Rebuild published site**. The action regenerates and validates the static publication and commits generated outputs with `[skip build]`. An ordinary main push waits for its successful rebuild before Pages publishes the committed state.
+The GitHub repository is the canonical working master. Prepare updates on `feat/**` and promote them through a pull request to protected `main`. Ordinary feature-branch pushes, including documentation-only changes, start **Rebuild published site**. The action regenerates and validates the static publication and commits generated outputs to that feature branch with `[skip build]`. Open the PR from the completed, reviewed generated commit; all seven required PR checks must pass before merging.
 
-The generated commit is either the unchanged source SHA or its direct child with the builder's exact commit message and identity. Pages also requires that SHA to remain the current main tip. Failed pushes with an unchanged remote tip, and failures to read that tip, fail the rebuild instead of reporting a concurrent update.
+Create a `safety/**` rollback ref before promotion, then use the enabled merge-commit method and include `[skip build]` in the **merge commit message**. Pages publishes that exact committed merge SHA after its release and review checks, provided it is still the current main tip. The main rebuild is intentionally skipped: GitHub Actions has no bypass and must not write generated follow-up commits to protected `main`. See [`docs/PUBLISHING_SAFETY.md`](docs/PUBLISHING_SAFETY.md) for the seven check names and [`docs/REPOSITORY_GOVERNANCE.md`](docs/REPOSITORY_GOVERNANCE.md) for the active ruleset.
 
-Recommended local sequence:
+For a locally generated and reviewed publication, prepare the feature branch as follows. Complete the applicable version, provenance and editorial-review updates before committing:
 
 ```bash
 git checkout main
 git pull --ff-only
+git checkout -b feat/publication-update
 python3 build.py
 python3 scripts/release_check.py
+node scripts/verify_ia_b2_parity.cjs
 git add -A
-git commit -m "Publish Connecting the Dots vX.Y.Z"
-git push origin main
+git commit -m "Prepare reviewed Connecting the Dots publication [skip build]"
+git push -u origin HEAD
 ```
 
-When ChatGPT is connected through the GitHub integration, the same principle applies: inspect current `main`, prepare and validate the source change, commit it, then verify the automated rebuild and GitHub Pages deployment.
+Open a pull request from this feature branch and wait for its required checks. The same sequence applies through the GitHub integration: inspect current `main`, prepare the source and generated changes on a feature branch, complete the PR checks, then merge with `[skip build]` and verify the actual Pages deployment. CI or documentation-only changes may retain the current publication version when its generated assets and data package are unchanged.
 
 ## Reviewed precompiled publications
 
-Use `[skip build]` in the commit message only when the committed publication has already been generated and reviewed. This is the explicit rebuild opt-out. A main push with that marker publishes its committed files directly; ordinary pushes wait for the successful rebuild handoff. Pages runs `python3 scripts/release_check.py` and `node scripts/verify_ia_b2_parity.cjs` before packaging. Those checks do not rebuild or alter the publication.
+Use `[skip build]` only when the committed publication has already been generated and reviewed. Keep that marker in the merge commit message as well as any precompiled feature commit. The resulting main push publishes its committed files directly. Pages runs `python3 scripts/release_check.py` and `node scripts/verify_ia_b2_parity.cjs` before packaging. Those checks do not rebuild or alter the publication.
 
-GitHub does not normally trigger another push workflow for a commit made with the workflow's `GITHUB_TOKEN`. The successful rebuild's `workflow_run` event therefore provides the deployment handoff for its generated commit.
+GitHub does not normally trigger another push workflow for a commit made with the workflow's `GITHUB_TOKEN`. Open the PR after generation, or inspect approval-required PR workflows when the bot updates an existing PR. A successful manual dispatch is not a substitute for an eligible required PR check. The retained rebuild-to-Pages handoff does not grant the bot permission to bypass main protection.
 
 ## Recovery and manual verification
 
-If a rebuild fails, resolve the reported failure and rerun **Rebuild published site**, or push a corrected source commit. A later documentation-only push receives its own rebuild, so an older superseded build does not leave its generated outputs stranded.
+If a feature rebuild fails, resolve the reported failure on that feature branch and rerun **Rebuild published site**, or push a corrected source commit there. A later ordinary feature push receives its own rebuild. A failed publication or a required rollback is repaired through another checked PR; do not push directly to `main` or enable a bot bypass.
 
 Use **pages build and deployment → Run workflow → main** to publish the already committed, validated main state without rebuilding. The current-SHA and release/review checks still apply. Use this fallback only when the committed publication is the intended output.
 
@@ -67,9 +69,9 @@ These commands write versioned ZIPs beside the repository. Continue to use Git f
 
 After each publish:
 
-1. confirm the **Rebuild published site** action completed successfully;
-2. confirm the GitHub Pages workflow completed successfully;
-3. verify the live footer/version and key research metadata;
+1. confirm the merged PR passed all seven required checks; any feature-branch **Rebuild published site** run used to generate its files must have succeeded, while the main rebuild is expected to be skipped for `[skip build]`;
+2. confirm the actual `Deploy the committed publication` step succeeded for the promoted SHA, not merely that its workflow is green;
+3. confirm **Verify actual GitHub Pages bytes after deployment** reports `status: verified`, `verified: true` and matching bytes for that same SHA, then check the live footer/version and key research metadata;
 4. run the release checker before any tag or research release;
 5. keep the working paper, sitemap, DOI metadata and research-release manifest synchronized.
 
