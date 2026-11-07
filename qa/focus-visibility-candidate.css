@@ -1,0 +1,5 @@
+/* Candidate only: injected into test pages, not loaded by the published site. */
+@media (max-height: 500px) {
+  .iaPrimaryNav { position: static; }
+}
+.apsSkip:focus { z-index: 100; }
