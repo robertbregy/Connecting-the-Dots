@@ -29,7 +29,7 @@ const labels = {
     lugano: ['Stand und Quellen', 'Warum .lugano', 'Governance', 'Vorgeschlagene Nutzung', 'Risiken und Pr\u00fcfung'],
     sources: ['Lesehinweise', 'Quellen und Methode', 'Grenzen und Kriterien', 'Versionen und Korrekturen', 'Fehler melden'],
     brief: 'Das Wichtigste in K\u00fcrze', shortcuts: 'Hier weiterlesen',
-    economicsBrief: 'Registrierungen, aktive Websites und Bewerbungen messen unterschiedliche Dinge. Prüfe vor einem Zahlenvergleich die Einheit, den Zeitraum und die Quelle.',
+    economicsBrief: 'Registrierungen, aktive Websites und Bewerbungen messen unterschiedliche Dinge. Prüfen Sie vor einem Zahlenvergleich die Einheit, den Zeitraum und die Quelle.',
     economicsLinks: ['Modelle verstehen', 'Daten einordnen', 'Analyse der Runde 2026'],
     sourcesBrief: 'Um eine Aussage zu pr\u00fcfen, beginnen Sie mit Quelle und Datum und kl\u00e4ren Sie, was gemessen wird. Methode und Grenzen sind vom \u00c4nderungsverlauf getrennt; Zitierhinweise und wiederverwendbare Daten sind direkt erreichbar.',
     sourcesLinks: ['Richtig zitieren', 'Daten und Downloads', '\u00c4nderungsverlauf']
