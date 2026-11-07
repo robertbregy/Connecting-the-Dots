@@ -4988,7 +4988,20 @@
       "docs/audits/2026-11-07/structure-search-order-proof.json",
       "docs/audits/2026-11-07/technical-candidate-0798-ci.json",
       "docs/audits/2026-11-07/temporal-label-review.json"
-    ]
+    ],
+    "remoteAssemblyEvidence": {
+      "run": "https://github.com/robertbregy/Connecting-the-Dots/actions/runs/42319075462",
+      "inputCommit": "b337c44bd113199472506cd5b45bd7a8c8cb5c4b",
+      "assembledCommit": "430c6a49138e7c00f32c3b623989e283c3807e6d",
+      "treeSHA": "8a478dc95e829918b1c4beeb81b3fda81b9f2aac",
+      "localRemoteTreeEqual": true,
+      "annotations": 0,
+      "repeatedBuild": "passed",
+      "exactSourceReview": "passed",
+      "atlasStateDOM": "8 surfaces x 9 scenarios passed",
+      "usabilityStatic": "5 pages passed, 0 errors",
+      "scope": "This record updates only the review document after assembly. Product sources, generated pages, data assets and archives retain the assembled bytes. A/B and browser acceptance on the resulting exact candidate remain mandatory before main."
+    }
   },
   "readerFirstEvidence": {
     "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
