@@ -1,10 +1,16 @@
-# Connecting the Dots — v0.7.102
+# Connecting the Dots — v0.7.103
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
 Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
+
+**v0.7.103 - 8 November 2026**
+
+A clearer editorial design across Home, Economics, the Atlas and standalone guides: stronger headings, lighter grouping, coherent light and dark themes, and more comfortable mobile navigation and reading. Scientific content, source links, established routes, research releases and historical technical packages remain preserved.
+
+## Previous attribution correction
 
 **v0.7.102 - 8 November 2026**
 

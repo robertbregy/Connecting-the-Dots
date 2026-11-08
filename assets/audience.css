@@ -1,25 +1,224 @@
-/* Editorial hierarchy: one readable entry, evidence always within reach. */
-.hero{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:22px 60px;padding-top:42px}.hero .siteTitle{font-size:clamp(42px,5.1vw,72px);line-height:1.02;max-width:760px;margin:16px 0 24px;letter-spacing:-.05em}.siteTitle>span{display:block}.siteTitle .audienceBrand{font-size:15px;letter-spacing:.02em;line-height:1.5;margin-bottom:16px;color:var(--muted);font-weight:600}.hero [data-i18n="heroBody"]{font-size:20px;line-height:1.55;max-width:680px}.hero .heroPlain{font-size:15px;line-height:1.6}.hero>.projectByline,.hero>.publicationState,.hero>.epistemicLegend{grid-column:1/-1;margin:0}.hero>.projectByline{padding-top:14px;border-top:1px solid var(--border)}.audienceDiscoveries{display:grid;align-content:center;gap:12px;min-width:0}.audienceDiscovery{display:grid;grid-template-columns:90px minmax(0,1fr) 20px;gap:16px;align-items:center;border:1px solid var(--border);border-radius:16px;padding:20px;color:var(--text);text-decoration:none;background:linear-gradient(120deg,var(--surface2),var(--surface))}.audienceDiscovery:hover{border-color:var(--accent-text);transform:translateY(-2px)}.discoveryName{font-size:46px;font-weight:760;color:var(--accent-text);letter-spacing:-.045em}.audienceDiscovery strong{display:block;font-size:17px;line-height:1.3;margin-bottom:7px}.audienceDiscovery span span{display:block;font-size:14px;line-height:1.5;color:var(--muted)}.iaHomeEntryIntro p{max-width:780px}.audienceSecondaryJourney{margin-top:18px}.audienceDetails{margin:14px 0;padding:12px 0;border-top:1px solid var(--border)}.audienceDetails>summary,.audienceMarketSummary>summary,.audienceMeasureDetails>summary{cursor:pointer;font-weight:650}.audienceDetails .applicationCorpusStatus{margin-top:14px}.audienceSearchScope{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:12px 0}.audienceSearchScope label{font-size:14px}.audienceSearchScope select{font:inherit;max-width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text)}.audienceSearchScope p{flex-basis:100%;margin:0;line-height:1.55}.audienceSearchGroup td{background:var(--surface2);font-size:13px;font-weight:700;letter-spacing:.03em}.audienceCardGroup{grid-column:1/-1;font-size:14px;margin:12px 0 0}.audienceEpochMap{margin:24px 0 30px}.audienceEpochMap>h3{font-size:clamp(25px,3vw,36px);line-height:1.15;max-width:760px}.audienceEpochMap>ol{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:0;counter-reset:epoch}.audienceEpochMap li{position:relative;min-width:0;padding:22px;border:1px solid var(--border);border-radius:14px;background:var(--surface2);counter-increment:epoch}.epochPeriod{font-size:13px;color:var(--muted)}.audienceEpochMap h4{font-size:22px;line-height:1.25;margin:10px 0}.epochNames{display:block;color:var(--accent-text);font-size:18px;min-height:32px}.audienceEpochMap li p{font-size:15px;line-height:1.6;margin:8px 0 18px}.audienceEpochMap a{font-size:14px}.audienceEssentialLimit{padding:14px 18px;border-left:3px solid var(--accent-text);font-size:15px;line-height:1.65}.tldStage{padding:22px!important;border:1px solid var(--border);border-radius:14px;margin:18px 0!important;background:var(--surface)}.tldStage h3{font-size:25px}.tldStage>p{max-width:900px}.audienceCiteGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.audienceCiteGrid article{min-width:0;padding:18px;background:var(--surface2);border:1px solid var(--border);border-radius:12px}.audienceCiteGrid h4{font-size:20px;margin:0 0 12px}.audienceCiteGrid strong{font-size:14px}.audienceCiteGrid a{overflow-wrap:anywhere}.audienceMeasureScope{max-width:900px;font-size:15px;line-height:1.6}.audienceMarketSummary,.audienceMeasureDetails{margin:18px 0;padding:12px 0;border-top:1px solid var(--border)}.marketResearch .marketFilters{display:grid;grid-template-columns:minmax(0,200px) minmax(0,240px);gap:12px;margin:14px 0}.marketFilters label{min-width:0}.marketFilters input,.marketFilters select{width:100%;min-width:0;max-width:100%}.marketResearch .marketTable{max-height:none!important}.marketResearch>h2{font-size:30px}#market-more{margin:12px 0}.audienceBrief{padding:18px;background:var(--surface2);border:1px solid var(--border);border-radius:12px;margin:16px 0}.audienceBrief h3{margin:0 0 8px}.audienceBrief p{line-height:1.65}.audienceTechnical>summary{cursor:pointer;font-weight:650;padding:14px 0}.audienceAtlasLink .apsAtlasBridge{margin-bottom:0}
-@media(max-width:900px){.hero{gap:24px}.audienceDiscovery{grid-template-columns:70px minmax(0,1fr) 16px;padding:16px;gap:12px}.discoveryName{font-size:38px}.audienceEpochMap>ol,.audienceCiteGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:680px){.iaPrimaryNav{position:sticky;top:var(--topbar-height);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:100%;backdrop-filter:none;margin-top:5px;padding:4px;gap:2px 4px}.iaPrimaryNav>a{white-space:normal;padding:6px 3px;font-size:11px;line-height:1.3;min-height:36px}.hero{display:grid;grid-template-columns:1fr;padding-top:26px;gap:20px}.hero .siteTitle{font-size:44px;line-height:1.06;margin:12px 0 18px}.hero [data-i18n="heroBody"]{font-size:18px;line-height:1.55}.hero .heroPlain{font-size:14px}.heroActions{gap:8px;margin-top:18px}.heroActions .control{min-height:44px}.audienceDiscoveries{display:grid;gap:9px}.audienceDiscovery{grid-template-columns:64px minmax(0,1fr) 16px;padding:15px}.discoveryName{font-size:34px}.audienceDiscovery strong{font-size:16px;margin-bottom:4px}.audienceDiscovery span span{font-size:13px}.hero>.projectByline{font-size:12px}.hero .epistemicLegend{font-size:12px}.audienceEpochMap>ol,.audienceCiteGrid{grid-template-columns:1fr}.audienceEpochMap li{padding:18px}.audienceEpochMap h4{margin:6px 0}.audienceEpochMap li p{margin:4px 0 10px}.audienceEpochMap li a{display:inline-block;padding:7px 0}.tldStage{padding:16px!important}.tldStage h3{font-size:22px}.internetGuide>.journeyAddress{display:none}.internetGuide .journeyNow{padding:12px;margin:12px 0}.internetGuide .journeyNowLabel{font-size:10px}.internetGuide .journeyNowFlow{font-size:14px}.internetGuide .journeyNow p{margin:4px 0 0}.internetGuide .journeyControls{margin:10px 0}.internetGuide>.sectionLead{font-size:16px;line-height:1.6}.journeyWorkarea{margin-top:0}.marketResearch .marketFilters{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.marketResearch .marketFilters label{font-size:12px;line-height:1.5}.marketResearch .marketFilters input,.marketResearch .marketFilters select{font-size:14px;min-height:44px}.marketResearch>h2{font-size:26px}.marketResearch>.sectionLead{font-size:16px;line-height:1.6}.audienceMeasureScope{font-size:14px}.marketResearch .marketTable tr{padding:12px;margin-bottom:8px}.marketResearch .marketTable td,.marketResearch .marketTable tbody th{padding:2px 0;font-size:15px}.marketResearch .marketTable caption{padding:4px 0}.marketResearch .marketTable td::before{font-size:12px}}
-#cultural-epoch-map,[id^="cultural-case-"],#research-citation-guide,#independent-review-status{scroll-margin-top:calc(var(--topbar-height) + 80px)}
-@media(max-width:680px){#cultural-epoch-map,[id^="cultural-case-"],#research-citation-guide,#independent-review-status{scroll-margin-top:calc(var(--topbar-height) + 96px)}}
-@media(prefers-reduced-motion:reduce){.audienceDiscovery:hover{transform:none}}
-/* A short optional path, with no timer, score or automatic data collection. */
-.quickGuide{margin:24px 0 30px;border:1px solid var(--border);border-radius:18px;background:var(--surface);overflow:hidden}.quickGuide>summary{cursor:pointer;padding:24px 28px;list-style-position:inside}.quickGuide>summary h2{display:inline;margin:0}.quickGuide>summary h2>span{display:block;margin-left:18px}.quickGuide .quickTitle{font-size:clamp(24px,3vw,34px);line-height:1.18;margin-top:9px;letter-spacing:-.025em}.quickPreview{font-size:16px;line-height:1.55;font-weight:400;color:var(--muted);margin-top:12px;max-width:780px}.quickOpen{font-size:15px;color:var(--accent-text);margin-top:14px}.quickBody{padding:0 28px 28px}.quickLead{max-width:840px;line-height:1.65}.quickSteps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.quickSteps>li{min-width:0;border:1px solid var(--border);border-radius:14px;padding:24px;background:var(--surface2)}.quickStepTop{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}.quickNumber{font-size:14px;font-weight:700;color:var(--muted)}.quickName{font-size:clamp(25px,3vw,38px);font-weight:750;color:var(--accent-text);letter-spacing:-.04em;overflow-wrap:anywhere}.quickSteps h3{font-size:23px;line-height:1.25;margin:16px 0 8px}.quickHook{font-size:17px;font-weight:650;margin:10px 0}.quickSteps p{line-height:1.65}.quickTakeaway{border-left:3px solid var(--accent-text);padding:8px 0 8px 14px;font-weight:600}.quickMore{display:inline-block;padding:7px 0;line-height:1.5}.quickSources{margin-top:14px;font-size:13px;color:var(--muted)}.quickSources summary,.quickRecall summary{cursor:pointer}.quickSources ul{padding-left:20px;line-height:1.7}.quickSources a{overflow-wrap:anywhere}.quickStatus{max-width:850px;line-height:1.6}.quickRecall{border-top:1px solid var(--border);margin-top:24px;padding-top:12px;line-height:1.7}.quickRecall h3,.quickNext h3{font-size:23px}.quickRecall li{margin:8px 0}.quickNext{margin-top:24px;padding-top:12px;border-top:1px solid var(--border)}.quickNext>div{display:flex;flex-wrap:wrap;gap:12px}.quickNext .control{min-height:44px;text-align:center;white-space:normal}.readerStudyStatus{border-left:3px solid var(--accent-text);padding:10px 16px;font-weight:650}#three-minute-guide,#reader-study-protocol,[id^="quick-step-"]{scroll-margin-top:calc(var(--topbar-height) + 96px)}
-@media(max-width:680px){.quickGuide{margin-top:16px}.quickGuide>summary{padding:20px 16px}.quickGuide .quickTitle{font-size:26px}.quickPreview{font-size:15px}.quickBody{padding:0 16px 20px}.quickLead{font-size:15px}.quickSteps{grid-template-columns:1fr;gap:14px}.quickSteps>li{padding:18px}.quickSteps h3{font-size:22px}.quickSteps p{font-size:15px}.quickSteps .quickHook{font-size:16px}.quickNext>div{display:grid}.quickSources{font-size:14px}}
-
-/* Economics: six native reading steps, with stable deep links. */
-.economicsReadingGuide{color:var(--muted);line-height:1.65;margin:14px 0}
-.economicsChapter{margin:30px 0;min-width:0}
-.economicsStageTitle{font-size:clamp(22px,3vw,28px);line-height:1.3;margin:0 0 10px;overflow-wrap:anywhere}
-.economicsStageLead{line-height:1.7;max-width:78ch;color:var(--muted);margin:0 0 18px}
-.economicsChapter .economicsSubheading{font-size:20px;line-height:1.4}
-.economicsChapter .economicGrid h4,.economicsChapter .economicModels h4{font-size:17px;line-height:1.5;margin:10px 0}
-.economicsSupporting{margin:18px 0;padding:16px;border:1px solid var(--border);border-radius:12px;min-width:0}
-.economicsSupporting>summary{font-weight:650;line-height:1.5;cursor:pointer}
-.economicsSupporting>.panel{margin:16px 0 0}
+/* A publication to explore: a clear entrance, connected stories, visible evidence. */
+.hero{display:block;padding:48px 0 30px}
+.hero>div:first-child{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:14px clamp(28px,5vw,72px);align-items:start}
+.hero>div:first-child>.eyebrow{grid-column:1;grid-row:1;color:var(--accent-text)}
+.hero .siteTitle{grid-column:1;grid-row:2;font-size:clamp(44px,5.3vw,74px);line-height:1.02;max-width:12ch;margin:0 0 8px;letter-spacing:-.055em;text-wrap:balance}
+.siteTitle>span{display:block}
+.siteTitle .audienceBrand{font-size:14px;letter-spacing:.025em;line-height:1.5;margin-bottom:18px;color:var(--muted);font-weight:600}
+.hero p[data-i18n="heroBody"]{grid-column:1;grid-row:3;font-size:clamp(18px,1.65vw,21px);line-height:1.6;color:var(--body);max-width:38rem;margin:0}
+.heroActions{grid-column:1;grid-row:4;gap:10px;margin-top:12px}
+.heroActions .control{min-height:46px;font-size:15px}
+.heroActions .heroPrimary{background:var(--accent-text);border-color:var(--accent-text);color:var(--surface);padding-inline:20px}
+.heroActions .heroPrimary:hover{background:var(--accent-text)}
+.heroActions .readerResearchCta{background:none;border-color:transparent;color:var(--muted);font-size:14px;padding-inline:0;min-height:38px;flex-basis:100%;justify-content:flex-start;text-decoration:underline;text-decoration-color:var(--border);text-underline-offset:4px}
+.heroActions .readerResearchCta:hover{color:var(--accent-text);text-decoration-color:currentColor}
+.hero .heroPlain,.hero .narrativeProjectDefinition{grid-row:5;border-top:1px solid var(--border);padding-top:20px}
+.hero .heroPlain{grid-column:1}
+.hero .narrativeProjectDefinition{grid-column:2}
+.hero>.projectByline,.hero>.publicationState,.hero>.epistemicLegend{margin:10px 0 0}
+.hero>.projectByline{font-size:13px;line-height:1.6;margin-top:26px}
+.hero>.publicationState{gap:8px 14px}
+.hero>.epistemicLegend{gap:7px 10px;line-height:1.6}
+.audienceDiscoveries{grid-column:2;grid-row:1/5;align-self:center;display:grid;min-width:0;padding-left:18px;border-left:1px solid var(--border)}
+.audienceDiscovery{position:relative;display:grid;grid-template-columns:112px minmax(0,1fr) 20px;gap:18px;align-items:center;min-width:0;border-bottom:1px solid var(--border);padding:26px 0;color:var(--text);text-decoration:none;transition:background .15s,border-color .15s}
+.audienceDiscovery:first-child{border-top:1px solid var(--border)}
+.audienceDiscovery::before{content:"";position:absolute;left:-23px;top:calc(50% - 5px);width:9px;height:9px;border-radius:50%;background:var(--accent-text);box-shadow:0 0 0 5px var(--bg)}
+.audienceDiscovery::after,.iaHubCard::before,.audienceSecondaryJourney .control::after{content:"";display:block;width:18px;height:18px;flex-shrink:0;background:var(--accent-text);mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 18 18 6M6 6h12v12' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.audienceDiscovery::after{align-self:start;margin-top:2px}
+.audienceDiscovery:hover{border-color:var(--accent-text);background:var(--accent-soft)}
+.audienceDiscovery:focus-visible{outline:2px solid var(--accent-text);outline-offset:5px}
+.discoveryName{font-size:54px;line-height:1;font-weight:760;color:var(--accent-text);letter-spacing:-.065em}
+.audienceDiscovery strong{display:block;font-size:18px;line-height:1.3;margin-bottom:8px;letter-spacing:-.02em}
+.audienceDiscovery span span{display:block;font-size:14px;line-height:1.6;color:var(--body)}
+/* Six paths read as an index, with one deliberate place for each destination. */
+.iaPrimaryNav{border:0;border-bottom:1px solid var(--border);border-radius:0;padding:7px 0;gap:6px}
+.iaPrimaryNav>a{min-height:48px;border-radius:8px}
+.iaHomeEntryIntro p{max-width:70ch}
+.iaHomeJumpList{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 30px;counter-reset:pathway}
+.iaHomeJumpList a{counter-increment:pathway;display:grid;grid-template-columns:24px minmax(0,1fr);gap:8px 12px;align-content:start;min-height:108px;padding:22px 0;border:0;border-top:1px solid var(--border);border-radius:0;background:none}
+.iaHomeJumpList a::before{content:"0" counter(pathway);grid-row:1/3;color:var(--accent-text);font-size:12px;font-weight:700;line-height:1.8}
+.iaHomeJumpList a span{font-size:18px;letter-spacing:-.025em}
+.iaHomeJumpList a small{font-size:11px;letter-spacing:.055em;line-height:1.55}
+.iaHomeJumpList a:hover,.iaHomeJumpList a:focus-visible{background:none;border-color:var(--accent-text)}
+.iaHomeJumpList a:hover span{color:var(--accent-text)}
+.audienceSecondaryJourney{margin:26px 0;border:0;border-top:1px solid var(--border);border-radius:0;padding:22px 0;background:none}
+.audienceSecondaryJourney .control{display:inline-flex;align-items:center}
+.audienceSecondaryJourney .control::after{margin-left:8px;transform:rotate(45deg)}
+.iaHubHead{margin-bottom:24px}
+.iaHubHead>p{color:var(--body);max-width:68ch;line-height:1.65}
+.iaHubContext{padding:0 0 0 18px;border:0;border-left:2px solid var(--accent-text);border-radius:0;background:none;max-width:78ch;margin-bottom:32px}
+.iaHubContext>p{font-size:14px;line-height:1.7}
+.iaHubGrid{gap:22px 32px}
+.iaHubCard{padding:24px 0;border:0;border-top:2px solid var(--border);border-radius:0;background:none;box-shadow:none}
+.iaHubCard::before{position:absolute;right:0;top:25px}
+.iaHubCard h3,#ia-stories .iaHubCard h4{font-size:23px;line-height:1.25;padding-right:28px;margin-bottom:13px;letter-spacing:-.03em}
+.iaHubCard p{font-size:16px;line-height:1.7;color:var(--body);max-width:60ch}
+#ia-explore .iaExploreGovernance{margin-top:36px;padding:32px 0 0;border:0;border-top:1px solid var(--border);border-radius:0;background:none}
+#ia-explore .iaExploreGovernanceHead p{font-size:16px;color:var(--body);line-height:1.7}
+/* Disclosure, search and source patterns keep their functional boundaries. */
+.audienceDetails,.audienceMarketSummary,.audienceMeasureDetails{margin:18px 0;padding:14px 0;border-top:1px solid var(--border)}
+.audienceDetails>summary,.audienceMarketSummary>summary,.audienceMeasureDetails>summary,.audienceTechnical>summary{cursor:pointer;font-weight:650;line-height:1.6}
+.audienceDetails .applicationCorpusStatus{margin-top:14px}
+.audienceSearchScope{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:12px 0}
+.audienceSearchScope label{font-size:14px}
+.audienceSearchScope select{font:inherit;max-width:100%;min-height:44px;padding:9px 12px;border:1px solid var(--control-border);border-radius:10px;background:var(--surface);color:var(--text)}
+.audienceSearchScope p{flex-basis:100%;margin:0;line-height:1.55}
+.audienceSearchGroup td{background:var(--surface2);font-size:13px;font-weight:700;letter-spacing:.03em}
+.audienceCardGroup{grid-column:1/-1;font-size:14px;margin:12px 0 0}
+.audienceEpochMap{margin:28px 0 36px}
+.audienceEpochMap>h3{font-size:clamp(26px,3vw,38px);line-height:1.15;max-width:26ch;letter-spacing:-.035em}
+.audienceEpochMap>ol{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 32px;padding:0}
+.audienceEpochMap li{position:relative;min-width:0;padding:22px 0;border-top:1px solid var(--border)}
+.audienceEpochMap li::before{content:"";position:absolute;top:-4px;left:0;width:7px;height:7px;border-radius:50%;background:var(--accent-text)}
+.epochPeriod{font-size:13px;color:var(--muted)}
+.audienceEpochMap h4{font-size:23px;line-height:1.25;margin:10px 0;letter-spacing:-.025em}
+.epochNames{display:block;color:var(--accent-text);font-size:20px;min-height:32px}
+.audienceEpochMap li p{font-size:16px;line-height:1.7;margin:8px 0 18px;color:var(--body)}
+.audienceEpochMap a{font-size:14px}
+.audienceEssentialLimit{padding:14px 18px;border-left:3px solid var(--accent-text);font-size:15px;line-height:1.7}
+.tldStage{padding:28px 0!important;border:0;border-top:1px solid var(--border);border-radius:0;margin:28px 0!important;background:none}
+.tldStage h3{font-size:28px}
+.tldStage>p{max-width:74ch}
+.audienceCiteGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:24px}
+.audienceCiteGrid article{min-width:0;padding:0 0 0 18px;border-left:2px solid var(--accent-text)}
+.audienceCiteGrid h4{font-size:22px;margin:0 0 12px;letter-spacing:-.025em}
+.audienceCiteGrid strong{font-size:14px}
+.audienceCiteGrid a{overflow-wrap:anywhere}
+.audienceMeasureScope{max-width:74ch;font-size:16px;line-height:1.7}
+.marketResearch .marketFilters{display:grid;grid-template-columns:minmax(0,200px) minmax(0,240px);gap:12px;margin:14px 0}
+.marketFilters label{min-width:0}
+.marketFilters input,.marketFilters select{width:100%;min-width:0;max-width:100%;min-height:44px}
+.marketResearch .marketTable{max-height:none!important}
+.marketResearch>h2{font-size:32px}
+#market-more{margin:12px 0}
+.audienceBrief{padding:20px;background:var(--surface2);border-left:3px solid var(--accent-text);border-radius:0 12px 12px 0;margin:18px 0}
+.audienceBrief h3{margin:0 0 8px}
+.audienceBrief p{line-height:1.7}
+.audienceTechnical>summary{padding:14px 0}
+.audienceAtlasLink .apsAtlasBridge{margin-bottom:0}
+/* The short guided reading remains native, optional and untimed. */
+.quickGuide{margin:24px 0 36px;border:1px solid var(--border);border-radius:16px;background:var(--surface);overflow:hidden}
+.quickGuide>summary{cursor:pointer;padding:26px 30px;list-style-position:inside}
+.quickGuide>summary h2{display:inline;margin:0}
+.quickGuide>summary h2>span{display:block;margin-left:18px}
+.quickGuide .eyebrow{color:var(--accent-text)}
+.quickGuide .quickTitle{font-size:clamp(25px,3vw,36px);line-height:1.18;margin-top:9px;letter-spacing:-.035em;max-width:28ch}
+.quickPreview{font-size:16px;line-height:1.6;font-weight:400;color:var(--body);margin-top:12px;max-width:70ch}
+.quickOpen{font-size:15px;color:var(--accent-text);margin-top:14px}
+.quickBody{padding:0 30px 30px}
+.quickLead{max-width:74ch;line-height:1.7}
+.quickSteps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 36px;counter-reset:quick-step}
+.quickSteps>li{min-width:0;border-top:1px solid var(--border);padding:24px 0 0;counter-increment:quick-step}
+.quickName{position:relative;display:block;padding-left:40px;font-size:clamp(26px,3vw,38px);font-weight:750;color:var(--accent-text);letter-spacing:-.04em;overflow-wrap:anywhere}
+.quickName::before{content:"0" counter(quick-step);position:absolute;left:0;top:.5em;font-size:13px;font-weight:700;color:var(--muted);letter-spacing:0}
+.quickSteps h3{font-size:24px;line-height:1.25;margin:20px 0 8px;letter-spacing:-.025em}
+.quickHook{font-size:18px;font-weight:650;margin:10px 0}
+.quickSteps p{line-height:1.75}
+.quickTakeaway{border-left:3px solid var(--accent-text);padding:8px 0 8px 16px;font-weight:600}
+.quickMore{display:inline-block;padding:8px 0;line-height:1.5}
+.quickSources{margin-top:14px;font-size:14px;color:var(--muted)}
+.quickSources summary,.quickRecall summary{cursor:pointer}
+.quickSources ul{padding-left:20px;line-height:1.7}
+.quickSources a{overflow-wrap:anywhere}
+.quickStatus{max-width:74ch;line-height:1.7}
+.quickRecall,.quickNext{border-top:1px solid var(--border);margin-top:28px;padding-top:16px;line-height:1.7}
+.quickRecall h3,.quickNext h3{font-size:24px}
+.quickRecall li{margin:8px 0}
+.quickNext>div{display:flex;flex-wrap:wrap;gap:12px}
+.quickNext .control{min-height:44px;text-align:center;white-space:normal}
+.readerStudyStatus{border-left:3px solid var(--accent-text);padding:10px 16px;font-weight:650}
+/* Economics: chapter openings separate the argument from its evidence. */
+.economicsReadingGuide{color:var(--body);line-height:1.7;margin:18px 0;max-width:74ch}
+.economicsChapter{position:relative;margin:48px 0;min-width:0;padding-top:28px;border-top:1px solid var(--border)}
+.economicsChapter::before{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:var(--accent-text)}
+.economicsStageTitle{font-size:clamp(26px,3vw,38px);line-height:1.2;letter-spacing:-.035em;margin:0 0 14px;overflow-wrap:anywhere;max-width:30ch}
+.economicsStageLead{font-size:17px;line-height:1.7;max-width:74ch;color:var(--body);margin:0 0 24px}
+.economicsChapter .economicsSubheading{font-size:23px;line-height:1.3}
+.economicsChapter .economicGrid h4,.economicsChapter .economicModels h4{font-size:19px;line-height:1.4;margin:12px 0}
+.economicsSupporting{margin:24px 0;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);min-width:0}
+.economicsSupporting>summary{font-weight:650;line-height:1.6;cursor:pointer}
+.economicsSupporting>.panel{margin:18px 0 0}
 #economics .sectionToc{position:static}
 #economics .sectionToc a{white-space:normal;line-height:1.5}
 .economicsChapter a:focus-visible,.economicsSupporting>summary:focus-visible{outline:2px solid var(--accent-text);outline-offset:4px}
-@media(max-width:600px){.economicsChapter{margin:24px 0}.economicsSupporting{padding:12px}.economicsStageTitle{font-size:23px}}
+#cultural-epoch-map,[id^="cultural-case-"],#research-citation-guide,#independent-review-status,#three-minute-guide,#reader-study-protocol,[id^="quick-step-"]{scroll-margin-top:calc(var(--topbar-height) + 96px)}
+@media(max-width:1000px){
+ .hero>div:first-child{column-gap:28px}
+ .audienceDiscovery{grid-template-columns:94px minmax(0,1fr) 16px;gap:12px;padding:22px 0}
+ .discoveryName{font-size:43px}
+ .audienceDiscovery strong{font-size:17px}
+ .audienceEpochMap>ol,.audienceCiteGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:760px){
+ .hero{padding:28px 0 24px}
+ .hero>div:first-child{grid-template-columns:minmax(0,1fr);gap:14px}
+ .hero .siteTitle{font-size:clamp(42px,8.3vw,60px);max-width:13ch;margin:0 0 4px}
+ .siteTitle .audienceBrand{font-size:13px;margin-bottom:12px}
+ .hero p[data-i18n="heroBody"]{font-size:18px}
+ .heroActions{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:8px 12px;margin:6px 0 8px}
+ .heroActions .control{min-height:44px;padding-inline:10px;white-space:normal;justify-content:center;font-size:14px}
+ .heroActions .heroPrimary{grid-column:1/-1}
+ .heroActions .readerResearchCta{padding-inline:0;min-height:44px}
+ .audienceDiscoveries{grid-column:1;grid-row:5;align-self:stretch;margin:4px 0 8px;padding-left:18px}
+ .audienceDiscovery{grid-template-columns:94px minmax(0,1fr) 18px;padding:20px 0;gap:14px}
+ .discoveryName{font-size:44px}
+ .audienceDiscovery strong{font-size:17px;margin-bottom:5px}
+ .audienceDiscovery span span{font-size:14px;line-height:1.55}
+ .hero .heroPlain{grid-row:6;grid-column:1;border:0;padding:0}
+ .hero .narrativeProjectDefinition{grid-row:7;grid-column:1;border:0;padding:0}
+ .hero>.projectByline{padding-top:16px;border-top:1px solid var(--border);margin-top:20px;font-size:12px}
+ .hero>.epistemicLegend{font-size:12px}
+ .iaHomeJumpList{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 22px}
+ .iaHomeJumpList a{min-height:110px;grid-template-columns:20px minmax(0,1fr);gap:7px 8px;padding:18px 0}
+ .iaHomeJumpList a span{font-size:16px}
+ .iaHomeJumpList a small{font-size:10px;letter-spacing:.025em}
+ .iaHubGrid{gap:10px}
+ .iaHubCard{padding:22px 0}
+ .iaHubCard h3,#ia-stories .iaHubCard h4{font-size:22px}
+ #ia-explore .iaExploreGovernance{padding:26px 0 0}
+ .audienceSecondaryJourney{padding:20px 0;align-items:flex-start}
+ .quickGuide{margin-top:18px}
+ .quickGuide>summary{padding:22px 18px}
+ .quickGuide .quickTitle{font-size:27px}
+ .quickPreview{font-size:15px}
+ .quickBody{padding:0 18px 24px}
+ .quickLead{font-size:16px}
+ .quickSteps{grid-template-columns:1fr;gap:24px}
+ .quickSteps h3{font-size:24px}
+ .quickSteps p{font-size:16px}
+ .quickSteps .quickHook{font-size:18px}
+ .quickNext>div{display:grid}
+}
+@media(max-width:680px){
+ .iaPrimaryNav{position:sticky;top:var(--topbar-height);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:100%;backdrop-filter:none;margin-top:4px;padding:5px 0;gap:3px 5px}
+ .iaPrimaryNav>a{white-space:normal;padding:7px 4px;font-size:12.5px;line-height:1.35;min-height:46px;letter-spacing:-.015em}
+ .audienceEpochMap>ol,.audienceCiteGrid{grid-template-columns:1fr}
+ .audienceEpochMap li{padding:20px 0}
+ .audienceEpochMap h4{margin:6px 0}
+ .audienceEpochMap li p{margin:4px 0 10px}
+ .audienceEpochMap li a{display:inline-block;padding:8px 0}
+ .tldStage{padding:24px 0!important}
+ .tldStage h3{font-size:25px}
+ .internetGuide>.journeyAddress{display:none}
+ .internetGuide .journeyNow{padding:12px;margin:12px 0}
+ .internetGuide .journeyNowLabel{font-size:10px}
+ .internetGuide .journeyNowFlow{font-size:14px}
+ .internetGuide .journeyNow p{margin:4px 0 0}
+ .internetGuide .journeyControls{margin:10px 0}
+ .internetGuide>.sectionLead{font-size:16px;line-height:1.7}
+ .journeyWorkarea{margin-top:0}
+ .marketResearch .marketFilters{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .marketResearch .marketFilters label{font-size:12px;line-height:1.5}
+ .marketResearch .marketFilters input,.marketResearch .marketFilters select{font-size:14px}
+ .marketResearch>h2{font-size:28px}
+ .marketResearch>.sectionLead{font-size:16px;line-height:1.7}
+ .audienceMeasureScope{font-size:15px}
+ .marketResearch .marketTable tr{padding:12px;margin-bottom:8px}
+ .marketResearch .marketTable td,.marketResearch .marketTable tbody th{padding:2px 0;font-size:15px}
+ .marketResearch .marketTable caption{padding:4px 0}
+ .marketResearch .marketTable td::before{font-size:12px}
+ .economicsChapter{margin:36px 0;padding-top:24px}
+ .economicsSupporting{padding:16px 0}
+ .economicsStageTitle{font-size:28px}
+}
+@media(prefers-reduced-motion:reduce){.audienceDiscovery{transition:none}}

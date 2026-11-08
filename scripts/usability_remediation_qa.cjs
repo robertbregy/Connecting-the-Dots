@@ -89,7 +89,8 @@ function staticChecks(){
   const remaining=[...after.querySelectorAll('a[href]')].map(a=>normalize(a.getAttribute('href'),publication.version));
   for(const href of originalLinks){const i=remaining.indexOf(href);assert.ok(i>=0,'Lost historical source/content link: '+href);remaining.splice(i,1);}
   assert.equal(after.querySelectorAll('[data-i18n="iaProjectDefinition"]').length,1);
-  assert.ok(after.querySelector('.heroActions').nextElementSibling.matches('.heroPlain'),'Home action still follows long definitions');
+  assert.ok(after.querySelector('.heroActions').nextElementSibling.matches('.audienceDiscoveries'),'Home examples must immediately follow the entry actions');
+  assert.ok(after.querySelector('.audienceDiscoveries').nextElementSibling.matches('.heroPlain'),'Home definitions must follow the three discovery paths');
   // Normalize only the explicitly identified broken legacy tooltip attributes.
   // Their removal is an audit correction, not an unrelated editorial change.
   for(const a of before.querySelectorAll('nav.sectionToc a[title],#iaLegacyNavDisclosure a[title]'))
