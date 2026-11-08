@@ -1,3 +1,10 @@
+# v0.7.102 - 8 November 2026
+
+- Correct the Intercap attribution in EN, IT, DE and FR.
+- Distinguish the DNW report from the independently derived exact-string APS comparison; document the four identified discrepancies.
+- Preserve scientific snapshots, RR1/RR2, the working-paper revision and every historical technical archive, including v0.7.101.
+- Carry the reviewed operational documentation from the final acceptance audit; retain existing publication gates without modification.
+
 # v0.7.101 - 7 November 2026
 
 - Complete the deferred Home and Economics editorial corrections in all four languages.

@@ -1,10 +1,16 @@
-# Connecting the Dots — v0.7.101
+# Connecting the Dots — v0.7.102
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
 Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
+
+**v0.7.102 - 8 November 2026**
+
+Clarify the Intercap portfolio paragraph in all four languages: distinguish Domain Name Wire's reported contention figures from our separately derived comparison of original primary strings in the archived APS snapshot. The research data and all earlier packages remain unchanged. See the [source reconciliation](docs/INTERCAP_ATTRIBUTION_2026-11-08.md).
+
+## Previous editorial completion
 
 **v0.7.101 - 7 November 2026**
 
