@@ -91,7 +91,7 @@ async function verifyState(page,language,native){
    const light=await page.evaluate(()=>({theme:document.documentElement.dataset.theme,bg:getComputedStyle(document.body).backgroundColor,
       foreground:getComputedStyle(document.body).color}));
    assert.equal(light.theme,'light','Atlas must share the main-site saved theme');
-   assert.equal(light.bg,'rgb(247, 247, 248)','Light mode must match main site even if OS prefers dark');
+   assert.equal(light.bg,'rgb(245, 246, 248)','Light mode must match main site even if OS prefers dark');
    await page.locator('#apsThemeToggle').click();
    assert.equal(await page.evaluate(()=>localStorage.getItem('dotTheme')),'dark','Atlas theme control must update the main-site preference');
    assert.equal(await page.evaluate(()=>document.documentElement.dataset.theme),'dark');
