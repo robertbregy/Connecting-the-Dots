@@ -1,3 +1,11 @@
+# v0.7.103 - 8 November 2026
+
+- Refresh Home, chapter openings and navigational cards with an editorial hierarchy and a restrained dot-and-connection identity.
+- Simplify nested Economics panels and improve long-form typography, spacing and mobile reading.
+- Align the native chapters, Application Atlas and standalone guides across light and dark themes; use consistent vector theme controls.
+- Preserve translated evidence, data, sources, canonical routes, historic fragments and all original validation gates.
+- Publish a separate deterministic technical package and freeze v0.7.102; retain RR1/RR2 and the existing working-paper revision.
+
 # v0.7.102 - 8 November 2026
 
 - Correct the Intercap attribution in EN, IT, DE and FR.

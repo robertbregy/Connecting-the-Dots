@@ -2583,7 +2583,8 @@
     "release0799": "Accessible mobile results, earlier search, shareable Atlas filters and repaired official-source links. Scientific data and archives remain unchanged.",
     "release07100": "Visible focus, accessible skip link and readable mobile metrics. Data unchanged.",
     "release07101": "Home and Economics: clearer introductions and distinct headings. Data and sources preserved.",
-    "release07102": "Intercap corrected."
+    "release07102": "Intercap corrected.",
+    "release07103": "New editorial design, clearer navigation and more comfortable reading on mobile. Data and sources preserved."
   },
   "it": {
     "brand": "Brand",
@@ -5169,7 +5170,8 @@
     "release0799": "Schede mobili accessibili, ricerca più immediata, filtri dell’atlante condivisibili e collegamenti alle fonti corretti. Dati e archivi scientifici invariati.",
     "release07100": "Focus visibile, salto al contenuto e riquadri mobili leggibili. Dati invariati.",
     "release07101": "Home ed Economia: introduzioni più chiare e titoli distinti. Dati e fonti conservati.",
-    "release07102": "Intercap corretto."
+    "release07102": "Intercap corretto.",
+    "release07103": "Nuova veste editoriale, navigazione più chiara e lettura più piacevole sul telefono. Dati e fonti preservati."
   },
   "de": {
     "brand": "Marke",
@@ -7755,7 +7757,8 @@
     "release0799": "Zugängliche mobile Ergebnisse, frühere Suche, teilbare Atlas-Filter und korrigierte Quellenlinks. Forschungsdaten und Archive bleiben unverändert.",
     "release07100": "Sichtbarer Fokus, Sprunglink und lesbare mobile Kennzahlen. Daten unverändert.",
     "release07101": "Klarere Einleitungen und eindeutige Titel in Startseite und Wirtschaft. Daten und Quellen unverändert.",
-    "release07102": "Intercap korrigiert."
+    "release07102": "Intercap korrigiert.",
+    "release07103": "Neues redaktionelles Design, klarere Navigation und angenehmeres Lesen auf dem Handy. Daten und Quellen erhalten."
   },
   "fr": {
     "brand": "Marque",
@@ -10341,6 +10344,7 @@
     "release0799": "Résultats mobiles accessibles, recherche plus directe, filtres de l’atlas partageables et liens vers les sources corrigés. Données et archives scientifiques inchangées.",
     "release07100": "Focus visible, lien d’évitement et indicateurs mobiles lisibles. Données inchangées.",
     "release07101": "Accueil et Économie : introductions clarifiées, titres distincts. Données et sources conservées.",
-    "release07102": "Intercap corrigé."
+    "release07102": "Intercap corrigé.",
+    "release07103": "Nouvelle présentation éditoriale, navigation plus claire et lecture plus agréable sur mobile. Données et sources conservées."
   }
 }
