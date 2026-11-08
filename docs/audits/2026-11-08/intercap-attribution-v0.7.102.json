@@ -1,0 +1,587 @@
+{
+  "schemaVersion": 1,
+  "publicationVersion": "0.7.102",
+  "reviewedOn": "2026-11-08",
+  "publishedBaseline": "d9ea370d7639cc55af9b08a1783b187a58e8964d",
+  "sourceBase": "af00ac271f1897e1356db5f2430cc5eaa1d77461",
+  "sourceCommit": "2b4471555f9ea412c912864d20bec1936b8783e6",
+  "sourceScope": "Four localized econEditorialPortfolioBody replacements distinguish the attributed DNW figures from the independently derived APS exact-string count; four new release summaries, current technical-release metadata, a separate frozen package and carried PR6 operational documentation. No scientific dataset, original validator, workflow or runtime change.",
+  "copyReviewSHA256": "f0113a69197c5821f9cec0f8cabc362adce27a4e0e698ddca3bf66e41e597a73",
+  "attributionEvidence": "docs/INTERCAP_ATTRIBUTION_2026-11-08.md",
+  "reviewType": "AI-assisted source whitelist, preservation and exact generated-file review",
+  "independentDiffInspectionConfirmedByCaller": true,
+  "humanParticipants": 0,
+  "changedFiles": {
+    "CHANGELOG.md": {
+      "beforeSHA256": "6ea81786c1878b20dfc6a638b39987182ea84a7e48204997fa631aafd43bf156",
+      "sha256": "cc39b516c602d640fa8ab06752e82e82b47cfbf0c928ef760ccd257a83ddfab1"
+    },
+    "DEPLOY.md": {
+      "beforeSHA256": "c6c20de5ba413637df82ac228b3bfbd4893f871f4d06069662a7b79c91327b87",
+      "sha256": "9529c16ff02257227b1799a40124a7498cd89e659a6ab514f3b039f36a27dee3"
+    },
+    "README.md": {
+      "beforeSHA256": "08d78f7c055b4be6280ecea64bce89c6bbbc9b7809bfb414de78fdaea22a9d32",
+      "sha256": "5e24c562d6602f4c8810e127a6ddbcf36a4f573f86ac5ea1422f623d0dd31d68"
+    },
+    "applications/de/index.html": {
+      "beforeSHA256": "7a1f4e74b5f56eef6f5a86644486ad918e636ff7c0fd944d449a6844465b6ee4",
+      "sha256": "047ac4b33da077b84c13f21b85a107f019c02b0d77b0029fbeba85bee83274ad"
+    },
+    "applications/en/index.html": {
+      "beforeSHA256": "e96638341883be3a6cb2e5fb8d99c24e051141175904ad3c8e4a895e4e8975fa",
+      "sha256": "1d02612d7d4f3be0f5d112537631f86b9f3e0224f9b90351123ed40720f233c8"
+    },
+    "applications/fr/index.html": {
+      "beforeSHA256": "d63e4782e4ed29c98c8da2d02d7d7acd4b857765fb3ee7320e1b1d93c4d869b8",
+      "sha256": "a49d87af388a2268b3b40ead3b5313e5cec1806fec73183605d542d816a71fd5"
+    },
+    "applications/it/index.html": {
+      "beforeSHA256": "5194bd0d3f798467a97c8b90cc1dacc6795d2a8445d433910bfd86e4de34ea80",
+      "sha256": "aedfd2c5598f7df4e373920dd635766979fab2320965bdb513f8141cc4915f84"
+    },
+    "behind-the-round/de/background-screening/index.html": {
+      "beforeSHA256": "21405b0e670e5d8b1f4e4602f9960559370ddf94ba31549de099f0f4c6511d02",
+      "sha256": "b30b9912c7552afe58625b2a59e3fbd10885dfb67235bace2aff8d1000949c54"
+    },
+    "behind-the-round/de/index.html": {
+      "beforeSHA256": "6a6cf8a1a535b9c4b30d56c0a0d9c18644e6439413e23e52642a663228186993",
+      "sha256": "efd7eb918509c1326ebdb270358a1b45287ae4dae8379742b7480ee50dbe6b4b"
+    },
+    "behind-the-round/de/objectors-eoi/index.html": {
+      "beforeSHA256": "596c9ba04fd601fc51bc9c33b1a11f8fddbe539cee6bf16ae98978dd7f657934",
+      "sha256": "2a049601577514e81608e4d1c2ae6f7e9d2fae2ec4be0861f8c7a23a6963cb35"
+    },
+    "behind-the-round/de/replacement-strings/index.html": {
+      "beforeSHA256": "d6e489042f15b66c0fd6ba1e6c255e2ff9eb664aa741843b37cc5c64a3af10a6",
+      "sha256": "991bea4a16f86befb3269449a7883edfe978d7471f5aff7331a606902cdf0ade"
+    },
+    "behind-the-round/de/sanctions-and-dns/index.html": {
+      "beforeSHA256": "0515ffdf15247418d1f6c05cd3a4d2db87d9594491a354140712ab90eebbdfdc",
+      "sha256": "f1801e30b3d5de6839e8cf425bf9bb0a424f3fd3e187b34184a8268cd97f5147"
+    },
+    "behind-the-round/de/wdo-identity/index.html": {
+      "beforeSHA256": "84cfa49c44222d67f052e9552d75938d6fc268556422496653163f0ef7dd051a",
+      "sha256": "0d1e73d8f4498fd6fe6dd1d019025bf9b2d34fcb9838484c858d3cabe00dc6a2"
+    },
+    "behind-the-round/de/who-controls-internet-access/index.html": {
+      "beforeSHA256": "236b72c2215ae90af0851d161bff9187415f6e725db8c94f6df116595512f844",
+      "sha256": "b46e3747e1723f2722c665056bfde8473b5e52c2fea87d7bdeedba4dce172e0d"
+    },
+    "behind-the-round/en/background-screening/index.html": {
+      "beforeSHA256": "ff155b8075621f1174bd2a9d1144bc71a372d271f5cc298c22c30e848d371ab3",
+      "sha256": "b88054f87dbd7ed89637a37383dfc8ad00ac7877a5c3a85fffa6214d44afeaf5"
+    },
+    "behind-the-round/en/index.html": {
+      "beforeSHA256": "a1f173743cee184a964ea3ef4f37afe92d6357de5e79c7e8e3160eaa75dedbdc",
+      "sha256": "696bfaf8e0a7cc893b648d8385ba3d22fe789d5cca4beb436eb60a567e186f17"
+    },
+    "behind-the-round/en/objectors-eoi/index.html": {
+      "beforeSHA256": "8144cf8ef7f51767f67831183df8670b72c0765c6664c56c7aa44b5071409bcd",
+      "sha256": "202f9519f0234c0b39ea1f87af3589f65646a562a8634112ca755aeaf1f67de2"
+    },
+    "behind-the-round/en/replacement-strings/index.html": {
+      "beforeSHA256": "dc74fa9ac2c1363e6d1f0db24fc8b4a427766ebe52d060a034edd3a30bf5bed4",
+      "sha256": "eb871b6d081025e94c1702e9a9dc885371fd14ba7148bd7efe302b886abc0ae2"
+    },
+    "behind-the-round/en/sanctions-and-dns/index.html": {
+      "beforeSHA256": "9d9c47993d887e9be3bd910f1c9625b92dbe8e11d993ecd06b629540fdd2fba1",
+      "sha256": "56612a05b60da2e2e69790059f35dfed6ca9250f47f0c6f29714732c67e3b61e"
+    },
+    "behind-the-round/en/wdo-identity/index.html": {
+      "beforeSHA256": "aedd92f723c63116b67ddfce656c5a8cc6d703aefd003e7f407a452922908ec2",
+      "sha256": "68d4995a56344badc922a7878acefea57cc3128b11a14b17709546316e1b3ef1"
+    },
+    "behind-the-round/en/who-controls-internet-access/index.html": {
+      "beforeSHA256": "59a7572f61d210d8410f2c16b3b877fe217aec8a361fffef24caaebae57754a7",
+      "sha256": "2c37ad8e9da53cb356122231a0819d6770a1b9f96e2b606324c5b49fd24b48c5"
+    },
+    "behind-the-round/fr/background-screening/index.html": {
+      "beforeSHA256": "09c054c11133d4fab037ef008366936aecd0e12e35ae379db47b81f2cccdf61f",
+      "sha256": "4797eb716c356e925d787e34d0f22d1efd44449fd5af91441758d66805212672"
+    },
+    "behind-the-round/fr/index.html": {
+      "beforeSHA256": "2d97066ad624a742d161b3746c4d76bd7a2d3050c1a4ba3f0a7a40ada4394d61",
+      "sha256": "7279507d4bc4e9c60e2330e001fa6e30703693a55f5ea462e08b334b8e4c3f34"
+    },
+    "behind-the-round/fr/objectors-eoi/index.html": {
+      "beforeSHA256": "d1c7c57fddb4b21e3ea924d82e04e6cbf096792434d2c0bff13a3b1492105332",
+      "sha256": "6595060b59dd40dd0d654f15f6ce19ddcd61163efe85c4a95ede397aa21a25ea"
+    },
+    "behind-the-round/fr/replacement-strings/index.html": {
+      "beforeSHA256": "186d9cb6a7ca4192a66808ba4da246ba41d54765d635fdd7cfc0e08561752fd2",
+      "sha256": "c0a97398693e8a513ac74079a7a1daec4034d30b55ddea00aef1c789bba94203"
+    },
+    "behind-the-round/fr/sanctions-and-dns/index.html": {
+      "beforeSHA256": "1bfcfb342b769efaa8b3233836bfb0094194fd671b9c6aacfa6a7c3bcdc1a89d",
+      "sha256": "0ba8f11652a6095177030efb1112cb1db01ffeb463a5df437f343a91bee1b596"
+    },
+    "behind-the-round/fr/wdo-identity/index.html": {
+      "beforeSHA256": "86549d902b4ee942bbb1f8d50474e9aad13fafa9c7df84d4192be3698489db44",
+      "sha256": "03b5802e4c6e5cb8171dd9ded5cddaca88517b66d91fbe04e214803d8721a0a7"
+    },
+    "behind-the-round/fr/who-controls-internet-access/index.html": {
+      "beforeSHA256": "4958b300b03c2ff1b81f44751b3e7ffec8b110947965794d9c2753c0140e3897",
+      "sha256": "adf938d7372cfacd8094f54810b8bc629d6f1f6d69bb0b1a4c423a216c641e08"
+    },
+    "behind-the-round/it/background-screening/index.html": {
+      "beforeSHA256": "48869d49132ea049d07ffb7ef9acf7a30f0e5df93d4192548162e17f17f2e94b",
+      "sha256": "0f71dcb51ec4b83ba56d4d9ea34d4cd1e4faca1c9b0d3086967fca667951f6f5"
+    },
+    "behind-the-round/it/index.html": {
+      "beforeSHA256": "02502c19d0f48717b5d2bb18360e5a458a3fc079520cfa9e592084d9ceb6ed76",
+      "sha256": "cc407ee5aed695685362671078505cf6f699fa37ff675539c62e6e616f4cc549"
+    },
+    "behind-the-round/it/objectors-eoi/index.html": {
+      "beforeSHA256": "82e79cc93d3b34c667321b3fec696f95d1cd56547381f4126719c629f7d0022a",
+      "sha256": "caf6c51315aa6f48892a48463d0c422e0ff4e235a9627b9418bb4595225d42b6"
+    },
+    "behind-the-round/it/replacement-strings/index.html": {
+      "beforeSHA256": "32917583ad1433c392d2c4f0737442aa137c4eac2d4ebadd178a8fce35e7d2d0",
+      "sha256": "066692dba355d5b865028d29c94e294186ba7443a9e7d6e8f311b537e4aeedb9"
+    },
+    "behind-the-round/it/sanctions-and-dns/index.html": {
+      "beforeSHA256": "1a9b6a6391ad9448b3dfcc0563b0f8bea1598fec7b1eff70e9fc42ad7050f14f",
+      "sha256": "c962d1625409db9f52c51a531ead2dac5482bcdddaf1f337142688a612cb6f5b"
+    },
+    "behind-the-round/it/wdo-identity/index.html": {
+      "beforeSHA256": "ffff26f36caf8b099ad992b683ef54de570869ac0f5e8181bcc4e95b7316e787",
+      "sha256": "ad0e08773c682f25cb5bca0a925cc907c745d181244e1cc37c67ee2427dc7b60"
+    },
+    "behind-the-round/it/who-controls-internet-access/index.html": {
+      "beforeSHA256": "58bfd400074afb0b32fea8cf9cfbf562f11c514640af6d5cce7ee0976eb2e181",
+      "sha256": "a6d22c4b79193f97f2d00365399d89e62f634d7c768600b7d3429a87289a3e71"
+    },
+    "data/data_bundle.js": {
+      "beforeSHA256": "892f0ad41fd63e7ae86a7865601b8b5d72dafaba7d2eeb7b274e9a7f7cd5aaa5",
+      "sha256": "6874cc0250f57908aef451fb0a637faa3466ed817ff193480b42b286250d4010"
+    },
+    "data/explorer_profiles_0.js": {
+      "beforeSHA256": "b3081323f2deea50a15ecd6f12c9602aef1bbe9dbcd7c9846a739aaa81e52058",
+      "sha256": "27db0325582ec053bfa710693c258295250495e5cfe61bdaa2b06a6579c45be7"
+    },
+    "data/explorer_profiles_1.js": {
+      "beforeSHA256": "9bb3575e94b59671a0bb15c366e752a79b534cc421798cab4b60510305d35cfb",
+      "sha256": "8b0696e49401c790860913c26a5c9eb224d9f01941ded84cba07ef8e9f25b5c8"
+    },
+    "data/explorer_profiles_2.js": {
+      "beforeSHA256": "cd9db82535c45fecea1bc1b6834cf57af29c4e8bad770c6cccbc7872010094a8",
+      "sha256": "74867d6418260ad26afb74ac624e77e36a6649df91764384ecf8187b9160bf39"
+    },
+    "data/explorer_profiles_3.js": {
+      "beforeSHA256": "b25a8847e01cbcfa91f926f95050ecd57a96fb324049df9abe143136e6b53576",
+      "sha256": "ebff2350808b813d9d0aec9413b3f98e7acec83a954b3f30ff0c61486db36713"
+    },
+    "data/explorer_profiles_4.js": {
+      "beforeSHA256": "501349d7e636c87ce81cd7510be07cd362ea2f7d039b644d54b788cf89666242",
+      "sha256": "6cd0c4ae2b2d3bdc9dae13a017576f9194b5e6d8934924ab8643bc817c3cb367"
+    },
+    "data/explorer_profiles_5.js": {
+      "beforeSHA256": "850ae79fd9976bacef4e6f6d85518337703c5c657117af11d7fffc8c2d356423",
+      "sha256": "8dcad18282a73f1b28a957d883796892af0125db142db626d0ab29eab54810bb"
+    },
+    "data/explorer_profiles_6.js": {
+      "beforeSHA256": "d39a4b1cdaddce971dc7e47eacd24ee49d8b67c985a2edd51ec0fbef9bae236e",
+      "sha256": "6bb8cbfc673ffcbb7d9f67bc9b77490a46921564bd5e4439d4b0f2b9352ede58"
+    },
+    "data/explorer_profiles_7.js": {
+      "beforeSHA256": "37dcded68a9e1ef198893a7e7596d7040c8ba3519ab8f29f7fdc0029a0eb4c27",
+      "sha256": "5cc869d43fb7c750b69f456cfee5bf73740fa7f6a0026ee094f874a631db4253"
+    },
+    "data/frozen_technical_packages.json": {
+      "beforeSHA256": "834d6fb55796e63f25b72ca71933efd930d97382ea518c0c284c66f57a76f844",
+      "sha256": "2981c40f86bbcf0cab7d1c43ee0ed7ffa4354da67a5441d8c370be0487461012"
+    },
+    "data/i18n_bundle.js": {
+      "beforeSHA256": "d39087d72b20cd5ff123c9066227cba8ad3ab6aad3f4bb39c107d8142d2221f2",
+      "sha256": "2093993a43c7f51fbf72246bfe96fdb3cccf1fef093e30f2c3f7902136262e10"
+    },
+    "data/i18n_de.js": {
+      "beforeSHA256": "f57ffcad3cb0e6d32c9f2a587c4af339e50fc6c8965c22c7bef4377c759922da",
+      "sha256": "d4a6c0fcab1dbcebca48ff1e3b251ca10be4a792c07572415e413ad39aee17a9"
+    },
+    "data/i18n_en.js": {
+      "beforeSHA256": "1783d0ee03cc9b34987f6024ac14c5cc90dd9f2e6423d38b6b21ca7f2b16ac92",
+      "sha256": "a505e0bfe535042c0cd05dd770d45e9dffbd1a2f5b8072ae2edf36432bd32ae9"
+    },
+    "data/i18n_fr.js": {
+      "beforeSHA256": "22e5f187d4938ad08534579e14d03354835e9d4629f1293adca4ef616ba26693",
+      "sha256": "4db80438c409ccf6c6ea6f919844b5c95482bd4be58fe9ee522c1a34b7df8017"
+    },
+    "data/i18n_it.js": {
+      "beforeSHA256": "2db57b17a5db4209708425b6773aa6d3c158a37ebf6e3bf8307cd2516d7d8c4a",
+      "sha256": "c43b71ed657be32767badd5020c12f9446c0bf826e8fd83a0c6b34b65c01d82d"
+    },
+    "data/manifest.json": {
+      "beforeSHA256": "4a3ed58a98a063a32e5930389d710ea7ab4e8b6db55474cb550baf572190e590",
+      "sha256": "41b1bda128cd5340bc93f7c814afa335e716c5817aba7b77f1c69513394151d1"
+    },
+    "data/publication.js": {
+      "beforeSHA256": "b03782cc6c5e4cc7d0f8568064fa3ce317c7b9f86b4f4f258305630546423c6d",
+      "sha256": "859d779a525372b8fa908777d66cfb08ca4001fb928070c961bd576ad3fecaeb"
+    },
+    "data/release_history.json": {
+      "beforeSHA256": "4a3222e391d0bfee3a6f85e774944680be806f7d7deedc3634b01f82dbd13133",
+      "sha256": "c46f6e6ad99baefb676d2cdb19418bb594f9d885a146fc7c5c88d6ff45169725"
+    },
+    "data/site_bundle.js": {
+      "beforeSHA256": "81791376a5805ad4a9b4e73313e2a4d202f0b002bca5cd3781d572041c213b16",
+      "sha256": "871de3567306c9bbe293ce54538cc358e8ef61fd3fcea10f868027c38f5581ce"
+    },
+    "data/translations.json": {
+      "beforeSHA256": "821238d04ec8df0824b01a1eb3805da91179e4df52bd03a171992b1d4f6560a0",
+      "sha256": "0564c006c5277a769f60f61af58b52a65ca07b939df7434c73908f4451a16bdd"
+    },
+    "de/index.html": {
+      "beforeSHA256": "44fa1ae0d68079236dec51959bf5ec8e741f12e26cbf494f8c2f6152a2f15717",
+      "sha256": "97b230e72399fde087cf2d11c500b62f19f83e77731fada0ea13262dd13a82b0"
+    },
+    "docs/INTERCAP_ATTRIBUTION_2026-11-08.md": {
+      "beforeSHA256": null,
+      "sha256": "dcb9eed3fa32b0a409abb8c4d001b2a330151dbb13889b9ec467e57967a6b28d"
+    },
+    "docs/PUBLISHING_SAFETY.md": {
+      "beforeSHA256": "63d4c000a71c06dcc8f16dd490d8851d3f682502c1503f6840e2db6c17081ee3",
+      "sha256": "baf7f681138f7dd174ace696b9b1c9727aef2b9feaf85bd712e4acfa479b47aa"
+    },
+    "docs/READER_TASKS.md": {
+      "beforeSHA256": "f261c0f99b106c157aaeda7f1513e36c4974ab570a644444af63af1c60ace586",
+      "sha256": "a992d45eb46c44c84e533f34f853985623d176d80895f313db6fc6f80b0f6537"
+    },
+    "docs/REPOSITORY_GOVERNANCE.md": {
+      "beforeSHA256": "82d7f2050a49a938e37471a326e6422cb55585a405b1f92b239e754ad2f57bfe",
+      "sha256": "61e6a1562f8080a6dab000b0bcdcfcb0ad0d8f77c5bffff743cfc8cd051749ba"
+    },
+    "docs/reader-first-structure.json": {
+      "beforeSHA256": "5e26591f374489b47842e44f2be35a0514dca77972351cdf2f53ad898e136253",
+      "sha256": "e53cfb5b250a56ec502fa69b4516fed382f05db0c5338e52725c5d51f1f6674e"
+    },
+    "docs/research-tags-ruleset.json": {
+      "beforeSHA256": null,
+      "sha256": "49cdf13f2f00146605ea07aae908e0b0fe5d92e794fc9da9e48a9210a8cee4aa"
+    },
+    "downloads/connecting-the-dots-data-pack-v0.7.102.sha256": {
+      "beforeSHA256": null,
+      "sha256": "a3edf64c0f3f3b96d289c189f7d28af55f7311a2a3d5605b6eadee9c585cc1f3"
+    },
+    "downloads/connecting-the-dots-data-pack-v0.7.102.zip": {
+      "beforeSHA256": null,
+      "sha256": "7bfe0002a732a1354e042b1e5849d5fda9c5d45596c89b7656a1864cf0cfb715"
+    },
+    "en/index.html": {
+      "beforeSHA256": "397773b814c77eb5dea95cb5733007494d968bc2bf78e0829653858d95de8be4",
+      "sha256": "83eac54118e180c9d7805144d4bc46b598b8aae738196fdce5d23b84b0fe1bb6"
+    },
+    "explorer/index.html": {
+      "beforeSHA256": "c95ea59b573f510841bb592caddf23a88803ffd9dc3856d2acf06f05dc8cb2a4",
+      "sha256": "cca6e89896b901ba0657c4705b3dc5eb7e09461b8170d5bbc5d7719beb01152a"
+    },
+    "fr/index.html": {
+      "beforeSHA256": "3b325d0cba1ffe3566dc87dc4d6486467dc8b597505df4782d9c6f4f0ba9dba4",
+      "sha256": "4a702b60f1c033b27cde1dd5f176e2a09deabfceea5d758fd68287bb4777d3df"
+    },
+    "index.html": {
+      "beforeSHA256": "d968da3fbb3ec5a3e83cffabfad955afcf8f91e987b0b0312afc049d161ba163",
+      "sha256": "8950dcc9e31ff127d2e5b864ba61a519418982c11a2d78b0afce7b747cfb9640"
+    },
+    "inside-the-round/de/index.html": {
+      "beforeSHA256": "36cfd8b5c86bd629f2aad9ef91b855fcd95e517cc9375ede6d303cefddfe789d",
+      "sha256": "435de7fb7c2b1e414e99d35c0a1b0319bc6c7ff89b331f4791162dfb84f43354"
+    },
+    "inside-the-round/en/index.html": {
+      "beforeSHA256": "4d675e509c07151d1238b852e6855dec12fbda0627fa1889878e44ed6e8c760e",
+      "sha256": "0b3b94aac7adb8cf1869aa736ce205c6cf9cfe89693a161f50107cd76ae327f6"
+    },
+    "inside-the-round/fr/index.html": {
+      "beforeSHA256": "2b144f8c88007e1e7112a0e42c02abeae6e681ca2186e6fbba17a9a45767dbc4",
+      "sha256": "3f4f8b03dd917c00767d3f1f797b6f5ce5710bee081833968ffa2437eef78e2a"
+    },
+    "inside-the-round/it/index.html": {
+      "beforeSHA256": "5b9f3d285b7ce2e7da44993c9ff2229e996431d902091c1ee4d5c65ea406bb5d",
+      "sha256": "3782dae3f927eab0767942bd91d70af4bdde165e5d28f7ccab15a2f44c09c71d"
+    },
+    "it/index.html": {
+      "beforeSHA256": "bd14227239270f0ded528424421c1f3650e42b91f48ac11805d29945fa89947d",
+      "sha256": "39c9c730a4cb3326980fc6e65000226dada9f815a71f01fd351bf11ec852131b"
+    },
+    "package-lock.json": {
+      "beforeSHA256": "b0be2b17061b8cb6cc281cdedf4e4f1b81d11bc560bd0ea6f258726eb42948be",
+      "sha256": "adad35e9d66f30fc34637f2cae560158253886ed2e26c1c592a5c54f5ada5aa9"
+    },
+    "package.json": {
+      "beforeSHA256": "cbbe53afadea06e69431568bf85221c30da01e949176a68d5d78d1aca30cd2cf",
+      "sha256": "e3cdc81b1d03747e8a52d7aeaa760062d04885ec28f040b14303cb33873c6d7b"
+    },
+    "publication.json": {
+      "beforeSHA256": "88a8f7f1875dc0765132c1aac83e82cb4aba3c309d433018b5e78fec30ecba34",
+      "sha256": "e98cadbee1ab685aa905d133ed175da7fe290f426af0f63586948008467bffd8"
+    },
+    "research/README.md": {
+      "beforeSHA256": "93916b6a71fae527e465fa3354a0ce2dc38ec2416f33385713ae9d87a7ba02ec",
+      "sha256": "8d184be3a58bbf484a183e05768c4b61ad5d1793a7e873993184cd65ace9149b"
+    },
+    "research/connecting-the-dots-working-paper-v1.html": {
+      "beforeSHA256": "1dfc7abe82e0a2a0763469cec33f9d75a95e565e5520779a37b1bce16d314f08",
+      "sha256": "7b0650b987ef9d17009445bc3b003d47a53385791792a127857b9122ddf0b98f"
+    },
+    "research/connecting-the-dots-working-paper-v1.md": {
+      "beforeSHA256": "b2953cf07aa94713fd8b0213a60bd2377440a7ac8f5eeb72beaf6981544c393e",
+      "sha256": "d7e962957c712c5a3713639e42242d5b61ee932daef351408e32049d7aec7e03"
+    },
+    "research/index.html": {
+      "beforeSHA256": "965e05c613411dcdc17dac9aee9a681b2fb1d25df1ebfaf4d6bf5612c2a17a5e",
+      "sha256": "bcca6d44881c274c72381b077141a18b34d86332448a9adfa2a5ef6d539de490"
+    },
+    "research/reader-study/de/index.html": {
+      "beforeSHA256": "448fd1305c17d58c01e2e137203db9882c2f9536cac26e68a8d767496fb859db",
+      "sha256": "547026fb987d4973159338b9519eb6ede747682f5b0cb0c6542380f4f0b13c5f"
+    },
+    "research/reader-study/en/index.html": {
+      "beforeSHA256": "dfdb6b739c5811b524b2b27a61c6484cb7496a7b48a3e11d053da4f1a73048c9",
+      "sha256": "8b177d1bf0616927899cd8ed79364c55037868e5f6f55ac586ee108b6f12b42b"
+    },
+    "research/reader-study/fr/index.html": {
+      "beforeSHA256": "fd1d0ff7fdd11be5db87102389d3562b36a4851e78ab8e73bdc6da7dfee61b29",
+      "sha256": "7bd4ae787278567bd2ed9885d23f999e07db6813774a03737cadc8eff22faaad"
+    },
+    "research/reader-study/it/index.html": {
+      "beforeSHA256": "4eeba3cedf380a516de8974dfe2641ba2cf940143ec68de1707d536d23971a11",
+      "sha256": "fadda16bdc5d4f8454864ade1616ece499e4ce83f0d670b749c64f13bc2c2e47"
+    },
+    "research/research_release_manifest.json": {
+      "beforeSHA256": "de73293afa0ca8caada4bfd6927e724afc290d6925166fdd4f3b005dbf245dad",
+      "sha256": "749f4835118f9903216e88fc284050a7cfe8aebcc091845b094726a71543714d"
+    },
+    "sitemap.xml": {
+      "beforeSHA256": "6c7a138049241b6ead77d42bd725fe938de34d72bcf9efb0bca6300a1b95f02c",
+      "sha256": "a59c6d83194756cf412e920e44186b3a19a1d7c403042a619b09a05748a0f007"
+    },
+    "src/index.web.html": {
+      "beforeSHA256": "30ff09a6c4dd010b95f2cda42a4776c9cd90ee2d757c2f80c995aad6616ae6e8",
+      "sha256": "0573f024fd7b37c334fb1f819285b1ffca8ba001b793b247567254bd8dea90d4"
+    }
+  },
+  "editorialChanges": {
+    "en": {
+      "key": "econEditorialPortfolioBody",
+      "oldSHA256": "3396fe90d448194f5ce7bc205f772e9452692eb065c492e8c440532109c0fb8c",
+      "newSHA256": "4de0610c48f719ae1dba4566f6a3271b2b18fdaacbf6454020cfafcc0c17aa2f",
+      "summaryKey": "release07102"
+    },
+    "it": {
+      "key": "econEditorialPortfolioBody",
+      "oldSHA256": "77c26a21e322bacb8e265c1c5897dac9a5b2b90aa6d3d986f59f101fe9483aeb",
+      "newSHA256": "f15534cce38898d1e5c3b1713613e905c9d33cb08f9ef85c5550aacfc6902927",
+      "summaryKey": "release07102"
+    },
+    "de": {
+      "key": "econEditorialPortfolioBody",
+      "oldSHA256": "110a3a1822f6aa22fc181cbecbd46e2a81d1c96aab8b4601d01ad281e84b2647",
+      "newSHA256": "2304585eae4df396d92faa5cf18216e0db7f65ab0d5539800271d5a5e2cc9166",
+      "summaryKey": "release07102"
+    },
+    "fr": {
+      "key": "econEditorialPortfolioBody",
+      "oldSHA256": "62b779a70c1d618e5832f50885724b2e65076993da4038ed064f964f375a9fa0",
+      "newSHA256": "e82220f2509cbc4525ef5f91004b0bfc0316a85e10181883eb58384475756c0c",
+      "summaryKey": "release07102"
+    }
+  },
+  "preservation": {
+    "protectedFilesVerified": 318,
+    "historicalDownloadsVerified": 51,
+    "csvFilesVerified": 67,
+    "allHistoricalDownloadsIdentical": true,
+    "allCSVFilesIdentical": true,
+    "scientificJSONIdentical": true,
+    "originalValidatorsWorkflowsAndRuntimeIdentical": true,
+    "originalImmutableInventoryEntries": 28,
+    "originalSectionBaselinePreserved": true,
+    "sourceSections": 21,
+    "v101ReviewSHA256": "ab0c28d3a25a7fb349b83e4c0dbe0d50e748047e9a9d8d16a6956cef28305881",
+    "v101ArchiveSHA256": "b1ac13c1b60b09b7fcc15455c10709460cbf94527c86184574adefc92ca86289",
+    "researchIdentityAndPaperRevisionUnchanged": true,
+    "canonicalSourceOnlyCurrentVersionAndDate": true
+  },
+  "currentArchiveSHA256": "7bfe0002a732a1354e042b1e5849d5fda9c5d45596c89b7656a1864cf0cfb715",
+  "repeatedBuild": {
+    "status": "not-asserted-by-this-helper",
+    "reason": "No repeated-build proof supplied; separate build/CI gates remain required."
+  },
+  "producerBuild": {
+    "observedAt": "2026-11-08T00:16:40.495Z",
+    "evidenceSHA256": "264494ca9cacd655f07b10ec901d269d765fb5b9c85ab927c454154178142149",
+    "workflowRun": {
+      "id": 42428664582,
+      "name": "Rebuild published site",
+      "event": "push",
+      "runAttempt": 1,
+      "headSha": "8a5972376e3c68cfde92762dfb4fbfefa5e7c21b",
+      "headBranch": "feat/final-audit-intercap-v07102-20261108",
+      "status": "completed",
+      "conclusion": "success",
+      "createdAt": "2026-11-08T00:12:06Z",
+      "updatedAt": "2026-11-08T00:15:44Z",
+      "url": "https://github.com/robertbregy/Connecting-the-Dots/actions/runs/42428664582"
+    },
+    "job": {
+      "id": 128572434115,
+      "url": "https://github.com/robertbregy/Connecting-the-Dots/actions/runs/42428664582/job/128572434115",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out repository",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Node",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install Node dependencies",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Rebuild and validate publication",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Validate multilingual publication and delivery",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify reproducible current ZIP and unchanged historical archive",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Commit generated publication on unchanged branch tip",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Set up Node",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out repository",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    "triggerCommit": "8a5972376e3c68cfde92762dfb4fbfefa5e7c21b",
+    "pinnedSourceCommit": "2b4471555f9ea412c912864d20bec1936b8783e6",
+    "generatedCommit": "6bec8491828f809dc04101a18df19a5c567919d8",
+    "generatedTree": "33ab55116b8911d0da87ceef8e9b981ef13f638c",
+    "parents": [
+      "8a5972376e3c68cfde92762dfb4fbfefa5e7c21b"
+    ],
+    "reproducibilityScope": "Two successful CI builds compared the current ZIP, historical ZIP and three research files. This is not a claim of two complete local builds or full-tree identity between the CI build passes.",
+    "currentZip": {
+      "version": "0.7.102",
+      "sha256": "7bfe0002a732a1354e042b1e5849d5fda9c5d45596c89b7656a1864cf0cfb715",
+      "marker": "DETERMINISTIC_ZIP_VERIFIED 0.7.102 7bfe0002a732a1354e042b1e5849d5fda9c5d45596c89b7656a1864cf0cfb715"
+    },
+    "frozenLegacyZip": {
+      "version": "0.7.58",
+      "sha256": "105855eaec0e118418c5bbf332ffa0a0e92b6726f470baf535846bb2cd79894f",
+      "marker": "FROZEN_LEGACY_ZIP_PRESERVED 0.7.58 105855eaec0e118418c5bbf332ffa0a0e92b6726f470baf535846bb2cd79894f"
+    },
+    "researchFiles": {
+      "research/connecting-the-dots-working-paper-v1.md": "d7e962957c712c5a3713639e42242d5b61ee932daef351408e32049d7aec7e03",
+      "research/connecting-the-dots-working-paper-v1.html": "7b0650b987ef9d17009445bc3b003d47a53385791792a127857b9122ddf0b98f",
+      "research/index.html": "bcca6d44881c274c72381b077141a18b34d86332448a9adfa2a5ef6d539de490"
+    },
+    "deliveryBudget": [
+      {
+        "page": "en/index.html",
+        "htmlBytes": 1173133,
+        "htmlAndExtractedBytes": 1620150,
+        "baselineBytes": 1618396,
+        "allowedIncreaseBytes": 2048,
+        "aggregateLimitBytes": 1620444,
+        "aggregateRemainingBytes": 294,
+        "htmlCapBytesExclusive": 1240000,
+        "distanceToHtmlCapBytes": 66867
+      },
+      {
+        "page": "it/index.html",
+        "htmlBytes": 1197679,
+        "htmlAndExtractedBytes": 1658416,
+        "baselineBytes": 1656469,
+        "allowedIncreaseBytes": 2048,
+        "aggregateLimitBytes": 1658517,
+        "aggregateRemainingBytes": 101,
+        "htmlCapBytesExclusive": 1240000,
+        "distanceToHtmlCapBytes": 42321
+      },
+      {
+        "page": "de/index.html",
+        "htmlBytes": 1203697,
+        "htmlAndExtractedBytes": 1666119,
+        "baselineBytes": 1664095,
+        "allowedIncreaseBytes": 2048,
+        "aggregateLimitBytes": 1666143,
+        "aggregateRemainingBytes": 24,
+        "htmlCapBytesExclusive": 1240000,
+        "distanceToHtmlCapBytes": 36303
+      },
+      {
+        "page": "fr/index.html",
+        "htmlBytes": 1220257,
+        "htmlAndExtractedBytes": 1694046,
+        "baselineBytes": 1692022,
+        "allowedIncreaseBytes": 2048,
+        "aggregateLimitBytes": 1694070,
+        "aggregateRemainingBytes": 24,
+        "htmlCapBytesExclusive": 1240000,
+        "distanceToHtmlCapBytes": 19743
+      },
+      {
+        "page": "index.html",
+        "htmlBytes": 1172747,
+        "htmlAndExtractedBytes": 1619764,
+        "baselineBytes": 1618016,
+        "allowedIncreaseBytes": 2048,
+        "aggregateLimitBytes": 1620064,
+        "aggregateRemainingBytes": 300,
+        "htmlCapBytesExclusive": 1240000,
+        "distanceToHtmlCapBytes": 67253
+      }
+    ],
+    "finalPRChecksAndPublicVerificationStillRequired": true
+  },
+  "acceptance": {
+    "localQualityGates": "Not executed by this helper; record actual caller/CI outcomes separately.",
+    "requiredPRChecks": "Seven actual required checks must pass on the complete new PR candidate.",
+    "publication": "Pending: real Pages deployment and live byte verification for the merged v0.7.102 SHA.",
+    "sourceAncestry": "Source descends from PR6 base; the final remote generated commit must independently be verified as its descendant."
+  }
+}

@@ -2403,7 +2403,7 @@
     "econEditorialMarketTitle": "Scarcity forms around a word",
     "econEditorialMarketBody": "Our analysis of the 7 October APS snapshot finds 263 exact-primary-string groups comprising 891 applications. These are analytical groups, not ICANN's definitive contention sets. Replacements and subsequent evaluations can change the picture.",
     "econEditorialPortfolioTitle": "Intercap: applying as a portfolio strategy",
-    "econEditorialPortfolioBody": "Domain Name Wire (7 October) attributes 71 applications to Intercap Registry: 58 for strings with identical-string rivals and 13 without such rivals in its analysis. These press figures require reconciliation with APS application IDs before being treated as official totals. This illustrates a portfolio strategy, not completed acquisitions.",
+    "econEditorialPortfolioBody": "Domain Name Wire (7 October) counts 71 Intercap applications: 58 strings in contention and 13 uncontested. Our comparison of original primary strings in the 11 October APS snapshot gives 54 with exact matches and 17 without: a derived, unofficial count. This is a portfolio strategy, not completed acquisitions.",
     "econEditorialIdentityTitle": "Brands, products and AI agent identities: different logics",
     "econEditorialIdentityBody": "ICANN reports 333 brand applications on Reveal Day. A corporate brand, a product name and a possible digital-agent identity are different strategies. Using TLDs as trust infrastructure for AI agents remains a hypothesis, not an established result.",
     "econEditorialExploreContests": "Explore contention →",
@@ -2582,7 +2582,8 @@
     "release0798": "Technical audit: more reliable publication checks, current citation metadata, localized accessibility controls, lighter HTML and complete archive protection. Scientific evidence and archived releases are preserved.",
     "release0799": "Accessible mobile results, earlier search, shareable Atlas filters and repaired official-source links. Scientific data and archives remain unchanged.",
     "release07100": "Visible focus, accessible skip link and readable mobile metrics. Data unchanged.",
-    "release07101": "Home and Economics: clearer introductions and distinct headings. Data and sources preserved."
+    "release07101": "Home and Economics: clearer introductions and distinct headings. Data and sources preserved.",
+    "release07102": "Intercap corrected."
   },
   "it": {
     "brand": "Brand",
@@ -4988,7 +4989,7 @@
     "econEditorialMarketTitle": "La scarsità è costruita intorno a una parola",
     "econEditorialMarketBody": "La nostra elaborazione dello snapshot APS del 7 ottobre identifica 263 gruppi di candidature con stringa primaria identica, che raccolgono 891 candidature. Sono gruppi analitici, non gli insiemi di contesa definitivi di ICANN. Replacement e successive valutazioni possono cambiare il quadro.",
     "econEditorialPortfolioTitle": "Intercap: candidarsi su un portafoglio",
-    "econEditorialPortfolioBody": "Domain Name Wire (7 ottobre) attribuisce a Intercap Registry 71 candidature, di cui 58 per stringhe con concorrenti identici e 13 senza concorrenti identici nella sua analisi. Sono dati giornalistici da riconciliare con gli ID APS prima di considerarli un conteggio ufficiale. Il caso illustra una strategia di portafoglio, non acquisizioni già concluse.",
+    "econEditorialPortfolioBody": "Domain Name Wire (7 ottobre) conta 71 candidature Intercap: 58 stringhe in contention e 13 non contese. Il nostro confronto delle stringhe primarie originali nello snapshot APS dell'11 ottobre dà 54 con corrispondenze identiche e 17 senza: un calcolo derivato, non ufficiale. Il caso illustra una strategia di portafoglio, non acquisizioni concluse.",
     "econEditorialIdentityTitle": "Marchi, prodotti e identità per agenti AI: tre logiche diverse",
     "econEditorialIdentityBody": "ICANN registra 333 candidature di tipo brand al Reveal Day. Un marchio aziendale, il nome di un prodotto e l'eventuale identità di un agente digitale non sono la stessa strategia. L'uso di TLD come infrastruttura di fiducia per agenti AI resta una prospettiva da valutare, non un risultato già dimostrato.",
     "econEditorialExploreContests": "Esplora le contese →",
@@ -5167,7 +5168,8 @@
     "release0798": "Audit tecnico: controlli di pubblicazione più affidabili, citazioni aggiornate, comandi accessibili nelle quattro lingue, HTML più leggero e protezione completa degli archivi. Evidenze scientifiche e release archiviate preservate.",
     "release0799": "Schede mobili accessibili, ricerca più immediata, filtri dell’atlante condivisibili e collegamenti alle fonti corretti. Dati e archivi scientifici invariati.",
     "release07100": "Focus visibile, salto al contenuto e riquadri mobili leggibili. Dati invariati.",
-    "release07101": "Home ed Economia: introduzioni più chiare e titoli distinti. Dati e fonti conservati."
+    "release07101": "Home ed Economia: introduzioni più chiare e titoli distinti. Dati e fonti conservati.",
+    "release07102": "Intercap corretto."
   },
   "de": {
     "brand": "Marke",
@@ -7573,7 +7575,7 @@
     "econEditorialMarketTitle": "Knappheit entsteht rund um ein Wort",
     "econEditorialMarketBody": "Unsere Auswertung des APS-Stands vom 7. Oktober ermittelt 263 Gruppen identischer primärer Zeichenfolgen mit 891 Bewerbungen. Es handelt sich um analytische Gruppen und nicht um endgültige ICANN-Konkurrenzgruppen. Änderungen und Prüfungen können das Bild verändern.",
     "econEditorialPortfolioTitle": "Intercap: Bewerbungen als Portfoliostrategie",
-    "econEditorialPortfolioBody": "Domain Name Wire (7. Oktober) ordnet Intercap Registry 71 Bewerbungen zu: 58 mit identischen Mitbewerber-Zeichenfolgen und 13 ohne solche Konkurrenz in dieser Analyse. Vor einer amtlichen Einordnung müssen diese journalistischen Zahlen anhand der APS-IDs abgeglichen werden. Es handelt sich um eine Portfoliostrategie, nicht um bereits erworbene TLDs.",
+    "econEditorialPortfolioBody": "Domain Name Wire (7. Oktober) zählt 71 Intercap-Bewerbungen: 58 mit Konkurrenz, 13 ohne. Unser exakter Abgleich ursprünglicher primärer Zeichenfolgen (APS, 11. Oktober) ergibt 54 mit Übereinstimmungen und 17 ohne: eine abgeleitete, nicht offizielle Zählung. Es geht um eine Portfoliostrategie, nicht um erworbene TLDs.",
     "econEditorialIdentityTitle": "Marken, Produkte und KI-Agenten: unterschiedliche Ansätze",
     "econEditorialIdentityBody": "ICANN meldet zum Reveal Day 333 Markenbewerbungen. Unternehmensmarke, Produktname und mögliche digitale Agentenidentität stehen für verschiedene Strategien. TLDs als Vertrauensinfrastruktur für KI-Agenten sind bisher eine Hypothese, kein belegtes Ergebnis.",
     "econEditorialExploreContests": "Konkurrenzfälle erkunden →",
@@ -7752,7 +7754,8 @@
     "release0798": "Technisches Audit: zuverlässigere Veröffentlichungsprüfungen, aktuelle Zitiermetadaten, lokalisierte barrierefreie Bedienelemente, schlankeres HTML und vollständiger Archivschutz. Forschungsbelege und archivierte Versionen bleiben erhalten.",
     "release0799": "Zugängliche mobile Ergebnisse, frühere Suche, teilbare Atlas-Filter und korrigierte Quellenlinks. Forschungsdaten und Archive bleiben unverändert.",
     "release07100": "Sichtbarer Fokus, Sprunglink und lesbare mobile Kennzahlen. Daten unverändert.",
-    "release07101": "Klarere Einleitungen und eindeutige Titel in Startseite und Wirtschaft. Daten und Quellen unverändert."
+    "release07101": "Klarere Einleitungen und eindeutige Titel in Startseite und Wirtschaft. Daten und Quellen unverändert.",
+    "release07102": "Intercap korrigiert."
   },
   "fr": {
     "brand": "Marque",
@@ -10158,7 +10161,7 @@
     "econEditorialMarketTitle": "La rareté se construit autour d'un mot",
     "econEditorialMarketBody": "Notre analyse de l'instantané APS du 7 octobre recense 263 groupes de chaînes primaires identiques, rassemblant 891 candidatures. Il s'agit de groupes analytiques, pas des ensembles de contention définitifs de l'ICANN. Les remplacements et évaluations peuvent modifier ce bilan.",
     "econEditorialPortfolioTitle": "Intercap : la candidature comme stratégie de portefeuille",
-    "econEditorialPortfolioBody": "Domain Name Wire (7 octobre) attribue 71 candidatures à Intercap Registry, dont 58 pour des chaînes ayant des concurrents identiques et 13 sans concurrent identique dans son analyse. Ces chiffres de presse doivent être rapprochés des identifiants APS avant toute qualification officielle. Il s'agit d'une stratégie de portefeuille, non d'acquisitions déjà réalisées.",
+    "econEditorialPortfolioBody": "Domain Name Wire (7 octobre) compte 71 candidatures Intercap : 58 en concurrence et 13 sans concurrence. Notre comparaison des chaînes primaires initiales d'APS au 11 octobre donne 54 avec des correspondances exactes et 17 sans : un calcul dérivé non officiel. C'est une stratégie de portefeuille, pas d'acquisitions.",
     "econEditorialIdentityTitle": "Marques, produits et agents IA : des logiques distinctes",
     "econEditorialIdentityBody": "L'ICANN annonce 333 candidatures de type marque lors du Reveal Day. Une marque d'entreprise, un produit et une éventuelle identité d'agent numérique répondent à des stratégies différentes. Les TLD comme infrastructure de confiance pour agents IA restent une hypothèse, non un fait démontré.",
     "econEditorialExploreContests": "Explorer les contentions →",
@@ -10337,6 +10340,7 @@
     "release0798": "Audit technique : contrôles de publication plus fiables, métadonnées de citation à jour, commandes accessibles dans les quatre langues, HTML allégé et protection complète des archives. Données scientifiques et versions archivées préservées.",
     "release0799": "Résultats mobiles accessibles, recherche plus directe, filtres de l’atlas partageables et liens vers les sources corrigés. Données et archives scientifiques inchangées.",
     "release07100": "Focus visible, lien d’évitement et indicateurs mobiles lisibles. Données inchangées.",
-    "release07101": "Accueil et Économie : introductions clarifiées, titres distincts. Données et sources conservées."
+    "release07101": "Accueil et Économie : introductions clarifiées, titres distincts. Données et sources conservées.",
+    "release07102": "Intercap corrigé."
   }
 }
