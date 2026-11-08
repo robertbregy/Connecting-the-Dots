@@ -20,7 +20,7 @@
 .hero>.publicationState{gap:8px 14px}
 .hero>.epistemicLegend{gap:7px 10px;line-height:1.6}
 .audienceDiscoveries{grid-column:2;grid-row:1/5;align-self:center;display:grid;min-width:0;padding-left:18px;border-left:1px solid var(--border)}
-.audienceDiscovery{position:relative;display:grid;grid-template-columns:94px minmax(0,1fr) 20px;gap:18px;align-items:center;min-width:0;border-bottom:1px solid var(--border);padding:26px 0;color:var(--text);text-decoration:none;transition:background .15s,border-color .15s}
+.audienceDiscovery{position:relative;display:grid;grid-template-columns:112px minmax(0,1fr) 20px;gap:18px;align-items:center;min-width:0;border-bottom:1px solid var(--border);padding:26px 0;color:var(--text);text-decoration:none;transition:background .15s,border-color .15s}
 .audienceDiscovery:first-child{border-top:1px solid var(--border)}
 .audienceDiscovery::before{content:"";position:absolute;left:-23px;top:calc(50% - 5px);width:9px;height:9px;border-radius:50%;background:var(--accent-text);box-shadow:0 0 0 5px var(--bg)}
 .audienceDiscovery::after,.iaHubCard::before,.audienceSecondaryJourney .control::after{content:"";display:block;width:18px;height:18px;flex-shrink:0;background:var(--accent-text);mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 18 18 6M6 6h12v12' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
@@ -144,7 +144,7 @@
 #cultural-epoch-map,[id^="cultural-case-"],#research-citation-guide,#independent-review-status,#three-minute-guide,#reader-study-protocol,[id^="quick-step-"]{scroll-margin-top:calc(var(--topbar-height) + 96px)}
 @media(max-width:1000px){
  .hero>div:first-child{column-gap:28px}
- .audienceDiscovery{grid-template-columns:72px minmax(0,1fr) 16px;gap:12px;padding:22px 0}
+ .audienceDiscovery{grid-template-columns:94px minmax(0,1fr) 16px;gap:12px;padding:22px 0}
  .discoveryName{font-size:43px}
  .audienceDiscovery strong{font-size:17px}
  .audienceEpochMap>ol,.audienceCiteGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -160,7 +160,7 @@
  .heroActions .heroPrimary{grid-column:1/-1}
  .heroActions .readerResearchCta{padding-inline:0;min-height:44px}
  .audienceDiscoveries{grid-column:1;grid-row:5;align-self:stretch;margin:4px 0 8px;padding-left:18px}
- .audienceDiscovery{grid-template-columns:76px minmax(0,1fr) 18px;padding:20px 0;gap:14px}
+ .audienceDiscovery{grid-template-columns:94px minmax(0,1fr) 18px;padding:20px 0;gap:14px}
  .discoveryName{font-size:44px}
  .audienceDiscovery strong{font-size:17px;margin-bottom:5px}
  .audienceDiscovery span span{font-size:14px;line-height:1.55}
