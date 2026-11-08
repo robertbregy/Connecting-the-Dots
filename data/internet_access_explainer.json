@@ -4,7 +4,7 @@
   "editorialLayer": "living-public-explainer-not-frozen-RR1",
   "slug": "who-controls-internet-access",
   "publishedOn": "2026-10-10",
-  "reviewedOn": "2026-11-06",
+  "reviewedOn": "2026-11-08",
   "policy": "A historically sourced selection, not an exhaustive country classification. Separate DNS resolver interference, registry/registrar status, IP/TLS access blocking, platform actions and connectivity shutdowns. Avoid inferring state intent from an individual anomalous probe, or ICANN action from domestic ISP filtering. WikiLeaks 2008 and 2010 are separate events. A DNS hosting provider stopping authoritative service is not a national resolver filter, nor a registry/registrar domain suspension. Payment processors act outside the browser request path.",
   "sources": [
     {
@@ -306,7 +306,7 @@
       "simStagePassed": "passed",
       "simStageBlocked": "interrupted",
       "simStagePending": "not reached",
-      "simNote": "Registration and authoritative DNS are prerequisites to finding the site, not network hops that every browser request traverses. Payment restrictions are outside this path.",
+      "simNote": "Registration and authoritative DNS are prerequisites to finding the site, not network hops that every browser request traverses.",
       "stages": {
         "registry": {
           "title": "TLD, registry & registration",
@@ -460,7 +460,7 @@
         },
         "wikileaks-2010": {
           "title": "WikiLeaks 2010 · hosting, DNS and payments",
-          "body": "Three distinct service decisions followed one another: Amazon ended hosting; EveryDNS withdrew authoritative DNS service after DDoS attacks it said threatened other customers; and payment intermediaries restricted donation channels. None removed the .org TLD from the DNS root. Reported rationales must be attributed to each source rather than inferred from their timing.",
+          "body": "Three distinct service decisions followed one another: Amazon ended hosting; EveryDNS withdrew authoritative DNS service after DDoS attacks it said threatened other customers; and payment intermediaries restricted donation channels. Restrictions on donations affected the service’s funding; they did not, in themselves, constitute a technical block on access to the site. None removed the .org TLD from the DNS root. Reported rationales must be attributed to each source rather than inferred from their timing.",
           "note": "EPIC, EveryDNS as reported by The Register and Guardian timeline · December 2010"
         }
       },
@@ -478,9 +478,7 @@
       "reviewedLabel": "Last reviewed",
       "sourceLabel": "Source",
       "simPreconditionLabel": "Before the visit: the name must exist",
-      "simPreconditionBody": "The registry and registrar manage the domain's registration and authoritative DNS status. They are not contacted as an extra network hop every time someone opens a website.",
-      "financeTitle": "A payment blockade does not break the network connection",
-      "financeBody": "PayPal, Visa and Mastercard can restrict donations via their payment networks. That is control through financial services, not a step in the DNS → network → HTTPS → hosting request path. WikiLeaks in 2010 illustrates why technical reachability and financial sustainability must be analysed separately."
+      "simPreconditionBody": "The registry and registrar manage the domain's registration and authoritative DNS status. They are not contacted as an extra network hop every time someone opens a website."
     },
     "it": {
       "metaTitle": "Chi controlla l'accesso a Internet? | Connecting the Dots",
@@ -503,7 +501,7 @@
       "simStagePassed": "superato",
       "simStageBlocked": "interrotto",
       "simStagePending": "non raggiunto",
-      "simNote": "Registrazione e DNS autorevole sono condizioni per trovare il sito, non nodi che il browser attraversa sempre a ogni visita. Il blocco dei pagamenti non appartiene a questo percorso.",
+      "simNote": "Registrazione e DNS autorevole sono condizioni per trovare il sito, non nodi che il browser attraversa sempre a ogni visita.",
       "stages": {
         "registry": {
           "title": "TLD, registro e registrazione",
@@ -657,7 +655,7 @@
         },
         "wikileaks-2010": {
           "title": "WikiLeaks 2010 · hosting, DNS e pagamenti",
-          "body": "Tre interventi distinti si susseguirono: Amazon cessò l'hosting, EveryDNS interruppe il servizio DNS autorevole a seguito di attacchi DDoS che, secondo il fornitore, minacciavano gli altri clienti, e processori di pagamento limitarono le donazioni. Nessuno dei tre equivale alla rimozione di .org dalla root DNS. Le cause e responsabilità dei diversi interventi vanno attribuite alle fonti, non dedotte dalla coincidenza temporale.",
+          "body": "Tre interventi distinti si susseguirono: Amazon cessò l'hosting, EveryDNS interruppe il servizio DNS autorevole a seguito di attacchi DDoS che, secondo il fornitore, minacciavano gli altri clienti, e processori di pagamento limitarono le donazioni. Le restrizioni alle donazioni incidevano sul finanziamento del servizio: non costituivano, di per sé, un blocco tecnico dell’accesso al sito. Nessuno dei tre equivale alla rimozione di .org dalla root DNS. Le cause e responsabilità dei diversi interventi vanno attribuite alle fonti, non dedotte dalla coincidenza temporale.",
           "note": "EPIC, EveryDNS (tramite The Register) e cronologia Guardian · dicembre 2010"
         }
       },
@@ -675,9 +673,7 @@
       "reviewedLabel": "Ultima verifica",
       "sourceLabel": "Fonte",
       "simPreconditionLabel": "Prima della visita: il nome deve esistere",
-      "simPreconditionBody": "Il registro e il registrar gestiscono la registrazione e la configurazione DNS autorevole del dominio. Non sono un nodo che il browser attraversa a ogni visita.",
-      "financeTitle": "Il blocco dei pagamenti non interrompe la connessione",
-      "financeBody": "PayPal, Visa e Mastercard possono limitare la raccolta di fondi attraverso i propri circuiti. È una forma di controllo esercitata su un servizio finanziario, esterna al percorso DNS → rete → HTTPS → hosting. Il caso WikiLeaks del 2010 mostra perché accessibilità tecnica e sostenibilità economica devono essere analizzate separatamente."
+      "simPreconditionBody": "Il registro e il registrar gestiscono la registrazione e la configurazione DNS autorevole del dominio. Non sono un nodo che il browser attraversa a ogni visita."
     },
     "de": {
       "metaTitle": "Wer kontrolliert den Internetzugang? | Connecting the Dots",
@@ -700,7 +696,7 @@
       "simStagePassed": "erreicht",
       "simStageBlocked": "unterbrochen",
       "simStagePending": "nicht erreicht",
-      "simNote": "Registrierung und autoritatives DNS sind Voraussetzungen, nicht stets durchlaufene Netzwerkknoten. Zahlungssperren liegen außerhalb dieses Pfads.",
+      "simNote": "Registrierung und autoritatives DNS sind Voraussetzungen, nicht stets durchlaufene Netzwerkknoten.",
       "stages": {
         "registry": {
           "title": "TLD, Registry & Registrierung",
@@ -854,7 +850,7 @@
         },
         "wikileaks-2010": {
           "title": "WikiLeaks 2010 · Hosting, DNS und Zahlungswege",
-          "body": "Drei getrennte Maßnahmen folgten aufeinander: Amazon beendete das Hosting; EveryDNS stellte den autoritativen DNS-Dienst nach DDoS-Angriffen ein, die nach Angaben des Anbieters andere Kunden gefährdeten; und Zahlungsdienstleister beschränkten Spendenkanäle. Keine dieser Maßnahmen entfernte .org aus der DNS-Root. Die Motive müssen den jeweiligen Quellen zugeordnet werden.",
+          "body": "Drei getrennte Maßnahmen folgten aufeinander: Amazon beendete das Hosting; EveryDNS stellte den autoritativen DNS-Dienst nach DDoS-Angriffen ein, die nach Angaben des Anbieters andere Kunden gefährdeten; und Zahlungsdienstleister beschränkten Spendenkanäle. Die Einschränkungen der Spenden betrafen die Finanzierung des Dienstes; sie blockierten für sich genommen nicht den technischen Zugang zur Website. Keine dieser Maßnahmen entfernte .org aus der DNS-Root. Die Motive müssen den jeweiligen Quellen zugeordnet werden.",
           "note": "EPIC, EveryDNS laut The Register und Guardian-Chronologie · Dezember 2010"
         }
       },
@@ -872,9 +868,7 @@
       "reviewedLabel": "Zuletzt geprüft",
       "sourceLabel": "Quelle",
       "simPreconditionLabel": "Vor dem Aufruf: Der Name muss bestehen",
-      "simPreconditionBody": "Registry und Registrar verwalten Registrierung und autoritativen DNS-Status der Domain. Beim Aufruf einer Website ist dies kein zusätzlicher Netzwerkknoten, der jedes Mal passiert wird.",
-      "financeTitle": "Eine Zahlungssperre unterbricht nicht die Internetverbindung",
-      "financeBody": "PayPal, Visa und Mastercard können Spenden in ihren Zahlungssystemen einschränken. Das betrifft Finanzdienstleistungen, nicht den technischen Weg DNS → Netzwerk → HTTPS → Hosting. WikiLeaks 2010 zeigt, warum Erreichbarkeit und wirtschaftliche Tragfähigkeit getrennt betrachtet werden müssen."
+      "simPreconditionBody": "Registry und Registrar verwalten Registrierung und autoritativen DNS-Status der Domain. Beim Aufruf einer Website ist dies kein zusätzlicher Netzwerkknoten, der jedes Mal passiert wird."
     },
     "fr": {
       "metaTitle": "Qui contrôle l'accès à Internet ? | Connecting the Dots",
@@ -897,7 +891,7 @@
       "simStagePassed": "franchi",
       "simStageBlocked": "interrompu",
       "simStagePending": "non atteint",
-      "simNote": "Enregistrement et DNS faisant autorité sont des prérequis, pas des nœuds traversés à chaque visite. Les restrictions de paiement sont hors de ce parcours.",
+      "simNote": "Enregistrement et DNS faisant autorité sont des prérequis, pas des nœuds traversés à chaque visite.",
       "stages": {
         "registry": {
           "title": "TLD, registre et enregistrement",
@@ -1051,7 +1045,7 @@
         },
         "wikileaks-2010": {
           "title": "WikiLeaks 2010 · hébergement, DNS et paiements",
-          "body": "Trois décisions distinctes se sont succédé : Amazon a cessé l'hébergement ; EveryDNS a retiré le service DNS faisant autorité après des attaques DDoS qui, selon l'entreprise, menaçaient ses autres clients ; et des intermédiaires de paiement ont limité les dons. Aucune ne supprimait le TLD .org de la racine DNS. Il faut attribuer les motifs aux sources plutôt que les déduire de leur chronologie.",
+          "body": "Trois décisions distinctes se sont succédé : Amazon a cessé l'hébergement ; EveryDNS a retiré le service DNS faisant autorité après des attaques DDoS qui, selon l'entreprise, menaçaient ses autres clients ; et des intermédiaires de paiement ont limité les dons. Les restrictions sur les dons affectaient le financement du service : elles ne constituaient pas, en elles-mêmes, un blocage technique de l’accès au site. Aucune ne supprimait le TLD .org de la racine DNS. Il faut attribuer les motifs aux sources plutôt que les déduire de leur chronologie.",
           "note": "EPIC, déclaration EveryDNS rapportée par The Register et chronologie Guardian · décembre 2010"
         }
       },
@@ -1069,9 +1063,7 @@
       "reviewedLabel": "Dernière vérification",
       "sourceLabel": "Source",
       "simPreconditionLabel": "Avant la visite : le nom doit exister",
-      "simPreconditionBody": "Le registre et le bureau d'enregistrement gèrent l'inscription du domaine et sa configuration DNS faisant autorité. Ils ne constituent pas une étape réseau supplémentaire lors de chaque visite.",
-      "financeTitle": "Bloquer les paiements n'interrompt pas la connexion",
-      "financeBody": "PayPal, Visa et Mastercard peuvent restreindre les dons dans leurs réseaux de paiement. C'est un contrôle financier, extérieur au parcours DNS → réseau → HTTPS → hébergement. Le cas WikiLeaks de 2010 montre pourquoi accessibilité technique et viabilité économique doivent être analysées séparément."
+      "simPreconditionBody": "Le registre et le bureau d'enregistrement gèrent l'inscription du domaine et sa configuration DNS faisant autorité. Ils ne constituent pas une étape réseau supplémentaire lors de chaque visite."
     }
   }
 }

@@ -1,10 +1,16 @@
-# Connecting the Dots — v0.7.103
+# Connecting the Dots — v0.7.104
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
 Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
+
+**v0.7.104 - 8 November 2026**
+
+Keep the Internet access guide focused on technical reachability. Remove the standalone payment section and repeated simulator aside in all four languages; retain one qualified distinction within the documented WikiLeaks 2010 case. Existing shared fragments, evidence, research releases and historical packages remain preserved.
+
+## Previous visual design
 
 **v0.7.103 - 8 November 2026**
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
-  "version": "0.7.103",
+  "version": "0.7.104",
   "native": [
     {
       "file": "en/index.html",
@@ -55,7 +55,7 @@
         },
         {
           "id": "governance-access",
-          "headings": 10,
+          "headings": 9,
           "parent": "ia-explore",
           "next": [
             "governance-sanctions",
@@ -245,7 +245,7 @@
           "lang": "en",
           "essentialBlocks": 7,
           "originalTranslatedItems": 1350,
-          "originalLinks": 1068,
+          "originalLinks": 1066,
           "originalIds": 490,
           "removedNavigationLabels": [
             "Understand the context",
@@ -511,7 +511,7 @@
         },
         {
           "id": "governance-access",
-          "headings": 10,
+          "headings": 9,
           "parent": "ia-explore",
           "next": [
             "governance-sanctions",
@@ -701,7 +701,7 @@
           "lang": "en",
           "essentialBlocks": 7,
           "originalTranslatedItems": 1350,
-          "originalLinks": 1068,
+          "originalLinks": 1066,
           "originalIds": 490,
           "removedNavigationLabels": [
             "Understand the context",
@@ -967,7 +967,7 @@
         },
         {
           "id": "governance-access",
-          "headings": 10,
+          "headings": 9,
           "parent": "ia-explore",
           "next": [
             "governance-sanctions",
@@ -1157,7 +1157,7 @@
           "lang": "it",
           "essentialBlocks": 7,
           "originalTranslatedItems": 1350,
-          "originalLinks": 1068,
+          "originalLinks": 1066,
           "originalIds": 490,
           "removedNavigationLabels": [
             "Per capire il contesto",
@@ -1423,7 +1423,7 @@
         },
         {
           "id": "governance-access",
-          "headings": 10,
+          "headings": 9,
           "parent": "ia-explore",
           "next": [
             "governance-sanctions",
@@ -1613,7 +1613,7 @@
           "lang": "de",
           "essentialBlocks": 7,
           "originalTranslatedItems": 1350,
-          "originalLinks": 1068,
+          "originalLinks": 1066,
           "originalIds": 490,
           "removedNavigationLabels": [
             "Den Zusammenhang verstehen",
@@ -1879,7 +1879,7 @@
         },
         {
           "id": "governance-access",
-          "headings": 10,
+          "headings": 9,
           "parent": "ia-explore",
           "next": [
             "governance-sanctions",
@@ -2069,7 +2069,7 @@
           "lang": "fr",
           "essentialBlocks": 7,
           "originalTranslatedItems": 1350,
-          "originalLinks": 1068,
+          "originalLinks": 1066,
           "originalIds": 490,
           "removedNavigationLabels": [
             "Comprendre le contexte",

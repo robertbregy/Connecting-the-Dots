@@ -75,7 +75,6 @@ ACCESS_CSS = """
 .accessRefs{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 .accessRefs a{text-decoration:none;color:#154e78!important;border:1px solid #9ebbd0;border-radius:6px;background:#eaf3fc;padding:2px 7px;font-size:.77rem;font-weight:750}
 .accessRefs a:hover,.accessRefs a:focus-visible{text-decoration:underline}
-.accessFinance{border-left:4px solid var(--accent)!important;margin:16px 0 35px}.accessFinance h2{font-size:1.32rem;margin:0 0 8px}.accessFinance p{max-width:84ch}
 .accessPanel{padding:22px!important}
 .accessPanel h2{margin:0 0 10px}
 .accessPanel p{max-width:85ch}
@@ -155,7 +154,7 @@ def load(root: Path = ROOT) -> dict:
         required = ("metaTitle","metaDescription","eyebrow","title","lead","introLabel","introBody",
                     "simTitle","simLead","simUrlLabel","simSelectorLabel","simFlowLabel","simPreconditionLabel","simPreconditionBody",
                     "simStatusOpen","simStatusBlocked","simStatusName","simStatusUsers","simStatusActors",
-                    "simStagePassed","simStageBlocked","simStagePending","simNote","financeTitle","financeBody",
+                    "simStagePassed","simStageBlocked","simStagePending","simNote",
                     "actorsTitle","actorsLead","examplesTitle","examplesLead","caseLabel","caseTime",
                     "limitsTitle","limitsBody","sourcesTitle","sourcesLead",
                     "relatedTitle","relatedBody","sanctionsLink","fieldLink","atlasLink",
@@ -212,9 +211,11 @@ def render_page(obj: dict, lang: str) -> str:
         h(t["actors"][x["id"]]["title"])+'</h3><p>'+
         h(t["actors"][x["id"]]["body"])+'</p>'+refs(x["sourceIds"])+'</article>'
         for x in obj["actors"])
+    # Keep old payment-section links pointing to the clarification within the historical case.
     cases = "\n".join(
         '<article data-access-case="'+h(c["id"],quote=True)+'"><span class="accessCasePeriod">'+
-        h(c["period"])+'</span><h3>'+h(t["cases"][c["id"]]["title"])+'</h3><p>'+
+        h(c["period"])+'</span><h3>'+h(t["cases"][c["id"]]["title"])+'</h3><p'+
+        (' id="accessFinanceTitle"' if c["id"]=="wikileaks-2010" else '')+'>'+
         h(t["cases"][c["id"]]["body"])+'</p><p class="accessEvidenceNote">'+
         h(t["cases"][c["id"]]["note"])+'</p>'+refs(c["sourceIds"])+'</article>'
         for c in obj["cases"])
@@ -237,7 +238,7 @@ def render_page(obj: dict, lang: str) -> str:
        "isPartOf":{"@type":"WebSite","name":"Connecting the Dots","url":BASE},
        "citation":[s["url"] for s in obj["sources"]],
        "about":[{"@type":"Thing","name":"DNS filtering"},{"@type":"Thing","name":"Internet shutdown"},
-                {"@type":"Thing","name":"Authoritative DNS hosting and payment services"},
+                {"@type":"Thing","name":"Authoritative DNS hosting"},
                 {"@type":"Thing","name":"ICANN and TLD governance"}]
     }
     related = BASE+"behind-the-round/"+lang+"/"
@@ -277,8 +278,6 @@ def render_page(obj: dict, lang: str) -> str:
 <p class="accessCaveat">{h(t["simNote"])}</p>
 <noscript><p class="accessCaveat">{h(t["simLead"])}</p></noscript>
 </section>
-<section class="panel accessFinance" aria-labelledby="accessFinanceTitle"><h2 id="accessFinanceTitle">{h(t["financeTitle"])}</h2><p>{h(t["financeBody"])}</p>
-{refs(["wikileaks-2010-epic","wikileaks-2010-timeline"])}</section>
 <section class="accessActorSection" aria-labelledby="accessActorsTitle"><h2 id="accessActorsTitle">{h(t["actorsTitle"])}</h2>
 <p class="intro">{h(t["actorsLead"])}</p><div class="accessActors">{actors}</div></section>
 <section class="accessCaseSection" aria-labelledby="accessCasesTitle"><h2 id="accessCasesTitle">{h(t["examplesTitle"])}</h2>

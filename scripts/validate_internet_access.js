@@ -1,10 +1,16 @@
-/* Test multilingual static articles, eight local-only access-control scenarios, and the separate payment lever. */
+/* Test multilingual static articles, eight local-only access-control scenarios, and payment context confined to the historical case. */
 'use strict';
 const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('assert/strict');
 const {parseHTML}=require('linkedom');
 const root=path.resolve(__dirname,'..'),base='https://robertbregy.github.io/Connecting-the-Dots/';
 const data=JSON.parse(fs.readFileSync(path.join(root,'data/internet_access_explainer.json'),'utf8'));
 const languages=['en','it','de','fr'];
+const paymentClarifications={
+ en:'Restrictions on donations affected the service’s funding; they did not, in themselves, constitute a technical block on access to the site.',
+ it:'Le restrizioni alle donazioni incidevano sul finanziamento del servizio: non costituivano, di per sé, un blocco tecnico dell’accesso al sito.',
+ de:'Die Einschränkungen der Spenden betrafen die Finanzierung des Dienstes; sie blockierten für sich genommen nicht den technischen Zugang zur Website.',
+ fr:'Les restrictions sur les dons affectaient le financement du service : elles ne constituaient pas, en elles-mêmes, un blocage technique de l’accès au site.'
+};
 assert.equal(data.cases.length,7);
 assert.equal(data.mechanisms.length,8);
 assert.equal(data.sources.length,15);
@@ -84,7 +90,13 @@ for(const lang of languages){
  }
  const ofac=fs.readFileSync(path.join(root,'behind-the-round',lang,'sanctions-and-dns','index.html'),'utf8');
  assert.ok(ofac.includes(expectedUrl),'Related OFAC guide misses access explainer '+lang);
- assert.ok(document.querySelector('.accessFinance')?.textContent.includes(tr.financeTitle),'Standalone finance explainer missing '+lang);
+ assert.equal(document.querySelector('.accessFinance,h2#accessFinanceTitle,[aria-labelledby="accessFinanceTitle"]'),null,'Payments must not remain a standalone section '+lang);
+ assert.equal(document.querySelector('.readerToc a[href="#accessFinanceTitle"]'),null,'Payments must not remain a contents entry '+lang);
+ const paymentCase=document.querySelector('[data-access-case="wikileaks-2010"]');
+ assert.equal(paymentCase.textContent.split(paymentClarifications[lang]).length,2,'One qualified payment clarification must remain in WikiLeaks 2010 '+lang);
+ assert.equal(document.querySelectorAll('#accessFinanceTitle').length,1,'Preserve the published payment fragment once '+lang);
+ assert.ok(paymentCase.querySelector('p#accessFinanceTitle')?.textContent.includes(paymentClarifications[lang]),'The old payment fragment must lead to the visible historical explanation '+lang);
+ assert.ok(!/payment|pagament|zahlung|paiement/i.test(simulator.querySelector('p.accessCaveat').textContent),'Simulator note must stay focused on technical access '+lang);
  assert.ok(!document.querySelector('.accessChoices [data-access-select="payments"]'),'Payments must stay outside the network simulator '+lang);
  console.log('Access simulator and sources PASS: '+lang+' / 8 scenarios / 7 cases / 15 sources');
 }
