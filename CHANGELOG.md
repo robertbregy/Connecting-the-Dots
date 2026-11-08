@@ -1,3 +1,10 @@
+# v0.7.104 - 8 November 2026
+
+- Remove the standalone payment-blockade section and its contents entry from the Internet access guide in EN, IT, DE and FR.
+- Remove the payment aside below the network simulation; keep one qualified financing-versus-access distinction in the WikiLeaks 2010 case.
+- Preserve the old payment-section fragment as an alias within that case, plus all eight simulation scenarios, seven documented cases and fifteen sources.
+- Publish a separate technical package and freeze the exact v0.7.103 archive; retain research identities and the existing publication gates.
+
 # v0.7.103 - 8 November 2026
 
 - Refresh Home, chapter openings and navigational cards with an editorial hierarchy and a restrained dot-and-connection identity.
