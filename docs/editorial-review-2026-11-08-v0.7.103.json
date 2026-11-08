@@ -5699,8 +5699,9 @@
   },
   "buildProvenancePolicy": {
     "version": "0.7.103",
-    "sourceCommit": "894361a1e4df497844007640334c6986b8762e51",
-    "semantics": "Pin the real preparatory source commit containing the current visual sources, homepage order checks and release metadata. Its own provenance value may be provisional; the final pin, deterministic outputs, exact review and one Atlas test-only palette expectation correction are recorded in a descendant candidate. Visual/runtime source bytes are identical to this pin."
+    "sourceCommit": "51cd7c38fd8fdd4e1c001d03c41fa67f7b9e32ff",
+    "status": "pinned-source-awaiting-exact-output-review",
+    "semantics": "Pin the real preparatory source commit containing the visual sources including corrected Home story columns, the two bounded presentation QA corrections and release metadata. Deterministic generated outputs and exact review are recorded in a descendant candidate."
   },
   "ciRuntimeMaintenanceReview": {
     "reviewedOn": "2026-11-06",
@@ -5996,7 +5997,7 @@
       "scripts/audit_aps_application_atlas.js"
     ],
     "qaProvenance": "Both exactly bounded presentation QA corrections are already present in the revised source pin: the two Home adjacency checks and the single Atlas expected RGB literal. No other validator bytes or thresholds change.",
-    "sourceCommit": "894361a1e4df497844007640334c6986b8762e51",
+    "sourceCommit": "51cd7c38fd8fdd4e1c001d03c41fa67f7b9e32ff",
     "changedPaths": [
       "CHANGELOG.md",
       "README.md",
