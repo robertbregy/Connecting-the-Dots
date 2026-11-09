@@ -1,3 +1,10 @@
+# v0.7.105 - 9 November 2026
+
+- Add citable guides and TLD profiles as static HTML and Markdown in EN, IT, DE and FR.
+- Link these pages through canonical metadata, language alternatives, structured data and the sitemap.
+- Publish `agent-catalog.json` and `llms.txt` with dataset units, observation dates, provenance and separate current/research-release identities.
+- Publish a new technical package and preserve the exact v0.7.104 archive and its checksum.
+
 # v0.7.104 - 8 November 2026
 
 - Remove the standalone payment-blockade section and its contents entry from the Internet access guide in EN, IT, DE and FR.

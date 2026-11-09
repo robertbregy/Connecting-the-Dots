@@ -28,6 +28,11 @@ on:
       - 'index.html'
       - 'publication.json'
       - 'build.py'
+      - 'guides/**'
+      - 'tlds/**'
+      - 'discovery/**'
+      - 'agent-catalog.json'
+      - 'llms.txt'
 
 permissions:
   contents: read
@@ -75,6 +80,7 @@ jobs:
           trap 'kill "$server" 2>/dev/null || true' EXIT
           sleep 2
           python3 scripts/run_browser_regressions.py
+          CTD_DISCOVERY_QA=audit-discovery node scripts/discovery_browser_qa.cjs
       - name: Attach visual evidence
         if: always()
         uses: actions/upload-artifact@v6
@@ -92,6 +98,7 @@ jobs:
             audit-regression-status.json
             audit-regression-logs/
             audit-usability/
+            audit-discovery/
           if-no-files-found: ignore
 
   independent-qa:

@@ -1,0 +1,71 @@
+# Connecting the Dots
+
+> Independent research atlas by Robert Bregy about Internet TLDs, ICANN applications, governance, economics and society. Available in English, Italian, German and French.
+
+Website version 0.7.105, published 2026-11-09. This is the technical/editorial release date, not the observation date of every fact. Read the source date and scope beside each claim.
+
+## Start here
+
+- [Machine-readable catalog](https://robertbregy.github.io/Connecting-the-Dots/agent-catalog.json): page URLs, data units, source dates, provenance, licensing and archived releases.
+- [Reading-page index](https://robertbregy.github.io/Connecting-the-Dots/discovery/manifest.json): focused HTML pages and their available Markdown versions, in all four languages.
+- [Research and citation](https://robertbregy.github.io/Connecting-the-Dots/research/): method, current working paper, archived evidence and how to cite it.
+- [Complete data manifest](https://robertbregy.github.io/Connecting-the-Dots/data/manifest.json): existing CSV/JSON resources and integrity information.
+
+## Reading pages
+
+- [Is a domain only there to find a website? | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/guides/en/beyond/index.md): From services we use to the invisible functions of DNS, then writing systems and alternative naming systems.
+- [What is a city's own domain for? | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/guides/en/cities/index.md): Start with governance models and cases. Ask how to measure usefulness, then compare different generations of projects.
+- [Who creates value, and who collects it? | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/guides/en/economics/index.md): Follow the money through the domain market, from registration payments to the strategies of extension operators.
+- [How does an Internet name work? | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/guides/en/how/index.md): First the address and the actors, then the lifecycle, economics and rules. The glossary is always within reach.
+- [What might .lugano become? | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/guides/en/lugano/index.md): Start with the application's status and the author's position. Then read intentions, open decisions, possible uses and verification criteria.
+- [How have Internet names changed? | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/index.md): Follow the history, compare application rounds and then examine the classifications and their limitations.
+- [.ai: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/ai/index.md): Anguilla’s country code. Its association with artificial intelligence illustrates how an existing name can acquire a new meaning.
+- [.amazon: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/amazon/index.md): .amazon is currently delegated in the DNS root as Generic.
+- [.berlin: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/berlin/index.md): .berlin is currently delegated in the DNS root as Generic.
+- [.cat: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/cat/index.md): A name for the Catalan linguistic and cultural community: a belonging that crosses state borders.
+- [.com: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/com/index.md): Created for commercial activities before the Web. It later became a symbol of online presence.
+- [.io: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/io/index.md): .io is currently delegated in the DNS root as Country-code.
+- [.lugano: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/lugano/index.md): An application by the City of Lugano in the 2026 round. It is not yet operational: approval, delegation and future uses remain to be established.
+- [.music: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/music/index.md): .music is currently delegated in the DNS root as Generic.
+- [.swiss: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/swiss/index.md): .swiss is currently delegated in the DNS root as Generic.
+- [.zuerich: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/zuerich/index.md): .zuerich is currently delegated in the DNS root as Generic.
+
+## Languages
+
+- [English](https://robertbregy.github.io/Connecting-the-Dots/en/): interactive atlas; focused reading URLs are listed in the reading-page index.
+- [Italiano](https://robertbregy.github.io/Connecting-the-Dots/it/): interactive atlas; focused reading URLs are listed in the reading-page index.
+- [Deutsch](https://robertbregy.github.io/Connecting-the-Dots/de/): interactive atlas; focused reading URLs are listed in the reading-page index.
+- [Français](https://robertbregy.github.io/Connecting-the-Dots/fr/): interactive atlas; focused reading URLs are listed in the reading-page index.
+
+## Data and scope
+
+The combined Explorer contains 2,788 names: 1,849 base records plus 980 frozen 2026 primary strings, minus 41 overlapping names. This is not a count of delegated TLDs. The root snapshot contains 1,437 TLDs at 2026-10-04.
+
+The APS export observed at 2026-10-11T21:27:40.214Z contains 2,783 rows: 1,614 base applications and 1,169 linked replacement rows. Its new-primary subset has 1,608 applications over 980 strings; 6 other base applications concern variants of existing TLDs. The separately published official total is 1,615; retain the documented public-listing gap.
+
+- [TLD and historical profile universe](https://robertbregy.github.io/Connecting-the-Dots/data/tld_universe.csv): 1,599 records; unit: TLD/profile identity. [Provenance](https://robertbregy.github.io/Connecting-the-Dots/data/iana_snapshot.json).
+- [Base Explorer catalog](https://robertbregy.github.io/Connecting-the-Dots/data/explorer_catalog.csv): 1,849 records; unit: distinct name. [Provenance](https://robertbregy.github.io/Connecting-the-Dots/data/manifest.json).
+- [Frozen secondary Reveal Day primary-string inventory](https://robertbregy.github.io/Connecting-the-Dots/data/applications_2026_strings_reveal.csv): 980 records; unit: distinct new primary string. [Provenance](https://robertbregy.github.io/Connecting-the-Dots/data/application_2026_snapshot.json).
+- [ICANN APS public listing, original fields preserved](https://robertbregy.github.io/Connecting-the-Dots/data/applications_2026_aps_official_listing.csv): 2,783 records; unit: APS listing row. [Provenance](https://robertbregy.github.io/Connecting-the-Dots/data/applications_2026_aps_official_provenance.json).
+- [Published APS applications and their string relationships](https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_application_graph.json): 1,614 records; unit: published base application. [Provenance](https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_application_graph_manifest.json).
+- [Source-dated APS status observations](https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_record_observations.csv): 2,783 records; unit: source observation of an APS record. [Provenance](https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_application_graph_manifest.json).
+- [Separately curated local 2026 application records](https://robertbregy.github.io/Connecting-the-Dots/data/applications_2026.csv): 1 records; unit: locally curated application record. [Provenance](https://robertbregy.github.io/Connecting-the-Dots/data/application_2026_snapshot.json).
+- [Current derived APS analysis](https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_current_analytics.csv): 1,614 records; unit: published base application with explicit analysis scopes. [Provenance](https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_current_analytics_manifest.json).
+- [Historical ICANN 2012 application–string–applicant graph](https://robertbregy.github.io/Connecting-the-Dots/data/applications_2012.csv): 1,930 records; unit: 2012 application. [Provenance](https://robertbregy.github.io/Connecting-the-Dots/data/application_archaeology_manifest.json).
+- [Source-backed economic metrics](https://robertbregy.github.io/Connecting-the-Dots/data/economic_metrics.csv): 22 records; unit: economic observation. [Provenance](https://robertbregy.github.io/Connecting-the-Dots/data/manifest.json).
+
+## Interpretation and citation
+
+Application, delegation, replacement, variant and derived exact-string grouping have different meanings. A false APS contention flag does not establish absence of contention before String Evaluation. Facts, interpretation and prospective ideas remain separate; undocumented outcomes are not inferred.
+
+The current archived research release is [RR2](https://doi.org/10.5281/zenodo.23288603), bibliographic publication date 2026-10-11, evidence cutoff 2026-10-10. The newer website and current derived APS analysis are not automatically included in this DOI. Previous research releases remain immutable and separately citable.
+
+- [Citation file](https://robertbregy.github.io/Connecting-the-Dots/CITATION.cff): archived research citation.
+- [Research release manifest](https://robertbregy.github.io/Connecting-the-Dots/research/research_release_manifest.json): archived versions and working-paper relationship.
+- [Bibliographic date clarification](https://robertbregy.github.io/Connecting-the-Dots/data/research_bibliographic_corrections.json): deposit creation, GitHub release, evidence cutoff and Zenodo publication date.
+
+## Access and reuse
+
+Original project work is CC BY 4.0 unless indicated otherwise. Third-party records retain their original rights and terms; consult the [licensing notice](https://robertbregy.github.io/Connecting-the-Dots/CONTENT_LICENSE.md) and the linked sources.
+
+The authoritative crawler policy is at [https://robertbregy.github.io/robots.txt](https://robertbregy.github.io/robots.txt). The robots.txt copy under the project path is not authoritative. This index is a navigation aid, not a permission grant or a guarantee of search visibility.

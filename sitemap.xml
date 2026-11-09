@@ -1,343 +1,967 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/en/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/en/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/it/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/de/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/en/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/en/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/it/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/en/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/it/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/de/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/en/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/en/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/de/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/en/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/it/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/de/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/en/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/en/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/fr/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/en/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/it/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/de/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/en/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/en/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/explorer/</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/research/</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/research/connecting-the-dots-working-paper-v1.html</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/en/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/en/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/it/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/de/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/en/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/en/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/it/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/en/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/it/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/de/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/en/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/en/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/de/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/en/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/it/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/de/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/en/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/en/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/fr/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/en/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/it/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/de/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/en/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/inside-the-round/en/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/wdo-identity/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/wdo-identity/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/wdo-identity/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/wdo-identity/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/wdo-identity/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/wdo-identity/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/wdo-identity/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/wdo-identity/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/wdo-identity/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/wdo-identity/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/wdo-identity/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/wdo-identity/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/wdo-identity/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/wdo-identity/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/wdo-identity/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/wdo-identity/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/wdo-identity/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/wdo-identity/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/wdo-identity/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/wdo-identity/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/wdo-identity/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/wdo-identity/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/wdo-identity/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/wdo-identity/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/wdo-identity/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/wdo-identity/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/wdo-identity/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/wdo-identity/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/wdo-identity/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/wdo-identity/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/wdo-identity/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/wdo-identity/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/wdo-identity/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/wdo-identity/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/wdo-identity/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/wdo-identity/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/wdo-identity/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/wdo-identity/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/wdo-identity/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/wdo-identity/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/wdo-identity/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/wdo-identity/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/wdo-identity/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/wdo-identity/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/sanctions-and-dns/</loc>
     <lastmod>2026-10-10</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/sanctions-and-dns/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/sanctions-and-dns/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/sanctions-and-dns/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/sanctions-and-dns/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/sanctions-and-dns/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/sanctions-and-dns/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/sanctions-and-dns/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/sanctions-and-dns/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/sanctions-and-dns/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/sanctions-and-dns/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/sanctions-and-dns/</loc>
     <lastmod>2026-10-10</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/sanctions-and-dns/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/sanctions-and-dns/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/sanctions-and-dns/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/sanctions-and-dns/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/sanctions-and-dns/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/sanctions-and-dns/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/sanctions-and-dns/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/sanctions-and-dns/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/sanctions-and-dns/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/sanctions-and-dns/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/sanctions-and-dns/</loc>
     <lastmod>2026-10-10</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/sanctions-and-dns/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/sanctions-and-dns/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/sanctions-and-dns/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/sanctions-and-dns/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/sanctions-and-dns/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/sanctions-and-dns/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/sanctions-and-dns/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/sanctions-and-dns/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/sanctions-and-dns/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/sanctions-and-dns/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/sanctions-and-dns/</loc>
     <lastmod>2026-10-10</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/sanctions-and-dns/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/sanctions-and-dns/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/sanctions-and-dns/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/sanctions-and-dns/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/sanctions-and-dns/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/sanctions-and-dns/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/sanctions-and-dns/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/sanctions-and-dns/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/sanctions-and-dns/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/sanctions-and-dns/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/</loc>
     <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/who-controls-internet-access/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/who-controls-internet-access/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/who-controls-internet-access/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/who-controls-internet-access/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/who-controls-internet-access/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/who-controls-internet-access/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/who-controls-internet-access/</loc>
     <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/who-controls-internet-access/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/who-controls-internet-access/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/who-controls-internet-access/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/who-controls-internet-access/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/who-controls-internet-access/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/who-controls-internet-access/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/who-controls-internet-access/</loc>
     <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/who-controls-internet-access/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/who-controls-internet-access/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/who-controls-internet-access/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/who-controls-internet-access/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/who-controls-internet-access/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/who-controls-internet-access/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/who-controls-internet-access/</loc>
     <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/who-controls-internet-access/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/who-controls-internet-access/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/who-controls-internet-access/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/who-controls-internet-access/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/who-controls-internet-access/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/who-controls-internet-access/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/who-controls-internet-access/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/objectors-eoi/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/objectors-eoi/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/objectors-eoi/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/objectors-eoi/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/objectors-eoi/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/objectors-eoi/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/objectors-eoi/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/objectors-eoi/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/objectors-eoi/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/objectors-eoi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/objectors-eoi/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/objectors-eoi/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/objectors-eoi/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/objectors-eoi/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/objectors-eoi/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/objectors-eoi/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/objectors-eoi/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/objectors-eoi/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/objectors-eoi/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/objectors-eoi/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/objectors-eoi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/objectors-eoi/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/objectors-eoi/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/objectors-eoi/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/objectors-eoi/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/objectors-eoi/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/objectors-eoi/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/objectors-eoi/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/objectors-eoi/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/objectors-eoi/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/objectors-eoi/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/objectors-eoi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/objectors-eoi/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/objectors-eoi/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/objectors-eoi/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/objectors-eoi/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/objectors-eoi/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/objectors-eoi/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/objectors-eoi/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/objectors-eoi/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/objectors-eoi/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/objectors-eoi/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/objectors-eoi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/objectors-eoi/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/replacement-strings/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/replacement-strings/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/replacement-strings/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/replacement-strings/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/replacement-strings/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/replacement-strings/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/replacement-strings/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/replacement-strings/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/replacement-strings/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/replacement-strings/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/replacement-strings/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/replacement-strings/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/replacement-strings/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/replacement-strings/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/replacement-strings/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/replacement-strings/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/replacement-strings/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/replacement-strings/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/replacement-strings/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/replacement-strings/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/replacement-strings/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/replacement-strings/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/replacement-strings/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/replacement-strings/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/replacement-strings/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/replacement-strings/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/replacement-strings/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/replacement-strings/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/replacement-strings/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/replacement-strings/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/replacement-strings/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/replacement-strings/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/replacement-strings/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/replacement-strings/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/replacement-strings/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/replacement-strings/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/replacement-strings/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/replacement-strings/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/replacement-strings/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/replacement-strings/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/replacement-strings/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/replacement-strings/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/replacement-strings/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/replacement-strings/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/background-screening/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/background-screening/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/background-screening/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/background-screening/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/background-screening/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/background-screening/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/background-screening/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/background-screening/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/background-screening/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/background-screening/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/background-screening/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/background-screening/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/background-screening/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/background-screening/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/background-screening/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/background-screening/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/background-screening/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/background-screening/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/background-screening/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/background-screening/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/background-screening/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/background-screening/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/background-screening/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/background-screening/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/background-screening/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/background-screening/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/background-screening/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/background-screening/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/background-screening/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/background-screening/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/background-screening/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/background-screening/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/background-screening/" />
   </url>
   <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/background-screening/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/background-screening/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/background-screening/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/background-screening/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/background-screening/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/background-screening/"/>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/background-screening/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/it/background-screening/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/de/background-screening/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/fr/background-screening/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/background-screening/" />
   </url>
-<url><loc>https://robertbregy.github.io/Connecting-the-Dots/applications/en/</loc><lastmod>2026-11-08</lastmod></url>
-<url><loc>https://robertbregy.github.io/Connecting-the-Dots/applications/it/</loc><lastmod>2026-11-08</lastmod></url>
-<url><loc>https://robertbregy.github.io/Connecting-the-Dots/applications/de/</loc><lastmod>2026-11-08</lastmod></url>
-<url><loc>https://robertbregy.github.io/Connecting-the-Dots/applications/fr/</loc><lastmod>2026-11-08</lastmod></url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/applications/en/</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/applications/it/</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/applications/de/</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/applications/fr/</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/en/how/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/how/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/how/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/how/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/how/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/how/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/timeline/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/timeline/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/timeline/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/en/cities/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/cities/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/cities/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/cities/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/cities/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/cities/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/en/economics/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/economics/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/economics/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/economics/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/economics/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/economics/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/en/lugano/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/lugano/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/lugano/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/lugano/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/lugano/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/lugano/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/en/beyond/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/beyond/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/beyond/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/beyond/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/beyond/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/beyond/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/en/ai/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/ai/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/ai/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/ai/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/ai/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/ai/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/en/lugano/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/lugano/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/lugano/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/lugano/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/lugano/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/lugano/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/en/amazon/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/amazon/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/amazon/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/amazon/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/amazon/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/amazon/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/en/music/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/music/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/music/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/music/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/music/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/music/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/en/berlin/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/berlin/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/berlin/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/berlin/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/berlin/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/berlin/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/en/zuerich/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/zuerich/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/zuerich/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/zuerich/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/zuerich/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/zuerich/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/en/swiss/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/swiss/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/swiss/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/swiss/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/swiss/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/swiss/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/en/com/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/com/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/com/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/com/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/com/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/en/cat/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/cat/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/cat/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/cat/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/cat/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/cat/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/en/io/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/io/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/io/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/io/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/io/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/io/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/discovery/en/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/en/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/it/how/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/how/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/how/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/how/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/how/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/how/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/it/timeline/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/timeline/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/timeline/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/timeline/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/it/cities/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/cities/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/cities/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/cities/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/cities/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/cities/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/it/economics/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/economics/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/economics/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/economics/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/economics/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/economics/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/it/lugano/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/lugano/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/lugano/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/lugano/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/lugano/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/lugano/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/it/beyond/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/beyond/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/beyond/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/beyond/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/beyond/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/beyond/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/it/ai/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/ai/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/ai/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/ai/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/ai/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/ai/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/it/lugano/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/lugano/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/lugano/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/lugano/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/lugano/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/lugano/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/it/amazon/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/amazon/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/amazon/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/amazon/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/amazon/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/amazon/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/it/music/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/music/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/music/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/music/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/music/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/music/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/it/berlin/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/berlin/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/berlin/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/berlin/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/berlin/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/berlin/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/it/zuerich/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/zuerich/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/zuerich/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/zuerich/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/zuerich/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/zuerich/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/it/swiss/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/swiss/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/swiss/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/swiss/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/swiss/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/swiss/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/it/com/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/com/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/com/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/com/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/com/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/it/cat/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/cat/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/cat/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/cat/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/cat/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/cat/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/it/io/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/io/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/io/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/io/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/io/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/io/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/discovery/it/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/en/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/de/how/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/how/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/how/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/how/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/how/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/how/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/de/timeline/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/timeline/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/timeline/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/timeline/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/de/cities/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/cities/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/cities/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/cities/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/cities/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/cities/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/de/economics/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/economics/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/economics/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/economics/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/economics/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/economics/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/de/lugano/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/lugano/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/lugano/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/lugano/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/lugano/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/lugano/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/de/beyond/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/beyond/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/beyond/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/beyond/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/beyond/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/beyond/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/de/ai/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/ai/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/ai/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/ai/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/ai/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/ai/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/de/lugano/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/lugano/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/lugano/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/lugano/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/lugano/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/lugano/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/de/amazon/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/amazon/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/amazon/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/amazon/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/amazon/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/amazon/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/de/music/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/music/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/music/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/music/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/music/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/music/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/de/berlin/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/berlin/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/berlin/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/berlin/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/berlin/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/berlin/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/de/zuerich/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/zuerich/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/zuerich/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/zuerich/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/zuerich/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/zuerich/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/de/swiss/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/swiss/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/swiss/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/swiss/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/swiss/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/swiss/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/de/com/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/com/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/com/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/com/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/com/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/de/cat/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/cat/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/cat/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/cat/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/cat/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/cat/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/de/io/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/io/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/io/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/io/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/io/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/io/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/discovery/de/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/en/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/fr/how/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/how/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/how/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/how/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/how/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/how/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/fr/timeline/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/timeline/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/timeline/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/timeline/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/fr/cities/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/cities/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/cities/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/cities/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/cities/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/cities/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/fr/economics/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/economics/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/economics/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/economics/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/economics/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/economics/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/fr/lugano/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/lugano/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/lugano/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/lugano/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/lugano/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/lugano/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/guides/fr/beyond/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/beyond/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/guides/it/beyond/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/guides/de/beyond/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/guides/fr/beyond/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/guides/en/beyond/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/ai/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/ai/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/ai/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/ai/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/ai/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/ai/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/lugano/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/lugano/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/lugano/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/lugano/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/lugano/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/lugano/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/amazon/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/amazon/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/amazon/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/amazon/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/amazon/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/amazon/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/music/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/music/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/music/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/music/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/music/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/music/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/berlin/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/berlin/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/berlin/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/berlin/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/berlin/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/berlin/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/zuerich/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/zuerich/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/zuerich/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/zuerich/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/zuerich/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/zuerich/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/swiss/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/swiss/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/swiss/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/swiss/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/swiss/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/swiss/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/com/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/com/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/com/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/com/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/com/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/cat/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/cat/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/cat/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/cat/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/cat/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/cat/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/io/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/io/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/it/io/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/de/io/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/io/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/tlds/en/io/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/discovery/fr/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/en/" />
+  </url>
 </urlset>

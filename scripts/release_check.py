@@ -926,8 +926,23 @@ must_index.update(site_base+'behind-the-round/'+lang+'/sanctions-and-dns/' for l
 must_index.update(site_base+'behind-the-round/'+lang+'/who-controls-internet-access/' for lang in LANGS)
 must_index.update(site_base+'behind-the-round/'+lang+'/'+slug+'/' for slug in ('objectors-eoi','replacement-strings','background-screening') for lang in LANGS)
 must_index.update(site_base+'applications/'+lang+'/' for lang in LANGS)
+assert len(must_index)==43, 'Established sitemap inventory changed'
+discovery_manifest=json.loads((ROOT/'discovery/manifest.json').read_text(encoding='utf-8'))
+if discovery_manifest.get('schemaVersion')!=1 or discovery_manifest.get('siteVersion')!=publication_meta['version']:
+    fail('Discovery manifest must identify the current publication')
+discovery_pages=discovery_manifest.get('pages', [])
+discovery_paths=[page.get('path', '') for page in discovery_pages]
+if len(discovery_paths)!=68 or len(set(discovery_paths))!=68:
+    fail('Discovery edition must contain 68 distinct canonical documents')
+for page in discovery_pages:
+    relative_path=page.get('path', '')
+    if not re.fullmatch(r'(guides|tlds|discovery)/(en|it|de|fr)/(?:[a-z0-9-]+/)?', relative_path):
+        fail('Invalid discovery document path: '+relative_path)
+    if not (ROOT/relative_path/'index.html').is_file() or not (ROOT/page.get('markdownPath','')).is_file():
+        fail('Missing HTML or Markdown discovery document: '+relative_path)
+    must_index.add(site_base+relative_path)
 if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index):
-    fail('Sitemap must preserve all 43 language/research/chronicle/field-note/explainer/application URLs')
+    fail('Sitemap must preserve all 43 established URLs and include all 68 discovery documents exactly once')
 for lang in LANGS:
     page=(ROOT/lang/'index.html').read_text(encoding='utf-8')
     chronicle_page=ROOT/'inside-the-round'/lang/'index.html'

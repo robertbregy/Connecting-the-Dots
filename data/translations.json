@@ -2585,7 +2585,8 @@
     "release07101": "Home and Economics: clearer introductions and distinct headings. Data and sources preserved.",
     "release07102": "Intercap corrected.",
     "release07103": "New editorial design, clearer navigation and more comfortable reading on mobile. Data and sources preserved.",
-    "release07104": "Keep payment restrictions within the WikiLeaks case."
+    "release07104": "Keep payment restrictions within the WikiLeaks case.",
+    "release07105": "Citable guides, TLD profiles and an AI-agent catalog."
   },
   "it": {
     "brand": "Brand",
@@ -5173,7 +5174,8 @@
     "release07101": "Home ed Economia: introduzioni più chiare e titoli distinti. Dati e fonti conservati.",
     "release07102": "Intercap corretto.",
     "release07103": "Nuova veste editoriale, navigazione più chiara e lettura più piacevole sul telefono. Dati e fonti preservati.",
-    "release07104": "Pagamenti ricondotti al caso WikiLeaks."
+    "release07104": "Pagamenti ricondotti al caso WikiLeaks.",
+    "release07105": "Guide e schede TLD citabili; catalogo per agenti AI."
   },
   "de": {
     "brand": "Marke",
@@ -7761,7 +7763,8 @@
     "release07101": "Klarere Einleitungen und eindeutige Titel in Startseite und Wirtschaft. Daten und Quellen unverändert.",
     "release07102": "Intercap korrigiert.",
     "release07103": "Neues redaktionelles Design, klarere Navigation und angenehmeres Lesen auf dem Handy. Daten und Quellen erhalten.",
-    "release07104": "Zahlungssperren auf den WikiLeaks-Fall begrenzt."
+    "release07104": "Zahlungssperren auf den WikiLeaks-Fall begrenzt.",
+    "release07105": "Zitierbare Leitfäden und TLD-Profile; Katalog für KI-Agenten."
   },
   "fr": {
     "brand": "Marque",
@@ -10349,6 +10352,7 @@
     "release07101": "Accueil et Économie : introductions clarifiées, titres distincts. Données et sources conservées.",
     "release07102": "Intercap corrigé.",
     "release07103": "Nouvelle présentation éditoriale, navigation plus claire et lecture plus agréable sur mobile. Données et sources conservées.",
-    "release07104": "Restrictions de paiement replacées dans le cas WikiLeaks."
+    "release07104": "Restrictions de paiement replacées dans le cas WikiLeaks.",
+    "release07105": "Guides et fiches TLD citables ; catalogue pour agents IA."
   }
 }
