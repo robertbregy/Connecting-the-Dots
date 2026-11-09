@@ -1,0 +1,361 @@
+{
+  "schemaVersion": 1,
+  "locales": {
+    "it": {
+      "seoDescription": "Un atlante dei nomi di Internet: scopri come funzionano i domini e le storie di economia, territori e governance che si intrecciano dietro ogni estensione.",
+      "eyebrow": "UN ATLANTE DEI NOMI DI INTERNET",
+      "title": "I nomi di Internet raccontano il mondo.",
+      "lead": "Apriamo un sito, leggiamo una notizia, cerchiamo un servizio. Per raggiungerli usiamo nomi, spesso senza soffermarci sulle ultime lettere dell’indirizzo: .com, .ch, .org, .ai.",
+      "intro": "Quelle lettere hanno una storia. Possono richiamare un’attività, un territorio o una comunità. Dietro la loro assegnazione ci sono scelte tecniche, interessi economici e decisioni che riguardano persone e istituzioni.",
+      "project": "Connecting the Dots è un atlante per esplorare questo mondo: capire come funzionano i domini, scoprire chi li gestisce e seguire le storie che li hanno portati fin qui.",
+      "primaryCta": "Come funzionano i domini",
+      "secondaryCta": "Esplora l’atlante",
+      "byline": "Un progetto indipendente di Robert Bregy",
+      "domain": {
+        "eyebrow": "PARTIAMO DA UN NOME",
+        "title": "Le parti di un nome",
+        "label": "Un nome a dominio",
+        "tldLabel": "L’estensione",
+        "tldBody": "L’ultima parte del nome, chiamata dominio di primo livello o TLD.",
+        "explain": "Il DNS trova le informazioni per collegare un nome a un servizio. Gli esempi mostrano associazioni di significato, non vincoli sull’uso delle estensioni.",
+        "examples": [
+          { "name": ".com", "label": "Attività commerciali" },
+          { "name": ".ch", "label": "Svizzera" },
+          { "name": ".org", "label": "Organizzazioni" }
+        ]
+      },
+      "origins": {
+        "eyebrow": "COME TUTTO È COMINCIATO",
+        "title": "Prima dei siti, c’erano già i nomi.",
+        "body": "I nomi dei computer esistevano già prima del Web e del DNS. Su ARPANET, un elenco centralizzato li collegava agli indirizzi di rete. Con la crescita della rete, aggiornarlo e distribuirlo diventava sempre più difficile. Il Domain Name System, proposto nel 1983, organizzò questo compito in modo gerarchico e distribuito. Da una soluzione pratica per trovare i computer nasce così una storia che attraversa istituzioni, mercati e comunità.",
+        "linkLabel": "Esplora la storia dei domini",
+        "sourceLabel": "Le fonti di questa storia",
+        "journeyTitle": "Che cosa succede quando apri un sito?",
+        "journeyBody": "Segui il percorso dal nome alla pagina: un esempio guidato mostra il ruolo del DNS, delle reti e della connessione HTTPS."
+      },
+      "stories": {
+        "eyebrow": "TRE NOMI, TRE STORIE",
+        "title": "Che cosa può raccontare un’estensione?",
+        "lead": "Un’attività economica, un territorio, una lingua. Le stesse lettere possono conservare le proprie radici e assumere nuovi significati.",
+        "items": [
+          {
+            "name": ".com",
+            "title": "Un nome nato prima del Web",
+            "body": "L’estensione .com nasce per le attività commerciali quando il Web ancora non esiste. La sua storia accompagna il passaggio da una rete di ricerca a uno spazio di attività economiche.",
+            "tab": "timeline",
+            "anchor": "cultural-case-institutions"
+          },
+          {
+            "name": ".ai",
+            "title": "Da Anguilla all’intelligenza artificiale",
+            "body": "È il codice territoriale di Anguilla, nei Caraibi. L’associazione con l’intelligenza artificiale gli ha dato un nuovo significato, senza cambiarne la natura di dominio territoriale.",
+            "tab": "timeline",
+            "anchor": "cultural-case-reinterpretation"
+          },
+          {
+            "name": ".cat",
+            "title": "Un nome per una comunità",
+            "body": "L’estensione .cat nasce per la comunità linguistica e culturale catalana. Mostra come un nome possa esprimere un’appartenenza che attraversa i confini degli Stati.",
+            "tab": "timeline",
+            "anchor": "cultural-case-differentiation"
+          }
+        ]
+      },
+      "pathways": {
+        "eyebrow": "CONTINUA A ESPLORARE",
+        "title": "Da dove vuoi proseguire?",
+        "lead": "Parti da una domanda, cerca un nome oppure consulta direttamente dati e fonti.",
+        "items": [
+          { "id": "ia-understand", "title": "Capire", "body": "Domini, DNS e gli altri passaggi che permettono a una pagina di arrivare sullo schermo." },
+          { "id": "ia-explore", "title": "Esplorare", "body": "Cerca un’estensione, consulta la sua scheda e segui la storia e la geografia dei nomi." },
+          { "id": "ia-stories", "title": "Storie e questioni", "body": "Città, lingue, imprese e comunità: scopri chi usa i nomi e quale valore attribuisce loro." },
+          { "id": "ia-outcomes", "title": "Conflitti ed esiti", "body": "Candidature concorrenti, controversie e nomi abbandonati: segui le decisioni e i loro esiti." },
+          { "id": "ia-round", "title": "Round 2026", "body": "Esamina le candidature, le regole del processo e gli aggiornamenti documentati, incluso il caso .lugano." },
+          { "id": "ia-research", "title": "Ricerca", "body": "Consulta fonti e metodo, leggi i rapporti e scarica i dati per approfondire o riutilizzarli." }
+        ]
+      },
+      "round": {
+        "eyebrow": "ROUND ICANN 2026",
+        "title": "I nomi proposti per il futuro della rete",
+        "body": "Il round ICANN 2026 apre una nuova fase nella storia dei domini. Qui puoi seguire le candidature e le questioni che sollevano, con stati e date riferiti alle fonti. Una candidatura, compresa .lugano, non equivale a un’estensione approvata o già disponibile.",
+        "linkLabel": "Segui il round 2026",
+        "statusLabel": "Stato delle candidature"
+      },
+      "projectInfo": {
+        "eyebrow": "IL PROGETTO",
+        "title": "Curiosità, dati e fonti",
+        "body": "Le spiegazioni dell’atlante accompagnano dati e documenti verificabili. Fatti, interpretazioni e scenari sono distinti. Puoi seguire un percorso di lettura oppure consultare direttamente le fonti e riutilizzare i dati.",
+        "methodLabel": "Fonti e metodo",
+        "researchLabel": "Rapporti di ricerca",
+        "guidesLabel": "Guide e schede"
+      }
+    },
+    "en": {
+      "seoDescription": "An atlas of internet names: explore how domain names work and the history, economics, places and governance behind the extensions we use every day.",
+      "eyebrow": "AN ATLAS OF INTERNET NAMES",
+      "title": "The names of the internet tell the world’s stories.",
+      "lead": "We open a website, read the news, look for a service. We reach them through names, often without giving much thought to the last few letters of the address: .com, .ch, .org, .ai.",
+      "intro": "Those letters have a history. They can suggest an activity, a place or a community. Behind their allocation lie technical choices, economic interests and decisions that affect people and institutions.",
+      "project": "Connecting the Dots is an atlas for exploring this world: how domain names work, who manages them and the stories that have shaped them.",
+      "primaryCta": "How domain names work",
+      "secondaryCta": "Explore the atlas",
+      "byline": "An independent project by Robert Bregy",
+      "domain": {
+        "eyebrow": "START WITH A NAME",
+        "title": "The parts of a name",
+        "label": "A domain name",
+        "tldLabel": "The extension",
+        "tldBody": "The final part of the name, known as a top-level domain, or TLD.",
+        "explain": "The DNS finds information that connects names to services. The examples below show associations, rather than restrictions on how each extension can be used.",
+        "examples": [
+          { "name": ".com", "label": "Commercial activities" },
+          { "name": ".ch", "label": "Switzerland" },
+          { "name": ".org", "label": "Organisations" }
+        ]
+      },
+      "origins": {
+        "eyebrow": "HOW IT BEGAN",
+        "title": "Before websites, there were names.",
+        "body": "Computers had names before the Web and before the DNS. On ARPANET, a central list linked them to network addresses. As the network grew, updating and distributing that list became increasingly difficult. The Domain Name System, proposed in 1983, organised this task through a distributed hierarchy. A practical solution for finding computers became the starting point for a story of institutions, markets and communities.",
+        "linkLabel": "Explore the history of domain names",
+        "sourceLabel": "The sources behind this story",
+        "journeyTitle": "What happens when you open a website?",
+        "journeyBody": "Follow the journey from a name to a page: a guided example shows how the DNS, networks and an HTTPS connection each play their part."
+      },
+      "stories": {
+        "eyebrow": "THREE NAMES, THREE STORIES",
+        "title": "What can an extension tell us?",
+        "lead": "An economic activity, a territory, a language. The same letters can keep their roots while taking on new meanings.",
+        "items": [
+          {
+            "name": ".com",
+            "title": "A name older than the Web",
+            "body": ".com was created for commercial activities before the Web existed. Its history follows the shift from a research network to a place for economic activity.",
+            "tab": "timeline",
+            "anchor": "cultural-case-institutions"
+          },
+          {
+            "name": ".ai",
+            "title": "From Anguilla to artificial intelligence",
+            "body": "It is the country-code domain for Anguilla in the Caribbean. Its association with artificial intelligence has given it a new meaning while its status as a country-code domain remains the same.",
+            "tab": "timeline",
+            "anchor": "cultural-case-reinterpretation"
+          },
+          {
+            "name": ".cat",
+            "title": "A name for a community",
+            "body": ".cat was created for the Catalan linguistic and cultural community. It shows how a name can express a sense of belonging that crosses national borders.",
+            "tab": "timeline",
+            "anchor": "cultural-case-differentiation"
+          }
+        ]
+      },
+      "pathways": {
+        "eyebrow": "KEEP EXPLORING",
+        "title": "Where would you like to go next?",
+        "lead": "Start with a question, look up a name or go straight to the data and sources.",
+        "items": [
+          { "id": "ia-understand", "title": "Understand", "body": "Domain names, the DNS and the other steps that bring a web page to your screen." },
+          { "id": "ia-explore", "title": "Explore", "body": "Look up an extension, read its profile and explore the history and geography of names." },
+          { "id": "ia-stories", "title": "Stories and questions", "body": "Cities, languages, businesses and communities: discover who uses names and what they value about them." },
+          { "id": "ia-outcomes", "title": "Conflicts and outcomes", "body": "Competing applications, disputes and abandoned names: follow the decisions and their outcomes." },
+          { "id": "ia-round", "title": "2026 round", "body": "Examine applications, the rules of the process and documented updates, including the case of .lugano." },
+          { "id": "ia-research", "title": "Research", "body": "Check sources and methods, read the reports and download data for further study or reuse." }
+        ]
+      },
+      "round": {
+        "eyebrow": "ICANN 2026 ROUND",
+        "title": "Names proposed for the internet’s future",
+        "body": "ICANN’s 2026 round opens a new chapter in the history of domain names. Follow the applications and the questions they raise, with statuses and dates tied to their sources. An application, including .lugano, does not mean an extension has been approved or is already available.",
+        "linkLabel": "Follow the 2026 round",
+        "statusLabel": "Application status"
+      },
+      "projectInfo": {
+        "eyebrow": "ABOUT THE PROJECT",
+        "title": "Curiosity, data and sources",
+        "body": "The atlas pairs explanations with data and documents you can check. Facts, interpretations and scenarios are kept distinct. Follow a reading path or go directly to the sources and reusable data.",
+        "methodLabel": "Sources and methods",
+        "researchLabel": "Research reports",
+        "guidesLabel": "Guides and profiles"
+      }
+    },
+    "de": {
+      "seoDescription": "Ein Atlas der Internetnamen: wie Domains funktionieren und welche Geschichten, wirtschaftlichen Interessen und Regeln hinter ihren Endungen stehen.",
+      "eyebrow": "EIN ATLAS DER INTERNETNAMEN",
+      "title": "Die Namen des Internets erzählen von unserer Welt.",
+      "lead": "Wir öffnen eine Website, lesen Nachrichten oder suchen einen Dienst. Wir erreichen sie über Namen und beachten die letzten Buchstaben der Adresse oft kaum: .com, .ch, .org, .ai.",
+      "intro": "Diese Buchstaben haben eine Geschichte. Sie können auf eine Tätigkeit, ein Gebiet oder eine Gemeinschaft verweisen. Hinter ihrer Vergabe stehen technische Entscheidungen, wirtschaftliche Interessen und Beschlüsse, die Menschen und Institutionen betreffen.",
+      "project": "Connecting the Dots ist ein Atlas dieser Welt: Er erklärt, wie Domainnamen funktionieren, wer sie verwaltet und welche Geschichten sie geprägt haben.",
+      "primaryCta": "So funktionieren Domainnamen",
+      "secondaryCta": "Atlas erkunden",
+      "byline": "Ein unabhängiges Projekt von Robert Bregy",
+      "domain": {
+        "eyebrow": "BEGINNEN WIR MIT EINEM NAMEN",
+        "title": "Die Teile eines Namens",
+        "label": "Ein Domainname",
+        "tldLabel": "Die Endung",
+        "tldBody": "Der letzte Teil des Namens, auch Top-Level-Domain oder TLD genannt.",
+        "explain": "Das DNS findet Informationen, die Namen mit Diensten verbinden. Die Beispiele zeigen mögliche Bedeutungen, keine Regeln darüber, wer eine Endung verwenden darf.",
+        "examples": [
+          { "name": ".com", "label": "Kommerzielle Tätigkeiten" },
+          { "name": ".ch", "label": "Schweiz" },
+          { "name": ".org", "label": "Organisationen" }
+        ]
+      },
+      "origins": {
+        "eyebrow": "WIE ALLES BEGANN",
+        "title": "Vor den Websites gab es schon Namen.",
+        "body": "Computer hatten bereits vor dem Web und dem DNS Namen. Im ARPANET ordnete eine zentrale Liste diesen Namen Netzwerkadressen zu. Mit dem Wachstum des Netzes wurde es immer schwieriger, die Liste aktuell zu halten und zu verteilen. Das 1983 vorgeschlagene Domain Name System organisierte diese Aufgabe hierarchisch und dezentral. Aus einer praktischen Lösung zum Auffinden von Computern entstand eine Geschichte, die Institutionen, Märkte und Gemeinschaften verbindet.",
+        "linkLabel": "Die Geschichte der Domainnamen erkunden",
+        "sourceLabel": "Die Quellen zu dieser Geschichte",
+        "journeyTitle": "Was geschieht beim Öffnen einer Website?",
+        "journeyBody": "Vom Namen bis zur Seite: Ein geführtes Beispiel zeigt, welche Aufgaben das DNS, die Netzwerke und die HTTPS-Verbindung übernehmen."
+      },
+      "stories": {
+        "eyebrow": "DREI NAMEN, DREI GESCHICHTEN",
+        "title": "Was kann eine Endung erzählen?",
+        "lead": "Eine wirtschaftliche Tätigkeit, ein Gebiet, eine Sprache. Dieselben Buchstaben können ihre Wurzeln bewahren und neue Bedeutungen annehmen.",
+        "items": [
+          {
+            "name": ".com",
+            "title": "Ein Name, der älter ist als das Web",
+            "body": ".com entstand für kommerzielle Tätigkeiten, bevor es das Web gab. Die Geschichte dieser Endung begleitet den Wandel vom Forschungsnetz zum Raum für wirtschaftliche Aktivitäten.",
+            "tab": "timeline",
+            "anchor": "cultural-case-institutions"
+          },
+          {
+            "name": ".ai",
+            "title": "Von Anguilla zur künstlichen Intelligenz",
+            "body": ".ai ist die Länderendung von Anguilla in der Karibik. Die Verbindung zur künstlichen Intelligenz hat ihr eine neue Bedeutung gegeben. Ihr Status als Länderendung bleibt dabei bestehen.",
+            "tab": "timeline",
+            "anchor": "cultural-case-reinterpretation"
+          },
+          {
+            "name": ".cat",
+            "title": "Ein Name für eine Gemeinschaft",
+            "body": ".cat entstand für die katalanische Sprach- und Kulturgemeinschaft. Die Endung zeigt, wie ein Name eine Zugehörigkeit ausdrücken kann, die über Staatsgrenzen hinausreicht.",
+            "tab": "timeline",
+            "anchor": "cultural-case-differentiation"
+          }
+        ]
+      },
+      "pathways": {
+        "eyebrow": "WEITER ENTDECKEN",
+        "title": "Wie soll es weitergehen?",
+        "lead": "Mit einer Frage beginnen, einen Namen suchen oder direkt Daten und Quellen aufrufen.",
+        "items": [
+          { "id": "ia-understand", "title": "Verstehen", "body": "Domainnamen, DNS und die weiteren Schritte, durch die eine Webseite auf den Bildschirm gelangt." },
+          { "id": "ia-explore", "title": "Erkunden", "body": "Eine Endung suchen, ihr Profil lesen und die Geschichte und Geografie der Namen erkunden." },
+          { "id": "ia-stories", "title": "Geschichten und Fragen", "body": "Städte, Sprachen, Unternehmen und Gemeinschaften: Wer nutzt Namen, und welchen Wert haben sie für diese Menschen?" },
+          { "id": "ia-outcomes", "title": "Konflikte und Ergebnisse", "body": "Konkurrierende Bewerbungen, Streitfälle und aufgegebene Namen: Entscheidungen und ihre Ergebnisse nachvollziehen." },
+          { "id": "ia-round", "title": "Runde 2026", "body": "Bewerbungen, Verfahrensregeln und dokumentierte Entwicklungen untersuchen, einschliesslich des Falls .lugano." },
+          { "id": "ia-research", "title": "Forschung", "body": "Quellen und Methoden prüfen, Berichte lesen und Daten zur Vertiefung oder Weiterverwendung herunterladen." }
+        ]
+      },
+      "round": {
+        "eyebrow": "ICANN-RUNDE 2026",
+        "title": "Namensvorschläge für die Zukunft des Netzes",
+        "body": "Die ICANN-Runde 2026 eröffnet ein neues Kapitel in der Geschichte der Domainnamen. Hier lassen sich die Bewerbungen und die damit verbundenen Fragen verfolgen. Status und Datum beziehen sich jeweils auf die angegebenen Quellen. Eine Bewerbung, auch für .lugano, bedeutet weder eine Zulassung noch die Verfügbarkeit der Endung.",
+        "linkLabel": "Die Runde 2026 verfolgen",
+        "statusLabel": "Stand der Bewerbungen"
+      },
+      "projectInfo": {
+        "eyebrow": "DAS PROJEKT",
+        "title": "Neugier, Daten und Quellen",
+        "body": "Der Atlas verbindet Erklärungen mit überprüfbaren Daten und Dokumenten. Fakten, Interpretationen und Szenarien werden klar unterschieden. Lesepfade führen durch die Inhalte; Quellen und wiederverwendbare Daten sind auch direkt zugänglich.",
+        "methodLabel": "Quellen und Methoden",
+        "researchLabel": "Forschungsberichte",
+        "guidesLabel": "Leitfäden und Profile"
+      }
+    },
+    "fr": {
+      "seoDescription": "Un atlas des noms d’Internet : comprendre les domaines et découvrir l’histoire, l’économie, les territoires et les règles qui façonnent leurs extensions.",
+      "eyebrow": "UN ATLAS DES NOMS D’INTERNET",
+      "title": "Les noms d’Internet racontent le monde.",
+      "lead": "Nous ouvrons un site, lisons une actualité, cherchons un service. Nous y accédons par des noms, souvent sans nous attarder sur les dernières lettres de l’adresse : .com, .ch, .org, .ai.",
+      "intro": "Ces lettres ont une histoire. Elles peuvent évoquer une activité, un territoire ou une communauté. Leur attribution repose sur des choix techniques, des intérêts économiques et des décisions qui concernent les personnes et les institutions.",
+      "project": "Connecting the Dots est un atlas pour explorer cet univers : comprendre le fonctionnement des domaines, découvrir qui les gère et suivre les histoires qui les ont façonnés.",
+      "primaryCta": "Comprendre les noms de domaine",
+      "secondaryCta": "Explorer l’atlas",
+      "byline": "Un projet indépendant de Robert Bregy",
+      "domain": {
+        "eyebrow": "PARTONS D’UN NOM",
+        "title": "Les différentes parties d’un nom",
+        "label": "Un nom de domaine",
+        "tldLabel": "L’extension",
+        "tldBody": "La dernière partie du nom, appelée domaine de premier niveau, ou TLD.",
+        "explain": "Le DNS trouve les informations permettant de relier un nom à un service. Les exemples illustrent des associations de sens, pas des restrictions d’usage.",
+        "examples": [
+          { "name": ".com", "label": "Activités commerciales" },
+          { "name": ".ch", "label": "Suisse" },
+          { "name": ".org", "label": "Organisations" }
+        ]
+      },
+      "origins": {
+        "eyebrow": "COMMENT TOUT A COMMENCÉ",
+        "title": "Avant les sites, il y avait déjà des noms.",
+        "body": "Les ordinateurs avaient des noms avant le Web et le DNS. Sur ARPANET, une liste centralisée les associait aux adresses du réseau. À mesure que celui-ci grandissait, actualiser et distribuer cette liste devenait plus difficile. Le Domain Name System, proposé en 1983, a organisé cette tâche de manière hiérarchique et distribuée. Une solution pratique pour trouver les ordinateurs est ainsi devenue le point de départ d’une histoire d’institutions, de marchés et de communautés.",
+        "linkLabel": "Explorer l’histoire des noms de domaine",
+        "sourceLabel": "Les sources de cette histoire",
+        "journeyTitle": "Que se passe-t-il quand on ouvre un site ?",
+        "journeyBody": "Du nom à la page, un exemple guidé permet de comprendre le rôle du DNS, des réseaux et de la connexion HTTPS."
+      },
+      "stories": {
+        "eyebrow": "TROIS NOMS, TROIS HISTOIRES",
+        "title": "Que peut raconter une extension ?",
+        "lead": "Une activité économique, un territoire, une langue. Les mêmes lettres peuvent garder leurs racines et prendre de nouveaux sens.",
+        "items": [
+          {
+            "name": ".com",
+            "title": "Un nom né avant le Web",
+            "body": "L’extension .com est née pour les activités commerciales, avant même l’existence du Web. Son histoire accompagne le passage d’un réseau de recherche à un espace d’activité économique.",
+            "tab": "timeline",
+            "anchor": "cultural-case-institutions"
+          },
+          {
+            "name": ".ai",
+            "title": "D’Anguilla à l’intelligence artificielle",
+            "body": "C’est l’extension territoriale d’Anguilla, dans les Caraïbes. L’association avec l’intelligence artificielle lui a donné un nouveau sens. Son statut de domaine territorial reste le même.",
+            "tab": "timeline",
+            "anchor": "cultural-case-reinterpretation"
+          },
+          {
+            "name": ".cat",
+            "title": "Un nom pour une communauté",
+            "body": "L’extension .cat est née pour la communauté linguistique et culturelle catalane. Elle montre comment un nom peut exprimer une appartenance qui traverse les frontières des États.",
+            "tab": "timeline",
+            "anchor": "cultural-case-differentiation"
+          }
+        ]
+      },
+      "pathways": {
+        "eyebrow": "POURSUIVRE L’EXPLORATION",
+        "title": "Par où souhaitez-vous continuer ?",
+        "lead": "Partez d’une question, cherchez un nom ou consultez directement les données et les sources.",
+        "items": [
+          { "id": "ia-understand", "title": "Comprendre", "body": "Les domaines, le DNS et les autres étapes qui permettent à une page de parvenir à votre écran." },
+          { "id": "ia-explore", "title": "Explorer", "body": "Cherchez une extension, consultez sa fiche et explorez l’histoire et la géographie des noms." },
+          { "id": "ia-stories", "title": "Histoires et enjeux", "body": "Villes, langues, entreprises et communautés : découvrez qui utilise les noms et quelle valeur leur est accordée." },
+          { "id": "ia-outcomes", "title": "Conflits et issues", "body": "Candidatures concurrentes, controverses et noms abandonnés : suivez les décisions et leurs résultats." },
+          { "id": "ia-round", "title": "Cycle 2026", "body": "Examinez les candidatures, les règles du processus et les évolutions documentées, dont le cas de .lugano." },
+          { "id": "ia-research", "title": "Recherche", "body": "Consultez les sources et les méthodes, lisez les rapports et téléchargez les données pour les étudier ou les réutiliser." }
+        ]
+      },
+      "round": {
+        "eyebrow": "CYCLE ICANN 2026",
+        "title": "Les noms proposés pour l’avenir du réseau",
+        "body": "Le cycle ICANN 2026 ouvre une nouvelle étape dans l’histoire des domaines. Vous pouvez suivre les candidatures et les questions qu’elles soulèvent, avec des statuts et des dates rattachés aux sources. Une candidature, y compris .lugano, ne signifie pas que l’extension est approuvée ou déjà disponible.",
+        "linkLabel": "Suivre le cycle 2026",
+        "statusLabel": "État des candidatures"
+      },
+      "projectInfo": {
+        "eyebrow": "LE PROJET",
+        "title": "Curiosité, données et sources",
+        "body": "L’atlas associe des explications à des données et des documents vérifiables. Faits, interprétations et scénarios restent distincts. Vous pouvez suivre un parcours de lecture ou accéder directement aux sources et aux données réutilisables.",
+        "methodLabel": "Sources et méthodes",
+        "researchLabel": "Rapports de recherche",
+        "guidesLabel": "Guides et fiches"
+      }
+    }
+  }
+}

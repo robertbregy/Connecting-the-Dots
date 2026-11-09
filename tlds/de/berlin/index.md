@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/de/berlin/ | Site edition: 0.7.105 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/de/berlin/ | Site edition: 0.7.106 | Language: de -->
 
 Domainprofil
 
@@ -186,6 +186,6 @@ Von IANA verlinkte Berichte mit Originaltiteln und Veröffentlichungsdaten. Das 
 
 [Offizieller IANA-Datensatz ↗](https://www.iana.org/domains/root/db/berlin.html) [Quelle 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Quelle 3 ↗](https://www.iana.org/domains/root/db) [Quelle 4 ↗](https://newgtlds.icann.org/en/announcements-and-media/case-studies/berlin-a4-13feb19-en.pdf) [Quelle 5 ↗](https://newgtlds.icann.org/en/program-status/statistics) [Quelle 6 ↗](https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/)
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.105 · 9. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.106 · 9. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

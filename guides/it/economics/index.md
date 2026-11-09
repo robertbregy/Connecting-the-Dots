@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/it/economics/ | Site edition: 0.7.105 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/it/economics/ | Site edition: 0.7.106 | Language: it -->
 
 Guida
 
@@ -906,6 +906,6 @@ I costi di gestione di un registro aiutano a capire rinunce e uscite. Casi, cron
 
 [Esplora il cimitero dei gTLD →](https://robertbregy.github.io/Connecting-the-Dots/it/#cemetery)
 
-**Di Robert Bregy** · Edizione del sito 0.7.105 · 9 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.106 · 9 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

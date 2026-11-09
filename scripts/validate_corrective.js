@@ -1,6 +1,7 @@
 /* Regression checks for historical/current data separation and URL restoration. */
 const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('assert/strict'),crypto=require('crypto'),zlib=require('zlib');
 const {parseHTML}=require('linkedom');const root=path.resolve(__dirname,'..');
+const {assertHomeStructure}=require('./home_editorial_qa.cjs');
 const read=p=>fs.readFileSync(path.join(root,p),'utf8');
 const dataContext={window:{}};vm.runInNewContext(read('data/data_bundle.js'),dataContext);const D=dataContext.window.DOT_DATA;
 const snapshot=JSON.parse(read('data/iana_snapshot.json'));
@@ -117,8 +118,13 @@ for(const lang of ['en','it','de','fr']){
  b.run("resetExplorer();document.getElementById('explorerSearch').value='a.nic.ch';renderExplorer(true)");assert.ok(b.run("explorerFilteredRows().some(r=>r.string==='.ch')"),lang+' nameserver search');
  b=browser(lang,'?tab=explore&preset=outsideRoot');assert.ok(b.run('explorerFilteredRows().every(r=>!r.rootListed)'));assert.equal(b.run('explorerFilteredRows().length'),D.explorer.length-rootLabels.length);
  b=browser(lang,'?tab=explore&preset=curated');assert.equal(b.run('explorerFilteredRows().length'),D.explorerMeta.curatedCount,lang+' curated filter');
- b=browser(lang,'?tab=overview');assert.equal(b.document.querySelectorAll('#overview [data-open-section]').length,6);assert.equal(b.document.getElementById('cards').closest('.section').id,'reveal');assert.equal(b.document.getElementById('namespaceDimensions').closest('.section').id,'how');assert.ok(b.document.querySelector('#lugano .authorDisclosure').textContent.includes('Robert Bregy'));
- const click=new b.document.defaultView.Event('click',{cancelable:true});Object.defineProperty(click,'button',{value:0});b.document.querySelector('#overview [data-open-section="explore"]').dispatchEvent(click);assert.equal(b.document.body.dataset.activeTab,'explore',lang+' guided entry link');
+ b=browser(lang,'?tab=overview');
+ const editorialHome=!!b.document.querySelector('.hero.homeHero');
+ // QA106: count the published home's six paths; preserve the legacy VM contract.
+ if(editorialHome)assertHomeStructure(b.document,lang);
+ else assert.equal(b.document.querySelectorAll('#overview [data-open-section]').length,6);
+ assert.equal(b.document.getElementById('cards').closest('.section').id,'reveal');assert.equal(b.document.getElementById('namespaceDimensions').closest('.section').id,'how');assert.ok(b.document.querySelector('#lugano .authorDisclosure').textContent.includes('Robert Bregy'));
+ const click=new b.document.defaultView.Event('click',{cancelable:true});Object.defineProperty(click,'button',{value:0});b.document.querySelector(editorialHome?'.heroSecondary':'#overview [data-open-section="explore"]').dispatchEvent(click);assert.equal(b.document.body.dataset.activeTab,'explore',lang+' guided entry link');
  for(const key of ['publicQuestionsIntro','publicNeedBody','publicAdoptionBody','publicRulesBody','publicOpenBody'])assert.ok(!/budget|costi|costs|coûts|Kosten|CHF/.test(dictionary[key]),lang+' public-only editorial criteria');
  // The guided explanation must work in every language without touching research data.
  b=browser(lang,'?tab=overview');

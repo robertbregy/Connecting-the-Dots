@@ -2586,7 +2586,8 @@
     "release07102": "Intercap corrected.",
     "release07103": "New editorial design, clearer navigation and more comfortable reading on mobile. Data and sources preserved.",
     "release07104": "Keep payment restrictions within the WikiLeaks case.",
-    "release07105": "Citable guides, TLD profiles and an AI-agent catalog."
+    "release07105": "Citable guides, TLD profiles and an AI-agent catalog.",
+    "release07106": "A new homepage explaining Internet names: a clear introduction, an illustrated domain and focused pathways."
   },
   "it": {
     "brand": "Brand",
@@ -5175,7 +5176,8 @@
     "release07102": "Intercap corretto.",
     "release07103": "Nuova veste editoriale, navigazione più chiara e lettura più piacevole sul telefono. Dati e fonti preservati.",
     "release07104": "Pagamenti ricondotti al caso WikiLeaks.",
-    "release07105": "Guide e schede TLD citabili; catalogo per agenti AI."
+    "release07105": "Guide e schede TLD citabili; catalogo per agenti AI.",
+    "release07106": "Una nuova home per capire i nomi di Internet: introduzione, dominio illustrato e percorsi più chiari."
   },
   "de": {
     "brand": "Marke",
@@ -7764,7 +7766,8 @@
     "release07102": "Intercap korrigiert.",
     "release07103": "Neues redaktionelles Design, klarere Navigation und angenehmeres Lesen auf dem Handy. Daten und Quellen erhalten.",
     "release07104": "Zahlungssperren auf den WikiLeaks-Fall begrenzt.",
-    "release07105": "Zitierbare Leitfäden und TLD-Profile; Katalog für KI-Agenten."
+    "release07105": "Zitierbare Leitfäden und TLD-Profile; Katalog für KI-Agenten.",
+    "release07106": "Eine neue Startseite erklärt Internetnamen: mit Einführung, anschaulicher Domain und klaren Themenwegen."
   },
   "fr": {
     "brand": "Marque",
@@ -10353,6 +10356,7 @@
     "release07102": "Intercap corrigé.",
     "release07103": "Nouvelle présentation éditoriale, navigation plus claire et lecture plus agréable sur mobile. Données et sources conservées.",
     "release07104": "Restrictions de paiement replacées dans le cas WikiLeaks.",
-    "release07105": "Guides et fiches TLD citables ; catalogue pour agents IA."
+    "release07105": "Guides et fiches TLD citables ; catalogue pour agents IA.",
+    "release07106": "Un nouvel accueil pour comprendre les noms d’Internet : introduction, domaine illustré et parcours plus clairs."
   }
 }

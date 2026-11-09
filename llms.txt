@@ -2,7 +2,7 @@
 
 > Independent research atlas by Robert Bregy about Internet TLDs, ICANN applications, governance, economics and society. Available in English, Italian, German and French.
 
-Website version 0.7.105, published 2026-11-09. This is the technical/editorial release date, not the observation date of every fact. Read the source date and scope beside each claim.
+Website version 0.7.106, published 2026-11-09. This is the technical/editorial release date, not the observation date of every fact. Read the source date and scope beside each claim.
 
 ## Start here
 

@@ -3,6 +3,7 @@ const path=require('path');
 const vm=require('vm');
 const assert=require('assert/strict');
 const {parseHTML}=require('linkedom');
+const {assertHomeStructure}=require('./home_editorial_qa.cjs');
 const root=path.resolve(__dirname,'..');
 const base='https://robertbregy.github.io/Connecting-the-Dots/';
 assert.ok(fs.existsSync(path.join(root,'assets/og-preview.png')),'Article preview image file missing');
@@ -11,6 +12,7 @@ const rootHtml=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const snapshot=JSON.parse(fs.readFileSync(path.join(root,'data/iana_snapshot.json'),'utf8'));
 const publication=JSON.parse(fs.readFileSync(path.join(root,'publication.json'),'utf8'));
 const audienceEditorial=JSON.parse(fs.readFileSync(path.join(root,'data/audience_editorial.json'),'utf8'));
+const homeEditorial=JSON.parse(fs.readFileSync(path.join(root,'data/home_editorial.json'),'utf8'));
 // A green build requires complete translations in every language, not a historical exception list.
 const canonicalTranslations=JSON.parse(fs.readFileSync(path.join(root,'data/translations.json'),'utf8'));
 const sourceTemplate=fs.readFileSync(path.join(root,'src/index.web.html'),'utf8');
@@ -85,10 +87,22 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.ok(document.querySelector('.iaLegacyNavDisclosure #mobileNav'),page+' original mobile deep links inaccessible');
   assert.ok(!document.getElementById('iaLegacyNavDisclosure').hasAttribute('open'),page+' legacy overflow must start folded');
   assert.equal(document.querySelector('.iaPrimaryNav').getAttribute('aria-label'),translations.iaPrimaryLabel,page+' IA primary navigation aria-label');
-  assert.ok(document.querySelector('.hero h1').textContent.includes('Connecting the Dots')&&document.querySelectorAll('.audienceDiscovery').length===3,page+' the project itself must be explained immediately');
-  assert.ok(document.querySelector('[data-i18n="heroPlain"]').textContent.includes('.lugano'),page+' the candidate string caveat must be visible');
-  assert.ok(document.querySelector('[data-i18n="iaProjectDefinition"]').textContent.length>90,page+' project purpose lacks meaningful detail');
-  assert.ok(document.querySelector('.iaHomeJumpList a[href="#ia-research"]'),page+' the novice cannot see direct paths');
+  assertHomeStructure(document,language);
+  const homeCopy=homeEditorial.locales[language];
+  assert.equal(document.querySelector('.hero h1').textContent.trim(),homeCopy.title,page+' the home heading is not localized');
+  for(const [selector,key,minimum] of [['.homeHeroLead','lead',50],['.homeHeroIntro','intro',50],['.homeHeroProject','project',90]]){
+    const paragraph=document.querySelector('.hero '+selector);
+    assert.ok(paragraph?.textContent.trim().length>minimum,page+' home explanation lacks meaningful detail: '+selector);
+    assert.equal(paragraph.textContent.trim(),homeCopy[key],page+' home explanation must be statically localized: '+selector);
+  }
+  assert.ok(document.querySelector('.homeHeroProject').textContent.includes('Connecting the Dots'),page+' the project itself must be explained immediately');
+  const candidateCaveat=document.querySelector('#home-round .homeRoundCopy > p');
+  assert.equal(candidateCaveat?.textContent.trim(),homeCopy.round.body,page+' the round context is not localized');
+  assert.ok(candidateCaveat.textContent.includes('.lugano')&&!candidateCaveat.closest('details,[hidden]'),page+' the candidate string caveat must remain visible');
+  assert.match(candidateCaveat.textContent,{en:/does not mean/,it:/non equivale/,de:/bedeutet weder/,fr:/ne signifie pas/}[language],page+' an application must not be described as approval');
+  assert.ok(document.querySelector('#home-pathways a[href="?tab=ia-research#ia-research"]'),page+' the novice cannot see direct paths');
+  assert.ok(document.querySelector('#home-project .homeProjectLinks a[href="?tab=sources#sources"][data-open-section="sources"]'),page+' home sources and methodology are inaccessible');
+  assert.ok(document.querySelector('#home-project .homeProjectLinks a[href="?tab=research#research-citation-guide"]'),page+' home research and citation guidance are inaccessible');
   assert.ok(document.querySelector('#ia-research a[href="https://doi.org/10.5281/zenodo.23288603"]'),page+' RR2 version-specific DOI not immediately available');
   // Verify the visible static citation, not only its ZIP destination, including the no-JavaScript page.
   const citationCards=[...document.querySelectorAll('#research-citation-guide .audienceCiteGrid article')];
@@ -110,8 +124,8 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   }
 
   assert.equal(document.title,translations.metaTitle);
-  assert.equal(document.querySelector('meta[name="description"]').getAttribute('content'),translations.metaDescription);
-  assert.ok(document.querySelector('[data-i18n="heroBody"]').textContent.length>50);
+  for(const selector of ['meta[name="description"]','meta[property="og:description"]','meta[name="twitter:description"]'])
+    assert.equal(document.querySelector(selector).getAttribute('content'),homeCopy.seoDescription,page+' localized home metadata: '+selector);
   assert.equal(document.getElementById('langSelect').value,language);
   // All four languages must expose the same disclosure and six real how-to anchors.
   const behind=document.getElementById('behind-round');

@@ -1,3 +1,11 @@
+# v0.7.106 - 9 November 2026
+
+- Introduce Internet names with one explanatory homepage opening and a labelled domain illustration in EN, IT, DE and FR.
+- Arrange the homepage as origins, three stories, six pathways, the current round and the project methodology.
+- Keep the complete guided reading and click simulation in native disclosures; preserve old fragments, routes and source material.
+- Scope the new editorial design to Home, with responsive layouts and light/dark themes.
+- Publish a separate technical package and preserve the exact v0.7.105 archive and research releases.
+
 # v0.7.105 - 9 November 2026
 
 - Add citable guides and TLD profiles as static HTML and Markdown in EN, IT, DE and FR.

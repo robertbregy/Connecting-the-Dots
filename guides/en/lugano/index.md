@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/en/lugano/ | Site edition: 0.7.105 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/en/lugano/ | Site edition: 0.7.106 | Language: en -->
 
 Guide
 
@@ -279,6 +279,6 @@ The claim that the City pays the application fee conflicts with the municipal FA
 
 Editorial review: 17 October 2026
 
-**By Robert Bregy** · Site edition 0.7.105 · November 9, 2026
+**By Robert Bregy** · Site edition 0.7.106 · November 9, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.
