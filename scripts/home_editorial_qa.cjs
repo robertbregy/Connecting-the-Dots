@@ -116,6 +116,45 @@ async function browserChecks(report, out) {
       return rect.top >= 0 && rect.top < innerHeight;
     }, id, {timeout: 5000});
   }
+  const nativeGeometry = (page, id) => page.evaluate(id => {
+    const node = document.getElementById(id), closedDetails = [];
+    for (let parent = node; parent; parent = parent.parentElement) {
+      if (parent.tagName === 'DETAILS' && !parent.open) closedDetails.push(parent.id || parent.className || 'details');
+    }
+    const stickyBars = ['.topbar', '.iaPrimaryNav', '.nav', '.mobileNavWrap'].flatMap(selector => {
+      const bar = document.querySelector(selector); if (!bar) return [];
+      const style = getComputedStyle(bar), rect = bar.getBoundingClientRect();
+      if (!['sticky', 'fixed'].includes(style.position) || style.display === 'none' || style.visibility === 'hidden' || !rect.height || rect.bottom <= 0 || rect.top >= innerHeight) return [];
+      return [{selector, top: rect.top, bottom: rect.bottom, height: rect.height}];
+    });
+    const rect = node?.getBoundingClientRect(), style = node && getComputedStyle(node);
+    return {
+      target: id, url: location.href, exists: !!node, scrollY, viewportHeight: innerHeight,
+      rect: rect ? {top: rect.top, bottom: rect.bottom, left: rect.left, right: rect.right, width: rect.width, height: rect.height} : null,
+      scrollMarginTop: style?.scrollMarginTop || null, closedDetails, stickyBars,
+      stickyBottom: Math.max(0, ...stickyBars.map(bar => bar.bottom))
+    };
+  }, id);
+  async function reachedWithoutJavaScript(page, id) {
+    // Native smooth scrolling still runs with page JavaScript disabled, while
+    // requestAnimationFrame polling cannot be relied on in that context.
+    const started = Date.now(), deadline = started + 5000;
+    let geometry = null, previous = null, stableSamples = 0;
+    while (Date.now() < deadline) {
+      geometry = await nativeGeometry(page, id);
+      const key = JSON.stringify({scrollY: geometry.scrollY, rect: geometry.rect});
+      const inViewport = geometry.exists && geometry.rect.height > 0 && geometry.closedDetails.length === 0 && geometry.rect.top >= 0 && geometry.rect.top < geometry.viewportHeight && geometry.scrollY > 0;
+      const clearPrimaryHeading = id !== 'how-part-2' || geometry.rect?.top >= geometry.stickyBottom;
+      stableSamples = inViewport && clearPrimaryHeading ? (key === previous ? stableSamples + 1 : 1) : 0;
+      if (stableSamples >= 3 && Date.now() <= deadline) return {...geometry, stableSamples, elapsedMs: Date.now() - started};
+      previous = key;
+      const remaining = deadline - Date.now();
+      if (remaining > 0) await new Promise(resolve => setTimeout(resolve, Math.min(100, remaining)));
+    }
+    const error = new Error('Native link did not reach a stable readable target within 5000ms: ' + JSON.stringify(geometry));
+    error.nativeGeometry = {...geometry, stableSamples, elapsedMs: Date.now() - started};
+    throw error;
+  }
   try {
     for (const lang of locales) for (const width of [320, 390, 1440]) for (const theme of ['light', 'dark']) {
       const context = await browser.newContext({viewport: {width, height: 900}, colorScheme: theme, reducedMotion: 'reduce'});
@@ -184,6 +223,7 @@ async function browserChecks(report, out) {
     for (const lang of locales) for (const theme of ['light', 'dark']) {
       const context = await browser.newContext({javaScriptEnabled: false, viewport: {width: 390, height: 900}, colorScheme: theme});
       const page = await context.newPage(), result = {lang, theme, passed: false};
+      let pendingFragment = null;
       try {
         await page.goto(base + lang + '/', {waitUntil: 'load'});
         result.documentTheme = await page.locator('html').getAttribute('data-theme') || 'system';
@@ -204,16 +244,25 @@ async function browserChecks(report, out) {
           ...pathways.map(section => ({selector: '#home-pathways a[data-open-section="' + section + '"]', section, anchor: section}))
         ];
         result.reachedFragments = [];
+        result.reachedGeometry = [];
         for (const {selector, section, anchor} of ordinaryEntries) {
+          pendingFragment = anchor;
           await page.goto(base + lang + '/', {waitUntil: 'load'});
           await page.locator(selector).click();
           await page.waitForURL(url => url.searchParams.get('tab') === section && url.hash === '#' + anchor);
-          await reached(page, anchor);
+          const geometry = await reachedWithoutJavaScript(page, anchor);
           assert.ok(await page.evaluate(() => window.scrollY > 0), 'The ordinary link did not scroll to ' + anchor);
           result.reachedFragments.push(anchor);
+          result.reachedGeometry.push(geometry);
+          pendingFragment = null;
         }
         result.passed = true;
-      } catch (error) { result.error = error.stack || String(error); report.errors.push(result); }
+      } catch (error) {
+        result.error = error.stack || String(error);
+        if (error.nativeGeometry) result.failureGeometry = error.nativeGeometry;
+        else if (pendingFragment) result.failureGeometry = await nativeGeometry(page, pendingFragment).catch(() => ({target: pendingFragment, unavailable: true}));
+        report.errors.push(result);
+      }
       finally { report.noJavaScript.push(result); await context.close(); }
     }
   } finally { await browser.close(); }

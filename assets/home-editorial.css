@@ -291,6 +291,10 @@ html[data-theme="dark"] .homeHero,html[data-theme="dark"] .homeEditorial{
 .homeEditorial .homeRound :is(a,button,summary):focus-visible{outline-color:var(--home-round-link)}
 .homeHero [id],.homeEditorial .homeBlock[id],.homeEditorial .homeJourneyDisclosure[id]{scroll-margin-top:calc(var(--topbar-height) + 108px)}
 
+/* Native navigation needs its own offset when the script cannot position the
+   destination below the sticky header and the two-row path navigation. */
+.no-js #how-part-2{scroll-margin-top:calc(var(--topbar-height) + 160px)}
+
 @media(max-width:1080px){
  .hero.homeHero>.homeHeroGrid:first-child{column-gap:32px;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr)}
  .homeHero .homeDomain{padding:26px 24px 22px}
