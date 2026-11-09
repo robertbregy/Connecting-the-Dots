@@ -1,0 +1,1320 @@
+{
+  "schemaVersion": 1,
+  "id": "https://robertbregy.github.io/Connecting-the-Dots/agent-catalog.json",
+  "title": "Connecting the Dots — source and reading catalog",
+  "description": "An independent multilingual research atlas of Internet names and ICANN applications. This catalog distinguishes reading pages, data units, observation dates and archived research releases.",
+  "author": {
+    "name": "Robert Bregy",
+    "url": "https://github.com/robertbregy"
+  },
+  "websiteRelease": {
+    "version": "0.7.105",
+    "releasedOn": "2026-11-09",
+    "url": "https://robertbregy.github.io/Connecting-the-Dots/"
+  },
+  "dateSemantics": {
+    "websiteRelease": "Technical/editorial publication date; it does not redate the underlying observations.",
+    "observationDate": "Source snapshot or retrieval date for the stated dataset; null means dates vary and the listed per-row fields must be read.",
+    "publicationDate": "Bibliographic publication date of an archived research release, distinct from its evidence cutoff."
+  },
+  "entryPoints": {
+    "languages": {
+      "en": "https://robertbregy.github.io/Connecting-the-Dots/en/",
+      "it": "https://robertbregy.github.io/Connecting-the-Dots/it/",
+      "de": "https://robertbregy.github.io/Connecting-the-Dots/de/",
+      "fr": "https://robertbregy.github.io/Connecting-the-Dots/fr/"
+    },
+    "discoveryManifest": {
+      "path": "discovery/manifest.json",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/discovery/manifest.json"
+    },
+    "dataManifest": {
+      "path": "data/manifest.json",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/data/manifest.json"
+    },
+    "researchGuide": {
+      "path": "research/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/research/"
+    },
+    "sitemap": {
+      "path": "sitemap.xml",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/sitemap.xml"
+    }
+  },
+  "pages": [
+    {
+      "path": "guides/de/beyond/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/de/beyond/",
+      "language": "de",
+      "kind": "guide",
+      "key": "beyond",
+      "title": "Dient eine Domain nur dazu, eine Website zu finden? | Connecting the Dots",
+      "description": "Von alltäglichen Diensten zu den unsichtbaren DNS-Funktionen, dann zu Schriftsystemen und alternativen Namenssystemen.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=beyond#beyond",
+      "markdown": {
+        "path": "guides/de/beyond/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/de/beyond/index.md"
+      }
+    },
+    {
+      "path": "guides/en/beyond/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/en/beyond/",
+      "language": "en",
+      "kind": "guide",
+      "key": "beyond",
+      "title": "Is a domain only there to find a website? | Connecting the Dots",
+      "description": "From services we use to the invisible functions of DNS, then writing systems and alternative naming systems.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=beyond#beyond",
+      "markdown": {
+        "path": "guides/en/beyond/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/en/beyond/index.md"
+      }
+    },
+    {
+      "path": "guides/fr/beyond/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/fr/beyond/",
+      "language": "fr",
+      "kind": "guide",
+      "key": "beyond",
+      "title": "Un domaine sert-il seulement à trouver un site ? | Connecting the Dots",
+      "description": "Des services quotidiens aux fonctions invisibles du DNS, puis aux écritures et aux systèmes de noms alternatifs.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=beyond#beyond",
+      "markdown": {
+        "path": "guides/fr/beyond/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/fr/beyond/index.md"
+      }
+    },
+    {
+      "path": "guides/it/beyond/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/it/beyond/",
+      "language": "it",
+      "kind": "guide",
+      "key": "beyond",
+      "title": "Un dominio serve soltanto a trovare un sito? | Connecting the Dots",
+      "description": "Dai servizi che usiamo alle funzioni invisibili del DNS, fino alle scritture e ai sistemi di nomi alternativi.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=beyond#beyond",
+      "markdown": {
+        "path": "guides/it/beyond/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/it/beyond/index.md"
+      }
+    },
+    {
+      "path": "guides/de/cities/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/de/cities/",
+      "language": "de",
+      "kind": "guide",
+      "key": "cities",
+      "title": "Wozu braucht eine Stadt eine eigene Domain? | Connecting the Dots",
+      "description": "Beginnen Sie mit Governance-Modellen und Fällen. Fragen Sie nach dem Nutzen und vergleichen Sie verschiedene Projektgenerationen.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=cities#cities",
+      "markdown": {
+        "path": "guides/de/cities/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/de/cities/index.md"
+      }
+    },
+    {
+      "path": "guides/en/cities/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/en/cities/",
+      "language": "en",
+      "kind": "guide",
+      "key": "cities",
+      "title": "What is a city's own domain for? | Connecting the Dots",
+      "description": "Start with governance models and cases. Ask how to measure usefulness, then compare different generations of projects.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=cities#cities",
+      "markdown": {
+        "path": "guides/en/cities/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/en/cities/index.md"
+      }
+    },
+    {
+      "path": "guides/fr/cities/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/fr/cities/",
+      "language": "fr",
+      "kind": "guide",
+      "key": "cities",
+      "title": "À quoi sert le domaine d’une ville ? | Connecting the Dots",
+      "description": "Partez des modèles de gouvernance et des cas. Demandez-vous comment mesurer l’utilité, puis comparez les générations de projets.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=cities#cities",
+      "markdown": {
+        "path": "guides/fr/cities/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/fr/cities/index.md"
+      }
+    },
+    {
+      "path": "guides/it/cities/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/it/cities/",
+      "language": "it",
+      "kind": "guide",
+      "key": "cities",
+      "title": "A che cosa serve il dominio di una città? | Connecting the Dots",
+      "description": "Parti dai modelli di governo e dai casi. Chiediti come misurarne l’utilità, poi confronta le diverse generazioni di progetti.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=cities#cities",
+      "markdown": {
+        "path": "guides/it/cities/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/it/cities/index.md"
+      }
+    },
+    {
+      "path": "guides/de/economics/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/de/economics/",
+      "language": "de",
+      "kind": "guide",
+      "key": "economics",
+      "title": "Wer schafft Wert, und wer erhält die Einnahmen? | Connecting the Dots",
+      "description": "Verfolgen Sie die Geldflüsse im Domainmarkt: von den Zahlungen für eine Registrierung bis zu den Strategien der Betreiber von Endungen.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=economics#economics",
+      "markdown": {
+        "path": "guides/de/economics/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/de/economics/index.md"
+      }
+    },
+    {
+      "path": "guides/en/economics/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/en/economics/",
+      "language": "en",
+      "kind": "guide",
+      "key": "economics",
+      "title": "Who creates value, and who collects it? | Connecting the Dots",
+      "description": "Follow the money through the domain market, from registration payments to the strategies of extension operators.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=economics#economics",
+      "markdown": {
+        "path": "guides/en/economics/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/en/economics/index.md"
+      }
+    },
+    {
+      "path": "guides/fr/economics/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/fr/economics/",
+      "language": "fr",
+      "kind": "guide",
+      "key": "economics",
+      "title": "Qui crée de la valeur, et qui l’encaisse ? | Connecting the Dots",
+      "description": "Suivez les flux d’argent, du paiement d’un nom de domaine aux stratégies des opérateurs d’extensions.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=economics#economics",
+      "markdown": {
+        "path": "guides/fr/economics/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/fr/economics/index.md"
+      }
+    },
+    {
+      "path": "guides/it/economics/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/it/economics/",
+      "language": "it",
+      "kind": "guide",
+      "key": "economics",
+      "title": "Chi crea valore, e chi lo incassa? | Connecting the Dots",
+      "description": "Segui il denaro lungo la filiera dei nomi: dai pagamenti di chi registra un dominio alle strategie di chi gestisce le estensioni.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=economics#economics",
+      "markdown": {
+        "path": "guides/it/economics/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/it/economics/index.md"
+      }
+    },
+    {
+      "path": "guides/de/how/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/de/how/",
+      "language": "de",
+      "kind": "guide",
+      "key": "how",
+      "title": "Wie funktioniert ein Internetname? | Connecting the Dots",
+      "description": "Zuerst die Adresse und die Akteure, dann Lebenszyklus, Wirtschaft und Regeln. Das Glossar bleibt leicht erreichbar.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=how#how",
+      "markdown": {
+        "path": "guides/de/how/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/de/how/index.md"
+      }
+    },
+    {
+      "path": "guides/en/how/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/en/how/",
+      "language": "en",
+      "kind": "guide",
+      "key": "how",
+      "title": "How does an Internet name work? | Connecting the Dots",
+      "description": "First the address and the actors, then the lifecycle, economics and rules. The glossary is always within reach.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=how#how",
+      "markdown": {
+        "path": "guides/en/how/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/en/how/index.md"
+      }
+    },
+    {
+      "path": "guides/fr/how/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/fr/how/",
+      "language": "fr",
+      "kind": "guide",
+      "key": "how",
+      "title": "Comment fonctionne un nom Internet ? | Connecting the Dots",
+      "description": "D’abord l’adresse et les acteurs, puis le cycle de vie, l’économie et les règles. Le glossaire reste à portée de main.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=how#how",
+      "markdown": {
+        "path": "guides/fr/how/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/fr/how/index.md"
+      }
+    },
+    {
+      "path": "guides/it/how/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/it/how/",
+      "language": "it",
+      "kind": "guide",
+      "key": "how",
+      "title": "Come funziona un nome Internet? | Connecting the Dots",
+      "description": "Prima l’indirizzo e gli attori, poi il ciclo di vita, l’economia e le regole. Il glossario resta a portata di mano.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=how#how",
+      "markdown": {
+        "path": "guides/it/how/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/it/how/index.md"
+      }
+    },
+    {
+      "path": "guides/de/lugano/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/de/lugano/",
+      "language": "de",
+      "kind": "guide",
+      "key": "lugano",
+      "title": "Was könnte aus .lugano werden? | Connecting the Dots",
+      "description": "Beginnen Sie mit dem Bewerbungsstatus und der Position des Autors. Danach folgen Absichten, offene Entscheidungen, mögliche Nutzungen und Prüfkriterien.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=lugano#lugano",
+      "markdown": {
+        "path": "guides/de/lugano/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/de/lugano/index.md"
+      }
+    },
+    {
+      "path": "guides/en/lugano/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/en/lugano/",
+      "language": "en",
+      "kind": "guide",
+      "key": "lugano",
+      "title": "What might .lugano become? | Connecting the Dots",
+      "description": "Start with the application's status and the author's position. Then read intentions, open decisions, possible uses and verification criteria.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=lugano#lugano",
+      "markdown": {
+        "path": "guides/en/lugano/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/en/lugano/index.md"
+      }
+    },
+    {
+      "path": "guides/fr/lugano/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/fr/lugano/",
+      "language": "fr",
+      "kind": "guide",
+      "key": "lugano",
+      "title": "Que pourrait devenir .lugano ? | Connecting the Dots",
+      "description": "Commencez par le statut de la candidature et la position de l’auteur. Puis examinez intentions, décisions ouvertes, usages possibles et critères de vérification.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=lugano#lugano",
+      "markdown": {
+        "path": "guides/fr/lugano/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/fr/lugano/index.md"
+      }
+    },
+    {
+      "path": "guides/it/lugano/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/it/lugano/",
+      "language": "it",
+      "kind": "guide",
+      "key": "lugano",
+      "title": "Che cosa potrebbe diventare .lugano? | Connecting the Dots",
+      "description": "Parti dallo stato della candidatura e dalla posizione dell’autore. Poi leggi intenzioni, decisioni aperte, impieghi possibili e criteri di verifica.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=lugano#lugano",
+      "markdown": {
+        "path": "guides/it/lugano/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/it/lugano/index.md"
+      }
+    },
+    {
+      "path": "guides/de/timeline/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/de/timeline/",
+      "language": "de",
+      "kind": "guide",
+      "key": "timeline",
+      "title": "Wie haben sich die Namen des Internets verändert? | Connecting the Dots",
+      "description": "Folgen Sie der Geschichte, vergleichen Sie Bewerbungsrunden und prüfen Sie danach die Klassifikationen und ihre Grenzen.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=timeline#timeline",
+      "markdown": {
+        "path": "guides/de/timeline/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/de/timeline/index.md"
+      }
+    },
+    {
+      "path": "guides/en/timeline/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/",
+      "language": "en",
+      "kind": "guide",
+      "key": "timeline",
+      "title": "How have Internet names changed? | Connecting the Dots",
+      "description": "Follow the history, compare application rounds and then examine the classifications and their limitations.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=timeline#timeline",
+      "markdown": {
+        "path": "guides/en/timeline/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/index.md"
+      }
+    },
+    {
+      "path": "guides/fr/timeline/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/fr/timeline/",
+      "language": "fr",
+      "kind": "guide",
+      "key": "timeline",
+      "title": "Comment les noms d’Internet ont-ils changé ? | Connecting the Dots",
+      "description": "Suivez l’histoire, comparez les cycles de candidatures, puis examinez les classifications et leurs limites.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=timeline#timeline",
+      "markdown": {
+        "path": "guides/fr/timeline/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/fr/timeline/index.md"
+      }
+    },
+    {
+      "path": "guides/it/timeline/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/it/timeline/",
+      "language": "it",
+      "kind": "guide",
+      "key": "timeline",
+      "title": "Come sono cambiati i nomi di Internet? | Connecting the Dots",
+      "description": "Segui la storia, confronta le diverse tornate di candidature e solo dopo entra nelle classificazioni e nei loro limiti.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=timeline#timeline",
+      "markdown": {
+        "path": "guides/it/timeline/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/it/timeline/index.md"
+      }
+    },
+    {
+      "path": "discovery/de/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/discovery/de/",
+      "language": "de",
+      "kind": "index",
+      "key": "index",
+      "title": "Leitfäden und Profile | Connecting the Dots",
+      "description": "Die wichtigsten Leitfäden von Connecting the Dots und ausgewählte Domainprofile: datierte Belege, Originalquellen und Verbindungen zum interaktiven Atlas.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=ia-explore#ia-explore",
+      "markdown": {
+        "path": "discovery/de/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/discovery/de/index.md"
+      }
+    },
+    {
+      "path": "discovery/en/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/discovery/en/",
+      "language": "en",
+      "kind": "index",
+      "key": "index",
+      "title": "Guides and profiles | Connecting the Dots",
+      "description": "Read the main Connecting the Dots guides and selected domain profiles, with dated evidence, original sources and links to the interactive atlas.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=ia-explore#ia-explore",
+      "markdown": {
+        "path": "discovery/en/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/discovery/en/index.md"
+      }
+    },
+    {
+      "path": "discovery/fr/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/discovery/fr/",
+      "language": "fr",
+      "kind": "index",
+      "key": "index",
+      "title": "Guides et fiches | Connecting the Dots",
+      "description": "Les principaux guides de Connecting the Dots et une sélection de fiches de domaines, avec des preuves datées, les sources originales et des liens vers l’atlas interactif.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=ia-explore#ia-explore",
+      "markdown": {
+        "path": "discovery/fr/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/discovery/fr/index.md"
+      }
+    },
+    {
+      "path": "discovery/it/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/discovery/it/",
+      "language": "it",
+      "kind": "index",
+      "key": "index",
+      "title": "Guide e schede | Connecting the Dots",
+      "description": "Leggi le guide principali di Connecting the Dots e una selezione di schede sui domini, con evidenze datate, fonti originali e collegamenti all’atlante interattivo.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=ia-explore#ia-explore",
+      "markdown": {
+        "path": "discovery/it/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/discovery/it/index.md"
+      }
+    },
+    {
+      "path": "tlds/de/ai/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/de/ai/",
+      "language": "de",
+      "kind": "tld",
+      "key": "ai",
+      "title": ".ai: Geschichte, Status und Quellen | Connecting the Dots",
+      "description": "Der Ländercode von Anguilla. Seine Verbindung mit künstlicher Intelligenz zeigt, wie ein bestehender Name neue Bedeutung erhält.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=explore&tld=ai",
+      "markdown": {
+        "path": "tlds/de/ai/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/de/ai/index.md"
+      }
+    },
+    {
+      "path": "tlds/en/ai/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/en/ai/",
+      "language": "en",
+      "kind": "tld",
+      "key": "ai",
+      "title": ".ai: history, status and sources | Connecting the Dots",
+      "description": "Anguilla’s country code. Its association with artificial intelligence illustrates how an existing name can acquire a new meaning.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=explore&tld=ai",
+      "markdown": {
+        "path": "tlds/en/ai/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/en/ai/index.md"
+      }
+    },
+    {
+      "path": "tlds/fr/ai/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/ai/",
+      "language": "fr",
+      "kind": "tld",
+      "key": "ai",
+      "title": ".ai: histoire, statut et sources | Connecting the Dots",
+      "description": "Le code territorial d’Anguilla. Son association avec l’intelligence artificielle illustre comment un nom existant acquiert un nouveau sens.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=explore&tld=ai",
+      "markdown": {
+        "path": "tlds/fr/ai/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/ai/index.md"
+      }
+    },
+    {
+      "path": "tlds/it/ai/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/it/ai/",
+      "language": "it",
+      "kind": "tld",
+      "key": "ai",
+      "title": ".ai: storia, stato e fonti | Connecting the Dots",
+      "description": "È il codice territoriale di Anguilla. La sua associazione con l’intelligenza artificiale mostra come un nome esistente possa acquisire un nuovo significato.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=explore&tld=ai",
+      "markdown": {
+        "path": "tlds/it/ai/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/it/ai/index.md"
+      }
+    },
+    {
+      "path": "tlds/de/amazon/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/de/amazon/",
+      "language": "de",
+      "kind": "tld",
+      "key": "amazon",
+      "title": ".amazon: Geschichte, Status und Quellen | Connecting the Dots",
+      "description": ".amazon ist derzeit als Generisch in der DNS-Root delegiert.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=explore&tld=amazon",
+      "markdown": {
+        "path": "tlds/de/amazon/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/de/amazon/index.md"
+      }
+    },
+    {
+      "path": "tlds/en/amazon/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/en/amazon/",
+      "language": "en",
+      "kind": "tld",
+      "key": "amazon",
+      "title": ".amazon: history, status and sources | Connecting the Dots",
+      "description": ".amazon is currently delegated in the DNS root as Generic.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=explore&tld=amazon",
+      "markdown": {
+        "path": "tlds/en/amazon/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/en/amazon/index.md"
+      }
+    },
+    {
+      "path": "tlds/fr/amazon/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/amazon/",
+      "language": "fr",
+      "kind": "tld",
+      "key": "amazon",
+      "title": ".amazon: histoire, statut et sources | Connecting the Dots",
+      "description": ".amazon est actuellement délégué dans la racine DNS comme Générique.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=explore&tld=amazon",
+      "markdown": {
+        "path": "tlds/fr/amazon/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/amazon/index.md"
+      }
+    },
+    {
+      "path": "tlds/it/amazon/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/it/amazon/",
+      "language": "it",
+      "kind": "tld",
+      "key": "amazon",
+      "title": ".amazon: storia, stato e fonti | Connecting the Dots",
+      "description": ".amazon è oggi delegato nella root DNS come Generico.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=explore&tld=amazon",
+      "markdown": {
+        "path": "tlds/it/amazon/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/it/amazon/index.md"
+      }
+    },
+    {
+      "path": "tlds/de/berlin/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/de/berlin/",
+      "language": "de",
+      "kind": "tld",
+      "key": "berlin",
+      "title": ".berlin: Geschichte, Status und Quellen | Connecting the Dots",
+      "description": ".berlin ist derzeit als Generisch in der DNS-Root delegiert.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=explore&tld=berlin",
+      "markdown": {
+        "path": "tlds/de/berlin/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/de/berlin/index.md"
+      }
+    },
+    {
+      "path": "tlds/en/berlin/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/en/berlin/",
+      "language": "en",
+      "kind": "tld",
+      "key": "berlin",
+      "title": ".berlin: history, status and sources | Connecting the Dots",
+      "description": ".berlin is currently delegated in the DNS root as Generic.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=explore&tld=berlin",
+      "markdown": {
+        "path": "tlds/en/berlin/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/en/berlin/index.md"
+      }
+    },
+    {
+      "path": "tlds/fr/berlin/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/berlin/",
+      "language": "fr",
+      "kind": "tld",
+      "key": "berlin",
+      "title": ".berlin: histoire, statut et sources | Connecting the Dots",
+      "description": ".berlin est actuellement délégué dans la racine DNS comme Générique.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=explore&tld=berlin",
+      "markdown": {
+        "path": "tlds/fr/berlin/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/berlin/index.md"
+      }
+    },
+    {
+      "path": "tlds/it/berlin/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/it/berlin/",
+      "language": "it",
+      "kind": "tld",
+      "key": "berlin",
+      "title": ".berlin: storia, stato e fonti | Connecting the Dots",
+      "description": ".berlin è oggi delegato nella root DNS come Generico.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=explore&tld=berlin",
+      "markdown": {
+        "path": "tlds/it/berlin/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/it/berlin/index.md"
+      }
+    },
+    {
+      "path": "tlds/de/cat/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/de/cat/",
+      "language": "de",
+      "kind": "tld",
+      "key": "cat",
+      "title": ".cat: Geschichte, Status und Quellen | Connecting the Dots",
+      "description": "Ein Name für die katalanische Sprach- und Kulturgemeinschaft: Zugehörigkeit über Staatsgrenzen hinweg.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=explore&tld=cat",
+      "markdown": {
+        "path": "tlds/de/cat/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/de/cat/index.md"
+      }
+    },
+    {
+      "path": "tlds/en/cat/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/en/cat/",
+      "language": "en",
+      "kind": "tld",
+      "key": "cat",
+      "title": ".cat: history, status and sources | Connecting the Dots",
+      "description": "A name for the Catalan linguistic and cultural community: a belonging that crosses state borders.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=explore&tld=cat",
+      "markdown": {
+        "path": "tlds/en/cat/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/en/cat/index.md"
+      }
+    },
+    {
+      "path": "tlds/fr/cat/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/cat/",
+      "language": "fr",
+      "kind": "tld",
+      "key": "cat",
+      "title": ".cat: histoire, statut et sources | Connecting the Dots",
+      "description": "Un nom pour la communauté linguistique et culturelle catalane : une appartenance qui traverse les frontières d’un État.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=explore&tld=cat",
+      "markdown": {
+        "path": "tlds/fr/cat/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/cat/index.md"
+      }
+    },
+    {
+      "path": "tlds/it/cat/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/it/cat/",
+      "language": "it",
+      "kind": "tld",
+      "key": "cat",
+      "title": ".cat: storia, stato e fonti | Connecting the Dots",
+      "description": "Rappresenta la comunità linguistica e culturale catalana: un’appartenenza che attraversa i confini di uno Stato.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=explore&tld=cat",
+      "markdown": {
+        "path": "tlds/it/cat/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/it/cat/index.md"
+      }
+    },
+    {
+      "path": "tlds/de/com/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/de/com/",
+      "language": "de",
+      "kind": "tld",
+      "key": "com",
+      "title": ".com: Geschichte, Status und Quellen | Connecting the Dots",
+      "description": "Für kommerzielle Aktivitäten vor dem Web geschaffen. Später wurde der Name zum Symbol der Onlinepräsenz.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=explore&tld=com",
+      "markdown": {
+        "path": "tlds/de/com/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/de/com/index.md"
+      }
+    },
+    {
+      "path": "tlds/en/com/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/en/com/",
+      "language": "en",
+      "kind": "tld",
+      "key": "com",
+      "title": ".com: history, status and sources | Connecting the Dots",
+      "description": "Created for commercial activities before the Web. It later became a symbol of online presence.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=explore&tld=com",
+      "markdown": {
+        "path": "tlds/en/com/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/en/com/index.md"
+      }
+    },
+    {
+      "path": "tlds/fr/com/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/com/",
+      "language": "fr",
+      "kind": "tld",
+      "key": "com",
+      "title": ".com: histoire, statut et sources | Connecting the Dots",
+      "description": "Créé pour les activités commerciales avant le Web. Il est ensuite devenu un symbole de présence en ligne.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=explore&tld=com",
+      "markdown": {
+        "path": "tlds/fr/com/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/com/index.md"
+      }
+    },
+    {
+      "path": "tlds/it/com/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/it/com/",
+      "language": "it",
+      "kind": "tld",
+      "key": "com",
+      "title": ".com: storia, stato e fonti | Connecting the Dots",
+      "description": "Nasce per le attività commerciali prima del Web. In seguito diventa uno dei simboli della presenza online.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=explore&tld=com",
+      "markdown": {
+        "path": "tlds/it/com/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/it/com/index.md"
+      }
+    },
+    {
+      "path": "tlds/de/io/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/de/io/",
+      "language": "de",
+      "kind": "tld",
+      "key": "io",
+      "title": ".io: Geschichte, Status und Quellen | Connecting the Dots",
+      "description": ".io ist derzeit als Ländercode in der DNS-Root delegiert.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=explore&tld=io",
+      "markdown": {
+        "path": "tlds/de/io/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/de/io/index.md"
+      }
+    },
+    {
+      "path": "tlds/en/io/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/en/io/",
+      "language": "en",
+      "kind": "tld",
+      "key": "io",
+      "title": ".io: history, status and sources | Connecting the Dots",
+      "description": ".io is currently delegated in the DNS root as Country-code.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=explore&tld=io",
+      "markdown": {
+        "path": "tlds/en/io/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/en/io/index.md"
+      }
+    },
+    {
+      "path": "tlds/fr/io/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/io/",
+      "language": "fr",
+      "kind": "tld",
+      "key": "io",
+      "title": ".io: histoire, statut et sources | Connecting the Dots",
+      "description": ".io est actuellement délégué dans la racine DNS comme Code pays.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=explore&tld=io",
+      "markdown": {
+        "path": "tlds/fr/io/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/io/index.md"
+      }
+    },
+    {
+      "path": "tlds/it/io/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/it/io/",
+      "language": "it",
+      "kind": "tld",
+      "key": "io",
+      "title": ".io: storia, stato e fonti | Connecting the Dots",
+      "description": ".io è oggi delegato nella root DNS come Codice paese.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=explore&tld=io",
+      "markdown": {
+        "path": "tlds/it/io/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/it/io/index.md"
+      }
+    },
+    {
+      "path": "tlds/de/lugano/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/de/lugano/",
+      "language": "de",
+      "kind": "tld",
+      "key": "lugano",
+      "title": ".lugano: Geschichte, Status und Quellen | Connecting the Dots",
+      "description": "Eine Bewerbung der Stadt Lugano in der Runde 2026. Noch keine betriebene Endung: Genehmigung, Delegierung und künftige Nutzung bleiben offen.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=explore&tld=lugano",
+      "markdown": {
+        "path": "tlds/de/lugano/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/de/lugano/index.md"
+      }
+    },
+    {
+      "path": "tlds/en/lugano/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/en/lugano/",
+      "language": "en",
+      "kind": "tld",
+      "key": "lugano",
+      "title": ".lugano: history, status and sources | Connecting the Dots",
+      "description": "An application by the City of Lugano in the 2026 round. It is not yet operational: approval, delegation and future uses remain to be established.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=explore&tld=lugano",
+      "markdown": {
+        "path": "tlds/en/lugano/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/en/lugano/index.md"
+      }
+    },
+    {
+      "path": "tlds/fr/lugano/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/lugano/",
+      "language": "fr",
+      "kind": "tld",
+      "key": "lugano",
+      "title": ".lugano: histoire, statut et sources | Connecting the Dots",
+      "description": "Une candidature de la Ville de Lugano dans le cycle 2026. L’extension n’est pas encore opérationnelle : approbation, délégation et usages futurs restent à établir.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=explore&tld=lugano",
+      "markdown": {
+        "path": "tlds/fr/lugano/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/lugano/index.md"
+      }
+    },
+    {
+      "path": "tlds/it/lugano/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/it/lugano/",
+      "language": "it",
+      "kind": "tld",
+      "key": "lugano",
+      "title": ".lugano: storia, stato e fonti | Connecting the Dots",
+      "description": "È una candidatura della Città di Lugano nel round 2026. Non è ancora un’estensione operativa: approvazione, delega e usi futuri restano da verificare.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=explore&tld=lugano",
+      "markdown": {
+        "path": "tlds/it/lugano/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/it/lugano/index.md"
+      }
+    },
+    {
+      "path": "tlds/de/music/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/de/music/",
+      "language": "de",
+      "kind": "tld",
+      "key": "music",
+      "title": ".music: Geschichte, Status und Quellen | Connecting the Dots",
+      "description": ".music ist derzeit als Generisch in der DNS-Root delegiert.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=explore&tld=music",
+      "markdown": {
+        "path": "tlds/de/music/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/de/music/index.md"
+      }
+    },
+    {
+      "path": "tlds/en/music/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/en/music/",
+      "language": "en",
+      "kind": "tld",
+      "key": "music",
+      "title": ".music: history, status and sources | Connecting the Dots",
+      "description": ".music is currently delegated in the DNS root as Generic.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=explore&tld=music",
+      "markdown": {
+        "path": "tlds/en/music/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/en/music/index.md"
+      }
+    },
+    {
+      "path": "tlds/fr/music/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/music/",
+      "language": "fr",
+      "kind": "tld",
+      "key": "music",
+      "title": ".music: histoire, statut et sources | Connecting the Dots",
+      "description": ".music est actuellement délégué dans la racine DNS comme Générique.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=explore&tld=music",
+      "markdown": {
+        "path": "tlds/fr/music/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/music/index.md"
+      }
+    },
+    {
+      "path": "tlds/it/music/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/it/music/",
+      "language": "it",
+      "kind": "tld",
+      "key": "music",
+      "title": ".music: storia, stato e fonti | Connecting the Dots",
+      "description": ".music è oggi delegato nella root DNS come Generico.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=explore&tld=music",
+      "markdown": {
+        "path": "tlds/it/music/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/it/music/index.md"
+      }
+    },
+    {
+      "path": "tlds/de/swiss/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/de/swiss/",
+      "language": "de",
+      "kind": "tld",
+      "key": "swiss",
+      "title": ".swiss: Geschichte, Status und Quellen | Connecting the Dots",
+      "description": ".swiss ist derzeit als Generisch in der DNS-Root delegiert.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=explore&tld=swiss",
+      "markdown": {
+        "path": "tlds/de/swiss/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/de/swiss/index.md"
+      }
+    },
+    {
+      "path": "tlds/en/swiss/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/en/swiss/",
+      "language": "en",
+      "kind": "tld",
+      "key": "swiss",
+      "title": ".swiss: history, status and sources | Connecting the Dots",
+      "description": ".swiss is currently delegated in the DNS root as Generic.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=explore&tld=swiss",
+      "markdown": {
+        "path": "tlds/en/swiss/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/en/swiss/index.md"
+      }
+    },
+    {
+      "path": "tlds/fr/swiss/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/swiss/",
+      "language": "fr",
+      "kind": "tld",
+      "key": "swiss",
+      "title": ".swiss: histoire, statut et sources | Connecting the Dots",
+      "description": ".swiss est actuellement délégué dans la racine DNS comme Générique.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=explore&tld=swiss",
+      "markdown": {
+        "path": "tlds/fr/swiss/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/swiss/index.md"
+      }
+    },
+    {
+      "path": "tlds/it/swiss/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/it/swiss/",
+      "language": "it",
+      "kind": "tld",
+      "key": "swiss",
+      "title": ".swiss: storia, stato e fonti | Connecting the Dots",
+      "description": ".swiss è oggi delegato nella root DNS come Generico.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=explore&tld=swiss",
+      "markdown": {
+        "path": "tlds/it/swiss/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/it/swiss/index.md"
+      }
+    },
+    {
+      "path": "tlds/de/zuerich/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/de/zuerich/",
+      "language": "de",
+      "kind": "tld",
+      "key": "zuerich",
+      "title": ".zuerich: Geschichte, Status und Quellen | Connecting the Dots",
+      "description": ".zuerich ist derzeit als Generisch in der DNS-Root delegiert.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=explore&tld=zuerich",
+      "markdown": {
+        "path": "tlds/de/zuerich/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/de/zuerich/index.md"
+      }
+    },
+    {
+      "path": "tlds/en/zuerich/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/en/zuerich/",
+      "language": "en",
+      "kind": "tld",
+      "key": "zuerich",
+      "title": ".zuerich: history, status and sources | Connecting the Dots",
+      "description": ".zuerich is currently delegated in the DNS root as Generic.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=explore&tld=zuerich",
+      "markdown": {
+        "path": "tlds/en/zuerich/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/en/zuerich/index.md"
+      }
+    },
+    {
+      "path": "tlds/fr/zuerich/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/zuerich/",
+      "language": "fr",
+      "kind": "tld",
+      "key": "zuerich",
+      "title": ".zuerich: histoire, statut et sources | Connecting the Dots",
+      "description": ".zuerich est actuellement délégué dans la racine DNS comme Générique.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=explore&tld=zuerich",
+      "markdown": {
+        "path": "tlds/fr/zuerich/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/zuerich/index.md"
+      }
+    },
+    {
+      "path": "tlds/it/zuerich/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/it/zuerich/",
+      "language": "it",
+      "kind": "tld",
+      "key": "zuerich",
+      "title": ".zuerich: storia, stato e fonti | Connecting the Dots",
+      "description": ".zuerich è oggi delegato nella root DNS come Generico.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=explore&tld=zuerich",
+      "markdown": {
+        "path": "tlds/it/zuerich/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/tlds/it/zuerich/index.md"
+      }
+    }
+  ],
+  "snapshotCounts": {
+    "explorer": {
+      "unit": "distinct ASCII-normalized name, not necessarily a delegated TLD",
+      "baseCatalogRecords": 1849,
+      "tldAndHistoricalProfileRecords": 1599,
+      "baseApplicationOnlyNames": 250,
+      "frozen2026PrimaryStringNames": 980,
+      "overlappingNames": 41,
+      "combinedExplorerNames": 2788,
+      "formula": "baseCatalogRecords + frozen2026PrimaryStringNames - overlappingNames",
+      "rootListedTlds": 1437,
+      "rootObservationDate": "2026-10-04",
+      "scopeNote": "The combined interface joins the base CSV and the separately frozen 2026 string index. Its name count is not a count of applications or of delegated TLDs."
+    },
+    "aps2026": {
+      "officialReportedApplications": 1615,
+      "officialStatisticsPublishedAt": "2026-10-07T15:41:00Z",
+      "publicListingRows": 2783,
+      "publishedBaseApplications": 1614,
+      "replacementRows": 1169,
+      "newPrimaryStringApplications": 1608,
+      "distinctNewPrimaryStrings": 980,
+      "variantOnlyExistingTldApplications": 6,
+      "publicListingObservedAt": "2026-10-11T21:27:40.214Z",
+      "reportedVersusPublishedGap": 1,
+      "unpublishedApplicationIds": [
+        "WDO2627T-T45217"
+      ]
+    }
+  },
+  "datasets": [
+    {
+      "id": "tld-universe",
+      "title": "TLD and historical profile universe",
+      "path": "data/tld_universe.csv",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/data/tld_universe.csv",
+      "mediaType": "text/csv",
+      "sha256": "fa9718504c52b11197a716c217be35462bb3fb4fa466e6924d2389814ec60ad2",
+      "layer": "derived",
+      "unit": "TLD/profile identity",
+      "recordCount": 1599,
+      "scope": "IANA database profiles plus historically delegated TLDs absent from that database; application-only names are excluded.",
+      "observationDate": "2026-10-04",
+      "provenance": {
+        "path": "data/iana_snapshot.json",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/data/iana_snapshot.json"
+      },
+      "licenseNoticeUrl": "https://robertbregy.github.io/Connecting-the-Dots/CONTENT_LICENSE.md",
+      "licenseNote": "Original project text and compilation/schema work are CC BY 4.0 unless otherwise indicated. Original ICANN/IANA and other third-party records retain their source-specific rights and terms; inclusion does not relicense them.",
+      "interpretationNote": "root_listed identifies membership in the dated root list; database presence and delegated status are different observations."
+    },
+    {
+      "id": "explorer-base",
+      "title": "Base Explorer catalog",
+      "path": "data/explorer_catalog.csv",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/data/explorer_catalog.csv",
+      "mediaType": "text/csv",
+      "sha256": "5ce16d53cd9bb1860c35c2dbab661d02817caff86974514433dd453ac4860b53",
+      "layer": "derived",
+      "unit": "distinct name",
+      "recordCount": 1849,
+      "scope": "Historical TLD/profile catalog and locally preserved application-only names; excludes the separate runtime union with the 2026 string index.",
+      "observationDate": null,
+      "provenance": {
+        "path": "data/manifest.json",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/data/manifest.json"
+      },
+      "licenseNoticeUrl": "https://robertbregy.github.io/Connecting-the-Dots/CONTENT_LICENSE.md",
+      "licenseNote": "Original project text and compilation/schema work are CC BY 4.0 unless otherwise indicated. Original ICANN/IANA and other third-party records retain their source-specific rights and terms; inclusion does not relicense them.",
+      "interpretationNote": "Dates are per record. Combine ASCII-normalized names with frozen-2026-strings only when the combined interface scope is required.",
+      "dateFields": [
+        "current_as_of",
+        "source_retrieved_at",
+        "registration_date"
+      ]
+    },
+    {
+      "id": "frozen-2026-strings",
+      "title": "Frozen secondary Reveal Day primary-string inventory",
+      "path": "data/applications_2026_strings_reveal.csv",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/data/applications_2026_strings_reveal.csv",
+      "mediaType": "text/csv",
+      "sha256": "defffa4dcc1339b15164f4be9293402daf24d0d7291c038a8e21b36967cbe6a8",
+      "layer": "secondary-frozen-index",
+      "unit": "distinct new primary string",
+      "recordCount": 980,
+      "scope": "Secondary string-level index over public APS records, reconciled to the new-primary-string subset of the later preserved APS export.",
+      "observationDate": "2026-10-08",
+      "provenance": {
+        "path": "data/application_2026_snapshot.json",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/data/application_2026_snapshot.json"
+      },
+      "licenseNoticeUrl": "https://robertbregy.github.io/Connecting-the-Dots/CONTENT_LICENSE.md",
+      "licenseNote": "Original project text and compilation/schema work are CC BY 4.0 unless otherwise indicated. Original ICANN/IANA and other third-party records retain their source-specific rights and terms; inclusion does not relicense them.",
+      "interpretationNote": "applications is a per-string weight; strings, applications and existing-TLD-variant applications are different units.",
+      "evidenceDate": "2026-10-07",
+      "sourceUrl": "https://www.ntlddata.com/applications/strings"
+    },
+    {
+      "id": "aps-public-listing",
+      "title": "ICANN APS public listing, original fields preserved",
+      "path": "data/applications_2026_aps_official_listing.csv",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/data/applications_2026_aps_official_listing.csv",
+      "mediaType": "text/csv",
+      "sha256": "520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887",
+      "layer": "source-records",
+      "unit": "APS listing row",
+      "recordCount": 2783,
+      "scope": "Complete downloadable public listing at retrieval, including base applications and linked -R replacement records; not the full questionnaires or confidential dossiers.",
+      "observationDate": "2026-10-11T21:27:40.214Z",
+      "provenance": {
+        "path": "data/applications_2026_aps_official_provenance.json",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/data/applications_2026_aps_official_provenance.json"
+      },
+      "licenseNoticeUrl": "https://robertbregy.github.io/Connecting-the-Dots/CONTENT_LICENSE.md",
+      "licenseNote": "Original project text and compilation/schema work are CC BY 4.0 unless otherwise indicated. Original ICANN/IANA and other third-party records retain their source-specific rights and terms; inclusion does not relicense them.",
+      "interpretationNote": "Please note: The \"Label: In Contention\" field in this file will not reflect contention status until String Evaluations are completed. Until then, a value of \"false\" does not mean that an applied-for string is not in contention. Please consult the separately published contention set information to determine contention status.",
+      "sourceUrl": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv"
+    },
+    {
+      "id": "aps-application-graph",
+      "title": "Published APS applications and their string relationships",
+      "path": "data/aps_2026_application_graph.json",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_application_graph.json",
+      "mediaType": "application/json",
+      "sha256": "1342a1f13f7c707f210dda9b567d7500c899214a44ce4a1f4aab1b1de690647d",
+      "layer": "derived",
+      "unit": "published base application",
+      "recordCount": 1614,
+      "scope": "Reconciled public listing: base application identities, alternatives, variants and derived exact-primary-string groups.",
+      "observationDate": "2026-10-11T21:27:40.214Z",
+      "provenance": {
+        "path": "data/aps_2026_application_graph_manifest.json",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_application_graph_manifest.json"
+      },
+      "licenseNoticeUrl": "https://robertbregy.github.io/Connecting-the-Dots/CONTENT_LICENSE.md",
+      "licenseNote": "Original project text and compilation/schema work are CC BY 4.0 unless otherwise indicated. Original ICANN/IANA and other third-party records retain their source-specific rights and terms; inclusion does not relicense them.",
+      "interpretationNote": "A -R record is an alternative, not an additional application. Derived exact-string groups are not final official contention decisions."
+    },
+    {
+      "id": "aps-status-observations",
+      "title": "Source-dated APS status observations",
+      "path": "data/aps_2026_record_observations.csv",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_record_observations.csv",
+      "mediaType": "text/csv",
+      "sha256": "91f8d83972d7ecffe901ee7c0ce30e9cf0d6c9d9453cf6b617d80381a1570a39",
+      "layer": "derived",
+      "unit": "source observation of an APS record",
+      "recordCount": 2783,
+      "scope": "Append-only observations tied to a source digest; includes base and replacement records.",
+      "observationDate": "2026-10-11T21:27:40.214Z",
+      "provenance": {
+        "path": "data/aps_2026_application_graph_manifest.json",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_application_graph_manifest.json"
+      },
+      "licenseNoticeUrl": "https://robertbregy.github.io/Connecting-the-Dots/CONTENT_LICENSE.md",
+      "licenseNote": "Original project text and compilation/schema work are CC BY 4.0 unless otherwise indicated. Original ICANN/IANA and other third-party records retain their source-specific rights and terms; inclusion does not relicense them.",
+      "interpretationNote": "An observed status is not a prediction. Absence from a later listing would not by itself establish withdrawal."
+    },
+    {
+      "id": "aps-local-dossiers",
+      "title": "Separately curated local 2026 application records",
+      "path": "data/applications_2026.csv",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/data/applications_2026.csv",
+      "mediaType": "text/csv",
+      "sha256": "a188d93bfdcbcdabedf9a0802ff0e6724547fef91bfc6665c0c218129477cfd1",
+      "layer": "derived",
+      "unit": "locally curated application record",
+      "recordCount": 1,
+      "scope": "A small, separately maintained local dossier layer; its count does not describe the coverage of the APS public listing or graph.",
+      "observationDate": null,
+      "provenance": {
+        "path": "data/application_2026_snapshot.json",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/data/application_2026_snapshot.json"
+      },
+      "licenseNoticeUrl": "https://robertbregy.github.io/Connecting-the-Dots/CONTENT_LICENSE.md",
+      "licenseNote": "Original project text and compilation/schema work are CC BY 4.0 unless otherwise indicated. Original ICANN/IANA and other third-party records retain their source-specific rights and terms; inclusion does not relicense them.",
+      "interpretationNote": "Partial coverage. Read source_snapshot and public_application_url in each row. Do not use this file to count the entire round.",
+      "dateFields": [
+        "source_snapshot"
+      ]
+    },
+    {
+      "id": "aps-current-analysis",
+      "title": "Current derived APS analysis",
+      "path": "data/aps_2026_current_analytics.csv",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_current_analytics.csv",
+      "mediaType": "text/csv",
+      "sha256": "9734855dc1451e59c99badb271248dc2a1464223e6b1c9fe036d61746fed7e75",
+      "layer": "derived",
+      "unit": "published base application with explicit analysis scopes",
+      "recordCount": 1614,
+      "scope": "Current derived analysis with all_published and new_primary scopes; string themes and applicant sectors are separate, partially classified variables.",
+      "observationDate": "2026-10-11T21:27:40.214Z",
+      "provenance": {
+        "path": "data/aps_2026_current_analytics_manifest.json",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_current_analytics_manifest.json"
+      },
+      "licenseNoticeUrl": "https://robertbregy.github.io/Connecting-the-Dots/CONTENT_LICENSE.md",
+      "licenseNote": "Original project text and compilation/schema work are CC BY 4.0 unless otherwise indicated. Original ICANN/IANA and other third-party records retain their source-specific rights and terms; inclusion does not relicense them.",
+      "interpretationNote": "This analysis is not covered by the RR1 or RR2 DOI. Missing sector classifications are not an economic sector or a representative sample.",
+      "editorialRevisionDate": "2026-10-18",
+      "archivalStatus": "current-derived-analysis-not-archived-RR1-or-RR2"
+    },
+    {
+      "id": "applications-2012",
+      "title": "Historical ICANN 2012 application–string–applicant graph",
+      "path": "data/applications_2012.csv",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/data/applications_2012.csv",
+      "mediaType": "text/csv",
+      "sha256": "96b93fafc298cfc632481f43fdf439b9d65eb4a022356ea4124a6e494fd50822",
+      "layer": "derived",
+      "unit": "2012 application",
+      "recordCount": 1930,
+      "scope": "The complete historical string/applicant graph with separately documented later string corrections; richer original metadata is not claimed as complete.",
+      "observationDate": "2012-06-13",
+      "provenance": {
+        "path": "data/application_archaeology_manifest.json",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/data/application_archaeology_manifest.json"
+      },
+      "licenseNoticeUrl": "https://robertbregy.github.io/Connecting-the-Dots/CONTENT_LICENSE.md",
+      "licenseNote": "Original project text and compilation/schema work are CC BY 4.0 unless otherwise indicated. Original ICANN/IANA and other third-party records retain their source-specific rights and terms; inclusion does not relicense them.",
+      "interpretationNote": "Primary contact and email fields are excluded. Later source-backed outcomes must not be inferred from present-day root status."
+    },
+    {
+      "id": "economic-metrics",
+      "title": "Source-backed economic metrics",
+      "path": "data/economic_metrics.csv",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/data/economic_metrics.csv",
+      "mediaType": "text/csv",
+      "sha256": "d4936365bfd2412721cc6ea605ce4fb6e5388abea2a8edb195b527e78302feb9",
+      "layer": "derived",
+      "unit": "economic observation",
+      "recordCount": 22,
+      "scope": "Selected case observations retaining original period, currency and accounting basis.",
+      "observationDate": null,
+      "provenance": {
+        "path": "data/manifest.json",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/data/manifest.json"
+      },
+      "licenseNoticeUrl": "https://robertbregy.github.io/Connecting-the-Dots/CONTENT_LICENSE.md",
+      "licenseNote": "Original project text and compilation/schema work are CC BY 4.0 unless otherwise indicated. Original ICANN/IANA and other third-party records retain their source-specific rights and terms; inclusion does not relicense them.",
+      "interpretationNote": "Revenue, financial results, auction prices, asset transactions and projections are not interchangeable measures. Use each row's source and basis.",
+      "dateFields": [
+        "period"
+      ]
+    }
+  ],
+  "research": {
+    "currentArchivedRelease": {
+      "id": "RR2",
+      "doi": "10.5281/zenodo.23288603",
+      "doiUrl": "https://doi.org/10.5281/zenodo.23288603",
+      "publicationDate": "2026-10-11",
+      "evidenceCutoff": "2026-10-10",
+      "sourceSnapshots": {
+        "iana": "2026-10-04",
+        "icann2026RevealDay": "2026-10-07",
+        "publicationAsOf": "2026-10-10"
+      },
+      "gitTag": "RR2",
+      "frozenCommit": "33803aa3fa69f1abb4cce7fbd49a0788ee9a33c9",
+      "immutable": true,
+      "depositCreatedAt": "2026-10-10T22:04:35.931760+00:00",
+      "githubReleaseDate": "2026-10-10",
+      "bibliographicCorrection": {
+        "path": "data/research_bibliographic_corrections.json",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/data/research_bibliographic_corrections.json"
+      }
+    },
+    "previousArchivedReleases": [
+      {
+        "id": "RR1",
+        "doi": "10.5281/zenodo.23262623",
+        "doiUrl": "https://doi.org/10.5281/zenodo.23262623",
+        "publicationDate": "2026-10-09",
+        "evidenceCutoff": "2026-10-09",
+        "sourceSnapshots": {
+          "iana": "2026-10-04",
+          "icann2026RevealDay": "2026-10-07",
+          "publicationAsOf": "2026-10-09"
+        },
+        "gitTag": "RR1",
+        "frozenCommit": "5d52274935cda7712172873f46d456e4c0a09c7e",
+        "immutable": true
+      }
+    ],
+    "currentWorkingPaper": {
+      "version": "1.4-draft",
+      "revisedOn": "2026-10-19",
+      "path": "research/connecting-the-dots-working-paper-v1.html",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/research/connecting-the-dots-working-paper-v1.html",
+      "status": "working draft; not peer reviewed",
+      "relationshipToArchives": "RR2 is the immutable archived dataset. This later working-paper revision includes a separately versioned, current APS analytical layer that is not covered by the RR1 or RR2 DOI; the new methods and results require a future archival research release."
+    },
+    "citationFile": {
+      "path": "CITATION.cff",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/CITATION.cff"
+    },
+    "rule": "Cite the specific dated source or dataset used. The latest technical website version and current derived analyses are not automatically part of the archived DOI release."
+  },
+  "crawlerPolicy": {
+    "authoritativeRobotsUrl": "https://robertbregy.github.io/robots.txt",
+    "projectRobotsCopyUrl": "https://robertbregy.github.io/Connecting-the-Dots/robots.txt",
+    "scopeNote": "Only the host-root robots.txt controls Robots Exclusion Protocol crawling. A project-subdirectory copy is informational.",
+    "catalogRole": "Navigation and provenance only; this file and llms.txt do not grant permissions, change source licenses, or promise indexing or AI citations."
+  },
+  "interpretationNotes": [
+    "A TLD in the dated root, a historical name, an application, a primary string, a replacement and a variant are distinct units.",
+    "The combined Explorer is a union of two name sets, not another official ICANN application total.",
+    "The official reported total and the downloadable public listing have different coverage; retain the published gap rather than inventing a missing row.",
+    "A false APS contention flag before String Evaluation is not evidence that no contention exists.",
+    "Facts, editorial interpretation and prospective ideas are identified separately in the reading pages.",
+    "Current availability of a page does not turn its dated evidence into a live status check."
+  ],
+  "licensing": {
+    "notice": {
+      "path": "CONTENT_LICENSE.md",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/CONTENT_LICENSE.md"
+    },
+    "scope": "Original project text and compilation/schema work are CC BY 4.0 unless otherwise indicated. Original ICANN/IANA and other third-party records retain their source-specific rights and terms; inclusion does not relicense them."
+  }
+}
