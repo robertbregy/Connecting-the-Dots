@@ -371,9 +371,34 @@ for(const [input,target] of cases){
 }
 const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
 const locations=Array.from(sitemap.matchAll(/<loc>([^<]+)<\/loc>/g),m=>m[1]);
-const expectedLocations=[...languages.map(l=>base+l+'/'),base+'explorer/',base+'research/',base+'research/connecting-the-dots-working-paper-v1.html',...languages.map(l=>base+'inside-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/wdo-identity/'),...languages.map(l=>base+'behind-the-round/'+l+'/sanctions-and-dns/'),...languages.map(l=>base+'behind-the-round/'+l+'/who-controls-internet-access/'),...['objectors-eoi','replacement-strings','background-screening'].flatMap(slug=>languages.map(l=>base+'behind-the-round/'+l+'/'+slug+'/')),...languages.map(l=>base+'applications/'+l+'/')];
+const legacyLocations=[...languages.map(l=>base+l+'/'),base+'explorer/',base+'research/',base+'research/connecting-the-dots-working-paper-v1.html',...languages.map(l=>base+'inside-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/'),...languages.map(l=>base+'behind-the-round/'+l+'/wdo-identity/'),...languages.map(l=>base+'behind-the-round/'+l+'/sanctions-and-dns/'),...languages.map(l=>base+'behind-the-round/'+l+'/who-controls-internet-access/'),...['objectors-eoi','replacement-strings','background-screening'].flatMap(slug=>languages.map(l=>base+'behind-the-round/'+l+'/'+slug+'/')),...languages.map(l=>base+'applications/'+l+'/')];
+assert.equal(legacyLocations.length,43,'all established canonical URLs must remain in the expected inventory');
+const discoveryManifest=JSON.parse(fs.readFileSync(path.join(root,'discovery/manifest.json'),'utf8'));
+assert.equal(discoveryManifest.schemaVersion,1,'discovery manifest schema');
+assert.equal(discoveryManifest.siteVersion,publication.version,'discovery manifest publication version');
+assert.equal(discoveryManifest.generatedOn,publication.releasedOn,'discovery manifest publication date');
+assert.ok(Array.isArray(discoveryManifest.pages),'discovery manifest pages missing');
+assert.equal(discoveryManifest.pages.length,68,'complete four-language discovery edition');
+const discoveryLocations=discoveryManifest.pages.map(page=>{
+  assert.ok(languages.includes(page.language),'unsupported discovery language');
+  assert.ok(['guide','tld','index'].includes(page.kind),'unsupported discovery page kind');
+  assert.match(page.key,/^[a-z0-9]+(?:-[a-z0-9]+)*$/,'invalid discovery page key');
+  const expectedPath=page.kind==='index'?'discovery/'+page.language+'/':(page.kind==='guide'?'guides/':'tlds/')+page.language+'/'+page.key+'/';
+  assert.equal(page.path,expectedPath,'discovery path must identify its kind, language and key');
+  assert.ok(fs.existsSync(path.join(root,page.path,'index.html')),'missing discovery document: '+page.path);
+  return new URL(page.path,base).href;
+});
+assert.equal(new Set(discoveryLocations).size,68,'discovery manifest must not duplicate canonical URLs');
+const expectedLocations=[...legacyLocations,...discoveryLocations];
+assert.equal(new Set(expectedLocations).size,111,'new canonical URLs must not replace established pages');
+assert.equal(locations.length,111,'sitemap must contain exactly 43 established and 68 discovery URLs');
+assert.equal(new Set(locations).size,111,'sitemap canonical URLs must not be duplicated');
 assert.deepEqual(locations,expectedLocations,'complete multilingual and research sitemap');
-assert.equal((sitemap.match(/xhtml:link/g)||[]).length,180,'all four-language articles and explainers have reciprocal hreflang');
+const sitemapEntries=Array.from(sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g),m=>m[1]);
+assert.equal((sitemapEntries.slice(0,legacyLocations.length).join('').match(/xhtml:link/g)||[]).length,180,'all established four-language articles and explainers retain reciprocal hreflang');
+for(const [index,entry] of sitemapEntries.slice(legacyLocations.length).entries())
+  assert.equal((entry.match(/xhtml:link/g)||[]).length,5,'discovery page needs four locales and x-default: '+discoveryLocations[index]);
+assert.equal((sitemap.match(/xhtml:link/g)||[]).length,180+68*5,'established and discovery pages have complete reciprocal hreflang');
 assert.ok(!/\?lang=/.test(sitemap));
 const app=fs.readFileSync(path.join(root,'assets/app.js'),'utf8');
 assert.ok(!app.includes('updateSeoLanguage'));

@@ -53,7 +53,7 @@ Publication checks verify HTTP responses, HTML, canonical URLs, language alterna
 
 For the URL-prefix property `https://robertbregy.github.io/Connecting-the-Dots/`, inspect the submitted sitemap, indexed-page coverage, selected canonical URLs and search performance in Search Console. Check the property's Search generative AI setting and its Generative AI performance report where available. AI impressions and visits arriving from an assistant are distinct measures.
 
-The 9 November audit could not read the connected GSC Wizard account because its subscription was inactive. That does not establish whether the underlying Search Console property is configured or collecting data. An authorized direct inspection or exported report can complete that check. This code adds no third-party analytics service and creates no account or subscription.
+The 9 November audit did not have access to first-party Search Console measurements. That does not establish whether the underlying property is configured or collecting data. An authorized direct inspection or exported report can complete that check. This code adds no third-party analytics service and creates no account or subscription.
 
 ## References
 
