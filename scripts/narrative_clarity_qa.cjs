@@ -3,6 +3,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const {parseHTML}=require('linkedom');
 const {execFileSync}=require('node:child_process');
+const {outsideHome,assertHomeStructure,assertRetainedHomeSources}=require('./home_editorial_qa.cjs');
 const ROOT=path.resolve(__dirname,'..');
 const baseline=process.env.CTD_NARRATIVE_BASELINE||'/tmp/narrative-baseline';
 const base=process.env.CTD_TEST_BASE||'http://127.0.0.1:8128/';
@@ -11,19 +12,23 @@ const report={baseline:'2038d07df9c491a0fa30e8ff2a9a8da32494b406',sourceCommit:p
 const read=(root,file)=>fs.readFileSync(path.join(root,file),'utf8');
 const dom=(root,file)=>parseHTML(read(root,file)).document;
 const sha=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
-const texts=d=>[...d.querySelectorAll('[data-i18n]')].map(n=>[n.dataset.i18n,n.textContent]).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b)));
-const essential=['project','dns-foundation','atlas-entry','proposal','principles','proposal-conditions','historical-context'];
+// QA106 changes only the opening and grouping of its optional lessons.
+// Preserve the historical comparison everywhere outside that same home scope.
+const texts=d=>[...d.querySelectorAll('[data-i18n]')].filter(outsideHome).map(n=>[n.dataset.i18n,n.textContent]).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b)));
+const essential=['atlas-entry','proposal','principles','proposal-conditions','historical-context'];
 const locales=['it','en','de','fr'];
 function files(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?files(path.join(dir,e.name)):[path.join(dir,e.name)]);}
 function staticChecks(){
  for(const file of ['index.html',...locales.map(l=>l+'/index.html')]){
   const before=dom(baseline,file),after=dom(ROOT,file);
+  assertHomeStructure(after,file==='index.html'?'en':file.split('/')[0]);
+  assertRetainedHomeSources(before,after,file);
   assert.deepEqual(texts(after),texts(before),'Published translated copy changed: '+file);
   const ids=[...before.querySelectorAll('[id]')].map(n=>n.id),newIds=[...after.querySelectorAll('[id]')].map(n=>n.id);
   for(const id of ids)assert.ok(after.getElementById(id),'Original fragment missing: '+id);
   assert.equal(new Set(newIds).size,newIds.length,'Duplicate fragment');
-  const remaining=[...after.querySelectorAll('a[href]')].map(a=>a.getAttribute('href'));
-  for(const a of before.querySelectorAll('a[href]')){const href=a.getAttribute('href'),i=remaining.indexOf(href);assert.ok(i>=0,'Original link missing: '+href);remaining.splice(i,1);}
+  const remaining=[...after.querySelectorAll('a[href]')].filter(outsideHome).map(a=>a.getAttribute('href'));
+  for(const a of [...before.querySelectorAll('a[href]')].filter(outsideHome)){const href=a.getAttribute('href'),i=remaining.indexOf(href);assert.ok(i>=0,'Original link missing: '+href);remaining.splice(i,1);}
   let untouched=0;
   for(const section of before.querySelectorAll('section.section'))if(!['overview','explore','economics','lugano'].includes(section.id)){
    assert.equal(after.getElementById(section.id).outerHTML,section.outerHTML,'Unrelated chapter changed: '+section.id);untouched++;
@@ -78,8 +83,11 @@ async function browserChecks(){
    try{
     await page.goto(base+lang+'/',{waitUntil:'load'});await ready(page);
     if(await page.locator('html').getAttribute('data-theme')!==theme)await page.locator('#themeBtn').click();
-    assert.ok(await page.locator('.hero [data-i18n="iaProjectDefinition"]').isVisible());
+    assert.ok(await page.locator('.hero .homeHeroProject').isVisible());
+    const homeLesson=page.locator('.homeJourneyDisclosure > summary');
+    await homeLesson.focus();await page.keyboard.press('Enter');
     assert.ok(await page.locator('.journeyFoundation').isVisible());
+    await homeLesson.focus();await page.keyboard.press('Enter');
     assert.equal(await page.evaluate(()=>!!window.CTD_APS_2026),false,'Home eagerly downloaded the atlas');
     await checkPage(page,'overview');await screenshot(page,lang,width,theme,'home');
     await page.goto(base+lang+'/?tab=lugano',{waitUntil:'load'});await ready(page);
@@ -120,7 +128,7 @@ async function browserChecks(){
   }
   for(const lang of locales){
    const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}}),page=await context.newPage();
-   try{for(const [tab,selector] of [['overview','.hero [data-i18n="iaProjectDefinition"]'],['lugano','.luganoHero'],['explore','#aps-native'],['economics','#economics-comparison-guide']]){
+   try{for(const [tab,selector] of [['overview','.hero .homeHeroProject'],['lugano','.luganoHero'],['explore','#aps-native'],['economics','#economics-comparison-guide']]){
     await page.goto(base+lang+'/?tab='+tab,{waitUntil:'load'});assert.ok(await page.locator(selector).isVisible(),'No-JS essential block missing');
     report.noJavaScript.push({lang,tab,visible:true});
    }}finally{await context.close();}

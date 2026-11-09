@@ -13,4 +13,5 @@ __pycache__/
 # Audit acquisition and local measurements
 tmp/
 audit-20261019/
+audit-home-editorial/
 node_modules

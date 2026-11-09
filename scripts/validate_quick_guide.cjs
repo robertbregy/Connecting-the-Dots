@@ -13,8 +13,14 @@ for(const lang of ['it','en','de','fr']){
  const t=data.locales[lang].quickGuide;assert.equal(t.steps.length,4);assert.equal(t.ideas.length,3);
  const file=path.join(root,lang,'index.html'),{document}=parseHTML(fs.readFileSync(file,'utf8'));
  const guide=document.getElementById('three-minute-guide');assert.ok(guide&&guide.tagName==='DETAILS');
+ assert.ok(guide.closest('#home-stories')&&guide.closest('#overview'),'The existing short guide must remain in the home stories');
+ assert.equal(guide.querySelectorAll(':scope > summary').length,1,'The short guide needs an accessible native entry');
  assert.equal(guide.querySelectorAll('.quickSteps>li').length,4);
- assert.equal(document.querySelector('.heroPrimary').getAttribute('data-open-anchor'),'three-minute-guide');
+ // QA106: the hero introduces domains; the original short-guide fragment and
+ // its complete contents remain available separately in the same home.
+ assert.equal(document.querySelector('.heroPrimary').getAttribute('data-open-section'),'how');
+ assert.equal(document.querySelector('.heroPrimary').getAttribute('data-open-anchor'),'how-part-2');
+ assert.ok(document.getElementById('how-part-2'),'The new primary reading destination is missing');
  for(const a of guide.querySelectorAll('[data-open-anchor]'))assert.ok(document.getElementById(a.dataset.openAnchor),lang+' missing destination '+a.dataset.openAnchor);
  for(const a of guide.querySelectorAll('a[href^="https:"]'))assert.ok(Object.values(data.everydaySources).some(s=>s.url===a.href),'Unreviewed primary source');
  const text=[t.lead,...t.steps.flatMap(x=>[x.title,x.hook,x.body,x.takeaway]),t.takeawayIntro,...t.ideas].join(' ');

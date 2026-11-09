@@ -4,6 +4,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const {execFileSync}=require('node:child_process');
 const {parseHTML}=require('linkedom');
 const {aliases,labels}=require('./usability_remediation.cjs');
+const {outsideHome,assertHomeStructure,assertRetainedHomeSources}=require('./home_editorial_qa.cjs');
 const root=path.resolve(__dirname,'..'),baseline=process.env.CTD_USABILITY_BASELINE;
 const baselineCommit='90d21e6059871c36148e1860d017e7409ed3f8bb';
 const base=(process.env.CTD_TEST_BASE||'http://127.0.0.1:8123/').replace(/\/?$/,'/');
@@ -12,7 +13,9 @@ const langs=['it','en','de','fr'],widths=(process.env.CTD_USABILITY_WIDTHS||'320
 const report={baselineCommit,sourceCommit:process.env.GITHUB_SHA||null,static:[],browser:[],noJavaScript:[],axeScans:0,errors:[],humanParticipants:0,passed:false};
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 const readOld=file=>baseline?fs.readFileSync(path.join(baseline,file)):execFileSync('git',['show',baselineCommit+':'+file],{maxBuffer:20*1024*1024});
-const evidence=d=>[...d.querySelectorAll('[data-i18n]')].map(n=>[n.getAttribute('data-i18n'),n.innerHTML]).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b)));
+// QA106 replaces only the home framing. Compare the same non-home scope on
+// both sides; the original 21 source sections still pass the guard below.
+const evidence=d=>[...d.querySelectorAll('[data-i18n]')].filter(outsideHome).map(n=>[n.getAttribute('data-i18n'),n.innerHTML]).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b)));
 function staticChecks(){
  // The 22 October UX baseline is not an editorial freeze. Exact source
  // fingerprints and the original 21 sections are protected by this separate
@@ -33,6 +36,8 @@ function staticChecks(){
 
  for(const file of ['index.html',...langs.map(l=>l+'/index.html')]){
   const before=parseHTML(readOld(file).toString()).document,after=parseHTML(fs.readFileSync(path.join(root,file),'utf8')).document;
+  assertHomeStructure(after,file==='index.html'?'en':file.split('/')[0]);
+  assertRetainedHomeSources(before,after,file);
   for(const replacement of operationalLinks){
    assert.equal(after.querySelectorAll('a[href="'+replacement.from+'"]').length,0,'Unavailable APS export remains in rendered navigation: '+file);
    for(const selector of ['#aps-native .apsResources','#behind-round [data-source-id="aps-export-20261018"]']){
@@ -82,15 +87,14 @@ function staticChecks(){
   for(const d of [before,after])for(const ui of d.querySelectorAll('[data-reader-ui]'))ui.remove();
   // Source protection above approves one exact obsolete APS export destination.
   // Match its current official listing while retaining every other link occurrence.
-  const originalLinks=[...before.querySelectorAll('a[href]')].map(a=>{
+  const originalLinks=[...before.querySelectorAll('a[href]')].filter(outsideHome).map(a=>{
    const href=a.getAttribute('href'),replacement=operationalLinks.find(link=>link.from===href);
    return normalize(replacement?replacement.to:href,originalPublication.version);
   }).sort();
-  const remaining=[...after.querySelectorAll('a[href]')].map(a=>normalize(a.getAttribute('href'),publication.version));
+  const remaining=[...after.querySelectorAll('a[href]')].filter(outsideHome).map(a=>normalize(a.getAttribute('href'),publication.version));
   for(const href of originalLinks){const i=remaining.indexOf(href);assert.ok(i>=0,'Lost historical source/content link: '+href);remaining.splice(i,1);}
-  assert.equal(after.querySelectorAll('[data-i18n="iaProjectDefinition"]').length,1);
-  assert.ok(after.querySelector('.heroActions').nextElementSibling.matches('.audienceDiscoveries'),'Home examples must immediately follow the entry actions');
-  assert.ok(after.querySelector('.audienceDiscoveries').nextElementSibling.matches('.heroPlain'),'Home definitions must follow the three discovery paths');
+  assert.equal(after.querySelectorAll('.hero .homeHeroProject').length,1,'The opening must explain the project once');
+  assert.equal(after.querySelectorAll('#home-stories .audienceDiscovery.homeStory').length,3,'The three story destinations must remain available');
   // Normalize only the explicitly identified broken legacy tooltip attributes.
   // Their removal is an audit correction, not an unrelated editorial change.
   for(const a of before.querySelectorAll('nav.sectionToc a[title],#iaLegacyNavDisclosure a[title]'))
@@ -146,11 +150,12 @@ async function browsers(){
     const action=page.locator('.heroPrimary');
     const rect=await action.boundingBox();assert.ok(rect&&rect.y>=0&&rect.y+rect.height<900,'Primary action below first 900px: '+JSON.stringify(rect));
     state.homeAction={top:Math.round(rect.y),bottom:Math.round(rect.y+rect.height)};
-    assert.ok(await page.locator('.narrativeProjectDefinition').isVisible(),'Project identity hidden');
+    assert.ok(await page.locator('.homeHeroProject').isVisible(),'Project identity hidden');
     await scan(page,'overview',width);
     if(lang==='it'&&[320,1440].includes(width))await page.screenshot({path:path.join(out,`home-${width}-${theme}.png`)});
     await action.focus();await page.keyboard.press('Enter');
-    await page.waitForFunction(()=>document.querySelector('#three-minute-guide').open);
+    await page.waitForFunction(()=>location.hash==='#how-part-2'&&new URL(location.href).searchParams.get('tab')==='how');
+    assert.ok(await page.locator('#how-part-2').isVisible(),'The primary entry did not reach its domain explanation');
     for(const tab of ['lugano','sources']){
      await go(page,lang,tab);
      const toc=page.locator('#'+tab+' .readerTocCurated');
@@ -191,7 +196,7 @@ async function browsers(){
    const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:900}}),page=await context.newPage();
    try{
     await page.goto(base+lang+'/',{waitUntil:'load'});
-    for(const selector of ['.heroPrimary','.narrativeProjectDefinition','#lugano .readerTocCurated','#sources .readerTocCurated','#reader-brief-economics','#reader-brief-sources'])assert.ok(await page.locator(selector).isVisible(),'No-JS essential hidden: '+selector);
+    for(const selector of ['.heroPrimary','.homeHeroProject','#lugano .readerTocCurated','#sources .readerTocCurated','#reader-brief-economics','#reader-brief-sources'])assert.ok(await page.locator(selector).isVisible(),'No-JS essential hidden: '+selector);
     for(const id of Object.keys(aliases))assert.equal(await page.locator('#'+id).count(),1);
     report.noJavaScript.push({lang,passed:true});
    }finally{await context.close();}

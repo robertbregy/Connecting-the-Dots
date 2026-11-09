@@ -10,7 +10,16 @@ const base=process.env.CTD_TEST_BASE||'http://127.0.0.1:8123/';
   page.on('pageerror',e=>errors.push(e.message));
   await page.goto(base+lang+'/');await page.waitForFunction(()=>!!window.CTD_APP_READY);
   assert.equal(await page.locator('.audienceDiscovery').count(),3);
+  assert.equal(await page.locator('#home-stories .audienceDiscovery.homeStory').count(),3);
   await page.locator('.heroPrimary').click();
+  assert.equal(new URL(page.url()).searchParams.get('tab'),'how');
+  assert.equal(new URL(page.url()).hash,'#how-part-2');
+  assert.ok(await page.locator('#how-part-2').isVisible(),'The new primary entry must reach the domain explanation');
+  // QA106: the short guide retains its original shareable URL even though
+  // the opening now links directly to the domain explanation.
+  await page.goto(base+lang+'/?tab=overview#three-minute-guide');
+  await page.waitForFunction(()=>!!window.CTD_APP_READY&&document.querySelector('#three-minute-guide').open);
+  await page.waitForFunction(()=>{const top=document.querySelector('#three-minute-guide').getBoundingClientRect().top;return top>=65&&top<260;},null,{timeout:3500});
   assert.equal(new URL(page.url()).searchParams.get('tab'),'overview');
   assert.equal(await page.locator('#three-minute-guide').getAttribute('open'),'');
   assert.equal(await page.locator('.quickSteps>li:visible').count(),4);
