@@ -1,0 +1,117 @@
+{
+  "staticReviewPassed": true,
+  "economics": {
+    "languages": 4,
+    "blocks": 44,
+    "originalFragmentsPerLanguage": 53,
+    "tablesPerLanguage": 7,
+    "metricsPerLanguage": 22,
+    "linksChecked": 360,
+    "nativePages": 5,
+    "detailPages": 16,
+    "modelsPerLanguage": 8,
+    "casesPerLanguage": 8,
+    "hubWords": [
+      {
+        "file": "index.html",
+        "words": 834
+      },
+      {
+        "file": "it/index.html",
+        "words": 865
+      },
+      {
+        "file": "en/index.html",
+        "words": 834
+      },
+      {
+        "file": "de/index.html",
+        "words": 820
+      },
+      {
+        "file": "fr/index.html",
+        "words": 897
+      }
+    ]
+  },
+  "independentlyComparedBaselineBlocks": 44,
+  "socialAndMeowUnchanged": true,
+  "sourceCommit": "a47fb509821a3bed5e9b0c103512346c2b34ba8d",
+  "protectedSourceSections": 21,
+  "pages": [
+    {
+      "file": "index.html",
+      "language": "en",
+      "retainedPublishedFragments": 541,
+      "retainedHomeFragments": 45,
+      "unchangedTutorials": 2,
+      "unchangedChaptersExceptTechnicalMetadata": 29,
+      "preservedHistoricalReleaseNotes": 100
+    },
+    {
+      "file": "it/index.html",
+      "language": "it",
+      "retainedPublishedFragments": 541,
+      "retainedHomeFragments": 45,
+      "unchangedTutorials": 2,
+      "unchangedChaptersExceptTechnicalMetadata": 29,
+      "preservedHistoricalReleaseNotes": 100
+    },
+    {
+      "file": "en/index.html",
+      "language": "en",
+      "retainedPublishedFragments": 541,
+      "retainedHomeFragments": 45,
+      "unchangedTutorials": 2,
+      "unchangedChaptersExceptTechnicalMetadata": 29,
+      "preservedHistoricalReleaseNotes": 100
+    },
+    {
+      "file": "de/index.html",
+      "language": "de",
+      "retainedPublishedFragments": 541,
+      "retainedHomeFragments": 45,
+      "unchangedTutorials": 2,
+      "unchangedChaptersExceptTechnicalMetadata": 29,
+      "preservedHistoricalReleaseNotes": 100
+    },
+    {
+      "file": "fr/index.html",
+      "language": "fr",
+      "retainedPublishedFragments": 541,
+      "retainedHomeFragments": 45,
+      "unchangedTutorials": 2,
+      "unchangedChaptersExceptTechnicalMetadata": 29,
+      "preservedHistoricalReleaseNotes": 100
+    }
+  ],
+  "unchangedExistingDictionaries": 4,
+  "verifiedFrozenArchives": 31,
+  "verifiedImmutableFiles": 28,
+  "currentArchiveSHA256": "8bccd455d267abf07a78aa4d6fa7e2d4482ad95ac9d7318fcaaa1a64861461c7",
+  "schemaVersion": 1,
+  "reviewId": "economics-reading-2026-11-09-v0.7.107",
+  "publicationVersion": "0.7.107",
+  "reviewedOn": "2026-11-09",
+  "baseMain": "4c7ddb62c7601f6971815aef17b7dce0f5f01e73",
+  "canonicalBuild": {
+    "runId": 42696221272,
+    "sourceHead": "93f38387705d51489c29f6a8c12363328e1b9bcd",
+    "generatedCommit": "30a747a45c5d2cc50c1c12545a5e4eccdf84f723",
+    "conclusion": "success",
+    "url": "https://github.com/robertbregy/Connecting-the-Dots/actions/runs/42696221272",
+    "reproducibleArchiveStep": "success"
+  },
+  "humanParticipants": 0,
+  "reviewType": "AI-assisted source, localization and exact generated-file review; independent preservation and routing review.",
+  "browserAcceptance": "Separate required CI gates; not attested by this static evidence.",
+  "independentRoutingReview": {
+    "reportedRouteCases": 1908,
+    "rootAliasVariants": 6,
+    "originalLanguageNormalizerSequences": 10
+  },
+  "sourceInventory": "data/economics-preservation.json",
+  "scopeDocument": "docs/economics-reading-v0.7.107.md",
+  "sourceFilesCompared": 35,
+  "generatedTree": "1f6f5e17eba59bbd88db9893811f228780feb094"
+}
