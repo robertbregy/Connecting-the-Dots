@@ -1,0 +1,121 @@
+{
+  "staticReviewPassed": true,
+  "sourceCommit": "f34ffb0a4b4086eb747745629e86883410cfe15b",
+  "protectedSourceSections": 21,
+  "pages": [
+    {
+      "file": "index.html",
+      "language": "en",
+      "retainedPublishedFragments": 530,
+      "retainedHomeFragments": 34,
+      "unchangedTutorials": 2,
+      "unchangedChaptersExceptTechnicalMetadata": 29,
+      "preservedHistoricalReleaseNotes": 99
+    },
+    {
+      "file": "it/index.html",
+      "language": "it",
+      "retainedPublishedFragments": 530,
+      "retainedHomeFragments": 34,
+      "unchangedTutorials": 2,
+      "unchangedChaptersExceptTechnicalMetadata": 29,
+      "preservedHistoricalReleaseNotes": 99
+    },
+    {
+      "file": "en/index.html",
+      "language": "en",
+      "retainedPublishedFragments": 530,
+      "retainedHomeFragments": 34,
+      "unchangedTutorials": 2,
+      "unchangedChaptersExceptTechnicalMetadata": 29,
+      "preservedHistoricalReleaseNotes": 99
+    },
+    {
+      "file": "de/index.html",
+      "language": "de",
+      "retainedPublishedFragments": 530,
+      "retainedHomeFragments": 34,
+      "unchangedTutorials": 2,
+      "unchangedChaptersExceptTechnicalMetadata": 29,
+      "preservedHistoricalReleaseNotes": 99
+    },
+    {
+      "file": "fr/index.html",
+      "language": "fr",
+      "retainedPublishedFragments": 530,
+      "retainedHomeFragments": 34,
+      "unchangedTutorials": 2,
+      "unchangedChaptersExceptTechnicalMetadata": 29,
+      "preservedHistoricalReleaseNotes": 99
+    }
+  ],
+  "unchangedExistingDictionaries": 4,
+  "verifiedFrozenArchives": 30,
+  "verifiedImmutableFiles": 28,
+  "currentArchiveSHA256": "f9ebb1a7900092423034e987983ae0451e601e7645c25f6d439a75270f1fca87",
+  "schemaVersion": 1,
+  "reviewedOn": "2026-11-09",
+  "publicationVersion": "0.7.106",
+  "baseMain": "9e6f782494ca856949465e843d87dd257d0b2cea",
+  "reviewType": "AI-assisted source, localization and exact generated-file review; no human study",
+  "humanParticipants": 0,
+  "canonicalBuild": {
+    "runId": 42650172801,
+    "jobId": 129275299984,
+    "sourceHead": "c60334311842fb3f27ad2a813bb87fdf0c665622",
+    "generatedCommit": "1b335231a8c56a345310056c659e59c974d628fa",
+    "url": "https://github.com/robertbregy/Connecting-the-Dots/actions/runs/42650172801",
+    "conclusion": "success",
+    "deterministicCurrentArchive": true,
+    "deterministicResearchRender": true
+  },
+  "sourcePinVerification": {
+    "matchedSourceFiles": 25,
+    "paths": [
+      ".github/workflows/audit-browser.yml",
+      ".gitignore",
+      "CHANGELOG.md",
+      "README.md",
+      "assets/home-editorial.css",
+      "build.py",
+      "data/frozen_technical_packages.json",
+      "data/home_editorial.json",
+      "data/release_history.json",
+      "data/translations.json",
+      "package-lock.json",
+      "package.json",
+      "publication.json",
+      "research/README.md",
+      "scripts/audit_audience.cjs",
+      "scripts/audit_ia_b2.cjs",
+      "scripts/home_editorial_qa.cjs",
+      "scripts/narrative_clarity_qa.cjs",
+      "scripts/release_check.py",
+      "scripts/render_home_editorial.cjs",
+      "scripts/usability_remediation_qa.cjs",
+      "scripts/validate_corrective.js",
+      "scripts/validate_multilingual.js",
+      "scripts/validate_quick_guide.cjs",
+      "src/index.web.html"
+    ],
+    "onlyPermittedDifference": "publication.json.buildProvenanceCommit pins the real preparatory source commit"
+  },
+  "reviewedChanges": [
+    "Three introductory paragraphs and labels in four languages, with one example.com domain diagram",
+    "Source-linked DNS origins and the three retained story destinations",
+    "Six existing pathways, dated round context and project/method section",
+    "Unchanged tutorial bodies in native disclosures, preserved old URLs",
+    "Only obsolete homepage QA layout contracts updated; all original archive guards and seven required PR checks retained"
+  ],
+  "acceptanceScope": "Static source and generated-file review only. Browser scenarios, all seven PR gates, actual Pages deployment and live-byte verification are required separately before completion.",
+  "archiveReview": {
+    "changedMembers": [
+      "frozen_technical_packages.json",
+      "home_editorial.json",
+      "manifest.json",
+      "release_history.json"
+    ],
+    "removedMembers": [],
+    "currentBytes": 4354867
+  }
+}
