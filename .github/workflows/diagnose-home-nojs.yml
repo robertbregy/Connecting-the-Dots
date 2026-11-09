@@ -29,24 +29,24 @@ jobs:
           trap 'kill "$server" 2>/dev/null || true' EXIT
           sleep 2
           node - <<'JS'
-          'use strict';
-          const fs=require('node:fs');
-          const {chromium}=require('playwright');
+          'use strict'; const fs=require('node:fs'); const {chromium}=require('playwright');
           const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
-          const base='http://127.0.0.1:8123/it/';
-          const entries=[['primary','.heroPrimary','how-part-2'],['secondary','.heroSecondary','explore'],...['ia-understand','ia-explore','ia-stories','ia-outcomes','ia-round','ia-research'].map(id=>[id,'#home-pathways a[data-open-section="'+id+'"]',id])];
-          const report={sourceCommit:process.env.GITHUB_SHA,candidate:'cd5ee9b22d9febb4707aebecbe7b93b8ad355445',entries:[]};
-          (async()=>{fs.mkdirSync('home-nojs-diagnostic',{recursive:true});const browser=await chromium.launch({headless:true});
-          try {const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:900}}); const page=await context.newPage();
-          const snapshot=id=>page.evaluate(id=>{const node=document.getElementById(id);const rect=n=>{const r=n.getBoundingClientRect();return {top:r.top,left:r.left,width:r.width,height:r.height,bottom:r.bottom}};const ancestors=[];for(let n=node;n;n=n.parentElement){const s=getComputedStyle(n);ancestors.push({tag:n.tagName,id:n.id,className:n.className,hidden:n.hidden,open:n.tagName==='DETAILS'?n.open:null,display:s.display,overflow:s.overflow,scrollMarginTop:s.scrollMarginTop,rect:rect(n)})}return {url:location.href,scrollY,viewport:innerHeight,documentHeight:document.documentElement.scrollHeight,ready:document.readyState,target:node?rect(node):null,ancestors,topbar:[...document.querySelectorAll('.topbar,.iaPrimaryNav')].map(n=>({rect:rect(n),position:getComputedStyle(n).position}))}},id);
-          for(const [label,selector,id] of entries){await page.goto(base,{waitUntil:'load'});await page.locator(selector).click();const item={label,id,initial:await snapshot(id)};await pause(600);item.settled=await snapshot(id);
-          if(label==='primary'){await page.screenshot({path:'home-nojs-diagnostic/primary-native.png'});
-          try{await page.waitForFunction(()=>true,null,{timeout:1500});item.rafAlwaysTrue='passed'}catch(e){item.rafAlwaysTrue=e.message}
-          try{await page.waitForFunction(id=>{const r=document.getElementById(id).getBoundingClientRect();return r.height>0&&r.top>=0&&r.top<innerHeight},id,{timeout:1500});item.rafGeometry='passed'}catch(e){item.rafGeometry=e.message}
-          try{await page.waitForFunction(id=>{const r=document.getElementById(id).getBoundingClientRect();return r.height>0&&r.top>=0&&r.top<innerHeight},id,{timeout:1500,polling:100});item.timerGeometry='passed'}catch(e){item.timerGeometry=e.message}
-          }
-          item.after=await snapshot(id);report.entries.push(item);console.log('NOJS_DIAGNOSTIC '+JSON.stringify(item));}
-          await context.close();}finally{await browser.close();fs.writeFileSync('home-nojs-diagnostic/report.json',JSON.stringify(report,null,2)+'\n')}})().catch(error=>{console.error(error);process.exitCode=1});
+          const base='http://127.0.0.1:8123/it/';const out='home-nojs-diagnostic';fs.mkdirSync(out,{recursive:true});
+          const report={candidate:'cd5ee9b22d9febb4707aebecbe7b93b8ad355445',variants:[]};
+          const original=fs.readFileSync('assets/home-editorial.css','utf8');
+          (async()=>{const browser=await chromium.launch({headless:true});try{
+          for(const variant of ['baseline','native-margin-experiment']){
+          fs.writeFileSync('assets/home-editorial.css',original+(variant==='baseline'?'':"\n/* Diagnostic experiment only: keep the native destination below both sticky bars. */\n.no-js #how-part-2{scroll-margin-top:calc(var(--topbar-height) + 160px)}\n"));
+          const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:900}});const page=await context.newPage();
+          const state=()=>page.evaluate(()=>{const n=document.getElementById('how-part-2'),r=n.getBoundingClientRect();return {url:location.href,scrollY,top:r.top,bottom:r.bottom,height:r.height,margin:getComputedStyle(n).scrollMarginTop,navBottom:document.querySelector('.iaPrimaryNav').getBoundingClientRect().bottom,viewport:innerHeight,ready:document.readyState}});
+          await page.goto(base,{waitUntil:'load'});await page.locator('.heroPrimary').click();
+          await page.waitForURL(url=>url.searchParams.get('tab')==='how'&&url.hash==='#how-part-2');
+          const result={variant,afterWaitForURL:await state()};
+          try{await page.waitForFunction(()=>{let n=document.getElementById('how-part-2');if(!n||!n.getBoundingClientRect().height)return false;for(let p=n;p;p=p.parentElement)if(p.tagName==='DETAILS'&&!p.open)return false;const r=n.getBoundingClientRect();return r.top>=0&&r.top<innerHeight},null,{timeout:5000});result.originalCheck='passed'}catch(e){result.originalCheck=e.message}
+          result.afterCheck=await state();await pause(2000);result.afterTwoSeconds=await state();
+          await page.screenshot({path:out+'/'+variant+'.png'});report.variants.push(result);console.log('NOJS_DIAGNOSTIC '+JSON.stringify(result));
+          await context.close();}
+          }finally{await browser.close();fs.writeFileSync('assets/home-editorial.css',original);fs.writeFileSync(out+'/report.json',JSON.stringify(report,null,2)+'\n')}})().catch(e=>{console.error(e);process.exitCode=1});
           JS
       - name: Save diagnostic observations
         if: always()
