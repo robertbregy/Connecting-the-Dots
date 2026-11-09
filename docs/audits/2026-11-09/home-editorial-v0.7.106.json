@@ -1,6 +1,6 @@
 {
   "staticReviewPassed": true,
-  "sourceCommit": "d0cb94045be8010054955566163f5eea0d369c0e",
+  "sourceCommit": "011528b4205ac6e6bd73d8d729f00070124acdf8",
   "protectedSourceSections": 21,
   "pages": [
     {
@@ -60,11 +60,11 @@
   "reviewType": "AI-assisted source, localization and exact generated-file review; no human study",
   "humanParticipants": 0,
   "canonicalBuild": {
-    "runId": 42652822195,
-    "jobId": 129283421999,
-    "sourceHead": "fe83fe6b81dade974abc4321359072d3ac75a400",
-    "generatedCommit": "2fafe3686f52853407d066821599ebed64f69a4e",
-    "url": "https://github.com/robertbregy/Connecting-the-Dots/actions/runs/42652822195",
+    "runId": 42656694429,
+    "jobId": 129296946300,
+    "sourceHead": "70467717670d6399a4b29f838c65b1abb0a7c1e7",
+    "generatedCommit": "e2abba28c703bc0f5235e2caaed2609c89312de6",
+    "url": "https://github.com/robertbregy/Connecting-the-Dots/actions/runs/42656694429",
     "conclusion": "success",
     "deterministicCurrentArchive": true,
     "deterministicResearchRender": true
@@ -106,7 +106,9 @@
     "Six existing pathways, dated round context and project/method section",
     "Unchanged tutorial bodies in native disclosures, preserved old URLs",
     "Only obsolete homepage QA layout contracts updated; all original archive guards and seven required PR checks retained",
-    "Explicit fragment destinations for both hero links and six pathways; each no-JavaScript scenario now verifies all eight link destinations, viewport arrival and actual scrolling"
+    "Explicit fragment destinations for both hero links and six pathways; each no-JavaScript scenario now verifies all eight link destinations, viewport arrival and actual scrolling",
+    "A CSS offset scoped to the no-JavaScript primary destination keeps its heading below the two sticky bars",
+    "No-JavaScript arrival checks now observe actual geometry from Node at 100ms intervals within the same 5000ms budget, require three stable samples and reject a covered primary heading; all 24 JavaScript scenarios remain unchanged"
   ],
   "acceptanceScope": "Static source and generated-file review only. Browser scenarios, all seven PR gates, actual Pages deployment and live-byte verification are required separately before completion.",
   "archiveReview": {
@@ -131,6 +133,29 @@
       "home-320-dark.png"
     ],
     "observedResult": "No visible clipped content, overlap or layout break; readable introduction, diagram and pathways in the inspected views",
-    "scope": "Design and copy are unchanged in the final candidate; its fragment-navigation change requires its own browser gates"
+    "scope": "The normal homepage design and copy are unchanged. The native no-JavaScript offset was inspected in real CI before/after screenshots. Final-candidate browser gates remain required."
+  },
+  "nativeNavigationDiagnostic": {
+    "runId": 42656030695,
+    "jobId": 129294633930,
+    "artifactId": 13692061462,
+    "candidateHead": "cd5ee9b22d9febb4707aebecbe7b93b8ad355445",
+    "scope": "Diagnostic observations on the prior candidate and a temporary CSS experiment, not final-candidate browser acceptance",
+    "baseline": {
+      "settledHeadingTop": 0.375,
+      "stickyNavigationBottom": 168,
+      "headingCovered": true
+    },
+    "scopedOffsetExperiment": {
+      "scrollMarginTop": 222,
+      "settledHeadingTop": 222.375,
+      "stickyNavigationBottom": 168,
+      "headingCovered": false
+    },
+    "pollingObservation": "The requestAnimationFrame arrival check timed out in both no-JavaScript variants even though the independently observed native scroll completed. Replace that unavailable polling path with read-only Node-driven observations, preserving the time budget and strengthening final-position checks.",
+    "inspectedScreenshots": [
+      "baseline.png",
+      "native-margin-experiment.png"
+    ]
   }
 }
