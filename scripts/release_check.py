@@ -694,7 +694,7 @@ for rel in ['index.html',*[f'{x}/index.html' for x in LANGS]]:
         if len(value)<=minimum or value!=home_copy[home_language][key]: fail(f'missing or unlocalized home introduction {class_name} in {rel}')
     for class_name,section,anchor in [('heroPrimary','how','how-part-2'),('heroSecondary','explore','')]:
         link=re.search(r'<a\b(?=[^>]*\bclass=["\'][^"\']*\b'+class_name+r'\b[^"\']*["\'])[^>]*>',text)
-        expected='?tab='+section+('#'+anchor if anchor else '')
+        expected='?tab='+section+'#'+(anchor or section)
         if not link or f'href="{expected}"' not in link.group() or f'data-open-section="{section}"' not in link.group(): fail(f'novice entry destination missing for {class_name} in {rel}')
         if anchor and f'data-open-anchor="{anchor}"' not in link.group(): fail(f'novice entry anchor missing in {rel}')
     if 'applicationCorpusStatus ready' not in text: fail(f'static local-corpus ready status missing in {rel}')

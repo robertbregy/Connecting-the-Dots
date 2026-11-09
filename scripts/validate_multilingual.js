@@ -100,8 +100,8 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.equal(candidateCaveat?.textContent.trim(),homeCopy.round.body,page+' the round context is not localized');
   assert.ok(candidateCaveat.textContent.includes('.lugano')&&!candidateCaveat.closest('details,[hidden]'),page+' the candidate string caveat must remain visible');
   assert.match(candidateCaveat.textContent,{en:/does not mean/,it:/non equivale/,de:/bedeutet weder/,fr:/ne signifie pas/}[language],page+' an application must not be described as approval');
-  assert.ok(document.querySelector('#home-pathways a[href="?tab=ia-research"]'),page+' the novice cannot see direct paths');
-  assert.ok(document.querySelector('#home-project .homeProjectLinks a[href="?tab=sources"][data-open-section="sources"]'),page+' home sources and methodology are inaccessible');
+  assert.ok(document.querySelector('#home-pathways a[href="?tab=ia-research#ia-research"]'),page+' the novice cannot see direct paths');
+  assert.ok(document.querySelector('#home-project .homeProjectLinks a[href="?tab=sources#sources"][data-open-section="sources"]'),page+' home sources and methodology are inaccessible');
   assert.ok(document.querySelector('#home-project .homeProjectLinks a[href="?tab=research#research-citation-guide"]'),page+' home research and citation guidance are inaccessible');
   assert.ok(document.querySelector('#ia-research a[href="https://doi.org/10.5281/zenodo.23288603"]'),page+' RR2 version-specific DOI not immediately available');
   // Verify the visible static citation, not only its ZIP destination, including the no-JavaScript page.

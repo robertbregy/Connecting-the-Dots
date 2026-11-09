@@ -52,7 +52,7 @@ async function checkAxe(page,label) {
     const homeDestinations=await page.locator("#home-pathways .iaHomeJumpList a").evaluateAll(links=>links.map(link=>({
       section:link.getAttribute("data-open-section"),href:link.getAttribute("href")
     })));
-    assert.deepEqual(homeDestinations,hubs.map(([section])=>({section,href:"?tab="+section})),
+    assert.deepEqual(homeDestinations,hubs.map(([section])=>({section,href:"?tab="+section+"#"+section})),
       "Home must link to all six primary areas in navigation order");
     assert.equal(await page.locator(".iaLegacyNavDisclosure[open]").count(),0,"original nav should begin folded");
     assert.ok((await page.locator('.hero h1').innerText()).trim(),"home heading not visible");
@@ -60,12 +60,12 @@ async function checkAxe(page,label) {
     assert.ok(await project.isVisible()&&(await project.innerText()).includes("Connecting the Dots")&&(await project.innerText()).length>90,"project purpose not visible on Home");
     for(const selector of ['.homeHeroLead','.homeHeroIntro'])assert.ok((await page.locator('.hero '+selector).innerText()).length>50,"home explanation lacks meaningful detail");
     const entryDestinations=await page.locator('.heroActions > a').evaluateAll(links=>links.map(link=>({section:link.dataset.openSection,anchor:link.dataset.openAnchor||'',href:link.getAttribute('href')})));
-    assert.deepEqual(entryDestinations,[{section:'how',anchor:'how-part-2',href:'?tab=how#how-part-2'},{section:'explore',anchor:'',href:'?tab=explore'}],"two actionable novice entries must remain available");
+    assert.deepEqual(entryDestinations,[{section:'how',anchor:'how-part-2',href:'?tab=how#how-part-2'},{section:'explore',anchor:'',href:'?tab=explore#explore'}],"two actionable novice entries must remain available");
     assert.equal(await page.locator("#home-stories .audienceDiscovery.homeStory:visible").count(),3,"three source-backed discovery paths");
     const candidateCaveat=page.locator('#home-round .homeRoundCopy > p');
     assert.ok(await candidateCaveat.isVisible()&&(await candidateCaveat.innerText()).includes(".lugano"),"no visible distinction for candidate .lugano");
     assert.match(await candidateCaveat.innerText(),{en:/does not mean/,it:/non equivale/,de:/bedeutet weder/,fr:/ne signifie pas/}[lang],"an application must not be described as approval");
-    assert.ok(await page.locator('#home-project .homeProjectLinks a[href="?tab=sources"]').isVisible(),"home sources and methodology are inaccessible");
+    assert.ok(await page.locator('#home-project .homeProjectLinks a[href="?tab=sources#sources"]').isVisible(),"home sources and methodology are inaccessible");
     assert.ok(await page.locator('#home-project .homeProjectLinks a[href="?tab=research#research-citation-guide"]').isVisible(),"home research guidance is inaccessible");
     tally.homePurpose=true;
     const visible=await page.evaluate(()=>{

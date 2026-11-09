@@ -35,10 +35,17 @@ function assertHomeStructure(document, lang) {
   assert.equal(new URL(hrefOf(primary), 'https://example.test/').hash, '#how-part-2');
   assert.equal(secondary.dataset.openSection, 'explore');
   assert.equal(new URL(hrefOf(secondary), 'https://example.test/').search, '?tab=explore');
+  assert.equal(new URL(hrefOf(secondary), 'https://example.test/').hash, '#explore');
   assert.ok(document.getElementById('how-part-2'), 'Primary reading destination disappeared');
   assert.equal(hero.querySelectorAll('.audienceDiscovery').length, 0, 'Stories still compete with the introduction');
   assert.equal(document.querySelectorAll('#home-stories .audienceDiscovery.homeStory').length, 3);
-  assert.deepEqual([...document.querySelectorAll('#home-pathways a[data-open-section]')].map(a => a.dataset.openSection), pathways);
+  const homePaths = [...document.querySelectorAll('#home-pathways a[data-open-section]')];
+  assert.deepEqual(homePaths.map(a => a.dataset.openSection), pathways);
+  for (const link of homePaths) {
+    const url = new URL(hrefOf(link), 'https://example.test/');
+    assert.equal(url.search, '?tab=' + link.dataset.openSection, 'A home path lost its application route');
+    assert.equal(url.hash, '#' + link.dataset.openSection, 'A home path cannot reach its static chapter');
+  }
   for (const id of pathways) assert.ok(document.getElementById(id), 'Missing established path ' + id);
   const quick = document.getElementById('three-minute-guide'), journey = document.getElementById('internet-guide');
   assert.ok(quick && quick.tagName === 'DETAILS' && quick.closest('#home-stories'), 'Short reading guide must remain an ordinary disclosure among the stories');
@@ -189,9 +196,22 @@ async function browserChecks(report, out) {
         await page.locator('.homeJourneyDisclosure > summary').focus(); await page.keyboard.press('Enter');
         assert.ok(await page.locator('#internet-guide').isVisible(), 'The retained lesson is not readable without JavaScript');
         await fit(page, 'no-JavaScript home');
-        await page.locator('.heroPrimary').click();
-        assert.equal(new URL(page.url()).hash, '#how-part-2');
-        assert.ok(await page.locator('#how-part-2').isVisible(), 'Ordinary primary link cannot reach its static lesson');
+        // Native links must move the reader to the content, not merely reload a
+        // document in which every no-JavaScript section happens to be visible.
+        const ordinaryEntries = [
+          {selector: '.heroPrimary', section: 'how', anchor: 'how-part-2'},
+          {selector: '.heroSecondary', section: 'explore', anchor: 'explore'},
+          ...pathways.map(section => ({selector: '#home-pathways a[data-open-section="' + section + '"]', section, anchor: section}))
+        ];
+        result.reachedFragments = [];
+        for (const {selector, section, anchor} of ordinaryEntries) {
+          await page.goto(base + lang + '/', {waitUntil: 'load'});
+          await page.locator(selector).click();
+          await page.waitForURL(url => url.searchParams.get('tab') === section && url.hash === '#' + anchor);
+          await reached(page, anchor);
+          assert.ok(await page.evaluate(() => window.scrollY > 0), 'The ordinary link did not scroll to ' + anchor);
+          result.reachedFragments.push(anchor);
+        }
         result.passed = true;
       } catch (error) { result.error = error.stack || String(error); report.errors.push(result); }
       finally { report.noJavaScript.push(result); await context.close(); }

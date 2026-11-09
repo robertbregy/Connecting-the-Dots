@@ -8,7 +8,8 @@ const root = path.resolve(__dirname, '..');
 const content = JSON.parse(fs.readFileSync(path.join(root, 'data/home_editorial.json'), 'utf8'));
 const publication = JSON.parse(fs.readFileSync(path.join(root, 'publication.json'), 'utf8'));
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
-const route = (section, anchor = '') => '?tab=' + section + (anchor ? '#' + anchor : '');
+// Keep real fragment targets so the same links also navigate without JavaScript.
+const route = (section, anchor = '') => '?tab=' + section + '#' + (anchor || section);
 const destination = (section, anchor = '') => 'href="' + route(section, anchor) + '" data-open-section="' + escape(section) + '"' + (anchor ? ' data-open-anchor="' + escape(anchor) + '"' : '');
 const sectionHead = (text, id) => '<div class="homeSectionHead"><p class="eyebrow">' + escape(text.eyebrow) + '</p><h2 id="' + id + '">' + escape(text.title) + '</h2>' + (text.lead ? '<p>' + escape(text.lead) + '</p>' : '') + '</div>';
 const expectedPathways = ['ia-understand', 'ia-explore', 'ia-stories', 'ia-outcomes', 'ia-round', 'ia-research'];
