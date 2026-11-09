@@ -54,6 +54,15 @@ async function goto(page,language,query=''){
  await page.waitForFunction(()=>window.DOT_DATA?.explorerMeta?.runtimeExternalEnrichmentLoaded===true,null,{timeout:15000});
  await settle(page);
 }
+async function gotoEconomicsRound(page,language,anchor=''){
+ const response=await page.goto(anchor?base+language+'/?tab=economics#'+anchor:base+'economics/'+language+'/round-2026/',{waitUntil:'load',timeout:40000});
+ if(response)assert.equal(response.status(),200,'Economics document HTTP status');
+ await page.waitForURL(url=>url.pathname.endsWith('/economics/'+language+'/round-2026/'));
+ await page.waitForFunction(()=>document.documentElement.dataset.economicsReady==='true');
+ assert.equal(new URL(page.url()).hash,anchor?'#'+anchor:'','Economics fragment changed during navigation');
+ assert.ok(await page.locator('main').isVisible(),'Economics document is not readable');
+ await settle(page);
+}
 async function click(page,locator){await locator.evaluate(el=>el.scrollIntoView({block:'center',behavior:'instant'}));await locator.click();await settle(page);}
 async function anchorVisible(page,selector){
  await settle(page);
@@ -142,12 +151,13 @@ async function downloadCSV(page,requests){
 
     await goto(page,language,'?tab=lugano#luganoRoadmap');
     await anchorVisible(page,'#luganoRoadmap');
-    await goto(page,language,'?tab=economics#economy-sectors');
+    await gotoEconomicsRound(page,language,'economy-sectors');
     await anchorVisible(page,'#economy-sectors');
-    await goto(page,language,'?tab=economics');
-    assert.equal(await page.locator('#economics details.historicalEconomy').getAttribute('open'),null);
-    const heading=page.locator('#economy-sectors [data-i18n="sectorEconomyTitle"]').first(),headingId=await heading.getAttribute('id');
+    await gotoEconomicsRound(page,language);
+    assert.equal(await page.locator('main details.historicalEconomy').getAttribute('open'),null);
+    const heading=page.locator('#economy-sectors #economics-part-4'),headingId=await heading.getAttribute('id');
     assert.ok(headingId,'Historical comparison has no TOC target');
+    assert.equal((await heading.textContent()).trim(),translations[language].sectorEconomyTitle,'Historical comparison title changed during relocation');
     await click(page,page.locator('#economics-historical-link'));
     await anchorVisible(page,'#'+headingId);
     assert.equal(await page.evaluate(()=>document.activeElement?.id),headingId,'TOC focus did not follow the opened chapter');

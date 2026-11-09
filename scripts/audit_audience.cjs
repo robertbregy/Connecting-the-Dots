@@ -35,6 +35,9 @@ const base=process.env.CTD_TEST_BASE||'http://127.0.0.1:8123/';
    assert.equal(await page.locator(new URL(href,base).hash).count(),1,'Historical source target missing');
   }
   await page.goto(base+lang+'/?tab=economics#tld-market-reach');
+  await page.waitForURL(url=>url.pathname.endsWith('/economics/'+lang+'/market/'));
+  await page.waitForFunction(()=>document.documentElement.dataset.economicsReady==='true');
+  assert.equal(new URL(page.url()).hash,'#tld-market-reach','Legacy ranking fragment was lost during migration');
   await page.locator('#market-more:visible').waitFor();
   assert.equal(await page.locator('#market-web tbody tr:visible').count(),10);
   if(mobile){const y=await page.locator('#market-web tbody tr:visible').first().evaluate(e=>e.getBoundingClientRect().top);assert.ok(y<1100,'First result is still buried: '+y)}

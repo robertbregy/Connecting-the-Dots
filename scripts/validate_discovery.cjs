@@ -15,6 +15,7 @@ const pub = json('publication.json');
 const base = new URL(pub.deployment);
 const manifest = json('discovery/manifest.json');
 const languages = ['en', 'it', 'de', 'fr'];
+const economicsKeys = ['market', 'cases', 'portfolios', 'round-2026'];
 const errors = [];
 const results = [];
 const cache = new Map();
@@ -72,6 +73,10 @@ check('manifest identifies the current technical publication', () => {
   assert.equal(manifest.generatedOn, pub.releasedOn);
   assert.ok(Array.isArray(manifest.pages) && manifest.pages.length > 0, 'No discovery documents');
   assert.equal(new Set(manifest.pages.map(page => page.path)).size, manifest.pages.length, 'Duplicate page paths');
+  assert.equal(manifest.pages.length, 84, 'Preserve the 68 discovery documents and add 16 Economics documents');
+  const expectedEconomics = languages.flatMap(lang => economicsKeys.map(key => `economics/${lang}/${key}/`));
+  assert.deepEqual(manifest.pages.filter(page => page.kind === 'economics').map(page => page.path).sort(),
+    expectedEconomics.sort(), 'Missing or extra Economics destinations');
 });
 
 const pages = manifest.pages || [];
@@ -89,7 +94,11 @@ let citations = 0;
 for (const page of pages) {
   check(page.path, () => {
     assert.ok(languages.includes(page.language), 'Unsupported language');
-    assert.ok(['guide', 'tld', 'index'].includes(page.kind), 'Unknown document kind');
+    assert.ok(['guide', 'tld', 'index', 'economics'].includes(page.kind), 'Unknown document kind');
+    if (page.kind === 'economics') {
+      assert.ok(economicsKeys.includes(page.key), 'Unknown Economics detail');
+      assert.equal(page.path, `economics/${page.language}/${page.key}/`, 'Economics document path differs');
+    }
     assert.ok(/^[a-z0-9][a-z0-9/_-]*\/$/.test(page.path), 'Unsafe or non-directory page path');
     const file = page.path + 'index.html';
     const canonical = new URL(page.path, base).href;
@@ -115,7 +124,32 @@ for (const page of pages) {
     for (const meta of document.querySelectorAll('meta[name="robots"],meta[name="googlebot"]'))
       assert.ok(!/\b(noindex|none|nosnippet)\b/i.test(meta.getAttribute('content') || ''), 'Document excludes indexing or snippets');
     assert.equal(document.querySelector('meta[http-equiv="refresh"]'), null, 'Static document must not immediately redirect into the app');
-    assert.equal(main.querySelector('button,input,select,textarea'), null, 'Static content contains an inert application control');
+    const readingControls = [...main.querySelectorAll('button,input,select,textarea')];
+    if (page.kind === 'economics') {
+      const share = main.querySelectorAll('button[data-economics-share]');
+      assert.equal(share.length, 1, 'Economics needs one progressively enabled share action');
+      assert.ok(share[0].matches('#economics-share[type="button"][hidden]'), 'Share action must wait for its runtime');
+      assert.equal(main.querySelector('#economics-share-status')?.getAttribute('role'), 'status', 'Share action lost its status feedback');
+      assert.ok(document.querySelector('script[src*="assets/economics-pages.js"]'), 'Economics enhancements runtime is absent');
+    }
+    const contentControls = readingControls.filter(control => !(page.kind === 'economics' && control.matches('button[data-economics-share]')));
+    if (page.kind === 'economics' && page.key === 'market') {
+      // Only the market's five progressive controls are permitted here. Other
+      // reading documents retain the existing prohibition of inert app UI.
+      const permitted = 'button[data-market-view="web"],button[data-market-view="zones"],input#market-search,select#market-origin,button#market-more';
+      const controls = contentControls;
+      assert.equal(controls.length, 5, 'Market filtering controls are missing or duplicated');
+      assert.ok(controls.every(control => control.matches(permitted) && control.closest('#tld-market-reach')),
+        'An unsupported application control survived on the market page');
+      assert.equal(main.querySelectorAll('[data-market-view]').length, 2, 'Both ranking selectors must remain');
+      assert.ok(document.querySelector('script[src*="assets/tld-market.js"]'), 'Market runtime is absent');
+      for (const id of ['market-web', 'market-zones'])
+        assert.equal(main.querySelectorAll('#'+id+' tbody tr').length, 50, 'The complete market table must remain in HTML');
+    } else {
+      assert.equal(contentControls.length, 0, 'Static content contains an inert application control');
+    }
+    if (page.kind === 'economics')
+      assert.equal(document.querySelector('script[src*="assets/app.js"]'), null, 'Standalone Economics must not load the native app router');
     assert.equal(document.querySelector('[onclick],[onchange],[onsubmit]'), null, 'Inline app handler survived extraction');
     for (const anchor of main.querySelectorAll('a[href]'))
       assert.ok(flat(anchor.getAttribute('href')) && anchor.getAttribute('href').trim() !== '#', 'Placeholder link survived extraction');

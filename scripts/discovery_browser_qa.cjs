@@ -16,7 +16,7 @@ fs.mkdirSync(output, {recursive: true});
 const report = {siteVersion: publication.version, sourceCommit: process.env.GITHUB_SHA || null,
   base, humanParticipants: 0, passed: false, scenarios: [], errors: [], axeScans: 0, axeMirrorScans: 0,
   execution: {reading: 'JavaScript remains disabled in every no-JavaScript reading scenario.',
-    accessibility: 'Axe uses JavaScript. Disabled reading contexts are paired with fresh enabled contexts whose document identity, main DOM and visible main text must match exactly.'},
+    accessibility: 'Axe uses JavaScript. Disabled reading contexts are paired with fresh enabled contexts whose document identity and main DOM must match exactly. Visible main text must also match, apart from the Economics recovery navigation whose exact markup, links, IDs and intended visibility difference are checked separately.'},
   coverageLimits: ['Representative documents and viewport sizes; not all possible devices or assistive technologies.',
     'Automated accessibility results are not a conformance certification.', 'No traffic, ranking or citation-growth measurement.']};
 const flat = value => String(value ?? '').replace(/\s+/g, ' ').trim();
@@ -39,14 +39,35 @@ for (const [kind, key] of [['guide', 'economics'], ['tld', 'ai']]) {
   if (entry) cases.push({entry, width: 390, javaScriptEnabled: true});
 }
 
-async function documentIdentity(page) {
-  return page.evaluate(() => {
+async function documentIdentity(page, normalizeEconomicsFallback = false) {
+  return page.evaluate(normalizeEconomicsFallback => {
     const main = document.querySelector('main');
-    return {url: location.href, language: document.documentElement.lang, title: document.title,
+    const identity = {url: location.href, language: document.documentElement.lang, title: document.title,
       canonical: document.querySelector('link[rel="canonical"]')?.getAttribute('href'),
       mainCount: document.querySelectorAll('main').length,
       mainHTML: main?.outerHTML || '', mainText: main?.innerText || ''};
-  });
+    if (normalizeEconomicsFallback) {
+      const fallbacks = main.querySelectorAll('.economicsLegacy');
+      if (fallbacks.length !== 1) throw new Error('Economics guide must retain exactly one legacy fallback navigation');
+      const fallback = fallbacks[0], rect = fallback.getBoundingClientRect();
+      identity.economicsFallback = {markup: fallback.outerHTML,
+        ids: [...fallback.querySelectorAll('[id]')].map(node => node.id),
+        links: [...fallback.querySelectorAll('a[href]')].map(link => ({href: link.getAttribute('href'), text: link.textContent}))};
+      identity.economicsFallbackVisible = rect.width > 0 && rect.height > 0;
+      // Only this recovery navigation changes visibility with JavaScript. Read
+      // the remaining rendered text with it hidden, then restore its exact style
+      // in the same evaluation; the full original main markup still must match.
+      const style = fallback.getAttribute('style');
+      try {
+        fallback.style.setProperty('display', 'none', 'important');
+        identity.mainTextWithoutEconomicsFallback = main.innerText;
+      } finally {
+        if (style === null) fallback.removeAttribute('style');
+        else fallback.setAttribute('style', style);
+      }
+    }
+    return identity;
+  }, normalizeEconomicsFallback);
 }
 
 async function scenario(browser, test) {
@@ -91,6 +112,25 @@ async function scenario(browser, test) {
       state.canonical = await page.locator('link[rel="canonical"]').getAttribute('href');
       assert.equal(state.canonical, new URL(entry.path, publication.deployment).href);
     });
+    if (entry.kind === 'guide' && entry.key === 'economics') {
+      await check('economics introduction links to all four complete chapters', async () => {
+        const hub = page.locator('main .economicsHub');
+        assert.equal(await hub.count(), 1, 'Economics guide must present the short introduction');
+        assert.ok(await hub.isVisible(), 'Economics introduction is not readable');
+        const paths = hub.locator('a[data-economics-path]');
+        assert.deepEqual(await paths.evaluateAll(nodes => nodes.map(node => node.getAttribute('data-economics-path'))),
+          ['market', 'cases', 'portfolios', 'round-2026'], 'Economics chapter paths are incomplete');
+        for (const link of await paths.all()) {
+          const slug = await link.getAttribute('data-economics-path');
+          assert.ok(await link.isVisible(), 'Chapter link is hidden: ' + slug);
+          assert.ok(flat(await link.innerText()), 'Chapter link has no readable label: ' + slug);
+          assert.equal(new URL(await link.getAttribute('href'), page.url()).href,
+            new URL('economics/' + entry.language + '/' + slug + '/', base).href,
+            'Chapter link has the wrong destination: ' + slug);
+        }
+        assert.ok(await page.locator('#reader-brief-economics').isVisible(), 'The original economic reading brief is missing');
+      });
+    }
     await check('content fits the viewport', async () => {
       state.layout = await page.evaluate(() => {
         const width = document.documentElement.clientWidth;
@@ -121,18 +161,28 @@ async function scenario(browser, test) {
         state.axeContext = {mode: javaScriptEnabled ? 'original-reading-page' : 'javascript-enabled-mirror',
           javaScriptEnabled: true, freshStorage: true};
         if (!javaScriptEnabled) {
-          const expected = await documentIdentity(page);
+          const economicsFallback = entry.kind === 'guide' && entry.key === 'economics';
+          const expected = await documentIdentity(page, economicsFallback);
           mirrorContext = await browser.newContext({...contextOptions, javaScriptEnabled: true});
           axePage = await mirrorContext.newPage();
           observePage(axePage);
           const response = await axePage.goto(page.url(), {waitUntil: 'load', timeout: 45000});
           assert.equal(response.status(), 200, 'Axe mirror document was not served successfully');
-          const actual = await documentIdentity(axePage);
+          const actual = await documentIdentity(axePage, economicsFallback);
           for (const key of ['url', 'language', 'title', 'canonical', 'mainCount'])
             assert.equal(actual[key], expected[key], 'Axe mirror changed document identity: ' + key);
           assert.ok(actual.mainHTML === expected.mainHTML,
             'Axe mirror changed main markup, including text, headings, links, roles or controls');
-          assert.ok(actual.mainText === expected.mainText, 'Axe mirror changed visible main text');
+          if (economicsFallback) {
+            assert.deepEqual(actual.economicsFallback, expected.economicsFallback,
+              'Axe mirror changed Economics recovery markup, links or legacy fragment IDs');
+            assert.equal(expected.economicsFallbackVisible, true, 'Economics recovery navigation must remain visible without JavaScript');
+            assert.equal(actual.economicsFallbackVisible, false, 'Active Economics routing must hide only the recovery navigation');
+            assert.equal(actual.mainTextWithoutEconomicsFallback, expected.mainTextWithoutEconomicsFallback,
+              'Axe mirror changed visible main text outside the explicitly verified Economics recovery navigation');
+            state.axeContext.economicsFallbackMatched = true;
+            state.axeContext.visibleMainTextScope = 'All main content except the independently verified Economics recovery navigation';
+          } else assert.ok(actual.mainText === expected.mainText, 'Axe mirror changed visible main text');
           state.axeContext.documentIdentityMatched = true;
           state.axeContext.mainDOMMatched = true;
           state.axeContext.visibleMainTextMatched = true;
@@ -180,6 +230,10 @@ async function scenario(browser, test) {
           state.readingRoundtrip = page.url();
         } else {
           assert.ok(await page.locator('#' + entry.key + '.active').isVisible());
+          if (entry.key === 'economics') {
+            assert.ok(await page.locator('#economics.economicsHub').isVisible());
+            assert.equal(await page.locator('#economics a[data-economics-path]').count(), 4);
+          }
           state.interactiveRoute = page.url();
         }
       });

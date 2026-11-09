@@ -392,27 +392,32 @@ assert.equal(discoveryManifest.schemaVersion,1,'discovery manifest schema');
 assert.equal(discoveryManifest.siteVersion,publication.version,'discovery manifest publication version');
 assert.equal(discoveryManifest.generatedOn,publication.releasedOn,'discovery manifest publication date');
 assert.ok(Array.isArray(discoveryManifest.pages),'discovery manifest pages missing');
-assert.equal(discoveryManifest.pages.length,68,'complete four-language discovery edition');
+assert.equal(discoveryManifest.pages.length,84,'preserve the 68 discovery documents and add 16 complete Economics pages');
+const economicsDetailKeys=['market','cases','portfolios','round-2026'];
+assert.deepEqual(discoveryManifest.pages.filter(page=>page.kind==='economics').map(page=>page.path).sort(),
+  languages.flatMap(language=>economicsDetailKeys.map(key=>'economics/'+language+'/'+key+'/')).sort(),
+  'four exact Economics destinations are required in every language');
 const discoveryLocations=discoveryManifest.pages.map(page=>{
   assert.ok(languages.includes(page.language),'unsupported discovery language');
-  assert.ok(['guide','tld','index'].includes(page.kind),'unsupported discovery page kind');
+  assert.ok(['guide','tld','index','economics'].includes(page.kind),'unsupported discovery page kind');
   assert.match(page.key,/^[a-z0-9]+(?:-[a-z0-9]+)*$/,'invalid discovery page key');
-  const expectedPath=page.kind==='index'?'discovery/'+page.language+'/':(page.kind==='guide'?'guides/':'tlds/')+page.language+'/'+page.key+'/';
+  if(page.kind==='economics')assert.ok(economicsDetailKeys.includes(page.key),'unsupported Economics detail key');
+  const expectedPath=page.kind==='index'?'discovery/'+page.language+'/':({guide:'guides/',tld:'tlds/',economics:'economics/'}[page.kind])+page.language+'/'+page.key+'/';
   assert.equal(page.path,expectedPath,'discovery path must identify its kind, language and key');
   assert.ok(fs.existsSync(path.join(root,page.path,'index.html')),'missing discovery document: '+page.path);
   return new URL(page.path,base).href;
 });
-assert.equal(new Set(discoveryLocations).size,68,'discovery manifest must not duplicate canonical URLs');
+assert.equal(new Set(discoveryLocations).size,84,'discovery manifest must not duplicate canonical URLs');
 const expectedLocations=[...legacyLocations,...discoveryLocations];
-assert.equal(new Set(expectedLocations).size,111,'new canonical URLs must not replace established pages');
-assert.equal(locations.length,111,'sitemap must contain exactly 43 established and 68 discovery URLs');
-assert.equal(new Set(locations).size,111,'sitemap canonical URLs must not be duplicated');
+assert.equal(new Set(expectedLocations).size,127,'new canonical URLs must not replace established pages');
+assert.equal(locations.length,127,'sitemap must contain exactly 43 established and 84 discovery URLs');
+assert.equal(new Set(locations).size,127,'sitemap canonical URLs must not be duplicated');
 assert.deepEqual(locations,expectedLocations,'complete multilingual and research sitemap');
 const sitemapEntries=Array.from(sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g),m=>m[1]);
 assert.equal((sitemapEntries.slice(0,legacyLocations.length).join('').match(/xhtml:link/g)||[]).length,180,'all established four-language articles and explainers retain reciprocal hreflang');
 for(const [index,entry] of sitemapEntries.slice(legacyLocations.length).entries())
   assert.equal((entry.match(/xhtml:link/g)||[]).length,5,'discovery page needs four locales and x-default: '+discoveryLocations[index]);
-assert.equal((sitemap.match(/xhtml:link/g)||[]).length,180+68*5,'established and discovery pages have complete reciprocal hreflang');
+assert.equal((sitemap.match(/xhtml:link/g)||[]).length,180+84*5,'established and discovery pages have complete reciprocal hreflang');
 assert.ok(!/\?lang=/.test(sitemap));
 const app=fs.readFileSync(path.join(root,'assets/app.js'),'utf8');
 assert.ok(!app.includes('updateSeoLanguage'));

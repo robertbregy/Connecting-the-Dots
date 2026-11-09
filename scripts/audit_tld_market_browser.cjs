@@ -11,7 +11,10 @@ module.exports=async function auditTldMarket(){
   for(const lang of ['en','it','de','fr'])for(const mobile of [false,true]){
    const page=await browser.newPage({viewport:mobile?{width:390,height:844}:{width:1280,height:900},reducedMotion:'reduce'});
    await page.goto(base+lang+'/?tab=economics#tld-market-reach');
+   await page.waitForURL(url=>url.pathname===new URL('economics/'+lang+'/market/',base).pathname&&url.hash==='#tld-market-reach');
    await page.locator('.marketViews:visible').waitFor();
+   assert.equal(await page.locator('#market-web tbody tr').count(),50,'All website-share rows remain in the document');
+   assert.equal(await page.locator('#market-zones tbody tr').count(),50,'All zone-size rows remain in the document');
    assert.equal(await page.locator('#market-web tbody tr:visible').count(),10,'Compact first page');await page.locator('#market-more').click();
   await page.locator('[data-market-view="zones"]').click();
    await page.locator('#market-origin').selectOption('2012');
@@ -30,6 +33,7 @@ module.exports=async function auditTldMarket(){
    await page.locator('#market-search').fill('');
    await page.locator('#market-origin').selectOption('');
    assert.equal(await page.locator('#market-web tbody tr:visible').count(),50);
+   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),'Market page overflows the viewport');
    await page.screenshot({path:'audit-tld-market-'+lang+(mobile?'-mobile':'-desktop')+'.png'});
    await page.goto(base+lang+'/?tab=geography&map=rspFootprint#rsp-tld-footprint');
    await page.locator('[data-mapmode="rspFootprint"][aria-pressed="true"]').waitFor();

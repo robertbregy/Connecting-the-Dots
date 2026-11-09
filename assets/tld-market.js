@@ -4,6 +4,9 @@
  function init(){
   const root=document.getElementById('tld-market-reach');if(!root)return;
   const controls=root.querySelector('.marketViews'),filters=root.querySelector('.marketFilters'),search=document.getElementById('market-search'),origin=document.getElementById('market-origin'),status=document.getElementById('market-result-count');
+  // The native introduction retains legacy fragment markers; the real controls
+  // now live in the independently readable market chapter.
+  if(!controls||!filters||!search||!origin||!status)return;
   const payload=JSON.parse(document.getElementById('rsp-footprint-data').textContent);
   const more=document.getElementById('market-more'),labels=payload.audience;
   let view='web',expanded=false;

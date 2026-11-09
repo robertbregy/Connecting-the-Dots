@@ -19,8 +19,11 @@ assert.equal(data.top50Zones.find(r=>r.tld==='pro').cohort,'2000');
 const named=data.backends.filter(r=>r.attributionKind==='named-fingerprint');
 for(const lang of ['', 'en/','it/','de/','fr/']){
  const text=fs.readFileSync(lang+'index.html','utf8'),{document}=parseHTML(text);
+ const locale=lang.replace('/','')||'en';
+ const marketPath='economics/'+locale+'/market/index.html';
+ const marketHTML=fs.readFileSync(marketPath,'utf8'),marketDocument=parseHTML(marketHTML).document;
  for(const [key,field] of [['web','top50Web'],['zones','top50Zones']]){
-  const panel=document.getElementById('market-'+key);assert.ok(panel,lang+key);
+  const panel=marketDocument.getElementById('market-'+key);assert.ok(panel,marketPath+' '+key);
   assert.equal(panel.querySelectorAll('tbody tr').length,50);
   for(const r of data[field])assert.ok(panel.querySelector('[data-market-tld="'+r.tld+'"]'),lang+r.tld);
  }
@@ -31,5 +34,8 @@ for(const lang of ['', 'en/','it/','de/','fr/']){
  assert.ok(document.querySelector('#rsp-tld-footprint table'));
  assert.ok(document.querySelector('a[href*="tab=economics#tld-market-reach"]'));
  assert.ok(text.includes('tld-market.js'));
+ assert.ok(marketHTML.includes('tld-market.js'),'Standalone market must retain its filtering runtime');
+ for(const id of ['market-search','market-origin','market-result-count','market-more'])
+  assert.equal(marketDocument.querySelectorAll('#'+id).length,1,marketPath+' unique '+id);
 }
 console.log('TLD_MARKET_VERIFIED',JSON.stringify({gTLDs:data.inventoryTLDs,namedPlatforms:named.length,unattributed:data.unattributedTLDs,rankings:2,rowsPerRanking:50,languages:4}));

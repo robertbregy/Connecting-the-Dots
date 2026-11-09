@@ -1,0 +1,56 @@
+/* Economics: a readable introduction, with the complete evidence one link away. */
+.economicsHub{--economics-accent:var(--accent-text,#1266ad);min-width:0}
+.economicsHub .economicsOpening{max-width:74ch;margin:22px 0 30px}
+.economicsHub .economicsOpening p,.economicsHub .economicsOverview p{font-size:16px;line-height:1.75;color:var(--body);margin:0 0 14px}
+.economicsHub .economicsPathways{margin:32px 0 42px;padding:28px;background:var(--surface);border:1px solid var(--border);border-radius:12px}
+.economicsHub .economicsSectionHead{max-width:74ch;margin-bottom:24px}
+.economicsHub p.economicsEyebrow{font-size:11px;letter-spacing:.12em;line-height:1.5;color:var(--economics-accent);font-weight:700;margin:0 0 9px}
+.economicsHub h2{font-size:clamp(23px,2.2vw,29px);line-height:1.25;letter-spacing:-.025em;margin:0 0 15px;color:var(--text);text-wrap:balance}
+.economicsHub .readerChapterTitle{font-size:clamp(31px,3.5vw,46px)}
+.economicsHub .economicsSectionHead>p:not(.economicsEyebrow){font-size:15px;line-height:1.65;color:var(--body);margin:0}
+.economicsHub .economicsPathGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px}
+.economicsHub .economicsPathGrid>a{display:grid;grid-template-columns:26px minmax(0,1fr);column-gap:12px;align-content:start;min-width:0;padding:23px 0;border-top:1px solid var(--border);color:var(--text);text-decoration:none}
+.economicsHub .economicsPathNo{grid-row:1/4;color:var(--muted);font-size:12px;line-height:2.1;font-variant-numeric:tabular-nums}
+.economicsHub .economicsPathGrid h3{font-size:18px;line-height:1.4;margin:0 0 8px;letter-spacing:-.01em}
+.economicsHub .economicsPathGrid p{font-size:14px;line-height:1.65;color:var(--body);margin:0 0 12px}
+.economicsHub .economicsPathAction{font-size:13px;line-height:1.6;font-weight:650;color:var(--economics-accent);text-decoration:underline;text-underline-offset:4px}
+.economicsHub .economicsPathGrid>a:hover h3{color:var(--economics-accent)}
+.economicsHub a:focus-visible{outline:3px solid var(--economics-accent);outline-offset:5px;border-radius:2px}
+.economicsHub .economicsOverview>div,.economicsHub .economicsReading{margin:0 0 40px}
+.economicsHub .economicsSectionLead{max-width:75ch}
+.economicsHub .economicsFlow ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;padding:0;margin:26px 0 16px;gap:26px}
+.economicsHub .economicsFlow li{position:relative;min-width:0;border-top:2px solid var(--border);padding-top:20px}
+.economicsHub .economicsStepNo{display:inline-flex;align-items:center;justify-content:center;width:27px;height:27px;border-radius:50%;font-size:12px;font-weight:700;background:var(--surface2,var(--surface));color:var(--economics-accent);border:1px solid var(--border);margin-bottom:12px}
+.economicsHub .economicsFlow h3{font-size:17px;line-height:1.4;margin:0 0 10px}
+.economicsHub .economicsFlow li p{font-size:14px;line-height:1.7}
+.economicsHub .economicsFurther a,.economicsHub .economicsStoryGrid a{font-size:14px;line-height:1.6;color:var(--economics-accent);text-underline-offset:4px}
+.economicsHub .economicsStoryGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;margin-top:24px}
+.economicsHub .economicsStoryGrid article{min-width:0;padding-top:22px;border-top:1px solid var(--border)}
+.economicsHub p.economicsStoryName{font-size:30px;letter-spacing:-.04em;font-weight:720;color:var(--economics-accent);line-height:1.2;margin:0 0 14px}
+.economicsHub .economicsStoryGrid h3{font-size:18px;line-height:1.35;letter-spacing:-.01em;margin:0 0 12px}
+.economicsHub .economicsStoryGrid article>p:not(.economicsStoryName){font-size:14px;line-height:1.75}
+.economicsHub .economicsStoryGrid p.economicsStorySource{margin:10px 0 0}
+.economicsHub .economicsStorySource a{font-size:11px;line-height:1.5;color:var(--muted)}
+.economicsHub .economicsReading{padding:24px 28px;border-left:3px solid var(--economics-accent);background:var(--surface);max-width:80ch}
+.economicsHub .economicsReading h2{font-size:21px}
+.economicsHub .economicsReading p{font-size:15px}
+.economicsHub .economicsReading p:last-child{margin-bottom:0}
+.economicsHub .economicsClosing{max-width:75ch}
+.economicsHub #economics-cemetery-link{padding:20px 24px}
+.economicsHub #economics-cemetery-link h2{font-size:21px}
+.economicsHub .economicsLegacy{font-size:13px;line-height:1.6;padding:20px;border:1px solid var(--border);margin:24px 0}
+.economicsHub .economicsLegacy li{position:relative;margin:7px 0}
+.economicsHub .economicsLegacyAnchor{display:block;height:0;overflow:hidden}
+html[data-economics-routing="active"] .economicsLegacy{display:none}
+@media(max-width:720px){
+ .economicsHub .economicsPathways{padding:22px 20px;margin:28px 0 34px}
+ .economicsHub .economicsPathGrid,.economicsHub .economicsFlow ol,.economicsHub .economicsStoryGrid{grid-template-columns:1fr;gap:0}
+ .economicsHub .economicsPathGrid>a{padding:20px 0}
+ .economicsHub .economicsPathGrid>a:last-child{padding-bottom:0}
+ .economicsHub .economicsFlow li{display:grid;grid-template-columns:28px minmax(0,1fr);column-gap:14px;padding-top:20px;margin-top:6px}
+ .economicsHub .economicsStepNo{grid-row:1/3;margin-top:0}
+ .economicsHub .economicsStoryGrid article{padding:24px 0}
+ .economicsHub .economicsStoryGrid article:last-child{padding-bottom:0}
+ .economicsHub .economicsReading{padding:20px}
+}
+@media(prefers-reduced-motion:reduce){.economicsHub *{scroll-behavior:auto}}

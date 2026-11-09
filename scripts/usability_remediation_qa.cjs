@@ -5,6 +5,8 @@ const {execFileSync}=require('node:child_process');
 const {parseHTML}=require('linkedom');
 const {aliases,labels}=require('./usability_remediation.cjs');
 const {outsideHome,assertHomeStructure,assertRetainedHomeSources}=require('./home_editorial_qa.cjs');
+const {validatePreservation}=require('./validate_economics_order.cjs');
+const {canonicalLink}=require('./render_economics_hub.cjs');
 const root=path.resolve(__dirname,'..'),baseline=process.env.CTD_USABILITY_BASELINE;
 const baselineCommit='90d21e6059871c36148e1860d017e7409ed3f8bb';
 const base=(process.env.CTD_TEST_BASE||'http://127.0.0.1:8123/').replace(/\/?$/,'/');
@@ -13,15 +15,29 @@ const langs=['it','en','de','fr'],widths=(process.env.CTD_USABILITY_WIDTHS||'320
 const report={baselineCommit,sourceCommit:process.env.GITHUB_SHA||null,static:[],browser:[],noJavaScript:[],axeScans:0,errors:[],humanParticipants:0,passed:false};
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 const readOld=file=>baseline?fs.readFileSync(path.join(baseline,file)):execFileSync('git',['show',baselineCommit+':'+file],{maxBuffer:20*1024*1024});
-// QA106 replaces only the home framing. Compare the same non-home scope on
-// both sides; the original 21 source sections still pass the guard below.
-const evidence=d=>[...d.querySelectorAll('[data-i18n]')].filter(outsideHome).map(n=>[n.getAttribute('data-i18n'),n.innerHTML]).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b)));
+// QA106 changes the home framing; QA107 moves exact Economics blocks to real
+// documents. Their complete text, links, tables and metrics pass the independent
+// preservation gate before the remaining native translation keys are compared.
+const evidence=(d,excluded=new Set())=>[...d.querySelectorAll('[data-i18n]')].filter(n=>outsideHome(n)&&!excluded.has(n)).map(n=>[n.getAttribute('data-i18n'),n.innerHTML]).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b)));
+function assignedNodes(document,blocks){
+ const nodes=new Set(),scope=document.getElementById('economics');
+ assert.ok(scope,'Economics source section is missing');
+ for(const block of blocks){
+  const matches=scope.querySelectorAll(block.selector);
+  assert.equal(matches.length,1,'Expected one preserved Economics source block: '+block.selector);
+  const node=matches[0],excluded=(block.sourceExcludeSelectors||[]).flatMap(selector=>[...node.querySelectorAll(selector)]);
+  for(const child of [node,...node.querySelectorAll('*')])if(!excluded.some(parent=>parent===child||parent.contains(child)))nodes.add(child);
+ }
+ return nodes;
+}
 function staticChecks(){
  // The 22 October UX baseline is not an editorial freeze. Exact source
  // fingerprints and the original 21 sections are protected by this separate
  // manifest-backed guard; approve only explicitly sourced later changes.
  const sourceProof=execFileSync(process.execPath,['scripts/verify_ia_b2_parity.cjs'],{cwd:root,encoding:'utf8',maxBuffer:20*1024*1024});
  assert.ok(sourceProof.includes('IA_B2_SOURCE_PARITY_VERIFIED '),'Source protection guard did not pass');
+ report.economicsPreservation=validatePreservation();
+ const economicsInventory=JSON.parse(fs.readFileSync(path.join(root,'data/economics-preservation.json'),'utf8'));
  const publication=JSON.parse(fs.readFileSync(path.join(root,'publication.json'),'utf8'));
  const originalPublication=JSON.parse(readOld('publication.json').toString('utf8'));
  const review=JSON.parse(fs.readFileSync(path.join(root,publication.editorialReviewPath),'utf8'));
@@ -36,7 +52,17 @@ function staticChecks(){
 
  for(const file of ['index.html',...langs.map(l=>l+'/index.html')]){
   const before=parseHTML(readOld(file).toString()).document,after=parseHTML(fs.readFileSync(path.join(root,file),'utf8')).document;
-  assertHomeStructure(after,file==='index.html'?'en':file.split('/')[0]);
+  const lang=file==='index.html'?'en':file.split('/')[0],nativePath=file.replace(/index\.html$/,''),migration=economicsInventory.locales[lang];
+  const moved=assignedNodes(before,migration.blocks.filter(block=>block.destination!=='hub'));
+  const replacedNavigation=assignedNodes(before,migration.replacedNavigation);
+  const economicsDocuments=['market','cases','portfolios','round-2026'].map(slug=>{
+   const pagePath='economics/'+lang+'/'+slug+'/',document=parseHTML(fs.readFileSync(path.join(root,pagePath,'index.html'),'utf8')).document;
+   const ids=[...document.querySelectorAll('[id]')].map(node=>node.id);
+   assert.equal(new Set(ids).size,ids.length,'Duplicate fragment in Economics chapter: '+pagePath);
+   return {document,pagePath};
+  });
+  const linkSignature=(href,pagePath)=>canonicalLink(href,{lang,pagePath,anchors:migration.anchors});
+  assertHomeStructure(after,lang);
   assertRetainedHomeSources(before,after,file);
   for(const replacement of operationalLinks){
    assert.equal(after.querySelectorAll('a[href="'+replacement.from+'"]').length,0,'Unavailable APS export remains in rendered navigation: '+file);
@@ -48,7 +74,7 @@ function staticChecks(){
     assert.ok((links[0].getAttribute('rel')||'').split(/\s+/).includes('noopener'),'Reviewed source link lost noopener: '+file);
    }
   }
-  const beforeKeys=new Set(evidence(before).map(x=>x[0])),afterKeys=new Set(evidence(after).map(x=>x[0]));
+  const beforeKeys=new Set(evidence(before,moved).map(x=>x[0])),afterKeys=new Set(evidence(after).map(x=>x[0]));
   for(const {elementId,from,to,href} of i18nReplacements){
    const prior=before.querySelectorAll('[id="'+elementId+'"]'),current=after.querySelectorAll('[id="'+elementId+'"]');
    assert.equal(prior.length,1,'Reviewed label baseline anchor must be unique: '+file+'/'+elementId);
@@ -87,11 +113,11 @@ function staticChecks(){
   for(const d of [before,after])for(const ui of d.querySelectorAll('[data-reader-ui]'))ui.remove();
   // Source protection above approves one exact obsolete APS export destination.
   // Match its current official listing while retaining every other link occurrence.
-  const originalLinks=[...before.querySelectorAll('a[href]')].filter(outsideHome).map(a=>{
+  const originalLinks=[...before.querySelectorAll('a[href]')].filter(a=>outsideHome(a)&&!replacedNavigation.has(a)).map(a=>{
    const href=a.getAttribute('href'),replacement=operationalLinks.find(link=>link.from===href);
-   return normalize(replacement?replacement.to:href,originalPublication.version);
+   return normalize(linkSignature(replacement?replacement.to:href,nativePath),originalPublication.version);
   }).sort();
-  const remaining=[...after.querySelectorAll('a[href]')].filter(outsideHome).map(a=>normalize(a.getAttribute('href'),publication.version));
+  const remaining=[{document:after,pagePath:nativePath},...economicsDocuments].flatMap(({document,pagePath})=>[...document.querySelectorAll('a[href]')].filter(outsideHome).map(a=>normalize(linkSignature(a.getAttribute('href'),pagePath),publication.version)));
   for(const href of originalLinks){const i=remaining.indexOf(href);assert.ok(i>=0,'Lost historical source/content link: '+href);remaining.splice(i,1);}
   assert.equal(after.querySelectorAll('.hero .homeHeroProject').length,1,'The opening must explain the project once');
   assert.equal(after.querySelectorAll('#home-stories .audienceDiscovery.homeStory').length,3,'The three story destinations must remain available');
@@ -180,12 +206,25 @@ async function browsers(){
       await page.waitForFunction(id=>{const el=document.getElementById(id);if(!el)return false;const r=el.getBoundingClientRect();return r.height>0&&r.y>=0&&r.y<innerHeight;},id,{timeout:3500});
      const rect=await page.locator('#'+id).boundingBox();assert.ok(rect&&rect.y>=0&&rect.y<900,'Legacy destination not reached: '+id);
     }
-    await go(page,lang,'economics');assert.equal(await page.locator('#economics > .sectionToc a').count(),6);
+    await go(page,lang,'economics');
+    assert.ok(await page.locator('#economics.economicsHub').isVisible(),'Economics introduction is hidden');
+    const economicsPaths=page.locator('#economics.economicsHub a[data-economics-path]');
+    assert.deepEqual(await economicsPaths.evaluateAll(nodes=>nodes.map(n=>n.getAttribute('data-economics-path'))),['market','cases','portfolios','round-2026'],'Economics must expose all four complete chapters');
+    for(const link of await economicsPaths.all()){
+     const slug=await link.getAttribute('data-economics-path'),href=new URL(await link.getAttribute('href'),page.url());
+     assert.ok(await link.isVisible(),'Economics chapter link is hidden: '+slug);
+     assert.ok((await link.innerText()).trim(),'Economics chapter link has no accessible label: '+slug);
+     assert.equal(href.pathname,new URL('economics/'+lang+'/'+slug+'/',base).pathname,'Wrong Economics chapter destination: '+slug);
+    }
     for(const key of ['economics','sources']){
      if(key==='sources')await go(page,lang,key);
      assert.ok(await page.locator('#reader-brief-'+key).isVisible());
      assert.equal(await page.locator('#reader-brief-'+key).evaluate(n=>n.closest('details')),null);
-     for(const a of await page.locator('#reader-brief-'+key+' a').all())assert.equal(await page.locator('#'+await a.getAttribute('data-open-anchor')).count(),1);
+     for(const a of await page.locator('#reader-brief-'+key+' a').all()){
+      const id=await a.getAttribute('data-open-anchor')||new URL(await a.getAttribute('href'),page.url()).hash.slice(1);
+      assert.ok(id,'Reader shortcut has no destination');
+      assert.equal(await page.locator('#'+id).count(),1,'Reader shortcut lost its legacy fragment: '+id);
+     }
     }
     await go(page,lang,'economics');await scan(page,'economics',width);
     assert.deepEqual(runtime,[],'Browser runtime errors');state.restoredLinks=4;state.primaryTocLinks=10;state.passed=true;
@@ -196,7 +235,8 @@ async function browsers(){
    const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:900}}),page=await context.newPage();
    try{
     await page.goto(base+lang+'/',{waitUntil:'load'});
-    for(const selector of ['.heroPrimary','.homeHeroProject','#lugano .readerTocCurated','#sources .readerTocCurated','#reader-brief-economics','#reader-brief-sources'])assert.ok(await page.locator(selector).isVisible(),'No-JS essential hidden: '+selector);
+    for(const selector of ['.heroPrimary','.homeHeroProject','#lugano .readerTocCurated','#sources .readerTocCurated','#reader-brief-economics','#reader-brief-sources','#economics.economicsHub'])assert.ok(await page.locator(selector).isVisible(),'No-JS essential hidden: '+selector);
+    assert.equal(await page.locator('#economics.economicsHub a[data-economics-path]:visible').count(),4,'No-JS Economics chapter paths are incomplete');
     for(const id of Object.keys(aliases))assert.equal(await page.locator('#'+id).count(),1);
     report.noJavaScript.push({lang,passed:true});
    }finally{await context.close();}
