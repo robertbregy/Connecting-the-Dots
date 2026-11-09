@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Self-contained release integrity check for the browser-upload bundle."""
 from pathlib import Path
+from html import unescape
 import csv, hashlib, json, re, subprocess, sys, zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -670,6 +671,7 @@ for lang in LANGS:
         fail('Research-versus-website version disclosure lost its renderable update date: '+lang)
 
 # Static pages and local references.
+home_copy=json_file('home_editorial.json')['locales']
 for rel in ['index.html',*[f'{x}/index.html' for x in LANGS]]:
     p=ROOT/rel; text=p.read_text(encoding='utf-8')
     if f'data-build="{version}"' not in text or f'<meta content="{version}" name="ctd-version"' not in text: fail(f'stale static page {rel}')
@@ -684,7 +686,17 @@ for rel in ['index.html',*[f'{x}/index.html' for x in LANGS]]:
     skip=re.search(r'<a\b(?=[^>]*\bclass=["\'][^"\']*\bskipLink\b[^"\']*["\'])(?=[^>]*\bhref=["\']#main-content["\'])[^>]*>',text,re.I)
     main=re.search(r'<main\b(?=[^>]*\bid=["\']main-content["\'])[^>]*>',text,re.I)
     if not skip or not main: fail(f'skip-to-content path missing in {rel}')
-    if 'class="heroPlain"' not in text or 'class="heroActions"' not in text: fail(f'novice entry path missing in {rel}')
+    # QA106: the explanatory opening is statically rendered in each route's language.
+    home_language='en' if rel=='index.html' else rel.split('/')[0]
+    for class_name,key,minimum in [('homeHeroLead','lead',50),('homeHeroIntro','intro',50),('homeHeroProject','project',90)]:
+        paragraph=re.search(r'<p\b(?=[^>]*\bclass=["\'][^"\']*\b'+class_name+r'\b[^"\']*["\'])[^>]*>(.*?)</p>',text,re.S)
+        value=unescape(re.sub('<[^>]+>','',paragraph.group(1))).strip() if paragraph else ''
+        if len(value)<=minimum or value!=home_copy[home_language][key]: fail(f'missing or unlocalized home introduction {class_name} in {rel}')
+    for class_name,section,anchor in [('heroPrimary','how','how-part-2'),('heroSecondary','explore','')]:
+        link=re.search(r'<a\b(?=[^>]*\bclass=["\'][^"\']*\b'+class_name+r'\b[^"\']*["\'])[^>]*>',text)
+        expected='?tab='+section+('#'+anchor if anchor else '')
+        if not link or f'href="{expected}"' not in link.group() or f'data-open-section="{section}"' not in link.group(): fail(f'novice entry destination missing for {class_name} in {rel}')
+        if anchor and f'data-open-anchor="{anchor}"' not in link.group(): fail(f'novice entry anchor missing in {rel}')
     if 'applicationCorpusStatus ready' not in text: fail(f'static local-corpus ready status missing in {rel}')
     if text.index('explorerSearchPrimary')>text.index('explorerFilters'): fail(f'Explorer not search-first in {rel}')
     for img_tag in re.findall(r'<img\b[^>]*>',text,re.I):

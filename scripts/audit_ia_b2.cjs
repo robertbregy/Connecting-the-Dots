@@ -42,22 +42,31 @@ async function checkAxe(page,label) {
     // the fold on first arrival, especially on mobile.
     const firstViewport=await page.evaluate(()=>{
       const nav=document.querySelector(".iaPrimaryNav").getBoundingClientRect();
-      const explanation=document.querySelector('.hero p[data-i18n="heroBody"]').getBoundingClientRect();
+      const explanation=document.querySelector('.hero .homeHeroLead').getBoundingClientRect();
       return {navTop:nav.top,navBottom:nav.bottom,explanationTop:explanation.top};
     });
     assert.ok(firstViewport.navTop<240 && firstViewport.navBottom<365,"task-first navigation is buried on first screen: "+JSON.stringify(firstViewport));
     assert.ok(firstViewport.explanationTop<700,"the project purpose is buried below first screen: "+JSON.stringify(firstViewport));
 
-    assert.equal(await page.locator(".iaHomeJumpList a").count(),6,"six Home task entries");
-    const homeDestinations=await page.locator(".iaHomeJumpList a").evaluateAll(links=>links.map(link=>({
+    assert.equal(await page.locator("#home-pathways .iaHomeJumpList a").count(),6,"six Home task entries");
+    const homeDestinations=await page.locator("#home-pathways .iaHomeJumpList a").evaluateAll(links=>links.map(link=>({
       section:link.getAttribute("data-open-section"),href:link.getAttribute("href")
     })));
-    assert.deepEqual(homeDestinations,hubs.map(([section])=>({section,href:"#"+section})),
+    assert.deepEqual(homeDestinations,hubs.map(([section])=>({section,href:"?tab="+section})),
       "Home must link to all six primary areas in navigation order");
     assert.equal(await page.locator(".iaLegacyNavDisclosure[open]").count(),0,"original nav should begin folded");
-    assert.ok((await page.locator('.hero h1').innerText()).includes("Connecting the Dots"),"project purpose not visible on Home");
-    assert.equal(await page.locator(".audienceDiscovery:visible").count(),3,"three source-backed discovery paths");
-    assert.ok((await page.locator(".heroPlain").innerText()).includes(".lugano"),"no distinction for candidate .lugano");
+    assert.ok((await page.locator('.hero h1').innerText()).trim(),"home heading not visible");
+    const project=page.locator('.hero .homeHeroProject');
+    assert.ok(await project.isVisible()&&(await project.innerText()).includes("Connecting the Dots")&&(await project.innerText()).length>90,"project purpose not visible on Home");
+    for(const selector of ['.homeHeroLead','.homeHeroIntro'])assert.ok((await page.locator('.hero '+selector).innerText()).length>50,"home explanation lacks meaningful detail");
+    const entryDestinations=await page.locator('.heroActions > a').evaluateAll(links=>links.map(link=>({section:link.dataset.openSection,anchor:link.dataset.openAnchor||'',href:link.getAttribute('href')})));
+    assert.deepEqual(entryDestinations,[{section:'how',anchor:'how-part-2',href:'?tab=how#how-part-2'},{section:'explore',anchor:'',href:'?tab=explore'}],"two actionable novice entries must remain available");
+    assert.equal(await page.locator("#home-stories .audienceDiscovery.homeStory:visible").count(),3,"three source-backed discovery paths");
+    const candidateCaveat=page.locator('#home-round .homeRoundCopy > p');
+    assert.ok(await candidateCaveat.isVisible()&&(await candidateCaveat.innerText()).includes(".lugano"),"no visible distinction for candidate .lugano");
+    assert.match(await candidateCaveat.innerText(),{en:/does not mean/,it:/non equivale/,de:/bedeutet weder/,fr:/ne signifie pas/}[lang],"an application must not be described as approval");
+    assert.ok(await page.locator('#home-project .homeProjectLinks a[href="?tab=sources"]').isVisible(),"home sources and methodology are inaccessible");
+    assert.ok(await page.locator('#home-project .homeProjectLinks a[href="?tab=research#research-citation-guide"]').isVisible(),"home research guidance is inaccessible");
     tally.homePurpose=true;
     const visible=await page.evaluate(()=>{
       const r=document.querySelector(".iaPrimaryNav").getBoundingClientRect();
