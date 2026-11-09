@@ -100,6 +100,7 @@ for (const page of pages) {
     assert.equal(document.querySelectorAll('main').length, 1, 'Document needs one main landmark');
     const main = document.querySelector('main');
     assert.ok(flat(main.textContent).length > 150, 'Main content is empty or only a placeholder');
+    assert.equal(main.querySelector('noscript'), null, 'Reading content must remain the same with or without JavaScript');
     assert.equal(document.querySelectorAll('link[rel="canonical"]').length, 1, 'Canonical is absent or ambiguous');
     assert.equal(document.querySelector('link[rel="canonical"]').getAttribute('href'), canonical, 'Canonical collapses to another page');
     assert.equal(document.querySelector('meta[property="og:url"]')?.getAttribute('content'), canonical, 'Social URL differs from canonical');

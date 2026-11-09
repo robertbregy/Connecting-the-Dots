@@ -88,6 +88,51 @@ function normalizeLinks(node, lang, currentPath, sourceDocument) {
   }
 }
 
+function replaceEmptyTimelineFilter(node, lang, currentPath, interactive) {
+  const location = `${lang}/timeline`;
+  assert.equal(node.querySelectorAll('#tld-cultural-results').length, 1, `Expected one cultural filter result marker: ${location}`);
+  assert.equal(node.querySelectorAll('#tld-cultural-records').length, 1, `Expected one cultural filter body: ${location}`);
+  const results = node.querySelector('#tld-cultural-results');
+  const records = node.querySelector('#tld-cultural-records');
+  const wrapper = results.nextElementSibling;
+  const table = wrapper?.querySelector('table');
+  const limit = wrapper?.nextElementSibling;
+  const fallback = limit?.nextElementSibling;
+  assert.ok(results.parentElement.classList.contains('tldResearch'), `Unexpected cultural filter parent: ${location}`);
+  assert.equal(plain(results.textContent), '', `Refusing to remove populated filter results: ${location}`);
+  assert.equal(results.children.length, 0, `Refusing to remove structured filter results: ${location}`);
+  assert.ok(wrapper?.classList.contains('tldTable') && wrapper.children.length === 1 && table?.contains(records), `Unexpected cultural filter table: ${location}`);
+  assert.equal(records.tagName, 'TBODY', `Unexpected cultural record container: ${location}`);
+  assert.equal(records.children.length, 0, `Refusing to remove cultural record rows: ${location}`);
+  assert.equal(plain(records.textContent), '', `Refusing to remove cultural record data: ${location}`);
+  assert.equal(table.querySelectorAll('tr').length, 1, `Only the empty filter header may be removed: ${location}`);
+  assert.equal(table.querySelectorAll('th').length, 3, `Unexpected cultural filter header: ${location}`);
+  assert.equal(table.querySelectorAll('td,tfoot').length, 0, `Refusing to remove cultural table data: ${location}`);
+  assert.ok(limit?.tagName === 'P' && limit.classList.contains('small') && limit.children.length === 0 && /\b60\b/.test(limit.textContent) && /\bCSV\b/.test(limit.textContent), `Unexpected filter limit placeholder: ${location}`);
+  assert.ok(fallback?.tagName === 'NOSCRIPT' && fallback.children.length === 1 && fallback.firstElementChild.tagName === 'P' && /JavaScript/.test(fallback.textContent), `Unexpected cultural filter fallback: ${location}`);
+  for (const element of [results, wrapper, limit, fallback]) {
+    assert.equal(element.querySelectorAll('a,[href],[src],dl,ul,ol').length, 0, `Refusing to remove links or evidence from filter UI: ${location}`);
+  }
+  // Protect every aggregate table, actual data row, method disclosure and link.
+  // The removed table consists solely of its three-column header and empty body.
+  const evidence = () => ({
+    tables: [...node.querySelectorAll('table')].filter(element => element !== table).map(element => element.outerHTML),
+    rows: [...node.querySelectorAll('tbody tr,tfoot tr')].map(element => element.outerHTML),
+    methods: [...node.querySelectorAll('details')].map(element => element.outerHTML),
+    links: [...node.querySelectorAll('a[href]')].map(element => element.outerHTML)
+  });
+  const before = evidence();
+  const paragraph = node.ownerDocument.createElement('p');
+  paragraph.className = 'small';
+  results.replaceWith(paragraph);
+  for (const element of [wrapper, limit, fallback]) element.remove();
+  assert.deepEqual(evidence(), before, `Timeline evidence changed while replacing empty UI: ${location}`);
+  const link = node.ownerDocument.createElement('a');
+  link.textContent = words[lang].filters;
+  link.setAttribute('href', relative(currentPath, interactive));
+  paragraph.appendChild(link);
+}
+
 function prepareContent(node, lang, key, currentPath, sourceDocument) {
   const interactive = `${base}${lang}/?tab=${key}#${key}`;
   for (const n of node.querySelectorAll('script,style,.readerTrail,.readerNext,.marketViews,.marketFilters,.tldControls,#market-more')) n.remove();
@@ -112,6 +157,8 @@ function prepareContent(node, lang, key, currentPath, sourceDocument) {
   node.removeAttribute('hidden');
   for (const n of node.querySelectorAll('[data-market-panel]')) n.removeAttribute('hidden');
   normalizeLinks(node, lang, currentPath, sourceDocument);
+  // Create this CTA after normalization so it keeps the interactive destination.
+  if (key === 'timeline') replaceEmptyTimelineFilter(node, lang, currentPath, interactive);
   return node;
 }
 
@@ -195,7 +242,7 @@ ${styleBlocks(sourceDocument)}
 <link rel="stylesheet" href="${rel('assets/discovery.css')}?v=${pub.version}">
 </head><body class="discoveryPage" data-build="${pub.version}">
 <a class="discoverySkip" href="#main-content">${escape(w.jump)}</a>
-<header class="topbar"><div class="topinner"><a class="brand" href="${rel(lang + '/')}"><img src="${rel('assets/logo-mark.png')}" alt="" width="34" height="34"><span>Connecting the Dots</span></a><nav class="discoveryLanguages" aria-label="${escape(t.languageVersions)}">${languages.map(l => `<a href="${rel(route(kind, l, key))}" hreflang="${l}" lang="${l}"${l === lang ? ' aria-current="page"' : ''}>${names[l]}</a>`).join('')}</nav></div></header>
+<header class="topbar"><div class="topinner"><a class="brand" href="${rel(lang + '/')}" aria-label="${escape('Connecting the Dots · ' + w.home)}"><img src="${rel('assets/logo-mark.png')}" alt="" width="34" height="34"><span>Connecting the Dots</span></a><nav class="discoveryLanguages" aria-label="${escape(t.languageVersions)}">${languages.map(l => `<a href="${rel(route(kind, l, key))}" hreflang="${l}" lang="${l}"${l === lang ? ' aria-current="page"' : ''}>${names[l]}</a>`).join('')}</nav></div></header>
 <nav class="discoveryNav" aria-label="${escape(t.sectionNavLabel)}">${areas.map(([area, label]) => `<a href="${rel(`${lang}/?tab=ia-${area}#ia-${area}`)}"${area === (kind === 'guide' ? guideAreas[key] : 'explore') ? ' aria-current="location"' : ''}>${escape(t[label])}</a>`).join('')}</nav>
 <nav class="discoveryTrail" aria-label="${escape(t.breadcrumbLabel)}">${crumbs.map((c, i) => `${i ? '<span aria-hidden="true">/</span>' : ''}${i === crumbs.length - 1 ? `<span aria-current="page">${escape(c.name)}</span>` : `<a href="${escape(rel(c.item))}">${escape(c.name)}</a>`}`).join('')}</nav>
 <main id="main-content" class="discoveryMain" aria-labelledby="discovery-title" tabindex="-1">${heading}${body}<aside class="discoveryEdition"><p><strong>${escape(w.author)}</strong> · ${escape(w.edition)} ${pub.version} · <time datetime="${pub.releasedOn}">${escape(localizedDate(pub.releasedOn, lang))}</time></p><p>${escape(w.evidence)}</p></aside></main>

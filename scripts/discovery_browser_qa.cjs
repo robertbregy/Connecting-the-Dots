@@ -14,7 +14,9 @@ const base = (process.env.CTD_TEST_BASE || 'http://127.0.0.1:8123/').replace(/\/
 const output = path.resolve(process.env.CTD_DISCOVERY_QA || path.join(root, 'tmp/discovery-qa'));
 fs.mkdirSync(output, {recursive: true});
 const report = {siteVersion: publication.version, sourceCommit: process.env.GITHUB_SHA || null,
-  base, humanParticipants: 0, passed: false, scenarios: [], errors: [], axeScans: 0,
+  base, humanParticipants: 0, passed: false, scenarios: [], errors: [], axeScans: 0, axeMirrorScans: 0,
+  execution: {reading: 'JavaScript remains disabled in every no-JavaScript reading scenario.',
+    accessibility: 'Axe uses JavaScript. Disabled reading contexts are paired with fresh enabled contexts whose document identity, main DOM and visible main text must match exactly.'},
   coverageLimits: ['Representative documents and viewport sizes; not all possible devices or assistive technologies.',
     'Automated accessibility results are not a conformance certification.', 'No traffic, ranking or citation-growth measurement.']};
 const flat = value => String(value ?? '').replace(/\s+/g, ' ').trim();
@@ -37,20 +39,34 @@ for (const [kind, key] of [['guide', 'economics'], ['tld', 'ai']]) {
   if (entry) cases.push({entry, width: 390, javaScriptEnabled: true});
 }
 
+async function documentIdentity(page) {
+  return page.evaluate(() => {
+    const main = document.querySelector('main');
+    return {url: location.href, language: document.documentElement.lang, title: document.title,
+      canonical: document.querySelector('link[rel="canonical"]')?.getAttribute('href'),
+      mainCount: document.querySelectorAll('main').length,
+      mainHTML: main?.outerHTML || '', mainText: main?.innerText || ''};
+  });
+}
+
 async function scenario(browser, test) {
   const {entry, width, javaScriptEnabled} = test;
   const state = {path: entry.path, language: entry.language, kind: entry.kind, key: entry.key,
-    width, javaScriptEnabled, checks: [], errors: [], passed: false};
-  const context = await browser.newContext({viewport: {width, height: 900}, javaScriptEnabled,
-    colorScheme: 'light', reducedMotion: 'reduce'});
+    width, javaScriptEnabled, noJavaScriptReading: !javaScriptEnabled, checks: [], errors: [], passed: false};
+  const contextOptions = {viewport: {width, height: 900}, colorScheme: 'light', reducedMotion: 'reduce',
+    storageState: {cookies: [], origins: []}};
+  const context = await browser.newContext({...contextOptions, javaScriptEnabled});
   const page = await context.newPage();
   const runtimeErrors = [];
   const failedLocalResources = [];
-  page.on('pageerror', error => runtimeErrors.push(error.message));
-  page.on('response', response => {
-    if (response.url().startsWith(base) && response.status() >= 400)
-      failedLocalResources.push({url: response.url(), status: response.status()});
-  });
+  const observePage = target => {
+    target.on('pageerror', error => runtimeErrors.push(error.message));
+    target.on('response', response => {
+      if (response.url().startsWith(base) && response.status() >= 400)
+        failedLocalResources.push({url: response.url(), status: response.status()});
+    });
+  };
+  observePage(page);
   const check = async (name, work) => {
     try { await work(); state.checks.push({name, passed: true}); }
     catch (error) { state.errors.push({check: name, message: error.stack || String(error)}); }
@@ -96,14 +112,41 @@ async function scenario(browser, test) {
       assert.equal(await summary.evaluate(node => node.parentElement.open), before);
       state.disclosure = 'keyboard toggle verified';
     });
-    // Axe runs against the same static document, including in JS-disabled contexts.
+    // Axe needs JavaScript execution. Reading checks above keep their disabled
+    // context; the enabled mirror must preserve its actual content and semantics.
     await check('automated WCAG A/AA checks', async () => {
-      const scan = await new AxeBuilder({page}).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa']).analyze();
-      report.axeScans++;
-      state.axeViolations = scan.violations.map(violation => ({id: violation.id, impact: violation.impact,
-        help: violation.help, nodes: violation.nodes.map(node => ({target: node.target, failureSummary: node.failureSummary}))}));
-      state.axeIncomplete = scan.incomplete.map(violation => ({id: violation.id, nodes: violation.nodes.map(node => node.target)}));
-      assert.deepEqual(state.axeViolations, []);
+      let mirrorContext;
+      try {
+        let axePage = page;
+        state.axeContext = {mode: javaScriptEnabled ? 'original-reading-page' : 'javascript-enabled-mirror',
+          javaScriptEnabled: true, freshStorage: true};
+        if (!javaScriptEnabled) {
+          const expected = await documentIdentity(page);
+          mirrorContext = await browser.newContext({...contextOptions, javaScriptEnabled: true});
+          axePage = await mirrorContext.newPage();
+          observePage(axePage);
+          const response = await axePage.goto(page.url(), {waitUntil: 'load', timeout: 45000});
+          assert.equal(response.status(), 200, 'Axe mirror document was not served successfully');
+          const actual = await documentIdentity(axePage);
+          for (const key of ['url', 'language', 'title', 'canonical', 'mainCount'])
+            assert.equal(actual[key], expected[key], 'Axe mirror changed document identity: ' + key);
+          assert.ok(actual.mainHTML === expected.mainHTML,
+            'Axe mirror changed main markup, including text, headings, links, roles or controls');
+          assert.ok(actual.mainText === expected.mainText, 'Axe mirror changed visible main text');
+          state.axeContext.documentIdentityMatched = true;
+          state.axeContext.mainDOMMatched = true;
+          state.axeContext.visibleMainTextMatched = true;
+        }
+        const scan = await new AxeBuilder({page: axePage}).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa']).analyze();
+        report.axeScans++;
+        if (mirrorContext) report.axeMirrorScans++;
+        state.axeViolations = scan.violations.map(violation => ({id: violation.id, impact: violation.impact,
+          help: violation.help, nodes: violation.nodes.map(node => ({target: node.target, failureSummary: node.failureSummary}))}));
+        state.axeIncomplete = scan.incomplete.map(violation => ({id: violation.id, nodes: violation.nodes.map(node => node.target)}));
+        assert.deepEqual(state.axeViolations, []);
+      } finally {
+        if (mirrorContext) await mirrorContext.close();
+      }
     });
     if ((entry.language === 'it' && width === 390 && entry.key === 'economics' && !javaScriptEnabled)
       || (entry.language === 'en' && width === 1440 && entry.kind === 'tld' && entry.key === 'ai')) {
@@ -162,19 +205,23 @@ async function scenario(browser, test) {
 (async () => {
   let browser;
   try {
+    assert.equal(cases.length, 27, 'The discovery browser corpus must retain all 27 scenarios');
     assert.ok(cases.some(test => test.entry.kind === 'tld' && test.entry.key === 'ai'), '.ai profile is missing from the test corpus');
     assert.ok(cases.some(test => test.entry.kind === 'tld' && test.entry.key === 'lugano'), '.lugano profile is missing from the test corpus');
     browser = await chromium.launch({headless: true,
       ...(process.env.CHROMIUM_PATH ? {executablePath: process.env.CHROMIUM_PATH} : {}),
       args: ['--no-sandbox', '--disable-dev-shm-usage']});
     for (const test of cases) await scenario(browser, test);
-    report.passed = report.errors.length === 0 && report.scenarios.length === cases.length && report.axeScans === cases.length;
+    report.passed = report.errors.length === 0 && report.scenarios.length === 27
+      && report.axeScans === 27 && report.axeMirrorScans === 25;
   } catch (error) { report.errors.push({fatal: error.stack || String(error)}); }
   finally {
     if (browser) await browser.close();
     fs.writeFileSync(path.join(output, 'report.json'), JSON.stringify(report, null, 2) + '\n');
     console.log('DISCOVERY_BROWSER_QA ' + JSON.stringify({passed: report.passed, scenarios: report.scenarios.length,
-      axeScans: report.axeScans, errors: report.errors.length, report: path.join(output, 'report.json')}));
+      noJavaScriptReadingScenarios: report.scenarios.filter(scenario => scenario.noJavaScriptReading).length,
+      axeScans: report.axeScans, axeMirrorScans: report.axeMirrorScans,
+      errors: report.errors.length, report: path.join(output, 'report.json')}));
     if (!report.passed) process.exitCode = 1;
   }
 })();
