@@ -39,8 +39,9 @@ for (const language of ['en', 'it', 'de', 'fr']) {
     const untouchedSections = [...document.querySelectorAll('section.section')].filter(node => node !== overview).map(node => [node, node.outerHTML]);
     const hero = make('<section class="hero homeHero" aria-labelledby="home-title"><div class="homeHeroGrid"><div class="homeHeroCopy">' +
       '<p class="eyebrow">' + escape(t.eyebrow) + '</p><h1 id="home-title" class="siteTitle">' + escape(t.title) + '</h1>' +
-      '<p class="homeHeroLead">' + escape(t.lead) + '</p><p class="homeHeroIntro">' + escape(t.intro) + '</p><p class="homeHeroProject">' + escape(t.project) + '</p>' +
+      '<p class="homeHeroLead">' + escape(t.lead) + '</p>' +
       '<div class="heroActions"><a class="control heroPrimary" ' + destination('how', 'how-part-2') + '>' + escape(t.primaryCta) + '</a><a class="control heroSecondary" ' + destination('explore') + '>' + escape(t.secondaryCta) + '</a></div>' +
+      '<p class="homeHeroIntro">' + escape(t.intro) + '</p><p class="homeHeroProject">' + escape(t.project) + '</p>' +
       '<p class="homeByline">' + escape(t.byline) + '</p></div>' +
       '<figure class="homeDomain" aria-labelledby="home-domain-title"><figcaption id="home-domain-title" class="homeDomainKicker">' + escape(t.domain.eyebrow) + '</figcaption>' +
       '<div class="homeDomainDrawing"><p class="homeDomainLabel">' + escape(t.domain.label) + '</p><div class="homeDomainName"><span class="homeDomainWord">example</span><span class="homeDomainTld"><span class="homeDomainDot">.</span>com</span></div>' +
