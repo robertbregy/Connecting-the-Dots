@@ -103,7 +103,7 @@
     "QA106": "Update only obsolete homepage layout expectations to the approved structure while retaining their semantic purpose, original accessibility thresholds, route and source checks. Add 24 language/width/theme home scenarios, eight no-JavaScript cases and early screenshot evidence within the existing mandatory browser-qa job. Existing eight regression suites, discovery checks, immutable baselines and seven required PR gates remain in force. The outer browser-qa job budget is 40 minutes after a verified 30-minute cancellation with all assertions passed; every test and individual assertion limit is unchanged.",
     "V106": "New technical publication v0.7.106 with a real source-provenance pin, deterministically generated assets and current data package. Include localized home copy in the current package; preserve the final v0.7.105 archive and every earlier technical/scientific archive and DOI.",
     "ECON107": "Approved short Economics introduction and four complete reading paths in four languages: TLD adoption and shares, economic cases, portfolios and contention, and the 2026 round. Preserve eleven content partitions per language, all eight models, eight cases, seven tables, 22 metrics, original source links, 53 fragments, filters, charts and historical methodology. Replace only the six-step navigation, add ordinary fallback links and route old fragments to their full content.",
-    "QA107": "Adapt location-dependent assertions to the complete moved content, retaining every dataset, metric, source and accessibility check. Independently recalculate preservation evidence from the published documents and verify its baseline against v0.7.106. Exercise native and guide legacy links, markets, historical focus, Explorer actions and reading without JavaScript. Add the sixteen canonical pages to the existing discovery, sitemap and language contracts; retain the seven required PR gates and all eight browser regression suites.",
+    "QA107": "Adapt location-dependent assertions to the complete moved content, retaining every dataset, metric, source and accessibility check. Independently recalculate preservation evidence from the published documents and verify its baseline against v0.7.106. Exercise native and guide legacy links, markets, historical focus, Explorer actions and reading without JavaScript. Add the sixteen canonical pages to the existing discovery, sitemap and language contracts; retain the seven required PR gates and all eight browser regression suites. Stabilize the no-JavaScript homepage pointer target inside the viewport before its ordinary click; retain the real click and all navigation, content, timing and geometry assertions.",
     "V107": "New technical publication v0.7.107 with a real source-provenance pin, canonical deterministic build and a distinct current data package. Preserve the final v0.7.106 archive, every earlier technical/scientific archive, DOI and existing evidence observation date."
   },
   "sourceInvariants": {
@@ -3634,7 +3634,7 @@
     },
     "data/publication.js": {
       "baselineSHA256": "899025d5da40e4100c67a0fd410de58d5d11f50cbea7c0a7b5ea7f4b9045ef23",
-      "sha256": "6ba4cf35b02e9db3af973dfcbc32b94dd965b272929f6f7e82596e33784802ba",
+      "sha256": "0ee662ed2a51b36431e3627f9ffb36785f13d97b5c568da73131b6a4fcf718da",
       "rationaleIds": [
         "DEL98",
         "V98",
@@ -3927,7 +3927,7 @@
     },
     "de/index.html": {
       "baselineSHA256": "8a44d19e73614912f6a2c420974ae801c98bc3e8a99be366051608cdc0d524be",
-      "sha256": "049b6857ccfa4c1482375a4b9c52654b824fac284182bbc9fccd5f1abf60b012",
+      "sha256": "34c2812b24dcc2dc3cd2b8908d78f20f964091d928d2344f881fb57108b1ca73",
       "rationaleIds": [
         "A95",
         "V96",
@@ -4526,7 +4526,7 @@
         "V107",
         "ECON107"
       ],
-      "sha256": "45b6306eb44d4b7687b3d7f7e76b9fbea9990575568a8569e5a7c7fd4baa3154"
+      "sha256": "2229e0f3e71ba53ddd5b65fb3b9557d3023256b028ac9c262066b2518fec060f"
     },
     "docs/audits/2026-11-09/home-editorial-v0.7.106.json": {
       "baselineSHA256": null,
@@ -5178,7 +5178,7 @@
     },
     "en/index.html": {
       "baselineSHA256": "98a47906b5d79c444243a60370c9f76a429bf965e4f89f4d9f3aa77d6c3c794b",
-      "sha256": "10de40efb3c932c1aa9c295bbd1a9bf5e02b1c4cc832db050d5e2e6a9e36ab51",
+      "sha256": "8b91284d923a5f10da0d19c8c79b254af53ae71c4503d5cff83dbd5df9d0a9ca",
       "rationaleIds": [
         "A95",
         "V96",
@@ -5235,7 +5235,7 @@
     },
     "fr/index.html": {
       "baselineSHA256": "127650e29f8cd27c6915ad1a1c46e709acc798cfe1f81bb132264aa3030e509f",
-      "sha256": "e1ef2fc12fca9d3b1729137e59343cfbf32cca5002cf07f120be58ab81f14bb3",
+      "sha256": "e0fa567f65b653a6865395dacfabeb52ad5da0f4ffbe811eaac7a0fbac4c0bef",
       "rationaleIds": [
         "A95",
         "V96",
@@ -5936,7 +5936,7 @@
     },
     "index.html": {
       "baselineSHA256": "5e4a6f107439ff09dd25ac7202bfe9ea4864c127481f8bf12f58db5160df3b90",
-      "sha256": "02b4dc1195a059a50c013472812a78a02cb2fc80c9ff7fe8c837e571575541ae",
+      "sha256": "71eed3b45907a82d0d4ca0f1c2eb40693aa3c7586e0dcbad2d2bf3c8f7745ece",
       "rationaleIds": [
         "A95",
         "V96",
@@ -6105,7 +6105,7 @@
     },
     "it/index.html": {
       "baselineSHA256": "d23a5360a62709ae1fbe6c4b039ac8742e521a084e4b24eabecb63457ed33a20",
-      "sha256": "5dfea1b8a1f1f2dc20ffb8d53c4b87cd8a9f930f6333ba7c5a8d8f413548a10f",
+      "sha256": "7b53c76553aac326df9a4eb77e6648069fe486242a32ad9ae1ed660b8043f43f",
       "rationaleIds": [
         "A95",
         "V96",
@@ -6210,7 +6210,7 @@
     },
     "publication.json": {
       "baselineSHA256": "b5d225fa96dc9573b2dac3c18e39236c2e570c65aaa08afdbfedbdc0292368ef",
-      "sha256": "dbb2212cca5f99518ad6c359d27c82db665ecb3209a4a8977d0fd1ea380a91c9",
+      "sha256": "021659d6bbadda3cbceb693a86c1d3b4b664aa91e168d05febc07bd1b873d40c",
       "rationaleIds": [
         "C01",
         "C02",
@@ -6762,9 +6762,12 @@
       "baselineSHA256": null,
       "rationaleIds": [
         "V106",
-        "QA106"
+        "QA106",
+        "V107",
+        "QA107"
       ],
-      "sha256": "26c3b03a5131ae4c23b6f72b09c9b4983e844c8d8682736392c972e6eea6e8d2"
+      "sha256": "b6c0e8eaab6a997b68f18a5401e30172d83c7b7870b4df433c2895d83da73959",
+      "priorTechnicalSHA256": "26c3b03a5131ae4c23b6f72b09c9b4983e844c8d8682736392c972e6eea6e8d2"
     },
     "scripts/integrate_discovery.py": {
       "baselineSHA256": null,
@@ -9584,7 +9587,7 @@
     "status": "source-and-generated-files-reviewed",
     "scope": "Replace the long Economics landing chapter with a short explanatory introduction and four complete, localized reading pages, retaining all substantive evidence, functions, sources, old fragments and unrelated chapters.",
     "baseMain": "4c7ddb62c7601f6971815aef17b7dce0f5f01e73",
-    "sourceCommit": "a47fb509821a3bed5e9b0c103512346c2b34ba8d",
+    "sourceCommit": "fca7fc66fe133411f60250d5513a7b62339f571f",
     "humanParticipants": 0,
     "reviewType": "AI-assisted source, localization and exact generated-file review, with independent routing and preservation review.",
     "qualityGates": "All seven existing required PR checks must pass on the completed candidate. Actual Pages deployment and exact live-byte verification must follow the protected merge.",
@@ -9604,11 +9607,11 @@
     "scope": "Replace the long Economics landing chapter with a short explanatory introduction and four complete, localized reading pages, retaining all substantive evidence, functions, sources, old fragments and unrelated chapters.",
     "humanParticipants": 0,
     "independentTests": "Required before merge; not attested by this file.",
-    "sourceCommit": "a47fb509821a3bed5e9b0c103512346c2b34ba8d"
+    "sourceCommit": "fca7fc66fe133411f60250d5513a7b62339f571f"
   },
   "buildProvenancePolicy": {
     "version": "0.7.107",
-    "sourceCommit": "a47fb509821a3bed5e9b0c103512346c2b34ba8d",
+    "sourceCommit": "fca7fc66fe133411f60250d5513a7b62339f571f",
     "semantics": "Pin a real preparatory source commit containing the reviewed source, validators and release metadata. Its own pin is provisional; the final pin, generated outputs and exact-file review are recorded in a descendant candidate. Source and validator bytes were compared with the pinned source tree."
   },
   "approvedCandidateSHA256": "afe4475110bdaa0d2f4eb9aef21cc2e810e2931b3c69bb67739150a4ccc33b65"
