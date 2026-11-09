@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/en/ | Site edition: 0.7.105 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/en/ | Site edition: 0.7.106 | Language: en -->
 
 Connecting the Dots
 
@@ -78,6 +78,6 @@ A name for the Catalan linguistic and cultural community: a belonging that cross
 
 .io is currently delegated in the DNS root as Country-code.
 
-**By Robert Bregy** · Site edition 0.7.105 · November 9, 2026
+**By Robert Bregy** · Site edition 0.7.106 · November 9, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

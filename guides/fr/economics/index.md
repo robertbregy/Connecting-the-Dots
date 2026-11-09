@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/fr/economics/ | Site edition: 0.7.105 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/fr/economics/ | Site edition: 0.7.106 | Language: fr -->
 
 Guide
 
@@ -906,6 +906,6 @@ Les coûts d'exploitation d'un registre éclairent certains abandons et retraits
 
 [Explorer le cimetière des gTLD →](https://robertbregy.github.io/Connecting-the-Dots/fr/#cemetery)
 
-**Par Robert Bregy** · Édition du site 0.7.105 · 9 novembre 2026
+**Par Robert Bregy** · Édition du site 0.7.106 · 9 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.

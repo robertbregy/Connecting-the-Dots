@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/en/com/ | Site edition: 0.7.105 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/en/com/ | Site edition: 0.7.106 | Language: en -->
 
 Domain profile
 
@@ -162,6 +162,6 @@ Not reported
 
 [Official IANA record ↗](https://www.iana.org/domains/root/db/com.html) [Source 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Source 3 ↗](https://www.iana.org/domains/root/db)
 
-**By Robert Bregy** · Site edition 0.7.105 · November 9, 2026
+**By Robert Bregy** · Site edition 0.7.106 · November 9, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

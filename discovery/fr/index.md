@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/fr/ | Site edition: 0.7.105 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/fr/ | Site edition: 0.7.106 | Language: fr -->
 
 Connecting the Dots
 
@@ -78,6 +78,6 @@ Un nom pour la communauté linguistique et culturelle catalane : une appartenanc
 
 .io est actuellement délégué dans la racine DNS comme Code pays.
 
-**Par Robert Bregy** · Édition du site 0.7.105 · 9 novembre 2026
+**Par Robert Bregy** · Édition du site 0.7.106 · 9 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.
