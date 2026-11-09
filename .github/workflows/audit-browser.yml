@@ -44,7 +44,9 @@ concurrency:
 jobs:
   browser-qa:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    # Allow the full home, legacy, WCAG and discovery suites to finish and save
+    # their evidence on slower runners; individual assertions keep their limits.
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v5
         with:
