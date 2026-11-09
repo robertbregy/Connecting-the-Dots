@@ -447,12 +447,7 @@ Die Prozentwerte beziehen sich auf alle unterschiedlichen primären Zeichenfolge
 | Orte und Gebiete | 4 2,1% | 2 22,2% | 53 3,8% | 1 0,1% |
 | Institutionen und öffentliches Interesse | 5 2,6% | 3 33,3% | 17 1,2% | 7 0,7% |
 
-| Name | Runden im Korpus | Kategorie |
-| --- | --- | --- |
-
-Die ersten 60 Treffer. Die CSV enthält alle Datensätze und ihre Herkunft.
-
-Die filterbare Liste benötigt JavaScript; das vollständige Inventar steht als CSV bereit.
+[Im interaktiven Atlas können Sie diese Datensätze filtern und vergleichen.](https://robertbregy.github.io/Connecting-the-Dots/de/?tab=timeline#timeline)
 
 **Methode und Grenzen**
 

@@ -447,12 +447,7 @@ Percentages use every distinct primary string in the round. These are rule-depen
 | Places & territories | 4 2.1% | 2 22.2% | 53 3.8% | 1 0.1% |
 | Institutions & public interest | 5 2.6% | 3 33.3% | 17 1.2% | 7 0.7% |
 
-| Name | Rounds in the corpus | Category |
-| --- | --- | --- |
-
-First 60 matches. The CSV contains every record and its provenance.
-
-The filterable list requires JavaScript; the complete census is available in the CSV.
+[Use the interactive atlas to filter and compare these records.](https://robertbregy.github.io/Connecting-the-Dots/en/?tab=timeline#timeline)
 
 **Method and limits**
 

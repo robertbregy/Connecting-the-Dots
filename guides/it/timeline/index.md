@@ -447,12 +447,7 @@ Le percentuali usano tutte le stringhe primarie distinte del round. Sono risulta
 | Luoghi e territori | 4 2,1% | 2 22,2% | 53 3,8% | 1 0,1% |
 | Istituzioni e interesse pubblico | 5 2,6% | 3 33,3% | 17 1,2% | 7 0,7% |
 
-| Nome | Round nel corpus | Categoria |
-| --- | --- | --- |
-
-Prime 60 corrispondenze. Il CSV contiene tutti i record e la provenienza.
-
-L’elenco filtrabile richiede JavaScript; il censimento completo è disponibile nel CSV.
+[Usa l’atlante interattivo per filtrare e confrontare questi record.](https://robertbregy.github.io/Connecting-the-Dots/it/?tab=timeline#timeline)
 
 **Metodo e limiti**
 

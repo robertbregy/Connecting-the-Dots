@@ -447,12 +447,7 @@ Les pourcentages portent sur toutes les chaînes primaires distinctes du cycle. 
 | Lieux et territoires | 4 2,1% | 2 22,2% | 53 3,8% | 1 0,1% |
 | Institutions et intérêt public | 5 2,6% | 3 33,3% | 17 1,2% | 7 0,7% |
 
-| Nom | Cycles dans le corpus | Catégorie |
-| --- | --- | --- |
-
-Les 60 premières correspondances. Le CSV contient tous les enregistrements et leur provenance.
-
-La liste filtrable nécessite JavaScript ; le recensement complet est disponible en CSV.
+[Utilisez l’atlas interactif pour filtrer et comparer ces données.](https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=timeline#timeline)
 
 **Méthode et limites**
 
