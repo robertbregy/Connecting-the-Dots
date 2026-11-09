@@ -1,6 +1,6 @@
 {
   "staticReviewPassed": true,
-  "sourceCommit": "011528b4205ac6e6bd73d8d729f00070124acdf8",
+  "sourceCommit": "ca840730acbba59fcda5bc2d8100b1e5092700d4",
   "protectedSourceSections": 21,
   "pages": [
     {
@@ -60,11 +60,11 @@
   "reviewType": "AI-assisted source, localization and exact generated-file review; no human study",
   "humanParticipants": 0,
   "canonicalBuild": {
-    "runId": 42656694429,
-    "jobId": 129296946300,
-    "sourceHead": "70467717670d6399a4b29f838c65b1abb0a7c1e7",
-    "generatedCommit": "e2abba28c703bc0f5235e2caaed2609c89312de6",
-    "url": "https://github.com/robertbregy/Connecting-the-Dots/actions/runs/42656694429",
+    "runId": 42662857573,
+    "jobId": 129318655250,
+    "sourceHead": "8cd38182c9dee7087f5202c5bbffec0813eee945",
+    "generatedCommit": "782d2da2cc4b8756e8422ed6ebd0d29b3c639134",
+    "url": "https://github.com/robertbregy/Connecting-the-Dots/actions/runs/42662857573",
     "conclusion": "success",
     "deterministicCurrentArchive": true,
     "deterministicResearchRender": true
@@ -108,7 +108,8 @@
     "Only obsolete homepage QA layout contracts updated; all original archive guards and seven required PR checks retained",
     "Explicit fragment destinations for both hero links and six pathways; each no-JavaScript scenario now verifies all eight link destinations, viewport arrival and actual scrolling",
     "A CSS offset scoped to the no-JavaScript primary destination keeps its heading below the two sticky bars",
-    "No-JavaScript arrival checks now observe actual geometry from Node at 100ms intervals within the same 5000ms budget, require three stable samples and reject a covered primary heading; all 24 JavaScript scenarios remain unchanged"
+    "No-JavaScript arrival checks now observe actual geometry from Node at 100ms intervals within the same 5000ms budget, require three stable samples and reject a covered primary heading; all 24 JavaScript scenarios remain unchanged",
+    "Increase only the outer browser-qa execution budget from 30 to 40 minutes after a verified timeout; retain every test, per-assertion limit, permission, concurrency setting and required gate"
   ],
   "acceptanceScope": "Static source and generated-file review only. Browser scenarios, all seven PR gates, actual Pages deployment and live-byte verification are required separately before completion.",
   "archiveReview": {
@@ -157,5 +158,38 @@
       "baseline.png",
       "native-margin-experiment.png"
     ]
+  },
+  "ciExecutionBudget": {
+    "workflow": ".github/workflows/audit-browser.yml",
+    "job": "browser-qa",
+    "previousMinutes": 30,
+    "currentMinutes": 40,
+    "onlyBudgetAndExplanatoryCommentChanged": true,
+    "testStepsPermissionsConcurrencyAndIndividualLimitsUnchanged": true,
+    "previousWorkflowSHA256": "1d3bf0769e4e3bf6fe4b5c62c513d190a8566e6eef069b2aca63d14e7da11750",
+    "currentWorkflowSHA256": "878444b03e61be0f70759d93dbeffb31a54f7961b19b2b5e0bb92088e8e2d8b2",
+    "reason": "The expanded suite completed all assertions but its duplicate push job reached the outer 30-minute limit immediately after the discovery summary. Allow enough time for the entire suite and evidence upload.",
+    "priorExecution": {
+      "head": "9d3965072d5a93dea8f1df3f0de9d6e6c3e7f6b1",
+      "runId": 42657563932,
+      "jobId": 129300244910,
+      "allEightRegressionSuitesPassed": true,
+      "discoveryScenariosPassed": 27,
+      "discoveryErrors": 0,
+      "jobConclusion": "cancelled",
+      "scope": "Historical execution evidence; not current candidate acceptance"
+    }
+  },
+  "priorHomepageAcceptance": {
+    "head": "9d3965072d5a93dea8f1df3f0de9d6e6c3e7f6b1",
+    "runId": 42657578610,
+    "artifactId": 13693018439,
+    "browserScenariosPassed": 24,
+    "axeScans": 24,
+    "noJavaScriptScenariosPassed": 8,
+    "stableNativeDestinations": 64,
+    "errors": 0,
+    "inspectedFinalScreenshot": "home-390-light.png",
+    "scope": "The rendered homepage and test implementations are unchanged; current-head CI and deployment acceptance remain required."
   }
 }
