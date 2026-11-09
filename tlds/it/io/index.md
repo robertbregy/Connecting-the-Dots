@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/io/ | Site edition: 0.7.106 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/io/ | Site edition: 0.7.107 | Language: it -->
 
 Scheda del dominio
 
@@ -40,7 +40,7 @@ Acquisizione dell’operatore
 
 **~10×** Multiplo dei ricavi riportato · 2017
 
-[Apri il caso economico →](https://robertbregy.github.io/Connecting-the-Dots/guides/it/economics/#econ-case-io)
+[Apri il caso economico →](https://robertbregy.github.io/Connecting-the-Dots/economics/it/cases/#econ-case-io)
 
 ## FATTO Storia degli eventi
 
@@ -144,6 +144,6 @@ Non riportato
 
 [Scheda ufficiale IANA ↗](https://www.iana.org/domains/root/db/io.html) [Fonte 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Fonte 3 ↗](https://www.nic.io/)
 
-**Di Robert Bregy** · Edizione del sito 0.7.106 · 9 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.107 · 9 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

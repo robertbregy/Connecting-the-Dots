@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/en/cat/ | Site edition: 0.7.106 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/en/cat/ | Site edition: 0.7.107 | Language: en -->
 
 Domain profile
 
@@ -212,6 +212,6 @@ Reports linked by IANA, with their original titles and publication dates. A repo
 
 [Official IANA record ↗](https://www.iana.org/domains/root/db/cat.html) [Source 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Source 3 ↗](https://www.iana.org/reports/2005/cat-report-18nov2005.html) [Source 4 ↗](https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en) [Source 5 ↗](https://domini.cat/en/about-us)
 
-**By Robert Bregy** · Site edition 0.7.106 · November 9, 2026
+**By Robert Bregy** · Site edition 0.7.107 · November 9, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

@@ -8,7 +8,7 @@
     "url": "https://github.com/robertbregy"
   },
   "websiteRelease": {
-    "version": "0.7.106",
+    "version": "0.7.107",
     "releasedOn": "2026-11-09",
     "url": "https://robertbregy.github.io/Connecting-the-Dots/"
   },
@@ -42,6 +42,230 @@
     }
   },
   "pages": [
+    {
+      "path": "economics/de/cases/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/de/cases/",
+      "language": "de",
+      "kind": "economics",
+      "key": "cases",
+      "title": "Wirtschaftliche Fallstudien | Connecting the Dots",
+      "description": "Acht Fälle verbinden Mechanismen mit dokumentierten Ergebnissen: öffentliche Einnahmen, Verträge, Übernahmen, Verlängerungen, Regulierung, Auktionen, historische Rückzüge und Einstiegskosten. Jede Zahl behält ihren Zeitraum, ihre Einheit und ihre Quelle.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=economics#economics",
+      "markdown": {
+        "path": "economics/de/cases/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/de/cases/index.md"
+      }
+    },
+    {
+      "path": "economics/en/cases/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/en/cases/",
+      "language": "en",
+      "kind": "economics",
+      "key": "cases",
+      "title": "Economic cases | Connecting the Dots",
+      "description": "Eight cases connect mechanisms with documented results: public revenue, contracts, acquisitions, renewals, regulation, auctions, historical withdrawals and entry costs. Every figure retains its period, unit and source.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=economics#economics",
+      "markdown": {
+        "path": "economics/en/cases/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/en/cases/index.md"
+      }
+    },
+    {
+      "path": "economics/fr/cases/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/fr/cases/",
+      "language": "fr",
+      "kind": "economics",
+      "key": "cases",
+      "title": "Études de cas économiques | Connecting the Dots",
+      "description": "Huit cas relient les mécanismes aux résultats documentés : recettes publiques, contrats, acquisitions, renouvellements, réglementation, enchères, retraits historiques et coûts d’entrée. Chaque chiffre conserve sa période, son unité et sa source.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=economics#economics",
+      "markdown": {
+        "path": "economics/fr/cases/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/fr/cases/index.md"
+      }
+    },
+    {
+      "path": "economics/it/cases/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/it/cases/",
+      "language": "it",
+      "kind": "economics",
+      "key": "cases",
+      "title": "Casi economici | Connecting the Dots",
+      "description": "Otto casi collegano i meccanismi ai risultati documentati: entrate pubbliche, contratti, acquisizioni, rinnovi, regolazione, aste, ritiri storici e costi d’ingresso. Ogni cifra conserva periodo, unità e fonte.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=economics#economics",
+      "markdown": {
+        "path": "economics/it/cases/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/it/cases/index.md"
+      }
+    },
+    {
+      "path": "economics/de/market/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/de/market/",
+      "language": "de",
+      "kind": "economics",
+      "key": "market",
+      "title": "Verbreitung und Anteile der TLDs | Connecting the Dots",
+      "description": "Welche Endungen begegnen uns auf Websites, und welche enthalten mehr Domains? Erkunde beide vollständigen Ranglisten und ihre Filter sowie Einführungsgruppen, Daten, Quellen und herunterladbare Datensätze.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=economics#economics",
+      "markdown": {
+        "path": "economics/de/market/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/de/market/index.md"
+      }
+    },
+    {
+      "path": "economics/en/market/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/en/market/",
+      "language": "en",
+      "kind": "economics",
+      "key": "market",
+      "title": "TLD adoption and shares | Connecting the Dots",
+      "description": "Which extensions do we encounter on websites, and which contain more domains? Explore both complete rankings, use the filters and consult introduction groups, dates, sources and downloadable data.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=economics#economics",
+      "markdown": {
+        "path": "economics/en/market/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/en/market/index.md"
+      }
+    },
+    {
+      "path": "economics/fr/market/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/fr/market/",
+      "language": "fr",
+      "kind": "economics",
+      "key": "market",
+      "title": "Diffusion et parts des TLD | Connecting the Dots",
+      "description": "Quelles extensions rencontre-t-on sur les sites, et lesquelles contiennent le plus de domaines ? Explorez les deux classements complets, leurs filtres, groupes d’introduction, dates, sources et données téléchargeables.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=economics#economics",
+      "markdown": {
+        "path": "economics/fr/market/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/fr/market/index.md"
+      }
+    },
+    {
+      "path": "economics/it/market/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/it/market/",
+      "language": "it",
+      "kind": "economics",
+      "key": "market",
+      "title": "Diffusione e quote dei TLD | Connecting the Dots",
+      "description": "Quali estensioni incontriamo nei siti e quali contengono più domini? Esplora le due classifiche complete, usa i filtri e consulta gruppi di introduzione, date, fonti e dati scaricabili.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=economics#economics",
+      "markdown": {
+        "path": "economics/it/market/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/it/market/index.md"
+      }
+    },
+    {
+      "path": "economics/de/portfolios/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/de/portfolios/",
+      "language": "de",
+      "kind": "economics",
+      "key": "portfolios",
+      "title": "Portfolios und konkurrierende Anträge | Connecting the Dots",
+      "description": "Verfolge die Strategien von Antragstellern mit vielen Bewerbungen und den Wettbewerb um dieselben Wörter. Die Vergleiche zwischen den Runden sowie die Fälle Aruba und Intercap zeigen, was jeweils gezählt wird.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=economics#economics",
+      "markdown": {
+        "path": "economics/de/portfolios/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/de/portfolios/index.md"
+      }
+    },
+    {
+      "path": "economics/en/portfolios/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/en/portfolios/",
+      "language": "en",
+      "kind": "economics",
+      "key": "portfolios",
+      "title": "Portfolios and contention | Connecting the Dots",
+      "description": "Follow the strategies of applicants submitting many applications and the competition for the same words. Comparisons between rounds and the Aruba and Intercap cases clarify what is being counted.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=economics#economics",
+      "markdown": {
+        "path": "economics/en/portfolios/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/en/portfolios/index.md"
+      }
+    },
+    {
+      "path": "economics/fr/portfolios/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/fr/portfolios/",
+      "language": "fr",
+      "kind": "economics",
+      "key": "portfolios",
+      "title": "Portefeuilles et candidatures concurrentes | Connecting the Dots",
+      "description": "Suivez les stratégies des candidats qui déposent de nombreuses demandes et la concurrence pour les mêmes mots. Les comparaisons entre rounds et les cas Aruba et Intercap précisent ce qui est compté.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=economics#economics",
+      "markdown": {
+        "path": "economics/fr/portfolios/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/fr/portfolios/index.md"
+      }
+    },
+    {
+      "path": "economics/it/portfolios/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/it/portfolios/",
+      "language": "it",
+      "kind": "economics",
+      "key": "portfolios",
+      "title": "Portafogli e contese | Connecting the Dots",
+      "description": "Segui le strategie di chi presenta molte candidature e la competizione per le stesse parole. I confronti tra round e i casi Aruba e Intercap chiariscono che cosa viene contato.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=economics#economics",
+      "markdown": {
+        "path": "economics/it/portfolios/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/it/portfolios/index.md"
+      }
+    },
+    {
+      "path": "economics/de/round-2026/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/de/round-2026/",
+      "language": "de",
+      "kind": "economics",
+      "key": "round-2026",
+      "title": "Wirtschaftliche Aspekte der Runde 2026 | Connecting the Dots",
+      "description": "Antragskosten, Themen der Zeichenfolgen, Tätigkeiten der Antragsteller und Markenstrategien. Wirtschaftliche Zyklen und historische Rekonstruktionen helfen, Erwartungen einzuordnen; die Grenzen der jeweiligen Analyse bleiben sichtbar.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=economics#economics",
+      "markdown": {
+        "path": "economics/de/round-2026/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/de/round-2026/index.md"
+      }
+    },
+    {
+      "path": "economics/en/round-2026/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/en/round-2026/",
+      "language": "en",
+      "kind": "economics",
+      "key": "round-2026",
+      "title": "The economics of the 2026 round | Connecting the Dots",
+      "description": "Application costs, string themes, applicants’ activities and brand strategies. Economic cycles and historical reconstructions help explain expectations, with the limits of each analysis kept clear.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=economics#economics",
+      "markdown": {
+        "path": "economics/en/round-2026/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/en/round-2026/index.md"
+      }
+    },
+    {
+      "path": "economics/fr/round-2026/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/fr/round-2026/",
+      "language": "fr",
+      "kind": "economics",
+      "key": "round-2026",
+      "title": "L’économie du round 2026 | Connecting the Dots",
+      "description": "Coûts de candidature, thèmes des chaînes, activités des candidats et stratégies des marques. Cycles économiques et reconstructions historiques éclairent les attentes, avec les limites propres à chaque analyse.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=economics#economics",
+      "markdown": {
+        "path": "economics/fr/round-2026/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/fr/round-2026/index.md"
+      }
+    },
+    {
+      "path": "economics/it/round-2026/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/it/round-2026/",
+      "language": "it",
+      "kind": "economics",
+      "key": "round-2026",
+      "title": "L’economia del round 2026 | Connecting the Dots",
+      "description": "Costi di candidatura, temi delle stringhe, attività dei candidati e strategie dei marchi. I cicli economici e le ricostruzioni storiche aiutano a leggere le aspettative, con i rispettivi limiti.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=economics#economics",
+      "markdown": {
+        "path": "economics/it/round-2026/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/economics/it/round-2026/index.md"
+      }
+    },
     {
       "path": "guides/de/beyond/",
       "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/de/beyond/",

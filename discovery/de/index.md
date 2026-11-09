@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/de/ | Site edition: 0.7.106 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/de/ | Site edition: 0.7.107 | Language: de -->
 
 Connecting the Dots
 
@@ -33,6 +33,24 @@ Beginnen Sie mit dem Bewerbungsstatus und der Position des Autors. Danach folgen
 ### [Dient eine Domain nur dazu, eine Website zu finden?](https://robertbregy.github.io/Connecting-the-Dots/guides/de/beyond/)
 
 Von alltäglichen Diensten zu den unsichtbaren DNS-Funktionen, dann zu Schriftsystemen und alternativen Namenssystemen.
+
+## Wirtschaftliche Zusammenhänge vertiefen
+
+### [Verbreitung und Anteile der TLDs](https://robertbregy.github.io/Connecting-the-Dots/economics/de/market/)
+
+Welche Endungen begegnen uns auf Websites, und welche enthalten mehr Domains? Erkunde beide vollständigen Ranglisten und ihre Filter sowie Einführungsgruppen, Daten, Quellen und herunterladbare Datensätze.
+
+### [Wirtschaftliche Fallstudien](https://robertbregy.github.io/Connecting-the-Dots/economics/de/cases/)
+
+Acht Fälle verbinden Mechanismen mit dokumentierten Ergebnissen: öffentliche Einnahmen, Verträge, Übernahmen, Verlängerungen, Regulierung, Auktionen, historische Rückzüge und Einstiegskosten. Jede Zahl behält ihren Zeitraum, ihre Einheit und ihre Quelle.
+
+### [Portfolios und konkurrierende Anträge](https://robertbregy.github.io/Connecting-the-Dots/economics/de/portfolios/)
+
+Verfolge die Strategien von Antragstellern mit vielen Bewerbungen und den Wettbewerb um dieselben Wörter. Die Vergleiche zwischen den Runden sowie die Fälle Aruba und Intercap zeigen, was jeweils gezählt wird.
+
+### [Wirtschaftliche Aspekte der Runde 2026](https://robertbregy.github.io/Connecting-the-Dots/economics/de/round-2026/)
+
+Antragskosten, Themen der Zeichenfolgen, Tätigkeiten der Antragsteller und Markenstrategien. Wirtschaftliche Zyklen und historische Rekonstruktionen helfen, Erwartungen einzuordnen; die Grenzen der jeweiligen Analyse bleiben sichtbar.
 
 ## Ausgewählte Profile
 
@@ -78,6 +96,6 @@ Ein Name für die katalanische Sprach- und Kulturgemeinschaft: Zugehörigkeit ü
 
 .io ist derzeit als Ländercode in der DNS-Root delegiert.
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.106 · 9. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.107 · 9. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

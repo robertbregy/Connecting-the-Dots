@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/ai/ | Site edition: 0.7.106 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/ai/ | Site edition: 0.7.107 | Language: fr -->
 
 Fiche du domaine
 
@@ -48,7 +48,7 @@ Rente numérique souveraine
 
 **EC$219.2M** Recettes d’enregistrement · projection · 2025
 
-[Ouvrir le cas économique →](https://robertbregy.github.io/Connecting-the-Dots/guides/fr/economics/#econ-case-ai)
+[Ouvrir le cas économique →](https://robertbregy.github.io/Connecting-the-Dots/economics/fr/cases/#econ-case-ai)
 
 ## FAIT Historique des événements
 
@@ -156,6 +156,6 @@ Non renseigné
 
 [Fiche officielle IANA ↗](https://www.iana.org/domains/root/db/ai.html) [Source 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Source 3 ↗](https://registry.ai/)
 
-**Par Robert Bregy** · Édition du site 0.7.106 · 9 novembre 2026
+**Par Robert Bregy** · Édition du site 0.7.107 · 9 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.

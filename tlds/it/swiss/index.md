@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/swiss/ | Site edition: 0.7.106 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/swiss/ | Site edition: 0.7.107 | Language: it -->
 
 Scheda del dominio
 
@@ -192,6 +192,6 @@ Rapporti collegati da IANA, con titoli originali e date di pubblicazione. La dat
 
 [Scheda ufficiale IANA ↗](https://www.iana.org/domains/root/db/swiss.html) [Fonte 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Fonte 3 ↗](https://www.nic.swiss/en/conditions-for-the-registration-and-the-registration-process) [Fonte 4 ↗](https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/)
 
-**Di Robert Bregy** · Edizione del sito 0.7.106 · 9 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.107 · 9 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

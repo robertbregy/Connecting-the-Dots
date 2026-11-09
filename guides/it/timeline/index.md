@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/it/timeline/ | Site edition: 0.7.106 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/it/timeline/ | Site edition: 0.7.107 | Language: it -->
 
 Guida
 
@@ -242,7 +242,7 @@ I TLD non sono uno specchio completo della società: mostrano chi ha potuto chie
 
 Ogni tappa separa fatti documentati e interpretazione; gli esempi scelti non costituiscono un censimento. Il censimento riproducibile che segue comprende tutte le stringhe delle fonti raccolte nel progetto e applica ai diversi round lo stesso vocabolario di classificazione attuale. L'assegnazione semantica è incompleta: i nomi senza categoria restano nel corpus e i conteggi dipendono dalla copertura delle regole. Questa lettura non ricostruisce automaticamente il significato storico di ogni nome né rappresenta l'intero universo delle identità online. Candidatura, delega e apertura al pubblico sono eventi distinti; i conteggi non misurano l'uso o l'adozione.
 
-[Confronta la diffusione →](https://robertbregy.github.io/Connecting-the-Dots/guides/it/economics/#tld-market-reach) [Esplora i pattern →](https://robertbregy.github.io/Connecting-the-Dots/guides/it/timeline/#tld-cultural-patterns) [Confronta le fee →](https://robertbregy.github.io/Connecting-the-Dots/guides/it/economics/#round-application-fees)
+[Confronta la diffusione →](https://robertbregy.github.io/Connecting-the-Dots/economics/it/market/#tld-market-reach) [Esplora i pattern →](https://robertbregy.github.io/Connecting-the-Dots/guides/it/timeline/#tld-cultural-patterns) [Confronta le fee →](https://robertbregy.github.io/Connecting-the-Dots/economics/it/round-2026/#round-application-fees)
 
 Revisione editoriale del 19 ottobre 2026
 
@@ -459,6 +459,6 @@ Corpus locali datati; non un elenco universale di ogni nome mai proposto. Le dom
 
 Revisione editoriale del 19 ottobre 2026
 
-**Di Robert Bregy** · Edizione del sito 0.7.106 · 9 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.107 · 9 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

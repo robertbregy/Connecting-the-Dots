@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/com/ | Site edition: 0.7.106 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/com/ | Site edition: 0.7.107 | Language: it -->
 
 Scheda del dominio
 
@@ -44,7 +44,7 @@ Economia ricorrente del registry
 
 **US$1.12B** Risultato operativo Verisign · 2025
 
-[Apri il caso economico →](https://robertbregy.github.io/Connecting-the-Dots/guides/it/economics/#econ-case-comnet)
+[Apri il caso economico →](https://robertbregy.github.io/Connecting-the-Dots/economics/it/cases/#econ-case-comnet)
 
 ## FATTO Storia degli eventi
 
@@ -162,6 +162,6 @@ Non riportato
 
 [Scheda ufficiale IANA ↗](https://www.iana.org/domains/root/db/com.html) [Fonte 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Fonte 3 ↗](https://www.iana.org/domains/root/db)
 
-**Di Robert Bregy** · Edizione del sito 0.7.106 · 9 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.107 · 9 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

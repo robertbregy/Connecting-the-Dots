@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/de/lugano/ | Site edition: 0.7.106 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/de/lugano/ | Site edition: 0.7.107 | Language: de -->
 
 Domainprofil
 
@@ -86,6 +86,6 @@ Als abgeleitet markierte Programmklassifikationen verwenden das IANA-Registrieru
 
 [Quelle 1 ↗](https://newgtldprogram-aps.icann.org/applications/CDL2651T-T31516/summary) [Quelle 2 ↗](https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en) [Quelle 3 ↗](https://www.ntlddata.com/applications/strings)
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.106 · 9. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.107 · 9. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.
