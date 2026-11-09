@@ -3,7 +3,7 @@
   "reviewedOn": "2026-11-09",
   "publicationVersion": "0.7.105",
   "baseMain": "c0fd93581aa17b179bdca19977e10efae18fe152",
-  "sourceCommit": "5ae093badd29b57cc2c050a8169f0a3bf4214740",
+  "sourceCommit": "141cdd000adb93adfff0faf13ad2dec902ce3258",
   "scope": "Static source and generated document review; browser, CI and deployment acceptance are recorded by their actual workflow runs.",
   "humanParticipants": 0,
   "staticReport": {
@@ -11,7 +11,7 @@
     "siteVersion": "0.7.105",
     "pages": 68,
     "groups": 17,
-    "localLinksChecked": 3236,
+    "localLinksChecked": 3240,
     "sourceLinks": 1324,
     "checks": 72,
     "errors": []
