@@ -155,6 +155,31 @@ async function browserChecks(report, out) {
     error.nativeGeometry = {...geometry, stableSamples, elapsedMs: Date.now() - started};
     throw error;
   }
+  async function prepareOrdinaryEntry(page, selector) {
+    const link = page.locator(selector);
+    // No-JS pages retain native smooth scrolling. Prepare the pointer target
+    // once, independently of the ordinary link navigation checked below.
+    await link.evaluate(node => node.scrollIntoView({behavior: 'instant', block: 'center'}));
+    const deadline = Date.now() + 5000;
+    let geometry = null, previous = null, stableSamples = 0;
+    while (Date.now() < deadline) {
+      geometry = await link.evaluate(node => {
+        const rect = node.getBoundingClientRect();
+        return {scrollX, scrollY, viewportWidth: innerWidth, viewportHeight: innerHeight,
+          rect: {top: rect.top, bottom: rect.bottom, left: rect.left, right: rect.right, width: rect.width, height: rect.height}};
+      });
+      const {rect, viewportWidth, viewportHeight} = geometry;
+      const inViewport = rect.width > 0 && rect.height > 0 && rect.left >= 0 && rect.right <= viewportWidth
+        && rect.top >= 0 && rect.bottom <= viewportHeight;
+      const key = JSON.stringify(geometry);
+      stableSamples = inViewport ? (key === previous ? stableSamples + 1 : 1) : 0;
+      if (stableSamples >= 3 && Date.now() <= deadline) return;
+      previous = key;
+      const remaining = deadline - Date.now();
+      if (remaining > 0) await new Promise(resolve => setTimeout(resolve, Math.min(100, remaining)));
+    }
+    throw new Error('No-JS home link did not settle inside the viewport before clicking: ' + selector + ' ' + JSON.stringify(geometry));
+  }
   try {
     for (const lang of locales) for (const width of [320, 390, 1440]) for (const theme of ['light', 'dark']) {
       const context = await browser.newContext({viewport: {width, height: 900}, colorScheme: theme, reducedMotion: 'reduce'});
@@ -248,6 +273,7 @@ async function browserChecks(report, out) {
         for (const {selector, section, anchor} of ordinaryEntries) {
           pendingFragment = anchor;
           await page.goto(base + lang + '/', {waitUntil: 'load'});
+          await prepareOrdinaryEntry(page, selector);
           await page.locator(selector).click();
           await page.waitForURL(url => url.searchParams.get('tab') === section && url.hash === '#' + anchor);
           const geometry = await reachedWithoutJavaScript(page, anchor);

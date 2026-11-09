@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/en/ | Site edition: 0.7.106 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/en/ | Site edition: 0.7.107 | Language: en -->
 
 Connecting the Dots
 
@@ -33,6 +33,24 @@ Start with the application's status and the author's position. Then read intenti
 ### [Is a domain only there to find a website?](https://robertbregy.github.io/Connecting-the-Dots/guides/en/beyond/)
 
 From services we use to the invisible functions of DNS, then writing systems and alternative naming systems.
+
+## Explore the economics
+
+### [TLD adoption and shares](https://robertbregy.github.io/Connecting-the-Dots/economics/en/market/)
+
+Which extensions do we encounter on websites, and which contain more domains? Explore both complete rankings, use the filters and consult introduction groups, dates, sources and downloadable data.
+
+### [Economic cases](https://robertbregy.github.io/Connecting-the-Dots/economics/en/cases/)
+
+Eight cases connect mechanisms with documented results: public revenue, contracts, acquisitions, renewals, regulation, auctions, historical withdrawals and entry costs. Every figure retains its period, unit and source.
+
+### [Portfolios and contention](https://robertbregy.github.io/Connecting-the-Dots/economics/en/portfolios/)
+
+Follow the strategies of applicants submitting many applications and the competition for the same words. Comparisons between rounds and the Aruba and Intercap cases clarify what is being counted.
+
+### [The economics of the 2026 round](https://robertbregy.github.io/Connecting-the-Dots/economics/en/round-2026/)
+
+Application costs, string themes, applicants’ activities and brand strategies. Economic cycles and historical reconstructions help explain expectations, with the limits of each analysis kept clear.
 
 ## Selected profiles
 
@@ -78,6 +96,6 @@ A name for the Catalan linguistic and cultural community: a belonging that cross
 
 .io is currently delegated in the DNS root as Country-code.
 
-**By Robert Bregy** · Site edition 0.7.106 · November 9, 2026
+**By Robert Bregy** · Site edition 0.7.107 · November 9, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

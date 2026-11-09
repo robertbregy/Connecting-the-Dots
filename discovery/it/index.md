@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/it/ | Site edition: 0.7.106 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/it/ | Site edition: 0.7.107 | Language: it -->
 
 Connecting the Dots
 
@@ -33,6 +33,24 @@ Parti dallo stato della candidatura e dalla posizione dell’autore. Poi leggi i
 ### [Un dominio serve soltanto a trovare un sito?](https://robertbregy.github.io/Connecting-the-Dots/guides/it/beyond/)
 
 Dai servizi che usiamo alle funzioni invisibili del DNS, fino alle scritture e ai sistemi di nomi alternativi.
+
+## Approfondisci l’economia
+
+### [Diffusione e quote dei TLD](https://robertbregy.github.io/Connecting-the-Dots/economics/it/market/)
+
+Quali estensioni incontriamo nei siti e quali contengono più domini? Esplora le due classifiche complete, usa i filtri e consulta gruppi di introduzione, date, fonti e dati scaricabili.
+
+### [Casi economici](https://robertbregy.github.io/Connecting-the-Dots/economics/it/cases/)
+
+Otto casi collegano i meccanismi ai risultati documentati: entrate pubbliche, contratti, acquisizioni, rinnovi, regolazione, aste, ritiri storici e costi d’ingresso. Ogni cifra conserva periodo, unità e fonte.
+
+### [Portafogli e contese](https://robertbregy.github.io/Connecting-the-Dots/economics/it/portfolios/)
+
+Segui le strategie di chi presenta molte candidature e la competizione per le stesse parole. I confronti tra round e i casi Aruba e Intercap chiariscono che cosa viene contato.
+
+### [L’economia del round 2026](https://robertbregy.github.io/Connecting-the-Dots/economics/it/round-2026/)
+
+Costi di candidatura, temi delle stringhe, attività dei candidati e strategie dei marchi. I cicli economici e le ricostruzioni storiche aiutano a leggere le aspettative, con i rispettivi limiti.
 
 ## Schede selezionate
 
@@ -78,6 +96,6 @@ Rappresenta la comunità linguistica e culturale catalana: un’appartenenza che
 
 .io è oggi delegato nella root DNS come Codice paese.
 
-**Di Robert Bregy** · Edizione del sito 0.7.106 · 9 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.107 · 9 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/timeline/ | Site edition: 0.7.106 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/timeline/ | Site edition: 0.7.107 | Language: de -->
 
 Leitfaden
 
@@ -242,7 +242,7 @@ TLDs sind kein vollständiges Spiegelbild der Gesellschaft. Sie zeigen, wer eine
 
 Jede Etappe trennt belegte Fakten von ihrer Deutung; die ausgewählten Beispiele sind keine Vollerhebung. Die nachfolgende reproduzierbare Erfassung umfasst alle Namen aus den für das Projekt gesammelten Quellen und wendet dasselbe heutige Klassifikationsvokabular auf die verschiedenen Vergaberunden an. Die semantische Zuordnung ist unvollständig: Namen ohne Kategorie bleiben im Bestand, und die Zahlen hängen von der Abdeckung der Regeln ab. Diese Lesart rekonstruiert weder automatisch die historische Bedeutung jedes Namens noch die gesamte Vielfalt der Online-Identitäten. Bewerbung, Delegierung und öffentliche Verfügbarkeit sind verschiedene Ereignisse; die Zählungen messen weder Nutzung noch Verbreitung.
 
-[Verbreitung vergleichen →](https://robertbregy.github.io/Connecting-the-Dots/guides/de/economics/#tld-market-reach) [Muster erkunden →](https://robertbregy.github.io/Connecting-the-Dots/guides/de/timeline/#tld-cultural-patterns) [Antragsgebühren vergleichen →](https://robertbregy.github.io/Connecting-the-Dots/guides/de/economics/#round-application-fees)
+[Verbreitung vergleichen →](https://robertbregy.github.io/Connecting-the-Dots/economics/de/market/#tld-market-reach) [Muster erkunden →](https://robertbregy.github.io/Connecting-the-Dots/guides/de/timeline/#tld-cultural-patterns) [Antragsgebühren vergleichen →](https://robertbregy.github.io/Connecting-the-Dots/economics/de/round-2026/#round-application-fees)
 
 Redaktionelle Prüfung · 19. Oktober 2026
 
@@ -459,6 +459,6 @@ Datierte lokale Korpora, kein universelles Verzeichnis aller jemals vorgeschlage
 
 Redaktionelle Prüfung · 19. Oktober 2026
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.106 · 9. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.107 · 9. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

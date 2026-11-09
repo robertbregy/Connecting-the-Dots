@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/fr/ | Site edition: 0.7.106 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/fr/ | Site edition: 0.7.107 | Language: fr -->
 
 Connecting the Dots
 
@@ -33,6 +33,24 @@ Commencez par le statut de la candidature et la position de l’auteur. Puis exa
 ### [Un domaine sert-il seulement à trouver un site ?](https://robertbregy.github.io/Connecting-the-Dots/guides/fr/beyond/)
 
 Des services quotidiens aux fonctions invisibles du DNS, puis aux écritures et aux systèmes de noms alternatifs.
+
+## Approfondir l’économie
+
+### [Diffusion et parts des TLD](https://robertbregy.github.io/Connecting-the-Dots/economics/fr/market/)
+
+Quelles extensions rencontre-t-on sur les sites, et lesquelles contiennent le plus de domaines ? Explorez les deux classements complets, leurs filtres, groupes d’introduction, dates, sources et données téléchargeables.
+
+### [Études de cas économiques](https://robertbregy.github.io/Connecting-the-Dots/economics/fr/cases/)
+
+Huit cas relient les mécanismes aux résultats documentés : recettes publiques, contrats, acquisitions, renouvellements, réglementation, enchères, retraits historiques et coûts d’entrée. Chaque chiffre conserve sa période, son unité et sa source.
+
+### [Portefeuilles et candidatures concurrentes](https://robertbregy.github.io/Connecting-the-Dots/economics/fr/portfolios/)
+
+Suivez les stratégies des candidats qui déposent de nombreuses demandes et la concurrence pour les mêmes mots. Les comparaisons entre rounds et les cas Aruba et Intercap précisent ce qui est compté.
+
+### [L’économie du round 2026](https://robertbregy.github.io/Connecting-the-Dots/economics/fr/round-2026/)
+
+Coûts de candidature, thèmes des chaînes, activités des candidats et stratégies des marques. Cycles économiques et reconstructions historiques éclairent les attentes, avec les limites propres à chaque analyse.
 
 ## Fiches sélectionnées
 
@@ -78,6 +96,6 @@ Un nom pour la communauté linguistique et culturelle catalane : une appartenanc
 
 .io est actuellement délégué dans la racine DNS comme Code pays.
 
-**Par Robert Bregy** · Édition du site 0.7.106 · 9 novembre 2026
+**Par Robert Bregy** · Édition du site 0.7.107 · 9 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.

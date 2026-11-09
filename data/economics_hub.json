@@ -1,0 +1,389 @@
+{
+  "schemaVersion": 1,
+  "locales": {
+    "it": {
+      "eyebrow": "L’ECONOMIA DEI NOMI",
+      "title": "Chi crea valore, e chi lo incassa?",
+      "lead": "Registrare un dominio, gestire un’estensione e candidarne una nuova sono attività economiche diverse. Per capirle, segui i pagamenti, i contratti e le aspettative.",
+      "intro": [
+        "Un nome può generare ricavi ricorrenti, contribuire alle entrate di un territorio o attirare investimenti prima ancora di essere utilizzato. Il suo significato conta, insieme alle regole che ne governano l’assegnazione e all’organizzazione che lo gestisce.",
+        "Questa introduzione collega i meccanismi essenziali. Negli approfondimenti trovi le classifiche, gli otto casi completi, le strategie dei candidati e le analisi del round 2026, con dati e fonti consultabili. Ogni percorso può essere letto autonomamente."
+      ],
+      "flow": {
+        "title": "Chi paga chi?",
+        "lead": "Il prezzo pagato da chi registra un dominio appartiene a una filiera. Per i domini generici, i rapporti con ICANN fanno parte del quadro contrattuale; i domini territoriali possono seguire assetti differenti.",
+        "steps": [
+          {
+            "title": "Il titolare registra il nome",
+            "body": "Una persona o un’organizzazione sceglie un nome e paga la registrazione o il rinnovo alle condizioni del servizio. È il livello al quale il dominio entra nell’uso quotidiano."
+          },
+          {
+            "title": "Il registrar offre il servizio",
+            "body": "Il registrar fornisce il canale di registrazione al pubblico e trasmette le operazioni al registro. Il prezzo offerto al cliente e la tariffa applicata dal registro appartengono a livelli diversi."
+          },
+          {
+            "title": "Il registro gestisce l’estensione",
+            "body": "L’operatore del registro mantiene il database del TLD e ne definisce il modello commerciale e le regole nel quadro applicabile. Registrazioni e rinnovi possono alimentare un’attività ricorrente."
+          }
+        ],
+        "linkLabel": "Approfondisci la filiera dei domini"
+      },
+      "stories": {
+        "title": "Tre casi per orientarsi",
+        "lead": "Entrate pubbliche, risultati di un’impresa e prezzi d’asta mostrano tre modi diversi di produrre o attribuire valore a un nome.",
+        "items": [
+          {
+            "id": "ai",
+            "name": ".ai",
+            "title": "Un nome nelle finanze di un territorio",
+            "body": ".ai è il codice territoriale di Anguilla. L’associazione con l’intelligenza artificiale ha dato a queste due lettere un significato commerciale globale. Il caso segue le entrate pubbliche legate alle registrazioni e distingue gli importi effettivi dalle proiezioni e dai preventivi. Permette così di leggere il rapporto tra domanda di nomi e finanze di un territorio.",
+            "linkLabel": "Leggi il caso .ai"
+          },
+          {
+            "id": "comnet",
+            "name": ".com / .net",
+            "title": "Il valore dei rinnovi",
+            "body": "Verisign, operatore di .com e .net, offre un esempio di attività basata su registrazioni e rinnovi. Il caso mette in relazione la base dei domini, la tariffa all’ingrosso e i risultati societari, mantenendo distinta ciascuna misura. I ricavi dichiarati dall’impresa riguardano la società: attribuirli al solo .com cambierebbe il significato del dato.",
+            "linkLabel": "Leggi il caso .com e .net"
+          },
+          {
+            "id": "auctions",
+            "name": ".web",
+            "title": "Quanto valgono le aspettative?",
+            "body": "Il caso .web, accanto a .shop e .app, mostra quanto può contare la competizione per una stessa stringa. Il prezzo registrato in un’asta riguarda quella procedura e le aspettative dei candidati. Per giudicare i risultati economici successivi servono altre evidenze: quel prezzo, da solo, non dice quanti domini verranno registrati o quali ricavi produrrà il registro.",
+            "linkLabel": "Leggi il caso delle aste"
+          }
+        ]
+      },
+      "reading": {
+        "title": "Prima di confrontare due cifre",
+        "body": [
+          "Controlla che cosa misurano, a quale periodo si riferiscono e quale fonte le documenta. Un ricavo, un prezzo di acquisizione e una previsione di bilancio rispondono a domande diverse. Anche la valuta e il perimetro dell’organizzazione contano.",
+          "Le registrazioni descrivono una base di nomi; la presenza nei siti osserva un uso differente. Le candidature raccontano invece intenzioni e strategie. Nessuna di queste misure basta, da sola, a dimostrare la redditività futura di un’estensione."
+        ]
+      },
+      "pathways": {
+        "title": "Scegli la domanda da approfondire",
+        "lead": "I quattro percorsi raccolgono il dossier completo. Puoi consultare un dato, seguire un caso o leggere come cambiano le strategie nel tempo.",
+        "items": [
+          {
+            "slug": "market",
+            "title": "Diffusione e quote dei TLD",
+            "body": "Quali estensioni incontriamo nei siti e quali contengono più domini? Esplora le due classifiche complete, usa i filtri e consulta gruppi di introduzione, date, fonti e dati scaricabili.",
+            "linkLabel": "Esplora le classifiche"
+          },
+          {
+            "slug": "cases",
+            "title": "Casi economici",
+            "body": "Otto casi collegano i meccanismi ai risultati documentati: entrate pubbliche, contratti, acquisizioni, rinnovi, regolazione, aste, ritiri storici e costi d’ingresso. Ogni cifra conserva periodo, unità e fonte.",
+            "linkLabel": "Leggi tutti i casi"
+          },
+          {
+            "slug": "portfolios",
+            "title": "Portafogli e contese",
+            "body": "Segui le strategie di chi presenta molte candidature e la competizione per le stesse parole. I confronti tra round e i casi Aruba e Intercap chiariscono che cosa viene contato.",
+            "linkLabel": "Esamina le strategie"
+          },
+          {
+            "slug": "round-2026",
+            "title": "L’economia del round 2026",
+            "body": "Costi di candidatura, temi delle stringhe, attività dei candidati e strategie dei marchi. I cicli economici e le ricostruzioni storiche aiutano a leggere le aspettative, con i rispettivi limiti.",
+            "linkLabel": "Approfondisci il round 2026"
+          }
+        ]
+      },
+      "closing": {
+        "title": "Il valore ha un contesto",
+        "body": "L’economia dei domini prende forma nell’incontro tra infrastruttura, regole e significati. La domanda utile è quale meccanismo produce valore, per chi, e quali prove permettono di riconoscerlo."
+      }
+    },
+    "en": {
+      "eyebrow": "THE ECONOMICS OF NAMES",
+      "title": "Who creates value, and who receives it?",
+      "lead": "Registering a domain, running an extension and applying for a new one are different economic activities. To understand them, follow the payments, contracts and expectations.",
+      "intro": [
+        "A name can generate recurring revenue, contribute to a territory’s public finances or attract investment before it is used. Its meaning matters, alongside the rules governing its allocation and the organisation that operates it.",
+        "This introduction connects the main mechanisms. The detailed chapters contain the rankings, all eight cases, applicants’ strategies and analysis of the 2026 round, with data and sources to consult. Each chapter can be read on its own."
+      ],
+      "flow": {
+        "title": "Who pays whom?",
+        "lead": "The price paid by someone registering a domain belongs to a wider chain. For generic domains, relationships with ICANN form part of the contractual framework; country-code domains may follow different arrangements.",
+        "steps": [
+          {
+            "title": "The registrant registers the name",
+            "body": "A person or organisation chooses a name and pays for registration or renewal under the service’s terms. This is where the domain becomes part of everyday use."
+          },
+          {
+            "title": "The registrar provides the service",
+            "body": "The registrar provides the public registration channel and passes operations to the registry. The price offered to the customer and the fee charged by the registry belong to different levels."
+          },
+          {
+            "title": "The registry operates the extension",
+            "body": "The registry operator maintains the TLD’s database and sets its commercial model and policies within the applicable framework. Registrations and renewals can support a recurring business."
+          }
+        ],
+        "linkLabel": "Explore the domain registration chain"
+      },
+      "stories": {
+        "title": "Three cases to get your bearings",
+        "lead": "Public revenue, a company’s results and auction prices show three different ways in which a name can generate value or be assigned a value.",
+        "items": [
+          {
+            "id": "ai",
+            "name": ".ai",
+            "title": "A name in a territory’s finances",
+            "body": ".ai is Anguilla’s country-code domain. Its association with artificial intelligence has given these two letters a global commercial meaning. The case follows public revenue from registrations, distinguishing actual amounts from projections and budget estimates. It provides a way to examine the relationship between demand for names and a territory’s public finances.",
+            "linkLabel": "Read the .ai case"
+          },
+          {
+            "id": "comnet",
+            "name": ".com / .net",
+            "title": "The value of renewals",
+            "body": "Verisign, the operator of .com and .net, illustrates a business based on registrations and renewals. The case connects the domain base, the wholesale fee and corporate results while keeping each measure distinct. The revenue reported by the company concerns the business: attributing it to .com alone would change what the figure means.",
+            "linkLabel": "Read the .com and .net case"
+          },
+          {
+            "id": "auctions",
+            "name": ".web",
+            "title": "What are expectations worth?",
+            "body": "The .web case, alongside .shop and .app, shows the significance of competition for the same string. An auction price concerns that procedure and the applicants’ expectations. Assessing subsequent economic results requires further evidence: that price alone cannot tell us how many domains will be registered or what revenue the registry will generate.",
+            "linkLabel": "Read the auctions case"
+          }
+        ]
+      },
+      "reading": {
+        "title": "Before comparing two figures",
+        "body": [
+          "Check what they measure, which period they refer to and which source documents them. Revenue, an acquisition price and a budget forecast answer different questions. The currency and the scope of the organisation also matter.",
+          "Registrations describe a base of names; presence on websites observes a different kind of use. Applications describe intentions and strategies. None of these measures, taken alone, is enough to demonstrate an extension’s future profitability."
+        ]
+      },
+      "pathways": {
+        "title": "Choose a question to explore",
+        "lead": "These four chapters contain the full dossier. Look up a figure, follow a case or read how strategies change over time.",
+        "items": [
+          {
+            "slug": "market",
+            "title": "TLD adoption and shares",
+            "body": "Which extensions do we encounter on websites, and which contain more domains? Explore both complete rankings, use the filters and consult introduction groups, dates, sources and downloadable data.",
+            "linkLabel": "Explore the rankings"
+          },
+          {
+            "slug": "cases",
+            "title": "Economic cases",
+            "body": "Eight cases connect mechanisms with documented results: public revenue, contracts, acquisitions, renewals, regulation, auctions, historical withdrawals and entry costs. Every figure retains its period, unit and source.",
+            "linkLabel": "Read all the cases"
+          },
+          {
+            "slug": "portfolios",
+            "title": "Portfolios and contention",
+            "body": "Follow the strategies of applicants submitting many applications and the competition for the same words. Comparisons between rounds and the Aruba and Intercap cases clarify what is being counted.",
+            "linkLabel": "Examine the strategies"
+          },
+          {
+            "slug": "round-2026",
+            "title": "The economics of the 2026 round",
+            "body": "Application costs, string themes, applicants’ activities and brand strategies. Economic cycles and historical reconstructions help explain expectations, with the limits of each analysis kept clear.",
+            "linkLabel": "Explore the 2026 round"
+          }
+        ]
+      },
+      "closing": {
+        "title": "Value has a context",
+        "body": "Domain economics takes shape where infrastructure, rules and meanings meet. The useful question is which mechanism produces value, for whom, and what evidence allows us to identify it."
+      }
+    },
+    "de": {
+      "eyebrow": "DIE WIRTSCHAFT DER NAMEN",
+      "title": "Wer schafft Wert, und wer erhält ihn?",
+      "lead": "Eine Domain registrieren, eine Endung betreiben und eine neue beantragen: Das sind unterschiedliche wirtschaftliche Tätigkeiten. Zahlungen, Verträge und Erwartungen helfen, sie zu verstehen.",
+      "intro": [
+        "Ein Name kann wiederkehrende Erlöse schaffen, zu den öffentlichen Einnahmen eines Gebiets beitragen oder schon vor seiner Nutzung Investitionen anziehen. Seine Bedeutung spielt dabei ebenso eine Rolle wie die Regeln seiner Vergabe und die Organisation, die ihn betreibt.",
+        "Diese Einführung verbindet die wesentlichen Mechanismen. In den Vertiefungen finden sich die Ranglisten, alle acht Fallstudien, die Strategien der Antragsteller und die Analysen der Runde 2026 mit ihren Daten und Quellen. Jeder Teil lässt sich unabhängig lesen."
+      ],
+      "flow": {
+        "title": "Wer bezahlt wen?",
+        "lead": "Der Preis für eine Domainregistrierung ist Teil einer Wertschöpfungskette. Bei generischen Domains gehören die Beziehungen zu ICANN zum vertraglichen Rahmen; für Länderendungen können andere Strukturen gelten.",
+        "steps": [
+          {
+            "title": "Der Inhaber registriert den Namen",
+            "body": "Eine Person oder Organisation wählt einen Namen und bezahlt die Registrierung oder Verlängerung zu den Bedingungen des Anbieters. Auf dieser Ebene wird die Domain Teil der alltäglichen Nutzung."
+          },
+          {
+            "title": "Der Registrar bietet den Dienst an",
+            "body": "Der Registrar stellt den Registrierungskanal für die Öffentlichkeit bereit und übermittelt Vorgänge an die Registry. Der Kundenpreis und die Gebühr der Registry gehören zu unterschiedlichen Ebenen."
+          },
+          {
+            "title": "Die Registry betreibt die Endung",
+            "body": "Der Registry-Betreiber führt die Datenbank der TLD und legt im geltenden Rahmen sein Geschäftsmodell und seine Regeln fest. Registrierungen und Verlängerungen können ein wiederkehrendes Geschäft tragen."
+          }
+        ],
+        "linkLabel": "Die Abläufe der Domainregistrierung verstehen"
+      },
+      "stories": {
+        "title": "Drei Fälle zur Orientierung",
+        "lead": "Öffentliche Einnahmen, Unternehmensergebnisse und Auktionspreise zeigen drei unterschiedliche Wege, auf denen ein Name Wert schaffen oder einen Wert erhalten kann.",
+        "items": [
+          {
+            "id": "ai",
+            "name": ".ai",
+            "title": "Ein Name im öffentlichen Haushalt",
+            "body": ".ai ist die Länderendung von Anguilla. Die Verbindung mit künstlicher Intelligenz hat diesen beiden Buchstaben eine weltweite wirtschaftliche Bedeutung gegeben. Die Fallstudie verfolgt öffentliche Einnahmen aus Registrierungen und unterscheidet tatsächliche Beträge, Prognosen und Budgetansätze. So lässt sich der Zusammenhang zwischen der Nachfrage nach Namen und den öffentlichen Finanzen eines Gebiets untersuchen.",
+            "linkLabel": "Den Fall .ai lesen"
+          },
+          {
+            "id": "comnet",
+            "name": ".com / .net",
+            "title": "Der Wert der Verlängerungen",
+            "body": "Verisign, Betreiber von .com und .net, veranschaulicht ein Geschäft mit Registrierungen und Verlängerungen. Die Fallstudie verbindet den Domainbestand, die Grosshandelsgebühr und die Unternehmensergebnisse, hält die Kennzahlen aber auseinander. Die ausgewiesenen Umsätze beziehen sich auf das Unternehmen. Sie allein .com zuzurechnen, würde die Aussage der Zahl verändern.",
+            "linkLabel": "Den Fall .com und .net lesen"
+          },
+          {
+            "id": "auctions",
+            "name": ".web",
+            "title": "Was sind Erwartungen wert?",
+            "body": "Der Fall .web zeigt zusammen mit .shop und .app, welche Bedeutung der Wettbewerb um dieselbe Zeichenfolge haben kann. Ein Auktionspreis bezieht sich auf dieses Verfahren und auf die Erwartungen der Antragsteller. Für die Beurteilung späterer wirtschaftlicher Ergebnisse braucht es weitere Belege: Der Preis allein sagt weder die Zahl künftiger Registrierungen noch die Erlöse der Registry voraus.",
+            "linkLabel": "Den Fall der Auktionen lesen"
+          }
+        ]
+      },
+      "reading": {
+        "title": "Bevor zwei Zahlen verglichen werden",
+        "body": [
+          "Prüfe, was sie messen, auf welchen Zeitraum sie sich beziehen und welche Quelle sie belegt. Umsatz, Kaufpreis eines Unternehmens und Budgetprognose beantworten unterschiedliche Fragen. Auch die Währung und der Umfang der erfassten Organisation zählen.",
+          "Registrierungen beschreiben einen Bestand an Namen; die Präsenz auf Websites erfasst eine andere Nutzung. Anträge beschreiben hingegen Absichten und Strategien. Keine dieser Kennzahlen allein belegt, dass eine Endung künftig rentabel sein wird."
+        ]
+      },
+      "pathways": {
+        "title": "Wähle eine Frage zur Vertiefung",
+        "lead": "Diese vier Wege erschliessen das vollständige Dossier. Du kannst eine Zahl nachschlagen, einen Fall verfolgen oder nachlesen, wie sich Strategien im Lauf der Zeit ändern.",
+        "items": [
+          {
+            "slug": "market",
+            "title": "Verbreitung und Anteile der TLDs",
+            "body": "Welche Endungen begegnen uns auf Websites, und welche enthalten mehr Domains? Erkunde beide vollständigen Ranglisten und ihre Filter sowie Einführungsgruppen, Daten, Quellen und herunterladbare Datensätze.",
+            "linkLabel": "Die Ranglisten erkunden"
+          },
+          {
+            "slug": "cases",
+            "title": "Wirtschaftliche Fallstudien",
+            "body": "Acht Fälle verbinden Mechanismen mit dokumentierten Ergebnissen: öffentliche Einnahmen, Verträge, Übernahmen, Verlängerungen, Regulierung, Auktionen, historische Rückzüge und Einstiegskosten. Jede Zahl behält ihren Zeitraum, ihre Einheit und ihre Quelle.",
+            "linkLabel": "Alle Fallstudien lesen"
+          },
+          {
+            "slug": "portfolios",
+            "title": "Portfolios und konkurrierende Anträge",
+            "body": "Verfolge die Strategien von Antragstellern mit vielen Bewerbungen und den Wettbewerb um dieselben Wörter. Die Vergleiche zwischen den Runden sowie die Fälle Aruba und Intercap zeigen, was jeweils gezählt wird.",
+            "linkLabel": "Die Strategien untersuchen"
+          },
+          {
+            "slug": "round-2026",
+            "title": "Wirtschaftliche Aspekte der Runde 2026",
+            "body": "Antragskosten, Themen der Zeichenfolgen, Tätigkeiten der Antragsteller und Markenstrategien. Wirtschaftliche Zyklen und historische Rekonstruktionen helfen, Erwartungen einzuordnen; die Grenzen der jeweiligen Analyse bleiben sichtbar.",
+            "linkLabel": "Die Runde 2026 vertiefen"
+          }
+        ]
+      },
+      "closing": {
+        "title": "Wert braucht einen Kontext",
+        "body": "Die Wirtschaft der Domains entsteht im Zusammenspiel von Infrastruktur, Regeln und Bedeutungen. Entscheidend ist, welcher Mechanismus für wen Wert schafft und anhand welcher Belege sich dies erkennen lässt."
+      }
+    },
+    "fr": {
+      "eyebrow": "L’ÉCONOMIE DES NOMS",
+      "title": "Qui crée la valeur, et qui la reçoit ?",
+      "lead": "Enregistrer un domaine, exploiter une extension et en demander une nouvelle sont des activités économiques différentes. Pour les comprendre, suivez les paiements, les contrats et les attentes.",
+      "intro": [
+        "Un nom peut générer des revenus récurrents, contribuer aux finances publiques d’un territoire ou attirer des investissements avant même d’être utilisé. Son sens compte, tout comme les règles de son attribution et l’organisation qui l’exploite.",
+        "Cette introduction relie les principaux mécanismes. Les approfondissements présentent les classements, les huit études de cas complètes, les stratégies des candidats et les analyses du round 2026, avec leurs données et leurs sources. Chaque parcours peut se lire indépendamment."
+      ],
+      "flow": {
+        "title": "Qui paie qui ?",
+        "lead": "Le prix payé pour enregistrer un domaine s’inscrit dans une chaîne. Pour les domaines génériques, les relations avec l’ICANN font partie du cadre contractuel ; les domaines territoriaux peuvent relever d’autres modèles.",
+        "steps": [
+          {
+            "title": "Le titulaire enregistre le nom",
+            "body": "Une personne ou une organisation choisit un nom et paie son enregistrement ou son renouvellement selon les conditions du service. C’est à ce niveau que le domaine entre dans les usages quotidiens."
+          },
+          {
+            "title": "Le bureau d’enregistrement fournit le service",
+            "body": "Le bureau d’enregistrement propose le service au public et transmet les opérations au registre. Le prix offert au client et le tarif appliqué par le registre correspondent à des niveaux différents."
+          },
+          {
+            "title": "Le registre exploite l’extension",
+            "body": "L’opérateur du registre tient la base de données du TLD et définit son modèle commercial et ses règles dans le cadre applicable. Les enregistrements et renouvellements peuvent alimenter une activité récurrente."
+          }
+        ],
+        "linkLabel": "Comprendre la chaîne d’enregistrement des domaines"
+      },
+      "stories": {
+        "title": "Trois cas pour se repérer",
+        "lead": "Recettes publiques, résultats d’une entreprise et prix d’adjudication montrent trois façons différentes de produire de la valeur ou d’en attribuer une à un nom.",
+        "items": [
+          {
+            "id": "ai",
+            "name": ".ai",
+            "title": "Un nom dans les finances d’un territoire",
+            "body": ".ai est le domaine territorial d’Anguilla. Son association avec l’intelligence artificielle a donné à ces deux lettres un sens commercial mondial. Le cas suit les recettes publiques liées aux enregistrements et distingue montants effectifs, projections et prévisions budgétaires. Il permet ainsi d’étudier le rapport entre la demande de noms et les finances publiques d’un territoire.",
+            "linkLabel": "Lire le cas .ai"
+          },
+          {
+            "id": "comnet",
+            "name": ".com / .net",
+            "title": "La valeur des renouvellements",
+            "body": "Verisign, opérateur de .com et .net, illustre une activité fondée sur les enregistrements et les renouvellements. Le cas rapproche le nombre de domaines, le tarif de gros et les résultats de l’entreprise, en distinguant chaque mesure. Les revenus déclarés concernent l’entreprise : les attribuer au seul .com changerait le sens du chiffre.",
+            "linkLabel": "Lire le cas .com et .net"
+          },
+          {
+            "id": "auctions",
+            "name": ".web",
+            "title": "Que valent les attentes ?",
+            "body": "Le cas .web, avec .shop et .app, montre le rôle de la concurrence pour une même chaîne de caractères. Le prix obtenu aux enchères concerne cette procédure et les attentes des candidats. Pour apprécier les résultats économiques ultérieurs, il faut d’autres éléments : ce prix seul n’indique ni combien de domaines seront enregistrés ni quels revenus le registre produira.",
+            "linkLabel": "Lire le cas des enchères"
+          }
+        ]
+      },
+      "reading": {
+        "title": "Avant de comparer deux chiffres",
+        "body": [
+          "Vérifiez ce qu’ils mesurent, la période concernée et la source qui les documente. Un revenu, un prix d’acquisition et une prévision budgétaire répondent à des questions différentes. La devise et le périmètre de l’organisation comptent aussi.",
+          "Les enregistrements décrivent un ensemble de noms ; la présence sur les sites observe un autre usage. Les candidatures traduisent des intentions et des stratégies. Aucune de ces mesures ne suffit, à elle seule, à démontrer la rentabilité future d’une extension."
+        ]
+      },
+      "pathways": {
+        "title": "Choisissez une question à approfondir",
+        "lead": "Ces quatre parcours donnent accès au dossier complet. Consultez un chiffre, suivez un cas ou découvrez comment les stratégies évoluent au fil du temps.",
+        "items": [
+          {
+            "slug": "market",
+            "title": "Diffusion et parts des TLD",
+            "body": "Quelles extensions rencontre-t-on sur les sites, et lesquelles contiennent le plus de domaines ? Explorez les deux classements complets, leurs filtres, groupes d’introduction, dates, sources et données téléchargeables.",
+            "linkLabel": "Explorer les classements"
+          },
+          {
+            "slug": "cases",
+            "title": "Études de cas économiques",
+            "body": "Huit cas relient les mécanismes aux résultats documentés : recettes publiques, contrats, acquisitions, renouvellements, réglementation, enchères, retraits historiques et coûts d’entrée. Chaque chiffre conserve sa période, son unité et sa source.",
+            "linkLabel": "Lire toutes les études de cas"
+          },
+          {
+            "slug": "portfolios",
+            "title": "Portefeuilles et candidatures concurrentes",
+            "body": "Suivez les stratégies des candidats qui déposent de nombreuses demandes et la concurrence pour les mêmes mots. Les comparaisons entre rounds et les cas Aruba et Intercap précisent ce qui est compté.",
+            "linkLabel": "Examiner les stratégies"
+          },
+          {
+            "slug": "round-2026",
+            "title": "L’économie du round 2026",
+            "body": "Coûts de candidature, thèmes des chaînes, activités des candidats et stratégies des marques. Cycles économiques et reconstructions historiques éclairent les attentes, avec les limites propres à chaque analyse.",
+            "linkLabel": "Approfondir le round 2026"
+          }
+        ]
+      },
+      "closing": {
+        "title": "La valeur a un contexte",
+        "body": "L’économie des domaines se construit à la rencontre des infrastructures, des règles et des significations. Quels mécanismes produisent cette valeur, pour qui, et quelles preuves permettent de l’identifier ?"
+      }
+    }
+  }
+}

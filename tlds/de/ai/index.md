@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/de/ai/ | Site edition: 0.7.106 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/de/ai/ | Site edition: 0.7.107 | Language: de -->
 
 Domainprofil
 
@@ -48,7 +48,7 @@ Souveräne digitale Rente
 
 **EC$219.2M** Domainregistrierungs-Einnahmen · Projektion · 2025
 
-[Wirtschaftsfall öffnen →](https://robertbregy.github.io/Connecting-the-Dots/guides/de/economics/#econ-case-ai)
+[Wirtschaftsfall öffnen →](https://robertbregy.github.io/Connecting-the-Dots/economics/de/cases/#econ-case-ai)
 
 ## FAKT Ereignisverlauf
 
@@ -156,6 +156,6 @@ Nicht angegeben
 
 [Offizieller IANA-Datensatz ↗](https://www.iana.org/domains/root/db/ai.html) [Quelle 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Quelle 3 ↗](https://registry.ai/)
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.106 · 9. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.107 · 9. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

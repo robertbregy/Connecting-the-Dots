@@ -4,6 +4,8 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const {parseHTML}=require('linkedom');
 const {execFileSync}=require('node:child_process');
 const {outsideHome,assertHomeStructure,assertRetainedHomeSources}=require('./home_editorial_qa.cjs');
+const {validatePreservation}=require('./validate_economics_order.cjs');
+const {canonicalLink}=require('./render_economics_hub.cjs');
 const ROOT=path.resolve(__dirname,'..');
 const baseline=process.env.CTD_NARRATIVE_BASELINE||'/tmp/narrative-baseline';
 const base=process.env.CTD_TEST_BASE||'http://127.0.0.1:8128/';
@@ -12,32 +14,57 @@ const report={baseline:'2038d07df9c491a0fa30e8ff2a9a8da32494b406',sourceCommit:p
 const read=(root,file)=>fs.readFileSync(path.join(root,file),'utf8');
 const dom=(root,file)=>parseHTML(read(root,file)).document;
 const sha=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
-// QA106 changes only the opening and grouping of its optional lessons.
-// Preserve the historical comparison everywhere outside that same home scope.
-const texts=d=>[...d.querySelectorAll('[data-i18n]')].filter(outsideHome).map(n=>[n.dataset.i18n,n.textContent]).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b)));
+// QA107 moves the complete Economics evidence into four localized documents.
+// Their exact copy and source context pass validatePreservation before this
+// baseline comparison checks every translation occurrence left in the native UI.
+const texts=(d,excluded=new Set())=>[...d.querySelectorAll('[data-i18n]')].filter(n=>outsideHome(n)&&!excluded.has(n)).map(n=>[n.dataset.i18n,n.textContent]).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b)));
 const essential=['atlas-entry','proposal','principles','proposal-conditions','historical-context'];
 const locales=['it','en','de','fr'];
 function files(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?files(path.join(dir,e.name)):[path.join(dir,e.name)]);}
+function assignedNodes(document,blocks){
+ const nodes=new Set(),scope=document.getElementById('economics');
+ assert.ok(scope,'Economics source section is missing');
+ for(const block of blocks){
+  const matches=scope.querySelectorAll(block.selector);
+  assert.equal(matches.length,1,'Expected one preserved Economics source block: '+block.selector);
+  const node=matches[0],excluded=(block.sourceExcludeSelectors||[]).flatMap(selector=>[...node.querySelectorAll(selector)]);
+  for(const child of [node,...node.querySelectorAll('*')])if(!excluded.some(parent=>parent===child||parent.contains(child)))nodes.add(child);
+ }
+ return nodes;
+}
 function staticChecks(){
+ report.economicsPreservation=validatePreservation();
+ const economicsInventory=JSON.parse(read(ROOT,'data/economics-preservation.json'));
  for(const file of ['index.html',...locales.map(l=>l+'/index.html')]){
   const before=dom(baseline,file),after=dom(ROOT,file);
-  assertHomeStructure(after,file==='index.html'?'en':file.split('/')[0]);
+  const lang=file==='index.html'?'en':file.split('/')[0],nativePath=file.replace(/index\.html$/,''),migration=economicsInventory.locales[lang];
+  const moved=assignedNodes(before,migration.blocks.filter(block=>block.destination!=='hub'));
+  const replacedNavigation=assignedNodes(before,migration.replacedNavigation);
+  const economicsDocuments=['market','cases','portfolios','round-2026'].map(slug=>{
+   const pagePath='economics/'+lang+'/'+slug+'/',document=dom(ROOT,pagePath+'index.html');
+   const ids=[...document.querySelectorAll('[id]')].map(node=>node.id);
+   assert.equal(new Set(ids).size,ids.length,'Duplicate fragment in Economics chapter: '+pagePath);
+   return {document,pagePath,slug};
+  });
+  const roundDocument=economicsDocuments.find(entry=>entry.slug==='round-2026').document;
+  const linkSignature=(href,pagePath)=>canonicalLink(href,{lang,pagePath,anchors:migration.anchors});
+  assertHomeStructure(after,lang);
   assertRetainedHomeSources(before,after,file);
-  assert.deepEqual(texts(after),texts(before),'Published translated copy changed: '+file);
+  assert.deepEqual(texts(after),texts(before,moved),'Published native translated copy changed: '+file);
   const ids=[...before.querySelectorAll('[id]')].map(n=>n.id),newIds=[...after.querySelectorAll('[id]')].map(n=>n.id);
   for(const id of ids)assert.ok(after.getElementById(id),'Original fragment missing: '+id);
   assert.equal(new Set(newIds).size,newIds.length,'Duplicate fragment');
-  const remaining=[...after.querySelectorAll('a[href]')].filter(outsideHome).map(a=>a.getAttribute('href'));
-  for(const a of [...before.querySelectorAll('a[href]')].filter(outsideHome)){const href=a.getAttribute('href'),i=remaining.indexOf(href);assert.ok(i>=0,'Original link missing: '+href);remaining.splice(i,1);}
+  const remaining=[{document:after,pagePath:nativePath},...economicsDocuments].flatMap(({document,pagePath})=>[...document.querySelectorAll('a[href]')].filter(outsideHome).map(a=>linkSignature(a.getAttribute('href'),pagePath)));
+  for(const a of [...before.querySelectorAll('a[href]')].filter(a=>outsideHome(a)&&!replacedNavigation.has(a))){const href=linkSignature(a.getAttribute('href'),nativePath),i=remaining.indexOf(href);assert.ok(i>=0,'Original link missing: '+href);remaining.splice(i,1);}
   let untouched=0;
   for(const section of before.querySelectorAll('section.section'))if(!['overview','explore','economics','lugano'].includes(section.id)){
    assert.equal(after.getElementById(section.id).outerHTML,section.outerHTML,'Unrelated chapter changed: '+section.id);untouched++;
   }
-  for(const key of essential){const n=after.querySelector('[data-narrative-essential="'+key+'"]');assert.ok(n,key);assert.equal(n.closest('details'),null,key+' is still collapsed');}
+  for(const key of essential){const document=key==='historical-context'?roundDocument:after,n=document.querySelector('[data-narrative-essential="'+key+'"]');assert.ok(n,key);assert.equal(n.closest('details'),null,key+' is still collapsed');}
   assert.equal(after.querySelector('#aps-native').closest('details'),null);
   assert.equal(after.querySelectorAll('.audienceAtlasPanel,.audienceAtlasLink').length,0);
-  assert.ok(!after.querySelector('.historicalEconomy').hasAttribute('open'));
-  assert.ok(after.querySelector('.historicalEconomy > .note'));
+  assert.ok(!roundDocument.querySelector('.historicalEconomy').hasAttribute('open'));
+  assert.ok(roundDocument.querySelector('.historicalEconomy > .note'));
   assert.equal(after.querySelectorAll('#lugano [data-narrative-optional="roadmap"] #luganoRoadmap').length,1);
   report.static.push({file,originalTranslatedItems:texts(before).length,originalAnchors:ids.length,untouchedSections:untouched,allPriorLinksRetained:true});
  }
@@ -115,7 +142,10 @@ async function browserChecks(){
     await page.locator('#aps-native').scrollIntoViewIfNeeded();
     await page.locator('#aps-native .apsCard').first().waitFor({state:'visible',timeout:45000});
     result.scrollLoadsAtlas=true;
-    await page.goto(base+lang+'/?tab=economics#economics-comparison-guide',{waitUntil:'load'});await ready(page);
+    await page.goto(base+lang+'/?tab=economics#economics-comparison-guide',{waitUntil:'load'});
+    await page.waitForURL(url=>url.pathname.endsWith('/economics/'+lang+'/round-2026/'));
+    await page.waitForFunction(()=>document.documentElement.dataset.economicsReady==='true');
+    assert.equal(new URL(page.url()).hash,'#economics-comparison-guide','Legacy comparison fragment was lost');
     assert.ok(await page.locator('#economics-comparison-guide').isVisible());
     assert.equal(await page.locator('.historicalEconomy').getAttribute('open'),null);
     await checkPage(page,'economics');await screenshot(page,lang,width,theme,'economics');
@@ -128,10 +158,26 @@ async function browserChecks(){
   }
   for(const lang of locales){
    const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}}),page=await context.newPage();
-   try{for(const [tab,selector] of [['overview','.hero .homeHeroProject'],['lugano','.luganoHero'],['explore','#aps-native'],['economics','#economics-comparison-guide']]){
+   try{for(const [tab,selector] of [['overview','.hero .homeHeroProject'],['lugano','.luganoHero'],['explore','#aps-native'],['economics','.economicsHub']]){
     await page.goto(base+lang+'/?tab='+tab,{waitUntil:'load'});assert.ok(await page.locator(selector).isVisible(),'No-JS essential block missing');
     report.noJavaScript.push({lang,tab,visible:true});
-   }}finally{await context.close();}
+   }
+    // The original comparison remains readable in its complete chapter without
+    // JavaScript; the native legacy fragment also offers a real fallback link.
+    await page.goto(base+lang+'/?tab=economics#economics-comparison-guide',{waitUntil:'load'});
+    const fallback=page.locator('#economics-comparison-guide');
+    assert.equal(await fallback.count(),1,'No-JS legacy comparison fragment missing');
+    const link=page.locator('.economicsLegacy li').filter({has:fallback}).locator('a[href]');
+    assert.equal(await link.count(),1,'No-JS legacy comparison has no real chapter link');
+    assert.ok(new URL(await link.getAttribute('href'),page.url()).pathname.endsWith('/economics/'+lang+'/round-2026/'));
+    await link.click();
+    await page.waitForURL(url=>url.pathname.endsWith('/economics/'+lang+'/round-2026/'));
+    assert.ok(await page.locator('#economics-comparison-guide').isVisible(),'No-JS comparison guide missing from its complete chapter');
+    assert.equal(await page.locator('.historicalEconomy').getAttribute('open'),null);
+    await page.locator('.historicalEconomy > summary').focus();await page.keyboard.press('Enter');
+    assert.ok(await page.locator('#economy-sectors').isVisible(),'No-JS historical comparison cannot be opened');
+    report.noJavaScript.push({lang,tab:'economics/round-2026',visible:true,legacyFallback:true});
+   }finally{await context.close();}
   }
  }finally{await browser.close();}
 }

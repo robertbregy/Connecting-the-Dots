@@ -2587,7 +2587,8 @@
     "release07103": "New editorial design, clearer navigation and more comfortable reading on mobile. Data and sources preserved.",
     "release07104": "Keep payment restrictions within the WikiLeaks case.",
     "release07105": "Citable guides, TLD profiles and an AI-agent catalog.",
-    "release07106": "A new homepage explaining Internet names: a clear introduction, an illustrated domain and focused pathways."
+    "release07106": "A new homepage explaining Internet names: a clear introduction, an illustrated domain and focused pathways.",
+    "release07107": "Economics becomes an introduction with four complete chapters: TLD adoption, economic cases, portfolios and contention, and the 2026 round. Text, sources, rankings, filters and established links are preserved in all four languages."
   },
   "it": {
     "brand": "Brand",
@@ -5177,7 +5178,8 @@
     "release07103": "Nuova veste editoriale, navigazione più chiara e lettura più piacevole sul telefono. Dati e fonti preservati.",
     "release07104": "Pagamenti ricondotti al caso WikiLeaks.",
     "release07105": "Guide e schede TLD citabili; catalogo per agenti AI.",
-    "release07106": "Una nuova home per capire i nomi di Internet: introduzione, dominio illustrato e percorsi più chiari."
+    "release07106": "Una nuova home per capire i nomi di Internet: introduzione, dominio illustrato e percorsi più chiari.",
+    "release07107": "Economia diventa una sintesi con quattro approfondimenti completi: diffusione dei TLD, casi economici, portafogli e contese, round 2026. Conservati testi, fonti, classifiche, filtri e collegamenti storici nelle quattro lingue."
   },
   "de": {
     "brand": "Marke",
@@ -7767,7 +7769,8 @@
     "release07103": "Neues redaktionelles Design, klarere Navigation und angenehmeres Lesen auf dem Handy. Daten und Quellen erhalten.",
     "release07104": "Zahlungssperren auf den WikiLeaks-Fall begrenzt.",
     "release07105": "Zitierbare Leitfäden und TLD-Profile; Katalog für KI-Agenten.",
-    "release07106": "Eine neue Startseite erklärt Internetnamen: mit Einführung, anschaulicher Domain und klaren Themenwegen."
+    "release07106": "Eine neue Startseite erklärt Internetnamen: mit Einführung, anschaulicher Domain und klaren Themenwegen.",
+    "release07107": "Wirtschaft wird zur Einführung mit vier vollständigen Vertiefungen: Verbreitung der TLDs, wirtschaftliche Fallstudien, Portfolios und konkurrierende Anträge sowie die Runde 2026. Texte, Quellen, Ranglisten, Filter und bestehende Links bleiben in allen vier Sprachen erhalten."
   },
   "fr": {
     "brand": "Marque",
@@ -10357,6 +10360,7 @@
     "release07103": "Nouvelle présentation éditoriale, navigation plus claire et lecture plus agréable sur mobile. Données et sources conservées.",
     "release07104": "Restrictions de paiement replacées dans le cas WikiLeaks.",
     "release07105": "Guides et fiches TLD citables ; catalogue pour agents IA.",
-    "release07106": "Un nouvel accueil pour comprendre les noms d’Internet : introduction, domaine illustré et parcours plus clairs."
+    "release07106": "Un nouvel accueil pour comprendre les noms d’Internet : introduction, domaine illustré et parcours plus clairs.",
+    "release07107": "L’économie devient une introduction accompagnée de quatre approfondissements complets : diffusion des TLD, études de cas économiques, portefeuilles et candidatures concurrentes, round 2026. Textes, sources, classements, filtres et liens existants sont conservés dans les quatre langues."
   }
 }

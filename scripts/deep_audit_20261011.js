@@ -210,20 +210,38 @@ function check(ok,level,kind,where,message,extra){if(!ok)finding(level,kind,wher
      await ep.close();await ctxE.close();
    }
  }
- // Structural regression: economic cycles stay in Economics; the cemetery has its own B2 chapter.
+ // Structural regression: the cemetery remains native; Economics cycles keep
+ // their old address and resolve to the complete, independently readable page.
  for(const language of languages){
    const c=await browser.newContext({viewport:{width:390,height:812}});
    const p=await c.newPage();
    for(const tab of ['overview','social','economics','cemetery','explore','behind-round']){
      await p.goto(base+'/'+language+'/?tab='+tab,{waitUntil:'load',timeout:25000});
      const actual=await p.evaluate(()=>({active:document.querySelector('section.section.active')?.id,
-       panels:['economic-cycles-2026','gtld-cemetery'].map(id=>{
+       panels:['gtld-cemetery'].map(id=>{
          const el=document.getElementById(id),rect=el?.getBoundingClientRect();
          return {id,parent:el?.closest('section.section')?.id,visible:!!rect&&rect.width>0&&rect.height>0};
-       })}));
-     check(actual.active===tab&&actual.panels.every(x=>x.parent===(x.id==='gtld-cemetery'?'cemetery':'economics')&&x.visible===(tab===x.parent)),
-       'HIGH','ORPHAN_PANELS',language+'/'+tab,'Economics panels leaked outside their section',{actual});
+       }),cyclesAlias:{
+         inHub:!!document.querySelector('#economics[data-economics-layout="hub-v1"] .economicsLegacy #economic-cycles-2026'),
+         destination:document.getElementById('economic-cycles-2026')?.closest('[data-economics-destination]')?.getAttribute('data-economics-destination')
+       }}));
+     check(actual.active===tab&&actual.panels.every(x=>x.parent==='cemetery'&&x.visible===(tab===x.parent))&&actual.cyclesAlias.inHub&&actual.cyclesAlias.destination==='round-2026',
+       'HIGH','ORPHAN_PANELS',language+'/'+tab,'Native cemetery isolation or Economics fragment recovery changed',{actual});
    }
+   try{
+     await p.goto(base+'/'+language+'/?tab=economics#economic-cycles-2026',{waitUntil:'load',timeout:25000});
+     await p.waitForURL(url=>url.pathname==='/economics/'+language+'/round-2026/'&&url.hash==='#economic-cycles-2026',{timeout:10000});
+     await p.waitForFunction(()=>document.documentElement.dataset.economicsReady==='true',null,{timeout:10000});
+     const cycles=await p.evaluate(()=>{
+       const el=document.getElementById('economic-cycles-2026'),rect=el?.getBoundingClientRect();
+       return {language:document.documentElement.lang,page:document.body.dataset.economicsPage,
+         count:document.querySelectorAll('#economic-cycles-2026').length,
+         inMain:!!el?.closest('main .economicsDetail'),visible:!!rect&&rect.width>0&&rect.height>0,
+         text:el?.innerText?.trim().length||0};
+     });
+     check(cycles.language===language&&cycles.page==='round-2026'&&cycles.count===1&&cycles.inMain&&cycles.visible&&cycles.text>100,
+       'HIGH','ECONOMICS_LEGACY_CYCLES',language,'The old Economics cycles link must reach the complete visible analysis',{cycles,url:p.url()});
+   }catch(e){finding('HIGH','ECONOMICS_LEGACY_CYCLES',language,e.message.slice(0,300));}
    // The city-TLD story must remain a native B2 pathway, including
    // full-card pointer navigation and a sourced, still-delegated status.
    await p.goto(base+'/'+language+'/?tab=cities',{waitUntil:'load',timeout:25000});

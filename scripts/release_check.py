@@ -944,17 +944,20 @@ if discovery_manifest.get('schemaVersion')!=1 or discovery_manifest.get('siteVer
     fail('Discovery manifest must identify the current publication')
 discovery_pages=discovery_manifest.get('pages', [])
 discovery_paths=[page.get('path', '') for page in discovery_pages]
-if len(discovery_paths)!=68 or len(set(discovery_paths))!=68:
-    fail('Discovery edition must contain 68 distinct canonical documents')
+if len(discovery_paths)!=84 or len(set(discovery_paths))!=84:
+    fail('Discovery edition must preserve 68 documents and add 16 Economics documents')
+economics_paths={f'economics/{lang}/{slug}/' for lang in LANGS for slug in ('market','cases','portfolios','round-2026')}
+if {page.get('path') for page in discovery_pages if page.get('kind')=='economics'}!=economics_paths:
+    fail('Economics requires exactly four complete pages in each of the four languages')
 for page in discovery_pages:
     relative_path=page.get('path', '')
-    if not re.fullmatch(r'(guides|tlds|discovery)/(en|it|de|fr)/(?:[a-z0-9-]+/)?', relative_path):
+    if not re.fullmatch(r'(guides|tlds|discovery)/(en|it|de|fr)/(?:[a-z0-9-]+/)?|economics/(en|it|de|fr)/(market|cases|portfolios|round-2026)/', relative_path):
         fail('Invalid discovery document path: '+relative_path)
     if not (ROOT/relative_path/'index.html').is_file() or not (ROOT/page.get('markdownPath','')).is_file():
         fail('Missing HTML or Markdown discovery document: '+relative_path)
     must_index.add(site_base+relative_path)
-if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index):
-    fail('Sitemap must preserve all 43 established URLs and include all 68 discovery documents exactly once')
+if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index) or len(must_index)!=127:
+    fail('Sitemap must contain all 43 established URLs and all 84 discovery documents exactly once (127 URLs)')
 for lang in LANGS:
     page=(ROOT/lang/'index.html').read_text(encoding='utf-8')
     chronicle_page=ROOT/'inside-the-round'/lang/'index.html'

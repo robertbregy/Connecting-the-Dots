@@ -14,11 +14,13 @@ const expected={legacy:7,'2000':190,'2004':9,'2012':1409,'2026':980};
 for(const r of summary.rounds){assert.equal(r.strings,expected[r.round]);assert.ok(r.semantic_classified<=r.strings);if(r.round!=='2026')assert.equal(r.categories.brand,null);}
 for(const lang of ['en','it','de','fr']){
  const {document,Event}=parseHTML(read(lang+'/index.html'));
- for(const id of ['round-application-fees','tld-cultural-trajectory','tld-cultural-patterns','tld-cultural-home','tld-cultural-social'])assert.equal(document.querySelectorAll('#'+id).length,1,lang+' unique '+id);
+ const feesDocument=parseHTML(read('economics/'+lang+'/round-2026/index.html')).document;
+ assert.equal(feesDocument.querySelectorAll('#round-application-fees').length,1,lang+' unique round-application-fees');
+ for(const id of ['tld-cultural-trajectory','tld-cultural-patterns','tld-cultural-home','tld-cultural-social'])assert.equal(document.querySelectorAll('#'+id).length,1,lang+' unique '+id);
  assert.equal(document.querySelectorAll('[data-cultural-stage]').length,8);
  assert.equal(document.querySelectorAll('#cultural-sensitivity-v2').length,1);
- assert.equal(document.querySelectorAll('[data-fee-round]').length,4);
- assert.ok(document.querySelector('[data-fee-round="2026"]').textContent.includes(fees.locales[lang].unknown));
+ assert.equal(feesDocument.querySelectorAll('[data-fee-round]').length,4);
+ assert.ok(feesDocument.querySelector('[data-fee-round="2026"]').textContent.includes(fees.locales[lang].unknown));
  const script=document.querySelector('script[src*="assets/tld-cultural.js"]');assert.ok(script);assert.equal(script.getAttribute('src'),'../assets/tld-cultural.js?v='+JSON.parse(read('publication.json')).version);
  const payload=JSON.parse(document.getElementById('tld-cultural-data').textContent);
  assert.equal(payload.records.length,summary.counts.strings);

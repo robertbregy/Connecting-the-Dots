@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/ | Site edition: 0.7.106 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/ | Site edition: 0.7.107 | Language: en -->
 
 Guide
 
@@ -242,7 +242,7 @@ TLDs are not a complete mirror of society. They show who was able to request a n
 
 Each stage separates documented facts from interpretation; the selected examples are not a census. The reproducible census below includes every string from the sources collected for this project and applies the same present-day classification vocabulary across the different rounds. Semantic assignment is incomplete: names without a category remain in the corpus, and counts depend on rule coverage. This reading does not automatically reconstruct each name's historical meaning or represent the full range of online identities. Application, delegation and public availability are distinct events; the counts do not measure use or adoption.
 
-[Compare adoption →](https://robertbregy.github.io/Connecting-the-Dots/guides/en/economics/#tld-market-reach) [Explore the patterns →](https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/#tld-cultural-patterns) [Compare application fees →](https://robertbregy.github.io/Connecting-the-Dots/guides/en/economics/#round-application-fees)
+[Compare adoption →](https://robertbregy.github.io/Connecting-the-Dots/economics/en/market/#tld-market-reach) [Explore the patterns →](https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/#tld-cultural-patterns) [Compare application fees →](https://robertbregy.github.io/Connecting-the-Dots/economics/en/round-2026/#round-application-fees)
 
 Editorial review · 19 October 2026
 
@@ -459,6 +459,6 @@ Dated local corpora, not a universal list of every name ever proposed. The 2026 
 
 Editorial review · 19 October 2026
 
-**By Robert Bregy** · Site edition 0.7.106 · November 9, 2026
+**By Robert Bregy** · Site edition 0.7.107 · November 9, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

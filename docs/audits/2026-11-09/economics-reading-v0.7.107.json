@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "reviewId": "economics-reading-2026-11-09-v0.7.107",
+  "publicationVersion": "0.7.107",
+  "reviewedOn": "2026-11-09",
+  "baseMain": "4c7ddb62c7601f6971815aef17b7dce0f5f01e73",
+  "canonicalBuild": {
+    "runId": 42699190181,
+    "sourceHead": "daf8ed1a964991df645d79b9943f82bcf9fdac9f",
+    "generatedCommit": "b51ae738175e3ee73fd8c5da54d4024246b76d16",
+    "conclusion": "success",
+    "url": "https://github.com/robertbregy/Connecting-the-Dots/actions/runs/42699190181",
+    "reproducibleArchiveStep": "success"
+  },
+  "humanParticipants": 0,
+  "reviewType": "AI-assisted source, localization and exact generated-file review; independent preservation and routing review.",
+  "browserAcceptance": "Separate required CI gates; not attested by this static evidence.",
+  "independentRoutingReview": {
+    "reportedRouteCases": 1908,
+    "rootAliasVariants": 6,
+    "originalLanguageNormalizerSequences": 10
+  },
+  "sourceInventory": "data/economics-preservation.json",
+  "scopeDocument": "docs/economics-reading-v0.7.107.md",
+  "browserSetupCorrection": {
+    "source": "scripts/home_editorial_qa.cjs",
+    "scope": "Prepare the no-JavaScript homepage link once with instant scrolling, require three stable in-viewport geometry samples, then retain the ordinary Playwright click and all destination assertions.",
+    "reason": "The preceding candidate passed all 24 JavaScript scenarios but two of eight no-JavaScript scenarios timed out before navigation while the pointer target was scrolling.",
+    "acceptance": "A completed browser rerun on the final candidate remains required before merge."
+  },
+  "staticReviewPassed": true,
+  "economics": {
+    "languages": 4,
+    "blocks": 44,
+    "originalFragmentsPerLanguage": 53,
+    "tablesPerLanguage": 7,
+    "metricsPerLanguage": 22,
+    "linksChecked": 360,
+    "nativePages": 5,
+    "detailPages": 16,
+    "modelsPerLanguage": 8,
+    "casesPerLanguage": 8,
+    "hubWords": [
+      {
+        "file": "index.html",
+        "words": 834
+      },
+      {
+        "file": "it/index.html",
+        "words": 865
+      },
+      {
+        "file": "en/index.html",
+        "words": 834
+      },
+      {
+        "file": "de/index.html",
+        "words": 820
+      },
+      {
+        "file": "fr/index.html",
+        "words": 897
+      }
+    ]
+  },
+  "independentlyComparedBaselineBlocks": 44,
+  "socialAndMeowUnchanged": true,
+  "sourceCommit": "fca7fc66fe133411f60250d5513a7b62339f571f",
+  "protectedSourceSections": 21,
+  "pages": [
+    {
+      "file": "index.html",
+      "language": "en",
+      "retainedPublishedFragments": 541,
+      "retainedHomeFragments": 45,
+      "unchangedTutorials": 2,
+      "unchangedChaptersExceptTechnicalMetadata": 29,
+      "preservedHistoricalReleaseNotes": 100
+    },
+    {
+      "file": "it/index.html",
+      "language": "it",
+      "retainedPublishedFragments": 541,
+      "retainedHomeFragments": 45,
+      "unchangedTutorials": 2,
+      "unchangedChaptersExceptTechnicalMetadata": 29,
+      "preservedHistoricalReleaseNotes": 100
+    },
+    {
+      "file": "en/index.html",
+      "language": "en",
+      "retainedPublishedFragments": 541,
+      "retainedHomeFragments": 45,
+      "unchangedTutorials": 2,
+      "unchangedChaptersExceptTechnicalMetadata": 29,
+      "preservedHistoricalReleaseNotes": 100
+    },
+    {
+      "file": "de/index.html",
+      "language": "de",
+      "retainedPublishedFragments": 541,
+      "retainedHomeFragments": 45,
+      "unchangedTutorials": 2,
+      "unchangedChaptersExceptTechnicalMetadata": 29,
+      "preservedHistoricalReleaseNotes": 100
+    },
+    {
+      "file": "fr/index.html",
+      "language": "fr",
+      "retainedPublishedFragments": 541,
+      "retainedHomeFragments": 45,
+      "unchangedTutorials": 2,
+      "unchangedChaptersExceptTechnicalMetadata": 29,
+      "preservedHistoricalReleaseNotes": 100
+    }
+  ],
+  "unchangedExistingDictionaries": 4,
+  "verifiedFrozenArchives": 31,
+  "verifiedImmutableFiles": 28,
+  "currentArchiveSHA256": "8bccd455d267abf07a78aa4d6fa7e2d4482ad95ac9d7318fcaaa1a64861461c7",
+  "sourceFilesCompared": 36,
+  "generatedTree": "8ac8ce8f36deaa397bdcc36b30d92b79029f4328"
+}

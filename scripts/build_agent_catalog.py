@@ -376,7 +376,7 @@ def render_llms(catalog: dict) -> str:
     # One locale keeps this entry point compact; the linked manifest exposes the
     # corresponding IT/DE/FR pages without expanding all content into llms.txt.
     for page in catalog["pages"]:
-        if page["language"] != "en" or page["kind"] not in ("guide", "tld"):
+        if page["language"] != "en" or page["kind"] not in ("guide", "tld", "economics"):
             continue
         target = page.get("markdown", {}).get("url", page["url"])
         lines.append(f"- [{markdown_label(page['title'])}]({target}): {markdown_label(page['description'])}")

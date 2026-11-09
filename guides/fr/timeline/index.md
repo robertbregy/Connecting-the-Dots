@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/fr/timeline/ | Site edition: 0.7.106 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/fr/timeline/ | Site edition: 0.7.107 | Language: fr -->
 
 Guide
 
@@ -242,7 +242,7 @@ Les TLD ne sont pas un miroir complet de la société. Ils montrent qui a pu dem
 
 Chaque étape sépare faits documentés et interprétation ; les exemples choisis ne constituent pas un recensement. Le recensement reproductible ci-dessous comprend tous les noms des sources rassemblées pour ce projet et applique le même vocabulaire de classification actuel aux différentes vagues. L'attribution sémantique reste incomplète : les noms sans catégorie restent dans le corpus et les décomptes dépendent de la couverture des règles. Cette lecture ne reconstitue pas automatiquement le sens historique de chaque nom et ne représente pas toute la diversité des identités en ligne. Candidature, délégation et ouverture au public sont distinctes ; les décomptes ne mesurent ni l'usage ni l'adoption.
 
-[Comparer la diffusion →](https://robertbregy.github.io/Connecting-the-Dots/guides/fr/economics/#tld-market-reach) [Explorer les tendances →](https://robertbregy.github.io/Connecting-the-Dots/guides/fr/timeline/#tld-cultural-patterns) [Comparer les frais →](https://robertbregy.github.io/Connecting-the-Dots/guides/fr/economics/#round-application-fees)
+[Comparer la diffusion →](https://robertbregy.github.io/Connecting-the-Dots/economics/fr/market/#tld-market-reach) [Explorer les tendances →](https://robertbregy.github.io/Connecting-the-Dots/guides/fr/timeline/#tld-cultural-patterns) [Comparer les frais →](https://robertbregy.github.io/Connecting-the-Dots/economics/fr/round-2026/#round-application-fees)
 
 Révision éditoriale · 19 octobre 2026
 
@@ -459,6 +459,6 @@ Corpus locaux datés, et non liste universelle de tous les noms jamais proposés
 
 Révision éditoriale · 19 octobre 2026
 
-**Par Robert Bregy** · Édition du site 0.7.106 · 9 novembre 2026
+**Par Robert Bregy** · Édition du site 0.7.107 · 9 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.

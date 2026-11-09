@@ -41,14 +41,20 @@ const oldCemeteryLinks=[["economics","gtld-cemetery"],["economics","helsinki-ter
     }
     for(const [section,anchor] of extras){
       const uri=BASE+lang+"/?tab="+section+"#"+anchor;
+      const economicsDestination=section==='economics'&&anchor==='economic-cycles-2026'?'round-2026':null;
+      const expectedPath=new URL(economicsDestination?'economics/'+lang+'/'+economicsDestination+'/':lang+'/',BASE).pathname;
       report.total++;
       try{
        const r=await page.goto(uri,{waitUntil:"load",timeout:25000});
        // Playwright returns null when only the fragment changes within a
         // previously loaded document. That is a valid same-document navigation.
         if(r)assert.equal(r.status(),200,"HTTP");
-        else assert.equal(new URL(page.url()).pathname,"/"+lang+"/","same-document URL escaped locale");
-       await page.locator("#"+section+".section.active").waitFor({state:"visible",timeout:5000});
+        else assert.equal(new URL(page.url()).pathname,expectedPath,"same-document URL escaped destination");
+       if(economicsDestination){
+        await page.waitForURL(url=>url.pathname===expectedPath&&url.hash==='#'+anchor);
+        await page.locator('#'+anchor).waitFor({state:'visible',timeout:5000});
+        assert.equal(await page.locator('html').getAttribute('lang'),lang,'Economics redirect changed language');
+       }else await page.locator("#"+section+".section.active").waitFor({state:"visible",timeout:5000});
        const target=await page.locator("#"+anchor).count();
        assert.equal(target,1,"missing historical fragment");
        if(restoredFragments.some(([,id])=>id===anchor)){
