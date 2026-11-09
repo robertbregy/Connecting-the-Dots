@@ -1,6 +1,6 @@
 {
   "staticReviewPassed": true,
-  "sourceCommit": "f34ffb0a4b4086eb747745629e86883410cfe15b",
+  "sourceCommit": "d0cb94045be8010054955566163f5eea0d369c0e",
   "protectedSourceSections": 21,
   "pages": [
     {
@@ -60,11 +60,11 @@
   "reviewType": "AI-assisted source, localization and exact generated-file review; no human study",
   "humanParticipants": 0,
   "canonicalBuild": {
-    "runId": 42650172801,
-    "jobId": 129275299984,
-    "sourceHead": "c60334311842fb3f27ad2a813bb87fdf0c665622",
-    "generatedCommit": "1b335231a8c56a345310056c659e59c974d628fa",
-    "url": "https://github.com/robertbregy/Connecting-the-Dots/actions/runs/42650172801",
+    "runId": 42652822195,
+    "jobId": 129283421999,
+    "sourceHead": "fe83fe6b81dade974abc4321359072d3ac75a400",
+    "generatedCommit": "2fafe3686f52853407d066821599ebed64f69a4e",
+    "url": "https://github.com/robertbregy/Connecting-the-Dots/actions/runs/42652822195",
     "conclusion": "success",
     "deterministicCurrentArchive": true,
     "deterministicResearchRender": true
@@ -105,7 +105,8 @@
     "Source-linked DNS origins and the three retained story destinations",
     "Six existing pathways, dated round context and project/method section",
     "Unchanged tutorial bodies in native disclosures, preserved old URLs",
-    "Only obsolete homepage QA layout contracts updated; all original archive guards and seven required PR checks retained"
+    "Only obsolete homepage QA layout contracts updated; all original archive guards and seven required PR checks retained",
+    "Explicit fragment destinations for both hero links and six pathways; each no-JavaScript scenario now verifies all eight link destinations, viewport arrival and actual scrolling"
   ],
   "acceptanceScope": "Static source and generated-file review only. Browser scenarios, all seven PR gates, actual Pages deployment and live-byte verification are required separately before completion.",
   "archiveReview": {
@@ -117,5 +118,19 @@
     ],
     "removedMembers": [],
     "currentBytes": 4354867
+  },
+  "visualReview": {
+    "reviewType": "AI-assisted visual inspection of actual CI browser screenshots",
+    "runId": 42651708609,
+    "artifactId": 13690782126,
+    "candidateHead": "52561d80e7ce9fa37624189df78f45099b6ce99b",
+    "inspectedScreenshots": [
+      "home-1440-light.png",
+      "home-1440-dark.png",
+      "home-390-light.png",
+      "home-320-dark.png"
+    ],
+    "observedResult": "No visible clipped content, overlap or layout break; readable introduction, diagram and pathways in the inspected views",
+    "scope": "Design and copy are unchanged in the final candidate; its fragment-navigation change requires its own browser gates"
   }
 }
