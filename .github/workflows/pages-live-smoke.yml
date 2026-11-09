@@ -153,6 +153,15 @@ jobs:
                    "data/city_namespace_editorial.json","data/audience_editorial.json",
                    "data/independent_review_materials.json","data/reader_observations_blank.csv","data/worldmap.js",current_pack,
                    str(Path(current_pack).with_suffix(".sha256"))]
+          discovery=json.loads((root/"discovery/manifest.json").read_text(encoding="utf-8"))
+          if discovery["siteVersion"]!=publication["version"]:
+              raise SystemExit("STALE DISCOVERY MANIFEST")
+          targets.extend(["discovery/manifest.json","agent-catalog.json","llms.txt","sitemap.xml"])
+          for document in discovery["pages"]:
+              for path in [document["path"]+"index.html",document["markdownPath"]]:
+                  if Path(path).is_absolute() or ".." in Path(path).parts:
+                      raise SystemExit("INVALID DISCOVERY PATH: "+path)
+                  targets.append(path)
           for lang in ("it","en","de","fr"):
               targets.extend([lang+"/index.html","applications/"+lang+"/index.html",
                               "research/reader-study/"+lang+"/index.html",

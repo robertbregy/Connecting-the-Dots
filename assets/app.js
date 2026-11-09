@@ -241,12 +241,20 @@ function feedbackUrl(row=null){
  return url.href;
 }
 function syncFeedbackLinks(){document.querySelectorAll('[data-report-error]').forEach(a=>a.href=feedbackUrl());}
+function profileReadingLink(row){
+ const key=row.asciiString.slice(1),keys=document.querySelector('meta[name="ctd-discovery-profiles"]')?.content.split(' ')||[];
+ if(!keys.includes(key))return '';
+ const root=new URL(document.documentElement.dataset.ctdRoot||'./',location.href);
+ const url=new URL(`tlds/${lang}/${key}/`,root).href;
+ const label={en:'Read the full profile',it:'Leggi la scheda completa',de:'Vollständiges Profil lesen',fr:'Lire la fiche complète'}[lang];
+ return `<a class="profileReadingPage" href="${esc(url)}">${esc(label)}</a>`;
+}
 function renderProfileActions(row){
  const actions=document.getElementById('drawerActions');if(!actions)return;
  const url=publicContextUrl(row);
  const names={en:'English',it:'Italiano',de:'Deutsch',fr:'Français'};
  const languages=validLang.map(next=>`<a href="${esc(languageUrl(next))}" data-language="${next}" lang="${next}" hreflang="${next}"${next===lang?' aria-current="page"':''}>${names[next]}</a>`).join('');
- actions.innerHTML=`<h2 class="drawerTld" id="profileTitle" tabindex="-1"><bdi>${esc(row.string)}</bdi></h2><details class="audienceRecordTools"><summary>${esc(t('audienceRecordTools'))}</summary><nav class="languageVersions profileLanguages" aria-label="${esc(t('languageVersions'))}">${languages}</nav><div class="profileActions"><button class="control" type="button" id="profileShareBtn">${esc(t('profileShare'))}</button><a class="profilePermalink" href="${esc(url)}">${esc(t('profilePermalink'))}</a><a class="profileReport" href="${esc(feedbackUrl(row))}" target="_blank" rel="noopener" aria-describedby="profileFeedbackNote">${esc(t('feedbackLink'))} ↗</a></div><p id="profileFeedbackNote" class="small">${esc(t('feedbackNote'))}</p></details><span id="profileShareStatus" class="profileShareStatus small" role="status" aria-live="polite"></span>`;
+ actions.innerHTML=`<h2 class="drawerTld" id="profileTitle" tabindex="-1"><bdi>${esc(row.string)}</bdi></h2>${profileReadingLink(row)}<details class="audienceRecordTools"><summary>${esc(t('audienceRecordTools'))}</summary><nav class="languageVersions profileLanguages" aria-label="${esc(t('languageVersions'))}">${languages}</nav><div class="profileActions"><button class="control" type="button" id="profileShareBtn">${esc(t('profileShare'))}</button><a class="profilePermalink" href="${esc(url)}">${esc(t('profilePermalink'))}</a><a class="profileReport" href="${esc(feedbackUrl(row))}" target="_blank" rel="noopener" aria-describedby="profileFeedbackNote">${esc(t('feedbackLink'))} ↗</a></div><p id="profileFeedbackNote" class="small">${esc(t('feedbackNote'))}</p></details><span id="profileShareStatus" class="profileShareStatus small" role="status" aria-live="polite"></span>`;
  document.getElementById('profileShareBtn').addEventListener('click',async()=>{
   try{
    if(navigator.share){await navigator.share({title:row.string+' · Connecting the Dots',url});return;}
