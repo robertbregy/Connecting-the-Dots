@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-11-09",
+  "publicationVersion": "0.7.105",
+  "baseMain": "c0fd93581aa17b179bdca19977e10efae18fe152",
+  "sourceCommit": "5ae093badd29b57cc2c050a8169f0a3bf4214740",
+  "scope": "Static source and generated document review; browser, CI and deployment acceptance are recorded by their actual workflow runs.",
+  "humanParticipants": 0,
+  "staticReport": {
+    "passed": true,
+    "siteVersion": "0.7.105",
+    "pages": 68,
+    "groups": 17,
+    "localLinksChecked": 3236,
+    "sourceLinks": 1324,
+    "checks": 72,
+    "errors": []
+  },
+  "preserved": {
+    "originalSourceSections": 21,
+    "historicalPackages": 29,
+    "existingTranslations": true,
+    "scientificCSVFiles": true,
+    "evidenceFiles": true,
+    "researchIdentifiers": true
+  },
+  "browserAcceptance": {
+    "required": true,
+    "statusAtSourceReview": "pending",
+    "script": "scripts/discovery_browser_qa.cjs",
+    "localLimitation": "Chromium launch is unavailable under this environment socket policy; no local browser pass is claimed."
+  },
+  "requiredPRChecks": [
+    "browser-qa",
+    "Independent four-language and Explorer audit",
+    "APS Atlas all-language interaction and mobile regression",
+    "City namespace four-language and accessibility audit",
+    "Audit corrections, mobile semantics and controlled performance",
+    "compare",
+    "focus-reflow"
+  ],
+  "externalFollowup": {
+    "hostRootRobots": "Requires control of the host-root publication; a project-directory robots.txt is not authoritative.",
+    "searchPerformance": "First-party Search Console measurements were not accessible during the audit. Indexation, clicks and AI citations are not measured by this release."
+  }
+}
