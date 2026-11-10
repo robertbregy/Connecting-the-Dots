@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/beyond/ | Site edition: 0.7.107 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/beyond/ | Site edition: 0.7.108 | Language: de -->
 
 Leitfaden
 
@@ -237,6 +237,6 @@ ALT
 
 [IANA · special-use names ↗](https://www.iana.org/assignments/special-use-domain-names) [ENS · protocol ↗](https://docs.ens.domains/learn/protocol/) [Handshake ↗](https://handshake.org/)
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.107 · 9. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.108 · 10. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

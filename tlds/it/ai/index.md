@@ -1,6 +1,6 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/ai/ | Site edition: 0.7.107 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/ai/ | Site edition: 0.7.108 | Language: it -->
 
-Scheda del dominio
+Scheda TLD
 
 # .ai
 
@@ -24,7 +24,7 @@ Delegata TLD nazionale o territoriale (ccTLD) Codice paese Geografia e luoghi Te
 
 ## FATTO In breve
 
-.ai è oggi delegato nella root DNS come Codice paese.
+Alla verifica documentata, .ai risultava delegato nella root DNS come Codice paese.
 
 La scheda IANA indica Government of Anguilla come gestore.
 
@@ -74,15 +74,15 @@ Le date sono mostrate solo quando sostenute da una fonte attribuibile. Le fasi n
 
 Un codice geografico si è trovato quasi perfettamente allineato a un acronimo tecnologico successivo; il registro presenta oggi .AI come “Domain of Artificial Intelligence”.
 
-## FATTO Stato oggi
+## FATTO Stato alla verifica documentata
 
 **Forma ASCII / DNS:** .ai
 
 **Presente nell’elenco della root IANA:** Sì, alla data indicata
 
-**Stato attuale nella root:** Delegata
+**Stato nella root alla verifica documentata:** Delegata
 
-**Verifica dello stato attuale:** 4 ott 2026
+**Data della verifica dello stato:** 4 ott 2026
 
 **Classificazione IANA:** Codice paese
 
@@ -156,6 +156,6 @@ Non riportato
 
 [Scheda ufficiale IANA ↗](https://www.iana.org/domains/root/db/ai.html) [Fonte 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Fonte 3 ↗](https://registry.ai/)
 
-**Di Robert Bregy** · Edizione del sito 0.7.107 · 9 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.108 · 10 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

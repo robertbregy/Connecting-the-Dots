@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/how/ | Site edition: 0.7.107 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/how/ | Site edition: 0.7.108 | Language: de -->
 
 Leitfaden
 
@@ -656,6 +656,6 @@ Nicht dasselbe wie
 
 Jeder wird automatisch jeden beliebigen .lugano-Namen registrieren können.
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.107 · 9. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.108 · 10. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

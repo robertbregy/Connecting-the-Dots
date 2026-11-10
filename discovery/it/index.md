@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/it/ | Site edition: 0.7.107 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/it/ | Site edition: 0.7.108 | Language: it -->
 
 Connecting the Dots
 
@@ -66,23 +66,23 @@ Queste schede raccontano casi documentati di economia, cultura, geografia e gove
 
 ### [.amazon](https://robertbregy.github.io/Connecting-the-Dots/tlds/it/amazon/)
 
-.amazon è oggi delegato nella root DNS come Generico.
+Alla verifica documentata, .amazon risultava delegato nella root DNS come Generico.
 
 ### [.music](https://robertbregy.github.io/Connecting-the-Dots/tlds/it/music/)
 
-.music è oggi delegato nella root DNS come Generico.
+Alla verifica documentata, .music risultava delegato nella root DNS come Generico.
 
 ### [.berlin](https://robertbregy.github.io/Connecting-the-Dots/tlds/it/berlin/)
 
-.berlin è oggi delegato nella root DNS come Generico.
+Alla verifica documentata, .berlin risultava delegato nella root DNS come Generico.
 
 ### [.zuerich](https://robertbregy.github.io/Connecting-the-Dots/tlds/it/zuerich/)
 
-.zuerich è oggi delegato nella root DNS come Generico.
+Alla verifica documentata, .zuerich risultava delegato nella root DNS come Generico.
 
 ### [.swiss](https://robertbregy.github.io/Connecting-the-Dots/tlds/it/swiss/)
 
-.swiss è oggi delegato nella root DNS come Generico.
+Alla verifica documentata, .swiss risultava delegato nella root DNS come Generico.
 
 ### [.com](https://robertbregy.github.io/Connecting-the-Dots/tlds/it/com/)
 
@@ -94,8 +94,8 @@ Rappresenta la comunità linguistica e culturale catalana: un’appartenenza che
 
 ### [.io](https://robertbregy.github.io/Connecting-the-Dots/tlds/it/io/)
 
-.io è oggi delegato nella root DNS come Codice paese.
+Alla verifica documentata, .io risultava delegato nella root DNS come Codice paese.
 
-**Di Robert Bregy** · Edizione del sito 0.7.107 · 9 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.108 · 10 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

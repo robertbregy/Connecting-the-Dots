@@ -1,18 +1,22 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/round-2026/ | Site edition: 0.7.107 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/round-2026/ | Site edition: 0.7.108 | Language: de -->
 
-Domainökonomie
+Wirtschaftsanalyse
 
 # Wirtschaftliche Aspekte der Runde 2026
 
+**APS-Snapshot · 11. Oktober 2026**
+
+Die Bewerbungsdaten stammen aus dem am 11. Oktober 2026 erfassten öffentlichen APS-Export. Dieser Snapshot liegt vor dem String Confirmation Day (17. November), dem angekündigten Termin für bestätigte Zeichenfolgen und aktualisierte Contention Sets. Er belegt keine individuellen Bewertungsergebnisse. [Offizieller Zeitplan ↗](https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en)
+
 Antragskosten, Themen der Zeichenfolgen, Tätigkeiten der Antragsteller und Markenstrategien. Wirtschaftliche Zyklen und historische Rekonstruktionen helfen, Erwartungen einzuordnen; die Grenzen der jeweiligen Analyse bleiben sichtbar.
 
-[Wirtschaftlicher Überblick](https://robertbregy.github.io/Connecting-the-Dots/de/?tab=economics#economics) [Methode und Zitieren](https://robertbregy.github.io/Connecting-the-Dots/research/) [Textversion](https://robertbregy.github.io/Connecting-the-Dots/economics/de/round-2026/index.md)
+[Wirtschaft im interaktiven Atlas öffnen](https://robertbregy.github.io/Connecting-the-Dots/de/?tab=economics#economics) [Methode und Zitieren](https://robertbregy.github.io/Connecting-the-Dots/research/) [Textversion](https://robertbregy.github.io/Connecting-the-Dots/economics/de/round-2026/index.md)
 
 **Eintrittskosten: Gebühren im Rundenvergleich**
 
 Namen, Gesellschaft und Zugang
 
-### Was eine TLD-Bewerbung kostet
+## Was eine TLD-Bewerbung kostet
 
 Die Gebühr pro Antrag und die Einnahmen der einzelnen Runden zeigen auch die finanzielle Zugangsschwelle zum System.
 
@@ -25,31 +29,31 @@ Die Gebühr pro Antrag und die Einnahmen der einzelnen Runden zeigen auch die fi
 
 **Abgrenzung und Quellen der einzelnen Runden**
 
-#### 2000
+### 2000
 
 47 Anträge gingen ein, 44 wurden bewertet: 2,2 Mio. US-Dollar sind aus 44 × 50.000 US-Dollar rekonstruiert. Bei zwei Anträgen fehlte die Zahlung; einer wurde wegen Vertraulichkeitsfragen zurückgezogen. ICANNs Budget vom Februar 2001 nennt denselben Betrag als erwartetes Ist-Ergebnis. Ein gesondert bestätigter endgültiger Zahlungseingang der Runde liegt hier nicht vor.
 
 [ICANN — New TLD Application Instructions, 15 August 2000, §§ I28–I29 ↗](https://archive.icann.org/en/tlds/new-tld-application-instructions-15aug00.htm) [ICANN — TLD Application Review Update, 23 October 2000 ↗](https://www.icann.org/en/announcements/details/tld-application-review-update-23-10-2000-en) [ICANN — FY2001–2002 Preliminary Budget, 19 February 2001, Schedule A ↗](https://www.icann.org/resources/unthemed-pages/preliminary-budget-2001-02-19-en)
 
-#### 2004
+### 2004
 
 Zehn Anträge zu je 45.000 US-Dollar. ICANN nennt im Bericht an das US-Handelsministerium vom 7. Oktober 2004 ausdrücklich 450.000 US-Dollar an eingenommenen Gebühren.
 
 [ICANN — Tenth Status Report to the U.S. Department of Commerce, 7 October 2004, p. 10 ↗](https://itp.cdn.icann.org/en/files/governance/mou-status-report-07oct04-en.pdf#page=10)
 
-#### 2012
+### 2012
 
 Laut ICANNs Programmbericht wurden zum Start rund 357 Mio. US-Dollar eingenommen. Die spätere Rechnung für FY12–FY23 weist rund 360 Mio. US-Dollar Gebühren, 52 Mio. Rückerstattungen und 308 Mio. netto aus. Sie betrifft einen anderen Zeitraum und stellt nicht den Nettobetrag allein der anfänglichen 357 Mio. dar.
 
 [ICANN — New gTLD Program Implementation Review, 29 January 2016, § 8.3.1; p. 183 ↗](https://www.icann.org/en/system/files/files/program-review-29jan16-en.pdf#page=183) [ICANN — FY26 Budget, May 2025, p. 29, § 5.1.1 ↗](https://www.icann.org/en/system/files/files/adopted-icann-budget-fy2026-published-2025-en.pdf#page=29)
 
-#### 2026
+### 2026
 
 1.615 ist die am 7. Oktober veröffentlichte offizielle Gesamtzahl. Der ausgewertete öffentliche Export enthält 1.614 Anträge sowie Ersatzzeichenfolgen. Es gibt 51 ASP-Anträge mit vorgesehenen Ermässigungen von 75–85 % und Gebührenbefreiungen für bestimmte Varianten. Tatsächliche Einnahmen wurden in den geprüften Quellen nicht gefunden; 1.615 × 227.000 US-Dollar belegt sie nicht.
 
 [ICANN — 2026 Round gTLD Evaluation Fee FAQs ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/gtld-evaluation-fee/faqs) [ICANN — Reveal Day announcement, 7 October 2026 ↗](https://www.icann.org/resources/press-material/release-2026-10-07-en) [ICANN — 2026 Round APS statistics, published 7 October 2026 at 15:41 UTC ↗](https://newgtldprogram-aps.icann.org/statistics) [ICANN — 2026 Round Applicant Guidebook, V3, 7 October 2026, § 3.3 ↗](https://newgtldprogram.icann.org/sites/default/files/documents/new-gtld-program-2026-round-applicant-guidebook-current-en.pdf#page=66)
 
-#### So sind die Zahlen zu lesen
+### So sind die Zahlen zu lesen
 
 Nominalbeträge in US-Dollar. Die Gebühr bezahlt die Bewertung eines Antrags und garantiert keine TLD. Dokumentierte und rekonstruierte Gesamtsummen werden unterschieden. Anfängliche Zahlungseingänge, Rückerstattungen und mehrjährige Rechnungen haben unterschiedliche Abgrenzungen; sie sind kein Gewinn. Bedingte Bewertungsgebühren und jährliche Registry-Gebühren sind nicht Teil dieses Vergleichs.
 
@@ -119,9 +123,9 @@ FAKT
 
 Die reguläre Evaluierungsgebühr beträgt USD 227.000 pro Bewerbung, vor Applicant-Support-Rabatten und möglichen bedingten Gebühren. ICANN meldet 1.615 Reveal-Day-Bewerbungen und 333 .Brand-Bewerbungen. Das sind Fakten des Bewerbungsmarkts, keine Registry-Umsätze und keine Prognose, wie viele Strings die Root erreichen.
 
-**USD 227,000** reguläre Evaluierungsgebühr
+**USD 227.000** reguläre Evaluierungsgebühr
 
-**1,615** Reveal-Day-Bewerbungen
+**1.615** Reveal-Day-Bewerbungen
 
 **333** .Brand-Bewerbungen
 
@@ -351,6 +355,6 @@ Eine Bankmarke als TLD und ein Begriff wie .bank stehen für unterschiedliche Ve
 
 [ICANN · 2012 statistics ↗](https://newgtlds.icann.org/en/program-status/statistics) [ICANN APS · 2026 statistics ↗](https://newgtldprogram-aps.icann.org/statistics) [nTLDData · 2026 application index ↗](https://www.ntlddata.com/applications)
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.107 · 9. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.108 · 10. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

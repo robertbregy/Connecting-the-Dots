@@ -1,10 +1,10 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/en/berlin/ | Site edition: 0.7.107 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/en/berlin/ | Site edition: 0.7.108 | Language: en -->
 
-Domain profile
+TLD profile
 
 # .berlin
 
-.berlin is currently delegated in the DNS root as Generic.
+At the documented check, .berlin was delegated in the DNS root as Generic.
 
 Status observed on October 4, 2026
 
@@ -16,7 +16,7 @@ Delegated 2012 Generic Geography & places
 
 ## FACT In brief
 
-.berlin is currently delegated in the DNS root as Generic.
+At the documented check, .berlin was delegated in the DNS root as Generic.
 
 The IANA record lists dotBERLIN GmbH & Co. KG as the manager.
 
@@ -110,15 +110,15 @@ dotBERLIN GmbH & Co. KG · Germany
 
 Dates are shown only when supported by an attributable source. Missing phases are left missing rather than inferred. This Reveal Day snapshot uses the preserved local chronology plus verified 2026 records; browser-time ICANN contract-lifecycle enrichment remains disabled so every visitor sees the same reproducible dataset.
 
-## FACT Status today
+## FACT Status at the documented check
 
 **ASCII / DNS form:** .berlin
 
 **Present in the IANA root list:** Yes, at the stated date
 
-**Current root status:** Delegated
+**Root status at the documented check:** Delegated
 
-**Current-state verification:** Oct 4, 2026
+**Status check date:** Oct 4, 2026
 
 **IANA classification:** Generic
 
@@ -162,7 +162,7 @@ The IANA technical contact is not necessarily the contracted Registry Service Pr
 
 ## Registry services
 
-**Registry website:** [http://nic.berlin/ ↗](http://nic.berlin/)
+**Registry website:** [http://nic.berlin/ ↗](https://nic.berlin/)
 
 **WHOIS:** whois.nic.berlin
 
@@ -186,6 +186,6 @@ Reports linked by IANA, with their original titles and publication dates. A repo
 
 [Official IANA record ↗](https://www.iana.org/domains/root/db/berlin.html) [Source 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Source 3 ↗](https://www.iana.org/domains/root/db) [Source 4 ↗](https://newgtlds.icann.org/en/announcements-and-media/case-studies/berlin-a4-13feb19-en.pdf) [Source 5 ↗](https://newgtlds.icann.org/en/program-status/statistics) [Source 6 ↗](https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/)
 
-**By Robert Bregy** · Site edition 0.7.107 · November 9, 2026
+**By Robert Bregy** · Site edition 0.7.108 · November 10, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

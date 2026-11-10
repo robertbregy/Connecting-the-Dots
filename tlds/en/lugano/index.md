@@ -1,8 +1,12 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/en/lugano/ | Site edition: 0.7.107 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/en/lugano/ | Site edition: 0.7.108 | Language: en -->
 
-Domain profile
+TLD profile
 
 # .lugano
+
+**APS snapshot · 11 October 2026**
+
+The application data come from the public APS export acquired on 11 October 2026. This snapshot precedes String Confirmation Day (17 November), the announced milestone for confirmed strings and updated contention sets. It does not establish individual evaluation outcomes. [Official timetable ↗](https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en)
 
 An application by the City of Lugano in the 2026 round. It is not yet operational: approval, delegation and future uses remain to be established.
 
@@ -26,7 +30,7 @@ Not delegated 2026 Applied-for string · no current IANA type Geography & places
 
 ## FACT In brief
 
-.lugano is not currently delegated in the DNS root.
+At the documented check, .lugano was not delegated in the DNS root.
 
 [Unfamiliar with a term? Open the essential glossary →](https://robertbregy.github.io/Connecting-the-Dots/guides/en/how/#how-glossary)
 
@@ -60,15 +64,15 @@ Chronology assembled from formal applications, ICANN Registry Agreement lifecycl
 
 Dates are shown only when supported by an attributable source. Missing phases are left missing rather than inferred. This Reveal Day snapshot uses the preserved local chronology plus verified 2026 records; browser-time ICANN contract-lifecycle enrichment remains disabled so every visitor sees the same reproducible dataset.
 
-## FACT Status today
+## FACT Status at the documented check
 
 **ASCII / DNS form:** .lugano
 
 **Present in the IANA root list:** No, at the stated date
 
-**Current root status:** Not delegated
+**Root status at the documented check:** Not delegated
 
-**Current-state verification:** Oct 4, 2026
+**Status check date:** Oct 4, 2026
 
 **IANA classification:** Applied-for string · no current IANA type
 
@@ -86,6 +90,6 @@ Program classifications marked as derived use the IANA registration date and the
 
 [Source 1 ↗](https://newgtldprogram-aps.icann.org/applications/CDL2651T-T31516/summary) [Source 2 ↗](https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en) [Source 3 ↗](https://www.ntlddata.com/applications/strings)
 
-**By Robert Bregy** · Site edition 0.7.107 · November 9, 2026
+**By Robert Bregy** · Site edition 0.7.108 · November 10, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

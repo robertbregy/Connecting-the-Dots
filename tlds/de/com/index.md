@@ -1,6 +1,6 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/de/com/ | Site edition: 0.7.107 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/de/com/ | Site edition: 0.7.108 | Language: de -->
 
-Domainprofil
+TLD-Profil
 
 # .com
 
@@ -24,7 +24,7 @@ Delegiert Legacy- / Pre-Round-gTLDs Generisch Wirtschaft & Marken
 
 ## FAKT Kurz erklärt
 
-.com ist derzeit als Generisch in der DNS-Root delegiert.
+Bei der dokumentierten Prüfung war .com als Generisch in der DNS-Root delegiert.
 
 Der IANA-Eintrag nennt VeriSign Global Registry Services als Betreiber bzw. Verwalter.
 
@@ -66,15 +66,15 @@ VeriSign Global Registry Services · Vereinigte Staaten
 
 Daten werden nur angezeigt, wenn sie durch eine zuordenbare Quelle belegt sind. Nicht dokumentierte Phasen werden nicht geschätzt. Dieser Reveal-Day-Snapshot nutzt die lokal bewahrte Chronologie plus verifizierte 2026-Datensätze; die Browser-Anreicherung mit ICANN-Vertragslebenszyklusdaten bleibt deaktiviert, damit alle Besucher denselben reproduzierbaren Datensatz sehen.
 
-## FAKT Stand heute
+## FAKT Status bei der dokumentierten Prüfung
 
 **ASCII-/DNS-Form:** .com
 
 **In der IANA-Root-Liste enthalten:** Ja, zum angegebenen Datum
 
-**Aktueller Status in der Root-Zone:** Delegiert
+**Status in der Root-Zone bei der dokumentierten Prüfung:** Delegiert
 
-**Prüfung des aktuellen Status:** 4. Okt. 2026
+**Datum der Statusprüfung:** 4. Okt. 2026
 
 **IANA-Klassifikation:** Generisch
 
@@ -118,7 +118,7 @@ Der technische IANA-Kontakt ist nicht zwingend der vertragliche Registry Service
 
 ## Registerdienste
 
-**Website des Registers:** [http://www.verisigninc.com/ ↗](http://www.verisigninc.com/)
+**Website des Registers:** [http://www.verisigninc.com/ ↗](https://www.verisigninc.com/)
 
 **WHOIS:** whois.verisign-grs.com
 
@@ -162,6 +162,6 @@ Nicht angegeben
 
 [Offizieller IANA-Datensatz ↗](https://www.iana.org/domains/root/db/com.html) [Quelle 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Quelle 3 ↗](https://www.iana.org/domains/root/db)
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.107 · 9. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.108 · 10. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

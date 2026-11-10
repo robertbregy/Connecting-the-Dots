@@ -1,12 +1,16 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/portfolios/ | Site edition: 0.7.107 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/portfolios/ | Site edition: 0.7.108 | Language: en -->
 
-Domain economics
+Economic analysis
 
 # Portfolios and contention
 
+**APS snapshot · 11 October 2026**
+
+The application data come from the public APS export acquired on 11 October 2026. This snapshot precedes String Confirmation Day (17 November), the announced milestone for confirmed strings and updated contention sets. It does not establish individual evaluation outcomes. [Official timetable ↗](https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en)
+
 Follow the strategies of applicants submitting many applications and the competition for the same words. Comparisons between rounds and the Aruba and Intercap cases clarify what is being counted.
 
-[Economics overview](https://robertbregy.github.io/Connecting-the-Dots/en/?tab=economics#economics) [Method and citation](https://robertbregy.github.io/Connecting-the-Dots/research/) [Text version](https://robertbregy.github.io/Connecting-the-Dots/economics/en/portfolios/index.md)
+[Open economics in the interactive atlas](https://robertbregy.github.io/Connecting-the-Dots/en/?tab=economics#economics) [Method and citation](https://robertbregy.github.io/Connecting-the-Dots/research/) [Text version](https://robertbregy.github.io/Connecting-the-Dots/economics/en/portfolios/index.md)
 
 ## Who concentrates the market?
 
@@ -81,6 +85,6 @@ The 263 preliminary identical-string contention sets contain 891 applications. T
 
 [ICANN · preliminary contention CSV ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv) [internet.Best · applicant portfolios ↗](https://internet.best/new-gtld-applications/) [nTLDData · primary strings ↗](https://www.ntlddata.com/applications/strings)
 
-**By Robert Bregy** · Site edition 0.7.107 · November 9, 2026
+**By Robert Bregy** · Site edition 0.7.108 · November 10, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

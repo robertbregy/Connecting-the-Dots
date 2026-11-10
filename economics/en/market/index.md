@@ -1,12 +1,12 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/market/ | Site edition: 0.7.107 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/market/ | Site edition: 0.7.108 | Language: en -->
 
-Domain economics
+Economic analysis
 
 # TLD adoption and shares
 
 Which extensions do we encounter on websites, and which contain more domains? Explore both complete rankings, use the filters and consult introduction groups, dates, sources and downloadable data.
 
-[Economics overview](https://robertbregy.github.io/Connecting-the-Dots/en/?tab=economics#economics) [Method and citation](https://robertbregy.github.io/Connecting-the-Dots/research/) [Text version](https://robertbregy.github.io/Connecting-the-Dots/economics/en/market/index.md)
+[Open economics in the interactive atlas](https://robertbregy.github.io/Connecting-the-Dots/en/?tab=economics#economics) [Method and citation](https://robertbregy.github.io/Connecting-the-Dots/research/) [Text version](https://robertbregy.github.io/Connecting-the-Dots/economics/en/market/index.md)
 
 ## How widespread are TLDs?
 
@@ -184,6 +184,6 @@ Current working analysis dated 19 October 2026, outside the RR1/RR2 scientific s
 
 [Connect adoption and history →](https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/#tld-cultural-trajectory) [Who runs the infrastructure →](https://robertbregy.github.io/Connecting-the-Dots/en/?tab=geography#rsp-tld-footprint)
 
-**By Robert Bregy** · Site edition 0.7.107 · November 9, 2026
+**By Robert Bregy** · Site edition 0.7.108 · November 10, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/it/cities/ | Site edition: 0.7.107 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/it/cities/ | Site edition: 0.7.108 | Language: it -->
 
 Guida
 
@@ -167,6 +167,6 @@ Nel 2026 Helsinki ha avviato la cessazione volontaria del proprio contratto di r
 
 Leggi la cronologia e lo stato documentato →
 
-**Di Robert Bregy** · Edizione del sito 0.7.107 · 9 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.108 · 10 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

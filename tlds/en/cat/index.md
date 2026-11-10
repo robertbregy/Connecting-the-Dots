@@ -1,6 +1,6 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/en/cat/ | Site edition: 0.7.107 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/en/cat/ | Site edition: 0.7.108 | Language: en -->
 
-Domain profile
+TLD profile
 
 # .cat
 
@@ -24,7 +24,7 @@ Delegated 2004 Sponsored / restricted Geography & places Culture, media & educat
 
 ## FACT In brief
 
-.cat is currently delegated in the DNS root as Sponsored / restricted.
+At the documented check, .cat was delegated in the DNS root as Sponsored / restricted.
 
 The IANA record lists Fundacio puntCAT as the manager.
 
@@ -132,15 +132,15 @@ Dates are shown only when supported by an attributable source. Missing phases ar
 
 A TLD did not need to map neatly onto a sovereign state: culture and language could also become infrastructure.
 
-## FACT Status today
+## FACT Status at the documented check
 
 **ASCII / DNS form:** .cat
 
 **Present in the IANA root list:** Yes, at the stated date
 
-**Current root status:** Delegated
+**Root status at the documented check:** Delegated
 
-**Current-state verification:** Oct 4, 2026
+**Status check date:** Oct 4, 2026
 
 **IANA classification:** Sponsored / restricted
 
@@ -184,7 +184,7 @@ The IANA technical contact is not necessarily the contracted Registry Service Pr
 
 ## Registry services
 
-**Registry website:** [http://www.domini.cat/ ↗](http://www.domini.cat/)
+**Registry website:** [http://www.domini.cat/ ↗](https://domini.cat/)
 
 **WHOIS:** whois.nic.cat
 
@@ -212,6 +212,6 @@ Reports linked by IANA, with their original titles and publication dates. A repo
 
 [Official IANA record ↗](https://www.iana.org/domains/root/db/cat.html) [Source 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Source 3 ↗](https://www.iana.org/reports/2005/cat-report-18nov2005.html) [Source 4 ↗](https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en) [Source 5 ↗](https://domini.cat/en/about-us)
 
-**By Robert Bregy** · Site edition 0.7.107 · November 9, 2026
+**By Robert Bregy** · Site edition 0.7.108 · November 10, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

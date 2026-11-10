@@ -1,10 +1,10 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/amazon/ | Site edition: 0.7.107 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/amazon/ | Site edition: 0.7.108 | Language: fr -->
 
-Fiche du domaine
+Fiche TLD
 
 # .amazon
 
-.amazon est actuellement délégué dans la racine DNS comme Générique.
+Lors de la vérification documentée, .amazon était délégué dans la racine DNS comme Générique.
 
 Statut observé le 4 octobre 2026
 
@@ -16,7 +16,7 @@ Déléguée 2012 Générique
 
 ## FAIT En bref
 
-.amazon est actuellement délégué dans la racine DNS comme Générique.
+Lors de la vérification documentée, .amazon était délégué dans la racine DNS comme Générique.
 
 La fiche IANA indique Amazon Registry Services, Inc. comme gestionnaire.
 
@@ -100,15 +100,15 @@ Amazon Registry Services, Inc. · États-Unis
 
 Les dates ne sont affichées que lorsqu’elles reposent sur une source attribuable. Les phases non documentées restent absentes plutôt que déduites. Ce snapshot du Reveal Day utilise la chronologie locale préservée et les dossiers 2026 vérifiés ; l’enrichissement dans le navigateur du cycle de vie contractuel ICANN reste désactivé afin que chaque visiteur voie le même jeu de données reproductible.
 
-## FAIT Situation actuelle
+## FAIT Statut lors de la vérification documentée
 
 **Forme ASCII / DNS:** .amazon
 
 **Présent dans la liste de la racine IANA:** Oui, à la date indiquée
 
-**Statut actuel dans la racine:** Déléguée
+**Statut dans la racine lors de la vérification documentée:** Déléguée
 
-**Vérification de l’état actuel:** 4 oct. 2026
+**Date de vérification du statut:** 4 oct. 2026
 
 **Classification IANA:** Générique
 
@@ -152,7 +152,7 @@ Le contact technique IANA n’identifie pas nécessairement le Registry Service 
 
 ## Services du registre
 
-**Site du registre:** [http://www.nic.amazon/ ↗](http://www.nic.amazon/)
+**Site du registre:** [http://www.nic.amazon/ ↗](https://www.nic.amazon/)
 
 **WHOIS:** Non renseigné
 
@@ -186,6 +186,6 @@ Rapports liés par IANA, avec leurs titres originaux et dates de publication. La
 
 [Fiche officielle IANA ↗](https://www.iana.org/domains/root/db/amazon.html) [Source 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Source 3 ↗](https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/)
 
-**Par Robert Bregy** · Édition du site 0.7.107 · 9 novembre 2026
+**Par Robert Bregy** · Édition du site 0.7.108 · 10 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.

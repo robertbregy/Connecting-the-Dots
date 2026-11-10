@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/de/ | Site edition: 0.7.107 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/de/ | Site edition: 0.7.108 | Language: de -->
 
 Connecting the Dots
 
@@ -38,7 +38,7 @@ Von alltäglichen Diensten zu den unsichtbaren DNS-Funktionen, dann zu Schriftsy
 
 ### [Verbreitung und Anteile der TLDs](https://robertbregy.github.io/Connecting-the-Dots/economics/de/market/)
 
-Welche Endungen begegnen uns auf Websites, und welche enthalten mehr Domains? Erkunde beide vollständigen Ranglisten und ihre Filter sowie Einführungsgruppen, Daten, Quellen und herunterladbare Datensätze.
+Welche Endungen begegnen uns auf Websites, und welche enthalten mehr Domains? Erkunden Sie beide vollständigen Ranglisten und ihre Filter sowie Einführungsgruppen, Daten, Quellen und herunterladbare Datensätze.
 
 ### [Wirtschaftliche Fallstudien](https://robertbregy.github.io/Connecting-the-Dots/economics/de/cases/)
 
@@ -46,7 +46,7 @@ Acht Fälle verbinden Mechanismen mit dokumentierten Ergebnissen: öffentliche E
 
 ### [Portfolios und konkurrierende Anträge](https://robertbregy.github.io/Connecting-the-Dots/economics/de/portfolios/)
 
-Verfolge die Strategien von Antragstellern mit vielen Bewerbungen und den Wettbewerb um dieselben Wörter. Die Vergleiche zwischen den Runden sowie die Fälle Aruba und Intercap zeigen, was jeweils gezählt wird.
+Verfolgen Sie die Strategien von Antragstellern mit vielen Bewerbungen und den Wettbewerb um dieselben Wörter. Die Vergleiche zwischen den Runden sowie die Fälle Aruba und Intercap zeigen, was jeweils gezählt wird.
 
 ### [Wirtschaftliche Aspekte der Runde 2026](https://robertbregy.github.io/Connecting-the-Dots/economics/de/round-2026/)
 
@@ -66,23 +66,23 @@ Eine Bewerbung der Stadt Lugano in der Runde 2026. Noch keine betriebene Endung:
 
 ### [.amazon](https://robertbregy.github.io/Connecting-the-Dots/tlds/de/amazon/)
 
-.amazon ist derzeit als Generisch in der DNS-Root delegiert.
+Bei der dokumentierten Prüfung war .amazon als Generisch in der DNS-Root delegiert.
 
 ### [.music](https://robertbregy.github.io/Connecting-the-Dots/tlds/de/music/)
 
-.music ist derzeit als Generisch in der DNS-Root delegiert.
+Bei der dokumentierten Prüfung war .music als Generisch in der DNS-Root delegiert.
 
 ### [.berlin](https://robertbregy.github.io/Connecting-the-Dots/tlds/de/berlin/)
 
-.berlin ist derzeit als Generisch in der DNS-Root delegiert.
+Bei der dokumentierten Prüfung war .berlin als Generisch in der DNS-Root delegiert.
 
 ### [.zuerich](https://robertbregy.github.io/Connecting-the-Dots/tlds/de/zuerich/)
 
-.zuerich ist derzeit als Generisch in der DNS-Root delegiert.
+Bei der dokumentierten Prüfung war .zuerich als Generisch in der DNS-Root delegiert.
 
 ### [.swiss](https://robertbregy.github.io/Connecting-the-Dots/tlds/de/swiss/)
 
-.swiss ist derzeit als Generisch in der DNS-Root delegiert.
+Bei der dokumentierten Prüfung war .swiss als Generisch in der DNS-Root delegiert.
 
 ### [.com](https://robertbregy.github.io/Connecting-the-Dots/tlds/de/com/)
 
@@ -94,8 +94,8 @@ Ein Name für die katalanische Sprach- und Kulturgemeinschaft: Zugehörigkeit ü
 
 ### [.io](https://robertbregy.github.io/Connecting-the-Dots/tlds/de/io/)
 
-.io ist derzeit als Ländercode in der DNS-Root delegiert.
+Bei der dokumentierten Prüfung war .io als Ländercode in der DNS-Root delegiert.
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.107 · 9. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.108 · 10. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

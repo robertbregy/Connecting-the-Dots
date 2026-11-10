@@ -1,12 +1,16 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/portfolios/ | Site edition: 0.7.107 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/portfolios/ | Site edition: 0.7.108 | Language: de -->
 
-Domainökonomie
+Wirtschaftsanalyse
 
 # Portfolios und konkurrierende Anträge
 
-Verfolge die Strategien von Antragstellern mit vielen Bewerbungen und den Wettbewerb um dieselben Wörter. Die Vergleiche zwischen den Runden sowie die Fälle Aruba und Intercap zeigen, was jeweils gezählt wird.
+**APS-Snapshot · 11. Oktober 2026**
 
-[Wirtschaftlicher Überblick](https://robertbregy.github.io/Connecting-the-Dots/de/?tab=economics#economics) [Methode und Zitieren](https://robertbregy.github.io/Connecting-the-Dots/research/) [Textversion](https://robertbregy.github.io/Connecting-the-Dots/economics/de/portfolios/index.md)
+Die Bewerbungsdaten stammen aus dem am 11. Oktober 2026 erfassten öffentlichen APS-Export. Dieser Snapshot liegt vor dem String Confirmation Day (17. November), dem angekündigten Termin für bestätigte Zeichenfolgen und aktualisierte Contention Sets. Er belegt keine individuellen Bewertungsergebnisse. [Offizieller Zeitplan ↗](https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en)
+
+Verfolgen Sie die Strategien von Antragstellern mit vielen Bewerbungen und den Wettbewerb um dieselben Wörter. Die Vergleiche zwischen den Runden sowie die Fälle Aruba und Intercap zeigen, was jeweils gezählt wird.
+
+[Wirtschaft im interaktiven Atlas öffnen](https://robertbregy.github.io/Connecting-the-Dots/de/?tab=economics#economics) [Methode und Zitieren](https://robertbregy.github.io/Connecting-the-Dots/research/) [Textversion](https://robertbregy.github.io/Connecting-the-Dots/economics/de/portfolios/index.md)
 
 ## Wer konzentriert den Markt?
 
@@ -81,6 +85,6 @@ Die 263 vorläufigen Konfliktgruppen identischer Strings umfassen 891 Bewerbunge
 
 [ICANN · preliminary contention CSV ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv) [internet.Best · applicant portfolios ↗](https://internet.best/new-gtld-applications/) [nTLDData · primary strings ↗](https://www.ntlddata.com/applications/strings)
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.107 · 9. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.108 · 10. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

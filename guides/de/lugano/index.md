@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/lugano/ | Site edition: 0.7.107 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/lugano/ | Site edition: 0.7.108 | Language: de -->
 
 Leitfaden
 
@@ -16,7 +16,7 @@ Robert Bregy ist Stadtschreiber der Stadt Lugano und am Projekt .lugano beteilig
 
 FAKT BEWERBUNG 2026
 
-## Aktueller Stand
+## Status bei der dokumentierten Prüfung
 
 Die Stadt Lugano hat sich in der ICANN-Runde 2026 um .lugano beworben. Eine Bewerbung ist weder Zuteilung noch Delegation: .lugano wird erst nach den vorgesehenen Prüfungen, dem Vertragsabschluss und der Delegation in die Root Zone aktiv.
 
@@ -279,6 +279,6 @@ Der Behauptung einer städtisch bezahlten Gebühr steht die kommunale FAQ mit pr
 
 Redaktionelle Prüfung: 17. Oktober 2026
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.107 · 9. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.108 · 10. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

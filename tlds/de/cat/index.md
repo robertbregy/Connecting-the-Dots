@@ -1,6 +1,6 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/de/cat/ | Site edition: 0.7.107 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/de/cat/ | Site edition: 0.7.108 | Language: de -->
 
-Domainprofil
+TLD-Profil
 
 # .cat
 
@@ -24,7 +24,7 @@ Delegiert 2004 Gesponsert / beschränkt Geografie & Orte Kultur, Medien & Bildun
 
 ## FAKT Kurz erklärt
 
-.cat ist derzeit als Gesponsert / beschränkt in der DNS-Root delegiert.
+Bei der dokumentierten Prüfung war .cat als Gesponsert / beschränkt in der DNS-Root delegiert.
 
 Der IANA-Eintrag nennt Fundacio puntCAT als Betreiber bzw. Verwalter.
 
@@ -132,15 +132,15 @@ Daten werden nur angezeigt, wenn sie durch eine zuordenbare Quelle belegt sind. 
 
 Eine TLD musste nicht einem Staat entsprechen: Auch Sprache und Kultur konnten Infrastruktur werden.
 
-## FAKT Stand heute
+## FAKT Status bei der dokumentierten Prüfung
 
 **ASCII-/DNS-Form:** .cat
 
 **In der IANA-Root-Liste enthalten:** Ja, zum angegebenen Datum
 
-**Aktueller Status in der Root-Zone:** Delegiert
+**Status in der Root-Zone bei der dokumentierten Prüfung:** Delegiert
 
-**Prüfung des aktuellen Status:** 4. Okt. 2026
+**Datum der Statusprüfung:** 4. Okt. 2026
 
 **IANA-Klassifikation:** Gesponsert / beschränkt
 
@@ -184,7 +184,7 @@ Der technische IANA-Kontakt ist nicht zwingend der vertragliche Registry Service
 
 ## Registerdienste
 
-**Website des Registers:** [http://www.domini.cat/ ↗](http://www.domini.cat/)
+**Website des Registers:** [http://www.domini.cat/ ↗](https://domini.cat/)
 
 **WHOIS:** whois.nic.cat
 
@@ -212,6 +212,6 @@ Von IANA verlinkte Berichte mit Originaltiteln und Veröffentlichungsdaten. Das 
 
 [Offizieller IANA-Datensatz ↗](https://www.iana.org/domains/root/db/cat.html) [Quelle 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Quelle 3 ↗](https://www.iana.org/reports/2005/cat-report-18nov2005.html) [Quelle 4 ↗](https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en) [Quelle 5 ↗](https://domini.cat/en/about-us)
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.107 · 9. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.108 · 10. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

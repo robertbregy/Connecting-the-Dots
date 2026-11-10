@@ -1,12 +1,12 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/cases/ | Site edition: 0.7.107 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/cases/ | Site edition: 0.7.108 | Language: en -->
 
-Domain economics
+Economic analysis
 
 # Economic cases
 
 Eight cases connect mechanisms with documented results: public revenue, contracts, acquisitions, renewals, regulation, auctions, historical withdrawals and entry costs. Every figure retains its period, unit and source.
 
-[Economics overview](https://robertbregy.github.io/Connecting-the-Dots/en/?tab=economics#economics) [Method and citation](https://robertbregy.github.io/Connecting-the-Dots/research/) [Text version](https://robertbregy.github.io/Connecting-the-Dots/economics/en/cases/index.md)
+[Open economics in the interactive atlas](https://robertbregy.github.io/Connecting-the-Dots/en/?tab=economics#economics) [Method and citation](https://robertbregy.github.io/Connecting-the-Dots/research/) [Text version](https://robertbregy.github.io/Connecting-the-Dots/economics/en/cases/index.md)
 
 FACT READING
 
@@ -300,6 +300,6 @@ The application fee is not a purchase price for a TLD. It is an entry cost into 
 
 [ICANN — 2012 New gTLD evaluation fee ↗](https://newgtlds.icann.org/en/applicants/global-support/faqs/faqs-en) [ICANN — 2026 gTLD evaluation fee ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/gtld-evaluation-fee/faqs) [ICANN — 2026 financial projection templates ↗](https://newgtldprogram-2026-agb.icann.org/en/16-appendix-5-templates-for-standard-financial-profile.html)
 
-**By Robert Bregy** · Site edition 0.7.107 · November 9, 2026
+**By Robert Bregy** · Site edition 0.7.108 · November 10, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

@@ -1,12 +1,12 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/market/ | Site edition: 0.7.107 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/market/ | Site edition: 0.7.108 | Language: de -->
 
-Domainökonomie
+Wirtschaftsanalyse
 
 # Verbreitung und Anteile der TLDs
 
-Welche Endungen begegnen uns auf Websites, und welche enthalten mehr Domains? Erkunde beide vollständigen Ranglisten und ihre Filter sowie Einführungsgruppen, Daten, Quellen und herunterladbare Datensätze.
+Welche Endungen begegnen uns auf Websites, und welche enthalten mehr Domains? Erkunden Sie beide vollständigen Ranglisten und ihre Filter sowie Einführungsgruppen, Daten, Quellen und herunterladbare Datensätze.
 
-[Wirtschaftlicher Überblick](https://robertbregy.github.io/Connecting-the-Dots/de/?tab=economics#economics) [Methode und Zitieren](https://robertbregy.github.io/Connecting-the-Dots/research/) [Textversion](https://robertbregy.github.io/Connecting-the-Dots/economics/de/market/index.md)
+[Wirtschaft im interaktiven Atlas öffnen](https://robertbregy.github.io/Connecting-the-Dots/de/?tab=economics#economics) [Methode und Zitieren](https://robertbregy.github.io/Connecting-the-Dots/research/) [Textversion](https://robertbregy.github.io/Connecting-the-Dots/economics/de/market/index.md)
 
 ## Wie verbreitet sind TLDs?
 
@@ -184,6 +184,6 @@ Aktuelle Arbeitsanalyse vom 19. Oktober 2026, ausserhalb der wissenschaftlichen 
 
 [Verbreitung und Geschichte verbinden →](https://robertbregy.github.io/Connecting-the-Dots/guides/de/timeline/#tld-cultural-trajectory) [Wer die Infrastruktur betreibt →](https://robertbregy.github.io/Connecting-the-Dots/de/?tab=geography#rsp-tld-footprint)
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.107 · 9. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.108 · 10. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

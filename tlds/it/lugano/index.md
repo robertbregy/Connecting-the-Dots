@@ -1,8 +1,12 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/lugano/ | Site edition: 0.7.107 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/lugano/ | Site edition: 0.7.108 | Language: it -->
 
-Scheda del dominio
+Scheda TLD
 
 # .lugano
+
+**Snapshot APS · 11 ottobre 2026**
+
+I dati delle candidature provengono dall’esportazione pubblica APS acquisita l’11 ottobre 2026. Questo snapshot precede lo String Confirmation Day (17 novembre), previsto per la pubblicazione delle stringhe confermate e delle contese aggiornate. Non attesta esiti individuali delle valutazioni. [Calendario ufficiale ↗](https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en)
 
 È una candidatura della Città di Lugano nel round 2026. Non è ancora un’estensione operativa: approvazione, delega e usi futuri restano da verificare.
 
@@ -26,7 +30,7 @@ Non delegato 2026 Stringa candidata · nessun tipo IANA attuale Geografia e luog
 
 ## FATTO In breve
 
-.lugano non è oggi delegato nella root DNS.
+Alla verifica documentata, .lugano non risultava delegato nella root DNS.
 
 [Un termine non è chiaro? Apri il glossario essenziale →](https://robertbregy.github.io/Connecting-the-Dots/guides/it/how/#how-glossary)
 
@@ -60,15 +64,15 @@ Cronologia costruita da candidature formali, dati ICANN sul ciclo dei Registry A
 
 Le date sono mostrate solo quando sostenute da una fonte attribuibile. Le fasi non documentate restano tali, senza inferenze. Questo snapshot Reveal Day usa la cronologia locale preservata più i record 2026 verificati; l’arricchimento runtime del ciclo contrattuale ICANN resta disattivato affinché ogni visitatore veda lo stesso dataset riproducibile.
 
-## FATTO Stato oggi
+## FATTO Stato alla verifica documentata
 
 **Forma ASCII / DNS:** .lugano
 
 **Presente nell’elenco della root IANA:** No, alla data indicata
 
-**Stato attuale nella root:** Non delegato
+**Stato nella root alla verifica documentata:** Non delegato
 
-**Verifica dello stato attuale:** 4 ott 2026
+**Data della verifica dello stato:** 4 ott 2026
 
 **Classificazione IANA:** Stringa candidata · nessun tipo IANA attuale
 
@@ -86,6 +90,6 @@ Le classificazioni indicate come derivate usano la data di registrazione IANA e 
 
 [Fonte 1 ↗](https://newgtldprogram-aps.icann.org/applications/CDL2651T-T31516/summary) [Fonte 2 ↗](https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en) [Fonte 3 ↗](https://www.ntlddata.com/applications/strings)
 
-**Di Robert Bregy** · Edizione del sito 0.7.107 · 9 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.108 · 10 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/it/lugano/ | Site edition: 0.7.107 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/it/lugano/ | Site edition: 0.7.108 | Language: it -->
 
 Guida
 
@@ -16,7 +16,7 @@ Robert Bregy è segretario comunale della Città di Lugano ed è coinvolto nel p
 
 FATTO CANDIDATURA 2026
 
-## Stato attuale
+## Stato alla verifica documentata
 
 La Città di Lugano ha presentato la candidatura per .lugano nel round ICANN 2026. Una candidatura non equivale ad assegnazione né a delega: .lugano diventa attivo solo dopo le valutazioni previste, la contrattualizzazione e la delega nella root zone.
 
@@ -279,6 +279,6 @@ L'affermazione che la Città paghi la fee va confrontata con la FAQ comunale: la
 
 Verifica editoriale: 17 ottobre 2026
 
-**Di Robert Bregy** · Edizione del sito 0.7.107 · 9 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.108 · 10 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

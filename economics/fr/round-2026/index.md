@@ -1,18 +1,22 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/fr/round-2026/ | Site edition: 0.7.107 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/fr/round-2026/ | Site edition: 0.7.108 | Language: fr -->
 
-Économie des domaines
+Analyse économique
 
 # L’économie du round 2026
 
+**Instantané APS · 11 octobre 2026**
+
+Les données des candidatures proviennent de l’export public APS acquis le 11 octobre 2026. Cet instantané précède le String Confirmation Day (17 novembre), prévu pour la publication des chaînes confirmées et des ensembles de candidatures en concurrence actualisés. Il n’atteste aucun résultat individuel d’évaluation. [Calendrier officiel ↗](https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en)
+
 Coûts de candidature, thèmes des chaînes, activités des candidats et stratégies des marques. Cycles économiques et reconstructions historiques éclairent les attentes, avec les limites propres à chaque analyse.
 
-[Vue d’ensemble de l’économie](https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=economics#economics) [Méthode et citation](https://robertbregy.github.io/Connecting-the-Dots/research/) [Version texte](https://robertbregy.github.io/Connecting-the-Dots/economics/fr/round-2026/index.md)
+[Ouvrir l’économie dans l’atlas interactif](https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=economics#economics) [Méthode et citation](https://robertbregy.github.io/Connecting-the-Dots/research/) [Version texte](https://robertbregy.github.io/Connecting-the-Dots/economics/fr/round-2026/index.md)
 
 **Coûts d’entrée : frais comparés entre cycles**
 
 Noms, société et accès
 
-### Le coût d'une candidature pour un TLD
+## Le coût d'une candidature pour un TLD
 
 Les frais par candidature et les sommes perçues à chaque cycle révèlent aussi le seuil financier d'accès au système.
 
@@ -25,31 +29,31 @@ Les frais par candidature et les sommes perçues à chaque cycle révèlent auss
 
 **Périmètre et sources de chaque cycle**
 
-#### 2000
+### 2000
 
 47 candidatures reçues, 44 évaluées : les 2,2 millions de dollars sont reconstitués par 44 × 50 000 dollars. Deux candidatures n'avaient pas payé et une a été retirée pour des raisons de confidentialité. Le budget ICANN de février 2001 indique le même montant comme réalisation prévisionnelle ; aucun montant définitif distinct et vérifié n'est établi ici pour ce cycle.
 
 [ICANN — New TLD Application Instructions, 15 August 2000, §§ I28–I29 ↗](https://archive.icann.org/en/tlds/new-tld-application-instructions-15aug00.htm) [ICANN — TLD Application Review Update, 23 October 2000 ↗](https://www.icann.org/en/announcements/details/tld-application-review-update-23-10-2000-en) [ICANN — FY2001–2002 Preliminary Budget, 19 February 2001, Schedule A ↗](https://www.icann.org/resources/unthemed-pages/preliminary-budget-2001-02-19-en)
 
-#### 2004
+### 2004
 
 Dix candidatures à 45 000 dollars chacune. ICANN déclare explicitement avoir perçu 450 000 dollars dans son rapport au Département du commerce américain du 7 octobre 2004.
 
 [ICANN — Tenth Status Report to the U.S. Department of Commerce, 7 October 2004, p. 10 ↗](https://itp.cdn.icann.org/en/files/governance/mou-status-report-07oct04-en.pdf#page=10)
 
-#### 2012
+### 2012
 
 Environ 357 millions de dollars perçus au lancement, selon le bilan ICANN. Le compte ultérieur FY12–FY23 indique environ 360 millions de frais, 52 millions de remboursements et 308 millions nets. Il couvre une autre période et ne représente pas le montant net des seuls 357 millions initiaux.
 
 [ICANN — New gTLD Program Implementation Review, 29 January 2016, § 8.3.1; p. 183 ↗](https://www.icann.org/en/system/files/files/program-review-29jan16-en.pdf#page=183) [ICANN — FY26 Budget, May 2025, p. 29, § 5.1.1 ↗](https://www.icann.org/en/system/files/files/adopted-icann-budget-fy2026-published-2025-en.pdf#page=29)
 
-#### 2026
+### 2026
 
 1 615 est le total officiel publié le 7 octobre. L'export public analysé contient 1 614 candidatures ainsi que des enregistrements de remplacement. Il compte 51 candidatures ASP, avec des réductions prévues de 75–85 %, et des exemptions pour certaines variantes. Le montant réellement perçu n'a pas été trouvé dans les sources consultées ; le produit 1 615 × 227 000 dollars ne l'établit pas.
 
 [ICANN — 2026 Round gTLD Evaluation Fee FAQs ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/gtld-evaluation-fee/faqs) [ICANN — Reveal Day announcement, 7 October 2026 ↗](https://www.icann.org/resources/press-material/release-2026-10-07-en) [ICANN — 2026 Round APS statistics, published 7 October 2026 at 15:41 UTC ↗](https://newgtldprogram-aps.icann.org/statistics) [ICANN — 2026 Round Applicant Guidebook, V3, 7 October 2026, § 3.3 ↗](https://newgtldprogram.icann.org/sites/default/files/documents/new-gtld-program-2026-round-applicant-guidebook-current-en.pdf#page=66)
 
-#### Comment lire les chiffres
+### Comment lire les chiffres
 
 Montants nominaux en dollars américains. Les frais paient l'évaluation d'une candidature et ne garantissent pas un TLD. Les totaux documentés et reconstitués sont distingués. Encaissements initiaux, remboursements et comptes pluriannuels ont des périmètres différents ; ils ne constituent pas un bénéfice. Les frais d'évaluation conditionnelle et les redevances annuelles des registres sont exclus de cette comparaison.
 
@@ -119,9 +123,9 @@ FAIT
 
 Les frais standards d’évaluation sont de 227 000 USD par candidature, avant réductions de l’Applicant Support et éventuels frais conditionnels. L’ICANN recense 1 615 candidatures au Reveal Day et 333 candidatures .Brand. Ce sont des faits sur le marché des candidatures, pas des revenus de registres ni une prévision du nombre de chaînes qui atteindront la racine.
 
-**USD 227,000** frais standards d’évaluation
+**USD 227 000** frais standards d’évaluation
 
-**1,615** candidatures Reveal Day
+**1 615** candidatures Reveal Day
 
 **333** candidatures .Brand
 
@@ -351,6 +355,6 @@ Un TLD propre à une banque et un terme comme .bank relèvent de modèles d’at
 
 [ICANN · 2012 statistics ↗](https://newgtlds.icann.org/en/program-status/statistics) [ICANN APS · 2026 statistics ↗](https://newgtldprogram-aps.icann.org/statistics) [nTLDData · 2026 application index ↗](https://www.ntlddata.com/applications)
 
-**Par Robert Bregy** · Édition du site 0.7.107 · 9 novembre 2026
+**Par Robert Bregy** · Édition du site 0.7.108 · 10 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.

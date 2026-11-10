@@ -1,0 +1,21 @@
+.cityNamespace{scroll-margin-top:110px;min-width:0}
+.cityNamespace h2{line-height:1.2;overflow-wrap:anywhere}
+.cityNamespace h3{line-height:1.3;margin:0 0 10px;overflow-wrap:anywhere}
+.cityNamespace p{line-height:1.65;overflow-wrap:anywhere}
+.cityNamespace .citynsGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:20px 0;align-items:start}
+.cityNamespace .citynsCard{min-width:0;padding:18px;border:1px solid var(--border);border-radius:13px;background:var(--surface2)}
+.cityNamespace .citynsCard p:last-child{margin-bottom:0}
+.cityNamespace .citynsStatus{display:inline-block;max-width:100%;padding:6px 10px;margin:0 0 14px;border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:13px;line-height:1.5}
+.cityNamespace .citynsSources{display:flex;flex-wrap:wrap;gap:8px 14px;margin:12px 0 0;font-size:13px;line-height:1.5}
+.cityNamespace .citynsSources a{overflow-wrap:anywhere;text-underline-offset:3px}
+.cityNamespace .citynsCallout{padding:14px 16px;margin:18px 0;border-left:3px solid var(--accent-text);background:var(--surface2);color:var(--text)}
+.cityNamespace .citynsTableWrap{max-width:100%;overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:14px 0}
+.cityNamespace table{width:100%;border-collapse:collapse;font-size:14px;table-layout:fixed}
+.cityNamespace th,.cityNamespace td{padding:10px 12px;text-align:left;vertical-align:top;white-space:normal;overflow-wrap:anywhere;border-bottom:1px solid var(--border)}
+.cityNamespace th{font-weight:700;background:var(--surface2)}
+.cityNamespace tbody th{text-transform:none;letter-spacing:normal;color:var(--text)}
+.cityNamespace td:last-child,.cityNamespace th:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.cityNamespace details{margin:20px 0 4px;padding:14px 16px;border:1px solid var(--border);border-radius:12px}
+.cityNamespace summary{cursor:pointer;font-weight:700;line-height:1.45;overflow-wrap:anywhere}
+.cityNamespace a:focus-visible,.cityNamespace summary:focus-visible,.cityNamespace [tabindex="0"]:focus-visible{outline:2px solid var(--accent-text);outline-offset:4px}
+@media(max-width:720px){.cityNamespace .citynsGrid{grid-template-columns:1fr}.cityNamespace .citynsCard{padding:15px}.cityNamespace details{padding:12px}.cityNamespace th,.cityNamespace td{padding:9px 6px;font-size:12px}}

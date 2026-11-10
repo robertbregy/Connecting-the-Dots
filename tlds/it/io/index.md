@@ -1,10 +1,10 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/io/ | Site edition: 0.7.107 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/io/ | Site edition: 0.7.108 | Language: it -->
 
-Scheda del dominio
+Scheda TLD
 
 # .io
 
-.io è oggi delegato nella root DNS come Codice paese.
+Alla verifica documentata, .io risultava delegato nella root DNS come Codice paese.
 
 Stato osservato al 4 ottobre 2026
 
@@ -16,7 +16,7 @@ Delegata TLD nazionale o territoriale (ccTLD) Codice paese Geografia e luoghi Te
 
 ## FATTO In breve
 
-.io è oggi delegato nella root DNS come Codice paese.
+Alla verifica documentata, .io risultava delegato nella root DNS come Codice paese.
 
 La scheda IANA indica Internet Computer Bureau Limited come gestore.
 
@@ -66,15 +66,15 @@ Le date sono mostrate solo quando sostenute da una fonte attribuibile. Le fasi n
 
 Lo stesso registro presenta oggi .io come “il dominio per i siti tech”, riconoscendo esplicitamente la rilettura input/output e il suo ruolo nella cultura startup.
 
-## FATTO Stato oggi
+## FATTO Stato alla verifica documentata
 
 **Forma ASCII / DNS:** .io
 
 **Presente nell’elenco della root IANA:** Sì, alla data indicata
 
-**Stato attuale nella root:** Delegata
+**Stato nella root alla verifica documentata:** Delegata
 
-**Verifica dello stato attuale:** 4 ott 2026
+**Data della verifica dello stato:** 4 ott 2026
 
 **Classificazione IANA:** Codice paese
 
@@ -118,7 +118,7 @@ Il contatto tecnico IANA non identifica necessariamente il Registry Service Prov
 
 ## Servizi del registro
 
-**Sito del registro:** [http://www.nic.io/ ↗](http://www.nic.io/)
+**Sito del registro:** [http://www.nic.io/ ↗](https://www.nic.io/)
 
 **WHOIS:** whois.nic.io
 
@@ -144,6 +144,6 @@ Non riportato
 
 [Scheda ufficiale IANA ↗](https://www.iana.org/domains/root/db/io.html) [Fonte 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Fonte 3 ↗](https://www.nic.io/)
 
-**Di Robert Bregy** · Edizione del sito 0.7.107 · 9 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.108 · 10 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

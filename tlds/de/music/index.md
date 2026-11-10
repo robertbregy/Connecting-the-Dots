@@ -1,10 +1,10 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/de/music/ | Site edition: 0.7.107 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/de/music/ | Site edition: 0.7.108 | Language: de -->
 
-Domainprofil
+TLD-Profil
 
 # .music
 
-.music ist derzeit als Generisch in der DNS-Root delegiert.
+Bei der dokumentierten Prüfung war .music als Generisch in der DNS-Root delegiert.
 
 Status beobachtet am 4. Oktober 2026
 
@@ -16,7 +16,7 @@ Delegiert 2012 · 2000/2012 Generisch Kultur, Medien & Bildung
 
 ## FAKT Kurz erklärt
 
-.music ist derzeit als Generisch in der DNS-Root delegiert.
+Bei der dokumentierten Prüfung war .music als Generisch in der DNS-Root delegiert.
 
 Der IANA-Eintrag nennt DotMusic Limited als Betreiber bzw. Verwalter.
 
@@ -308,15 +308,15 @@ DotMusic Limited · Zypern
 
 Daten werden nur angezeigt, wenn sie durch eine zuordenbare Quelle belegt sind. Nicht dokumentierte Phasen werden nicht geschätzt. Dieser Reveal-Day-Snapshot nutzt die lokal bewahrte Chronologie plus verifizierte 2026-Datensätze; die Browser-Anreicherung mit ICANN-Vertragslebenszyklusdaten bleibt deaktiviert, damit alle Besucher denselben reproduzierbaren Datensatz sehen.
 
-## FAKT Stand heute
+## FAKT Status bei der dokumentierten Prüfung
 
 **ASCII-/DNS-Form:** .music
 
 **In der IANA-Root-Liste enthalten:** Ja, zum angegebenen Datum
 
-**Aktueller Status in der Root-Zone:** Delegiert
+**Status in der Root-Zone bei der dokumentierten Prüfung:** Delegiert
 
-**Prüfung des aktuellen Status:** 4. Okt. 2026
+**Datum der Statusprüfung:** 4. Okt. 2026
 
 **IANA-Klassifikation:** Generisch
 
@@ -386,6 +386,6 @@ Von IANA verlinkte Berichte mit Originaltiteln und Veröffentlichungsdaten. Das 
 
 [Offizieller IANA-Datensatz ↗](https://www.iana.org/domains/root/db/music.html) [Quelle 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Quelle 3 ↗](https://newgtlds.icann.org/en/program-status/statistics) [Quelle 4 ↗](https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm) [Quelle 5 ↗](https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/)
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.107 · 9. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.108 · 10. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

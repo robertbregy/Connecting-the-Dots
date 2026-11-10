@@ -1,12 +1,16 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/it/portfolios/ | Site edition: 0.7.107 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/it/portfolios/ | Site edition: 0.7.108 | Language: it -->
 
-Economia dei domini
+Analisi economica
 
 # Portafogli e contese
 
+**Snapshot APS · 11 ottobre 2026**
+
+I dati delle candidature provengono dall’esportazione pubblica APS acquisita l’11 ottobre 2026. Questo snapshot precede lo String Confirmation Day (17 novembre), previsto per la pubblicazione delle stringhe confermate e delle contese aggiornate. Non attesta esiti individuali delle valutazioni. [Calendario ufficiale ↗](https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en)
+
 Segui le strategie di chi presenta molte candidature e la competizione per le stesse parole. I confronti tra round e i casi Aruba e Intercap chiariscono che cosa viene contato.
 
-[Panoramica sull’economia](https://robertbregy.github.io/Connecting-the-Dots/it/?tab=economics#economics) [Metodo e citazione](https://robertbregy.github.io/Connecting-the-Dots/research/) [Versione testuale](https://robertbregy.github.io/Connecting-the-Dots/economics/it/portfolios/index.md)
+[Apri l’economia nell’atlante interattivo](https://robertbregy.github.io/Connecting-the-Dots/it/?tab=economics#economics) [Metodo e citazione](https://robertbregy.github.io/Connecting-the-Dots/research/) [Versione testuale](https://robertbregy.github.io/Connecting-the-Dots/economics/it/portfolios/index.md)
 
 ## Chi concentra il mercato?
 
@@ -81,6 +85,6 @@ I 263 set preliminari di contesa fra stringhe identiche raccolgono 891 candidatu
 
 [ICANN · preliminary contention CSV ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv) [internet.Best · applicant portfolios ↗](https://internet.best/new-gtld-applications/) [nTLDData · primary strings ↗](https://www.ntlddata.com/applications/strings)
 
-**Di Robert Bregy** · Edizione del sito 0.7.107 · 9 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.108 · 10 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.
