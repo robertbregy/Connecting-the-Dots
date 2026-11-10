@@ -1,0 +1,181 @@
+name: Import explicitly reviewed v0.7.108 final QA corrections
+
+on:
+  push:
+    branches: [transport/audit-v07108-20261110]
+    paths: ['transport/v07108/final-qa-ready.json']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ctd-v07108-reviewed-source-import
+  cancel-in-progress: false
+
+jobs:
+  import-exact-review:
+    if: github.repository == 'robertbregy/Connecting-the-Dots' && github.ref == 'refs/heads/transport/audit-v07108-20261110'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      GIT_TERMINAL_PROMPT: '0'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Check out this exact import request
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          path: transport
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Check out the exact reviewed R2 base
+        uses: actions/checkout@v5
+        with:
+          ref: e1f1003731fa01cd875c2777cbe35ff11902026f
+          path: candidate
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Import exactly two reviewed QA scripts and their recorded evidence
+        working-directory: candidate
+        shell: bash
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');
+          const {execFileSync}=require('node:child_process');
+          const state=JSON.parse(fs.readFileSync('../transport/transport/v07108/final-qa-ready.json','utf8'));
+          const git=(...args)=>execFileSync('git',args,{encoding:'utf8'}).trim();
+          const command=(...args)=>execFileSync('git',args,{stdio:'inherit'});
+          const hash=value=>crypto.createHash('sha256').update(value).digest('hex');
+          const target='refs/heads/feat/audit-v07108',transport='refs/heads/transport/audit-v07108-20261110';
+          const requireRemote=(ref,sha)=>assert.deepEqual(git('ls-remote','--exit-code','origin',ref).split(/\s+/),[sha,ref]);
+          assert.equal(process.env.GITHUB_REPOSITORY,'robertbregy/Connecting-the-Dots');
+          assert.equal(process.env.GITHUB_REF,transport);
+          assert.equal(state.base,'e1f1003731fa01cd875c2777cbe35ff11902026f');
+          assert.equal(state.source,'865ddac2279106101bc5be2b9e27cba54951a138');
+          assert.equal(state.expected_final_tree,'78d252f704b62d330e1adc711756244bf72c7fea');
+          for(const key of ['home_sha256','cold_sha256','review_sha256','continuity_sha256','prior_review_sha256','prior_continuity_sha256','prior_cold_sha256'])assert.match(state[key],/^[a-f0-9]{64}$/);
+          assert.equal(git('rev-parse','HEAD'),state.base);
+          assert.equal(git('rev-parse','HEAD^{tree}'),'35680c1fed6dd7921f12c5c5aee3d6cc8510a970');
+          assert.equal(git('status','--porcelain'),'');
+          requireRemote(target,state.base);requireRemote(transport,process.env.GITHUB_SHA);
+          command('merge-base','--is-ancestor',state.source,state.base);
+          const pub=JSON.parse(fs.readFileSync('publication.json','utf8'));
+          assert.equal(pub.version,'0.7.108');assert.equal(pub.buildProvenanceCommit,state.source);
+          const reviewPath='docs/editorial-review-2026-11-10-v0.7.108.json',homePath='scripts/home_editorial_qa.cjs',coldPath='scripts/audit_20261018_browser.cjs',reportPath='content-continuity-audit.json';
+          assert.equal(pub.editorialReviewPath,reviewPath);
+          assert.equal(hash(fs.readFileSync('docs/editorial-review-2026-11-09-v0.7.107.json')),'0be6e941d94d289207912923527438d7c6cbdb169bce087e2be219ac84c7a8bc');
+          const home=fs.readFileSync('../transport/transport/v07108/final-qa/home_editorial_qa.cjs');
+          assert.equal(hash(home),state.home_sha256);
+          const cold=fs.readFileSync('../transport/transport/v07108/final-qa/audit_20261018_browser.cjs');
+          assert.equal(hash(cold),state.cold_sha256);
+          const oldReview=fs.readFileSync(reviewPath,'utf8'),oldReport=fs.readFileSync(reportPath,'utf8');
+          assert.equal(hash(oldReview),state.prior_review_sha256);
+          assert.equal(hash(oldReport),state.prior_continuity_sha256);
+          const review=JSON.parse(oldReview);
+          assert.equal(JSON.stringify(review,null,2)+'\n',oldReview);
+          assert.equal(review.status,'reviewed');
+          assert.equal(review.verification.sourceCommit,state.source);
+          assert.equal(review.signoff.sourceCommit,state.source);
+          assert.equal(review.buildProvenancePolicy.sourceCommit,state.source);
+          assert.equal(review.verification.humanParticipants,0);
+          assert.equal(review.signoff.humanParticipants,0);
+          assert.equal(review.files[homePath].sha256,'b6c0e8eaab6a997b68f18a5401e30172d83c7b7870b4df433c2895d83da73959');
+          assert.equal(hash(fs.readFileSync(homePath)),review.files[homePath].sha256);
+          assert.deepEqual(review.files[homePath].rationaleIds,['V106','QA106','V107','QA107']);
+          assert.equal(review.files[coldPath].sha256,state.prior_cold_sha256);
+          assert.equal(state.prior_cold_sha256,'2896cd841f64586339aeec70300c4f7f46406d6ed908cb9b3c7920cc0bb62465');
+          assert.equal(hash(fs.readFileSync(coldPath)),state.prior_cold_sha256);
+          assert.deepEqual(review.files[coldPath].rationaleIds,['T02','A19','H01','E09','E13','V107','QA107']);
+          // Import the exact delta explicitly reviewed by the root assistant.
+          // Do not run a finalizer, generate approval, alter signoff or infer
+          // authorization from passing tests. The full target tree is fixed.
+          review.files[homePath].sha256=state.home_sha256;
+          review.files[homePath].rationaleIds.push('AUD108');
+          review.files[coldPath].sha256=state.cold_sha256;
+          review.files[coldPath].rationaleIds.push('AUD108');
+          const newReview=JSON.stringify(review,null,2)+'\n';
+          assert.equal(hash(newReview),state.review_sha256);
+          const needle='"manifest_sha256": "'+state.prior_review_sha256+'"';
+          assert.equal(oldReport.split(needle).length,2);
+          const newReport=oldReport.replace(needle,'"manifest_sha256": "'+state.review_sha256+'"');
+          assert.equal(hash(newReport),state.continuity_sha256);
+          fs.writeFileSync(homePath,home);fs.writeFileSync(coldPath,cold);fs.writeFileSync(reviewPath,newReview);fs.writeFileSync(reportPath,newReport);
+          command('add','--',homePath,coldPath,reviewPath,reportPath);
+          assert.deepEqual(git('diff','--cached','--name-only').split('\n').sort(),[homePath,coldPath,reviewPath,reportPath].sort());
+          assert.equal(git('write-tree'),state.expected_final_tree,'Only the complete explicitly reviewed target tree may be imported.');
+          assert.equal(git('diff','--name-only'),'');
+          assert.equal(git('ls-files','--others','--exclude-standard'),'');
+          state.transport_commit=process.env.GITHUB_SHA;
+          state.replay_origin='Home correction recovered exactly from the independently reviewed R3 tree; strict cold-export publication-version allowlist reviewed separately against sanitized eight-scenario CI diagnosis. Complete four-file target tree independently computed by the root assistant before import. No public payload bytes, signoff, build or review finalizer are changed by this workflow.';
+          fs.writeFileSync(path.join(process.env.RUNNER_TEMP,'ctd-v108-final-qa-state.json'),JSON.stringify(state,null,2)+'\n');
+          console.log('EXACT_EXPLICITLY_REVIEWED_TREE_IMPORTED',state.expected_final_tree);
+          JS
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: candidate/package-lock.json
+
+      - name: Validate the exact reviewed candidate without rebuilding or approving it
+        working-directory: candidate
+        run: |
+          npm ci
+          node --check scripts/audit_20261018_browser.cjs
+          python3 scripts/release_check.py
+          node scripts/verify_ia_b2_parity.cjs
+          node scripts/audit_v07108_qa.cjs
+          node scripts/validate_multilingual.js
+          node scripts/validate_internet_access.js
+          CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
+          CTD_USABILITY_QA="$RUNNER_TEMP/ctd-v108-usability-static" node scripts/usability_remediation_qa.cjs --static-only
+          CTD_HOME_QA="$RUNNER_TEMP/ctd-v108-home-static" node scripts/home_editorial_qa.cjs --static-only
+
+      - name: Publish only the exact reviewed tree with a normal feature-branch push
+        working-directory: candidate
+        shell: bash
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),{execFileSync}=require('node:child_process');
+          const file=path.join(process.env.RUNNER_TEMP,'ctd-v108-final-qa-state.json'),state=JSON.parse(fs.readFileSync(file,'utf8'));
+          const git=(...args)=>execFileSync('git',args,{encoding:'utf8'}).trim(),command=(...args)=>execFileSync('git',args,{stdio:'inherit'});
+          const target='refs/heads/feat/audit-v07108';
+          const requireRemote=(ref,sha)=>assert.deepEqual(git('ls-remote','--exit-code','origin',ref).split(/\s+/),[sha,ref]);
+          assert.equal(git('rev-parse','HEAD'),state.base);
+          assert.equal(git('write-tree'),state.expected_final_tree);
+          assert.equal(git('diff','--name-only'),'');
+          assert.equal(git('ls-files','--others','--exclude-standard'),'');
+          assert.equal(git('diff','--cached','--name-only','--','.github/workflows'),'');
+          assert.equal(git('ls-files','transport/v07108'),'');
+          command('config','user.name','github-actions[bot]');
+          command('config','user.email','41898282+github-actions[bot]@users.noreply.github.com');
+          command('commit','-m','Align exact tutorial and versioned cold-export QA with reviewed v0.7.108 [skip build]');
+          const reviewed=git('rev-parse','HEAD');
+          assert.equal(git('show','-s','--format=%P',reviewed),state.base);
+          assert.equal(git('rev-parse','HEAD^{tree}'),state.expected_final_tree);
+          requireRemote(target,state.base);
+          requireRemote('refs/heads/transport/audit-v07108-20261110',process.env.GITHUB_SHA);
+          command('push','origin',reviewed+':'+target);
+          requireRemote(target,reviewed);
+          state.reviewed_commit=reviewed;state.published=true;state.static_validators_passed=8;
+          state.remaining_gates='All seven required checks on the final PR head, protected merge, actual Pages deployment and verified live bytes remain mandatory.';
+          fs.writeFileSync(file,JSON.stringify(state,null,2)+'\n');
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'### Exact reviewed candidate imported\n\nCommit: '+reviewed+'\n\nTree: '+state.expected_final_tree+'\n\nEight static validators passed. PR, deployment and live-byte gates remain separate.\n');
+          console.log('EXACT_REVIEWED_CANDIDATE_PUBLISHED',reviewed);
+          JS
+
+      - name: Preserve exact review import and validation evidence
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: v07108-final-qa-${{ github.sha }}
+          path: ${{ runner.temp }}/ctd-v108-final-qa-state.json
+          if-no-files-found: warn
