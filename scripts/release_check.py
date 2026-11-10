@@ -988,7 +988,7 @@ for lang in LANGS:
         fail('Wrong standalone chronicle language: '+lang)
     if f'<link rel="canonical" href="{site_base}inside-the-round/{lang}/">' not in standalone:
         fail('Wrong standalone chronicle canonical: '+lang)
-        if any(not html_text_present(standalone,v) for v in [translations[lang]['insideIntro'],translations[lang]['insideDisclosureBody']]):
+    if any(not html_text_present(standalone,v) for v in [translations[lang]['insideIntro'],translations[lang]['insideDisclosureBody']]):
         fail('Standalone chronicle translation missing: '+lang)
     if standalone.count('<link rel="alternate" hreflang=')!=5:
         fail('Standalone chronicle reciprocal hreflang parity: '+lang)
@@ -1038,7 +1038,7 @@ for lang in LANGS:
     if standalone.count('<link rel="alternate" hreflang=')!=5:
         fail('Missing hreflang reciprocity for Behind the Round '+lang)
     for key in ['behindExplainedBody','behindOpenBody','behindIndependenceBody','behindMethodBody']:
-                if not translations.get(lang,{}).get(key) or not html_text_present(standalone,translations[lang][key]):
+        if not translations.get(lang,{}).get(key) or not html_text_present(standalone,translations[lang][key]):
             fail('Missing/untranslated core field-note '+lang+'/'+key)
     for source in case['sources']:
         if source['url'] not in standalone or source['url'] not in page or not translations[lang].get(source['labelKey']):
@@ -1062,7 +1062,7 @@ for lang in LANGS:
     if 'data-region="AP" data-gap="1"' not in standalone or standalone.count('data-region=')!=5:
         fail('Regional comparison not fully published: '+lang)
     for new_key in ['behindRegionalConclusion','behindIndependentBody','behindCoverageBody','wdoUnknownBody','wdoTrademarkBody','wdoComplianceBody']:
-                if not html_text_present(standalone,translations[lang][new_key]):
+        if not html_text_present(standalone,translations[lang][new_key]):
             fail('Independently sourced review missing in '+lang+'/'+new_key)
     second=stories[1]
     detail=ROOT/'behind-the-round'/lang/'wdo-identity'/'index.html'
