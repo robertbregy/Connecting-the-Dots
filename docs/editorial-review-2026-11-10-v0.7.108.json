@@ -7341,9 +7341,10 @@
         "V106",
         "QA106",
         "V107",
-        "QA107"
+        "QA107",
+        "AUD108"
       ],
-      "sha256": "700256ce201d54de29ec5cb900d50f8691331813e81bf944ce346a3b8a6b10de",
+      "sha256": "1dc4cb37c4ba30215b0d07fb4914cdab8c6c3ff6a4faf99294bd876f260d6d25",
       "priorTechnicalSHA256": "b2e922df69698d8870595bfdcb3077db99d6f07d86b5499c78b00a531b170c7c"
     },
     "scripts/validate_access_chronology_v0796.cjs": {
@@ -7396,15 +7397,16 @@
     },
     "scripts/validate_internet_access.js": {
       "baselineSHA256": null,
-      "sha256": "9b599cbc48169b7469fc84eb8bae9d2ee4b72bbe11aef71be54a618bf9985c7b",
+      "sha256": "ffb38bcf81886f969ab93899a796163e906d8d8a895fa2a572e3851524e2dfeb",
       "rationaleIds": [
         "W95",
-        "QA104"
+        "QA104",
+        "AUD108"
       ]
     },
     "scripts/validate_multilingual.js": {
       "baselineSHA256": "1b784ead691d9f1300c67e5db337fa3e7819df3356e930a3f9bb816c1c051461",
-      "sha256": "b310aed00145f9896732df5734a905a823e5799beebb6bcc4f82a4608f2b4551",
+      "sha256": "8da04ba89c14d2fee0ea71971c51d0492ec0476b222818aab7805d34afedcf49",
       "rationaleIds": [
         "A19",
         "H01",
@@ -7421,7 +7423,8 @@
         "V106",
         "QA106",
         "V107",
-        "QA107"
+        "QA107",
+        "AUD108"
       ],
       "priorTechnicalSHA256": "21d94411764b62a4c57f35fd06ca9a2ce0c8470c26b651a006ccbaec18f775f4"
     },

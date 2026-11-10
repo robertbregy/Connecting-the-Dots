@@ -49,6 +49,10 @@ function staticChecks(){
  const translations=JSON.parse(fs.readFileSync(path.join(root,'data/translations.json'),'utf8'));
  const unchangedAttributes=node=>[...node.attributes].filter(a=>a.name!=='data-i18n').map(a=>[a.name,a.value]).sort((a,b)=>a[0].localeCompare(b[0]));
  const normalize=(href,version)=>href.replaceAll(version,'<VERSION>').replace(/(reader-first\.css\?v=<VERSION>)-usability-20261022$/,'$1');
+ // These exact historical STYLE elements became shared CSS modules in v0.7.108.
+ // Accept that relocation only when the versioned link and CSS text prove it;
+ // every other historical ID remains a required fragment in the document.
+ const sharedStyleIds=new Set(['city-namespace-style','tld-cultural-style','tld-market-style','ctd-native-governance-css','audit-20261019-style']);
 
  for(const file of ['index.html',...langs.map(l=>l+'/index.html')]){
   const before=parseHTML(readOld(file).toString()).document,after=parseHTML(fs.readFileSync(path.join(root,file),'utf8')).document;
@@ -107,14 +111,56 @@ function staticChecks(){
   assert.equal(after.querySelectorAll('[data-event-id="replacement"][data-round-state="observed"]').length,1,'Replacement close not reflected: '+file);
   assert.equal(after.querySelectorAll('#nissay-termination').length,1,'Dated .nissay case omitted: '+file);
   const ids=[...before.querySelectorAll('[id]')].map(n=>n.id),now=[...after.querySelectorAll('[id]')].map(n=>n.id);
-  for(const id of ids)assert.ok(after.getElementById(id),'Missing prior fragment: '+id);
+  for(const id of ids){
+   if(after.getElementById(id))continue;
+   const original=before.getElementById(id);
+   assert.ok(original.tagName==='STYLE'&&sharedStyleIds.has(id),'Missing prior fragment: '+id);
+   const links=after.querySelectorAll('link[data-shared-style="'+id+'"]');
+   assert.equal(links.length,1,'Historical shared style requires one replacement link: '+file+'/'+id);
+   assert.equal(links[0].getAttribute('rel'),'stylesheet','Historical shared style lost stylesheet relation: '+file+'/'+id);
+   const modulePath='assets/shared/'+id+'.css';
+   assert.equal(links[0].getAttribute('href'),(file==='index.html'?'':'../')+modulePath+'?v='+publication.version,'Historical shared style requires its versioned module: '+file+'/'+id);
+   assert.ok(fs.existsSync(path.join(root,modulePath)),'Historical shared style module is missing: '+modulePath);
+   assert.equal(fs.readFileSync(path.join(root,modulePath),'utf8').trim(),original.textContent.trim(),'Historical shared style CSS changed: '+file+'/'+id);
+  }
   assert.equal(new Set(now).size,now.length,'Duplicate fragment: '+file);
   for(const [id,selector] of Object.entries(aliases))assert.equal(after.querySelector(selector)?.id,id,'Incorrect legacy destination: '+id);
   for(const d of [before,after])for(const ui of d.querySelectorAll('[data-reader-ui]'))ui.remove();
+  // The one WDO story CTA in each non-English index now opens the same case
+  // in that index's language. Verify its exact occurrence and sibling pages;
+  // never normalize other WDO links or arbitrary locale paths.
+  const localizedWdoLinks=new Map();
+  if(['it','de','fr'].includes(lang)){
+   const from='https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/en/wdo-identity/';
+   const to='https://robertbregy.github.io/Connecting-the-Dots/behind-the-round/'+lang+'/wdo-identity/';
+   const selector='#behind-case-wdo-identity > a.behindStoryLink';
+   const prior=before.querySelectorAll(selector),current=after.querySelectorAll(selector);
+   assert.equal(prior.length,1,'Historical WDO story CTA must be unique: '+file);
+   assert.equal(current.length,1,'Localized WDO story CTA must be unique: '+file);
+   assert.equal(prior[0].getAttribute('href'),from,'Historical WDO story destination differs: '+file);
+   assert.equal(current[0].getAttribute('href'),to,'WDO story must open its native-language case: '+file);
+   assert.equal(current[0].innerHTML,prior[0].innerHTML,'WDO localization changed the story CTA content: '+file);
+   const attributes=node=>[...node.attributes].filter(a=>a.name!=='href').map(a=>[a.name,a.value]).sort((a,b)=>a[0].localeCompare(b[0]));
+   assert.deepEqual(attributes(current[0]),attributes(prior[0]),'WDO localization changed unrelated CTA attributes: '+file);
+   assert.equal(before.querySelectorAll('a[href="'+from+'"]').length,1,'Historical English WDO occurrence count differs: '+file);
+   assert.equal(after.querySelectorAll('a[href="'+from+'"]').length,0,'English WDO destination remains in localized index: '+file);
+   assert.equal(before.querySelectorAll('a[href="'+to+'"]').length,1,'Historical native WDO occurrence count differs: '+file);
+   assert.equal(after.querySelectorAll('a[href="'+to+'"]').length,2,'Localized WDO occurrence count differs: '+file);
+   for(const [locale,href] of [['en',from],[lang,to]]){
+    const target=path.join(root,'behind-the-round',locale,'wdo-identity','index.html');
+    assert.ok(fs.existsSync(target),'WDO language-equivalent destination is missing: '+target);
+    const destination=parseHTML(fs.readFileSync(target,'utf8')).document;
+    assert.equal(destination.documentElement.getAttribute('lang'),locale,'WDO destination language differs: '+target);
+    assert.deepEqual([...destination.querySelectorAll('link[rel="canonical"]')].map(n=>n.getAttribute('href')),[href],'WDO destination canonical differs: '+target);
+    for(const [alternate,expected] of [['en',from],[lang,to]])assert.deepEqual([...destination.querySelectorAll('link[rel="alternate"][hreflang="'+alternate+'"]')].map(n=>n.getAttribute('href')),[expected],'WDO language equivalents are not reciprocal: '+target);
+   }
+   localizedWdoLinks.set(prior[0],to);
+  }
   // Source protection above approves one exact obsolete APS export destination.
-  // Match its current official listing while retaining every other link occurrence.
+  // Match its current official listing and the verified WDO CTA occurrences
+  // while retaining every other link occurrence without rewriting its URL.
   const originalLinks=[...before.querySelectorAll('a[href]')].filter(a=>outsideHome(a)&&!replacedNavigation.has(a)).map(a=>{
-   const href=a.getAttribute('href'),replacement=operationalLinks.find(link=>link.from===href);
+   const href=localizedWdoLinks.get(a)??a.getAttribute('href'),replacement=operationalLinks.find(link=>link.from===href);
    return normalize(linkSignature(replacement?replacement.to:href,nativePath),originalPublication.version);
   }).sort();
   const remaining=[{document:after,pagePath:nativePath},...economicsDocuments].flatMap(({document,pagePath})=>[...document.querySelectorAll('a[href]')].filter(outsideHome).map(a=>normalize(linkSignature(a.getAttribute('href'),pagePath),publication.version)));
