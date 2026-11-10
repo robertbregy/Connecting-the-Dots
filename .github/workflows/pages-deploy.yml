@@ -95,6 +95,12 @@ jobs:
           python3 scripts/release_check.py
           node scripts/verify_ia_b2_parity.cjs
 
+      - name: Remove build-only source fragments from the public payload
+        if: steps.source.outputs.publish == 'true'
+        run: |
+          rm -rf src
+          test ! -e src/ia-b2-hubs.html
+
       - name: Read the existing Pages configuration
         if: steps.source.outputs.publish == 'true'
         uses: actions/configure-pages@v6
