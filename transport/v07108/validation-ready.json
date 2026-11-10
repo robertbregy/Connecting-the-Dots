@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "repository": "robertbregy/Connecting-the-Dots",
+  "transport_ref": "refs/heads/transport/audit-v07108-20261110",
+  "target_ref": "refs/heads/feat/audit-v07108",
+  "expected_candidate_sha": "252bafccad43e6ae37a46e835a4c5720d4e28b37",
+  "source_commit_sha": "865ddac2279106101bc5be2b9e27cba54951a138",
+  "expected_final_tree_sha": "35680c1fed6dd7921f12c5c5aee3d6cc8510a970",
+  "review_file_count": 5,
+  "gzip_sha256": "49bf3ce8e8083d8da7553550639c558d503cba987c73aa6350eff18eb6eca149",
+  "gzip_bytes": 157575,
+  "chunk_bytes": 18432,
+  "chunk_count": 9
+}
