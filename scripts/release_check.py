@@ -956,8 +956,10 @@ for page in discovery_pages:
     if not (ROOT/relative_path/'index.html').is_file() or not (ROOT/page.get('markdownPath','')).is_file():
         fail('Missing HTML or Markdown discovery document: '+relative_path)
     must_index.add(site_base+relative_path)
-if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index) or len(must_index)!=127:
-    fail('Sitemap must contain all 43 established URLs and all 84 discovery documents exactly once (127 URLs)')
+for lang in LANGS:
+    must_index.add(site_base+'research/reader-study/'+lang+'/')
+if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index) or len(must_index)!=131:
+    fail('Sitemap must contain 43 established URLs, 84 discovery documents and four Reader Study pages exactly once (131 URLs)')
 for lang in LANGS:
     page=(ROOT/lang/'index.html').read_text(encoding='utf-8')
     chronicle_page=ROOT/'inside-the-round'/lang/'index.html'
