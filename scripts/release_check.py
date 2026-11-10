@@ -1395,4 +1395,48 @@ research_readme = ROOT / 'research/README.md'
 if research_readme.exists() and f'Latest technical site: **v{version}**' not in research_readme.read_text(encoding='utf-8'):
     fail('research README describes an obsolete technical site release')
 
+
+# v0.7.108 full-surface remediation is a release invariant.
+shared_css=ROOT/'assets'/'editorial-shared.css'
+if not shared_css.exists() or 'Shared publication modules' not in shared_css.read_text(encoding='utf-8'):
+    fail('Shared editorial CSS bundle missing')
+obsolete_style_ids=('city-namespace-style','tld-cultural-style','tld-market-style',
+                    'audit-20261019-style','ctd-b2-cross-style','ctd-native-governance-css')
+for path in ROOT.rglob('*.html'):
+    rel=path.relative_to(ROOT).as_posix()
+    if rel.startswith(('src/','node_modules/','.git/')) or rel=='googlee97a475969dc49f2.html':
+        continue
+    page=path.read_text(encoding='utf-8')
+    if any(f'id="{style_id}"' in page for style_id in obsolete_style_ids):
+        fail('Repeated inline module CSS survived remediation: '+rel)
+    if any(url in page for url in (
+        'http://nic.berlin/','http://www.domini.cat/','http://www.nic.amazon/',
+        'http://www.nic.io/','http://www.nic.swiss/','http://www.verisigninc.com/')):
+        fail('Known HTTP source link was not upgraded: '+rel)
+
+sitemap=(ROOT/'sitemap.xml').read_text(encoding='utf-8')
+if '/src/' in sitemap or '/prototype/' in sitemap:
+    fail('Development routes leaked into sitemap')
+for lang in LANGS:
+    reader=ROOT/'research'/'reader-study'/lang/'index.html'
+    page=reader.read_text(encoding='utf-8')
+    if site_base+'research/reader-study/'+lang+'/' not in sitemap:
+        fail('Reader Study missing from sitemap: '+lang)
+    if page.count('hreflang=') < 5 or 'property="og:image"' not in page:
+        fail('Reader Study metadata incomplete: '+lang)
+    tld=(ROOT/'tlds'/lang/'lugano'/'index.html').read_text(encoding='utf-8')
+    if publication_meta['releasedOn'] < publication_meta['stringConfirmation'] and 'roundStatus' not in tld:
+        fail('Pre-String Confirmation status missing from .lugano: '+lang)
+
+for rel in [f'inside-the-round/{lang}/index.html' for lang in LANGS] + [f'economics/{lang}/round-2026/index.html' for lang in LANGS]:
+    page=(ROOT/rel).read_text(encoding='utf-8')
+    headings=[int(x) for x in re.findall(r'<h([1-6])\\b',page,re.I)]
+    if any(headings[i] > headings[i-1] + 1 for i in range(1,len(headings))):
+        fail('Heading hierarchy jump after remediation: '+rel)
+
+for stale in ('Analisi corrente per candidatura','Aktuelle Analyse auf Antragsebene',
+              'Analyse actuelle par candidature','Current analysis by application'):
+    if any(stale in p.read_text(encoding='utf-8') for p in ROOT.rglob('*.html') if 'src/' not in p.relative_to(ROOT).as_posix()):
+        fail('Undated APS current-analysis label survived: '+stale)
+
 print(f'RELEASE CHECK PASS · v{version} · 1,849 Explorer records · 7,679 life-history events · 4 languages')
