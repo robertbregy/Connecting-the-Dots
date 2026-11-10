@@ -6754,7 +6754,7 @@
     },
     "scripts/audit_20261018_browser.cjs": {
       "baselineSHA256": "96a18d15d53749bc60df6ee6fe8c3df3d6018565643663ab8bc5ed3474d8a789",
-      "sha256": "2896cd841f64586339aeec70300c4f7f46406d6ed908cb9b3c7920cc0bb62465",
+      "sha256": "56b924f69ef74fbf394bc8ceea77b46f05e7ef13d81c950a0fe5d96da0229555",
       "rationaleIds": [
         "T02",
         "A19",
@@ -6762,7 +6762,8 @@
         "E09",
         "E13",
         "V107",
-        "QA107"
+        "QA107",
+        "AUD108"
       ],
       "priorTechnicalSHA256": "b98c0d7742342979940a619874fdf94809a7607be00b4fa6e245253bdf794b5b"
     },
@@ -6950,9 +6951,10 @@
         "V106",
         "QA106",
         "V107",
-        "QA107"
+        "QA107",
+        "AUD108"
       ],
-      "sha256": "b6c0e8eaab6a997b68f18a5401e30172d83c7b7870b4df433c2895d83da73959",
+      "sha256": "963573935f5a1c957c16c78f442af08da1bcb76a23cb33fefaffec5184cb4ff5",
       "priorTechnicalSHA256": "26c3b03a5131ae4c23b6f72b09c9b4983e844c8d8682736392c972e6eea6e8d2"
     },
     "scripts/integrate_discovery.py": {

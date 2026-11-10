@@ -63,6 +63,31 @@ function assertRetainedHomeSources(before, after, label) {
   for (const href of homeSources(before)) assert.ok(current.has(href), 'Home source link disappeared: ' + label + '/' + href);
 }
 
+function assertRetainedTutorial(before, after, lang, id, label) {
+  assert.ok(before && after, 'Retained tutorial is missing: ' + label);
+  let compared = after, reviewedTextCorrections = 0;
+  if (lang === 'de' && id === 'internet-guide') {
+    // The reviewed v0.7.108 correction brings this one introduction into the
+    // formal register already used by the German tutorial. Nothing else in
+    // either tutorial may differ from the historical document.
+    const selector = ':scope > p[data-i18n="journeyIntro"]';
+    const prior = before.querySelectorAll(selector), current = after.querySelectorAll(selector);
+    assert.equal(prior.length, 1, 'Historical German introduction must occur once');
+    assert.equal(current.length, 1, 'Reviewed German introduction must occur once');
+    for (const node of [prior[0], current[0]]) {
+      assert.equal(node.childNodes.length, 1, 'German introduction must contain only its original text node');
+      assert.equal(node.firstChild.nodeType, 3, 'German introduction must remain plain text');
+    }
+    assert.equal(prior[0].textContent, 'Wenn du eine Website öffnest, hilft der Name, den antwortenden Computer zu finden. Folge den Schritten nacheinander.', 'Historical German introduction differs from the reviewed baseline');
+    assert.equal(current[0].textContent, 'Wenn Sie eine Website öffnen, hilft der Name, den antwortenden Computer zu finden. Folgen Sie den Schritten nacheinander.', 'German introduction differs from the exact reviewed correction');
+    compared = after.cloneNode(true);
+    compared.querySelector(selector).textContent = prior[0].textContent;
+    reviewedTextCorrections = 1;
+  }
+  assert.equal(compared.outerHTML, before.outerHTML, 'An existing tutorial changed beyond its location or exact reviewed text: ' + label);
+  return reviewedTextCorrections;
+}
+
 function readBaseline(file) {
   if (process.env.CTD_HOME_BASELINE) return fs.readFileSync(path.join(process.env.CTD_HOME_BASELINE, file), 'utf8');
   return execFileSync('git', ['show', baselineCommit + ':' + file], {cwd: root, encoding: 'utf8', maxBuffer: 30 * 1024 * 1024});
@@ -85,15 +110,15 @@ function staticChecks(report) {
     for (const id of oldIds) assert.ok(after.getElementById(id), 'Retained home fragment missing: ' + file + '/' + id);
     const allIds = [...after.querySelectorAll('[id]')].map(node => node.id);
     assert.equal(new Set(allIds).size, allIds.length, 'Duplicate document ID: ' + file);
-    for (const id of ['three-minute-guide', 'internet-guide']) {
-      assert.equal(after.getElementById(id).outerHTML, before.getElementById(id).outerHTML, 'An existing tutorial changed beyond its location: ' + file + '/' + id);
-    }
+    let reviewedTextCorrections = 0;
+    for (const id of ['three-minute-guide', 'internet-guide'])
+      reviewedTextCorrections += assertRetainedTutorial(before.getElementById(id), after.getElementById(id), lang, id, file + '/' + id);
     const previousStories = [...before.querySelectorAll('.audienceDiscovery')].map(node => node.dataset.openSection + '#' + node.dataset.openAnchor).sort();
     const currentStories = [...after.querySelectorAll('.homeStory')].map(node => node.dataset.openSection + '#' + node.dataset.openAnchor).sort();
     assert.deepEqual(currentStories, previousStories, 'A story lost its original destination: ' + file);
     const originalChapters = [...before.querySelectorAll('section.section')].map(node => node.id);
     for (const id of originalChapters) assert.ok(after.querySelector('section.section[id="' + id + '"]'), 'A canonical chapter disappeared: ' + file + '/' + id);
-    report.static.push({file, lang, retainedHomeFragments: oldIds.length, unchangedTutorials: 2, canonicalChapters: originalChapters.length, sourceGuard: 'passed'});
+    report.static.push({file, lang, retainedHomeFragments: oldIds.length, preservedTutorials: 2, unchangedTutorials: 2 - reviewedTextCorrections, reviewedTextCorrections, canonicalChapters: originalChapters.length, sourceGuard: 'passed'});
   }
 }
 
@@ -294,7 +319,7 @@ async function browserChecks(report, out) {
   } finally { await browser.close(); }
 }
 
-module.exports = {outsideHome, assertHomeStructure, assertRetainedHomeSources};
+module.exports = {outsideHome, assertHomeStructure, assertRetainedHomeSources, assertRetainedTutorial};
 if (require.main === module) {
   const out = path.resolve(root, process.env.CTD_HOME_QA || 'audit-home-editorial');
   fs.mkdirSync(out, {recursive: true});

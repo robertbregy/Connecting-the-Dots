@@ -97,8 +97,9 @@ async function downloadCSV(page,requests){
  if(exportMode==='settled')assert.deepEqual(during,[],'Export fetched HTTP resources instead of using the visible dataset');
  else {
   // No broad exception: only these two same-origin, independently identified
-  // background resources may appear. CSV contents and provenance stay checked.
-  const allowed=['data/aps_2026_application_graph.js','assets/aps-atlas.js'].map(p=>new URL(p,base).href);
+  // background resources with this exact publication version may appear.
+  // CSV contents and provenance stay checked; all other queries stay forbidden.
+  const allowed=['data/aps_2026_application_graph.js','assets/aps-atlas.js'].map(p=>new URL(p+'?v='+encodeURIComponent(pub.version),base).href);
   assert.deepEqual(during.filter(url=>!allowed.includes(url)),[],'Unexpected request during cold export');
   report.backgroundRequests.push({url:page.url(),resources:during});
  }
