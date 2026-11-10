@@ -1,0 +1,240 @@
+name: Import reviewed v0.7.108 sources
+
+on:
+  push:
+    branches: [transport/audit-v07108-20261110]
+    paths: ['transport/v07108/ready.json']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ctd-v07108-reviewed-source-import
+  cancel-in-progress: false
+
+jobs:
+  import-and-build:
+    if: github.repository == 'robertbregy/Connecting-the-Dots' && github.ref == 'refs/heads/transport/audit-v07108-20261110'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      CTD_TARGET_REF: refs/heads/feat/audit-v07108
+      CTD_TRANSPORT_REF: refs/heads/transport/audit-v07108-20261110
+      CTD_SOURCE_TREE: 57d738a81a778aa3e1d82d5f25d3d976610c103d
+      CTD_PAYLOAD_SHA256: fe8bcc8b5abdd4b707bd18f46e5fab37e3224504871a044ac8b342515b509781
+      GIT_TERMINAL_PROMPT: '0'
+      PYTHONDONTWRITEBYTECODE: '1'
+
+    steps:
+      - name: Check out this exact transport commit
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          path: transport
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Verify and decode the reviewed source payload
+        id: payload
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import base64, gzip, hashlib, io, json, math, os, pathlib, re
+          directory = pathlib.Path('transport/transport/v07108')
+          ready = directory / 'ready.json'
+          assert ready.is_file() and not ready.is_symlink(), 'Missing regular ready.json'
+          manifest = json.loads(ready.read_text(encoding='utf-8'))
+          assert manifest['schema'] == 1
+          assert manifest['repository'] == os.environ['GITHUB_REPOSITORY'] == 'robertbregy/Connecting-the-Dots'
+          assert manifest['transport_ref'] == os.environ['GITHUB_REF'] == os.environ['CTD_TRANSPORT_REF']
+          assert manifest['target_ref'] == os.environ['CTD_TARGET_REF']
+          assert re.fullmatch(r'[0-9a-f]{40}', manifest['expected_target_sha']), 'Fill the exact W0 SHA before uploading ready.json'
+          assert manifest['source_tree_sha'] == os.environ['CTD_SOURCE_TREE']
+          assert manifest['gzip_sha256'] == os.environ['CTD_PAYLOAD_SHA256']
+          assert manifest['source_file_count'] == 42
+          assert manifest['gzip_bytes'] == 655113
+          assert manifest['chunk_bytes'] == 18432
+          assert manifest['chunk_count'] == math.ceil(manifest['gzip_bytes'] / manifest['chunk_bytes']) == 36
+          parts = directory
+          expected = [f'part-{i:03d}.b64' for i in range(manifest['chunk_count'])]
+          assert sorted(p.name for p in parts.iterdir() if p.name != 'ready.json') == expected, 'Missing or unexpected payload chunks'
+          chunks = []
+          for i, name in enumerate(expected):
+              part = parts / name
+              assert part.is_file() and not part.is_symlink(), f'Not a regular chunk: {name}'
+              encoded = part.read_bytes().removesuffix(b'\n')
+              assert len(encoded) <= 24576, f'Oversized chunk: {name}'
+              chunk = base64.b64decode(encoded, validate=True)
+              required = min(manifest['chunk_bytes'], manifest['gzip_bytes'] - i * manifest['chunk_bytes'])
+              assert len(chunk) == required, f'Wrong chunk length: {name}'
+              chunks.append(chunk)
+          compressed = b''.join(chunks)
+          assert len(compressed) == manifest['gzip_bytes']
+          assert hashlib.sha256(compressed).hexdigest() == manifest['gzip_sha256'], 'Payload checksum mismatch'
+          with gzip.GzipFile(fileobj=io.BytesIO(compressed)) as stream:
+              raw = stream.read(8 * 1024 * 1024 + 1)
+          assert len(raw) <= 8 * 1024 * 1024, 'Uncompressed payload exceeds its bound'
+          records = json.loads(raw)
+          assert isinstance(records, list) and len(records) == 42
+          runtime = pathlib.Path(os.environ['RUNNER_TEMP'])
+          (runtime / 'ctd-v108-sources.json').write_bytes(raw)
+          manifest['transport_commit'] = os.environ['GITHUB_SHA']
+          manifest['review_recorded_by_transport'] = False
+          (runtime / 'ctd-v108-transport-state.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
+              output.write('expected_target_sha=' + manifest['expected_target_sha'] + '\n')
+          print('SOURCE_PAYLOAD_VERIFIED', manifest['gzip_sha256'], len(raw), 'bytes; 42 files')
+          PY
+
+      - name: Check out the exact authorized feature base W0
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ steps.payload.outputs.expected_target_sha }}
+          path: candidate
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Apply the exact overlay, verify its tree and publish source S
+        id: source
+        working-directory: candidate
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib, re, subprocess
+          runtime = pathlib.Path(os.environ['RUNNER_TEMP'])
+          state_path = runtime / 'ctd-v108-transport-state.json'
+          state = json.loads(state_path.read_text(encoding='utf-8'))
+          records = json.loads((runtime / 'ctd-v108-sources.json').read_text(encoding='utf-8'))
+          root = pathlib.Path.cwd()
+          def git(*args):
+              return subprocess.check_output(['git', *args], text=True).strip()
+          def command(*args):
+              subprocess.run(['git', *args], check=True)
+          def require_remote(ref, sha):
+              response = git('ls-remote', '--exit-code', 'origin', ref).split()
+              assert response == [sha, ref], f'Remote ref changed: {ref}'
+          assert git('rev-parse', 'HEAD') == state['expected_target_sha']
+          assert not git('status', '--porcelain'), 'Candidate checkout is not clean'
+          require_remote(state['transport_ref'], state['transport_commit'])
+          require_remote(state['target_ref'], state['expected_target_sha'])
+          paths = []
+          for record in records:
+              assert set(record) == {'path', 'mode', 'type', 'content'}, 'Unexpected overlay record fields'
+              name = record['path']
+              assert isinstance(name, str) and re.fullmatch(r'[A-Za-z0-9_./-]+', name)
+              relative = pathlib.PurePosixPath(name)
+              assert not relative.is_absolute() and str(relative) == name
+              assert not any(part in {'.', '..', '.git', '.ctd-transport'} for part in relative.parts)
+              assert name not in paths, 'Duplicate overlay path'
+              assert record['type'] == 'blob' and record['mode'] in {'100644', '100755'}
+              assert isinstance(record['content'], str)
+              target = root.joinpath(*relative.parts)
+              assert not any(p.is_symlink() for p in (target, *target.parents)), 'Symlink in overlay path'
+              target.parent.mkdir(parents=True, exist_ok=True)
+              target.write_bytes(record['content'].encode('utf-8'))
+              target.chmod(0o755 if record['mode'] == '100755' else 0o644)
+              paths.append(name)
+          command('add', '--', *paths)
+          assert not git('diff', '--cached', '--name-only', '--', '.github/workflows'), 'The connector must install the four exact workflow files in W0 first'
+          assert git('write-tree') == state['source_tree_sha'], 'Source tree differs from the reviewed tree'
+          pub = json.loads(pathlib.Path('publication.json').read_text(encoding='utf-8'))
+          assert pub['version'] == '0.7.108'
+          review_path = pathlib.Path(pub['editorialReviewPath'])
+          assert review_path.is_file(), 'The pre-existing release review file is missing'
+          state['review_path'] = review_path.as_posix()
+          state['review_sha256_before_build'] = hashlib.sha256(review_path.read_bytes()).hexdigest()
+          command('config', 'user.name', 'github-actions[bot]')
+          command('config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com')
+          command('commit', '-m', 'Import exact reviewed v0.7.108 sources [skip build]')
+          source = git('rev-parse', 'HEAD')
+          assert git('rev-parse', 'HEAD^{tree}') == state['source_tree_sha']
+          assert git('show', '-s', '--format=%P', 'HEAD') == state['expected_target_sha']
+          command('merge-base', '--is-ancestor', state['expected_target_sha'], source)
+          require_remote(state['target_ref'], state['expected_target_sha'])
+          command('push', 'origin', source + ':' + state['target_ref'])
+          require_remote(state['target_ref'], source)
+          state['source_commit'] = source
+          state['source_published'] = True
+          state_path.write_text(json.dumps(state, indent=2) + '\n', encoding='utf-8')
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
+              output.write('source_sha=' + source + '\n')
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as output:
+              output.write('### Source commit published\n\n`' + source + '`\n\nExact source tree: `' + state['source_tree_sha'] + '`. Build and review are separate steps.\n')
+          print('VERIFIED_SOURCE_PUBLISHED', source)
+          pub['buildProvenanceCommit'] = source
+          pathlib.Path('publication.json').write_text(json.dumps(pub, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: candidate/package-lock.json
+
+      - name: Build from source S without recording editorial approval
+        working-directory: candidate
+        run: |
+          npm ci
+          python3 build.py
+
+      - name: Publish generated G only if the feature still points at S
+        working-directory: candidate
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib, subprocess
+          runtime = pathlib.Path(os.environ['RUNNER_TEMP'])
+          state_path = runtime / 'ctd-v108-transport-state.json'
+          state = json.loads(state_path.read_text(encoding='utf-8'))
+          def git(*args):
+              return subprocess.check_output(['git', *args], text=True).strip()
+          def command(*args):
+              subprocess.run(['git', *args], check=True)
+          def require_remote(ref, sha):
+              response = git('ls-remote', '--exit-code', 'origin', ref).split()
+              assert response == [sha, ref], f'Remote ref changed: {ref}'
+          source = state['source_commit']
+          assert git('rev-parse', 'HEAD') == source
+          assert git('rev-parse', 'HEAD^{tree}') == state['source_tree_sha']
+          assert not git('diff', '--name-only', 'HEAD', '--', '.github/workflows'), 'A build must not modify workflow files'
+          review = pathlib.Path(state['review_path'])
+          assert hashlib.sha256(review.read_bytes()).hexdigest() == state['review_sha256_before_build'], 'Build altered the editorial review; no automatic signoff is authorized'
+          pub = json.loads(pathlib.Path('publication.json').read_text(encoding='utf-8'))
+          assert pub['version'] == '0.7.108' and pub['buildProvenanceCommit'] == source
+          command('add', '-A')
+          assert not git('diff', '--cached', '--name-only', '--', '.github/workflows'), 'Generated commit must not alter workflow files'
+          assert not git('ls-files', 'transport/v07108'), 'Transport payload must not enter the feature branch'
+          command('commit', '-m', 'Build v0.7.108 from the verified source commit [skip build]')
+          generated = git('rev-parse', 'HEAD')
+          assert git('show', '-s', '--format=%P', generated) == source
+          assert not git('diff', '--name-only', state['expected_target_sha'], generated, '--', '.github/workflows')
+          command('merge-base', '--is-ancestor', source, generated)
+          require_remote(state['target_ref'], source)
+          command('push', 'origin', generated + ':' + state['target_ref'])
+          require_remote(state['target_ref'], generated)
+          state['generated_commit'] = generated
+          state['generated_tree'] = git('rev-parse', generated + '^{tree}')
+          state['generated_published'] = True
+          state['review_sha256_after_build'] = hashlib.sha256(review.read_bytes()).hexdigest()
+          pack = pathlib.Path(pub['currentDataPackPath'])
+          state['data_pack_sha256'] = hashlib.sha256(pack.read_bytes()).hexdigest()
+          state['next_gate'] = 'Independent local regeneration, explicit exact-file review, and all seven required PR checks on the final review commit.'
+          state_path.write_text(json.dumps(state, indent=2) + '\n', encoding='utf-8')
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as output:
+              output.write('\n### Generated candidate published\n\n`' + generated + '`\n\nSource pin: `' + source + '`. Editorial approval was not recorded by this workflow. The required PR checks and protected merge remain outstanding.\n')
+          print('GENERATED_CANDIDATE_PUBLISHED', generated)
+          PY
+
+      - name: Preserve exact transport and build evidence
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: v07108-source-transport-${{ github.sha }}
+          path: ${{ runner.temp }}/ctd-v108-transport-state.json
+          if-no-files-found: warn
