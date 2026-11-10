@@ -4686,7 +4686,7 @@
     "errors": [],
     "review_id": "full-surface-audit-2026-11-10-v0.7.108",
     "reviewed_on": "2026-11-10",
-    "manifest_sha256": "1ad1405ee4e279e2fc074dc81de071bef36ad58c4e90cfff94924316a4158d56",
+    "manifest_sha256": "ef78e51600eed919070be2652f14ebeda48c40946570955560f8b938b57f9f93",
     "source_verification": {
       "baselineMain": "ec231cc12d35fa91ff5340ad057a483ce23a5ca4",
       "reviewedAgainst": "65e0fbe2080c2ee841e8abc01e1ddec113a74b8e",
