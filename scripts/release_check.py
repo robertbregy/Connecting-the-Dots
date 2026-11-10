@@ -1434,9 +1434,11 @@ for rel in [f'inside-the-round/{lang}/index.html' for lang in LANGS] + [f'econom
     if any(headings[i] > headings[i-1] + 1 for i in range(1,len(headings))):
         fail('Heading hierarchy jump after remediation: '+rel)
 
-for stale in ('Analisi corrente per candidatura','Aktuelle Analyse auf Antragsebene',
-              'Analyse actuelle par candidature','Current analysis by application'):
-    if any(stale in p.read_text(encoding='utf-8') for p in ROOT.rglob('*.html') if 'src/' not in p.relative_to(ROOT).as_posix()):
-        fail('Undated APS current-analysis label survived: '+stale)
+for lang in LANGS:
+    economics=(ROOT/'economics'/lang/'round-2026'/'index.html').read_text(encoding='utf-8')
+    if 'data-aps-snapshot="2026-10-11"' not in economics:
+        fail('Dated APS snapshot metadata missing from Economics: '+lang)
+    if 'roundStatus' not in economics and publication_meta['releasedOn'] < publication_meta['stringConfirmation']:
+        fail('Pre-String Confirmation status missing from Economics: '+lang)
 
 print(f'RELEASE CHECK PASS · v{version} · 1,849 Explorer records · 7,679 life-history events · 4 languages')
