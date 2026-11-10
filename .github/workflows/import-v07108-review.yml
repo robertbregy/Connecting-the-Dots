@@ -1,0 +1,240 @@
+name: Import explicit v0.7.108 editorial review
+
+on:
+  push:
+    branches: [transport/audit-v07108-20261110]
+    paths: ['transport/v07108/review-ready.json']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ctd-v07108-reviewed-source-import
+  cancel-in-progress: false
+
+jobs:
+  import-explicit-review:
+    if: github.repository == 'robertbregy/Connecting-the-Dots' && github.ref == 'refs/heads/transport/audit-v07108-20261110'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      CTD_TARGET_REF: refs/heads/feat/audit-v07108
+      CTD_TRANSPORT_REF: refs/heads/transport/audit-v07108-20261110
+      CTD_REVIEW_PATH: docs/editorial-review-2026-11-10-v0.7.108.json
+      CTD_PRIOR_REVIEW_PATH: docs/editorial-review-2026-11-09-v0.7.107.json
+      CTD_PRIOR_REVIEW_SHA256: 0be6e941d94d289207912923527438d7c6cbdb169bce087e2be219ac84c7a8bc
+      GIT_TERMINAL_PROMPT: '0'
+      PYTHONDONTWRITEBYTECODE: '1'
+
+    steps:
+      - name: Check out this exact transport commit
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          path: transport
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Verify and decode the explicitly prepared two-file review
+        id: payload
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import base64, gzip, hashlib, io, json, math, os, pathlib, re
+          directory = pathlib.Path('transport/transport/v07108')
+          ready = directory / 'review-ready.json'
+          assert ready.is_file() and not ready.is_symlink(), 'Missing regular review-ready.json'
+          manifest = json.loads(ready.read_text(encoding='utf-8'))
+          assert manifest['schema'] == 1
+          assert manifest['repository'] == os.environ['GITHUB_REPOSITORY'] == 'robertbregy/Connecting-the-Dots'
+          assert manifest['transport_ref'] == os.environ['GITHUB_REF'] == os.environ['CTD_TRANSPORT_REF']
+          assert manifest['target_ref'] == os.environ['CTD_TARGET_REF']
+          for field in ('expected_generated_sha', 'source_commit_sha', 'expected_final_tree_sha'):
+              assert re.fullmatch(r'[0-9a-f]{40}', manifest[field]), f'Fill the exact SHA: {field}'
+          assert re.fullmatch(r'[0-9a-f]{64}', manifest['gzip_sha256']), 'Fill the exact payload SHA-256'
+          assert manifest['review_file_count'] == 2
+          for field in ('gzip_bytes', 'chunk_bytes', 'chunk_count'):
+              assert type(manifest[field]) is int, f'Expected an integer: {field}'
+          assert 0 < manifest['gzip_bytes'] <= 4 * 1024 * 1024
+          assert manifest['chunk_bytes'] == 18432
+          assert manifest['chunk_count'] == math.ceil(manifest['gzip_bytes'] / manifest['chunk_bytes'])
+          parts = directory / 'review'
+          expected = [f'part-{i:03d}.b64' for i in range(manifest['chunk_count'])]
+          assert sorted(p.name for p in parts.iterdir()) == expected, 'Missing or unexpected review chunks'
+          chunks = []
+          for i, name in enumerate(expected):
+              part = parts / name
+              assert part.is_file() and not part.is_symlink(), f'Not a regular chunk: {name}'
+              encoded = part.read_bytes().removesuffix(b'\n')
+              assert len(encoded) <= 24576, f'Oversized chunk: {name}'
+              chunk = base64.b64decode(encoded, validate=True)
+              required = min(manifest['chunk_bytes'], manifest['gzip_bytes'] - i * manifest['chunk_bytes'])
+              assert len(chunk) == required, f'Wrong chunk length: {name}'
+              chunks.append(chunk)
+          compressed = b''.join(chunks)
+          assert len(compressed) == manifest['gzip_bytes']
+          assert hashlib.sha256(compressed).hexdigest() == manifest['gzip_sha256'], 'Review payload checksum mismatch'
+          with gzip.GzipFile(fileobj=io.BytesIO(compressed)) as stream:
+              raw = stream.read(16 * 1024 * 1024 + 1)
+          assert len(raw) <= 16 * 1024 * 1024, 'Uncompressed review payload exceeds its bound'
+          records = json.loads(raw)
+          assert isinstance(records, list) and len(records) == 2
+          allowed = {os.environ['CTD_REVIEW_PATH'], 'content-continuity-audit.json'}
+          assert {record.get('path') for record in records} == allowed, 'The payload must contain exactly the two approved paths'
+          runtime = pathlib.Path(os.environ['RUNNER_TEMP'])
+          (runtime / 'ctd-v108-explicit-review.json').write_bytes(raw)
+          manifest['transport_commit'] = os.environ['GITHUB_SHA']
+          manifest['review_origin'] = 'Explicit root review prepared before this workflow; no finalizer or review generation runs here.'
+          (runtime / 'ctd-v108-review-state.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
+              output.write('expected_generated_sha=' + manifest['expected_generated_sha'] + '\n')
+          print('EXPLICIT_REVIEW_PAYLOAD_VERIFIED', manifest['gzip_sha256'], len(raw), 'bytes; two files')
+          PY
+
+      - name: Check out the exact generated candidate G
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ steps.payload.outputs.expected_generated_sha }}
+          path: candidate
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Apply only the explicit review and continuity evidence
+        working-directory: candidate
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib, subprocess
+          runtime = pathlib.Path(os.environ['RUNNER_TEMP'])
+          state_path = runtime / 'ctd-v108-review-state.json'
+          state = json.loads(state_path.read_text(encoding='utf-8'))
+          records = json.loads((runtime / 'ctd-v108-explicit-review.json').read_text(encoding='utf-8'))
+          review_name = os.environ['CTD_REVIEW_PATH']
+          allowed = {review_name, 'content-continuity-audit.json'}
+          def git(*args):
+              return subprocess.check_output(['git', *args], text=True).strip()
+          def command(*args):
+              subprocess.run(['git', *args], check=True)
+          def sha256(path):
+              return hashlib.sha256(pathlib.Path(path).read_bytes()).hexdigest()
+          def require_remote(ref, sha):
+              response = git('ls-remote', '--exit-code', 'origin', ref).split()
+              assert response == [sha, ref], f'Remote ref changed: {ref}'
+          assert git('rev-parse', 'HEAD') == state['expected_generated_sha']
+          assert not git('status', '--porcelain'), 'Generated checkout is not clean'
+          require_remote(state['transport_ref'], state['transport_commit'])
+          require_remote(state['target_ref'], state['expected_generated_sha'])
+          command('cat-file', '-e', state['source_commit_sha'] + '^{commit}')
+          command('merge-base', '--is-ancestor', state['source_commit_sha'], state['expected_generated_sha'])
+          assert sha256(os.environ['CTD_PRIOR_REVIEW_PATH']) == os.environ['CTD_PRIOR_REVIEW_SHA256'], 'Prior review was modified'
+          pub = json.loads(pathlib.Path('publication.json').read_text(encoding='utf-8'))
+          assert pub['version'] == '0.7.108'
+          assert pub['editorialReviewPath'] == review_name
+          assert pub['buildProvenanceCommit'] == state['source_commit_sha'], 'Generated candidate does not use source S'
+          seen = set()
+          for record in records:
+              assert set(record) == {'path', 'mode', 'type', 'content'}, 'Unexpected review record fields'
+              name = record['path']
+              assert name in allowed and name not in seen, 'Unexpected or duplicate review path'
+              assert record['mode'] == '100644' and record['type'] == 'blob'
+              assert isinstance(record['content'], str)
+              target = pathlib.Path.cwd() / name
+              assert not any(p.is_symlink() for p in (target, *target.parents)), 'Symlink in review path'
+              assert target.parent.is_dir()
+              target.write_bytes(record['content'].encode('utf-8'))
+              target.chmod(0o644)
+              seen.add(name)
+          assert seen == allowed
+          review = json.loads(pathlib.Path(review_name).read_text(encoding='utf-8'))
+          assert review['status'] == 'reviewed'
+          assert review['publicationVersion'] == '0.7.108'
+          assert review['reviewedOn'] == pub['releasedOn']
+          assert review['verification']['sourceCommit'] == state['source_commit_sha']
+          assert review['signoff']['sourceCommit'] == state['source_commit_sha']
+          assert review['buildProvenancePolicy']['sourceCommit'] == state['source_commit_sha']
+          assert review['parentReview'] == os.environ['CTD_PRIOR_REVIEW_PATH']
+          assert review['priorTechnicalBaseline']['reviewSHA256'] == os.environ['CTD_PRIOR_REVIEW_SHA256']
+          assert isinstance(json.loads(pathlib.Path('content-continuity-audit.json').read_text(encoding='utf-8')), dict)
+          assert sha256(os.environ['CTD_PRIOR_REVIEW_PATH']) == os.environ['CTD_PRIOR_REVIEW_SHA256']
+          command('add', '--', *sorted(allowed))
+          changed = set(git('diff', '--cached', '--name-only').splitlines())
+          assert review_name in changed and changed <= allowed, 'Only the explicit review/evidence may change'
+          assert not git('diff', '--cached', '--name-only', '--', '.github/workflows')
+          assert git('write-tree') == state['expected_final_tree_sha'], 'Final tree differs from the independently reviewed tree'
+          state['review_sha256'] = sha256(review_name)
+          state['continuity_sha256'] = sha256('content-continuity-audit.json')
+          state['changed_paths'] = sorted(changed)
+          state_path.write_text(json.dumps(state, indent=2) + '\n', encoding='utf-8')
+          print('EXPLICIT_REVIEW_TREE_VERIFIED', state['expected_final_tree_sha'])
+          PY
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: candidate/package-lock.json
+
+      - name: Validate the exact reviewed candidate without rebuilding
+        working-directory: candidate
+        run: |
+          npm ci
+          python3 scripts/release_check.py
+          node scripts/verify_ia_b2_parity.cjs
+          node scripts/audit_v07108_qa.cjs
+
+      - name: Commit and publish R only if the feature still points at G
+        working-directory: candidate
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib, subprocess
+          runtime = pathlib.Path(os.environ['RUNNER_TEMP'])
+          state_path = runtime / 'ctd-v108-review-state.json'
+          state = json.loads(state_path.read_text(encoding='utf-8'))
+          def git(*args):
+              return subprocess.check_output(['git', *args], text=True).strip()
+          def command(*args):
+              subprocess.run(['git', *args], check=True)
+          def require_remote(ref, sha):
+              response = git('ls-remote', '--exit-code', 'origin', ref).split()
+              assert response == [sha, ref], f'Remote ref changed: {ref}'
+          assert git('rev-parse', 'HEAD') == state['expected_generated_sha']
+          command('diff', '--exit-code')
+          assert not git('ls-files', '--others', '--exclude-standard'), 'Validation created unexpected untracked files'
+          assert git('write-tree') == state['expected_final_tree_sha'], 'Validation changed the approved final tree'
+          assert not git('diff', '--cached', '--name-only', '--', '.github/workflows')
+          assert not git('ls-files', 'transport/v07108'), 'Transport payload must not enter the feature branch'
+          assert hashlib.sha256(pathlib.Path(os.environ['CTD_PRIOR_REVIEW_PATH']).read_bytes()).hexdigest() == os.environ['CTD_PRIOR_REVIEW_SHA256']
+          command('config', 'user.name', 'github-actions[bot]')
+          command('config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com')
+          command('commit', '-m', 'Record explicitly reviewed v0.7.108 candidate [skip build]')
+          reviewed = git('rev-parse', 'HEAD')
+          assert git('rev-parse', 'HEAD^{tree}') == state['expected_final_tree_sha']
+          assert git('show', '-s', '--format=%P', reviewed) == state['expected_generated_sha']
+          command('merge-base', '--is-ancestor', state['expected_generated_sha'], reviewed)
+          require_remote(state['target_ref'], state['expected_generated_sha'])
+          command('push', 'origin', reviewed + ':' + state['target_ref'])
+          require_remote(state['target_ref'], reviewed)
+          state['reviewed_commit'] = reviewed
+          state['review_published'] = True
+          state['local_validation_commands'] = ['python3 scripts/release_check.py', 'node scripts/verify_ia_b2_parity.cjs', 'node scripts/audit_v07108_qa.cjs']
+          state['remaining_gates'] = 'All seven required PR checks on the exact final candidate, protected merge, actual Pages deployment and verified live bytes. This workflow does not attest those results.'
+          state_path.write_text(json.dumps(state, indent=2) + '\n', encoding='utf-8')
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as output:
+              output.write('### Explicit review imported\n\nCommit R: `' + reviewed + '`\n\nSource S: `' + state['source_commit_sha'] + '`\n\nGenerated G: `' + state['expected_generated_sha'] + '`\n\nFinal tree: `' + state['expected_final_tree_sha'] + '`\n\nThe three local validators passed. Required PR checks, protected merge, deployment and live-byte verification remain separate.\n')
+          print('EXPLICIT_REVIEW_PUBLISHED', reviewed)
+          PY
+
+      - name: Preserve exact import and validation evidence
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: v07108-explicit-review-${{ github.sha }}
+          path: ${{ runner.temp }}/ctd-v108-review-state.json
+          if-no-files-found: warn
