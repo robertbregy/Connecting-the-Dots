@@ -109,14 +109,17 @@ jobs:
           import json
           import os
           import subprocess
+          import sys
           import time
           from html.parser import HTMLParser
           from pathlib import Path
-          from urllib.error import URLError
+          from urllib.error import HTTPError, URLError
           from urllib.parse import quote, urljoin, urlsplit
           from urllib.request import Request, urlopen
 
           root=Path.cwd()
+          sys.path.insert(0,str(root/"scripts"))
+          from stage_public_site import FORBIDDEN_LIVE_PATHS, is_public_path, validate_publication
           base="https://robertbregy.github.io/Connecting-the-Dots/"
           expected_sha=os.environ["CTD_EVENT_SHA"]
           def write_evidence(evidence):
@@ -141,6 +144,7 @@ jobs:
                                   "reason":"Skipped: a newer main commit superseded this publication; no measurements will run."})
                   raise SystemExit(0)
           require_current_source()
+          public_surface=validate_publication(root)
           publication=json.loads((root/"publication.json").read_text(encoding="utf-8"))
           current_pack=publication["currentDataPackPath"]
           if (not current_pack.startswith("downloads/") or ".." in Path(current_pack).parts
@@ -187,6 +191,8 @@ jobs:
 
           resources={path:(path,"" if path=="index.html" else path.replace("/index.html","/"))
                      for path in targets}
+          if any(not is_public_path(path) for path in targets):
+              raise SystemExit("Live smoke target is outside the publication allowlist")
           origin=urlsplit(base)
           for path in targets:
               if not path.endswith(".html"):
@@ -214,6 +220,7 @@ jobs:
               resources[route]=(path,route)
           # Each request retains its browser URL but maps to a query-free source file.
           results={}
+          excluded_results={}
           for attempt in range(1,9):
               results={}
               for key,(path,route) in resources.items():
@@ -229,28 +236,34 @@ jobs:
                       results[key]={"source_path":path,"status":status,"matches_repo":same,"live_size":len(actual)}
                   except (OSError,URLError) as exc:
                       results[key]={"source_path":path,"matches_repo":False,"error":str(exc)}
-              if all(r["matches_repo"] for r in results.values()):
+              # Verify the removed development surfaces as part of the same
+              # attestation. A 200 source leak cannot produce verified=true.
+              excluded_results={}
+              for path in FORBIDDEN_LIVE_PATHS:
+                  try:
+                      with urlopen(Request(base+path,headers={"User-Agent":"ConnectingTheDots-LiveReleaseAudit/1.0"}),timeout=25) as response:
+                          excluded_results[path]={"status":response.status,"not_public":False}
+                  except HTTPError as exc:
+                      excluded_results[path]={"status":exc.code,"not_public":exc.code==404}
+                  except (OSError,URLError) as exc:
+                      excluded_results[path]={"not_public":False,"error":str(exc)}
+              if all(r["matches_repo"] for r in results.values()) and all(r["not_public"] for r in excluded_results.values()):
                   break
               print("GitHub Pages still propagating or inconsistent; attempt",attempt,"of 8")
               if attempt!=8:
                   require_current_source()
                   time.sleep(15)
           require_current_source()
-          matches=all(r["matches_repo"] for r in results.values())
+          matches=all(r["matches_repo"] for r in results.values()) and all(r["not_public"] for r in excluded_results.values())
           evidence={"status":"verified" if matches else "mismatch","verified":matches,
                     "source_commit":expected_sha,"publication_version":publication["version"],
                     "current_data_pack":current_pack,"public_url":base,"attempts":attempt,
-                    "all_match":matches,"files":results}
+                    "all_match":matches,"files":results,"excluded_paths":excluded_results,
+                    "publication_surface":public_surface}
           write_evidence(evidence)
           if not evidence["all_match"]:
               raise SystemExit("PUBLIC PAGES MISMATCH: verified source does not match live bytes")
           PY
-      - name: Confirm build-only source fragments are not public
-        if: steps.bytes.outputs.verified == 'true'
-        run: |
-          status="$(curl -sS -o /dev/null -w '%{http_code}' https://robertbregy.github.io/Connecting-the-Dots/src/ia-b2-hubs.html)"
-          test "$status" = "404"
-
       - name: Set up Node for controlled published-page measurements
         if: steps.bytes.outputs.verified == 'true'
         uses: actions/setup-node@v5

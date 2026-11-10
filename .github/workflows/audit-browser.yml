@@ -69,6 +69,10 @@ jobs:
         run: |
           python3 build.py
           python3 scripts/test_aps_current_analytics.py
+          python3 scripts/test_public_surface.py
+          python3 scripts/test_external_source_health.py
+          node scripts/test_reading_controls.cjs
+          node scripts/audit_v07108_qa.cjs
           node scripts/verify_ia_b2_parity.cjs
           node scripts/validate_multilingual.js
           node scripts/validate_internet_access.js

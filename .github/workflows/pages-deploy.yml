@@ -95,11 +95,14 @@ jobs:
           python3 scripts/release_check.py
           node scripts/verify_ia_b2_parity.cjs
 
-      - name: Remove build-only source fragments from the public payload
+      - name: Stage and validate the public publication allowlist
         if: steps.source.outputs.publish == 'true'
         run: |
-          rm -rf src
-          test ! -e src/ia-b2-hubs.html
+          python3 scripts/stage_public_site.py --output _site
+          test -f src/ia-b2-hubs.html
+          test ! -e _site/src
+          test ! -e _site/scripts
+          test ! -e _site/prototype
 
       - name: Read the existing Pages configuration
         if: steps.source.outputs.publish == 'true'
@@ -109,7 +112,7 @@ jobs:
         if: steps.source.outputs.publish == 'true'
         uses: actions/upload-pages-artifact@v5
         with:
-          path: '.'
+          path: '_site'
           # Match the existing managed deployment, including .nojekyll.
           include-hidden-files: true
 
