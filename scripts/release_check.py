@@ -1131,7 +1131,7 @@ for lang in LANGS:
             fail('Missing four-language source-backed investigation: '+lang+'/'+slug)
         article=article_path.read_text(encoding='utf-8')
         url=site_base+'behind-the-round/'+lang+'/'+slug+'/'
-                if f'<html lang="{lang}">' not in article or f'<link rel="canonical" href="{url}">' not in article:
+        if f'<html lang="{lang}">' not in article or f'<link rel="canonical" href="{url}">' not in article:
             fail('Incorrect investigation metadata or canonical: '+lang+'/'+slug)
         if not html_tag_text_present(article,'h1',translations[lang][case['titleKey']]):
             fail('Untranslated 2026 investigation headline: '+lang+'/'+slug)
@@ -1180,7 +1180,7 @@ for lang in LANGS:
     if not path.exists(): fail('Missing localized sanctions explainer: '+lang)
     html=path.read_text(encoding='utf-8')
     tx=explainer['languages'][lang]
-        if f'<html lang="{lang}">' not in html or f'<link rel="canonical" href="{url}">' not in html:
+    if f'<html lang="{lang}">' not in html or f'<link rel="canonical" href="{url}">' not in html:
         fail('Sanctions explainer canonical/locale mismatch: '+lang)
     if not html_tag_text_present(html,'title',tx['metaTitle']):
         fail('Sanctions explainer metadata untranslated: '+lang)
@@ -1229,7 +1229,7 @@ for lang in LANGS:
     landing=source.read_text(encoding='utf-8')
     sanctions=(ROOT/'behind-the-round'/lang/'sanctions-and-dns'/'index.html').read_text(encoding='utf-8')
     tx=access['languages'][lang]
-        if f'<html lang="{lang}">' not in page or f'<link rel="canonical" href="{url}">' not in page:
+    if f'<html lang="{lang}">' not in page or f'<link rel="canonical" href="{url}">' not in page:
         fail('Access explainer canonical or language mismatch: '+lang)
     if not html_tag_text_present(page,'title',tx['metaTitle']):
         fail('Untranslated access explainer SEO title '+lang)
