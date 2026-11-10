@@ -245,6 +245,12 @@ jobs:
           if not evidence["all_match"]:
               raise SystemExit("PUBLIC PAGES MISMATCH: verified source does not match live bytes")
           PY
+      - name: Confirm build-only source fragments are not public
+        if: steps.bytes.outputs.verified == 'true'
+        run: |
+          status="$(curl -sS -o /dev/null -w '%{http_code}' https://robertbregy.github.io/Connecting-the-Dots/src/ia-b2-hubs.html)"
+          test "$status" = "404"
+
       - name: Set up Node for controlled published-page measurements
         if: steps.bytes.outputs.verified == 'true'
         uses: actions/setup-node@v5
