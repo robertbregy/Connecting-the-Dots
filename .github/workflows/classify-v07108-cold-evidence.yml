@@ -1,0 +1,77 @@
+name: Classify R2 cold-export failure without exposing artifact content
+
+on:
+  push:
+    branches: [transport/audit-v07108-20261110]
+    paths: ['transport/v07108/cold-classification-ready.json']
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  classify-cold-evidence:
+    if: github.repository == 'robertbregy/Connecting-the-Dots' && github.ref == 'refs/heads/transport/audit-v07108-20261110'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Download the exact completed R2 browser artifact
+        uses: actions/download-artifact@v5
+        with:
+          artifact-ids: '13787524660'
+          run-id: '42866869884'
+          repository: robertbregy/Connecting-the-Dots
+          github-token: ${{ github.token }}
+          path: diagnostics
+
+      - name: Emit only bounded enums, booleans and public test-line numbers
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json,re
+          from pathlib import Path
+          from urllib.parse import urlsplit,parse_qsl
+          # No artifact text, URL, CSV value, source name or exception message
+          # may be printed. Every output string is a fixed allowlisted enum.
+          files=[p for p in Path('diagnostics').rglob('report.json') if p.as_posix().endswith('/audit-20261018-cold/report.json')]
+          if len(files)!=1:raise SystemExit('DIAGNOSTIC_REPORT_NOT_UNIQUE')
+          p=files[0]
+          if p.stat().st_size>5*1024*1024:raise SystemExit('DIAGNOSTIC_REPORT_TOO_LARGE')
+          try:data=json.loads(p.read_text(encoding='utf-8'))
+          except Exception:raise SystemExit('DIAGNOSTIC_REPORT_UNREADABLE')
+          issues=data.get('issues')
+          if not isinstance(issues,list) or len(issues)>32:raise SystemExit('DIAGNOSTIC_REPORT_SHAPE_INVALID')
+          rules=[
+              ('UNEXPECTED_COLD_REQUEST','Unexpected request during cold export'),
+              ('CSV_INVENTORY_MISMATCH','Filtered export differs from archived 2026 name inventory'),
+              ('CSV_DOWNLOAD_FAILURE','CSV download failed'),
+              ('CSV_STALE_FILTER','Export reused stale filter results'),
+              ('DOWNLOAD_TIMEOUT','page.waitForEvent: Timeout'),
+              ('BROWSER_RUNTIME_ERROR','Browser runtime errors')]
+          known_paths={'/data/aps_2026_application_graph.js':'APS_GRAPH','/assets/aps-atlas.js':'APS_RUNTIME'}
+          output=[]
+          for issue in issues:
+              if not isinstance(issue,dict):raise SystemExit('DIAGNOSTIC_ISSUE_SHAPE_INVALID')
+              error=issue.get('error','')
+              if not isinstance(error,str):raise SystemExit('DIAGNOSTIC_ISSUE_SHAPE_INVALID')
+              category=next((code for code,message in rules if message in error),'OTHER')
+              language=issue.get('language')
+              language=language if language in ('it','en','de','fr') else 'UNKNOWN'
+              width=issue.get('width')
+              width=width if type(width) is int and width in (390,1440) else 0
+              lines=sorted({int(x) for x in re.findall(r'audit_20261018_browser\.cjs:(\d+):\d+',error) if 0<int(x)<=500})
+              urls=re.findall(r'https?://[^\s\'"<>]+',error)
+              checks=[];assets=set()
+              for raw in urls:
+                  try:
+                      u=urlsplit(raw)
+                      valid=(u.scheme=='http' and u.netloc=='127.0.0.1:8123' and u.path in known_paths
+                             and parse_qsl(u.query,keep_blank_values=True)==[('v','0.7.108')] and not u.fragment)
+                      checks.append(valid)
+                      if valid:assets.add(known_paths[u.path])
+                  except Exception:checks.append(False)
+              output.append({'category':category,'language':language,'viewport':width,
+                             'public_test_lines':lines,'only_exact_expected_versioned_assets':bool(checks) and all(checks),
+                             'known_assets':sorted(assets)})
+          print('CTD_SANITIZED_COLD_DIAGNOSTIC '+json.dumps({'issue_count':len(output),'issues':output},sort_keys=True))
+          PY

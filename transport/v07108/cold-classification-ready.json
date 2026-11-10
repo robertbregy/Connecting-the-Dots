@@ -1,0 +1,6 @@
+{
+  "source_commit": "e1f1003731fa01cd875c2777cbe35ff11902026f",
+  "run_id": 42866869884,
+  "artifact_id": 13787524660,
+  "output_policy": "Only fixed rule identifiers, allowlisted language/viewport, bounded public-source line numbers and boolean URL classification. No logs, excerpts, URLs, CSV values, names or error messages are output."
+}
