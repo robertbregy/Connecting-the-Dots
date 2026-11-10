@@ -59,6 +59,26 @@ function pageDescription(src,description,canonical){
   return changed?open+JSON.stringify(record).replace(/</g,'\\u003c')+close:whole;
  });
 }
+function normalizeResearchHead(src,normalizeDiscovery){
+ // These two pages reuse their generated head. Earlier passes move their own
+ // links, so place the reading stylesheet last on every build, not just once.
+ // Remove only this link and its own newline; preserve all other head bytes.
+ return src.replace(/(<head\b[^>]*>)([\s\S]*?)(<\/head>)/i,(_all,open,head,close)=>{
+  const css=/(<link\b(?=[^>]*\bhref="[^"\n]*assets\/editorial-shared\.css(?:\?[^"\n]*)?")[^>]*>)(?:\r?\n)?/g;
+  const styles=[...head.matchAll(css)];
+  if(styles.length!==1)throw Error('Expected one research reading stylesheet');
+  head=head.replace(css,'');
+  if(normalizeDiscovery){
+   // The paper gains social metadata on its first build. Its discovery links
+   // must follow those same tags on both the first and subsequent builds.
+   const discovery=/<!--ctd-discovery-->[\s\S]*?<!--\/ctd-discovery-->/g;
+   const blocks=[...head.matchAll(discovery)];
+   if(blocks.length!==1)throw Error('Expected one research discovery block');
+   head=head.replace(discovery,'')+blocks[0][0];
+  }
+  return open+head+styles[0][1]+'\n'+close;
+ });
+}
 const snapshot={
  en:['APS snapshot · 11 October 2026','The application data come from the public APS export acquired on 11 October 2026. This snapshot precedes String Confirmation Day (17 November), the announced milestone for confirmed strings and updated contention sets. It does not establish individual evaluation outcomes.','Official timetable'],
  it:['Snapshot APS · 11 ottobre 2026','I dati delle candidature provengono dall’esportazione pubblica APS acquisita l’11 ottobre 2026. Questo snapshot precede lo String Confirmation Day (17 novembre), previsto per la pubblicazione delle stringhe confermate e delle contese aggiornate. Non attesta esiti individuali delle valutazioni.','Calendario ufficiale'],
@@ -152,6 +172,7 @@ for(const r of [...new Set(pages)]){
   }else if(!src.includes('research/reader-study/'+l+'/'))src=src.replace(/(<[^>]*\bid="reader-study-protocol"[^>]*>)/,(_m,open)=>open+link);
  }
  for(const [a,b]of https)src=src.replaceAll('href="'+a+'"','href="'+b+'"');
+ if(k==='research'||k==='paper')src=normalizeResearchHead(src,k==='paper');
  // These text editions are another representation of the final reading page.
  // Regenerate them after all date notes, heading repairs and source-link
  // corrections, using the same converter and preface as the original renderer.
