@@ -2588,7 +2588,8 @@
     "release07104": "Keep payment restrictions within the WikiLeaks case.",
     "release07105": "Citable guides, TLD profiles and an AI-agent catalog.",
     "release07106": "A new homepage explaining Internet names: a clear introduction, an illustrated domain and focused pathways.",
-    "release07107": "Economics becomes an introduction with four complete chapters: TLD adoption, economic cases, portfolios and contention, and the 2026 round. Text, sources, rankings, filters and established links are preserved in all four languages."
+    "release07107": "Economics becomes an introduction with four complete chapters: TLD adoption, economic cases, portfolios and contention, and the 2026 round. Text, sources, rankings, filters and established links are preserved in all four languages.",
+    "release07108": "Full-surface audit remediation: dated snapshots, consistent page types, shared presentation modules, stronger metadata, source-link monitoring and deployment hygiene, with archived research preserved."
   },
   "it": {
     "brand": "Brand",
@@ -5179,7 +5180,8 @@
     "release07104": "Pagamenti ricondotti al caso WikiLeaks.",
     "release07105": "Guide e schede TLD citabili; catalogo per agenti AI.",
     "release07106": "Una nuova home per capire i nomi di Internet: introduzione, dominio illustrato e percorsi più chiari.",
-    "release07107": "Economia diventa una sintesi con quattro approfondimenti completi: diffusione dei TLD, casi economici, portafogli e contese, round 2026. Conservati testi, fonti, classifiche, filtri e collegamenti storici nelle quattro lingue."
+    "release07107": "Economia diventa una sintesi con quattro approfondimenti completi: diffusione dei TLD, casi economici, portafogli e contese, round 2026. Conservati testi, fonti, classifiche, filtri e collegamenti storici nelle quattro lingue.",
+    "release07108": "Bonifica completa dopo l’audit: snapshot datati, tipi di pagina coerenti, moduli grafici condivisi, metadata più solidi, monitoraggio delle fonti e pubblicazione più pulita, senza modificare la ricerca archiviata."
   },
   "de": {
     "brand": "Marke",
@@ -7770,7 +7772,8 @@
     "release07104": "Zahlungssperren auf den WikiLeaks-Fall begrenzt.",
     "release07105": "Zitierbare Leitfäden und TLD-Profile; Katalog für KI-Agenten.",
     "release07106": "Eine neue Startseite erklärt Internetnamen: mit Einführung, anschaulicher Domain und klaren Themenwegen.",
-    "release07107": "Wirtschaft wird zur Einführung mit vier vollständigen Vertiefungen: Verbreitung der TLDs, wirtschaftliche Fallstudien, Portfolios und konkurrierende Anträge sowie die Runde 2026. Texte, Quellen, Ranglisten, Filter und bestehende Links bleiben in allen vier Sprachen erhalten."
+    "release07107": "Wirtschaft wird zur Einführung mit vier vollständigen Vertiefungen: Verbreitung der TLDs, wirtschaftliche Fallstudien, Portfolios und konkurrierende Anträge sowie die Runde 2026. Texte, Quellen, Ranglisten, Filter und bestehende Links bleiben in allen vier Sprachen erhalten.",
+    "release07108": "Vollständige Audit-Bereinigung: datierte Snapshots, konsistente Seitentypen, gemeinsame Darstellungsbausteine, stärkere Metadaten, Quellenüberwachung und saubere Veröffentlichung bei unveränderten Forschungsarchiven."
   },
   "fr": {
     "brand": "Marque",
@@ -10361,6 +10364,7 @@
     "release07104": "Restrictions de paiement replacées dans le cas WikiLeaks.",
     "release07105": "Guides et fiches TLD citables ; catalogue pour agents IA.",
     "release07106": "Un nouvel accueil pour comprendre les noms d’Internet : introduction, domaine illustré et parcours plus clairs.",
-    "release07107": "L’économie devient une introduction accompagnée de quatre approfondissements complets : diffusion des TLD, études de cas économiques, portefeuilles et candidatures concurrentes, round 2026. Textes, sources, classements, filtres et liens existants sont conservés dans les quatre langues."
+    "release07107": "L’économie devient une introduction accompagnée de quatre approfondissements complets : diffusion des TLD, études de cas économiques, portefeuilles et candidatures concurrentes, round 2026. Textes, sources, classements, filtres et liens existants sont conservés dans les quatre langues.",
+    "release07108": "Remédiation complète après audit : instantanés datés, types de pages cohérents, modules visuels partagés, métadonnées renforcées, suivi des sources et publication assainie, sans modifier la recherche archivée."
   }
 }
