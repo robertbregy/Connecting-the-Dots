@@ -1592,7 +1592,7 @@
       "priorFinalAuditSHA256": "c6c20de5ba413637df82ac228b3bfbd4893f871f4d06069662a7b79c91327b87"
     },
     "README.md": {
-      "sha256": "419c9435502a83434e191bddcae04cded4d615c92ed6a5304892907b4b108e40",
+      "sha256": "2a14390bb106026227775bedad2eabc55bb01f0d6faf202dee5a5afa91da12b8",
       "baselineSHA256": null,
       "rationaleIds": [
         "E09",
