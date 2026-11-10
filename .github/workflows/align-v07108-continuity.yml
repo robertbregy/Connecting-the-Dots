@@ -1,0 +1,139 @@
+name: Align reviewed README continuity evidence for v0.7.108
+
+on:
+  push:
+    branches: [transport/audit-v07108-20261110]
+    paths: ['transport/v07108/continuity-ready.json']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ctd-v07108-reviewed-source-import
+  cancel-in-progress: false
+
+jobs:
+  align-exact-evidence:
+    if: github.repository == 'robertbregy/Connecting-the-Dots' && github.ref == 'refs/heads/transport/audit-v07108-20261110'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      GIT_TERMINAL_PROMPT: '0'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Check out exact evidence request
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          path: transport
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Check out the exact reviewed README candidate
+        uses: actions/checkout@v5
+        with:
+          ref: ab64fa9d1670f693608cf5fd4d8c394408a831ff
+          path: candidate
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Import only the explicitly reviewed continuity hash change
+        working-directory: candidate
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict'),{execFileSync}=require('node:child_process');
+          const git=(...args)=>execFileSync('git',args,{encoding:'utf8'}).trim(),command=(...args)=>execFileSync('git',args,{stdio:'inherit'});
+          const hash=value=>crypto.createHash('sha256').update(value).digest('hex');
+          const state=JSON.parse(fs.readFileSync('../transport/transport/v07108/continuity-ready.json','utf8'));
+          const target='refs/heads/feat/audit-v07108',temporary='refs/heads/transport/audit-v07108-20261110';
+          const requireRemote=(ref,sha)=>assert.deepEqual(git('ls-remote','--exit-code','origin',ref).split(/\s+/),[sha,ref]);
+          assert.equal(process.env.GITHUB_REPOSITORY,'robertbregy/Connecting-the-Dots');
+          assert.equal(process.env.GITHUB_REF,temporary);
+          assert.equal(state.base,'ab64fa9d1670f693608cf5fd4d8c394408a831ff');
+          assert.equal(state.base_tree,'79dbb9b5490c27a9330cf14ecd8198021e1c44d0');
+          assert.equal(state.expected_final_tree,'26a22d4ae56af2e0a9da7947804505b3a602f012');
+          assert.equal(state.source,'865ddac2279106101bc5be2b9e27cba54951a138');
+          assert.equal(git('rev-parse','HEAD'),state.base);
+          assert.equal(git('rev-parse','HEAD^{tree}'),state.base_tree);
+          assert.equal(git('status','--porcelain'),'');
+          requireRemote(target,state.base);requireRemote(temporary,process.env.GITHUB_SHA);
+          command('merge-base','--is-ancestor',state.source,state.base);
+          const pub=JSON.parse(fs.readFileSync('publication.json','utf8'));
+          assert.equal(pub.version,'0.7.108');assert.equal(pub.buildProvenanceCommit,state.source);
+          const reviewText=fs.readFileSync('docs/editorial-review-2026-11-10-v0.7.108.json','utf8'),review=JSON.parse(reviewText);
+          assert.equal(hash(reviewText),state.review_sha256);
+          assert.equal(review.status,'reviewed');
+          assert.equal(review.verification.sourceCommit,state.source);
+          assert.equal(review.signoff.sourceCommit,state.source);
+          assert.equal(hash(fs.readFileSync('README.md')),review.files['README.md'].sha256);
+          assert.equal(hash(fs.readFileSync('docs/editorial-review-2026-11-09-v0.7.107.json')),'0be6e941d94d289207912923527438d7c6cbdb169bce087e2be219ac84c7a8bc');
+          const reportPath='content-continuity-audit.json',oldReport=fs.readFileSync(reportPath,'utf8');
+          assert.equal(hash(oldReport),state.prior_report_sha256);
+          const needle='"manifest_sha256": "'+state.prior_review_sha256+'"';
+          assert.equal(oldReport.split(needle).length,2);
+          const newReport=oldReport.replace(needle,'"manifest_sha256": "'+state.review_sha256+'"');
+          assert.equal(hash(newReport),state.report_sha256);
+          // This one report hash is explicitly reviewed before execution.
+          // Do not build, finalize a review, alter signoff or change any other file.
+          fs.writeFileSync(reportPath,newReport);command('add','--',reportPath);
+          assert.deepEqual(git('diff','--cached','--name-only').split('\n'),[reportPath]);
+          assert.equal(git('write-tree'),state.expected_final_tree);
+          assert.equal(git('diff','--name-only'),'');
+          assert.equal(git('ls-files','--others','--exclude-standard'),'');
+          state.transport_commit=process.env.GITHUB_SHA;
+          fs.writeFileSync(path.join(process.env.RUNNER_TEMP,'ctd-v108-continuity-state.json'),JSON.stringify(state,null,2)+'\n');
+          console.log('EXACT_CONTINUITY_TREE_REVIEWED',state.expected_final_tree);
+          JS
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: candidate/package-lock.json
+
+      - name: Check the unchanged publication and source parity
+        working-directory: candidate
+        run: |
+          npm ci
+          python3 scripts/release_check.py
+          node scripts/verify_ia_b2_parity.cjs
+
+      - name: Commit only the fixed evidence on the unchanged feature tip
+        working-directory: candidate
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),{execFileSync}=require('node:child_process');
+          const file=path.join(process.env.RUNNER_TEMP,'ctd-v108-continuity-state.json'),state=JSON.parse(fs.readFileSync(file,'utf8'));
+          const git=(...args)=>execFileSync('git',args,{encoding:'utf8'}).trim(),command=(...args)=>execFileSync('git',args,{stdio:'inherit'});
+          const target='refs/heads/feat/audit-v07108',temporary='refs/heads/transport/audit-v07108-20261110';
+          const requireRemote=(ref,sha)=>assert.deepEqual(git('ls-remote','--exit-code','origin',ref).split(/\s+/),[sha,ref]);
+          assert.equal(git('rev-parse','HEAD'),state.base);
+          assert.equal(git('write-tree'),state.expected_final_tree);
+          assert.deepEqual(git('diff','--cached','--name-only').split('\n'),['content-continuity-audit.json']);
+          assert.equal(git('diff','--name-only'),'');assert.equal(git('ls-files','--others','--exclude-standard'),'');
+          command('config','user.name','github-actions[bot]');
+          command('config','user.email','41898282+github-actions[bot]@users.noreply.github.com');
+          command('commit','-m','Align continuity evidence with explicitly reviewed README update [skip build]');
+          const reviewed=git('rev-parse','HEAD');
+          assert.equal(git('show','-s','--format=%P',reviewed),state.base);
+          assert.equal(git('rev-parse','HEAD^{tree}'),state.expected_final_tree);
+          requireRemote(target,state.base);requireRemote(temporary,process.env.GITHUB_SHA);
+          command('push','origin',reviewed+':'+target);requireRemote(target,reviewed);
+          state.reviewed_commit=reviewed;state.published=true;state.publication_parity_passed=true;
+          fs.writeFileSync(file,JSON.stringify(state,null,2)+'\n');
+          console.log('EXACT_CONTINUITY_CANDIDATE_PUBLISHED',reviewed);
+          JS
+
+      - name: Preserve exact evidence update record
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: v07108-continuity-${{ github.sha }}
+          path: ${{ runner.temp }}/ctd-v108-continuity-state.json
+          if-no-files-found: warn
