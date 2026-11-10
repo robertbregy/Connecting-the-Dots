@@ -488,8 +488,11 @@ def main() -> None:
     # ECON107: discovery copies complete source blocks before native Economics
     # becomes an introduction. This pass verifies every published destination.
     subprocess.run(["node", str(ROOT / "scripts" / "render_economics_hub.cjs")], check=True)
-    subprocess.run(["python3", str(ROOT / "scripts" / "build_agent_catalog.py")], check=True)
     subprocess.run(["python3", str(ROOT / "scripts" / "integrate_discovery.py")], check=True)
+    # v0.7.108: normalize the full published surface only after every renderer
+    # has completed, then build the machine-readable catalog from final pages.
+    subprocess.run(["node", str(ROOT / "scripts" / "audit_remediation_v07108.cjs")], check=True)
+    subprocess.run(["python3", str(ROOT / "scripts" / "build_agent_catalog.py")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "validate_discovery.cjs")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "validate_quick_guide.cjs")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "validate_economics_order.cjs")], check=True)
