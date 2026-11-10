@@ -1,12 +1,12 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/it/market/ | Site edition: 0.7.107 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/it/market/ | Site edition: 0.7.108 | Language: it -->
 
-Economia dei domini
+Analisi economica
 
 # Diffusione e quote dei TLD
 
 Quali estensioni incontriamo nei siti e quali contengono più domini? Esplora le due classifiche complete, usa i filtri e consulta gruppi di introduzione, date, fonti e dati scaricabili.
 
-[Panoramica sull’economia](https://robertbregy.github.io/Connecting-the-Dots/it/?tab=economics#economics) [Metodo e citazione](https://robertbregy.github.io/Connecting-the-Dots/research/) [Versione testuale](https://robertbregy.github.io/Connecting-the-Dots/economics/it/market/index.md)
+[Apri l’economia nell’atlante interattivo](https://robertbregy.github.io/Connecting-the-Dots/it/?tab=economics#economics) [Metodo e citazione](https://robertbregy.github.io/Connecting-the-Dots/research/) [Versione testuale](https://robertbregy.github.io/Connecting-the-Dots/economics/it/market/index.md)
 
 ## Quanto sono diffusi i TLD?
 
@@ -184,6 +184,6 @@ Analisi corrente del 19 ottobre 2026, esterna agli snapshot scientifici RR1/RR2.
 
 [Collega diffusione e storia →](https://robertbregy.github.io/Connecting-the-Dots/guides/it/timeline/#tld-cultural-trajectory) [Chi gestisce l’infrastruttura →](https://robertbregy.github.io/Connecting-the-Dots/it/?tab=geography#rsp-tld-footprint)
 
-**Di Robert Bregy** · Edizione del sito 0.7.107 · 9 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.108 · 10 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

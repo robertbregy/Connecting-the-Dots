@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-11-10",
+  "timezone": "Europe/Zurich",
+  "purpose": "Read-only editorial review reminders. HTTP reachability never changes an observation date or establishes that its facts remain current.",
+  "thresholdBasis": "Operational review cadence chosen for this publication: 14 days for the changing 2026 APS listing, 30 days for the root-state view. These are review thresholds, not source validity or scientific expiry limits.",
+  "snapshots": [
+    {
+      "id": "aps-current-view",
+      "label": "APS listing used by the current site",
+      "role": "current-view-from-dated-evidence",
+      "metadataFile": "data/applications_2026_aps_official_provenance.json",
+      "dateField": "retrievedAtUTC",
+      "sourceURLField": "sourceExportURL",
+      "reviewAfterDays": 14,
+      "nextReview": {
+        "label": "String Confirmation Day: acquire and reconcile official evidence before any editorial update",
+        "metadataFile": "publication.json",
+        "dateField": "stringConfirmation"
+      }
+    },
+    {
+      "id": "iana-current-view",
+      "label": "IANA root snapshot used by the current site",
+      "role": "current-view-from-dated-evidence",
+      "metadataFile": "data/iana_snapshot.json",
+      "dateField": "asOf",
+      "sourceURLField": "listSource",
+      "reviewAfterDays": 30
+    },
+    {
+      "id": "rr1-archive",
+      "label": "RR1 scientific archive",
+      "role": "frozen-evidence",
+      "metadataFile": "research/research_release_manifest.json",
+      "dateField": "dataSnapshot.publicationAsOf",
+      "sourceURLField": "doiUrl",
+      "releaseId": "RR1"
+    },
+    {
+      "id": "rr2-archive",
+      "label": "RR2 scientific archive",
+      "role": "frozen-evidence",
+      "metadataFile": "research/research_release_manifest.json",
+      "dateField": "dataSnapshot.publicationAsOf",
+      "sourceURLField": "doiUrl",
+      "releaseId": "RR2"
+    }
+  ],
+  "urlRoles": {
+    "rdapServiceBases": {
+      "metadataFile": "data/iana_snapshot.json",
+      "recordsField": "records",
+      "urlsField": "rdapServers",
+      "matching": "Exact URL strings only; preserve the original URL and HTTP result. Object/help queries are not covered by this role.",
+      "standardReference": "https://www.rfc-editor.org/rfc/rfc9082#section-3"
+    },
+    "excludedActions": [
+      {
+        "origin": "https://github.com",
+        "path": "/robertbregy/Connecting-the-Dots/issues/new",
+        "reason": "Feedback form action, not a documentary source. Excluded from verification; do not request prefilled issue-creation URLs."
+      }
+    ]
+  }
+}

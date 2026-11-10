@@ -1,10 +1,10 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/en/io/ | Site edition: 0.7.107 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/en/io/ | Site edition: 0.7.108 | Language: en -->
 
-Domain profile
+TLD profile
 
 # .io
 
-.io is currently delegated in the DNS root as Country-code.
+At the documented check, .io was delegated in the DNS root as Country-code.
 
 Status observed on October 4, 2026
 
@@ -16,7 +16,7 @@ Delegated Country-code TLD (ccTLD) Country-code Geography & places Technology & 
 
 ## FACT In brief
 
-.io is currently delegated in the DNS root as Country-code.
+At the documented check, .io was delegated in the DNS root as Country-code.
 
 The IANA record lists Internet Computer Bureau Limited as the manager.
 
@@ -66,15 +66,15 @@ Dates are shown only when supported by an attributable source. Missing phases ar
 
 The registry itself now markets .io as “the domain for tech websites”, explicitly acknowledging the input/output reinterpretation and its place in startup culture.
 
-## FACT Status today
+## FACT Status at the documented check
 
 **ASCII / DNS form:** .io
 
 **Present in the IANA root list:** Yes, at the stated date
 
-**Current root status:** Delegated
+**Root status at the documented check:** Delegated
 
-**Current-state verification:** Oct 4, 2026
+**Status check date:** Oct 4, 2026
 
 **IANA classification:** Country-code
 
@@ -118,7 +118,7 @@ The IANA technical contact is not necessarily the contracted Registry Service Pr
 
 ## Registry services
 
-**Registry website:** [http://www.nic.io/ ↗](http://www.nic.io/)
+**Registry website:** [http://www.nic.io/ ↗](https://www.nic.io/)
 
 **WHOIS:** whois.nic.io
 
@@ -144,6 +144,6 @@ Not reported
 
 [Official IANA record ↗](https://www.iana.org/domains/root/db/io.html) [Source 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Source 3 ↗](https://www.nic.io/)
 
-**By Robert Bregy** · Site edition 0.7.107 · November 9, 2026
+**By Robert Bregy** · Site edition 0.7.108 · November 10, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

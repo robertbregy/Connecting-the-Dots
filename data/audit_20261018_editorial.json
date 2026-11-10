@@ -169,7 +169,8 @@
       "contractKey": "cemeteryContractNotice",
       "rootKey": "cemeteryRootActive",
       "rootSource": "https://www.iana.org/domains/root/db/helsinki.html",
-      "contractSource": "https://www.icann.org/en/contracted-parties/registry-operators/services/registry-agreement-termination-service"
+      "contractSource": "https://www.icann.org/en/contracted-parties/registry-operators/services/registry-agreement-termination-service",
+      "verifiedOn": "2026-10-25"
     }
   ]
 }

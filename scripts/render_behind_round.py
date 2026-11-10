@@ -495,8 +495,8 @@ def render_page(data,tr,lang,pub,detail=False):
 <header><nav aria-label="Languages"><a class="brand" href="{BASE}{lang}/">Connecting the Dots</a><div class="lang-links">{lang_nav}</div></nav></header>
 <main id="behind-round">
 <div class="eyebrow">{h(t["behindEyebrow"])}</div>
-<h1>{h(t["behindTitle"])}</h1>
-<p class="lead">{h(t["behindIntro"])}</p>
+<h1>{h(t["wdoCaseTitle"] if detail else t["behindTitle"])}</h1>
+<p class="lead">{h(t["wdoMetaDescription"] if detail else t["behindIntro"])}</p>
 <div class="actions"><a class="action" href="{chronology}">{h(t["behindChronicleCta"])}</a><a class="action secondary" href="{second_action}">{h(second_label)}</a></div>
 {content}
 </main>

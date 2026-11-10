@@ -12,11 +12,11 @@ Prepare source and generated outputs on `feat/**`. `.github/workflows/rebuild.ym
 
 Before any merge: confirm actual checks, source provenance, language coverage and visual/browser QA. After a merge: confirm the actual deployment step and live-byte verification for the promoted SHA. A green GitHub workflow that skipped deployment or live verification is not publication proof.
 
-## Research tag protection: separate remaining action
+## Research tag protection
 
-The readback on 8 November 2026 found only the main branch ruleset. GitHub releases tagged `RR1` and `RR2` both report `immutable: false`; the integrity checks in this repository do not constitute administrative tag protection. Add a separate active tag ruleset for exactly `refs/tags/RR1` and `refs/tags/RR2`, restricting updates and deletion with no bypass actors. Do not move or recreate either tag or republish an archival release to achieve this protection. This is the remaining tag-protection portion of [issue #1](https://github.com/robertbregy/Connecting-the-Dots/issues/1).
+Verified again on 10 November 2026: ruleset [Protect immutable research tags RR1 and RR2](https://github.com/robertbregy/Connecting-the-Dots/rules/26789664) is **active**. It targets exactly `refs/tags/RR1` and `refs/tags/RR2`, restricts updates and deletion, and has no bypass actors. The administrator completed the import on 8 November; no further import is required.
 
-The native import proposal is [`research-tags-ruleset.json`](research-tags-ruleset.json). A repository administrator can import it through **Settings > Rules > Rulesets > New ruleset > Import a ruleset**, then confirm its active status, exact two-tag scope and empty bypass list. Committing this JSON does not activate it. Confirm the unchanged tag targets and the active GitHub readback before closing this action: `RR1` points to `5d52274935cda7712172873f46d456e4c0a09c7e`, and `RR2` to `33803aa3fa69f1abb4cce7fbd49a0788ee9a33c9`.
+The tag protection is distinct from GitHub Release's `immutable` flag. RR1 and RR2 remain the existing scientific deposits and must not be moved, recreated or republished as part of a technical-site update. Their targets are `5d52274935cda7712172873f46d456e4c0a09c7e` (RR1) and `33803aa3fa69f1abb4cce7fbd49a0788ee9a33c9` (RR2). The preserved [import proposal](research-tags-ruleset.json) documents the configuration; GitHub's active ruleset is authoritative.
 
 ## Current technical package discipline
 

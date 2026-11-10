@@ -2,7 +2,7 @@
 
 > Independent research atlas by Robert Bregy about Internet TLDs, ICANN applications, governance, economics and society. Available in English, Italian, German and French.
 
-Website version 0.7.107, published 2026-11-09. This is the technical/editorial release date, not the observation date of every fact. Read the source date and scope beside each claim.
+Website version 0.7.108, published 2026-11-10. This is the technical/editorial release date, not the observation date of every fact. Read the source date and scope beside each claim.
 
 ## Start here
 
@@ -13,10 +13,10 @@ Website version 0.7.107, published 2026-11-09. This is the technical/editorial r
 
 ## Reading pages
 
-- [Economic cases | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/economics/en/cases/index.md): Eight cases connect mechanisms with documented results: public revenue, contracts, acquisitions, renewals, regulation, auctions, historical withdrawals and entry costs. Every figure retains its period, unit and source.
-- [TLD adoption and shares | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/economics/en/market/index.md): Which extensions do we encounter on websites, and which contain more domains? Explore both complete rankings, use the filters and consult introduction groups, dates, sources and downloadable data.
-- [Portfolios and contention | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/economics/en/portfolios/index.md): Follow the strategies of applicants submitting many applications and the competition for the same words. Comparisons between rounds and the Aruba and Intercap cases clarify what is being counted.
-- [The economics of the 2026 round | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/economics/en/round-2026/index.md): Application costs, string themes, applicants’ activities and brand strategies. Economic cycles and historical reconstructions help explain expectations, with the limits of each analysis kept clear.
+- [Economic cases | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/economics/en/cases/index.md): Eight documented cases show how renewals, auctions, acquisitions, regulation and public revenue create value in the domain economy.
+- [TLD adoption and shares | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/economics/en/market/index.md): Compare TLD website presence and registered-domain counts with filters, dates, sources and downloadable data.
+- [Portfolios and contention | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/economics/en/portfolios/index.md): Portfolios, multiple applications and contention: compare operator strategies and selected cases from the ICANN 2026 round.
+- [The economics of the 2026 round | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/economics/en/round-2026/index.md): Application costs, string themes, applicant activity and economic strategies in the ICANN 2026 round.
 - [Is a domain only there to find a website? | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/guides/en/beyond/index.md): From services we use to the invisible functions of DNS, then writing systems and alternative naming systems.
 - [What is a city's own domain for? | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/guides/en/cities/index.md): Start with governance models and cases. Ask how to measure usefulness, then compare different generations of projects.
 - [Who creates value, and who collects it? | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/guides/en/economics/index.md): Follow the money through the domain market, from registration payments to the strategies of extension operators.
@@ -24,15 +24,15 @@ Website version 0.7.107, published 2026-11-09. This is the technical/editorial r
 - [What might .lugano become? | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/guides/en/lugano/index.md): Start with the application's status and the author's position. Then read intentions, open decisions, possible uses and verification criteria.
 - [How have Internet names changed? | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/index.md): Follow the history, compare application rounds and then examine the classifications and their limitations.
 - [.ai: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/ai/index.md): Anguilla’s country code. Its association with artificial intelligence illustrates how an existing name can acquire a new meaning.
-- [.amazon: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/amazon/index.md): .amazon is currently delegated in the DNS root as Generic.
-- [.berlin: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/berlin/index.md): .berlin is currently delegated in the DNS root as Generic.
+- [.amazon: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/amazon/index.md): At the documented check, .amazon was delegated in the DNS root as Generic. Explore its dated status, history and IANA/ICANN sources in this Connecting the Dots profile.
+- [.berlin: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/berlin/index.md): At the documented check, .berlin was delegated in the DNS root as Generic. Explore its dated status, history and IANA/ICANN sources in this Connecting the Dots profile.
 - [.cat: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/cat/index.md): A name for the Catalan linguistic and cultural community: a belonging that crosses state borders.
 - [.com: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/com/index.md): Created for commercial activities before the Web. It later became a symbol of online presence.
-- [.io: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/io/index.md): .io is currently delegated in the DNS root as Country-code.
+- [.io: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/io/index.md): At the documented check, .io was delegated in the DNS root as Country-code. Explore its dated status, history and IANA/ICANN sources in this Connecting the Dots profile.
 - [.lugano: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/lugano/index.md): An application by the City of Lugano in the 2026 round. It is not yet operational: approval, delegation and future uses remain to be established.
-- [.music: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/music/index.md): .music is currently delegated in the DNS root as Generic.
-- [.swiss: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/swiss/index.md): .swiss is currently delegated in the DNS root as Generic.
-- [.zuerich: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/zuerich/index.md): .zuerich is currently delegated in the DNS root as Generic.
+- [.music: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/music/index.md): At the documented check, .music was delegated in the DNS root as Generic. Explore its dated status, history and IANA/ICANN sources in this Connecting the Dots profile.
+- [.swiss: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/swiss/index.md): At the documented check, .swiss was delegated in the DNS root as Generic. Explore its dated status, history and IANA/ICANN sources in this Connecting the Dots profile.
+- [.zuerich: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/zuerich/index.md): At the documented check, .zuerich was delegated in the DNS root as Generic. Explore its dated status, history and IANA/ICANN sources in this Connecting the Dots profile.
 
 ## Languages
 
@@ -54,7 +54,7 @@ The APS export observed at 2026-10-11T21:27:40.214Z contains 2,783 rows: 1,614 b
 - [Published APS applications and their string relationships](https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_application_graph.json): 1,614 records; unit: published base application. [Provenance](https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_application_graph_manifest.json).
 - [Source-dated APS status observations](https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_record_observations.csv): 2,783 records; unit: source observation of an APS record. [Provenance](https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_application_graph_manifest.json).
 - [Separately curated local 2026 application records](https://robertbregy.github.io/Connecting-the-Dots/data/applications_2026.csv): 1 records; unit: locally curated application record. [Provenance](https://robertbregy.github.io/Connecting-the-Dots/data/application_2026_snapshot.json).
-- [Current derived APS analysis](https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_current_analytics.csv): 1,614 records; unit: published base application with explicit analysis scopes. [Provenance](https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_current_analytics_manifest.json).
+- [APS snapshot analysis · 11 October 2026](https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_current_analytics.csv): 1,614 records; unit: published base application with explicit analysis scopes. [Provenance](https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_current_analytics_manifest.json).
 - [Historical ICANN 2012 application–string–applicant graph](https://robertbregy.github.io/Connecting-the-Dots/data/applications_2012.csv): 1,930 records; unit: 2012 application. [Provenance](https://robertbregy.github.io/Connecting-the-Dots/data/application_archaeology_manifest.json).
 - [Source-backed economic metrics](https://robertbregy.github.io/Connecting-the-Dots/data/economic_metrics.csv): 22 records; unit: economic observation. [Provenance](https://robertbregy.github.io/Connecting-the-Dots/data/manifest.json).
 
@@ -62,7 +62,7 @@ The APS export observed at 2026-10-11T21:27:40.214Z contains 2,783 rows: 1,614 b
 
 Application, delegation, replacement, variant and derived exact-string grouping have different meanings. A false APS contention flag does not establish absence of contention before String Evaluation. Facts, interpretation and prospective ideas remain separate; undocumented outcomes are not inferred.
 
-The current archived research release is [RR2](https://doi.org/10.5281/zenodo.23288603), bibliographic publication date 2026-10-11, evidence cutoff 2026-10-10. The newer website and current derived APS analysis are not automatically included in this DOI. Previous research releases remain immutable and separately citable.
+The current archived research release is [RR2](https://doi.org/10.5281/zenodo.23288603), bibliographic publication date 2026-10-11, evidence cutoff 2026-10-10. The newer website and the APS snapshot analysis acquired on 11 October 2026 are not automatically included in this DOI. Previous research releases remain immutable and separately citable.
 
 - [Citation file](https://robertbregy.github.io/Connecting-the-Dots/CITATION.cff): archived research citation.
 - [Research release manifest](https://robertbregy.github.io/Connecting-the-Dots/research/research_release_manifest.json): archived versions and working-paper relationship.

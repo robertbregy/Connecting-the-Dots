@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/economics/ | Site edition: 0.7.107 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/economics/ | Site edition: 0.7.108 | Language: de -->
 
 Leitfaden
 
@@ -18,13 +18,13 @@ Diese Einführung verbindet die wesentlichen Mechanismen. In den Vertiefungen fi
 
 DIE WIRTSCHAFT DER NAMEN
 
-## Wähle eine Frage zur Vertiefung
+## Wählen Sie eine Frage zur Vertiefung
 
-Diese vier Wege erschliessen das vollständige Dossier. Du kannst eine Zahl nachschlagen, einen Fall verfolgen oder nachlesen, wie sich Strategien im Lauf der Zeit ändern.
+Diese vier Wege erschliessen das vollständige Dossier. Sie können eine Zahl nachschlagen, einen Fall verfolgen oder nachlesen, wie sich Strategien im Lauf der Zeit ändern.
 
 ### [Verbreitung und Anteile der TLDs](https://robertbregy.github.io/Connecting-the-Dots/economics/de/market/)
 
-Welche Endungen begegnen uns auf Websites, und welche enthalten mehr Domains? Erkunde beide vollständigen Ranglisten und ihre Filter sowie Einführungsgruppen, Daten, Quellen und herunterladbare Datensätze.
+Welche Endungen begegnen uns auf Websites, und welche enthalten mehr Domains? Erkunden Sie beide vollständigen Ranglisten und ihre Filter sowie Einführungsgruppen, Daten, Quellen und herunterladbare Datensätze.
 
 ### [Wirtschaftliche Fallstudien](https://robertbregy.github.io/Connecting-the-Dots/economics/de/cases/)
 
@@ -32,7 +32,7 @@ Acht Fälle verbinden Mechanismen mit dokumentierten Ergebnissen: öffentliche E
 
 ### [Portfolios und konkurrierende Anträge](https://robertbregy.github.io/Connecting-the-Dots/economics/de/portfolios/)
 
-Verfolge die Strategien von Antragstellern mit vielen Bewerbungen und den Wettbewerb um dieselben Wörter. Die Vergleiche zwischen den Runden sowie die Fälle Aruba und Intercap zeigen, was jeweils gezählt wird.
+Verfolgen Sie die Strategien von Antragstellern mit vielen Bewerbungen und den Wettbewerb um dieselben Wörter. Die Vergleiche zwischen den Runden sowie die Fälle Aruba und Intercap zeigen, was jeweils gezählt wird.
 
 ### [Wirtschaftliche Aspekte der Runde 2026](https://robertbregy.github.io/Connecting-the-Dots/economics/de/round-2026/)
 
@@ -92,7 +92,7 @@ Der Fall .web zeigt zusammen mit .shop und .app, welche Bedeutung der Wettbewerb
 
 ## Bevor zwei Zahlen verglichen werden
 
-Prüfe, was sie messen, auf welchen Zeitraum sie sich beziehen und welche Quelle sie belegt. Umsatz, Kaufpreis eines Unternehmens und Budgetprognose beantworten unterschiedliche Fragen. Auch die Währung und der Umfang der erfassten Organisation zählen.
+Prüfen Sie, was sie messen, auf welchen Zeitraum sie sich beziehen und welche Quelle sie belegt. Umsatz, Kaufpreis eines Unternehmens und Budgetprognose beantworten unterschiedliche Fragen. Auch die Währung und der Umfang der erfassten Organisation zählen.
 
 Registrierungen beschreiben einen Bestand an Namen; die Präsenz auf Websites erfasst eine andere Nutzung. Anträge beschreiben hingegen Absichten und Strategien. Keine dieser Kennzahlen allein belegt, dass eine Endung künftig rentabel sein wird.
 
@@ -108,6 +108,6 @@ Die Kosten eines Registers erklären manche Rückzüge und Ausstiege. Dokumentie
 
 [Den gTLD-Friedhof erkunden →](https://robertbregy.github.io/Connecting-the-Dots/de/#cemetery)
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.107 · 9. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.108 · 10. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

@@ -1,12 +1,12 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/cases/ | Site edition: 0.7.107 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/cases/ | Site edition: 0.7.108 | Language: de -->
 
-Domainökonomie
+Wirtschaftsanalyse
 
 # Wirtschaftliche Fallstudien
 
 Acht Fälle verbinden Mechanismen mit dokumentierten Ergebnissen: öffentliche Einnahmen, Verträge, Übernahmen, Verlängerungen, Regulierung, Auktionen, historische Rückzüge und Einstiegskosten. Jede Zahl behält ihren Zeitraum, ihre Einheit und ihre Quelle.
 
-[Wirtschaftlicher Überblick](https://robertbregy.github.io/Connecting-the-Dots/de/?tab=economics#economics) [Methode und Zitieren](https://robertbregy.github.io/Connecting-the-Dots/research/) [Textversion](https://robertbregy.github.io/Connecting-the-Dots/economics/de/cases/index.md)
+[Wirtschaft im interaktiven Atlas öffnen](https://robertbregy.github.io/Connecting-the-Dots/de/?tab=economics#economics) [Methode und Zitieren](https://robertbregy.github.io/Connecting-the-Dots/research/) [Textversion](https://robertbregy.github.io/Connecting-the-Dots/economics/de/cases/index.md)
 
 FAKT EINORDNUNG
 
@@ -98,11 +98,11 @@ FAKT
 
 Anguillas Haushalt 2026 veranschlagt EC$253,6 Mio. aus Domain Name Registration, nach EC$104,3 Mio. Ist-Einnahmen 2024.
 
-**EC$104.3M** Domainregistrierungs-Einnahmen · Ist 2024 · XCD
+**EC$104,3M** Domainregistrierungs-Einnahmen · Ist 2024 · XCD
 
-**EC$219.2M** Domainregistrierungs-Einnahmen · Projektion 2025 · XCD
+**EC$219,2M** Domainregistrierungs-Einnahmen · Projektion 2025 · XCD
 
-**EC$253.6M** Domainregistrierungs-Einnahmen · Budget 2026 · XCD
+**EC$253,6M** Domainregistrierungs-Einnahmen · Budget 2026 · XCD
 
 EINORDNUNG
 
@@ -126,11 +126,11 @@ FAKT
 
 Tuvalus Haushalt 2024 veranschlagte A$5,60 Mio. aus dem Dot TV Marketing Agreement und projizierte A$5,87 Mio. für 2026.
 
-**A$3.51M** Dot-TV-Vertrag · Ist 2023 · AUD
+**A$3,51M** Dot-TV-Vertrag · Ist 2023 · AUD
 
-**A$5.60M** Dot-TV-Vertrag · Budget 2024 · AUD
+**A$5,60M** Dot-TV-Vertrag · Budget 2024 · AUD
 
-**A$5.87M** Dot-TV-Vertrag · Projektion 2026 · AUD
+**A$5,87M** Dot-TV-Vertrag · Projektion 2026 · AUD
 
 EINORDNUNG
 
@@ -154,7 +154,7 @@ FAKT
 
 Eine sekundäre Branchenquelle berichtete, Afilias habe Internet Computer Bureau, Betreiber von .io, .ac und .sh, 2017 für US$70,17 Mio. in bar übernommen.
 
-**US$70.17M** Gemeldeter Kaufpreis des Betreibers 2017 · USD
+**US$70,17M** Gemeldeter Kaufpreis des Betreibers 2017 · USD
 
 **~10×** Gemeldetes Umsatzmultiple 2017 · x
 
@@ -180,13 +180,13 @@ FAKT
 
 Verisign meldete 2025 US$1,66 Mrd. Unternehmensumsatz und US$1,12 Mrd. Betriebsergebnis; .com und .net kamen zusammen auf 173,5 Mio. Registrierungen.
 
-**US$1.66B** Verisign Unternehmensumsatz 2025 · USD
+**US$1,66B** Verisign Unternehmensumsatz 2025 · USD
 
-**US$1.12B** Verisign Betriebsergebnis 2025 · USD
+**US$1,12B** Verisign Betriebsergebnis 2025 · USD
 
-**173.5M** .com + .net Domainbestand 2025-12-31 · domains
+**173,5M** .com + .net Domainbestand 2025-12-31 · domains
 
-**US$10.97/yr** .com Wholesale-Jahresgebühr 2026-11-01 · USD/year
+**US$10,97/yr** .com Wholesale-Jahresgebühr 2026-11-01 · USD/year
 
 EINORDNUNG
 
@@ -210,7 +210,7 @@ FAKT
 
 Die vorgeschlagene Übernahme von Public Interest Registry 2019 wurde mit US$1,135 Mrd. bewertet und teilweise über eine US$360-Mio.-Term-Loan-Fazilität finanziert; ICANN verweigerte letztlich die Zustimmung.
 
-**US$1.135B** Vorgeschlagener PIR-Kaufpreis 2019 · USD
+**US$1,135B** Vorgeschlagener PIR-Kaufpreis 2019 · USD
 
 **US$360M** Term-Loan-Fazilität 2019 · USD
 
@@ -236,13 +236,13 @@ FAKT
 
 ICANN-Auktionen ergaben US$135 Mio. für .web, US$41,501 Mio. für .shop und US$25,001 Mio. für .app.
 
-**US$135.0M** .web Auktionspreis 2016-07-27 · USD
+**US$135,0M** .web Auktionspreis 2016-07-27 · USD
 
-**US$41.501M** .shop Auktionspreis 2016-01-27 · USD
+**US$41,501M** .shop Auktionspreis 2016-01-27 · USD
 
-**US$25.001M** .app Auktionspreis 2015-02-25 · USD
+**US$25,001M** .app Auktionspreis 2015-02-25 · USD
 
-**US$240.59M** Kumulative Bruttoerlöse ICANN-Auktionen 2016 · USD
+**US$240,59M** Kumulative Bruttoerlöse ICANN-Auktionen 2016 · USD
 
 EINORDNUNG
 
@@ -266,9 +266,9 @@ FAKT
 
 Rightside verbuchte 2014 US$22,103 Mio. und 2015 US$9,403 Mio. Nettogewinn aus dem Rückzug von Interessen an gTLD-Bewerbungen.
 
-**US$22.103M** Nettogewinn aus Bewerbungsrückzügen 2014 · USD
+**US$22,103M** Nettogewinn aus Bewerbungsrückzügen 2014 · USD
 
-**US$9.403M** Nettogewinn aus Bewerbungsrückzügen 2015 · USD
+**US$9,403M** Nettogewinn aus Bewerbungsrückzügen 2015 · USD
 
 EINORDNUNG
 
@@ -290,9 +290,9 @@ FAKT
 
 Die Basis-Evaluierungsgebühr betrug 2012 US$185.000 und beträgt im 2026-Round US$227.000 je Bewerbung, vor bestimmten Zusatzkosten oder Förderabschlägen.
 
-**US$185,000** Basis-Evaluierungsgebühr 2012 · USD
+**US$185.000** Basis-Evaluierungsgebühr 2012 · USD
 
-**US$227,000** Basis-Evaluierungsgebühr 2026 · USD
+**US$227.000** Basis-Evaluierungsgebühr 2026 · USD
 
 EINORDNUNG
 
@@ -300,6 +300,6 @@ Die Gebühr ist kein Kaufpreis für eine TLD, sondern Eintrittskosten in einen u
 
 [ICANN — 2012 New gTLD evaluation fee ↗](https://newgtlds.icann.org/en/applicants/global-support/faqs/faqs-en) [ICANN — 2026 gTLD evaluation fee ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/gtld-evaluation-fee/faqs) [ICANN — 2026 financial projection templates ↗](https://newgtldprogram-2026-agb.icann.org/en/16-appendix-5-templates-for-standard-financial-profile.html)
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.107 · 9. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.108 · 10. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

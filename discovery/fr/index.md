@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/fr/ | Site edition: 0.7.107 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/fr/ | Site edition: 0.7.108 | Language: fr -->
 
 Connecting the Dots
 
@@ -66,23 +66,23 @@ Une candidature de la Ville de Lugano dans le cycle 2026. L’extension n’est 
 
 ### [.amazon](https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/amazon/)
 
-.amazon est actuellement délégué dans la racine DNS comme Générique.
+Lors de la vérification documentée, .amazon était délégué dans la racine DNS comme Générique.
 
 ### [.music](https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/music/)
 
-.music est actuellement délégué dans la racine DNS comme Générique.
+Lors de la vérification documentée, .music était délégué dans la racine DNS comme Générique.
 
 ### [.berlin](https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/berlin/)
 
-.berlin est actuellement délégué dans la racine DNS comme Générique.
+Lors de la vérification documentée, .berlin était délégué dans la racine DNS comme Générique.
 
 ### [.zuerich](https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/zuerich/)
 
-.zuerich est actuellement délégué dans la racine DNS comme Générique.
+Lors de la vérification documentée, .zuerich était délégué dans la racine DNS comme Générique.
 
 ### [.swiss](https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/swiss/)
 
-.swiss est actuellement délégué dans la racine DNS comme Générique.
+Lors de la vérification documentée, .swiss était délégué dans la racine DNS comme Générique.
 
 ### [.com](https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/com/)
 
@@ -94,8 +94,8 @@ Un nom pour la communauté linguistique et culturelle catalane : une appartenanc
 
 ### [.io](https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/io/)
 
-.io est actuellement délégué dans la racine DNS comme Code pays.
+Lors de la vérification documentée, .io était délégué dans la racine DNS comme Code pays.
 
-**Par Robert Bregy** · Édition du site 0.7.107 · 9 novembre 2026
+**Par Robert Bregy** · Édition du site 0.7.108 · 10 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.

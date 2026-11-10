@@ -1,0 +1,135 @@
+/* Both chapters belong to the native six-area app, not another site shell. */
+.ctdNativeGuide .ctdNativeArticle{max-width:1050px;margin:0 auto;padding:20px 0 55px}
+.ctdNativeGuide .ctdNativeArticle>.ctdNativeHeading{font-size:clamp(34px,5vw,62px);letter-spacing:-.05em;line-height:1.08;max-width:23ch;margin:10px 0 24px}
+.ctdNativeGuide .ctdNativeArticle>.lead{font-size:clamp(17px,2vw,22px);line-height:1.55;color:var(--muted);max-width:70ch}
+.ctdNativeGuide .ctdNativeArticle>.eyebrow{font-size:12px;color:var(--muted);letter-spacing:.14em}
+.ctdNativeGuide .ctdNativeArticle .panel{background:var(--surface);border:1px solid var(--border);border-radius:15px;box-shadow:var(--shadow);padding:24px;margin:16px 0}
+.ctdNativeGuide .ctdNativeArticle a{overflow-wrap:anywhere;color:var(--accent-text)}
+.ctdNativeGuide .ctdNativeArticle button{font-family:inherit}
+.ctdNativeGuide .ctdNativeArticle code{overflow-wrap:anywhere}
+.ctdNativeGuide .ctdNativeArticle [hidden]{display:none!important}
+.ctdNativeGuide .ctdNativeArticle .governanceSources,.ctdNativeGuide .ctdNativeArticle .accessSources{min-width:0}
+.ctdNativeGuide .ctdNativeIntro{padding:20px 0 14px;border-bottom:1px solid var(--border);margin-bottom:20px}
+.ctdNativeGuide .ctdNativeReturn{display:inline-flex;align-items:center;min-height:40px;color:var(--accent-text);font-size:14px;font-weight:700;text-decoration:none}
+.ctdNativeGuide .ctdNativeReturn:hover{text-decoration:underline}
+@media(max-width:720px){.ctdNativeGuide .ctdNativeArticle{padding:12px 0 35px}.ctdNativeGuide .ctdNativeArticle .panel{padding:17px}}
+
+.accessIntro{padding:20px 24px;border-left:4px solid var(--accent);background:var(--surface2);border-radius:0 13px 13px 0;margin:22px 0 27px}
+.accessIntro h2{font-size:1.13rem;margin:0 0 7px}.accessIntro p{margin:0;color:var(--muted)}
+.accessSimulator{border:1px solid var(--border);border-radius:18px;background:var(--surface);padding:27px;margin:22px 0 35px}
+.accessSimulator h2,.accessActorSection h2,.accessCaseSection h2{font-size:clamp(1.4rem,3.5vw,1.85rem);letter-spacing:-.018em;margin:0 0 9px}
+.accessSimulator .intro,.accessCaseSection .intro,.accessActorSection .intro{max-width:82ch;color:var(--muted);margin-bottom:19px}
+.accessSample{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:var(--surface2);border-radius:9px;padding:12px 15px}
+.accessSample span{color:var(--muted);font-size:.84rem}.accessSample code{font-size:1rem;overflow-wrap:anywhere}
+.accessChoices{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 25px}
+.accessChoices button{font:inherit;font-size:.86rem;min-height:42px;max-width:100%;border-radius:10px;cursor:pointer;border:1px solid #97afc9;background:var(--surface);color:var(--text);padding:9px 12px;text-align:center;transition:background .12s}
+.accessChoices button[aria-pressed="true"]{background:#00539b;border-color:#00539b;color:#fff;font-weight:750}
+.accessChoices button:hover{box-shadow:0 0 0 1px var(--accent)}
+.accessChoices button:focus-visible{outline:3px solid #327bb1;outline-offset:2px}
+.accessStages{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.accessPrerequisite{list-style:none;margin:0 0 20px;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+.accessPreconditionsHeading{font-size:1rem;margin:0 0 6px}
+.accessPreconditionsBody{color:var(--muted);font-size:.87rem;line-height:1.55;max-width:85ch;margin:0 0 10px}
+.accessPrerequisite li{max-width:100%;border-left:4px solid var(--accent)}
+.accessFlowLead{font-size:.84rem;color:var(--muted);margin:0 0 12px}
+.accessStages li,.accessPrerequisite li{border:1px solid var(--border);border-radius:11px;padding:13px;min-width:0;background:var(--surface2);transition:background .15s}
+.accessStages li h3,.accessPrerequisite li h3{font-size:.93rem;line-height:1.25;margin:7px 0}
+.accessStages li p,.accessPrerequisite li p{color:var(--muted);font-size:.79rem;line-height:1.48;margin:0}
+.accessStages li .state,.accessPrerequisite li .state{font-size:.75rem;font-weight:780}
+.accessStages li[data-state="passed"],.accessPrerequisite li[data-state="passed"]{border-color:#82b8a0;background:#e9f8f1;color:#185e45}
+.accessStages li[data-state="passed"] p,.accessPrerequisite li[data-state="passed"] p{color:#254b3a}
+.accessStages li[data-state="blocked"] p,.accessPrerequisite li[data-state="blocked"] p{color:#62450b}
+.accessStages li[data-state="blocked"],.accessPrerequisite li[data-state="blocked"]{border-color:#b99a5d;background:#fff2d8;color:#76520d}
+.accessStages li[data-state="pending"],.accessPrerequisite li[data-state="pending"]{border-color:var(--border);background:var(--surface2);opacity:1}
+.accessScenarios{margin-top:20px}
+.accessScenario{border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+.accessScenario[data-outcome="blocked"]{border-left:4px solid #af8240}
+.accessScenario[data-outcome="open"]{border-left:4px solid #448a6b}
+.accessScenario[hidden]{display:none!important}
+.accessScenario h3{margin:6px 0 7px;font-size:1.15rem}
+.accessScenario p{color:var(--muted);margin:0 0 12px;line-height:1.65}
+.accessOutcome{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.accessImpacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.accessImpacts>div{border-radius:10px;padding:10px 12px;background:var(--surface2)}
+.accessImpacts strong{font-size:.81rem;display:block;line-height:1.3;margin-bottom:5px}
+.accessImpacts span{font-size:.84rem;line-height:1.45}
+.accessLive{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.accessCaveat{font-size:.83rem;color:var(--muted);margin:13px 0 0}
+.accessActors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}
+.accessActors article{background:var(--surface);padding:18px;border:1px solid var(--border);border-radius:13px}
+.accessActors h3{font-size:1.08rem;margin:0 0 8px}
+.accessActors p{color:var(--muted);font-size:.91rem;margin:0}
+.accessCases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:20px 0 33px}
+.accessCases article{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;min-width:0}
+.accessCases h3{font-size:1.09rem;margin:10px 0}
+.accessCases p{line-height:1.6;font-size:.92rem;color:var(--muted);margin:0}
+.accessCasePeriod{font-weight:820;color:var(--accent-text);font-size:.83rem}
+.accessEvidenceNote{margin-top:10px!important;font-weight:660}
+.accessSources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;list-style:none;padding:0}
+.accessSources li{min-width:0}
+.accessSources a{display:block;padding:12px 13px;border-radius:10px;border:1px solid var(--border);text-decoration:none;overflow-wrap:anywhere;font-size:.88rem;line-height:1.42}
+.accessSources a:hover,.accessSources a:focus-visible{text-decoration:underline;background:var(--surface2)}
+.accessRefs{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.accessRefs a{text-decoration:none;color:#154e78!important;border:1px solid #9ebbd0;border-radius:6px;background:#eaf3fc;padding:2px 7px;font-size:.77rem;font-weight:750}
+.accessRefs a:hover,.accessRefs a:focus-visible{text-decoration:underline}
+.accessPanel{padding:22px!important}
+.accessPanel h2{margin:0 0 10px}
+.accessPanel p{max-width:85ch}
+.accessRelated{display:flex;flex-wrap:wrap;gap:11px;margin-top:14px}
+.accessRelated a{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid var(--border);text-decoration:none;font-weight:730}
+.accessRelated a:hover{text-decoration:underline;background:var(--surface2)}
+.accessDate{color:var(--muted);font-size:.83rem;margin:22px 0}
+@media(max-width:860px){.accessStages{grid-template-columns:repeat(2,minmax(0,1fr))}.accessImpacts{grid-template-columns:1fr}}
+@media(max-width:600px){.accessSimulator{padding:16px}.accessStages,.accessActors,.accessCases,.accessSources{grid-template-columns:1fr}.accessStages li{padding:13px}.accessChoices button{flex:1 1 calc(50% - 8px)}.accessPanel{padding:16px!important}.accessCaseSection,.accessActorSection{margin-top:26px}}
+
+
+
+.governanceHero{margin:25px 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.governanceHero>section{background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:20px}
+.governanceHero h2{font-size:1.12rem;margin:0 0 10px}
+.governanceHero p{margin:0;color:var(--muted)}
+.governanceArticle section.panel{padding:25px;margin:17px 0}
+.governanceArticle h2{font-size:clamp(1.2rem,2.5vw,1.48rem);margin:0 0 11px}
+.governanceArticle .lead{margin-bottom:20px}
+.governanceCitations{display:flex;gap:7px;flex-wrap:wrap;margin:9px 0 0}
+.governanceCitations a{display:inline-block;border:1px solid #9ebbd0;background:#ecf4fb;color:#195f99;font-size:.78rem;font-weight:720;padding:2px 7px;border-radius:6px;text-decoration:none}
+.governanceCitations a:focus-visible,.governanceCitations a:hover{text-decoration:underline}
+.governancePrecedents{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:17px 0 22px}
+.governancePrecedents article{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:19px}
+.governancePrecedents time{display:block;color:var(--accent-text);font-size:1.15rem;font-weight:830;margin-bottom:8px}
+.governancePrecedents h3{font-size:1.04rem;line-height:1.3;margin:0 0 9px}
+.governancePrecedents p{font-size:.94rem;margin:0;color:var(--muted)}
+.governanceRelated{display:flex;flex-wrap:wrap;gap:10px;margin-top:17px}
+.governanceRelated a{display:inline-block;padding:10px 13px;border-radius:10px;border:1px solid var(--border);background:var(--surface2);font-weight:720;text-decoration:none}
+.governanceSources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 13px;padding:0;list-style:none}
+.governanceSources a{display:block;overflow-wrap:anywhere;padding:10px 12px;border:1px solid var(--border);border-radius:10px;text-decoration:none}
+.governanceSources a:hover{text-decoration:underline}
+.governanceSources small{color:var(--muted);font-weight:790;margin-right:8px}
+.governanceDate{font-size:.85rem;color:var(--muted);margin-top:24px}
+@media(max-width:700px){.governanceHero,.governancePrecedents,.governanceSources{grid-template-columns:1fr}.governanceArticle section.panel{padding:18px}}
+
+/* Editorial article treatment: consistent with the main site's typography and layout. */
+header nav{max-width:1230px}
+main.governanceArticle{max-width:1080px;padding:clamp(26px,4vw,56px) clamp(20px,4vw,48px) 76px}
+.governanceArticle>h1{max-width:19ch;font-size:clamp(2.5rem,5.3vw,4.6rem);line-height:1.08;letter-spacing:-.05em;margin:10px 0 24px}
+.governanceArticle>.eyebrow{font-size:.74rem;letter-spacing:.14em}
+.governanceArticle>.lead{font-size:clamp(1.1rem,1.7vw,1.35rem);line-height:1.65;max-width:70ch;color:var(--muted);margin-bottom:32px}
+.governanceArticle>h2{font-size:clamp(1.55rem,2.6vw,2.1rem);letter-spacing:-.035em;line-height:1.2;margin:46px 0 18px}
+.governanceHero{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:34px 0 44px}
+.governanceHero>section{padding:26px;border-radius:16px;border-top:4px solid var(--accent)}
+.governanceHero>section:nth-child(2){border-top-color:#6d879d}
+.governanceHero h2{font-size:1.15rem;letter-spacing:-.015em}
+.governanceHero p{font-size:.97rem;line-height:1.64}
+.governanceArticle section.panel{padding:clamp(20px,3vw,33px);margin:12px 0;border-radius:14px;border-color:var(--border)}
+.governanceArticle section.panel h2{font-size:clamp(1.2rem,2vw,1.55rem);line-height:1.3}
+.governanceArticle section.panel p{max-width:83ch}
+.governanceCitations a{border-radius:6px;padding:3px 9px;font-size:.79rem}
+.governancePrecedents{gap:14px}
+.governancePrecedents article{border-radius:14px;padding:23px}
+.governanceArticle a{overflow-wrap:anywhere}
+
+
+.governanceEntryLinks{max-width:none;display:flex;flex-wrap:wrap;justify-content:flex-start;gap:8px;padding:0;margin:0 0 28px}
+.governanceEntryLinks a{display:inline-flex;align-items:center;min-height:42px;border:1px solid var(--border);border-radius:10px;padding:9px 13px;background:var(--surface2);color:var(--accent-text);font-size:.86rem;font-weight:750;text-decoration:none}
+.governanceEntryLinks a:hover,.governanceEntryLinks a:focus-visible{text-decoration:underline;background:var(--accent-soft)}
+.ctdNativeGuide .ctdNativeArticle .governanceCitations a{background:#ecf4fb;color:#164c75;border-color:#9ebbd0}

@@ -1,8 +1,12 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/de/lugano/ | Site edition: 0.7.107 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/de/lugano/ | Site edition: 0.7.108 | Language: de -->
 
-Domainprofil
+TLD-Profil
 
 # .lugano
+
+**APS-Snapshot · 11. Oktober 2026**
+
+Die Bewerbungsdaten stammen aus dem am 11. Oktober 2026 erfassten öffentlichen APS-Export. Dieser Snapshot liegt vor dem String Confirmation Day (17. November), dem angekündigten Termin für bestätigte Zeichenfolgen und aktualisierte Contention Sets. Er belegt keine individuellen Bewertungsergebnisse. [Offizieller Zeitplan ↗](https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en)
 
 Eine Bewerbung der Stadt Lugano in der Runde 2026. Noch keine betriebene Endung: Genehmigung, Delegierung und künftige Nutzung bleiben offen.
 
@@ -26,7 +30,7 @@ Nicht delegiert 2026 Beantragte Zeichenfolge · kein aktueller IANA-Typ Geografi
 
 ## FAKT Kurz erklärt
 
-.lugano ist derzeit nicht in der DNS-Root delegiert.
+Bei der dokumentierten Prüfung war .lugano nicht in der DNS-Root delegiert.
 
 [Begriff unklar? Zum grundlegenden Glossar →](https://robertbregy.github.io/Connecting-the-Dots/guides/de/how/#how-glossary)
 
@@ -60,15 +64,15 @@ Chronologie aus formellen Bewerbungen, ICANN-Daten zum Registry-Agreement-Lebens
 
 Daten werden nur angezeigt, wenn sie durch eine zuordenbare Quelle belegt sind. Nicht dokumentierte Phasen werden nicht geschätzt. Dieser Reveal-Day-Snapshot nutzt die lokal bewahrte Chronologie plus verifizierte 2026-Datensätze; die Browser-Anreicherung mit ICANN-Vertragslebenszyklusdaten bleibt deaktiviert, damit alle Besucher denselben reproduzierbaren Datensatz sehen.
 
-## FAKT Stand heute
+## FAKT Status bei der dokumentierten Prüfung
 
 **ASCII-/DNS-Form:** .lugano
 
 **In der IANA-Root-Liste enthalten:** Nein, zum angegebenen Datum
 
-**Aktueller Status in der Root-Zone:** Nicht delegiert
+**Status in der Root-Zone bei der dokumentierten Prüfung:** Nicht delegiert
 
-**Prüfung des aktuellen Status:** 4. Okt. 2026
+**Datum der Statusprüfung:** 4. Okt. 2026
 
 **IANA-Klassifikation:** Beantragte Zeichenfolge · kein aktueller IANA-Typ
 
@@ -86,6 +90,6 @@ Als abgeleitet markierte Programmklassifikationen verwenden das IANA-Registrieru
 
 [Quelle 1 ↗](https://newgtldprogram-aps.icann.org/applications/CDL2651T-T31516/summary) [Quelle 2 ↗](https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en) [Quelle 3 ↗](https://www.ntlddata.com/applications/strings)
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.107 · 9. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.108 · 10. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

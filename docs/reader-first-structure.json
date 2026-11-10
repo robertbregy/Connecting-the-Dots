@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
-  "version": "0.7.107",
+  "version": "0.7.108",
   "native": [
     {
       "file": "en/index.html",
       "lang": "en",
-      "retainedExistingIds": 412,
+      "retainedExistingIds": 413,
       "chapters": [
         {
           "id": "how",
@@ -244,9 +244,9 @@
         "narrative": {
           "lang": "en",
           "essentialBlocks": 7,
-          "originalTranslatedItems": 1350,
-          "originalLinks": 1066,
-          "originalIds": 490,
+          "originalTranslatedItems": 1354,
+          "originalLinks": 1067,
+          "originalIds": 491,
           "removedNavigationLabels": [
             "Understand the context",
             "From extensions to individual ICANN applications",
@@ -462,7 +462,7 @@
     {
       "file": "index.html",
       "lang": "en",
-      "retainedExistingIds": 412,
+      "retainedExistingIds": 413,
       "chapters": [
         {
           "id": "how",
@@ -700,9 +700,9 @@
         "narrative": {
           "lang": "en",
           "essentialBlocks": 7,
-          "originalTranslatedItems": 1350,
-          "originalLinks": 1066,
-          "originalIds": 490,
+          "originalTranslatedItems": 1354,
+          "originalLinks": 1067,
+          "originalIds": 491,
           "removedNavigationLabels": [
             "Understand the context",
             "From extensions to individual ICANN applications",
@@ -918,7 +918,7 @@
     {
       "file": "it/index.html",
       "lang": "it",
-      "retainedExistingIds": 412,
+      "retainedExistingIds": 413,
       "chapters": [
         {
           "id": "how",
@@ -1156,9 +1156,9 @@
         "narrative": {
           "lang": "it",
           "essentialBlocks": 7,
-          "originalTranslatedItems": 1350,
-          "originalLinks": 1066,
-          "originalIds": 490,
+          "originalTranslatedItems": 1354,
+          "originalLinks": 1067,
+          "originalIds": 491,
           "removedNavigationLabels": [
             "Per capire il contesto",
             "Dalle estensioni alle singole domande ICANN",
@@ -1374,7 +1374,7 @@
     {
       "file": "de/index.html",
       "lang": "de",
-      "retainedExistingIds": 412,
+      "retainedExistingIds": 413,
       "chapters": [
         {
           "id": "how",
@@ -1612,9 +1612,9 @@
         "narrative": {
           "lang": "de",
           "essentialBlocks": 7,
-          "originalTranslatedItems": 1350,
-          "originalLinks": 1066,
-          "originalIds": 490,
+          "originalTranslatedItems": 1354,
+          "originalLinks": 1067,
+          "originalIds": 491,
           "removedNavigationLabels": [
             "Den Zusammenhang verstehen",
             "Von Endungen zu einzelnen ICANN-Bewerbungen",
@@ -1830,7 +1830,7 @@
     {
       "file": "fr/index.html",
       "lang": "fr",
-      "retainedExistingIds": 412,
+      "retainedExistingIds": 413,
       "chapters": [
         {
           "id": "how",
@@ -2068,9 +2068,9 @@
         "narrative": {
           "lang": "fr",
           "essentialBlocks": 7,
-          "originalTranslatedItems": 1350,
-          "originalLinks": 1066,
-          "originalIds": 490,
+          "originalTranslatedItems": 1354,
+          "originalLinks": 1067,
+          "originalIds": 491,
           "removedNavigationLabels": [
             "Comprendre le contexte",
             "Des extensions aux candidatures individuelles ICANN",

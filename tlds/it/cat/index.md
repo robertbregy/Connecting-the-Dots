@@ -1,6 +1,6 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/cat/ | Site edition: 0.7.107 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/cat/ | Site edition: 0.7.108 | Language: it -->
 
-Scheda del dominio
+Scheda TLD
 
 # .cat
 
@@ -24,7 +24,7 @@ Delegata 2004 Sponsorizzato / ristretto Geografia e luoghi Cultura, media e istr
 
 ## FATTO In breve
 
-.cat è oggi delegato nella root DNS come Sponsorizzato / ristretto.
+Alla verifica documentata, .cat risultava delegato nella root DNS come Sponsorizzato / ristretto.
 
 La scheda IANA indica Fundacio puntCAT come gestore.
 
@@ -132,15 +132,15 @@ Le date sono mostrate solo quando sostenute da una fonte attribuibile. Le fasi n
 
 Un TLD non doveva coincidere con uno Stato: anche lingua e cultura potevano diventare infrastruttura.
 
-## FATTO Stato oggi
+## FATTO Stato alla verifica documentata
 
 **Forma ASCII / DNS:** .cat
 
 **Presente nell’elenco della root IANA:** Sì, alla data indicata
 
-**Stato attuale nella root:** Delegata
+**Stato nella root alla verifica documentata:** Delegata
 
-**Verifica dello stato attuale:** 4 ott 2026
+**Data della verifica dello stato:** 4 ott 2026
 
 **Classificazione IANA:** Sponsorizzato / ristretto
 
@@ -184,7 +184,7 @@ Il contatto tecnico IANA non identifica necessariamente il Registry Service Prov
 
 ## Servizi del registro
 
-**Sito del registro:** [http://www.domini.cat/ ↗](http://www.domini.cat/)
+**Sito del registro:** [http://www.domini.cat/ ↗](https://domini.cat/)
 
 **WHOIS:** whois.nic.cat
 
@@ -212,6 +212,6 @@ Rapporti collegati da IANA, con titoli originali e date di pubblicazione. La dat
 
 [Scheda ufficiale IANA ↗](https://www.iana.org/domains/root/db/cat.html) [Fonte 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Fonte 3 ↗](https://www.iana.org/reports/2005/cat-report-18nov2005.html) [Fonte 4 ↗](https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en) [Fonte 5 ↗](https://domini.cat/en/about-us)
 
-**Di Robert Bregy** · Edizione del sito 0.7.107 · 9 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.108 · 10 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

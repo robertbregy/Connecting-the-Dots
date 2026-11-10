@@ -47,7 +47,7 @@ h2{font-size:1.45rem;line-height:1.25}p{margin:0 0 14px}.eyebrow{font-weight:800
 .panel{background:var(--surface);border:1px solid var(--border);border-radius:15px;padding:25px;margin:18px 0}
 .insideRoundLenses{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0}
 .insideRoundLens{border-radius:12px;padding:16px;border:1px solid var(--border);background:var(--surface2)}
-.insideRoundLens h3{font-size:1.03rem;margin:0 0 7px}.insideRoundLens p{color:var(--muted);font-size:.9rem}
+.insideRoundLens h2{font-size:1.03rem;margin:0 0 7px}.insideRoundLens p{color:var(--muted);font-size:.9rem}
 .insideRoundTimeline{padding:0 0 0 22px;border-left:1px solid var(--border);list-style:none;margin:25px 0 0}
 .insideRoundEntry{position:relative;border:1px solid var(--border);border-radius:13px;background:var(--surface);padding:20px;margin:0 0 18px}
 .insideRoundEntry:before{content:"";position:absolute;width:10px;height:10px;left:-29px;top:26px;background:var(--accent);border:3px solid var(--surface);border-radius:50%;box-shadow:0 0 0 1px var(--border)}
@@ -170,7 +170,7 @@ def render_page(data, tr, lang, pub):
         "about": [{"@type": "Thing", "name": "ICANN New gTLD Program: 2026 Round"}]
     }
     def lens(title, body):
-        return '<article class="insideRoundLens"><h3>' + h(t[title]) + '</h3><p>' + h(t[body]) + '</p></article>'
+        return '<article class="insideRoundLens"><h2>' + h(t[title]) + '</h2><p>' + h(t[body]) + '</p></article>'
     lenses = "\n".join([
         lens("insideProgramTitle", "insideProgramBody"),
         lens("insideLandscapeTitle", "insideLandscapeBody"),

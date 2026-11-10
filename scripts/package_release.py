@@ -4,11 +4,14 @@ import argparse
 import hashlib
 import json
 import zipfile
+if __package__:
+    from .stage_public_site import public_files, validate_publication
+else:
+    from stage_public_site import public_files, validate_publication
 
 ROOT = Path(__file__).resolve().parents[1]
-EXCLUDED_DIRS = {'.git', 'node_modules', '__pycache__', '.venv'}
+EXCLUDED_DIRS = {'.git', 'node_modules', '__pycache__', '.venv', '_site', 'artifacts'}
 EXCLUDED_NAMES = {'.DS_Store'}
-DEPLOY_OMIT = {'DEPLOY.md', 'package-lock.json'}
 
 ZIP_TIMESTAMP = (2026, 10, 5, 0, 0, 0)
 ZIP_FILE_MODE = 0o100644 << 16
@@ -26,12 +29,16 @@ def write_deterministic_zip(output: Path, entries):
 
 
 def files_for(kind: str, output: Path):
+    if kind == 'deploy':
+        files = public_files(ROOT)
+        validate_publication(ROOT, files)
+        return files
     files=[]
     for path in sorted(ROOT.rglob('*')):
         rel=path.relative_to(ROOT)
         if not path.is_file() or path.resolve()==output or any(part in EXCLUDED_DIRS for part in rel.parts) or path.name in EXCLUDED_NAMES or path.suffix=='.pyc':
             continue
-        if kind=='deploy' and rel.as_posix() in DEPLOY_OMIT:
+        if path.name.endswith('.stage.json'):
             continue
         files.append(path)
     return files

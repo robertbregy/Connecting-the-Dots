@@ -1,10 +1,10 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/io/ | Site edition: 0.7.107 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/io/ | Site edition: 0.7.108 | Language: fr -->
 
-Fiche du domaine
+Fiche TLD
 
 # .io
 
-.io est actuellement délégué dans la racine DNS comme Code pays.
+Lors de la vérification documentée, .io était délégué dans la racine DNS comme Code pays.
 
 Statut observé le 4 octobre 2026
 
@@ -16,7 +16,7 @@ Déléguée TLD de code pays ou territoire (ccTLD) Code pays Géographie & lieux
 
 ## FAIT En bref
 
-.io est actuellement délégué dans la racine DNS comme Code pays.
+Lors de la vérification documentée, .io était délégué dans la racine DNS comme Code pays.
 
 La fiche IANA indique Internet Computer Bureau Limited comme gestionnaire.
 
@@ -66,15 +66,15 @@ Les dates ne sont affichées que lorsqu’elles reposent sur une source attribua
 
 Le registre présente aujourd’hui .io comme « le domaine des sites tech », en reconnaissant explicitement la lecture input/output et son rôle dans la culture startup.
 
-## FAIT Situation actuelle
+## FAIT Statut lors de la vérification documentée
 
 **Forme ASCII / DNS:** .io
 
 **Présent dans la liste de la racine IANA:** Oui, à la date indiquée
 
-**Statut actuel dans la racine:** Déléguée
+**Statut dans la racine lors de la vérification documentée:** Déléguée
 
-**Vérification de l’état actuel:** 4 oct. 2026
+**Date de vérification du statut:** 4 oct. 2026
 
 **Classification IANA:** Code pays
 
@@ -118,7 +118,7 @@ Le contact technique IANA n’identifie pas nécessairement le Registry Service 
 
 ## Services du registre
 
-**Site du registre:** [http://www.nic.io/ ↗](http://www.nic.io/)
+**Site du registre:** [http://www.nic.io/ ↗](https://www.nic.io/)
 
 **WHOIS:** whois.nic.io
 
@@ -144,6 +144,6 @@ Non renseigné
 
 [Fiche officielle IANA ↗](https://www.iana.org/domains/root/db/io.html) [Source 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Source 3 ↗](https://www.nic.io/)
 
-**Par Robert Bregy** · Édition du site 0.7.107 · 9 novembre 2026
+**Par Robert Bregy** · Édition du site 0.7.108 · 10 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.

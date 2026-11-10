@@ -13,6 +13,10 @@ const snapshot=JSON.parse(fs.readFileSync(path.join(root,'data/iana_snapshot.jso
 const publication=JSON.parse(fs.readFileSync(path.join(root,'publication.json'),'utf8'));
 const audienceEditorial=JSON.parse(fs.readFileSync(path.join(root,'data/audience_editorial.json'),'utf8'));
 const homeEditorial=JSON.parse(fs.readFileSync(path.join(root,'data/home_editorial.json'),'utf8'));
+const fieldInvestigations=JSON.parse(fs.readFileSync(path.join(root,'data/field_investigations.json'),'utf8')).episodes;
+const objectorsCalendarSource='https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en';
+// Cite the historical CSV endpoint while directing readers to the available listing.
+const readerSourceUrl=url=>url==='https://newgtldprogram-aps.icann.org/aps/applications/export/csv'?'https://newgtldprogram-aps.icann.org/applications':url;
 // A green build requires complete translations in every language, not a historical exception list.
 const canonicalTranslations=JSON.parse(fs.readFileSync(path.join(root,'data/translations.json'),'utf8'));
 const sourceTemplate=fs.readFileSync(path.join(root,'src/index.web.html'),'utf8');
@@ -210,7 +214,20 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
     assert.equal(article.querySelectorAll('[data-editorial-revision]').length,slug==='replacement-strings'?3:slug==='objectors-eoi'?2:1,page+' dated revision missing: '+slug);
     const jsonLD=JSON.parse(article.querySelector('script[type="application/ld+json"]').textContent);
     assert.equal(jsonLD['@type'],'Article',page+' wrong structured investigation type');
-    assert.equal(jsonLD.citation.length,sourceCount,page+' unlinked article source: '+slug);
+    const registeredSources=fieldInvestigations.find(episode=>episode.slug===slug)?.sources;
+    assert.equal(registeredSources?.length,sourceCount,page+' historical source register changed: '+slug);
+    assert.deepEqual([...article.querySelectorAll('[data-source-id]')].map(node=>node.getAttribute('data-source-id')),
+      registeredSources.map(source=>source.id),page+' historical source identities changed: '+slug);
+    assert.deepEqual([...article.querySelectorAll('[data-source-id] a[href]')].map(link=>link.getAttribute('href')),
+      registeredSources.map(source=>readerSourceUrl(source.url)),page+' historical reader-source links changed: '+slug);
+    const expectedCitations=registeredSources.map(source=>source.url);
+    if(slug==='objectors-eoi'){
+      const calendarLinks=article.querySelectorAll('[data-objectors-calendar-note] a[href]');
+      assert.equal(calendarLinks.length,1,page+' general-objection calendar source missing or duplicated');
+      assert.equal(calendarLinks[0].getAttribute('href'),objectorsCalendarSource,page+' incorrect general-objection calendar source');
+      expectedCitations.push(objectorsCalendarSource);
+    }
+    assert.deepEqual(jsonLD.citation,expectedCitations,page+' investigation citations do not match their linked sources: '+slug);
     assert.equal(jsonLD.dateModified,slug==='objectors-eoi'?'2026-10-26':slug==='replacement-strings'?'2026-10-18':'2026-10-17',page+' wrong investigation source review date');
     assert.ok(text.includes('https://doi.org/10.5281/zenodo.23262623'),page+' missing independent archive attribution: '+slug);
     assert.equal(article.querySelector('meta[name="description"]').getAttribute('content').length<=160,true,page+' lengthy investigation metadata: '+slug);
@@ -408,16 +425,23 @@ const discoveryLocations=discoveryManifest.pages.map(page=>{
   return new URL(page.path,base).href;
 });
 assert.equal(new Set(discoveryLocations).size,84,'discovery manifest must not duplicate canonical URLs');
-const expectedLocations=[...legacyLocations,...discoveryLocations];
-assert.equal(new Set(expectedLocations).size,127,'new canonical URLs must not replace established pages');
-assert.equal(locations.length,127,'sitemap must contain exactly 43 established and 84 discovery URLs');
-assert.equal(new Set(locations).size,127,'sitemap canonical URLs must not be duplicated');
+assert.equal(new Set([...legacyLocations,...discoveryLocations]).size,127,'new canonical URLs must not replace established pages');
+const readerStudyLocations=languages.map(language=>{
+  const studyPath='research/reader-study/'+language+'/';
+  assert.ok(fs.existsSync(path.join(root,studyPath,'index.html')),'missing Reader Study document: '+studyPath);
+  return base+studyPath;
+});
+const addedLocations=[...discoveryLocations,...readerStudyLocations];
+const expectedLocations=[...legacyLocations,...addedLocations];
+assert.equal(new Set(expectedLocations).size,131,'Reader Study URLs must preserve every established and discovery page');
+assert.equal(locations.length,131,'sitemap must contain exactly 43 established, 84 discovery and 4 Reader Study URLs');
+assert.equal(new Set(locations).size,131,'sitemap canonical URLs must not be duplicated');
 assert.deepEqual(locations,expectedLocations,'complete multilingual and research sitemap');
 const sitemapEntries=Array.from(sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g),m=>m[1]);
 assert.equal((sitemapEntries.slice(0,legacyLocations.length).join('').match(/xhtml:link/g)||[]).length,180,'all established four-language articles and explainers retain reciprocal hreflang');
 for(const [index,entry] of sitemapEntries.slice(legacyLocations.length).entries())
-  assert.equal((entry.match(/xhtml:link/g)||[]).length,5,'discovery page needs four locales and x-default: '+discoveryLocations[index]);
-assert.equal((sitemap.match(/xhtml:link/g)||[]).length,180+84*5,'established and discovery pages have complete reciprocal hreflang');
+  assert.equal((entry.match(/xhtml:link/g)||[]).length,5,'discovery and Reader Study pages need four locales and x-default: '+addedLocations[index]);
+assert.equal((sitemap.match(/xhtml:link/g)||[]).length,180+(84+4)*5,'established, discovery and Reader Study pages have complete reciprocal hreflang');
 assert.ok(!/\?lang=/.test(sitemap));
 const app=fs.readFileSync(path.join(root,'assets/app.js'),'utf8');
 assert.ok(!app.includes('updateSeoLanguage'));

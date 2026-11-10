@@ -1,18 +1,22 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/round-2026/ | Site edition: 0.7.107 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/round-2026/ | Site edition: 0.7.108 | Language: en -->
 
-Domain economics
+Economic analysis
 
 # The economics of the 2026 round
 
+**APS snapshot · 11 October 2026**
+
+The application data come from the public APS export acquired on 11 October 2026. This snapshot precedes String Confirmation Day (17 November), the announced milestone for confirmed strings and updated contention sets. It does not establish individual evaluation outcomes. [Official timetable ↗](https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en)
+
 Application costs, string themes, applicants’ activities and brand strategies. Economic cycles and historical reconstructions help explain expectations, with the limits of each analysis kept clear.
 
-[Economics overview](https://robertbregy.github.io/Connecting-the-Dots/en/?tab=economics#economics) [Method and citation](https://robertbregy.github.io/Connecting-the-Dots/research/) [Text version](https://robertbregy.github.io/Connecting-the-Dots/economics/en/round-2026/index.md)
+[Open economics in the interactive atlas](https://robertbregy.github.io/Connecting-the-Dots/en/?tab=economics#economics) [Method and citation](https://robertbregy.github.io/Connecting-the-Dots/research/) [Text version](https://robertbregy.github.io/Connecting-the-Dots/economics/en/round-2026/index.md)
 
 **Entry costs: fees across rounds**
 
 Names, society and access
 
-### The cost of applying for a TLD
+## The cost of applying for a TLD
 
 The application fee and the amounts collected in each round also reveal the financial threshold for entering the system.
 
@@ -25,31 +29,31 @@ The application fee and the amounts collected in each round also reveal the fina
 
 **Scope and sources for each round**
 
-#### 2000
+### 2000
 
 47 applications received, 44 evaluated: US$2.2 million is reconstructed as 44 × US$50,000. Two applications had not paid and one was withdrawn over confidentiality. ICANN's February 2001 budget lists the same total as projected actual revenue; a separately verified final collection figure for the round is not established here.
 
 [ICANN — New TLD Application Instructions, 15 August 2000, §§ I28–I29 ↗](https://archive.icann.org/en/tlds/new-tld-application-instructions-15aug00.htm) [ICANN — TLD Application Review Update, 23 October 2000 ↗](https://www.icann.org/en/announcements/details/tld-application-review-update-23-10-2000-en) [ICANN — FY2001–2002 Preliminary Budget, 19 February 2001, Schedule A ↗](https://www.icann.org/resources/unthemed-pages/preliminary-budget-2001-02-19-en)
 
-#### 2004
+### 2004
 
 Ten applications at US$45,000 each. ICANN explicitly reports US$450,000 collected in its 7 October 2004 report to the U.S. Department of Commerce.
 
 [ICANN — Tenth Status Report to the U.S. Department of Commerce, 7 October 2004, p. 10 ↗](https://itp.cdn.icann.org/en/files/governance/mou-status-report-07oct04-en.pdf#page=10)
 
-#### 2012
+### 2012
 
 About US$357 million collected at launch, according to ICANN's program review. Its later FY12–FY23 statement reports about US$360 million in fees, US$52 million in refunds and US$308 million net: this covers a different period and is not the net of the initial US$357 million alone.
 
 [ICANN — New gTLD Program Implementation Review, 29 January 2016, § 8.3.1; p. 183 ↗](https://www.icann.org/en/system/files/files/program-review-29jan16-en.pdf#page=183) [ICANN — FY26 Budget, May 2025, p. 29, § 5.1.1 ↗](https://www.icann.org/en/system/files/files/adopted-icann-budget-fy2026-published-2025-en.pdf#page=29)
 
-#### 2026
+### 2026
 
 1,615 is the official total published on 7 October; the public export analysed contains 1,614 applications plus replacement records. There are 51 ASP applications, with planned discounts of 75–85%, and waivers for some variants. Actual collections were not found in the sources reviewed: multiplying 1,615 × US$227,000 does not establish them.
 
 [ICANN — 2026 Round gTLD Evaluation Fee FAQs ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/gtld-evaluation-fee/faqs) [ICANN — Reveal Day announcement, 7 October 2026 ↗](https://www.icann.org/resources/press-material/release-2026-10-07-en) [ICANN — 2026 Round APS statistics, published 7 October 2026 at 15:41 UTC ↗](https://newgtldprogram-aps.icann.org/statistics) [ICANN — 2026 Round Applicant Guidebook, V3, 7 October 2026, § 3.3 ↗](https://newgtldprogram.icann.org/sites/default/files/documents/new-gtld-program-2026-round-applicant-guidebook-current-en.pdf#page=66)
 
-#### How to read the figures
+### How to read the figures
 
 Nominal amounts in U.S. dollars. The fee pays for application evaluation and does not guarantee a TLD. Documented totals and reconstructed figures are identified separately. Initial collections, refunds and multiyear statements cover different scopes; they are not profit. Conditional evaluation fees and annual registry fees are outside this comparison.
 
@@ -351,6 +355,6 @@ A bank's own TLD and a term such as .bank describe very different allocation mod
 
 [ICANN · 2012 statistics ↗](https://newgtlds.icann.org/en/program-status/statistics) [ICANN APS · 2026 statistics ↗](https://newgtldprogram-aps.icann.org/statistics) [nTLDData · 2026 application index ↗](https://www.ntlddata.com/applications)
 
-**By Robert Bregy** · Site edition 0.7.107 · November 9, 2026
+**By Robert Bregy** · Site edition 0.7.108 · November 10, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

@@ -15,3 +15,6 @@ tmp/
 audit-20261019/
 audit-home-editorial/
 node_modules
+/_site/
+/_site.stage.json
+/artifacts/

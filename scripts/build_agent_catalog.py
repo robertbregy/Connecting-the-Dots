@@ -251,9 +251,9 @@ def build_catalog(root: Path = ROOT, discovery_manifest: dict | None = None) -> 
             dateFields=["source_snapshot"],
         ),
         dataset(
-            "aps-current-analysis", "Current derived APS analysis", "data/aps_2026_current_analytics.csv",
+            "aps-2026-10-11-analysis", "APS snapshot analysis · 11 October 2026", "data/aps_2026_current_analytics.csv",
             "published base application with explicit analysis scopes", len(read_csv(root, "data/aps_2026_current_analytics.csv")),
-            "Current derived analysis with all_published and new_primary scopes; string themes and applicant sectors are separate, partially classified variables.",
+            "Derived analysis of the APS export acquired on 11 October 2026, with all_published and new_primary scopes; string themes and applicant sectors are separate, partially classified variables.",
             "data/aps_2026_current_analytics_manifest.json", analytics["sourceObservedUTC"],
             editorialRevisionDate=analytics["editorialRevisionDate"],
             archivalStatus=analytics["publicationStatus"],
@@ -329,7 +329,7 @@ def build_catalog(root: Path = ROOT, discovery_manifest: dict | None = None) -> 
                 "relationshipToArchives": archives["workingPaperRevision"]["relationToRR2"],
             },
             "citationFile": resource("CITATION.cff"),
-            "rule": "Cite the specific dated source or dataset used. The latest technical website version and current derived analyses are not automatically part of the archived DOI release.",
+            "rule": "Cite the specific dated source or dataset used. The latest technical website version and post-RR2 dated analyses are not automatically part of the archived DOI release.",
         },
         "crawlerPolicy": {
             "authoritativeRobotsUrl": f"{origin.scheme}://{origin.netloc}/robots.txt",
@@ -394,7 +394,7 @@ def render_llms(catalog: dict) -> str:
     lines += [
         "", "## Interpretation and citation", "",
         "Application, delegation, replacement, variant and derived exact-string grouping have different meanings. A false APS contention flag does not establish absence of contention before String Evaluation. Facts, interpretation and prospective ideas remain separate; undocumented outcomes are not inferred.", "",
-        f"The current archived research release is [{rr['id']}]({rr['doiUrl']}), bibliographic publication date {rr['publicationDate']}, evidence cutoff {rr['evidenceCutoff']}. The newer website and current derived APS analysis are not automatically included in this DOI. Previous research releases remain immutable and separately citable.", "",
+        f"The current archived research release is [{rr['id']}]({rr['doiUrl']}), bibliographic publication date {rr['publicationDate']}, evidence cutoff {rr['evidenceCutoff']}. The newer website and the APS snapshot analysis acquired on 11 October 2026 are not automatically included in this DOI. Previous research releases remain immutable and separately citable.", "",
         f"- [Citation file]({base}CITATION.cff): archived research citation.",
         f"- [Research release manifest]({base}research/research_release_manifest.json): archived versions and working-paper relationship.",
         f"- [Bibliographic date clarification]({base}data/research_bibliographic_corrections.json): deposit creation, GitHub release, evidence cutoff and Zenodo publication date.",

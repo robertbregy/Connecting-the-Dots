@@ -1,10 +1,18 @@
-# Connecting the Dots — v0.7.106
+# Connecting the Dots — v0.7.108
+
+**v0.7.108 · 10 November 2026.** Completed the site audit with dated snapshot labels, consistent reading controls and metadata, repaired multilingual paths, clearer Economics navigation and a direct .meow story link. Publication now uses an explicitly validated public payload. Weekly source-health and snapshot-freshness reports support the next editorial review without rewriting historical research evidence.
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
 Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
+
+**v0.7.108 - 10 November 2026**
+
+The 10 November audit is closed with explicit snapshot dates, consistent reading controls and metadata, repaired multilingual paths, clearer Economics navigation and direct discovery of the .meow story and Reader Study. Publication now uses a validated public allowlist, while weekly source-health and freshness checks flag review needs without redating or rewriting historical research evidence.
+
+## Previous homepage release
 
 **v0.7.106 - 9 November 2026**
 

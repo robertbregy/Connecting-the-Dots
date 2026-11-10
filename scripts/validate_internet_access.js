@@ -5,6 +5,9 @@ const {parseHTML}=require('linkedom');
 const root=path.resolve(__dirname,'..'),base='https://robertbregy.github.io/Connecting-the-Dots/';
 const data=JSON.parse(fs.readFileSync(path.join(root,'data/internet_access_explainer.json'),'utf8'));
 const languages=['en','it','de','fr'];
+const localizedPeriods={
+ 'June 2025':{en:'June 2025',it:'giugno 2025',de:'Juni 2025',fr:'juin 2025'}
+};
 const paymentClarifications={
  en:'Restrictions on donations affected the service’s funding; they did not, in themselves, constitute a technical block on access to the site.',
  it:'Le restrizioni alle donazioni incidevano sul finanziamento del servizio: non costituivano, di per sé, un blocco tecnico dell’accesso al sito.',
@@ -49,7 +52,9 @@ for(const lang of languages){
  for(const entry of data.cases){
    const card=document.querySelector('[data-access-case="'+entry.id+'"]');
    assert.ok(card,'Missing case '+entry.id+' '+lang);
-   assert.ok(card.textContent.includes(entry.period),'Missing dated context '+entry.id+' '+lang);
+   const period=localizedPeriods[entry.period]?.[lang]??entry.period;
+   assert.equal(card.querySelectorAll('.accessCasePeriod').length,1,'One dated context per case '+entry.id+' '+lang);
+   assert.equal(card.querySelector('.accessCasePeriod').textContent,period,'Incorrect localized dated context '+entry.id+' '+lang);
    for(const id of entry.sourceIds)assert.ok(card.querySelector('a[href="#access-source-'+id+'"]'),'Missing inline evidence '+id);
  }
  const simulator=document.querySelector('#accessSimulator');

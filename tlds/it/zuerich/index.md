@@ -1,10 +1,10 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/zuerich/ | Site edition: 0.7.107 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/zuerich/ | Site edition: 0.7.108 | Language: it -->
 
-Scheda del dominio
+Scheda TLD
 
 # .zuerich
 
-.zuerich è oggi delegato nella root DNS come Generico.
+Alla verifica documentata, .zuerich risultava delegato nella root DNS come Generico.
 
 Stato osservato al 4 ottobre 2026
 
@@ -16,7 +16,7 @@ Delegata 2012 Generico Geografia e luoghi
 
 ## FATTO In breve
 
-.zuerich è oggi delegato nella root DNS come Generico.
+Alla verifica documentata, .zuerich risultava delegato nella root DNS come Generico.
 
 La scheda IANA indica Kanton Zürich (Canton of Zurich) come gestore.
 
@@ -86,15 +86,15 @@ Kanton Zürich (Canton of Zurich) · Svizzera
 
 Le date sono mostrate solo quando sostenute da una fonte attribuibile. Le fasi non documentate restano tali, senza inferenze. Questo snapshot Reveal Day usa la cronologia locale preservata più i record 2026 verificati; l’arricchimento runtime del ciclo contrattuale ICANN resta disattivato affinché ogni visitatore veda lo stesso dataset riproducibile.
 
-## FATTO Stato oggi
+## FATTO Stato alla verifica documentata
 
 **Forma ASCII / DNS:** .zuerich
 
 **Presente nell’elenco della root IANA:** Sì, alla data indicata
 
-**Stato attuale nella root:** Delegata
+**Stato nella root alla verifica documentata:** Delegata
 
-**Verifica dello stato attuale:** 4 ott 2026
+**Data della verifica dello stato:** 4 ott 2026
 
 **Classificazione IANA:** Generico
 
@@ -164,6 +164,6 @@ Rapporti collegati da IANA, con titoli originali e date di pubblicazione. La dat
 
 [Scheda ufficiale IANA ↗](https://www.iana.org/domains/root/db/zuerich.html) [Fonte 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Fonte 3 ↗](https://www.iana.org/domains/root/db) [Fonte 4 ↗](https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/)
 
-**Di Robert Bregy** · Edizione del sito 0.7.107 · 9 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.108 · 10 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

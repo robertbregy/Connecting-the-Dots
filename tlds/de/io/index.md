@@ -1,10 +1,10 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/de/io/ | Site edition: 0.7.107 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/de/io/ | Site edition: 0.7.108 | Language: de -->
 
-Domainprofil
+TLD-Profil
 
 # .io
 
-.io ist derzeit als Ländercode in der DNS-Root delegiert.
+Bei der dokumentierten Prüfung war .io als Ländercode in der DNS-Root delegiert.
 
 Status beobachtet am 4. Oktober 2026
 
@@ -16,7 +16,7 @@ Delegiert Ländercode-TLD (ccTLD) Ländercode Geografie & Orte Technologie & Int
 
 ## FAKT Kurz erklärt
 
-.io ist derzeit als Ländercode in der DNS-Root delegiert.
+Bei der dokumentierten Prüfung war .io als Ländercode in der DNS-Root delegiert.
 
 Der IANA-Eintrag nennt Internet Computer Bureau Limited als Betreiber bzw. Verwalter.
 
@@ -66,15 +66,15 @@ Daten werden nur angezeigt, wenn sie durch eine zuordenbare Quelle belegt sind. 
 
 Die Registry vermarktet .io heute selbst als „Domain für Tech-Websites“ und verweist ausdrücklich auf die Input/Output-Lesart und die Startup-Kultur.
 
-## FAKT Stand heute
+## FAKT Status bei der dokumentierten Prüfung
 
 **ASCII-/DNS-Form:** .io
 
 **In der IANA-Root-Liste enthalten:** Ja, zum angegebenen Datum
 
-**Aktueller Status in der Root-Zone:** Delegiert
+**Status in der Root-Zone bei der dokumentierten Prüfung:** Delegiert
 
-**Prüfung des aktuellen Status:** 4. Okt. 2026
+**Datum der Statusprüfung:** 4. Okt. 2026
 
 **IANA-Klassifikation:** Ländercode
 
@@ -118,7 +118,7 @@ Der technische IANA-Kontakt ist nicht zwingend der vertragliche Registry Service
 
 ## Registerdienste
 
-**Website des Registers:** [http://www.nic.io/ ↗](http://www.nic.io/)
+**Website des Registers:** [http://www.nic.io/ ↗](https://www.nic.io/)
 
 **WHOIS:** whois.nic.io
 
@@ -144,6 +144,6 @@ Nicht angegeben
 
 [Offizieller IANA-Datensatz ↗](https://www.iana.org/domains/root/db/io.html) [Quelle 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Quelle 3 ↗](https://www.nic.io/)
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.107 · 9. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.108 · 10. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

@@ -214,7 +214,7 @@ def render_page(obj: dict, lang: str) -> str:
     # Keep old payment-section links pointing to the clarification within the historical case.
     cases = "\n".join(
         '<article data-access-case="'+h(c["id"],quote=True)+'"><span class="accessCasePeriod">'+
-        h(c["period"])+'</span><h3>'+h(t["cases"][c["id"]]["title"])+'</h3><p'+
+        h({"it":"giugno 2025","de":"Juni 2025","fr":"juin 2025"}.get(lang,c["period"]) if c["period"]=="June 2025" else c["period"])+'</span><h3>'+h(t["cases"][c["id"]]["title"])+'</h3><p'+
         (' id="accessFinanceTitle"' if c["id"]=="wikileaks-2010" else '')+'>'+
         h(t["cases"][c["id"]]["body"])+'</p><p class="accessEvidenceNote">'+
         h(t["cases"][c["id"]]["note"])+'</p>'+refs(c["sourceIds"])+'</article>'

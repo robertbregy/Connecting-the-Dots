@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "siteVersion": "0.7.107",
-  "generatedOn": "2026-11-09",
+  "siteVersion": "0.7.108",
+  "generatedOn": "2026-11-10",
   "selection": {
     "guideSections": [
       "how",
@@ -117,7 +117,7 @@
       "key": "market",
       "title": "TLD adoption and shares | Connecting the Dots",
       "headline": "TLD adoption and shares",
-      "description": "Which extensions do we encounter on websites, and which contain more domains? Explore both complete rankings, use the filters and consult introduction groups, dates, sources and downloadable data.",
+      "description": "Compare TLD website presence and registered-domain counts with filters, dates, sources and downloadable data.",
       "sourcePath": "scripts/render_economics_hub.cjs",
       "sourceDataPaths": [
         "en/index.html",
@@ -149,7 +149,7 @@
       "key": "cases",
       "title": "Economic cases | Connecting the Dots",
       "headline": "Economic cases",
-      "description": "Eight cases connect mechanisms with documented results: public revenue, contracts, acquisitions, renewals, regulation, auctions, historical withdrawals and entry costs. Every figure retains its period, unit and source.",
+      "description": "Eight documented cases show how renewals, auctions, acquisitions, regulation and public revenue create value in the domain economy.",
       "sourcePath": "scripts/render_economics_hub.cjs",
       "sourceDataPaths": [
         "en/index.html",
@@ -181,7 +181,7 @@
       "key": "portfolios",
       "title": "Portfolios and contention | Connecting the Dots",
       "headline": "Portfolios and contention",
-      "description": "Follow the strategies of applicants submitting many applications and the competition for the same words. Comparisons between rounds and the Aruba and Intercap cases clarify what is being counted.",
+      "description": "Portfolios, multiple applications and contention: compare operator strategies and selected cases from the ICANN 2026 round.",
       "sourcePath": "scripts/render_economics_hub.cjs",
       "sourceDataPaths": [
         "en/index.html",
@@ -213,7 +213,7 @@
       "key": "round-2026",
       "title": "The economics of the 2026 round | Connecting the Dots",
       "headline": "The economics of the 2026 round",
-      "description": "Application costs, string themes, applicants’ activities and brand strategies. Economic cycles and historical reconstructions help explain expectations, with the limits of each analysis kept clear.",
+      "description": "Application costs, string themes, applicant activity and economic strategies in the ICANN 2026 round.",
       "sourcePath": "scripts/render_economics_hub.cjs",
       "sourceDataPaths": [
         "en/index.html",
@@ -309,7 +309,7 @@
       "key": "amazon",
       "title": ".amazon: history, status and sources | Connecting the Dots",
       "headline": ".amazon",
-      "description": ".amazon is currently delegated in the DNS root as Generic.",
+      "description": "At the documented check, .amazon was delegated in the DNS root as Generic. Explore its dated status, history and IANA/ICANN sources in this Connecting the Dots profile.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_2.js",
       "sourceDataPaths": [
@@ -341,7 +341,7 @@
       "key": "music",
       "title": ".music: history, status and sources | Connecting the Dots",
       "headline": ".music",
-      "description": ".music is currently delegated in the DNS root as Generic.",
+      "description": "At the documented check, .music was delegated in the DNS root as Generic. Explore its dated status, history and IANA/ICANN sources in this Connecting the Dots profile.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_7.js",
       "sourceDataPaths": [
@@ -373,7 +373,7 @@
       "key": "berlin",
       "title": ".berlin: history, status and sources | Connecting the Dots",
       "headline": ".berlin",
-      "description": ".berlin is currently delegated in the DNS root as Generic.",
+      "description": "At the documented check, .berlin was delegated in the DNS root as Generic. Explore its dated status, history and IANA/ICANN sources in this Connecting the Dots profile.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_0.js",
       "sourceDataPaths": [
@@ -405,7 +405,7 @@
       "key": "zuerich",
       "title": ".zuerich: history, status and sources | Connecting the Dots",
       "headline": ".zuerich",
-      "description": ".zuerich is currently delegated in the DNS root as Generic.",
+      "description": "At the documented check, .zuerich was delegated in the DNS root as Generic. Explore its dated status, history and IANA/ICANN sources in this Connecting the Dots profile.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_0.js",
       "sourceDataPaths": [
@@ -437,7 +437,7 @@
       "key": "swiss",
       "title": ".swiss: history, status and sources | Connecting the Dots",
       "headline": ".swiss",
-      "description": ".swiss is currently delegated in the DNS root as Generic.",
+      "description": "At the documented check, .swiss was delegated in the DNS root as Generic. Explore its dated status, history and IANA/ICANN sources in this Connecting the Dots profile.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_7.js",
       "sourceDataPaths": [
@@ -533,7 +533,7 @@
       "key": "io",
       "title": ".io: history, status and sources | Connecting the Dots",
       "headline": ".io",
-      "description": ".io is currently delegated in the DNS root as Country-code.",
+      "description": "At the documented check, .io was delegated in the DNS root as Country-code. Explore its dated status, history and IANA/ICANN sources in this Connecting the Dots profile.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_4.js",
       "sourceDataPaths": [
@@ -655,7 +655,7 @@
       "key": "market",
       "title": "Diffusione e quote dei TLD | Connecting the Dots",
       "headline": "Diffusione e quote dei TLD",
-      "description": "Quali estensioni incontriamo nei siti e quali contengono più domini? Esplora le due classifiche complete, usa i filtri e consulta gruppi di introduzione, date, fonti e dati scaricabili.",
+      "description": "Confronta presenza sui siti e domini registrati nei TLD, con filtri, date, fonti e dati scaricabili.",
       "sourcePath": "scripts/render_economics_hub.cjs",
       "sourceDataPaths": [
         "it/index.html",
@@ -687,7 +687,7 @@
       "key": "cases",
       "title": "Casi economici | Connecting the Dots",
       "headline": "Casi economici",
-      "description": "Otto casi collegano i meccanismi ai risultati documentati: entrate pubbliche, contratti, acquisizioni, rinnovi, regolazione, aste, ritiri storici e costi d’ingresso. Ogni cifra conserva periodo, unità e fonte.",
+      "description": "Otto casi documentati mostrano come rinnovi, aste, acquisizioni, regolazione ed entrate pubbliche producono valore nei domini.",
       "sourcePath": "scripts/render_economics_hub.cjs",
       "sourceDataPaths": [
         "it/index.html",
@@ -719,7 +719,7 @@
       "key": "portfolios",
       "title": "Portafogli e contese | Connecting the Dots",
       "headline": "Portafogli e contese",
-      "description": "Segui le strategie di chi presenta molte candidature e la competizione per le stesse parole. I confronti tra round e i casi Aruba e Intercap chiariscono che cosa viene contato.",
+      "description": "Portafogli, candidature multiple e contese: confronta strategie degli operatori e casi del round ICANN 2026.",
       "sourcePath": "scripts/render_economics_hub.cjs",
       "sourceDataPaths": [
         "it/index.html",
@@ -751,7 +751,7 @@
       "key": "round-2026",
       "title": "L’economia del round 2026 | Connecting the Dots",
       "headline": "L’economia del round 2026",
-      "description": "Costi di candidatura, temi delle stringhe, attività dei candidati e strategie dei marchi. I cicli economici e le ricostruzioni storiche aiutano a leggere le aspettative, con i rispettivi limiti.",
+      "description": "Costi di candidatura, temi delle stringhe, attività dei candidati e strategie economiche nel round ICANN 2026.",
       "sourcePath": "scripts/render_economics_hub.cjs",
       "sourceDataPaths": [
         "it/index.html",
@@ -847,7 +847,7 @@
       "key": "amazon",
       "title": ".amazon: storia, stato e fonti | Connecting the Dots",
       "headline": ".amazon",
-      "description": ".amazon è oggi delegato nella root DNS come Generico.",
+      "description": "Alla verifica documentata, .amazon risultava delegato nella root DNS come Generico. Consulta stato datato, cronologia e fonti IANA/ICANN nella scheda di Connecting the Dots.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_2.js",
       "sourceDataPaths": [
@@ -879,7 +879,7 @@
       "key": "music",
       "title": ".music: storia, stato e fonti | Connecting the Dots",
       "headline": ".music",
-      "description": ".music è oggi delegato nella root DNS come Generico.",
+      "description": "Alla verifica documentata, .music risultava delegato nella root DNS come Generico. Consulta stato datato, cronologia e fonti IANA/ICANN nella scheda di Connecting the Dots.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_7.js",
       "sourceDataPaths": [
@@ -911,7 +911,7 @@
       "key": "berlin",
       "title": ".berlin: storia, stato e fonti | Connecting the Dots",
       "headline": ".berlin",
-      "description": ".berlin è oggi delegato nella root DNS come Generico.",
+      "description": "Alla verifica documentata, .berlin risultava delegato nella root DNS come Generico. Consulta stato datato, cronologia e fonti IANA/ICANN nella scheda di Connecting the Dots.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_0.js",
       "sourceDataPaths": [
@@ -943,7 +943,7 @@
       "key": "zuerich",
       "title": ".zuerich: storia, stato e fonti | Connecting the Dots",
       "headline": ".zuerich",
-      "description": ".zuerich è oggi delegato nella root DNS come Generico.",
+      "description": "Alla verifica documentata, .zuerich risultava delegato nella root DNS come Generico. Consulta stato datato, cronologia e fonti IANA/ICANN nella scheda di Connecting the Dots.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_0.js",
       "sourceDataPaths": [
@@ -975,7 +975,7 @@
       "key": "swiss",
       "title": ".swiss: storia, stato e fonti | Connecting the Dots",
       "headline": ".swiss",
-      "description": ".swiss è oggi delegato nella root DNS come Generico.",
+      "description": "Alla verifica documentata, .swiss risultava delegato nella root DNS come Generico. Consulta stato datato, cronologia e fonti IANA/ICANN nella scheda di Connecting the Dots.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_7.js",
       "sourceDataPaths": [
@@ -1071,7 +1071,7 @@
       "key": "io",
       "title": ".io: storia, stato e fonti | Connecting the Dots",
       "headline": ".io",
-      "description": ".io è oggi delegato nella root DNS come Codice paese.",
+      "description": "Alla verifica documentata, .io risultava delegato nella root DNS come Codice paese. Consulta stato datato, cronologia e fonti IANA/ICANN nella scheda di Connecting the Dots.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_4.js",
       "sourceDataPaths": [
@@ -1193,7 +1193,7 @@
       "key": "market",
       "title": "Verbreitung und Anteile der TLDs | Connecting the Dots",
       "headline": "Verbreitung und Anteile der TLDs",
-      "description": "Welche Endungen begegnen uns auf Websites, und welche enthalten mehr Domains? Erkunde beide vollständigen Ranglisten und ihre Filter sowie Einführungsgruppen, Daten, Quellen und herunterladbare Datensätze.",
+      "description": "Vergleichen Sie Website-Nutzung und registrierte Domains von TLDs mit Filtern, Daten, Quellen und Downloads.",
       "sourcePath": "scripts/render_economics_hub.cjs",
       "sourceDataPaths": [
         "de/index.html",
@@ -1225,7 +1225,7 @@
       "key": "cases",
       "title": "Wirtschaftliche Fallstudien | Connecting the Dots",
       "headline": "Wirtschaftliche Fallstudien",
-      "description": "Acht Fälle verbinden Mechanismen mit dokumentierten Ergebnissen: öffentliche Einnahmen, Verträge, Übernahmen, Verlängerungen, Regulierung, Auktionen, historische Rückzüge und Einstiegskosten. Jede Zahl behält ihren Zeitraum, ihre Einheit und ihre Quelle.",
+      "description": "Acht dokumentierte Fälle zeigen, wie Verlängerungen, Auktionen, Übernahmen, Regulierung und öffentliche Einnahmen Wert erzeugen.",
       "sourcePath": "scripts/render_economics_hub.cjs",
       "sourceDataPaths": [
         "de/index.html",
@@ -1257,7 +1257,7 @@
       "key": "portfolios",
       "title": "Portfolios und konkurrierende Anträge | Connecting the Dots",
       "headline": "Portfolios und konkurrierende Anträge",
-      "description": "Verfolge die Strategien von Antragstellern mit vielen Bewerbungen und den Wettbewerb um dieselben Wörter. Die Vergleiche zwischen den Runden sowie die Fälle Aruba und Intercap zeigen, was jeweils gezählt wird.",
+      "description": "Portfolios, Mehrfachbewerbungen und Konflikte: Strategien der Betreiber und Fälle aus der ICANN-Runde 2026 im Vergleich.",
       "sourcePath": "scripts/render_economics_hub.cjs",
       "sourceDataPaths": [
         "de/index.html",
@@ -1289,7 +1289,7 @@
       "key": "round-2026",
       "title": "Wirtschaftliche Aspekte der Runde 2026 | Connecting the Dots",
       "headline": "Wirtschaftliche Aspekte der Runde 2026",
-      "description": "Antragskosten, Themen der Zeichenfolgen, Tätigkeiten der Antragsteller und Markenstrategien. Wirtschaftliche Zyklen und historische Rekonstruktionen helfen, Erwartungen einzuordnen; die Grenzen der jeweiligen Analyse bleiben sichtbar.",
+      "description": "Bewerbungskosten, Themen der Zeichenfolgen, Tätigkeiten der Bewerber und wirtschaftliche Strategien der ICANN-Runde 2026.",
       "sourcePath": "scripts/render_economics_hub.cjs",
       "sourceDataPaths": [
         "de/index.html",
@@ -1385,7 +1385,7 @@
       "key": "amazon",
       "title": ".amazon: Geschichte, Status und Quellen | Connecting the Dots",
       "headline": ".amazon",
-      "description": ".amazon ist derzeit als Generisch in der DNS-Root delegiert.",
+      "description": "Bei der dokumentierten Prüfung war .amazon als Generisch in der DNS-Root delegiert. Das Profil zeigt datierten Status, Verlauf sowie IANA- und ICANN-Quellen.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_2.js",
       "sourceDataPaths": [
@@ -1417,7 +1417,7 @@
       "key": "music",
       "title": ".music: Geschichte, Status und Quellen | Connecting the Dots",
       "headline": ".music",
-      "description": ".music ist derzeit als Generisch in der DNS-Root delegiert.",
+      "description": "Bei der dokumentierten Prüfung war .music als Generisch in der DNS-Root delegiert. Das Profil zeigt datierten Status, Verlauf sowie IANA- und ICANN-Quellen.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_7.js",
       "sourceDataPaths": [
@@ -1449,7 +1449,7 @@
       "key": "berlin",
       "title": ".berlin: Geschichte, Status und Quellen | Connecting the Dots",
       "headline": ".berlin",
-      "description": ".berlin ist derzeit als Generisch in der DNS-Root delegiert.",
+      "description": "Bei der dokumentierten Prüfung war .berlin als Generisch in der DNS-Root delegiert. Das Profil zeigt datierten Status, Verlauf sowie IANA- und ICANN-Quellen.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_0.js",
       "sourceDataPaths": [
@@ -1481,7 +1481,7 @@
       "key": "zuerich",
       "title": ".zuerich: Geschichte, Status und Quellen | Connecting the Dots",
       "headline": ".zuerich",
-      "description": ".zuerich ist derzeit als Generisch in der DNS-Root delegiert.",
+      "description": "Bei der dokumentierten Prüfung war .zuerich als Generisch in der DNS-Root delegiert. Das Profil zeigt datierten Status, Verlauf sowie IANA- und ICANN-Quellen.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_0.js",
       "sourceDataPaths": [
@@ -1513,7 +1513,7 @@
       "key": "swiss",
       "title": ".swiss: Geschichte, Status und Quellen | Connecting the Dots",
       "headline": ".swiss",
-      "description": ".swiss ist derzeit als Generisch in der DNS-Root delegiert.",
+      "description": "Bei der dokumentierten Prüfung war .swiss als Generisch in der DNS-Root delegiert. Das Profil zeigt datierten Status, Verlauf sowie IANA- und ICANN-Quellen.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_7.js",
       "sourceDataPaths": [
@@ -1609,7 +1609,7 @@
       "key": "io",
       "title": ".io: Geschichte, Status und Quellen | Connecting the Dots",
       "headline": ".io",
-      "description": ".io ist derzeit als Ländercode in der DNS-Root delegiert.",
+      "description": "Bei der dokumentierten Prüfung war .io als Ländercode in der DNS-Root delegiert. Das Profil zeigt datierten Status, Verlauf sowie IANA- und ICANN-Quellen.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_4.js",
       "sourceDataPaths": [
@@ -1731,7 +1731,7 @@
       "key": "market",
       "title": "Diffusion et parts des TLD | Connecting the Dots",
       "headline": "Diffusion et parts des TLD",
-      "description": "Quelles extensions rencontre-t-on sur les sites, et lesquelles contiennent le plus de domaines ? Explorez les deux classements complets, leurs filtres, groupes d’introduction, dates, sources et données téléchargeables.",
+      "description": "Comparez présence sur les sites et volumes de domaines des TLD, avec filtres, dates, sources et données téléchargeables.",
       "sourcePath": "scripts/render_economics_hub.cjs",
       "sourceDataPaths": [
         "fr/index.html",
@@ -1763,7 +1763,7 @@
       "key": "cases",
       "title": "Études de cas économiques | Connecting the Dots",
       "headline": "Études de cas économiques",
-      "description": "Huit cas relient les mécanismes aux résultats documentés : recettes publiques, contrats, acquisitions, renouvellements, réglementation, enchères, retraits historiques et coûts d’entrée. Chaque chiffre conserve sa période, son unité et sa source.",
+      "description": "Huit cas documentés montrent comment renouvellements, enchères, acquisitions, régulation et recettes publiques créent de la valeur.",
       "sourcePath": "scripts/render_economics_hub.cjs",
       "sourceDataPaths": [
         "fr/index.html",
@@ -1795,7 +1795,7 @@
       "key": "portfolios",
       "title": "Portefeuilles et candidatures concurrentes | Connecting the Dots",
       "headline": "Portefeuilles et candidatures concurrentes",
-      "description": "Suivez les stratégies des candidats qui déposent de nombreuses demandes et la concurrence pour les mêmes mots. Les comparaisons entre rounds et les cas Aruba et Intercap précisent ce qui est compté.",
+      "description": "Portefeuilles, candidatures multiples et contention : comparez les stratégies et des cas du round ICANN 2026.",
       "sourcePath": "scripts/render_economics_hub.cjs",
       "sourceDataPaths": [
         "fr/index.html",
@@ -1827,7 +1827,7 @@
       "key": "round-2026",
       "title": "L’économie du round 2026 | Connecting the Dots",
       "headline": "L’économie du round 2026",
-      "description": "Coûts de candidature, thèmes des chaînes, activités des candidats et stratégies des marques. Cycles économiques et reconstructions historiques éclairent les attentes, avec les limites propres à chaque analyse.",
+      "description": "Coûts de candidature, thèmes des chaînes, activités des candidats et stratégies économiques du round ICANN 2026.",
       "sourcePath": "scripts/render_economics_hub.cjs",
       "sourceDataPaths": [
         "fr/index.html",
@@ -1923,7 +1923,7 @@
       "key": "amazon",
       "title": ".amazon: histoire, statut et sources | Connecting the Dots",
       "headline": ".amazon",
-      "description": ".amazon est actuellement délégué dans la racine DNS comme Générique.",
+      "description": "Lors de la vérification documentée, .amazon était délégué dans la racine DNS comme Générique.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_2.js",
       "sourceDataPaths": [
@@ -1955,7 +1955,7 @@
       "key": "music",
       "title": ".music: histoire, statut et sources | Connecting the Dots",
       "headline": ".music",
-      "description": ".music est actuellement délégué dans la racine DNS comme Générique.",
+      "description": "Lors de la vérification documentée, .music était délégué dans la racine DNS comme Générique.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_7.js",
       "sourceDataPaths": [
@@ -1987,7 +1987,7 @@
       "key": "berlin",
       "title": ".berlin: histoire, statut et sources | Connecting the Dots",
       "headline": ".berlin",
-      "description": ".berlin est actuellement délégué dans la racine DNS comme Générique.",
+      "description": "Lors de la vérification documentée, .berlin était délégué dans la racine DNS comme Générique.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_0.js",
       "sourceDataPaths": [
@@ -2019,7 +2019,7 @@
       "key": "zuerich",
       "title": ".zuerich: histoire, statut et sources | Connecting the Dots",
       "headline": ".zuerich",
-      "description": ".zuerich est actuellement délégué dans la racine DNS comme Générique.",
+      "description": "Lors de la vérification documentée, .zuerich était délégué dans la racine DNS comme Générique.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_0.js",
       "sourceDataPaths": [
@@ -2051,7 +2051,7 @@
       "key": "swiss",
       "title": ".swiss: histoire, statut et sources | Connecting the Dots",
       "headline": ".swiss",
-      "description": ".swiss est actuellement délégué dans la racine DNS comme Générique.",
+      "description": "Lors de la vérification documentée, .swiss était délégué dans la racine DNS comme Générique.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_7.js",
       "sourceDataPaths": [
@@ -2147,7 +2147,7 @@
       "key": "io",
       "title": ".io: histoire, statut et sources | Connecting the Dots",
       "headline": ".io",
-      "description": ".io est actuellement délégué dans la racine DNS comme Code pays.",
+      "description": "Lors de la vérification documentée, .io était délégué dans la racine DNS comme Code pays. Consultez son statut daté, son historique et les sources IANA/ICANN dans cette fiche.",
       "sourcePath": "assets/app.js",
       "profileSourcePath": "data/explorer_profiles_4.js",
       "sourceDataPaths": [

@@ -20,6 +20,12 @@ def json_file(name):
 
 def count(name): return len(rows(name))
 
+def html_text_present(raw, expected):
+    return str(expected) in unescape(raw)
+
+def html_tag_text_present(raw, tag, expected):
+    return re.search(r'<'+re.escape(tag)+r'\b[^>]*>'+re.escape(str(expected))+r'</'+re.escape(tag)+r'>', unescape(raw)) is not None
+
 def check_internal_refs(html_path):
     text=html_path.read_text(encoding='utf-8')
     # Only local static refs; query/hash stripped. Dynamic ?tab links are page-local.
@@ -956,8 +962,10 @@ for page in discovery_pages:
     if not (ROOT/relative_path/'index.html').is_file() or not (ROOT/page.get('markdownPath','')).is_file():
         fail('Missing HTML or Markdown discovery document: '+relative_path)
     must_index.add(site_base+relative_path)
-if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index) or len(must_index)!=127:
-    fail('Sitemap must contain all 43 established URLs and all 84 discovery documents exactly once (127 URLs)')
+for lang in LANGS:
+    must_index.add(site_base+'research/reader-study/'+lang+'/')
+if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index) or len(must_index)!=131:
+    fail('Sitemap must contain 43 established URLs, 84 discovery documents and four Reader Study pages exactly once (131 URLs)')
 for lang in LANGS:
     page=(ROOT/lang/'index.html').read_text(encoding='utf-8')
     chronicle_page=ROOT/'inside-the-round'/lang/'index.html'
@@ -980,8 +988,7 @@ for lang in LANGS:
         fail('Wrong standalone chronicle language: '+lang)
     if f'<link rel="canonical" href="{site_base}inside-the-round/{lang}/">' not in standalone:
         fail('Wrong standalone chronicle canonical: '+lang)
-    from html import escape as html_escape
-    if any(html_escape(v) not in standalone for v in [translations[lang]['insideIntro'],translations[lang]['insideDisclosureBody']]):
+    if any(not html_text_present(standalone,v) for v in [translations[lang]['insideIntro'],translations[lang]['insideDisclosureBody']]):
         fail('Standalone chronicle translation missing: '+lang)
     if standalone.count('<link rel="alternate" hreflang=')!=5:
         fail('Standalone chronicle reciprocal hreflang parity: '+lang)
@@ -1031,8 +1038,7 @@ for lang in LANGS:
     if standalone.count('<link rel="alternate" hreflang=')!=5:
         fail('Missing hreflang reciprocity for Behind the Round '+lang)
     for key in ['behindExplainedBody','behindOpenBody','behindIndependenceBody','behindMethodBody']:
-        from html import escape as html_escape
-        if not translations.get(lang,{}).get(key) or html_escape(translations[lang][key]) not in standalone:
+        if not translations.get(lang,{}).get(key) or not html_text_present(standalone,translations[lang][key]):
             fail('Missing/untranslated core field-note '+lang+'/'+key)
     for source in case['sources']:
         if source['url'] not in standalone or source['url'] not in page or not translations[lang].get(source['labelKey']):
@@ -1043,7 +1049,7 @@ for lang in LANGS:
         if val not in standalone: fail('Missing dated count or WDO application identifier '+lang)
     if re.findall(r'<div class="behindFigure"[^>]*><strong>([^<]+)</strong>',standalone)!=expected_figures:
         fail('Localized field-note number grouping incorrect '+lang)
-    if html_escape(translations[lang]['behindExplorerBridge']) not in standalone:
+    if not html_text_present(standalone,translations[lang]['behindExplorerBridge']):
         fail('Explorer versus APS reconciliation missing '+lang)
     # Check the original two field-note narratives only. The additional EOI
     # investigation legitimately quotes ICANN's PUBLIC 24-hour portal incident.
@@ -1056,8 +1062,7 @@ for lang in LANGS:
     if 'data-region="AP" data-gap="1"' not in standalone or standalone.count('data-region=')!=5:
         fail('Regional comparison not fully published: '+lang)
     for new_key in ['behindRegionalConclusion','behindIndependentBody','behindCoverageBody','wdoUnknownBody','wdoTrademarkBody','wdoComplianceBody']:
-        from html import escape as html_escape
-        if html_escape(translations[lang][new_key]) not in standalone:
+        if not html_text_present(standalone,translations[lang][new_key]):
             fail('Independently sourced review missing in '+lang+'/'+new_key)
     second=stories[1]
     detail=ROOT/'behind-the-round'/lang/'wdo-identity'/'index.html'
@@ -1065,7 +1070,7 @@ for lang in LANGS:
     detail_html=detail.read_text(encoding='utf-8')
     if f'<link rel="canonical" href="{site_base}behind-the-round/{lang}/wdo-identity/">' not in detail_html:
         fail('Second article canonical missing: '+lang)
-    if f'<title>{html_escape(translations[lang]["wdoMetaTitle"])}</title>' not in detail_html:
+    if not html_tag_text_present(detail_html,'title',translations[lang]['wdoMetaTitle']):
         fail('Wrong WDO SEO title: '+lang)
     if 'data-behind-story="wdo-identity"' not in detail_html or 'data-behind-story="reveal-day-counts"' in detail_html:
         fail('Standalone second case mixes unrelated articles: '+lang)
@@ -1126,10 +1131,9 @@ for lang in LANGS:
             fail('Missing four-language source-backed investigation: '+lang+'/'+slug)
         article=article_path.read_text(encoding='utf-8')
         url=site_base+'behind-the-round/'+lang+'/'+slug+'/'
-        from html import escape as html_escape
         if f'<html lang="{lang}">' not in article or f'<link rel="canonical" href="{url}">' not in article:
             fail('Incorrect investigation metadata or canonical: '+lang+'/'+slug)
-        if f'<h1>{html_escape(translations[lang][case["titleKey"]])}</h1>' not in article:
+        if not html_tag_text_present(article,'h1',translations[lang][case['titleKey']]):
             fail('Untranslated 2026 investigation headline: '+lang+'/'+slug)
         referenced_sections=len(case['sections'])+len(case.get('editorialUpdates', []))
         if article.count('data-source-id=')!=len(case['sources']) or article.count('data-referenced-sources=')!=referenced_sections:
@@ -1142,17 +1146,17 @@ for lang in LANGS:
             if record['url'] not in article or not translations[lang].get(record['labelKey']):
                 fail('Unlinked investigation evidence: '+lang+'/'+slug+'/'+record['id'])
         for section in case['sections']:
-            if html_escape(translations[lang][section['bodyKey']]) not in article:
+            if not html_text_present(article,translations[lang][section['bodyKey']]):
                 fail('Incomplete investigation text: '+lang+'/'+slug+'/'+section['bodyKey'])
         for update in case.get('editorialUpdates', []):
             for key in [update['titleKey'], *update['paragraphKeys'], update['closingKey']]:
-                if html_escape(translations[lang][key]) not in article:
+                if not html_text_present(article,translations[lang][key]):
                     fail('Incomplete investigation update: '+lang+'/'+slug+'/'+key)
         if 'https://doi.org/10.5281/zenodo.23262623' not in article:
             fail('Frozen RR1 independence attribution lost: '+lang+'/'+slug)
         if slug=='replacement-strings':
             for key in ['field04ValueTotal','field04ValueActive','field04ValueDeactivated','field04Disclosure']:
-                if html_escape(translations[lang][key]) not in article:
+                if not html_text_present(article,translations[lang][key]):
                     fail('Replacement quantities or independent index disclaimer not rendered: '+lang)
         if slug=='background-screening':
             if len(case['sections'])!=5 or len(case['sources'])!=6:
@@ -1176,10 +1180,9 @@ for lang in LANGS:
     if not path.exists(): fail('Missing localized sanctions explainer: '+lang)
     html=path.read_text(encoding='utf-8')
     tx=explainer['languages'][lang]
-    from html import escape as html_escape
     if f'<html lang="{lang}">' not in html or f'<link rel="canonical" href="{url}">' not in html:
         fail('Sanctions explainer canonical/locale mismatch: '+lang)
-    if f'<title>{html_escape(tx["metaTitle"])}</title>' not in html:
+    if not html_tag_text_present(html,'title',tx['metaTitle']):
         fail('Sanctions explainer metadata untranslated: '+lang)
     if html.count('<link rel="alternate" hreflang=')!=5 or 'https://doi.org/10.5281/zenodo.23262623' not in html:
         fail('Sanctions explainer hreflang or archived-source attribution missing: '+lang)
@@ -1191,10 +1194,10 @@ for lang in LANGS:
         if source['url'] not in html:
             fail('Unlinked sanctions explainer reference: '+lang+'/'+source['id'])
     for item in explainer['sections']:
-        if html_escape(tx['sections'][item['id']]['body']) not in html:
+        if not html_text_present(html,tx['sections'][item['id']]['body']):
             fail('Untranslated sanctions explainer evidence: '+lang+'/'+item['id'])
     for item in explainer['precedents']:
-        if html_escape(tx['precedents'][item['id']]['body']) not in html:
+        if not html_text_present(html,tx['precedents'][item['id']]['body']):
             fail('Untranslated sanctions precedent: '+lang+'/'+item['id'])
     for path2 in (ROOT/lang/'index.html', ROOT/'behind-the-round'/lang/'index.html', ROOT/'behind-the-round'/lang/'wdo-identity'/'index.html'):
         html2=path2.read_text(encoding='utf-8')
@@ -1226,10 +1229,9 @@ for lang in LANGS:
     landing=source.read_text(encoding='utf-8')
     sanctions=(ROOT/'behind-the-round'/lang/'sanctions-and-dns'/'index.html').read_text(encoding='utf-8')
     tx=access['languages'][lang]
-    from html import escape as html_escape
     if f'<html lang="{lang}">' not in page or f'<link rel="canonical" href="{url}">' not in page:
         fail('Access explainer canonical or language mismatch: '+lang)
-    if f'<title>{html_escape(tx["metaTitle"])}</title>' not in page:
+    if not html_tag_text_present(page,'title',tx['metaTitle']):
         fail('Untranslated access explainer SEO title '+lang)
     if page.count('<link rel="alternate" hreflang=')!=5:
         fail('Access explainer hreflang reciprocity missing '+lang)
@@ -1243,7 +1245,7 @@ for lang in LANGS:
         if record['url'] not in page:
             fail('Unlinked primary access source '+lang+'/'+record['id'])
     for case in access['cases']:
-        if html_escape(tx['cases'][case['id']]['body']) not in page:
+        if not html_text_present(page,tx['cases'][case['id']]['body']):
             fail('Untranslated sourced access case '+lang+'/'+case['id'])
     if landing.count('data-access-explainer-link')!=3 or landing.count(url)!=3:
         fail('Missing links from How / Social / Disputes: '+lang)
@@ -1394,5 +1396,68 @@ for rel in ('research/index.html', 'research/connecting-the-dots-working-paper-v
 research_readme = ROOT / 'research/README.md'
 if research_readme.exists() and f'Latest technical site: **v{version}**' not in research_readme.read_text(encoding='utf-8'):
     fail('research README describes an obsolete technical site release')
+
+
+# v0.7.108 full-surface remediation is a release invariant.
+shared_css=ROOT/'assets'/'editorial-shared.css'
+if not shared_css.exists() or 'Shared publication modules' not in shared_css.read_text(encoding='utf-8'):
+    fail('Shared editorial CSS bundle missing')
+obsolete_style_ids=('city-namespace-style','tld-cultural-style','tld-market-style',
+                    'audit-20261019-style','ctd-b2-cross-style','ctd-native-governance-css')
+from stage_public_site import public_files, validate_publication
+for path in public_files(ROOT):
+    if path.suffix != '.html':
+        continue
+    rel=path.relative_to(ROOT).as_posix()
+    if rel=='googlee97a475969dc49f2.html':
+        continue
+    page=path.read_text(encoding='utf-8')
+    if any(f'id="{style_id}"' in page for style_id in obsolete_style_ids):
+        fail('Repeated inline module CSS survived remediation: '+rel)
+    # Validate navigation targets; displayed original URLs and provenance may
+    # legitimately retain the verbatim URL recorded in the IANA source.
+    hrefs=set(re.findall(r'\bhref=["\']([^"\']+)["\']',page))
+    if any(url in hrefs for url in (
+        'http://nic.berlin/','http://www.domini.cat/','http://www.nic.amazon/',
+        'http://www.nic.io/','http://www.nic.swiss/','http://www.verisigninc.com/')):
+        fail('Known HTTP source link was not upgraded: '+rel)
+
+sitemap=(ROOT/'sitemap.xml').read_text(encoding='utf-8')
+if '/src/' in sitemap or '/prototype/' in sitemap:
+    fail('Development routes leaked into sitemap')
+for lang in LANGS:
+    reader=ROOT/'research'/'reader-study'/lang/'index.html'
+    page=reader.read_text(encoding='utf-8')
+    if site_base+'research/reader-study/'+lang+'/' not in sitemap:
+        fail('Reader Study missing from sitemap: '+lang)
+    if page.count('hreflang=') < 5 or 'property="og:image"' not in page:
+        fail('Reader Study metadata incomplete: '+lang)
+    tld=(ROOT/'tlds'/lang/'lugano'/'index.html').read_text(encoding='utf-8')
+    if publication_meta['releasedOn'] < publication_meta['stringConfirmation'] and 'roundStatus' not in tld:
+        fail('Pre-String Confirmation status missing from .lugano: '+lang)
+
+for rel in [f'inside-the-round/{lang}/index.html' for lang in LANGS] + [f'economics/{lang}/round-2026/index.html' for lang in LANGS]:
+    page=(ROOT/rel).read_text(encoding='utf-8')
+    headings=[int(x) for x in re.findall(r'<h([1-6])\b',page,re.I)]
+    if not headings or headings[0] != 1:
+        fail('Heading validation found no main heading: '+rel)
+    if any(headings[i] > headings[i-1] + 1 for i in range(1,len(headings))):
+        fail('Heading hierarchy jump after remediation: '+rel)
+
+for lang in LANGS:
+    economics=(ROOT/'economics'/lang/'round-2026'/'index.html').read_text(encoding='utf-8')
+    if 'data-aps-snapshot="2026-10-11"' not in economics:
+        fail('Dated APS snapshot metadata missing from Economics: '+lang)
+    if 'roundStatus' not in economics and publication_meta['releasedOn'] < publication_meta['stringConfirmation']:
+        fail('Pre-String Confirmation status missing from Economics: '+lang)
+
+# The deploy payload is a separate, validated surface; never ship the checkout.
+validate_publication(ROOT)
+# Validate summary keys stored in data as well as HTML data-i18n references.
+for locale in LANGS:
+    for release in json_file('release_history.json')['releases']:
+        key=release['summaryKey']
+        if not translations[locale].get(key):
+            fail('Missing localized release history: '+locale+'/'+key)
 
 print(f'RELEASE CHECK PASS · v{version} · 1,849 Explorer records · 7,679 life-history events · 4 languages')

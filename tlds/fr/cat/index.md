@@ -1,6 +1,6 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/cat/ | Site edition: 0.7.107 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/cat/ | Site edition: 0.7.108 | Language: fr -->
 
-Fiche du domaine
+Fiche TLD
 
 # .cat
 
@@ -24,7 +24,7 @@ Déléguée 2004 Sponsorisé / restreint Géographie & lieux Culture, médias & 
 
 ## FAIT En bref
 
-.cat est actuellement délégué dans la racine DNS comme Sponsorisé / restreint.
+Lors de la vérification documentée, .cat était délégué dans la racine DNS comme Sponsorisé / restreint.
 
 La fiche IANA indique Fundacio puntCAT comme gestionnaire.
 
@@ -132,15 +132,15 @@ Les dates ne sont affichées que lorsqu’elles reposent sur une source attribua
 
 Un TLD n’avait pas besoin de correspondre à un État : langue et culture pouvaient aussi devenir infrastructure.
 
-## FAIT Situation actuelle
+## FAIT Statut lors de la vérification documentée
 
 **Forme ASCII / DNS:** .cat
 
 **Présent dans la liste de la racine IANA:** Oui, à la date indiquée
 
-**Statut actuel dans la racine:** Déléguée
+**Statut dans la racine lors de la vérification documentée:** Déléguée
 
-**Vérification de l’état actuel:** 4 oct. 2026
+**Date de vérification du statut:** 4 oct. 2026
 
 **Classification IANA:** Sponsorisé / restreint
 
@@ -184,7 +184,7 @@ Le contact technique IANA n’identifie pas nécessairement le Registry Service 
 
 ## Services du registre
 
-**Site du registre:** [http://www.domini.cat/ ↗](http://www.domini.cat/)
+**Site du registre:** [http://www.domini.cat/ ↗](https://domini.cat/)
 
 **WHOIS:** whois.nic.cat
 
@@ -212,6 +212,6 @@ Rapports liés par IANA, avec leurs titres originaux et dates de publication. La
 
 [Fiche officielle IANA ↗](https://www.iana.org/domains/root/db/cat.html) [Source 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Source 3 ↗](https://www.iana.org/reports/2005/cat-report-18nov2005.html) [Source 4 ↗](https://www.icann.org/en/announcements/details/icann-progress-in-process-for-introducing-new-sponsored-top-level-domains-19-3-2004-en) [Source 5 ↗](https://domini.cat/en/about-us)
 
-**Par Robert Bregy** · Édition du site 0.7.107 · 9 novembre 2026
+**Par Robert Bregy** · Édition du site 0.7.108 · 10 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.

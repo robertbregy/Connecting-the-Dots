@@ -1,0 +1,74 @@
+name: External source health
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 5 * * 1'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ctd-external-source-health
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Check out publication
+        uses: actions/checkout@v5
+      - name: Verify checker classifications and freshness boundaries
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python3 scripts/test_external_source_health.py
+      - name: Stage the same public surface as Pages
+        run: python3 scripts/stage_public_site.py --output _site
+      - name: Check external sources and dated snapshots without changing data
+        id: sources
+        continue-on-error: true
+        run: >-
+          python3 scripts/check_external_sources.py
+          --site-root _site
+          --output artifacts/external-source-health.json
+          --markdown artifacts/external-source-health.md
+          --workers 6 --per-host 2 --timeout 12
+          --max-urls 1500 --budget-seconds 600
+      - name: Summarize
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          path = Path('artifacts/external-source-health.json')
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as out:
+              out.write('## External source health\n\n')
+              if not path.exists():
+                  out.write('No report was produced. See the failed step; no source verification is claimed.\n')
+              else:
+                  report = json.loads(path.read_text())
+                  out.write(f"Attempted **{report['checked']} / {report['total']}** external anchor URLs on **{report['publishedHTMLPages']}** published HTML pages.\n\n")
+                  out.write('Reachability does not verify factual currency. Restrictions and timeouts are not missing-page findings.\n\n')
+                  for state, count in report['summary'].items():
+                      out.write(f'- {state}: **{count}**\n')
+                  out.write('\n### Snapshot review reminders\n\n')
+                  for row in report['freshness']:
+                      out.write(f"- **{row['label']}**: {row['state']}; observed {row.get('observedOn', 'unknown')}. {row['reason']}\n")
+                      if row.get('nextReviewOn'):
+                          out.write(f"  Next milestone review: **{row['nextReviewOn']}** ({row['milestoneState']}).\n")
+                  out.write('\nFull per-URL timestamps, referring pages, request outcomes and freshness metadata are in the JSON and Markdown artifacts. No evidence files were changed.\n')
+          PY
+      - name: Upload JSON and Markdown reports
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: external-source-health
+          path: |
+            artifacts/external-source-health.json
+            artifacts/external-source-health.md
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Fail on confirmed missing URLs or checker errors
+        if: steps.sources.outcome == 'failure'
+        run: exit 1

@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/en/ | Site edition: 0.7.107 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/en/ | Site edition: 0.7.108 | Language: en -->
 
 Connecting the Dots
 
@@ -66,23 +66,23 @@ An application by the City of Lugano in the 2026 round. It is not yet operationa
 
 ### [.amazon](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/amazon/)
 
-.amazon is currently delegated in the DNS root as Generic.
+At the documented check, .amazon was delegated in the DNS root as Generic.
 
 ### [.music](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/music/)
 
-.music is currently delegated in the DNS root as Generic.
+At the documented check, .music was delegated in the DNS root as Generic.
 
 ### [.berlin](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/berlin/)
 
-.berlin is currently delegated in the DNS root as Generic.
+At the documented check, .berlin was delegated in the DNS root as Generic.
 
 ### [.zuerich](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/zuerich/)
 
-.zuerich is currently delegated in the DNS root as Generic.
+At the documented check, .zuerich was delegated in the DNS root as Generic.
 
 ### [.swiss](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/swiss/)
 
-.swiss is currently delegated in the DNS root as Generic.
+At the documented check, .swiss was delegated in the DNS root as Generic.
 
 ### [.com](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/com/)
 
@@ -94,8 +94,8 @@ A name for the Catalan linguistic and cultural community: a belonging that cross
 
 ### [.io](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/io/)
 
-.io is currently delegated in the DNS root as Country-code.
+At the documented check, .io was delegated in the DNS root as Country-code.
 
-**By Robert Bregy** · Site edition 0.7.107 · November 9, 2026
+**By Robert Bregy** · Site edition 0.7.108 · November 10, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.
