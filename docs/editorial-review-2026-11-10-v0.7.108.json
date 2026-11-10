@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-11-10",
+  "targetVersion": "0.7.108",
+  "scope": [
+    "content accuracy and dated claims",
+    "internal and external links",
+    "UX/UI and mobile consistency",
+    "accessibility semantics",
+    "multilingual metadata",
+    "SEO/GEO and agent-facing metadata",
+    "publication surface and deployment hygiene",
+    "release reproducibility and archive immutability"
+  ],
+  "baseline": {
+    "version": "0.7.107",
+    "commit": "97db07f41e228cb503413a58a861e1f40dcc046d",
+    "publishedRoutes": 127,
+    "publishedHtmlFiles": 137,
+    "internalReferencesChecked": 8090,
+    "automatedAxeScans": 32,
+    "overflowChecks": 96,
+    "focusChecks": "48/48",
+    "reflowChecks": "48/48"
+  },
+  "remediations": [
+    "Date APS-derived analysis explicitly to the 11 October 2026 export instead of presenting it as generically current.",
+    "Replace misleading current-status language in TLD profiles with status-at-documented-check language.",
+    "Add a pre-String Confirmation Day status notice to 2026-round surfaces until 17 November 2026.",
+    "Add Reader Study to the sitemap with reciprocal hreflang and complete social metadata.",
+    "Repair heading hierarchy on Inside the Round and Economics 2026 pages without changing visible hierarchy.",
+    "Complete Open Graph/Twitter metadata for Application Atlas, Reader Study and working paper surfaces.",
+    "Upgrade six known HTTP source links to verified HTTPS destinations.",
+    "Extract repeated inline research-module CSS into a shared cacheable stylesheet.",
+    "Label major editorial page types consistently across guides, profiles, field notes, timelines, applications, economics and research.",
+    "Mark prototypes noindex and keep build-only src fragments out of the GitHub Pages payload.",
+    "Add a weekly external-source health workflow distinguishing hard 404/410 failures from access restrictions and rate limits.",
+    "Extend release checks and live deployment smoke tests so these regressions cannot silently return."
+  ],
+  "deferredArchitecture": [
+    "Reduce duplicated full-text content between the atlas shell and standalone reading pages.",
+    "Unify all remaining header/navigation implementations into one global component.",
+    "Move older immutable technical ZIPs away from the normal Pages payload only after preserving stable public archive URLs."
+  ],
+  "archivePolicy": "RR1, RR2 and every previously frozen technical package remain immutable. v0.7.108 is a technical/editorial website release, not a new archived research release."
+}
