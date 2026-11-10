@@ -35,6 +35,7 @@ const additions=[
  '.github/workflows/external-source-health.yml',
  'scripts/audit_remediation_v07108.cjs',
  'scripts/check_external_sources.py',
+ 'scripts/finalize_audit_review_v07108.cjs',
  'assets/editorial-shared.css',
  'downloads/connecting-the-dots-data-pack-v0.7.108.zip',
  'downloads/connecting-the-dots-data-pack-v0.7.108.sha256',
