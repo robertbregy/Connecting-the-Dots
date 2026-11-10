@@ -54,7 +54,9 @@ async function render(language,alias=false){
     const runtimeFiles={'ctd-data-bundle':'data/site_bundle.js','ctd-i18n-bundle':'data/i18n_bundle.js','ctd-worldmap':'data/worldmap.js','ctd-publication':'data/publication.js','ctd-app':'assets/app.js'};
     let runtime=fs.readFileSync(path.join(root,runtimeFiles[id]),'utf8');
     if(id==='ctd-app')runtime=runtime.replace('if(v!==undefined)el.innerHTML=v', 'if(v!==undefined){try{el.innerHTML=v}catch(e){throw new Error("Static translation "+el.dataset.i18n+" failed: "+JSON.stringify(v)+"; "+e.message)}}');
-    vm.runInContext(runtime,context,{filename:id,timeout:10000});
+    // Rendering the complete multilingual research corpus can exceed ten
+    // seconds on a shared runner; this is a build budget, not a UI deadline.
+    vm.runInContext(runtime,context,{filename:id,timeout:60000});
   }
   await vm.runInContext('Promise.resolve()',context);
   if(!window.DOT_DATA.explorerMeta.application2026StringCoverageComplete)throw new Error('Static 2026 Explorer inventory did not finish loading');

@@ -493,7 +493,6 @@ def main() -> None:
     # has completed, then build the machine-readable catalog from final pages.
     subprocess.run(["node", str(ROOT / "scripts" / "audit_remediation_v07108.cjs")], check=True)
     subprocess.run(["python3", str(ROOT / "scripts" / "build_agent_catalog.py")], check=True)
-    subprocess.run(["node", str(ROOT / "scripts" / "finalize_audit_review_v07108.cjs")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "validate_discovery.cjs")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "validate_quick_guide.cjs")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "validate_economics_order.cjs")], check=True)

@@ -19,6 +19,7 @@ from scripts.render_behind_round import (BASE, LANGS, CSS, BEHIND_CSS,
 
 ROOT = Path(__file__).resolve().parents[1]
 SLUGS = ("objectors-eoi", "replacement-strings", "background-screening")
+OBJECTORS_CALENDAR_SOURCE = "https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en"
 PRIMARY = ("https://www.icann.org/", "https://newgtldprogram.icann.org/",
            "https://newgtldprogram-aps.icann.org/", "https://newgtldprogram-2026-agb.icann.org/")
 SECONDARY = ("https://internet.best/", "https://www.bortzmeyer.org/")
@@ -111,6 +112,8 @@ def load(root: Path = ROOT):
             keys += [key for section in case["sections"] for key in (section["titleKey"], section["bodyKey"])]
             keys += [section["observationLabelKey"] for section in case["sections"] if section.get("observationLabelKey")]
             keys += [item["labelKey"] for item in case["sources"]]
+            if index == 3:
+                keys += ["field03CalendarTitle", "field03CalendarBody", "field03CalendarLimit", "field03CalendarSource"]
             if index == 4:
                 keys += ["field04Disclosure"] + [q[k] for q in case["quantities"] for k in ("valueKey", "labelKey")]
             if any(not isinstance(dictionary.get(k), str) or not dictionary[k].strip() for k in keys):
@@ -126,6 +129,16 @@ def load(root: Path = ROOT):
     return data, translations
 
 
+def objectors_calendar_note(dictionary):
+    """Clarify the public calendar without deriving an Independent Objector deadline."""
+    return ('<aside class="fieldEvidenceDisclaimer" data-objectors-calendar-note>'
+            '<p><strong>' + h(dictionary["field03CalendarTitle"]) + '</strong></p>'
+            '<p>' + h(dictionary["field03CalendarBody"]) + '</p>'
+            '<p>' + h(dictionary["field03CalendarLimit"]) + '</p>'
+            '<p><a href="' + OBJECTORS_CALENDAR_SOURCE + '" target="_blank" rel="noopener noreferrer">' +
+            h(dictionary["field03CalendarSource"]) + ' ↗</a></p></aside>')
+
+
 def teaser(case, dictionary, lang):
     href = BASE + "behind-the-round/" + lang + "/" + case["slug"] + "/"
     return (
@@ -134,6 +147,7 @@ def teaser(case, dictionary, lang):
         '<h3><a data-field-investigation-slug="' + h(case["slug"], quote=True) + '" href="' + href + '">' + h(dictionary[case["titleKey"]]) + '</a></h3>'
         '<p>' + h(dictionary[case["descriptionKey"]]) + '</p>'
         '<p class="behindStatus">' + h(dictionary[case["statusKey"]]) + '</p>'
+        + (objectors_calendar_note(dictionary) if case["id"] == "objectors-eoi" else '') +
         '</section>'
     )
 
@@ -169,7 +183,8 @@ def render_detail(case, dictionary, lang):
         "mainEntityOfPage": url, "image": BASE + "assets/og-preview.png", "isAccessibleForFree": True,
         "author": {"@type": "Person", "name": "Robert Bregy"},
         "isPartOf": {"@type": "WebSite", "name": "Connecting the Dots", "url": BASE},
-        "citation": [source["url"] for source in case["sources"]],
+        "citation": [source["url"] for source in case["sources"]] +
+                    ([OBJECTORS_CALENDAR_SOURCE] if case["id"] == "objectors-eoi" else []),
         "about": [{"@type": "Thing", "name": "ICANN 2026 Round: " + case["id"]}]
     }
     parts = [
@@ -192,6 +207,8 @@ def render_detail(case, dictionary, lang):
             '<p>' + h(dictionary[section["bodyKey"]]) + '</p></section>'
         ])
     parts.append(editorial_updates_markup(case,dictionary,lang,heading="h2"))
+    if case["id"] == "objectors-eoi":
+        parts.append(objectors_calendar_note(dictionary))
     parts.extend([
         '<section class="behindReading behindSourcesBlock">',
         '<h2>' + h(dictionary["behindSourcesTitle"]) + '</h2>',

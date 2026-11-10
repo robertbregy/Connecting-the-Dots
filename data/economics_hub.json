@@ -250,18 +250,18 @@
       "reading": {
         "title": "Bevor zwei Zahlen verglichen werden",
         "body": [
-          "Prüfe, was sie messen, auf welchen Zeitraum sie sich beziehen und welche Quelle sie belegt. Umsatz, Kaufpreis eines Unternehmens und Budgetprognose beantworten unterschiedliche Fragen. Auch die Währung und der Umfang der erfassten Organisation zählen.",
+          "Prüfen Sie, was sie messen, auf welchen Zeitraum sie sich beziehen und welche Quelle sie belegt. Umsatz, Kaufpreis eines Unternehmens und Budgetprognose beantworten unterschiedliche Fragen. Auch die Währung und der Umfang der erfassten Organisation zählen.",
           "Registrierungen beschreiben einen Bestand an Namen; die Präsenz auf Websites erfasst eine andere Nutzung. Anträge beschreiben hingegen Absichten und Strategien. Keine dieser Kennzahlen allein belegt, dass eine Endung künftig rentabel sein wird."
         ]
       },
       "pathways": {
-        "title": "Wähle eine Frage zur Vertiefung",
-        "lead": "Diese vier Wege erschliessen das vollständige Dossier. Du kannst eine Zahl nachschlagen, einen Fall verfolgen oder nachlesen, wie sich Strategien im Lauf der Zeit ändern.",
+        "title": "Wählen Sie eine Frage zur Vertiefung",
+        "lead": "Diese vier Wege erschliessen das vollständige Dossier. Sie können eine Zahl nachschlagen, einen Fall verfolgen oder nachlesen, wie sich Strategien im Lauf der Zeit ändern.",
         "items": [
           {
             "slug": "market",
             "title": "Verbreitung und Anteile der TLDs",
-            "body": "Welche Endungen begegnen uns auf Websites, und welche enthalten mehr Domains? Erkunde beide vollständigen Ranglisten und ihre Filter sowie Einführungsgruppen, Daten, Quellen und herunterladbare Datensätze.",
+            "body": "Welche Endungen begegnen uns auf Websites, und welche enthalten mehr Domains? Erkunden Sie beide vollständigen Ranglisten und ihre Filter sowie Einführungsgruppen, Daten, Quellen und herunterladbare Datensätze.",
             "linkLabel": "Die Ranglisten erkunden"
           },
           {
@@ -273,7 +273,7 @@
           {
             "slug": "portfolios",
             "title": "Portfolios und konkurrierende Anträge",
-            "body": "Verfolge die Strategien von Antragstellern mit vielen Bewerbungen und den Wettbewerb um dieselben Wörter. Die Vergleiche zwischen den Runden sowie die Fälle Aruba und Intercap zeigen, was jeweils gezählt wird.",
+            "body": "Verfolgen Sie die Strategien von Antragstellern mit vielen Bewerbungen und den Wettbewerb um dieselben Wörter. Die Vergleiche zwischen den Runden sowie die Fälle Aruba und Intercap zeigen, was jeweils gezählt wird.",
             "linkLabel": "Die Strategien untersuchen"
           },
           {

@@ -28,10 +28,10 @@ const areas = [
 ];
 const guideAreas = {how: 'understand', beyond: 'understand', timeline: 'explore', cities: 'stories', economics: 'stories', lugano: 'round'};
 const economicsWords = {
-  en: {label: 'Domain economics', overview: 'Economics overview', navigation: 'Explore domain economics', reading: 'Explore the economics', share: 'Share this page', copied: 'Link copied', copyManually: 'Copy the address from your browser to share this page.'},
-  it: {label: 'Economia dei domini', overview: 'Panoramica sull’economia', navigation: 'Esplora l’economia dei domini', reading: 'Approfondisci l’economia', share: 'Condividi questa pagina', copied: 'Link copiato', copyManually: 'Copia l’indirizzo dal browser per condividere questa pagina.'},
-  de: {label: 'Domainökonomie', overview: 'Wirtschaftlicher Überblick', navigation: 'Domainökonomie erkunden', reading: 'Wirtschaftliche Zusammenhänge vertiefen', share: 'Diese Seite teilen', copied: 'Link kopiert', copyManually: 'Kopieren Sie die Adresse aus Ihrem Browser, um diese Seite zu teilen.'},
-  fr: {label: 'Économie des domaines', overview: 'Vue d’ensemble de l’économie', navigation: 'Explorer l’économie des domaines', reading: 'Approfondir l’économie', share: 'Partager cette page', copied: 'Lien copié', copyManually: 'Copiez l’adresse depuis votre navigateur pour partager cette page.'}
+  en: {label: 'Domain economics', overview: 'Economics overview', interactive: 'Open economics in the interactive atlas', casesIndex: 'Go to a case', navigation: 'Explore domain economics', reading: 'Explore the economics', share: 'Share this page', copied: 'Link copied', copyManually: 'Copy the address from your browser to share this page.'},
+  it: {label: 'Economia dei domini', overview: 'Panoramica sull’economia', interactive: 'Apri l’economia nell’atlante interattivo', casesIndex: 'Vai a un caso', navigation: 'Esplora l’economia dei domini', reading: 'Approfondisci l’economia', share: 'Condividi questa pagina', copied: 'Link copiato', copyManually: 'Copia l’indirizzo dal browser per condividere questa pagina.'},
+  de: {label: 'Domainökonomie', overview: 'Wirtschaftlicher Überblick', interactive: 'Wirtschaft im interaktiven Atlas öffnen', casesIndex: 'Direkt zu einem Fall', navigation: 'Domainökonomie erkunden', reading: 'Wirtschaftliche Zusammenhänge vertiefen', share: 'Diese Seite teilen', copied: 'Link kopiert', copyManually: 'Kopieren Sie die Adresse aus Ihrem Browser, um diese Seite zu teilen.'},
+  fr: {label: 'Économie des domaines', overview: 'Vue d’ensemble de l’économie', interactive: 'Ouvrir l’économie dans l’atlas interactif', casesIndex: 'Aller à un cas', navigation: 'Explorer l’économie des domaines', reading: 'Approfondir l’économie', share: 'Partager cette page', copied: 'Lien copié', copyManually: 'Copiez l’adresse depuis votre navigateur pour partager cette page.'}
 };
 const words = {
   en: {home: 'Home', index: 'Guides and profiles', indexDescription: 'Read the main Connecting the Dots guides and selected domain profiles, with dated evidence, original sources and links to the interactive atlas.', guide: 'Guide', profile: 'Domain profile', profileTitle: 'history, status and sources', open: 'Explore in the atlas', chapterList: 'Read a guide', profileList: 'Explore a name', edition: 'Site edition', evidence: 'Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.', citation: 'Method and citation', text: 'Text version', related: 'Continue reading', sources: 'Sources and data', jump: 'Skip to content', selected: 'Selected profiles', selection: 'These profiles cover documented economic, cultural, geographic and governance cases. The interactive Explorer contains the full catalogue.', observed: 'Status observed on', author: 'By Robert Bregy', filters: 'Use the interactive atlas to filter and compare these records.'},
@@ -264,7 +264,7 @@ function pageShell(meta, body, sourceDocument, options = {}) {
       {'@type': 'BreadcrumbList', itemListElement: crumbs.map((c, i) => ({'@type': 'ListItem', position: i + 1, name: c.name, item: c.item}))}
     ]
   };
-  const heading = `<div class="discoveryHero"><p class="discoveryEyebrow">${escape(kind === 'index' ? 'Connecting the Dots' : economics ? ew.label : kind === 'guide' ? w.guide : w.profile)}</p><h1 id="discovery-title">${escape(meta.headline)}</h1><p class="discoveryLead">${escape(meta.description)}</p>${options.observed ? `<p class="discoveryObserved">${escape(w.observed)} <time datetime="${escape(options.observed)}">${escape(localizedDate(options.observed, lang))}</time></p>` : ''}<div class="discoveryActions"><a class="discoveryPrimary" data-discovery-interactive href="${escape(rel(meta.interactiveUrl))}">${escape(economics ? ew.overview : w.open)} <span aria-hidden="true">→</span></a><a href="${escape(rel('research/'))}">${escape(w.citation)}</a><a href="index.md" type="text/markdown">${escape(w.text)}</a>${economics ? `<button id="economics-share" type="button" data-economics-share hidden>${escape(ew.share)}</button><span id="economics-share-status" role="status" aria-live="polite"></span>` : ''}</div></div>`;
+  const heading = `<div class="discoveryHero"><p class="discoveryEyebrow">${escape(kind === 'index' ? 'Connecting the Dots' : economics ? ew.label : kind === 'guide' ? w.guide : w.profile)}</p><h1 id="discovery-title">${escape(meta.headline)}</h1><p class="discoveryLead">${escape(meta.description)}</p>${options.observed ? `<p class="discoveryObserved">${escape(w.observed)} <time datetime="${escape(options.observed)}">${escape(localizedDate(options.observed, lang))}</time></p>` : ''}<div class="discoveryActions"><a class="discoveryPrimary" data-discovery-interactive href="${escape(rel(meta.interactiveUrl))}">${escape(economics ? ew.interactive : w.open)} <span aria-hidden="true">→</span></a><a href="${escape(rel('research/'))}">${escape(w.citation)}</a><a href="index.md" type="text/markdown">${escape(w.text)}</a>${economics ? `<button id="economics-share" type="button" data-economics-share hidden>${escape(ew.share)}</button><span id="economics-share-status" role="status" aria-live="polite"></span>` : ''}</div></div>`;
   const economicsNav = economics ? `<nav class="economicsPageNav" aria-label="${escape(ew.navigation)}"><a class="economicsOverviewLink" href="${rel(route('guide', lang, 'economics'))}">${escape(ew.overview)}</a><div>${options.economicsPages.map(page => `<a href="${rel(route('economics', lang, page.key))}"${page.key === key ? ' aria-current="page"' : ''}>${escape(page.title)}</a>`).join('')}</div></nav>` : '';
   const economicsHead = economicsHub ? `<link rel="stylesheet" href="${rel('assets/economics-hub.css')}?v=${pub.version}"><script type="application/json" id="economics-route-data">${json({language: lang, anchors: options.economicsRedirects})}</script><script src="${rel('assets/economics-routing.js')}?v=${pub.version}" defer></script>` : economics ? `<script type="application/json" id="economics-page-labels">${json(ew)}</script>${options.marketPayload ? `<script type="application/json" id="rsp-footprint-data">${json(options.marketPayload)}</script><script src="${rel('assets/tld-market.js')}?v=${pub.version}" defer></script>` : ''}<script src="${rel('assets/economics-pages.js')}?v=${pub.version}" defer></script>` : '';
   const output = `<!DOCTYPE html>
@@ -278,10 +278,11 @@ ${alternate}
 <link rel="stylesheet" href="${rel('assets/style.css')}?v=${pub.version}"><link rel="stylesheet" href="${rel('assets/audience.css')}?v=${pub.version}"><link rel="stylesheet" href="${rel('assets/reader-first.css')}?v=${pub.version}">
 ${styleBlocks(sourceDocument)}
 <link rel="stylesheet" href="${rel('assets/discovery.css')}?v=${pub.version}">
+<script src="${rel('assets/discovery-controls.js')}?v=${pub.version}" defer></script>
 ${economicsHead}
 </head><body class="discoveryPage${economics ? ' economicsPage' : ''}" data-build="${pub.version}"${economics ? ` data-economics-page="${key}"` : ''}>
 <a class="discoverySkip" href="#main-content">${escape(w.jump)}</a>
-<header class="topbar"><div class="topinner"><a class="brand" href="${rel(lang + '/')}" aria-label="${escape('Connecting the Dots · ' + w.home)}"><img src="${rel('assets/logo-mark.png')}" alt="" width="34" height="34"><span>Connecting the Dots</span></a><nav class="discoveryLanguages" aria-label="${escape(t.languageVersions)}">${languages.map(l => `<a href="${rel(route(kind, l, key))}" hreflang="${l}" lang="${l}"${economics ? ` data-language="${l}"` : ''}${l === lang ? ' aria-current="page"' : ''}>${names[l]}</a>`).join('')}</nav></div></header>
+<header class="topbar"><div class="topinner"><a class="brand" href="${rel(lang + '/')}" aria-label="${escape('Connecting the Dots · ' + w.home)}"><img src="${rel('assets/logo-mark.png')}" alt="" width="34" height="34"><span>Connecting the Dots</span></a><div class="discoveryControls"><nav class="discoveryLanguages" aria-label="${escape(t.languageVersions)}">${languages.map(l => `<a href="${rel(route(kind, l, key))}" hreflang="${l}" lang="${l}"${economics ? ` data-language="${l}"` : ''}${l === lang ? ' aria-current="page"' : ''}>${names[l]}</a>`).join('')}</nav><button class="control discoveryTheme" id="themeBtn" data-discovery-theme type="button" aria-label="${escape(t.themeLabel)}" title="${escape(t.themeLabel)}" aria-pressed="false" hidden><svg aria-hidden="true" class="themeIcon" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none"/></svg></button></div></div></header>
 <nav class="discoveryNav" aria-label="${escape(t.sectionNavLabel)}">${areas.map(([area, label]) => `<a href="${rel(`${lang}/?tab=ia-${area}#ia-${area}`)}"${area === (economics ? 'stories' : kind === 'guide' ? guideAreas[key] : 'explore') ? ' aria-current="location"' : ''}>${escape(t[label])}</a>`).join('')}</nav>
 <nav class="discoveryTrail" aria-label="${escape(t.breadcrumbLabel)}">${crumbs.map((c, i) => `${i ? '<span aria-hidden="true">/</span>' : ''}${i === crumbs.length - 1 ? `<span aria-current="page">${escape(c.name)}</span>` : `<a href="${escape(rel(c.item))}">${escape(c.name)}</a>`}`).join('')}</nav>
 ${economicsNav}
@@ -300,6 +301,25 @@ ${economicsNav}
   outputs.set(meta.path + 'index.html', output);
   outputs.set(meta.markdownPath, `<!-- Canonical: ${canonical} | Site edition: ${pub.version} | Language: ${lang} -->\n\n` + markdown(document.querySelector('main'), canonical));
   pages.push(meta);
+  return output;
+}
+
+function addCaseIndex(content, lang) {
+  const cards = [...content.querySelectorAll('.economicCase[id^="econ-case-"]')];
+  assert.equal(cards.length, 8, `The case index requires all eight documented cases: ${lang}`);
+  const before = cards.map(card => card.outerHTML);
+  assert.equal(content.querySelectorAll('#economics-case-index').length, 0, 'Case index must be inserted only once');
+  const nav = content.ownerDocument.createElement('nav');
+  nav.id = 'economics-case-index';
+  nav.className = 'economicsCaseIndex';
+  nav.setAttribute('aria-label', economicsWords[lang].casesIndex);
+  nav.innerHTML = `<p>${escape(economicsWords[lang].casesIndex)}</p><ol>${cards.map(card => {
+    const label = [plain(card.querySelector('.caseStrings')?.textContent), plain(card.querySelector('.mechanismPill')?.textContent)].filter(Boolean).join(' · ') || plain(card.querySelector('h3')?.textContent);
+    assert.ok(label, `A case index entry needs a visible title: ${card.id}`);
+    return `<li><a href="#${escape(card.id)}">${escape(label)}</a></li>`;
+  }).join('')}</ol>`;
+  content.insertBefore(nav, content.firstChild);
+  assert.deepEqual(cards.map(card => card.outerHTML), before, 'Case navigation must preserve evidence bytes');
 }
 
 function createRuntime(language, sourceHTML) {
@@ -376,6 +396,7 @@ async function build() {
       const content = page.node.cloneNode(true);
       const market = page.key === 'market';
       prepareContent(content, lang, 'economics', pagePath, document, {...economicsOptions, market, economics: true});
+      if (page.key === 'cases') addCaseIndex(content, lang);
       const sources = [...new Set([...content.querySelectorAll('a[href]')].map(anchor => anchor.getAttribute('href')).filter(href => /^https?:/.test(href) && !href.startsWith(base)))];
       assert.ok(sources.length, `Economics page without source evidence: ${lang}/${page.key}`);
       const marketPayload = market ? JSON.parse(document.getElementById('rsp-footprint-data').textContent) : null;
@@ -427,4 +448,5 @@ async function build() {
   }
   console.log('DISCOVERY_RENDERED ' + JSON.stringify({pages: pages.length, guides: guides.length * languages.length, economics: 4 * languages.length, profiles: profiles.length * languages.length, indexes: languages.length, markdown: pages.length, siteVersion: pub.version, dryRun: process.argv.includes('--dry-run'), archivedResearchChanged: false}));
 }
-build().catch(error => {console.error(error); process.exitCode = 1;});
+module.exports = {pageShell, addCaseIndex, markdown};
+if (require.main === module) build().catch(error => {console.error(error); process.exitCode = 1;});

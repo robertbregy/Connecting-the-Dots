@@ -1,6 +1,7 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 const {parseHTML}=require('linkedom');
+const {markdown}=require('./render_discovery.cjs');
 const root=path.resolve(__dirname,'..'),pub=JSON.parse(fs.readFileSync(path.join(root,'publication.json'),'utf8'));
 const BASE=pub.deployment,L=['en','it','de','fr'];
 const type={
@@ -21,7 +22,7 @@ fr:['Statut lors de la vérification documentée','Statut dans la racine lors de
 const appDesc={
 en:'Explore the 1,614 published ICANN APS base applications in the archived 11 October 2026 export, with replacement rows kept distinct.',
 it:'Esplora le 1.614 candidature di base pubblicate nell’APS ICANN acquisito l’11 ottobre 2026, distinguendo i record di sostituzione.',
-de:'Erkunde die 1.614 veröffentlichten Basisbewerbungen im ICANN-APS-Export vom 11. Oktober 2026; Ersatzzeilen bleiben getrennt.',
+de:'Erkunden Sie die 1.614 veröffentlichten Basisbewerbungen im ICANN-APS-Export vom 11. Oktober 2026; Ersatzzeilen bleiben getrennt.',
 fr:'Explorez les 1 614 candidatures de base publiées dans l’export APS ICANN du 11 octobre 2026, en distinguant les lignes de remplacement.'};
 const readerDesc={
 en:'A 15-minute formative reader-study protocol to observe comprehension, curiosity and navigation friction. No participant results are claimed.',
@@ -31,31 +32,156 @@ fr:'Protocole formatif d’environ 15 minutes sur compréhension, curiosité et 
 const econDesc={
 en:{market:'Compare TLD website presence and registered-domain counts with filters, dates, sources and downloadable data.',cases:'Eight documented cases show how renewals, auctions, acquisitions, regulation and public revenue create value in the domain economy.',portfolios:'Portfolios, multiple applications and contention: compare operator strategies and selected cases from the ICANN 2026 round.','round-2026':'Application costs, string themes, applicant activity and economic strategies in the ICANN 2026 round.'},
 it:{market:'Confronta presenza sui siti e domini registrati nei TLD, con filtri, date, fonti e dati scaricabili.',cases:'Otto casi documentati mostrano come rinnovi, aste, acquisizioni, regolazione ed entrate pubbliche producono valore nei domini.',portfolios:'Portafogli, candidature multiple e contese: confronta strategie degli operatori e casi del round ICANN 2026.','round-2026':'Costi di candidatura, temi delle stringhe, attività dei candidati e strategie economiche nel round ICANN 2026.'},
-de:{market:'Vergleiche Website-Nutzung und registrierte Domains von TLDs mit Filtern, Daten, Quellen und Downloads.',cases:'Acht dokumentierte Fälle zeigen, wie Verlängerungen, Auktionen, Übernahmen, Regulierung und öffentliche Einnahmen Wert erzeugen.',portfolios:'Portfolios, Mehrfachbewerbungen und Konflikte: Strategien der Betreiber und Fälle aus der ICANN-Runde 2026 im Vergleich.','round-2026':'Bewerbungskosten, Themen der Zeichenfolgen, Tätigkeiten der Bewerber und wirtschaftliche Strategien der ICANN-Runde 2026.'},
+de:{market:'Vergleichen Sie Website-Nutzung und registrierte Domains von TLDs mit Filtern, Daten, Quellen und Downloads.',cases:'Acht dokumentierte Fälle zeigen, wie Verlängerungen, Auktionen, Übernahmen, Regulierung und öffentliche Einnahmen Wert erzeugen.',portfolios:'Portfolios, Mehrfachbewerbungen und Konflikte: Strategien der Betreiber und Fälle aus der ICANN-Runde 2026 im Vergleich.','round-2026':'Bewerbungskosten, Themen der Zeichenfolgen, Tätigkeiten der Bewerber und wirtschaftliche Strategien der ICANN-Runde 2026.'},
 fr:{market:'Comparez présence sur les sites et volumes de domaines des TLD, avec filtres, dates, sources et données téléchargeables.',cases:'Huit cas documentés montrent comment renouvellements, enchères, acquisitions, régulation et recettes publiques créent de la valeur.',portfolios:'Portefeuilles, candidatures multiples et contention : comparez les stratégies et des cas du round ICANN 2026.','round-2026':'Coûts de candidature, thèmes des chaînes, activités des candidats et stratégies économiques du round ICANN 2026.'}};
+
+// Keep each shared stylesheet at the original inline block's position. This
+// preserves the cascade and avoids loading unrelated module rules on a page.
 const styleIds=['city-namespace-style','tld-cultural-style','tld-market-style','audit-20261019-style','ctd-b2-cross-style','ctd-native-governance-css'];
 const https=new Map([['http://nic.berlin/','https://nic.berlin/'],['http://www.domini.cat/','https://domini.cat/'],['http://www.nic.amazon/','https://www.nic.amazon/'],['http://www.nic.io/','https://www.nic.io/'],['http://www.nic.swiss/','https://www.nic.swiss/'],['http://www.verisigninc.com/','https://www.verisigninc.com/']]);
-function files(d){let o=[];for(const e of fs.readdirSync(d,{withFileTypes:true})){if(['.git','node_modules','src'].includes(e.name))continue;let p=path.join(d,e.name);if(e.isDirectory())o=o.concat(files(p));else if(e.name.endsWith('.html'))o.push(p)}return o}
-const rel=p=>path.relative(root,p).split(path.sep).join('/'), prefix=r=>'../'.repeat(r.split('/').length-1);
-function lang(doc,r){let x=(doc.documentElement.getAttribute('lang')||'').slice(0,2);return L.includes(x)?x:(r.match(/(?:^|\/)(en|it|de|fr)(?:\/|$)/)||[])[1]||'en'}
-function meta(doc,a,k,v){let n=doc.querySelector('meta['+a+'="'+k+'"]');if(!n){n=doc.createElement('meta');n.setAttribute(a,k);doc.head.appendChild(n)}n.setAttribute('content',v)}
-function social(doc,d){const c=doc.querySelector('link[rel="canonical"]')?.getAttribute('href')||'';meta(doc,'name','description',d);meta(doc,'property','og:type','article');meta(doc,'property','og:title',doc.title);meta(doc,'property','og:description',d);meta(doc,'property','og:url',c);meta(doc,'property','og:image',BASE+'assets/og-preview.png');meta(doc,'name','twitter:card','summary_large_image');meta(doc,'name','twitter:title',doc.title);meta(doc,'name','twitter:description',d);meta(doc,'name','twitter:image',BASE+'assets/og-preview.png')}
-function kind(r){if(/^guides\//.test(r))return'guide';if(/^tlds\//.test(r))return'tld';if(/^behind-the-round\//.test(r))return'field';if(/^inside-the-round\//.test(r))return'timeline';if(/^applications\//.test(r))return'applications';if(/^economics\//.test(r))return'economics';if(/^research\/reader-study\//.test(r))return'reader';if(r==='research/index.html')return'research';if(r==='research/connecting-the-dots-working-paper-v1.html')return'paper';return null}
-function sheet(doc,r){let h=prefix(r)+'assets/editorial-shared.css?v='+pub.version;if(!doc.querySelector('link[href="'+h+'"]')){let n=doc.createElement('link');n.setAttribute('rel','stylesheet');n.setAttribute('href',h);doc.head.appendChild(n)}}
-function textReplace(n,pairs){if(!n)return;for(const c of [...n.childNodes]){if(c.nodeType===3){let x=c.data;for(const [a,b]of pairs)x=x.split(a).join(b);c.data=x}else textReplace(c,pairs)}}
-function aps(doc){const n=doc.querySelector('#aps-current-economics');if(n)n.setAttribute('data-aps-snapshot','2026-10-11')}
-function reader(doc,l,r){if(!/^research\/reader-study\/(en|it|de|fr)\/index\.html$/.test(r))return;social(doc,readerDesc[l]);meta(doc,'name','robots','index,follow,max-image-preview:large');for(const x of [...L,'x-default'])if(!doc.querySelector('link[rel="alternate"][hreflang="'+x+'"]')){let n=doc.createElement('link');n.setAttribute('rel','alternate');n.setAttribute('hreflang',x);n.setAttribute('href',BASE+'research/reader-study/'+(x==='x-default'?'en':x)+'/');doc.head.appendChild(n)}}
-function pageBadge(doc,l,k){if(!k||doc.querySelector('.editorialType'))return;let h=doc.querySelector('h1');if(!h)return;let p=doc.createElement('p');p.className='editorialType';p.textContent=type[l][k];h.parentNode.insertBefore(p,h);doc.body?.setAttribute('data-page-type',k)}
-function roundBanner(doc,l,r){if(pub.releasedOn>=pub.stringConfirmation)return;let yes=/^(inside-the-round|behind-the-round)\//.test(r)||/^applications\//.test(r)||/^economics\/(en|it|de|fr)\/round-2026\//.test(r)||/^tlds\/(en|it|de|fr)\/lugano\//.test(r);if(!yes||doc.querySelector('.roundStatus'))return;let h=doc.querySelector('h1');if(!h)return;let a=doc.createElement('aside');a.className='roundStatus';a.setAttribute('aria-label',round[l][0]);a.innerHTML='<strong>'+round[l][0]+'</strong><p>'+round[l][1]+'</p>';h.parentNode.insertBefore(a,h.nextSibling)}
-function hierarchy(doc,r,l){if(!(/^inside-the-round\/(en|it|de|fr)\/index\.html$/.test(r)||/^economics\/(en|it|de|fr)\/round-2026\/index\.html$/.test(r)))return;if(doc.querySelector('.auditHierarchyBridge'))return;let h=doc.querySelector('h1');if(!h)return;let x=doc.createElement('h2');x.className='srOnly auditHierarchyBridge';x.textContent={en:'Overview',it:'Quadro introduttivo',de:'Überblick',fr:'Vue d’ensemble'}[l];h.parentNode.insertBefore(x,h.nextSibling)}
-function tld(doc,l){let s=doc.querySelector('.profileCurrentState');if(s){let h=s.querySelector('h2');if(h)for(const c of [...h.childNodes])if(c.nodeType===3&&c.data.trim())c.data=' '+profile[l][0];for(const d of s.querySelectorAll('dt')){let x=d.textContent.trim();if(/Current root status|Stato attuale nella root|Aktueller Status in der Root-Zone|Statut actuel dans la racine/.test(x))d.textContent=profile[l][1];if(/Current-state verification|Verifica dello stato attuale|Prüfung des aktuellen Status|Vérification de l’état actuel/.test(x))d.textContent=profile[l][2]}}let m=doc.querySelector('meta[name="description"]');if(m&&(m.getAttribute('content')||'').length<90){let tail={en:' Explore its dated status, history and IANA/ICANN sources in this Connecting the Dots profile.',it:' Consulta stato datato, cronologia e fonti IANA/ICANN nella scheda di Connecting the Dots.',de:' Das Profil zeigt datierten Status, Verlauf sowie IANA- und ICANN-Quellen.',fr:' Consultez son statut daté, son historique et les sources IANA/ICANN dans cette fiche.'}[l];social(doc,(m.getAttribute('content')+tail).replace(/\s+/g,' ').trim())}}
-function styles(doc){let hit=false;for(const id of styleIds)for(const n of doc.querySelectorAll('style#'+id)){let b=n.textContent.trim()+'\n',d=crypto.createHash('sha256').update(b).digest('hex');let prev=styleMap.get(id);if(prev&&prev.d!==d)throw Error('shared style drift '+id);if(!prev)styleMap.set(id,{b,d});n.remove();hit=true}return hit}
-const styleMap=new Map();let count=0;
-for(const f of files(root)){let r=rel(f);if(r==='googlee97a475969dc49f2.html')continue;let src=fs.readFileSync(f,'utf8'),{document}=parseHTML(src),l=lang(document,r),k=kind(r);let hit=styles(document);if(hit||k){sheet(document,r);pageBadge(document,l,k)}roundBanner(document,l,r);hierarchy(document,r,l);if(/^tlds\//.test(r))tld(document,l);reader(document,l,r);if(r==='research/connecting-the-dots-working-paper-v1.html'){social(document,document.querySelector('meta[name="description"]')?.getAttribute('content')||'Working paper documenting methods, evidence, limits and interpretation of Connecting the Dots.');meta(document,'name','robots','index,follow,max-image-preview:large')}if(/^applications\//.test(r))social(document,appDesc[l]);let em=r.match(/^economics\/(en|it|de|fr)\/(market|cases|portfolios|round-2026)\/index\.html$/);if(em){social(document,econDesc[l][em[2]]);aps(document)}if(r.startsWith('prototype/'))meta(document,'name','robots','noindex,nofollow,noarchive');for(const a of document.querySelectorAll('a[href]'))if(https.has(a.getAttribute('href')))a.setAttribute('href',https.get(a.getAttribute('href')));fs.writeFileSync(f,document.toString()+'\n');count++}
-let css='/* Shared publication modules generated · v'+pub.version+' */\n'+[...styleMap].sort().map(([id,v])=>'/* '+id+' */\n'+v.b).join('\n')+'\n.editorialType{display:inline-flex;align-items:center;max-width:100%;margin:0 0 10px;padding:5px 9px;border:1px solid var(--border,#c9d1d9);border-radius:999px;color:var(--muted,#53606c);font-size:12px;font-weight:800;letter-spacing:.055em;text-transform:uppercase;line-height:1.25}.roundStatus{margin:16px 0 22px;padding:14px 16px;border-left:3px solid var(--accent-text,#1769aa);background:var(--surface2,#f4f7fa);border-radius:0 10px 10px 0;line-height:1.55}.roundStatus strong{display:block;margin-bottom:4px}.roundStatus p{margin:0;color:var(--muted,#53606c)}.srOnly.auditHierarchyBridge{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}@media(max-width:600px){.editorialType{font-size:11px}.roundStatus{padding:12px 14px;margin:12px 0 18px}}\n';
-fs.writeFileSync(path.join(root,'assets','editorial-shared.css'),css);
-let sm=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');if(!sm.includes('/research/reader-study/en/')){let alt=[...L,'x-default'].map(x=>'    <xhtml:link rel="alternate" hreflang="'+x+'" href="'+BASE+'research/reader-study/'+(x==='x-default'?'en':x)+'/" />').join('\n'),e=L.map(x=>'  <url>\n    <loc>'+BASE+'research/reader-study/'+x+'/</loc>\n    <lastmod>'+pub.releasedOn+'</lastmod>\n'+alt+'\n  </url>').join('\n');sm=sm.replace('</urlset>',e+'\n</urlset>')}if(sm.includes('/prototype/')||sm.includes('/src/'))throw Error('dev route in sitemap');fs.writeFileSync(path.join(root,'sitemap.xml'),sm);
-for(const r of L.flatMap(x=>['inside-the-round/'+x+'/index.html','economics/'+x+'/round-2026/index.html'])){let {document}=parseHTML(fs.readFileSync(path.join(root,r),'utf8')),hs=[...document.querySelectorAll('h1,h2,h3,h4,h5,h6')].map(h=>+h.tagName.slice(1));for(let i=1;i<hs.length;i++)if(hs[i]>hs[i-1]+1)throw Error(r+' heading '+hs[i-1]+'>'+hs[i])}
-let dm=path.join(root,'discovery','manifest.json');if(fs.existsSync(dm)){let manifest=JSON.parse(fs.readFileSync(dm,'utf8'));for(const item of manifest.pages||[]){let p=path.join(root,item.path,'index.html');if(!fs.existsSync(p))continue;let {document}=parseHTML(fs.readFileSync(p,'utf8'));let m=document.querySelector('meta[name="description"]');if(m)item.description=m.getAttribute('content')||item.description;}fs.writeFileSync(dm,JSON.stringify(manifest,null,2)+'\n')}
-for(const x of L){let h=fs.readFileSync(path.join(root,'research/reader-study',x,'index.html'),'utf8');if(!h.includes('og:image')||!h.includes('hreflang="x-default"'))throw Error('reader-study metadata '+x)}
-console.log('AUDIT_REMEDIATION_PASS',JSON.stringify({version:pub.version,html:count,sharedStyles:styleMap.size}));
+const rel=p=>path.relative(root,p).split(path.sep).join('/');
+const prefix=r=>'../'.repeat(r.split('/').length-1);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const rx=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+function files(d){return fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>{const p=path.join(d,e.name);return e.isDirectory()?files(p):e.isFile()&&e.name.endsWith('.html')?[p]:[]});}
+const pages=['index.html',...['en','it','de','fr','applications','inside-the-round','behind-the-round','guides','tlds','economics','research','explorer','discovery'].flatMap(d=>files(path.join(root,d)).map(rel))];
+function language(src,r){return (src.match(/<html\b[^>]*\blang="(en|it|de|fr)"/)||[])[1]||(r.match(/(?:^|\/)(en|it|de|fr)(?:\/|$)/)||[])[1]||'en';}
+function kind(r){if(/^guides\//.test(r))return'guide';if(/^tlds\//.test(r))return'tld';if(/^behind-the-round\//.test(r))return'field';if(/^inside-the-round\//.test(r))return'timeline';if(/^applications\//.test(r))return'applications';if(/^economics\//.test(r))return'economics';if(/^research\/reader-study\//.test(r))return'reader';if(r==='research/index.html')return'research';if(r===pub.paperPath)return'paper';return null;}
+function meta(src,attr,key,value){const tag='<meta '+attr+'="'+key+'" content="'+esc(value)+'">';const pattern=new RegExp('<meta\\b(?=[^>]*\\b'+attr+'="'+rx(key)+'")[^>]*>','i');return pattern.test(src)?src.replace(pattern,()=>tag):src.replace('</head>',tag+'\n</head>');}
+function social(src,description,canonical,title){for(const [attr,key,value] of [
+ ['name','description',description],['property','og:type','article'],['property','og:title',title],['property','og:description',description],['property','og:url',canonical],['property','og:image',BASE+'assets/og-preview.png'],['name','twitter:card','summary_large_image'],['name','twitter:title',title],['name','twitter:description',description],['name','twitter:image',BASE+'assets/og-preview.png']])src=meta(src,attr,key,value);return src;}
+function pageDescription(src,description,canonical){
+ return src.replace(/(<script\b[^>]*\btype="application\/ld\+json"[^>]*>)([\s\S]*?)(<\/script>)/g,(whole,open,body,close)=>{
+  const record=JSON.parse(body),entries=Array.isArray(record['@graph'])?record['@graph']:[record];let changed=false;
+  for(const entry of entries){
+   if(entry['@type']==='WebPage'&&entry.url===canonical&&entry.description!==description){entry.description=description;changed=true;}
+  }
+  return changed?open+JSON.stringify(record).replace(/</g,'\\u003c')+close:whole;
+ });
+}
+const snapshot={
+ en:['APS snapshot · 11 October 2026','The application data come from the public APS export acquired on 11 October 2026. This snapshot precedes String Confirmation Day (17 November), the announced milestone for confirmed strings and updated contention sets. It does not establish individual evaluation outcomes.','Official timetable'],
+ it:['Snapshot APS · 11 ottobre 2026','I dati delle candidature provengono dall’esportazione pubblica APS acquisita l’11 ottobre 2026. Questo snapshot precede lo String Confirmation Day (17 novembre), previsto per la pubblicazione delle stringhe confermate e delle contese aggiornate. Non attesta esiti individuali delle valutazioni.','Calendario ufficiale'],
+ de:['APS-Snapshot · 11. Oktober 2026','Die Bewerbungsdaten stammen aus dem am 11. Oktober 2026 erfassten öffentlichen APS-Export. Dieser Snapshot liegt vor dem String Confirmation Day (17. November), dem angekündigten Termin für bestätigte Zeichenfolgen und aktualisierte Contention Sets. Er belegt keine individuellen Bewertungsergebnisse.','Offizieller Zeitplan'],
+ fr:['Instantané APS · 11 octobre 2026','Les données des candidatures proviennent de l’export public APS acquis le 11 octobre 2026. Cet instantané précède le String Confirmation Day (17 novembre), prévu pour la publication des chaînes confirmées et des ensembles de candidatures en concurrence actualisés. Il n’atteste aucun résultat individuel d’évaluation.','Calendrier officiel']
+};
+const milestoneUrl='https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en';
+const studyLinks={en:'Reader study: protocol and observation sheet',it:'Studio con i lettori: protocollo e scheda di osservazione',de:'Leserstudie: Protokoll und Beobachtungsbogen',fr:'Étude auprès des lecteurs : protocole et grille d’observation'};
+const studyNotes={en:'Formative research materials; no participant results have been collected.',it:'Materiali per uno studio formativo; non sono stati raccolti risultati da partecipanti.',de:'Materialien für eine formative Studie; es wurden noch keine Ergebnisse von Teilnehmenden erhoben.',fr:'Documents pour une étude formative ; aucun résultat de participants n’a été recueilli.'};
+const styleMap=new Map();let extracted=0,savedBytes=0;
+for(const r of [...new Set(pages)]){
+ const file=path.join(root,r);let src=fs.readFileSync(file,'utf8');const original=src,l=language(src,r),k=kind(r);
+ for(const id of styleIds){
+  const pattern=new RegExp('<style\\b(?=[^>]*\\bid="'+id+'")[^>]*>([\\s\\S]*?)</style>','g');
+  src=src.replace(pattern,(_all,body)=>{
+   const css=body.trim()+'\n',digest=crypto.createHash('sha256').update(css).digest('hex'),existing=styleMap.get(id);
+   if(existing&&existing.digest!==digest)throw Error('Shared CSS drift: '+id+' in '+r);
+   if(!existing)styleMap.set(id,{css,digest});
+   const link='<link rel="stylesheet" data-shared-style="'+id+'" href="'+prefix(r)+'assets/shared/'+id+'.css?v='+pub.version+'">';
+   extracted++;savedBytes+=_all.length-link.length;return link;
+  });
+ }
+ // Reused research pages may already contain extracted modules from an older
+ // release. Refresh only these stylesheet URLs, retaining cascade position.
+ src=src.replace(/(<link\b[^>]*\bhref=")([^"?]*assets\/(?:shared\/(?:city-namespace-style|tld-cultural-style|tld-market-style|audit-20261019-style|ctd-b2-cross-style|ctd-native-governance-css)|editorial-shared)\.css)(?:\?[^"#]*)?("[^>]*>)/g,(_m,open,url,close)=>open+url+'?v='+pub.version+close);
+ const {document}=parseHTML(src),canonical=document.querySelector('link[rel="canonical"]')?.getAttribute('href')||BASE+r.replace(/index\.html$/,'');
+ let title=document.title,description=document.querySelector('meta[name="description"]')?.getAttribute('content')||'';
+ // Canonical reading pages receive one compact shared label; native tabbed
+ // pages retain their established chapter grammar.
+ if(k&&/<h1\b/.test(src)){
+  const eyebrow=document.querySelector('.discoveryHero > .discoveryEyebrow');
+  if(eyebrow){
+   // Reuse the existing page-type label. A second badge repeats the same
+   // information and makes the reading-page opening unnecessarily crowded.
+   const old=eyebrow.outerHTML;
+   for(const duplicate of document.querySelectorAll('.discoveryHero > .editorialType'))if(duplicate!==eyebrow)src=src.replace(duplicate.outerHTML,'');
+   eyebrow.classList.add('editorialType');eyebrow.textContent=type[l][k];
+   src=src.replace(old,eyebrow.outerHTML);
+  }else if(!document.querySelector('.editorialType'))src=src.replace(/<h1\b/, '<p class="editorialType">'+esc(type[l][k])+'</p>\n<h1');
+  if(!src.includes('data-page-type='))src=src.replace('<body','<body data-page-type="'+k+'"');
+  if(!src.includes('assets/editorial-shared.css'))src=src.replace('</head>','<link rel="stylesheet" href="'+prefix(r)+'assets/editorial-shared.css?v='+pub.version+'">\n</head>');
+ }
+ if(/^applications\//.test(r))description=appDesc[l];
+ const economic=r.match(/^economics\/(en|it|de|fr)\/(market|cases|portfolios|round-2026)\/index\.html$/);
+ if(economic)description=econDesc[l][economic[2]];
+ if(k==='tld'){
+  const pairs=[
+   ['Current status',profile[l][0]],['Stato attuale',profile[l][0]],['Aktueller Status',profile[l][0]],['Statut actuel',profile[l][0]],
+   ['Current root status',profile[l][1]],['Stato attuale nella root',profile[l][1]],['Aktueller Status in der Root-Zone',profile[l][1]],['Statut actuel dans la racine',profile[l][1]],
+   ['Current-state verification',profile[l][2]],['Verifica dello stato attuale',profile[l][2]],['Prüfung des aktuellen Status',profile[l][2]],['Vérification de l’état actuel',profile[l][2]]
+  ].sort((a,b)=>b[0].length-a[0].length);
+  // Replace only full labels, never source quotations or JSON provenance.
+  for(const [a,b]of pairs)src=src.split('>'+esc(a)+'<').join('>'+esc(b)+'<');
+  if(description.length<90){const tails={en:' Explore its dated status, history and IANA/ICANN sources in this Connecting the Dots profile.',it:' Consulta stato datato, cronologia e fonti IANA/ICANN nella scheda di Connecting the Dots.',de:' Das Profil zeigt datierten Status, Verlauf sowie IANA- und ICANN-Quellen.',fr:' Consultez son statut daté, son historique et les sources IANA/ICANN dans cette fiche.'};description+=tails[l];}
+ }
+ if(k==='reader'){
+  description=readerDesc[l];
+  for(const x of [...L,'x-default'])if(!src.includes('rel="alternate" hreflang="'+x+'"'))src=src.replace('</head>','<link rel="alternate" hreflang="'+x+'" href="'+BASE+'research/reader-study/'+(x==='x-default'?'en':x)+'/">\n</head>');
+  src=meta(src,'name','robots','index,follow,max-image-preview:large');
+ }
+ if(k==='paper')src=meta(src,'name','robots','index,follow,max-image-preview:large');
+ // Complete social descriptions from the same descriptive source, preserving
+ // every canonical URL and original Article/ScholarlyArticle record.
+ if(k&&description){src=social(src,description,canonical,title);src=pageDescription(src,description,canonical);}
+ const roundPage=/^(applications|inside-the-round)\//.test(r)||/^economics\/(en|it|de|fr)\/(round-2026|portfolios)\//.test(r)||/^tlds\/(en|it|de|fr)\/lugano\//.test(r)||/^behind-the-round\/(en|it|de|fr)\/(index\.html|wdo-identity\/|replacement-strings\/|objectors-eoi\/|background-screening\/)/.test(r);
+ if(roundPage&&!src.includes('class="roundStatus"')){
+  const text=snapshot[l],notice='<aside class="roundStatus" data-aps-snapshot="2026-10-11" aria-label="'+esc(text[0])+'"><strong>'+esc(text[0])+'</strong><p>'+esc(text[1])+' <a href="'+milestoneUrl+'">'+esc(text[2])+' ↗</a></p></aside>';
+  src=src.replace(/(<h1\b[^>]*>[\s\S]*?<\/h1>)/,(_m,h)=>h+'\n'+notice);
+ }
+ src=src.replace(/(<[^>]*\bid="aps-current-economics")(?![^>]*data-aps-snapshot)/, '$1 data-aps-snapshot="2026-10-11"');
+ // The fee section is a top-level section in its standalone chapter. Its
+ // child headings move with it; there is no invisible heading placeholder.
+ if(/^economics\/(en|it|de|fr)\/round-2026\/index\.html$/.test(r)){
+  let inOpening=false,done=false;
+  src=src.replace(/<h([1-6])\b([^>]*)>([\s\S]*?)<\/h\1>/g,(whole,level,attrs,content)=>{
+   const n=Number(level);if(n===1){inOpening=true;return whole;}if(!inOpening||done)return whole;if(n===2){done=true;return whole;}return '<h'+(n-1)+attrs+'>'+content+'</h'+(n-1)+'>';
+  });
+ }
+ // Reader Study is an ordinary, citable methodology page, with the same
+ // destination available from Research on every locale.
+ if(r==='research/index.html'||/^(en|it|de|fr)\/index\.html$/.test(r)||r==='index.html'||/^guides\/(en|it|de|fr)\/research\//.test(r)){
+  const href=prefix(r)+'research/reader-study/'+l+'/',link='<p class="readerStudyEntry"><a href="'+href+'">'+esc(studyLinks[l])+' →</a><br><small>'+esc(studyNotes[l])+'</small></p>';
+  if(r==='research/index.html'){
+   // reader_first replaces its closing navigation on every build. Keep this
+   // editorial link immediately before it, without adding whitespace each time.
+   const entry=/(?:\r?\n)*<p class="readerStudyEntry">[\s\S]*?<\/p>(?:\r?\n)*/g;
+   if([...src.matchAll(entry)].length>1)throw Error('Duplicate Reader Study entry');
+   src=src.replace(entry,'');
+   const next=/<nav\b(?=[^>]*\bclass="[^"]*\breaderNext\b[^"]*")[^>]*>/;
+   src=next.test(src)?src.replace(next,opening=>link+opening):src.replace('</main>',link+'</main>');
+  }else if(!src.includes('research/reader-study/'+l+'/'))src=src.replace(/(<[^>]*\bid="reader-study-protocol"[^>]*>)/,(_m,open)=>open+link);
+ }
+ for(const [a,b]of https)src=src.replaceAll('href="'+a+'"','href="'+b+'"');
+ // These text editions are another representation of the final reading page.
+ // Regenerate them after all date notes, heading repairs and source-link
+ // corrections, using the same converter and preface as the original renderer.
+ if(/^(guides|tlds|economics|discovery)\/(en|it|de|fr)\//.test(r)){
+  const markdownFile=file.replace(/\.html$/,'.md');
+  if(!fs.existsSync(markdownFile))throw Error('Missing reading-page text edition: '+r);
+  const finalDocument=parseHTML(src).document,main=finalDocument.querySelector('main');
+  if(!main)throw Error('Missing reading-page main content: '+r);
+  const text='<!-- Canonical: '+canonical+' | Site edition: '+pub.version+' | Language: '+l+' -->\n\n'+markdown(main,canonical);
+  if(fs.readFileSync(markdownFile,'utf8')!==text)fs.writeFileSync(markdownFile,text);
+ }
+ if(src!==original)fs.writeFileSync(file,src);
+}
+fs.mkdirSync(path.join(root,'assets/shared'),{recursive:true});
+for(const [id,v]of styleMap)fs.writeFileSync(path.join(root,'assets/shared',id+'.css'),v.css);
+const css=`/* Shared publication modules · badges and dated source notes · v${pub.version} */
+.editorialType{display:inline-flex;align-items:center;max-width:100%;margin:0 0 10px;padding:5px 9px;border:1px solid var(--border,#c9d1d9);border-radius:999px;color:var(--muted,#53606c);font-size:12px;font-weight:750;letter-spacing:.04em;text-transform:uppercase;line-height:1.35}
+.roundStatus{margin:16px 0 22px;padding:14px 16px;border-left:3px solid var(--accent-text,#1769aa);background:var(--surface2,#f4f7fa);border-radius:0 10px 10px 0;line-height:1.55;font-size:14px}
+.roundStatus strong{display:block;margin-bottom:4px}.roundStatus p{margin:0;color:var(--muted,#53606c)}
+@media(max-width:600px){.editorialType{font-size:11px}.roundStatus{padding:12px 14px;margin:12px 0 18px}}
+`;
+fs.writeFileSync(path.join(root,'assets/editorial-shared.css'),css);
+let sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
+if(!sitemap.includes('/research/reader-study/en/')){
+ const alternates=[...L,'x-default'].map(x=>'    <xhtml:link rel="alternate" hreflang="'+x+'" href="'+BASE+'research/reader-study/'+(x==='x-default'?'en':x)+'/" />').join('\n');
+ sitemap=sitemap.replace('</urlset>',L.map(x=>'  <url>\n    <loc>'+BASE+'research/reader-study/'+x+'/</loc>\n    <lastmod>'+pub.releasedOn+'</lastmod>\n'+alternates+'\n  </url>').join('\n')+'\n</urlset>');
+}
+if(sitemap.includes('/prototype/')||sitemap.includes('/src/'))throw Error('Development route in sitemap');
+fs.writeFileSync(path.join(root,'sitemap.xml'),sitemap);
+const manifestPath=path.join(root,'discovery/manifest.json'),manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
+for(const page of manifest.pages){const {document}=parseHTML(fs.readFileSync(path.join(root,page.path,'index.html'),'utf8'));page.description=document.querySelector('meta[name="description"]').getAttribute('content');}
+fs.writeFileSync(manifestPath,JSON.stringify(manifest,null,2)+'\n');
+console.log('AUDIT_REMEDIATION_PASS',JSON.stringify({version:pub.version,html:pages.length,sharedStyles:styleMap.size,extractedBlocks:extracted,inlineBytesRemoved:savedBytes}));

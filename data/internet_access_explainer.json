@@ -474,8 +474,8 @@
       "fieldLink": "2026 Field Notes",
       "atlasLink": "Back to the main atlas",
       "methodTitle": "Editorial note",
-      "methodBody": "Reviewed 10 October 2026. The examples are historical, tied to stated periods, and may not reflect present reachability. This page is an educational model and makes no technical probes from the visitor's browser. It does not attribute individual intentions without documentary evidence and remains outside frozen Research Release RR1.",
-      "reviewedLabel": "Last reviewed",
+      "methodBody": "Initial source verification: 10 October 2026. The examples are historical, tied to stated periods, and may not reflect present reachability. This page is an educational model and makes no technical probes from the visitor's browser. It does not attribute individual intentions without documentary evidence and remains outside frozen Research Release RR1.",
+      "reviewedLabel": "Last editorial review",
       "sourceLabel": "Source",
       "simPreconditionLabel": "Before the visit: the name must exist",
       "simPreconditionBody": "The registry and registrar manage the domain's registration and authoritative DNS status. They are not contacted as an extra network hop every time someone opens a website."
@@ -669,8 +669,8 @@
       "fieldLink": "Note dal campo 2026",
       "atlasLink": "Torna all'atlante",
       "methodTitle": "Nota editoriale",
-      "methodBody": "Verificato il 10 ottobre 2026. Gli esempi sono storici e circoscritti a periodi definiti: potrebbero non descrivere la raggiungibilità attuale. La pagina è un modello didattico e non esegue alcuna misura dalla connessione del visitatore. Non attribuisce intenzioni individuali in mancanza di prove e rimane fuori dalla release scientifica RR1 congelata.",
-      "reviewedLabel": "Ultima verifica",
+      "methodBody": "Prima verifica delle fonti: 10 ottobre 2026. Gli esempi sono storici e circoscritti a periodi definiti: potrebbero non descrivere la raggiungibilità attuale. La pagina è un modello didattico e non esegue alcuna misura dalla connessione del visitatore. Non attribuisce intenzioni individuali in mancanza di prove e rimane fuori dalla release scientifica RR1 congelata.",
+      "reviewedLabel": "Ultima revisione editoriale",
       "sourceLabel": "Fonte",
       "simPreconditionLabel": "Prima della visita: il nome deve esistere",
       "simPreconditionBody": "Il registro e il registrar gestiscono la registrazione e la configurazione DNS autorevole del dominio. Non sono un nodo che il browser attraversa a ogni visita."
@@ -864,8 +864,8 @@
       "fieldLink": "Beobachtungen zur Runde 2026",
       "atlasLink": "Zurück zum Atlas",
       "methodTitle": "Redaktioneller Hinweis",
-      "methodBody": "Geprüft am 10. Oktober 2026. Die Beispiele sind historisch, auf bestimmte Zeiträume begrenzt und nicht als Aussagen über die aktuelle Erreichbarkeit gedacht. Diese Seite führt keine Messung der Verbindung des Besuchers durch. Individuelle Motive werden ohne Belege nicht unterstellt. Die Seite ist kein Teil der eingefrorenen Forschungsrelease RR1.",
-      "reviewedLabel": "Zuletzt geprüft",
+      "methodBody": "Erste Quellenprüfung: 10. Oktober 2026. Die Beispiele sind historisch, auf bestimmte Zeiträume begrenzt und nicht als Aussagen über die aktuelle Erreichbarkeit gedacht. Diese Seite führt keine Messung der Verbindung des Besuchers durch. Individuelle Motive werden ohne Belege nicht unterstellt. Die Seite ist kein Teil der eingefrorenen Forschungsrelease RR1.",
+      "reviewedLabel": "Letzte redaktionelle Prüfung",
       "sourceLabel": "Quelle",
       "simPreconditionLabel": "Vor dem Aufruf: Der Name muss bestehen",
       "simPreconditionBody": "Registry und Registrar verwalten Registrierung und autoritativen DNS-Status der Domain. Beim Aufruf einer Website ist dies kein zusätzlicher Netzwerkknoten, der jedes Mal passiert wird."
@@ -1059,8 +1059,8 @@
       "fieldLink": "Notes de terrain 2026",
       "atlasLink": "Retour à l'atlas",
       "methodTitle": "Note éditoriale",
-      "methodBody": "Vérifié le 10 octobre 2026. Les exemples sont historiques, propres à des périodes définies et ne décrivent pas nécessairement l'accessibilité actuelle. Cette page est un modèle pédagogique et ne teste pas la connexion du visiteur. Aucune intention individuelle n'est attribuée sans preuve ; le contenu reste distinct de la release scientifique RR1 figée.",
-      "reviewedLabel": "Dernière vérification",
+      "methodBody": "Première vérification des sources : 10 octobre 2026. Les exemples sont historiques, propres à des périodes définies et ne décrivent pas nécessairement l'accessibilité actuelle. Cette page est un modèle pédagogique et ne teste pas la connexion du visiteur. Aucune intention individuelle n'est attribuée sans preuve ; le contenu reste distinct de la release scientifique RR1 figée.",
+      "reviewedLabel": "Dernière révision éditoriale",
       "sourceLabel": "Source",
       "simPreconditionLabel": "Avant la visite : le nom doit exister",
       "simPreconditionBody": "Le registre et le bureau d'enregistrement gèrent l'inscription du domaine et sa configuration DNS faisant autorité. Ils ne constituent pas une étape réseau supplémentaire lors de chaque visite."

@@ -1,8 +1,16 @@
 /* Load the optional application graph only when Explorer is opened. */
 (()=>{'use strict';
  const root=new URL(document.documentElement.dataset.ctdRoot||'./',location.href);
+ // Both optional loaders use the publication identity, matching the URLs in
+ // standalone pages so a warm cache cannot mix two technical editions.
+ const assetURL=window.CTD_ASSET_URL||(window.CTD_ASSET_URL=path=>{
+  const url=new URL(path,root);
+  const version=window.DOT_PUBLICATION?.version||document.querySelector('meta[name="ctd-version"]')?.content||document.body?.dataset.build;
+  if(version)url.searchParams.set('v',version);
+  return url.href;
+ });
  let pending=null;
- const load=path=>new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=new URL(path,root).href;script.onload=resolve;script.onerror=()=>{script.remove();reject(new Error('APS data unavailable'))};document.head.append(script)});
+ const load=path=>new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=assetURL(path);script.onload=resolve;script.onerror=()=>{script.remove();reject(new Error('APS data unavailable'))};document.head.append(script)});
  window.CTD_LOAD_APS=(force=false)=>{
   const panel=document.getElementById('aps-native');
   const requested=location.hash==='#aps-native'||document.getElementById('apsAtlasBridge')?.closest('details')?.open||panel?.closest('details')?.open;

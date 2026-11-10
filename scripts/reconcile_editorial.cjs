@@ -10,6 +10,15 @@ const edit=read('data/audit_20261018_editorial.json'),analytics=read('data/aps_2
 const manifest=read('data/manifest.json');
 const e=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const categoryKeys={'Technology, software & infrastructure':'sectorTech','AI & automation':'sectorAI','Crypto & digital assets':'sectorCrypto','Retail & commerce':'sectorRetail','Finance & insurance':'sectorFinance','Media, social & communications':'sectorMedia','Cybersecurity, identity & trust':'sectorTrust','Health & life sciences':'sectorHealth','Education & research':'sectorEducation','Energy, industrial & materials':'sectorEnergy','Travel & hospitality':'sectorTravel','Consumer & lifestyle':'sectorConsumer','Gaming, sports & entertainment':'sectorGaming','Professional & business services':'sectorProfessional','Food & beverage':'sectorFood','Automotive & mobility':'sectorAutomotive','Telecom & connectivity':'sectorTelecom','Real estate & construction':'sectorRealEstate'};
+function appendObjectorsCalendar(html,markup){
+ const starts=[...html.matchAll(/<section\b[^>]*\bdata-field-investigation-teaser="objectors-eoi"[^>]*>/g)];
+ assert.equal(starts.length,1,'Expected one native Independent Objector investigation teaser');
+ const scan=/<\/?section\b[^>]*>/g;scan.lastIndex=starts[0].index;let depth=0,closing;
+ for(let match;(match=scan.exec(html));){depth+=match[0].startsWith('</')?-1:1;if(depth===0){closing=match.index;break;}}
+ assert.ok(closing>starts[0].index,'Cannot identify the Independent Objector teaser boundary');
+ assert.ok(!html.slice(starts[0].index,closing).includes('data-objectors-calendar-note'),'Objector calendar already inserted');
+ return html.slice(0,closing)+markup+html.slice(closing);
+}
 for(const lang of ['en','it','de','fr']){
  const t=(key,vars={})=>{let out=dict[lang][key];assert.ok(out,'Missing '+lang+' '+key);for(const [k,v] of Object.entries(vars))out=out.split('{'+k+'}').join(v);return out;};
  const L=edit.locales[lang];assert.deepEqual(Object.keys(L).sort(),Object.keys(edit.locales.en).sort());
@@ -84,12 +93,18 @@ for(const lang of ['en','it','de','fr']){
   cem.querySelector('h2').after(make(`<p class="sub">${e(t('cemeterySub'))}</p>`));
   for(const obs of edit.cemetery){
    const heading=[...cem.querySelectorAll('h3')].find(n=>n.textContent===obs.string);assert.ok(heading);
-   heading.after(make(`<dl class="lifecycleObservation"><dt>${e(t('cemeteryContractStatus'))}</dt><dd><a href="${e(obs.contractSource)}" target="_blank" rel="noopener noreferrer">${e(t(obs.contractKey))}</a></dd><dt>${e(t('cemeteryRootStatus'))}</dt><dd><a href="${e(obs.rootSource)}" target="_blank" rel="noopener noreferrer">${e(t(obs.rootKey))}</a></dd><dt>${e(t('cemeteryVerified',{date:localDate(edit.reviewedOn)}))}</dt><dd><time datetime="${edit.reviewedOn}">${localDate(edit.reviewedOn)}</time></dd></dl>`));
+   const verifiedOn=obs.verifiedOn||edit.reviewedOn;
+   assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(verifiedOn)&&verifiedOn<=pub.releasedOn,'Invalid lifecycle observation date: '+obs.string);
+   heading.after(make(`<dl class="lifecycleObservation"><dt>${e(t('cemeteryContractStatus'))}</dt><dd><a href="${e(obs.contractSource)}" target="_blank" rel="noopener noreferrer">${e(t(obs.contractKey))}</a></dd><dt>${e(t('cemeteryRootStatus'))}</dt><dd><a href="${e(obs.rootSource)}" target="_blank" rel="noopener noreferrer">${e(t(obs.rootKey))}</a></dd><dt>${e(t('cemeteryVerified',{date:localDate(verifiedOn)}))}</dt><dd><time datetime="${verifiedOn}">${localDate(verifiedOn)}</time></dd></dl>`));
   }
 
   // The public-visibility calendar belongs next to the round overview as well
   // as in the dated field investigation; it predicts no individual outcome.
   section('reveal').append(make(`<aside class="panel apsVisibility"><h2>${e(t('field18CalendarTitle'))}</h2><p>${e(t('field18CalendarBody'))}</p><p class="note">${e(t('field18CalendarLimit'))}</p><div class="srcs"><a href="https://newgtldprogram-aps.icann.org/about" target="_blank" rel="noopener noreferrer">ICANN APS · About ↗</a><a href="https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en" target="_blank" rel="noopener noreferrer">ICANN · ${e(t('insideNav'))} ↗</a></div></aside>`));
+
+  // Keep the general-public objection calendar distinct from the separate
+  // Independent Objector window, next to the native investigation teaser.
+  const objectorsNote=`<aside class="note" data-objectors-calendar-note><p><strong data-i18n="field03CalendarTitle">${e(t('field03CalendarTitle'))}</strong></p><p data-i18n="field03CalendarBody">${e(t('field03CalendarBody'))}</p><p data-i18n="field03CalendarLimit">${e(t('field03CalendarLimit'))}</p><p><a href="https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en" target="_blank" rel="noopener noreferrer"><span data-i18n="field03CalendarSource">${e(t('field03CalendarSource'))}</span> ↗</a></p></aside>`;
 
   // Classify every existing resource and label the date as a file release,
   // without pretending that all underlying observations were made that day.
@@ -101,11 +116,11 @@ for(const lang of ['en','it','de','fr']){
    const group=href.includes('/downloads/')||href.startsWith('downloads/')||frozen.has(base)?'archives':official.has(base)?'official':'derived';
    resourceGroups[group].push(card);
    const record=manifest.files.find(x=>x.path===base);
-   if(record){const metadata=make(`<small class="resourceMetadata">CSV · ${e(t('resourcesRows',{count:nf.format(record.records)}))} · ${e(t('resourcesFileRelease',{version:pub.version}))}</small>`);card.append(metadata);}
+   if(record){const metadata=make(`<small class="resourceMetadata">CSV · ${e(t(record.records===1?'resourcesRowsOne':'resourcesRows',{count:nf.format(record.records)}))} · ${e(t('resourcesFileRelease',{version:pub.version}))}</small>`);card.append(metadata);}
    if(base==='aps_2026_record_observations.csv'){const span=card.querySelector('span');span.removeAttribute('data-i18n');span.textContent=t('apsAtlasDownloadHistorySub');}
   }
   for(const [name,label,desc] of [['aps_2026_current_analytics.csv',L.download,L.downloadSub],['aps_2026_applicant_distribution.csv',L.geoDownload,L.sourceDate],['aps_2026_location_distribution.csv',L.locationDownload,L.sourceDate],['aps_2026_region_distribution.csv',L.regionDownload,L.sourceDate]]){
-   const card=make(`<a class="downloadCard" href="${prefix}data/${name}" download><b>${e(label)}</b><span>${e(desc)}</span></a>`);const record=manifest.files.find(x=>x.path===name);assert.ok(record);card.append(make(`<small class="resourceMetadata">CSV · ${e(t('resourcesRows',{count:nf.format(record.records)}))} · ${e(t('resourcesFileRelease',{version:pub.version}))}</small>`));resourceGroups.derived.unshift(card);
+   const card=make(`<a class="downloadCard" href="${prefix}data/${name}" download><b>${e(label)}</b><span>${e(desc)}</span></a>`);const record=manifest.files.find(x=>x.path===name);assert.ok(record);card.append(make(`<small class="resourceMetadata">CSV · ${e(t(record.records===1?'resourcesRowsOne':'resourcesRows',{count:nf.format(record.records)}))} · ${e(t('resourcesFileRelease',{version:pub.version}))}</small>`));resourceGroups.derived.unshift(card);
   }
   const fragment=document.createDocumentFragment();
   for(const [group,key] of [['official','Official'],['derived','Derived'],['archives','Archives']]){const g=make(`<div class="resourceGroup"><h3>${e(t('resources'+key+'Title'))}</h3><p>${e(t('resources'+key+'Intro'))}</p><div class="downloads"></div></div>`);g.querySelector('.downloads').append(...resourceGroups[group]);fragment.append(g);}
@@ -121,6 +136,9 @@ for(const lang of ['en','it','de','fr']){
    assert.ok(end>start.index,'Cannot identify original section '+id);
    output=output.slice(0,start.index)+document.getElementById(id).outerHTML+output.slice(end);
   }
+  // Preserve the native Field Notes and all following chapters byte-for-byte;
+  // only insert the note at the matched teaser's own closing tag.
+  output=appendObjectorsCalendar(output,objectorsNote);
   fs.writeFileSync(file,output);
  }
 }

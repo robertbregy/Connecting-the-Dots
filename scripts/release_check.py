@@ -24,7 +24,7 @@ def html_text_present(raw, expected):
     return str(expected) in unescape(raw)
 
 def html_tag_text_present(raw, tag, expected):
-    return re.search(r'<'+re.escape(tag)+r'\\b[^>]*>'+re.escape(str(expected))+r'</'+re.escape(tag)+r'>', unescape(raw)) is not None
+    return re.search(r'<'+re.escape(tag)+r'\b[^>]*>'+re.escape(str(expected))+r'</'+re.escape(tag)+r'>', unescape(raw)) is not None
 
 def check_internal_refs(html_path):
     text=html_path.read_text(encoding='utf-8')
@@ -1404,14 +1404,20 @@ if not shared_css.exists() or 'Shared publication modules' not in shared_css.rea
     fail('Shared editorial CSS bundle missing')
 obsolete_style_ids=('city-namespace-style','tld-cultural-style','tld-market-style',
                     'audit-20261019-style','ctd-b2-cross-style','ctd-native-governance-css')
-for path in ROOT.rglob('*.html'):
+from stage_public_site import public_files, validate_publication
+for path in public_files(ROOT):
+    if path.suffix != '.html':
+        continue
     rel=path.relative_to(ROOT).as_posix()
-    if rel.startswith(('src/','node_modules/','.git/')) or rel=='googlee97a475969dc49f2.html':
+    if rel=='googlee97a475969dc49f2.html':
         continue
     page=path.read_text(encoding='utf-8')
     if any(f'id="{style_id}"' in page for style_id in obsolete_style_ids):
         fail('Repeated inline module CSS survived remediation: '+rel)
-    if any(url in page for url in (
+    # Validate navigation targets; displayed original URLs and provenance may
+    # legitimately retain the verbatim URL recorded in the IANA source.
+    hrefs=set(re.findall(r'\bhref=["\']([^"\']+)["\']',page))
+    if any(url in hrefs for url in (
         'http://nic.berlin/','http://www.domini.cat/','http://www.nic.amazon/',
         'http://www.nic.io/','http://www.nic.swiss/','http://www.verisigninc.com/')):
         fail('Known HTTP source link was not upgraded: '+rel)
@@ -1432,7 +1438,9 @@ for lang in LANGS:
 
 for rel in [f'inside-the-round/{lang}/index.html' for lang in LANGS] + [f'economics/{lang}/round-2026/index.html' for lang in LANGS]:
     page=(ROOT/rel).read_text(encoding='utf-8')
-    headings=[int(x) for x in re.findall(r'<h([1-6])\\b',page,re.I)]
+    headings=[int(x) for x in re.findall(r'<h([1-6])\b',page,re.I)]
+    if not headings or headings[0] != 1:
+        fail('Heading validation found no main heading: '+rel)
     if any(headings[i] > headings[i-1] + 1 for i in range(1,len(headings))):
         fail('Heading hierarchy jump after remediation: '+rel)
 
@@ -1442,5 +1450,14 @@ for lang in LANGS:
         fail('Dated APS snapshot metadata missing from Economics: '+lang)
     if 'roundStatus' not in economics and publication_meta['releasedOn'] < publication_meta['stringConfirmation']:
         fail('Pre-String Confirmation status missing from Economics: '+lang)
+
+# The deploy payload is a separate, validated surface; never ship the checkout.
+validate_publication(ROOT)
+# Validate summary keys stored in data as well as HTML data-i18n references.
+for locale in LANGS:
+    for release in json_file('release_history.json')['releases']:
+        key=release['summaryKey']
+        if not translations[locale].get(key):
+            fail('Missing localized release history: '+locale+'/'+key)
 
 print(f'RELEASE CHECK PASS · v{version} · 1,849 Explorer records · 7,679 life-history events · 4 languages')

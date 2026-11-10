@@ -1,3 +1,14 @@
+# v0.7.108 — 10 November 2026
+
+- Closed the 10 November editorial audit: restored twelve missing historical release summaries in all four languages, corrected WDO language continuity and its standalone headline, reconciled displayed source-check dates, localized counts and aligned German reader guidance.
+- Made the .meow crowdfunding story directly discoverable from its Explorer profile and the default documented-story search; preserved the original evidence and added a stable story anchor.
+- Added accessible theme controls to all reading pages, distinct Economics overview/interactivity labels, an eight-case local index, and versioned lazy APS/map assets.
+- Made APS snapshot dates explicit, kept application outcomes conditional, and corrected real heading levels. Reader Study now has reciprocal alternates, sitemap entries and Research links, explicitly as an unperformed protocol.
+- Completed reading-page social metadata and reused six CSS modules at their original cascade positions.
+- Published a validated allowlist payload instead of the repository checkout; development sources/prototypes remain in GitHub. Live verification also checks that excluded files return 404.
+- Added a bounded, read-only weekly source-health report and snapshot-age policy. Restricted requests and network uncertainty are distinct from confirmed errors; RR1/RR2 archives do not expire.
+- Corrected the escaped heading/title validator patterns and removed automatic editorial signoff from the build. Original section baselines, official datasets and all previous technical/scientific archives remain protected.
+
 # v0.7.106 - 9 November 2026
 
 - Introduce Internet names with one explanatory homepage opening and a labelled domain illustration in EN, IT, DE and FR.

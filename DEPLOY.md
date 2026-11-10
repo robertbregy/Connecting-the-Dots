@@ -80,3 +80,11 @@ The live check covers the native and standalone pages, the working paper from `p
 ## robots.txt note
 
 This project is published below `/Connecting-the-Dots/`. Search engines only treat `/robots.txt` at the GitHub Pages host root as authoritative. The project copy is retained for documentation and sitemap discoverability; page-level `meta robots`, canonical metadata and the sitemap remain the effective project-level controls.
+
+## Explicit public payload and source health (v0.7.108)
+
+Pages stages the committed publication with `python3 scripts/stage_public_site.py --output _site`. The allowlist is validated before copying; sources, development scripts, prototypes and internal audits remain in GitHub. Public pages, runtime assets, cited datasets, scientific documents and historical downloads retain their URLs. `release_check.py` enforces the same dependency check before promotion. Live smoke verifies excluded paths return 404 as well as comparing public bytes.
+
+The **External source health** workflow runs weekly and on manual dispatch. It performs bounded read-only checks and saves JSON/Markdown evidence. HTTP restrictions, successful redirects, confirmed failures and unresolved network checks remain separate. Its age thresholds are editorial reminders; they never alter official data or mark immutable research releases as expired. Read the report before replacing a source.
+
+The v0.7.108 review recorder is an explicit maintenance operation after inspecting the candidate. It is deliberately excluded from `build.py`: rebuilding must validate the signed file hashes, not silently approve new ones.
