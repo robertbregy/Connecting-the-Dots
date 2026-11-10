@@ -1,0 +1,58 @@
+name: External source health
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 5 * * 1'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ctd-external-source-health
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Check out publication
+        uses: actions/checkout@v5
+      - name: Check external source reachability
+        id: sources
+        continue-on-error: true
+        env:
+          CTD_LINK_REPORT: artifacts/external-source-health.json
+        run: python3 scripts/check_external_sources.py
+      - name: Summarize
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          p=Path("artifacts/external-source-health.json")
+          with open(os.environ["GITHUB_STEP_SUMMARY"],"a") as out:
+              out.write("## External source health\n\n")
+              if not p.exists():
+                  out.write("No report was produced.\n")
+              else:
+                  d=json.loads(p.read_text())
+                  out.write(f"Checked **{d['total']}** distinct external URLs.\n\n")
+                  for k,v in sorted(d["summary"].items()):
+                      out.write(f"- {k}: **{v}**\n")
+                  hard=[r for r in d["results"] if r["kind"]=="hard-failure"]
+                  if hard:
+                      out.write("\n### Confirmed 404/410 candidates\n")
+                      for r in hard[:50]: out.write(f"- {r['status']} {r['url']}\n")
+          PY
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: external-source-health
+          path: artifacts/external-source-health.json
+          if-no-files-found: warn
+      - name: Fail only on confirmed hard failures
+        if: steps.sources.outcome == 'failure'
+        run: exit 1
