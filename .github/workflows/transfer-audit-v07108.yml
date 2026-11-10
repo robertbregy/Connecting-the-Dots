@@ -20,8 +20,8 @@ jobs:
     env:
       CTD_TARGET_REF: refs/heads/feat/audit-v07108
       CTD_TRANSPORT_REF: refs/heads/transport/audit-v07108-20261110
-      CTD_SOURCE_TREE: 57d738a81a778aa3e1d82d5f25d3d976610c103d
-      CTD_PAYLOAD_SHA256: fe8bcc8b5abdd4b707bd18f46e5fab37e3224504871a044ac8b342515b509781
+      CTD_SOURCE_TREE: 947952e1072766b760e656838b528f7933f158dc
+      CTD_PAYLOAD_SHA256: 9cf05138d51da0b7aefc03ce8e00d12659eb2adcf7615af21c7f4ab3d743f859
       GIT_TERMINAL_PROMPT: '0'
       PYTHONDONTWRITEBYTECODE: '1'
 
@@ -48,13 +48,13 @@ jobs:
           assert manifest['repository'] == os.environ['GITHUB_REPOSITORY'] == 'robertbregy/Connecting-the-Dots'
           assert manifest['transport_ref'] == os.environ['GITHUB_REF'] == os.environ['CTD_TRANSPORT_REF']
           assert manifest['target_ref'] == os.environ['CTD_TARGET_REF']
-          assert re.fullmatch(r'[0-9a-f]{40}', manifest['expected_target_sha']), 'Fill the exact W0 SHA before uploading ready.json'
+          assert re.fullmatch(r'[0-9a-f]{40}', manifest['expected_target_sha']), 'Fill the exact candidate-base SHA before uploading ready.json'
           assert manifest['source_tree_sha'] == os.environ['CTD_SOURCE_TREE']
           assert manifest['gzip_sha256'] == os.environ['CTD_PAYLOAD_SHA256']
-          assert manifest['source_file_count'] == 42
-          assert manifest['gzip_bytes'] == 655113
+          assert manifest['source_file_count'] == 1
+          assert manifest['gzip_bytes'] == 9146
           assert manifest['chunk_bytes'] == 18432
-          assert manifest['chunk_count'] == math.ceil(manifest['gzip_bytes'] / manifest['chunk_bytes']) == 36
+          assert manifest['chunk_count'] == math.ceil(manifest['gzip_bytes'] / manifest['chunk_bytes']) == 1
           parts = directory
           expected = [f'part-{i:03d}.b64' for i in range(manifest['chunk_count'])]
           assert sorted(p.name for p in parts.iterdir() if p.name != 'ready.json') == expected, 'Missing or unexpected payload chunks'
@@ -75,7 +75,7 @@ jobs:
               raw = stream.read(8 * 1024 * 1024 + 1)
           assert len(raw) <= 8 * 1024 * 1024, 'Uncompressed payload exceeds its bound'
           records = json.loads(raw)
-          assert isinstance(records, list) and len(records) == 42
+          assert isinstance(records, list) and len(records) == 1
           runtime = pathlib.Path(os.environ['RUNNER_TEMP'])
           (runtime / 'ctd-v108-sources.json').write_bytes(raw)
           manifest['transport_commit'] = os.environ['GITHUB_SHA']
@@ -83,10 +83,10 @@ jobs:
           (runtime / 'ctd-v108-transport-state.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
           with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
               output.write('expected_target_sha=' + manifest['expected_target_sha'] + '\n')
-          print('SOURCE_PAYLOAD_VERIFIED', manifest['gzip_sha256'], len(raw), 'bytes; 42 files')
+          print('SOURCE_PAYLOAD_VERIFIED', manifest['gzip_sha256'], len(raw), 'bytes; 1 file')
           PY
 
-      - name: Check out the exact authorized feature base W0
+      - name: Check out the exact authorized feature candidate base
         uses: actions/checkout@v5
         with:
           ref: ${{ steps.payload.outputs.expected_target_sha }}
