@@ -26,7 +26,7 @@ def source_chip(url: str, label: str) -> str:
     return f'<a class="sourceChip" href="{e(url)}" target="_blank" rel="noopener noreferrer">{e(label)} ↗</a>'
 
 
-def render_section(lang: str) -> str:
+def render_section(lang: str, prefix: str) -> str:
     L = DATA["locales"][lang]
     S = DATA["sources"]
     mechanisms = "".join(
@@ -91,7 +91,7 @@ def render_section(lang: str) -> str:
 <div class="panel">
   <h2>{e(L["casesTitle"])}</h2><p class="sub sectionLead">{e(L["casesBody"])}</p>
   <div class="boundaryCrosslink"><span>{e(L["bridgeDisputes"])}</span><a class="sectionLink" data-open-section="disputes" href="#disputes">{e(L["readDisputes"])} →</a></div>
-  <p class="small"><a class="sourceChip" href="../behind-the-round/{lang}/objectors-eoi/" data-legal-objectors-link>{e(L["readObjectors"])} →</a></p>
+  <p class="small"><a class="sourceChip" href="{e(prefix)}behind-the-round/{lang}/objectors-eoi/" data-legal-objectors-link>{e(L["readObjectors"])} →</a></p>
 </div>
 <div class="panel">
   <h2>{e(L["sourcesTitle"])}</h2><p class="sub">{e(L["sourcesNote"])}</p>
@@ -118,7 +118,7 @@ def inject(path: Path, lang: str) -> None:
     marker = '<section class="section" id="disputes">'
     if html.count(marker) != 1:
         raise SystemExit(f"Legal insertion anchor missing or duplicated: {path}")
-    html = html.replace(marker, render_section(lang) + marker, 1)
+    prefix = "" if path.name == "index.html" and path.parent == ROOT else "../"\n    html = html.replace(marker, render_section(lang, prefix) + marker, 1)
     hub_start = html.find('<section class="section iaHub" id="ia-outcomes"')
     hub_end = html.find('</section>', hub_start)
     if hub_start < 0 or hub_end < 0:
