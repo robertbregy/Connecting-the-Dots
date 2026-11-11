@@ -1,6 +1,6 @@
-# Connecting the Dots — v0.7.108
+# Connecting the Dots — v0.7.109
 
-**v0.7.108 · 10 November 2026.** Completed the site audit with dated snapshot labels, consistent reading controls and metadata, repaired multilingual paths, clearer Economics navigation and a direct .meow story link. Publication now uses an explicitly validated public payload. Weekly source-health and snapshot-freshness reports support the next editorial review without rewriting historical research evidence.
+**v0.7.109 · 11 November 2026.** Added a source-backed legal and procedural layer inside Conflicts & outcomes: public and government input, four formal objection grounds, standing, WIPO/ICC providers, Independent Objectors, appeals and the bridge from disputes to binding Registry Voluntary Commitments. Historical disputes remain separate cases; APS/IANA snapshots and RR1/RR2 are unchanged.
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 

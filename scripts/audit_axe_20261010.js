@@ -1,4 +1,4 @@
-/* Focused axe-core coverage on all 20 main-site sections in four languages and two themes.
+/* Focused axe-core coverage on every built main-site chapter in four languages and two themes.
  * Runs in real headless Chromium on an audit-only branch.
  */
 'use strict';
@@ -8,7 +8,7 @@ const fs=require('fs');
 const base='http://127.0.0.1:8123';
 const language=['en','it','de','fr'];
 // Observe the built page, not the old source template: two governance chapters are generated at build time.
-const sectionCountExpected=24;
+const sectionCountExpected=25;
 (async()=>{
  const browser=await chromium.launch({headless:true,args:['--disable-dev-shm-usage']});
  const rows=[],summary={pages:0,sections:sectionCountExpected,scans:0,critical:0,serious:0,moderate:0,minor:0};

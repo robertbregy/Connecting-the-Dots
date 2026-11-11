@@ -950,8 +950,8 @@ if discovery_manifest.get('schemaVersion')!=1 or discovery_manifest.get('siteVer
     fail('Discovery manifest must identify the current publication')
 discovery_pages=discovery_manifest.get('pages', [])
 discovery_paths=[page.get('path', '') for page in discovery_pages]
-if len(discovery_paths)!=84 or len(set(discovery_paths))!=84:
-    fail('Discovery edition must preserve 68 documents and add 16 Economics documents')
+if len(discovery_paths)!=88 or len(set(discovery_paths))!=88:
+    fail('Discovery edition must preserve the existing documents, add 16 Economics documents and four Legal guides')
 economics_paths={f'economics/{lang}/{slug}/' for lang in LANGS for slug in ('market','cases','portfolios','round-2026')}
 if {page.get('path') for page in discovery_pages if page.get('kind')=='economics'}!=economics_paths:
     fail('Economics requires exactly four complete pages in each of the four languages')
@@ -964,8 +964,8 @@ for page in discovery_pages:
     must_index.add(site_base+relative_path)
 for lang in LANGS:
     must_index.add(site_base+'research/reader-study/'+lang+'/')
-if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index) or len(must_index)!=131:
-    fail('Sitemap must contain 43 established URLs, 84 discovery documents and four Reader Study pages exactly once (131 URLs)')
+if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index) or len(must_index)!=135:
+    fail('Sitemap must contain 43 established URLs, 88 discovery documents and four Reader Study pages exactly once (135 URLs)')
 for lang in LANGS:
     page=(ROOT/lang/'index.html').read_text(encoding='utf-8')
     chronicle_page=ROOT/'inside-the-round'/lang/'index.html'

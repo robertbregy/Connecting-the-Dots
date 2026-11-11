@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
-  "version": "0.7.108",
+  "version": "0.7.109",
   "native": [
     {
       "file": "en/index.html",
       "lang": "en",
-      "retainedExistingIds": 413,
+      "retainedExistingIds": 414,
       "chapters": [
         {
           "id": "how",
@@ -112,8 +112,17 @@
           "headings": 6,
           "parent": "ia-outcomes",
           "next": [
-            "disputes",
+            "legal",
             "explore"
+          ]
+        },
+        {
+          "id": "legal",
+          "headings": 9,
+          "parent": "ia-outcomes",
+          "next": [
+            "disputes",
+            "sources"
           ]
         },
         {
@@ -122,7 +131,7 @@
           "parent": "ia-outcomes",
           "next": [
             "refusals",
-            "sources"
+            "legal"
           ]
         },
         {
@@ -245,8 +254,8 @@
           "lang": "en",
           "essentialBlocks": 7,
           "originalTranslatedItems": 1354,
-          "originalLinks": 1067,
-          "originalIds": 491,
+          "originalLinks": 1084,
+          "originalIds": 501,
           "removedNavigationLabels": [
             "Understand the context",
             "From extensions to individual ICANN applications",
@@ -457,12 +466,13 @@
           "legacyTooltipsCleaned": 35
         }
       },
-      "originalCards": 26
+      "originalCards": 26,
+      "reviewedAddedCards": 1
     },
     {
       "file": "index.html",
       "lang": "en",
-      "retainedExistingIds": 413,
+      "retainedExistingIds": 414,
       "chapters": [
         {
           "id": "how",
@@ -568,8 +578,17 @@
           "headings": 6,
           "parent": "ia-outcomes",
           "next": [
-            "disputes",
+            "legal",
             "explore"
+          ]
+        },
+        {
+          "id": "legal",
+          "headings": 9,
+          "parent": "ia-outcomes",
+          "next": [
+            "disputes",
+            "sources"
           ]
         },
         {
@@ -578,7 +597,7 @@
           "parent": "ia-outcomes",
           "next": [
             "refusals",
-            "sources"
+            "legal"
           ]
         },
         {
@@ -701,8 +720,8 @@
           "lang": "en",
           "essentialBlocks": 7,
           "originalTranslatedItems": 1354,
-          "originalLinks": 1067,
-          "originalIds": 491,
+          "originalLinks": 1084,
+          "originalIds": 501,
           "removedNavigationLabels": [
             "Understand the context",
             "From extensions to individual ICANN applications",
@@ -913,12 +932,13 @@
           "legacyTooltipsCleaned": 35
         }
       },
-      "originalCards": 26
+      "originalCards": 26,
+      "reviewedAddedCards": 1
     },
     {
       "file": "it/index.html",
       "lang": "it",
-      "retainedExistingIds": 413,
+      "retainedExistingIds": 414,
       "chapters": [
         {
           "id": "how",
@@ -1024,8 +1044,17 @@
           "headings": 6,
           "parent": "ia-outcomes",
           "next": [
-            "disputes",
+            "legal",
             "explore"
+          ]
+        },
+        {
+          "id": "legal",
+          "headings": 9,
+          "parent": "ia-outcomes",
+          "next": [
+            "disputes",
+            "sources"
           ]
         },
         {
@@ -1034,7 +1063,7 @@
           "parent": "ia-outcomes",
           "next": [
             "refusals",
-            "sources"
+            "legal"
           ]
         },
         {
@@ -1157,8 +1186,8 @@
           "lang": "it",
           "essentialBlocks": 7,
           "originalTranslatedItems": 1354,
-          "originalLinks": 1067,
-          "originalIds": 491,
+          "originalLinks": 1084,
+          "originalIds": 501,
           "removedNavigationLabels": [
             "Per capire il contesto",
             "Dalle estensioni alle singole domande ICANN",
@@ -1369,12 +1398,13 @@
           "legacyTooltipsCleaned": 35
         }
       },
-      "originalCards": 26
+      "originalCards": 26,
+      "reviewedAddedCards": 1
     },
     {
       "file": "de/index.html",
       "lang": "de",
-      "retainedExistingIds": 413,
+      "retainedExistingIds": 414,
       "chapters": [
         {
           "id": "how",
@@ -1480,8 +1510,17 @@
           "headings": 6,
           "parent": "ia-outcomes",
           "next": [
-            "disputes",
+            "legal",
             "explore"
+          ]
+        },
+        {
+          "id": "legal",
+          "headings": 9,
+          "parent": "ia-outcomes",
+          "next": [
+            "disputes",
+            "sources"
           ]
         },
         {
@@ -1490,7 +1529,7 @@
           "parent": "ia-outcomes",
           "next": [
             "refusals",
-            "sources"
+            "legal"
           ]
         },
         {
@@ -1613,8 +1652,8 @@
           "lang": "de",
           "essentialBlocks": 7,
           "originalTranslatedItems": 1354,
-          "originalLinks": 1067,
-          "originalIds": 491,
+          "originalLinks": 1084,
+          "originalIds": 501,
           "removedNavigationLabels": [
             "Den Zusammenhang verstehen",
             "Von Endungen zu einzelnen ICANN-Bewerbungen",
@@ -1825,12 +1864,13 @@
           "legacyTooltipsCleaned": 35
         }
       },
-      "originalCards": 26
+      "originalCards": 26,
+      "reviewedAddedCards": 1
     },
     {
       "file": "fr/index.html",
       "lang": "fr",
-      "retainedExistingIds": 413,
+      "retainedExistingIds": 414,
       "chapters": [
         {
           "id": "how",
@@ -1936,8 +1976,17 @@
           "headings": 6,
           "parent": "ia-outcomes",
           "next": [
-            "disputes",
+            "legal",
             "explore"
+          ]
+        },
+        {
+          "id": "legal",
+          "headings": 9,
+          "parent": "ia-outcomes",
+          "next": [
+            "disputes",
+            "sources"
           ]
         },
         {
@@ -1946,7 +1995,7 @@
           "parent": "ia-outcomes",
           "next": [
             "refusals",
-            "sources"
+            "legal"
           ]
         },
         {
@@ -2069,8 +2118,8 @@
           "lang": "fr",
           "essentialBlocks": 7,
           "originalTranslatedItems": 1354,
-          "originalLinks": 1067,
-          "originalIds": 491,
+          "originalLinks": 1084,
+          "originalIds": 501,
           "removedNavigationLabels": [
             "Comprendre le contexte",
             "Des extensions aux candidatures individuelles ICANN",
@@ -2281,7 +2330,8 @@
           "legacyTooltipsCleaned": 35
         }
       },
-      "originalCards": 26
+      "originalCards": 26,
+      "reviewedAddedCards": 1
     }
   ],
   "independent": [

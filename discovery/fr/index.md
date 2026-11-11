@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/fr/ | Site edition: 0.7.108 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/fr/ | Site edition: 0.7.109 | Language: fr -->
 
 Connecting the Dots
 
@@ -33,6 +33,10 @@ Commencez par le statut de la candidature et la position de l’auteur. Puis exa
 ### [Un domaine sert-il seulement à trouver un site ?](https://robertbregy.github.io/Connecting-the-Dots/guides/fr/beyond/)
 
 Des services quotidiens aux fonctions invisibles du DNS, puis aux écritures et aux systèmes de noms alternatifs.
+
+### [Qui peut contester une candidature ?](https://robertbregy.github.io/Connecting-the-Dots/guides/fr/legal/)
+
+Distinguez commentaires, intervention gouvernementale, objections formelles et recours. Puis voyez qui a qualité pour agir, qui décide et ce que chaque procédure peut changer.
 
 ## Approfondir l’économie
 
@@ -96,6 +100,6 @@ Un nom pour la communauté linguistique et culturelle catalane : une appartenanc
 
 Lors de la vérification documentée, .io était délégué dans la racine DNS comme Code pays.
 
-**Par Robert Bregy** · Édition du site 0.7.108 · 10 novembre 2026
+**Par Robert Bregy** · Édition du site 0.7.109 · 11 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.

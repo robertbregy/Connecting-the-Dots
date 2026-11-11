@@ -1,0 +1,539 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-11-11",
+  "status": "pre-string-confirmation",
+  "scope": "Educational map of ICANN 2026 community input, objections, appeals and the bridge to binding registry commitments. It is not legal advice and does not predict outcomes for individual applications.",
+  "milestones": {
+    "stringConfirmation": "2026-11-17",
+    "objectionWindowDays": 104,
+    "objectionWindowEnd": "2027-03-16",
+    "singularPluralWindowDays": 30,
+    "responseDays": 30,
+    "appealNoticeDays": 15,
+    "appealFilingAdditionalDays": 15
+  },
+  "sources": {
+    "icannCommunityInput": "https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input",
+    "icannObjections": "https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals",
+    "icannInputFaq": "https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/community-input-objections-appeals/faqs/general/what-are-the-different-ways-to-provide-input-on-new-gtld-applications",
+    "applicantGuidebook": "https://newgtldprogram.icann.org/en/application-rounds/round2/agb",
+    "wipoLro": "https://www.wipo.int/en/web/amc/domain-name-disputes/lro/index",
+    "wipoSco": "https://www.wipo.int/en/web/amc/domain-name-disputes/sco/index",
+    "icc": "https://iccwbo.org/dispute-resolution/dispute-resolution-services/adr/icann-new-gtld-dispute-resolution/",
+    "rvc": "https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/application-evaluation/faqs/rce/what-are-registry-voluntary-commitments-rvcs",
+    "cms1": "https://cms.law/en/int/legal-updates/joining-the-dots-part-1-introduction-to-the-new-gtld-program",
+    "cms2": "https://cms.law/en/int/legal-updates/joining-the-dots-part-2-the-application-process",
+    "cms3": "https://cms.law/en/int/legal-updates/joining-the-dots-part-3-contention-sets-and-objections",
+    "cms4": "https://cms.law/en/che/legal-updates/joining-the-dots-part-4-deadlines-announced"
+  },
+  "locales": {
+    "en": {
+      "nav": "Rights, objections & remedies",
+      "card": "Who can challenge an application, on what ground, who decides and what can happen next.",
+      "title": "Rights, objections & remedies",
+      "kicker": "Who can act, on what basis, who decides and what can happen next",
+      "intro": "A new gTLD application does not move from publication to delegation on data and evaluation alone. The 2026 Round also creates formal channels for the public, governments, rightsholders, communities and independent objectors to raise concerns. These mechanisms do not all have the same legal weight or effect.",
+      "caveatTitle": "Not every intervention is an objection",
+      "caveatBody": "A public comment, a GAC Early Warning, GAC Consensus Advice, a singular/plural notification and a formal objection are different procedures. They involve different actors, decision-makers and possible consequences. Contention between applicants is different again.",
+      "mapTitle": "Seven ways an application can be challenged or influenced",
+      "mapIntro": "The same application can be exposed to more than one channel. The question is not simply who objects, but which procedure they are using.",
+      "mechanisms": [
+        [
+          "Application comments",
+          "Anyone",
+          "ICANN and evaluation panels may consider them",
+          "No automatic effect on the application; relevant comments can inform evaluation."
+        ],
+        [
+          "GAC Member Early Warning",
+          "GAC members and observers",
+          "No immediate decision",
+          "Signals a government concern. It does not by itself change application status."
+        ],
+        [
+          "GAC Consensus Advice",
+          "The GAC collectively",
+          "ICANN Board",
+          "The Board decides whether the application may proceed, may not proceed, or may proceed with modifications."
+        ],
+        [
+          "Singular / plural notification",
+          "Anyone",
+          "ICANN string evaluation",
+          "Triggers a singular/plural evaluation and may prevent an application from proceeding."
+        ],
+        [
+          "Formal objection",
+          "A party with standing",
+          "Independent expert panel through the relevant DRSP",
+          "The panel applies one of four defined objection grounds and determines the application's ability to proceed."
+        ],
+        [
+          "Independent Objector",
+          "One of the three appointed Independent Objectors",
+          "Independent expert panel",
+          "May bring Limited Public Interest or Community objections in the interests of global Internet users, not for a private client."
+        ],
+        [
+          "Appeal",
+          "The non-prevailing party to an objection",
+          "The relevant dispute-resolution provider under the appeal procedure",
+          "A limited review of the panel determination under the clearly erroneous standard."
+        ]
+      ],
+      "objectionsTitle": "The four formal objection grounds",
+      "objectionsIntro": "A formal objection must fit one of four grounds and the objector must satisfy the standing rules for that ground. Filing is made directly with the designated Dispute Resolution Service Provider (DRSP).",
+      "objections": [
+        [
+          "String Confusion",
+          "WIPO",
+          "Similarity in appearance, sound or meaning between the applied-for string or variants and another applied-for or existing TLD.",
+          "A successful objection can change contention or, for certain existing-TLD/ccTLD objectors, make an application ineligible to proceed."
+        ],
+        [
+          "Legal Rights",
+          "WIPO",
+          "The applied-for string or an applied-for allocatable variant infringes existing legal rights, including relevant trademark rights.",
+          "A successful objection against the primary string makes the application ineligible to proceed."
+        ],
+        [
+          "Limited Public Interest",
+          "ICC",
+          "The applied-for string is contrary to generally accepted legal norms of morality and public order recognized under principles of international law.",
+          "A successful objection against the primary string makes the application ineligible to proceed."
+        ],
+        [
+          "Community",
+          "ICC",
+          "There is well-substantiated opposition from a significant portion of a clearly delineated community targeted explicitly or implicitly by the string.",
+          "A successful objection against the primary string makes the application ineligible to proceed."
+        ]
+      ],
+      "processTitle": "How a 2026 objection proceeds",
+      "processIntro": "This is the simplified procedural spine. Complex cases, consolidation, cooling-off periods or hearings can change the real timeline.",
+      "process": [
+        [
+          "17 Nov 2026",
+          "String Confirmation Day opens the ordinary 104-day objection window."
+        ],
+        [
+          "Filing",
+          "The objector files electronically, in English, with the correct DRSP, identifies standing and the objection ground, supplies evidence and pays the applicable fee."
+        ],
+        [
+          "Review",
+          "The DRSP performs administrative review, appoints the panel and the panel conducts a Quick Look Review."
+        ],
+        [
+          "Response",
+          "After the required advance payments and transmission of the Quick Look result, the applicant has 30 days to respond."
+        ],
+        [
+          "Determination",
+          "The panel issues a reasoned determination. If the objection fails, the application may continue unless another process blocks it."
+        ],
+        [
+          "Appeal",
+          "The non-prevailing party has 15 days to notify an intent to appeal and a further 15 days to file the appeal and pay the required fees."
+        ]
+      ],
+      "outcomesTitle": "What a decision can actually change",
+      "outcomesBody": "For String Confusion, the consequence can be a change to contention or, in defined cases involving existing TLD or ccTLD interests, ineligibility to proceed. For Legal Rights, Limited Public Interest and Community objections, a successful objection to the primary string makes the application ineligible to proceed. If only an allocatable variant is affected, the primary string and unaffected variants may still proceed. ICANN also describes cases in which a panel may require a new or modified Registry Voluntary Commitment (RVC), approved by ICANN, before an application can continue.",
+      "rvcTitle": "From dispute to binding commitment",
+      "rvcBody": "An RVC can be proposed to address an objection or a government concern. If ICANN approves it and it is incorporated into the Registry Agreement, it becomes a binding contractual obligation. That is the bridge between a pre-delegation dispute and the rules under which a future registry may have to operate.",
+      "casesTitle": "Rules here, stories next",
+      "casesBody": "This chapter explains the machinery. Disputed Dots keeps the historical cases separate: .amazon, .africa, .music, .merck and the other stories show how different mechanisms interact in practice.",
+      "statusTitle": "2026 status · before String Confirmation",
+      "statusBody": "As of this editorial review on 11 November 2026, the ordinary Community Input and Objections period has not yet opened. It is scheduled to open on 17 November 2026 and the 104-day ordinary objection window is scheduled to run through 16 March 2027. The chapter describes the published procedure; it does not report objections that do not yet exist.",
+      "sourcesTitle": "Primary rules and professional reading",
+      "sourcesNote": "ICANN, WIPO and ICC are the primary procedural sources used here. The CMS 'Joining the Dots' series is included as secondary professional reading and is not treated as the authority for the rules.",
+      "bridgeContention": "Contention is competition between applications, not an objection.",
+      "bridgeDisputes": "Historical disputes show how these mechanisms play out.",
+      "readContention": "Read contention",
+      "readDisputes": "Read the disputes",
+      "readObjectors": "Independent Objectors field note",
+      "notAdvice": "Procedural explainer, not legal advice. Always use the current authoritative Applicant Guidebook and provider rules for an actual filing."
+    },
+    "it": {
+      "nav": "Diritti, obiezioni e rimedi",
+      "card": "Chi può contestare una candidatura, su quale base, chi decide e che cosa può succedere dopo.",
+      "title": "Diritti, obiezioni e rimedi",
+      "kicker": "Chi può agire, su quale base, chi decide e che cosa può succedere dopo",
+      "intro": "Una candidatura a un nuovo gTLD non passa dalla pubblicazione alla delega attraverso dati e valutazioni soltanto. Il round 2026 apre anche canali formali attraverso i quali pubblico, governi, titolari di diritti, comunità e garanti indipendenti possono sollevare questioni. Questi meccanismi non hanno tutti lo stesso peso né lo stesso effetto.",
+      "caveatTitle": "Non ogni intervento è un'obiezione",
+      "caveatBody": "Un commento pubblico, un GAC Early Warning, un GAC Consensus Advice, una segnalazione singolare/plurale e un'obiezione formale sono procedure diverse. Cambiano attori, decisori e possibili conseguenze. E una contesa tra candidati è ancora un'altra cosa.",
+      "mapTitle": "Sette modi per contestare o influenzare una candidatura",
+      "mapIntro": "La stessa candidatura può essere esposta a più canali. La domanda non è soltanto chi interviene, ma attraverso quale procedura.",
+      "mechanisms": [
+        [
+          "Commenti sulle candidature",
+          "Chiunque",
+          "ICANN e i panel di valutazione possono considerarli",
+          "Non hanno un effetto automatico sulla candidatura; i commenti pertinenti possono entrare nella valutazione."
+        ],
+        [
+          "GAC Member Early Warning",
+          "Membri e osservatori GAC",
+          "Nessuna decisione immediata",
+          "Segnala una preoccupazione governativa. Da solo non modifica lo stato della candidatura."
+        ],
+        [
+          "GAC Consensus Advice",
+          "Il GAC collettivamente",
+          "ICANN Board",
+          "Il Board decide se la candidatura può procedere, non può procedere oppure può procedere con modifiche."
+        ],
+        [
+          "Segnalazione singolare / plurale",
+          "Chiunque",
+          "Valutazione ICANN della stringa",
+          "Attiva una valutazione singolare/plurale e può impedire alla candidatura di procedere."
+        ],
+        [
+          "Obiezione formale",
+          "Un soggetto con standing",
+          "Panel indipendente tramite il DRSP competente",
+          "Il panel applica uno dei quattro motivi previsti e determina se e come la candidatura può procedere."
+        ],
+        [
+          "Independent Objector",
+          "Uno dei tre Independent Objectors nominati",
+          "Panel indipendente",
+          "Può presentare obiezioni Limited Public Interest o Community nell'interesse degli utenti globali di Internet, non di un cliente privato."
+        ],
+        [
+          "Appello",
+          "La parte soccombente in un'obiezione",
+          "Il provider competente secondo la procedura d'appello",
+          "Riesame limitato della decisione del panel secondo lo standard del clearly erroneous."
+        ]
+      ],
+      "objectionsTitle": "I quattro motivi di obiezione formale",
+      "objectionsIntro": "Un'obiezione formale deve rientrare in uno dei quattro motivi previsti e chi la presenta deve soddisfare le regole di standing applicabili. Il deposito avviene direttamente presso il Dispute Resolution Service Provider (DRSP) competente.",
+      "objections": [
+        [
+          "String Confusion",
+          "WIPO",
+          "Somiglianza visiva, fonetica o di significato tra la stringa richiesta o le sue varianti e un'altra stringa richiesta o un TLD esistente.",
+          "Un'obiezione accolta può modificare una contesa o, per determinate categorie legate a TLD/ccTLD esistenti, rendere la candidatura non idonea a proseguire."
+        ],
+        [
+          "Legal Rights",
+          "WIPO",
+          "La stringa richiesta o una variante allocabile richiesta viola diritti giuridici esistenti, inclusi diritti di marchio pertinenti.",
+          "Se accolta contro la stringa primaria, la candidatura diventa non idonea a proseguire."
+        ],
+        [
+          "Limited Public Interest",
+          "ICC",
+          "La stringa richiesta è contraria a norme giuridiche generalmente accettate in materia di moralità e ordine pubblico riconosciute dai principi del diritto internazionale.",
+          "Se accolta contro la stringa primaria, la candidatura diventa non idonea a proseguire."
+        ],
+        [
+          "Community",
+          "ICC",
+          "Esiste un'opposizione ben documentata da parte di una porzione significativa di una comunità chiaramente delimitata alla quale la stringa si rivolge esplicitamente o implicitamente.",
+          "Se accolta contro la stringa primaria, la candidatura diventa non idonea a proseguire."
+        ]
+      ],
+      "processTitle": "Come procede un'obiezione nel 2026",
+      "processIntro": "È la spina dorsale semplificata della procedura. Casi complessi, consolidamenti, periodi di cooling-off o udienze possono modificare i tempi reali.",
+      "process": [
+        [
+          "17 nov 2026",
+          "Lo String Confirmation Day apre la finestra ordinaria di 104 giorni per le obiezioni."
+        ],
+        [
+          "Deposito",
+          "L'obiettore deposita elettronicamente, in inglese, presso il DRSP corretto, dimostra lo standing, indica il motivo, produce le prove e paga la fee applicabile."
+        ],
+        [
+          "Esame",
+          "Il DRSP svolge il controllo amministrativo, nomina il panel e il panel effettua il Quick Look Review."
+        ],
+        [
+          "Risposta",
+          "Dopo i versamenti anticipati richiesti e la trasmissione dell'esito del Quick Look, il candidato ha 30 giorni per rispondere."
+        ],
+        [
+          "Decisione",
+          "Il panel emette una decisione motivata. Se l'obiezione non è accolta, la candidatura può continuare salvo che un altro processo la blocchi."
+        ],
+        [
+          "Appello",
+          "La parte soccombente ha 15 giorni per notificare l'intenzione di appellare e ulteriori 15 giorni per depositare l'appello e pagare le fee previste."
+        ]
+      ],
+      "outcomesTitle": "Che cosa può cambiare davvero una decisione",
+      "outcomesBody": "Per la String Confusion, l'effetto può essere una modifica della contesa oppure, in casi definiti che coinvolgono interessi legati a TLD o ccTLD esistenti, l'impossibilità di proseguire. Per Legal Rights, Limited Public Interest e Community, un'obiezione accolta contro la stringa primaria rende la candidatura non idonea a proseguire. Se è colpita soltanto una variante allocabile, la stringa primaria e le varianti non coinvolte possono ancora avanzare. ICANN contempla inoltre casi in cui il panel può subordinare il prosieguo a un nuovo o modificato Registry Voluntary Commitment (RVC) approvato da ICANN.",
+      "rvcTitle": "Dalla controversia all'impegno vincolante",
+      "rvcBody": "Un RVC può essere proposto per affrontare un'obiezione o una preoccupazione governativa. Se ICANN lo approva e viene incorporato nel Registry Agreement, diventa un obbligo contrattuale vincolante. È il ponte tra una controversia prima della delega e le regole con cui un futuro registro può essere tenuto a operare.",
+      "casesTitle": "Qui le regole, poi le storie",
+      "casesBody": "Questo capitolo spiega il meccanismo. Disputed Dots mantiene separati i casi storici: .amazon, .africa, .music, .merck e le altre storie mostrano come i diversi strumenti si combinano nella pratica.",
+      "statusTitle": "Stato 2026 · prima dello String Confirmation",
+      "statusBody": "Alla verifica editoriale dell'11 novembre 2026, la finestra ordinaria Community Input and Objections non è ancora aperta. L'apertura è prevista il 17 novembre 2026 e la finestra ordinaria di 104 giorni per le obiezioni è prevista fino al 16 marzo 2027. Il capitolo descrive la procedura pubblicata; non attribuisce obiezioni che ancora non esistono.",
+      "sourcesTitle": "Regole primarie e letture professionali",
+      "sourcesNote": "ICANN, WIPO e ICC sono le fonti procedurali primarie utilizzate qui. La serie 'Joining the Dots' di CMS è riportata come lettura professionale secondaria e non come fonte autoritativa delle regole.",
+      "bridgeContention": "La contention è competizione tra candidature, non un'obiezione.",
+      "bridgeDisputes": "Le controversie storiche mostrano come questi meccanismi funzionano nella pratica.",
+      "readContention": "Leggi le contese",
+      "readDisputes": "Leggi le controversie",
+      "readObjectors": "Nota sugli Independent Objectors",
+      "notAdvice": "Spiegazione procedurale, non consulenza legale. Per un deposito reale fanno fede l'Applicant Guidebook vigente e le regole del provider competente."
+    },
+    "de": {
+      "nav": "Rechte, Einwände und Rechtsbehelfe",
+      "card": "Wer eine Bewerbung anfechten kann, auf welcher Grundlage, wer entscheidet und welche Folgen möglich sind.",
+      "title": "Rechte, Einwände und Rechtsbehelfe",
+      "kicker": "Wer handeln kann, auf welcher Grundlage, wer entscheidet und was danach geschehen kann",
+      "intro": "Eine Bewerbung für eine neue gTLD gelangt nicht allein durch Daten und Evaluation von der Veröffentlichung zur Delegierung. Die Runde 2026 eröffnet auch formelle Wege, über die Öffentlichkeit, Regierungen, Rechteinhaber, Gemeinschaften und unabhängige Einwender Bedenken vorbringen können. Diese Mechanismen haben nicht dasselbe rechtliche Gewicht und nicht dieselbe Wirkung.",
+      "caveatTitle": "Nicht jede Intervention ist ein formeller Einwand",
+      "caveatBody": "Ein öffentlicher Kommentar, eine GAC Early Warning, GAC Consensus Advice, eine Singular/Plural-Meldung und ein formeller Einwand sind unterschiedliche Verfahren. Akteure, Entscheidungsträger und mögliche Folgen unterscheiden sich. Ein Wettbewerb zwischen Bewerbungen ist wiederum etwas anderes.",
+      "mapTitle": "Sieben Wege, eine Bewerbung anzufechten oder zu beeinflussen",
+      "mapIntro": "Dieselbe Bewerbung kann mehreren Verfahren ausgesetzt sein. Entscheidend ist nicht nur, wer interveniert, sondern welches Verfahren verwendet wird.",
+      "mechanisms": [
+        [
+          "Application Comments",
+          "Jede Person",
+          "ICANN und Evaluationspanels können sie berücksichtigen",
+          "Keine automatische Wirkung auf die Bewerbung; relevante Kommentare können in die Evaluation einfließen."
+        ],
+        [
+          "GAC Member Early Warning",
+          "GAC-Mitglieder und Beobachter",
+          "Keine unmittelbare Entscheidung",
+          "Signalisiert staatliche Bedenken. Allein verändert sie den Status der Bewerbung nicht."
+        ],
+        [
+          "GAC Consensus Advice",
+          "Der GAC als Gremium",
+          "ICANN Board",
+          "Das Board entscheidet, ob die Bewerbung fortgesetzt, nicht fortgesetzt oder nur mit Änderungen fortgesetzt werden kann."
+        ],
+        [
+          "Singular-/Plural-Meldung",
+          "Jede Person",
+          "ICANN String Evaluation",
+          "Löst eine Singular-/Plural-Prüfung aus und kann verhindern, dass eine Bewerbung weitergeht."
+        ],
+        [
+          "Formeller Einwand",
+          "Eine Partei mit Standing",
+          "Unabhängiges Expertenpanel über den zuständigen DRSP",
+          "Das Panel wendet einen der vier festgelegten Einwandsgründe an und entscheidet über die Fortsetzung der Bewerbung."
+        ],
+        [
+          "Independent Objector",
+          "Einer der drei ernannten Independent Objectors",
+          "Unabhängiges Expertenpanel",
+          "Kann Limited Public Interest- oder Community-Einwände im Interesse der weltweiten Internetnutzer erheben, nicht für einen privaten Auftraggeber."
+        ],
+        [
+          "Appeal",
+          "Die unterlegene Partei eines Einwandsverfahrens",
+          "Der zuständige Streitbeilegungsanbieter nach dem Appeal-Verfahren",
+          "Begrenzte Überprüfung der Panelentscheidung nach dem Clearly-Erroneous-Standard."
+        ]
+      ],
+      "objectionsTitle": "Die vier formellen Einwandsgründe",
+      "objectionsIntro": "Ein formeller Einwand muss unter einen der vier vorgesehenen Gründe fallen; außerdem müssen die Standing-Anforderungen des jeweiligen Grundes erfüllt sein. Eingereicht wird direkt beim zuständigen Dispute Resolution Service Provider (DRSP).",
+      "objections": [
+        [
+          "String Confusion",
+          "WIPO",
+          "Ähnlichkeit in Aussehen, Klang oder Bedeutung zwischen der beantragten Zeichenfolge oder ihren Varianten und einer anderen beantragten Zeichenfolge oder einer bestehenden TLD.",
+          "Ein erfolgreicher Einwand kann einen Contention Set verändern oder in bestimmten Fällen mit bestehenden TLD-/ccTLD-Interessen die Bewerbung vom weiteren Verfahren ausschließen."
+        ],
+        [
+          "Legal Rights",
+          "WIPO",
+          "Die beantragte Zeichenfolge oder eine beantragte zuteilbare Variante verletzt bestehende Rechte, einschließlich einschlägiger Markenrechte.",
+          "Bei Erfolg gegen die primäre Zeichenfolge kann die Bewerbung nicht weitergeführt werden."
+        ],
+        [
+          "Limited Public Interest",
+          "ICC",
+          "Die beantragte Zeichenfolge verstößt gegen allgemein anerkannte Rechtsnormen zu Moral und öffentlicher Ordnung, die nach Grundsätzen des Völkerrechts anerkannt sind.",
+          "Bei Erfolg gegen die primäre Zeichenfolge kann die Bewerbung nicht weitergeführt werden."
+        ],
+        [
+          "Community",
+          "ICC",
+          "Ein erheblicher Teil einer klar abgegrenzten Gemeinschaft, auf die die Zeichenfolge ausdrücklich oder implizit zielt, erhebt fundierten Widerstand.",
+          "Bei Erfolg gegen die primäre Zeichenfolge kann die Bewerbung nicht weitergeführt werden."
+        ]
+      ],
+      "processTitle": "So läuft ein Einwand 2026 ab",
+      "processIntro": "Dies ist das vereinfachte Rückgrat des Verfahrens. Komplexe Fälle, Konsolidierungen, Cooling-off-Phasen oder Anhörungen können den tatsächlichen Zeitplan verändern.",
+      "process": [
+        [
+          "17. Nov. 2026",
+          "Am String Confirmation Day beginnt das reguläre 104-Tage-Fenster für Einwände."
+        ],
+        [
+          "Einreichung",
+          "Der Einwender reicht elektronisch und auf Englisch beim richtigen DRSP ein, weist Standing und Einwandsgrund nach, legt Belege vor und zahlt die einschlägige Gebühr."
+        ],
+        [
+          "Prüfung",
+          "Der DRSP führt die administrative Prüfung durch, bestellt das Panel und das Panel nimmt den Quick Look Review vor."
+        ],
+        [
+          "Antwort",
+          "Nach den erforderlichen Vorauszahlungen und der Übermittlung des Quick-Look-Ergebnisses hat der Bewerber 30 Tage für seine Antwort."
+        ],
+        [
+          "Entscheidung",
+          "Das Panel erlässt eine begründete Entscheidung. Scheitert der Einwand, kann die Bewerbung weiterlaufen, sofern kein anderes Verfahren sie blockiert."
+        ],
+        [
+          "Appeal",
+          "Die unterlegene Partei hat 15 Tage für die Mitteilung der Appeal-Absicht und weitere 15 Tage für Einreichung und Gebührenzahlung."
+        ]
+      ],
+      "outcomesTitle": "Was eine Entscheidung tatsächlich verändern kann",
+      "outcomesBody": "Bei String Confusion kann die Folge eine Änderung des Contention Sets sein oder, in bestimmten Fällen mit Interessen bestehender TLDs oder ccTLDs, der Ausschluss der Bewerbung. Bei Legal Rights, Limited Public Interest und Community führt ein erfolgreicher Einwand gegen die primäre Zeichenfolge dazu, dass die Bewerbung nicht weitergeführt werden kann. Betrifft die Entscheidung nur eine zuteilbare Variante, können die primäre Zeichenfolge und nicht betroffene Varianten weiterlaufen. ICANN beschreibt außerdem Fälle, in denen ein neues oder geändertes, von ICANN genehmigtes Registry Voluntary Commitment (RVC) zur Bedingung für das weitere Verfahren werden kann.",
+      "rvcTitle": "Vom Streit zur bindenden Verpflichtung",
+      "rvcBody": "Ein RVC kann vorgeschlagen werden, um einen Einwand oder staatliche Bedenken auszuräumen. Wird es von ICANN genehmigt und in das Registry Agreement aufgenommen, wird es zu einer bindenden vertraglichen Verpflichtung. Damit entsteht die Brücke zwischen einem Streit vor der Delegierung und den Regeln, nach denen ein künftiger Registry-Betreiber handeln muss.",
+      "casesTitle": "Hier die Regeln, danach die Geschichten",
+      "casesBody": "Dieses Kapitel erklärt den Mechanismus. Disputed Dots hält die historischen Fälle getrennt: .amazon, .africa, .music, .merck und die übrigen Geschichten zeigen, wie verschiedene Instrumente in der Praxis zusammenspielen.",
+      "statusTitle": "Status 2026 · vor String Confirmation",
+      "statusBody": "Zum redaktionellen Prüfdatum 11. November 2026 ist die reguläre Community-Input-and-Objections-Phase noch nicht eröffnet. Der Start ist für den 17. November 2026 vorgesehen; das reguläre 104-Tage-Fenster für Einwände soll bis 16. März 2027 laufen. Dieses Kapitel beschreibt das veröffentlichte Verfahren und behauptet keine Einwände, die noch nicht existieren.",
+      "sourcesTitle": "Primärregeln und professionelle Einordnung",
+      "sourcesNote": "ICANN, WIPO und ICC sind hier die primären Verfahrensquellen. Die CMS-Serie 'Joining the Dots' wird als ergänzende professionelle Einordnung geführt, nicht als maßgebliche Regelquelle.",
+      "bridgeContention": "Contention ist Wettbewerb zwischen Bewerbungen, kein Einwandsverfahren.",
+      "bridgeDisputes": "Historische Streitfälle zeigen, wie diese Mechanismen in der Praxis zusammenspielen.",
+      "readContention": "Contention lesen",
+      "readDisputes": "Streitfälle lesen",
+      "readObjectors": "Field Note zu Independent Objectors",
+      "notAdvice": "Verfahrenserklärung, keine Rechtsberatung. Für eine tatsächliche Einreichung gelten der aktuelle maßgebliche Applicant Guidebook und die Regeln des zuständigen Providers."
+    },
+    "fr": {
+      "nav": "Droits, objections et recours",
+      "card": "Qui peut contester une candidature, sur quel fondement, qui décide et quelles suites sont possibles.",
+      "title": "Droits, objections et recours",
+      "kicker": "Qui peut agir, sur quel fondement, qui décide et ce qui peut se passer ensuite",
+      "intro": "Une candidature à un nouveau gTLD ne passe pas de la publication à la délégation par les seules données et évaluations. Le cycle 2026 ouvre aussi des voies formelles par lesquelles le public, les gouvernements, les titulaires de droits, les communautés et les objecteurs indépendants peuvent soulever des préoccupations. Ces mécanismes n'ont ni le même poids juridique ni le même effet.",
+      "caveatTitle": "Toute intervention n'est pas une objection formelle",
+      "caveatBody": "Un commentaire public, un GAC Early Warning, un GAC Consensus Advice, une notification singulier/pluriel et une objection formelle sont des procédures différentes. Les acteurs, décideurs et conséquences possibles changent. Une contention entre candidats est encore autre chose.",
+      "mapTitle": "Sept façons de contester ou d'influencer une candidature",
+      "mapIntro": "Une même candidature peut être exposée à plusieurs voies. La question n'est pas seulement de savoir qui intervient, mais par quelle procédure.",
+      "mechanisms": [
+        [
+          "Commentaires sur les candidatures",
+          "Toute personne",
+          "ICANN et les panels d'évaluation peuvent les prendre en compte",
+          "Aucun effet automatique sur la candidature; les commentaires pertinents peuvent nourrir l'évaluation."
+        ],
+        [
+          "GAC Member Early Warning",
+          "Membres et observateurs du GAC",
+          "Aucune décision immédiate",
+          "Signale une préoccupation gouvernementale. À elle seule, elle ne modifie pas le statut de la candidature."
+        ],
+        [
+          "GAC Consensus Advice",
+          "Le GAC collectivement",
+          "ICANN Board",
+          "Le Board décide si la candidature peut continuer, ne peut pas continuer ou ne peut continuer qu'avec des modifications."
+        ],
+        [
+          "Notification singulier / pluriel",
+          "Toute personne",
+          "Évaluation ICANN de la chaîne",
+          "Déclenche une évaluation singulier/pluriel et peut empêcher une candidature d'avancer."
+        ],
+        [
+          "Objection formelle",
+          "Une partie ayant standing",
+          "Panel d'experts indépendant via le DRSP compétent",
+          "Le panel applique l'un des quatre fondements prévus et détermine si et comment la candidature peut continuer."
+        ],
+        [
+          "Independent Objector",
+          "L'un des trois Independent Objectors nommés",
+          "Panel d'experts indépendant",
+          "Peut déposer des objections Limited Public Interest ou Community dans l'intérêt des utilisateurs mondiaux d'Internet, et non pour un client privé."
+        ],
+        [
+          "Recours",
+          "La partie perdante dans une objection",
+          "Le prestataire compétent selon la procédure de recours",
+          "Réexamen limité de la décision du panel selon le standard clearly erroneous."
+        ]
+      ],
+      "objectionsTitle": "Les quatre fondements d'objection formelle",
+      "objectionsIntro": "Une objection formelle doit relever de l'un des quatre fondements prévus et son auteur doit satisfaire aux règles de standing correspondantes. Le dépôt se fait directement auprès du Dispute Resolution Service Provider (DRSP) compétent.",
+      "objections": [
+        [
+          "String Confusion",
+          "WIPO",
+          "Similarité visuelle, sonore ou de sens entre la chaîne demandée ou ses variantes et une autre chaîne demandée ou un TLD existant.",
+          "Une objection accueillie peut modifier une contention ou, dans certains cas liés à des intérêts de TLD/ccTLD existants, rendre la candidature inéligible à poursuivre."
+        ],
+        [
+          "Legal Rights",
+          "WIPO",
+          "La chaîne demandée ou une variante attribuable demandée porte atteinte à des droits juridiques existants, notamment des droits de marque pertinents.",
+          "Si elle est accueillie contre la chaîne principale, la candidature devient inéligible à poursuivre."
+        ],
+        [
+          "Limited Public Interest",
+          "ICC",
+          "La chaîne demandée est contraire aux normes juridiques généralement admises de moralité et d'ordre public reconnues par les principes du droit international.",
+          "Si elle est accueillie contre la chaîne principale, la candidature devient inéligible à poursuivre."
+        ],
+        [
+          "Community",
+          "ICC",
+          "Une opposition solidement étayée émane d'une part importante d'une communauté clairement délimitée que la chaîne vise explicitement ou implicitement.",
+          "Si elle est accueillie contre la chaîne principale, la candidature devient inéligible à poursuivre."
+        ]
+      ],
+      "processTitle": "Comment se déroule une objection en 2026",
+      "processIntro": "Il s'agit de l'ossature procédurale simplifiée. Les dossiers complexes, consolidations, périodes de cooling-off ou audiences peuvent modifier le calendrier réel.",
+      "process": [
+        [
+          "17 nov. 2026",
+          "Le String Confirmation Day ouvre la fenêtre ordinaire de 104 jours pour les objections."
+        ],
+        [
+          "Dépôt",
+          "L'objecteur dépose électroniquement, en anglais, auprès du bon DRSP, établit son standing et le fondement, fournit les preuves et paie les frais applicables."
+        ],
+        [
+          "Examen",
+          "Le DRSP effectue le contrôle administratif, nomme le panel et le panel réalise le Quick Look Review."
+        ],
+        [
+          "Réponse",
+          "Après les avances requises et la transmission du résultat du Quick Look, le candidat dispose de 30 jours pour répondre."
+        ],
+        [
+          "Décision",
+          "Le panel rend une décision motivée. Si l'objection échoue, la candidature peut continuer sauf si une autre procédure l'en empêche."
+        ],
+        [
+          "Recours",
+          "La partie perdante dispose de 15 jours pour notifier son intention de former un recours, puis de 15 jours supplémentaires pour le déposer et payer les frais requis."
+        ]
+      ],
+      "outcomesTitle": "Ce qu'une décision peut réellement changer",
+      "outcomesBody": "Pour String Confusion, l'effet peut être une modification de la contention ou, dans certains cas impliquant des intérêts liés à des TLD ou ccTLD existants, l'inéligibilité à poursuivre. Pour Legal Rights, Limited Public Interest et Community, une objection accueillie contre la chaîne principale rend la candidature inéligible à poursuivre. Si seule une variante attribuable est touchée, la chaîne principale et les variantes non concernées peuvent encore avancer. ICANN décrit aussi des situations dans lesquelles un Registry Voluntary Commitment (RVC) nouveau ou modifié, approuvé par ICANN, peut devenir une condition de poursuite.",
+      "rvcTitle": "Du conflit à l'engagement contraignant",
+      "rvcBody": "Un RVC peut être proposé pour répondre à une objection ou à une préoccupation gouvernementale. S'il est approuvé par ICANN et intégré au Registry Agreement, il devient une obligation contractuelle contraignante. C'est le pont entre un conflit avant délégation et les règles selon lesquelles un futur registre pourra être tenu d'opérer.",
+      "casesTitle": "Ici les règles, ensuite les histoires",
+      "casesBody": "Ce chapitre explique le mécanisme. Disputed Dots garde les cas historiques séparés: .amazon, .africa, .music, .merck et les autres histoires montrent comment différents instruments se combinent en pratique.",
+      "statusTitle": "État 2026 · avant String Confirmation",
+      "statusBody": "À la vérification éditoriale du 11 novembre 2026, la période ordinaire Community Input and Objections n'est pas encore ouverte. Son ouverture est prévue le 17 novembre 2026 et la fenêtre ordinaire de 104 jours pour les objections doit courir jusqu'au 16 mars 2027. Le chapitre décrit la procédure publiée; il n'attribue pas d'objections qui n'existent pas encore.",
+      "sourcesTitle": "Règles primaires et lecture professionnelle",
+      "sourcesNote": "ICANN, WIPO et ICC sont les sources procédurales primaires utilisées ici. La série 'Joining the Dots' de CMS est incluse comme lecture professionnelle secondaire et non comme autorité sur les règles.",
+      "bridgeContention": "La contention est une concurrence entre candidatures, pas une objection.",
+      "bridgeDisputes": "Les litiges historiques montrent comment ces mécanismes se combinent en pratique.",
+      "readContention": "Lire les contentions",
+      "readDisputes": "Lire les litiges",
+      "readObjectors": "Note sur les Independent Objectors",
+      "notAdvice": "Explication procédurale, pas un avis juridique. Pour un dépôt réel, il faut utiliser l'Applicant Guidebook en vigueur et les règles du prestataire compétent."
+    }
+  }
+}

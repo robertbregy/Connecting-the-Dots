@@ -272,9 +272,10 @@ function nativePage(lang, filename) {
     assert.ok(d.getElementById(a.dataset.openSection), 'Invalid reader destination');
     if (a.dataset.openAnchor) assert.ok(d.getElementById(a.dataset.openAnchor), 'Invalid reader anchor');
   }
-  assert.equal(d.querySelectorAll('.iaHubCard').length, 26, 'Original navigation card lost');
+  assert.equal(d.querySelectorAll('.iaHubCard').length, 27, 'Navigation card count changed outside the reviewed Legal addition');
+  assert.equal(d.querySelectorAll('#ia-outcomes .iaHubCard[data-legal-hub-card] [data-open-section="legal"]').length, 1, 'Reviewed Legal navigation card missing or duplicated');
   addAssets(d, prefix); write(file, d);
-  report.native.push({file: filename, lang, retainedExistingIds: oldIds.length, chapters, reorders: changes, originalCards: 26});
+  report.native.push({file: filename, lang, retainedExistingIds: oldIds.length, chapters, reorders: changes, originalCards: 26, reviewedAddedCards: 1});
 }
 function walk(dir) { return fs.readdirSync(dir, {withFileTypes: true}).flatMap(e => e.isDirectory() ? walk(path.join(dir, e.name)) : [path.join(dir, e.name)]); }
 function independentPage(file) {

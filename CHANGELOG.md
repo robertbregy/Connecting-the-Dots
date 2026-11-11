@@ -1,3 +1,14 @@
+# v0.7.109 — 11 November 2026
+
+- Added a four-language **Rights, objections & remedies** chapter inside **Conflicts & outcomes**, between contention and historical disputes.
+- Distinguished public comments, GAC Early Warnings, GAC Consensus Advice, singular/plural notifications, formal objections, Independent Objectors and appeals instead of treating them as one generic dispute mechanism.
+- Documented the four formal objection grounds and their 2026 providers: String Confusion and Legal Rights at WIPO; Limited Public Interest and Community at ICC.
+- Added a simplified procedural journey from filing through Quick Look, response, determination and appeal, with the published 17 November 2026 opening and 16 March 2027 ordinary-window end clearly labelled as scheduled before String Confirmation.
+- Explained the bridge from pre-delegation disputes and government concerns to approved Registry Voluntary Commitments that become binding when incorporated into the Registry Agreement.
+- Kept historical Disputed Dots cases separate from the legal explainer and linked the existing Independent Objectors field note.
+- Published the chapter as a citable discovery guide in EN/IT/DE/FR. APS/IANA snapshots, frozen research releases and historical case evidence are unchanged.
+- Primary procedural sources are ICANN, WIPO and ICC; CMS Joining the Dots is retained as secondary professional reading.
+
 # v0.7.108 — 10 November 2026
 
 - Closed the 10 November editorial audit: restored twelve missing historical release summaries in all four languages, corrected WDO language continuity and its standalone headline, reconciled displayed source-check dates, localized counts and aligned German reader guidance.

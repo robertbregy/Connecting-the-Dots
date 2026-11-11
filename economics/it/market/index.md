@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/it/market/ | Site edition: 0.7.108 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/it/market/ | Site edition: 0.7.109 | Language: it -->
 
 Analisi economica
 
@@ -184,6 +184,6 @@ Analisi corrente del 19 ottobre 2026, esterna agli snapshot scientifici RR1/RR2.
 
 [Collega diffusione e storia →](https://robertbregy.github.io/Connecting-the-Dots/guides/it/timeline/#tld-cultural-trajectory) [Chi gestisce l’infrastruttura →](https://robertbregy.github.io/Connecting-the-Dots/it/?tab=geography#rsp-tld-footprint)
 
-**Di Robert Bregy** · Edizione del sito 0.7.108 · 10 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.109 · 11 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.
