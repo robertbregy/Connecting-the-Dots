@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/en/ | Site edition: 0.7.108 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/en/ | Site edition: 0.7.109 | Language: en -->
 
 Connecting the Dots
 
@@ -33,6 +33,10 @@ Start with the application's status and the author's position. Then read intenti
 ### [Is a domain only there to find a website?](https://robertbregy.github.io/Connecting-the-Dots/guides/en/beyond/)
 
 From services we use to the invisible functions of DNS, then writing systems and alternative naming systems.
+
+### [Who can challenge an application?](https://robertbregy.github.io/Connecting-the-Dots/guides/en/legal/)
+
+Distinguish comments, government input, formal objections and appeals. Then see who has standing, who decides and what each procedure can change.
 
 ## Explore the economics
 
@@ -96,6 +100,6 @@ A name for the Catalan linguistic and cultural community: a belonging that cross
 
 At the documented check, .io was delegated in the DNS root as Country-code.
 
-**By Robert Bregy** · Site edition 0.7.108 · November 10, 2026
+**By Robert Bregy** · Site edition 0.7.109 · November 11, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

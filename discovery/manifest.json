@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "siteVersion": "0.7.108",
-  "generatedOn": "2026-11-10",
+  "siteVersion": "0.7.109",
+  "generatedOn": "2026-11-11",
   "selection": {
     "guideSections": [
       "how",
@@ -9,7 +9,8 @@
       "cities",
       "economics",
       "lugano",
-      "beyond"
+      "beyond",
+      "legal"
     ],
     "economicsSections": [
       "market",
@@ -109,6 +110,19 @@
       "sourceSection": "beyond",
       "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=beyond#beyond",
       "markdownPath": "guides/en/beyond/index.md"
+    },
+    {
+      "path": "guides/en/legal/",
+      "language": "en",
+      "kind": "guide",
+      "key": "legal",
+      "title": "Who can challenge an application? | Connecting the Dots",
+      "headline": "Who can challenge an application?",
+      "description": "Distinguish comments, government input, formal objections and appeals. Then see who has standing, who decides and what each procedure can change.",
+      "sourcePath": "en/index.html",
+      "sourceSection": "legal",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=legal#legal",
+      "markdownPath": "guides/en/legal/index.md"
     },
     {
       "path": "economics/en/market/",
@@ -649,6 +663,19 @@
       "markdownPath": "guides/it/beyond/index.md"
     },
     {
+      "path": "guides/it/legal/",
+      "language": "it",
+      "kind": "guide",
+      "key": "legal",
+      "title": "Chi può contestare una candidatura? | Connecting the Dots",
+      "headline": "Chi può contestare una candidatura?",
+      "description": "Distingui commenti, intervento governativo, obiezioni formali e appelli. Poi verifica chi ha standing, chi decide e che cosa può cambiare ogni procedura.",
+      "sourcePath": "it/index.html",
+      "sourceSection": "legal",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=legal#legal",
+      "markdownPath": "guides/it/legal/index.md"
+    },
+    {
       "path": "economics/it/market/",
       "language": "it",
       "kind": "economics",
@@ -1187,6 +1214,19 @@
       "markdownPath": "guides/de/beyond/index.md"
     },
     {
+      "path": "guides/de/legal/",
+      "language": "de",
+      "kind": "guide",
+      "key": "legal",
+      "title": "Wer kann eine Bewerbung anfechten? | Connecting the Dots",
+      "headline": "Wer kann eine Bewerbung anfechten?",
+      "description": "Unterscheiden Sie Kommentare, staatliche Eingaben, formelle Einwände und Appeals. Danach: Wer hat Standing, wer entscheidet und was kann jedes Verfahren verändern?",
+      "sourcePath": "de/index.html",
+      "sourceSection": "legal",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=legal#legal",
+      "markdownPath": "guides/de/legal/index.md"
+    },
+    {
       "path": "economics/de/market/",
       "language": "de",
       "kind": "economics",
@@ -1723,6 +1763,19 @@
       "sourceSection": "beyond",
       "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=beyond#beyond",
       "markdownPath": "guides/fr/beyond/index.md"
+    },
+    {
+      "path": "guides/fr/legal/",
+      "language": "fr",
+      "kind": "guide",
+      "key": "legal",
+      "title": "Qui peut contester une candidature ? | Connecting the Dots",
+      "headline": "Qui peut contester une candidature ?",
+      "description": "Distinguez commentaires, intervention gouvernementale, objections formelles et recours. Puis voyez qui a qualité pour agir, qui décide et ce que chaque procédure peut changer.",
+      "sourcePath": "fr/index.html",
+      "sourceSection": "legal",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=legal#legal",
+      "markdownPath": "guides/fr/legal/index.md"
     },
     {
       "path": "economics/fr/market/",

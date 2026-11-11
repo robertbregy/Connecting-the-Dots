@@ -2,7 +2,7 @@
 
 > Independent research atlas by Robert Bregy about Internet TLDs, ICANN applications, governance, economics and society. Available in English, Italian, German and French.
 
-Website version 0.7.108, published 2026-11-10. This is the technical/editorial release date, not the observation date of every fact. Read the source date and scope beside each claim.
+Website version 0.7.109, published 2026-11-11. This is the technical/editorial release date, not the observation date of every fact. Read the source date and scope beside each claim.
 
 ## Start here
 
@@ -21,6 +21,7 @@ Website version 0.7.108, published 2026-11-10. This is the technical/editorial r
 - [What is a city's own domain for? | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/guides/en/cities/index.md): Start with governance models and cases. Ask how to measure usefulness, then compare different generations of projects.
 - [Who creates value, and who collects it? | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/guides/en/economics/index.md): Follow the money through the domain market, from registration payments to the strategies of extension operators.
 - [How does an Internet name work? | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/guides/en/how/index.md): First the address and the actors, then the lifecycle, economics and rules. The glossary is always within reach.
+- [Who can challenge an application? | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/guides/en/legal/index.md): Distinguish comments, government input, formal objections and appeals. Then see who has standing, who decides and what each procedure can change.
 - [What might .lugano become? | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/guides/en/lugano/index.md): Start with the application's status and the author's position. Then read intentions, open decisions, possible uses and verification criteria.
 - [How have Internet names changed? | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/index.md): Follow the history, compare application rounds and then examine the classifications and their limitations.
 - [.ai: history, status and sources | Connecting the Dots](https://robertbregy.github.io/Connecting-the-Dots/tlds/en/ai/index.md): Anguilla’s country code. Its association with artificial intelligence illustrates how an existing name can acquire a new meaning.

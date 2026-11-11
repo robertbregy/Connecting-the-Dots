@@ -8,8 +8,8 @@
     "url": "https://github.com/robertbregy"
   },
   "websiteRelease": {
-    "version": "0.7.108",
-    "releasedOn": "2026-11-10",
+    "version": "0.7.109",
+    "releasedOn": "2026-11-11",
     "url": "https://robertbregy.github.io/Connecting-the-Dots/"
   },
   "dateSemantics": {
@@ -488,6 +488,62 @@
       "markdown": {
         "path": "guides/it/how/index.md",
         "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/it/how/index.md"
+      }
+    },
+    {
+      "path": "guides/de/legal/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/de/legal/",
+      "language": "de",
+      "kind": "guide",
+      "key": "legal",
+      "title": "Wer kann eine Bewerbung anfechten? | Connecting the Dots",
+      "description": "Unterscheiden Sie Kommentare, staatliche Eingaben, formelle Einwände und Appeals. Danach: Wer hat Standing, wer entscheidet und was kann jedes Verfahren verändern?",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=legal#legal",
+      "markdown": {
+        "path": "guides/de/legal/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/de/legal/index.md"
+      }
+    },
+    {
+      "path": "guides/en/legal/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/en/legal/",
+      "language": "en",
+      "kind": "guide",
+      "key": "legal",
+      "title": "Who can challenge an application? | Connecting the Dots",
+      "description": "Distinguish comments, government input, formal objections and appeals. Then see who has standing, who decides and what each procedure can change.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=legal#legal",
+      "markdown": {
+        "path": "guides/en/legal/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/en/legal/index.md"
+      }
+    },
+    {
+      "path": "guides/fr/legal/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/fr/legal/",
+      "language": "fr",
+      "kind": "guide",
+      "key": "legal",
+      "title": "Qui peut contester une candidature ? | Connecting the Dots",
+      "description": "Distinguez commentaires, intervention gouvernementale, objections formelles et recours. Puis voyez qui a qualité pour agir, qui décide et ce que chaque procédure peut changer.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=legal#legal",
+      "markdown": {
+        "path": "guides/fr/legal/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/fr/legal/index.md"
+      }
+    },
+    {
+      "path": "guides/it/legal/",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/it/legal/",
+      "language": "it",
+      "kind": "guide",
+      "key": "legal",
+      "title": "Chi può contestare una candidatura? | Connecting the Dots",
+      "description": "Distingui commenti, intervento governativo, obiezioni formali e appelli. Poi verifica chi ha standing, chi decide e che cosa può cambiare ogni procedura.",
+      "interactiveUrl": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=legal#legal",
+      "markdown": {
+        "path": "guides/it/legal/index.md",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/guides/it/legal/index.md"
       }
     },
     {

@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/en/music/ | Site edition: 0.7.108 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/en/music/ | Site edition: 0.7.109 | Language: en -->
 
 TLD profile
 
@@ -386,6 +386,6 @@ Reports linked by IANA, with their original titles and publication dates. A repo
 
 [Official IANA record ↗](https://www.iana.org/domains/root/db/music.html) [Source 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Source 3 ↗](https://newgtlds.icann.org/en/program-status/statistics) [Source 4 ↗](https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm) [Source 5 ↗](https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/)
 
-**By Robert Bregy** · Site edition 0.7.108 · November 10, 2026
+**By Robert Bregy** · Site edition 0.7.109 · November 11, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

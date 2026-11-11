@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/lugano/ | Site edition: 0.7.108 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/lugano/ | Site edition: 0.7.109 | Language: it -->
 
 Scheda TLD
 
@@ -90,6 +90,6 @@ Le classificazioni indicate come derivate usano la data di registrazione IANA e 
 
 [Fonte 1 ↗](https://newgtldprogram-aps.icann.org/applications/CDL2651T-T31516/summary) [Fonte 2 ↗](https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en) [Fonte 3 ↗](https://www.ntlddata.com/applications/strings)
 
-**Di Robert Bregy** · Edizione del sito 0.7.108 · 10 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.109 · 11 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/de/ | Site edition: 0.7.108 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/de/ | Site edition: 0.7.109 | Language: de -->
 
 Connecting the Dots
 
@@ -33,6 +33,10 @@ Beginnen Sie mit dem Bewerbungsstatus und der Position des Autors. Danach folgen
 ### [Dient eine Domain nur dazu, eine Website zu finden?](https://robertbregy.github.io/Connecting-the-Dots/guides/de/beyond/)
 
 Von alltäglichen Diensten zu den unsichtbaren DNS-Funktionen, dann zu Schriftsystemen und alternativen Namenssystemen.
+
+### [Wer kann eine Bewerbung anfechten?](https://robertbregy.github.io/Connecting-the-Dots/guides/de/legal/)
+
+Unterscheiden Sie Kommentare, staatliche Eingaben, formelle Einwände und Appeals. Danach: Wer hat Standing, wer entscheidet und was kann jedes Verfahren verändern?
 
 ## Wirtschaftliche Zusammenhänge vertiefen
 
@@ -96,6 +100,6 @@ Ein Name für die katalanische Sprach- und Kulturgemeinschaft: Zugehörigkeit ü
 
 Bei der dokumentierten Prüfung war .io als Ländercode in der DNS-Root delegiert.
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.108 · 10. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.109 · 11. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

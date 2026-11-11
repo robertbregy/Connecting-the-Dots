@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/fr/market/ | Site edition: 0.7.108 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/fr/market/ | Site edition: 0.7.109 | Language: fr -->
 
 Analyse économique
 
@@ -184,6 +184,6 @@ Analyse de travail du 19 octobre 2026, hors des instantanés scientifiques RR1/R
 
 [Relier diffusion et histoire →](https://robertbregy.github.io/Connecting-the-Dots/guides/fr/timeline/#tld-cultural-trajectory) [Qui gère l’infrastructure →](https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=geography#rsp-tld-footprint)
 
-**Par Robert Bregy** · Édition du site 0.7.108 · 10 novembre 2026
+**Par Robert Bregy** · Édition du site 0.7.109 · 11 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.
