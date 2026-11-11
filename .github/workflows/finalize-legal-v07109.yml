@@ -45,6 +45,11 @@ jobs:
         run: python3 build.py
       - name: Record explicit reviewed hashes
         run: node scripts/finalize_legal_review_v07109.cjs --record-reviewed-candidate
+      - name: Materialize frozen A baseline for continuity audit
+        run: |
+          git fetch origin refs/heads/safety/main-v0.7.78-before-b2-switch-20261013:refs/remotes/origin/safety/main-v0.7.78-before-b2-switch-20261013
+          rm -rf ../baseline
+          git worktree add --detach ../baseline refs/remotes/origin/safety/main-v0.7.78-before-b2-switch-20261013
       - name: Refresh continuity evidence
         run: python3 scripts/audit_content_continuity.py
       - name: Verify reviewed candidate
@@ -67,4 +72,4 @@ jobs:
           git commit -m 'review: record verified v0.7.109 Legal candidate [skip build]'
           git push origin "HEAD:$BRANCH"
 
-# rerun-token: preserve-baseline-fingerprints
+# rerun-token: materialize-frozen-baseline
