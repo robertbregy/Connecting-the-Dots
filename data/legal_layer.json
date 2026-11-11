@@ -10,7 +10,10 @@
     "singularPluralWindowDays": 30,
     "responseDays": 30,
     "appealNoticeDays": 15,
-    "appealFilingAdditionalDays": 15
+    "appealFilingAdditionalDays": 15,
+    "postStringEvaluationStringConfusionWindowDays": 30,
+    "brandStringChangeWindowDays": 30,
+    "independentObjectorExtensionDays": 7
   },
   "sources": {
     "icannCommunityInput": "https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input",
@@ -24,7 +27,8 @@
     "cms1": "https://cms.law/en/int/legal-updates/joining-the-dots-part-1-introduction-to-the-new-gtld-program",
     "cms2": "https://cms.law/en/int/legal-updates/joining-the-dots-part-2-the-application-process",
     "cms3": "https://cms.law/en/int/legal-updates/joining-the-dots-part-3-contention-sets-and-objections",
-    "cms4": "https://cms.law/en/che/legal-updates/joining-the-dots-part-4-deadlines-announced"
+    "cms4": "https://cms.law/en/che/legal-updates/joining-the-dots-part-4-deadlines-announced",
+    "independentObjectors": "https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors"
   },
   "locales": {
     "en": {
@@ -152,14 +156,42 @@
       "readContention": "Read contention",
       "readDisputes": "Read the disputes",
       "readObjectors": "Independent Objectors field note",
-      "notAdvice": "Procedural explainer, not legal advice. Always use the current authoritative Applicant Guidebook and provider rules for an actual filing."
+      "notAdvice": "Procedural explainer, not legal advice. Always use the current authoritative Applicant Guidebook and provider rules for an actual filing.",
+      "standingTitle": "Who actually has standing?",
+      "standingIntro": "Standing is not a generic ticket to object. ICANN defines who may use each formal ground, and the panel checks standing during the Quick Look Review.",
+      "standing": [
+        [
+          "String Confusion",
+          "Existing gTLD operators; existing ccTLD operators or significantly interested parties in the relevant country or territory; and applicants in the 2026 Round.",
+          "An applicant does not have standing against an application already in the same contention set as a result of String Similarity Evaluation."
+        ],
+        [
+          "Legal Rights",
+          "A holder of documented existing legal rights, including relevant registered or unregistered trademark rights or an appropriate licensee; qualifying intergovernmental organizations also have standing.",
+          "The claimed right and supporting documentation must be included in the filing."
+        ],
+        [
+          "Limited Public Interest",
+          "Anyone may file, but only on the defined Limited Public Interest ground.",
+          "An objection brought on another basis is dismissed for lack of standing."
+        ],
+        [
+          "Community",
+          "An established institution associated with a clearly delineated community strongly associated with the applied-for string.",
+          "The institution must show both that it is established and that it has an ongoing relationship with the community."
+        ]
+      ],
+      "windowsTitle": "The 104-day window is not the only filing window",
+      "windowsBody": "The ordinary window opens on String Confirmation Day for 104 days on all four grounds. A further 30-day String Confusion window follows publication of updated contention sets after String Evaluation. A separate 30-day window on all grounds can open after a successful .Brand String Change. Independent Objectors may use only the initial objection window and receive seven additional days beyond the public deadline.",
+      "ioTitle": "Independent Objectors are a separate public-interest mechanism",
+      "ioBody": "ICANN appoints three Independent Objectors. They may file only Limited Public Interest or Community objections, act for the global Internet public rather than a private client, require at least one opposing public comment, and ordinarily do not duplicate a same-ground objection that has passed Quick Look Review unless extraordinary circumstances exist."
     },
     "it": {
       "nav": "Diritti, obiezioni e rimedi",
       "card": "Chi può contestare una candidatura, su quale base, chi decide e che cosa può succedere dopo.",
       "title": "Diritti, obiezioni e rimedi",
       "kicker": "Chi può agire, su quale base, chi decide e che cosa può succedere dopo",
-      "intro": "Una candidatura a un nuovo gTLD non passa dalla pubblicazione alla delega attraverso dati e valutazioni soltanto. Il round 2026 apre anche canali formali attraverso i quali pubblico, governi, titolari di diritti, comunità e garanti indipendenti possono sollevare questioni. Questi meccanismi non hanno tutti lo stesso peso né lo stesso effetto.",
+      "intro": "Una candidatura a un nuovo gTLD non passa dalla pubblicazione alla delega attraverso dati e valutazioni soltanto. Il round 2026 apre anche canali formali attraverso i quali pubblico, governi, titolari di diritti, comunità e gli Independent Objectors nominati da ICANN possono sollevare questioni. Questi meccanismi non hanno tutti lo stesso peso né lo stesso effetto.",
       "caveatTitle": "Non ogni intervento è un'obiezione",
       "caveatBody": "Un commento pubblico, un GAC Early Warning, un GAC Consensus Advice, una segnalazione singolare/plurale e un'obiezione formale sono procedure diverse. Cambiano attori, decisori e possibili conseguenze. E una contesa tra candidati è ancora un'altra cosa.",
       "mapTitle": "Sette modi per contestare o influenzare una candidatura",
@@ -191,7 +223,7 @@
         ],
         [
           "Obiezione formale",
-          "Un soggetto con standing",
+          "Un soggetto con legittimazione",
           "Panel indipendente tramite il DRSP competente",
           "Il panel applica uno dei quattro motivi previsti e determina se e come la candidatura può procedere."
         ],
@@ -209,7 +241,7 @@
         ]
       ],
       "objectionsTitle": "I quattro motivi di obiezione formale",
-      "objectionsIntro": "Un'obiezione formale deve rientrare in uno dei quattro motivi previsti e chi la presenta deve soddisfare le regole di standing applicabili. Il deposito avviene direttamente presso il Dispute Resolution Service Provider (DRSP) competente.",
+      "objectionsIntro": "Un'obiezione formale deve rientrare in uno dei quattro motivi previsti e chi la presenta deve soddisfare le regole di legittimazione (standing) applicabili. Il deposito avviene direttamente presso il Dispute Resolution Service Provider (DRSP) competente.",
       "objections": [
         [
           "String Confusion",
@@ -245,7 +277,7 @@
         ],
         [
           "Deposito",
-          "L'obiettore deposita elettronicamente, in inglese, presso il DRSP corretto, dimostra lo standing, indica il motivo, produce le prove e paga la fee applicabile."
+          "Chi presenta l'obiezione deposita elettronicamente, in inglese, presso il DRSP competente, dimostra la legittimazione, indica il motivo, produce le prove e paga la fee applicabile."
         ],
         [
           "Esame",
@@ -279,7 +311,35 @@
       "readContention": "Leggi le contese",
       "readDisputes": "Leggi le controversie",
       "readObjectors": "Nota sugli Independent Objectors",
-      "notAdvice": "Spiegazione procedurale, non consulenza legale. Per un deposito reale fanno fede l'Applicant Guidebook vigente e le regole del provider competente."
+      "notAdvice": "Spiegazione procedurale, non consulenza legale. Per un deposito reale fanno fede l'Applicant Guidebook vigente e le regole del provider competente.",
+      "standingTitle": "Chi ha davvero la legittimazione ad agire?",
+      "standingIntro": "La legittimazione (standing) non è un lasciapassare generico per fare opposizione. ICANN definisce chi può usare ciascun motivo formale e il panel la verifica nel Quick Look Review.",
+      "standing": [
+        [
+          "String Confusion",
+          "Operatori di gTLD esistenti; operatori di ccTLD o soggetti con un interesse significativo nel paese o territorio pertinente; candidati del round 2026.",
+          "Un candidato non ha legittimazione contro una candidatura già nello stesso contention set in seguito alla String Similarity Evaluation."
+        ],
+        [
+          "Legal Rights",
+          "Titolari di diritti giuridici esistenti documentati, inclusi pertinenti diritti di marchio registrati o non registrati e, quando appropriato, licenziatari; sono ammesse anche determinate organizzazioni intergovernative.",
+          "Il diritto invocato e la documentazione che lo prova devono accompagnare l'obiezione."
+        ],
+        [
+          "Limited Public Interest",
+          "Può presentarla chiunque, ma soltanto sul motivo Limited Public Interest definito dal Guidebook.",
+          "Un'obiezione fondata su altri motivi viene respinta per difetto di legittimazione."
+        ],
+        [
+          "Community",
+          "Un'istituzione consolidata associata a una comunità chiaramente delimitata e fortemente collegata alla stringa richiesta.",
+          "L'istituzione deve dimostrare sia di essere consolidata sia di avere un rapporto continuativo con la comunità."
+        ]
+      ],
+      "windowsTitle": "I 104 giorni non sono l'unica finestra per le obiezioni",
+      "windowsBody": "La finestra ordinaria si apre allo String Confirmation Day per 104 giorni e riguarda tutti e quattro i motivi. Dopo la String Evaluation può aprirsi un'ulteriore finestra di 30 giorni per String Confusion, a seguito della pubblicazione dei contention set aggiornati. Una finestra separata di 30 giorni su tutti i motivi può aprirsi dopo una .Brand String Change riuscita. Gli Independent Objectors possono agire soltanto nella finestra iniziale e dispongono di sette giorni aggiuntivi rispetto al termine per il pubblico.",
+      "ioTitle": "Gli Independent Objectors sono un meccanismo distinto di interesse pubblico",
+      "ioBody": "ICANN nomina tre Independent Objectors. Possono presentare soltanto obiezioni Limited Public Interest o Community, agiscono nell'interesse del pubblico globale di Internet e non per un cliente privato, richiedono almeno un commento pubblico contrario alla candidatura e, salvo circostanze straordinarie, non duplicano un'obiezione sullo stesso motivo che abbia già superato il Quick Look Review."
     },
     "de": {
       "nav": "Rechte, Einwände und Rechtsbehelfe",
@@ -406,7 +466,35 @@
       "readContention": "Contention lesen",
       "readDisputes": "Streitfälle lesen",
       "readObjectors": "Field Note zu Independent Objectors",
-      "notAdvice": "Verfahrenserklärung, keine Rechtsberatung. Für eine tatsächliche Einreichung gelten der aktuelle maßgebliche Applicant Guidebook und die Regeln des zuständigen Providers."
+      "notAdvice": "Verfahrenserklärung, keine Rechtsberatung. Für eine tatsächliche Einreichung gelten der aktuelle maßgebliche Applicant Guidebook und die Regeln des zuständigen Providers.",
+      "standingTitle": "Wer ist tatsächlich einwendungsberechtigt?",
+      "standingIntro": "Die Einwendungsberechtigung (standing) ist keine allgemeine Erlaubnis zum Widerspruch. ICANN legt für jeden formellen Einwandsgrund fest, wer handeln darf; das Panel prüft dies im Quick Look Review.",
+      "standing": [
+        [
+          "String Confusion",
+          "Betreiber bestehender gTLDs; Betreiber bestehender ccTLDs oder maßgeblich interessierte Parteien im betroffenen Land oder Gebiet; sowie Bewerber der 2026-Runde.",
+          "Ein Bewerber ist nicht berechtigt, gegen eine Bewerbung vorzugehen, die aufgrund der String Similarity Evaluation bereits im selben Contention Set liegt."
+        ],
+        [
+          "Legal Rights",
+          "Inhaber dokumentierter bestehender Rechte, einschließlich einschlägiger registrierter oder nicht registrierter Markenrechte bzw. geeigneter Lizenznehmer; außerdem bestimmte zwischenstaatliche Organisationen.",
+          "Das geltend gemachte Recht und die Nachweise müssen mit dem Einwand eingereicht werden."
+        ],
+        [
+          "Limited Public Interest",
+          "Jede Person kann einreichen, jedoch ausschließlich auf dem festgelegten Limited-Public-Interest-Grund.",
+          "Ein Einwand mit anderer Begründung wird mangels Einwendungsberechtigung zurückgewiesen."
+        ],
+        [
+          "Community",
+          "Eine etablierte Institution, die mit einer klar abgegrenzten und mit der beantragten Zeichenfolge eng verbundenen Gemeinschaft verbunden ist.",
+          "Die Institution muss sowohl ihre Etabliertheit als auch eine fortlaufende Beziehung zur Gemeinschaft nachweisen."
+        ]
+      ],
+      "windowsTitle": "Das 104-Tage-Fenster ist nicht das einzige Einreichungsfenster",
+      "windowsBody": "Das reguläre Fenster beginnt am String Confirmation Day und läuft 104 Tage für alle vier Einwandsgründe. Nach der String Evaluation folgt ein zusätzliches 30-Tage-Fenster nur für String Confusion, sobald aktualisierte Contention Sets veröffentlicht sind. Nach einer erfolgreichen .Brand String Change kann außerdem ein separates 30-Tage-Fenster für alle Einwandsgründe beginnen. Independent Objectors nutzen nur das erste Einreichungsfenster und erhalten sieben zusätzliche Tage über die öffentliche Frist hinaus.",
+      "ioTitle": "Independent Objectors sind ein eigener Public-Interest-Mechanismus",
+      "ioBody": "ICANN ernennt drei Independent Objectors. Sie dürfen nur Limited-Public-Interest- oder Community-Einwände erheben, handeln für das globale Internetpublikum statt für private Auftraggeber, benötigen mindestens einen öffentlichen Gegenkommentar und duplizieren grundsätzlich keinen gleich begründeten Einwand, der den Quick Look Review bereits bestanden hat, außer bei außergewöhnlichen Umständen."
     },
     "fr": {
       "nav": "Droits, objections et recours",
@@ -445,7 +533,7 @@
         ],
         [
           "Objection formelle",
-          "Une partie ayant standing",
+          "Une partie ayant qualité pour agir",
           "Panel d'experts indépendant via le DRSP compétent",
           "Le panel applique l'un des quatre fondements prévus et détermine si et comment la candidature peut continuer."
         ],
@@ -463,7 +551,7 @@
         ]
       ],
       "objectionsTitle": "Les quatre fondements d'objection formelle",
-      "objectionsIntro": "Une objection formelle doit relever de l'un des quatre fondements prévus et son auteur doit satisfaire aux règles de standing correspondantes. Le dépôt se fait directement auprès du Dispute Resolution Service Provider (DRSP) compétent.",
+      "objectionsIntro": "Une objection formelle doit relever de l'un des quatre fondements prévus et son auteur doit satisfaire aux règles de qualité pour agir (standing) correspondantes. Le dépôt se fait directement auprès du Dispute Resolution Service Provider (DRSP) compétent.",
       "objections": [
         [
           "String Confusion",
@@ -533,7 +621,35 @@
       "readContention": "Lire les contentions",
       "readDisputes": "Lire les litiges",
       "readObjectors": "Note sur les Independent Objectors",
-      "notAdvice": "Explication procédurale, pas un avis juridique. Pour un dépôt réel, il faut utiliser l'Applicant Guidebook en vigueur et les règles du prestataire compétent."
+      "notAdvice": "Explication procédurale, pas un avis juridique. Pour un dépôt réel, il faut utiliser l'Applicant Guidebook en vigueur et les règles du prestataire compétent.",
+      "standingTitle": "Qui a réellement qualité pour agir ?",
+      "standingIntro": "La qualité pour agir (standing) n'est pas une autorisation générale de contester. ICANN définit qui peut utiliser chaque fondement formel et le panel la vérifie lors du Quick Look Review.",
+      "standing": [
+        [
+          "String Confusion",
+          "Opérateurs de gTLD existants ; opérateurs de ccTLD ou parties ayant un intérêt significatif dans le pays ou territoire concerné ; et candidats du cycle 2026.",
+          "Un candidat n'a pas qualité pour agir contre une candidature déjà placée dans le même contention set à la suite de la String Similarity Evaluation."
+        ],
+        [
+          "Legal Rights",
+          "Titulaire de droits juridiques existants documentés, notamment de droits de marque enregistrés ou non enregistrés, ou licencié approprié ; certaines organisations intergouvernementales sont également recevables.",
+          "Le droit invoqué et les pièces justificatives doivent accompagner le dépôt."
+        ],
+        [
+          "Limited Public Interest",
+          "Toute personne peut déposer, mais uniquement sur le fondement Limited Public Interest défini par le Guidebook.",
+          "Une objection fondée sur un autre motif est rejetée pour défaut de qualité pour agir."
+        ],
+        [
+          "Community",
+          "Une institution établie associée à une communauté clairement délimitée et fortement liée à la chaîne demandée.",
+          "L'institution doit montrer à la fois qu'elle est établie et qu'elle entretient une relation continue avec la communauté."
+        ]
+      ],
+      "windowsTitle": "La fenêtre de 104 jours n'est pas la seule période de dépôt",
+      "windowsBody": "La fenêtre ordinaire s'ouvre au String Confirmation Day pour 104 jours sur les quatre fondements. Après la String Evaluation, une fenêtre supplémentaire de 30 jours s'ouvre pour String Confusion après publication des contention sets mis à jour. Une fenêtre distincte de 30 jours sur tous les fondements peut s'ouvrir après une .Brand String Change réussie. Les Independent Objectors n'utilisent que la fenêtre initiale et disposent de sept jours supplémentaires au-delà de l'échéance publique.",
+      "ioTitle": "Les Independent Objectors constituent un mécanisme distinct d'intérêt public",
+      "ioBody": "ICANN nomme trois Independent Objectors. Ils ne peuvent déposer que des objections Limited Public Interest ou Community, agissent dans l'intérêt du public mondial d'Internet plutôt que pour un client privé, exigent au moins un commentaire public opposé à la candidature et, sauf circonstances extraordinaires, ne doublonnent pas une objection sur le même fondement ayant déjà passé le Quick Look Review."
     }
   }
 }
