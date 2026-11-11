@@ -1,6 +1,6 @@
-# Connecting the Dots — v0.7.109
+# Connecting the Dots — v0.7.110
 
-**v0.7.109 · 11 November 2026.** Added a source-backed legal and procedural layer inside Conflicts & outcomes: public and government input, four formal objection grounds, standing, WIPO/ICC providers, Independent Objectors, appeals and the bridge from disputes to binding Registry Voluntary Commitments. Historical disputes remain separate cases; APS/IANA snapshots and RR1/RR2 are unchanged.
+**v0.7.110 · 11 November 2026.** Full-site audit closure: separated Legal procedure from historical dispute stories, completed standing and objection-window guidance, updated the current .helsinki lifecycle after the 28 October IANA revocation while preserving the frozen 4 October root snapshot, and made mutable-source freshness review-aware. APS evidence and RR1/RR2 remain unchanged.
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -8,10 +8,17 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.108 - 10 November 2026**
+**v0.7.110 - 11 November 2026**
 
-The 10 November audit is closed with explicit snapshot dates, consistent reading controls and metadata, repaired multilingual paths, clearer Economics navigation and direct discovery of the .meow story and Reader Study. Publication now uses a validated public allowlist, while weekly source-health and freshness checks flag review needs without redating or rewriting historical research evidence.
+A full-site audit closed the remaining editorial and governance gaps after the Legal-layer release. Disputed Dots now focuses on historical cases and links to the dedicated Legal chapter for procedure. Legal now explains who actually has standing, the additional objection windows and the specific role of Independent Objectors. The current editorial layer records the completed .helsinki revocation while preserving the older frozen IANA snapshot as dated evidence. Source freshness now distinguishes observation age from the date of the latest editorial review.
 
+## Previous Legal release
+
+**v0.7.109 - 11 November 2026**
+
+Added a source-backed legal and procedural layer inside Conflicts & outcomes: public and government input, four formal objection grounds, standing, WIPO/ICC providers, Independent Objectors, appeals and the bridge from disputes to binding Registry Voluntary Commitments. Historical disputes remain separate cases; APS/IANA snapshots and RR1/RR2 are unchanged.
+
+## Previous homepage release
 ## Previous homepage release
 
 **v0.7.106 - 9 November 2026**
