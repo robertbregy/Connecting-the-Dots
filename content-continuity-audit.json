@@ -4048,6 +4048,7 @@
       "scripts/audit_20261019_browser.cjs",
       "scripts/audit_aps_application_atlas.js",
       "scripts/audit_audience.cjs",
+      "scripts/audit_axe_20261010.js",
       "scripts/audit_content_continuity.py",
       "scripts/audit_economics_order.cjs",
       "scripts/audit_focus_reflow.cjs",
@@ -4217,7 +4218,7 @@
     "errors": [],
     "review_id": "legal-layer-2026-11-11-v0.7.109",
     "reviewed_on": "2026-11-11",
-    "manifest_sha256": "fadf28c141bef6748d3c9c7690a443c0acb32388178b542ff0d6583b77254383",
+    "manifest_sha256": "b343cf94912960edfa2245a895701d6e07b4eb189acad0432adae9ffdd3a14da",
     "source_verification": {
       "baselineMain": "ec231cc12d35fa91ff5340ad057a483ce23a5ca4",
       "reviewedAgainst": "65e0fbe2080c2ee841e8abc01e1ddec113a74b8e",

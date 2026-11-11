@@ -109,7 +109,8 @@
     "V108": "Separate deterministic v0.7.108 package, preserving the published v0.7.107 package and every previous archive.",
     "LEGAL109": "Reviewed four-language Legal procedural chapter and reader-path integration. Primary procedural sources are ICANN, WIPO and ICC; CMS Joining the Dots remains secondary professional reading. No new application outcome is asserted.",
     "DISC109": "Reviewed four new citable Legal discovery guides and exact sitemap/agent-catalog expansion from 84 to 88 discovery documents.",
-    "V109": "Separate deterministic v0.7.109 technical package; v0.7.108 and all earlier packages remain immutable."
+    "V109": "Separate deterministic v0.7.109 technical package; v0.7.108 and all earlier packages remain immutable.",
+    "QA109": "Update only three regression expectations from 24 to 25 built chapters after adding the reviewed Legal chapter; all navigation, legacy-link and WCAG assertions remain otherwise unchanged."
   },
   "sourceInvariants": {
     "sections": [
@@ -3752,7 +3753,7 @@
     },
     "data/publication.js": {
       "baselineSHA256": "899025d5da40e4100c67a0fd410de58d5d11f50cbea7c0a7b5ea7f4b9045ef23",
-      "sha256": "d6d9789ef6754009bff6480f6a94ac1388aaaba6a06977a172e18ea579109e27",
+      "sha256": "75beeb0140f5113bfe225f70ccf5a5b8b91a08ba78fbbe5fa604cdffece2e444",
       "rationaleIds": [
         "DEL98",
         "V98",
@@ -4053,7 +4054,7 @@
     },
     "de/index.html": {
       "baselineSHA256": "8a44d19e73614912f6a2c420974ae801c98bc3e8a99be366051608cdc0d524be",
-      "sha256": "42c4d7c1d117692a3abda13cd318b6516b8f208267dde8d4472a9f84e69f0672",
+      "sha256": "9983d392e0a8c13a6233c231f2efdcbbefb17c773542e9cb162d867dd4155218",
       "rationaleIds": [
         "A95",
         "V96",
@@ -5391,7 +5392,7 @@
     },
     "en/index.html": {
       "baselineSHA256": "98a47906b5d79c444243a60370c9f76a429bf965e4f89f4d9f3aa77d6c3c794b",
-      "sha256": "94f42771169b4f2ec4e79e164cdad1d6c19d285d742f8e79c004253bede89d9a",
+      "sha256": "fc4c1f43ea896c6e8c69b4d63bd4f701652dd6c42e3210480115e5f7e2587dee",
       "rationaleIds": [
         "A95",
         "V96",
@@ -5452,7 +5453,7 @@
     },
     "fr/index.html": {
       "baselineSHA256": "127650e29f8cd27c6915ad1a1c46e709acc798cfe1f81bb132264aa3030e509f",
-      "sha256": "b60dade05e1789dfd7307f284e97c57243bd1b83c8c4f9bfcf0fa51a4cb915c1",
+      "sha256": "59e0d38f7a2b1779d3ba914b5c3c869d26b9a079507a485c6323c098c37dc3c9",
       "rationaleIds": [
         "A95",
         "V96",
@@ -6251,7 +6252,7 @@
     },
     "index.html": {
       "baselineSHA256": "5e4a6f107439ff09dd25ac7202bfe9ea4864c127481f8bf12f58db5160df3b90",
-      "sha256": "de32b2e7b9a1f2c50325237af298e43e6a55440ee00d39ab3e2934b43b088b95",
+      "sha256": "faf58bcbd263e26d88b0e41a10284a82a309cc37f68ce6cc3b395057854d4575",
       "rationaleIds": [
         "A95",
         "V96",
@@ -6430,7 +6431,7 @@
     },
     "it/index.html": {
       "baselineSHA256": "d23a5360a62709ae1fbe6c4b039ac8742e521a084e4b24eabecb63457ed33a20",
-      "sha256": "8f52cf6eaf7ca0efe49570bbeb84630a7829708781b5c4602b60e642edda93c7",
+      "sha256": "81d6a64c3d8e333bfb4377ee3b3a8a48a904a59964554ebe03a372a6e823bf27",
       "rationaleIds": [
         "A95",
         "V96",
@@ -6543,7 +6544,7 @@
     },
     "publication.json": {
       "baselineSHA256": "b5d225fa96dc9573b2dac3c18e39236c2e570c65aaa08afdbfedbdc0292368ef",
-      "sha256": "46c38a728c07b88405b139bf7dcead64a7de614046f821f55bbf9569bb761834",
+      "sha256": "664e2488ad91a5c9284f1c27d19d724a2ce1e5c4286eea1ef643e3c7820ba8b7",
       "rationaleIds": [
         "C01",
         "C02",
@@ -7002,23 +7003,25 @@
     },
     "scripts/audit_ia_b2.cjs": {
       "baselineSHA256": "69b0c092ad93286154b346dd6f37c14fef05b71cc9156afe957cb87f81d3a985",
-      "sha256": "0c8e2c28c4c0f0a81909d064a3a33a6e675825d2f0a8ee53f2f4e260574ef813",
+      "sha256": "1393c32ccd2c59b77b74a024c98052adebf38e24d5327914c4b74119c2fc506b",
       "rationaleIds": [
         "U01",
         "E10",
         "V106",
-        "QA106"
+        "QA106",
+        "QA109"
       ],
       "priorTechnicalSHA256": "40c3213e37f3564872ab4dcfcee2d20ccd765387b89ae896ac95ceca3ccf8022"
     },
     "scripts/audit_legacy_deeplinks.cjs": {
-      "baselineSHA256": null,
+      "baselineSHA256": "dd3071f034bb93203ee04fe7d5f9827b19a40f39ca0833bed3f3ddc733dc8557",
+      "sha256": "6ad18fa06e7391b2ed8714cb35c4596ebc07bf7c694ec74d50a76b8885f76401",
       "rationaleIds": [
         "E13",
         "V107",
-        "QA107"
+        "QA107",
+        "QA109"
       ],
-      "sha256": "dd3071f034bb93203ee04fe7d5f9827b19a40f39ca0833bed3f3ddc733dc8557",
       "priorTechnicalSHA256": "f83d4c615f1bbeae6fa09ab1a955cccaf1aeb0a797f1606904163c8551062be2"
     },
     "scripts/audit_performance_20261019.cjs": {
@@ -9171,7 +9174,7 @@
     },
     ".github/workflows/finalize-legal-v07109.yml": {
       "baselineSHA256": null,
-      "sha256": "095c7bc6ee41b388383e181acb84cc9a48208fd8effd710e35c905b742382e71",
+      "sha256": "9d7e74fa5ef4bf22aaa68d97293948aedd77826f18efb1b36382cddfa9da3d63",
       "rationaleIds": [
         "LEGAL109"
       ]
@@ -9261,9 +9264,16 @@
         "DISC109"
       ]
     },
+    "scripts/audit_axe_20261010.js": {
+      "baselineSHA256": "c2219549d191e545d6088962dd7c40477241cfc6d5e3b0e48f0740a8370f2fa1",
+      "sha256": "a6517be75d060a696d60898c5d8d2ca56fe935d97fa12fecd58dbe2d9cae4768",
+      "rationaleIds": [
+        "QA109"
+      ]
+    },
     "scripts/finalize_legal_review_v07109.cjs": {
       "baselineSHA256": null,
-      "sha256": "0cc4e71161e964d03a2f99b4cc37966496b3e4b245f8b4dacd0ac376324f4545",
+      "sha256": "417b16ea09882c859bdbf7c563a71c268e06ca01b98ea58bd48bf90529e9abcd",
       "rationaleIds": [
         "LEGAL109"
       ]
@@ -10393,11 +10403,11 @@
   "verification": {
     "status": "source-and-generated-files-reviewed",
     "reviewedOn": "2026-11-11",
-    "sourceCommit": "3600d68d79591d337e7b6e96a65b0089d20301cc",
+    "sourceCommit": "2991d2c1eb6b28e487578ed1d3b5e4876a132a2b",
     "reviewType": "AI-assisted source, legal-procedure and generated-output review",
     "humanParticipants": 0,
     "protectedSourceSections": 21,
-    "exactFiles": 560,
+    "exactFiles": 561,
     "checks": [
       "python3 build.py",
       "python3 scripts/release_check.py",
@@ -10409,13 +10419,13 @@
   "signoff": {
     "reviewedOn": "2026-11-11",
     "reviewType": "AI-assisted authorized Legal-layer review",
-    "sourceCommit": "3600d68d79591d337e7b6e96a65b0089d20301cc",
+    "sourceCommit": "2991d2c1eb6b28e487578ed1d3b5e4876a132a2b",
     "humanParticipants": 0,
     "scope": "Add a source-backed Legal procedural layer inside Conflicts & outcomes: contention remains competition, Legal explains rights/objections/remedies, Disputed Dots remains the historical case layer, followed by outcomes and lifecycle. Cover public and government input, the four formal objection grounds, standing, WIPO/ICC, Independent Objectors, appeals and the RVC bridge to binding Registry Agreement obligations. Preserve APS/IANA snapshots, RR1/RR2, historical dispute evidence, all legacy source chapter bodies and the six-area B2 navigation."
   },
   "buildProvenancePolicy": {
     "version": "0.7.109",
-    "sourceCommit": "3600d68d79591d337e7b6e96a65b0089d20301cc",
+    "sourceCommit": "2991d2c1eb6b28e487578ed1d3b5e4876a132a2b",
     "semantics": "Pinned branch revision used for deterministic regeneration immediately before explicit review recording."
   },
   "approvedCandidateSHA256": "0d654587df8a3a980216309f6f8cf8f55ae3317dc4ed7cdd264d2f76d6b4fabe",
