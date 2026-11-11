@@ -118,8 +118,7 @@ def inject(path: Path, lang: str) -> None:
     marker = '<section class="section" id="disputes">'
     if html.count(marker) != 1:
         raise SystemExit(f"Legal insertion anchor missing or duplicated: {path}")
-    prefix = "" if path.name == "index.html" and path.parent == ROOT else "../"\n    html = html.replace(marker, render_section(lang, prefix) + marker, 1)
-    hub_start = html.find('<section class="section iaHub" id="ia-outcomes"')
+    prefix = "" if path.name == "index.html" and path.parent == ROOT else "../"\n    html = html.replace(marker, render_section(lang, prefix) + marker, 1)\n    hub_start = html.find('<section class="section iaHub" id="ia-outcomes"')
     hub_end = html.find('</section>', hub_start)
     if hub_start < 0 or hub_end < 0:
         raise SystemExit(f"Outcomes hub missing: {path}")
