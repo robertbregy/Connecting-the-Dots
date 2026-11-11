@@ -950,8 +950,8 @@ if discovery_manifest.get('schemaVersion')!=1 or discovery_manifest.get('siteVer
     fail('Discovery manifest must identify the current publication')
 discovery_pages=discovery_manifest.get('pages', [])
 discovery_paths=[page.get('path', '') for page in discovery_pages]
-if len(discovery_paths)!=84 or len(set(discovery_paths))!=84:
-    fail('Discovery edition must preserve 68 documents and add 16 Economics documents')
+if len(discovery_paths)!=88 or len(set(discovery_paths))!=88:
+    fail('Discovery edition must preserve the existing documents, add 16 Economics documents and four Legal guides')
 economics_paths={f'economics/{lang}/{slug}/' for lang in LANGS for slug in ('market','cases','portfolios','round-2026')}
 if {page.get('path') for page in discovery_pages if page.get('kind')=='economics'}!=economics_paths:
     fail('Economics requires exactly four complete pages in each of the four languages')
