@@ -278,9 +278,17 @@ def evaluate_freshness(root, policy, now=None):
                 if not isinstance(max_age, int) or max_age < 1:
                     raise ValueError("reviewAfterDays must be a positive integer")
                 row["reviewAfterDays"] = max_age
+                reviewed = source_date(entry["lastReviewedOn"]) if entry.get("lastReviewedOn") else observed
+                if reviewed > today:
+                    raise ValueError("Editorial review date is in the future")
+                row.update(lastReviewedOn=reviewed.isoformat(), reviewAgeDays=(today - reviewed).days)
+                if entry.get("reviewOutcome"):
+                    row["reviewOutcome"] = entry["reviewOutcome"]
+                if entry.get("reviewEvidence"):
+                    row["reviewEvidence"] = entry["reviewEvidence"]
                 reasons = []
-                if row["ageDays"] >= max_age:
-                    reasons.append("Observation age reached the editorial review threshold.")
+                if row["reviewAgeDays"] >= max_age:
+                    reasons.append("Time since the last editorial review reached the configured threshold.")
                 milestone = entry.get("nextReview")
                 if milestone:
                     md = json.loads((root / milestone["metadataFile"]).read_text(encoding="utf-8"))
@@ -294,9 +302,14 @@ def evaluate_freshness(root, policy, now=None):
                         row["milestoneState"] = "observation-on-or-after-milestone"
                     else:
                         row["milestoneState"] = "upcoming"
-                row.update(state="review-due" if reasons else "within-review-window",
-                           reviewRequired=bool(reasons),
-                           reason=" ".join(reasons) if reasons else "Within the configured review window; not a claim of live data.")
+                if reasons:
+                    row.update(state="review-due", reviewRequired=True, reason=" ".join(reasons))
+                elif reviewed > observed:
+                    row.update(state="reviewed-dated-evidence", reviewRequired=False,
+                               reason="Dated evidence was reviewed editorially after observation; retaining it is not a claim of live data.")
+                else:
+                    row.update(state="within-review-window", reviewRequired=False,
+                               reason="Within the configured review window; not a claim of live data.")
         except (OSError, KeyError, IndexError, TypeError, ValueError) as exc:
             row.update(state="metadata-error", reviewRequired=True, reason=str(exc)[:240])
         rows.append(row)
@@ -315,9 +328,9 @@ def markdown_report(report):
     lines += [f"| {state} | {report['summary'].get(state, 0)} |" for state in STATES]
     lines += ["", "## Dated snapshots and scientific archives", "",
               "Review thresholds govern the current site's use of dated observations. They do not expire or rewrite frozen evidence. No dataset is downloaded or updated by this check.", "",
-              "| Snapshot | Observed | Age (days) | State | Next review |", "| --- | --- | ---: | --- | --- |"]
+              "| Snapshot | Observed | Last editorial review | Review age (days) | State | Next review |", "| --- | --- | --- | ---: | --- | --- |"]
     for row in report["freshness"]:
-        lines.append("| " + " | ".join(cell(row.get(key, "—")) for key in ("label", "observedOn", "ageDays", "state", "nextReviewOn")) + " |")
+        lines.append("| " + " | ".join(cell(row.get(key, "—")) for key in ("label", "observedOn", "lastReviewedOn", "reviewAgeDays", "state", "nextReviewOn")) + " |")
     for row in report["freshness"]:
         if row["reviewRequired"]:
             lines.append(f"\n- **{cell(row['label'])}:** {cell(row['reason'])}")
