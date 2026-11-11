@@ -32,6 +32,7 @@ review.rationales=review.rationales||{};
 review.rationales.LEGAL109='Reviewed four-language Legal procedural chapter and reader-path integration. Primary procedural sources are ICANN, WIPO and ICC; CMS Joining the Dots remains secondary professional reading. No new application outcome is asserted.';
 review.rationales.DISC109='Reviewed four new citable Legal discovery guides and exact sitemap/agent-catalog expansion from 84 to 88 discovery documents.';
 review.rationales.V109='Separate deterministic v0.7.109 technical package; v0.7.108 and all earlier packages remain immutable.';
+review.rationales.QA109='Update only three regression expectations from 24 to 25 built chapters after adding the reviewed Legal chapter; all navigation, legacy-link and WCAG assertions remain otherwise unchanged.';
 review.linkReplacements=(review.linkReplacements||[]).map(x=>({...x,publishedPath:x.publishedPath.replace(/v0\.7\.108/g,'v0.7.109')}));
 review.approvedCandidateSHA256=verify.sha256(source);
 review.files=review.files||{};
@@ -44,6 +45,7 @@ for(const file of changed){
   const rationale=file.startsWith('downloads/connecting-the-dots-data-pack-v0.7.109')?['V109']:
     file.startsWith('guides/')&&file.includes('/legal/')?['LEGAL109','DISC109']:
     file==='discovery/manifest.json'||file==='agent-catalog.json'||file==='llms.txt'||file==='sitemap.xml'?['DISC109']:
+    ['scripts/audit_ia_b2.cjs','scripts/audit_legacy_deeplinks.cjs','scripts/audit_axe_20261010.js'].includes(file)?['QA109']:
     ['LEGAL109'];
   const previous=prior.files?.[file];
   review.files[file]={
