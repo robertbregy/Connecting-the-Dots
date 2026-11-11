@@ -73,7 +73,7 @@ check('manifest identifies the current technical publication', () => {
   assert.equal(manifest.generatedOn, pub.releasedOn);
   assert.ok(Array.isArray(manifest.pages) && manifest.pages.length > 0, 'No discovery documents');
   assert.equal(new Set(manifest.pages.map(page => page.path)).size, manifest.pages.length, 'Duplicate page paths');
-  assert.equal(manifest.pages.length, 84, 'Preserve the 68 discovery documents and add 16 Economics documents');
+  assert.equal(manifest.pages.length, 88, 'Preserve the existing discovery documents, add 16 Economics documents and four Legal guides');
   const expectedEconomics = languages.flatMap(lang => economicsKeys.map(key => `economics/${lang}/${key}/`));
   assert.deepEqual(manifest.pages.filter(page => page.kind === 'economics').map(page => page.path).sort(),
     expectedEconomics.sort(), 'Missing or extra Economics destinations');
