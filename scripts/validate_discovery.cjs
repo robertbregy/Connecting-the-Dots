@@ -172,9 +172,10 @@ for (const page of pages) {
     const nodes = structuredNodes(document);
     const identity = nodes.find(node => identities(node).includes(canonical) && node.inLanguage === page.language);
     assert.ok(identity, 'JSON-LD does not describe this page in its own language');
+    assert.equal(identity.dateModified, undefined,
+      'Generated discovery page must not invent a release-wide dateModified without a verified per-page significant modification date');
     if (page.kind !== 'index') {
       assert.ok(identity.author || identity.creator, 'Missing author identity');
-      assert.ok(/^\d{4}-\d{2}-\d{2}/.test(identity.dateModified || ''), 'Missing document update date');
       const sources = [...main.querySelectorAll('a[href]')].filter(anchor => externalCitation(anchor, canonical));
       assert.ok(sources.length > 0, 'No linked source evidence in the main content');
       citations += sources.length;
@@ -258,6 +259,8 @@ check('sitemap preserves established pages and lists new canonical documents', (
   for (const entry of sitemap.querySelectorAll('url')) {
     const canonical = entry.querySelector('loc')?.textContent;
     if (!pages.some(page => new URL(page.path, base).href === canonical)) continue;
+    assert.equal(entry.querySelector('lastmod'), null,
+      'Generated discovery URL must not invent a release-wide lastmod: ' + canonical);
     const document = documentAt(localPath(new URL(canonical)));
     for (const alternate of document.querySelectorAll('link[hreflang]')) {
       const expected = alternate.getAttribute('href');
