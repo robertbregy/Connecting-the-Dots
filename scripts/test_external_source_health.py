@@ -256,6 +256,22 @@ class FreshnessTests(unittest.TestCase):
         self.assertEqual(row["milestoneState"], "upcoming")
         self.assertTrue(row["reviewRequired"])
 
+    def test_recent_editorial_review_can_acknowledge_old_dated_evidence_before_milestone(self):
+        self.policy["snapshots"][0]["lastReviewedOn"] = "2026-11-10"
+        self.policy["snapshots"][0]["reviewOutcome"] = "Reviewed; intentionally retain dated evidence."
+        row = self.evaluate("2026-10-11", "2026-11-10T12:00:00")
+        self.assertEqual(row["state"], "reviewed-dated-evidence")
+        self.assertFalse(row["reviewRequired"])
+        self.assertEqual(row["lastReviewedOn"], "2026-11-10")
+        self.assertEqual(row["reviewAgeDays"], 0)
+        self.assertEqual(row["milestoneState"], "upcoming")
+
+    def test_milestone_still_forces_refresh_after_a_pre_milestone_review(self):
+        self.policy["snapshots"][0]["lastReviewedOn"] = "2026-11-10"
+        row = self.evaluate("2026-10-11", "2026-11-17T12:00:00")
+        self.assertTrue(row["reviewRequired"])
+        self.assertEqual(row["milestoneState"], "review-due")
+
     def test_milestone_boundary_uses_switzerland_date(self):
         row = self.evaluate("2026-11-15", "2026-11-16T23:01:00")
         self.assertEqual(row["milestoneState"], "review-due")
