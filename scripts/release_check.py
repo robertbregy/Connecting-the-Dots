@@ -143,22 +143,24 @@ translations=json_file('translations.json')
 latest_summary=history[0].get('summaryKey')
 if not latest_summary or any(not translations.get(lang,{}).get(latest_summary) for lang in LANGS): fail('latest release-history summary translation missing')
 
-# v0.7.80: the Helsinki voluntary termination case must remain discoverable,
-# source-backed and distinct from an actual IANA revocation in all languages.
+# Helsinki lifecycle case: preserve the dated termination history and the later
+# source-backed IANA revocation without rewriting the frozen 4 Oct root snapshot.
 helsinki_keys=('helsinkiBridgeTitle','helsinkiBridgeBody','helsinkiBridgeCta',
                'helsinkiCaseState','helsinkiCaseHistory','helsinkiCaseFact',
                'helsinkiCaseStatus','helsinkiCaseReading',
-               'helsinkiSourceIcann','helsinkiSourceIana','helsinkiSourceCity')
+               'helsinkiSourceIcann','helsinkiSourceRevocation','helsinkiSourceIana','helsinkiSourceCity')
 for language in LANGS:
     if any(not str(translations.get(language,{}).get(key,'')).strip() for key in helsinki_keys):
         fail('Helsinki case translation lost in '+language)
-    if '.helsinki' not in translations[language]['helsinkiCaseStatus']:
-        fail('Helsinki live-delegation status lost in '+language)
+    status=translations[language]['helsinkiCaseStatus']
+    if '.helsinki' not in status or not any(token in status.lower() for token in ('retired','ritirat','widerruf','révocation')):
+        fail('Helsinki current retired/revoked status lost in '+language)
 if source_html.count('id="helsinki-termination"')!=1:
     fail('Helsinki lifecycle case missing or duplicated')
 if 'data-open-anchor="helsinki-termination"' not in source_html:
     fail('No internal City-to-Helsinki navigation')
 for url in ('https://www.icann.org/en/contracted-parties/registry-operators/services/registry-agreement-termination-service',
+            'https://www.iana.org/reports/tld-transfer/20261028-helsinki',
             'https://www.iana.org/domains/root/db/helsinki.html',
             'https://www.hel.fi/en/decision-making/nichelsinki'):
     if url not in source_html:
