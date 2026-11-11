@@ -4,7 +4,7 @@
   "sources": [
     "https://www.icann.org/en/contracted-parties/registry-operators/services/registry-agreement-termination-service",
     "https://www.iana.org/reports/tld-transfer/20261028-helsinki",
-    "https://www.iana.org/domains/root/db/helsinki.html",
+    "https://www.iana.org/domains/root/db",
     "https://www.hel.fi/en/decision-making/nichelsinki"
   ],
   "translations": {
