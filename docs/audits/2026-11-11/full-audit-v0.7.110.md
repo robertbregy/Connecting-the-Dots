@@ -68,11 +68,11 @@ Verified in the deployed/public corpus before this remediation:
 - Legal guides are present in the discovery manifest and agent catalog;
 - `llms.txt` and `agent-catalog.json` retain explicit dataset units, dates and provenance.
 
-### Deferred: per-page `lastmod`
+### Sitemap `lastmod` and JSON-LD modification dates
 
-Most generated discovery URLs currently inherit the technical release date as `lastmod` and JSON-LD `dateModified`. This is safe syntactically but too coarse semantically: a technical rebuild should not imply that every document received a significant editorial change.
+The audit found that generated discovery URLs inherited the technical release date as `lastmod` and JSON-LD `dateModified`, even when a page had not received a significant editorial change.
 
-**Decision:** do not fake precision in v0.7.110. A later change should preserve or derive modification dates per page from actual content/evidence changes.
+**Correction:** v0.7.110 omits those optional fields for generated discovery pages until a reliable per-page modification date can be derived. The sitemap still contains the canonical URLs and reciprocal language alternatives. This follows Google guidance that `lastmod` should be consistently accurate and may be omitted where it is not.
 
 ### Search Console limitation
 
