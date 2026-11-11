@@ -2612,7 +2612,9 @@
     "field03CalendarSource": "ICANN · 2026 round milestones · 29 September 2026",
     "disputesLegalBridgeTitle": "Need the rules behind these disputes?",
     "disputesLegalBridgeBody": "Formal objections, government input, standing, panels and appeals are explained in the dedicated Legal chapter. Keeping the procedure separate makes the historical cases easier to read without losing the legal machinery behind them.",
-    "disputesLegalBridgeCta": "Rights, objections & remedies"
+    "disputesLegalBridgeCta": "Rights, objections & remedies",
+    "release07109": "Added a source-backed Legal layer inside Conflicts & outcomes, separating rights, objections, standing and remedies from the historical dispute cases. APS/IANA snapshots and RR1/RR2 remained unchanged.",
+    "release07110": "Full audit closure: separated Legal procedure from dispute stories, completed standing and filing-window guidance, updated the current .helsinki lifecycle after IANA revocation while preserving the frozen root snapshot, and made mutable-source freshness review-aware. No APS or scientific archive was rewritten."
   },
   "it": {
     "brand": "Brand",
@@ -5227,7 +5229,9 @@
     "field03CalendarSource": "ICANN · tappe del round 2026 · 29 settembre 2026",
     "disputesLegalBridgeTitle": "Cerchi le regole dietro queste controversie?",
     "disputesLegalBridgeBody": "Obiezioni formali, intervento governativo, legittimazione, panel e appelli sono spiegati nel capitolo Legal dedicato. Separare la procedura dai casi rende le storie più leggibili senza perdere il meccanismo giuridico che le sostiene.",
-    "disputesLegalBridgeCta": "Diritti, obiezioni e rimedi"
+    "disputesLegalBridgeCta": "Diritti, obiezioni e rimedi",
+    "release07109": "Aggiunto un layer Legal basato su fonti dentro Conflitti ed esiti, separando diritti, obiezioni, legittimazione e rimedi dai casi storici di controversia. Snapshot APS/IANA e RR1/RR2 sono rimasti invariati.",
+    "release07110": "Chiusura dell'audit completo: separata la procedura Legal dalle storie di controversia, completate legittimazione e finestre di deposito, aggiornato lo stato corrente di .helsinki dopo la revoca IANA preservando lo snapshot root congelato e reso il controllo di freshness consapevole dell'ultima revisione editoriale. Nessun dato APS o archivio scientifico è stato riscritto."
   },
   "de": {
     "brand": "Marke",
@@ -7842,7 +7846,9 @@
     "field03CalendarSource": "ICANN · Meilensteine der Runde 2026 · 29. September 2026",
     "disputesLegalBridgeTitle": "Die Regeln hinter diesen Streitfällen?",
     "disputesLegalBridgeBody": "Formelle Einwände, staatliche Eingaben, Einwendungsberechtigung, Panels und Rechtsbehelfe werden im eigenen Legal-Kapitel erklärt. Die Trennung von Verfahren und Fällen macht die Geschichten lesbarer, ohne die rechtlichen Mechanismen zu verlieren.",
-    "disputesLegalBridgeCta": "Rechte, Einwände und Rechtsbehelfe"
+    "disputesLegalBridgeCta": "Rechte, Einwände und Rechtsbehelfe",
+    "release07109": "Eine quellenbasierte Legal-Ebene wurde in Konflikte & Ergebnisse integriert: Rechte, Einwände, Einwendungsberechtigung und Rechtsbehelfe sind von den historischen Streitfällen getrennt. APS/IANA-Snapshots und RR1/RR2 blieben unverändert.",
+    "release07110": "Abschluss des vollständigen Audits: Legal-Verfahren und Streitfallgeschichten getrennt, Einwendungsberechtigung und Einreichungsfenster vervollständigt, den aktuellen .helsinki-Lebenszyklus nach der IANA-Widerrufung aktualisiert und zugleich den eingefrorenen Root-Snapshot bewahrt sowie Freshness-Prüfungen an die letzte redaktionelle Kontrolle gekoppelt. APS-Daten und wissenschaftliche Archive wurden nicht umgeschrieben."
   },
   "fr": {
     "brand": "Marque",
@@ -10457,6 +10463,8 @@
     "field03CalendarSource": "ICANN · étapes du cycle 2026 · 29 septembre 2026",
     "disputesLegalBridgeTitle": "Besoin des règles derrière ces litiges ?",
     "disputesLegalBridgeBody": "Objections formelles, intervention gouvernementale, qualité pour agir, panels et recours sont expliqués dans le chapitre juridique dédié. Séparer la procédure des cas rend les histoires plus lisibles sans perdre le mécanisme juridique qui les sous-tend.",
-    "disputesLegalBridgeCta": "Droits, objections et recours"
+    "disputesLegalBridgeCta": "Droits, objections et recours",
+    "release07109": "Ajout d'une couche juridique sourcée dans Conflits & résultats, séparant droits, objections, qualité pour agir et recours des cas historiques de litige. Les snapshots APS/IANA et RR1/RR2 sont restés inchangés.",
+    "release07110": "Clôture de l'audit complet : séparation de la procédure juridique et des récits de litiges, précisions sur la qualité pour agir et les fenêtres de dépôt, mise à jour de l'état actuel de .helsinki après la révocation IANA tout en préservant le snapshot racine figé, et contrôle de fraîcheur désormais fondé sur la dernière revue éditoriale. Aucune donnée APS ni archive scientifique n'a été réécrite."
   }
 }
