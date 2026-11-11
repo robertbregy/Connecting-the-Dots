@@ -12,7 +12,7 @@ const hubs=[
  ["ia-understand",4,"how"],
  ["ia-explore",6,"explore"],
  ["ia-stories",4,"economics"],
- ["ia-outcomes",4,"refusals"],
+ ["ia-outcomes",5,"refusals"],
  ["ia-round",4,"behind-round"],
  ["ia-research",4,"research"]
 ];
@@ -95,7 +95,7 @@ async function checkAxe(page,label) {
       tally.hubs.push({hub,cards:count,target:canonical});
     }
 
-    // Exhaustive discoverability check: each of the 26 B2 cards must be
+    // Exhaustive discoverability check: each of the 27 B2 cards must be
     // actionable across languages and desktop/mobile. Click descriptive copy
     // rather than the headline to catch misleading card hit areas.
     tally.checkedCards=0;
@@ -160,7 +160,7 @@ async function checkAxe(page,label) {
       }
       tally.checkedCards++;
     }
-    assert.equal(tally.checkedCards,26,"not all B2 cards tested");
+    assert.equal(tally.checkedCards,27,"not all B2 cards tested");
     // The introductory Internet-basics article deliberately returns to the Home
     // overview. Home must not claim that a primary area is selected.
     // The descriptive text is not an anchor. The native title anchor must
@@ -204,7 +204,7 @@ async function checkAxe(page,label) {
     assert.equal(await page.locator('.iaPrimaryLink[aria-current="location"]').count(),0,"Home overview must not claim a selected area");
     await page.locator('.iaPrimaryLink[data-b2-area="ia-explore"]').click();
     // Editorial hierarchy contract: 3 data tools, followed by 3 distinct DNS-governance routes.
-    // All 26 canonical B2 cards and deep links must remain actionable.
+    // All 27 canonical B2 cards and deep links must remain actionable.
     assert.equal(await page.locator('#ia-explore > .iaHubGrid > .iaHubCard').count(),3,
       "Explore must have exactly three data tools above the governance group");
     assert.equal(await page.locator('#ia-explore .iaExploreGovernanceCards > .iaHubCard').count(),3,
