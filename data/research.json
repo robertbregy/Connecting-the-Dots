@@ -1157,6 +1157,11 @@
       "primary"
     ],
     [
+      "IANA - Helsinki revocation report (28 October 2026)",
+      "https://www.iana.org/reports/tld-transfer/20261028-helsinki",
+      "primary"
+    ],
+    [
       "IANA - Helsinki delegated TLD record",
       "https://www.iana.org/domains/root/db/helsinki.html",
       "primary"
