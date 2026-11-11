@@ -410,7 +410,7 @@ def main() -> None:
     # Approved editorial amendments must already be in the reviewed dictionary.
     # Never silently rewrite protected source files inside a build.
     translations = json.loads((DATA / "translations.json").read_text(encoding="utf-8"))
-    for amendment in ("helsinki_editorial_20261025.json", "editorial_io_appointments_20261023.json"):
+    for amendment in ("helsinki_editorial_20261025.json", "helsinki_editorial_20261111.json", "editorial_io_appointments_20261023.json"):
         reviewed = json.loads((DATA / amendment).read_text(encoding="utf-8"))
         for lang, keys in reviewed["translations"].items():
             for key, value in keys.items():
