@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "reviewedOn": "2026-11-11",
   "timezone": "Europe/Zurich",
-  "purpose": "Read-only editorial review reminders. HTTP reachability never changes an observation date or establishes that its facts remain current.",
+  "purpose": "Editorial review policy for dated mutable evidence and frozen archives. Offline release checks use review dates and milestones; HTTP reachability never changes an observation date or establishes that its facts remain current.",
   "thresholdBasis": "Operational review cadence chosen for this publication: 14 days for the changing 2026 APS listing, 30 days for the root-state view. These are review thresholds, not source validity or scientific expiry limits.",
   "snapshots": [
     {
