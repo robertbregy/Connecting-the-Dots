@@ -30,6 +30,13 @@ pub.update({
 })
 dump("publication.json",pub)
 
+# Once 0.7.110 becomes current, the published 0.7.109 data pack becomes an
+# immutable historical package and must enter the frozen registry before build.
+frozen=load("data/frozen_technical_packages.json")
+frozen["recordedOn"]=DATE
+frozen["files"]["downloads/connecting-the-dots-data-pack-v0.7.109.zip"]="be3b80a7cb0f1c712401e3596ed571211e901e8fd175545076a707fc0a4d6a0e"
+dump("data/frozen_technical_packages.json",frozen)
+
 hist=load("data/release_history.json")
 for x in hist["releases"]:
     if x["version"]=="0.7.109": x["summaryKey"]="release07109"
