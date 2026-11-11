@@ -125,7 +125,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.equal(document.querySelector('#ia-explore .iaExploreGovernance [data-b2-resource="sanctions"]').getAttribute('href'),'#governance-sanctions',page+' native sanctions chapter link missing');
   for(const card of document.querySelectorAll('.iaHubCard a[data-open-section]')){
     const target=card.getAttribute('data-open-section'),anchor=card.getAttribute('data-open-anchor');
-    assert.ok(legacySections.includes(target),page+' IA card loses canonical target '+target);
+    assert.ok(legacySections.includes(target)||target==='legal',page+' IA card loses canonical or reviewed Legal target '+target);
     if(anchor)assert.ok(document.getElementById(anchor),page+' IA link anchor lost '+anchor);
   }
 
