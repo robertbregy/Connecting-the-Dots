@@ -1221,7 +1221,7 @@
     "tabDisputes": "Disputed Dots",
     "disputesTitle": "Disputed Dots",
     "disputesSubtitle": "When a string becomes politics.",
-    "disputesIntro": "A contention set means several applicants want the same or a confusingly similar string. A governance dispute is broader: governments, communities, rights holders or applicants can challenge who should operate a name, under what conditions, or whether it should exist at all.",
+    "disputesIntro": "Nine selected disputes show how governments, communities, rights and accountability mechanisms can shape the fate and meaning of a top-level domain. The rules are explained separately; this chapter stays with the cases.",
     "disputesSelectionNote": "These cases are selected because each exposes a different governance problem. They are not a league table and not a complete catalogue of every dispute in ICANN history.",
     "disputesMechanismsTitle": "How a TLD dispute can enter the system",
     "disputesMechanismsSub": "Not every fight is a lawsuit. The new-gTLD process has several formal routes for public-policy concerns, rights claims, community claims, competition and accountability review.",
@@ -2463,7 +2463,7 @@
     "release0782": "v0.7.82: 13–15 October observations on potential auction proceeds and PwC screening; updated replacement-string methodology in Note 04 and sourced new Note 05. RR1/RR2 unchanged.",
     "release0783": "v0.7.83: city-domain governance comparisons, use and sustainability indicators, and a stronger .lugano case. Sources, design proposals and external reception are distinguished; RR1/RR2 unchanged.",
     "themeRoundOfficialApplicationsLabel": "applications in the official Reveal Day total",
-    "cemeterySub": "Terminations, transfers and withdrawals: four documented paths.",
+    "cemeterySub": "Termination, transition, withdrawal and retirement are different outcomes. These documented cases show why they should not be collapsed into one idea of a TLD simply 'disappearing'.",
     "iaHomeOutcomesDesc": "CONTENTION, DISPUTES AND OUTCOMES",
     "luganoSectionStatusTitle": "Status and sources",
     "luganoSectionGovernanceTitle": "Governance decisions still to be made",
@@ -2609,7 +2609,10 @@
     "field03CalendarTitle": "Calendar of general public objections",
     "field03CalendarBody": "ICANN scheduled the general public objection period for 17 November 2026 to 16 March 2027. This window already includes the pause from 19 December 2026 at 01:00 UTC to 4 January 2027 at 16:00 UTC.",
     "field03CalendarLimit": "These dates describe the general public objection window; they do not specify the separate deadline for Independent Objectors.",
-    "field03CalendarSource": "ICANN · 2026 round milestones · 29 September 2026"
+    "field03CalendarSource": "ICANN · 2026 round milestones · 29 September 2026",
+    "disputesLegalBridgeTitle": "Need the rules behind these disputes?",
+    "disputesLegalBridgeBody": "Formal objections, government input, standing, panels and appeals are explained in the dedicated Legal chapter. Keeping the procedure separate makes the historical cases easier to read without losing the legal machinery behind them.",
+    "disputesLegalBridgeCta": "Rights, objections & remedies"
   },
   "it": {
     "brand": "Brand",
@@ -3833,7 +3836,7 @@
     "tabDisputes": "Controversie",
     "disputesTitle": "Controversie che hanno cambiato il punto",
     "disputesSubtitle": "Quando una stringa diventa politica.",
-    "disputesIntro": "Un contention set significa che più candidati vogliono la stessa stringa o una stringa confondibile. Una disputa di governance è più ampia: governi, comunità, titolari di diritti o candidati possono contestare chi debba gestire un nome, a quali condizioni o se debba esistere del tutto.",
+    "disputesIntro": "Nove controversie selezionate mostrano come governi, comunità, diritti e meccanismi di accountability possano incidere sul destino e sul significato di un dominio di primo livello. Le regole sono spiegate a parte; qui restiamo sui casi.",
     "disputesSelectionNote": "Questi casi sono scelti perché ciascuno mette a nudo un problema diverso di governance. Non sono una classifica e non costituiscono il catalogo completo di tutte le dispute nella storia di ICANN.",
     "disputesMechanismsTitle": "Come una controversia su un TLD entra nel sistema",
     "disputesMechanismsSub": "Non ogni battaglia è una causa giudiziaria. Il processo dei nuovi gTLD prevede canali formali diversi per politica pubblica, diritti, comunità, competizione e controllo dell’operato di ICANN.",
@@ -5075,7 +5078,7 @@
     "release0782": "v0.7.82: nuove osservazioni del 13–15 ottobre su possibili proventi delle aste e controlli PwC; Nota 04 aggiornata sulle stringhe sostitutive, Nota 05 pubblicata con fonti ICANN. RR1/RR2 invariati.",
     "release0783": "v0.7.83: confronto dei modelli di governo dei domini cittadini, indicatori di uso e sostenibilità e caso .lugano approfondito. Fonti, proposte e ricezione esterna distinti; RR1/RR2 invariati.",
     "themeRoundOfficialApplicationsLabel": "candidature nel totale ufficiale del Reveal Day",
-    "cemeterySub": "Cessazioni, subentri e rinunce: quattro percorsi documentati.",
+    "cemeterySub": "Cessazione, subentro, rinuncia e ritiro dalla root sono esiti diversi. Questi casi documentati mostrano perché non vanno compressi nell'idea generica che un TLD semplicemente «sparisca».",
     "iaHomeOutcomesDesc": "CONTESE, CONTROVERSIE ED ESITI",
     "luganoSectionStatusTitle": "Stato e fonti",
     "luganoSectionGovernanceTitle": "Decisioni di governo ancora da prendere",
@@ -5221,7 +5224,10 @@
     "field03CalendarTitle": "Calendario delle obiezioni ordinarie",
     "field03CalendarBody": "ICANN ha fissato la finestra ordinaria per le obiezioni dal 17 novembre 2026 al 16 marzo 2027. Questa finestra comprende già la pausa dal 19 dicembre 2026 alle 01:00 UTC al 4 gennaio 2027 alle 16:00 UTC.",
     "field03CalendarLimit": "Queste date riguardano la finestra ordinaria per le obiezioni; non indicano la scadenza distinta degli Independent Objectors.",
-    "field03CalendarSource": "ICANN · tappe del round 2026 · 29 settembre 2026"
+    "field03CalendarSource": "ICANN · tappe del round 2026 · 29 settembre 2026",
+    "disputesLegalBridgeTitle": "Cerchi le regole dietro queste controversie?",
+    "disputesLegalBridgeBody": "Obiezioni formali, intervento governativo, legittimazione, panel e appelli sono spiegati nel capitolo Legal dedicato. Separare la procedura dai casi rende le storie più leggibili senza perdere il meccanismo giuridico che le sostiene.",
+    "disputesLegalBridgeCta": "Diritti, obiezioni e rimedi"
   },
   "de": {
     "brand": "Marke",
@@ -6445,7 +6451,7 @@
     "tabDisputes": "Streitfälle",
     "disputesTitle": "Streitfälle, die den Punkt verändert haben",
     "disputesSubtitle": "Wenn ein String politisch wird.",
-    "disputesIntro": "Ein Contention Set bedeutet, dass mehrere Bewerber denselben oder einen verwechslungsähnlichen String wollen. Ein Governance-Streit geht weiter: Regierungen, Gemeinschaften, Rechteinhaber oder Bewerber können bestreiten, wer einen Namen betreiben darf, unter welchen Bedingungen oder ob er überhaupt entstehen soll.",
+    "disputesIntro": "Neun ausgewählte Streitfälle zeigen, wie Regierungen, Gemeinschaften, Rechte und Accountability-Mechanismen Schicksal und Bedeutung einer Top-Level-Domain prägen können. Die Regeln werden separat erklärt; hier stehen die Fälle im Mittelpunkt.",
     "disputesSelectionNote": "Diese Fälle wurden ausgewählt, weil jeder ein anderes Governance-Problem sichtbar macht. Sie sind weder Rangliste noch vollständiger Katalog aller Streitfälle der ICANN-Geschichte.",
     "disputesMechanismsTitle": "Wie ein TLD-Streit in das System gelangt",
     "disputesMechanismsSub": "Nicht jeder Streit ist ein Gerichtsverfahren. Das New-gTLD-Verfahren kennt mehrere formelle Wege für Public-Policy-Fragen, Rechte, Gemeinschaften, Wettbewerb und Accountability-Prüfung.",
@@ -7687,7 +7693,7 @@
     "release0782": "v0.7.82: neue Beobachtungen vom 13.–15. Oktober zu möglichen Auktionserlösen und PwC-Prüfungen; aktualisierte Feldnotiz 04 und neue Feldnotiz 05. RR1/RR2 unverändert.",
     "release0783": "v0.7.83: Governance-Modelle, Nutzung und Tragfähigkeit von Stadtdomains sowie Vertiefung von .lugano. Quellen, Vorschläge und externe Wahrnehmung getrennt; RR1/RR2 unverändert.",
     "themeRoundOfficialApplicationsLabel": "Bewerbungen im offiziellen Reveal-Day-Gesamtwert",
-    "cemeterySub": "Beendigungen, Betreiberwechsel und Rückzüge: vier dokumentierte Wege.",
+    "cemeterySub": "Beendigung, Übergang, Rückzug und Entfernung aus der Root sind unterschiedliche Ergebnisse. Diese dokumentierten Fälle zeigen, warum sie nicht zu einem bloßen «Verschwinden» einer TLD zusammengefasst werden sollten.",
     "iaHomeOutcomesDesc": "KONKURRENZ, STREITFÄLLE UND ERGEBNISSE",
     "luganoSectionStatusTitle": "Status und Quellen",
     "luganoSectionGovernanceTitle": "Noch offene Governance-Entscheidungen",
@@ -7833,7 +7839,10 @@
     "field03CalendarTitle": "Kalender der allgemeinen Einspruchsfrist",
     "field03CalendarBody": "ICANN hat die allgemeine Einspruchsfrist auf den Zeitraum vom 17. November 2026 bis zum 16. März 2027 festgelegt. Dieser Zeitraum enthält bereits die Pause vom 19. Dezember 2026 um 01:00 UTC bis zum 4. Januar 2027 um 16:00 UTC.",
     "field03CalendarLimit": "Diese Daten betreffen die allgemeine Einspruchsfrist; sie legen nicht die gesonderte Frist für die Independent Objectors fest.",
-    "field03CalendarSource": "ICANN · Meilensteine der Runde 2026 · 29. September 2026"
+    "field03CalendarSource": "ICANN · Meilensteine der Runde 2026 · 29. September 2026",
+    "disputesLegalBridgeTitle": "Die Regeln hinter diesen Streitfällen?",
+    "disputesLegalBridgeBody": "Formelle Einwände, staatliche Eingaben, Einwendungsberechtigung, Panels und Rechtsbehelfe werden im eigenen Legal-Kapitel erklärt. Die Trennung von Verfahren und Fällen macht die Geschichten lesbarer, ohne die rechtlichen Mechanismen zu verlieren.",
+    "disputesLegalBridgeCta": "Rechte, Einwände und Rechtsbehelfe"
   },
   "fr": {
     "brand": "Marque",
@@ -9057,7 +9066,7 @@
     "tabDisputes": "Litiges",
     "disputesTitle": "Les litiges qui ont changé le point",
     "disputesSubtitle": "Quand une chaîne devient politique.",
-    "disputesIntro": "Un contention set signifie que plusieurs candidats veulent la même chaîne ou une chaîne susceptible de prêter à confusion. Un litige de gouvernance est plus large : gouvernements, communautés, titulaires de droits ou candidats peuvent contester qui doit exploiter un nom, à quelles conditions ou même s’il doit exister.",
+    "disputesIntro": "Neuf litiges sélectionnés montrent comment gouvernements, communautés, droits et mécanismes d'accountability peuvent influer sur le destin et la signification d'un domaine de premier niveau. Les règles sont expliquées séparément ; ce chapitre reste centré sur les cas.",
     "disputesSelectionNote": "Ces cas sont sélectionnés parce que chacun révèle un problème de gouvernance différent. Il ne s’agit ni d’un classement ni d’un catalogue complet de tous les litiges de l’histoire de l’ICANN.",
     "disputesMechanismsTitle": "Comment un litige sur un TLD entre dans le système",
     "disputesMechanismsSub": "Tous les conflits ne sont pas des procès. Le programme des nouveaux gTLD prévoit plusieurs voies formelles pour la politique publique, les droits, les communautés, la concurrence et le contrôle de responsabilité.",
@@ -10299,7 +10308,7 @@
     "release0782": "v0.7.82 : observations des 13–15 octobre sur les éventuelles recettes des enchères et les contrôles PwC ; note 04 actualisée et nouvelle note 05 sourcée. RR1/RR2 inchangées.",
     "release0783": "v0.7.83 : modèles de gouvernance, usage et viabilité des domaines urbains et cas .lugano approfondi. Sources, propositions et réception externe distinguées ; RR1/RR2 inchangées.",
     "themeRoundOfficialApplicationsLabel": "candidatures dans le total officiel du Reveal Day",
-    "cemeterySub": "Résiliations, changements d’opérateur et retraits : quatre parcours documentés.",
+    "cemeterySub": "Résiliation, transition, retrait et suppression de la racine sont des résultats différents. Ces cas documentés montrent pourquoi ils ne doivent pas être réduits à l'idée vague qu'un TLD « disparaît » simplement.",
     "iaHomeOutcomesDesc": "CONCURRENCE, LITIGES ET ISSUES",
     "luganoSectionStatusTitle": "État et sources",
     "luganoSectionGovernanceTitle": "Décisions de gouvernance encore à prendre",
@@ -10445,6 +10454,9 @@
     "field03CalendarTitle": "Calendrier de la période ordinaire des objections",
     "field03CalendarBody": "ICANN a fixé la période ordinaire de dépôt des objections du 17 novembre 2026 au 16 mars 2027. Cette période comprend déjà la pause du 19 décembre 2026 à 01:00 UTC au 4 janvier 2027 à 16:00 UTC.",
     "field03CalendarLimit": "Ces dates concernent la période ordinaire des objections ; elles ne précisent pas l’échéance distincte des Independent Objectors.",
-    "field03CalendarSource": "ICANN · étapes du cycle 2026 · 29 septembre 2026"
+    "field03CalendarSource": "ICANN · étapes du cycle 2026 · 29 septembre 2026",
+    "disputesLegalBridgeTitle": "Besoin des règles derrière ces litiges ?",
+    "disputesLegalBridgeBody": "Objections formelles, intervention gouvernementale, qualité pour agir, panels et recours sont expliqués dans le chapitre juridique dédié. Séparer la procédure des cas rend les histoires plus lisibles sans perdre le mécanisme juridique qui les sous-tend.",
+    "disputesLegalBridgeCta": "Droits, objections et recours"
   }
 }
