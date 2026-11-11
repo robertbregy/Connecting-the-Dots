@@ -7,8 +7,9 @@
 - Replaced brittle lifecycle counting copy with outcome-based wording that can survive new documented cases.
 - Made mutable-source freshness review-aware: observation age and latest editorial review are now distinct, and release checks fail when a mutable source becomes due for review or reaches its milestone without reconciliation.
 - Repaired README/data-phase metadata and the v0.7.109 release-history summary key.
+- Removed release-wide `lastmod` and JSON-LD `dateModified` from generated discovery pages where no reliable per-page modification date exists; canonical URLs and language alternatives remain unchanged.
 - Kept APS evidence, RR1/RR2, historical technical packages and the 4 October IANA snapshot immutable.
-- Deferred per-page sitemap `lastmod` refinement and field-indexing analysis; the current release does not invent per-page modification dates or Search Console evidence.
+- Search Console field-indexing analysis remains unavailable in this audit; no indexing result is inferred.
 
 # v0.7.109 — 11 November 2026
 
