@@ -45,7 +45,13 @@ for(const file of changed){
     file.startsWith('guides/')&&file.includes('/legal/')?['LEGAL109','DISC109']:
     file==='discovery/manifest.json'||file==='agent-catalog.json'||file==='llms.txt'||file==='sitemap.xml'?['DISC109']:
     ['LEGAL109'];
-  review.files[file]={baselineSHA256:before===null?null:crypto.createHash('sha256').update(before).digest('hex'),sha256:sha(file),rationaleIds:rationale};
+  const previous=prior.files?.[file];
+  review.files[file]={
+    baselineSHA256: previous?.baselineSHA256 ?? (before===null?null:crypto.createHash('sha256').update(before).digest('hex')),
+    sha256:sha(file),
+    rationaleIds:[...new Set([...(previous?.rationaleIds||[]),...rationale])],
+    ...(previous?.priorTechnicalSHA256?{priorTechnicalSHA256:previous.priorTechnicalSHA256}:{})
+  };
 }
 for(const [file,item] of Object.entries(review.files)){
   assert.ok(fs.existsSync(file),'Previously reviewed file missing: '+file);
