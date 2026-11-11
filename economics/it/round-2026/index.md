@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/it/round-2026/ | Site edition: 0.7.109 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/it/round-2026/ | Site edition: 0.7.110 | Language: it -->
 
 Analisi economica
 
@@ -355,6 +355,6 @@ Un TLD di una banca e un termine come .bank implicano modelli di assegnazione mo
 
 [ICANN · 2012 statistics ↗](https://newgtlds.icann.org/en/program-status/statistics) [ICANN APS · 2026 statistics ↗](https://newgtldprogram-aps.icann.org/statistics) [nTLDData · 2026 application index ↗](https://www.ntlddata.com/applications)
 
-**Di Robert Bregy** · Edizione del sito 0.7.109 · 11 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.110 · 12 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

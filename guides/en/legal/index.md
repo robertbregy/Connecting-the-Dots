@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/en/legal/ | Site edition: 0.7.109 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/en/legal/ | Site edition: 0.7.110 | Language: en -->
 
 Guide
 
@@ -23,11 +23,37 @@ Contention is competition between applications, not an objection. [Read contenti
 
 2026
 
-## 2026 status · before String Confirmation
+## 2026 status · before String Confirmation Day
 
-As of this editorial review on 11 November 2026, the ordinary Community Input and Objections period has not yet opened. It is scheduled to open on 17 November 2026 and the 104-day ordinary objection window is scheduled to run through 16 March 2027. The chapter describes the published procedure; it does not report objections that do not yet exist.
+At this editorial review on 12 November 2026, ICANN lists String Confirmation Day for 17 November 2026. The initial objection window is 104 days after that milestone, but it is not the only clock: later 30-day windows can open after String Evaluation and for eligible .Brand String Change requests. The chapter describes the published procedure; it does not report objections that do not yet exist.
 
  [ICANN · Community Input & Objections ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input)
+
+## The clocks that matter in 2026
+
+The objection framework is not one single deadline. The applicable window depends on the event and the ground.
+
+### Initial objection window
+
+104 days following String Confirmation Day. All four formal objection grounds may be filed by parties with standing.
+
+### After String Evaluation
+
+A 30-day window opens after updated contention sets are published; this later window is for String Confusion objections only.
+
+### .Brand String Change
+
+A separate 30-day window may open after successful String Evaluation reports for eligible .Brand String Change requests; all four objection grounds may apply.
+
+### Independent Objectors
+
+The three Independent Objectors share the initial opening date but receive seven additional days beyond the general public deadline, and may file only during the initial window.
+
+### Singular/plural notifications
+
+Notifications may be submitted during the 30 days immediately following String Confirmation Day. An applicant affected by a validated determination has 21 days to challenge it under the clearly erroneous standard.
+
+[ICANN · Objections & Appeals ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals) [ICANN · Independent Objectors ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors) [ICANN · Singular/Plural Evaluation ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/string-evaluation/singular-plural-notifications-evaluation)
 
 ## Seven ways an application can be challenged or influenced
 
@@ -179,6 +205,30 @@ The panel issues a reasoned determination. If the objection fails, the applicati
 
 The non-prevailing party has 15 days to notify an intent to appeal and a further 15 days to file the appeal and pay the required fees.
 
+## Five terms worth getting right
+
+The procedure becomes much easier to read once these terms stop being treated as interchangeable.
+
+### Standing
+
+The procedural entitlement to bring a specific objection. It depends on the objection ground; not everyone may file every type.
+
+### DRSP
+
+Dispute Resolution Service Provider. The independent provider administering the relevant objection proceeding, including WIPO or ICC for the 2026 round.
+
+### Quick Look Review
+
+An initial panel review used to identify an objection that is manifestly unfounded or an abuse of the right to object before the full proceeding continues.
+
+### Clearly erroneous
+
+A limited review standard. A determination stands unless the reviewing body finds a qualifying factual or procedural error, including failure to follow procedure or consider necessary material evidence.
+
+### RVC
+
+Registry Voluntary Commitment. A commitment proposed by an applicant that can become contractually binding if ICANN approves it and it is incorporated into the Registry Agreement.
+
 ## What a decision can actually change
 
 For String Confusion, the consequence can be a change to contention or, in defined cases involving existing TLD or ccTLD interests, ineligibility to proceed. For Legal Rights, Limited Public Interest and Community objections, a successful objection to the primary string makes the application ineligible to proceed. If only an allocatable variant is affected, the primary string and unaffected variants may still proceed. ICANN also describes cases in which a panel may require a new or modified Registry Voluntary Commitment (RVC), approved by ICANN, before an application can continue.
@@ -203,7 +253,7 @@ Historical disputes show how these mechanisms play out. [Read the disputes →](
 
 ICANN, WIPO and ICC are the primary procedural sources used here. The CMS 'Joining the Dots' series is included as secondary professional reading and is not treated as the authority for the rules.
 
-[ICANN · Community Input ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input) [ICANN · Objections & Appeals ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals) [ICANN · Applicant Guidebook ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/agb) [WIPO · Legal Rights Objections ↗](https://www.wipo.int/en/web/amc/domain-name-disputes/lro/index) [WIPO · String Confusion Objections ↗](https://www.wipo.int/en/web/amc/domain-name-disputes/sco/index) [ICC · New gTLD Dispute Resolution ↗](https://iccwbo.org/dispute-resolution/dispute-resolution-services/adr/icann-new-gtld-dispute-resolution/) [ICANN · Registry Voluntary Commitments ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/application-evaluation/faqs/rce/what-are-registry-voluntary-commitments-rvcs)
+[ICANN · Community Input ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input) [ICANN · Objections & Appeals ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals) [ICANN · Applicant Guidebook ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/agb) [WIPO · Legal Rights Objections ↗](https://www.wipo.int/en/web/amc/domain-name-disputes/lro/index) [WIPO · String Confusion Objections ↗](https://www.wipo.int/en/web/amc/domain-name-disputes/sco/index) [ICC · New gTLD Dispute Resolution ↗](https://iccwbo.org/dispute-resolution/dispute-resolution-services/adr/icann-new-gtld-dispute-resolution/) [ICANN · Registry Voluntary Commitments ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/application-evaluation/faqs/rce/what-are-registry-voluntary-commitments-rvcs) [ICANN · Independent Objectors ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors) [ICANN · Singular/Plural Evaluation ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/string-evaluation/singular-plural-notifications-evaluation)
 
 **CMS · Joining the Dots**
 
@@ -211,6 +261,6 @@ ICANN, WIPO and ICC are the primary procedural sources used here. The CMS 'Joini
 
 Procedural explainer, not legal advice. Always use the current authoritative Applicant Guidebook and provider rules for an actual filing.
 
-**By Robert Bregy** · Site edition 0.7.109 · November 11, 2026
+**By Robert Bregy** · Site edition 0.7.110 · November 12, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

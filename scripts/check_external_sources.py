@@ -25,7 +25,8 @@ from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
-UA = "Connecting-the-Dots-Source-Health/0.7.108 (+https://github.com/robertbregy/Connecting-the-Dots)"
+SITE_VERSION = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))["version"]
+UA = f"Connecting-the-Dots-Source-Health/{SITE_VERSION} (+https://github.com/robertbregy/Connecting-the-Dots)"
 STATES = ("OK", "redirect", "accesso limitato", "errore", "da rivedere")
 RESTRICTED = {401, 403, 407, 429, 451}
 # Confirm apparent missing pages with GET; do not repeat denied/rate-limited requests.

@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/music/ | Site edition: 0.7.109 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/music/ | Site edition: 0.7.110 | Language: it -->
 
 Scheda TLD
 
@@ -386,6 +386,6 @@ Rapporti collegati da IANA, con titoli originali e date di pubblicazione. La dat
 
 [Scheda ufficiale IANA ↗](https://www.iana.org/domains/root/db/music.html) [Fonte 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Fonte 3 ↗](https://newgtlds.icann.org/en/program-status/statistics) [Fonte 4 ↗](https://archive.icann.org/en/tlds/tld-applications-lodged-02oct00.htm) [Fonte 5 ↗](https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/)
 
-**Di Robert Bregy** · Edizione del sito 0.7.109 · 11 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.110 · 12 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

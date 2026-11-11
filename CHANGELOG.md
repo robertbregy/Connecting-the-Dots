@@ -1,3 +1,14 @@
+# v0.7.110 — 12 November 2026
+
+- Closed the post-v0.7.109 audit before the String Confirmation milestone.
+- Fixed the remaining light-theme WCAG contrast defect in the closed-generic word mark.
+- Corrected release-history semantics and restored v0.7.107 to the human-readable chronology.
+- Made the source-health User-Agent derive from package metadata.
+- Clarified the 2026 objection clocks, Independent Objector extension and singular/plural timing.
+- Added a concise glossary for standing, DRSP, Quick Look Review, clearly erroneous and RVC.
+- Replaced duplicated procedure in Disputed Dots with a direct bridge to the Legal chapter.
+- APS/IANA snapshots, RR1/RR2 and earlier technical archives remain unchanged.
+
 # v0.7.109 — 11 November 2026
 
 - Added a four-language **Rights, objections & remedies** chapter inside **Conflicts & outcomes**, between contention and historical disputes.
@@ -19,6 +30,11 @@
 - Published a validated allowlist payload instead of the repository checkout; development sources/prototypes remain in GitHub. Live verification also checks that excluded files return 404.
 - Added a bounded, read-only weekly source-health report and snapshot-age policy. Restricted requests and network uncertainty are distinct from confirmed errors; RR1/RR2 archives do not expire.
 - Corrected the escaped heading/title validator patterns and removed automatic editorial signoff from the build. Original section baselines, official datasets and all previous technical/scientific archives remain protected.
+
+# v0.7.107 — 9 November 2026
+
+- Reworked the long Economics landing chapter into a concise introduction and four complete reading paths.
+- Preserved the evidence, cases, tables, metrics, rankings, charts, sources and historical fragments at dedicated routes.
 
 # v0.7.106 - 9 November 2026
 

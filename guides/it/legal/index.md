@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/it/legal/ | Site edition: 0.7.109 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/it/legal/ | Site edition: 0.7.110 | Language: it -->
 
 Guida
 
@@ -23,11 +23,37 @@ La contention è competizione tra candidature, non un'obiezione. [Leggi le conte
 
 2026
 
-## Stato 2026 · prima dello String Confirmation
+## Stato 2026 · prima dello String Confirmation Day
 
-Alla verifica editoriale dell'11 novembre 2026, la finestra ordinaria Community Input and Objections non è ancora aperta. L'apertura è prevista il 17 novembre 2026 e la finestra ordinaria di 104 giorni per le obiezioni è prevista fino al 16 marzo 2027. Il capitolo descrive la procedura pubblicata; non attribuisce obiezioni che ancora non esistono.
+Alla verifica editoriale del 12 novembre 2026, ICANN indica lo String Confirmation Day per il 17 novembre 2026. La finestra iniziale per le obiezioni dura 104 giorni da quel momento, ma non è l'unico orologio: possono aprirsi successive finestre di 30 giorni dopo la String Evaluation e per richieste ammissibili di .Brand String Change. Il capitolo descrive la procedura pubblicata; non attribuisce obiezioni che ancora non esistono.
 
  [ICANN · Community Input & Objections ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input)
+
+## Gli orologi che contano nel 2026
+
+Il sistema delle obiezioni non ha una sola scadenza. La finestra applicabile dipende dall'evento e dal motivo invocato.
+
+### Finestra iniziale per le obiezioni
+
+104 giorni dopo lo String Confirmation Day. I soggetti con standing possono utilizzare tutti e quattro i motivi di obiezione formale.
+
+### Dopo la String Evaluation
+
+Dopo la pubblicazione dei contention set aggiornati si apre una finestra di 30 giorni; questa finestra successiva riguarda soltanto le String Confusion Objections.
+
+### .Brand String Change
+
+Per richieste ammissibili di .Brand String Change può aprirsi una finestra distinta di 30 giorni dopo i report di String Evaluation con esito positivo; possono applicarsi tutti e quattro i motivi.
+
+### Independent Objectors
+
+I tre Independent Objectors partono con la finestra iniziale ma dispongono di sette giorni aggiuntivi rispetto alla scadenza del pubblico generale e possono presentare obiezioni soltanto nella finestra iniziale.
+
+### Segnalazioni singolare/plurale
+
+Le segnalazioni possono essere presentate nei 30 giorni immediatamente successivi allo String Confirmation Day. Un candidato interessato da una determinazione validata ha 21 giorni per contestarla secondo lo standard clearly erroneous.
+
+[ICANN · Objections & Appeals ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals) [ICANN · Independent Objectors ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors) [ICANN · Singular/Plural Evaluation ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/string-evaluation/singular-plural-notifications-evaluation)
 
 ## Sette modi per contestare o influenzare una candidatura
 
@@ -179,6 +205,30 @@ Il panel emette una decisione motivata. Se l'obiezione non è accolta, la candid
 
 La parte soccombente ha 15 giorni per notificare l'intenzione di appellare e ulteriori 15 giorni per depositare l'appello e pagare le fee previste.
 
+## Cinque termini da usare bene
+
+La procedura diventa molto più leggibile quando questi concetti smettono di essere trattati come sinonimi.
+
+### Standing
+
+La legittimazione procedurale a presentare una specifica obiezione. Dipende dal motivo: non tutti possono presentare ogni tipo di obiezione.
+
+### DRSP
+
+Dispute Resolution Service Provider. Il provider indipendente che amministra il procedimento di obiezione pertinente, tra cui WIPO o ICC nel round 2026.
+
+### Quick Look Review
+
+Un controllo iniziale del panel per individuare obiezioni manifestamente infondate o abusive prima che il procedimento prosegua nel merito.
+
+### Clearly erroneous
+
+Uno standard di riesame limitato. La determinazione resta ferma salvo un errore fattuale o procedurale qualificato, per esempio il mancato rispetto della procedura o la mancata considerazione di prove materiali necessarie.
+
+### RVC
+
+Registry Voluntary Commitment. Un impegno proposto dal candidato che può diventare contrattualmente vincolante se approvato da ICANN e incorporato nel Registry Agreement.
+
 ## Che cosa può cambiare davvero una decisione
 
 Per la String Confusion, l'effetto può essere una modifica della contesa oppure, in casi definiti che coinvolgono interessi legati a TLD o ccTLD esistenti, l'impossibilità di proseguire. Per Legal Rights, Limited Public Interest e Community, un'obiezione accolta contro la stringa primaria rende la candidatura non idonea a proseguire. Se è colpita soltanto una variante allocabile, la stringa primaria e le varianti non coinvolte possono ancora avanzare. ICANN contempla inoltre casi in cui il panel può subordinare il prosieguo a un nuovo o modificato Registry Voluntary Commitment (RVC) approvato da ICANN.
@@ -203,7 +253,7 @@ Le controversie storiche mostrano come questi meccanismi funzionano nella pratic
 
 ICANN, WIPO e ICC sono le fonti procedurali primarie utilizzate qui. La serie 'Joining the Dots' di CMS è riportata come lettura professionale secondaria e non come fonte autoritativa delle regole.
 
-[ICANN · Community Input ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input) [ICANN · Objections & Appeals ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals) [ICANN · Applicant Guidebook ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/agb) [WIPO · Legal Rights Objections ↗](https://www.wipo.int/en/web/amc/domain-name-disputes/lro/index) [WIPO · String Confusion Objections ↗](https://www.wipo.int/en/web/amc/domain-name-disputes/sco/index) [ICC · New gTLD Dispute Resolution ↗](https://iccwbo.org/dispute-resolution/dispute-resolution-services/adr/icann-new-gtld-dispute-resolution/) [ICANN · Registry Voluntary Commitments ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/application-evaluation/faqs/rce/what-are-registry-voluntary-commitments-rvcs)
+[ICANN · Community Input ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input) [ICANN · Objections & Appeals ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals) [ICANN · Applicant Guidebook ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/agb) [WIPO · Legal Rights Objections ↗](https://www.wipo.int/en/web/amc/domain-name-disputes/lro/index) [WIPO · String Confusion Objections ↗](https://www.wipo.int/en/web/amc/domain-name-disputes/sco/index) [ICC · New gTLD Dispute Resolution ↗](https://iccwbo.org/dispute-resolution/dispute-resolution-services/adr/icann-new-gtld-dispute-resolution/) [ICANN · Registry Voluntary Commitments ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/application-evaluation/faqs/rce/what-are-registry-voluntary-commitments-rvcs) [ICANN · Independent Objectors ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors) [ICANN · Singular/Plural Evaluation ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/string-evaluation/singular-plural-notifications-evaluation)
 
 **CMS · Joining the Dots**
 
@@ -211,6 +261,6 @@ ICANN, WIPO e ICC sono le fonti procedurali primarie utilizzate qui. La serie 'J
 
 Spiegazione procedurale, non consulenza legale. Per un deposito reale fanno fede l'Applicant Guidebook vigente e le regole del provider competente.
 
-**Di Robert Bregy** · Edizione del sito 0.7.109 · 11 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.110 · 12 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

@@ -135,6 +135,25 @@ for marker in ['v0.7.45','v0.7.44','v0.7.43','v0.7.42','v0.7.41','v0.7.40','v0.7
 readme=(ROOT/'README.md').read_text(encoding='utf-8')
 if "No live refresh occurs in a visitor's browser." in readme: fail('README contains obsolete no-live-refresh claim')
 
+if not changelog.lstrip().startswith(f'# v{version}'): fail('CHANGELOG latest heading does not match package version')
+m=re.search(r'## Current release\s+\*\*v(\d+\.\d+\.\d+)',readme,re.S)
+if not m or m.group(1)!=version: fail('README Current release does not match package version')
+for recent in ('0.7.107','0.7.108','0.7.109',version):
+    if f'v{recent}' not in changelog or f'v{recent}' not in readme: fail('Recent release chronology missing: v'+recent)
+style_text=(ROOT/'assets'/'style.css').read_text(encoding='utf-8')
+wm=re.search(r'\.wordMark\{[^}]*\}',style_text)
+if not wm or 'color:var(--accent-text)' not in wm.group(0): fail('Audited wordMark contrast correction missing')
+health=(ROOT/'scripts'/'check_external_sources.py').read_text(encoding='utf-8')
+if 'SITE_VERSION = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))["version"]' not in health: fail('Source-health version must derive from package metadata')
+if re.search(r'Source-Health/0\.7\.\d+',health): fail('Source-health checker still hard-codes a release')
+if 'class="disputeMechanisms"' in source_html: fail('Disputed Dots still duplicates Legal procedure')
+for token in ('disputesLegalBridgeTitle','disputesLegalBridgeBody','data-open-section="legal"'):
+    if token not in source_html: fail('Disputed Dots Legal bridge missing: '+token)
+legal_layer=json_file('legal_layer.json')
+for language in LANGS:
+    loc=legal_layer.get('locales',{}).get(language,{})
+    if len(loc.get('timings',[]))!=5 or len(loc.get('glossary',[]))!=5: fail('Legal timing/glossary incomplete: '+language)
+
 # v0.7.40 release-history integrity: the public history must begin with the package version
 # and every published summary key must exist in all four languages.
 history=json_file('release_history.json').get('releases',[])
@@ -142,6 +161,10 @@ if not history or history[0].get('version')!=version: fail('release history late
 translations=json_file('translations.json')
 latest_summary=history[0].get('summaryKey')
 if not latest_summary or any(not translations.get(lang,{}).get(latest_summary) for lang in LANGS): fail('latest release-history summary translation missing')
+for item in history[:4]:
+    patch=int(item['version'].split('.')[-1])
+    if patch>=100 and item.get('summaryKey')!=f'release07{patch}': fail('Recent release history uses a non-release summary key: '+item['version'])
+    if any(not translations.get(lang,{}).get(item.get('summaryKey','')) for lang in LANGS): fail('Recent release summary translation missing: '+item['version'])
 
 # v0.7.80: the Helsinki voluntary termination case must remain discoverable,
 # source-backed and distinct from an actual IANA revocation in all languages.

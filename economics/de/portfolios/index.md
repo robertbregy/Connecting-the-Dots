@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/portfolios/ | Site edition: 0.7.109 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/portfolios/ | Site edition: 0.7.110 | Language: de -->
 
 Wirtschaftsanalyse
 
@@ -85,6 +85,6 @@ Die 263 vorläufigen Konfliktgruppen identischer Strings umfassen 891 Bewerbunge
 
 [ICANN · preliminary contention CSV ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv) [internet.Best · applicant portfolios ↗](https://internet.best/new-gtld-applications/) [nTLDData · primary strings ↗](https://www.ntlddata.com/applications/strings)
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.109 · 11. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.110 · 12. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

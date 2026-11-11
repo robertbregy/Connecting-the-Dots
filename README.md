@@ -1,6 +1,6 @@
-# Connecting the Dots — v0.7.109
+# Connecting the Dots — v0.7.110
 
-**v0.7.109 · 11 November 2026.** Added a source-backed legal and procedural layer inside Conflicts & outcomes: public and government input, four formal objection grounds, standing, WIPO/ICC providers, Independent Objectors, appeals and the bridge from disputes to binding Registry Voluntary Commitments. Historical disputes remain separate cases; APS/IANA snapshots and RR1/RR2 are unchanged.
+**v0.7.110 · 12 November 2026.** Closed the post-Legal audit with the remaining WCAG contrast correction, consistent release metadata and chronology, dynamic source-health versioning, precise 2026 objection clocks and terminology, and a cleaner boundary between Legal procedure and historical Disputed Dots cases. Frozen research evidence and prior archives remain unchanged.
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -8,9 +8,27 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
+**v0.7.110 - 12 November 2026**
+
+Audit-close release before the 17 November String Confirmation milestone: fixes the remaining light-theme contrast defect, aligns public release metadata and chronology, makes source-health versioning follow the package automatically, sharpens the 2026 Legal timetable and glossary, and removes duplicated procedural exposition from Disputed Dots.
+
+## Previous legal release
+
+**v0.7.109 - 11 November 2026**
+
+Added the dedicated Rights, objections & remedies layer inside Conflicts & outcomes, separating public and government input, formal objections, standing, WIPO/ICC proceedings, Independent Objectors, appeals and Registry Voluntary Commitments from the historical case layer.
+
+## Previous audit release
+
 **v0.7.108 - 10 November 2026**
 
-The 10 November audit is closed with explicit snapshot dates, consistent reading controls and metadata, repaired multilingual paths, clearer Economics navigation and direct discovery of the .meow story and Reader Study. Publication now uses a validated public allowlist, while weekly source-health and freshness checks flag review needs without redating or rewriting historical research evidence.
+The 10 November audit closed with explicit snapshot dates, consistent reading controls and metadata, repaired multilingual paths, clearer Economics navigation and direct discovery of the .meow story and Reader Study.
+
+## Previous Economics reading release
+
+**v0.7.107 - 9 November 2026**
+
+The long Economics dossier was split into a shorter introduction plus four complete reading paths: market/adoption, economic cases, portfolios/contention and the economics of the 2026 round. Existing evidence, metrics, charts, sources and filters remain available at dedicated routes.
 
 ## Previous homepage release
 
