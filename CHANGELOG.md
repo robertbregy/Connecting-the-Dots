@@ -1,3 +1,15 @@
+# v0.7.110 — 11 November 2026
+
+- Closed a full-site editorial, legal, source-governance, SEO/discovery, accessibility and delivery audit after v0.7.109.
+- Removed the duplicated procedural explainer from **Disputed Dots** so historical controversies remain cases; the dedicated **Rights, objections & remedies** chapter is now the single procedural reference.
+- Completed the Legal chapter with explicit standing by objection ground, the additional 30-day filing windows and the seven-day Independent Objector extension, plus clearer wording in EN/IT/DE/FR.
+- Updated the current editorial status of **.helsinki** after IANA completed revocation on 28 October 2026. The frozen 4 October IANA snapshot remains untouched and visibly dated.
+- Replaced brittle lifecycle counting copy with outcome-based wording that can survive new documented cases.
+- Made mutable-source freshness review-aware: observation age and latest editorial review are now distinct, and release checks fail when a mutable source becomes due for review or reaches its milestone without reconciliation.
+- Repaired README/data-phase metadata and the v0.7.109 release-history summary key.
+- Kept APS evidence, RR1/RR2, historical technical packages and the 4 October IANA snapshot immutable.
+- Deferred per-page sitemap `lastmod` refinement and field-indexing analysis; the current release does not invent per-page modification dates or Search Console evidence.
+
 # v0.7.109 — 11 November 2026
 
 - Added a four-language **Rights, objections & remedies** chapter inside **Conflicts & outcomes**, between contention and historical disputes.
@@ -5,7 +17,7 @@
 - Documented the four formal objection grounds and their 2026 providers: String Confusion and Legal Rights at WIPO; Limited Public Interest and Community at ICC.
 - Added a simplified procedural journey from filing through Quick Look, response, determination and appeal, with the published 17 November 2026 opening and 16 March 2027 ordinary-window end clearly labelled as scheduled before String Confirmation.
 - Explained the bridge from pre-delegation disputes and government concerns to approved Registry Voluntary Commitments that become binding when incorporated into the Registry Agreement.
-- Kept historical Disputed Dots cases separate from the legal explainer and linked the existing Independent Objectors field note.
+- Added a dedicated Legal explainer beside the historical Disputed Dots cases and linked the existing Independent Objectors field note. The remaining duplicated procedure block inside Disputed Dots was removed in v0.7.110.
 - Published the chapter as a citable discovery guide in EN/IT/DE/FR. APS/IANA snapshots, frozen research releases and historical case evidence are unchanged.
 - Primary procedural sources are ICANN, WIPO and ICC; CMS Joining the Dots is retained as secondary professional reading.
 
