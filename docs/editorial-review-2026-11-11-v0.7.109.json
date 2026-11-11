@@ -110,7 +110,7 @@
     "LEGAL109": "Reviewed four-language Legal procedural chapter and reader-path integration. Primary procedural sources are ICANN, WIPO and ICC; CMS Joining the Dots remains secondary professional reading. No new application outcome is asserted.",
     "DISC109": "Reviewed four new citable Legal discovery guides and exact sitemap/agent-catalog expansion from 84 to 88 discovery documents.",
     "V109": "Separate deterministic v0.7.109 technical package; v0.7.108 and all earlier packages remain immutable.",
-    "QA109": "Update only three regression expectations from 24 to 25 built chapters after adding the reviewed Legal chapter; all navigation, legacy-link and WCAG assertions remain otherwise unchanged."
+    "QA109": "Update only the regression expectations required by the reviewed Legal chapter: 24 to 25 built content chapters, 4 to 5 cards in Conflicts & outcomes, and 26 to 27 canonical B2 cards. All destinations, legacy-link, interaction, accessibility and WCAG assertions remain otherwise unchanged."
   },
   "sourceInvariants": {
     "sections": [
@@ -7003,7 +7003,7 @@
     },
     "scripts/audit_ia_b2.cjs": {
       "baselineSHA256": "69b0c092ad93286154b346dd6f37c14fef05b71cc9156afe957cb87f81d3a985",
-      "sha256": "1393c32ccd2c59b77b74a024c98052adebf38e24d5327914c4b74119c2fc506b",
+      "sha256": "0dec5879b24612c748bb5d868b432ed537f4cfa0f3dc391493d139cc9e5842c6",
       "rationaleIds": [
         "U01",
         "E10",
