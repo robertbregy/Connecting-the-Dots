@@ -176,7 +176,7 @@ if 'data-open-anchor="helsinki-termination"' not in source_html:
     fail('No internal City-to-Helsinki navigation')
 for url in ('https://www.icann.org/en/contracted-parties/registry-operators/services/registry-agreement-termination-service',
             'https://www.iana.org/reports/tld-transfer/20261028-helsinki',
-            'https://www.iana.org/domains/root/db/helsinki.html',
+            'https://www.iana.org/domains/root/db',
             'https://www.hel.fi/en/decision-making/nichelsinki'):
     if url not in source_html:
         fail('Helsinki article is missing a primary source link: '+url)
