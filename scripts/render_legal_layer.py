@@ -40,6 +40,11 @@ def render_section(lang: str, prefix: str) -> str:
         f'<p>{e(test)}</p><div class="note">{e(effect)}</div></article>'
         for title, provider, test, effect in L["objections"]
     )
+    standing = "".join(
+        '<article class="panel">'
+        f'<h3>{e(title)}</h3><p><b>{e(who)}</b></p><p class="sub">{e(limit)}</p></article>'
+        for title, who, limit in L["standing"]
+    )
     process = "".join(
         f'<article class="step"><div class="n">{i:02d}</div><b>{e(title)}</b><p>{e(body)}</p></article>'
         for i, (title, body) in enumerate(L["process"], 1)
@@ -47,6 +52,7 @@ def render_section(lang: str, prefix: str) -> str:
     source_links = "".join([
         source_chip(S["icannCommunityInput"], "ICANN · Community Input"),
         source_chip(S["icannObjections"], "ICANN · Objections & Appeals"),
+        source_chip(S["independentObjectors"], "ICANN · Independent Objectors"),
         source_chip(S["applicantGuidebook"], "ICANN · Applicant Guidebook"),
         source_chip(S["wipoLro"], "WIPO · Legal Rights Objections"),
         source_chip(S["wipoSco"], "WIPO · String Confusion Objections"),
@@ -75,6 +81,16 @@ def render_section(lang: str, prefix: str) -> str:
 <div class="panel">
   <h2>{e(L["objectionsTitle"])}</h2><p class="sub sectionLead">{e(L["objectionsIntro"])}</p>
   <div class="grid2">{objections}</div>
+</div>
+<div class="panel">
+  <h2>{e(L["standingTitle"])}</h2><p class="sub sectionLead">{e(L["standingIntro"])}</p>
+  <div class="grid2">{standing}</div>
+  {source_chip(S["applicantGuidebook"], "ICANN · Applicant Guidebook §4.5.2")}
+</div>
+<div class="panel">
+  <h2>{e(L["windowsTitle"])}</h2><p class="sub sectionLead">{e(L["windowsBody"])}</p>
+  <div class="note"><b>{e(L["ioTitle"])}</b><br>{e(L["ioBody"])}</div>
+  <div class="srcs">{source_chip(S["icannObjections"], "ICANN · Filing windows")}{source_chip(S["independentObjectors"], "ICANN · Independent Objectors")}</div>
 </div>
 <div class="panel">
   <h2>{e(L["processTitle"])}</h2><p class="sub sectionLead">{e(L["processIntro"])}</p>
