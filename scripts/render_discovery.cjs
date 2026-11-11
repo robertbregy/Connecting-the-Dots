@@ -255,7 +255,7 @@ function pageShell(meta, body, sourceDocument, options = {}) {
   const structured = {
     '@context': 'https://schema.org', '@graph': [
       {'@type': kind === 'index' ? 'CollectionPage' : 'WebPage', '@id': canonical + '#page', url: canonical, name: meta.headline, description: meta.description,
-        inLanguage: lang, dateModified: pub.releasedOn, isAccessibleForFree: true,
+        inLanguage: lang, isAccessibleForFree: true,
         author: {'@type': 'Person', '@id': base + '#author', name: 'Robert Bregy', url: 'https://github.com/robertbregy'},
         isPartOf: {'@type': 'WebSite', '@id': base + '#website', name: 'Connecting the Dots', url: base},
         mainEntity: kind === 'tld' ? {'@type': 'Thing', '@id': canonical + '#domain', name: '.' + key} : undefined,
