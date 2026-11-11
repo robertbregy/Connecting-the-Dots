@@ -307,4 +307,14 @@ new=old+'''for item in history[:4]:
 if new not in rc: rc=rc.replace(old,new,1)
 write("scripts/release_check.py",rc)
 
+# The generated static pages intentionally replace the old Disputed Dots
+# mechanism explainer with the reviewed Legal bridge. Keep the original keys in
+# source for compatibility, but allow those two retired visible keys to vanish
+# from the generated page and require the new bridge keys instead.
+uq=read("scripts/usability_remediation_qa.cjs")
+uq=uq.replace(
+"  assert.deepEqual(lost,['insideReplacePublicScheduleBody','insideStateCurrent'],'Unreviewed translated key disappeared: '+file);\n  for(const key of ['insideReplaceCompletedBody','insideStateObserved','insideQualityTitle','nissayCaseState']){",
+"  assert.deepEqual(lost,['disputesMechanismsSub','disputesMechanismsTitle','insideReplacePublicScheduleBody','insideStateCurrent'],'Unreviewed translated key disappeared: '+file);\n  for(const key of ['disputesLegalBridgeTitle','disputesLegalBridgeBody','disputesLegalBridgeCta','insideReplaceCompletedBody','insideStateObserved','insideQualityTitle','nissayCaseState']){",1)
+write("scripts/usability_remediation_qa.cjs",uq)
+
 print(json.dumps({"prepared":VERSION,"date":DATE,"researchChanged":False,"archivesChanged":False}))
