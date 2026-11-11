@@ -964,8 +964,8 @@ for page in discovery_pages:
     must_index.add(site_base+relative_path)
 for lang in LANGS:
     must_index.add(site_base+'research/reader-study/'+lang+'/')
-if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index) or len(must_index)!=131:
-    fail('Sitemap must contain 43 established URLs, 84 discovery documents and four Reader Study pages exactly once (131 URLs)')
+if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index) or len(must_index)!=135:
+    fail('Sitemap must contain 43 established URLs, 88 discovery documents and four Reader Study pages exactly once (135 URLs)')
 for lang in LANGS:
     page=(ROOT/lang/'index.html').read_text(encoding='utf-8')
     chronicle_page=ROOT/'inside-the-round'/lang/'index.html'
