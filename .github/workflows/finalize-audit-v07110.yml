@@ -68,3 +68,5 @@ jobs:
           git diff --cached --quiet && { echo 'Nothing to commit'; exit 1; }
           git commit -m 'v0.7.110: close full post-Legal audit [skip build]'
           git push origin "HEAD:$BRANCH"
+
+# rerun-token: reader-first-bridge
