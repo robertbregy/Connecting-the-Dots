@@ -78,7 +78,7 @@ async function checkAxe(page,label) {
     assert.ok(oldSelectCount>=25,"old 21 sections / chapter navigation lost");
     tally.legacyMenu=true;
     const oldSections=await page.locator('section.section:not(.iaHub)').count();
-    assert.equal(oldSections,24,"22 preserved legacy chapters plus 2 native governance chapters required");
+    assert.equal(oldSections,25,"22 preserved legacy chapters plus 2 native governance chapters plus 1 reviewed Legal chapter required");
     tally.contentSections=oldSections;
     for(const [hub,count,canonical] of hubs){
       await page.locator('.iaPrimaryLink[data-b2-area="'+hub+'"]').click();
