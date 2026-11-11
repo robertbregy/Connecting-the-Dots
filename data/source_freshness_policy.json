@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedOn": "2026-11-10",
+  "reviewedOn": "2026-11-11",
   "timezone": "Europe/Zurich",
   "purpose": "Read-only editorial review reminders. HTTP reachability never changes an observation date or establishes that its facts remain current.",
   "thresholdBasis": "Operational review cadence chosen for this publication: 14 days for the changing 2026 APS listing, 30 days for the root-state view. These are review thresholds, not source validity or scientific expiry limits.",
@@ -17,7 +17,10 @@
         "label": "String Confirmation Day: acquire and reconcile official evidence before any editorial update",
         "metadataFile": "publication.json",
         "dateField": "stringConfirmation"
-      }
+      },
+      "lastReviewedOn": "2026-11-11",
+      "reviewOutcome": "Official 11 October public-listing evidence intentionally retained before String Confirmation. Reconcile a new official observation on or after 17 November before presenting a post-confirmation current view.",
+      "reviewEvidence": "https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input"
     },
     {
       "id": "iana-current-view",
@@ -26,7 +29,10 @@
       "metadataFile": "data/iana_snapshot.json",
       "dateField": "asOf",
       "sourceURLField": "listSource",
-      "reviewAfterDays": 30
+      "reviewAfterDays": 30,
+      "lastReviewedOn": "2026-11-11",
+      "reviewOutcome": "Current IANA state reviewed. .helsinki was revoked on 28 October and the editorial lifecycle overlay was updated; the frozen 4 October root snapshot remains unchanged as dated evidence.",
+      "reviewEvidence": "https://www.iana.org/reports/tld-transfer/20261028-helsinki"
     },
     {
       "id": "rr1-archive",
