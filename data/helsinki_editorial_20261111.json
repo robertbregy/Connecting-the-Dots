@@ -1,0 +1,60 @@
+{
+  "reviewed": "2026-11-11",
+  "evidenceState": "current-editorial-overlay-over-frozen-2026-10-04-iana-snapshot",
+  "sources": [
+    "https://www.icann.org/en/contracted-parties/registry-operators/services/registry-agreement-termination-service",
+    "https://www.iana.org/reports/tld-transfer/20261028-helsinki",
+    "https://www.iana.org/domains/root/db/helsinki.html",
+    "https://www.hel.fi/en/decision-making/nichelsinki"
+  ],
+  "translations": {
+    "en": {
+      "helsinkiBridgeBody": "The .helsinki case now documents the full exit path: voluntary termination, a final decision not to transition to a successor, and IANA revocation completed on 28 October 2026.",
+      "helsinkiBridgeCta": "Follow the completed .helsinki lifecycle",
+      "helsinkiCaseState": "IANA revocation completed · TLD retired",
+      "helsinkiCaseFact": "After the City of Helsinki notified voluntary termination on 28 May 2026, ICANN issued its final determination not to transition .helsinki to a successor on 21 October. IANA completed the revocation process on 28 October 2026.",
+      "helsinkiCaseStatus": "Verified 11 November 2026: IANA classifies .helsinki as Retired and the current root-zone list no longer contains HELSINKI. The project's frozen 4 October IANA snapshot still records the earlier delegated state and is preserved as dated evidence.",
+      "helsinkiCaseReading": "The case is now a completed example of post-delegation exit. It also shows why a dated technical snapshot and a later editorial status must be kept separate: preserving the older evidence does not mean presenting it as the current root state.",
+      "helsinkiSourceIcann": "ICANN · termination and non-transition process",
+      "helsinkiSourceRevocation": "IANA · revocation report · 28 Oct 2026",
+      "helsinkiSourceIana": "IANA · current TLD record",
+      "helsinkiSourceCity": "City of Helsinki · original objectives"
+    },
+    "it": {
+      "helsinkiBridgeBody": "Il caso .helsinki documenta ora l'intero percorso di uscita: cessazione volontaria, decisione definitiva di non trasferire il registro a un successore e revoca IANA completata il 28 ottobre 2026.",
+      "helsinkiBridgeCta": "Segui il ciclo di vita completo di .helsinki",
+      "helsinkiCaseState": "Revoca IANA completata · TLD ritirato",
+      "helsinkiCaseFact": "Dopo la notifica di cessazione volontaria della Città di Helsinki del 28 maggio 2026, ICANN ha deciso definitivamente il 21 ottobre di non trasferire .helsinki a un registro successore. IANA ha completato la revoca della delega il 28 ottobre 2026.",
+      "helsinkiCaseStatus": "Verifica all'11 novembre 2026: IANA classifica .helsinki come Retired e l'elenco corrente della root zone non contiene più HELSINKI. Lo snapshot IANA del progetto, congelato al 4 ottobre, conserva correttamente il precedente stato delegato come evidenza datata.",
+      "helsinkiCaseReading": "Il caso è ora un esempio completo di uscita successiva alla delega. Mostra anche perché uno snapshot tecnico datato e uno stato editoriale successivo vanno tenuti distinti: conservare l'evidenza precedente non significa presentarla come stato corrente della root.",
+      "helsinkiSourceIcann": "ICANN · processo di cessazione e mancato subentro",
+      "helsinkiSourceRevocation": "IANA · rapporto di revoca · 28 ott 2026",
+      "helsinkiSourceIana": "IANA · stato corrente del TLD",
+      "helsinkiSourceCity": "Città di Helsinki · obiettivi originari"
+    },
+    "de": {
+      "helsinkiBridgeBody": "Der Fall .helsinki dokumentiert nun den vollständigen Ausstieg: freiwillige Beendigung, endgültige Entscheidung gegen einen Nachfolger und die am 28. Oktober 2026 abgeschlossene IANA-Widerrufung.",
+      "helsinkiBridgeCta": "Den vollständigen Lebenszyklus von .helsinki verfolgen",
+      "helsinkiCaseState": "IANA-Widerruf abgeschlossen · TLD retired",
+      "helsinkiCaseFact": "Nach der freiwilligen Beendigungsmitteilung der Stadt Helsinki vom 28. Mai 2026 entschied ICANN am 21. Oktober endgültig gegen einen Übergang zu einem Nachfolgebetreiber. IANA schloss die Aufhebung der Delegation am 28. Oktober 2026 ab.",
+      "helsinkiCaseStatus": "Stand 11. November 2026: IANA führt .helsinki als Retired; die aktuelle Root-Zonen-Liste enthält HELSINKI nicht mehr. Der im Projekt eingefrorene IANA-Snapshot vom 4. Oktober bewahrt den früheren delegierten Zustand weiterhin als datierte Evidenz.",
+      "helsinkiCaseReading": "Der Fall ist nun ein abgeschlossenes Beispiel für einen Ausstieg nach erfolgter Delegation. Er zeigt zugleich, warum ein datierter technischer Snapshot und ein späterer redaktioneller Status getrennt bleiben müssen: ältere Evidenz zu bewahren bedeutet nicht, sie als aktuellen Root-Status auszugeben.",
+      "helsinkiSourceIcann": "ICANN · Beendigung und Nicht-Transition",
+      "helsinkiSourceRevocation": "IANA · Widerrufsbericht · 28. Okt. 2026",
+      "helsinkiSourceIana": "IANA · aktueller TLD-Status",
+      "helsinkiSourceCity": "Stadt Helsinki · ursprüngliche Ziele"
+    },
+    "fr": {
+      "helsinkiBridgeBody": "Le cas .helsinki documente désormais tout le parcours de sortie : résiliation volontaire, décision définitive de ne pas transférer le registre à un successeur et révocation IANA achevée le 28 octobre 2026.",
+      "helsinkiBridgeCta": "Suivre le cycle de vie complet de .helsinki",
+      "helsinkiCaseState": "Révocation IANA achevée · TLD retiré",
+      "helsinkiCaseFact": "Après la notification de résiliation volontaire de la Ville d'Helsinki le 28 mai 2026, ICANN a décidé définitivement le 21 octobre de ne pas transférer .helsinki à un opérateur successeur. IANA a achevé la révocation de la délégation le 28 octobre 2026.",
+      "helsinkiCaseStatus": "Vérification au 11 novembre 2026 : IANA classe .helsinki comme Retired et la liste actuelle de la zone racine ne contient plus HELSINKI. Le snapshot IANA du projet, figé au 4 octobre, conserve correctement l'ancien état délégué comme preuve datée.",
+      "helsinkiCaseReading": "Le cas constitue désormais un exemple achevé de sortie après délégation. Il montre aussi pourquoi un snapshot technique daté et un état éditorial ultérieur doivent rester distincts : conserver l'ancienne preuve ne signifie pas la présenter comme l'état actuel de la racine.",
+      "helsinkiSourceIcann": "ICANN · résiliation et non-transition",
+      "helsinkiSourceRevocation": "IANA · rapport de révocation · 28 oct. 2026",
+      "helsinkiSourceIana": "IANA · état actuel du TLD",
+      "helsinkiSourceCity": "Ville d'Helsinki · objectifs initiaux"
+    }
+  }
+}
