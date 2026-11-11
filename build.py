@@ -480,6 +480,7 @@ def main() -> None:
     subprocess.run(["node", str(ROOT / "scripts" / "reorder_economics.cjs")], check=True)
     # Source-attributed 4 November perspectives belong in existing Field Notes and contention chapter.
     subprocess.run(["node", str(ROOT / "scripts" / "render_round_debate_v0797.cjs")], check=True)
+    subprocess.run(["python3", str(ROOT / "scripts" / "render_legal_layer.py")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "reader_first.cjs")], check=True)
     # HOME106: one explanatory homepage; preserve every original chapter and tutorial.
     subprocess.run(["node", str(ROOT / "scripts" / "render_home_editorial.cjs")], check=True)
