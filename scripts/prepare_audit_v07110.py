@@ -81,6 +81,12 @@ rep("src/index.web.html",
 '<div class="panel"><h2 data-i18n="disputesMechanismsTitle"></h2><p class="sub" data-i18n="disputesMechanismsSub"></p><div class="disputeMechanisms" id="disputeMechanisms"></div></div>',
 '<div class="panel disputesLegalBridge"><h2 data-i18n="disputesLegalBridgeTitle"></h2><p class="sub" data-i18n="disputesLegalBridgeBody"></p><a class="control sectionLink" data-open-section="legal" href="#legal"><span data-i18n="disputesLegalBridgeCta"></span> →</a><span hidden aria-hidden="true" data-i18n="disputesMechanismsTitle"></span><span hidden aria-hidden="true" data-i18n="disputesMechanismsSub"></span></div>')
 
+# Reader-first must follow the reviewed architecture: Disputed Dots links to
+# the dedicated Legal chapter instead of requiring the retired mechanism grid.
+rep("scripts/reader_first.cjs",
+"    disputes: [':first', '#disputeGrid', '#disputeMechanisms'],",
+"    disputes: [':first', '#disputeGrid', '.disputesLegalBridge'],")
+
 legal=load("data/legal_layer.json")
 legal["reviewedOn"]=DATE
 legal["sources"]["independentObjectors"]="https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors"
