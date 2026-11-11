@@ -83,7 +83,9 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
     assert.ok(document.getElementById(id)?.querySelector('h2'),page+' missing real task landing '+id);
     assert.equal(iaNav[index].textContent.trim(),translations[['iaNavUnderstand','iaNavExplore','iaNavStories','iaNavOutcomes','iaNavRound','iaNavResearch'][index]],page+' incomplete IA navigation locale');
   }
-  assert.equal(document.querySelectorAll('.iaHubCard').length,26,page+' must preserve all 26 IA access cards');
+  assert.equal(document.querySelectorAll('.iaHubCard').length,27,page+' must preserve 26 legacy IA access cards plus one reviewed Legal card');
+  assert.equal(document.querySelectorAll('#ia-outcomes .iaHubCard[data-legal-hub-card] [data-open-section="legal"]').length,1,page+' must contain exactly one reviewed Legal access card');
+  assert.equal(document.getElementById('legal')?.tagName,'SECTION',page+' Legal chapter missing');
   for(const id of ['governance-access','governance-sanctions'])assert.ok(document.getElementById(id)?.querySelector('h2.ctdNativeHeading'),page+' native governance article missing: '+id);
   const legacySections=['overview','explore','timeline','how','beyond','cities','geography','governance-access','governance-sanctions','economics','cemetery','social','contention','refusals','disputes','strange','reveal','inside-round','behind-round','lugano','research','paper','resources','sources'];
   for(const id of legacySections)assert.equal(document.getElementById(id)?.tagName,'SECTION',page+' legacy content deleted: '+id);
