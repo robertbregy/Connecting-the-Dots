@@ -411,8 +411,10 @@ assert.equal(discoveryManifest.schemaVersion,1,'discovery manifest schema');
 assert.equal(discoveryManifest.siteVersion,publication.version,'discovery manifest publication version');
 assert.equal(discoveryManifest.generatedOn,publication.releasedOn,'discovery manifest publication date');
 assert.ok(Array.isArray(discoveryManifest.pages),'discovery manifest pages missing');
-assert.equal(discoveryManifest.pages.length,84,'preserve the 68 discovery documents and add 16 complete Economics pages');
+assert.equal(discoveryManifest.pages.length,88,'preserve existing discovery documents and add 16 Economics plus four Legal guides');
 const economicsDetailKeys=['market','cases','portfolios','round-2026'];
+const legalGuidePaths=languages.map(language=>'guides/'+language+'/legal/').sort();
+assert.deepEqual(discoveryManifest.pages.filter(page=>page.kind==='guide'&&page.key==='legal').map(page=>page.path).sort(),legalGuidePaths,'exactly one Legal guide is required in every language');
 assert.deepEqual(discoveryManifest.pages.filter(page=>page.kind==='economics').map(page=>page.path).sort(),
   languages.flatMap(language=>economicsDetailKeys.map(key=>'economics/'+language+'/'+key+'/')).sort(),
   'four exact Economics destinations are required in every language');
@@ -426,8 +428,8 @@ const discoveryLocations=discoveryManifest.pages.map(page=>{
   assert.ok(fs.existsSync(path.join(root,page.path,'index.html')),'missing discovery document: '+page.path);
   return new URL(page.path,base).href;
 });
-assert.equal(new Set(discoveryLocations).size,84,'discovery manifest must not duplicate canonical URLs');
-assert.equal(new Set([...legacyLocations,...discoveryLocations]).size,127,'new canonical URLs must not replace established pages');
+assert.equal(new Set(discoveryLocations).size,88,'discovery manifest must not duplicate canonical URLs');
+assert.equal(new Set([...legacyLocations,...discoveryLocations]).size,131,'new canonical URLs must not replace established pages');
 const readerStudyLocations=languages.map(language=>{
   const studyPath='research/reader-study/'+language+'/';
   assert.ok(fs.existsSync(path.join(root,studyPath,'index.html')),'missing Reader Study document: '+studyPath);
@@ -435,15 +437,15 @@ const readerStudyLocations=languages.map(language=>{
 });
 const addedLocations=[...discoveryLocations,...readerStudyLocations];
 const expectedLocations=[...legacyLocations,...addedLocations];
-assert.equal(new Set(expectedLocations).size,131,'Reader Study URLs must preserve every established and discovery page');
-assert.equal(locations.length,131,'sitemap must contain exactly 43 established, 84 discovery and 4 Reader Study URLs');
-assert.equal(new Set(locations).size,131,'sitemap canonical URLs must not be duplicated');
+assert.equal(new Set(expectedLocations).size,135,'Reader Study URLs must preserve every established and discovery page');
+assert.equal(locations.length,135,'sitemap must contain exactly 43 established, 88 discovery and 4 Reader Study URLs');
+assert.equal(new Set(locations).size,135,'sitemap canonical URLs must not be duplicated');
 assert.deepEqual(locations,expectedLocations,'complete multilingual and research sitemap');
 const sitemapEntries=Array.from(sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g),m=>m[1]);
 assert.equal((sitemapEntries.slice(0,legacyLocations.length).join('').match(/xhtml:link/g)||[]).length,180,'all established four-language articles and explainers retain reciprocal hreflang');
 for(const [index,entry] of sitemapEntries.slice(legacyLocations.length).entries())
   assert.equal((entry.match(/xhtml:link/g)||[]).length,5,'discovery and Reader Study pages need four locales and x-default: '+addedLocations[index]);
-assert.equal((sitemap.match(/xhtml:link/g)||[]).length,180+(84+4)*5,'established, discovery and Reader Study pages have complete reciprocal hreflang');
+assert.equal((sitemap.match(/xhtml:link/g)||[]).length,180+(88+4)*5,'established, discovery and Reader Study pages have complete reciprocal hreflang');
 assert.ok(!/\?lang=/.test(sitemap));
 const app=fs.readFileSync(path.join(root,'assets/app.js'),'utf8');
 assert.ok(!app.includes('updateSeoLanguage'));
