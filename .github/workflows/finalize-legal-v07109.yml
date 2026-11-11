@@ -66,3 +66,5 @@ jobs:
           git diff --cached --quiet && { echo 'Nothing to commit'; exit 1; }
           git commit -m 'review: record verified v0.7.109 Legal candidate [skip build]'
           git push origin "HEAD:$BRANCH"
+
+# rerun-token: preserve-baseline-fingerprints
