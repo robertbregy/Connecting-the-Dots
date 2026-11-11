@@ -36,6 +36,7 @@ review.rationales.LEGAL110='Remove duplicated procedure from Disputed Dots and c
 review.rationales.HEL110='Record IANA revocation of .helsinki on 28 October 2026 in a dated current editorial overlay while preserving the frozen 4 October IANA/root snapshot as historical evidence.';
 review.rationales.FRESH110='Distinguish evidence observation age from the latest editorial review; mutable sources must be explicitly reviewed within cadence and milestone reconciliation still overrides a pre-milestone review.';
 review.rationales.DOC110='Synchronize README, data-phase wording, changelog and release-history summaries with the actual current publication.';
+review.rationales.SEO110='Do not publish release-wide sitemap lastmod or JSON-LD dateModified for generated discovery pages when no verifiable per-page significant-modification date exists; preserve canonical URLs and reciprocal alternates.';
 review.rationales.V110='Publish a separate deterministic v0.7.110 technical package while preserving v0.7.109 and all earlier technical/scientific archives.';
 review.rationales.QA110='Update validation only where the audited content model changed and add regression coverage for review-aware freshness and current Helsinki revocation evidence.';
 review.linkReplacements=(review.linkReplacements||[]).map(x=>({...x,publishedPath:x.publishedPath.replace(/v0\.7\.109/g,'v0.7.110')}));
@@ -54,6 +55,7 @@ const rationaleFor=file=>{
   if(file==='data/helsinki_editorial_20261111.json'||file==='data/research.json')return ['HEL110'];
   if(file==='data/source_freshness_policy.json'||file==='scripts/check_external_sources.py')return ['FRESH110'];
   if(file==='scripts/test_external_source_health.py')return ['FRESH110','QA110'];
+  if(file==='scripts/render_discovery.cjs'||file==='scripts/integrate_discovery.py')return ['SEO110','QA110'];
   if(file==='scripts/release_check.py')return ['HEL110','FRESH110','QA110'];
   if(file==='src/index.web.html')return ['LEGAL110','HEL110','AUD110'];
   if(file==='data/translations.json')return ['LEGAL110','HEL110','DOC110'];
@@ -91,11 +93,11 @@ review.auditSummary={
     'Add explicit standing by formal objection ground, additional 30-day windows and Independent Objector conditions.',
     'Record completed .helsinki IANA revocation in a dated editorial overlay while preserving the 4 October frozen root snapshot.',
     'Separate source observation age from editorial review age and gate technical releases on mutable-source review state.',
-    'Synchronize README, current phase wording and machine-readable release-history summaries.'
+    'Synchronize README, current phase wording and machine-readable release-history summaries.',
+    'Omit unverified release-wide lastmod/dateModified values from generated discovery pages while preserving canonical URLs and language alternatives.'
   ],
   deferred:[
     'String Confirmation Day APS reconciliation remains a separate post-17-November release.',
-    'Per-page sitemap lastmod/dateModified needs content-derived persistence rather than a release-wide timestamp.',
     'Search Console indexing/cannibalization audit was unavailable because the connected GSC service returned payment_required.',
     'Economics synthetic LCP remains the only materially slower tested route and should be optimized without removing evidence.'
   ],
