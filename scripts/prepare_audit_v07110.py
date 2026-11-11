@@ -86,7 +86,7 @@ rep("scripts/check_external_sources.py",
 
 rep("src/index.web.html",
 '<div class="panel"><h2 data-i18n="disputesMechanismsTitle"></h2><p class="sub" data-i18n="disputesMechanismsSub"></p><div class="disputeMechanisms" id="disputeMechanisms"></div></div>',
-'<div class="panel disputesLegalBridge"><h2 data-i18n="disputesLegalBridgeTitle"></h2><p class="sub" data-i18n="disputesLegalBridgeBody"></p><a class="control sectionLink" data-open-section="legal" href="#legal"><span data-i18n="disputesLegalBridgeCta"></span> →</a><span hidden aria-hidden="true" data-i18n="disputesMechanismsTitle"></span><span hidden aria-hidden="true" data-i18n="disputesMechanismsSub"></span></div>')
+'<div class="panel disputesLegalBridge" id="disputeMechanisms"><h2 data-i18n="disputesLegalBridgeTitle"></h2><p class="sub" data-i18n="disputesLegalBridgeBody"></p><a class="control sectionLink" data-open-section="legal" href="#legal"><span data-i18n="disputesLegalBridgeCta"></span> →</a><span hidden aria-hidden="true" data-i18n="disputesMechanismsTitle"></span><span hidden aria-hidden="true" data-i18n="disputesMechanismsSub"></span></div>')
 
 # Reader-first must follow the reviewed architecture: Disputed Dots links to
 # the dedicated Legal chapter instead of requiring the retired mechanism grid.
@@ -287,7 +287,7 @@ if not wm or 'color:var(--accent-text)' not in wm.group(0): fail('Audited wordMa
 health=(ROOT/'scripts'/'check_external_sources.py').read_text(encoding='utf-8')
 if 'SITE_VERSION = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))["version"]' not in health: fail('Source-health version must derive from package metadata')
 if re.search(r'Source-Health/0\\.7\\.\\d+',health): fail('Source-health checker still hard-codes a release')
-if 'id="disputeMechanisms"' in source_html: fail('Disputed Dots still duplicates Legal procedure')
+if 'class="disputeMechanisms"' in source_html: fail('Disputed Dots still duplicates Legal procedure')
 for token in ('disputesLegalBridgeTitle','disputesLegalBridgeBody','data-open-section="legal"'):
     if token not in source_html: fail('Disputed Dots Legal bridge missing: '+token)
 legal_layer=json_file('legal_layer.json')
