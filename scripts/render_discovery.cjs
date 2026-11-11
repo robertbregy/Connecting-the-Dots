@@ -17,7 +17,7 @@ const base = pub.deployment;
 const languages = ['en', 'it', 'de', 'fr'];
 const names = {en: 'English', it: 'Italiano', de: 'Deutsch', fr: 'Français'};
 const locale = {en: 'en_US', it: 'it_IT', de: 'de_DE', fr: 'fr_FR'};
-const guides = ['how', 'timeline', 'cities', 'economics', 'lugano', 'beyond'];
+const guides = ['how', 'timeline', 'cities', 'economics', 'lugano', 'beyond', 'legal'];
 // Deliberately bounded first edition: every selected record already has a
 // documented history or editorial context; no automatically padded SEO pages.
 const profiles = ['ai', 'lugano', 'amazon', 'music', 'berlin', 'zuerich', 'swiss', 'com', 'cat', 'io'];
@@ -26,7 +26,7 @@ const areas = [
   ['stories', 'iaNavStories'], ['outcomes', 'iaNavOutcomes'],
   ['round', 'iaNavRound'], ['research', 'iaNavResearch']
 ];
-const guideAreas = {how: 'understand', beyond: 'understand', timeline: 'explore', cities: 'stories', economics: 'stories', lugano: 'round'};
+const guideAreas = {how: 'understand', beyond: 'understand', timeline: 'explore', cities: 'stories', economics: 'stories', lugano: 'round', legal: 'outcomes'};
 const economicsWords = {
   en: {label: 'Domain economics', overview: 'Economics overview', interactive: 'Open economics in the interactive atlas', casesIndex: 'Go to a case', navigation: 'Explore domain economics', reading: 'Explore the economics', share: 'Share this page', copied: 'Link copied', copyManually: 'Copy the address from your browser to share this page.'},
   it: {label: 'Economia dei domini', overview: 'Panoramica sull’economia', interactive: 'Apri l’economia nell’atlante interattivo', casesIndex: 'Vai a un caso', navigation: 'Esplora l’economia dei domini', reading: 'Approfondisci l’economia', share: 'Condividi questa pagina', copied: 'Link copiato', copyManually: 'Copia l’indirizzo dal browser per condividere questa pagina.'},
