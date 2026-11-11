@@ -3,6 +3,8 @@
 from pathlib import Path
 from html import unescape
 import csv, hashlib, json, re, subprocess, sys, zipfile
+from datetime import datetime, timezone
+from check_external_sources import evaluate_freshness
 
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/'data'
@@ -107,6 +109,19 @@ for item in manifest_files:
         if item.get(key)!=value: fail(f'CSV manifest {key} mismatch: '+item['path'])
 publication_meta=json.loads((ROOT/'publication.json').read_text(encoding='utf-8'))
 if manifest.get('as_of')!=publication_meta.get('asOf'): fail('manifest/publication snapshot mismatch')
+
+# Mutable evidence may remain deliberately dated, but every technical/editorial
+# release must show that it was reviewed recently. A dated snapshot is not
+# silently promoted to "current" merely because the site was rebuilt.
+freshness_policy=json.loads((DATA/'source_freshness_policy.json').read_text(encoding='utf-8'))
+release_clock=datetime.fromisoformat(publication_meta['releasedOn']+'T12:00:00+00:00')
+freshness=evaluate_freshness(ROOT,freshness_policy,release_clock)
+due=[row for row in freshness if row.get('role')!='frozen-evidence' and row.get('reviewRequired')]
+if due:
+    fail('mutable source freshness review required: '+', '.join(row['id']+': '+row.get('reason','') for row in due))
+for row in freshness:
+    if row.get('role')!='frozen-evidence' and not row.get('lastReviewedOn'):
+        fail('mutable source lacks an explicit editorial review date: '+row['id'])
 pub=(DATA/'publication.js').read_text()
 if f"version:'{version}'" not in pub or f"asOf:'{publication_meta.get('asOf')}'" not in pub or f"state:'{publication_meta.get('state')}'" not in pub: fail('publication.js version/asOf/state mismatch')
 
