@@ -49,7 +49,6 @@ def main():
     for page in pages:
         item = ET.SubElement(urlset, f"{{{SM}}}url")
         ET.SubElement(item, f"{{{SM}}}loc").text = BASE + page["path"]
-        ET.SubElement(item, f"{{{SM}}}lastmod").text = PUB["releasedOn"]
         equivalents = groups[(page["kind"], page["key"])]
         for lang in (*LANGUAGES, "x-default"):
             destination = equivalents["en" if lang == "x-default" else lang]
