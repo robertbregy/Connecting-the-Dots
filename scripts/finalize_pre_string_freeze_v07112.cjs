@@ -23,7 +23,7 @@ review.parentReview=previousPath;
 review.priorTechnicalBaseline={version:'0.7.111',commit:baseline,reviewSHA256:sha(previousPath)};
 review.reviewInstruction='Close the final pre-String-Confirmation audit without changing frozen research evidence: localize Research entry pages, separate scholarly paper revision from operational technical synchronization, clarify provenance semantics.';
 review.rationales=review.rationales||{};
-review.rationales.FREEZE112='Reviewed final pre-String-Confirmation cleanup: multilingual Research entry, paper/technical date semantics, provenance clarity and bounded performance deferral.';
+review.rationales.FREEZE112='Reviewed final pre-String-Confirmation cleanup: multilingual Research entry, paper/technical date semantics, provenance clarity and deploy-surface consistency.';
 review.rationales.QA112='Reviewed deterministic guards for sitemap, hreflang, localized Research and release metadata.';
 review.rationales.V112='Separate deterministic v0.7.112 technical package; v0.7.111 and all earlier packages remain immutable.';
 review.linkReplacements=(review.linkReplacements||[]).map(x=>({...x,publishedPath:x.publishedPath.replace(/v0\.7\.111/g,'v0.7.112')}));
