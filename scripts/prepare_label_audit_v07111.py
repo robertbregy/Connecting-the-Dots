@@ -53,7 +53,15 @@ pub.update({
     "editorialReviewPath": f"docs/editorial-review-{DATE}-v{VERSION}.json",
     "buildProvenanceCommit": os.environ.get("SOURCE_COMMIT", BASELINE),
 })
-dump("publication.json", pub)\n\n# Once v0.7.111 becomes current, v0.7.110 becomes an immutable historical pack.\nfrozen = load("data/frozen_technical_packages.json")\nfrozen["recordedOn"] = DATE\nfrozen.setdefault("files", {})["downloads/connecting-the-dots-data-pack-v0.7.110.zip"] = "1bc42e76dab917a495dce91746a6e833d359eddc5b56f0d9b01d2ad9612742c8"\ndump("data/frozen_technical_packages.json", frozen)\n\n# Release history + localized summary.
+dump("publication.json", pub)
+
+# Once v0.7.111 becomes current, v0.7.110 becomes an immutable historical pack.
+frozen = load("data/frozen_technical_packages.json")
+frozen["recordedOn"] = DATE
+frozen.setdefault("files", {})["downloads/connecting-the-dots-data-pack-v0.7.110.zip"] = "1bc42e76dab917a495dce91746a6e833d359eddc5b56f0d9b01d2ad9612742c8"
+dump("data/frozen_technical_packages.json", frozen)
+
+# Release history + localized summary.
 history = load("data/release_history.json")
 releases = [r for r in history["releases"] if r.get("version") != VERSION]
 previous = next(r for r in releases if r.get("version") == "0.7.110")
