@@ -298,4 +298,4 @@ async function browsers(){
   }
  }finally{await browser.close();}
 }
-(async()=>{try{staticChecks();if(!process.argv.includes('--static-only'))await browsers();report.passed=report.errors.length===0;}catch(e){report.errors.push({fatal:e.stack||String(e)});}finally{fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2)+'\n');console.log('USABILITY_REMEDIATION_RESULT '+JSON.stringify({passed:report.passed,static:report.static.length,browser:report.browser.length,axeScans:report.axeScans,errors:report.errors.length}));}if(!report.passed)process.exitCode=1;})();
+(async()=>{try{staticChecks();if(!process.argv.includes('--static-only'))await browsers();report.passed=report.errors.length===0;}catch(e){report.errors.push({fatal:e.stack||String(e)});}finally{fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2)+'\n');console.log('USABILITY_REMEDIATION_RESULT '+JSON.stringify({passed:report.passed,static:report.static.length,browser:report.browser.length,axeScans:report.axeScans,errors:report.errors}));}if(!report.passed)process.exitCode=1;})();
