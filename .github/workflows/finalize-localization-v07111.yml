@@ -57,3 +57,5 @@ jobs:
           git push origin "HEAD:$BRANCH"
 
 # rerun-token: localization-sweep
+
+# rerun-token: final-head
