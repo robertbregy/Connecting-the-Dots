@@ -65,7 +65,14 @@ source_block=re.compile(r'''        source_chip\(S\["independentObjectors"\], "I
 r,n=source_block.subn(
     '        source_chip(S["independentObjectors"], "ICANN · Independent Objectors"),\n'
     '        source_chip(S["singularPlural"], "ICANN · Singular/Plural Evaluation"),\n',r,count=1)
-if n!=1: raise SystemExit("Expected duplicated Legal source block not found exactly once")
+if n==0:
+    # Idempotent reruns are valid once the duplicate block has already been collapsed.
+    if r.count('source_chip(S["independentObjectors"], "ICANN · Independent Objectors")') != 2:
+        raise SystemExit("Unexpected Independent Objectors source-chip count after localization preparation")
+    if r.count('source_chip(S["singularPlural"], "ICANN · Singular/Plural Evaluation")') != 2:
+        raise SystemExit("Unexpected Singular/Plural source-chip count after localization preparation")
+elif n!=1:
+    raise SystemExit("Unexpected duplicated Legal source block count")
 write("scripts/render_legal_layer.py",r)
 
 # Release history / summaries.
