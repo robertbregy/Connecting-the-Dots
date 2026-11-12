@@ -47,6 +47,9 @@ browser_meta = {
     'paperVersion': meta.get('paperVersion'),
     'paperPath': meta.get('paperPath'),
     'paperRevisedOn': meta.get('paperRevisedOn'),
+    'paperTechnicalSyncOn': meta.get('paperTechnicalSyncOn'),
+    'sourceReviewCommit': meta.get('sourceReviewCommit') or build_commit or None,
+    'buildProvenanceRole': meta.get('buildProvenanceRole'),
     'dataPackageVersion': meta.get('dataPackageVersion'),
     'currentDataPackVersion': meta.get('currentDataPackVersion'),
     'currentDataPackPath': meta.get('currentDataPackPath'),
@@ -72,7 +75,13 @@ research_manifest["currentSiteVersion"] = version
 working_paper = research_manifest.setdefault("workingPaperRevision", {})
 working_paper["version"] = meta["paperVersion"]
 working_paper["revisedOn"] = meta["paperRevisedOn"]
-working_paper["relationToRR2"] = "RR2 is the immutable archived dataset. This later working-paper revision includes a separately versioned, current APS analytical layer that is not covered by the RR1 or RR2 DOI; the new methods and results require a future archival research release."
+working_paper["technicalReference"] = {
+    "siteVersion": meta["version"],
+    "dataPackageVersion": meta["currentDataPackVersion"],
+    "synchronizedOn": meta.get("paperTechnicalSyncOn") or meta["releasedOn"],
+    "semantics": "Operational pointer only. It does not change the working-paper scholarly revision date or extend RR2."
+}
+working_paper["relationToRR2"] = "RR2 is the immutable archived dataset. The working paper has its own scholarly revision date; live technical references are synchronized separately and do not redate the manuscript or extend the RR1/RR2 DOI coverage."
 (ROOT / "research" / "research_release_manifest.json").write_text(json.dumps(research_manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 research_published_on = json.loads((DATA / "research_bibliographic_corrections.json").read_text())["zenodoDatePublished"]
 cff = f'''cff-version: 1.2.0

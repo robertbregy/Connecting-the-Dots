@@ -435,17 +435,22 @@ const readerStudyLocations=languages.map(language=>{
   assert.ok(fs.existsSync(path.join(root,studyPath,'index.html')),'missing Reader Study document: '+studyPath);
   return base+studyPath;
 });
-const addedLocations=[...discoveryLocations,...readerStudyLocations];
+const localizedResearchLocations=['it','de','fr'].map(language=>{
+  const researchPath='research/'+language+'/';
+  assert.ok(fs.existsSync(path.join(root,researchPath,'index.html')),'missing localized Research landing: '+researchPath);
+  return base+researchPath;
+});
+const addedLocations=[...discoveryLocations,...localizedResearchLocations,...readerStudyLocations];
 const expectedLocations=[...legacyLocations,...addedLocations];
-assert.equal(new Set(expectedLocations).size,135,'Reader Study URLs must preserve every established and discovery page');
-assert.equal(locations.length,135,'sitemap must contain exactly 43 established, 88 discovery and 4 Reader Study URLs');
-assert.equal(new Set(locations).size,135,'sitemap canonical URLs must not be duplicated');
+assert.equal(new Set(expectedLocations).size,138,'localized Research and Reader Study URLs must preserve every established and discovery page');
+assert.equal(locations.length,138,'sitemap must contain exactly 43 established, 88 discovery, 3 localized Research and 4 Reader Study URLs');
+assert.equal(new Set(locations).size,138,'sitemap canonical URLs must not be duplicated');
 assert.deepEqual(locations,expectedLocations,'complete multilingual and research sitemap');
 const sitemapEntries=Array.from(sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g),m=>m[1]);
 assert.equal((sitemapEntries.slice(0,legacyLocations.length).join('').match(/xhtml:link/g)||[]).length,180,'all established four-language articles and explainers retain reciprocal hreflang');
 for(const [index,entry] of sitemapEntries.slice(legacyLocations.length).entries())
-  assert.equal((entry.match(/xhtml:link/g)||[]).length,5,'discovery and Reader Study pages need four locales and x-default: '+addedLocations[index]);
-assert.equal((sitemap.match(/xhtml:link/g)||[]).length,180+(88+4)*5,'established, discovery and Reader Study pages have complete reciprocal hreflang');
+  assert.equal((entry.match(/xhtml:link/g)||[]).length,5,'discovery, localized Research and Reader Study pages need four locales and x-default: '+addedLocations[index]);
+assert.equal((sitemap.match(/xhtml:link/g)||[]).length,180+(88+3+4)*5,'established, discovery, localized Research and Reader Study pages have complete reciprocal hreflang');
 assert.ok(!/\?lang=/.test(sitemap));
 const app=fs.readFileSync(path.join(root,'assets/app.js'),'utf8');
 assert.ok(!app.includes('updateSeoLanguage'));

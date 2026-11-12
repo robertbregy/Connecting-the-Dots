@@ -2615,7 +2615,8 @@
     "disputesLegalBridgeTitle": "The procedure now lives in one place",
     "disputesLegalBridgeBody": "Formal objections, standing, providers, deadlines and appeals are explained in Rights, objections & remedies. Disputed Dots stays focused on what happened in individual cases.",
     "disputesLegalBridgeCta": "Read Rights, objections & remedies",
-    "release07111": "Localized the Legal layer's editorial badges in all four languages, removed duplicated source chips and added a release-wide regression guard against generic English labels leaking into non-English pages."
+    "release07111": "Localized the Legal layer's editorial badges in all four languages, removed duplicated source chips and added a release-wide regression guard against generic English labels leaking into non-English pages.",
+    "release07112": "Closed the final pre-String-Confirmation audit: localized Research entry pages, separated the working-paper scholarly revision from live technical synchronization, clarified build provenance semantics."
   },
   "it": {
     "brand": "Brand",
@@ -5233,7 +5234,8 @@
     "disputesLegalBridgeTitle": "La procedura, in un solo posto",
     "disputesLegalBridgeBody": "Obiezioni formali, standing, provider, scadenze e appelli sono spiegati in Diritti, obiezioni e rimedi. Disputed Dots resta concentrato su ciò che è successo nei singoli casi.",
     "disputesLegalBridgeCta": "Leggi Diritti, obiezioni e rimedi",
-    "release07111": "Localizzate in tutte e quattro le lingue le etichette editoriali del capitolo Legal, rimossi i link fonte duplicati e aggiunto un controllo generale contro la ricomparsa di etichette inglesi generiche nelle pagine non inglesi."
+    "release07111": "Localizzate in tutte e quattro le lingue le etichette editoriali del capitolo Legal, rimossi i link fonte duplicati e aggiunto un controllo generale contro la ricomparsa di etichette inglesi generiche nelle pagine non inglesi.",
+    "release07112": "Chiuso l'audit finale prima dello String Confirmation Day: create landing Research localizzate, separata la revisione scientifica del working paper dalla sincronizzazione tecnica, chiarita la provenance di build."
   },
   "de": {
     "brand": "Marke",
@@ -7851,7 +7853,8 @@
     "disputesLegalBridgeTitle": "Das Verfahren steht jetzt an einem Ort",
     "disputesLegalBridgeBody": "Formelle Einwände, Standing, Anbieter, Fristen und Appeals werden unter Rechte, Einwände und Rechtsbehelfe erklärt. Disputed Dots konzentriert sich auf die einzelnen Fälle.",
     "disputesLegalBridgeCta": "Rechte, Einwände und Rechtsbehelfe lesen",
-    "release07111": "Die redaktionellen Labels des Legal-Kapitels wurden in allen vier Sprachen lokalisiert, doppelte Quellen-Chips entfernt und eine releaseweite Regression-Prüfung gegen englische Standardlabels auf nichtenglischen Seiten ergänzt."
+    "release07111": "Die redaktionellen Labels des Legal-Kapitels wurden in allen vier Sprachen lokalisiert, doppelte Quellen-Chips entfernt und eine releaseweite Regression-Prüfung gegen englische Standardlabels auf nichtenglischen Seiten ergänzt.",
+    "release07112": "Das letzte Audit vor dem String Confirmation Day ist abgeschlossen: lokalisierte Research-Einstiegsseiten, getrennte wissenschaftliche Paper-Revision und technische Synchronisierung, klare Build-Provenienz."
   },
   "fr": {
     "brand": "Marque",
@@ -10469,6 +10472,7 @@
     "disputesLegalBridgeTitle": "La procédure est désormais regroupée",
     "disputesLegalBridgeBody": "Les objections formelles, la qualité pour agir, les prestataires, les délais et les recours sont expliqués dans Droits, objections et recours. Disputed Dots reste centré sur les cas individuels.",
     "disputesLegalBridgeCta": "Lire Droits, objections et recours",
-    "release07111": "Les libellés éditoriaux du chapitre Legal ont été localisés dans les quatre langues, les liens de source dupliqués supprimés et un contrôle global ajouté contre le retour de libellés génériques anglais dans les pages non anglophones."
+    "release07111": "Les libellés éditoriaux du chapitre Legal ont été localisés dans les quatre langues, les liens de source dupliqués supprimés et un contrôle global ajouté contre le retour de libellés génériques anglais dans les pages non anglophones.",
+    "release07112": "Clôture de l'audit final avant le String Confirmation Day : pages d'entrée Research localisées, séparation entre révision scientifique du working paper et synchronisation technique, provenance de build clarifiée."
   }
 }

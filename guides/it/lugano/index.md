@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/it/lugano/ | Site edition: 0.7.111 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/it/lugano/ | Site edition: 0.7.112 | Language: it -->
 
 Guida
 
@@ -279,6 +279,6 @@ L'affermazione che la Città paghi la fee va confrontata con la FAQ comunale: la
 
 Verifica editoriale: 17 ottobre 2026
 
-**Di Robert Bregy** · Edizione del sito 0.7.111 · 12 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.112 · 12 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

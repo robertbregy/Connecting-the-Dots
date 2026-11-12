@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/round-2026/ | Site edition: 0.7.111 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/round-2026/ | Site edition: 0.7.112 | Language: en -->
 
 Economic analysis
 
@@ -355,6 +355,6 @@ A bank's own TLD and a term such as .bank describe very different allocation mod
 
 [ICANN · 2012 statistics ↗](https://newgtlds.icann.org/en/program-status/statistics) [ICANN APS · 2026 statistics ↗](https://newgtldprogram-aps.icann.org/statistics) [nTLDData · 2026 application index ↗](https://www.ntlddata.com/applications)
 
-**By Robert Bregy** · Site edition 0.7.111 · November 12, 2026
+**By Robert Bregy** · Site edition 0.7.112 · November 12, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

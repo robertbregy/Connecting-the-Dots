@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/portfolios/ | Site edition: 0.7.111 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/portfolios/ | Site edition: 0.7.112 | Language: en -->
 
 Economic analysis
 
@@ -85,6 +85,6 @@ The 263 preliminary identical-string contention sets contain 891 applications. T
 
 [ICANN · preliminary contention CSV ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv) [internet.Best · applicant portfolios ↗](https://internet.best/new-gtld-applications/) [nTLDData · primary strings ↗](https://www.ntlddata.com/applications/strings)
 
-**By Robert Bregy** · Site edition 0.7.111 · November 12, 2026
+**By Robert Bregy** · Site edition 0.7.112 · November 12, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

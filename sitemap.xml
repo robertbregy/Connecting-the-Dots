@@ -1145,6 +1145,33 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/discovery/en/" />
   </url>
   <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/research/it/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/research/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/research/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/research/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/research/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/research/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/research/de/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/research/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/research/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/research/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/research/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/research/" />
+  </url>
+  <url>
+    <loc>https://robertbregy.github.io/Connecting-the-Dots/research/fr/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/research/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://robertbregy.github.io/Connecting-the-Dots/research/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robertbregy.github.io/Connecting-the-Dots/research/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://robertbregy.github.io/Connecting-the-Dots/research/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robertbregy.github.io/Connecting-the-Dots/research/" />
+  </url>
+  <url>
     <loc>https://robertbregy.github.io/Connecting-the-Dots/research/reader-study/en/</loc>
     <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://robertbregy.github.io/Connecting-the-Dots/research/reader-study/en/" />

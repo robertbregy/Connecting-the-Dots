@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/fr/timeline/ | Site edition: 0.7.111 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/fr/timeline/ | Site edition: 0.7.112 | Language: fr -->
 
 Guide
 
@@ -459,6 +459,6 @@ Corpus locaux datés, et non liste universelle de tous les noms jamais proposés
 
 Révision éditoriale · 19 octobre 2026
 
-**Par Robert Bregy** · Édition du site 0.7.111 · 12 novembre 2026
+**Par Robert Bregy** · Édition du site 0.7.112 · 12 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.

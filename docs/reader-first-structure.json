@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
-  "version": "0.7.111",
+  "version": "0.7.112",
   "native": [
     {
       "file": "en/index.html",
@@ -2558,10 +2558,28 @@
       "retainedExistingIds": 2
     },
     {
+      "file": "research/de/index.html",
+      "lang": "de",
+      "area": "ia-research",
+      "retainedExistingIds": 2
+    },
+    {
+      "file": "research/fr/index.html",
+      "lang": "fr",
+      "area": "ia-research",
+      "retainedExistingIds": 2
+    },
+    {
       "file": "research/index.html",
       "lang": "en",
       "area": "ia-research",
       "retainedExistingIds": 3
+    },
+    {
+      "file": "research/it/index.html",
+      "lang": "it",
+      "area": "ia-research",
+      "retainedExistingIds": 2
     }
   ],
   "humanParticipants": 0

@@ -8,9 +8,14 @@
     "url": "https://github.com/robertbregy"
   },
   "websiteRelease": {
-    "version": "0.7.111",
+    "version": "0.7.112",
     "releasedOn": "2026-11-12",
-    "url": "https://robertbregy.github.io/Connecting-the-Dots/"
+    "url": "https://robertbregy.github.io/Connecting-the-Dots/",
+    "provenance": {
+      "sourceReviewCommit": "47752c37d8cce947d402b7e032c062f47fa7cd00",
+      "role": "source review commit used for deterministic regeneration; not the published merge commit",
+      "publishedCommit": "Resolve from the GitHub Pages deployment/repository history; a Git object cannot self-embed its own final hash."
+    }
   },
   "dateSemantics": {
     "websiteRelease": "Technical/editorial publication date; it does not redate the underlying observations.",
@@ -33,8 +38,22 @@
       "url": "https://robertbregy.github.io/Connecting-the-Dots/data/manifest.json"
     },
     "researchGuide": {
-      "path": "research/",
-      "url": "https://robertbregy.github.io/Connecting-the-Dots/research/"
+      "en": {
+        "path": "research/",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/research/"
+      },
+      "it": {
+        "path": "research/it/",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/research/it/"
+      },
+      "de": {
+        "path": "research/de/",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/research/de/"
+      },
+      "fr": {
+        "path": "research/fr/",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/research/fr/"
+      }
     },
     "sitemap": {
       "path": "sitemap.xml",
@@ -1565,10 +1584,11 @@
     "currentWorkingPaper": {
       "version": "1.4-draft",
       "revisedOn": "2026-10-19",
+      "technicalReferenceSynchronizedOn": "2026-11-12",
       "path": "research/connecting-the-dots-working-paper-v1.html",
       "url": "https://robertbregy.github.io/Connecting-the-Dots/research/connecting-the-dots-working-paper-v1.html",
       "status": "working draft; not peer reviewed",
-      "relationshipToArchives": "RR2 is the immutable archived dataset. This later working-paper revision includes a separately versioned, current APS analytical layer that is not covered by the RR1 or RR2 DOI; the new methods and results require a future archival research release."
+      "relationshipToArchives": "RR2 is the immutable archived dataset. The working paper has its own scholarly revision date; live technical references are synchronized separately and do not redate the manuscript or extend the RR1/RR2 DOI coverage."
     },
     "citationFile": {
       "path": "CITATION.cff",
