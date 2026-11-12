@@ -970,6 +970,18 @@ if not re.fullmatch(r'\d+\.\d+-draft', publication_meta.get('paperVersion', ''))
     fail('Working paper revision must have an explicit draft version')
 if paper_revision.get('version')!=publication_meta['paperVersion'] or paper_revision.get('revisedOn')!=publication_meta.get('paperRevisedOn'):
     fail('Working paper revision metadata differs from publication.json')
+tech_ref=paper_revision.get('technicalReference', {})
+if tech_ref.get('siteVersion')!=publication_meta['version'] or tech_ref.get('dataPackageVersion')!=publication_meta.get('currentDataPackVersion'):
+    fail('Working paper technical reference is not synchronized independently from the scholarly revision')
+if tech_ref.get('synchronizedOn')!=publication_meta.get('paperTechnicalSyncOn'):
+    fail('Working paper technical-reference synchronization date mismatch')
+paper_md=(ROOT/'research'/'connecting-the-dots-working-paper-v1.md').read_text(encoding='utf-8')
+if re.search(r'Current technical data package \*\*v[0-9.]+\*\*', paper_md):
+    fail('Working-paper manuscript must not auto-redate itself through a technical package version')
+if not publication_meta.get('sourceReviewCommit') or publication_meta.get('sourceReviewCommit')!=publication_meta.get('buildProvenanceCommit'):
+    fail('Source-review provenance commit must be explicit and aligned with the compatibility field')
+if 'not the published merge commit' not in publication_meta.get('buildProvenanceRole',''):
+    fail('Build provenance role remains ambiguous')
 if not (publication_meta['asOf'] <= publication_meta.get('paperRevisedOn','') <= publication_meta['releasedOn']):
     fail('Working paper revision date outside snapshot/publication range')
 if 'id="inside-round"' not in source_html or 'data-target="inside-round"' not in source_html:
@@ -990,6 +1002,7 @@ must_index.update(site_base+'behind-the-round/'+lang+'/who-controls-internet-acc
 must_index.update(site_base+'behind-the-round/'+lang+'/'+slug+'/' for slug in ('objectors-eoi','replacement-strings','background-screening') for lang in LANGS)
 must_index.update(site_base+'applications/'+lang+'/' for lang in LANGS)
 assert len(must_index)==43, 'Established sitemap inventory changed'
+must_index.update(site_base+'research/'+lang+'/' for lang in ('it','de','fr'))
 discovery_manifest=json.loads((ROOT/'discovery/manifest.json').read_text(encoding='utf-8'))
 if discovery_manifest.get('schemaVersion')!=1 or discovery_manifest.get('siteVersion')!=publication_meta['version']:
     fail('Discovery manifest must identify the current publication')
@@ -1009,8 +1022,22 @@ for page in discovery_pages:
     must_index.add(site_base+relative_path)
 for lang in LANGS:
     must_index.add(site_base+'research/reader-study/'+lang+'/')
-if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index) or len(must_index)!=135:
-    fail('Sitemap must contain 43 established URLs, 88 discovery documents and four Reader Study pages exactly once (135 URLs)')
+if set(sitemap_locs)!=must_index or len(sitemap_locs)!=len(must_index) or len(must_index)!=138:
+    fail('Sitemap must contain 43 established URLs, 3 localized Research landings, 88 discovery documents and four Reader Study pages exactly once (138 URLs)')
+localized_research_labels={
+    'it':('Ricerca e citazione','Leggi il working paper in inglese'),
+    'de':('Forschung und Zitieren','Working Paper auf Englisch lesen'),
+    'fr':('Recherche et citation','Lire le working paper en anglais'),
+}
+for lang,(title,paper_link) in localized_research_labels.items():
+    path=ROOT/'research'/lang/'index.html'
+    if not path.is_file(): fail('Localized Research landing missing: '+lang)
+    page=path.read_text(encoding='utf-8')
+    if f'<html lang="{lang}">' not in page or title not in page or paper_link not in page:
+        fail('Localized Research landing is incomplete: '+lang)
+    if f'hreflang="{lang}"' not in page or 'hreflang="en"' not in page:
+        fail('Localized Research hreflang set incomplete: '+lang)
+
 for lang in LANGS:
     page=(ROOT/lang/'index.html').read_text(encoding='utf-8')
     chronicle_page=ROOT/'inside-the-round'/lang/'index.html'
