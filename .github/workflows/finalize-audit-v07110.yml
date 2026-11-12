@@ -78,3 +78,5 @@ jobs:
 # rerun-token: usability-legal-bridge
 
 # rerun-token: rendered-legal-bridge
+
+# rerun-token: idempotent-rendered-bridge
