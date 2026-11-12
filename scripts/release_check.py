@@ -1458,13 +1458,23 @@ if 'Field Notes' not in working_md or 'Timeline' not in working_md or 'Field Not
 technical_pack = publication_meta.get('currentDataPackPath')
 if not technical_pack or publication_meta.get('currentDataPackVersion') != version:
     fail('current technical pack identity is not anchored to publication.json')
-for rel in ('research/index.html', 'research/connecting-the-dots-working-paper-v1.html',
-            'research/connecting-the-dots-working-paper-v1.md'):
+for rel in ('research/index.html', 'research/connecting-the-dots-working-paper-v1.html'):
     page = (ROOT / rel).read_text(encoding='utf-8')
     if technical_pack not in page:
         fail('mutable research page still points to an old technical ZIP: ' + rel)
     if '10.5281/zenodo.23288603' not in page:
         fail('RR2 DOI omitted from research material: ' + rel)
+working_md = (ROOT / 'research/connecting-the-dots-working-paper-v1.md').read_text(encoding='utf-8')
+if technical_pack in working_md or re.search(r'connecting-the-dots-data-pack-v[0-9.]+\\.zip', working_md):
+    fail('working-paper manuscript must not embed a mutable technical-package version')
+if 'see the live Research & citation landing page' not in working_md:
+    fail('working-paper manuscript lacks the stable live-technical-reference pointer')
+if '10.5281/zenodo.23288603' not in working_md:
+    fail('RR2 DOI omitted from working-paper manuscript')
+for locale in ('it','de','fr'):
+    localized=(ROOT/'research'/locale/'index.html').read_text(encoding='utf-8')
+    if technical_pack not in localized:
+        fail('localized Research landing does not point to current technical ZIP: '+locale)
 research_readme = ROOT / 'research/README.md'
 if research_readme.exists() and f'Latest technical site: **v{version}**' not in research_readme.read_text(encoding='utf-8'):
     fail('research README describes an obsolete technical site release')
