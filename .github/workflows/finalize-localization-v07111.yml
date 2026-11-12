@@ -55,3 +55,5 @@ jobs:
           git diff --cached --quiet && { echo 'Nothing to commit'; exit 1; }
           git commit -m 'v0.7.111: localize Legal labels and deduplicate sources [skip build]'
           git push origin "HEAD:$BRANCH"
+
+# rerun-token: localization-sweep
