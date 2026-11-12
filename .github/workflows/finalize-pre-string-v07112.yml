@@ -77,4 +77,4 @@ jobs:
           git commit -m 'v0.7.112: close pre-String-Confirmation audit [skip build]'
           git push origin "HEAD:$BRANCH"
 
-# rerun-token: research-semantic-guard-v2
+# rerun-token: public-research-landings-v3
