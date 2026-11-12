@@ -54,6 +54,7 @@ jobs:
           python3 scripts/test_external_source_health.py
           node scripts/test_reading_controls.cjs
           node scripts/audit_v07108_qa.cjs
+          CTD_STATIC_ONLY=1 node scripts/usability_remediation_qa.cjs --static-only
           CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
       - name: Commit reviewed candidate if branch tip is unchanged
         env:
@@ -82,3 +83,5 @@ jobs:
 # rerun-token: idempotent-rendered-bridge
 
 # rerun-token: normalized-legal-destination
+
+# rerun-token: finalizer-usability-static
