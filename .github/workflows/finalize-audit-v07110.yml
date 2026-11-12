@@ -80,3 +80,5 @@ jobs:
 # rerun-token: rendered-legal-bridge
 
 # rerun-token: idempotent-rendered-bridge
+
+# rerun-token: normalized-legal-destination
