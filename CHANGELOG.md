@@ -1,3 +1,11 @@
+# v0.7.111 — 12 November 2026
+
+- Localized the new Legal editorial badges in all four languages: PROCEDURE / READING / CONTRACT are no longer leaked into IT, DE or FR pages.
+- Removed repeated Independent Objectors and Singular/Plural source chips from the Legal renderer while retaining one reference in the timing section and one in the full source list.
+- Added a release-wide generated-HTML regression guard for generic English editorial badges on non-English pages.
+- Kept formal ICANN terminology and official source titles in their authoritative names rather than translating them as if they were UI labels.
+- APS/IANA snapshots, RR1/RR2, historical dispute evidence and all previous technical packages remain unchanged.
+
 # v0.7.110 — 12 November 2026
 
 - Closed the post-v0.7.109 audit before the String Confirmation milestone.

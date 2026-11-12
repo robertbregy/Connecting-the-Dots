@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/cases/ | Site edition: 0.7.110 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/cases/ | Site edition: 0.7.111 | Language: de -->
 
 Wirtschaftsanalyse
 
@@ -300,6 +300,6 @@ Die Gebühr ist kein Kaufpreis für eine TLD, sondern Eintrittskosten in einen u
 
 [ICANN — 2012 New gTLD evaluation fee ↗](https://newgtlds.icann.org/en/applicants/global-support/faqs/faqs-en) [ICANN — 2026 gTLD evaluation fee ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/gtld-evaluation-fee/faqs) [ICANN — 2026 financial projection templates ↗](https://newgtldprogram-2026-agb.icann.org/en/16-appendix-5-templates-for-standard-financial-profile.html)
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.110 · 12. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.111 · 12. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

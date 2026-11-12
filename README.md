@@ -1,6 +1,6 @@
-# Connecting the Dots — v0.7.110
+# Connecting the Dots — v0.7.111
 
-**v0.7.110 · 12 November 2026.** Closed the post-Legal audit with the remaining WCAG contrast correction, consistent release metadata and chronology, dynamic source-health versioning, precise 2026 objection clocks and terminology, and a cleaner boundary between Legal procedure and historical Disputed Dots cases. Frozen research evidence and prior archives remain unchanged.
+**v0.7.111 · 12 November 2026.** Localized the new Legal editorial badges across EN/IT/DE/FR, removed duplicated source chips and added a release-wide guard against generic English UI labels leaking into non-English pages. Research evidence and historical archives are unchanged.
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -8,9 +8,15 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
+**v0.7.111 - 12 November 2026**
+
+Multilingual label-consistency correction: Legal badges now follow the page language (PROCEDURA/LETTURA/CONTRATTO in Italian; equivalent German and French labels), duplicated Legal source chips are removed, and the release checker scans the full non-English publication for generic English editorial badges.
+
+## Previous audit-close release
+
 **v0.7.110 - 12 November 2026**
 
-Audit-close release before the 17 November String Confirmation milestone: fixes the remaining light-theme contrast defect, aligns public release metadata and chronology, makes source-health versioning follow the package automatically, sharpens the 2026 Legal timetable and glossary, and removes duplicated procedural exposition from Disputed Dots.
+Closed the post-Legal audit before String Confirmation Day: remaining WCAG contrast correction, aligned release metadata and chronology, dynamic source-health versioning, sharper 2026 Legal timing and terminology, and a clean boundary between Legal procedure and historical Disputed Dots cases.
 
 ## Previous legal release
 

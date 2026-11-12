@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/fr/how/ | Site edition: 0.7.110 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/fr/how/ | Site edition: 0.7.111 | Language: fr -->
 
 Guide
 
@@ -656,6 +656,6 @@ En cas de succès, .lugano pourrait devenir un namespace gouverné selon des rè
 
 N’importe qui pourra automatiquement enregistrer n’importe quel nom .lugano.
 
-**Par Robert Bregy** · Édition du site 0.7.110 · 12 novembre 2026
+**Par Robert Bregy** · Édition du site 0.7.111 · 12 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.

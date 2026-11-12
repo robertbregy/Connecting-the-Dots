@@ -202,7 +202,10 @@
           "RVC",
           "Registry Voluntary Commitment. A commitment proposed by an applicant that can become contractually binding if ICANN approves it and it is incorporated into the Registry Agreement."
         ]
-      ]
+      ],
+      "badgeProcedure": "PROCEDURE",
+      "badgeReading": "READING",
+      "badgeContract": "CONTRACT"
     },
     "it": {
       "nav": "Diritti, obiezioni e rimedi",
@@ -377,7 +380,10 @@
           "RVC",
           "Registry Voluntary Commitment. Un impegno proposto dal candidato che può diventare contrattualmente vincolante se approvato da ICANN e incorporato nel Registry Agreement."
         ]
-      ]
+      ],
+      "badgeProcedure": "PROCEDURA",
+      "badgeReading": "LETTURA",
+      "badgeContract": "CONTRATTO"
     },
     "de": {
       "nav": "Rechte, Einwände und Rechtsbehelfe",
@@ -552,7 +558,10 @@
           "RVC",
           "Registry Voluntary Commitment. Eine vom Bewerber vorgeschlagene Verpflichtung, die vertraglich bindend werden kann, wenn ICANN sie genehmigt und in das Registry Agreement aufnimmt."
         ]
-      ]
+      ],
+      "badgeProcedure": "VERFAHREN",
+      "badgeReading": "LEKTÜRE",
+      "badgeContract": "VERTRAG"
     },
     "fr": {
       "nav": "Droits, objections et recours",
@@ -727,7 +736,10 @@
           "RVC",
           "Registry Voluntary Commitment. Un engagement proposé par le candidat qui peut devenir contractuellement contraignant s'il est approuvé par l'ICANN et incorporé au Registry Agreement."
         ]
-      ]
+      ],
+      "badgeProcedure": "PROCÉDURE",
+      "badgeReading": "LECTURE",
+      "badgeContract": "CONTRAT"
     }
   }
 }
