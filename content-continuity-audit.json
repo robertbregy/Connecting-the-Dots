@@ -4253,7 +4253,7 @@
     "errors": [],
     "review_id": "audit-close-2026-11-12-v0.7.110",
     "reviewed_on": "2026-11-12",
-    "manifest_sha256": "2477a92fba8dc492b7ac296f3389740b417afa3eb17b1ac599c0aee1ee8b3e3b",
+    "manifest_sha256": "5cf63c844ca43ed8bc5b58a9df126ea288aceb16d000c604ea9041d1a1cbe06b",
     "source_verification": {
       "baselineMain": "ec231cc12d35fa91ff5340ad057a483ce23a5ca4",
       "reviewedAgainst": "65e0fbe2080c2ee841e8abc01e1ddec113a74b8e",

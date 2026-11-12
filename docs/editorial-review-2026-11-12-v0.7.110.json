@@ -3810,7 +3810,7 @@
     },
     "data/publication.js": {
       "baselineSHA256": "899025d5da40e4100c67a0fd410de58d5d11f50cbea7c0a7b5ea7f4b9045ef23",
-      "sha256": "3b5ed88a9b65f01b777c41c8acfc109a0bcd58dae66f92c85856be1adc7a8751",
+      "sha256": "a4fd6ab0352770e2a897797854fc7f6a2b9aac6b754438f33a788a767482d573",
       "rationaleIds": [
         "DEL98",
         "V98",
@@ -4115,7 +4115,7 @@
     },
     "de/index.html": {
       "baselineSHA256": "8a44d19e73614912f6a2c420974ae801c98bc3e8a99be366051608cdc0d524be",
-      "sha256": "9de7720a4bf230ae7e94505fe8d865b363d997b4880704689986937e21e4fc0b",
+      "sha256": "63bde12267a501f76adb324d6f84d13cba0d276232a32875792fd187c7b36056",
       "rationaleIds": [
         "A95",
         "V96",
@@ -4866,7 +4866,7 @@
     },
     "docs/reader-first-structure.json": {
       "baselineSHA256": "99f2c1df849cdb73a72901da957e9f7ad706ca02d14c360be2f5099c103ef0fd",
-      "sha256": "1dd8060af3dac6eba958582dbdd45ef64e62ee6b8aa6578fabc295730862b5dd",
+      "sha256": "3308c0e0219b1f189ee457f828e6d85de69d0446e10044033f6b0e9d3079533a",
       "rationaleIds": [
         "DOC98",
         "UX99",
@@ -5496,7 +5496,7 @@
     },
     "en/index.html": {
       "baselineSHA256": "98a47906b5d79c444243a60370c9f76a429bf965e4f89f4d9f3aa77d6c3c794b",
-      "sha256": "84dea5b2669f3d725e67dbb3978937812427f48ff75b4d8b1044e9c5db0f375a",
+      "sha256": "fe3eaee10a23b8e6a97f645ab799724641837f73cfccb4fed5b8a0dc2b324a11",
       "rationaleIds": [
         "A95",
         "V96",
@@ -5559,7 +5559,7 @@
     },
     "fr/index.html": {
       "baselineSHA256": "127650e29f8cd27c6915ad1a1c46e709acc798cfe1f81bb132264aa3030e509f",
-      "sha256": "ed6ef154a47cce40ed8e2e31f18ed5197de0d1541c681e8e96f18daca6cfa2f4",
+      "sha256": "b43a4d4987d3fdc7fb7f41496571d5eac0c87ec72ef287595b32a94a50ab68b3",
       "rationaleIds": [
         "A95",
         "V96",
@@ -6407,7 +6407,7 @@
     },
     "index.html": {
       "baselineSHA256": "5e4a6f107439ff09dd25ac7202bfe9ea4864c127481f8bf12f58db5160df3b90",
-      "sha256": "feb72044a6a8ac16690a63d2466a0e33a82ecb326b327b37d632188d18385b90",
+      "sha256": "45ea84ba97a823ab12bb96a39c15bc63451d11b8df3abad148f7a3d3e3dfcddd",
       "rationaleIds": [
         "A95",
         "V96",
@@ -6591,7 +6591,7 @@
     },
     "it/index.html": {
       "baselineSHA256": "d23a5360a62709ae1fbe6c4b039ac8742e521a084e4b24eabecb63457ed33a20",
-      "sha256": "c808f5003b2ec573685ea23b2ef506cedde73b0db5588bc8e11e5b111622eb0c",
+      "sha256": "1df5b5b07939e710f730601881b1d46d27545e77fc2dc7413617ab975e671040",
       "rationaleIds": [
         "A95",
         "V96",
@@ -6708,7 +6708,7 @@
     },
     "publication.json": {
       "baselineSHA256": "b5d225fa96dc9573b2dac3c18e39236c2e570c65aaa08afdbfedbdc0292368ef",
-      "sha256": "a9734a8288df7181ee9b8eb60800845f4ea9a65762f14eb122d93c954f49c9f5",
+      "sha256": "b2a44f4eb05aa236eb18751cf303b3038ecc52f1c57d2f1dd06b5a2e44ff5d48",
       "rationaleIds": [
         "C01",
         "C02",
@@ -7683,7 +7683,7 @@
     },
     "scripts/usability_remediation_qa.cjs": {
       "baselineSHA256": "1dc4cb37c4ba30215b0d07fb4914cdab8c6c3ff6a4faf99294bd876f260d6d25",
-      "sha256": "2437fb5f730a39f4acec5b2e57de477c6324a7b24153dc906dec003a30d9de87",
+      "sha256": "160c98d68934c3aa613cf5b92084d5ee289ed78b41213e954e02dd5b0ef4d06d",
       "rationaleIds": [
         "E13",
         "T94",
@@ -9466,7 +9466,7 @@
     },
     "guides/de/legal/index.html": {
       "baselineSHA256": "c1debfe8a972a01835b356b0dd60acce333cee0649f7b117466c8c1afbaa5c5d",
-      "sha256": "1e5a98057df5550eb96a1b964539af63b3590512ac999fa22499b9871852eac9",
+      "sha256": "740084baa2aa2d3eb0880a311117a7cc2b47c78b1577d558cc64bc178818d6d0",
       "rationaleIds": [
         "LEGAL109",
         "DISC109",
@@ -9475,7 +9475,7 @@
     },
     "guides/de/legal/index.md": {
       "baselineSHA256": "47f9a5193c049faf39d12f4123cbc71aaa82eb200e5ab664b18368bb680b3d71",
-      "sha256": "3d93a1340afda9d509d697745d630621de4d10a5978252720c4998ec8a6fe24f",
+      "sha256": "2d067848f575be09428b5fe02cebedc6eab43198a3423be3758b7a22be715f8a",
       "rationaleIds": [
         "LEGAL109",
         "DISC109",
@@ -9484,7 +9484,7 @@
     },
     "guides/en/legal/index.html": {
       "baselineSHA256": "756163ec6b7b5f58c34745c0fc6ec437dcc49fc5684eed6549137c6263e94dd8",
-      "sha256": "fa9dc28fcdfecbed5819d300116499c02a2abbbf2ce7b05a062b17e00621f5d3",
+      "sha256": "8634be797e8d131776bb5720606ad890f7ac9d758c07818d0d245aa61a018f06",
       "rationaleIds": [
         "LEGAL109",
         "DISC109",
@@ -9493,7 +9493,7 @@
     },
     "guides/en/legal/index.md": {
       "baselineSHA256": "6e30f22ddd122daaf5363bd5e59004d491bc3ddbaea370e2a7a761037e50273c",
-      "sha256": "011101e6772c22724c39cb943ff695793b9dd6a733183702da5d260990d49f7e",
+      "sha256": "ceee4c4d5fd61381bc14dbbeeb1456de6cbae35e48d3b2c05e15b4a529b962d3",
       "rationaleIds": [
         "LEGAL109",
         "DISC109",
@@ -9502,7 +9502,7 @@
     },
     "guides/fr/legal/index.html": {
       "baselineSHA256": "d4728ff4056ab62e894412a37570593b8d9c62f65fc21fea6c98f383d63988cd",
-      "sha256": "2ec43fb2d5fad9a482c77e5ed0b77ba507a6b7f9f228205082e3cdd7d8d31d8d",
+      "sha256": "f259c96b5317fe5bdf9eeb5bde41afeae539ed8ae86e9dfc2ba52bd41fc859f7",
       "rationaleIds": [
         "LEGAL109",
         "DISC109",
@@ -9511,7 +9511,7 @@
     },
     "guides/fr/legal/index.md": {
       "baselineSHA256": "2ae8a173dff3a3e82d49c3ecb94adc5b22da1ff3ee3470b4c6214caa75d528f4",
-      "sha256": "202c18ddcf8218f10d4218d077ce627422cc72235c66a4511b3805e4955d1004",
+      "sha256": "dbcf0fe2ffbf5084b8267e812f75d3d59fd5a2d7c32136b2e3d04448be772cc9",
       "rationaleIds": [
         "LEGAL109",
         "DISC109",
@@ -9520,7 +9520,7 @@
     },
     "guides/it/legal/index.html": {
       "baselineSHA256": "9d50f47dd43efcccfa595cef898cf15d86fc287fabb890c81ccfd4d2a4be04f9",
-      "sha256": "e05120a4b6ae18932b838a5a7b1121bc0e4861f3efb5eddb375b33ac605114c2",
+      "sha256": "841cd0c288e5218634648bb4e33b6495f4fc2f232a0c68b005dbeb0a5a2916d7",
       "rationaleIds": [
         "LEGAL109",
         "DISC109",
@@ -9529,7 +9529,7 @@
     },
     "guides/it/legal/index.md": {
       "baselineSHA256": "9705caf749ef90ad1f34d2c5f92f62bc20dd4156800359847c2999658d00b221",
-      "sha256": "12ce8a1b223b457ddc1d32b2d4304b1c4f39b0cfcc0cbb3363d9ce3faf09268e",
+      "sha256": "6ce816b016f45caa4357171a732c3bb03fd6d0163234653ae1ace9095569c897",
       "rationaleIds": [
         "LEGAL109",
         "DISC109",
@@ -9552,7 +9552,7 @@
     },
     "scripts/render_legal_layer.py": {
       "baselineSHA256": "19f50c05564023d8c01fa13fc2cd9456745c3b2c3bea274a4f5ad05dc753a8d6",
-      "sha256": "de5055550003f47bb6c9a84405058607e558c696b2b666d8fc2ea2a9af5516d0",
+      "sha256": "b124e0b83532fd6cd9b724a8fdd7f57c6451ae09fc649f7265dca83cb4eab760",
       "rationaleIds": [
         "LEGAL109",
         "LEGAL110"
@@ -9560,7 +9560,7 @@
     },
     ".github/workflows/finalize-audit-v07110.yml": {
       "baselineSHA256": null,
-      "sha256": "8f7d11b73823821b31101bfddee73f91d6a585ad24b4846faed7f9c419e99f6f",
+      "sha256": "d6cb4d15c49beee1bef9024928973235cd0ceba4669f77c05b5fac433d4dd220",
       "rationaleIds": [
         "AUD110"
       ]
@@ -10713,7 +10713,7 @@
   "verification": {
     "status": "source-and-generated-files-reviewed",
     "reviewedOn": "2026-11-12",
-    "sourceCommit": "25e0a1d7d3f58c762847668912d68245911576e5",
+    "sourceCommit": "808a26a8fc1f70cc76c1ce48f9af5646117e1bca",
     "reviewType": "AI-assisted full audit closure and generated-output review",
     "humanParticipants": 0,
     "protectedSourceSections": 21,
@@ -10736,13 +10736,13 @@
   "signoff": {
     "reviewedOn": "2026-11-12",
     "reviewType": "AI-assisted authorized audit closure",
-    "sourceCommit": "25e0a1d7d3f58c762847668912d68245911576e5",
+    "sourceCommit": "808a26a8fc1f70cc76c1ce48f9af5646117e1bca",
     "humanParticipants": 0,
     "scope": "Close the post-v0.7.109 audit before String Confirmation Day: fix the remaining light-theme contrast defect; align README, changelog and release-history semantics; make source-health versioning dynamic; sharpen the 2026 Legal timing and terminology using primary ICANN procedural sources; and remove duplicated procedural exposition from Disputed Dots while preserving its historical cases. Preserve APS/IANA snapshots, RR1/RR2, historic evidence, all earlier technical packages and every other protected source chapter."
   },
   "buildProvenancePolicy": {
     "version": "0.7.110",
-    "sourceCommit": "25e0a1d7d3f58c762847668912d68245911576e5",
+    "sourceCommit": "808a26a8fc1f70cc76c1ce48f9af5646117e1bca",
     "semantics": "Pinned branch revision used for deterministic regeneration immediately before explicit review recording."
   },
   "approvedCandidateSHA256": "0ba0fe3cf1bb5e63695262886cda02d10bca239a78523122c454ddc268324dea",
