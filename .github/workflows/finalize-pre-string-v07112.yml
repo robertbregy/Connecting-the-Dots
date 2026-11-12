@@ -77,4 +77,4 @@ jobs:
           git commit -m 'v0.7.112: close pre-String-Confirmation audit [skip build]'
           git push origin "HEAD:$BRANCH"
 
-# rerun-token: static-prerender-preserved-v4
+# rerun-token: sitemap-138-v5
