@@ -294,6 +294,7 @@ health=(ROOT/'scripts'/'check_external_sources.py').read_text(encoding='utf-8')
 if 'SITE_VERSION = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))["version"]' not in health: fail('Source-health version must derive from package metadata')
 if re.search(r'Source-Health/0\\.7\\.\\d+',health): fail('Source-health checker still hard-codes a release')
 if 'class="disputeMechanisms"' in source_html: fail('Disputed Dots still duplicates Legal procedure')
+if "document.querySelector('#disputeMechanisms.disputeMechanisms')" not in appjs: fail('Runtime dispute renderer can overwrite the reviewed Legal bridge')
 for token in ('disputesLegalBridgeTitle','disputesLegalBridgeBody','data-open-section="legal"'):
     if token not in source_html: fail('Disputed Dots Legal bridge missing: '+token)
 legal_layer=json_file('legal_layer.json')
