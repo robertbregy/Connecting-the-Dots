@@ -175,6 +175,8 @@ def files_to_patch(root: Path):
             yield root / "behind-the-round" / lang / slug / "index.html", lang, area
     yield root / "explorer" / "index.html", "en", "explore"
     yield root / "research" / "index.html", "en", "research"
+    for lang in ("it", "de", "fr"):
+        yield root / "research" / lang / "index.html", lang, "research"
     # Mutable working paper: add a navigation landmark without altering its body,
     # scholarly identifier, citation metadata or version-specific RR2 DOI.
     yield root / "research" / "connecting-the-dots-working-paper-v1.html", "en", "research"
@@ -271,7 +273,7 @@ def apply(root: Path) -> int:
     translations = json.loads((root / "data" / "translations.json").read_text(encoding="utf-8"))
     patched = 0
     files = list(files_to_patch(root))
-    assert len(files) == 39, "Expected 39 independent public pages including working paper"
+    assert len(files) == 42, "Expected 42 independent public pages including localized Research landings and working paper"
     for file, lang, area in files:
         if not file.exists():
             raise ValueError(f"Missing independent page: {file.relative_to(root)}")
