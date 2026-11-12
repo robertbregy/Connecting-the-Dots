@@ -109,7 +109,8 @@ function staticChecks(){
   const legalBridgeLink=legalBridge.querySelector('a[href]');
   assert.ok(legalBridgeLink,'Rendered Legal bridge link missing: '+file);
   const legalHref=legalBridgeLink.getAttribute('href')||'';
-  assert.ok(legalHref==='#legal'||/^(?:\.\/)?\?tab=legal#legal$/.test(legalHref)||/[?&]tab=legal#legal$/.test(legalHref),'Rendered Legal bridge destination missing: '+file+' -> '+legalHref);
+  const legalTarget=new URL(legalHref,'https://ctd.invalid/');
+  assert.ok(legalTarget.hash==='#legal'||legalTarget.searchParams.get('tab')==='legal','Rendered Legal bridge destination missing: '+file+' -> '+legalHref);
   assert.ok(after.getElementById('legal'),'Rendered Legal chapter missing: '+file);
   for(const key of ['disputesLegalBridgeTitle','disputesLegalBridgeBody','disputesLegalBridgeCta']) assert.ok(legalBridge.textContent.includes(translations[lang][key]),'Rendered Legal bridge text missing: '+file+'/'+key);
   for(const key of ['insideReplaceCompletedBody','insideStateObserved','insideQualityTitle','nissayCaseState']){
