@@ -314,7 +314,7 @@ write("scripts/release_check.py",rc)
 uq=read("scripts/usability_remediation_qa.cjs")
 uq=uq.replace(
 "  assert.deepEqual(lost,['insideReplacePublicScheduleBody','insideStateCurrent'],'Unreviewed translated key disappeared: '+file);\n  for(const key of ['insideReplaceCompletedBody','insideStateObserved','insideQualityTitle','nissayCaseState']){",
-"  assert.deepEqual(lost,['disputesMechanismsSub','disputesMechanismsTitle','insideReplacePublicScheduleBody','insideStateCurrent'],'Unreviewed translated key disappeared: '+file);\n  for(const key of ['disputesLegalBridgeTitle','disputesLegalBridgeBody','disputesLegalBridgeCta','insideReplaceCompletedBody','insideStateObserved','insideQualityTitle','nissayCaseState']){",1)
+"  assert.deepEqual(lost,['disputesMechanismsSub','disputesMechanismsTitle','insideReplacePublicScheduleBody','insideStateCurrent'],'Unreviewed translated key disappeared: '+file);\n  const legalBridge=after.querySelector('#disputeMechanisms.disputesLegalBridge');\n  assert.ok(legalBridge,'Rendered Legal bridge missing: '+file);\n  const legalBridgeLink=legalBridge.querySelector('a[data-open-section=\\\"legal\\\"][href=\\\"#legal\\\"]');\n  assert.ok(legalBridgeLink,'Rendered Legal bridge destination missing: '+file);\n  for(const key of ['disputesLegalBridgeTitle','disputesLegalBridgeBody','disputesLegalBridgeCta']) assert.ok(legalBridge.textContent.includes(translations[lang][key]),'Rendered Legal bridge text missing: '+file+'/'+key);\n  for(const key of ['insideReplaceCompletedBody','insideStateObserved','insideQualityTitle','nissayCaseState']){",1)
 write("scripts/usability_remediation_qa.cjs",uq)
 
 print(json.dumps({"prepared":VERSION,"date":DATE,"researchChanged":False,"archivesChanged":False}))
