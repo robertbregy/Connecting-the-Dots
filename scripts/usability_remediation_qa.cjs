@@ -103,7 +103,7 @@ function staticChecks(){
   const lost=[...beforeKeys].filter(key=>!afterKeys.has(key)).sort();
   // Those two historic timeline keys are replaced by the reviewed 'observed'
   // state and the dated 21 October close, not silently discarded prose.
-  assert.deepEqual(lost,['disputesMechanismsSub','disputesMechanismsTitle','insideReplacePublicScheduleBody','insideStateCurrent'],'Unreviewed translated key disappeared: '+file);
+  assert.deepEqual(lost,['insideReplacePublicScheduleBody','insideStateCurrent'],'Unreviewed translated key disappeared: '+file);
   const legalBridge=after.querySelector('#disputeMechanisms.disputesLegalBridge');
   assert.ok(legalBridge,'Rendered Legal bridge missing: '+file);
   const legalBridgeLink=legalBridge.querySelector('a[href]');
