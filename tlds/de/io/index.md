@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/de/io/ | Site edition: 0.7.111 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/de/io/ | Site edition: 0.7.112 | Language: de -->
 
 TLD-Profil
 
@@ -144,6 +144,6 @@ Nicht angegeben
 
 [Offizieller IANA-Datensatz ↗](https://www.iana.org/domains/root/db/io.html) [Quelle 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Quelle 3 ↗](https://www.nic.io/)
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.111 · 12. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.112 · 12. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

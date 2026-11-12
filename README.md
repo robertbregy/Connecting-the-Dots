@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.111
+# Connecting the Dots — v0.7.112
 
 **v0.7.111 · 12 November 2026.** Localized the new Legal editorial badges across EN/IT/DE/FR, removed duplicated source chips and added a release-wide guard against generic English UI labels leaking into non-English pages. Research evidence and historical archives are unchanged.
 
@@ -8,9 +8,9 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.111 - 12 November 2026**
+**v0.7.112 - 12 November 2026**
 
-Multilingual label-consistency correction: Legal badges now follow the page language (PROCEDURA/LETTURA/CONTRATTO in Italian; equivalent German and French labels), duplicated Legal source chips are removed, and the release checker scans the full non-English publication for generic English editorial badges.
+Final pre-String-Confirmation cleanup: localized Research entry pages for IT/DE/FR, explicit separation between scholarly paper revision and technical-reference synchronization, unambiguous source-review provenance semantics. Frozen RR1/RR2 and the Reveal Day evidence remain unchanged.
 
 ## Previous audit-close release
 

@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/com/ | Site edition: 0.7.111 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/fr/com/ | Site edition: 0.7.112 | Language: fr -->
 
 Fiche TLD
 
@@ -162,6 +162,6 @@ Non renseigné
 
 [Fiche officielle IANA ↗](https://www.iana.org/domains/root/db/com.html) [Source 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Source 3 ↗](https://www.iana.org/domains/root/db)
 
-**Par Robert Bregy** · Édition du site 0.7.111 · 12 novembre 2026
+**Par Robert Bregy** · Édition du site 0.7.112 · 12 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.

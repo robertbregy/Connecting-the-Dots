@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/de/ | Site edition: 0.7.111 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/de/ | Site edition: 0.7.112 | Language: de -->
 
 Connecting the Dots
 
@@ -100,6 +100,6 @@ Ein Name für die katalanische Sprach- und Kulturgemeinschaft: Zugehörigkeit ü
 
 Bei der dokumentierten Prüfung war .io als Ländercode in der DNS-Root delegiert.
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.111 · 12. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.112 · 12. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

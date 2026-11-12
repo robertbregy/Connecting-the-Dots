@@ -1,3 +1,11 @@
+# v0.7.112 — 12 November 2026
+
+- Added localized Research & citation entry pages for Italian, German and French while keeping the canonical working paper in English.
+- Separated the working paper's scholarly revision date from the live technical-reference synchronization date; technical package pointers no longer silently redate the manuscript.
+- Clarified that buildProvenanceCommit/sourceReviewCommit identifies the reviewed source revision used for deterministic regeneration, not the final published merge commit.
+- Added release guards for localized Research pages, hreflang, sitemap coverage, paper synchronization semantics and provenance role.
+- APS/IANA snapshots, RR1/RR2 and historical archives remain unchanged.
+
 # v0.7.111 — 12 November 2026
 
 - Localized the new Legal editorial badges in all four languages: PROCEDURE / READING / CONTRACT are no longer leaked into IT, DE or FR pages.
