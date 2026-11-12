@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/en/lugano/ | Site edition: 0.7.109 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/en/lugano/ | Site edition: 0.7.110 | Language: en -->
 
 TLD profile
 
@@ -90,6 +90,6 @@ Program classifications marked as derived use the IANA registration date and the
 
 [Source 1 ↗](https://newgtldprogram-aps.icann.org/applications/CDL2651T-T31516/summary) [Source 2 ↗](https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en) [Source 3 ↗](https://www.ntlddata.com/applications/strings)
 
-**By Robert Bregy** · Site edition 0.7.109 · November 11, 2026
+**By Robert Bregy** · Site edition 0.7.110 · November 12, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

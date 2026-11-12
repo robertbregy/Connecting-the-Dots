@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/it/ | Site edition: 0.7.109 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/discovery/it/ | Site edition: 0.7.110 | Language: it -->
 
 Connecting the Dots
 
@@ -100,6 +100,6 @@ Rappresenta la comunità linguistica e culturale catalana: un’appartenenza che
 
 Alla verifica documentata, .io risultava delegato nella root DNS come Codice paese.
 
-**Di Robert Bregy** · Edizione del sito 0.7.109 · 11 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.110 · 12 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

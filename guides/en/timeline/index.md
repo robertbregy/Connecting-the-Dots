@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/ | Site edition: 0.7.109 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/ | Site edition: 0.7.110 | Language: en -->
 
 Guide
 
@@ -459,6 +459,6 @@ Dated local corpora, not a universal list of every name ever proposed. The 2026 
 
 Editorial review · 19 October 2026
 
-**By Robert Bregy** · Site edition 0.7.109 · November 11, 2026
+**By Robert Bregy** · Site edition 0.7.110 · November 12, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

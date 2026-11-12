@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/legal/ | Site edition: 0.7.109 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/legal/ | Site edition: 0.7.110 | Language: de -->
 
 Leitfaden
 
@@ -23,11 +23,37 @@ Contention ist Wettbewerb zwischen Bewerbungen, kein Einwandsverfahren. [Content
 
 2026
 
-## Status 2026 · vor String Confirmation
+## Stand 2026 · vor dem String Confirmation Day
 
-Zum redaktionellen Prüfdatum 11. November 2026 ist die reguläre Community-Input-and-Objections-Phase noch nicht eröffnet. Der Start ist für den 17. November 2026 vorgesehen; das reguläre 104-Tage-Fenster für Einwände soll bis 16. März 2027 laufen. Dieses Kapitel beschreibt das veröffentlichte Verfahren und behauptet keine Einwände, die noch nicht existieren.
+Zum Redaktionsstand vom 12. November 2026 nennt ICANN den 17. November 2026 als String Confirmation Day. Das erste Einwandsfenster läuft 104 Tage ab diesem Meilenstein, ist aber nicht die einzige Frist: Nach der String Evaluation und bei zulässigen .Brand String Change-Anträgen können weitere 30-Tage-Fenster folgen. Dieses Kapitel beschreibt das veröffentlichte Verfahren; es berichtet keine Einwände, die noch nicht existieren.
 
  [ICANN · Community Input & Objections ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input)
+
+## Die Fristen, die 2026 zählen
+
+Das Einwandssystem kennt nicht nur eine Frist. Welches Fenster gilt, hängt vom Ereignis und vom Einwandsgrund ab.
+
+### Erstes Einwandsfenster
+
+104 Tage nach dem String Confirmation Day. Parteien mit Standing können alle vier formellen Einwandsgründe nutzen.
+
+### Nach der String Evaluation
+
+Nach Veröffentlichung aktualisierter Contention Sets öffnet sich ein 30-Tage-Fenster; dieses spätere Fenster gilt nur für String Confusion Objections.
+
+### .Brand String Change
+
+Für zulässige .Brand String Change-Anträge kann nach erfolgreichen String-Evaluation-Berichten ein eigenes 30-Tage-Fenster öffnen; alle vier Einwandsgründe können anwendbar sein.
+
+### Independent Objectors
+
+Die drei Independent Objectors starten gleichzeitig mit dem ersten Fenster, erhalten aber sieben zusätzliche Tage über die Frist der allgemeinen Öffentlichkeit hinaus und dürfen nur im ersten Fenster Einwände einreichen.
+
+### Singular-/Plural-Meldungen
+
+Meldungen können in den 30 Tagen unmittelbar nach dem String Confirmation Day eingereicht werden. Ein von einer bestätigten Entscheidung betroffener Bewerber hat 21 Tage für eine Anfechtung nach dem clearly-erroneous-Standard.
+
+[ICANN · Objections & Appeals ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals) [ICANN · Independent Objectors ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors) [ICANN · Singular/Plural Evaluation ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/string-evaluation/singular-plural-notifications-evaluation)
 
 ## Sieben Wege, eine Bewerbung anzufechten oder zu beeinflussen
 
@@ -179,6 +205,30 @@ Das Panel erlässt eine begründete Entscheidung. Scheitert der Einwand, kann di
 
 Die unterlegene Partei hat 15 Tage für die Mitteilung der Appeal-Absicht und weitere 15 Tage für Einreichung und Gebührenzahlung.
 
+## Fünf Begriffe, die man sauber trennen sollte
+
+Das Verfahren wird deutlich verständlicher, wenn diese Begriffe nicht als austauschbar behandelt werden.
+
+### Standing
+
+Die verfahrensrechtliche Befugnis, einen bestimmten Einwand zu erheben. Sie hängt vom Einwandsgrund ab; nicht jede Partei kann jeden Einwand einreichen.
+
+### DRSP
+
+Dispute Resolution Service Provider. Der unabhängige Anbieter, der das jeweilige Einwandsverfahren verwaltet, im 2026-Round unter anderem WIPO oder ICC.
+
+### Quick Look Review
+
+Eine erste Panel-Prüfung, um offensichtlich unbegründete Einwände oder einen Missbrauch des Einwandsrechts zu erkennen, bevor das vollständige Verfahren weiterläuft.
+
+### Clearly erroneous
+
+Ein begrenzter Prüfungsmaßstab. Eine Entscheidung bleibt bestehen, sofern kein qualifizierter Tatsachen- oder Verfahrensfehler vorliegt, etwa ein Verfahrensverstoß oder die Nichtberücksichtigung notwendiger wesentlicher Beweise.
+
+### RVC
+
+Registry Voluntary Commitment. Eine vom Bewerber vorgeschlagene Verpflichtung, die vertraglich bindend werden kann, wenn ICANN sie genehmigt und in das Registry Agreement aufnimmt.
+
 ## Was eine Entscheidung tatsächlich verändern kann
 
 Bei String Confusion kann die Folge eine Änderung des Contention Sets sein oder, in bestimmten Fällen mit Interessen bestehender TLDs oder ccTLDs, der Ausschluss der Bewerbung. Bei Legal Rights, Limited Public Interest und Community führt ein erfolgreicher Einwand gegen die primäre Zeichenfolge dazu, dass die Bewerbung nicht weitergeführt werden kann. Betrifft die Entscheidung nur eine zuteilbare Variante, können die primäre Zeichenfolge und nicht betroffene Varianten weiterlaufen. ICANN beschreibt außerdem Fälle, in denen ein neues oder geändertes, von ICANN genehmigtes Registry Voluntary Commitment (RVC) zur Bedingung für das weitere Verfahren werden kann.
@@ -203,7 +253,7 @@ Historische Streitfälle zeigen, wie diese Mechanismen in der Praxis zusammenspi
 
 ICANN, WIPO und ICC sind hier die primären Verfahrensquellen. Die CMS-Serie 'Joining the Dots' wird als ergänzende professionelle Einordnung geführt, nicht als maßgebliche Regelquelle.
 
-[ICANN · Community Input ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input) [ICANN · Objections & Appeals ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals) [ICANN · Applicant Guidebook ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/agb) [WIPO · Legal Rights Objections ↗](https://www.wipo.int/en/web/amc/domain-name-disputes/lro/index) [WIPO · String Confusion Objections ↗](https://www.wipo.int/en/web/amc/domain-name-disputes/sco/index) [ICC · New gTLD Dispute Resolution ↗](https://iccwbo.org/dispute-resolution/dispute-resolution-services/adr/icann-new-gtld-dispute-resolution/) [ICANN · Registry Voluntary Commitments ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/application-evaluation/faqs/rce/what-are-registry-voluntary-commitments-rvcs)
+[ICANN · Community Input ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input) [ICANN · Objections & Appeals ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals) [ICANN · Applicant Guidebook ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/agb) [WIPO · Legal Rights Objections ↗](https://www.wipo.int/en/web/amc/domain-name-disputes/lro/index) [WIPO · String Confusion Objections ↗](https://www.wipo.int/en/web/amc/domain-name-disputes/sco/index) [ICC · New gTLD Dispute Resolution ↗](https://iccwbo.org/dispute-resolution/dispute-resolution-services/adr/icann-new-gtld-dispute-resolution/) [ICANN · Registry Voluntary Commitments ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/application-evaluation/faqs/rce/what-are-registry-voluntary-commitments-rvcs) [ICANN · Independent Objectors ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors) [ICANN · Singular/Plural Evaluation ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/string-evaluation/singular-plural-notifications-evaluation) [ICANN · Independent Objectors ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors) [ICANN · Singular/Plural Evaluation ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/string-evaluation/singular-plural-notifications-evaluation) [ICANN · Independent Objectors ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors) [ICANN · Singular/Plural Evaluation ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/string-evaluation/singular-plural-notifications-evaluation) [ICANN · Independent Objectors ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors) [ICANN · Singular/Plural Evaluation ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/string-evaluation/singular-plural-notifications-evaluation) [ICANN · Independent Objectors ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors) [ICANN · Singular/Plural Evaluation ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/string-evaluation/singular-plural-notifications-evaluation)
 
 **CMS · Joining the Dots**
 
@@ -211,6 +261,6 @@ ICANN, WIPO und ICC sind hier die primären Verfahrensquellen. Die CMS-Serie 'Jo
 
 Verfahrenserklärung, keine Rechtsberatung. Für eine tatsächliche Einreichung gelten der aktuelle maßgebliche Applicant Guidebook und die Regeln des zuständigen Providers.
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.109 · 11. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.110 · 12. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

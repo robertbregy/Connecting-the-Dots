@@ -104,6 +104,15 @@ function staticChecks(){
   // Those two historic timeline keys are replaced by the reviewed 'observed'
   // state and the dated 21 October close, not silently discarded prose.
   assert.deepEqual(lost,['insideReplacePublicScheduleBody','insideStateCurrent'],'Unreviewed translated key disappeared: '+file);
+  const legalBridge=after.querySelector('#disputeMechanisms.disputesLegalBridge');
+  assert.ok(legalBridge,'Rendered Legal bridge missing: '+file);
+  const legalBridgeLink=legalBridge.querySelector('a[href]');
+  assert.ok(legalBridgeLink,'Rendered Legal bridge link missing: '+file);
+  const legalHref=legalBridgeLink.getAttribute('href')||'';
+  const legalTarget=new URL(legalHref,'https://ctd.invalid/');
+  assert.ok(legalTarget.hash==='#legal'||legalTarget.searchParams.get('tab')==='legal','Rendered Legal bridge destination missing: '+file+' -> '+legalHref);
+  assert.ok(after.getElementById('legal'),'Rendered Legal chapter missing: '+file);
+  for(const key of ['disputesLegalBridgeTitle','disputesLegalBridgeBody','disputesLegalBridgeCta']) assert.ok(legalBridge.textContent.includes(translations[lang][key]),'Rendered Legal bridge text missing: '+file+'/'+key);
   for(const key of ['insideReplaceCompletedBody','insideStateObserved','insideQualityTitle','nissayCaseState']){
     assert.ok(afterKeys.has(key),'Missing translated review addition: '+file+'/'+key);
   }
@@ -289,4 +298,4 @@ async function browsers(){
   }
  }finally{await browser.close();}
 }
-(async()=>{try{staticChecks();if(!process.argv.includes('--static-only'))await browsers();report.passed=report.errors.length===0;}catch(e){report.errors.push({fatal:e.stack||String(e)});}finally{fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2)+'\n');console.log('USABILITY_REMEDIATION_RESULT '+JSON.stringify({passed:report.passed,static:report.static.length,browser:report.browser.length,axeScans:report.axeScans,errors:report.errors.length}));}if(!report.passed)process.exitCode=1;})();
+(async()=>{try{staticChecks();if(!process.argv.includes('--static-only'))await browsers();report.passed=report.errors.length===0;}catch(e){report.errors.push({fatal:e.stack||String(e)});}finally{fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2)+'\n');console.log('USABILITY_REMEDIATION_RESULT '+JSON.stringify({passed:report.passed,static:report.static.length,browser:report.browser.length,axeScans:report.axeScans,errors:report.errors}));}if(!report.passed)process.exitCode=1;})();

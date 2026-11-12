@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/fr/portfolios/ | Site edition: 0.7.109 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/fr/portfolios/ | Site edition: 0.7.110 | Language: fr -->
 
 Analyse économique
 
@@ -85,6 +85,6 @@ Les 263 ensembles provisoires de candidatures pour des chaînes identiques compr
 
 [ICANN · preliminary contention CSV ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv) [internet.Best · applicant portfolios ↗](https://internet.best/new-gtld-applications/) [nTLDData · primary strings ↗](https://www.ntlddata.com/applications/strings)
 
-**Par Robert Bregy** · Édition du site 0.7.109 · 11 novembre 2026
+**Par Robert Bregy** · Édition du site 0.7.110 · 12 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.

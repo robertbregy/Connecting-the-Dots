@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
-  "version": "0.7.109",
+  "version": "0.7.110",
   "native": [
     {
       "file": "en/index.html",
@@ -118,7 +118,7 @@
         },
         {
           "id": "legal",
-          "headings": 9,
+          "headings": 11,
           "parent": "ia-outcomes",
           "next": [
             "disputes",
@@ -253,9 +253,9 @@
         "narrative": {
           "lang": "en",
           "essentialBlocks": 7,
-          "originalTranslatedItems": 1354,
-          "originalLinks": 1084,
-          "originalIds": 501,
+          "originalTranslatedItems": 1357,
+          "originalLinks": 1098,
+          "originalIds": 503,
           "removedNavigationLabels": [
             "Understand the context",
             "From extensions to individual ICANN applications",
@@ -372,13 +372,13 @@
             "panel field2026Focus",
             "panel crossRoundDisclosure",
             "2026 status: applications are public, formal objections are not open yet",
-            "How a TLD dispute can enter the system",
+            "The procedure now lives in one place",
             "Nine disputes that changed what the dot means"
           ],
           "after": [
             "Disputed Dots",
             "Nine disputes that changed what the dot means",
-            "How a TLD dispute can enter the system",
+            "The procedure now lives in one place",
             "panel field2026Focus",
             "panel crossRoundDisclosure",
             "2026 status: applications are public, formal objections are not open yet"
@@ -584,7 +584,7 @@
         },
         {
           "id": "legal",
-          "headings": 9,
+          "headings": 11,
           "parent": "ia-outcomes",
           "next": [
             "disputes",
@@ -719,9 +719,9 @@
         "narrative": {
           "lang": "en",
           "essentialBlocks": 7,
-          "originalTranslatedItems": 1354,
-          "originalLinks": 1084,
-          "originalIds": 501,
+          "originalTranslatedItems": 1357,
+          "originalLinks": 1098,
+          "originalIds": 503,
           "removedNavigationLabels": [
             "Understand the context",
             "From extensions to individual ICANN applications",
@@ -838,13 +838,13 @@
             "panel field2026Focus",
             "panel crossRoundDisclosure",
             "2026 status: applications are public, formal objections are not open yet",
-            "How a TLD dispute can enter the system",
+            "The procedure now lives in one place",
             "Nine disputes that changed what the dot means"
           ],
           "after": [
             "Disputed Dots",
             "Nine disputes that changed what the dot means",
-            "How a TLD dispute can enter the system",
+            "The procedure now lives in one place",
             "panel field2026Focus",
             "panel crossRoundDisclosure",
             "2026 status: applications are public, formal objections are not open yet"
@@ -1050,7 +1050,7 @@
         },
         {
           "id": "legal",
-          "headings": 9,
+          "headings": 11,
           "parent": "ia-outcomes",
           "next": [
             "disputes",
@@ -1185,9 +1185,9 @@
         "narrative": {
           "lang": "it",
           "essentialBlocks": 7,
-          "originalTranslatedItems": 1354,
-          "originalLinks": 1084,
-          "originalIds": 501,
+          "originalTranslatedItems": 1357,
+          "originalLinks": 1098,
+          "originalIds": 503,
           "removedNavigationLabels": [
             "Per capire il contesto",
             "Dalle estensioni alle singole domande ICANN",
@@ -1304,13 +1304,13 @@
             "panel field2026Focus",
             "panel crossRoundDisclosure",
             "Stato 2026: le candidature sono pubbliche, le obiezioni formali non sono ancora aperte",
-            "Come una controversia su un TLD entra nel sistema",
+            "La procedura, in un solo posto",
             "Nove controversie che hanno cambiato il significato del punto"
           ],
           "after": [
             "Controversie che hanno cambiato il punto",
             "Nove controversie che hanno cambiato il significato del punto",
-            "Come una controversia su un TLD entra nel sistema",
+            "La procedura, in un solo posto",
             "panel field2026Focus",
             "panel crossRoundDisclosure",
             "Stato 2026: le candidature sono pubbliche, le obiezioni formali non sono ancora aperte"
@@ -1516,7 +1516,7 @@
         },
         {
           "id": "legal",
-          "headings": 9,
+          "headings": 11,
           "parent": "ia-outcomes",
           "next": [
             "disputes",
@@ -1651,9 +1651,9 @@
         "narrative": {
           "lang": "de",
           "essentialBlocks": 7,
-          "originalTranslatedItems": 1354,
-          "originalLinks": 1084,
-          "originalIds": 501,
+          "originalTranslatedItems": 1357,
+          "originalLinks": 1098,
+          "originalIds": 503,
           "removedNavigationLabels": [
             "Den Zusammenhang verstehen",
             "Von Endungen zu einzelnen ICANN-Bewerbungen",
@@ -1770,13 +1770,13 @@
             "panel field2026Focus",
             "panel crossRoundDisclosure",
             "Status 2026: Bewerbungen sind öffentlich, formale Einwände noch nicht geöffnet",
-            "Wie ein TLD-Streit in das System gelangt",
+            "Das Verfahren steht jetzt an einem Ort",
             "Neun Streitfälle, die die Bedeutung des Punkts verändert haben"
           ],
           "after": [
             "Streitfälle, die den Punkt verändert haben",
             "Neun Streitfälle, die die Bedeutung des Punkts verändert haben",
-            "Wie ein TLD-Streit in das System gelangt",
+            "Das Verfahren steht jetzt an einem Ort",
             "panel field2026Focus",
             "panel crossRoundDisclosure",
             "Status 2026: Bewerbungen sind öffentlich, formale Einwände noch nicht geöffnet"
@@ -1982,7 +1982,7 @@
         },
         {
           "id": "legal",
-          "headings": 9,
+          "headings": 11,
           "parent": "ia-outcomes",
           "next": [
             "disputes",
@@ -2117,9 +2117,9 @@
         "narrative": {
           "lang": "fr",
           "essentialBlocks": 7,
-          "originalTranslatedItems": 1354,
-          "originalLinks": 1084,
-          "originalIds": 501,
+          "originalTranslatedItems": 1357,
+          "originalLinks": 1098,
+          "originalIds": 503,
           "removedNavigationLabels": [
             "Comprendre le contexte",
             "Des extensions aux candidatures individuelles ICANN",
@@ -2236,13 +2236,13 @@
             "panel field2026Focus",
             "panel crossRoundDisclosure",
             "Statut 2026 : les candidatures sont publiques, les objections formelles ne sont pas encore ouvertes",
-            "Comment un litige sur un TLD entre dans le système",
+            "La procédure est désormais regroupée",
             "Neuf litiges qui ont changé le sens du point"
           ],
           "after": [
             "Les litiges qui ont changé le point",
             "Neuf litiges qui ont changé le sens du point",
-            "Comment un litige sur un TLD entre dans le système",
+            "La procédure est désormais regroupée",
             "panel field2026Focus",
             "panel crossRoundDisclosure",
             "Statut 2026 : les candidatures sont publiques, les objections formelles ne sont pas encore ouvertes"

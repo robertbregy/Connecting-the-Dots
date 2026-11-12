@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedOn": "2026-11-11",
+  "reviewedOn": "2026-11-12",
   "status": "pre-string-confirmation",
   "scope": "Educational map of ICANN 2026 community input, objections, appeals and the bridge to binding registry commitments. It is not legal advice and does not predict outcomes for individual applications.",
   "milestones": {
@@ -24,7 +24,9 @@
     "cms1": "https://cms.law/en/int/legal-updates/joining-the-dots-part-1-introduction-to-the-new-gtld-program",
     "cms2": "https://cms.law/en/int/legal-updates/joining-the-dots-part-2-the-application-process",
     "cms3": "https://cms.law/en/int/legal-updates/joining-the-dots-part-3-contention-sets-and-objections",
-    "cms4": "https://cms.law/en/che/legal-updates/joining-the-dots-part-4-deadlines-announced"
+    "cms4": "https://cms.law/en/che/legal-updates/joining-the-dots-part-4-deadlines-announced",
+    "independentObjectors": "https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors",
+    "singularPlural": "https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/string-evaluation/singular-plural-notifications-evaluation"
   },
   "locales": {
     "en": {
@@ -143,8 +145,8 @@
       "rvcBody": "An RVC can be proposed to address an objection or a government concern. If ICANN approves it and it is incorporated into the Registry Agreement, it becomes a binding contractual obligation. That is the bridge between a pre-delegation dispute and the rules under which a future registry may have to operate.",
       "casesTitle": "Rules here, stories next",
       "casesBody": "This chapter explains the machinery. Disputed Dots keeps the historical cases separate: .amazon, .africa, .music, .merck and the other stories show how different mechanisms interact in practice.",
-      "statusTitle": "2026 status · before String Confirmation",
-      "statusBody": "As of this editorial review on 11 November 2026, the ordinary Community Input and Objections period has not yet opened. It is scheduled to open on 17 November 2026 and the 104-day ordinary objection window is scheduled to run through 16 March 2027. The chapter describes the published procedure; it does not report objections that do not yet exist.",
+      "statusTitle": "2026 status · before String Confirmation Day",
+      "statusBody": "At this editorial review on 12 November 2026, ICANN lists String Confirmation Day for 17 November 2026. The initial objection window is 104 days after that milestone, but it is not the only clock: later 30-day windows can open after String Evaluation and for eligible .Brand String Change requests. The chapter describes the published procedure; it does not report objections that do not yet exist.",
       "sourcesTitle": "Primary rules and professional reading",
       "sourcesNote": "ICANN, WIPO and ICC are the primary procedural sources used here. The CMS 'Joining the Dots' series is included as secondary professional reading and is not treated as the authority for the rules.",
       "bridgeContention": "Contention is competition between applications, not an objection.",
@@ -152,7 +154,55 @@
       "readContention": "Read contention",
       "readDisputes": "Read the disputes",
       "readObjectors": "Independent Objectors field note",
-      "notAdvice": "Procedural explainer, not legal advice. Always use the current authoritative Applicant Guidebook and provider rules for an actual filing."
+      "notAdvice": "Procedural explainer, not legal advice. Always use the current authoritative Applicant Guidebook and provider rules for an actual filing.",
+      "timingTitle": "The clocks that matter in 2026",
+      "timingIntro": "The objection framework is not one single deadline. The applicable window depends on the event and the ground.",
+      "timings": [
+        [
+          "Initial objection window",
+          "104 days following String Confirmation Day. All four formal objection grounds may be filed by parties with standing."
+        ],
+        [
+          "After String Evaluation",
+          "A 30-day window opens after updated contention sets are published; this later window is for String Confusion objections only."
+        ],
+        [
+          ".Brand String Change",
+          "A separate 30-day window may open after successful String Evaluation reports for eligible .Brand String Change requests; all four objection grounds may apply."
+        ],
+        [
+          "Independent Objectors",
+          "The three Independent Objectors share the initial opening date but receive seven additional days beyond the general public deadline, and may file only during the initial window."
+        ],
+        [
+          "Singular/plural notifications",
+          "Notifications may be submitted during the 30 days immediately following String Confirmation Day. An applicant affected by a validated determination has 21 days to challenge it under the clearly erroneous standard."
+        ]
+      ],
+      "glossaryTitle": "Five terms worth getting right",
+      "glossaryIntro": "The procedure becomes much easier to read once these terms stop being treated as interchangeable.",
+      "glossary": [
+        [
+          "Standing",
+          "The procedural entitlement to bring a specific objection. It depends on the objection ground; not everyone may file every type."
+        ],
+        [
+          "DRSP",
+          "Dispute Resolution Service Provider. The independent provider administering the relevant objection proceeding, including WIPO or ICC for the 2026 round."
+        ],
+        [
+          "Quick Look Review",
+          "An initial panel review used to identify an objection that is manifestly unfounded or an abuse of the right to object before the full proceeding continues."
+        ],
+        [
+          "Clearly erroneous",
+          "A limited review standard. A determination stands unless the reviewing body finds a qualifying factual or procedural error, including failure to follow procedure or consider necessary material evidence."
+        ],
+        [
+          "RVC",
+          "Registry Voluntary Commitment. A commitment proposed by an applicant that can become contractually binding if ICANN approves it and it is incorporated into the Registry Agreement."
+        ]
+      ]
     },
     "it": {
       "nav": "Diritti, obiezioni e rimedi",
@@ -270,8 +320,8 @@
       "rvcBody": "Un RVC può essere proposto per affrontare un'obiezione o una preoccupazione governativa. Se ICANN lo approva e viene incorporato nel Registry Agreement, diventa un obbligo contrattuale vincolante. È il ponte tra una controversia prima della delega e le regole con cui un futuro registro può essere tenuto a operare.",
       "casesTitle": "Qui le regole, poi le storie",
       "casesBody": "Questo capitolo spiega il meccanismo. Disputed Dots mantiene separati i casi storici: .amazon, .africa, .music, .merck e le altre storie mostrano come i diversi strumenti si combinano nella pratica.",
-      "statusTitle": "Stato 2026 · prima dello String Confirmation",
-      "statusBody": "Alla verifica editoriale dell'11 novembre 2026, la finestra ordinaria Community Input and Objections non è ancora aperta. L'apertura è prevista il 17 novembre 2026 e la finestra ordinaria di 104 giorni per le obiezioni è prevista fino al 16 marzo 2027. Il capitolo descrive la procedura pubblicata; non attribuisce obiezioni che ancora non esistono.",
+      "statusTitle": "Stato 2026 · prima dello String Confirmation Day",
+      "statusBody": "Alla verifica editoriale del 12 novembre 2026, ICANN indica lo String Confirmation Day per il 17 novembre 2026. La finestra iniziale per le obiezioni dura 104 giorni da quel momento, ma non è l'unico orologio: possono aprirsi successive finestre di 30 giorni dopo la String Evaluation e per richieste ammissibili di .Brand String Change. Il capitolo descrive la procedura pubblicata; non attribuisce obiezioni che ancora non esistono.",
       "sourcesTitle": "Regole primarie e letture professionali",
       "sourcesNote": "ICANN, WIPO e ICC sono le fonti procedurali primarie utilizzate qui. La serie 'Joining the Dots' di CMS è riportata come lettura professionale secondaria e non come fonte autoritativa delle regole.",
       "bridgeContention": "La contention è competizione tra candidature, non un'obiezione.",
@@ -279,7 +329,55 @@
       "readContention": "Leggi le contese",
       "readDisputes": "Leggi le controversie",
       "readObjectors": "Nota sugli Independent Objectors",
-      "notAdvice": "Spiegazione procedurale, non consulenza legale. Per un deposito reale fanno fede l'Applicant Guidebook vigente e le regole del provider competente."
+      "notAdvice": "Spiegazione procedurale, non consulenza legale. Per un deposito reale fanno fede l'Applicant Guidebook vigente e le regole del provider competente.",
+      "timingTitle": "Gli orologi che contano nel 2026",
+      "timingIntro": "Il sistema delle obiezioni non ha una sola scadenza. La finestra applicabile dipende dall'evento e dal motivo invocato.",
+      "timings": [
+        [
+          "Finestra iniziale per le obiezioni",
+          "104 giorni dopo lo String Confirmation Day. I soggetti con standing possono utilizzare tutti e quattro i motivi di obiezione formale."
+        ],
+        [
+          "Dopo la String Evaluation",
+          "Dopo la pubblicazione dei contention set aggiornati si apre una finestra di 30 giorni; questa finestra successiva riguarda soltanto le String Confusion Objections."
+        ],
+        [
+          ".Brand String Change",
+          "Per richieste ammissibili di .Brand String Change può aprirsi una finestra distinta di 30 giorni dopo i report di String Evaluation con esito positivo; possono applicarsi tutti e quattro i motivi."
+        ],
+        [
+          "Independent Objectors",
+          "I tre Independent Objectors partono con la finestra iniziale ma dispongono di sette giorni aggiuntivi rispetto alla scadenza del pubblico generale e possono presentare obiezioni soltanto nella finestra iniziale."
+        ],
+        [
+          "Segnalazioni singolare/plurale",
+          "Le segnalazioni possono essere presentate nei 30 giorni immediatamente successivi allo String Confirmation Day. Un candidato interessato da una determinazione validata ha 21 giorni per contestarla secondo lo standard clearly erroneous."
+        ]
+      ],
+      "glossaryTitle": "Cinque termini da usare bene",
+      "glossaryIntro": "La procedura diventa molto più leggibile quando questi concetti smettono di essere trattati come sinonimi.",
+      "glossary": [
+        [
+          "Standing",
+          "La legittimazione procedurale a presentare una specifica obiezione. Dipende dal motivo: non tutti possono presentare ogni tipo di obiezione."
+        ],
+        [
+          "DRSP",
+          "Dispute Resolution Service Provider. Il provider indipendente che amministra il procedimento di obiezione pertinente, tra cui WIPO o ICC nel round 2026."
+        ],
+        [
+          "Quick Look Review",
+          "Un controllo iniziale del panel per individuare obiezioni manifestamente infondate o abusive prima che il procedimento prosegua nel merito."
+        ],
+        [
+          "Clearly erroneous",
+          "Uno standard di riesame limitato. La determinazione resta ferma salvo un errore fattuale o procedurale qualificato, per esempio il mancato rispetto della procedura o la mancata considerazione di prove materiali necessarie."
+        ],
+        [
+          "RVC",
+          "Registry Voluntary Commitment. Un impegno proposto dal candidato che può diventare contrattualmente vincolante se approvato da ICANN e incorporato nel Registry Agreement."
+        ]
+      ]
     },
     "de": {
       "nav": "Rechte, Einwände und Rechtsbehelfe",
@@ -397,8 +495,8 @@
       "rvcBody": "Ein RVC kann vorgeschlagen werden, um einen Einwand oder staatliche Bedenken auszuräumen. Wird es von ICANN genehmigt und in das Registry Agreement aufgenommen, wird es zu einer bindenden vertraglichen Verpflichtung. Damit entsteht die Brücke zwischen einem Streit vor der Delegierung und den Regeln, nach denen ein künftiger Registry-Betreiber handeln muss.",
       "casesTitle": "Hier die Regeln, danach die Geschichten",
       "casesBody": "Dieses Kapitel erklärt den Mechanismus. Disputed Dots hält die historischen Fälle getrennt: .amazon, .africa, .music, .merck und die übrigen Geschichten zeigen, wie verschiedene Instrumente in der Praxis zusammenspielen.",
-      "statusTitle": "Status 2026 · vor String Confirmation",
-      "statusBody": "Zum redaktionellen Prüfdatum 11. November 2026 ist die reguläre Community-Input-and-Objections-Phase noch nicht eröffnet. Der Start ist für den 17. November 2026 vorgesehen; das reguläre 104-Tage-Fenster für Einwände soll bis 16. März 2027 laufen. Dieses Kapitel beschreibt das veröffentlichte Verfahren und behauptet keine Einwände, die noch nicht existieren.",
+      "statusTitle": "Stand 2026 · vor dem String Confirmation Day",
+      "statusBody": "Zum Redaktionsstand vom 12. November 2026 nennt ICANN den 17. November 2026 als String Confirmation Day. Das erste Einwandsfenster läuft 104 Tage ab diesem Meilenstein, ist aber nicht die einzige Frist: Nach der String Evaluation und bei zulässigen .Brand String Change-Anträgen können weitere 30-Tage-Fenster folgen. Dieses Kapitel beschreibt das veröffentlichte Verfahren; es berichtet keine Einwände, die noch nicht existieren.",
       "sourcesTitle": "Primärregeln und professionelle Einordnung",
       "sourcesNote": "ICANN, WIPO und ICC sind hier die primären Verfahrensquellen. Die CMS-Serie 'Joining the Dots' wird als ergänzende professionelle Einordnung geführt, nicht als maßgebliche Regelquelle.",
       "bridgeContention": "Contention ist Wettbewerb zwischen Bewerbungen, kein Einwandsverfahren.",
@@ -406,7 +504,55 @@
       "readContention": "Contention lesen",
       "readDisputes": "Streitfälle lesen",
       "readObjectors": "Field Note zu Independent Objectors",
-      "notAdvice": "Verfahrenserklärung, keine Rechtsberatung. Für eine tatsächliche Einreichung gelten der aktuelle maßgebliche Applicant Guidebook und die Regeln des zuständigen Providers."
+      "notAdvice": "Verfahrenserklärung, keine Rechtsberatung. Für eine tatsächliche Einreichung gelten der aktuelle maßgebliche Applicant Guidebook und die Regeln des zuständigen Providers.",
+      "timingTitle": "Die Fristen, die 2026 zählen",
+      "timingIntro": "Das Einwandssystem kennt nicht nur eine Frist. Welches Fenster gilt, hängt vom Ereignis und vom Einwandsgrund ab.",
+      "timings": [
+        [
+          "Erstes Einwandsfenster",
+          "104 Tage nach dem String Confirmation Day. Parteien mit Standing können alle vier formellen Einwandsgründe nutzen."
+        ],
+        [
+          "Nach der String Evaluation",
+          "Nach Veröffentlichung aktualisierter Contention Sets öffnet sich ein 30-Tage-Fenster; dieses spätere Fenster gilt nur für String Confusion Objections."
+        ],
+        [
+          ".Brand String Change",
+          "Für zulässige .Brand String Change-Anträge kann nach erfolgreichen String-Evaluation-Berichten ein eigenes 30-Tage-Fenster öffnen; alle vier Einwandsgründe können anwendbar sein."
+        ],
+        [
+          "Independent Objectors",
+          "Die drei Independent Objectors starten gleichzeitig mit dem ersten Fenster, erhalten aber sieben zusätzliche Tage über die Frist der allgemeinen Öffentlichkeit hinaus und dürfen nur im ersten Fenster Einwände einreichen."
+        ],
+        [
+          "Singular-/Plural-Meldungen",
+          "Meldungen können in den 30 Tagen unmittelbar nach dem String Confirmation Day eingereicht werden. Ein von einer bestätigten Entscheidung betroffener Bewerber hat 21 Tage für eine Anfechtung nach dem clearly-erroneous-Standard."
+        ]
+      ],
+      "glossaryTitle": "Fünf Begriffe, die man sauber trennen sollte",
+      "glossaryIntro": "Das Verfahren wird deutlich verständlicher, wenn diese Begriffe nicht als austauschbar behandelt werden.",
+      "glossary": [
+        [
+          "Standing",
+          "Die verfahrensrechtliche Befugnis, einen bestimmten Einwand zu erheben. Sie hängt vom Einwandsgrund ab; nicht jede Partei kann jeden Einwand einreichen."
+        ],
+        [
+          "DRSP",
+          "Dispute Resolution Service Provider. Der unabhängige Anbieter, der das jeweilige Einwandsverfahren verwaltet, im 2026-Round unter anderem WIPO oder ICC."
+        ],
+        [
+          "Quick Look Review",
+          "Eine erste Panel-Prüfung, um offensichtlich unbegründete Einwände oder einen Missbrauch des Einwandsrechts zu erkennen, bevor das vollständige Verfahren weiterläuft."
+        ],
+        [
+          "Clearly erroneous",
+          "Ein begrenzter Prüfungsmaßstab. Eine Entscheidung bleibt bestehen, sofern kein qualifizierter Tatsachen- oder Verfahrensfehler vorliegt, etwa ein Verfahrensverstoß oder die Nichtberücksichtigung notwendiger wesentlicher Beweise."
+        ],
+        [
+          "RVC",
+          "Registry Voluntary Commitment. Eine vom Bewerber vorgeschlagene Verpflichtung, die vertraglich bindend werden kann, wenn ICANN sie genehmigt und in das Registry Agreement aufnimmt."
+        ]
+      ]
     },
     "fr": {
       "nav": "Droits, objections et recours",
@@ -524,8 +670,8 @@
       "rvcBody": "Un RVC peut être proposé pour répondre à une objection ou à une préoccupation gouvernementale. S'il est approuvé par ICANN et intégré au Registry Agreement, il devient une obligation contractuelle contraignante. C'est le pont entre un conflit avant délégation et les règles selon lesquelles un futur registre pourra être tenu d'opérer.",
       "casesTitle": "Ici les règles, ensuite les histoires",
       "casesBody": "Ce chapitre explique le mécanisme. Disputed Dots garde les cas historiques séparés: .amazon, .africa, .music, .merck et les autres histoires montrent comment différents instruments se combinent en pratique.",
-      "statusTitle": "État 2026 · avant String Confirmation",
-      "statusBody": "À la vérification éditoriale du 11 novembre 2026, la période ordinaire Community Input and Objections n'est pas encore ouverte. Son ouverture est prévue le 17 novembre 2026 et la fenêtre ordinaire de 104 jours pour les objections doit courir jusqu'au 16 mars 2027. Le chapitre décrit la procédure publiée; il n'attribue pas d'objections qui n'existent pas encore.",
+      "statusTitle": "État 2026 · avant le String Confirmation Day",
+      "statusBody": "À la revue éditoriale du 12 novembre 2026, l'ICANN indique le 17 novembre 2026 comme String Confirmation Day. La fenêtre initiale d'objections dure 104 jours après ce jalon, mais ce n'est pas le seul délai : d'autres fenêtres de 30 jours peuvent s'ouvrir après la String Evaluation et pour certaines demandes de .Brand String Change. Le chapitre décrit la procédure publiée ; il ne présente pas comme existantes des objections qui ne le sont pas encore.",
       "sourcesTitle": "Règles primaires et lecture professionnelle",
       "sourcesNote": "ICANN, WIPO et ICC sont les sources procédurales primaires utilisées ici. La série 'Joining the Dots' de CMS est incluse comme lecture professionnelle secondaire et non comme autorité sur les règles.",
       "bridgeContention": "La contention est une concurrence entre candidatures, pas une objection.",
@@ -533,7 +679,55 @@
       "readContention": "Lire les contentions",
       "readDisputes": "Lire les litiges",
       "readObjectors": "Note sur les Independent Objectors",
-      "notAdvice": "Explication procédurale, pas un avis juridique. Pour un dépôt réel, il faut utiliser l'Applicant Guidebook en vigueur et les règles du prestataire compétent."
+      "notAdvice": "Explication procédurale, pas un avis juridique. Pour un dépôt réel, il faut utiliser l'Applicant Guidebook en vigueur et les règles du prestataire compétent.",
+      "timingTitle": "Les délais qui comptent en 2026",
+      "timingIntro": "Le régime des objections ne repose pas sur une échéance unique. La fenêtre applicable dépend de l'événement et du motif invoqué.",
+      "timings": [
+        [
+          "Fenêtre initiale d'objections",
+          "104 jours après le String Confirmation Day. Les parties ayant qualité pour agir peuvent utiliser les quatre motifs d'objection formelle."
+        ],
+        [
+          "Après la String Evaluation",
+          "Une fenêtre de 30 jours s'ouvre après la publication des contention sets mis à jour ; cette fenêtre ultérieure concerne uniquement les String Confusion Objections."
+        ],
+        [
+          ".Brand String Change",
+          "Pour les demandes de .Brand String Change admissibles, une fenêtre distincte de 30 jours peut s'ouvrir après des rapports de String Evaluation favorables ; les quatre motifs peuvent s'appliquer."
+        ],
+        [
+          "Independent Objectors",
+          "Les trois Independent Objectors commencent avec la fenêtre initiale mais disposent de sept jours supplémentaires après l'échéance applicable au public général et ne peuvent déposer que pendant cette fenêtre initiale."
+        ],
+        [
+          "Notifications singulier/pluriel",
+          "Les notifications peuvent être soumises pendant les 30 jours suivant immédiatement le String Confirmation Day. Un candidat concerné par une détermination validée dispose de 21 jours pour la contester selon le standard clearly erroneous."
+        ]
+      ],
+      "glossaryTitle": "Cinq termes à distinguer correctement",
+      "glossaryIntro": "La procédure devient beaucoup plus lisible lorsque ces notions cessent d'être traitées comme interchangeables.",
+      "glossary": [
+        [
+          "Standing",
+          "La qualité procédurale permettant de déposer une objection déterminée. Elle dépend du motif ; tout le monde ne peut pas déposer chaque type d'objection."
+        ],
+        [
+          "DRSP",
+          "Dispute Resolution Service Provider. Le prestataire indépendant qui administre la procédure d'objection concernée, notamment l'OMPI ou l'ICC pour le round 2026."
+        ],
+        [
+          "Quick Look Review",
+          "Un examen initial du panel destiné à identifier une objection manifestement infondée ou un abus du droit d'opposition avant la poursuite de la procédure complète."
+        ],
+        [
+          "Clearly erroneous",
+          "Un standard de réexamen limité. La détermination reste en vigueur sauf erreur factuelle ou procédurale qualifiée, par exemple si la procédure n'a pas été suivie ou si des preuves matérielles nécessaires n'ont pas été examinées."
+        ],
+        [
+          "RVC",
+          "Registry Voluntary Commitment. Un engagement proposé par le candidat qui peut devenir contractuellement contraignant s'il est approuvé par l'ICANN et incorporé au Registry Agreement."
+        ]
+      ]
     }
   }
 }

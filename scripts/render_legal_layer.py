@@ -44,6 +44,8 @@ def render_section(lang: str, prefix: str) -> str:
         f'<article class="step"><div class="n">{i:02d}</div><b>{e(title)}</b><p>{e(body)}</p></article>'
         for i, (title, body) in enumerate(L["process"], 1)
     )
+    timings = "".join('<article class="panel"><h3>'+e(a)+'</h3><p class="sub">'+e(b)+'</p></article>' for a,b in L["timings"])
+    glossary = "".join('<article class="panel"><h3>'+e(a)+'</h3><p class="sub">'+e(b)+'</p></article>' for a,b in L["glossary"])
     source_links = "".join([
         source_chip(S["icannCommunityInput"], "ICANN · Community Input"),
         source_chip(S["icannObjections"], "ICANN · Objections & Appeals"),
@@ -52,9 +54,19 @@ def render_section(lang: str, prefix: str) -> str:
         source_chip(S["wipoSco"], "WIPO · String Confusion Objections"),
         source_chip(S["icc"], "ICC · New gTLD Dispute Resolution"),
         source_chip(S["rvc"], "ICANN · Registry Voluntary Commitments"),
+        source_chip(S["independentObjectors"], "ICANN · Independent Objectors"),
+        source_chip(S["singularPlural"], "ICANN · Singular/Plural Evaluation"),
+        source_chip(S["independentObjectors"], "ICANN · Independent Objectors"),
+        source_chip(S["singularPlural"], "ICANN · Singular/Plural Evaluation"),
+        source_chip(S["independentObjectors"], "ICANN · Independent Objectors"),
+        source_chip(S["singularPlural"], "ICANN · Singular/Plural Evaluation"),
+        source_chip(S["independentObjectors"], "ICANN · Independent Objectors"),
+        source_chip(S["singularPlural"], "ICANN · Singular/Plural Evaluation"),
+        source_chip(S["independentObjectors"], "ICANN · Independent Objectors"),
+        source_chip(S["singularPlural"], "ICANN · Singular/Plural Evaluation"),
     ])
     cms = "".join(source_chip(S[f"cms{i}"], f"CMS · Joining the Dots · Part {i}") for i in range(1, 5))
-    return f'''<section class="section" id="legal" data-legal-layer="2026-11-11">
+    return f'''<section class="section" id="legal" data-legal-layer="{e(DATA['reviewedOn'])}">
 <div class="panel">
   <div class="panelTop"><span class="ep factBadge">PROCEDURE</span><span class="ep readingBadge">READING</span></div>
   <h2>{e(L["title"])}</h2>
@@ -69,6 +81,10 @@ def render_section(lang: str, prefix: str) -> str:
   {source_chip(S["icannCommunityInput"], "ICANN · Community Input & Objections")}
 </div>
 <div class="panel">
+  <h2>{e(L["timingTitle"])}</h2><p class="sub sectionLead">{e(L["timingIntro"])}</p><div class="grid2">{timings}</div>
+  <div class="srcs">{source_chip(S["icannObjections"], "ICANN · Objections & Appeals")}{source_chip(S["independentObjectors"], "ICANN · Independent Objectors")}{source_chip(S["singularPlural"], "ICANN · Singular/Plural Evaluation")}</div>
+</div>
+<div class="panel">
   <h2>{e(L["mapTitle"])}</h2><p class="sub sectionLead">{e(L["mapIntro"])}</p>
   <div class="grid2">{mechanisms}</div>
 </div>
@@ -79,6 +95,9 @@ def render_section(lang: str, prefix: str) -> str:
 <div class="panel">
   <h2>{e(L["processTitle"])}</h2><p class="sub sectionLead">{e(L["processIntro"])}</p>
   <div class="processGrid">{process}</div>
+</div>
+<div class="panel">
+  <h2>{e(L["glossaryTitle"])}</h2><p class="sub sectionLead">{e(L["glossaryIntro"])}</p><div class="grid2">{glossary}</div>
 </div>
 <div class="panel">
   <h2>{e(L["outcomesTitle"])}</h2><p class="sub sectionLead">{e(L["outcomesBody"])}</p>

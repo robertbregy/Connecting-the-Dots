@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/market/ | Site edition: 0.7.109 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/market/ | Site edition: 0.7.110 | Language: en -->
 
 Economic analysis
 
@@ -184,6 +184,6 @@ Current working analysis dated 19 October 2026, outside the RR1/RR2 scientific s
 
 [Connect adoption and history →](https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/#tld-cultural-trajectory) [Who runs the infrastructure →](https://robertbregy.github.io/Connecting-the-Dots/en/?tab=geography#rsp-tld-footprint)
 
-**By Robert Bregy** · Site edition 0.7.109 · November 11, 2026
+**By Robert Bregy** · Site edition 0.7.110 · November 12, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

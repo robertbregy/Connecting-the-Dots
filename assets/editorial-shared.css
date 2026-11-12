@@ -1,4 +1,4 @@
-/* Shared publication modules · badges and dated source notes · v0.7.109 */
+/* Shared publication modules · badges and dated source notes · v0.7.110 */
 .editorialType{display:inline-flex;align-items:center;max-width:100%;margin:0 0 10px;padding:5px 9px;border:1px solid var(--border,#c9d1d9);border-radius:999px;color:var(--muted,#53606c);font-size:12px;font-weight:750;letter-spacing:.04em;text-transform:uppercase;line-height:1.35}
 .roundStatus{margin:16px 0 22px;padding:14px 16px;border-left:3px solid var(--accent-text,#1769aa);background:var(--surface2,#f4f7fa);border-radius:0 10px 10px 0;line-height:1.55;font-size:14px}
 .roundStatus strong{display:block;margin-bottom:4px}.roundStatus p{margin:0;color:var(--muted,#53606c)}

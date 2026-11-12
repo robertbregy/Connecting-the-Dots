@@ -189,7 +189,7 @@ function nativePage(lang, filename) {
     social: [':first', '#tld-cultural-social', '#socialGrid', '#socialModels'],
     cities: [':first', '#city-namespace-governance', '#city-namespace-measures'],
     contention: [':first', '#contention-part-3', '#contention-part-5', '#contention-part-2', '#contention-part-4', '#contention-part-6'],
-    disputes: [':first', '#disputeGrid', '#disputeMechanisms'],
+    disputes: [':first', '#disputeGrid', '.disputesLegalBridge'],
     refusals: [':first', '#refusalGrid', '#refusalTaxonomy', '#refusalSnapshot'],
     sources: [':first', '#sources-part-3', '#sources-part-4', '#sources-part-5', '#sources-part-2']
   };
