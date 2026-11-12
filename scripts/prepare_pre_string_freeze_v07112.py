@@ -64,7 +64,7 @@ if "## Current release" in readme:
 
 **v{VERSION} - 12 November 2026**
 
-Final pre-String-Confirmation cleanup: localized Research entry pages for IT/DE/FR, explicit separation between scholarly paper revision and technical-reference synchronization, unambiguous source-review provenance semantics,. Frozen RR1/RR2 and the Reveal Day evidence remain unchanged.
+Final pre-String-Confirmation cleanup: localized Research entry pages for IT/DE/FR, explicit separation between scholarly paper revision and technical-reference synchronization, unambiguous source-review provenance semantics. Frozen RR1/RR2 and the Reveal Day evidence remain unchanged.
 
 """
         readme=readme[:start]+block+readme[next_pos:]
