@@ -1496,6 +1496,49 @@ for lang in LANGS:
     if 'roundStatus' not in economics and publication_meta['releasedOn'] < publication_meta['stringConfirmation']:
         fail('Pre-String Confirmation status missing from Economics: '+lang)
 
+# v0.7.111 multilingual editorial-label integrity
+
+# v0.7.111 multilingual editorial-label integrity.
+# Generic editorial badges must be localized on non-English pages. Formal ICANN
+# terms and official source titles are deliberately outside this check.
+badge_classes = r'(?:factBadge|readingBadge|editorialType|stateBadge|recordLevel|discoveryEyebrow)'
+foreign_badges = {
+    'it': {'PROCEDURE','READING','CONTRACT','FACT','FIELD NOTE','METHOD','DATA','SOURCE','SOURCES'},
+    'de': {'PROCEDURE','READING','CONTRACT','FACT','FIELD NOTE','METHOD','DATA','SOURCE','SOURCES'},
+    'fr': {'PROCEDURE','READING','CONTRACT','FACT','FIELD NOTE','METHOD','DATA'},
+}
+badge_re = re.compile(r'<(?:span|p|div)\b[^>]*class=["\'][^"\']*'+badge_classes+r'[^"\']*["\'][^>]*>([^<]{1,80})</(?:span|p|div)>', re.I)
+for html_path in ROOT.rglob('*.html'):
+    if '.git' in html_path.parts:
+        continue
+    page = html_path.read_text(encoding='utf-8')
+    lang_match = re.search(r'<html\b[^>]*\blang=["\']([^"\']+)["\']', page, re.I)
+    if not lang_match:
+        continue
+    lang = lang_match.group(1).split('-')[0].lower()
+    if lang not in foreign_badges:
+        continue
+    for value in badge_re.findall(page):
+        label = unescape(value).strip().upper()
+        if label in foreign_badges[lang]:
+            fail('Non-localized editorial badge in '+html_path.relative_to(ROOT).as_posix()+': '+value.strip())
+
+legal_badges = {
+    'en': ('PROCEDURE','READING','CONTRACT'),
+    'it': ('PROCEDURA','LETTURA','CONTRATTO'),
+    'de': ('VERFAHREN','LEKTÜRE','VERTRAG'),
+    'fr': ('PROCÉDURE','LECTURE','CONTRAT'),
+}
+for lang, expected in legal_badges.items():
+    page = (ROOT/'guides'/lang/'legal'/'index.html').read_text(encoding='utf-8')
+    for label in expected:
+        if f'>{label}</span>' not in page:
+            fail('Localized Legal badge missing: '+lang+'/'+label)
+    if page.count('>ICANN · Independent Objectors ↗</a>') != 2:
+        fail('Independent Objectors source-chip count drift: '+lang)
+    if page.count('>ICANN · Singular/Plural Evaluation ↗</a>') != 2:
+        fail('Singular/Plural source-chip count drift: '+lang)
+
 # The deploy payload is a separate, validated surface; never ship the checkout.
 validate_publication(ROOT)
 # Validate summary keys stored in data as well as HTML data-i18n references.

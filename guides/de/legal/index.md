@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/legal/ | Site edition: 0.7.110 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/legal/ | Site edition: 0.7.111 | Language: de -->
 
 Leitfaden
 
@@ -8,7 +8,7 @@ Unterscheiden Sie Kommentare, staatliche Eingaben, formelle Einwände und Appeal
 
 [Im Atlas erkunden](https://robertbregy.github.io/Connecting-the-Dots/de/?tab=legal#legal) [Methode und Zitieren](https://robertbregy.github.io/Connecting-the-Dots/research/) [Textversion](https://robertbregy.github.io/Connecting-the-Dots/guides/de/legal/index.md)
 
-PROCEDURE READING
+VERFAHREN LEKTÜRE
 
 ## Rechte, Einwände und Rechtsbehelfe
 
@@ -59,7 +59,7 @@ Meldungen können in den 30 Tagen unmittelbar nach dem String Confirmation Day e
 
 Dieselbe Bewerbung kann mehreren Verfahren ausgesetzt sein. Entscheidend ist nicht nur, wer interveniert, sondern welches Verfahren verwendet wird.
 
-PROCEDURE
+VERFAHREN
 
 ### Application Comments
 
@@ -69,7 +69,7 @@ ICANN und Evaluationspanels können sie berücksichtigen
 
 Keine automatische Wirkung auf die Bewerbung; relevante Kommentare können in die Evaluation einfließen.
 
-PROCEDURE
+VERFAHREN
 
 ### GAC Member Early Warning
 
@@ -79,7 +79,7 @@ Keine unmittelbare Entscheidung
 
 Signalisiert staatliche Bedenken. Allein verändert sie den Status der Bewerbung nicht.
 
-PROCEDURE
+VERFAHREN
 
 ### GAC Consensus Advice
 
@@ -89,7 +89,7 @@ ICANN Board
 
 Das Board entscheidet, ob die Bewerbung fortgesetzt, nicht fortgesetzt oder nur mit Änderungen fortgesetzt werden kann.
 
-PROCEDURE
+VERFAHREN
 
 ### Singular-/Plural-Meldung
 
@@ -99,7 +99,7 @@ ICANN String Evaluation
 
 Löst eine Singular-/Plural-Prüfung aus und kann verhindern, dass eine Bewerbung weitergeht.
 
-PROCEDURE
+VERFAHREN
 
 ### Formeller Einwand
 
@@ -109,7 +109,7 @@ Unabhängiges Expertenpanel über den zuständigen DRSP
 
 Das Panel wendet einen der vier festgelegten Einwandsgründe an und entscheidet über die Fortsetzung der Bewerbung.
 
-PROCEDURE
+VERFAHREN
 
 ### Independent Objector
 
@@ -119,7 +119,7 @@ Unabhängiges Expertenpanel
 
 Kann Limited Public Interest- oder Community-Einwände im Interesse der weltweiten Internetnutzer erheben, nicht für einen privaten Auftraggeber.
 
-PROCEDURE
+VERFAHREN
 
 ### Appeal
 
@@ -233,7 +233,7 @@ Registry Voluntary Commitment. Eine vom Bewerber vorgeschlagene Verpflichtung, d
 
 Bei String Confusion kann die Folge eine Änderung des Contention Sets sein oder, in bestimmten Fällen mit Interessen bestehender TLDs oder ccTLDs, der Ausschluss der Bewerbung. Bei Legal Rights, Limited Public Interest und Community führt ein erfolgreicher Einwand gegen die primäre Zeichenfolge dazu, dass die Bewerbung nicht weitergeführt werden kann. Betrifft die Entscheidung nur eine zuteilbare Variante, können die primäre Zeichenfolge und nicht betroffene Varianten weiterlaufen. ICANN beschreibt außerdem Fälle, in denen ein neues oder geändertes, von ICANN genehmigtes Registry Voluntary Commitment (RVC) zur Bedingung für das weitere Verfahren werden kann.
 
-CONTRACT
+VERTRAG
 
 ## Vom Streit zur bindenden Verpflichtung
 
@@ -253,7 +253,7 @@ Historische Streitfälle zeigen, wie diese Mechanismen in der Praxis zusammenspi
 
 ICANN, WIPO und ICC sind hier die primären Verfahrensquellen. Die CMS-Serie 'Joining the Dots' wird als ergänzende professionelle Einordnung geführt, nicht als maßgebliche Regelquelle.
 
-[ICANN · Community Input ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input) [ICANN · Objections & Appeals ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals) [ICANN · Applicant Guidebook ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/agb) [WIPO · Legal Rights Objections ↗](https://www.wipo.int/en/web/amc/domain-name-disputes/lro/index) [WIPO · String Confusion Objections ↗](https://www.wipo.int/en/web/amc/domain-name-disputes/sco/index) [ICC · New gTLD Dispute Resolution ↗](https://iccwbo.org/dispute-resolution/dispute-resolution-services/adr/icann-new-gtld-dispute-resolution/) [ICANN · Registry Voluntary Commitments ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/application-evaluation/faqs/rce/what-are-registry-voluntary-commitments-rvcs) [ICANN · Independent Objectors ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors) [ICANN · Singular/Plural Evaluation ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/string-evaluation/singular-plural-notifications-evaluation) [ICANN · Independent Objectors ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors) [ICANN · Singular/Plural Evaluation ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/string-evaluation/singular-plural-notifications-evaluation) [ICANN · Independent Objectors ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors) [ICANN · Singular/Plural Evaluation ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/string-evaluation/singular-plural-notifications-evaluation) [ICANN · Independent Objectors ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors) [ICANN · Singular/Plural Evaluation ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/string-evaluation/singular-plural-notifications-evaluation) [ICANN · Independent Objectors ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors) [ICANN · Singular/Plural Evaluation ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/string-evaluation/singular-plural-notifications-evaluation)
+[ICANN · Community Input ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input) [ICANN · Objections & Appeals ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals) [ICANN · Applicant Guidebook ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/agb) [WIPO · Legal Rights Objections ↗](https://www.wipo.int/en/web/amc/domain-name-disputes/lro/index) [WIPO · String Confusion Objections ↗](https://www.wipo.int/en/web/amc/domain-name-disputes/sco/index) [ICC · New gTLD Dispute Resolution ↗](https://iccwbo.org/dispute-resolution/dispute-resolution-services/adr/icann-new-gtld-dispute-resolution/) [ICANN · Registry Voluntary Commitments ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/application-evaluation/faqs/rce/what-are-registry-voluntary-commitments-rvcs) [ICANN · Independent Objectors ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors) [ICANN · Singular/Plural Evaluation ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/string-evaluation/singular-plural-notifications-evaluation)
 
 **CMS · Joining the Dots**
 
@@ -261,6 +261,6 @@ ICANN, WIPO und ICC sind hier die primären Verfahrensquellen. Die CMS-Serie 'Jo
 
 Verfahrenserklärung, keine Rechtsberatung. Für eine tatsächliche Einreichung gelten der aktuelle maßgebliche Applicant Guidebook und die Regeln des zuständigen Providers.
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.110 · 12. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.111 · 12. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

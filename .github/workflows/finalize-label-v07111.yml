@@ -1,0 +1,74 @@
+name: Finalize reviewed v0.7.111 label consistency
+
+on:
+  push:
+    branches: ['fix/v0.7.111-label-consistency']
+    paths: ['.github/workflows/finalize-label-v07111.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Prepare v0.7.111 label-consistency source
+        env:
+          SOURCE_COMMIT: ${{ github.sha }}
+        run: |
+          python3 scripts/prepare_label_audit_v07111.py
+          test "$(python3 -c "import json; print(json.load(open('publication.json'))['version'])")" = "0.7.111"
+      - name: Seed exact review path for deterministic build
+        run: cp docs/editorial-review-2026-11-12-v0.7.110.json docs/editorial-review-2026-11-12-v0.7.111.json
+      - name: Regenerate candidate
+        run: python3 build.py
+      - name: Record explicit reviewed hashes
+        run: node scripts/finalize_label_review_v07111.cjs --record-reviewed-candidate
+      - name: Materialize frozen A baseline for continuity audit
+        run: |
+          git fetch origin refs/heads/safety/main-v0.7.78-before-b2-switch-20261013:refs/remotes/origin/safety/main-v0.7.78-before-b2-switch-20261013
+          rm -rf ../baseline
+          git worktree add --detach ../baseline refs/remotes/origin/safety/main-v0.7.78-before-b2-switch-20261013
+      - name: Refresh continuity evidence
+        run: python3 scripts/audit_content_continuity.py
+      - name: Verify complete static candidate
+        run: |
+          python3 scripts/release_check.py
+          node scripts/verify_ia_b2_parity.cjs
+          node scripts/validate_multilingual.js
+          node scripts/validate_discovery.cjs
+          python3 scripts/test_public_surface.py
+          python3 scripts/test_external_source_health.py
+          node scripts/test_reading_controls.cjs
+          node scripts/audit_v07108_qa.cjs
+          CTD_STATIC_ONLY=1 node scripts/usability_remediation_qa.cjs --static-only
+          CTD_STATIC_ONLY=1 node scripts/validate_delivery.js
+      - name: Commit reviewed candidate if branch tip is unchanged
+        env:
+          EXPECTED_HEAD: ${{ github.sha }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          git fetch origin "$BRANCH"
+          test "$(git rev-parse FETCH_HEAD)" = "$EXPECTED_HEAD" || { echo "::error::Branch advanced; refusing to overwrite newer work."; exit 1; }
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --cached --quiet && { echo 'Nothing to commit'; exit 1; }
+          git commit -m 'v0.7.111: localize editorial labels [skip build]'
+          git push origin "HEAD:$BRANCH"
+
+# rerun-token: freeze-v07110
+
+# rerun-token: preparer-newlines-fixed

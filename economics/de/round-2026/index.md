@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/round-2026/ | Site edition: 0.7.110 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/round-2026/ | Site edition: 0.7.111 | Language: de -->
 
 Wirtschaftsanalyse
 
@@ -355,6 +355,6 @@ Eine Bankmarke als TLD und ein Begriff wie .bank stehen für unterschiedliche Ve
 
 [ICANN · 2012 statistics ↗](https://newgtlds.icann.org/en/program-status/statistics) [ICANN APS · 2026 statistics ↗](https://newgtldprogram-aps.icann.org/statistics) [nTLDData · 2026 application index ↗](https://www.ntlddata.com/applications)
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.110 · 12. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.7.111 · 12. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

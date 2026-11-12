@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
-  "version": "0.7.110",
+  "version": "0.7.111",
   "native": [
     {
       "file": "en/index.html",
@@ -254,7 +254,7 @@
           "lang": "en",
           "essentialBlocks": 7,
           "originalTranslatedItems": 1357,
-          "originalLinks": 1098,
+          "originalLinks": 1090,
           "originalIds": 503,
           "removedNavigationLabels": [
             "Understand the context",
@@ -720,7 +720,7 @@
           "lang": "en",
           "essentialBlocks": 7,
           "originalTranslatedItems": 1357,
-          "originalLinks": 1098,
+          "originalLinks": 1090,
           "originalIds": 503,
           "removedNavigationLabels": [
             "Understand the context",
@@ -1186,7 +1186,7 @@
           "lang": "it",
           "essentialBlocks": 7,
           "originalTranslatedItems": 1357,
-          "originalLinks": 1098,
+          "originalLinks": 1090,
           "originalIds": 503,
           "removedNavigationLabels": [
             "Per capire il contesto",
@@ -1652,7 +1652,7 @@
           "lang": "de",
           "essentialBlocks": 7,
           "originalTranslatedItems": 1357,
-          "originalLinks": 1098,
+          "originalLinks": 1090,
           "originalIds": 503,
           "removedNavigationLabels": [
             "Den Zusammenhang verstehen",
@@ -2118,7 +2118,7 @@
           "lang": "fr",
           "essentialBlocks": 7,
           "originalTranslatedItems": 1357,
-          "originalLinks": 1098,
+          "originalLinks": 1090,
           "originalIds": 503,
           "removedNavigationLabels": [
             "Comprendre le contexte",

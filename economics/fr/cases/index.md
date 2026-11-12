@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/fr/cases/ | Site edition: 0.7.110 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/fr/cases/ | Site edition: 0.7.111 | Language: fr -->
 
 Analyse économique
 
@@ -300,6 +300,6 @@ Ces frais ne sont pas le prix d’achat d’un TLD : ils sont le coût d’entr�
 
 [ICANN — 2012 New gTLD evaluation fee ↗](https://newgtlds.icann.org/en/applicants/global-support/faqs/faqs-en) [ICANN — 2026 gTLD evaluation fee ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/gtld-evaluation-fee/faqs) [ICANN — 2026 financial projection templates ↗](https://newgtldprogram-2026-agb.icann.org/en/16-appendix-5-templates-for-standard-financial-profile.html)
 
-**Par Robert Bregy** · Édition du site 0.7.110 · 12 novembre 2026
+**Par Robert Bregy** · Édition du site 0.7.111 · 12 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.
