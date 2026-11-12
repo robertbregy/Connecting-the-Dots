@@ -303,7 +303,14 @@ def build_catalog(root: Path = ROOT, discovery_manifest: dict | None = None) -> 
         "title": "Connecting the Dots — source and reading catalog",
         "description": "An independent multilingual research atlas of Internet names and ICANN applications. This catalog distinguishes reading pages, data units, observation dates and archived research releases.",
         "author": {"name": "Robert Bregy", "url": "https://github.com/robertbregy"},
-        "websiteRelease": {"version": pub["version"], "releasedOn": pub["releasedOn"], "url": base},
+        "websiteRelease": {
+            "version": pub["version"], "releasedOn": pub["releasedOn"], "url": base,
+            "provenance": {
+                "sourceReviewCommit": pub.get("sourceReviewCommit") or pub.get("buildProvenanceCommit"),
+                "role": pub.get("buildProvenanceRole", "source review commit used for deterministic regeneration; not the published merge commit"),
+                "publishedCommit": "Resolve from the GitHub Pages deployment/repository history; a Git object cannot self-embed its own final hash."
+            }
+        },
         "dateSemantics": {
             "websiteRelease": "Technical/editorial publication date; it does not redate the underlying observations.",
             "observationDate": "Source snapshot or retrieval date for the stated dataset; null means dates vary and the listed per-row fields must be read.",
@@ -313,7 +320,12 @@ def build_catalog(root: Path = ROOT, discovery_manifest: dict | None = None) -> 
             "languages": {lang: urljoin(base, lang + "/") for lang in LANGUAGES},
             "discoveryManifest": resource("discovery/manifest.json"),
             "dataManifest": resource("data/manifest.json"),
-            "researchGuide": resource("research/"),
+            "researchGuide": {
+                "en": resource("research/"),
+                "it": resource("research/it/"),
+                "de": resource("research/de/"),
+                "fr": resource("research/fr/"),
+            },
             "sitemap": resource("sitemap.xml"),
         },
         "pages": sorted(pages, key=lambda page: (page["kind"], page["key"], page["language"])),
@@ -324,6 +336,7 @@ def build_catalog(root: Path = ROOT, discovery_manifest: dict | None = None) -> 
             "previousArchivedReleases": [release(record) for record in archives["previousResearchReleases"]],
             "currentWorkingPaper": {
                 "version": pub["paperVersion"], "revisedOn": pub["paperRevisedOn"],
+                "technicalReferenceSynchronizedOn": pub.get("paperTechnicalSyncOn") or pub["releasedOn"],
                 **resource(pub["paperPath"]),
                 "status": "working draft; not peer reviewed",
                 "relationshipToArchives": archives["workingPaperRevision"]["relationToRR2"],
