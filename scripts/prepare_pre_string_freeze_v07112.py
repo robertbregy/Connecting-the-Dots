@@ -46,10 +46,10 @@ dump("data/release_history.json",hist)
 
 tr=load("data/translations.json")
 summaries={
- "en":"Closed the final pre-String-Confirmation audit: localized Research entry pages, separated the working-paper scholarly revision from live technical synchronization, clarified build provenance semantics and deferred off-screen Explorer/map rendering on unrelated routes.",
- "it":"Chiuso l'audit finale prima dello String Confirmation Day: create landing Research localizzate, separata la revisione scientifica del working paper dalla sincronizzazione tecnica, chiarita la provenance di build e rinviato il rendering di Explorer/mappa quando non serve alla pagina richiesta.",
- "de":"Das letzte Audit vor dem String Confirmation Day ist abgeschlossen: lokalisierte Research-Einstiegsseiten, getrennte wissenschaftliche Paper-Revision und technische Synchronisierung, klare Build-Provenienz und verzögertes Rendering von Explorer/Karte auf nicht betroffenen Seiten.",
- "fr":"Clôture de l'audit final avant le String Confirmation Day : pages d'entrée Research localisées, séparation entre révision scientifique du working paper et synchronisation technique, provenance de build clarifiée et rendu différé de l'Explorer/carte hors des pages concernées."
+ "en":"Closed the final pre-String-Confirmation audit: localized Research entry pages, separated the working-paper scholarly revision from live technical synchronization, clarified build provenance semantics.",
+ "it":"Chiuso l'audit finale prima dello String Confirmation Day: create landing Research localizzate, separata la revisione scientifica del working paper dalla sincronizzazione tecnica, chiarita la provenance di build.",
+ "de":"Das letzte Audit vor dem String Confirmation Day ist abgeschlossen: lokalisierte Research-Einstiegsseiten, getrennte wissenschaftliche Paper-Revision und technische Synchronisierung, klare Build-Provenienz.",
+ "fr":"Clôture de l'audit final avant le String Confirmation Day : pages d'entrée Research localisées, séparation entre révision scientifique du working paper et synchronisation technique, provenance de build clarifiée."
 }
 for lang,summary in summaries.items(): tr.setdefault(lang,{})["release07112"]=summary
 dump("data/translations.json",tr)
@@ -64,7 +64,7 @@ if "## Current release" in readme:
 
 **v{VERSION} - 12 November 2026**
 
-Final pre-String-Confirmation cleanup: localized Research entry pages for IT/DE/FR, explicit separation between scholarly paper revision and technical-reference synchronization, unambiguous source-review provenance semantics, and deferred off-screen Explorer/map rendering on unrelated routes. Frozen RR1/RR2 and the Reveal Day evidence remain unchanged.
+Final pre-String-Confirmation cleanup: localized Research entry pages for IT/DE/FR, explicit separation between scholarly paper revision and technical-reference synchronization, unambiguous source-review provenance semantics,. Frozen RR1/RR2 and the Reveal Day evidence remain unchanged.
 
 """
         readme=readme[:start]+block+readme[next_pos:]
@@ -76,7 +76,6 @@ entry="""# v0.7.112 — 12 November 2026
 - Added localized Research & citation entry pages for Italian, German and French while keeping the canonical working paper in English.
 - Separated the working paper's scholarly revision date from the live technical-reference synchronization date; technical package pointers no longer silently redate the manuscript.
 - Clarified that buildProvenanceCommit/sourceReviewCommit identifies the reviewed source revision used for deterministic regeneration, not the final published merge commit.
-- Deferred Explorer and world-map rendering when the requested route does not need them, reducing unnecessary work on pages such as Economics.
 - Added release guards for localized Research pages, hreflang, sitemap coverage, paper synchronization semantics and provenance role.
 - APS/IANA snapshots, RR1/RR2 and historical archives remain unchanged.
 
