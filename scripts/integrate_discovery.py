@@ -39,7 +39,8 @@ def main():
         assert set(group) == set(LANGUAGES)
     sitemap = ET.parse(ROOT / "sitemap.xml")
     urlset = sitemap.getroot()
-    new_urls = {BASE + page["path"] for page in pages}
+    localized_research = {lang: f"research/{lang}/" for lang in ("it", "de", "fr")}
+    new_urls = {BASE + page["path"] for page in pages} | {BASE + path for path in localized_research.values()}
     # Repeated invocation replaces this generated block rather than duplicating it.
     for item in list(urlset):
         if item.findtext(f"{{{SM}}}loc") in new_urls:
@@ -55,6 +56,14 @@ def main():
             destination = equivalents["en" if lang == "x-default" else lang]
             ET.SubElement(item, f"{{{XHTML}}}link", {
                 "rel": "alternate", "hreflang": lang, "href": BASE + destination["path"]})
+    research_hrefs = {"en": BASE + "research/", **{lang: BASE + path for lang, path in localized_research.items()}}
+    for lang, path in localized_research.items():
+        item = ET.SubElement(urlset, f"{{{SM}}}url")
+        ET.SubElement(item, f"{{{SM}}}loc").text = BASE + path
+        ET.SubElement(item, f"{{{SM}}}lastmod").text = PUB["releasedOn"]
+        for alt in (*LANGUAGES, "x-default"):
+            ET.SubElement(item, f"{{{XHTML}}}link", {
+                "rel": "alternate", "hreflang": alt, "href": research_hrefs["en" if alt == "x-default" else alt]})
     ET.indent(sitemap, space="  ")
     sitemap.write(ROOT / "sitemap.xml", encoding="UTF-8", xml_declaration=True)
     with (ROOT / "sitemap.xml").open("a", encoding="utf-8") as stream:
@@ -88,7 +97,7 @@ def main():
             assert html.count("</footer>") == 1, target
             html = html.replace("</footer>", link + "</footer>")
         file.write_text(html, encoding="utf-8")
-    print(f"Integrated {len(pages)} discovery documents; sitemap preserves 43 established URLs ({43 + len(pages)} total).")
+    print(f"Integrated {len(pages)} discovery documents plus 3 localized Research landings; sitemap preserves 43 established URLs ({46 + len(pages)} total before Reader Study additions).")
 
 
 if __name__ == "__main__":
