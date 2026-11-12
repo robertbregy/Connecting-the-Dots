@@ -56,6 +56,8 @@ def render_section(lang: str, prefix: str) -> str:
         source_chip(S["rvc"], "ICANN · Registry Voluntary Commitments"),
         source_chip(S["independentObjectors"], "ICANN · Independent Objectors"),
         source_chip(S["singularPlural"], "ICANN · Singular/Plural Evaluation"),
+        source_chip(S["independentObjectors"], "ICANN · Independent Objectors"),
+        source_chip(S["singularPlural"], "ICANN · Singular/Plural Evaluation"),
     ])
     cms = "".join(source_chip(S[f"cms{i}"], f"CMS · Joining the Dots · Part {i}") for i in range(1, 5))
     return f'''<section class="section" id="legal" data-legal-layer="{e(DATA['reviewedOn'])}">

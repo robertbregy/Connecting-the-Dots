@@ -3948,6 +3948,8 @@
       "downloads/connecting-the-dots-data-pack-v0.7.108.zip",
       "downloads/connecting-the-dots-data-pack-v0.7.109.sha256",
       "downloads/connecting-the-dots-data-pack-v0.7.109.zip",
+      "downloads/connecting-the-dots-data-pack-v0.7.110.sha256",
+      "downloads/connecting-the-dots-data-pack-v0.7.110.zip",
       "downloads/connecting-the-dots-data-pack-v0.7.92.sha256",
       "downloads/connecting-the-dots-data-pack-v0.7.92.zip",
       "downloads/connecting-the-dots-data-pack-v0.7.93.sha256",
@@ -4251,7 +4253,7 @@
     "errors": [],
     "review_id": "audit-close-2026-11-12-v0.7.110",
     "reviewed_on": "2026-11-12",
-    "manifest_sha256": "06fb0aed979f3f7a6e1cbcf393e4ecafc158bfa912a12690bb7fcf46f7c234d0",
+    "manifest_sha256": "3046ef0c0b007229f2254233532c6e9b3c308d7e39be405fa91188a3abd33960",
     "source_verification": {
       "baselineMain": "ec231cc12d35fa91ff5340ad057a483ce23a5ca4",
       "reviewedAgainst": "65e0fbe2080c2ee841e8abc01e1ddec113a74b8e",

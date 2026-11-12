@@ -103,8 +103,8 @@ function staticChecks(){
   const lost=[...beforeKeys].filter(key=>!afterKeys.has(key)).sort();
   // Those two historic timeline keys are replaced by the reviewed 'observed'
   // state and the dated 21 October close, not silently discarded prose.
-  assert.deepEqual(lost,['insideReplacePublicScheduleBody','insideStateCurrent'],'Unreviewed translated key disappeared: '+file);
-  for(const key of ['insideReplaceCompletedBody','insideStateObserved','insideQualityTitle','nissayCaseState']){
+  assert.deepEqual(lost,['disputesMechanismsSub','disputesMechanismsTitle','insideReplacePublicScheduleBody','insideStateCurrent'],'Unreviewed translated key disappeared: '+file);
+  for(const key of ['disputesLegalBridgeTitle','disputesLegalBridgeBody','disputesLegalBridgeCta','insideReplaceCompletedBody','insideStateObserved','insideQualityTitle','nissayCaseState']){
     assert.ok(afterKeys.has(key),'Missing translated review addition: '+file+'/'+key);
   }
   assert.equal(after.querySelectorAll('[data-event-id="quality-control-provider"]').length,1,'JAS event missing: '+file);
