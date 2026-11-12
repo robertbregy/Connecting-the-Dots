@@ -104,7 +104,12 @@ function staticChecks(){
   // Those two historic timeline keys are replaced by the reviewed 'observed'
   // state and the dated 21 October close, not silently discarded prose.
   assert.deepEqual(lost,['disputesMechanismsSub','disputesMechanismsTitle','insideReplacePublicScheduleBody','insideStateCurrent'],'Unreviewed translated key disappeared: '+file);
-  for(const key of ['disputesLegalBridgeTitle','disputesLegalBridgeBody','disputesLegalBridgeCta','insideReplaceCompletedBody','insideStateObserved','insideQualityTitle','nissayCaseState']){
+  const legalBridge=after.querySelector('#disputeMechanisms.disputesLegalBridge');
+  assert.ok(legalBridge,'Rendered Legal bridge missing: '+file);
+  const legalBridgeLink=legalBridge.querySelector('a[data-open-section="legal"][href="#legal"]');
+  assert.ok(legalBridgeLink,'Rendered Legal bridge destination missing: '+file);
+  for(const key of ['disputesLegalBridgeTitle','disputesLegalBridgeBody','disputesLegalBridgeCta']) assert.ok(legalBridge.textContent.includes(translations[lang][key]),'Rendered Legal bridge text missing: '+file+'/'+key);
+  for(const key of ['insideReplaceCompletedBody','insideStateObserved','insideQualityTitle','nissayCaseState']){
     assert.ok(afterKeys.has(key),'Missing translated review addition: '+file+'/'+key);
   }
   assert.equal(after.querySelectorAll('[data-event-id="quality-control-provider"]').length,1,'JAS event missing: '+file);
