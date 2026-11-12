@@ -94,6 +94,12 @@ rep("scripts/reader_first.cjs",
 "    disputes: [':first', '#disputeGrid', '#disputeMechanisms'],",
 "    disputes: [':first', '#disputeGrid', '.disputesLegalBridge'],")
 
+# Keep the historical #disputeMechanisms fragment without letting the runtime
+# renderer mistake the new Legal bridge for the retired mechanism grid.
+rep("assets/app.js",
+"function renderDisputes(){\n const mech=document.getElementById('disputeMechanisms'),grid=document.getElementById('disputeGrid'),data=D.governanceCases||{};",
+"function renderDisputes(){\n const mech=document.querySelector('#disputeMechanisms.disputeMechanisms'),grid=document.getElementById('disputeGrid'),data=D.governanceCases||{};")
+
 legal=load("data/legal_layer.json")
 legal["reviewedOn"]=DATE
 legal["sources"]["independentObjectors"]="https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors"
