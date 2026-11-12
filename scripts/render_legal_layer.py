@@ -30,7 +30,7 @@ def render_section(lang: str, prefix: str) -> str:
     L = DATA["locales"][lang]
     S = DATA["sources"]
     mechanisms = "".join(
-        '<article class="panel"><div class="panelTop"><span class="ep factBadge">PROCEDURE</span></div>'
+        '<article class="panel"><div class="panelTop"><span class="ep factBadge">' + e(L["badgeProcedure"]) + '</span></div>'
         f'<h3>{e(title)}</h3><p><b>{e(actor)}</b></p><p>{e(decider)}</p><p class="sub">{e(effect)}</p></article>'
         for title, actor, decider, effect in L["mechanisms"]
     )
@@ -56,19 +56,11 @@ def render_section(lang: str, prefix: str) -> str:
         source_chip(S["rvc"], "ICANN · Registry Voluntary Commitments"),
         source_chip(S["independentObjectors"], "ICANN · Independent Objectors"),
         source_chip(S["singularPlural"], "ICANN · Singular/Plural Evaluation"),
-        source_chip(S["independentObjectors"], "ICANN · Independent Objectors"),
-        source_chip(S["singularPlural"], "ICANN · Singular/Plural Evaluation"),
-        source_chip(S["independentObjectors"], "ICANN · Independent Objectors"),
-        source_chip(S["singularPlural"], "ICANN · Singular/Plural Evaluation"),
-        source_chip(S["independentObjectors"], "ICANN · Independent Objectors"),
-        source_chip(S["singularPlural"], "ICANN · Singular/Plural Evaluation"),
-        source_chip(S["independentObjectors"], "ICANN · Independent Objectors"),
-        source_chip(S["singularPlural"], "ICANN · Singular/Plural Evaluation"),
     ])
     cms = "".join(source_chip(S[f"cms{i}"], f"CMS · Joining the Dots · Part {i}") for i in range(1, 5))
     return f'''<section class="section" id="legal" data-legal-layer="{e(DATA['reviewedOn'])}">
 <div class="panel">
-  <div class="panelTop"><span class="ep factBadge">PROCEDURE</span><span class="ep readingBadge">READING</span></div>
+  <div class="panelTop"><span class="ep factBadge">{e(L["badgeProcedure"])}</span><span class="ep readingBadge">{e(L["badgeReading"])}</span></div>
   <h2>{e(L["title"])}</h2>
   <div class="disputesKicker">{e(L["kicker"])}</div>
   <p class="sub sectionLead">{e(L["intro"])}</p>
@@ -103,7 +95,7 @@ def render_section(lang: str, prefix: str) -> str:
   <h2>{e(L["outcomesTitle"])}</h2><p class="sub sectionLead">{e(L["outcomesBody"])}</p>
 </div>
 <div class="panel">
-  <div class="panelTop"><span class="ep factBadge">CONTRACT</span></div>
+  <div class="panelTop"><span class="ep factBadge">{e(L["badgeContract"])}</span></div>
   <h2>{e(L["rvcTitle"])}</h2><p class="sub sectionLead">{e(L["rvcBody"])}</p>
   {source_chip(S["rvc"], "ICANN · RVC")}
 </div>

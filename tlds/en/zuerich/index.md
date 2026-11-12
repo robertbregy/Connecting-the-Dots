@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/en/zuerich/ | Site edition: 0.7.110 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/en/zuerich/ | Site edition: 0.7.111 | Language: en -->
 
 TLD profile
 
@@ -164,6 +164,6 @@ Reports linked by IANA, with their original titles and publication dates. A repo
 
 [Official IANA record ↗](https://www.iana.org/domains/root/db/zuerich.html) [Source 2 ↗](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) [Source 3 ↗](https://www.iana.org/domains/root/db) [Source 4 ↗](https://www.thedomains.com/2012/06/13/here-are-all-1930-applications-for-new-gtlds/)
 
-**By Robert Bregy** · Site edition 0.7.110 · November 12, 2026
+**By Robert Bregy** · Site edition 0.7.111 · November 12, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

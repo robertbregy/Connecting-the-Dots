@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/it/portfolios/ | Site edition: 0.7.110 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/it/portfolios/ | Site edition: 0.7.111 | Language: it -->
 
 Analisi economica
 
@@ -85,6 +85,6 @@ I 263 set preliminari di contesa fra stringhe identiche raccolgono 891 candidatu
 
 [ICANN · preliminary contention CSV ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv) [internet.Best · applicant portfolios ↗](https://internet.best/new-gtld-applications/) [nTLDData · primary strings ↗](https://www.ntlddata.com/applications/strings)
 
-**Di Robert Bregy** · Edizione del sito 0.7.110 · 12 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.7.111 · 12 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

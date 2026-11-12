@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/en/cities/ | Site edition: 0.7.110 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/en/cities/ | Site edition: 0.7.111 | Language: en -->
 
 Guide
 
@@ -167,6 +167,6 @@ In 2026 Helsinki initiated the voluntary termination of its registry agreement. 
 
 Read the documented timeline and status →
 
-**By Robert Bregy** · Site edition 0.7.110 · November 12, 2026
+**By Robert Bregy** · Site edition 0.7.111 · November 12, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

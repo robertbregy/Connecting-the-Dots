@@ -1,3 +1,11 @@
+# v0.7.111 — 12 November 2026
+
+- Localized the new Legal-layer editorial badges in EN/IT/DE/FR: Procedure, Reading and Contract now follow the page language.
+- Removed repeated ICANN Independent Objectors and Singular/Plural source chips introduced by the Legal renderer.
+- Added regression guards that fail if English Legal UI badges leak into Italian, German or French standalone pages.
+- Kept official ICANN/WIPO/ICC procedure names where they are proper names rather than interface labels.
+- APS/IANA snapshots, RR1/RR2 and all previous technical packages remain unchanged.
+
 # v0.7.110 — 12 November 2026
 
 - Closed the post-v0.7.109 audit before the String Confirmation milestone.

@@ -2614,7 +2614,8 @@
     "release07110": "Closed the post-Legal audit: corrected the remaining light-theme contrast defect, aligned release metadata and chronology, made source-health versioning dynamic, sharpened 2026 legal timing and terminology, and removed duplicated procedure from Disputed Dots while preserving all frozen research evidence.",
     "disputesLegalBridgeTitle": "The procedure now lives in one place",
     "disputesLegalBridgeBody": "Formal objections, standing, providers, deadlines and appeals are explained in Rights, objections & remedies. Disputed Dots stays focused on what happened in individual cases.",
-    "disputesLegalBridgeCta": "Read Rights, objections & remedies"
+    "disputesLegalBridgeCta": "Read Rights, objections & remedies",
+    "release07111": "Localized the new Legal-layer editorial labels in all four languages, removed duplicated source chips and added regression checks against English UI leakage on non-English Legal pages."
   },
   "it": {
     "brand": "Brand",
@@ -5231,7 +5232,8 @@
     "release07110": "Chiuso l'audit successivo al capitolo Legal: corretto l'ultimo difetto di contrasto in tema chiaro, allineati metadati e cronologia delle release, resa dinamica la versione del source-health check, precisati tempi e termini legali 2026 e rimossa la duplicazione procedurale da Disputed Dots, senza toccare le evidenze di ricerca congelate.",
     "disputesLegalBridgeTitle": "La procedura, in un solo posto",
     "disputesLegalBridgeBody": "Obiezioni formali, standing, provider, scadenze e appelli sono spiegati in Diritti, obiezioni e rimedi. Disputed Dots resta concentrato su ciò che è successo nei singoli casi.",
-    "disputesLegalBridgeCta": "Leggi Diritti, obiezioni e rimedi"
+    "disputesLegalBridgeCta": "Leggi Diritti, obiezioni e rimedi",
+    "release07111": "Localizzate in tutte e quattro le lingue le etichette editoriali del nuovo livello Legal, eliminati i link fonte duplicati e aggiunti controlli contro il ritorno di microcopy inglese nelle pagine Legal non inglesi."
   },
   "de": {
     "brand": "Marke",
@@ -7848,7 +7850,8 @@
     "release07110": "Das Audit nach dem Legal-Kapitel ist abgeschlossen: der verbleibende Kontrastfehler im hellen Design ist behoben, Release-Metadaten und Chronologie sind abgeglichen, die Version des Source-Health-Checks ist dynamisch, die Verfahrensfristen 2026 sind präzisiert und die doppelte Verfahrenserklärung wurde aus Disputed Dots entfernt, ohne eingefrorene Forschungsbelege zu verändern.",
     "disputesLegalBridgeTitle": "Das Verfahren steht jetzt an einem Ort",
     "disputesLegalBridgeBody": "Formelle Einwände, Standing, Anbieter, Fristen und Appeals werden unter Rechte, Einwände und Rechtsbehelfe erklärt. Disputed Dots konzentriert sich auf die einzelnen Fälle.",
-    "disputesLegalBridgeCta": "Rechte, Einwände und Rechtsbehelfe lesen"
+    "disputesLegalBridgeCta": "Rechte, Einwände und Rechtsbehelfe lesen",
+    "release07111": "Die redaktionellen Labels der neuen Legal-Ebene wurden in allen vier Sprachen lokalisiert, doppelte Quellenlinks entfernt und Regressionstests gegen englische UI-Texte auf nicht-englischen Legal-Seiten ergänzt."
   },
   "fr": {
     "brand": "Marque",
@@ -10465,6 +10468,7 @@
     "release07110": "L'audit suivant le chapitre Legal est clos : le dernier défaut de contraste en thème clair est corrigé, les métadonnées et la chronologie des versions sont alignées, la version du contrôle de santé des sources est dynamique, les délais juridiques 2026 sont précisés et la procédure dupliquée a été retirée de Disputed Dots, sans modifier les preuves de recherche gelées.",
     "disputesLegalBridgeTitle": "La procédure est désormais regroupée",
     "disputesLegalBridgeBody": "Les objections formelles, la qualité pour agir, les prestataires, les délais et les recours sont expliqués dans Droits, objections et recours. Disputed Dots reste centré sur les cas individuels.",
-    "disputesLegalBridgeCta": "Lire Droits, objections et recours"
+    "disputesLegalBridgeCta": "Lire Droits, objections et recours",
+    "release07111": "Les libellés éditoriaux de la nouvelle couche Legal ont été localisés dans les quatre langues, les liens de source dupliqués supprimés et des contrôles ajoutés contre le retour de microtextes anglais sur les pages Legal non anglophones."
   }
 }

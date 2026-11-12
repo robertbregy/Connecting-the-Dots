@@ -176,6 +176,31 @@ for language in LANGS:
     loc=legal_layer.get('locales',{}).get(language,{})
     if len(loc.get('timings',[]))!=5 or len(loc.get('glossary',[]))!=5: fail('Legal timing/glossary incomplete: '+language)
 
+
+
+# v0.7.111 Legal localization integrity.
+legal_labels={
+    'en':('PROCEDURE','READING','CONTRACT'),
+    'it':('PROCEDURA','LETTURA','CONTRATTO'),
+    'de':('VERFAHREN','LEKTÜRE','VERTRAG'),
+    'fr':('PROCÉDURE','LECTURE','CONTRAT'),
+}
+for language,expected in legal_labels.items():
+    loc=legal_layer.get('locales',{}).get(language,{})
+    actual=(loc.get('badgeProcedure'),loc.get('badgeReading'),loc.get('badgeContract'))
+    if actual!=expected: fail('Legal editorial badge localization mismatch: '+language)
+    page=(ROOT/'guides'/language/'legal'/'index.html').read_text(encoding='utf-8')
+    for label in expected:
+        if ('>'+label+'<') not in page: fail('Localized Legal badge missing from standalone page: '+language+'/'+label)
+    if language!='en':
+        for leaked in ('>PROCEDURE<','>READING<','>CONTRACT<'):
+            if leaked in page: fail('English Legal UI badge leaked into '+language+': '+leaked)
+renderer=(ROOT/'scripts'/'render_legal_layer.py').read_text(encoding='utf-8')
+if renderer.count('source_chip(S["independentObjectors"], "ICANN · Independent Objectors")')!=2:
+    fail('Independent Objectors source chip count drifted; expect one in source inventory and one timing citation')
+if renderer.count('source_chip(S["singularPlural"], "ICANN · Singular/Plural Evaluation")')!=2:
+    fail('Singular/Plural source chip count drifted; expect one in source inventory and one timing citation')
+
 # v0.7.40 release-history integrity: the public history must begin with the package version
 # and every published summary key must exist in all four languages.
 history=json_file('release_history.json').get('releases',[])
