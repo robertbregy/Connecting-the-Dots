@@ -66,6 +66,7 @@ def is_public_path(relative: str) -> bool:
     if parts[0] == 'downloads':
         return suffix in {'.zip', '.sha256'}
     return (relative in RESEARCH_FILES or
+            (len(parts) == 3 and parts[0] == 'research' and parts[1] in {'it','de','fr'} and parts[2] == 'index.html') or
             (relative.startswith('research/reader-study/') and suffix == '.html'))
 
 
