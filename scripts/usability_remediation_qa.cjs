@@ -106,8 +106,11 @@ function staticChecks(){
   assert.deepEqual(lost,['disputesMechanismsSub','disputesMechanismsTitle','insideReplacePublicScheduleBody','insideStateCurrent'],'Unreviewed translated key disappeared: '+file);
   const legalBridge=after.querySelector('#disputeMechanisms.disputesLegalBridge');
   assert.ok(legalBridge,'Rendered Legal bridge missing: '+file);
-  const legalBridgeLink=legalBridge.querySelector('a[data-open-section="legal"][href="#legal"]');
-  assert.ok(legalBridgeLink,'Rendered Legal bridge destination missing: '+file);
+  const legalBridgeLink=legalBridge.querySelector('a[href]');
+  assert.ok(legalBridgeLink,'Rendered Legal bridge link missing: '+file);
+  const legalHref=legalBridgeLink.getAttribute('href')||'';
+  assert.ok(legalHref==='#legal'||/^(?:\.\/)?\?tab=legal#legal$/.test(legalHref)||/[?&]tab=legal#legal$/.test(legalHref),'Rendered Legal bridge destination missing: '+file+' -> '+legalHref);
+  assert.ok(after.getElementById('legal'),'Rendered Legal chapter missing: '+file);
   for(const key of ['disputesLegalBridgeTitle','disputesLegalBridgeBody','disputesLegalBridgeCta']) assert.ok(legalBridge.textContent.includes(translations[lang][key]),'Rendered Legal bridge text missing: '+file+'/'+key);
   for(const key of ['insideReplaceCompletedBody','insideStateObserved','insideQualityTitle','nissayCaseState']){
     assert.ok(afterKeys.has(key),'Missing translated review addition: '+file+'/'+key);
