@@ -147,6 +147,26 @@ health=(ROOT/'scripts'/'check_external_sources.py').read_text(encoding='utf-8')
 if 'SITE_VERSION = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))["version"]' not in health: fail('Source-health version must derive from package metadata')
 if re.search(r'Source-Health/0\.7\.\d+',health): fail('Source-health checker still hard-codes a release')
 if 'class="disputeMechanisms"' in source_html: fail('Disputed Dots still duplicates Legal procedure')
+if "document.querySelector('#disputeMechanisms.disputeMechanisms')" not in appjs: fail('Runtime dispute renderer can overwrite the reviewed Legal bridge')
+for token in ('disputesLegalBridgeTitle','disputesLegalBridgeBody','data-open-section="legal"'):
+    if token not in source_html: fail('Disputed Dots Legal bridge missing: '+token)
+legal_layer=json_file('legal_layer.json')
+for language in LANGS:
+    loc=legal_layer.get('locales',{}).get(language,{})
+    if len(loc.get('timings',[]))!=5 or len(loc.get('glossary',[]))!=5: fail('Legal timing/glossary incomplete: '+language)
+
+if not changelog.lstrip().startswith(f'# v{version}'): fail('CHANGELOG latest heading does not match package version')
+m=re.search(r'## Current release\s+\*\*v(\d+\.\d+\.\d+)',readme,re.S)
+if not m or m.group(1)!=version: fail('README Current release does not match package version')
+for recent in ('0.7.107','0.7.108','0.7.109',version):
+    if f'v{recent}' not in changelog or f'v{recent}' not in readme: fail('Recent release chronology missing: v'+recent)
+style_text=(ROOT/'assets'/'style.css').read_text(encoding='utf-8')
+wm=re.search(r'\.wordMark\{[^}]*\}',style_text)
+if not wm or 'color:var(--accent-text)' not in wm.group(0): fail('Audited wordMark contrast correction missing')
+health=(ROOT/'scripts'/'check_external_sources.py').read_text(encoding='utf-8')
+if 'SITE_VERSION = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))["version"]' not in health: fail('Source-health version must derive from package metadata')
+if re.search(r'Source-Health/0\.7\.\d+',health): fail('Source-health checker still hard-codes a release')
+if 'class="disputeMechanisms"' in source_html: fail('Disputed Dots still duplicates Legal procedure')
 if "document.querySelector('#disputeMechanisms.disputeMechanisms')" not in appjs:
     fail('Runtime dispute renderer can overwrite the reviewed Legal bridge')
 for token in ('disputesLegalBridgeTitle','disputesLegalBridgeBody','data-open-section="legal"'):
