@@ -241,6 +241,23 @@ class FreshnessTests(unittest.TestCase):
         self.assertEqual(at["state"], "review-due")
         self.assertEqual(at["ageDays"], 14)
 
+    def test_membership_review_preserves_the_snapshot_date(self):
+        entry = self.policy["snapshots"][0]
+        del entry["nextReview"]
+        entry.update(reviewAfterDays=30, membershipReviewFile="membership.json")
+        (self.root / "membership.json").write_text(json.dumps({
+            "baseline": {"observedOn": "2026-10-04"},
+            "reviewedOn": "2026-11-18", "scope": "delegated membership only"
+        }))
+        fresh = self.evaluate("2026-10-04", "2026-11-18T12:00:00")
+        expired = self.evaluate("2026-10-04", "2026-12-18T12:00:00")
+        mismatch = self.evaluate("2026-10-05", "2026-11-18T12:00:00")
+        self.assertEqual(fresh["observedOn"], "2026-10-04")
+        self.assertEqual(fresh["membershipReviewedOn"], "2026-11-18")
+        self.assertFalse(fresh["reviewRequired"])
+        self.assertTrue(expired["reviewRequired"])
+        self.assertEqual(mismatch["state"], "metadata-error")
+
     def test_milestone_triggers_even_when_under_age_threshold(self):
         before = self.evaluate("2026-11-15", "2026-11-16T12:00:00")
         at = self.evaluate("2026-11-15", "2026-11-17T12:00:00")
