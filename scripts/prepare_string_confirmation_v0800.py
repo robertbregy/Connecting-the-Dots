@@ -654,6 +654,35 @@ for lang, values in replacement_copy.items():
 dump("data/translations.json", tr)
 
 # ---------------------------------------------------------------------------
+# 6b. Legal/procedural layer: advance the temporal status only.
+# ---------------------------------------------------------------------------
+legal = load("data/legal_layer.json")
+legal["reviewedOn"] = DATE
+legal["status"] = "string-confirmation-community-input-open"
+legal.setdefault("sources", {})["icannStringConfirmation"] = current_prov["officialAnnouncementReference"]
+legal_status = {
+    "en": {
+        "statusTitle": "2026 status · String Confirmation completed",
+        "statusBody": "At this editorial review on 17 November 2026, String Confirmation Day has occurred and the Community Input and Objections Period is open through 16 March 2027. This is the initial objection window; later 30-day windows can still open after String Evaluation and for eligible .Brand String Change requests. The chapter describes the published procedure and does not infer objections or outcomes that are not publicly recorded.",
+    },
+    "it": {
+        "statusTitle": "Stato 2026 · String Confirmation completato",
+        "statusBody": "Alla verifica editoriale del 17 novembre 2026, lo String Confirmation Day si è svolto e il Community Input and Objections Period è aperto fino al 16 marzo 2027. Questa è la finestra iniziale per le obiezioni; successive finestre di 30 giorni possono ancora aprirsi dopo la String Evaluation e per richieste ammissibili di .Brand String Change. Il capitolo descrive la procedura pubblicata e non inferisce obiezioni o esiti che non siano pubblicamente documentati.",
+    },
+    "de": {
+        "statusTitle": "Stand 2026 · String Confirmation abgeschlossen",
+        "statusBody": "Zum Redaktionsstand vom 17. November 2026 ist der String Confirmation Day abgeschlossen und die Community Input and Objections Period bis zum 16. März 2027 geöffnet. Dies ist das erste Einwandsfenster; nach der String Evaluation und bei zulässigen .Brand String Change-Anträgen können weiterhin zusätzliche 30-Tage-Fenster folgen. Das Kapitel beschreibt das veröffentlichte Verfahren und leitet keine nicht öffentlich dokumentierten Einwände oder Ergebnisse ab.",
+    },
+    "fr": {
+        "statusTitle": "État 2026 · String Confirmation achevé",
+        "statusBody": "À la revue éditoriale du 17 novembre 2026, le String Confirmation Day a eu lieu et la période Community Input and Objections est ouverte jusqu'au 16 mars 2027. Il s'agit de la fenêtre initiale d'objections ; d'autres fenêtres de 30 jours peuvent encore s'ouvrir après la String Evaluation et pour certaines demandes de .Brand String Change. Le chapitre décrit la procédure publiée et ne déduit ni objection ni résultat qui ne soit publiquement documenté.",
+    },
+}
+for lang, values in legal_status.items():
+    legal["locales"][lang].update(values)
+dump("data/legal_layer.json", legal)
+
+# ---------------------------------------------------------------------------
 # 7. Field-note renderer: allow the new dated update while preserving history.
 # ---------------------------------------------------------------------------
 replace_once(
