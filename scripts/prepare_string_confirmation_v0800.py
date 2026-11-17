@@ -1083,6 +1083,22 @@ replace_once(
     "assert.equal(articleSchema.citation.length,28,page+' schema citation list incomplete');",
 )
 
+replace_once(
+    "scripts/validate_multilingual.js",
+    "for(const [slug,sourceCount,sectionCount] of [['objectors-eoi',4,5],['replacement-strings',14,7],['background-screening',6,5]]){",
+    "for(const [slug,sourceCount,sectionCount] of [['objectors-eoi',4,5],['replacement-strings',18,8],['background-screening',6,5]]){",
+)
+replace_once(
+    "scripts/validate_multilingual.js",
+    "assert.equal(article.querySelectorAll('[data-editorial-revision]').length,slug==='replacement-strings'?3:slug==='objectors-eoi'?2:1,page+' dated revision missing: '+slug);",
+    "assert.equal(article.querySelectorAll('[data-editorial-revision]').length,slug==='replacement-strings'?4:slug==='objectors-eoi'?2:1,page+' dated revision missing: '+slug);",
+)
+replace_once(
+    "scripts/validate_multilingual.js",
+    "assert.equal(jsonLD.dateModified,slug==='objectors-eoi'?'2026-10-26':slug==='replacement-strings'?'2026-10-18':'2026-10-17',page+' wrong investigation source review date');",
+    "assert.equal(jsonLD.dateModified,slug==='objectors-eoi'?'2026-10-26':slug==='replacement-strings'?'2026-11-17':'2026-10-17',page+' wrong investigation source review date');",
+)
+
 # Browser audit: public confirmed contention replaces preliminary Reveal overlap.
 audit = text("scripts/audit_aps_application_atlas.js")
 audit = audit.replace("assert.equal(loaded.exact,263);", "assert.equal(loaded.exact,226);")
