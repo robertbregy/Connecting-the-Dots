@@ -570,8 +570,8 @@ replace_once("assets/aps-atlas.js", old_block, new_block)
 
 replace_once(
     "scripts/render_aps_application_atlas.py",
-    'graph["contention"]["officialRevealListURL"]',
-    'graph["contention"].get("officialCurrentListURL",graph["contention"]["officialRevealListURL"])',
+    "graph['contention']['officialRevealListURL']",
+    "graph['contention'].get('officialCurrentListURL',graph['contention']['officialRevealListURL'])",
 )
 replace_once(
     "scripts/render_aps_application_atlas.py",
