@@ -149,7 +149,7 @@ def render(root:Path=ROOT):
 <a download href="../../data/aps_2026_record_observations.csv">{q(t['apsAtlasDownloadHistory'])}</a></div>
 <p>{q(t['apsAtlasObservedStatusNote'])}</p></section>
 </main><footer class="apsFooter">{q(t['apsAtlasFooter'])} · <a href="../../{lang}/?tab=explore">Connecting the Dots</a>
-· <a href="https://doi.org/10.5281/zenodo.23288603">RR2 · DOI</a>
+· <a href="https://doi.org/10.5281/zenodo.24325521">RR3 · DOI</a>
 · v{q(pub['version'])}</footer>
 <script>
 (function(){{

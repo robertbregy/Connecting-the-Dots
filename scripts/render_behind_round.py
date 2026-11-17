@@ -502,7 +502,7 @@ def render_page(data,tr,lang,pub,detail=False):
 {content}
 </main>
 <footer>Connecting the Dots · <a href="{BASE}{lang}/">ICANN 2026</a> ·
-<a href="https://doi.org/10.5281/zenodo.23288603">RR2 · latest archived research</a> · <a href="https://doi.org/10.5281/zenodo.23262623">RR1 · original Reveal Day snapshot</a></footer></body></html>
+<a href="https://doi.org/10.5281/zenodo.24325521">RR3 · latest archived research</a> · <a href="https://doi.org/10.5281/zenodo.23262623">RR1 · original Reveal Day snapshot</a></footer></body></html>
 '''
 
 def build_behind_round_pages(root=None,publication=None):

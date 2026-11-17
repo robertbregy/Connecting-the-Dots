@@ -1,6 +1,6 @@
 {
-  "title": "Connecting the Dots · Research Release RR2 · Post-Reveal Evidence Consolidation",
-  "description": "Second citable scientific dataset release of Connecting the Dots. Incorporates ICANN's official 7 October 2026 Reveal Day statistics (1,615 active applications; 481 applicant organizations; 263 preliminary identical-string contention sets), with separately labelled secondary 2026 index coverage (980 primary strings; 1,608 primary-string application records plus six variant-only records). Includes reproducible historical 2000/2004/2012 application evidence and dated IANA records. Counts across submission, payment, official and secondary datasets represent distinct stages or sources. The public 2026 APS application-level corpus is not claimed complete. Release RR1 and its DOI remain immutable.",
+  "title": "Connecting the Dots · Research Release RR3 · String Confirmation 2026",
+  "description": "Third citable scientific dataset release of Connecting the Dots, based on the 17 November 2026 ICANN String Confirmation snapshot. It preserves 152 replacement selections and nine withdrawals in the frozen public evidence, and compares 226 published contention sets covering 705 applications with 263 sets covering 891 applications at Reveal Day. ICANN’s announcement and the public APS evidence differ by four in the proceeding-application aggregate after accounting for the separately documented administrative-check case; the discrepancy remains unresolved and does not establish four missing records. Later APS observations are dated and reported separately. The archive preserves reproducible evidence, provenance, and the RR3 scientific addendum. The working paper remains a living draft.",
   "creators": [
     {
       "name": "Bregy, Robert"
@@ -30,5 +30,5 @@
       "scheme": "url"
     }
   ],
-  "version": "RR2"
+  "version": "RR3"
 }

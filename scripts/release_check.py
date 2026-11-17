@@ -696,27 +696,28 @@ rr_current=json.loads((ROOT/'research'/'research_release_manifest.json').read_te
 if rr_current.get('currentSiteVersion')!=version:
     fail('Research manifest currentSiteVersion is inconsistent with technical release')
 current_rr=rr_current['currentResearchRelease']
-if current_rr.get('id')!='RR2' or current_rr.get('doi')!='10.5281/zenodo.23288603':
-    fail('The verified latest scientific release RR2 is not reflected in the current manifest')
-if current_rr.get('conceptDoi')!='10.5281/zenodo.23262622' or current_rr.get('conceptRecordId')!='23262622':
-    fail('RR2 must belong to the existing RR1 Zenodo concept series')
-if current_rr.get('githubTag')!='RR2' or current_rr.get('githubFrozenCommit')!='33803aa3fa69f1abb4cce7fbd49a0788ee9a33c9':
-    fail('RR2 source tag is not the verified frozen scientific commit')
-if rr_current.get('nextPlannedResearchRelease',{}).get('id')!='RR3':
-    fail('17 November String Confirmation must become RR3 after RR2 publication')
-history_rr=rr_current.get('previousResearchReleases',[])
-if len(history_rr)!=1 or history_rr[0].get('id')!='RR1' or history_rr[0].get('doi')!='10.5281/zenodo.23262623':
-    fail('Previously published RR1 version and DOI must remain separately citable')
-if history_rr[0].get('githubFrozenCommit')!='5d52274935cda7712172873f46d456e4c0a09c7e':
-    fail('Frozen Git tag of archived RR1 differs from original')
-verified=(ROOT/'research'/'rr2_publication_verification.json')
-if not verified.exists():
-    fail('Missing independent GitHub–Zenodo verification evidence for RR2')
-verified=json.loads(verified.read_text(encoding='utf-8'))
-if verified.get('verificationStatus')!='GITHUB_ZENODO_VERSION_CHAIN_VERIFIED' or verified.get('doi')!=current_rr['doi'] or verified.get('conceptDoi')!=current_rr['conceptDoi']:
-    fail('RR2 DOI and Zenodo concept-series evidence mismatch')
-if verified.get('githubRelease')!='https://github.com/robertbregy/Connecting-the-Dots/releases/tag/RR2' or verified.get('frozenCommit')!=current_rr['githubFrozenCommit']:
-    fail('RR2 GitHub Release evidence is missing or inconsistent')
+if (current_rr.get('id'), current_rr.get('doi'), current_rr.get('githubFrozenCommit')) != (
+        'RR3', '10.5281/zenodo.24325521', 'a088387c79795f05318f5b468b8e750c9dfe93c1'):
+    fail('The current research manifest must identify the verified RR3')
+concept = '10.5281/zenodo.23262622'
+releases = [current_rr, *rr_current.get('previousResearchReleases', [])]
+expected_research = [
+    ('RR3', '10.5281/zenodo.24325521', 'a088387c79795f05318f5b468b8e750c9dfe93c1'),
+    ('RR2', '10.5281/zenodo.23288603', '33803aa3fa69f1abb4cce7fbd49a0788ee9a33c9'),
+    ('RR1', '10.5281/zenodo.23262623', '5d52274935cda7712172873f46d456e4c0a09c7e'),
+]
+if [(rr['id'], rr['doi'], rr['githubFrozenCommit']) for rr in releases] != expected_research:
+    fail('Published research releases must preserve their specific DOIs and frozen source commits')
+for rr in releases:
+    if (rr['conceptDoi'], rr['conceptRecordId'], rr['githubTag']) != (concept, '23262622', rr['id']):
+        fail('Research release must retain its tag and Zenodo concept series: ' + rr['id'])
+    if rr['id'] == 'RR1':
+        continue
+    verified = json.loads((ROOT / 'research' / (rr['id'].lower() + '_publication_verification.json')).read_text())
+    if (verified.get('verificationStatus'), verified.get('doi'), verified.get('conceptDoi'),
+        verified.get('githubRelease'), verified.get('frozenCommit')) != (
+        'GITHUB_ZENODO_VERSION_CHAIN_VERIFIED', rr['doi'], concept, rr['releaseUrl'], rr['githubFrozenCommit']):
+        fail('GitHub–Zenodo version verification differs from manifest: ' + rr['id'])
 for lang in LANGS:
     if '{updated}' not in translations[lang].get('exploreSnapshotClocks',''):
         fail('Research-versus-website version disclosure lost its renderable update date: '+lang)
@@ -894,18 +895,14 @@ if not current_zip.exists() or not checkfile.exists():
 digest=hashlib.sha256(current_zip.read_bytes()).hexdigest()
 if checkfile.read_text(encoding='utf-8').strip()!=f'{digest}  {current_zip.name}':
     fail('Current ZIP checksum sidecar invalid')
+frozen_digest = publication_meta.get('currentDataPackSha256')
+if frozen_digest and digest != frozen_digest:
+    fail('Published technical ZIP differs from its fixed SHA-256')
+sys.path.insert(0, str(ROOT))
+from build import verify_data_pack_content
+verify_data_pack_content(current_zip, bibliography_sync=bool(frozen_digest))
 with zipfile.ZipFile(current_zip) as archive:
-    if archive.testzip(): fail('Current versioned ZIP integrity error')
-    sys.path.insert(0,str(ROOT))
-    from build import data_pack_files
-    expected={path.relative_to(DATA).as_posix():path for path in data_pack_files()}
-    if set(archive.namelist())!=set(expected):
-        fail('Versioned ZIP source members do not match complete current data corpus')
-    for name,path in expected.items():
-        if archive.read(name)!=path.read_bytes():
-            fail('Versioned ZIP source byte parity failed for '+name)
-    included=json.loads(archive.read('manifest.json'))
-    if included.get('version')!=version:
+    if json.loads(archive.read('manifest.json')).get('version') != version:
         fail('Versioned ZIP manifest is not this technical publication')
 
 # JavaScript syntax where Node is available.
@@ -926,8 +923,8 @@ if len(events)!=12 or len({event['id'] for event in events})!=12:
     fail('Inside the Round event count or unique ids')
 if not (publication_meta['asOf'] <= chronicle.get('lastReviewed','') <= publication_meta['releasedOn']):
     fail('Inside the Round editorial review outside snapshot/publication date range')
-if publication_meta.get('researchRelease')!='RR2' or publication_meta.get('doi')!='10.5281/zenodo.23288603':
-    fail('Current publication does not cite the verified RR2 DOI')
+if publication_meta.get('researchRelease')!=current_rr['id'] or publication_meta.get('doi')!=current_rr['doi']:
+    fail('Current publication does not cite the verified research DOI')
 if publication_meta.get('conceptDoi')!='10.5281/zenodo.23262622':
     fail('Current website does not link the original RR1/RR2 version concept')
 chronicle_states={event['state'] for event in events}
@@ -965,13 +962,13 @@ if not community_input or community_input.get('state')!='current' or community_i
 reveal=next(e for e in events if e['id']=='reveal-day')
 if not any('CDL2651T-T31516/summary' in item.get('source','') for item in reveal.get('extraSources',[])):
     fail('Official .lugano ICANN APS application source missing')
-bibliographic_date=json.loads((DATA/'research_bibliographic_corrections.json').read_text())['zenodoDatePublished']
+bibliographic_date=current_rr['publishedOn']
 rrmeta=json.loads((ROOT/'research'/'research_release_manifest.json').read_text(encoding='utf-8'))['currentResearchRelease']
 citation=(ROOT/'CITATION.cff').read_text(encoding='utf-8')
 if f'date-released: "{bibliographic_date}"' not in citation or f'version: "{rrmeta["id"]}"' not in citation:
     fail('CITATION.cff must match the actual version-specific scientific release date, not the technical site update')
 if rrmeta['doi']!=publication_meta.get('doi') or f'value: "{rrmeta["doi"]}"' not in citation:
-    fail('Current RR2 DOI citation differs from the verified Zenodo deposit')
+    fail('Current DOI citation differs from the verified Zenodo deposit')
 paper_revision=json.loads((ROOT/'research'/'research_release_manifest.json').read_text(encoding='utf-8')).get('workingPaperRevision', {})
 if not re.fullmatch(r'\d+\.\d+-draft', publication_meta.get('paperVersion', '')):
     fail('Working paper revision must have an explicit draft version')
@@ -989,7 +986,7 @@ if not publication_meta.get('sourceReviewCommit') or publication_meta.get('sourc
     fail('Source-review provenance commit must be explicit and aligned with the compatibility field')
 if 'not the published merge commit' not in publication_meta.get('buildProvenanceRole',''):
     fail('Build provenance role remains ambiguous')
-if not (publication_meta['researchSnapshot'] <= publication_meta.get('paperRevisedOn','') <= publication_meta['releasedOn']):
+if not (publication_meta['asOf'] <= publication_meta.get('paperRevisedOn','') <= publication_meta['releasedOn']):
     fail('Working paper scholarly revision date outside research-snapshot/publication range')
 if 'id="inside-round"' not in source_html or 'data-target="inside-round"' not in source_html:
     fail('Inside the Round missing from primary navigation and site source')
@@ -1386,12 +1383,12 @@ if (len(current_zip_download)!=1 or current_zip_download[0].get('version')!=vers
     fail('Dataset JSON-LD must advertise the current versioned ZIP and official APS CSV')
 if ds.get('identifier')!='https://robertbregy.github.io/Connecting-the-Dots/data/manifest.json#v'+version:
     fail('Live site Dataset identity was incorrectly attributed to frozen RR2')
-if ds.get('citation')!='https://doi.org/10.5281/zenodo.23288603':
-    fail('Latest immutable research citation RR2 is missing from technical dataset metadata')
-if '## Suggested citation for RR2' not in (ROOT/'research'/'connecting-the-dots-working-paper-v1.md').read_text(encoding='utf-8'):
-    fail('Living working paper must recommend current archived RR2 first')
-if '<h2>Suggested citation for RR2' not in (ROOT/'research'/'connecting-the-dots-working-paper-v1.html').read_text(encoding='utf-8'):
-    fail('Living working paper HTML must recommend current archived RR2 first')
+if ds.get('citation')!=current_rr['doiUrl']:
+    fail('Latest immutable research citation is missing from technical dataset metadata')
+if '## Suggested citation for the archived datasets' not in (ROOT/'research'/'connecting-the-dots-working-paper-v1.md').read_text(encoding='utf-8'):
+    fail('Living working paper must provide citations for the archived datasets')
+if '<h2>Suggested citation for the archived datasets' not in (ROOT/'research'/'connecting-the-dots-working-paper-v1.html').read_text(encoding='utf-8'):
+    fail('Living working paper HTML must provide citations for the archived datasets')
 
 # Working-paper revisions may evolve, but the dated RR1 evidence and citation do not.
 working_md=(ROOT/'research'/'connecting-the-dots-working-paper-v1.md').read_text(encoding='utf-8')
@@ -1400,14 +1397,14 @@ for fragment in ['Working Paper v'+publication_meta['paperVersion'], 'Editorial 
     if fragment not in working_md or fragment not in working_html:
         fail('Working paper HTML/Markdown methodological revision mismatch: '+fragment)
 if f'date-released: "{bibliographic_date}"' not in citation or publication_meta.get('asOf')!='2026-10-10' or publication_meta.get('releasedOn') < publication_meta.get('asOf'):
-    fail('Current RR2 publication date must match the verified release, independently of technical versions')
+    fail('Current research publication date must match the verified release, independently of technical versions')
 research_page=(ROOT/'research'/'index.html').read_text(encoding='utf-8')
-if '10.5281/zenodo.23288603' not in research_page or '10.5281/zenodo.23262623' not in research_page or '10.5281/zenodo.23262622' not in research_page:
-    fail('Research landing must distinguish RR2, archived RR1 and the shared concept DOI')
-if 'RR3' not in research_page or 'RR2 is a dated, immutable' in research_page:
+if any(rr['doi'] not in research_page for rr in releases) or concept not in research_page:
+    fail('Research landing must distinguish current and previous version DOIs and the shared concept DOI')
+if 'What RR3 identifies' not in research_page or 'may form <strong>RR3</strong>' in research_page:
     fail('Research landing next milestone or scientific scope not revised')
-if 'github.com/robertbregy/Connecting-the-Dots/archive/refs/tags/RR2.zip' not in research_page:
-    fail('Structured RR2 science distribution must reference frozen RR2 source, not legacy website data pack')
+if 'github.com/robertbregy/Connecting-the-Dots/archive/refs/tags/RR3.zip' not in research_page:
+    fail('Structured RR3 science distribution must reference frozen RR3 source, not legacy website data pack')
 
 # Search metadata should remain concise without compromising decorative-image accessibility.
 for lang in LANGS:
@@ -1469,8 +1466,8 @@ for rel in ('research/index.html', 'research/connecting-the-dots-working-paper-v
     page = (ROOT / rel).read_text(encoding='utf-8')
     if technical_pack not in page:
         fail('mutable research page still points to an old technical ZIP: ' + rel)
-    if '10.5281/zenodo.23288603' not in page:
-        fail('RR2 DOI omitted from research material: ' + rel)
+    if any(rr['doi'] not in page for rr in releases):
+        fail('A version DOI is missing from research material: ' + rel)
 working_md = (ROOT / 'research/connecting-the-dots-working-paper-v1.md').read_text(encoding='utf-8')
 if technical_pack in working_md or re.search(r'connecting-the-dots-data-pack-v[0-9.]+\\.zip', working_md):
     fail('working-paper manuscript must not embed a mutable technical-package version')
@@ -1480,7 +1477,7 @@ if '10.5281/zenodo.23288603' not in working_md:
     fail('RR2 DOI omitted from working-paper manuscript')
 for locale in ('it','de','fr'):
     localized=(ROOT/'research'/locale/'index.html').read_text(encoding='utf-8')
-    if technical_pack not in localized:
+    if current_rr['doiUrl'] not in localized or technical_pack not in localized:
         fail('localized Research landing does not point to current technical ZIP: '+locale)
 research_readme = ROOT / 'research/README.md'
 if research_readme.exists() and f'Latest technical site: **v{version}**' not in research_readme.read_text(encoding='utf-8'):

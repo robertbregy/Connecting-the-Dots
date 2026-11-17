@@ -66,7 +66,7 @@ lines[-1] = lines[-1].rstrip(',')
 lines.append('};')
 (DATA / 'publication.js').write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
-# Citation metadata follows the verified CURRENT scholarly release (RR2), independently of technical website versions; previous RR1 remains immutable in the archival manifest.
+# Citation metadata follows the verified current scholarly release, independently of technical website versions; previous RR1 remains immutable in the archival manifest.
 research_manifest = json.loads((ROOT / "research" / "research_release_manifest.json").read_text(encoding="utf-8"))
 rr = research_manifest["currentResearchRelease"]
 if rr["id"] != meta["researchRelease"] or rr["doi"] != meta.get("doi"):
@@ -83,7 +83,10 @@ working_paper["technicalReference"] = {
 }
 working_paper["relationToRR2"] = "RR2 is the immutable archived dataset. The working paper has its own scholarly revision date; live technical references are synchronized separately and do not redate the manuscript or extend the RR1/RR2 DOI coverage."
 (ROOT / "research" / "research_release_manifest.json").write_text(json.dumps(research_manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-research_published_on = json.loads((DATA / "research_bibliographic_corrections.json").read_text())["zenodoDatePublished"]
+bibliographic_correction = json.loads((DATA / "research_bibliographic_corrections.json").read_text())
+research_published_on = (bibliographic_correction["zenodoDatePublished"]
+                         if rr["id"] == bibliographic_correction["researchRelease"]
+                         else rr["publishedOn"])
 cff = f'''cff-version: 1.2.0
 message: "If you use Connecting the Dots in research, please cite the living research publication and the specific research release used."
 title: "Connecting the Dots: A Living Research Atlas of Top-Level Domain Expansion"

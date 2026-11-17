@@ -296,7 +296,7 @@ def render_page(obj: dict, lang: str) -> str:
 <p class="accessDate">{h(t["reviewedLabel"])}: <time datetime="{obj["reviewedOn"]}">{obj["reviewedOn"]}</time></p>
 </main>
 <footer>Connecting the Dots · <a href="{BASE}{lang}/">ICANN 2026</a> ·
-<a href="https://doi.org/10.5281/zenodo.23288603">RR2 · latest archived research</a> · <a href="https://doi.org/10.5281/zenodo.23262623">RR1 · original Reveal Day snapshot</a></footer>
+<a href="https://doi.org/10.5281/zenodo.24325521">RR3 · latest archived research</a> · <a href="https://doi.org/10.5281/zenodo.23262623">RR1 · original Reveal Day snapshot</a></footer>
 <script>{JS}</script></body></html>
 '''
 

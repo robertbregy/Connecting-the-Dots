@@ -15,7 +15,7 @@ const crypto=require('node:crypto');
 const path=require('node:path');
 const reviewPublication=JSON.parse(fs.readFileSync('publication.json','utf8'));
 const REVIEW_PATH=reviewPublication.editorialReviewPath||'docs/editorial-review-'+reviewPublication.releasedOn+'.json';
-assert.ok(/^docs\/editorial-review-\d{4}-\d{2}-\d{2}(?:-v\d+\.\d+\.\d+)?\.json$/.test(REVIEW_PATH),'Invalid exact review path');
+assert.ok(/^docs\/editorial-review-\d{4}-\d{2}-\d{2}(?:-v\d+\.\d+\.\d+(?:-rr3)?)?\.json$/.test(REVIEW_PATH),'Invalid exact review path');
 const REVIEW_BASE='65e0fbe2080c2ee841e8abc01e1ddec113a74b8e';
 const INVARIANTS_SHA='0abaa5eb1c9c93ac506790a79768e8859079baa8800a79d1851e6590d4890844';
 const IMMUTABLE_SHA='b3499c7678cba3eb0fea84eb9f0fc1b87fd06248997ecd60ab0573e88d97592c';
@@ -215,8 +215,16 @@ function checkProtection(review,source,publication){
    assert.equal(correction.doi,'10.5281/zenodo.23288603');
    assert.equal(correction.source,'https://zenodo.org/records/23288603');
    assert.equal(correction.zenodoDatePublished,'2026-10-11');
-   const current=fs.readFileSync(filename,'utf8');
-   assert.equal(sha256(current.replace('date-released: "2026-10-11"','date-released: "2026-10-10"')),digest,'Citation changed beyond the source-backed bibliographic date');
+   const citation=fs.readFileSync(filename,'utf8');
+   const rr3=JSON.parse(fs.readFileSync('research/rr3_publication_verification.json','utf8'));
+   assert.equal(rr3.verificationStatus,'GITHUB_ZENODO_VERSION_CHAIN_VERIFIED');
+   assert.equal(rr3.doi,publication.doi);
+   assert.equal(rr3.conceptDoi,publication.conceptDoi);
+   assert.ok(citation.includes('version: "RR3"')&&citation.includes('date-released: "'+rr3.zenodoPublicationDate+'"')&&citation.includes('value: "'+rr3.doi+'"'),'Live citation does not identify the verified RR3');
+   const previous = citation.replace('version: "RR3"','version: "RR2"')
+      .replace('date-released: "'+rr3.zenodoPublicationDate+'"','date-released: "2026-10-10"')
+      .replace(rr3.doi,correction.doi);
+   assert.equal(sha256(previous),digest,'Unrelated citation metadata changed');
   }else assert.equal(sha256(fs.readFileSync(filename)),digest,'Historical file modified: '+filename);
  }
  assert.equal(digestObject(review.immutableJSON),IMMUTABLE_JSON_SHA,'Historical scientific metadata inventory was rewritten');
@@ -226,11 +234,19 @@ function checkProtection(review,source,publication){
   // Only two current-site metadata properties are mutable. The complete file
   // still needs a reviewed fingerprint; every scientific snapshot property is
   // independently compared to its pre-audit canonical JSON fingerprint.
+  if(filename==='research/research_release_manifest.json'){
+   const previous=JSON.parse(fs.readFileSync('research/rr2_release_manifest.json','utf8'));
+   assert.deepEqual(value.previousResearchReleases,[previous.currentResearchRelease,...previous.previousResearchReleases],
+    'Archived RR1 or RR2 manifest entry changed');
+   value.currentResearchRelease=previous.currentResearchRelease;
+   value.previousResearchReleases=previous.previousResearchReleases;
+   value.nextPlannedResearchRelease=previous.nextPlannedResearchRelease;
+  }
   for(const key of protection.excludedCurrentMetadata)delete value[key];
   assert.equal(digestObject(value),protection.sha256,'Historical scientific metadata modified: '+filename);
  }
  assert.deepEqual(review.immutableResearchIdentifiers,{RR1:'10.5281/zenodo.23262623',RR2:'10.5281/zenodo.23288603',concept:'10.5281/zenodo.23262622'},'Historical research identifiers changed');
- assert.equal(publication.doi,'10.5281/zenodo.23288603','Published RR2 DOI changed');
+ assert.equal(publication.doi,'10.5281/zenodo.24325521','Current RR3 DOI changed');
  assert.equal(publication.conceptDoi,'10.5281/zenodo.23262622','Published DOI series changed');
  assert.equal(publication.asOf,'2026-10-10','Frozen research cutoff changed');
  const patterns={

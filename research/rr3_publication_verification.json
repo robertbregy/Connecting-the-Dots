@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "release": "RR3",
+  "verificationStatus": "GITHUB_ZENODO_VERSION_CHAIN_VERIFIED",
+  "githubRelease": "https://github.com/robertbregy/Connecting-the-Dots/releases/tag/RR3",
+  "frozenCommit": "a088387c79795f05318f5b468b8e750c9dfe93c1",
+  "githubPublishedAtUTC": "2026-11-17T21:46:06Z",
+  "zenodoRecordId": 24325521,
+  "zenodoRecordUrl": "https://zenodo.org/records/24325521",
+  "zenodoCreatedAtUTC": "2026-11-17T21:46:19.822625+00:00",
+  "zenodoPublicationDate": "2026-11-17",
+  "doi": "10.5281/zenodo.24325521",
+  "conceptDoi": "10.5281/zenodo.23262622",
+  "conceptRecordId": "23262622",
+  "archive": {
+    "filename": "robertbregy/Connecting-the-Dots-RR3.zip",
+    "checksum": "md5:6b3ed1f16c3d709850a4bc9d72a1a138"
+  },
+  "previousVersions": [
+    {
+      "release": "RR2",
+      "doi": "10.5281/zenodo.23288603"
+    },
+    {
+      "release": "RR1",
+      "doi": "10.5281/zenodo.23262623"
+    }
+  ]
+}

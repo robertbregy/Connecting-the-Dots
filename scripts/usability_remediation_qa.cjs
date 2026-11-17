@@ -214,7 +214,8 @@ function staticChecks(){
   // while retaining every other link occurrence without rewriting its URL.
   const originalLinks=[...before.querySelectorAll('a[href]')].filter(a=>outsideHome(a)&&!replacedNavigation.has(a)).map(a=>{
    const href=localizedWdoLinks.get(a)??timelineUpdatedLinks.get(a)??a.getAttribute('href'),replacement=operationalLinks.find(link=>link.from===href);
-   return normalize(linkSignature(replacement?replacement.to:href,nativePath),originalPublication.version);
+   const currentCitation=href===originalPublication.doiUrl&&publication.researchRelease==='RR3';
+   return normalize(linkSignature(currentCitation?publication.doiUrl:replacement?replacement.to:href,nativePath),originalPublication.version);
   }).sort();
   const remaining=[{document:after,pagePath:nativePath},...economicsDocuments].flatMap(({document,pagePath})=>[...document.querySelectorAll('a[href]')].filter(outsideHome).map(a=>normalize(linkSignature(a.getAttribute('href'),pagePath),publication.version)));
   for(const href of originalLinks){const i=remaining.indexOf(href);assert.ok(i>=0,'Lost historical source/content link: '+href);remaining.splice(i,1);}
@@ -245,9 +246,9 @@ function staticChecks(){
  assert.equal(hash(archive),checksum,'Current technical ZIP checksum differs from published sidecar');
  const oldResearch=JSON.parse(readOld('research/research_release_manifest.json').toString('utf8'));
  const newResearch=JSON.parse(fs.readFileSync(path.join(root,'research/research_release_manifest.json'),'utf8'));
- assert.deepEqual(newResearch.currentResearchRelease,oldResearch.currentResearchRelease,'Archived RR2 identity changed');
- assert.equal(publication.doi,'10.5281/zenodo.23288603','RR2 DOI has changed');
- assert.equal(hash(fs.readFileSync(path.join(root,'CITATION.cff'))),hash(readOld('CITATION.cff')),'CITATION.cff immutable research reference changed');
+ const archivedRR2=newResearch.previousResearchReleases.find(release=>release.id==='RR2');
+ assert.deepEqual(archivedRR2,oldResearch.currentResearchRelease,'Archived RR2 identity changed');
+ assert.equal(publication.doi,newResearch.currentResearchRelease.doi,'Live citation and research manifest disagree');
  report.researchDataUnchanged=true;
 }
 async function browsers(){
