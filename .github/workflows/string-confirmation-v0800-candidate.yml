@@ -8,6 +8,7 @@ on:
       - scripts/prepare_string_confirmation_v0800.py
       - scripts/build_aps_application_graph_current.py
       - scripts/finalize_string_confirmation_v0800.cjs
+      - scripts/verify_ia_b2_parity.cjs
       - .github/workflows/string-confirmation-v0800-candidate.yml
   workflow_dispatch:
 
