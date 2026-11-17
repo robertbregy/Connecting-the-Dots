@@ -214,7 +214,7 @@ function staticChecks(){
   // while retaining every other link occurrence without rewriting its URL.
   const originalLinks=[...before.querySelectorAll('a[href]')].filter(a=>outsideHome(a)&&!replacedNavigation.has(a)).map(a=>{
    const href=localizedWdoLinks.get(a)??timelineUpdatedLinks.get(a)??a.getAttribute('href'),replacement=operationalLinks.find(link=>link.from===href);
-   const currentCitation=href===originalPublication.doiUrl&&publication.researchRelease==='RR3';
+   const currentCitation=href===originalPublication.doiUrl&&publication.doiUrl!==originalPublication.doiUrl;
    return normalize(linkSignature(currentCitation?publication.doiUrl:replacement?replacement.to:href,nativePath),originalPublication.version);
   }).sort();
   const remaining=[{document:after,pagePath:nativePath},...economicsDocuments].flatMap(({document,pagePath})=>[...document.querySelectorAll('a[href]')].filter(outsideHome).map(a=>normalize(linkSignature(a.getAttribute('href'),pagePath),publication.version)));

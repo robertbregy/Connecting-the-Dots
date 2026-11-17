@@ -331,6 +331,9 @@ def build_catalog(root: Path = ROOT, discovery_manifest: dict | None = None) -> 
             "gitTag": record["githubTag"], "frozenCommit": record["githubFrozenCommit"],
             "immutable": True,
         }
+        for field in ("title", "scientificAddendumUrl"):
+            if field in record:
+                result[field] = record[field]
         if record["id"] == bibliographic["researchRelease"]:
             assert record["doi"] == bibliographic["doi"], "Bibliographic correction targets another DOI"
             result.update({

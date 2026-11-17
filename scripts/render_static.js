@@ -2,6 +2,7 @@
 const fs=require('fs');
 const path=require('path');
 const vm=require('vm');
+const {createHash}=require('node:crypto');
 const {parseHTML}=require('linkedom');
 const root=path.resolve(__dirname,'..');
 const base='https://robertbregy.github.io/Connecting-the-Dots/';
@@ -122,7 +123,11 @@ async function render(language,alias=false){
   if(!sheet || sheet.tagName!=='LINK')throw new Error('Missing stylesheet link');
   sheet.setAttribute('href',`assets/style.css?v=${version}`);
   for(const [id,file] of [['ctd-data-bundle','data/site_bundle.js'],['ctd-i18n-bundle',`data/i18n_${language}.js`],['ctd-worldmap','data/worldmap.js'],['ctd-2026-string-snapshot','data/applications_2026_strings_reveal.js'],['ctd-app','assets/app.js']]){
-    const node=document.getElementById(id);node.textContent='';node.setAttribute('src',`${file}?v=${version}`);node.setAttribute('defer','');
+    // Citation copy and app logic can change with the same technical ZIP version.
+    const revision=['ctd-i18n-bundle','ctd-app'].includes(id)
+      ? '-'+createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex').slice(0,16)
+      : '';
+    const node=document.getElementById(id);node.textContent='';node.setAttribute('src',`${file}?v=${version}${revision}`);node.setAttribute('defer','');
   }
   for(const node of document.querySelectorAll('[src],[href]')){
     for(const attr of ['src','href']){

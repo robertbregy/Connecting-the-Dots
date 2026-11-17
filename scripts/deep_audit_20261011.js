@@ -21,8 +21,9 @@ function check(ok,level,kind,where,message,extra){if(!ok)finding(level,kind,wher
  const manifest=JSON.parse(fs.readFileSync('data/manifest.json','utf8'));
  const research=JSON.parse(fs.readFileSync('research/research_release_manifest.json','utf8'));
  const currentResearch=research.currentResearchRelease;
- const verifiedResearch=JSON.parse(fs.readFileSync('research/rr3_publication_verification.json','utf8'));
- const historicResearch=new Map(research.previousResearchReleases.map(release=>[release.id,release.doi]));
+ if(!/^RR[1-9][0-9]*$/.test(currentResearch.id))throw Error('Invalid current scientific release ID');
+ const verifiedResearch=JSON.parse(fs.readFileSync('research/'+currentResearch.id.toLowerCase()+'_publication_verification.json','utf8'));
+ const releaseDOIs=new Map([currentResearch,...research.previousResearchReleases].map(release=>[release.id,release.doi]));
  const trans=JSON.parse(fs.readFileSync('data/translations.json','utf8'));
  counts.routes=routes.length;
  check(routes.length>=30,'HIGH','SITEMAP','sitemap','Sitemap too small',{count:routes.length});
@@ -42,8 +43,9 @@ function check(ok,level,kind,where,message,extra){if(!ok)finding(level,kind,wher
   currentResearch.githubFrozenCommit===verifiedResearch.frozenCommit &&
   verifiedResearch.verificationStatus==='GITHUB_ZENODO_VERSION_CHAIN_VERIFIED',
   'HIGH','RELEASE','repository','Current scientific citation differs from the verified archive');
- check(historicResearch.get('RR1')==='10.5281/zenodo.23262623' &&
-  historicResearch.get('RR2')==='10.5281/zenodo.23288603',
+ check(releaseDOIs.get('RR1')==='10.5281/zenodo.23262623' &&
+  releaseDOIs.get('RR2')==='10.5281/zenodo.23288603' &&
+  releaseDOIs.get('RR3')==='10.5281/zenodo.24325521',
   'HIGH','ARCHIVAL_HISTORY','repository','An earlier version DOI is missing or changed');
  check(snapshot.official.activeApplications===1615 && snapshot.stringInventory.representedPrimaryApplications===1608,'HIGH','APS','repository','APS counts unexpected');
  // Historical data pack is intentionally pinned and explicitly labelled in Dataset distributions.
@@ -62,7 +64,7 @@ function check(ok,level,kind,where,message,extra){if(!ok)finding(level,kind,wher
  }
  const paper=fs.readFileSync('research/connecting-the-dots-working-paper-v1.md','utf8');
  check(paper.includes('## Suggested citation for the archived datasets') &&
-  [currentResearch.doi,...historicResearch.values()].every(doi=>paper.includes(doi)),
+  [...releaseDOIs.values()].every(doi=>paper.includes(doi)),
   'HIGH','PAPER_IDENTITY','research','Working paper must cite each archived dataset with its specific DOI');
  const ctx=await browser.newContext({viewport:{width:1360,height:840}});
  const page=await ctx.newPage();

@@ -23,7 +23,7 @@ html[data-theme="dark"] body:has(.ctdB2CrossNav){--background:#111820;--bg:#1118
 .ctdB2CrossNav a:focus-visible,.ctdB2Trail a:focus-visible{outline:3px solid var(--accent-text,#0759ad);outline-offset:3px}
 .ctdB2Context{box-sizing:border-box;max-width:1030px;margin:16px auto 24px;padding:4px 20px;border-left:3px solid var(--border,#d5dde5);color:var(--text,#17212e);font:400 14px/1.65 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
 .ctdB2Context strong{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}.ctdB2Context p{margin:0;color:var(--muted,#526174)}
-.ctdB2Trail{display:flex;align-items:center;flex-wrap:wrap;gap:10px;max-width:1030px;margin:16px auto;padding:0 20px;font:550 13px/1.55 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--muted,#526174)}
+.ctdB2Trail{display:flex;align-items:center;flex-wrap:wrap;gap:10px;max-width:1030px;margin:16px auto;padding:0 20px;font:550 13px/1.55 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg,#f5f6f8);color:var(--muted,#526174)}
 .ctdB2Trail a{display:inline-flex;align-items:center;min-height:44px;color:var(--accent-text,#0759ad);text-underline-offset:3px}.ctdB2Trail span[aria-hidden]{opacity:.6}
 body:has(.ctdB2CrossNav) header{background:var(--bg);color:var(--text);border-bottom:1px solid var(--border)}body:has(.ctdB2CrossNav) header a{color:inherit}body:has(.ctdB2CrossNav) main{max-width:1030px}
 body:has(:is(main.governanceArticle,main.accessArticle)){--shadow:0 12px 40px rgba(16,36,57,.035);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;background:var(--bg);color:var(--text)}
@@ -298,12 +298,17 @@ def apply(root: Path) -> int:
         if not re.search(r"</head\s*>", html, re.I):
             raise ValueError(f"Missing HTML head: {file}")
         paper = file.name == "connecting-the-dots-working-paper-v1.html"
-        if not re.search(r"</header\s*>", html, re.I) and not (paper and '<body>' in html):
+        if not re.search(r"</header\s*>", html, re.I) and not (paper and re.search(r'<body\b', html, re.I)):
             raise ValueError(f"Missing leading header or paper body: {file}")
         navigation = make_navigation(root, file, lang, area, translations[lang])
         updated = re.sub(r"</head\s*>", NAV_STYLE + "</head>", html, count=1, flags=re.I)
         if paper:
-            updated = updated.replace("<body>", "<body>\n" + navigation, 1)
+            # Keep the working-paper skip link ahead of the site navigation.
+            updated = re.sub(
+                r'(<body\b[^>]*>\s*(?:<a\b[^>]*\bclass="ctdB2PaperSkip"[^>]*>[\s\S]*?</a>)?)',
+                lambda m: m.group(1) + "\n" + navigation,
+                updated, count=1, flags=re.I,
+            )
         else:
             updated = re.sub(r"</header\s*>", "</header>\n" + navigation, updated, count=1, flags=re.I)
         updated = add_crosspage_features(updated, file, lang, root, area, translations[lang])

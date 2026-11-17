@@ -5,6 +5,7 @@
   "currentResearchRelease": {
     "id": "RR3",
     "label": "String Confirmation 2026",
+    "title": "Connecting the Dots · Research Release RR3 · String Confirmation 2026",
     "publishedOn": "2026-11-17",
     "dataSnapshot": {
       "icann2026StringConfirmation": "2026-11-17",
@@ -21,6 +22,7 @@
     "canonicalUrl": "https://robertbregy.github.io/Connecting-the-Dots/",
     "paper": "research/connecting-the-dots-working-paper-v1.md",
     "scientificAddendum": "research/rr3_addendum_20261117.md",
+    "scientificAddendumUrl": "https://github.com/robertbregy/Connecting-the-Dots/blob/a088387c79795f05318f5b468b8e750c9dfe93c1/research/rr3_addendum_20261117.md",
     "introducedInSiteVersion": "0.8.0"
   },
   "updatePolicy": [

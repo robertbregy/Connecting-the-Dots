@@ -71,10 +71,11 @@ if tuple(int(x) for x in version.split('.')) >= (0,7,79):
     historical_archives={p.relative_to(ROOT).as_posix()
                          for p in (ROOT/'downloads').glob('*.zip')
                          if p.relative_to(ROOT).as_posix()!=current_archive}
-    if set(frozen)!=historical_archives:
+    pinned_historical_archives=set(frozen)-{current_archive}
+    if pinned_historical_archives!=historical_archives:
         fail('Historical archive registry coverage mismatch: missing='+
-             ', '.join(sorted(historical_archives-set(frozen)))+'; unexpected='+
-             ', '.join(sorted(set(frozen)-historical_archives)))
+             ', '.join(sorted(historical_archives-pinned_historical_archives))+'; unexpected='+
+             ', '.join(sorted(pinned_historical_archives-historical_archives)))
     for relative_path,expected in frozen.items():
         p=ROOT/relative_path
         archive=p.name
@@ -696,9 +697,6 @@ rr_current=json.loads((ROOT/'research'/'research_release_manifest.json').read_te
 if rr_current.get('currentSiteVersion')!=version:
     fail('Research manifest currentSiteVersion is inconsistent with technical release')
 current_rr=rr_current['currentResearchRelease']
-if (current_rr.get('id'), current_rr.get('doi'), current_rr.get('githubFrozenCommit')) != (
-        'RR3', '10.5281/zenodo.24325521', 'a088387c79795f05318f5b468b8e750c9dfe93c1'):
-    fail('The current research manifest must identify the verified RR3')
 concept = '10.5281/zenodo.23262622'
 releases = [current_rr, *rr_current.get('previousResearchReleases', [])]
 expected_research = [
@@ -706,18 +704,41 @@ expected_research = [
     ('RR2', '10.5281/zenodo.23288603', '33803aa3fa69f1abb4cce7fbd49a0788ee9a33c9'),
     ('RR1', '10.5281/zenodo.23262623', '5d52274935cda7712172873f46d456e4c0a09c7e'),
 ]
-if [(rr['id'], rr['doi'], rr['githubFrozenCommit']) for rr in releases] != expected_research:
+if [(rr['id'], rr['doi'], rr['githubFrozenCommit']) for rr in releases][-len(expected_research):] != expected_research:
     fail('Published research releases must preserve their specific DOIs and frozen source commits')
+if any(not re.fullmatch(r'RR[1-9][0-9]*', rr['id']) for rr in releases):
+    fail('Invalid scientific release ID')
+release_numbers = [int(rr['id'][2:]) for rr in releases]
+if release_numbers != sorted(set(release_numbers), reverse=True) or len({rr['doi'] for rr in releases}) != len(releases):
+    fail('Scientific releases must have unique identities in descending version order')
+if not isinstance(current_rr.get('title'), str) or not current_rr['title'].strip():
+    fail('Current research manifest lacks the archived dataset title')
+rr3 = next(rr for rr in releases if rr['id'] == 'RR3')
+if rr3.get('title') != 'Connecting the Dots · Research Release RR3 · String Confirmation 2026':
+    fail('Scientific title differs from the published RR3 title')
+if rr3.get('scientificAddendum') != 'research/rr3_addendum_20261117.md':
+    fail('RR3 addendum path differs from its frozen scientific source')
 for rr in releases:
     if (rr['conceptDoi'], rr['conceptRecordId'], rr['githubTag']) != (concept, '23262622', rr['id']):
         fail('Research release must retain its tag and Zenodo concept series: ' + rr['id'])
+    if rr['doiUrl'] != 'https://doi.org/' + rr['doi']:
+        fail('Research release DOI and resolver URL differ: ' + rr['id'])
+    if rr.get('scientificAddendum'):
+        addendum = rr['scientificAddendum']
+        if not re.fullmatch(r'research/[a-zA-Z0-9_.-]+\.md', addendum):
+            fail('Invalid addendum source path: ' + rr['id'])
+        expected_url = f"{publication_meta['repository']}/blob/{rr['githubFrozenCommit']}/{addendum}"
+        if rr.get('scientificAddendumUrl') != expected_url:
+            fail('Scientific addendum must link to the frozen commit: ' + rr['id'])
     if rr['id'] == 'RR1':
         continue
     verified = json.loads((ROOT / 'research' / (rr['id'].lower() + '_publication_verification.json')).read_text())
-    if (verified.get('verificationStatus'), verified.get('doi'), verified.get('conceptDoi'),
-        verified.get('githubRelease'), verified.get('frozenCommit')) != (
-        'GITHUB_ZENODO_VERSION_CHAIN_VERIFIED', rr['doi'], concept, rr['releaseUrl'], rr['githubFrozenCommit']):
+    if (verified.get('release'), verified.get('verificationStatus'), verified.get('doi'),
+        verified.get('conceptDoi'), verified.get('githubRelease'), verified.get('frozenCommit')) != (
+        rr['id'], 'GITHUB_ZENODO_VERSION_CHAIN_VERIFIED', rr['doi'], concept, rr['releaseUrl'], rr['githubFrozenCommit']):
         fail('GitHub–Zenodo version verification differs from manifest: ' + rr['id'])
+    if verified.get('zenodoPublicationDate', rr['publishedOn']) != rr['publishedOn']:
+        fail('Scientific publication date differs from the verified archive: ' + rr['id'])
 for lang in LANGS:
     if '{updated}' not in translations[lang].get('exploreSnapshotClocks',''):
         fail('Research-versus-website version disclosure lost its renderable update date: '+lang)
@@ -895,12 +916,9 @@ if not current_zip.exists() or not checkfile.exists():
 digest=hashlib.sha256(current_zip.read_bytes()).hexdigest()
 if checkfile.read_text(encoding='utf-8').strip()!=f'{digest}  {current_zip.name}':
     fail('Current ZIP checksum sidecar invalid')
-frozen_digest = publication_meta.get('currentDataPackSha256')
-if frozen_digest and digest != frozen_digest:
-    fail('Published technical ZIP differs from its fixed SHA-256')
 sys.path.insert(0, str(ROOT))
 from build import verify_data_pack_content
-verify_data_pack_content(current_zip, bibliography_sync=bool(frozen_digest))
+verify_data_pack_content(current_zip, bibliography_sync=current_rel in json_file('frozen_technical_packages.json')['files'])
 with zipfile.ZipFile(current_zip) as archive:
     if json.loads(archive.read('manifest.json')).get('version') != version:
         fail('Versioned ZIP manifest is not this technical publication')
@@ -969,6 +987,8 @@ if f'date-released: "{bibliographic_date}"' not in citation or f'version: "{rrme
     fail('CITATION.cff must match the actual version-specific scientific release date, not the technical site update')
 if rrmeta['doi']!=publication_meta.get('doi') or f'value: "{rrmeta["doi"]}"' not in citation:
     fail('Current DOI citation differs from the verified Zenodo deposit')
+if 'title: ' + json.dumps(current_rr['title'], ensure_ascii=False) not in citation.splitlines():
+    fail('CITATION.cff must name the verified DOI-bearing dataset')
 paper_revision=json.loads((ROOT/'research'/'research_release_manifest.json').read_text(encoding='utf-8')).get('workingPaperRevision', {})
 if not re.fullmatch(r'\d+\.\d+-draft', publication_meta.get('paperVersion', '')):
     fail('Working paper revision must have an explicit draft version')
@@ -1401,10 +1421,29 @@ if f'date-released: "{bibliographic_date}"' not in citation or publication_meta.
 research_page=(ROOT/'research'/'index.html').read_text(encoding='utf-8')
 if any(rr['doi'] not in research_page for rr in releases) or concept not in research_page:
     fail('Research landing must distinguish current and previous version DOIs and the shared concept DOI')
-if 'What RR3 identifies' not in research_page or 'may form <strong>RR3</strong>' in research_page:
+if f"What {current_rr['id']} identifies" not in research_page or f"may form <strong>{current_rr['id']}</strong>" in research_page:
     fail('Research landing next milestone or scientific scope not revised')
-if 'github.com/robertbregy/Connecting-the-Dots/archive/refs/tags/RR3.zip' not in research_page:
-    fail('Structured RR3 science distribution must reference frozen RR3 source, not legacy website data pack')
+research_structured = [
+    json.loads(body) for body in re.findall(r'<script type="application/ld\+json">([^<]+)</script>', research_page)
+]
+research_datasets = [value for value in research_structured if value.get('@type') == 'Dataset']
+if len(research_datasets) != 1:
+    fail('Research landing must identify exactly one current research dataset')
+research_dataset = research_datasets[0]
+expected_dataset = {
+    'name': current_rr['title'],
+    'version': current_rr['id'],
+    'identifier': current_rr['doiUrl'],
+    'citation': current_rr['doiUrl'],
+    'datePublished': current_rr['publishedOn'],
+}
+if any(research_dataset.get(key) != value for key, value in expected_dataset.items()):
+    fail('Structured research Dataset differs from current archived citation metadata')
+expected_source_zip = f"{publication_meta['repository']}/archive/refs/tags/{current_rr['githubTag']}.zip"
+if research_dataset.get('distribution', {}).get('contentUrl') != expected_source_zip:
+    fail('Structured science distribution must reference the frozen source, not the legacy website data pack')
+if current_rr.get('scientificAddendumUrl') and f'href="{current_rr["scientificAddendumUrl"]}"' not in research_page:
+    fail('Research landing and manifest must link to the same frozen scientific addendum')
 
 # Search metadata should remain concise without compromising decorative-image accessibility.
 for lang in LANGS:

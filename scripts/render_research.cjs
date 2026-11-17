@@ -6,8 +6,14 @@ const {marked}=require('marked');
 const {parseHTML}=require('linkedom');
 const root=path.resolve(__dirname,'..');
 const pub=JSON.parse(fs.readFileSync(path.join(root,'publication.json'),'utf8'));
-const revised=new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(pub.paperRevisedOn+'T00:00:00Z'));
-const technicalSync=new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(new Date((pub.paperTechnicalSyncOn||pub.releasedOn)+'T00:00:00Z'));
+function paperDates(locale) {
+ const formatter = new Intl.DateTimeFormat(locale, {day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
+ return {
+  revised: formatter.format(new Date(pub.paperRevisedOn+'T00:00:00Z')),
+  technicalSync: formatter.format(new Date((pub.paperTechnicalSyncOn||pub.releasedOn)+'T00:00:00Z')),
+ };
+}
+const {revised, technicalSync} = paperDates('en-GB');
 const mdPath=path.join(root,'research/connecting-the-dots-working-paper-v1.md');
 let md=fs.readFileSync(mdPath,'utf8');
 const heading=/\*\*Working Paper v[^*]+\*\*/g;
@@ -17,7 +23,13 @@ md=md.replace(/Current technical data package \*\*v[0-9.]+\*\* \(not a new Zenod
  'Current technical data package: see the live Research & citation landing page. This operational reference is synchronized separately and does not change the manuscript revision date.');
 fs.writeFileSync(mdPath,md);
 const file=path.join(root,pub.paperPath),{document}=parseHTML(fs.readFileSync(file,'utf8'));
-const main=document.querySelector('main');assert.ok(main);
+const main=document.querySelector('main');assert.ok(main?.id);
+main.setAttribute('tabindex','-1');
+const skipLink=document.querySelector('.ctdB2PaperSkip') || document.createElement('a');
+skipLink.className='ctdB2PaperSkip';
+skipLink.setAttribute('href','#'+main.id);
+skipLink.textContent='Skip to main content';
+document.body.prepend(skipLink);
 main.innerHTML=marked.parse(md,{gfm:true});
 document.title='Connecting the Dots · Working Paper v'+pub.paperVersion;
 document.querySelector('meta[name="description"]').setAttribute('content','Living working paper on TLD expansion and ICANN applications. Cites archived RR1 and RR2 evidence and distinguishes the later, separately versioned APS analysis.');
@@ -49,6 +61,29 @@ fs.writeFileSync(file,document.toString().trimEnd()+'\n');
 
 const landingPath=path.join(root,'research/index.html');
 let landing=fs.readFileSync(landingPath,'utf8');
+const {currentResearchRelease:archive}=JSON.parse(fs.readFileSync(path.join(root,'research/research_release_manifest.json'),'utf8'));
+let datasets=0;
+landing=landing.replace(/(<script type="application\/ld\+json">)([^<]+)(<\/script>)/g,(script,open,body,close)=>{
+ const dataset=JSON.parse(body);
+ if(dataset['@type']!=='Dataset')return script;
+ datasets++;
+ dataset.name=archive.title;
+ dataset.version=archive.id;
+ dataset.identifier=archive.doiUrl;
+ dataset.citation=archive.doiUrl;
+ dataset.datePublished=archive.publishedOn;
+ dataset.distribution.contentUrl=pub.repository+'/archive/refs/tags/'+archive.githubTag+'.zip';
+ return open+JSON.stringify(dataset).replace(/</g,'\\u003c')+close;
+});
+assert.equal(datasets,1,'Research landing must have one citable Dataset');
+if(archive.scientificAddendumUrl){
+ const addendumLink=/href="[^"]+"(?=>Read the scientific addendum<\/a>)/g;
+ assert.equal([...landing.matchAll(addendumLink)].length,1,'Research landing must link its scientific addendum');
+ const addendumUrl=new URL(archive.scientificAddendumUrl);
+ assert.ok(addendumUrl.origin==='https://github.com'&&!addendumUrl.search&&!addendumUrl.hash,
+  'The addendum must be linked to its frozen GitHub source');
+ landing=landing.replace(addendumLink,()=>'href="'+addendumUrl.href+'"');
+}
 landing=landing.replace(/independently revisable v[\d.]+(?:-draft)? draft \(revised [^)]+\)/,`independently revisable v${pub.paperVersion} manuscript (revised ${revised})`);
 landing=landing.replace(/independently revisable v[\d.]+-draft manuscript \(revised [^)]+\)/,`independently revisable v${pub.paperVersion} manuscript (revised ${revised})`);
 landing=landing.replace(/connecting-the-dots-data-pack-v[\d.]+\.zip/g,path.basename(pub.currentDataPackPath));
@@ -66,8 +101,8 @@ const researchLocales={
   archiveTitle:'Release scientifiche archiviate',archiveBody:'RR1, RR2 e RR3 sono depositi immutabili con DOI propri. La release tecnica del sito non modifica retroattivamente ciò che è stato archiviato.',
   paperTitle:'Working paper',paperBody:'Il working paper canonico è mantenuto in inglese. La revisione scientifica e la sincronizzazione dei riferimenti tecnici sono due date diverse.',
   currentTitle:'String Confirmation 2026',currentBody:'RR3 archivia lo snapshot dello String Confirmation del 17 novembre 2026. Il sito mantiene una versione tecnica separata.',
-  paperLink:'Leggi il working paper in inglese',packLink:'Pacchetto dati tecnico corrente',rr3Link:'Apri RR3 su Zenodo',home:'Torna all’atlante',method:'Metodo e citazione',
-  sync:'Revisione del paper: '+revised+' · sincronizzazione tecnica: '+technicalSync+'.'
+  paperLink:'Leggi il working paper in inglese',packLink:'Pacchetto dati tecnico corrente',rr3Link:'Apri RR3 su Zenodo',home:'Torna all’atlante',method:'Metodo e citazione',english:'inglese',
+  sync:({revised,technicalSync})=>'Revisione del paper: '+revised+' · sincronizzazione tecnica: '+technicalSync+'.'
  },
  de:{
   title:'Forschung und Zitieren',eyebrow:'Forschung · Evidenz · Reproduzierbarkeit',
@@ -75,8 +110,8 @@ const researchLocales={
   archiveTitle:'Archivierte Forschungsreleases',archiveBody:'RR1, RR2 und RR3 sind unveränderliche Ablagen mit eigenen DOIs. Eine technische Website-Version ändert archivierte Forschung nicht rückwirkend.',
   paperTitle:'Working Paper',paperBody:'Das kanonische Working Paper wird auf Englisch geführt. Wissenschaftliche Revision und technische Referenz-Synchronisierung haben bewusst getrennte Daten.',
   currentTitle:'String Confirmation 2026',currentBody:'RR3 archiviert den Stand der String Confirmation vom 17. November 2026. Die technische Website-Version wird separat geführt.',
-  paperLink:'Working Paper auf Englisch lesen',packLink:'Aktuelles technisches Datenpaket',rr3Link:'RR3 auf Zenodo öffnen',home:'Zurück zum Atlas',method:'Methode und Zitation',
-  sync:'Paper-Revision: '+revised+' · technische Synchronisierung: '+technicalSync+'.'
+  paperLink:'Working Paper auf Englisch lesen',packLink:'Aktuelles technisches Datenpaket',rr3Link:'RR3 auf Zenodo öffnen',home:'Zurück zum Atlas',method:'Methode und Zitation',english:'Englisch',
+  sync:({revised,technicalSync})=>'Paper-Revision: '+revised+' · technische Synchronisierung: '+technicalSync+'.'
  },
  fr:{
   title:'Recherche et citation',eyebrow:'Recherche · preuves · reproductibilité',
@@ -84,15 +119,15 @@ const researchLocales={
   archiveTitle:'Versions scientifiques archivées',archiveBody:'RR1, RR2 et RR3 sont des dépôts immuables avec leurs propres DOI. Une version technique du site ne réécrit pas rétroactivement les archives de recherche.',
   paperTitle:'Working paper',paperBody:'Le working paper canonique est maintenu en anglais. La révision scientifique et la synchronisation des références techniques utilisent volontairement des dates distinctes.',
   currentTitle:'String Confirmation 2026',currentBody:'RR3 archive l’instantané de la String Confirmation du 17 novembre 2026. Le site conserve sa propre version technique.',
-  paperLink:'Lire le working paper en anglais',packLink:'Paquet de données technique courant',rr3Link:'Ouvrir RR3 sur Zenodo',home:'Retour à l’atlas',method:'Méthode et citation',
-  sync:'Révision du paper : '+revised+' · synchronisation technique : '+technicalSync+'.'
+  paperLink:'Lire le working paper en anglais',packLink:'Paquet de données technique courant',rr3Link:'Ouvrir RR3 sur Zenodo',home:'Retour à l’atlas',method:'Méthode et citation',english:'anglais',
+  sync:({revised,technicalSync})=>'Révision du paper : '+revised+' · synchronisation technique : '+technicalSync+'.'
  }
 };
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 for(const [lang,L] of Object.entries(researchLocales)){
  const dir=path.join(root,'research',lang);fs.mkdirSync(dir,{recursive:true});
  const canonical=pub.deployment+'research/'+lang+'/';
- const html='<!doctype html><html lang="'+lang+'"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow,max-image-preview:large"><title>'+esc(L.title)+' | Connecting the Dots</title><meta name="description" content="'+esc(L.intro)+'"><link rel="canonical" href="'+canonical+'"><link rel="alternate" hreflang="en" href="'+pub.deployment+'research/"><link rel="alternate" hreflang="it" href="'+pub.deployment+'research/it/"><link rel="alternate" hreflang="de" href="'+pub.deployment+'research/de/"><link rel="alternate" hreflang="fr" href="'+pub.deployment+'research/fr/"><link rel="alternate" hreflang="x-default" href="'+pub.deployment+'research/"><link rel="icon" href="'+pub.deployment+'assets/logo-mark.png" type="image/png"><style>:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#17212e;background:#f5f6f8}*{box-sizing:border-box}body{margin:0;line-height:1.7}a{color:#0759ad;text-underline-offset:3px}a:focus-visible{outline:3px solid #0759ad;outline-offset:3px}header{background:#142b46;color:#fff;border-bottom:4px solid #4d9bc5}header nav,main,footer{max-width:940px;margin:auto;padding:20px 24px}header a{color:#fff}header nav{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}main{padding-top:38px;padding-bottom:58px}.eyebrow{font-size:.78rem;text-transform:uppercase;font-weight:800;letter-spacing:.12em;color:#44738d}h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.12;letter-spacing:-.03em;margin:10px 0 18px}.lead{font-size:1.17rem;color:#42556c;max-width:760px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0}.button{display:inline-block;padding:12px 18px;border-radius:9px;background:#1c6395;color:#fff;text-decoration:none;font-weight:700}.button.secondary{background:#fff;color:#1c6395;border:1px solid #b0c6d8}section{background:#fff;border:1px solid #d9e2ea;border-radius:12px;padding:25px 28px;margin:18px 0}.sync{font-size:.92rem;color:#58697b}footer{border-top:1px solid #d9e2ea;color:#58697b;font-size:.9rem}</style><link rel="stylesheet" href="../../assets/editorial-shared.css?v='+pub.version+'"><link rel="describedby" type="text/plain" href="../../llms.txt"><link rel="describedby" type="application/json" href="../../agent-catalog.json"></head><body><header><nav aria-label="'+esc(L.method)+'"><a href="../../'+lang+'/"><strong>Connecting the Dots</strong></a><a href="../">'+esc(L.method)+'</a></nav></header><main><div class="eyebrow">'+esc(L.eyebrow)+'</div><h1>'+esc(L.title)+'</h1><p class="lead">'+esc(L.intro)+'</p><div class="actions"><a class="button" href="'+pub.doiUrl+'">'+esc(L.rr3Link)+'</a><a class="button secondary" href="../connecting-the-dots-working-paper-v1.html">'+esc(L.paperLink)+'</a></div><section><h2>'+esc(L.archiveTitle)+'</h2><p>'+esc(L.archiveBody)+'</p><p><a href="https://doi.org/10.5281/zenodo.23262623">RR1</a> · <a href="https://doi.org/10.5281/zenodo.23288603">RR2</a> · <a href="'+pub.doiUrl+'">RR3</a></p></section><section><h2>'+esc(L.paperTitle)+'</h2><p>'+esc(L.paperBody)+'</p><p class="sync">'+esc(L.sync)+'</p></section><section><h2>'+esc(L.currentTitle)+'</h2><p>'+esc(L.currentBody)+'</p><p><a href="../../'+pub.currentDataPackPath+'">'+esc(L.packLink)+' · v'+pub.currentDataPackVersion+'</a></p></section></main><footer><a href="../../'+lang+'/">'+esc(L.home)+'</a> · Connecting the Dots · Robert Bregy</footer></body></html>';
+ const html='<!doctype html><html lang="'+lang+'"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow,max-image-preview:large"><title>'+esc(L.title)+' | Connecting the Dots</title><meta name="description" content="'+esc(L.intro)+'"><link rel="canonical" href="'+canonical+'"><link rel="alternate" hreflang="en" href="'+pub.deployment+'research/"><link rel="alternate" hreflang="it" href="'+pub.deployment+'research/it/"><link rel="alternate" hreflang="de" href="'+pub.deployment+'research/de/"><link rel="alternate" hreflang="fr" href="'+pub.deployment+'research/fr/"><link rel="alternate" hreflang="x-default" href="'+pub.deployment+'research/"><link rel="icon" href="'+pub.deployment+'assets/logo-mark.png" type="image/png"><style>:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#17212e;background:#f5f6f8}*{box-sizing:border-box}body{margin:0;line-height:1.7}a{color:#0759ad;text-underline-offset:3px}a:focus-visible{outline:3px solid #0759ad;outline-offset:3px}header{background:#142b46;color:#fff;border-bottom:4px solid #4d9bc5}header nav,main,footer{max-width:940px;margin:auto;padding:20px 24px}header a{color:#fff}header nav{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}main{padding-top:38px;padding-bottom:58px}.eyebrow{font-size:.78rem;text-transform:uppercase;font-weight:800;letter-spacing:.12em;color:#44738d}h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.12;letter-spacing:-.03em;margin:10px 0 18px}.lead{font-size:1.17rem;color:#42556c;max-width:760px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0}.button{display:inline-block;padding:12px 18px;border-radius:9px;background:#1c6395;color:#fff;text-decoration:none;font-weight:700}.button.secondary{background:#fff;color:#1c6395;border:1px solid #b0c6d8}section{background:#fff;border:1px solid #d9e2ea;border-radius:12px;padding:25px 28px;margin:18px 0}.sync{font-size:.92rem;color:#58697b}footer{border-top:1px solid #d9e2ea;color:#58697b;font-size:.9rem}</style><link rel="stylesheet" href="../../assets/editorial-shared.css?v='+pub.version+'"><link rel="describedby" type="text/plain" href="../../llms.txt"><link rel="describedby" type="application/json" href="../../agent-catalog.json"></head><body><header><nav aria-label="'+esc(L.method)+'"><a href="../../'+lang+'/"><strong>Connecting the Dots</strong></a><a href="../" hreflang="en">'+esc(L.method+' ('+L.english+')')+'</a></nav></header><main><div class="eyebrow">'+esc(L.eyebrow)+'</div><h1>'+esc(L.title)+'</h1><p class="lead">'+esc(L.intro)+'</p><div class="actions"><a class="button" href="'+pub.doiUrl+'">'+esc(L.rr3Link)+'</a><a class="button secondary" href="../connecting-the-dots-working-paper-v1.html" hreflang="en">'+esc(L.paperLink)+'</a></div><section><h2>'+esc(L.archiveTitle)+'</h2><p>'+esc(L.archiveBody)+'</p><p><a href="https://doi.org/10.5281/zenodo.23262623">RR1</a> · <a href="https://doi.org/10.5281/zenodo.23288603">RR2</a> · <a href="'+pub.doiUrl+'">RR3</a></p></section><section><h2>'+esc(L.paperTitle)+'</h2><p>'+esc(L.paperBody)+'</p><p class="sync">'+esc(L.sync(paperDates(lang)))+'</p></section><section><h2>'+esc(L.currentTitle)+'</h2><p>'+esc(L.currentBody)+'</p><p><a href="../../'+pub.currentDataPackPath+'">'+esc(L.packLink)+' · v'+pub.currentDataPackVersion+'</a></p></section></main><footer><a href="../../'+lang+'/">'+esc(L.home)+'</a> · Connecting the Dots · Robert Bregy</footer></body></html>';
  fs.writeFileSync(path.join(dir,'index.html'),html+'\\n');
 }
 landing=fs.readFileSync(landingPath,'utf8');

@@ -66,7 +66,7 @@ lines[-1] = lines[-1].rstrip(',')
 lines.append('};')
 (DATA / 'publication.js').write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
-# Citation metadata follows the verified current scholarly release, independently of technical website versions; previous RR1 remains immutable in the archival manifest.
+# The live citation identifies the verified dataset independently of technical website versions.
 research_manifest = json.loads((ROOT / "research" / "research_release_manifest.json").read_text(encoding="utf-8"))
 rr = research_manifest["currentResearchRelease"]
 if rr["id"] != meta["researchRelease"] or rr["doi"] != meta.get("doi"):
@@ -89,7 +89,7 @@ research_published_on = (bibliographic_correction["zenodoDatePublished"]
                          else rr["publishedOn"])
 cff = f'''cff-version: 1.2.0
 message: "If you use Connecting the Dots in research, please cite the living research publication and the specific research release used."
-title: "Connecting the Dots: A Living Research Atlas of Top-Level Domain Expansion"
+title: {json.dumps(rr["title"], ensure_ascii=False)}
 type: dataset
 authors:
   - family-names: "Bregy"

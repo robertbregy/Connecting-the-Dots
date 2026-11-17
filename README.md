@@ -1,6 +1,6 @@
-# Connecting the Dots — v0.8.0
+# Connecting the Dots — v0.8.1
 
-**v0.7.111 · 12 November 2026.** Localized the new Legal editorial badges across EN/IT/DE/FR, removed duplicated source chips and added a release-wide guard against generic English UI labels leaking into non-English pages. Research evidence and historical archives are unchanged.
+**v0.8.1 · 18 November 2026.** Post-publication audit corrections for dates, citations, accessibility and technical downloads.
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -9,6 +9,12 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 Current scientific release: [RR3 · String Confirmation 2026](https://doi.org/10.5281/zenodo.24325521).
 
 ## Current release
+
+**v0.8.1 - 18 November 2026**
+
+The Reveal Day badge uses the 7 October date. Research pages expose the verified RR3 citation and archive, localized breadcrumbs and keyboard navigation. The new technical ZIP has its own checksum and the archived v0.8.0 ZIP remains verifiable. The [dated IANA comparison](data/iana_root_revalidation_20261118.json) records 1,436 delegated labels and the 28 October revocation of .helsinki.
+
+## Previous String Confirmation release
 
 **v0.8.0 - 17 November 2026**
 

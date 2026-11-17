@@ -6,6 +6,7 @@ const {chromium}=require("playwright");
 const AxeBuilder=require("@axe-core/playwright").default;
 const assert=require("node:assert/strict");
 const fs=require("node:fs");
+const {doi:researchDoi}=require("../publication.json");
 const BASE=process.env.CTD_TEST_BASE||"http://127.0.0.1:8128/";
 const languages=["it","en","de","fr"];
 const hubs=[
@@ -221,7 +222,7 @@ async function checkAxe(page,label) {
     const guide=page.locator('#ia-explore a[data-b2-resource="access"]');
     assert.equal(await guide.getAttribute("href"),"#governance-access","Guide must open native chapter");
     await page.locator('.iaPrimaryLink[data-b2-area="ia-research"]').click();
-    assert.ok((await page.locator('#ia-research .iaHubDoi').innerText()).includes("10.5281/zenodo.24325521"),"research DOI not in landing");
+    assert.ok((await page.locator('#ia-research .iaHubDoi').innerText()).includes(researchDoi),"research DOI not in landing");
     if(lang==="it"||lang==="en"){
       await page.locator('.iaPrimaryLink[data-b2-area="ia-understand"]').click();
       await checkAxe(page,lang+"/"+width+"/understand");
@@ -257,7 +258,8 @@ async function checkAxe(page,label) {
         selected:["sanctions-and-dns","who-controls-internet-access"].includes(slug)?"explore":"round"});
     }
   }
-  independent.push({url:"explorer/",lang:"en",selected:"explore"},{url:"research/",lang:"en",selected:"research"},{url:"research/connecting-the-dots-working-paper-v1.html",lang:"en",selected:"research"});
+  independent.push({url:"explorer/",lang:"en",selected:"explore"},{url:"research/connecting-the-dots-working-paper-v1.html",lang:"en",selected:"research"});
+  for (const lang of languages) independent.push({url:lang==="en"?"research/":"research/"+lang+"/",lang,selected:"research",researchLanding:true});
   report.independentPages=0;
   for(const entry of independent){
     const context=await browser.newContext({viewport:{width:390,height:860}});
@@ -269,6 +271,35 @@ async function checkAxe(page,label) {
       assert.equal(await page.locator(".ctdB2Trail").count(),1,entry.url+" is outside the integrated B2 shell");
       assert.equal(await page.locator(".ctdB2Trail a").count(),2,entry.url+" has no Home/area breadcrumb");
       assert.equal(await page.locator(".ctdB2Trail [aria-current='page']").count(),1,entry.url+" has no current-page location");
+      if (entry.researchLanding) {
+        for (const colorScheme of ["light","dark"]) {
+          await page.emulateMedia({colorScheme});
+          const contrast = await page.locator(".ctdB2Trail").evaluate(trail=>{
+            function luminance(color) {
+              const rgb = color.match(/[0-9.]+/g).slice(0,3).map(value=>Number(value)/255);
+              const linear = rgb.map(value=>value<=0.04045?value/12.92:((value+0.055)/1.055)**2.4);
+              return 0.2126*linear[0]+0.7152*linear[1]+0.0722*linear[2];
+            }
+            const color = getComputedStyle(trail).backgroundColor;
+            if (!color.startsWith("rgb(")) return [];
+            const background = luminance(color);
+            return [...trail.querySelectorAll('a,[aria-current="page"]')].map(node=>{
+              const foreground = luminance(getComputedStyle(node).color);
+              return (Math.max(foreground,background)+0.05)/(Math.min(foreground,background)+0.05);
+            });
+          });
+          assert.ok(contrast.length===3&&contrast.every(ratio=>ratio>=4.5),entry.url+" "+colorScheme+" breadcrumb must meet WCAG AA contrast: "+JSON.stringify(contrast));
+        }
+      }
+      if (entry.url==="research/connecting-the-dots-working-paper-v1.html") {
+        await page.keyboard.press("Tab");
+        const skip = page.locator(".ctdB2PaperSkip");
+        assert.equal(await skip.evaluate(node=>node===document.activeElement),true,"Working paper must expose the skip link before navigation");
+        const box = await skip.boundingBox();
+        assert.ok(box&&box.y>=0&&box.y+box.height<=860,"The focused skip link must be in the viewport");
+        await page.keyboard.press("Enter");
+        assert.equal(await page.evaluate(()=>document.activeElement?.id),"main-content","Working paper skip link must focus the article");
+      }
       assert.equal(await page.locator(".ctdB2CrossNav a[aria-current='location']").count(),1,entry.url+" active area mismatch");
       assert.equal(await page.locator('.ctdB2CrossNav a[data-b2-cross-area="'+entry.selected+'"][aria-current="location"]').count(),1,entry.url+" wrong area");
       // Old standalone documents include absolute production links. In branch
