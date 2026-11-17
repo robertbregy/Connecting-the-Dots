@@ -187,9 +187,12 @@ def maintain_events(rows, provenance, source_sha):
 def official_contention_groups():
     with CONFIRMED_CONTENTION.open(encoding="utf-8-sig", newline="") as stream:
         rows = list(csv.DictReader(stream))
+    # Group on ICANN's explicit contention-set identifier, not the rendered
+    # Applied-for string(s) label. The latter can contain primary + variant
+    # notation for IDN cases (for example "xn--kbt444f / xn--kbto70f").
     groups = defaultdict(list)
     for row in rows:
-        groups[norm(row["Applied-for string(s)"])].append(row["Application ID"])
+        groups[row["#"]].append(row["Application ID"])
     return {key: sorted(value) for key, value in groups.items()}, rows
 
 
@@ -264,8 +267,10 @@ def build():
         raise ValueError("Effective public new-primary string count changed")
     if len(exact) != 226 or sum(map(len, exact.values())) != 705:
         raise ValueError("Effective exact-string contention census changed")
-    if exact != official_exact or len(official_contention_rows) != 705:
-        raise ValueError("Derived effective exact-string groups do not match official String Confirmation contention CSV")
+    derived_memberships = sorted(tuple(value) for value in exact.values())
+    official_memberships = sorted(tuple(value) for value in official_exact.values())
+    if derived_memberships != official_memberships or len(official_contention_rows) != 705:
+        raise ValueError("Derived effective contention memberships do not match official String Confirmation contention CSV")
 
     observed_status_counts = dict(sorted(Counter(row["Application Status"] for row in rows).items()))
     if observed_status_counts != provenance["statusCounts"]:
