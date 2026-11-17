@@ -72,15 +72,20 @@ def summarize(before_path: Path, after_path: Path):
     chosen_replacements = []
     for e in replacement_events:
         if e["before_replacement"] and e["after_replacement"]:
-            # APS keeps the selected record typed as "Replacement String".
-            # Selection is represented by the original record becoming
-            # Deactivated while the replacement record remains Active.
+            # In the String Confirmation Day export, APS represents a
+            # selected replacement by deactivating the original record and
+            # keeping the -R record Active, with its Application Type promoted
+            # from Replacement String to New gTLD (or the variant-bearing form).
+            # Accept the status transition as the core signal and retain a
+            # guarded type check for future schema/representation drift.
             selected_transition = (
                 e["before_primary_status"] == "Active"
                 and e["before_replacement_status"] == "Active"
                 and e["after_primary_status"] == "Deactivated"
                 and e["after_replacement_status"] == "Active"
-                and e["after_replacement_type"] == "Replacement String"
+                and e["after_replacement_type"] in (
+                    "Replacement String", "New gTLD", "New gTLD with Variants"
+                )
             )
             if selected_transition:
                 chosen_replacements.append(e)
@@ -114,7 +119,7 @@ def summarize(before_path: Path, after_path: Path):
         "watched": watched,
         "caveats": [
             "A missing record does not by itself establish withdrawal or rejection.",
-            "A replacement is counted as selected only when the baseline showed both original and replacement Active, and the later APS state shows the original Deactivated while the replacement remains Active and typed Replacement String.",
+            "A replacement is counted as selected only when the baseline showed both original and replacement Active, and the later APS state shows the original Deactivated while the replacement remains Active; APS currently promotes selected -R records from Replacement String to New gTLD/New gTLD with Variants.",
             "Official contention-set files must be compared separately.",
         ],
     }
