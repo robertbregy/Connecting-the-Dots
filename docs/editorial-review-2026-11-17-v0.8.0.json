@@ -1,0 +1,26 @@
+{
+  "reviewId": "string-confirmation-2026-11-17-v0.8.0-candidate",
+  "status": "candidate-source-review",
+  "reviewedOn": "2026-11-17",
+  "publicationVersion": "0.8.0",
+  "sourceReviewCommit": "a4c2df49d49eaea9c003b088a38843c2cb3d7185",
+  "scope": "String Confirmation evidence transition: separate current APS snapshot, selected replacements, confirmed public contention, aggregate/publication reconciliation, timeline and .lugano state.",
+  "protectedHistoricalEvidence": [
+    "RR1",
+    "RR2",
+    "data/applications_2026_aps_official_listing.csv",
+    "data/applications_2026_strings_reveal.csv",
+    "data/application_2026_snapshot.json"
+  ],
+  "currentEvidence": [
+    "data/applications_2026_aps_string_confirmation_20261117.csv",
+    "data/applications_2026_aps_string_confirmation_20261117_provenance.json",
+    "data/application_2026_string_confirmation_snapshot.json",
+    "data/evidence/string-confirmation-2026-11-17/live/"
+  ],
+  "unresolved": [
+    "22 September 1,616 to Reveal Day 1,615 discrepancy",
+    "four-application gap between 17 November announcement aggregates and public APS/contention files",
+    ".wdo administrative check remains pending"
+  ]
+}

@@ -107,18 +107,18 @@ def validate_editorial_updates(case, translations, root=ROOT):
     if not updates:
         return
     expected={
-        "reveal-day-counts":["aps-count-reconciliation","aps-publication-calendar"],
-        "replacement-strings":["aps-string-reconciliation"],
+        "reveal-day-counts":["aps-count-reconciliation","aps-publication-calendar","string-confirmation-reconciliation"],
+        "replacement-strings":["aps-string-reconciliation","string-confirmation-replacement-outcome"],
     }
     if [item.get("id") for item in updates]!=expected.get(case["id"]):
         raise ValueError("Unreviewed field-note update identity: "+case["id"])
     sources={source["id"] for source in case["sources"]}
     for item in updates:
-        if item["date"]!="2026-10-18" or item["date"]!=case["revisedOn"]:
-            raise ValueError("Updated evidence must keep its explicit review date")
+        if date.fromisoformat(item["date"]) > date.fromisoformat(case["revisedOn"]):
+            raise ValueError("Updated evidence cannot post-date the case revision")
         if not item.get("sourceIds") or any(s not in sources for s in item["sourceIds"]):
             raise ValueError("Updated field-note evidence lacks sources")
-        keys=["field18ReviewLabel",item["titleKey"],*item["paragraphKeys"]]
+        keys=[item.get("reviewLabelKey","field18ReviewLabel"),item["titleKey"],*item["paragraphKeys"]]
         if item.get("closingKey"):
             keys.append(item["closingKey"])
         if item.get("link"):
@@ -178,7 +178,7 @@ def editorial_updates_markup(case, dictionary, lang, dynamic=False, heading="h3"
     for update in case.get("editorialUpdates",[]):
         identity=h(update["id"],quote=True)
         parts.append('<section class="behindReading behindEditorialUpdate" id="'+identity+'" data-field-update="'+identity+'" data-update-date="'+update["date"]+'" data-referenced-sources="'+h(",".join(update["sourceIds"]),quote=True)+'">')
-        parts.append(copy("field18ReviewLabel","time",' class="eyebrow" datetime="'+update["date"]+'"'))
+        parts.append(copy(update.get("reviewLabelKey","field18ReviewLabel"),"time",' class="eyebrow" datetime="'+update["date"]+'"'))
         parts.append(copy(update["titleKey"],heading))
         parts.extend(copy(key) for key in update["paragraphKeys"])
         evidence=update.get("reconciliation")
@@ -264,10 +264,11 @@ def load():
         if any(row["officialApplications"]!=row["visibleApplications"] or row["officialApplicants"]!=row["visibleApplicants"] for row in regions if row["code"]!="AP"):
             raise ValueError("Regional discrepancy incorrectly extends beyond Asia-Pacific")
         revisions=case.get("revisionHistory",[])
-        if (len(revisions)!=3 or revisions[0]["changeKey"]!="behindRevisionInitial" or
+        if (len(revisions)!=4 or revisions[0]["changeKey"]!="behindRevisionInitial" or
                 revisions[1]["changeKey"]!="behindRevisionReconciled" or
                 any(r["date"]!="2026-10-10" for r in revisions[:2]) or
-                revisions[-1]["changeKey"]!="field18Revision"):
+                revisions[-2]["changeKey"]!="field18Revision" or
+                revisions[-1]["changeKey"]!="behindRevisionStringConfirmation"):
             raise ValueError("The researched 2026 revision must be date and source tracked")
         validate_editorial_updates(case,translations)
         facts = {f["id"]:f for f in case["quantities"]}

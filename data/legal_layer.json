@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "reviewedOn": "2026-11-12",
-  "status": "pre-string-confirmation",
+  "reviewedOn": "2026-11-17",
+  "status": "string-confirmation-community-input-open",
   "scope": "Educational map of ICANN 2026 community input, objections, appeals and the bridge to binding registry commitments. It is not legal advice and does not predict outcomes for individual applications.",
   "milestones": {
     "stringConfirmation": "2026-11-17",
@@ -26,7 +26,8 @@
     "cms3": "https://cms.law/en/int/legal-updates/joining-the-dots-part-3-contention-sets-and-objections",
     "cms4": "https://cms.law/en/che/legal-updates/joining-the-dots-part-4-deadlines-announced",
     "independentObjectors": "https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input/objections-and-appeals/independent-objectors",
-    "singularPlural": "https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/string-evaluation/singular-plural-notifications-evaluation"
+    "singularPlural": "https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/string-evaluation/singular-plural-notifications-evaluation",
+    "icannStringConfirmation": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-17-11-2026-en"
   },
   "locales": {
     "en": {
@@ -145,8 +146,8 @@
       "rvcBody": "An RVC can be proposed to address an objection or a government concern. If ICANN approves it and it is incorporated into the Registry Agreement, it becomes a binding contractual obligation. That is the bridge between a pre-delegation dispute and the rules under which a future registry may have to operate.",
       "casesTitle": "Rules here, stories next",
       "casesBody": "This chapter explains the machinery. Disputed Dots keeps the historical cases separate: .amazon, .africa, .music, .merck and the other stories show how different mechanisms interact in practice.",
-      "statusTitle": "2026 status · before String Confirmation Day",
-      "statusBody": "At this editorial review on 12 November 2026, ICANN lists String Confirmation Day for 17 November 2026. The initial objection window is 104 days after that milestone, but it is not the only clock: later 30-day windows can open after String Evaluation and for eligible .Brand String Change requests. The chapter describes the published procedure; it does not report objections that do not yet exist.",
+      "statusTitle": "2026 status · String Confirmation completed",
+      "statusBody": "At this editorial review on 17 November 2026, String Confirmation Day has occurred and the Community Input and Objections Period is open through 16 March 2027. This is the initial objection window; later 30-day windows can still open after String Evaluation and for eligible .Brand String Change requests. The chapter describes the published procedure and does not infer objections or outcomes that are not publicly recorded.",
       "sourcesTitle": "Primary rules and professional reading",
       "sourcesNote": "ICANN, WIPO and ICC are the primary procedural sources used here. The CMS 'Joining the Dots' series is included as secondary professional reading and is not treated as the authority for the rules.",
       "bridgeContention": "Contention is competition between applications, not an objection.",
@@ -323,8 +324,8 @@
       "rvcBody": "Un RVC può essere proposto per affrontare un'obiezione o una preoccupazione governativa. Se ICANN lo approva e viene incorporato nel Registry Agreement, diventa un obbligo contrattuale vincolante. È il ponte tra una controversia prima della delega e le regole con cui un futuro registro può essere tenuto a operare.",
       "casesTitle": "Qui le regole, poi le storie",
       "casesBody": "Questo capitolo spiega il meccanismo. Disputed Dots mantiene separati i casi storici: .amazon, .africa, .music, .merck e le altre storie mostrano come i diversi strumenti si combinano nella pratica.",
-      "statusTitle": "Stato 2026 · prima dello String Confirmation Day",
-      "statusBody": "Alla verifica editoriale del 12 novembre 2026, ICANN indica lo String Confirmation Day per il 17 novembre 2026. La finestra iniziale per le obiezioni dura 104 giorni da quel momento, ma non è l'unico orologio: possono aprirsi successive finestre di 30 giorni dopo la String Evaluation e per richieste ammissibili di .Brand String Change. Il capitolo descrive la procedura pubblicata; non attribuisce obiezioni che ancora non esistono.",
+      "statusTitle": "Stato 2026 · String Confirmation completato",
+      "statusBody": "Alla verifica editoriale del 17 novembre 2026, lo String Confirmation Day si è svolto e il Community Input and Objections Period è aperto fino al 16 marzo 2027. Questa è la finestra iniziale per le obiezioni; successive finestre di 30 giorni possono ancora aprirsi dopo la String Evaluation e per richieste ammissibili di .Brand String Change. Il capitolo descrive la procedura pubblicata e non inferisce obiezioni o esiti che non siano pubblicamente documentati.",
       "sourcesTitle": "Regole primarie e letture professionali",
       "sourcesNote": "ICANN, WIPO e ICC sono le fonti procedurali primarie utilizzate qui. La serie 'Joining the Dots' di CMS è riportata come lettura professionale secondaria e non come fonte autoritativa delle regole.",
       "bridgeContention": "La contention è competizione tra candidature, non un'obiezione.",
@@ -501,8 +502,8 @@
       "rvcBody": "Ein RVC kann vorgeschlagen werden, um einen Einwand oder staatliche Bedenken auszuräumen. Wird es von ICANN genehmigt und in das Registry Agreement aufgenommen, wird es zu einer bindenden vertraglichen Verpflichtung. Damit entsteht die Brücke zwischen einem Streit vor der Delegierung und den Regeln, nach denen ein künftiger Registry-Betreiber handeln muss.",
       "casesTitle": "Hier die Regeln, danach die Geschichten",
       "casesBody": "Dieses Kapitel erklärt den Mechanismus. Disputed Dots hält die historischen Fälle getrennt: .amazon, .africa, .music, .merck und die übrigen Geschichten zeigen, wie verschiedene Instrumente in der Praxis zusammenspielen.",
-      "statusTitle": "Stand 2026 · vor dem String Confirmation Day",
-      "statusBody": "Zum Redaktionsstand vom 12. November 2026 nennt ICANN den 17. November 2026 als String Confirmation Day. Das erste Einwandsfenster läuft 104 Tage ab diesem Meilenstein, ist aber nicht die einzige Frist: Nach der String Evaluation und bei zulässigen .Brand String Change-Anträgen können weitere 30-Tage-Fenster folgen. Dieses Kapitel beschreibt das veröffentlichte Verfahren; es berichtet keine Einwände, die noch nicht existieren.",
+      "statusTitle": "Stand 2026 · String Confirmation abgeschlossen",
+      "statusBody": "Zum Redaktionsstand vom 17. November 2026 ist der String Confirmation Day abgeschlossen und die Community Input and Objections Period bis zum 16. März 2027 geöffnet. Dies ist das erste Einwandsfenster; nach der String Evaluation und bei zulässigen .Brand String Change-Anträgen können weiterhin zusätzliche 30-Tage-Fenster folgen. Das Kapitel beschreibt das veröffentlichte Verfahren und leitet keine nicht öffentlich dokumentierten Einwände oder Ergebnisse ab.",
       "sourcesTitle": "Primärregeln und professionelle Einordnung",
       "sourcesNote": "ICANN, WIPO und ICC sind hier die primären Verfahrensquellen. Die CMS-Serie 'Joining the Dots' wird als ergänzende professionelle Einordnung geführt, nicht als maßgebliche Regelquelle.",
       "bridgeContention": "Contention ist Wettbewerb zwischen Bewerbungen, kein Einwandsverfahren.",
@@ -679,8 +680,8 @@
       "rvcBody": "Un RVC peut être proposé pour répondre à une objection ou à une préoccupation gouvernementale. S'il est approuvé par ICANN et intégré au Registry Agreement, il devient une obligation contractuelle contraignante. C'est le pont entre un conflit avant délégation et les règles selon lesquelles un futur registre pourra être tenu d'opérer.",
       "casesTitle": "Ici les règles, ensuite les histoires",
       "casesBody": "Ce chapitre explique le mécanisme. Disputed Dots garde les cas historiques séparés: .amazon, .africa, .music, .merck et les autres histoires montrent comment différents instruments se combinent en pratique.",
-      "statusTitle": "État 2026 · avant le String Confirmation Day",
-      "statusBody": "À la revue éditoriale du 12 novembre 2026, l'ICANN indique le 17 novembre 2026 comme String Confirmation Day. La fenêtre initiale d'objections dure 104 jours après ce jalon, mais ce n'est pas le seul délai : d'autres fenêtres de 30 jours peuvent s'ouvrir après la String Evaluation et pour certaines demandes de .Brand String Change. Le chapitre décrit la procédure publiée ; il ne présente pas comme existantes des objections qui ne le sont pas encore.",
+      "statusTitle": "État 2026 · String Confirmation achevé",
+      "statusBody": "À la revue éditoriale du 17 novembre 2026, le String Confirmation Day a eu lieu et la période Community Input and Objections est ouverte jusqu'au 16 mars 2027. Il s'agit de la fenêtre initiale d'objections ; d'autres fenêtres de 30 jours peuvent encore s'ouvrir après la String Evaluation et pour certaines demandes de .Brand String Change. Le chapitre décrit la procédure publiée et ne déduit ni objection ni résultat qui ne soit publiquement documenté.",
       "sourcesTitle": "Règles primaires et lecture professionnelle",
       "sourcesNote": "ICANN, WIPO et ICC sont les sources procédurales primaires utilisées ici. La série 'Joining the Dots' de CMS est incluse comme lecture professionnelle secondaire et non comme autorité sur les règles.",
       "bridgeContention": "La contention est une concurrence entre candidatures, pas une objection.",

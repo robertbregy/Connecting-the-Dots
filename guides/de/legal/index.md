@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/legal/ | Site edition: 0.7.112 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/legal/ | Site edition: 0.8.0 | Language: de -->
 
 Leitfaden
 
@@ -23,9 +23,9 @@ Contention ist Wettbewerb zwischen Bewerbungen, kein Einwandsverfahren. [Content
 
 2026
 
-## Stand 2026 · vor dem String Confirmation Day
+## Stand 2026 · String Confirmation abgeschlossen
 
-Zum Redaktionsstand vom 12. November 2026 nennt ICANN den 17. November 2026 als String Confirmation Day. Das erste Einwandsfenster läuft 104 Tage ab diesem Meilenstein, ist aber nicht die einzige Frist: Nach der String Evaluation und bei zulässigen .Brand String Change-Anträgen können weitere 30-Tage-Fenster folgen. Dieses Kapitel beschreibt das veröffentlichte Verfahren; es berichtet keine Einwände, die noch nicht existieren.
+Zum Redaktionsstand vom 17. November 2026 ist der String Confirmation Day abgeschlossen und die Community Input and Objections Period bis zum 16. März 2027 geöffnet. Dies ist das erste Einwandsfenster; nach der String Evaluation und bei zulässigen .Brand String Change-Anträgen können weiterhin zusätzliche 30-Tage-Fenster folgen. Das Kapitel beschreibt das veröffentlichte Verfahren und leitet keine nicht öffentlich dokumentierten Einwände oder Ergebnisse ab.
 
  [ICANN · Community Input & Objections ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input)
 
@@ -261,6 +261,6 @@ ICANN, WIPO und ICC sind hier die primären Verfahrensquellen. Die CMS-Serie 'Jo
 
 Verfahrenserklärung, keine Rechtsberatung. Für eine tatsächliche Einreichung gelten der aktuelle maßgebliche Applicant Guidebook und die Regeln des zuständigen Providers.
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.112 · 12. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.8.0 · 17. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/it/legal/ | Site edition: 0.7.112 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/it/legal/ | Site edition: 0.8.0 | Language: it -->
 
 Guida
 
@@ -23,9 +23,9 @@ La contention è competizione tra candidature, non un'obiezione. [Leggi le conte
 
 2026
 
-## Stato 2026 · prima dello String Confirmation Day
+## Stato 2026 · String Confirmation completato
 
-Alla verifica editoriale del 12 novembre 2026, ICANN indica lo String Confirmation Day per il 17 novembre 2026. La finestra iniziale per le obiezioni dura 104 giorni da quel momento, ma non è l'unico orologio: possono aprirsi successive finestre di 30 giorni dopo la String Evaluation e per richieste ammissibili di .Brand String Change. Il capitolo descrive la procedura pubblicata; non attribuisce obiezioni che ancora non esistono.
+Alla verifica editoriale del 17 novembre 2026, lo String Confirmation Day si è svolto e il Community Input and Objections Period è aperto fino al 16 marzo 2027. Questa è la finestra iniziale per le obiezioni; successive finestre di 30 giorni possono ancora aprirsi dopo la String Evaluation e per richieste ammissibili di .Brand String Change. Il capitolo descrive la procedura pubblicata e non inferisce obiezioni o esiti che non siano pubblicamente documentati.
 
  [ICANN · Community Input & Objections ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input)
 
@@ -261,6 +261,6 @@ ICANN, WIPO e ICC sono le fonti procedurali primarie utilizzate qui. La serie 'J
 
 Spiegazione procedurale, non consulenza legale. Per un deposito reale fanno fede l'Applicant Guidebook vigente e le regole del provider competente.
 
-**Di Robert Bregy** · Edizione del sito 0.7.112 · 12 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.8.0 · 17 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

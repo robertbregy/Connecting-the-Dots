@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/en/legal/ | Site edition: 0.7.112 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/en/legal/ | Site edition: 0.8.0 | Language: en -->
 
 Guide
 
@@ -23,9 +23,9 @@ Contention is competition between applications, not an objection. [Read contenti
 
 2026
 
-## 2026 status · before String Confirmation Day
+## 2026 status · String Confirmation completed
 
-At this editorial review on 12 November 2026, ICANN lists String Confirmation Day for 17 November 2026. The initial objection window is 104 days after that milestone, but it is not the only clock: later 30-day windows can open after String Evaluation and for eligible .Brand String Change requests. The chapter describes the published procedure; it does not report objections that do not yet exist.
+At this editorial review on 17 November 2026, String Confirmation Day has occurred and the Community Input and Objections Period is open through 16 March 2027. This is the initial objection window; later 30-day windows can still open after String Evaluation and for eligible .Brand String Change requests. The chapter describes the published procedure and does not infer objections or outcomes that are not publicly recorded.
 
  [ICANN · Community Input & Objections ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input)
 
@@ -261,6 +261,6 @@ ICANN, WIPO and ICC are the primary procedural sources used here. The CMS 'Joini
 
 Procedural explainer, not legal advice. Always use the current authoritative Applicant Guidebook and provider rules for an actual filing.
 
-**By Robert Bregy** · Site edition 0.7.112 · November 12, 2026
+**By Robert Bregy** · Site edition 0.8.0 · November 17, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

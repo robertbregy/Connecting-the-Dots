@@ -83,7 +83,7 @@ for(const lang of ['it','en','de','fr']){
  const style=doc.createElement('style');style.setAttribute('data-round-debate-style','');style.textContent=css;doc.head.append(style);
  const structured=doc.querySelector('script[type="application/ld+json"]');assert.ok(structured);
  const meta=JSON.parse(structured.textContent);assert.equal(meta['@type'],'CollectionPage');
- meta.dateModified=d.reviewedOn;structured.textContent=JSON.stringify(meta);
+  meta.dateModified=[meta.dateModified,d.reviewedOn].filter(Boolean).sort().pop();structured.textContent=JSON.stringify(meta);
  fs.writeFileSync(file,'<!DOCTYPE html>\n'+doc.documentElement.outerHTML+'\n');
  for(const native of [path.join(lang,'index.html'),...(lang==='en'?['index.html']:[])]){
    const original=fs.readFileSync(native,'utf8');const {document}=parseHTML(original);

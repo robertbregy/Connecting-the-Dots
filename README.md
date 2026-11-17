@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.7.112
+# Connecting the Dots — v0.8.0
 
 **v0.7.111 · 12 November 2026.** Localized the new Legal editorial badges across EN/IT/DE/FR, removed duplicated source chips and added a release-wide guard against generic English UI labels leaking into non-English pages. Research evidence and historical archives are unchanged.
 
@@ -8,9 +8,9 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 ## Current release
 
-**v0.7.112 - 12 November 2026**
+**v0.8.0 - 17 November 2026**
 
-Final pre-String-Confirmation cleanup: localized Research entry pages for IT/DE/FR, explicit separation between scholarly paper revision and technical-reference synchronization, unambiguous source-review provenance semantics. Frozen RR1/RR2 and the Reveal Day evidence remain unchanged.
+String Confirmation Day: a separate current APS snapshot now records 152 selected replacements, nine withdrawals and 226/705 public confirmed contention. The project also preserves the unresolved four-application difference between ICANN's announcement aggregates and its public APS/contention files. .lugano is Active in String Evaluation with no identical-string contention. Reveal Day evidence and RR1/RR2 remain immutable.
 
 ## Previous audit-close release
 

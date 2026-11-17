@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "editorialLayer": "2026-round-investigations-not-part-of-frozen-RR1",
-  "lastReviewed": "2026-10-26",
+  "lastReviewed": "2026-11-17",
   "classification": "source-backed-editorial-field-notes",
   "legacyCases": "data/behind_round_stories.json",
   "episodes": [
@@ -116,7 +116,7 @@
       "slug": "replacement-strings",
       "number": 4,
       "publishedOn": "2026-10-10",
-      "revisedOn": "2026-10-18",
+      "revisedOn": "2026-11-17",
       "periodStart": "2026-08-12",
       "periodEnd": "2026-11-17",
       "state": "documented-with-open-questions",
@@ -287,13 +287,36 @@
           "kind": "derived",
           "labelKey": "field18SourceLocalStrings",
           "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/65e0fbe2080c2ee841e8abc01e1ddec113a74b8e/data/applications_2026_strings_reveal.csv"
+        },
+        {
+          "id": "rs-scd-announcement",
+          "url": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-17-11-2026-en",
+          "kind": "primary",
+          "labelKey": "field17ReplacementSourceAnnouncement"
+        },
+        {
+          "id": "rs-scd-current-aps",
+          "url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+          "kind": "primary",
+          "labelKey": "field17ReplacementSourceAPS"
+        },
+        {
+          "id": "rs-scd-contention",
+          "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/string-confirmation-contention-sets.csv",
+          "kind": "primary",
+          "labelKey": "field17ReplacementSourceContention"
+        },
+        {
+          "id": "rs-scd-reconciliation",
+          "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/prep/string-confirmation-2026-11-17/data/evidence/string-confirmation-2026-11-17/official-announcement-observation.json",
+          "kind": "derived",
+          "labelKey": "field17ReplacementSourceReconciliation"
         }
       ],
       "updateTriggers": [
-        "String replacement period closes on 2026-10-21; re-check APS and replacement statuses.",
-        "String Confirmation Day 2026-11-17: compare final applied-for strings and deactivations.",
-        "A source clarifies 727 deactivated replacement rows and 980 versus 986 string classifications.",
-        "Review official final replacement selections on 17 November; do not infer choices or applicant motivations from APS states alone."
+        "ICANN clarifies why 442 Reveal-period Active replacement records differed from the 287 applications ultimately eligible to switch.",
+        "ICANN republishes or corrects the String Confirmation APS export, contention CSV or replacement totals.",
+        "A later evaluation stage changes the status of an application whose selected replacement is recorded here."
       ],
       "revisionHistory": [
         {
@@ -324,6 +347,16 @@
             "aps-export-20261018",
             "aps-local-export-20261018",
             "aps-local-strings-20261018"
+          ]
+        },
+        {
+          "date": "2026-11-17",
+          "changeKey": "field17ReplacementRevision",
+          "sourceIds": [
+            "rs-scd-announcement",
+            "rs-scd-current-aps",
+            "rs-scd-contention",
+            "rs-scd-reconciliation"
           ]
         }
       ],
@@ -409,6 +442,24 @@
               "field18Applicant"
             ]
           }
+        },
+        {
+          "id": "string-confirmation-replacement-outcome",
+          "date": "2026-11-17",
+          "reviewLabelKey": "field17ReviewLabel",
+          "titleKey": "field17ReplacementTitle",
+          "paragraphKeys": [
+            "field17ReplacementBody1",
+            "field17ReplacementBody2",
+            "field17ReplacementBody3"
+          ],
+          "closingKey": "field17ReplacementBoundary",
+          "sourceIds": [
+            "rs-scd-announcement",
+            "rs-scd-current-aps",
+            "rs-scd-contention",
+            "rs-scd-reconciliation"
+          ]
         }
       ]
     },

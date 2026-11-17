@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/fr/legal/ | Site edition: 0.7.112 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/fr/legal/ | Site edition: 0.8.0 | Language: fr -->
 
 Guide
 
@@ -23,9 +23,9 @@ La contention est une concurrence entre candidatures, pas une objection. [Lire l
 
 2026
 
-## État 2026 · avant le String Confirmation Day
+## État 2026 · String Confirmation achevé
 
-À la revue éditoriale du 12 novembre 2026, l'ICANN indique le 17 novembre 2026 comme String Confirmation Day. La fenêtre initiale d'objections dure 104 jours après ce jalon, mais ce n'est pas le seul délai : d'autres fenêtres de 30 jours peuvent s'ouvrir après la String Evaluation et pour certaines demandes de .Brand String Change. Le chapitre décrit la procédure publiée ; il ne présente pas comme existantes des objections qui ne le sont pas encore.
+À la revue éditoriale du 17 novembre 2026, le String Confirmation Day a eu lieu et la période Community Input and Objections est ouverte jusqu'au 16 mars 2027. Il s'agit de la fenêtre initiale d'objections ; d'autres fenêtres de 30 jours peuvent encore s'ouvrir après la String Evaluation et pour certaines demandes de .Brand String Change. Le chapitre décrit la procédure publiée et ne déduit ni objection ni résultat qui ne soit publiquement documenté.
 
  [ICANN · Community Input & Objections ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/applicant-journey/community-input)
 
@@ -261,6 +261,6 @@ ICANN, WIPO et ICC sont les sources procédurales primaires utilisées ici. La s
 
 Explication procédurale, pas un avis juridique. Pour un dépôt réel, il faut utiliser l'Applicant Guidebook en vigueur et les règles du prestataire compétent.
 
-**Par Robert Bregy** · Édition du site 0.7.112 · 12 novembre 2026
+**Par Robert Bregy** · Édition du site 0.8.0 · 17 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.

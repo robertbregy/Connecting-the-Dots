@@ -28,7 +28,9 @@
     "label": "String Confirmation 2026",
     "trigger": "ICANN String Confirmation Day",
     "targetDate": "2026-11-17",
-    "scope": "After ICANN confirmation, refresh the applied-for primary string set, changes from replacement choices, contention structure, application status and derived analyses. All changes must remain source-backed and versioned."
+    "scope": "After ICANN confirmation, refresh the applied-for primary string set, changes from replacement choices, contention structure, application status and derived analyses. All changes must remain source-backed and versioned.",
+    "candidatePath": "research/rr3_candidate.json",
+    "status": "candidate preparation after observed String Confirmation Day"
   },
   "updatePolicy": [
     "Research releases are milestone snapshots, distinct from technical site versions.",
@@ -36,7 +38,7 @@
     "A new research release is created when the underlying evidence set or a major derived analysis changes materially.",
     "Historical research releases remain archived and citable once a DOI/archive workflow is activated."
   ],
-  "currentSiteVersion": "0.7.112",
+  "currentSiteVersion": "0.8.0",
   "workingPaperRevision": {
     "version": "1.4-draft",
     "revisedOn": "2026-10-19",
@@ -45,9 +47,9 @@
     "relationToRR2": "RR2 is the immutable archived dataset. The working paper has its own scholarly revision date; live technical references are synchronized separately and do not redate the manuscript or extend the RR1/RR2 DOI coverage.",
     "bibliographicCorrectionPath": "data/research_bibliographic_corrections.json",
     "technicalReference": {
-      "siteVersion": "0.7.112",
-      "dataPackageVersion": "0.7.112",
-      "synchronizedOn": "2026-11-12",
+      "siteVersion": "0.8.0",
+      "dataPackageVersion": "0.8.0",
+      "synchronizedOn": "2026-11-17",
       "semantics": "Operational pointer only. It does not change the working-paper scholarly revision date or extend RR2."
     }
   },
