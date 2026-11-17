@@ -911,9 +911,9 @@ new_derive = '''def derive_counts(root: Path) -> dict:
 agent = agent[:start] + new_derive + agent[end:]
 
 agent = agent.replace(
-    '    aps_provenance = read_json(root, "data/applications_2026_aps_official_provenance.json")\\n',
-    '    aps_provenance = read_json(root, "data/applications_2026_aps_official_provenance.json")\\n'
-    '    current_aps_provenance = read_json(root, "data/applications_2026_aps_string_confirmation_20261117_provenance.json")\\n',
+    '    aps_provenance = read_json(root, "data/applications_2026_aps_official_provenance.json")\n',
+    '    aps_provenance = read_json(root, "data/applications_2026_aps_official_provenance.json")\n'
+    '    current_aps_provenance = read_json(root, "data/applications_2026_aps_string_confirmation_20261117_provenance.json")\n',
     1,
 )
 
@@ -939,9 +939,9 @@ if old_listing not in agent:
     raise ValueError("Agent catalog APS listing block changed")
 agent = agent.replace(old_listing, new_listing, 1)
 agent = agent.replace(
-    '"published base application", counts["aps2026"]["publishedBaseApplications"],\\n'
+    '"published base application", counts["aps2026"]["publishedBaseApplications"],\n'
     '            "Reconciled public listing: base application identities, alternatives, variants and derived exact-primary-string groups.",',
-    '"published base application", counts["aps2026Current"]["publishedBaseApplications"],\\n'
+    '"published base application", counts["aps2026Current"]["publishedBaseApplications"],\n'
     '            "Current String Confirmation graph: stable base application identities, selected replacements, variants and confirmed public contention memberships.",',
     1,
 )
@@ -953,14 +953,14 @@ agent = agent.replace(
 )
 agent = agent.replace(
     '            "websiteRelease": "Technical/editorial publication date; it does not redate the underlying observations.",',
-    '            "websiteRelease": "Technical/editorial publication date; it does not redate the underlying observations.",\\n'
+    '            "websiteRelease": "Technical/editorial publication date; it does not redate the underlying observations.",\n'
     '            "technicalAsOf": "Newest evidence state integrated into the technical site; distinct from the current archived research-release cutoff.",',
     1,
 )
 agent = agent.replace(
-    '    aps = catalog["snapshotCounts"]["aps2026"]\\n',
-    '    aps = catalog["snapshotCounts"]["aps2026Current"]\\n'
-    '    aps_reveal = catalog["snapshotCounts"]["aps2026"]\\n',
+    '    aps = catalog["snapshotCounts"]["aps2026"]\n',
+    '    aps = catalog["snapshotCounts"]["aps2026Current"]\n'
+    '    aps_reveal = catalog["snapshotCounts"]["aps2026"]\n',
     1,
 )
 old_llms = '''        f"The APS export observed at {aps['publicListingObservedAt']} contains {aps['publicListingRows']:,} rows: {aps['publishedBaseApplications']:,} base applications and {aps['replacementRows']:,} linked replacement rows. Its new-primary subset has {aps['newPrimaryStringApplications']:,} applications over {aps['distinctNewPrimaryStrings']:,} strings; {aps['variantOnlyExistingTldApplications']:,} other base applications concern variants of existing TLDs. The separately published official total is {aps['officialReportedApplications']:,}; retain the documented public-listing gap.", "",
