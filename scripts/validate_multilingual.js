@@ -109,7 +109,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.ok(document.querySelector('#home-pathways a[href="?tab=ia-research#ia-research"]'),page+' the novice cannot see direct paths');
   assert.ok(document.querySelector('#home-project .homeProjectLinks a[href="?tab=sources#sources"][data-open-section="sources"]'),page+' home sources and methodology are inaccessible');
   assert.ok(document.querySelector('#home-project .homeProjectLinks a[href="?tab=research#research-citation-guide"]'),page+' home research and citation guidance are inaccessible');
-  assert.ok(document.querySelector('#ia-research a[href="https://doi.org/10.5281/zenodo.23288603"]'),page+' RR2 version-specific DOI not immediately available');
+  assert.ok(document.querySelector('#ia-research a[href="https://doi.org/10.5281/zenodo.24325521"]'),page+' RR3 version-specific DOI not immediately available');
   // Verify the visible static citation, not only its ZIP destination, including the no-JavaScript page.
   const citationCards=[...document.querySelectorAll('#research-citation-guide .audienceCiteGrid article')];
   assert.equal(citationCards.length,3,page+' must distinguish archived research, current data and the working paper');
@@ -353,10 +353,10 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.ok(home&&home.querySelector('.num').textContent.replace(/\D/g,'')==='1615',page+' obsolete 1,616 application total');
   assert.ok(document.getElementById('demand2026Bars')?.textContent.includes('864'),page+' missing comparable official regional application counts');
   const research=document.getElementById('research');
-  assert.ok(research?.textContent.includes('10.5281/zenodo.23288603'),page+' verified current RR2 DOI is missing');
+  assert.ok(research?.textContent.includes('10.5281/zenodo.24325521'),page+' verified current RR3 DOI is missing');
   assert.ok(research?.textContent.includes('10.5281/zenodo.23262623'),page+' archived RR1 DOI is missing');
   assert.ok(research?.textContent.includes('10.5281/zenodo.23262622'),page+' shared Zenodo concept DOI is missing');
-  assert.equal(research?.querySelector('a[href="https://doi.org/10.5281/zenodo.23288603"]')?.getAttribute('target'),'_blank',page+' RR2 Zenodo link broken');
+  assert.equal(research?.querySelector('a[href="https://doi.org/10.5281/zenodo.24325521"]')?.getAttribute('target'),'_blank',page+' RR3 Zenodo link broken');
   assert.ok(research?.querySelector('.researchPriorPanel'),page+' prior RR1 research version not disclosed');
   assert.ok(research?.textContent.includes(translations.researchPriorBody),page+' RR1 history not localized');
   for(const n of document.querySelectorAll('[src],[href]'))for(const attr of ['src','href']){

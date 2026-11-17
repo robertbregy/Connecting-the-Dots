@@ -1,7 +1,7 @@
 # Connecting the Dots: Reconstructing Twenty-Five Years of Top-Level Domain Expansion as a Living Research Atlas
 
 **Robert Bregy**  
-**Working Paper v1.4-draft · living revision 19 October 2026 · current citable research release RR2 (Zenodo: 11 October 2026; evidence cutoff: 10 October)**  
+**Working Paper v1.4-draft · living revision 19 October 2026 · archived sources RR1 and RR2 · String Confirmation evidence in the RR3 addendum**
 **Status:** working paper; not peer reviewed. This mutable manuscript is distinct from the immutable RR1 (9 October 2026) and RR2 (Zenodo bibliographic publication: 11 October 2026; evidence cutoff: 10 October) Zenodo research deposits.  
 **Technical-reference correction (13 October 2026):** the mutable technical data-pack link was synchronized with site v0.7.80. No scientific dataset or archived RR1/RR2 release was changed.  
 **Living publication:** https://robertbregy.github.io/Connecting-the-Dots/
@@ -62,7 +62,7 @@ Derived datasets retain provenance, dates and caveats. Unknown values are kept u
 
 ### 4.3 Snapshotting
 
-Fast-changing evidence is frozen into dated research snapshots. The 2026 round is therefore treated as a sequence of observable states rather than one final dataset. RR1 is anchored to Reveal Day, 7 October 2026. Research Release RR2 was released on GitHub on 10 October 2026 and carries a Zenodo bibliographic publication date of 11 October 2026 as a separate, citable post-Reveal evidence snapshot (DOI: https://doi.org/10.5281/zenodo.23288603). The next planned research milestone is RR3, conditional on verified changes following String Confirmation Day, 17 November 2026.
+Fast-changing evidence is frozen into dated research snapshots. The 2026 round is therefore treated as a sequence of observable states rather than one final dataset. RR1 is anchored to Reveal Day, 7 October 2026. Research Release RR2 was released on GitHub on 10 October 2026 and carries a Zenodo bibliographic publication date of 11 October 2026 as a separate, citable post-Reveal evidence snapshot (DOI: https://doi.org/10.5281/zenodo.23288603). The String Confirmation evidence of 17 November 2026 is documented in the separately dated RR3 addendum and archived at https://doi.org/10.5281/zenodo.24325521.
 
 ### 4.4 Cross-round classification
 
@@ -162,7 +162,7 @@ Connecting the Dots is published as a **living research publication** with two v
 - **technical/site versions** (`v0.x.y`) for code, editorial and interface changes;
 - **research releases** (`RR1`, `RR2`, …) for material changes to the evidence base or major derived datasets.
 
-RR1 is the **Reveal Day 2026** research release. RR2 was released on GitHub on **10 October 2026**, with a Zenodo bibliographic publication date of **11 October 2026** (DOI: **10.5281/zenodo.23288603**) as a post-Reveal research snapshot, preserving RR1 (**10.5281/zenodo.23262623**). The next planned release is **RR3**, subject to evidence following **String Confirmation Day, 17 November 2026**.
+RR1 is the **Reveal Day 2026** research release. RR2 was released on GitHub on **10 October 2026**, with a Zenodo bibliographic publication date of **11 October 2026** (DOI: **10.5281/zenodo.23288603**) as a post-Reveal research snapshot, preserving RR1 (**10.5281/zenodo.23262623**). The 17 November String Confirmation snapshot is archived separately as **RR3** (https://doi.org/10.5281/zenodo.24325521).
 
 The repository includes machine-readable manifests, downloadable CSV datasets, data hashes, release history and a `CITATION.cff` record. RR1 is archived on Zenodo with DOI **10.5281/zenodo.23262623**; RR2 is separately archived with DOI **10.5281/zenodo.23288603**. These remain immutable snapshots. This paper is a later, mutable interpretative draft, not a revision of either deposit. The 18 October official-ID analysis is a new working research output with its own version, input hashes and reproducible generator. It is not covered by the RR1 or RR2 DOI. Before its new results are cited as a DOI-backed dataset, a subsequent research release must freeze the revised method and outputs; the existing deposits must never be silently replaced.
 
@@ -202,7 +202,9 @@ Coverage, exclusions, provenance and hashes: https://robertbregy.github.io/Conne
 - ICANN Reveal Day 2026 announcement: https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en
 - ICANN 2026 milestone schedule: https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en
 
-## Suggested citation for RR2 (current archived evidence)
+## Suggested citation for the archived datasets
+
+For the 17 November String Confirmation evidence, cite Bregy, Robert (2026). *Connecting the Dots · Research Release RR3 · String Confirmation 2026*. Zenodo. https://doi.org/10.5281/zenodo.24325521
 
 Bregy, Robert (2026). *Connecting the Dots: A Living Research Atlas of Top-Level Domain Expansion*. Research Release RR2: Post-Reveal Evidence Consolidation. Zenodo. https://doi.org/10.5281/zenodo.23288603
 

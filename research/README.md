@@ -8,6 +8,16 @@ This directory contains the scholarly-publication layer of **Connecting the Dots
 
 ## Current research release
 
+**RR3 · String Confirmation 2026**
+Published on GitHub and automatically archived by Zenodo on **17 November 2026**.
+**RR3 DOI:** https://doi.org/10.5281/zenodo.24325521
+**Series concept DOI:** https://doi.org/10.5281/zenodo.23262622
+**Frozen GitHub commit:** `a088387c79795f05318f5b468b8e750c9dfe93c1`
+
+See the [scientific addendum](rr3_addendum_20261117.md) and [GitHub–Zenodo verification](rr3_publication_verification.json). The technical site is separately versioned as **v0.8.0**.
+
+## Previous research release
+
 **RR2 · Post-Reveal Evidence Consolidation**  
 Published on GitHub and automatically archived by Zenodo: **10 October 2026 (UTC)**  
 Evidence observation: **ICANN Reveal Day, 7 October 2026**  
@@ -20,7 +30,7 @@ RR2 is the verified second dataset version in the original Zenodo concept series
 
 The official ICANN 2026 aggregate (1,615 applications and 481 applicants) is kept distinct from the public APS export acquired on 11 October: 2,783 rows resolve to 1,614 base Application IDs, 480 published applicant names and 986 primary strings. Excluding six existing-TLD variant applications leaves 1,608 applications and 980 primary strings, exactly matching the labels in the secondary frozen index. The earlier partial local application corpus remains historical evidence.
 
-Current working paper: **v1.4-draft**, revised **19 October 2026**. The current analytical layer separates string theme, documented applicant activity and source naming flags, preserving unclassified records and explicit coverage. This analysis, the working-paper revision and the later editorial Field Notes are not covered by either archived research DOI. They remain reproducible through the versioned technical package and source hashes. A future research release must archive the new methods and results; the planned 17 November String Confirmation milestone remains a potential **RR3**, subject to source verification.
+Current working paper: **v1.4-draft**, revised **19 October 2026**. The current analytical layer separates string theme, documented applicant activity and source naming flags, preserving unclassified records and explicit coverage. This analysis, the working-paper revision and the later editorial Field Notes are not covered by either archived research DOI. They remain reproducible through the versioned technical package and source hashes. The separately dated RR3 addendum documents the String Confirmation snapshot and its limitations.
 
 Machine-readable evidence of the GitHub-to-Zenodo continuity check is in [`rr2_publication_verification.json`](rr2_publication_verification.json). The archived original source tree, rather than later site edits, determines the scientific snapshot.
 

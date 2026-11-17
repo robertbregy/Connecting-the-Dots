@@ -186,17 +186,37 @@ def build_data_pack() -> None:
     if expected in frozen:
         raise SystemExit('Refusing to reuse an archived technical release version: '+VERSION)
     pack = ROOT / expected
-    pack.parent.mkdir(parents=True, exist_ok=True)
-    write_deterministic_zip(pack, [(item, item.relative_to(DATA).as_posix()) for item in data_pack_files()])
-    digest=sha256(pack)
-    pack.with_suffix(".sha256").write_text(f"{digest}  {pack.name}\n", encoding="utf-8")
-    with zipfile.ZipFile(pack) as zf:
-        if zf.testzip():
-            raise SystemExit("Corrupt current versioned data ZIP")
-        for item in data_pack_files():
-            if zf.read(item.relative_to(DATA).as_posix()) != item.read_bytes():
-                raise SystemExit(f"Stale entry in versioned data ZIP: {item.name}")
-    print(f"Built versioned data pack: {pack.name} SHA256={digest}")
+    frozen_digest = PUBLICATION.get("currentDataPackSha256")
+    if frozen_digest:
+        # A bibliography-only update preserves the published technical ZIP.
+        if not pack.is_file() or sha256(pack) != frozen_digest:
+            raise SystemExit("Published technical ZIP differs from its fixed SHA-256")
+    else:
+        pack.parent.mkdir(parents=True, exist_ok=True)
+        write_deterministic_zip(pack, [(item, item.relative_to(DATA).as_posix()) for item in data_pack_files()])
+        pack.with_suffix(".sha256").write_text(f"{sha256(pack)}  {pack.name}\n", encoding="utf-8")
+    verify_data_pack_content(pack, bibliography_sync=bool(frozen_digest))
+
+
+def verify_data_pack_content(pack: Path, *, bibliography_sync: bool) -> None:
+    members = {item.relative_to(DATA).as_posix(): item for item in data_pack_files()}
+    with zipfile.ZipFile(pack) as archive:
+        if archive.testzip() or set(archive.namelist()) != set(members):
+            raise SystemExit("Invalid members in current versioned data ZIP")
+        for name, item in members.items():
+            archived = archive.read(name)
+            live = item.read_bytes()
+            if bibliography_sync and name == "manifest.json":
+                # The scientific and technical archive manifest stays frozen.
+                # Only the live multilingual interface bundles have new hashes.
+                archived, live = json.loads(archived), json.loads(live)
+                for manifest in (archived, live):
+                    for asset in manifest["web_delivery"]["assets"]:
+                        if asset["repository_path"] in {f"data/i18n_{lang}.js" for lang in ("en", "it", "de", "fr")}:
+                            del asset["bytes"]
+                            del asset["sha256"]
+            if archived != live:
+                raise SystemExit(f"Stale entry in versioned data ZIP: {name}")
 
 
 def build_index() -> None:

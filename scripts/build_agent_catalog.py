@@ -386,10 +386,10 @@ def build_catalog(root: Path = ROOT, discovery_manifest: dict | None = None) -> 
                 "technicalReferenceSynchronizedOn": pub.get("paperTechnicalSyncOn") or pub["releasedOn"],
                 **resource(pub["paperPath"]),
                 "status": "working draft; not peer reviewed",
-                "relationshipToArchives": archives["workingPaperRevision"]["relationToRR2"],
+                "relationshipToArchives": archives["workingPaperRevision"].get("relationToRR3", archives["workingPaperRevision"]["relationToRR2"]),
             },
             "citationFile": resource("CITATION.cff"),
-            "rule": "Cite the specific dated source or dataset used. The latest technical website version and post-RR2 dated analyses are not automatically part of the archived DOI release.",
+            "rule": "Cite the specific dated source or dataset used. The technical website and scientific releases have separate version histories. Consult each archived snapshot for its evidence cutoff and contents.",
         },
         "crawlerPolicy": {
             "authoritativeRobotsUrl": f"{origin.scheme}://{origin.netloc}/robots.txt",

@@ -232,7 +232,7 @@ def unify_governance_shell(html: str, file: Path, lang: str, texts: dict) -> str
     footer_html = f'''<footer class="footer ctdGuideFooter">
 <a class="footerFeedback" href="{home}">{home_label}</a>
 <span>Connecting the Dots</span>
-<a class="footerDoi" href="https://doi.org/10.5281/zenodo.23288603" target="_blank" rel="noopener">RR2 · DOI 10.5281/zenodo.23288603</a>
+<a class="footerDoi" href="https://doi.org/10.5281/zenodo.24325521" target="_blank" rel="noopener">RR3 · DOI 10.5281/zenodo.24325521</a>
 <a class="footerGithub" href="https://github.com/robertbregy/Connecting-the-Dots" target="_blank" rel="noopener">GitHub · source</a>
 <a href="https://doi.org/10.5281/zenodo.23262623" target="_blank" rel="noopener">RR1</a>
 </footer>'''

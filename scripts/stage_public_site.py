@@ -33,6 +33,7 @@ RESEARCH_FILES = frozenset({
     'research/connecting-the-dots-working-paper-v1.md',
     'research/research_release_manifest.json',
     'research/rr2_publication_verification.json',
+    'research/rr3_publication_verification.json',
 })
 ASSET_SUFFIXES = frozenset({'.css', '.js', '.mjs', '.png', '.jpg', '.jpeg',
                           '.svg', '.webp', '.avif', '.gif', '.ico', '.woff',

@@ -221,7 +221,7 @@ async function checkAxe(page,label) {
     const guide=page.locator('#ia-explore a[data-b2-resource="access"]');
     assert.equal(await guide.getAttribute("href"),"#governance-access","Guide must open native chapter");
     await page.locator('.iaPrimaryLink[data-b2-area="ia-research"]').click();
-    assert.ok((await page.locator('#ia-research .iaHubDoi').innerText()).includes("10.5281/zenodo.23288603"),"research DOI not in landing");
+    assert.ok((await page.locator('#ia-research .iaHubDoi').innerText()).includes("10.5281/zenodo.24325521"),"research DOI not in landing");
     if(lang==="it"||lang==="en"){
       await page.locator('.iaPrimaryLink[data-b2-area="ia-understand"]').click();
       await checkAxe(page,lang+"/"+width+"/understand");
