@@ -1044,6 +1044,17 @@ if not previous_pack_path.is_file():
 frozen_packages.setdefault("files", {})[previous_pack] = sha(previous_pack_path)
 dump("data/frozen_technical_packages.json", frozen_packages)
 
+# Mark the 17 November APS review milestone as completed for source-health.
+freshness = load("data/source_freshness_policy.json")
+freshness["reviewedOn"] = DATE
+aps_freshness = next(item for item in freshness["snapshots"] if item["id"] == "aps-current-view")
+aps_freshness["label"] = "APS listing used by the current String Confirmation view"
+aps_freshness["metadataFile"] = f"data/{CURRENT_PROV}"
+aps_freshness["dateField"] = "retrievedAtUTC"
+aps_freshness["sourceURLField"] = "sourceExportURL"
+aps_freshness.pop("nextReview", None)
+dump("data/source_freshness_policy.json", freshness)
+
 # ---------------------------------------------------------------------------
 # 11. Publication/version metadata.
 # ---------------------------------------------------------------------------
