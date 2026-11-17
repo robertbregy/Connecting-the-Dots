@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "observedAtUTC": "2026-11-17T18:57:45Z",
+  "source": "https://newgtldprogram-aps.icann.org/statistics",
+  "sourceLastPublished": "2026-11-17T18:39:00Z",
+  "artifact": {
+    "workflowRunId": 44153386525,
+    "artifactId": 14359772394,
+    "artifactName": "string-confirmation-2026-11-17-live-capture",
+    "sha256": "115ed77c4a2e038b08526e88c9d16b093cc0fa95b55ce0bf62012e795d4732e9"
+  },
+  "statistics": {
+    "totalApplicants": 481,
+    "totalApplications": 1615,
+    "totalUniqueStrings": 1127,
+    "totalVariants": 9,
+    "activeApplications": 1606,
+    "withdrawnApplications": 9
+  },
+  "wdo": {
+    "applicationID": "WDO2627T-T45217",
+    "primaryString": "wdo",
+    "applicantLocation": "CN",
+    "applicantRegion": "AP",
+    "status": "Undergoing administrative check",
+    "detailPageLastPublished": "2026-10-07T18:00:00Z",
+    "visibleInApplicationsExport": false
+  },
+  "interpretation": "Second same-day APS recheck. Statistics were republished at 18:39 UTC with unchanged 1,615 total / 1,606 active / 9 withdrawn counts, so the four-application difference versus ICANN's 1,610 proceeding announcement is not explained by an early post-publication lag."
+}
