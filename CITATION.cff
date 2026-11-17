@@ -5,14 +5,14 @@ type: dataset
 authors:
   - family-names: "Bregy"
     given-names: "Robert"
-version: "RR2"
-date-released: "2026-10-11"
+version: "RR3"
+date-released: "2026-11-17"
 url: "https://robertbregy.github.io/Connecting-the-Dots/"
 repository-code: "https://github.com/robertbregy/Connecting-the-Dots"
 license: "CC-BY-4.0"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.23288603"
+    value: "10.5281/zenodo.24325521"
 keywords:
   - DNS
   - ICANN

@@ -1592,27 +1592,41 @@
   ],
   "research": {
     "currentArchivedRelease": {
-      "id": "RR2",
-      "doi": "10.5281/zenodo.23288603",
-      "doiUrl": "https://doi.org/10.5281/zenodo.23288603",
-      "publicationDate": "2026-10-11",
-      "evidenceCutoff": "2026-10-10",
+      "id": "RR3",
+      "doi": "10.5281/zenodo.24325521",
+      "doiUrl": "https://doi.org/10.5281/zenodo.24325521",
+      "publicationDate": "2026-11-17",
+      "evidenceCutoff": "2026-11-17",
       "sourceSnapshots": {
-        "iana": "2026-10-04",
-        "icann2026RevealDay": "2026-10-07",
-        "publicationAsOf": "2026-10-10"
+        "icann2026StringConfirmation": "2026-11-17",
+        "publicationAsOf": "2026-11-17"
       },
-      "gitTag": "RR2",
-      "frozenCommit": "33803aa3fa69f1abb4cce7fbd49a0788ee9a33c9",
-      "immutable": true,
-      "depositCreatedAt": "2026-10-10T22:04:35.931760+00:00",
-      "githubReleaseDate": "2026-10-10",
-      "bibliographicCorrection": {
-        "path": "data/research_bibliographic_corrections.json",
-        "url": "https://robertbregy.github.io/Connecting-the-Dots/data/research_bibliographic_corrections.json"
-      }
+      "gitTag": "RR3",
+      "frozenCommit": "a088387c79795f05318f5b468b8e750c9dfe93c1",
+      "immutable": true
     },
     "previousArchivedReleases": [
+      {
+        "id": "RR2",
+        "doi": "10.5281/zenodo.23288603",
+        "doiUrl": "https://doi.org/10.5281/zenodo.23288603",
+        "publicationDate": "2026-10-11",
+        "evidenceCutoff": "2026-10-10",
+        "sourceSnapshots": {
+          "iana": "2026-10-04",
+          "icann2026RevealDay": "2026-10-07",
+          "publicationAsOf": "2026-10-10"
+        },
+        "gitTag": "RR2",
+        "frozenCommit": "33803aa3fa69f1abb4cce7fbd49a0788ee9a33c9",
+        "immutable": true,
+        "depositCreatedAt": "2026-10-10T22:04:35.931760+00:00",
+        "githubReleaseDate": "2026-10-10",
+        "bibliographicCorrection": {
+          "path": "data/research_bibliographic_corrections.json",
+          "url": "https://robertbregy.github.io/Connecting-the-Dots/data/research_bibliographic_corrections.json"
+        }
+      },
       {
         "id": "RR1",
         "doi": "10.5281/zenodo.23262623",
@@ -1636,13 +1650,13 @@
       "path": "research/connecting-the-dots-working-paper-v1.html",
       "url": "https://robertbregy.github.io/Connecting-the-Dots/research/connecting-the-dots-working-paper-v1.html",
       "status": "working draft; not peer reviewed",
-      "relationshipToArchives": "RR2 is the immutable archived dataset. The working paper has its own scholarly revision date; live technical references are synchronized separately and do not redate the manuscript or extend the RR1/RR2 DOI coverage."
+      "relationshipToArchives": "The 19 October manuscript remains a living draft based on earlier evidence. The dated String Confirmation addendum accompanies the separately archived RR3 dataset."
     },
     "citationFile": {
       "path": "CITATION.cff",
       "url": "https://robertbregy.github.io/Connecting-the-Dots/CITATION.cff"
     },
-    "rule": "Cite the specific dated source or dataset used. The latest technical website version and post-RR2 dated analyses are not automatically part of the archived DOI release."
+    "rule": "Cite the specific dated source or dataset used. The technical website and scientific releases have separate version histories. Consult each archived snapshot for its evidence cutoff and contents."
   },
   "crawlerPolicy": {
     "authoritativeRobotsUrl": "https://robertbregy.github.io/robots.txt",

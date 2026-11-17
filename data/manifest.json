@@ -353,23 +353,23 @@
       },
       {
         "repository_path": "data/i18n_en.js",
-        "bytes": 266913,
-        "sha256": "0427a58562124034393350b95aaa28cebdb2e4e43684155a0409e6a3b5665af9"
+        "bytes": 266602,
+        "sha256": "aa52546c50c7423fc490e21f4f461ea8af3ae3e17008a98a45b84502f0caf751"
       },
       {
         "repository_path": "data/i18n_it.js",
-        "bytes": 281132,
-        "sha256": "92d485e167d94e8f86c0dee8ac542a18a5cf186b9720f19231566ff2355999ba"
+        "bytes": 280771,
+        "sha256": "932061103df12f2973148b83815f59a1a7636b26d18b51020d0f2d27626bf49d"
       },
       {
         "repository_path": "data/i18n_de.js",
-        "bytes": 283190,
-        "sha256": "59affe452277a6db7a7294a1a05aaf9c796792aa12ee25d20ad7829d1f58e7f8"
+        "bytes": 282814,
+        "sha256": "97041b72a37a87c61a6ed8a8933152a89aa866a1bb550ba23bc91be5f65f0683"
       },
       {
         "repository_path": "data/i18n_fr.js",
-        "bytes": 294827,
-        "sha256": "87fa8ee893cd051fde460ee77c5c6ebf6858cf753b05c07a5a846c5119339ed6"
+        "bytes": 294476,
+        "sha256": "2082823eab15a1e7d75cf5bbaf1ed53503a4782367e2fac559a513086bba940b"
       },
       {
         "repository_path": "data/applications_2026_strings_reveal.js",
