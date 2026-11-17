@@ -1099,6 +1099,12 @@ replace_once(
     "assert.equal(jsonLD.dateModified,slug==='objectors-eoi'?'2026-10-26':slug==='replacement-strings'?'2026-11-17':'2026-10-17',page+' wrong investigation source review date');",
 )
 
+replace_once(
+    "scripts/validate_multilingual.js",
+    "assert.equal(standaloneDocument.querySelectorAll('[data-editorial-revision]').length,4,page+' dated case histories must remain visible');",
+    "assert.equal(standaloneDocument.querySelectorAll('[data-editorial-revision]').length,5,page+' dated case histories must remain visible');",
+)
+
 # Browser audit: public confirmed contention replaces preliminary Reveal overlap.
 audit = text("scripts/audit_aps_application_atlas.js")
 audit = audit.replace("assert.equal(loaded.exact,263);", "assert.equal(loaded.exact,226);")
