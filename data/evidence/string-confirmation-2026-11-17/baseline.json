@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "event": "ICANN 2026 Round String Confirmation Day",
+  "eventDate": "2026-11-17",
+  "preparedFrom": {
+    "publishedVersion": "0.7.112",
+    "publishedCommit": "218ff4f302dd42ff7abf615cef123bc08f3bcf6b",
+    "state": "reveal-day",
+    "researchRelease": "RR2"
+  },
+  "apsBaseline": {
+    "sourceURL": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+    "normalizedCSV_SHA256": "520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887",
+    "publicRows": 2783,
+    "publishedBaseApplicationIDs": 1614,
+    "replacementRows": 1169,
+    "replacementActive": 442,
+    "replacementDeactivated": 727,
+    "comparableNewPrimaryApplications": 1608,
+    "distinctNewPrimaryLabels": 980,
+    "officialRevealDayApplications": 1615,
+    "unpublishedOfficialApplications": 1,
+    "pendingAdministrativeCheckApplicationID": "WDO2627T-T45217"
+  },
+  "contentionBaseline": {
+    "officialPreliminarySets": 263,
+    "applicationsInSets": 891,
+    "sourceURL": "https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv"
+  },
+  "watchedApplications": {
+    "lugano": {
+      "applicationID": "CDL2651T-T31516",
+      "primaryString": "lugano"
+    },
+    "wdo": {
+      "applicationID": "WDO2627T-T45217",
+      "visibilityAtBaseline": "not present in public APS export; recorded as pending administrative check"
+    }
+  },
+  "invariants": [
+    "RR1 and RR2 remain immutable",
+    "Reveal Day snapshot remains immutable",
+    "A -R row is not a second application",
+    "Absence from a later public export does not establish withdrawal or rejection",
+    "Official contention-set publication is reviewed separately from APS contention labels"
+  ]
+}
