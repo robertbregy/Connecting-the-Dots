@@ -118,5 +118,15 @@
     "gacAdvice": false,
     "objection": false,
     "singularPlural": false
+  },
+  "apsStatisticsRecheck": {
+    "observedAtUTC": "2026-11-17T18:57:45Z",
+    "sourceLastPublishedAtUTC": "2026-11-17T18:39:00Z",
+    "totalApplications": 1615,
+    "activeApplications": 1606,
+    "withdrawnApplications": 9,
+    "totalUniqueStrings": 1127,
+    "interpretation": "Same-day APS republication retained the 1,615 / 1,606 / 9 counts, so the four-application difference versus the 1,610 proceeding announcement is not explained by an early post-publication synchronization lag.",
+    "evidenceFile": "data/evidence/string-confirmation-2026-11-17/aps-statistics-recheck-1857.json"
   }
 }
