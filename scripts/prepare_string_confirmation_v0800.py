@@ -922,12 +922,12 @@ new_derive = '''def derive_counts(root: Path) -> dict:
 '''
 agent = agent[:start] + new_derive + agent[end:]
 
-agent = agent.replace(
-    '    aps_provenance = read_json(root, "data/applications_2026_aps_official_provenance.json")\n',
-    '    aps_provenance = read_json(root, "data/applications_2026_aps_official_provenance.json")\n'
-    '    current_aps_provenance = read_json(root, "data/applications_2026_aps_string_confirmation_20261117_provenance.json")\n',
-    1,
-)
+aps_prov_line = '    aps_provenance = read_json(root, "data/applications_2026_aps_official_provenance.json")\\n'
+current_aps_prov_line = '    current_aps_provenance = read_json(root, "data/applications_2026_aps_string_confirmation_20261117_provenance.json")\\n'
+if current_aps_prov_line not in agent:
+    if aps_prov_line not in agent:
+        raise ValueError("Agent catalog APS provenance anchor changed")
+    agent = agent.replace(aps_prov_line, aps_prov_line + current_aps_prov_line, 1)
 
 old_listing = '''        dataset(
             "aps-public-listing", "ICANN APS public listing, original fields preserved", "data/applications_2026_aps_official_listing.csv",
@@ -947,9 +947,10 @@ new_listing = old_listing + '''        dataset(
             note="The same-day ICANN announcement aggregates exceed the reconciled public APS/contention files by four applications after accounting separately for .wdo.",
         ),
 '''
-if old_listing not in agent:
-    raise ValueError("Agent catalog APS listing block changed")
-agent = agent.replace(old_listing, new_listing, 1)
+if new_listing not in agent:
+    if old_listing not in agent:
+        raise ValueError("Agent catalog APS listing block changed")
+    agent = agent.replace(old_listing, new_listing, 1)
 agent = agent.replace(
     '"published base application", counts["aps2026"]["publishedBaseApplications"],\n'
     '            "Reconciled public listing: base application identities, alternatives, variants and derived exact-primary-string groups.",',
@@ -963,12 +964,12 @@ agent = agent.replace(
     '            "version": pub["version"], "releasedOn": pub["releasedOn"], "technicalAsOf": pub.get("technicalAsOf", pub["releasedOn"]), "url": base,',
     1,
 )
-agent = agent.replace(
-    '            "websiteRelease": "Technical/editorial publication date; it does not redate the underlying observations.",',
-    '            "websiteRelease": "Technical/editorial publication date; it does not redate the underlying observations.",\n'
-    '            "technicalAsOf": "Newest evidence state integrated into the technical site; distinct from the current archived research-release cutoff.",',
-    1,
-)
+website_release_line = '            "websiteRelease": "Technical/editorial publication date; it does not redate the underlying observations.",'
+technical_asof_line = '            "technicalAsOf": "Newest evidence state integrated into the technical site; distinct from the current archived research-release cutoff.",'
+if technical_asof_line not in agent:
+    if website_release_line not in agent:
+        raise ValueError("Agent catalog technicalAsOf semantics anchor changed")
+    agent = agent.replace(website_release_line, website_release_line + '\\n' + technical_asof_line, 1)
 agent = agent.replace(
     '    aps = catalog["snapshotCounts"]["aps2026"]\n',
     '    aps = catalog["snapshotCounts"]["aps2026Current"]\n'
@@ -980,9 +981,10 @@ old_llms = '''        f"The APS export observed at {aps['publicListingObservedAt
 new_llms = '''        f"The frozen Reveal Day APS layer contains {aps_reveal['publishedBaseApplications']:,} public base applications and {aps_reveal['distinctNewPrimaryStrings']:,} primary strings in the reconciled secondary string index. It remains a historical snapshot rather than being overwritten by later applicant choices.", "",
         f"The String Confirmation APS export observed at {aps['publicListingObservedAt']} contains {aps['publicListingRows']:,} public rows and {aps['publishedBaseApplications']:,} stable base Application IDs. Its effective current state yields {aps['visibleProceedingApplications']:,} visible proceeding application families, including {aps['selectedReplacementApplications']:,} selected replacements, and {aps['newPrimaryStringApplications']:,} proceeding new-primary applications over {aps['distinctNewPrimaryStrings']:,} visible strings. The public contention CSV has {aps['confirmedContentionSets']:,} sets / {aps['publicApplicationsInContention']:,} rows, while ICANN's same-day announcement reports {aps['officialAnnouncementApplicationsInContention']:,}; retain the unresolved four-application publication gap.", "",
 '''
-if old_llms not in agent:
-    raise ValueError("Agent llms APS paragraph changed")
-agent = agent.replace(old_llms, new_llms, 1)
+if new_llms not in agent:
+    if old_llms not in agent:
+        raise ValueError("Agent llms APS paragraph changed")
+    agent = agent.replace(old_llms, new_llms, 1)
 write(agent_path, agent)
 
 # ---------------------------------------------------------------------------
