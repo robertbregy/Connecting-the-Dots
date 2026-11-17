@@ -72,12 +72,17 @@ def summarize(before_path: Path, after_path: Path):
     chosen_replacements = []
     for e in replacement_events:
         if e["before_replacement"] and e["after_replacement"]:
-            primary_deactivated = e["after_primary_status"] == "Deactivated"
-            replacement_promoted = (
-                e["after_replacement_status"] != "Deactivated"
-                and e["after_replacement_type"] in ("New gTLD", "New gTLD with Variants")
+            # APS keeps the selected record typed as "Replacement String".
+            # Selection is represented by the original record becoming
+            # Deactivated while the replacement record remains Active.
+            selected_transition = (
+                e["before_primary_status"] == "Active"
+                and e["before_replacement_status"] == "Active"
+                and e["after_primary_status"] == "Deactivated"
+                and e["after_replacement_status"] == "Active"
+                and e["after_replacement_type"] == "Replacement String"
             )
-            if primary_deactivated and replacement_promoted:
+            if selected_transition:
                 chosen_replacements.append(e)
 
     watched = {}
@@ -109,7 +114,7 @@ def summarize(before_path: Path, after_path: Path):
         "watched": watched,
         "caveats": [
             "A missing record does not by itself establish withdrawal or rejection.",
-            "A replacement is counted as selected only when the original is Deactivated and the replacement is promoted from Replacement String to New gTLD/New gTLD with Variants.",
+            "A replacement is counted as selected only when the baseline showed both original and replacement Active, and the later APS state shows the original Deactivated while the replacement remains Active and typed Replacement String.",
             "Official contention-set files must be compared separately.",
         ],
     }
