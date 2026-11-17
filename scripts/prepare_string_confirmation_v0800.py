@@ -1034,6 +1034,12 @@ replace_once(
     "if chronicle_states!={'observed','current','evolving','conditional'}:",
 )
 
+replace_once(
+    "scripts/validate_multilingual.js",
+    "assert.equal(behind.querySelectorAll('[data-source-id]').length,24,page+' incomplete source audit across two cases');",
+    "assert.equal(behind.querySelectorAll('[data-source-id]').length,28,page+' incomplete source audit across two cases');",
+)
+
 # Browser audit: public confirmed contention replaces preliminary Reveal overlap.
 audit = text("scripts/audit_aps_application_atlas.js")
 audit = audit.replace("assert.equal(loaded.exact,263);", "assert.equal(loaded.exact,226);")
