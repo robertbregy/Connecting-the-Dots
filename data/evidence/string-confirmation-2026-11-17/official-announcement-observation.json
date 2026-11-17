@@ -1,14 +1,22 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "observedOn": "2026-11-17",
-  "source": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-17-11-2026-en",
-  "official": {
+  "announcementSource": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-17-11-2026-en",
+  "capture": {
+    "capturedAtUTC": "2026-11-17T18:30:10Z",
+    "apsExportNormalizedSHA256": "c41606e8b58f3e469c0e91fab48e25057c0959f9792d4385871d5c70268fe44c",
+    "revealContentionSHA256": "86f2ebd3764d1f3ea21d5d844cff004e271a443a3431e8ac440da7f72c67e2bf",
+    "stringConfirmationContentionSHA256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f"
+  },
+  "officialAnnouncement": {
     "proceedingApplications": 1610,
     "withdrawalsSinceRevealDay": 9,
     "replacementSwitches": 152,
     "replacementEligibleApplications": 287,
-    "contentionSets": 226,
-    "applicationsInContention": 709,
+    "preReplacementContentionSets": 262,
+    "preReplacementApplicationsInContention": 885,
+    "confirmedContentionSets": 226,
+    "confirmedApplicationsInContention": 709,
     "applicantSupportApplications": 50,
     "brandApplications": 333,
     "communityApplications": 16,
@@ -23,35 +31,92 @@
       "NA": 864
     }
   },
-  "derivedReconciliation": {
-    "revealDayApplications": 1615,
-    "impliedPostRevealNetAdditions": 4,
-    "equation": "1615 - 9 + 4 = 1610",
-    "apEquation": "218 - 7 + 4 = 215",
-    "status": "derived-not-yet-identified-by-application-id"
+  "publicAPSExport": {
+    "totalRows": 2783,
+    "baseApplicationIDs": 1614,
+    "replacementRecordIDs": 1169,
+    "visibleProceedingApplicationFamilies": 1605,
+    "selectedReplacementsDetected": 152,
+    "withdrawnApplicationsDetected": 9,
+    "proceedingApplicantSupportApplications": 46,
+    "proceedingAPApplications": 210
+  },
+  "apsStatistics": {
+    "lastPublishedAtUTC": "2026-11-17T18:09:00Z",
+    "totalApplicants": 481,
+    "totalApplications": 1615,
+    "totalUniqueStrings": 1127,
+    "totalVariants": 9,
+    "activeApplications": 1606,
+    "withdrawnApplications": 9,
+    "applicationsInContention": null,
+    "contentionSets": null
   },
   "wdo": {
     "applicationID": "WDO2627T-T45217",
-    "apsStatusNote": "still undergoing administrative check; not currently available on Applications list"
+    "primaryString": "wdo",
+    "region": "AP",
+    "publicAPSExportVisible": false,
+    "statusNote": "undergoing administrative check; not available on public Applications list"
   },
-  "methodologicalCorrection": {
+  "replacementReconciliation": {
     "revealDayActiveReplacementRecords": 442,
-    "officialEligibleReplacementApplications": 287,
-    "interpretation": "Active replacement-record status must not be treated as eligibility for the String Replacement Period"
+    "finalOfficialEligibleApplications": 287,
+    "selectedApplications": 152,
+    "eligibleNotSelected": 135,
+    "previouslyActiveReplacementRecordsNowDeactivated": 290,
+    "interpretation": "Reveal-period Active replacement-record status was not equivalent to final Replacement Period eligibility."
   },
-  "contentionReconciliation": {
-    "revealDayFrozen": {
+  "publicContentionFiles": {
+    "revealDay": {
       "sets": 263,
-      "applications": 891
+      "applicationRows": 891
     },
-    "icannPreReplacementComparison": {
+    "afterWithdrawalsAndSingletonRemoval": {
       "sets": 262,
-      "applications": 885
+      "applicationRows": 881
     },
     "stringConfirmation": {
       "sets": 226,
-      "applications": 709
+      "applicationRows": 705
     },
-    "status": "requires updated contention-file reconciliation"
+    "replacementDelta": {
+      "sets": -36,
+      "applicationRows": -176
+    },
+    "selectedReplacementsFromVisiblePreReplacementContention": 140
+  },
+  "aggregatePublicationGap": {
+    "announcementProceedingMinusPublicAPS": 5,
+    "knownWDOAdjustment": 1,
+    "unexplainedResidualApplications": 4,
+    "announcementAPMinusPublicAPS": 5,
+    "announcementAPMinusPublicAPSPlusWDO": 4,
+    "announcementApplicantSupportMinusPublicAPS": 4,
+    "announcementPreReplacementContentionMinusPublicFiles": 4,
+    "announcementConfirmedContentionMinusPublicFiles": 4,
+    "constrainedCharacteristics": [
+      "AP region",
+      "Applicant Support",
+      "contention membership"
+    ],
+    "status": "unresolved aggregate/publication discrepancy; identities and administrative cause not publicly established"
+  },
+  "separateHistoricalDiscrepancy": {
+    "paidApplicationsProceedingOn2026_09_22": 1616,
+    "revealDayApplications": 1615,
+    "status": "unresolved and distinct from the 17 November four-application aggregate/publication gap"
+  },
+  "lugano": {
+    "applicationID": "CDL2651T-T31516",
+    "primaryString": "lugano",
+    "applicationStatus": "Active",
+    "processingStage": "String Evaluation Processing",
+    "inContention": false,
+    "openCommentPeriod": true,
+    "gacEarlyWarning": false,
+    "gacAdvice": false,
+    "objection": false,
+    "singularPlural": false
   }
 }
