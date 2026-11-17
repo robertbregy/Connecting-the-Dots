@@ -1111,6 +1111,12 @@ replace_once(
     "assert.equal(articleSchema.dateModified,'2026-11-17',page+' updated field-note collection review missing');",
 )
 
+replace_once(
+    "scripts/render_round_debate_v0797.cjs",
+    "  meta.dateModified=d.reviewedOn;structured.textContent=JSON.stringify(meta);",
+    "  meta.dateModified=[meta.dateModified,d.reviewedOn].filter(Boolean).sort().pop();structured.textContent=JSON.stringify(meta);",
+)
+
 # Browser audit: public confirmed contention replaces preliminary Reveal overlap.
 audit = text("scripts/audit_aps_application_atlas.js")
 audit = audit.replace("assert.equal(loaded.exact,263);", "assert.equal(loaded.exact,226);")
