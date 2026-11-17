@@ -922,8 +922,8 @@ new_derive = '''def derive_counts(root: Path) -> dict:
 '''
 agent = agent[:start] + new_derive + agent[end:]
 
-aps_prov_line = '    aps_provenance = read_json(root, "data/applications_2026_aps_official_provenance.json")\\n'
-current_aps_prov_line = '    current_aps_provenance = read_json(root, "data/applications_2026_aps_string_confirmation_20261117_provenance.json")\\n'
+aps_prov_line = '    aps_provenance = read_json(root, "data/applications_2026_aps_official_provenance.json")\n'
+current_aps_prov_line = '    current_aps_provenance = read_json(root, "data/applications_2026_aps_string_confirmation_20261117_provenance.json")\n'
 if current_aps_prov_line not in agent:
     if aps_prov_line not in agent:
         raise ValueError("Agent catalog APS provenance anchor changed")
@@ -969,7 +969,7 @@ technical_asof_line = '            "technicalAsOf": "Newest evidence state integ
 if technical_asof_line not in agent:
     if website_release_line not in agent:
         raise ValueError("Agent catalog technicalAsOf semantics anchor changed")
-    agent = agent.replace(website_release_line, website_release_line + '\\n' + technical_asof_line, 1)
+    agent = agent.replace(website_release_line, website_release_line + '\n' + technical_asof_line, 1)
 agent = agent.replace(
     '    aps = catalog["snapshotCounts"]["aps2026"]\n',
     '    aps = catalog["snapshotCounts"]["aps2026Current"]\n'
