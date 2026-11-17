@@ -7715,9 +7715,10 @@
       "baselineSHA256": "75dbb53627108d49b6cd8a3e599c4017e18ac49d8bb0b032088f8c3f7f38e81f",
       "rationaleIds": [
         "V107",
-        "QA107"
+        "QA107",
+        "RR3DOI"
       ],
-      "sha256": "d41401c392e4c7b49e702c4f9a6d0c2bc819c5712c70540b953c4fcc658c3e88"
+      "sha256": "0802b9af52b955641cfc5ce54f253c01a8569b68a91fd3c3684f652fddf1b833"
     },
     "scripts/discovery_browser_qa.cjs": {
       "baselineSHA256": null,
