@@ -59,6 +59,36 @@ jobs:
           grep -oiE 'href="[^"]*\.csv[^"]*"' capture/applications-page.html >> capture/contention-links.txt || true
           grep -oiE '.{0,100}contention.{0,220}' capture/applications-page.html > capture/contention-context.txt || true
 
+      - name: Capture official contention files
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location \
+            'https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv' \
+            -o capture/reveal-day-contention-sets.csv
+          curl --fail --silent --show-error --location \
+            'https://newgtldprogram.icann.org/en/application-rounds/round2/string-confirmation-contention-sets.csv' \
+            -o capture/string-confirmation-contention-sets.csv
+          sha256sum capture/reveal-day-contention-sets.csv capture/string-confirmation-contention-sets.csv >> capture/sha256.txt
+          python3 - <<'PY'
+          import csv, json
+          from pathlib import Path
+          out = {}
+          for name in ("reveal-day-contention-sets.csv", "string-confirmation-contention-sets.csv"):
+              p = Path("capture") / name
+              with p.open(encoding="utf-8-sig", newline="") as f:
+                  rd = csv.DictReader(f)
+                  rows = list(rd)
+                  out[name] = {
+                      "columns": rd.fieldnames,
+                      "rows": len(rows),
+                      "sample": rows[:5],
+                  }
+          Path("capture/contention-file-shape.json").write_text(
+              json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+          )
+          PY
+
       - name: Verify frozen baseline and generate diffs
         shell: bash
         run: |
