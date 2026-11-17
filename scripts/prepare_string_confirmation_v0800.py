@@ -1034,6 +1034,16 @@ audit = audit.replace("assert.equal(loaded.exact,263);", "assert.equal(loaded.ex
 audit = audit.replace("includes('891')", "includes('705')")
 write("scripts/audit_aps_application_atlas.js", audit)
 
+# Freeze the previous technical package before introducing v0.8.0.
+frozen_packages = load("data/frozen_technical_packages.json")
+frozen_packages["recordedOn"] = DATE
+previous_pack = "downloads/connecting-the-dots-data-pack-v0.7.112.zip"
+previous_pack_path = ROOT / previous_pack
+if not previous_pack_path.is_file():
+    raise FileNotFoundError(previous_pack)
+frozen_packages.setdefault("files", {})[previous_pack] = sha(previous_pack_path)
+dump("data/frozen_technical_packages.json", frozen_packages)
+
 # ---------------------------------------------------------------------------
 # 11. Publication/version metadata.
 # ---------------------------------------------------------------------------
