@@ -13,7 +13,7 @@
     "technicalAsOf": "2026-11-17",
     "url": "https://robertbregy.github.io/Connecting-the-Dots/",
     "provenance": {
-      "sourceReviewCommit": "a4c2df49d49eaea9c003b088a38843c2cb3d7185",
+      "sourceReviewCommit": "c0e1ea16f7fe6d068b1dd46a9ad64b4bb80ca809",
       "role": "source review commit used for deterministic regeneration; not the published merge commit",
       "publishedCommit": "Resolve from the GitHub Pages deployment/repository history; a Git object cannot self-embed its own final hash."
     }

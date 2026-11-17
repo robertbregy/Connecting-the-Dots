@@ -80,6 +80,7 @@ def build_manifest() -> None:
         "language_routes": {lang: f"{lang}/" for lang in ("en", "it", "de", "fr")},
         "as_of": AS_OF,
         "technical_as_of": PUBLICATION.get("technicalAsOf", RELEASED_ON),
+        "technical_as_of": PUBLICATION.get("technicalAsOf", RELEASED_ON),
         "temporal_coverage": "1984/2026",
         "reveal_day": PUBLICATION["revealAt"],
         "string_confirmation_day": PUBLICATION["stringConfirmation"],

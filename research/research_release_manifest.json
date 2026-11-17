@@ -28,9 +28,7 @@
     "label": "String Confirmation 2026",
     "trigger": "ICANN String Confirmation Day",
     "targetDate": "2026-11-17",
-    "scope": "After ICANN confirmation, refresh the applied-for primary string set, changes from replacement choices, contention structure, application status and derived analyses. All changes must remain source-backed and versioned.",
-    "candidatePath": "research/rr3_candidate.json",
-    "status": "candidate preparation after observed String Confirmation Day"
+    "scope": "After ICANN confirmation, refresh the applied-for primary string set, changes from replacement choices, contention structure, application status and derived analyses. All changes must remain source-backed and versioned."
   },
   "updatePolicy": [
     "Research releases are milestone snapshots, distinct from technical site versions.",

@@ -124,7 +124,7 @@ def render(root:Path=ROOT):
 <p><b>{q(t['apsAtlasWdo'])}</b> <a target="_blank" rel="noopener" href="{q(graph['notPublishedApplication']['detailUrl'])}">{q(t['apsAtlasWdoLink'])} ↗</a></p>
 <div class="apsSources">
 <a target="_blank" rel="noopener" href="{q(source_link)}">{q(t['apsAtlasSource'])} ↗</a>
-<a target="_blank" rel="noopener" href="{q(graph['contention'].get('officialCurrentListURL',graph['contention']['officialRevealListURL']))}">{q(t['apsAtlasPreliminaryList'])} ↗</a>
+<a target="_blank" rel="noopener" href="{q(graph['contention'].get('officialCurrentListURL',graph['contention'].get('officialCurrentListURL',graph['contention']['officialRevealListURL'])))}">{q(t['apsAtlasPreliminaryList'])} ↗</a>
 <a href="../../{lang}/?tab=research">{q(t['apsAtlasResearch'])}</a>
 </div>
 <p class="apsStamp">{q(t['apsAtlasSourceDate'])}: <time datetime="{q(graph['retrievedAtUTC'])}">{q(graph['retrievedAtUTC'][:10])}</time></p></div>
