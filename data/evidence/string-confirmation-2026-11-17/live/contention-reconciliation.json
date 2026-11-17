@@ -1,0 +1,991 @@
+{
+  "method": "Exact comparison of official ICANN Reveal Day and String Confirmation Day contention CSVs, reconciled against the post-confirmation APS export.",
+  "observed_public_files": {
+    "reveal": {
+      "sets": 263,
+      "rows": 891
+    },
+    "withdrawn_application_ids": [
+      "CA2682T-T18182",
+      "HERI2445-T27601",
+      "HMA2553-T17045",
+      "HSCC2561-T49850",
+      "MRL2648T-T18053",
+      "MRL2648T-T99642",
+      "PCOC2554-T97118",
+      "QGL2682T-T10263",
+      "RIAB2562-T60289"
+    ],
+    "withdrawn_in_reveal_contention": [
+      "CA2682T-T18182",
+      "HERI2445-T27601",
+      "HMA2553-T17045",
+      "HSCC2561-T49850",
+      "MRL2648T-T18053",
+      "MRL2648T-T99642",
+      "PCOC2554-T97118",
+      "QGL2682T-T10263",
+      "RIAB2562-T60289"
+    ],
+    "sets_lost_due_to_withdrawal": [
+      {
+        "reveal_set": "220",
+        "string": "src",
+        "before_ids": [
+          "CA2682T-T18182",
+          "SN2610T-T87824"
+        ],
+        "remaining_ids": [
+          "SN2610T-T87824"
+        ]
+      }
+    ],
+    "visible_pre_replacement_after_withdrawals": {
+      "sets": 262,
+      "rows": 881
+    },
+    "confirmed": {
+      "sets": 226,
+      "rows": 705
+    },
+    "sets_removed_after_withdrawal_adjustment": 36,
+    "removed_set_strings": [
+      "advisors",
+      "agt",
+      "anime",
+      "bbq",
+      "beta",
+      "bro",
+      "coaching",
+      "config",
+      "crm",
+      "deploy",
+      "echo",
+      "fam",
+      "happy",
+      "ify",
+      "iii",
+      "inn",
+      "journey",
+      "lfg",
+      "line",
+      "log",
+      "logistics",
+      "manga",
+      "more",
+      "nerd",
+      "owl",
+      "point",
+      "roofing",
+      "slides",
+      "soul",
+      "transport",
+      "universe",
+      "virtual",
+      "vpn",
+      "wifi",
+      "wise",
+      "yeah"
+    ],
+    "retained_sets_with_membership_changes": 77,
+    "retained_set_changes": [
+      {
+        "string": "agent",
+        "before": 13,
+        "after": 12,
+        "removed_ids": [
+          "XL2625T-T26605"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "agi",
+        "before": 7,
+        "after": 6,
+        "removed_ids": [
+          "A2652T-T59922"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "air",
+        "before": 5,
+        "after": 3,
+        "removed_ids": [
+          "LFGL2683T-T58273",
+          "XL2625T-T42443"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "all",
+        "before": 4,
+        "after": 3,
+        "removed_ids": [
+          "IRI2679T-T65817"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "api",
+        "before": 10,
+        "after": 8,
+        "removed_ids": [
+          "INC2624T-T91582",
+          "ODC2534-T66083"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "ask",
+        "before": 7,
+        "after": 5,
+        "removed_ids": [
+          "EDCL2689T-T29879",
+          "SI2639T-T44584"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "base",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "XL2625T-T89957"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "big",
+        "before": 4,
+        "after": 3,
+        "removed_ids": [
+          "EDI2665T-T67966"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "bit",
+        "before": 10,
+        "after": 8,
+        "removed_ids": [
+          "NA2626T-T67212",
+          "XL2625T-T23714"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "brand",
+        "before": 10,
+        "after": 5,
+        "removed_ids": [
+          "IDOL2621T-T20061",
+          "LFGL2683T-T94977",
+          "MEL2626T-T48733",
+          "NA2631T-T69341",
+          "XL2625T-T31633"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "cart",
+        "before": 4,
+        "after": 3,
+        "removed_ids": [
+          "LFGL2683T-T28734"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "connect",
+        "before": 7,
+        "after": 5,
+        "removed_ids": [
+          "CCS2640T-T56644",
+          "MLG2688T-T93360"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "ddd",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "TL2645T-T53249"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "donate",
+        "before": 4,
+        "after": 3,
+        "removed_ids": [
+          "ISL2626T-T51112"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "epic",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "LFGL2683T-T65438"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "etc",
+        "before": 5,
+        "after": 4,
+        "removed_ids": [
+          "TL2627T-T31766"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "fab",
+        "before": 5,
+        "after": 4,
+        "removed_ids": [
+          "EDI2665T-T44209"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "factory",
+        "before": 4,
+        "after": 2,
+        "removed_ids": [
+          "LFGL2683T-T97114",
+          "UMIA2681T-T53765"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "fest",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "NSL2674T-T26988"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "firm",
+        "before": 7,
+        "after": 5,
+        "removed_ids": [
+          "LFGL2683T-T30871",
+          "XL2625T-T17932"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "form",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "XI2694T-T68587"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "gear",
+        "before": 4,
+        "after": 3,
+        "removed_ids": [
+          "XL2625T-T41689"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "get",
+        "before": 5,
+        "after": 4,
+        "removed_ids": [
+          "NA2626T-T22589"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "gig",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "NA2626T-T11779"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "goods",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "GMTS2586-T19194"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "gym",
+        "before": 5,
+        "after": 4,
+        "removed_ids": [
+          "NA2626T-T24726"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "hack",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "OI2692T-T85687"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "hello",
+        "before": 5,
+        "after": 4,
+        "removed_ids": [
+          "IRI2679T-T88324"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "hub",
+        "before": 10,
+        "after": 9,
+        "removed_ids": [
+          "HCL2645T-T37673"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "iam",
+        "before": 4,
+        "after": 2,
+        "removed_ids": [
+          "ETI2627T-T93610",
+          "TIGL2633T-T28238"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "invest",
+        "before": 4,
+        "after": 3,
+        "removed_ids": [
+          "LFGL2683T-T79014"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "key",
+        "before": 7,
+        "after": 5,
+        "removed_ids": [
+          "NA2626T-T31004",
+          "XL2625T-T48854"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "king",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "XL2625T-T64692"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "lab",
+        "before": 7,
+        "after": 5,
+        "removed_ids": [
+          "ISII2617T-T57898",
+          "SRL2616T-T44072"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "labs",
+        "before": 6,
+        "after": 5,
+        "removed_ids": [
+          "NA2631T-T99126"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "list",
+        "before": 4,
+        "after": 3,
+        "removed_ids": [
+          "XL2625T-T88449"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "machine",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "XL2625T-T14287"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "make",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "LFGL2683T-T91961"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "maker",
+        "before": 4,
+        "after": 3,
+        "removed_ids": [
+          "WVL2684T-T36786"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "mart",
+        "before": 6,
+        "after": 4,
+        "removed_ids": [
+          "LFGL2683T-T25718",
+          "NA2631T-T45830"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "max",
+        "before": 7,
+        "after": 5,
+        "removed_ids": [
+          "LFGL2683T-T33637",
+          "XL2625T-T53882"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "merch",
+        "before": 5,
+        "after": 4,
+        "removed_ids": [
+          "LFGL2683T-T41556"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "mind",
+        "before": 7,
+        "after": 5,
+        "removed_ids": [
+          "NA2631T-T66571",
+          "TL2645T-T21573"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "mix",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "EDI2665T-T47100"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "mvp",
+        "before": 4,
+        "after": 3,
+        "removed_ids": [
+          "LFGL2683T-T96989"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "neo",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "XL2625T-T93477"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "node",
+        "before": 4,
+        "after": 2,
+        "removed_ids": [
+          "PPND2513-T68462",
+          "XL2625T-T11396"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "official",
+        "before": 8,
+        "after": 6,
+        "removed_ids": [
+          "IG2663T-T85800",
+          "LFGL2683T-T54503"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "ops",
+        "before": 4,
+        "after": 3,
+        "removed_ids": [
+          "OCF2539-T20706"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "path",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "XL2625T-T51499"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "platform",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "RTIS2674T-T31383"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "pod",
+        "before": 8,
+        "after": 6,
+        "removed_ids": [
+          "LFGL2683T-T88441",
+          "XL2625T-T90586"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "pop",
+        "before": 9,
+        "after": 7,
+        "removed_ids": [
+          "NA2631T-T74744",
+          "XL2625T-T34903"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "profile",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "NTG2671T-T70474"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "project",
+        "before": 5,
+        "after": 4,
+        "removed_ids": [
+          "IRI2679T-T57402"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "real",
+        "before": 4,
+        "after": 2,
+        "removed_ids": [
+          "IRI2679T-T65321",
+          "ISL2626T-T59031"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "robot",
+        "before": 8,
+        "after": 7,
+        "removed_ids": [
+          "NA2631T-T22456"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "robotics",
+        "before": 5,
+        "after": 4,
+        "removed_ids": [
+          "PDAC2521-T93356"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "sell",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "OD2692T-T13279"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "send",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "NTG2671T-T94231"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "share",
+        "before": 6,
+        "after": 5,
+        "removed_ids": [
+          "NLTC2529-T64442"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "sign",
+        "before": 5,
+        "after": 4,
+        "removed_ids": [
+          "XI2694T-T60543"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "story",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "XI2694T-T86949"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "super",
+        "before": 4,
+        "after": 3,
+        "removed_ids": [
+          "EDCL2689T-T32016"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "sys",
+        "before": 5,
+        "after": 4,
+        "removed_ids": [
+          "LFGL2683T-T48092"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "tea",
+        "before": 5,
+        "after": 4,
+        "removed_ids": [
+          "XL2625T-T68966"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "therapy",
+        "before": 7,
+        "after": 5,
+        "removed_ids": [
+          "LFGL2683T-T79768",
+          "MLG2688T-T30008"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "time",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "T3PB2538-T94985"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "token",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "GEL2647T-T82917"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "uni",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "NA2626T-T16549"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "vibe",
+        "before": 7,
+        "after": 6,
+        "removed_ids": [
+          "KKWT2621T-T46596"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "way",
+        "before": 5,
+        "after": 3,
+        "removed_ids": [
+          "NTG2671T-T59664",
+          "TL2645T-T45834"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "well",
+        "before": 4,
+        "after": 3,
+        "removed_ids": [
+          "LFGL2683T-T18553"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "wellness",
+        "before": 4,
+        "after": 2,
+        "removed_ids": [
+          "LFGL2683T-T26472",
+          "XL2625T-T99013"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "wiz",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "DC2669T-T20827"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "yes",
+        "before": 5,
+        "after": 4,
+        "removed_ids": [
+          "NTG2671T-T67583"
+        ],
+        "added_ids": []
+      },
+      {
+        "string": "zzz",
+        "before": 3,
+        "after": 2,
+        "removed_ids": [
+          "OI2692T-T30254"
+        ],
+        "added_ids": []
+      }
+    ]
+  },
+  "replacement_effect": {
+    "selected_replacements": 152,
+    "selected_originals_in_visible_pre_replacement_contention": 140,
+    "selected_original_ids_in_visible_pre_replacement_contention": [
+      "A2619T-T45080",
+      "A2652T-T59922",
+      "ASAA2567-T97759",
+      "CCS2640T-T56644",
+      "DC2669T-T20827",
+      "EDCL2689T-T29879",
+      "EDCL2689T-T32016",
+      "EDCL2689T-T81667",
+      "EDI2665T-T44209",
+      "EDI2665T-T47100",
+      "EDI2665T-T52128",
+      "EDI2665T-T67966",
+      "ETI2627T-T21585",
+      "ETI2627T-T93610",
+      "GEL2647T-T82917",
+      "GMTS2586-T19194",
+      "HCL2645T-T37673",
+      "IDOL2621T-T20061",
+      "IG2663T-T85800",
+      "INC2624T-T91582",
+      "IRI2679T-T57402",
+      "IRI2679T-T65321",
+      "IRI2679T-T65817",
+      "IRI2679T-T83038",
+      "IRI2679T-T88324",
+      "ISII2617T-T57898",
+      "ISL2626T-T51112",
+      "ISL2626T-T59031",
+      "ISL2626T-T66950",
+      "KG2699T-T10255",
+      "KG2699T-T28984",
+      "KKWT2621T-T46596",
+      "LFGL2683T-T18553",
+      "LFGL2683T-T25718",
+      "LFGL2683T-T26472",
+      "LFGL2683T-T28734",
+      "LFGL2683T-T30871",
+      "LFGL2683T-T33637",
+      "LFGL2683T-T34391",
+      "LFGL2683T-T41556",
+      "LFGL2683T-T48092",
+      "LFGL2683T-T54503",
+      "LFGL2683T-T58273",
+      "LFGL2683T-T65438",
+      "LFGL2683T-T79014",
+      "LFGL2683T-T79768",
+      "LFGL2683T-T88441",
+      "LFGL2683T-T91961",
+      "LFGL2683T-T94977",
+      "LFGL2683T-T96989",
+      "LFGL2683T-T97114",
+      "MEL2626T-T48733",
+      "MLG2688T-T30008",
+      "MLG2688T-T77522",
+      "MLG2688T-T93360",
+      "NA2626T-T11779",
+      "NA2626T-T16549",
+      "NA2626T-T22589",
+      "NA2626T-T24726",
+      "NA2626T-T31004",
+      "NA2626T-T51374",
+      "NA2626T-T56402",
+      "NA2626T-T67212",
+      "NA2631T-T22456",
+      "NA2631T-T27230",
+      "NA2631T-T45830",
+      "NA2631T-T66571",
+      "NA2631T-T69341",
+      "NA2631T-T69966",
+      "NA2631T-T74744",
+      "NA2631T-T99126",
+      "NLTC2529-T64442",
+      "NPL2622T-T46713",
+      "NSL2674T-T26988",
+      "NSL2674T-T50745",
+      "NSL2674T-T66583",
+      "NTG2671T-T15041",
+      "NTG2671T-T37544",
+      "NTG2671T-T59664",
+      "NTG2671T-T67583",
+      "NTG2671T-T70474",
+      "NTG2671T-T94231",
+      "OCF2539-T20706",
+      "OD2692T-T13279",
+      "ODC2534-T66083",
+      "OI2692T-T30254",
+      "OI2692T-T69849",
+      "OI2692T-T77768",
+      "OI2692T-T85687",
+      "PDAC2521-T93356",
+      "PPND2513-T68462",
+      "RTIS2674T-T31383",
+      "SI2594-T16545",
+      "SI2639T-T44584",
+      "SI2639T-T89961",
+      "SRL2616T-T44072",
+      "SS2654T-T46463",
+      "T3PB2538-T94985",
+      "TG2593-T64817",
+      "TIGL2633T-T28238",
+      "TL2627T-T31766",
+      "TL2645T-T21573",
+      "TL2645T-T45834",
+      "TL2645T-T53249",
+      "TT2652T-T65067",
+      "UMIA2681T-T53765",
+      "VTL2632T-T14662",
+      "WVL2684T-T36786",
+      "WYMG2568-T96993",
+      "XI2694T-T60543",
+      "XI2694T-T68587",
+      "XI2694T-T86949",
+      "XL2625T-T11396",
+      "XL2625T-T14287",
+      "XL2625T-T17932",
+      "XL2625T-T23714",
+      "XL2625T-T26480",
+      "XL2625T-T26605",
+      "XL2625T-T31633",
+      "XL2625T-T32770",
+      "XL2625T-T33016",
+      "XL2625T-T34903",
+      "XL2625T-T41689",
+      "XL2625T-T42443",
+      "XL2625T-T48608",
+      "XL2625T-T48854",
+      "XL2625T-T51499",
+      "XL2625T-T53882",
+      "XL2625T-T58156",
+      "XL2625T-T64692",
+      "XL2625T-T68966",
+      "XL2625T-T83175",
+      "XL2625T-T88449",
+      "XL2625T-T89957",
+      "XL2625T-T90586",
+      "XL2625T-T93477",
+      "XL2625T-T95614",
+      "XL2625T-T96368",
+      "XL2625T-T98505",
+      "XL2625T-T99013"
+    ]
+  },
+  "public_aps_proceeding": {
+    "proceeding_application_families": 1605,
+    "pre_replacement_contention_sets_after_withdrawals": 262,
+    "pre_replacement_applications_in_contention_after_withdrawals": 881,
+    "confirmed_contention_sets": 226,
+    "confirmed_applications_in_contention": 705,
+    "applicant_support_proceeding": 46,
+    "ap_region_proceeding": 210
+  },
+  "official_announcement_aggregates": {
+    "proceeding_applications": 1610,
+    "pre_replacement_contention_sets": 262,
+    "pre_replacement_applications_in_contention": 885,
+    "confirmed_contention_sets": 226,
+    "confirmed_applications_in_contention": 709,
+    "applicant_support_applications": 50,
+    "ap_region_applications": 215
+  },
+  "aggregate_minus_public_gaps": {
+    "proceeding_vs_public_aps": 5,
+    "pre_replacement_contention_membership": 4,
+    "confirmed_contention_membership": 4,
+    "applicant_support": 4,
+    "ap_region_before_wdo_adjustment": 5
+  },
+  "interpretation": [
+    "The public Reveal Day contention CSV remains 263 sets / 891 rows.",
+    "All nine applications later marked Withdrawn were members of that Reveal Day contention CSV.",
+    "Removing those nine rows and dropping the resulting singleton .src group yields 262 visible sets / 881 visible contention memberships.",
+    "The String Confirmation Day contention CSV has 226 sets / 705 rows.",
+    "ICANN's announcement instead uses 262 / 885 before replacement and 226 / 709 after replacement: a constant +4 membership gap relative to the reconciled public files.",
+    "The four-record gap must remain an unresolved aggregate/publication discrepancy until the missing application identities are publicly verifiable."
+  ]
+}
