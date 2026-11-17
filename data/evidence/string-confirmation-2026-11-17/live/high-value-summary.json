@@ -1,0 +1,1278 @@
+{
+  "rows": 2783,
+  "base_ids": 1614,
+  "replacement_rows": 1169,
+  "base_statuses": {
+    "Active": 1453,
+    "Deactivated": 152,
+    "Withdrawn": 9
+  },
+  "replacement_statuses": {
+    "Deactivated": 1017,
+    "Active": 152
+  },
+  "base_regions": {
+    "EUR": 449,
+    "NA": 786,
+    "AP": 194,
+    "LAC": 11,
+    "AF": 13
+  },
+  "active_applicant_support_base": 36,
+  "selected_replacements_detected": 152,
+  "selected_replacements": [
+    {
+      "application_id": "TL2645T-T53249",
+      "original_string": "ddd",
+      "replacement_string": "acg",
+      "applicant": "TechEdge Limited",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "TG2593-T64817",
+      "original_string": "coaching",
+      "replacement_string": "agentur",
+      "applicant": "tldbox GmbH",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "ASAA2567-T97759",
+      "original_string": "agt",
+      "replacement_string": "aiq",
+      "applicant": "AI Safety Asia Limited",
+      "region": "AP",
+      "applicant_support": "TRUE"
+    },
+    {
+      "application_id": "LFGL2683T-T79014",
+      "original_string": "invest",
+      "replacement_string": "algo",
+      "applicant": "Link Freedom Group Ltd",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "TIGL2633T-T28238",
+      "original_string": "iam",
+      "replacement_string": "ami",
+      "applicant": "The Incite Group, LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NA2626T-T51374",
+      "original_string": "fam",
+      "replacement_string": "amp",
+      "applicant": "ShortDot (Ireland) Limited",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NLTC2529-T64442",
+      "original_string": "share",
+      "replacement_string": "analog",
+      "applicant": "Ningbo Lingjie Technology Co., Ltd.",
+      "region": "AP",
+      "applicant_support": "TRUE"
+    },
+    {
+      "application_id": "IIUM2696T-T97372",
+      "original_string": "praxis",
+      "replacement_string": "arzt",
+      "applicant": "index Internet und Mediaforschung GmbH",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "ETI2627T-T21585",
+      "original_string": "nerd",
+      "replacement_string": "asdf",
+      "applicant": "easyDNS Technologies Inc.",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T14287",
+      "original_string": "machine",
+      "replacement_string": "atl",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "WYMG2568-T96993",
+      "original_string": "deploy",
+      "replacement_string": "atlas",
+      "applicant": "WITH YOU MEDYA GIDA SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
+      "region": "AP",
+      "applicant_support": "TRUE"
+    },
+    {
+      "application_id": "XL2625T-T88449",
+      "original_string": "list",
+      "replacement_string": "ave",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "KG2621T-T78385",
+      "original_string": "frankfurt",
+      "replacement_string": "bau",
+      "applicant": "Krischenowski GmbH",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NTG2671T-T59664",
+      "original_string": "way",
+      "replacement_string": "bff",
+      "applicant": "NextGEN TLDs GmbH",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NA2626T-T67212",
+      "original_string": "bit",
+      "replacement_string": "bold",
+      "applicant": "ShortDot (Ireland) Limited",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "ISL2626T-T51112",
+      "original_string": "donate",
+      "replacement_string": "borrow",
+      "applicant": "Innovation Service Limited",
+      "region": "AF",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T64692",
+      "original_string": "king",
+      "replacement_string": "boss",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T93477",
+      "original_string": "neo",
+      "replacement_string": "bud",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NA2631T-T69966",
+      "original_string": "soul",
+      "replacement_string": "buddy",
+      "applicant": "Registry Services, LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "VTL2632T-T14662",
+      "original_string": "inn",
+      "replacement_string": "cannabis",
+      "applicant": "Velvet Taupe, LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "ETI2627T-T93610",
+      "original_string": "iam",
+      "replacement_string": "canuck",
+      "applicant": "easyDNS Technologies Inc.",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "MLG2688T-T30008",
+      "original_string": "therapy",
+      "replacement_string": "christian",
+      "applicant": "101130013 Saskatchewan Ltd.",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T53882",
+      "original_string": "max",
+      "replacement_string": "cleaners",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XI2694T-T68587",
+      "original_string": "form",
+      "replacement_string": "cms",
+      "applicant": "XRegistry Incorporated",
+      "region": "AP",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "RTIS2674T-T31383",
+      "original_string": "platform",
+      "replacement_string": "concierge",
+      "applicant": "Radix Technologies Inc SEZC",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NSL2674T-T26988",
+      "original_string": "fest",
+      "replacement_string": "conf",
+      "applicant": "NAME SPACE LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "IRI2679T-T57402",
+      "original_string": "project",
+      "replacement_string": "contest",
+      "applicant": "Intercap Registry Inc.",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NPL2622T-T46713",
+      "original_string": "log",
+      "replacement_string": "cot",
+      "applicant": "NETDREAM PTE. LTD.",
+      "region": "AP",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NSL2674T-T66583",
+      "original_string": "ify",
+      "replacement_string": "ctrl",
+      "applicant": "NAME SPACE LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "TL2645T-T45834",
+      "original_string": "way",
+      "replacement_string": "cyb",
+      "applicant": "TechEdge Limited",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "EDI2665T-T67966",
+      "original_string": "big",
+      "replacement_string": "dash",
+      "applicant": "Endpoint Domains, Inc.",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "OD2692T-T13279",
+      "original_string": "sell",
+      "replacement_string": "developer",
+      "applicant": "Oyster Dream, LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T17932",
+      "original_string": "firm",
+      "replacement_string": "door",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NA2626T-T16549",
+      "original_string": "uni",
+      "replacement_string": "duo",
+      "applicant": "ShortDot (Ireland) Limited",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "EDCL2689T-T81667",
+      "original_string": "echo",
+      "replacement_string": "echostar",
+      "applicant": "ECHO Domain Co L.L.C.",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NA2626T-T22589",
+      "original_string": "get",
+      "replacement_string": "ego",
+      "applicant": "ShortDot (Ireland) Limited",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "LFGL2683T-T30871",
+      "original_string": "firm",
+      "replacement_string": "enter",
+      "applicant": "Link Freedom Group Ltd",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T48854",
+      "original_string": "key",
+      "replacement_string": "exp",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "DC2669T-T20827",
+      "original_string": "wiz",
+      "replacement_string": "extravaganza",
+      "applicant": "Dotstrategy Co.",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "IRI2679T-T88324",
+      "original_string": "hello",
+      "replacement_string": "fact",
+      "applicant": "Intercap Registry Inc.",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NA2631T-T45830",
+      "original_string": "mart",
+      "replacement_string": "fair",
+      "applicant": "Registry Services, LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "IRI2679T-T65321",
+      "original_string": "real",
+      "replacement_string": "fav",
+      "applicant": "Intercap Registry Inc.",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "LFGL2683T-T79768",
+      "original_string": "therapy",
+      "replacement_string": "fight",
+      "applicant": "Link Freedom Group Ltd",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T99013",
+      "original_string": "wellness",
+      "replacement_string": "finder",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "GEL2647T-T82917",
+      "original_string": "token",
+      "replacement_string": "focus",
+      "applicant": "Glass Emotion, LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "LL2624T-T78389",
+      "original_string": "lot",
+      "replacement_string": "for",
+      "applicant": "LeapSense Limited",
+      "region": "AP",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NA2631T-T22456",
+      "original_string": "robot",
+      "replacement_string": "fuel",
+      "applicant": "Registry Services, LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "ISL2626T-T66950",
+      "original_string": "vpn",
+      "replacement_string": "gateway",
+      "applicant": "Innovation Service Limited",
+      "region": "AF",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "UMIA2681T-T53765",
+      "original_string": "factory",
+      "replacement_string": "getaway",
+      "applicant": "USA MADE IN AMERICA INC.",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T34903",
+      "original_string": "pop",
+      "replacement_string": "girl",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "WVL2684T-T36786",
+      "original_string": "maker",
+      "replacement_string": "gis",
+      "applicant": "Workbench Ventures LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "OCF2539-T20706",
+      "original_string": "ops",
+      "replacement_string": "git",
+      "applicant": "Open Culture Foundation",
+      "region": "AP",
+      "applicant_support": "TRUE"
+    },
+    {
+      "application_id": "EDCL2689T-T32016",
+      "original_string": "super",
+      "replacement_string": "glam",
+      "applicant": "ECHO Domain Co L.L.C.",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NA2631T-T99126",
+      "original_string": "labs",
+      "replacement_string": "graph",
+      "applicant": "Registry Services, LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "SI2639T-T44584",
+      "original_string": "ask",
+      "replacement_string": "gtld",
+      "applicant": "Suffix Inc.",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T90586",
+      "original_string": "pod",
+      "replacement_string": "guard",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "LFGL2683T-T88441",
+      "original_string": "pod",
+      "replacement_string": "hard",
+      "applicant": "Link Freedom Group Ltd",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NTG2671T-T37544",
+      "original_string": "inn",
+      "replacement_string": "hike",
+      "applicant": "NextGEN TLDs GmbH",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T83175",
+      "original_string": "advisors",
+      "replacement_string": "hill",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NA2626T-T11779",
+      "original_string": "gig",
+      "replacement_string": "hip",
+      "applicant": "ShortDot (Ireland) Limited",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "MLG2688T-T77522",
+      "original_string": "bbq",
+      "replacement_string": "homecare",
+      "applicant": "101130013 Saskatchewan Ltd.",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T23714",
+      "original_string": "bit",
+      "replacement_string": "hospitality",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "HCL2645T-T37673",
+      "original_string": "hub",
+      "replacement_string": "hubid",
+      "applicant": "HUB Culture Ltd",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "IRI2679T-T65817",
+      "original_string": "all",
+      "replacement_string": "huge",
+      "applicant": "Intercap Registry Inc.",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XI2694T-T60543",
+      "original_string": "sign",
+      "replacement_string": "image",
+      "applicant": "XRegistry Incorporated",
+      "region": "AP",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "MMPL2632T-T44705",
+      "original_string": "meditative",
+      "replacement_string": "immersive",
+      "applicant": "Meditative Mind Pty Ltd",
+      "region": "AP",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "LFGL2683T-T94977",
+      "original_string": "brand",
+      "replacement_string": "industry",
+      "applicant": "Link Freedom Group Ltd",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T98505",
+      "original_string": "point",
+      "replacement_string": "ins",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T89957",
+      "original_string": "base",
+      "replacement_string": "insights",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "MEL2626T-T48733",
+      "original_string": "brand",
+      "replacement_string": "ish",
+      "applicant": "M&A Entity LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "EDCL2689T-T29879",
+      "original_string": "ask",
+      "replacement_string": "item",
+      "applicant": "ECHO Domain Co L.L.C.",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T31633",
+      "original_string": "brand",
+      "replacement_string": "ity",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T33016",
+      "original_string": "journey",
+      "replacement_string": "jin",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "ISII2617T-T57898",
+      "original_string": "lab",
+      "replacement_string": "kawaii",
+      "applicant": "Interlink Systems Innovation Institute K.K.",
+      "region": "AP",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T41689",
+      "original_string": "gear",
+      "replacement_string": "label",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "KG2699T-T28984",
+      "original_string": "owl",
+      "replacement_string": "laden",
+      "applicant": "KV GmbH",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NA2631T-T27230",
+      "original_string": "crm",
+      "replacement_string": "leads",
+      "applicant": "Registry Services, LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NA2626T-T31004",
+      "original_string": "key",
+      "replacement_string": "let",
+      "applicant": "ShortDot (Ireland) Limited",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "T3PB2538-T94985",
+      "original_string": "time",
+      "replacement_string": "lifetime",
+      "applicant": "TLD 3D Public Benefit Corporation",
+      "region": "NA",
+      "applicant_support": "TRUE"
+    },
+    {
+      "application_id": "PDAC2521-T93356",
+      "original_string": "robotics",
+      "replacement_string": "listing",
+      "applicant": "Puppap Dot AI, Co., Ltd.",
+      "region": "AP",
+      "applicant_support": "TRUE"
+    },
+    {
+      "application_id": "EDI2665T-T44209",
+      "original_string": "fab",
+      "replacement_string": "lmao",
+      "applicant": "Endpoint Domains, Inc.",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "OI2692T-T69849",
+      "original_string": "anime",
+      "replacement_string": "lore",
+      "applicant": "Oinkadot Inc",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NA2631T-T69341",
+      "original_string": "brand",
+      "replacement_string": "master",
+      "applicant": "Registry Services, LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NA2631T-T66571",
+      "original_string": "mind",
+      "replacement_string": "memory",
+      "applicant": "Registry Services, LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T65204",
+      "original_string": "van",
+      "replacement_string": "min",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NA2626T-T24726",
+      "original_string": "gym",
+      "replacement_string": "mood",
+      "applicant": "ShortDot (Ireland) Limited",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "ODC2534-T66083",
+      "original_string": "api",
+      "replacement_string": "nas",
+      "applicant": "OPEN DEVELOPMENT CAMBODIA",
+      "region": "AP",
+      "applicant_support": "TRUE"
+    },
+    {
+      "application_id": "LFGL2683T-T96989",
+      "original_string": "mvp",
+      "replacement_string": "near",
+      "applicant": "Link Freedom Group Ltd",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "GMTS2586-T19194",
+      "original_string": "goods",
+      "replacement_string": "nightlife",
+      "applicant": "Golden Mandarin Training Service Co., Ltd.",
+      "region": "AP",
+      "applicant_support": "TRUE"
+    },
+    {
+      "application_id": "XL2625T-T11396",
+      "original_string": "node",
+      "replacement_string": "north",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "OI2692T-T30254",
+      "original_string": "zzz",
+      "replacement_string": "null",
+      "applicant": "Oinkadot Inc",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "PPND2513-T68462",
+      "original_string": "node",
+      "replacement_string": "nusa",
+      "applicant": "Perkumpulan Pengelola Nama Domain Internet Indonesia",
+      "region": "AP",
+      "applicant_support": "TRUE"
+    },
+    {
+      "application_id": "LFGL2683T-T26472",
+      "original_string": "wellness",
+      "replacement_string": "okay",
+      "applicant": "Link Freedom Group Ltd",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "A2652T-T59922",
+      "original_string": "agi",
+      "replacement_string": "operator",
+      "applicant": "Zero Gravity Labs Inc.",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "IG2663T-T85800",
+      "original_string": "official",
+      "replacement_string": "original",
+      "applicant": "iRegistry GmbH",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "OI2692T-T77768",
+      "original_string": "manga",
+      "replacement_string": "peach",
+      "applicant": "Oinkadot Inc",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "KG2621T-T62547",
+      "original_string": "muenchen",
+      "replacement_string": "pflege",
+      "applicant": "Krischenowski GmbH",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "LFGL2683T-T33637",
+      "original_string": "max",
+      "replacement_string": "phi",
+      "applicant": "Link Freedom Group Ltd",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "KKWT2621T-T46596",
+      "original_string": "vibe",
+      "replacement_string": "php",
+      "applicant": "Knock Knock WHOIS There, LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "PCC2647T-T40814",
+      "original_string": "pai",
+      "replacement_string": "pico",
+      "applicant": "Pi Community Company",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "OI2692T-T85687",
+      "original_string": "hack",
+      "replacement_string": "pill",
+      "applicant": "Oinkadot Inc",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "IRI2679T-T83038",
+      "original_string": "slides",
+      "replacement_string": "present",
+      "applicant": "Intercap Registry Inc.",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "TT2652T-T65067",
+      "original_string": "yeah",
+      "replacement_string": "prototype",
+      "applicant": "Toddler Logic, LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T48608",
+      "original_string": "more",
+      "replacement_string": "publishing",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "LFGL2683T-T28734",
+      "original_string": "cart",
+      "replacement_string": "pump",
+      "applicant": "Link Freedom Group Ltd",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NTG2671T-T94231",
+      "original_string": "send",
+      "replacement_string": "rank",
+      "applicant": "NextGEN TLDs GmbH",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "SI2594-T16545",
+      "original_string": "wifi",
+      "replacement_string": "rankings",
+      "applicant": "SAF Inc",
+      "region": "EUR",
+      "applicant_support": "TRUE"
+    },
+    {
+      "application_id": "LFGL2683T-T34391",
+      "original_string": "wise",
+      "replacement_string": "raw",
+      "applicant": "Link Freedom Group Ltd",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T95614",
+      "original_string": "roofing",
+      "replacement_string": "recovery",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "MLG2688T-T93360",
+      "original_string": "connect",
+      "replacement_string": "reno",
+      "applicant": "101130013 Saskatchewan Ltd.",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "INC2624T-T91582",
+      "original_string": "api",
+      "replacement_string": "repo",
+      "applicant": "Internet Naming Company",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T42443",
+      "original_string": "air",
+      "replacement_string": "resources",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "A2619T-T45080",
+      "original_string": "beta",
+      "replacement_string": "resume",
+      "applicant": "Berth Order, LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "LFGL2683T-T91961",
+      "original_string": "make",
+      "replacement_string": "rev",
+      "applicant": "Link Freedom Group Ltd",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "LFGL2683T-T65438",
+      "original_string": "epic",
+      "replacement_string": "rrr",
+      "applicant": "Link Freedom Group Ltd",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "KG2699T-T10255",
+      "original_string": "bro",
+      "replacement_string": "seite",
+      "applicant": "KV GmbH",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NTG2671T-T67583",
+      "original_string": "yes",
+      "replacement_string": "seniors",
+      "applicant": "NextGEN TLDs GmbH",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T96368",
+      "original_string": "logistics",
+      "replacement_string": "seo",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T51499",
+      "original_string": "path",
+      "replacement_string": "sleep",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "LFGL2683T-T97114",
+      "original_string": "factory",
+      "replacement_string": "slop",
+      "applicant": "Link Freedom Group Ltd",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T32770",
+      "original_string": "transport",
+      "replacement_string": "snow",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NTG2671T-T70474",
+      "original_string": "profile",
+      "replacement_string": "sos",
+      "applicant": "NextGEN TLDs GmbH",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "OI2692T-T74877",
+      "original_string": "puff",
+      "replacement_string": "spark",
+      "applicant": "Oinkadot Inc",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T68966",
+      "original_string": "tea",
+      "replacement_string": "steel",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "IRI2679T-T28359",
+      "original_string": "forms",
+      "replacement_string": "survey",
+      "applicant": "Intercap Registry Inc.",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T25097",
+      "original_string": "jia",
+      "replacement_string": "sushi",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "EDI2665T-T47100",
+      "original_string": "mix",
+      "replacement_string": "tbd",
+      "applicant": "Endpoint Domains, Inc.",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "SI2639T-T89961",
+      "original_string": "lfg",
+      "replacement_string": "tom",
+      "applicant": "Suffix Inc.",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "LFGL2683T-T48092",
+      "original_string": "sys",
+      "replacement_string": "tree",
+      "applicant": "Link Freedom Group Ltd",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "ISL2626T-T59031",
+      "original_string": "real",
+      "replacement_string": "trending",
+      "applicant": "Innovation Service Limited",
+      "region": "AF",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NA2631T-T74744",
+      "original_string": "pop",
+      "replacement_string": "trends",
+      "applicant": "Registry Services, LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "LFGL2683T-T25718",
+      "original_string": "mart",
+      "replacement_string": "ttt",
+      "applicant": "Link Freedom Group Ltd",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "SS2654T-T46463",
+      "original_string": "line",
+      "replacement_string": "twin",
+      "applicant": "Hair Apparent, LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "TL2645T-T21573",
+      "original_string": "mind",
+      "replacement_string": "twt",
+      "applicant": "TechEdge Limited",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "DL2636T-T75885",
+      "original_string": "spring",
+      "replacement_string": "ufo",
+      "applicant": "DynaReg LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T26480",
+      "original_string": "universe",
+      "replacement_string": "union",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NA2626T-T56402",
+      "original_string": "bro",
+      "replacement_string": "unit",
+      "applicant": "ShortDot (Ireland) Limited",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T34399",
+      "original_string": "unlimited",
+      "replacement_string": "united",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NTG2671T-T15041",
+      "original_string": "config",
+      "replacement_string": "upload",
+      "applicant": "NextGEN TLDs GmbH",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "LFGL2683T-T58273",
+      "original_string": "air",
+      "replacement_string": "use",
+      "applicant": "Link Freedom Group Ltd",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T58156",
+      "original_string": "virtual",
+      "replacement_string": "valley",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XL2625T-T26605",
+      "original_string": "agent",
+      "replacement_string": "village",
+      "applicant": "XYZ.COM LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "LFGL2683T-T54503",
+      "original_string": "official",
+      "replacement_string": "vvv",
+      "applicant": "Link Freedom Group Ltd",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "EDI2665T-T52128",
+      "original_string": "happy",
+      "replacement_string": "weird",
+      "applicant": "Endpoint Domains, Inc.",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "CCS2640T-T56644",
+      "original_string": "connect",
+      "replacement_string": "welcome",
+      "applicant": "Cam Connecting SARL",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "LFGL2683T-T41556",
+      "original_string": "merch",
+      "replacement_string": "what",
+      "applicant": "Link Freedom Group Ltd",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "TL2627T-T31766",
+      "original_string": "etc",
+      "replacement_string": "whatsnew",
+      "applicant": "TLD1 LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "LFGL2683T-T18553",
+      "original_string": "well",
+      "replacement_string": "will",
+      "applicant": "Link Freedom Group Ltd",
+      "region": "EUR",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "SRL2616T-T44072",
+      "original_string": "lab",
+      "replacement_string": "workshop",
+      "applicant": "Squarespace Registry LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "XI2694T-T86949",
+      "original_string": "story",
+      "replacement_string": "xio",
+      "applicant": "XRegistry Incorporated",
+      "region": "AP",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "IDOL2621T-T20061",
+      "original_string": "brand",
+      "replacement_string": "xn--hxt324i",
+      "applicant": "Internet DotTrademark Organisation Limited",
+      "region": "AP",
+      "applicant_support": "FALSE"
+    },
+    {
+      "application_id": "NSL2674T-T50745",
+      "original_string": "iii",
+      "replacement_string": "yoyo",
+      "applicant": "NAME SPACE LLC",
+      "region": "NA",
+      "applicant_support": "FALSE"
+    }
+  ],
+  "lugano": {
+    "Priority": "",
+    "Primary String": "lugano",
+    "Primary String Unicode Label": "",
+    "TLD Variants": "",
+    "TLD Type: Brand": "FALSE",
+    "TLD Type: Community": "FALSE",
+    "TLD Type: Geo (Self-Designated)": "TRUE",
+    "TLD Type: Geo (String Review Confirmed)": "FALSE",
+    "TLD Type: IDN": "FALSE",
+    "Application ID": "CDL2651T-T31516",
+    "Applicant Name": "Città di Lugano",
+    "Application Type": "New gTLD",
+    "Application Status": "Active",
+    "Application Processing Stage": "String Evaluation Processing",
+    "Label: GAC Early Warning": "FALSE",
+    "Label: GAC Advice": "FALSE",
+    "Label: High Risk String": "FALSE",
+    "Label: Objection": "FALSE",
+    "Label: Safeguard": "FALSE",
+    "Label: In Contention": "FALSE",
+    "Label: Clarifying Questions": "FALSE",
+    "Label: Change Request": "FALSE",
+    "Label: Open Comment Period": "TRUE",
+    "Label: Comments": "FALSE",
+    "Label: RVC": "FALSE",
+    "Label: Applicant Support": "FALSE",
+    "Label: Variant Only (Existing TLD)": "FALSE",
+    "Label: Variant Included": "FALSE",
+    "Label: CoC Exemption": "FALSE",
+    "Label: Reserved Name": "FALSE",
+    "Label: CPE": "FALSE",
+    "Label: Singular/Plural": "FALSE",
+    "Location": "CH",
+    "Region": "EUR"
+  },
+  "wdo": null
+}

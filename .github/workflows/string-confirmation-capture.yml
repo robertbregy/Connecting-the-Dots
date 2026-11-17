@@ -1,0 +1,209 @@
+name: Capture String Confirmation Day evidence
+
+on:
+  push:
+    branches:
+      - prep/string-confirmation-2026-11-17
+    paths:
+      - .github/workflows/string-confirmation-capture.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Capture official APS export
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p capture
+          captured_at="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          printf '%s\n' "$captured_at" > capture/captured-at-utc.txt
+
+          curl --fail --silent --show-error --location \
+            -X POST 'https://newgtldprogram-aps.icann.org/aps/applications/export/csv' \
+            -H 'Content-Type: application/json' \
+            --data '{"searchAndFilter":{},"sort":{"field":"primaryString","direction":"ASC"},"pagination":{"pageNum":0,"pageSize":5000}}' \
+            -o capture/aps-export-raw.csv
+
+          python3 - <<'PY'
+          from pathlib import Path
+          raw = Path("capture/aps-export-raw.csv").read_text(encoding="utf-8-sig")
+          marker = "Priority,"
+          pos = raw.find(marker)
+          if pos < 0:
+              raise SystemExit("APS export did not contain the expected CSV header")
+          normalized = raw[pos:].replace("\r\n", "\n").replace("\r", "\n")
+          Path("capture/aps-export-normalized.csv").write_text(normalized, encoding="utf-8")
+          PY
+
+          sha256sum capture/aps-export-raw.csv capture/aps-export-normalized.csv > capture/sha256.txt
+          wc -c -l capture/aps-export-raw.csv capture/aps-export-normalized.csv > capture/sizes.txt
+
+      - name: Capture live APS pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location \
+            'https://newgtldprogram-aps.icann.org/applications' \
+            -o capture/applications-page.html
+          curl --fail --silent --show-error --location \
+            'https://newgtldprogram-aps.icann.org/statistics' \
+            -o capture/statistics-page.html
+          grep -oiE 'href="[^"]*contention[^"]*"' capture/applications-page.html > capture/contention-links.txt || true
+          grep -oiE 'href="[^"]*\.csv[^"]*"' capture/applications-page.html >> capture/contention-links.txt || true
+          grep -oiE '.{0,100}contention.{0,220}' capture/applications-page.html > capture/contention-context.txt || true
+
+          curl --fail --silent --show-error --location \
+            'https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv' \
+            -o capture/reveal-day-contention-sets.csv
+          curl --fail --silent --show-error --location \
+            'https://newgtldprogram.icann.org/en/application-rounds/round2/string-confirmation-contention-sets.csv' \
+            -o capture/string-confirmation-contention-sets.csv
+
+          curl --fail --silent --show-error --location \
+            'https://newgtldprogram-aps.icann.org/applications/WDO2627T-T45217/summary' \
+            -o capture/wdo-summary.html
+
+      - name: Capture official contention files
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location \
+            'https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv' \
+            -o capture/reveal-day-contention-sets.csv
+          curl --fail --silent --show-error --location \
+            'https://newgtldprogram.icann.org/en/application-rounds/round2/string-confirmation-contention-sets.csv' \
+            -o capture/string-confirmation-contention-sets.csv
+          sha256sum capture/reveal-day-contention-sets.csv capture/string-confirmation-contention-sets.csv >> capture/sha256.txt
+          python3 - <<'PY'
+          import csv, json
+          from pathlib import Path
+          out = {}
+          for name in ("reveal-day-contention-sets.csv", "string-confirmation-contention-sets.csv"):
+              p = Path("capture") / name
+              with p.open(encoding="utf-8-sig", newline="") as f:
+                  rd = csv.DictReader(f)
+                  rows = list(rd)
+                  out[name] = {
+                      "columns": rd.fieldnames,
+                      "rows": len(rows),
+                      "sample": rows[:5],
+                  }
+          Path("capture/contention-file-shape.json").write_text(
+              json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+          )
+          PY
+
+      - name: Verify frozen baseline and generate diffs
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/aps_observatory.py verify-baseline > capture/baseline-verification.json
+          python3 scripts/aps_observatory.py compare \
+            --after capture/aps-export-normalized.csv \
+            --output capture/aps-observatory-diff.json \
+            > capture/aps-observatory-diff.stdout.json
+          python3 scripts/string_confirmation_20261117.py \
+            --after capture/aps-export-normalized.csv \
+            --output capture/string-confirmation-summary.json \
+            > capture/string-confirmation-summary.stdout.json
+
+      - name: Reconcile official contention files
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/contention_confirmation_20261117.py \
+            --reveal capture/reveal-day-contention-sets.csv \
+            --confirmed capture/string-confirmation-contention-sets.csv \
+            --aps capture/aps-export-normalized.csv \
+            --output capture/contention-reconciliation.json \
+            > capture/contention-reconciliation.stdout.json
+
+      - name: Extract high-value records and counts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import csv, json
+          from collections import Counter
+          from pathlib import Path
+
+          p = Path("capture/aps-export-normalized.csv")
+          rows = list(csv.DictReader(p.open(encoding="utf-8")))
+          base = [r for r in rows if not r["Application ID"].endswith("-R")]
+          repl = [r for r in rows if r["Application ID"].endswith("-R")]
+          by_id = {r["Application ID"]: r for r in rows}
+
+          chosen = []
+          for r in repl:
+              aid = r["Application ID"][:-2]
+              original = by_id.get(aid)
+              if original and original["Application Status"] == "Deactivated" and r["Application Status"] == "Active":
+                  chosen.append({
+                      "application_id": aid,
+                      "original_string": original["Primary String"],
+                      "replacement_string": r["Primary String"],
+                      "applicant": r["Applicant Name"],
+                      "region": r["Region"],
+                      "applicant_support": r["Label: Applicant Support"],
+                  })
+
+          out = {
+              "rows": len(rows),
+              "base_ids": len(base),
+              "replacement_rows": len(repl),
+              "base_statuses": dict(Counter(r["Application Status"] for r in base)),
+              "replacement_statuses": dict(Counter(r["Application Status"] for r in repl)),
+              "base_regions": dict(Counter(r["Region"] for r in base if r["Application Status"] == "Active")),
+              "active_applicant_support_base": sum(
+                  r["Application Status"] == "Active" and r["Label: Applicant Support"] == "TRUE"
+                  for r in base
+              ),
+              "selected_replacements_detected": len(chosen),
+              "selected_replacements": chosen,
+              "lugano": by_id.get("CDL2651T-T31516"),
+              "wdo": by_id.get("WDO2627T-T45217"),
+          }
+          Path("capture/high-value-summary.json").write_text(
+              json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+          )
+          PY
+
+      - name: Extract live APS statistics
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import re, json
+          from pathlib import Path
+          s=Path('capture/statistics-page.html').read_text(errors='ignore')
+          def val(label):
+              m=re.search(r'class="title">'+re.escape(label)+r'</div>.*?class="data-text[^"]*"[^>]*>([^<]+)</span>',s,re.S)
+              return m.group(1).strip() if m else None
+          published=re.search(r'Last published on:\s*([^<]+)',s)
+          out={
+            'lastPublished': published.group(1).strip() if published else None,
+            'totalApplicants':val('Total Applicants'),
+            'totalApplications':val('Total Applications'),
+            'totalUniqueStrings':val('Total Unique Strings'),
+            'totalVariants':val('Total Variants'),
+            'active':val('Active'),
+            'withdrawn':val('Withdrawn')
+          }
+          Path('capture/aps-statistics-summary.json').write_text(json.dumps(out,indent=2)+'\n')
+          print(json.dumps(out,indent=2))
+          PY
+
+      - name: Upload evidence artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: string-confirmation-2026-11-17-live-capture
+          path: capture/
+          if-no-files-found: error
+          retention-days: 30

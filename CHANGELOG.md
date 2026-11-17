@@ -1,3 +1,12 @@
+# v0.8.0 — 17 November 2026
+
+- Added a separate, hash-pinned ICANN APS String Confirmation Day snapshot while preserving the Reveal Day source unchanged.
+- Reconciled 152 selected replacement strings and nine withdrawals from paired public APS records.
+- Moved the current Application Atlas to effective confirmed strings: 1,605 visible proceeding application families, 1,120 visible proceeding new-primary strings and 226 public confirmed contention sets / 705 application rows.
+- Recorded, without inference, the four-application gap between ICANN's 17 November announcement aggregates and the public APS/contention files; .wdo remains a separate administrative-check case.
+- Advanced .lugano to Active / String Evaluation Processing, not in identical-string contention, with the public comment period open.
+- Opened RR3 as a prepublication candidate; RR2 remains the current citable research release and the working paper remains v1.4-draft.
+
 # v0.7.112 — 12 November 2026
 
 - Added localized Research & citation entry pages for Italian, German and French while keeping the canonical working paper in English.

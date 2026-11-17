@@ -832,7 +832,8 @@ if (manifest.get('aps_2026_official_listing',{}).get('publishedApplications')!=1
 site_base='https://robertbregy.github.io/Connecting-the-Dots/'
 graph=json_file('aps_2026_application_graph.json')
 graph_report=json_file('aps_2026_application_graph_manifest.json')
-if graph.get('schemaVersion')!=1 or graph.get('counts',{}).get('officialPublishedApplications')!=1614:
+current_prov=json_file('applications_2026_aps_string_confirmation_20261117_provenance.json')
+if graph.get('schemaVersion')!=2 or graph.get('snapshotState')!='string-confirmation' or graph.get('counts',{}).get('officialPublishedApplications')!=1614:
     fail('2026 graph must have precisely 1614 published base applications')
 if len(graph.get('apps',[]))!=1614 or len({a['id'] for a in graph['apps']})!=1614:
     fail('Graph base Application IDs absent or duplicated')
@@ -844,22 +845,22 @@ if graph.get('notPublishedApplication',{}).get('id')!='WDO2627T-T45217':
     fail('Withheld WDO provenance missing from graph')
 if not all(a['detailUrl']=='https://newgtldprogram-aps.icann.org/applications/'+a['id']+'/summary' for a in graph['apps']):
     fail('Official application summary links are inconsistent with their IDs')
-if graph['counts'].get('derivedExactPrimaryMatchGroups')!=263 or graph['counts'].get('applicationsInExactPrimaryMatches')!=891:
-    fail('Derived preliminary exact-string overlaps changed unexpectedly')
-if graph_report.get('sourceSha256')!=prov['normalizedCSVSHA256']:
-    fail('Graph provenance not pinned to exact official APS CSV checksum')
+if graph['counts'].get('derivedExactPrimaryMatchGroups')!=226 or graph['counts'].get('applicationsInExactPrimaryMatches')!=705:
+    fail('Confirmed public exact-string contention must reconcile to 226 sets / 705 application rows')
+if graph_report.get('sourceSha256')!=current_prov['normalizedCSVSHA256']:
+    fail('Current graph provenance not pinned to the 17 November APS CSV checksum')
 for name,expected in graph_report.get('files',{}).items():
     file=DATA/name
     if not file.exists() or hashlib.sha256(file.read_bytes()).hexdigest()!=expected.get('sha256'):
         fail('Analytical graph output has changed: '+name)
 edges=rows('aps_2026_application_edges.csv')
 observations=rows('aps_2026_record_observations.csv')
-if len(edges)!=2796 or len(observations)<2783:
+if len(edges)!=2796 or len(observations)<5566:
     fail('APS primary, replacement, variant edges or snapshot event observations missing')
 if set(x['application_id'] for x in edges)!={a['id'] for a in graph['apps']}:
     fail('String relationships contain orphan or missing applications')
-if any(x['source_sha256']!=prov['normalizedCSVSHA256'] for x in observations if x['observed_utc']==prov['retrievedAtUTC']):
-    fail('APS observation log refers to wrong source checksum')
+if any(x['source_sha256']!=current_prov['normalizedCSVSHA256'] for x in observations if x['observed_utc']==current_prov['retrievedAtUTC']):
+    fail('Current APS observation log refers to wrong source checksum')
 if (manifest.get('aps_2026_application_graph',{}).get('officialPublishedApplications')!=1614 or
     manifest.get('aps_2026_application_graph',{}).get('individualPDFsVendored') is not False):
     fail('Manifest conflates application-level public listing with archived dossier PDFs')
@@ -930,7 +931,7 @@ if publication_meta.get('researchRelease')!='RR2' or publication_meta.get('doi')
 if publication_meta.get('conceptDoi')!='10.5281/zenodo.23262622':
     fail('Current website does not link the original RR1/RR2 version concept')
 chronicle_states={event['state'] for event in events}
-if chronicle_states!={'observed','scheduled','evolving','conditional'}:
+if chronicle_states!={'observed','current','evolving','conditional'}:
     fail('Inside the Round status distinctions missing')
 for event in events:
     if not event['source'].startswith(('https://www.icann.org/','https://newgtldprogram.icann.org/','https://newgtldprogram-aps.icann.org/','https://www.lugano.ch/')):
@@ -953,8 +954,14 @@ if (not replacement or replacement.get('state')!='observed' or replacement.get('
     replacement.get('bodyKey')!='insideReplaceCompletedBody' or
     replacement.get('revisionHistory',[])[-1].get('date')!='2026-10-30'):
     fail('Replacement period must be closed without implying confirmed applicant choices')
-if chronicle.get('lastReviewed')!='2026-10-30':
-    fail('Current technical release lacks dated 30 October timeline review')
+if chronicle.get('lastReviewed')!='2026-11-17':
+    fail('Current technical release lacks dated 17 November timeline review')
+confirmation=next((e for e in events if e['id']=='confirmation'),None)
+community_input=next((e for e in events if e['id']=='community-input'),None)
+if not confirmation or confirmation.get('state')!='observed' or confirmation.get('bodyKey')!='insideConfirmObservedBody':
+    fail('String Confirmation Day must be recorded as an observed event')
+if not community_input or community_input.get('state')!='current' or community_input.get('endDate')!='2027-03-16':
+    fail('Community Input and Objections period must be current after 17 November')
 reveal=next(e for e in events if e['id']=='reveal-day')
 if not any('CDL2651T-T31516/summary' in item.get('source','') for item in reveal.get('extraSources',[])):
     fail('Official .lugano ICANN APS application source missing')
@@ -982,8 +989,8 @@ if not publication_meta.get('sourceReviewCommit') or publication_meta.get('sourc
     fail('Source-review provenance commit must be explicit and aligned with the compatibility field')
 if 'not the published merge commit' not in publication_meta.get('buildProvenanceRole',''):
     fail('Build provenance role remains ambiguous')
-if not (publication_meta['asOf'] <= publication_meta.get('paperRevisedOn','') <= publication_meta['releasedOn']):
-    fail('Working paper revision date outside snapshot/publication range')
+if not (publication_meta['researchSnapshot'] <= publication_meta.get('paperRevisedOn','') <= publication_meta['releasedOn']):
+    fail('Working paper scholarly revision date outside research-snapshot/publication range')
 if 'id="inside-round"' not in source_html or 'data-target="inside-round"' not in source_html:
     fail('Inside the Round missing from primary navigation and site source')
 if '<!-- CTD_INSIDE_ROUND_EVENTS -->' not in source_html:
@@ -1084,9 +1091,9 @@ if {q['id']:q['value'] for q in case['quantities']}!={'paid':1616,'official':161
     fail('Reveal Day discrepancy values altered without reviewed evidence')
 if case['trackedApplication']['id']!='WDO2627T-T45217' or case['trackedApplication']['string']!='.wdo':
     fail('Officially documented administrative-check record changed')
-if not case.get('revisionHistory') or case['revisionHistory'][-1]['date']!=case['revisedOn'] or case['revisionHistory'][-1]['changeKey']!='field18Revision':
+if not case.get('revisionHistory') or case['revisionHistory'][-1]['date']!=case['revisedOn'] or case['revisionHistory'][-1]['changeKey']!='behindRevisionStringConfirmation':
     fail('Unversioned field-note revision history')
-if len(case['sources'])!=17 or not any(s['kind']=='secondary' for s in case['sources']):
+if len(case['sources'])!=22 or not any(s['kind']=='secondary' for s in case['sources']):
     fail('Editorial case lacks provenance distinction')
 if not all(s['url'].startswith('https://') and s['labelKey'] for s in case['sources']):
     fail('Incomplete case evidence')

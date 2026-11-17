@@ -1,8 +1,8 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.7.112",
-  "release_date": "2026-11-12",
-  "publication_state": "reveal-day",
+  "version": "0.8.0",
+  "release_date": "2026-11-17",
+  "publication_state": "string-confirmation",
   "rendering": "static-prerendered",
   "language_routes": {
     "en": "en/",
@@ -11,6 +11,7 @@
     "fr": "fr/"
   },
   "as_of": "2026-10-10",
+  "technical_as_of": "2026-11-17",
   "temporal_coverage": "1984/2026",
   "reveal_day": "2026-10-07T18:00:00Z",
   "string_confirmation_day": "2026-11-17",
@@ -290,24 +291,31 @@
     "application2026OfficialListingPendingWDO": true
   },
   "aps_2026_application_graph": {
-    "source": "applications_2026_aps_official_listing.csv",
+    "source": "applications_2026_aps_string_confirmation_20261117.csv",
     "manifest": "aps_2026_application_graph_manifest.json",
     "graph": "aps_2026_application_graph.json",
     "edges": "aps_2026_application_edges.csv",
     "observations": "aps_2026_record_observations.csv",
-    "officialReportedApplications": 1615,
+    "apsStatisticsTotalApplications": 1615,
+    "apsStatisticsActiveApplications": 1606,
+    "officialAnnouncementProceedingApplications": 1610,
     "officialPublishedApplications": 1614,
+    "visibleProceedingApplications": 1605,
     "officialListingRows": 2783,
     "replacementRecords": 1169,
-    "replacementActive": 442,
-    "replacementDeactivated": 727,
-    "newPrimaryStringApplications": 1608,
-    "newPrimaryStrings": 980,
+    "selectedReplacementRecords": 152,
+    "replacementActive": 152,
+    "replacementDeactivated": 1017,
+    "proceedingNewPrimaryApplications": 1599,
+    "newPrimaryStrings": 1120,
     "variantOnlyExistingTldApplications": 6,
     "variantRelationships": 13,
-    "derivedExactPrimaryMatchGroups": 263,
-    "applicationsInExactPrimaryMatches": 891,
-    "officialUnpublishedApplications": 1,
+    "derivedExactPrimaryMatchGroups": 226,
+    "applicationsInExactPrimaryMatches": 705,
+    "officialAnnouncementApplicationsInContention": 709,
+    "knownAdministrativeCheckApplications": 1,
+    "announcementVsPublicProceedingGap": 5,
+    "unresolvedAnnouncementPublicationGap": 4,
     "individualPDFsVendored": false
   },
   "aps_2026_official_listing": {
@@ -325,7 +333,7 @@
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "release_history": {
     "path": "release_history.json",
-    "sha256": "367d0e9020891202bcb036e016819cb6bb3c53126d4f14d6cf7675185c2015fe"
+    "sha256": "dcb5f58088578cc96a71865936e8d66a9536b5174b9fa618af1ff952016c13a0"
   },
   "freeze": {
     "status": "reveal-day-snapshot",
@@ -340,28 +348,28 @@
     "assets": [
       {
         "repository_path": "data/site_bundle.js",
-        "bytes": 2475548,
-        "sha256": "a0f086ac989dd1e5b42383864dcc251f744b1c8891edb11e1f3c451a9cb043f9"
+        "bytes": 2475751,
+        "sha256": "ff69a6b2741ac0fd6411daae4a97bada874b8b293f22da7ad5be69073e895434"
       },
       {
         "repository_path": "data/i18n_en.js",
-        "bytes": 261913,
-        "sha256": "2ede3dfd81898f63d99d451f22b3ad9d39e10453cea344a799d4bd89dbf6cc6b"
+        "bytes": 266913,
+        "sha256": "0427a58562124034393350b95aaa28cebdb2e4e43684155a0409e6a3b5665af9"
       },
       {
         "repository_path": "data/i18n_it.js",
-        "bytes": 275839,
-        "sha256": "98a9c8a6fd4c8816a0a647c8b68274fab44baa4ab0ec7c4d1a84bc3ed27904ba"
+        "bytes": 281132,
+        "sha256": "92d485e167d94e8f86c0dee8ac542a18a5cf186b9720f19231566ff2355999ba"
       },
       {
         "repository_path": "data/i18n_de.js",
-        "bytes": 277824,
-        "sha256": "cf1def861e75788b54914da5f5f2aa6aa344f6bb8ed3e8deb8eb1adbcbe58941"
+        "bytes": 283190,
+        "sha256": "59affe452277a6db7a7294a1a05aaf9c796792aa12ee25d20ad7829d1f58e7f8"
       },
       {
         "repository_path": "data/i18n_fr.js",
-        "bytes": 289246,
-        "sha256": "363b6b902a953f7984a74a154ac65ca28918618c1d2b8858fb038d033c1145ce"
+        "bytes": 294827,
+        "sha256": "87fa8ee893cd051fde460ee77c5c6ebf6858cf753b05c07a5a846c5119339ed6"
       },
       {
         "repository_path": "data/applications_2026_strings_reveal.js",
@@ -405,13 +413,13 @@
       },
       {
         "repository_path": "assets/aps-atlas.js",
-        "bytes": 8956,
-        "sha256": "d40e8374e43b425398dc5385bdd8cc131c1f0046d2a930699f31978639036c1e"
+        "bytes": 9266,
+        "sha256": "d181733b1b6fd069a36ca99fa9d723177c0959ccf355d30446e7d3eeb86a1681"
       },
       {
         "repository_path": "data/aps_2026_application_graph.js",
-        "bytes": 947796,
-        "sha256": "37eb742916a8e79f3515b3daa7f25966bffc424003b74562299db2640a4d7bce"
+        "bytes": 1575228,
+        "sha256": "f35a1354726d4d080182881d0be11aa9256efdf64945764ecc1c294dbb42fe56"
       },
       {
         "repository_path": "data/worldmap.js",
@@ -420,43 +428,43 @@
       },
       {
         "repository_path": "data/explorer_profiles_0.js",
-        "bytes": 1089785,
-        "sha256": "b423e29bbbb95121af8a22caa2b309f1c83c4a943afd2b4ebedf52790414da42"
+        "bytes": 1089783,
+        "sha256": "4bfc3bfb092dd10f55632f91dc3f6597c0112c4e7279c6201f1c842284690cc9"
       },
       {
         "repository_path": "data/explorer_profiles_1.js",
-        "bytes": 904382,
-        "sha256": "65c48ca29daa9562c4ec63e363005d6f0fca6e1f2d3d0ef3f8e62c67634b70ce"
+        "bytes": 904380,
+        "sha256": "a96f4b89419495dddb56efec090ce2ff2935d622b68f196e2a01997ad63ae58b"
       },
       {
         "repository_path": "data/explorer_profiles_2.js",
-        "bytes": 1009407,
-        "sha256": "e4bf1bbfa391deca04eb3382fb0438f7b25b6f428b9ccfb72f7ed290fc25ed33"
+        "bytes": 1009405,
+        "sha256": "05d3cf94cb97706834cac1a8d720406bf8cfa0555934e137db3a7b22b9b1d2ec"
       },
       {
         "repository_path": "data/explorer_profiles_3.js",
-        "bytes": 934601,
-        "sha256": "748d117ddb63066f7bc2446b83e365ede1d2d357922a73b575fe9493de6fb3cc"
+        "bytes": 934599,
+        "sha256": "2810aa16ac9a04183647527e3467f7b0cfb846e168ec7c817c737360c5b7012c"
       },
       {
         "repository_path": "data/explorer_profiles_4.js",
-        "bytes": 970736,
-        "sha256": "6c0f26fde39952447d58d2039eb977b3a8c1ff0d84231217883da64000b1da9b"
+        "bytes": 970734,
+        "sha256": "7868a234c5ecd2b975b810aaa91d7b3f1e8a0e7c9d96b32b8059c044f67eb711"
       },
       {
         "repository_path": "data/explorer_profiles_5.js",
-        "bytes": 943442,
-        "sha256": "0ead9fe423c7ef953ffb0516278dbcde6b0a1599f813f762e9e9e9b8cfefb577"
+        "bytes": 943440,
+        "sha256": "078b2a081ae1ebc9a50bb9a801fbc4564070edc5efdd384e82b290e170886bc9"
       },
       {
         "repository_path": "data/explorer_profiles_6.js",
-        "bytes": 953643,
-        "sha256": "aad997c704b2dc17a92a79fb23d2b50610906dda86aa551eba74b63e0cae1d66"
+        "bytes": 953641,
+        "sha256": "dae4f16033c16c129ed686c356a286d5cf089f8cd243f88819a0b1bf4150b617"
       },
       {
         "repository_path": "data/explorer_profiles_7.js",
-        "bytes": 936012,
-        "sha256": "7ed4939e275967b7ea2b15049b2ace878bddf1ac129e0b139e2059cf24b7a96c"
+        "bytes": 936010,
+        "sha256": "412d28a9dac6cfe63e6de9234dcf3f9ecfbfda346d086f94c1d5558ff15feb8a"
       }
     ]
   },
@@ -522,6 +530,12 @@
       "sha256": "520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887"
     },
     {
+      "path": "applications_2026_aps_string_confirmation_20261117.csv",
+      "bytes": 677328,
+      "records": 2783,
+      "sha256": "c41606e8b58f3e469c0e91fab48e25057c0959f9792d4385871d5c70268fe44c"
+    },
+    {
       "path": "applications_2026_strings_reveal.csv",
       "bytes": 54107,
       "records": 980,
@@ -541,9 +555,9 @@
     },
     {
       "path": "aps_2026_application_edges.csv",
-      "bytes": 413111,
+      "bytes": 405555,
       "records": 2796,
-      "sha256": "5acced2d69dddff215e3b64885003e2a51ce366640c27db98b248dfd2f46e8e6"
+      "sha256": "24af8e08636286f42ed149ee49041249c0dde41236e2449c3d2c44db6969929a"
     },
     {
       "path": "aps_2026_current_analytics.csv",
@@ -559,9 +573,9 @@
     },
     {
       "path": "aps_2026_record_observations.csv",
-      "bytes": 490227,
-      "records": 2783,
-      "sha256": "91f8d83972d7ecffe901ee7c0ce30e9cf0d6c9d9453cf6b617d80381a1570a39"
+      "bytes": 974730,
+      "records": 5566,
+      "sha256": "a9d46d220783a65a1d36cf0d1a7874b5271cac1d14ebcd03f757d36bb1d07479"
     },
     {
       "path": "aps_2026_region_distribution.csv",
@@ -763,9 +777,9 @@
     },
     {
       "path": "round_2026.csv",
-      "bytes": 3404,
-      "records": 15,
-      "sha256": "0cde275ca243bd55d42f2db3140e017c093ade1d60b938b06e0700fc8a0085dd"
+      "bytes": 6167,
+      "records": 24,
+      "sha256": "1204e838e7473303ddf7c30cb136690062edb83b83f80fafd7cffe4f82e655b5"
     },
     {
       "path": "rounds_summary.csv",

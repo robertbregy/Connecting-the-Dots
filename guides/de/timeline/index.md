@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/timeline/ | Site edition: 0.7.112 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/timeline/ | Site edition: 0.8.0 | Language: de -->
 
 Leitfaden
 
@@ -459,6 +459,6 @@ Datierte lokale Korpora, kein universelles Verzeichnis aller jemals vorgeschlage
 
 Redaktionelle Prüfung · 19. Oktober 2026
 
-**Von Robert Bregy** · Ausgabe der Website 0.7.112 · 12. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.8.0 · 17. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

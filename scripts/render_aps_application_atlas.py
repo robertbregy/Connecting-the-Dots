@@ -124,7 +124,7 @@ def render(root:Path=ROOT):
 <p><b>{q(t['apsAtlasWdo'])}</b> <a target="_blank" rel="noopener" href="{q(graph['notPublishedApplication']['detailUrl'])}">{q(t['apsAtlasWdoLink'])} ↗</a></p>
 <div class="apsSources">
 <a target="_blank" rel="noopener" href="{q(source_link)}">{q(t['apsAtlasSource'])} ↗</a>
-<a target="_blank" rel="noopener" href="{q(graph['contention']['officialRevealListURL'])}">{q(t['apsAtlasPreliminaryList'])} ↗</a>
+<a target="_blank" rel="noopener" href="{q(graph['contention'].get('officialCurrentListURL',graph['contention']['officialRevealListURL']))}">{q(t['apsAtlasPreliminaryList'])} ↗</a>
 <a href="../../{lang}/?tab=research">{q(t['apsAtlasResearch'])}</a>
 </div>
 <p class="apsStamp">{q(t['apsAtlasSourceDate'])}: <time datetime="{q(graph['retrievedAtUTC'])}">{q(graph['retrievedAtUTC'][:10])}</time></p></div>
@@ -141,7 +141,7 @@ def render(root:Path=ROOT):
 <div id="apsResults" class="apsResults"></div>
 <div class="apsMoreWrap"><button id="apsMore" type="button">{q(t['apsAtlasMore'])}</button></div>
 <noscript><p>{q(t['apsAtlasNoJs'])}
-<a href="../../data/applications_2026_aps_official_listing.csv">CSV ICANN</a></p></noscript>
+<a href="../../data/applications_2026_aps_string_confirmation_20261117.csv">CSV ICANN</a></p></noscript>
 </section>
 <section class="apsResources"><h2>{q(t['apsAtlasDownloadManifest'])}</h2>
 <div class="apsSources"><a download href="../../data/aps_2026_application_graph_manifest.json">{q(t['apsAtlasDownloadManifest'])}</a>

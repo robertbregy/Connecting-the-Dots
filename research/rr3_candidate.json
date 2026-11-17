@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "RR3",
+  "candidateStatus": "prepublication-review",
+  "candidateTitle": "Connecting the Dots · Research Release RR3 · String Confirmation 2026",
+  "candidateLabel": "String Confirmation 2026: replacement choices, confirmed contention and public-data reconciliation",
+  "researchDataSnapshot": "2026-11-17",
+  "preparedOn": "2026-11-17",
+  "baseline": {
+    "releaseId": "RR2",
+    "tag": "RR2",
+    "specificDoi": "10.5281/zenodo.23288603",
+    "publishedOn": "2026-10-10",
+    "researchSnapshot": "2026-10-07",
+    "conceptDoi": "10.5281/zenodo.23262622"
+  },
+  "rationale": "String Confirmation Day materially changed the observable 2026 application graph: 152 replacement selections, nine withdrawals and a reduction in public identical-string contention from 263/891 at Reveal Day to 226/705. The same-day ICANN announcement exposes a reproducible four-application aggregate/publication gap that must be preserved as an unresolved finding rather than normalized away.",
+  "scientificChange": {
+    "officialAnnouncementProceedingApplications": 1610,
+    "publicVisibleProceedingApplicationFamilies": 1605,
+    "knownAdministrativeCheckApplication": "WDO2627T-T45217",
+    "unresolvedAnnouncementPublicationGap": 4,
+    "selectedReplacementApplications": 152,
+    "eligibleReplacementApplications": 287,
+    "withdrawnApplications": 9,
+    "revealPublicContentionSets": 263,
+    "revealPublicContentionApplications": 891,
+    "confirmedPublicContentionSets": 226,
+    "confirmedPublicContentionApplications": 705,
+    "officialAnnouncementContentionApplications": 709,
+    "visibleProceedingNewPrimaryStrings": 1120,
+    "apsStatisticsUniqueStrings": 1127
+  },
+  "evidence": {
+    "apsNormalizedSHA256": "c41606e8b58f3e469c0e91fab48e25057c0959f9792d4385871d5c70268fe44c",
+    "revealContentionSHA256": "86f2ebd3764d1f3ea21d5d844cff004e271a443a3431e8ac440da7f72c67e2bf",
+    "confirmedContentionSHA256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
+    "reconciliation": "data/evidence/string-confirmation-2026-11-17/live/contention-reconciliation.json",
+    "observation": "data/evidence/string-confirmation-2026-11-17/official-announcement-observation.json",
+    "apsStatisticsRecheck": "data/evidence/string-confirmation-2026-11-17/aps-statistics-recheck-1857.json",
+    "laterStatisticsExportRecheck": "data/evidence/string-confirmation-2026-11-17/aps-statistics-export-recheck-2038.json"
+  },
+  "evidenceLimitations": [
+    "ICANN's 17 November announcement aggregates do not fully reconcile with the public APS export and public contention CSV.",
+    "Statistics at 18:09 and 18:39 UTC reported 1,615 total, 1,606 active and nine withdrawn. The arithmetic 1,615 minus nine equals 1,606; the announcement gives 1,610. This establishes an aggregate difference, not four missing records.",
+    "The repeated four-unit marginal differences do not establish four missing applications, a shared application profile or an administrative cause. A counting/editorial error, scope difference or publication timing issue remains possible.",
+    ".wdo remains a separate known administrative-check case absent from the public Applications listing.",
+    "The historical 1,616 paid-to-proceed figure of 22 September and the 1,615 Reveal Day figure remain a distinct unresolved discrepancy.",
+    "RR1 and RR2 remain immutable; this candidate has no DOI until archival verification completes.",
+    "Later Statistics at 20:09 UTC report 1,605 Active and ten Withdrawn, while the export rechecked at 20:38 UTC remains byte-identical with 1,605 Active and nine Withdrawn public records. These asynchronous observations are separate from the frozen 18:30 snapshot and do not identify the tenth withdrawal."
+  ],
+  "archivePolicy": {
+    "rr3Publication": "blocked-until-verified",
+    "doiForRR3": null,
+    "conceptDoi": "10.5281/zenodo.23262622",
+    "preserveExistingCurrentResearchRelease": "RR2",
+    "publicationGate": [
+      "RR3 evidence package passes deterministic integrity and source-reconciliation checks.",
+      "The four-application discrepancy is described as unresolved, not repaired through inference.",
+      "A reviewed RR3 GitHub tag/release is minted from a frozen commit.",
+      "Zenodo returns a real RR3-specific DOI in the existing concept/version chain.",
+      "Only after DOI verification are public citation metadata and currentResearchRelease promoted atomically."
+    ]
+  },
+  "scientificAddendum": "research/rr3_addendum_20261117.md",
+  "preflight": {
+    "script": "scripts/rr3_preflight.py",
+    "runbook": "docs/rr3_publication_runbook.md",
+    "requiresFrozenSourcesForPublication": true
+  }
+}

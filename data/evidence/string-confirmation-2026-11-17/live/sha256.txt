@@ -1,0 +1,4 @@
+f7cb0e7ef1098a3b92a7d337676d8802802df21e31c8f156dafe7c410132b7ee  capture/aps-export-raw.csv
+c41606e8b58f3e469c0e91fab48e25057c0959f9792d4385871d5c70268fe44c  capture/aps-export-normalized.csv
+86f2ebd3764d1f3ea21d5d844cff004e271a443a3431e8ac440da7f72c67e2bf  capture/reveal-day-contention-sets.csv
+0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f  capture/string-confirmation-contention-sets.csv

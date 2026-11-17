@@ -10,7 +10,7 @@ import shutil
 import subprocess
 import zipfile
 from scripts.package_release import write_deterministic_zip
-from scripts.build_aps_application_graph import build as build_aps_application_graph
+from scripts.build_aps_application_graph_current import build as build_aps_application_graph
 from scripts.render_aps_application_atlas import render as render_aps_application_atlas
 from scripts.render_inside_round import render_timeline, build_inside_round_pages
 from scripts.render_behind_round import render_stories, build_behind_round_pages
@@ -75,10 +75,11 @@ def build_manifest() -> None:
         "project": "Connecting the Dots",
         "version": VERSION,
         "release_date": RELEASED_ON,
-        "publication_state": "reveal-day",
+        "publication_state": PUBLICATION["state"],
         "rendering": "static-prerendered",
         "language_routes": {lang: f"{lang}/" for lang in ("en", "it", "de", "fr")},
         "as_of": AS_OF,
+        "technical_as_of": PUBLICATION.get("technicalAsOf", RELEASED_ON),
         "temporal_coverage": "1984/2026",
         "reveal_day": PUBLICATION["revealAt"],
         "string_confirmation_day": PUBLICATION["stringConfirmation"],
@@ -108,7 +109,7 @@ def build_manifest() -> None:
             "application2026PublishedOfficialApplicationIDs": official_listing["uniquePublishedApplicationRecords"],
             "application2026OfficialReplacementRecords": official_listing["replacementStringRecords"],
             "application2026OfficialListingPendingWDO": True},
-        "aps_2026_application_graph": {"source": "applications_2026_aps_official_listing.csv", "manifest": "aps_2026_application_graph_manifest.json", "graph": "aps_2026_application_graph.json", "edges": "aps_2026_application_edges.csv", "observations": "aps_2026_record_observations.csv", **aps_graph["counts"], "individualPDFsVendored": False},
+        "aps_2026_application_graph": {"source": "applications_2026_aps_string_confirmation_20261117.csv", "manifest": "aps_2026_application_graph_manifest.json", "graph": "aps_2026_application_graph.json", "edges": "aps_2026_application_edges.csv", "observations": "aps_2026_record_observations.csv", **aps_graph["counts"], "individualPDFsVendored": False},
         "aps_2026_official_listing": {
             "source": official_listing["sourceExportURL"],
             "download": official_listing["officialRowsFile"],
@@ -143,7 +144,7 @@ def build_manifest() -> None:
 
 def data_pack_files() -> list[Path]:
     snapshot = json.loads((DATA / "iana_snapshot.json").read_text())
-    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "application_2026_snapshot.json", DATA / "applications_2026_aps_official_provenance.json", DATA / "aps_2026_application_graph.json", DATA / "aps_2026_application_graph_manifest.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "legal_layer.json", DATA / "economic_cases.json", DATA / "social_cases.json", DATA / "city_namespace_editorial.json", DATA / "audit_20261018_editorial.json", DATA / "audit_20261019_editorial.json", DATA / "audit_20261019_resolution.json", DATA / "audience_editorial.json", DATA / "home_editorial.json", DATA / "economics_hub.json", DATA / "economics_reading_order.json", DATA / "independent_review_materials.json", DATA / "cultural_classification_protocol.json", DATA / "cultural_lexicon_v2.json", DATA / "cultural_sensitivity_v2.json", DATA / "cultural_classification_protocol_v2.json", DATA / "cultural_history_evidence_v2.json", DATA / "financial_source_verification_20261019.json", DATA / "frozen_technical_packages.json", DATA / "research_bibliographic_corrections.json", DATA / "source_method_corrections_20261019.json", DATA / "aps_2026_current_analytics.json", DATA / "aps_2026_current_analytics_manifest.json", DATA / "aps_2026_applicant_sector_evidence.json", DATA / "round_application_fees.json", DATA / "tld_cultural_editorial.json", DATA / "tld_cultural_patterns.json", DATA / "tld_market_snapshot.json", DATA / "tld_market_provenance.json", *sorted((DATA / "evidence" / "tld-market-2026-10-19").glob("*.json")), ROOT / snapshot["archive_path"]]
+    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "application_2026_snapshot.json", DATA / "application_2026_string_confirmation_snapshot.json", DATA / "applications_2026_aps_official_provenance.json", DATA / "applications_2026_aps_string_confirmation_20261117_provenance.json", DATA / "aps_2026_application_graph.json", DATA / "aps_2026_application_graph_manifest.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "legal_layer.json", DATA / "economic_cases.json", DATA / "social_cases.json", DATA / "city_namespace_editorial.json", DATA / "audit_20261018_editorial.json", DATA / "audit_20261019_editorial.json", DATA / "audit_20261019_resolution.json", DATA / "audience_editorial.json", DATA / "home_editorial.json", DATA / "economics_hub.json", DATA / "economics_reading_order.json", DATA / "independent_review_materials.json", DATA / "cultural_classification_protocol.json", DATA / "cultural_lexicon_v2.json", DATA / "cultural_sensitivity_v2.json", DATA / "cultural_classification_protocol_v2.json", DATA / "cultural_history_evidence_v2.json", DATA / "financial_source_verification_20261019.json", DATA / "frozen_technical_packages.json", DATA / "research_bibliographic_corrections.json", DATA / "source_method_corrections_20261019.json", DATA / "aps_2026_current_analytics.json", DATA / "aps_2026_current_analytics_manifest.json", DATA / "aps_2026_applicant_sector_evidence.json", DATA / "round_application_fees.json", DATA / "tld_cultural_editorial.json", DATA / "tld_cultural_patterns.json", DATA / "tld_market_snapshot.json", DATA / "tld_market_provenance.json", *sorted((DATA / "evidence" / "tld-market-2026-10-19").glob("*.json")), ROOT / snapshot["archive_path"]]
 
 
 def build_data_pack() -> None:

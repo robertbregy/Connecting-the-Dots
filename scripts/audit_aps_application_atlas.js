@@ -109,7 +109,7 @@ async function verifyState(page,language,native){
    assert.equal(loaded.lang,lang);
    assert.equal(loaded.total,1614);
    assert.equal(loaded.replacement,1169);
-   assert.equal(loaded.exact,263);
+   assert.equal(loaded.exact,226);
    assert.equal(loaded.cards,30);
    assert.equal(loaded.languageLinks,5);
    assert.ok(loaded.canonical.endsWith('/applications/'+lang+'/'));
@@ -131,7 +131,7 @@ async function verifyState(page,language,native){
    await page.locator('#apsSearch').fill('');
    await page.locator('#apsRole').selectOption('exact');
    let shown=await page.locator('#apsResultCount').innerText();
-   assert.ok(shown.includes('891'),'All 891 exact primary matches must be filterable '+lang+': '+shown);
+   assert.ok(shown.includes('705'),'All 891 exact primary matches must be filterable '+lang+': '+shown);
    metrics.filterChecks++;
    await page.locator('#apsRole').selectOption('replacement');
    shown=await page.locator('#apsResultCount').innerText();

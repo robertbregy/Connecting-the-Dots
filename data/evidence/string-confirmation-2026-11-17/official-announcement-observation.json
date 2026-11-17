@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 2,
+  "observedOn": "2026-11-17",
+  "announcementSource": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-17-11-2026-en",
+  "capture": {
+    "capturedAtUTC": "2026-11-17T18:30:10Z",
+    "apsExportNormalizedSHA256": "c41606e8b58f3e469c0e91fab48e25057c0959f9792d4385871d5c70268fe44c",
+    "revealContentionSHA256": "86f2ebd3764d1f3ea21d5d844cff004e271a443a3431e8ac440da7f72c67e2bf",
+    "stringConfirmationContentionSHA256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f"
+  },
+  "officialAnnouncement": {
+    "proceedingApplications": 1610,
+    "withdrawalsSinceRevealDay": 9,
+    "replacementSwitches": 152,
+    "replacementEligibleApplications": 287,
+    "preReplacementContentionSets": 262,
+    "preReplacementApplicationsInContention": 885,
+    "confirmedContentionSets": 226,
+    "confirmedApplicationsInContention": 709,
+    "applicantSupportApplications": 50,
+    "brandApplications": 333,
+    "communityApplications": 16,
+    "geographicApplications": 15,
+    "idnApplications": 22,
+    "variantApplications": 9,
+    "regionApplications": {
+      "AF": 16,
+      "AP": 215,
+      "EUR": 504,
+      "LAC": 11,
+      "NA": 864
+    }
+  },
+  "publicAPSExport": {
+    "totalRows": 2783,
+    "baseApplicationIDs": 1614,
+    "replacementRecordIDs": 1169,
+    "visibleProceedingApplicationFamilies": 1605,
+    "selectedReplacementsDetected": 152,
+    "withdrawnApplicationsDetected": 9,
+    "proceedingApplicantSupportApplications": 46,
+    "proceedingAPApplications": 210
+  },
+  "apsStatistics": {
+    "lastPublishedAtUTC": "2026-11-17T18:09:00Z",
+    "totalApplicants": 481,
+    "totalApplications": 1615,
+    "totalUniqueStrings": 1127,
+    "totalVariants": 9,
+    "activeApplications": 1606,
+    "withdrawnApplications": 9,
+    "applicationsInContention": null,
+    "contentionSets": null
+  },
+  "wdo": {
+    "applicationID": "WDO2627T-T45217",
+    "primaryString": "wdo",
+    "region": "AP",
+    "publicAPSExportVisible": false,
+    "statusNote": "undergoing administrative check; not available on public Applications list"
+  },
+  "replacementReconciliation": {
+    "revealDayActiveReplacementRecords": 442,
+    "finalOfficialEligibleApplications": 287,
+    "selectedApplications": 152,
+    "eligibleNotSelected": 135,
+    "previouslyActiveReplacementRecordsNowDeactivated": 290,
+    "interpretation": "Reveal-period Active replacement-record status was not equivalent to final Replacement Period eligibility."
+  },
+  "publicContentionFiles": {
+    "revealDay": {
+      "sets": 263,
+      "applicationRows": 891
+    },
+    "afterWithdrawalsAndSingletonRemoval": {
+      "sets": 262,
+      "applicationRows": 881
+    },
+    "stringConfirmation": {
+      "sets": 226,
+      "applicationRows": 705
+    },
+    "replacementDelta": {
+      "sets": -36,
+      "applicationRows": -176
+    },
+    "selectedReplacementsFromVisiblePreReplacementContention": 140
+  },
+  "aggregatePublicationGap": {
+    "announcementProceedingMinusPublicAPS": 5,
+    "knownWDOAdjustment": 1,
+    "announcementAPMinusPublicAPS": 5,
+    "announcementAPMinusPublicAPSPlusWDO": 4,
+    "announcementApplicantSupportMinusPublicAPS": 4,
+    "announcementPreReplacementContentionMinusPublicFiles": 4,
+    "announcementConfirmedContentionMinusPublicFiles": 4,
+    "status": "unresolved aggregate/publication discrepancy; neither four additional application records nor an editorial or administrative cause has been established",
+    "residualAggregateDifference": 4,
+    "announcementProceedingMinusContemporaneousAPSStatistics": 4,
+    "observedComparisonDimensions": [
+      "proceeding applications: announcement versus contemporaneous APS Statistics and public export plus known .wdo case",
+      "AP regional aggregate: announcement versus public export plus known .wdo case",
+      "Applicant Support aggregate: announcement versus public export",
+      "pre-replacement contention membership aggregate: announcement versus public files",
+      "confirmed contention membership aggregate: announcement versus public file"
+    ],
+    "contemporaneousReconciliation": {
+      "publicProceedingFamilies": 1605,
+      "knownWDOAdjustment": 1,
+      "statisticsActiveApplications": 1606,
+      "statisticsTotalApplications": 1615,
+      "statisticsWithdrawnApplications": 9,
+      "arithmetic": "1605 + 1 = 1606; 1615 - 9 = 1606; 1610 - 1606 = 4"
+    },
+    "marginalComparisonCaveat": "Equal differences across marginal aggregates do not establish four additional applications, identify the same records across dimensions, or prove a joint AP / Applicant Support / contention profile. No missing Application IDs have been identified.",
+    "possibleExplanations": [
+      "arithmetic or editorial error in announcement aggregates",
+      "difference in counting scope",
+      "difference in publication timing"
+    ]
+  },
+  "separateHistoricalDiscrepancy": {
+    "paidApplicationsProceedingOn2026_09_22": 1616,
+    "revealDayApplications": 1615,
+    "status": "unresolved and distinct from the 17 November aggregate differences of four and the later Statistics/export withdrawal-count discrepancy"
+  },
+  "lugano": {
+    "applicationID": "CDL2651T-T31516",
+    "primaryString": "lugano",
+    "applicationStatus": "Active",
+    "processingStage": "String Evaluation Processing",
+    "inContention": false,
+    "openCommentPeriod": true,
+    "gacEarlyWarning": false,
+    "gacAdvice": false,
+    "objection": false,
+    "singularPlural": false
+  },
+  "apsStatisticsRecheck": {
+    "observedAtUTC": "2026-11-17T18:57:45Z",
+    "sourceLastPublishedAtUTC": "2026-11-17T18:39:00Z",
+    "totalApplications": 1615,
+    "activeApplications": 1606,
+    "withdrawnApplications": 9,
+    "totalUniqueStrings": 1127,
+    "interpretation": "Same-day APS republication retained the 1,615 / 1,606 / 9 counts, reproducing a difference of four versus the announcement figure of 1,610. This does not establish the cause or exclude differences in publication schedules or aggregate definitions.",
+    "evidenceFile": "data/evidence/string-confirmation-2026-11-17/aps-statistics-recheck-1857.json"
+  },
+  "laterLiveStatisticsExportObservation": {
+    "observedOn": "2026-11-17",
+    "statisticsSource": "https://newgtldprogram-aps.icann.org/statistics",
+    "statisticsSourceLastPublishedAtUTC": "2026-11-17T20:09:15.884Z",
+    "statistics": {
+      "totalApplications": 1615,
+      "activeApplications": 1605,
+      "withdrawnApplications": 10,
+      "totalUniqueStrings": 1127
+    },
+    "apsCSVResponseHTTPDateUTC": "2026-11-17T20:38:11Z",
+    "publicAPSExport": {
+      "activeRecords": 1605,
+      "withdrawnRecords": 9,
+      "deactivatedRecords": 1169
+    },
+    "tenthWithdrawnApplicationIdentified": false,
+    "interpretation": "Later Statistics and APS export have different withdrawal counts. Statistics records one additional withdrawal, but the public export at this check does not identify it. Do not infer 1,604 publicly proceeding families or mix these later counts with the frozen 18:30 export and 18:09/18:39 Statistics observations to turn the contemporaneous announcement difference of four into five.",
+    "statisticsGeneratedAtUTC": "2026-11-17T20:09:14.755Z",
+    "evidenceFile": "data/evidence/string-confirmation-2026-11-17/aps-statistics-export-recheck-2038.json"
+  }
+}

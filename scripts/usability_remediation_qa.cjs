@@ -47,6 +47,8 @@ function staticChecks(){
  const i18nReplacements=review.i18nReplacements??[];
  const operationalLinks=review.operationalLinkReplacements??[];
  const translations=JSON.parse(fs.readFileSync(path.join(root,'data/translations.json'),'utf8'));
+ const timeline=JSON.parse(fs.readFileSync(path.join(root,'data/inside_the_round_events.json'),'utf8'));
+ const stringConfirmation=publication.state==='string-confirmation';
  const unchangedAttributes=node=>[...node.attributes].filter(a=>a.name!=='data-i18n').map(a=>[a.name,a.value]).sort((a,b)=>a[0].localeCompare(b[0]));
  const normalize=(href,version)=>href.replaceAll(version,'<VERSION>').replace(/(reader-first\.css\?v=<VERSION>)-usability-20261022$/,'$1');
  // These exact historical STYLE elements became shared CSS modules in v0.7.108.
@@ -101,9 +103,51 @@ function staticChecks(){
    beforeKeys.delete(from);beforeKeys.add(to);
   }
   const lost=[...beforeKeys].filter(key=>!afterKeys.has(key)).sort();
-  // Those two historic timeline keys are replaced by the reviewed 'observed'
-  // state and the dated 21 October close, not silently discarded prose.
-  assert.deepEqual(lost,['insideReplacePublicScheduleBody','insideStateCurrent'],'Unreviewed translated key disappeared: '+file);
+  // The 22 October baseline precedes two reviewed milestone transitions.
+  // After 17 November the confirmation is observed and community input is
+  // current. Verify those exact event bodies, dates and sources before accepting
+  // their obsolete schedule keys; every unrelated lost key still fails.
+  const timelineUpdatedLinks=new Map();
+  if(stringConfirmation){
+   const oldSource='https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en';
+   const newSource='https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-17-11-2026-en';
+   for(const [id,from,to,state,stateKey] of [
+    ['confirmation','insideConfirmPublicScheduleBody','insideConfirmObservedBody','observed','insideStateObserved'],
+    ['community-input','insideInputBody','insideInputObservedBody','current','insideStateCurrent']
+   ]){
+    const prior=before.querySelectorAll('[data-event-id="'+id+'"]'),current=after.querySelectorAll('[data-event-id="'+id+'"]');
+    assert.equal(prior.length,1,'Historical timeline event must be unique: '+file+'/'+id);
+    assert.equal(current.length,1,'Reviewed timeline event must be unique: '+file+'/'+id);
+    assert.equal(prior[0].getAttribute('data-round-state'),'scheduled','Historical timeline state differs: '+file+'/'+id);
+    assert.equal(current[0].getAttribute('data-round-state'),state,'Reviewed timeline state differs: '+file+'/'+id);
+    assert.equal(prior[0].querySelectorAll('[data-i18n="'+from+'"]').length,1,'Historical timeline body missing: '+file+'/'+id);
+    assert.equal(current[0].querySelectorAll('[data-i18n="'+from+'"]').length,0,'Obsolete schedule body survives: '+file+'/'+id);
+    for(const key of [to,stateKey]){
+     const nodes=current[0].querySelectorAll('[data-i18n="'+key+'"]');
+     assert.equal(nodes.length,1,'Reviewed timeline translation must be unique: '+file+'/'+id+'/'+key);
+     assert.equal(nodes[0].textContent,translations[lang][key],'Reviewed timeline translation differs: '+file+'/'+id+'/'+key);
+    }
+    const event=timeline.events.find(event=>event.id===id);
+    assert.ok(event,'Reviewed event register entry missing: '+id);
+    assert.equal(event.date,'2026-11-17','Reviewed milestone date differs: '+id);
+    assert.equal(event.state,state,'Event register state differs: '+id);
+    assert.equal(event.bodyKey,to,'Event register body differs: '+id);
+    assert.equal(event.source,newSource,'Reviewed milestone source differs: '+id);
+    if(id==='community-input')assert.equal(event.endDate,'2027-03-16','Community input deadline differs');
+    assert.equal(current[0].querySelector('time')?.getAttribute('datetime'),event.date,'Rendered milestone date differs: '+file+'/'+id);
+    const oldLinks=prior[0].querySelectorAll('.insideRoundSources a[href="'+oldSource+'"]'),newLinks=current[0].querySelectorAll('.insideRoundSources a[href="'+newSource+'"]');
+    assert.equal(oldLinks.length,1,'Historical milestone source must be unique: '+file+'/'+id);
+    assert.equal(newLinks.length,1,'Reviewed milestone source must be unique: '+file+'/'+id);
+    const attrs=node=>[...node.attributes].filter(a=>a.name!=='href').map(a=>[a.name,a.value]).sort((a,b)=>a[0].localeCompare(b[0]));
+    assert.deepEqual(attrs(newLinks[0]),attrs(oldLinks[0]),'Milestone source attributes changed: '+file+'/'+id);
+    assert.equal(newLinks[0].innerHTML,oldLinks[0].innerHTML,'Milestone source label changed: '+file+'/'+id);
+    timelineUpdatedLinks.set(oldLinks[0],newSource);
+   }
+  }
+  const reviewedLost=stringConfirmation
+   ? ['insideConfirmPublicScheduleBody','insideInputBody','insideReplacePublicScheduleBody','insideStateScheduled']
+   : ['insideReplacePublicScheduleBody','insideStateCurrent'];
+  assert.deepEqual(lost,reviewedLost,'Unreviewed translated key disappeared: '+file);
   const legalBridge=after.querySelector('#disputeMechanisms.disputesLegalBridge');
   assert.ok(legalBridge,'Rendered Legal bridge missing: '+file);
   const legalBridgeLink=legalBridge.querySelector('a[href]');
@@ -169,7 +213,7 @@ function staticChecks(){
   // Match its current official listing and the verified WDO CTA occurrences
   // while retaining every other link occurrence without rewriting its URL.
   const originalLinks=[...before.querySelectorAll('a[href]')].filter(a=>outsideHome(a)&&!replacedNavigation.has(a)).map(a=>{
-   const href=localizedWdoLinks.get(a)??a.getAttribute('href'),replacement=operationalLinks.find(link=>link.from===href);
+   const href=localizedWdoLinks.get(a)??timelineUpdatedLinks.get(a)??a.getAttribute('href'),replacement=operationalLinks.find(link=>link.from===href);
    return normalize(linkSignature(replacement?replacement.to:href,nativePath),originalPublication.version);
   }).sort();
   const remaining=[{document:after,pagePath:nativePath},...economicsDocuments].flatMap(({document,pagePath})=>[...document.querySelectorAll('a[href]')].filter(outsideHome).map(a=>normalize(linkSignature(a.getAttribute('href'),pagePath),publication.version)));

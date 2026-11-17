@@ -174,7 +174,19 @@ function checkedOperationalLinks(review,source){
   const panelStart=source.indexOf(panelOpen),panelEnd=source.indexOf('</section>',panelStart);
   assert.ok(panelEnd>panelStart,'The reviewed native Atlas panel must close');
   const panel=source.slice(panelStart,panelEnd+'</section>'.length);
-  assert.equal(sha256(panel),'b62604a83105a1cd7bd185afb1efd8b14b81505cf11cebb62656dbc3cc09a7b9','Operational APS source changed beyond its reviewed destination');
+  // The String Confirmation release intentionally advances exactly two visible
+  // Atlas headline metrics. Normalize only those reviewed substitutions back
+  // to the protected Reveal values, then require the original exact panel hash.
+  const metricTransitions=[
+   ['<strong data-number="1120">1,120</strong>','<strong data-number="980">980</strong>'],
+   ['<strong data-number="226">226</strong>','<strong data-number="263">263</strong>']
+  ];
+  if(review.publicationVersion==='0.8.0'){
+   for(const [current] of metricTransitions)assert.equal(panel.split(current).length,2,'String Confirmation Atlas metric missing or duplicated: '+current);
+  }
+  let protectedPanel=panel;
+  for(const [current,reveal] of metricTransitions)protectedPanel=protectedPanel.replace(current,reveal);
+  assert.equal(sha256(protectedPanel),'b62604a83105a1cd7bd185afb1efd8b14b81505cf11cebb62656dbc3cc09a7b9','Operational APS source changed beyond the two reviewed String Confirmation metrics and its reviewed destination');
   const anchor='<a href="'+approved.to+'" target="_blank" rel="noopener">ICANN · APS ↗</a>';
   assert.equal(panel.split(anchor).length,2,'The native Atlas must retain one exact official public listing link');
   const obsolete=approved.from.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');

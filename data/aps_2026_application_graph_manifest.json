@@ -1,53 +1,60 @@
 {
-  "schemaVersion": 1,
-  "sourceSha256": "520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887",
+  "schemaVersion": 2,
+  "snapshotState": "string-confirmation",
+  "sourceSha256": "c41606e8b58f3e469c0e91fab48e25057c0959f9792d4385871d5c70268fe44c",
   "sourceURL": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
-  "retrievedAtUTC": "2026-10-11T21:27:40.214Z",
+  "retrievedAtUTC": "2026-11-17T18:30:10Z",
   "counts": {
-    "officialReportedApplications": 1615,
+    "apsStatisticsTotalApplications": 1615,
+    "apsStatisticsActiveApplications": 1606,
+    "officialAnnouncementProceedingApplications": 1610,
     "officialPublishedApplications": 1614,
+    "visibleProceedingApplications": 1605,
     "officialListingRows": 2783,
     "replacementRecords": 1169,
-    "replacementActive": 442,
-    "replacementDeactivated": 727,
-    "newPrimaryStringApplications": 1608,
-    "newPrimaryStrings": 980,
+    "selectedReplacementRecords": 152,
+    "replacementActive": 152,
+    "replacementDeactivated": 1017,
+    "proceedingNewPrimaryApplications": 1599,
+    "newPrimaryStrings": 1120,
     "variantOnlyExistingTldApplications": 6,
     "variantRelationships": 13,
-    "derivedExactPrimaryMatchGroups": 263,
-    "applicationsInExactPrimaryMatches": 891,
-    "officialUnpublishedApplications": 1
+    "derivedExactPrimaryMatchGroups": 226,
+    "applicationsInExactPrimaryMatches": 705,
+    "officialAnnouncementApplicationsInContention": 709,
+    "knownAdministrativeCheckApplications": 1,
+    "announcementVsPublicProceedingGap": 5,
+    "unresolvedAnnouncementPublicationGap": 4
   },
   "eventHistory": {
-    "events": 2783,
-    "sourceSnapshots": 1
+    "events": 5566,
+    "sourceSnapshots": 2
   },
   "files": {
     "aps_2026_application_graph.json": {
-      "sha256": "1342a1f13f7c707f210dda9b567d7500c899214a44ce4a1f4aab1b1de690647d",
-      "bytes": 1288819
+      "sha256": "2a5327c8f7ea15e0b83792398fb645f955befa5662faefc7e30f56989b8b0e74",
+      "bytes": 2154304
     },
     "aps_2026_application_graph.js": {
-      "sha256": "37eb742916a8e79f3515b3daa7f25966bffc424003b74562299db2640a4d7bce",
-      "bytes": 947796
+      "sha256": "f35a1354726d4d080182881d0be11aa9256efdf64945764ecc1c294dbb42fe56",
+      "bytes": 1575228
     },
     "aps_2026_application_edges.csv": {
-      "sha256": "5acced2d69dddff215e3b64885003e2a51ce366640c27db98b248dfd2f46e8e6",
-      "bytes": 413111
+      "sha256": "24af8e08636286f42ed149ee49041249c0dde41236e2449c3d2c44db6969929a",
+      "bytes": 405555
     },
     "aps_2026_record_observations.csv": {
-      "sha256": "91f8d83972d7ecffe901ee7c0ce30e9cf0d6c9d9453cf6b617d80381a1570a39",
-      "bytes": 490227
+      "sha256": "a9d46d220783a65a1d36cf0d1a7874b5271cac1d14ebcd03f757d36bb1d07479",
+      "bytes": 974730
     }
   },
   "limitations": [
-    "Public APS application-listing completeness excludes the under-administrative-check .wdo dossier.",
-    "A -R record is an alternative label linked to its base application, not an additional application.",
-    "13 variant links are string relationships, not 13 additional applications.",
-    "Exact same-primary-string sets are analytical candidates, not final ICANN contention sets.",
-    "Before ICANN String Evaluation, a false APS contention label does not establish no contention.",
-    "Application status/processing stage and replacement status are independently observed fields.",
-    "Application detail/response/documents pages are linked at their official APS routes but not mirrored or individually checked in full.",
-    "The application observation log is append-only by source digest; disappearance from listing is not automatically a withdrawal."
+    "The public APS listing still excludes WDO2627T-T45217 while its administrative check continues.",
+    "The 17 November ICANN announcement reports 1,610 proceeding applications, while the public APS export yields 1,605 proceeding families; .wdo explains one and four remain an unresolved publication/aggregate gap.",
+    "The public String Confirmation contention CSV contains 226 sets / 705 application rows, while the announcement reports 226 / 709.",
+    "A -R record is a replacement record linked to a stable base Application ID; selected replacements are represented as the application family's effective current string.",
+    "13 variant links are string relationships, not additional applications.",
+    "Application detail/response/documents pages are linked at their official APS routes but not mirrored in full.",
+    "The observation log is append-only by source digest."
   ]
 }

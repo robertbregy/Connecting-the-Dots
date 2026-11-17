@@ -1,0 +1,103 @@
+name: Build String Confirmation v0.8.0 candidate
+
+on:
+  push:
+    branches:
+      - prep/string-confirmation-2026-11-17
+    paths:
+      - scripts/prepare_string_confirmation_v0800.py
+      - scripts/build_aps_application_graph_current.py
+      - scripts/finalize_string_confirmation_v0800.cjs
+      - scripts/verify_ia_b2_parity.cjs
+      - .github/workflows/string-confirmation-v0800-candidate.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: string-confirmation-v0800-candidate
+  cancel-in-progress: false
+
+jobs:
+  candidate:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out preparatory branch
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Set up Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Prepare v0.8.0 sources
+        env:
+          SOURCE_COMMIT: ${{ github.sha }}
+        run: python3 scripts/prepare_string_confirmation_v0800.py
+
+      - name: Build publication
+        run: python3 build.py
+
+      - name: Finalize exact-file editorial review
+        run: node scripts/finalize_string_confirmation_v0800.cjs --record-reviewed-candidate
+
+      - name: Run deterministic release gates
+        run: |
+          python3 scripts/release_check.py
+          node scripts/verify_ia_b2_parity.cjs
+          python3 scripts/test_aps_current_analytics.py
+          python3 -m unittest scripts.tests.test_aps_observatory
+          node scripts/validate_multilingual.js
+          node scripts/validate_discovery.cjs
+          python3 scripts/test_public_surface.py
+
+      - name: Verify current graph headline counts
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          g=json.loads(Path('data/aps_2026_application_graph.json').read_text())
+          c=g['counts']
+          assert g['snapshotState']=='string-confirmation'
+          assert c['visibleProceedingApplications']==1605
+          assert c['selectedReplacementRecords']==152
+          assert c['newPrimaryStrings']==1120
+          assert c['derivedExactPrimaryMatchGroups']==226
+          assert c['applicationsInExactPrimaryMatches']==705
+          assert c['unresolvedAnnouncementPublicationGap']==4
+          lugano=next(a for a in g['apps'] if a['id']=='CDL2651T-T31516')
+          assert lugano['primary']=='lugano'
+          assert lugano['status']=='Active'
+          assert lugano['stage']=='String Evaluation Processing'
+          assert lugano['primarySameStringCount']==1
+          print('STRING_CONFIRMATION_GRAPH_OK',c)
+          PY
+
+      - name: Commit verified candidate
+        run: |
+          if git diff --quiet && test -z "$(git ls-files --others --exclude-standard)"; then
+            echo "No candidate changes."
+            exit 0
+          fi
+          git fetch origin "$GITHUB_REF_NAME"
+          test "$(git rev-parse FETCH_HEAD)" = "$(git rev-parse HEAD)" || {
+            echo "::error::Branch advanced during candidate build; refusing to mix source states."
+            exit 1
+          }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "v0.8.0 candidate: String Confirmation evidence [skip candidate]"
+          git push origin "HEAD:$GITHUB_REF_NAME"

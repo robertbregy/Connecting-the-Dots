@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "editorialLayer": "2026-round-field-notes-not-part-of-frozen-RR1",
-  "lastReviewed": "2026-10-18",
+  "lastReviewed": "2026-11-17",
   "policy": "Only sourced public observations, explicitly dated reconstructions and open questions; never infer causes from mismatched aggregate snapshots or include privileged application details.",
   "episodes": [
     {
@@ -9,7 +9,7 @@
       "slug": "reveal-day-counts",
       "number": 1,
       "publishedOn": "2026-10-10",
-      "revisedOn": "2026-10-18",
+      "revisedOn": "2026-11-17",
       "periodStart": "2026-09-22",
       "periodEnd": "2026-10-08",
       "state": "partly-explained",
@@ -158,15 +158,43 @@
           "kind": "primary",
           "labelKey": "field04SourceTimeline",
           "url": "https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en"
+        },
+        {
+          "id": "icann-scd-announcement",
+          "kind": "primary",
+          "labelKey": "field17SourceAnnouncement",
+          "url": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-17-11-2026-en"
+        },
+        {
+          "id": "icann-scd-contention",
+          "kind": "primary",
+          "labelKey": "field17SourceContention",
+          "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/string-confirmation-contention-sets.csv"
+        },
+        {
+          "id": "aps-scd-export",
+          "kind": "primary",
+          "labelKey": "field17SourceCurrentAPS",
+          "url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv"
+        },
+        {
+          "id": "project-scd-reconciliation",
+          "kind": "derived",
+          "labelKey": "field17SourceReconciliation",
+          "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/prep/string-confirmation-2026-11-17/data/evidence/string-confirmation-2026-11-17/live/contention-reconciliation.json"
+        },
+        {
+          "id": "project-scd-later-recheck",
+          "kind": "derived",
+          "labelKey": "field17SourceLaterRecheck",
+          "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/main/data/evidence/string-confirmation-2026-11-17/aps-statistics-export-recheck-2038.json"
         }
       ],
       "updateTriggers": [
         "ICANN publishes a specific explanation for the 22 September 1,616 to 7 October 1,615 change",
         "ICANN changes the WDO application administrative-check status or APS visibility",
-        "ICANN revises APS counts or releases a newly reconciled application-level public list",
-        "A new independent analysis identifies an evidence-backed alternative reconciliation",
-        "An ICANN application-by-application export explains the regional and individual source reconciliation without assumptions about withdrawals",
-        "After String Confirmation Day, compare the next dated APS public export; do not infer internal inactivity from the planned public update interval."
+        "ICANN reconciles the four-application difference between its 17 November announcement aggregates and the public APS/contention files",
+        "ICANN publishes a correction or a record-level reconciliation that establishes the cause of the aggregate discrepancy"
       ],
       "revisionHistory": [
         {
@@ -202,6 +230,18 @@
             "aps-export-20261018",
             "aps-local-export-20261018",
             "aps-local-strings-20261018",
+            "icann-aps-wdo"
+          ]
+        },
+        {
+          "date": "2026-11-17",
+          "changeKey": "behindRevisionStringConfirmation",
+          "sourceIds": [
+            "icann-scd-announcement",
+            "icann-scd-contention",
+            "aps-scd-export",
+            "project-scd-reconciliation",
+            "icann-aps-stats",
             "icann-aps-wdo"
           ]
         }
@@ -274,6 +314,27 @@
             "aps-about-20261018",
             "aps-calendar-20261018",
             "icann-aps-wdo"
+          ]
+        },
+        {
+          "id": "string-confirmation-reconciliation",
+          "date": "2026-11-17",
+          "reviewLabelKey": "field17ReviewLabel",
+          "titleKey": "field17ConfirmTitle",
+          "paragraphKeys": [
+            "field17ConfirmBody1",
+            "field17ConfirmBody2",
+            "field17ConfirmBody3",
+            "field17TimingBody"
+          ],
+          "sourceIds": [
+            "icann-scd-announcement",
+            "icann-scd-contention",
+            "aps-scd-export",
+            "project-scd-reconciliation",
+            "icann-aps-stats",
+            "icann-aps-wdo",
+            "project-scd-later-recheck"
           ]
         }
       ]

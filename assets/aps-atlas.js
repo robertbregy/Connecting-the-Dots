@@ -53,7 +53,7 @@ function saveState(){
 restoreState();
 const indexes=new Map(all.map(a=>[a.id,a]));
 const matcher=a=>normal([
- a.id,a.primary,a.primaryUnicode,a.applicant,a.location,a.region,a.type,a.status,
+ a.id,a.primary,a.primaryUnicode,a.originalPrimary,a.originalPrimaryUnicode,a.applicant,a.location,a.region,a.type,a.status,
  ...(a.types||[]),...(a.flags||[]),
  a.replacement?.id,a.replacement?.string,a.replacement?.unicode,a.replacement?.status,
  ...(a.variants||[]).flatMap(v=>[v.ascii,v.unicode])
@@ -84,8 +84,12 @@ function pill(x,cl=''){return '<span class="apsTag '+cl+'">'+escape(x)+'</span>'
 function item(a){
  const direct=officialHref(a.id);
  const replacement=a.replacement;
- const replacements=replacement?'<div class="apsReplacement"><b>'+escape(t('apsAtlasReplacement'))+
-  '</b> <bdi>.'+escape(replacement.string)+'</bdi> · '+pill(replacement.status,replacement.status==='Deactivated'?'apsInactive':'apsState')+
+ const replacementLabel=replacement?.selected?t('apsAtlasSelectedReplacement'):t('apsAtlasReplacement');
+ const replacementString=replacement?.selected
+  ?'<bdi>.'+escape(a.originalPrimary)+'</bdi> → <bdi>.'+escape(replacement.string)+'</bdi>'
+  :'<bdi>.'+escape(replacement?.string)+'</bdi>';
+ const replacements=replacement?'<div class="apsReplacement"><b>'+escape(replacementLabel)+
+  '</b> '+replacementString+' · '+pill(replacement.status,replacement.status==='Deactivated'?'apsInactive':'apsState')+
   ' <span class="apsMuted">'+escape(replacement.id)+'</span> '+
   '<a target="_blank" rel="noopener" href="'+escape(officialHref(replacement.id))+'">'+escape(t('apsAtlasPublicDetail'))+' ↗</a></div>':'';
  const variants=a.variants.length?'<div class="apsVariants"><b>'+escape(t('apsAtlasVariants'))+': </b>'+
