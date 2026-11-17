@@ -1113,7 +1113,7 @@ replace_once(
 
 replace_once(
     "scripts/render_round_debate_v0797.cjs",
-    "  meta.dateModified=d.reviewedOn;structured.textContent=JSON.stringify(meta);",
+    " meta.dateModified=d.reviewedOn;structured.textContent=JSON.stringify(meta);",
     "  meta.dateModified=[meta.dateModified,d.reviewedOn].filter(Boolean).sort().pop();structured.textContent=JSON.stringify(meta);",
 )
 
