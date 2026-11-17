@@ -1031,7 +1031,7 @@ replace_once(
 replace_once(
     "scripts/release_check.py",
     "if chronicle_states!={'observed','scheduled','evolving','conditional'}:",
-    "if chronicle_states!={'observed','current','scheduled','evolving','conditional'}:",
+    "if chronicle_states!={'observed','current','evolving','conditional'}:",
 )
 
 # Browser audit: public confirmed contention replaces preliminary Reveal overlap.
