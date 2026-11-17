@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "observedOn": "2026-11-17",
+  "source": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-17-11-2026-en",
+  "official": {
+    "proceedingApplications": 1610,
+    "withdrawalsSinceRevealDay": 9,
+    "replacementSwitches": 152,
+    "replacementEligibleApplications": 287,
+    "contentionSets": 226,
+    "applicationsInContention": 709,
+    "applicantSupportApplications": 50,
+    "brandApplications": 333,
+    "communityApplications": 16,
+    "geographicApplications": 15,
+    "idnApplications": 22,
+    "variantApplications": 9,
+    "regionApplications": {
+      "AF": 16,
+      "AP": 215,
+      "EUR": 504,
+      "LAC": 11,
+      "NA": 864
+    }
+  },
+  "derivedReconciliation": {
+    "revealDayApplications": 1615,
+    "impliedPostRevealNetAdditions": 4,
+    "equation": "1615 - 9 + 4 = 1610",
+    "apEquation": "218 - 7 + 4 = 215",
+    "status": "derived-not-yet-identified-by-application-id"
+  },
+  "wdo": {
+    "applicationID": "WDO2627T-T45217",
+    "apsStatusNote": "still undergoing administrative check; not currently available on Applications list"
+  },
+  "methodologicalCorrection": {
+    "revealDayActiveReplacementRecords": 442,
+    "officialEligibleReplacementApplications": 287,
+    "interpretation": "Active replacement-record status must not be treated as eligibility for the String Replacement Period"
+  },
+  "contentionReconciliation": {
+    "revealDayFrozen": {
+      "sets": 263,
+      "applications": 891
+    },
+    "icannPreReplacementComparison": {
+      "sets": 262,
+      "applications": 885
+    },
+    "stringConfirmation": {
+      "sets": 226,
+      "applications": 709
+    },
+    "status": "requires updated contention-file reconciliation"
+  }
+}
