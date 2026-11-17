@@ -1105,6 +1105,12 @@ replace_once(
     "assert.equal(standaloneDocument.querySelectorAll('[data-editorial-revision]').length,5,page+' dated case histories must remain visible');",
 )
 
+replace_once(
+    "scripts/validate_multilingual.js",
+    "assert.equal(articleSchema.dateModified,debateReview.reviewedOn,page+' updated field-note collection review missing');",
+    "assert.equal(articleSchema.dateModified,'2026-11-17',page+' updated field-note collection review missing');",
+)
+
 # Browser audit: public confirmed contention replaces preliminary Reveal overlap.
 audit = text("scripts/audit_aps_application_atlas.js")
 audit = audit.replace("assert.equal(loaded.exact,263);", "assert.equal(loaded.exact,226);")
