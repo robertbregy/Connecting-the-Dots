@@ -1176,8 +1176,10 @@ dump("publication.json", pub)
 
 manifest = load("research/research_release_manifest.json")
 manifest["currentSiteVersion"] = VERSION
-manifest["nextPlannedResearchRelease"]["candidatePath"] = "research/rr3_candidate.json"
-manifest["nextPlannedResearchRelease"]["status"] = "candidate preparation after observed String Confirmation Day"
+# Keep the protected research-release manifest scientifically unchanged until
+# RR3 is actually published. Candidate state lives only in rr3_candidate.json.
+manifest["nextPlannedResearchRelease"].pop("candidatePath", None)
+manifest["nextPlannedResearchRelease"].pop("status", None)
 manifest["workingPaperRevision"]["technicalReference"].update({
     "siteVersion": VERSION,
     "dataPackageVersion": VERSION,
