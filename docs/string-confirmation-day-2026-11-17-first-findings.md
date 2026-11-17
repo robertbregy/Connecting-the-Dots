@@ -216,6 +216,8 @@ Thus APS Statistics itself reports 1,606 Active applications, while the ICANN an
 
 This reinforces that the +4 is not a simple arithmetic mistake produced by this project. Two ICANN-controlled publication surfaces expose different application universes on the same date.
 
+A second project capture at 18:57 UTC found the APS Statistics page republished at **18:39 UTC** with the same 1,615 total / 1,606 Active / nine Withdrawn / 1,127 unique-string figures. The discrepancy therefore persisted after a later same-day APS publication and should not be dismissed as an initial synchronization lag.
+
 It also preserves a separate historical issue:
 - 22 September: ICANN stated that 1,616 paid applications would proceed;
 - Reveal Day: 1,615 applications;
