@@ -8,12 +8,12 @@
     "url": "https://github.com/robertbregy"
   },
   "websiteRelease": {
-    "version": "0.8.0",
-    "releasedOn": "2026-11-17",
+    "version": "0.8.1",
+    "releasedOn": "2026-11-18",
     "technicalAsOf": "2026-11-17",
     "url": "https://robertbregy.github.io/Connecting-the-Dots/",
     "provenance": {
-      "sourceReviewCommit": "bdf5278c99039363e7b681e46aa50e6f8fcae7c5",
+      "sourceReviewCommit": "6268ae60bfedd988c00be0cbb85cd126d151c17e",
       "role": "source review commit used for deterministic regeneration; not the published merge commit",
       "publishedCommit": "Resolve from the GitHub Pages deployment/repository history; a Git object cannot self-embed its own final hash."
     }
@@ -1603,7 +1603,9 @@
       },
       "gitTag": "RR3",
       "frozenCommit": "a088387c79795f05318f5b468b8e750c9dfe93c1",
-      "immutable": true
+      "immutable": true,
+      "title": "Connecting the Dots · Research Release RR3 · String Confirmation 2026",
+      "scientificAddendumUrl": "https://github.com/robertbregy/Connecting-the-Dots/blob/a088387c79795f05318f5b468b8e750c9dfe93c1/research/rr3_addendum_20261117.md"
     },
     "previousArchivedReleases": [
       {
@@ -1646,7 +1648,7 @@
     "currentWorkingPaper": {
       "version": "1.4-draft",
       "revisedOn": "2026-10-19",
-      "technicalReferenceSynchronizedOn": "2026-11-17",
+      "technicalReferenceSynchronizedOn": "2026-11-18",
       "path": "research/connecting-the-dots-working-paper-v1.html",
       "url": "https://robertbregy.github.io/Connecting-the-Dots/research/connecting-the-dots-working-paper-v1.html",
       "status": "working draft; not peer reviewed",
