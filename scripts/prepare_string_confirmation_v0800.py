@@ -800,6 +800,17 @@ replace_once(
     "if not (publication_meta['researchSnapshot'] <= publication_meta.get('paperRevisedOn','') <= publication_meta['releasedOn']):\n    fail('Working paper scholarly revision date outside research-snapshot/publication range')",
 )
 
+replace_once(
+    "scripts/release_check.py",
+    "if not case.get('revisionHistory') or case['revisionHistory'][-1]['date']!=case['revisedOn'] or case['revisionHistory'][-1]['changeKey']!='field18Revision':",
+    "if not case.get('revisionHistory') or case['revisionHistory'][-1]['date']!=case['revisedOn'] or case['revisionHistory'][-1]['changeKey']!='behindRevisionStringConfirmation':",
+)
+replace_once(
+    "scripts/release_check.py",
+    "if len(case['sources'])!=17 or not any(s['kind']=='secondary' for s in case['sources']):",
+    "if len(case['sources'])!=21 or not any(s['kind']=='secondary' for s in case['sources']):",
+)
+
 # Browser audit: public confirmed contention replaces preliminary Reveal overlap.
 audit = text("scripts/audit_aps_application_atlas.js")
 audit = audit.replace("assert.equal(loaded.exact,263);", "assert.equal(loaded.exact,226);")
