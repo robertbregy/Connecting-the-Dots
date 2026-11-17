@@ -757,6 +757,194 @@ replace_once(
 )
 
 # ---------------------------------------------------------------------------
+# 9b. Agent/GEO catalog: keep the frozen Reveal inventory and expose a second
+# explicit String Confirmation snapshot instead of collapsing the two states.
+# ---------------------------------------------------------------------------
+agent_path = "scripts/build_agent_catalog.py"
+agent = text(agent_path)
+start = agent.index("def derive_counts(root: Path) -> dict:")
+end = agent.index("\ndef build_catalog(", start)
+new_derive = '''def derive_counts(root: Path) -> dict:
+    """Count Reveal and String Confirmation units independently."""
+    core = read_csv(root, "data/explorer_catalog.csv")
+    universe = read_csv(root, "data/tld_universe.csv")
+    application_only = read_csv(root, "data/application_only_strings.csv")
+    strings = read_csv(root, "data/applications_2026_strings_reveal.csv")
+
+    reveal_rows = read_csv(root, "data/applications_2026_aps_official_listing.csv")
+    reveal_provenance = read_json(root, "data/applications_2026_aps_official_provenance.json")
+    reveal_snapshot = read_json(root, "data/application_2026_snapshot.json")
+
+    current_rows = read_csv(root, "data/applications_2026_aps_string_confirmation_20261117.csv")
+    current_provenance = read_json(root, "data/applications_2026_aps_string_confirmation_20261117_provenance.json")
+    graph = read_json(root, "data/aps_2026_application_graph.json")
+    graph_manifest = read_json(root, "data/aps_2026_application_graph_manifest.json")
+    iana = read_json(root, "data/iana_snapshot.json")
+
+    core_labels = {label(row.get("ascii_string") or row["string"]) for row in core}
+    reveal_labels = {label(row["string"]) for row in strings}
+    assert len(core_labels) == len(core), "Duplicate identities in the base Explorer catalog"
+    assert len(reveal_labels) == len(strings), "Duplicate identities in the 2026 string index"
+    assert len(core) == len(universe) + len(application_only), "Explorer base scope changed"
+
+    reveal_base = [row for row in reveal_rows if not row["Application ID"].endswith("-R")]
+    reveal_replacements = [row for row in reveal_rows if row["Application ID"].endswith("-R")]
+    reveal_ids = {row["Application ID"] for row in reveal_base}
+    assert len(reveal_ids) == len(reveal_base) == 1614, "Duplicate Reveal APS base identifiers"
+    assert len(reveal_replacements) == 1169, "Reveal replacement-record census changed"
+    assert all(row["Application ID"][:-2] in reveal_ids for row in reveal_replacements), "Unlinked Reveal replacement row"
+    reveal_variants = [
+        row for row in reveal_base
+        if row["Label: Variant Only (Existing TLD)"].strip().lower() == "true"
+    ]
+    reveal_new = [row for row in reveal_base if row not in reveal_variants]
+    reveal_new_labels = {label(row["Primary String"]) for row in reveal_new}
+    assert reveal_new_labels == reveal_labels and len(reveal_new) == 1608 and len(reveal_labels) == 980
+    assert sum(int(row["applications"]) for row in strings) == 1608
+    assert file_digest(root, "data/applications_2026_aps_official_listing.csv") == reveal_provenance["normalizedCSVSHA256"]
+
+    aps_reveal = {
+        "snapshotState": "reveal-day",
+        "officialReportedApplications": reveal_snapshot["official"]["activeApplications"],
+        "officialStatisticsPublishedAt": reveal_snapshot["official"]["lastPublished"],
+        "publicListingRows": len(reveal_rows),
+        "publishedBaseApplications": len(reveal_base),
+        "replacementRows": len(reveal_replacements),
+        "newPrimaryStringApplications": len(reveal_new),
+        "distinctNewPrimaryStrings": len(reveal_new_labels),
+        "variantOnlyExistingTldApplications": len(reveal_variants),
+        "publicListingObservedAt": reveal_provenance["retrievedAtUTC"],
+        "reportedVersusPublishedGap": reveal_snapshot["official"]["activeApplications"] - len(reveal_base),
+        "unpublishedApplicationIds": ["WDO2627T-T45217"],
+    }
+
+    current_base = [row for row in current_rows if not row["Application ID"].endswith("-R")]
+    current_replacements = [row for row in current_rows if row["Application ID"].endswith("-R")]
+    current_ids = {row["Application ID"] for row in current_base}
+    assert len(current_rows) == 2783 and len(current_base) == 1614 and len(current_replacements) == 1169
+    assert current_ids == {app["id"] for app in graph["apps"]}, "Current APS graph/listing identity mismatch"
+    assert file_digest(root, "data/applications_2026_aps_string_confirmation_20261117.csv") == current_provenance["normalizedCSVSHA256"]
+    assert graph_manifest["sourceSha256"] == current_provenance["normalizedCSVSHA256"]
+    counts = graph_manifest["counts"]
+    assert counts["visibleProceedingApplications"] == 1605
+    assert counts["selectedReplacementRecords"] == 152
+    assert counts["proceedingNewPrimaryApplications"] == 1599
+    assert counts["newPrimaryStrings"] == 1120
+    assert counts["derivedExactPrimaryMatchGroups"] == 226
+    assert counts["applicationsInExactPrimaryMatches"] == 705
+    assert counts["unresolvedAnnouncementPublicationGap"] == 4
+
+    aps_current = {
+        "snapshotState": "string-confirmation",
+        "officialReportedApplications": counts["officialAnnouncementProceedingApplications"],
+        "officialStatisticsActiveApplications": counts["apsStatisticsActiveApplications"],
+        "officialStatisticsPublishedAt": current_provenance["sourceStatisticsLastPublished"],
+        "publicListingRows": len(current_rows),
+        "publishedBaseApplications": len(current_base),
+        "visibleProceedingApplications": counts["visibleProceedingApplications"],
+        "replacementRows": len(current_replacements),
+        "selectedReplacementApplications": counts["selectedReplacementRecords"],
+        "newPrimaryStringApplications": counts["proceedingNewPrimaryApplications"],
+        "distinctNewPrimaryStrings": counts["newPrimaryStrings"],
+        "variantOnlyExistingTldApplications": counts["variantOnlyExistingTldApplications"],
+        "publicListingObservedAt": current_provenance["retrievedAtUTC"],
+        "knownAdministrativeCheckApplications": counts["knownAdministrativeCheckApplications"],
+        "announcementVersusVisibleProceedingGap": counts["announcementVsPublicProceedingGap"],
+        "unresolvedAnnouncementPublicationGap": counts["unresolvedAnnouncementPublicationGap"],
+        "confirmedContentionSets": counts["derivedExactPrimaryMatchGroups"],
+        "publicApplicationsInContention": counts["applicationsInExactPrimaryMatches"],
+        "officialAnnouncementApplicationsInContention": counts["officialAnnouncementApplicationsInContention"],
+        "knownUnpublishedApplicationIds": [graph["notPublishedApplication"]["id"]],
+    }
+
+    root_count = sum(row["root_listed"] == "yes" for row in universe)
+    assert root_count == iana["rootListCount"], "IANA root membership count mismatch"
+
+    return {
+        "explorer": {
+            "unit": "distinct ASCII-normalized name, not necessarily a delegated TLD",
+            "baseCatalogRecords": len(core),
+            "tldAndHistoricalProfileRecords": len(universe),
+            "baseApplicationOnlyNames": len(application_only),
+            "frozen2026PrimaryStringNames": len(reveal_labels),
+            "overlappingNames": len(core_labels & reveal_labels),
+            "combinedExplorerNames": len(core_labels | reveal_labels),
+            "formula": "baseCatalogRecords + frozen2026PrimaryStringNames - overlappingNames",
+            "rootListedTlds": root_count,
+            "rootObservationDate": iana["asOf"],
+            "scopeNote": "The combined interface retains the frozen Reveal Day string index; the current APS Application Atlas is a separately dated String Confirmation layer.",
+        },
+        "aps2026": aps_reveal,
+        "aps2026Current": aps_current,
+    }
+
+'''
+agent = agent[:start] + new_derive + agent[end:]
+
+agent = agent.replace(
+    '    aps_provenance = read_json(root, "data/applications_2026_aps_official_provenance.json")\\n',
+    '    aps_provenance = read_json(root, "data/applications_2026_aps_official_provenance.json")\\n'
+    '    current_aps_provenance = read_json(root, "data/applications_2026_aps_string_confirmation_20261117_provenance.json")\\n',
+    1,
+)
+
+old_listing = '''        dataset(
+            "aps-public-listing", "ICANN APS public listing, original fields preserved", "data/applications_2026_aps_official_listing.csv",
+            "APS listing row", counts["aps2026"]["publicListingRows"],
+            "Complete downloadable public listing at retrieval, including base applications and linked -R replacement records; not the full questionnaires or confidential dossiers.",
+            "data/applications_2026_aps_official_provenance.json", aps_provenance["retrievedAtUTC"], layer="source-records",
+            sourceUrl=aps_provenance["sourceExportURL"],
+            note=aps_provenance["csvPreambleNotice"][0],
+        ),
+'''
+new_listing = old_listing + '''        dataset(
+            "aps-string-confirmation-listing", "ICANN APS public listing · String Confirmation Day", "data/applications_2026_aps_string_confirmation_20261117.csv",
+            "APS listing row", counts["aps2026Current"]["publicListingRows"],
+            "Separate 17 November public APS observation. Stable base IDs are preserved while selected -R records represent the effective current string.",
+            "data/applications_2026_aps_string_confirmation_20261117_provenance.json", current_aps_provenance["retrievedAtUTC"], layer="source-records",
+            sourceUrl=current_aps_provenance["sourceExportURL"],
+            note="The same-day ICANN announcement aggregates exceed the reconciled public APS/contention files by four applications after accounting separately for .wdo.",
+        ),
+'''
+if old_listing not in agent:
+    raise ValueError("Agent catalog APS listing block changed")
+agent = agent.replace(old_listing, new_listing, 1)
+agent = agent.replace(
+    '"published base application", counts["aps2026"]["publishedBaseApplications"],\\n'
+    '            "Reconciled public listing: base application identities, alternatives, variants and derived exact-primary-string groups.",',
+    '"published base application", counts["aps2026Current"]["publishedBaseApplications"],\\n'
+    '            "Current String Confirmation graph: stable base application identities, selected replacements, variants and confirmed public contention memberships.",',
+    1,
+)
+
+agent = agent.replace(
+    '            "version": pub["version"], "releasedOn": pub["releasedOn"], "url": base,',
+    '            "version": pub["version"], "releasedOn": pub["releasedOn"], "technicalAsOf": pub.get("technicalAsOf", pub["releasedOn"]), "url": base,',
+    1,
+)
+agent = agent.replace(
+    '            "websiteRelease": "Technical/editorial publication date; it does not redate the underlying observations.",',
+    '            "websiteRelease": "Technical/editorial publication date; it does not redate the underlying observations.",\\n'
+    '            "technicalAsOf": "Newest evidence state integrated into the technical site; distinct from the current archived research-release cutoff.",',
+    1,
+)
+agent = agent.replace(
+    '    aps = catalog["snapshotCounts"]["aps2026"]\\n',
+    '    aps = catalog["snapshotCounts"]["aps2026Current"]\\n'
+    '    aps_reveal = catalog["snapshotCounts"]["aps2026"]\\n',
+    1,
+)
+old_llms = '''        f"The APS export observed at {aps['publicListingObservedAt']} contains {aps['publicListingRows']:,} rows: {aps['publishedBaseApplications']:,} base applications and {aps['replacementRows']:,} linked replacement rows. Its new-primary subset has {aps['newPrimaryStringApplications']:,} applications over {aps['distinctNewPrimaryStrings']:,} strings; {aps['variantOnlyExistingTldApplications']:,} other base applications concern variants of existing TLDs. The separately published official total is {aps['officialReportedApplications']:,}; retain the documented public-listing gap.", "",
+'''
+new_llms = '''        f"The frozen Reveal Day APS layer contains {aps_reveal['publishedBaseApplications']:,} public base applications and {aps_reveal['distinctNewPrimaryStrings']:,} primary strings in the reconciled secondary string index. It remains a historical snapshot rather than being overwritten by later applicant choices.", "",
+        f"The String Confirmation APS export observed at {aps['publicListingObservedAt']} contains {aps['publicListingRows']:,} public rows and {aps['publishedBaseApplications']:,} stable base Application IDs. Its effective current state yields {aps['visibleProceedingApplications']:,} visible proceeding application families, including {aps['selectedReplacementApplications']:,} selected replacements, and {aps['newPrimaryStringApplications']:,} proceeding new-primary applications over {aps['distinctNewPrimaryStrings']:,} visible strings. The public contention CSV has {aps['confirmedContentionSets']:,} sets / {aps['publicApplicationsInContention']:,} rows, while ICANN's same-day announcement reports {aps['officialAnnouncementApplicationsInContention']:,}; retain the unresolved four-application publication gap.", "",
+'''
+if old_llms not in agent:
+    raise ValueError("Agent llms APS paragraph changed")
+agent = agent.replace(old_llms, new_llms, 1)
+write(agent_path, agent)
+
+# ---------------------------------------------------------------------------
 # 10. Release gates: validate both immutable Reveal baseline and current graph.
 # ---------------------------------------------------------------------------
 replace_once(
