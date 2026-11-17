@@ -44,7 +44,7 @@ manifest from the verified source commit, comparing substantive data changes
 with the tagged RR1 baseline. The preflight step **did not itself publish RR2** or replace RR1's
 Zenodo DOI. The subsequent GitHub Release and Zenodo concept-series check
 succeeded independently, before the public site metadata was promoted.
-November 17 String Confirmation is the next potential RR3 milestone.
+The later String Confirmation milestone was archived as RR3 on 17 November 2026.
 
 
 Zenodo's public API independently verified both records: RR1 specific DOI **10.5281/zenodo.23262623** and RR2 specific DOI **10.5281/zenodo.23288603** share **concept DOI 10.5281/zenodo.23262622** (concept record 23262622). The integration successfully archived GitHub Release RR2. The preflight remains a separately auditable step; see the DOI verification record.

@@ -6,6 +6,8 @@
 
 Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
+Current scientific release: [RR3 · String Confirmation 2026](https://doi.org/10.5281/zenodo.24325521).
+
 ## Current release
 
 **v0.8.0 - 17 November 2026**
