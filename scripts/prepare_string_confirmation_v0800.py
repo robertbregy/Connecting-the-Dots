@@ -1058,6 +1058,12 @@ replace_once(
     "assert.equal(standaloneDocument.querySelectorAll('[data-source-id]').length,28,page+' all source links must be preserved');",
 )
 
+replace_once(
+    "scripts/validate_multilingual.js",
+    "assert.equal(standaloneDocument.querySelectorAll('[data-source-id]').length,24,page+' all source links must be preserved');",
+    "assert.equal(standaloneDocument.querySelectorAll('[data-source-id]').length,28,page+' all source links must be preserved');",
+)
+
 # Browser audit: public confirmed contention replaces preliminary Reveal overlap.
 audit = text("scripts/audit_aps_application_atlas.js")
 audit = audit.replace("assert.equal(loaded.exact,263);", "assert.equal(loaded.exact,226);")
