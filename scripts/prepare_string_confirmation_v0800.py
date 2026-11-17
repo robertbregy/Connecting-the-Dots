@@ -1058,6 +1058,19 @@ replace_once(
     "assert.equal(standaloneDocument.querySelectorAll('[data-source-id]').length,28,page+' all source links must be preserved');",
 )
 
+
+replace_once(
+    "scripts/validate_multilingual.js",
+    "assert.equal(standaloneDocument.querySelectorAll('[data-editorial-revision]').length,4,page+' dated case histories must remain visible');",
+    "assert.equal(standaloneDocument.querySelectorAll('[data-editorial-revision]').length,5,page+' dated case histories must remain visible');",
+)
+
+replace_once(
+    "scripts/validate_multilingual.js",
+    "assert.equal(articleSchema.citation.length,24,page+' schema citation list incomplete');",
+    "assert.equal(articleSchema.citation.length,28,page+' schema citation list incomplete');",
+)
+
 replace_once(
     "scripts/validate_multilingual.js",
     "assert.equal(standaloneDocument.querySelectorAll('[data-source-id]').length,24,page+' all source links must be preserved');",
