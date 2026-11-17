@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   capture:
@@ -103,6 +103,17 @@ jobs:
             --output capture/string-confirmation-summary.json \
             > capture/string-confirmation-summary.stdout.json
 
+      - name: Reconcile official contention files
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/contention_confirmation_20261117.py \
+            --reveal capture/reveal-day-contention-sets.csv \
+            --confirmed capture/string-confirmation-contention-sets.csv \
+            --aps capture/aps-export-normalized.csv \
+            --output capture/contention-reconciliation.json \
+            > capture/contention-reconciliation.stdout.json
+
       - name: Extract high-value records and counts
         shell: bash
         run: |
@@ -152,6 +163,33 @@ jobs:
               json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
           )
           PY
+
+      - name: Persist evidence on preparatory branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          dest='data/evidence/string-confirmation-2026-11-17/live'
+          mkdir -p "$dest"
+          cp capture/captured-at-utc.txt "$dest/"
+          cp capture/aps-export-raw.csv "$dest/"
+          cp capture/aps-export-normalized.csv "$dest/"
+          cp capture/reveal-day-contention-sets.csv "$dest/"
+          cp capture/string-confirmation-contention-sets.csv "$dest/"
+          cp capture/sha256.txt "$dest/"
+          cp capture/sizes.txt "$dest/"
+          cp capture/aps-observatory-diff.json "$dest/"
+          cp capture/string-confirmation-summary.json "$dest/"
+          cp capture/high-value-summary.json "$dest/"
+          cp capture/contention-reconciliation.json "$dest/"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$dest"
+          if git diff --cached --quiet; then
+            echo 'Evidence already identical; no commit needed.'
+          else
+            git commit -m 'evidence: capture String Confirmation Day APS and contention data'
+            git push origin HEAD:prep/string-confirmation-2026-11-17
+          fi
 
       - name: Upload evidence artifact
         uses: actions/upload-artifact@v4
