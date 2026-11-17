@@ -39,7 +39,7 @@
       "withdrawnApplications": 9,
       "uniqueStrings": 1127,
       "evidence": "evidence/string-confirmation-2026-11-17/aps-statistics-recheck-1857.json",
-      "interpretation": "Counts were unchanged after a later same-day APS republication; the announcement/APS four-application gap is not treated as an initial synchronization lag."
+      "interpretation": "The four-unit difference persisted across the 18:09 and 18:39 Statistics publications. This observation alone cannot establish its cause or rule out later changes and asynchronous publication."
     }
   },
   "publicAPS": {
@@ -69,13 +69,14 @@
     "knownAdministrativeCheckApplication": "WDO2627T-T45217",
     "announcementMinusVisibleProceeding": 5,
     "knownAdministrativeCheckAdjustment": 1,
-    "unresolvedResidualApplications": 4,
-    "constrainedCharacteristics": [
-      "AP region",
-      "Applicant Support",
-      "contention membership"
+    "residualAggregateDifference": 4,
+    "observedComparisonDimensions": [
+      "AP regional aggregate",
+      "Applicant Support aggregate",
+      "contention membership aggregate"
     ],
-    "status": "unresolved aggregate/publication discrepancy; identities and administrative cause not publicly established",
+    "marginalComparisonCaveat": "Equal marginal differences do not establish four missing applications or a shared AP/Applicant Support/contention profile. A counting or editorial error, scope difference or publication timing issue remains possible; ICANN has not established the cause.",
+    "status": "unresolved aggregate/publication discrepancy; neither missing application records nor the cause are established",
     "detail": "docs/string-confirmation-day-2026-11-17-first-findings.md"
   },
   "lugano": {
@@ -84,5 +85,40 @@
     "processingStage": "String Evaluation Processing",
     "inContention": false,
     "openCommentPeriod": true
+  },
+  "laterStatisticsExportObservation": {
+    "schemaVersion": 1,
+    "sourceStatisticsPage": "https://newgtldprogram-aps.icann.org/statistics",
+    "sourceStatisticsAPI": "https://newgtldprogram-aps.icann.org/aps/applications/stats",
+    "sourceStatisticsPublishedAtUTC": "2026-11-17T20:09:15.884Z",
+    "observedOn": "2026-11-17",
+    "exportResponseDateUTC": "2026-11-17T20:38:11Z",
+    "statisticsRawEvidence": "data/evidence/string-confirmation-2026-11-17/aps-statistics-2009-raw.json",
+    "statisticsRawSHA256": "6f0e353044297ba99cf6f7facf523138d277f0dc2b91506c32dedbb9c92d7474",
+    "apsStatistics": {
+      "totalApplications": 1615,
+      "activeApplications": 1605,
+      "withdrawnApplications": 10,
+      "uniqueStrings": 1127
+    },
+    "publicExportRecheck": {
+      "source": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+      "method": "POST",
+      "rows": 2783,
+      "activeRecords": 1605,
+      "withdrawnRecords": 9,
+      "deactivatedRecords": 1169,
+      "rawSHA256": "f7cb0e7ef1098a3b92a7d337676d8802802df21e31c8f156dafe7c410132b7ee",
+      "sameBytesAsFrozen1830Capture": true
+    },
+    "confirmedContentionRecheck": {
+      "source": "https://newgtldprogram.icann.org/en/application-rounds/round2/string-confirmation-contention-sets.csv",
+      "sets": 226,
+      "applicationRows": 705,
+      "rawSHA256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
+      "sameBytesAsFrozen1830Capture": true
+    },
+    "interpretation": "The later Statistics publication and public export are not synchronized. The export remains byte-identical to the 18:30 observation. The tenth withdrawal is not identifiable from this export, and must not be assigned to .wdo or any other application by inference. This temporal mismatch is separate from the earlier four-unit announcement/APS aggregate discrepancy.",
+    "snapshotPolicy": "Keep the 18:30 source snapshot and the 18:09/18:39 Statistics observations immutable. Record this later observation separately; do not replace frozen counts or recalculate the earlier gap from mixed times."
   }
 }

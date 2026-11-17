@@ -37,15 +37,17 @@
     "confirmedContentionSHA256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
     "reconciliation": "data/evidence/string-confirmation-2026-11-17/live/contention-reconciliation.json",
     "observation": "data/evidence/string-confirmation-2026-11-17/official-announcement-observation.json",
-    "apsStatisticsRecheck": "data/evidence/string-confirmation-2026-11-17/aps-statistics-recheck-1857.json"
+    "apsStatisticsRecheck": "data/evidence/string-confirmation-2026-11-17/aps-statistics-recheck-1857.json",
+    "laterStatisticsExportRecheck": "data/evidence/string-confirmation-2026-11-17/aps-statistics-export-recheck-2038.json"
   },
   "evidenceLimitations": [
     "ICANN's 17 November announcement aggregates do not fully reconcile with the public APS export and public contention CSV.",
-    "APS Statistics was republished later the same day at 18:39 UTC with unchanged 1,615 total / 1,606 active / nine withdrawn counts, so the residual four-application difference is not normalized away as an initial synchronization lag.",
-    "The identities and administrative cause of the four residual applications are not publicly established and are not inferred.",
+    "Statistics at 18:09 and 18:39 UTC reported 1,615 total, 1,606 active and nine withdrawn. The arithmetic 1,615 minus nine equals 1,606; the announcement gives 1,610. This establishes an aggregate difference, not four missing records.",
+    "The repeated four-unit marginal differences do not establish four missing applications, a shared application profile or an administrative cause. A counting/editorial error, scope difference or publication timing issue remains possible.",
     ".wdo remains a separate known administrative-check case absent from the public Applications listing.",
     "The historical 1,616 paid-to-proceed figure of 22 September and the 1,615 Reveal Day figure remain a distinct unresolved discrepancy.",
-    "RR1 and RR2 remain immutable; this candidate has no DOI until archival verification completes."
+    "RR1 and RR2 remain immutable; this candidate has no DOI until archival verification completes.",
+    "Later Statistics at 20:09 UTC report 1,605 Active and ten Withdrawn, while the export rechecked at 20:38 UTC remains byte-identical with 1,605 Active and nine Withdrawn public records. These asynchronous observations are separate from the frozen 18:30 snapshot and do not identify the tenth withdrawal."
   ],
   "archivePolicy": {
     "rr3Publication": "blocked-until-verified",
@@ -59,5 +61,11 @@
       "Zenodo returns a real RR3-specific DOI in the existing concept/version chain.",
       "Only after DOI verification are public citation metadata and currentResearchRelease promoted atomically."
     ]
+  },
+  "scientificAddendum": "research/rr3_addendum_20261117.md",
+  "preflight": {
+    "script": "scripts/rr3_preflight.py",
+    "runbook": "docs/rr3_publication_runbook.md",
+    "requiresFrozenSourcesForPublication": true
   }
 }

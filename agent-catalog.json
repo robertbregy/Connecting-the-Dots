@@ -13,7 +13,7 @@
     "technicalAsOf": "2026-11-17",
     "url": "https://robertbregy.github.io/Connecting-the-Dots/",
     "provenance": {
-      "sourceReviewCommit": "c0e1ea16f7fe6d068b1dd46a9ad64b4bb80ca809",
+      "sourceReviewCommit": "bdf5278c99039363e7b681e46aa50e6f8fcae7c5",
       "role": "source review commit used for deterministic regeneration; not the published merge commit",
       "publishedCommit": "Resolve from the GitHub Pages deployment/repository history; a Git object cannot self-embed its own final hash."
     }
@@ -1467,7 +1467,7 @@
       "path": "data/aps_2026_application_graph.json",
       "url": "https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_application_graph.json",
       "mediaType": "application/json",
-      "sha256": "0553467dff22d23c21ff796d1c356be011597c55a43bec2232f0db78f32c8e4e",
+      "sha256": "2a5327c8f7ea15e0b83792398fb645f955befa5662faefc7e30f56989b8b0e74",
       "layer": "derived",
       "unit": "published base application",
       "recordCount": 1614,

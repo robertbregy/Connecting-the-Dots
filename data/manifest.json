@@ -353,23 +353,23 @@
       },
       {
         "repository_path": "data/i18n_en.js",
-        "bytes": 265896,
-        "sha256": "257450cb690e1c6c99521a4d74a1a919f126ce0faf7fcdadc912099231c30346"
+        "bytes": 266913,
+        "sha256": "0427a58562124034393350b95aaa28cebdb2e4e43684155a0409e6a3b5665af9"
       },
       {
         "repository_path": "data/i18n_it.js",
-        "bytes": 280050,
-        "sha256": "df3ebfb5bf3c7ea4023376d1a96c7a2e9991430d1d0e8a3d0fa341ab31219ce5"
+        "bytes": 281132,
+        "sha256": "92d485e167d94e8f86c0dee8ac542a18a5cf186b9720f19231566ff2355999ba"
       },
       {
         "repository_path": "data/i18n_de.js",
-        "bytes": 282048,
-        "sha256": "2028eb301a6cc6a42aba4acea5c5accc5e6c1987ff64b8a87844d58410716382"
+        "bytes": 283190,
+        "sha256": "59affe452277a6db7a7294a1a05aaf9c796792aa12ee25d20ad7829d1f58e7f8"
       },
       {
         "repository_path": "data/i18n_fr.js",
-        "bytes": 293787,
-        "sha256": "1ecbef6cb001d72375c7a1f3e09d73357f6ee778104b5b974b8b9bb2608bdc3f"
+        "bytes": 294827,
+        "sha256": "87fa8ee893cd051fde460ee77c5c6ebf6858cf753b05c07a5a846c5119339ed6"
       },
       {
         "repository_path": "data/applications_2026_strings_reveal.js",
@@ -418,8 +418,8 @@
       },
       {
         "repository_path": "data/aps_2026_application_graph.js",
-        "bytes": 1575034,
-        "sha256": "7b025d3748c0d4caf7012bfd11ea1e681f121ccb413448a299815f5a083ce02d"
+        "bytes": 1575228,
+        "sha256": "f35a1354726d4d080182881d0be11aa9256efdf64945764ecc1c294dbb42fe56"
       },
       {
         "repository_path": "data/worldmap.js",

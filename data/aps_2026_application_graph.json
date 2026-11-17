@@ -38,7 +38,8 @@
     "officialAnnouncementProceedingApplications": 1610,
     "visibleProceedingApplications": 1605,
     "knownAdministrativeCheckApplications": 1,
-    "unresolvedResidualApplications": 4,
+    "residualAggregateDifference": 4,
+    "marginalComparisonCaveat": "Equal aggregate differences do not establish four missing applications, their identities or a common AP/Applicant Support/contention profile. The cause is unconfirmed.",
     "note": "ICANN's 17 November announcement aggregates exceed the reconciled public APS/contention files by four applications after accounting separately for .wdo."
   },
   "contention": {

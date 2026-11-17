@@ -182,13 +182,19 @@
           "kind": "derived",
           "labelKey": "field17SourceReconciliation",
           "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/prep/string-confirmation-2026-11-17/data/evidence/string-confirmation-2026-11-17/live/contention-reconciliation.json"
+        },
+        {
+          "id": "project-scd-later-recheck",
+          "kind": "derived",
+          "labelKey": "field17SourceLaterRecheck",
+          "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/main/data/evidence/string-confirmation-2026-11-17/aps-statistics-export-recheck-2038.json"
         }
       ],
       "updateTriggers": [
         "ICANN publishes a specific explanation for the 22 September 1,616 to 7 October 1,615 change",
         "ICANN changes the WDO application administrative-check status or APS visibility",
         "ICANN reconciles the four-application difference between its 17 November announcement aggregates and the public APS/contention files",
-        "The missing four application identities become publicly verifiable in APS, TAMS or another authoritative ICANN publication"
+        "ICANN publishes a correction or a record-level reconciliation that establishes the cause of the aggregate discrepancy"
       ],
       "revisionHistory": [
         {
@@ -318,7 +324,8 @@
           "paragraphKeys": [
             "field17ConfirmBody1",
             "field17ConfirmBody2",
-            "field17ConfirmBody3"
+            "field17ConfirmBody3",
+            "field17TimingBody"
           ],
           "sourceIds": [
             "icann-scd-announcement",
@@ -326,7 +333,8 @@
             "aps-scd-export",
             "project-scd-reconciliation",
             "icann-aps-stats",
-            "icann-aps-wdo"
+            "icann-aps-wdo",
+            "project-scd-later-recheck"
           ]
         }
       ]

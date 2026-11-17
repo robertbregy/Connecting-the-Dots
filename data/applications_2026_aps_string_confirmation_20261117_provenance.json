@@ -82,7 +82,7 @@
     "New gTLD with Variants": 3,
     "Replacement String": 1017
   },
-  "coverage": "Complete downloadable public APS Applications listing as captured after String Confirmation Day; excludes the separately disclosed .wdo administrative-check application and does not reconcile four additional applications present only in ICANN announcement aggregates.",
+  "coverage": "Complete downloadable public APS Applications listing as captured after String Confirmation Day; excludes the separately disclosed .wdo administrative-check application and records a four-unit difference from ICANN announcement aggregates; this does not establish four absent applications.",
   "licenseNote": "Public records sourced from ICANN APS. ICANN source terms and attribution apply to original fields; inclusion is not a claim of original authorship or relicensing of ICANN data.",
   "normalization": {
     "rules": [
@@ -93,5 +93,6 @@
     ],
     "rowIdentity": "Application ID (unique), group base IDs by stripping a terminal -R ONLY for reconciliation",
     "snapshotRule": "Reveal Day source remains immutable; this file is a separate 17 November 2026 observation."
-  }
+  },
+  "laterStatisticsExportRecheck": "data/evidence/string-confirmation-2026-11-17/aps-statistics-export-recheck-2038.json"
 }
