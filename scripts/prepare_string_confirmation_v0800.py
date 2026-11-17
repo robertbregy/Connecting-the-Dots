@@ -402,6 +402,91 @@ counts_case["updateTriggers"] = [
 dump("data/behind_round_stories.json", stories)
 
 # ---------------------------------------------------------------------------
+# 5b. Replacement Strings investigation: preserve the Reveal observation and
+# add the verified String Confirmation outcome as a dated editorial layer.
+# ---------------------------------------------------------------------------
+investigations = load("data/field_investigations.json")
+investigations["lastReviewed"] = DATE
+replacement_case = next(item for item in investigations["episodes"] if item["id"] == "replacement-strings")
+replacement_case["revisedOn"] = DATE
+replacement_sources = [
+    {
+        "id": "rs-scd-announcement",
+        "url": current_prov["officialAnnouncementReference"],
+        "kind": "primary",
+        "labelKey": "field17ReplacementSourceAnnouncement",
+    },
+    {
+        "id": "rs-scd-current-aps",
+        "url": current_prov["sourceExportURL"],
+        "kind": "primary",
+        "labelKey": "field17ReplacementSourceAPS",
+    },
+    {
+        "id": "rs-scd-contention",
+        "url": current_prov["officialContentionReference"],
+        "kind": "primary",
+        "labelKey": "field17ReplacementSourceContention",
+    },
+    {
+        "id": "rs-scd-reconciliation",
+        "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/prep/string-confirmation-2026-11-17/data/evidence/string-confirmation-2026-11-17/official-announcement-observation.json",
+        "kind": "derived",
+        "labelKey": "field17ReplacementSourceReconciliation",
+    },
+]
+replacement_source_ids = {item["id"] for item in replacement_case["sources"]}
+replacement_case["sources"].extend(item for item in replacement_sources if item["id"] not in replacement_source_ids)
+replacement_update_id = "string-confirmation-replacement-outcome"
+if replacement_update_id not in {item["id"] for item in replacement_case.get("editorialUpdates", [])}:
+    replacement_case.setdefault("editorialUpdates", []).append({
+        "id": replacement_update_id,
+        "date": DATE,
+        "reviewLabelKey": "field17ReviewLabel",
+        "titleKey": "field17ReplacementTitle",
+        "paragraphKeys": [
+            "field17ReplacementBody1",
+            "field17ReplacementBody2",
+            "field17ReplacementBody3",
+        ],
+        "closingKey": "field17ReplacementBoundary",
+        "sourceIds": [
+            "rs-scd-announcement",
+            "rs-scd-current-aps",
+            "rs-scd-contention",
+            "rs-scd-reconciliation",
+        ],
+    })
+if not any(item.get("changeKey") == "field17ReplacementRevision" for item in replacement_case["revisionHistory"]):
+    replacement_case["revisionHistory"].append({
+        "date": DATE,
+        "changeKey": "field17ReplacementRevision",
+        "sourceIds": [
+            "rs-scd-announcement",
+            "rs-scd-current-aps",
+            "rs-scd-contention",
+            "rs-scd-reconciliation",
+        ],
+    })
+replacement_case["updateTriggers"] = [
+    "ICANN clarifies why 442 Reveal-period Active replacement records differed from the 287 applications ultimately eligible to switch.",
+    "ICANN republishes or corrects the String Confirmation APS export, contention CSV or replacement totals.",
+    "A later evaluation stage changes the status of an application whose selected replacement is recorded here.",
+]
+dump("data/field_investigations.json", investigations)
+
+replace_once(
+    "scripts/render_field_investigations.py",
+    '        if (len(revisions) != (3 if index == 4 else 2 if index == 3 else 1)',
+    '        if (len(revisions) != (4 if index == 4 else 2 if index == 3 else 1)',
+)
+replace_once(
+    "scripts/render_field_investigations.py",
+    '            if (revisions[0]["date"]!="2026-10-10" or revisions[1]["date"]!="2026-10-17" or\n                    revisions[2]["changeKey"]!="field18ReconciliationRevision"):',
+    '            if (revisions[0]["date"]!="2026-10-10" or revisions[1]["date"]!="2026-10-17" or\n                    revisions[2]["changeKey"]!="field18ReconciliationRevision" or\n                    revisions[3]["changeKey"]!="field17ReplacementRevision" or revisions[3]["date"]!="2026-11-17"):',
+)
+
+# ---------------------------------------------------------------------------
 # 6. i18n additions and current Atlas wording.
 # ---------------------------------------------------------------------------
 tr = load("data/translations.json")
@@ -513,6 +598,59 @@ copy = {
 }
 for lang, values in copy.items():
     tr.setdefault(lang, {}).update(values)
+
+replacement_copy = {
+    "en": {
+        "field17ReplacementTitle": "What String Confirmation actually selected",
+        "field17ReplacementBody1": "The 442 replacement records marked Active in the Reveal-period APS export were an observed publication state, not the final eligibility denominator. ICANN's 17 November announcement says 287 applications were eligible to switch.",
+        "field17ReplacementBody2": "Exactly 152 applications selected their replacement string. In the captured APS export, each selected family shows the original base record Deactivated and the linked -R record Active, with the selected record represented as New gTLD or New gTLD with Variants.",
+        "field17ReplacementBody3": "The remaining 135 eligible applications did not switch. Another 155 replacement records that had appeared Active in the Reveal-period export were therefore outside the final eligible population; the public sources do not justify inferring why on an application-by-application basis.",
+        "field17ReplacementBoundary": "The historical 1,169 / 442 / 727 observation is retained above as a dated Reveal-period snapshot. It is not rewritten into the later 287 / 152 outcome.",
+        "field17ReplacementSourceAnnouncement": "ICANN · String Confirmation announcement",
+        "field17ReplacementSourceAPS": "ICANN APS · 17 November export",
+        "field17ReplacementSourceContention": "ICANN · String Confirmation contention CSV",
+        "field17ReplacementSourceReconciliation": "Project · verified String Confirmation reconciliation",
+        "field17ReplacementRevision": "17 November 2026 · final replacement-choice reconciliation",
+    },
+    "it": {
+        "field17ReplacementTitle": "Cosa è stato davvero selezionato allo String Confirmation",
+        "field17ReplacementBody1": "I 442 record replacement marcati Active nell'export APS del periodo Reveal erano uno stato di pubblicazione osservato, non il denominatore finale degli eleggibili. Il comunicato ICANN del 17 novembre indica 287 candidature eleggibili al cambio.",
+        "field17ReplacementBody2": "Esattamente 152 candidature hanno selezionato la replacement string. Nell'export APS catturato, per ciascuna famiglia selezionata il record base originale risulta Deactivated e il record -R collegato resta Active, rappresentato come New gTLD o New gTLD with Variants.",
+        "field17ReplacementBody3": "Le altre 135 candidature eleggibili non hanno effettuato il cambio. Altri 155 record replacement che risultavano Active nell'export del periodo Reveal erano quindi fuori dalla popolazione finale degli eleggibili; le fonti pubbliche non consentono di inferirne il motivo candidatura per candidatura.",
+        "field17ReplacementBoundary": "L'osservazione storica 1.169 / 442 / 727 resta sopra come snapshot datato del periodo Reveal. Non viene riscritta retroattivamente nel successivo esito 287 / 152.",
+        "field17ReplacementSourceAnnouncement": "ICANN · comunicato String Confirmation",
+        "field17ReplacementSourceAPS": "ICANN APS · export 17 novembre",
+        "field17ReplacementSourceContention": "ICANN · CSV contention String Confirmation",
+        "field17ReplacementSourceReconciliation": "Progetto · riconciliazione verificata String Confirmation",
+        "field17ReplacementRevision": "17 novembre 2026 · riconciliazione finale delle scelte replacement",
+    },
+    "de": {
+        "field17ReplacementTitle": "Was am String Confirmation Day tatsächlich ausgewählt wurde",
+        "field17ReplacementBody1": "Die 442 im Reveal-Zeitraum als Active markierten Ersatzdatensätze waren ein beobachteter Veröffentlichungsstatus, nicht der endgültige Nenner der Berechtigten. ICANNs Mitteilung vom 17. November nennt 287 zum Wechsel berechtigte Anträge.",
+        "field17ReplacementBody2": "Genau 152 Anträge wählten ihren Ersatzstring. Im erfassten APS-Export ist bei jeder ausgewählten Familie der ursprüngliche Basisdatensatz Deactivated und der verknüpfte -R-Datensatz Active; der ausgewählte Datensatz wird als New gTLD oder New gTLD with Variants geführt.",
+        "field17ReplacementBody3": "Die übrigen 135 berechtigten Anträge wechselten nicht. Weitere 155 Ersatzdatensätze, die im Reveal-Zeitraum Active erschienen, lagen somit außerhalb der endgültigen Berechtigtenpopulation; die öffentlichen Quellen erlauben keine antragsspezifische Begründung.",
+        "field17ReplacementBoundary": "Die historische Beobachtung 1.169 / 442 / 727 bleibt oben als datierter Reveal-Snapshot erhalten. Sie wird nicht rückwirkend in das spätere Ergebnis 287 / 152 umgeschrieben.",
+        "field17ReplacementSourceAnnouncement": "ICANN · String-Confirmation-Mitteilung",
+        "field17ReplacementSourceAPS": "ICANN APS · Export vom 17. November",
+        "field17ReplacementSourceContention": "ICANN · String-Confirmation-Contention-CSV",
+        "field17ReplacementSourceReconciliation": "Projekt · verifizierte String-Confirmation-Abstimmung",
+        "field17ReplacementRevision": "17. November 2026 · finale Abstimmung der Ersatzstring-Auswahl",
+    },
+    "fr": {
+        "field17ReplacementTitle": "Ce que le String Confirmation Day a réellement sélectionné",
+        "field17ReplacementBody1": "Les 442 enregistrements de remplacement marqués Active dans l'export APS de la période Reveal constituaient un état de publication observé, et non le dénominateur final des candidatures éligibles. Le communiqué ICANN du 17 novembre indique 287 candidatures éligibles au changement.",
+        "field17ReplacementBody2": "Exactement 152 candidatures ont sélectionné leur chaîne de remplacement. Dans l'export APS capturé, chaque famille sélectionnée présente l'enregistrement de base original Deactivated et l'enregistrement -R lié Active, le record sélectionné étant représenté comme New gTLD ou New gTLD with Variants.",
+        "field17ReplacementBody3": "Les 135 autres candidatures éligibles n'ont pas changé de chaîne. Par conséquent, 155 autres enregistrements de remplacement apparus Active pendant la période Reveal étaient hors de la population finale éligible ; les sources publiques ne permettent pas d'en déduire la raison candidature par candidature.",
+        "field17ReplacementBoundary": "L'observation historique 1 169 / 442 / 727 est conservée ci-dessus comme snapshot daté de la période Reveal. Elle n'est pas réécrite rétroactivement en fonction du résultat ultérieur 287 / 152.",
+        "field17ReplacementSourceAnnouncement": "ICANN · communiqué String Confirmation",
+        "field17ReplacementSourceAPS": "ICANN APS · export du 17 novembre",
+        "field17ReplacementSourceContention": "ICANN · CSV de contention String Confirmation",
+        "field17ReplacementSourceReconciliation": "Projet · rapprochement String Confirmation vérifié",
+        "field17ReplacementRevision": "17 novembre 2026 · rapprochement final des choix de remplacement",
+    },
+}
+for lang, values in replacement_copy.items():
+    tr.setdefault(lang, {}).update(values)
 dump("data/translations.json", tr)
 
 # ---------------------------------------------------------------------------
@@ -522,6 +660,11 @@ replace_once(
     "scripts/render_behind_round.py",
     '"reveal-day-counts":["aps-count-reconciliation","aps-publication-calendar"],',
     '"reveal-day-counts":["aps-count-reconciliation","aps-publication-calendar","string-confirmation-reconciliation"],',
+)
+replace_once(
+    "scripts/render_behind_round.py",
+    '"replacement-strings":["aps-string-reconciliation"],',
+    '"replacement-strings":["aps-string-reconciliation","string-confirmation-replacement-outcome"],',
 )
 replace_once(
     "scripts/render_behind_round.py",
@@ -596,6 +739,11 @@ replace_once(
     "build.py",
     '"publication_state": "reveal-day",',
     '"publication_state": PUBLICATION["state"],',
+)
+replace_once(
+    "build.py",
+    '        "as_of": AS_OF,',
+    '        "as_of": AS_OF,\n        "technical_as_of": PUBLICATION.get("technicalAsOf", RELEASED_ON),',
 )
 replace_once(
     "build.py",
@@ -675,7 +823,7 @@ pub.update({
     "releasedOn": DATE,
     "state": "string-confirmation",
     "freeze": True,
-    "asOf": DATE,
+    "technicalAsOf": DATE,
     "currentDataPackVersion": VERSION,
     "currentDataPackPath": f"downloads/connecting-the-dots-data-pack-v{VERSION}.zip",
     "paperTechnicalSyncOn": DATE,
