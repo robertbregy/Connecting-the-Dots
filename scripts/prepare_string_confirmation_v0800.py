@@ -1028,6 +1028,12 @@ replace_once(
     "if len(case['sources'])!=21 or not any(s['kind']=='secondary' for s in case['sources']):",
 )
 
+replace_once(
+    "scripts/release_check.py",
+    "if chronicle_states!={'observed','scheduled','evolving','conditional'}:",
+    "if chronicle_states!={'observed','current','scheduled','evolving','conditional'}:",
+)
+
 # Browser audit: public confirmed contention replaces preliminary Reveal overlap.
 audit = text("scripts/audit_aps_application_atlas.js")
 audit = audit.replace("assert.equal(loaded.exact,263);", "assert.equal(loaded.exact,226);")
