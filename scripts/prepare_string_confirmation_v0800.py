@@ -5,7 +5,7 @@ This is a deterministic source migration. It preserves the Reveal Day APS
 listing and RR1/RR2, adds the 17 November public snapshot as a separate layer,
 moves the current Application Atlas to effective confirmed strings, and records
 the unresolved ICANN aggregate/publication discrepancy without inventing the
-four missing application identities.
+application identities or assuming that the aggregate difference represents missing records.
 """
 from __future__ import annotations
 
@@ -54,9 +54,9 @@ def sha(path):
 
 def replace_once(path, old, new):
     value = text(path)
+    if new in value:
+        return
     if old not in value:
-        if new in value:
-            return
         raise ValueError(f"Expected patch anchor missing in {path}: {old[:120]!r}")
     if value.count(old) != 1:
         raise ValueError(f"Patch anchor not unique in {path}: {old[:120]!r}")
@@ -131,7 +131,7 @@ current_prov = {
     "csvPreambleNotice": old_prov["csvPreambleNotice"],
     "statusCounts": status_counts,
     "applicationTypeCounts": type_counts,
-    "coverage": "Complete downloadable public APS Applications listing as captured after String Confirmation Day; excludes the separately disclosed .wdo administrative-check application and does not reconcile four additional applications present only in ICANN announcement aggregates.",
+    "coverage": "Complete downloadable public APS Applications listing as captured after String Confirmation Day; excludes the separately disclosed .wdo administrative-check application and records a four-unit difference from ICANN announcement aggregates; this does not establish four absent applications.",
     "licenseNote": old_prov["licenseNote"],
     "normalization": {
         "rules": old_prov["normalization"]["rules"],
@@ -139,6 +139,7 @@ current_prov = {
         "snapshotRule": "Reveal Day source remains immutable; this file is a separate 17 November 2026 observation.",
     },
 }
+current_prov["laterStatisticsExportRecheck"] = "data/evidence/string-confirmation-2026-11-17/aps-statistics-export-recheck-2038.json"
 dump(f"data/{CURRENT_PROV}", current_prov)
 
 # ---------------------------------------------------------------------------
@@ -179,7 +180,7 @@ snapshot = {
             "withdrawnApplications": 9,
             "uniqueStrings": 1127,
             "evidence": "evidence/string-confirmation-2026-11-17/aps-statistics-recheck-1857.json",
-            "interpretation": "Counts were unchanged after a later same-day APS republication; the announcement/APS four-application gap is not treated as an initial synchronization lag.",
+            "interpretation": "The four-unit difference persisted across the 18:09 and 18:39 Statistics publications. This observation alone cannot establish its cause or rule out later changes and asynchronous publication.",
         },
     },
     "publicAPS": {
@@ -209,9 +210,10 @@ snapshot = {
         "knownAdministrativeCheckApplication": "WDO2627T-T45217",
         "announcementMinusVisibleProceeding": 5,
         "knownAdministrativeCheckAdjustment": 1,
-        "unresolvedResidualApplications": 4,
-        "constrainedCharacteristics": ["AP region", "Applicant Support", "contention membership"],
-        "status": "unresolved aggregate/publication discrepancy; identities and administrative cause not publicly established",
+        "residualAggregateDifference": 4,
+        "observedComparisonDimensions": ["AP regional aggregate", "Applicant Support aggregate", "contention membership aggregate"],
+        "marginalComparisonCaveat": "Equal marginal differences do not establish four missing applications or a shared AP/Applicant Support/contention profile. A counting or editorial error, scope difference or publication timing issue remains possible; ICANN has not established the cause.",
+        "status": "unresolved aggregate/publication discrepancy; neither missing application records nor the cause are established",
         "detail": "docs/string-confirmation-day-2026-11-17-first-findings.md",
     },
     "lugano": {
@@ -222,6 +224,7 @@ snapshot = {
         "openCommentPeriod": True,
     },
 }
+snapshot["laterStatisticsExportObservation"] = load("data/evidence/string-confirmation-2026-11-17/aps-statistics-export-recheck-2038.json")
 dump("data/application_2026_string_confirmation_snapshot.json", snapshot)
 
 # ---------------------------------------------------------------------------
@@ -409,8 +412,15 @@ counts_case["updateTriggers"] = [
     "ICANN publishes a specific explanation for the 22 September 1,616 to 7 October 1,615 change",
     "ICANN changes the WDO application administrative-check status or APS visibility",
     "ICANN reconciles the four-application difference between its 17 November announcement aggregates and the public APS/contention files",
-    "The missing four application identities become publicly verifiable in APS, TAMS or another authoritative ICANN publication",
+    "ICANN publishes a correction or a record-level reconciliation that establishes the cause of the aggregate discrepancy",
 ]
+confirmation_update = next(item for item in counts_case["editorialUpdates"] if item["id"] == "string-confirmation-reconciliation")
+if "field17TimingBody" not in confirmation_update["paragraphKeys"]:
+    confirmation_update["paragraphKeys"].append("field17TimingBody")
+if "project-scd-later-recheck" not in {item["id"] for item in counts_case["sources"]}:
+    counts_case["sources"].append({"id": "project-scd-later-recheck", "kind": "derived", "labelKey": "field17SourceLaterRecheck", "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/main/data/evidence/string-confirmation-2026-11-17/aps-statistics-export-recheck-2038.json"})
+if "project-scd-later-recheck" not in confirmation_update["sourceIds"]:
+    confirmation_update["sourceIds"].append("project-scd-later-recheck")
 dump("data/behind_round_stories.json", stories)
 
 # ---------------------------------------------------------------------------
@@ -504,13 +514,13 @@ replace_once(
 tr = load("data/translations.json")
 copy = {
     "en": {
-        "insideConfirmObservedBody": "String Confirmation Day confirmed 152 replacement selections. ICANN reported 1,610 applications proceeding, 226 contention sets and 709 applications in contention. The public APS and contention files expose a four-application reconciliation gap against those aggregates; this project records the discrepancy without inventing the missing identities.",
+        "insideConfirmObservedBody": "String Confirmation Day confirmed 152 replacement selections. ICANN reported 1,610 applications proceeding, 226 contention sets and 709 applications in contention. Contemporaneous APS Statistics report 1,606 Active applications, four fewer than the announcement; the public contention CSV similarly contains 705 application rows rather than 709. The cause is unconfirmed; the difference does not establish four missing applications.",
         "insideInputObservedBody": "The Community Input and Objections Period opened on 17 November 2026 and runs through 16 March 2027. The public comment, objection and related community-input surfaces are now part of the observed round rather than a future milestone.",
         "field17ReviewLabel": "Evidence review · 17 November 2026",
         "field17ConfirmTitle": "String Confirmation adds a second counting problem",
         "field17ConfirmBody1": "The public APS export confirms 152 selected replacements and nine withdrawals. The public contention sequence is 263/891 at Reveal Day, 262/881 after the withdrawals and the resulting .src singleton, then 226/705 after replacement choices.",
         "field17ConfirmBody2": "ICANN's 17 November announcement instead reports 262/885 before replacement and 226/709 after it. The four-application difference is constant across both contention states and also appears in the Applicant Support and Asia-Pacific aggregates.",
-        "field17ConfirmBody3": "The public APS export yields 1,605 proceeding application families. The separately disclosed .wdo administrative-check application explains one of the five applications needed to reach the announcement's 1,610; four remain unresolved. Their identities and administrative cause are not inferred.",
+        "field17ConfirmBody3": "At 18:30 UTC, the public APS export contains 1,605 proceeding application families. Together with the separately disclosed .wdo administrative-check case, this reconciles to the 1,606 Active applications in APS Statistics at 18:09 and 18:39 UTC: 1,615 total minus nine withdrawn equals 1,606. The announcement gives 1,610. Equal differences in the AP, Applicant Support and contention aggregates do not prove four absent applications or a shared profile. A counting or editorial error, a scope difference or publication timing remains possible; ICANN has not confirmed the cause.",
         "field17SourceAnnouncement": "ICANN · String Confirmation announcement",
         "field17SourceContention": "ICANN · String Confirmation contention CSV",
         "field17SourceCurrentAPS": "ICANN APS · 17 November public export",
@@ -521,22 +531,24 @@ copy = {
         "apsAtlasReplacements": "replacement records",
         "apsAtlasStrings": "visible proceeding new-primary strings",
         "apsAtlasOverlap": "confirmed public contention sets",
-        "apsAtlasScope": "The Atlas contains all 1,614 public base Application IDs and 1,169 linked replacement records. It identifies 1,605 visible proceeding application families, including 152 selected replacements. Six existing-TLD variant-only applications are outside the 1,120 new-primary-string count.",
+        "apsAtlasScope": "Snapshot: 17 November 2026, 18:30 UTC. The Atlas contains all 1,614 public base Application IDs and 1,169 linked replacement records. It identifies 1,605 visible proceeding application families, including 152 selected replacements. Six existing-TLD variant-only applications are outside the 1,120 new-primary-string count.",
         "apsAtlasOverlapHint": "The effective public strings reproduce the official String Confirmation contention CSV exactly: 226 sets and 705 application rows. ICANN's same-day announcement reports 709 applications in contention; the four-application publication gap remains unresolved.",
-        "apsAtlasWdo": ".wdo remains under administrative check and absent from the public listing. It explains one separately known missing application, not the further four-application gap in the 17 November announcement aggregates.",
+        "apsAtlasWdo": ".wdo is separately disclosed as under administrative check and absent from the public listing. At the 18:30 UTC snapshot it reconciles the public count to APS Statistics. The separate four-unit announcement discrepancy does not establish four additional missing applications.",
         "apsAtlasPreliminaryList": "ICANN · String Confirmation contention CSV",
         "apsAtlasSelectedReplacement": "selected replacement",
         "apsAtlasBaseStatus": "current application status",
         "release0800": "String Confirmation Day: added a separate 17 November APS snapshot, 152 selected replacements, confirmed public contention data, the reproducible four-application reconciliation gap and the .lugano transition to String Evaluation without altering the frozen Reveal Day evidence or RR1/RR2.",
+        "field17TimingBody": "Later observation, kept separate: Statistics published at 20:09 UTC show 1,605 Active and ten Withdrawn. The public CSV checked at 20:38 UTC is still byte-identical to the 18:30 capture, with 1,605 Active and nine Withdrawn public records. The surfaces are not synchronized; this export does not identify the tenth withdrawal. The Atlas retains its explicitly timed snapshot and the earlier four-unit comparison is not recalculated from mixed times.",
+        "field17SourceLaterRecheck": "Project · timed Statistics/export recheck"
     },
     "it": {
-        "insideConfirmObservedBody": "Lo String Confirmation Day ha confermato 152 scelte di replacement string. ICANN comunica 1.610 candidature che proseguono, 226 contention set e 709 candidature in contention. I file pubblici APS e contention mostrano però uno scarto di riconciliazione di quattro candidature rispetto a questi aggregati; il progetto documenta la discrepanza senza inventare le identità mancanti.",
+        "insideConfirmObservedBody": "Lo String Confirmation Day ha confermato 152 scelte di stringhe sostitutive. ICANN comunica 1.610 candidature che proseguono, 226 gruppi di contesa e 709 candidature in contesa. Le statistiche APS contemporanee indicano 1.606 candidature attive, quattro in meno del comunicato; il CSV pubblico delle contese contiene 705 candidature anziché 709. La causa resta da chiarire: lo scarto non dimostra che manchino quattro candidature.",
         "insideInputObservedBody": "Il Community Input and Objections Period si è aperto il 17 novembre 2026 e prosegue fino al 16 marzo 2027. Commenti pubblici, obiezioni e gli altri canali di input della comunità fanno ora parte del round osservato, non più di una tappa futura.",
         "field17ReviewLabel": "Revisione delle evidenze · 17 novembre 2026",
         "field17ConfirmTitle": "Lo String Confirmation apre un secondo problema di conteggio",
         "field17ConfirmBody1": "L'export pubblico APS conferma 152 replacement selezionate e nove ritiri. La sequenza pubblica della contention è 263/891 al Reveal Day, 262/881 dopo i ritiri e il conseguente singleton .src, quindi 226/705 dopo le scelte di replacement.",
         "field17ConfirmBody2": "Il comunicato ICANN del 17 novembre indica invece 262/885 prima delle replacement e 226/709 dopo. Lo scarto di quattro candidature resta costante nei due stati della contention e riappare anche negli aggregati Applicant Support e Asia-Pacifico.",
-        "field17ConfirmBody3": "L'export pubblico APS produce 1.605 application family che proseguono. La candidatura .wdo, separatamente dichiarata in administrative check, spiega una delle cinque unità necessarie per arrivare alle 1.610 del comunicato; quattro restano irrisolte. Identità e causa amministrativa non vengono inferite.",
+        "field17ConfirmBody3": "Alle 18:30 UTC l'export pubblico APS contiene 1.605 candidature che proseguono. Includendo il caso .wdo, dichiarato separatamente in verifica amministrativa, si arriva alle 1.606 candidature attive delle statistiche APS delle 18:09 e 18:39 UTC: 1.615 totali meno nove ritirate fa 1.606. Il comunicato indica 1.610. Scarti uguali negli aggregati Asia-Pacifico, Applicant Support e contese non dimostrano l'esistenza di quattro candidature assenti né un loro profilo comune. Restano possibili un errore di conteggio o redazione, un diverso perimetro o tempi di pubblicazione differenti; ICANN non ha chiarito la causa.",
         "field17SourceAnnouncement": "ICANN · comunicato String Confirmation",
         "field17SourceContention": "ICANN · CSV contention String Confirmation",
         "field17SourceCurrentAPS": "ICANN APS · export pubblico 17 novembre",
@@ -547,22 +559,24 @@ copy = {
         "apsAtlasReplacements": "record replacement",
         "apsAtlasStrings": "nuove stringhe primarie visibili che proseguono",
         "apsAtlasOverlap": "contention set pubblici confermati",
-        "apsAtlasScope": "L'Atlas contiene tutti i 1.614 Application ID di base pubblici e 1.169 record replacement collegati. Identifica 1.605 application family visibili che proseguono, incluse 152 replacement selezionate. Sei candidature variant-only di TLD esistenti restano fuori dal conteggio delle 1.120 nuove stringhe primarie.",
+        "apsAtlasScope": "Snapshot: 17 novembre 2026, 18:30 UTC. L'Atlas contiene tutti i 1.614 Application ID di base pubblici e 1.169 record replacement collegati. Identifica 1.605 application family visibili che proseguono, incluse 152 replacement selezionate. Sei candidature variant-only di TLD esistenti restano fuori dal conteggio delle 1.120 nuove stringhe primarie.",
         "apsAtlasOverlapHint": "Le stringhe pubbliche effettive riproducono esattamente il CSV ufficiale di String Confirmation: 226 set e 705 righe di candidatura. Il comunicato ICANN dello stesso giorno indica 709 candidature in contention; lo scarto di quattro resta irrisolto.",
-        "apsAtlasWdo": ".wdo resta in administrative check e assente dal listing pubblico. Spiega una candidatura mancante nota e separata, non l'ulteriore scarto di quattro candidature negli aggregati ICANN del 17 novembre.",
+        "apsAtlasWdo": ".wdo è dichiarata separatamente in verifica amministrativa e non compare nel listing pubblico. Nello snapshot delle 18:30 UTC permette di riconciliare il conteggio pubblico con le statistiche APS. Il distinto scarto di quattro nel comunicato non dimostra l'esistenza di altre quattro candidature mancanti.",
         "apsAtlasPreliminaryList": "ICANN · CSV contention String Confirmation",
         "apsAtlasSelectedReplacement": "replacement selezionata",
         "apsAtlasBaseStatus": "stato corrente della candidatura",
         "release0800": "String Confirmation Day: aggiunto uno snapshot APS separato del 17 novembre, 152 replacement selezionate, i dati pubblici confermati sulla contention, la riconciliazione riproducibile dello scarto di quattro candidature e il passaggio di .lugano alla String Evaluation, senza modificare le evidenze congelate del Reveal Day né RR1/RR2.",
+        "field17TimingBody": "Osservazione successiva, tenuta distinta: le statistiche pubblicate alle 20:09 UTC indicano 1.605 candidature attive e dieci ritirate. Il CSV pubblico ricontrollato alle 20:38 UTC è ancora identico al file delle 18:30, con 1.605 record attivi e nove ritirati. Le fonti non sono sincronizzate e questo export non identifica il decimo ritiro. L'Atlas conserva lo snapshot con il suo orario; lo scarto iniziale di quattro non viene ricalcolato mescolando momenti diversi.",
+        "field17SourceLaterRecheck": "Progetto · verifica datata di statistiche ed export"
     },
     "de": {
-        "insideConfirmObservedBody": "Am String Confirmation Day wurden 152 ausgewählte Ersatzstrings bestätigt. ICANN meldet 1.610 fortgeführte Anträge, 226 Contention Sets und 709 Anträge in Contention. Die öffentlichen APS- und Contention-Dateien weisen gegenüber diesen Aggregaten jedoch eine nicht aufgelöste Differenz von vier Anträgen auf; das Projekt dokumentiert sie, ohne fehlende Identitäten zu erfinden.",
+        "insideConfirmObservedBody": "Am String Confirmation Day wurden 152 ausgewählte Ersatzstrings bestätigt. ICANN meldet 1.610 fortgeführte Anträge, 226 Contention Sets und 709 Anträge in Contention. Die zeitgleichen APS-Statistiken nennen 1.606 aktive Anträge, vier weniger als die Mitteilung; das öffentliche Contention-CSV enthält entsprechend 705 statt 709 Antragszeilen. Die Ursache ist ungeklärt; die Differenz belegt keine vier fehlenden Anträge.",
         "insideInputObservedBody": "Die Community Input and Objections Period begann am 17. November 2026 und läuft bis zum 16. März 2027. Öffentliche Kommentare, Einwände und die weiteren Community-Input-Verfahren sind damit beobachteter Teil der Runde und kein zukünftiger Meilenstein mehr.",
         "field17ReviewLabel": "Evidenzprüfung · 17. November 2026",
         "field17ConfirmTitle": "String Confirmation schafft ein zweites Zählproblem",
         "field17ConfirmBody1": "Der öffentliche APS-Export bestätigt 152 ausgewählte Ersatzstrings und neun Rückzüge. Die öffentliche Contention-Sequenz lautet 263/891 am Reveal Day, 262/881 nach den Rückzügen und dem daraus entstehenden .src-Singleton, anschließend 226/705 nach den Ersatzentscheidungen.",
         "field17ConfirmBody2": "ICANNs Mitteilung vom 17. November nennt dagegen 262/885 vor und 226/709 nach den Ersatzentscheidungen. Die Differenz von vier Anträgen bleibt in beiden Contention-Zuständen konstant und erscheint auch in den Aggregaten zu Applicant Support und Asien-Pazifik.",
-        "field17ConfirmBody3": "Der öffentliche APS-Export ergibt 1.605 fortgeführte Antragsfamilien. Der separat ausgewiesene .wdo-Antrag im Administrative Check erklärt eine der fünf Einheiten bis zu den 1.610 der Mitteilung; vier bleiben ungeklärt. Identitäten und administrativer Grund werden nicht hergeleitet.",
+        "field17ConfirmBody3": "Um 18:30 UTC enthält der öffentliche APS-Export 1.605 fortgeführte Antragsfamilien. Zusammen mit dem separat ausgewiesenen .wdo-Fall im Administrative Check ergibt dies die 1.606 aktiven Anträge der APS-Statistik von 18:09 und 18:39 UTC: 1.615 insgesamt minus neun zurückgezogene Anträge sind 1.606. Die Mitteilung nennt 1.610. Gleiche Differenzen in den Summen für Asien-Pazifik, Applicant Support und Contention belegen weder vier fehlende Anträge noch ein gemeinsames Profil. Ein Zähl- oder Redaktionsfehler, ein anderer Umfang oder unterschiedliche Veröffentlichungszeiten bleiben möglich; ICANN hat die Ursache nicht bestätigt.",
         "field17SourceAnnouncement": "ICANN · String-Confirmation-Mitteilung",
         "field17SourceContention": "ICANN · String-Confirmation-Contention-CSV",
         "field17SourceCurrentAPS": "ICANN APS · öffentlicher Export 17. November",
@@ -573,22 +587,24 @@ copy = {
         "apsAtlasReplacements": "Ersatzstring-Datensätze",
         "apsAtlasStrings": "sichtbare fortgeführte neue Primärstrings",
         "apsAtlasOverlap": "bestätigte öffentliche Contention Sets",
-        "apsAtlasScope": "Der Atlas enthält alle 1.614 öffentlichen Basis-Application-IDs und 1.169 verknüpften Ersatzdatensätze. Er identifiziert 1.605 sichtbare fortgeführte Antragsfamilien, darunter 152 ausgewählte Ersatzstrings. Sechs Variant-only-Anträge bestehender TLDs liegen außerhalb der 1.120 neuen Primärstrings.",
+        "apsAtlasScope": "Snapshot: 17. November 2026, 18:30 UTC. Der Atlas enthält alle 1.614 öffentlichen Basis-Application-IDs und 1.169 verknüpften Ersatzdatensätze. Er identifiziert 1.605 sichtbare fortgeführte Antragsfamilien, darunter 152 ausgewählte Ersatzstrings. Sechs Variant-only-Anträge bestehender TLDs liegen außerhalb der 1.120 neuen Primärstrings.",
         "apsAtlasOverlapHint": "Die effektiven öffentlichen Strings reproduzieren das offizielle String-Confirmation-CSV exakt: 226 Sets und 705 Antragszeilen. ICANNs Mitteilung desselben Tages nennt 709 Anträge in Contention; die Differenz von vier bleibt ungeklärt.",
-        "apsAtlasWdo": ".wdo bleibt im Administrative Check und fehlt in der öffentlichen Liste. Dies erklärt einen separat bekannten fehlenden Antrag, nicht die zusätzliche Differenz von vier Anträgen in ICANNs Aggregaten vom 17. November.",
+        "apsAtlasWdo": ".wdo wird separat als im Administrative Check ausgewiesen und fehlt in der öffentlichen Liste. Im Snapshot von 18:30 UTC gleicht dieser Fall die öffentliche Zahl mit der APS-Statistik ab. Die gesonderte Vierer-Differenz in der Mitteilung belegt keine vier weiteren fehlenden Anträge.",
         "apsAtlasPreliminaryList": "ICANN · String-Confirmation-Contention-CSV",
         "apsAtlasSelectedReplacement": "ausgewählter Ersatzstring",
         "apsAtlasBaseStatus": "aktueller Antragsstatus",
         "release0800": "String Confirmation Day: separater APS-Snapshot vom 17. November, 152 ausgewählte Ersatzstrings, bestätigte öffentliche Contention-Daten, reproduzierbare Vier-Anträge-Differenz und Übergang von .lugano zur String Evaluation; eingefrorene Reveal-Day-Evidenz sowie RR1/RR2 bleiben unverändert.",
+        "field17TimingBody": "Gesonderte spätere Beobachtung: Die um 20:09 UTC veröffentlichte Statistik nennt 1.605 aktive und zehn zurückgezogene Anträge. Das um 20:38 UTC erneut geprüfte öffentliche CSV ist weiterhin bytegleich mit der Aufnahme von 18:30 UTC und enthält 1.605 aktive sowie neun zurückgezogene Datensätze. Die Quellen sind nicht synchron; der zehnte Rückzug lässt sich aus diesem Export nicht identifizieren. Der Atlas behält den datierten Snapshot; die frühere Vierer-Differenz wird nicht aus verschiedenen Zeitständen neu berechnet.",
+        "field17SourceLaterRecheck": "Projekt · datierter Statistik-/Export-Abgleich"
     },
     "fr": {
-        "insideConfirmObservedBody": "Le String Confirmation Day a confirmé 152 chaînes de remplacement sélectionnées. L'ICANN annonce 1 610 candidatures qui poursuivent le processus, 226 contention sets et 709 candidatures en contention. Les fichiers publics APS et de contention présentent toutefois un écart de rapprochement de quatre candidatures par rapport à ces agrégats ; le projet documente cet écart sans inventer les identités manquantes.",
+        "insideConfirmObservedBody": "Le String Confirmation Day a confirmé 152 chaînes de remplacement sélectionnées. L'ICANN annonce 1 610 candidatures poursuivant le processus, 226 contention sets et 709 candidatures en contention. Les statistiques APS contemporaines indiquent 1 606 candidatures actives, soit quatre de moins que le communiqué ; le CSV public de contention contient de même 705 candidatures au lieu de 709. La cause reste inconnue ; cet écart ne prouve pas que quatre candidatures manquent.",
         "insideInputObservedBody": "La période Community Input and Objections s'est ouverte le 17 novembre 2026 et se poursuit jusqu'au 16 mars 2027. Les commentaires publics, objections et autres mécanismes de contribution communautaire font désormais partie du round observé et non plus d'une étape future.",
         "field17ReviewLabel": "Revue des preuves · 17 novembre 2026",
         "field17ConfirmTitle": "String Confirmation crée un second problème de comptage",
         "field17ConfirmBody1": "L'export public APS confirme 152 remplacements sélectionnés et neuf retraits. La séquence publique de contention est de 263/891 au Reveal Day, 262/881 après les retraits et le singleton .src qui en résulte, puis 226/705 après les choix de remplacement.",
         "field17ConfirmBody2": "Le communiqué ICANN du 17 novembre indique au contraire 262/885 avant les remplacements et 226/709 après. L'écart de quatre candidatures reste constant dans les deux états de contention et apparaît également dans les agrégats Applicant Support et Asie-Pacifique.",
-        "field17ConfirmBody3": "L'export public APS produit 1 605 familles de candidatures poursuivant le processus. La candidature .wdo, signalée séparément comme soumise à un contrôle administratif, explique une des cinq unités nécessaires pour atteindre les 1 610 du communiqué ; quatre restent non résolues. Leurs identités et la cause administrative ne sont pas déduites.",
+        "field17ConfirmBody3": "À 18:30 UTC, l'export public APS contient 1 605 familles de candidatures poursuivant le processus. Avec le cas .wdo, signalé séparément en contrôle administratif, on retrouve les 1 606 candidatures actives des statistiques APS de 18:09 et 18:39 UTC : 1 615 au total moins neuf retraits donnent 1 606. Le communiqué indique 1 610. Des écarts égaux dans les agrégats Asie-Pacifique, Applicant Support et contention ne prouvent ni quatre candidatures absentes ni un profil commun. Une erreur de comptage ou de rédaction, un périmètre différent ou des publications décalées restent possibles ; l'ICANN n'a pas confirmé la cause.",
         "field17SourceAnnouncement": "ICANN · communiqué String Confirmation",
         "field17SourceContention": "ICANN · CSV de contention String Confirmation",
         "field17SourceCurrentAPS": "ICANN APS · export public du 17 novembre",
@@ -599,14 +615,16 @@ copy = {
         "apsAtlasReplacements": "enregistrements de remplacement",
         "apsAtlasStrings": "nouvelles chaînes primaires visibles poursuivant le processus",
         "apsAtlasOverlap": "contention sets publics confirmés",
-        "apsAtlasScope": "L'Atlas contient les 1 614 Application ID de base publics et 1 169 enregistrements de remplacement liés. Il identifie 1 605 familles de candidatures visibles poursuivant le processus, dont 152 remplacements sélectionnés. Six candidatures variant-only de TLD existants sont exclues du total des 1 120 nouvelles chaînes primaires.",
+        "apsAtlasScope": "Instantané : 17 novembre 2026, 18:30 UTC. L'Atlas contient les 1 614 Application ID de base publics et 1 169 enregistrements de remplacement liés. Il identifie 1 605 familles de candidatures visibles poursuivant le processus, dont 152 remplacements sélectionnés. Six candidatures variant-only de TLD existants sont exclues du total des 1 120 nouvelles chaînes primaires.",
         "apsAtlasOverlapHint": "Les chaînes publiques effectives reproduisent exactement le CSV officiel String Confirmation : 226 sets et 705 lignes de candidature. Le communiqué ICANN du même jour annonce 709 candidatures en contention ; l'écart de quatre reste non résolu.",
-        "apsAtlasWdo": ".wdo reste soumise à un contrôle administratif et absente de la liste publique. Cela explique une candidature manquante connue et distincte, mais pas l'écart supplémentaire de quatre candidatures dans les agrégats ICANN du 17 novembre.",
+        "apsAtlasWdo": ".wdo est signalée séparément en contrôle administratif et ne figure pas dans la liste publique. Dans l'instantané de 18:30 UTC, ce cas permet de rapprocher le total public des statistiques APS. L'écart distinct de quatre dans le communiqué ne prouve pas quatre autres candidatures manquantes.",
         "apsAtlasPreliminaryList": "ICANN · CSV de contention String Confirmation",
         "apsAtlasSelectedReplacement": "remplacement sélectionné",
         "apsAtlasBaseStatus": "statut actuel de la candidature",
         "release0800": "String Confirmation Day : ajout d'un snapshot APS distinct du 17 novembre, de 152 remplacements sélectionnés, des données publiques de contention confirmées, du rapprochement reproductible de l'écart de quatre candidatures et du passage de .lugano à la String Evaluation, sans modifier les preuves figées du Reveal Day ni RR1/RR2.",
-    },
+        "field17TimingBody": "Observation ultérieure distincte : les statistiques publiées à 20:09 UTC indiquent 1 605 candidatures actives et dix retraits. Le CSV public vérifié à 20:38 UTC est toujours identique au fichier capturé à 18:30, avec 1 605 enregistrements actifs et neuf retraits. Les sources ne sont pas synchronisées et cet export ne permet pas d'identifier le dixième retrait. L'Atlas conserve son instantané daté ; l'écart initial de quatre n'est pas recalculé en mélangeant les horaires.",
+        "field17SourceLaterRecheck": "Projet · vérification datée statistiques/export"
+    }
 }
 for lang, values in copy.items():
     tr.setdefault(lang, {}).update(values)
@@ -1039,7 +1057,7 @@ replace_once(
 replace_once(
     "scripts/release_check.py",
     "if len(case['sources'])!=17 or not any(s['kind']=='secondary' for s in case['sources']):",
-    "if len(case['sources'])!=21 or not any(s['kind']=='secondary' for s in case['sources']):",
+    "if len(case['sources'])!=22 or not any(s['kind']=='secondary' for s in case['sources']):",
 )
 
 replace_once(
@@ -1051,13 +1069,13 @@ replace_once(
 replace_once(
     "scripts/validate_multilingual.js",
     "assert.equal(behind.querySelectorAll('[data-source-id]').length,24,page+' incomplete source audit across two cases');",
-    "assert.equal(behind.querySelectorAll('[data-source-id]').length,28,page+' incomplete source audit across two cases');",
+    "assert.equal(behind.querySelectorAll('[data-source-id]').length,29,page+' incomplete source audit across two cases');",
 )
 
 replace_once(
     "scripts/validate_multilingual.js",
     "assert.equal(standaloneDocument.querySelectorAll('[data-source-id]').length,24,page+' all source links must be preserved');",
-    "assert.equal(standaloneDocument.querySelectorAll('[data-source-id]').length,28,page+' all source links must be preserved');",
+    "assert.equal(standaloneDocument.querySelectorAll('[data-source-id]').length,29,page+' all source links must be preserved');",
 )
 
 
@@ -1070,19 +1088,19 @@ replace_once(
 replace_once(
     "scripts/validate_multilingual.js",
     "assert.equal(articleSchema.citation.length,24,page+' schema citation list incomplete');",
-    "assert.equal(articleSchema.citation.length,28,page+' schema citation list incomplete');",
+    "assert.equal(articleSchema.citation.length,29,page+' schema citation list incomplete');",
 )
 
 replace_once(
     "scripts/validate_multilingual.js",
     "assert.equal(standaloneDocument.querySelectorAll('[data-source-id]').length,24,page+' all source links must be preserved');",
-    "assert.equal(standaloneDocument.querySelectorAll('[data-source-id]').length,28,page+' all source links must be preserved');",
+    "assert.equal(standaloneDocument.querySelectorAll('[data-source-id]').length,29,page+' all source links must be preserved');",
 )
 
 replace_once(
     "scripts/validate_multilingual.js",
     "assert.equal(articleSchema.citation.length,24,page+' schema citation list incomplete');",
-    "assert.equal(articleSchema.citation.length,28,page+' schema citation list incomplete');",
+    "assert.equal(articleSchema.citation.length,29,page+' schema citation list incomplete');",
 )
 
 replace_once(
@@ -1231,8 +1249,8 @@ rr3 = {
     },
     "evidenceLimitations": [
         "ICANN's 17 November announcement aggregates do not fully reconcile with the public APS export and public contention CSV.",
-        "APS Statistics was republished later the same day at 18:39 UTC with unchanged 1,615 total / 1,606 active / nine withdrawn counts, so the residual four-application difference is not normalized away as an initial synchronization lag.",
-        "The identities and administrative cause of the four residual applications are not publicly established and are not inferred.",
+        "Statistics at 18:09 and 18:39 UTC reported 1,615 total, 1,606 active and nine withdrawn. The arithmetic 1,615 minus nine equals 1,606; the announcement gives 1,610. This establishes an aggregate difference, not four missing records.",
+        "The repeated four-unit marginal differences do not establish four missing applications, a shared application profile or an administrative cause. A counting/editorial error, scope difference or publication timing issue remains possible.",
         ".wdo remains a separate known administrative-check case absent from the public Applications listing.",
         "The historical 1,616 paid-to-proceed figure of 22 September and the 1,615 Reveal Day figure remain a distinct unresolved discrepancy.",
         "RR1 and RR2 remain immutable; this candidate has no DOI until archival verification completes.",
@@ -1251,6 +1269,10 @@ rr3 = {
         ],
     },
 }
+rr3["evidence"]["laterStatisticsExportRecheck"] = "data/evidence/string-confirmation-2026-11-17/aps-statistics-export-recheck-2038.json"
+rr3["evidenceLimitations"].append("Later Statistics at 20:09 UTC report 1,605 Active and ten Withdrawn, while the export rechecked at 20:38 UTC remains byte-identical with 1,605 Active and nine Withdrawn public records. These asynchronous observations are separate from the frozen 18:30 snapshot and do not identify the tenth withdrawal.")
+rr3["scientificAddendum"] = "research/rr3_addendum_20261117.md"
+rr3["preflight"] = {"script": "scripts/rr3_preflight.py", "runbook": "docs/rr3_publication_runbook.md", "requiresFrozenSourcesForPublication": True}
 dump("research/rr3_candidate.json", rr3)
 
 hist = load("data/release_history.json")

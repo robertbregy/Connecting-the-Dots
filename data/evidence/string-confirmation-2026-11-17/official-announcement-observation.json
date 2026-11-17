@@ -89,23 +89,40 @@
   "aggregatePublicationGap": {
     "announcementProceedingMinusPublicAPS": 5,
     "knownWDOAdjustment": 1,
-    "unexplainedResidualApplications": 4,
     "announcementAPMinusPublicAPS": 5,
     "announcementAPMinusPublicAPSPlusWDO": 4,
     "announcementApplicantSupportMinusPublicAPS": 4,
     "announcementPreReplacementContentionMinusPublicFiles": 4,
     "announcementConfirmedContentionMinusPublicFiles": 4,
-    "constrainedCharacteristics": [
-      "AP region",
-      "Applicant Support",
-      "contention membership"
+    "status": "unresolved aggregate/publication discrepancy; neither four additional application records nor an editorial or administrative cause has been established",
+    "residualAggregateDifference": 4,
+    "announcementProceedingMinusContemporaneousAPSStatistics": 4,
+    "observedComparisonDimensions": [
+      "proceeding applications: announcement versus contemporaneous APS Statistics and public export plus known .wdo case",
+      "AP regional aggregate: announcement versus public export plus known .wdo case",
+      "Applicant Support aggregate: announcement versus public export",
+      "pre-replacement contention membership aggregate: announcement versus public files",
+      "confirmed contention membership aggregate: announcement versus public file"
     ],
-    "status": "unresolved aggregate/publication discrepancy; identities and administrative cause not publicly established"
+    "contemporaneousReconciliation": {
+      "publicProceedingFamilies": 1605,
+      "knownWDOAdjustment": 1,
+      "statisticsActiveApplications": 1606,
+      "statisticsTotalApplications": 1615,
+      "statisticsWithdrawnApplications": 9,
+      "arithmetic": "1605 + 1 = 1606; 1615 - 9 = 1606; 1610 - 1606 = 4"
+    },
+    "marginalComparisonCaveat": "Equal differences across marginal aggregates do not establish four additional applications, identify the same records across dimensions, or prove a joint AP / Applicant Support / contention profile. No missing Application IDs have been identified.",
+    "possibleExplanations": [
+      "arithmetic or editorial error in announcement aggregates",
+      "difference in counting scope",
+      "difference in publication timing"
+    ]
   },
   "separateHistoricalDiscrepancy": {
     "paidApplicationsProceedingOn2026_09_22": 1616,
     "revealDayApplications": 1615,
-    "status": "unresolved and distinct from the 17 November four-application aggregate/publication gap"
+    "status": "unresolved and distinct from the 17 November aggregate differences of four and the later Statistics/export withdrawal-count discrepancy"
   },
   "lugano": {
     "applicationID": "CDL2651T-T31516",
@@ -126,7 +143,28 @@
     "activeApplications": 1606,
     "withdrawnApplications": 9,
     "totalUniqueStrings": 1127,
-    "interpretation": "Same-day APS republication retained the 1,615 / 1,606 / 9 counts, so the four-application difference versus the 1,610 proceeding announcement is not explained by an early post-publication synchronization lag.",
+    "interpretation": "Same-day APS republication retained the 1,615 / 1,606 / 9 counts, reproducing a difference of four versus the announcement figure of 1,610. This does not establish the cause or exclude differences in publication schedules or aggregate definitions.",
     "evidenceFile": "data/evidence/string-confirmation-2026-11-17/aps-statistics-recheck-1857.json"
+  },
+  "laterLiveStatisticsExportObservation": {
+    "observedOn": "2026-11-17",
+    "statisticsSource": "https://newgtldprogram-aps.icann.org/statistics",
+    "statisticsSourceLastPublishedAtUTC": "2026-11-17T20:09:15.884Z",
+    "statistics": {
+      "totalApplications": 1615,
+      "activeApplications": 1605,
+      "withdrawnApplications": 10,
+      "totalUniqueStrings": 1127
+    },
+    "apsCSVResponseHTTPDateUTC": "2026-11-17T20:38:11Z",
+    "publicAPSExport": {
+      "activeRecords": 1605,
+      "withdrawnRecords": 9,
+      "deactivatedRecords": 1169
+    },
+    "tenthWithdrawnApplicationIdentified": false,
+    "interpretation": "Later Statistics and APS export have different withdrawal counts. Statistics records one additional withdrawal, but the public export at this check does not identify it. Do not infer 1,604 publicly proceeding families or mix these later counts with the frozen 18:30 export and 18:09/18:39 Statistics observations to turn the contemporaneous announcement difference of four into five.",
+    "statisticsGeneratedAtUTC": "2026-11-17T20:09:14.755Z",
+    "evidenceFile": "data/evidence/string-confirmation-2026-11-17/aps-statistics-export-recheck-2038.json"
   }
 }

@@ -449,7 +449,8 @@ def build():
             "officialAnnouncementProceedingApplications": provenance["officialAnnouncementProceedingApplications"],
             "visibleProceedingApplications": len(proceeding),
             "knownAdministrativeCheckApplications": 1,
-            "unresolvedResidualApplications": provenance["unresolvedAnnouncementPublicationGap"],
+            "residualAggregateDifference": provenance["unresolvedAnnouncementPublicationGap"],
+            "marginalComparisonCaveat": "Equal aggregate differences do not establish four missing applications, their identities or a common AP/Applicant Support/contention profile. The cause is unconfirmed.",
             "note": "ICANN's 17 November announcement aggregates exceed the reconciled public APS/contention files by four applications after accounting separately for .wdo.",
         },
         "contention": {

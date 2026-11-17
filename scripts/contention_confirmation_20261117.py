@@ -193,7 +193,7 @@ def main() -> None:
             "Removing those nine rows and dropping the resulting singleton .src group yields 262 visible sets / 881 visible contention memberships.",
             "The String Confirmation Day contention CSV has 226 sets / 705 rows.",
             "ICANN's announcement instead uses 262 / 885 before replacement and 226 / 709 after replacement: a constant +4 membership gap relative to the reconciled public files.",
-            "The four-record gap must remain an unresolved aggregate/publication discrepancy until the missing application identities are publicly verifiable.",
+            "The four-unit aggregate difference remains unresolved until ICANN clarifies the incompatible counts. The marginal differences do not establish missing application records or their identities; an aggregate counting/editorial error, scope difference or publication timing issue remains possible.",
         ],
     }
 

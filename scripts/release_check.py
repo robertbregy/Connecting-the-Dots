@@ -833,7 +833,6 @@ site_base='https://robertbregy.github.io/Connecting-the-Dots/'
 graph=json_file('aps_2026_application_graph.json')
 graph_report=json_file('aps_2026_application_graph_manifest.json')
 current_prov=json_file('applications_2026_aps_string_confirmation_20261117_provenance.json')
-current_prov=json_file('applications_2026_aps_string_confirmation_20261117_provenance.json')
 if graph.get('schemaVersion')!=2 or graph.get('snapshotState')!='string-confirmation' or graph.get('counts',{}).get('officialPublishedApplications')!=1614:
     fail('2026 graph must have precisely 1614 published base applications')
 if len(graph.get('apps',[]))!=1614 or len({a['id'] for a in graph['apps']})!=1614:
@@ -1094,7 +1093,7 @@ if case['trackedApplication']['id']!='WDO2627T-T45217' or case['trackedApplicati
     fail('Officially documented administrative-check record changed')
 if not case.get('revisionHistory') or case['revisionHistory'][-1]['date']!=case['revisedOn'] or case['revisionHistory'][-1]['changeKey']!='behindRevisionStringConfirmation':
     fail('Unversioned field-note revision history')
-if len(case['sources'])!=21 or not any(s['kind']=='secondary' for s in case['sources']):
+if len(case['sources'])!=22 or not any(s['kind']=='secondary' for s in case['sources']):
     fail('Editorial case lacks provenance distinction')
 if not all(s['url'].startswith('https://') and s['labelKey'] for s in case['sources']):
     fail('Incomplete case evidence')

@@ -1,12 +1,12 @@
 # String Confirmation Day 2026 — verified findings and reconciliation
 
-Observed on 17 November 2026. This note distinguishes ICANN announcement aggregates from the public APS export and the two official contention CSVs.
+Observed on 17 November 2026. This note distinguishes ICANN announcement aggregates from the public APS export, the two official contention CSVs and timestamped APS Statistics observations. Counts below belong to their stated capture; later live observations do not overwrite the frozen evidence.
 
 ## Executive finding
 
 String Confirmation Day is a material research event.
 
-The post-confirmation public evidence establishes:
+The public evidence captured at 18:30:10 UTC establishes:
 - 152 selected replacement strings;
 - nine withdrawals since Reveal Day;
 - 226 public contention sets after confirmation;
@@ -20,9 +20,9 @@ ICANN's 17 November announcement instead reports:
 - 50 Applicant Support Program applications;
 - 215 applications from the Asia/Australia/Pacific region.
 
-The public files and the announcement therefore do not reconcile at application level. The evidence isolates a systematic four-application gap in the AP / Applicant Support / contention dimensions, plus the separately known .wdo administrative-check application.
+The captured public APS export and APS Statistics reconcile to 1,606 active applications when the separately known .wdo administrative-check case is accounted for: 1,605 visible proceeding families + one .wdo = 1,606, and 1,615 total − nine withdrawn = 1,606. The announcement's 1,610 is four higher. Differences of four also occur in the AP, Applicant Support and contention aggregate comparisons.
 
-This must be presented as an unresolved aggregate/publication discrepancy, not as four identified or newly filed applications.
+These are marginal aggregate comparisons. They do not establish four additional applications, identify their intersection across those dimensions, or demonstrate an administrative cause. An arithmetic/editorial error in the announcement or a difference in counting scope or publication timing could explain the discrepancy; the available evidence does not establish which explanation is correct.
 
 ## 1. Official ICANN announcement
 
@@ -142,7 +142,7 @@ Of the 152 selected replacements, 140 came from applications that were in the vi
 Thirty-six applied-for strings disappear as contention sets after the withdrawal adjustment:
 `advisors, agt, anime, bbq, beta, bro, coaching, config, crm, deploy, echo, fam, happy, ify, iii, inn, journey, lfg, line, log, logistics, manga, more, nerd, owl, point, roofing, slides, soul, transport, universe, virtual, vpn, wifi, wise, yeah`.
 
-## 6. Announcement versus public contention files: constant +4
+## 6. Announcement versus public contention files: two differences of four
 
 ICANN's 17 November announcement describes:
 - 262 contention sets / 885 applications before replacement choices;
@@ -157,11 +157,11 @@ The set counts are identical. The application membership counts differ by exactl
 - 885 − 881 = 4;
 - 709 − 705 = 4.
 
-The four-record gap therefore survives the replacement transition unchanged.
+Both marginal comparisons therefore produce the same numerical difference. This equality alone does not prove that four particular application records were omitted from both public files.
 
 ## 7. Application-universe reconciliation
 
-The current public APS records yield 1,605 proceeding application families after selecting the active record within each original/replacement family.
+The public APS records captured at 18:30:10 UTC yield 1,605 proceeding application families after selecting the active record within each original/replacement family.
 
 ICANN's announcement reports 1,610 proceeding applications: a difference of five.
 
@@ -169,16 +169,17 @@ One known application is separately absent from the public APS export:
 - `WDO2627T-T45217` (.wdo), World Data Organization, AP region;
 - APS states that it remains under administrative check and is not available on the public Applications list.
 
-Treating .wdo separately explains one of the five:
+Accounting separately for .wdo reconciles the captured public export with the contemporaneous APS Statistics active count:
 - 1,605 visible proceeding families + 1 known .wdo administrative-check application = 1,606;
+- 1,615 total applications − nine withdrawals = 1,606;
 - ICANN announcement = 1,610;
-- residual unexplained gap = four applications.
+- announcement minus contemporaneous APS Statistics = four.
 
-The same residual four appears in independent dimensions:
+The observed regional comparison is:
 - visible proceeding AP applications: 210;
 - plus .wdo: 211;
 - announcement AP total: 215;
-- unexplained AP gap: four.
+- numerical AP aggregate difference: four.
 
 And:
 - visible proceeding Applicant Support applications: 46;
@@ -190,14 +191,9 @@ And:
 - visible confirmed contention memberships: 705 vs announcement 709;
 - gap: four in both cases.
 
-The evidence is therefore consistent with four applications that are:
-- counted in ICANN's 17 November announcement aggregates;
-- AP-region applications;
-- associated with Applicant Support applicants;
-- members of contention sets;
-- absent from the current public APS export and public contention CSV.
+These equal marginal differences are useful diagnostic observations, but they do not establish a joint application-level profile. In particular, they do not demonstrate that the same four applications are simultaneously AP-region, Applicant Support and contention members, or even that four additional application records exist. No missing IDs have been identified.
 
-Their identities and the administrative reason for their absence are not yet publicly established. Do not label them as new applications, reinstated applications, withdrawals, or any other specific status without additional official evidence.
+An erroneous aggregate in the announcement, a difference in counting scope, and publication timing remain possible explanations. Neither a definitive editorial error nor an administrative omission is established. Do not describe the discrepancy as four hidden, new, reinstated or withdrawn applications without additional application-level evidence.
 
 ## 8. APS Statistics adds a second official counting layer
 
@@ -214,9 +210,17 @@ The APS Statistics page captured after publication states:
 
 Thus APS Statistics itself reports 1,606 Active applications, while the ICANN announcement reports 1,610 applications proceeding.
 
-This reinforces that the +4 is not a simple arithmetic mistake produced by this project. Two ICANN-controlled publication surfaces expose different application universes on the same date.
+The Statistics arithmetic is internally consistent: **1,615 − 9 = 1,606**. Its active count also matches the public APS export plus the separately known .wdo case. The announcement's 1,610 is inconsistent with that contemporaneous reconciliation; it is not evidence by itself of a larger application universe.
 
-A second project capture at 18:57 UTC found the APS Statistics page republished at **18:39 UTC** with the same 1,615 total / 1,606 Active / nine Withdrawn / 1,127 unique-string figures. The discrepancy therefore persisted after a later same-day APS publication and should not be dismissed as an initial synchronization lag.
+A second project capture at 18:57 UTC found the APS Statistics page republished at **18:39 UTC** with the same 1,615 total / 1,606 Active / nine Withdrawn / 1,127 unique-string figures. This reproduces the difference in a later capture; it does not identify its cause or rule out a difference between publication schedules or aggregate definitions.
+
+### Later live Statistics/export discrepancy
+
+The timed recheck, raw Statistics payload hash and unchanged export hashes are recorded in [`aps-statistics-export-recheck-2038.json`](../data/evidence/string-confirmation-2026-11-17/aps-statistics-export-recheck-2038.json).
+
+A later live check found APS Statistics carrying a **20:09 UTC** publication timestamp and reporting **1,615 total / 1,605 Active / ten Withdrawn / 1,127 unique strings**. A subsequent APS CSV retrieval, with an HTTP Date of **20:38:11 UTC**, still contained **1,605 Active / nine Withdrawn / 1,169 Deactivated records**. The latest Statistics and export therefore expose different withdrawal counts.
+
+The Statistics increase from nine to ten withdrawals is a separate, later observation. At this check the public export did not identify a tenth withdrawn application, so its identity and the precise update sequence remain unverified. Do not infer 1,604 publicly proceeding families from Statistics alone. Preserve the 18:30 export and the 18:09/18:39 Statistics observations as frozen evidence, and do not reinterpret their announcement-versus-Statistics difference of four as five by mixing timestamps.
 
 It also preserves a separate historical issue:
 - 22 September: ICANN stated that 1,616 paid applications would proceed;
@@ -248,7 +252,8 @@ There is no replacement record for .lugano.
 3. The site should add a distinct String Confirmation state rather than overwrite Reveal Day.
 4. The current analytical layer should distinguish official announcement aggregates from publicly observable APS/file counts.
 5. The 442 Active replacement-record count must no longer be described as the final eligible population.
-6. The four-application aggregate/publication gap deserves a dedicated documented anomaly, with identities explicitly unresolved.
+6. The aggregate differences of four deserve a documented discrepancy with the marginal-count limitation stated explicitly; neither four missing applications nor a shared application-level profile has been established.
 7. .wdo remains a separate, known administrative-check case.
 8. The historical 1,616 → 1,615 discrepancy remains separate again.
 9. .lugano can be advanced in the participant-observer timeline to String Evaluation, with no contention and the comment period open.
+10. The later Statistics/export withdrawal-count discrepancy must remain a separate timestamped observation until application-level evidence resolves it.
