@@ -19,7 +19,9 @@
       "confirmedContentionSets": 226,
       "confirmedContentionApplications": 709,
       "aspProceeding": 50,
-      "apRegion": 215
+      "apRegion": 215,
+      "idn": 22,
+      "variantApplications": 9
     },
     "announcementRevised": {
       "url": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en",
@@ -34,7 +36,10 @@
       "confirmedContentionSets": 226,
       "confirmedContentionApplications": 705,
       "aspProceeding": 46,
-      "apRegion": 211
+      "apRegion": 211,
+      "idn": 21,
+      "variantApplications": 8,
+      "sourceVerifiedAt": "2026-11-18"
     },
     "apsStatistics": {
       "url": "https://newgtldprogram-aps.icann.org/statistics",
@@ -65,7 +70,9 @@
       "confirmedContentionSets": 0,
       "confirmedContentionApplications": -4,
       "aspProceeding": -4,
-      "apRegion": -4
+      "apRegion": -4,
+      "idn": -1,
+      "variantApplications": -1
     },
     "apsSince20261117T2009UTC": {
       "active": -1,
