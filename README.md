@@ -14,6 +14,8 @@ The 17 November String Confirmation announcement has a revised official version.
 
 An append-only, machine-readable [reconciliation record](data/evidence/icann_20261118_reconciliation.json) preserves source URLs, publication clocks, exact aggregate changes and outstanding uncertainties. The 17 November archived APS export, application-level Atlas, RR3 and earlier releases remain intact until a comparable new official application export has been acquired and its Application IDs verified. In particular, this aggregate correction does **not** identify withdrawn applications, prove new replacement choices, or resolve the historic paid/Reveal/export count differences. ICANN's corrected prose also describes 36 fewer contention sets although its displayed 263 and 226 imply 37; this remains attributed to the source rather than silently reconciled.
 
+**18 November follow-up:** an additional raw ICANN APS export is now [archived with SHA-256 and Application ID-level diff](data/evidence/aps-2026/post-confirmation-20261118-79f06ea388bcb8ba/aps-id-diff.json). It records one changed base application: `.bit` / `INC2624T-T96235` / Internet Naming Company, `Active` → `Withdrawn`; its `.cli` alternative remains `Deactivated`. The new CSV contains 10 withdrawn published base records, while the separately timestamped APS Statistics shows 11. Atlas cards use a dated overlay for this one identified status; the historic 17 November graph remains frozen. The corrected ICANN announcement resolves the earlier four-unit announcement-versus-APS aggregate mismatch for the 17 November snapshot, but does not reconcile the different historical 1,616 paid / 1,615 Reveal / 1,614 publicly listed base-ID counts.
+
 ## Current release
 
 **v0.8.1 - 18 November 2026**
