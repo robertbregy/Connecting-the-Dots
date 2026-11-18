@@ -92,6 +92,22 @@ def render(root:Path=ROOT):
               {"@type":"DataDownload","encodingFormat":"text/csv",
                "contentUrl":SITE+"data/aps_2026_application_edges.csv"}],
         },ensure_ascii=False,separators=(",",":"))
+        correction_data=json.loads((root/"data/atlas_2026_correction_editorial.json").read_text(encoding="utf-8"))
+        correction_evidence=json.loads((root/"data/evidence/icann_20261118_reconciliation.json").read_text(encoding="utf-8"))
+        correction_text=correction_data["translations"][lang]
+        announcement_url=correction_evidence["publications"]["announcementRevised"]["url"]
+        statistics_url=correction_evidence["publications"]["apsStatistics"]["url"]
+        correction=(
+            '<section class="apsMethod" aria-labelledby="apsCorrectionHeading">'
+            '<h2 id="apsCorrectionHeading">'+q(correction_text["title"])+' · 18.11.2026</h2>'
+            '<p>'+q(correction_text["body"])+'</p>'
+            '<p>'+q(correction_text["note"])+'</p>'
+            '<div class="apsSources">'
+            '<a target="_blank" rel="noopener noreferrer" href="'+q(announcement_url)+'">ICANN · 17.11.2026 (updated) ↗</a>'
+            '<a target="_blank" rel="noopener noreferrer" href="'+q(statistics_url)+'">APS Statistics · 18.11.2026 ↗</a>'
+            '<a href="../../data/evidence/icann_20261118_reconciliation.json">Provenance JSON ↗</a>'
+            '</div></section>'
+        )
         page=f'''<!doctype html>
 <html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta content="{q(pub['version'])}" name="ctd-version">
@@ -128,6 +144,7 @@ def render(root:Path=ROOT):
 <a href="../../{lang}/?tab=research">{q(t['apsAtlasResearch'])}</a>
 </div>
 <p class="apsStamp">{q(t['apsAtlasSourceDate'])}: <time datetime="{q(graph['retrievedAtUTC'])}">{q(graph['retrievedAtUTC'][:10])}</time></p></div>
+{correction}
 <section id="aps-results" aria-labelledby="apsSearchHeading" class="apsFinder">
 <h2 id="apsSearchHeading">{q(t['apsAtlasSearch'])}</h2>
 <div class="apsFilters"><div class="apsFilter apsSearchField"><label for="apsSearch">{q(t['apsAtlasSearch'])}</label>
