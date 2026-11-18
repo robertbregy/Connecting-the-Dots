@@ -1,3 +1,11 @@
+# v0.8.1 — 18 November 2026
+
+- Corrected the Reveal Day badge and gave dictionaries and application scripts content-sensitive cache keys.
+- Improved Research navigation contrast, keyboard access and localized dates.
+- Matched the RR3 citation to Zenodo, linked the frozen addendum and added the official citation file and ICANN capture bundle to the existing RR3 release.
+- Preserved the v0.8.0 data pack by path-specific checksum and generated a distinct v0.8.1 technical pack.
+- Reconciled IANA root membership with the November list, documented the .helsinki revocation and linked the original BRS Media submission.
+
 # v0.8.0 — 17 November 2026
 
 - Added a separate, hash-pinned ICANN APS String Confirmation Day snapshot while preserving the Reveal Day source unchanged.

@@ -2,6 +2,7 @@ const fs=require('fs');
 const path=require('path');
 const vm=require('vm');
 const assert=require('assert/strict');
+const {createHash}=require('node:crypto');
 const {parseHTML}=require('linkedom');
 const {assertHomeStructure}=require('./home_editorial_qa.cjs');
 const root=path.resolve(__dirname,'..');
@@ -65,10 +66,13 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.equal(article.inLanguage,language);
   assert.equal(article.mainEntityOfPage,canonical);
   const dictionary=document.getElementById('ctd-i18n-bundle');
-  assert.equal(dictionary.getAttribute('src'),(alias?'':'../')+'data/i18n_'+language+'.js?v='+publication.version,page+' locale dictionary asset');
+  const dictionaryPath='data/i18n_'+language+'.js';
+  const dictionaryBytes=fs.readFileSync(path.join(root,dictionaryPath));
+  const dictionaryRevision=createHash('sha256').update(dictionaryBytes).digest('hex').slice(0,16);
+  assert.equal(dictionary.getAttribute('src'),(alias?'':'../')+dictionaryPath+'?v='+publication.version+'-'+dictionaryRevision,page+' locale dictionary asset');
   assert.ok(dictionary.hasAttribute('defer'),page+' locale dictionary must preserve script order');
   assert.equal(dictionary.textContent.trim(),'');
-  const window={};vm.runInNewContext(fs.readFileSync(path.join(root,'data/i18n_'+language+'.js'),'utf8'),{window});
+  const window={};vm.runInNewContext(dictionaryBytes.toString('utf8'),{window});
   assert.deepEqual(Object.keys(window.DOT_I18N),[language],page+' ships only its own dictionary');
   assert.equal(JSON.stringify(window.DOT_I18N[language]),JSON.stringify({...canonicalTranslations.en,...canonicalTranslations[language]}),page+' complete canonical dictionary preserved');
   const translations=window.DOT_I18N[language];
@@ -94,6 +98,16 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.ok(!document.getElementById('iaLegacyNavDisclosure').hasAttribute('open'),page+' legacy overflow must start folded');
   assert.equal(document.querySelector('.iaPrimaryNav').getAttribute('aria-label'),translations.iaPrimaryLabel,page+' IA primary navigation aria-label');
   assertHomeStructure(document,language);
+  if (publication.state !== 'pre-reveal') {
+    const locale = {en:'en-US',it:'it-IT',de:'de-DE',fr:'fr-FR'}[language];
+    const date = new Intl.DateTimeFormat(locale,{year:'numeric',month:'short',day:'numeric',timeZone:'UTC'});
+    const badge = document.querySelector('[data-i18n="publicationState"]').textContent.trim();
+    assert.equal(badge,translations.publicationState+' · '+date.format(new Date(publication.revealAt)),page+' must label Reveal Day with its own date');
+    if (publication.stringConfirmation) {
+      const note = document.querySelector('[data-i18n="publicationStateNote"]').textContent.trim();
+      assert.equal(note,translations.publicationStateNote+' · '+date.format(new Date(publication.stringConfirmation+'T00:00:00Z')),page+' must retain the separate String Confirmation date');
+    }
+  }
   const homeCopy=homeEditorial.locales[language];
   assert.equal(document.querySelector('.hero h1').textContent.trim(),homeCopy.title,page+' the home heading is not localized');
   for(const [selector,key,minimum] of [['.homeHeroLead','lead',50],['.homeHeroIntro','intro',50],['.homeHeroProject','project',90]]){
@@ -109,7 +123,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.ok(document.querySelector('#home-pathways a[href="?tab=ia-research#ia-research"]'),page+' the novice cannot see direct paths');
   assert.ok(document.querySelector('#home-project .homeProjectLinks a[href="?tab=sources#sources"][data-open-section="sources"]'),page+' home sources and methodology are inaccessible');
   assert.ok(document.querySelector('#home-project .homeProjectLinks a[href="?tab=research#research-citation-guide"]'),page+' home research and citation guidance are inaccessible');
-  assert.ok(document.querySelector('#ia-research a[href="https://doi.org/10.5281/zenodo.24325521"]'),page+' RR3 version-specific DOI not immediately available');
+  assert.ok(document.querySelector(`#ia-research a[href="${publication.doiUrl}"]`),page+' current version-specific DOI not immediately available');
   // Verify the visible static citation, not only its ZIP destination, including the no-JavaScript page.
   const citationCards=[...document.querySelectorAll('#research-citation-guide .audienceCiteGrid article')];
   assert.equal(citationCards.length,3,page+' must distinguish archived research, current data and the working paper');
@@ -353,10 +367,10 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.ok(home&&home.querySelector('.num').textContent.replace(/\D/g,'')==='1615',page+' obsolete 1,616 application total');
   assert.ok(document.getElementById('demand2026Bars')?.textContent.includes('864'),page+' missing comparable official regional application counts');
   const research=document.getElementById('research');
-  assert.ok(research?.textContent.includes('10.5281/zenodo.24325521'),page+' verified current RR3 DOI is missing');
+  assert.ok(research?.textContent.includes(publication.doi),page+' verified current research DOI is missing');
   assert.ok(research?.textContent.includes('10.5281/zenodo.23262623'),page+' archived RR1 DOI is missing');
   assert.ok(research?.textContent.includes('10.5281/zenodo.23262622'),page+' shared Zenodo concept DOI is missing');
-  assert.equal(research?.querySelector('a[href="https://doi.org/10.5281/zenodo.24325521"]')?.getAttribute('target'),'_blank',page+' RR3 Zenodo link broken');
+  assert.equal(research?.querySelector(`a[href="${publication.doiUrl}"]`)?.getAttribute('target'),'_blank',page+' current Zenodo link broken');
   assert.ok(research?.querySelector('.researchPriorPanel'),page+' prior RR1 research version not disclosed');
   assert.ok(research?.textContent.includes(translations.researchPriorBody),page+' RR1 history not localized');
   for(const n of document.querySelectorAll('[src],[href]'))for(const attr of ['src','href']){
@@ -437,9 +451,23 @@ const readerStudyLocations=languages.map(language=>{
 });
 const localizedResearchLocations=['it','de','fr'].map(language=>{
   const researchPath='research/'+language+'/';
-  assert.ok(fs.existsSync(path.join(root,researchPath,'index.html')),'missing localized Research landing: '+researchPath);
+  const {document} = parseHTML(fs.readFileSync(path.join(root,researchPath,'index.html'),'utf8'));
+  const date = new Intl.DateTimeFormat(language,{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
+  const syncText = document.querySelector('.sync')?.textContent;
+  for (const iso of [publication.paperRevisedOn,publication.paperTechnicalSyncOn || publication.releasedOn])
+    assert.ok(syncText?.includes(date.format(new Date(iso+'T00:00:00Z'))),researchPath+' must localize both paper dates');
+  const englishName = {it:'inglese',de:'Englisch',fr:'anglais'}[language];
+  const englishGuide = document.querySelector('header a[href="../"][hreflang="en"]');
+  assert.ok(englishGuide?.textContent.includes(englishName),researchPath+' must identify the English guide before navigation');
+  assert.ok(document.querySelector('a[href="../connecting-the-dots-working-paper-v1.html"][hreflang="en"]'),researchPath+' must identify the English paper');
   return base+researchPath;
 });
+const paperDocument = parseHTML(fs.readFileSync(path.join(root,publication.paperPath),'utf8')).document;
+const paperMain = paperDocument.querySelector('main');
+const paperSkip = paperDocument.body.querySelector('a[href]');
+assert.ok(paperSkip?.classList.contains('ctdB2PaperSkip'),'working-paper skip link must be the first link');
+assert.equal(paperSkip.getAttribute('href'),'#'+paperMain.id,'working-paper skip link must preserve the article fragment');
+assert.equal(paperMain.getAttribute('tabindex'),'-1','working-paper skip target must accept keyboard focus');
 const addedLocations=[...discoveryLocations,...localizedResearchLocations,...readerStudyLocations];
 const expectedLocations=[...legacyLocations,...addedLocations];
 assert.equal(new Set(expectedLocations).size,138,'localized Research and Reader Study URLs must preserve every established and discovery page');

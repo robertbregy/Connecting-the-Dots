@@ -104,6 +104,7 @@ def build_manifest() -> None:
         ],
         "current_root_snapshot": json.loads((DATA / "iana_snapshot.json").read_text())["asOf"],
         "iana_evidence": "iana_snapshot.json",
+        "iana_root_membership_review": "iana_root_revalidation_20261118.json",
         "explorer_coverage": {**runtime["explorerMeta"],
             "application2026OfficialListingRows": official_listing["totalOfficialListingRows"],
             "application2026PublishedOfficialApplicationIDs": official_listing["uniquePublishedApplicationRecords"],
@@ -144,7 +145,7 @@ def build_manifest() -> None:
 
 def data_pack_files() -> list[Path]:
     snapshot = json.loads((DATA / "iana_snapshot.json").read_text())
-    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "application_2026_snapshot.json", DATA / "application_2026_string_confirmation_snapshot.json", DATA / "applications_2026_aps_official_provenance.json", DATA / "applications_2026_aps_string_confirmation_20261117_provenance.json", DATA / "aps_2026_application_graph.json", DATA / "aps_2026_application_graph_manifest.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "legal_layer.json", DATA / "economic_cases.json", DATA / "social_cases.json", DATA / "city_namespace_editorial.json", DATA / "audit_20261018_editorial.json", DATA / "audit_20261019_editorial.json", DATA / "audit_20261019_resolution.json", DATA / "audience_editorial.json", DATA / "home_editorial.json", DATA / "economics_hub.json", DATA / "economics_reading_order.json", DATA / "independent_review_materials.json", DATA / "cultural_classification_protocol.json", DATA / "cultural_lexicon_v2.json", DATA / "cultural_sensitivity_v2.json", DATA / "cultural_classification_protocol_v2.json", DATA / "cultural_history_evidence_v2.json", DATA / "financial_source_verification_20261019.json", DATA / "frozen_technical_packages.json", DATA / "research_bibliographic_corrections.json", DATA / "source_method_corrections_20261019.json", DATA / "aps_2026_current_analytics.json", DATA / "aps_2026_current_analytics_manifest.json", DATA / "aps_2026_applicant_sector_evidence.json", DATA / "round_application_fees.json", DATA / "tld_cultural_editorial.json", DATA / "tld_cultural_patterns.json", DATA / "tld_market_snapshot.json", DATA / "tld_market_provenance.json", *sorted((DATA / "evidence" / "tld-market-2026-10-19").glob("*.json")), ROOT / snapshot["archive_path"]]
+    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "iana_root_revalidation_20261118.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "application_2026_snapshot.json", DATA / "application_2026_string_confirmation_snapshot.json", DATA / "applications_2026_aps_official_provenance.json", DATA / "applications_2026_aps_string_confirmation_20261117_provenance.json", DATA / "aps_2026_application_graph.json", DATA / "aps_2026_application_graph_manifest.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "legal_layer.json", DATA / "economic_cases.json", DATA / "social_cases.json", DATA / "city_namespace_editorial.json", DATA / "audit_20261018_editorial.json", DATA / "audit_20261019_editorial.json", DATA / "audit_20261019_resolution.json", DATA / "audience_editorial.json", DATA / "home_editorial.json", DATA / "economics_hub.json", DATA / "economics_reading_order.json", DATA / "independent_review_materials.json", DATA / "cultural_classification_protocol.json", DATA / "cultural_lexicon_v2.json", DATA / "cultural_sensitivity_v2.json", DATA / "cultural_classification_protocol_v2.json", DATA / "cultural_history_evidence_v2.json", DATA / "financial_source_verification_20261019.json", DATA / "frozen_technical_packages.json", DATA / "research_bibliographic_corrections.json", DATA / "source_method_corrections_20261019.json", DATA / "aps_2026_current_analytics.json", DATA / "aps_2026_current_analytics_manifest.json", DATA / "aps_2026_applicant_sector_evidence.json", DATA / "round_application_fees.json", DATA / "tld_cultural_editorial.json", DATA / "tld_cultural_patterns.json", DATA / "tld_market_snapshot.json", DATA / "tld_market_provenance.json", *sorted((DATA / "evidence" / "tld-market-2026-10-19").glob("*.json")), ROOT / snapshot["archive_path"]]
 
 
 def build_data_pack() -> None:
@@ -183,19 +184,13 @@ def build_data_pack() -> None:
     for path, expected_digest in frozen.items():
         if not (ROOT/path).exists() or sha256(ROOT/path) != expected_digest:
             raise SystemExit('Previously published package changed: '+path)
-    if expected in frozen:
-        raise SystemExit('Refusing to reuse an archived technical release version: '+VERSION)
     pack = ROOT / expected
-    frozen_digest = PUBLICATION.get("currentDataPackSha256")
-    if frozen_digest:
-        # A bibliography-only update preserves the published technical ZIP.
-        if not pack.is_file() or sha256(pack) != frozen_digest:
-            raise SystemExit("Published technical ZIP differs from its fixed SHA-256")
-    else:
+    pinned = expected in frozen
+    if not pinned:
         pack.parent.mkdir(parents=True, exist_ok=True)
         write_deterministic_zip(pack, [(item, item.relative_to(DATA).as_posix()) for item in data_pack_files()])
         pack.with_suffix(".sha256").write_text(f"{sha256(pack)}  {pack.name}\n", encoding="utf-8")
-    verify_data_pack_content(pack, bibliography_sync=bool(frozen_digest))
+    verify_data_pack_content(pack, bibliography_sync=pinned)
 
 
 def verify_data_pack_content(pack: Path, *, bibliography_sync: bool) -> None:
@@ -215,6 +210,10 @@ def verify_data_pack_content(pack: Path, *, bibliography_sync: bool) -> None:
                         if asset["repository_path"] in {f"data/i18n_{lang}.js" for lang in ("en", "it", "de", "fr")}:
                             del asset["bytes"]
                             del asset["sha256"]
+            if bibliography_sync and name == "frozen_technical_packages.json":
+                # The current archive is pinned after its own registry was packed.
+                archived, live = json.loads(archived), json.loads(live)
+                live["files"].pop(pack.relative_to(ROOT).as_posix(), None)
             if archived != live:
                 raise SystemExit(f"Stale entry in versioned data ZIP: {name}")
 
@@ -431,12 +430,20 @@ def main() -> None:
     # Approved editorial amendments must already be in the reviewed dictionary.
     # Never silently rewrite protected source files inside a build.
     translations = json.loads((DATA / "translations.json").read_text(encoding="utf-8"))
-    for amendment in ("helsinki_editorial_20261025.json", "editorial_io_appointments_20261023.json"):
+    approved_translations = {}
+    for amendment in (
+            "helsinki_editorial_20261025.json",
+            "editorial_io_appointments_20261023.json",
+            "helsinki_revocation_20261118.json"):
         reviewed = json.loads((DATA / amendment).read_text(encoding="utf-8"))
         for lang, keys in reviewed["translations"].items():
-            for key, value in keys.items():
-                if translations.get(lang, {}).get(key) != value:
-                    raise SystemExit(f"Uncommitted reviewed translation: {amendment} {lang}.{key}")
+            approved_translations.setdefault(lang, {}).update(keys)
+    for lang, keys in approved_translations.items():
+        for key, value in keys.items():
+            if translations.get(lang, {}).get(key) != value:
+                raise SystemExit(f"Uncommitted reviewed translation: {lang}.{key}")
+
+    subprocess.run(["python3", str(ROOT / "scripts" / "verify_iana_root_review.py")], check=True)
 
     evidence = json.loads((DATA / 'editorial_20261030_quality_and_termination.json').read_text(encoding='utf-8'))
     if evidence.get('reviewedOn') != '2026-10-30' or evidence.get('targetVersion') != '0.7.94' or PUBLICATION['releasedOn'] < evidence['reviewedOn']:

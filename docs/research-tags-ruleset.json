@@ -1,12 +1,13 @@
 {
-  "name": "Protect immutable research tags RR1 and RR2",
+  "name": "Protect immutable research tags RR1, RR2 and RR3",
   "target": "tag",
   "enforcement": "active",
   "conditions": {
     "ref_name": {
       "include": [
         "refs/tags/RR1",
-        "refs/tags/RR2"
+        "refs/tags/RR2",
+        "refs/tags/RR3"
       ],
       "exclude": []
     }

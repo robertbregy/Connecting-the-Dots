@@ -204,26 +204,43 @@ function checkProtection(review,source,publication){
  assert.equal(review.normalization,'ia-b2-v1','Unknown source normalization');
  assert.equal(digestObject(review.sourceInvariants),INVARIANTS_SHA,'Pre-audit IDs, sections, translation references or links were rewritten');
  assert.equal(digestObject(review.immutableFiles),IMMUTABLE_SHA,'Historical file inventory was rewritten');
+ const research=JSON.parse(fs.readFileSync('research/research_release_manifest.json','utf8'));
+ const current=research.currentResearchRelease;
+ const releases=[current,...research.previousResearchReleases];
+ assert.match(current.id,/^RR[1-9][0-9]*$/,'Invalid current scientific release ID');
+ assert.equal(new Set(releases.map(release=>release.id)).size,releases.length,'Repeated scientific release ID');
+ assert.equal(publication.researchRelease,current.id,'Current research release differs from publication metadata');
+ assert.equal(publication.doi,current.doi,'Current DOI differs from publication metadata');
+ const protectedRR3=releases.find(release=>release.id==='RR3');
+ assert.equal(protectedRR3?.doi,'10.5281/zenodo.24325521','Archived RR3 DOI changed');
+ assert.equal(protectedRR3?.githubFrozenCommit,'a088387c79795f05318f5b468b8e750c9dfe93c1','Archived RR3 evidence commit changed');
  for(const [filename,digest] of Object.entries(review.immutableFiles)){
   relativeFile(filename);
   assert.ok(fs.existsSync(filename),'Historical file missing: '+filename);
   if(filename==='CITATION.cff'){
-   // Only the verified bibliographic date is corrigible in the current citation.
-   // Normalising that one field must reproduce the exact protected original;
-   // DOI, author, release identity and all other bytes remain locked.
+   // Normalize only fields that identify the current verified dataset.
    const correction=JSON.parse(fs.readFileSync('data/research_bibliographic_corrections.json','utf8'));
    assert.equal(correction.doi,'10.5281/zenodo.23288603');
    assert.equal(correction.source,'https://zenodo.org/records/23288603');
    assert.equal(correction.zenodoDatePublished,'2026-10-11');
    const citation=fs.readFileSync(filename,'utf8');
-   const rr3=JSON.parse(fs.readFileSync('research/rr3_publication_verification.json','utf8'));
-   assert.equal(rr3.verificationStatus,'GITHUB_ZENODO_VERSION_CHAIN_VERIFIED');
-   assert.equal(rr3.doi,publication.doi);
-   assert.equal(rr3.conceptDoi,publication.conceptDoi);
-   assert.ok(citation.includes('version: "RR3"')&&citation.includes('date-released: "'+rr3.zenodoPublicationDate+'"')&&citation.includes('value: "'+rr3.doi+'"'),'Live citation does not identify the verified RR3');
-   const previous = citation.replace('version: "RR3"','version: "RR2"')
-      .replace('date-released: "'+rr3.zenodoPublicationDate+'"','date-released: "2026-10-10"')
-      .replace(rr3.doi,correction.doi);
+   const verified=JSON.parse(fs.readFileSync('research/'+current.id.toLowerCase()+'_publication_verification.json','utf8'));
+   assert.equal(verified.release,current.id);
+   assert.equal(verified.verificationStatus,'GITHUB_ZENODO_VERSION_CHAIN_VERIFIED');
+   assert.equal(verified.doi,publication.doi);
+   assert.equal(verified.conceptDoi,publication.conceptDoi);
+   assert.equal(verified.frozenCommit,current.githubFrozenCommit);
+   assert.equal(verified.zenodoPublicationDate??current.publishedOn,current.publishedOn);
+   assert.ok(typeof current.title==='string'&&current.title.trim(),'Missing current archived dataset title');
+   const fields=[
+     ['title: '+JSON.stringify(current.title),'title: "Connecting the Dots: A Living Research Atlas of Top-Level Domain Expansion"'],
+     ['version: '+JSON.stringify(current.id),'version: "RR2"'],
+     ['date-released: '+JSON.stringify(current.publishedOn),'date-released: "2026-10-10"'],
+     ['    value: '+JSON.stringify(current.doi),'    value: "'+correction.doi+'"']
+   ];
+   const lines=citation.split('\n');
+   for(const [field] of fields)assert.equal(lines.filter(line=>line===field).length,1,'Incorrect verified dataset citation: '+field);
+   const previous=lines.map(line=>fields.find(([field])=>line===field)?.[1]??line).join('\n');
    assert.equal(sha256(previous),digest,'Unrelated citation metadata changed');
   }else assert.equal(sha256(fs.readFileSync(filename)),digest,'Historical file modified: '+filename);
  }
@@ -236,7 +253,8 @@ function checkProtection(review,source,publication){
   // independently compared to its pre-audit canonical JSON fingerprint.
   if(filename==='research/research_release_manifest.json'){
    const previous=JSON.parse(fs.readFileSync('research/rr2_release_manifest.json','utf8'));
-   assert.deepEqual(value.previousResearchReleases,[previous.currentResearchRelease,...previous.previousResearchReleases],
+   const earlier=[previous.currentResearchRelease,...previous.previousResearchReleases];
+   assert.deepEqual(value.previousResearchReleases.slice(-earlier.length),earlier,
     'Archived RR1 or RR2 manifest entry changed');
    value.currentResearchRelease=previous.currentResearchRelease;
    value.previousResearchReleases=previous.previousResearchReleases;
@@ -246,7 +264,6 @@ function checkProtection(review,source,publication){
   assert.equal(digestObject(value),protection.sha256,'Historical scientific metadata modified: '+filename);
  }
  assert.deepEqual(review.immutableResearchIdentifiers,{RR1:'10.5281/zenodo.23262623',RR2:'10.5281/zenodo.23288603',concept:'10.5281/zenodo.23262622'},'Historical research identifiers changed');
- assert.equal(publication.doi,'10.5281/zenodo.24325521','Current RR3 DOI changed');
  assert.equal(publication.conceptDoi,'10.5281/zenodo.23262622','Published DOI series changed');
  assert.equal(publication.asOf,'2026-10-10','Frozen research cutoff changed');
  const patterns={

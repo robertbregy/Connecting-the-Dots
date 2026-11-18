@@ -1,7 +1,7 @@
 from pathlib import Path
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
-import json,re,os,shutil
+import hashlib,json,re,os,shutil
 
 ROOT=Path(__file__).resolve().parent.parent
 INPUT=ROOT/'index.html'
@@ -90,7 +90,10 @@ def render(page,lang,alias=False):
     if nos:set_content(nos,f'<div class="staticReading"><p>{tr["staticReading"]}</p><nav class="languageVersions" aria-label="{tr["languageVersions"]}">{links()}</nav></div>')
     style=soup.select_one('#ctd-runtime-style');link=soup.new_tag('link',id='ctd-runtime-style');link['rel']='stylesheet';link['href']=f'assets/style.css?v={VERSION}';style.replace_with(link)
     for sid,file in [('ctd-data-bundle','data/site_bundle.js'),('ctd-i18n-bundle',f'data/i18n_{lang}.js'),('ctd-worldmap','data/worldmap.js'),('ctd-2026-string-snapshot','data/applications_2026_strings_reveal.js'),('ctd-app','assets/app.js')]:
-        n=soup.select_one('#'+sid);n.clear();n['src']=f'{file}?v={VERSION}';n['defer']=''
+        revision = ''
+        if sid in {'ctd-i18n-bundle', 'ctd-app'}:
+            revision = '-' + hashlib.sha256((ROOT / file).read_bytes()).hexdigest()[:16]
+        n=soup.select_one('#'+sid);n.clear();n['src']=f'{file}?v={VERSION}{revision}';n['defer']=''
     guide=soup.select_one('a[data-inside-round-guide]')
     if guide:guide['href']=BASE+'inside-the-round/'+lang+'/'
     behind_guide=soup.select_one('a[data-behind-round-guide]')

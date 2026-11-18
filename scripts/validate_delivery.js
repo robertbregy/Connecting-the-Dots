@@ -2,6 +2,7 @@
 const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('assert/strict'),crypto=require('crypto');
 const {parseHTML}=require('linkedom'),root=path.resolve(__dirname,'..');
 const read=p=>fs.readFileSync(path.join(root,p),'utf8');
+const hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 const fullContext={window:{}},siteContext={window:{}};
 vm.runInNewContext(read('data/data_bundle.js'),fullContext);vm.runInNewContext(read('data/site_bundle.js'),siteContext);
 const full=fullContext.window.DOT_DATA,site=siteContext.window.DOT_DATA,version=JSON.parse(read('package.json')).version;
@@ -42,7 +43,8 @@ for(const [language,alias] of [...['en','it','de','fr'].map(l=>[l,false]),['en',
  const scriptOrder=[...document.querySelectorAll('script')];let previous=-1;
  for(const [id,file] of dependencies){
   const node=document.getElementById(id);assert.ok(node,page+' missing '+id);
-  assert.equal(node.getAttribute('src'),prefix+file+'?v='+version);assert.ok(node.hasAttribute('defer'));assert.ok(!node.hasAttribute('async'));
+  const revision=['ctd-i18n-bundle','ctd-app'].includes(id)?'-'+hash(fs.readFileSync(path.join(root,file))).slice(0,16):'';
+  assert.equal(node.getAttribute('src'),prefix+file+'?v='+version+revision);assert.ok(node.hasAttribute('defer'));assert.ok(!node.hasAttribute('async'));
   assert.equal(node.textContent.trim(),'');
   assert.equal(scriptOrder.filter(s=>s.getAttribute('src')?.split('?')[0]===prefix+file).length,1,page+' duplicate '+file);
   const position=scriptOrder.indexOf(node);assert.ok(position>previous,page+' deferred dependency order: '+id);previous=position;
@@ -55,7 +57,7 @@ for(const [language,alias] of [...['en','it','de','fr'].map(l=>[l,false]),['en',
 console.log('Validated HTML cap and honest HTML+payload budget:',JSON.stringify(initialDeliverySizes));
 const snapshot=JSON.parse(read('data/iana_snapshot.json')),latest=site.releaseHistory.releases[0];
 assert.equal(latest.version,version);assert.equal(latest.ianaSnapshot,snapshot.asOf);assert.equal(latest.ianaEvidenceSha256,snapshot.archive_sha256);
-const manifest=JSON.parse(read('data/manifest.json')),hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
+const manifest=JSON.parse(read('data/manifest.json'));
 assert.equal(manifest.release_history.sha256,hash(read('data/release_history.json')));assert.equal(manifest.web_delivery.detail_batches,8);
 for(const asset of manifest.web_delivery.assets){const bytes=fs.readFileSync(path.join(root,asset.repository_path));assert.equal(bytes.length,asset.bytes,asset.repository_path+' byte count');assert.equal(hash(bytes),asset.sha256,asset.repository_path+' integrity');}
 const translations=JSON.parse(read('data/translations.json')),publication=JSON.parse(read('publication.json'));

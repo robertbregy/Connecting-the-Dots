@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedOn": "2026-11-17",
+  "reviewedOn": "2026-11-18",
   "timezone": "Europe/Zurich",
   "purpose": "Read-only editorial review reminders. HTTP reachability never changes an observation date or establishes that its facts remain current.",
   "thresholdBasis": "Operational review cadence chosen for this publication: 14 days for the changing 2026 APS listing, 30 days for the root-state view. These are review thresholds, not source validity or scientific expiry limits.",
@@ -21,7 +21,8 @@
       "metadataFile": "data/iana_snapshot.json",
       "dateField": "asOf",
       "sourceURLField": "listSource",
-      "reviewAfterDays": 30
+      "reviewAfterDays": 30,
+      "membershipReviewFile": "data/iana_root_revalidation_20261118.json"
     },
     {
       "id": "rr1-archive",
@@ -40,6 +41,15 @@
       "dateField": "dataSnapshot.publicationAsOf",
       "sourceURLField": "doiUrl",
       "releaseId": "RR2"
+    },
+    {
+      "id": "rr3-archive",
+      "label": "RR3 scientific archive",
+      "role": "frozen-evidence",
+      "metadataFile": "research/research_release_manifest.json",
+      "dateField": "dataSnapshot.publicationAsOf",
+      "sourceURLField": "doiUrl",
+      "releaseId": "RR3"
     }
   ],
   "urlRoles": {

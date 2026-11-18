@@ -1,0 +1,34 @@
+{
+  "reviewedOn": "2026-11-18",
+  "revalidationPath": "data/iana_root_revalidation_20261118.json",
+  "translations": {
+    "en": {
+      "helsinkiCaseState": "IANA revocation · removed from the root",
+      "helsinkiCaseStatus": "IANA records .helsinki as retired and no longer delegated from 28 October 2026. The root list reviewed on 18 November contains 1,436 labels. The 4 October snapshot contained 1,437, including .helsinki.",
+      "helsinkiCaseReading": "The verified sequence distinguishes voluntary termination, ICANN’s decision against a successor and IANA’s removal from the root. The primary sources document the procedure and dates.",
+      "release0801": "Technical audit fixes: corrected milestone dates and citations, improved Research accessibility, protected prior data packs and recorded the IANA root comparison.",
+      "exploreSnapshotClocks": "IANA/root snapshot · 4 Oct 2026; root membership reviewed · 18 Nov 2026 (1,436 delegated labels); Reveal Day applications · 7 Oct 2026; archived research RR1 · 9 Oct, RR2 · 11 Oct, RR3 · 17 Nov 2026; website update · {updated}."
+    },
+    "it": {
+      "helsinkiCaseState": "Revoca IANA · rimosso dalla root",
+      "helsinkiCaseStatus": "IANA registra .helsinki come ritirato e privo di delega dal 28 ottobre 2026. La lista della root verificata il 18 novembre contiene 1.436 etichette. Lo snapshot del 4 ottobre ne conteneva 1.437, incluso .helsinki.",
+      "helsinkiCaseReading": "La sequenza documentata distingue la cessazione volontaria, la decisione di ICANN sul mancato subentro e la rimozione dalla root da parte di IANA. Le fonti primarie attestano le fasi e le date.",
+      "release0801": "Correzioni dell’audit tecnico: date dei traguardi e citazioni allineate, Ricerca più accessibile, pacchetti storici protetti e confronto della root IANA documentato.",
+      "exploreSnapshotClocks": "Snapshot IANA/root · 4 ott 2026; verifica delle deleghe · 18 nov 2026 (1.436 etichette); candidature Reveal Day · 7 ott 2026; ricerca archiviata RR1 · 9 ott, RR2 · 11 ott, RR3 · 17 nov 2026; aggiornamento del sito · {updated}."
+    },
+    "de": {
+      "helsinkiCaseState": "IANA-Widerruf · aus der Root-Zone entfernt",
+      "helsinkiCaseStatus": "IANA führt .helsinki seit dem 28. Oktober 2026 als stillgelegt und nicht mehr delegiert. Die am 18. November geprüfte Root-Liste enthält 1.436 Labels. Der Stand vom 4. Oktober enthielt 1.437, einschließlich .helsinki.",
+      "helsinkiCaseReading": "Die belegte Abfolge umfasst die freiwillige Vertragsbeendigung, die ICANN-Entscheidung gegen einen Nachfolger und die Entfernung aus der Root-Zone durch IANA.",
+      "release0801": "Technische Auditkorrekturen: berichtigte Meilensteindaten und Zitate, barriereärmere Forschungsseiten, geschützte frühere Datenpakete und dokumentierter IANA-Root-Abgleich.",
+      "exploreSnapshotClocks": "IANA/Root-Snapshot · 4. Okt. 2026; Delegierungen geprüft · 18. Nov. 2026 (1.436 Labels); Reveal-Day-Bewerbungen · 7. Okt. 2026; archivierte Forschung RR1 · 9. Okt., RR2 · 11. Okt., RR3 · 17. Nov. 2026; Website-Aktualisierung · {updated}."
+    },
+    "fr": {
+      "helsinkiCaseState": "Révocation IANA · retrait de la racine",
+      "helsinkiCaseStatus": "IANA classe .helsinki comme retiré et sans délégation depuis le 28 octobre 2026. La liste de la racine vérifiée le 18 novembre contient 1 436 libellés. L’instantané du 4 octobre en contenait 1 437, dont .helsinki.",
+      "helsinkiCaseReading": "La chronologie documentée distingue la résiliation volontaire, la décision de l’ICANN de ne pas désigner de successeur et le retrait de la racine par IANA.",
+      "release0801": "Corrections de l’audit technique : dates et citations rectifiées, pages Recherche plus accessibles, archives techniques protégées et comparaison de la racine IANA documentée.",
+      "exploreSnapshotClocks": "Instantané IANA/racine · 4 oct. 2026 ; délégations vérifiées · 18 nov. 2026 (1 436 libellés) ; candidatures Reveal Day · 7 oct. 2026 ; recherche archivée RR1 · 9 oct., RR2 · 11 oct., RR3 · 17 nov. 2026 ; mise à jour du site · {updated}."
+    }
+  }
+}

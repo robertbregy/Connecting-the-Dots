@@ -65,7 +65,22 @@ const regionFormatters=new Map();
 function fmtCountry(value){const code=D.ianaCountryCodes?.[value]||{'United States of America (the)':'US','United States':'US','United Kingdom of Great Britain and Northern Ireland (the)':'GB','United Kingdom':'GB','Germany':'DE','Austria':'AT','Switzerland':'CH','France':'FR','Netherlands (the)':'NL','Netherlands':'NL','Belgium':'BE','Finland':'FI','Norway':'NO','Spain':'ES','Hong Kong':'HK','Hong Kong, China':'HK','Anguilla':'AI','Tuvalu':'TV','Montenegro':'ME','Colombia':'CO','Japan':'JP','Canada':'CA','Russian Federation (the)':'RU','Russian Federation':'RU','New Zealand':'NZ','Micronesia (Federated States of)':'FM','Antarctica':'AQ','Barbados':'BB','Bouvet Island':'BV','British Indian Ocean Territory':'IO','British Indian Ocean Territory (the)':'IO','Cayman Islands (the)':'KY','Cyprus':'CY','European Union':'EU','Svalbard and Jan Mayen':'SJ'}[value];if(!code)return value;if(!regionFormatters.has(lang))regionFormatters.set(lang,new Intl.DisplayNames([localeCode()],{type:'region'}));return regionFormatters.get(lang).of(code)}
 function fmtDate(v){if(!v)return'';try{return new Intl.DateTimeFormat(localeCode(),{year:'numeric',month:'short',day:'numeric',timeZone:'UTC'}).format(new Date(v+'T00:00:00Z'))}catch(e){return v}}
 function fmtDateTimeUtc(v){if(!v)return'';try{const d=new Date(v),date=new Intl.DateTimeFormat(localeCode(),{year:'numeric',month:'short',day:'numeric',timeZone:'UTC'}).format(d),hh=String(d.getUTCHours()).padStart(2,'0'),mm=String(d.getUTCMinutes()).padStart(2,'0');return `${date} · ${hh}:${mm} UTC`}catch(e){return v}}
-function renderPublicationState(){const state=document.querySelector('[data-i18n=\"publicationState\"]'),note=document.querySelector('[data-i18n=\"publicationStateNote\"]');if(state)state.textContent=PUB.researchSnapshot?`${t('publicationState')} · ${fmtDate(PUB.researchSnapshot)}`:t('publicationState');if(note)note.textContent=PUB.state==='pre-reveal'&&PUB.revealAt?`${t('publicationStateNote')} · ${fmtDateTimeUtc(PUB.revealAt)}`:PUB.stringConfirmation?`${t('publicationStateNote')} · ${fmtDate(PUB.stringConfirmation)}`:t('publicationStateNote')}
+function renderPublicationState(){
+  const badge = document.querySelector('[data-i18n="publicationState"]');
+  const note = document.querySelector('[data-i18n="publicationStateNote"]');
+  let badgeDate = PUB.researchSnapshot;
+  if (PUB.state !== 'pre-reveal') {
+    const revealAt = Date.parse(PUB.revealAt);
+    badgeDate = Number.isFinite(revealAt) ? new Date(revealAt).toISOString().slice(0, 10) : '';
+  }
+  if (badge) badge.textContent = badgeDate ? t('publicationState') + ' · ' + fmtDate(badgeDate) : t('publicationState');
+  if (note) {
+    const noteDate = PUB.state === 'pre-reveal' && PUB.revealAt
+      ? fmtDateTimeUtc(PUB.revealAt)
+      : fmtDate(PUB.stringConfirmation);
+    note.textContent = noteDate ? t('publicationStateNote') + ' · ' + noteDate : t('publicationStateNote');
+  }
+}
 
 function fmtPlace(value){const keys={'Czechoslovakia':'placeCzechoslovakia','Czechoslovakia; Serbia and Montenegro (code reassignment)':'placeCsHistory','Former Soviet Union (legacy code)':'placeSovietLegacy','Serbia and Montenegro':'placeSerbiaMontenegro','Netherlands Antilles':'placeNetherlandsAntilles','Portuguese Timor':'placePortugueseTimor','Yugoslavia':'placeYugoslavia','Catalan-speaking community':'placeCatalanCommunity','Canton of Zurich':'placeZurich','Reserved Domain - IANA':'placeReserved','Berlin':'placeBerlin','London':'placeLondon','Cologne':'placeCologne','Vienna':'placeVienna','Hamburg':'placeHamburg','Paris':'placeParis','Barcelona':'placeBarcelona','Quebec':'placeQuebec'};if(keys[value])return t(keys[value]);if(value==='Lugano, Switzerland')return 'Lugano, '+fmtCountry('Switzerland');if(value?.includes(' / '))return value.split(' / ').map(fmtPlace).join(' / ');return fmtCountry(value)}
 function fmtPeriod(value){if(/^\d{4}-\d{2}-\d{2}$/.test(value))return fmtDate(value);return fmtPlace(String(value).replace(/current/g,t('current')).replace(/present/g,t('periodPresent')).replace(/policy framework/g,t('periodPolicyFramework')).replace(/retirement/g,t('retired')).replace(/^legacy$/,t('legacy')))}

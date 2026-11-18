@@ -280,8 +280,17 @@ def evaluate_freshness(root, policy, now=None):
                     raise ValueError("reviewAfterDays must be a positive integer")
                 row["reviewAfterDays"] = max_age
                 reasons = []
-                if row["ageDays"] >= max_age:
-                    reasons.append("Observation age reached the editorial review threshold.")
+                age_for_review = row["ageDays"]
+                if membership_path := entry.get("membershipReviewFile"):
+                    comparison = json.loads((root / membership_path).read_text(encoding="utf-8"))
+                    checked = source_date(comparison["reviewedOn"])
+                    if not observed <= checked <= today or comparison["baseline"]["observedOn"] != observed.isoformat():
+                        raise ValueError("Membership review date or snapshot baseline does not match")
+                    age_for_review = (today - checked).days
+                    row.update(membershipReviewedOn=checked.isoformat(), membershipReviewAgeDays=age_for_review,
+                               membershipReviewScope=comparison["scope"], membershipReviewFile=membership_path)
+                if age_for_review >= max_age:
+                    reasons.append("Observation or membership review reached the editorial review threshold.")
                 milestone = entry.get("nextReview")
                 if milestone:
                     md = json.loads((root / milestone["metadataFile"]).read_text(encoding="utf-8"))
@@ -297,7 +306,10 @@ def evaluate_freshness(root, policy, now=None):
                         row["milestoneState"] = "upcoming"
                 row.update(state="review-due" if reasons else "within-review-window",
                            reviewRequired=bool(reasons),
-                           reason=" ".join(reasons) if reasons else "Within the configured review window; not a claim of live data.")
+                           reason=" ".join(reasons) if reasons else (
+                               "Within the configured membership review window; the source snapshot retains its observation date."
+                               if entry.get("membershipReviewFile")
+                               else "Within the configured review window; not a claim of live data."))
         except (OSError, KeyError, IndexError, TypeError, ValueError) as exc:
             row.update(state="metadata-error", reviewRequired=True, reason=str(exc)[:240])
         rows.append(row)

@@ -104,6 +104,7 @@ for(const lang of ['en','it','de','fr'])for(const filename of [lang+'/index.html
  const sheet=document.createElement('link');sheet.rel='stylesheet';sheet.href=prefix+'assets/audience.css?v='+pub.version;document.head.append(sheet);
  // A new HTML release must not execute an older cached enhancement script.
  for(const node of document.querySelectorAll('script[src],link[rel="stylesheet"][href]')){
+  if(node.id==='ctd-app')continue; // The renderer already attached its content hash.
   const attr=node.tagName==='SCRIPT'?'src':'href',ref=node.getAttribute(attr);
   if(!/^https?:/.test(ref)&&/(?:^|\/)assets\/[^?#]+\.(?:js|css)(?:\?|$)/.test(ref))node.setAttribute(attr,ref.split('?')[0]+'?v='+pub.version);
  }

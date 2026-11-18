@@ -16,7 +16,7 @@ const sources=new Map(d.sources.map(x=>[x.id,x]));
 assert.equal(sources.size,4);
 for(const item of d.items){assert.equal(item.publishedOn,'2026-11-04');for(const id of item.sourceIds)assert.ok(sources.has(id),id)}
 for(const url of [
- 'https://brsmedia.com/cperesponse/',
+ 'https://brsmedia.com/ICANNTheresaSwinehart.pdf',
  'https://www.inta.org/news-and-press/inta-news/icanns-new-generic-top-level-domain-applications-revealed/',
  'https://newgtldprogram-2026-agb.icann.org/en/9-module-5-contention-set-resolution.html'
 ])assert.ok(d.sources.some(x=>x.url===url));

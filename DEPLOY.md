@@ -50,6 +50,8 @@ Technical/site releases (`v0.x.y`) do not create a new research release. Researc
 
 Each technical release has a new versioned current data package. Set `version`, `currentDataPackVersion`, `currentDataPackPath` and `releasedOn` in `publication.json`, then run the normal build. Existing versioned ZIPs and their checksums are immutable and independently checked. `CTD_REBUILD_DATA_PACK=1` is intentionally rejected: it must never rewrite the historical v0.7.58 archive.
 
+Before advancing the technical version, record the outgoing archive's published SHA-256 in `data/frozen_technical_packages.json` under its exact ZIP path. The build checks every registered archive and generates a pack only for an unregistered current path. A bibliographic update can keep using a registered current archive when its packaged data stays the same.
+
 The working paper is generated from its Markdown source by `scripts/render_research.cjs`; manuscript version and review date also come from `publication.json`. New analytical outputs outside RR1/RR2 are labelled as current working research and may be archived only as a subsequent research release, never under an earlier release DOI.
 
 ## Fallback archives
