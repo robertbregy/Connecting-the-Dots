@@ -11,10 +11,18 @@ import json
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-REVIEW = ROOT / "docs/editorial-review-2026-11-18-v0.8.1.json"
+REVIEW = ROOT / "docs/editorial-review-2026-11-18-v0.8.2.json"
 EVIDENCE = ROOT / "data/evidence/icann_20261118_reconciliation.json"
 PATHS = (
     "README.md",
+    "publication.json",
+    "package.json",
+    "data/publication.js",
+    "data/release_history.json",
+    "data/translations.json",
+    "data/frozen_technical_packages.json",
+    "data/manifest.json",
+    "docs/reader-first-structure.json",
     "applications/de/index.html",
     "applications/en/index.html",
     "applications/fr/index.html",
@@ -36,7 +44,7 @@ def digest(path):
 def main():
     report = json.loads(REVIEW.read_text(encoding="utf-8"))
     evidence = json.loads(EVIDENCE.read_text(encoding="utf-8"))
-    if report.get("status") != "reviewed" or report.get("publicationVersion") != "0.8.1":
+    if report.get("status") != "reviewed" or report.get("publicationVersion") != "0.8.2":
         raise RuntimeError("Wrong reviewed baseline; no automatic updates")
     status = evidence.get("evidenceStatus") or {}
     if status.get("applicationIDsChanged") != ["INC2624T-T96235"]:
@@ -73,7 +81,7 @@ def main():
         if RATIONALE not in ids:
             ids.append(RATIONALE)
     report["icann20261118Review"] = {
-        "scope": "date- and source-limited addendum to 2026-11-18-v0.8.1",
+        "scope": "new v0.8.2 dated ICANN/APS correction; v0.8.1 and RR3 frozen",
         "originalReviewSHAsRetained": True,
         "priorSHA256": prior,
         "changedFilesThisRun": changes,
