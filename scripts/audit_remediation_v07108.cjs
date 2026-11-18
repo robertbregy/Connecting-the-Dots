@@ -151,7 +151,7 @@ for(const r of [...new Set(pages)]){
  if(k&&description){src=social(src,description,canonical,title);src=pageDescription(src,description,canonical);}
  const roundPage=/^(applications|inside-the-round)\//.test(r)||/^economics\/(en|it|de|fr)\/(round-2026|portfolios)\//.test(r)||/^tlds\/(en|it|de|fr)\/lugano\//.test(r)||/^behind-the-round\/(en|it|de|fr)\/(index\.html|wdo-identity\/|replacement-strings\/|objectors-eoi\/|background-screening\/)/.test(r);
  if(roundPage&&!src.includes('class="roundStatus"')){
-  const isAtlas=/^applications\\/(en|it|de|fr)\\/index\\.html$/.test(r);
+  const isAtlas=/^applications\/(en|it|de|fr)\/index\.html$/.test(r);
   const text=isAtlas?atlasSnapshot[l]:snapshot[l],stamp=isAtlas?'2026-11-17':'2026-10-11',source=isAtlas?'https://newgtldprogram-aps.icann.org/applications':milestoneUrl;
   const notice='<aside class="roundStatus" data-aps-snapshot="'+stamp+'" aria-label="'+esc(text[0])+'"><strong>'+esc(text[0])+'</strong><p>'+esc(text[1])+' <a href="'+source+'">'+esc(text[2])+' ↗</a></p></aside>';
   src=src.replace(/(<h1\b[^>]*>[\s\S]*?<\/h1>)/,(_m,h)=>h+'\n'+notice);
