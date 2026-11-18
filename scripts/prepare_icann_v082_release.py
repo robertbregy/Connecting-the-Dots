@@ -58,6 +58,11 @@ def main():
         review["publicationVersion"]="0.8.2"
         review["reviewInstruction"]="Review new dated ICANN/APS 18 Nov evidence and localized Atlas; new v0.8.2 package must not change frozen v0.8.1/RR3."
         review["status"]="reviewed"
+        for repl in review.get("linkReplacements", []):
+            if repl.get("to") == "{{CURRENT_PACK_PATH}}":
+                repl["publishedPath"] = meta["currentDataPackPath"]
+            elif repl.get("to") == "{{CURRENT_CHECKSUM_PATH}}":
+                repl["publishedPath"] = meta["currentDataPackPath"].replace(".zip",".sha256")
         save(review_new,review)
     else:
         review=load(review_new)
