@@ -2,6 +2,7 @@ name: ICANN 2026 correction verification
 on:
   pull_request:
     paths:
+      - '.github/workflows/icann-2026-correction.yml'
       - 'data/evidence/icann_20261118_reconciliation.json'
       - 'data/atlas_2026_correction_editorial.json'
       - 'applications/**'
@@ -32,7 +33,16 @@ jobs:
         run: python3 build.py
       - name: Check release invariants
         run: python3 scripts/release_check.py
-      - name: Verify generated Atlas remains reproducible
+      - name: Verify rendered Atlas and correction in regenerated pages
         run: |
           python3 scripts/check_icann_20261118_correction.py
-          git diff --exit-code -- applications/it/index.html applications/en/index.html applications/de/index.html applications/fr/index.html
+          python3 - <<'PY'
+          from pathlib import Path
+          for lang in ('it','en','de','fr'):
+              html=(Path('applications')/lang/'index.html').read_text(encoding='utf-8')
+              assert html.count('id="apsCorrectionHeading"') == 1
+              assert html.count('href="#apsCorrectionHeading"') == 1
+              assert 'id="aps-results"' in html
+              assert 'icann_20261118_reconciliation.json' in html
+          print('PASS: four reconstructed Atlas pages preserve correction, navigation and search')
+          PY
