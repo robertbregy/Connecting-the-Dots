@@ -1,0 +1,50 @@
+{
+  "caveats": [
+    "Missing from a later export does not establish withdrawal or rejection.",
+    "A -R row is a replacement record, not another application; no switch is inferred.",
+    "Primary-label exact matches are analytical groups, not official ICANN contention sets.",
+    "Each snapshot is an observation, not a reconstruction of unobserved events."
+  ],
+  "change_counts": {
+    "base_record_field_changed": 1
+  },
+  "changes": [
+    {
+      "after": "Withdrawn",
+      "application_id": "INC2624T-T96235",
+      "before": "Active",
+      "field": "Application Status",
+      "kind": "base_record_field_changed"
+    }
+  ],
+  "current": {
+    "applications_in_derived_exact_primary_groups": 891,
+    "base_application_ids": 1614,
+    "derived_exact_primary_groups_not_official_contention_sets": 263,
+    "distinct_original_primary_labels_excluding_existing_tld_variant_only": 980,
+    "observed_base_application_statuses": {
+      "Active": 1452,
+      "Deactivated": 152,
+      "Withdrawn": 10
+    },
+    "public_records": 2783,
+    "replacement_records_not_applications": 1169,
+    "source_sha256": "79f06ea388bcb8ba8e4b363c77d1a6d4dc8f30fcc6d115fae06a1174c5594c10"
+  },
+  "evidence_class": "observed_changes_not_adjudicated_outcomes",
+  "method": "Exact public APS record comparison by stable base Application ID",
+  "previous": {
+    "applications_in_derived_exact_primary_groups": 891,
+    "base_application_ids": 1614,
+    "derived_exact_primary_groups_not_official_contention_sets": 263,
+    "distinct_original_primary_labels_excluding_existing_tld_variant_only": 980,
+    "observed_base_application_statuses": {
+      "Active": 1453,
+      "Deactivated": 152,
+      "Withdrawn": 9
+    },
+    "public_records": 2783,
+    "replacement_records_not_applications": 1169,
+    "source_sha256": "c41606e8b58f3e469c0e91fab48e25057c0959f9792d4385871d5c70268fe44c"
+  }
+}
