@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "kind": "append-only-official-publication-reconciliation",
+  "observedOn": "2026-11-18",
+  "previousSnapshot": {
+    "path": "data/application_2026_string_confirmation_snapshot.json",
+    "capturedAtUTC": "2026-11-17T18:30:10Z",
+    "preserveUnchanged": true
+  },
+  "publications": {
+    "announcementOriginal": {
+      "url": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-17-11-2026-en",
+      "dated": "2026-11-17",
+      "proceeding": 1610,
+      "eligibleReplacement": 287,
+      "selectedReplacement": 152,
+      "initialContentionSets": 262,
+      "initialContentionApplications": 885,
+      "confirmedContentionSets": 226,
+      "confirmedContentionApplications": 709,
+      "aspProceeding": 50,
+      "apRegion": 215
+    },
+    "announcementRevised": {
+      "url": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en",
+      "dated": "2026-11-17",
+      "exactRevisionTimeUTC": null,
+      "proceeding": 1606,
+      "withdrawalsAsOf20261116": 9,
+      "eligibleReplacement": 442,
+      "selectedReplacement": 152,
+      "initialContentionSets": 263,
+      "initialContentionApplications": 891,
+      "confirmedContentionSets": 226,
+      "confirmedContentionApplications": 705,
+      "aspProceeding": 46,
+      "apRegion": 211
+    },
+    "apsStatistics": {
+      "url": "https://newgtldprogram-aps.icann.org/statistics",
+      "publishedAtUTC": "2026-11-18T07:39:00Z",
+      "applicants": 481,
+      "totalApplications": 1615,
+      "active": 1604,
+      "withdrawn": 11,
+      "uniqueStrings": 1127,
+      "variants": 9,
+      "contentionCountsAvailableInAPS": false
+    },
+    "wdo": {
+      "url": "https://newgtldprogram-aps.icann.org/applications/WDO2627T-T45217/summary",
+      "publishedAtUTC": "2026-10-07T18:00:00Z",
+      "applicationID": "WDO2627T-T45217",
+      "publishedStatus": "Undergoing administrative check",
+      "noNewPublicUpdateVerified": true
+    }
+  },
+  "verifiedDeltas": {
+    "originalToRevisedAnnouncement": {
+      "proceeding": -4,
+      "eligibleReplacement": 155,
+      "selectedReplacement": 0,
+      "initialContentionSets": 1,
+      "initialContentionApplications": 6,
+      "confirmedContentionSets": 0,
+      "confirmedContentionApplications": -4,
+      "aspProceeding": -4,
+      "apRegion": -4
+    },
+    "apsSince20261117T2009UTC": {
+      "active": -1,
+      "withdrawn": 1,
+      "totalApplications": 0
+    }
+  },
+  "documentedContradictions": [
+    "Corrected announcement says contention sets decreased by 36, but its displayed 263 to 226 figures imply a decrease of 37; do not silently amend ICANN prose.",
+    "Corrected announcement is a 16 November snapshot with 9 withdrawals; APS statistics published 18 November 07:39 UTC display 11 withdrawals. This is a temporal difference, not evidence of two identified Application IDs.",
+    "APS contention fields are not yet published on Statistics; the separate official contention CSV is a different source.",
+    "The gap between 1616 paid on 22 September and 1615 on Reveal Day remains without official explanation; the public-export base-ID gap (1615 versus 1614) is distinct."
+  ],
+  "evidenceStatus": {
+    "revisedAnnouncement": "official page verified 2026-11-18",
+    "apsStatistics": "official page verified 2026-11-18",
+    "freshCSVDownloaded": false,
+    "applicationIDsChanged": null,
+    "newCSVChecksumSHA256": null,
+    "reason": "No comparable newly captured official export available in this pass; existing frozen export SHA-256 and application data must not be replaced on the basis of statistics alone."
+  },
+  "editorialPolicy": "This observation supplements but does not rewrite the 17 November archived snapshot, historical CSV, RR3 or the application graph. Do not promote current APS totals to application-level changes without verified Application IDs."
+}
