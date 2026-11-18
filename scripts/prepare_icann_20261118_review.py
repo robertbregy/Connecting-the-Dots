@@ -45,6 +45,14 @@ def main():
     normalized = ROOT / status["newCSVArchive"]
     if digest(raw) != status["newCSVRawSHA256"] or digest(normalized) != status["newCSVChecksumSHA256"]:
         raise RuntimeError("Source hashes do not match preserved APS evidence")
+    unmatched = []
+    for filepath, entry in report["files"].items():
+        path = ROOT / filepath
+        if path.exists():
+            actual = digest(path)
+            if actual != entry["sha256"]:
+                unmatched.append(filepath)
+    print("ICANN_PRE_REVIEW_DRIFT", json.dumps(unmatched, ensure_ascii=False))
     prior = report.get("icann20261118Review", {}).get("priorSHA256", {})
     if prior and set(prior) != set(PATHS):
         raise RuntimeError("Review addendum scope changed")
