@@ -15,6 +15,7 @@ REVIEW = ROOT / "docs/editorial-review-2026-11-18-v0.8.2.json"
 EVIDENCE = ROOT / "data/evidence/icann_20261118_reconciliation.json"
 PATHS = (
     "README.md",
+    "CHANGELOG.md",
     "publication.json",
     "package.json",
     "package-lock.json",
