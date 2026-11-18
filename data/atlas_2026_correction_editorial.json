@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-11-18",
+  "sourceEvidence": "data/evidence/icann_20261118_reconciliation.json",
+  "note": "Aggregate observations are subsequent to and independent of the frozen application graph; no application-level change is inferred.",
+  "translations": {
+    "it": {
+      "title": "Rettifica ICANN e statistiche successive",
+      "body": "ICANN ha rettificato il comunicato del 17 novembre: 1.606 candidature che proseguono, 442 eleggibili alla sostituzione, 152 sostituzioni selezionate, 263 contese iniziali e 226 dopo la conferma, con 705 candidature nelle contese confermate. Le statistiche APS pubblicate il 18 novembre alle 07:39 UTC riportavano 1.604 Active e 11 Withdrawn su 1.615 candidature. Sono fotografie di momenti diversi.",
+      "note": "Nuovo export APS del 18 novembre: .bit (INC2624T-T96235) passa da Active a Withdrawn. I record dell’Atlas restano ancorati al 17 novembre; la nuova osservazione è segnalata nella scheda interessata. Il CSV pubblica 10 ritiri, mentre le statistiche APS dello stesso giorno ne riportano 11: l’ulteriore Application ID non è identificabile dal CSV."
+    },
+    "en": {
+      "title": "ICANN correction and later statistics",
+      "body": "ICANN corrected its 17 November announcement: 1,606 proceeding applications, 442 eligible for replacement, 152 selected replacements, 263 initial contention sets and 226 after confirmation, with 705 applications in confirmed contention. APS Statistics published on 18 November at 07:39 UTC reported 1,604 Active and 11 Withdrawn out of 1,615 applications. These are observations from different times.",
+      "note": "New APS export on 18 November: .bit (INC2624T-T96235) changes from Active to Withdrawn. Atlas source records remain anchored to 17 November; the later observation appears on the affected card. The CSV contains 10 withdrawn applications while APS Statistics reports 11: the additional Application ID is not identifiable from this export."
+    },
+    "de": {
+      "title": "ICANN-Korrektur und spätere Statistiken",
+      "body": "ICANN hat die Mitteilung vom 17. November berichtigt: 1.606 weitergeführte Anträge, 442 für eine Ersatzzeichenfolge berechtigte Anträge, 152 gewählte Ersatzzeichenfolgen, 263 anfängliche und 226 bestätigte Konfliktgruppen mit 705 betroffenen Anträgen. Die am 18. November um 07:39 UTC veröffentlichten APS-Statistiken wiesen 1.604 Active und 11 Withdrawn bei insgesamt 1.615 Anträgen aus. Es sind unterschiedliche Zeitstände.",
+      "note": "Neuer APS-Export vom 18. November: .bit (INC2624T-T96235) wechselt von Active zu Withdrawn. Die Atlas-Quelldaten bleiben auf dem Stand vom 17. November; die spätere Beobachtung wird bei der betroffenen Bewerbung angezeigt. Der CSV-Export enthält 10 Rückzüge, die APS-Statistik dagegen 11: Die zusätzliche Application ID ist daraus nicht identifizierbar."
+    },
+    "fr": {
+      "title": "Rectification ICANN et statistiques ultérieures",
+      "body": "L’ICANN a corrigé son communiqué du 17 novembre : 1 606 candidatures poursuivies, 442 éligibles à une substitution, 152 substitutions sélectionnées, 263 ensembles de contention initiaux et 226 après confirmation, regroupant 705 candidatures. Les statistiques APS publiées le 18 novembre à 07:39 UTC indiquaient 1 604 Active et 11 Withdrawn sur 1 615 candidatures. Il s’agit de relevés effectués à des dates différentes.",
+      "note": "Nouvel export APS du 18 novembre : .bit (INC2624T-T96235) passe de Active à Withdrawn. Les données sources de l’Atlas restent datées du 17 novembre ; l’observation ultérieure figure sur la fiche concernée. Le CSV contient 10 retraits alors que les statistiques APS en indiquent 11 : l’Application ID supplémentaire ne peut pas être identifié à partir de cet export."
+    }
+  },
+  "sourceCSV": "data/evidence/aps-2026/post-confirmation-20261118-79f06ea388bcb8ba/aps-normalized.csv",
+  "sourceDiff": "data/evidence/aps-2026/post-confirmation-20261118-79f06ea388bcb8ba/aps-id-diff.json"
+}

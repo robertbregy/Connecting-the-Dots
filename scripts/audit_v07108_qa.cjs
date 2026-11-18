@@ -70,7 +70,7 @@ for(const lang of langs){
  assert.ok(sitemap.includes(base+'research/reader-study/'+lang+'/'),'Reader sitemap');
  assert.ok([...native.querySelectorAll('a[href]')].some(a=>a.getAttribute('href').includes('research/reader-study/'+lang+'/')),'Reader research entry');
  for(const family of ['applications/'+lang,'economics/'+lang+'/round-2026','tlds/'+lang+'/lugano']){
-  const p=doc(family+'/index.html');assert.equal(p.querySelector('.roundStatus')?.getAttribute('data-aps-snapshot'),'2026-10-11','Dated snapshot '+family);
+  const p=doc(family+'/index.html');assert.equal(p.querySelector('.roundStatus')?.getAttribute('data-aps-snapshot'),family.startsWith('applications/')?'2026-11-17':'2026-10-11','Dated snapshot '+family);
  }
  const cases=doc('economics/'+lang+'/cases/index.html');
  for(const card of cases.querySelectorAll('.economicCase[id]'))assert.ok(cases.querySelector('a[href="#'+card.id+'"]'),'Case index missing '+card.id);

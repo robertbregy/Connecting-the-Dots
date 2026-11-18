@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/en/economics/ | Site edition: 0.8.1 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/en/economics/ | Site edition: 0.8.2 | Language: en -->
 
 Guide
 
@@ -108,6 +108,6 @@ The economic costs of running a registry also illuminate exits and failed projec
 
 [Explore the gTLD cemetery →](https://robertbregy.github.io/Connecting-the-Dots/en/#cemetery)
 
-**By Robert Bregy** · Site edition 0.8.1 · November 18, 2026
+**By Robert Bregy** · Site edition 0.8.2 · November 18, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

@@ -1,0 +1,158 @@
+name: ICANN 2026 correction verification
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/icann-2026-correction.yml'
+      - 'data/evidence/icann_20261118_reconciliation.json'
+      - 'data/atlas_2026_correction_editorial.json'
+      - 'applications/**'
+      - 'scripts/render_aps_application_atlas.py'
+      - 'scripts/check_icann_20261118_correction.py'
+      - 'scripts/prepare_icann_20261118_review.py'
+      - 'scripts/prepare_icann_v082_release.py'
+      - 'docs/editorial-review-2026-11-18-v0.8.1.json'
+      - 'docs/string-confirmation-day-2026-11-17-first-findings.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Create separate v0.8.2 release metadata and pin v0.8.1 archive
+        run: python3 scripts/prepare_icann_v082_release.py
+      - run: npm ci
+      - name: Check correction provenance and four languages
+        run: python3 scripts/check_icann_20261118_correction.py
+      - name: Validate Atlas and audit renderer JavaScript syntax
+        run: |
+          node --check assets/aps-atlas.js
+          node --check scripts/audit_remediation_v07108.cjs
+      - name: Rebuild static site
+        run: python3 build.py
+      - name: Check release invariants
+        run: python3 scripts/release_check.py
+      - name: Verify rendered Atlas and correction in regenerated pages
+        run: |
+          python3 scripts/check_icann_20261118_correction.py
+          python3 - <<'PY'
+          from pathlib import Path
+          for lang in ('it','en','de','fr'):
+              html=(Path('applications')/lang/'index.html').read_text(encoding='utf-8')
+              assert html.count('id="apsCorrectionHeading"') == 1
+              assert html.count('href="#apsCorrectionHeading"') == 1
+              assert 'id="aps-results"' in html
+              assert 'data-aps-snapshot="2026-11-17"' in html, lang
+              assert 'data-aps-snapshot="2026-10-11"' not in html, lang
+              assert 'icann_20261118_reconciliation.json' in html
+          print('PASS: four reconstructed Atlas pages preserve correction, navigation and search')
+          PY
+      - name: Review only the changed ICANN files and verify protected editorial scope
+        run: |
+          python3 scripts/prepare_icann_20261118_review.py
+          node scripts/verify_ia_b2_parity.cjs
+          node scripts/audit_v07108_qa.cjs
+      - name: Keep committed Atlas HTML in sync with deterministic build
+        if: success() && github.event.pull_request.head.repo.full_name == github.repository
+        shell: bash
+        env:
+          PR_HEAD_REF: ${{ github.head_ref }}
+        run: |
+          set -euo pipefail
+          git add -u
+          git add docs/editorial-review-2026-11-18-v0.8.2.json downloads/connecting-the-dots-data-pack-v0.8.2.zip downloads/connecting-the-dots-data-pack-v0.8.2.sha256
+          if git diff --cached --quiet; then
+            echo 'Generated Atlas HTML is in sync.'
+          else
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Publish reviewed v0.8.2 candidate with frozen v0.8.1 archive'
+            git push origin "HEAD:refs/heads/$PR_HEAD_REF"
+          fi
+
+  capture-aps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          persist-credentials: true
+      - name: Capture current official APS export
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p capture
+          date -u +%Y-%m-%dT%H:%M:%SZ > capture/acquired-at.txt
+          curl --fail --silent --show-error --location --retry 2 --max-time 90 \
+            -X POST 'https://newgtldprogram-aps.icann.org/aps/applications/export/csv' \
+            -H 'Content-Type: application/json' \
+            --data '{"searchAndFilter":{},"sort":{"field":"primaryString","direction":"ASC"},"pagination":{"pageNum":0,"pageSize":5000}}' \
+            -o capture/aps-raw.csv
+          python3 - <<'PY'
+          from pathlib import Path
+          import csv,io
+          text=Path('capture/aps-raw.csv').read_text(encoding='utf-8-sig')
+          pos=text.find('Priority,')
+          if pos<0:raise SystemExit('Official APS header not found; do not treat as empty file')
+          normalized=text[pos:].replace('\r\n','\n').replace('\r','\n')
+          rows=list(csv.DictReader(io.StringIO(normalized)))
+          if len(rows)<1500:raise SystemExit('Unexpected APS CSV size; reject incomplete export')
+          Path('capture/aps-normalized.csv').write_text(normalized,encoding='utf-8')
+          print('Official CSV rows:',len(rows))
+          PY
+          sha256sum capture/aps-raw.csv capture/aps-normalized.csv > capture/sha256.txt
+      - name: Application ID-level diff against 17 November capture
+        run: |
+          python3 scripts/aps_observatory.py compare \
+            --before data/applications_2026_aps_string_confirmation_20261117.csv \
+            --after capture/aps-normalized.csv \
+            --output capture/aps-id-diff.json
+          python3 - <<'PY'
+          import json
+          report=json.load(open('capture/aps-id-diff.json',encoding='utf-8'))
+          print('APS_COMPARISON:',json.dumps(report,ensure_ascii=False)[:12000])
+          PY
+      - name: Archive independent raw APS observation on PR branch
+        if: success() && github.event.pull_request.head.repo.full_name == github.repository
+        shell: bash
+        env:
+          PR_HEAD_REF: ${{ github.head_ref }}
+        run: |
+          set -euo pipefail
+          digest="$(sha256sum capture/aps-normalized.csv | cut -c1-16)"
+          target="data/evidence/aps-2026/post-confirmation-20261118-${digest}"
+          if test -d "$target"; then
+            echo "Immutable archive already exists: $target"
+            exit 0
+          fi
+          mkdir -p "$target"
+          cp capture/aps-raw.csv "$target/aps-raw.csv"
+          cp capture/aps-normalized.csv "$target/aps-normalized.csv"
+          cp capture/aps-id-diff.json "$target/aps-id-diff.json"
+          cp capture/acquired-at.txt "$target/acquired-at.txt"
+          cp capture/sha256.txt "$target/sha256.txt"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$target"
+          git commit -m 'Archive immutable official APS post-confirmation export and ID diff'
+          git push origin "HEAD:refs/heads/$PR_HEAD_REF"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: official-aps-18nov-capture-and-id-diff
+          path: capture/
+          retention-days: 90

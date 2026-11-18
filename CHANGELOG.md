@@ -1,3 +1,10 @@
+# v0.8.2 — 18 November 2026
+
+- Corrected ICANN's 17 November String Confirmation aggregates using its revised official announcement.
+- Archived the 18 November APS export and application-level comparison: .bit (INC2624T-T96235) changed from Active to Withdrawn; .cli remains Deactivated.
+- Dated the Atlas current-observation overlay and corrected obsolete October snapshot labels in four languages.
+- Preserved RR3, the frozen 17 November graph and the original v0.8.1 technical ZIP; published a separate versioned data pack.
+
 # v0.8.1 — 18 November 2026
 
 - Corrected the Reveal Day badge and gave dictionaries and application scripts content-sensitive cache keys.
