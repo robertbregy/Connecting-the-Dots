@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   verify:
@@ -87,6 +87,30 @@ jobs:
           report=json.load(open('capture/aps-id-diff.json',encoding='utf-8'))
           print('APS_COMPARISON:',json.dumps(report,ensure_ascii=False)[:12000])
           PY
+      - name: Archive independent raw APS observation on PR branch
+        if: success() && github.event.pull_request.head.repo.full_name == github.repository
+        shell: bash
+        env:
+          PR_HEAD_REF: ${{ github.head_ref }}
+        run: |
+          set -euo pipefail
+          digest="$(sha256sum capture/aps-normalized.csv | cut -c1-16)"
+          target="data/evidence/aps-2026/post-confirmation-20261118-${digest}"
+          if test -d "$target"; then
+            echo "Immutable archive already exists: $target"
+            exit 0
+          fi
+          mkdir -p "$target"
+          cp capture/aps-raw.csv "$target/aps-raw.csv"
+          cp capture/aps-normalized.csv "$target/aps-normalized.csv"
+          cp capture/aps-id-diff.json "$target/aps-id-diff.json"
+          cp capture/acquired-at.txt "$target/acquired-at.txt"
+          cp capture/sha256.txt "$target/sha256.txt"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$target"
+          git commit -m 'Archive immutable official APS post-confirmation export and ID diff'
+          git push origin "HEAD:refs/heads/$PR_HEAD_REF"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
