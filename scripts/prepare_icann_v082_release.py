@@ -62,5 +62,11 @@ def main():
     else:
         review=load(review_new)
         if review.get("publicationVersion")!="0.8.2":raise RuntimeError("Review belongs to another release")
+    readme_path=R/"README.md"
+    readme=readme_path.read_text(encoding="utf-8")
+    readme=readme.replace("# Connecting the Dots — v0.8.1","# Connecting the Dots — v0.8.2",1)
+    if "**v0.8.2 - 18 November 2026**" not in readme:
+        readme=readme.replace("## Current release\n","## Current release\n\n**v0.8.2 - 18 November 2026**\n\nThe new technical release records ICANN's revised String Confirmation announcement and the separately archived 18 November APS export. In the public CSV only .bit (INC2624T-T96235) changes from Active to Withdrawn; the historic 17 November graph is retained and the Atlas shows the later observation distinctly. Official APS Statistics still shows 11 withdrawals while 10 are identifiable in that CSV. RR3 and the previous v0.8.1 technical ZIP remain unchanged.\n\n## Previous technical release\n",1)
+    readme_path.write_text(readme,encoding="utf-8")
     print("ICANN_082_PREPARED",json.dumps({"publication":"0.8.2","frozen081":old_sha,"RR3":"unchanged"}))
 if __name__=="__main__":main()
