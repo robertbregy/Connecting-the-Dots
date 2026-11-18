@@ -9,6 +9,7 @@ on:
       - 'scripts/render_aps_application_atlas.py'
       - 'scripts/check_icann_20261118_correction.py'
       - 'scripts/prepare_icann_20261118_review.py'
+      - 'scripts/prepare_icann_v082_release.py'
       - 'docs/editorial-review-2026-11-18-v0.8.1.json'
       - 'docs/string-confirmation-day-2026-11-17-first-findings.md'
   workflow_dispatch:
@@ -31,6 +32,8 @@ jobs:
         with:
           node-version: '20'
           cache: npm
+      - name: Create separate v0.8.2 release metadata and pin v0.8.1 archive
+        run: python3 scripts/prepare_icann_v082_release.py
       - run: npm ci
       - name: Check correction provenance and four languages
         run: python3 scripts/check_icann_20261118_correction.py
@@ -69,13 +72,14 @@ jobs:
           PR_HEAD_REF: ${{ github.head_ref }}
         run: |
           set -euo pipefail
-          git add applications/it/index.html applications/en/index.html applications/de/index.html applications/fr/index.html docs/editorial-review-2026-11-18-v0.8.1.json
+          git add -u
+          git add docs/editorial-review-2026-11-18-v0.8.2.json downloads/connecting-the-dots-data-pack-v0.8.2.zip downloads/connecting-the-dots-data-pack-v0.8.2.sha256
           if git diff --cached --quiet; then
             echo 'Generated Atlas HTML is in sync.'
           else
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'Sync reviewed ICANN correction and four localized Atlas pages'
+            git commit -m 'Publish reviewed v0.8.2 candidate with frozen v0.8.1 archive'
             git push origin "HEAD:refs/heads/$PR_HEAD_REF"
           fi
 
