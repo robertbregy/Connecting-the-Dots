@@ -62,6 +62,19 @@ def main():
     else:
         review=load(review_new)
         if review.get("publicationVersion")!="0.8.2":raise RuntimeError("Review belongs to another release")
+    changelog_path=R/"CHANGELOG.md"
+    changelog=changelog_path.read_text(encoding="utf-8")
+    if not changelog.startswith("# v0.8.2"):
+        if not changelog.startswith("# v0.8.1"):
+            raise RuntimeError("Unexpected changelog heading")
+        latest=(
+            "# v0.8.2 — 18 November 2026\n\n"
+            "- Corrected ICANN's 17 November String Confirmation aggregates using its revised official announcement.\n"
+            "- Archived the 18 November APS export and application-level comparison: .bit (INC2624T-T96235) changed from Active to Withdrawn; .cli remains Deactivated.\n"
+            "- Dated the Atlas current-observation overlay and corrected obsolete October snapshot labels in four languages.\n"
+            "- Preserved RR3, the frozen 17 November graph and the original v0.8.1 technical ZIP; published a separate versioned data pack.\n\n"
+        )
+        changelog_path.write_text(latest+changelog,encoding="utf-8")
     readme_path=R/"README.md"
     readme=readme_path.read_text(encoding="utf-8")
     readme=readme.replace("# Connecting the Dots — v0.8.1","# Connecting the Dots — v0.8.2",1)
