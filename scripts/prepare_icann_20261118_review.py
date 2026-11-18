@@ -80,6 +80,24 @@ def main():
         ids = entry["rationaleIds"]
         if RATIONALE not in ids:
             ids.append(RATIONALE)
+    new_zip = ROOT / "downloads/connecting-the-dots-data-pack-v0.8.2.zip"
+    sidecar = new_zip.with_suffix(".sha256")
+    if not new_zip.exists() or not sidecar.exists():
+        raise RuntimeError("The new versioned technical ZIP and checksum are absent")
+    new_zip_sha = digest(new_zip)
+    if sidecar.read_text(encoding="utf-8").strip() != new_zip_sha + "  " + new_zip.name:
+        raise RuntimeError("New v0.8.2 technical checksum mismatch")
+    for candidate in (new_zip, sidecar):
+        relative = candidate.relative_to(ROOT).as_posix()
+        existing = report["files"].get(relative)
+        if existing and existing.get("sha256") != digest(candidate):
+            raise RuntimeError("Already-reviewed v0.8.2 package has changed: " + relative)
+        if not existing:
+            report["files"][relative] = {
+                "baselineSHA256": None,
+                "sha256": digest(candidate),
+                "rationaleIds": [RATIONALE]
+            }
     report["icann20261118Review"] = {
         "scope": "new v0.8.2 dated ICANN/APS correction; v0.8.1 and RR3 frozen",
         "originalReviewSHAsRetained": True,
