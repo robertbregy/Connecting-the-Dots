@@ -20,10 +20,10 @@ it:['Stato alla verifica documentata','Stato nella root alla verifica documentat
 de:['Status bei der dokumentierten Prüfung','Status in der Root-Zone bei der dokumentierten Prüfung','Datum der Statusprüfung'],
 fr:['Statut lors de la vérification documentée','Statut dans la racine lors de la vérification documentée','Date de vérification du statut']};
 const appDesc={
-en:'Explore the 1,614 published ICANN APS base applications in the archived 11 October 2026 export, with replacement rows kept distinct.',
-it:'Esplora le 1.614 candidature di base pubblicate nell’APS ICANN acquisito l’11 ottobre 2026, distinguendo i record di sostituzione.',
-de:'Erkunden Sie die 1.614 veröffentlichten Basisbewerbungen im ICANN-APS-Export vom 11. Oktober 2026; Ersatzzeilen bleiben getrennt.',
-fr:'Explorez les 1 614 candidatures de base publiées dans l’export APS ICANN du 11 octobre 2026, en distinguant les lignes de remplacement.'};
+en:'Explore 1,614 publicly listed base Application IDs in the official 17 November 2026 APS snapshot, with 152 selected replacements and a separately documented 18 November .bit withdrawal.',
+it:'Esplora 1.614 Application ID di base pubblicati nell’export APS del 17 novembre 2026, le 152 sostituzioni scelte e il ritiro di .bit documentato separatamente il 18 novembre.',
+de:'Erkunden Sie 1.614 veröffentlichte Basis-Application-IDs im APS-Snapshot vom 17. November 2026, 152 gewählte Ersatzzeichenfolgen und den separat dokumentierten Rückzug von .bit am 18. November.',
+fr:'Explorez 1 614 Application IDs de base publiés dans l’export APS du 17 novembre 2026, les 152 substitutions choisies et le retrait de .bit documenté séparément le 18 novembre.'};
 const readerDesc={
 en:'A 15-minute formative reader-study protocol to observe comprehension, curiosity and navigation friction. No participant results are claimed.',
 it:'Protocollo formativo di circa 15 minuti per osservare comprensione, curiosità e attriti di navigazione. Non vengono presentati risultati.',
@@ -85,6 +85,12 @@ const snapshot={
  de:['APS-Snapshot · 11. Oktober 2026','Die Bewerbungsdaten stammen aus dem am 11. Oktober 2026 erfassten öffentlichen APS-Export. Dieser Snapshot liegt vor dem String Confirmation Day (17. November), dem angekündigten Termin für bestätigte Zeichenfolgen und aktualisierte Contention Sets. Er belegt keine individuellen Bewertungsergebnisse.','Offizieller Zeitplan'],
  fr:['Instantané APS · 11 octobre 2026','Les données des candidatures proviennent de l’export public APS acquis le 11 octobre 2026. Cet instantané précède le String Confirmation Day (17 novembre), prévu pour la publication des chaînes confirmées et des ensembles de candidatures en concurrence actualisés. Il n’atteste aucun résultat individuel d’évaluation.','Calendrier officiel']
 };
+const atlasSnapshot={
+ en:['APS application snapshot · 17 November 2026','Application records are from the official APS export acquired on 17 November after String Confirmation Day. A separately archived 18 November observation documents the .bit withdrawal. The original snapshot remains preserved and evaluation outcomes cannot be inferred from missing fields.','Official APS applications'],
+ it:['Snapshot candidature APS · 17 novembre 2026','Le schede delle candidature provengono dall’export ufficiale APS acquisito il 17 novembre dopo lo String Confirmation Day. Un’osservazione separata del 18 novembre documenta il ritiro di .bit. La fotografia originale resta conservata; non si deducono esiti delle valutazioni da campi mancanti.','Candidature APS ufficiali'],
+ de:['APS-Bewerbungsstand · 17. November 2026','Die Bewerbungsdatensätze stammen aus dem offiziellen APS-Export vom 17. November nach dem String Confirmation Day. Eine getrennt archivierte Beobachtung vom 18. November dokumentiert den Rückzug von .bit. Der ursprüngliche Stand bleibt erhalten; fehlende Angaben belegen keine Bewertungsergebnisse.','Offizielle APS-Bewerbungen'],
+ fr:['Instantané des candidatures APS · 17 novembre 2026','Les fiches proviennent de l’export officiel APS du 17 novembre, après le String Confirmation Day. Une observation distincte archivée le 18 novembre documente le retrait de .bit. L’instantané original est conservé ; les champs manquants ne prouvent aucun résultat d’évaluation.','Candidatures APS officielles']
+};
 const milestoneUrl='https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en';
 const studyLinks={en:'Reader study: protocol and observation sheet',it:'Studio con i lettori: protocollo e scheda di osservazione',de:'Leserstudie: Protokoll und Beobachtungsbogen',fr:'Étude auprès des lecteurs : protocole et grille d’observation'};
 const studyNotes={en:'Formative research materials; no participant results have been collected.',it:'Materiali per uno studio formativo; non sono stati raccolti risultati da partecipanti.',de:'Materialien für eine formative Studie; es wurden noch keine Ergebnisse von Teilnehmenden erhoben.',fr:'Documents pour une étude formative ; aucun résultat de participants n’a été recueilli.'};
@@ -145,7 +151,9 @@ for(const r of [...new Set(pages)]){
  if(k&&description){src=social(src,description,canonical,title);src=pageDescription(src,description,canonical);}
  const roundPage=/^(applications|inside-the-round)\//.test(r)||/^economics\/(en|it|de|fr)\/(round-2026|portfolios)\//.test(r)||/^tlds\/(en|it|de|fr)\/lugano\//.test(r)||/^behind-the-round\/(en|it|de|fr)\/(index\.html|wdo-identity\/|replacement-strings\/|objectors-eoi\/|background-screening\/)/.test(r);
  if(roundPage&&!src.includes('class="roundStatus"')){
-  const text=snapshot[l],notice='<aside class="roundStatus" data-aps-snapshot="2026-10-11" aria-label="'+esc(text[0])+'"><strong>'+esc(text[0])+'</strong><p>'+esc(text[1])+' <a href="'+milestoneUrl+'">'+esc(text[2])+' ↗</a></p></aside>';
+  const isAtlas=/^applications\\/(en|it|de|fr)\\/index\\.html$/.test(r);
+  const text=isAtlas?atlasSnapshot[l]:snapshot[l],stamp=isAtlas?'2026-11-17':'2026-10-11',source=isAtlas?'https://newgtldprogram-aps.icann.org/applications':milestoneUrl;
+  const notice='<aside class="roundStatus" data-aps-snapshot="'+stamp+'" aria-label="'+esc(text[0])+'"><strong>'+esc(text[0])+'</strong><p>'+esc(text[1])+' <a href="'+source+'">'+esc(text[2])+' ↗</a></p></aside>';
   src=src.replace(/(<h1\b[^>]*>[\s\S]*?<\/h1>)/,(_m,h)=>h+'\n'+notice);
  }
  src=src.replace(/(<[^>]*\bid="aps-current-economics")(?![^>]*data-aps-snapshot)/, '$1 data-aps-snapshot="2026-10-11"');
