@@ -52,6 +52,9 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          persist-credentials: true
       - name: Capture current official APS export
         shell: bash
         run: |
