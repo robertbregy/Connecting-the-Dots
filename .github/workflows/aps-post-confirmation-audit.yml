@@ -1,0 +1,93 @@
+name: APS post-confirmation read-only capture
+on:
+  push:
+    branches:
+      - fix/icann-2026-11-18-reconciliation
+    paths:
+      - .github/workflows/aps-post-confirmation-audit.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capture-and-compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch official APS CSV as new independent observation
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p capture
+          date -u +%Y-%m-%dT%H:%M:%SZ > capture/acquired-at.txt
+          curl --fail --silent --show-error --location --retry 2 --max-time 90 \
+            -X POST 'https://newgtldprogram-aps.icann.org/aps/applications/export/csv' \
+            -H 'Content-Type: application/json' \
+            --data '{"searchAndFilter":{},"sort":{"field":"primaryString","direction":"ASC"},"pagination":{"pageNum":0,"pageSize":5000}}' \
+            -o capture/aps-raw.csv
+          test "$(wc -c < capture/aps-raw.csv)" -gt 500000
+          sha256sum capture/aps-raw.csv | tee capture/raw-sha256.txt
+      - name: Compare public application IDs and all fields
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import csv, io, json, hashlib
+          from pathlib import Path
+          from collections import Counter
+          archive=Path('data/applications_2026_aps_string_confirmation_20261117.csv')
+          raw=Path('capture/aps-raw.csv')
+          def parse(file, notice=False):
+              contents=file.read_text(encoding='utf-8-sig')
+              if notice:
+                  pos=contents.find('Priority,')
+                  if pos<0: raise RuntimeError('APS raw CSV header absent')
+                  contents=contents[pos:]
+              rd=csv.DictReader(io.StringIO(contents))
+              fields=rd.fieldnames or []
+              rows=list(rd)
+              if 'Application ID' not in fields or len(rows)<1500: raise RuntimeError('Malformed export')
+              ids=[r['Application ID'].strip() for r in rows]
+              if not all(ids) or len(set(ids))!=len(ids): raise RuntimeError('Duplicate or missing IDs')
+              return fields,{r['Application ID'].strip():r for r in rows}
+          oldfields,old=parse(archive)
+          newfields,new=parse(raw,True)
+          if oldfields!=newfields: raise RuntimeError('Schema changed; stop automatic comparison')
+          added=sorted(set(new)-set(old));removed=sorted(set(old)-set(new))
+          changes=[]
+          for aid in sorted(set(old)&set(new)):
+              fields={k:{'before':old[aid][k],'after':new[aid][k]} for k in oldfields if old[aid][k]!=new[aid][k]}
+              if fields: changes.append({'application_id':aid,'fields':fields})
+          canonical=lambda records:hashlib.sha256(json.dumps(
+              [[aid,[records[aid][k] for k in oldfields]] for aid in sorted(records)],
+              ensure_ascii=False,separators=(',',':')).encode()).hexdigest()
+          oldbase={k for k in old if not k.endswith('-R')}
+          newbase={k for k in new if not k.endswith('-R')}
+          selected=lambda records:sum(r['Application Status']=='Active' for aid,r in records.items() if aid.endswith('-R'))
+          report={'source':'https://newgtldprogram-aps.icann.org/aps/applications/export/csv',
+            'acquired_at_utc':Path('capture/acquired-at.txt').read_text().strip(),
+            'baseline_source':'data/applications_2026_aps_string_confirmation_20261117.csv',
+            'baseline_acquired_at_utc':'2026-11-17T18:30:10Z',
+            'baseline_sha256':hashlib.sha256(archive.read_bytes()).hexdigest(),
+            'new_raw_sha256':hashlib.sha256(raw.read_bytes()).hexdigest(),
+            'canonical_old_sha256':canonical(old),'canonical_new_sha256':canonical(new),
+            'canonical_equal':canonical(old)==canonical(new),
+            'before':{'rows':len(old),'base_ids':len(oldbase),'replacement_rows':len(old)-len(oldbase),'selected_replacement_rows':selected(old),'status':dict(Counter(r['Application Status'] for r in old.values()))},
+            'after':{'rows':len(new),'base_ids':len(newbase),'replacement_rows':len(new)-len(newbase),'selected_replacement_rows':selected(new),'status':dict(Counter(r['Application Status'] for r in new.values()))},
+            'added_record_ids':added,'removed_record_ids':removed,
+            'added_base_ids':sorted(newbase-oldbase),'removed_base_ids':sorted(oldbase-newbase),
+            'changed_record_count':len(changes),
+            'changed_application_ids':sorted({x['application_id'][:-2] if x['application_id'].endswith('-R') else x['application_id'] for x in changes}),
+            'changes':changes,'interpretation':'Absence of a public record is not proof of a withdrawal; raw CSV fields and ID-based diff only.'}
+          Path('capture/diff.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n')
+          print('APS_DIFF_SUMMARY',json.dumps({k:v for k,v in report.items() if k!='changes'},ensure_ascii=False))
+          print('APS_DIFF_CHANGES',json.dumps(changes[:30],ensure_ascii=False))
+          PY
+      - name: Preserve evidence as run artifact (no repository write)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: aps-post-confirmation-raw-and-diff
+          path: capture/
+          retention-days: 90
