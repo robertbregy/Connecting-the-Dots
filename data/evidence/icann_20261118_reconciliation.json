@@ -89,10 +89,43 @@
   "evidenceStatus": {
     "revisedAnnouncement": "official page verified 2026-11-18",
     "apsStatistics": "official page verified 2026-11-18",
-    "freshCSVDownloaded": false,
-    "applicationIDsChanged": null,
-    "newCSVChecksumSHA256": null,
-    "reason": "No comparable newly captured official export available in this pass; existing frozen export SHA-256 and application data must not be replaced on the basis of statistics alone."
+    "freshCSVDownloaded": true,
+    "applicationIDsChanged": [
+      "INC2624T-T96235"
+    ],
+    "newCSVChecksumSHA256": "79f06ea388bcb8ba8e4b363c77d1a6d4dc8f30fcc6d115fae06a1174c5594c10",
+    "reason": "Fresh official raw CSV preserved with independent digest and one validated per-Application-ID field change; historical 17 Nov export and research snapshots remain immutable.",
+    "newCSVRawSHA256": "a4ae3e351cce9c3b772de26af62b9a02fc6c938ce4d741bcd9cd6bc047e10e87",
+    "newCSVArchive": "data/evidence/aps-2026/post-confirmation-20261118-79f06ea388bcb8ba/aps-normalized.csv",
+    "newCSVRawArchive": "data/evidence/aps-2026/post-confirmation-20261118-79f06ea388bcb8ba/aps-raw.csv",
+    "idDiffArchive": "data/evidence/aps-2026/post-confirmation-20261118-79f06ea388bcb8ba/aps-id-diff.json",
+    "observedChange": {
+      "applicationID": "INC2624T-T96235",
+      "primaryString": "bit",
+      "applicant": "Internet Naming Company",
+      "field": "Application Status",
+      "before": "Active",
+      "after": "Withdrawn",
+      "replacementRecordID": "INC2624T-T96235-R",
+      "replacementString": "cli",
+      "replacementStatus": "Deactivated"
+    },
+    "before": {
+      "sourceCapturedAtUTC": "2026-11-17T18:30:10Z",
+      "publishedApplications": 1614,
+      "activeBase": 1453,
+      "deactivatedBase": 152,
+      "withdrawnBase": 9
+    },
+    "after": {
+      "publishedApplications": 1614,
+      "activeBase": 1452,
+      "deactivatedBase": 152,
+      "withdrawnBase": 10,
+      "exportRows": 2783,
+      "replacementRows": 1169
+    },
+    "statisticsDisagreement": "APS Statistics publication 18 Nov 07:39 UTC reports 11 Withdrawn while separately acquired later CSV includes 10 published withdrawn base records. Do not impute an unidentified application."
   },
   "editorialPolicy": "This observation supplements but does not rewrite the 17 November archived snapshot, historical CSV, RR3 or the application graph. Do not promote current APS totals to application-level changes without verified Application IDs."
 }
