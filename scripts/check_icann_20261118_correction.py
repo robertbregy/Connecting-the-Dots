@@ -46,8 +46,25 @@ def check():
     assert observed["active"] == latest["active"] - prev["activeApplications"]
     assert observed["withdrawn"] == latest["withdrawn"] - prev["withdrawnApplications"]
     assert observed["totalApplications"] == latest["totalApplications"] - prev["totalApplications"]
-    assert evidence["evidenceStatus"]["freshCSVDownloaded"] is False
-    assert evidence["evidenceStatus"]["applicationIDsChanged"] is None
+    status=evidence["evidenceStatus"]
+    assert status["freshCSVDownloaded"] is True
+    assert status["applicationIDsChanged"] == ["INC2624T-T96235"]
+    assert status["newCSVChecksumSHA256"] == "79f06ea388bcb8ba8e4b363c77d1a6d4dc8f30fcc6d115fae06a1174c5594c10"
+    assert status["observedChange"]["before"] == "Active"
+    assert status["observedChange"]["after"] == "Withdrawn"
+    from hashlib import sha256
+    for filename, digest in (("newCSVArchive", status["newCSVChecksumSHA256"]),
+                              ("newCSVRawArchive", status["newCSVRawSHA256"])):
+        actual=sha256((ROOT/status[filename]).read_bytes()).hexdigest()
+        assert actual == digest, ("APS archived export integrity",filename)
+    diff=load(ROOT/status["idDiffArchive"])
+    assert diff["change_counts"] == {"base_record_field_changed":1}
+    assert len(diff["changes"]) == 1
+    assert diff["changes"][0]["application_id"] == "INC2624T-T96235"
+    assert diff["changes"][0]["field"] == "Application Status"
+    js=(ROOT/"assets/aps-atlas.js").read_text(encoding="utf-8")
+    assert "const laterObservations=new Map" in js and "INC2624T-T96235" in js
+    assert "statusOf(a)" in js and "laterNote(a)" in js
     assert editorial["sourceEvidence"] == "data/evidence/icann_20261118_reconciliation.json"
     for lang in ("it", "en", "de", "fr"):
         strings = editorial["translations"][lang]
