@@ -1,0 +1,33 @@
+name: ICANN 2026 correction verification
+on:
+  pull_request:
+    paths:
+      - 'data/evidence/icann_20261118_reconciliation.json'
+      - 'data/atlas_2026_correction_editorial.json'
+      - 'applications/**'
+      - 'scripts/render_aps_application_atlas.py'
+      - 'scripts/check_icann_20261118_correction.py'
+      - 'docs/string-confirmation-day-2026-11-17-first-findings.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check correction provenance and four languages
+        run: python3 scripts/check_icann_20261118_correction.py
+      - name: Rebuild static site
+        run: python3 build.py
+      - name: Check release invariants
+        run: python3 scripts/release_check.py
+      - name: Verify generated Atlas remains reproducible
+        run: |
+          python3 scripts/check_icann_20261118_correction.py
+          git diff --exit-code -- applications/it/index.html applications/en/index.html applications/de/index.html applications/fr/index.html
