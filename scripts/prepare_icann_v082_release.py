@@ -23,6 +23,11 @@ def main():
     meta.update(version="0.8.2",currentDataPackVersion="0.8.2",currentDataPackPath="downloads/connecting-the-dots-data-pack-v0.8.2.zip",editorialReviewPath="docs/editorial-review-2026-11-18-v0.8.2.json",technicalAsOf="2026-11-18")
     save(pub,meta)
     package=R/"package.json"; pkg=load(package);pkg["version"]="0.8.2";save(package,pkg)
+    lockfile=R/"package-lock.json"
+    lock=load(lockfile)
+    lock["version"]="0.8.2"
+    if "" in lock.get("packages",{}):lock["packages"][""]["version"]="0.8.2"
+    save(lockfile,lock)
     frozen_path=D/"frozen_technical_packages.json";frozen=load(frozen_path)
     key="downloads/connecting-the-dots-data-pack-v0.8.1.zip"
     if key in frozen["files"] and frozen["files"][key]!=old_sha:raise RuntimeError("Archived hash mismatch")
