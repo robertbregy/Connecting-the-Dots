@@ -43,6 +43,46 @@ TITLE = ("Verified 18 November ICANN/APS correction; one application-level "
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
+def permitted(path):
+    """Limit review refresh to 0.8.2 release metadata and generated surfaces."""
+    direct = {
+        "README.md", "CHANGELOG.md", "publication.json", "package.json",
+        "package-lock.json", "agent-catalog.json", "llms.txt", "index.html",
+        "src/index.web.html", "assets/aps-atlas.js", "assets/editorial-shared.css",
+        "scripts/render_aps_application_atlas.py",
+        "scripts/audit_remediation_v07108.cjs", "scripts/audit_v07108_qa.cjs",
+        "docs/string-confirmation-day-2026-11-17-first-findings.md",
+        "docs/reader-first-structure.json",
+        "research/README.md", "research/research_release_manifest.json",
+        "research/connecting-the-dots-working-paper-v1.html",
+    }
+    if path in direct: return True
+    if path.startswith("data/evidence/") or path.startswith("data/applications_2026_"):
+        return False
+    if path.startswith("data/"):
+        filename = path.removeprefix("data/")
+        allowed = {
+            "data_bundle.js","economics-preservation.json","frozen_technical_packages.json",
+            "i18n_bundle.js","manifest.json","publication.js","release_history.json",
+            "site_bundle.js","translations.json",
+        }
+        return filename in allowed or (
+            filename.startswith("explorer_profiles_") and filename.endswith(".js")
+        ) or (
+            filename.startswith("i18n_") and filename.endswith(".js")
+        )
+    for folder in (
+        "applications/","behind-the-round/","discovery/","economics/",
+        "explorer/","guides/","inside-the-round/","tlds/"
+    ):
+        if path.startswith(folder):
+            return path.endswith((".html",".md",".json"))
+    if path.startswith(("de/","en/","fr/","it/")):
+        return path.endswith("/index.html")
+    if path.startswith("research/"):
+        return path.endswith("/index.html")
+    return False
+
 def main():
     report = json.loads(REVIEW.read_text(encoding="utf-8"))
     evidence = json.loads(EVIDENCE.read_text(encoding="utf-8"))
@@ -63,14 +103,22 @@ def main():
             if actual != entry["sha256"]:
                 unmatched.append(filepath)
     print("ICANN_PRE_REVIEW_DRIFT", json.dumps(unmatched, ensure_ascii=False))
+    unexpected = [path for path in unmatched if not permitted(path)]
+    if unexpected:
+        raise RuntimeError("Version bump generated unexpected files requiring separate review: " +
+                           ", ".join(unexpected))
+    selected = sorted(set(unmatched) | set(PATHS))
     prior = report.get("icann20261118Review", {}).get("priorSHA256", {})
-    if prior and set(prior) != set(PATHS):
-        raise RuntimeError("Review addendum scope changed")
+    if prior and not set(unmatched).issubset(set(prior)):
+        raise RuntimeError("New unreviewed drift after prior v0.8.2 review")
     if not prior:
-        prior = {path: report["files"][path]["sha256"] for path in PATHS}
-    report["rationales"][RATIONALE] = TITLE
+        prior = {path: report["files"][path]["sha256"] for path in selected}
+    report["rationales"][RATIONALE] = TITLE + (
+        " The distinct version stamps all regenerated public pages and delivery "
+        "bundles; the preexisting reviewed fingerprints remain in priorSHA256."
+    )
     changes = {}
-    for path in PATHS:
+    for path in selected:
         entry = report["files"].get(path)
         if entry is None:
             raise RuntimeError("Unreviewed path outside approved baseline: " + path)
@@ -103,6 +151,7 @@ def main():
     report["icann20261118Review"] = {
         "scope": "new v0.8.2 dated ICANN/APS correction; v0.8.1 and RR3 frozen",
         "originalReviewSHAsRetained": True,
+        "validatedGeneratedDriftCount": len(unmatched),
         "priorSHA256": prior,
         "changedFilesThisRun": changes,
         "officialSourceEvidence": "data/evidence/icann_20261118_reconciliation.json",
@@ -117,7 +166,7 @@ def main():
         ]
     }
     REVIEW.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("ICANN_REVIEW_ADDENDUM_OK", json.dumps({"paths":len(PATHS),"changed":list(changes)},ensure_ascii=False))
+    print("ICANN_REVIEW_ADDENDUM_OK", json.dumps({"paths":len(selected),"changed":list(changes)},ensure_ascii=False))
 
 if __name__ == "__main__":
     main()
