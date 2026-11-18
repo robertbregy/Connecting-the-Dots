@@ -46,3 +46,50 @@ jobs:
               assert 'icann_20261118_reconciliation.json' in html
           print('PASS: four reconstructed Atlas pages preserve correction, navigation and search')
           PY
+
+  capture-aps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Capture current official APS export
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p capture
+          date -u +%Y-%m-%dT%H:%M:%SZ > capture/acquired-at.txt
+          curl --fail --silent --show-error --location --retry 2 --max-time 90 \
+            -X POST 'https://newgtldprogram-aps.icann.org/aps/applications/export/csv' \
+            -H 'Content-Type: application/json' \
+            --data '{"searchAndFilter":{},"sort":{"field":"primaryString","direction":"ASC"},"pagination":{"pageNum":0,"pageSize":5000}}' \
+            -o capture/aps-raw.csv
+          python3 - <<'PY'
+          from pathlib import Path
+          import csv,io
+          text=Path('capture/aps-raw.csv').read_text(encoding='utf-8-sig')
+          pos=text.find('Priority,')
+          if pos<0:raise SystemExit('Official APS header not found; do not treat as empty file')
+          normalized=text[pos:].replace('\r\n','\n').replace('\r','\n')
+          rows=list(csv.DictReader(io.StringIO(normalized)))
+          if len(rows)<1500:raise SystemExit('Unexpected APS CSV size; reject incomplete export')
+          Path('capture/aps-normalized.csv').write_text(normalized,encoding='utf-8')
+          print('Official CSV rows:',len(rows))
+          PY
+          sha256sum capture/aps-raw.csv capture/aps-normalized.csv > capture/sha256.txt
+      - name: Application ID-level diff against 17 November capture
+        run: |
+          python3 scripts/aps_observatory.py compare \
+            --before data/applications_2026_aps_string_confirmation_20261117.csv \
+            --after capture/aps-normalized.csv \
+            --output capture/aps-id-diff.json
+          python3 - <<'PY'
+          import json
+          report=json.load(open('capture/aps-id-diff.json',encoding='utf-8'))
+          print('APS_COMPARISON:',json.dumps(report,ensure_ascii=False)[:12000])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: official-aps-18nov-capture-and-id-diff
+          path: capture/
+          retention-days: 90
