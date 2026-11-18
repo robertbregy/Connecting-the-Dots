@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/cities/ | Site edition: 0.8.1 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/cities/ | Site edition: 0.8.2 | Language: de -->
 
 Leitfaden
 
@@ -167,6 +167,6 @@ FAKT EINORDNUNG
 
 Chronologie und belegten Status lesen →
 
-**Von Robert Bregy** · Ausgabe der Website 0.8.1 · 18. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.8.2 · 18. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

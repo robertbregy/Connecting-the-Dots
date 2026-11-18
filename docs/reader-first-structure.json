@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "native": [
     {
       "file": "en/index.html",
@@ -2339,25 +2339,25 @@
       "file": "applications/de/index.html",
       "lang": "de",
       "area": "ia-explore",
-      "retainedExistingIds": 15
+      "retainedExistingIds": 16
     },
     {
       "file": "applications/en/index.html",
       "lang": "en",
       "area": "ia-explore",
-      "retainedExistingIds": 15
+      "retainedExistingIds": 16
     },
     {
       "file": "applications/fr/index.html",
       "lang": "fr",
       "area": "ia-explore",
-      "retainedExistingIds": 15
+      "retainedExistingIds": 16
     },
     {
       "file": "applications/it/index.html",
       "lang": "it",
       "area": "ia-explore",
-      "retainedExistingIds": 15
+      "retainedExistingIds": 16
     },
     {
       "file": "behind-the-round/de/background-screening/index.html",

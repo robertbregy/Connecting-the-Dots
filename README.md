@@ -1,4 +1,4 @@
-# Connecting the Dots — v0.8.1
+# Connecting the Dots — v0.8.2
 
 **v0.8.1 · 18 November 2026.** Post-publication audit corrections for dates, citations, accessibility and technical downloads.
 
@@ -17,6 +17,12 @@ An append-only, machine-readable [reconciliation record](data/evidence/icann_202
 **18 November follow-up:** an additional raw ICANN APS export is now [archived with SHA-256 and Application ID-level diff](data/evidence/aps-2026/post-confirmation-20261118-79f06ea388bcb8ba/aps-id-diff.json). It records one changed base application: `.bit` / `INC2624T-T96235` / Internet Naming Company, `Active` → `Withdrawn`; its `.cli` alternative remains `Deactivated`. The new CSV contains 10 withdrawn published base records, while the separately timestamped APS Statistics shows 11. Atlas cards use a dated overlay for this one identified status; the historic 17 November graph remains frozen. The corrected ICANN announcement resolves the earlier four-unit announcement-versus-APS aggregate mismatch for the 17 November snapshot, but does not reconcile the different historical 1,616 paid / 1,615 Reveal / 1,614 publicly listed base-ID counts.
 
 ## Current release
+
+**v0.8.2 - 18 November 2026**
+
+The new technical release records ICANN's revised String Confirmation announcement and the separately archived 18 November APS export. In the public CSV only .bit (INC2624T-T96235) changes from Active to Withdrawn; the historic 17 November graph is retained and the Atlas shows the later observation distinctly. Official APS Statistics still shows 11 withdrawals while 10 are identifiable in that CSV. RR3 and the previous v0.8.1 technical ZIP remain unchanged.
+
+## Previous technical release
 
 **v0.8.1 - 18 November 2026**
 

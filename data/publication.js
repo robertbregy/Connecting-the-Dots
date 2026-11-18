@@ -1,6 +1,6 @@
 /* generated from publication.json; do not edit by hand */
 window.DOT_PUBLICATION={
-  version:'0.8.1',
+  version:'0.8.2',
   releasedOn:'2026-11-18',
   state:'string-confirmation',
   freeze:true,
@@ -16,8 +16,8 @@ window.DOT_PUBLICATION={
   sourceReviewCommit:'6268ae60bfedd988c00be0cbb85cd126d151c17e',
   buildProvenanceRole:'source review commit used for deterministic regeneration; not the published merge commit',
   dataPackageVersion:'0.7.58',
-  currentDataPackVersion:'0.8.1',
-  currentDataPackPath:'downloads/connecting-the-dots-data-pack-v0.8.1.zip',
+  currentDataPackVersion:'0.8.2',
+  currentDataPackPath:'downloads/connecting-the-dots-data-pack-v0.8.2.zip',
   doi:'10.5281/zenodo.24325521',
   doiUrl:'https://doi.org/10.5281/zenodo.24325521',
   conceptDoi:'10.5281/zenodo.23262622',

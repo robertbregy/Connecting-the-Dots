@@ -2643,7 +2643,8 @@
     "field17ReplacementRevision": "17 November 2026 · final replacement-choice reconciliation",
     "field17TimingBody": "Later observation, kept separate: Statistics published at 20:09 UTC show 1,605 Active and ten Withdrawn. The public CSV checked at 20:38 UTC is still byte-identical to the 18:30 capture, with 1,605 Active and nine Withdrawn public records. The surfaces are not synchronized; this export does not identify the tenth withdrawal. The Atlas retains its explicitly timed snapshot and the earlier four-unit comparison is not recalculated from mixed times.",
     "field17SourceLaterRecheck": "Project · timed Statistics/export recheck",
-    "release0801": "Technical audit fixes: corrected milestone dates and citations, improved Research accessibility, protected prior data packs and recorded the IANA root comparison."
+    "release0801": "Technical audit fixes: corrected milestone dates and citations, improved Research accessibility, protected prior data packs and recorded the IANA root comparison.",
+    "release0802": "Corrected 17 November ICANN announcement and 18 November APS observation: .bit changed from Active to Withdrawn, with dated sources and frozen historic snapshots and RR3 preserved."
   },
   "it": {
     "brand": "Brand",
@@ -5289,7 +5290,8 @@
     "field17ReplacementRevision": "17 novembre 2026 · riconciliazione finale delle scelte replacement",
     "field17TimingBody": "Osservazione successiva, tenuta distinta: le statistiche pubblicate alle 20:09 UTC indicano 1.605 candidature attive e dieci ritirate. Il CSV pubblico ricontrollato alle 20:38 UTC è ancora identico al file delle 18:30, con 1.605 record attivi e nove ritirati. Le fonti non sono sincronizzate e questo export non identifica il decimo ritiro. L'Atlas conserva lo snapshot con il suo orario; lo scarto iniziale di quattro non viene ricalcolato mescolando momenti diversi.",
     "field17SourceLaterRecheck": "Progetto · verifica datata di statistiche ed export",
-    "release0801": "Correzioni dell’audit tecnico: date dei traguardi e citazioni allineate, Ricerca più accessibile, pacchetti storici protetti e confronto della root IANA documentato."
+    "release0801": "Correzioni dell’audit tecnico: date dei traguardi e citazioni allineate, Ricerca più accessibile, pacchetti storici protetti e confronto della root IANA documentato.",
+    "release0802": "Rettifica del comunicato ICANN del 17 novembre e osservazione APS del 18 novembre: stato .bit aggiornato da Active a Withdrawn, fonti e snapshot separati; dati storici e RR3 conservati."
   },
   "de": {
     "brand": "Marke",
@@ -7935,7 +7937,8 @@
     "field17ReplacementRevision": "17. November 2026 · finale Abstimmung der Ersatzstring-Auswahl",
     "field17TimingBody": "Gesonderte spätere Beobachtung: Die um 20:09 UTC veröffentlichte Statistik nennt 1.605 aktive und zehn zurückgezogene Anträge. Das um 20:38 UTC erneut geprüfte öffentliche CSV ist weiterhin bytegleich mit der Aufnahme von 18:30 UTC und enthält 1.605 aktive sowie neun zurückgezogene Datensätze. Die Quellen sind nicht synchron; der zehnte Rückzug lässt sich aus diesem Export nicht identifizieren. Der Atlas behält den datierten Snapshot; die frühere Vierer-Differenz wird nicht aus verschiedenen Zeitständen neu berechnet.",
     "field17SourceLaterRecheck": "Projekt · datierter Statistik-/Export-Abgleich",
-    "release0801": "Technische Auditkorrekturen: berichtigte Meilensteindaten und Zitate, barriereärmere Forschungsseiten, geschützte frühere Datenpakete und dokumentierter IANA-Root-Abgleich."
+    "release0801": "Technische Auditkorrekturen: berichtigte Meilensteindaten und Zitate, barriereärmere Forschungsseiten, geschützte frühere Datenpakete und dokumentierter IANA-Root-Abgleich.",
+    "release0802": "Korrektur der ICANN-Mitteilung vom 17. November und APS-Beobachtung vom 18. November: .bit von Active auf Withdrawn geändert. Quellen, historische Datensätze und RR3 bleiben getrennt erhalten."
   },
   "fr": {
     "brand": "Marque",
@@ -10581,6 +10584,7 @@
     "field17ReplacementRevision": "17 novembre 2026 · rapprochement final des choix de remplacement",
     "field17TimingBody": "Observation ultérieure distincte : les statistiques publiées à 20:09 UTC indiquent 1 605 candidatures actives et dix retraits. Le CSV public vérifié à 20:38 UTC est toujours identique au fichier capturé à 18:30, avec 1 605 enregistrements actifs et neuf retraits. Les sources ne sont pas synchronisées et cet export ne permet pas d'identifier le dixième retrait. L'Atlas conserve son instantané daté ; l'écart initial de quatre n'est pas recalculé en mélangeant les horaires.",
     "field17SourceLaterRecheck": "Projet · vérification datée statistiques/export",
-    "release0801": "Corrections de l’audit technique : dates et citations rectifiées, pages Recherche plus accessibles, archives techniques protégées et comparaison de la racine IANA documentée."
+    "release0801": "Corrections de l’audit technique : dates et citations rectifiées, pages Recherche plus accessibles, archives techniques protégées et comparaison de la racine IANA documentée.",
+    "release0802": "Correction de l’annonce ICANN du 17 novembre et relevé APS du 18 novembre : .bit passe de Active à Withdrawn, avec sources datées et conservation des archives et de RR3."
   }
 }
