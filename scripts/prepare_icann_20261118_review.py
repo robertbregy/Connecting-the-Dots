@@ -17,6 +17,7 @@ PATHS = (
     "README.md",
     "publication.json",
     "package.json",
+    "package-lock.json",
     "data/publication.js",
     "data/release_history.json",
     "data/translations.json",
