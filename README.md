@@ -8,6 +8,12 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 
 Current scientific release: [RR3 · String Confirmation 2026](https://doi.org/10.5281/zenodo.24325521).
 
+## Official ICANN correction watch · 18 November 2026
+
+The 17 November String Confirmation announcement has a revised official version. It changes the reported proceeding applications from 1,610 to 1,606, eligible replacement applications from 287 to 442, initial contention sets from 262 to 263, initial applications in contention from 885 to 891, and confirmed applications in contention from 709 to 705. The 152 selected replacements and 226 confirmed contention sets are unchanged. Separately, APS Statistics published 18 November 07:39 UTC reports 1,604 active and 11 withdrawn applications, versus 1,605 active and 10 withdrawn in its 17 November 20:09 UTC publication. These are **different reference times** and must not be combined into one fictitious application-level snapshot.
+
+An append-only, machine-readable [reconciliation record](data/evidence/icann_20261118_reconciliation.json) preserves source URLs, publication clocks, exact aggregate changes and outstanding uncertainties. The 17 November archived APS export, application-level Atlas, RR3 and earlier releases remain intact until a comparable new official application export has been acquired and its Application IDs verified. In particular, this aggregate correction does **not** identify withdrawn applications, prove new replacement choices, or resolve the historic paid/Reveal/export count differences. ICANN's corrected prose also describes 36 fewer contention sets although its displayed 263 and 226 imply 37; this remains attributed to the source rather than silently reconciled.
+
 ## Current release
 
 **v0.8.1 - 18 November 2026**
