@@ -32,8 +32,10 @@ jobs:
       - run: npm ci
       - name: Check correction provenance and four languages
         run: python3 scripts/check_icann_20261118_correction.py
-      - name: Validate Atlas JavaScript syntax
-        run: node --check assets/aps-atlas.js
+      - name: Validate Atlas and audit renderer JavaScript syntax
+        run: |
+          node --check assets/aps-atlas.js
+          node --check scripts/audit_remediation_v07108.cjs
       - name: Rebuild static site
         run: python3 build.py
       - name: Check release invariants
@@ -48,6 +50,8 @@ jobs:
               assert html.count('id="apsCorrectionHeading"') == 1
               assert html.count('href="#apsCorrectionHeading"') == 1
               assert 'id="aps-results"' in html
+              assert 'data-aps-snapshot="2026-11-17"' in html, lang
+              assert 'data-aps-snapshot="2026-10-11"' not in html, lang
               assert 'icann_20261118_reconciliation.json' in html
           print('PASS: four reconstructed Atlas pages preserve correction, navigation and search')
           PY
