@@ -103,6 +103,9 @@ def main():
             if actual != entry["sha256"]:
                 unmatched.append(filepath)
     print("ICANN_PRE_REVIEW_DRIFT", json.dumps(unmatched, ensure_ascii=False))
+    if not unmatched and report.get("icann20261118Review",{}).get("applicationIDChange",{}).get("applicationID") == "INC2624T-T96235":
+        print("ICANN_REVIEW_ALREADY_PINNED", json.dumps({"files":len(report["files"])}))
+        return
     unexpected = [path for path in unmatched if not permitted(path)]
     if unexpected:
         raise RuntimeError("Version bump generated unexpected files requiring separate review: " +
