@@ -19,6 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          persist-credentials: true
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -29,6 +32,8 @@ jobs:
       - run: npm ci
       - name: Check correction provenance and four languages
         run: python3 scripts/check_icann_20261118_correction.py
+      - name: Validate Atlas JavaScript syntax
+        run: node --check assets/aps-atlas.js
       - name: Rebuild static site
         run: python3 build.py
       - name: Check release invariants
@@ -46,6 +51,22 @@ jobs:
               assert 'icann_20261118_reconciliation.json' in html
           print('PASS: four reconstructed Atlas pages preserve correction, navigation and search')
           PY
+      - name: Keep committed Atlas HTML in sync with deterministic build
+        if: success() && github.event.pull_request.head.repo.full_name == github.repository
+        shell: bash
+        env:
+          PR_HEAD_REF: ${{ github.head_ref }}
+        run: |
+          set -euo pipefail
+          git add applications/it/index.html applications/en/index.html applications/de/index.html applications/fr/index.html
+          if git diff --cached --quiet; then
+            echo 'Generated Atlas HTML is in sync.'
+          else
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Sync four localized Atlas pages from validated build'
+            git push origin "HEAD:refs/heads/$PR_HEAD_REF"
+          fi
 
   capture-aps:
     runs-on: ubuntu-latest
