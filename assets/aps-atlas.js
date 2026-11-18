@@ -19,6 +19,25 @@ if(!corpus||!Array.isArray(corpus.apps)||corpus.apps.length!==1614){
  output.textContent=t('apsAtlasError');more.hidden=true;return;
 }
 const all=corpus.apps;
+// An append-only post-confirmation observation overlays, but never rewrites,
+// the frozen 17 November application graph. See official raw CSV and diff:
+// data/evidence/aps-2026/post-confirmation-20261118-79f06ea388bcb8ba/
+const laterObservations=new Map([['INC2624T-T96235',{
+ before:'Active',after:'Withdrawn',observed:'2026-11-18',
+ source:'https://newgtldprogram-aps.icann.org/applications/INC2624T-T96235/summary'
+}]]);
+const statusOf=a=>laterObservations.get(a.id)?.after||a.status;
+const laterNote=a=>{
+ const change=laterObservations.get(a.id);
+ if(!change)return '';
+ const localized={
+  it:'Osservazione successiva (18 novembre 2026): stato Active → Withdrawn nel nuovo export APS. La scheda storica del 17 novembre resta conservata.',
+  en:'Later observation (18 November 2026): status Active → Withdrawn in the new APS export. The 17 November historical record remains preserved.',
+  de:'Spätere Beobachtung (18. November 2026): Status Active → Withdrawn im neuen APS-Export. Der historische Stand vom 17. November bleibt erhalten.',
+  fr:'Observation ultérieure (18 novembre 2026) : statut Active → Withdrawn dans le nouvel export APS. Le relevé historique du 17 novembre est conservé.'
+ };
+ return '<p class="apsMiniNote">'+escape(localized[lang]||localized.en)+' <a href="'+escape(change.source)+'" target="_blank" rel="noopener noreferrer">APS ↗</a></p>';
+};
 const native=!!document.getElementById('aps-native');
 const cardHeading=native?'h4':'h3';
 const stateKeys=native?{query:'aps_q',type:'aps_type',role:'aps_role',region:'aps_region',id:'application'}:
@@ -53,7 +72,7 @@ function saveState(){
 restoreState();
 const indexes=new Map(all.map(a=>[a.id,a]));
 const matcher=a=>normal([
- a.id,a.primary,a.primaryUnicode,a.originalPrimary,a.originalPrimaryUnicode,a.applicant,a.location,a.region,a.type,a.status,
+ a.id,a.primary,a.primaryUnicode,a.originalPrimary,a.originalPrimaryUnicode,a.applicant,a.location,a.region,a.type,statusOf(a),
  ...(a.types||[]),...(a.flags||[]),
  a.replacement?.id,a.replacement?.string,a.replacement?.unicode,a.replacement?.status,
  ...(a.variants||[]).flatMap(v=>[v.ascii,v.unicode])
@@ -103,17 +122,18 @@ function item(a){
   '<div class="apsCardHead"><div><'+cardHeading+' class="apsCardString"><bdi>.'+escape(a.primary)+'</bdi>'+
   (a.primaryUnicode?'<small lang="und">'+escape(a.primaryUnicode)+'</small>':'')+'</'+cardHeading+'>'+
   '<div class="apsApplicant">'+escape(a.applicant)+'</div></div><div class="apsCardSide">'+
-  pill(a.status,'apsState')+identifier+'</div></div>'+
+  pill(statusOf(a),'apsState')+identifier+'</div></div>'+
   '<div class="apsCardMeta">'+pill(a.region)+pill(a.location)+typeTags+exact+
    (replacement?pill(t('apsAtlasHasReplacement')):'')+
    (a.variantOnlyExistingTld?pill(t('apsAtlasExistingVariant')):'')+'</div>'+
   '<details class="apsCardDetails" '+(directId===a.id||expandedIds.has(a.id)?'open':'')+'><summary>'+escape(t('apsAtlasDetails'))+'</summary>'+
   '<dl class="apsFacts"><dt>'+escape(t('apsAtlasApplicationId'))+'</dt><dd>'+escape(a.id)+'</dd>'+
   '<dt>'+escape(t('apsAtlasApplicant'))+'</dt><dd>'+escape(a.applicant)+'</dd>'+
-  '<dt>'+escape(t('apsAtlasBaseStatus'))+'</dt><dd>'+escape(a.status)+'</dd>'+
+  '<dt>'+escape(t('apsAtlasBaseStatus'))+'</dt><dd>'+escape(statusOf(a))+'</dd>'+
   '<dt>'+escape(t('apsAtlasProcessingStage'))+'</dt><dd>'+escape(a.stage)+'</dd>'+
   '<dt>'+escape(t('apsAtlasTypes'))+'</dt><dd>'+escape(a.type)+'; '+escape(a.types.join(', ')||t('apsAtlasNone'))+'</dd></dl>'+
   replacements+variants+
+  laterNote(a)+
   '<p class="apsMiniNote">'+escape(t('apsAtlasObservedStatusNote'))+'</p>'+
   '<div class="apsCardLinks">'+
   '<a href="'+escape(direct)+'" target="_blank" rel="noopener">'+escape(t('apsAtlasPublicDetail'))+' ↗</a>'+
