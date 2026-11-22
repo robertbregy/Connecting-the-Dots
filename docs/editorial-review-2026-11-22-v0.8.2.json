@@ -8076,9 +8076,10 @@
         "V107",
         "QA107",
         "RR3DOI",
-        "AUD081"
+        "AUD081",
+        "QA082"
       ],
-      "sha256": "69ae822c7024d620abc51438a743108965b7f53d48bdf614d96c00a93b22b40a"
+      "sha256": "3effe834aea0334dcce9344e1ad6525ede71961b9dfa813031858e4957aad870"
     },
     "scripts/discovery_browser_qa.cjs": {
       "baselineSHA256": null,
@@ -8520,7 +8521,7 @@
     },
     "scripts/usability_remediation_qa.cjs": {
       "baselineSHA256": "1dc4cb37c4ba30215b0d07fb4914cdab8c6c3ff6a4faf99294bd876f260d6d25",
-      "sha256": "06d0d9440fff93e32c50dd156e617c2fcdb340ba989c5ef842828469a723d7da",
+      "sha256": "98b924a805362c765842041949984982b97c1be2ad0c7f58687b24a4b9243a11",
       "rationaleIds": [
         "E13",
         "T94",
@@ -8537,7 +8538,8 @@
         "AUD110",
         "QA80",
         "RR3DOI",
-        "AUD081"
+        "AUD081",
+        "QA082"
       ]
     },
     "scripts/validate_access_chronology_v0796.cjs": {
@@ -11334,20 +11336,6 @@
         "NEWS082"
       ]
     },
-    "scripts/finalize_news_review_v082.cjs": {
-      "baselineSHA256": null,
-      "sha256": "4cc0900046eced3f6bbf43feedefca76f4636829bb321cc79257384b6073dee9",
-      "rationaleIds": [
-        "QA082"
-      ]
-    },
-    "scripts/render_news_review_20261122.cjs": {
-      "baselineSHA256": null,
-      "sha256": "d67a4e1b38065b7ed9a1105af731513ca713c2e817e802db314391cb8e54565f",
-      "rationaleIds": [
-        "QA082"
-      ]
-    },
     "downloads/connecting-the-dots-data-pack-v0.8.2.sha256": {
       "baselineSHA256": null,
       "sha256": "f50dd811ccac8b8fee67d2e104e66cd65ef23effdfa52dca2fbe5771f4680267",
@@ -11360,6 +11348,20 @@
       "sha256": "93da4df87ecabcc15157c47acf933a1e7a3c15fad20ad28b3a2c206bda0b5f0f",
       "rationaleIds": [
         "V082"
+      ]
+    },
+    "scripts/finalize_news_review_v082.cjs": {
+      "baselineSHA256": null,
+      "sha256": "4cc0900046eced3f6bbf43feedefca76f4636829bb321cc79257384b6073dee9",
+      "rationaleIds": [
+        "QA082"
+      ]
+    },
+    "scripts/render_news_review_20261122.cjs": {
+      "baselineSHA256": null,
+      "sha256": "d67a4e1b38065b7ed9a1105af731513ca713c2e817e802db314391cb8e54565f",
+      "rationaleIds": [
+        "QA082"
       ]
     }
   },
