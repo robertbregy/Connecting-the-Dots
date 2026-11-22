@@ -22,9 +22,9 @@
   "currentDataPackPath": "downloads/connecting-the-dots-data-pack-v0.8.2.zip",
   "paperRevisedOn": "2026-10-19",
   "editorialReviewPath": "docs/editorial-review-2026-11-22-v0.8.2.json",
-  "buildProvenanceCommit": "f8f6b6dbd52b800e9f65fca3ef19094aed008d6b",
+  "buildProvenanceCommit": "3cc19e0d30b13604029a115d12433d9286f9fd6d",
   "paperTechnicalSyncOn": "2026-11-22",
-  "sourceReviewCommit": "f8f6b6dbd52b800e9f65fca3ef19094aed008d6b",
+  "sourceReviewCommit": "3cc19e0d30b13604029a115d12433d9286f9fd6d",
   "buildProvenanceRole": "source review commit used for deterministic regeneration; not the published merge commit",
   "technicalAsOf": "2026-11-22"
 }
