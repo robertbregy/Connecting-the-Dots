@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/it/cities/ | Site edition: 0.8.1 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/it/cities/ | Site edition: 0.8.2 | Language: it -->
 
 Guida
 
@@ -163,10 +163,10 @@ FATTO LETTURA
 
 ### [.helsinki: una città può anche rinunciare al proprio TLD](https://robertbregy.github.io/Connecting-the-Dots/it/#helsinki-termination)
 
-Nel 2026 Helsinki ha avviato la cessazione volontaria del proprio contratto di registro. È un controesempio concreto per chi valuta un city TLD: ottenere una delega e mantenerla nel tempo sono decisioni diverse.
+Nel 2026 Helsinki ha completato la cessazione volontaria del proprio dominio cittadino: delega revocata il 28 ottobre e contratto di registro cessato il 13 novembre. Ottenere una delega e mantenerla nel tempo sono decisioni diverse.
 
 Leggi la cronologia e lo stato documentato →
 
-**Di Robert Bregy** · Edizione del sito 0.8.1 · 18 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.8.2 · 22 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

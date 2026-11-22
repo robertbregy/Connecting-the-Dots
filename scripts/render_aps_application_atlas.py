@@ -27,7 +27,9 @@ KEYS=(
  "apsAtlasPermalink","apsAtlasMatchesCount","apsAtlasWithout",
  "apsAtlasPagination","apsAtlasRegionAll","apsAtlasNone","apsAtlasCountOf",
  "languageLabel","themeLabel","breadcrumbLabel","skipToContent",
- "apsAtlasObservedStatusNote","apsAtlasFooter","apsAtlasOpen"
+ "apsAtlasObservedStatusNote","apsAtlasFooter","apsAtlasOpen",
+ "apsAtlasSelectedReplacement","apsAtlasStatusActive","apsAtlasStatusWithdrawn",
+ "apsAtlasStatusDeactivated","apsAtlasCurrentCSV"
 )
 
 def q(x):
@@ -58,6 +60,12 @@ def render(root:Path=ROOT):
     source_link=graph["officialCSVURL"]
     if source_link=="https://newgtldprogram-aps.icann.org/aps/applications/export/csv":
         source_link="https://newgtldprogram-aps.icann.org/applications"
+    source_csv=graph["sourceCSVFile"]
+    if not re.fullmatch(r"data/applications_2026_aps_[A-Za-z0-9_]+\.csv", source_csv):
+        raise ValueError("Invalid local APS source CSV path")
+    if not (root/source_csv).is_file():
+        raise ValueError("Current APS source CSV is missing")
+    confirmed_link=graph["contention"]["officialConfirmedListURL"]
     if len(graph["apps"])!=1614 or counts["officialPublishedApplications"]!=1614:
         raise ValueError("Application atlas rendered from incomplete official APS graph")
     rows=[]
@@ -124,7 +132,8 @@ def render(root:Path=ROOT):
 <p><b>{q(t['apsAtlasWdo'])}</b> <a target="_blank" rel="noopener" href="{q(graph['notPublishedApplication']['detailUrl'])}">{q(t['apsAtlasWdoLink'])} ↗</a></p>
 <div class="apsSources">
 <a target="_blank" rel="noopener" href="{q(source_link)}">{q(t['apsAtlasSource'])} ↗</a>
-<a target="_blank" rel="noopener" href="{q(graph['contention'].get('officialCurrentListURL',graph['contention']['officialRevealListURL']))}">{q(t['apsAtlasPreliminaryList'])} ↗</a>
+<a target="_blank" rel="noopener" href="{q(confirmed_link)}">{q(t['apsAtlasPreliminaryList'])} ↗</a>
+<a download href="../../{q(source_csv)}">{q(t['apsAtlasCurrentCSV'])}</a>
 <a href="../../{lang}/?tab=research">{q(t['apsAtlasResearch'])}</a>
 </div>
 <p class="apsStamp">{q(t['apsAtlasSourceDate'])}: <time datetime="{q(graph['retrievedAtUTC'])}">{q(graph['retrievedAtUTC'][:10])}</time></p></div>
@@ -141,7 +150,7 @@ def render(root:Path=ROOT):
 <div id="apsResults" class="apsResults"></div>
 <div class="apsMoreWrap"><button id="apsMore" type="button">{q(t['apsAtlasMore'])}</button></div>
 <noscript><p>{q(t['apsAtlasNoJs'])}
-<a href="../../data/applications_2026_aps_string_confirmation_20261117.csv">CSV ICANN</a></p></noscript>
+<a href="../../{q(source_csv)}">{q(t['apsAtlasCurrentCSV'])}</a></p></noscript>
 </section>
 <section class="apsResources"><h2>{q(t['apsAtlasDownloadManifest'])}</h2>
 <div class="apsSources"><a download href="../../data/aps_2026_application_graph_manifest.json">{q(t['apsAtlasDownloadManifest'])}</a>

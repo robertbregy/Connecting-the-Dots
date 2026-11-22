@@ -14,7 +14,31 @@ const snapshot=JSON.parse(fs.readFileSync(path.join(root,'data/iana_snapshot.jso
 const publication=JSON.parse(fs.readFileSync(path.join(root,'publication.json'),'utf8'));
 const audienceEditorial=JSON.parse(fs.readFileSync(path.join(root,'data/audience_editorial.json'),'utf8'));
 const homeEditorial=JSON.parse(fs.readFileSync(path.join(root,'data/home_editorial.json'),'utf8'));
+const behindStories=JSON.parse(fs.readFileSync(path.join(root,'data/behind_round_stories.json'),'utf8')).episodes;
 const fieldInvestigations=JSON.parse(fs.readFileSync(path.join(root,'data/field_investigations.json'),'utf8')).episodes;
+// The 22 Nov follow-up appends evidence; the original source identities remain mandatory.
+const expectedBehindSources={
+  'reveal-day-counts':[
+    'icann-22sep','icann-7oct','icann-aps-stats','icann-aps-list','icann-aps-wdo','frozen-secondary',
+    'project-snapshot','ntld-regional','independent-bortzmeyer','independent-circleid','icann-aps-doc','independent-jpnic',
+    'aps-about-20261018','aps-export-20261018','aps-local-export-20261018','aps-local-strings-20261018','aps-calendar-20261018',
+    'icann-scd-announcement','icann-scd-contention','aps-scd-export','project-scd-reconciliation','project-scd-later-recheck',
+    'icann-scd-announcement-updated','project-round-followup-20261122','aps-official-withdrawal','aps-followup-export'
+  ],
+  'wdo-identity':['wdo-aps','wdo-cas','design-about','design-trademark','icann-guidebook','icann-period','ofac-july']
+};
+assert.deepEqual(behindStories.map(story=>story.id),Object.keys(expectedBehindSources),'preserve both Field Notes cases');
+for(const story of behindStories)
+  assert.deepEqual(story.sources.map(source=>source.id),expectedBehindSources[story.id],'preserve historical and follow-up source identities: '+story.id);
+const expectedReplacementSources=[
+  'rs-icann-aug','rs-icann-sept','rs-icann-reveal','rs-icann-aps','rs-icann-period','rs-icann-guidebook',
+  'rs-internetbest','rs-bortzmeyer','rs-local-snapshot','rs-choice-faq','rs-active-faq',
+  'aps-export-20261018','aps-local-export-20261018','aps-local-strings-20261018',
+  'rs-scd-announcement','rs-scd-current-aps','rs-scd-contention','rs-scd-reconciliation',
+  'rs-scd-announcement-updated','rs-followup-20261122'
+];
+assert.deepEqual(fieldInvestigations.find(episode=>episode.slug==='replacement-strings').sources.map(source=>source.id),
+  expectedReplacementSources,'preserve original replacement-string sources and append both correction sources');
 const objectorsCalendarSource='https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en';
 // Cite the historical CSV endpoint while directing readers to the available listing.
 const readerSourceUrl=url=>url==='https://newgtldprogram-aps.icann.org/aps/applications/export/csv'?'https://newgtldprogram-aps.icann.org/applications':url;
@@ -167,7 +191,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.equal(timelineStandalone.querySelector('link[rel="canonical"]')?.getAttribute('href'),base+'inside-the-round/'+language+'/',page+' chronology URL changed');
   assert.ok(behind.querySelector('[data-behind-story="reveal-day-counts"]'),page+' missing main field note');
   assert.equal(behind.querySelectorAll('[data-behind-story]').length,2,page+' two research cases not published');
-  assert.equal(behind.querySelectorAll('[data-source-id]').length,29,page+' incomplete source audit across two cases');
+  assert.equal(behind.querySelectorAll('[data-source-id]').length,33,page+' incomplete historical and follow-up source audit across two cases');
   assert.equal(behind.querySelectorAll('.behindComparisonTable [data-region]').length,5,page+' regional reconciliation missing');
   assert.ok(behind.querySelector('[data-behind-story="wdo-identity"]'),page+' WDO case omitted');
   const newFieldSlugs=['objectors-eoi','replacement-strings','background-screening'];
@@ -196,25 +220,37 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
   assert.equal(standaloneDocument.querySelector('link[rel="canonical"]').getAttribute('href'),base+'behind-the-round/'+language+'/',page+' field-note canonical');
   assert.equal(standaloneDocument.querySelectorAll('link[rel="alternate"][hreflang]').length,5,page+' field-note hreflang');
   assert.equal(standaloneDocument.querySelector('meta[name="robots"]').getAttribute('content'),'index,follow,max-image-preview:large',page+' field-note indexing');
-  assert.equal(standaloneDocument.querySelectorAll('[data-source-id]').length,29,page+' all source links must be preserved');
+  assert.equal(standaloneDocument.querySelectorAll('[data-source-id]').length,33,page+' all historical and follow-up source links must be preserved');
+  for(const [scope,label] of [[behind,'embedded'],[standaloneDocument,'standalone']])for(const story of behindStories){
+    const caseNode=scope.querySelector('[data-behind-story="'+story.id+'"]');
+    assert.deepEqual([...caseNode.querySelectorAll('[data-source-id]')].map(node=>node.getAttribute('data-source-id')),
+      expectedBehindSources[story.id],page+' '+label+' source identities changed: '+story.id);
+    assert.deepEqual([...caseNode.querySelectorAll('[data-source-id] a[href]')].map(link=>link.getAttribute('href')),
+      story.sources.map(source=>readerSourceUrl(source.url)),page+' '+label+' source links changed: '+story.id);
+    assert.deepEqual([...caseNode.querySelectorAll('[data-editorial-revision]')].map(node=>node.getAttribute('data-editorial-revision')),
+      story.revisionHistory.map(revision=>revision.date),page+' '+label+' case history changed: '+story.id);
+  }
+  for(const scope of [behind,standaloneDocument])
+    assert.equal(scope.querySelectorAll('[data-superseded-by="official-correction-20261122"]').length,1,page+' original String Confirmation note must retain its dated correction notice');
   assert.equal(standaloneDocument.querySelectorAll('.behindFinding').length,2,page+' explanatory statuses missing');
-  assert.equal(standaloneDocument.querySelectorAll('[data-editorial-revision]').length,5,page+' dated case histories must remain visible');
+  assert.equal(standaloneDocument.querySelectorAll('[data-editorial-revision]').length,6,page+' dated case histories and appended correction must remain visible');
   assert.ok(standalone.includes(translations.behindTitle)&&standalone.includes('WDO2627T-T45217'),page+' translated field note missing');
   const articleSchema=JSON.parse(standaloneDocument.querySelector('script[type="application/ld+json"]').textContent);
-  // A new, separately sourced 4 Nov stakeholder briefing updates the collection,
-  // not the three older investigation files or their independent review dates.
+  // The stakeholder briefing retains its own 6 Nov review date. The 22 Nov
+  // correction updates the collection and replacement investigation separately.
   const debateReview=JSON.parse(fs.readFileSync(path.join(root,'data/round_debate_20261106.json'),'utf8'));
   assert.equal(debateReview.reviewedOn,'2026-11-06',page+' stakeholder commentary review date missing');
-  assert.equal(articleSchema.dateModified,'2026-11-17',page+' updated field-note collection review missing');
+  assert.equal(articleSchema.dateModified,'2026-11-22',page+' updated field-note collection review missing');
   assert.equal(standaloneDocument.querySelectorAll('#round-debate-20261106 [data-round-perspective]').length,2,page+' two new stakeholder cards absent');
   assert.equal(articleSchema.image,base+'assets/og-preview.png',page+' field-note Article image');
   assert.ok(translations.behindMetaDescription.length<=160,page+' overlong field-note description');
-  assert.equal(articleSchema.citation.length,29,page+' schema citation list incomplete');
+  assert.equal(articleSchema.citation.length,33,page+' schema citation list incomplete');
+  assert.deepEqual(articleSchema.citation,behindStories.flatMap(story=>story.sources.map(source=>source.url)),page+' historical and follow-up schema citations must match the complete source register');
   assert.equal(articleSchema['@type'],'CollectionPage',page+' Field Notes index schema is a collection');
   assert.equal(standaloneDocument.querySelectorAll('.behindComparisonTable [data-region]').length,5,page+' regional comparison rows missing');
   assert.ok(standalone.includes('WDO2627T-T45217')&&standalone.includes('World Design Organization'),page+' case distinctions lost');
   assert.equal(standaloneDocument.querySelectorAll('[data-field-investigation-teaser]').length,3,page+' collection missing three 2026 investigation teasers');
-  for(const [slug,sourceCount,sectionCount] of [['objectors-eoi',4,5],['replacement-strings',18,8],['background-screening',6,5]]){
+  for(const [slug,sourceCount,sectionCount] of [['objectors-eoi',4,5],['replacement-strings',20,9],['background-screening',6,5]]){
     const filename=path.join(root,'behind-the-round',language,slug,'index.html');
     const text=fs.readFileSync(filename,'utf8');
     const article=parseHTML(text).document;
@@ -227,7 +263,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
     assert.equal(article.querySelectorAll('link[rel="alternate"][hreflang]').length,5,page+' incomplete hreflang: '+slug);
     assert.equal(article.querySelectorAll('[data-source-id]').length,sourceCount,page+' source audit incomplete: '+slug);
     assert.equal(article.querySelectorAll('[data-referenced-sources]').length,sectionCount,page+' source-backed sections incomplete: '+slug);
-    assert.equal(article.querySelectorAll('[data-editorial-revision]').length,slug==='replacement-strings'?4:slug==='objectors-eoi'?2:1,page+' dated revision missing: '+slug);
+    assert.equal(article.querySelectorAll('[data-editorial-revision]').length,slug==='replacement-strings'?5:slug==='objectors-eoi'?2:1,page+' dated revision missing: '+slug);
     const jsonLD=JSON.parse(article.querySelector('script[type="application/ld+json"]').textContent);
     assert.equal(jsonLD['@type'],'Article',page+' wrong structured investigation type');
     const registeredSources=fieldInvestigations.find(episode=>episode.slug===slug)?.sources;
@@ -244,7 +280,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
       expectedCitations.push(objectorsCalendarSource);
     }
     assert.deepEqual(jsonLD.citation,expectedCitations,page+' investigation citations do not match their linked sources: '+slug);
-    assert.equal(jsonLD.dateModified,slug==='objectors-eoi'?'2026-10-26':slug==='replacement-strings'?'2026-11-17':'2026-10-17',page+' wrong investigation source review date');
+    assert.equal(jsonLD.dateModified,slug==='objectors-eoi'?'2026-10-26':slug==='replacement-strings'?'2026-11-22':'2026-10-17',page+' wrong investigation source review date');
     assert.ok(text.includes('https://doi.org/10.5281/zenodo.23262623'),page+' missing independent archive attribution: '+slug);
     assert.equal(article.querySelector('meta[name="description"]').getAttribute('content').length<=160,true,page+' lengthy investigation metadata: '+slug);
     if(slug==='objectors-eoi'){
@@ -254,6 +290,7 @@ for(const [language,alias] of [...languages.map(l=>[l,false]),['en',true]]){
         page+' dated official appointment source missing: '+slug);
     }
     if(slug==='replacement-strings'){
+      assert.equal(article.querySelectorAll('[data-superseded-by="replacement-eligibility-correction-20261122"]').length,1,page+' original replacement-string note must retain its dated correction notice');
       assert.deepEqual([...article.querySelectorAll('[data-field-quantity] strong')].map(el=>el.textContent.trim()),
         [translations.field04ValueTotal,translations.field04ValueActive,translations.field04ValueDeactivated],
         page+' incorrect replacement counts');

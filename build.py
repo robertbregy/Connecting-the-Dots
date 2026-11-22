@@ -110,7 +110,7 @@ def build_manifest() -> None:
             "application2026PublishedOfficialApplicationIDs": official_listing["uniquePublishedApplicationRecords"],
             "application2026OfficialReplacementRecords": official_listing["replacementStringRecords"],
             "application2026OfficialListingPendingWDO": True},
-        "aps_2026_application_graph": {"source": "applications_2026_aps_string_confirmation_20261117.csv", "manifest": "aps_2026_application_graph_manifest.json", "graph": "aps_2026_application_graph.json", "edges": "aps_2026_application_edges.csv", "observations": "aps_2026_record_observations.csv", **aps_graph["counts"], "individualPDFsVendored": False},
+        "aps_2026_application_graph": {"source": "applications_2026_aps_followup_20261122.csv", "provenance": "applications_2026_aps_followup_20261122_provenance.json", "observedOn": "2026-11-22", "manifest": "aps_2026_application_graph_manifest.json", "graph": "aps_2026_application_graph.json", "edges": "aps_2026_application_edges.csv", "observations": "aps_2026_record_observations.csv", **aps_graph["counts"], "individualPDFsVendored": False},
         "aps_2026_official_listing": {
             "source": official_listing["sourceExportURL"],
             "download": official_listing["officialRowsFile"],
@@ -145,7 +145,7 @@ def build_manifest() -> None:
 
 def data_pack_files() -> list[Path]:
     snapshot = json.loads((DATA / "iana_snapshot.json").read_text())
-    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "iana_root_revalidation_20261118.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "application_2026_snapshot.json", DATA / "application_2026_string_confirmation_snapshot.json", DATA / "applications_2026_aps_official_provenance.json", DATA / "applications_2026_aps_string_confirmation_20261117_provenance.json", DATA / "aps_2026_application_graph.json", DATA / "aps_2026_application_graph_manifest.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "legal_layer.json", DATA / "economic_cases.json", DATA / "social_cases.json", DATA / "city_namespace_editorial.json", DATA / "audit_20261018_editorial.json", DATA / "audit_20261019_editorial.json", DATA / "audit_20261019_resolution.json", DATA / "audience_editorial.json", DATA / "home_editorial.json", DATA / "economics_hub.json", DATA / "economics_reading_order.json", DATA / "independent_review_materials.json", DATA / "cultural_classification_protocol.json", DATA / "cultural_lexicon_v2.json", DATA / "cultural_sensitivity_v2.json", DATA / "cultural_classification_protocol_v2.json", DATA / "cultural_history_evidence_v2.json", DATA / "financial_source_verification_20261019.json", DATA / "frozen_technical_packages.json", DATA / "research_bibliographic_corrections.json", DATA / "source_method_corrections_20261019.json", DATA / "aps_2026_current_analytics.json", DATA / "aps_2026_current_analytics_manifest.json", DATA / "aps_2026_applicant_sector_evidence.json", DATA / "round_application_fees.json", DATA / "tld_cultural_editorial.json", DATA / "tld_cultural_patterns.json", DATA / "tld_market_snapshot.json", DATA / "tld_market_provenance.json", *sorted((DATA / "evidence" / "tld-market-2026-10-19").glob("*.json")), ROOT / snapshot["archive_path"]]
+    return [*sorted(DATA.glob("*.csv")), DATA / "manifest.json", DATA / "README.md", DATA / "iana_snapshot.json", DATA / "iana_root_revalidation_20261118.json", DATA / "release_history.json", DATA / "CONTENT_LICENSE.md", DATA / "application_archaeology_manifest.json", DATA / "application_archaeology_local.json", DATA / "application_2026_snapshot.json", DATA / "application_2026_string_confirmation_snapshot.json", DATA / "applications_2026_aps_official_provenance.json", DATA / "applications_2026_aps_string_confirmation_20261117_provenance.json", DATA / "applications_2026_aps_followup_20261122_provenance.json", DATA / "round_2026_followup_20261122.json", DATA / "editorial_news_20261122.json", DATA / "helsinki_followup_20261122.json", *sorted((DATA / "evidence" / "round-2026-followup-20261122").glob("*.json")), *sorted((DATA / "evidence" / "round-2026-followup-20261122").glob("*.csv")), DATA / "aps_2026_application_graph.json", DATA / "aps_2026_application_graph_manifest.json", DATA / "tld_life_history_manifest.json", DATA / "governance_cases.json", DATA / "legal_layer.json", DATA / "economic_cases.json", DATA / "social_cases.json", DATA / "city_namespace_editorial.json", DATA / "audit_20261018_editorial.json", DATA / "audit_20261019_editorial.json", DATA / "audit_20261019_resolution.json", DATA / "audience_editorial.json", DATA / "home_editorial.json", DATA / "economics_hub.json", DATA / "economics_reading_order.json", DATA / "independent_review_materials.json", DATA / "cultural_classification_protocol.json", DATA / "cultural_lexicon_v2.json", DATA / "cultural_sensitivity_v2.json", DATA / "cultural_classification_protocol_v2.json", DATA / "cultural_history_evidence_v2.json", DATA / "financial_source_verification_20261019.json", DATA / "frozen_technical_packages.json", DATA / "research_bibliographic_corrections.json", DATA / "source_method_corrections_20261019.json", DATA / "aps_2026_current_analytics.json", DATA / "aps_2026_current_analytics_manifest.json", DATA / "aps_2026_applicant_sector_evidence.json", DATA / "round_application_fees.json", DATA / "tld_cultural_editorial.json", DATA / "tld_cultural_patterns.json", DATA / "tld_market_snapshot.json", DATA / "tld_market_provenance.json", *sorted((DATA / "evidence" / "tld-market-2026-10-19").glob("*.json")), ROOT / snapshot["archive_path"]]
 
 
 def build_data_pack() -> None:
@@ -434,7 +434,8 @@ def main() -> None:
     for amendment in (
             "helsinki_editorial_20261025.json",
             "editorial_io_appointments_20261023.json",
-            "helsinki_revocation_20261118.json"):
+            "helsinki_revocation_20261118.json",
+            "helsinki_followup_20261122.json"):
         reviewed = json.loads((DATA / amendment).read_text(encoding="utf-8"))
         for lang, keys in reviewed["translations"].items():
             approved_translations.setdefault(lang, {}).update(keys)
@@ -509,6 +510,9 @@ def main() -> None:
     # Source-attributed 4 November perspectives belong in existing Field Notes and contention chapter.
     subprocess.run(["node", str(ROOT / "scripts" / "render_round_debate_v0797.cjs")], check=True)
     subprocess.run(["python3", str(ROOT / "scripts" / "render_legal_layer.py")], check=True)
+    # New evidence belongs to the relevant existing chapter before discovery
+    # copies those chapters into their standalone reading paths.
+    subprocess.run(["node", str(ROOT / "scripts" / "render_news_review_20261122.cjs")], check=True)
     subprocess.run(["node", str(ROOT / "scripts" / "reader_first.cjs")], check=True)
     # HOME106: one explanatory homepage; preserve every original chapter and tutorial.
     subprocess.run(["node", str(ROOT / "scripts" / "render_home_editorial.cjs")], check=True)

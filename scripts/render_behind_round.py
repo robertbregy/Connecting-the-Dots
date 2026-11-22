@@ -11,7 +11,9 @@ from html import escape as h
 from pathlib import Path
 import csv
 import hashlib
+import io
 import json
+from collections import Counter
 from scripts.render_inside_round import BASE, LANGS, CSS
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -101,14 +103,100 @@ CONTENT_KEYS = (
     "behindIndependentTitle","behindIndependentBody","behindCoverageTitle","behindCoverageBody"
 )
 
+def validate_round_followup(root=ROOT):
+    """Reproduce the current follow-up without changing the frozen 17 November evidence."""
+    follow = json.loads((root / "data/round_2026_followup_20261122.json").read_text(encoding="utf-8"))
+    prov = json.loads((root / follow["currentExportProvenance"]).read_text(encoding="utf-8"))
+    evidence = json.loads((root / follow["evidenceRegister"]).read_text(encoding="utf-8"))
+    if follow.get("observedOn") != "2026-11-22" or follow.get("classification") != "source-backed-current-observation-separate-from-frozen-research":
+        raise ValueError("Unclassified or undated November follow-up")
+    for rel, expected in follow["preservedSourceHashes"].items():
+        if hashlib.sha256((root / rel).read_bytes()).hexdigest() != expected:
+            raise ValueError("The follow-up changed a frozen source: " + rel)
+    translations = json.loads((root / "data/translations.json").read_text(encoding="utf-8"))
+    for language, expected in follow["preservedHistoricalTranslationSHA256"].items():
+        historical = {key: translations[language][key] for key in follow["preservedHistoricalTranslationKeys"]}
+        text_hash = hashlib.sha256(json.dumps(historical, ensure_ascii=False, sort_keys=True,
+                                             separators=(",", ":")).encode()).hexdigest()
+        if text_hash != expected:
+            raise ValueError("The dated 17 November editorial observation was rewritten: " + language)
+    raw = (root / prov["rawFile"]).read_bytes()
+    normalized = (root / follow["currentExport"]).read_bytes()
+    if (hashlib.sha256(raw).hexdigest() != prov["originalCSVSHA256"] or
+            hashlib.sha256(normalized).hexdigest() != prov["normalizedCSVSHA256"]):
+        raise ValueError("Current APS source checksum differs from acquisition evidence")
+    lines = raw.decode("utf-8-sig").splitlines()
+    header = next(i for i, line in enumerate(lines) if "Application ID" in line and "Primary String" in line)
+    original_rows = list(csv.DictReader(io.StringIO("\n".join(lines[header:]))))
+    current_rows = list(csv.DictReader(io.StringIO(normalized.decode("utf-8"))))
+    if current_rows != original_rows or len(current_rows) != 2783 or len(current_rows[0]) != 34:
+        raise ValueError("Current APS normalization lost, changed or reordered official fields")
+    if Counter(r["Application Status"] for r in current_rows) != {"Active": 1595, "Withdrawn": 19, "Deactivated": 1169}:
+        raise ValueError("Current APS status counts differ from captured evidence")
+    old_path = root / "data/applications_2026_aps_string_confirmation_20261117.csv"
+    old = {r["Application ID"]: r for r in csv.DictReader(io.StringIO(old_path.read_text(encoding="utf-8")))}
+    if set(old) != {r["Application ID"] for r in current_rows}:
+        raise ValueError("The follow-up must reconcile every record against the frozen source")
+    changes = [{"applicationId": r["Application ID"], "string": r["Primary String"],
+                "applicant": r["Applicant Name"], "previousStatus": old[r["Application ID"]]["Application Status"],
+                "currentStatus": r["Application Status"]} for r in current_rows
+               if r["Application Status"] != old[r["Application ID"]]["Application Status"]]
+    if (changes != follow["statusChangesSinceFrozen17"] or changes != prov["changedStatusRecords"] or
+            len(changes) != 10 or any((r["previousStatus"], r["currentStatus"]) != ("Active", "Withdrawn") for r in changes)):
+        raise ValueError("The ten further withdrawals are not reproduced by the two source files")
+    all_changes = []
+    changed_fields = Counter()
+    for row in current_rows:
+        fields = {key: [old[row["Application ID"]][key], value] for key, value in row.items()
+                  if old[row["Application ID"]][key] != value}
+        changed_fields.update(fields.keys())
+        if fields:
+            all_changes.append({"recordId": row["Application ID"],
+                                "applicationFamilyId": row["Application ID"].removesuffix("-R"),
+                                "string": row["Primary String"], "changes": fields})
+    if (all_changes != follow["allChangedFieldsSinceFrozen17"] or len(all_changes) != 20 or
+            changed_fields != {"Application Status": 10, "Label: Change Request": 10} or
+            follow["changeRequestLabelFollowup"]["applicationFamilyCount"] != 7):
+        raise ValueError("The complete APS field comparison or Change Request scope is not reproduced")
+    groups = Counter(r["Primary String"] for r in current_rows if r["Application Status"] == "Active"
+                     and r["Application Type"] != "Existing gTLD with Variants")
+    derived = follow["currentExactStringOverlap"]
+    if ((sum(groups.values()), len(groups), sum(n > 1 for n in groups.values()), sum(n for n in groups.values() if n > 1)) !=
+            (1589, 1119, 225, 695) or derived.get("isNewOfficialContentionDetermination") is not False or
+            derived.get("official17NovemberReference") != {"sets": 226, "applicationRows": 705}):
+        raise ValueError("Current calculated overlaps must remain distinct from official 17 November contention")
+    correction = follow["announcementCorrection"]
+    if (correction["originalToUpdated"]["proceedingApplications"] != [1610, 1606] or
+            correction["originalToUpdated"]["contentionApplicationsAfter"] != [709, 705] or
+            correction["originalToUpdated"]["eligibleReplacements"] != [287, 442] or
+            correction["historicalFourUnitDifferenceStatus"] != "superseded-by-official-correction" or
+            correction["actualCorrectionPublicationDate"] is not None or
+            correction["residualInconsistency"] != {"correctedBefore": 263, "after": 226, "arithmeticReduction": 37, "retainedFewerSetsBullet": 36}):
+        raise ValueError("The official correction must retain its dating and residual arithmetic limits")
+    sources = {s["id"]: s for s in evidence["sources"]}
+    stats_raw = root / "data/evidence/round-2026-followup-20261122/aps-statistics-raw.json"
+    if hashlib.sha256(stats_raw.read_bytes()).hexdigest() != sources["statistics-api"]["rawSHA256"]:
+        raise ValueError("Current statistics were not preserved with their source checksum")
+    stats = json.loads(stats_raw.read_text(encoding="utf-8"))
+    statuses = {x["status"]: x["count"] for x in stats["applications"]["byStatus"]}
+    if (stats["lastPublishedAt"] != follow["currentStatistics"]["lastPublishedAt"] or
+            stats["applications"]["totalNumOfApplications"] != 1615 or statuses["Active"] != 1596 or statuses["Withdrawn"] != 19):
+        raise ValueError("Current aggregate figures differ from the dated API evidence")
+    if (sources["applications-csv"]["rawSHA256"] != prov["originalCSVSHA256"] or
+            sources["applications-csv"]["retrievedAtUTC"] != prov["retrievedAtUTC"] or
+            not sources["announcement-updated"]["url"].endswith("-updated-17-11-2026-en")):
+        raise ValueError("The follow-up lacks attributable export/correction sources")
+    return follow
+
+
 def validate_editorial_updates(case, translations, root=ROOT):
     """Validate new dated evidence separately from the preserved first observation."""
     updates=case.get("editorialUpdates",[])
     if not updates:
         return
     expected={
-        "reveal-day-counts":["aps-count-reconciliation","aps-publication-calendar","string-confirmation-reconciliation"],
-        "replacement-strings":["aps-string-reconciliation","string-confirmation-replacement-outcome"],
+        "reveal-day-counts":["aps-count-reconciliation","aps-publication-calendar","string-confirmation-reconciliation","official-correction-20261122","current-aps-followup-20261122"],
+        "replacement-strings":["aps-string-reconciliation","string-confirmation-replacement-outcome","replacement-eligibility-correction-20261122"],
     }
     if [item.get("id") for item in updates]!=expected.get(case["id"]):
         raise ValueError("Unreviewed field-note update identity: "+case["id"])
@@ -119,6 +207,11 @@ def validate_editorial_updates(case, translations, root=ROOT):
         if not item.get("sourceIds") or any(s not in sources for s in item["sourceIds"]):
             raise ValueError("Updated field-note evidence lacks sources")
         keys=[item.get("reviewLabelKey","field18ReviewLabel"),item["titleKey"],*item["paragraphKeys"]]
+        if item.get("supersededBy"):
+            target = next((u for u in updates if u["id"] == item["supersededBy"]), None)
+            if not target or target["date"] <= item["date"] or not item.get("historicalNoticeKey"):
+                raise ValueError("Superseded evidence requires a later dated update and a reader notice")
+            keys.append(item["historicalNoticeKey"])
         if item.get("closingKey"):
             keys.append(item["closingKey"])
         if item.get("link"):
@@ -180,6 +273,8 @@ def editorial_updates_markup(case, dictionary, lang, dynamic=False, heading="h3"
         parts.append('<section class="behindReading behindEditorialUpdate" id="'+identity+'" data-field-update="'+identity+'" data-update-date="'+update["date"]+'" data-referenced-sources="'+h(",".join(update["sourceIds"]),quote=True)+'">')
         parts.append(copy(update.get("reviewLabelKey","field18ReviewLabel"),"time",' class="eyebrow" datetime="'+update["date"]+'"'))
         parts.append(copy(update["titleKey"],heading))
+        if update.get("historicalNoticeKey"):
+            parts.append(copy(update["historicalNoticeKey"], extra=' class="note" data-superseded-by="'+h(update["supersededBy"],quote=True)+'"'))
         parts.extend(copy(key) for key in update["paragraphKeys"])
         evidence=update.get("reconciliation")
         if evidence:
@@ -203,6 +298,7 @@ def editorial_updates_markup(case, dictionary, lang, dynamic=False, heading="h3"
 def load():
     stories = json.loads((ROOT / "data/behind_round_stories.json").read_text(encoding="utf-8"))
     translations = json.loads((ROOT / "data/translations.json").read_text(encoding="utf-8"))
+    validate_round_followup(ROOT)
     if stories.get("schemaVersion") != 1 or stories.get("editorialLayer") != "2026-round-field-notes-not-part-of-frozen-RR1":
         raise ValueError("Unsupported Behind the Round field-note register")
     editorial_date = date.fromisoformat(stories["lastReviewed"])
@@ -264,11 +360,13 @@ def load():
         if any(row["officialApplications"]!=row["visibleApplications"] or row["officialApplicants"]!=row["visibleApplicants"] for row in regions if row["code"]!="AP"):
             raise ValueError("Regional discrepancy incorrectly extends beyond Asia-Pacific")
         revisions=case.get("revisionHistory",[])
-        if (len(revisions)!=4 or revisions[0]["changeKey"]!="behindRevisionInitial" or
+        if (len(revisions)!=5 or revisions[0]["changeKey"]!="behindRevisionInitial" or
                 revisions[1]["changeKey"]!="behindRevisionReconciled" or
                 any(r["date"]!="2026-10-10" for r in revisions[:2]) or
-                revisions[-2]["changeKey"]!="field18Revision" or
-                revisions[-1]["changeKey"]!="behindRevisionStringConfirmation"):
+                revisions[2]["changeKey"]!="field18Revision" or
+                revisions[3]["changeKey"]!="behindRevisionStringConfirmation" or
+                revisions[-1]["changeKey"]!="behindRevisionCorrection20261122" or
+                revisions[-1]["date"]!="2026-11-22"):
             raise ValueError("The researched 2026 revision must be date and source tracked")
         validate_editorial_updates(case,translations)
         facts = {f["id"]:f for f in case["quantities"]}

@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/fr/market/ | Site edition: 0.8.1 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/fr/market/ | Site edition: 0.8.2 | Language: fr -->
 
 Analyse économique
 
@@ -184,6 +184,16 @@ Analyse de travail du 19 octobre 2026, hors des instantanés scientifiques RR1/R
 
 [Relier diffusion et histoire →](https://robertbregy.github.io/Connecting-the-Dots/guides/fr/timeline/#tld-cultural-trajectory) [Qui gère l’infrastructure →](https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=geography#rsp-tld-footprint)
 
-**Par Robert Bregy** · Édition du site 0.8.1 · 18 novembre 2026
+Sources vérifiées: 2026-11-22
+
+### Troisième trimestre 2026 : 411,6 millions d'enregistrements
+
+Le rapport DNIB publié le 22 octobre 2026 recense 411,6 millions d'enregistrements au 30 septembre : +2,5 % sur le trimestre et +8,7 % sur un an. .com et .net représentent ensemble 182,5 millions d'enregistrements ; les ccTLD, 151,4 millions.
+
+Cette photographie datée mesure des enregistrements, pas des sites actifs ni des utilisateurs. DNIB est financé par Verisign. Les observations antérieures du projet sur le deuxième trimestre restent des instantanés historiques.
+
+[Verisign / DNIB · rapport trimestriel, 22 octobre 2026](https://verisigninc.gcs-web.com/news-releases/news-release-details/dnibcom-reports-internet-has-4116-million-domain-name)
+
+**Par Robert Bregy** · Édition du site 0.8.2 · 22 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.

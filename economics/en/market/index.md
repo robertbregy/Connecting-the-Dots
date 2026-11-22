@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/market/ | Site edition: 0.8.1 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/market/ | Site edition: 0.8.2 | Language: en -->
 
 Economic analysis
 
@@ -184,6 +184,16 @@ Current working analysis dated 19 October 2026, outside the RR1/RR2 scientific s
 
 [Connect adoption and history →](https://robertbregy.github.io/Connecting-the-Dots/guides/en/timeline/#tld-cultural-trajectory) [Who runs the infrastructure →](https://robertbregy.github.io/Connecting-the-Dots/en/?tab=geography#rsp-tld-footprint)
 
-**By Robert Bregy** · Site edition 0.8.1 · November 18, 2026
+Sources reviewed: 2026-11-22
+
+### Q3 2026: 411.6 million domain registrations
+
+DNIB's report, published on 22 October 2026, counts 411.6 million registrations at 30 September: +2.5% quarter on quarter and +8.7% year on year. The combined .com/.net total is 182.5 million; ccTLDs account for 151.4 million.
+
+This dated market snapshot measures registrations, not active websites or users. DNIB is sponsored by Verisign. The project's earlier Q2 observations remain historical snapshots.
+
+[Verisign / DNIB · Q3 report, 22 October 2026](https://verisigninc.gcs-web.com/news-releases/news-release-details/dnibcom-reports-internet-has-4116-million-domain-name)
+
+**By Robert Bregy** · Site edition 0.8.2 · November 22, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

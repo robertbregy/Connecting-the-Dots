@@ -102,6 +102,11 @@ async function verifyState(page,language,native){
     total:window.CTD_APS_2026?.apps?.length,
     replacement:window.CTD_APS_2026?.counts?.replacementRecords,
     exact:window.CTD_APS_2026?.counts?.derivedExactPrimaryMatchGroups,
+    exactApplications:window.CTD_APS_2026?.counts?.applicationsInExactPrimaryMatches,
+    contentionClassification:window.CTD_APS_2026?.contention?.classification,
+    confirmedSets:window.CTD_APS_2026?.contention?.publicConfirmedSets,
+    confirmedApplications:window.CTD_APS_2026?.contention?.publicConfirmedApplications,
+    confirmedSnapshot:window.CTD_APS_2026?.contention?.officialConfirmedSnapshotOn,
     docWidth:document.documentElement.scrollWidth,viewport:document.documentElement.clientWidth,
     canonical:document.querySelector('link[rel=canonical]')?.href,
     languageLinks:document.querySelectorAll('link[hreflang]').length
@@ -109,7 +114,12 @@ async function verifyState(page,language,native){
    assert.equal(loaded.lang,lang);
    assert.equal(loaded.total,1614);
    assert.equal(loaded.replacement,1169);
-   assert.equal(loaded.exact,226);
+   assert.equal(loaded.exact,225,'Current exact-string groups must use the 22 November export');
+   assert.equal(loaded.exactApplications,695,'Current exact-string applications must exclude later withdrawals');
+   assert.equal(loaded.contentionClassification,'project-derived-current-exact-primary-string-overlaps');
+   assert.equal(loaded.confirmedSets,226,'Official String Confirmation sets must remain separately preserved');
+   assert.equal(loaded.confirmedApplications,705,'Official String Confirmation applications must remain separately preserved');
+   assert.equal(loaded.confirmedSnapshot,'2026-11-17','Historical contention counts must retain their source date');
    assert.equal(loaded.cards,30);
    assert.equal(loaded.languageLinks,5);
    assert.ok(loaded.canonical.endsWith('/applications/'+lang+'/'));
@@ -131,7 +141,7 @@ async function verifyState(page,language,native){
    await page.locator('#apsSearch').fill('');
    await page.locator('#apsRole').selectOption('exact');
    let shown=await page.locator('#apsResultCount').innerText();
-   assert.ok(shown.includes('705'),'All 891 exact primary matches must be filterable '+lang+': '+shown);
+   assert.ok(shown.replace(/[^0-9]/g,'').endsWith('695'),'All 695 current active exact-primary matches must be filterable '+lang+': '+shown);
    metrics.filterChecks++;
    await page.locator('#apsRole').selectOption('replacement');
    shown=await page.locator('#apsResultCount').innerText();

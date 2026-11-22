@@ -1,6 +1,6 @@
-# Connecting the Dots — v0.8.1
+# Connecting the Dots — v0.8.2
 
-**v0.8.1 · 18 November 2026.** Post-publication audit corrections for dates, citations, accessibility and technical downloads.
+**v0.8.2 · 22 November 2026.** Verified news review, corrected ICANN announcement and a separately dated current APS follow-up.
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -10,6 +10,14 @@ Current scientific release: [RR3 · String Confirmation 2026](https://doi.org/10
 
 ## Current release
 
+**v0.8.2 - 22 November 2026**
+
+ICANN’s corrected announcement resolves the former four-application discrepancy in the String Confirmation account. A new public APS export records ten further withdrawals: 1,595 visible active application families and 19 withdrawn. Current project-derived overlaps are 225 groups / 695 applications; the official 17 November contention file remains separately dated at 226 / 705. The new four-language editorial notes cover .web, .name, .helsinki, market developments, DNS resilience, AI agent naming, PP-26 and open consultations. See the [source review and selection rationale](docs/news-review-2026-11-22.md).
+
+RR1/RR2/RR3, their original evidence and all earlier technical packages remain unchanged. This release does not extend the RR3 DOI to the 22 November observations.
+
+## Previous post-publication audit
+
 **v0.8.1 - 18 November 2026**
 
 The Reveal Day badge uses the 7 October date. Research pages expose the verified RR3 citation and archive, localized breadcrumbs and keyboard navigation. The new technical ZIP has its own checksum and the archived v0.8.0 ZIP remains verifiable. The [dated IANA comparison](data/iana_root_revalidation_20261118.json) records 1,436 delegated labels and the 28 October revocation of .helsinki.
@@ -18,7 +26,7 @@ The Reveal Day badge uses the 7 October date. Research pages expose the verified
 
 **v0.8.0 - 17 November 2026**
 
-String Confirmation Day: a separate current APS snapshot now records 152 selected replacements, nine withdrawals and 226/705 public confirmed contention. The project also preserves the unresolved four-application difference between ICANN's announcement aggregates and its public APS/contention files. .lugano is Active in String Evaluation with no identical-string contention. Reveal Day evidence and RR1/RR2 remain immutable.
+String Confirmation Day: a separate current APS snapshot now records 152 selected replacements, nine withdrawals and 226/705 public confirmed contention. At publication, the project recorded a four-application difference between ICANN's announcement aggregates and its public APS/contention files. The correction observed on 22 November resolves that historical finding; the archived 17 November evidence remains unchanged. .lugano is Active in String Evaluation with no identical-string contention. Reveal Day evidence and RR1/RR2 remain immutable.
 
 ## Previous audit-close release
 

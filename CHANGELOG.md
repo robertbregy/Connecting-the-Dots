@@ -1,3 +1,11 @@
+# v0.8.2 — 22 November 2026
+
+- Documented ICANN’s corrected String Confirmation announcement: 1,606 proceeding applications and 705 contention applications resolve the former four-application publication discrepancy.
+- Added a separate hash-pinned APS export dated 22 November, with ten further observed withdrawals, including Cam Connecting’s .official application. The public listing now has 1,595 active and 19 withdrawn application families; Statistics includes the separate .wdo administrative-check case.
+- Updated the current Atlas to 1,119 active new-primary strings and 225 derived exact-string overlaps / 695 applications, keeping the official 17 November contention file independently dated at 226 / 705.
+- Added sourced four-language follow-ups on .web launch dates, conditional continuity of existing .name services, the end of the .helsinki Registry Agreement, Q3 domain registrations, Domain Options, French DNS resilience, AI agent naming, PP-26 and open ICANN consultations.
+- Preserved frozen Reveal Day and String Confirmation evidence, RR1/RR2/RR3 and all earlier technical archives; generated a distinct v0.8.2 technical package.
+
 # v0.8.1 — 18 November 2026
 
 - Corrected the Reveal Day badge and gave dictionaries and application scripts content-sensitive cache keys.

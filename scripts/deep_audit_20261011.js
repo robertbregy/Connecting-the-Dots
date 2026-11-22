@@ -259,7 +259,7 @@ function check(ok,level,kind,where,message,extra){if(!ok)finding(level,kind,wher
        'HIGH','ECONOMICS_LEGACY_CYCLES',language,'The old Economics cycles link must reach the complete visible analysis',{cycles,url:p.url()});
    }catch(e){finding('HIGH','ECONOMICS_LEGACY_CYCLES',language,e.message.slice(0,300));}
    // The city-TLD story must remain a native B2 pathway, including
-   // full-card pointer navigation and a sourced, still-delegated status.
+   // full-card pointer navigation and a sourced termination status.
    await p.goto(base+'/'+language+'/?tab=cities',{waitUntil:'load',timeout:25000});
    const helsinkiBridge=p.locator('#cities .cityHelsinkiBridge');
    check((await helsinkiBridge.count())===1,'HIGH','HELSINKI_MISSING',language,'City context card missing');
@@ -273,10 +273,17 @@ function check(ok,level,kind,where,message,extra){if(!ok)finding(level,kind,wher
        await p.locator('#helsinki-termination').waitFor({state:'visible',timeout:10000});
        const status=await p.evaluate(()=>({
          active:document.querySelector('section.section.active')?.id,
-         sources:document.querySelectorAll('#helsinki-termination .srcs a').length,
+         sources:[...document.querySelectorAll('#helsinki-termination .srcs a')].map(a=>a.getAttribute('href')),
          body:document.querySelector('#helsinki-termination')?.innerText||''
        }));
-       check(status.active==='cemetery'&&status.sources===3&&status.body.includes('.helsinki'),
+       // Preserve all three prior sources and require the reviewed 13 November notice.
+       const expectedHelsinkiSources=[
+         'https://www.icann.org/en/contracted-parties/registry-operators/services/registry-agreement-termination-service',
+         'https://www.iana.org/domains/root/db/helsinki.html',
+         'https://www.hel.fi/en/decision-making/nichelsinki',
+         'https://itp.cdn.icann.org/en/files/registry-agreements/helsinki/helsinki-termination-notice-13-11-2026-en.pdf'
+       ];
+       check(status.active==='cemetery'&&status.sources.length===expectedHelsinkiSources.length&&expectedHelsinkiSources.every(url=>status.sources.includes(url))&&status.body.includes('.helsinki'),
          'HIGH','HELSINKI_NAV',language,'Helsinki full-card navigation or sources broken',status);
      }
    }

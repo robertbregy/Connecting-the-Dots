@@ -1,0 +1,433 @@
+{
+  "schemaVersion": 1,
+  "observedOn": "2026-11-22",
+  "policy": "Raw HTML and JavaScript are retained only as temporary verification files; these public observations preserve factual fields and raw hashes. Official numerical JSON and CSV are archived separately from frozen research evidence.",
+  "sources": [
+    {
+      "id": "announcement-original",
+      "url": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-17-11-2026-en",
+      "method": "GET",
+      "retrievedAtUTC": "2026-11-22T10:50:43Z",
+      "httpStatus": 403,
+      "rawSHA256": null,
+      "limitation": "Direct HTML capture unavailable; content independently verified through web retrieval.",
+      "webReference": "turn786912461view0",
+      "contentVerifiedOn": "2026-11-22",
+      "verificationMethod": "Web retrieval of the official page; direct raw-HTML capture returned 403.",
+      "facts": {
+        "pageDate": "2026-11-17",
+        "linksToUpdatedAnnouncement": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en",
+        "proceedingApplications": 1610,
+        "contentionApplicationsAfter": 709,
+        "eligibleReplacements": 287
+      }
+    },
+    {
+      "id": "announcement-updated",
+      "url": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en",
+      "method": "GET",
+      "retrievedAtUTC": "2026-11-22T10:50:43Z",
+      "httpStatus": 403,
+      "rawSHA256": null,
+      "limitation": "Direct HTML capture unavailable; content independently verified through web retrieval.",
+      "webReference": "turn318633736view0",
+      "contentVerifiedOn": "2026-11-22",
+      "verificationMethod": "Web retrieval of the official page; direct raw-HTML capture returned 403.",
+      "facts": {
+        "pageDate": "2026-11-17",
+        "snapshotAsOf": "2026-11-16",
+        "proceedingApplications": 1606,
+        "contentionSetsBefore": 263,
+        "contentionSetsAfter": 226,
+        "contentionApplicationsBefore": 891,
+        "contentionApplicationsAfter": 705,
+        "selectedReplacements": 152,
+        "eligibleReplacements": 442,
+        "aspProceeding": 46,
+        "asiaPacificProceeding": 211,
+        "idnApplications": 21,
+        "variantApplications": 8,
+        "retainedFewerSetsBullet": 36
+      }
+    },
+    {
+      "id": "statistics-page",
+      "url": "https://newgtldprogram-aps.icann.org/statistics",
+      "method": "GET",
+      "retrievedAtUTC": "2026-11-22T10:50:25Z",
+      "httpStatus": 200,
+      "contentType": "text/html",
+      "rawBytes": 75327,
+      "rawSHA256": "baf83515f96b7d4bdbca021421be2cc51487cf4b45c9b48e2dd5d99202a8fbdc"
+    },
+    {
+      "id": "statistics-api",
+      "url": "https://newgtldprogram-aps.icann.org/aps/applications/stats",
+      "method": "GET",
+      "retrievedAtUTC": "2026-11-22T10:50:25Z",
+      "httpStatus": 200,
+      "contentType": "application/json",
+      "rawBytes": 3066,
+      "rawSHA256": "baeb2ad780f6d88e70b55cf2c67dfd7e88d9f61bc8351a5a7c498dcdd3c86fb6",
+      "facts": {
+        "lastPublishedAt": "2026-11-22T10:39:14.813Z",
+        "totalApplications": 1615,
+        "uniqueStrings": 1127,
+        "statuses": {
+          "Active": 1596,
+          "Contracted": 0,
+          "Delegated": 0,
+          "On Hold": 0,
+          "Pending Termination": 0,
+          "Terminated": 0,
+          "Withdrawn": 19
+        }
+      }
+    },
+    {
+      "id": "applications-page",
+      "url": "https://newgtldprogram-aps.icann.org/applications",
+      "method": "GET",
+      "retrievedAtUTC": "2026-11-22T10:50:25Z",
+      "httpStatus": 200,
+      "contentType": "text/html",
+      "rawBytes": 161888,
+      "rawSHA256": "3c5d87e65177c89e1168514dd1055977ffcab4c1c78a82e34103b681fb7ade3d"
+    },
+    {
+      "id": "applications-script",
+      "url": "https://newgtldprogram-aps.icann.org/main-3NSIFRS6.js",
+      "method": "GET",
+      "retrievedAtUTC": "2026-11-22T10:50:25Z",
+      "httpStatus": 200,
+      "contentType": "text/javascript",
+      "rawBytes": 1015851,
+      "rawSHA256": "ff69e029dd391ef8cc0208966623516a17d00a9898b2a6b4b4ea85ed778a070e"
+    },
+    {
+      "id": "official-cam",
+      "url": "https://newgtldprogram-aps.icann.org/applications/CCS2640T-T64563/summary",
+      "method": "GET",
+      "retrievedAtUTC": "2026-11-22T10:50:25Z",
+      "httpStatus": 200,
+      "contentType": "text/html",
+      "rawBytes": 30574,
+      "rawSHA256": "acb8311e45b636372d562073d098a911f89a2fc32e4bd4bf157557ac117bb92a",
+      "facts": {
+        "applicationId": "CCS2640T-T64563",
+        "Last published on": "19 November 2026 at 23:30 UTC",
+        "Application Status": "Withdrawn",
+        "Processing Stage": "String Evaluation Processing",
+        "Comment Period": "17 November 2026 at 00:00 UTC to 16 March 2027 at 23:59 UTC",
+        "Applicant Name": "Cam Connecting SARL",
+        "Applicant Location": "MC",
+        "primaryString": "official",
+        "onlyOpenCommentPeriodLabel": true
+      }
+    },
+    {
+      "id": "official-cardelina",
+      "url": "https://newgtldprogram-aps.icann.org/applications/CS2595-T95743/summary",
+      "method": "GET",
+      "retrievedAtUTC": "2026-11-22T10:50:43Z",
+      "httpStatus": 200,
+      "httpDate": "Sun, 22 Nov 2026 10:50:43 GMT",
+      "contentType": "text/html;charset=UTF-8",
+      "rawBytes": 30839,
+      "rawSHA256": "1bfb30d352d410ad0a49e1a3bd19fbe59c6086fea7bd590990b5d53d4bbbdc7c",
+      "facts": {
+        "applicationId": "CS2595-T95743",
+        "Last published on": "17 November 2026 at 16:45 UTC",
+        "Application Status": "Active",
+        "Processing Stage": "String Evaluation Processing",
+        "Comment Period": "17 November 2026 at 00:00 UTC to 16 March 2027 at 23:59 UTC",
+        "Applicant Name": "Cardelina Sociedad por Acciones Simplificada",
+        "Applicant Location": "CO",
+        "primaryString": "official",
+        "onlyOpenCommentPeriodLabel": true
+      }
+    },
+    {
+      "id": "official-radix",
+      "url": "https://newgtldprogram-aps.icann.org/applications/RTIS2674T-T10767/summary",
+      "method": "GET",
+      "retrievedAtUTC": "2026-11-22T10:50:43Z",
+      "httpStatus": 200,
+      "httpDate": "Sun, 22 Nov 2026 10:50:43 GMT",
+      "contentType": "text/html;charset=UTF-8",
+      "rawBytes": 30595,
+      "rawSHA256": "ac7a844c5b58b44e7eada8facbb7e93abc0e0be367d59c513307b4fa4adabb04",
+      "facts": {
+        "applicationId": "RTIS2674T-T10767",
+        "Last published on": "17 November 2026 at 16:48 UTC",
+        "Application Status": "Active",
+        "Processing Stage": "String Evaluation Processing",
+        "Comment Period": "17 November 2026 at 00:00 UTC to 16 March 2027 at 23:59 UTC",
+        "Applicant Name": "Radix Technologies Inc SEZC",
+        "Applicant Location": "KY",
+        "primaryString": "official",
+        "onlyOpenCommentPeriodLabel": true
+      }
+    },
+    {
+      "id": "official-vinyl",
+      "url": "https://newgtldprogram-aps.icann.org/applications/VSL2633T-T77260/summary",
+      "method": "GET",
+      "retrievedAtUTC": "2026-11-22T10:50:43Z",
+      "httpStatus": 200,
+      "httpDate": "Sun, 22 Nov 2026 10:50:43 GMT",
+      "contentType": "text/html;charset=UTF-8",
+      "rawBytes": 30571,
+      "rawSHA256": "775ddedae6e6f7fe678e7b0fec24973023c492cf2c1fbd13d92564c82f5d20f0",
+      "facts": {
+        "applicationId": "VSL2633T-T77260",
+        "Last published on": "17 November 2026 at 16:49 UTC",
+        "Application Status": "Active",
+        "Processing Stage": "String Evaluation Processing",
+        "Comment Period": "17 November 2026 at 00:00 UTC to 16 March 2027 at 23:59 UTC",
+        "Applicant Name": "Vinyl Strings, LLC",
+        "Applicant Location": "US",
+        "primaryString": "official",
+        "onlyOpenCommentPeriodLabel": true
+      }
+    },
+    {
+      "id": "official-xserver",
+      "url": "https://newgtldprogram-aps.icann.org/applications/XCI2688T-T22077/summary",
+      "method": "GET",
+      "retrievedAtUTC": "2026-11-22T10:50:48Z",
+      "httpStatus": 200,
+      "httpDate": "Sun, 22 Nov 2026 10:50:48 GMT",
+      "contentType": "text/html;charset=UTF-8",
+      "rawBytes": 30595,
+      "rawSHA256": "c7776fc29df59ac5feca54e262ab9ffa317e8a6e4a03dcc9793c9077e91f721d",
+      "facts": {
+        "applicationId": "XCI2688T-T22077",
+        "Last published on": "17 November 2026 at 16:51 UTC",
+        "Application Status": "Active",
+        "Processing Stage": "String Evaluation Processing",
+        "Comment Period": "17 November 2026 at 00:00 UTC to 16 March 2027 at 23:59 UTC",
+        "Applicant Name": "XServer Cloud Incorporated",
+        "Applicant Location": "JP",
+        "primaryString": "official",
+        "onlyOpenCommentPeriodLabel": true
+      }
+    },
+    {
+      "id": "official-xyz",
+      "url": "https://newgtldprogram-aps.icann.org/applications/XL2625T-T64446/summary",
+      "method": "GET",
+      "retrievedAtUTC": "2026-11-22T10:50:48Z",
+      "httpStatus": 200,
+      "httpDate": "Sun, 22 Nov 2026 10:50:48 GMT",
+      "contentType": "text/html;charset=UTF-8",
+      "rawBytes": 30544,
+      "rawSHA256": "2846715fe729a24e1bdea372e216c2a47055f907d7b084b2b341ec0e4f6f4986",
+      "facts": {
+        "applicationId": "XL2625T-T64446",
+        "Last published on": "17 November 2026 at 16:44 UTC",
+        "Application Status": "Active",
+        "Processing Stage": "String Evaluation Processing",
+        "Comment Period": "17 November 2026 at 00:00 UTC to 16 March 2027 at 23:59 UTC",
+        "Applicant Name": "XYZ.COM LLC",
+        "Applicant Location": "US",
+        "primaryString": "official",
+        "onlyOpenCommentPeriodLabel": true
+      }
+    },
+    {
+      "id": "lugano",
+      "url": "https://newgtldprogram-aps.icann.org/applications/CDL2651T-T31516/summary",
+      "method": "GET",
+      "retrievedAtUTC": "2026-11-22T10:50:48Z",
+      "httpStatus": 200,
+      "httpDate": "Sun, 22 Nov 2026 10:50:48 GMT",
+      "contentType": "text/html;charset=UTF-8",
+      "rawBytes": 30731,
+      "rawSHA256": "de7a5037d819082cfb69bb7e4042d49e89c227e9ec7cd3b10b0f034a20136b00",
+      "facts": {
+        "applicationId": "CDL2651T-T31516",
+        "Last published on": "17 November 2026 at 16:42 UTC",
+        "Application Status": "Active",
+        "Processing Stage": "String Evaluation Processing",
+        "Comment Period": "17 November 2026 at 00:00 UTC to 16 March 2027 at 23:59 UTC",
+        "Applicant Name": "Città di Lugano",
+        "Applicant Location": "CH",
+        "primaryString": "lugano",
+        "onlyOpenCommentPeriodLabel": true
+      }
+    },
+    {
+      "id": "tether",
+      "url": "https://newgtldprogram-aps.icann.org/applications/TOSD2642T-T84921/summary",
+      "method": "GET",
+      "retrievedAtUTC": "2026-11-22T10:50:48Z",
+      "httpStatus": 200,
+      "httpDate": "Sun, 22 Nov 2026 10:50:48 GMT",
+      "contentType": "text/html;charset=UTF-8",
+      "rawBytes": 30762,
+      "rawSHA256": "5baa43b32ad5c0cff71279cb978f3e7a7d7ef87fec5ba34ae280868dfa60088e",
+      "facts": {
+        "applicationId": "TOSD2642T-T84921",
+        "Last published on": "17 November 2026 at 16:56 UTC",
+        "Application Status": "Active",
+        "Processing Stage": "String Evaluation Processing",
+        "Comment Period": "17 November 2026 at 00:00 UTC to 16 March 2027 at 23:59 UTC",
+        "Applicant Name": "Tether Operations, Sociedad Anonima de Capital Variable",
+        "Applicant Location": "SV",
+        "primaryString": "tether",
+        "onlyOpenCommentPeriodLabel": true
+      }
+    },
+    {
+      "id": "usdt",
+      "url": "https://newgtldprogram-aps.icann.org/applications/TOSD2642T-T92840/summary",
+      "method": "GET",
+      "retrievedAtUTC": "2026-11-22T10:50:48Z",
+      "httpStatus": 200,
+      "httpDate": "Sun, 22 Nov 2026 10:50:48 GMT",
+      "contentType": "text/html;charset=UTF-8",
+      "rawBytes": 30760,
+      "rawSHA256": "e8c07b8f07726ef37949199d95574c880f6f07dbd397c6688e08fecd297c9041",
+      "facts": {
+        "applicationId": "TOSD2642T-T92840",
+        "Last published on": "17 November 2026 at 16:55 UTC",
+        "Application Status": "Active",
+        "Processing Stage": "String Evaluation Processing",
+        "Comment Period": "17 November 2026 at 00:00 UTC to 16 March 2027 at 23:59 UTC",
+        "Applicant Name": "Tether Operations, Sociedad Anonima de Capital Variable",
+        "Applicant Location": "SV",
+        "primaryString": "usdt",
+        "onlyOpenCommentPeriodLabel": true
+      }
+    },
+    {
+      "id": "wdo",
+      "url": "https://newgtldprogram-aps.icann.org/applications/WDO2627T-T45217/summary",
+      "method": "GET",
+      "retrievedAtUTC": "2026-11-22T10:50:51Z",
+      "httpStatus": 200,
+      "httpDate": "Sun, 22 Nov 2026 10:50:51 GMT",
+      "contentType": "text/html;charset=UTF-8",
+      "rawBytes": 25303,
+      "rawSHA256": "cd7916f4de55c18e70e46f7ae704262eee60d1a3635ddb84dc9c9e7704109a39",
+      "facts": {
+        "applicationId": "WDO2627T-T45217",
+        "Last published on": "7 October 2026 at 18:00 UTC",
+        "Application Status": "Undergoing administrative check",
+        "Processing Stage": "Submitted",
+        "Comment Period": null,
+        "Applicant Name": "World Data Organization",
+        "Applicant Location": "CN",
+        "primaryString": "wdo",
+        "onlyOpenCommentPeriodLabel": false
+      }
+    },
+    {
+      "id": "applications-csv",
+      "url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+      "method": "POST",
+      "requestJSON": {
+        "searchAndFilter": {},
+        "sort": {
+          "field": "primaryString",
+          "direction": "ASC"
+        },
+        "pagination": {
+          "pageNum": 0,
+          "pageSize": 10
+        }
+      },
+      "retrievedAtUTC": "2026-11-22T10:51:04Z",
+      "httpStatus": 200,
+      "httpDate": "Sun, 22 Nov 2026 10:50:58 GMT",
+      "contentType": "text/csv;charset=UTF-8",
+      "rawBytes": 680471,
+      "rawSHA256": "ae3e8366e8512672146b1f3709fc58c2400eb57106d6376909366bfe3168b447",
+      "routeDiscoveredFrom": "applications-script",
+      "backendBaseDiscoveredFrom": "applications-page",
+      "rawEvidence": "data/evidence/round-2026-followup-20261122/aps-export-raw.csv",
+      "facts": {
+        "publicRows": 2783,
+        "statusCounts": {
+          "Active": 1595,
+          "Deactivated": 1169,
+          "Withdrawn": 19
+        },
+        "baseApplicationFamilies": 1614,
+        "statusChangesFromFrozen1830": [
+          {
+            "applicationId": "AI2686T-T93348",
+            "string": "airliquide",
+            "applicant": "L'Air Liquide, société anonyme pour l'Étude et l'Exploitation des procédés Georges Claude",
+            "previousStatus": "Active",
+            "currentStatus": "Withdrawn"
+          },
+          {
+            "applicationId": "INC2624T-T96235",
+            "string": "bit",
+            "applicant": "Internet Naming Company",
+            "previousStatus": "Active",
+            "currentStatus": "Withdrawn"
+          },
+          {
+            "applicationId": "CCS2640T-T43697",
+            "string": "gaming",
+            "applicant": "Cam Connecting SARL",
+            "previousStatus": "Active",
+            "currentStatus": "Withdrawn"
+          },
+          {
+            "applicationId": "CCS2640T-T59535",
+            "string": "gym",
+            "applicant": "Cam Connecting SARL",
+            "previousStatus": "Active",
+            "currentStatus": "Withdrawn"
+          },
+          {
+            "applicationId": "TL2645T-T79897",
+            "string": "leo",
+            "applicant": "TechEdge Limited",
+            "previousStatus": "Active",
+            "currentStatus": "Withdrawn"
+          },
+          {
+            "applicationId": "CCS2640T-T75373",
+            "string": "max",
+            "applicant": "Cam Connecting SARL",
+            "previousStatus": "Active",
+            "currentStatus": "Withdrawn"
+          },
+          {
+            "applicationId": "CCS2640T-T64563",
+            "string": "official",
+            "applicant": "Cam Connecting SARL",
+            "previousStatus": "Active",
+            "currentStatus": "Withdrawn"
+          },
+          {
+            "applicationId": "BGNT2696T-T98747",
+            "string": "pop",
+            "applicant": "Beijing Guoxu Network Technology Co., Ltd.",
+            "previousStatus": "Active",
+            "currentStatus": "Withdrawn"
+          },
+          {
+            "applicationId": "CCS2640T-T99130",
+            "string": "zen",
+            "applicant": "Cam Connecting SARL",
+            "previousStatus": "Active",
+            "currentStatus": "Withdrawn"
+          },
+          {
+            "applicationId": "TL2645T-T30242",
+            "string": "zen",
+            "applicant": "TechEdge Limited",
+            "previousStatus": "Active",
+            "currentStatus": "Withdrawn"
+          }
+        ]
+      }
+    }
+  ]
+}

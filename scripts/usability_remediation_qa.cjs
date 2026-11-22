@@ -110,7 +110,9 @@ function staticChecks(){
   const timelineUpdatedLinks=new Map();
   if(stringConfirmation){
    const oldSource='https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en';
-   const newSource='https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-17-11-2026-en';
+   // The 22 November review verifies ICANN's corrected announcement URL;
+   // the milestone date and the original September baseline remain pinned.
+   const newSource='https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en';
    for(const [id,from,to,state,stateKey] of [
     ['confirmation','insideConfirmPublicScheduleBody','insideConfirmObservedBody','observed','insideStateObserved'],
     ['community-input','insideInputBody','insideInputObservedBody','current','insideStateCurrent']

@@ -1,60 +1,119 @@
 {
   "schemaVersion": 2,
-  "snapshotState": "string-confirmation",
-  "sourceSha256": "c41606e8b58f3e469c0e91fab48e25057c0959f9792d4385871d5c70268fe44c",
+  "snapshotState": "post-string-confirmation",
+  "sourceSha256": "cd7df94d073ef39206621424aed2d34782f2896a34d589b5d2109e0626288ad7",
   "sourceURL": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
-  "retrievedAtUTC": "2026-11-17T18:30:10Z",
+  "retrievedAtUTC": "2026-11-22T10:51:04Z",
   "counts": {
     "apsStatisticsTotalApplications": 1615,
-    "apsStatisticsActiveApplications": 1606,
-    "officialAnnouncementProceedingApplications": 1610,
+    "apsStatisticsActiveApplications": 1596,
+    "apsStatisticsWithdrawnApplications": 19,
+    "officialAnnouncementProceedingApplications": 1606,
     "officialPublishedApplications": 1614,
-    "visibleProceedingApplications": 1605,
+    "visibleProceedingApplications": 1595,
+    "visibleWithdrawnApplications": 19,
     "officialListingRows": 2783,
     "replacementRecords": 1169,
     "selectedReplacementRecords": 152,
     "replacementActive": 152,
     "replacementDeactivated": 1017,
-    "proceedingNewPrimaryApplications": 1599,
-    "newPrimaryStrings": 1120,
+    "replacementWithdrawn": 0,
+    "proceedingNewPrimaryApplications": 1589,
+    "newPrimaryStrings": 1119,
     "variantOnlyExistingTldApplications": 6,
     "variantRelationships": 13,
-    "derivedExactPrimaryMatchGroups": 226,
-    "applicationsInExactPrimaryMatches": 705,
-    "officialAnnouncementApplicationsInContention": 709,
+    "derivedExactPrimaryMatchGroups": 225,
+    "applicationsInExactPrimaryMatches": 695,
+    "officialConfirmedContentionSets": 226,
+    "officialConfirmedContentionApplications": 705,
+    "officialAnnouncementApplicationsInContention": 705,
     "knownAdministrativeCheckApplications": 1,
-    "announcementVsPublicProceedingGap": 5,
-    "unresolvedAnnouncementPublicationGap": 4
+    "statisticsVsPublicProceedingGap": 1,
+    "unresolvedAnnouncementPublicationGap": 0,
+    "statusChangesSinceStringConfirmation": 10
+  },
+  "inputFiles": {
+    "data/applications_2026_aps_followup_20261122.csv": {
+      "sha256": "cd7df94d073ef39206621424aed2d34782f2896a34d589b5d2109e0626288ad7",
+      "bytes": 671762
+    },
+    "data/applications_2026_aps_followup_20261122_provenance.json": {
+      "sha256": "bcd08fe9f04166758534b5718442f2979a93bb73af8c81634549d071579da242",
+      "bytes": 10516
+    },
+    "data/applications_2026_aps_string_confirmation_20261117.csv": {
+      "sha256": "c41606e8b58f3e469c0e91fab48e25057c0959f9792d4385871d5c70268fe44c",
+      "bytes": 677328
+    },
+    "data/applications_2026_aps_string_confirmation_20261117_provenance.json": {
+      "sha256": "4a672026ed32c3d3eb0652eb17f93197bd40f8f82ebf8728eb3bcd2f6ea728aa",
+      "bytes": 4855
+    },
+    "data/evidence/string-confirmation-2026-11-17/live/string-confirmation-contention-sets.csv": {
+      "sha256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
+      "bytes": 36820
+    }
+  },
+  "historicalAnnouncement": {
+    "sourceURL": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en",
+    "snapshotOn": "2026-11-16",
+    "correctionObservedOn": "2026-11-22",
+    "proceedingApplications": 1606,
+    "applicationsInContention": 705,
+    "publicListingObservedAtUTC": "2026-11-17T18:30:10Z",
+    "publicProceedingApplications": 1605,
+    "knownAdministrativeCheckApplications": 1,
+    "residualAggregateDifference": 0,
+    "scope": "The corrected 16 November announcement snapshot agrees with the contemporaneous 17 November APS Statistics and contention CSV. This does not compare that historical snapshot with the current 22 November withdrawal totals."
+  },
+  "contention": {
+    "classification": "project-derived-current-exact-primary-string-overlaps",
+    "officialRevealListURL": "https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv",
+    "officialConfirmedListURL": "https://newgtldprogram.icann.org/en/application-rounds/round2/string-confirmation-contention-sets.csv",
+    "officialConfirmedSnapshotOn": "2026-11-17",
+    "officialConfirmedFile": "data/evidence/string-confirmation-2026-11-17/live/string-confirmation-contention-sets.csv",
+    "officialConfirmedSHA256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
+    "publicConfirmedSets": 226,
+    "publicConfirmedApplications": 705,
+    "currentDerivedSets": 225,
+    "currentDerivedApplications": 695,
+    "currentDerivedObservedAtUTC": "2026-11-22T10:51:04Z",
+    "currentDerivedSourceSHA256": "cd7df94d073ef39206621424aed2d34782f2896a34d589b5d2109e0626288ad7",
+    "currentDerivedBasis": "Project-derived exact-primary-string overlaps among current visible Active new gTLD applications. These are not a newly published ICANN contention determination. The official 17 November contention CSV remains separately frozen at 226 sets / 705 rows.",
+    "officialAnnouncementApplications": 705,
+    "unresolvedAnnouncementPublicationGap": 0,
+    "APSInContentionFalseIsNotAuthoritativeBeforeStringEvaluation": true
   },
   "eventHistory": {
-    "events": 5566,
-    "sourceSnapshots": 2
+    "events": 8349,
+    "sourceSnapshots": 3
   },
   "files": {
     "aps_2026_application_graph.json": {
-      "sha256": "2a5327c8f7ea15e0b83792398fb645f955befa5662faefc7e30f56989b8b0e74",
-      "bytes": 2154304
+      "sha256": "c5d322576c7f6e1e24517b6d4c8f20e9d40537aa4b512698cba98ac2045e2b1d",
+      "bytes": 2235884
     },
     "aps_2026_application_graph.js": {
-      "sha256": "f35a1354726d4d080182881d0be11aa9256efdf64945764ecc1c294dbb42fe56",
-      "bytes": 1575228
+      "sha256": "b4facf98b6b1fecbe22387cbc1526a2b9c6197a914bf5cfe6f5be75811150084",
+      "bytes": 1642401
     },
     "aps_2026_application_edges.csv": {
-      "sha256": "24af8e08636286f42ed149ee49041249c0dde41236e2449c3d2c44db6969929a",
-      "bytes": 405555
+      "sha256": "a65620c8f1311f0f5ede1924c34460012c93ee4c9df9d737adaab74d1f729a2e",
+      "bytes": 405585
     },
     "aps_2026_record_observations.csv": {
-      "sha256": "a9d46d220783a65a1d36cf0d1a7874b5271cac1d14ebcd03f757d36bb1d07479",
-      "bytes": 974730
+      "sha256": "2bc2ddda26a3436cc4eae806db12dc90197114d39e2b8932bb6bdadf8a42e2eb",
+      "bytes": 1459263
     }
   },
   "limitations": [
     "The public APS listing still excludes WDO2627T-T45217 while its administrative check continues.",
-    "The 17 November ICANN announcement reports 1,610 proceeding applications, while the public APS export yields 1,605 proceeding families; .wdo explains one and four remain an unresolved publication/aggregate gap.",
-    "The public String Confirmation contention CSV contains 226 sets / 705 application rows, while the announcement reports 226 / 709.",
-    "A -R record is a replacement record linked to a stable base Application ID; selected replacements are represented as the application family's effective current string.",
+    "Current APS counts are dated to 22 November 2026. The corrected historical announcement is reconciled separately with the String Confirmation sources, not compared with later withdrawal totals.",
+    "The official String Confirmation contention CSV remains frozen at 226 sets / 705 application rows. Current exact-primary overlaps are project-derived from visible Active records and are not a new official contention determination.",
+    "A -R record is linked to a stable base Application ID; a selected replacement remains the effective string if its status subsequently becomes Withdrawn.",
     "13 variant links are string relationships, not additional applications.",
     "Application detail/response/documents pages are linked at their official APS routes but not mirrored in full.",
-    "The observation log is append-only by source digest."
+    "The observation log is append-only by source digest.",
+    "Observed status changes do not establish their exact event dates, reasons or private arrangements."
   ]
 }

@@ -379,7 +379,7 @@ expected_counts={
  'explorer_catalog.csv':1849,'tld_universe.csv':1599,'application_only_strings.csv':250,
  'explorer_events.csv':7679,'tld_life_histories.csv':7679,'applications_2000.csv':47,'applications_2026.csv':1,
  'application_strings_2000.csv':225,'applications_2004.csv':10,'applications_2012.csv':1930,'governance_cases.csv':9,
- 'governance_case_events.csv':39,'economic_cases.csv':8,'economic_metrics.csv':22,'social_cases.csv':9,
+ 'governance_case_events.csv':40,'economic_cases.csv':8,'economic_metrics.csv':22,'social_cases.csv':9,
  'explorer_iana_reports.csv':2008,'explorer_nameservers.csv':7563,
 }
 for name,n in expected_counts.items():
@@ -505,7 +505,7 @@ for p in DATA.glob('*.csv'):
     low={h.strip().lower() for h in header}
     if 'primary contact' in low or 'email' in low: fail(f'contact field leaked into {p.name}')
 
-for name,n,events in [('governance_cases.json',9,39),('economic_cases.json',8,None),('social_cases.json',9,None)]:
+for name,n,events in [('governance_cases.json',9,40),('economic_cases.json',8,None),('social_cases.json',9,None)]:
     obj=json_file(name)
     if len(obj.get('cases',[]))!=n: fail(f'{name} case count')
     if events is not None and sum(len(c.get('events',[])) for c in obj['cases'])!=events: fail(f'{name} event count')
@@ -854,8 +854,8 @@ if (manifest.get('aps_2026_official_listing',{}).get('publishedApplications')!=1
 site_base='https://robertbregy.github.io/Connecting-the-Dots/'
 graph=json_file('aps_2026_application_graph.json')
 graph_report=json_file('aps_2026_application_graph_manifest.json')
-current_prov=json_file('applications_2026_aps_string_confirmation_20261117_provenance.json')
-if graph.get('schemaVersion')!=2 or graph.get('snapshotState')!='string-confirmation' or graph.get('counts',{}).get('officialPublishedApplications')!=1614:
+current_prov=json_file('applications_2026_aps_followup_20261122_provenance.json')
+if graph.get('schemaVersion')!=2 or graph.get('snapshotState')!='post-string-confirmation' or graph.get('counts',{}).get('officialPublishedApplications')!=1614:
     fail('2026 graph must have precisely 1614 published base applications')
 if len(graph.get('apps',[]))!=1614 or len({a['id'] for a in graph['apps']})!=1614:
     fail('Graph base Application IDs absent or duplicated')
@@ -867,18 +867,34 @@ if graph.get('notPublishedApplication',{}).get('id')!='WDO2627T-T45217':
     fail('Withheld WDO provenance missing from graph')
 if not all(a['detailUrl']=='https://newgtldprogram-aps.icann.org/applications/'+a['id']+'/summary' for a in graph['apps']):
     fail('Official application summary links are inconsistent with their IDs')
-if graph['counts'].get('derivedExactPrimaryMatchGroups')!=226 or graph['counts'].get('applicationsInExactPrimaryMatches')!=705:
-    fail('Confirmed public exact-string contention must reconcile to 226 sets / 705 application rows')
+if graph['counts'].get('derivedExactPrimaryMatchGroups')!=225 or graph['counts'].get('applicationsInExactPrimaryMatches')!=695:
+    fail('Current project-derived exact-string overlaps must reconcile to 225 groups / 695 applications')
+if (graph['counts'].get('officialConfirmedContentionSets')!=226 or
+    graph['counts'].get('officialConfirmedContentionApplications')!=705 or
+    graph['counts'].get('visibleProceedingApplications')!=1595 or
+    graph['counts'].get('visibleWithdrawnApplications')!=19 or
+    graph['counts'].get('unresolvedAnnouncementPublicationGap')!=0):
+    fail('Current status counts, corrected announcement and historical official contention must remain distinct')
+if (graph.get('sourceCSVFile')!='data/applications_2026_aps_followup_20261122.csv' or
+    graph.get('contention',{}).get('classification')!='project-derived-current-exact-primary-string-overlaps' or
+    graph['contention'].get('publicConfirmedSets')!=226 or graph['contention'].get('publicConfirmedApplications')!=705 or
+    graph['contention'].get('currentDerivedSets')!=225 or graph['contention'].get('currentDerivedApplications')!=695):
+    fail('Current Atlas must identify its dated source and distinguish calculated overlaps from official contention')
 if graph_report.get('sourceSha256')!=current_prov['normalizedCSVSHA256']:
-    fail('Current graph provenance not pinned to the 17 November APS CSV checksum')
+    fail('Current graph provenance not pinned to the 22 November APS CSV checksum')
 for name,expected in graph_report.get('files',{}).items():
     file=DATA/name
     if not file.exists() or hashlib.sha256(file.read_bytes()).hexdigest()!=expected.get('sha256'):
         fail('Analytical graph output has changed: '+name)
 edges=rows('aps_2026_application_edges.csv')
 observations=rows('aps_2026_record_observations.csv')
-if len(edges)!=2796 or len(observations)<5566:
+if len(edges)!=2796 or len(observations)!=8349:
     fail('APS primary, replacement, variant edges or snapshot event observations missing')
+if Counter(x['source_sha256'] for x in observations)!={
+    '520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887':2783,
+    'c41606e8b58f3e469c0e91fab48e25057c0959f9792d4385871d5c70268fe44c':2783,
+    current_prov['normalizedCSVSHA256']:2783}:
+    fail('APS history must retain all records from both earlier snapshots and append the current source')
 if set(x['application_id'] for x in edges)!={a['id'] for a in graph['apps']}:
     fail('String relationships contain orphan or missing applications')
 if any(x['source_sha256']!=current_prov['normalizedCSVSHA256'] for x in observations if x['observed_utc']==current_prov['retrievedAtUTC']):
@@ -937,7 +953,7 @@ if node:
 # v0.7.60: the live editorial chronicle must remain independent from frozen RR1.
 chronicle=json_file('inside_the_round_events.json')
 events=chronicle.get('events', [])
-if len(events)!=12 or len({event['id'] for event in events})!=12:
+if len(events)!=15 or len({event['id'] for event in events})!=15:
     fail('Inside the Round event count or unique ids')
 if not (publication_meta['asOf'] <= chronicle.get('lastReviewed','') <= publication_meta['releasedOn']):
     fail('Inside the Round editorial review outside snapshot/publication date range')
@@ -969,8 +985,15 @@ if (not replacement or replacement.get('state')!='observed' or replacement.get('
     replacement.get('bodyKey')!='insideReplaceCompletedBody' or
     replacement.get('revisionHistory',[])[-1].get('date')!='2026-10-30'):
     fail('Replacement period must be closed without implying confirmed applicant choices')
-if chronicle.get('lastReviewed')!='2026-11-17':
-    fail('Current technical release lacks dated 17 November timeline review')
+if chronicle.get('lastReviewed')!='2026-11-22':
+    fail('Current technical release lacks dated 22 November timeline review')
+for event_id, expected_date, expected_body in [
+    ('official-cam-withdrawal','2026-11-19','insideOfficialBody'),
+    ('announcement-correction-observed','2026-11-22','insideCorrectionBody'),
+    ('aps-followup-20261122','2026-11-22','insideLiveBody')]:
+    follow_event=next((e for e in events if e['id']==event_id),None)
+    if not follow_event or (follow_event.get('date'),follow_event.get('state'),follow_event.get('bodyKey'))!=(expected_date,'observed',expected_body):
+        fail('Missing dated primary-source follow-up event: '+event_id)
 confirmation=next((e for e in events if e['id']=='confirmation'),None)
 community_input=next((e for e in events if e['id']=='community-input'),None)
 if not confirmation or confirmation.get('state')!='observed' or confirmation.get('bodyKey')!='insideConfirmObservedBody':
@@ -1108,12 +1131,15 @@ if {q['id']:q['value'] for q in case['quantities']}!={'paid':1616,'official':161
     fail('Reveal Day discrepancy values altered without reviewed evidence')
 if case['trackedApplication']['id']!='WDO2627T-T45217' or case['trackedApplication']['string']!='.wdo':
     fail('Officially documented administrative-check record changed')
-if not case.get('revisionHistory') or case['revisionHistory'][-1]['date']!=case['revisedOn'] or case['revisionHistory'][-1]['changeKey']!='behindRevisionStringConfirmation':
+if not case.get('revisionHistory') or case['revisionHistory'][-1]['date']!=case['revisedOn'] or case['revisionHistory'][-1]['changeKey']!='behindRevisionCorrection20261122':
     fail('Unversioned field-note revision history')
-if len(case['sources'])!=22 or not any(s['kind']=='secondary' for s in case['sources']):
+if len(case['sources'])!=26 or not any(s['kind']=='secondary' for s in case['sources']):
     fail('Editorial case lacks provenance distinction')
 if not all(s['url'].startswith('https://') and s['labelKey'] for s in case['sources']):
     fail('Incomplete case evidence')
+from scripts.render_behind_round import validate_round_followup, validate_editorial_updates
+validate_round_followup(ROOT)
+validate_editorial_updates(case,translations,ROOT)
 if 'id="behind-round"' not in source_html or 'data-target="behind-round"' not in source_html or '<!-- CTD_BEHIND_ROUND_STORIES -->' not in source_html:
     fail('Independent observation missing from main navigation or build source')
 for lang in LANGS:
@@ -1136,6 +1162,12 @@ for lang in LANGS:
     for key in ['behindExplainedBody','behindOpenBody','behindIndependenceBody','behindMethodBody']:
         if not translations.get(lang,{}).get(key) or not html_text_present(standalone,translations[lang][key]):
             fail('Missing/untranslated core field-note '+lang+'/'+key)
+    for update in case.get('editorialUpdates',[]):
+        update_keys=[update['titleKey'],*update['paragraphKeys']]
+        update_keys += [update[k] for k in ('historicalNoticeKey','closingKey') if update.get(k)]
+        for key in update_keys:
+            if not html_text_present(standalone,translations[lang][key]) or not html_text_present(page,translations[lang][key]):
+                fail('Missing dated correction or preserved historical notice: '+lang+'/'+key)
     for source in case['sources']:
         if source['url'] not in standalone or source['url'] not in page or not translations[lang].get(source['labelKey']):
             fail('Missing case citation in '+lang+'/'+source['id'])
@@ -1248,6 +1280,8 @@ for lang in LANGS:
             for key in [update['titleKey'], *update['paragraphKeys'], update['closingKey']]:
                 if not html_text_present(article,translations[lang][key]):
                     fail('Incomplete investigation update: '+lang+'/'+slug+'/'+key)
+            if update.get('historicalNoticeKey') and not html_text_present(article,translations[lang][update['historicalNoticeKey']]):
+                fail('Superseded investigation figures lack a visible historical notice: '+lang+'/'+slug)
         if 'https://doi.org/10.5281/zenodo.23262623' not in article:
             fail('Frozen RR1 independence attribution lost: '+lang+'/'+slug)
         if slug=='replacement-strings':

@@ -53,7 +53,7 @@ function saveState(){
 restoreState();
 const indexes=new Map(all.map(a=>[a.id,a]));
 const matcher=a=>normal([
- a.id,a.primary,a.primaryUnicode,a.originalPrimary,a.originalPrimaryUnicode,a.applicant,a.location,a.region,a.type,a.status,
+ a.id,a.primary,a.primaryUnicode,a.originalPrimary,a.originalPrimaryUnicode,a.applicant,a.location,a.region,a.type,a.status,statusLabel(a.status),
  ...(a.types||[]),...(a.flags||[]),
  a.replacement?.id,a.replacement?.string,a.replacement?.unicode,a.replacement?.status,
  ...(a.variants||[]).flatMap(v=>[v.ascii,v.unicode])
@@ -81,6 +81,14 @@ function linkToExplorer(label){
  return native?'?tab=explore&q='+encodeURIComponent(label):site+lang+'/?tab=explore&q='+encodeURIComponent(label);
 }
 function pill(x,cl=''){return '<span class="apsTag '+cl+'">'+escape(x)+'</span>';}
+function statusLabel(status){
+ const key={Active:'apsAtlasStatusActive',Withdrawn:'apsAtlasStatusWithdrawn',Deactivated:'apsAtlasStatusDeactivated'}[status];
+ return (key&&L[key])||status;
+}
+function statusPill(status){
+ const cls=status==='Active'?'apsState':'apsInactive';
+ return '<span class="apsTag '+cls+'" data-aps-status="'+escape(status)+'">'+escape(statusLabel(status))+'</span>';
+}
 function item(a){
  const direct=officialHref(a.id);
  const replacement=a.replacement;
@@ -89,7 +97,7 @@ function item(a){
   ?'<bdi>.'+escape(a.originalPrimary)+'</bdi> → <bdi>.'+escape(replacement.string)+'</bdi>'
   :'<bdi>.'+escape(replacement?.string)+'</bdi>';
  const replacements=replacement?'<div class="apsReplacement"><b>'+escape(replacementLabel)+
-  '</b> '+replacementString+' · '+pill(replacement.status,replacement.status==='Deactivated'?'apsInactive':'apsState')+
+  '</b> '+replacementString+' · '+statusPill(replacement.status)+
   ' <span class="apsMuted">'+escape(replacement.id)+'</span> '+
   '<a target="_blank" rel="noopener" href="'+escape(officialHref(replacement.id))+'">'+escape(t('apsAtlasPublicDetail'))+' ↗</a></div>':'';
  const variants=a.variants.length?'<div class="apsVariants"><b>'+escape(t('apsAtlasVariants'))+': </b>'+
@@ -103,14 +111,14 @@ function item(a){
   '<div class="apsCardHead"><div><'+cardHeading+' class="apsCardString"><bdi>.'+escape(a.primary)+'</bdi>'+
   (a.primaryUnicode?'<small lang="und">'+escape(a.primaryUnicode)+'</small>':'')+'</'+cardHeading+'>'+
   '<div class="apsApplicant">'+escape(a.applicant)+'</div></div><div class="apsCardSide">'+
-  pill(a.status,'apsState')+identifier+'</div></div>'+
+  statusPill(a.status)+identifier+'</div></div>'+
   '<div class="apsCardMeta">'+pill(a.region)+pill(a.location)+typeTags+exact+
    (replacement?pill(t('apsAtlasHasReplacement')):'')+
    (a.variantOnlyExistingTld?pill(t('apsAtlasExistingVariant')):'')+'</div>'+
   '<details class="apsCardDetails" '+(directId===a.id||expandedIds.has(a.id)?'open':'')+'><summary>'+escape(t('apsAtlasDetails'))+'</summary>'+
   '<dl class="apsFacts"><dt>'+escape(t('apsAtlasApplicationId'))+'</dt><dd>'+escape(a.id)+'</dd>'+
   '<dt>'+escape(t('apsAtlasApplicant'))+'</dt><dd>'+escape(a.applicant)+'</dd>'+
-  '<dt>'+escape(t('apsAtlasBaseStatus'))+'</dt><dd>'+escape(a.status)+'</dd>'+
+  '<dt>'+escape(t('apsAtlasBaseStatus'))+'</dt><dd data-aps-status="'+escape(a.status)+'">'+escape(statusLabel(a.status))+'</dd>'+
   '<dt>'+escape(t('apsAtlasProcessingStage'))+'</dt><dd>'+escape(a.stage)+'</dd>'+
   '<dt>'+escape(t('apsAtlasTypes'))+'</dt><dd>'+escape(a.type)+'; '+escape(a.types.join(', ')||t('apsAtlasNone'))+'</dd></dl>'+
   replacements+variants+
@@ -141,6 +149,6 @@ reset.addEventListener('click',()=>{
  search.focus();
 });
 window.addEventListener('popstate',()=>{restoreState();render(false)});
-window.CTD_APS_REFRESH=(nextLang,nextDict)=>{lang=nextLang;L=nextDict||L;render();};
+window.CTD_APS_REFRESH=(nextLang,nextDict)=>{lang=nextLang;L=nextDict||L;for(const a of all)hay.set(a.id,matcher(a));render();};
 render();
 })();

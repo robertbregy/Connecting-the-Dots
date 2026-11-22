@@ -1,0 +1,596 @@
+{
+  "schemaVersion": 1,
+  "classification": "source-backed-current-observation-separate-from-frozen-research",
+  "observedOn": "2026-11-22",
+  "sourceCaptureUTC": "2026-11-22T10:51:04Z",
+  "evidenceRegister": "data/evidence/round-2026-followup-20261122/source-observations.json",
+  "currentExport": "data/applications_2026_aps_followup_20261122.csv",
+  "currentExportProvenance": "data/applications_2026_aps_followup_20261122_provenance.json",
+  "researchBoundary": "Do not rewrite the 17 November observations, RR3 or any published scientific/technical archive. The correction and subsequent withdrawals are later evidence.",
+  "announcementCorrection": {
+    "originalURL": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-17-11-2026-en",
+    "updatedURL": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en",
+    "pageDate": "2026-11-17",
+    "snapshotAsOf": "2026-11-16",
+    "correctionObservedOn": "2026-11-22",
+    "actualCorrectionPublicationDate": null,
+    "originalToUpdated": {
+      "proceedingApplications": [
+        1610,
+        1606
+      ],
+      "contentionApplicationsAfter": [
+        709,
+        705
+      ],
+      "eligibleReplacements": [
+        287,
+        442
+      ],
+      "aspProceeding": [
+        50,
+        46
+      ],
+      "asiaPacificProceeding": [
+        215,
+        211
+      ],
+      "idnApplications": [
+        22,
+        21
+      ],
+      "variantApplications": [
+        9,
+        8
+      ],
+      "contentionSetsBefore": [
+        262,
+        263
+      ],
+      "contentionApplicationsBefore": [
+        885,
+        891
+      ]
+    },
+    "selectedReplacementsUnchanged": 152,
+    "contentionSetsAfterUnchanged": 226,
+    "historicalFourUnitDifferenceStatus": "superseded-by-official-correction",
+    "causeOfOriginalError": "not established by the published correction",
+    "residualInconsistency": {
+      "correctedBefore": 263,
+      "after": 226,
+      "arithmeticReduction": 37,
+      "retainedFewerSetsBullet": 36
+    },
+    "replacementArithmetic": {
+      "eligibleCorrected": 442,
+      "selected": 152,
+      "eligibleNotSelectedDerived": 290,
+      "supersededEligible": 287,
+      "supersededNotSelectedDerived": 135,
+      "supersededEligibilityDifference": 155
+    }
+  },
+  "currentStatistics": {
+    "source": "https://newgtldprogram-aps.icann.org/statistics",
+    "sourceAPI": "https://newgtldprogram-aps.icann.org/aps/applications/stats",
+    "lastPublishedAt": "2026-11-22T10:39:14.813Z",
+    "totalApplications": 1615,
+    "activeApplications": 1596,
+    "withdrawnApplications": 19,
+    "publicVisibleActive": 1595,
+    "publicVisibleWithdrawn": 19,
+    "publicApplicationFamilies": 1614
+  },
+  "comparisons": [
+    {
+      "baseline": "17 November 18:30 UTC frozen public export and 18:09/18:39 Statistics",
+      "baselineWithdrawn": 9,
+      "currentWithdrawn": 19,
+      "additionalWithdrawn": 10
+    },
+    {
+      "baseline": "17 November 20:09 UTC Statistics only",
+      "baselineWithdrawn": 10,
+      "currentWithdrawn": 19,
+      "additionalWithdrawn": 9,
+      "limitation": "The public export checked at 20:38 remained identical to the frozen 18:30 CSV; do not assign the then-unidentified tenth withdrawal retrospectively without its own timed evidence."
+    }
+  ],
+  "currentExactStringOverlap": {
+    "basis": "Project-derived from visible Active new-primary applications in the 22 November CSV",
+    "newPrimaryApplications": 1589,
+    "newPrimaryStrings": 1119,
+    "groups": 225,
+    "applicationsInGroups": 695,
+    "isNewOfficialContentionDetermination": false,
+    "official17NovemberReference": {
+      "sets": 226,
+      "applicationRows": 705
+    }
+  },
+  "statusChangesSinceFrozen17": [
+    {
+      "applicationId": "AI2686T-T93348",
+      "string": "airliquide",
+      "applicant": "L'Air Liquide, société anonyme pour l'Étude et l'Exploitation des procédés Georges Claude",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "INC2624T-T96235",
+      "string": "bit",
+      "applicant": "Internet Naming Company",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CCS2640T-T43697",
+      "string": "gaming",
+      "applicant": "Cam Connecting SARL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CCS2640T-T59535",
+      "string": "gym",
+      "applicant": "Cam Connecting SARL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "TL2645T-T79897",
+      "string": "leo",
+      "applicant": "TechEdge Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CCS2640T-T75373",
+      "string": "max",
+      "applicant": "Cam Connecting SARL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CCS2640T-T64563",
+      "string": "official",
+      "applicant": "Cam Connecting SARL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "BGNT2696T-T98747",
+      "string": "pop",
+      "applicant": "Beijing Guoxu Network Technology Co., Ltd.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CCS2640T-T99130",
+      "string": "zen",
+      "applicant": "Cam Connecting SARL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "TL2645T-T30242",
+      "string": "zen",
+      "applicant": "TechEdge Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    }
+  ],
+  "officialCase": {
+    "applicationId": "CCS2640T-T64563",
+    "applicant": "Cam Connecting SARL",
+    "primaryString": "official",
+    "source": "https://newgtldprogram-aps.icann.org/applications/CCS2640T-T64563/summary",
+    "lastPublishedAt": "2026-11-19T23:30:00Z",
+    "status": "Withdrawn",
+    "observedActiveApplicationsBefore": 6,
+    "observedActiveApplicationsNow": 5,
+    "reasonForWithdrawal": null,
+    "individuallyRecheckedActiveIDs": [
+      "CS2595-T95743",
+      "RTIS2674T-T10767",
+      "VSL2633T-T77260",
+      "XCI2688T-T22077",
+      "XL2625T-T64446"
+    ]
+  },
+  "targetedChecks": {
+    "lugano": {
+      "id": "CDL2651T-T31516",
+      "status": "Active",
+      "stage": "String Evaluation Processing"
+    },
+    "tether": {
+      "id": "TOSD2642T-T84921",
+      "status": "Active",
+      "stage": "String Evaluation Processing"
+    },
+    "usdt": {
+      "id": "TOSD2642T-T92840",
+      "status": "Active",
+      "stage": "String Evaluation Processing"
+    },
+    "wdo": {
+      "id": "WDO2627T-T45217",
+      "status": "Undergoing administrative check",
+      "stage": "Submitted",
+      "includedInPublicCSV": false
+    }
+  },
+  "stillOpen": {
+    "septemberToReveal1616To1615": "No source identifying the particular record or cause was found; unrelated to the November correction.",
+    "wdoAdministrativeCheck": "The correction does not resolve the administrative check or establish a cause."
+  },
+  "preservedSourceHashes": {
+    "data/applications_2026_aps_string_confirmation_20261117.csv": "c41606e8b58f3e469c0e91fab48e25057c0959f9792d4385871d5c70268fe44c",
+    "data/evidence/string-confirmation-2026-11-17/live/string-confirmation-contention-sets.csv": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f"
+  },
+  "preservedHistoricalTranslationKeys": [
+    "field17ReviewLabel",
+    "field17ConfirmTitle",
+    "field17ConfirmBody1",
+    "field17ConfirmBody2",
+    "field17ConfirmBody3",
+    "field17TimingBody",
+    "field17ReplacementTitle",
+    "field17ReplacementBody1",
+    "field17ReplacementBody2",
+    "field17ReplacementBody3",
+    "field17ReplacementBoundary"
+  ],
+  "preservedHistoricalTranslationSHA256": {
+    "en": "b4fc4c94742f098513d3103d41a303c9b4c17d36d526e5359c064bec95d9571b",
+    "it": "9e6207767d098a1353d08238d1722f28f561fb976538a98e44ec45b11371789c",
+    "de": "e4e8c4ba2cf07a8c6b18b9d951a637be35e9e8ad7a244888a66c32035b695d27",
+    "fr": "534d01c62040b73fad3fad60c5ffe0a02414eda016bbc75c8e4f920d4e08d54a"
+  },
+  "allChangedFieldsSinceFrozen17": [
+    {
+      "recordId": "KL2668T-T13029",
+      "applicationFamilyId": "KL2668T-T13029",
+      "string": "agnt",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "AI2686T-T93348",
+      "applicationFamilyId": "AI2686T-T93348",
+      "string": "airliquide",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "KL2668T-T28867",
+      "applicationFamilyId": "KL2668T-T28867",
+      "string": "alumni",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "INC2624T-T96235",
+      "applicationFamilyId": "INC2624T-T96235",
+      "string": "bit",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "DPL2578-T69962-R",
+      "applicationFamilyId": "DPL2578-T69962",
+      "string": "demo",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "CCS2640T-T43697",
+      "applicationFamilyId": "CCS2640T-T43697",
+      "string": "gaming",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "CCS2640T-T59535",
+      "applicationFamilyId": "CCS2640T-T59535",
+      "string": "gym",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "KSPL2637T-T10392",
+      "applicationFamilyId": "KSPL2637T-T10392",
+      "string": "kick",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "TL2645T-T79897",
+      "applicationFamilyId": "TL2645T-T79897",
+      "string": "leo",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "CCS2640T-T75373",
+      "applicationFamilyId": "CCS2640T-T75373",
+      "string": "max",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "CCS2640T-T64563",
+      "applicationFamilyId": "CCS2640T-T64563",
+      "string": "official",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "IOC2654T-T84925",
+      "applicationFamilyId": "IOC2654T-T84925",
+      "string": "olympic",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "DPL2578-T69962",
+      "applicationFamilyId": "DPL2578-T69962",
+      "string": "oss",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "BGNT2696T-T98747",
+      "applicationFamilyId": "BGNT2696T-T98747",
+      "string": "pop",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "PA2645T-T58527",
+      "applicationFamilyId": "PA2645T-T58527",
+      "string": "presto",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "KL2668T-T28867-R",
+      "applicationFamilyId": "KL2668T-T28867",
+      "string": "robot",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "KL2668T-T13029-R",
+      "applicationFamilyId": "KL2668T-T13029",
+      "string": "skill",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "EGHP2695T-T22968",
+      "applicationFamilyId": "EGHP2695T-T22968",
+      "string": "stake",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "CCS2640T-T99130",
+      "applicationFamilyId": "CCS2640T-T99130",
+      "string": "zen",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "TL2645T-T30242",
+      "applicationFamilyId": "TL2645T-T30242",
+      "string": "zen",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    }
+  ],
+  "changedRecordCount": 20,
+  "changedFieldCounts": {
+    "Label: Change Request": 10,
+    "Application Status": 10
+  },
+  "changeRequestLabelFollowup": {
+    "changedRecordCount": 10,
+    "applicationFamilyCount": 7,
+    "records": [
+      {
+        "recordId": "KL2668T-T13029",
+        "applicationFamilyId": "KL2668T-T13029",
+        "string": "agnt",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "KL2668T-T28867",
+        "applicationFamilyId": "KL2668T-T28867",
+        "string": "alumni",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "DPL2578-T69962-R",
+        "applicationFamilyId": "DPL2578-T69962",
+        "string": "demo",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "KSPL2637T-T10392",
+        "applicationFamilyId": "KSPL2637T-T10392",
+        "string": "kick",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "IOC2654T-T84925",
+        "applicationFamilyId": "IOC2654T-T84925",
+        "string": "olympic",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "DPL2578-T69962",
+        "applicationFamilyId": "DPL2578-T69962",
+        "string": "oss",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "PA2645T-T58527",
+        "applicationFamilyId": "PA2645T-T58527",
+        "string": "presto",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "KL2668T-T28867-R",
+        "applicationFamilyId": "KL2668T-T28867",
+        "string": "robot",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "KL2668T-T13029-R",
+        "applicationFamilyId": "KL2668T-T13029",
+        "string": "skill",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "EGHP2695T-T22968",
+        "applicationFamilyId": "EGHP2695T-T22968",
+        "string": "stake",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      }
+    ],
+    "interpretation": "The public Change Request label changed from FALSE to TRUE. This observation is not evidence of approval of the gTLD, and alone does not establish the content or outcome of any request."
+  }
+}

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "editorialLayer": "2026-round-investigations-not-part-of-frozen-RR1",
-  "lastReviewed": "2026-11-17",
+  "lastReviewed": "2026-11-22",
   "classification": "source-backed-editorial-field-notes",
   "legacyCases": "data/behind_round_stories.json",
   "episodes": [
@@ -116,9 +116,9 @@
       "slug": "replacement-strings",
       "number": 4,
       "publishedOn": "2026-10-10",
-      "revisedOn": "2026-11-17",
+      "revisedOn": "2026-11-22",
       "periodStart": "2026-08-12",
-      "periodEnd": "2026-11-17",
+      "periodEnd": "2026-11-22",
       "state": "documented-with-open-questions",
       "titleKey": "field04Title",
       "descriptionKey": "field04Lead",
@@ -311,12 +311,24 @@
           "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/prep/string-confirmation-2026-11-17/data/evidence/string-confirmation-2026-11-17/official-announcement-observation.json",
           "kind": "derived",
           "labelKey": "field17ReplacementSourceReconciliation"
+        },
+        {
+          "id": "rs-scd-announcement-updated",
+          "kind": "primary",
+          "labelKey": "field22SourceCorrection",
+          "url": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en"
+        },
+        {
+          "id": "rs-followup-20261122",
+          "kind": "derived",
+          "labelKey": "field22SourceFollowup",
+          "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/main/data/round_2026_followup_20261122.json"
         }
       ],
       "updateTriggers": [
-        "ICANN clarifies why 442 Reveal-period Active replacement records differed from the 287 applications ultimately eligible to switch.",
-        "ICANN republishes or corrects the String Confirmation APS export, contention CSV or replacement totals.",
-        "A later evaluation stage changes the status of an application whose selected replacement is recorded here."
+        "ICANN publishes a record-level explanation of replacement eligibility or corrects the revised totals.",
+        "ICANN republishes the String Confirmation contention CSV or explains its retained 36-fewer-sets wording.",
+        "A later evaluation changes the status of an application whose selected replacement is recorded here."
       ],
       "revisionHistory": [
         {
@@ -357,6 +369,14 @@
             "rs-scd-current-aps",
             "rs-scd-contention",
             "rs-scd-reconciliation"
+          ]
+        },
+        {
+          "date": "2026-11-22",
+          "changeKey": "field22ReplacementRevision",
+          "sourceIds": [
+            "rs-scd-announcement-updated",
+            "rs-followup-20261122"
           ]
         }
       ],
@@ -459,7 +479,33 @@
             "rs-scd-current-aps",
             "rs-scd-contention",
             "rs-scd-reconciliation"
+          ],
+          "supersededBy": "replacement-eligibility-correction-20261122",
+          "historicalNoticeKey": "field22HistoricalNotice"
+        },
+        {
+          "id": "replacement-eligibility-correction-20261122",
+          "date": "2026-11-22",
+          "reviewLabelKey": "field22ReviewLabel",
+          "titleKey": "field22ReplacementTitle",
+          "paragraphKeys": [
+            "field22ReplacementBody1",
+            "field22ReplacementBody2"
+          ],
+          "closingKey": "field22ReplacementBoundary",
+          "sourceIds": [
+            "rs-scd-announcement",
+            "rs-scd-announcement-updated",
+            "rs-followup-20261122"
           ]
+        }
+      ],
+      "completedUpdateTriggers": [
+        {
+          "observedOn": "2026-11-22",
+          "trigger": "ICANN clarifies why 442 Reveal-period Active replacement records differed from the 287 applications ultimately eligible to switch.",
+          "result": "The corrected announcement replaces 287 eligible applications with 442. The old 155-unit comparison is superseded, without assigning individual eligibility causes.",
+          "sourceId": "rs-scd-announcement-updated"
         }
       ]
     },

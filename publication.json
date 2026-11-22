@@ -1,7 +1,7 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.8.1",
-  "releasedOn": "2026-11-18",
+  "version": "0.8.2",
+  "releasedOn": "2026-11-22",
   "state": "string-confirmation",
   "freeze": true,
   "asOf": "2026-10-10",
@@ -18,13 +18,13 @@
   "conceptDoi": "10.5281/zenodo.23262622",
   "archive": "Zenodo",
   "dataPackageVersion": "0.7.58",
-  "currentDataPackVersion": "0.8.1",
-  "currentDataPackPath": "downloads/connecting-the-dots-data-pack-v0.8.1.zip",
+  "currentDataPackVersion": "0.8.2",
+  "currentDataPackPath": "downloads/connecting-the-dots-data-pack-v0.8.2.zip",
   "paperRevisedOn": "2026-10-19",
-  "editorialReviewPath": "docs/editorial-review-2026-11-18-v0.8.1.json",
-  "buildProvenanceCommit": "6268ae60bfedd988c00be0cbb85cd126d151c17e",
-  "paperTechnicalSyncOn": "2026-11-18",
-  "sourceReviewCommit": "6268ae60bfedd988c00be0cbb85cd126d151c17e",
+  "editorialReviewPath": "docs/editorial-review-2026-11-22-v0.8.2.json",
+  "buildProvenanceCommit": "3cc19e0d30b13604029a115d12433d9286f9fd6d",
+  "paperTechnicalSyncOn": "2026-11-22",
+  "sourceReviewCommit": "3cc19e0d30b13604029a115d12433d9286f9fd6d",
   "buildProvenanceRole": "source review commit used for deterministic regeneration; not the published merge commit",
-  "technicalAsOf": "2026-11-17"
+  "technicalAsOf": "2026-11-22"
 }

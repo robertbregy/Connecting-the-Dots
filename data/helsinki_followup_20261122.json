@@ -1,0 +1,74 @@
+{
+  "reviewedOn": "2026-11-22",
+  "scope": "Editorial follow-up on the end of the .helsinki Registry Agreement; historical amendments and snapshots are preserved.",
+  "applyAfter": "data/helsinki_revocation_20261118.json",
+  "revalidationPath": "data/iana_root_revalidation_20261118.json",
+  "eventDates": {
+    "voluntaryTerminationNotice": "2026-05-28",
+    "preliminaryNonTransitionDetermination": "2026-08-19",
+    "finalNonTransitionDetermination": "2026-10-21",
+    "delegationRevoked": "2026-10-28",
+    "registryAgreementTerminated": "2026-11-13"
+  },
+  "sources": [
+    {
+      "labelKey": "news22MktHelsinkiSource",
+      "kind": "primary",
+      "publishedOn": "2026-11-13",
+      "url": "https://itp.cdn.icann.org/en/files/registry-agreements/helsinki/helsinki-termination-notice-13-11-2026-en.pdf"
+    },
+    {
+      "labelKey": "helsinkiSourceIcann",
+      "kind": "primary",
+      "reviewedOn": "2026-11-22",
+      "url": "https://www.icann.org/en/contracted-parties/registry-operators/services/registry-agreement-termination-service"
+    },
+    {
+      "labelKey": "helsinkiSourceIana",
+      "kind": "primary",
+      "reviewedOn": "2026-11-22",
+      "url": "https://www.iana.org/domains/root/db/helsinki.html"
+    }
+  ],
+  "translations": {
+    "en": {
+      "helsinkiCaseFact": "The City of Helsinki notified voluntary termination on 28 May 2026. ICANN issued its preliminary determination on 19 August and its final decision not to transfer .helsinki to a successor on 21 October. IANA revoked the delegation on 28 October; the Registry Agreement ended on 13 November.",
+      "helsinkiCaseStatus": "ICANN confirms that the Registry Agreement terminated on 13 November 2026, after IANA revoked the delegation on 28 October. The root list checked on 18 November contained 1,436 labels; the 4 October snapshot contained 1,437, including .helsinki.",
+      "helsinkiBridgeBody": "Helsinki completed the voluntary termination of its city TLD in 2026: the delegation was revoked on 28 October and the Registry Agreement ended on 13 November. Obtaining a delegation and sustaining it over time are separate decisions.",
+      "helsinkiCaseReading": "The evidence distinguishes the city's voluntary request, ICANN's decision against a successor, IANA's removal from the root and the end of the Registry Agreement. These sources establish the sequence and dates; they do not establish the city's economic motives.",
+      "news22MktHelsinkiContract": "Contract terminated · 13 November 2026",
+      "news22MktHelsinkiRoot": "Delegation revoked · 28 October 2026"
+    },
+    "it": {
+      "helsinkiCaseFact": "La Città di Helsinki ha notificato la cessazione volontaria il 28 maggio 2026. ICANN ha adottato la determinazione preliminare il 19 agosto e quella definitiva sul mancato subentro di un successore il 21 ottobre. IANA ha revocato la delega il 28 ottobre; il contratto di registro è cessato il 13 novembre.",
+      "helsinkiCaseStatus": "ICANN conferma la cessazione del contratto di registro il 13 novembre 2026, dopo la revoca della delega da parte di IANA il 28 ottobre. La lista della root verificata il 18 novembre conteneva 1.436 etichette; lo snapshot del 4 ottobre ne conteneva 1.437, incluso .helsinki.",
+      "helsinkiBridgeBody": "Nel 2026 Helsinki ha completato la cessazione volontaria del proprio dominio cittadino: delega revocata il 28 ottobre e contratto di registro cessato il 13 novembre. Ottenere una delega e mantenerla nel tempo sono decisioni diverse.",
+      "helsinkiCaseReading": "Le evidenze distinguono la richiesta volontaria della Città, la decisione di ICANN sul mancato subentro, la rimozione dalla root da parte di IANA e la cessazione del contratto. Le fonti attestano la sequenza e le date, ma non documentano le motivazioni economiche della Città.",
+      "news22MktHelsinkiContract": "Contratto cessato · 13 novembre 2026",
+      "news22MktHelsinkiRoot": "Delega revocata · 28 ottobre 2026"
+    },
+    "de": {
+      "helsinkiCaseFact": "Die Stadt Helsinki kündigte den Registry-Vertrag am 28. Mai 2026 freiwillig. ICANN veröffentlichte am 19. August die vorläufige und am 21. Oktober die endgültige Entscheidung gegen einen Nachfolgebetreiber. IANA widerrief die Delegation am 28. Oktober; der Registry-Vertrag endete am 13. November.",
+      "helsinkiCaseStatus": "ICANN bestätigt das Ende des Registry-Vertrags am 13. November 2026, nach dem Widerruf der Delegation durch IANA am 28. Oktober. Die am 18. November geprüfte Root-Liste enthielt 1.436 Labels; der Stand vom 4. Oktober umfasste 1.437, einschliesslich .helsinki.",
+      "helsinkiBridgeBody": "Helsinki schloss 2026 die freiwillige Beendigung seiner Stadt-TLD ab: Die Delegation wurde am 28. Oktober widerrufen, der Registry-Vertrag endete am 13. November. Eine Delegation zu erhalten und sie langfristig aufrechtzuerhalten sind unterschiedliche Entscheidungen.",
+      "helsinkiCaseReading": "Die Belege unterscheiden den freiwilligen Antrag der Stadt, ICANNs Entscheidung gegen einen Nachfolger, die Entfernung aus der Root durch IANA und das Vertragsende. Sie dokumentieren Ablauf und Daten, jedoch nicht die wirtschaftlichen Beweggründe der Stadt.",
+      "news22MktHelsinkiContract": "Vertrag beendet · 13. November 2026",
+      "news22MktHelsinkiRoot": "Delegation widerrufen · 28. Oktober 2026"
+    },
+    "fr": {
+      "helsinkiCaseFact": "La Ville d'Helsinki a notifié la résiliation volontaire le 28 mai 2026. ICANN a rendu sa décision préliminaire le 19 août, puis sa décision définitive de ne pas transférer .helsinki à un successeur le 21 octobre. IANA a révoqué la délégation le 28 octobre ; le contrat de registre a pris fin le 13 novembre.",
+      "helsinkiCaseStatus": "ICANN confirme la fin du contrat de registre le 13 novembre 2026, après la révocation de la délégation par IANA le 28 octobre. La liste de la racine vérifiée le 18 novembre contenait 1 436 libellés ; l'instantané du 4 octobre en comptait 1 437, dont .helsinki.",
+      "helsinkiBridgeBody": "En 2026, Helsinki a achevé la fermeture volontaire de son domaine municipal : délégation révoquée le 28 octobre et contrat de registre terminé le 13 novembre. Obtenir une délégation et la maintenir dans la durée sont deux décisions distinctes.",
+      "helsinkiCaseReading": "Les preuves distinguent la demande volontaire de la Ville, la décision d'ICANN contre un transfert, le retrait de la racine par IANA et la fin du contrat. Elles établissent la séquence et les dates, sans documenter les motivations économiques de la Ville.",
+      "news22MktHelsinkiContract": "Contrat résilié · 13 novembre 2026",
+      "news22MktHelsinkiRoot": "Délégation révoquée · 28 octobre 2026"
+    }
+  },
+  "lifecycleObservation": {
+    "verifiedOn": "2026-11-22",
+    "contractKey": "news22MktHelsinkiContract",
+    "rootKey": "news22MktHelsinkiRoot",
+    "contractSource": "https://itp.cdn.icann.org/en/files/registry-agreements/helsinki/helsinki-termination-notice-13-11-2026-en.pdf",
+    "rootSource": "https://www.iana.org/domains/root/db/helsinki.html"
+  }
+}
