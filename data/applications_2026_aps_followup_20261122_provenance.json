@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 2,
+  "title": "ICANN APS public applications follow-up captured 22 November 2026",
+  "snapshotState": "post-string-confirmation",
+  "observedOn": "2026-11-22",
+  "sourceAuthority": "ICANN Application Publication and Statistics (APS)",
+  "sourcePage": "https://newgtldprogram-aps.icann.org/applications",
+  "sourceExportURL": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+  "sourceExportMethod": "POST",
+  "sourceExportRequest": {
+    "searchAndFilter": {},
+    "sort": {
+      "field": "primaryString",
+      "direction": "ASC"
+    },
+    "pagination": {
+      "pageNum": 0,
+      "pageSize": 10
+    }
+  },
+  "sourceRouteDiscovery": {
+    "page": "https://newgtldprogram-aps.icann.org/applications",
+    "script": "https://newgtldprogram-aps.icann.org/main-3NSIFRS6.js",
+    "method": "The deployed script calls POST applications/export/csv; the rendered page provides restBackendUrl."
+  },
+  "retrievedAtUTC": "2026-11-22T10:51:04Z",
+  "sourceStatisticsLastPublished": "2026-11-22T10:39:14.813Z",
+  "rawFile": "data/evidence/round-2026-followup-20261122/aps-export-raw.csv",
+  "officialRowsFile": "applications_2026_aps_followup_20261122.csv",
+  "originalCSVBytes": 680471,
+  "originalCSVSHA256": "ae3e8366e8512672146b1f3709fc58c2400eb57106d6376909366bfe3168b447",
+  "normalizedCSVBytes": 671762,
+  "normalizedCSVSHA256": "cd7df94d073ef39206621424aed2d34782f2896a34d589b5d2109e0626288ad7",
+  "csvColumns": [
+    "Priority",
+    "Primary String",
+    "Primary String Unicode Label",
+    "TLD Variants",
+    "TLD Type: Brand",
+    "TLD Type: Community",
+    "TLD Type: Geo (Self-Designated)",
+    "TLD Type: Geo (String Review Confirmed)",
+    "TLD Type: IDN",
+    "Application ID",
+    "Applicant Name",
+    "Application Type",
+    "Application Status",
+    "Application Processing Stage",
+    "Label: GAC Early Warning",
+    "Label: GAC Advice",
+    "Label: High Risk String",
+    "Label: Objection",
+    "Label: Safeguard",
+    "Label: In Contention",
+    "Label: Clarifying Questions",
+    "Label: Change Request",
+    "Label: Open Comment Period",
+    "Label: Comments",
+    "Label: RVC",
+    "Label: Applicant Support",
+    "Label: Variant Only (Existing TLD)",
+    "Label: Variant Included",
+    "Label: CoC Exemption",
+    "Label: Reserved Name",
+    "Label: CPE",
+    "Label: Singular/Plural",
+    "Location",
+    "Region"
+  ],
+  "totalOfficialListingRows": 2783,
+  "uniquePublishedApplicationRecords": 1614,
+  "replacementStringRecords": 1169,
+  "selectedReplacementRecords": 152,
+  "officialStatisticsTotalApplications": 1615,
+  "officialStatisticsActiveApplications": 1596,
+  "officialStatisticsWithdrawnApplications": 19,
+  "officialStatisticsUniqueStrings": 1127,
+  "visibleProceedingApplicationFamilies": 1595,
+  "visibleProceedingNewPrimaryApplications": 1589,
+  "visibleProceedingNewPrimaryStrings": 1119,
+  "derivedCurrentContentionSets": 225,
+  "derivedCurrentContentionApplications": 695,
+  "contentionBasis": "Project-derived exact-primary-string overlaps among current visible Active new gTLD applications. These are not a newly published ICANN contention determination. The official 17 November contention CSV remains separately frozen at 226 sets / 705 rows.",
+  "pendingAdministrativeCheckApplicationID": "WDO2627T-T45217",
+  "statusCounts": {
+    "Active": 1595,
+    "Deactivated": 1169,
+    "Withdrawn": 19
+  },
+  "normalization": {
+    "rules": [
+      "Remove only the introductory CSV notice and blank lines before the official header.",
+      "Preserve all 34 column names, public values and row order.",
+      "Convert UTF-8 BOM to UTF-8 without BOM and row endings to LF.",
+      "Do not remove -R rows or infer causes of status changes."
+    ]
+  },
+  "previousFrozenSnapshot": "data/applications_2026_aps_string_confirmation_20261117.csv",
+  "previousFrozenSnapshotSHA256": "c41606e8b58f3e469c0e91fab48e25057c0959f9792d4385871d5c70268fe44c",
+  "changedStatusRecords": [
+    {
+      "applicationId": "AI2686T-T93348",
+      "string": "airliquide",
+      "applicant": "L'Air Liquide, société anonyme pour l'Étude et l'Exploitation des procédés Georges Claude",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "INC2624T-T96235",
+      "string": "bit",
+      "applicant": "Internet Naming Company",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CCS2640T-T43697",
+      "string": "gaming",
+      "applicant": "Cam Connecting SARL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CCS2640T-T59535",
+      "string": "gym",
+      "applicant": "Cam Connecting SARL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "TL2645T-T79897",
+      "string": "leo",
+      "applicant": "TechEdge Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CCS2640T-T75373",
+      "string": "max",
+      "applicant": "Cam Connecting SARL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CCS2640T-T64563",
+      "string": "official",
+      "applicant": "Cam Connecting SARL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "BGNT2696T-T98747",
+      "string": "pop",
+      "applicant": "Beijing Guoxu Network Technology Co., Ltd.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CCS2640T-T99130",
+      "string": "zen",
+      "applicant": "Cam Connecting SARL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "TL2645T-T30242",
+      "string": "zen",
+      "applicant": "TechEdge Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    }
+  ],
+  "evidenceRegister": "data/evidence/round-2026-followup-20261122/source-observations.json",
+  "researchBoundary": "The 17 November snapshot, RR3, DOI-bearing packages and prior technical archives remain immutable. This is a separately dated current observation.",
+  "licenseNote": "Public fields from ICANN APS; ICANN source terms and attribution continue to apply.",
+  "effectiveNewPrimaryStrings": 1119,
+  "derivedExactPrimaryMatchGroups": 225,
+  "applicationsInExactPrimaryMatches": 695,
+  "officialAnnouncementProceedingApplications": 1606,
+  "officialAnnouncementApplicationsInContention": 705,
+  "officialAnnouncementReference": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en",
+  "officialAnnouncementSnapshotOn": "2026-11-16",
+  "officialAnnouncementCorrectionObservedOn": "2026-11-22",
+  "unresolvedAnnouncementPublicationGap": 0,
+  "announcementGapScope": "The corrected 16 November announcement snapshot agrees with the contemporaneous 17 November APS Statistics and contention CSV. This does not compare that historical snapshot with the current 22 November withdrawal totals.",
+  "publicConfirmedContentionSets": 226,
+  "publicConfirmedContentionApplications": 705,
+  "publicConfirmedContentionSnapshotOn": "2026-11-17",
+  "officialStatisticsReference": "https://newgtldprogram-aps.icann.org/statistics",
+  "reconciliation": {
+    "frozen17File": "data/applications_2026_aps_string_confirmation_20261117.csv",
+    "frozen17SHA256": "c41606e8b58f3e469c0e91fab48e25057c0959f9792d4385871d5c70268fe44c",
+    "officialContention17File": "data/evidence/string-confirmation-2026-11-17/live/string-confirmation-contention-sets.csv",
+    "officialContention17SHA256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
+    "statusChangesSinceFrozen17": [
+      {
+        "applicationId": "AI2686T-T93348",
+        "string": "airliquide",
+        "applicant": "L'Air Liquide, société anonyme pour l'Étude et l'Exploitation des procédés Georges Claude",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "INC2624T-T96235",
+        "string": "bit",
+        "applicant": "Internet Naming Company",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "CCS2640T-T43697",
+        "string": "gaming",
+        "applicant": "Cam Connecting SARL",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "CCS2640T-T59535",
+        "string": "gym",
+        "applicant": "Cam Connecting SARL",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "TL2645T-T79897",
+        "string": "leo",
+        "applicant": "TechEdge Limited",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "CCS2640T-T75373",
+        "string": "max",
+        "applicant": "Cam Connecting SARL",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "CCS2640T-T64563",
+        "string": "official",
+        "applicant": "Cam Connecting SARL",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "BGNT2696T-T98747",
+        "string": "pop",
+        "applicant": "Beijing Guoxu Network Technology Co., Ltd.",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "CCS2640T-T99130",
+        "string": "zen",
+        "applicant": "Cam Connecting SARL",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "TL2645T-T30242",
+        "string": "zen",
+        "applicant": "TechEdge Limited",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      }
+    ]
+  },
+  "changedFieldCounts": {
+    "Label: Change Request": 10,
+    "Application Status": 10
+  },
+  "changeRequestLabelChangedRecords": 10,
+  "changeRequestLabelChangedFamilies": 7,
+  "csvPreambleNotice": [
+    "Please note: The \"Label: In Contention\" field in this file will not reflect contention status until String Evaluations are completed. Until then, a value of \"false\" does not mean that an applied-for string is not in contention. Please consult the separately published contention set information to determine contention status."
+  ]
+}

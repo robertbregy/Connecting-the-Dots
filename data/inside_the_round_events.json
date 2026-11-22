@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "editorialLayer": "2026-round-observation-not-research-release",
-  "lastReviewed": "2026-11-17",
+  "lastReviewed": "2026-11-22",
   "policy": "Only dated public milestones, attributed evidence and explicitly conditional future stages. Do not present a milestone as an application-specific approval.",
   "events": [
     {
@@ -135,11 +135,15 @@
       "dateKey": "insideConfirmDate",
       "titleKey": "insideConfirmTitle",
       "bodyKey": "insideConfirmObservedBody",
-      "source": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-17-11-2026-en",
+      "source": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en",
       "extraSources": [
         {
           "source": "https://newgtldprogram-aps.icann.org/about",
           "labelKey": "field18SourceAbout"
+        },
+        {
+          "source": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-17-11-2026-en",
+          "labelKey": "field17SourceAnnouncement"
         }
       ],
       "revisionHistory": [
@@ -163,6 +167,16 @@
             "https://newgtldprogram-aps.icann.org/applications",
             "https://newgtldprogram.icann.org/en/application-rounds/round2/string-confirmation-contention-sets.csv"
           ]
+        },
+        {
+          "date": "2026-11-22",
+          "previousBodyKey": "insideConfirmObservedBody",
+          "bodyKey": "insideConfirmObservedBody",
+          "reason": "Current timeline summary reflects the officially corrected announcement. The original 17 November field-note text and frozen evidence remain preserved as historical observations.",
+          "sources": [
+            "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-17-11-2026-en",
+            "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en"
+          ]
         }
       ]
     },
@@ -175,7 +189,46 @@
       "dateKey": "insideInputDate",
       "titleKey": "insideInputTitle",
       "bodyKey": "insideInputObservedBody",
-      "source": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-17-11-2026-en"
+      "source": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en"
+    },
+    {
+      "id": "official-cam-withdrawal",
+      "date": "2026-11-19",
+      "state": "observed",
+      "scope": "case",
+      "dateKey": "insideOfficialDate",
+      "titleKey": "insideOfficialTitle",
+      "bodyKey": "insideOfficialBody",
+      "source": "https://newgtldprogram-aps.icann.org/applications/CCS2640T-T64563/summary",
+      "sourceLabelKey": "field22SourceOfficial"
+    },
+    {
+      "id": "announcement-correction-observed",
+      "date": "2026-11-22",
+      "state": "observed",
+      "scope": "program",
+      "dateKey": "insideCorrectionDate",
+      "titleKey": "insideCorrectionTitle",
+      "bodyKey": "insideCorrectionBody",
+      "source": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en",
+      "sourceLabelKey": "field22SourceCorrection"
+    },
+    {
+      "id": "aps-followup-20261122",
+      "date": "2026-11-22",
+      "state": "observed",
+      "scope": "program",
+      "dateKey": "insideLiveDate",
+      "titleKey": "insideLiveTitle",
+      "bodyKey": "insideLiveBody",
+      "source": "https://newgtldprogram-aps.icann.org/statistics",
+      "sourceLabelKey": "behindSourceStats",
+      "extraSources": [
+        {
+          "source": "https://newgtldprogram-aps.icann.org/applications",
+          "labelKey": "field22SourceCurrentExport"
+        }
+      ]
     },
     {
       "id": "review",

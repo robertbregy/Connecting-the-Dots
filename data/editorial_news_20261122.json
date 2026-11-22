@@ -1,0 +1,598 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-11-22",
+  "layer": "dated-editorial-followup-outside-frozen-research-releases",
+  "panels": [
+    {
+      "id": "news22-name-continuity",
+      "section": "cemetery",
+      "titleKey": "news22MktNameTitle",
+      "bodyKeys": [
+        "news22MktNameBody1",
+        "news22MktNameBody2"
+      ],
+      "sources": [
+        {
+          "labelKey": "news22MktNameSourceVerisign",
+          "url": "https://itp.cdn.icann.org/en/files/consensus-policies/kane-to-fessenden-05-11-2026-en.pdf"
+        },
+        {
+          "labelKey": "news22MktNameSourceICANN",
+          "url": "https://itp.cdn.icann.org/en/files/consensus-policies/fessenden-to-kane-09-11-2026-en.pdf"
+        }
+      ]
+    },
+    {
+      "id": "news22-dnib-q3",
+      "section": "economics",
+      "titleKey": "news22MktDnibTitle",
+      "bodyKeys": [
+        "news22MktDnibBody1",
+        "news22MktDnibBody2"
+      ],
+      "sources": [
+        {
+          "labelKey": "news22MktDnibSource",
+          "url": "https://verisigninc.gcs-web.com/news-releases/news-release-details/dnibcom-reports-internet-has-4116-million-domain-name"
+        }
+      ],
+      "target": "#economics-chapter-reach"
+    },
+    {
+      "id": "news22-domain-options",
+      "section": "economics",
+      "titleKey": "news22MktOptionsTitle",
+      "bodyKeys": [
+        "news22MktOptionsBody1",
+        "news22MktOptionsBody2"
+      ],
+      "sources": [
+        {
+          "labelKey": "news22MktOptionsSource",
+          "url": "https://www.businesswire.com/news/home/20261110723636/en/Identity-Digital-and-Deqo-Launch-Domain-Options-to-Improve-Capital-Efficiency-for-Investors"
+        }
+      ],
+      "target": "#economics-chapter-cases"
+    },
+    {
+      "id": "news22-fr-dns-resilience",
+      "section": "geography",
+      "titleKey": "news22MktAfnicTitle",
+      "bodyKeys": [
+        "news22MktAfnicBody1",
+        "news22MktAfnicBody2"
+      ],
+      "sources": [
+        {
+          "labelKey": "news22MktAfnicSource",
+          "url": "https://www.afnic.fr/observatoire-ressources/actualites/lanssi-et-lafnic-publient-le-rapport-2026-de-lobservatoire-de-la-resilience-de-linternet/"
+        },
+        {
+          "labelKey": "news22MktAfnicReportSource",
+          "url": "https://www.afnic.fr/wp-media/uploads/2026/11/Rapport-2026-de-lObservatoire-de-la-resilience-de-linternet-francais.pdf"
+        }
+      ]
+    },
+    {
+      "id": "news22-gov-ai-identities",
+      "section": "beyond",
+      "titleKey": "news22GovAnsTitle",
+      "statusKey": "news22GovAnsStatus",
+      "bodyKeys": [
+        "news22GovAnsBody1",
+        "news22GovAnsBody2",
+        "news22GovAnsBody3"
+      ],
+      "sources": [
+        {
+          "labelKey": "news22GovSourceAns",
+          "url": "https://www.linuxfoundation.org/press/linux-foundation-welcomes-agent-name-service-to-bring-verifiable-identity-and-discovery-to-ai-agents"
+        },
+        {
+          "labelKey": "news22GovSourceDnsAid",
+          "url": "https://datatracker.ietf.org/doc/html/draft-mozleywilliams-dawn-dnsaid-00"
+        }
+      ]
+    },
+    {
+      "id": "news22-gov-pp26",
+      "section": "geography",
+      "titleKey": "news22GovPpTitle",
+      "statusKey": "news22GovPpStatus",
+      "bodyKeys": [
+        "news22GovPpBody1",
+        "news22GovPpBody2",
+        "news22GovPpBody3"
+      ],
+      "sources": [
+        {
+          "labelKey": "news22GovSourceItu",
+          "url": "https://www.itu.int/en/mediacentre/Pages/PR-2026-11-09-PP-opening.aspx"
+        },
+        {
+          "labelKey": "news22GovSourceIsoc",
+          "url": "https://www.internetsociety.org/blog/2026/11/pp-26-whats-at-stake-for-the-internet-and-where-we-stand/"
+        },
+        {
+          "labelKey": "news22GovSourceIsocHub",
+          "url": "https://www.internetsociety.org/events/un/plenipot-2026/"
+        }
+      ]
+    },
+    {
+      "id": "news22-gov-consultations",
+      "section": "geography",
+      "titleKey": "news22GovPolicyTitle",
+      "statusKey": "news22GovPolicyStatus",
+      "bodyKeys": [
+        "news22GovDiacriticsBody",
+        "news22GovSsadBody",
+        "news22GovReviewsBody"
+      ],
+      "sources": [
+        {
+          "labelKey": "news22GovSourceDiacritics",
+          "url": "https://www.icann.org/en/public-comment/proceeding/latin-script-diacritics-pdp-final-report-for-icann-board-consideration-16-11-2026"
+        },
+        {
+          "labelKey": "news22GovSourceSsad",
+          "url": "https://www.icann.org/en/public-comment/proceeding/system-for-standardized-accessdisclosure-ssad-supplemental-recommendations-10-11-2026"
+        },
+        {
+          "labelKey": "news22GovSourceReviews",
+          "url": "https://www.icann.org/en/public-comment/proceeding/review-of-reviews-second-draft-report-12-11-2026"
+        }
+      ]
+    },
+    {
+      "id": "news22-gov-objection-procedures",
+      "section": "disputes",
+      "titleKey": "news22GovObjectionsTitle",
+      "statusKey": "news22GovObjectionsStatus",
+      "bodyKeys": [
+        "news22GovObjectionsBody"
+      ],
+      "sources": [
+        {
+          "labelKey": "news22GovSourceWipo",
+          "url": "https://www.wipo.int/en/web/amc/w/news-domain-name-disputes/2026/icann-2026-new-gtld-program-reaches-string-confirmation-day-and-opens-objection-filing-period"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "web-launch-20261111",
+      "kind": "primary",
+      "published": "2026-11-11",
+      "url": "https://verisigninc.gcs-web.com/news-releases/news-release-details/verisign-announces-web-launch-key-dates",
+      "reviewed": "2026-11-22",
+      "supports": "Announced Sunrise, Priority Access and general-registration dates; most existing .com registrants through their current registrar."
+    },
+    {
+      "id": "web-icann-startup",
+      "kind": "primary",
+      "url": "https://newgtlds.icann.org/en/program-status/sunrise-claims-periods/web",
+      "reviewed": "2026-11-22",
+      "supports": "ICANN corroborates the launch phases; Qualified Launch Program is additionally scheduled 20 November 2026–11 January 2027, but is not needed in the concise case update."
+    },
+    {
+      "id": "name-verisign-20261105",
+      "kind": "primary",
+      "published": "2026-11-05",
+      "url": "https://itp.cdn.icann.org/en/files/consensus-policies/kane-to-fessenden-05-11-2026-en.pdf",
+      "reviewed": "2026-11-22",
+      "supports": "Continued EPP support for existing third-level and email-forwarding registrations while at least one accredited registrar offers the services; planned new requests limited to stopping new registrations."
+    },
+    {
+      "id": "name-icann-20261109",
+      "kind": "primary",
+      "published": "2026-11-09",
+      "url": "https://itp.cdn.icann.org/en/files/consensus-policies/fessenden-to-kane-09-11-2026-en.pdf",
+      "reviewed": "2026-11-22",
+      "supports": "ICANN acknowledges withdrawal of RSEP 2026013/2026014 and voids prior Free to Discontinue letters."
+    },
+    {
+      "id": "helsinki-termination-20261113",
+      "kind": "primary",
+      "published": "2026-11-13",
+      "url": "https://itp.cdn.icann.org/en/files/registry-agreements/helsinki/helsinki-termination-notice-13-11-2026-en.pdf",
+      "reviewed": "2026-11-22",
+      "supports": "Registry Agreement termination date; no inference about economic motives."
+    },
+    {
+      "id": "dnib-q3-2026",
+      "kind": "operator-primary",
+      "published": "2026-10-22",
+      "dataAsOf": "2026-09-30",
+      "url": "https://verisigninc.gcs-web.com/news-releases/news-release-details/dnibcom-reports-internet-has-4116-million-domain-name",
+      "reviewed": "2026-11-22",
+      "supports": "411.6m total registrations, 2.5% QoQ and 8.7% YoY, 182.5m .com/.net and 151.4m ccTLDs; explicitly separate from frozen Q2 snapshots."
+    },
+    {
+      "id": "domain-options-20261110",
+      "kind": "operator-primary",
+      "published": "2026-11-10",
+      "url": "https://www.businesswire.com/news/home/20261110723636/en/Identity-Digital-and-Deqo-Launch-Domain-Options-to-Improve-Capital-Efficiency-for-Investors",
+      "dateVerifiedAt": "https://identity.digital/newsroom/identity-digital-and-deqo-launch-domain-options-to-improve-capital-efficiency-for-investors",
+      "reviewed": "2026-11-22",
+      "supports": "24-month exclusive marketing/sales rights, USD 20–30 initial prices, 17 launch TLDs and expiry if unsold. No evidence of realised results."
+    },
+    {
+      "id": "afnic-anssi-20261117",
+      "kind": "primary",
+      "published": "2026-11-17",
+      "url": "https://www.afnic.fr/observatoire-ressources/actualites/lanssi-et-lafnic-publient-le-rapport-2026-de-lobservatoire-de-la-resilience-de-linternet/",
+      "reviewed": "2026-11-22",
+      "supports": "Publication date and summary of the French-scope resilience report. French page works despite an intermittent failure of the English translation."
+    },
+    {
+      "id": "afnic-anssi-report-2026",
+      "kind": "primary-research",
+      "published": "2026-11-17",
+      "url": "https://www.afnic.fr/wp-media/uploads/2026/11/Rapport-2026-de-lObservatoire-de-la-resilience-de-linternet-francais.pdf",
+      "reviewed": "2026-11-22",
+      "supports": "Section 2.2.2, printed pages 43–44: 79.73% of studied zones use one AS for all authoritative name servers. Cross-check with correctly signed DNSSEC zones in publication summary. This is not one provider's global market share."
+    },
+    {
+      "id": "news22-gov-ans",
+      "labelKey": "news22GovSourceAns",
+      "url": "https://www.linuxfoundation.org/press/linux-foundation-welcomes-agent-name-service-to-bring-verifiable-identity-and-discovery-to-ai-agents",
+      "kind": "primary",
+      "publishedOn": "2026-11-10",
+      "retrievedOn": "2026-11-22"
+    },
+    {
+      "id": "news22-gov-dnsaid",
+      "labelKey": "news22GovSourceDnsAid",
+      "url": "https://datatracker.ietf.org/doc/html/draft-mozleywilliams-dawn-dnsaid-00",
+      "kind": "primary",
+      "publishedOn": "2026-11-02",
+      "retrievedOn": "2026-11-22"
+    },
+    {
+      "id": "news22-gov-itu",
+      "labelKey": "news22GovSourceItu",
+      "url": "https://www.itu.int/en/mediacentre/Pages/PR-2026-11-09-PP-opening.aspx",
+      "kind": "primary",
+      "publishedOn": "2026-11-09",
+      "retrievedOn": "2026-11-22"
+    },
+    {
+      "id": "news22-gov-isoc",
+      "labelKey": "news22GovSourceIsoc",
+      "url": "https://www.internetsociety.org/blog/2026/11/pp-26-whats-at-stake-for-the-internet-and-where-we-stand/",
+      "kind": "primary-position",
+      "publishedOn": "2026-11-13",
+      "retrievedOn": "2026-11-22"
+    },
+    {
+      "id": "news22-gov-isoc-hub",
+      "labelKey": "news22GovSourceIsocHub",
+      "url": "https://www.internetsociety.org/events/un/plenipot-2026/",
+      "kind": "primary-position",
+      "retrievedOn": "2026-11-22"
+    },
+    {
+      "id": "news22-gov-diacritics",
+      "labelKey": "news22GovSourceDiacritics",
+      "url": "https://www.icann.org/en/public-comment/proceeding/latin-script-diacritics-pdp-final-report-for-icann-board-consideration-16-11-2026",
+      "kind": "primary",
+      "publishedOn": "2026-11-16",
+      "retrievedOn": "2026-11-22"
+    },
+    {
+      "id": "news22-gov-ssad",
+      "labelKey": "news22GovSourceSsad",
+      "url": "https://www.icann.org/en/public-comment/proceeding/system-for-standardized-accessdisclosure-ssad-supplemental-recommendations-10-11-2026",
+      "kind": "primary",
+      "publishedOn": "2026-11-10",
+      "retrievedOn": "2026-11-22"
+    },
+    {
+      "id": "news22-gov-reviews",
+      "labelKey": "news22GovSourceReviews",
+      "url": "https://www.icann.org/en/public-comment/proceeding/review-of-reviews-second-draft-report-12-11-2026",
+      "kind": "primary",
+      "publishedOn": "2026-11-12",
+      "retrievedOn": "2026-11-22"
+    },
+    {
+      "id": "news22-gov-wipo",
+      "labelKey": "news22GovSourceWipo",
+      "url": "https://www.wipo.int/en/web/amc/w/news-domain-name-disputes/2026/icann-2026-new-gtld-program-reaches-string-confirmation-day-and-opens-objection-filing-period",
+      "kind": "primary-procedure",
+      "publishedOn": "2026-11-19",
+      "retrievedOn": "2026-11-22"
+    }
+  ],
+  "caseUpdates": [
+    {
+      "type": "append-case-event-and-sources",
+      "file": "data/governance_cases.json",
+      "caseId": "web",
+      "event": {
+        "period": "2026-11-11",
+        "textKey": "news22MktWebLaunchEvent",
+        "sources": [
+          "https://verisigninc.gcs-web.com/news-releases/news-release-details/verisign-announces-web-launch-key-dates",
+          "https://newgtlds.icann.org/en/program-status/sunrise-claims-periods/web"
+        ]
+      },
+      "sources": [
+        {
+          "labelKey": "news22MktWebSourceAnnouncement",
+          "label": "Verisign — .web launch announcement, 11 November 2026",
+          "url": "https://verisigninc.gcs-web.com/news-releases/news-release-details/verisign-announces-web-launch-key-dates",
+          "role": "primary"
+        },
+        {
+          "labelKey": "news22MktWebSourceICANN",
+          "label": "ICANN — .web startup calendar",
+          "url": "https://newgtlds.icann.org/en/program-status/sunrise-claims-periods/web",
+          "role": "primary"
+        }
+      ],
+      "note": "Retain the historical 2012–2026 period: the new event is an announcement in November 2026; future 2027 launch dates are explicitly planned. Mirror the event into governance_case_events.csv only if that CSV remains an editable editorial companion; do not alter archived research releases."
+    },
+    {
+      "type": "add-source-to-existing-case",
+      "caseId": "helsinki",
+      "section": "cemetery",
+      "sources": [
+        {
+          "labelKey": "news22MktHelsinkiSource",
+          "url": "https://itp.cdn.icann.org/en/files/registry-agreements/helsinki/helsinki-termination-notice-13-11-2026-en.pdf"
+        }
+      ],
+      "note": "The five existing Helsinki/Web translation keys are overwritten by this patch; all Helsinki historical dates and the dated root counts are retained. Ensure the new termination source is visible next to the existing Helsinki sources."
+    }
+  ],
+  "translations": {
+    "en": {
+      "caseWebOutcome": ".WEB was delegated to VeriSign, Inc. in July 2026. On 11 November, Verisign announced its launch schedule, with general registration planned for 6 April 2027.",
+      "helsinkiCaseFact": "The City of Helsinki notified voluntary termination on 28 May 2026. ICANN issued its preliminary determination on 19 August and its final decision not to transfer .helsinki to a successor on 21 October. IANA revoked the delegation on 28 October; the Registry Agreement ended on 13 November.",
+      "helsinkiCaseStatus": "ICANN confirms that the Registry Agreement terminated on 13 November 2026, after IANA revoked the delegation on 28 October. The root list checked on 18 November contained 1,436 labels; the 4 October snapshot contained 1,437, including .helsinki.",
+      "helsinkiBridgeBody": "Helsinki completed the voluntary termination of its city TLD in 2026: the delegation was revoked on 28 October and the Registry Agreement ended on 13 November. Obtaining a delegation and sustaining it over time are separate decisions.",
+      "helsinkiCaseReading": "The evidence distinguishes the city's voluntary request, ICANN's decision against a successor, IANA's removal from the root and the end of the Registry Agreement. These sources establish the sequence and dates; they do not establish the city's economic motives.",
+      "news22MktWebLaunchEvent": "Verisign announced Sunrise for 10 December 2026–11 January 2027, Priority Access for most existing .com registrants through their current registrar on 12 January–5 April 2027, and general registration from 6 April 2027. These are announced launch dates, separate from the earlier delegation.",
+      "news22MktWebSourceAnnouncement": "Verisign · launch announcement, 11 November 2026",
+      "news22MktWebSourceICANN": "ICANN · .web launch calendar",
+      "news22MktHelsinkiSource": "ICANN · termination notice, 13 November 2026",
+      "news22MktNameTitle": ".name: existing services retained under a revised plan",
+      "news22MktNameBody1": "On 5 November 2026, Verisign committed to supporting existing .name third-level registrations and email forwarding while at least one accredited registrar continues offering these services. On 9 November, ICANN acknowledged withdrawal of the earlier discontinuation requests and voided their approvals.",
+      "news22MktNameBody2": "Verisign intends to seek approval to stop new registrations of these services. Continued support for existing registrations depends on retail availability; the letters do not promise indefinite service.",
+      "news22MktNameSourceVerisign": "Verisign · revised plan, 5 November 2026",
+      "news22MktNameSourceICANN": "ICANN · acknowledgement, 9 November 2026",
+      "news22MktDnibTitle": "Q3 2026: 411.6 million domain registrations",
+      "news22MktDnibBody1": "DNIB's report, published on 22 October 2026, counts 411.6 million registrations at 30 September: +2.5% quarter on quarter and +8.7% year on year. The combined .com/.net total is 182.5 million; ccTLDs account for 151.4 million.",
+      "news22MktDnibBody2": "This dated market snapshot measures registrations, not active websites or users. DNIB is sponsored by Verisign. The project's earlier Q2 observations remain historical snapshots.",
+      "news22MktDnibSource": "Verisign / DNIB · Q3 report, 22 October 2026",
+      "news22MktOptionsTitle": "Domain Options: paying for time to find a buyer",
+      "news22MktOptionsBody1": "On 10 November 2026, Identity Digital and Deqo announced Domain Options: exclusive rights to market and sell a name for 24 months, initially priced at USD 20–30 across 17 TLDs, including .info, .io, .studio, .bet and .live.",
+      "news22MktOptionsBody2": "If the name remains unsold, the option expires and it becomes generally available again. This documents a new commercial mechanism; the announcement does not establish adoption, realised sales or investment returns.",
+      "news22MktOptionsSource": "Identity Digital / Deqo · announcement, 10 November 2026",
+      "news22MktAfnicTitle": ".fr: several name servers can still share one network",
+      "news22MktAfnicBody1": "ANSSI and Afnic's report, published on 17 November 2026, finds that 79.73% of the studied .fr zones have their authoritative name servers within a single autonomous system (AS). Just over 22% of zones are correctly signed with DNSSEC.",
+      "news22MktAfnicBody2": "The single-AS measure applies separately to each zone; it does not mean that one network hosts 80% of .fr. It concerns DNS resilience in the studied French scope, not a worldwide measure of infrastructure ownership.",
+      "news22MktAfnicSource": "Afnic / ANSSI · publication, 17 November 2026",
+      "news22MktAfnicReportSource": "Afnic / ANSSI · full report (French PDF)",
+      "news22GovAnsTitle": "DNS as an identity layer for AI agents",
+      "news22GovAnsStatus": "Projects and proposals · reviewed 22 November 2026",
+      "news22GovAnsBody1": "On 10 November 2026, the Linux Foundation welcomed Agent Name Service (ANS), which uses DNS and certificates to name, discover and verify AI-agent identities.",
+      "news22GovAnsBody2": "Separately, the DNS for AI Discovery (DNS-AID) proposal of 2 November 2026 describes DNS discovery when an agent or its organisation is known. It is an individual Internet-Draft, not an approved IETF standard.",
+      "news22GovAnsBody3": "Our reading: domains could support machine identity alongside website addresses. Identity verification alone guarantees neither competence nor authority to act; the existence of these projects does not establish widespread adoption.",
+      "news22GovSourceAns": "Linux Foundation · ANS, 10 November 2026",
+      "news22GovSourceDnsAid": "IETF Datatracker · individual DNS-AID draft, 2 November 2026",
+      "news22GovPpTitle": "Doha: the debate over Internet governance",
+      "news22GovPpStatus": "Conference in progress · position as of 22 November 2026",
+      "news22GovPpBody1": "The ITU Plenipotentiary Conference (PP-26) is taking place in Doha from 9 to 27 November 2026. Member States are considering the organisation’s direction, leadership and plans for 2028–2031.",
+      "news22GovPpBody2": "In its 13 November analysis, Internet Society raises concerns about proposals to expand intergovernmental authority, reopen international telecommunications treaty negotiations and introduce network cost-sharing frameworks. Its monitoring agenda includes DNS administration and the multistakeholder model.",
+      "news22GovPpBody3": "These are proposals under discussion and Internet Society’s assessment of them. As of 22 November, the conference is still under way: its final decisions and their implications for Internet governance remain to be documented.",
+      "news22GovSourceItu": "ITU · PP-26 opening, 9 November 2026",
+      "news22GovSourceIsoc": "Internet Society · analysis, 13 November 2026",
+      "news22GovSourceIsocHub": "Internet Society · PP-26 monitoring dossier",
+      "news22GovPolicyTitle": "Three consultations on names, data and accountability",
+      "news22GovPolicyStatus": "Open consultations · position as of 22 November 2026",
+      "news22GovDiacriticsBody": "Latin diacritics. The consultation from 16 November 2026 to 6 January 2027 concerns allowing one registry operator to run an ASCII gTLD and its Latin-diacritic versions. The Board has yet to decide.",
+      "news22GovSsadBody": "Registration data. The SSAD draft, under consultation from 10 November to 23 December 2026, would remove automated disclosure decisions, leaving responsibility with the contracted party. Authentication would begin with law enforcement.",
+      "news22GovReviewsBody": "Accountability. The second Review of Reviews draft, under consultation from 12 November to 22 December 2026, proposes changes to the scope, frequency and safeguards of ICANN reviews.",
+      "news22GovSourceDiacritics": "ICANN · Latin Script Diacritics consultation",
+      "news22GovSourceSsad": "ICANN · SSAD supplemental recommendations",
+      "news22GovSourceReviews": "ICANN · Review of Reviews, second draft",
+      "news22GovObjectionsTitle": "Filing an objection: the WIPO procedures",
+      "news22GovObjectionsStatus": "Filing period open · 17 November 2026–16 March 2027",
+      "news22GovObjectionsBody": "WIPO’s 19 November 2026 notice confirms the filing window for Legal Rights Objections and String Confusion Objections, ending on 16 March 2027. As the sole provider for these two procedures, WIPO links the applicable rules, fees and filing guidance.",
+      "news22GovSourceWipo": "WIPO · objection filing procedures, 19 November 2026",
+      "news22ReviewedLabel": "Sources reviewed",
+      "news22IndexTitle": "New evidence · 22 November 2026",
+      "news22IndexIntro": "The round’s corrected figures and subsequent withdrawals are documented below. These further developments update the chapters on markets, infrastructure and governance.",
+      "disputes2026StatusBody": "The ordinary community input and objections period opened on 17 November 2026 and runs through 16 March 2027. Comments, GAC Early Warnings and formal objections follow distinct procedures; their submission alone does not determine the outcome of an application.",
+      "release0802": "ICANN announcement correction and 22 November APS follow-up: ten further withdrawals, a separately dated current Atlas, and sourced updates on .web, .name, .helsinki, the domain market, DNS resilience, AI agent identity and governance. Frozen research releases retain their original evidence."
+    },
+    "it": {
+      "caseWebOutcome": ".WEB è stato delegato a VeriSign, Inc. nel luglio 2026. L'11 novembre Verisign ha annunciato il calendario di lancio, con apertura delle registrazioni al pubblico prevista per il 6 aprile 2027.",
+      "helsinkiCaseFact": "La Città di Helsinki ha notificato la cessazione volontaria il 28 maggio 2026. ICANN ha adottato la determinazione preliminare il 19 agosto e quella definitiva sul mancato subentro di un successore il 21 ottobre. IANA ha revocato la delega il 28 ottobre; il contratto di registro è cessato il 13 novembre.",
+      "helsinkiCaseStatus": "ICANN conferma la cessazione del contratto di registro il 13 novembre 2026, dopo la revoca della delega da parte di IANA il 28 ottobre. La lista della root verificata il 18 novembre conteneva 1.436 etichette; lo snapshot del 4 ottobre ne conteneva 1.437, incluso .helsinki.",
+      "helsinkiBridgeBody": "Nel 2026 Helsinki ha completato la cessazione volontaria del proprio dominio cittadino: delega revocata il 28 ottobre e contratto di registro cessato il 13 novembre. Ottenere una delega e mantenerla nel tempo sono decisioni diverse.",
+      "helsinkiCaseReading": "Le evidenze distinguono la richiesta volontaria della Città, la decisione di ICANN sul mancato subentro, la rimozione dalla root da parte di IANA e la cessazione del contratto. Le fonti attestano la sequenza e le date, ma non documentano le motivazioni economiche della Città.",
+      "news22MktWebLaunchEvent": "Verisign ha annunciato la fase Sunrise dal 10 dicembre 2026 all'11 gennaio 2027, l'accesso prioritario per gran parte dei titolari di .com attraverso il proprio registrar dal 12 gennaio al 5 aprile 2027 e l'apertura al pubblico dal 6 aprile 2027. Sono date di lancio annunciate, distinte dalla delegazione già avvenuta.",
+      "news22MktWebSourceAnnouncement": "Verisign · annuncio del lancio, 11 novembre 2026",
+      "news22MktWebSourceICANN": "ICANN · calendario del lancio di .web",
+      "news22MktHelsinkiSource": "ICANN · notifica di cessazione, 13 novembre 2026",
+      "news22MktNameTitle": ".name: il piano rivisto conserva i servizi esistenti",
+      "news22MktNameBody1": "Il 5 novembre 2026 Verisign si è impegnata a sostenere le registrazioni .name di terzo livello e l'inoltro email esistenti finché almeno un registrar accreditato continuerà a offrirli. Il 9 novembre ICANN ha preso atto del ritiro delle precedenti richieste di cessazione e ne ha annullato le autorizzazioni.",
+      "news22MktNameBody2": "Verisign intende chiedere di interrompere le nuove registrazioni di questi servizi. La continuità per gli utenti esistenti dipende dall'offerta al dettaglio: le lettere non promettono un servizio perpetuo.",
+      "news22MktNameSourceVerisign": "Verisign · piano rivisto, 5 novembre 2026",
+      "news22MktNameSourceICANN": "ICANN · presa d'atto, 9 novembre 2026",
+      "news22MktDnibTitle": "Terzo trimestre 2026: 411,6 milioni di registrazioni",
+      "news22MktDnibBody1": "Il rapporto DNIB pubblicato il 22 ottobre 2026 conta 411,6 milioni di registrazioni al 30 settembre: +2,5% sul trimestre precedente e +8,7% su base annua. .com e .net insieme raggiungono 182,5 milioni; i ccTLD 151,4 milioni.",
+      "news22MktDnibBody2": "Questa fotografia datata misura registrazioni, non siti attivi o utenti. DNIB è sponsorizzato da Verisign. Le precedenti osservazioni del progetto sul secondo trimestre restano snapshot storici.",
+      "news22MktDnibSource": "Verisign / DNIB · rapporto trimestrale, 22 ottobre 2026",
+      "news22MktOptionsTitle": "Domain Options: pagare il tempo per trovare un acquirente",
+      "news22MktOptionsBody1": "Il 10 novembre 2026 Identity Digital e Deqo hanno annunciato Domain Options: il diritto esclusivo di commercializzare e vendere un nome per 24 mesi, inizialmente a USD 20–30 su 17 TLD, fra cui .info, .io, .studio, .bet e .live.",
+      "news22MktOptionsBody2": "Se il nome non viene venduto, l'opzione scade e torna disponibile al pubblico. È un nuovo meccanismo commerciale documentato; l'annuncio non dimostra adozione, vendite realizzate o rendimenti.",
+      "news22MktOptionsSource": "Identity Digital / Deqo · annuncio del 10 novembre 2026",
+      "news22MktAfnicTitle": ".fr: più server DNS possono dipendere dalla stessa rete",
+      "news22MktAfnicBody1": "Il rapporto ANSSI e Afnic pubblicato il 17 novembre 2026 rileva che il 79,73% delle zone .fr studiate ha tutti i server DNS autorevoli all'interno di un unico sistema autonomo (AS). Poco più del 22% delle zone è correttamente firmato con DNSSEC.",
+      "news22MktAfnicBody2": "Il dato sul singolo AS riguarda ciascuna zona: non significa che una sola rete ospiti l'80% di .fr. Misura un aspetto della resilienza DNS nel perimetro francese studiato, non la proprietà delle infrastrutture mondiali.",
+      "news22MktAfnicSource": "Afnic / ANSSI · pubblicazione del 17 novembre 2026",
+      "news22MktAfnicReportSource": "Afnic / ANSSI · rapporto integrale (PDF in francese)",
+      "news22GovAnsTitle": "Il DNS nell’identità degli agenti AI",
+      "news22GovAnsStatus": "Progetti e proposte · verifica del 22 novembre 2026",
+      "news22GovAnsBody1": "Il 10 novembre 2026 la Linux Foundation ha accolto Agent Name Service (ANS), che usa DNS e certificati per nominare, individuare e verificare le identità degli agenti AI.",
+      "news22GovAnsBody2": "La distinta proposta DNS for AI Discovery (DNS-AID), pubblicata il 2 novembre 2026, descrive la ricerca tramite DNS conoscendo l’agente o l’organizzazione. È un Internet-Draft individuale, non uno standard approvato dall’IETF.",
+      "news22GovAnsBody3": "La nostra lettura: i domini potrebbero sostenere l’identità delle macchine. Un’identità verificata non garantisce competenza o autorizzazione ad agire; l’esistenza di questi progetti, da sola, non dimostra un’adozione diffusa.",
+      "news22GovSourceAns": "Linux Foundation · ANS, 10 novembre 2026",
+      "news22GovSourceDnsAid": "IETF Datatracker · bozza individuale DNS-AID, 2 novembre 2026",
+      "news22GovPpTitle": "Doha: il confronto sul governo di Internet",
+      "news22GovPpStatus": "Conferenza in corso · situazione al 22 novembre 2026",
+      "news22GovPpBody1": "La Conferenza dei plenipotenziari dell’ITU (PP-26) si svolge a Doha dal 9 al 27 novembre 2026. Gli Stati membri discutono indirizzo, vertici e piani dell’organizzazione per il periodo 2028–2031.",
+      "news22GovPpBody2": "Nell’analisi del 13 novembre, Internet Society esprime preoccupazione per proposte di ampliamento dell’autorità intergovernativa, nuove negoziazioni sui trattati delle telecomunicazioni e contributi ai costi delle reti. Il suo monitoraggio comprende l’amministrazione del DNS e il modello multistakeholder.",
+      "news22GovPpBody3": "Sono proposte in discussione e valutazioni di Internet Society. Al 22 novembre la conferenza è in corso: decisioni finali e conseguenze sulla governance di Internet restano da documentare.",
+      "news22GovSourceItu": "ITU · apertura PP-26, 9 novembre 2026",
+      "news22GovSourceIsoc": "Internet Society · analisi del 13 novembre 2026",
+      "news22GovSourceIsocHub": "Internet Society · dossier di monitoraggio PP-26",
+      "news22GovPolicyTitle": "Tre consultazioni su nomi, dati e controlli",
+      "news22GovPolicyStatus": "Consultazioni aperte · situazione al 22 novembre 2026",
+      "news22GovDiacriticsBody": "Diacritici latini. La consultazione dal 16 novembre 2026 al 6 gennaio 2027 riguarda l’affidamento a un unico operatore di un gTLD ASCII e delle corrispondenti versioni con diacritici. Il Board deve ancora pronunciarsi.",
+      "news22GovSsadBody": "Dati dei registranti. La bozza SSAD, in consultazione dal 10 novembre al 23 dicembre 2026, eliminerebbe le decisioni automatizzate sulla divulgazione, mantenendo la responsabilità alla parte contrattuale. L’autenticazione partirebbe dalle autorità di polizia.",
+      "news22GovReviewsBody": "Controlli. La seconda bozza Review of Reviews, in consultazione dal 12 novembre al 22 dicembre 2026, propone di rivedere perimetro, frequenza e garanzie delle revisioni ICANN.",
+      "news22GovSourceDiacritics": "ICANN · consultazione sui diacritici latini",
+      "news22GovSourceSsad": "ICANN · raccomandazioni supplementari SSAD",
+      "news22GovSourceReviews": "ICANN · Review of Reviews, seconda bozza",
+      "news22GovObjectionsTitle": "Presentare un’obiezione: le procedure WIPO",
+      "news22GovObjectionsStatus": "Deposito aperto · 17 novembre 2026–16 marzo 2027",
+      "news22GovObjectionsBody": "L’avviso WIPO del 19 novembre 2026 conferma il periodo per depositare Legal Rights Objections e String Confusion Objections, fino al 16 marzo 2027. Quale unico organismo competente per queste due procedure, WIPO rimanda a regole applicabili, tariffe e istruzioni per il deposito.",
+      "news22GovSourceWipo": "WIPO · procedure di obiezione, 19 novembre 2026",
+      "news22ReviewedLabel": "Fonti verificate",
+      "news22IndexTitle": "Nuove evidenze · 22 novembre 2026",
+      "news22IndexIntro": "La rettifica dei conteggi del round e i ritiri successivi sono documentati qui sotto. Questi ulteriori sviluppi aggiornano i capitoli su mercato, infrastrutture e governance.",
+      "disputes2026StatusBody": "Il periodo ordinario per contributi e obiezioni è iniziato il 17 novembre 2026 e termina il 16 marzo 2027. Commenti, GAC Early Warnings e obiezioni formali seguono procedure distinte: la sola presentazione non determina l’esito di una candidatura.",
+      "release0802": "Rettifica dell’annuncio ICANN e rilevazione APS del 22 novembre: dieci ulteriori ritiri, Atlas aggiornato con data propria e nuove fonti su .web, .name, .helsinki, mercato dei domini, resilienza DNS, identità degli agenti AI e governance. Le pubblicazioni scientifiche conservano le evidenze originali."
+    },
+    "de": {
+      "caseWebOutcome": ".WEB wurde im Juli 2026 an VeriSign, Inc. delegiert. Am 11. November gab Verisign den Zeitplan für den Marktstart bekannt; die allgemeine Registrierung ist ab dem 6. April 2027 vorgesehen.",
+      "helsinkiCaseFact": "Die Stadt Helsinki kündigte den Registry-Vertrag am 28. Mai 2026 freiwillig. ICANN veröffentlichte am 19. August die vorläufige und am 21. Oktober die endgültige Entscheidung gegen einen Nachfolgebetreiber. IANA widerrief die Delegation am 28. Oktober; der Registry-Vertrag endete am 13. November.",
+      "helsinkiCaseStatus": "ICANN bestätigt das Ende des Registry-Vertrags am 13. November 2026, nach dem Widerruf der Delegation durch IANA am 28. Oktober. Die am 18. November geprüfte Root-Liste enthielt 1.436 Labels; der Stand vom 4. Oktober umfasste 1.437, einschliesslich .helsinki.",
+      "helsinkiBridgeBody": "Helsinki schloss 2026 die freiwillige Beendigung seiner Stadt-TLD ab: Die Delegation wurde am 28. Oktober widerrufen, der Registry-Vertrag endete am 13. November. Eine Delegation zu erhalten und sie langfristig aufrechtzuerhalten sind unterschiedliche Entscheidungen.",
+      "helsinkiCaseReading": "Die Belege unterscheiden den freiwilligen Antrag der Stadt, ICANNs Entscheidung gegen einen Nachfolger, die Entfernung aus der Root durch IANA und das Vertragsende. Sie dokumentieren Ablauf und Daten, jedoch nicht die wirtschaftlichen Beweggründe der Stadt.",
+      "news22MktWebLaunchEvent": "Verisign kündigte die Sunrise-Phase vom 10. Dezember 2026 bis 11. Januar 2027, den bevorzugten Zugang für die meisten bestehenden .com-Inhaber über ihren bisherigen Registrar vom 12. Januar bis 5. April 2027 und die allgemeine Registrierung ab 6. April 2027 an. Diese angekündigten Starttermine sind von der bereits erfolgten Delegation zu unterscheiden.",
+      "news22MktWebSourceAnnouncement": "Verisign · Ankündigung des Marktstarts, 11. November 2026",
+      "news22MktWebSourceICANN": "ICANN · Zeitplan für den Start von .web",
+      "news22MktHelsinkiSource": "ICANN · Mitteilung zum Vertragsende, 13. November 2026",
+      "news22MktNameTitle": ".name: geänderter Plan erhält bestehende Dienste",
+      "news22MktNameBody1": "Am 5. November 2026 sagte Verisign zu, bestehende .name-Registrierungen auf dritter Ebene und E-Mail-Weiterleitungen weiter zu unterstützen, solange mindestens ein akkreditierter Registrar diese Dienste anbietet. Am 9. November bestätigte ICANN die Rücknahme der bisherigen Einstellungsanträge und hob deren Genehmigungen auf.",
+      "news22MktNameBody2": "Verisign will die Einstellung neuer Registrierungen für diese Dienste beantragen. Die Unterstützung bestehender Registrierungen hängt vom Angebot der Registrare ab; die Schreiben versprechen keinen unbegrenzten Weiterbetrieb.",
+      "news22MktNameSourceVerisign": "Verisign · geänderter Plan, 5. November 2026",
+      "news22MktNameSourceICANN": "ICANN · Bestätigung, 9. November 2026",
+      "news22MktDnibTitle": "Drittes Quartal 2026: 411,6 Millionen Registrierungen",
+      "news22MktDnibBody1": "Der am 22. Oktober 2026 veröffentlichte DNIB-Bericht zählt zum 30. September 411,6 Millionen Registrierungen: +2,5 % gegenüber dem Vorquartal und +8,7 % gegenüber dem Vorjahr. Auf .com und .net zusammen entfallen 182,5 Millionen, auf ccTLDs 151,4 Millionen.",
+      "news22MktDnibBody2": "Diese datierte Marktaufnahme erfasst Registrierungen, keine aktiven Websites oder Nutzer. DNIB wird von Verisign finanziert. Die früheren Beobachtungen des Projekts zum zweiten Quartal bleiben historische Momentaufnahmen.",
+      "news22MktDnibSource": "Verisign / DNIB · Quartalsbericht, 22. Oktober 2026",
+      "news22MktOptionsTitle": "Domain Options: Zeit für die Käufersuche erwerben",
+      "news22MktOptionsBody1": "Am 10. November 2026 kündigten Identity Digital und Deqo Domain Options an: ein exklusives Recht, einen Namen 24 Monate lang zu vermarkten und zu verkaufen. Zum Start kostet es USD 20–30 und umfasst 17 TLDs, darunter .info, .io, .studio, .bet und .live.",
+      "news22MktOptionsBody2": "Wird der Name nicht verkauft, verfällt die Option und er wird wieder allgemein verfügbar. Dokumentiert ist damit ein neuer Geschäftsmechanismus; die Ankündigung belegt weder seine Verbreitung noch erzielte Verkäufe oder Renditen.",
+      "news22MktOptionsSource": "Identity Digital / Deqo · Ankündigung vom 10. November 2026",
+      "news22MktAfnicTitle": ".fr: mehrere DNS-Server können vom selben Netz abhängen",
+      "news22MktAfnicBody1": "Der am 17. November 2026 veröffentlichte Bericht von ANSSI und Afnic zeigt: Bei 79,73 % der untersuchten .fr-Zonen liegen alle autoritativen Nameserver innerhalb eines einzigen autonomen Systems (AS). Etwas mehr als 22 % der Zonen sind korrekt mit DNSSEC signiert.",
+      "news22MktAfnicBody2": "Die Angabe zu einem einzigen AS gilt für jede Zone einzeln. Sie bedeutet nicht, dass ein Netz 80 % von .fr beherbergt. Sie beschreibt einen Aspekt der DNS-Resilienz im untersuchten französischen Bereich, keine weltweiten Eigentumsverhältnisse.",
+      "news22MktAfnicSource": "Afnic / ANSSI · Veröffentlichung vom 17. November 2026",
+      "news22MktAfnicReportSource": "Afnic / ANSSI · vollständiger Bericht (französisches PDF)",
+      "news22GovAnsTitle": "DNS als Grundlage für die Identität von KI-Agenten",
+      "news22GovAnsStatus": "Projekte und Vorschläge · geprüft am 22. November 2026",
+      "news22GovAnsBody1": "Am 10. November 2026 nahm die Linux Foundation Agent Name Service (ANS) auf. Das Projekt nutzt DNS und Zertifikate, um Identitäten von KI-Agenten zu benennen, aufzufinden und zu verifizieren.",
+      "news22GovAnsBody2": "Der eigenständige Vorschlag DNS for AI Discovery (DNS-AID) vom 2. November 2026 beschreibt die DNS-Suche bei bekanntem Agenten oder bekannter Organisation. Es handelt sich um einen individuellen Internet-Draft, keinen verabschiedeten IETF-Standard.",
+      "news22GovAnsBody3": "Unsere Einordnung: Domains könnten die Identität von Maschinen unterstützen. Eine verifizierte Identität garantiert weder Kompetenz noch Handlungsbefugnis; die Existenz dieser Projekte allein belegt keine breite Nutzung.",
+      "news22GovSourceAns": "Linux Foundation · ANS, 10. November 2026",
+      "news22GovSourceDnsAid": "IETF Datatracker · individueller DNS-AID-Entwurf, 2. November 2026",
+      "news22GovPpTitle": "Doha: die Debatte über Internet-Governance",
+      "news22GovPpStatus": "Laufende Konferenz · Stand: 22. November 2026",
+      "news22GovPpBody1": "Die ITU-Bevollmächtigtenkonferenz (PP-26) findet vom 9. bis 27. November 2026 in Doha statt. Die Mitgliedstaaten beraten über Ausrichtung, Führung und Pläne der Organisation für 2028–2031.",
+      "news22GovPpBody2": "In ihrer Analyse vom 13. November äussert die Internet Society Bedenken zu Vorschlägen für mehr zwischenstaatliche Befugnisse, neue Verhandlungen über internationale Telekommunikationsverträge und eine Beteiligung an Netzkosten. Sie beobachtet dabei auch die DNS-Verwaltung und das Multistakeholder-Modell.",
+      "news22GovPpBody3": "Dies sind diskutierte Vorschläge und deren Bewertung durch die Internet Society. Am 22. November läuft die Konferenz noch: Die abschliessenden Entscheidungen und ihre Folgen für die Internet-Governance bleiben zu dokumentieren.",
+      "news22GovSourceItu": "ITU · Eröffnung der PP-26, 9. November 2026",
+      "news22GovSourceIsoc": "Internet Society · Analyse vom 13. November 2026",
+      "news22GovSourceIsocHub": "Internet Society · Dossier zur PP-26",
+      "news22GovPolicyTitle": "Drei Konsultationen zu Namen, Daten und Kontrolle",
+      "news22GovPolicyStatus": "Offene Konsultationen · Stand: 22. November 2026",
+      "news22GovDiacriticsBody": "Lateinische Diakritika. Die Konsultation vom 16. November 2026 bis 6. Januar 2027 betrifft den Betrieb einer ASCII-gTLD und ihrer diakritischen Versionen durch denselben Registry-Betreiber. Der Board-Entscheid steht noch aus.",
+      "news22GovSsadBody": "Registrierungsdaten. Der SSAD-Entwurf zur Konsultation vom 10. November bis 23. Dezember 2026 würde automatisierte Offenlegungsentscheidungen abschaffen; die Verantwortung bliebe beim Vertragspartner. Die Authentifizierung würde zunächst Strafverfolgungsbehörden umfassen.",
+      "news22GovReviewsBody": "Kontrolle. Der zweite Entwurf der Review of Reviews, zur Konsultation vom 12. November bis 22. Dezember 2026, schlägt Änderungen an Umfang, Häufigkeit und Schutzmechanismen der ICANN-Überprüfungen vor.",
+      "news22GovSourceDiacritics": "ICANN · Konsultation zu lateinischen Diakritika",
+      "news22GovSourceSsad": "ICANN · ergänzende SSAD-Empfehlungen",
+      "news22GovSourceReviews": "ICANN · Review of Reviews, zweiter Entwurf",
+      "news22GovObjectionsTitle": "Eine Einwendung einreichen: die WIPO-Verfahren",
+      "news22GovObjectionsStatus": "Einreichungsfrist läuft · 17. November 2026–16. März 2027",
+      "news22GovObjectionsBody": "Die WIPO-Mitteilung vom 19. November 2026 bestätigt die Einreichungsfrist für Legal Rights Objections und String Confusion Objections bis zum 16. März 2027. Als alleiniger Anbieter dieser beiden Verfahren verweist WIPO auf die geltenden Regeln, Gebühren und Hinweise zur Einreichung.",
+      "news22GovSourceWipo": "WIPO · Einwendungsverfahren, 19. November 2026",
+      "news22ReviewedLabel": "Quellen geprüft",
+      "news22IndexTitle": "Neue Erkenntnisse · 22. November 2026",
+      "news22IndexIntro": "Die berichtigten Zahlen der Runde und die späteren Rücknahmen sind nachfolgend dokumentiert. Weitere Entwicklungen ergänzen die Kapitel zu Markt, Infrastruktur und Governance.",
+      "disputes2026StatusBody": "Die reguläre Frist für Stellungnahmen und Einwendungen begann am 17. November 2026 und endet am 16. März 2027. Kommentare, GAC Early Warnings und formelle Einwendungen unterliegen unterschiedlichen Verfahren; ihre Einreichung allein entscheidet nicht über eine Bewerbung.",
+      "release0802": "Korrektur der ICANN-Mitteilung und APS-Erhebung vom 22. November: zehn weitere Rückzüge, ein separat datierter aktueller Atlas und belegte Aktualisierungen zu .web, .name, .helsinki, Domainmarkt, DNS-Resilienz, Identität von KI-Agenten und Governance. Die wissenschaftlichen Veröffentlichungen behalten ihre ursprünglichen Belege."
+    },
+    "fr": {
+      "caseWebOutcome": ".WEB a été délégué à VeriSign, Inc. en juillet 2026. Le 11 novembre, Verisign a annoncé son calendrier de lancement, avec une ouverture des enregistrements au public prévue le 6 avril 2027.",
+      "helsinkiCaseFact": "La Ville d'Helsinki a notifié la résiliation volontaire le 28 mai 2026. ICANN a rendu sa décision préliminaire le 19 août, puis sa décision définitive de ne pas transférer .helsinki à un successeur le 21 octobre. IANA a révoqué la délégation le 28 octobre ; le contrat de registre a pris fin le 13 novembre.",
+      "helsinkiCaseStatus": "ICANN confirme la fin du contrat de registre le 13 novembre 2026, après la révocation de la délégation par IANA le 28 octobre. La liste de la racine vérifiée le 18 novembre contenait 1 436 libellés ; l'instantané du 4 octobre en comptait 1 437, dont .helsinki.",
+      "helsinkiBridgeBody": "En 2026, Helsinki a achevé la fermeture volontaire de son domaine municipal : délégation révoquée le 28 octobre et contrat de registre terminé le 13 novembre. Obtenir une délégation et la maintenir dans la durée sont deux décisions distinctes.",
+      "helsinkiCaseReading": "Les preuves distinguent la demande volontaire de la Ville, la décision d'ICANN contre un transfert, le retrait de la racine par IANA et la fin du contrat. Elles établissent la séquence et les dates, sans documenter les motivations économiques de la Ville.",
+      "news22MktWebLaunchEvent": "Verisign a annoncé la phase Sunrise du 10 décembre 2026 au 11 janvier 2027, un accès prioritaire pour la plupart des titulaires de .com auprès de leur bureau d'enregistrement actuel du 12 janvier au 5 avril 2027, puis l'ouverture au public le 6 avril 2027. Ces dates annoncées se distinguent de la délégation déjà effectuée.",
+      "news22MktWebSourceAnnouncement": "Verisign · annonce du lancement, 11 novembre 2026",
+      "news22MktWebSourceICANN": "ICANN · calendrier de lancement de .web",
+      "news22MktHelsinkiSource": "ICANN · notification de fin du contrat, 13 novembre 2026",
+      "news22MktNameTitle": ".name : le plan révisé maintient les services existants",
+      "news22MktNameBody1": "Le 5 novembre 2026, Verisign s'est engagé à maintenir les enregistrements .name de troisième niveau et la redirection des courriels existants tant qu'au moins un bureau d'enregistrement accrédité propose ces services. Le 9 novembre, ICANN a pris acte du retrait des demandes d'arrêt antérieures et annulé leurs autorisations.",
+      "news22MktNameBody2": "Verisign entend demander l'arrêt des nouveaux enregistrements pour ces services. Le maintien des enregistrements existants dépend de leur disponibilité au détail : les lettres ne promettent pas un service perpétuel.",
+      "news22MktNameSourceVerisign": "Verisign · plan révisé, 5 novembre 2026",
+      "news22MktNameSourceICANN": "ICANN · prise d'acte, 9 novembre 2026",
+      "news22MktDnibTitle": "Troisième trimestre 2026 : 411,6 millions d'enregistrements",
+      "news22MktDnibBody1": "Le rapport DNIB publié le 22 octobre 2026 recense 411,6 millions d'enregistrements au 30 septembre : +2,5 % sur le trimestre et +8,7 % sur un an. .com et .net représentent ensemble 182,5 millions d'enregistrements ; les ccTLD, 151,4 millions.",
+      "news22MktDnibBody2": "Cette photographie datée mesure des enregistrements, pas des sites actifs ni des utilisateurs. DNIB est financé par Verisign. Les observations antérieures du projet sur le deuxième trimestre restent des instantanés historiques.",
+      "news22MktDnibSource": "Verisign / DNIB · rapport trimestriel, 22 octobre 2026",
+      "news22MktOptionsTitle": "Domain Options : payer pour disposer du temps de vendre",
+      "news22MktOptionsBody1": "Le 10 novembre 2026, Identity Digital et Deqo ont annoncé Domain Options : un droit exclusif de commercialiser et vendre un nom pendant 24 mois, proposé au lancement à USD 20–30 pour 17 TLD, dont .info, .io, .studio, .bet et .live.",
+      "news22MktOptionsBody2": "Si le nom reste invendu, l'option expire et il redevient disponible au public. Ce nouveau mécanisme commercial est documenté ; l'annonce ne démontre ni adoption, ni ventes réalisées, ni rendement.",
+      "news22MktOptionsSource": "Identity Digital / Deqo · annonce du 10 novembre 2026",
+      "news22MktAfnicTitle": ".fr : plusieurs serveurs DNS peuvent dépendre du même réseau",
+      "news22MktAfnicBody1": "Le rapport ANSSI et Afnic publié le 17 novembre 2026 constate que 79,73 % des zones .fr étudiées ont tous leurs serveurs DNS faisant autorité au sein d'un seul système autonome (AS). Un peu plus de 22 % des zones sont correctement signées avec DNSSEC.",
+      "news22MktAfnicBody2": "La mesure du seul AS s'applique séparément à chaque zone : elle ne signifie pas qu'un réseau héberge 80 % de .fr. Elle décrit la résilience DNS dans le périmètre français étudié, pas la propriété des infrastructures à l'échelle mondiale.",
+      "news22MktAfnicSource": "Afnic / ANSSI · publication du 17 novembre 2026",
+      "news22MktAfnicReportSource": "Afnic / ANSSI · rapport intégral (PDF en français)",
+      "news22GovAnsTitle": "Le DNS dans l’identité des agents d’IA",
+      "news22GovAnsStatus": "Projets et propositions · vérification du 22 novembre 2026",
+      "news22GovAnsBody1": "Le 10 novembre 2026, la Linux Foundation a accueilli Agent Name Service (ANS), qui utilise DNS et certificats pour nommer, découvrir et vérifier les identités des agents d’IA.",
+      "news22GovAnsBody2": "La proposition distincte DNS for AI Discovery (DNS-AID) du 2 novembre 2026 décrit la recherche par DNS lorsque l’agent ou son organisation est connu. C’est un Internet-Draft individuel, pas une norme approuvée par l’IETF.",
+      "news22GovAnsBody3": "Notre lecture : les domaines pourraient soutenir l’identité des machines. Une identité vérifiée ne garantit ni compétence ni autorisation d’agir ; l’existence de ces projets ne démontre pas, à elle seule, une adoption généralisée.",
+      "news22GovSourceAns": "Linux Foundation · ANS, 10 novembre 2026",
+      "news22GovSourceDnsAid": "IETF Datatracker · projet individuel DNS-AID, 2 novembre 2026",
+      "news22GovPpTitle": "Doha : le débat sur la gouvernance d’Internet",
+      "news22GovPpStatus": "Conférence en cours · situation au 22 novembre 2026",
+      "news22GovPpBody1": "La Conférence de plénipotentiaires de l’UIT (PP-26) se tient à Doha du 9 au 27 novembre 2026. Les États membres examinent l’orientation, la direction et les plans de l’organisation pour 2028–2031.",
+      "news22GovPpBody2": "Dans son analyse du 13 novembre, Internet Society s’inquiète de propositions d’élargissement des pouvoirs intergouvernementaux, de nouvelles négociations sur les traités des télécommunications et de contributions aux coûts des réseaux. Son suivi inclut l’administration du DNS et le modèle multipartite.",
+      "news22GovPpBody3": "Ce sont des propositions en discussion et des évaluations d’Internet Society. Au 22 novembre, la conférence se poursuit : décisions finales et conséquences sur la gouvernance d’Internet restent à documenter.",
+      "news22GovSourceItu": "UIT · ouverture de la PP-26, 9 novembre 2026",
+      "news22GovSourceIsoc": "Internet Society · analyse du 13 novembre 2026",
+      "news22GovSourceIsocHub": "Internet Society · dossier de suivi de la PP-26",
+      "news22GovPolicyTitle": "Trois consultations sur les noms, les données et le contrôle",
+      "news22GovPolicyStatus": "Consultations ouvertes · situation au 22 novembre 2026",
+      "news22GovDiacriticsBody": "Diacritiques latins. La consultation du 16 novembre 2026 au 6 janvier 2027 concerne l’exploitation d’un gTLD ASCII et de ses versions à diacritiques par un même opérateur. Le Conseil d’administration doit encore décider.",
+      "news22GovSsadBody": "Données d’enregistrement. Le projet SSAD, en consultation du 10 novembre au 23 décembre 2026, supprimerait les décisions automatisées de divulgation. La responsabilité resterait à la partie contractante ; l’authentification commencerait par les autorités policières.",
+      "news22GovReviewsBody": "Contrôle. La deuxième version de Review of Reviews, en consultation du 12 novembre au 22 décembre 2026, propose de revoir périmètre, fréquence et garanties des révisions ICANN.",
+      "news22GovSourceDiacritics": "ICANN · consultation sur les diacritiques latins",
+      "news22GovSourceSsad": "ICANN · recommandations complémentaires SSAD",
+      "news22GovSourceReviews": "ICANN · Review of Reviews, deuxième version",
+      "news22GovObjectionsTitle": "Déposer une objection : les procédures OMPI",
+      "news22GovObjectionsStatus": "Dépôt ouvert · 17 novembre 2026–16 mars 2027",
+      "news22GovObjectionsBody": "L’avis de l’OMPI du 19 novembre 2026 confirme le dépôt des Legal Rights Objections et String Confusion Objections jusqu’au 16 mars 2027. Prestataire exclusif de ces deux procédures, l’OMPI renvoie aux règles applicables, aux tarifs et aux instructions de dépôt.",
+      "news22GovSourceWipo": "OMPI · procédures d’objection, 19 novembre 2026",
+      "news22ReviewedLabel": "Sources vérifiées",
+      "news22IndexTitle": "Nouveaux éléments · 22 novembre 2026",
+      "news22IndexIntro": "La rectification des chiffres du cycle et les retraits ultérieurs sont documentés ci-dessous. Ces autres évolutions complètent les chapitres sur le marché, les infrastructures et la gouvernance.",
+      "disputes2026StatusBody": "La période ordinaire de contributions et d’objections a commencé le 17 novembre 2026 et se termine le 16 mars 2027. Commentaires, GAC Early Warnings et objections formelles suivent des procédures distinctes : leur dépôt seul ne détermine pas l’issue d’une candidature.",
+      "release0802": "Correction de l’annonce ICANN et observation APS du 22 novembre : dix retraits supplémentaires, Atlas actualisé et daté séparément, et nouvelles sources sur .web, .name, .helsinki, le marché des domaines, la résilience DNS, l’identité des agents IA et la gouvernance. Les publications scientifiques conservent leurs preuves originales."
+    }
+  },
+  "researchBoundary": "RR1, RR2 and RR3 identify their immutable dated evidence. These later observations do not extend the coverage of their DOIs."
+}

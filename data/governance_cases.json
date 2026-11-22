@@ -310,6 +310,15 @@
           "sources": [
             "https://www.iana.org/domains/root/db/web.html"
           ]
+        },
+        {
+          "period": "2026-11-11",
+          "textKey": "news22MktWebLaunchEvent",
+          "sources": [
+            "https://verisigninc.gcs-web.com/news-releases/news-release-details/verisign-announces-web-launch-key-dates",
+            "https://newgtlds.icann.org/en/program-status/sunrise-claims-periods/web"
+          ],
+          "lastReviewed": "2026-11-22"
         }
       ],
       "sources": [
@@ -326,6 +335,18 @@
         {
           "label": "IANA — .WEB delegation record",
           "url": "https://www.iana.org/domains/root/db/web.html",
+          "role": "primary"
+        },
+        {
+          "labelKey": "news22MktWebSourceAnnouncement",
+          "label": "Verisign — .web launch announcement, 11 November 2026",
+          "url": "https://verisigninc.gcs-web.com/news-releases/news-release-details/verisign-announces-web-launch-key-dates",
+          "role": "primary"
+        },
+        {
+          "labelKey": "news22MktWebSourceICANN",
+          "label": "ICANN — .web startup calendar",
+          "url": "https://newgtlds.icann.org/en/program-status/sunrise-claims-periods/web",
           "role": "primary"
         }
       ]

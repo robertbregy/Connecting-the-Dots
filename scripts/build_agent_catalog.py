@@ -55,7 +55,7 @@ def local_path(root: Path, relative: str, *, must_exist: bool = True) -> Path:
 
 
 def derive_counts(root: Path) -> dict:
-    """Count Reveal and String Confirmation units independently."""
+    """Count frozen Reveal and the separately dated current APS units."""
     core = read_csv(root, "data/explorer_catalog.csv")
     universe = read_csv(root, "data/tld_universe.csv")
     application_only = read_csv(root, "data/application_only_strings.csv")
@@ -65,9 +65,9 @@ def derive_counts(root: Path) -> dict:
     reveal_provenance = read_json(root, "data/applications_2026_aps_official_provenance.json")
     reveal_snapshot = read_json(root, "data/application_2026_snapshot.json")
 
-    current_rows = read_csv(root, "data/applications_2026_aps_string_confirmation_20261117.csv")
-    current_provenance = read_json(root, "data/applications_2026_aps_string_confirmation_20261117_provenance.json")
     graph = read_json(root, "data/aps_2026_application_graph.json")
+    current_rows = read_csv(root, graph["sourceCSVFile"])
+    current_provenance = read_json(root, graph["sourceProvenanceFile"])
     graph_manifest = read_json(root, "data/aps_2026_application_graph_manifest.json")
     iana = read_json(root, "data/iana_snapshot.json")
 
@@ -113,25 +113,33 @@ def derive_counts(root: Path) -> dict:
     current_ids = {row["Application ID"] for row in current_base}
     assert len(current_rows) == 2783 and len(current_base) == 1614 and len(current_replacements) == 1169
     assert current_ids == {app["id"] for app in graph["apps"]}, "Current APS graph/listing identity mismatch"
-    assert file_digest(root, "data/applications_2026_aps_string_confirmation_20261117.csv") == current_provenance["normalizedCSVSHA256"]
+    assert file_digest(root, graph["sourceCSVFile"]) == current_provenance["normalizedCSVSHA256"]
     assert graph_manifest["sourceSha256"] == current_provenance["normalizedCSVSHA256"]
     counts = graph_manifest["counts"]
-    assert counts["visibleProceedingApplications"] == 1605
+    assert counts["visibleProceedingApplications"] == 1595
+    assert counts["visibleWithdrawnApplications"] == 19
     assert counts["selectedReplacementRecords"] == 152
-    assert counts["proceedingNewPrimaryApplications"] == 1599
-    assert counts["newPrimaryStrings"] == 1120
-    assert counts["derivedExactPrimaryMatchGroups"] == 226
-    assert counts["applicationsInExactPrimaryMatches"] == 705
-    assert counts["unresolvedAnnouncementPublicationGap"] == 4
+    assert counts["proceedingNewPrimaryApplications"] == 1589
+    assert counts["newPrimaryStrings"] == 1119
+    assert counts["derivedExactPrimaryMatchGroups"] == 225
+    assert counts["applicationsInExactPrimaryMatches"] == 695
+    assert counts["officialConfirmedContentionSets"] == 226
+    assert counts["officialConfirmedContentionApplications"] == 705
+    assert counts["unresolvedAnnouncementPublicationGap"] == 0
 
     aps_current = {
-        "snapshotState": "string-confirmation",
-        "officialReportedApplications": counts["officialAnnouncementProceedingApplications"],
+        "snapshotState": graph["snapshotState"],
+        "historicalAnnouncementProceedingApplications": counts["officialAnnouncementProceedingApplications"],
+        "historicalAnnouncementSnapshotOn": current_provenance["officialAnnouncementSnapshotOn"],
+        "historicalAnnouncementCorrectionObservedOn": current_provenance["officialAnnouncementCorrectionObservedOn"],
+        "officialStatisticsTotalApplications": current_provenance["officialStatisticsTotalApplications"],
         "officialStatisticsActiveApplications": counts["apsStatisticsActiveApplications"],
+        "officialStatisticsWithdrawnApplications": current_provenance["officialStatisticsWithdrawnApplications"],
         "officialStatisticsPublishedAt": current_provenance["sourceStatisticsLastPublished"],
         "publicListingRows": len(current_rows),
         "publishedBaseApplications": len(current_base),
         "visibleProceedingApplications": counts["visibleProceedingApplications"],
+        "visibleWithdrawnApplications": counts["visibleWithdrawnApplications"],
         "replacementRows": len(current_replacements),
         "selectedReplacementApplications": counts["selectedReplacementRecords"],
         "newPrimaryStringApplications": counts["proceedingNewPrimaryApplications"],
@@ -139,10 +147,13 @@ def derive_counts(root: Path) -> dict:
         "variantOnlyExistingTldApplications": counts["variantOnlyExistingTldApplications"],
         "publicListingObservedAt": current_provenance["retrievedAtUTC"],
         "knownAdministrativeCheckApplications": counts["knownAdministrativeCheckApplications"],
-        "announcementVersusVisibleProceedingGap": counts["announcementVsPublicProceedingGap"],
+        "statisticsVersusVisibleProceedingGap": counts["statisticsVsPublicProceedingGap"],
         "unresolvedAnnouncementPublicationGap": counts["unresolvedAnnouncementPublicationGap"],
-        "confirmedContentionSets": counts["derivedExactPrimaryMatchGroups"],
-        "publicApplicationsInContention": counts["applicationsInExactPrimaryMatches"],
+        "currentDerivedExactPrimaryMatchGroups": counts["derivedExactPrimaryMatchGroups"],
+        "currentApplicationsInExactPrimaryMatches": counts["applicationsInExactPrimaryMatches"],
+        "officialConfirmedContentionSets": counts["officialConfirmedContentionSets"],
+        "officialConfirmedContentionApplications": counts["officialConfirmedContentionApplications"],
+        "officialConfirmedSnapshotOn": current_provenance["publicConfirmedContentionSnapshotOn"],
         "officialAnnouncementApplicationsInContention": counts["officialAnnouncementApplicationsInContention"],
         "knownUnpublishedApplicationIds": [graph["notPublishedApplication"]["id"]],
     }
@@ -162,7 +173,7 @@ def derive_counts(root: Path) -> dict:
             "formula": "baseCatalogRecords + frozen2026PrimaryStringNames - overlappingNames",
             "rootListedTlds": root_count,
             "rootObservationDate": iana["asOf"],
-            "scopeNote": "The combined interface retains the frozen Reveal Day string index; the current APS Application Atlas is a separately dated String Confirmation layer.",
+            "scopeNote": "The combined interface retains the frozen Reveal Day string index; the current APS Application Atlas is a separately dated follow-up layer after String Confirmation.",
         },
         "aps2026": aps_reveal,
         "aps2026Current": aps_current,
@@ -181,7 +192,9 @@ def build_catalog(root: Path = ROOT, discovery_manifest: dict | None = None) -> 
     iana = read_json(root, "data/iana_snapshot.json")
     snapshot = read_json(root, "data/application_2026_snapshot.json")
     aps_provenance = read_json(root, "data/applications_2026_aps_official_provenance.json")
-    current_aps_provenance = read_json(root, "data/applications_2026_aps_string_confirmation_20261117_provenance.json")
+    confirmation_provenance = read_json(root, "data/applications_2026_aps_string_confirmation_20261117_provenance.json")
+    current_graph = read_json(root, "data/aps_2026_application_graph.json")
+    current_aps_provenance = read_json(root, current_graph["sourceProvenanceFile"])
     graph_manifest = read_json(root, "data/aps_2026_application_graph_manifest.json")
     analytics = read_json(root, "data/aps_2026_current_analytics_manifest.json")
     archives = read_json(root, "research/research_release_manifest.json")
@@ -269,15 +282,23 @@ def build_catalog(root: Path = ROOT, discovery_manifest: dict | None = None) -> 
         dataset(
             "aps-string-confirmation-listing", "ICANN APS public listing · String Confirmation Day", "data/applications_2026_aps_string_confirmation_20261117.csv",
             "APS listing row", counts["aps2026Current"]["publicListingRows"],
-            "Separate 17 November public APS observation. Stable base IDs are preserved while selected -R records represent the effective current string.",
-            "data/applications_2026_aps_string_confirmation_20261117_provenance.json", current_aps_provenance["retrievedAtUTC"], layer="source-records",
+            "Frozen 17 November public APS observation. Stable base IDs and selected -R records preserve that dated state.",
+            "data/applications_2026_aps_string_confirmation_20261117_provenance.json", confirmation_provenance["retrievedAtUTC"], layer="source-records",
+            sourceUrl=confirmation_provenance["sourceExportURL"],
+            note="The original announcement/public-file discrepancy was resolved by ICANN's corrected announcement, observed on 22 November. The frozen CSV and its original acquisition notes are unchanged; see the separately dated follow-up evidence.",
+        ),
+        dataset(
+            "aps-current-followup-listing", "ICANN APS public listing · 22 November follow-up", current_graph["sourceCSVFile"],
+            "APS listing row", counts["aps2026Current"]["publicListingRows"],
+            "Separately captured current public listing; ten further application families changed from Active to Withdrawn since the frozen 17 November observation.",
+            current_graph["sourceProvenanceFile"], current_aps_provenance["retrievedAtUTC"], layer="source-records",
             sourceUrl=current_aps_provenance["sourceExportURL"],
-            note="The same-day ICANN announcement aggregates exceed the reconciled public APS/contention files by four applications after accounting separately for .wdo.",
+            note="Current active exact-string overlaps are project derivations. The official 17 November contention CSV remains independently dated at 226 sets / 705 applications; withdrawn families remain in the listing.",
         ),
         dataset(
             "aps-application-graph", "Published APS applications and their string relationships", "data/aps_2026_application_graph.json",
             "published base application", counts["aps2026Current"]["publishedBaseApplications"],
-            "Current String Confirmation graph: stable base application identities, selected replacements, variants and confirmed public contention memberships.",
+            "Current follow-up graph: stable base identities, selected replacements, withdrawals, variants and derived current exact-string overlaps; official 17 November contention memberships are separately dated.",
             "data/aps_2026_application_graph_manifest.json", graph_manifest["retrievedAtUTC"],
             note="A -R record is an alternative, not an additional application. Derived exact-string groups are not final official contention decisions.",
         ),
@@ -452,7 +473,7 @@ def render_llms(catalog: dict) -> str:
         "", "## Data and scope", "",
         f"The combined Explorer contains {explorer['combinedExplorerNames']:,} names: {explorer['baseCatalogRecords']:,} base records plus {explorer['frozen2026PrimaryStringNames']:,} frozen 2026 primary strings, minus {explorer['overlappingNames']:,} overlapping names. This is not a count of delegated TLDs. The root snapshot contains {explorer['rootListedTlds']:,} TLDs at {explorer['rootObservationDate']}.", "",
         f"The frozen Reveal Day APS layer contains {aps_reveal['publishedBaseApplications']:,} public base applications and {aps_reveal['distinctNewPrimaryStrings']:,} primary strings in the reconciled secondary string index. It remains a historical snapshot rather than being overwritten by later applicant choices.", "",
-        f"The String Confirmation APS export observed at {aps['publicListingObservedAt']} contains {aps['publicListingRows']:,} public rows and {aps['publishedBaseApplications']:,} stable base Application IDs. Its effective current state yields {aps['visibleProceedingApplications']:,} visible proceeding application families, including {aps['selectedReplacementApplications']:,} selected replacements, and {aps['newPrimaryStringApplications']:,} proceeding new-primary applications over {aps['distinctNewPrimaryStrings']:,} visible strings. The public contention CSV has {aps['confirmedContentionSets']:,} sets / {aps['publicApplicationsInContention']:,} rows, while ICANN's same-day announcement reports {aps['officialAnnouncementApplicationsInContention']:,}; retain the unresolved four-application publication gap.", "",
+        f"The APS follow-up observed at {aps['publicListingObservedAt']} contains {aps['publicListingRows']:,} public rows and {aps['publishedBaseApplications']:,} stable base Application IDs: {aps['visibleProceedingApplications']:,} visible active families and {aps['visibleWithdrawnApplications']:,} withdrawn families. There are {aps['selectedReplacementApplications']:,} selected replacements and {aps['newPrimaryStringApplications']:,} active new-primary applications over {aps['distinctNewPrimaryStrings']:,} visible strings. Current project-derived exact-string overlaps yield {aps['currentDerivedExactPrimaryMatchGroups']:,} groups / {aps['currentApplicationsInExactPrimaryMatches']:,} applications. These are distinct from the official contention CSV dated {aps['officialConfirmedSnapshotOn']}, which remains at {aps['officialConfirmedContentionSets']:,} sets / {aps['officialConfirmedContentionApplications']:,} applications. ICANN's corrected historical announcement, observed on {aps['historicalAnnouncementCorrectionObservedOn']}, resolves the previous four-application discrepancy. Current APS Statistics includes one administratively checked application absent from the public listing.", "",
     ]
     for dataset in catalog["datasets"]:
         lines.append(f"- [{dataset['title']}]({dataset['url']}): {dataset['recordCount']:,} records; unit: {dataset['unit']}. [Provenance]({dataset['provenance']['url']}).")

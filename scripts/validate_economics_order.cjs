@@ -22,6 +22,33 @@ const baselineIds=[
  'reader-brief-economics','reader-brief-economics-title','reader-start-economics','round-application-fees',
  'sector-chart-caption','tld-market-reach'
 ].sort();
+// The 22 November additions travel inside two existing preserved partitions.
+// Keep every original destination and admit only these four additional IDs.
+const baselineDestinations=Object.fromEntries(Object.entries({
+ hub:['economics-cemetery-link','economics-part-9','economics-reading-guide','reader-brief-economics','reader-brief-economics-title','reader-start-economics'],
+ cases:['econ-case-ai','econ-case-auctions','econ-case-comnet','econ-case-entry-fee','econ-case-io','econ-case-org','econ-case-tv','econ-case-withdrawals',
+  'economicGrid','economicModels','economics-cases','economics-chapter-cases','economics-chapter-value','economics-part-1','economics-part-6','economics-part-7','economics-value'],
+ 'round-2026':['aps-current-economics','economic-cycles-2026','economics-brand-strategy','economics-chapter-cycles','economics-chapter-round2026',
+  'economics-comparison-guide','economics-comparison-guide-title','economics-cycles','economics-historical-link','economics-part-2','economics-part-3',
+  'economics-part-4','economics-part-8','economics-round2026','economy-sectors','round-application-fees','sector-chart-caption'],
+ market:['economics-chapter-reach','economics-reach','market-more','market-origin','market-result-count','market-search','market-web','market-zones','tld-market-reach'],
+ portfolios:['economics-chapter-concentration','economics-concentration','economics-contention-2026','economics-part-5']
+}).flatMap(([destination,ids])=>ids.map(id=>[id,destination])));
+assert.deepEqual(Object.keys(baselineDestinations).sort(),baselineIds,'Original fragment destinations must cover the immutable 53-ID baseline');
+const newsPanels={
+ 'news22-dnib-q3':{destination:'market',parent:'economics-chapter-reach',
+  source:'https://verisigninc.gcs-web.com/news-releases/news-release-details/dnibcom-reports-internet-has-4116-million-domain-name'},
+ 'news22-domain-options':{destination:'cases',parent:'economics-chapter-cases',
+  source:'https://www.businesswire.com/news/home/20261110723636/en/Identity-Digital-and-Deqo-Launch-Domain-Options-to-Improve-Capital-Efficiency-for-Investors'}
+};
+const newsAnchors=Object.fromEntries(Object.entries(newsPanels).flatMap(([id,panel])=>[[id,panel.destination],[id+'-title',panel.destination]]));
+const currentIds=[...baselineIds,...Object.keys(newsAnchors)].sort();
+
+function validateAnchorMap(anchors,label){
+ assert.deepEqual(Object.keys(anchors).sort(),currentIds,label+' must map all 53 original fragments and exactly four reviewed additions');
+ for(const [id,destination] of Object.entries({...baselineDestinations,...newsAnchors}))
+  assert.equal(anchors[id],destination,label+' fragment destination changed: '+id);
+}
 const read=rel=>fs.readFileSync(path.join(root,rel),'utf8');
 const json=rel=>JSON.parse(read(rel));
 const flat=value=>String(value??'').replace(/\s+/g,' ').trim();
@@ -65,7 +92,7 @@ function validatePreservation(){
  for(const lang of languages){
   const evidence=inventory.locales[lang];
   assert.equal(evidence.sourceFile,lang+'/index.html');
-  assert.deepEqual(Object.keys(evidence.anchors).sort(),baselineIds,lang+' must map all 53 original fragments');
+  validateAnchorMap(evidence.anchors,lang);
   assert.ok(Object.values(evidence.anchors).every(key=>key==='hub'||keys.includes(key)),lang+' unknown fragment destination');
   assert.equal(evidence.blocks.length,11,lang+' must preserve all eleven content partitions');
   assert.equal(new Set(evidence.blocks.map(block=>block.key)).size,11,lang+' duplicate block ownership');
@@ -110,20 +137,33 @@ function validatePreservation(){
   // The original reading-guide ID remains on the replacement navigation. All
   // other original IDs belong to one preserved content partition.
   assert.equal(new Set(originalIds).size,originalIds.length,lang+' an original fragment belongs to multiple blocks');
-  assert.deepEqual([...originalIds,'economics-reading-guide'].sort(),baselineIds,lang+' original content fragment omitted');
+  assert.deepEqual([...originalIds,'economics-reading-guide'].sort(),currentIds,lang+' original or reviewed new content fragment omitted');
   assert.equal(tableInventory.length,7,lang+' original table lost');
   assert.equal(metricInventory.length,22,lang+' original economic metric lost');
   assert.equal(actionInventory.length,6,lang+' original Explorer action lost');
   assert.equal(marketInventory.length,100,lang+' original market row data lost');
-  assert.deepEqual(evidence.summary,{originalIds:53,originalLinks:96,protectedLinks:90,explorerActions:6,replacedNavigationLinks:6,tables:7,models:8,cases:8,metrics:22},
-   lang+' original content inventory changed');
+  // Each reviewed addition contributes one article ID, one heading ID and
+  // one source link; all other original inventory counts remain unchanged.
+  assert.deepEqual(evidence.summary,{originalIds:57,originalLinks:98,protectedLinks:92,explorerActions:6,replacedNavigationLinks:6,tables:7,models:8,cases:8,metrics:22},
+   lang+' content inventory changed beyond the two reviewed news panels');
   for(const [id,key] of Object.entries(evidence.anchors)){
    assert.equal(documents[key].querySelectorAll('[id="'+id+'"]').length,1,lang+' lost canonical fragment '+id);
    assert.equal(documents.hub.querySelectorAll('[id="'+id+'"]').length,1,lang+' lost native legacy fragment '+id);
   }
+  for(const [id,panel] of Object.entries(newsPanels)){
+   const article=documents[panel.destination].getElementById(id);
+   assert.equal(article?.tagName,'ARTICLE',lang+' missing reviewed news article '+id);
+   assert.equal(article.getAttribute('data-news-review'),'2026-11-22',lang+' undated news article '+id);
+   assert.equal(article.getAttribute('aria-labelledby'),id+'-title',lang+' news heading relationship changed '+id);
+   assert.equal(article.querySelectorAll('#'+id+'-title').length,1,lang+' missing news heading '+id);
+   assert.ok(article.closest('#'+panel.parent),lang+' news article left its reviewed partition '+id);
+   const sources=[...article.querySelectorAll('a[href]')];
+   assert.equal(sources.length,1,lang+' reviewed source count changed '+id);
+   assert.equal(sources[0].getAttribute('href'),panel.source,lang+' reviewed source changed '+id);
+  }
   for(const [key,document] of Object.entries(documents))uniqueIds(document,lang+'/'+key);
  }
- return {languages:4,blocks:blocksChecked,originalFragmentsPerLanguage:53,tablesPerLanguage:7,metricsPerLanguage:22,linksChecked};
+ return {languages:4,blocks:blocksChecked,originalFragmentsPerLanguage:53,addedFragmentsPerLanguage:4,tablesPerLanguage:7,metricsPerLanguage:22,linksChecked};
 }
 
 function validateEconomicsOrder(){
@@ -154,7 +194,7 @@ function validateEconomicsOrder(){
   assert.ok(section.querySelector('.readerNext'),'The next-question links were lost');
   assert.equal(document.getElementById('cemetery').parentNode,section.parentNode,'Cemetery must remain its own chapter');
   uniqueIds(document,file);
-  for(const id of baselineIds)assert.ok(document.getElementById(id),file+' missing legacy fragment '+id);
+  for(const id of currentIds)assert.ok(document.getElementById(id),file+' missing original or reviewed new fragment '+id);
   const fallback=section.querySelector('.economicsLegacy');
   assert.ok(fallback,'Old fragments need ordinary fallback links');
   for(const key of keys)assert.ok([...fallback.querySelectorAll('a[href]')].some(link=>
@@ -194,5 +234,5 @@ function validateEconomicsOrder(){
  return {...preservation,nativePages:5,detailPages:16,modelsPerLanguage:8,casesPerLanguage:8,hubWords};
 }
 
-module.exports={validatePreservation,validateEconomicsOrder,readingWordCount,baselineIds,keys};
+module.exports={validatePreservation,validateEconomicsOrder,readingWordCount,validateAnchorMap,baselineIds,keys};
 if(require.main===module)console.log('ECONOMICS_ORDER_STATIC_OK '+JSON.stringify(validateEconomicsOrder()));

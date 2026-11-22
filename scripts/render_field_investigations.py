@@ -70,7 +70,7 @@ def load(root: Path = ROOT):
             if not section.get("sourceIds") or any(i not in sources for i in section["sourceIds"]):
                 raise ValueError("Narrative section lacks identifiable evidence")
         revisions = case.get("revisionHistory", [])
-        if (len(revisions) != (4 if index == 4 else 2 if index == 3 else 1)
+        if (len(revisions) != (5 if index == 4 else 2 if index == 3 else 1)
                 or revisions[-1]["date"] != case["revisedOn"]
                 or any(date.fromisoformat(x["date"]) > reviewed or not x.get("sourceIds")
                        or any(i not in sources for i in x["sourceIds"]) for x in revisions)
@@ -90,7 +90,8 @@ def load(root: Path = ROOT):
         if index == 4:
             if (revisions[0]["date"]!="2026-10-10" or revisions[1]["date"]!="2026-10-17" or
                     revisions[2]["changeKey"]!="field18ReconciliationRevision" or
-                    revisions[3]["changeKey"]!="field17ReplacementRevision" or revisions[3]["date"]!="2026-11-17"):
+                    revisions[3]["changeKey"]!="field17ReplacementRevision" or revisions[3]["date"]!="2026-11-17" or
+                    revisions[4]["changeKey"]!="field22ReplacementRevision" or revisions[4]["date"]!="2026-11-22"):
                 raise ValueError("Original 10/17 October replacement reviews must be retained")
             validate_editorial_updates(case,translations,root)
             observed = {item["id"]: item["value"] for item in case.get("quantities", [])}

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "editorialLayer": "2026-round-field-notes-not-part-of-frozen-RR1",
-  "lastReviewed": "2026-11-17",
+  "lastReviewed": "2026-11-22",
   "policy": "Only sourced public observations, explicitly dated reconstructions and open questions; never infer causes from mismatched aggregate snapshots or include privileged application details.",
   "episodes": [
     {
@@ -9,7 +9,7 @@
       "slug": "reveal-day-counts",
       "number": 1,
       "publishedOn": "2026-10-10",
-      "revisedOn": "2026-11-17",
+      "revisedOn": "2026-11-22",
       "periodStart": "2026-09-22",
       "periodEnd": "2026-10-08",
       "state": "partly-explained",
@@ -188,13 +188,37 @@
           "kind": "derived",
           "labelKey": "field17SourceLaterRecheck",
           "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/main/data/evidence/string-confirmation-2026-11-17/aps-statistics-export-recheck-2038.json"
+        },
+        {
+          "id": "icann-scd-announcement-updated",
+          "kind": "primary",
+          "labelKey": "field22SourceCorrection",
+          "url": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en"
+        },
+        {
+          "id": "project-round-followup-20261122",
+          "kind": "derived",
+          "labelKey": "field22SourceFollowup",
+          "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/main/data/round_2026_followup_20261122.json"
+        },
+        {
+          "id": "aps-official-withdrawal",
+          "kind": "primary",
+          "labelKey": "field22SourceOfficial",
+          "url": "https://newgtldprogram-aps.icann.org/applications/CCS2640T-T64563/summary"
+        },
+        {
+          "id": "aps-followup-export",
+          "kind": "primary",
+          "labelKey": "field22SourceCurrentExport",
+          "url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv"
         }
       ],
       "updateTriggers": [
         "ICANN publishes a specific explanation for the 22 September 1,616 to 7 October 1,615 change",
         "ICANN changes the WDO application administrative-check status or APS visibility",
-        "ICANN reconciles the four-application difference between its 17 November announcement aggregates and the public APS/contention files",
-        "ICANN publishes a correction or a record-level reconciliation that establishes the cause of the aggregate discrepancy"
+        "ICANN corrects the residual 36-fewer-sets wording or explains the original November announcement figures",
+        "Further dated APS exports identify changes in individual application status or evaluation outcomes"
       ],
       "revisionHistory": [
         {
@@ -243,6 +267,17 @@
             "project-scd-reconciliation",
             "icann-aps-stats",
             "icann-aps-wdo"
+          ]
+        },
+        {
+          "date": "2026-11-22",
+          "changeKey": "behindRevisionCorrection20261122",
+          "sourceIds": [
+            "icann-scd-announcement-updated",
+            "icann-aps-stats",
+            "aps-followup-export",
+            "aps-official-withdrawal",
+            "project-round-followup-20261122"
           ]
         }
       ],
@@ -335,7 +370,52 @@
             "icann-aps-stats",
             "icann-aps-wdo",
             "project-scd-later-recheck"
+          ],
+          "supersededBy": "official-correction-20261122",
+          "historicalNoticeKey": "field22HistoricalNotice"
+        },
+        {
+          "id": "official-correction-20261122",
+          "date": "2026-11-22",
+          "reviewLabelKey": "field22ReviewLabel",
+          "titleKey": "field22CorrectionTitle",
+          "paragraphKeys": [
+            "field22CorrectionBody1",
+            "field22CorrectionBody2",
+            "field22CorrectionLimit"
+          ],
+          "sourceIds": [
+            "icann-scd-announcement",
+            "icann-scd-announcement-updated",
+            "project-round-followup-20261122"
           ]
+        },
+        {
+          "id": "current-aps-followup-20261122",
+          "date": "2026-11-22",
+          "reviewLabelKey": "field22ReviewLabel",
+          "titleKey": "field22LiveTitle",
+          "paragraphKeys": [
+            "field22LiveBody1",
+            "field22LiveBody2",
+            "field22LabelChangesBody",
+            "field22OfficialBody"
+          ],
+          "closingKey": "field22EvidenceBoundary",
+          "sourceIds": [
+            "icann-aps-stats",
+            "aps-followup-export",
+            "aps-official-withdrawal",
+            "project-round-followup-20261122"
+          ]
+        }
+      ],
+      "completedUpdateTriggers": [
+        {
+          "observedOn": "2026-11-22",
+          "trigger": "ICANN reconciles the four-application difference between its 17 November announcement aggregates and the public APS/contention files",
+          "result": "Official updated announcement corrects the snapshot to 1606 proceeding and 705 in contention. The specific reason for the original figures is not stated.",
+          "sourceId": "icann-scd-announcement-updated"
         }
       ]
     },
