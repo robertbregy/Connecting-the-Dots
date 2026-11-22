@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "siteVersion": "0.8.1",
+  "siteVersion": "0.8.2",
   "baseCommit": "4c7ddb62c7601f6971815aef17b7dce0f5f01e73",
   "locales": {
     "en": {
@@ -23,6 +23,8 @@
         "market-search": "market",
         "market-web": "market",
         "market-zones": "market",
+        "news22-dnib-q3": "market",
+        "news22-dnib-q3-title": "market",
         "tld-market-reach": "market",
         "econ-case-ai": "cases",
         "econ-case-auctions": "cases",
@@ -36,6 +38,8 @@
         "economics-cases": "cases",
         "economics-chapter-cases": "cases",
         "economics-part-7": "cases",
+        "news22-domain-options": "cases",
+        "news22-domain-options-title": "cases",
         "economics-chapter-concentration": "portfolios",
         "economics-concentration": "portfolios",
         "economics-contention-2026": "portfolios",
@@ -425,7 +429,7 @@
           "destinationSelector": "#economics-chapter-reach",
           "sourceExcludeSelectors": [],
           "before": {
-            "textSha256": "125952972c71822ac3526323a30307c5561f255e694417df8231b3988a562f76",
+            "textSha256": "6fb41892c5c43a779fe989746877e99dfe19944432c39b0fab4fc1bd7cde97be",
             "ids": [
               "economics-chapter-reach",
               "economics-reach",
@@ -435,6 +439,8 @@
               "market-search",
               "market-web",
               "market-zones",
+              "news22-dnib-q3",
+              "news22-dnib-q3-title",
               "tld-market-reach"
             ],
             "links": [
@@ -489,6 +495,10 @@
               {
                 "text": "Who runs the infrastructure →",
                 "url": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=geography#rsp-tld-footprint"
+              },
+              {
+                "text": "Verisign / DNIB · Q3 report, 22 October 2026",
+                "url": "https://verisigninc.gcs-web.com/news-releases/news-release-details/dnibcom-reports-internet-has-4116-million-domain-name"
               }
             ],
             "actions": [],
@@ -1618,7 +1628,7 @@
             "graphics": []
           },
           "after": {
-            "textSha256": "125952972c71822ac3526323a30307c5561f255e694417df8231b3988a562f76",
+            "textSha256": "6fb41892c5c43a779fe989746877e99dfe19944432c39b0fab4fc1bd7cde97be",
             "ids": [
               "economics-chapter-reach",
               "economics-reach",
@@ -1628,6 +1638,8 @@
               "market-search",
               "market-web",
               "market-zones",
+              "news22-dnib-q3",
+              "news22-dnib-q3-title",
               "tld-market-reach"
             ],
             "links": [
@@ -1682,6 +1694,10 @@
               {
                 "text": "Who runs the infrastructure →",
                 "url": "https://robertbregy.github.io/Connecting-the-Dots/en/?tab=geography#rsp-tld-footprint"
+              },
+              {
+                "text": "Verisign / DNIB · Q3 report, 22 October 2026",
+                "url": "https://verisigninc.gcs-web.com/news-releases/news-release-details/dnibcom-reports-internet-has-4116-million-domain-name"
               }
             ],
             "actions": [],
@@ -2819,7 +2835,7 @@
           "destinationSelector": "#economics-chapter-cases",
           "sourceExcludeSelectors": [],
           "before": {
-            "textSha256": "555455e30f7b459cf11867401afbb89a36a225003e169f0c4812b54bae18008a",
+            "textSha256": "3ee4b46d162807874fcc50ec89868f91ebcbd972e219a79ea2b119e3733dfffd",
             "ids": [
               "econ-case-ai",
               "econ-case-auctions",
@@ -2832,7 +2848,9 @@
               "economicGrid",
               "economics-cases",
               "economics-chapter-cases",
-              "economics-part-7"
+              "economics-part-7",
+              "news22-domain-options",
+              "news22-domain-options-title"
             ],
             "links": [
               {
@@ -2906,6 +2924,10 @@
               {
                 "text": "ICANN — 2026 financial projection templates ↗",
                 "url": "https://newgtldprogram-2026-agb.icann.org/en/16-appendix-5-templates-for-standard-financial-profile.html"
+              },
+              {
+                "text": "Identity Digital / Deqo · announcement, 10 November 2026",
+                "url": "https://www.businesswire.com/news/home/20261110723636/en/Identity-Digital-and-Deqo-Launch-Domain-Options-to-Improve-Capital-Efficiency-for-Investors"
               }
             ],
             "actions": [
@@ -2963,7 +2985,7 @@
             "graphics": []
           },
           "after": {
-            "textSha256": "555455e30f7b459cf11867401afbb89a36a225003e169f0c4812b54bae18008a",
+            "textSha256": "3ee4b46d162807874fcc50ec89868f91ebcbd972e219a79ea2b119e3733dfffd",
             "ids": [
               "econ-case-ai",
               "econ-case-auctions",
@@ -2976,7 +2998,9 @@
               "economicGrid",
               "economics-cases",
               "economics-chapter-cases",
-              "economics-part-7"
+              "economics-part-7",
+              "news22-domain-options",
+              "news22-domain-options-title"
             ],
             "links": [
               {
@@ -3050,6 +3074,10 @@
               {
                 "text": "ICANN — 2026 financial projection templates ↗",
                 "url": "https://newgtldprogram-2026-agb.icann.org/en/16-appendix-5-templates-for-standard-financial-profile.html"
+              },
+              {
+                "text": "Identity Digital / Deqo · announcement, 10 November 2026",
+                "url": "https://www.businesswire.com/news/home/20261110723636/en/Identity-Digital-and-Deqo-Launch-Domain-Options-to-Improve-Capital-Efficiency-for-Investors"
               }
             ],
             "actions": [
@@ -4857,9 +4885,9 @@
         }
       ],
       "summary": {
-        "originalIds": 53,
-        "originalLinks": 96,
-        "protectedLinks": 90,
+        "originalIds": 57,
+        "originalLinks": 98,
+        "protectedLinks": 92,
         "explorerActions": 6,
         "replacedNavigationLinks": 6,
         "tables": 7,
@@ -4888,6 +4916,8 @@
         "market-search": "market",
         "market-web": "market",
         "market-zones": "market",
+        "news22-dnib-q3": "market",
+        "news22-dnib-q3-title": "market",
         "tld-market-reach": "market",
         "econ-case-ai": "cases",
         "econ-case-auctions": "cases",
@@ -4901,6 +4931,8 @@
         "economics-cases": "cases",
         "economics-chapter-cases": "cases",
         "economics-part-7": "cases",
+        "news22-domain-options": "cases",
+        "news22-domain-options-title": "cases",
         "economics-chapter-concentration": "portfolios",
         "economics-concentration": "portfolios",
         "economics-contention-2026": "portfolios",
@@ -5290,7 +5322,7 @@
           "destinationSelector": "#economics-chapter-reach",
           "sourceExcludeSelectors": [],
           "before": {
-            "textSha256": "deceb576f09a8e03d13927dddcf38bd6f2658ffa72ff850fa4cfde91bb0db467",
+            "textSha256": "0b5f2dce457c295677a5caf513858e2147ce7eb56b8ed44e480032f3460f0c26",
             "ids": [
               "economics-chapter-reach",
               "economics-reach",
@@ -5300,6 +5332,8 @@
               "market-search",
               "market-web",
               "market-zones",
+              "news22-dnib-q3",
+              "news22-dnib-q3-title",
               "tld-market-reach"
             ],
             "links": [
@@ -5354,6 +5388,10 @@
               {
                 "text": "Chi gestisce l’infrastruttura →",
                 "url": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=geography#rsp-tld-footprint"
+              },
+              {
+                "text": "Verisign / DNIB · rapporto trimestrale, 22 ottobre 2026",
+                "url": "https://verisigninc.gcs-web.com/news-releases/news-release-details/dnibcom-reports-internet-has-4116-million-domain-name"
               }
             ],
             "actions": [],
@@ -6483,7 +6521,7 @@
             "graphics": []
           },
           "after": {
-            "textSha256": "deceb576f09a8e03d13927dddcf38bd6f2658ffa72ff850fa4cfde91bb0db467",
+            "textSha256": "0b5f2dce457c295677a5caf513858e2147ce7eb56b8ed44e480032f3460f0c26",
             "ids": [
               "economics-chapter-reach",
               "economics-reach",
@@ -6493,6 +6531,8 @@
               "market-search",
               "market-web",
               "market-zones",
+              "news22-dnib-q3",
+              "news22-dnib-q3-title",
               "tld-market-reach"
             ],
             "links": [
@@ -6547,6 +6587,10 @@
               {
                 "text": "Chi gestisce l’infrastruttura →",
                 "url": "https://robertbregy.github.io/Connecting-the-Dots/it/?tab=geography#rsp-tld-footprint"
+              },
+              {
+                "text": "Verisign / DNIB · rapporto trimestrale, 22 ottobre 2026",
+                "url": "https://verisigninc.gcs-web.com/news-releases/news-release-details/dnibcom-reports-internet-has-4116-million-domain-name"
               }
             ],
             "actions": [],
@@ -7684,7 +7728,7 @@
           "destinationSelector": "#economics-chapter-cases",
           "sourceExcludeSelectors": [],
           "before": {
-            "textSha256": "502d1336cc887dcef00a601a5a871c1fd4e7e453f68b1f6caa4e4aa7a36cd0f9",
+            "textSha256": "42296e5eda51e370d97b2ad06c738ca68a8b1225f4b137cbc4d8f1493c62e768",
             "ids": [
               "econ-case-ai",
               "econ-case-auctions",
@@ -7697,7 +7741,9 @@
               "economicGrid",
               "economics-cases",
               "economics-chapter-cases",
-              "economics-part-7"
+              "economics-part-7",
+              "news22-domain-options",
+              "news22-domain-options-title"
             ],
             "links": [
               {
@@ -7771,6 +7817,10 @@
               {
                 "text": "ICANN — 2026 financial projection templates ↗",
                 "url": "https://newgtldprogram-2026-agb.icann.org/en/16-appendix-5-templates-for-standard-financial-profile.html"
+              },
+              {
+                "text": "Identity Digital / Deqo · annuncio del 10 novembre 2026",
+                "url": "https://www.businesswire.com/news/home/20261110723636/en/Identity-Digital-and-Deqo-Launch-Domain-Options-to-Improve-Capital-Efficiency-for-Investors"
               }
             ],
             "actions": [
@@ -7828,7 +7878,7 @@
             "graphics": []
           },
           "after": {
-            "textSha256": "502d1336cc887dcef00a601a5a871c1fd4e7e453f68b1f6caa4e4aa7a36cd0f9",
+            "textSha256": "42296e5eda51e370d97b2ad06c738ca68a8b1225f4b137cbc4d8f1493c62e768",
             "ids": [
               "econ-case-ai",
               "econ-case-auctions",
@@ -7841,7 +7891,9 @@
               "economicGrid",
               "economics-cases",
               "economics-chapter-cases",
-              "economics-part-7"
+              "economics-part-7",
+              "news22-domain-options",
+              "news22-domain-options-title"
             ],
             "links": [
               {
@@ -7915,6 +7967,10 @@
               {
                 "text": "ICANN — 2026 financial projection templates ↗",
                 "url": "https://newgtldprogram-2026-agb.icann.org/en/16-appendix-5-templates-for-standard-financial-profile.html"
+              },
+              {
+                "text": "Identity Digital / Deqo · annuncio del 10 novembre 2026",
+                "url": "https://www.businesswire.com/news/home/20261110723636/en/Identity-Digital-and-Deqo-Launch-Domain-Options-to-Improve-Capital-Efficiency-for-Investors"
               }
             ],
             "actions": [
@@ -9722,9 +9778,9 @@
         }
       ],
       "summary": {
-        "originalIds": 53,
-        "originalLinks": 96,
-        "protectedLinks": 90,
+        "originalIds": 57,
+        "originalLinks": 98,
+        "protectedLinks": 92,
         "explorerActions": 6,
         "replacedNavigationLinks": 6,
         "tables": 7,
@@ -9753,6 +9809,8 @@
         "market-search": "market",
         "market-web": "market",
         "market-zones": "market",
+        "news22-dnib-q3": "market",
+        "news22-dnib-q3-title": "market",
         "tld-market-reach": "market",
         "econ-case-ai": "cases",
         "econ-case-auctions": "cases",
@@ -9766,6 +9824,8 @@
         "economics-cases": "cases",
         "economics-chapter-cases": "cases",
         "economics-part-7": "cases",
+        "news22-domain-options": "cases",
+        "news22-domain-options-title": "cases",
         "economics-chapter-concentration": "portfolios",
         "economics-concentration": "portfolios",
         "economics-contention-2026": "portfolios",
@@ -10155,7 +10215,7 @@
           "destinationSelector": "#economics-chapter-reach",
           "sourceExcludeSelectors": [],
           "before": {
-            "textSha256": "1b2bdbdfa79650bf9af319ede9f2017c345e2f1a0bb56da1f7cc431dddde338d",
+            "textSha256": "bde4bf94b1ac41e0ea80a459055c7a546054565ebdeaa643960b64835aee68a2",
             "ids": [
               "economics-chapter-reach",
               "economics-reach",
@@ -10165,6 +10225,8 @@
               "market-search",
               "market-web",
               "market-zones",
+              "news22-dnib-q3",
+              "news22-dnib-q3-title",
               "tld-market-reach"
             ],
             "links": [
@@ -10219,6 +10281,10 @@
               {
                 "text": "Wer die Infrastruktur betreibt →",
                 "url": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=geography#rsp-tld-footprint"
+              },
+              {
+                "text": "Verisign / DNIB · Quartalsbericht, 22. Oktober 2026",
+                "url": "https://verisigninc.gcs-web.com/news-releases/news-release-details/dnibcom-reports-internet-has-4116-million-domain-name"
               }
             ],
             "actions": [],
@@ -11348,7 +11414,7 @@
             "graphics": []
           },
           "after": {
-            "textSha256": "1b2bdbdfa79650bf9af319ede9f2017c345e2f1a0bb56da1f7cc431dddde338d",
+            "textSha256": "bde4bf94b1ac41e0ea80a459055c7a546054565ebdeaa643960b64835aee68a2",
             "ids": [
               "economics-chapter-reach",
               "economics-reach",
@@ -11358,6 +11424,8 @@
               "market-search",
               "market-web",
               "market-zones",
+              "news22-dnib-q3",
+              "news22-dnib-q3-title",
               "tld-market-reach"
             ],
             "links": [
@@ -11412,6 +11480,10 @@
               {
                 "text": "Wer die Infrastruktur betreibt →",
                 "url": "https://robertbregy.github.io/Connecting-the-Dots/de/?tab=geography#rsp-tld-footprint"
+              },
+              {
+                "text": "Verisign / DNIB · Quartalsbericht, 22. Oktober 2026",
+                "url": "https://verisigninc.gcs-web.com/news-releases/news-release-details/dnibcom-reports-internet-has-4116-million-domain-name"
               }
             ],
             "actions": [],
@@ -12549,7 +12621,7 @@
           "destinationSelector": "#economics-chapter-cases",
           "sourceExcludeSelectors": [],
           "before": {
-            "textSha256": "52134f787ff11264bef48b9fe845c7ce4a5f520156bc00f1e87dccbfd33bd913",
+            "textSha256": "41922980f4052529f3b5b5909250fd5e45e8fb33608ea276e8e37ee55139f019",
             "ids": [
               "econ-case-ai",
               "econ-case-auctions",
@@ -12562,7 +12634,9 @@
               "economicGrid",
               "economics-cases",
               "economics-chapter-cases",
-              "economics-part-7"
+              "economics-part-7",
+              "news22-domain-options",
+              "news22-domain-options-title"
             ],
             "links": [
               {
@@ -12636,6 +12710,10 @@
               {
                 "text": "ICANN — 2026 financial projection templates ↗",
                 "url": "https://newgtldprogram-2026-agb.icann.org/en/16-appendix-5-templates-for-standard-financial-profile.html"
+              },
+              {
+                "text": "Identity Digital / Deqo · Ankündigung vom 10. November 2026",
+                "url": "https://www.businesswire.com/news/home/20261110723636/en/Identity-Digital-and-Deqo-Launch-Domain-Options-to-Improve-Capital-Efficiency-for-Investors"
               }
             ],
             "actions": [
@@ -12693,7 +12771,7 @@
             "graphics": []
           },
           "after": {
-            "textSha256": "52134f787ff11264bef48b9fe845c7ce4a5f520156bc00f1e87dccbfd33bd913",
+            "textSha256": "41922980f4052529f3b5b5909250fd5e45e8fb33608ea276e8e37ee55139f019",
             "ids": [
               "econ-case-ai",
               "econ-case-auctions",
@@ -12706,7 +12784,9 @@
               "economicGrid",
               "economics-cases",
               "economics-chapter-cases",
-              "economics-part-7"
+              "economics-part-7",
+              "news22-domain-options",
+              "news22-domain-options-title"
             ],
             "links": [
               {
@@ -12780,6 +12860,10 @@
               {
                 "text": "ICANN — 2026 financial projection templates ↗",
                 "url": "https://newgtldprogram-2026-agb.icann.org/en/16-appendix-5-templates-for-standard-financial-profile.html"
+              },
+              {
+                "text": "Identity Digital / Deqo · Ankündigung vom 10. November 2026",
+                "url": "https://www.businesswire.com/news/home/20261110723636/en/Identity-Digital-and-Deqo-Launch-Domain-Options-to-Improve-Capital-Efficiency-for-Investors"
               }
             ],
             "actions": [
@@ -14587,9 +14671,9 @@
         }
       ],
       "summary": {
-        "originalIds": 53,
-        "originalLinks": 96,
-        "protectedLinks": 90,
+        "originalIds": 57,
+        "originalLinks": 98,
+        "protectedLinks": 92,
         "explorerActions": 6,
         "replacedNavigationLinks": 6,
         "tables": 7,
@@ -14618,6 +14702,8 @@
         "market-search": "market",
         "market-web": "market",
         "market-zones": "market",
+        "news22-dnib-q3": "market",
+        "news22-dnib-q3-title": "market",
         "tld-market-reach": "market",
         "econ-case-ai": "cases",
         "econ-case-auctions": "cases",
@@ -14631,6 +14717,8 @@
         "economics-cases": "cases",
         "economics-chapter-cases": "cases",
         "economics-part-7": "cases",
+        "news22-domain-options": "cases",
+        "news22-domain-options-title": "cases",
         "economics-chapter-concentration": "portfolios",
         "economics-concentration": "portfolios",
         "economics-contention-2026": "portfolios",
@@ -15020,7 +15108,7 @@
           "destinationSelector": "#economics-chapter-reach",
           "sourceExcludeSelectors": [],
           "before": {
-            "textSha256": "4ff868326c6e532716c9946e8132f3fc3522eef8ee0ba6260337641daa4586fc",
+            "textSha256": "46130a19c999e5f5aa811a9009efdeb97bec353361cc65bce065e00dd0228456",
             "ids": [
               "economics-chapter-reach",
               "economics-reach",
@@ -15030,6 +15118,8 @@
               "market-search",
               "market-web",
               "market-zones",
+              "news22-dnib-q3",
+              "news22-dnib-q3-title",
               "tld-market-reach"
             ],
             "links": [
@@ -15084,6 +15174,10 @@
               {
                 "text": "Qui gère l’infrastructure →",
                 "url": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=geography#rsp-tld-footprint"
+              },
+              {
+                "text": "Verisign / DNIB · rapport trimestriel, 22 octobre 2026",
+                "url": "https://verisigninc.gcs-web.com/news-releases/news-release-details/dnibcom-reports-internet-has-4116-million-domain-name"
               }
             ],
             "actions": [],
@@ -16213,7 +16307,7 @@
             "graphics": []
           },
           "after": {
-            "textSha256": "4ff868326c6e532716c9946e8132f3fc3522eef8ee0ba6260337641daa4586fc",
+            "textSha256": "46130a19c999e5f5aa811a9009efdeb97bec353361cc65bce065e00dd0228456",
             "ids": [
               "economics-chapter-reach",
               "economics-reach",
@@ -16223,6 +16317,8 @@
               "market-search",
               "market-web",
               "market-zones",
+              "news22-dnib-q3",
+              "news22-dnib-q3-title",
               "tld-market-reach"
             ],
             "links": [
@@ -16277,6 +16373,10 @@
               {
                 "text": "Qui gère l’infrastructure →",
                 "url": "https://robertbregy.github.io/Connecting-the-Dots/fr/?tab=geography#rsp-tld-footprint"
+              },
+              {
+                "text": "Verisign / DNIB · rapport trimestriel, 22 octobre 2026",
+                "url": "https://verisigninc.gcs-web.com/news-releases/news-release-details/dnibcom-reports-internet-has-4116-million-domain-name"
               }
             ],
             "actions": [],
@@ -17414,7 +17514,7 @@
           "destinationSelector": "#economics-chapter-cases",
           "sourceExcludeSelectors": [],
           "before": {
-            "textSha256": "370c45b4ce6e04902412b2aca3999446c735699479cb3cb87973ec98b026a3b4",
+            "textSha256": "093ad94fe5603e4acd3d7f5d241959a993087df99ccb0f0262c25428be495fc4",
             "ids": [
               "econ-case-ai",
               "econ-case-auctions",
@@ -17427,7 +17527,9 @@
               "economicGrid",
               "economics-cases",
               "economics-chapter-cases",
-              "economics-part-7"
+              "economics-part-7",
+              "news22-domain-options",
+              "news22-domain-options-title"
             ],
             "links": [
               {
@@ -17501,6 +17603,10 @@
               {
                 "text": "ICANN — 2026 financial projection templates ↗",
                 "url": "https://newgtldprogram-2026-agb.icann.org/en/16-appendix-5-templates-for-standard-financial-profile.html"
+              },
+              {
+                "text": "Identity Digital / Deqo · annonce du 10 novembre 2026",
+                "url": "https://www.businesswire.com/news/home/20261110723636/en/Identity-Digital-and-Deqo-Launch-Domain-Options-to-Improve-Capital-Efficiency-for-Investors"
               }
             ],
             "actions": [
@@ -17558,7 +17664,7 @@
             "graphics": []
           },
           "after": {
-            "textSha256": "370c45b4ce6e04902412b2aca3999446c735699479cb3cb87973ec98b026a3b4",
+            "textSha256": "093ad94fe5603e4acd3d7f5d241959a993087df99ccb0f0262c25428be495fc4",
             "ids": [
               "econ-case-ai",
               "econ-case-auctions",
@@ -17571,7 +17677,9 @@
               "economicGrid",
               "economics-cases",
               "economics-chapter-cases",
-              "economics-part-7"
+              "economics-part-7",
+              "news22-domain-options",
+              "news22-domain-options-title"
             ],
             "links": [
               {
@@ -17645,6 +17753,10 @@
               {
                 "text": "ICANN — 2026 financial projection templates ↗",
                 "url": "https://newgtldprogram-2026-agb.icann.org/en/16-appendix-5-templates-for-standard-financial-profile.html"
+              },
+              {
+                "text": "Identity Digital / Deqo · annonce du 10 novembre 2026",
+                "url": "https://www.businesswire.com/news/home/20261110723636/en/Identity-Digital-and-Deqo-Launch-Domain-Options-to-Improve-Capital-Efficiency-for-Investors"
               }
             ],
             "actions": [
@@ -19452,9 +19564,9 @@
         }
       ],
       "summary": {
-        "originalIds": 53,
-        "originalLinks": 96,
-        "protectedLinks": 90,
+        "originalIds": 57,
+        "originalLinks": 98,
+        "protectedLinks": 92,
         "explorerActions": 6,
         "replacedNavigationLinks": 6,
         "tables": 7,

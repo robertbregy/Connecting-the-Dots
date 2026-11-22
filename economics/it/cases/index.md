@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/it/cases/ | Site edition: 0.8.1 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/it/cases/ | Site edition: 0.8.2 | Language: it -->
 
 Analisi economica
 
@@ -300,6 +300,16 @@ La fee non è il prezzo d’acquisto di un TLD. È il costo d’ingresso in un p
 
 [ICANN — 2012 New gTLD evaluation fee ↗](https://newgtlds.icann.org/en/applicants/global-support/faqs/faqs-en) [ICANN — 2026 gTLD evaluation fee ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/2026-round-general/gtld-evaluation-fee/faqs) [ICANN — 2026 financial projection templates ↗](https://newgtldprogram-2026-agb.icann.org/en/16-appendix-5-templates-for-standard-financial-profile.html)
 
-**Di Robert Bregy** · Edizione del sito 0.8.1 · 18 novembre 2026
+Fonti verificate: 2026-11-22
+
+### Domain Options: pagare il tempo per trovare un acquirente
+
+Il 10 novembre 2026 Identity Digital e Deqo hanno annunciato Domain Options: il diritto esclusivo di commercializzare e vendere un nome per 24 mesi, inizialmente a USD 20–30 su 17 TLD, fra cui .info, .io, .studio, .bet e .live.
+
+Se il nome non viene venduto, l'opzione scade e torna disponibile al pubblico. È un nuovo meccanismo commerciale documentato; l'annuncio non dimostra adozione, vendite realizzate o rendimenti.
+
+[Identity Digital / Deqo · annuncio del 10 novembre 2026](https://www.businesswire.com/news/home/20261110723636/en/Identity-Digital-and-Deqo-Launch-Domain-Options-to-Improve-Capital-Efficiency-for-Investors)
+
+**Di Robert Bregy** · Edizione del sito 0.8.2 · 22 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

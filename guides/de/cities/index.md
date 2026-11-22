@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/cities/ | Site edition: 0.8.1 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/cities/ | Site edition: 0.8.2 | Language: de -->
 
 Leitfaden
 
@@ -163,10 +163,10 @@ FAKT EINORDNUNG
 
 ### [.helsinki: Eine Stadt kann ihre TLD auch aufgeben](https://robertbregy.github.io/Connecting-the-Dots/de/#helsinki-termination)
 
-2026 leitete Helsinki die freiwillige Beendigung seines Registry-Vertrags ein. Der Fall ist ein wichtiger Gegenpol für Städte mit TLD-Plänen: Eine Delegierung zu erhalten und sie langfristig zu betreiben, sind unterschiedliche Entscheidungen.
+Helsinki schloss 2026 die freiwillige Beendigung seiner Stadt-TLD ab: Die Delegation wurde am 28. Oktober widerrufen, der Registry-Vertrag endete am 13. November. Eine Delegation zu erhalten und sie langfristig aufrechtzuerhalten sind unterschiedliche Entscheidungen.
 
 Chronologie und belegten Status lesen →
 
-**Von Robert Bregy** · Ausgabe der Website 0.8.1 · 18. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.8.2 · 22. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

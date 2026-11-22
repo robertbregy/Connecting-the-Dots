@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/fr/beyond/ | Site edition: 0.8.1 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/fr/beyond/ | Site edition: 0.8.2 | Language: fr -->
 
 Guide
 
@@ -237,6 +237,18 @@ ALT
 
 [IANA · special-use names ↗](https://www.iana.org/assignments/special-use-domain-names) [ENS · protocol ↗](https://docs.ens.domains/learn/protocol/) [Handshake ↗](https://handshake.org/)
 
-**Par Robert Bregy** · Édition du site 0.8.1 · 18 novembre 2026
+Sources vérifiées: 2026-11-22 · Projets et propositions · vérification du 22 novembre 2026
+
+### Le DNS dans l’identité des agents d’IA
+
+Le 10 novembre 2026, la Linux Foundation a accueilli Agent Name Service (ANS), qui utilise DNS et certificats pour nommer, découvrir et vérifier les identités des agents d’IA.
+
+La proposition distincte DNS for AI Discovery (DNS-AID) du 2 novembre 2026 décrit la recherche par DNS lorsque l’agent ou son organisation est connu. C’est un Internet-Draft individuel, pas une norme approuvée par l’IETF.
+
+Notre lecture : les domaines pourraient soutenir l’identité des machines. Une identité vérifiée ne garantit ni compétence ni autorisation d’agir ; l’existence de ces projets ne démontre pas, à elle seule, une adoption généralisée.
+
+[Linux Foundation · ANS, 10 novembre 2026](https://www.linuxfoundation.org/press/linux-foundation-welcomes-agent-name-service-to-bring-verifiable-identity-and-discovery-to-ai-agents) [IETF Datatracker · projet individuel DNS-AID, 2 novembre 2026](https://datatracker.ietf.org/doc/html/draft-mozleywilliams-dawn-dnsaid-00)
+
+**Par Robert Bregy** · Édition du site 0.8.2 · 22 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.

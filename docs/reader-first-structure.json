@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "native": [
     {
       "file": "en/index.html",
       "lang": "en",
-      "retainedExistingIds": 415,
+      "retainedExistingIds": 435,
       "chapters": [
         {
           "id": "how",
@@ -253,9 +253,9 @@
         "narrative": {
           "lang": "en",
           "essentialBlocks": 7,
-          "originalTranslatedItems": 1369,
-          "originalLinks": 1096,
-          "originalIds": 504,
+          "originalTranslatedItems": 1402,
+          "originalLinks": 1135,
+          "originalIds": 524,
           "removedNavigationLabels": [
             "Understand the context",
             "From extensions to individual ICANN applications",
@@ -373,7 +373,8 @@
             "panel crossRoundDisclosure",
             "2026 status: applications are public, formal objections are not open yet",
             "The procedure now lives in one place",
-            "Nine disputes that changed what the dot means"
+            "Nine disputes that changed what the dot means",
+            "news22-gov-objection-procedures"
           ],
           "after": [
             "Disputed Dots",
@@ -381,9 +382,10 @@
             "The procedure now lives in one place",
             "panel field2026Focus",
             "panel crossRoundDisclosure",
-            "2026 status: applications are public, formal objections are not open yet"
+            "2026 status: applications are public, formal objections are not open yet",
+            "news22-gov-objection-procedures"
           ],
-          "originalBlocks": 6
+          "originalBlocks": 7
         },
         "refusals": {
           "before": [
@@ -472,7 +474,7 @@
     {
       "file": "index.html",
       "lang": "en",
-      "retainedExistingIds": 415,
+      "retainedExistingIds": 435,
       "chapters": [
         {
           "id": "how",
@@ -719,9 +721,9 @@
         "narrative": {
           "lang": "en",
           "essentialBlocks": 7,
-          "originalTranslatedItems": 1369,
-          "originalLinks": 1096,
-          "originalIds": 504,
+          "originalTranslatedItems": 1402,
+          "originalLinks": 1135,
+          "originalIds": 524,
           "removedNavigationLabels": [
             "Understand the context",
             "From extensions to individual ICANN applications",
@@ -839,7 +841,8 @@
             "panel crossRoundDisclosure",
             "2026 status: applications are public, formal objections are not open yet",
             "The procedure now lives in one place",
-            "Nine disputes that changed what the dot means"
+            "Nine disputes that changed what the dot means",
+            "news22-gov-objection-procedures"
           ],
           "after": [
             "Disputed Dots",
@@ -847,9 +850,10 @@
             "The procedure now lives in one place",
             "panel field2026Focus",
             "panel crossRoundDisclosure",
-            "2026 status: applications are public, formal objections are not open yet"
+            "2026 status: applications are public, formal objections are not open yet",
+            "news22-gov-objection-procedures"
           ],
-          "originalBlocks": 6
+          "originalBlocks": 7
         },
         "refusals": {
           "before": [
@@ -938,7 +942,7 @@
     {
       "file": "it/index.html",
       "lang": "it",
-      "retainedExistingIds": 415,
+      "retainedExistingIds": 435,
       "chapters": [
         {
           "id": "how",
@@ -1185,9 +1189,9 @@
         "narrative": {
           "lang": "it",
           "essentialBlocks": 7,
-          "originalTranslatedItems": 1369,
-          "originalLinks": 1096,
-          "originalIds": 504,
+          "originalTranslatedItems": 1402,
+          "originalLinks": 1135,
+          "originalIds": 524,
           "removedNavigationLabels": [
             "Per capire il contesto",
             "Dalle estensioni alle singole domande ICANN",
@@ -1305,7 +1309,8 @@
             "panel crossRoundDisclosure",
             "Stato 2026: le candidature sono pubbliche, le obiezioni formali non sono ancora aperte",
             "La procedura, in un solo posto",
-            "Nove controversie che hanno cambiato il significato del punto"
+            "Nove controversie che hanno cambiato il significato del punto",
+            "news22-gov-objection-procedures"
           ],
           "after": [
             "Controversie che hanno cambiato il punto",
@@ -1313,9 +1318,10 @@
             "La procedura, in un solo posto",
             "panel field2026Focus",
             "panel crossRoundDisclosure",
-            "Stato 2026: le candidature sono pubbliche, le obiezioni formali non sono ancora aperte"
+            "Stato 2026: le candidature sono pubbliche, le obiezioni formali non sono ancora aperte",
+            "news22-gov-objection-procedures"
           ],
-          "originalBlocks": 6
+          "originalBlocks": 7
         },
         "refusals": {
           "before": [
@@ -1404,7 +1410,7 @@
     {
       "file": "de/index.html",
       "lang": "de",
-      "retainedExistingIds": 415,
+      "retainedExistingIds": 435,
       "chapters": [
         {
           "id": "how",
@@ -1651,9 +1657,9 @@
         "narrative": {
           "lang": "de",
           "essentialBlocks": 7,
-          "originalTranslatedItems": 1369,
-          "originalLinks": 1096,
-          "originalIds": 504,
+          "originalTranslatedItems": 1402,
+          "originalLinks": 1135,
+          "originalIds": 524,
           "removedNavigationLabels": [
             "Den Zusammenhang verstehen",
             "Von Endungen zu einzelnen ICANN-Bewerbungen",
@@ -1771,7 +1777,8 @@
             "panel crossRoundDisclosure",
             "Status 2026: Bewerbungen sind öffentlich, formale Einwände noch nicht geöffnet",
             "Das Verfahren steht jetzt an einem Ort",
-            "Neun Streitfälle, die die Bedeutung des Punkts verändert haben"
+            "Neun Streitfälle, die die Bedeutung des Punkts verändert haben",
+            "news22-gov-objection-procedures"
           ],
           "after": [
             "Streitfälle, die den Punkt verändert haben",
@@ -1779,9 +1786,10 @@
             "Das Verfahren steht jetzt an einem Ort",
             "panel field2026Focus",
             "panel crossRoundDisclosure",
-            "Status 2026: Bewerbungen sind öffentlich, formale Einwände noch nicht geöffnet"
+            "Status 2026: Bewerbungen sind öffentlich, formale Einwände noch nicht geöffnet",
+            "news22-gov-objection-procedures"
           ],
-          "originalBlocks": 6
+          "originalBlocks": 7
         },
         "refusals": {
           "before": [
@@ -1870,7 +1878,7 @@
     {
       "file": "fr/index.html",
       "lang": "fr",
-      "retainedExistingIds": 415,
+      "retainedExistingIds": 435,
       "chapters": [
         {
           "id": "how",
@@ -2117,9 +2125,9 @@
         "narrative": {
           "lang": "fr",
           "essentialBlocks": 7,
-          "originalTranslatedItems": 1369,
-          "originalLinks": 1096,
-          "originalIds": 504,
+          "originalTranslatedItems": 1402,
+          "originalLinks": 1135,
+          "originalIds": 524,
           "removedNavigationLabels": [
             "Comprendre le contexte",
             "Des extensions aux candidatures individuelles ICANN",
@@ -2237,7 +2245,8 @@
             "panel crossRoundDisclosure",
             "Statut 2026 : les candidatures sont publiques, les objections formelles ne sont pas encore ouvertes",
             "La procédure est désormais regroupée",
-            "Neuf litiges qui ont changé le sens du point"
+            "Neuf litiges qui ont changé le sens du point",
+            "news22-gov-objection-procedures"
           ],
           "after": [
             "Les litiges qui ont changé le point",
@@ -2245,9 +2254,10 @@
             "La procédure est désormais regroupée",
             "panel field2026Focus",
             "panel crossRoundDisclosure",
-            "Statut 2026 : les candidatures sont publiques, les objections formelles ne sont pas encore ouvertes"
+            "Statut 2026 : les candidatures sont publiques, les objections formelles ne sont pas encore ouvertes",
+            "news22-gov-objection-procedures"
           ],
-          "originalBlocks": 6
+          "originalBlocks": 7
         },
         "refusals": {
           "before": [
@@ -2369,7 +2379,7 @@
       "file": "behind-the-round/de/index.html",
       "lang": "de",
       "area": "ia-round",
-      "retainedExistingIds": 15
+      "retainedExistingIds": 19
     },
     {
       "file": "behind-the-round/de/objectors-eoi/index.html",
@@ -2381,7 +2391,7 @@
       "file": "behind-the-round/de/replacement-strings/index.html",
       "lang": "de",
       "area": "ia-round",
-      "retainedExistingIds": 6
+      "retainedExistingIds": 7
     },
     {
       "file": "behind-the-round/de/sanctions-and-dns/index.html",
@@ -2411,7 +2421,7 @@
       "file": "behind-the-round/en/index.html",
       "lang": "en",
       "area": "ia-round",
-      "retainedExistingIds": 15
+      "retainedExistingIds": 19
     },
     {
       "file": "behind-the-round/en/objectors-eoi/index.html",
@@ -2423,7 +2433,7 @@
       "file": "behind-the-round/en/replacement-strings/index.html",
       "lang": "en",
       "area": "ia-round",
-      "retainedExistingIds": 6
+      "retainedExistingIds": 7
     },
     {
       "file": "behind-the-round/en/sanctions-and-dns/index.html",
@@ -2453,7 +2463,7 @@
       "file": "behind-the-round/fr/index.html",
       "lang": "fr",
       "area": "ia-round",
-      "retainedExistingIds": 15
+      "retainedExistingIds": 19
     },
     {
       "file": "behind-the-round/fr/objectors-eoi/index.html",
@@ -2465,7 +2475,7 @@
       "file": "behind-the-round/fr/replacement-strings/index.html",
       "lang": "fr",
       "area": "ia-round",
-      "retainedExistingIds": 6
+      "retainedExistingIds": 7
     },
     {
       "file": "behind-the-round/fr/sanctions-and-dns/index.html",
@@ -2495,7 +2505,7 @@
       "file": "behind-the-round/it/index.html",
       "lang": "it",
       "area": "ia-round",
-      "retainedExistingIds": 15
+      "retainedExistingIds": 19
     },
     {
       "file": "behind-the-round/it/objectors-eoi/index.html",
@@ -2507,7 +2517,7 @@
       "file": "behind-the-round/it/replacement-strings/index.html",
       "lang": "it",
       "area": "ia-round",
-      "retainedExistingIds": 6
+      "retainedExistingIds": 7
     },
     {
       "file": "behind-the-round/it/sanctions-and-dns/index.html",

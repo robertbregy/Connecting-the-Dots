@@ -8,12 +8,12 @@
     "url": "https://github.com/robertbregy"
   },
   "websiteRelease": {
-    "version": "0.8.1",
-    "releasedOn": "2026-11-18",
-    "technicalAsOf": "2026-11-17",
+    "version": "0.8.2",
+    "releasedOn": "2026-11-22",
+    "technicalAsOf": "2026-11-22",
     "url": "https://robertbregy.github.io/Connecting-the-Dots/",
     "provenance": {
-      "sourceReviewCommit": "6268ae60bfedd988c00be0cbb85cd126d151c17e",
+      "sourceReviewCommit": "3cc19e0d30b13604029a115d12433d9286f9fd6d",
       "role": "source review commit used for deterministic regeneration; not the published merge commit",
       "publishedCommit": "Resolve from the GitHub Pages deployment/repository history; a Git object cannot self-embed its own final hash."
     }
@@ -1308,7 +1308,7 @@
       "formula": "baseCatalogRecords + frozen2026PrimaryStringNames - overlappingNames",
       "rootListedTlds": 1437,
       "rootObservationDate": "2026-10-04",
-      "scopeNote": "The combined interface retains the frozen Reveal Day string index; the current APS Application Atlas is a separately dated String Confirmation layer."
+      "scopeNote": "The combined interface retains the frozen Reveal Day string index; the current APS Application Atlas is a separately dated follow-up layer after String Confirmation."
     },
     "aps2026": {
       "snapshotState": "reveal-day",
@@ -1327,25 +1327,33 @@
       ]
     },
     "aps2026Current": {
-      "snapshotState": "string-confirmation",
-      "officialReportedApplications": 1610,
-      "officialStatisticsActiveApplications": 1606,
-      "officialStatisticsPublishedAt": "2026-11-17T18:09:00Z",
+      "snapshotState": "post-string-confirmation",
+      "historicalAnnouncementProceedingApplications": 1606,
+      "historicalAnnouncementSnapshotOn": "2026-11-16",
+      "historicalAnnouncementCorrectionObservedOn": "2026-11-22",
+      "officialStatisticsTotalApplications": 1615,
+      "officialStatisticsActiveApplications": 1596,
+      "officialStatisticsWithdrawnApplications": 19,
+      "officialStatisticsPublishedAt": "2026-11-22T10:39:14.813Z",
       "publicListingRows": 2783,
       "publishedBaseApplications": 1614,
-      "visibleProceedingApplications": 1605,
+      "visibleProceedingApplications": 1595,
+      "visibleWithdrawnApplications": 19,
       "replacementRows": 1169,
       "selectedReplacementApplications": 152,
-      "newPrimaryStringApplications": 1599,
-      "distinctNewPrimaryStrings": 1120,
+      "newPrimaryStringApplications": 1589,
+      "distinctNewPrimaryStrings": 1119,
       "variantOnlyExistingTldApplications": 6,
-      "publicListingObservedAt": "2026-11-17T18:30:10Z",
+      "publicListingObservedAt": "2026-11-22T10:51:04Z",
       "knownAdministrativeCheckApplications": 1,
-      "announcementVersusVisibleProceedingGap": 5,
-      "unresolvedAnnouncementPublicationGap": 4,
-      "confirmedContentionSets": 226,
-      "publicApplicationsInContention": 705,
-      "officialAnnouncementApplicationsInContention": 709,
+      "statisticsVersusVisibleProceedingGap": 1,
+      "unresolvedAnnouncementPublicationGap": 0,
+      "currentDerivedExactPrimaryMatchGroups": 225,
+      "currentApplicationsInExactPrimaryMatches": 695,
+      "officialConfirmedContentionSets": 226,
+      "officialConfirmedContentionApplications": 705,
+      "officialConfirmedSnapshotOn": "2026-11-17",
+      "officialAnnouncementApplicationsInContention": 705,
       "knownUnpublishedApplicationIds": [
         "WDO2627T-T45217"
       ]
@@ -1450,7 +1458,7 @@
       "layer": "source-records",
       "unit": "APS listing row",
       "recordCount": 2783,
-      "scope": "Separate 17 November public APS observation. Stable base IDs are preserved while selected -R records represent the effective current string.",
+      "scope": "Frozen 17 November public APS observation. Stable base IDs and selected -R records preserve that dated state.",
       "observationDate": "2026-11-17T18:30:10Z",
       "provenance": {
         "path": "data/applications_2026_aps_string_confirmation_20261117_provenance.json",
@@ -1458,7 +1466,28 @@
       },
       "licenseNoticeUrl": "https://robertbregy.github.io/Connecting-the-Dots/CONTENT_LICENSE.md",
       "licenseNote": "Original project text and compilation/schema work are CC BY 4.0 unless otherwise indicated. Original ICANN/IANA and other third-party records retain their source-specific rights and terms; inclusion does not relicense them.",
-      "interpretationNote": "The same-day ICANN announcement aggregates exceed the reconciled public APS/contention files by four applications after accounting separately for .wdo.",
+      "interpretationNote": "The original announcement/public-file discrepancy was resolved by ICANN's corrected announcement, observed on 22 November. The frozen CSV and its original acquisition notes are unchanged; see the separately dated follow-up evidence.",
+      "sourceUrl": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv"
+    },
+    {
+      "id": "aps-current-followup-listing",
+      "title": "ICANN APS public listing · 22 November follow-up",
+      "path": "data/applications_2026_aps_followup_20261122.csv",
+      "url": "https://robertbregy.github.io/Connecting-the-Dots/data/applications_2026_aps_followup_20261122.csv",
+      "mediaType": "text/csv",
+      "sha256": "cd7df94d073ef39206621424aed2d34782f2896a34d589b5d2109e0626288ad7",
+      "layer": "source-records",
+      "unit": "APS listing row",
+      "recordCount": 2783,
+      "scope": "Separately captured current public listing; ten further application families changed from Active to Withdrawn since the frozen 17 November observation.",
+      "observationDate": "2026-11-22T10:51:04Z",
+      "provenance": {
+        "path": "data/applications_2026_aps_followup_20261122_provenance.json",
+        "url": "https://robertbregy.github.io/Connecting-the-Dots/data/applications_2026_aps_followup_20261122_provenance.json"
+      },
+      "licenseNoticeUrl": "https://robertbregy.github.io/Connecting-the-Dots/CONTENT_LICENSE.md",
+      "licenseNote": "Original project text and compilation/schema work are CC BY 4.0 unless otherwise indicated. Original ICANN/IANA and other third-party records retain their source-specific rights and terms; inclusion does not relicense them.",
+      "interpretationNote": "Current active exact-string overlaps are project derivations. The official 17 November contention CSV remains independently dated at 226 sets / 705 applications; withdrawn families remain in the listing.",
       "sourceUrl": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv"
     },
     {
@@ -1467,12 +1496,12 @@
       "path": "data/aps_2026_application_graph.json",
       "url": "https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_application_graph.json",
       "mediaType": "application/json",
-      "sha256": "2a5327c8f7ea15e0b83792398fb645f955befa5662faefc7e30f56989b8b0e74",
+      "sha256": "c5d322576c7f6e1e24517b6d4c8f20e9d40537aa4b512698cba98ac2045e2b1d",
       "layer": "derived",
       "unit": "published base application",
       "recordCount": 1614,
-      "scope": "Current String Confirmation graph: stable base application identities, selected replacements, variants and confirmed public contention memberships.",
-      "observationDate": "2026-11-17T18:30:10Z",
+      "scope": "Current follow-up graph: stable base identities, selected replacements, withdrawals, variants and derived current exact-string overlaps; official 17 November contention memberships are separately dated.",
+      "observationDate": "2026-11-22T10:51:04Z",
       "provenance": {
         "path": "data/aps_2026_application_graph_manifest.json",
         "url": "https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_application_graph_manifest.json"
@@ -1487,12 +1516,12 @@
       "path": "data/aps_2026_record_observations.csv",
       "url": "https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_record_observations.csv",
       "mediaType": "text/csv",
-      "sha256": "a9d46d220783a65a1d36cf0d1a7874b5271cac1d14ebcd03f757d36bb1d07479",
+      "sha256": "2bc2ddda26a3436cc4eae806db12dc90197114d39e2b8932bb6bdadf8a42e2eb",
       "layer": "derived",
       "unit": "source observation of an APS record",
-      "recordCount": 5566,
+      "recordCount": 8349,
       "scope": "Append-only observations tied to a source digest; includes base and replacement records.",
-      "observationDate": "2026-11-17T18:30:10Z",
+      "observationDate": "2026-11-22T10:51:04Z",
       "provenance": {
         "path": "data/aps_2026_application_graph_manifest.json",
         "url": "https://robertbregy.github.io/Connecting-the-Dots/data/aps_2026_application_graph_manifest.json"
@@ -1648,7 +1677,7 @@
     "currentWorkingPaper": {
       "version": "1.4-draft",
       "revisedOn": "2026-10-19",
-      "technicalReferenceSynchronizedOn": "2026-11-18",
+      "technicalReferenceSynchronizedOn": "2026-11-22",
       "path": "research/connecting-the-dots-working-paper-v1.html",
       "url": "https://robertbregy.github.io/Connecting-the-Dots/research/connecting-the-dots-working-paper-v1.html",
       "status": "working draft; not peer reviewed",

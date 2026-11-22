@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/economics/ | Site edition: 0.8.1 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/de/economics/ | Site edition: 0.8.2 | Language: de -->
 
 Leitfaden
 
@@ -108,6 +108,6 @@ Die Kosten eines Registers erklären manche Rückzüge und Ausstiege. Dokumentie
 
 [Den gTLD-Friedhof erkunden →](https://robertbregy.github.io/Connecting-the-Dots/de/#cemetery)
 
-**Von Robert Bregy** · Ausgabe der Website 0.8.1 · 18. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.8.2 · 22. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

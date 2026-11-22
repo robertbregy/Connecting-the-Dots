@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/en/legal/ | Site edition: 0.8.1 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/en/legal/ | Site edition: 0.8.2 | Language: en -->
 
 Guide
 
@@ -261,6 +261,6 @@ ICANN, WIPO and ICC are the primary procedural sources used here. The CMS 'Joini
 
 Procedural explainer, not legal advice. Always use the current authoritative Applicant Guidebook and provider rules for an actual filing.
 
-**By Robert Bregy** · Site edition 0.8.1 · November 18, 2026
+**By Robert Bregy** · Site edition 0.8.2 · November 22, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.
