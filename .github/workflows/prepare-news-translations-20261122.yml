@@ -1,0 +1,63 @@
+name: Prepare approved 22 November translations
+
+on:
+  push:
+    branches:
+      - preparation/news-translations-20261122
+
+permissions:
+  contents: write
+
+concurrency:
+  group: prepare-approved-news-translations-20261122
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: ${{ !contains(github.event.head_commit.message || '', '[skip build]') }}
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out the preparation branch
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Reconstruct the reviewed dictionary and verify its exact bytes
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, pathlib, subprocess
+          target = pathlib.Path('data/translations.json')
+          base = '417cb697556377fe300d19a6c5ab2b42195ff3fc'
+          expected = '913c1b48b9b99cb09662a7e2fe02b30d5bfa0434'
+          expected_sha256 = '2090c91c9db5e57bd14a61d5610111370af409b683db4f620a380bffe8a8b7bd'
+          current = subprocess.check_output(['git', 'hash-object', str(target)], text=True).strip()
+          if current == expected:
+              print('Reviewed dictionary is already present.')
+              raise SystemExit(0)
+          if current != base:
+              raise SystemExit('Unexpected dictionary baseline; refusing to overwrite it.')
+          translations = json.loads(target.read_text(encoding='utf-8'))
+          delta = json.loads(pathlib.Path('data/news-translation-amendments-20261122.json').read_text(encoding='utf-8'))
+          if set(delta) != {'en', 'it', 'de', 'fr'} or any(len(keys) != 115 for keys in delta.values()):
+              raise SystemExit('Unexpected amendment inventory.')
+          for language, updates in delta.items():
+              translations[language].update(updates)
+          result = (json.dumps(translations, ensure_ascii=False, indent=2) + '\n').encode('utf-8')
+          git_sha = hashlib.sha1(b'blob ' + str(len(result)).encode() + b'\0' + result).hexdigest()
+          if git_sha != expected or hashlib.sha256(result).hexdigest() != expected_sha256:
+              raise SystemExit('Reconstructed dictionary differs from the reviewed file.')
+          target.write_bytes(result)
+          print('REVIEWED_TRANSLATIONS_VERIFIED', git_sha, len(result))
+          PY
+      - name: Commit only the exact approved dictionary
+        run: |
+          if git diff --quiet -- data/translations.json; then
+            exit 0
+          fi
+          test "$(git diff --name-only)" = "data/translations.json"
+          git fetch origin "$GITHUB_REF_NAME"
+          test "$(git rev-parse FETCH_HEAD)" = "$GITHUB_SHA"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/translations.json
+          git commit -m "Prepare byte-verified approved translations [skip build]"
+          git push origin "HEAD:$GITHUB_REF_NAME"
