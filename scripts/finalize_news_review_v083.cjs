@@ -83,11 +83,31 @@ const preserved = baselineFiles.filter(file =>
   /^downloads\/.*\.(zip|sha256)$/.test(file) ||
   file.startsWith('data/evidence/') || /^research\/rr[123]_/.test(file) ||
   /^data\/applications_2026_aps_/.test(file) ||
-  /^data\/contention_/.test(file) || Object.hasOwn(prior.immutableFiles, file));
+  (/^data\/contention_/.test(file) && file !== 'data/contention_rounds.csv') ||
+  Object.hasOwn(prior.immutableFiles, file));
 for (const file of preserved) {
   assert.ok(fs.existsSync(file), 'Historical file removed: ' + file);
   assert.equal(sha(file), digest(gitFile(technicalBaseline, file)), 'Historical file rewritten: ' + file);
 }
+// This derived table retains every historical value. Only the stale future
+// wording in the 2026 note is corrected; it is not a raw official export.
+const contentionTable = 'data/contention_rounds.csv';
+const approvedContentionNote = 'Frozen Reveal Day analytical ranking from the secondary index, observed 7 October 2026. These historical counts are not current APS totals or the official String Confirmation contention list; the current Application Atlas provides a separately dated calculation from the archived official APS export.';
+execFileSync('python3', ['-c', [
+  'import csv, io, json, sys',
+  'payload = json.load(sys.stdin)',
+  'before_reader = csv.DictReader(io.StringIO(payload["before"]))',
+  'after_reader = csv.DictReader(io.StringIO(payload["after"]))',
+  'before, after = list(before_reader), list(after_reader)',
+  'assert before_reader.fieldnames == after_reader.fieldnames, "Derived contention CSV columns changed"',
+  'assert len(before) == len(after), "Derived contention CSV rows added or removed"',
+  'for old, new in zip(before, after):',
+  '    expected = dict(old)',
+  '    if old["round"] == "2026":',
+  '        assert old["note"] == "Derived from public 2026 application records; preliminary during the Replacement Period and until String Confirmation Day.", "Unexpected historical note"',
+  '        expected["note"] = payload["approvedNote"]',
+  '    assert new == expected, "Derived contention values changed beyond the dated note: " + old["string"]'
+].join('\n')], {input: JSON.stringify({before: gitFile(technicalBaseline, contentionTable).toString('utf8'), after: fs.readFileSync(contentionTable, 'utf8'), approvedNote: approvedContentionNote})});
 const previousHistory = gitFile(technicalBaseline, 'data/aps_2026_record_observations.csv');
 const currentHistory = fs.readFileSync('data/aps_2026_record_observations.csv');
 assert.deepEqual(currentHistory.subarray(0, previousHistory.length), previousHistory, 'The full previous observation log must remain an exact prefix');
@@ -156,6 +176,7 @@ review.auditSummary = {
     'Correct Atlas source dates, completed String Confirmation wording and the unrelated .official program-event classification in all four languages.'
   ],
   preservedHistoricalFiles: preserved.length,
+  historicalTableNoteCorrection: {file: contentionTable, scope: 'Only the 2026 explanatory note changes; columns, row order, strings, numbers and source URLs are unchanged.'},
   archivePolicy: 'Reveal Day, the 17 and 22 November source files, RR1/RR2/RR3 and every earlier technical package remain immutable. The 27 November evidence is not retroactively covered by the RR3 DOI.'
 };
 review.verification = {

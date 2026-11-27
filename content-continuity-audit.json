@@ -1,14 +1,14 @@
 {
   "baseline": "safety/main-v0.7.78-before-b2-switch-20261013",
-  "current": "v0.7.112",
-  "publication_released_on": "2026-11-12",
+  "current": "v0.8.3",
+  "publication_released_on": "2026-11-27",
   "research_snapshot": "2026-10-10",
   "tree": {
     "A": 237,
-    "B": 849,
+    "B": 1088,
     "missing": [],
-    "identical": 127,
-    "changed": 110,
+    "identical": 116,
+    "changed": 121,
     "added": [
       ".github/workflows/a-b-final-parity.yml",
       ".github/workflows/access-chronology-v0796.yml",
@@ -34,6 +34,8 @@
       ".github/workflows/pin-access-chronology-provenance.yml",
       ".github/workflows/reader-first.yml",
       ".github/workflows/round-debate-v0797.yml",
+      ".github/workflows/string-confirmation-capture.yml",
+      ".github/workflows/string-confirmation-v0800-candidate.yml",
       ".github/workflows/usability-remediation.yml",
       ".github/workflows/wikileaks-review.yml",
       "agent-catalog.json",
@@ -69,6 +71,13 @@
       "behind-the-round/fr/background-screening/index.html",
       "behind-the-round/it/background-screening/index.html",
       "content-continuity-audit.json",
+      "data/application_2026_string_confirmation_snapshot.json",
+      "data/applications_2026_aps_followup_20261122.csv",
+      "data/applications_2026_aps_followup_20261122_provenance.json",
+      "data/applications_2026_aps_followup_20261127.csv",
+      "data/applications_2026_aps_followup_20261127_provenance.json",
+      "data/applications_2026_aps_string_confirmation_20261117.csv",
+      "data/applications_2026_aps_string_confirmation_20261117_provenance.json",
       "data/aps_2026_applicant_distribution.csv",
       "data/aps_2026_applicant_sector_distribution.csv",
       "data/aps_2026_applicant_sector_evidence.json",
@@ -97,6 +106,198 @@
       "data/economics_reading_order.json",
       "data/editorial_20261030_quality_and_termination.json",
       "data/editorial_io_appointments_20261023.json",
+      "data/editorial_news_20261122.json",
+      "data/evidence/round-2026-followup-20261122/aps-export-raw.csv",
+      "data/evidence/round-2026-followup-20261122/aps-statistics-raw.json",
+      "data/evidence/round-2026-followup-20261122/source-observations.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/A2652T-T75760.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/A2652T-T75760.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/AEI2688T-T84808.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/AEI2688T-T84808.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/APEC2611T-T11013.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/APEC2611T-T11013.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/BEI2691T-T99138.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/BEI2691T-T99138.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/CCS2640T-T48725.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/CCS2640T-T48725.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/CS2676T-T34770.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/CS2676T-T34770.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/EDCL2689T-T11150.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/EDCL2689T-T11150.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/EDCL2689T-T68091.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/EDCL2689T-T68091.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/EDCL2689T-T94739.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/EDCL2689T-T94739.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/FEI2676T-T60926.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/FEI2676T-T60926.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/GEI2639T-T18440.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/GEI2639T-T18440.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/HU2684T-T32145.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/HU2684T-T32145.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/HU2684T-T42201.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/HU2684T-T42201.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/HU2684T-T81042.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/HU2684T-T81042.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/ITL2677T-T15916.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/ITL2677T-T15916.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/ITL2677T-T74240.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/ITL2677T-T74240.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/MEI2627T-T58035.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/MEI2627T-T58035.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/MEI2627T-T73873.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/MEI2627T-T73873.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T14670.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T14670.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T30508.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T30508.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T32387.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T32387.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T38427.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T38427.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T46346.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T46346.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T48225.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T48225.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T54761.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T54761.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T63059.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T63059.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T64063.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T64063.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T65696.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T65696.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T70103.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T70103.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T80159.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T80159.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T90969.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T90969.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T98888.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T98888.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NTG2671T-T12150.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NTG2671T-T12150.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NTG2671T-T13787.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NTG2671T-T13787.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/OI2692T-T96497.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/OI2692T-T96497.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/PEI2617T-T23468.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/PEI2617T-T23468.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/REI2641T-T20577.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/REI2641T-T20577.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/VNTL2649T-T52249.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/VNTL2649T-T52249.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/XCI2688T-T41810.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/XCI2688T-T41810.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/XCI2688T-T62426.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/XCI2688T-T62426.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/XCI2688T-T81155.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/XCI2688T-T81155.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/XI2694T-T18057.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/XI2694T-T18057.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/aps-export-raw.csv",
+      "data/evidence/round-2026-followup-20261127/aps-export-raw.csv.provenance.json",
+      "data/evidence/round-2026-followup-20261127/aps-statistics-raw.json",
+      "data/evidence/round-2026-followup-20261127/aps-statistics-raw.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/aps-wdo-summary.html",
+      "data/evidence/round-2026-followup-20261127/aps-wdo-summary.html.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests-analysis.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/24452647T-T62047.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/24452647T-T62047.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/36262695T-T42322.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/36262695T-T42322.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/43372680T-T95618.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/43372680T-T95618.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/44522636T-T55394.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/44522636T-T55394.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/45072669T-T67837.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/45072669T-T67837.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/61412675T-T18565.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/61412675T-T18565.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/63052682T-T56902.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/63052682T-T56902.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/70122665T-T13662.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/70122665T-T13662.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/72612695T-T33012.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/72612695T-T33012.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/77352697T-T40435.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/77352697T-T40435.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/79112627T-T56273.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/79112627T-T56273.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/79442683T-T47475.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/79442683T-T47475.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/80502644T-T59918.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/80502644T-T59918.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/84112666T-T75756.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/84112666T-T75756.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/85662668T-T46971.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/85662668T-T46971.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/86302673T-T51999.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/86302673T-T51999.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/87252644T-T13162.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/87252644T-T13162.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/BTRT2633T-T38161.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/BTRT2633T-T38161.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/BTRT2633T-T83538.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/BTRT2633T-T83538.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/CINI2622T-T81530.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/CINI2622T-T81530.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/DCJE2552-T43314.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/DCJE2552-T43314.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/HI2626T-T82284.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/HI2626T-T82284.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/HI2626T-T90203.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/HI2626T-T90203.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/MC2626T-T87191.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/MC2626T-T87191.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/MI2694T-T68970.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/MI2694T-T68970.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/NSCL2617T-T55273.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/NSCL2617T-T55273.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/NTNC2670T-T72865.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/NTNC2670T-T72865.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/TO2640T-T19948.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/TO2640T-T19948.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/TPCL2648T-T11392.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/TPCL2648T-T11392.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/TPCL2648T-T93473.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/TPCL2648T-T93473.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/UA2620T-T14912.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/UA2620T-T14912.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/UA2620T-T22831.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/UA2620T-T22831.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/UA2620T-T78518.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/UA2620T-T78518.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/UA2620T-T78897.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/UA2620T-T78897.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/comparison-by-application-id.json",
+      "data/evidence/round-2026-followup-20261127/contention-recheck/contention-byte-and-id-comparison.json",
+      "data/evidence/round-2026-followup-20261127/contention-recheck/provenance-validated.json",
+      "data/evidence/round-2026-followup-20261127/contention-recheck/reveal-day-contention-sets.csv",
+      "data/evidence/round-2026-followup-20261127/contention-recheck/string-confirmation-contention-sets.csv",
+      "data/evidence/round-2026-followup-20261127/recheck/about.html",
+      "data/evidence/round-2026-followup-20261127/recheck/about.html.provenance.json",
+      "data/evidence/round-2026-followup-20261127/recheck/export-raw.csv",
+      "data/evidence/round-2026-followup-20261127/recheck/export-raw.csv.provenance.json",
+      "data/evidence/round-2026-followup-20261127/recheck/statistics.json",
+      "data/evidence/round-2026-followup-20261127/recheck/statistics.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/source-observations.json",
+      "data/evidence/round-2026-followup-20261127/withdrawals-42-official-summary-corroboration.json",
+      "data/evidence/string-confirmation-2026-11-17/aps-statistics-2009-raw.json",
+      "data/evidence/string-confirmation-2026-11-17/aps-statistics-export-recheck-2038.json",
+      "data/evidence/string-confirmation-2026-11-17/aps-statistics-recheck-1857.json",
+      "data/evidence/string-confirmation-2026-11-17/baseline.json",
+      "data/evidence/string-confirmation-2026-11-17/live/aps-export-normalized.csv",
+      "data/evidence/string-confirmation-2026-11-17/live/aps-export-raw.csv",
+      "data/evidence/string-confirmation-2026-11-17/live/aps-observatory-diff.json",
+      "data/evidence/string-confirmation-2026-11-17/live/captured-at-utc.txt",
+      "data/evidence/string-confirmation-2026-11-17/live/contention-reconciliation.json",
+      "data/evidence/string-confirmation-2026-11-17/live/high-value-summary.json",
+      "data/evidence/string-confirmation-2026-11-17/live/reveal-day-contention-sets.csv",
+      "data/evidence/string-confirmation-2026-11-17/live/sha256.txt",
+      "data/evidence/string-confirmation-2026-11-17/live/sizes.txt",
+      "data/evidence/string-confirmation-2026-11-17/live/string-confirmation-contention-sets.csv",
+      "data/evidence/string-confirmation-2026-11-17/live/string-confirmation-summary.json",
+      "data/evidence/string-confirmation-2026-11-17/official-announcement-observation.json",
       "data/evidence/tld-market-2026-10-19/ntlddata-backends.json",
       "data/evidence/tld-market-2026-10-19/ntlddata-tlds-1.json",
       "data/evidence/tld-market-2026-10-19/ntlddata-tlds-2.json",
@@ -105,11 +306,14 @@
       "data/financial_source_verification_20261019.json",
       "data/frozen_technical_packages.json",
       "data/helsinki_editorial_20261025.json",
+      "data/helsinki_followup_20261122.json",
+      "data/helsinki_revocation_20261118.json",
       "data/home_editorial.json",
       "data/i18n_de.js",
       "data/i18n_en.js",
       "data/i18n_fr.js",
       "data/i18n_it.js",
+      "data/iana_root_revalidation_20261118.json",
       "data/independent_review_materials.json",
       "data/legal_layer.json",
       "data/qa/round_debate_v0797_qa_context.json",
@@ -118,6 +322,8 @@
       "data/reader_validation_recording.csv",
       "data/registry_concentration_context.csv",
       "data/research_bibliographic_corrections.json",
+      "data/round_2026_followup_20261122.json",
+      "data/round_2026_followup_20261127.json",
       "data/round_application_fees.json",
       "data/round_debate_20261106.json",
       "data/rsp_tld_footprint.csv",
@@ -161,6 +367,7 @@
       "docs/USABILITY_REMEDIATION_2026-10-22.md",
       "docs/access-chronology-v0796-acceptance.md",
       "docs/access-chronology-v0796-evidence.json",
+      "docs/aps-followup-2026-11-27.md",
       "docs/audit-publication-2026-10-18.json",
       "docs/audits/2026-11-06/assembly-workflow-review.md",
       "docs/audits/2026-11-06/assembly-workflow-tests.json",
@@ -245,12 +452,18 @@
       "docs/editorial-review-2026-11-12-v0.7.110.json",
       "docs/editorial-review-2026-11-12-v0.7.111.json",
       "docs/editorial-review-2026-11-12-v0.7.112.json",
+      "docs/editorial-review-2026-11-17-v0.8.0-rr3.json",
+      "docs/editorial-review-2026-11-17-v0.8.0.json",
+      "docs/editorial-review-2026-11-18-v0.8.1.json",
+      "docs/editorial-review-2026-11-22-v0.8.2.json",
+      "docs/editorial-review-2026-11-27-v0.8.3.json",
       "docs/experience-audit-2026-11-07.md",
       "docs/full-site-audit-2026-11-06.md",
       "docs/lugano-reading-order-20261022.json",
       "docs/main-protection-policy.json",
       "docs/narrative-clarity-approval.json",
       "docs/narrative-clarity-verification.json",
+      "docs/news-review-2026-11-22.md",
       "docs/reader-first-approval.json",
       "docs/reader-first-inventory.json",
       "docs/reader-first-preview-cities-1280.b64",
@@ -263,7 +476,10 @@
       "docs/review-v0795-diff-audit.json",
       "docs/round-debate-v0797-acceptance.md",
       "docs/round-debate-v0797-evidence.json",
+      "docs/rr3_publication_runbook.md",
       "docs/seo-agent-access.md",
+      "docs/string-confirmation-day-2026-11-17-first-findings.md",
+      "docs/string-confirmation-day-2026-11-17-runbook.md",
       "docs/technical-archive-integrity-20261106.json",
       "docs/usability-legacy-acceptance.json",
       "docs/usability-remediation-review.json",
@@ -337,6 +553,14 @@
       "downloads/connecting-the-dots-data-pack-v0.7.98.zip",
       "downloads/connecting-the-dots-data-pack-v0.7.99.sha256",
       "downloads/connecting-the-dots-data-pack-v0.7.99.zip",
+      "downloads/connecting-the-dots-data-pack-v0.8.0.sha256",
+      "downloads/connecting-the-dots-data-pack-v0.8.0.zip",
+      "downloads/connecting-the-dots-data-pack-v0.8.1.sha256",
+      "downloads/connecting-the-dots-data-pack-v0.8.1.zip",
+      "downloads/connecting-the-dots-data-pack-v0.8.2.sha256",
+      "downloads/connecting-the-dots-data-pack-v0.8.2.zip",
+      "downloads/connecting-the-dots-data-pack-v0.8.3.sha256",
+      "downloads/connecting-the-dots-data-pack-v0.8.3.zip",
       "economics/de/cases/index.html",
       "economics/de/cases/index.md",
       "economics/de/market/index.html",
@@ -443,6 +667,10 @@
       "research/reader-study/en/index.html",
       "research/reader-study/fr/index.html",
       "research/reader-study/it/index.html",
+      "research/rr2_release_manifest.json",
+      "research/rr3_addendum_20261117.md",
+      "research/rr3_candidate.json",
+      "research/rr3_publication_verification.json",
       "scripts/apply_ia_b2_crossnav.py",
       "scripts/aps_observatory.py",
       "scripts/atlas_state_qa.cjs",
@@ -460,18 +688,24 @@
       "scripts/audit_tld_market_browser.cjs",
       "scripts/audit_v07108_qa.cjs",
       "scripts/build_agent_catalog.py",
+      "scripts/build_aps_application_graph_current.py",
       "scripts/build_aps_current_analytics.py",
+      "scripts/build_aps_followup_20261127.py",
       "scripts/build_tld_cultural_trajectory.py",
       "scripts/build_tld_market.py",
       "scripts/check_external_sources.py",
       "scripts/city_namespace_editorial.py",
+      "scripts/contention_confirmation_20261117.py",
       "scripts/discovery_browser_qa.cjs",
       "scripts/experience_browser_qa.cjs",
       "scripts/finalize_audit_review_v07108.cjs",
       "scripts/finalize_audit_review_v07110.cjs",
       "scripts/finalize_label_review_v07111.cjs",
       "scripts/finalize_legal_review_v07109.cjs",
+      "scripts/finalize_news_review_v082.cjs",
+      "scripts/finalize_news_review_v083.cjs",
       "scripts/finalize_pre_string_freeze_v07112.cjs",
+      "scripts/finalize_string_confirmation_v0800.cjs",
       "scripts/fix_initial_deeplink_scroll_v0795.cjs",
       "scripts/fix_usability_scroll_timing_v0795.cjs",
       "scripts/fix_wikileaks_anchors_v0795.cjs",
@@ -491,6 +725,7 @@
       "scripts/prepare_label_audit_v07111.py",
       "scripts/prepare_pre_string_freeze_v07112.py",
       "scripts/prepare_round_debate_v0797.cjs",
+      "scripts/prepare_string_confirmation_v0800.py",
       "scripts/prepare_usability_release.py",
       "scripts/prepare_ux_focus_v07100.py",
       "scripts/prepare_wikileaks_review_v0795.cjs",
@@ -508,6 +743,7 @@
       "scripts/render_economics_hub.cjs",
       "scripts/render_home_editorial.cjs",
       "scripts/render_legal_layer.py",
+      "scripts/render_news_review_20261122.cjs",
       "scripts/render_reader_study.py",
       "scripts/render_research.cjs",
       "scripts/render_round_debate_v0797.cjs",
@@ -517,9 +753,11 @@
       "scripts/review_access_chronology_v0796.cjs",
       "scripts/review_round_debate_v0797.cjs",
       "scripts/review_wikileaks_anchors_v0795.cjs",
+      "scripts/rr3_preflight.py",
       "scripts/run_browser_regressions.py",
       "scripts/signoff_wikileaks_v0795.cjs",
       "scripts/stage_public_site.py",
+      "scripts/string_confirmation_20261117.py",
       "scripts/test_aps_current_analytics.py",
       "scripts/test_cultural_research_v2.py",
       "scripts/test_external_source_health.py",
@@ -540,6 +778,7 @@
       "scripts/validate_tld_market.cjs",
       "scripts/validate_v0796_build_provenance.cjs",
       "scripts/verify_ia_b2_parity.cjs",
+      "scripts/verify_iana_root_review.py",
       "scripts/verify_usability_release.py",
       "src/ia-b2-hubs.html",
       "tlds/de/ai/index.html",
@@ -745,7 +984,7 @@
     },
     "hrefs": {
       "A": 166,
-      "B": 184,
+      "B": 185,
       "removed": [
         "downloads/connecting-the-dots-data-pack-v0.7.78.sha256",
         "downloads/connecting-the-dots-data-pack-v0.7.78.zip"
@@ -763,6 +1002,7 @@
         "?tab=explore#aps-native",
         "data/aps_2026_applicant_distribution.csv",
         "data/aps_2026_application_graph_manifest.json",
+        "https://doi.org/10.5281/zenodo.24325521",
         "https://domainnamewire.com/2026/10/07/surprise-intercap-registry-is-one-of-biggest-new-tld-applicants/",
         "https://github.com/robertbregy/Connecting-the-Dots/blob/main/data/aps_2026_application_graph_manifest.json",
         "https://newgtldprogram-aps.icann.org/applications/WDO2627T-T45217/summary",
@@ -777,11 +1017,19 @@
   "translations": {
     "it": {
       "before": 2318,
-      "after": 2617,
+      "after": 2770,
       "missing": [],
       "added": [
+        "apsAtlasCurrentCSV",
         "apsAtlasDownloadHistorySub",
+        "apsAtlasSelectedReplacement",
+        "apsAtlasSnapshotBody",
+        "apsAtlasSnapshotLink",
+        "apsAtlasSnapshotTitle",
         "apsAtlasStandalone",
+        "apsAtlasStatusActive",
+        "apsAtlasStatusDeactivated",
+        "apsAtlasStatusWithdrawn",
         "audienceBriefAi",
         "audienceBriefCat",
         "audienceBriefCom",
@@ -795,6 +1043,9 @@
         "audienceScopeNames",
         "audienceSearchHelp",
         "audienceWhyInteresting",
+        "behindRevisionCorrection20261122",
+        "behindRevisionFollowup20261127",
+        "behindRevisionStringConfirmation",
         "breadcrumbLabel",
         "cemeteryChapterCardDesc",
         "cemeteryChapterNav",
@@ -865,6 +1116,27 @@
         "field05SourceWhen",
         "field05Status",
         "field05Title",
+        "field17ConfirmBody1",
+        "field17ConfirmBody2",
+        "field17ConfirmBody3",
+        "field17ConfirmTitle",
+        "field17ReplacementBody1",
+        "field17ReplacementBody2",
+        "field17ReplacementBody3",
+        "field17ReplacementBoundary",
+        "field17ReplacementRevision",
+        "field17ReplacementSourceAPS",
+        "field17ReplacementSourceAnnouncement",
+        "field17ReplacementSourceContention",
+        "field17ReplacementSourceReconciliation",
+        "field17ReplacementTitle",
+        "field17ReviewLabel",
+        "field17SourceAnnouncement",
+        "field17SourceContention",
+        "field17SourceCurrentAPS",
+        "field17SourceLaterRecheck",
+        "field17SourceReconciliation",
+        "field17TimingBody",
         "field18Applicant",
         "field18ApplicationID",
         "field18CalendarBody",
@@ -887,6 +1159,58 @@
         "field18SourceExport",
         "field18SourceLocalExport",
         "field18SourceLocalStrings",
+        "field22CalendarCurrentBody",
+        "field22CalendarCurrentLimit",
+        "field22CorrectionBody1",
+        "field22CorrectionBody2",
+        "field22CorrectionLimit",
+        "field22CorrectionTitle",
+        "field22EvidenceBoundary",
+        "field22HistoricalNotice",
+        "field22LabelChangesBody",
+        "field22LiveBody1",
+        "field22LiveBody2",
+        "field22LiveTitle",
+        "field22OfficialBody",
+        "field22ReplacementBody1",
+        "field22ReplacementBody2",
+        "field22ReplacementBoundary",
+        "field22ReplacementRevision",
+        "field22ReplacementTitle",
+        "field22ReviewLabel",
+        "field22SourceCorrection",
+        "field22SourceCurrentExport",
+        "field22SourceFollowup",
+        "field22SourceOfficial",
+        "field27AboutLink",
+        "field27ChangeEvidence",
+        "field27ChangeExamplesBody",
+        "field27ChangeRequestsBody",
+        "field27Closing",
+        "field27CurrentRaw",
+        "field27ExportBody",
+        "field27FullComparison",
+        "field27HeaderApplicant",
+        "field27HeaderId",
+        "field27HeaderPublished",
+        "field27HeaderStatus",
+        "field27HeaderString",
+        "field27LatestLink",
+        "field27LimitsBody",
+        "field27LiveTitle",
+        "field27OverlapBody",
+        "field27PreviousRaw",
+        "field27Register",
+        "field27ReviewLabel",
+        "field27SourceExport",
+        "field27SourceHall",
+        "field27SourceMai",
+        "field27SourceStats",
+        "field27StatisticsBody",
+        "field27SummaryBody",
+        "field27SummaryEvidence",
+        "field27WithdrawalsCaption",
+        "field27WithdrawalsSummary",
         "helsinkiBridgeBody",
         "helsinkiBridgeCta",
         "helsinkiBridgeTitle",
@@ -984,7 +1308,18 @@
         "insideBoardSource",
         "insideBoardTitle",
         "insideChoiceSource",
+        "insideConfirmObservedBody",
         "insideConfirmPublicScheduleBody",
+        "insideCorrectionBody",
+        "insideCorrectionDate",
+        "insideCorrectionTitle",
+        "insideInputObservedBody",
+        "insideLiveBody",
+        "insideLiveDate",
+        "insideLiveTitle",
+        "insideOfficialBody",
+        "insideOfficialDate",
+        "insideOfficialTitle",
         "insideQualityBody",
         "insideQualityDate",
         "insideQualitySource",
@@ -1003,6 +1338,60 @@
         "luganoVisionDetails",
         "meowCrowdfundingLink",
         "meowSearchTerms",
+        "news22GovAnsBody1",
+        "news22GovAnsBody2",
+        "news22GovAnsBody3",
+        "news22GovAnsStatus",
+        "news22GovAnsTitle",
+        "news22GovDiacriticsBody",
+        "news22GovObjectionsBody",
+        "news22GovObjectionsStatus",
+        "news22GovObjectionsTitle",
+        "news22GovPolicyStatus",
+        "news22GovPolicyTitle",
+        "news22GovPpBody1",
+        "news22GovPpBody2",
+        "news22GovPpBody3",
+        "news22GovPpStatus",
+        "news22GovPpTitle",
+        "news22GovReviewsBody",
+        "news22GovSourceAns",
+        "news22GovSourceDiacritics",
+        "news22GovSourceDnsAid",
+        "news22GovSourceIsoc",
+        "news22GovSourceIsocHub",
+        "news22GovSourceItu",
+        "news22GovSourceReviews",
+        "news22GovSourceSsad",
+        "news22GovSourceWipo",
+        "news22GovSsadBody",
+        "news22IndexIntro",
+        "news22IndexTitle",
+        "news22MktAfnicBody1",
+        "news22MktAfnicBody2",
+        "news22MktAfnicReportSource",
+        "news22MktAfnicSource",
+        "news22MktAfnicTitle",
+        "news22MktDnibBody1",
+        "news22MktDnibBody2",
+        "news22MktDnibSource",
+        "news22MktDnibTitle",
+        "news22MktHelsinkiContract",
+        "news22MktHelsinkiRoot",
+        "news22MktHelsinkiSource",
+        "news22MktNameBody1",
+        "news22MktNameBody2",
+        "news22MktNameSourceICANN",
+        "news22MktNameSourceVerisign",
+        "news22MktNameTitle",
+        "news22MktOptionsBody1",
+        "news22MktOptionsBody2",
+        "news22MktOptionsSource",
+        "news22MktOptionsTitle",
+        "news22MktWebLaunchEvent",
+        "news22MktWebSourceAnnouncement",
+        "news22MktWebSourceICANN",
+        "news22ReviewedLabel",
         "nissayCaseFact",
         "nissayCaseReading",
         "nissayCaseState",
@@ -1057,6 +1446,10 @@
         "release0797",
         "release0798",
         "release0799",
+        "release0800",
+        "release0801",
+        "release0802",
+        "release0803",
         "researchPaperFormat",
         "resourcesArchivesIntro",
         "resourcesArchivesTitle",
@@ -1093,13 +1486,73 @@
           "A": "ICANN pubblica i candidati per regione nel riepilogo del Reveal Day, non le candidature per regione. La mappa rappresenta l’origine dei candidati, non l’infrastruttura DNS o i mercati serviti.",
           "B": "Questa vista conta le 481 organizzazioni dell’aggregato ufficiale APS, senza moltiplicarle per le loro candidature. La regione dichiarata non identifica infrastruttura DNS, proprietà ultima o mercato servito. Il confronto delle candidature usa conteggi distinti."
         },
+        "apsAtlasApps": {
+          "A": "Candidature pubblicate (ID di base)",
+          "B": "Application ID di base pubblicati"
+        },
+        "apsAtlasBaseStatus": {
+          "A": "Stato della domanda primaria",
+          "B": "stato corrente della candidatura"
+        },
+        "apsAtlasCtaBody": {
+          "A": "Esplora le 1.614 domande ICANN 2026 pubblicate, gli ID, le alternative -R, le varianti e i gruppi di stringhe identiche. Collegamenti ai dossier APS ufficiali; nessuna confusione fra candidature e TLD delegati.",
+          "B": "Esplora le 1.614 candidature ICANN 2026 pubblicate, gli ID, le stringhe sostitutive, le varianti e gli stati datati, inclusi i ritiri. I gruppi attuali di stringhe identiche sono elaborati dall’esportazione pubblica; le schede ufficiali APS restano direttamente accessibili."
+        },
+        "apsAtlasExactMatch": {
+          "A": "Stringa primaria condivisa",
+          "B": "Stringa attuale condivisa"
+        },
+        "apsAtlasIntro": {
+          "A": "Dal suffisso alla candidatura: ogni domanda ufficialmente pubblicata, la sua stringa primaria, l'eventuale alternativa, le varianti, il richiedente e i cambiamenti di stato documentabili.",
+          "B": "Vista delle candidature pubbliche ICANN 2026 con data della fonte. Ogni Application ID di base identifica una candidatura; la stringa sostitutiva selezionata ne diventa la stringa effettiva. Le candidature ritirate restano consultabili."
+        },
+        "apsAtlasObservedStatusNote": {
+          "A": "Stati e etichette riportati come pubblicati da APS alla data dell'acquisizione: non permettono di dedurre esiti futuri, conferme di stringa o contese definitive.",
+          "B": "Gli stati si riferiscono al record effettivo della candidatura alla data della fonte. Le candidature ritirate restano nell’Atlante. Un cambiamento osservato fra due acquisizioni non ne stabilisce la data esatta o la ragione."
+        },
+        "apsAtlasOverlap": {
+          "A": "Gruppi con stringa primaria identica",
+          "B": "gruppi attuali di stringhe identiche · derivati"
+        },
+        "apsAtlasOverlapHint": {
+          "A": "I 263 gruppi di stringhe primarie identiche coinvolgono 891 candidature. È un conteggio derivato e preliminare, non l'elenco dei contention set definitivi ICANN. Le alternative, le somiglianze e le varianti sono relazioni separate. Un valore «In Contention = FALSE» nel CSV non dimostra l'assenza di contese prima della String Evaluation.",
+          "B": "Dall’export acquisito il 27 novembre risultano 222 gruppi di stringhe identiche con 650 candidature attive, contro 225 e 695 nell’acquisizione del 22 novembre. È un’elaborazione del progetto. Il distinto CSV ufficiale di String Confirmation, pubblicato il 17 novembre e ricontrollato il 27 novembre, resta invariato: 226 set e 705 righe. Il calcolo attuale non costituisce una nuova determinazione ICANN delle contese."
+        },
+        "apsAtlasPreliminaryList": {
+          "A": "Lista preliminare ICANN delle contese",
+          "B": "ICANN · CSV delle contese confermate, 17 novembre 2026"
+        },
+        "apsAtlasReplacements": {
+          "A": "Record di stringhe sostitutive",
+          "B": "record replacement"
+        },
+        "apsAtlasScope": {
+          "A": "2.783 righe pubbliche ICANN APS riconciliate in 1.614 candidature distinte: 1.169 record -R sono alternative alla stessa domanda. Sei candidature riguardano solo varianti di TLD esistenti. La candidatura .wdo è temporaneamente esclusa dall'elenco pubblico. Sono collegati i dossier APS ufficiali, non scaricati integralmente né verificati documento per documento.",
+          "B": "Fotografia del 27 novembre 2026, acquisita alle 14:08 UTC. L’Atlante contiene 1.614 Application ID di base e 1.169 record sostitutivi collegati: 1.553 candidature Active e 61 Withdrawn. Le 152 sostituzioni selezionate forniscono le stringhe effettive. Le 1.547 candidature attive con una nuova stringa primaria coprono 1.119 stringhe distinte; sei candidature di sole varianti di TLD esistenti sono conteggiate separatamente. Sono elaborazioni sull’export ufficiale, che non dichiara una data di pubblicazione."
+        },
         "apsAtlasSource": {
           "A": "CSV ufficiale ICANN APS",
           "B": "Elenco pubblico ufficiale ICANN APS"
         },
+        "apsAtlasStrings": {
+          "A": "Stringhe primarie nuove e distinte",
+          "B": "nuove stringhe primarie attive"
+        },
+        "apsAtlasWdo": {
+          "A": "Una candidatura sulle 1.615 conteggiate da ICANN non è nell'elenco pubblico: .wdo è ancora sottoposta a verifica amministrativa.",
+          "B": "Le statistiche APS pubblicate il 27 novembre alle 13:39 UTC riportano 1.543 Active e 72 Withdrawn; l’export acquisito alle 14:08 UTC ne contiene 1.553 e 61. Lo scarto non è riconciliato e non identifica undici ulteriori candidature. .wdo resta assente dall’export; la sua scheda, pubblicata il 7 ottobre, indica “Undergoing administrative check”. Questo ultimo stato pubblico non dimostra lo stato interno attuale né spiega automaticamente i nuovi scarti."
+        },
+        "caseWebOutcome": {
+          "A": ".WEB è stato delegato nel luglio 2026 a VeriSign, Inc.",
+          "B": ".WEB è stato delegato a VeriSign, Inc. nel luglio 2026. L'11 novembre Verisign ha annunciato il calendario di lancio, con apertura delle registrazioni al pubblico prevista per il 6 aprile 2027."
+        },
         "cemeteryTitle": {
           "A": "Il cimitero dei gTLD: i nomi che non sono sopravvissuti",
           "B": "Il cimitero dei gTLD"
+        },
+        "contention2026Sub": {
+          "A": "ICANN ha pubblicato al Reveal Day 263 contention set preliminari per stringhe identiche, che comprendono 891 record di candidatura. La classifica qui sotto è una vista derivata dai dati pubblici delle candidature e resta provvisoria fino allo String Confirmation Day.",
+          "B": "La classifica qui sotto conserva la fotografia delle candidature pubbliche al Reveal Day: è una vista derivata storica, riferita al 7 ottobre 2026. Il distinto CSV ufficiale ICANN del 17 novembre conta 226 contention set e 705 righe e risulta invariato al controllo del 27 novembre. Nell’Atlante, il calcolo sull’export APS acquisito il 27 novembre identifica invece 222 gruppi di stringhe identiche e 650 candidature attive: non è una nuova determinazione ICANN delle contese."
         },
         "currentDataPackNote": {
           "A": "Snapshot tecnico v0.7.78 · impronta SHA-256 disponibile · non è una nuova release scientifica Zenodo",
@@ -1107,7 +1560,7 @@
         },
         "dataStatusSub": {
           "A": "ICANN ha pubblicato lo snapshot iniziale del Reveal Day il 7 ottobre. Dall’8 al 21 ottobre è aperto il Replacement Period; l’elenco confermato delle stringhe e i contention set aggiornati sono previsti per il 17 novembre.",
-          "B": "ICANN ha pubblicato lo snapshot iniziale del Reveal Day il 7 ottobre. Il Replacement Period si è svolto dall’8 al 21 ottobre; l’elenco confermato delle stringhe e i contention set aggiornati sono previsti per il 17 novembre."
+          "B": "ICANN ha pubblicato la fotografia iniziale del Reveal Day il 7 ottobre e ha confermato le stringhe scelte e i gruppi di contesa aggiornati il 17 novembre. L’Atlante corrente usa l’export acquisito separatamente il 22 novembre; RR3 conserva la fotografia scientifica datata del 17 novembre."
         },
         "demand2026Sub": {
           "A": "Conteggi ufficiali ICANN dei soggetti candidati per regione al Reveal Day (481 in totale), non delle candidature. Indicano la provenienza dei candidati, non la collocazione delle infrastrutture DNS.",
@@ -1119,7 +1572,7 @@
         },
         "disputes2026StatusBody": {
           "A": "Il Community Input and Objections Period inizierà il 17 novembre 2026 e dovrebbe proseguire fino al 16 marzo 2027. Le controversie qui sotto sono quindi precedenti utili a capire i meccanismi, non casi già decisi nel round 2026.",
-          "B": "Il Community Input and Objections Period inizierà il 17 novembre 2026 e dovrebbe proseguire fino al 16 marzo 2027. Le controversie del capitolo sono quindi precedenti utili a capire i meccanismi, non casi già decisi nel round 2026."
+          "B": "Il periodo ordinario per contributi e obiezioni è iniziato il 17 novembre 2026 e termina il 16 marzo 2027. Commenti, GAC Early Warnings e obiezioni formali seguono procedure distinte: la sola presentazione non determina l’esito di una candidatura."
         },
         "downloadApplicationOnlySub": {
           "A": "CSV · tutti i record Explorer solo-candidatura · copertura storica completa 2000/2004/2012 + record 2026 verificati attualmente vendorizzati localmente",
@@ -1144,6 +1597,10 @@
         "exploreCurrentRoot": {
           "A": "Stato attuale nella root",
           "B": "Stato nella root alla verifica documentata"
+        },
+        "exploreSnapshotClocks": {
+          "A": "Cinque date, due livelli documentari: snapshot IANA/root · 4 ott 2026; candidature Reveal Day · 7 ott 2026; RR1 archiviata · 9 ott 2026; RR2 archiviata · 10 ott 2026; ultimo aggiornamento del sito · {updated}. Gli aggiornamenti del sito non modificano le release scientifiche già archiviate.",
+          "B": "Snapshot IANA/root · 4 ott 2026; verifica delle deleghe · 18 nov 2026 (1.436 etichette); candidature Reveal Day · 7 ott 2026; ricerca archiviata RR1 · 9 ott, RR2 · 11 ott, RR3 · 17 nov 2026; aggiornamento del sito · {updated}."
         },
         "eyebrow": {
           "A": "ICANN · DNS · CITTÀ · SOCIETÀ",
@@ -1193,6 +1650,10 @@
           "A": "Un TLD è la parte finale di un indirizzo Internet, come .com, .ch o .lugano. Questo sito racconta chi può crearne uno, chi lo gestisce e perché può contare.",
           "B": "In example.com, .com è l’estensione finale: un dominio di primo livello, o TLD. Qui puoi capirne la storia e verificare dati e fonti. .lugano è una candidatura, non un’estensione già operativa."
         },
+        "historicalPackNote": {
+          "A": "Pacchetto dati storico v0.7.58 (9 ottobre 2026), non l'ultima release scientifica. Per i dati RR2 aggiornati utilizzare il DOI specifico.",
+          "B": "Pacchetto dati storico v0.7.58 (9 ottobre 2026). Cita il DOI della versione scientifica che utilizzi."
+        },
         "homeGuideIntro": {
           "A": "Un TLD è ciò che viene dopo l’ultimo punto di un nome, come .com, .ch o .lugano. Dietro quel breve finale ci sono candidature, regole, istituzioni, contratti, tecnologia, denaro e comunità. Parti dal percorso guidato oppure scegli una domanda.",
           "B": "In www.example.com, .com è il dominio di primo livello (TLD) ed example.com è il dominio registrato. Le domande qui sotto aiutano a capire chi prende le decisioni, chi gestisce l’infrastruttura e come i nomi incidono sull’economia e sulle comunità."
@@ -1217,6 +1678,10 @@
           "A": "Questa cronologia è un livello editoriale in evoluzione. RR1 (9 ottobre) e RR2 (10 ottobre) sono snapshot scientifici distinti e immutabili su Zenodo; la cronaca corrente non modifica retroattivamente nessuno dei due.",
           "B": "Questa cronologia è un livello editoriale in evoluzione. RR1 (9 ottobre) e RR2 (11 ottobre) sono snapshot scientifici distinti e immutabili su Zenodo; la cronaca corrente non modifica retroattivamente nessuno dei due."
         },
+        "insideResearchCta": {
+          "A": "Metodo di ricerca e RR2",
+          "B": "Metodo di ricerca e RR3"
+        },
         "journeyFoundation": {
           "A": "Internet è una rete di reti. I nomi come example.com sono comodi per le persone; le reti inoltrano i dati usando indirizzi IP. Il DNS collega le due cose. Il Web usa poi quella rete per scambiare richieste, risposte e contenuti.",
           "B": "Le persone ricordano nomi come example.com. Le reti usano indirizzi numerici: il DNS è il sistema che collega nomi e indirizzi."
@@ -1239,7 +1704,7 @@
         },
         "outcomes2026StatusBody": {
           "A": "Il Reveal Day ha aperto la fase di pre-evaluation. Il Replacement Period dura fino al 21 ottobre, lo String Confirmation Day è il 17 novembre e solo allora inizia il Community Input and Objections Period. I casi qui sotto sono esiti storici dei round precedenti, non risultati del 2026.",
-          "B": "Il Reveal Day ha aperto la fase di valutazione preliminare. Il periodo per scegliere le stringhe sostitutive si è chiuso il 21 ottobre 2026. Lo String Confirmation Day è previsto il 17 novembre, quando inizia il periodo per contributi pubblici e obiezioni. I casi del capitolo documentano esiti dei round precedenti, non decisioni sul 2026."
+          "B": "Il Reveal Day ha aperto la valutazione preliminare. Il periodo per scegliere le stringhe sostitutive si è chiuso il 21 ottobre 2026. Lo String Confirmation Day si è svolto il 17 novembre e ha aperto il periodo per contributi pubblici e obiezioni, fino al 16 marzo 2027. I casi di questo capitolo documentano esiti dei round precedenti; il processo 2026 in corso è seguito separatamente."
         },
         "patternWordsBody": {
           "A": "Nella vista attuale derivata da APS, .agent conta 13 candidature live, .api 10, .robot 9 e .agi 7. OpenAI compare inoltre con candidature .openai e .chatgpt. Rispetto al vocabolario app/piattaforme del 2012, il baricentro si è spostato in modo evidente.",
@@ -1309,13 +1774,45 @@
           "A": "Manifest scientifico, tag GitHub, fonti congelate e CITATION.cff permettono verifiche indipendenti. RR2 è stata verificata come seconda versione della serie Zenodo originaria di RR1. L'aggregato ICANN 2026 e l'indice secondario delle stringhe restano distinti: il corpus ufficiale APS delle singole candidature non è dichiarato completo localmente.",
           "B": "Manifest di ricerca, tag GitHub, fonti congelate e CITATION.cff permettono verifiche indipendenti. RR2 è la seconda versione della serie Zenodo originaria di RR1. Il sito corrente archivia anche l’elenco pubblico APS acquisito l’11 ottobre 2026: 1.614 ID di candidatura di base e 1.169 record di sostituzione. Non include i dossier individuali completi. Le elaborazioni correnti e le release congelate RR1/RR2 restano distinte."
         },
+        "researchCitationText": {
+          "A": "Bregy, R. (2026). <em>Connecting the Dots: A Living Research Atlas of Top-Level Domain Expansion</em> (Research Release RR2, Consolidamento post-Reveal). Zenodo. DOI: 10.5281/zenodo.23288603.",
+          "B": "Bregy, R. (2026). <em>Connecting the Dots · Research Release RR3 · String Confirmation 2026</em>. Zenodo. DOI 10.5281/zenodo.24325521."
+        },
+        "researchDoiLabel": {
+          "A": "Identificatore persistente · Research Release RR2 corrente",
+          "B": "Identificatore persistente · release scientifica corrente RR3"
+        },
+        "researchDoiStatus": {
+          "A": "Pubblicata su Zenodo · RR2",
+          "B": "Pubblicata su Zenodo · RR3"
+        },
+        "researchNextBody": {
+          "A": "ICANN ha previsto lo String Confirmation Day per il 17 novembre 2026. Le stringhe confermate, le sostituzioni e le contese potranno motivare una nuova Research Release RR3, previa verifica delle fonti. Non si anticipano esiti futuri.",
+          "B": "RR3 documenta lo String Confirmation ICANN del 17 novembre 2026. L’addendum scientifico riporta separatamente le osservazioni APS successive, con le rispettive date."
+        },
+        "researchNextLabel": {
+          "A": "Prossimo possibile traguardo documentale",
+          "B": "Perimetro di RR3"
+        },
         "researchPaperBody": {
           "A": "Il working paper rimane una bozza aggiornata indipendentemente, non sottoposta a peer review e distinta dai depositi immutabili RR1 e RR2. Espone la domanda di ricerca, la provenienza delle fonti, il metodo e i limiti.",
           "B": "Working paper corrente: {paperVersion}, revisione del {paperDate}. La bozza è aggiornata indipendentemente e non è sottoposta a peer review. Espone domanda di ricerca, fonti, metodo e limiti; i depositi immutabili RR1 e RR2 restano citabili separatamente."
         },
+        "researchPriorBody": {
+          "A": "RR1 · Reveal Day 2026 è stata pubblicata il 9 ottobre 2026 e resta citabile autonomamente con DOI 10.5281/zenodo.23262623. RR1 e RR2 appartengono alla stessa serie di versioni, identificata dal concept DOI 10.5281/zenodo.23262622. Per la riproducibilità va citata la versione effettivamente utilizzata.",
+          "B": "RR1 (Reveal Day) e RR2 (evidenze successive al Reveal Day) restano citabili separatamente nella stessa serie Zenodo. RR1: 10.5281/zenodo.23262623 · RR2: 10.5281/zenodo.23288603 · Concept DOI: 10.5281/zenodo.23262622."
+        },
+        "researchPriorTitle": {
+          "A": "Release scientifica precedente · RR1",
+          "B": "Release scientifiche precedenti"
+        },
         "researchReleaseBody": {
           "A": "RR2 consolida le evidenze del Reveal Day del 7 ottobre 2026: 1.615 candidature ufficiali, 481 richiedenti e 263 set preliminari di contesa. Pubblicata il 10 ottobre 2026 (UTC), possiede un DOI specifico: 10.5281/zenodo.23288603. L'inventario delle stringhe 2026 proviene da un indice secondario; non si dichiara completo il corpus ufficiale delle singole candidature APS.",
-          "B": "RR2 consolida le evidenze del Reveal Day del 7 ottobre 2026. Il deposito Zenodo è stato creato il 10 ottobre alle 22:04 UTC e ha data bibliografica di pubblicazione 11 ottobre 2026; il cutoff delle evidenze resta il 10 ottobre. Il DOI è 10.5281/zenodo.23288603. Il corpus ufficiale dei dossier individuali APS non è archiviato integralmente."
+          "B": "RR3 archivia la fotografia del 17 novembre 2026: 152 scelte di stringhe alternative, nove ritiri e 226 gruppi di contesa pubblicati con 705 candidature. La rettifica ICANN verificata il 22 novembre riconcilia il precedente scarto di quattro unità del comunicato. Questa evidenza successiva è documentata nelle Note dal campo; l’archivio citabile RR3 resta invariato."
+        },
+        "researchReleaseTitle": {
+          "A": "RR2 · Consolidamento delle evidenze post-Reveal",
+          "B": "RR3 · String Confirmation ICANN 2026"
         },
         "secondBody": {
           "A": "Il nome immediatamente a sinistra del TLD, per esempio example.com.",
@@ -1409,11 +1906,19 @@
     },
     "en": {
       "before": 2318,
-      "after": 2617,
+      "after": 2770,
       "missing": [],
       "added": [
+        "apsAtlasCurrentCSV",
         "apsAtlasDownloadHistorySub",
+        "apsAtlasSelectedReplacement",
+        "apsAtlasSnapshotBody",
+        "apsAtlasSnapshotLink",
+        "apsAtlasSnapshotTitle",
         "apsAtlasStandalone",
+        "apsAtlasStatusActive",
+        "apsAtlasStatusDeactivated",
+        "apsAtlasStatusWithdrawn",
         "audienceBriefAi",
         "audienceBriefCat",
         "audienceBriefCom",
@@ -1427,6 +1932,9 @@
         "audienceScopeNames",
         "audienceSearchHelp",
         "audienceWhyInteresting",
+        "behindRevisionCorrection20261122",
+        "behindRevisionFollowup20261127",
+        "behindRevisionStringConfirmation",
         "breadcrumbLabel",
         "cemeteryChapterCardDesc",
         "cemeteryChapterNav",
@@ -1497,6 +2005,27 @@
         "field05SourceWhen",
         "field05Status",
         "field05Title",
+        "field17ConfirmBody1",
+        "field17ConfirmBody2",
+        "field17ConfirmBody3",
+        "field17ConfirmTitle",
+        "field17ReplacementBody1",
+        "field17ReplacementBody2",
+        "field17ReplacementBody3",
+        "field17ReplacementBoundary",
+        "field17ReplacementRevision",
+        "field17ReplacementSourceAPS",
+        "field17ReplacementSourceAnnouncement",
+        "field17ReplacementSourceContention",
+        "field17ReplacementSourceReconciliation",
+        "field17ReplacementTitle",
+        "field17ReviewLabel",
+        "field17SourceAnnouncement",
+        "field17SourceContention",
+        "field17SourceCurrentAPS",
+        "field17SourceLaterRecheck",
+        "field17SourceReconciliation",
+        "field17TimingBody",
         "field18Applicant",
         "field18ApplicationID",
         "field18CalendarBody",
@@ -1519,6 +2048,58 @@
         "field18SourceExport",
         "field18SourceLocalExport",
         "field18SourceLocalStrings",
+        "field22CalendarCurrentBody",
+        "field22CalendarCurrentLimit",
+        "field22CorrectionBody1",
+        "field22CorrectionBody2",
+        "field22CorrectionLimit",
+        "field22CorrectionTitle",
+        "field22EvidenceBoundary",
+        "field22HistoricalNotice",
+        "field22LabelChangesBody",
+        "field22LiveBody1",
+        "field22LiveBody2",
+        "field22LiveTitle",
+        "field22OfficialBody",
+        "field22ReplacementBody1",
+        "field22ReplacementBody2",
+        "field22ReplacementBoundary",
+        "field22ReplacementRevision",
+        "field22ReplacementTitle",
+        "field22ReviewLabel",
+        "field22SourceCorrection",
+        "field22SourceCurrentExport",
+        "field22SourceFollowup",
+        "field22SourceOfficial",
+        "field27AboutLink",
+        "field27ChangeEvidence",
+        "field27ChangeExamplesBody",
+        "field27ChangeRequestsBody",
+        "field27Closing",
+        "field27CurrentRaw",
+        "field27ExportBody",
+        "field27FullComparison",
+        "field27HeaderApplicant",
+        "field27HeaderId",
+        "field27HeaderPublished",
+        "field27HeaderStatus",
+        "field27HeaderString",
+        "field27LatestLink",
+        "field27LimitsBody",
+        "field27LiveTitle",
+        "field27OverlapBody",
+        "field27PreviousRaw",
+        "field27Register",
+        "field27ReviewLabel",
+        "field27SourceExport",
+        "field27SourceHall",
+        "field27SourceMai",
+        "field27SourceStats",
+        "field27StatisticsBody",
+        "field27SummaryBody",
+        "field27SummaryEvidence",
+        "field27WithdrawalsCaption",
+        "field27WithdrawalsSummary",
         "helsinkiBridgeBody",
         "helsinkiBridgeCta",
         "helsinkiBridgeTitle",
@@ -1616,7 +2197,18 @@
         "insideBoardSource",
         "insideBoardTitle",
         "insideChoiceSource",
+        "insideConfirmObservedBody",
         "insideConfirmPublicScheduleBody",
+        "insideCorrectionBody",
+        "insideCorrectionDate",
+        "insideCorrectionTitle",
+        "insideInputObservedBody",
+        "insideLiveBody",
+        "insideLiveDate",
+        "insideLiveTitle",
+        "insideOfficialBody",
+        "insideOfficialDate",
+        "insideOfficialTitle",
         "insideQualityBody",
         "insideQualityDate",
         "insideQualitySource",
@@ -1635,6 +2227,60 @@
         "luganoVisionDetails",
         "meowCrowdfundingLink",
         "meowSearchTerms",
+        "news22GovAnsBody1",
+        "news22GovAnsBody2",
+        "news22GovAnsBody3",
+        "news22GovAnsStatus",
+        "news22GovAnsTitle",
+        "news22GovDiacriticsBody",
+        "news22GovObjectionsBody",
+        "news22GovObjectionsStatus",
+        "news22GovObjectionsTitle",
+        "news22GovPolicyStatus",
+        "news22GovPolicyTitle",
+        "news22GovPpBody1",
+        "news22GovPpBody2",
+        "news22GovPpBody3",
+        "news22GovPpStatus",
+        "news22GovPpTitle",
+        "news22GovReviewsBody",
+        "news22GovSourceAns",
+        "news22GovSourceDiacritics",
+        "news22GovSourceDnsAid",
+        "news22GovSourceIsoc",
+        "news22GovSourceIsocHub",
+        "news22GovSourceItu",
+        "news22GovSourceReviews",
+        "news22GovSourceSsad",
+        "news22GovSourceWipo",
+        "news22GovSsadBody",
+        "news22IndexIntro",
+        "news22IndexTitle",
+        "news22MktAfnicBody1",
+        "news22MktAfnicBody2",
+        "news22MktAfnicReportSource",
+        "news22MktAfnicSource",
+        "news22MktAfnicTitle",
+        "news22MktDnibBody1",
+        "news22MktDnibBody2",
+        "news22MktDnibSource",
+        "news22MktDnibTitle",
+        "news22MktHelsinkiContract",
+        "news22MktHelsinkiRoot",
+        "news22MktHelsinkiSource",
+        "news22MktNameBody1",
+        "news22MktNameBody2",
+        "news22MktNameSourceICANN",
+        "news22MktNameSourceVerisign",
+        "news22MktNameTitle",
+        "news22MktOptionsBody1",
+        "news22MktOptionsBody2",
+        "news22MktOptionsSource",
+        "news22MktOptionsTitle",
+        "news22MktWebLaunchEvent",
+        "news22MktWebSourceAnnouncement",
+        "news22MktWebSourceICANN",
+        "news22ReviewedLabel",
         "nissayCaseFact",
         "nissayCaseReading",
         "nissayCaseState",
@@ -1689,6 +2335,10 @@
         "release0797",
         "release0798",
         "release0799",
+        "release0800",
+        "release0801",
+        "release0802",
+        "release0803",
         "researchPaperFormat",
         "resourcesArchivesIntro",
         "resourcesArchivesTitle",
@@ -1725,13 +2375,73 @@
           "A": "ICANN reports applicants by region in the Reveal Day overview, not applications per region. This maps the applicants' region, not DNS infrastructure or the market served.",
           "B": "This view counts the 481 organizations in the official APS aggregate without multiplying them by their applications. Declared region does not identify DNS infrastructure, ultimate ownership or market served. The application comparison uses separate counts."
         },
+        "apsAtlasApps": {
+          "A": "Published applications (base IDs)",
+          "B": "published base Application IDs"
+        },
+        "apsAtlasBaseStatus": {
+          "A": "Primary-record status",
+          "B": "current application status"
+        },
+        "apsAtlasCtaBody": {
+          "A": "Explore all 1,614 published ICANN 2026 applications, IDs, -R replacement records, declared variants and exact-label matches, with links to official APS public files. Applications are not delegated TLDs.",
+          "B": "Explore 1,614 published ICANN 2026 applications, their IDs, replacement strings, variants and dated statuses, including withdrawals. Current identical-string groups are derived from the public export; official APS records remain directly accessible."
+        },
+        "apsAtlasExactMatch": {
+          "A": "Shared original primary string",
+          "B": "Shared current string"
+        },
+        "apsAtlasIntro": {
+          "A": "From TLD labels to individual applications: each published official application, its primary string, replacement option, variants, applicant and documented status observations.",
+          "B": "A source-dated view of the public ICANN 2026 applications. Each base Application ID identifies one application family; a selected replacement supplies its effective string. Withdrawn applications remain searchable."
+        },
+        "apsAtlasObservedStatusNote": {
+          "A": "APS statuses and labels are reported as observed at retrieval; they do not establish future outcomes, final string choices or adjudicated contention.",
+          "B": "Statuses belong to the effective application record at the stated source date. Withdrawn applications remain in the Atlas. A change observed between snapshots does not establish its exact date or reason."
+        },
+        "apsAtlasOverlap": {
+          "A": "Identical-primary-string groups",
+          "B": "current identical-string groups · derived"
+        },
+        "apsAtlasOverlapHint": {
+          "A": "The 263 exact original-primary-string groups involve 891 applications. These are derived preliminary matches, NOT ICANN's final contention sets. Replacement choices, similar strings and variants are separate dimensions. An APS «In Contention = FALSE» label does not prove absence of contention before String Evaluation.",
+          "B": "The export acquired on 27 November yields 222 identical-string groups involving 650 active applications, compared with 225 and 695 in the 22 November acquisition. These are project calculations. The separate official String Confirmation CSV, published on 17 November and rechecked on 27 November, is unchanged: 226 sets and 705 rows. The current calculation is not a new ICANN contention determination."
+        },
+        "apsAtlasPreliminaryList": {
+          "A": "ICANN's preliminary Reveal Day contention list",
+          "B": "ICANN · confirmed contention CSV, 17 November 2026"
+        },
+        "apsAtlasReplacements": {
+          "A": "Replacement-string records",
+          "B": "replacement records"
+        },
+        "apsAtlasScope": {
+          "A": "2,783 public ICANN APS rows normalized to 1,614 distinct applications. The 1,169 -R rows are alternatives, not extra applications. Six applications concern variants of existing TLDs only. .wdo is withheld from the public list during administrative review. Official individual APS pages are linked, not fully downloaded or checked document by document.",
+          "B": "Snapshot acquired on 27 November 2026 at 14:08 UTC. The Atlas contains 1,614 base Application IDs and 1,169 linked replacement records: 1,553 Active application families and 61 Withdrawn. The 152 selected replacements supply the effective strings. The 1,547 active new-primary applications cover 1,119 distinct strings; six existing-TLD variant-only applications are counted separately. These are calculations on the official export, which supplies no publication timestamp."
+        },
         "apsAtlasSource": {
           "A": "Official ICANN APS export",
           "B": "Official ICANN APS public listing"
         },
+        "apsAtlasStrings": {
+          "A": "Distinct new primary strings",
+          "B": "active new-primary strings"
+        },
+        "apsAtlasWdo": {
+          "A": "One of ICANN's 1,615 applications is absent from the public listing: .wdo is undergoing an administrative check.",
+          "B": "APS Statistics published on 27 November at 13:39 UTC report 1,543 Active and 72 Withdrawn; the export acquired at 14:08 UTC contains 1,553 and 61. The gap is unreconciled and does not identify eleven further applications. .wdo remains absent from the export; its summary, published on 7 October, states “Undergoing administrative check”. This last public status does not establish the current internal status or automatically explain the new gaps."
+        },
+        "caseWebOutcome": {
+          "A": ".WEB was delegated in July 2026 to VeriSign, Inc.",
+          "B": ".WEB was delegated to VeriSign, Inc. in July 2026. On 11 November, Verisign announced its launch schedule, with general registration planned for 6 April 2027."
+        },
         "cemeteryTitle": {
           "A": "The gTLD cemetery: names that did not survive their first round",
           "B": "The gTLD cemetery"
+        },
+        "contention2026Sub": {
+          "A": "ICANN published 263 preliminary identical-string contention sets on Reveal Day, covering 891 application records. The ranking below is a derived view of the public application data and remains provisional until String Confirmation Day.",
+          "B": "The ranking below retains the Reveal Day snapshot of public applications: it is a historical derived view dated 7 October 2026. The separate official ICANN CSV of 17 November contains 226 contention sets and 705 rows and was unchanged when checked on 27 November. In the Atlas, the calculation on the APS export acquired on 27 November identifies 222 identical-string groups and 650 active applications; it is not a new ICANN contention determination."
         },
         "currentDataPackNote": {
           "A": "Technical snapshot v0.7.78 · SHA-256 available beside ZIP · not a new Zenodo research release",
@@ -1739,7 +2449,7 @@
         },
         "dataStatusSub": {
           "A": "ICANN published the initial Reveal Day snapshot on 7 October. The Replacement Period is now open from 8 to 21 October; the confirmed string list and updated contention sets are scheduled for 17 November.",
-          "B": "ICANN published the initial Reveal Day snapshot on 7 October. The Replacement Period ran from 8 to 21 October; the confirmed string list and updated contention sets are scheduled for 17 November."
+          "B": "ICANN published the initial Reveal Day snapshot on 7 October and confirmed the selected strings and updated contention sets on 17 November. The current Atlas uses the separately acquired 22 November export; RR3 preserves the dated 17 November research snapshot."
         },
         "demand2026Sub": {
           "A": "Official ICANN Reveal Day counts of applicants in each region (481 in total), not counts of applications. This is about the applicants' origin, not the location of DNS infrastructure.",
@@ -1751,7 +2461,7 @@
         },
         "disputes2026StatusBody": {
           "A": "The Community Input and Objections Period begins on 17 November 2026 and is scheduled to run through 16 March 2027. The disputes below are therefore precedents that explain the mechanisms, not disputes already decided in the 2026 round.",
-          "B": "The Community Input and Objections Period begins on 17 November 2026 and is scheduled to run through 16 March 2027. The cases in this chapter are therefore precedents that explain the mechanisms, not disputes already decided in the 2026 round."
+          "B": "The ordinary community input and objections period opened on 17 November 2026 and runs through 16 March 2027. Comments, GAC Early Warnings and formal objections follow distinct procedures; their submission alone does not determine the outcome of an application."
         },
         "downloadApplicationOnlySub": {
           "A": "CSV · all application-only Explorer records · complete 2000/2004/2012 historical coverage + verified Reveal Day 2026 records currently vendored locally",
@@ -1779,7 +2489,7 @@
         },
         "exploreSnapshotClocks": {
           "A": "Five publication dates, two kinds of evidence: IANA/root snapshot · 4 Oct 2026; 2026 Reveal Day application snapshot · 7 Oct 2026; archived research RR1 · 9 Oct 2026; archived research RR2 · 10 Oct 2026; latest website update · {updated}. Website updates cannot change either archived release.",
-          "B": "Five publication dates, two kinds of evidence: IANA/root snapshot · 4 Oct 2026; 2026 Reveal Day application snapshot · 7 Oct 2026; archived research RR1 · 9 Oct 2026; archived research RR2 · 11 Oct 2026; latest website update · {updated}. Website updates cannot change either archived release."
+          "B": "IANA/root snapshot · 4 Oct 2026; root membership reviewed · 18 Nov 2026 (1,436 delegated labels); Reveal Day applications · 7 Oct 2026; archived research RR1 · 9 Oct, RR2 · 11 Oct, RR3 · 17 Nov 2026; website update · {updated}."
         },
         "eyebrow": {
           "A": "ICANN · DNS · CITIES · SOCIETY",
@@ -1825,6 +2535,10 @@
           "A": "A TLD is the ending of an Internet address, such as .com, .ch or .lugano. This site explains who can create one, who runs it and why it can matter.",
           "B": "In example.com, .com is the ending: a top-level domain, or TLD. Explore its history and check the data and sources here. .lugano is an application, not an operational extension."
         },
+        "historicalPackNote": {
+          "A": "Historical data pack v0.7.58 (9 October 2026), not the latest scientific release. For current RR2 evidence use its specific DOI.",
+          "B": "Historical data pack v0.7.58 (9 October 2026). Cite the version DOI for the specific scientific snapshot you use."
+        },
         "homeGuideIntro": {
           "A": "A TLD is what comes after the last dot in a name, such as .com, .ch or .lugano. Behind that short ending are applications, rules, institutions, contracts, technology, money and communities. Start with the guided journey or choose a question.",
           "B": "In www.example.com, .com is the top-level domain (TLD) and example.com is the registered domain. The questions below explain who makes the decisions, who runs the infrastructure and how names affect markets and communities."
@@ -1849,6 +2563,10 @@
           "A": "This is a living editorial account. RR1 (9 October) and RR2 (10 October) are separate immutable Zenodo research snapshots; the present chronicle does not retrospectively change either.",
           "B": "This is a living editorial account. RR1 (9 October) and RR2 (11 October) are separate immutable Zenodo research snapshots; the present chronicle does not retrospectively change either."
         },
+        "insideResearchCta": {
+          "A": "Research method and RR2",
+          "B": "Research method and RR3"
+        },
         "journeyFoundation": {
           "A": "The Internet is a network of networks. Names such as example.com are convenient for people; networks forward data using IP addresses. DNS connects those two worlds. The Web then uses that network to exchange requests, responses and content.",
           "B": "People remember names such as example.com. Networks use numerical addresses: DNS connects the two."
@@ -1871,7 +2589,7 @@
         },
         "outcomes2026StatusBody": {
           "A": "Reveal Day opened the pre-evaluation phase. The Replacement Period runs through 21 October, String Confirmation Day is 17 November, and the Community Input and Objections Period begins only then. The cases below are historical outcomes from earlier rounds, not 2026 results.",
-          "B": "Reveal Day opened pre-evaluation. The Replacement Period ended on 21 October 2026. String Confirmation Day is scheduled for 17 November, when the Community Input and Objections Period begins. This chapter’s cases are historical outcomes from earlier rounds, not 2026 decisions."
+          "B": "Reveal Day opened pre-evaluation. The Replacement Period ended on 21 October 2026. String Confirmation Day took place on 17 November and opened the Community Input and Objections Period, which runs until 16 March 2027. The cases in this chapter document outcomes of earlier rounds; the current 2026 process is tracked separately."
         },
         "patternWordsBody": {
           "A": "In the current APS-derived view, .agent has 13 live applications, .api 10, .robot 9 and .agi 7. OpenAI also appears with .openai and .chatgpt applications. Compared with 2012’s app/platform vocabulary, the center of gravity has visibly moved.",
@@ -1941,13 +2659,45 @@
           "A": "The scientific release manifest, GitHub tags, frozen source data and CITATION.cff support independent reproduction. RR2 is verified as a second version in RR1's original Zenodo concept series. The official ICANN 2026 aggregate and the secondary string index are deliberately distinguished; the complete official APS application-level corpus is not claimed.",
           "B": "The research manifest, GitHub tags, frozen source data and CITATION.cff support independent reproduction. RR2 is the second version in RR1’s original Zenodo concept series. The current site also archives the public APS listing retrieved on 11 October 2026: 1,614 base application IDs and 1,169 replacement records. Full individual application dossiers are not included. The current analyses and the frozen RR1/RR2 releases remain separate."
         },
+        "researchCitationText": {
+          "A": "Bregy, R. (2026). <em>Connecting the Dots: A Living Research Atlas of Top-Level Domain Expansion</em> (Research Release RR2, Post-Reveal Evidence Consolidation). Zenodo. DOI: 10.5281/zenodo.23288603.",
+          "B": "Bregy, R. (2026). <em>Connecting the Dots · Research Release RR3 · String Confirmation 2026</em>. Zenodo. DOI 10.5281/zenodo.24325521."
+        },
+        "researchDoiLabel": {
+          "A": "Persistent identifier · current Research Release RR2",
+          "B": "Persistent identifier · current Research Release RR3"
+        },
+        "researchDoiStatus": {
+          "A": "Published on Zenodo · RR2",
+          "B": "Published on Zenodo · RR3"
+        },
+        "researchNextBody": {
+          "A": "ICANN has scheduled String Confirmation Day for 17 November 2026. New evidence about confirmed strings, replacements and contention may justify Research Release RR3 after source review. No future result is assumed.",
+          "B": "RR3 documents ICANN String Confirmation on 17 November 2026. Later APS observations are dated separately in the scientific addendum."
+        },
+        "researchNextLabel": {
+          "A": "Next possible evidence milestone",
+          "B": "Scope of RR3"
+        },
         "researchPaperBody": {
           "A": "The working paper is an independently updated, non-peer-reviewed draft, not a substitute for the archived RR1 or RR2 data deposits. It sets out the research question, evidence provenance, reconstruction methodology and limitations.",
           "B": "Current working paper: {paperVersion}, revised {paperDate}. This independently updated draft has not been peer reviewed. It sets out the research question, sources, methodology and limitations; the immutable RR1 and RR2 deposits remain separately citable."
         },
+        "researchPriorBody": {
+          "A": "RR1 · Reveal Day 2026 was published on 9 October 2026 and remains independently citable under 10.5281/zenodo.23262623. RR1 and RR2 belong to the same version series, with concept DOI 10.5281/zenodo.23262622. Cite the exact version used, not the latest one indiscriminately.",
+          "B": "RR1 (Reveal Day) and RR2 (post-Reveal evidence) remain separately citable in the same Zenodo version series. RR1: 10.5281/zenodo.23262623 · RR2: 10.5281/zenodo.23288603 · Concept DOI: 10.5281/zenodo.23262622."
+        },
+        "researchPriorTitle": {
+          "A": "Earlier research release · RR1",
+          "B": "Previous research releases"
+        },
         "researchReleaseBody": {
           "A": "RR2 consolidates the verified 7 October 2026 Reveal Day evidence, including 1,615 official applications, 481 applicants and 263 preliminary contention sets. Published on 10 October 2026 (UTC), it has its own Zenodo DOI: 10.5281/zenodo.23288603. The independent 2026 string inventory is secondary evidence, and a complete official APS application-level corpus is not claimed.",
-          "B": "RR2 consolidates evidence from Reveal Day, 7 October 2026. The Zenodo deposit was created on 10 October at 22:04 UTC and has a bibliographic publication date of 11 October 2026; the evidence cutoff remains 10 October. DOI: 10.5281/zenodo.23288603. The complete individual APS dossiers are not locally archived."
+          "B": "RR3 archives the 17 November 2026 snapshot: 152 replacement selections, nine withdrawals and 226 published contention sets covering 705 applications. ICANN’s correction, verified on 22 November, reconciles the announcement’s former four-unit discrepancy. That later evidence is documented in Field Notes; the citable RR3 archive remains unchanged."
+        },
+        "researchReleaseTitle": {
+          "A": "RR2 · Post-Reveal evidence consolidation",
+          "B": "RR3 · ICANN String Confirmation 2026"
         },
         "secondBody": {
           "A": "The name immediately to the left of the TLD, for example example.com.",
@@ -2041,11 +2791,19 @@
     },
     "de": {
       "before": 2318,
-      "after": 2617,
+      "after": 2770,
       "missing": [],
       "added": [
+        "apsAtlasCurrentCSV",
         "apsAtlasDownloadHistorySub",
+        "apsAtlasSelectedReplacement",
+        "apsAtlasSnapshotBody",
+        "apsAtlasSnapshotLink",
+        "apsAtlasSnapshotTitle",
         "apsAtlasStandalone",
+        "apsAtlasStatusActive",
+        "apsAtlasStatusDeactivated",
+        "apsAtlasStatusWithdrawn",
         "audienceBriefAi",
         "audienceBriefCat",
         "audienceBriefCom",
@@ -2059,6 +2817,9 @@
         "audienceScopeNames",
         "audienceSearchHelp",
         "audienceWhyInteresting",
+        "behindRevisionCorrection20261122",
+        "behindRevisionFollowup20261127",
+        "behindRevisionStringConfirmation",
         "breadcrumbLabel",
         "cemeteryChapterCardDesc",
         "cemeteryChapterNav",
@@ -2129,6 +2890,27 @@
         "field05SourceWhen",
         "field05Status",
         "field05Title",
+        "field17ConfirmBody1",
+        "field17ConfirmBody2",
+        "field17ConfirmBody3",
+        "field17ConfirmTitle",
+        "field17ReplacementBody1",
+        "field17ReplacementBody2",
+        "field17ReplacementBody3",
+        "field17ReplacementBoundary",
+        "field17ReplacementRevision",
+        "field17ReplacementSourceAPS",
+        "field17ReplacementSourceAnnouncement",
+        "field17ReplacementSourceContention",
+        "field17ReplacementSourceReconciliation",
+        "field17ReplacementTitle",
+        "field17ReviewLabel",
+        "field17SourceAnnouncement",
+        "field17SourceContention",
+        "field17SourceCurrentAPS",
+        "field17SourceLaterRecheck",
+        "field17SourceReconciliation",
+        "field17TimingBody",
         "field18Applicant",
         "field18ApplicationID",
         "field18CalendarBody",
@@ -2151,6 +2933,58 @@
         "field18SourceExport",
         "field18SourceLocalExport",
         "field18SourceLocalStrings",
+        "field22CalendarCurrentBody",
+        "field22CalendarCurrentLimit",
+        "field22CorrectionBody1",
+        "field22CorrectionBody2",
+        "field22CorrectionLimit",
+        "field22CorrectionTitle",
+        "field22EvidenceBoundary",
+        "field22HistoricalNotice",
+        "field22LabelChangesBody",
+        "field22LiveBody1",
+        "field22LiveBody2",
+        "field22LiveTitle",
+        "field22OfficialBody",
+        "field22ReplacementBody1",
+        "field22ReplacementBody2",
+        "field22ReplacementBoundary",
+        "field22ReplacementRevision",
+        "field22ReplacementTitle",
+        "field22ReviewLabel",
+        "field22SourceCorrection",
+        "field22SourceCurrentExport",
+        "field22SourceFollowup",
+        "field22SourceOfficial",
+        "field27AboutLink",
+        "field27ChangeEvidence",
+        "field27ChangeExamplesBody",
+        "field27ChangeRequestsBody",
+        "field27Closing",
+        "field27CurrentRaw",
+        "field27ExportBody",
+        "field27FullComparison",
+        "field27HeaderApplicant",
+        "field27HeaderId",
+        "field27HeaderPublished",
+        "field27HeaderStatus",
+        "field27HeaderString",
+        "field27LatestLink",
+        "field27LimitsBody",
+        "field27LiveTitle",
+        "field27OverlapBody",
+        "field27PreviousRaw",
+        "field27Register",
+        "field27ReviewLabel",
+        "field27SourceExport",
+        "field27SourceHall",
+        "field27SourceMai",
+        "field27SourceStats",
+        "field27StatisticsBody",
+        "field27SummaryBody",
+        "field27SummaryEvidence",
+        "field27WithdrawalsCaption",
+        "field27WithdrawalsSummary",
         "helsinkiBridgeBody",
         "helsinkiBridgeCta",
         "helsinkiBridgeTitle",
@@ -2248,7 +3082,18 @@
         "insideBoardSource",
         "insideBoardTitle",
         "insideChoiceSource",
+        "insideConfirmObservedBody",
         "insideConfirmPublicScheduleBody",
+        "insideCorrectionBody",
+        "insideCorrectionDate",
+        "insideCorrectionTitle",
+        "insideInputObservedBody",
+        "insideLiveBody",
+        "insideLiveDate",
+        "insideLiveTitle",
+        "insideOfficialBody",
+        "insideOfficialDate",
+        "insideOfficialTitle",
         "insideQualityBody",
         "insideQualityDate",
         "insideQualitySource",
@@ -2267,6 +3112,60 @@
         "luganoVisionDetails",
         "meowCrowdfundingLink",
         "meowSearchTerms",
+        "news22GovAnsBody1",
+        "news22GovAnsBody2",
+        "news22GovAnsBody3",
+        "news22GovAnsStatus",
+        "news22GovAnsTitle",
+        "news22GovDiacriticsBody",
+        "news22GovObjectionsBody",
+        "news22GovObjectionsStatus",
+        "news22GovObjectionsTitle",
+        "news22GovPolicyStatus",
+        "news22GovPolicyTitle",
+        "news22GovPpBody1",
+        "news22GovPpBody2",
+        "news22GovPpBody3",
+        "news22GovPpStatus",
+        "news22GovPpTitle",
+        "news22GovReviewsBody",
+        "news22GovSourceAns",
+        "news22GovSourceDiacritics",
+        "news22GovSourceDnsAid",
+        "news22GovSourceIsoc",
+        "news22GovSourceIsocHub",
+        "news22GovSourceItu",
+        "news22GovSourceReviews",
+        "news22GovSourceSsad",
+        "news22GovSourceWipo",
+        "news22GovSsadBody",
+        "news22IndexIntro",
+        "news22IndexTitle",
+        "news22MktAfnicBody1",
+        "news22MktAfnicBody2",
+        "news22MktAfnicReportSource",
+        "news22MktAfnicSource",
+        "news22MktAfnicTitle",
+        "news22MktDnibBody1",
+        "news22MktDnibBody2",
+        "news22MktDnibSource",
+        "news22MktDnibTitle",
+        "news22MktHelsinkiContract",
+        "news22MktHelsinkiRoot",
+        "news22MktHelsinkiSource",
+        "news22MktNameBody1",
+        "news22MktNameBody2",
+        "news22MktNameSourceICANN",
+        "news22MktNameSourceVerisign",
+        "news22MktNameTitle",
+        "news22MktOptionsBody1",
+        "news22MktOptionsBody2",
+        "news22MktOptionsSource",
+        "news22MktOptionsTitle",
+        "news22MktWebLaunchEvent",
+        "news22MktWebSourceAnnouncement",
+        "news22MktWebSourceICANN",
+        "news22ReviewedLabel",
         "nissayCaseFact",
         "nissayCaseReading",
         "nissayCaseState",
@@ -2321,6 +3220,10 @@
         "release0797",
         "release0798",
         "release0799",
+        "release0800",
+        "release0801",
+        "release0802",
+        "release0803",
         "researchPaperFormat",
         "resourcesArchivesIntro",
         "resourcesArchivesTitle",
@@ -2357,13 +3260,73 @@
           "A": "ICANN veröffentlicht Bewerber nach Region, nicht Bewerbungen pro Region. Die Karte zeigt die Herkunft der Bewerber, nicht die DNS-Infrastruktur oder bediente Märkte.",
           "B": "Diese Ansicht zählt die 481 Organisationen des offiziellen APS-Aggregats, unabhängig von der Zahl ihrer Bewerbungen. Die angegebene Region belegt weder DNS-Infrastruktur noch Eigentum oder bedienten Markt. Der Bewerbungsvergleich verwendet eigene Zahlen."
         },
+        "apsAtlasApps": {
+          "A": "Veröffentlichte Bewerbungen (Basis-IDs)",
+          "B": "veröffentlichte Basis-Application-IDs"
+        },
+        "apsAtlasBaseStatus": {
+          "A": "Status des ursprünglichen Eintrags",
+          "B": "aktueller Antragsstatus"
+        },
+        "apsAtlasCtaBody": {
+          "A": "1.614 veröffentlichte ICANN-Bewerbungen 2026 mit IDs, 1.169 -R-Ersatzdatensätzen, Varianten und identischen Primärstrings. Mit direkten Links zu offiziellen APS-Seiten.",
+          "B": "1.614 veröffentlichte ICANN-Anträge 2026 mit IDs, Ersatzstrings, Varianten und datierten Statusangaben, einschliesslich Rückzügen. Aktuelle Gruppen identischer Strings werden aus dem öffentlichen Export abgeleitet; die offiziellen APS-Einträge bleiben direkt zugänglich."
+        },
+        "apsAtlasExactMatch": {
+          "A": "Gemeinsamer ursprünglicher String",
+          "B": "Gemeinsamer aktueller String"
+        },
+        "apsAtlasIntro": {
+          "A": "Von TLD-Bezeichnungen zur einzelnen Bewerbung: jede offiziell veröffentlichte Bewerbung mit ursprünglichem String, Alternative, Varianten, Antragsteller und dokumentierten Statusbeobachtungen.",
+          "B": "Eine datierte Ansicht der öffentlichen ICANN-Anträge 2026. Jede Basis-Application-ID bezeichnet eine Antragsfamilie; ein ausgewählter Ersatzstring wird zum effektiven String. Zurückgezogene Anträge bleiben auffindbar."
+        },
+        "apsAtlasObservedStatusNote": {
+          "A": "APS-Statusangaben und Kennzeichnungen werden zum Abrufzeitpunkt dokumentiert. Daraus folgen keine endgültigen Ergebnisse, String-Auswahlen oder bestätigten Konfliktgruppen.",
+          "B": "Die Statusangaben betreffen den effektiven Antragsdatensatz zum angegebenen Quellenzeitpunkt. Zurückgezogene Anträge bleiben im Atlas. Eine zwischen zwei Erhebungen beobachtete Änderung belegt weder deren genauen Zeitpunkt noch den Grund."
+        },
+        "apsAtlasOverlap": {
+          "A": "Gruppen identischer Primärstrings",
+          "B": "aktuelle Gruppen identischer Strings · abgeleitet"
+        },
+        "apsAtlasOverlapHint": {
+          "A": "Die 263 Gruppen identischer ursprünglicher Primärstrings umfassen 891 Bewerbungen. Es handelt sich um abgeleitete vorläufige Übereinstimmungen, NICHT um endgültige ICANN-Konkurrenzgruppen. Alternativen, ähnliche Zeichenfolgen und Varianten sind getrennt. «In Contention = FALSE» belegt vor der String Evaluation keine Konfliktfreiheit.",
+          "B": "Aus dem am 27. November abgerufenen Export ergeben sich 222 Gruppen identischer Strings mit 650 aktiven Bewerbungen, gegenüber 225 und 695 beim Abruf vom 22. November. Dies sind Berechnungen des Projekts. Die separate offizielle String-Confirmation-CSV, veröffentlicht am 17. November und erneut geprüft am 27. November, bleibt unverändert: 226 Sets und 705 Zeilen. Die aktuelle Berechnung ist keine neue ICANN-Feststellung zu Contention."
+        },
+        "apsAtlasPreliminaryList": {
+          "A": "Vorläufige ICANN-Konkurrenzliste",
+          "B": "ICANN · bestätigtes Contention-CSV, 17. November 2026"
+        },
+        "apsAtlasReplacements": {
+          "A": "Datensätze für Ersatzstrings",
+          "B": "Ersatzstring-Datensätze"
+        },
+        "apsAtlasScope": {
+          "A": "2.783 öffentliche ICANN-APS-Zeilen ergeben 1.614 eindeutige Bewerbungen. Die 1.169 -R-Einträge sind Alternativen, keine zusätzlichen Bewerbungen. Sechs Bewerbungen betreffen ausschließlich Varianten bestehender TLDs. .wdo fehlt aufgrund einer administrativen Prüfung. Einzelne APS-Seiten sind verlinkt, jedoch nicht vollständig heruntergeladen oder einzeln geprüft.",
+          "B": "Stand des Abrufs: 27. November 2026, 14:08 UTC. Der Atlas enthält 1.614 Basis-Application-IDs und 1.169 verknüpfte Ersatzdatensätze: 1.553 Bewerbungsfamilien mit Active und 61 mit Withdrawn. Die 152 gewählten Ersatzstrings liefern die tatsächlich geführten Strings. Die 1.547 aktiven Bewerbungen für neue Primärstrings umfassen 1.119 verschiedene Strings; sechs reine Variantenbewerbungen für bestehende TLDs werden separat gezählt. Dies sind Berechnungen anhand des offiziellen Exports, der keinen Veröffentlichungszeitpunkt nennt."
+        },
         "apsAtlasSource": {
           "A": "Offizieller ICANN-APS-Export",
           "B": "Offizielle öffentliche ICANN-APS-Liste"
         },
+        "apsAtlasStrings": {
+          "A": "Unterschiedliche neue Primärstrings",
+          "B": "aktive neue Primärstrings"
+        },
+        "apsAtlasWdo": {
+          "A": "Eine der 1.615 von ICANN gezählten Bewerbungen fehlt in der öffentlichen Liste: .wdo unterliegt noch einer administrativen Prüfung.",
+          "B": "Die am 27. November um 13:39 UTC veröffentlichte APS-Statistik nennt 1.543 Active und 72 Withdrawn; der um 14:08 UTC abgerufene Export enthält 1.553 und 61. Die Abweichung ist ungeklärt und identifiziert keine elf weiteren Bewerbungen. .wdo fehlt weiterhin im Export; die am 7. Oktober veröffentlichte Übersicht nennt „Undergoing administrative check“. Dieser letzte öffentliche Status belegt weder den aktuellen internen Status noch erklärt er automatisch die neuen Abweichungen."
+        },
+        "caseWebOutcome": {
+          "A": ".WEB wurde im Juli 2026 an VeriSign, Inc. delegiert.",
+          "B": ".WEB wurde im Juli 2026 an VeriSign, Inc. delegiert. Am 11. November gab Verisign den Zeitplan für den Marktstart bekannt; die allgemeine Registrierung ist ab dem 6. April 2027 vorgesehen."
+        },
         "cemeteryTitle": {
           "A": "Der gTLD-Friedhof: Namen ohne dauerhaftes Überleben",
           "B": "Der gTLD-Friedhof"
+        },
+        "contention2026Sub": {
+          "A": "ICANN veröffentlichte am Reveal Day 263 vorläufige Contention Sets identischer Strings mit 891 Bewerbungsdatensätzen. Das Ranking unten ist aus den öffentlichen Bewerbungsdaten abgeleitet und bleibt bis zum String Confirmation Day vorläufig.",
+          "B": "Die Rangliste unten bewahrt den Stand der öffentlichen Bewerbungen am Reveal Day: eine historische, abgeleitete Ansicht vom 7. Oktober 2026. Die separate offizielle ICANN-CSV vom 17. November umfasst 226 Contention Sets mit 705 Zeilen und war bei der Prüfung vom 27. November unverändert. Die Berechnung im Atlas anhand des am 27. November abgerufenen APS-Exports identifiziert dagegen 222 Gruppen identischer Strings und 650 aktive Bewerbungen; sie ist keine neue ICANN-Feststellung zu Contention."
         },
         "currentDataPackNote": {
           "A": "Technische Momentaufnahme v0.7.78 · SHA-256-Prüfsumme verfügbar · keine neue Zenodo-Forschungsrelease",
@@ -2371,7 +3334,7 @@
         },
         "dataStatusSub": {
           "A": "ICANN veröffentlichte den ersten Reveal-Day-Snapshot am 7. Oktober. Vom 8. bis 21. Oktober läuft die Replacement-Periode; die bestätigte String-Liste und aktualisierte Contention Sets sind für den 17. November vorgesehen.",
-          "B": "ICANN veröffentlichte den ersten Reveal-Day-Snapshot am 7. Oktober. Die Replacement-Periode dauerte vom 8. bis 21. Oktober; die bestätigte String-Liste und aktualisierte Contention Sets sind für den 17. November vorgesehen."
+          "B": "ICANN veröffentlichte den ersten Reveal-Day-Stand am 7. Oktober und bestätigte die ausgewählten Strings sowie aktualisierte Konkurrenzgruppen am 17. November. Der aktuelle Atlas verwendet den separat erfassten Export vom 22. November; RR3 bewahrt den datierten Forschungsstand vom 17. November."
         },
         "demand2026Sub": {
           "A": "Amtliche ICANN-Zahlen zu Bewerbern je Region am Reveal Day (insgesamt 481), nicht zu Bewerbungen. Sie zeigen die Herkunft der Bewerber, nicht die DNS-Infrastruktur.",
@@ -2383,7 +3346,7 @@
         },
         "disputes2026StatusBody": {
           "A": "Die Community Input and Objections Period beginnt am 17. November 2026 und soll bis 16. März 2027 laufen. Die Streitfälle unten sind daher Präzedenzfälle zur Erklärung der Mechanismen, keine bereits entschiedenen Konflikte der Runde 2026.",
-          "B": "Die Community Input and Objections Period beginnt am 17. November 2026 und soll bis 16. März 2027 laufen. Die Streitfälle dieses Kapitels sind daher Präzedenzfälle zur Erklärung der Mechanismen, keine bereits entschiedenen Konflikte der Runde 2026."
+          "B": "Die reguläre Frist für Stellungnahmen und Einwendungen begann am 17. November 2026 und endet am 16. März 2027. Kommentare, GAC Early Warnings und formelle Einwendungen unterliegen unterschiedlichen Verfahren; ihre Einreichung allein entscheidet nicht über eine Bewerbung."
         },
         "downloadApplicationOnlySub": {
           "A": "CSV · alle reinen Bewerbungs-Explorer-Datensätze · vollständige historische Abdeckung 2000/2004/2012 + derzeit lokal vendorte, verifizierte Reveal-Day-Datensätze 2026",
@@ -2411,7 +3374,7 @@
         },
         "exploreSnapshotClocks": {
           "A": "Fünf Veröffentlichungsdaten, zwei Evidenzebenen: IANA/Root-Snapshot · 4. Okt. 2026; Reveal-Day-Bewerbungssnapshot · 7. Okt. 2026; archivierte Forschungsversion RR1 · 9. Okt. 2026; RR2 · 10. Okt. 2026; letzte Website-Aktualisierung · {updated}. Website-Änderungen überschreiben keine archivierte Forschungsversion.",
-          "B": "Fünf Veröffentlichungsdaten, zwei Evidenzebenen: IANA/Root-Snapshot · 4. Okt. 2026; Reveal-Day-Bewerbungssnapshot · 7. Okt. 2026; archivierte Forschungsversion RR1 · 9. Okt. 2026; RR2 · 11. Okt. 2026; letzte Website-Aktualisierung · {updated}. Website-Änderungen überschreiben keine archivierte Forschungsversion."
+          "B": "IANA/Root-Snapshot · 4. Okt. 2026; Delegierungen geprüft · 18. Nov. 2026 (1.436 Labels); Reveal-Day-Bewerbungen · 7. Okt. 2026; archivierte Forschung RR1 · 9. Okt., RR2 · 11. Okt., RR3 · 17. Nov. 2026; Website-Aktualisierung · {updated}."
         },
         "eyebrow": {
           "A": "ICANN · DNS · STÄDTE · GESELLSCHAFT",
@@ -2457,6 +3420,10 @@
           "A": "Eine TLD ist die Endung einer Internetadresse, etwa .com, .ch oder .lugano. Diese Website zeigt, wer eine solche Endung schaffen kann, wer sie betreibt und warum sie wichtig sein kann.",
           "B": "In example.com ist .com die Endung: eine Top-Level-Domain, kurz TLD. Hier können Sie ihre Geschichte erkunden sowie Daten und Quellen prüfen. .lugano ist eine Bewerbung, keine bereits betriebene Endung."
         },
+        "historicalPackNote": {
+          "A": "Historisches Datenpaket v0.7.58 (9. Oktober 2026), nicht die neueste wissenschaftliche Version. Für RR2 den spezifischen DOI verwenden.",
+          "B": "Historisches Datenpaket v0.7.58 (9. Oktober 2026). Zitiere die DOI der jeweils verwendeten Forschungsversion."
+        },
         "homeGuideIntro": {
           "A": "Eine TLD ist das, was nach dem letzten Punkt eines Namens steht, etwa .com, .ch oder .lugano. Hinter dieser kurzen Endung stehen Bewerbungen, Regeln, Institutionen, Verträge, Technik, Geld und Gemeinschaften. Beginnen Sie mit dem geführten Weg oder wählen Sie eine Frage.",
           "B": "In www.example.com ist .com die Top-Level-Domain (TLD) und example.com die registrierte Domain. Die folgenden Fragen zeigen, wer entscheidet, wer die Infrastruktur betreibt und wie Namen Wirtschaft und Gemeinschaften prägen."
@@ -2481,6 +3448,10 @@
           "A": "Diese Chronologie ist redaktionell veränderbar. RR1 (9. Oktober) und RR2 (10. Oktober) sind getrennte, unveränderliche Zenodo-Forschungssnapshots; die laufende Chronik verändert keinen dieser Stände rückwirkend.",
           "B": "Diese Chronologie ist redaktionell veränderbar. RR1 (9. Oktober) und RR2 (11. Oktober) sind getrennte, unveränderliche Zenodo-Forschungssnapshots; die laufende Chronik verändert keinen dieser Stände rückwirkend."
         },
+        "insideResearchCta": {
+          "A": "Forschungsmethode und RR2",
+          "B": "Forschungsmethode und RR3"
+        },
         "journeyFoundation": {
           "A": "Das Internet ist ein Netz aus Netzen. Namen wie example.com sind für Menschen praktisch; Netzwerke leiten Daten anhand von IP-Adressen weiter. DNS verbindet diese beiden Welten. Das Web nutzt dieses Netz anschließend für Anfragen, Antworten und Inhalte.",
           "B": "Menschen merken sich Namen wie example.com. Netze verwenden numerische Adressen: DNS verbindet beides."
@@ -2503,7 +3474,7 @@
         },
         "outcomes2026StatusBody": {
           "A": "Reveal Day eröffnete die Pre-Evaluation-Phase. Die Replacement-Periode läuft bis 21. Oktober, String Confirmation Day ist am 17. November; erst dann beginnt die Community Input and Objections Period. Die Fälle unten sind historische Ergebnisse früherer Runden, keine 2026-Resultate.",
-          "B": "Reveal Day eröffnete die Vorprüfung. Die Frist für Ersatzzeichenfolgen endete am 21. Oktober 2026. Für den 17. November ist der String Confirmation Day geplant, mit dem die Phase für öffentliche Eingaben und Einsprüche beginnt. Die Fälle dieses Kapitels dokumentieren Ergebnisse früherer Runden, keine Entscheidungen zur Runde 2026."
+          "B": "Reveal Day eröffnete die Vorprüfung. Die Frist für Ersatzstrings endete am 21. Oktober 2026. Der String Confirmation Day fand am 17. November statt und eröffnete die Phase für öffentliche Eingaben und Einsprüche bis zum 16. März 2027. Die Fälle dieses Kapitels dokumentieren Ergebnisse früherer Runden; das laufende Verfahren 2026 wird separat verfolgt."
         },
         "patternWordsBody": {
           "A": "In der aktuellen, aus APS abgeleiteten Sicht hat .agent 13 aktive Bewerbungen, .api 10, .robot 9 und .agi 7. OpenAI erscheint außerdem mit .openai und .chatgpt. Gegenüber dem App-/Plattformvokabular von 2012 hat sich der Schwerpunkt sichtbar verschoben.",
@@ -2569,13 +3540,45 @@
           "A": "Forschungsmanifest, GitHub-Tags, eingefrorene Quelldaten und CITATION.cff ermöglichen unabhängige Prüfungen. RR2 wurde als zweite Version in der ursprünglichen RR1-Zenodo-Konzeptreihe bestätigt. Die offizielle ICANN-Gesamtstatistik 2026 und der sekundäre Stringindex werden ausdrücklich unterschieden; eine vollständige amtliche APS-Einzelbewerbungsdatei wird nicht behauptet.",
           "B": "Forschungsmanifest, GitHub-Tags, eingefrorene Quelldaten und CITATION.cff ermöglichen unabhängige Prüfungen. RR2 ist die zweite Version der ursprünglichen RR1-Zenodo-Konzeptreihe. Die aktuelle Website archiviert außerdem die am 11. Oktober 2026 abgerufene öffentliche APS-Liste: 1.614 Basis-Bewerbungs-IDs und 1.169 Ersatzdatensätze. Vollständige individuelle Bewerbungsdossiers sind nicht enthalten. Aktuelle Auswertungen und eingefrorene RR1/RR2-Releases bleiben getrennt."
         },
+        "researchCitationText": {
+          "A": "Bregy, R. (2026). <em>Connecting the Dots: A Living Research Atlas of Top-Level Domain Expansion</em> (Research Release RR2, Post-Reveal Evidence Consolidation). Zenodo. DOI: 10.5281/zenodo.23288603.",
+          "B": "Bregy, R. (2026). <em>Connecting the Dots · Research Release RR3 · String Confirmation 2026</em>. Zenodo. DOI 10.5281/zenodo.24325521."
+        },
+        "researchDoiLabel": {
+          "A": "Persistenter Identifikator · aktuelle Research Release RR2",
+          "B": "Persistenter Identifikator · aktuelle Forschungsveröffentlichung RR3"
+        },
+        "researchDoiStatus": {
+          "A": "Auf Zenodo veröffentlicht · RR2",
+          "B": "Auf Zenodo veröffentlicht · RR3"
+        },
+        "researchNextBody": {
+          "A": "ICANN hat den String Confirmation Day für den 17. November 2026 angesetzt. Bestätigte Strings, Ersatzentscheidungen und Konflikte können nach Quellenprüfung die nächste Forschungsversion RR3 begründen. Ergebnisse werden nicht vorweggenommen.",
+          "B": "RR3 dokumentiert die ICANN String Confirmation vom 17. November 2026. Der Forschungsnachtrag führt spätere APS-Beobachtungen mit eigenen Datumsangaben auf."
+        },
+        "researchNextLabel": {
+          "A": "Nächster möglicher Evidenzmeilenstein",
+          "B": "Umfang von RR3"
+        },
         "researchPaperBody": {
           "A": "Das Working Paper bleibt ein separat überarbeiteter, nicht begutachteter Entwurf und ist kein Ersatz für die unveränderlichen RR1- und RR2-Datensätze. Es erläutert Forschungsfrage, Quellenherkunft, Rekonstruktionsmethode und Grenzen.",
           "B": "Aktuelles Working Paper: {paperVersion}, überarbeitet am {paperDate}. Der separat aktualisierte Entwurf wurde nicht wissenschaftlich begutachtet. Er erläutert Forschungsfrage, Quellen, Methode und Grenzen; die unveränderlichen RR1- und RR2-Veröffentlichungen bleiben eigenständig zitierbar."
         },
+        "researchPriorBody": {
+          "A": "RR1 · Reveal Day 2026 erschien am 9. Oktober 2026 und bleibt unter DOI 10.5281/zenodo.23262623 eigenständig zitierbar. RR1 und RR2 gehören derselben Zenodo-Versionsreihe mit der Konzept-DOI 10.5281/zenodo.23262622 an. Für reproduzierbare Ergebnisse sollte stets die tatsächlich verwendete Version zitiert werden.",
+          "B": "RR1 (Reveal Day) und RR2 (Evidenz nach Reveal Day) bleiben in derselben Zenodo-Reihe separat zitierbar. RR1: 10.5281/zenodo.23262623 · RR2: 10.5281/zenodo.23288603 · Concept DOI: 10.5281/zenodo.23262622."
+        },
+        "researchPriorTitle": {
+          "A": "Frühere Forschungsversion · RR1",
+          "B": "Frühere Forschungsveröffentlichungen"
+        },
         "researchReleaseBody": {
           "A": "RR2 konsolidiert die überprüften Daten des Reveal Day vom 7. Oktober 2026: 1.615 offizielle Bewerbungen, 481 Bewerber und 263 vorläufige Konfliktgruppen. Die am 10. Oktober 2026 (UTC) veröffentlichte Version hat eine eigene Zenodo-DOI: 10.5281/zenodo.23288603. Die separate Stringübersicht 2026 stammt aus einem Sekundärindex; ein vollständiger lokaler offizieller APS-Einzelbewerbungskorpus wird nicht behauptet.",
-          "B": "RR2 konsolidiert die Belege zum Reveal Day vom 7. Oktober 2026. Das Zenodo-Depot wurde am 10. Oktober um 22:04 UTC erstellt; sein bibliografisches Publikationsdatum ist der 11. Oktober 2026. Der Datenstichtag bleibt der 10. Oktober. DOI: 10.5281/zenodo.23288603. Die vollständigen einzelnen APS-Dossiers sind nicht lokal archiviert."
+          "B": "RR3 archiviert den Stand vom 17. November 2026: 152 Ersatzstring-Auswahlen, neun Rückzüge und 226 veröffentlichte Konkurrenzgruppen mit 705 Bewerbungen. ICANNs am 22. November geprüfte Korrektur gleicht die frühere Differenz von vier Einheiten in der Mitteilung ab. Dieser spätere Beleg ist in den Feldnotizen dokumentiert; das zitierbare RR3-Archiv bleibt unverändert."
+        },
+        "researchReleaseTitle": {
+          "A": "RR2 · Konsolidierung der Evidenz nach Reveal Day",
+          "B": "RR3 · ICANN String Confirmation 2026"
         },
         "secondBody": {
           "A": "Der Name direkt links von der TLD, zum Beispiel example.com.",
@@ -2669,11 +3672,19 @@
     },
     "fr": {
       "before": 2318,
-      "after": 2617,
+      "after": 2770,
       "missing": [],
       "added": [
+        "apsAtlasCurrentCSV",
         "apsAtlasDownloadHistorySub",
+        "apsAtlasSelectedReplacement",
+        "apsAtlasSnapshotBody",
+        "apsAtlasSnapshotLink",
+        "apsAtlasSnapshotTitle",
         "apsAtlasStandalone",
+        "apsAtlasStatusActive",
+        "apsAtlasStatusDeactivated",
+        "apsAtlasStatusWithdrawn",
         "audienceBriefAi",
         "audienceBriefCat",
         "audienceBriefCom",
@@ -2687,6 +3698,9 @@
         "audienceScopeNames",
         "audienceSearchHelp",
         "audienceWhyInteresting",
+        "behindRevisionCorrection20261122",
+        "behindRevisionFollowup20261127",
+        "behindRevisionStringConfirmation",
         "breadcrumbLabel",
         "cemeteryChapterCardDesc",
         "cemeteryChapterNav",
@@ -2757,6 +3771,27 @@
         "field05SourceWhen",
         "field05Status",
         "field05Title",
+        "field17ConfirmBody1",
+        "field17ConfirmBody2",
+        "field17ConfirmBody3",
+        "field17ConfirmTitle",
+        "field17ReplacementBody1",
+        "field17ReplacementBody2",
+        "field17ReplacementBody3",
+        "field17ReplacementBoundary",
+        "field17ReplacementRevision",
+        "field17ReplacementSourceAPS",
+        "field17ReplacementSourceAnnouncement",
+        "field17ReplacementSourceContention",
+        "field17ReplacementSourceReconciliation",
+        "field17ReplacementTitle",
+        "field17ReviewLabel",
+        "field17SourceAnnouncement",
+        "field17SourceContention",
+        "field17SourceCurrentAPS",
+        "field17SourceLaterRecheck",
+        "field17SourceReconciliation",
+        "field17TimingBody",
         "field18Applicant",
         "field18ApplicationID",
         "field18CalendarBody",
@@ -2779,6 +3814,58 @@
         "field18SourceExport",
         "field18SourceLocalExport",
         "field18SourceLocalStrings",
+        "field22CalendarCurrentBody",
+        "field22CalendarCurrentLimit",
+        "field22CorrectionBody1",
+        "field22CorrectionBody2",
+        "field22CorrectionLimit",
+        "field22CorrectionTitle",
+        "field22EvidenceBoundary",
+        "field22HistoricalNotice",
+        "field22LabelChangesBody",
+        "field22LiveBody1",
+        "field22LiveBody2",
+        "field22LiveTitle",
+        "field22OfficialBody",
+        "field22ReplacementBody1",
+        "field22ReplacementBody2",
+        "field22ReplacementBoundary",
+        "field22ReplacementRevision",
+        "field22ReplacementTitle",
+        "field22ReviewLabel",
+        "field22SourceCorrection",
+        "field22SourceCurrentExport",
+        "field22SourceFollowup",
+        "field22SourceOfficial",
+        "field27AboutLink",
+        "field27ChangeEvidence",
+        "field27ChangeExamplesBody",
+        "field27ChangeRequestsBody",
+        "field27Closing",
+        "field27CurrentRaw",
+        "field27ExportBody",
+        "field27FullComparison",
+        "field27HeaderApplicant",
+        "field27HeaderId",
+        "field27HeaderPublished",
+        "field27HeaderStatus",
+        "field27HeaderString",
+        "field27LatestLink",
+        "field27LimitsBody",
+        "field27LiveTitle",
+        "field27OverlapBody",
+        "field27PreviousRaw",
+        "field27Register",
+        "field27ReviewLabel",
+        "field27SourceExport",
+        "field27SourceHall",
+        "field27SourceMai",
+        "field27SourceStats",
+        "field27StatisticsBody",
+        "field27SummaryBody",
+        "field27SummaryEvidence",
+        "field27WithdrawalsCaption",
+        "field27WithdrawalsSummary",
         "helsinkiBridgeBody",
         "helsinkiBridgeCta",
         "helsinkiBridgeTitle",
@@ -2876,7 +3963,18 @@
         "insideBoardSource",
         "insideBoardTitle",
         "insideChoiceSource",
+        "insideConfirmObservedBody",
         "insideConfirmPublicScheduleBody",
+        "insideCorrectionBody",
+        "insideCorrectionDate",
+        "insideCorrectionTitle",
+        "insideInputObservedBody",
+        "insideLiveBody",
+        "insideLiveDate",
+        "insideLiveTitle",
+        "insideOfficialBody",
+        "insideOfficialDate",
+        "insideOfficialTitle",
         "insideQualityBody",
         "insideQualityDate",
         "insideQualitySource",
@@ -2895,6 +3993,60 @@
         "luganoVisionDetails",
         "meowCrowdfundingLink",
         "meowSearchTerms",
+        "news22GovAnsBody1",
+        "news22GovAnsBody2",
+        "news22GovAnsBody3",
+        "news22GovAnsStatus",
+        "news22GovAnsTitle",
+        "news22GovDiacriticsBody",
+        "news22GovObjectionsBody",
+        "news22GovObjectionsStatus",
+        "news22GovObjectionsTitle",
+        "news22GovPolicyStatus",
+        "news22GovPolicyTitle",
+        "news22GovPpBody1",
+        "news22GovPpBody2",
+        "news22GovPpBody3",
+        "news22GovPpStatus",
+        "news22GovPpTitle",
+        "news22GovReviewsBody",
+        "news22GovSourceAns",
+        "news22GovSourceDiacritics",
+        "news22GovSourceDnsAid",
+        "news22GovSourceIsoc",
+        "news22GovSourceIsocHub",
+        "news22GovSourceItu",
+        "news22GovSourceReviews",
+        "news22GovSourceSsad",
+        "news22GovSourceWipo",
+        "news22GovSsadBody",
+        "news22IndexIntro",
+        "news22IndexTitle",
+        "news22MktAfnicBody1",
+        "news22MktAfnicBody2",
+        "news22MktAfnicReportSource",
+        "news22MktAfnicSource",
+        "news22MktAfnicTitle",
+        "news22MktDnibBody1",
+        "news22MktDnibBody2",
+        "news22MktDnibSource",
+        "news22MktDnibTitle",
+        "news22MktHelsinkiContract",
+        "news22MktHelsinkiRoot",
+        "news22MktHelsinkiSource",
+        "news22MktNameBody1",
+        "news22MktNameBody2",
+        "news22MktNameSourceICANN",
+        "news22MktNameSourceVerisign",
+        "news22MktNameTitle",
+        "news22MktOptionsBody1",
+        "news22MktOptionsBody2",
+        "news22MktOptionsSource",
+        "news22MktOptionsTitle",
+        "news22MktWebLaunchEvent",
+        "news22MktWebSourceAnnouncement",
+        "news22MktWebSourceICANN",
+        "news22ReviewedLabel",
         "nissayCaseFact",
         "nissayCaseReading",
         "nissayCaseState",
@@ -2949,6 +4101,10 @@
         "release0797",
         "release0798",
         "release0799",
+        "release0800",
+        "release0801",
+        "release0802",
+        "release0803",
         "researchPaperFormat",
         "resourcesArchivesIntro",
         "resourcesArchivesTitle",
@@ -2985,13 +4141,73 @@
           "A": "L’ICANN publie les candidats par région, non les candidatures par région. La carte représente leur origine, pas l’infrastructure DNS ni les marchés desservis.",
           "B": "Cette vue compte les 481 organisations de l’agrégat officiel APS sans les multiplier par leurs candidatures. La région déclarée ne désigne ni infrastructure DNS, ni propriété ultime, ni marché desservi. La comparaison des candidatures utilise des décomptes distincts."
         },
+        "apsAtlasApps": {
+          "A": "Candidatures publiées (ID de base)",
+          "B": "Application ID de base publiés"
+        },
+        "apsAtlasBaseStatus": {
+          "A": "État de l'enregistrement initial",
+          "B": "statut actuel de la candidature"
+        },
+        "apsAtlasCtaBody": {
+          "A": "Explorez les 1 614 candidatures ICANN 2026 publiées, les ID, les alternatives -R, les variantes et les chaînes primaires identiques, avec accès aux fiches APS officielles.",
+          "B": "Explorez les 1 614 candidatures ICANN 2026 publiées, leurs ID, remplacements, variantes et statuts datés, y compris les retraits. Les groupes actuels de chaînes identiques sont calculés à partir de l’export public ; les fiches APS officielles restent directement accessibles."
+        },
+        "apsAtlasExactMatch": {
+          "A": "Chaîne primaire partagée",
+          "B": "Chaîne actuelle partagée"
+        },
+        "apsAtlasIntro": {
+          "A": "Des extensions aux candidatures individuelles : chaque dossier officiellement publié, sa chaîne initiale, son éventuel remplacement, ses variantes, son déposant et ses états documentés.",
+          "B": "Une vue datée des candidatures publiques ICANN 2026. Chaque Application ID de base identifie une famille de candidature ; le remplacement sélectionné fournit sa chaîne effective. Les candidatures retirées restent consultables."
+        },
+        "apsAtlasObservedStatusNote": {
+          "A": "Les statuts et étiquettes APS sont ceux observés lors de l'acquisition ; ils ne présagent ni les résultats futurs, ni les choix de chaînes, ni les contentions définitives.",
+          "B": "Les statuts concernent l’enregistrement effectif de la candidature à la date de la source. Les candidatures retirées restent dans l’Atlas. Un changement observé entre deux relevés ne permet d’établir ni sa date exacte ni sa raison."
+        },
+        "apsAtlasOverlap": {
+          "A": "Groupes de chaînes primaires identiques",
+          "B": "groupes actuels de chaînes identiques · calculés"
+        },
+        "apsAtlasOverlapHint": {
+          "A": "Les 263 groupes de chaînes primaires initiales identiques concernent 891 candidatures. Ce sont des correspondances dérivées et provisoires, et NON des ensembles de contention définitifs de l'ICANN. Les remplacements, chaînes similaires et variantes sont distincts. «In Contention = FALSE» ne prouve pas l'absence de contention avant l'évaluation des chaînes.",
+          "B": "L’export acquis le 27 novembre donne 222 groupes de chaînes identiques et 650 candidatures actives, contre 225 et 695 dans l’acquisition du 22 novembre. Il s’agit de calculs du projet. Le CSV officiel distinct de String Confirmation, publié le 17 novembre et vérifié à nouveau le 27 novembre, reste inchangé : 226 ensembles et 705 lignes. Le calcul actuel ne constitue pas une nouvelle détermination des contentions par l’ICANN."
+        },
+        "apsAtlasPreliminaryList": {
+          "A": "Liste ICANN préliminaire des contentions",
+          "B": "ICANN · CSV des conflits confirmés, 17 novembre 2026"
+        },
+        "apsAtlasReplacements": {
+          "A": "Enregistrements de chaînes de remplacement",
+          "B": "enregistrements de remplacement"
+        },
+        "apsAtlasScope": {
+          "A": "2 783 lignes publiques ICANN APS réunies en 1 614 candidatures distinctes. Les 1 169 entrées -R sont des alternatives et non de nouvelles candidatures. Six dossiers concernent uniquement des variantes de TLD existants. .wdo est exclue de la liste durant son contrôle administratif. Les pages APS individuelles sont liées, mais les dossiers et PDF ne sont ni intégralement téléchargés ni vérifiés un à un.",
+          "B": "Instantané acquis le 27 novembre 2026 à 14:08 UTC. L’Atlas contient 1 614 Application ID de base et 1 169 enregistrements de remplacement associés : 1 553 candidatures Active et 61 Withdrawn. Les 152 remplacements sélectionnés fournissent les chaînes effectives. Les 1 547 candidatures actives à de nouvelles chaînes primaires couvrent 1 119 chaînes distinctes ; six candidatures portant uniquement sur des variantes de TLD existants sont comptées séparément. Ces nombres sont calculés sur l’export officiel, qui n’indique pas de date de publication."
+        },
         "apsAtlasSource": {
           "A": "Export officiel ICANN APS",
           "B": "Liste publique officielle ICANN APS"
         },
+        "apsAtlasStrings": {
+          "A": "Chaînes primaires nouvelles distinctes",
+          "B": "nouvelles chaînes primaires actives"
+        },
+        "apsAtlasWdo": {
+          "A": "L'une des 1 615 candidatures comptées par l'ICANN ne figure pas dans la liste publique : .wdo est encore soumise à une vérification administrative.",
+          "B": "Les statistiques APS publiées le 27 novembre à 13:39 UTC indiquent 1 543 Active et 72 Withdrawn ; l’export acquis à 14:08 UTC en contient 1 553 et 61. Cet écart reste non réconcilié et n’identifie pas onze candidatures supplémentaires. .wdo reste absent de l’export ; sa fiche, publiée le 7 octobre, indique « Undergoing administrative check ». Ce dernier statut public n’établit pas le statut interne actuel et n’explique pas automatiquement les nouveaux écarts."
+        },
+        "caseWebOutcome": {
+          "A": ".WEB a été délégué en juillet 2026 à VeriSign, Inc.",
+          "B": ".WEB a été délégué à VeriSign, Inc. en juillet 2026. Le 11 novembre, Verisign a annoncé son calendrier de lancement, avec une ouverture des enregistrements au public prévue le 6 avril 2027."
+        },
         "cemeteryTitle": {
           "A": "Le cimetière des gTLD : des noms sans pérennité",
           "B": "Le cimetière des gTLD"
+        },
+        "contention2026Sub": {
+          "A": "L’ICANN a publié au Reveal Day 263 contention sets préliminaires de chaînes identiques couvrant 891 dossiers. Le classement ci-dessous est une vue dérivée des données publiques et reste provisoire jusqu’au String Confirmation Day.",
+          "B": "Le classement ci-dessous conserve l’instantané des candidatures publiques au Reveal Day : il s’agit d’une vue dérivée historique datée du 7 octobre 2026. Le CSV officiel ICANN distinct du 17 novembre compte 226 contention sets et 705 lignes ; il est resté identique lors de la vérification du 27 novembre. Dans l’Atlas, le calcul sur l’export APS acquis le 27 novembre identifie 222 groupes de chaînes identiques et 650 candidatures actives ; il ne constitue pas une nouvelle détermination des contentions par l’ICANN."
         },
         "currentDataPackNote": {
           "A": "Instantané technique v0.7.78 · empreinte SHA-256 disponible · ne constitue pas une nouvelle version scientifique Zenodo",
@@ -2999,7 +4215,7 @@
         },
         "dataStatusSub": {
           "A": "L’ICANN a publié le snapshot initial du Reveal Day le 7 octobre. La Replacement Period est ouverte du 8 au 21 octobre ; la liste confirmée des chaînes et les contention sets mis à jour sont prévus pour le 17 novembre.",
-          "B": "L’ICANN a publié le snapshot initial du Reveal Day le 7 octobre. La période de remplacement s’est déroulée du 8 au 21 octobre ; la liste confirmée des chaînes et les contention sets mis à jour sont prévus pour le 17 novembre."
+          "B": "ICANN a publié l’instantané initial du Reveal Day le 7 octobre et a confirmé les chaînes choisies et les groupes de conflit actualisés le 17 novembre. L’Atlas actuel utilise l’export acquis séparément le 22 novembre ; RR3 conserve l’instantané scientifique daté du 17 novembre."
         },
         "demand2026Sub": {
           "A": "Nombre officiel de candidats par région au Reveal Day de l’ICANN (481 au total), et non nombre de candidatures. Ces chiffres reflètent l’origine des candidats, pas l’emplacement de l’infrastructure DNS.",
@@ -3011,7 +4227,7 @@
         },
         "disputes2026StatusBody": {
           "A": "La Community Input and Objections Period commencera le 17 novembre 2026 et doit se poursuivre jusqu’au 16 mars 2027. Les litiges ci-dessous sont donc des précédents expliquant les mécanismes, et non des controverses déjà tranchées dans le round 2026.",
-          "B": "La Community Input and Objections Period commencera le 17 novembre 2026 et doit se poursuivre jusqu’au 16 mars 2027. Les litiges du chapitre sont donc des précédents expliquant les mécanismes, et non des controverses déjà tranchées dans le round 2026."
+          "B": "La période ordinaire de contributions et d’objections a commencé le 17 novembre 2026 et se termine le 16 mars 2027. Commentaires, GAC Early Warnings et objections formelles suivent des procédures distinctes : leur dépôt seul ne détermine pas l’issue d’une candidature."
         },
         "downloadPack": {
           "A": "Télécharger le pack de données actuel (v0.7.78)",
@@ -3032,6 +4248,10 @@
         "exploreCurrentRoot": {
           "A": "Statut actuel dans la racine",
           "B": "Statut dans la racine lors de la vérification documentée"
+        },
+        "exploreSnapshotClocks": {
+          "A": "Cinq dates, deux niveaux de preuve : instantané IANA/racine · 4 oct. 2026 ; candidatures Reveal Day · 7 oct. 2026 ; RR1 archivée · 9 oct. 2026 ; RR2 archivée · 10 oct. 2026 ; dernière mise à jour du site · {updated}. Les versions techniques ne modifient aucune publication scientifique archivée.",
+          "B": "Instantané IANA/racine · 4 oct. 2026 ; délégations vérifiées · 18 nov. 2026 (1 436 libellés) ; candidatures Reveal Day · 7 oct. 2026 ; recherche archivée RR1 · 9 oct., RR2 · 11 oct., RR3 · 17 nov. 2026 ; mise à jour du site · {updated}."
         },
         "eyebrow": {
           "A": "ICANN · DNS · VILLES · SOCIÉTÉ",
@@ -3077,6 +4297,10 @@
           "A": "Un TLD est la terminaison d’une adresse Internet, comme .com, .ch ou .lugano. Ce site explique qui peut en créer un, qui l’exploite et pourquoi il peut compter.",
           "B": "Dans example.com, .com est la terminaison : un domaine de premier niveau, ou TLD. Explorez son histoire et vérifiez les données et les sources. .lugano est une candidature, pas une extension déjà opérationnelle."
         },
+        "historicalPackNote": {
+          "A": "Archive de données historique v0.7.58 (9 octobre 2026), et non la dernière publication scientifique. Pour RR2, consulter son DOI spécifique.",
+          "B": "Archive de données historique v0.7.58 (9 octobre 2026). Citez le DOI de l’instantané scientifique utilisé."
+        },
         "homeGuideIntro": {
           "A": "Un TLD est ce qui vient après le dernier point d’un nom, comme .com, .ch ou .lugano. Derrière cette courte terminaison se trouvent candidatures, règles, institutions, contrats, technologie, argent et communautés. Commencez par le parcours guidé ou choisissez une question.",
           "B": "Dans www.example.com, .com est le domaine de premier niveau (TLD) et example.com est le domaine enregistré. Les questions ci-dessous expliquent qui prend les décisions, qui gère l’infrastructure et comment les noms influencent l’économie et les communautés."
@@ -3101,6 +4325,10 @@
           "A": "Cette chronique éditoriale évolue au fil des événements. RR1 (9 octobre) et RR2 (10 octobre) sont deux instantanés scientifiques distincts et immuables sur Zenodo ; la chronique ne réécrit ni l'un ni l'autre.",
           "B": "Cette chronique éditoriale évolue au fil des événements. RR1 (9 octobre) et RR2 (11 octobre) sont deux instantanés scientifiques distincts et immuables sur Zenodo ; la chronique ne réécrit ni l'un ni l'autre."
         },
+        "insideResearchCta": {
+          "A": "Méthode de recherche et RR2",
+          "B": "Méthode de recherche et RR3"
+        },
         "journeyFoundation": {
           "A": "Internet est un réseau de réseaux. Les noms comme example.com sont pratiques pour les personnes ; les réseaux acheminent les données grâce aux adresses IP. Le DNS relie ces deux mondes. Le Web utilise ensuite ce réseau pour échanger requêtes, réponses et contenus.",
           "B": "Nous retenons des noms comme example.com. Les réseaux utilisent des adresses numériques : le DNS relie les deux."
@@ -3123,7 +4351,7 @@
         },
         "outcomes2026StatusBody": {
           "A": "Le Reveal Day a ouvert la phase de pré-évaluation. La Replacement Period dure jusqu’au 21 octobre, le String Confirmation Day est le 17 novembre et la Community Input and Objections Period ne commence qu’alors. Les cas ci-dessous sont des résultats historiques des rounds précédents, pas des résultats 2026.",
-          "B": "Le Reveal Day a ouvert la pré-évaluation. La période de remplacement des chaînes s’est achevée le 21 octobre 2026. Le String Confirmation Day est prévu le 17 novembre, au début de la période de contributions publiques et d’objections. Les cas du chapitre documentent les résultats des rounds antérieurs, pas des décisions concernant 2026."
+          "B": "Le Reveal Day a ouvert la pré-évaluation. La période de remplacement des chaînes s’est achevée le 21 octobre 2026. Le String Confirmation Day a eu lieu le 17 novembre et a ouvert la période de contributions publiques et d’objections, jusqu’au 16 mars 2027. Les cas de ce chapitre documentent les résultats des rounds antérieurs ; le processus 2026 en cours est suivi séparément."
         },
         "patternWordsBody": {
           "A": "Dans la vue actuelle dérivée d’APS, .agent compte 13 candidatures actives, .api 10, .robot 9 et .agi 7. OpenAI apparaît aussi avec .openai et .chatgpt. Par rapport au vocabulaire apps/plateformes de 2012, le centre de gravité a nettement changé.",
@@ -3185,13 +4413,45 @@
           "A": "Le manifeste de recherche, les tags GitHub, les sources figées et CITATION.cff permettent des contrôles indépendants. RR2 a été vérifiée comme deuxième version de la série Zenodo issue de RR1. L'agrégat officiel ICANN 2026 et l'index secondaire des chaînes restent séparés ; l'exhaustivité du corpus officiel des candidatures APS individuelles n'est pas affirmée.",
           "B": "Le manifeste de recherche, les tags GitHub, les sources figées et CITATION.cff permettent des contrôles indépendants. RR2 est la deuxième version de la série Zenodo issue de RR1. Le site actuel archive aussi la liste publique APS acquise le 11 octobre 2026 : 1 614 identifiants de candidature de base et 1 169 enregistrements de remplacement. Les dossiers individuels complets ne sont pas inclus. Les analyses actuelles et les versions figées RR1/RR2 restent distinctes."
         },
+        "researchCitationText": {
+          "A": "Bregy, R. (2026). <em>Connecting the Dots: A Living Research Atlas of Top-Level Domain Expansion</em> (Research Release RR2, Consolidation post-Reveal). Zenodo. DOI : 10.5281/zenodo.23288603.",
+          "B": "Bregy, R. (2026). <em>Connecting the Dots · Research Release RR3 · String Confirmation 2026</em>. Zenodo. DOI 10.5281/zenodo.24325521."
+        },
+        "researchDoiLabel": {
+          "A": "Identifiant pérenne · Research Release RR2 actuelle",
+          "B": "Identifiant pérenne · publication scientifique actuelle RR3"
+        },
+        "researchDoiStatus": {
+          "A": "Publiée sur Zenodo · RR2",
+          "B": "Publiée sur Zenodo · RR3"
+        },
+        "researchNextBody": {
+          "A": "L'ICANN a prévu le String Confirmation Day pour le 17 novembre 2026. Les chaînes confirmées, les remplacements et les contentions pourraient justifier une Research Release RR3 après vérification des sources. Aucun résultat futur n'est présumé.",
+          "B": "RR3 documente la String Confirmation de l’ICANN du 17 novembre 2026. L’addendum scientifique date séparément les observations APS ultérieures."
+        },
+        "researchNextLabel": {
+          "A": "Prochain jalon documentaire possible",
+          "B": "Périmètre de RR3"
+        },
         "researchPaperBody": {
           "A": "Le document de travail demeure une ébauche indépendante, non évaluée par les pairs et distincte des dépôts immuables RR1 et RR2. Il expose les questions, la provenance, la méthode et les limites de la recherche.",
           "B": "Document de travail actuel : {paperVersion}, révisé le {paperDate}. Cette ébauche actualisée indépendamment n’a pas été évaluée par les pairs. Elle expose la question de recherche, les sources, la méthode et les limites ; les dépôts immuables RR1 et RR2 restent citables séparément."
         },
+        "researchPriorBody": {
+          "A": "RR1 · Reveal Day 2026 a été publiée le 9 octobre 2026 et reste indépendamment citable avec le DOI 10.5281/zenodo.23262623. RR1 et RR2 appartiennent à la même série Zenodo, identifiée par le concept DOI 10.5281/zenodo.23262622. Pour la reproductibilité, il faut citer la version effectivement utilisée.",
+          "B": "RR1 (Reveal Day) et RR2 (données postérieures au Reveal Day) restent citables séparément dans la même série Zenodo. RR1: 10.5281/zenodo.23262623 · RR2: 10.5281/zenodo.23288603 · Concept DOI: 10.5281/zenodo.23262622."
+        },
+        "researchPriorTitle": {
+          "A": "Version scientifique précédente · RR1",
+          "B": "Publications scientifiques précédentes"
+        },
         "researchReleaseBody": {
           "A": "RR2 consolide les données vérifiées du Reveal Day du 7 octobre 2026 : 1 615 candidatures officielles, 481 candidats et 263 ensembles préliminaires de contention. Publiée le 10 octobre 2026 (UTC), elle dispose de son propre DOI Zenodo : 10.5281/zenodo.23288603. L'inventaire des chaînes 2026 est un relevé secondaire ; le corpus officiel complet des candidatures APS individuelles n'est pas revendiqué.",
-          "B": "RR2 consolide les preuves du Reveal Day du 7 octobre 2026. Le dépôt Zenodo a été créé le 10 octobre à 22:04 UTC et porte la date bibliographique du 11 octobre 2026 ; la date limite des preuves reste le 10 octobre. DOI : 10.5281/zenodo.23288603. Les dossiers APS individuels complets ne sont pas tous archivés localement."
+          "B": "RR3 archive l’instantané du 17 novembre 2026 : 152 choix de chaînes de remplacement, neuf retraits et 226 groupes de conflit publiés couvrant 705 candidatures. La correction ICANN vérifiée le 22 novembre rapproche l’ancien écart de quatre unités de l’annonce. Cette preuve ultérieure est documentée dans les Notes de terrain ; l’archive citable RR3 reste inchangée."
+        },
+        "researchReleaseTitle": {
+          "A": "RR2 · Consolidation des données après Reveal Day",
+          "B": "RR3 · String Confirmation de l’ICANN 2026"
         },
         "secondBody": {
           "A": "Le nom immédiatement à gauche du TLD, par exemple example.com.",
@@ -3292,49 +4552,49 @@
         "path": "applications/de/index.html",
         "exact": false,
         "old_chars": 5125,
-        "new_chars": 6911,
+        "new_chars": 7816,
         "original_main_in_new": false
       },
       {
         "path": "applications/en/index.html",
         "exact": false,
         "old_chars": 5016,
-        "new_chars": 6699,
+        "new_chars": 7486,
         "original_main_in_new": false
       },
       {
         "path": "applications/fr/index.html",
         "exact": false,
         "old_chars": 5318,
-        "new_chars": 7105,
+        "new_chars": 7887,
         "original_main_in_new": false
       },
       {
         "path": "applications/it/index.html",
         "exact": false,
         "old_chars": 5142,
-        "new_chars": 6890,
+        "new_chars": 7745,
         "original_main_in_new": false
       },
       {
         "path": "behind-the-round/de/index.html",
         "exact": false,
         "old_chars": 21866,
-        "new_chars": 33555,
+        "new_chars": 69640,
         "original_main_in_new": false
       },
       {
         "path": "behind-the-round/de/objectors-eoi/index.html",
         "exact": false,
         "old_chars": 4845,
-        "new_chars": 9770,
+        "new_chars": 9136,
         "original_main_in_new": false
       },
       {
         "path": "behind-the-round/de/replacement-strings/index.html",
         "exact": false,
         "old_chars": 8048,
-        "new_chars": 17990,
+        "new_chars": 23265,
         "original_main_in_new": false
       },
       {
@@ -3348,7 +4608,7 @@
         "path": "behind-the-round/de/wdo-identity/index.html",
         "exact": false,
         "old_chars": 8469,
-        "new_chars": 9776,
+        "new_chars": 9142,
         "original_main_in_new": false
       },
       {
@@ -3362,21 +4622,21 @@
         "path": "behind-the-round/en/index.html",
         "exact": false,
         "old_chars": 21838,
-        "new_chars": 33083,
+        "new_chars": 68001,
         "original_main_in_new": false
       },
       {
         "path": "behind-the-round/en/objectors-eoi/index.html",
         "exact": false,
         "old_chars": 4865,
-        "new_chars": 9635,
+        "new_chars": 9034,
         "original_main_in_new": false
       },
       {
         "path": "behind-the-round/en/replacement-strings/index.html",
         "exact": false,
         "old_chars": 8253,
-        "new_chars": 17819,
+        "new_chars": 22771,
         "original_main_in_new": false
       },
       {
@@ -3390,7 +4650,7 @@
         "path": "behind-the-round/en/wdo-identity/index.html",
         "exact": false,
         "old_chars": 8388,
-        "new_chars": 9643,
+        "new_chars": 9042,
         "original_main_in_new": false
       },
       {
@@ -3404,21 +4664,21 @@
         "path": "behind-the-round/fr/index.html",
         "exact": false,
         "old_chars": 22343,
-        "new_chars": 34075,
+        "new_chars": 70078,
         "original_main_in_new": false
       },
       {
         "path": "behind-the-round/fr/objectors-eoi/index.html",
         "exact": false,
         "old_chars": 5119,
-        "new_chars": 10016,
+        "new_chars": 9365,
         "original_main_in_new": false
       },
       {
         "path": "behind-the-round/fr/replacement-strings/index.html",
         "exact": false,
         "old_chars": 8360,
-        "new_chars": 18381,
+        "new_chars": 23781,
         "original_main_in_new": false
       },
       {
@@ -3432,7 +4692,7 @@
         "path": "behind-the-round/fr/wdo-identity/index.html",
         "exact": false,
         "old_chars": 8607,
-        "new_chars": 9906,
+        "new_chars": 9255,
         "original_main_in_new": false
       },
       {
@@ -3446,21 +4706,21 @@
         "path": "behind-the-round/it/index.html",
         "exact": false,
         "old_chars": 22723,
-        "new_chars": 34198,
+        "new_chars": 69671,
         "original_main_in_new": false
       },
       {
         "path": "behind-the-round/it/objectors-eoi/index.html",
         "exact": false,
         "old_chars": 5067,
-        "new_chars": 9881,
+        "new_chars": 9256,
         "original_main_in_new": false
       },
       {
         "path": "behind-the-round/it/replacement-strings/index.html",
         "exact": false,
         "old_chars": 8327,
-        "new_chars": 18215,
+        "new_chars": 23404,
         "original_main_in_new": false
       },
       {
@@ -3474,7 +4734,7 @@
         "path": "behind-the-round/it/wdo-identity/index.html",
         "exact": false,
         "old_chars": 8938,
-        "new_chars": 10208,
+        "new_chars": 9583,
         "original_main_in_new": false
       },
       {
@@ -3488,28 +4748,28 @@
         "path": "inside-the-round/de/index.html",
         "exact": false,
         "old_chars": 10445,
-        "new_chars": 15930,
+        "new_chars": 18716,
         "original_main_in_new": false
       },
       {
         "path": "inside-the-round/en/index.html",
         "exact": false,
         "old_chars": 10082,
-        "new_chars": 15277,
+        "new_chars": 18009,
         "original_main_in_new": false
       },
       {
         "path": "inside-the-round/fr/index.html",
         "exact": false,
         "old_chars": 10656,
-        "new_chars": 16246,
+        "new_chars": 18960,
         "original_main_in_new": false
       },
       {
         "path": "inside-the-round/it/index.html",
         "exact": false,
         "old_chars": 10492,
-        "new_chars": 15967,
+        "new_chars": 18726,
         "original_main_in_new": false
       }
     ]
@@ -3529,7 +4789,7 @@
     },
     {
       "path": "data/governance_cases.json",
-      "same_sha": true
+      "same_sha": false
     },
     {
       "path": "data/internet_access_explainer.json",
@@ -3547,8 +4807,14 @@
   "csv": {
     "count": 51,
     "changed": [
+      "data/aps_2026_application_edges.csv",
+      "data/aps_2026_record_observations.csv",
+      "data/contention_rounds.csv",
       "data/domain_governance_glossary.csv",
+      "data/governance_case_events.csv",
+      "data/governance_cases.csv",
       "data/registry_concentration.csv",
+      "data/round_2026.csv",
       "data/sources.csv"
     ]
   },
@@ -3707,7 +4973,7 @@
     ]
   },
   "editorial_review": {
-    "manifest": "docs/editorial-review-2026-11-12-v0.7.112.json",
+    "manifest": "docs/editorial-review-2026-11-27-v0.8.3.json",
     "validated": true,
     "allowed_paths": [
       ".github/workflows/a-b-final-parity.yml",
@@ -3725,6 +4991,8 @@
       ".github/workflows/pages-live-smoke.yml",
       ".github/workflows/reader-first.yml",
       ".github/workflows/rebuild.yml",
+      ".github/workflows/string-confirmation-capture.yml",
+      ".github/workflows/string-confirmation-v0800-candidate.yml",
       ".gitignore",
       "CHANGELOG.md",
       "CITATION.cff",
@@ -3789,14 +5057,26 @@
       "behind-the-round/it/who-controls-internet-access/index.html",
       "build.py",
       "data/README.md",
+      "data/application_2026_string_confirmation_snapshot.json",
+      "data/applications_2026_aps_followup_20261122.csv",
+      "data/applications_2026_aps_followup_20261122_provenance.json",
+      "data/applications_2026_aps_followup_20261127.csv",
+      "data/applications_2026_aps_followup_20261127_provenance.json",
+      "data/applications_2026_aps_string_confirmation_20261117.csv",
+      "data/applications_2026_aps_string_confirmation_20261117_provenance.json",
       "data/aps_2026_applicant_distribution.csv",
       "data/aps_2026_applicant_sector_distribution.csv",
       "data/aps_2026_applicant_sector_evidence.json",
+      "data/aps_2026_application_edges.csv",
+      "data/aps_2026_application_graph.js",
+      "data/aps_2026_application_graph.json",
+      "data/aps_2026_application_graph_manifest.json",
       "data/aps_2026_current_analytics.csv",
       "data/aps_2026_current_analytics.js",
       "data/aps_2026_current_analytics.json",
       "data/aps_2026_current_analytics_manifest.json",
       "data/aps_2026_location_distribution.csv",
+      "data/aps_2026_record_observations.csv",
       "data/aps_2026_region_distribution.csv",
       "data/aps_2026_string_theme_distribution.csv",
       "data/audience_editorial.json",
@@ -3804,6 +5084,7 @@
       "data/audit_20261019_editorial.json",
       "data/audit_20261019_resolution.json",
       "data/behind_round_stories.json",
+      "data/contention_rounds.csv",
       "data/cultural_blind_review_v2.csv",
       "data/cultural_classification_protocol.json",
       "data/cultural_classification_protocol_v2.json",
@@ -3819,6 +5100,198 @@
       "data/economics_reading_order.json",
       "data/editorial_20261030_quality_and_termination.json",
       "data/editorial_io_appointments_20261023.json",
+      "data/editorial_news_20261122.json",
+      "data/evidence/round-2026-followup-20261122/aps-export-raw.csv",
+      "data/evidence/round-2026-followup-20261122/aps-statistics-raw.json",
+      "data/evidence/round-2026-followup-20261122/source-observations.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/A2652T-T75760.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/A2652T-T75760.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/AEI2688T-T84808.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/AEI2688T-T84808.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/APEC2611T-T11013.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/APEC2611T-T11013.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/BEI2691T-T99138.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/BEI2691T-T99138.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/CCS2640T-T48725.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/CCS2640T-T48725.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/CS2676T-T34770.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/CS2676T-T34770.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/EDCL2689T-T11150.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/EDCL2689T-T11150.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/EDCL2689T-T68091.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/EDCL2689T-T68091.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/EDCL2689T-T94739.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/EDCL2689T-T94739.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/FEI2676T-T60926.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/FEI2676T-T60926.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/GEI2639T-T18440.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/GEI2639T-T18440.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/HU2684T-T32145.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/HU2684T-T32145.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/HU2684T-T42201.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/HU2684T-T42201.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/HU2684T-T81042.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/HU2684T-T81042.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/ITL2677T-T15916.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/ITL2677T-T15916.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/ITL2677T-T74240.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/ITL2677T-T74240.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/MEI2627T-T58035.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/MEI2627T-T58035.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/MEI2627T-T73873.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/MEI2627T-T73873.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T14670.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T14670.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T30508.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T30508.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T32387.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T32387.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T38427.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T38427.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T46346.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T46346.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T48225.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T48225.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T54761.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T54761.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T63059.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T63059.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T64063.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T64063.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T65696.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T65696.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T70103.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T70103.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T80159.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T80159.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T90969.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T90969.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T98888.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NA2626T-T98888.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NTG2671T-T12150.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NTG2671T-T12150.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NTG2671T-T13787.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/NTG2671T-T13787.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/OI2692T-T96497.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/OI2692T-T96497.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/PEI2617T-T23468.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/PEI2617T-T23468.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/REI2641T-T20577.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/REI2641T-T20577.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/VNTL2649T-T52249.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/VNTL2649T-T52249.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/XCI2688T-T41810.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/XCI2688T-T41810.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/XCI2688T-T62426.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/XCI2688T-T62426.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/XCI2688T-T81155.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/XCI2688T-T81155.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/XI2694T-T18057.json",
+      "data/evidence/round-2026-followup-20261127/application-summaries/XI2694T-T18057.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/aps-export-raw.csv",
+      "data/evidence/round-2026-followup-20261127/aps-export-raw.csv.provenance.json",
+      "data/evidence/round-2026-followup-20261127/aps-statistics-raw.json",
+      "data/evidence/round-2026-followup-20261127/aps-statistics-raw.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/aps-wdo-summary.html",
+      "data/evidence/round-2026-followup-20261127/aps-wdo-summary.html.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests-analysis.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/24452647T-T62047.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/24452647T-T62047.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/36262695T-T42322.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/36262695T-T42322.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/43372680T-T95618.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/43372680T-T95618.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/44522636T-T55394.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/44522636T-T55394.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/45072669T-T67837.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/45072669T-T67837.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/61412675T-T18565.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/61412675T-T18565.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/63052682T-T56902.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/63052682T-T56902.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/70122665T-T13662.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/70122665T-T13662.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/72612695T-T33012.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/72612695T-T33012.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/77352697T-T40435.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/77352697T-T40435.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/79112627T-T56273.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/79112627T-T56273.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/79442683T-T47475.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/79442683T-T47475.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/80502644T-T59918.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/80502644T-T59918.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/84112666T-T75756.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/84112666T-T75756.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/85662668T-T46971.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/85662668T-T46971.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/86302673T-T51999.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/86302673T-T51999.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/87252644T-T13162.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/87252644T-T13162.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/BTRT2633T-T38161.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/BTRT2633T-T38161.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/BTRT2633T-T83538.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/BTRT2633T-T83538.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/CINI2622T-T81530.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/CINI2622T-T81530.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/DCJE2552-T43314.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/DCJE2552-T43314.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/HI2626T-T82284.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/HI2626T-T82284.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/HI2626T-T90203.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/HI2626T-T90203.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/MC2626T-T87191.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/MC2626T-T87191.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/MI2694T-T68970.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/MI2694T-T68970.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/NSCL2617T-T55273.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/NSCL2617T-T55273.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/NTNC2670T-T72865.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/NTNC2670T-T72865.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/TO2640T-T19948.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/TO2640T-T19948.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/TPCL2648T-T11392.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/TPCL2648T-T11392.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/TPCL2648T-T93473.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/TPCL2648T-T93473.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/UA2620T-T14912.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/UA2620T-T14912.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/UA2620T-T22831.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/UA2620T-T22831.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/UA2620T-T78518.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/UA2620T-T78518.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/UA2620T-T78897.json",
+      "data/evidence/round-2026-followup-20261127/change-requests/UA2620T-T78897.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/comparison-by-application-id.json",
+      "data/evidence/round-2026-followup-20261127/contention-recheck/contention-byte-and-id-comparison.json",
+      "data/evidence/round-2026-followup-20261127/contention-recheck/provenance-validated.json",
+      "data/evidence/round-2026-followup-20261127/contention-recheck/reveal-day-contention-sets.csv",
+      "data/evidence/round-2026-followup-20261127/contention-recheck/string-confirmation-contention-sets.csv",
+      "data/evidence/round-2026-followup-20261127/recheck/about.html",
+      "data/evidence/round-2026-followup-20261127/recheck/about.html.provenance.json",
+      "data/evidence/round-2026-followup-20261127/recheck/export-raw.csv",
+      "data/evidence/round-2026-followup-20261127/recheck/export-raw.csv.provenance.json",
+      "data/evidence/round-2026-followup-20261127/recheck/statistics.json",
+      "data/evidence/round-2026-followup-20261127/recheck/statistics.json.provenance.json",
+      "data/evidence/round-2026-followup-20261127/source-observations.json",
+      "data/evidence/round-2026-followup-20261127/withdrawals-42-official-summary-corroboration.json",
+      "data/evidence/string-confirmation-2026-11-17/aps-statistics-2009-raw.json",
+      "data/evidence/string-confirmation-2026-11-17/aps-statistics-export-recheck-2038.json",
+      "data/evidence/string-confirmation-2026-11-17/aps-statistics-recheck-1857.json",
+      "data/evidence/string-confirmation-2026-11-17/baseline.json",
+      "data/evidence/string-confirmation-2026-11-17/live/aps-export-normalized.csv",
+      "data/evidence/string-confirmation-2026-11-17/live/aps-export-raw.csv",
+      "data/evidence/string-confirmation-2026-11-17/live/aps-observatory-diff.json",
+      "data/evidence/string-confirmation-2026-11-17/live/captured-at-utc.txt",
+      "data/evidence/string-confirmation-2026-11-17/live/contention-reconciliation.json",
+      "data/evidence/string-confirmation-2026-11-17/live/high-value-summary.json",
+      "data/evidence/string-confirmation-2026-11-17/live/reveal-day-contention-sets.csv",
+      "data/evidence/string-confirmation-2026-11-17/live/sha256.txt",
+      "data/evidence/string-confirmation-2026-11-17/live/sizes.txt",
+      "data/evidence/string-confirmation-2026-11-17/live/string-confirmation-contention-sets.csv",
+      "data/evidence/string-confirmation-2026-11-17/live/string-confirmation-summary.json",
+      "data/evidence/string-confirmation-2026-11-17/official-announcement-observation.json",
       "data/evidence/tld-market-2026-10-19/ntlddata-backends.json",
       "data/evidence/tld-market-2026-10-19/ntlddata-tlds-1.json",
       "data/evidence/tld-market-2026-10-19/ntlddata-tlds-2.json",
@@ -3835,13 +5308,19 @@
       "data/field_investigations.json",
       "data/financial_source_verification_20261019.json",
       "data/frozen_technical_packages.json",
+      "data/governance_case_events.csv",
+      "data/governance_cases.csv",
+      "data/governance_cases.json",
       "data/helsinki_editorial_20261025.json",
+      "data/helsinki_followup_20261122.json",
+      "data/helsinki_revocation_20261118.json",
       "data/home_editorial.json",
       "data/i18n_bundle.js",
       "data/i18n_de.js",
       "data/i18n_en.js",
       "data/i18n_fr.js",
       "data/i18n_it.js",
+      "data/iana_root_revalidation_20261118.json",
       "data/independent_review_materials.json",
       "data/inside_the_round_events.json",
       "data/internet_access_explainer.json",
@@ -3855,6 +5334,9 @@
       "data/registry_concentration_context.csv",
       "data/release_history.json",
       "data/research_bibliographic_corrections.json",
+      "data/round_2026.csv",
+      "data/round_2026_followup_20261122.json",
+      "data/round_2026_followup_20261127.json",
       "data/round_application_fees.json",
       "data/round_debate_20261106.json",
       "data/rsp_tld_footprint.csv",
@@ -3887,6 +5369,7 @@
       "docs/REPOSITORY_GOVERNANCE.md",
       "docs/TLD_MARKET_2026-10-19.md",
       "docs/access-chronology-v0796-evidence.json",
+      "docs/aps-followup-2026-11-27.md",
       "docs/audits/2026-11-06/assembly-workflow-review.md",
       "docs/audits/2026-11-06/assembly-workflow-tests.json",
       "docs/audits/2026-11-06/delivery-patch-recovery.json",
@@ -3952,10 +5435,14 @@
       "docs/experience-audit-2026-11-07.md",
       "docs/full-site-audit-2026-11-06.md",
       "docs/main-protection-policy.json",
+      "docs/news-review-2026-11-22.md",
       "docs/reader-first-structure.json",
       "docs/research-tags-ruleset.json",
       "docs/round-debate-v0797-evidence.json",
+      "docs/rr3_publication_runbook.md",
       "docs/seo-agent-access.md",
+      "docs/string-confirmation-day-2026-11-17-first-findings.md",
+      "docs/string-confirmation-day-2026-11-17-runbook.md",
       "docs/technical-archive-integrity-20261106.json",
       "downloads/connecting-the-dots-data-pack-v0.7.100.sha256",
       "downloads/connecting-the-dots-data-pack-v0.7.100.zip",
@@ -3993,6 +5480,14 @@
       "downloads/connecting-the-dots-data-pack-v0.7.98.zip",
       "downloads/connecting-the-dots-data-pack-v0.7.99.sha256",
       "downloads/connecting-the-dots-data-pack-v0.7.99.zip",
+      "downloads/connecting-the-dots-data-pack-v0.8.0.sha256",
+      "downloads/connecting-the-dots-data-pack-v0.8.0.zip",
+      "downloads/connecting-the-dots-data-pack-v0.8.1.sha256",
+      "downloads/connecting-the-dots-data-pack-v0.8.1.zip",
+      "downloads/connecting-the-dots-data-pack-v0.8.2.sha256",
+      "downloads/connecting-the-dots-data-pack-v0.8.2.zip",
+      "downloads/connecting-the-dots-data-pack-v0.8.3.sha256",
+      "downloads/connecting-the-dots-data-pack-v0.8.3.zip",
       "economics/de/cases/index.html",
       "economics/de/cases/index.md",
       "economics/de/market/index.html",
@@ -4097,12 +5592,19 @@
       "research/README.md",
       "research/connecting-the-dots-working-paper-v1.html",
       "research/connecting-the-dots-working-paper-v1.md",
+      "research/de/index.html",
+      "research/fr/index.html",
       "research/index.html",
+      "research/it/index.html",
       "research/reader-study/de/index.html",
       "research/reader-study/en/index.html",
       "research/reader-study/fr/index.html",
       "research/reader-study/it/index.html",
       "research/research_release_manifest.json",
+      "research/rr2_release_manifest.json",
+      "research/rr3_addendum_20261117.md",
+      "research/rr3_candidate.json",
+      "research/rr3_publication_verification.json",
       "scripts/apply_ia_b2_crossnav.py",
       "scripts/assemble_data.js",
       "scripts/atlas_state_qa.cjs",
@@ -4121,10 +5623,13 @@
       "scripts/audit_tld_market_browser.cjs",
       "scripts/audit_v07108_qa.cjs",
       "scripts/build_agent_catalog.py",
+      "scripts/build_aps_application_graph_current.py",
+      "scripts/build_aps_followup_20261127.py",
       "scripts/build_tld_cultural_trajectory.py",
       "scripts/build_tld_market.py",
       "scripts/bundle_runtime.js",
       "scripts/check_external_sources.py",
+      "scripts/contention_confirmation_20261117.py",
       "scripts/deep_audit_20261011.js",
       "scripts/discovery_browser_qa.cjs",
       "scripts/experience_browser_qa.cjs",
@@ -4132,7 +5637,10 @@
       "scripts/finalize_audit_review_v07110.cjs",
       "scripts/finalize_label_review_v07111.cjs",
       "scripts/finalize_legal_review_v07109.cjs",
+      "scripts/finalize_news_review_v082.cjs",
+      "scripts/finalize_news_review_v083.cjs",
       "scripts/finalize_pre_string_freeze_v07112.cjs",
+      "scripts/finalize_string_confirmation_v0800.cjs",
       "scripts/home_editorial_qa.cjs",
       "scripts/integrate_discovery.py",
       "scripts/narrative_clarity.cjs",
@@ -4146,6 +5654,7 @@
       "scripts/prepare_label_audit_v07111.py",
       "scripts/prepare_pre_string_freeze_v07112.py",
       "scripts/prepare_round_debate_v0797.cjs",
+      "scripts/prepare_string_confirmation_v0800.py",
       "scripts/prepare_ux_focus_v07100.py",
       "scripts/reader_first.cjs",
       "scripts/reader_first_browser.cjs",
@@ -4167,9 +5676,11 @@
       "scripts/render_inside_round.py",
       "scripts/render_internet_access.py",
       "scripts/render_legal_layer.py",
+      "scripts/render_news_review_20261122.cjs",
       "scripts/render_reader_study.py",
       "scripts/render_research.cjs",
       "scripts/render_round_debate_v0797.cjs",
+      "scripts/render_sanctions_explainer.py",
       "scripts/render_static.js",
       "scripts/render_static_fallback.py",
       "scripts/render_tld_cultural_trajectory.py",
@@ -4177,8 +5688,10 @@
       "scripts/reorder_economics.cjs",
       "scripts/review_access_chronology_v0796.cjs",
       "scripts/review_round_debate_v0797.cjs",
+      "scripts/rr3_preflight.py",
       "scripts/run_browser_regressions.py",
       "scripts/stage_public_site.py",
+      "scripts/string_confirmation_20261117.py",
       "scripts/sync_publication.py",
       "scripts/test_cultural_research_v2.py",
       "scripts/test_external_source_health.py",
@@ -4200,7 +5713,9 @@
       "scripts/validate_tld_cultural.cjs",
       "scripts/validate_tld_market.cjs",
       "scripts/verify_ia_b2_parity.cjs",
+      "scripts/verify_iana_root_review.py",
       "sitemap.xml",
+      "src/ia-b2-hubs.html",
       "src/index.web.html",
       "tlds/de/ai/index.html",
       "tlds/de/ai/index.md",
@@ -4284,9 +5799,9 @@
       "tlds/it/zuerich/index.md"
     ],
     "errors": [],
-    "review_id": "pre-string-confirmation-freeze-2026-11-12-v0.7.112",
-    "reviewed_on": "2026-11-12",
-    "manifest_sha256": "0238aee48e16798718f74fdf1d0f0addc82a75ec70a643dbcba40d4ce96080cd",
+    "review_id": "aps-followup-2026-11-27-v0.8.3",
+    "reviewed_on": "2026-11-27",
+    "manifest_sha256": "2b3c1ae29bc943990e6a1cc9de4fa7ce34fdd9dedc5aca89acb553b907fb6958",
     "source_verification": {
       "baselineMain": "ec231cc12d35fa91ff5340ad057a483ce23a5ca4",
       "reviewedAgainst": "65e0fbe2080c2ee841e8abc01e1ddec113a74b8e",
@@ -4299,7 +5814,8 @@
         "inside-round",
         "research",
         "paper",
-        "resources"
+        "resources",
+        "sources"
       ],
       "purposeLedHomeAddedChars": 1185,
       "immutableFilesVerified": 28
@@ -4308,7 +5824,7 @@
   "reviewed_editorial_additions": {
     "date": "2026-10-17",
     "validated": false,
-    "superseded_by": "pre-string-confirmation-freeze-2026-11-12-v0.7.112",
+    "superseded_by": "aps-followup-2026-11-27-v0.8.3",
     "allowed_pages": [],
     "allowed_modified_dataset": [],
     "limitations": "The original 17 October additive review applies only to versions 0.7.82 and 0.7.83. Later reviews require exact file and source-section fingerprints; lost content and frozen ZIP modifications still fail."
