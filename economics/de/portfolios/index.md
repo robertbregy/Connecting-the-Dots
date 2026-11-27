@@ -1,12 +1,12 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/portfolios/ | Site edition: 0.8.2 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/portfolios/ | Site edition: 0.8.3 | Language: de -->
 
 Wirtschaftsanalyse
 
 # Portfolios und konkurrierende Anträge
 
-**APS-Snapshot · 11. Oktober 2026**
+**Historische APS-Analyse · 11. Oktober 2026**
 
-Die Bewerbungsdaten stammen aus dem am 11. Oktober 2026 erfassten öffentlichen APS-Export. Dieser Snapshot liegt vor dem String Confirmation Day (17. November), dem angekündigten Termin für bestätigte Zeichenfolgen und aktualisierte Contention Sets. Er belegt keine individuellen Bewertungsergebnisse. [Offizieller Zeitplan ↗](https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en)
+Die Wirtschaftsanalyse anhand des APS-Exports vom 11. Oktober bewahrt diesen historischen Stand. Er liegt vor den am 17. November veröffentlichten bestätigten Strings und Contention Sets. Spätere Beobachtungen auf dieser Seite tragen eigene Quellendaten; der Bewerbungsatlas folgt dem neueren Export. [Offizielle String-Confirmation-Veröffentlichung ↗](https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en)
 
 Verfolgen Sie die Strategien von Antragstellern mit vielen Bewerbungen und den Wettbewerb um dieselben Wörter. Die Vergleiche zwischen den Runden sowie die Fälle Aruba und Intercap zeigen, was jeweils gezählt wird.
 
@@ -85,6 +85,6 @@ Die 263 vorläufigen Konfliktgruppen identischer Strings umfassen 891 Bewerbunge
 
 [ICANN · preliminary contention CSV ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv) [internet.Best · applicant portfolios ↗](https://internet.best/new-gtld-applications/) [nTLDData · primary strings ↗](https://www.ntlddata.com/applications/strings)
 
-**Von Robert Bregy** · Ausgabe der Website 0.8.2 · 22. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.8.3 · 27. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

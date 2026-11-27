@@ -1,12 +1,12 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/it/portfolios/ | Site edition: 0.8.2 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/it/portfolios/ | Site edition: 0.8.3 | Language: it -->
 
 Analisi economica
 
 # Portafogli e contese
 
-**Snapshot APS · 11 ottobre 2026**
+**Analisi APS storica · 11 ottobre 2026**
 
-I dati delle candidature provengono dall’esportazione pubblica APS acquisita l’11 ottobre 2026. Questo snapshot precede lo String Confirmation Day (17 novembre), previsto per la pubblicazione delle stringhe confermate e delle contese aggiornate. Non attesta esiti individuali delle valutazioni. [Calendario ufficiale ↗](https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en)
+L’analisi economica basata sull’export APS dell’11 ottobre conserva quella fotografia storica, precedente alle stringhe confermate e ai contention set pubblicati il 17 novembre. Le osservazioni successive in questa pagina hanno proprie date delle fonti; l’Atlante delle candidature segue l’export più recente. [Pubblicazione ufficiale di String Confirmation ↗](https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en)
 
 Segui le strategie di chi presenta molte candidature e la competizione per le stesse parole. I confronti tra round e i casi Aruba e Intercap chiariscono che cosa viene contato.
 
@@ -85,6 +85,6 @@ I 263 set preliminari di contesa fra stringhe identiche raccolgono 891 candidatu
 
 [ICANN · preliminary contention CSV ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv) [internet.Best · applicant portfolios ↗](https://internet.best/new-gtld-applications/) [nTLDData · primary strings ↗](https://www.ntlddata.com/applications/strings)
 
-**Di Robert Bregy** · Edizione del sito 0.8.2 · 22 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.8.3 · 27 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

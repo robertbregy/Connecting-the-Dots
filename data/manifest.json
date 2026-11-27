@@ -1,7 +1,7 @@
 {
   "project": "Connecting the Dots",
-  "version": "0.8.2",
-  "release_date": "2026-11-22",
+  "version": "0.8.3",
+  "release_date": "2026-11-27",
   "publication_state": "string-confirmation",
   "rendering": "static-prerendered",
   "language_routes": {
@@ -11,7 +11,7 @@
     "fr": "fr/"
   },
   "as_of": "2026-10-10",
-  "technical_as_of": "2026-11-22",
+  "technical_as_of": "2026-11-27",
   "temporal_coverage": "1984/2026",
   "reveal_day": "2026-10-07T18:00:00Z",
   "string_confirmation_day": "2026-11-17",
@@ -32,7 +32,7 @@
     "The Social Life of the Dot adds nine source-backed social cases and six analytical models covering language, community, identity, protection, locality and script inclusion; registration volume is never used as a proxy for social significance.",
     "explorer_nameservers.csv and explorer_iana_reports.csv preserve technical records and report references by ASCII TLD identity.",
     "tld_universe.csv is the exhaustive TLD/profile universe for this snapshot: the IANA database plus historically delegated TLDs absent from the current IANA database. The Explorer extends that universe with all locally vendored formal application strings from 2000, 2004 and 2012.",
-    "application_only_strings.csv is the build-time application-only view. The 2012 historical applicant-string graph is locally integrated. The ICANN 2026 APS public Applications CSV is now independently vendored with 2,783 published records: 1,614 unique base application IDs and 1,169 -R replacement records. Official statistics show 1,615 applications; WDO2627T-T45217 is not in the public listing pending an administrative check. Individual application PDF dossiers remain outside local full coverage."
+    "application_only_strings.csv is the build-time application-only view. The 2012 historical applicant-string graph is locally integrated. The ICANN 2026 APS public Applications CSV is now independently vendored with 2,783 published records: 1,614 unique base application IDs and 1,169 -R replacement records. The frozen Reveal Day statistics report 1,615 applications. WDO2627T-T45217 is absent from that listing; its last published individual summary states Undergoing administrative check. Current statistics/listing differences are recorded separately without assigning a common cause. Individual application PDF dossiers remain outside local full coverage."
   ],
   "current_root_snapshot": "2026-10-04",
   "iana_evidence": "iana_snapshot.json",
@@ -292,39 +292,44 @@
     "application2026OfficialListingPendingWDO": true
   },
   "aps_2026_application_graph": {
-    "source": "applications_2026_aps_followup_20261122.csv",
-    "provenance": "applications_2026_aps_followup_20261122_provenance.json",
-    "observedOn": "2026-11-22",
+    "source": "applications_2026_aps_followup_20261127.csv",
+    "provenance": "applications_2026_aps_followup_20261127_provenance.json",
+    "observedOn": "2026-11-27",
     "manifest": "aps_2026_application_graph_manifest.json",
     "graph": "aps_2026_application_graph.json",
     "edges": "aps_2026_application_edges.csv",
     "observations": "aps_2026_record_observations.csv",
     "apsStatisticsTotalApplications": 1615,
-    "apsStatisticsActiveApplications": 1596,
-    "apsStatisticsWithdrawnApplications": 19,
+    "apsStatisticsActiveApplications": 1543,
+    "apsStatisticsWithdrawnApplications": 72,
     "officialAnnouncementProceedingApplications": 1606,
     "officialPublishedApplications": 1614,
-    "visibleProceedingApplications": 1595,
-    "visibleWithdrawnApplications": 19,
+    "visibleProceedingApplications": 1553,
+    "visibleWithdrawnApplications": 61,
     "officialListingRows": 2783,
     "replacementRecords": 1169,
     "selectedReplacementRecords": 152,
     "replacementActive": 152,
     "replacementDeactivated": 1017,
     "replacementWithdrawn": 0,
-    "proceedingNewPrimaryApplications": 1589,
+    "proceedingNewPrimaryApplications": 1547,
     "newPrimaryStrings": 1119,
     "variantOnlyExistingTldApplications": 6,
     "variantRelationships": 13,
-    "derivedExactPrimaryMatchGroups": 225,
-    "applicationsInExactPrimaryMatches": 695,
+    "derivedExactPrimaryMatchGroups": 222,
+    "applicationsInExactPrimaryMatches": 650,
     "officialConfirmedContentionSets": 226,
     "officialConfirmedContentionApplications": 705,
     "officialAnnouncementApplicationsInContention": 705,
     "knownAdministrativeCheckApplications": 1,
-    "statisticsVsPublicProceedingGap": 1,
+    "statisticsVsPublicProceedingGap": -10,
+    "statisticsVsPublicWithdrawnGap": 11,
+    "statisticsVsPublicApplicationFamilyGap": 1,
     "unresolvedAnnouncementPublicationGap": 0,
-    "statusChangesSinceStringConfirmation": 10,
+    "statusChangesSinceStringConfirmation": 52,
+    "statusChangesSincePreviousObservation": 42,
+    "changeRequestLabelChangedRecordsSincePreviousObservation": 36,
+    "changeRequestLabelChangedFamiliesSincePreviousObservation": 34,
     "individualPDFsVendored": false
   },
   "aps_2026_official_listing": {
@@ -342,7 +347,7 @@
   "iana_evidence_archive": "evidence/iana-snapshot-2026-10-04.json.gz",
   "release_history": {
     "path": "release_history.json",
-    "sha256": "be6b38e5bc3030106ffe59b412fddbc0a6f8ebd8c3c0105b7a9108c2b4ba0d4c"
+    "sha256": "57336891c75203131fd643b261a4d0469153585858741bf74261c5422d4bb091"
   },
   "freeze": {
     "status": "reveal-day-snapshot",
@@ -357,28 +362,28 @@
     "assets": [
       {
         "repository_path": "data/site_bundle.js",
-        "bytes": 2477400,
-        "sha256": "53ec89bdb3d7f236f5a5a61a953c15d05808f1a9e2670c9001de175e49c3f45a"
+        "bytes": 2477723,
+        "sha256": "4c89501b5f5fa799dc684cc9d1d1a26658046017a6faeb5426a960e746652673"
       },
       {
         "repository_path": "data/i18n_en.js",
-        "bytes": 282584,
-        "sha256": "a09dc4d4d841fecad3cb45a309094273bb6002a77a6b89ea14dc32dd5316f10f"
+        "bytes": 289635,
+        "sha256": "df653d665e2566b0ff84f58afc3b11420872fb4e443b732e9c5aad52ec1c91e0"
       },
       {
         "repository_path": "data/i18n_it.js",
-        "bytes": 297437,
-        "sha256": "35cfbfc5c781e614cd86a35758f475dbfc839c331474368adf10b88560b085e3"
+        "bytes": 304874,
+        "sha256": "f40c50f1e205ccbe05a22efa319723832451433016b43ce298877ebf31189780"
       },
       {
         "repository_path": "data/i18n_de.js",
-        "bytes": 300427,
-        "sha256": "25ac12be1c3e23e917a17336a18576f115790f6ad7fba55bfe02a9c78c165083"
+        "bytes": 308296,
+        "sha256": "577bd9870b15421cba80dc036f1eed6b21d3fb6581cf7c3b2d745f29d8599012"
       },
       {
         "repository_path": "data/i18n_fr.js",
-        "bytes": 311953,
-        "sha256": "26b2dce3202ec8438ae72fed94cb080d8d72a7424c3333a6866c88523a2e6228"
+        "bytes": 319957,
+        "sha256": "d02b5f7775c9300fc4d1605f4e153d414dc4e33c67aacc76f3e96609d094d9ae"
       },
       {
         "repository_path": "data/applications_2026_strings_reveal.js",
@@ -427,8 +432,8 @@
       },
       {
         "repository_path": "data/aps_2026_application_graph.js",
-        "bytes": 1642401,
-        "sha256": "b4facf98b6b1fecbe22387cbc1526a2b9c6197a914bf5cfe6f5be75811150084"
+        "bytes": 1710678,
+        "sha256": "5bb958bc3670fb27e2ecbd8d9f8e5b70f5034562ed1ae3335438c9b36bd0e983"
       },
       {
         "repository_path": "data/worldmap.js",
@@ -438,42 +443,42 @@
       {
         "repository_path": "data/explorer_profiles_0.js",
         "bytes": 1089783,
-        "sha256": "196bbf9f03afb2e2773e8ec6665c0a3d1593545035363a7b61ed73a7116cef44"
+        "sha256": "f3acf83da98c8348e3d386df4569213ceb24c39f7dd01a1b84f04656f3524e1f"
       },
       {
         "repository_path": "data/explorer_profiles_1.js",
         "bytes": 904380,
-        "sha256": "f4ccc1015ac42d01c9c73a4a5bd6b6f3c7c01fb7b0f7727855d71833fc893ac4"
+        "sha256": "a3bbe38d3aadfce7edf98a82c4d17a74c3a28251702ebf3d3b2a280ed95f2cdb"
       },
       {
         "repository_path": "data/explorer_profiles_2.js",
         "bytes": 1009405,
-        "sha256": "de90338081922319b05a7c50760138911ddd4a2a6bec4a94cf57f765e6219ea1"
+        "sha256": "8aba05a3bb5abc8bc43d7f5fad58493d616c04c673b73a62a79079a8b12212dc"
       },
       {
         "repository_path": "data/explorer_profiles_3.js",
         "bytes": 934599,
-        "sha256": "3821dbbe2d10fb122dfc2c4e36464facbbb9d3968ab160d75e0e23b2d45e58e7"
+        "sha256": "11b78ed71388f312c3854fab96577e76e87919235ada503a911615846e8c08c2"
       },
       {
         "repository_path": "data/explorer_profiles_4.js",
         "bytes": 970734,
-        "sha256": "7c0963a8bf919d8cd051f3f7052490f349ba33a0c8c69e777e7b0db278652aeb"
+        "sha256": "5418e72bde78302cbd9bc8c610fe7b3fea5e117d6f608cb0ea45d672fbafa3a4"
       },
       {
         "repository_path": "data/explorer_profiles_5.js",
         "bytes": 943440,
-        "sha256": "52e507d9ece700d906142e3049e688ba52f6106881194b4d9451bc87c6132048"
+        "sha256": "6d96d010bbd090f9c5d37347cd0ef39107fa55e58612a8b99f25316b57422416"
       },
       {
         "repository_path": "data/explorer_profiles_6.js",
         "bytes": 953641,
-        "sha256": "18ba9c26962c07cf13451622dbc666b033003eee295776c30c7454961adba51e"
+        "sha256": "e8cce9dc90e34a64046ec571566ef571db64b1d7f2c2ae9179557963c32134b9"
       },
       {
         "repository_path": "data/explorer_profiles_7.js",
         "bytes": 936010,
-        "sha256": "0fb9a852c39689a213d829b10c17f076e67af60d0b5e17cc61746ca98894be6f"
+        "sha256": "7048510b53bb7d4d8ef9027dd467e296707a3f29878399dd69790c982cd2b440"
       }
     ]
   },
@@ -539,6 +544,12 @@
       "sha256": "cd7df94d073ef39206621424aed2d34782f2896a34d589b5d2109e0626288ad7"
     },
     {
+      "path": "applications_2026_aps_followup_20261127.csv",
+      "bytes": 671852,
+      "records": 2783,
+      "sha256": "15acec6ca2cfc3e742c01227bb26c99e112e9dad220bbafcd2f0bfeeef1f3c98"
+    },
+    {
       "path": "applications_2026_aps_official_listing.csv",
       "bytes": 667815,
       "records": 2783,
@@ -570,9 +581,9 @@
     },
     {
       "path": "aps_2026_application_edges.csv",
-      "bytes": 405585,
+      "bytes": 439263,
       "records": 2796,
-      "sha256": "a65620c8f1311f0f5ede1924c34460012c93ee4c9df9d737adaab74d1f729a2e"
+      "sha256": "0c4a29232f69f572fef57400366558574d6b8252f65ab184683ee820e10ea2c6"
     },
     {
       "path": "aps_2026_current_analytics.csv",
@@ -588,9 +599,9 @@
     },
     {
       "path": "aps_2026_record_observations.csv",
-      "bytes": 1459263,
-      "records": 8349,
-      "sha256": "2bc2ddda26a3436cc4eae806db12dc90197114d39e2b8932bb6bdadf8a42e2eb"
+      "bytes": 1977318,
+      "records": 11132,
+      "sha256": "bcbf40fe091946c664e92fccf3237a063b2ddfdbef4ac014e16cb7c9df470d52"
     },
     {
       "path": "aps_2026_region_distribution.csv",
@@ -618,9 +629,9 @@
     },
     {
       "path": "contention_rounds.csv",
-      "bytes": 4121,
+      "bytes": 6821,
       "records": 26,
-      "sha256": "a8cd3e17a8344b49537d1a8e2ca07742ce07835e31547724142e83424af573b2"
+      "sha256": "ff37820a938c43163503bb7d713f3ec885458ae4f8d5a11d4daf79857983bc0e"
     },
     {
       "path": "control_levers.csv",

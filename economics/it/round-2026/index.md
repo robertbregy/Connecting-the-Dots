@@ -1,12 +1,12 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/it/round-2026/ | Site edition: 0.8.2 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/it/round-2026/ | Site edition: 0.8.3 | Language: it -->
 
 Analisi economica
 
 # L’economia del round 2026
 
-**Snapshot APS · 11 ottobre 2026**
+**Analisi APS storica · 11 ottobre 2026**
 
-I dati delle candidature provengono dall’esportazione pubblica APS acquisita l’11 ottobre 2026. Questo snapshot precede lo String Confirmation Day (17 novembre), previsto per la pubblicazione delle stringhe confermate e delle contese aggiornate. Non attesta esiti individuali delle valutazioni. [Calendario ufficiale ↗](https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en)
+L’analisi economica basata sull’export APS dell’11 ottobre conserva quella fotografia storica, precedente alle stringhe confermate e ai contention set pubblicati il 17 novembre. Le osservazioni successive in questa pagina hanno proprie date delle fonti; l’Atlante delle candidature segue l’export più recente. [Pubblicazione ufficiale di String Confirmation ↗](https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en)
 
 Costi di candidatura, temi delle stringhe, attività dei candidati e strategie dei marchi. I cicli economici e le ricostruzioni storiche aiutano a leggere le aspettative, con i rispettivi limiti.
 
@@ -355,6 +355,6 @@ Un TLD di una banca e un termine come .bank implicano modelli di assegnazione mo
 
 [ICANN · 2012 statistics ↗](https://newgtlds.icann.org/en/program-status/statistics) [ICANN APS · 2026 statistics ↗](https://newgtldprogram-aps.icann.org/statistics) [nTLDData · 2026 application index ↗](https://www.ntlddata.com/applications)
 
-**Di Robert Bregy** · Edizione del sito 0.8.2 · 22 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.8.3 · 27 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

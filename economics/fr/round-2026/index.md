@@ -1,12 +1,12 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/fr/round-2026/ | Site edition: 0.8.2 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/fr/round-2026/ | Site edition: 0.8.3 | Language: fr -->
 
 Analyse économique
 
 # L’économie du round 2026
 
-**Instantané APS · 11 octobre 2026**
+**Analyse APS historique · 11 octobre 2026**
 
-Les données des candidatures proviennent de l’export public APS acquis le 11 octobre 2026. Cet instantané précède le String Confirmation Day (17 novembre), prévu pour la publication des chaînes confirmées et des ensembles de candidatures en concurrence actualisés. Il n’atteste aucun résultat individuel d’évaluation. [Calendrier officiel ↗](https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en)
+L’analyse économique fondée sur l’export APS du 11 octobre conserve cet instantané historique, antérieur aux chaînes confirmées et aux contention sets publiés le 17 novembre. Les observations ultérieures de cette page portent leurs propres dates de source ; l’Atlas des candidatures suit l’export plus récent. [Publication officielle de String Confirmation ↗](https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en)
 
 Coûts de candidature, thèmes des chaînes, activités des candidats et stratégies des marques. Cycles économiques et reconstructions historiques éclairent les attentes, avec les limites propres à chaque analyse.
 
@@ -355,6 +355,6 @@ Un TLD propre à une banque et un terme comme .bank relèvent de modèles d’at
 
 [ICANN · 2012 statistics ↗](https://newgtlds.icann.org/en/program-status/statistics) [ICANN APS · 2026 statistics ↗](https://newgtldprogram-aps.icann.org/statistics) [nTLDData · 2026 application index ↗](https://www.ntlddata.com/applications)
 
-**Par Robert Bregy** · Édition du site 0.8.2 · 22 novembre 2026
+**Par Robert Bregy** · Édition du site 0.8.3 · 27 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.

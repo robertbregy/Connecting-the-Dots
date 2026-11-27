@@ -1,38 +1,51 @@
 {
   "schemaVersion": 2,
   "snapshotState": "post-string-confirmation",
-  "sourceSha256": "cd7df94d073ef39206621424aed2d34782f2896a34d589b5d2109e0626288ad7",
+  "sourceSha256": "15acec6ca2cfc3e742c01227bb26c99e112e9dad220bbafcd2f0bfeeef1f3c98",
   "sourceURL": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
-  "retrievedAtUTC": "2026-11-22T10:51:04Z",
+  "retrievedAtUTC": "2026-11-27T14:08:17.570742+00:00",
   "counts": {
     "apsStatisticsTotalApplications": 1615,
-    "apsStatisticsActiveApplications": 1596,
-    "apsStatisticsWithdrawnApplications": 19,
+    "apsStatisticsActiveApplications": 1543,
+    "apsStatisticsWithdrawnApplications": 72,
     "officialAnnouncementProceedingApplications": 1606,
     "officialPublishedApplications": 1614,
-    "visibleProceedingApplications": 1595,
-    "visibleWithdrawnApplications": 19,
+    "visibleProceedingApplications": 1553,
+    "visibleWithdrawnApplications": 61,
     "officialListingRows": 2783,
     "replacementRecords": 1169,
     "selectedReplacementRecords": 152,
     "replacementActive": 152,
     "replacementDeactivated": 1017,
     "replacementWithdrawn": 0,
-    "proceedingNewPrimaryApplications": 1589,
+    "proceedingNewPrimaryApplications": 1547,
     "newPrimaryStrings": 1119,
     "variantOnlyExistingTldApplications": 6,
     "variantRelationships": 13,
-    "derivedExactPrimaryMatchGroups": 225,
-    "applicationsInExactPrimaryMatches": 695,
+    "derivedExactPrimaryMatchGroups": 222,
+    "applicationsInExactPrimaryMatches": 650,
     "officialConfirmedContentionSets": 226,
     "officialConfirmedContentionApplications": 705,
     "officialAnnouncementApplicationsInContention": 705,
     "knownAdministrativeCheckApplications": 1,
-    "statisticsVsPublicProceedingGap": 1,
+    "statisticsVsPublicProceedingGap": -10,
+    "statisticsVsPublicWithdrawnGap": 11,
+    "statisticsVsPublicApplicationFamilyGap": 1,
     "unresolvedAnnouncementPublicationGap": 0,
-    "statusChangesSinceStringConfirmation": 10
+    "statusChangesSinceStringConfirmation": 52,
+    "statusChangesSincePreviousObservation": 42,
+    "changeRequestLabelChangedRecordsSincePreviousObservation": 36,
+    "changeRequestLabelChangedFamiliesSincePreviousObservation": 34
   },
   "inputFiles": {
+    "data/applications_2026_aps_followup_20261127.csv": {
+      "sha256": "15acec6ca2cfc3e742c01227bb26c99e112e9dad220bbafcd2f0bfeeef1f3c98",
+      "bytes": 671852
+    },
+    "data/applications_2026_aps_followup_20261127_provenance.json": {
+      "sha256": "47dfed1ffccb9a13c939c8e710155c3cfd2968d9b06c2934414e7c4d1de03f55",
+      "bytes": 146365
+    },
     "data/applications_2026_aps_followup_20261122.csv": {
       "sha256": "cd7df94d073ef39206621424aed2d34782f2896a34d589b5d2109e0626288ad7",
       "bytes": 671762
@@ -52,6 +65,30 @@
     "data/evidence/string-confirmation-2026-11-17/live/string-confirmation-contention-sets.csv": {
       "sha256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
       "bytes": 36820
+    },
+    "data/evidence/round-2026-followup-20261127/contention-recheck/reveal-day-contention-sets.csv": {
+      "sha256": "86f2ebd3764d1f3ea21d5d844cff004e271a443a3431e8ac440da7f72c67e2bf",
+      "bytes": 46481
+    },
+    "data/evidence/round-2026-followup-20261127/contention-recheck/string-confirmation-contention-sets.csv": {
+      "sha256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
+      "bytes": 36820
+    },
+    "data/evidence/string-confirmation-2026-11-17/live/reveal-day-contention-sets.csv": {
+      "sha256": "86f2ebd3764d1f3ea21d5d844cff004e271a443a3431e8ac440da7f72c67e2bf",
+      "bytes": 46481
+    },
+    "data/evidence/round-2026-followup-20261127/contention-recheck/provenance-validated.json": {
+      "sha256": "f6d9f415425d6e19b5d727142f2e9f27fb98f213e08ad6fc06e06ea725ad276b",
+      "bytes": 7686
+    },
+    "data/evidence/round-2026-followup-20261127/contention-recheck/contention-byte-and-id-comparison.json": {
+      "sha256": "5361861675fe95a1390db9e2c61cb512ea2623922b90ecb4afa208a360ad41b4",
+      "bytes": 819
+    },
+    "data/evidence/round-2026-followup-20261127/aps-wdo-summary.html": {
+      "sha256": "cd7916f4de55c18e70e46f7ae704262eee60d1a3635ddb84dc9c9e7704109a39",
+      "bytes": 25303
     }
   },
   "historicalAnnouncement": {
@@ -64,7 +101,374 @@
     "publicProceedingApplications": 1605,
     "knownAdministrativeCheckApplications": 1,
     "residualAggregateDifference": 0,
-    "scope": "The corrected 16 November announcement snapshot agrees with the contemporaneous 17 November APS Statistics and contention CSV. This does not compare that historical snapshot with the current 22 November withdrawal totals."
+    "scope": "The corrected 16 November announcement snapshot remains a separate historical comparison with the 17 November sources; it is not compared with later withdrawals."
+  },
+  "aggregateGap": {
+    "classification": "Observed cross-source discrepancies; no official causal reconciliation located",
+    "statisticsSource": {
+      "url": "https://newgtldprogram-aps.icann.org/aps/applications/stats",
+      "publicURL": "https://newgtldprogram-aps.icann.org/statistics",
+      "method": "GET",
+      "requestJSON": null,
+      "publicationOrUpdateAtUTC": "2026-11-27T13:39:14.999Z",
+      "retrievedAtUTC": "2026-11-27T14:08:10.671025+00:00",
+      "requestStartedAtUTC": "2026-11-27T14:08:05.302733+00:00",
+      "httpStatus": 200,
+      "rawFile": "data/evidence/round-2026-followup-20261127/recheck/statistics.json",
+      "rawBytes": 3066,
+      "rawSHA256": "df3411018630ff50be484569affb1733c43d677529ccb148e73d812ed5bd6121",
+      "publicationDateNote": "Timestamp explicitly published in the official JSON; not the acquisition or effective event date."
+    },
+    "exportSource": {
+      "url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+      "publicURL": "https://newgtldprogram-aps.icann.org/applications",
+      "method": "POST",
+      "requestJSON": {
+        "searchAndFilter": {},
+        "sort": {
+          "field": "primaryString",
+          "direction": "ASC"
+        },
+        "pagination": {
+          "pageNum": 0,
+          "pageSize": 10
+        }
+      },
+      "publicationOrUpdateAtUTC": null,
+      "retrievedAtUTC": "2026-11-27T14:08:17.570742+00:00",
+      "requestStartedAtUTC": "2026-11-27T14:08:05.303366+00:00",
+      "httpStatus": 200,
+      "rawFile": "data/evidence/round-2026-followup-20261127/recheck/export-raw.csv",
+      "rawBytes": 680561,
+      "rawSHA256": "defc901116c1faacdd332530b31f777a1b6865bebc1e08b351e729c08588a50a",
+      "publicationDateNote": "No independently stated publication timestamp was located; acquisition is not publication."
+    },
+    "officialStatisticsTotalApplications": 1615,
+    "publicApplicationFamilies": 1614,
+    "statisticsMinusPublicFamilies": 1,
+    "officialStatisticsActiveApplications": 1543,
+    "visibleProceedingApplications": 1553,
+    "statisticsMinusPublicActiveApplications": -10,
+    "officialStatisticsWithdrawnApplications": 72,
+    "visibleWithdrawnApplications": 61,
+    "statisticsMinusPublicWithdrawnApplications": 11,
+    "causalExplanation": null,
+    "additionalWithdrawnApplicationIds": null,
+    "knownSeparatelyPublishedApplicationId": "WDO2627T-T45217",
+    "attributionToKnownApplicationDocumented": false,
+    "note": "The aggregate difference does not identify eleven additional withdrawn Application IDs. The separately published .wdo administrative-check notice only documents its omission from the public listing; it does not explain this withdrawal discrepancy or establish its current internal state."
+  },
+  "changesSincePreviousObservation": {
+    "previousObservedAtUTC": "2026-11-22T10:51:04Z",
+    "previousSourceSHA256": "cd7df94d073ef39206621424aed2d34782f2896a34d589b5d2109e0626288ad7",
+    "currentObservedAtUTC": "2026-11-27T14:08:17.570742+00:00",
+    "currentSourceSHA256": "15acec6ca2cfc3e742c01227bb26c99e112e9dad220bbafcd2f0bfeeef1f3c98",
+    "statusChanges": [
+      {
+        "applicationId": "A2652T-T75760",
+        "string": "robot",
+        "applicant": "Zero Gravity Labs Inc.",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "AEI2688T-T84808",
+        "string": "asi",
+        "applicant": "Adhara Exploration, Inc.",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "APEC2611T-T11013",
+        "string": "easy",
+        "applicant": "Aruba PEC S.P.A.",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "BEI2691T-T99138",
+        "string": "craft",
+        "applicant": "Bellatrix Exploration, Inc.",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "CCS2640T-T48725",
+        "string": "order",
+        "applicant": "Cam Connecting SARL",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "CS2676T-T34770",
+        "string": "auth",
+        "applicant": "Codyssey SL",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "EDCL2689T-T11150",
+        "string": "crypto",
+        "applicant": "ECHO Domain Co L.L.C.",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "EDCL2689T-T68091",
+        "string": "api",
+        "applicant": "ECHO Domain Co L.L.C.",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "EDCL2689T-T94739",
+        "string": "agent",
+        "applicant": "ECHO Domain Co L.L.C.",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "FEI2676T-T60926",
+        "string": "intelligence",
+        "applicant": "Fomalhaut Exploration, Inc.",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "GEI2639T-T18440",
+        "string": "kit",
+        "applicant": "Gacrux Exploration, Inc",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "HU2684T-T32145",
+        "string": "hub",
+        "applicant": "Hostinger UAB",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "HU2684T-T42201",
+        "string": "gen",
+        "applicant": "Hostinger UAB",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "HU2684T-T81042",
+        "string": "lab",
+        "applicant": "Hostinger UAB",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "ITL2677T-T15916",
+        "string": "robot",
+        "applicant": "Ipollo Tech Ltd",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "ITL2677T-T74240",
+        "string": "agent",
+        "applicant": "Ipollo Tech Ltd",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "MEI2627T-T58035",
+        "string": "maker",
+        "applicant": "Menkalinan Exploration, Inc.",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "MEI2627T-T73873",
+        "string": "mart",
+        "applicant": "Menkalinan Exploration, Inc.",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "NA2626T-T14670",
+        "string": "agi",
+        "applicant": "ShortDot (Ireland) Limited",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "NA2626T-T30508",
+        "string": "ace",
+        "applicant": "ShortDot (Ireland) Limited",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "NA2626T-T32387",
+        "string": "good",
+        "applicant": "ShortDot (Ireland) Limited",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "NA2626T-T38427",
+        "string": "omg",
+        "applicant": "ShortDot (Ireland) Limited",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "NA2626T-T46346",
+        "string": "api",
+        "applicant": "ShortDot (Ireland) Limited",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "NA2626T-T48225",
+        "string": "fix",
+        "applicant": "ShortDot (Ireland) Limited",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "NA2626T-T54761",
+        "string": "lab",
+        "applicant": "ShortDot (Ireland) Limited",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "NA2626T-T63059",
+        "string": "ask",
+        "applicant": "ShortDot (Ireland) Limited",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "NA2626T-T64063",
+        "string": "tap",
+        "applicant": "ShortDot (Ireland) Limited",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "NA2626T-T65696",
+        "string": "hub",
+        "applicant": "ShortDot (Ireland) Limited",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "NA2626T-T70103",
+        "string": "fab",
+        "applicant": "ShortDot (Ireland) Limited",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "NA2626T-T80159",
+        "string": "mcp",
+        "applicant": "ShortDot (Ireland) Limited",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "NA2626T-T90969",
+        "string": "pop",
+        "applicant": "ShortDot (Ireland) Limited",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "NA2626T-T98888",
+        "string": "zen",
+        "applicant": "ShortDot (Ireland) Limited",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "NTG2671T-T12150",
+        "string": "share",
+        "applicant": "NextGEN TLDs GmbH",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "NTG2671T-T13787",
+        "string": "ultra",
+        "applicant": "NextGEN TLDs GmbH",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "OI2692T-T96497",
+        "string": "loop",
+        "applicant": "Oinkadot Inc",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "PEI2617T-T23468",
+        "string": "path",
+        "applicant": "Pollux Exploration, Inc.",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "REI2641T-T20577",
+        "string": "view",
+        "applicant": "Regulus Exploration, Inc.",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "VNTL2649T-T52249",
+        "string": "portal",
+        "applicant": "VANT NEXUS TECHNOLOGIES LLC",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "XCI2688T-T41810",
+        "string": "ion",
+        "applicant": "XServer Cloud Incorporated",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "XCI2688T-T62426",
+        "string": "gaming",
+        "applicant": "XServer Cloud Incorporated",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "XCI2688T-T81155",
+        "string": "brand",
+        "applicant": "XServer Cloud Incorporated",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      },
+      {
+        "applicationId": "XI2694T-T18057",
+        "string": "key",
+        "applicant": "XRegistry Incorporated",
+        "previousStatus": "Active",
+        "currentStatus": "Withdrawn"
+      }
+    ],
+    "addedRecordIds": [],
+    "removedRecordIds": [],
+    "changedRecordCount": 78,
+    "changedApplicationFamilyCount": 76,
+    "changedFieldCounts": {
+      "Application Status": 42,
+      "Label: Change Request": 36
+    },
+    "evidenceFile": "data/evidence/round-2026-followup-20261127/source-observations.json",
+    "limitation": "Export differences are observed between the two acquisitions. Publication timestamps of corroborating summaries do not establish effective withdrawal dates; request approvals do not approve a candidacy or select a replacement."
   },
   "contention": {
     "classification": "project-derived-current-exact-primary-string-overlaps",
@@ -75,40 +479,135 @@
     "officialConfirmedSHA256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
     "publicConfirmedSets": 226,
     "publicConfirmedApplications": 705,
-    "currentDerivedSets": 225,
-    "currentDerivedApplications": 695,
-    "currentDerivedObservedAtUTC": "2026-11-22T10:51:04Z",
-    "currentDerivedSourceSHA256": "cd7df94d073ef39206621424aed2d34782f2896a34d589b5d2109e0626288ad7",
+    "currentDerivedSets": 222,
+    "currentDerivedApplications": 650,
+    "currentDerivedObservedAtUTC": "2026-11-27T14:08:17.570742+00:00",
+    "currentDerivedSourceSHA256": "15acec6ca2cfc3e742c01227bb26c99e112e9dad220bbafcd2f0bfeeef1f3c98",
     "currentDerivedBasis": "Project-derived exact-primary-string overlaps among current visible Active new gTLD applications. These are not a newly published ICANN contention determination. The official 17 November contention CSV remains separately frozen at 226 sets / 705 rows.",
     "officialAnnouncementApplications": 705,
     "unresolvedAnnouncementPublicationGap": 0,
-    "APSInContentionFalseIsNotAuthoritativeBeforeStringEvaluation": true
+    "APSInContentionFalseIsNotAuthoritativeBeforeStringEvaluation": true,
+    "officialRecheck": {
+      "classification": "Verification of unchanged official contention exports; not a new substantive export or current contention resolution",
+      "provenanceFile": "data/evidence/round-2026-followup-20261127/contention-recheck/provenance-validated.json",
+      "comparisonFile": "data/evidence/round-2026-followup-20261127/contention-recheck/contention-byte-and-id-comparison.json",
+      "sources": [
+        {
+          "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv",
+          "publicURL": "https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv",
+          "resolvedURL": "https://newgtldprogram.icann.org/sites/default/files/documents/reveal-day-contention-sets.csv",
+          "method": "GET",
+          "publicationOrUpdateAtUTC": null,
+          "publicationEventDate": "2026-10-07",
+          "publicationDateBasis": "Official Reveal Day announcement and APS Help link; last-modified recorded separately.",
+          "retrievedAtUTC": "2026-11-27T13:53:16.230606+00:00",
+          "requestStartedAtUTC": "2026-11-27T13:53:09.781298+00:00",
+          "acquisitionTimeBasis": "Completed HTTP response time",
+          "httpStatus": 200,
+          "httpLastModified": "Wed, 07 Oct 2026 17:51:59 GMT",
+          "rawFile": "data/evidence/round-2026-followup-20261127/contention-recheck/reveal-day-contention-sets.csv",
+          "rawBytes": 46481,
+          "rawSHA256": "86f2ebd3764d1f3ea21d5d844cff004e271a443a3431e8ac440da7f72c67e2bf",
+          "rawProvenanceFile": "data/evidence/round-2026-followup-20261127/contention-recheck/provenance-validated.json",
+          "comparisonFile": "data/evidence/round-2026-followup-20261127/contention-recheck/contention-byte-and-id-comparison.json",
+          "previousSource": {
+            "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv",
+            "rawFile": "data/evidence/string-confirmation-2026-11-17/live/reveal-day-contention-sets.csv",
+            "rawSHA256": "86f2ebd3764d1f3ea21d5d844cff004e271a443a3431e8ac440da7f72c67e2bf",
+            "publicationEventDate": "2026-10-07",
+            "acquiredCollectionAtUTC": "2026-11-17T18:30:10Z",
+            "acquisitionTimeBasis": "live/captured-at-utc.txt in same immutable repository commit; collection timestamp, not per-file HTTP timestamp",
+            "repositoryURL": "https://github.com/robertbregy/Connecting-the-Dots/blob/1f8eb058989a2eb3a22f16c431e16fbbed2aa132/data/evidence/string-confirmation-2026-11-17/live/reveal-day-contention-sets.csv"
+          },
+          "sameBytesAsPreviousObservation": true,
+          "newSubstantiveExport": false,
+          "publicationDateNote": "The dated publication event is documented by ICANN. HTTP Last-Modified, request time and acquisition time are retained separately and do not independently establish publication time."
+        },
+        {
+          "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/string-confirmation-contention-sets.csv",
+          "publicURL": "https://newgtldprogram.icann.org/en/application-rounds/round2/string-confirmation-contention-sets.csv",
+          "resolvedURL": "https://newgtldprogram.icann.org/sites/default/files/documents/string-confirmation-contention-sets.csv",
+          "method": "GET",
+          "publicationOrUpdateAtUTC": null,
+          "publicationEventDate": "2026-11-17",
+          "publicationDateBasis": "Official String Confirmation Day announcement and APS Help link; last-modified recorded separately.",
+          "retrievedAtUTC": "2026-11-27T13:52:37.163704+00:00",
+          "requestStartedAtUTC": "2026-11-27T13:52:37.163704+00:00",
+          "acquisitionTimeBasis": "Recorded time immediately before the HTTP request; completion time was not separately recorded",
+          "httpStatus": 200,
+          "httpLastModified": "Tue, 17 Nov 2026 17:26:47 GMT",
+          "rawFile": "data/evidence/round-2026-followup-20261127/contention-recheck/string-confirmation-contention-sets.csv",
+          "rawBytes": 36820,
+          "rawSHA256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
+          "rawProvenanceFile": "data/evidence/round-2026-followup-20261127/contention-recheck/provenance-validated.json",
+          "comparisonFile": "data/evidence/round-2026-followup-20261127/contention-recheck/contention-byte-and-id-comparison.json",
+          "previousSource": {
+            "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/string-confirmation-contention-sets.csv",
+            "rawFile": "data/evidence/string-confirmation-2026-11-17/live/string-confirmation-contention-sets.csv",
+            "rawSHA256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
+            "publicationEventDate": "2026-11-17",
+            "acquiredCollectionAtUTC": "2026-11-17T18:30:10Z",
+            "acquisitionTimeBasis": "live/captured-at-utc.txt in same immutable repository commit; collection timestamp, not per-file HTTP timestamp",
+            "repositoryURL": "https://github.com/robertbregy/Connecting-the-Dots/blob/1f8eb058989a2eb3a22f16c431e16fbbed2aa132/data/evidence/string-confirmation-2026-11-17/live/string-confirmation-contention-sets.csv"
+          },
+          "sameBytesAsPreviousObservation": true,
+          "newSubstantiveExport": false,
+          "publicationDateNote": "The dated publication event is documented by ICANN. HTTP Last-Modified, request time and acquisition time are retained separately and do not independently establish publication time."
+        }
+      ],
+      "comparisons": [
+        {
+          "source": "reveal-day-contention-sets.csv",
+          "equal_bytes": true,
+          "sha256": "86f2ebd3764d1f3ea21d5d844cff004e271a443a3431e8ac440da7f72c67e2bf",
+          "baseline_sha256": "86f2ebd3764d1f3ea21d5d844cff004e271a443a3431e8ac440da7f72c67e2bf",
+          "rows": 891,
+          "distinct_application_ids": 891,
+          "set_ids": 263,
+          "added_ids": [],
+          "removed_ids": [],
+          "changed_fields_by_id": {}
+        },
+        {
+          "source": "string-confirmation-contention-sets.csv",
+          "equal_bytes": true,
+          "sha256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
+          "baseline_sha256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
+          "rows": 705,
+          "distinct_application_ids": 705,
+          "set_ids": 226,
+          "added_ids": [],
+          "removed_ids": [],
+          "changed_fields_by_id": {}
+        }
+      ]
+    }
   },
   "eventHistory": {
-    "events": 8349,
-    "sourceSnapshots": 3
+    "events": 11132,
+    "sourceSnapshots": 4
   },
   "files": {
     "aps_2026_application_graph.json": {
-      "sha256": "c5d322576c7f6e1e24517b6d4c8f20e9d40537aa4b512698cba98ac2045e2b1d",
-      "bytes": 2235884
+      "sha256": "bff11b28dee8436bdbdc5636d92b9a1cffb9416c80e4369e6539f6d64f524c25",
+      "bytes": 2321616
     },
     "aps_2026_application_graph.js": {
-      "sha256": "b4facf98b6b1fecbe22387cbc1526a2b9c6197a914bf5cfe6f5be75811150084",
-      "bytes": 1642401
+      "sha256": "5bb958bc3670fb27e2ecbd8d9f8e5b70f5034562ed1ae3335438c9b36bd0e983",
+      "bytes": 1710678
     },
     "aps_2026_application_edges.csv": {
-      "sha256": "a65620c8f1311f0f5ede1924c34460012c93ee4c9df9d737adaab74d1f729a2e",
-      "bytes": 405585
+      "sha256": "0c4a29232f69f572fef57400366558574d6b8252f65ab184683ee820e10ea2c6",
+      "bytes": 439263
     },
     "aps_2026_record_observations.csv": {
-      "sha256": "2bc2ddda26a3436cc4eae806db12dc90197114d39e2b8932bb6bdadf8a42e2eb",
-      "bytes": 1459263
+      "sha256": "bcbf40fe091946c664e92fccf3237a063b2ddfdbef4ac014e16cb7c9df470d52",
+      "bytes": 1977318
     }
   },
   "limitations": [
-    "The public APS listing still excludes WDO2627T-T45217 while its administrative check continues.",
-    "Current APS counts are dated to 22 November 2026. The corrected historical announcement is reconciled separately with the String Confirmation sources, not compared with later withdrawal totals.",
+    "The public listing excludes WDO2627T-T45217. Its separately published notice is dated 7 October; that notice does not establish its current internal state or reconcile the current withdrawal discrepancy.",
+    "The current public export is acquired on 27 November 2026; its publication timestamp is not stated. APS Statistics has its own publication and acquisition timestamps. The public export contains 61 Withdrawn application families while Statistics declares 72; no eleven additional IDs or causal reconciliation are inferred.",
     "The official String Confirmation contention CSV remains frozen at 226 sets / 705 application rows. Current exact-primary overlaps are project-derived from visible Active records and are not a new official contention determination.",
     "A -R record is linked to a stable base Application ID; a selected replacement remains the effective string if its status subsequently becomes Withdrawn.",
     "13 variant links are string relationships, not additional applications.",
