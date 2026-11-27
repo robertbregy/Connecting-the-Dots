@@ -114,7 +114,7 @@ for (const lang of ['en', 'it', 'de', 'fr']) {
   for (const script of document.querySelectorAll('script[type="application/ld+json"]')) {
     const structured = JSON.parse(script.textContent);
     if (structured['@type'] === 'CollectionPage') {
-      structured.dateModified = evidence.reviewedOn;
+      structured.dateModified = [structured.dateModified, evidence.reviewedOn, publication.releasedOn].filter(Boolean).sort().at(-1);
       script.textContent = JSON.stringify(structured);
     }
   }

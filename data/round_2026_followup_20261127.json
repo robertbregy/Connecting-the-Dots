@@ -1,0 +1,2477 @@
+{
+  "schemaVersion": 2,
+  "classification": "Source-backed current observation separate from frozen research releases",
+  "observedOn": "2026-11-27",
+  "sourceCaptureUTC": "2026-11-27T14:08:17.570742+00:00",
+  "evidenceRegister": "data/evidence/round-2026-followup-20261127/source-observations.json",
+  "currentExport": "data/applications_2026_aps_followup_20261127.csv",
+  "currentExportProvenance": "data/applications_2026_aps_followup_20261127_provenance.json",
+  "researchBoundary": "Snapshots of 11 October, 17 November and 22 November, all RR1/RR2/RR3 scientific releases, DOI-bearing packages and prior technical archives remain immutable. This is a separate current observation dated 27 November.",
+  "previousCSV": {
+    "url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+    "publicURL": "https://newgtldprogram-aps.icann.org/applications",
+    "publicationOrUpdateAtUTC": null,
+    "retrievedAtUTC": "2026-11-22T10:51:04Z",
+    "rawFile": "data/evidence/round-2026-followup-20261122/aps-export-raw.csv",
+    "rawSHA256": "ae3e8366e8512672146b1f3709fc58c2400eb57106d6376909366bfe3168b447",
+    "normalizedFile": "data/applications_2026_aps_followup_20261122.csv",
+    "normalizedSHA256": "cd7df94d073ef39206621424aed2d34782f2896a34d589b5d2109e0626288ad7",
+    "publicationDateNote": "No independent export publication timestamp; this is a dated acquisition."
+  },
+  "currentCSV": {
+    "url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+    "publicURL": "https://newgtldprogram-aps.icann.org/applications",
+    "method": "POST",
+    "requestJSON": {
+      "searchAndFilter": {},
+      "sort": {
+        "field": "primaryString",
+        "direction": "ASC"
+      },
+      "pagination": {
+        "pageNum": 0,
+        "pageSize": 10
+      }
+    },
+    "publicationOrUpdateAtUTC": null,
+    "retrievedAtUTC": "2026-11-27T14:08:17.570742+00:00",
+    "requestStartedAtUTC": "2026-11-27T14:08:05.303366+00:00",
+    "httpStatus": 200,
+    "rawFile": "data/evidence/round-2026-followup-20261127/recheck/export-raw.csv",
+    "rawBytes": 680561,
+    "rawSHA256": "defc901116c1faacdd332530b31f777a1b6865bebc1e08b351e729c08588a50a",
+    "publicationDateNote": "No independently stated publication timestamp was located; acquisition is not publication."
+  },
+  "previousStatistics": {
+    "url": "https://newgtldprogram-aps.icann.org/aps/applications/stats",
+    "publicURL": "https://newgtldprogram-aps.icann.org/statistics",
+    "publicationOrUpdateAtUTC": "2026-11-22T10:39:14.813Z",
+    "retrievedAtUTC": "2026-11-22T10:50:25Z",
+    "rawFile": "data/evidence/round-2026-followup-20261122/aps-statistics-raw.json",
+    "rawSHA256": "baeb2ad780f6d88e70b55cf2c67dfd7e88d9f61bc8351a5a7c498dcdd3c86fb6"
+  },
+  "currentStatistics": {
+    "source": "https://newgtldprogram-aps.icann.org/statistics",
+    "sourceAPI": "https://newgtldprogram-aps.icann.org/aps/applications/stats",
+    "lastPublishedAt": "2026-11-27T13:39:14.999Z",
+    "retrievedAtUTC": "2026-11-27T14:08:10.671025+00:00",
+    "totalApplications": 1615,
+    "applicants": 481,
+    "activeApplications": 1543,
+    "withdrawnApplications": 72,
+    "publicVisibleActive": 1553,
+    "publicVisibleWithdrawn": 61,
+    "publicApplicationFamilies": 1614
+  },
+  "statisticsComparison": {
+    "before": {
+      "Active": 1596,
+      "Contracted": 0,
+      "Delegated": 0,
+      "On Hold": 0,
+      "Pending Termination": 0,
+      "Terminated": 0,
+      "Withdrawn": 19
+    },
+    "after": {
+      "Active": 1543,
+      "Contracted": 0,
+      "Delegated": 0,
+      "On Hold": 0,
+      "Pending Termination": 0,
+      "Terminated": 0,
+      "Withdrawn": 72
+    },
+    "withdrawnDelta": 53,
+    "activeDelta": -53,
+    "causalExplanation": null
+  },
+  "crossSourceDiscrepancies": {
+    "classification": "Observed cross-source discrepancies; no official causal reconciliation located",
+    "statisticsSource": {
+      "url": "https://newgtldprogram-aps.icann.org/aps/applications/stats",
+      "publicURL": "https://newgtldprogram-aps.icann.org/statistics",
+      "method": "GET",
+      "requestJSON": null,
+      "publicationOrUpdateAtUTC": "2026-11-27T13:39:14.999Z",
+      "retrievedAtUTC": "2026-11-27T14:08:10.671025+00:00",
+      "requestStartedAtUTC": "2026-11-27T14:08:05.302733+00:00",
+      "httpStatus": 200,
+      "rawFile": "data/evidence/round-2026-followup-20261127/recheck/statistics.json",
+      "rawBytes": 3066,
+      "rawSHA256": "df3411018630ff50be484569affb1733c43d677529ccb148e73d812ed5bd6121",
+      "publicationDateNote": "Timestamp explicitly published in the official JSON; not the acquisition or effective event date."
+    },
+    "exportSource": {
+      "url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+      "publicURL": "https://newgtldprogram-aps.icann.org/applications",
+      "method": "POST",
+      "requestJSON": {
+        "searchAndFilter": {},
+        "sort": {
+          "field": "primaryString",
+          "direction": "ASC"
+        },
+        "pagination": {
+          "pageNum": 0,
+          "pageSize": 10
+        }
+      },
+      "publicationOrUpdateAtUTC": null,
+      "retrievedAtUTC": "2026-11-27T14:08:17.570742+00:00",
+      "requestStartedAtUTC": "2026-11-27T14:08:05.303366+00:00",
+      "httpStatus": 200,
+      "rawFile": "data/evidence/round-2026-followup-20261127/recheck/export-raw.csv",
+      "rawBytes": 680561,
+      "rawSHA256": "defc901116c1faacdd332530b31f777a1b6865bebc1e08b351e729c08588a50a",
+      "publicationDateNote": "No independently stated publication timestamp was located; acquisition is not publication."
+    },
+    "officialStatisticsTotalApplications": 1615,
+    "publicApplicationFamilies": 1614,
+    "statisticsMinusPublicFamilies": 1,
+    "officialStatisticsActiveApplications": 1543,
+    "visibleProceedingApplications": 1553,
+    "statisticsMinusPublicActiveApplications": -10,
+    "officialStatisticsWithdrawnApplications": 72,
+    "visibleWithdrawnApplications": 61,
+    "statisticsMinusPublicWithdrawnApplications": 11,
+    "causalExplanation": null,
+    "additionalWithdrawnApplicationIds": null,
+    "knownSeparatelyPublishedApplicationId": "WDO2627T-T45217",
+    "attributionToKnownApplicationDocumented": false,
+    "note": "The aggregate difference does not identify eleven additional withdrawn Application IDs. The separately published .wdo administrative-check notice only documents its omission from the public listing; it does not explain this withdrawal discrepancy or establish its current internal state."
+  },
+  "APSUpdatePolicy": {
+    "source": {
+      "url": "https://newgtldprogram-aps.icann.org/about",
+      "publicURL": "https://newgtldprogram-aps.icann.org/about",
+      "method": "GET",
+      "requestJSON": null,
+      "publicationOrUpdateAtUTC": null,
+      "retrievedAtUTC": "2026-11-27T14:08:10.868310+00:00",
+      "requestStartedAtUTC": "2026-11-27T14:08:05.304084+00:00",
+      "httpStatus": 200,
+      "rawFile": "data/evidence/round-2026-followup-20261127/recheck/about.html",
+      "rawBytes": 23016,
+      "rawSHA256": "e6e95ecf204c1fef4413d7e16a62ae00c3aee95639da2cf87a0c784d3f97ede9",
+      "publicationDateNote": "No independently stated publication timestamp was located; acquisition is not publication."
+    },
+    "beforeStringConfirmation": "APS stated that public information was not updated between Reveal Day and String Confirmation Day.",
+    "afterStringConfirmation": "APS states that public information is updated regularly after String Confirmation Day, but not in real time. Applicants are directed to TAMS for their most up-to-date application information.",
+    "reconciliationOfCurrentStatisticsAndCSVProvided": false
+  },
+  "officialContentionRecheck": {
+    "classification": "Verification of unchanged official contention exports; not a new substantive export or current contention resolution",
+    "provenanceFile": "data/evidence/round-2026-followup-20261127/contention-recheck/provenance-validated.json",
+    "comparisonFile": "data/evidence/round-2026-followup-20261127/contention-recheck/contention-byte-and-id-comparison.json",
+    "sources": [
+      {
+        "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv",
+        "publicURL": "https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv",
+        "resolvedURL": "https://newgtldprogram.icann.org/sites/default/files/documents/reveal-day-contention-sets.csv",
+        "method": "GET",
+        "publicationOrUpdateAtUTC": null,
+        "publicationEventDate": "2026-10-07",
+        "publicationDateBasis": "Official Reveal Day announcement and APS Help link; last-modified recorded separately.",
+        "retrievedAtUTC": "2026-11-27T13:53:16.230606+00:00",
+        "requestStartedAtUTC": "2026-11-27T13:53:09.781298+00:00",
+        "acquisitionTimeBasis": "Completed HTTP response time",
+        "httpStatus": 200,
+        "httpLastModified": "Wed, 07 Oct 2026 17:51:59 GMT",
+        "rawFile": "data/evidence/round-2026-followup-20261127/contention-recheck/reveal-day-contention-sets.csv",
+        "rawBytes": 46481,
+        "rawSHA256": "86f2ebd3764d1f3ea21d5d844cff004e271a443a3431e8ac440da7f72c67e2bf",
+        "rawProvenanceFile": "data/evidence/round-2026-followup-20261127/contention-recheck/provenance-validated.json",
+        "comparisonFile": "data/evidence/round-2026-followup-20261127/contention-recheck/contention-byte-and-id-comparison.json",
+        "previousSource": {
+          "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv",
+          "rawFile": "data/evidence/string-confirmation-2026-11-17/live/reveal-day-contention-sets.csv",
+          "rawSHA256": "86f2ebd3764d1f3ea21d5d844cff004e271a443a3431e8ac440da7f72c67e2bf",
+          "publicationEventDate": "2026-10-07",
+          "acquiredCollectionAtUTC": "2026-11-17T18:30:10Z",
+          "acquisitionTimeBasis": "live/captured-at-utc.txt in same immutable repository commit; collection timestamp, not per-file HTTP timestamp",
+          "repositoryURL": "https://github.com/robertbregy/Connecting-the-Dots/blob/1f8eb058989a2eb3a22f16c431e16fbbed2aa132/data/evidence/string-confirmation-2026-11-17/live/reveal-day-contention-sets.csv"
+        },
+        "sameBytesAsPreviousObservation": true,
+        "newSubstantiveExport": false,
+        "publicationDateNote": "The dated publication event is documented by ICANN. HTTP Last-Modified, request time and acquisition time are retained separately and do not independently establish publication time."
+      },
+      {
+        "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/string-confirmation-contention-sets.csv",
+        "publicURL": "https://newgtldprogram.icann.org/en/application-rounds/round2/string-confirmation-contention-sets.csv",
+        "resolvedURL": "https://newgtldprogram.icann.org/sites/default/files/documents/string-confirmation-contention-sets.csv",
+        "method": "GET",
+        "publicationOrUpdateAtUTC": null,
+        "publicationEventDate": "2026-11-17",
+        "publicationDateBasis": "Official String Confirmation Day announcement and APS Help link; last-modified recorded separately.",
+        "retrievedAtUTC": "2026-11-27T13:52:37.163704+00:00",
+        "requestStartedAtUTC": "2026-11-27T13:52:37.163704+00:00",
+        "acquisitionTimeBasis": "Recorded time immediately before the HTTP request; completion time was not separately recorded",
+        "httpStatus": 200,
+        "httpLastModified": "Tue, 17 Nov 2026 17:26:47 GMT",
+        "rawFile": "data/evidence/round-2026-followup-20261127/contention-recheck/string-confirmation-contention-sets.csv",
+        "rawBytes": 36820,
+        "rawSHA256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
+        "rawProvenanceFile": "data/evidence/round-2026-followup-20261127/contention-recheck/provenance-validated.json",
+        "comparisonFile": "data/evidence/round-2026-followup-20261127/contention-recheck/contention-byte-and-id-comparison.json",
+        "previousSource": {
+          "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/string-confirmation-contention-sets.csv",
+          "rawFile": "data/evidence/string-confirmation-2026-11-17/live/string-confirmation-contention-sets.csv",
+          "rawSHA256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
+          "publicationEventDate": "2026-11-17",
+          "acquiredCollectionAtUTC": "2026-11-17T18:30:10Z",
+          "acquisitionTimeBasis": "live/captured-at-utc.txt in same immutable repository commit; collection timestamp, not per-file HTTP timestamp",
+          "repositoryURL": "https://github.com/robertbregy/Connecting-the-Dots/blob/1f8eb058989a2eb3a22f16c431e16fbbed2aa132/data/evidence/string-confirmation-2026-11-17/live/string-confirmation-contention-sets.csv"
+        },
+        "sameBytesAsPreviousObservation": true,
+        "newSubstantiveExport": false,
+        "publicationDateNote": "The dated publication event is documented by ICANN. HTTP Last-Modified, request time and acquisition time are retained separately and do not independently establish publication time."
+      }
+    ],
+    "comparisons": [
+      {
+        "source": "reveal-day-contention-sets.csv",
+        "equal_bytes": true,
+        "sha256": "86f2ebd3764d1f3ea21d5d844cff004e271a443a3431e8ac440da7f72c67e2bf",
+        "baseline_sha256": "86f2ebd3764d1f3ea21d5d844cff004e271a443a3431e8ac440da7f72c67e2bf",
+        "rows": 891,
+        "distinct_application_ids": 891,
+        "set_ids": 263,
+        "added_ids": [],
+        "removed_ids": [],
+        "changed_fields_by_id": {}
+      },
+      {
+        "source": "string-confirmation-contention-sets.csv",
+        "equal_bytes": true,
+        "sha256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
+        "baseline_sha256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
+        "rows": 705,
+        "distinct_application_ids": 705,
+        "set_ids": 226,
+        "added_ids": [],
+        "removed_ids": [],
+        "changed_fields_by_id": {}
+      }
+    ]
+  },
+  "separatelyPublishedApplicationObservation": {
+    "applicationId": "WDO2627T-T45217",
+    "source": {
+      "url": "https://newgtldprogram-aps.icann.org/applications/WDO2627T-T45217/summary",
+      "publicURL": "https://newgtldprogram-aps.icann.org/applications/WDO2627T-T45217/summary",
+      "method": "GET",
+      "requestJSON": null,
+      "publicationOrUpdateAtUTC": "2026-10-07T18:00:00Z",
+      "retrievedAtUTC": "2026-11-27T13:51:25.122632+00:00",
+      "requestStartedAtUTC": null,
+      "httpStatus": 200,
+      "rawFile": "data/evidence/round-2026-followup-20261127/aps-wdo-summary.html",
+      "rawBytes": 25303,
+      "rawSHA256": "cd7916f4de55c18e70e46f7ae704262eee60d1a3635ddb84dc9c9e7704109a39",
+      "publicationDateNote": "The last public summary publication is not a current internal-status timestamp.",
+      "publicationDateBasis": "Visible Last published on label in the archived official HTML",
+      "sameBytesAsPreviousObservation": true,
+      "previousSource": {
+        "url": "https://newgtldprogram-aps.icann.org/applications/WDO2627T-T45217/summary",
+        "publicationOrUpdateAtUTC": "2026-10-07T18:00:00Z",
+        "retrievedAtUTC": "2026-11-22T10:50:51Z",
+        "rawSHA256": "cd7916f4de55c18e70e46f7ae704262eee60d1a3635ddb84dc9c9e7704109a39",
+        "evidenceRegister": "data/evidence/round-2026-followup-20261122/source-observations.json"
+      }
+    },
+    "lastPublishedStatus": "Undergoing administrative check",
+    "lastPublishedAtUTC": "2026-10-07T18:00:00Z",
+    "currentInternalStatusEstablished": false,
+    "attributionToCurrentCountDiscrepanciesDocumented": false
+  },
+  "comparison": "data/evidence/round-2026-followup-20261127/comparison-by-application-id.json",
+  "addedRecordIds": [],
+  "removedRecordIds": [],
+  "changedRecordCount": 78,
+  "changedApplicationFamilyCount": 76,
+  "changedFieldCounts": {
+    "Application Status": 42,
+    "Label: Change Request": 36
+  },
+  "allChangedFieldsSincePreviousObservation": [
+    {
+      "recordId": "24452647T-T62047",
+      "applicationFamilyId": "24452647T-T62047",
+      "string": "takamiya",
+      "applicant": "Takamiya Co., Ltd.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "36262695T-T42322",
+      "applicationFamilyId": "36262695T-T42322",
+      "string": "tisi",
+      "applicant": "TISI Inc.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "43372680T-T95618",
+      "applicationFamilyId": "43372680T-T95618",
+      "string": "pia",
+      "applicant": "PIA CORPORATION",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "44522636T-T55394",
+      "applicationFamilyId": "44522636T-T55394",
+      "string": "kao",
+      "applicant": "Kao Corporation",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "45072669T-T67837",
+      "applicationFamilyId": "45072669T-T67837",
+      "string": "shionogi",
+      "applicant": "Shionogi & Co., Ltd.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "61412675T-T18565",
+      "applicationFamilyId": "61412675T-T18565",
+      "string": "dmgmori",
+      "applicant": "DMG MORI CO., LTD.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "63052682T-T56902",
+      "applicationFamilyId": "63052682T-T56902",
+      "string": "landcros",
+      "applicant": "Hitachi Construction Machinery Co., Ltd.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "70122665T-T13662",
+      "applicationFamilyId": "70122665T-T13662",
+      "string": "kawasaki",
+      "applicant": "Kawasaki Heavy Industries, Ltd.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "72612695T-T33012",
+      "applicationFamilyId": "72612695T-T33012",
+      "string": "mazda",
+      "applicant": "Mazda Motor Corporation",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "77352697T-T40435",
+      "applicationFamilyId": "77352697T-T40435",
+      "string": "screen",
+      "applicant": "SCREEN Holdings Co., Ltd.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "79112627T-T56273",
+      "applicationFamilyId": "79112627T-T56273",
+      "string": "toppan",
+      "applicant": "TOPPAN Holdings Inc.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "79442683T-T47475",
+      "applicationFamilyId": "79442683T-T47475",
+      "string": "roland",
+      "applicant": "Roland Corporation",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "80502644T-T59918",
+      "applicationFamilyId": "80502644T-T59918",
+      "string": "seiko",
+      "applicant": "Seiko Group Kabushiki Kaisha",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "84112666T-T75756",
+      "applicationFamilyId": "84112666T-T75756",
+      "string": "mizuho",
+      "applicant": "Mizuho Financial Group, Inc.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "85662668T-T46971",
+      "applicationFamilyId": "85662668T-T46971",
+      "string": "ritres",
+      "applicant": "RICOH LEASING COMPANY, LTD. ",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "86302673T-T51999",
+      "applicationFamilyId": "86302673T-T51999",
+      "string": "sompo",
+      "applicant": "Sompo Holdings, Inc.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "87252644T-T13162",
+      "applicationFamilyId": "87252644T-T13162",
+      "string": "msig",
+      "applicant": "MS&AD Insurance Group Holdings, Inc.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "A2652T-T75760",
+      "applicationFamilyId": "A2652T-T75760",
+      "string": "robot",
+      "applicant": "Zero Gravity Labs Inc.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "AEI2688T-T84808",
+      "applicationFamilyId": "AEI2688T-T84808",
+      "string": "asi",
+      "applicant": "Adhara Exploration, Inc.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "APEC2611T-T11013",
+      "applicationFamilyId": "APEC2611T-T11013",
+      "string": "easy",
+      "applicant": "Aruba PEC S.P.A.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "BEI2691T-T99138",
+      "applicationFamilyId": "BEI2691T-T99138",
+      "string": "craft",
+      "applicant": "Bellatrix Exploration, Inc.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "BTRT2633T-T38161",
+      "applicationFamilyId": "BTRT2633T-T38161",
+      "string": "xn--fiq228c5hs",
+      "applicant": "Beijing TLD Registry Technology Limited",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "BTRT2633T-T83538",
+      "applicationFamilyId": "BTRT2633T-T83538",
+      "string": "xn--3ds443g",
+      "applicant": "Beijing TLD Registry Technology Limited",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "CCS2640T-T48725",
+      "applicationFamilyId": "CCS2640T-T48725",
+      "string": "order",
+      "applicant": "Cam Connecting SARL",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "CINI2622T-T81530",
+      "applicationFamilyId": "CINI2622T-T81530",
+      "string": "xn--io0a7i",
+      "applicant": "China Internet Network Information Center (CNNIC)",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "CS2676T-T34770",
+      "applicationFamilyId": "CS2676T-T34770",
+      "string": "auth",
+      "applicant": "Codyssey SL",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "DCJE2552-T43314",
+      "applicationFamilyId": "DCJE2552-T43314",
+      "string": "mai",
+      "applicant": "Deqing County Jinghong Entrepreneur Service Center",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "EDCL2689T-T11150",
+      "applicationFamilyId": "EDCL2689T-T11150",
+      "string": "crypto",
+      "applicant": "ECHO Domain Co L.L.C.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "EDCL2689T-T68091",
+      "applicationFamilyId": "EDCL2689T-T68091",
+      "string": "api",
+      "applicant": "ECHO Domain Co L.L.C.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "EDCL2689T-T94739",
+      "applicationFamilyId": "EDCL2689T-T94739",
+      "string": "agent",
+      "applicant": "ECHO Domain Co L.L.C.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "FEI2676T-T60926",
+      "applicationFamilyId": "FEI2676T-T60926",
+      "string": "intelligence",
+      "applicant": "Fomalhaut Exploration, Inc.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "GEI2639T-T18440",
+      "applicationFamilyId": "GEI2639T-T18440",
+      "string": "kit",
+      "applicant": "Gacrux Exploration, Inc",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "HI2626T-T82284",
+      "applicationFamilyId": "HI2626T-T82284",
+      "string": "hims",
+      "applicant": "Hims, Inc.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "HI2626T-T90203",
+      "applicationFamilyId": "HI2626T-T90203",
+      "string": "hers",
+      "applicant": "Hims, Inc.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "HU2684T-T32145",
+      "applicationFamilyId": "HU2684T-T32145",
+      "string": "hub",
+      "applicant": "Hostinger UAB",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "HU2684T-T42201",
+      "applicationFamilyId": "HU2684T-T42201",
+      "string": "gen",
+      "applicant": "Hostinger UAB",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "HU2684T-T81042",
+      "applicationFamilyId": "HU2684T-T81042",
+      "string": "lab",
+      "applicant": "Hostinger UAB",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "ITL2677T-T15916",
+      "applicationFamilyId": "ITL2677T-T15916",
+      "string": "robot",
+      "applicant": "Ipollo Tech Ltd",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "ITL2677T-T74240",
+      "applicationFamilyId": "ITL2677T-T74240",
+      "string": "agent",
+      "applicant": "Ipollo Tech Ltd",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "MC2626T-T87191",
+      "applicationFamilyId": "MC2626T-T87191",
+      "string": "hall",
+      "applicant": "Momentous Corporation ",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "MC2626T-T87191-R",
+      "applicationFamilyId": "MC2626T-T87191",
+      "string": "venue",
+      "applicant": "Momentous Corporation ",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "MEI2627T-T58035",
+      "applicationFamilyId": "MEI2627T-T58035",
+      "string": "maker",
+      "applicant": "Menkalinan Exploration, Inc.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "MEI2627T-T73873",
+      "applicationFamilyId": "MEI2627T-T73873",
+      "string": "mart",
+      "applicant": "Menkalinan Exploration, Inc.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "MI2694T-T68970",
+      "applicationFamilyId": "MI2694T-T68970",
+      "string": "medley",
+      "applicant": "MEDLEY, INC.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T14670",
+      "applicationFamilyId": "NA2626T-T14670",
+      "string": "agi",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T30508",
+      "applicationFamilyId": "NA2626T-T30508",
+      "string": "ace",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T32387",
+      "applicationFamilyId": "NA2626T-T32387",
+      "string": "good",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T38427",
+      "applicationFamilyId": "NA2626T-T38427",
+      "string": "omg",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T46346",
+      "applicationFamilyId": "NA2626T-T46346",
+      "string": "api",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T48225",
+      "applicationFamilyId": "NA2626T-T48225",
+      "string": "fix",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T54761",
+      "applicationFamilyId": "NA2626T-T54761",
+      "string": "lab",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T63059",
+      "applicationFamilyId": "NA2626T-T63059",
+      "string": "ask",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T64063",
+      "applicationFamilyId": "NA2626T-T64063",
+      "string": "tap",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T65696",
+      "applicationFamilyId": "NA2626T-T65696",
+      "string": "hub",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T70103",
+      "applicationFamilyId": "NA2626T-T70103",
+      "string": "fab",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T80159",
+      "applicationFamilyId": "NA2626T-T80159",
+      "string": "mcp",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T90969",
+      "applicationFamilyId": "NA2626T-T90969",
+      "string": "pop",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T98888",
+      "applicationFamilyId": "NA2626T-T98888",
+      "string": "zen",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NSCL2617T-T55273",
+      "applicationFamilyId": "NSCL2617T-T55273",
+      "string": "nomura",
+      "applicant": "Nomura Holdings, Inc.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "NTG2671T-T12150",
+      "applicationFamilyId": "NTG2671T-T12150",
+      "string": "share",
+      "applicant": "NextGEN TLDs GmbH",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NTG2671T-T13787",
+      "applicationFamilyId": "NTG2671T-T13787",
+      "string": "ultra",
+      "applicant": "NextGEN TLDs GmbH",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NTNC2670T-T72865",
+      "applicationFamilyId": "NTNC2670T-T72865",
+      "string": "ntv",
+      "applicant": "Nippon Television Network Corporation",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "OI2692T-T96497",
+      "applicationFamilyId": "OI2692T-T96497",
+      "string": "loop",
+      "applicant": "Oinkadot Inc",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "PEI2617T-T23468",
+      "applicationFamilyId": "PEI2617T-T23468",
+      "string": "path",
+      "applicant": "Pollux Exploration, Inc.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "REI2641T-T20577",
+      "applicationFamilyId": "REI2641T-T20577",
+      "string": "view",
+      "applicant": "Regulus Exploration, Inc.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "TO2640T-T19948",
+      "applicationFamilyId": "TO2640T-T19948",
+      "string": "ver",
+      "applicant": "Stichting Verifieerbaar Internet",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "TO2640T-T19948-R",
+      "applicationFamilyId": "TO2640T-T19948",
+      "string": "verified",
+      "applicant": "Stichting Verifieerbaar Internet",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "TPCL2648T-T11392",
+      "applicationFamilyId": "TPCL2648T-T11392",
+      "string": "lipovitan",
+      "applicant": "Taisho Pharmaceutical Co., Ltd.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "TPCL2648T-T93473",
+      "applicationFamilyId": "TPCL2648T-T93473",
+      "string": "upsa",
+      "applicant": "Taisho Pharmaceutical Co., Ltd.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "UA2620T-T14912",
+      "applicationFamilyId": "UA2620T-T14912",
+      "string": "ultra",
+      "applicant": "ULTRAVIEW AG",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "UA2620T-T22831",
+      "applicationFamilyId": "UA2620T-T22831",
+      "string": "ultraview",
+      "applicant": "ULTRAVIEW AG",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "UA2620T-T78518",
+      "applicationFamilyId": "UA2620T-T78518",
+      "string": "person",
+      "applicant": "ULTRAVIEW AG",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "UA2620T-T78897",
+      "applicationFamilyId": "UA2620T-T78897",
+      "string": "gaming",
+      "applicant": "ULTRAVIEW AG",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "VNTL2649T-T52249",
+      "applicationFamilyId": "VNTL2649T-T52249",
+      "string": "portal",
+      "applicant": "VANT NEXUS TECHNOLOGIES LLC",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "XCI2688T-T41810",
+      "applicationFamilyId": "XCI2688T-T41810",
+      "string": "ion",
+      "applicant": "XServer Cloud Incorporated",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "XCI2688T-T62426",
+      "applicationFamilyId": "XCI2688T-T62426",
+      "string": "gaming",
+      "applicant": "XServer Cloud Incorporated",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "XCI2688T-T81155",
+      "applicationFamilyId": "XCI2688T-T81155",
+      "string": "brand",
+      "applicant": "XServer Cloud Incorporated",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "XI2694T-T18057",
+      "applicationFamilyId": "XI2694T-T18057",
+      "string": "key",
+      "applicant": "XRegistry Incorporated",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    }
+  ],
+  "statusChangesSincePreviousObservation": [
+    {
+      "applicationId": "A2652T-T75760",
+      "string": "robot",
+      "applicant": "Zero Gravity Labs Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "AEI2688T-T84808",
+      "string": "asi",
+      "applicant": "Adhara Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "APEC2611T-T11013",
+      "string": "easy",
+      "applicant": "Aruba PEC S.P.A.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "BEI2691T-T99138",
+      "string": "craft",
+      "applicant": "Bellatrix Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CCS2640T-T48725",
+      "string": "order",
+      "applicant": "Cam Connecting SARL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CS2676T-T34770",
+      "string": "auth",
+      "applicant": "Codyssey SL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "EDCL2689T-T11150",
+      "string": "crypto",
+      "applicant": "ECHO Domain Co L.L.C.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "EDCL2689T-T68091",
+      "string": "api",
+      "applicant": "ECHO Domain Co L.L.C.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "EDCL2689T-T94739",
+      "string": "agent",
+      "applicant": "ECHO Domain Co L.L.C.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "FEI2676T-T60926",
+      "string": "intelligence",
+      "applicant": "Fomalhaut Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "GEI2639T-T18440",
+      "string": "kit",
+      "applicant": "Gacrux Exploration, Inc",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "HU2684T-T32145",
+      "string": "hub",
+      "applicant": "Hostinger UAB",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "HU2684T-T42201",
+      "string": "gen",
+      "applicant": "Hostinger UAB",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "HU2684T-T81042",
+      "string": "lab",
+      "applicant": "Hostinger UAB",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "ITL2677T-T15916",
+      "string": "robot",
+      "applicant": "Ipollo Tech Ltd",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "ITL2677T-T74240",
+      "string": "agent",
+      "applicant": "Ipollo Tech Ltd",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "MEI2627T-T58035",
+      "string": "maker",
+      "applicant": "Menkalinan Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "MEI2627T-T73873",
+      "string": "mart",
+      "applicant": "Menkalinan Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T14670",
+      "string": "agi",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T30508",
+      "string": "ace",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T32387",
+      "string": "good",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T38427",
+      "string": "omg",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T46346",
+      "string": "api",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T48225",
+      "string": "fix",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T54761",
+      "string": "lab",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T63059",
+      "string": "ask",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T64063",
+      "string": "tap",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T65696",
+      "string": "hub",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T70103",
+      "string": "fab",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T80159",
+      "string": "mcp",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T90969",
+      "string": "pop",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T98888",
+      "string": "zen",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NTG2671T-T12150",
+      "string": "share",
+      "applicant": "NextGEN TLDs GmbH",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NTG2671T-T13787",
+      "string": "ultra",
+      "applicant": "NextGEN TLDs GmbH",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "OI2692T-T96497",
+      "string": "loop",
+      "applicant": "Oinkadot Inc",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "PEI2617T-T23468",
+      "string": "path",
+      "applicant": "Pollux Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "REI2641T-T20577",
+      "string": "view",
+      "applicant": "Regulus Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "VNTL2649T-T52249",
+      "string": "portal",
+      "applicant": "VANT NEXUS TECHNOLOGIES LLC",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "XCI2688T-T41810",
+      "string": "ion",
+      "applicant": "XServer Cloud Incorporated",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "XCI2688T-T62426",
+      "string": "gaming",
+      "applicant": "XServer Cloud Incorporated",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "XCI2688T-T81155",
+      "string": "brand",
+      "applicant": "XServer Cloud Incorporated",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "XI2694T-T18057",
+      "string": "key",
+      "applicant": "XRegistry Incorporated",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    }
+  ],
+  "statusChangesSinceFrozen17": [
+    {
+      "applicationId": "A2652T-T75760",
+      "string": "robot",
+      "applicant": "Zero Gravity Labs Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "AEI2688T-T84808",
+      "string": "asi",
+      "applicant": "Adhara Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "AI2686T-T93348",
+      "string": "airliquide",
+      "applicant": "L'Air Liquide, société anonyme pour l'Étude et l'Exploitation des procédés Georges Claude",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "APEC2611T-T11013",
+      "string": "easy",
+      "applicant": "Aruba PEC S.P.A.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "BEI2691T-T99138",
+      "string": "craft",
+      "applicant": "Bellatrix Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "BGNT2696T-T98747",
+      "string": "pop",
+      "applicant": "Beijing Guoxu Network Technology Co., Ltd.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CCS2640T-T43697",
+      "string": "gaming",
+      "applicant": "Cam Connecting SARL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CCS2640T-T48725",
+      "string": "order",
+      "applicant": "Cam Connecting SARL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CCS2640T-T59535",
+      "string": "gym",
+      "applicant": "Cam Connecting SARL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CCS2640T-T64563",
+      "string": "official",
+      "applicant": "Cam Connecting SARL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CCS2640T-T75373",
+      "string": "max",
+      "applicant": "Cam Connecting SARL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CCS2640T-T99130",
+      "string": "zen",
+      "applicant": "Cam Connecting SARL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CS2676T-T34770",
+      "string": "auth",
+      "applicant": "Codyssey SL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "EDCL2689T-T11150",
+      "string": "crypto",
+      "applicant": "ECHO Domain Co L.L.C.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "EDCL2689T-T68091",
+      "string": "api",
+      "applicant": "ECHO Domain Co L.L.C.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "EDCL2689T-T94739",
+      "string": "agent",
+      "applicant": "ECHO Domain Co L.L.C.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "FEI2676T-T60926",
+      "string": "intelligence",
+      "applicant": "Fomalhaut Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "GEI2639T-T18440",
+      "string": "kit",
+      "applicant": "Gacrux Exploration, Inc",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "HU2684T-T32145",
+      "string": "hub",
+      "applicant": "Hostinger UAB",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "HU2684T-T42201",
+      "string": "gen",
+      "applicant": "Hostinger UAB",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "HU2684T-T81042",
+      "string": "lab",
+      "applicant": "Hostinger UAB",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "INC2624T-T96235",
+      "string": "bit",
+      "applicant": "Internet Naming Company",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "ITL2677T-T15916",
+      "string": "robot",
+      "applicant": "Ipollo Tech Ltd",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "ITL2677T-T74240",
+      "string": "agent",
+      "applicant": "Ipollo Tech Ltd",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "MEI2627T-T58035",
+      "string": "maker",
+      "applicant": "Menkalinan Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "MEI2627T-T73873",
+      "string": "mart",
+      "applicant": "Menkalinan Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T14670",
+      "string": "agi",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T30508",
+      "string": "ace",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T32387",
+      "string": "good",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T38427",
+      "string": "omg",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T46346",
+      "string": "api",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T48225",
+      "string": "fix",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T54761",
+      "string": "lab",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T63059",
+      "string": "ask",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T64063",
+      "string": "tap",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T65696",
+      "string": "hub",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T70103",
+      "string": "fab",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T80159",
+      "string": "mcp",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T90969",
+      "string": "pop",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T98888",
+      "string": "zen",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NTG2671T-T12150",
+      "string": "share",
+      "applicant": "NextGEN TLDs GmbH",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NTG2671T-T13787",
+      "string": "ultra",
+      "applicant": "NextGEN TLDs GmbH",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "OI2692T-T96497",
+      "string": "loop",
+      "applicant": "Oinkadot Inc",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "PEI2617T-T23468",
+      "string": "path",
+      "applicant": "Pollux Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "REI2641T-T20577",
+      "string": "view",
+      "applicant": "Regulus Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "TL2645T-T30242",
+      "string": "zen",
+      "applicant": "TechEdge Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "TL2645T-T79897",
+      "string": "leo",
+      "applicant": "TechEdge Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "VNTL2649T-T52249",
+      "string": "portal",
+      "applicant": "VANT NEXUS TECHNOLOGIES LLC",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "XCI2688T-T41810",
+      "string": "ion",
+      "applicant": "XServer Cloud Incorporated",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "XCI2688T-T62426",
+      "string": "gaming",
+      "applicant": "XServer Cloud Incorporated",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "XCI2688T-T81155",
+      "string": "brand",
+      "applicant": "XServer Cloud Incorporated",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "XI2694T-T18057",
+      "string": "key",
+      "applicant": "XRegistry Incorporated",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    }
+  ],
+  "withdrawalSummaryEvidence": "data/evidence/round-2026-followup-20261127/withdrawals-42-official-summary-corroboration.json",
+  "withdrawalSummaryPublicationDateCounts": {
+    "2026-11-23": 2,
+    "2026-11-25": 27,
+    "2026-11-26": 13
+  },
+  "withdrawalEffectiveDates": null,
+  "currentExactStringOverlap": {
+    "classification": "Project analysis of official ICANN APS data; calculated counts are not totals declared by ICANN.",
+    "basis": "Project-derived exact-primary-string overlaps among current visible Active new gTLD applications. These are not a newly published ICANN contention determination. The official 17 November contention CSV remains separately frozen at 226 sets / 705 rows.",
+    "newPrimaryApplications": 1547,
+    "newPrimaryStrings": 1119,
+    "groups": 222,
+    "applicationsInGroups": 650,
+    "isNewOfficialContentionDetermination": false,
+    "official17NovemberReference": {
+      "sets": 226,
+      "applicationRows": 705,
+      "source": "data/evidence/string-confirmation-2026-11-17/live/string-confirmation-contention-sets.csv",
+      "sha256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f"
+    },
+    "groupsNowWithOneActiveVisibleApplication": [
+      {
+        "string": "loop",
+        "previousApplicationIds": [
+          "MLL2689T-T58656",
+          "OI2692T-T96497"
+        ],
+        "currentActiveApplicationIds": [
+          "MLL2689T-T58656"
+        ],
+        "newlyWithdrawnApplicationIds": [
+          "OI2692T-T96497"
+        ],
+        "officialResolutionInferred": false
+      },
+      {
+        "string": "order",
+        "previousApplicationIds": [
+          "CCS2640T-T48725",
+          "LFGL2683T-T78260"
+        ],
+        "currentActiveApplicationIds": [
+          "LFGL2683T-T78260"
+        ],
+        "newlyWithdrawnApplicationIds": [
+          "CCS2640T-T48725"
+        ],
+        "officialResolutionInferred": false
+      },
+      {
+        "string": "path",
+        "previousApplicationIds": [
+          "NS2662T-T44955",
+          "PEI2617T-T23468"
+        ],
+        "currentActiveApplicationIds": [
+          "NS2662T-T44955"
+        ],
+        "newlyWithdrawnApplicationIds": [
+          "PEI2617T-T23468"
+        ],
+        "officialResolutionInferred": false
+      }
+    ]
+  },
+  "selectedReplacements": {
+    "previous": 152,
+    "current": 152,
+    "addedApplicationIds": [],
+    "removedApplicationIds": []
+  },
+  "changeRequestLabelFollowup": {
+    "changedRecordCount": 36,
+    "applicationFamilyCount": 34,
+    "records": [
+      {
+        "recordId": "24452647T-T62047",
+        "applicationFamilyId": "24452647T-T62047",
+        "string": "takamiya",
+        "applicant": "Takamiya Co., Ltd.",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "36262695T-T42322",
+        "applicationFamilyId": "36262695T-T42322",
+        "string": "tisi",
+        "applicant": "TISI Inc.",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "43372680T-T95618",
+        "applicationFamilyId": "43372680T-T95618",
+        "string": "pia",
+        "applicant": "PIA CORPORATION",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "44522636T-T55394",
+        "applicationFamilyId": "44522636T-T55394",
+        "string": "kao",
+        "applicant": "Kao Corporation",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "45072669T-T67837",
+        "applicationFamilyId": "45072669T-T67837",
+        "string": "shionogi",
+        "applicant": "Shionogi & Co., Ltd.",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "61412675T-T18565",
+        "applicationFamilyId": "61412675T-T18565",
+        "string": "dmgmori",
+        "applicant": "DMG MORI CO., LTD.",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "63052682T-T56902",
+        "applicationFamilyId": "63052682T-T56902",
+        "string": "landcros",
+        "applicant": "Hitachi Construction Machinery Co., Ltd.",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "70122665T-T13662",
+        "applicationFamilyId": "70122665T-T13662",
+        "string": "kawasaki",
+        "applicant": "Kawasaki Heavy Industries, Ltd.",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "72612695T-T33012",
+        "applicationFamilyId": "72612695T-T33012",
+        "string": "mazda",
+        "applicant": "Mazda Motor Corporation",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "77352697T-T40435",
+        "applicationFamilyId": "77352697T-T40435",
+        "string": "screen",
+        "applicant": "SCREEN Holdings Co., Ltd.",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "79112627T-T56273",
+        "applicationFamilyId": "79112627T-T56273",
+        "string": "toppan",
+        "applicant": "TOPPAN Holdings Inc.",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "79442683T-T47475",
+        "applicationFamilyId": "79442683T-T47475",
+        "string": "roland",
+        "applicant": "Roland Corporation",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "80502644T-T59918",
+        "applicationFamilyId": "80502644T-T59918",
+        "string": "seiko",
+        "applicant": "Seiko Group Kabushiki Kaisha",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "84112666T-T75756",
+        "applicationFamilyId": "84112666T-T75756",
+        "string": "mizuho",
+        "applicant": "Mizuho Financial Group, Inc.",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "85662668T-T46971",
+        "applicationFamilyId": "85662668T-T46971",
+        "string": "ritres",
+        "applicant": "RICOH LEASING COMPANY, LTD. ",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "86302673T-T51999",
+        "applicationFamilyId": "86302673T-T51999",
+        "string": "sompo",
+        "applicant": "Sompo Holdings, Inc.",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "87252644T-T13162",
+        "applicationFamilyId": "87252644T-T13162",
+        "string": "msig",
+        "applicant": "MS&AD Insurance Group Holdings, Inc.",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "BTRT2633T-T38161",
+        "applicationFamilyId": "BTRT2633T-T38161",
+        "string": "xn--fiq228c5hs",
+        "applicant": "Beijing TLD Registry Technology Limited",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "BTRT2633T-T83538",
+        "applicationFamilyId": "BTRT2633T-T83538",
+        "string": "xn--3ds443g",
+        "applicant": "Beijing TLD Registry Technology Limited",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "CINI2622T-T81530",
+        "applicationFamilyId": "CINI2622T-T81530",
+        "string": "xn--io0a7i",
+        "applicant": "China Internet Network Information Center (CNNIC)",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "DCJE2552-T43314",
+        "applicationFamilyId": "DCJE2552-T43314",
+        "string": "mai",
+        "applicant": "Deqing County Jinghong Entrepreneur Service Center",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "HI2626T-T82284",
+        "applicationFamilyId": "HI2626T-T82284",
+        "string": "hims",
+        "applicant": "Hims, Inc.",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "HI2626T-T90203",
+        "applicationFamilyId": "HI2626T-T90203",
+        "string": "hers",
+        "applicant": "Hims, Inc.",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "MC2626T-T87191",
+        "applicationFamilyId": "MC2626T-T87191",
+        "string": "hall",
+        "applicant": "Momentous Corporation ",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "MC2626T-T87191-R",
+        "applicationFamilyId": "MC2626T-T87191",
+        "string": "venue",
+        "applicant": "Momentous Corporation ",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "MI2694T-T68970",
+        "applicationFamilyId": "MI2694T-T68970",
+        "string": "medley",
+        "applicant": "MEDLEY, INC.",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "NSCL2617T-T55273",
+        "applicationFamilyId": "NSCL2617T-T55273",
+        "string": "nomura",
+        "applicant": "Nomura Holdings, Inc.",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "NTNC2670T-T72865",
+        "applicationFamilyId": "NTNC2670T-T72865",
+        "string": "ntv",
+        "applicant": "Nippon Television Network Corporation",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "TO2640T-T19948",
+        "applicationFamilyId": "TO2640T-T19948",
+        "string": "ver",
+        "applicant": "Stichting Verifieerbaar Internet",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "TO2640T-T19948-R",
+        "applicationFamilyId": "TO2640T-T19948",
+        "string": "verified",
+        "applicant": "Stichting Verifieerbaar Internet",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "TPCL2648T-T11392",
+        "applicationFamilyId": "TPCL2648T-T11392",
+        "string": "lipovitan",
+        "applicant": "Taisho Pharmaceutical Co., Ltd.",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "TPCL2648T-T93473",
+        "applicationFamilyId": "TPCL2648T-T93473",
+        "string": "upsa",
+        "applicant": "Taisho Pharmaceutical Co., Ltd.",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "UA2620T-T14912",
+        "applicationFamilyId": "UA2620T-T14912",
+        "string": "ultra",
+        "applicant": "ULTRAVIEW AG",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "UA2620T-T22831",
+        "applicationFamilyId": "UA2620T-T22831",
+        "string": "ultraview",
+        "applicant": "ULTRAVIEW AG",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "UA2620T-T78518",
+        "applicationFamilyId": "UA2620T-T78518",
+        "string": "person",
+        "applicant": "ULTRAVIEW AG",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      },
+      {
+        "recordId": "UA2620T-T78897",
+        "applicationFamilyId": "UA2620T-T78897",
+        "string": "gaming",
+        "applicant": "ULTRAVIEW AG",
+        "changes": {
+          "Label: Change Request": [
+            "FALSE",
+            "TRUE"
+          ]
+        }
+      }
+    ],
+    "publishedRequestFamilyCount": 30,
+    "publishedApprovedRequestCount": 34,
+    "publishedApprovedRequestIds": [
+      "CR-24452647T-001",
+      "CR-36262695T-FCP-001",
+      "CR-43372680T-T95618-001",
+      "CR-44522636T-FCP-001",
+      "CR-45072669T-001",
+      "CR-61412675T-FCP-001",
+      "CR-63052682T-FCP-001",
+      "CR-70122665T-FCP-001",
+      "CR-70122665T-T13662-001",
+      "CR-72612695T-FCP-001",
+      "CR-77352697T-001",
+      "CR-77352697T-T40435-001",
+      "CR-79112627T-FCP-001",
+      "CR-79442683T-T47475-001",
+      "CR-80502644T-FCP-001",
+      "CR-84112666T-FCP-001",
+      "CR-85662668T-FCP-001",
+      "CR-86302673T-001",
+      "CR-86302673T-FCP-001",
+      "CR-87252644T-T13162-001",
+      "CR-CINI2622T-001",
+      "CR-CINI2622T-Org ID-001",
+      "CR-DCJE2552-T43314-001",
+      "CR-MC2626T-001",
+      "CR-MI2694T-001",
+      "CR-NSCL2617T-001",
+      "CR-NTNC2670T-T72865-001",
+      "CR-TO2640T-001",
+      "CR-TPCL2648T-T11392-001",
+      "CR-TPCL2648T-T93473-001",
+      "CR-UA2620T-T14912-001",
+      "CR-UA2620T-T22831-001",
+      "CR-UA2620T-T78518-001",
+      "CR-UA2620T-T78897-001"
+    ],
+    "flagWithEmptyRequestListApplicationIds": [
+      "BTRT2633T-T38161",
+      "BTRT2633T-T83538",
+      "HI2626T-T82284",
+      "HI2626T-T90203"
+    ],
+    "evidence": "data/evidence/round-2026-followup-20261127/change-requests-analysis.json",
+    "approvalDateRange": {
+      "earliest": "2026-11-23T16:56:23.010Z",
+      "latest": "2026-11-25T15:38:46.010Z"
+    },
+    "requestTypeCounts": {
+      "organizationChangeRequest": 9,
+      "financialChangeRequest": 11,
+      "applicationChangeRequest": 13,
+      "stakeholderChangeRequest": 1
+    },
+    "interpretation": "A published approved change request is distinct from final application approval or selection of a replacement string. Four true labels have no public request details. Historical individual request pages were not captured; the prior verified state is the 22 November CSV label."
+  },
+  "limitations": [
+    "The full CSV response does not state an export publication timestamp.",
+    "Summary lastPublishedAt timestamps are publication times, not effective withdrawal dates.",
+    "Individual change-request pages were first captured on 27 November; the previous verified state is the 22 November export label, not a historical capture of those pages.",
+    "APS public information is not real-time; discrepancies between endpoints are retained, not silently reconciled.",
+    "Non sono state recuperate pagine Change Requests archiviate del 22 novembre. La versione precedente verificabile è la label nel CSV storico; i prima/dopo delle risposte provengono dal confronto pubblicato oggi dalla fonte ufficiale.",
+    "La data approvalDate è l’approvazione pubblicata della richiesta, non la data di acquisizione e non necessariamente la pubblicazione. lastPublishedAt è il timestamp della scheda restituito dall’API.",
+    "Quattro schede mostrano hasChangeRequests=true ma nessuna richiesta nell’elenco crs; non si inferiscono contenuto, approvazione o esito.",
+    "Le risposte riservate non sono ricostruibili. L’assenza di questionsChanged non prova assenza di una modifica approvata.",
+    "I metadati originalDocuments/finalDocuments identici non dimostrano che il contenuto dei PDF sia identico; i PDF non sono stati confrontati.",
+    "Nessuna nuova sostituzione di stringa o modifica dello stato Active è dimostrata da queste richieste; una richiesta approvata sul profilo non è approvazione finale della candidatura.",
+    "The aggregate difference does not identify eleven additional withdrawn Application IDs. The separately published .wdo administrative-check notice only documents its omission from the public listing; it does not explain this withdrawal discrepancy or establish its current internal state.",
+    "The derived exact-string groups do not establish ICANN contention resolution. Objection fields are not contention determinations."
+  ]
+}

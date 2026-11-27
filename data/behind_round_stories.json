@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "editorialLayer": "2026-round-field-notes-not-part-of-frozen-RR1",
-  "lastReviewed": "2026-11-22",
+  "lastReviewed": "2026-11-27",
   "policy": "Only sourced public observations, explicitly dated reconstructions and open questions; never infer causes from mismatched aggregate snapshots or include privileged application details.",
   "episodes": [
     {
@@ -9,7 +9,7 @@
       "slug": "reveal-day-counts",
       "number": 1,
       "publishedOn": "2026-10-10",
-      "revisedOn": "2026-11-22",
+      "revisedOn": "2026-11-27",
       "periodStart": "2026-09-22",
       "periodEnd": "2026-10-08",
       "state": "partly-explained",
@@ -212,6 +212,36 @@
           "kind": "primary",
           "labelKey": "field22SourceCurrentExport",
           "url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv"
+        },
+        {
+          "id": "aps-followup-export-20261127",
+          "kind": "primary",
+          "labelKey": "field27SourceExport",
+          "url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv"
+        },
+        {
+          "id": "aps-statistics-api-20261127",
+          "kind": "primary",
+          "labelKey": "field27SourceStats",
+          "url": "https://newgtldprogram-aps.icann.org/aps/applications/stats"
+        },
+        {
+          "id": "project-round-followup-20261127",
+          "kind": "derived",
+          "labelKey": "field27Register",
+          "url": "https://github.com/robertbregy/Connecting-the-Dots/blob/main/data/round_2026_followup_20261127.json"
+        },
+        {
+          "id": "aps-mai-change-request-20261124",
+          "kind": "primary",
+          "labelKey": "field27SourceMai",
+          "url": "https://newgtldprogram-aps.icann.org/applications/DCJE2552-T43314/change-requests"
+        },
+        {
+          "id": "aps-hall-change-request-20261123",
+          "kind": "primary",
+          "labelKey": "field27SourceHall",
+          "url": "https://newgtldprogram-aps.icann.org/applications/MC2626T-T87191/change-requests"
         }
       ],
       "updateTriggers": [
@@ -278,6 +308,22 @@
             "aps-followup-export",
             "aps-official-withdrawal",
             "project-round-followup-20261122"
+          ]
+        },
+        {
+          "date": "2026-11-27",
+          "changeKey": "behindRevisionFollowup20261127",
+          "sourceIds": [
+            "aps-followup-export",
+            "aps-followup-export-20261127",
+            "icann-aps-stats",
+            "aps-statistics-api-20261127",
+            "aps-about-20261018",
+            "icann-scd-contention",
+            "project-round-followup-20261122",
+            "project-round-followup-20261127",
+            "aps-mai-change-request-20261124",
+            "aps-hall-change-request-20261123"
           ]
         }
       ],
@@ -408,6 +454,76 @@
             "aps-official-withdrawal",
             "project-round-followup-20261122"
           ]
+        },
+        {
+          "id": "current-aps-followup-20261127",
+          "date": "2026-11-27",
+          "reviewLabelKey": "field27ReviewLabel",
+          "titleKey": "field27LiveTitle",
+          "paragraphKeys": [
+            "field27ExportBody",
+            "field27SummaryBody",
+            "field27StatisticsBody",
+            "field27ChangeRequestsBody",
+            "field27ChangeExamplesBody",
+            "field27OverlapBody",
+            "field27LimitsBody"
+          ],
+          "closingKey": "field27Closing",
+          "sourceIds": [
+            "aps-followup-export",
+            "aps-followup-export-20261127",
+            "icann-aps-stats",
+            "aps-statistics-api-20261127",
+            "aps-about-20261018",
+            "icann-scd-contention",
+            "project-round-followup-20261122",
+            "project-round-followup-20261127",
+            "aps-mai-change-request-20261124",
+            "aps-hall-change-request-20261123"
+          ],
+          "withdrawalTable": {
+            "file": "data/evidence/round-2026-followup-20261127/withdrawals-42-official-summary-corroboration.json",
+            "summaryKey": "field27WithdrawalsSummary",
+            "captionKey": "field27WithdrawalsCaption",
+            "headerKeys": [
+              "field27HeaderId",
+              "field27HeaderString",
+              "field27HeaderApplicant",
+              "field27HeaderStatus",
+              "field27HeaderPublished"
+            ]
+          },
+          "evidenceLinks": [
+            {
+              "labelKey": "field27PreviousRaw",
+              "url": "https://robertbregy.github.io/Connecting-the-Dots/data/evidence/round-2026-followup-20261122/aps-export-raw.csv"
+            },
+            {
+              "labelKey": "field27CurrentRaw",
+            "url": "https://robertbregy.github.io/Connecting-the-Dots/data/evidence/round-2026-followup-20261127/recheck/export-raw.csv"
+            },
+            {
+              "labelKey": "field27FullComparison",
+              "url": "https://robertbregy.github.io/Connecting-the-Dots/data/evidence/round-2026-followup-20261127/comparison-by-application-id.json"
+            },
+            {
+              "labelKey": "field27SummaryEvidence",
+              "url": "https://robertbregy.github.io/Connecting-the-Dots/data/evidence/round-2026-followup-20261127/withdrawals-42-official-summary-corroboration.json"
+            },
+            {
+              "labelKey": "field27ChangeEvidence",
+              "url": "https://robertbregy.github.io/Connecting-the-Dots/data/evidence/round-2026-followup-20261127/change-requests-analysis.json"
+            },
+            {
+              "labelKey": "field27Register",
+              "url": "https://robertbregy.github.io/Connecting-the-Dots/data/round_2026_followup_20261127.json"
+            },
+            {
+              "labelKey": "field27AboutLink",
+              "url": "https://newgtldprogram-aps.icann.org/about"
+            }
+          ]
         }
       ],
       "completedUpdateTriggers": [
@@ -417,7 +533,11 @@
           "result": "Official updated announcement corrects the snapshot to 1606 proceeding and 705 in contention. The specific reason for the original figures is not stated.",
           "sourceId": "icann-scd-announcement-updated"
         }
-      ]
+      ],
+      "latestUpdate": {
+        "id": "current-aps-followup-20261127",
+        "labelKey": "field27LatestLink"
+      }
     },
     {
       "id": "wdo-identity",

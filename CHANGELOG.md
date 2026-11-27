@@ -1,3 +1,12 @@
+# v0.8.3 — 27 November 2026
+
+- Added a complete, separately preserved APS export acquired on 27 November at 14:08 UTC and an Application ID comparison against the 22 November source: 42 Active → Withdrawn changes, 36 changed Change Request flags, no IDs added or removed and no change to the 152 selected replacement records.
+- Updated the current Atlas to 1,553 visible active and 61 withdrawn application families. Official APS statistics independently report 1,543 active and 72 withdrawn applications; the discrepancy is retained without an invented causal reconciliation.
+- Corroborated the 42 withdrawal statuses with individual public summaries. Archived the change-request evidence for 34 application families, distinguishing 34 approved requests across 30 families from four labelled families whose public request lists are empty.
+- Added a four-language Field Note with source dates, before/after counts, identifiers, limits and editorial interpretation. Changed current derived exact-string overlaps to 222 groups / 650 active applications while preserving the official 17 November contention snapshot at 226 / 705.
+- Corrected the standalone Atlas date banner, outdated pre-String Confirmation wording and the .official chronicle event’s unrelated .lugano category. These corrections do not assert a new change to .lugano.
+- Preserved historical evidence, RR1/RR2/RR3 and all prior technical ZIPs. Added the separate v0.8.3 technical package and deterministic release checks.
+
 # v0.8.2 — 22 November 2026
 
 - Documented ICANN’s corrected String Confirmation announcement: 1,606 proceeding applications and 705 contention applications resolve the former four-application publication discrepancy.

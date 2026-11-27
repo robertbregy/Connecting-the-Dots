@@ -1,6 +1,18 @@
 # Connecting the Dots — data directory
 
-## Official ICANN APS public application listing · 11 October 2026
+## Current APS follow-up · acquired 27 November 2026
+
+`applications_2026_aps_followup_20261127.csv` is the current normalized public APS export. Its provenance is recorded in `applications_2026_aps_followup_20261127_provenance.json`; the source comparison is in `round_2026_followup_20261127.json`, with unchanged raw source bytes and supporting observations under `evidence/round-2026-followup-20261127/`. Acquisition time (14:08 UTC) is not a publication date: the CSV supplies no export publication timestamp.
+
+Compared by Application ID with the separately preserved 22 November export, 42 rows change from Active to Withdrawn and 36 Change Request flags change from false to true. No IDs are added or removed. The same 2,783 rows represent 1,614 base application families and 1,169 replacement records. The current graph derives 1,553 active and 61 withdrawn families from the export; these are **calculations on official data**, not ICANN-declared aggregate totals. The 152 selected replacement records are unchanged in this comparison.
+
+APS Statistics, published on 27 November at 13:39:14.999 UTC and acquired at 14:08:10.671025 UTC, independently declares 1,615 applications, 481 applicants, 1,543 Active and 72 Withdrawn. The statistics/export differences are preserved without causal reconciliation or attribution to unobserved application IDs. An unchanged .wdo page documents its last published administrative-check status, not a current internal status or an explanation of these differences.
+
+The current graph derives 222 exact-primary-string overlap groups containing 650 active applications. These are project calculations, not updated official contention sets. The separately dated official String Confirmation file retains 226 sets / 705 application rows. Individual summary publication dates are not withdrawal event dates; approved change requests are not approvals of the applications themselves. APS updates are not real time.
+
+The current technical package is selected by `currentDataPackPath` in [publication.json](../publication.json). The Reveal Day, String Confirmation, 22 November and scientific-release sources retain their original paths and bytes. Historical sections below describe their own observation dates.
+
+## Historical official ICANN APS public application listing · acquired 11 October 2026
 
 The file `applications_2026_aps_official_listing.csv` is obtained from the official ICANN Applications page at https://newgtldprogram-aps.icann.org/applications via its Download CSV function. The normalization discards only the introductory CSV notice and standardizes UTF-8/LF; all 34 original columns and public field values are preserved. Download URL, retrieval time, original/normalized SHA-256 hashes and the complete ICANN disclaimer are captured in `applications_2026_aps_official_provenance.json`.
 
