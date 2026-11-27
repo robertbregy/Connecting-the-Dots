@@ -181,13 +181,17 @@ function checkedOperationalLinks(review,source){
    ['<strong data-number="1120">1,120</strong>','<strong data-number="980">980</strong>'],
    ['<strong data-number="226">226</strong>','<strong data-number="263">263</strong>'],
    ['<strong data-number="1119">1,119</strong>','<strong data-number="980">980</strong>'],
-   ['<strong data-number="225">225</strong>','<strong data-number="263">263</strong>']
+   ['<strong data-number="225">225</strong>','<strong data-number="263">263</strong>'],
+   ['<strong data-number="222">222</strong>','<strong data-number="263">263</strong>']
   ];
   if(review.publicationVersion==='0.8.0'){
    for(const [current] of metricTransitions.slice(0,2))assert.equal(panel.split(current).length,2,'String Confirmation Atlas metric missing or duplicated: '+current);
   }
   if(review.publicationVersion==='0.8.2'){
-   for(const [current] of metricTransitions.slice(2))assert.equal(panel.split(current).length,2,'22 November Atlas metric missing or duplicated: '+current);
+   for(const [current] of metricTransitions.slice(2,4))assert.equal(panel.split(current).length,2,'22 November Atlas metric missing or duplicated: '+current);
+  }
+  if(review.publicationVersion==='0.8.3'){
+   for(const [current] of [metricTransitions[2],metricTransitions[4]])assert.equal(panel.split(current).length,2,'27 November Atlas metric missing or duplicated: '+current);
   }
   let protectedPanel=panel;
   for(const [current,reveal] of metricTransitions)protectedPanel=protectedPanel.replace(current,reveal);

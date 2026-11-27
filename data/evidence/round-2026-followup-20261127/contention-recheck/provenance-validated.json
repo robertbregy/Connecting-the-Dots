@@ -1,0 +1,138 @@
+{
+  "generated_at_utc": "2026-11-27T13:53:55.850394+00:00",
+  "current_acquisitions": [
+    {
+      "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv",
+      "attempted_at_utc": "2026-11-27T13:52:30.258518+00:00",
+      "error": "HTTP Error 503: Service Unavailable"
+    },
+    {
+      "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/string-confirmation-contention-sets.csv",
+      "resolved_url": "https://newgtldprogram.icann.org/sites/default/files/documents/string-confirmation-contention-sets.csv",
+      "acquired_at_utc": "2026-11-27T13:52:37.163704+00:00",
+      "file": "string-confirmation-contention-sets.csv",
+      "sha256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
+      "byte_length": 36820,
+      "http_status": 200,
+      "http_headers": {
+        "date": "Fri, 27 Nov 2026 13:52:43 GMT",
+        "last-modified": "Tue, 17 Nov 2026 17:26:47 GMT",
+        "etag": "\"8fd4-6607c32f45eaa\"",
+        "content-length": "36820",
+        "cache-control": "max-age=31536000",
+        "expires": "Sat, 27 Nov 2027 13:52:43 GMT",
+        "content-type": "text/csv"
+      },
+      "publication_date": null,
+      "publication_date_note": "See content; HTTP Last-Modified does not by itself establish publication date.",
+      "acquisition_time_note": "Time immediately before HTTP request; completed time separately retained when recorded. Not publication time.",
+      "publication_event_date": "2026-11-17",
+      "date_basis": "Official String Confirmation Day announcement and APS Help link; last-modified recorded separately."
+    },
+    {
+      "url": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-17-11-2026-en",
+      "resolved_url": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-17-11-2026-en",
+      "acquired_at_utc": "2026-11-27T13:52:43.418085+00:00",
+      "file": "icann-original-17nov2026.html",
+      "sha256": "6c7dfd91e2b20766fac0a2f46bdf9d4a615472732d782ff46d0cbb1c032723e0",
+      "byte_length": 159570,
+      "http_status": 200,
+      "http_headers": {
+        "date": "Fri, 27 Nov 2026 13:52:46 GMT",
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "publication_date": "2026-11-17",
+      "publication_date_note": "Visible page date; source does not separately identify the correction date.",
+      "acquisition_time_note": "Time immediately before HTTP request; completed time separately retained when recorded. Not publication time.",
+      "correction_date": null
+    },
+    {
+      "url": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en",
+      "resolved_url": "https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en",
+      "acquired_at_utc": "2026-11-27T13:52:46.286886+00:00",
+      "file": "icann-updated-17nov2026.html",
+      "sha256": "0b942b56b37c0ed6b04ea14a0ea97ecf8404f24bea45a21099659d1a70a648a0",
+      "byte_length": 158777,
+      "http_status": 200,
+      "http_headers": {
+        "date": "Fri, 27 Nov 2026 13:52:49 GMT",
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "publication_date": "2026-11-17",
+      "publication_date_note": "Visible page date; source does not separately identify the correction date.",
+      "acquisition_time_note": "Time immediately before HTTP request; completed time separately retained when recorded. Not publication time.",
+      "correction_date": null
+    },
+    {
+      "url": "https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv",
+      "resolved_url": "https://newgtldprogram.icann.org/sites/default/files/documents/reveal-day-contention-sets.csv",
+      "acquired_at_utc": "2026-11-27T13:53:09.781298+00:00",
+      "completed_at_utc": "2026-11-27T13:53:16.230606+00:00",
+      "file": "reveal-day-contention-sets.csv",
+      "sha256": "86f2ebd3764d1f3ea21d5d844cff004e271a443a3431e8ac440da7f72c67e2bf",
+      "byte_length": 46481,
+      "http_status": 200,
+      "http_headers": {
+        "date": "Fri, 27 Nov 2026 13:53:15 GMT",
+        "last-modified": "Wed, 07 Oct 2026 17:51:59 GMT",
+        "etag": "\"b591-65d43c59e9ad7\"",
+        "content-length": "46481",
+        "cache-control": "max-age=31536000",
+        "expires": "Sat, 27 Nov 2027 13:53:15 GMT",
+        "content-type": "text/csv"
+      },
+      "acquisition_time_note": "Time immediately before HTTP request; completed time separately retained when recorded. Not publication time.",
+      "publication_event_date": "2026-10-07",
+      "date_basis": "Official Reveal Day announcement and APS Help link; last-modified recorded separately."
+    }
+  ],
+  "historical_baselines": [
+    {
+      "historical_file": "baseline-reveal-day-contention-sets.csv",
+      "repository_url": "https://github.com/robertbregy/Connecting-the-Dots/blob/1f8eb058989a2eb3a22f16c431e16fbbed2aa132/data/evidence/string-confirmation-2026-11-17/live/reveal-day-contention-sets.csv",
+      "repository_commit": "1f8eb058989a2eb3a22f16c431e16fbbed2aa132",
+      "git_blob_sha": "e18bc1635160782ce157ef38f0088288ea8876dd",
+      "sha256": "86f2ebd3764d1f3ea21d5d844cff004e271a443a3431e8ac440da7f72c67e2bf",
+      "original_capture_collection_time_utc": "2026-11-17T18:30:10Z",
+      "capture_time_basis": "live/captured-at-utc.txt in same immutable repository commit; collection timestamp, not per-file HTTP timestamp",
+      "sha256_basis": "locally recalculated and matches live/sha256.txt at same commit"
+    },
+    {
+      "historical_file": "baseline-string-confirmation-contention-sets.csv",
+      "repository_url": "https://github.com/robertbregy/Connecting-the-Dots/blob/1f8eb058989a2eb3a22f16c431e16fbbed2aa132/data/evidence/string-confirmation-2026-11-17/live/string-confirmation-contention-sets.csv",
+      "repository_commit": "1f8eb058989a2eb3a22f16c431e16fbbed2aa132",
+      "git_blob_sha": "7b2aaf3debbadbb4d95ba38f48cd4dcee0c26183",
+      "sha256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
+      "original_capture_collection_time_utc": "2026-11-17T18:30:10Z",
+      "capture_time_basis": "live/captured-at-utc.txt in same immutable repository commit; collection timestamp, not per-file HTTP timestamp",
+      "sha256_basis": "locally recalculated and matches live/sha256.txt at same commit"
+    }
+  ],
+  "comparison": [
+    {
+      "source": "reveal-day-contention-sets.csv",
+      "equal_bytes": true,
+      "sha256": "86f2ebd3764d1f3ea21d5d844cff004e271a443a3431e8ac440da7f72c67e2bf",
+      "baseline_sha256": "86f2ebd3764d1f3ea21d5d844cff004e271a443a3431e8ac440da7f72c67e2bf",
+      "rows": 891,
+      "distinct_application_ids": 891,
+      "set_ids": 263,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_fields_by_id": {}
+    },
+    {
+      "source": "string-confirmation-contention-sets.csv",
+      "equal_bytes": true,
+      "sha256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
+      "baseline_sha256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
+      "rows": 705,
+      "distinct_application_ids": 705,
+      "set_ids": 226,
+      "added_ids": [],
+      "removed_ids": [],
+      "changed_fields_by_id": {}
+    }
+  ],
+  "conclusion": "Both official contention CSV files are byte-identical to the frozen historical copies. New download does not establish a new substantive export. No added/removed Application IDs or changed fields."
+}

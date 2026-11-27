@@ -1,12 +1,12 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/round-2026/ | Site edition: 0.8.2 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/round-2026/ | Site edition: 0.8.3 | Language: en -->
 
 Economic analysis
 
 # The economics of the 2026 round
 
-**APS snapshot · 11 October 2026**
+**Historical APS analysis · 11 October 2026**
 
-The application data come from the public APS export acquired on 11 October 2026. This snapshot precedes String Confirmation Day (17 November), the announced milestone for confirmed strings and updated contention sets. It does not establish individual evaluation outcomes. [Official timetable ↗](https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en)
+The economic analysis based on the 11 October APS export retains that historical snapshot. It precedes the confirmed strings and contention sets published on 17 November. Later observations on this page carry their own source dates; the Application Atlas follows the newer export. [Official String Confirmation publication ↗](https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en)
 
 Application costs, string themes, applicants’ activities and brand strategies. Economic cycles and historical reconstructions help explain expectations, with the limits of each analysis kept clear.
 
@@ -355,6 +355,6 @@ A bank's own TLD and a term such as .bank describe very different allocation mod
 
 [ICANN · 2012 statistics ↗](https://newgtlds.icann.org/en/program-status/statistics) [ICANN APS · 2026 statistics ↗](https://newgtldprogram-aps.icann.org/statistics) [nTLDData · 2026 application index ↗](https://www.ntlddata.com/applications)
 
-**By Robert Bregy** · Site edition 0.8.2 · November 22, 2026
+**By Robert Bregy** · Site edition 0.8.3 · November 27, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

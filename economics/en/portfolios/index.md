@@ -1,12 +1,12 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/portfolios/ | Site edition: 0.8.2 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/portfolios/ | Site edition: 0.8.3 | Language: en -->
 
 Economic analysis
 
 # Portfolios and contention
 
-**APS snapshot · 11 October 2026**
+**Historical APS analysis · 11 October 2026**
 
-The application data come from the public APS export acquired on 11 October 2026. This snapshot precedes String Confirmation Day (17 November), the announced milestone for confirmed strings and updated contention sets. It does not establish individual evaluation outcomes. [Official timetable ↗](https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en)
+The economic analysis based on the 11 October APS export retains that historical snapshot. It precedes the confirmed strings and contention sets published on 17 November. Later observations on this page carry their own source dates; the Application Atlas follows the newer export. [Official String Confirmation publication ↗](https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en)
 
 Follow the strategies of applicants submitting many applications and the competition for the same words. Comparisons between rounds and the Aruba and Intercap cases clarify what is being counted.
 
@@ -85,6 +85,6 @@ The 263 preliminary identical-string contention sets contain 891 applications. T
 
 [ICANN · preliminary contention CSV ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv) [internet.Best · applicant portfolios ↗](https://internet.best/new-gtld-applications/) [nTLDData · primary strings ↗](https://www.ntlddata.com/applications/strings)
 
-**By Robert Bregy** · Site edition 0.8.2 · November 22, 2026
+**By Robert Bregy** · Site edition 0.8.3 · November 27, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

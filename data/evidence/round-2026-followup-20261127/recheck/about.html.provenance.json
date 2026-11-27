@@ -1,0 +1,32 @@
+{
+  "url": "https://newgtldprogram-aps.icann.org/about",
+  "method": "GET",
+  "request_body": null,
+  "request_headers": {
+    "Cache-Control": "no-cache"
+  },
+  "request_started_utc": "2026-11-27T14:08:05.304084+00:00",
+  "publication_timestamp": null,
+  "publication_timestamp_note": "Set only when explicitly stated by the source. HTTP Date and acquisition time are not publication dates.",
+  "response_status": 200,
+  "response_headers": {
+    "date": "Fri, 27 Nov 2026 14:08:10 GMT",
+    "content-type": "text/html;charset=UTF-8",
+    "server": "envoy",
+    "cache-control": "max-age=3600",
+    "expires": "Fri, 27 Nov 2026 15:08:10 GMT",
+    "x-frame-options": "SAMEORIGIN",
+    "referrer-policy": "origin-when-cross-origin",
+    "x-ratelimit-limit": "20, 20;w=1",
+    "x-ratelimit-remaining": "19",
+    "x-ratelimit-reset": "1",
+    "x-envoy-upstream-service-time": "899",
+    "connection": "close",
+    "transfer-encoding": "chunked"
+  },
+  "final_url": "https://newgtldprogram-aps.icann.org/about",
+  "completed_at_utc": "2026-11-27T14:08:10.868310+00:00",
+  "bytes": 23016,
+  "sha256": "e6e95ecf204c1fef4413d7e16a62ae00c3aee95639da2cf87a0c784d3f97ede9",
+  "local_path": "data/evidence/round-2026-followup-20261127/recheck/about.html"
+}

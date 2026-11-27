@@ -1,0 +1,1968 @@
+{
+  "classification": "Elaborazione sui dati ufficiali APS; non totali dichiarati da ICANN",
+  "scope": "34 famiglie con label Change Request FALSE→TRUE fra export del 22 novembre e acquisizione del 27 novembre; 36 righe perché due famiglie hanno anche -R",
+  "base_application_ids_requested": 34,
+  "successful_responses": 34,
+  "application_families_with_published_request_details": 30,
+  "application_families_with_flag_but_empty_request_list": [
+    "BTRT2633T-T38161",
+    "BTRT2633T-T83538",
+    "HI2626T-T82284",
+    "HI2626T-T90203"
+  ],
+  "unique_change_request_ids": 34,
+  "published_change_request_entries": 34,
+  "request_type_counts": {
+    "organizationChangeRequest": 9,
+    "financialChangeRequest": 11,
+    "applicationChangeRequest": 13,
+    "stakeholderChangeRequest": 1
+  },
+  "approval_date_range": {
+    "earliest": "2026-11-23T16:56:23.010Z",
+    "latest": "2026-11-25T15:38:46.010Z"
+  },
+  "public_question_counts": {
+    "181": 8,
+    "220": 1,
+    "221": 1,
+    "104": 1,
+    "118": 1,
+    "10": 1
+  },
+  "textual_original_final_differences": [
+    {
+      "application_id": "CINI2622T-T81530",
+      "change_request_id": "CR-CINI2622T-Org ID-001",
+      "approval_date": "2026-11-24T23:06:05.410Z",
+      "question_text": "AGB 104. List all directors of the applying entity.",
+      "original_response": "Yulin  Liu, Xiao Zhang, Qiang Li, Jian Lv, Lidong Wang",
+      "final_response": "Peng Wang, Xiao Zhang, Qiang Li, Jian Lv, Lidong Wang",
+      "responses_equal": false
+    },
+    {
+      "application_id": "DCJE2552-T43314",
+      "change_request_id": "CR-DCJE2552-T43314-001",
+      "approval_date": "2026-11-24T23:02:03.640Z",
+      "question_text": "AGB Q118. What is the meaning/definition of the applied-for gTLD string?",
+      "original_response": "mai",
+      "final_response": "In Chinese Pinyin system, \"mai\" embodies both buying and selling, making it a natural symbol of commerce and trade.",
+      "responses_equal": false
+    },
+    {
+      "application_id": "MC2626T-T87191",
+      "change_request_id": "CR-MC2626T-001",
+      "approval_date": "2026-11-23T16:56:23.010Z",
+      "question_text": "AGB Q10. Website URL",
+      "original_response": "http://NA.com",
+      "final_response": "http://www.dothall.ca",
+      "responses_equal": false
+    }
+  ],
+  "document_metadata_comparisons": [
+    {
+      "application_id": "43372680T-T95618",
+      "change_request_id": "CR-43372680T-T95618-001",
+      "approval_date": "2026-11-24T21:47:25.870Z",
+      "question_text": "AGB Q181. Submit Trademark Certificate",
+      "original_documents": [
+        {
+          "isRemoved": false,
+          "providedDate": "2026-08-10T01:10:10.000Z",
+          "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1136332.pdf",
+          "originalLanguage": "Other",
+          "originalDocumentType": "pdf",
+          "documentTitle": "pia_D7-Trademark_Certificate-of-Registration-4347640_JP",
+          "documentDescription": "",
+          "category": "Questionnaire Response",
+          "translationDocumentType": "pdf",
+          "translationDocumentTitle": "pia_D7-Trademark_Certificate-of-Registration-4347640_EN",
+          "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1136335.pdf",
+          "translationLanguage": "English"
+        }
+      ],
+      "final_documents": [
+        {
+          "isRemoved": false,
+          "providedDate": "2026-08-10T01:10:10.000Z",
+          "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1136332.pdf",
+          "originalLanguage": "Other",
+          "originalDocumentType": "pdf",
+          "documentTitle": "pia_D7-Trademark_Certificate-of-Registration-4347640_JP",
+          "documentDescription": "",
+          "category": "Questionnaire Response",
+          "translationDocumentType": "pdf",
+          "translationDocumentTitle": "pia_D7-Trademark_Certificate-of-Registration-4347640_EN",
+          "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1136335.pdf",
+          "translationLanguage": "English"
+        }
+      ],
+      "document_metadata_equal": true,
+      "file_contents_compared": false,
+      "per_document_changed_metadata_keys": [
+        []
+      ]
+    },
+    {
+      "application_id": "70122665T-T13662",
+      "change_request_id": "CR-70122665T-T13662-001",
+      "approval_date": "2026-11-24T21:37:32.930Z",
+      "question_text": "AGB Q181. Submit Trademark Certificate",
+      "original_documents": [
+        {
+          "isRemoved": false,
+          "providedDate": "2026-08-09T20:03:03.000Z",
+          "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1129130.pdf",
+          "originalLanguage": "Other",
+          "originalDocumentType": "pdf",
+          "documentTitle": "kawasaki_D7-Trademark_Certificate-of-Registration-6034864_JP",
+          "documentDescription": "",
+          "category": "Questionnaire Response",
+          "translationDocumentType": "pdf",
+          "translationDocumentTitle": "kawasaki_D7-Trademark_Certificate-of-Registration-6034864_EN",
+          "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1129133.pdf",
+          "translationLanguage": "English"
+        }
+      ],
+      "final_documents": [
+        {
+          "isRemoved": false,
+          "providedDate": "2026-08-09T20:03:03.000Z",
+          "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1129130.pdf",
+          "originalLanguage": "Other",
+          "originalDocumentType": "pdf",
+          "documentTitle": "kawasaki_D7-Trademark_Certificate-of-Registration-6034864_JP",
+          "documentDescription": "",
+          "category": "Questionnaire Response",
+          "translationDocumentType": "pdf",
+          "translationDocumentTitle": "kawasaki_D7-Trademark_Certificate-of-Registration-6034864_EN",
+          "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1129133.pdf",
+          "translationLanguage": "English"
+        }
+      ],
+      "document_metadata_equal": true,
+      "file_contents_compared": false,
+      "per_document_changed_metadata_keys": [
+        []
+      ]
+    },
+    {
+      "application_id": "72612695T-T33012",
+      "change_request_id": "CR-72612695T-FCP-001",
+      "approval_date": "2026-11-25T13:19:10.200Z",
+      "question_text": "AGB Q220. Q5.1-1 - Provide the applying entity’s self-certification document, signed by the CEO, President, CFO and/or equivalent officer of the applying entity. The self-certification document must represent and warrant:\nSC5.1-1.1 - The applying entity will appropriately protect confidentiality of data and prevent unauthorized access to data and services.\nSC5.1-1.2 - The applying entity will maintain a mature, appropriately funded and staffed security program, following a recognized, modern security framework based on risk management (such as the ISO27000 series, COBIT, HITRUST CSF, legally required security frameworks, or equivalent).  The security program must be in place prior to delegation, and exist through at least the period of the registry agreement.\nSC5.1-1.3 - The applying entity is aware of and has designed its systems and business to comply with the relevant privacy and security regulations for all countries in which it operates.",
+      "original_documents": [
+        {
+          "isRemoved": false,
+          "providedDate": "2026-07-29T07:54:44.000Z",
+          "documentS3ObjectKey": "Financial_a-0000efde-9a6a-8000-9c71-011c48011c48_1003404.pdf",
+          "originalLanguage": "English",
+          "originalDocumentType": "pdf",
+          "documentTitle": "mazda_D9a-Security-Policy-Self-Certification",
+          "documentDescription": "",
+          "category": "Questionnaire Response",
+          "translationDocumentType": "",
+          "translationDocumentTitle": "",
+          "translationDocumentS3ObjectKey": "",
+          "translationLanguage": ""
+        }
+      ],
+      "final_documents": [
+        {
+          "isRemoved": false,
+          "providedDate": "2026-11-23T16:56:31.000Z",
+          "documentS3ObjectKey": "Financial_a-0000efde-9a6a-8000-9c71-011c48011c48_1003404.pdf",
+          "originalLanguage": "English",
+          "originalDocumentType": "pdf",
+          "documentTitle": "mazda_Q220_D9a_Self-Certification-Security-Policy_SIGNED-KIDANI-20260710",
+          "documentDescription": "",
+          "category": "Questionnaire Response",
+          "translationDocumentType": "",
+          "translationDocumentTitle": "",
+          "translationDocumentS3ObjectKey": "",
+          "translationLanguage": ""
+        }
+      ],
+      "document_metadata_equal": false,
+      "file_contents_compared": false,
+      "per_document_changed_metadata_keys": [
+        [
+          "documentTitle",
+          "providedDate"
+        ]
+      ]
+    },
+    {
+      "application_id": "72612695T-T33012",
+      "change_request_id": "CR-72612695T-FCP-001",
+      "approval_date": "2026-11-25T13:19:10.200Z",
+      "question_text": "AGB Q221. Q5.2-1 - Provide the applying entity’s self-certification document, signed by the CEO, President, CFO and/or equivalent officer of the applying entity. The self-certification document must represent and warrant:\nSC5.2-1.1 - The applying entity will, no later than delegation of the Top Level Domain (TLD), establish a dedicated abuse point of contact responsible for addressing matters requiring expedited attention and providing a timely response to abuse complaints concerning any name registered in the TLD.\nSC5.2-1.2 - The applying entity will, no later than delegation of the TLD, establish, publish, and provide to ICANN the location of a mechanism for members of the public to submit reports of abuse in accordance with the current obligations of the Base RA and any Consensus Policies.\nSC5.2-1.3 - The applying entity has developed proposed measures for removal of orphan glue records for names removed from the zone when provided with evidence in written form that the glue is present in connection with malicious conduct (see Specification 6).\nSC5.2-1.4 - The applying entity has or will have at time of delegation, established policies for handling complaints regarding abuse. Such policies are to be maintained and posted publicly so that anyone can review the policies via the Internet and any other means deemed appropriate by the applying entity. The applying entity’s policies at a minimum should contain appropriate confirmation of the receipt of the abuse report, the process of review of the report, and actions that will be taken if the applying entity confirms the report is legitimate.\nSC5.2-1.5 - The applying entity understands that DNS Abuse is Phishing, Malware, Botnets, Pharming and Spam (when used to deliver other forms of DNS Abuse). The applying entity understands and is prepared to contribute to the mitigation or disruption of DNS Abuse in domains in the TLD zone.\nSC5.2-1.6 - The applying entity’s abuse response capabilities are resourced appropriately to ensure a timely and adequate investigation and response to reports of DNS Abuse. This includes capabilities to receive and evaluate evidence of DNS Abuse in reports, and to take action to stop or disrupt the DNS Abuse.\nSC5.2-1.7 - The applying entity is prepared to conduct periodic scans of its zone to identify if domains are being used to perpetrate DNS Abuse, and to maintain statistical reports of the scans, the findings, and actions taken.",
+      "original_documents": [
+        {
+          "isRemoved": false,
+          "providedDate": "2026-07-29T07:56:10.000Z",
+          "documentS3ObjectKey": "Financial_a-0000efde-9a6a-8000-9c71-011c48011c48_1003417.pdf",
+          "originalLanguage": "English",
+          "originalDocumentType": "pdf",
+          "documentTitle": "mazda_D9b-DNS-Abuse-Self-Certification",
+          "documentDescription": "",
+          "category": "Questionnaire Response",
+          "translationDocumentType": "",
+          "translationDocumentTitle": "",
+          "translationDocumentS3ObjectKey": "",
+          "translationLanguage": ""
+        }
+      ],
+      "final_documents": [
+        {
+          "isRemoved": false,
+          "providedDate": "2026-11-23T16:56:51.000Z",
+          "documentS3ObjectKey": "Financial_a-0000efde-9a6a-8000-9c71-011c48011c48_1003417.pdf",
+          "originalLanguage": "English",
+          "originalDocumentType": "pdf",
+          "documentTitle": "mazda_Q221_D9b_Self-Certification-DNS-Abuse-Mitigation_SIGNED-KIDANI-20260710",
+          "documentDescription": "",
+          "category": "Questionnaire Response",
+          "translationDocumentType": "",
+          "translationDocumentTitle": "",
+          "translationDocumentS3ObjectKey": "",
+          "translationLanguage": ""
+        }
+      ],
+      "document_metadata_equal": false,
+      "file_contents_compared": false,
+      "per_document_changed_metadata_keys": [
+        [
+          "documentTitle",
+          "providedDate"
+        ]
+      ]
+    },
+    {
+      "application_id": "77352697T-T40435",
+      "change_request_id": "CR-77352697T-T40435-001",
+      "approval_date": "2026-11-24T21:20:11.850Z",
+      "question_text": "AGB Q181. Submit Trademark Certificate",
+      "original_documents": [
+        {
+          "isRemoved": false,
+          "providedDate": "2026-08-08T08:29:12.000Z",
+          "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1100749.pdf",
+          "originalLanguage": "Other",
+          "originalDocumentType": "pdf",
+          "documentTitle": "screen_D7-Trademark_Certificate-of-Registration-5389505_JP",
+          "documentDescription": "",
+          "category": "Questionnaire Response",
+          "translationDocumentType": "pdf",
+          "translationDocumentTitle": "screen_D7-Trademark_Certificate-of-Registration-5389505_EN",
+          "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1100752.pdf",
+          "translationLanguage": "English"
+        }
+      ],
+      "final_documents": [
+        {
+          "isRemoved": false,
+          "providedDate": "2026-08-08T08:29:12.000Z",
+          "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1100749.pdf",
+          "originalLanguage": "Other",
+          "originalDocumentType": "pdf",
+          "documentTitle": "screen_D7-Trademark_Certificate-of-Registration-5389505_JP",
+          "documentDescription": "",
+          "category": "Questionnaire Response",
+          "translationDocumentType": "pdf",
+          "translationDocumentTitle": "screen_D7-Trademark_Certificate-of-Registration-5389505_EN",
+          "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1100752.pdf",
+          "translationLanguage": "English"
+        }
+      ],
+      "document_metadata_equal": true,
+      "file_contents_compared": false,
+      "per_document_changed_metadata_keys": [
+        []
+      ]
+    },
+    {
+      "application_id": "79442683T-T47475",
+      "change_request_id": "CR-79442683T-T47475-001",
+      "approval_date": "2026-11-24T22:33:32.870Z",
+      "question_text": "AGB Q181. Submit Trademark Certificate",
+      "original_documents": [
+        {
+          "isRemoved": false,
+          "providedDate": "2026-08-09T21:11:12.000Z",
+          "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1130685.pdf",
+          "originalLanguage": "Other",
+          "originalDocumentType": "pdf",
+          "documentTitle": "roland_D7-Trademark_Register-Extract-1569816_JP",
+          "documentDescription": "",
+          "category": "Questionnaire Response",
+          "translationDocumentType": "pdf",
+          "translationDocumentTitle": "roland_D7-Trademark_Register-Extract-1569816_EN",
+          "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1130688.pdf",
+          "translationLanguage": "English"
+        }
+      ],
+      "final_documents": [
+        {
+          "isRemoved": false,
+          "providedDate": "2026-08-09T21:11:12.000Z",
+          "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1130685.pdf",
+          "originalLanguage": "Other",
+          "originalDocumentType": "pdf",
+          "documentTitle": "roland_D7-Trademark_Register-Extract-1569816_JP",
+          "documentDescription": "",
+          "category": "Questionnaire Response",
+          "translationDocumentType": "pdf",
+          "translationDocumentTitle": "roland_D7-Trademark_Register-Extract-1569816_EN",
+          "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1130688.pdf",
+          "translationLanguage": "English"
+        }
+      ],
+      "document_metadata_equal": true,
+      "file_contents_compared": false,
+      "per_document_changed_metadata_keys": [
+        []
+      ]
+    },
+    {
+      "application_id": "87252644T-T13162",
+      "change_request_id": "CR-87252644T-T13162-001",
+      "approval_date": "2026-11-24T22:07:07.070Z",
+      "question_text": "AGB Q181. Submit Trademark Certificate",
+      "original_documents": [
+        {
+          "isRemoved": false,
+          "providedDate": "2026-08-12T07:53:37.000Z",
+          "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1186133.pdf",
+          "originalLanguage": "Spanish",
+          "originalDocumentType": "pdf",
+          "documentTitle": "msig_D7_Trademark-Certificate-of-Registration_ES",
+          "documentDescription": "",
+          "category": "Questionnaire Response",
+          "translationDocumentType": "pdf",
+          "translationDocumentTitle": "msig_D21b_D7-Trademark_Certificate-of-Registration-00178574_EN",
+          "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1186136.pdf",
+          "translationLanguage": "English"
+        }
+      ],
+      "final_documents": [
+        {
+          "isRemoved": false,
+          "providedDate": "2026-08-12T07:53:37.000Z",
+          "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1186133.pdf",
+          "originalLanguage": "Spanish",
+          "originalDocumentType": "pdf",
+          "documentTitle": "msig_D7_Trademark-Certificate-of-Registration_ES",
+          "documentDescription": "",
+          "category": "Questionnaire Response",
+          "translationDocumentType": "pdf",
+          "translationDocumentTitle": "msig_D21b_D7-Trademark_Certificate-of-Registration-00178574_EN",
+          "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1186136.pdf",
+          "translationLanguage": "English"
+        }
+      ],
+      "document_metadata_equal": true,
+      "file_contents_compared": false,
+      "per_document_changed_metadata_keys": [
+        []
+      ]
+    },
+    {
+      "application_id": "NTNC2670T-T72865",
+      "change_request_id": "CR-NTNC2670T-T72865-001",
+      "approval_date": "2026-11-24T22:11:32.690Z",
+      "question_text": "AGB Q181. Submit Trademark Certificate",
+      "original_documents": [
+        {
+          "isRemoved": false,
+          "providedDate": "2026-08-08T06:21:25.000Z",
+          "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1099175.pdf",
+          "originalLanguage": "Other",
+          "originalDocumentType": "pdf",
+          "documentTitle": "ntv_D7-Trademark_Register-Extract-1of21-and-JPlatPat-Register-Screen-3111743_JP",
+          "documentDescription": "",
+          "category": "Questionnaire Response",
+          "translationDocumentType": "pdf",
+          "translationDocumentTitle": "ntv_D7-Trademark_Register-Extract-1of21-and-JPlatPat-Register-Screen-3111743_EN",
+          "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1099178.pdf",
+          "translationLanguage": "English"
+        }
+      ],
+      "final_documents": [
+        {
+          "isRemoved": false,
+          "providedDate": "2026-08-08T06:21:25.000Z",
+          "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1099175.pdf",
+          "originalLanguage": "Other",
+          "originalDocumentType": "pdf",
+          "documentTitle": "ntv_D7-Trademark_Register-Extract-1of21-and-JPlatPat-Register-Screen-3111743_JP",
+          "documentDescription": "",
+          "category": "Questionnaire Response",
+          "translationDocumentType": "pdf",
+          "translationDocumentTitle": "ntv_D7-Trademark_Register-Extract-1of21-and-JPlatPat-Register-Screen-3111743_EN",
+          "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1099178.pdf",
+          "translationLanguage": "English"
+        }
+      ],
+      "document_metadata_equal": true,
+      "file_contents_compared": false,
+      "per_document_changed_metadata_keys": [
+        []
+      ]
+    },
+    {
+      "application_id": "TPCL2648T-T11392",
+      "change_request_id": "CR-TPCL2648T-T11392-001",
+      "approval_date": "2026-11-24T22:27:31.740Z",
+      "question_text": "AGB Q181. Submit Trademark Certificate",
+      "original_documents": [
+        {
+          "isRemoved": false,
+          "providedDate": "2026-07-30T03:34:07.000Z",
+          "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1013449.pdf",
+          "originalLanguage": "Other",
+          "originalDocumentType": "pdf",
+          "documentTitle": "lipovitan_D7-Trademark_Registration-Ledger-4217749_JP",
+          "documentDescription": "",
+          "category": "Questionnaire Response",
+          "translationDocumentType": "pdf",
+          "translationDocumentTitle": "lipovitan_D7-Trademark_Registration-Ledger-4217749_EN",
+          "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1013452.pdf",
+          "translationLanguage": "English"
+        }
+      ],
+      "final_documents": [
+        {
+          "isRemoved": false,
+          "providedDate": "2026-11-23T20:09:32.000Z",
+          "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1013449.pdf",
+          "originalLanguage": "Other",
+          "originalDocumentType": "pdf",
+          "documentTitle": "lipovitan_D7-Trademark_Registration-Ledger-4217749_JP_ISSUED-20260616",
+          "documentDescription": "",
+          "category": "Questionnaire Response",
+          "translationDocumentType": "pdf",
+          "translationDocumentTitle": "lipovitan_D7-Trademark_Registration-Ledger-4217749_EN",
+          "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1013452.pdf",
+          "translationLanguage": "English"
+        }
+      ],
+      "document_metadata_equal": false,
+      "file_contents_compared": false,
+      "per_document_changed_metadata_keys": [
+        [
+          "documentTitle",
+          "providedDate"
+        ]
+      ]
+    },
+    {
+      "application_id": "TPCL2648T-T93473",
+      "change_request_id": "CR-TPCL2648T-T93473-001",
+      "approval_date": "2026-11-24T22:14:58.640Z",
+      "question_text": "AGB Q181. Submit Trademark Certificate",
+      "original_documents": [
+        {
+          "isRemoved": false,
+          "providedDate": "2026-07-30T03:13:39.000Z",
+          "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1013319.pdf",
+          "originalLanguage": "Other",
+          "originalDocumentType": "pdf",
+          "documentTitle": "upsa_D7-Trademark_Certificate-of-Registration-UPSA_JP",
+          "documentDescription": "",
+          "category": "Questionnaire Response",
+          "translationDocumentType": "pdf",
+          "translationDocumentTitle": "upsa_D7-Trademark_Certificate-of-Registration-UPSA_EN",
+          "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1013322.pdf",
+          "translationLanguage": "English"
+        }
+      ],
+      "final_documents": [
+        {
+          "isRemoved": false,
+          "providedDate": "2026-07-30T03:13:39.000Z",
+          "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1013319.pdf",
+          "originalLanguage": "Other",
+          "originalDocumentType": "pdf",
+          "documentTitle": "upsa_D7-Trademark_Certificate-of-Registration-UPSA_JP",
+          "documentDescription": "",
+          "category": "Questionnaire Response",
+          "translationDocumentType": "pdf",
+          "translationDocumentTitle": "upsa_D7-Trademark_Certificate-of-Registration-UPSA_EN",
+          "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1013322.pdf",
+          "translationLanguage": "English"
+        }
+      ],
+      "document_metadata_equal": true,
+      "file_contents_compared": false,
+      "per_document_changed_metadata_keys": [
+        []
+      ]
+    }
+  ],
+  "applications": [
+    {
+      "application_id": "24452647T-T62047",
+      "primary_string": {
+        "aLabel": "takamiya",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/24452647T-T62047/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/24452647T-T62047/change-requests",
+      "last_published_at": "2026-11-25T23:32:35.452Z",
+      "acquired_at": "2026-11-27T13:55:21.686007+00:00",
+      "source_sha256": "35e5a2310be357e45f1eabdca2dfd42590351bf5f9122826dfd39c6bbf953f7b",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-24452647T-001",
+          "type": "organizationChangeRequest",
+          "approval_date": "2026-11-25T14:07:15.700Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this organization were made as a result of ICANN approving an organization change request submitted by the applicant. Updates were made to the following organization question response(s): ",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "application_id": "36262695T-T42322",
+      "primary_string": {
+        "aLabel": "tisi",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/36262695T-T42322/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/36262695T-T42322/change-requests",
+      "last_published_at": "2026-11-25T23:30:35.110Z",
+      "acquired_at": "2026-11-27T13:55:21.686126+00:00",
+      "source_sha256": "e299354ae436a3c13fd7b0f812bb167dddb1cf64cbf8255c9d2763ef2f7c6f23",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-36262695T-FCP-001",
+          "type": "financialChangeRequest",
+          "approval_date": "2026-11-25T15:28:25.960Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this organization were made as a result of ICANN approving a financial profile change request submitted by the applicant. Updates were made to the following financial profile question response(s): \n • Updated confidential questions: AGB Q202.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "application_id": "43372680T-T95618",
+      "primary_string": {
+        "aLabel": "pia",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/43372680T-T95618/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/43372680T-T95618/change-requests",
+      "last_published_at": "2026-11-24T23:30:37.688Z",
+      "acquired_at": "2026-11-27T13:55:21.805901+00:00",
+      "source_sha256": "c02b1b6e9b9fb7eb81df0a5b9f81edd5149c2ec191e3956b016a182e2d8d7425",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-43372680T-T95618-001",
+          "type": "applicationChangeRequest",
+          "approval_date": "2026-11-24T21:47:25.870Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this application were made as a result of ICANN approving an application change request submitted by the applicant. Updates were made to the following application question response(s): \n • Updated public questions: AGB Q181.\n\nThese updates are available for public comment, beginning on the posting date up until 24 December 2026 23:59 UTC.",
+          "public_comment_start": "2026-11-24T21:47:25.000Z",
+          "public_comment_end_machine_field": "2026-12-24T00:00:00.000Z",
+          "questions": [
+            {
+              "question_text": "AGB Q181. Submit Trademark Certificate",
+              "original_documents": [
+                {
+                  "isRemoved": false,
+                  "providedDate": "2026-08-10T01:10:10.000Z",
+                  "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1136332.pdf",
+                  "originalLanguage": "Other",
+                  "originalDocumentType": "pdf",
+                  "documentTitle": "pia_D7-Trademark_Certificate-of-Registration-4347640_JP",
+                  "documentDescription": "",
+                  "category": "Questionnaire Response",
+                  "translationDocumentType": "pdf",
+                  "translationDocumentTitle": "pia_D7-Trademark_Certificate-of-Registration-4347640_EN",
+                  "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1136335.pdf",
+                  "translationLanguage": "English"
+                }
+              ],
+              "final_documents": [
+                {
+                  "isRemoved": false,
+                  "providedDate": "2026-08-10T01:10:10.000Z",
+                  "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1136332.pdf",
+                  "originalLanguage": "Other",
+                  "originalDocumentType": "pdf",
+                  "documentTitle": "pia_D7-Trademark_Certificate-of-Registration-4347640_JP",
+                  "documentDescription": "",
+                  "category": "Questionnaire Response",
+                  "translationDocumentType": "pdf",
+                  "translationDocumentTitle": "pia_D7-Trademark_Certificate-of-Registration-4347640_EN",
+                  "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1136335.pdf",
+                  "translationLanguage": "English"
+                }
+              ],
+              "document_metadata_equal": true,
+              "file_contents_compared": false,
+              "per_document_changed_metadata_keys": [
+                []
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "application_id": "44522636T-T55394",
+      "primary_string": {
+        "aLabel": "kao",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/44522636T-T55394/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/44522636T-T55394/change-requests",
+      "last_published_at": "2026-11-25T23:30:35.300Z",
+      "acquired_at": "2026-11-27T13:55:24.613845+00:00",
+      "source_sha256": "4db9ba8e3d1ba9b43e3b318c78e82143bbebd76d4300a7777be97ce74dd7d3e7",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-44522636T-FCP-001",
+          "type": "financialChangeRequest",
+          "approval_date": "2026-11-25T14:54:38.040Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this organization were made as a result of ICANN approving a financial profile change request submitted by the applicant. Updates were made to the following financial profile question response(s): \n • Updated confidential questions: AGB Q202.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "application_id": "45072669T-T67837",
+      "primary_string": {
+        "aLabel": "shionogi",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/45072669T-T67837/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/45072669T-T67837/change-requests",
+      "last_published_at": "2026-11-25T23:30:49.614Z",
+      "acquired_at": "2026-11-27T13:55:24.569733+00:00",
+      "source_sha256": "072f16f0929872a1dab5da25580d38fd126759e4605c2213d76f4a50c102a246",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-45072669T-001",
+          "type": "organizationChangeRequest",
+          "approval_date": "2026-11-25T13:58:54.280Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this organization were made as a result of ICANN approving an organization change request submitted by the applicant. Updates were made to the following organization question response(s): ",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "application_id": "61412675T-T18565",
+      "primary_string": {
+        "aLabel": "dmgmori",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/61412675T-T18565/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/61412675T-T18565/change-requests",
+      "last_published_at": "2026-11-25T23:30:35.128Z",
+      "acquired_at": "2026-11-27T13:55:24.581237+00:00",
+      "source_sha256": "45ba3d5f163f1d984faad96d9b3fe8fbd6eb0e633a23b7832994f08fa9f27a3d",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-61412675T-FCP-001",
+          "type": "financialChangeRequest",
+          "approval_date": "2026-11-25T13:21:45.060Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this organization were made as a result of ICANN approving a financial profile change request submitted by the applicant. Updates were made to the following financial profile question response(s): \n • Updated confidential questions: AGB Q202.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "application_id": "63052682T-T56902",
+      "primary_string": {
+        "aLabel": "landcros",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/63052682T-T56902/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/63052682T-T56902/change-requests",
+      "last_published_at": "2026-11-25T23:30:35.304Z",
+      "acquired_at": "2026-11-27T13:55:27.322853+00:00",
+      "source_sha256": "739802aae9042d59ea6d4136eaab9e49cb13f7811400c4cc4f364dd5f5152ff7",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-63052682T-FCP-001",
+          "type": "financialChangeRequest",
+          "approval_date": "2026-11-25T14:27:12.460Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this organization were made as a result of ICANN approving a financial profile change request submitted by the applicant. Updates were made to the following financial profile question response(s): \n • Updated confidential questions: AGB Q202.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "application_id": "70122665T-T13662",
+      "primary_string": {
+        "aLabel": "kawasaki",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/70122665T-T13662/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/70122665T-T13662/change-requests",
+      "last_published_at": "2026-11-25T23:30:40.253Z",
+      "acquired_at": "2026-11-27T13:55:27.324553+00:00",
+      "source_sha256": "17eeecc9fd29135f325ce540234a9cdb430f71ba90ce0c6fa078151a4fccd06d",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-70122665T-T13662-001",
+          "type": "applicationChangeRequest",
+          "approval_date": "2026-11-24T21:37:32.930Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this application were made as a result of ICANN approving an application change request submitted by the applicant. Updates were made to the following application question response(s): \n • Updated public questions: AGB Q181.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": [
+            {
+              "question_text": "AGB Q181. Submit Trademark Certificate",
+              "original_documents": [
+                {
+                  "isRemoved": false,
+                  "providedDate": "2026-08-09T20:03:03.000Z",
+                  "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1129130.pdf",
+                  "originalLanguage": "Other",
+                  "originalDocumentType": "pdf",
+                  "documentTitle": "kawasaki_D7-Trademark_Certificate-of-Registration-6034864_JP",
+                  "documentDescription": "",
+                  "category": "Questionnaire Response",
+                  "translationDocumentType": "pdf",
+                  "translationDocumentTitle": "kawasaki_D7-Trademark_Certificate-of-Registration-6034864_EN",
+                  "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1129133.pdf",
+                  "translationLanguage": "English"
+                }
+              ],
+              "final_documents": [
+                {
+                  "isRemoved": false,
+                  "providedDate": "2026-08-09T20:03:03.000Z",
+                  "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1129130.pdf",
+                  "originalLanguage": "Other",
+                  "originalDocumentType": "pdf",
+                  "documentTitle": "kawasaki_D7-Trademark_Certificate-of-Registration-6034864_JP",
+                  "documentDescription": "",
+                  "category": "Questionnaire Response",
+                  "translationDocumentType": "pdf",
+                  "translationDocumentTitle": "kawasaki_D7-Trademark_Certificate-of-Registration-6034864_EN",
+                  "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1129133.pdf",
+                  "translationLanguage": "English"
+                }
+              ],
+              "document_metadata_equal": true,
+              "file_contents_compared": false,
+              "per_document_changed_metadata_keys": [
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "change_request_id": "CR-70122665T-FCP-001",
+          "type": "financialChangeRequest",
+          "approval_date": "2026-11-25T13:09:35.580Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this organization were made as a result of ICANN approving a financial profile change request submitted by the applicant. Updates were made to the following financial profile question response(s): \n • Updated confidential questions: AGB Q202.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "application_id": "72612695T-T33012",
+      "primary_string": {
+        "aLabel": "mazda",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/72612695T-T33012/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/72612695T-T33012/change-requests",
+      "last_published_at": "2026-11-25T23:32:28.950Z",
+      "acquired_at": "2026-11-27T13:55:27.332438+00:00",
+      "source_sha256": "3f1f5aee4621706ef0f804db10f47865d3d12c09f27e8f4951e82d38a2e5af36",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-72612695T-FCP-001",
+          "type": "financialChangeRequest",
+          "approval_date": "2026-11-25T13:19:10.200Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this organization were made as a result of ICANN approving a financial profile change request submitted by the applicant. Updates were made to the following financial profile question response(s): \n • Updated public questions: AGB Q220 and AGB Q221.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": [
+            {
+              "question_text": "AGB Q220. Q5.1-1 - Provide the applying entity’s self-certification document, signed by the CEO, President, CFO and/or equivalent officer of the applying entity. The self-certification document must represent and warrant:\nSC5.1-1.1 - The applying entity will appropriately protect confidentiality of data and prevent unauthorized access to data and services.\nSC5.1-1.2 - The applying entity will maintain a mature, appropriately funded and staffed security program, following a recognized, modern security framework based on risk management (such as the ISO27000 series, COBIT, HITRUST CSF, legally required security frameworks, or equivalent).  The security program must be in place prior to delegation, and exist through at least the period of the registry agreement.\nSC5.1-1.3 - The applying entity is aware of and has designed its systems and business to comply with the relevant privacy and security regulations for all countries in which it operates.",
+              "original_documents": [
+                {
+                  "isRemoved": false,
+                  "providedDate": "2026-07-29T07:54:44.000Z",
+                  "documentS3ObjectKey": "Financial_a-0000efde-9a6a-8000-9c71-011c48011c48_1003404.pdf",
+                  "originalLanguage": "English",
+                  "originalDocumentType": "pdf",
+                  "documentTitle": "mazda_D9a-Security-Policy-Self-Certification",
+                  "documentDescription": "",
+                  "category": "Questionnaire Response",
+                  "translationDocumentType": "",
+                  "translationDocumentTitle": "",
+                  "translationDocumentS3ObjectKey": "",
+                  "translationLanguage": ""
+                }
+              ],
+              "final_documents": [
+                {
+                  "isRemoved": false,
+                  "providedDate": "2026-11-23T16:56:31.000Z",
+                  "documentS3ObjectKey": "Financial_a-0000efde-9a6a-8000-9c71-011c48011c48_1003404.pdf",
+                  "originalLanguage": "English",
+                  "originalDocumentType": "pdf",
+                  "documentTitle": "mazda_Q220_D9a_Self-Certification-Security-Policy_SIGNED-KIDANI-20260710",
+                  "documentDescription": "",
+                  "category": "Questionnaire Response",
+                  "translationDocumentType": "",
+                  "translationDocumentTitle": "",
+                  "translationDocumentS3ObjectKey": "",
+                  "translationLanguage": ""
+                }
+              ],
+              "document_metadata_equal": false,
+              "file_contents_compared": false,
+              "per_document_changed_metadata_keys": [
+                [
+                  "documentTitle",
+                  "providedDate"
+                ]
+              ]
+            },
+            {
+              "question_text": "AGB Q221. Q5.2-1 - Provide the applying entity’s self-certification document, signed by the CEO, President, CFO and/or equivalent officer of the applying entity. The self-certification document must represent and warrant:\nSC5.2-1.1 - The applying entity will, no later than delegation of the Top Level Domain (TLD), establish a dedicated abuse point of contact responsible for addressing matters requiring expedited attention and providing a timely response to abuse complaints concerning any name registered in the TLD.\nSC5.2-1.2 - The applying entity will, no later than delegation of the TLD, establish, publish, and provide to ICANN the location of a mechanism for members of the public to submit reports of abuse in accordance with the current obligations of the Base RA and any Consensus Policies.\nSC5.2-1.3 - The applying entity has developed proposed measures for removal of orphan glue records for names removed from the zone when provided with evidence in written form that the glue is present in connection with malicious conduct (see Specification 6).\nSC5.2-1.4 - The applying entity has or will have at time of delegation, established policies for handling complaints regarding abuse. Such policies are to be maintained and posted publicly so that anyone can review the policies via the Internet and any other means deemed appropriate by the applying entity. The applying entity’s policies at a minimum should contain appropriate confirmation of the receipt of the abuse report, the process of review of the report, and actions that will be taken if the applying entity confirms the report is legitimate.\nSC5.2-1.5 - The applying entity understands that DNS Abuse is Phishing, Malware, Botnets, Pharming and Spam (when used to deliver other forms of DNS Abuse). The applying entity understands and is prepared to contribute to the mitigation or disruption of DNS Abuse in domains in the TLD zone.\nSC5.2-1.6 - The applying entity’s abuse response capabilities are resourced appropriately to ensure a timely and adequate investigation and response to reports of DNS Abuse. This includes capabilities to receive and evaluate evidence of DNS Abuse in reports, and to take action to stop or disrupt the DNS Abuse.\nSC5.2-1.7 - The applying entity is prepared to conduct periodic scans of its zone to identify if domains are being used to perpetrate DNS Abuse, and to maintain statistical reports of the scans, the findings, and actions taken.",
+              "original_documents": [
+                {
+                  "isRemoved": false,
+                  "providedDate": "2026-07-29T07:56:10.000Z",
+                  "documentS3ObjectKey": "Financial_a-0000efde-9a6a-8000-9c71-011c48011c48_1003417.pdf",
+                  "originalLanguage": "English",
+                  "originalDocumentType": "pdf",
+                  "documentTitle": "mazda_D9b-DNS-Abuse-Self-Certification",
+                  "documentDescription": "",
+                  "category": "Questionnaire Response",
+                  "translationDocumentType": "",
+                  "translationDocumentTitle": "",
+                  "translationDocumentS3ObjectKey": "",
+                  "translationLanguage": ""
+                }
+              ],
+              "final_documents": [
+                {
+                  "isRemoved": false,
+                  "providedDate": "2026-11-23T16:56:51.000Z",
+                  "documentS3ObjectKey": "Financial_a-0000efde-9a6a-8000-9c71-011c48011c48_1003417.pdf",
+                  "originalLanguage": "English",
+                  "originalDocumentType": "pdf",
+                  "documentTitle": "mazda_Q221_D9b_Self-Certification-DNS-Abuse-Mitigation_SIGNED-KIDANI-20260710",
+                  "documentDescription": "",
+                  "category": "Questionnaire Response",
+                  "translationDocumentType": "",
+                  "translationDocumentTitle": "",
+                  "translationDocumentS3ObjectKey": "",
+                  "translationLanguage": ""
+                }
+              ],
+              "document_metadata_equal": false,
+              "file_contents_compared": false,
+              "per_document_changed_metadata_keys": [
+                [
+                  "documentTitle",
+                  "providedDate"
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "application_id": "77352697T-T40435",
+      "primary_string": {
+        "aLabel": "screen",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/77352697T-T40435/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/77352697T-T40435/change-requests",
+      "last_published_at": "2026-11-25T23:30:55.887Z",
+      "acquired_at": "2026-11-27T13:55:30.384647+00:00",
+      "source_sha256": "7a3ab0287395231937201d4295e1a5c25f2ce09d3e683149b01a8c98854bf91a",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-77352697T-T40435-001",
+          "type": "applicationChangeRequest",
+          "approval_date": "2026-11-24T21:20:11.850Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this application were made as a result of ICANN approving an application change request submitted by the applicant. Updates were made to the following application question response(s): \n • Updated public questions: AGB Q181.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": [
+            {
+              "question_text": "AGB Q181. Submit Trademark Certificate",
+              "original_documents": [
+                {
+                  "isRemoved": false,
+                  "providedDate": "2026-08-08T08:29:12.000Z",
+                  "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1100749.pdf",
+                  "originalLanguage": "Other",
+                  "originalDocumentType": "pdf",
+                  "documentTitle": "screen_D7-Trademark_Certificate-of-Registration-5389505_JP",
+                  "documentDescription": "",
+                  "category": "Questionnaire Response",
+                  "translationDocumentType": "pdf",
+                  "translationDocumentTitle": "screen_D7-Trademark_Certificate-of-Registration-5389505_EN",
+                  "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1100752.pdf",
+                  "translationLanguage": "English"
+                }
+              ],
+              "final_documents": [
+                {
+                  "isRemoved": false,
+                  "providedDate": "2026-08-08T08:29:12.000Z",
+                  "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1100749.pdf",
+                  "originalLanguage": "Other",
+                  "originalDocumentType": "pdf",
+                  "documentTitle": "screen_D7-Trademark_Certificate-of-Registration-5389505_JP",
+                  "documentDescription": "",
+                  "category": "Questionnaire Response",
+                  "translationDocumentType": "pdf",
+                  "translationDocumentTitle": "screen_D7-Trademark_Certificate-of-Registration-5389505_EN",
+                  "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1100752.pdf",
+                  "translationLanguage": "English"
+                }
+              ],
+              "document_metadata_equal": true,
+              "file_contents_compared": false,
+              "per_document_changed_metadata_keys": [
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "change_request_id": "CR-77352697T-001",
+          "type": "organizationChangeRequest",
+          "approval_date": "2026-11-25T13:31:49.910Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this organization were made as a result of ICANN approving an organization change request submitted by the applicant. Updates were made to the following organization question response(s): ",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "application_id": "79112627T-T56273",
+      "primary_string": {
+        "aLabel": "toppan",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/79112627T-T56273/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/79112627T-T56273/change-requests",
+      "last_published_at": "2026-11-25T23:30:50.385Z",
+      "acquired_at": "2026-11-27T13:55:30.145659+00:00",
+      "source_sha256": "ecb6145e2c403bcf48ef099b4f33aade62d7f671b53ef6fa68ea679fcec1e2dc",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-79112627T-FCP-001",
+          "type": "financialChangeRequest",
+          "approval_date": "2026-11-25T14:51:34.240Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this organization were made as a result of ICANN approving a financial profile change request submitted by the applicant. Updates were made to the following financial profile question response(s): \n • Updated confidential questions: AGB Q202.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "application_id": "79442683T-T47475",
+      "primary_string": {
+        "aLabel": "roland",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/79442683T-T47475/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/79442683T-T47475/change-requests",
+      "last_published_at": "2026-11-24T23:30:37.763Z",
+      "acquired_at": "2026-11-27T13:55:30.146863+00:00",
+      "source_sha256": "e495567c0b95a7db4b62169ca22b26d19c81be28356f005d78e7a24ca138fc43",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-79442683T-T47475-001",
+          "type": "applicationChangeRequest",
+          "approval_date": "2026-11-24T22:33:32.870Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this application were made as a result of ICANN approving an application change request submitted by the applicant. Updates were made to the following application question response(s): \n • Updated public questions: AGB Q181.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": [
+            {
+              "question_text": "AGB Q181. Submit Trademark Certificate",
+              "original_documents": [
+                {
+                  "isRemoved": false,
+                  "providedDate": "2026-08-09T21:11:12.000Z",
+                  "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1130685.pdf",
+                  "originalLanguage": "Other",
+                  "originalDocumentType": "pdf",
+                  "documentTitle": "roland_D7-Trademark_Register-Extract-1569816_JP",
+                  "documentDescription": "",
+                  "category": "Questionnaire Response",
+                  "translationDocumentType": "pdf",
+                  "translationDocumentTitle": "roland_D7-Trademark_Register-Extract-1569816_EN",
+                  "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1130688.pdf",
+                  "translationLanguage": "English"
+                }
+              ],
+              "final_documents": [
+                {
+                  "isRemoved": false,
+                  "providedDate": "2026-08-09T21:11:12.000Z",
+                  "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1130685.pdf",
+                  "originalLanguage": "Other",
+                  "originalDocumentType": "pdf",
+                  "documentTitle": "roland_D7-Trademark_Register-Extract-1569816_JP",
+                  "documentDescription": "",
+                  "category": "Questionnaire Response",
+                  "translationDocumentType": "pdf",
+                  "translationDocumentTitle": "roland_D7-Trademark_Register-Extract-1569816_EN",
+                  "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1130688.pdf",
+                  "translationLanguage": "English"
+                }
+              ],
+              "document_metadata_equal": true,
+              "file_contents_compared": false,
+              "per_document_changed_metadata_keys": [
+                []
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "application_id": "80502644T-T59918",
+      "primary_string": {
+        "aLabel": "seiko",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/80502644T-T59918/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/80502644T-T59918/change-requests",
+      "last_published_at": "2026-11-25T23:30:50.408Z",
+      "acquired_at": "2026-11-27T13:55:32.989593+00:00",
+      "source_sha256": "fb979be97037f389ea967df18e8c3575529169a964d6c5761e0f10ee194b2461",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-80502644T-FCP-001",
+          "type": "financialChangeRequest",
+          "approval_date": "2026-11-25T15:21:50.110Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this organization were made as a result of ICANN approving a financial profile change request submitted by the applicant. Updates were made to the following financial profile question response(s): \n • Updated confidential questions: AGB Q202.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "application_id": "84112666T-T75756",
+      "primary_string": {
+        "aLabel": "mizuho",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/84112666T-T75756/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/84112666T-T75756/change-requests",
+      "last_published_at": "2026-11-25T23:30:50.413Z",
+      "acquired_at": "2026-11-27T13:55:32.879583+00:00",
+      "source_sha256": "9edc5d6639915e77ae9a1f66e964e600f4ded8930a50690b897de58ce23063a6",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-84112666T-FCP-001",
+          "type": "financialChangeRequest",
+          "approval_date": "2026-11-25T15:18:01.960Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this organization were made as a result of ICANN approving a financial profile change request submitted by the applicant. Updates were made to the following financial profile question response(s): \n • Updated confidential questions: AGB Q202.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "application_id": "85662668T-T46971",
+      "primary_string": {
+        "aLabel": "ritres",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/85662668T-T46971/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/85662668T-T46971/change-requests",
+      "last_published_at": "2026-11-25T23:30:49.535Z",
+      "acquired_at": "2026-11-27T13:55:32.929960+00:00",
+      "source_sha256": "9f79c4f84acff38c6173a7fbe895c76f932045afb8d87f1ff281b5640d79eb56",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-85662668T-FCP-001",
+          "type": "financialChangeRequest",
+          "approval_date": "2026-11-25T14:43:34.770Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this organization were made as a result of ICANN approving a financial profile change request submitted by the applicant. Updates were made to the following financial profile question response(s): \n • Updated confidential questions: AGB Q202.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "application_id": "86302673T-T51999",
+      "primary_string": {
+        "aLabel": "sompo",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/86302673T-T51999/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/86302673T-T51999/change-requests",
+      "last_published_at": "2026-11-25T23:30:50.851Z",
+      "acquired_at": "2026-11-27T13:55:35.663168+00:00",
+      "source_sha256": "35b2e5aa095ec385c61bd9045082d8b55eaac9a4bbbc55c503404e3caae5ebfb",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-86302673T-001",
+          "type": "organizationChangeRequest",
+          "approval_date": "2026-11-25T13:52:55.490Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this organization were made as a result of ICANN approving an organization change request submitted by the applicant. Updates were made to the following organization question response(s): ",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        },
+        {
+          "change_request_id": "CR-86302673T-FCP-001",
+          "type": "financialChangeRequest",
+          "approval_date": "2026-11-25T15:34:04.780Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this organization were made as a result of ICANN approving a financial profile change request submitted by the applicant. Updates were made to the following financial profile question response(s): \n • Updated confidential questions: AGB Q202, AGB Q204, and AGB Q205.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "application_id": "87252644T-T13162",
+      "primary_string": {
+        "aLabel": "msig",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/87252644T-T13162/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/87252644T-T13162/change-requests",
+      "last_published_at": "2026-11-24T23:30:13.965Z",
+      "acquired_at": "2026-11-27T13:55:35.641308+00:00",
+      "source_sha256": "b5a9a5d190fd963a6e3c551f960de31c96c2d46e3b69988a4beb9a47a81c8713",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-87252644T-T13162-001",
+          "type": "applicationChangeRequest",
+          "approval_date": "2026-11-24T22:07:07.070Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this application were made as a result of ICANN approving an application change request submitted by the applicant. Updates were made to the following application question response(s): \n • Updated public questions: AGB Q181.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": [
+            {
+              "question_text": "AGB Q181. Submit Trademark Certificate",
+              "original_documents": [
+                {
+                  "isRemoved": false,
+                  "providedDate": "2026-08-12T07:53:37.000Z",
+                  "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1186133.pdf",
+                  "originalLanguage": "Spanish",
+                  "originalDocumentType": "pdf",
+                  "documentTitle": "msig_D7_Trademark-Certificate-of-Registration_ES",
+                  "documentDescription": "",
+                  "category": "Questionnaire Response",
+                  "translationDocumentType": "pdf",
+                  "translationDocumentTitle": "msig_D21b_D7-Trademark_Certificate-of-Registration-00178574_EN",
+                  "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1186136.pdf",
+                  "translationLanguage": "English"
+                }
+              ],
+              "final_documents": [
+                {
+                  "isRemoved": false,
+                  "providedDate": "2026-08-12T07:53:37.000Z",
+                  "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1186133.pdf",
+                  "originalLanguage": "Spanish",
+                  "originalDocumentType": "pdf",
+                  "documentTitle": "msig_D7_Trademark-Certificate-of-Registration_ES",
+                  "documentDescription": "",
+                  "category": "Questionnaire Response",
+                  "translationDocumentType": "pdf",
+                  "translationDocumentTitle": "msig_D21b_D7-Trademark_Certificate-of-Registration-00178574_EN",
+                  "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1186136.pdf",
+                  "translationLanguage": "English"
+                }
+              ],
+              "document_metadata_equal": true,
+              "file_contents_compared": false,
+              "per_document_changed_metadata_keys": [
+                []
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "application_id": "BTRT2633T-T38161",
+      "primary_string": {
+        "aLabel": "xn--fiq228c5hs",
+        "uLabel": "中文网"
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/BTRT2633T-T38161/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/BTRT2633T-T38161/change-requests",
+      "last_published_at": "2026-11-24T23:32:23.798Z",
+      "acquired_at": "2026-11-27T13:55:35.749624+00:00",
+      "source_sha256": "cafa2e02c8a06ac57c9fcf1d571fc35c25631c3639e5821206755be9590afa10",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": []
+    },
+    {
+      "application_id": "BTRT2633T-T83538",
+      "primary_string": {
+        "aLabel": "xn--3ds443g",
+        "uLabel": "在线"
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/BTRT2633T-T83538/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/BTRT2633T-T83538/change-requests",
+      "last_published_at": "2026-11-24T23:32:23.886Z",
+      "acquired_at": "2026-11-27T13:55:54.264803+00:00",
+      "source_sha256": "9ea027885e2d9d30c680e6d871ec1044b71f92847a995b0b72a53a9ce2620952",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": []
+    },
+    {
+      "application_id": "CINI2622T-T81530",
+      "primary_string": {
+        "aLabel": "xn--io0a7i",
+        "uLabel": "网络"
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/CINI2622T-T81530/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/CINI2622T-T81530/change-requests",
+      "last_published_at": "2026-11-24T23:32:04.638Z",
+      "acquired_at": "2026-11-27T13:55:54.395285+00:00",
+      "source_sha256": "47e41832977ae5589081d3252a6846e5f346fada7057fa706b84c5506e781edd",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-CINI2622T-001",
+          "type": "organizationChangeRequest",
+          "approval_date": "2026-11-24T23:08:10.720Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this organization were made as a result of ICANN approving an organization change request submitted by the applicant. Updates were made to the following organization question response(s): ",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        },
+        {
+          "change_request_id": "CR-CINI2622T-Org ID-001",
+          "type": "stakeholderChangeRequest",
+          "approval_date": "2026-11-24T23:06:05.410Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this application were made as a result of ICANN approving a stakeholder change request submitted by the applicant. Updates were made to the following stakeholder question response(s): \n • Updated public questions: AGB 104.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": [
+            {
+              "question_text": "AGB 104. List all directors of the applying entity.",
+              "original_response": "Yulin  Liu, Xiao Zhang, Qiang Li, Jian Lv, Lidong Wang",
+              "final_response": "Peng Wang, Xiao Zhang, Qiang Li, Jian Lv, Lidong Wang",
+              "responses_equal": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "application_id": "DCJE2552-T43314",
+      "primary_string": {
+        "aLabel": "mai",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/DCJE2552-T43314/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/DCJE2552-T43314/change-requests",
+      "last_published_at": "2026-11-24T23:32:28.989Z",
+      "acquired_at": "2026-11-27T13:55:54.268485+00:00",
+      "source_sha256": "f285d1cd8c32387c1f55badab2cb4062f9fbbf755fad2b76782fbe7be420d785",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-DCJE2552-T43314-001",
+          "type": "applicationChangeRequest",
+          "approval_date": "2026-11-24T23:02:03.640Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this application were made as a result of ICANN approving an application change request submitted by the applicant. Updates were made to the following application question response(s): \n • Updated public questions: AGB Q118.\n • Updated confidential questions: AGB Q.176.1, AGB Q.176.2, AGB Q.176.3, AGB Q.176.4, AGB Q177.1, AGB Q177.2, and AGB Q178.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": [
+            {
+              "question_text": "AGB Q118. What is the meaning/definition of the applied-for gTLD string?",
+              "original_response": "mai",
+              "final_response": "In Chinese Pinyin system, \"mai\" embodies both buying and selling, making it a natural symbol of commerce and trade.",
+              "responses_equal": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "application_id": "HI2626T-T82284",
+      "primary_string": {
+        "aLabel": "hims",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/HI2626T-T82284/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/HI2626T-T82284/change-requests",
+      "last_published_at": "2026-11-24T23:32:02.242Z",
+      "acquired_at": "2026-11-27T13:55:59.071110+00:00",
+      "source_sha256": "741c46bf48ac784b53ef5c634666600cb8d80a35c3fbee429fac01eebff5843c",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": []
+    },
+    {
+      "application_id": "HI2626T-T90203",
+      "primary_string": {
+        "aLabel": "hers",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/HI2626T-T90203/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/HI2626T-T90203/change-requests",
+      "last_published_at": "2026-11-24T23:32:13.829Z",
+      "acquired_at": "2026-11-27T13:55:59.061638+00:00",
+      "source_sha256": "96431c8f3c76ba938bb057d6c2951c715a1f1cb372cfed64cd6a69b120244ce2",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": []
+    },
+    {
+      "application_id": "MC2626T-T87191",
+      "primary_string": {
+        "aLabel": "hall",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/MC2626T-T87191/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/MC2626T-T87191/change-requests",
+      "last_published_at": "2026-11-24T23:31:17.632Z",
+      "acquired_at": "2026-11-27T13:55:59.105845+00:00",
+      "source_sha256": "eed191f96b2f674e64ec80dee9f50f5d89eaff49cdd051ded99fdfe59d8e0cae",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-MC2626T-001",
+          "type": "organizationChangeRequest",
+          "approval_date": "2026-11-23T16:56:23.010Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this organization were made as a result of ICANN approving an organization change request submitted by the applicant. Updates were made to the following organization question response(s): \n • Updated public questions: AGB Q10.\n\nThese updates are available for public comment, beginning on the posting date up until 23 December 2026 23:59 UTC.",
+          "public_comment_start": "2026-11-23T16:56:23.000Z",
+          "public_comment_end_machine_field": "2026-12-23T00:00:00.000Z",
+          "questions": [
+            {
+              "question_text": "AGB Q10. Website URL",
+              "original_response": "http://NA.com",
+              "final_response": "http://www.dothall.ca",
+              "responses_equal": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "application_id": "MI2694T-T68970",
+      "primary_string": {
+        "aLabel": "medley",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/MI2694T-T68970/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/MI2694T-T68970/change-requests",
+      "last_published_at": "2026-11-25T23:30:35.139Z",
+      "acquired_at": "2026-11-27T13:56:02.841761+00:00",
+      "source_sha256": "e0a8b67220b9d6ddbbb30626a6317c473d92e171a573c4cd12929292f5496159",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-MI2694T-001",
+          "type": "organizationChangeRequest",
+          "approval_date": "2026-11-25T13:49:27.230Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this organization were made as a result of ICANN approving an organization change request submitted by the applicant. Updates were made to the following organization question response(s): ",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "application_id": "NSCL2617T-T55273",
+      "primary_string": {
+        "aLabel": "nomura",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/NSCL2617T-T55273/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/NSCL2617T-T55273/change-requests",
+      "last_published_at": "2026-11-25T23:30:06.210Z",
+      "acquired_at": "2026-11-27T13:56:02.827607+00:00",
+      "source_sha256": "2146fe6d62969a00fd56fff7ccf8c0c82432de9d56a29dc85fa4f7306b50ee3f",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-NSCL2617T-001",
+          "type": "organizationChangeRequest",
+          "approval_date": "2026-11-25T15:38:46.010Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this organization were made as a result of ICANN approving an organization change request submitted by the applicant. Updates were made to the following organization question response(s): ",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "application_id": "NTNC2670T-T72865",
+      "primary_string": {
+        "aLabel": "ntv",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/NTNC2670T-T72865/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/NTNC2670T-T72865/change-requests",
+      "last_published_at": "2026-11-24T23:30:51.576Z",
+      "acquired_at": "2026-11-27T13:56:02.881820+00:00",
+      "source_sha256": "a2f9371f8aa74b157259982fbac6a58f1655556220796ac40c94540553286b70",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-NTNC2670T-T72865-001",
+          "type": "applicationChangeRequest",
+          "approval_date": "2026-11-24T22:11:32.690Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this application were made as a result of ICANN approving an application change request submitted by the applicant. Updates were made to the following application question response(s): \n • Updated public questions: AGB Q181.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": [
+            {
+              "question_text": "AGB Q181. Submit Trademark Certificate",
+              "original_documents": [
+                {
+                  "isRemoved": false,
+                  "providedDate": "2026-08-08T06:21:25.000Z",
+                  "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1099175.pdf",
+                  "originalLanguage": "Other",
+                  "originalDocumentType": "pdf",
+                  "documentTitle": "ntv_D7-Trademark_Register-Extract-1of21-and-JPlatPat-Register-Screen-3111743_JP",
+                  "documentDescription": "",
+                  "category": "Questionnaire Response",
+                  "translationDocumentType": "pdf",
+                  "translationDocumentTitle": "ntv_D7-Trademark_Register-Extract-1of21-and-JPlatPat-Register-Screen-3111743_EN",
+                  "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1099178.pdf",
+                  "translationLanguage": "English"
+                }
+              ],
+              "final_documents": [
+                {
+                  "isRemoved": false,
+                  "providedDate": "2026-08-08T06:21:25.000Z",
+                  "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1099175.pdf",
+                  "originalLanguage": "Other",
+                  "originalDocumentType": "pdf",
+                  "documentTitle": "ntv_D7-Trademark_Register-Extract-1of21-and-JPlatPat-Register-Screen-3111743_JP",
+                  "documentDescription": "",
+                  "category": "Questionnaire Response",
+                  "translationDocumentType": "pdf",
+                  "translationDocumentTitle": "ntv_D7-Trademark_Register-Extract-1of21-and-JPlatPat-Register-Screen-3111743_EN",
+                  "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1099178.pdf",
+                  "translationLanguage": "English"
+                }
+              ],
+              "document_metadata_equal": true,
+              "file_contents_compared": false,
+              "per_document_changed_metadata_keys": [
+                []
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "application_id": "TO2640T-T19948",
+      "primary_string": {
+        "aLabel": "ver",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/TO2640T-T19948/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/TO2640T-T19948/change-requests",
+      "last_published_at": "2026-11-25T23:30:25.390Z",
+      "acquired_at": "2026-11-27T13:56:06.529894+00:00",
+      "source_sha256": "d6e259351d83bf22427b8e62a4c14b769f5c398a90b475b2bab2d309c0b7e910",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-TO2640T-001",
+          "type": "organizationChangeRequest",
+          "approval_date": "2026-11-25T14:20:28.870Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this organization were made as a result of ICANN approving an organization change request submitted by the applicant. Updates were made to the following organization question response(s): \n • Updated confidential questions: AGB Q86 and AGB Q88.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "application_id": "TPCL2648T-T11392",
+      "primary_string": {
+        "aLabel": "lipovitan",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/TPCL2648T-T11392/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/TPCL2648T-T11392/change-requests",
+      "last_published_at": "2026-11-24T23:31:53.893Z",
+      "acquired_at": "2026-11-27T13:56:06.564767+00:00",
+      "source_sha256": "8eebb4e572a699948732a564873f66382488d7683794bc77d8b2e9b23e984d78",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-TPCL2648T-T11392-001",
+          "type": "applicationChangeRequest",
+          "approval_date": "2026-11-24T22:27:31.740Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this application were made as a result of ICANN approving an application change request submitted by the applicant. Updates were made to the following application question response(s): \n • Updated public questions: AGB Q181.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": [
+            {
+              "question_text": "AGB Q181. Submit Trademark Certificate",
+              "original_documents": [
+                {
+                  "isRemoved": false,
+                  "providedDate": "2026-07-30T03:34:07.000Z",
+                  "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1013449.pdf",
+                  "originalLanguage": "Other",
+                  "originalDocumentType": "pdf",
+                  "documentTitle": "lipovitan_D7-Trademark_Registration-Ledger-4217749_JP",
+                  "documentDescription": "",
+                  "category": "Questionnaire Response",
+                  "translationDocumentType": "pdf",
+                  "translationDocumentTitle": "lipovitan_D7-Trademark_Registration-Ledger-4217749_EN",
+                  "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1013452.pdf",
+                  "translationLanguage": "English"
+                }
+              ],
+              "final_documents": [
+                {
+                  "isRemoved": false,
+                  "providedDate": "2026-11-23T20:09:32.000Z",
+                  "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1013449.pdf",
+                  "originalLanguage": "Other",
+                  "originalDocumentType": "pdf",
+                  "documentTitle": "lipovitan_D7-Trademark_Registration-Ledger-4217749_JP_ISSUED-20260616",
+                  "documentDescription": "",
+                  "category": "Questionnaire Response",
+                  "translationDocumentType": "pdf",
+                  "translationDocumentTitle": "lipovitan_D7-Trademark_Registration-Ledger-4217749_EN",
+                  "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1013452.pdf",
+                  "translationLanguage": "English"
+                }
+              ],
+              "document_metadata_equal": false,
+              "file_contents_compared": false,
+              "per_document_changed_metadata_keys": [
+                [
+                  "documentTitle",
+                  "providedDate"
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "application_id": "TPCL2648T-T93473",
+      "primary_string": {
+        "aLabel": "upsa",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/TPCL2648T-T93473/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/TPCL2648T-T93473/change-requests",
+      "last_published_at": "2026-11-24T23:31:54.203Z",
+      "acquired_at": "2026-11-27T13:56:06.460740+00:00",
+      "source_sha256": "b6d80de4d5c40ea00f6845bd8027132ba45ccf418720fcdd340f97d2653428a9",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-TPCL2648T-T93473-001",
+          "type": "applicationChangeRequest",
+          "approval_date": "2026-11-24T22:14:58.640Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this application were made as a result of ICANN approving an application change request submitted by the applicant. Updates were made to the following application question response(s): \n • Updated public questions: AGB Q181.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": [
+            {
+              "question_text": "AGB Q181. Submit Trademark Certificate",
+              "original_documents": [
+                {
+                  "isRemoved": false,
+                  "providedDate": "2026-07-30T03:13:39.000Z",
+                  "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1013319.pdf",
+                  "originalLanguage": "Other",
+                  "originalDocumentType": "pdf",
+                  "documentTitle": "upsa_D7-Trademark_Certificate-of-Registration-UPSA_JP",
+                  "documentDescription": "",
+                  "category": "Questionnaire Response",
+                  "translationDocumentType": "pdf",
+                  "translationDocumentTitle": "upsa_D7-Trademark_Certificate-of-Registration-UPSA_EN",
+                  "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1013322.pdf",
+                  "translationLanguage": "English"
+                }
+              ],
+              "final_documents": [
+                {
+                  "isRemoved": false,
+                  "providedDate": "2026-07-30T03:13:39.000Z",
+                  "documentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1013319.pdf",
+                  "originalLanguage": "Other",
+                  "originalDocumentType": "pdf",
+                  "documentTitle": "upsa_D7-Trademark_Certificate-of-Registration-UPSA_JP",
+                  "documentDescription": "",
+                  "category": "Questionnaire Response",
+                  "translationDocumentType": "pdf",
+                  "translationDocumentTitle": "upsa_D7-Trademark_Certificate-of-Registration-UPSA_EN",
+                  "translationDocumentS3ObjectKey": "Application_a-0000efde-9a6a-8000-9c71-011c48011c48_1013322.pdf",
+                  "translationLanguage": "English"
+                }
+              ],
+              "document_metadata_equal": true,
+              "file_contents_compared": false,
+              "per_document_changed_metadata_keys": [
+                []
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "application_id": "UA2620T-T14912",
+      "primary_string": {
+        "aLabel": "ultra",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/UA2620T-T14912/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/UA2620T-T14912/change-requests",
+      "last_published_at": "2026-11-23T23:31:01.369Z",
+      "acquired_at": "2026-11-27T13:56:10.102797+00:00",
+      "source_sha256": "691959dd9517cffdc46dc7e78d9e6ecf85990c01bedcfb9202248013bd9817bb",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-UA2620T-T14912-001",
+          "type": "applicationChangeRequest",
+          "approval_date": "2026-11-23T22:27:50.930Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this application were made as a result of ICANN approving an application change request submitted by the applicant. Updates were made to the following application question response(s): \n • Updated confidential questions: AGB Q.176.1, AGB Q.176.2, AGB Q.176.3, AGB Q177.1, and AGB Q177.2.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "application_id": "UA2620T-T22831",
+      "primary_string": {
+        "aLabel": "ultraview",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/UA2620T-T22831/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/UA2620T-T22831/change-requests",
+      "last_published_at": "2026-11-23T23:31:03.067Z",
+      "acquired_at": "2026-11-27T13:56:10.130518+00:00",
+      "source_sha256": "0c36eb62581710c07de30c3d7e6d3e6d3c41fd3dcca7fe4b10dedd91fbcb91ac",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-UA2620T-T22831-001",
+          "type": "applicationChangeRequest",
+          "approval_date": "2026-11-23T17:05:17.170Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this application were made as a result of ICANN approving an application change request submitted by the applicant. Updates were made to the following application question response(s): \n • Updated confidential questions: AGB Q.176.1, AGB Q.176.2, AGB Q.176.3, AGB Q177.1, and AGB Q177.2.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "application_id": "UA2620T-T78518",
+      "primary_string": {
+        "aLabel": "person",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/UA2620T-T78518/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/UA2620T-T78518/change-requests",
+      "last_published_at": "2026-11-23T23:30:47.010Z",
+      "acquired_at": "2026-11-27T13:56:10.202443+00:00",
+      "source_sha256": "e33d1c13a47f6e79a525564238edac9140f17eba8b357e05fbea3fc45032fe12",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-UA2620T-T78518-001",
+          "type": "applicationChangeRequest",
+          "approval_date": "2026-11-23T17:46:28.510Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this application were made as a result of ICANN approving an application change request submitted by the applicant. Updates were made to the following application question response(s): \n • Updated confidential questions: AGB Q.176.1, AGB Q.176.2, AGB Q.176.3, AGB Q177.1, and AGB Q177.2.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "application_id": "UA2620T-T78897",
+      "primary_string": {
+        "aLabel": "gaming",
+        "uLabel": ""
+      },
+      "application_status": "Active",
+      "application_processing_stage": "String Evaluation Processing",
+      "has_change_requests": true,
+      "source_url": "https://newgtldprogram-aps.icann.org/aps/applications/UA2620T-T78897/change-requests",
+      "public_page_url": "https://newgtldprogram-aps.icann.org/applications/UA2620T-T78897/change-requests",
+      "last_published_at": "2026-11-23T23:30:34.713Z",
+      "acquired_at": "2026-11-27T13:56:13.726692+00:00",
+      "source_sha256": "f2c085b4278281358ede0a39263870ac6d5eae558377b939a899dce22250bda8",
+      "prior_individual_change_request_page_available": false,
+      "export_label_before": "FALSE",
+      "export_label_after": "TRUE",
+      "change_requests": [
+        {
+          "change_request_id": "CR-UA2620T-T78897-001",
+          "type": "applicationChangeRequest",
+          "approval_date": "2026-11-23T17:16:04.050Z",
+          "approval_explicitly_stated": true,
+          "public_summary": "Updates to this application were made as a result of ICANN approving an application change request submitted by the applicant. Updates were made to the following application question response(s): \n • Updated confidential questions: AGB Q.176.1, AGB Q.176.2, AGB Q.176.3, AGB Q177.1, and AGB Q177.2.",
+          "public_comment_start": null,
+          "public_comment_end_machine_field": null,
+          "questions": []
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Non sono state recuperate pagine Change Requests archiviate del 22 novembre. La versione precedente verificabile è la label nel CSV storico; i prima/dopo delle risposte provengono dal confronto pubblicato oggi dalla fonte ufficiale.",
+    "La data approvalDate è l’approvazione pubblicata della richiesta, non la data di acquisizione e non necessariamente la pubblicazione. lastPublishedAt è il timestamp della scheda restituito dall’API.",
+    "Quattro schede mostrano hasChangeRequests=true ma nessuna richiesta nell’elenco crs; non si inferiscono contenuto, approvazione o esito.",
+    "Le risposte riservate non sono ricostruibili. L’assenza di questionsChanged non prova assenza di una modifica approvata.",
+    "I metadati originalDocuments/finalDocuments identici non dimostrano che il contenuto dei PDF sia identico; i PDF non sono stati confrontati.",
+    "Nessuna nuova sostituzione di stringa o modifica dello stato Active è dimostrata da queste richieste; una richiesta approvata sul profilo non è approvazione finale della candidatura."
+  ]
+}

@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "baseline": "639617f5b79cf5524825ab7093f4c7bb722d1d42",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "native": [
     {
       "file": "en/index.html",
       "lang": "en",
-      "retainedExistingIds": 435,
+      "retainedExistingIds": 437,
       "chapters": [
         {
           "id": "how",
@@ -253,9 +253,9 @@
         "narrative": {
           "lang": "en",
           "essentialBlocks": 7,
-          "originalTranslatedItems": 1402,
-          "originalLinks": 1135,
-          "originalIds": 524,
+          "originalTranslatedItems": 1433,
+          "originalLinks": 1190,
+          "originalIds": 526,
           "removedNavigationLabels": [
             "Understand the context",
             "From extensions to individual ICANN applications",
@@ -474,7 +474,7 @@
     {
       "file": "index.html",
       "lang": "en",
-      "retainedExistingIds": 435,
+      "retainedExistingIds": 437,
       "chapters": [
         {
           "id": "how",
@@ -721,9 +721,9 @@
         "narrative": {
           "lang": "en",
           "essentialBlocks": 7,
-          "originalTranslatedItems": 1402,
-          "originalLinks": 1135,
-          "originalIds": 524,
+          "originalTranslatedItems": 1433,
+          "originalLinks": 1190,
+          "originalIds": 526,
           "removedNavigationLabels": [
             "Understand the context",
             "From extensions to individual ICANN applications",
@@ -942,7 +942,7 @@
     {
       "file": "it/index.html",
       "lang": "it",
-      "retainedExistingIds": 435,
+      "retainedExistingIds": 437,
       "chapters": [
         {
           "id": "how",
@@ -1189,9 +1189,9 @@
         "narrative": {
           "lang": "it",
           "essentialBlocks": 7,
-          "originalTranslatedItems": 1402,
-          "originalLinks": 1135,
-          "originalIds": 524,
+          "originalTranslatedItems": 1433,
+          "originalLinks": 1190,
+          "originalIds": 526,
           "removedNavigationLabels": [
             "Per capire il contesto",
             "Dalle estensioni alle singole domande ICANN",
@@ -1410,7 +1410,7 @@
     {
       "file": "de/index.html",
       "lang": "de",
-      "retainedExistingIds": 435,
+      "retainedExistingIds": 437,
       "chapters": [
         {
           "id": "how",
@@ -1657,9 +1657,9 @@
         "narrative": {
           "lang": "de",
           "essentialBlocks": 7,
-          "originalTranslatedItems": 1402,
-          "originalLinks": 1135,
-          "originalIds": 524,
+          "originalTranslatedItems": 1433,
+          "originalLinks": 1190,
+          "originalIds": 526,
           "removedNavigationLabels": [
             "Den Zusammenhang verstehen",
             "Von Endungen zu einzelnen ICANN-Bewerbungen",
@@ -1878,7 +1878,7 @@
     {
       "file": "fr/index.html",
       "lang": "fr",
-      "retainedExistingIds": 435,
+      "retainedExistingIds": 437,
       "chapters": [
         {
           "id": "how",
@@ -2125,9 +2125,9 @@
         "narrative": {
           "lang": "fr",
           "essentialBlocks": 7,
-          "originalTranslatedItems": 1402,
-          "originalLinks": 1135,
-          "originalIds": 524,
+          "originalTranslatedItems": 1433,
+          "originalLinks": 1190,
+          "originalIds": 526,
           "removedNavigationLabels": [
             "Comprendre le contexte",
             "Des extensions aux candidatures individuelles ICANN",
@@ -2379,7 +2379,7 @@
       "file": "behind-the-round/de/index.html",
       "lang": "de",
       "area": "ia-round",
-      "retainedExistingIds": 19
+      "retainedExistingIds": 21
     },
     {
       "file": "behind-the-round/de/objectors-eoi/index.html",
@@ -2421,7 +2421,7 @@
       "file": "behind-the-round/en/index.html",
       "lang": "en",
       "area": "ia-round",
-      "retainedExistingIds": 19
+      "retainedExistingIds": 21
     },
     {
       "file": "behind-the-round/en/objectors-eoi/index.html",
@@ -2463,7 +2463,7 @@
       "file": "behind-the-round/fr/index.html",
       "lang": "fr",
       "area": "ia-round",
-      "retainedExistingIds": 19
+      "retainedExistingIds": 21
     },
     {
       "file": "behind-the-round/fr/objectors-eoi/index.html",
@@ -2505,7 +2505,7 @@
       "file": "behind-the-round/it/index.html",
       "lang": "it",
       "area": "ia-round",
-      "retainedExistingIds": 19
+      "retainedExistingIds": 21
     },
     {
       "file": "behind-the-round/it/objectors-eoi/index.html",

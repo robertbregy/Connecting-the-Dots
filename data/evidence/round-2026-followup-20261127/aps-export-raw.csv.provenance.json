@@ -1,0 +1,43 @@
+{
+  "url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+  "method": "POST",
+  "request_body": {
+    "searchAndFilter": {},
+    "sort": {
+      "field": "primaryString",
+      "direction": "ASC"
+    },
+    "pagination": {
+      "pageNum": 0,
+      "pageSize": 10
+    }
+  },
+  "acquired_at_utc": "2026-11-27T13:51:25.119161+00:00",
+  "status": 200,
+  "final_url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+  "headers": {
+    "date": "Fri, 27 Nov 2026 13:51:33 GMT",
+    "content-type": "text/csv;charset=UTF-8",
+    "server": "envoy",
+    "vary": "Origin,Access-Control-Request-Method,Access-Control-Request-Headers",
+    "content-disposition": "attachment; filename=\"applications.csv\"",
+    "x-content-type-options": "nosniff",
+    "x-xss-protection": "1; mode=block",
+    "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+    "pragma": "no-cache",
+    "expires": "0",
+    "strict-transport-security": "max-age=31536000 ; includeSubDomains",
+    "x-frame-options": "DENY",
+    "permissions-policy": "geolocation=(),camera=(),display-capture=(),microphone=()",
+    "referrer-policy": "origin-when-cross-origin",
+    "x-ratelimit-limit": "2, 2;w=1",
+    "x-ratelimit-remaining": "1",
+    "x-ratelimit-reset": "1",
+    "x-envoy-upstream-service-time": "2931",
+    "connection": "close",
+    "transfer-encoding": "chunked"
+  },
+  "byte_count": 680561,
+  "sha256": "defc901116c1faacdd332530b31f777a1b6865bebc1e08b351e729c08588a50a",
+  "path": "data/evidence/round-2026-followup-20261127/aps-export-raw.csv"
+}

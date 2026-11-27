@@ -21,8 +21,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 D = ROOT / "data"
-SOURCE = D / "applications_2026_aps_followup_20261122.csv"
-PROV = D / "applications_2026_aps_followup_20261122_provenance.json"
+SOURCE = D / "applications_2026_aps_followup_20261127.csv"
+PROV = D / "applications_2026_aps_followup_20261127_provenance.json"
+PREVIOUS = D / "applications_2026_aps_followup_20261122.csv"
+PREVIOUS_PROV = D / "applications_2026_aps_followup_20261122_provenance.json"
 BASELINE = D / "applications_2026_aps_string_confirmation_20261117.csv"
 BASELINE_PROV = D / "applications_2026_aps_string_confirmation_20261117_provenance.json"
 CONFIRMED_CONTENTION = D / "evidence/string-confirmation-2026-11-17/live/string-confirmation-contention-sets.csv"
@@ -147,7 +149,7 @@ def effective_record(original, alternative):
     return alternative if selected_replacement(original, alternative) else original
 
 
-def maintain_events(rows, provenance, source_sha, frozen_rows, frozen_provenance):
+def maintain_events(rows, provenance, source_sha, frozen_rows, frozen_provenance, previous_rows, previous_provenance):
     older = []
     if HISTORY.exists():
         with HISTORY.open(encoding="utf-8", newline="") as file:
@@ -159,23 +161,24 @@ def maintain_events(rows, provenance, source_sha, frozen_rows, frozen_provenance
     if len(seen) != len(older):
         raise ValueError("Duplicate event identity in history")
 
-    # A current rebuild must never silently replace the historical corpus with
-    # a latest-only log. Verify every immutable 17 November observation first.
-    frozen_sha = frozen_provenance["normalizedCSVSHA256"]
-    for row in frozen_rows:
-        record_id = row["Application ID"]
-        expected = dict(
-            application_id=base_id(record_id),
-            aps_record_id=record_id,
-            observed_utc=frozen_provenance["retrievedAtUTC"],
-            primary_string=norm(row["Primary String"]),
-            application_type=row["Application Type"],
-            application_status=row["Application Status"],
-            processing_stage=row["Application Processing Stage"],
-            source_sha256=frozen_sha,
-        )
-        if seen.get((record_id, frozen_sha)) != expected:
-            raise ValueError("Frozen APS observation missing or altered: " + record_id)
+    # Preserve both the scientific baseline and the preceding current snapshot.
+    # Every earlier row stays in its original position and is checked before append.
+    for historical_rows, historical_provenance in ((frozen_rows, frozen_provenance), (previous_rows, previous_provenance)):
+        historical_sha = historical_provenance["normalizedCSVSHA256"]
+        for row in historical_rows:
+            record_id = row["Application ID"]
+            expected = dict(
+                application_id=base_id(record_id),
+                aps_record_id=record_id,
+                observed_utc=historical_provenance["retrievedAtUTC"],
+                primary_string=norm(row["Primary String"]),
+                application_type=row["Application Type"],
+                application_status=row["Application Status"],
+                processing_stage=row["Application Processing Stage"],
+                source_sha256=historical_sha,
+            )
+            if seen.get((record_id, historical_sha)) != expected:
+                raise ValueError("Historical APS observation missing or altered: " + record_id)
 
     additional = []
     for row in sorted(rows, key=lambda item: item["Application ID"]):
@@ -269,8 +272,42 @@ def verify_reconciliation(rows, provenance):
     return frozen_rows, frozen_provenance, changes
 
 
+def verify_previous_observation(rows, provenance):
+    """Check all fields by complete record ID, independently of CSV row order."""
+    if __package__:
+        from .build_aps_followup_20261127 import compare
+    else:
+        from build_aps_followup_20261127 import compare
+
+    previous_provenance = json.loads(PREVIOUS_PROV.read_text(encoding="utf-8"))
+    previous_raw = PREVIOUS.read_bytes()
+    previous_reference = provenance["previousObservation"]
+    if digest(previous_raw) != previous_provenance["normalizedCSVSHA256"] or digest(previous_raw) != previous_reference["normalizedSHA256"]:
+        raise ValueError("Previous current observation checksum changed")
+    reader = csv.DictReader(io.StringIO(previous_raw.decode("utf-8-sig"), newline=""))
+    if reader.fieldnames != provenance["csvColumns"]:
+        raise ValueError("Previous/current CSV schemas differ")
+    previous_rows = list(reader)
+    observed = compare(previous_rows, rows, reader.fieldnames)
+    expected = provenance["comparisonSincePreviousObservation"]
+    if any(observed[key] != expected[key] for key in observed):
+        raise ValueError("Previous/current Application ID or field comparison changed")
+    if observed["addedRecordIds"] or observed["removedRecordIds"]:
+        raise ValueError("Record additions/removals require separate interpretation")
+    return previous_rows, previous_provenance, observed
+
+
 def build():
     provenance = json.loads(PROV.read_text(encoding="utf-8"))
+    contention_recheck = provenance["officialContentionRecheck"]
+    for source in contention_recheck["sources"]:
+        if (digest((ROOT / source["rawFile"]).read_bytes()) != source["rawSHA256"]
+                or source["rawSHA256"] != digest((ROOT / source["previousSource"]["rawFile"]).read_bytes())
+                or source["newSubstantiveExport"]):
+            raise ValueError("The archived unchanged contention recheck no longer matches its sources")
+    wdo_observation = provenance["separatelyPublishedApplicationObservation"]
+    if digest((ROOT / wdo_observation["source"]["rawFile"]).read_bytes()) != wdo_observation["source"]["rawSHA256"]:
+        raise ValueError("The archived separately published .wdo notice changed")
     raw = SOURCE.read_bytes()
     source_sha = digest(raw)
     if source_sha != provenance["normalizedCSVSHA256"]:
@@ -325,6 +362,7 @@ def build():
 
     proceeding, primary, exact = primary_groups(originals, alternatives)
     frozen_rows, frozen_provenance, status_changes = verify_reconciliation(rows, provenance)
+    previous_rows, previous_provenance, previous_comparison = verify_previous_observation(rows, provenance)
     frozen_originals = {row["Application ID"]: row for row in frozen_rows if not row["Application ID"].endswith("-R")}
     frozen_alternatives = {base_id(row["Application ID"]): row for row in frozen_rows if row["Application ID"].endswith("-R")}
     frozen_proceeding, _, frozen_exact = primary_groups(frozen_originals, frozen_alternatives)
@@ -344,13 +382,10 @@ def build():
     surviving_memberships = sorted(tuple(group) for group in surviving_groups if len(group) > 1)
     if sorted(tuple(value) for value in exact.values()) != surviving_memberships:
         raise ValueError("Current derived overlaps do not reconcile with surviving confirmed memberships")
-    if provenance["officialStatisticsActiveApplications"] != len(proceeding) + 1:
-        raise ValueError("Current public APS count plus the separately disclosed .wdo does not reconcile")
     if (
-        provenance["officialStatisticsTotalApplications"] != len(originals) + 1
-        or provenance["officialStatisticsActiveApplications"] + provenance["officialStatisticsWithdrawnApplications"] != provenance["officialStatisticsTotalApplications"]
+        provenance["officialStatisticsActiveApplications"] + provenance["officialStatisticsWithdrawnApplications"] != provenance["officialStatisticsTotalApplications"]
     ):
-        raise ValueError("Current APS active/withdrawn totals do not reconcile with published families")
+        raise ValueError("The official statistics' own active/withdrawn total does not reconcile")
     if provenance["officialAnnouncementProceedingApplications"] != len(frozen_proceeding) + 1:
         raise ValueError("Corrected historical announcement does not reconcile with its dated public snapshot")
     if provenance["officialAnnouncementApplicationsInContention"] != len(official_contention_rows):
@@ -369,6 +404,11 @@ def build():
     edges = []
     apps = []
     changes_by_record = {change["applicationId"]: change for change in status_changes}
+    recent_changes_by_record = {change["applicationId"]: change for change in provenance["statusChangesSincePreviousObservation"]}
+    summary_evidence = json.loads((ROOT / provenance["withdrawalSummaryCorroboration"]).read_text(encoding="utf-8"))
+    summaries_by_record = {record["application_id"]: record for record in summary_evidence["records"]}
+    cr_evidence = json.loads((ROOT / provenance["changeRequestEvidence"]).read_text(encoding="utf-8"))
+    requests_by_family = {record["application_id"]: record for record in cr_evidence["applications"]}
 
     def edge(application_id, record_id, string, unicode_label, relationship, status):
         edges.append(
@@ -446,8 +486,31 @@ def build():
             app["observedStatusChange"] = {
                 "previousStatus": change["previousStatus"],
                 "currentStatus": change["currentStatus"],
-                "previousObservedAtUTC": frozen_provenance["retrievedAtUTC"],
+                "previousObservedAtUTC": previous_provenance["retrievedAtUTC"] if effective["Application ID"] in recent_changes_by_record else frozen_provenance["retrievedAtUTC"],
                 "currentObservedAtUTC": provenance["retrievedAtUTC"],
+                "effectiveEventDate": None,
+            }
+        if effective["Application ID"] in summaries_by_record:
+            summary = summaries_by_record[effective["Application ID"]]
+            app["officialStatusEvidence"] = {
+                "sourceURL": summary["public_summary_url"],
+                "sourceAPI": summary["official_json_url"],
+                "lastPublishedAtUTC": summary["last_published_at_utc"],
+                "retrievedAtUTC": summary["acquired_at_utc"],
+                "rawSHA256": summary["raw_sha256"],
+                "rawFile": summary["local_raw_file"],
+                "effectiveWithdrawalDate": None,
+            }
+        if aid in requests_by_family:
+            requests = requests_by_family[aid]
+            app["changeRequestEvidence"] = {
+                "sourceURL": requests["public_page_url"],
+                "lastPublishedAtUTC": requests["last_published_at"],
+                "retrievedAtUTC": requests["acquired_at"],
+                "rawSHA256": requests["source_sha256"],
+                "publishedRequestIds": [item["change_request_id"] for item in requests["change_requests"]],
+                "hasFlagButNoPublishedDetails": not bool(requests["change_requests"]),
+                "previousIndividualPageAvailable": False,
             }
 
         original_variants = variants(original["TLD Variants"])
@@ -530,15 +593,29 @@ def build():
         "officialAnnouncementApplicationsInContention": provenance["officialAnnouncementApplicationsInContention"],
         "knownAdministrativeCheckApplications": 1,
         "statisticsVsPublicProceedingGap": provenance["officialStatisticsActiveApplications"] - len(proceeding),
+        "statisticsVsPublicWithdrawnGap": provenance["officialStatisticsWithdrawnApplications"] - sum(app["status"] == "Withdrawn" for app in apps),
+        "statisticsVsPublicApplicationFamilyGap": provenance["officialStatisticsTotalApplications"] - len(originals),
         "unresolvedAnnouncementPublicationGap": provenance["unresolvedAnnouncementPublicationGap"],
         "statusChangesSinceStringConfirmation": len(status_changes),
+        "statusChangesSincePreviousObservation": len(recent_changes_by_record),
+        "changeRequestLabelChangedRecordsSincePreviousObservation": provenance["changeRequestLabelChangedRecords"],
+        "changeRequestLabelChangedFamiliesSincePreviousObservation": provenance["changeRequestLabelChangedFamilies"],
     }
     if counts["proceedingNewPrimaryApplications"] != provenance["visibleProceedingNewPrimaryApplications"]:
         raise ValueError("Current proceeding new-primary application census changed")
-    if counts["visibleWithdrawnApplications"] != provenance["officialStatisticsWithdrawnApplications"]:
-        raise ValueError("Current withdrawn application count does not reconcile with statistics")
+    if counts["visibleWithdrawnApplications"] != provenance["visibleWithdrawnApplicationFamilies"]:
+        raise ValueError("Current public export withdrawal count differs from its pinned observation")
+    gaps = provenance["crossSourceDiscrepancies"]
+    if (
+        counts["statisticsVsPublicProceedingGap"] != gaps["statisticsMinusPublicActiveApplications"]
+        or counts["statisticsVsPublicWithdrawnGap"] != gaps["statisticsMinusPublicWithdrawnApplications"]
+        or counts["statisticsVsPublicApplicationFamilyGap"] != gaps["statisticsMinusPublicFamilies"]
+        or gaps["causalExplanation"] is not None
+        or gaps["additionalWithdrawnApplicationIds"] is not None
+    ):
+        raise ValueError("The documented cross-source discrepancy changed or acquired an unsupported attribution")
 
-    event = maintain_events(rows, provenance, source_sha, frozen_rows, frozen_provenance)
+    event = maintain_events(rows, provenance, source_sha, frozen_rows, frozen_provenance, previous_rows, previous_provenance)
 
     historical_announcement = {
         "sourceURL": provenance["officialAnnouncementReference"],
@@ -552,9 +629,14 @@ def build():
         "residualAggregateDifference": 0,
         "scope": provenance["announcementGapScope"],
     }
+    source_inputs = [SOURCE, PROV, PREVIOUS, PREVIOUS_PROV, BASELINE, BASELINE_PROV, CONFIRMED_CONTENTION]
+    source_inputs.extend(ROOT / source["rawFile"] for source in contention_recheck["sources"])
+    source_inputs.extend(ROOT / source["previousSource"]["rawFile"] for source in contention_recheck["sources"])
+    source_inputs.extend(ROOT / contention_recheck[key] for key in ("provenanceFile", "comparisonFile"))
+    source_inputs.append(ROOT / wdo_observation["source"]["rawFile"])
     inputs = {
         str(path.relative_to(ROOT)): {"sha256": digest(path.read_bytes()), "bytes": path.stat().st_size}
-        for path in (SOURCE, PROV, BASELINE, BASELINE_PROV, CONFIRMED_CONTENTION)
+        for path in source_inputs
     }
 
     graph = {
@@ -568,20 +650,23 @@ def build():
         "sourceSHA256": source_sha,
         "retrievedAtUTC": provenance["retrievedAtUTC"],
         "statisticsPublishedAtUTC": provenance["sourceStatisticsLastPublished"],
+        "statisticsRetrievedAtUTC": provenance["sourceStatisticsRetrievedAtUTC"],
+        "exportPublicationAtUTC": provenance["sourceExportPublicationAtUTC"],
         "counts": counts,
         "notPublishedApplication": {
             "id": pending_id,
             "status": "administrative-check",
+            "lastPublishedStatus": wdo_observation["lastPublishedStatus"],
+            "lastPublishedAtUTC": wdo_observation["lastPublishedAtUTC"],
+            "retrievedAtUTC": wdo_observation["source"]["retrievedAtUTC"],
+            "rawFile": wdo_observation["source"]["rawFile"],
+            "rawSHA256": wdo_observation["source"]["rawSHA256"],
+            "currentInternalStatusEstablished": False,
+            "explainsCurrentWithdrawalDiscrepancy": False,
             "detailUrl": public_link(pending_id),
         },
-        "aggregateGap": {
-            "classification": "same-snapshot-current-APS-statistics-reconciliation",
-            "officialStatisticsActiveApplications": provenance["officialStatisticsActiveApplications"],
-            "visibleProceedingApplications": len(proceeding),
-            "knownAdministrativeCheckApplications": 1,
-            "residualAggregateDifference": provenance["officialStatisticsActiveApplications"] - len(proceeding) - 1,
-            "note": "The current public listing and APS Statistics reconcile after accounting for the separately disclosed .wdo application. Historical announcement figures are compared only with the dated String Confirmation evidence.",
-        },
+        "aggregateGap": gaps,
+        "APSUpdatePolicy": provenance["APSUpdatePolicy"],
         "historicalAnnouncement": historical_announcement,
         "changesSinceStringConfirmation": {
             "previousObservedAtUTC": frozen_provenance["retrievedAtUTC"],
@@ -590,6 +675,20 @@ def build():
             "currentSourceSHA256": source_sha,
             "statusChanges": status_changes,
             "limitation": "Changes are observed between the two source captures; exact event times and causes are not established.",
+        },
+        "changesSincePreviousObservation": {
+            "previousObservedAtUTC": previous_provenance["retrievedAtUTC"],
+            "previousSourceSHA256": previous_provenance["normalizedCSVSHA256"],
+            "currentObservedAtUTC": provenance["retrievedAtUTC"],
+            "currentSourceSHA256": source_sha,
+            "statusChanges": provenance["statusChangesSincePreviousObservation"],
+            "addedRecordIds": previous_comparison["addedRecordIds"],
+            "removedRecordIds": previous_comparison["removedRecordIds"],
+            "changedRecordCount": previous_comparison["changedRecordCount"],
+            "changedApplicationFamilyCount": previous_comparison["changedApplicationFamilyCount"],
+            "changedFieldCounts": previous_comparison["changedFieldCounts"],
+            "evidenceFile": provenance["evidenceRegister"],
+            "limitation": "Export differences are observed between the two acquisitions. Publication timestamps of corroborating summaries do not establish effective withdrawal dates; request approvals do not approve a candidacy or select a replacement.",
         },
         "contention": {
             "classification": "project-derived-current-exact-primary-string-overlaps",
@@ -608,10 +707,13 @@ def build():
             "officialAnnouncementApplications": provenance["officialAnnouncementApplicationsInContention"],
             "unresolvedAnnouncementPublicationGap": 0,
             "APSInContentionFalseIsNotAuthoritativeBeforeStringEvaluation": True,
+            "officialRecheck": contention_recheck,
         },
         "coverage": {
             "APSListing": True,
-            "applicationSummaryPages": "linked-only",
+            "applicationSummaryPages": "42 newly withdrawn applications corroborated against individually archived official summaries; all other summaries linked",
+            "archivedWithdrawalSummaryCount": len(summaries_by_record),
+            "archivedChangeRequestApplicationFamilies": len(requests_by_family),
             "questionnairePDFsDownloaded": False,
             "questionnaireFullTextVendored": False,
             "confidentialPortions": "not included",
@@ -641,6 +743,8 @@ def build():
         "counts": counts,
         "inputFiles": inputs,
         "historicalAnnouncement": historical_announcement,
+        "aggregateGap": graph["aggregateGap"],
+        "changesSincePreviousObservation": graph["changesSincePreviousObservation"],
         "contention": graph["contention"],
         "eventHistory": {
             "events": event["events"],
@@ -651,8 +755,8 @@ def build():
             for path in (GRAPH, BROWSER, EDGES, HISTORY)
         },
         "limitations": [
-            "The public APS listing still excludes WDO2627T-T45217 while its administrative check continues.",
-            "Current APS counts are dated to 22 November 2026. The corrected historical announcement is reconciled separately with the String Confirmation sources, not compared with later withdrawal totals.",
+            "The public listing excludes WDO2627T-T45217. Its separately published notice is dated 7 October; that notice does not establish its current internal state or reconcile the current withdrawal discrepancy.",
+            "The current public export is acquired on 27 November 2026; its publication timestamp is not stated. APS Statistics has its own publication and acquisition timestamps. The public export contains 61 Withdrawn application families while Statistics declares 72; no eleven additional IDs or causal reconciliation are inferred.",
             "The official String Confirmation contention CSV remains frozen at 226 sets / 705 application rows. Current exact-primary overlaps are project-derived from visible Active records and are not a new official contention determination.",
             "A -R record is linked to a stable base Application ID; a selected replacement remains the effective string if its status subsequently becomes Withdrawn.",
             "13 variant links are string relationships, not additional applications.",

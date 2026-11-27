@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/it/beyond/ | Site edition: 0.8.2 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/it/beyond/ | Site edition: 0.8.3 | Language: it -->
 
 Guida
 
@@ -249,6 +249,6 @@ La nostra lettura: i domini potrebbero sostenere l’identità delle macchine. U
 
 [Linux Foundation · ANS, 10 novembre 2026](https://www.linuxfoundation.org/press/linux-foundation-welcomes-agent-name-service-to-bring-verifiable-identity-and-discovery-to-ai-agents) [IETF Datatracker · bozza individuale DNS-AID, 2 novembre 2026](https://datatracker.ietf.org/doc/html/draft-mozleywilliams-dawn-dnsaid-00)
 
-**Di Robert Bregy** · Edizione del sito 0.8.2 · 22 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.8.3 · 27 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

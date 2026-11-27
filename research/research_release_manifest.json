@@ -31,7 +31,7 @@
     "A new research release is created when the underlying evidence set or a major derived analysis changes materially.",
     "Historical research releases remain archived and citable once a DOI/archive workflow is activated."
   ],
-  "currentSiteVersion": "0.8.2",
+  "currentSiteVersion": "0.8.3",
   "workingPaperRevision": {
     "version": "1.4-draft",
     "revisedOn": "2026-10-19",
@@ -40,9 +40,9 @@
     "relationToRR2": "RR2 is the immutable archived dataset. The working paper has its own scholarly revision date; live technical references are synchronized separately and do not redate the manuscript or extend the RR1/RR2 DOI coverage.",
     "bibliographicCorrectionPath": "data/research_bibliographic_corrections.json",
     "technicalReference": {
-      "siteVersion": "0.8.2",
-      "dataPackageVersion": "0.8.2",
-      "synchronizedOn": "2026-11-22",
+      "siteVersion": "0.8.3",
+      "dataPackageVersion": "0.8.3",
+      "synchronizedOn": "2026-11-27",
       "semantics": "Operational pointer only. It does not change the working-paper scholarly revision date or extend RR2."
     },
     "relationToRR3": "The 19 October manuscript remains a living draft based on earlier evidence. The dated String Confirmation addendum accompanies the separately archived RR3 dataset."

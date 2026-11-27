@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/en/beyond/ | Site edition: 0.8.2 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/guides/en/beyond/ | Site edition: 0.8.3 | Language: en -->
 
 Guide
 
@@ -249,6 +249,6 @@ Our reading: domains could support machine identity alongside website addresses.
 
 [Linux Foundation · ANS, 10 November 2026](https://www.linuxfoundation.org/press/linux-foundation-welcomes-agent-name-service-to-bring-verifiable-identity-and-discovery-to-ai-agents) [IETF Datatracker · individual DNS-AID draft, 2 November 2026](https://datatracker.ietf.org/doc/html/draft-mozleywilliams-dawn-dnsaid-00)
 
-**By Robert Bregy** · Site edition 0.8.2 · November 22, 2026
+**By Robert Bregy** · Site edition 0.8.3 · November 27, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

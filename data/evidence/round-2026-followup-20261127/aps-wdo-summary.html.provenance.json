@@ -1,0 +1,26 @@
+{
+  "url": "https://newgtldprogram-aps.icann.org/applications/WDO2627T-T45217/summary",
+  "method": "GET",
+  "request_body": null,
+  "acquired_at_utc": "2026-11-27T13:51:25.122632+00:00",
+  "status": 200,
+  "final_url": "https://newgtldprogram-aps.icann.org/applications/WDO2627T-T45217/summary",
+  "headers": {
+    "date": "Fri, 27 Nov 2026 13:51:31 GMT",
+    "content-type": "text/html;charset=UTF-8",
+    "server": "envoy",
+    "cache-control": "max-age=3600",
+    "expires": "Fri, 27 Nov 2026 14:51:31 GMT",
+    "x-frame-options": "SAMEORIGIN",
+    "referrer-policy": "origin-when-cross-origin",
+    "x-ratelimit-limit": "20, 20;w=1",
+    "x-ratelimit-remaining": "18",
+    "x-ratelimit-reset": "1",
+    "x-envoy-upstream-service-time": "958",
+    "connection": "close",
+    "transfer-encoding": "chunked"
+  },
+  "byte_count": 25303,
+  "sha256": "cd7916f4de55c18e70e46f7ae704262eee60d1a3635ddb84dc9c9e7704109a39",
+  "path": "data/evidence/round-2026-followup-20261127/aps-wdo-summary.html"
+}

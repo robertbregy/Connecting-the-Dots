@@ -854,7 +854,7 @@ if (manifest.get('aps_2026_official_listing',{}).get('publishedApplications')!=1
 site_base='https://robertbregy.github.io/Connecting-the-Dots/'
 graph=json_file('aps_2026_application_graph.json')
 graph_report=json_file('aps_2026_application_graph_manifest.json')
-current_prov=json_file('applications_2026_aps_followup_20261122_provenance.json')
+current_prov=json_file('applications_2026_aps_followup_20261127_provenance.json')
 if graph.get('schemaVersion')!=2 or graph.get('snapshotState')!='post-string-confirmation' or graph.get('counts',{}).get('officialPublishedApplications')!=1614:
     fail('2026 graph must have precisely 1614 published base applications')
 if len(graph.get('apps',[]))!=1614 or len({a['id'] for a in graph['apps']})!=1614:
@@ -867,34 +867,47 @@ if graph.get('notPublishedApplication',{}).get('id')!='WDO2627T-T45217':
     fail('Withheld WDO provenance missing from graph')
 if not all(a['detailUrl']=='https://newgtldprogram-aps.icann.org/applications/'+a['id']+'/summary' for a in graph['apps']):
     fail('Official application summary links are inconsistent with their IDs')
-if graph['counts'].get('derivedExactPrimaryMatchGroups')!=225 or graph['counts'].get('applicationsInExactPrimaryMatches')!=695:
-    fail('Current project-derived exact-string overlaps must reconcile to 225 groups / 695 applications')
+if graph['counts'].get('derivedExactPrimaryMatchGroups')!=222 or graph['counts'].get('applicationsInExactPrimaryMatches')!=650:
+    fail('Current project-derived exact-string overlaps must reconcile to 222 groups / 650 applications')
 if (graph['counts'].get('officialConfirmedContentionSets')!=226 or
     graph['counts'].get('officialConfirmedContentionApplications')!=705 or
-    graph['counts'].get('visibleProceedingApplications')!=1595 or
-    graph['counts'].get('visibleWithdrawnApplications')!=19 or
+    graph['counts'].get('visibleProceedingApplications')!=1553 or
+    graph['counts'].get('visibleWithdrawnApplications')!=61 or
     graph['counts'].get('unresolvedAnnouncementPublicationGap')!=0):
     fail('Current status counts, corrected announcement and historical official contention must remain distinct')
-if (graph.get('sourceCSVFile')!='data/applications_2026_aps_followup_20261122.csv' or
+if (graph['counts'].get('apsStatisticsTotalApplications')!=1615 or
+    graph['counts'].get('apsStatisticsActiveApplications')!=1543 or
+    graph['counts'].get('apsStatisticsWithdrawnApplications')!=72 or
+    current_prov.get('officialStatisticsTotalApplications')!=1615 or
+    current_prov.get('officialStatisticsActiveApplications')!=1543 or
+    current_prov.get('officialStatisticsWithdrawnApplications')!=72):
+    fail('The separately published APS Statistics totals must remain distinct from the current export')
+if (graph.get('sourceCSVFile')!='data/applications_2026_aps_followup_20261127.csv' or
     graph.get('contention',{}).get('classification')!='project-derived-current-exact-primary-string-overlaps' or
     graph['contention'].get('publicConfirmedSets')!=226 or graph['contention'].get('publicConfirmedApplications')!=705 or
-    graph['contention'].get('currentDerivedSets')!=225 or graph['contention'].get('currentDerivedApplications')!=695):
+    graph['contention'].get('currentDerivedSets')!=222 or graph['contention'].get('currentDerivedApplications')!=650):
     fail('Current Atlas must identify its dated source and distinguish calculated overlaps from official contention')
 if graph_report.get('sourceSha256')!=current_prov['normalizedCSVSHA256']:
-    fail('Current graph provenance not pinned to the 22 November APS CSV checksum')
+    fail('Current graph provenance not pinned to the 27 November APS CSV checksum')
 for name,expected in graph_report.get('files',{}).items():
     file=DATA/name
     if not file.exists() or hashlib.sha256(file.read_bytes()).hexdigest()!=expected.get('sha256'):
         fail('Analytical graph output has changed: '+name)
 edges=rows('aps_2026_application_edges.csv')
 observations=rows('aps_2026_record_observations.csv')
-if len(edges)!=2796 or len(observations)!=8349:
+if len(edges)!=2796 or len(observations)!=11132:
     fail('APS primary, replacement, variant edges or snapshot event observations missing')
 if Counter(x['source_sha256'] for x in observations)!={
     '520ea8433b96322816fb03fa66072acc29e7251e16839093b4446ada401bd887':2783,
     'c41606e8b58f3e469c0e91fab48e25057c0959f9792d4385871d5c70268fe44c':2783,
+    'cd7df94d073ef39206621424aed2d34782f2896a34d589b5d2109e0626288ad7':2783,
     current_prov['normalizedCSVSHA256']:2783}:
-    fail('APS history must retain all records from both earlier snapshots and append the current source')
+    fail('APS history must retain all records from all three earlier snapshots and append the current source')
+# Exact v0.8.2 history bytes from 1f8eb058989a2eb3a22f16c431e16fbbed2aa132.
+# New observations append to that prefix; counts alone cannot prove preservation.
+history_prefix=(DATA/'aps_2026_record_observations.csv').read_bytes()[:1459263]
+if hashlib.sha256(history_prefix).hexdigest()!='2bc2ddda26a3436cc4eae806db12dc90197114d39e2b8932bb6bdadf8a42e2eb':
+    fail('Earlier APS observation history was rewritten instead of preserved as an exact prefix')
 if set(x['application_id'] for x in edges)!={a['id'] for a in graph['apps']}:
     fail('String relationships contain orphan or missing applications')
 if any(x['source_sha256']!=current_prov['normalizedCSVSHA256'] for x in observations if x['observed_utc']==current_prov['retrievedAtUTC']):
@@ -985,8 +998,8 @@ if (not replacement or replacement.get('state')!='observed' or replacement.get('
     replacement.get('bodyKey')!='insideReplaceCompletedBody' or
     replacement.get('revisionHistory',[])[-1].get('date')!='2026-10-30'):
     fail('Replacement period must be closed without implying confirmed applicant choices')
-if chronicle.get('lastReviewed')!='2026-11-22':
-    fail('Current technical release lacks dated 22 November timeline review')
+if chronicle.get('lastReviewed')!='2026-11-27':
+    fail('Current technical release lacks dated 27 November timeline review')
 for event_id, expected_date, expected_body in [
     ('official-cam-withdrawal','2026-11-19','insideOfficialBody'),
     ('announcement-correction-observed','2026-11-22','insideCorrectionBody'),
@@ -994,6 +1007,8 @@ for event_id, expected_date, expected_body in [
     follow_event=next((e for e in events if e['id']==event_id),None)
     if not follow_event or (follow_event.get('date'),follow_event.get('state'),follow_event.get('bodyKey'))!=(expected_date,'observed',expected_body):
         fail('Missing dated primary-source follow-up event: '+event_id)
+if next(e for e in events if e['id']=='official-cam-withdrawal').get('scope')!='program':
+    fail('The .official withdrawal must remain a program event without an undocumented .lugano impact')
 confirmation=next((e for e in events if e['id']=='confirmation'),None)
 community_input=next((e for e in events if e['id']=='community-input'),None)
 if not confirmation or confirmation.get('state')!='observed' or confirmation.get('bodyKey')!='insideConfirmObservedBody':
@@ -1131,9 +1146,9 @@ if {q['id']:q['value'] for q in case['quantities']}!={'paid':1616,'official':161
     fail('Reveal Day discrepancy values altered without reviewed evidence')
 if case['trackedApplication']['id']!='WDO2627T-T45217' or case['trackedApplication']['string']!='.wdo':
     fail('Officially documented administrative-check record changed')
-if not case.get('revisionHistory') or case['revisionHistory'][-1]['date']!=case['revisedOn'] or case['revisionHistory'][-1]['changeKey']!='behindRevisionCorrection20261122':
+if not case.get('revisionHistory') or case['revisionHistory'][-1]['date']!=case['revisedOn'] or case['revisionHistory'][-1]['changeKey']!='behindRevisionFollowup20261127':
     fail('Unversioned field-note revision history')
-if len(case['sources'])!=26 or not any(s['kind']=='secondary' for s in case['sources']):
+if len(case['sources'])!=31 or not any(s['kind']=='secondary' for s in case['sources']):
     fail('Editorial case lacks provenance distinction')
 if not all(s['url'].startswith('https://') and s['labelKey'] for s in case['sources']):
     fail('Incomplete case evidence')

@@ -1,0 +1,26 @@
+[
+  {
+    "source": "reveal-day-contention-sets.csv",
+    "equal_bytes": true,
+    "sha256": "86f2ebd3764d1f3ea21d5d844cff004e271a443a3431e8ac440da7f72c67e2bf",
+    "baseline_sha256": "86f2ebd3764d1f3ea21d5d844cff004e271a443a3431e8ac440da7f72c67e2bf",
+    "rows": 891,
+    "distinct_application_ids": 891,
+    "set_ids": 263,
+    "added_ids": [],
+    "removed_ids": [],
+    "changed_fields_by_id": {}
+  },
+  {
+    "source": "string-confirmation-contention-sets.csv",
+    "equal_bytes": true,
+    "sha256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
+    "baseline_sha256": "0c65e67703c57794e3c038607feeae4b9dc8126f4739766737d0066d55d76b4f",
+    "rows": 705,
+    "distinct_application_ids": 705,
+    "set_ids": 226,
+    "added_ids": [],
+    "removed_ids": [],
+    "changed_fields_by_id": {}
+  }
+]

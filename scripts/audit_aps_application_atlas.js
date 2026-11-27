@@ -107,6 +107,9 @@ async function verifyState(page,language,native){
     confirmedSets:window.CTD_APS_2026?.contention?.publicConfirmedSets,
     confirmedApplications:window.CTD_APS_2026?.contention?.publicConfirmedApplications,
     confirmedSnapshot:window.CTD_APS_2026?.contention?.officialConfirmedSnapshotOn,
+    sourceCSV:window.CTD_APS_2026?.sourceCSVFile,
+    exportWithdrawn:window.CTD_APS_2026?.counts?.visibleWithdrawnApplications,
+    statisticsWithdrawn:window.CTD_APS_2026?.counts?.apsStatisticsWithdrawnApplications,
     docWidth:document.documentElement.scrollWidth,viewport:document.documentElement.clientWidth,
     canonical:document.querySelector('link[rel=canonical]')?.href,
     languageLinks:document.querySelectorAll('link[hreflang]').length
@@ -114,12 +117,15 @@ async function verifyState(page,language,native){
    assert.equal(loaded.lang,lang);
    assert.equal(loaded.total,1614);
    assert.equal(loaded.replacement,1169);
-   assert.equal(loaded.exact,225,'Current exact-string groups must use the 22 November export');
-   assert.equal(loaded.exactApplications,695,'Current exact-string applications must exclude later withdrawals');
+   assert.equal(loaded.exact,222,'Current exact-string groups must use the 27 November export');
+   assert.equal(loaded.exactApplications,650,'Current exact-string applications must exclude later withdrawals');
    assert.equal(loaded.contentionClassification,'project-derived-current-exact-primary-string-overlaps');
    assert.equal(loaded.confirmedSets,226,'Official String Confirmation sets must remain separately preserved');
    assert.equal(loaded.confirmedApplications,705,'Official String Confirmation applications must remain separately preserved');
    assert.equal(loaded.confirmedSnapshot,'2026-11-17','Historical contention counts must retain their source date');
+   assert.equal(loaded.sourceCSV,'data/applications_2026_aps_followup_20261127.csv','Atlas must serve the reviewed current export');
+   assert.equal(loaded.exportWithdrawn,61,'Export withdrawal families must retain their own source scope');
+   assert.equal(loaded.statisticsWithdrawn,72,'APS Statistics withdrawals must remain separately sourced');
    assert.equal(loaded.cards,30);
    assert.equal(loaded.languageLinks,5);
    assert.ok(loaded.canonical.endsWith('/applications/'+lang+'/'));
@@ -135,13 +141,25 @@ async function verifyState(page,language,native){
    assert.ok(links.some(s=>s.endsWith('/CDL2651T-T31516/application-responses')));
    assert.ok(links.some(s=>s.endsWith('/CDL2651T-T31516/documents')));
    metrics.linkChecks+=3;metrics.searchChecks++;
+   if(width===390){
+    for(const [id,primary] of [['NA2626T-T30508','ace'],['MEI2627T-T58035','maker']]){
+     await page.locator('#apsSearch').fill(id);
+     const card=page.locator('.apsCard');
+     await card.first().waitFor();
+     assert.equal(await card.count(),1,lang+' newly withdrawn application lookup: '+id);
+     assert.equal(await card.first().getAttribute('data-aps-id'),id);
+     assert.ok((await card.first().innerText()).includes(primary));
+     assert.ok(await card.first().locator('[data-aps-status="Withdrawn"]').count()>0,lang+' public card must expose the reviewed withdrawal: '+id);
+     metrics.searchChecks++;
+    }
+   }
    await page.locator('#apsSearch').fill('agent');
    assert.ok(await page.locator('.apsCard').count()>0,'agent strings must be indexed');
    metrics.searchChecks++;
    await page.locator('#apsSearch').fill('');
    await page.locator('#apsRole').selectOption('exact');
    let shown=await page.locator('#apsResultCount').innerText();
-   assert.ok(shown.replace(/[^0-9]/g,'').endsWith('695'),'All 695 current active exact-primary matches must be filterable '+lang+': '+shown);
+   assert.ok(shown.replace(/[^0-9]/g,'').endsWith('650'),'All 650 current active exact-primary matches must be filterable '+lang+': '+shown);
    metrics.filterChecks++;
    await page.locator('#apsRole').selectOption('replacement');
    shown=await page.locator('#apsResultCount').innerText();

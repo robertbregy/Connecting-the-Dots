@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/market/ | Site edition: 0.8.2 | Language: en -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/en/market/ | Site edition: 0.8.3 | Language: en -->
 
 Economic analysis
 
@@ -194,6 +194,6 @@ This dated market snapshot measures registrations, not active websites or users.
 
 [Verisign / DNIB · Q3 report, 22 October 2026](https://verisigninc.gcs-web.com/news-releases/news-release-details/dnibcom-reports-internet-has-4116-million-domain-name)
 
-**By Robert Bregy** · Site edition 0.8.2 · November 22, 2026
+**By Robert Bregy** · Site edition 0.8.3 · November 27, 2026
 
 Observation dates are stated beside the evidence. This site edition does not imply that every source was checked again on this date.

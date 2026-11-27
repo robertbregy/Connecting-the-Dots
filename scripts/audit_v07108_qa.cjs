@@ -69,8 +69,12 @@ for(const lang of langs){
  for(const alternate of [...langs,'x-default'])assert.ok(reader.querySelector('link[rel="alternate"][hreflang="'+alternate+'"]'),'Reader alternate '+alternate);
  assert.ok(sitemap.includes(base+'research/reader-study/'+lang+'/'),'Reader sitemap');
  assert.ok([...native.querySelectorAll('a[href]')].some(a=>a.getAttribute('href').includes('research/reader-study/'+lang+'/')),'Reader research entry');
- for(const family of ['applications/'+lang,'economics/'+lang+'/round-2026','tlds/'+lang+'/lugano']){
-  const p=doc(family+'/index.html');assert.equal(p.querySelector('.roundStatus')?.getAttribute('data-aps-snapshot'),'2026-10-11','Dated snapshot '+family);
+ for(const [family,snapshot] of [['applications/'+lang,'2026-11-27'],['economics/'+lang+'/round-2026','2026-10-11']]){
+  const p=doc(family+'/index.html');assert.equal(p.querySelector('.roundStatus')?.getAttribute('data-aps-snapshot'),snapshot,'Source-specific dated snapshot '+family);
+ }
+ for(const family of ['tlds/'+lang+'/lugano','inside-the-round/'+lang,'behind-the-round/'+lang]){
+  const p=doc(family+'/index.html');
+  assert.equal(p.querySelectorAll('.roundStatus').length,0,'Individually dated observations must not receive a blanket historical snapshot banner '+family);
  }
  const cases=doc('economics/'+lang+'/cases/index.html');
  for(const card of cases.querySelectorAll('.economicCase[id]'))assert.ok(cases.querySelector('a[href="#'+card.id+'"]'),'Case index missing '+card.id);

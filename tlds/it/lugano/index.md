@@ -1,12 +1,8 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/lugano/ | Site edition: 0.8.2 | Language: it -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/tlds/it/lugano/ | Site edition: 0.8.3 | Language: it -->
 
 Scheda TLD
 
 # .lugano
-
-**Snapshot APS · 11 ottobre 2026**
-
-I dati delle candidature provengono dall’esportazione pubblica APS acquisita l’11 ottobre 2026. Questo snapshot precede lo String Confirmation Day (17 novembre), previsto per la pubblicazione delle stringhe confermate e delle contese aggiornate. Non attesta esiti individuali delle valutazioni. [Calendario ufficiale ↗](https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en)
 
 È una candidatura della Città di Lugano nel round 2026. Non è ancora un’estensione operativa: approvazione, delega e usi futuri restano da verificare.
 
@@ -90,6 +86,6 @@ Le classificazioni indicate come derivate usano la data di registrazione IANA e 
 
 [Fonte 1 ↗](https://newgtldprogram-aps.icann.org/applications/CDL2651T-T31516/summary) [Fonte 2 ↗](https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en) [Fonte 3 ↗](https://www.ntlddata.com/applications/strings)
 
-**Di Robert Bregy** · Edizione del sito 0.8.2 · 22 novembre 2026
+**Di Robert Bregy** · Edizione del sito 0.8.3 · 27 novembre 2026
 
 Le date di osservazione sono indicate accanto alle evidenze. Questa edizione del sito non implica una nuova verifica di tutte le fonti nella stessa data.

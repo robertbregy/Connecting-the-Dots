@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/cases/ | Site edition: 0.8.2 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/cases/ | Site edition: 0.8.3 | Language: de -->
 
 Wirtschaftsanalyse
 
@@ -310,6 +310,6 @@ Wird der Name nicht verkauft, verfällt die Option und er wird wieder allgemein 
 
 [Identity Digital / Deqo · Ankündigung vom 10. November 2026](https://www.businesswire.com/news/home/20261110723636/en/Identity-Digital-and-Deqo-Launch-Domain-Options-to-Improve-Capital-Efficiency-for-Investors)
 
-**Von Robert Bregy** · Ausgabe der Website 0.8.2 · 22. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.8.3 · 27. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

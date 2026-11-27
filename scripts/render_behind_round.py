@@ -27,7 +27,7 @@ PRIMARY = (
     "https://ofac.treasury.gov/",
 )
 SECONDARY = ("https://www.ntlddata.com/", "https://www.bortzmeyer.org/", "https://circleid.com/", "https://www.nic.ad.jp/")
-RESEARCH = ("https://github.com/robertbregy/Connecting-the-Dots/",)
+RESEARCH = ("https://github.com/robertbregy/Connecting-the-Dots/", BASE)
 
 
 def reader_source_url(url):
@@ -74,6 +74,8 @@ BEHIND_CSS = """
 .behindStringTable th,.behindStringTable td{padding:10px 8px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
 .behindStringTable thead{background:var(--surface2)}
 .behindStringTable code{white-space:normal;overflow-wrap:anywhere}
+.behindWithdrawalDetails{margin:18px 0}.behindWithdrawalDetails summary{cursor:pointer;font-weight:750;color:var(--accent-text);padding:10px 0}
+.behindWithdrawalDetails .behindStringTable{min-width:790px;font-size:.88rem}.behindWithdrawalDetails time{font-variant-numeric:tabular-nums}
 .behindIdentityList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0 18px}
 .behindIdentityCard{border:1px solid var(--border);border-radius:12px;padding:17px;background:var(--surface2)}
 .behindIdentityCard strong{font-size:1.12rem;display:block;margin-bottom:8px}
@@ -195,11 +197,15 @@ def validate_editorial_updates(case, translations, root=ROOT):
     if not updates:
         return
     expected={
-        "reveal-day-counts":["aps-count-reconciliation","aps-publication-calendar","string-confirmation-reconciliation","official-correction-20261122","current-aps-followup-20261122"],
+        "reveal-day-counts":["aps-count-reconciliation","aps-publication-calendar","string-confirmation-reconciliation","official-correction-20261122","current-aps-followup-20261122","current-aps-followup-20261127"],
         "replacement-strings":["aps-string-reconciliation","string-confirmation-replacement-outcome","replacement-eligibility-correction-20261122"],
     }
     if [item.get("id") for item in updates]!=expected.get(case["id"]):
         raise ValueError("Unreviewed field-note update identity: "+case["id"])
+    latest = case.get("latestUpdate")
+    if latest:
+        if latest["id"] != updates[-1]["id"] or any(not translations[lang].get(latest["labelKey"]) for lang in LANGS):
+            raise ValueError("The current field-note link must identify the latest translated update")
     sources={source["id"] for source in case["sources"]}
     for item in updates:
         if date.fromisoformat(item["date"]) > date.fromisoformat(case["revisedOn"]):
@@ -214,6 +220,24 @@ def validate_editorial_updates(case, translations, root=ROOT):
             keys.append(item["historicalNoticeKey"])
         if item.get("closingKey"):
             keys.append(item["closingKey"])
+        if item.get("evidenceLinks"):
+            for link in item["evidenceLinks"]:
+                if not link["url"].startswith((*PRIMARY, *RESEARCH)):
+                    raise ValueError("Unattributed follow-up evidence link")
+                keys.append(link["labelKey"])
+        if item.get("withdrawalTable"):
+            table = item["withdrawalTable"]
+            if table["file"] != "data/evidence/round-2026-followup-20261127/withdrawals-42-official-summary-corroboration.json":
+                raise ValueError("Unexpected withdrawal corroboration source")
+            records = json.loads((root / table["file"]).read_text(encoding="utf-8"))["records"]
+            if len(records) != 42 or len({r["application_id"] for r in records}) != 42:
+                raise ValueError("The dated follow-up must identify all 42 status changes")
+            if any(r["csv_before_status"] != "Active" or r["csv_after_status"] != "Withdrawn"
+                   or not r["matches_csv_identity_and_status"]
+                   or not r["last_published_at_utc"].startswith(("2026-11-23", "2026-11-25", "2026-11-26"))
+                   for r in records):
+                raise ValueError("Withdrawal table differs from the official summaries")
+            keys.extend([table["summaryKey"], table["captionKey"], *table["headerKeys"]])
         if item.get("link"):
             if item["link"]["path"]!="replacement-strings/#aps-string-reconciliation":
                 raise ValueError("Unexpected reconciliation destination")
@@ -276,6 +300,20 @@ def editorial_updates_markup(case, dictionary, lang, dynamic=False, heading="h3"
         if update.get("historicalNoticeKey"):
             parts.append(copy(update["historicalNoticeKey"], extra=' class="note" data-superseded-by="'+h(update["supersededBy"],quote=True)+'"'))
         parts.extend(copy(key) for key in update["paragraphKeys"])
+        if update.get("withdrawalTable"):
+            table = update["withdrawalTable"]
+            records = json.loads((ROOT / table["file"]).read_text(encoding="utf-8"))["records"]
+            caption_id = identity + "-withdrawals-caption"
+            parts.append('<details class="behindWithdrawalDetails">' + copy(table["summaryKey"], "summary"))
+            parts.append('<div class="behindTableWrap" role="region" tabindex="0" aria-labelledby="' + caption_id + '"><table class="behindStringTable">')
+            parts.append(copy(table["captionKey"], "caption", ' id="' + caption_id + '"'))
+            parts.append('<thead><tr>' + ''.join(copy(key, "th", ' scope="col"') for key in table["headerKeys"]) + '</tr></thead><tbody>')
+            for row in sorted(records, key=lambda r: (r["expected_string"], r["application_id"])):
+                aid = h(row["application_id"], quote=True)
+                published = h(row["last_published_at_utc"], quote=True)
+                display_date = h(row["last_published_at_utc"].replace("T", " ").removesuffix("Z") + " UTC")
+                parts.append('<tr data-withdrawn-application="' + aid + '"><td><a href="' + h(row["public_summary_url"], quote=True) + '" target="_blank" rel="noopener noreferrer">' + aid + '</a></td><td><code>.' + h(row["expected_string"]) + '</code></td><td>' + h(row["expected_applicant"]) + '</td><td>Active → Withdrawn</td><td><time datetime="' + published + '">' + display_date + '</time></td></tr>')
+            parts.append('</tbody></table></div></details>')
         evidence=update.get("reconciliation")
         if evidence:
             caption_id=identity+'-caption'
@@ -288,6 +326,11 @@ def editorial_updates_markup(case, dictionary, lang, dynamic=False, heading="h3"
             parts.append('</tbody></table></div>')
         if update.get("closingKey"):
             parts.append(copy(update["closingKey"]))
+        if update.get("evidenceLinks"):
+            parts.append('<ul class="behindSources behindFollowupEvidence">')
+            for link in update["evidenceLinks"]:
+                parts.append('<li><a href="' + h(link["url"], quote=True) + '">' + copy(link["labelKey"], "span") + '</a></li>')
+            parts.append('</ul>')
         if update.get("link"):
             link=update["link"]
             parts.append('<p><a data-field-reconciliation-link href="'+BASE+'behind-the-round/'+lang+'/'+h(link["path"],quote=True)+'">'+copy(link["labelKey"],"span")+'</a></p>')
@@ -360,13 +403,15 @@ def load():
         if any(row["officialApplications"]!=row["visibleApplications"] or row["officialApplicants"]!=row["visibleApplicants"] for row in regions if row["code"]!="AP"):
             raise ValueError("Regional discrepancy incorrectly extends beyond Asia-Pacific")
         revisions=case.get("revisionHistory",[])
-        if (len(revisions)!=5 or revisions[0]["changeKey"]!="behindRevisionInitial" or
+        if (len(revisions)!=6 or revisions[0]["changeKey"]!="behindRevisionInitial" or
                 revisions[1]["changeKey"]!="behindRevisionReconciled" or
                 any(r["date"]!="2026-10-10" for r in revisions[:2]) or
                 revisions[2]["changeKey"]!="field18Revision" or
                 revisions[3]["changeKey"]!="behindRevisionStringConfirmation" or
-                revisions[-1]["changeKey"]!="behindRevisionCorrection20261122" or
-                revisions[-1]["date"]!="2026-11-22"):
+                revisions[4]["changeKey"]!="behindRevisionCorrection20261122" or
+                revisions[4]["date"]!="2026-11-22" or
+                revisions[-1]["changeKey"]!="behindRevisionFollowup20261127" or
+                revisions[-1]["date"]!="2026-11-27"):
             raise ValueError("The researched 2026 revision must be date and source tracked")
         validate_editorial_updates(case,translations)
         facts = {f["id"]:f for f in case["quantities"]}
@@ -462,6 +507,7 @@ def episode_markup(data, translations, lang, dynamic=False, standalone=False):
             txt("behindCaseNumber",tag="p",css="eyebrow"),
             txt("behindCaseTitle",tag="h2"),
             txt("behindCaseLead",tag="p",css="behindCaseLead"),
+            ('<p class="behindCaveat"><a data-latest-field-update href="#' + h(case["latestUpdate"]["id"], quote=True) + '">' + txt(case["latestUpdate"]["labelKey"]) + '</a></p>') if case.get("latestUpdate") else '',
             txt("behindStatusPartial",css="behindStatus"),
             '<div class="behindFigures">'
         ])

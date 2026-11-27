@@ -1,12 +1,12 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/round-2026/ | Site edition: 0.8.2 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/round-2026/ | Site edition: 0.8.3 | Language: de -->
 
 Wirtschaftsanalyse
 
 # Wirtschaftliche Aspekte der Runde 2026
 
-**APS-Snapshot · 11. Oktober 2026**
+**Historische APS-Analyse · 11. Oktober 2026**
 
-Die Bewerbungsdaten stammen aus dem am 11. Oktober 2026 erfassten öffentlichen APS-Export. Dieser Snapshot liegt vor dem String Confirmation Day (17. November), dem angekündigten Termin für bestätigte Zeichenfolgen und aktualisierte Contention Sets. Er belegt keine individuellen Bewertungsergebnisse. [Offizieller Zeitplan ↗](https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en)
+Die Wirtschaftsanalyse anhand des APS-Exports vom 11. Oktober bewahrt diesen historischen Stand. Er liegt vor den am 17. November veröffentlichten bestätigten Strings und Contention Sets. Spätere Beobachtungen auf dieser Seite tragen eigene Quellendaten; der Bewerbungsatlas folgt dem neueren Export. [Offizielle String-Confirmation-Veröffentlichung ↗](https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en)
 
 Antragskosten, Themen der Zeichenfolgen, Tätigkeiten der Antragsteller und Markenstrategien. Wirtschaftliche Zyklen und historische Rekonstruktionen helfen, Erwartungen einzuordnen; die Grenzen der jeweiligen Analyse bleiben sichtbar.
 
@@ -355,6 +355,6 @@ Eine Bankmarke als TLD und ein Begriff wie .bank stehen für unterschiedliche Ve
 
 [ICANN · 2012 statistics ↗](https://newgtlds.icann.org/en/program-status/statistics) [ICANN APS · 2026 statistics ↗](https://newgtldprogram-aps.icann.org/statistics) [nTLDData · 2026 application index ↗](https://www.ntlddata.com/applications)
 
-**Von Robert Bregy** · Ausgabe der Website 0.8.2 · 22. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.8.3 · 27. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

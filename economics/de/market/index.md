@@ -1,4 +1,4 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/market/ | Site edition: 0.8.2 | Language: de -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/de/market/ | Site edition: 0.8.3 | Language: de -->
 
 Wirtschaftsanalyse
 
@@ -194,6 +194,6 @@ Diese datierte Marktaufnahme erfasst Registrierungen, keine aktiven Websites ode
 
 [Verisign / DNIB · Quartalsbericht, 22. Oktober 2026](https://verisigninc.gcs-web.com/news-releases/news-release-details/dnibcom-reports-internet-has-4116-million-domain-name)
 
-**Von Robert Bregy** · Ausgabe der Website 0.8.2 · 22. November 2026
+**Von Robert Bregy** · Ausgabe der Website 0.8.3 · 27. November 2026
 
 Beobachtungsdaten stehen bei den jeweiligen Belegen. Diese Website-Ausgabe bedeutet nicht, dass alle Quellen an diesem Tag erneut überprüft wurden.

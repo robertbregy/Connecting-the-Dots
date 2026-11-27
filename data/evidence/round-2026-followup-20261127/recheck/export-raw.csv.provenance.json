@@ -1,0 +1,50 @@
+{
+  "url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+  "method": "POST",
+  "request_body": {
+    "searchAndFilter": {},
+    "sort": {
+      "field": "primaryString",
+      "direction": "ASC"
+    },
+    "pagination": {
+      "pageNum": 0,
+      "pageSize": 10
+    }
+  },
+  "request_headers": {
+    "Cache-Control": "no-cache",
+    "Content-Type": "application/json"
+  },
+  "request_started_utc": "2026-11-27T14:08:05.303366+00:00",
+  "publication_timestamp": null,
+  "publication_timestamp_note": "Set only when explicitly stated by the source. HTTP Date and acquisition time are not publication dates.",
+  "response_status": 200,
+  "response_headers": {
+    "date": "Fri, 27 Nov 2026 14:08:13 GMT",
+    "content-type": "text/csv;charset=UTF-8",
+    "server": "envoy",
+    "vary": "Origin,Access-Control-Request-Method,Access-Control-Request-Headers",
+    "content-disposition": "attachment; filename=\"applications.csv\"",
+    "x-content-type-options": "nosniff",
+    "x-xss-protection": "1; mode=block",
+    "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+    "pragma": "no-cache",
+    "expires": "0",
+    "strict-transport-security": "max-age=31536000 ; includeSubDomains",
+    "x-frame-options": "DENY",
+    "permissions-policy": "geolocation=(),camera=(),display-capture=(),microphone=()",
+    "referrer-policy": "origin-when-cross-origin",
+    "x-ratelimit-limit": "2, 2;w=1",
+    "x-ratelimit-remaining": "1",
+    "x-ratelimit-reset": "1",
+    "x-envoy-upstream-service-time": "3804",
+    "connection": "close",
+    "transfer-encoding": "chunked"
+  },
+  "final_url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+  "completed_at_utc": "2026-11-27T14:08:17.570742+00:00",
+  "bytes": 680561,
+  "sha256": "defc901116c1faacdd332530b31f777a1b6865bebc1e08b351e729c08588a50a",
+  "local_path": "data/evidence/round-2026-followup-20261127/recheck/export-raw.csv"
+}

@@ -4,6 +4,9 @@ const {parseHTML}=require('linkedom');
 const {markdown}=require('./render_discovery.cjs');
 const root=path.resolve(__dirname,'..'),pub=JSON.parse(fs.readFileSync(path.join(root,'publication.json'),'utf8'));
 const BASE=pub.deployment,L=['en','it','de','fr'];
+const translations=JSON.parse(fs.readFileSync(path.join(root,'data/translations.json'),'utf8'));
+const applicationGraph=JSON.parse(fs.readFileSync(path.join(root,'data/aps_2026_application_graph.json'),'utf8'));
+const applicationSnapshotDate=applicationGraph.retrievedAtUTC.slice(0,10);
 const type={
 en:{guide:'Guide',tld:'TLD profile',field:'Field note',timeline:'Round timeline',applications:'Application atlas',economics:'Economic analysis',reader:'Research protocol',research:'Research',paper:'Working paper'},
 it:{guide:'Guida',tld:'Scheda TLD',field:'Nota dal campo',timeline:'Cronologia del round',applications:'Atlante candidature',economics:'Analisi economica',reader:'Protocollo di ricerca',research:'Ricerca',paper:'Working paper'},
@@ -19,11 +22,7 @@ en:['Status at the documented check','Root status at the documented check','Stat
 it:['Stato alla verifica documentata','Stato nella root alla verifica documentata','Data della verifica dello stato'],
 de:['Status bei der dokumentierten Prüfung','Status in der Root-Zone bei der dokumentierten Prüfung','Datum der Statusprüfung'],
 fr:['Statut lors de la vérification documentée','Statut dans la racine lors de la vérification documentée','Date de vérification du statut']};
-const appDesc={
-en:'Explore the 1,614 published ICANN APS base applications in the archived 11 October 2026 export, with replacement rows kept distinct.',
-it:'Esplora le 1.614 candidature di base pubblicate nell’APS ICANN acquisito l’11 ottobre 2026, distinguendo i record di sostituzione.',
-de:'Erkunden Sie die 1.614 veröffentlichten Basisbewerbungen im ICANN-APS-Export vom 11. Oktober 2026; Ersatzzeilen bleiben getrennt.',
-fr:'Explorez les 1 614 candidatures de base publiées dans l’export APS ICANN du 11 octobre 2026, en distinguant les lignes de remplacement.'};
+const appDesc=Object.fromEntries(L.map(l=>[l,translations[l].apsAtlasCtaBody]));
 const readerDesc={
 en:'A 15-minute formative reader-study protocol to observe comprehension, curiosity and navigation friction. No participant results are claimed.',
 it:'Protocollo formativo di circa 15 minuti per osservare comprensione, curiosità e attriti di navigazione. Non vengono presentati risultati.',
@@ -80,12 +79,12 @@ function normalizeResearchHead(src,normalizeDiscovery){
  });
 }
 const snapshot={
- en:['APS snapshot · 11 October 2026','The application data come from the public APS export acquired on 11 October 2026. This snapshot precedes String Confirmation Day (17 November), the announced milestone for confirmed strings and updated contention sets. It does not establish individual evaluation outcomes.','Official timetable'],
- it:['Snapshot APS · 11 ottobre 2026','I dati delle candidature provengono dall’esportazione pubblica APS acquisita l’11 ottobre 2026. Questo snapshot precede lo String Confirmation Day (17 novembre), previsto per la pubblicazione delle stringhe confermate e delle contese aggiornate. Non attesta esiti individuali delle valutazioni.','Calendario ufficiale'],
- de:['APS-Snapshot · 11. Oktober 2026','Die Bewerbungsdaten stammen aus dem am 11. Oktober 2026 erfassten öffentlichen APS-Export. Dieser Snapshot liegt vor dem String Confirmation Day (17. November), dem angekündigten Termin für bestätigte Zeichenfolgen und aktualisierte Contention Sets. Er belegt keine individuellen Bewertungsergebnisse.','Offizieller Zeitplan'],
- fr:['Instantané APS · 11 octobre 2026','Les données des candidatures proviennent de l’export public APS acquis le 11 octobre 2026. Cet instantané précède le String Confirmation Day (17 novembre), prévu pour la publication des chaînes confirmées et des ensembles de candidatures en concurrence actualisés. Il n’atteste aucun résultat individuel d’évaluation.','Calendrier officiel']
+ en:['Historical APS analysis · 11 October 2026','The economic analysis based on the 11 October APS export retains that historical snapshot. It precedes the confirmed strings and contention sets published on 17 November. Later observations on this page carry their own source dates; the Application Atlas follows the newer export.','Official String Confirmation publication'],
+ it:['Analisi APS storica · 11 ottobre 2026','L’analisi economica basata sull’export APS dell’11 ottobre conserva quella fotografia storica, precedente alle stringhe confermate e ai contention set pubblicati il 17 novembre. Le osservazioni successive in questa pagina hanno proprie date delle fonti; l’Atlante delle candidature segue l’export più recente.','Pubblicazione ufficiale di String Confirmation'],
+ de:['Historische APS-Analyse · 11. Oktober 2026','Die Wirtschaftsanalyse anhand des APS-Exports vom 11. Oktober bewahrt diesen historischen Stand. Er liegt vor den am 17. November veröffentlichten bestätigten Strings und Contention Sets. Spätere Beobachtungen auf dieser Seite tragen eigene Quellendaten; der Bewerbungsatlas folgt dem neueren Export.','Offizielle String-Confirmation-Veröffentlichung'],
+ fr:['Analyse APS historique · 11 octobre 2026','L’analyse économique fondée sur l’export APS du 11 octobre conserve cet instantané historique, antérieur aux chaînes confirmées et aux contention sets publiés le 17 novembre. Les observations ultérieures de cette page portent leurs propres dates de source ; l’Atlas des candidatures suit l’export plus récent.','Publication officielle de String Confirmation']
 };
-const milestoneUrl='https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en';
+const milestoneUrl='https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en';
 const studyLinks={en:'Reader study: protocol and observation sheet',it:'Studio con i lettori: protocollo e scheda di osservazione',de:'Leserstudie: Protokoll und Beobachtungsbogen',fr:'Étude auprès des lecteurs : protocole et grille d’observation'};
 const studyNotes={en:'Formative research materials; no participant results have been collected.',it:'Materiali per uno studio formativo; non sono stati raccolti risultati da partecipanti.',de:'Materialien für eine formative Studie; es wurden noch keine Ergebnisse von Teilnehmenden erhoben.',fr:'Documents pour une étude formative ; aucun résultat de participants n’a été recueilli.'};
 const styleMap=new Map();let extracted=0,savedBytes=0;
@@ -144,9 +143,19 @@ for(const r of [...new Set(pages)]){
  // every canonical URL and original Article/ScholarlyArticle record.
  if(k&&description){src=social(src,description,canonical,title);src=pageDescription(src,description,canonical);}
  const roundPage=/^(applications|inside-the-round)\//.test(r)||/^economics\/(en|it|de|fr)\/(round-2026|portfolios)\//.test(r)||/^tlds\/(en|it|de|fr)\/lugano\//.test(r)||/^behind-the-round\/(en|it|de|fr)\/(index\.html|wdo-identity\/|replacement-strings\/|objectors-eoi\/|background-screening\/)/.test(r);
- if(roundPage&&!src.includes('class="roundStatus"')){
-  const text=snapshot[l],notice='<aside class="roundStatus" data-aps-snapshot="2026-10-11" aria-label="'+esc(text[0])+'"><strong>'+esc(text[0])+'</strong><p>'+esc(text[1])+' <a href="'+milestoneUrl+'">'+esc(text[2])+' ↗</a></p></aside>';
-  src=src.replace(/(<h1\b[^>]*>[\s\S]*?<\/h1>)/,(_m,h)=>h+'\n'+notice);
+ if(roundPage){
+  // A global 11 October banner cannot date later field notes or an updated
+  // Atlas. Keep the historical marker only for the economic analysis layer.
+  src=src.replace(/<aside\b(?=[^>]*\bclass="roundStatus")[^>]*>[\s\S]*?<\/aside>/g,'');
+  let notice='';
+  if(/^applications\//.test(r)){
+   const t=translations[l];
+   notice='<aside class="roundStatus" data-aps-snapshot="'+esc(applicationSnapshotDate)+'" aria-label="'+esc(t.apsAtlasSnapshotTitle)+'"><strong>'+esc(t.apsAtlasSnapshotTitle)+'</strong><p>'+esc(t.apsAtlasSnapshotBody)+' <a href="'+BASE+'behind-the-round/'+l+'/#current-aps-followup-20261127">'+esc(t.apsAtlasSnapshotLink)+' ↗</a></p></aside>';
+  }else if(/^economics\/(en|it|de|fr)\/(round-2026|portfolios)\//.test(r)){
+   const text=snapshot[l];
+   notice='<aside class="roundStatus" data-aps-snapshot="2026-10-11" aria-label="'+esc(text[0])+'"><strong>'+esc(text[0])+'</strong><p>'+esc(text[1])+' <a href="'+milestoneUrl+'">'+esc(text[2])+' ↗</a></p></aside>';
+  }
+  if(notice)src=src.replace(/(<h1\b[^>]*>[\s\S]*?<\/h1>)/,(_m,h)=>h+'\n'+notice);
  }
  src=src.replace(/(<[^>]*\bid="aps-current-economics")(?![^>]*data-aps-snapshot)/, '$1 data-aps-snapshot="2026-10-11"');
  // The fee section is a top-level section in its standalone chapter. Its

@@ -1,0 +1,3870 @@
+{
+  "comparisonKey": "Application ID, retaining the -R suffix for record-level comparisons",
+  "addedRecordIds": [],
+  "removedRecordIds": [],
+  "changedRecordCount": 78,
+  "changedApplicationFamilyCount": 76,
+  "changedFieldCounts": {
+    "Application Status": 42,
+    "Label: Change Request": 36
+  },
+  "changedRecords": [
+    {
+      "recordId": "24452647T-T62047",
+      "applicationFamilyId": "24452647T-T62047",
+      "string": "takamiya",
+      "applicant": "Takamiya Co., Ltd.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "36262695T-T42322",
+      "applicationFamilyId": "36262695T-T42322",
+      "string": "tisi",
+      "applicant": "TISI Inc.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "43372680T-T95618",
+      "applicationFamilyId": "43372680T-T95618",
+      "string": "pia",
+      "applicant": "PIA CORPORATION",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "44522636T-T55394",
+      "applicationFamilyId": "44522636T-T55394",
+      "string": "kao",
+      "applicant": "Kao Corporation",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "45072669T-T67837",
+      "applicationFamilyId": "45072669T-T67837",
+      "string": "shionogi",
+      "applicant": "Shionogi & Co., Ltd.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "61412675T-T18565",
+      "applicationFamilyId": "61412675T-T18565",
+      "string": "dmgmori",
+      "applicant": "DMG MORI CO., LTD.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "63052682T-T56902",
+      "applicationFamilyId": "63052682T-T56902",
+      "string": "landcros",
+      "applicant": "Hitachi Construction Machinery Co., Ltd.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "70122665T-T13662",
+      "applicationFamilyId": "70122665T-T13662",
+      "string": "kawasaki",
+      "applicant": "Kawasaki Heavy Industries, Ltd.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "72612695T-T33012",
+      "applicationFamilyId": "72612695T-T33012",
+      "string": "mazda",
+      "applicant": "Mazda Motor Corporation",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "77352697T-T40435",
+      "applicationFamilyId": "77352697T-T40435",
+      "string": "screen",
+      "applicant": "SCREEN Holdings Co., Ltd.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "79112627T-T56273",
+      "applicationFamilyId": "79112627T-T56273",
+      "string": "toppan",
+      "applicant": "TOPPAN Holdings Inc.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "79442683T-T47475",
+      "applicationFamilyId": "79442683T-T47475",
+      "string": "roland",
+      "applicant": "Roland Corporation",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "80502644T-T59918",
+      "applicationFamilyId": "80502644T-T59918",
+      "string": "seiko",
+      "applicant": "Seiko Group Kabushiki Kaisha",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "84112666T-T75756",
+      "applicationFamilyId": "84112666T-T75756",
+      "string": "mizuho",
+      "applicant": "Mizuho Financial Group, Inc.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "85662668T-T46971",
+      "applicationFamilyId": "85662668T-T46971",
+      "string": "ritres",
+      "applicant": "RICOH LEASING COMPANY, LTD. ",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "86302673T-T51999",
+      "applicationFamilyId": "86302673T-T51999",
+      "string": "sompo",
+      "applicant": "Sompo Holdings, Inc.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "87252644T-T13162",
+      "applicationFamilyId": "87252644T-T13162",
+      "string": "msig",
+      "applicant": "MS&AD Insurance Group Holdings, Inc.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "A2652T-T75760",
+      "applicationFamilyId": "A2652T-T75760",
+      "string": "robot",
+      "applicant": "Zero Gravity Labs Inc.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "AEI2688T-T84808",
+      "applicationFamilyId": "AEI2688T-T84808",
+      "string": "asi",
+      "applicant": "Adhara Exploration, Inc.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "APEC2611T-T11013",
+      "applicationFamilyId": "APEC2611T-T11013",
+      "string": "easy",
+      "applicant": "Aruba PEC S.P.A.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "BEI2691T-T99138",
+      "applicationFamilyId": "BEI2691T-T99138",
+      "string": "craft",
+      "applicant": "Bellatrix Exploration, Inc.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "BTRT2633T-T38161",
+      "applicationFamilyId": "BTRT2633T-T38161",
+      "string": "xn--fiq228c5hs",
+      "applicant": "Beijing TLD Registry Technology Limited",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "BTRT2633T-T83538",
+      "applicationFamilyId": "BTRT2633T-T83538",
+      "string": "xn--3ds443g",
+      "applicant": "Beijing TLD Registry Technology Limited",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "CCS2640T-T48725",
+      "applicationFamilyId": "CCS2640T-T48725",
+      "string": "order",
+      "applicant": "Cam Connecting SARL",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "CINI2622T-T81530",
+      "applicationFamilyId": "CINI2622T-T81530",
+      "string": "xn--io0a7i",
+      "applicant": "China Internet Network Information Center (CNNIC)",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "CS2676T-T34770",
+      "applicationFamilyId": "CS2676T-T34770",
+      "string": "auth",
+      "applicant": "Codyssey SL",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "DCJE2552-T43314",
+      "applicationFamilyId": "DCJE2552-T43314",
+      "string": "mai",
+      "applicant": "Deqing County Jinghong Entrepreneur Service Center",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "EDCL2689T-T11150",
+      "applicationFamilyId": "EDCL2689T-T11150",
+      "string": "crypto",
+      "applicant": "ECHO Domain Co L.L.C.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "EDCL2689T-T68091",
+      "applicationFamilyId": "EDCL2689T-T68091",
+      "string": "api",
+      "applicant": "ECHO Domain Co L.L.C.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "EDCL2689T-T94739",
+      "applicationFamilyId": "EDCL2689T-T94739",
+      "string": "agent",
+      "applicant": "ECHO Domain Co L.L.C.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "FEI2676T-T60926",
+      "applicationFamilyId": "FEI2676T-T60926",
+      "string": "intelligence",
+      "applicant": "Fomalhaut Exploration, Inc.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "GEI2639T-T18440",
+      "applicationFamilyId": "GEI2639T-T18440",
+      "string": "kit",
+      "applicant": "Gacrux Exploration, Inc",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "HI2626T-T82284",
+      "applicationFamilyId": "HI2626T-T82284",
+      "string": "hims",
+      "applicant": "Hims, Inc.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "HI2626T-T90203",
+      "applicationFamilyId": "HI2626T-T90203",
+      "string": "hers",
+      "applicant": "Hims, Inc.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "HU2684T-T32145",
+      "applicationFamilyId": "HU2684T-T32145",
+      "string": "hub",
+      "applicant": "Hostinger UAB",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "HU2684T-T42201",
+      "applicationFamilyId": "HU2684T-T42201",
+      "string": "gen",
+      "applicant": "Hostinger UAB",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "HU2684T-T81042",
+      "applicationFamilyId": "HU2684T-T81042",
+      "string": "lab",
+      "applicant": "Hostinger UAB",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "ITL2677T-T15916",
+      "applicationFamilyId": "ITL2677T-T15916",
+      "string": "robot",
+      "applicant": "Ipollo Tech Ltd",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "ITL2677T-T74240",
+      "applicationFamilyId": "ITL2677T-T74240",
+      "string": "agent",
+      "applicant": "Ipollo Tech Ltd",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "MC2626T-T87191",
+      "applicationFamilyId": "MC2626T-T87191",
+      "string": "hall",
+      "applicant": "Momentous Corporation ",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "MC2626T-T87191-R",
+      "applicationFamilyId": "MC2626T-T87191",
+      "string": "venue",
+      "applicant": "Momentous Corporation ",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "MEI2627T-T58035",
+      "applicationFamilyId": "MEI2627T-T58035",
+      "string": "maker",
+      "applicant": "Menkalinan Exploration, Inc.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "MEI2627T-T73873",
+      "applicationFamilyId": "MEI2627T-T73873",
+      "string": "mart",
+      "applicant": "Menkalinan Exploration, Inc.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "MI2694T-T68970",
+      "applicationFamilyId": "MI2694T-T68970",
+      "string": "medley",
+      "applicant": "MEDLEY, INC.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T14670",
+      "applicationFamilyId": "NA2626T-T14670",
+      "string": "agi",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T30508",
+      "applicationFamilyId": "NA2626T-T30508",
+      "string": "ace",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T32387",
+      "applicationFamilyId": "NA2626T-T32387",
+      "string": "good",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T38427",
+      "applicationFamilyId": "NA2626T-T38427",
+      "string": "omg",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T46346",
+      "applicationFamilyId": "NA2626T-T46346",
+      "string": "api",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T48225",
+      "applicationFamilyId": "NA2626T-T48225",
+      "string": "fix",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T54761",
+      "applicationFamilyId": "NA2626T-T54761",
+      "string": "lab",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T63059",
+      "applicationFamilyId": "NA2626T-T63059",
+      "string": "ask",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T64063",
+      "applicationFamilyId": "NA2626T-T64063",
+      "string": "tap",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T65696",
+      "applicationFamilyId": "NA2626T-T65696",
+      "string": "hub",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T70103",
+      "applicationFamilyId": "NA2626T-T70103",
+      "string": "fab",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T80159",
+      "applicationFamilyId": "NA2626T-T80159",
+      "string": "mcp",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T90969",
+      "applicationFamilyId": "NA2626T-T90969",
+      "string": "pop",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NA2626T-T98888",
+      "applicationFamilyId": "NA2626T-T98888",
+      "string": "zen",
+      "applicant": "ShortDot (Ireland) Limited",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NSCL2617T-T55273",
+      "applicationFamilyId": "NSCL2617T-T55273",
+      "string": "nomura",
+      "applicant": "Nomura Holdings, Inc.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "NTG2671T-T12150",
+      "applicationFamilyId": "NTG2671T-T12150",
+      "string": "share",
+      "applicant": "NextGEN TLDs GmbH",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NTG2671T-T13787",
+      "applicationFamilyId": "NTG2671T-T13787",
+      "string": "ultra",
+      "applicant": "NextGEN TLDs GmbH",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "NTNC2670T-T72865",
+      "applicationFamilyId": "NTNC2670T-T72865",
+      "string": "ntv",
+      "applicant": "Nippon Television Network Corporation",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "OI2692T-T96497",
+      "applicationFamilyId": "OI2692T-T96497",
+      "string": "loop",
+      "applicant": "Oinkadot Inc",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "PEI2617T-T23468",
+      "applicationFamilyId": "PEI2617T-T23468",
+      "string": "path",
+      "applicant": "Pollux Exploration, Inc.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "REI2641T-T20577",
+      "applicationFamilyId": "REI2641T-T20577",
+      "string": "view",
+      "applicant": "Regulus Exploration, Inc.",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "TO2640T-T19948",
+      "applicationFamilyId": "TO2640T-T19948",
+      "string": "ver",
+      "applicant": "Stichting Verifieerbaar Internet",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "TO2640T-T19948-R",
+      "applicationFamilyId": "TO2640T-T19948",
+      "string": "verified",
+      "applicant": "Stichting Verifieerbaar Internet",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "TPCL2648T-T11392",
+      "applicationFamilyId": "TPCL2648T-T11392",
+      "string": "lipovitan",
+      "applicant": "Taisho Pharmaceutical Co., Ltd.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "TPCL2648T-T93473",
+      "applicationFamilyId": "TPCL2648T-T93473",
+      "string": "upsa",
+      "applicant": "Taisho Pharmaceutical Co., Ltd.",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "UA2620T-T14912",
+      "applicationFamilyId": "UA2620T-T14912",
+      "string": "ultra",
+      "applicant": "ULTRAVIEW AG",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "UA2620T-T22831",
+      "applicationFamilyId": "UA2620T-T22831",
+      "string": "ultraview",
+      "applicant": "ULTRAVIEW AG",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "UA2620T-T78518",
+      "applicationFamilyId": "UA2620T-T78518",
+      "string": "person",
+      "applicant": "ULTRAVIEW AG",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "UA2620T-T78897",
+      "applicationFamilyId": "UA2620T-T78897",
+      "string": "gaming",
+      "applicant": "ULTRAVIEW AG",
+      "changes": {
+        "Label: Change Request": [
+          "FALSE",
+          "TRUE"
+        ]
+      }
+    },
+    {
+      "recordId": "VNTL2649T-T52249",
+      "applicationFamilyId": "VNTL2649T-T52249",
+      "string": "portal",
+      "applicant": "VANT NEXUS TECHNOLOGIES LLC",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "XCI2688T-T41810",
+      "applicationFamilyId": "XCI2688T-T41810",
+      "string": "ion",
+      "applicant": "XServer Cloud Incorporated",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "XCI2688T-T62426",
+      "applicationFamilyId": "XCI2688T-T62426",
+      "string": "gaming",
+      "applicant": "XServer Cloud Incorporated",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "XCI2688T-T81155",
+      "applicationFamilyId": "XCI2688T-T81155",
+      "string": "brand",
+      "applicant": "XServer Cloud Incorporated",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    },
+    {
+      "recordId": "XI2694T-T18057",
+      "applicationFamilyId": "XI2694T-T18057",
+      "string": "key",
+      "applicant": "XRegistry Incorporated",
+      "changes": {
+        "Application Status": [
+          "Active",
+          "Withdrawn"
+        ]
+      }
+    }
+  ],
+  "classification": "Project analysis of official ICANN APS data; calculated counts are not totals declared by ICANN.",
+  "previousSource": {
+    "url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+    "publicURL": "https://newgtldprogram-aps.icann.org/applications",
+    "publicationOrUpdateAtUTC": null,
+    "retrievedAtUTC": "2026-11-22T10:51:04Z",
+    "rawFile": "data/evidence/round-2026-followup-20261122/aps-export-raw.csv",
+    "rawSHA256": "ae3e8366e8512672146b1f3709fc58c2400eb57106d6376909366bfe3168b447",
+    "normalizedFile": "data/applications_2026_aps_followup_20261122.csv",
+    "normalizedSHA256": "cd7df94d073ef39206621424aed2d34782f2896a34d589b5d2109e0626288ad7",
+    "publicationDateNote": "No independent export publication timestamp; this is a dated acquisition."
+  },
+  "currentSource": {
+    "url": "https://newgtldprogram-aps.icann.org/aps/applications/export/csv",
+    "publicURL": "https://newgtldprogram-aps.icann.org/applications",
+    "method": "POST",
+    "requestJSON": {
+      "searchAndFilter": {},
+      "sort": {
+        "field": "primaryString",
+        "direction": "ASC"
+      },
+      "pagination": {
+        "pageNum": 0,
+        "pageSize": 10
+      }
+    },
+    "publicationOrUpdateAtUTC": null,
+    "retrievedAtUTC": "2026-11-27T14:08:17.570742+00:00",
+    "requestStartedAtUTC": "2026-11-27T14:08:05.303366+00:00",
+    "httpStatus": 200,
+    "rawFile": "data/evidence/round-2026-followup-20261127/recheck/export-raw.csv",
+    "rawBytes": 680561,
+    "rawSHA256": "defc901116c1faacdd332530b31f777a1b6865bebc1e08b351e729c08588a50a",
+    "publicationDateNote": "No independently stated publication timestamp was located; acquisition is not publication."
+  },
+  "before": {
+    "rowCount": 2783,
+    "completeRecordIds": 2783,
+    "applicationFamilies": 1614,
+    "replacementRecords": 1169,
+    "statusCounts": {
+      "Active": 1595,
+      "Deactivated": 1169,
+      "Withdrawn": 19
+    },
+    "visibleActiveApplications": 1595,
+    "visibleWithdrawnApplications": 19,
+    "selectedReplacementRecords": 152,
+    "selectedReplacementApplicationIds": [
+      "A2619T-T45080",
+      "A2652T-T59922",
+      "ASAA2567-T97759",
+      "CCS2640T-T56644",
+      "DC2669T-T20827",
+      "DL2636T-T75885",
+      "EDCL2689T-T29879",
+      "EDCL2689T-T32016",
+      "EDCL2689T-T81667",
+      "EDI2665T-T44209",
+      "EDI2665T-T47100",
+      "EDI2665T-T52128",
+      "EDI2665T-T67966",
+      "ETI2627T-T21585",
+      "ETI2627T-T93610",
+      "GEL2647T-T82917",
+      "GMTS2586-T19194",
+      "HCL2645T-T37673",
+      "IDOL2621T-T20061",
+      "IG2663T-T85800",
+      "IIUM2696T-T97372",
+      "INC2624T-T91582",
+      "IRI2679T-T28359",
+      "IRI2679T-T57402",
+      "IRI2679T-T65321",
+      "IRI2679T-T65817",
+      "IRI2679T-T83038",
+      "IRI2679T-T88324",
+      "ISII2617T-T57898",
+      "ISL2626T-T51112",
+      "ISL2626T-T59031",
+      "ISL2626T-T66950",
+      "KG2621T-T62547",
+      "KG2621T-T78385",
+      "KG2699T-T10255",
+      "KG2699T-T28984",
+      "KKWT2621T-T46596",
+      "LFGL2683T-T18553",
+      "LFGL2683T-T25718",
+      "LFGL2683T-T26472",
+      "LFGL2683T-T28734",
+      "LFGL2683T-T30871",
+      "LFGL2683T-T33637",
+      "LFGL2683T-T34391",
+      "LFGL2683T-T41556",
+      "LFGL2683T-T48092",
+      "LFGL2683T-T54503",
+      "LFGL2683T-T58273",
+      "LFGL2683T-T65438",
+      "LFGL2683T-T79014",
+      "LFGL2683T-T79768",
+      "LFGL2683T-T88441",
+      "LFGL2683T-T91961",
+      "LFGL2683T-T94977",
+      "LFGL2683T-T96989",
+      "LFGL2683T-T97114",
+      "LL2624T-T78389",
+      "MEL2626T-T48733",
+      "MLG2688T-T30008",
+      "MLG2688T-T77522",
+      "MLG2688T-T93360",
+      "MMPL2632T-T44705",
+      "NA2626T-T11779",
+      "NA2626T-T16549",
+      "NA2626T-T22589",
+      "NA2626T-T24726",
+      "NA2626T-T31004",
+      "NA2626T-T51374",
+      "NA2626T-T56402",
+      "NA2626T-T67212",
+      "NA2631T-T22456",
+      "NA2631T-T27230",
+      "NA2631T-T45830",
+      "NA2631T-T66571",
+      "NA2631T-T69341",
+      "NA2631T-T69966",
+      "NA2631T-T74744",
+      "NA2631T-T99126",
+      "NLTC2529-T64442",
+      "NPL2622T-T46713",
+      "NSL2674T-T26988",
+      "NSL2674T-T50745",
+      "NSL2674T-T66583",
+      "NTG2671T-T15041",
+      "NTG2671T-T37544",
+      "NTG2671T-T59664",
+      "NTG2671T-T67583",
+      "NTG2671T-T70474",
+      "NTG2671T-T94231",
+      "OCF2539-T20706",
+      "OD2692T-T13279",
+      "ODC2534-T66083",
+      "OI2692T-T30254",
+      "OI2692T-T69849",
+      "OI2692T-T74877",
+      "OI2692T-T77768",
+      "OI2692T-T85687",
+      "PCC2647T-T40814",
+      "PDAC2521-T93356",
+      "PPND2513-T68462",
+      "RTIS2674T-T31383",
+      "SI2594-T16545",
+      "SI2639T-T44584",
+      "SI2639T-T89961",
+      "SRL2616T-T44072",
+      "SS2654T-T46463",
+      "T3PB2538-T94985",
+      "TG2593-T64817",
+      "TIGL2633T-T28238",
+      "TL2627T-T31766",
+      "TL2645T-T21573",
+      "TL2645T-T45834",
+      "TL2645T-T53249",
+      "TT2652T-T65067",
+      "UMIA2681T-T53765",
+      "VTL2632T-T14662",
+      "WVL2684T-T36786",
+      "WYMG2568-T96993",
+      "XI2694T-T60543",
+      "XI2694T-T68587",
+      "XI2694T-T86949",
+      "XL2625T-T11396",
+      "XL2625T-T14287",
+      "XL2625T-T17932",
+      "XL2625T-T23714",
+      "XL2625T-T25097",
+      "XL2625T-T26480",
+      "XL2625T-T26605",
+      "XL2625T-T31633",
+      "XL2625T-T32770",
+      "XL2625T-T33016",
+      "XL2625T-T34399",
+      "XL2625T-T34903",
+      "XL2625T-T41689",
+      "XL2625T-T42443",
+      "XL2625T-T48608",
+      "XL2625T-T48854",
+      "XL2625T-T51499",
+      "XL2625T-T53882",
+      "XL2625T-T58156",
+      "XL2625T-T64692",
+      "XL2625T-T65204",
+      "XL2625T-T68966",
+      "XL2625T-T83175",
+      "XL2625T-T88449",
+      "XL2625T-T89957",
+      "XL2625T-T90586",
+      "XL2625T-T93477",
+      "XL2625T-T95614",
+      "XL2625T-T96368",
+      "XL2625T-T98505",
+      "XL2625T-T99013"
+    ],
+    "activeNewPrimaryApplications": 1589,
+    "activeNewPrimaryStrings": 1119,
+    "exactPrimaryOverlapGroups": 225,
+    "applicationsInExactPrimaryOverlaps": 695,
+    "exactPrimaryOverlapMembers": {
+      "ace": [
+        "FCL2632T-T97622",
+        "NA2626T-T30508",
+        "NA2631T-T83042",
+        "XL2625T-T26980"
+      ],
+      "agent": [
+        "CRRI2564-T76881",
+        "EDCL2689T-T94739",
+        "ELL2677T-T98634",
+        "FCL2696T-T15158",
+        "ILCL2673T-T99017",
+        "IRI2679T-T53136",
+        "ITL2677T-T74240",
+        "MRHL2653T-T66196",
+        "OARI2643T-T22843",
+        "OOL2614T-T24226",
+        "RC2677T-T71607",
+        "RTIS2674T-T51870"
+      ],
+      "agentic": [
+        "LFGL2683T-T42435",
+        "RTIS2674T-T94356"
+      ],
+      "agi": [
+        "CFL2645T-T71728",
+        "LFGL2683T-T50354",
+        "NA2626T-T14670",
+        "NA2631T-T14537",
+        "OOL2614T-T13416",
+        "RTIS2674T-T70599"
+      ],
+      "agnt": [
+        "AM2619T-T27105",
+        "KL2668T-T13029"
+      ],
+      "aid": [
+        "AEI2688T-T61051",
+        "APEC2611T-T69337",
+        "C2595-T79030",
+        "NA2631T-T48475",
+        "PIR2624T-T12017"
+      ],
+      "aio": [
+        "CCS2640T-T19940",
+        "TKRC2583-T68712"
+      ],
+      "air": [
+        "NA2626T-T48979",
+        "NA2631T-T14658",
+        "VSL2633T-T72232"
+      ],
+      "all": [
+        "LFGL2683T-T66192",
+        "NA2631T-T80151",
+        "TT2652T-T78768"
+      ],
+      "api": [
+        "CRRI2564-T68962",
+        "EDCL2689T-T68091",
+        "ELL2677T-T16553",
+        "HS2699T-T83167",
+        "LFGL2683T-T89949",
+        "NA2626T-T46346",
+        "NA2631T-T30375",
+        "XL2625T-T58281"
+      ],
+      "apparel": [
+        "VSL2633T-T88070",
+        "XL2625T-T74119"
+      ],
+      "asap": [
+        "LFGL2683T-T15787",
+        "SI2639T-T21581"
+      ],
+      "asi": [
+        "AEI2688T-T84808",
+        "LFGL2683T-T23706",
+        "OOL2614T-T29254",
+        "RTIS2674T-T93981",
+        "TT2652T-T86687"
+      ],
+      "ask": [
+        "APEC2611T-T29488",
+        "CRRI2564-T61043",
+        "IRI2679T-T73736",
+        "NA2626T-T63059",
+        "NA2631T-T95989"
+      ],
+      "auth": [
+        "CS2676T-T34770",
+        "LFGL2683T-T31637",
+        "NTG2671T-T26730"
+      ],
+      "bakery": [
+        "TCL2632T-T11771",
+        "XL2625T-T62309"
+      ],
+      "base": [
+        "CTI2649T-T85441",
+        "PB2674T-T96868"
+      ],
+      "beach": [
+        "MLG2688T-T61684",
+        "XL2625T-T54390"
+      ],
+      "big": [
+        "IRI2679T-T89574",
+        "LFGL2683T-T47463",
+        "NA2626T-T98630"
+      ],
+      "biotech": [
+        "GEL2647T-T73865",
+        "RTIS2674T-T50870"
+      ],
+      "bit": [
+        "APEC2611T-T45326",
+        "DM2627T-T34270",
+        "HKZI2636T-T79772",
+        "LFGL2683T-T55382",
+        "NA2631T-T45584",
+        "OI2692T-T11525",
+        "RTIS2674T-T37415"
+      ],
+      "bitcoin": [
+        "BPL2623T-T40052",
+        "WASD2698T-T81921"
+      ],
+      "bnb": [
+        "LFGL2683T-T71220",
+        "XL2625T-T80284"
+      ],
+      "boost": [
+        "EDCL2689T-T18315",
+        "VTL2632T-T80905"
+      ],
+      "brain": [
+        "BEI2691T-T83300",
+        "IRI2679T-T97493",
+        "LFGL2683T-T87058",
+        "NSL2674T-T89586"
+      ],
+      "brand": [
+        "IRI2679T-T15412",
+        "RTIS2674T-T83546",
+        "SRL2616T-T86558",
+        "VTL2632T-T88824",
+        "XCI2688T-T81155"
+      ],
+      "btc": [
+        "LFGL2683T-T12896",
+        "MH2645T-T86812"
+      ],
+      "cap": [
+        "LFGL2683T-T20815",
+        "XL2625T-T39552"
+      ],
+      "cart": [
+        "IRI2679T-T44455",
+        "NA2631T-T13154",
+        "PB2674T-T38544"
+      ],
+      "cast": [
+        "CRRI2564-T92719",
+        "IRI2679T-T39169",
+        "LFGL2683T-T36653",
+        "SS2654T-T33516"
+      ],
+      "central": [
+        "EDI2665T-T86695",
+        "XL2625T-T47471"
+      ],
+      "chain": [
+        "LFGL2683T-T52491",
+        "NA2631T-T75502",
+        "TCL2632T-T87945"
+      ],
+      "chef": [
+        "NA2631T-T95860",
+        "SRL2616T-T62801",
+        "XL2625T-T58660"
+      ],
+      "class": [
+        "NA2631T-T90832",
+        "SRL2616T-T28234"
+      ],
+      "coin": [
+        "LFGL2683T-T60410",
+        "PTL2645T-T92469",
+        "RTIS2674T-T69091"
+      ],
+      "collection": [
+        "MH2645T-T12650",
+        "XL2625T-T38552"
+      ],
+      "collective": [
+        "PTL2645T-T10388",
+        "RTIS2674T-T63817",
+        "XL2625T-T71228"
+      ],
+      "commerce": [
+        "IRI2679T-T80405",
+        "LFGL2683T-T68329"
+      ],
+      "con": [
+        "IG2663T-T46205",
+        "LFGL2683T-T50858",
+        "NPL2622T-T30875",
+        "XL2625T-T48604"
+      ],
+      "connect": [
+        "EDCL2689T-T77393",
+        "ISL2626T-T74869",
+        "NA2631T-T87316",
+        "TT2652T-T94606",
+        "XL2625T-T79147"
+      ],
+      "consult": [
+        "IRI2679T-T60293",
+        "VSL2633T-T13908"
+      ],
+      "consultants": [
+        "FCL2632T-T31379",
+        "XL2625T-T91094"
+      ],
+      "core": [
+        "HS2699T-T16924",
+        "LFGL2683T-T84167",
+        "NA2626T-T56898"
+      ],
+      "corporation": [
+        "IRI2679T-T31250",
+        "OD2692T-T82413",
+        "XL2625T-T85062"
+      ],
+      "craft": [
+        "BEI2691T-T99138",
+        "KKWT2621T-T78272",
+        "LFGL2683T-T10005",
+        "NA2631T-T74490",
+        "SS2654T-T73111"
+      ],
+      "create": [
+        "IRI2679T-T47088",
+        "SI2639T-T23718"
+      ],
+      "creations": [
+        "OD2692T-T90332",
+        "XL2625T-T24851"
+      ],
+      "creative": [
+        "VSL2633T-T29746",
+        "XL2625T-T12904"
+      ],
+      "creator": [
+        "CFL2645T-T95485",
+        "IRI2679T-T86683",
+        "RTIS2674T-T76760"
+      ],
+      "crew": [
+        "AM2619T-T35024",
+        "I2639T-T66696"
+      ],
+      "crypto": [
+        "BPL2623T-T47971",
+        "EDCL2689T-T11150",
+        "IRI2679T-T61055",
+        "RTIS2674T-T45334",
+        "XL2625T-T28742"
+      ],
+      "dao": [
+        "AM2619T-T27484",
+        "LFGL2683T-T17924",
+        "XL2625T-T36661"
+      ],
+      "ddd": [
+        "LFGL2683T-T25843",
+        "NA2631T-T18936"
+      ],
+      "demo": [
+        "BPL2623T-T55890",
+        "IRI2679T-T78764",
+        "NA2631T-T63934"
+      ],
+      "den": [
+        "CEI2644T-T72490",
+        "XL2625T-T86066"
+      ],
+      "did": [
+        "CEI2644T-T88328",
+        "VIL2659T-T55269"
+      ],
+      "dna": [
+        "LFGL2683T-T33762",
+        "NA2631T-T26855"
+      ],
+      "dns": [
+        "NIF2590-T63192",
+        "SI2639T-T82042"
+      ],
+      "donate": [
+        "IRI2679T-T70845",
+        "LFGL2683T-T72478",
+        "PIR2624T-T89953"
+      ],
+      "dream": [
+        "AT2680T-T90457",
+        "D2611T-T84300"
+      ],
+      "drone": [
+        "AM2619T-T43322",
+        "LFGL2683T-T41681",
+        "NA2631T-T83421"
+      ],
+      "easy": [
+        "APEC2611T-T11013",
+        "EL2675T-T54882",
+        "LFGL2683T-T57519"
+      ],
+      "epic": [
+        "ESC2616T-T27738",
+        "RAI2657T-T39048"
+      ],
+      "etc": [
+        "LFGL2683T-T73357",
+        "PTL2645T-T18307",
+        "RTIS2674T-T62680",
+        "XL2625T-T68337"
+      ],
+      "ether": [
+        "LFGL2683T-T81276",
+        "NO2616T-T59910"
+      ],
+      "expo": [
+        "ASL2693T-T63809",
+        "NA2631T-T32258",
+        "XL2625T-T76256"
+      ],
+      "fab": [
+        "CEI2647T-T14166",
+        "LFGL2683T-T89195",
+        "NA2626T-T70103",
+        "XL2625T-T84175"
+      ],
+      "factory": [
+        "PB2674T-T51491",
+        "XL2625T-T92094"
+      ],
+      "feed": [
+        "LFGL2683T-T15033",
+        "VC2665T-T98880"
+      ],
+      "fest": [
+        "A2619T-T68837",
+        "XL2625T-T10013"
+      ],
+      "find": [
+        "CRRI2564-T18557",
+        "IRI2679T-T28109",
+        "LFGL2683T-T22952"
+      ],
+      "firm": [
+        "NA2631T-T79393",
+        "NPL2622T-T22956",
+        "NS2662T-T95360",
+        "RTIS2674T-T42193",
+        "SRL2616T-T94477"
+      ],
+      "fix": [
+        "APEC2611T-T67575",
+        "ISL2626T-T82788",
+        "NA2626T-T48225",
+        "NA2631T-T72857",
+        "RC2677T-T79526",
+        "RTIS2674T-T29496"
+      ],
+      "flow": [
+        "HS2699T-T24843",
+        "NA2631T-T55640",
+        "RTIS2674T-T36032",
+        "XL2625T-T11904"
+      ],
+      "follow": [
+        "DWTP2553-T45842",
+        "SI2639T-T34528",
+        "XI2694T-T28363"
+      ],
+      "force": [
+        "CRM2628T-T77764",
+        "NA2631T-T11642"
+      ],
+      "form": [
+        "NA2631T-T90582",
+        "VSL2633T-T61422"
+      ],
+      "gaming": [
+        "AM2619T-T51241",
+        "IRI2679T-T68212",
+        "UA2620T-T78897",
+        "XCI2688T-T62426",
+        "XL2625T-T25851"
+      ],
+      "gate": [
+        "EEI2686T-T16303",
+        "GNL2631T-T74115"
+      ],
+      "gear": [
+        "CD2694T-T92594",
+        "LFGL2683T-T38790",
+        "NA2631T-T42060"
+      ],
+      "geek": [
+        "ETI2627T-T87828",
+        "XI2694T-T10138"
+      ],
+      "gem": [
+        "CRRI2564-T26476",
+        "TL2645T-T29492"
+      ],
+      "gen": [
+        "APEC2611T-T55511",
+        "GEN2685T-T72482",
+        "HS2699T-T32762",
+        "HU2684T-T42201",
+        "LFGL2683T-T46709",
+        "XL2625T-T49608"
+      ],
+      "get": [
+        "A2619T-T76756",
+        "IRI2679T-T36278",
+        "LFGL2683T-T54628",
+        "XI2694T-T41185"
+      ],
+      "gig": [
+        "NA2631T-T42693",
+        "VC2665T-T32637"
+      ],
+      "goat": [
+        "BPL2623T-T36536",
+        "NA2626T-T75131"
+      ],
+      "good": [
+        "IRI2679T-T44197",
+        "LFGL2683T-T33008",
+        "LL2624T-T62551",
+        "MH2645T-T95364",
+        "NA2626T-T32387",
+        "NA2631T-T44826"
+      ],
+      "goods": [
+        "MH2645T-T21202",
+        "SRL2616T-T16041"
+      ],
+      "gpt": [
+        "LFGL2683T-T66067",
+        "OOL2614T-T65958",
+        "PTL2645T-T34145"
+      ],
+      "gram": [
+        "LFGL2683T-T73986",
+        "TF2633T-T82296"
+      ],
+      "grow": [
+        "CD2694T-T10513",
+        "NA2631T-T18807"
+      ],
+      "gym": [
+        "AM2619T-T42943",
+        "NA2631T-T80022",
+        "SRL2616T-T74615"
+      ],
+      "hack": [
+        "AM2619T-T50862",
+        "LFGL2683T-T81905"
+      ],
+      "hello": [
+        "APEC2611T-T61164",
+        "EDCL2689T-T42826",
+        "LFGL2683T-T89824",
+        "NSL2674T-T80030"
+      ],
+      "hire": [
+        "IRI2679T-T99888",
+        "KKWT2621T-T38677",
+        "NA2631T-T13150"
+      ],
+      "hola": [
+        "APEC2611T-T53245",
+        "FE2653T-T89703"
+      ],
+      "hub": [
+        "HU2684T-T32145",
+        "IRI2679T-T67954",
+        "LFGL2683T-T31500",
+        "NA2626T-T65696",
+        "NA2631T-T57019",
+        "RTIS2674T-T28113",
+        "SL2641T-T21323",
+        "SRL2616T-T36153",
+        "XL2625T-T57527"
+      ],
+      "human": [
+        "APEC2611T-T18932",
+        "FT2631T-T52999",
+        "HCHL2612T-T20694",
+        "HU2684T-T34403",
+        "ILCL2673T-T24855",
+        "KKWT2621T-T12029"
+      ],
+      "hype": [
+        "DHRL2685T-T96364",
+        "HNL2668T-T33262"
+      ],
+      "iam": [
+        "IXBL2597-T54394",
+        "LFGL2683T-T39419"
+      ],
+      "idea": [
+        "LFGL2683T-T47338",
+        "NTG2671T-T54636"
+      ],
+      "identity": [
+        "RAI2657T-T70724",
+        "TT2652T-T52120"
+      ],
+      "impact": [
+        "IRI2679T-T75873",
+        "PIR2624T-T15791"
+      ],
+      "index": [
+        "LFGL2683T-T63176",
+        "NTG2671T-T62555"
+      ],
+      "intelligence": [
+        "CRRI2564-T42314",
+        "FEI2676T-T60926",
+        "RTIS2674T-T78143"
+      ],
+      "invest": [
+        "GEL2647T-T16674",
+        "RTIS2674T-T34524",
+        "XL2625T-T77143"
+      ],
+      "ion": [
+        "FCL2632T-T47217",
+        "LFGL2683T-T86933",
+        "XCI2688T-T41810",
+        "XL2625T-T43580"
+      ],
+      "island": [
+        "CIIA2564-T39435",
+        "VNTL2649T-T68087"
+      ],
+      "jet": [
+        "LFGL2683T-T94852",
+        "XL2625T-T17178"
+      ],
+      "key": [
+        "HS2699T-T48600",
+        "LFGL2683T-T28609",
+        "LL2624T-T70470",
+        "NA2631T-T58531",
+        "XI2694T-T18057"
+      ],
+      "king": [
+        "OI2692T-T88578",
+        "VC2665T-T40556"
+      ],
+      "kit": [
+        "CD2694T-T18432",
+        "GEI2639T-T18440",
+        "XL2625T-T72611"
+      ],
+      "lab": [
+        "APEC2611T-T95731",
+        "HU2684T-T81042",
+        "MADI2580-T89840",
+        "NA2626T-T54761",
+        "WEI2642T-T36415"
+      ],
+      "labs": [
+        "DDNP2635T-T57777",
+        "LFGL2683T-T36528",
+        "RTIS2674T-T67708",
+        "SS2654T-T60797",
+        "XL2625T-T80530"
+      ],
+      "learn": [
+        "HS2699T-T72357",
+        "IRI2679T-T91711",
+        "LFGL2683T-T44447",
+        "SRL2616T-T20315"
+      ],
+      "lens": [
+        "CRRI2564-T68458",
+        "GEI2639T-T34278"
+      ],
+      "list": [
+        "A2619T-T84675",
+        "IRI2679T-T65063",
+        "NA2631T-T12521"
+      ],
+      "llm": [
+        "LFGL2683T-T68204",
+        "SS2654T-T62301"
+      ],
+      "loop": [
+        "MLL2689T-T58656",
+        "OI2692T-T96497"
+      ],
+      "machine": [
+        "ASL2693T-T79647",
+        "LFGL2683T-T84042"
+      ],
+      "make": [
+        "KKWT2621T-T27867",
+        "XI2694T-T57023"
+      ],
+      "maker": [
+        "MEI2627T-T58035",
+        "NA2631T-T71478",
+        "NS2662T-T21198"
+      ],
+      "mall": [
+        "LFGL2683T-T99880",
+        "SS2654T-T78139",
+        "XL2625T-T38044"
+      ],
+      "mark": [
+        "IDOL2621T-T66079",
+        "LFGL2683T-T39556",
+        "RAI2657T-T62805"
+      ],
+      "mars": [
+        "LFGL2683T-T17799",
+        "NSL2674T-T93231"
+      ],
+      "mart": [
+        "MEI2627T-T73873",
+        "MH2645T-T29121",
+        "RTIS2674T-T19440",
+        "XL2625T-T45963"
+      ],
+      "max": [
+        "IRI2679T-T72982",
+        "NA2626T-T72994",
+        "NA2631T-T74369",
+        "PB2674T-T80276"
+      ],
+      "mcp": [
+        "CRRI2564-T28613",
+        "NA2626T-T80159",
+        "OOL2614T-T45092",
+        "RTIS2674T-T17682",
+        "TCL2632T-T27609"
+      ],
+      "merch": [
+        "BPL2623T-T20698",
+        "IRI2679T-T88820",
+        "MLG2688T-T45846",
+        "RTIS2674T-T23464"
+      ],
+      "mesh": [
+        "KKWT2621T-T30758",
+        "MEI2662T-T89711"
+      ],
+      "mind": [
+        "HS2699T-T88195",
+        "IRI2679T-T33645",
+        "LFGL2683T-T57394",
+        "RTIS2674T-T99384",
+        "XL2625T-T61801"
+      ],
+      "mix": [
+        "NA2631T-T79397",
+        "XI2694T-T99509"
+      ],
+      "mod": [
+        "M2548-T44588",
+        "MEI2699T-T97630"
+      ],
+      "model": [
+        "GEL2647T-T32512",
+        "NA2631T-T46213",
+        "OOL2614T-T37173"
+      ],
+      "moon": [
+        "LFGL2683T-T89070",
+        "OI2692T-T43201",
+        "XL2625T-T69720"
+      ],
+      "motors": [
+        "LLST2590-T35032",
+        "NS2662T-T37036",
+        "XL2625T-T77639"
+      ],
+      "mvp": [
+        "NA2626T-T59293",
+        "NA2631T-T90207",
+        "SI2639T-T61176"
+      ],
+      "neo": [
+        "CIL2643T-T64192",
+        "RTIS2674T-T18686"
+      ],
+      "nft": [
+        "IRI2679T-T68974",
+        "LFGL2683T-T14908"
+      ],
+      "nice": [
+        "LFGL2683T-T22827",
+        "LL2624T-T54632"
+      ],
+      "node": [
+        "TT2652T-T75877",
+        "XI2694T-T16045"
+      ],
+      "note": [
+        "OD2692T-T24089",
+        "XITS2684T-T48217"
+      ],
+      "official": [
+        "CS2595-T95743",
+        "RTIS2674T-T10767",
+        "VSL2633T-T77260",
+        "XCI2688T-T22077",
+        "XL2625T-T64446"
+      ],
+      "oil": [
+        "EPH2629T-T64575",
+        "XL2625T-T35153"
+      ],
+      "omg": [
+        "DM2627T-T65946",
+        "IRI2679T-T96739",
+        "LFGL2683T-T62422",
+        "NA2626T-T38427",
+        "NA2631T-T98126",
+        "XL2625T-T43072"
+      ],
+      "opc": [
+        "ELL2677T-T32391",
+        "TL2645T-T37411"
+      ],
+      "ops": [
+        "AM2619T-T66700",
+        "MEI2699T-T15549",
+        "NA2631T-T23964"
+      ],
+      "order": [
+        "CCS2640T-T48725",
+        "LFGL2683T-T78260"
+      ],
+      "organization": [
+        "LFGL2683T-T56765",
+        "PIR2624T-T39548"
+      ],
+      "outlet": [
+        "LFGL2683T-T64684",
+        "OD2692T-T32008",
+        "XL2625T-T50991"
+      ],
+      "pal": [
+        "IRI2679T-T18569",
+        "LFGL2683T-T72603",
+        "SI2639T-T92852",
+        "XL2625T-T58910"
+      ],
+      "park": [
+        "FCL2632T-T76002",
+        "NA2631T-T52749",
+        "XL2625T-T66829"
+      ],
+      "pass": [
+        "ASL2693T-T87566",
+        "LFGL2683T-T80522"
+      ],
+      "path": [
+        "NS2662T-T44955",
+        "PEI2617T-T23468"
+      ],
+      "plan": [
+        "SS2654T-T19815",
+        "XL2625T-T74748"
+      ],
+      "platform": [
+        "IRI2679T-T25468",
+        "OD2692T-T39927"
+      ],
+      "pod": [
+        "IRI2679T-T33387",
+        "KKWT2621T-T62434",
+        "NA2631T-T31883",
+        "PB2674T-T29871",
+        "RTIS2674T-T60922",
+        "SRL2616T-T83667"
+      ],
+      "podcast": [
+        "LFGL2683T-T96360",
+        "RTIS2674T-T83171",
+        "VTL2632T-T30500"
+      ],
+      "pop": [
+        "APEC2611T-T63430",
+        "KKWT2621T-T54515",
+        "LFGL2683T-T14279",
+        "NA2626T-T90969",
+        "NPL2622T-T38794",
+        "VC2665T-T57535"
+      ],
+      "port": [
+        "LFGL2683T-T22198",
+        "OD2692T-T47846"
+      ],
+      "portal": [
+        "AT2680T-T16295",
+        "IRI2679T-T41564",
+        "LFGL2683T-T30117",
+        "NA2555-T61680",
+        "VNTL2649T-T52249",
+        "XL2625T-T16424"
+      ],
+      "portfolio": [
+        "NS2662T-T52874",
+        "RTIS2674T-T39302"
+      ],
+      "pot": [
+        "NA2631T-T39802",
+        "TCL2632T-T51366"
+      ],
+      "power": [
+        "LFGL2683T-T45955",
+        "NA2631T-T58652",
+        "SS2654T-T43572",
+        "XL2625T-T24343"
+      ],
+      "print": [
+        "LFGL2683T-T53874",
+        "TT2652T-T99634",
+        "XL2625T-T32262"
+      ],
+      "private": [
+        "EDI2665T-T78776",
+        "RAI2657T-T86562"
+      ],
+      "products": [
+        "NS2662T-T60793",
+        "XL2625T-T40181"
+      ],
+      "profile": [
+        "IRI2679T-T41306",
+        "RTIS2674T-T25601"
+      ],
+      "project": [
+        "LFGL2683T-T61793",
+        "OD2692T-T55765",
+        "RTIS2674T-T84929",
+        "XL2625T-T48100"
+      ],
+      "quantum": [
+        "BPL2623T-T84050",
+        "LFGL2683T-T77631",
+        "RTIS2674T-T87574",
+        "SL2630T-T63434"
+      ],
+      "real": [
+        "LFGL2683T-T93469",
+        "OD2692T-T71603"
+      ],
+      "rem": [
+        "APEC2611T-T77002",
+        "LDII2637T-T26109"
+      ],
+      "research": [
+        "LFGL2683T-T11388",
+        "RTIS2674T-T92598",
+        "SI2639T-T37419",
+        "XL2625T-T71857"
+      ],
+      "resort": [
+        "OD2692T-T87441",
+        "XL2625T-T79776"
+      ],
+      "road": [
+        "VTL2632T-T38419",
+        "XL2625T-T87695"
+      ],
+      "robot": [
+        "A2652T-T75760",
+        "ILCL2673T-T48612",
+        "IRI2679T-T49225",
+        "ITL2677T-T15916",
+        "KKWT2621T-T94110",
+        "LFGL2683T-T19307",
+        "PB2674T-T61547"
+      ],
+      "robotics": [
+        "HS2699T-T96114",
+        "LFGL2683T-T27226",
+        "RTIS2674T-T99763",
+        "XL2625T-T82417"
+      ],
+      "self": [
+        "HCF2553-T67700",
+        "TT2652T-T17553"
+      ],
+      "sell": [
+        "IRI2679T-T88066",
+        "LFGL2683T-T50983"
+      ],
+      "send": [
+        "ISL2626T-T93227",
+        "LFGL2683T-T58902"
+      ],
+      "server": [
+        "PTL2645T-T65821",
+        "XI2694T-T62176"
+      ],
+      "share": [
+        "CRRI2564-T63180",
+        "IRI2679T-T75119",
+        "LFGL2683T-T66821",
+        "NTG2671T-T12150",
+        "SI2639T-T42447"
+      ],
+      "ship": [
+        "LFGL2683T-T74740",
+        "NA2631T-T26726",
+        "PEI2685T-T63063"
+      ],
+      "sign": [
+        "HKZI2636T-T13529",
+        "LFGL2683T-T82659",
+        "OI2692T-T59039",
+        "PB2674T-T69466"
+      ],
+      "sim": [
+        "LFGL2683T-T90578",
+        "PTL2645T-T73740"
+      ],
+      "skill": [
+        "ELL2677T-T65704",
+        "OOL2614T-T76768",
+        "SRL2616T-T12396"
+      ],
+      "slot": [
+        "PTL2645T-T81659",
+        "TEPL2694T-T20319",
+        "XL2625T-T19823"
+      ],
+      "society": [
+        "ASL2693T-T13404",
+        "XL2625T-T30633"
+      ],
+      "soft": [
+        "LFGL2683T-T98497",
+        "XL2625T-T69224"
+      ],
+      "stack": [
+        "NA2631T-T25347",
+        "OI2692T-T27363",
+        "RC2677T-T55011",
+        "RTIS2674T-T41439"
+      ],
+      "start": [
+        "LFGL2683T-T24335",
+        "XI2694T-T96618"
+      ],
+      "stay": [
+        "NA2631T-T44830",
+        "OI2692T-T14416",
+        "PTL2645T-T89578"
+      ],
+      "stock": [
+        "FCL2632T-T83921",
+        "LFGL2683T-T32254"
+      ],
+      "story": [
+        "FCL2632T-T91840",
+        "KKWT2621T-T51624"
+      ],
+      "super": [
+        "APEC2611T-T91332",
+        "LFGL2683T-T40173",
+        "OI2692T-T61930"
+      ],
+      "sys": [
+        "CAME2598-T58164",
+        "REI2616T-T86820",
+        "TT2652T-T25472",
+        "XL2625T-T53128"
+      ],
+      "tag": [
+        "APEC2611T-T53753",
+        "LFGL2683T-T56011",
+        "NA2626T-T55140",
+        "SI2639T-T97880"
+      ],
+      "tap": [
+        "LFGL2683T-T63930",
+        "NA2626T-T64063",
+        "NA2631T-T47721",
+        "TPL2697T-T31121",
+        "XL2625T-T61047"
+      ],
+      "tea": [
+        "LFGL2683T-T71849",
+        "NA2631T-T28992",
+        "PTL2645T-T97497",
+        "TL2645T-T44697"
+      ],
+      "therapy": [
+        "EL2578-T58918",
+        "NA2631T-T33266",
+        "RTIS2674T-T50362",
+        "TT2652T-T33391",
+        "XL2625T-T84804"
+      ],
+      "time": [
+        "FCL2632T-T99759",
+        "XL2625T-T92723"
+      ],
+      "token": [
+        "EDCL2689T-T95368",
+        "LFGL2683T-T21444"
+      ],
+      "trip": [
+        "IRI2679T-T98876",
+        "NA2631T-T96614",
+        "VC2665T-T64313"
+      ],
+      "true": [
+        "EDI2665T-T39181",
+        "LFGL2683T-T29363"
+      ],
+      "ultra": [
+        "CRRI2564-T71099",
+        "NTG2671T-T13787",
+        "UA2620T-T14912"
+      ],
+      "uni": [
+        "ITLL2680T-T15795",
+        "XL2625T-T10642"
+      ],
+      "url": [
+        "IRI2679T-T16795",
+        "LFGL2683T-T45201",
+        "TT2652T-T41310"
+      ],
+      "verified": [
+        "BPL2623T-T25726",
+        "NI2568-T34516",
+        "RAI2657T-T94481"
+      ],
+      "vibe": [
+        "IRI2679T-T24714",
+        "LFGL2683T-T61039",
+        "MLG2688T-T19198",
+        "NA2631T-T64938",
+        "PB2674T-T93223",
+        "RTIS2674T-T22331"
+      ],
+      "view": [
+        "FCL2632T-T17678",
+        "LFGL2683T-T68958",
+        "REI2641T-T20577",
+        "XL2625T-T50237"
+      ],
+      "visit": [
+        "IRI2679T-T40552",
+        "ISL2626T-T98626",
+        "SI2639T-T26609"
+      ],
+      "voice": [
+        "AL2580-T43705",
+        "OOL2614T-T53011",
+        "PB2674T-T22835"
+      ],
+      "wallet": [
+        "IRI2679T-T48471",
+        "NA2631T-T72861",
+        "RTIS2674T-T15545",
+        "VSL2633T-T85179"
+      ],
+      "way": [
+        "LFGL2683T-T10634",
+        "NA2626T-T72240",
+        "XL2625T-T81913"
+      ],
+      "wealth": [
+        "AL2569-T37298",
+        "IRI2679T-T73240",
+        "NA2631T-T88699",
+        "RTIS2674T-T92848",
+        "VSL2633T-T11017",
+        "XL2625T-T89832"
+      ],
+      "wear": [
+        "CRRI2564-T12775",
+        "NA2631T-T98247",
+        "TT2652T-T49229"
+      ],
+      "well": [
+        "IRI2679T-T81159",
+        "SS2654T-T59410",
+        "XL2625T-T97751"
+      ],
+      "wellness": [
+        "RTIS2674T-T72736",
+        "TT2652T-T57148"
+      ],
+      "wiz": [
+        "IRI2679T-T96997",
+        "WASD2698T-T76139"
+      ],
+      "xn--jvr800e": [
+        "IDOL2621T-T51737",
+        "KCL2693T-T31879"
+      ],
+      "xn--kbt444f": [
+        "IDOL2621T-T27980",
+        "KCL2693T-T23960"
+      ],
+      "xxl": [
+        "NA2626T-T64321",
+        "TEPL2694T-T19061"
+      ],
+      "yes": [
+        "APEC2611T-T13650",
+        "IRI2679T-T72228",
+        "LFGL2683T-T42310",
+        "NA2626T-T19698"
+      ],
+      "zen": [
+        "IRI2679T-T80147",
+        "NA2626T-T98888",
+        "NA2631T-T43068",
+        "PB2674T-T11142",
+        "RTIS2674T-T25222",
+        "XL2625T-T31508"
+      ],
+      "zzz": [
+        "LFGL2683T-T58148",
+        "XL2625T-T39427"
+      ]
+    }
+  },
+  "after": {
+    "rowCount": 2783,
+    "completeRecordIds": 2783,
+    "applicationFamilies": 1614,
+    "replacementRecords": 1169,
+    "statusCounts": {
+      "Active": 1553,
+      "Deactivated": 1169,
+      "Withdrawn": 61
+    },
+    "visibleActiveApplications": 1553,
+    "visibleWithdrawnApplications": 61,
+    "selectedReplacementRecords": 152,
+    "selectedReplacementApplicationIds": [
+      "A2619T-T45080",
+      "A2652T-T59922",
+      "ASAA2567-T97759",
+      "CCS2640T-T56644",
+      "DC2669T-T20827",
+      "DL2636T-T75885",
+      "EDCL2689T-T29879",
+      "EDCL2689T-T32016",
+      "EDCL2689T-T81667",
+      "EDI2665T-T44209",
+      "EDI2665T-T47100",
+      "EDI2665T-T52128",
+      "EDI2665T-T67966",
+      "ETI2627T-T21585",
+      "ETI2627T-T93610",
+      "GEL2647T-T82917",
+      "GMTS2586-T19194",
+      "HCL2645T-T37673",
+      "IDOL2621T-T20061",
+      "IG2663T-T85800",
+      "IIUM2696T-T97372",
+      "INC2624T-T91582",
+      "IRI2679T-T28359",
+      "IRI2679T-T57402",
+      "IRI2679T-T65321",
+      "IRI2679T-T65817",
+      "IRI2679T-T83038",
+      "IRI2679T-T88324",
+      "ISII2617T-T57898",
+      "ISL2626T-T51112",
+      "ISL2626T-T59031",
+      "ISL2626T-T66950",
+      "KG2621T-T62547",
+      "KG2621T-T78385",
+      "KG2699T-T10255",
+      "KG2699T-T28984",
+      "KKWT2621T-T46596",
+      "LFGL2683T-T18553",
+      "LFGL2683T-T25718",
+      "LFGL2683T-T26472",
+      "LFGL2683T-T28734",
+      "LFGL2683T-T30871",
+      "LFGL2683T-T33637",
+      "LFGL2683T-T34391",
+      "LFGL2683T-T41556",
+      "LFGL2683T-T48092",
+      "LFGL2683T-T54503",
+      "LFGL2683T-T58273",
+      "LFGL2683T-T65438",
+      "LFGL2683T-T79014",
+      "LFGL2683T-T79768",
+      "LFGL2683T-T88441",
+      "LFGL2683T-T91961",
+      "LFGL2683T-T94977",
+      "LFGL2683T-T96989",
+      "LFGL2683T-T97114",
+      "LL2624T-T78389",
+      "MEL2626T-T48733",
+      "MLG2688T-T30008",
+      "MLG2688T-T77522",
+      "MLG2688T-T93360",
+      "MMPL2632T-T44705",
+      "NA2626T-T11779",
+      "NA2626T-T16549",
+      "NA2626T-T22589",
+      "NA2626T-T24726",
+      "NA2626T-T31004",
+      "NA2626T-T51374",
+      "NA2626T-T56402",
+      "NA2626T-T67212",
+      "NA2631T-T22456",
+      "NA2631T-T27230",
+      "NA2631T-T45830",
+      "NA2631T-T66571",
+      "NA2631T-T69341",
+      "NA2631T-T69966",
+      "NA2631T-T74744",
+      "NA2631T-T99126",
+      "NLTC2529-T64442",
+      "NPL2622T-T46713",
+      "NSL2674T-T26988",
+      "NSL2674T-T50745",
+      "NSL2674T-T66583",
+      "NTG2671T-T15041",
+      "NTG2671T-T37544",
+      "NTG2671T-T59664",
+      "NTG2671T-T67583",
+      "NTG2671T-T70474",
+      "NTG2671T-T94231",
+      "OCF2539-T20706",
+      "OD2692T-T13279",
+      "ODC2534-T66083",
+      "OI2692T-T30254",
+      "OI2692T-T69849",
+      "OI2692T-T74877",
+      "OI2692T-T77768",
+      "OI2692T-T85687",
+      "PCC2647T-T40814",
+      "PDAC2521-T93356",
+      "PPND2513-T68462",
+      "RTIS2674T-T31383",
+      "SI2594-T16545",
+      "SI2639T-T44584",
+      "SI2639T-T89961",
+      "SRL2616T-T44072",
+      "SS2654T-T46463",
+      "T3PB2538-T94985",
+      "TG2593-T64817",
+      "TIGL2633T-T28238",
+      "TL2627T-T31766",
+      "TL2645T-T21573",
+      "TL2645T-T45834",
+      "TL2645T-T53249",
+      "TT2652T-T65067",
+      "UMIA2681T-T53765",
+      "VTL2632T-T14662",
+      "WVL2684T-T36786",
+      "WYMG2568-T96993",
+      "XI2694T-T60543",
+      "XI2694T-T68587",
+      "XI2694T-T86949",
+      "XL2625T-T11396",
+      "XL2625T-T14287",
+      "XL2625T-T17932",
+      "XL2625T-T23714",
+      "XL2625T-T25097",
+      "XL2625T-T26480",
+      "XL2625T-T26605",
+      "XL2625T-T31633",
+      "XL2625T-T32770",
+      "XL2625T-T33016",
+      "XL2625T-T34399",
+      "XL2625T-T34903",
+      "XL2625T-T41689",
+      "XL2625T-T42443",
+      "XL2625T-T48608",
+      "XL2625T-T48854",
+      "XL2625T-T51499",
+      "XL2625T-T53882",
+      "XL2625T-T58156",
+      "XL2625T-T64692",
+      "XL2625T-T65204",
+      "XL2625T-T68966",
+      "XL2625T-T83175",
+      "XL2625T-T88449",
+      "XL2625T-T89957",
+      "XL2625T-T90586",
+      "XL2625T-T93477",
+      "XL2625T-T95614",
+      "XL2625T-T96368",
+      "XL2625T-T98505",
+      "XL2625T-T99013"
+    ],
+    "activeNewPrimaryApplications": 1547,
+    "activeNewPrimaryStrings": 1119,
+    "exactPrimaryOverlapGroups": 222,
+    "applicationsInExactPrimaryOverlaps": 650,
+    "exactPrimaryOverlapMembers": {
+      "ace": [
+        "FCL2632T-T97622",
+        "NA2631T-T83042",
+        "XL2625T-T26980"
+      ],
+      "agent": [
+        "CRRI2564-T76881",
+        "ELL2677T-T98634",
+        "FCL2696T-T15158",
+        "ILCL2673T-T99017",
+        "IRI2679T-T53136",
+        "MRHL2653T-T66196",
+        "OARI2643T-T22843",
+        "OOL2614T-T24226",
+        "RC2677T-T71607",
+        "RTIS2674T-T51870"
+      ],
+      "agentic": [
+        "LFGL2683T-T42435",
+        "RTIS2674T-T94356"
+      ],
+      "agi": [
+        "CFL2645T-T71728",
+        "LFGL2683T-T50354",
+        "NA2631T-T14537",
+        "OOL2614T-T13416",
+        "RTIS2674T-T70599"
+      ],
+      "agnt": [
+        "AM2619T-T27105",
+        "KL2668T-T13029"
+      ],
+      "aid": [
+        "AEI2688T-T61051",
+        "APEC2611T-T69337",
+        "C2595-T79030",
+        "NA2631T-T48475",
+        "PIR2624T-T12017"
+      ],
+      "aio": [
+        "CCS2640T-T19940",
+        "TKRC2583-T68712"
+      ],
+      "air": [
+        "NA2626T-T48979",
+        "NA2631T-T14658",
+        "VSL2633T-T72232"
+      ],
+      "all": [
+        "LFGL2683T-T66192",
+        "NA2631T-T80151",
+        "TT2652T-T78768"
+      ],
+      "api": [
+        "CRRI2564-T68962",
+        "ELL2677T-T16553",
+        "HS2699T-T83167",
+        "LFGL2683T-T89949",
+        "NA2631T-T30375",
+        "XL2625T-T58281"
+      ],
+      "apparel": [
+        "VSL2633T-T88070",
+        "XL2625T-T74119"
+      ],
+      "asap": [
+        "LFGL2683T-T15787",
+        "SI2639T-T21581"
+      ],
+      "asi": [
+        "LFGL2683T-T23706",
+        "OOL2614T-T29254",
+        "RTIS2674T-T93981",
+        "TT2652T-T86687"
+      ],
+      "ask": [
+        "APEC2611T-T29488",
+        "CRRI2564-T61043",
+        "IRI2679T-T73736",
+        "NA2631T-T95989"
+      ],
+      "auth": [
+        "LFGL2683T-T31637",
+        "NTG2671T-T26730"
+      ],
+      "bakery": [
+        "TCL2632T-T11771",
+        "XL2625T-T62309"
+      ],
+      "base": [
+        "CTI2649T-T85441",
+        "PB2674T-T96868"
+      ],
+      "beach": [
+        "MLG2688T-T61684",
+        "XL2625T-T54390"
+      ],
+      "big": [
+        "IRI2679T-T89574",
+        "LFGL2683T-T47463",
+        "NA2626T-T98630"
+      ],
+      "biotech": [
+        "GEL2647T-T73865",
+        "RTIS2674T-T50870"
+      ],
+      "bit": [
+        "APEC2611T-T45326",
+        "DM2627T-T34270",
+        "HKZI2636T-T79772",
+        "LFGL2683T-T55382",
+        "NA2631T-T45584",
+        "OI2692T-T11525",
+        "RTIS2674T-T37415"
+      ],
+      "bitcoin": [
+        "BPL2623T-T40052",
+        "WASD2698T-T81921"
+      ],
+      "bnb": [
+        "LFGL2683T-T71220",
+        "XL2625T-T80284"
+      ],
+      "boost": [
+        "EDCL2689T-T18315",
+        "VTL2632T-T80905"
+      ],
+      "brain": [
+        "BEI2691T-T83300",
+        "IRI2679T-T97493",
+        "LFGL2683T-T87058",
+        "NSL2674T-T89586"
+      ],
+      "brand": [
+        "IRI2679T-T15412",
+        "RTIS2674T-T83546",
+        "SRL2616T-T86558",
+        "VTL2632T-T88824"
+      ],
+      "btc": [
+        "LFGL2683T-T12896",
+        "MH2645T-T86812"
+      ],
+      "cap": [
+        "LFGL2683T-T20815",
+        "XL2625T-T39552"
+      ],
+      "cart": [
+        "IRI2679T-T44455",
+        "NA2631T-T13154",
+        "PB2674T-T38544"
+      ],
+      "cast": [
+        "CRRI2564-T92719",
+        "IRI2679T-T39169",
+        "LFGL2683T-T36653",
+        "SS2654T-T33516"
+      ],
+      "central": [
+        "EDI2665T-T86695",
+        "XL2625T-T47471"
+      ],
+      "chain": [
+        "LFGL2683T-T52491",
+        "NA2631T-T75502",
+        "TCL2632T-T87945"
+      ],
+      "chef": [
+        "NA2631T-T95860",
+        "SRL2616T-T62801",
+        "XL2625T-T58660"
+      ],
+      "class": [
+        "NA2631T-T90832",
+        "SRL2616T-T28234"
+      ],
+      "coin": [
+        "LFGL2683T-T60410",
+        "PTL2645T-T92469",
+        "RTIS2674T-T69091"
+      ],
+      "collection": [
+        "MH2645T-T12650",
+        "XL2625T-T38552"
+      ],
+      "collective": [
+        "PTL2645T-T10388",
+        "RTIS2674T-T63817",
+        "XL2625T-T71228"
+      ],
+      "commerce": [
+        "IRI2679T-T80405",
+        "LFGL2683T-T68329"
+      ],
+      "con": [
+        "IG2663T-T46205",
+        "LFGL2683T-T50858",
+        "NPL2622T-T30875",
+        "XL2625T-T48604"
+      ],
+      "connect": [
+        "EDCL2689T-T77393",
+        "ISL2626T-T74869",
+        "NA2631T-T87316",
+        "TT2652T-T94606",
+        "XL2625T-T79147"
+      ],
+      "consult": [
+        "IRI2679T-T60293",
+        "VSL2633T-T13908"
+      ],
+      "consultants": [
+        "FCL2632T-T31379",
+        "XL2625T-T91094"
+      ],
+      "core": [
+        "HS2699T-T16924",
+        "LFGL2683T-T84167",
+        "NA2626T-T56898"
+      ],
+      "corporation": [
+        "IRI2679T-T31250",
+        "OD2692T-T82413",
+        "XL2625T-T85062"
+      ],
+      "craft": [
+        "KKWT2621T-T78272",
+        "LFGL2683T-T10005",
+        "NA2631T-T74490",
+        "SS2654T-T73111"
+      ],
+      "create": [
+        "IRI2679T-T47088",
+        "SI2639T-T23718"
+      ],
+      "creations": [
+        "OD2692T-T90332",
+        "XL2625T-T24851"
+      ],
+      "creative": [
+        "VSL2633T-T29746",
+        "XL2625T-T12904"
+      ],
+      "creator": [
+        "CFL2645T-T95485",
+        "IRI2679T-T86683",
+        "RTIS2674T-T76760"
+      ],
+      "crew": [
+        "AM2619T-T35024",
+        "I2639T-T66696"
+      ],
+      "crypto": [
+        "BPL2623T-T47971",
+        "IRI2679T-T61055",
+        "RTIS2674T-T45334",
+        "XL2625T-T28742"
+      ],
+      "dao": [
+        "AM2619T-T27484",
+        "LFGL2683T-T17924",
+        "XL2625T-T36661"
+      ],
+      "ddd": [
+        "LFGL2683T-T25843",
+        "NA2631T-T18936"
+      ],
+      "demo": [
+        "BPL2623T-T55890",
+        "IRI2679T-T78764",
+        "NA2631T-T63934"
+      ],
+      "den": [
+        "CEI2644T-T72490",
+        "XL2625T-T86066"
+      ],
+      "did": [
+        "CEI2644T-T88328",
+        "VIL2659T-T55269"
+      ],
+      "dna": [
+        "LFGL2683T-T33762",
+        "NA2631T-T26855"
+      ],
+      "dns": [
+        "NIF2590-T63192",
+        "SI2639T-T82042"
+      ],
+      "donate": [
+        "IRI2679T-T70845",
+        "LFGL2683T-T72478",
+        "PIR2624T-T89953"
+      ],
+      "dream": [
+        "AT2680T-T90457",
+        "D2611T-T84300"
+      ],
+      "drone": [
+        "AM2619T-T43322",
+        "LFGL2683T-T41681",
+        "NA2631T-T83421"
+      ],
+      "easy": [
+        "EL2675T-T54882",
+        "LFGL2683T-T57519"
+      ],
+      "epic": [
+        "ESC2616T-T27738",
+        "RAI2657T-T39048"
+      ],
+      "etc": [
+        "LFGL2683T-T73357",
+        "PTL2645T-T18307",
+        "RTIS2674T-T62680",
+        "XL2625T-T68337"
+      ],
+      "ether": [
+        "LFGL2683T-T81276",
+        "NO2616T-T59910"
+      ],
+      "expo": [
+        "ASL2693T-T63809",
+        "NA2631T-T32258",
+        "XL2625T-T76256"
+      ],
+      "fab": [
+        "CEI2647T-T14166",
+        "LFGL2683T-T89195",
+        "XL2625T-T84175"
+      ],
+      "factory": [
+        "PB2674T-T51491",
+        "XL2625T-T92094"
+      ],
+      "feed": [
+        "LFGL2683T-T15033",
+        "VC2665T-T98880"
+      ],
+      "fest": [
+        "A2619T-T68837",
+        "XL2625T-T10013"
+      ],
+      "find": [
+        "CRRI2564-T18557",
+        "IRI2679T-T28109",
+        "LFGL2683T-T22952"
+      ],
+      "firm": [
+        "NA2631T-T79393",
+        "NPL2622T-T22956",
+        "NS2662T-T95360",
+        "RTIS2674T-T42193",
+        "SRL2616T-T94477"
+      ],
+      "fix": [
+        "APEC2611T-T67575",
+        "ISL2626T-T82788",
+        "NA2631T-T72857",
+        "RC2677T-T79526",
+        "RTIS2674T-T29496"
+      ],
+      "flow": [
+        "HS2699T-T24843",
+        "NA2631T-T55640",
+        "RTIS2674T-T36032",
+        "XL2625T-T11904"
+      ],
+      "follow": [
+        "DWTP2553-T45842",
+        "SI2639T-T34528",
+        "XI2694T-T28363"
+      ],
+      "force": [
+        "CRM2628T-T77764",
+        "NA2631T-T11642"
+      ],
+      "form": [
+        "NA2631T-T90582",
+        "VSL2633T-T61422"
+      ],
+      "gaming": [
+        "AM2619T-T51241",
+        "IRI2679T-T68212",
+        "UA2620T-T78897",
+        "XL2625T-T25851"
+      ],
+      "gate": [
+        "EEI2686T-T16303",
+        "GNL2631T-T74115"
+      ],
+      "gear": [
+        "CD2694T-T92594",
+        "LFGL2683T-T38790",
+        "NA2631T-T42060"
+      ],
+      "geek": [
+        "ETI2627T-T87828",
+        "XI2694T-T10138"
+      ],
+      "gem": [
+        "CRRI2564-T26476",
+        "TL2645T-T29492"
+      ],
+      "gen": [
+        "APEC2611T-T55511",
+        "GEN2685T-T72482",
+        "HS2699T-T32762",
+        "LFGL2683T-T46709",
+        "XL2625T-T49608"
+      ],
+      "get": [
+        "A2619T-T76756",
+        "IRI2679T-T36278",
+        "LFGL2683T-T54628",
+        "XI2694T-T41185"
+      ],
+      "gig": [
+        "NA2631T-T42693",
+        "VC2665T-T32637"
+      ],
+      "goat": [
+        "BPL2623T-T36536",
+        "NA2626T-T75131"
+      ],
+      "good": [
+        "IRI2679T-T44197",
+        "LFGL2683T-T33008",
+        "LL2624T-T62551",
+        "MH2645T-T95364",
+        "NA2631T-T44826"
+      ],
+      "goods": [
+        "MH2645T-T21202",
+        "SRL2616T-T16041"
+      ],
+      "gpt": [
+        "LFGL2683T-T66067",
+        "OOL2614T-T65958",
+        "PTL2645T-T34145"
+      ],
+      "gram": [
+        "LFGL2683T-T73986",
+        "TF2633T-T82296"
+      ],
+      "grow": [
+        "CD2694T-T10513",
+        "NA2631T-T18807"
+      ],
+      "gym": [
+        "AM2619T-T42943",
+        "NA2631T-T80022",
+        "SRL2616T-T74615"
+      ],
+      "hack": [
+        "AM2619T-T50862",
+        "LFGL2683T-T81905"
+      ],
+      "hello": [
+        "APEC2611T-T61164",
+        "EDCL2689T-T42826",
+        "LFGL2683T-T89824",
+        "NSL2674T-T80030"
+      ],
+      "hire": [
+        "IRI2679T-T99888",
+        "KKWT2621T-T38677",
+        "NA2631T-T13150"
+      ],
+      "hola": [
+        "APEC2611T-T53245",
+        "FE2653T-T89703"
+      ],
+      "hub": [
+        "IRI2679T-T67954",
+        "LFGL2683T-T31500",
+        "NA2631T-T57019",
+        "RTIS2674T-T28113",
+        "SL2641T-T21323",
+        "SRL2616T-T36153",
+        "XL2625T-T57527"
+      ],
+      "human": [
+        "APEC2611T-T18932",
+        "FT2631T-T52999",
+        "HCHL2612T-T20694",
+        "HU2684T-T34403",
+        "ILCL2673T-T24855",
+        "KKWT2621T-T12029"
+      ],
+      "hype": [
+        "DHRL2685T-T96364",
+        "HNL2668T-T33262"
+      ],
+      "iam": [
+        "IXBL2597-T54394",
+        "LFGL2683T-T39419"
+      ],
+      "idea": [
+        "LFGL2683T-T47338",
+        "NTG2671T-T54636"
+      ],
+      "identity": [
+        "RAI2657T-T70724",
+        "TT2652T-T52120"
+      ],
+      "impact": [
+        "IRI2679T-T75873",
+        "PIR2624T-T15791"
+      ],
+      "index": [
+        "LFGL2683T-T63176",
+        "NTG2671T-T62555"
+      ],
+      "intelligence": [
+        "CRRI2564-T42314",
+        "RTIS2674T-T78143"
+      ],
+      "invest": [
+        "GEL2647T-T16674",
+        "RTIS2674T-T34524",
+        "XL2625T-T77143"
+      ],
+      "ion": [
+        "FCL2632T-T47217",
+        "LFGL2683T-T86933",
+        "XL2625T-T43580"
+      ],
+      "island": [
+        "CIIA2564-T39435",
+        "VNTL2649T-T68087"
+      ],
+      "jet": [
+        "LFGL2683T-T94852",
+        "XL2625T-T17178"
+      ],
+      "key": [
+        "HS2699T-T48600",
+        "LFGL2683T-T28609",
+        "LL2624T-T70470",
+        "NA2631T-T58531"
+      ],
+      "king": [
+        "OI2692T-T88578",
+        "VC2665T-T40556"
+      ],
+      "kit": [
+        "CD2694T-T18432",
+        "XL2625T-T72611"
+      ],
+      "lab": [
+        "APEC2611T-T95731",
+        "MADI2580-T89840",
+        "WEI2642T-T36415"
+      ],
+      "labs": [
+        "DDNP2635T-T57777",
+        "LFGL2683T-T36528",
+        "RTIS2674T-T67708",
+        "SS2654T-T60797",
+        "XL2625T-T80530"
+      ],
+      "learn": [
+        "HS2699T-T72357",
+        "IRI2679T-T91711",
+        "LFGL2683T-T44447",
+        "SRL2616T-T20315"
+      ],
+      "lens": [
+        "CRRI2564-T68458",
+        "GEI2639T-T34278"
+      ],
+      "list": [
+        "A2619T-T84675",
+        "IRI2679T-T65063",
+        "NA2631T-T12521"
+      ],
+      "llm": [
+        "LFGL2683T-T68204",
+        "SS2654T-T62301"
+      ],
+      "machine": [
+        "ASL2693T-T79647",
+        "LFGL2683T-T84042"
+      ],
+      "make": [
+        "KKWT2621T-T27867",
+        "XI2694T-T57023"
+      ],
+      "maker": [
+        "NA2631T-T71478",
+        "NS2662T-T21198"
+      ],
+      "mall": [
+        "LFGL2683T-T99880",
+        "SS2654T-T78139",
+        "XL2625T-T38044"
+      ],
+      "mark": [
+        "IDOL2621T-T66079",
+        "LFGL2683T-T39556",
+        "RAI2657T-T62805"
+      ],
+      "mars": [
+        "LFGL2683T-T17799",
+        "NSL2674T-T93231"
+      ],
+      "mart": [
+        "MH2645T-T29121",
+        "RTIS2674T-T19440",
+        "XL2625T-T45963"
+      ],
+      "max": [
+        "IRI2679T-T72982",
+        "NA2626T-T72994",
+        "NA2631T-T74369",
+        "PB2674T-T80276"
+      ],
+      "mcp": [
+        "CRRI2564-T28613",
+        "OOL2614T-T45092",
+        "RTIS2674T-T17682",
+        "TCL2632T-T27609"
+      ],
+      "merch": [
+        "BPL2623T-T20698",
+        "IRI2679T-T88820",
+        "MLG2688T-T45846",
+        "RTIS2674T-T23464"
+      ],
+      "mesh": [
+        "KKWT2621T-T30758",
+        "MEI2662T-T89711"
+      ],
+      "mind": [
+        "HS2699T-T88195",
+        "IRI2679T-T33645",
+        "LFGL2683T-T57394",
+        "RTIS2674T-T99384",
+        "XL2625T-T61801"
+      ],
+      "mix": [
+        "NA2631T-T79397",
+        "XI2694T-T99509"
+      ],
+      "mod": [
+        "M2548-T44588",
+        "MEI2699T-T97630"
+      ],
+      "model": [
+        "GEL2647T-T32512",
+        "NA2631T-T46213",
+        "OOL2614T-T37173"
+      ],
+      "moon": [
+        "LFGL2683T-T89070",
+        "OI2692T-T43201",
+        "XL2625T-T69720"
+      ],
+      "motors": [
+        "LLST2590-T35032",
+        "NS2662T-T37036",
+        "XL2625T-T77639"
+      ],
+      "mvp": [
+        "NA2626T-T59293",
+        "NA2631T-T90207",
+        "SI2639T-T61176"
+      ],
+      "neo": [
+        "CIL2643T-T64192",
+        "RTIS2674T-T18686"
+      ],
+      "nft": [
+        "IRI2679T-T68974",
+        "LFGL2683T-T14908"
+      ],
+      "nice": [
+        "LFGL2683T-T22827",
+        "LL2624T-T54632"
+      ],
+      "node": [
+        "TT2652T-T75877",
+        "XI2694T-T16045"
+      ],
+      "note": [
+        "OD2692T-T24089",
+        "XITS2684T-T48217"
+      ],
+      "official": [
+        "CS2595-T95743",
+        "RTIS2674T-T10767",
+        "VSL2633T-T77260",
+        "XCI2688T-T22077",
+        "XL2625T-T64446"
+      ],
+      "oil": [
+        "EPH2629T-T64575",
+        "XL2625T-T35153"
+      ],
+      "omg": [
+        "DM2627T-T65946",
+        "IRI2679T-T96739",
+        "LFGL2683T-T62422",
+        "NA2631T-T98126",
+        "XL2625T-T43072"
+      ],
+      "opc": [
+        "ELL2677T-T32391",
+        "TL2645T-T37411"
+      ],
+      "ops": [
+        "AM2619T-T66700",
+        "MEI2699T-T15549",
+        "NA2631T-T23964"
+      ],
+      "organization": [
+        "LFGL2683T-T56765",
+        "PIR2624T-T39548"
+      ],
+      "outlet": [
+        "LFGL2683T-T64684",
+        "OD2692T-T32008",
+        "XL2625T-T50991"
+      ],
+      "pal": [
+        "IRI2679T-T18569",
+        "LFGL2683T-T72603",
+        "SI2639T-T92852",
+        "XL2625T-T58910"
+      ],
+      "park": [
+        "FCL2632T-T76002",
+        "NA2631T-T52749",
+        "XL2625T-T66829"
+      ],
+      "pass": [
+        "ASL2693T-T87566",
+        "LFGL2683T-T80522"
+      ],
+      "plan": [
+        "SS2654T-T19815",
+        "XL2625T-T74748"
+      ],
+      "platform": [
+        "IRI2679T-T25468",
+        "OD2692T-T39927"
+      ],
+      "pod": [
+        "IRI2679T-T33387",
+        "KKWT2621T-T62434",
+        "NA2631T-T31883",
+        "PB2674T-T29871",
+        "RTIS2674T-T60922",
+        "SRL2616T-T83667"
+      ],
+      "podcast": [
+        "LFGL2683T-T96360",
+        "RTIS2674T-T83171",
+        "VTL2632T-T30500"
+      ],
+      "pop": [
+        "APEC2611T-T63430",
+        "KKWT2621T-T54515",
+        "LFGL2683T-T14279",
+        "NPL2622T-T38794",
+        "VC2665T-T57535"
+      ],
+      "port": [
+        "LFGL2683T-T22198",
+        "OD2692T-T47846"
+      ],
+      "portal": [
+        "AT2680T-T16295",
+        "IRI2679T-T41564",
+        "LFGL2683T-T30117",
+        "NA2555-T61680",
+        "XL2625T-T16424"
+      ],
+      "portfolio": [
+        "NS2662T-T52874",
+        "RTIS2674T-T39302"
+      ],
+      "pot": [
+        "NA2631T-T39802",
+        "TCL2632T-T51366"
+      ],
+      "power": [
+        "LFGL2683T-T45955",
+        "NA2631T-T58652",
+        "SS2654T-T43572",
+        "XL2625T-T24343"
+      ],
+      "print": [
+        "LFGL2683T-T53874",
+        "TT2652T-T99634",
+        "XL2625T-T32262"
+      ],
+      "private": [
+        "EDI2665T-T78776",
+        "RAI2657T-T86562"
+      ],
+      "products": [
+        "NS2662T-T60793",
+        "XL2625T-T40181"
+      ],
+      "profile": [
+        "IRI2679T-T41306",
+        "RTIS2674T-T25601"
+      ],
+      "project": [
+        "LFGL2683T-T61793",
+        "OD2692T-T55765",
+        "RTIS2674T-T84929",
+        "XL2625T-T48100"
+      ],
+      "quantum": [
+        "BPL2623T-T84050",
+        "LFGL2683T-T77631",
+        "RTIS2674T-T87574",
+        "SL2630T-T63434"
+      ],
+      "real": [
+        "LFGL2683T-T93469",
+        "OD2692T-T71603"
+      ],
+      "rem": [
+        "APEC2611T-T77002",
+        "LDII2637T-T26109"
+      ],
+      "research": [
+        "LFGL2683T-T11388",
+        "RTIS2674T-T92598",
+        "SI2639T-T37419",
+        "XL2625T-T71857"
+      ],
+      "resort": [
+        "OD2692T-T87441",
+        "XL2625T-T79776"
+      ],
+      "road": [
+        "VTL2632T-T38419",
+        "XL2625T-T87695"
+      ],
+      "robot": [
+        "ILCL2673T-T48612",
+        "IRI2679T-T49225",
+        "KKWT2621T-T94110",
+        "LFGL2683T-T19307",
+        "PB2674T-T61547"
+      ],
+      "robotics": [
+        "HS2699T-T96114",
+        "LFGL2683T-T27226",
+        "RTIS2674T-T99763",
+        "XL2625T-T82417"
+      ],
+      "self": [
+        "HCF2553-T67700",
+        "TT2652T-T17553"
+      ],
+      "sell": [
+        "IRI2679T-T88066",
+        "LFGL2683T-T50983"
+      ],
+      "send": [
+        "ISL2626T-T93227",
+        "LFGL2683T-T58902"
+      ],
+      "server": [
+        "PTL2645T-T65821",
+        "XI2694T-T62176"
+      ],
+      "share": [
+        "CRRI2564-T63180",
+        "IRI2679T-T75119",
+        "LFGL2683T-T66821",
+        "SI2639T-T42447"
+      ],
+      "ship": [
+        "LFGL2683T-T74740",
+        "NA2631T-T26726",
+        "PEI2685T-T63063"
+      ],
+      "sign": [
+        "HKZI2636T-T13529",
+        "LFGL2683T-T82659",
+        "OI2692T-T59039",
+        "PB2674T-T69466"
+      ],
+      "sim": [
+        "LFGL2683T-T90578",
+        "PTL2645T-T73740"
+      ],
+      "skill": [
+        "ELL2677T-T65704",
+        "OOL2614T-T76768",
+        "SRL2616T-T12396"
+      ],
+      "slot": [
+        "PTL2645T-T81659",
+        "TEPL2694T-T20319",
+        "XL2625T-T19823"
+      ],
+      "society": [
+        "ASL2693T-T13404",
+        "XL2625T-T30633"
+      ],
+      "soft": [
+        "LFGL2683T-T98497",
+        "XL2625T-T69224"
+      ],
+      "stack": [
+        "NA2631T-T25347",
+        "OI2692T-T27363",
+        "RC2677T-T55011",
+        "RTIS2674T-T41439"
+      ],
+      "start": [
+        "LFGL2683T-T24335",
+        "XI2694T-T96618"
+      ],
+      "stay": [
+        "NA2631T-T44830",
+        "OI2692T-T14416",
+        "PTL2645T-T89578"
+      ],
+      "stock": [
+        "FCL2632T-T83921",
+        "LFGL2683T-T32254"
+      ],
+      "story": [
+        "FCL2632T-T91840",
+        "KKWT2621T-T51624"
+      ],
+      "super": [
+        "APEC2611T-T91332",
+        "LFGL2683T-T40173",
+        "OI2692T-T61930"
+      ],
+      "sys": [
+        "CAME2598-T58164",
+        "REI2616T-T86820",
+        "TT2652T-T25472",
+        "XL2625T-T53128"
+      ],
+      "tag": [
+        "APEC2611T-T53753",
+        "LFGL2683T-T56011",
+        "NA2626T-T55140",
+        "SI2639T-T97880"
+      ],
+      "tap": [
+        "LFGL2683T-T63930",
+        "NA2631T-T47721",
+        "TPL2697T-T31121",
+        "XL2625T-T61047"
+      ],
+      "tea": [
+        "LFGL2683T-T71849",
+        "NA2631T-T28992",
+        "PTL2645T-T97497",
+        "TL2645T-T44697"
+      ],
+      "therapy": [
+        "EL2578-T58918",
+        "NA2631T-T33266",
+        "RTIS2674T-T50362",
+        "TT2652T-T33391",
+        "XL2625T-T84804"
+      ],
+      "time": [
+        "FCL2632T-T99759",
+        "XL2625T-T92723"
+      ],
+      "token": [
+        "EDCL2689T-T95368",
+        "LFGL2683T-T21444"
+      ],
+      "trip": [
+        "IRI2679T-T98876",
+        "NA2631T-T96614",
+        "VC2665T-T64313"
+      ],
+      "true": [
+        "EDI2665T-T39181",
+        "LFGL2683T-T29363"
+      ],
+      "ultra": [
+        "CRRI2564-T71099",
+        "UA2620T-T14912"
+      ],
+      "uni": [
+        "ITLL2680T-T15795",
+        "XL2625T-T10642"
+      ],
+      "url": [
+        "IRI2679T-T16795",
+        "LFGL2683T-T45201",
+        "TT2652T-T41310"
+      ],
+      "verified": [
+        "BPL2623T-T25726",
+        "NI2568-T34516",
+        "RAI2657T-T94481"
+      ],
+      "vibe": [
+        "IRI2679T-T24714",
+        "LFGL2683T-T61039",
+        "MLG2688T-T19198",
+        "NA2631T-T64938",
+        "PB2674T-T93223",
+        "RTIS2674T-T22331"
+      ],
+      "view": [
+        "FCL2632T-T17678",
+        "LFGL2683T-T68958",
+        "XL2625T-T50237"
+      ],
+      "visit": [
+        "IRI2679T-T40552",
+        "ISL2626T-T98626",
+        "SI2639T-T26609"
+      ],
+      "voice": [
+        "AL2580-T43705",
+        "OOL2614T-T53011",
+        "PB2674T-T22835"
+      ],
+      "wallet": [
+        "IRI2679T-T48471",
+        "NA2631T-T72861",
+        "RTIS2674T-T15545",
+        "VSL2633T-T85179"
+      ],
+      "way": [
+        "LFGL2683T-T10634",
+        "NA2626T-T72240",
+        "XL2625T-T81913"
+      ],
+      "wealth": [
+        "AL2569-T37298",
+        "IRI2679T-T73240",
+        "NA2631T-T88699",
+        "RTIS2674T-T92848",
+        "VSL2633T-T11017",
+        "XL2625T-T89832"
+      ],
+      "wear": [
+        "CRRI2564-T12775",
+        "NA2631T-T98247",
+        "TT2652T-T49229"
+      ],
+      "well": [
+        "IRI2679T-T81159",
+        "SS2654T-T59410",
+        "XL2625T-T97751"
+      ],
+      "wellness": [
+        "RTIS2674T-T72736",
+        "TT2652T-T57148"
+      ],
+      "wiz": [
+        "IRI2679T-T96997",
+        "WASD2698T-T76139"
+      ],
+      "xn--jvr800e": [
+        "IDOL2621T-T51737",
+        "KCL2693T-T31879"
+      ],
+      "xn--kbt444f": [
+        "IDOL2621T-T27980",
+        "KCL2693T-T23960"
+      ],
+      "xxl": [
+        "NA2626T-T64321",
+        "TEPL2694T-T19061"
+      ],
+      "yes": [
+        "APEC2611T-T13650",
+        "IRI2679T-T72228",
+        "LFGL2683T-T42310",
+        "NA2626T-T19698"
+      ],
+      "zen": [
+        "IRI2679T-T80147",
+        "NA2631T-T43068",
+        "PB2674T-T11142",
+        "RTIS2674T-T25222",
+        "XL2625T-T31508"
+      ],
+      "zzz": [
+        "LFGL2683T-T58148",
+        "XL2625T-T39427"
+      ]
+    }
+  },
+  "causalExplanation": null,
+  "effectiveEventDates": null,
+  "statusChanges": [
+    {
+      "applicationId": "A2652T-T75760",
+      "string": "robot",
+      "applicant": "Zero Gravity Labs Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "AEI2688T-T84808",
+      "string": "asi",
+      "applicant": "Adhara Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "APEC2611T-T11013",
+      "string": "easy",
+      "applicant": "Aruba PEC S.P.A.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "BEI2691T-T99138",
+      "string": "craft",
+      "applicant": "Bellatrix Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CCS2640T-T48725",
+      "string": "order",
+      "applicant": "Cam Connecting SARL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "CS2676T-T34770",
+      "string": "auth",
+      "applicant": "Codyssey SL",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "EDCL2689T-T11150",
+      "string": "crypto",
+      "applicant": "ECHO Domain Co L.L.C.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "EDCL2689T-T68091",
+      "string": "api",
+      "applicant": "ECHO Domain Co L.L.C.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "EDCL2689T-T94739",
+      "string": "agent",
+      "applicant": "ECHO Domain Co L.L.C.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "FEI2676T-T60926",
+      "string": "intelligence",
+      "applicant": "Fomalhaut Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "GEI2639T-T18440",
+      "string": "kit",
+      "applicant": "Gacrux Exploration, Inc",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "HU2684T-T32145",
+      "string": "hub",
+      "applicant": "Hostinger UAB",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "HU2684T-T42201",
+      "string": "gen",
+      "applicant": "Hostinger UAB",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "HU2684T-T81042",
+      "string": "lab",
+      "applicant": "Hostinger UAB",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "ITL2677T-T15916",
+      "string": "robot",
+      "applicant": "Ipollo Tech Ltd",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "ITL2677T-T74240",
+      "string": "agent",
+      "applicant": "Ipollo Tech Ltd",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "MEI2627T-T58035",
+      "string": "maker",
+      "applicant": "Menkalinan Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "MEI2627T-T73873",
+      "string": "mart",
+      "applicant": "Menkalinan Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T14670",
+      "string": "agi",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T30508",
+      "string": "ace",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T32387",
+      "string": "good",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T38427",
+      "string": "omg",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T46346",
+      "string": "api",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T48225",
+      "string": "fix",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T54761",
+      "string": "lab",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T63059",
+      "string": "ask",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T64063",
+      "string": "tap",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T65696",
+      "string": "hub",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T70103",
+      "string": "fab",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T80159",
+      "string": "mcp",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T90969",
+      "string": "pop",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NA2626T-T98888",
+      "string": "zen",
+      "applicant": "ShortDot (Ireland) Limited",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NTG2671T-T12150",
+      "string": "share",
+      "applicant": "NextGEN TLDs GmbH",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "NTG2671T-T13787",
+      "string": "ultra",
+      "applicant": "NextGEN TLDs GmbH",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "OI2692T-T96497",
+      "string": "loop",
+      "applicant": "Oinkadot Inc",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "PEI2617T-T23468",
+      "string": "path",
+      "applicant": "Pollux Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "REI2641T-T20577",
+      "string": "view",
+      "applicant": "Regulus Exploration, Inc.",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "VNTL2649T-T52249",
+      "string": "portal",
+      "applicant": "VANT NEXUS TECHNOLOGIES LLC",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "XCI2688T-T41810",
+      "string": "ion",
+      "applicant": "XServer Cloud Incorporated",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "XCI2688T-T62426",
+      "string": "gaming",
+      "applicant": "XServer Cloud Incorporated",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "XCI2688T-T81155",
+      "string": "brand",
+      "applicant": "XServer Cloud Incorporated",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    },
+    {
+      "applicationId": "XI2694T-T18057",
+      "string": "key",
+      "applicant": "XRegistry Incorporated",
+      "previousStatus": "Active",
+      "currentStatus": "Withdrawn"
+    }
+  ]
+}

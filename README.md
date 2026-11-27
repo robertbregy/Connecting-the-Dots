@@ -1,6 +1,6 @@
-# Connecting the Dots — v0.8.2
+# Connecting the Dots — v0.8.3
 
-**v0.8.2 · 22 November 2026.** Verified news review, corrected ICANN announcement and a separately dated current APS follow-up.
+**v0.8.3 · 27 November 2026.** A separately dated APS export, verified application changes and explicit differences between official statistics and public records.
 
 **Connecting the Dots** is an independent multilingual research and public-information project on top-level domains, application history, governance, economics and society.
 
@@ -9,6 +9,16 @@ Public site: https://robertbregy.github.io/Connecting-the-Dots/
 Current scientific release: [RR3 · String Confirmation 2026](https://doi.org/10.5281/zenodo.24325521).
 
 ## Current release
+
+**v0.8.3 - 27 November 2026**
+
+The complete APS CSV acquired on 27 November at 14:08 UTC retains 2,783 rows and 1,614 application families. Compared by Application ID with the 22 November export, it records 42 Active → Withdrawn changes and 36 Change Request flags changing from false to true, with no IDs added or removed. The current listing contains 1,553 active and 61 withdrawn application families. Official APS statistics, published at 13:39 UTC and acquired at 14:08 UTC, report 1,543 active and 72 withdrawn applications. These source differences remain unreconciled; the release does not assign identities or causes to the gap.
+
+The current Atlas and its downloadable graph use the new export. Derived exact-string overlaps are 222 groups / 650 active applications; the official 17 November contention file remains a separately dated source at 226 / 705. A new four-language Field Note distinguishes withdrawals, change requests, effective replacement strings and the limits of public updates. The standalone Atlas dates, stale pre-confirmation text and unrelated .official chronicle category are corrected. See the [source comparison and publication review](docs/aps-followup-2026-11-27.md).
+
+RR1/RR2/RR3, their original evidence and all earlier technical packages remain unchanged. The new observations are part of the v0.8.3 technical publication and do not extend the RR3 DOI.
+
+## Previous verified news release
 
 **v0.8.2 - 22 November 2026**
 

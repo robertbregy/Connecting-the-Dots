@@ -1,12 +1,12 @@
-<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/fr/portfolios/ | Site edition: 0.8.2 | Language: fr -->
+<!-- Canonical: https://robertbregy.github.io/Connecting-the-Dots/economics/fr/portfolios/ | Site edition: 0.8.3 | Language: fr -->
 
 Analyse économique
 
 # Portefeuilles et candidatures concurrentes
 
-**Instantané APS · 11 octobre 2026**
+**Analyse APS historique · 11 octobre 2026**
 
-Les données des candidatures proviennent de l’export public APS acquis le 11 octobre 2026. Cet instantané précède le String Confirmation Day (17 novembre), prévu pour la publication des chaînes confirmées et des ensembles de candidatures en concurrence actualisés. Il n’atteste aucun résultat individuel d’évaluation. [Calendrier officiel ↗](https://www.icann.org/en/announcements/details/icann-announces-date-for-reveal-day-and-other-2026-round-milestones-29-09-2026-en)
+L’analyse économique fondée sur l’export APS du 11 octobre conserve cet instantané historique, antérieur aux chaînes confirmées et aux contention sets publiés le 17 novembre. Les observations ultérieures de cette page portent leurs propres dates de source ; l’Atlas des candidatures suit l’export plus récent. [Publication officielle de String Confirmation ↗](https://www.icann.org/en/announcements/details/icann-confirms-2026-round-applications-input-and-objections-period-begins-updated-17-11-2026-en)
 
 Suivez les stratégies des candidats qui déposent de nombreuses demandes et la concurrence pour les mêmes mots. Les comparaisons entre rounds et les cas Aruba et Intercap précisent ce qui est compté.
 
@@ -85,6 +85,6 @@ Les 263 ensembles provisoires de candidatures pour des chaînes identiques compr
 
 [ICANN · preliminary contention CSV ↗](https://newgtldprogram.icann.org/en/application-rounds/round2/reveal-day-contention-sets.csv) [internet.Best · applicant portfolios ↗](https://internet.best/new-gtld-applications/) [nTLDData · primary strings ↗](https://www.ntlddata.com/applications/strings)
 
-**Par Robert Bregy** · Édition du site 0.8.2 · 22 novembre 2026
+**Par Robert Bregy** · Édition du site 0.8.3 · 27 novembre 2026
 
 Les dates d’observation figurent à côté des preuves. Cette édition du site ne signifie pas que toutes les sources ont été vérifiées à nouveau à cette date.
